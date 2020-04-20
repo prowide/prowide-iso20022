@@ -1,16 +1,16 @@
 ![alt tag](http://www.prowidesoftware.com/img/logoPW_800x253-300dpi.jpg)
 
 
-**Prowide ISO 20022 ** is an open source Java framework for managing ISO 20022 messages.
+**Prowide ISO 20022** is an open source Java framework for managing **ISO 20022** messages.
 
-This project is a complement for the Prowide Core library.
+This project is a complement for the **Prowide Core** library: https://github.com/prowide/prowide-core
 
 ### What's included?
 
-* Java model for ISO 20022 MX (for example: pacs.008.001.02, for all ISO 20022 message categories and types)
-* Parser from ISO 20022 XML into Java
-* Builder API from Java to ISO 20022 XML
-* Conversion to/from JSON
+* **Java model** for ISO 20022 MX (for example: pacs.008.001.02, for all ISO 20022 message categories and types)
+* **Parser** from ISO 20022 XML into Java
+* **Builder** API from Java to ISO 20022 XML
+* Conversion to/from **JSON**
 
 For SWIFT messages validation, restricted ISO versions (such as SEPA, CBPR+, TARGET), GUI application and more, please check our complementary commercial offerings at http://www.prowidesoftware.com/
 
