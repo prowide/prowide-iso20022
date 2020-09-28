@@ -119,6 +119,27 @@ project(':iso20022-core') {
 	}
 }
 
+jar {
+	dependsOn subprojects.jar
+	archivesBaseName = 'pw-iso20022'
+	subprojects.each { subproject ->
+		from subproject.configurations.archives.allArtifacts.files.collect {
+			zipTree(it)
+		}
+	}
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+	archiveClassifier = 'javadoc'
+	from javadoc.destinationDir
+}
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+	archiveClassifier = 'sources'
+	subprojects.each { subproject ->
+		from subproject.sourceSets.main.allSource
+	}
+}
 
 def formattedDate() {
 	new Date().format('dd MMM yyyy')
@@ -136,16 +157,6 @@ javadoc {
 
 	options.bottom = '<script src="//static.getclicky.com/js"></script><script>try{ clicky.init(101039278); }catch(e){}</script>'
 	exclude "**/dic/**"
-}
-
-task javadocJar(type: Jar, dependsOn: javadoc) {
-	archiveClassifier = 'javadoc'
-	from javadoc.destinationDir
-}
-
-task sourcesJar(type: Jar, dependsOn: classes) {
-	archiveClassifier = 'sources'
-	from sourceSets.main.allSource
 }
 
 task writePom {
@@ -186,13 +197,20 @@ task writePom {
 	}
 }
 
+dependencies {
+	// included build
+	api 'com.prowidesoftware:prowide-core'
+	implementation 'org.apache.commons:commons-lang3:3.8.1'
+	implementation 'com.google.code.gson:gson:2.8.2'
+}
+
 distributions {
 	main {
 		contents {
 			from javadocJar
 			from sourcesJar
 			into ('lib') {
-				from (project.configurations.runtime)
+				from (rootProject.configurations.runtime)
 			}
 			from files('LICENSE.txt')
 			from files('CHANGELOG.txt')

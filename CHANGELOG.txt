@@ -2,6 +2,10 @@
  Prowide ISO 20022 - CHANGELOG
 -----------------------------------------------------------------------------------------------------------------------
 
+SNAPSHOT 9.1.2
+  * Internal SCM refactor for OS release
+  * Removed the CopyableTo implementation from the generated model
+
 RELEASE 9.1.1 - September 2021
   * Removed blank lines in MX writer (marshalling)
   * Fixed generic AbstractMX parse for system messages (xsys)
