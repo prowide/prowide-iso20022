@@ -1,0 +1,172 @@
+
+package com.prowidesoftware.swift.model.mx;
+
+import com.prowidesoftware.swift.model.mx.dic.*;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadImpl;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+
+/**
+ * Class for pacs.002.001.05 ISO 20022 message.
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "Document", propOrder = {
+    "fiToFIPmtStsRpt"
+})
+@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:pacs.002.001.05")
+public class MxPacs00200105
+    extends AbstractMX
+{
+
+    @XmlElement(name = "FIToFIPmtStsRpt", required = true)
+    protected FIToFIPaymentStatusReportV05 fiToFIPmtStsRpt;
+    public final static transient String BUSINESS_PROCESS = "pacs";
+    public final static transient int FUNCTIONALITY = 2;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 5;
+    @SuppressWarnings("rawtypes")
+    public final static transient Class[] _classes = new Class[] {AccountIdentification4Choice.class, AccountSchemeName1Choice.class, ActiveOrHistoricCurrencyAndAmount.class, AddressType2Code.class, AmendmentInformationDetails8 .class, AmountType3Choice.class, BranchAndFinancialInstitutionIdentification5 .class, BranchData2 .class, CashAccount24 .class, CashAccountType2Choice.class, CategoryPurpose1Choice.class, Charges2 .class, ClearingChannel2Code.class, ClearingSystemIdentification2Choice.class, ClearingSystemIdentification3Choice.class, ClearingSystemMemberIdentification2 .class, ContactDetails2 .class, CreditDebitCode.class, CreditorReferenceInformation2 .class, CreditorReferenceType1Choice.class, CreditorReferenceType2 .class, DateAndPlaceOfBirth.class, DiscountAmountAndType1 .class, DiscountAmountType1Choice.class, DocumentAdjustment1 .class, DocumentType3Code.class, DocumentType5Code.class, EquivalentAmount2 .class, FIToFIPaymentStatusReportV05 .class, FinancialIdentificationSchemeName1Choice.class, FinancialInstitutionIdentification8 .class, Frequency6Code.class, GenericAccountIdentification1 .class, GenericFinancialIdentification1 .class, GenericOrganisationIdentification1 .class, GenericPersonIdentification1 .class, GroupHeader53 .class, LocalInstrument2Choice.class, MandateRelatedInformation8 .class, MxPacs00200105 .class, NamePrefix1Code.class, NumberOfTransactionsPerStatus3 .class, OrganisationIdentification8 .class, OrganisationIdentificationSchemeName1Choice.class, OriginalGroupHeader1 .class, OriginalTransactionReference16 .class, Party11Choice.class, PartyIdentification43 .class, PaymentMethod4Code.class, PaymentTransaction43 .class, PaymentTypeInformation25 .class, PersonIdentification5 .class, PersonIdentificationSchemeName1Choice.class, PostalAddress6 .class, Priority2Code.class, ReferredDocumentInformation3 .class, ReferredDocumentType1Choice.class, ReferredDocumentType2 .class, RemittanceAmount2 .class, RemittanceInformation7 .class, SequenceType3Code.class, ServiceLevel8Choice.class, SettlementInstruction4 .class, SettlementMethod1Code.class, StatusReason6Choice.class, StatusReasonInformation9 .class, StructuredRemittanceInformation9 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TaxAmountAndType1 .class, TaxAmountType1Choice.class, TransactionGroupStatus3Code.class, TransactionIndividualStatus3Code.class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:pacs.002.001.05";
+
+    public MxPacs00200105() {
+        super();
+    }
+
+    /**
+     * Creates the MX object parsing the parameter String with the XML content
+     * 
+     */
+    public MxPacs00200105(final String xml) {
+        this();
+        MxPacs00200105 tmp = parse(xml);
+        fiToFIPmtStsRpt = tmp.getFIToFIPmtStsRpt();
+    }
+
+    /**
+     * Creates the MX object parsing the raw content from the parameter MxSwiftMessage
+     * 
+     */
+    public MxPacs00200105(final MxSwiftMessage mxSwiftMessage) {
+        this(mxSwiftMessage.message());
+    }
+
+    /**
+     * Gets the value of the fiToFIPmtStsRpt property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link FIToFIPaymentStatusReportV05 }
+     *     
+     */
+    public FIToFIPaymentStatusReportV05 getFIToFIPmtStsRpt() {
+        return fiToFIPmtStsRpt;
+    }
+
+    /**
+     * Sets the value of the fiToFIPmtStsRpt property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link FIToFIPaymentStatusReportV05 }
+     *     
+     */
+    public MxPacs00200105 setFIToFIPmtStsRpt(FIToFIPaymentStatusReportV05 value) {
+        this.fiToFIPmtStsRpt = value;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+    @Override
+    public String getBusinessProcess() {
+        return BUSINESS_PROCESS;
+    }
+
+    @Override
+    public int getFunctionality() {
+        return FUNCTIONALITY;
+    }
+
+    @Override
+    public int getVariant() {
+        return VARIANT;
+    }
+
+    @Override
+    public int getVersion() {
+        return VERSION;
+    }
+
+    /**
+     * Creates the MX object parsing the raw content from the parameter XML
+     * 
+     */
+    public static MxPacs00200105 parse(String xml) {
+        return ((MxPacs00200105) MxReadImpl.parse(MxPacs00200105 .class, xml, _classes));
+    }
+
+    /**
+     * Creates the MX object parsing the raw content from the parameter XML with injected read implementation
+     * @since 9.0.1
+     * 
+     * @param parserImpl an MX unmarshall implementation
+     */
+    public static MxPacs00200105 parse(String xml, MxRead parserImpl) {
+        return ((MxPacs00200105) parserImpl.read(MxPacs00200105 .class, xml, _classes));
+    }
+
+    @Override
+    public String getNamespace() {
+        return NAMESPACE;
+    }
+
+    @Override
+    @SuppressWarnings("rawtypes")
+    public Class[] getClasses() {
+        return _classes;
+    }
+
+    /**
+     * Creates an MxPacs00200105 messages from its JSON representation.
+     * <p>
+     * For generic conversion of JSON into the corresponding MX instance 
+     * see {@link AbstractMX#fromJson(String)}
+     * 
+     * @since 7.10.2
+     * 
+     * @param json a JSON representation of an MxPacs00200105 message
+     * @return
+     *     a new instance of MxPacs00200105
+     */
+    public final static MxPacs00200105 fromJson(String json) {
+        return AbstractMX.fromJson(json, MxPacs00200105 .class);
+    }
+
+}

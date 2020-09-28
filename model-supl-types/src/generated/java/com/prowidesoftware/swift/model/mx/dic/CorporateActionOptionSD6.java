@@ -1,0 +1,147 @@
+
+package com.prowidesoftware.swift.model.mx.dic;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+
+/**
+ * Provides additional information regarding corporate action option details.
+ * 
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "CorporateActionOptionSD6", propOrder = {
+    "plcAndNm",
+    "xtndedOptnFeatrs",
+    "dfltOptnFlg",
+    "optnlDvddSplmtryDataReqrdFlg"
+})
+public class CorporateActionOptionSD6 {
+
+    @XmlElement(name = "PlcAndNm", required = true)
+    protected String plcAndNm;
+    @XmlElement(name = "XtndedOptnFeatrs")
+    @XmlSchemaType(name = "string")
+    protected ExtendedOptionFeature1Code xtndedOptnFeatrs;
+    @XmlElement(name = "DfltOptnFlg")
+    protected boolean dfltOptnFlg;
+    @XmlElement(name = "OptnlDvddSplmtryDataReqrdFlg")
+    protected Boolean optnlDvddSplmtryDataReqrdFlg;
+
+    /**
+     * Gets the value of the plcAndNm property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getPlcAndNm() {
+        return plcAndNm;
+    }
+
+    /**
+     * Sets the value of the plcAndNm property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public CorporateActionOptionSD6 setPlcAndNm(String value) {
+        this.plcAndNm = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the xtndedOptnFeatrs property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link ExtendedOptionFeature1Code }
+     *     
+     */
+    public ExtendedOptionFeature1Code getXtndedOptnFeatrs() {
+        return xtndedOptnFeatrs;
+    }
+
+    /**
+     * Sets the value of the xtndedOptnFeatrs property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ExtendedOptionFeature1Code }
+     *     
+     */
+    public CorporateActionOptionSD6 setXtndedOptnFeatrs(ExtendedOptionFeature1Code value) {
+        this.xtndedOptnFeatrs = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the dfltOptnFlg property.
+     * 
+     */
+    public boolean isDfltOptnFlg() {
+        return dfltOptnFlg;
+    }
+
+    /**
+     * Sets the value of the dfltOptnFlg property.
+     * 
+     */
+    public CorporateActionOptionSD6 setDfltOptnFlg(boolean value) {
+        this.dfltOptnFlg = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the optnlDvddSplmtryDataReqrdFlg property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
+     */
+    public Boolean isOptnlDvddSplmtryDataReqrdFlg() {
+        return optnlDvddSplmtryDataReqrdFlg;
+    }
+
+    /**
+     * Sets the value of the optnlDvddSplmtryDataReqrdFlg property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
+     */
+    public CorporateActionOptionSD6 setOptnlDvddSplmtryDataReqrdFlg(Boolean value) {
+        this.optnlDvddSplmtryDataReqrdFlg = value;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+}

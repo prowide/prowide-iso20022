@@ -1,0 +1,125 @@
+
+package com.prowidesoftware.swift.model.mx.dic;
+
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
+
+
+/**
+ * <p>Java class for PendingReason5Code.
+ * 
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * <pre>
+ * &lt;simpleType name="PendingReason5Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ADEA"/&gt;
+ *     &lt;enumeration value="AUTH"/&gt;
+ *     &lt;enumeration value="DQUA"/&gt;
+ *     &lt;enumeration value="LACK"/&gt;
+ *     &lt;enumeration value="LATE"/&gt;
+ *     &lt;enumeration value="MCER"/&gt;
+ *     &lt;enumeration value="MONY"/&gt;
+ *     &lt;enumeration value="OTHR"/&gt;
+ *     &lt;enumeration value="NPAY"/&gt;
+ *     &lt;enumeration value="NSEC"/&gt;
+ *     &lt;enumeration value="PENR"/&gt;
+ *     &lt;enumeration value="VLDA"/&gt;
+ *     &lt;enumeration value="CERT"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
+ * 
+ */
+@XmlType(name = "PendingReason5Code")
+@XmlEnum
+public enum PendingReason5Code {
+
+
+    /**
+     * Instruction was received after the account servicer's deadline. Processed on best effort basis.
+     * 
+     */
+    ADEA,
+
+    /**
+     * Tax reclaim has been sent to the tax authorities.
+     * 
+     */
+    AUTH,
+
+    /**
+     * Quantity of financial instruments does not match.
+     * 
+     */
+    DQUA,
+
+    /**
+     * Insufficient financial instruments in your account.
+     * 
+     */
+    LACK,
+
+    /**
+     * Instruction was received after market deadline.
+     * 
+     */
+    LATE,
+
+    /**
+     * Awaiting receipt of adequate certification.
+     * 
+     */
+    MCER,
+
+    /**
+     * Insufficient money in your account.
+     * 
+     */
+    MONY,
+
+    /**
+     * Other. See Narrative.
+     * 
+     */
+    OTHR,
+
+    /**
+     * Payment has not been made by issuer.
+     * 
+     */
+    NPAY,
+
+    /**
+     * Financial instruments have not been delivered by the issuer.
+     * 
+     */
+    NSEC,
+
+    /**
+     * The instruction is pending receipt of securities, for example, from a purchase, loan etc.
+     * 
+     */
+    PENR,
+
+    /**
+     * For tax reclaim, the event is pending, the tax reclaim is valid for the tax authorities.
+     * 
+     */
+    VLDA,
+
+    /**
+     * Certificate number error.
+     * 
+     */
+    CERT;
+
+    public String value() {
+        return name();
+    }
+
+    public static PendingReason5Code fromValue(String v) {
+        return valueOf(v);
+    }
+
+}

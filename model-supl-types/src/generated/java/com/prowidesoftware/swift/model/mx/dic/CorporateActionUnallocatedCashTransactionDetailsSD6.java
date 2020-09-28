@@ -1,0 +1,213 @@
+
+package com.prowidesoftware.swift.model.mx.dic;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+
+/**
+ * Breakdown of unallocated cash transactions.
+ * 
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "CorporateActionUnallocatedCashTransactionDetailsSD6", propOrder = {
+    "cdtDbtInd",
+    "rsnCd",
+    "txAmt",
+    "uallctdRsnCd",
+    "contraPtcptNb",
+    "earlstPmtDt"
+})
+public class CorporateActionUnallocatedCashTransactionDetailsSD6 {
+
+    @XmlElement(name = "CdtDbtInd", required = true)
+    @XmlSchemaType(name = "string")
+    protected CreditDebitCode cdtDbtInd;
+    @XmlElement(name = "RsnCd")
+    @XmlSchemaType(name = "string")
+    protected DTCAdjustmentPaymentType5Code rsnCd;
+    @XmlElement(name = "TxAmt")
+    protected RestrictedFINActiveCurrencyAndAmount txAmt;
+    @XmlElement(name = "UallctdRsnCd")
+    @XmlSchemaType(name = "string")
+    protected DTCUnallocatedAdjustmentReason4Code uallctdRsnCd;
+    @XmlElement(name = "ContraPtcptNb")
+    protected String contraPtcptNb;
+    @XmlElement(name = "EarlstPmtDt")
+    protected DateFormat48Choice earlstPmtDt;
+
+    /**
+     * Gets the value of the cdtDbtInd property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link CreditDebitCode }
+     *     
+     */
+    public CreditDebitCode getCdtDbtInd() {
+        return cdtDbtInd;
+    }
+
+    /**
+     * Sets the value of the cdtDbtInd property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link CreditDebitCode }
+     *     
+     */
+    public CorporateActionUnallocatedCashTransactionDetailsSD6 setCdtDbtInd(CreditDebitCode value) {
+        this.cdtDbtInd = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the rsnCd property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link DTCAdjustmentPaymentType5Code }
+     *     
+     */
+    public DTCAdjustmentPaymentType5Code getRsnCd() {
+        return rsnCd;
+    }
+
+    /**
+     * Sets the value of the rsnCd property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link DTCAdjustmentPaymentType5Code }
+     *     
+     */
+    public CorporateActionUnallocatedCashTransactionDetailsSD6 setRsnCd(DTCAdjustmentPaymentType5Code value) {
+        this.rsnCd = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the txAmt property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link RestrictedFINActiveCurrencyAndAmount }
+     *     
+     */
+    public RestrictedFINActiveCurrencyAndAmount getTxAmt() {
+        return txAmt;
+    }
+
+    /**
+     * Sets the value of the txAmt property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link RestrictedFINActiveCurrencyAndAmount }
+     *     
+     */
+    public CorporateActionUnallocatedCashTransactionDetailsSD6 setTxAmt(RestrictedFINActiveCurrencyAndAmount value) {
+        this.txAmt = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the uallctdRsnCd property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link DTCUnallocatedAdjustmentReason4Code }
+     *     
+     */
+    public DTCUnallocatedAdjustmentReason4Code getUallctdRsnCd() {
+        return uallctdRsnCd;
+    }
+
+    /**
+     * Sets the value of the uallctdRsnCd property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link DTCUnallocatedAdjustmentReason4Code }
+     *     
+     */
+    public CorporateActionUnallocatedCashTransactionDetailsSD6 setUallctdRsnCd(DTCUnallocatedAdjustmentReason4Code value) {
+        this.uallctdRsnCd = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the contraPtcptNb property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getContraPtcptNb() {
+        return contraPtcptNb;
+    }
+
+    /**
+     * Sets the value of the contraPtcptNb property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public CorporateActionUnallocatedCashTransactionDetailsSD6 setContraPtcptNb(String value) {
+        this.contraPtcptNb = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the earlstPmtDt property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link DateFormat48Choice }
+     *     
+     */
+    public DateFormat48Choice getEarlstPmtDt() {
+        return earlstPmtDt;
+    }
+
+    /**
+     * Sets the value of the earlstPmtDt property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link DateFormat48Choice }
+     *     
+     */
+    public CorporateActionUnallocatedCashTransactionDetailsSD6 setEarlstPmtDt(DateFormat48Choice value) {
+        this.earlstPmtDt = value;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+}

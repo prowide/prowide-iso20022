@@ -1,0 +1,463 @@
+
+package com.prowidesoftware.swift.model.mx.dic;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+
+/**
+ * Vote results for one resolution.
+ * 
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "Vote12", propOrder = {
+    "issrLabl",
+    "rsltnSts",
+    "_for",
+    "agnst",
+    "abstn",
+    "wthhld",
+    "wthMgmt",
+    "agnstMgmt",
+    "dscrtnry",
+    "oneYr",
+    "twoYrs",
+    "threeYrs",
+    "noActn",
+    "blnk",
+    "prtry"
+})
+public class Vote12 {
+
+    @XmlElement(name = "IssrLabl", required = true)
+    protected String issrLabl;
+    @XmlElement(name = "RsltnSts", required = true)
+    @XmlSchemaType(name = "string")
+    protected ResolutionStatus2Code rsltnSts;
+    @XmlElement(name = "For")
+    protected FinancialInstrumentQuantity18Choice _for;
+    @XmlElement(name = "Agnst")
+    protected FinancialInstrumentQuantity18Choice agnst;
+    @XmlElement(name = "Abstn")
+    protected FinancialInstrumentQuantity18Choice abstn;
+    @XmlElement(name = "Wthhld")
+    protected FinancialInstrumentQuantity18Choice wthhld;
+    @XmlElement(name = "WthMgmt")
+    protected FinancialInstrumentQuantity18Choice wthMgmt;
+    @XmlElement(name = "AgnstMgmt")
+    protected FinancialInstrumentQuantity18Choice agnstMgmt;
+    @XmlElement(name = "Dscrtnry")
+    protected FinancialInstrumentQuantity18Choice dscrtnry;
+    @XmlElement(name = "OneYr")
+    protected FinancialInstrumentQuantity18Choice oneYr;
+    @XmlElement(name = "TwoYrs")
+    protected FinancialInstrumentQuantity18Choice twoYrs;
+    @XmlElement(name = "ThreeYrs")
+    protected FinancialInstrumentQuantity18Choice threeYrs;
+    @XmlElement(name = "NoActn")
+    protected FinancialInstrumentQuantity18Choice noActn;
+    @XmlElement(name = "Blnk")
+    protected FinancialInstrumentQuantity18Choice blnk;
+    @XmlElement(name = "Prtry")
+    protected ProprietaryVote2 prtry;
+
+    /**
+     * Gets the value of the issrLabl property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getIssrLabl() {
+        return issrLabl;
+    }
+
+    /**
+     * Sets the value of the issrLabl property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public Vote12 setIssrLabl(String value) {
+        this.issrLabl = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the rsltnSts property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link ResolutionStatus2Code }
+     *     
+     */
+    public ResolutionStatus2Code getRsltnSts() {
+        return rsltnSts;
+    }
+
+    /**
+     * Sets the value of the rsltnSts property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ResolutionStatus2Code }
+     *     
+     */
+    public Vote12 setRsltnSts(ResolutionStatus2Code value) {
+        this.rsltnSts = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the for property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link FinancialInstrumentQuantity18Choice }
+     *     
+     */
+    public FinancialInstrumentQuantity18Choice getFor() {
+        return _for;
+    }
+
+    /**
+     * Sets the value of the for property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link FinancialInstrumentQuantity18Choice }
+     *     
+     */
+    public Vote12 setFor(FinancialInstrumentQuantity18Choice value) {
+        this._for = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the agnst property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link FinancialInstrumentQuantity18Choice }
+     *     
+     */
+    public FinancialInstrumentQuantity18Choice getAgnst() {
+        return agnst;
+    }
+
+    /**
+     * Sets the value of the agnst property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link FinancialInstrumentQuantity18Choice }
+     *     
+     */
+    public Vote12 setAgnst(FinancialInstrumentQuantity18Choice value) {
+        this.agnst = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the abstn property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link FinancialInstrumentQuantity18Choice }
+     *     
+     */
+    public FinancialInstrumentQuantity18Choice getAbstn() {
+        return abstn;
+    }
+
+    /**
+     * Sets the value of the abstn property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link FinancialInstrumentQuantity18Choice }
+     *     
+     */
+    public Vote12 setAbstn(FinancialInstrumentQuantity18Choice value) {
+        this.abstn = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the wthhld property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link FinancialInstrumentQuantity18Choice }
+     *     
+     */
+    public FinancialInstrumentQuantity18Choice getWthhld() {
+        return wthhld;
+    }
+
+    /**
+     * Sets the value of the wthhld property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link FinancialInstrumentQuantity18Choice }
+     *     
+     */
+    public Vote12 setWthhld(FinancialInstrumentQuantity18Choice value) {
+        this.wthhld = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the wthMgmt property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link FinancialInstrumentQuantity18Choice }
+     *     
+     */
+    public FinancialInstrumentQuantity18Choice getWthMgmt() {
+        return wthMgmt;
+    }
+
+    /**
+     * Sets the value of the wthMgmt property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link FinancialInstrumentQuantity18Choice }
+     *     
+     */
+    public Vote12 setWthMgmt(FinancialInstrumentQuantity18Choice value) {
+        this.wthMgmt = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the agnstMgmt property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link FinancialInstrumentQuantity18Choice }
+     *     
+     */
+    public FinancialInstrumentQuantity18Choice getAgnstMgmt() {
+        return agnstMgmt;
+    }
+
+    /**
+     * Sets the value of the agnstMgmt property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link FinancialInstrumentQuantity18Choice }
+     *     
+     */
+    public Vote12 setAgnstMgmt(FinancialInstrumentQuantity18Choice value) {
+        this.agnstMgmt = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the dscrtnry property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link FinancialInstrumentQuantity18Choice }
+     *     
+     */
+    public FinancialInstrumentQuantity18Choice getDscrtnry() {
+        return dscrtnry;
+    }
+
+    /**
+     * Sets the value of the dscrtnry property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link FinancialInstrumentQuantity18Choice }
+     *     
+     */
+    public Vote12 setDscrtnry(FinancialInstrumentQuantity18Choice value) {
+        this.dscrtnry = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the oneYr property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link FinancialInstrumentQuantity18Choice }
+     *     
+     */
+    public FinancialInstrumentQuantity18Choice getOneYr() {
+        return oneYr;
+    }
+
+    /**
+     * Sets the value of the oneYr property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link FinancialInstrumentQuantity18Choice }
+     *     
+     */
+    public Vote12 setOneYr(FinancialInstrumentQuantity18Choice value) {
+        this.oneYr = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the twoYrs property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link FinancialInstrumentQuantity18Choice }
+     *     
+     */
+    public FinancialInstrumentQuantity18Choice getTwoYrs() {
+        return twoYrs;
+    }
+
+    /**
+     * Sets the value of the twoYrs property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link FinancialInstrumentQuantity18Choice }
+     *     
+     */
+    public Vote12 setTwoYrs(FinancialInstrumentQuantity18Choice value) {
+        this.twoYrs = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the threeYrs property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link FinancialInstrumentQuantity18Choice }
+     *     
+     */
+    public FinancialInstrumentQuantity18Choice getThreeYrs() {
+        return threeYrs;
+    }
+
+    /**
+     * Sets the value of the threeYrs property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link FinancialInstrumentQuantity18Choice }
+     *     
+     */
+    public Vote12 setThreeYrs(FinancialInstrumentQuantity18Choice value) {
+        this.threeYrs = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the noActn property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link FinancialInstrumentQuantity18Choice }
+     *     
+     */
+    public FinancialInstrumentQuantity18Choice getNoActn() {
+        return noActn;
+    }
+
+    /**
+     * Sets the value of the noActn property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link FinancialInstrumentQuantity18Choice }
+     *     
+     */
+    public Vote12 setNoActn(FinancialInstrumentQuantity18Choice value) {
+        this.noActn = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the blnk property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link FinancialInstrumentQuantity18Choice }
+     *     
+     */
+    public FinancialInstrumentQuantity18Choice getBlnk() {
+        return blnk;
+    }
+
+    /**
+     * Sets the value of the blnk property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link FinancialInstrumentQuantity18Choice }
+     *     
+     */
+    public Vote12 setBlnk(FinancialInstrumentQuantity18Choice value) {
+        this.blnk = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the prtry property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link ProprietaryVote2 }
+     *     
+     */
+    public ProprietaryVote2 getPrtry() {
+        return prtry;
+    }
+
+    /**
+     * Sets the value of the prtry property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ProprietaryVote2 }
+     *     
+     */
+    public Vote12 setPrtry(ProprietaryVote2 value) {
+        this.prtry = value;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+}

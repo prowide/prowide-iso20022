@@ -1,0 +1,211 @@
+
+package com.prowidesoftware.swift.model.mx.dic;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+
+/**
+ * Account to or from which a securities entry is made.
+ * 
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "SecuritiesAccount4", propOrder = {
+    "id",
+    "nm",
+    "finInstrmSplmtryId",
+    "finInstrmId",
+    "finInstrmNm",
+    "sts"
+})
+public class SecuritiesAccount4 {
+
+    @XmlElement(name = "Id", required = true)
+    protected AccountIdentification1 id;
+    @XmlElement(name = "Nm", required = true)
+    protected String nm;
+    @XmlElement(name = "FinInstrmSplmtryId")
+    protected String finInstrmSplmtryId;
+    @XmlElement(name = "FinInstrmId")
+    protected SecurityIdentification3Choice finInstrmId;
+    @XmlElement(name = "FinInstrmNm")
+    protected String finInstrmNm;
+    @XmlElement(name = "Sts", required = true)
+    @XmlSchemaType(name = "string")
+    protected AccountStatus1Code sts;
+
+    /**
+     * Gets the value of the id property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link AccountIdentification1 }
+     *     
+     */
+    public AccountIdentification1 getId() {
+        return id;
+    }
+
+    /**
+     * Sets the value of the id property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link AccountIdentification1 }
+     *     
+     */
+    public SecuritiesAccount4 setId(AccountIdentification1 value) {
+        this.id = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the nm property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getNm() {
+        return nm;
+    }
+
+    /**
+     * Sets the value of the nm property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public SecuritiesAccount4 setNm(String value) {
+        this.nm = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the finInstrmSplmtryId property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getFinInstrmSplmtryId() {
+        return finInstrmSplmtryId;
+    }
+
+    /**
+     * Sets the value of the finInstrmSplmtryId property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public SecuritiesAccount4 setFinInstrmSplmtryId(String value) {
+        this.finInstrmSplmtryId = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the finInstrmId property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link SecurityIdentification3Choice }
+     *     
+     */
+    public SecurityIdentification3Choice getFinInstrmId() {
+        return finInstrmId;
+    }
+
+    /**
+     * Sets the value of the finInstrmId property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link SecurityIdentification3Choice }
+     *     
+     */
+    public SecuritiesAccount4 setFinInstrmId(SecurityIdentification3Choice value) {
+        this.finInstrmId = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the finInstrmNm property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getFinInstrmNm() {
+        return finInstrmNm;
+    }
+
+    /**
+     * Sets the value of the finInstrmNm property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public SecuritiesAccount4 setFinInstrmNm(String value) {
+        this.finInstrmNm = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the sts property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link AccountStatus1Code }
+     *     
+     */
+    public AccountStatus1Code getSts() {
+        return sts;
+    }
+
+    /**
+     * Sets the value of the sts property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link AccountStatus1Code }
+     *     
+     */
+    public SecuritiesAccount4 setSts(AccountStatus1Code value) {
+        this.sts = value;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+}

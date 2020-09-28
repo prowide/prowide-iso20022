@@ -1,0 +1,89 @@
+
+package com.prowidesoftware.swift.model.mx.dic;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+
+/**
+ * Specifies whether all assets in the portfolio should be liquidated and transferred as cash.
+ * 
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "CashAll1", propOrder = {
+    "ind",
+    "ccy"
+})
+public class CashAll1 {
+
+    @XmlElement(name = "Ind")
+    protected boolean ind;
+    @XmlElement(name = "Ccy")
+    protected String ccy;
+
+    /**
+     * Gets the value of the ind property.
+     * 
+     */
+    public boolean isInd() {
+        return ind;
+    }
+
+    /**
+     * Sets the value of the ind property.
+     * 
+     */
+    public CashAll1 setInd(boolean value) {
+        this.ind = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the ccy property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getCcy() {
+        return ccy;
+    }
+
+    /**
+     * Sets the value of the ccy property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public CashAll1 setCcy(String value) {
+        this.ccy = value;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+}

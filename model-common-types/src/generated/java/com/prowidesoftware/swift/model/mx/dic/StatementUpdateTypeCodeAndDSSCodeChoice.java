@@ -1,0 +1,99 @@
+
+package com.prowidesoftware.swift.model.mx.dic;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+
+/**
+ * Choice between formats for the update type.
+ * 
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "StatementUpdateTypeCodeAndDSSCodeChoice", propOrder = {
+    "stmtUpdTpAsCd",
+    "stmtUpdTpAsDSS"
+})
+public class StatementUpdateTypeCodeAndDSSCodeChoice {
+
+    @XmlElement(name = "StmtUpdTpAsCd")
+    @XmlSchemaType(name = "string")
+    protected StatementUpdateTypeCode stmtUpdTpAsCd;
+    @XmlElement(name = "StmtUpdTpAsDSS")
+    protected GenericIdentification7 stmtUpdTpAsDSS;
+
+    /**
+     * Gets the value of the stmtUpdTpAsCd property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link StatementUpdateTypeCode }
+     *     
+     */
+    public StatementUpdateTypeCode getStmtUpdTpAsCd() {
+        return stmtUpdTpAsCd;
+    }
+
+    /**
+     * Sets the value of the stmtUpdTpAsCd property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link StatementUpdateTypeCode }
+     *     
+     */
+    public StatementUpdateTypeCodeAndDSSCodeChoice setStmtUpdTpAsCd(StatementUpdateTypeCode value) {
+        this.stmtUpdTpAsCd = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the stmtUpdTpAsDSS property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link GenericIdentification7 }
+     *     
+     */
+    public GenericIdentification7 getStmtUpdTpAsDSS() {
+        return stmtUpdTpAsDSS;
+    }
+
+    /**
+     * Sets the value of the stmtUpdTpAsDSS property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link GenericIdentification7 }
+     *     
+     */
+    public StatementUpdateTypeCodeAndDSSCodeChoice setStmtUpdTpAsDSS(GenericIdentification7 value) {
+        this.stmtUpdTpAsDSS = value;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+}

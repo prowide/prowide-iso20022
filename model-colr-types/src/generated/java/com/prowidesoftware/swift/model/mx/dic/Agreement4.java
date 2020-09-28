@@ -1,0 +1,184 @@
+
+package com.prowidesoftware.swift.model.mx.dic;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+
+/**
+ * Agreement details for the over the counter market.
+ * 
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "Agreement4", propOrder = {
+    "agrmtDtls",
+    "agrmtId",
+    "agrmtDt",
+    "baseCcy",
+    "agrmtFrmwk"
+})
+public class Agreement4 {
+
+    @XmlElement(name = "AgrmtDtls", required = true)
+    protected String agrmtDtls;
+    @XmlElement(name = "AgrmtId")
+    protected String agrmtId;
+    @XmlElement(name = "AgrmtDt", required = true)
+    @XmlSchemaType(name = "date")
+    protected XMLGregorianCalendar agrmtDt;
+    @XmlElement(name = "BaseCcy", required = true)
+    protected String baseCcy;
+    @XmlElement(name = "AgrmtFrmwk")
+    protected AgreementFramework1Choice agrmtFrmwk;
+
+    /**
+     * Gets the value of the agrmtDtls property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getAgrmtDtls() {
+        return agrmtDtls;
+    }
+
+    /**
+     * Sets the value of the agrmtDtls property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public Agreement4 setAgrmtDtls(String value) {
+        this.agrmtDtls = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the agrmtId property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getAgrmtId() {
+        return agrmtId;
+    }
+
+    /**
+     * Sets the value of the agrmtId property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public Agreement4 setAgrmtId(String value) {
+        this.agrmtId = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the agrmtDt property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public XMLGregorianCalendar getAgrmtDt() {
+        return agrmtDt;
+    }
+
+    /**
+     * Sets the value of the agrmtDt property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public Agreement4 setAgrmtDt(XMLGregorianCalendar value) {
+        this.agrmtDt = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the baseCcy property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getBaseCcy() {
+        return baseCcy;
+    }
+
+    /**
+     * Sets the value of the baseCcy property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public Agreement4 setBaseCcy(String value) {
+        this.baseCcy = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the agrmtFrmwk property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link AgreementFramework1Choice }
+     *     
+     */
+    public AgreementFramework1Choice getAgrmtFrmwk() {
+        return agrmtFrmwk;
+    }
+
+    /**
+     * Sets the value of the agrmtFrmwk property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link AgreementFramework1Choice }
+     *     
+     */
+    public Agreement4 setAgrmtFrmwk(AgreementFramework1Choice value) {
+        this.agrmtFrmwk = value;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+}

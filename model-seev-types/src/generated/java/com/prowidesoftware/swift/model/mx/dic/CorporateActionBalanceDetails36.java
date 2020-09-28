@@ -1,0 +1,617 @@
+
+package com.prowidesoftware.swift.model.mx.dic;
+
+import java.util.ArrayList;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+
+/**
+ * Eligible and not eligible balance of securities for a corporate action event.
+ * 
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "CorporateActionBalanceDetails36", propOrder = {
+    "ttlElgblBal",
+    "blckdBal",
+    "brrwdBal",
+    "collInBal",
+    "collOutBal",
+    "onLnBal",
+    "pdgDlvryBal",
+    "pdgRctBal",
+    "outForRegnBal",
+    "sttlmPosBal",
+    "strtPosBal",
+    "tradDtPosBal",
+    "inTrnsShipmntBal",
+    "regdBal",
+    "oblgtdBal",
+    "uinstdBal",
+    "instdBal",
+    "afctdBal",
+    "uafctdBal"
+})
+public class CorporateActionBalanceDetails36 {
+
+    @XmlElement(name = "TtlElgblBal")
+    protected TotalEligibleBalanceFormat9 ttlElgblBal;
+    @XmlElement(name = "BlckdBal")
+    protected BalanceFormat7Choice blckdBal;
+    @XmlElement(name = "BrrwdBal")
+    protected BalanceFormat7Choice brrwdBal;
+    @XmlElement(name = "CollInBal")
+    protected BalanceFormat7Choice collInBal;
+    @XmlElement(name = "CollOutBal")
+    protected BalanceFormat7Choice collOutBal;
+    @XmlElement(name = "OnLnBal")
+    protected BalanceFormat7Choice onLnBal;
+    @XmlElement(name = "PdgDlvryBal")
+    protected List<BalanceFormat10Choice> pdgDlvryBal;
+    @XmlElement(name = "PdgRctBal")
+    protected List<BalanceFormat10Choice> pdgRctBal;
+    @XmlElement(name = "OutForRegnBal")
+    protected BalanceFormat7Choice outForRegnBal;
+    @XmlElement(name = "SttlmPosBal")
+    protected List<BalanceFormat10Choice> sttlmPosBal;
+    @XmlElement(name = "StrtPosBal")
+    protected BalanceFormat7Choice strtPosBal;
+    @XmlElement(name = "TradDtPosBal")
+    protected BalanceFormat7Choice tradDtPosBal;
+    @XmlElement(name = "InTrnsShipmntBal")
+    protected BalanceFormat7Choice inTrnsShipmntBal;
+    @XmlElement(name = "RegdBal")
+    protected BalanceFormat7Choice regdBal;
+    @XmlElement(name = "OblgtdBal")
+    protected BalanceFormat7Choice oblgtdBal;
+    @XmlElement(name = "UinstdBal")
+    protected BalanceFormat7Choice uinstdBal;
+    @XmlElement(name = "InstdBal")
+    protected BalanceFormat7Choice instdBal;
+    @XmlElement(name = "AfctdBal")
+    protected BalanceFormat7Choice afctdBal;
+    @XmlElement(name = "UafctdBal")
+    protected BalanceFormat7Choice uafctdBal;
+
+    /**
+     * Gets the value of the ttlElgblBal property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link TotalEligibleBalanceFormat9 }
+     *     
+     */
+    public TotalEligibleBalanceFormat9 getTtlElgblBal() {
+        return ttlElgblBal;
+    }
+
+    /**
+     * Sets the value of the ttlElgblBal property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link TotalEligibleBalanceFormat9 }
+     *     
+     */
+    public CorporateActionBalanceDetails36 setTtlElgblBal(TotalEligibleBalanceFormat9 value) {
+        this.ttlElgblBal = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the blckdBal property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BalanceFormat7Choice }
+     *     
+     */
+    public BalanceFormat7Choice getBlckdBal() {
+        return blckdBal;
+    }
+
+    /**
+     * Sets the value of the blckdBal property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BalanceFormat7Choice }
+     *     
+     */
+    public CorporateActionBalanceDetails36 setBlckdBal(BalanceFormat7Choice value) {
+        this.blckdBal = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the brrwdBal property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BalanceFormat7Choice }
+     *     
+     */
+    public BalanceFormat7Choice getBrrwdBal() {
+        return brrwdBal;
+    }
+
+    /**
+     * Sets the value of the brrwdBal property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BalanceFormat7Choice }
+     *     
+     */
+    public CorporateActionBalanceDetails36 setBrrwdBal(BalanceFormat7Choice value) {
+        this.brrwdBal = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the collInBal property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BalanceFormat7Choice }
+     *     
+     */
+    public BalanceFormat7Choice getCollInBal() {
+        return collInBal;
+    }
+
+    /**
+     * Sets the value of the collInBal property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BalanceFormat7Choice }
+     *     
+     */
+    public CorporateActionBalanceDetails36 setCollInBal(BalanceFormat7Choice value) {
+        this.collInBal = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the collOutBal property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BalanceFormat7Choice }
+     *     
+     */
+    public BalanceFormat7Choice getCollOutBal() {
+        return collOutBal;
+    }
+
+    /**
+     * Sets the value of the collOutBal property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BalanceFormat7Choice }
+     *     
+     */
+    public CorporateActionBalanceDetails36 setCollOutBal(BalanceFormat7Choice value) {
+        this.collOutBal = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the onLnBal property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BalanceFormat7Choice }
+     *     
+     */
+    public BalanceFormat7Choice getOnLnBal() {
+        return onLnBal;
+    }
+
+    /**
+     * Sets the value of the onLnBal property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BalanceFormat7Choice }
+     *     
+     */
+    public CorporateActionBalanceDetails36 setOnLnBal(BalanceFormat7Choice value) {
+        this.onLnBal = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the pdgDlvryBal property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the pdgDlvryBal property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getPdgDlvryBal().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link BalanceFormat10Choice }
+     * 
+     * 
+     */
+    public List<BalanceFormat10Choice> getPdgDlvryBal() {
+        if (pdgDlvryBal == null) {
+            pdgDlvryBal = new ArrayList<BalanceFormat10Choice>();
+        }
+        return this.pdgDlvryBal;
+    }
+
+    /**
+     * Gets the value of the pdgRctBal property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the pdgRctBal property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getPdgRctBal().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link BalanceFormat10Choice }
+     * 
+     * 
+     */
+    public List<BalanceFormat10Choice> getPdgRctBal() {
+        if (pdgRctBal == null) {
+            pdgRctBal = new ArrayList<BalanceFormat10Choice>();
+        }
+        return this.pdgRctBal;
+    }
+
+    /**
+     * Gets the value of the outForRegnBal property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BalanceFormat7Choice }
+     *     
+     */
+    public BalanceFormat7Choice getOutForRegnBal() {
+        return outForRegnBal;
+    }
+
+    /**
+     * Sets the value of the outForRegnBal property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BalanceFormat7Choice }
+     *     
+     */
+    public CorporateActionBalanceDetails36 setOutForRegnBal(BalanceFormat7Choice value) {
+        this.outForRegnBal = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the sttlmPosBal property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the sttlmPosBal property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getSttlmPosBal().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link BalanceFormat10Choice }
+     * 
+     * 
+     */
+    public List<BalanceFormat10Choice> getSttlmPosBal() {
+        if (sttlmPosBal == null) {
+            sttlmPosBal = new ArrayList<BalanceFormat10Choice>();
+        }
+        return this.sttlmPosBal;
+    }
+
+    /**
+     * Gets the value of the strtPosBal property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BalanceFormat7Choice }
+     *     
+     */
+    public BalanceFormat7Choice getStrtPosBal() {
+        return strtPosBal;
+    }
+
+    /**
+     * Sets the value of the strtPosBal property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BalanceFormat7Choice }
+     *     
+     */
+    public CorporateActionBalanceDetails36 setStrtPosBal(BalanceFormat7Choice value) {
+        this.strtPosBal = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the tradDtPosBal property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BalanceFormat7Choice }
+     *     
+     */
+    public BalanceFormat7Choice getTradDtPosBal() {
+        return tradDtPosBal;
+    }
+
+    /**
+     * Sets the value of the tradDtPosBal property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BalanceFormat7Choice }
+     *     
+     */
+    public CorporateActionBalanceDetails36 setTradDtPosBal(BalanceFormat7Choice value) {
+        this.tradDtPosBal = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the inTrnsShipmntBal property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BalanceFormat7Choice }
+     *     
+     */
+    public BalanceFormat7Choice getInTrnsShipmntBal() {
+        return inTrnsShipmntBal;
+    }
+
+    /**
+     * Sets the value of the inTrnsShipmntBal property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BalanceFormat7Choice }
+     *     
+     */
+    public CorporateActionBalanceDetails36 setInTrnsShipmntBal(BalanceFormat7Choice value) {
+        this.inTrnsShipmntBal = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the regdBal property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BalanceFormat7Choice }
+     *     
+     */
+    public BalanceFormat7Choice getRegdBal() {
+        return regdBal;
+    }
+
+    /**
+     * Sets the value of the regdBal property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BalanceFormat7Choice }
+     *     
+     */
+    public CorporateActionBalanceDetails36 setRegdBal(BalanceFormat7Choice value) {
+        this.regdBal = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the oblgtdBal property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BalanceFormat7Choice }
+     *     
+     */
+    public BalanceFormat7Choice getOblgtdBal() {
+        return oblgtdBal;
+    }
+
+    /**
+     * Sets the value of the oblgtdBal property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BalanceFormat7Choice }
+     *     
+     */
+    public CorporateActionBalanceDetails36 setOblgtdBal(BalanceFormat7Choice value) {
+        this.oblgtdBal = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the uinstdBal property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BalanceFormat7Choice }
+     *     
+     */
+    public BalanceFormat7Choice getUinstdBal() {
+        return uinstdBal;
+    }
+
+    /**
+     * Sets the value of the uinstdBal property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BalanceFormat7Choice }
+     *     
+     */
+    public CorporateActionBalanceDetails36 setUinstdBal(BalanceFormat7Choice value) {
+        this.uinstdBal = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the instdBal property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BalanceFormat7Choice }
+     *     
+     */
+    public BalanceFormat7Choice getInstdBal() {
+        return instdBal;
+    }
+
+    /**
+     * Sets the value of the instdBal property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BalanceFormat7Choice }
+     *     
+     */
+    public CorporateActionBalanceDetails36 setInstdBal(BalanceFormat7Choice value) {
+        this.instdBal = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the afctdBal property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BalanceFormat7Choice }
+     *     
+     */
+    public BalanceFormat7Choice getAfctdBal() {
+        return afctdBal;
+    }
+
+    /**
+     * Sets the value of the afctdBal property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BalanceFormat7Choice }
+     *     
+     */
+    public CorporateActionBalanceDetails36 setAfctdBal(BalanceFormat7Choice value) {
+        this.afctdBal = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the uafctdBal property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BalanceFormat7Choice }
+     *     
+     */
+    public BalanceFormat7Choice getUafctdBal() {
+        return uafctdBal;
+    }
+
+    /**
+     * Sets the value of the uafctdBal property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BalanceFormat7Choice }
+     *     
+     */
+    public CorporateActionBalanceDetails36 setUafctdBal(BalanceFormat7Choice value) {
+        this.uafctdBal = value;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+    /**
+     * Adds a new item to the pdgDlvryBal list.
+     * @see #getPdgDlvryBal()
+     * 
+     */
+    public CorporateActionBalanceDetails36 addPdgDlvryBal(BalanceFormat10Choice pdgDlvryBal) {
+        getPdgDlvryBal().add(pdgDlvryBal);
+        return this;
+    }
+
+    /**
+     * Adds a new item to the pdgRctBal list.
+     * @see #getPdgRctBal()
+     * 
+     */
+    public CorporateActionBalanceDetails36 addPdgRctBal(BalanceFormat10Choice pdgRctBal) {
+        getPdgRctBal().add(pdgRctBal);
+        return this;
+    }
+
+    /**
+     * Adds a new item to the sttlmPosBal list.
+     * @see #getSttlmPosBal()
+     * 
+     */
+    public CorporateActionBalanceDetails36 addSttlmPosBal(BalanceFormat10Choice sttlmPosBal) {
+        getSttlmPosBal().add(sttlmPosBal);
+        return this;
+    }
+
+}

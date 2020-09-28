@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SwInt:Request xmlns:SwInt="http://www.example.com">
+    <SwInt:RequestHeader>
+        <SwInt:Requestor>ou=abcdchzz,o=swift</SwInt:Requestor>
+        <SwInt:Responder>ou=dcbadeff,o=swift</SwInt:Responder>
+        <SwInt:Service>swift.if.ia</SwInt:Service>
+        <SwInt:RequestType>setr.010.001.03</SwInt:RequestType>
+    </SwInt:RequestHeader>
+    <SwInt:RequestPayload>
+        <Ah:AppHdr xmlns:Ah="urn:swift:xsd$ahV10">
+            <Ah:From>
+                <Ah:Type>DN</Ah:Type>
+                <Ah:Id>cn=funds,ou=abcdchzz,o=swift</Ah:Id>
+            </Ah:From>
+            <Ah:To>
+                <Ah:Type>DN</Ah:Type>
+                <Ah:Id>cn=funds,ou=dcbadeff,o=swift</Ah:Id>
+            </Ah:To>
+            <Ah:MsgRef>11308917</Ah:MsgRef>
+            <Ah:CrDate>2013-12-23T15:50:00</Ah:CrDate>
+        </Ah:AppHdr>
+        <Doc:Document xmlns:Doc="urn:swift:xsd:camt.003.001.04"
+                      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Doc:GetAcct>
+                <Doc:MsgId>
+                    <Doc:Id>1</Doc:Id>
+                </Doc:MsgId>
+            </Doc:GetAcct>
+        </Doc:Document>
+    </SwInt:RequestPayload>
+</SwInt:Request>

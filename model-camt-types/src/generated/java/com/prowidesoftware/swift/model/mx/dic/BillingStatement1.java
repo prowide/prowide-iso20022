@@ -1,0 +1,523 @@
+
+package com.prowidesoftware.swift.model.mx.dic;
+
+import java.util.ArrayList;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+
+/**
+ * Details of the statement reporting the bank services billing.
+ * 
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "BillingStatement1", propOrder = {
+    "stmtId",
+    "frToDt",
+    "creDtTm",
+    "sts",
+    "acctChrtcs",
+    "rateData",
+    "ccyXchg",
+    "bal",
+    "compstn",
+    "svc",
+    "taxRgn",
+    "balAdjstmnt",
+    "svcAdjstmnt"
+})
+public class BillingStatement1 {
+
+    @XmlElement(name = "StmtId", required = true)
+    protected String stmtId;
+    @XmlElement(name = "FrToDt", required = true)
+    protected DatePeriod1 frToDt;
+    @XmlElement(name = "CreDtTm", required = true)
+    @XmlSchemaType(name = "dateTime")
+    protected XMLGregorianCalendar creDtTm;
+    @XmlElement(name = "Sts", required = true)
+    @XmlSchemaType(name = "string")
+    protected BillingStatementStatus1Code sts;
+    @XmlElement(name = "AcctChrtcs", required = true)
+    protected CashAccountCharacteristics1 acctChrtcs;
+    @XmlElement(name = "RateData")
+    protected List<BillingRate1> rateData;
+    @XmlElement(name = "CcyXchg")
+    protected List<CurrencyExchange6> ccyXchg;
+    @XmlElement(name = "Bal")
+    protected List<BillingBalance1> bal;
+    @XmlElement(name = "Compstn")
+    protected List<BillingCompensation1> compstn;
+    @XmlElement(name = "Svc")
+    protected List<BillingService1> svc;
+    @XmlElement(name = "TaxRgn")
+    protected List<BillingTaxRegion1> taxRgn;
+    @XmlElement(name = "BalAdjstmnt")
+    protected List<BalanceAdjustment1> balAdjstmnt;
+    @XmlElement(name = "SvcAdjstmnt")
+    protected List<BillingServiceAdjustment1> svcAdjstmnt;
+
+    /**
+     * Gets the value of the stmtId property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getStmtId() {
+        return stmtId;
+    }
+
+    /**
+     * Sets the value of the stmtId property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public BillingStatement1 setStmtId(String value) {
+        this.stmtId = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the frToDt property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link DatePeriod1 }
+     *     
+     */
+    public DatePeriod1 getFrToDt() {
+        return frToDt;
+    }
+
+    /**
+     * Sets the value of the frToDt property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link DatePeriod1 }
+     *     
+     */
+    public BillingStatement1 setFrToDt(DatePeriod1 value) {
+        this.frToDt = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the creDtTm property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public XMLGregorianCalendar getCreDtTm() {
+        return creDtTm;
+    }
+
+    /**
+     * Sets the value of the creDtTm property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public BillingStatement1 setCreDtTm(XMLGregorianCalendar value) {
+        this.creDtTm = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the sts property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BillingStatementStatus1Code }
+     *     
+     */
+    public BillingStatementStatus1Code getSts() {
+        return sts;
+    }
+
+    /**
+     * Sets the value of the sts property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BillingStatementStatus1Code }
+     *     
+     */
+    public BillingStatement1 setSts(BillingStatementStatus1Code value) {
+        this.sts = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the acctChrtcs property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link CashAccountCharacteristics1 }
+     *     
+     */
+    public CashAccountCharacteristics1 getAcctChrtcs() {
+        return acctChrtcs;
+    }
+
+    /**
+     * Sets the value of the acctChrtcs property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link CashAccountCharacteristics1 }
+     *     
+     */
+    public BillingStatement1 setAcctChrtcs(CashAccountCharacteristics1 value) {
+        this.acctChrtcs = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the rateData property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the rateData property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getRateData().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link BillingRate1 }
+     * 
+     * 
+     */
+    public List<BillingRate1> getRateData() {
+        if (rateData == null) {
+            rateData = new ArrayList<BillingRate1>();
+        }
+        return this.rateData;
+    }
+
+    /**
+     * Gets the value of the ccyXchg property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the ccyXchg property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getCcyXchg().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link CurrencyExchange6 }
+     * 
+     * 
+     */
+    public List<CurrencyExchange6> getCcyXchg() {
+        if (ccyXchg == null) {
+            ccyXchg = new ArrayList<CurrencyExchange6>();
+        }
+        return this.ccyXchg;
+    }
+
+    /**
+     * Gets the value of the bal property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the bal property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getBal().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link BillingBalance1 }
+     * 
+     * 
+     */
+    public List<BillingBalance1> getBal() {
+        if (bal == null) {
+            bal = new ArrayList<BillingBalance1>();
+        }
+        return this.bal;
+    }
+
+    /**
+     * Gets the value of the compstn property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the compstn property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getCompstn().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link BillingCompensation1 }
+     * 
+     * 
+     */
+    public List<BillingCompensation1> getCompstn() {
+        if (compstn == null) {
+            compstn = new ArrayList<BillingCompensation1>();
+        }
+        return this.compstn;
+    }
+
+    /**
+     * Gets the value of the svc property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the svc property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getSvc().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link BillingService1 }
+     * 
+     * 
+     */
+    public List<BillingService1> getSvc() {
+        if (svc == null) {
+            svc = new ArrayList<BillingService1>();
+        }
+        return this.svc;
+    }
+
+    /**
+     * Gets the value of the taxRgn property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the taxRgn property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getTaxRgn().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link BillingTaxRegion1 }
+     * 
+     * 
+     */
+    public List<BillingTaxRegion1> getTaxRgn() {
+        if (taxRgn == null) {
+            taxRgn = new ArrayList<BillingTaxRegion1>();
+        }
+        return this.taxRgn;
+    }
+
+    /**
+     * Gets the value of the balAdjstmnt property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the balAdjstmnt property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getBalAdjstmnt().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link BalanceAdjustment1 }
+     * 
+     * 
+     */
+    public List<BalanceAdjustment1> getBalAdjstmnt() {
+        if (balAdjstmnt == null) {
+            balAdjstmnt = new ArrayList<BalanceAdjustment1>();
+        }
+        return this.balAdjstmnt;
+    }
+
+    /**
+     * Gets the value of the svcAdjstmnt property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the svcAdjstmnt property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getSvcAdjstmnt().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link BillingServiceAdjustment1 }
+     * 
+     * 
+     */
+    public List<BillingServiceAdjustment1> getSvcAdjstmnt() {
+        if (svcAdjstmnt == null) {
+            svcAdjstmnt = new ArrayList<BillingServiceAdjustment1>();
+        }
+        return this.svcAdjstmnt;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+    /**
+     * Adds a new item to the rateData list.
+     * @see #getRateData()
+     * 
+     */
+    public BillingStatement1 addRateData(BillingRate1 rateData) {
+        getRateData().add(rateData);
+        return this;
+    }
+
+    /**
+     * Adds a new item to the ccyXchg list.
+     * @see #getCcyXchg()
+     * 
+     */
+    public BillingStatement1 addCcyXchg(CurrencyExchange6 ccyXchg) {
+        getCcyXchg().add(ccyXchg);
+        return this;
+    }
+
+    /**
+     * Adds a new item to the bal list.
+     * @see #getBal()
+     * 
+     */
+    public BillingStatement1 addBal(BillingBalance1 bal) {
+        getBal().add(bal);
+        return this;
+    }
+
+    /**
+     * Adds a new item to the compstn list.
+     * @see #getCompstn()
+     * 
+     */
+    public BillingStatement1 addCompstn(BillingCompensation1 compstn) {
+        getCompstn().add(compstn);
+        return this;
+    }
+
+    /**
+     * Adds a new item to the svc list.
+     * @see #getSvc()
+     * 
+     */
+    public BillingStatement1 addSvc(BillingService1 svc) {
+        getSvc().add(svc);
+        return this;
+    }
+
+    /**
+     * Adds a new item to the taxRgn list.
+     * @see #getTaxRgn()
+     * 
+     */
+    public BillingStatement1 addTaxRgn(BillingTaxRegion1 taxRgn) {
+        getTaxRgn().add(taxRgn);
+        return this;
+    }
+
+    /**
+     * Adds a new item to the balAdjstmnt list.
+     * @see #getBalAdjstmnt()
+     * 
+     */
+    public BillingStatement1 addBalAdjstmnt(BalanceAdjustment1 balAdjstmnt) {
+        getBalAdjstmnt().add(balAdjstmnt);
+        return this;
+    }
+
+    /**
+     * Adds a new item to the svcAdjstmnt list.
+     * @see #getSvcAdjstmnt()
+     * 
+     */
+    public BillingStatement1 addSvcAdjstmnt(BillingServiceAdjustment1 svcAdjstmnt) {
+        getSvcAdjstmnt().add(svcAdjstmnt);
+        return this;
+    }
+
+}

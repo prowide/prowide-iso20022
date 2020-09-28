@@ -1,0 +1,110 @@
+<message>
+    <AppHdr xmlns='urn:iso:std:iso:20022:tech:xsd:head.001.001.01'
+            xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+        <Fr>
+            <FIId>
+                <FinInstnId>
+                    <BICFI>MLCOUS33XXX</BICFI>
+                </FinInstnId>
+            </FIId>
+        </Fr>
+        <To>
+            <FIId>
+                <FinInstnId>
+                    <BICFI>MLCOUS33XXX</BICFI>
+                </FinInstnId>
+            </FIId>
+        </To>
+        <BizMsgIdr>12312312312</BizMsgIdr>
+        <MsgDefIdr>pacs.008.001.07</MsgDefIdr>
+        <CreDt>2018-04-27T20:53:13Z</CreDt>
+        <PssblDplct>false</PssblDplct>
+    </AppHdr>
+    <Document xmlns='urn:iso:std:iso:20022:tech:xsd:pacs.008.001.07'
+              xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+        <FIToFICstmrCdtTrf>
+            <GrpHdr>
+                <MsgId>823823423</MsgId>
+                <CreDtTm>2018-04-27T21:00:45</CreDtTm>
+                <BtchBookg>false</BtchBookg>
+                <NbOfTxs>1</NbOfTxs>
+                <CtrlSum>10000</CtrlSum>
+                <TtlIntrBkSttlmAmt Ccy='USD'>10000</TtlIntrBkSttlmAmt>
+                <IntrBkSttlmDt>2018-08-28</IntrBkSttlmDt>
+                <SttlmInf>
+                    <SttlmMtd>INDA</SttlmMtd>
+                </SttlmInf>
+                <InstgAgt>
+                    <FinInstnId>
+                        <BICFI>CITTGB2LPBG</BICFI>
+                        <Nm>Lionel Messi</Nm>
+                        <Othr>
+                            <Id>2342342342</Id>
+                            <Issr>asdfasdfasd</Issr>
+                        </Othr>
+                    </FinInstnId>
+                </InstgAgt>
+                <InstdAgt>
+                    <FinInstnId>
+                        <BICFI>ICBCUS4CXXX</BICFI>
+                        <Nm>Manu Ginobili</Nm>
+                        <PstlAdr>
+                            <AdrTp>PBOX</AdrTp>
+                            <Dept>1</Dept>
+                            <SubDept>asdf</SubDept>
+                            <StrtNm>My Street</StrtNm>
+                            <BldgNb>23423</BldgNb>
+                            <PstCd>2323</PstCd>
+                            <TwnNm>Los Angeles</TwnNm>
+                            <CtrySubDvsn>asdfsdfsd</CtrySubDvsn>
+                        </PstlAdr>
+                    </FinInstnId>
+                </InstdAgt>
+            </GrpHdr>
+            <CdtTrfTxInf>
+                <PmtId>
+                    <InstrId>23423423</InstrId>
+                    <EndToEndId>223423423</EndToEndId>
+                    <TxId>123452342</TxId>
+                    <ClrSysRef>SDSDS333</ClrSysRef>
+                </PmtId>
+                <IntrBkSttlmAmt Ccy='USD'>5000</IntrBkSttlmAmt>
+                <IntrBkSttlmDt>2018-07-31</IntrBkSttlmDt>
+                <SttlmPrty>URGT</SttlmPrty>
+                <AccptncDtTm>2018-04-28T20:54:39</AccptncDtTm>
+                <PoolgAdjstmntDt>2018-04-29</PoolgAdjstmntDt>
+                <InstdAmt Ccy='USD'>5000</InstdAmt>
+                <ChrgBr>SHAR</ChrgBr>
+                <Dbtr>
+                    <Nm>JOHN DOE</Nm>
+                    <PstlAdr>
+                        <AdrTp>HOME</AdrTp>
+                        <Dept>CABA</Dept>
+                        <SubDept>1</SubDept>
+                        <StrtNm>2823</StrtNm>
+                        <BldgNb>1</BldgNb>
+                        <PstCd>1417</PstCd>
+                        <TwnNm>Buenos Aires</TwnNm>
+                        <CtrySubDvsn>CABA</CtrySubDvsn>
+                        <Ctry>AR</Ctry>
+                    </PstlAdr>
+                    <CtryOfRes>AR</CtryOfRes>
+                </Dbtr>
+                <DbtrAgt>
+                    <FinInstnId>
+                        <BICFI>ITUSUSP1XXX</BICFI>
+                        <Nm>Juan Perez</Nm>
+                    </FinInstnId>
+                </DbtrAgt>
+                <CdtrAgt>
+                    <FinInstnId>
+                        <BICFI>USTBUS31XXX</BICFI>
+                    </FinInstnId>
+                </CdtrAgt>
+                <Cdtr>
+                    <Nm>Mike Smith</Nm>
+                </Cdtr>
+            </CdtTrfTxInf>
+        </FIToFICstmrCdtTrf>
+    </Document>
+</message>

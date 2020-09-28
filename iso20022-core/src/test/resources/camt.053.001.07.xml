@@ -1,0 +1,70 @@
+<message>
+    <AppHdr xmlns='urn:iso:std:iso:20022:tech:xsd:head.001.001.01'
+            xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+        <Fr>
+            <FIId>
+                <FinInstnId>
+                    <BICFI>MLCOUS33XXX</BICFI>
+                </FinInstnId>
+            </FIId>
+        </Fr>
+        <To>
+            <FIId>
+                <FinInstnId>
+                    <BICFI>MLCOUS33XXX</BICFI>
+                </FinInstnId>
+            </FIId>
+        </To>
+        <BizMsgIdr>ASDFSDF</BizMsgIdr>
+        <MsgDefIdr>camt.053.001.07</MsgDefIdr>
+        <CreDt>2018-04-29T17:31:51Z</CreDt>
+    </AppHdr>
+    <Document xmlns='urn:iso:std:iso:20022:tech:xsd:camt.053.001.07'
+              xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+        <BkToCstmrStmt>
+            <GrpHdr>
+                <MsgId>SDFSDF</MsgId>
+                <CreDtTm>2018-04-30T17:32:05</CreDtTm>
+                <AddtlInf>SFSDFSDF</AddtlInf>
+            </GrpHdr>
+            <Stmt>
+                <Id>SDFSDF</Id>
+                <Acct>
+                    <Id>
+                        <Othr>
+                            <Id>2345234534</Id>
+                            <Issr>SDFS</Issr>
+                        </Othr>
+                    </Id>
+                    <Ccy>USD</Ccy>
+                    <Nm>DFGSDFGDF</Nm>
+                </Acct>
+                <Bal>
+                    <Tp>
+                        <CdOrPrtry>
+                            <Cd>OPAV</Cd>
+                        </CdOrPrtry>
+                    </Tp>
+                    <Amt Ccy='USD'>234234</Amt>
+                    <CdtDbtInd>CRDT</CdtDbtInd>
+                    <Dt>
+                        <Dt>2018-04-10</Dt>
+                    </Dt>
+                </Bal>
+                <Bal>
+                    <Tp>
+                        <CdOrPrtry>
+                            <Cd>ITBD</Cd>
+                        </CdOrPrtry>
+                    </Tp>
+                    <Amt Ccy='USD'>234299</Amt>
+                    <CdtDbtInd>CRDT</CdtDbtInd>
+                    <Dt>
+                        <Dt>2018-04-19</Dt>
+                    </Dt>
+                </Bal>
+                <AddtlStmtInf>SDFSDFSDFSD</AddtlStmtInf>
+            </Stmt>
+        </BkToCstmrStmt>
+    </Document>
+</message>

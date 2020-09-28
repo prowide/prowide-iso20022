@@ -1,0 +1,237 @@
+
+package com.prowidesoftware.swift.model.mx.dic;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+
+/**
+ * Choice of format for the processing status.
+ * 
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "ProcessingStatus26Choice", propOrder = {
+    "pdgCxl",
+    "rjctd",
+    "rpr",
+    "ackdAccptd",
+    "prtry",
+    "dnd",
+    "canc"
+})
+public class ProcessingStatus26Choice {
+
+    @XmlElement(name = "PdgCxl")
+    protected PendingStatus22Choice pdgCxl;
+    @XmlElement(name = "Rjctd")
+    protected RejectionOrRepairStatus24Choice rjctd;
+    @XmlElement(name = "Rpr")
+    protected RejectionOrRepairStatus20Choice rpr;
+    @XmlElement(name = "AckdAccptd")
+    protected AcknowledgedAcceptedStatus18Choice ackdAccptd;
+    @XmlElement(name = "Prtry")
+    protected ProprietaryStatusAndReason2 prtry;
+    @XmlElement(name = "Dnd")
+    protected DeniedStatus9Choice dnd;
+    @XmlElement(name = "Canc")
+    protected CancellationStatus13Choice canc;
+
+    /**
+     * Gets the value of the pdgCxl property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link PendingStatus22Choice }
+     *     
+     */
+    public PendingStatus22Choice getPdgCxl() {
+        return pdgCxl;
+    }
+
+    /**
+     * Sets the value of the pdgCxl property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link PendingStatus22Choice }
+     *     
+     */
+    public ProcessingStatus26Choice setPdgCxl(PendingStatus22Choice value) {
+        this.pdgCxl = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the rjctd property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link RejectionOrRepairStatus24Choice }
+     *     
+     */
+    public RejectionOrRepairStatus24Choice getRjctd() {
+        return rjctd;
+    }
+
+    /**
+     * Sets the value of the rjctd property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link RejectionOrRepairStatus24Choice }
+     *     
+     */
+    public ProcessingStatus26Choice setRjctd(RejectionOrRepairStatus24Choice value) {
+        this.rjctd = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the rpr property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link RejectionOrRepairStatus20Choice }
+     *     
+     */
+    public RejectionOrRepairStatus20Choice getRpr() {
+        return rpr;
+    }
+
+    /**
+     * Sets the value of the rpr property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link RejectionOrRepairStatus20Choice }
+     *     
+     */
+    public ProcessingStatus26Choice setRpr(RejectionOrRepairStatus20Choice value) {
+        this.rpr = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the ackdAccptd property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link AcknowledgedAcceptedStatus18Choice }
+     *     
+     */
+    public AcknowledgedAcceptedStatus18Choice getAckdAccptd() {
+        return ackdAccptd;
+    }
+
+    /**
+     * Sets the value of the ackdAccptd property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link AcknowledgedAcceptedStatus18Choice }
+     *     
+     */
+    public ProcessingStatus26Choice setAckdAccptd(AcknowledgedAcceptedStatus18Choice value) {
+        this.ackdAccptd = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the prtry property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link ProprietaryStatusAndReason2 }
+     *     
+     */
+    public ProprietaryStatusAndReason2 getPrtry() {
+        return prtry;
+    }
+
+    /**
+     * Sets the value of the prtry property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ProprietaryStatusAndReason2 }
+     *     
+     */
+    public ProcessingStatus26Choice setPrtry(ProprietaryStatusAndReason2 value) {
+        this.prtry = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the dnd property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link DeniedStatus9Choice }
+     *     
+     */
+    public DeniedStatus9Choice getDnd() {
+        return dnd;
+    }
+
+    /**
+     * Sets the value of the dnd property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link DeniedStatus9Choice }
+     *     
+     */
+    public ProcessingStatus26Choice setDnd(DeniedStatus9Choice value) {
+        this.dnd = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the canc property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link CancellationStatus13Choice }
+     *     
+     */
+    public CancellationStatus13Choice getCanc() {
+        return canc;
+    }
+
+    /**
+     * Sets the value of the canc property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link CancellationStatus13Choice }
+     *     
+     */
+    public ProcessingStatus26Choice setCanc(CancellationStatus13Choice value) {
+        this.canc = value;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+}

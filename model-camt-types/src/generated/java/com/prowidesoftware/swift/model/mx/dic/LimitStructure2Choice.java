@@ -1,0 +1,97 @@
+
+package com.prowidesoftware.swift.model.mx.dic;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+
+/**
+ * Limit details of one or more limits set by the member and managed by the transaction administrator.
+ * 
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "LimitStructure2Choice", propOrder = {
+    "curLmtId",
+    "allCurLmts"
+})
+public class LimitStructure2Choice {
+
+    @XmlElement(name = "CurLmtId")
+    protected LimitIdentification5 curLmtId;
+    @XmlElement(name = "AllCurLmts")
+    protected LimitIdentification6 allCurLmts;
+
+    /**
+     * Gets the value of the curLmtId property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link LimitIdentification5 }
+     *     
+     */
+    public LimitIdentification5 getCurLmtId() {
+        return curLmtId;
+    }
+
+    /**
+     * Sets the value of the curLmtId property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link LimitIdentification5 }
+     *     
+     */
+    public LimitStructure2Choice setCurLmtId(LimitIdentification5 value) {
+        this.curLmtId = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the allCurLmts property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link LimitIdentification6 }
+     *     
+     */
+    public LimitIdentification6 getAllCurLmts() {
+        return allCurLmts;
+    }
+
+    /**
+     * Sets the value of the allCurLmts property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link LimitIdentification6 }
+     *     
+     */
+    public LimitStructure2Choice setAllCurLmts(LimitIdentification6 value) {
+        this.allCurLmts = value;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+}

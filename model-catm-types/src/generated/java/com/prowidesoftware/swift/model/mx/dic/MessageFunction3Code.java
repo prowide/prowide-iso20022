@@ -1,0 +1,111 @@
+
+package com.prowidesoftware.swift.model.mx.dic;
+
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
+
+
+/**
+ * <p>Java class for MessageFunction3Code.
+ * 
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * <pre>
+ * &lt;simpleType name="MessageFunction3Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="FAUQ"/&gt;
+ *     &lt;enumeration value="CCAQ"/&gt;
+ *     &lt;enumeration value="CMPV"/&gt;
+ *     &lt;enumeration value="DGNP"/&gt;
+ *     &lt;enumeration value="RCLQ"/&gt;
+ *     &lt;enumeration value="CCAV"/&gt;
+ *     &lt;enumeration value="BTCH"/&gt;
+ *     &lt;enumeration value="FRVA"/&gt;
+ *     &lt;enumeration value="AUTQ"/&gt;
+ *     &lt;enumeration value="FCMV"/&gt;
+ *     &lt;enumeration value="RVRA"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
+ * 
+ */
+@XmlType(name = "MessageFunction3Code")
+@XmlEnum
+public enum MessageFunction3Code {
+
+
+    /**
+     * Request for authorisation with financial capture.
+     * 
+     */
+    FAUQ,
+
+    /**
+     * Request for cancellation.
+     * 
+     */
+    CCAQ,
+
+    /**
+     * Advice for completion without financial capture.
+     * 
+     */
+    CMPV,
+
+    /**
+     * Request for diagnostic.
+     * 
+     */
+    DGNP,
+
+    /**
+     * Request for reconciliation.
+     * 
+     */
+    RCLQ,
+
+    /**
+     * Advice for cancellation.
+     * 
+     */
+    CCAV,
+
+    /**
+     * Transfer the financial data as a collection of transction.
+     * 
+     */
+    BTCH,
+
+    /**
+     * Advice for reversal with financial capture.
+     * 
+     */
+    FRVA,
+
+    /**
+     * Request for authorisation without financial capture.
+     * 
+     */
+    AUTQ,
+
+    /**
+     * Advice for completion with financial capture.
+     * 
+     */
+    FCMV,
+
+    /**
+     * Advice for reversal without financial capture.
+     * 
+     */
+    RVRA;
+
+    public String value() {
+        return name();
+    }
+
+    public static MessageFunction3Code fromValue(String v) {
+        return valueOf(v);
+    }
+
+}

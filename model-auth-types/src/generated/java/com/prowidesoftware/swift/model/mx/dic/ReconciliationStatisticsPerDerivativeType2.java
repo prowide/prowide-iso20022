@@ -1,0 +1,97 @@
+
+package com.prowidesoftware.swift.model.mx.dic;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+
+/**
+ * Detailed statistics on reconciliation per type of derivative.
+ * 
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "ReconciliationStatisticsPerDerivativeType2", propOrder = {
+    "allDerivs",
+    "outsdngDerivs"
+})
+public class ReconciliationStatisticsPerDerivativeType2 {
+
+    @XmlElement(name = "AllDerivs", required = true)
+    protected DetailedReconciliationStatistics1 allDerivs;
+    @XmlElement(name = "OutsdngDerivs", required = true)
+    protected DetailedReconciliationStatistics1 outsdngDerivs;
+
+    /**
+     * Gets the value of the allDerivs property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link DetailedReconciliationStatistics1 }
+     *     
+     */
+    public DetailedReconciliationStatistics1 getAllDerivs() {
+        return allDerivs;
+    }
+
+    /**
+     * Sets the value of the allDerivs property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link DetailedReconciliationStatistics1 }
+     *     
+     */
+    public ReconciliationStatisticsPerDerivativeType2 setAllDerivs(DetailedReconciliationStatistics1 value) {
+        this.allDerivs = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the outsdngDerivs property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link DetailedReconciliationStatistics1 }
+     *     
+     */
+    public DetailedReconciliationStatistics1 getOutsdngDerivs() {
+        return outsdngDerivs;
+    }
+
+    /**
+     * Sets the value of the outsdngDerivs property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link DetailedReconciliationStatistics1 }
+     *     
+     */
+    public ReconciliationStatisticsPerDerivativeType2 setOutsdngDerivs(DetailedReconciliationStatistics1 value) {
+        this.outsdngDerivs = value;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+}

@@ -1,0 +1,245 @@
+
+package com.prowidesoftware.swift.model.mx.dic;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+
+/**
+ * Provides additional information regarding corporate action date details.
+ * 
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "CorporateActionDateSD4", propOrder = {
+    "plcAndNm",
+    "intrmAcctgStartDt",
+    "dlistgDt",
+    "exrcPrdBegnDt",
+    "objctnDt",
+    "exclsnDt",
+    "proofOfClmFilgDt"
+})
+public class CorporateActionDateSD4 {
+
+    @XmlElement(name = "PlcAndNm", required = true)
+    protected String plcAndNm;
+    @XmlElement(name = "IntrmAcctgStartDt")
+    @XmlSchemaType(name = "date")
+    protected XMLGregorianCalendar intrmAcctgStartDt;
+    @XmlElement(name = "DlistgDt")
+    @XmlSchemaType(name = "date")
+    protected XMLGregorianCalendar dlistgDt;
+    @XmlElement(name = "ExrcPrdBegnDt")
+    @XmlSchemaType(name = "date")
+    protected XMLGregorianCalendar exrcPrdBegnDt;
+    @XmlElement(name = "ObjctnDt")
+    @XmlSchemaType(name = "date")
+    protected XMLGregorianCalendar objctnDt;
+    @XmlElement(name = "ExclsnDt")
+    @XmlSchemaType(name = "date")
+    protected XMLGregorianCalendar exclsnDt;
+    @XmlElement(name = "ProofOfClmFilgDt")
+    @XmlSchemaType(name = "date")
+    protected XMLGregorianCalendar proofOfClmFilgDt;
+
+    /**
+     * Gets the value of the plcAndNm property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getPlcAndNm() {
+        return plcAndNm;
+    }
+
+    /**
+     * Sets the value of the plcAndNm property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public CorporateActionDateSD4 setPlcAndNm(String value) {
+        this.plcAndNm = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the intrmAcctgStartDt property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public XMLGregorianCalendar getIntrmAcctgStartDt() {
+        return intrmAcctgStartDt;
+    }
+
+    /**
+     * Sets the value of the intrmAcctgStartDt property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public CorporateActionDateSD4 setIntrmAcctgStartDt(XMLGregorianCalendar value) {
+        this.intrmAcctgStartDt = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the dlistgDt property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public XMLGregorianCalendar getDlistgDt() {
+        return dlistgDt;
+    }
+
+    /**
+     * Sets the value of the dlistgDt property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public CorporateActionDateSD4 setDlistgDt(XMLGregorianCalendar value) {
+        this.dlistgDt = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the exrcPrdBegnDt property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public XMLGregorianCalendar getExrcPrdBegnDt() {
+        return exrcPrdBegnDt;
+    }
+
+    /**
+     * Sets the value of the exrcPrdBegnDt property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public CorporateActionDateSD4 setExrcPrdBegnDt(XMLGregorianCalendar value) {
+        this.exrcPrdBegnDt = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the objctnDt property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public XMLGregorianCalendar getObjctnDt() {
+        return objctnDt;
+    }
+
+    /**
+     * Sets the value of the objctnDt property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public CorporateActionDateSD4 setObjctnDt(XMLGregorianCalendar value) {
+        this.objctnDt = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the exclsnDt property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public XMLGregorianCalendar getExclsnDt() {
+        return exclsnDt;
+    }
+
+    /**
+     * Sets the value of the exclsnDt property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public CorporateActionDateSD4 setExclsnDt(XMLGregorianCalendar value) {
+        this.exclsnDt = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the proofOfClmFilgDt property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public XMLGregorianCalendar getProofOfClmFilgDt() {
+        return proofOfClmFilgDt;
+    }
+
+    /**
+     * Sets the value of the proofOfClmFilgDt property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public CorporateActionDateSD4 setProofOfClmFilgDt(XMLGregorianCalendar value) {
+        this.proofOfClmFilgDt = value;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+}
