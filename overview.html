@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<body>
+	<h1>Prowide ISO 20022</h1>
+
+	<h3>The Prowide ISO 20022 library implements the foundation classes to manage ​ISO 20022 (MX)​ messages in Java</h3>
+	<h3>This library is part of the Prowide Core open source project.</h3>
+
+	<p>The scope of this javadoc is the features distributed in the <b>pw-iso20022-SRUYYYY-version.jar</b></p>
+
+	<p>This library provides a comprehensive model for all ISO 20022 message categories. The API features include
+		parsing messages from XML format to Java, serializing Java model objects into the XML format and the conversion
+		between ISO messages and JSON.</p>
+
+	<p>The library implements the general ISO 20022 standard. Complementary packages with restricted ISO versions such
+		as SEPA, and CBPR+ are provided in the complementary, proprietary (not open source) library Prowide Integrator.</p>
+
+	<p>This library is based on some components from the Prowide Core base library. So in order to use this, you will
+		need also the dependency for the pw-swift-core jar.</p>
+
+	<p>MX classes are split in two fundamental packages:</p>
+	<ol>
+		<li><b>com.prowidesoftware.swift.mx.model.dic</b>: which contains all dictionary classes, in other words,
+			classes representing business entities which are used inside MX messages. Due to the large number of
+		    classes in this package, it is excluded from the generated javadoc.</li>
+		<li><b>com.prowidesoftware.swift.mx.model</b>: which contains classes that represent MX messages</li>
+	</ol>
+	<p>The sys subpackage includes classes for the system messages.</p>
+
+	<h4>Creating MX messages</h4>
+	<pre>
+	  MxAcmt001001 mx = new MxAcmt001001();
+	  // fill objects with setters (there is one setter per available element)
+	  String xml = mx.message();
+ 	</pre>
+
+	<h4>Parsing MX messages</h4>
+	<pre>
+	  String xml = "..."; // xml here
+	  MxAcmt001001 mx = MxAcmt001001.parse(xml);
+  	</pre>
+
+	<h2>Additional resources</h2>
+	<ol>
+		<li>Prowide Core resources: <a href="http://www.prowidesoftware.com/resources">http://www.prowidesoftware.com/resources</a></li>
+		<li>Prowide Code examples: <a href="https://github.com/prowide/prowide-core-examples">https://github.com/prowide/prowide-core-examples</a></li>
+	</ol>
+
+	<p><br>For ISO 20022 messages validation, SEPA, CBPR+, TARGET2 and other restricted ISO versions, please check the Integrator version at <a href="http://www.prowidesoftware.com/products/integrator">http://www.prowidesoftware.com/products/integrator</a></p>
+	<p>SWIFT is a trademark of <a href="www.swift.com">S.W.I.F.T. SCRL.</a></p>
+
+</body>

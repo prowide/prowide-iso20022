@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><Doc:Document xmlns:Doc="urn:swift:xsd:camt.003.001.04" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Doc:GetAcct>
+        <Doc:MsgId>
+            <Doc:Id>ABCDEFGHIJKLMNOPQRST123456789012345</Doc:Id>
+        </Doc:MsgId>
+        <Doc:ReqTp>
+            <Doc:PmtCtrl>RT01</Doc:PmtCtrl>
+        </Doc:ReqTp>
+        <Doc:AcctQryDef>
+            <Doc:QryTp>ALLL</Doc:QryTp>
+            <Doc:AcctCrit>
+                <Doc:QryNm>ABCDEFGHIJKLMNOPQRST123456789012345</Doc:QryNm>
+            </Doc:AcctCrit>
+        </Doc:AcctQryDef>
+    </Doc:GetAcct>
+</Doc:Document>

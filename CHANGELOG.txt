@@ -1,0 +1,18 @@
+-----------------------------------------------------------------------------------------------------------------------
+ Prowide ISO 20022 - CHANGELOG
+-----------------------------------------------------------------------------------------------------------------------
+
+RELEASE 9.1.1 - September 2021
+  * Removed blank lines in MX writer (marshalling)
+  * Fixed generic AbstractMX parse for system messages (xsys)
+
+RELEASE 9.1.0 - May 2020
+  * SWIFT Standard release update 2020 (live 22 November 2020)
+  * Yearly revision of deprecation phase (see http://www.prowidesoftware.com/resources/deprecation-policy)
+
+RELEASE 9.0.1 - May 2021
+  * Added a new extensible interface based model for the application headers: AppHdr
+  * Added support for the ISO Business Application Header version 2: head.001.001.02
+
+RELEASE 9.0.0 - May 2020
+  * ISO 20022 module extracted from Prowide Integrator to its own library, with its own version from now on

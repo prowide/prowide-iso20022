@@ -1,0 +1,184 @@
+
+package com.prowidesoftware.swift.model.mx.dic;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+
+/**
+ * Characteristics shared by all individual items included in the currency control message.
+ * 
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "CurrencyControlHeader1", propOrder = {
+    "msgId",
+    "creDtTm",
+    "nbOfItms",
+    "initgPty",
+    "fwdgAgt"
+})
+public class CurrencyControlHeader1 {
+
+    @XmlElement(name = "MsgId", required = true)
+    protected String msgId;
+    @XmlElement(name = "CreDtTm", required = true)
+    @XmlSchemaType(name = "dateTime")
+    protected XMLGregorianCalendar creDtTm;
+    @XmlElement(name = "NbOfItms", required = true)
+    protected String nbOfItms;
+    @XmlElement(name = "InitgPty", required = true)
+    protected PartyIdentification77 initgPty;
+    @XmlElement(name = "FwdgAgt")
+    protected BranchAndFinancialInstitutionIdentification5 fwdgAgt;
+
+    /**
+     * Gets the value of the msgId property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getMsgId() {
+        return msgId;
+    }
+
+    /**
+     * Sets the value of the msgId property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public CurrencyControlHeader1 setMsgId(String value) {
+        this.msgId = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the creDtTm property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public XMLGregorianCalendar getCreDtTm() {
+        return creDtTm;
+    }
+
+    /**
+     * Sets the value of the creDtTm property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public CurrencyControlHeader1 setCreDtTm(XMLGregorianCalendar value) {
+        this.creDtTm = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the nbOfItms property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getNbOfItms() {
+        return nbOfItms;
+    }
+
+    /**
+     * Sets the value of the nbOfItms property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public CurrencyControlHeader1 setNbOfItms(String value) {
+        this.nbOfItms = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the initgPty property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link PartyIdentification77 }
+     *     
+     */
+    public PartyIdentification77 getInitgPty() {
+        return initgPty;
+    }
+
+    /**
+     * Sets the value of the initgPty property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link PartyIdentification77 }
+     *     
+     */
+    public CurrencyControlHeader1 setInitgPty(PartyIdentification77 value) {
+        this.initgPty = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the fwdgAgt property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BranchAndFinancialInstitutionIdentification5 }
+     *     
+     */
+    public BranchAndFinancialInstitutionIdentification5 getFwdgAgt() {
+        return fwdgAgt;
+    }
+
+    /**
+     * Sets the value of the fwdgAgt property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BranchAndFinancialInstitutionIdentification5 }
+     *     
+     */
+    public CurrencyControlHeader1 setFwdgAgt(BranchAndFinancialInstitutionIdentification5 value) {
+        this.fwdgAgt = value;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+}

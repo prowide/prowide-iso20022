@@ -1,0 +1,143 @@
+
+package com.prowidesoftware.swift.model.mx.dic;
+
+import java.util.ArrayList;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+
+/**
+ * Provides acceptance status of the holding item.
+ * 
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "ReportItemStatus1Choice", propOrder = {
+    "accptd",
+    "accptdWthXcptn",
+    "rjctd"
+})
+public class ReportItemStatus1Choice {
+
+    @XmlElement(name = "Accptd")
+    @XmlSchemaType(name = "string")
+    protected NoReasonCode accptd;
+    @XmlElement(name = "AccptdWthXcptn")
+    protected List<ReportItemStatus1> accptdWthXcptn;
+    @XmlElement(name = "Rjctd")
+    protected ReportItemStatus1 rjctd;
+
+    /**
+     * Gets the value of the accptd property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link NoReasonCode }
+     *     
+     */
+    public NoReasonCode getAccptd() {
+        return accptd;
+    }
+
+    /**
+     * Sets the value of the accptd property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link NoReasonCode }
+     *     
+     */
+    public ReportItemStatus1Choice setAccptd(NoReasonCode value) {
+        this.accptd = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the accptdWthXcptn property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the accptdWthXcptn property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getAccptdWthXcptn().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link ReportItemStatus1 }
+     * 
+     * 
+     */
+    public List<ReportItemStatus1> getAccptdWthXcptn() {
+        if (accptdWthXcptn == null) {
+            accptdWthXcptn = new ArrayList<ReportItemStatus1>();
+        }
+        return this.accptdWthXcptn;
+    }
+
+    /**
+     * Gets the value of the rjctd property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link ReportItemStatus1 }
+     *     
+     */
+    public ReportItemStatus1 getRjctd() {
+        return rjctd;
+    }
+
+    /**
+     * Sets the value of the rjctd property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ReportItemStatus1 }
+     *     
+     */
+    public ReportItemStatus1Choice setRjctd(ReportItemStatus1 value) {
+        this.rjctd = value;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+    /**
+     * Adds a new item to the accptdWthXcptn list.
+     * @see #getAccptdWthXcptn()
+     * 
+     */
+    public ReportItemStatus1Choice addAccptdWthXcptn(ReportItemStatus1 accptdWthXcptn) {
+        getAccptdWthXcptn().add(accptdWthXcptn);
+        return this;
+    }
+
+}

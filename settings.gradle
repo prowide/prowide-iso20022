@@ -1,0 +1,88 @@
+rootProject.name = 'prowide-iso20022'
+
+includeBuild '../prowide-core'
+
+include 'iso20022-core'
+include 'model-common-types'
+
+include 'model-acmt-mx'
+include 'model-acmt-types'
+
+include 'model-admi-mx'
+include 'model-admi-types'
+
+include 'model-auth-mx'
+include 'model-auth-types'
+
+include 'model-caaa-mx'
+include 'model-caaa-types'
+
+include 'model-caam-mx'
+include 'model-caam-types'
+
+include 'model-camt-mx'
+include 'model-camt-types'
+
+include 'model-catm-mx'
+include 'model-catm-types'
+
+include 'model-catp-mx'
+include 'model-catp-types'
+
+include 'model-cbrf-mx'
+include 'model-cbrf-types'
+
+include 'model-colr-mx'
+include 'model-colr-types'
+
+include 'model-fxtr-mx'
+include 'model-fxtr-types'
+
+include 'model-pacs-mx'
+include 'model-pacs-types'
+
+include 'model-pain-mx'
+include 'model-pain-types'
+
+include 'model-reda-mx'
+include 'model-reda-types'
+
+include 'model-remt-mx'
+include 'model-remt-types'
+
+include 'model-secl-mx'
+include 'model-secl-types'
+
+include 'model-seev-mx'
+include 'model-seev-types'
+
+include 'model-semt-mx'
+include 'model-semt-types'
+
+include 'model-sese-mx'
+include 'model-sese-types'
+
+include 'model-seti-mx'
+include 'model-seti-types'
+
+include 'model-setr-mx'
+include 'model-setr-types'
+
+include 'model-supl-mx'
+include 'model-supl-types'
+
+include 'model-trea-mx'
+include 'model-trea-types'
+
+include 'model-tsin-mx'
+include 'model-tsin-types'
+
+include 'model-tsmt-mx'
+include 'model-tsmt-types'
+
+include 'model-tsrv-mx'
+include 'model-tsrv-types'
+
+include 'model-xsys-mx'
+include 'model-xsys-types'
+

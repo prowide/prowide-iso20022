@@ -1,0 +1,103 @@
+<message>
+    <AppHdr xmlns='urn:iso:std:iso:20022:tech:xsd:head.001.001.01'
+            xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+        <Fr>
+            <FIId>
+                <FinInstnId>
+                    <BICFI>MLCOUS33XXX</BICFI>
+                </FinInstnId>
+            </FIId>
+        </Fr>
+        <To>
+            <FIId>
+                <FinInstnId>
+                    <BICFI>MLCOUS33XXX</BICFI>
+                </FinInstnId>
+            </FIId>
+        </To>
+        <BizMsgIdr>ASDFASDF22342</BizMsgIdr>
+        <MsgDefIdr>pacs.009.001.07</MsgDefIdr>
+        <CreDt>2018-04-29T16:35:30Z</CreDt>
+    </AppHdr>
+    <Document xmlns='urn:iso:std:iso:20022:tech:xsd:pacs.009.001.07'
+              xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+        <FICdtTrf>
+            <GrpHdr>
+                <MsgId>SDFASDF2323</MsgId>
+                <CreDtTm>2018-04-30T16:35:54</CreDtTm>
+                <BtchBookg>false</BtchBookg>
+                <NbOfTxs>1</NbOfTxs>
+                <CtrlSum>234234</CtrlSum>
+                <TtlIntrBkSttlmAmt Ccy='USD'>1242</TtlIntrBkSttlmAmt>
+                <IntrBkSttlmDt>2018-05-29</IntrBkSttlmDt>
+                <SttlmInf>
+                    <SttlmMtd>INDA</SttlmMtd>
+                </SttlmInf>
+                <InstgAgt>
+                    <FinInstnId>
+                        <BICFI>SDTSJESHXXX</BICFI>
+                        <Nm>ASDFASD ASDFAS</Nm>
+                    </FinInstnId>
+                </InstgAgt>
+                <InstdAgt>
+                    <FinInstnId>
+                        <BICFI>GFMAGRA1XXX</BICFI>
+                        <Nm>ASDF AF ASDFSDF
+                            ASDFSDF
+                        </Nm>
+                    </FinInstnId>
+                </InstdAgt>
+            </GrpHdr>
+            <CdtTrfTxInf>
+                <PmtId>
+                    <InstrId>ASDFASDF</InstrId>
+                    <EndToEndId>ASDFASDF2342</EndToEndId>
+                    <TxId>223234</TxId>
+                    <ClrSysRef>SDF</ClrSysRef>
+                </PmtId>
+                <IntrBkSttlmAmt Ccy='USD'>22423</IntrBkSttlmAmt>
+                <IntrBkSttlmDt>2018-04-30</IntrBkSttlmDt>
+                <SttlmPrty>URGT</SttlmPrty>
+                <InstgAgt>
+                    <FinInstnId>
+                        <BICFI>DDPPPLP1XXX</BICFI>
+                    </FinInstnId>
+                </InstgAgt>
+                <InstdAgt>
+                    <FinInstnId>
+                        <BICFI>HHPEIT21XXX</BICFI>
+                    </FinInstnId>
+                </InstdAgt>
+                <IntrmyAgt1>
+                    <FinInstnId>
+                        <BICFI>RRPLZAJJXXX</BICFI>
+                    </FinInstnId>
+                </IntrmyAgt1>
+                <Dbtr>
+                    <FinInstnId>
+                        <BICFI>SSTYPLP1XXX</BICFI>
+                        <Nm>SDFGS SDFGD</Nm>
+                    </FinInstnId>
+                </Dbtr>
+                <CdtrAgt>
+                    <FinInstnId>
+                        <BICFI>CTZNCA8V001</BICFI>
+                        <ClrSysMmbId>
+                            <MmbId>FFFF</MmbId>
+                        </ClrSysMmbId>
+                        <Nm>FFDFDFD DFDFDF</Nm>
+                        <Othr>
+                            <Id>sdsdfgdfg33</Id>
+                        </Othr>
+                    </FinInstnId>
+                </CdtrAgt>
+                <Cdtr>
+                    <FinInstnId>
+                        <BICFI>HDSBKHPPXXX</BICFI>
+                        <Nm>SDFG SDFGSDFG</Nm>
+                    </FinInstnId>
+                </Cdtr>
+            </CdtTrfTxInf>
+        </FICdtTrf>
+    </Document>
+</message>

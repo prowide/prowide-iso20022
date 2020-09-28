@@ -1,0 +1,214 @@
+apply plugin: 'java-library-distribution'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+apply plugin: 'maven'
+
+def SRU = "2020"
+
+version = "SRU${SRU}-9.1.1"
+group 'com.prowidesoftware'
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+allprojects {
+	repositories {
+		mavenCentral()
+		jcenter()
+	}
+
+	tasks.withType(JavaCompile) {
+		options.fork = true
+		if (project.hasProperty('JDK8_HOME')) {
+			options.forkOptions.executable = "$JDK8_HOME/bin/javac"
+		}
+		options.encoding = 'UTF-8'
+	}
+
+	sourceSets.main.java.srcDirs = ['src/main/java', 'src/generated/java']
+
+	tasks.withType(Jar) {
+		manifest.attributes(
+				'Specification-Title': 'Prowide ISO 20022',
+				'Specification-Version': project.version,
+				'Specification-Vendor': "SRU${SRU}",
+				'Implementation-Title': 'Prowide ISO 20022',
+				'Implementation-Version': project.version,
+				'Implementation-Vendor': 'www.prowidesoftware.com',
+				'Built-OS': System.getProperty('os.name'),
+				'Source-Compatibility': project.sourceCompatibility,
+				'Target-Compatibility': project.targetCompatibility,
+				'Built-Date': new Date().format("yyyy-MM-dd")
+		)
+	}
+}
+
+subprojects {
+	apply plugin: 'java-library'
+
+	version = rootProject.version
+
+	dependencies {
+		implementation 'org.apache.commons:commons-lang3:3.8.1'
+		implementation 'com.google.code.gson:gson:2.8.2'
+	}
+
+	tasks.withType(Jar) {
+		archivesBaseName = "pw-iso20022-${project.name}"
+	}
+
+	sourceSets.main.java.srcDirs = ['src/main/java', 'src/generated/java']
+}
+
+configure(subprojects.findAll {it.name != 'model-common-types'}) {
+	dependencies {
+		api project(':model-common-types')
+	}
+}
+
+configure(subprojects.findAll {it.name.endsWith('-mx')}) {
+	def specificTypesProject = ':' + it.name.replace('-mx', '-types')
+	dependencies {
+		api project(':iso20022-core')
+		implementation project(specificTypesProject)
+		implementation 'org.apache.commons:commons-lang3:3.8.1'
+		implementation 'com.google.code.gson:gson:2.8.2'
+	}
+}
+
+configure(subprojects.findAll {it.name.endsWith('-types')}) {
+	javadoc.enabled = false
+}
+
+project(':iso20022-core') {
+	dependencies {
+		// included build
+		api 'com.prowidesoftware:prowide-core'
+		implementation 'org.apache.commons:commons-lang3:3.8.1'
+		implementation 'com.google.code.gson:gson:2.8.2'
+
+		compileOnly 'javax.persistence:javax.persistence-api:2.2'
+		compileOnly group: 'javax.validation', name: 'validation-api', version: '1.0.0.GA'
+
+		testImplementation 'junit:junit:4.12'
+		testImplementation group: 'com.google.guava', name: 'guava', version: '29.0-jre'
+		testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.13.2'
+		testImplementation group: 'org.xmlunit', name: 'xmlunit-core', version: '2.6.3'
+		testImplementation group: 'org.xmlunit', name: 'xmlunit-matchers', version: '2.6.3'
+		testImplementation group: 'org.xmlunit', name: 'xmlunit-assertj', version: '2.6.3'
+		testImplementation project(':model-acmt-mx')
+		testImplementation project(':model-acmt-types')
+		testImplementation project(':model-camt-mx')
+		testImplementation project(':model-camt-types')
+		testImplementation project(':model-catm-mx')
+		testImplementation project(':model-catm-types')
+		testImplementation project(':model-fxtr-mx')
+		testImplementation project(':model-fxtr-types')
+		testImplementation project(':model-pacs-mx')
+		testImplementation project(':model-pacs-types')
+		testImplementation project(':model-pain-mx')
+		testImplementation project(':model-pain-types')
+		testImplementation project(':model-sese-mx')
+		testImplementation project(':model-sese-types')
+		testImplementation project(':model-xsys-mx')
+		testImplementation project(':model-xsys-types')
+	}
+
+	tasks.withType(Jar) {
+		archivesBaseName = 'pw-iso20022-core'
+	}
+}
+
+
+def formattedDate() {
+	new Date().format('dd MMM yyyy')
+}
+
+javadoc {
+	failOnError false
+	options.overview = "overview.html"
+	options.header = "${version}"
+	options.windowTitle = "Prowide ISO 20022 API Reference"
+	options.footer="SRU${SRU}, generated ${formattedDate()}"
+
+	// this will fail when the option is not available (older JDK)
+	options.addBooleanOption("-allow-script-in-comments", true)
+
+	options.bottom = '<script src="//static.getclicky.com/js"></script><script>try{ clicky.init(101039278); }catch(e){}</script>'
+	exclude "**/dic/**"
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+	archiveClassifier = 'javadoc'
+	from javadoc.destinationDir
+}
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+	archiveClassifier = 'sources'
+	from sourceSets.main.allSource
+}
+
+task writePom {
+	doLast {
+		pom {
+			project {
+				groupId "com.prowidesoftware"
+				artifactId "${rootProject.name}"
+				version "${version}"
+				name 'Prowide ISO 20022'
+				description 'Prowide Library for ISO 20022 messages'
+				url 'http://www.prowidesoftware.com'
+				scm {
+					url 'https://github.com/prowide/prowide-iso20022.git'
+					connection 'git@github.com:prowide/prowide-iso20022.git'
+				}
+				inceptionYear '2020'
+				licenses {
+					license {
+						name 'Apache License Version 2.0'
+						url 'https://www.apache.org/licenses/LICENSE-2.0'
+						distribution 'repo'
+					}
+				}
+				developers {
+					developer {
+						id 'zubri'
+						name 'Sebastian Zubrinic'
+						email 'sebastian@prowidesoftware.com'
+					}
+				}
+				organization {
+					name 'Prowide'
+					url 'http://www.prowidesoftware.com'
+				}
+			}
+		}.writeTo("$buildDir/pom.xml")
+	}
+}
+
+distributions {
+	main {
+		contents {
+			from javadocJar
+			from sourcesJar
+			into ('lib') {
+				from (project.configurations.runtime)
+			}
+			from files('LICENSE.txt')
+			from files('CHANGELOG.txt')
+			from files("$buildDir/pom.xml")
+		}
+	}
+}
+
+distTar.enabled = false
+
+distZip {
+	dependsOn writePom
+
+	doLast {
+		if (!project.hasProperty('JDK8_HOME')) {
+			println "*** WARNING: For releases an explicit JDK8_HOME variable must be set in gradle.properties ***"
+		}
+	}
+}

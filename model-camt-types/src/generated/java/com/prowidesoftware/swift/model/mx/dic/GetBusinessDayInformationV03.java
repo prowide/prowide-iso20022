@@ -1,0 +1,110 @@
+
+package com.prowidesoftware.swift.model.mx.dic;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+
+/**
+ * Scope
+ * The GetBusinessDayInformation message is sent by a member to the transaction administrator.
+ * It is used to request information on different types of administrative data linked to the system.
+ * Usage
+ * The transaction administrator is in charge of providing the members with business information. The term business day information covers all information related to the management of the system, not related to the transactions created in the system. The type of business day information available can vary depending on the system.
+ * At any time during the operating hours of the system, the member can query the transaction administrator to get information about the static data of the system.
+ * The member can request information based on the following elements:
+ * - identification of the system
+ * - currency within the system concerned
+ * - status of the system
+ * - period of availability of a given currency linked to the system concerned (in case the system handles more than one currency)
+ * - closure information (dates when the system will be inactive and reasons for this inactivity)
+ * - event indicator (types of event and precise timing of their occurrence within the system concerned)
+ * This message will be replied to by a ReturnBusinessDayInformation message. Additional information on the generic design of the Get/Return messages can be found in the section How to Use the Cash Management Messages.
+ * 
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "GetBusinessDayInformationV03", propOrder = {
+    "msgHdr",
+    "bizDayInfQryDef"
+})
+public class GetBusinessDayInformationV03 {
+
+    @XmlElement(name = "MsgHdr", required = true)
+    protected MessageHeader2 msgHdr;
+    @XmlElement(name = "BizDayInfQryDef")
+    protected BusinessDayQuery1 bizDayInfQryDef;
+
+    /**
+     * Gets the value of the msgHdr property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link MessageHeader2 }
+     *     
+     */
+    public MessageHeader2 getMsgHdr() {
+        return msgHdr;
+    }
+
+    /**
+     * Sets the value of the msgHdr property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link MessageHeader2 }
+     *     
+     */
+    public GetBusinessDayInformationV03 setMsgHdr(MessageHeader2 value) {
+        this.msgHdr = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the bizDayInfQryDef property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BusinessDayQuery1 }
+     *     
+     */
+    public BusinessDayQuery1 getBizDayInfQryDef() {
+        return bizDayInfQryDef;
+    }
+
+    /**
+     * Sets the value of the bizDayInfQryDef property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BusinessDayQuery1 }
+     *     
+     */
+    public GetBusinessDayInformationV03 setBizDayInfQryDef(BusinessDayQuery1 value) {
+        this.bizDayInfQryDef = value;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+}
