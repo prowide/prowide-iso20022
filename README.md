@@ -33,5 +33,38 @@ SWIFT is a trademark of S.W.I.F.T. SCRL. (www.swift.com)
 
 ### Build
 
-* run "./gradlew eclipse" or "./gradlew idea" to generate your local IDE setup
-* run "./gradlew build" to build the library
+The projects uses https://github.com/prowide/prowide-core as included build, so in order to build the library you need 
+to clone the Prowide Core repository as well.
+
+For better build performance local configurations can be setup in a gradle.properties file such as:
+org.gradle.jvmargs=-Xms512m -Xmx7g
+org.gradle.parallel=true
+
+Run "./gradlew idea" or "./gradlew eclipse" to generate local settings and reload the project in your IDE
+
+To compile and test all modules:
+./gradlew build
+
+### Modules
+
+The root project creates an uber jar named *pw-iso20022-SRUYYYY-version.jar* with the library API for all ISO20022
+message categories: pacs, camt, xsys, sese, etc... So if you need to process many different message types or you 
+want to keep your dependencies simple, you can just take the single jar output. This is also the jar published in
+Maven Central.
+
+Internally the project is divided into multiple subprojects though as follows:
+* iso20022-core: main common code and base classes for all modules
+* model-common-types: common business types dictionary for many message categories
+* model-[category]-mx: the Document element classes for each specific category (entry point for each message type)
+* model-[category]-types: business types dictionary for each specific category
+
+If instead of depending on the uber jar you want to have a subset of the library for some message types you can just 
+take the base modules and the specific category modules. For instance to use ony the pacs and camt messages, you need:
+* iso20022-core -> pw-iso20022-core-SRUYYYY-version.jar
+* model-common-types -> pw-iso20022-common-types-SRUYYYY-version.jar
+* model-pacs-mx -> pw-iso20022-pacs-mx-SRUYYYY-version.jar
+* model-pacs-types -> pw-iso20022-pacs-types-SRUYYYY-version.jar
+* model-camt-mx -> pw-iso20022-camt-mx-SRUYYYY-version.jar
+* model-camt-types -> pw-iso20022-camt-types-SRUYYYY-version.jar  
+
+
