@@ -32,8 +32,8 @@ public class ExtensionEnvelope {
      * 
      * @return
      *     possible object is
-     *     {@link Object }
      *     {@link Element }
+     *     {@link Object }
      *     
      */
     public Object getAny() {
@@ -45,8 +45,8 @@ public class ExtensionEnvelope {
      * 
      * @param value
      *     allowed object is
-     *     {@link Object }
      *     {@link Element }
+     *     {@link Object }
      *     
      */
     public ExtensionEnvelope setAny(Object value) {
