@@ -76,19 +76,12 @@ public class MxParserTest {
 
 	@Test
 	public void testParseApplicationHeader_sample_payload_mq() throws IOException {
-		/*
-		 * <Ah:AppHdr xmlns:Ah="urn:swift:xsd:$ahV10">
-		<Ah:MsgRef>SCRRQ01</Ah:MsgRef>
-		<Ah:CrDate>2006-09-18T17:11:28.359</Ah:CrDate>
-		</Ah:AppHdr>
-		 */
 		AppHdr bh = parseHeaderFromSample("app_to_mqsq.xml");
 		assertNotNull(bh);
 		LegacyAppHdr h = (LegacyAppHdr) bh;
 		assertNotNull(h);
 		assertEquals("SCRRQ01", h.getMsgRef());
 		assertNotNull(h.getCrDate());
-		//assertEquals("2006-09-18T17:11:28.359", h.getCrDate());
 		assertEquals(2006, h.getCrDate().getYear());
 		assertEquals(9, h.getCrDate().getMonth());
 	}
@@ -107,6 +100,19 @@ public class MxParserTest {
 		assertEquals("Ah", info.getHeaderPrefix());
 		AppHdr h = parser.parseAppHdr();
 		assertSampleApplicationHeader(h);
+	}
+
+	@Test
+	public void testParseApplicationHeader_sample_bah() throws IOException {
+		AppHdr hdr = parseHeaderFromSample("mx_sample_bah.xml");
+		assertNotNull(hdr);
+		BusinessAppHdrV01 bah = (BusinessAppHdrV01) hdr;
+		assertEquals("T2S", bah.getFr().getFIId().getFinInstnId().getClrSysMmbId().getClrSysId().getPrtry());
+		assertEquals("ADMNUSERLUXCSDT1", bah.getFr().getFIId().getFinInstnId().getClrSysMmbId().getMmbId());
+		assertEquals("ABICUS33", bah.getTo().getFIId().getFinInstnId().getBICFI());
+		assertEquals("2012111915360885", bah.getBizMsgIdr());
+		assertEquals("seev.031.002.03", bah.getMsgDefIdr());
+		assertEquals("CSD", bah.getBizSvc());
 	}
 
 	@Test
