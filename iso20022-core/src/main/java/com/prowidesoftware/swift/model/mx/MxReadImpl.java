@@ -15,27 +15,29 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
-import com.prowidesoftware.ProwideException;
-import com.prowidesoftware.swift.io.parser.MxParser;
-import com.prowidesoftware.swift.model.MxBusinessProcess;
-import com.prowidesoftware.swift.model.MxId;
-import com.prowidesoftware.swift.utils.SafeXmlUtils;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.Validate;
-import org.xml.sax.SAXParseException;
+import java.io.StringReader;
+import java.util.concurrent.ExecutionException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.UnmarshalException;
 import javax.xml.bind.Unmarshaller;
-import javax.xml.stream.XMLEventReader;
-import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
-import javax.xml.stream.events.XMLEvent;
-import java.io.StringReader;
-import java.util.concurrent.ExecutionException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javax.xml.transform.sax.SAXSource;
+
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.Validate;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXParseException;
+import org.xml.sax.XMLReader;
+import org.xml.sax.helpers.XMLReaderFactory;
+
+import com.prowidesoftware.ProwideException;
+import com.prowidesoftware.swift.io.parser.MxParser;
+import com.prowidesoftware.swift.model.MxBusinessProcess;
+import com.prowidesoftware.swift.model.MxId;
 
 /**
  * Default implementation of the {@link MxRead} interface to parse XML strings into Mx message objects.
@@ -81,52 +83,46 @@ public class MxReadImpl implements MxRead {
 		Validate.isTrue(StringUtils.isNotBlank(xml), "xml to parse must not be null nor a blank string");
 
 		try {
-			final String unboundedXml = JaxbUtils.unbindNamespace(xml);
+			//Create the InputSource from String xml
+			InputSource is = new InputSource( new StringReader( xml ) );
+			
+			//Get the nameSpace to remove
+			MxParser.MxStructureInfo info = new MxParser(xml).analyzeMessage();
+			String nameSpaceToRemove = info.getDocumentNamespace();
+	        
+			/*---------------Document-----------------*/
+			//Create an XMLReader to use with our Document filter
+			XMLReader documentReader = XMLReaderFactory.createXMLReader();
 
-			final XMLInputFactory xif = SafeXmlUtils.inputFactory();
-			// May 2020: we cannot set namespace aware false, because xsys messages uses elements in shared namespaces
-			//xif.setProperty(XMLInputFactory.IS_NAMESPACE_AWARE, false);
-			//xif.setProperty(XMLInputFactory.IS_VALIDATING, false);
-			final XMLEventReader reader = xif.createXMLEventReader(new StringReader(unboundedXml));
+			//Set The DocumentFilter
+			DocumentHeaderFilter documentFilter = new DocumentHeaderFilter(nameSpaceToRemove);
+			documentFilter.setParent(documentReader);
+			
+			//Create a SAXSource specifying the Document filter
+			SAXSource documentSource = new SAXSource(documentFilter, is);
 
-			// only the Document and AppHdr are parsed here, ignoring any optional wrapper content
 			AbstractMX mx = null;
 			AppHdr appHdr = null;
+			
+			mx = parseSAXDocument(documentSource, targetClass, classes);
 
-			XMLEvent e;
+			/*---------------Header-----------------*/
+			if(info.containsHeader()) {
+				//Create an XMLReader to use with our Header filter
+				XMLReader headerReader = XMLReaderFactory.createXMLReader();
 
-			// loop though the xml stream
-			while ( (e = reader.peek()) != null ) {
-
-				if (isElementStart(e, MxParser.DOCUMENT_LOCALNAME)) {
-
-					mx = parseDocument(reader, targetClass, classes);
-
-				} else if (isElementStart(e, AppHdr.HEADER_LOCALNAME)) {
-
-					MxParser.MxStructureInfo info = new MxParser(xml).analyzeMessage();
-
-					appHdr = parseHeader(reader, info);
-
-					// if not able to parse the header continue
-					if (appHdr == null) {
-						reader.next();
-					}
-
-				} else {
-					reader.next();
-				}
+				//Set The HeaderFilter
+				DocumentHeaderFilter headerFilter = new DocumentHeaderFilter(null);
+				headerFilter.setParent(headerReader);
+				
+				//Create a SAXSource specifying the Header filter
+				is = new InputSource( new StringReader( xml ) );
+				SAXSource headerSource = new SAXSource(headerFilter, is);
+		        
+				appHdr = parseSaxHeader(headerSource, info);	
 			}
-
-	        /*
-			 * Sep 2017: alternative implementation using the MxParser stripDocument
-			 * current implementation with xml reader is more flexible when the XML is not well-formed, this one can
-			 * produce NPE. See MX read test with not well-formed messages.
-			 *
-			MxParser parser = new MxParser(xml2);
-        	AbstractMX mx = (AbstractMX) jaxbUnmarshaller.unmarshal(new StreamSource(new StringReader(parser.stripDocument())), targetClass).getValue();
-	        */
-
+	
+			//Che if not null and set the appheader
 			if (mx != null && appHdr != null) {
 				mx.setAppHdr(appHdr);
 			}
@@ -138,28 +134,24 @@ public class MxReadImpl implements MxRead {
 		}
 	}
 
-	private static boolean isElementStart(XMLEvent e, String localName) {
-		return e.isStartElement() && e.asStartElement().getName().getLocalPart().equals(localName);
-	}
-
-	private static AbstractMX parseDocument(XMLEventReader reader, Class<? extends AbstractMX> targetClass, Class<?>[] classes) throws JAXBException, ExecutionException {
+	private static AbstractMX parseSAXDocument(SAXSource source, Class<? extends AbstractMX> targetClass, Class<?>[] classes) throws JAXBException, ExecutionException {
 		JAXBContext jaxbContext = JaxbContextLoader.INSTANCE.get(targetClass, classes);
 		final Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-		return unmarshaller.unmarshal(reader, targetClass).getValue();
+		return unmarshaller.unmarshal(source, targetClass).getValue();
 	}
 
-	private static AppHdr parseHeader(XMLEventReader reader, MxParser.MxStructureInfo info) {
+	private static AppHdr parseSaxHeader(SAXSource source, MxParser.MxStructureInfo info) {
 		if (info.containsLegacyHeader().isPresent() && info.containsLegacyHeader().get()) {
 			// parse legacy AH
-			return (LegacyAppHdr) JaxbUtils.parse(LegacyAppHdr.class, reader, LegacyAppHdr._classes);
+			return (LegacyAppHdr) JaxbUtils.parseSAX(LegacyAppHdr.class, source, LegacyAppHdr._classes);
 
 		} else if (StringUtils.equals(info.getHeaderNamespace(), BusinessAppHdrV02.NAMESPACE)) {
 			// parse BAH version 2
-			return (BusinessAppHdrV02) JaxbUtils.parse(BusinessAppHdrV02.class, reader, BusinessAppHdrV02._classes);
+			return (BusinessAppHdrV02) JaxbUtils.parseSAX(BusinessAppHdrV02.class, source, BusinessAppHdrV02._classes);
 
 		} else {
 			// by default try to parse to BAH version 1
-			return  (BusinessAppHdrV01) JaxbUtils.parse(BusinessAppHdrV01.class, reader, BusinessAppHdrV01._classes);
+			return (BusinessAppHdrV01) JaxbUtils.parseSAX(BusinessAppHdrV01.class, source, BusinessAppHdrV01._classes);
 		}
 	}
 

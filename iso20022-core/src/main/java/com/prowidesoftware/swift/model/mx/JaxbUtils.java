@@ -15,15 +15,14 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
-import com.prowidesoftware.ProwideException;
-import com.prowidesoftware.swift.utils.SafeXmlUtils;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.Validate;
-import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
-import org.xml.sax.SAXParseException;
-import org.xml.sax.XMLReader;
-import org.xml.sax.helpers.XMLFilterImpl;
+import java.io.StringReader;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
+import java.util.logging.Level;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -37,14 +36,18 @@ import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.events.StartElement;
 import javax.xml.stream.events.XMLEvent;
 import javax.xml.stream.util.EventReaderDelegate;
-import java.io.StringReader;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.concurrent.ExecutionException;
-import java.util.logging.Level;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import javax.xml.transform.sax.SAXSource;
+
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.Validate;
+import org.xml.sax.Attributes;
+import org.xml.sax.SAXException;
+import org.xml.sax.SAXParseException;
+import org.xml.sax.XMLReader;
+import org.xml.sax.helpers.XMLFilterImpl;
+
+import com.prowidesoftware.ProwideException;
+import com.prowidesoftware.swift.utils.SafeXmlUtils;
 
 /**
  * Helper jaxb based parse methods using the {@link JaxbContextLoader}
@@ -53,6 +56,44 @@ import java.util.regex.Pattern;
 class JaxbUtils {
     private static final java.util.logging.Logger log = java.util.logging.Logger.getLogger(JaxbUtils.class.getName());
 
+    /**
+     * Parse an object from an event reader.
+     *
+     * <p>IMPORTANT: the event must be positioned at the element to parse. And the xml must be filtered without ISO
+     * namespaces and prefixes.
+     *
+     * @param targetClass the class of the object being parsed
+     * @param reader the event reader, must be positioned to the start element to parse
+     * @param classes the object classes to build a jaxb context
+     * @return parsed element or null if cannot be parsed
+     * @throws ProwideException if severe errors occur during parse
+     */
+    public static Object parseSAX(final Class targetClass, SAXSource source, final Class<?>[] classes) {
+        Validate.notNull(targetClass, "target class to parse must not be null");
+        Validate.notNull(source, "SAXSource to parse must not be null");
+        Validate.notNull(classes, "object model classes aray must not be null");
+
+        try {
+            JAXBContext context = JaxbContextLoader.INSTANCE.get(targetClass, classes);
+            final Unmarshaller unmarshaller = context.createUnmarshaller();
+            return unmarshaller.unmarshal(source, targetClass).getValue();
+
+        } catch (JAXBException|ExecutionException e) {
+            if (e instanceof UnmarshalException) {
+                final Throwable cause = e.getCause();
+                if (cause instanceof SAXParseException) {
+                    SAXParseException spe = (SAXParseException) cause;
+                    throw new ProwideException("Error parsing XML at line "+spe.getLineNumber() +", column "+spe.getColumnNumber(), cause);
+                } else {
+                    throw new ProwideException("Error parsing XML", cause);
+                }
+            }
+            log.severe("An error occurred while reading XML: " + e.getMessage());
+            log.log(Level.FINEST, "Read exception while parsing "+source, e);
+        }
+        return null;
+    }
+    
     /**
      * Parse an object from an event reader.
      *
