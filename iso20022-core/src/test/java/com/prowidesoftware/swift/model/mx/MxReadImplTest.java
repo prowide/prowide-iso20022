@@ -33,6 +33,93 @@ import com.prowidesoftware.swift.utils.Lib;
 
 public class MxReadImplTest {
 
+	@Test
+	public void testPacs002_With_CDATA() throws IOException {
+		final String xml = Lib.readResource("pacs.002-CDATA.xml");
+		MxPacs00200103 mx = (MxPacs00200103) MxReadImpl.parse(MxPacs00200103.class, xml, MxPacs00200103._classes);
+
+		//System.out.println(mx.message());
+		assertNotNull(mx);
+		assertEquals("0c070cd114934bf398e6a16d81b2d129", mx.getFIToFIPmtStsRpt().getGrpHdr().getMsgId());
+		assertEquals("UNKNOWN", mx.getFIToFIPmtStsRpt().getOrgnlGrpInfAndSts().getOrgnlMsgId());
+
+		assertNotNull(mx.getAppHdr());
+		assertNotNull(mx.getAppHdr().from());
+		assertEquals("11de568fd1754cb7b2fbbb3dd238ff16", mx.getAppHdr().reference());
+		BusinessAppHdrV01 appHeader = (BusinessAppHdrV01) mx.getAppHdr();
+		assertEquals(appHeader.getFr().getFIId().getFinInstnId().getBICFI(), "TKZHCHZ0");
+	}
+
+	@Test
+	public void testPacs002_With_CDATA_ReadInstance() throws IOException {
+		String xml = Lib.readResource("pacs.002-CDATA.xml");
+		MxPacs00200103 mx = (MxPacs00200103) new MxReadImpl().read(MxPacs00200103.class, xml, MxPacs00200103._classes);
+		assertNotNull(mx);
+		assertNotNull(mx.getAppHdr());
+		assertEquals("11de568fd1754cb7b2fbbb3dd238ff16", mx.getAppHdr().reference());
+		assertEquals("UNKNOWN", mx.getFIToFIPmtStsRpt().getOrgnlGrpInfAndSts().getOrgnlMsgId());
+	}
+
+
+
+	@Test
+	public void testPacs002_With_CDATA_And_Multiple_Namespace() throws IOException {
+		final String xml = Lib.readResource("pacs.002-CDATA-multiple-namespace.xml");
+		MxPacs00200103 mx = (MxPacs00200103) MxReadImpl.parse(MxPacs00200103.class, xml, MxPacs00200103._classes);
+
+		//System.out.println(mx.message());
+		assertNotNull(mx);
+		assertEquals("0c070cd114934bf398e6a16d81b2d129", mx.getFIToFIPmtStsRpt().getGrpHdr().getMsgId());
+
+		assertNull(mx.getAppHdr());
+	}
+	
+	@Test
+	public void testPacs002_With_CDATA_And_NameSpace_Whit_NO_Prefix() throws IOException {
+		final String xml = Lib.readResource("pacs.002-CDATA-namespace-noprefix.xml");
+		MxPacs00200103 mx = (MxPacs00200103) MxReadImpl.parse(MxPacs00200103.class, xml, MxPacs00200103._classes);
+		
+		assertNotNull(mx);
+		assertEquals("0c070cd114934bf398e6a16d81b2d129", mx.getFIToFIPmtStsRpt().getGrpHdr().getMsgId());
+
+		assertNull(mx.getAppHdr());
+	}
+
+	@Test
+	public void testPacs002_With_CDATA_And_NO_NameSpace() throws IOException {
+		final String xml = Lib.readResource("pacs.002-CDATA-nonamespace.xml");
+		MxPacs00200103 mx = (MxPacs00200103) MxReadImpl.parse(MxPacs00200103.class, xml, MxPacs00200103._classes);
+		
+		assertNotNull(mx);
+		assertEquals("0c070cd114934bf398e6a16d81b2d129", mx.getFIToFIPmtStsRpt().getGrpHdr().getMsgId());
+
+		assertNull(mx.getAppHdr());
+	}
+	
+	@Test
+	public void testPacs002_With_CDATA_And_Document_Wrapper() throws IOException {
+		final String xml = Lib.readResource("pacs.002-CDATA-with-documentWrapper.xml");
+		MxPacs00200103 mx = (MxPacs00200103) MxReadImpl.parse(MxPacs00200103.class, xml, MxPacs00200103._classes);
+		
+		assertNotNull(mx);
+		assertEquals("0c070cd114934bf398e6a16d81b2d129", mx.getFIToFIPmtStsRpt().getGrpHdr().getMsgId());
+
+		assertNull(mx.getAppHdr());
+	}
+	
+	@Test
+	public void testPacs002_With_CDATA_And_Header() throws IOException {
+		final String xml = Lib.readResource("pacs.002-CDATA-with-header.xml");
+
+		MxPacs00200103 mx = (MxPacs00200103) MxReadImpl.parse(MxPacs00200103.class, xml, MxPacs00200103._classes);
+		assertNotNull(mx);
+		assertEquals("0c070cd114934bf398e6a16d81b2d129", mx.getFIToFIPmtStsRpt().getGrpHdr().getMsgId());
+
+		assertNotNull(mx.getAppHdr());
+		LegacyAppHdr ah = (LegacyAppHdr) mx.getAppHdr();
+		assertEquals("11308917", ah.getMsgRef());
+	}
+
 	final String camtSample = "<Doc:Document xmlns:Doc=\"urn:swift:xsd:camt.003.001.04\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n"
 			+ "    <Doc:GetAcct>\n"
 			+ "        <Doc:MsgId>\n"
@@ -49,73 +136,6 @@ public class MxReadImplTest {
 			+ "        </Doc:AcctQryDef>\n"
 			+ "    </Doc:GetAcct>\n"
 			+ "</Doc:Document>\n";
-
-	@Test
-	public void testPacs002_With_CDATA() throws IOException {
-		final String xml = Lib.readResource("pacs.002-CDATA.xml");
-		MxPacs00200103 mx = (MxPacs00200103) MxReadImpl.parse(MxPacs00200103.class, xml, MxPacs00200103._classes);
-		
-		assertNotNull(mx);
-		assertNotNull(mx.getAppHdr());
-		assertNotNull(mx.getAppHdr().from());
-		
-		
-		BusinessAppHdrV01 appHeader = (BusinessAppHdrV01) mx.getAppHdr();	
-		assertEquals(appHeader.getFr().getFIId().getFinInstnId().getBICFI(), "TKZHCHZ0");
-		//System.out.println(mx.message());
-		assertEquals("0c070cd114934bf398e6a16d81b2d129", mx.getFIToFIPmtStsRpt().getGrpHdr().getMsgId());
-	}
-	
-	@Test
-	public void testPacs002_With_CDATA_And_Mutiple_NameSpace() throws IOException {
-		final String xml = Lib.readResource("pacs.002-CDATA-multiple-namespace.xml");
-		MxPacs00200103 mx = (MxPacs00200103) MxReadImpl.parse(MxPacs00200103.class, xml, MxPacs00200103._classes);
-		
-		assertNotNull(mx);
-		assertNull(mx.getAppHdr());
-		//System.out.println(mx.message());
-		assertEquals("0c070cd114934bf398e6a16d81b2d129", mx.getFIToFIPmtStsRpt().getGrpHdr().getMsgId());
-	}
-	
-	@Test
-	public void testPacs002_With_CDATA_And_NameSpace_Whit_NO_Prefix() throws IOException {
-		final String xml = Lib.readResource("pacs.002-CDATA-namespace-noprefix.xml");
-		MxPacs00200103 mx = (MxPacs00200103) MxReadImpl.parse(MxPacs00200103.class, xml, MxPacs00200103._classes);
-		
-		assertNotNull(mx);
-		assertEquals("0c070cd114934bf398e6a16d81b2d129", mx.getFIToFIPmtStsRpt().getGrpHdr().getMsgId());
-	}
-
-	
-	@Test
-	public void testPacs002_With_CDATA_And_NO_NameSpace() throws IOException {
-		final String xml = Lib.readResource("pacs.002-CDATA-nonamespace.xml");
-		MxPacs00200103 mx = (MxPacs00200103) MxReadImpl.parse(MxPacs00200103.class, xml, MxPacs00200103._classes);
-		
-		assertNotNull(mx);
-		assertEquals("0c070cd114934bf398e6a16d81b2d129", mx.getFIToFIPmtStsRpt().getGrpHdr().getMsgId());
-	}
-	
-	@Test
-	public void testPacs002_With_CDATA_And_Document_Wrapper() throws IOException {
-		final String xml = Lib.readResource("pacs.002-CDATA-with-documentWrapper.xml");
-		MxPacs00200103 mx = (MxPacs00200103) MxReadImpl.parse(MxPacs00200103.class, xml, MxPacs00200103._classes);
-		
-		assertNotNull(mx);
-		assertEquals("0c070cd114934bf398e6a16d81b2d129", mx.getFIToFIPmtStsRpt().getGrpHdr().getMsgId());
-	}
-	
-	@Test
-	public void testPacs002_With_CDATA_And_Header() throws IOException {
-		final String xml = Lib.readResource("pacs.002-CDATA-with-header.xml");
-
-		MxPacs00200103 mx = (MxPacs00200103) MxReadImpl.parse(MxPacs00200103.class, xml, MxPacs00200103._classes);
-		assertNotNull(mx);
-		assertNotNull(mx.getAppHdr());
-		assertEquals("0c070cd114934bf398e6a16d81b2d129", mx.getFIToFIPmtStsRpt().getGrpHdr().getMsgId());
-	}
-
-
 	
     @Test
     public void testReadStringAbstractMXStringClassArrayDevelopment() {
@@ -488,9 +508,9 @@ public class MxReadImplTest {
 	/**
 	 * Read is expected to fail because of malformed xml
 	 */
-	@Test(expected=RuntimeException.class)
+	@Test
 	public void readMalformedXMl() {
-		MxCamt00300104.parse("<very></bad>");
+		assertNull(MxCamt00300104.parse("<very></bad>"));
 	}
 
 	/**
@@ -808,8 +828,8 @@ public class MxReadImplTest {
 				"    </Doc:xsys.002.001.01>\n" +
 				"</Doc:Document>";
 		MxXsys00200101 mx = (MxXsys00200101) MxReadImpl.parse(MxXsys00200101.class, xml, MxXsys00200101._classes);
-		assertNotNull(mx);
 		//System.out.println(mx.message());
+		assertNotNull(mx);
 		assertEquals("091203BANKBEBBAXXX2222123456", mx.getXsys00200101().getAuthstnNtfctn().getSnFRef());
 	}
 
@@ -871,17 +891,6 @@ public class MxReadImplTest {
 				+ "</message>";
 		MxCatm00400102 mx = (MxCatm00400102) new MxReadImpl().read(MxCatm00400102.class, xml, MxCatm00400102._classes);
 		assertNull(mx);
-	}
-
-	@Ignore("CDATA")
-	@Test
-	public void testParsePacs002_CDATA() throws IOException {
-		String xml = Lib.readResource("pacs.002-CDATA.xml");
-		MxPacs00200103 mx = (MxPacs00200103) new MxReadImpl().read(MxPacs00200103.class, xml, MxCatm00400102._classes);
-		assertNotNull(mx);
-		assertNotNull(mx.getAppHdr());
-		assertEquals("11de568fd1754cb7b2fbbb3dd238ff16", mx.getAppHdr().reference());
-		assertEquals("UNKNOWN", mx.getFIToFIPmtStsRpt().getOrgnlGrpInfAndSts().getOrgnlMsgId());
 	}
 
 }

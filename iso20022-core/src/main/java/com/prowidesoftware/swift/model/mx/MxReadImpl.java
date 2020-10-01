@@ -61,7 +61,7 @@ import com.prowidesoftware.swift.model.MxId;
  * </ul>
  *
  * <p>This is the default implementation used for the direct parse calls in MX messages. You can inject your own in
- * the alternative parsing methods accepting impementations of {@link MxRead}.
+ * the alternative parsing methods accepting implementations of {@link MxRead}.
  *
  * @since 9.0
  */
@@ -76,6 +76,7 @@ public class MxReadImpl implements MxRead {
 
 	/**
 	 * Static parse implementation of {@link MxRead#read(Class, String, Class[])}
+	 * @param xml the XML to parse, should contain the Document, and optional AppHdr and any type of wrapper elements
 	 * @since 8.0.4
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
@@ -86,33 +87,47 @@ public class MxReadImpl implements MxRead {
 			//Create the InputSource from String xml
 			InputSource is = new InputSource( new StringReader( xml ) );
 			
-			//Get the nameSpace to remove
+			// Analise the type of XML content to parse
 			MxParser.MxStructureInfo info = new MxParser(xml).analyzeMessage();
-			String nameSpaceToRemove = info.getDocumentNamespace();
-	        
-			/*---------------Document-----------------*/
-			//Create an XMLReader to use with our Document filter
-			XMLReader documentReader = XMLReaderFactory.createXMLReader();
-
-			//Set The DocumentFilter
-			DocumentHeaderFilter documentFilter = new DocumentHeaderFilter(nameSpaceToRemove, MxParser.DOCUMENT_LOCALNAME);
-			documentFilter.setParent(documentReader);
-			
-			//Create a SAXSource specifying the Document filter
-			SAXSource documentSource = new SAXSource(documentFilter, is);
 
 			AbstractMX mx = null;
 			AppHdr appHdr = null;
-			
-			mx = parseSAXDocument(documentSource, targetClass, classes);
+
+			/*---------------Document-----------------*/
+
+			if (info.containsDocument()) {
+
+				//Create an XMLReader to use with our Document filter
+				XMLReader documentReader = XMLReaderFactory.createXMLReader();
+
+				//Set The DocumentFilter
+				/* When parsing the Document for an MX, we have to unbind the main message namespace. The filter will
+				 * extract the Document element from the source XML and will unbind the elements at the same time. This is
+				 * necessary because the generated jaxb model for element types is shared and not bounded to any specific
+				 * message type. Meaning we don't have duplicated type classes for each message they appear in, instead we
+				 * have single non-repetitive types with no namespace.
+				 */
+				String nameSpaceToRemove = info.getDocumentNamespace();
+				NamespaceAndElementFilter documentFilter = new NamespaceAndElementFilter(nameSpaceToRemove, MxParser.DOCUMENT_LOCALNAME);
+				documentFilter.setParent(documentReader);
+
+				//Create a SAXSource specifying the Document filter
+				SAXSource documentSource = new SAXSource(documentFilter, is);
+
+				mx = parseSAXDocument(documentSource, targetClass, classes);
+			}
 
 			/*---------------Header-----------------*/
-			if(info.containsHeader()) {
+
+			if (info.containsHeader()) {
+
 				//Create an XMLReader to use with our Header filter
 				XMLReader headerReader = XMLReaderFactory.createXMLReader();
 
 				//Set The HeaderFilter
-				DocumentHeaderFilter headerFilter = new DocumentHeaderFilter(null, AppHdr.HEADER_LOCALNAME);
+				// for the header we do not filter the namespace
+				String nameSpaceToRemove = info.getHeaderNamespace();
+				NamespaceAndElementFilter headerFilter = new NamespaceAndElementFilter(nameSpaceToRemove, AppHdr.HEADER_LOCALNAME);
 				headerFilter.setParent(headerReader);
 				
 				//Create a SAXSource specifying the Header filter
@@ -175,6 +190,7 @@ public class MxReadImpl implements MxRead {
 			throw new ProwideException("Error parsing message: "+ e.getMessage());
 		}
 		log.severe("An error occurred while reading XML: " + e.getMessage());
+		e.printStackTrace();
 		return null;
 	}
 
