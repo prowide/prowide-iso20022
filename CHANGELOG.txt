@@ -2,7 +2,7 @@
  Prowide ISO 20022 - CHANGELOG
 -----------------------------------------------------------------------------------------------------------------------
 
-SNAPSHOT 9.1.2
+SNAPSHOT 9.1.2 (9.1.1u1)
   * Internal SCM refactor for OS release
   * Removed the CopyableTo implementation from the generated model
 

@@ -28,11 +28,11 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 public class SwSecCrypto {
 
     @XmlElementRefs({
-        @XmlElementRef(name = "CryptoInternal", namespace = "urn:swift:snl:ns.SwSec", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "CryptoUserInfo", namespace = "urn:swift:snl:ns.SwSec", type = JAXBElement.class, required = false),
         @XmlElementRef(name = "CryptoInfo", namespace = "urn:swift:snl:ns.SwSec", type = JAXBElement.class, required = false),
         @XmlElementRef(name = "CryptoDescriptor", namespace = "urn:swift:snl:ns.SwSec", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "CryptoControl", namespace = "urn:swift:snl:ns.SwSec", type = JAXBElement.class, required = false)
+        @XmlElementRef(name = "CryptoUserInfo", namespace = "urn:swift:snl:ns.SwSec", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "CryptoControl", namespace = "urn:swift:snl:ns.SwSec", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "CryptoInternal", namespace = "urn:swift:snl:ns.SwSec", type = JAXBElement.class, required = false)
     })
     protected List<JAXBElement<?>> content;
 
@@ -64,11 +64,11 @@ public class SwSecCrypto {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link JAXBElement }{@code <}{@link SwSecMixedAny }{@code >}
-     * {@link JAXBElement }{@code <}{@link SwSecMixedAny }{@code >}
      * {@link JAXBElement }{@code <}{@link SwSecCryptoInfo }{@code >}
-     * {@link JAXBElement }{@code <}{@link SwSecCryptoControl }{@code >}
      * {@link JAXBElement }{@code <}{@link SwSecCryptoDescriptor }{@code >}
+     * {@link JAXBElement }{@code <}{@link SwSecMixedAny }{@code >}
+     * {@link JAXBElement }{@code <}{@link SwSecCryptoControl }{@code >}
+     * {@link JAXBElement }{@code <}{@link SwSecMixedAny }{@code >}
      * 
      * 
      */

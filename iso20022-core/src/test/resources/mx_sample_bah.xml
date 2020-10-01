@@ -4,16 +4,12 @@
     <Fr>
         <FIId>
             <FinInstnId>
-                <BICFI>FOOCUS3NXXX</BICFI>
                 <ClrSysMmbId>
                     <ClrSysId>
                         <Prtry>T2S</Prtry>
                     </ClrSysId>
                     <MmbId>ADMNUSERLUXCSDT1</MmbId>
                 </ClrSysMmbId>
-                <Othr>
-                    <Id>FOOTXE2SXXX</Id>
-                </Othr>
             </FinInstnId>
         </FIId>
     </Fr>
@@ -21,9 +17,6 @@
         <FIId>
             <FinInstnId>
                 <BICFI>ABICUS33</BICFI>
-                <Othr>
-                    <Id>AARBDE5W100</Id>
-                </Othr>
             </FinInstnId>
         </FIId>
     </To>
