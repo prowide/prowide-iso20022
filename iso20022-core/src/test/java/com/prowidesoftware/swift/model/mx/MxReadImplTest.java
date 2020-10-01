@@ -57,6 +57,11 @@ public class MxReadImplTest {
 		
 		assertNotNull(mx);
 		assertNotNull(mx.getAppHdr());
+		assertNotNull(mx.getAppHdr().from());
+		
+		
+		BusinessAppHdrV01 appHeader = (BusinessAppHdrV01) mx.getAppHdr();	
+		assertEquals(appHeader.getFr().getFIId().getFinInstnId().getBICFI(), "TKZHCHZ0");
 		//System.out.println(mx.message());
 		assertEquals("0c070cd114934bf398e6a16d81b2d129", mx.getFIToFIPmtStsRpt().getGrpHdr().getMsgId());
 	}

@@ -1,61 +1,78 @@
+/*
+ * Copyright 2006-2020 Prowide
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.prowidesoftware.swift.model.mx;
-import org.apache.commons.lang3.StringUtils;
+
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.XMLFilterImpl;
 
-import com.prowidesoftware.swift.io.parser.MxParser;
+/**
+ * @since 9.1.2
+ */
+class DocumentHeaderFilter extends XMLFilterImpl {
 
-public class DocumentHeaderFilter extends XMLFilterImpl {
-
-	
-    private String usedNamespaceUri;
     private String namespaceUriToRemove;
-    private boolean isInDocument = false;
-    private boolean isInHeader = false;
+    private boolean isAnElementToPropagate = false;    
+    private String localNameToPropagate;
     
-    public DocumentHeaderFilter(String nameSpaceToRemove) {
+    /**
+     * @param nameSpaceToRemove null if you don't want to remove namespace
+     * @param localName the xml's element to propagate
+     * @since 9.1.2
+     */
+    public DocumentHeaderFilter(String nameSpaceToRemove, String localName) {
         super();
         namespaceUriToRemove = nameSpaceToRemove;
+        localNameToPropagate = localName;
     }
 
     @Override
-    public void startElement(String nameSpace, String localName, String prefix,
-            Attributes attributes) throws SAXException {
+    public void startElement(String nameSpace, String localName, String prefix, Attributes attributes) throws SAXException {
 
-    	//Inicio del Document
-    	if(localName.equals(MxParser.DOCUMENT_LOCALNAME)) {
-    		isInDocument=true;
-    	//Inicio del Header
-    	} else if(localName.equals(AppHdr.HEADER_LOCALNAME)) {
-    		isInHeader=true;
+    	if(localName.equals(localNameToPropagate)) {
+    		isAnElementToPropagate=true;
     	}
     	
-    	if(isInDocument||isInHeader) {
-    		super.startElement(this.usedNamespaceUri, localName, prefix, attributes);
+    	if(isAnElementToPropagate) {
+    		if(localName.equals(localNameToPropagate) && namespaceUriToRemove == null) {
+    			super.startElement(nameSpace, localName, prefix, attributes);	
+    		} else {
+    			super.startElement("", localName, prefix, attributes);	
+    		}
     	}
     }
 
     @Override
     public void endElement(String nameSpace, String localName, String prefix) throws SAXException {    	
      	
-    	//Si esta en Document o en Header
-    	if(isInDocument || isInHeader) {
-    		super.endElement(this.usedNamespaceUri, localName, prefix);
+    	if(isAnElementToPropagate) {
+    		if(localName.equals(localNameToPropagate) && namespaceUriToRemove == null) {
+    			super.endElement(nameSpace, localName, prefix);	
+    		} else {
+    			super.endElement("", localName, prefix);	
+    		}
     	} 
     	
-    	//Si es el final de Document o el final del Header, no propago mas.
-    	if(localName.equals(MxParser.DOCUMENT_LOCALNAME)) {
-    		isInDocument=false;
-    	} else if(localName.equals(AppHdr.HEADER_LOCALNAME)) {
-    		isInHeader=false;
+    	if(localName.equals(localNameToPropagate)) {
+    		isAnElementToPropagate=false;
     	}
-        
     }
 
     @Override
     public void startPrefixMapping(String prefix, String url)throws SAXException {
-		//namespaceUriToRemove tiene valor cuando el filtro es para Document
 		if(namespaceUriToRemove!=null) {
 	    	if(!url.toLowerCase().equals(namespaceUriToRemove)) {
 	    		super.startPrefixMapping(prefix, url);

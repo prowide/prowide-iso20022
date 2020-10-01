@@ -95,7 +95,7 @@ public class MxReadImpl implements MxRead {
 			XMLReader documentReader = XMLReaderFactory.createXMLReader();
 
 			//Set The DocumentFilter
-			DocumentHeaderFilter documentFilter = new DocumentHeaderFilter(nameSpaceToRemove);
+			DocumentHeaderFilter documentFilter = new DocumentHeaderFilter(nameSpaceToRemove, MxParser.DOCUMENT_LOCALNAME);
 			documentFilter.setParent(documentReader);
 			
 			//Create a SAXSource specifying the Document filter
@@ -112,7 +112,7 @@ public class MxReadImpl implements MxRead {
 				XMLReader headerReader = XMLReaderFactory.createXMLReader();
 
 				//Set The HeaderFilter
-				DocumentHeaderFilter headerFilter = new DocumentHeaderFilter(null);
+				DocumentHeaderFilter headerFilter = new DocumentHeaderFilter(null, AppHdr.HEADER_LOCALNAME);
 				headerFilter.setParent(headerReader);
 				
 				//Create a SAXSource specifying the Header filter
@@ -134,12 +134,18 @@ public class MxReadImpl implements MxRead {
 		}
 	}
 
+	/**
+	 * @since 9.1.2
+	 */
 	private static AbstractMX parseSAXDocument(SAXSource source, Class<? extends AbstractMX> targetClass, Class<?>[] classes) throws JAXBException, ExecutionException {
 		JAXBContext jaxbContext = JaxbContextLoader.INSTANCE.get(targetClass, classes);
 		final Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
 		return unmarshaller.unmarshal(source, targetClass).getValue();
 	}
 
+	/**
+	 * @since 9.1.2
+	 */
 	private static AppHdr parseSaxHeader(SAXSource source, MxParser.MxStructureInfo info) {
 		if (info.containsLegacyHeader().isPresent() && info.containsLegacyHeader().get()) {
 			// parse legacy AH

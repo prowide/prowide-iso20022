@@ -63,12 +63,14 @@ class JaxbUtils {
      * namespaces and prefixes.
      *
      * @param targetClass the class of the object being parsed
-     * @param reader the event reader, must be positioned to the start element to parse
+     * @param source the SaxSource to parse
      * @param classes the object classes to build a jaxb context
      * @return parsed element or null if cannot be parsed
      * @throws ProwideException if severe errors occur during parse
+     * 
+     * @since 9.1.2
      */
-    public static Object parseSAX(final Class targetClass, SAXSource source, final Class<?>[] classes) {
+    static Object parseSAX(final Class targetClass, SAXSource source, final Class<?>[] classes) {
         Validate.notNull(targetClass, "target class to parse must not be null");
         Validate.notNull(source, "SAXSource to parse must not be null");
         Validate.notNull(classes, "object model classes aray must not be null");
@@ -90,44 +92,6 @@ class JaxbUtils {
             }
             log.severe("An error occurred while reading XML: " + e.getMessage());
             log.log(Level.FINEST, "Read exception while parsing "+source, e);
-        }
-        return null;
-    }
-    
-    /**
-     * Parse an object from an event reader.
-     *
-     * <p>IMPORTANT: the event must be positioned at the element to parse. And the xml must be filtered without ISO
-     * namespaces and prefixes.
-     *
-     * @param targetClass the class of the object being parsed
-     * @param reader the event reader, must be positioned to the start element to parse
-     * @param classes the object classes to build a jaxb context
-     * @return parsed element or null if cannot be parsed
-     * @throws ProwideException if severe errors occur during parse
-     */
-    public static Object parse(final Class targetClass, XMLEventReader reader, final Class<?>[] classes) {
-        Validate.notNull(targetClass, "target class to parse must not be null");
-        Validate.notNull(reader, "XML reader to parse must not be null");
-        Validate.notNull(classes, "object model classes aray must not be null");
-
-        try {
-            JAXBContext context = JaxbContextLoader.INSTANCE.get(targetClass, classes);
-            final Unmarshaller unmarshaller = context.createUnmarshaller();
-            return unmarshaller.unmarshal(reader, targetClass).getValue();
-
-        } catch (JAXBException|ExecutionException e) {
-            if (e instanceof UnmarshalException) {
-                final Throwable cause = e.getCause();
-                if (cause instanceof SAXParseException) {
-                    SAXParseException spe = (SAXParseException) cause;
-                    throw new ProwideException("Error parsing XML at line "+spe.getLineNumber() +", column "+spe.getColumnNumber(), cause);
-                } else {
-                    throw new ProwideException("Error parsing XML", cause);
-                }
-            }
-            log.severe("An error occurred while reading XML: " + e.getMessage());
-            log.log(Level.FINEST, "Read exception while parsing "+reader, e);
         }
         return null;
     }
@@ -187,90 +151,7 @@ class JaxbUtils {
         return null;
     }
 
-    /**
-     * A filter to ignore all elements prefixes (for Sax)
-     */
-    private static class IgnorePrefixFilter extends XMLFilterImpl {
-        private String namespace;
-
-        public IgnorePrefixFilter(XMLReader reader, final String namespace) {
-            super(reader);
-            this.namespace = namespace;
-        }
-
-        @Override
-        public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-            int index = qName.indexOf(':');
-            if (index >= 0) {
-                qName = qName.substring(index + 1);
-            }
-            uri = this.namespace;
-            super.startElement(uri, localName, qName, attributes);
-        }
-
-        @Override
-        public void endElement(String uri, String localName, String qName) throws SAXException {
-            int index = qName.indexOf(':');
-            if (index >= 0) {
-                qName = qName.substring(index + 1);
-            }
-            super.endElement(uri, localName, qName);
-        }
-    }
-
-    /**
-     * Filter adding default namespace declaration to root element (for Stax).
-     */
-    private static class EventReaderWithNamespace extends EventReaderDelegate {
-        private final XMLEventFactory factory = XMLEventFactory.newInstance();
-        private final String namespace;
-
-        private int startElementCount = 0;
-
-        public EventReaderWithNamespace(XMLEventReader reader, String namespace) {
-            super(reader);
-            this.namespace = namespace;
-        }
-
-        /**
-         * Duplicates and event adding the namespace declaration.
-         * @param startElement the event
-         * @return event copy with namespace
-         */
-        private StartElement withNamespace(StartElement startElement) {
-            List<Object> namespaces = new ArrayList<>();
-            namespaces.add(factory.createNamespace(namespace));
-            Iterator<?> originalNamespaces = startElement.getNamespaces();
-            while (originalNamespaces.hasNext()) {
-                namespaces.add(originalNamespaces.next());
-            }
-            return factory.createStartElement(new QName(namespace, startElement.getName().getLocalPart()),
-                    startElement.getAttributes(), namespaces.iterator());
-        }
-
-        @Override
-        public XMLEvent nextEvent() throws XMLStreamException {
-            XMLEvent event = super.nextEvent();
-            if (event.isStartElement()) {
-                if (++startElementCount == 1) {
-                    return withNamespace(event.asStartElement());
-                }
-            }
-            return event;
-        }
-
-        @Override
-        public XMLEvent peek() throws XMLStreamException {
-            XMLEvent event = super.peek();
-            if (startElementCount == 0 && event != null && event.isStartElement()) {
-                return withNamespace(event.asStartElement());
-            } else {
-                return event;
-            }
-        }
-    }
-
-    /**
+     /**
      * Removes any SWIFT and ISO namespace and its associated prefix in the elements.
      */
     /* It is necessary to allow partial and lenient unmarshalling with the shared dictionary not bounded to specific
