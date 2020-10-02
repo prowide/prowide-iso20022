@@ -5,7 +5,7 @@ apply plugin: 'maven'
 
 def SRU = "2020"
 
-version = "SRU${SRU}-9.1.1u1"
+version = "SRU${SRU}-9.1.1u2"
 group 'com.prowidesoftware'
 
 sourceCompatibility = '1.8'
