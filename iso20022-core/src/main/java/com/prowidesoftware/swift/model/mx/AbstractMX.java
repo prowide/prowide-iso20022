@@ -52,26 +52,23 @@ import java.util.logging.Logger;
 /**
  * Base class for specific MX messages.<br>
  *
- * IMPORTANT: An MX message is conformed by a set of optional headers 
- * and a message payload or document with the actual specific MX message. 
- * The name of the envelope element that binds a Header to the message 
- * to which it applies is <b>implementation/network specific</b> and not
- * part of the scope of this model. 
+ * IMPORTANT: An MX message is conformed by a set of optional headers and a message payload or document with the actual
+ * specific MX message. The name of the envelope element that binds a Header to the message to which it applies is
+ * <b>implementation/network specific</b> and not part of the scope of this model.
  *
- * <p>This class provides the base container model for MX messages including
- * an attribute for the header. Further it supports both versions for the
- * header; the SWIFT Application Header (legacy) and the ISO Business
- * Application Header.
+ * <p>This class provides the base container model for MX messages including an attribute for the header. Further it
+ * supports both versions for the header; the SWIFT Application Header (legacy) and the ISO Business Application Header.
  *
- * <p>Serialization of this model into XML text can be done for the with or without
- * the header portion. When the header is set and included into the serialization, 
- * the container root element must be provided.
+ * <p>Serialization of this model into XML text can be done for the with or without the header portion. When the header
+ * is set and included into the serialization, the container root element must be provided.
  *
  * @since 7.6
  * @see AbstractMT
  */
 public abstract class AbstractMX extends AbstractMessage implements IDocument, JsonSerializable {
 	private static final transient Logger log = Logger.getLogger(AbstractMX.class.getName());
+
+	public static final String DOCUMENT_LOCALNAME = "Document";
 
 	/**
 	 * Default root element when an MX is serialized as XML including both AppHdr and Document

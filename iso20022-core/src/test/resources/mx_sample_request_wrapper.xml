@@ -7,7 +7,7 @@
         <SwInt:RequestType>setr.010.001.03</SwInt:RequestType>
     </SwInt:RequestHeader>
     <SwInt:RequestPayload>
-        <Ah:AppHdr xmlns:Ah="urn:swift:xsd$ahV10">
+        <Ah:AppHdr xmlns:Ah="urn:swift:xsd:$ahV10">
             <Ah:From>
                 <Ah:Type>DN</Ah:Type>
                 <Ah:Id>cn=funds,ou=abcdchzz,o=swift</Ah:Id>

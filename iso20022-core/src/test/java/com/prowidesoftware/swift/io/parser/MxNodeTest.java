@@ -15,6 +15,8 @@
  */
 package com.prowidesoftware.swift.io.parser;
 
+import com.prowidesoftware.deprecation.ProwideDeprecated;
+import com.prowidesoftware.deprecation.TargetYear;
 import com.prowidesoftware.swift.model.MxNode;
 import org.junit.Test;
 
@@ -28,7 +30,10 @@ import static org.junit.Assert.*;
  * and content finder API on the parsed structure. 
  *
  * @since 7.8.8
+ * @deprecated
  */
+@Deprecated
+@ProwideDeprecated(phase2 = TargetYear.SRU2021)
 public class MxNodeTest {
 
 	@Test

@@ -1,5 +1,5 @@
 <message>
-<AppHdr xmlns='urn:swift:xsd$ahV10'>
+<AppHdr xmlns='urn:swift:xsd:$ahV10'>
     <From>
         <Type>DN</Type>
         <Id>cn=funds,ou=abcdchzz,o=swift</Id>

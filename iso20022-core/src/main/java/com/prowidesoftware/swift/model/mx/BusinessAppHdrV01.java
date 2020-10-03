@@ -72,7 +72,7 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
      * @throws ProwideException if severe errors occur during parse
      */
     public static BusinessAppHdrV01 parse(final String xml) {
-        return (BusinessAppHdrV01) JaxbUtils.parse(BusinessAppHdrV01.class, xml, _classes, HEADER_LOCALNAME, NAMESPACE);
+        return (BusinessAppHdrV01) MxParseUtils.parse(BusinessAppHdrV01.class, xml, _classes, HEADER_LOCALNAME, NAMESPACE);
     }
 
     /**
@@ -175,7 +175,7 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
     @Override
     public void setCreationDate(boolean overwrite) {
         if (this.getCreDt() == null || overwrite) {
-            this.setCreDt(MxUtils.now());
+            this.setCreDt(XMLGregorianCalendarUtils.now());
         }
     }
 

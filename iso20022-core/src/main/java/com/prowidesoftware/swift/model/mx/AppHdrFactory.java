@@ -62,7 +62,7 @@ public class AppHdrFactory {
             h.setMsgDefIdr(id.id());
         }
 
-        h.setCreDt(MxUtils.now());
+        h.setCreDt(XMLGregorianCalendarUtils.now());
 
         return h;
     }
@@ -104,7 +104,7 @@ public class AppHdrFactory {
             h.setMsgDefIdr(id.id());
         }
 
-        h.setCreDt(MxUtils.now());
+        h.setCreDt(XMLGregorianCalendarUtils.now());
 
         return h;
     }
@@ -144,7 +144,7 @@ public class AppHdrFactory {
             h.setMsgName(id.id());
         }
 
-        h.setCrDate(MxUtils.now());
+        h.setCrDate(XMLGregorianCalendarUtils.now());
 
         return h;
     }

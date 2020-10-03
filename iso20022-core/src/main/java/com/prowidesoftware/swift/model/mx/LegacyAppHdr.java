@@ -72,7 +72,7 @@ public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
      * @throws ProwideException if severe errors occur during parse
      */
     public static LegacyAppHdr parse(final String xml) {
-        return (LegacyAppHdr) JaxbUtils.parse(LegacyAppHdr.class, xml, _classes, HEADER_LOCALNAME, NAMESPACE);
+        return (LegacyAppHdr) MxParseUtils.parse(LegacyAppHdr.class, xml, _classes, HEADER_LOCALNAME, NAMESPACE);
     }
 
     /**
@@ -165,7 +165,7 @@ public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
     @Override
     public void setCreationDate(boolean overwrite) {
         if (this.getCrDate() == null || overwrite) {
-            this.setCrDate(MxUtils.now());
+            this.setCrDate(XMLGregorianCalendarUtils.now());
         }
     }
 

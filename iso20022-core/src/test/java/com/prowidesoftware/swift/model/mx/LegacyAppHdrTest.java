@@ -52,7 +52,7 @@ public class LegacyAppHdrTest {
 
     @Test
     public void testParseNoPrefix() {
-        final String xml = "<AppHdr xmlns=\"urn:swift:xsd$ahV10\">\n" +
+        final String xml = "<AppHdr xmlns=\"urn:swift:xsd:$ahV10\">\n" +
                 "    <From>\n" +
                 "        <Type>DN</Type>\n" +
                 "        <Id>cn=funds,ou=abcdchzz,o=swift</Id>\n" +
@@ -77,7 +77,7 @@ public class LegacyAppHdrTest {
 
     @Test
     public void testParseWithPrefix() {
-        final String xml = "<h:AppHdr xmlns:h=\"urn:swift:xsd$ahV10\">\n" +
+        final String xml = "<h:AppHdr xmlns:h=\"urn:swift:xsd:$ahV10\">\n" +
                 "    <h:From>\n" +
                 "        <h:Type>DN</h:Type>\n" +
                 "        <h:Id>cn=funds,ou=abcdchzz,o=swift</h:Id>\n" +
@@ -103,7 +103,7 @@ public class LegacyAppHdrTest {
     @Test
     public void testParseWithWrapper() {
         final String xml = "<foo><bar>"+
-                "<AppHdr xmlns:Ah=\"urn:swift:xsd$ahV10\">\n" +
+                "<AppHdr xmlns:Ah=\"urn:swift:xsd:$ahV10\">\n" +
                 "    <From>\n" +
                 "        <Type>DN</Type>\n" +
                 "        <Id>cn=funds,ou=abcdchzz,o=swift</Id>\n" +

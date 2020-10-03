@@ -75,9 +75,9 @@ class NamespaceAndElementFilter extends XMLFilterImpl {
     @Override
     public void startPrefixMapping(String prefix, String url)throws SAXException {
 		if (isAnElementToPropagate && namespaceUriToRemove != null) {
-	    	if (!StringUtils.equals(url, namespaceUriToRemove)) {
+			if (!StringUtils.equals(url, namespaceUriToRemove)) {
 	    		super.startPrefixMapping(prefix, url);
-	    	}    			
+	    	}
 		}
     }
 

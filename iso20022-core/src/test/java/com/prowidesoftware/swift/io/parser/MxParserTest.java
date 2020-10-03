@@ -96,7 +96,7 @@ public class MxParserTest {
 		assertTrue(info.containsHeader());
 		assertEquals("urn:swift:xsd:camt.003.001.04", info.getDocumentNamespace());
 		assertEquals("Doc", info.getDocumentPrefix());
-		assertEquals("urn:swift:xsd$ahV10", info.getHeaderNamespace());
+		assertEquals("urn:swift:xsd:$ahV10", info.getHeaderNamespace());
 		assertEquals("Ah", info.getHeaderPrefix());
 		AppHdr h = parser.parseAppHdr();
 		assertSampleApplicationHeader(h);
@@ -303,7 +303,7 @@ public class MxParserTest {
 		final String xml ="<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
 				+ "<message>"
 				// missing prefix in element on purpose
-				+ "<AppHdr xmlns:h=\"urn:swift:xsd$ahV10\"><From></From></AppHdr>"
+				+ "<AppHdr xmlns:h=\"urn:swift:xsd:$ahV10\"><From></From></AppHdr>"
 				+ "<Doc:Document xmlns:Doc=\"urn:swift:xsd:camt.003.001.04\"></Doc:Document>"
 				+ "</message>";
 		MxStructureInfo info = new MxParser(xml).analyzeMessage();

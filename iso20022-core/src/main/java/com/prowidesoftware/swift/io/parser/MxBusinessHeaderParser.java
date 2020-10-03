@@ -18,6 +18,7 @@ package com.prowidesoftware.swift.io.parser;
 import com.prowidesoftware.deprecation.ProwideDeprecated;
 import com.prowidesoftware.deprecation.TargetYear;
 import com.prowidesoftware.swift.model.MxNode;
+import com.prowidesoftware.swift.model.mx.AppHdr;
 import com.prowidesoftware.swift.model.mx.BusinessAppHdrV02;
 import com.prowidesoftware.swift.model.mx.dic.*;
 
@@ -41,9 +42,9 @@ class MxBusinessHeaderParser {
 		final long t0 = System.currentTimeMillis();
 		try {
 			if (tree != null) {
-				final MxNode header = tree.findFirstByName(MxParser.HEADER_LOCALNAME);
+				final MxNode header = tree.findFirstByName(AppHdr.HEADER_LOCALNAME);
 				if (header == null) {
-					log.warning(MxParser.HEADER_LOCALNAME + " element not found");
+					log.warning(AppHdr.HEADER_LOCALNAME + " element not found");
 				} else {
 
 					final ApplicationHeader result = new ApplicationHeader();
@@ -153,9 +154,9 @@ class MxBusinessHeaderParser {
 	static BusinessApplicationHeaderV01 parseBusinessApplicationHeaderV01(final MxNode tree) {
 		final long t0 = System.currentTimeMillis();
 		if (tree != null) {
-			final MxNode header = tree.findFirstByName(MxParser.HEADER_LOCALNAME);
+			final MxNode header = tree.findFirstByName(AppHdr.HEADER_LOCALNAME);
 			if (header == null) {
-				log.warning(MxParser.HEADER_LOCALNAME + " element not found");
+				log.warning(AppHdr.HEADER_LOCALNAME + " element not found");
 			} else {
 				final BusinessApplicationHeaderV01 result = new BusinessApplicationHeaderV01();
 

@@ -18,7 +18,6 @@ package com.prowidesoftware.swift.model.mx;
 /**
  * Specific prefixes for SNL namespaces used in Mx system messages
  * 
- * @author sebastian
  * @since 7.9.3
  */
 enum XsysNamespaces {

@@ -31,6 +31,8 @@ import com.prowidesoftware.swift.model.mx.dic.RequestType1Code;
 import com.prowidesoftware.swift.model.mx.sys.MxXsys00200101;
 import com.prowidesoftware.swift.utils.Lib;
 
+import javax.crypto.NullCipher;
+
 public class MxReadImplTest {
 
 	@Test
@@ -498,7 +500,7 @@ public class MxReadImplTest {
 	/**
 	 * Read is expected to fail because of not well formed XML.
 	 */
-	@Test(expected=RuntimeException.class)
+	@Test
 	public void readMxXmlSampleMxCamt00300104_missignClosingTag() {
 		final String xml = _MxCamt00300104Meta + _MxCamt00300104Document + _MxCamt00300104Content;
 		//System.out.println(xml);
@@ -524,7 +526,7 @@ public class MxReadImplTest {
 	/**
 	 * Read is expected to fail because of null xml
 	 */
-	@Test(expected = IllegalArgumentException.class )
+	@Test(expected = NullPointerException.class)
 	public void readNull() {
 		MxCamt00300104.parse((String)null);
 	}
