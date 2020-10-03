@@ -309,7 +309,10 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
 	/**
 	 * Updates sender, receiver and reference from the group header element (only present in a subset of Mx messages)
 	 * @return true if at least some property was updated
+	 * @deprecated
 	 */
+	@Deprecated
+	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
 	private boolean _update(MxNode n) {
 		boolean updated = false;
 		final MxNode groupHeader = n != null? n.findFirstByName("GrpHdr") : null;

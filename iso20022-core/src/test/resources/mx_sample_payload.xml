@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SwInt:RequestPayload xmlns:SwInt="http://www.example.com">
-    <AppHdr xmlns="urn:swift:xsd$ahV10">
+    <AppHdr xmlns="urn:swift:xsd:$ahV10">
         <From>
             <Type>DN</Type>
             <Id>cn=funds,ou=abcdchzz,o=swift</Id>

@@ -15,8 +15,8 @@ import java.util.logging.Logger;
  *
  * @since 9.0.1
  */
-class MxUtils {
-    private static final transient Logger log = Logger.getLogger(MxUtils.class.getName());
+class XMLGregorianCalendarUtils {
+    private static final transient Logger log = Logger.getLogger(XMLGregorianCalendarUtils.class.getName());
 
     /**
      * Returns a gregorian calendar for current moment in UTC time zone

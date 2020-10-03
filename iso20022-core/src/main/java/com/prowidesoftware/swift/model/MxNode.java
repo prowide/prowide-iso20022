@@ -15,6 +15,8 @@
  */
 package com.prowidesoftware.swift.model;
 
+import com.prowidesoftware.deprecation.ProwideDeprecated;
+import com.prowidesoftware.deprecation.TargetYear;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.IOException;
@@ -30,7 +32,10 @@ import java.util.logging.Level;
  * It is basically a generic <b>XML node</b> structure used to provide basic parsing functionality.
  * 
  * @since 7.6
+ * @deprecated
  */
+@Deprecated
+@ProwideDeprecated(phase2 = TargetYear.SRU2021)
 public class MxNode {
 	private static final transient java.util.logging.Logger log = java.util.logging.Logger.getLogger(MxNode.class.getName());
 

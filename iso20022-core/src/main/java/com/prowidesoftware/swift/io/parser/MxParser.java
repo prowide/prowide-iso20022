@@ -35,9 +35,6 @@ import org.w3c.dom.ls.LSSerializer;
 import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
@@ -83,8 +80,11 @@ public class MxParser {
 	public static final String HEADER_LOCALNAME = "AppHdr";
 
 	/**
+	 * @deprecated use {@link AbstractMX#DOCUMENT_LOCALNAME} instead
 	 * @since 7.8.4
 	 */
+	@Deprecated
+	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
 	public static final String DOCUMENT_LOCALNAME = "Document";
 	
 	private String buffer;
@@ -124,7 +124,10 @@ public class MxParser {
 	 * The parser should be initialized with a valid source.
 	 *
 	 * @since 7.7
+	 * @deprecated
 	 */
+	@Deprecated
+	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
 	public MxNode parse() {
 		Validate.notNull(buffer, "the source must be initialized");
 		try {
@@ -298,7 +301,7 @@ public class MxParser {
 			final javax.xml.stream.XMLStreamReader reader = xif.createXMLStreamReader(new StringReader(this.buffer));
 			while (reader.hasNext()) {
 				int event = reader.next();
-				if (javax.xml.stream.XMLStreamConstants.START_ELEMENT == event && reader.getLocalName().equals(DOCUMENT_LOCALNAME)) {
+				if (javax.xml.stream.XMLStreamConstants.START_ELEMENT == event && reader.getLocalName().equals(AbstractMX.DOCUMENT_LOCALNAME)) {
 					if (reader.getNamespaceCount() > 0) {
 						//log.finest("ELEMENT START: " + reader.getLocalName() + " , namespace count is: " + reader.getNamespaceCount());
 						for (int nsIndex = 0; nsIndex < reader.getNamespaceCount(); nsIndex++) {
@@ -357,11 +360,11 @@ public class MxParser {
 			while (reader.hasNext()) {
 				int event = reader.next();
 				if (javax.xml.stream.XMLStreamConstants.START_ELEMENT == event) {
-					if (!this.info.containsDocument && reader.getLocalName().equals(DOCUMENT_LOCALNAME)) {
+					if (!this.info.containsDocument && reader.getLocalName().equals(AbstractMX.DOCUMENT_LOCALNAME)) {
 						this.info.containsDocument = true;
 						this.info.documentNamespace = readNamespace(reader);
 						this.info.documentPrefix = StringUtils.trimToNull(reader.getPrefix());
-					} else if (!this.info.containsHeader && reader.getLocalName().equals(HEADER_LOCALNAME)) {
+					} else if (!this.info.containsHeader && reader.getLocalName().equals(AppHdr.HEADER_LOCALNAME)) {
 						this.info.containsHeader = true;
 						this.info.headerNamespace = readNamespace(reader);
 						this.info.headerPrefix = StringUtils.trimToNull(reader.getPrefix());
@@ -513,7 +516,7 @@ public class MxParser {
 	public String stripDocument() {
 		analyzeMessage();
 		if (this.info.containsDocument) {
-			final String tag = this.info.getDocumentPrefix() != null ? this.info.getDocumentPrefix() + ":" + MxParser.DOCUMENT_LOCALNAME : MxParser.DOCUMENT_LOCALNAME;
+			final String tag = this.info.getDocumentPrefix() != null ? this.info.getDocumentPrefix() + ":" + AbstractMX.DOCUMENT_LOCALNAME : AbstractMX.DOCUMENT_LOCALNAME;
 			int beginIndex = this.buffer.indexOf("<" + tag);
 			int endIndex = this.buffer.lastIndexOf("</" + tag);
 			if (beginIndex >= 0 && endIndex >= 0) {
@@ -547,7 +550,7 @@ public class MxParser {
 	public String stripHeader() {
 		analyzeMessage();
 		if (this.info.containsHeader()) {
-			final String tag = this.info.getHeaderPrefix() != null? this.info.getHeaderPrefix() + ":" + MxParser.HEADER_LOCALNAME : MxParser.HEADER_LOCALNAME;
+			final String tag = this.info.getHeaderPrefix() != null? this.info.getHeaderPrefix() + ":" + AppHdr.HEADER_LOCALNAME : AppHdr.HEADER_LOCALNAME;
 			int beginIndex = this.buffer.indexOf("<" + tag);
 			int endIndex = this.buffer.indexOf("</" + tag);
 			if (beginIndex >=0 && endIndex >= 0) {

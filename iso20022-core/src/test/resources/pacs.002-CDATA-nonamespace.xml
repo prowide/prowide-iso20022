@@ -1,0 +1,38 @@
+<Document>
+    <FIToFIPmtStsRpt>
+        <GrpHdr>
+            <MsgId>0c070cd114934bf398e6a16d81b2d129</MsgId>
+            <CreDtTm>2020-09-16T17:03:11</CreDtTm>
+        </GrpHdr>
+        <OrgnlGrpInfAndSts>
+            <OrgnlMsgId>UNKNOWN</OrgnlMsgId>
+            <OrgnlMsgNmId>UNKNOWN</OrgnlMsgNmId>
+            <GrpSts>RJCT</GrpSts>
+            <StsRsnInf>
+                <Rsn>
+                    <Prtry>118</Prtry>
+                </Rsn>
+                <AddtlInf>
+                        <![CDATA[<?xml version="1.0" ?><RequestPayload><h:AppHdr xmlns:h="urn:iso:std:iso:20022:tech:xsd:head.001.001.02">]]></AddtlInf>
+				<AddtlInf>
+                        <![CDATA[<h:Fr><h:FIId><h:FinInstnId><h:BICFI>FOOCGB22XXX</h:BICFI>    </h:FinInstnId>   </h:FIId>  </h:Fr><h:To><]]></AddtlInf>
+				<AddtlInf>
+                        <![CDATA[h:FIId><h:FinInstnId><h:BICFI>CRESCHZZ80A</h:BICFI>    </h:FinInstnId>   </h:FIId>  </h:To><h:BizMsgIdr>P]]></AddtlInf>
+				<AddtlInf>
+                        <![CDATA[A20091531272</h:BizMsgIdr><h:MsgDefIdr>pacs.009.001.02</h:MsgDefIdr><h:CreDt>2020-09-16T11:02:39Z</h:CreD]]></AddtlInf>
+				<AddtlInf>
+                        <![CDATA[t> </h:AppHdr><Doc:Document xmlns:Doc="http://www.six-interbank-clearing.com/de/pacs.009.001.02.ch.02"><D]]></AddtlInf>
+				<AddtlInf>
+                        <![CDATA[oc:FinInstnCdtTrf><Doc:GrpHdr><Doc:MsgId>PA20091531272</Doc:MsgId><Doc:CreDtTm>2020-09-16T11:02:37.200-04]]></AddtlInf>
+				<AddtlInf>
+                        <![CDATA[:00</Doc:CreDtTm><Doc:NbOfTxs>1</Doc:NbOfTxs><Doc:TtlIntrBkSttlmAmt Ccy="CHF">1234.0</Doc:TtlIntrBkSttlmA]]></AddtlInf>
+				<AddtlInf>
+                        <![CDATA[mt><Doc:IntrBkSttlmDt>2020-09-15</Doc:IntrBkSttlmDt><Doc:SttlmInf><Doc:SttlmMtd>CLRG</Doc:SttlmMtd>    </]]></AddtlInf>
+				<AddtlInf>
+                        <![CDATA[Doc:SttlmInf><Doc:InstgAgt><Doc:FinInstnId><Doc:ClrSysMmbId><Doc:ClrSysId><Doc:Cd>CHSIC</Doc:Cd>       </]]></AddtlInf>
+				<AddtlInf>
+                        <![CDATA[Doc:ClrSysId><Doc:MmbId>123456</Doc:MmbId>      </Doc:ClrSysMmbId>     </Doc:FinInstnId>    </Doc:InstgAg]]></AddtlInf>
+            </StsRsnInf>
+        </OrgnlGrpInfAndSts>
+    </FIToFIPmtStsRpt>
+</Document>

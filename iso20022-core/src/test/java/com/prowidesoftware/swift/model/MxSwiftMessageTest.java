@@ -80,7 +80,7 @@ public class MxSwiftMessageTest {
     public void testMetadataFromAppHdr() {        
         String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
         				+ "<message>"
-        				+ "<AppHdr xmlns=\"urn:swift:xsd$ahV10\">"
+        				+ "<AppHdr xmlns=\"urn:swift:xsd:$ahV10\">"
         				+ "<From>"
         				+ "	<Type>DN</Type>"
         				+ " <Id>cn=funds,o=abcdchzzwww,o=swift</Id>"

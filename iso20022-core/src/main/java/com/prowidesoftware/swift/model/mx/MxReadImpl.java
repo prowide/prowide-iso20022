@@ -15,24 +15,14 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
-import com.prowidesoftware.ProwideException;
 import com.prowidesoftware.swift.io.parser.MxParser;
 import com.prowidesoftware.swift.model.MxBusinessProcess;
 import com.prowidesoftware.swift.model.MxId;
-import com.prowidesoftware.swift.utils.SafeXmlUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.Validate;
-import org.xml.sax.SAXParseException;
 
-import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
-import javax.xml.bind.UnmarshalException;
-import javax.xml.bind.Unmarshaller;
-import javax.xml.stream.XMLEventReader;
-import javax.xml.stream.XMLInputFactory;
-import javax.xml.stream.XMLStreamException;
-import javax.xml.stream.events.XMLEvent;
-import java.io.StringReader;
+import javax.xml.transform.sax.SAXSource;
 import java.util.concurrent.ExecutionException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -42,7 +32,7 @@ import java.util.logging.Logger;
  *
  * <p>The implementation is not a straight forward jaxb unmarsahlling. Some remarks:
  * <ul>
- *     <li>The parser uses a Stax event reader, to parse only the AppHdr and Document portions of the source XML,
+ *     <li>The parser uses a SAX reader, to extract only the AppHdr and Document portions of the source XML,
  *     ignoring any container wrapper elements.</li>
  *
  *     <li>The parser is not namespace aware for general ISO 20022 elements, because the dictionary model classes in
@@ -52,19 +42,20 @@ import java.util.logging.Logger;
  *     This is a special feature of the model, that is not a direct jaxb generation from hundreds of ISO schemas with
  *     each type in its own package, but a custom jaxb process to produce a shareable dictionary for the elements with
  *     minimal custom bindings.
- *     Notice however xsys messages do use namespace for the shared schemas.</li>
+ *     Notice however xsys messages do use namespace for the shared schemas such as Sw, SwInt, etc...</li>
  *
  *     <li>For the header, multiple variants are supported. The parser detects the specific header to parse using the
  *     namespace at the AppHdr element. By default it tries to parse the content as head.001.001.01.</li>
  * </ul>
  *
- * <p>This is the default implementation used for the direct parse calls in MX messages. You can inject your own in
- * the alternative parsing methods accepting impementations of {@link MxRead}.
+ * <p>This is the default implementation used for the direct parse calls in MX messages.
  *
  * @since 9.0
  */
 public class MxReadImpl implements MxRead {
 	private static final transient Logger log = Logger.getLogger(MxReadImpl.class.getName());
+
+	private static final String DOCUMENT_LOCALNAME = "Document";
 
 	@SuppressWarnings({ "rawtypes" })
 	@Override
@@ -74,59 +65,47 @@ public class MxReadImpl implements MxRead {
 
 	/**
 	 * Static parse implementation of {@link MxRead#read(Class, String, Class[])}
+	 * @param xml the XML to parse, should contain the Document, and optional AppHdr and any type of wrapper elements
 	 * @since 8.0.4
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static AbstractMX parse(final Class<? extends AbstractMX> targetClass, final String xml, final Class<?>[] classes) {
-		Validate.isTrue(StringUtils.isNotBlank(xml), "xml to parse must not be null nor a blank string");
+		Validate.notNull(targetClass, "target class to parse must not be null");
+		Validate.notNull(xml, "XML to parse must not be null");
+		Validate.notBlank(xml, "XML to parse must not be a blank string");
+		Validate.notNull(classes, "object model classes array must not be null");
 
 		try {
-			final String unboundedXml = JaxbUtils.unbindNamespace(xml);
+			// Analise the type of XML content to parse
+			MxParser.MxStructureInfo info = new MxParser(xml).analyzeMessage();
 
-			final XMLInputFactory xif = SafeXmlUtils.inputFactory();
-			// May 2020: we cannot set namespace aware false, because xsys messages uses elements in shared namespaces
-			//xif.setProperty(XMLInputFactory.IS_NAMESPACE_AWARE, false);
-			//xif.setProperty(XMLInputFactory.IS_VALIDATING, false);
-			final XMLEventReader reader = xif.createXMLEventReader(new StringReader(unboundedXml));
-
-			// only the Document and AppHdr are parsed here, ignoring any optional wrapper content
 			AbstractMX mx = null;
 			AppHdr appHdr = null;
 
-			XMLEvent e;
+			if (info.containsDocument()) {
 
-			// loop though the xml stream
-			while ( (e = reader.peek()) != null ) {
+				/*---------------Document-----------------*/
 
-				if (isElementStart(e, MxParser.DOCUMENT_LOCALNAME)) {
-
-					mx = parseDocument(reader, targetClass, classes);
-
-				} else if (isElementStart(e, AppHdr.HEADER_LOCALNAME)) {
-
-					MxParser.MxStructureInfo info = new MxParser(xml).analyzeMessage();
-
-					appHdr = parseHeader(reader, info);
-
-					// if not able to parse the header continue
-					if (appHdr == null) {
-						reader.next();
-					}
-
-				} else {
-					reader.next();
-				}
+				/* When parsing the Document for an MX, we have to unbind the main message namespace. The filter will
+				 * extract the Document element from the source XML and will unbind the elements at the same time. This is
+				 * necessary because the generated jaxb model for element types is shared and not bounded to any specific
+				 * message type. Meaning we don't have duplicated type classes for each message they appear in, instead we
+				 * have single non-repetitive types with no namespace.
+				 */
+				String nameSpaceToRemove = info.getDocumentNamespace();
+				SAXSource documentSource = MxParseUtils.createFilteredSAXSource(xml, nameSpaceToRemove, AbstractMX.DOCUMENT_LOCALNAME);
+				mx = parseDocumentFromSAXSource(documentSource, targetClass, classes);
 			}
 
-	        /*
-			 * Sep 2017: alternative implementation using the MxParser stripDocument
-			 * current implementation with xml reader is more flexible when the XML is not well-formed, this one can
-			 * produce NPE. See MX read test with not well-formed messages.
-			 *
-			MxParser parser = new MxParser(xml2);
-        	AbstractMX mx = (AbstractMX) jaxbUnmarshaller.unmarshal(new StreamSource(new StringReader(parser.stripDocument())), targetClass).getValue();
-	        */
+			if (info.containsHeader()) {
 
+				/*---------------Header-----------------*/
+
+				String nameSpaceToRemove = info.getHeaderNamespace();
+				SAXSource headerSource = MxParseUtils.createFilteredSAXSource(xml, nameSpaceToRemove, AppHdr.HEADER_LOCALNAME);
+				appHdr = parseHeaderFromSAXSource(headerSource, info);
+			}
+	
 			if (mx != null && appHdr != null) {
 				mx.setAppHdr(appHdr);
 			}
@@ -134,62 +113,46 @@ public class MxReadImpl implements MxRead {
 			return mx;
 
 		} catch (final Exception e) {
-			return handleParseException(e);
+			MxParseUtils.handleParseException(e);
+			return null;
 		}
 	}
 
-	private static boolean isElementStart(XMLEvent e, String localName) {
-		return e.isStartElement() && e.asStartElement().getName().getLocalPart().equals(localName);
+	/**
+	 * @since 9.1.2
+	 */
+	private static AbstractMX parseDocumentFromSAXSource(SAXSource source, Class<? extends AbstractMX> targetClass, Class<?>[] classes) throws JAXBException, ExecutionException {
+		return (AbstractMX) MxParseUtils.parseSAXSource(source, targetClass, classes);
 	}
 
-	private static AbstractMX parseDocument(XMLEventReader reader, Class<? extends AbstractMX> targetClass, Class<?>[] classes) throws JAXBException, ExecutionException {
-		JAXBContext jaxbContext = JaxbContextLoader.INSTANCE.get(targetClass, classes);
-		final Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-		return unmarshaller.unmarshal(reader, targetClass).getValue();
-	}
-
-	private static AppHdr parseHeader(XMLEventReader reader, MxParser.MxStructureInfo info) {
+	/**
+	 * @since 9.1.2
+	 */
+	private static AppHdr parseHeaderFromSAXSource(SAXSource source, MxParser.MxStructureInfo info) {
 		if (info.containsLegacyHeader().isPresent() && info.containsLegacyHeader().get()) {
 			// parse legacy AH
-			return (LegacyAppHdr) JaxbUtils.parse(LegacyAppHdr.class, reader, LegacyAppHdr._classes);
+			return (LegacyAppHdr) MxParseUtils.parseSAXSource(source, LegacyAppHdr.class, LegacyAppHdr._classes);
 
 		} else if (StringUtils.equals(info.getHeaderNamespace(), BusinessAppHdrV02.NAMESPACE)) {
 			// parse BAH version 2
-			return (BusinessAppHdrV02) JaxbUtils.parse(BusinessAppHdrV02.class, reader, BusinessAppHdrV02._classes);
+			return (BusinessAppHdrV02) MxParseUtils.parseSAXSource(source, BusinessAppHdrV02.class, BusinessAppHdrV02._classes);
 
 		} else {
 			// by default try to parse to BAH version 1
-			return  (BusinessAppHdrV01) JaxbUtils.parse(BusinessAppHdrV01.class, reader, BusinessAppHdrV01._classes);
+			return (BusinessAppHdrV01) MxParseUtils.parseSAXSource(source, BusinessAppHdrV01.class, BusinessAppHdrV01._classes);
 		}
-	}
-
-	private static AbstractMX handleParseException(Exception e) {
-		if (e instanceof UnmarshalException) {
-			final Throwable cause = e.getCause();
-			if (cause instanceof SAXParseException) {
-				SAXParseException spe = (SAXParseException) cause;
-				throw new ProwideException("Error parsing message at line "+spe.getLineNumber() +", column "+spe.getColumnNumber(), cause);
-			} else {
-				throw new ProwideException("Error parsing message", cause);
-			}
-		}
-		if (e instanceof XMLStreamException) {
-			throw new ProwideException("Error parsing message: "+ e.getMessage());
-		}
-		log.severe("An error occurred while reading XML: " + e.getMessage());
-		return null;
 	}
 
 	/**
 	 * Parses the XML string content into a specific instance of Mx.
-	 * <br>
-	 * If the string is empty, does not contain any MX message, the message type cannot be
-	 * detected or an error occur reading and parsing the message content; this method returns null.
-	 * <br>
-	 * The implementation detects the message type and uses reflection to call the
-	 * parser in the specific Mx subclass.
-	 * <br>
-	 * If header is present, it is also parsed into the message object.
+	 *
+	 * <p>If the string is empty, does not contain any MX message, the message type cannot be detected or an error occur
+	 * reading and parsing the message content; this method returns null.
+	 *
+	 * <p>The implementation detects the message type and uses reflection to call the parser in the specific Mx
+	 * subclass.
+	 *
+	 * <p>If header is present, it is also parsed into the message object.
 	 *
 	 * @param xml a string containing an MX message in XML format
 	 * @param id optional parameter to indicate the specific MX type to create; autodetected from namespace if null.
@@ -207,6 +170,9 @@ public class MxReadImpl implements MxRead {
 	 * @since 9.0
 	 */
 	public static AbstractMX parse(final String xml, MxId id) {
+		Validate.notNull(xml, "XML to parse must not be null");
+		Validate.notBlank(xml, "XML to parse must not be a blank string");
+
 		MxParser parser = new MxParser(xml);
 		if (id == null) {
 			id = parser.detectMessage();
@@ -230,6 +196,5 @@ public class MxReadImpl implements MxRead {
 		}
 		return mx;
 	}
-
 
 }
