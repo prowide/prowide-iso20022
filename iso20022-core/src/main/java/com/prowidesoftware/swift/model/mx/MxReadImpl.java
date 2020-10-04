@@ -128,7 +128,7 @@ public class MxReadImpl implements MxRead {
 		MxId resolvedId = id;
 
 		if (id == null) {
-			Optional<String> namespace = NamespaceReader.findNamespaceForLocalName(xml, AbstractMX.DOCUMENT_LOCALNAME);
+			Optional<String> namespace = NamespaceReader.findDocumentNamespace(xml);
 			if (namespace.isPresent()) {
 				resolvedId = new MxId(namespace.get());
 			} else {

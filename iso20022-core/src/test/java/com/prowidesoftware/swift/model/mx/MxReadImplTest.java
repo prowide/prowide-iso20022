@@ -6,32 +6,16 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
+import com.prowidesoftware.swift.io.parser.MxParserTest;
+import com.prowidesoftware.swift.model.MxId;
+import com.prowidesoftware.swift.model.mx.dic.*;
+import com.prowidesoftware.swift.model.mx.sys.MxXsys00200101;
+import com.prowidesoftware.swift.utils.Lib;
+import org.junit.Test;
 
 import java.io.IOException;
 
-import org.junit.Ignore;
-import org.junit.Test;
-
-import com.prowidesoftware.swift.io.parser.MxParserTest;
-import com.prowidesoftware.swift.model.MxId;
-import com.prowidesoftware.swift.model.mx.dic.AccountCriteria1Choice;
-import com.prowidesoftware.swift.model.mx.dic.AccountCriteria5;
-import com.prowidesoftware.swift.model.mx.dic.AccountQuery1;
-import com.prowidesoftware.swift.model.mx.dic.CashAccountReturnCriteria3;
-import com.prowidesoftware.swift.model.mx.dic.GetAccountV05;
-import com.prowidesoftware.swift.model.mx.dic.GroupHeader32;
-import com.prowidesoftware.swift.model.mx.dic.PartyIdentification32;
-import com.prowidesoftware.swift.model.mx.dic.QueryType2Code;
-import com.prowidesoftware.swift.model.mx.dic.RejectReason1Code;
-import com.prowidesoftware.swift.model.mx.dic.RequestType1Code;
-import com.prowidesoftware.swift.model.mx.sys.MxXsys00200101;
-import com.prowidesoftware.swift.utils.Lib;
-
-import javax.crypto.NullCipher;
+import static org.junit.Assert.*;
 
 public class MxReadImplTest {
 
@@ -836,8 +820,22 @@ public class MxReadImplTest {
 	/**
 	 * Test that external entities feature is disabled in the XML parsing to avoid XXE (external entity injection)
 	 */
-	//@Test
-	public void testXxeDisabled() {
+	@Test
+	public void testXxeDisabled_01() {
+		String xml = "<!DOCTYPE foo [ <!ENTITY xxe SYSTEM \"file:///etc/passwd\" >]>"+
+				"<Doc:Document xmlns:Doc=\"urn:swift:xsd:camt.007.002.02\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">"+
+				"	<Doc:camt.007.002.02>"+
+				"		<Doc:Assgnmt>"+
+				"			<Doc:Id>&xxe;</Doc:Id>"+
+				"		</Doc:Assgnmt>"+
+				"	</Doc:camt.007.002.02>"+
+				"</Doc:Document>";
+		MxCamt00700202 mx = MxCamt00700202.parse(xml);
+		assertNull(mx);
+	}
+
+	@Test
+	public void testXxeDisabled_02() {
 		final String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"+
 				"<!DOCTYPE foo [ <!ENTITY xxe SYSTEM \"file:///etc/passwd\" >]>"+
 				"<message>"+
@@ -846,9 +844,6 @@ public class MxReadImplTest {
 				"	<FIId>"+
 				"		<FinInstnId>"+
 				"			<BICFI>FOOCUS3NXXX</BICFI>"+
-				"			<Othr>"+
-				"				<Id>&xxe;</Id>"+
-				"			</Othr> "+
 				"		</FinInstnId> "+
 				"	</FIId> "+
 				"</Fr> "+
@@ -856,11 +851,19 @@ public class MxReadImplTest {
 				"<Doc:Document xmlns:Doc=\"urn:swift:xsd:camt.003.001.05\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n" +
 				"   <Doc:GetAcct>\n" +
 				"       <Doc:MsgHdr>\n" +
-				"       <Doc:MsgId>&xxe;</Doc:MsgId>\n" +
+				"       <Doc:MsgId>12345</Doc:MsgId>\n" +
+				"       <Doc:ReqTp>\n" +
+				"           <Doc:PmtCtrl>&xxe;</Doc:PmtCtrl>\n" +
+				"       </Doc:ReqTp>\n" +
 				"       </Doc:MsgHdr>\n" +
+				"       <Doc:AcctQryDef>\n" +
+				"           <Doc:QryTp>MODF</Doc:QryTp>\n" +
+				"           <Doc:AcctCrit>\n" +
+				"               <Doc:QryNm>12345 &xxe;78901234567890123456789012345</Doc:QryNm>\n" +
+				"           </Doc:AcctCrit>\n" +
+				"       </Doc:AcctQryDef>\n" +
 				"   </Doc:GetAcct>\n" +
-				"</Doc:Document>" +
-				"</message>";
+				"</Doc:Document>" +				"</message>";
 		MxCamt00300105 mx = MxCamt00300105.parse(xml);
 		assertNull(mx);
 	}
@@ -868,8 +871,8 @@ public class MxReadImplTest {
 	/**
 	 * Test that external entities feature is disabled in the XML parsing to avoid XXE (external entity injection)
 	 */
-	//@Test
-	public void testXxeDisabled2() {
+	@Test
+	public void testXxeDisabled_03() {
 		final String xml = "<!DOCTYPE foo [ <!ENTITY xxe SYSTEM \"file:///etc/passwd\" >]>"
 				+"<message>"
 				+ "<AppHdr xmlns='urn:iso:std:iso:20022:tech:xsd:head.001.001.01' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>"

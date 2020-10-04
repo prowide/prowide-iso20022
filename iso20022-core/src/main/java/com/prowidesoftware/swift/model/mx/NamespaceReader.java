@@ -34,7 +34,15 @@ import java.util.logging.Logger;
 class NamespaceReader {
     private static final transient Logger log = Logger.getLogger(NamespaceReader.class.getName());
 
-    static Optional<String> findNamespaceForLocalName(final String xml, final String localName) {
+    static Optional<String> findDocumentNamespace(final String xml) {
+        return findNamespaceForLocalName(xml, AbstractMX.DOCUMENT_LOCALNAME);
+    }
+
+    static Optional<String> findAppHdrNamespace(final String xml) {
+        return findNamespaceForLocalName(xml, AppHdr.HEADER_LOCALNAME);
+    }
+
+    private static Optional<String> findNamespaceForLocalName(final String xml, final String localName) {
         Validate.notNull(xml, "XML to parse must not be null");
         Validate.notBlank(xml, "XML to parse must not be a blank string");
         Validate.notNull(xml, "localName to find must not be null");

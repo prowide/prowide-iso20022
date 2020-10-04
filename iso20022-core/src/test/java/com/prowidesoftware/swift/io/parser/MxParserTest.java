@@ -15,6 +15,8 @@
  */
 package com.prowidesoftware.swift.io.parser;
 
+import com.prowidesoftware.deprecation.ProwideDeprecated;
+import com.prowidesoftware.deprecation.TargetYear;
 import com.prowidesoftware.swift.io.parser.MxParser.MxStructureInfo;
 import com.prowidesoftware.swift.model.MxBusinessProcess;
 import com.prowidesoftware.swift.model.MxId;
@@ -38,6 +40,8 @@ import static org.junit.Assert.*;
  */
 public class MxParserTest {
 
+	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
+	@Deprecated
 	private AppHdr parseHeaderFromSample(final String sample) throws IOException {
 		try (InputStream inputStream = getClass().getResourceAsStream("/" + sample)) {
 			return new MxParser(inputStream).parseAppHdr();
@@ -59,21 +63,29 @@ public class MxParserTest {
 		assertNull(h.getSvcName());
 	}
 
+	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
+	@Deprecated
 	@Test
 	public void testParseApplicationHeader_null() throws IOException {
 		assertNull(parseHeaderFromSample("mx_sample_document.xml"));
 	}
 
+	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
+	@Deprecated
 	@Test
 	public void testParseApplicationHeader_sample_header() throws IOException {
 		assertSampleApplicationHeader(parseHeaderFromSample("mx_sample_header.xml"));
 	}
 
+	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
+	@Deprecated
 	@Test
 	public void testParseApplicationHeader_sample_payload() throws IOException {
 		assertSampleApplicationHeader(parseHeaderFromSample("mx_sample_payload.xml"));
 	}
 
+	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
+	@Deprecated
 	@Test
 	public void testParseApplicationHeader_sample_payload_mq() throws IOException {
 		AppHdr bh = parseHeaderFromSample("app_to_mqsq.xml");
@@ -86,6 +98,8 @@ public class MxParserTest {
 		assertEquals(9, h.getCrDate().getMonth());
 	}
 
+	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
+	@Deprecated
 	@Test
 	public void testParseApplicationHeader_sample_request_wrapper() throws IOException {
 		InputStream inputStream = getClass().getResourceAsStream("/mx_sample_request_wrapper.xml");
@@ -102,6 +116,8 @@ public class MxParserTest {
 		assertSampleApplicationHeader(h);
 	}
 
+	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
+	@Deprecated
 	@Test
 	public void testParseApplicationHeader_sample_bah() throws IOException {
 		AppHdr hdr = parseHeaderFromSample("mx_sample_bah.xml");
@@ -115,12 +131,16 @@ public class MxParserTest {
 		assertEquals("CSD", bah.getBizSvc());
 	}
 
+	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
+	@Deprecated
 	@Test
 	public void testParseBusinessApplicationHeader_sample() {
 		final BusinessAppHdrV01 bh = (BusinessAppHdrV01) new MxParser(sampleBAH).parseAppHdr();
 		assertSampleBusinessApplicationHeader(bh);
 	}
-	
+
+	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
+	@Deprecated
 	@Test
     public void testParseApplicationHeader() {
     	final String xml = "<h:AppHdr xmlns:h=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.01\">"+
@@ -152,6 +172,8 @@ public class MxParserTest {
     	assertNotNull(h.getCreDt());
     }
 
+	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
+	@Deprecated
 	@Test
 	public void testDetectMessage() {
 		final String xml ="<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
@@ -159,6 +181,8 @@ public class MxParserTest {
 		assertMxId(new MxParser(xml).detectMessage());
 	}
 
+	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
+	@Deprecated
 	@Test
 	public void testDetectMessage2() {
 		final String xml ="<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
@@ -166,6 +190,8 @@ public class MxParserTest {
 		assertMxId(new MxParser(xml).detectMessage());
 	}
 
+	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
+	@Deprecated
 	@Test
 	public void testDetectMessage3() {
 		final String xml ="<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
@@ -173,13 +199,17 @@ public class MxParserTest {
 		assertMxId(new MxParser(xml).detectMessage());
 	}
 
+	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
+	@Deprecated
 	@Test
 	public void testDetectMessage4() {
 		final String xml ="<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
 				+ "<Document xmlns=\"urn:swift:xsd:camt.003.001.04\"></Doc:Document>";
 		assertMxId(new MxParser(xml).detectMessage());
 	}
-	
+
+	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
+	@Deprecated
 	@Test
 	public void testDetectMessage5() {
 		final String xml ="<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
@@ -190,6 +220,8 @@ public class MxParserTest {
 	/*
 	 * bank to bank namespace
 	 */
+	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
+	@Deprecated
 	@Test
 	public void testDetectMessage6() {
 		final String xml ="<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
@@ -204,7 +236,9 @@ public class MxParserTest {
 		assertEquals("001", id.getVariant());
 		assertEquals("04", id.getVersion());
 	}
-	
+
+	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
+	@Deprecated
 	@Test
 	public void testAnalizeMessage() {
 		final String xml ="<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
@@ -220,6 +254,8 @@ public class MxParserTest {
 		assertNull(info.getHeaderPrefix());
 	}
 
+	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
+	@Deprecated
 	@Test
 	public void testAnalizeMessage2() {
 		final String xml ="<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
@@ -234,7 +270,9 @@ public class MxParserTest {
 		assertNull(info.getHeaderNamespace());
 		assertNull(info.getHeaderPrefix());
 	}
-	
+
+	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
+	@Deprecated
 	@Test
 	public void testAnalizeMessage3() {
 		final String xml ="<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
@@ -249,7 +287,9 @@ public class MxParserTest {
 		assertEquals("urn:iso:std:iso:20022:tech:xsd:head.001.001.01", info.getHeaderNamespace());
 		assertNull(info.getHeaderPrefix());
 	}
-	
+
+	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
+	@Deprecated
 	@Test
 	public void testAnalizeMessage4() {
 		final String xml ="<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
@@ -265,6 +305,8 @@ public class MxParserTest {
 		assertEquals("h", info.getHeaderPrefix());
 	}
 
+	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
+	@Deprecated
 	@Test
 	public void testAnalizeMessage5() {
 		final String xml ="<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
@@ -283,6 +325,8 @@ public class MxParserTest {
 		assertEquals("h", info.getHeaderPrefix());
 	}
 
+	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
+	@Deprecated
 	@Test
 	public void testAnalizeMessage6() {
 		final String xml ="<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
@@ -290,7 +334,9 @@ public class MxParserTest {
 		MxStructureInfo info = new MxParser(xml).analyzeMessage();
 		assertNotNull(info.getException());
 	}
-	
+
+	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
+	@Deprecated
 	@Test
 	public void testAnalizeMessage7() {
 		final String xml ="<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
@@ -298,6 +344,8 @@ public class MxParserTest {
 		assertNotNull(info.getException());
 	}
 
+	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
+	@Deprecated
 	@Test
 	public void testAnalizeMessage8() {
 		final String xml ="<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
@@ -317,7 +365,9 @@ public class MxParserTest {
 		assertNull(info.getHeaderNamespace());
 		assertNull(info.getHeaderPrefix());
 	}
-	
+
+	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
+	@Deprecated
 	@Test
 	public void testStrip() {
 		final String h = "<h:AppHdr xmlns:h=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.01\"><From></From></h:AppHdr>";
@@ -346,6 +396,8 @@ public class MxParserTest {
 	 * This test sample contains a non-standard envelope, and a document with a supplementary data containing an embedded MX.
 	 * It is used to validate the analyze and strip API properly detect the main MX information ignoring the embedded suplementary MX.
 	 */
+	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
+	@Deprecated
 	@Test
 	public void testFullSample() {
 		final String document =	"<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:seev.036.002.07\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n" +
@@ -492,6 +544,8 @@ public class MxParserTest {
 	/**
 	 * Test that external entities feature is disabled in the XML parsing to avoid XXE (external entity injection)
 	 */
+	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
+	@Deprecated
 	@Test
 	public void testXxeDisabledInDocumentParse() {
 		String xml = "<!DOCTYPE foo [ <!ENTITY xxe SYSTEM \"file:///etc/passwd\" >]>"+
@@ -511,6 +565,8 @@ public class MxParserTest {
 	/**
 	 * Test that external entities feature is disabled in the XML parsing to avoid XXE (external entity injection)
 	 */
+	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
+	@Deprecated
 	@Test
 	public void testXxeDisabledInHeaderParse() {
 		String xml = "<!DOCTYPE foo [ <!ENTITY xxe SYSTEM \"file:///etc/passwd\" >]>"+
@@ -526,6 +582,8 @@ public class MxParserTest {
 	/**
 	 * Test that external entities feature is disabled in the XML parsing to avoid XXE (external entity injection)
 	 */
+	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
+	@Deprecated
 	@Test
 	public void testXxeDisabledInAnalyzeMessage() {
 		final String xml = "<!DOCTYPE foo [ <!ENTITY xxe SYSTEM \"file:///etc/passwd\" >]>"+
@@ -540,6 +598,8 @@ public class MxParserTest {
 	 * <p>This one is not affected by XXE because it only reads and returns the MxId and entity cannot be used in the
 	 * XML namespace.
 	 */
+	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
+	@Deprecated
 	@Test
 	public void testXxeDisabledInDetectMessage() {
 		final String xml = "<!DOCTYPE foo [ <!ENTITY xxe SYSTEM \"file:///etc/passwd\" >]>"+

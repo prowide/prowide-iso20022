@@ -30,10 +30,7 @@ import static org.junit.Assert.*;
  * and content finder API on the parsed structure. 
  *
  * @since 7.8.8
- * @deprecated
  */
-@Deprecated
-@ProwideDeprecated(phase2 = TargetYear.SRU2021)
 public class MxNodeTest {
 
 	@Test

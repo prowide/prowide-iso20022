@@ -17,6 +17,7 @@ package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.ProwideException;
 import com.prowidesoftware.swift.model.MxId;
+import com.prowidesoftware.swift.utils.SafeXmlUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.Validate;
 import org.xml.sax.InputSource;
@@ -43,7 +44,7 @@ public class MxParseUtils {
 	private static final transient Logger log = Logger.getLogger(MxParseUtils.class.getName());
 
 	static SAXSource createFilteredSAXSource(final String xml, final String localName) throws SAXException {
-		XMLReader documentReader = XMLReaderFactory.createXMLReader();
+		XMLReader documentReader = SafeXmlUtils.reader(true, null);
 
 		NamespaceAndElementFilter documentFilter = new NamespaceAndElementFilter(localName);
 		documentFilter.setParent(documentReader);
@@ -159,7 +160,7 @@ public class MxParseUtils {
 	 * @return id with the detected MX message type or empty if it cannot be determined.
 	 */
 	public static Optional<MxId> identifyMessage(final String xml) {
-		Optional<String> namespace = NamespaceReader.findNamespaceForLocalName(xml, AbstractMX.DOCUMENT_LOCALNAME);
+		Optional<String> namespace = NamespaceReader.findDocumentNamespace(xml);
 		if (namespace.isPresent()) {
 			return Optional.of(new MxId(namespace.get()));
 		}
