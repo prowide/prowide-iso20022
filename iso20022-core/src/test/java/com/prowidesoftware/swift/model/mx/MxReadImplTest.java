@@ -62,8 +62,6 @@ public class MxReadImplTest {
 		assertEquals("UNKNOWN", mx.getFIToFIPmtStsRpt().getOrgnlGrpInfAndSts().getOrgnlMsgId());
 	}
 
-
-
 	@Test
 	public void testPacs002_With_CDATA_And_Multiple_Namespace() throws IOException {
 		final String xml = Lib.readResource("pacs.002-CDATA-multiple-namespace.xml");

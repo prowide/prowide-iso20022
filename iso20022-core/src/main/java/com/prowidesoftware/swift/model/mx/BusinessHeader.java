@@ -17,7 +17,6 @@ package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.deprecation.ProwideDeprecated;
 import com.prowidesoftware.deprecation.TargetYear;
-import com.prowidesoftware.swift.io.parser.MxParser;
 import com.prowidesoftware.swift.model.MxId;
 import com.prowidesoftware.swift.model.mx.dic.ApplicationHeader;
 import com.prowidesoftware.swift.model.mx.dic.BusinessApplicationHeaderV01;
@@ -161,7 +160,7 @@ public class BusinessHeader implements AppHdr {
 	 * </ol>
 	 * <br>
 	 * If the header is an AH, gets the same from ApplicationHeader/From/Type+Id where if Type
-	 * is BIC the Id is returned as is, otherwise the domain name is parsed using {@link MxParser#getBICFromDN(String)}
+	 * is BIC the Id is returned as is, otherwise the domain name is parsed to extract the SWIFT BIC
 	 * 
 	 * @return found BIC or null if not present or cannot be parsed
 	 */
@@ -184,7 +183,7 @@ public class BusinessHeader implements AppHdr {
 	 * </ol>
 	 * <br>
 	 * If the header is an AH, gets the same from ApplicationHeader/To/Type+Id where if Type
-	 * is BIC the Id is returned as is, otherwise the domain name is parsed using {@link MxParser#getBICFromDN(String)}
+	 * is BIC the Id is returned as is, otherwise the domain name is parsed to extract the SWIFT BIC
 	 * 
 	 * @return found BIC or null if not present or cannot be parsed
 	 */

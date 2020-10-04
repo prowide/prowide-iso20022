@@ -72,7 +72,7 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
      * @throws ProwideException if severe errors occur during parse
      */
     public static BusinessAppHdrV01 parse(final String xml) {
-        return (BusinessAppHdrV01) MxParseUtils.parse(BusinessAppHdrV01.class, xml, _classes, HEADER_LOCALNAME, NAMESPACE);
+        return (BusinessAppHdrV01) MxParseUtils.parse(BusinessAppHdrV01.class, xml, _classes, HEADER_LOCALNAME);
     }
 
     /**

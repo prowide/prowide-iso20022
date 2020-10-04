@@ -27,45 +27,28 @@ import com.prowidesoftware.swift.utils.Lib;
 import com.prowidesoftware.swift.utils.SafeXmlUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.Validate;
-import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import org.w3c.dom.Node;
 import org.w3c.dom.ls.DOMImplementationLS;
 import org.w3c.dom.ls.LSSerializer;
-import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.transform.OutputKeys;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
-import javax.xml.xpath.XPath;
-import javax.xml.xpath.XPathConstants;
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.StringReader;
 import java.util.Optional;
 import java.util.logging.Level;
 
 /**
- * Helper API for MX messages parsing.
- *
- * <p>IMPORTANT: An MX message is conformed by a set of optional headers  and a message payload or document with the
- * actual specific MX message. The name of the envelope element that binds a Header to the message to which it applies
- * is <b>implementation/network specific</b> and not part of the scope of the parser.
- *
- * <p>This parser has two main utilities;
- * <ol>
- *     <li>The first one to <em>convert the message into an MxNode tree</em>. This is a generic multipurpose structured
- *     representation of the complete content that can be used to get specific items by xpath. It parses the complete
- *     tree including both payload and overhead information (wrappers, if any, application header and body content).
- *
- *     <li>The second utility is to detect the specific MX message type, to analyze the payload structure and to strip
- *     the document or header portions from the XML.</li>
- * </ol>
+ * This parser converts the message content into a generic MxNode tree. This is a generic multipurpose structured
+ * representation of the complete content that can be used to get specific items by xpath. It parses the complete
+ * tree including both payload and overhead information (wrappers, if any, application header and body content).
  *
  * <p>Comprehensive model and parse features is provided for all ISO 20022 messages in the subclasses of
- * {@link AbstractMX} which also provides a generic parse. This parser in the MX classes also parse the optional
- * header, detecting its type and version.
+ * {@link AbstractMX} which also provides a generic parse.
+ *
+ * <p>This class used to hold many other utility API that is already deprecated and moved to another proper entry point
+ * in the library API. Check the deprecation notes on each deprecated method.
  *
  * @since 7.6
  */
@@ -119,10 +102,7 @@ public class MxParser {
 	}
 
 	/**
-	 * Non-namespace aware parse.<br>
 	 * Parses the complete message content into an {@link MxNode} tree structure.
-	 * The parser should be initialized with a valid source.
-	 *
 	 * @since 7.7
 	 * @deprecated
 	 */
@@ -143,56 +123,38 @@ public class MxParser {
 	}
 
 	/**
-	 * @deprecated use {@link #parseAppHdr()} instead
+	 * @deprecated use {@link AppHdrParser#parse(String)} instead
 	 */
 	@Deprecated
 	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
 	public BusinessHeader parseBusinessHeader() {
-		AppHdr appHdr = parseAppHdr();
-		if (appHdr == null) {
+		Optional<AppHdr> appHdr = AppHdrParser.parse(this.buffer);
+		if (appHdr.isPresent()) {
 			return null;
 		}
 		// backward compatible implementation during the deprecation phase
-		if (appHdr instanceof LegacyAppHdr) {
-			return new BusinessHeader((LegacyAppHdr) appHdr);
-		} else if (appHdr instanceof BusinessAppHdrV01) {
-			return new BusinessHeader((BusinessAppHdrV01) appHdr);
+		if (appHdr.get() instanceof LegacyAppHdr) {
+			return new BusinessHeader((LegacyAppHdr) appHdr.get());
+		} else if (appHdr.get() instanceof BusinessAppHdrV01) {
+			return new BusinessHeader((BusinessAppHdrV01) appHdr.get());
 		}
 		// otherwise we return null, which would be the case for the deprecated implementation as well
 		return null;
 	}
 
 	/**
-	 * Detects the type of header with and parses it as a legacy Application Header or ISO Business Application Header.
-	 * <p>The implementation looks for an AppHdr element in the XML content, if found, the namespace is used to
-	 * determine the header type and version. If the namespace is not found, tries to parse the header content into
-	 * an ISO Business Application Header V01.
-	 *
 	 * @return parsed header or null if the content cannot be parsed or the header is not present in the XML
 	 * @since 9.0.1
+	 * @deprecated use {@link AppHdrParser#parse(String)} instead
 	 */
+	@Deprecated
+	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
 	public AppHdr parseAppHdr() {
-		analyzeMessage();
-		if (this.info.containsHeader) {
-			// unmarshall the AppHdr
-			if (info.containsLegacyHeader().isPresent() && info.containsLegacyHeader().get()) {
-				// parse legacy AH
-				return LegacyAppHdr.parse(this.buffer);
-
-			} else if (StringUtils.equals(info.getHeaderNamespace(), BusinessAppHdrV02.NAMESPACE)) {
-				// parse BAH version 2
-				return BusinessAppHdrV02.parse(this.buffer);
-
-			} else {
-				// by default try to parse to BAH version 1
-				return BusinessAppHdrV01.parse(this.buffer);
-			}
-		}
-		return null;
+		return AppHdrParser.parse(this.buffer).orElse(null);
 	}
 	
 	/**
-	 * @deprecated use {@link #parseAppHdr(Element)} instead
+	 * @deprecated use {@link AppHdrParser#parseAppHdr(Element)} instead
 	 */
 	@Deprecated
 	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
@@ -201,12 +163,13 @@ public class MxParser {
 	}
 
 	/**
-	 * Parse the business header from an XML Element node
-	 * <p>The implementation serializes the element into XML and calls {@link #parseAppHdr()}
+	 * @deprecated use {@link AppHdrParser#parseAppHdr(Element)} instead
 	 * @since 9.0.1
 	 */
+	@Deprecated
+	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
 	public static AppHdr parseAppHdr(final Element e) {
-		return (new MxParser(asXml(e))).parseAppHdr();
+		return AppHdrParser.parseAppHdr(e).orElse(null);
 	}
 
 	private static String asXml(Element e) {
@@ -276,50 +239,19 @@ public class MxParser {
 	}
 
 	/**
-	 * Takes an xml with an MX message and detects the specific message type
-	 * parsing just the namespace from the Document element. If the Document
-	 * element is not present, or without the namespace or if the namespace url
-	 * contains invalid content it will return null.
-	 *
-     * <p>
-	 * Example of a recognizable Document element:<br>
-	 * &lt;Doc:Document xmlns:Doc="urn:swift:xsd:camt.003.001.04" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
-	 *
-     * <p>
-	 * The implementation is intended to be lightweight and efficient, based on {@link javax.xml.stream.XMLStreamReader} 
-	 *
 	 * @return id with the detected MX message type or null if it cannot be determined.
 	 * @since 7.7
+	 * @deprecated use {@link MxParseUtils#identifyMessage(String)} instead
 	 */
+	@Deprecated
+	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
 	public MxId detectMessage() {
 		if (StringUtils.isBlank(this.buffer)) {
 			log.log(Level.SEVERE, "cannot detect message from null or empty content");
 			return null;
 		}
-		final javax.xml.stream.XMLInputFactory xif = SafeXmlUtils.inputFactory();
-		try {
-			final javax.xml.stream.XMLStreamReader reader = xif.createXMLStreamReader(new StringReader(this.buffer));
-			while (reader.hasNext()) {
-				int event = reader.next();
-				if (javax.xml.stream.XMLStreamConstants.START_ELEMENT == event && reader.getLocalName().equals(AbstractMX.DOCUMENT_LOCALNAME)) {
-					if (reader.getNamespaceCount() > 0) {
-						//log.finest("ELEMENT START: " + reader.getLocalName() + " , namespace count is: " + reader.getNamespaceCount());
-						for (int nsIndex = 0; nsIndex < reader.getNamespaceCount(); nsIndex++) {
-							final String nsPrefix = StringUtils.trimToNull(reader.getNamespacePrefix(nsIndex));
-							final String elementPrefix = StringUtils.trimToNull(reader.getPrefix());
-							if (StringUtils.equals(nsPrefix, elementPrefix)) {
-								String nsId = reader.getNamespaceURI(nsIndex);
-								//log.finest("\tNamepsace prefix: " + nsPrefix + " associated with URI " + nsId);
-								return new MxId(nsId);
-							}
-						}
-					}
-				}
-			}
-		} catch (final Exception e) {
-			log.log(Level.SEVERE, "error while detecting message", e);
-		}
-		return null;
+		Optional<MxId> id = MxParseUtils.identifyMessage(this.buffer);
+		return id.orElse(null);
 	}
 	
 	/**
@@ -343,7 +275,12 @@ public class MxParser {
 	 * the header, only the first AppHdr will be picked
 	 *
 	 * @since 7.10.3
+	 *
+	 * @deprecated the {@link AbstractMX#parse(String)} can be used to parse any unknown message. If you just want to
+	 * detect the message type you can also use the {@link MxParseUtils#identifyMessage(String)}
 	 */
+	@Deprecated
+	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
 	public MxStructureInfo analyzeMessage() {
 		if (this.info != null) {
 			return this.info;
@@ -381,10 +318,6 @@ public class MxParser {
 		return this.info;
 	}
 
-	/**
-	 * Gets the namespace, if any, from current position in the parameter reader
-	 * @since 7.8.4
-	 */
 	private String readNamespace(final javax.xml.stream.XMLStreamReader reader) {
 		// iterate and return the namespace matching the element prefix
 		if (reader.getNamespaceCount() > 0) {
@@ -406,7 +339,12 @@ public class MxParser {
 	 * structure information from an MX message
 	 * 
 	 * @since 7.8.4
+	 *
+	 * @deprecated the {@link AbstractMX#parse(String)} can be used to parse any unknown message. If you just want to
+	 * detect the message type you can also use the {@link MxParseUtils#identifyMessage(String)}
 	 */
+	@Deprecated
+	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
 	public class MxStructureInfo {
 		private boolean containsWrapper = false;
 		private boolean containsHeader = false;
@@ -512,7 +450,12 @@ public class MxParser {
 	 *  
 	 * @since 7.8.4
 	 * @return XML with Document element of the Mx message or null if message is blank or invalid
+	 *
+	 * @deprecated parse the message using {@link AbstractMX#parse(String)} instead, and then use any of the document
+	 * serializer {@link AbstractMX#document()} methods
 	 */
+	@Deprecated
+	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
 	public String stripDocument() {
 		analyzeMessage();
 		if (this.info.containsDocument) {
@@ -546,7 +489,12 @@ public class MxParser {
 	 * 
 	 * @since 7.8.4
 	 * @return XML with AppHdr element of the Mx message or null if not found
+	 *
+	 * @deprecated parse the message using {@link AbstractMX#parse(String)} instead, and then use any of the header
+	 * serializer {@link AbstractMX#header()} methods
 	 */
+	@Deprecated
+	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
 	public String stripHeader() {
 		analyzeMessage();
 		if (this.info.containsHeader()) {
@@ -556,26 +504,6 @@ public class MxParser {
 			if (beginIndex >=0 && endIndex >= 0) {
 				return this.buffer.substring(beginIndex, endIndex) + "</"+tag+">";
 			}
-		}
-		return null;
-	}
-
-	/**
-	 * Strips an element of the XML using DOM
-	 */
-	private String stripDom(String localName) {
-		try {
-			DocumentBuilder builder = SafeXmlUtils.documentBuilder();
-			Document doc = builder.parse(new InputSource(new StringReader(this.buffer)));
-			XPath xPath = javax.xml.xpath.XPathFactory.newInstance().newXPath();
-			Node result = (Node)xPath.evaluate(localName, doc, XPathConstants.NODE);
-			StringWriter buf = new StringWriter();
-			Transformer xform = SafeXmlUtils.transformer();
-			xform.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
-			xform.transform(new DOMSource(result), new StreamResult(buf));
-			return buf.toString();
-		} catch (Exception e) {
-			log.log(Level.SEVERE, "Error stripping " + localName + " from XML", e);
 		}
 		return null;
 	}

@@ -22,22 +22,17 @@ import com.prowidesoftware.deprecation.DeprecationUtils;
 import com.prowidesoftware.deprecation.ProwideDeprecated;
 import com.prowidesoftware.deprecation.TargetYear;
 import com.prowidesoftware.swift.io.parser.MxParser;
-import com.prowidesoftware.swift.model.mx.AbstractMX;
-import com.prowidesoftware.swift.model.mx.AppHdr;
-import com.prowidesoftware.swift.model.mx.BusinessHeader;
-import com.prowidesoftware.swift.model.mx.LegacyAppHdr;
+import com.prowidesoftware.swift.model.mx.*;
 import com.prowidesoftware.swift.model.mx.dic.ApplicationHeader;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.Validate;
 
 import javax.persistence.*;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.datatype.XMLGregorianCalendar;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Container of raw representation of an MX (ISO 20022) SWIFT message, intended for message persistence.
@@ -190,21 +185,26 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
 	private void _updateFromMessage(final MxId id) {
 		if (message() != null && message().length() > 0) {
 			/*
-			 * update sender, receiver and reference
-			 * from business header or group header
+			 * update sender, receiver and reference from business header or group header
 			 */
-			MxParser parser = new MxParser(this.message());
-			AppHdr h = parser.parseAppHdr();
-			if (!_update(h)) {
+			Optional<AppHdr> h = AppHdrParser.parse(this.message());
+			if (h.isPresent()) {
+				_update(h.get());
+			} else {
+				MxParser parser = new MxParser(this.message());
 				_update(parser.parse());
 			}
+
 			/*
 			 * update identifier and namespace
 			 */
 			if (id != null) {
 				_update(id);
 			} else {
-				_update(parser.detectMessage());
+				Optional<MxId> detectedId = MxParseUtils.identifyMessage(this.message());
+				if (detectedId.isPresent()) {
+					_update(detectedId.get());
+				}
 			}
 		}
 	}
@@ -247,8 +247,7 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
 		setMessage(mx.message());
 		setFileFormat(FileFormat.MX);
 		/*
-		 * update sender, receiver and reference
-		 * from business header or group header
+		 * update sender, receiver and reference from business header or group header
 		 */
 		if (!_update(mx.getAppHdr())) {
 			MxParser parser = new MxParser(this.message());
@@ -309,10 +308,7 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
 	/**
 	 * Updates sender, receiver and reference from the group header element (only present in a subset of Mx messages)
 	 * @return true if at least some property was updated
-	 * @deprecated
 	 */
-	@Deprecated
-	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
 	private boolean _update(MxNode n) {
 		boolean updated = false;
 		final MxNode groupHeader = n != null? n.findFirstByName("GrpHdr") : null;

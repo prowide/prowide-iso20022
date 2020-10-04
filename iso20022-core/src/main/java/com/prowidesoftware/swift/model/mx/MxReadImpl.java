@@ -15,15 +15,12 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
-import com.prowidesoftware.swift.io.parser.MxParser;
 import com.prowidesoftware.swift.model.MxBusinessProcess;
 import com.prowidesoftware.swift.model.MxId;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.Validate;
 
-import javax.xml.bind.JAXBException;
 import javax.xml.transform.sax.SAXSource;
-import java.util.concurrent.ExecutionException;
+import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -55,9 +52,6 @@ import java.util.logging.Logger;
 public class MxReadImpl implements MxRead {
 	private static final transient Logger log = Logger.getLogger(MxReadImpl.class.getName());
 
-	private static final String DOCUMENT_LOCALNAME = "Document";
-
-	@SuppressWarnings({ "rawtypes" })
 	@Override
 	public AbstractMX read(final Class<? extends AbstractMX> targetClass, final String xml, final Class<?>[] classes) {
 		return parse(targetClass, xml, classes);
@@ -68,7 +62,6 @@ public class MxReadImpl implements MxRead {
 	 * @param xml the XML to parse, should contain the Document, and optional AppHdr and any type of wrapper elements
 	 * @since 8.0.4
 	 */
-	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static AbstractMX parse(final Class<? extends AbstractMX> targetClass, final String xml, final Class<?>[] classes) {
 		Validate.notNull(targetClass, "target class to parse must not be null");
 		Validate.notNull(xml, "XML to parse must not be null");
@@ -76,41 +69,17 @@ public class MxReadImpl implements MxRead {
 		Validate.notNull(classes, "object model classes array must not be null");
 
 		try {
-			// Analise the type of XML content to parse
-			MxParser.MxStructureInfo info = new MxParser(xml).analyzeMessage();
 
-			AbstractMX mx = null;
-			AppHdr appHdr = null;
+			SAXSource documentSource = MxParseUtils.createFilteredSAXSource(xml, AbstractMX.DOCUMENT_LOCALNAME);
+			Optional<AbstractMX> mx = parseDocumentFromSAXSource(documentSource, targetClass, classes);
 
-			if (info.containsDocument()) {
-
-				/*---------------Document-----------------*/
-
-				/* When parsing the Document for an MX, we have to unbind the main message namespace. The filter will
-				 * extract the Document element from the source XML and will unbind the elements at the same time. This is
-				 * necessary because the generated jaxb model for element types is shared and not bounded to any specific
-				 * message type. Meaning we don't have duplicated type classes for each message they appear in, instead we
-				 * have single non-repetitive types with no namespace.
-				 */
-				String nameSpaceToRemove = info.getDocumentNamespace();
-				SAXSource documentSource = MxParseUtils.createFilteredSAXSource(xml, nameSpaceToRemove, AbstractMX.DOCUMENT_LOCALNAME);
-				mx = parseDocumentFromSAXSource(documentSource, targetClass, classes);
-			}
-
-			if (info.containsHeader()) {
-
-				/*---------------Header-----------------*/
-
-				String nameSpaceToRemove = info.getHeaderNamespace();
-				SAXSource headerSource = MxParseUtils.createFilteredSAXSource(xml, nameSpaceToRemove, AppHdr.HEADER_LOCALNAME);
-				appHdr = parseHeaderFromSAXSource(headerSource, info);
-			}
+			Optional<AppHdr> appHdr = AppHdrParser.parse(xml);
 	
-			if (mx != null && appHdr != null) {
-				mx.setAppHdr(appHdr);
+			if (mx.isPresent() && appHdr.isPresent()) {
+				mx.get().setAppHdr(appHdr.get());
 			}
 
-			return mx;
+			return mx.orElse(null);
 
 		} catch (final Exception e) {
 			MxParseUtils.handleParseException(e);
@@ -121,26 +90,9 @@ public class MxReadImpl implements MxRead {
 	/**
 	 * @since 9.1.2
 	 */
-	private static AbstractMX parseDocumentFromSAXSource(SAXSource source, Class<? extends AbstractMX> targetClass, Class<?>[] classes) throws JAXBException, ExecutionException {
-		return (AbstractMX) MxParseUtils.parseSAXSource(source, targetClass, classes);
-	}
-
-	/**
-	 * @since 9.1.2
-	 */
-	private static AppHdr parseHeaderFromSAXSource(SAXSource source, MxParser.MxStructureInfo info) {
-		if (info.containsLegacyHeader().isPresent() && info.containsLegacyHeader().get()) {
-			// parse legacy AH
-			return (LegacyAppHdr) MxParseUtils.parseSAXSource(source, LegacyAppHdr.class, LegacyAppHdr._classes);
-
-		} else if (StringUtils.equals(info.getHeaderNamespace(), BusinessAppHdrV02.NAMESPACE)) {
-			// parse BAH version 2
-			return (BusinessAppHdrV02) MxParseUtils.parseSAXSource(source, BusinessAppHdrV02.class, BusinessAppHdrV02._classes);
-
-		} else {
-			// by default try to parse to BAH version 1
-			return (BusinessAppHdrV01) MxParseUtils.parseSAXSource(source, BusinessAppHdrV01.class, BusinessAppHdrV01._classes);
-		}
+	private static Optional<AbstractMX> parseDocumentFromSAXSource(SAXSource source, Class<? extends AbstractMX> targetClass, Class<?>[] classes) {
+		final AbstractMX mx = (AbstractMX) MxParseUtils.parseSAXSource(source, targetClass, classes);
+		return Optional.ofNullable(mx);
 	}
 
 	/**
@@ -173,19 +125,23 @@ public class MxReadImpl implements MxRead {
 		Validate.notNull(xml, "XML to parse must not be null");
 		Validate.notBlank(xml, "XML to parse must not be a blank string");
 
-		MxParser parser = new MxParser(xml);
+		MxId resolvedId = id;
+
 		if (id == null) {
-			id = parser.detectMessage();
+			Optional<String> namespace = NamespaceReader.findNamespaceForLocalName(xml, AbstractMX.DOCUMENT_LOCALNAME);
+			if (namespace.isPresent()) {
+				resolvedId = new MxId(namespace.get());
+			} else {
+				log.severe("Cannot detect the Mx type from the XML, ensure the XML contains proper namespaces or provide an MxId object as parameter to the parse call");
+				return null;
+			}
 		}
-		if (id == null) {
-			log.severe("Cannot detect the Mx type from the XML, ensure the XML contains proper namespaces or provide an MxId object as parameter to the parse call");
-			return null;
-		}
+
 		AbstractMX mx = null;
 		String fqn = null;
 		try {
-			String subPackage = id.getBusinessProcess() == MxBusinessProcess.xsys ? ".sys" : "";
-			fqn = "com.prowidesoftware.swift.model.mx" + subPackage + ".Mx" + id.camelized();
+			String subPackage = resolvedId.getBusinessProcess() == MxBusinessProcess.xsys ? ".sys" : "";
+			fqn = "com.prowidesoftware.swift.model.mx" + subPackage + ".Mx" + resolvedId.camelized();
 			Class<? extends AbstractMX> clazz = (Class<? extends AbstractMX>) Class.forName(fqn);
 			java.lang.reflect.Field _classes = clazz.getDeclaredField("_classes");
 			mx = parse(clazz, xml, (Class[]) _classes.get(null));

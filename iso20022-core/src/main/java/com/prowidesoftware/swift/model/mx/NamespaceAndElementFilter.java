@@ -21,10 +21,15 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.XMLFilterImpl;
 
 /**
- * This filter enables extraction of a particular element from an XML and at the same time it can optionally unbind
- * a specific namespace (by filtering out the namespace declaration and optional associated prefix).
+ * This filter enables extraction of a particular element from an XML and at the same it unbinds its namespace
+ * (by filtering out the namespace declaration and optional associated prefix).
  *
  * @since 9.1.2
+ */
+/* When parsing the Document or AppHdr for an MX, we have to unbind the main message namespace.
+ * This is necessary because the generated jaxb model for element types is shared and not bounded to any specific
+ * message type. Meaning we don't have duplicated type classes for each message they appear in, instead we have single
+ * non-repetitive types with no namespace.
  */
 class NamespaceAndElementFilter extends XMLFilterImpl {
 
@@ -33,53 +38,51 @@ class NamespaceAndElementFilter extends XMLFilterImpl {
     private String localNameToPropagate;
     
     /**
-     * @param nameSpaceToRemove null if you don't want to remove namespace
      * @param localName the XML's element to propagate
      */
-    public NamespaceAndElementFilter(String nameSpaceToRemove, String localName) {
+    public NamespaceAndElementFilter(String localName) {
         super();
-        namespaceUriToRemove = nameSpaceToRemove;
-        localNameToPropagate = localName;
+        this.localNameToPropagate = localName;
     }
 
     @Override
     public void startElement(String nameSpace, String localName, String prefix, Attributes attributes) throws SAXException {
 
-    	if (localName.equals(localNameToPropagate)) {
-    		isAnElementToPropagate = true;
+    	if (localName.equals(this.localNameToPropagate)) {
+			this.isAnElementToPropagate = true;
+    		this.namespaceUriToRemove = nameSpace;
     	}
     	
-    	if (isAnElementToPropagate) {
+    	if (this.isAnElementToPropagate) {
     		String namespaceToPropagate = resolveNamespaceToPropagate(nameSpace);
 			super.startElement(namespaceToPropagate, localName, prefix, attributes);
     	}
     }
 
     private String resolveNamespaceToPropagate(String nameSpace) {
-		return StringUtils.equals(namespaceUriToRemove, nameSpace)? "" : nameSpace;
+		return StringUtils.equals(this.namespaceUriToRemove, nameSpace)? "" : nameSpace;
 	}
 
     @Override
     public void endElement(String nameSpace, String localName, String prefix) throws SAXException {    	
      	
-    	if (isAnElementToPropagate) {
+    	if (this.isAnElementToPropagate) {
 			String namespaceToPropagate = resolveNamespaceToPropagate(nameSpace);
 			super.endElement(namespaceToPropagate, localName, prefix);
     	}
     	
-    	if(localName.equals(localNameToPropagate)) {
-    		isAnElementToPropagate=false;
+    	if(localName.equals(this.localNameToPropagate)) {
+			this.isAnElementToPropagate=false;
     	}
     }
 
     @Override
     public void startPrefixMapping(String prefix, String url)throws SAXException {
-		if (isAnElementToPropagate && namespaceUriToRemove != null) {
-			if (!StringUtils.equals(url, namespaceUriToRemove)) {
+		if (this.isAnElementToPropagate && this.namespaceUriToRemove != null) {
+			if (!StringUtils.equals(url, this.namespaceUriToRemove)) {
 	    		super.startPrefixMapping(prefix, url);
 	    	}
 		}
     }
-
 
 }

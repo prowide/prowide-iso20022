@@ -5,6 +5,7 @@
 SNAPSHOT 9.1.2 (9.1.1u2)
   * Internal SCM refactor for OS release
   * Revamped the parser implementation with SAX to avoid custom namespace preprocessing
+  * Added AppHdrParser utility class
   * Removed the CopyableTo implementation from the generated model
 
 RELEASE 9.1.1 - September 2021

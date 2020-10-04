@@ -16,6 +16,8 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.ProwideException;
+import com.prowidesoftware.swift.model.MxId;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.Validate;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -30,19 +32,20 @@ import javax.xml.bind.Unmarshaller;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.transform.sax.SAXSource;
 import java.io.StringReader;
+import java.util.Optional;
 import java.util.concurrent.ExecutionException;
 import java.util.logging.Logger;
 
 /**
  * @since 9.1.2
  */
-class MxParseUtils {
+public class MxParseUtils {
 	private static final transient Logger log = Logger.getLogger(MxParseUtils.class.getName());
 
-	static SAXSource createFilteredSAXSource(final String xml, final String nameSpaceToRemove, final String localName) throws SAXException {
+	static SAXSource createFilteredSAXSource(final String xml, final String localName) throws SAXException {
 		XMLReader documentReader = XMLReaderFactory.createXMLReader();
 
-		NamespaceAndElementFilter documentFilter = new NamespaceAndElementFilter(nameSpaceToRemove, localName);
+		NamespaceAndElementFilter documentFilter = new NamespaceAndElementFilter(localName);
 		documentFilter.setParent(documentReader);
 
 		InputSource documentInputSource = new InputSource(new StringReader(xml));
@@ -106,7 +109,7 @@ class MxParseUtils {
 	 * @return parsed element or null if cannot be parsed
 	 * @throws ProwideException if severe errors occur during parse
 	 */
-	static Object parse(final Class targetClass, final String xml, final Class<?>[] classes, final String localName, final String namespace) {
+	static Object parse(final Class targetClass, final String xml, final Class<?>[] classes, final String localName) {
 		Validate.notNull(targetClass, "target class to parse must not be null");
 		Validate.notNull(xml, "XML to parse must not be null");
 		Validate.notBlank(xml, "XML to parse must not be a blank string");
@@ -114,13 +117,53 @@ class MxParseUtils {
 		Validate.notBlank(localName, "The XML element to parse must not be null nor a blank string");
 
 		try {
-			SAXSource saxSource = createFilteredSAXSource(xml, namespace, localName);
+			SAXSource saxSource = createFilteredSAXSource(xml, localName);
 			return parseSAXSource(saxSource, targetClass, classes);
 
 		} catch (final Exception e) {
 			handleParseException(e);
 			return null;
 		}
+	}
+
+	/**
+	 * Distinguished Name structure: cn=name,ou=payment,o=bank,o=swift
+	 * <br>
+	 * Example: o=spxainjj,o=swift
+	 *
+	 * @param dn the DN element content
+	 * @return returns capitalized "bank", in the example SPXAINJJ
+	 */
+	static String getBICFromDN(final String dn) {
+		for (String s : StringUtils.split(dn, ",")) {
+			if (StringUtils.startsWith(s, "o=") && !StringUtils.equals(s, "o=swift")) {
+				return StringUtils.upperCase(StringUtils.substringAfter(s, "o="));
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * Takes an xml with an MX message and detects the specific message type
+	 * parsing just the namespace from the Document element. If the Document
+	 * element is not present, or without the namespace or if the namespace url
+	 * contains invalid content it will return null.
+	 *
+	 * <p>
+	 * Example of a recognizable Document element:<br>
+	 * &lt;Doc:Document xmlns:Doc="urn:swift:xsd:camt.003.001.04" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+	 *
+	 * <p>
+	 * The implementation is intended to be lightweight and efficient, based on {@link javax.xml.stream.XMLStreamReader}
+	 *
+	 * @return id with the detected MX message type or empty if it cannot be determined.
+	 */
+	public static Optional<MxId> identifyMessage(final String xml) {
+		Optional<String> namespace = NamespaceReader.findNamespaceForLocalName(xml, AbstractMX.DOCUMENT_LOCALNAME);
+		if (namespace.isPresent()) {
+			return Optional.of(new MxId(namespace.get()));
+		}
+		return Optional.empty();
 	}
 
 }

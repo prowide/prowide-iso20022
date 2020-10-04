@@ -16,7 +16,6 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.ProwideException;
-import com.prowidesoftware.swift.io.parser.MxParser;
 import com.prowidesoftware.swift.model.mx.dic.ApplicationHeaderImpl;
 import org.apache.commons.lang3.StringUtils;
 import org.w3c.dom.Document;
@@ -72,12 +71,12 @@ public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
      * @throws ProwideException if severe errors occur during parse
      */
     public static LegacyAppHdr parse(final String xml) {
-        return (LegacyAppHdr) MxParseUtils.parse(LegacyAppHdr.class, xml, _classes, HEADER_LOCALNAME, NAMESPACE);
+        return (LegacyAppHdr) MxParseUtils.parse(LegacyAppHdr.class, xml, _classes, HEADER_LOCALNAME);
     }
 
     /**
      * Gets the sender BIC from ApplicationHeader/From/Type+Id where if Type is BIC the Id is returned as is,
-     * otherwise the domain name is parsed using {@link MxParser#getBICFromDN(String)}
+     * otherwise the domain name is parsed to extract the SWIFT BIC
      * @return found BIC code or null if element is not found
      */
     @Override
@@ -86,7 +85,7 @@ public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
             if (StringUtils.equals(this.getFrom().getType(), "BIC")) {
                 return this.getFrom().getId();
             } else {
-                return MxParser.getBICFromDN(this.getFrom().getId());
+                return MxParseUtils.getBICFromDN(this.getFrom().getId());
             }
         } catch (NullPointerException e) {
             return null;
@@ -95,7 +94,7 @@ public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
 
     /**
      * Gets the receiver BIC code from ApplicationHeader/To/Type+Id where if Type is BIC the Id is returned as is,
-     * otherwise the domain name is parsed using {@link MxParser#getBICFromDN(String)}
+     * otherwise the domain name is parsed to extract the SWIFT BIC
      *
      * @return found BIC or null if not present or cannot be parsed
      */
@@ -105,7 +104,7 @@ public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
             if (StringUtils.equals(this.getTo().getType(), "BIC")) {
                 return this.getTo().getId();
             } else {
-                return MxParser.getBICFromDN(this.getTo().getId());
+                return MxParseUtils.getBICFromDN(this.getTo().getId());
             }
         } catch (NullPointerException e) {
             return null;
