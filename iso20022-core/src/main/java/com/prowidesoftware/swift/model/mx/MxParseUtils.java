@@ -135,7 +135,7 @@ public class MxParseUtils {
 	 * @param dn the DN element content
 	 * @return returns capitalized "bank", in the example SPXAINJJ
 	 */
-	static String getBICFromDN(final String dn) {
+	public static String getBICFromDN(final String dn) {
 		for (String s : StringUtils.split(dn, ",")) {
 			if (StringUtils.startsWith(s, "o=") && !StringUtils.equals(s, "o=swift")) {
 				return StringUtils.upperCase(StringUtils.substringAfter(s, "o="));

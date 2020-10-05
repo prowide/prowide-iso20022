@@ -410,25 +410,12 @@ public class MxParser {
 	}
 	
 	/**
-	 * Distinguished Name structure: cn=name,ou=payment,o=bank,o=swift
-	 * <br>
-	 * Example: o=spxainjj,o=swift
-	 * 
-	 * @param dn the DN element content
-	 * @return returns capitalized "bank", in the example SPXAINJJ
+	 * @deprecated use {@link MxParseUtils#getBICFromDN(String)} instead
 	 */
+	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
+	@Deprecated
 	public static String getBICFromDN(final String dn) {
-		for (String s : StringUtils.split(dn, ",")) {
-			if (StringUtils.startsWith(s, "o=") && !StringUtils.equals(s, "o=swift")) {
-				return StringUtils.upperCase(StringUtils.substringAfter(s, "o="));
-			}
-			/*
-			else if (StringUtils.startsWith(s, "ou=") && !StringUtils.equals(s, "ou=swift")) {
-				return StringUtils.upperCase(StringUtils.substringAfter(s, "ou="));
-			}
-			*/
-		}
-		return null;
+		return MxParseUtils.getBICFromDN(dn);
 	}
 	
 	/**
