@@ -15,15 +15,26 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
-import com.prowidesoftware.swift.model.mx.dic.*;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import javax.xml.datatype.DatatypeFactory;
-import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigDecimal;
 import java.util.GregorianCalendar;
 
-import static org.junit.Assert.assertEquals;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
+
+import org.junit.jupiter.api.Test;
+
+import com.prowidesoftware.swift.model.mx.dic.AccountStatement6;
+import com.prowidesoftware.swift.model.mx.dic.BankToCustomerStatementV06;
+import com.prowidesoftware.swift.model.mx.dic.BranchAndFinancialInstitutionIdentification5;
+import com.prowidesoftware.swift.model.mx.dic.BranchData2;
+import com.prowidesoftware.swift.model.mx.dic.CashAccount25;
+import com.prowidesoftware.swift.model.mx.dic.CustomerCreditTransferInitiationV08;
+import com.prowidesoftware.swift.model.mx.dic.GroupHeader48;
+import com.prowidesoftware.swift.model.mx.dic.OrganisationIdentification8;
+import com.prowidesoftware.swift.model.mx.dic.Party11Choice;
+import com.prowidesoftware.swift.model.mx.dic.PartyIdentification43;
 
 /**
  * Test for JSON conversion in the MX model (AbstractMX and subclasses).

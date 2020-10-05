@@ -15,20 +15,24 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+
+import java.io.StringReader;
+
+import javax.xml.transform.Source;
+import javax.xml.transform.stream.StreamSource;
+
+import org.junit.jupiter.api.Test;
+import org.xmlunit.xpath.JAXPXPathEngine;
+
 import com.prowidesoftware.swift.model.MxId;
 import com.prowidesoftware.swift.model.mx.sys.MxXsys01200101;
 import com.prowidesoftware.swift.model.mx.sys.dic.DeliveryNotificationXsys01200101;
 import com.prowidesoftware.swift.model.mx.sys.dic.FailedDeliveryNotificationMessageXsys01200101;
 import com.prowidesoftware.swift.model.mx.sys.dic.SwIntRequestHeader;
 import com.prowidesoftware.swift.utils.TestUtils;
-import org.junit.Test;
-import org.xmlunit.xpath.JAXPXPathEngine;
-
-import javax.xml.transform.Source;
-import javax.xml.transform.stream.StreamSource;
-import java.io.StringReader;
-
-import static org.junit.Assert.*;
 
 /**
  * Test to cover MX system message parse an create, using plain document and also document with SNL wrapper.

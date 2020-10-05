@@ -15,11 +15,12 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
-import com.google.common.cache.Cache;
-import com.google.common.cache.CacheBuilder;
+import java.util.concurrent.ExecutionException;
 
 import javax.xml.bind.JAXBContext;
-import java.util.concurrent.ExecutionException;
+
+import com.google.common.cache.Cache;
+import com.google.common.cache.CacheBuilder;
 
 /**
  * A jaxb context cache with Guava to test cache implementation injection in {@link JaxbContextLoader}

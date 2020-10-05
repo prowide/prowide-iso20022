@@ -15,6 +15,19 @@
  */
 package com.prowidesoftware.swift.io.parser;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.io.IOException;
+import java.io.InputStream;
+
+import org.junit.jupiter.api.Test;
+import org.xmlunit.builder.DiffBuilder;
+import org.xmlunit.diff.Diff;
+
 import com.prowidesoftware.deprecation.ProwideDeprecated;
 import com.prowidesoftware.deprecation.TargetYear;
 import com.prowidesoftware.swift.io.parser.MxParser.MxStructureInfo;
@@ -24,14 +37,6 @@ import com.prowidesoftware.swift.model.mx.AppHdr;
 import com.prowidesoftware.swift.model.mx.BusinessAppHdrV01;
 import com.prowidesoftware.swift.model.mx.LegacyAppHdr;
 import com.prowidesoftware.swift.model.mx.dic.BusinessApplicationHeaderV01;
-import org.junit.Test;
-import org.xmlunit.builder.DiffBuilder;
-import org.xmlunit.diff.Diff;
-
-import java.io.IOException;
-import java.io.InputStream;
-
-import static org.junit.Assert.*;
 
 /**
  * Test cases for {@link MxParser} header parsing, message detection, analysis and strip API.
@@ -230,7 +235,7 @@ public class MxParserTest {
 	}
 	
 	void assertMxId(MxId id) {
-		assertNotNull("detected id is null", id);
+		assertNotNull(id, "detected id is null");
 		assertEquals(MxBusinessProcess.camt, id.getBusinessProcess());
 		assertEquals("003", id.getFunctionality());
 		assertEquals("001", id.getVariant());

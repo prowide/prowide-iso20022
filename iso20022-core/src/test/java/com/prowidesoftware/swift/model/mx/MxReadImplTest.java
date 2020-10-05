@@ -6,16 +6,30 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
-import com.prowidesoftware.swift.io.parser.MxParserTest;
-import com.prowidesoftware.swift.model.MxId;
-import com.prowidesoftware.swift.model.mx.dic.*;
-import com.prowidesoftware.swift.model.mx.sys.MxXsys00200101;
-import com.prowidesoftware.swift.utils.Lib;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.IOException;
 
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+import com.prowidesoftware.swift.io.parser.MxParserTest;
+import com.prowidesoftware.swift.model.MxId;
+import com.prowidesoftware.swift.model.mx.dic.AccountCriteria1Choice;
+import com.prowidesoftware.swift.model.mx.dic.AccountCriteria5;
+import com.prowidesoftware.swift.model.mx.dic.AccountQuery1;
+import com.prowidesoftware.swift.model.mx.dic.CashAccountReturnCriteria3;
+import com.prowidesoftware.swift.model.mx.dic.GetAccountV05;
+import com.prowidesoftware.swift.model.mx.dic.GroupHeader32;
+import com.prowidesoftware.swift.model.mx.dic.PartyIdentification32;
+import com.prowidesoftware.swift.model.mx.dic.QueryType2Code;
+import com.prowidesoftware.swift.model.mx.dic.RejectReason1Code;
+import com.prowidesoftware.swift.model.mx.dic.RequestType1Code;
+import com.prowidesoftware.swift.model.mx.sys.MxXsys00200101;
+import com.prowidesoftware.swift.utils.Lib;
 
 public class MxReadImplTest {
 
@@ -275,7 +289,7 @@ public class MxReadImplTest {
 		//AbstractMX._forma = 1;
 
 		final AbstractMX read = new MxReadImpl().read(MxCamt00300105.class, xml, MxCamt00300105._classes);
-		assertNotNull("read object null ", read);
+		assertNotNull(read, "read object null ");
 		assertTrue(read instanceof MxCamt00300105);
 		final MxCamt00300105 mx2 = (MxCamt00300105) read;
 		//System.out.println("Read: "+mx2);
@@ -301,11 +315,11 @@ public class MxReadImplTest {
 					"</Doc:Document>";
 
 	private void assertXml1(AbstractMX read) {
-		assertNotNull("read object null ", read);
+		assertNotNull(read, "read object null ");
 		assertTrue(read instanceof MxCamt00300105);
 		final MxCamt00300105 mx2 = (MxCamt00300105) read;
 		final GetAccountV05 getGetAcct = mx2.getGetAcct();
-		assertNotNull("getGetAcct is null", getGetAcct);
+		assertNotNull(getGetAcct, "getGetAcct is null");
 		assertNotNull(getGetAcct.getMsgHdr());
 		final String msgId = getGetAcct.getMsgHdr().getMsgId();
 		assertEquals("12345", msgId);
@@ -337,7 +351,7 @@ public class MxReadImplTest {
 	@Test
 	public void readMxXmlSampleStaticFromFile() throws IOException {
 		final AbstractMX read = AbstractMX.parse(Lib.readResource("camt.003.001.04.xml"), null);
-		assertNotNull("read object null ", read);
+		assertNotNull(read, "read object null ");
 		assertTrue(read instanceof MxCamt00300104);
 		final MxCamt00300104 mx = (MxCamt00300104) read;
 		//System.out.println(ToStringBuilder.reflectionToString(mx));
@@ -497,24 +511,32 @@ public class MxReadImplTest {
 		assertNull(MxCamt00300104.parse("<very></bad>"));
 	}
 
-	@Test(expected=IllegalArgumentException.class)
+	@Test
 	public void readEmptyMxClass() {
-		MxCamt00300104.parse("");
+		  Assertions.assertThrows(IllegalArgumentException.class, () -> {
+			  MxCamt00300104.parse("");
+		  });
 	}
 
-	@Test(expected = NullPointerException.class)
+	@Test
 	public void readNullMxClass() {
-		MxCamt00300104.parse((String)null);
+	  Assertions.assertThrows(NullPointerException.class, () -> {
+		  MxCamt00300104.parse((String)null);
+	  });
 	}
 
-	@Test(expected=IllegalArgumentException.class)
+	@Test
 	public void readEmptyMxReadImpl() {
-		MxReadImpl.parse("", null);
+	  Assertions.assertThrows(IllegalArgumentException.class, () -> {
+		  MxReadImpl.parse("", null);
+	  });
 	}
 
-	@Test(expected = NullPointerException.class)
-	public void readNullMxReadImpl() {
-		MxReadImpl.parse(null, null);
+	@Test
+	public void readNullMxReadImpl(){
+		Assertions.assertThrows(NullPointerException.class, () -> {
+			MxReadImpl.parse(null, null);
+		});
 	}
 
 	/**
@@ -611,7 +633,7 @@ public class MxReadImplTest {
 				"</Doc:Document>" +
 				"</message>";
 		MxCamt00300105 mx = MxCamt00300105.parse(xml);
-		assertNotNull("parsed message is null", mx);
+		assertNotNull(mx, "parsed message is null");
 		//System.out.println(mx.message());
 		assertNotNull(mx.getGetAcct());
 		assertNull(mx.getAppHdr());
@@ -671,7 +693,7 @@ public class MxReadImplTest {
 				"</Doc:Document>" +
 				"</message>";
 		MxCamt00300105 mx = MxCamt00300105.parse(xml);
-		assertNotNull("parsed message is null", mx);
+		assertNotNull(mx, "parsed message is null");
 		//System.out.println(mx.message());
 		assertNotNull(mx.getAppHdr());
 		assertEquals("2012111915360885", mx.getAppHdr().reference());

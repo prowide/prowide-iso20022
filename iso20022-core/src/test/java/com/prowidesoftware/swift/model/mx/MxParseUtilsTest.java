@@ -15,13 +15,16 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
-import com.prowidesoftware.swift.model.MxBusinessProcess;
-import com.prowidesoftware.swift.model.MxId;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.Optional;
 
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Test;
+
+import com.prowidesoftware.swift.model.MxBusinessProcess;
+import com.prowidesoftware.swift.model.MxId;
 
 public class MxParseUtilsTest {
 
@@ -68,7 +71,7 @@ public class MxParseUtilsTest {
     }
 
     void assertMxId(MxId id) {
-        assertNotNull("detected id is null", id);
+        assertNotNull(id,"detected id is null");
         assertEquals(MxBusinessProcess.camt, id.getBusinessProcess());
         assertEquals("003", id.getFunctionality());
         assertEquals("001", id.getVariant());

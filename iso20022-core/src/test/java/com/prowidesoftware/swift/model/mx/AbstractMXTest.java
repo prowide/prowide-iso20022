@@ -6,10 +6,13 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
-import com.prowidesoftware.swift.model.MxId;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Test;
+
+import com.prowidesoftware.swift.model.MxId;
 
 /**
  * Test for the Mx parser API in the base {@link AbstractMX} class

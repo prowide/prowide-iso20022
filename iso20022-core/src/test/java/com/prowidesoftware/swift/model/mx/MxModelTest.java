@@ -1,13 +1,14 @@
 package com.prowidesoftware.swift.model.mx;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
+
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.dic.CustomerCreditTransferInitiationV03;
 import com.prowidesoftware.swift.model.mx.dic.GroupHeader32;
 import com.prowidesoftware.swift.model.mx.dic.PartyIdentification32;
 import com.prowidesoftware.swift.model.mx.dic.PaymentInstructionInformation3;
-import org.junit.Test;
-
-import static org.junit.Assert.assertEquals;
 
 public class MxModelTest {
 
