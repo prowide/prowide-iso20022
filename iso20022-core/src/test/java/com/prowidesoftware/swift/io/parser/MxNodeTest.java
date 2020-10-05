@@ -15,15 +15,17 @@
  */
 package com.prowidesoftware.swift.io.parser;
 
-import com.prowidesoftware.deprecation.ProwideDeprecated;
-import com.prowidesoftware.deprecation.TargetYear;
-import com.prowidesoftware.swift.model.MxNode;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 import java.io.IOException;
 import java.io.InputStream;
 
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Test;
+
+import com.prowidesoftware.swift.model.MxNode;
+
 
 /**
  * Test cases for {@link MxParser} XML conversion into {@link MxNode}

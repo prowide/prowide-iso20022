@@ -15,16 +15,19 @@
  */
 package com.prowidesoftware.swift.model;
 
-import org.apache.commons.lang3.StringUtils;
-import org.junit.Assert;
-import org.junit.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
-import static org.junit.Assert.*;
+import org.apache.commons.lang3.StringUtils;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  */
@@ -34,7 +37,7 @@ public class MxSwiftMessageTest {
     public void testRead() throws IOException {
         File f = File.createTempFile("mx_", ".xml");
         MxSwiftMessage mx = new MxSwiftMessage(f);
-        Assert.assertEquals(mx.getMessage(), "");
+        Assertions.assertEquals(mx.getMessage(), "");
         f.deleteOnExit();
     }
 
@@ -46,7 +49,7 @@ public class MxSwiftMessageTest {
         fos.write("<Document/>".getBytes(StandardCharsets.UTF_8));
         fos.close();
         MxSwiftMessage mx = new MxSwiftMessage(f);
-        Assert.assertTrue(StringUtils.contains(mx.getMessage(), "Document"));
+        Assertions.assertTrue(StringUtils.contains(mx.getMessage(), "Document"));
         f.deleteOnExit();
     }
 	

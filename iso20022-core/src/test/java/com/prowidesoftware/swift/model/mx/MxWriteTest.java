@@ -15,18 +15,43 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
-import com.prowidesoftware.swift.model.mx.dic.*;
-import org.apache.commons.lang3.StringUtils;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import javax.xml.datatype.DatatypeFactory;
-import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-import static org.junit.Assert.*;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
+
+import org.apache.commons.lang3.StringUtils;
+import org.junit.jupiter.api.Test;
+
+import com.prowidesoftware.swift.model.mx.dic.AccountCriteria1Choice;
+import com.prowidesoftware.swift.model.mx.dic.AccountCriteria2Choice;
+import com.prowidesoftware.swift.model.mx.dic.AccountCriteria5;
+import com.prowidesoftware.swift.model.mx.dic.AccountOpeningInstructionV07;
+import com.prowidesoftware.swift.model.mx.dic.AccountParties10Choice;
+import com.prowidesoftware.swift.model.mx.dic.AccountParties15;
+import com.prowidesoftware.swift.model.mx.dic.AccountQuery1;
+import com.prowidesoftware.swift.model.mx.dic.AccountQuery2;
+import com.prowidesoftware.swift.model.mx.dic.AgreedRate1;
+import com.prowidesoftware.swift.model.mx.dic.CashAccountReturnCriteria3;
+import com.prowidesoftware.swift.model.mx.dic.ChargeBearerType1Code;
+import com.prowidesoftware.swift.model.mx.dic.CreditTransferTransactionInformation11;
+import com.prowidesoftware.swift.model.mx.dic.CustomerCreditTransferInitiationV08;
+import com.prowidesoftware.swift.model.mx.dic.FIToFICustomerCreditTransferV02;
+import com.prowidesoftware.swift.model.mx.dic.ForeignExchangeTradeInstructionV02;
+import com.prowidesoftware.swift.model.mx.dic.GetAccountV05;
+import com.prowidesoftware.swift.model.mx.dic.GetAccountV06;
+import com.prowidesoftware.swift.model.mx.dic.GroupHeader48;
+import com.prowidesoftware.swift.model.mx.dic.InvestmentAccountOwnershipInformation14;
+import com.prowidesoftware.swift.model.mx.dic.PartyIdentification43;
+import com.prowidesoftware.swift.model.mx.dic.PaymentInstruction22;
+import com.prowidesoftware.swift.model.mx.dic.SettlementDateTimeIndication1;
 
 public class MxWriteTest {
 
@@ -60,12 +85,12 @@ public class MxWriteTest {
 		final String mxXml = mx.message();
 		//System.out.println("XML: "+mxXml);
 
-		assertFalse("com.prowidesoftware is present in generated xml", StringUtils.contains(mxXml, "com.prowidesoftware."));
-		assertTrue("swift namespace missing in generated xml", StringUtils.contains(mxXml, MxCamt00300105.NAMESPACE));
+		assertFalse(StringUtils.contains(mxXml, "com.prowidesoftware."), "com.prowidesoftware is present in generated xml");
+		assertTrue(StringUtils.contains(mxXml, MxCamt00300105.NAMESPACE), "swift namespace missing in generated xml");
 		if (StringUtils.contains(mxXml, "xmlns:Doc=\"urn:swift:xsd:camt.003.001.05\"")) {
 			assertTrue(StringUtils.contains(mxXml, "<Doc:GetAcct>"));
 		}
-		assertFalse("businessHeader is present in generated xml", StringUtils.contains(mxXml, "businessHeader"));
+		assertFalse(StringUtils.contains(mxXml, "businessHeader"), "businessHeader is present in generated xml");
 	}
 
 	@Test
@@ -84,8 +109,8 @@ public class MxWriteTest {
 		final String mxXml = mx.message();
 		//System.out.println(mxXml);
 
-		assertFalse("com.prowidesoftware is present in generated xml", StringUtils.contains(mxXml, "com.prowidesoftware."));
-		assertTrue("swift namespace missing in generated xml", StringUtils.contains(mxXml, MxAcmt00100107.NAMESPACE));
+		assertFalse(StringUtils.contains(mxXml, "com.prowidesoftware."), "com.prowidesoftware is present in generated xml");
+		assertTrue(StringUtils.contains(mxXml, MxAcmt00100107.NAMESPACE), "swift namespace missing in generated xml");
 		if (StringUtils.contains(mxXml, "xmlns:Doc=\"urn:swift:xsd:acmt.001.001.07\"")) {
 			assertTrue(StringUtils.contains(mxXml, "<Doc:AcctOpngInstr>"));
 		}
@@ -119,8 +144,8 @@ public class MxWriteTest {
 		final String mxXml = mx.message();
 		//System.out.println("XML: "+mxXml);
 
-		assertTrue("namespace missing in generated xml", StringUtils.contains(mxXml, MxFxtr01400102.NAMESPACE));
-		assertFalse("businessHeader is present in generated xml", StringUtils.contains(mxXml, "businessHeader"));
+		assertTrue(StringUtils.contains(mxXml, MxFxtr01400102.NAMESPACE), "namespace missing in generated xml");
+		assertFalse(StringUtils.contains(mxXml, "businessHeader"), "businessHeader is present in generated xml");
 	}
 
 	@Test
