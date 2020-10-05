@@ -497,20 +497,24 @@ public class MxReadImplTest {
 		assertNull(MxCamt00300104.parse("<very></bad>"));
 	}
 
-	/**
-	 * Read is expected to fail because of empty xml
-	 */
 	@Test(expected=IllegalArgumentException.class)
-	public void readEmpty() {
+	public void readEmptyMxClass() {
 		MxCamt00300104.parse("");
 	}
 
-	/**
-	 * Read is expected to fail because of null xml
-	 */
 	@Test(expected = NullPointerException.class)
-	public void readNull() {
+	public void readNullMxClass() {
 		MxCamt00300104.parse((String)null);
+	}
+
+	@Test(expected=IllegalArgumentException.class)
+	public void readEmptyMxReadImpl() {
+		MxReadImpl.parse("", null);
+	}
+
+	@Test(expected = NullPointerException.class)
+	public void readNullMxReadImpl() {
+		MxReadImpl.parse(null, null);
 	}
 
 	/**

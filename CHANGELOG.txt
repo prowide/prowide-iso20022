@@ -7,6 +7,7 @@ SNAPSHOT 9.1.2 (9.1.1u2)
   * Revamped the parser implementation with SAX to avoid custom namespace preprocessing
   * Added AppHdrParser utility class
   * Removed the CopyableTo implementation from the generated model
+  * Change the generic AbstractMX#parse to throw runtime exception when XML parameter is blank or null (same semantic as Mx classes parse method)
 
 RELEASE 9.1.1 - September 2021
   * Removed blank lines in MX writer (marshalling)

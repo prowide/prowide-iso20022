@@ -17,6 +17,7 @@ package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.swift.model.MxBusinessProcess;
 import com.prowidesoftware.swift.model.MxId;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.Validate;
 
 import javax.xml.transform.sax.SAXSource;
@@ -120,6 +121,9 @@ public class MxReadImpl implements MxRead {
 	/**
 	 * Static parse implementation of {@link MxRead#read(String, MxId)}
 	 * @since 9.0
+	 * @throws IllegalArgumentException if the XML parameter is blank
+	 * @throws NullPointerException if the XML parameter is null
+	 * @return parsed message or null if XML is malformed or unrecognized as MX message
 	 */
 	public static AbstractMX parse(final String xml, MxId id) {
 		Validate.notNull(xml, "XML to parse must not be null");
