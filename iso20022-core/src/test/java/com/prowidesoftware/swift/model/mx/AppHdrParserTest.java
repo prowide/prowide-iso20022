@@ -232,4 +232,17 @@ public class AppHdrParserTest {
         assertFalse(appHdr.isPresent());
     }
 
+    @Test
+    public void testNoNamespaceDefaultToBAH() {
+        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
+                "<AppHdr>\n" +
+                "   <BizMsgIdr>0001645041</BizMsgIdr>\n" +
+                "   <CreDt>2018-09-05T09:50:33Z</CreDt>\n" +
+                "</AppHdr>";
+        Optional<AppHdr> appHdr = AppHdrParser.parse(xml);
+        assertTrue(appHdr.isPresent());
+        BusinessAppHdrV01 bah = (BusinessAppHdrV01) appHdr.get();
+        assertEquals("0001645041", bah.getBizMsgIdr());
+    }
+
 }

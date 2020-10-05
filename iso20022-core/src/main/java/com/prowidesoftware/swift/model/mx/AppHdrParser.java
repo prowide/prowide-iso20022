@@ -25,7 +25,7 @@ public class AppHdrParser {
         try {
 
             Optional<String> namespace = NamespaceReader.findAppHdrNamespace(xml);
-            return Optional.ofNullable(parseHeaderFromSAXSource(xml, namespace.get()));
+            return Optional.ofNullable(parseHeaderFromSAXSource(xml, namespace.orElse(null)));
 
         } catch (Exception e) {
             MxParseUtils.handleParseException(e);
