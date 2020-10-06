@@ -68,6 +68,8 @@ public final class XmlEventWriter implements XMLEventWriter {
 		this.rootElement = rootElement;
 	}
 
+	private StringBuilder charactersBuffer = new StringBuilder();
+
 	public void add(final XMLEvent event) throws XMLStreamException {
 		if (event != null) {
 			try {
@@ -127,11 +129,12 @@ public final class XmlEventWriter implements XMLEventWriter {
 						closeStartTagIfNeeded();
 						final Characters ce = event.asCharacters();
 						final char[] arr = ce.getData().toCharArray();
-						out.write(escape(arr));
+						this.charactersBuffer.append(arr);
 						break;
 					}
 
 					case XMLEvent.END_ELEMENT: {
+						writeCharactersIfNeeded();
 						this.nestedLevel--;
 						closeStartTagIfNeeded();
 						final EndElement ee = event.asEndElement();
@@ -171,6 +174,13 @@ public final class XmlEventWriter implements XMLEventWriter {
 		}
 	}
 
+	private void writeCharactersIfNeeded() {
+		if (this.charactersBuffer.length() > 0) {
+			out.write(escape(this.charactersBuffer.toString()));
+			this.charactersBuffer = new StringBuilder();
+		}
+	}
+
 	/**
 	 * For a nested level above zero, writes the proportional identation
 	 */
@@ -199,8 +209,9 @@ public final class XmlEventWriter implements XMLEventWriter {
 	/**
 	 * Inplace escape por xml
 	 * @since 7.8
+	 * asdfasd <![CDATA asdflaskjdfasd ]] as&&& <<<>></>df asdf<![CDATA asdflaskjdfasd ]]  asdfasd
 	 */
-	private String escape(char[] arr) {
+	String escape(char[] arr) {
 		final StringBuilder sb = new StringBuilder(arr.length);
 		// TODO Consider code in com.sun.xml.bind.marshaller.DumbEscapeHandler for replacements
 		for (int i = 0; i < arr.length; i++) {
