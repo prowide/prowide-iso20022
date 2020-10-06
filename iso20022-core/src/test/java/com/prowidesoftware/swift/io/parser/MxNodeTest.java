@@ -18,9 +18,10 @@ package com.prowidesoftware.swift.io.parser;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import com.prowidesoftware.swift.model.MxNode;
+import com.prowidesoftware.swift.utils.Lib;
 
 import java.io.IOException;
-import java.io.InputStream;
 
 import org.junit.jupiter.api.Test;
 
@@ -28,9 +29,6 @@ import com.prowidesoftware.swift.model.MxNode;
 
 
 /**
- * Test cases for {@link MxParser} XML conversion into {@link MxNode}
- * and content finder API on the parsed structure. 
- *
  * @since 7.8.8
  */
 public class MxNodeTest {
@@ -38,7 +36,7 @@ public class MxNodeTest {
 	@Test
 	public void testParse01() {
 		final String xml = "<FaceAmount>1234567.89</FaceAmount>";
-		final MxNode doc = new MxParser(xml).parse();
+		final MxNode doc = MxNode.parse(xml);
 		assertEquals("1234567.89", doc.findFirstByName("FaceAmount").getValue());
 	}
 
@@ -259,8 +257,7 @@ public class MxNodeTest {
 				"   </Doc:SecuritiesBalanceCustodyReport.002V03>" +
 				"</Doc:Document>";
 
-		final MxParser parser = new MxParser(xml);
-		final MxNode n = parser.parse();
+		final MxNode n = MxNode.parse(xml);
 		assertEquals(
 				"35732656.0",
 				n.singlePathValue("/Document/SecuritiesBalanceCustodyReport.002V03/BalanceForAccount/AggregateBalance/Quantity/Quantity/OriginalAndCurrentFace/FaceAmount"));
@@ -269,7 +266,7 @@ public class MxNodeTest {
 	@Test
 	public void testParse03_attributes() {
 		final String xml = "<FaceAmount Ccy='USD'>1234567.89</FaceAmount>";
-		final MxNode doc = new MxParser(xml).parse();
+		final MxNode doc = MxNode.parse(xml);
 		assertEquals("1234567.89", doc.findFirstByName("FaceAmount").getValue());
 		assertEquals("USD", doc.findFirstByName("FaceAmount").getAttribute("Ccy"));
 	}
@@ -277,7 +274,7 @@ public class MxNodeTest {
 	@Test
 	public void testParse04_ns() {
 		final String xml = "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.01\"><From></From></AppHdr>";
-		final MxNode doc = new MxParser(xml).parse();
+		final MxNode doc = MxNode.parse(xml);
 		assertEquals("urn:iso:std:iso:20022:tech:xsd:head.001.001.01", doc.findFirstByName("AppHdr").getAttribute("xmlns"));
 		assertNotNull(doc.findFirst("AppHdr/From"));
 		assertNull(doc.findFirst("AppHdr/From").getAttribute("xmlns"));
@@ -286,22 +283,22 @@ public class MxNodeTest {
 	@Test
 	public void testFindFirst() {
 		String xml = "<a></a>";
-		MxNode doc = new MxParser(xml).parse();
+		MxNode doc = MxNode.parse(xml);
 		assertNull(doc.singlePathValue("a"));
 
 		xml = "<a>1</a>";
-		doc = new MxParser(xml).parse();
+		doc = MxNode.parse(xml);
 		assertEquals("1", doc.singlePathValue("a"));
 	}
 
 	@Test
 	public void testFindFirstLevel2() {
 		String xml = "<a><a>1</a></a>";
-		MxNode doc = new MxParser(xml).parse();
+		MxNode doc = MxNode.parse(xml);
 		assertEquals("1", doc.singlePathValue("a/a"));
 
 		xml = "<a><b>2</b></a>";
-		doc = new MxParser(xml).parse();
+		doc = MxNode.parse(xml);
 		assertEquals("2", doc.singlePathValue("a/b"));
 	}
 
@@ -311,7 +308,7 @@ public class MxNodeTest {
 				+ "		<b>1</b>"
 				+ "		<c>2</c>"
 				+ "</a>";
-		final MxNode doc = new MxParser(xml).parse();
+		final MxNode doc = MxNode.parse(xml);
 		assertNotNull(doc.singlePathValue("a/b"));
 		assertNotNull(doc.singlePathValue("a/c"));
 	}
@@ -319,7 +316,7 @@ public class MxNodeTest {
 	@Test
 	public void testFindFirstAbsoluteAndRelativePath() {
 		final String xml = "<a><b><c>1</c></b></a>";
-		final MxNode doc = new MxParser(xml).parse();
+		final MxNode doc = MxNode.parse(xml);
 		/*
 		 * absolute
 		 */
@@ -341,7 +338,7 @@ public class MxNodeTest {
 	@Test
 	public void testFindByName() {
 		final String xml = "<a>1</a>";
-		final MxNode doc = new MxParser(xml).parse();
+		final MxNode doc = MxNode.parse(xml);
 		assertNotNull(doc.findFirstByName("a"));
 		assertEquals("1", doc.findFirstByName("a").getValue());
 		assertNull(doc.findFirstByName("b"));
@@ -350,7 +347,7 @@ public class MxNodeTest {
 	@Test
 	public void testFindByNameLevel2() {
 		final String xml = "<a><b>2</b><b>3</b></a>";
-		final MxNode doc = new MxParser(xml).parse();
+		final MxNode doc = MxNode.parse(xml);
 		assertNotNull(doc.findFirstByName("a"));
 		assertNotNull(doc.findFirstByName("b"));
 		assertEquals("2", doc.findFirstByName("b").getValue());
@@ -365,7 +362,7 @@ public class MxNodeTest {
 				+"		</c>"
 				+"	</b>"
 				+"</a>";
-		final MxNode doc = new MxParser(xml).parse();
+		final MxNode doc = MxNode.parse(xml);
 
 		assertEquals("4", doc.singlePathValue("/a/b/c/d"));
 
@@ -377,9 +374,9 @@ public class MxNodeTest {
 
 	@Test
 	public void testReadSample() throws IOException {
-		final InputStream inputStream = getClass().getResourceAsStream("/mx_sample_document.xml");
-		assertNotNull(inputStream);
-		final MxNode doc = new MxParser(inputStream).parse();
+		final String xml = Lib.readResource("mx_sample_document.xml");
+		assertNotNull(xml);
+		final MxNode doc = MxNode.parse(xml);
 		assertNotNull(doc);
 		doc.print();
 		assertEquals("1", doc.singlePathValue("Document/GetAcct/MsgId/Id"));
@@ -388,13 +385,7 @@ public class MxNodeTest {
 		assertEquals("1", doc.singlePathValue("/Document/GetAcct/MsgId/Id/"));
 		assertNull(doc.singlePathValue("/foobar"));
 		assertNull(doc.singlePathValue("/foobar/1/2/3/4/5/6/7"));
-	}
 
-	@Test
-	public void testReadSampleByNode() throws IOException {
-		final InputStream inputStream = getClass().getResourceAsStream("/mx_sample_document.xml");
-		final MxNode doc = new MxParser(inputStream).parse();
-		doc.print();
 		MxNode n = doc.findFirstByName("Id");
 		assertNotNull(n);
 		assertEquals("1", n.getValue());
@@ -405,8 +396,9 @@ public class MxNodeTest {
 
 	@Test
 	public void testPathApplicationHeader() throws IOException {
-		final InputStream inputStream = getClass().getResourceAsStream("/mx_sample_header.xml");
-		final MxNode doc = new MxParser(inputStream).parse();
+		final String xml = Lib.readResource("mx_sample_header.xml");
+		assertNotNull(xml);
+		final MxNode doc = MxNode.parse(xml);
 		assertNotNull(doc);
 		assertEquals("DN", doc.singlePathValue("AppHdr/From/Type"));
 		assertEquals("DN", doc.singlePathValue("/AppHdr/From/Type"));
@@ -431,7 +423,7 @@ public class MxNodeTest {
 	public void testXxeDisabled() {
 		String xml = "<!DOCTYPE foo [ <!ENTITY xxe SYSTEM \"file:///etc/passwd\" >]>"+
 				"<FaceAmount>&xxe;</FaceAmount>";
-		final MxNode doc = new MxParser(xml).parse();
+		final MxNode doc = MxNode.parse(xml);
 		assertNull(doc);
 	}
 

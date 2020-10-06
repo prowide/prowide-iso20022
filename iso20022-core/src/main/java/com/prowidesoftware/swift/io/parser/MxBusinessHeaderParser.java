@@ -25,8 +25,6 @@ import com.prowidesoftware.swift.model.mx.dic.*;
 import java.util.logging.Logger;
 
 /**
- * Non-public helper class used by {@link MxParser} to parse the business header in its two variants, using MxNode.
- * 
  * @deprecated replaced by new {@link com.prowidesoftware.swift.model.mx.AppHdr} parsers
  */
 @Deprecated

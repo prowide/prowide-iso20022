@@ -30,7 +30,6 @@ import org.apache.commons.lang3.Validate;
 import org.w3c.dom.Element;
 import org.w3c.dom.ls.DOMImplementationLS;
 import org.w3c.dom.ls.LSSerializer;
-import org.xml.sax.XMLReader;
 
 import java.io.File;
 import java.io.IOException;
@@ -40,18 +39,14 @@ import java.util.Optional;
 import java.util.logging.Level;
 
 /**
- * This parser converts the message content into a generic MxNode tree. This is a generic multipurpose structured
- * representation of the complete content that can be used to get specific items by xpath. It parses the complete
- * tree including both payload and overhead information (wrappers, if any, application header and body content).
- *
- * <p>Comprehensive model and parse features is provided for all ISO 20022 messages in the subclasses of
- * {@link AbstractMX} which also provides a generic parse.
- *
- * <p>This class used to hold many other utility API that is already deprecated and moved to another proper entry point
- * in the library API. Check the deprecation notes on each deprecated method.
+ * This class is currently deprecated. The API provided is no longer useful or has been replaced by similar or moved
+ * methods in: {@link AbstractMX}, {@link AppHdr}, {@link AppHdrParser}, {@link MxNode} or {@link MxParseUtils}
  *
  * @since 7.6
+ * @deprecated see deprecation notes on each method
  */
+@Deprecated
+@ProwideDeprecated(phase2 = TargetYear.SRU2021)
 public class MxParser {
 	private static final java.util.logging.Logger log = java.util.logging.Logger.getLogger(MxParser.class.getName());
 
@@ -71,6 +66,9 @@ public class MxParser {
 	public static final String DOCUMENT_LOCALNAME = "Document";
 	
 	private String buffer;
+	
+	@Deprecated
+	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
 	private MxStructureInfo info = null;
 
 	/**
@@ -102,24 +100,12 @@ public class MxParser {
 	}
 
 	/**
-	 * Parses the complete message content into an {@link MxNode} tree structure.
-	 * @since 7.7
-	 * @deprecated
+	 * @deprecated use {@link MxNode#parse(String)} instead
 	 */
 	@Deprecated
 	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
 	public MxNode parse() {
-		Validate.notNull(buffer, "the source must be initialized");
-		try {
-			XMLReader xmlReader = SafeXmlUtils.reader(true, null);
-			final MxNodeContentHandler contentHandler = new MxNodeContentHandler();
-			xmlReader.setContentHandler(contentHandler);
-			xmlReader.parse(new org.xml.sax.InputSource(new StringReader(this.buffer)));
-			return contentHandler.getRootNode();
-		} catch (final Exception e) {
-			log.log(Level.SEVERE, "Error parsing XML", e);
-		}
-		return null;
+		return MxNode.parse(this.buffer);
 	}
 
 	/**
@@ -154,29 +140,26 @@ public class MxParser {
 	}
 	
 	/**
-	 * @deprecated use {@link AppHdrParser#parseAppHdr(Element)} instead
+	 * @deprecated use {@link AppHdrParser#parse(Element)} instead
 	 */
 	@Deprecated
 	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
 	public static BusinessHeader parseBusinessHeader(final Element e) {
-		return (new MxParser(asXml(e))).parseBusinessHeader();
+		DOMImplementationLS lsImpl = (DOMImplementationLS) e.getOwnerDocument().getImplementation().getFeature("LS", "3.0");
+		LSSerializer serializer = lsImpl.createLSSerializer();
+		serializer.getDomConfig().setParameter("xml-declaration", false);
+		String xml = serializer.writeToString(e);
+		return (new MxParser(xml)).parseBusinessHeader();
 	}
 
 	/**
-	 * @deprecated use {@link AppHdrParser#parseAppHdr(Element)} instead
+	 * @deprecated use {@link AppHdrParser#parse(Element)} instead
 	 * @since 9.0.1
 	 */
 	@Deprecated
 	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
 	public static AppHdr parseAppHdr(final Element e) {
-		return AppHdrParser.parseAppHdr(e).orElse(null);
-	}
-
-	private static String asXml(Element e) {
-		DOMImplementationLS lsImpl = (DOMImplementationLS) e.getOwnerDocument().getImplementation().getFeature("LS", "3.0");
-		LSSerializer serializer = lsImpl.createLSSerializer();
-		serializer.getDomConfig().setParameter("xml-declaration", false);
-		return serializer.writeToString(e);
+		return AppHdrParser.parse(e).orElse(null);
 	}
 
 	/**
@@ -318,6 +301,8 @@ public class MxParser {
 		return this.info;
 	}
 
+	@Deprecated
+	@ProwideDeprecated(phase2 = TargetYear.SRU2021)
 	private String readNamespace(final javax.xml.stream.XMLStreamReader reader) {
 		// iterate and return the namespace matching the element prefix
 		if (reader.getNamespaceCount() > 0) {
@@ -335,8 +320,7 @@ public class MxParser {
 	}
 		
 	/**
-	 * Helper bean used by {@link MxParser#analyzeMessage()} to return 
-	 * structure information from an MX message
+	 * Structure information from an MX message
 	 * 
 	 * @since 7.8.4
 	 *

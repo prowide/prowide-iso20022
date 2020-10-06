@@ -191,8 +191,7 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
 			if (h.isPresent()) {
 				_update(h.get());
 			} else {
-				MxParser parser = new MxParser(this.message());
-				_update(parser.parse());
+				_update(MxNode.parse(this.message()));
 			}
 
 			/*
@@ -250,8 +249,7 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
 		 * update sender, receiver and reference from business header or group header
 		 */
 		if (!_update(mx.getAppHdr())) {
-			MxParser parser = new MxParser(this.message());
-			_update(parser.parse());
+			_update(MxNode.parse(this.message()));
 		}
 		/*
 		 * update identifier and namespace
@@ -394,13 +392,12 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
 	/**
 	 * If present in the message content, returns the business header (SWIFT or ISO version)
 	 * Notice this header is optional and may not be present.
-	 * @see MxParser#parseAppHdr()
+	 * @see AppHdrParser#parse(String)
 	 * @return found header or null if not present or cannot be parsed into a header object
 	 * @since 9.0.1
 	 */
 	public AppHdr getAppHdr() {
-		MxParser parser = new MxParser(this.message());
-		return parser.parseAppHdr();
+		return AppHdrParser.parse(this.message()).orElse(null);
 	}
 
 	/**
@@ -410,11 +407,10 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
 	@ProwideDeprecated(phase4=TargetYear.SRU2021)
 	public ApplicationHeader getApplicationHeader() {
 		DeprecationUtils.phase3(getClass(), "getApplicationHeader()", "use getAppHdr() instead");
-		MxParser parser = new MxParser(this.message());
-		AppHdr h = parser.parseAppHdr();
-		if (h != null && h instanceof LegacyAppHdr) {
+		Optional<AppHdr> optionalAppHdr = AppHdrParser.parse(this.message());
+		if (optionalAppHdr.isPresent() && optionalAppHdr.get() instanceof LegacyAppHdr) {
 			ApplicationHeader result = new ApplicationHeader();
-			LegacyAppHdr legacyHdr = (LegacyAppHdr) h;
+			LegacyAppHdr legacyHdr = (LegacyAppHdr) optionalAppHdr.get();
 			result.setFrom(legacyHdr.getFrom());
 			result.setTo(legacyHdr.getTo());
 			result.setSvcName(legacyHdr.getSvcName());

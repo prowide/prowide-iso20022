@@ -13,16 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.prowidesoftware.swift.io.parser;
+package com.prowidesoftware.swift.model;
 
-import com.prowidesoftware.swift.model.MxNode;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Non-public content handler used by {@link MxParser} to parse MX message into {@link MxNode} tree
+ * Non-public content handler used by {@link MxNode} to parse MX message into the generic node tree
  * <p>Non Namespace Aware. The namespace uri, if present, is stored as attribute named "xmlns" in the root node.
  */
 final class MxNodeContentHandler implements org.xml.sax.ContentHandler {
