@@ -13,15 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.prowidesoftware.swift.io.parser;
+package com.prowidesoftware.swift.model;
 
-import com.prowidesoftware.swift.model.MxNode;
 import com.prowidesoftware.swift.utils.Lib;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
+
 
 /**
  * @since 7.8.8

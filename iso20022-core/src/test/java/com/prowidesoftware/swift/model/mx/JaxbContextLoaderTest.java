@@ -15,26 +15,29 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
-import com.prowidesoftware.swift.utils.Lib;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 import java.io.IOException;
 
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import com.prowidesoftware.swift.utils.Lib;
 
 /**
  * @since 9.0
  */
 public class JaxbContextLoaderTest {
 
-    @Before
+    @BeforeEach
     public void setup() {
         JaxbContextLoader.INSTANCE.setNoCache();
     }
 
-    @After
+    @AfterEach
     public void dispose() {
         JaxbContextLoader.INSTANCE.setNoCache();
     }

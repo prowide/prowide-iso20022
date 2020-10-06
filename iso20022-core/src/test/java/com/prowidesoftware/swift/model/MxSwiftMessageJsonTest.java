@@ -15,16 +15,18 @@
  */
 package com.prowidesoftware.swift.model;
 
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-import org.apache.commons.lang3.StringUtils;
-import org.junit.Assert;
-import org.junit.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.util.Calendar;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import org.apache.commons.lang3.StringUtils;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 /**
  * Tests for JSON API in MxSwiftMessage
@@ -78,8 +80,8 @@ public class MxSwiftMessageJsonTest {
         assertEquals("ABCDCHZZWWW", o.get("sender").getAsString());
         assertEquals("DCBADEFFXXX", o.get("receiver").getAsString());
         assertEquals("11308917", o.get("reference").getAsString());
-        Assert.assertTrue(StringUtils.contains(mx.getMessage(), "Document"));
-        Assert.assertTrue(StringUtils.contains(mx.getMessage(), "2012-01-25"));
+        Assertions.assertTrue(StringUtils.contains(mx.getMessage(), "Document"));
+        Assertions.assertTrue(StringUtils.contains(mx.getMessage(), "2012-01-25"));
     }
 
     @Test

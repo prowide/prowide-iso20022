@@ -15,16 +15,34 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
-import com.prowidesoftware.swift.model.mx.dic.*;
-import com.prowidesoftware.swift.utils.TestUtils;
-import org.junit.Test;
-import org.xmlunit.xpath.JAXPXPathEngine;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.io.StringReader;
 
 import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamSource;
-import java.io.StringReader;
 
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Test;
+import org.xmlunit.xpath.JAXPXPathEngine;
+
+import com.prowidesoftware.swift.model.mx.dic.BranchAndFinancialInstitutionIdentification5;
+import com.prowidesoftware.swift.model.mx.dic.BranchAndFinancialInstitutionIdentification6;
+import com.prowidesoftware.swift.model.mx.dic.BranchData2;
+import com.prowidesoftware.swift.model.mx.dic.BranchData3;
+import com.prowidesoftware.swift.model.mx.dic.CopyDuplicate1Code;
+import com.prowidesoftware.swift.model.mx.dic.DuplicateIndication;
+import com.prowidesoftware.swift.model.mx.dic.EntityIdentification;
+import com.prowidesoftware.swift.model.mx.dic.FinancialInstitutionIdentification18;
+import com.prowidesoftware.swift.model.mx.dic.FinancialInstitutionIdentification8;
+import com.prowidesoftware.swift.model.mx.dic.ImplementationSpecification1;
+import com.prowidesoftware.swift.model.mx.dic.Party44Choice;
+import com.prowidesoftware.swift.model.mx.dic.Party9Choice;
+import com.prowidesoftware.swift.model.mx.dic.PostalAddress24;
+import com.prowidesoftware.swift.model.mx.dic.PostalAddress6;
+import com.prowidesoftware.swift.utils.TestUtils;
 
 /**
  * Test cases for reading and writing MX headers
