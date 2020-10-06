@@ -15,12 +15,14 @@
  */
 package com.prowidesoftware.swift.model;
 
-import com.prowidesoftware.deprecation.ProwideDeprecated;
-import com.prowidesoftware.deprecation.TargetYear;
+import com.prowidesoftware.swift.utils.SafeXmlUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.Validate;
+import org.xml.sax.XMLReader;
 
 import java.io.IOException;
 import java.io.PrintStream;
+import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -53,13 +55,28 @@ public class MxNode {
 		this();
 		this.localName = localName;
 		if (parent != null) {
-			bindParent(parent);
+			this.parent = parent;
+			parent.addChild(this);
 		}
 	}
 
-	private void bindParent(final MxNode parent) {
-		this.parent = parent;
-		parent.addChild(this);
+	/**
+	 * Parses the complete message content into an {@link MxNode} tree structure.
+	 * @since 9.1.2
+	 */
+	public static MxNode parse(final String xml) {
+		Validate.notNull(xml, "the XML to parser cannot be null");
+		Validate.notBlank(xml, "the XML to parser cannot be blank");
+		try {
+			XMLReader xmlReader = SafeXmlUtils.reader(true, null);
+			final MxNodeContentHandler contentHandler = new MxNodeContentHandler();
+			xmlReader.setContentHandler(contentHandler);
+			xmlReader.parse(new org.xml.sax.InputSource(new StringReader(xml)));
+			return contentHandler.getRootNode();
+		} catch (final Exception e) {
+			log.log(Level.SEVERE, "Error parsing XML", e);
+		}
+		return null;
 	}
 
 	private void addChild(final MxNode child) {
