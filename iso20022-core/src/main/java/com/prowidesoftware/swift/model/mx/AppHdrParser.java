@@ -25,7 +25,13 @@ public class AppHdrParser {
         try {
 
             Optional<String> namespace = NamespaceReader.findAppHdrNamespace(xml);
-            return Optional.ofNullable(parseHeaderFromSAXSource(xml, namespace.orElse(null)));
+
+            boolean headerIsPresent = namespace.isPresent() || NamespaceReader.elementExists(xml, AppHdr.HEADER_LOCALNAME);
+
+            if (headerIsPresent) {
+                AppHdr parsedHeader = parseHeaderFromSAXSource(xml, namespace.orElse(null));
+                return Optional.ofNullable(parsedHeader);
+            }
 
         } catch (Exception e) {
             MxParseUtils.handleParseException(e);

@@ -43,23 +43,9 @@ class NamespaceReader {
     }
 
     private static Optional<String> findNamespaceForLocalName(final String xml, final String localName) {
-        Validate.notNull(xml, "XML to parse must not be null");
-        Validate.notBlank(xml, "XML to parse must not be a blank string");
-        Validate.notNull(xml, "localName to find must not be null");
-
-        final XMLInputFactory xif = SafeXmlUtils.inputFactory();
-        try {
-            final XMLStreamReader reader = xif.createXMLStreamReader(new StringReader(xml));
-            while (reader.hasNext()) {
-                int event = reader.next();
-                if (XMLStreamConstants.START_ELEMENT == event) {
-                    if (reader.getLocalName().equals(localName)) {
-                        return Optional.ofNullable(readNamespace(reader));
-                    }
-                }
-            }
-        } catch (XMLStreamException e) {
-            log.log(Level.WARNING, "Error reading namespace from XML", e);
+        Optional<XMLStreamReader> reader = findElement(xml, localName);
+        if (reader.isPresent()) {
+            return Optional.ofNullable(readNamespace(reader.get()));
         }
         return Optional.empty();
     }
@@ -80,6 +66,32 @@ class NamespaceReader {
             }
         }
         return null;
+    }
+
+    static boolean elementExists(final String xml, final String localName) {
+        return findElement(xml, localName).isPresent();
+    }
+
+    private static Optional<XMLStreamReader> findElement(final String xml, final String localName) {
+        Validate.notNull(xml, "XML to parse must not be null");
+        Validate.notBlank(xml, "XML to parse must not be a blank string");
+        Validate.notNull(xml, "localName to find must not be null");
+
+        final XMLInputFactory xif = SafeXmlUtils.inputFactory();
+        try {
+            final XMLStreamReader reader = xif.createXMLStreamReader(new StringReader(xml));
+            while (reader.hasNext()) {
+                int event = reader.next();
+                if (XMLStreamConstants.START_ELEMENT == event) {
+                    if (reader.getLocalName().equals(localName)) {
+                        return Optional.of(reader);
+                    }
+                }
+            }
+        } catch (XMLStreamException e) {
+            log.log(Level.WARNING, "Error reading XML", e);
+        }
+        return Optional.empty();
     }
 
 }
