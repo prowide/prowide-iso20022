@@ -518,4 +518,12 @@ public abstract class AbstractMX extends AbstractMessage implements IDocument, J
 		return gson.fromJson(json, AbstractMX.class);
 	}
 
+	/**
+	 * @return same as {@link #getNamespace()}
+	 * @since 9.1.2
+	 */
+	public String targetNamespace() {
+		return getNamespace();
+	}
+
 }

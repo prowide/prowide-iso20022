@@ -2,7 +2,9 @@
  Prowide ISO 20022 - CHANGELOG
 -----------------------------------------------------------------------------------------------------------------------
 
-SNAPSHOT 9.1.2 (9.1.1u2)
+SNAPSHOT 9.1.2 (9.1.1u4)
+  * Added AppHdrType enum and AppHdrFactory method to create headers with the enum as parameter
+  * Added targetNamespace method to the AbstractMX
   * Internal SCM refactor for OS release
   * Revamped the parser implementation with SAX to avoid custom namespace preprocessing
   * Added AppHdrParser utility class
