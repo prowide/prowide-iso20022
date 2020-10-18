@@ -110,7 +110,7 @@ public interface AppHdr {
 
     /**
      * Get this header as an XML string.
-     * <p>The impementation uses {@link #xml(String, boolean)} with no prefix and no XML declaration.
+     * <p>The implementation uses {@link #xml(String, boolean)} with no prefix and no XML declaration.
      *
      * @return header serialized into XML string or null if neither header version is present
      */

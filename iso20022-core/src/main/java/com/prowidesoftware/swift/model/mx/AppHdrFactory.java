@@ -15,6 +15,7 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
+import com.prowidesoftware.ProwideException;
 import com.prowidesoftware.swift.model.MxId;
 import com.prowidesoftware.swift.model.mx.dic.*;
 
@@ -147,6 +148,25 @@ public class AppHdrFactory {
         h.setCrDate(XMLGregorianCalendarUtils.now());
 
         return h;
+    }
+
+    /**
+     * Convenient method to create a new header, initialized from simple parameters.
+     *
+     * @param sender optional sender BIC for the Fr element or null to leave not set
+     * @param receiver optional receiver BIC for the To element or null to leave not set
+     * @param reference optional reference for the BizMsgIdr (business message identifier) or null to leave not set
+     * @param id optional MX identification for the MsgDefIdr (message definition identifier) element or null to leave not set
+     * @return new header initialized from parameters
+     * @since 9.1.2
+     */
+    public static AppHdr createLegacyAppHdr(AppHdrType type, final String sender, final String receiver, final String reference, final MxId id) {
+        switch (type) {
+            case LEGACY: return createLegacyAppHdr(sender, receiver, reference, id);
+            case BAH_V1: return createBusinessAppHdrV01(sender, receiver, reference, id);
+            case BAH_V2: return createBusinessAppHdrV02(sender, receiver, reference, id);
+            default: throw new ProwideException("Don't know how to create header " + type);
+        }
     }
 
 }
