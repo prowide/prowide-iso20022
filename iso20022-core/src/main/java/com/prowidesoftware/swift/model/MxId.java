@@ -148,7 +148,7 @@ public class MxId {
 	}
 
 	/**
-	 * Creates a namespace URI for this MX, for example: urn:swift:xsd:camt.003.001.04
+	 * Creates the corresponding ISO 20022 namespace URI for this MX, for example: urn:swift:xsd:camt.003.001.04
 	 * All id attributes should be properly filled.
 	 *
 	 * @return a string representing the namespace URI for the MX or null if any of the attributes is not set
