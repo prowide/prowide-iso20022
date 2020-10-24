@@ -12,16 +12,16 @@ This project is a complement for the **Prowide Core** library: https://github.co
 * **Builder** API from Java to ISO 20022 XML
 * Conversion to/from **JSON**
 
-For SWIFT messages validation, restricted ISO versions (such as SEPA, CBPR+, TARGET), GUI application and more, please check our complementary commercial offerings at http://www.prowidesoftware.com/
+For SWIFT messages validation, restricted ISO versions (such as SEPA, CBPR+, TARGET), GUI application and more, please check our complementary commercial offerings at https://www.prowidesoftware.com/
 
 ### Documentation
-* Documentation site http://www.prowidesoftware.com/resources
-* Changelog http://www.prowidesoftware.com/resources/changelog
-* Code examples https://github.com/prowide/prowide-core-examples
+* Documentation site https://www.prowidesoftware.com/resources
+* Javadoc https://www.javadoc.io/doc/com.prowidesoftware/pw-iso20022/
+* Code examples https://github.com/prowide/prowide-iso20022-examples
 
 ### Distribution
 This repository exposes the **source code for the maintenance and LTS yearly releases**. 
-Latest public **binary DOWNLOAD** is available at http://www.prowidesoftware.com/download-prowide-core
+Latest public **binary DOWNLOAD** is available at https://www.prowidesoftware.com/download
 
 SRU updates are made available on October (one month before SWIFT production date) for the general public, and 6 months in advance for subscribed customers.
 
