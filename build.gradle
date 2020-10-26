@@ -5,7 +5,7 @@ apply plugin: 'maven'
 
 def SRU = "2020"
 
-version = "SRU${SRU}-9.1.1u4"
+version = "SRU${SRU}-9.1.3"
 group 'com.prowidesoftware'
 
 sourceCompatibility = '1.8'
@@ -83,7 +83,7 @@ configure(subprojects.findAll {it.name.endsWith('-types')}) {
 project(':iso20022-core') {
 	dependencies {
 		// included build
-		api 'com.prowidesoftware:prowide-core'
+		api 'com.prowidesoftware:pw-swift-core'
 		implementation 'org.apache.commons:commons-lang3:3.8.1'
 		implementation 'com.google.code.gson:gson:2.8.2'
 
@@ -168,8 +168,8 @@ task writePom {
 	doLast {
 		pom {
 			project {
-				groupId "com.prowidesoftware"
-				artifactId "${rootProject.name}"
+				groupId 'com.prowidesoftware'
+				artifactId 'pw-iso20022'
 				version "${version}"
 				name 'Prowide ISO 20022'
 				description 'Prowide Library for ISO 20022 messages'
@@ -204,7 +204,7 @@ task writePom {
 
 dependencies {
 	// included build
-	api 'com.prowidesoftware:prowide-core'
+	api 'com.prowidesoftware:pw-swift-core:SRU2020-9.1.2'
 	implementation 'org.apache.commons:commons-lang3:3.8.1'
 	implementation 'com.google.code.gson:gson:2.8.2'
 }
@@ -234,4 +234,13 @@ distZip {
 			println "*** WARNING: For releases an explicit JDK8_HOME variable must be set in gradle.properties ***"
 		}
 	}
+}
+
+task bundle(type: Zip, dependsOn: build) {
+	description 'Creates the bundle.jar for Maven Central distribution'
+	from jar
+	from sourcesJar
+	from javadocJar
+	from files("$buildDir/pom.xml")
+	archiveName 'bundle.zip'
 }
