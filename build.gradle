@@ -111,6 +111,8 @@ project(':iso20022-core') {
 		testImplementation project(':model-pain-types')
 		testImplementation project(':model-sese-mx')
 		testImplementation project(':model-sese-types')
+		testImplementation project(':model-seev-mx')
+		testImplementation project(':model-seev-types')
 		testImplementation project(':model-xsys-mx')
 		testImplementation project(':model-xsys-types')
 	}
