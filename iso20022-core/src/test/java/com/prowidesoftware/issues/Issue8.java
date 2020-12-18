@@ -35,4 +35,12 @@ public class Issue8 {
         assertEquals(CorporateActionNotificationType1Code.REPL, mx.getCorpActnNtfctn().getNtfctnGnlInf().getNtfctnTp());
     }
 
+    @Test
+    public void testWithSplmtryDataAsCDATA() throws IOException {
+        String xml = Lib.readResource("issues/8/ABC_CANO.CA.ID.111111111-SplmtryData-CDATA.xml");
+        assertNotNull(xml);
+        MxSeev03100209 mx = MxSeev03100209.parse(xml);
+        assertNotNull(mx);
+    }
+
 }
