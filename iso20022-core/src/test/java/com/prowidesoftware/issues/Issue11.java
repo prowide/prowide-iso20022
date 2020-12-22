@@ -35,14 +35,10 @@ public class Issue11 {
         assertEquals("20201008BCBCMYKL22020534605", mx.getFIToFIPmtStsRpt().getGrpHdr().getMsgId());
     }
 
-    @Test
-    public void testInvalidElement() throws IOException {
-        String xml = Lib.readResource("issues/11/samplemsg.002.001.08-invalidElement.xml");
-        assertNotNull(xml);
-        MxPacs00200108 mx = MxPacs00200108.parse(xml);
-        assertMessage(mx);
-    }
-
+    /*
+     * supplementary data invalid prefix is removed, so no warning is printed
+     * header signature namespace is fixed
+     */
     @Test
     public void testSplmtryData_no_prefix() throws IOException {
         String xml = Lib.readResource("issues/11/samplemsg.002.001.08-SplmtryData_no_prefix.xml");
@@ -51,6 +47,10 @@ public class Issue11 {
         assertMessage(mx);
     }
 
+    /*
+     * supplementary data is removed, so no warning is printed
+     * header signature namespace is fixed
+     */
     @Test
     public void testSplmtryData_removed() throws IOException {
         String xml = Lib.readResource("issues/11/samplemsg.002.001.08-SplmtryData_removed.xml");
@@ -59,9 +59,25 @@ public class Issue11 {
         assertMessage(mx);
     }
 
+    /*
+     * supplementary data with foo namespace is silently ignored
+     * header signature namespace is fixed
+     */
     @Test
     public void testSplmtryData_with_namespace() throws IOException {
         String xml = Lib.readResource("issues/11/samplemsg.002.001.08-SplmtryData_with_namespace.xml");
+        assertNotNull(xml);
+        MxPacs00200108 mx = MxPacs00200108.parse(xml);
+        assertMessage(mx);
+    }
+
+    /*
+     * relocated unbounded content is silently ignored
+     * header signature namespace is fixed
+     */
+    @Test
+    public void testInvalidElement() throws IOException {
+        String xml = Lib.readResource("issues/11/samplemsg.002.001.08-invalidElement.xml");
         assertNotNull(xml);
         MxPacs00200108 mx = MxPacs00200108.parse(xml);
         assertMessage(mx);
