@@ -20,6 +20,9 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.XMLFilterImpl;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  * This filter enables extraction of a particular element from an XML and at the same it unbinds its namespace
  * (by filtering out the namespace declaration and optional associated prefix).
@@ -37,6 +40,7 @@ import org.xml.sax.helpers.XMLFilterImpl;
  * non-repetitive types with no namespace.
  */
 class NamespaceAndElementFilter extends XMLFilterImpl {
+	private static final transient Logger log = Logger.getLogger(NamespaceAndElementFilter.class.getName());
 
     private String mainNamespace;
     private boolean inElementToPropagate = false;
@@ -67,7 +71,11 @@ class NamespaceAndElementFilter extends XMLFilterImpl {
     	if (this.inElementToPropagate) {
     		String namespaceToPropagate = resolveNamespaceToPropagate(namespace);
     		if (namespaceToPropagate != null) {
-				super.startElement(namespaceToPropagate, localName, prefix, attributes);
+    			try {
+					super.startElement(namespaceToPropagate, localName, prefix, attributes);
+				} catch (Exception e) {
+					log.log(Level.WARNING, "Error parsing " + localName + " [" + namespace + "] element", e);
+				}
 			} else {
     			// we have found an element within the structure to propagate with a not recognized namespace
 				// so we skip this content because we don't have the model to unmarshall it properly;
@@ -115,7 +123,11 @@ class NamespaceAndElementFilter extends XMLFilterImpl {
     	if (this.inElementToPropagate) {
 			String namespaceToPropagate = resolveNamespaceToPropagate(namespace);
 			if (namespaceToPropagate != null) {
-				super.endElement(namespaceToPropagate, localName, prefix);
+				try {
+					super.endElement(namespaceToPropagate, localName, prefix);
+				} catch (Exception e) {
+					log.log(Level.WARNING, "Error parsing " + localName + " [" + namespace + "] element", e);
+				}
 			}
     	}
     	
@@ -130,7 +142,11 @@ class NamespaceAndElementFilter extends XMLFilterImpl {
 		if (this.inElementToPropagate && this.mainNamespace != null) {
 			if (isXsysNamespace(url)) {
 				// we only propagate the xsys messages namespaces, for the main namespace we want it unbounded
-				super.startPrefixMapping(prefix, url);
+				try {
+					super.startPrefixMapping(prefix, url);
+				} catch (Exception e) {
+					log.log(Level.WARNING, "Error parsing " + prefix + " [" + url + "] prefix mapping", e);
+				}
 	    	}
 		}
     }
