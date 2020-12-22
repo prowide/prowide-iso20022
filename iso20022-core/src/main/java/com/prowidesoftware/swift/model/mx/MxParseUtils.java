@@ -26,10 +26,7 @@ import org.xml.sax.SAXParseException;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.XMLReaderFactory;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.UnmarshalException;
-import javax.xml.bind.Unmarshaller;
+import javax.xml.bind.*;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.transform.sax.SAXSource;
 import java.io.StringReader;
@@ -76,7 +73,10 @@ public class MxParseUtils {
 		try {
 			JAXBContext context = JaxbContextLoader.INSTANCE.get(targetClass, classes);
 			final Unmarshaller unmarshaller = context.createUnmarshaller();
-			return unmarshaller.unmarshal(source, targetClass).getValue();
+			JAXBElement element = unmarshaller.unmarshal(source, targetClass);
+			if (element != null) {
+				return element.getValue();
+			}
 
 		} catch (JAXBException | ExecutionException e) {
 			handleParseException(e);
