@@ -67,11 +67,7 @@ class NamespaceAndElementFilter extends XMLFilterImpl {
     	if (this.inElementToPropagate) {
     		String namespaceToPropagate = resolveNamespaceToPropagate(namespace);
     		if (namespaceToPropagate != null) {
-    			try {
-					super.startElement(namespaceToPropagate, localName, prefix, attributes);
-				} catch (Exception e) {
-    				e.printStackTrace();
-				}
+				super.startElement(namespaceToPropagate, localName, prefix, attributes);
 			} else {
     			// we have found an element within the structure to propagate with a not recognized namespace
 				// so we skip this content because we don't have the model to unmarshall it properly;
@@ -96,16 +92,16 @@ class NamespaceAndElementFilter extends XMLFilterImpl {
 		}
 	}
 
-	private boolean isXsysNamespace(String nameSpace) {
-		return "urn:swift:snl:ns.Doc".equals(nameSpace) ||
-				"urn:swift:snl:ns.Sw".equals(nameSpace) ||
-				"urn:swift:snl:ns.SwGbl".equals(nameSpace) ||
-				"urn:swift:snl:ns.SwInt".equals(nameSpace) ||
-				"urn:swift:snl:ns.SwSec".equals(nameSpace);
+	private boolean isXsysNamespace(String namespace) {
+		return "urn:swift:snl:ns.Doc".equals(namespace) ||
+				"urn:swift:snl:ns.Sw".equals(namespace) ||
+				"urn:swift:snl:ns.SwGbl".equals(namespace) ||
+				"urn:swift:snl:ns.SwInt".equals(namespace) ||
+				"urn:swift:snl:ns.SwSec".equals(namespace);
 	}
 
 	@Override
-    public void endElement(String nameSpace, String localName, String prefix) throws SAXException {    	
+    public void endElement(String namespace, String localName, String prefix) throws SAXException {
 
     	if (this.inInnerElementToSkip) {
 			if (localName.equals(this.localNameToSkip)) {
@@ -117,7 +113,7 @@ class NamespaceAndElementFilter extends XMLFilterImpl {
 		}
 
     	if (this.inElementToPropagate) {
-			String namespaceToPropagate = resolveNamespaceToPropagate(nameSpace);
+			String namespaceToPropagate = resolveNamespaceToPropagate(namespace);
 			if (namespaceToPropagate != null) {
 				super.endElement(namespaceToPropagate, localName, prefix);
 			}
