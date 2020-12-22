@@ -24,6 +24,11 @@ import org.xml.sax.helpers.XMLFilterImpl;
  * This filter enables extraction of a particular element from an XML and at the same it unbinds its namespace
  * (by filtering out the namespace declaration and optional associated prefix).
  *
+ * <p>The filter will bypass only the main element being parsed (such as the AppHdr or Document), ignoring any other
+ * sibling or parent content such as a transmission envelope. Then within the main element being processed, only the
+ * content with a recognized namespace is propagated, meaning for example any supplementary data with Any in the schema
+ * will not be parsed.
+ *
  * @since 9.1.2
  */
 /* When parsing the Document or AppHdr for an MX, we have to unbind the main message namespace.
@@ -33,10 +38,12 @@ import org.xml.sax.helpers.XMLFilterImpl;
  */
 class NamespaceAndElementFilter extends XMLFilterImpl {
 
-    private String namespaceUriToRemove;
-    private boolean isAnElementToPropagate = false;    
+    private String mainNamespace;
+    private boolean inElementToPropagate = false;
     private String localNameToPropagate;
-    
+	private boolean inInnerElementToSkip = false;
+	private String localNameToSkip;
+
     /**
      * @param localName the XML's element to propagate
      */
@@ -46,41 +53,88 @@ class NamespaceAndElementFilter extends XMLFilterImpl {
     }
 
     @Override
-    public void startElement(String nameSpace, String localName, String prefix, Attributes attributes) throws SAXException {
+    public void startElement(String namespace, String localName, String prefix, Attributes attributes) throws SAXException {
 
-    	if (localName.equals(this.localNameToPropagate)) {
-			this.isAnElementToPropagate = true;
-    		this.namespaceUriToRemove = nameSpace;
+    	if (inInnerElementToSkip) {
+    		return;
+		}
+
+    	if (!this.inElementToPropagate && localName.equals(this.localNameToPropagate)) {
+			this.inElementToPropagate = true;
+    		this.mainNamespace = namespace;
     	}
     	
-    	if (this.isAnElementToPropagate) {
-    		String namespaceToPropagate = resolveNamespaceToPropagate(nameSpace);
-			super.startElement(namespaceToPropagate, localName, prefix, attributes);
+    	if (this.inElementToPropagate) {
+    		String namespaceToPropagate = resolveNamespaceToPropagate(namespace);
+    		if (namespaceToPropagate != null) {
+    			try {
+					super.startElement(namespaceToPropagate, localName, prefix, attributes);
+				} catch (Exception e) {
+    				e.printStackTrace();
+				}
+			} else {
+    			// we have found an element within the structure to propagate with a not recognized namespace
+				// so we skip this content because we don't have the model to unmarshall it properly;
+				// this is normally the case of an Any element in the schema
+    			this.inInnerElementToSkip = true;
+    			this.localNameToSkip = localName;
+			}
     	}
     }
 
-    private String resolveNamespaceToPropagate(String nameSpace) {
-		return StringUtils.equals(this.namespaceUriToRemove, nameSpace)? "" : nameSpace;
+	// we only propagate elements in the specific main namespace of the parsed element, however we do not propagate the
+	// namespace itself for those elements because we want the content to be unbounded to it. The only other exception
+	// where we propagate the elements is for xsys messages where the messages uses a main namespace plus several
+	// complementary reusable schemas such as "Sw".
+	private String resolveNamespaceToPropagate(String namespace) {
+		if (StringUtils.equals(this.mainNamespace, namespace)) {
+			return "";
+		} else if (isXsysNamespace(namespace)) {
+			return namespace;
+		} else {
+			return null;
+		}
 	}
 
-    @Override
+	private boolean isXsysNamespace(String nameSpace) {
+		return "urn:swift:snl:ns.Doc".equals(nameSpace) ||
+				"urn:swift:snl:ns.Sw".equals(nameSpace) ||
+				"urn:swift:snl:ns.SwGbl".equals(nameSpace) ||
+				"urn:swift:snl:ns.SwInt".equals(nameSpace) ||
+				"urn:swift:snl:ns.SwSec".equals(nameSpace);
+	}
+
+	@Override
     public void endElement(String nameSpace, String localName, String prefix) throws SAXException {    	
-     	
-    	if (this.isAnElementToPropagate) {
+
+    	if (this.inInnerElementToSkip) {
+			if (localName.equals(this.localNameToSkip)) {
+				// stop skipping
+				this.inInnerElementToSkip = false;
+				this.localNameToSkip = null;
+				return;
+			}
+		}
+
+    	if (this.inElementToPropagate) {
 			String namespaceToPropagate = resolveNamespaceToPropagate(nameSpace);
-			super.endElement(namespaceToPropagate, localName, prefix);
+			if (namespaceToPropagate != null) {
+				super.endElement(namespaceToPropagate, localName, prefix);
+			}
     	}
     	
-    	if(localName.equals(this.localNameToPropagate)) {
-			this.isAnElementToPropagate=false;
+    	if (localName.equals(this.localNameToPropagate)) {
+    		// we are done (we will skip the rest of the XML content
+			this.inElementToPropagate =false;
     	}
     }
 
     @Override
     public void startPrefixMapping(String prefix, String url)throws SAXException {
-		if (this.isAnElementToPropagate && this.namespaceUriToRemove != null) {
-			if (!StringUtils.equals(url, this.namespaceUriToRemove)) {
-	    		super.startPrefixMapping(prefix, url);
+		if (this.inElementToPropagate && this.mainNamespace != null) {
+			if (isXsysNamespace(url)) {
+				// we only propagate the xsys messages namespaces, for the main namespace we want it unbounded
+				super.startPrefixMapping(prefix, url);
 	    	}
 		}
     }

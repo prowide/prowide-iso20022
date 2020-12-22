@@ -2,6 +2,9 @@
  Prowide ISO 20022 - CHANGELOG
 -----------------------------------------------------------------------------------------------------------------------
 
+RELEASE 9.1.5 - December 2020
+  * (GH-8) (JR-428) Fixed parser to skip unbounded content such as the @XmlAnyElement(lax = true) elements used in many schemas for supplementary data
+
 RELEASE 9.1.4 - November 2020
   * Fixed javadoc jar
 
