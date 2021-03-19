@@ -42,7 +42,7 @@ public class MxSwiftMessageTest {
     }
 
     @Test
-    public void testReadSimple() throws IOException {
+    public void testConstructorFromFile() throws IOException {
         File f = File.createTempFile("mx_", ".xml");
         FileOutputStream fos = new FileOutputStream(f);
         fos.write("<?xml version=\"1.0\" ?>".getBytes(StandardCharsets.UTF_8));

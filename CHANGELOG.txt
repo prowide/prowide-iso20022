@@ -2,6 +2,9 @@
  Prowide ISO 20022 - CHANGELOG
 -----------------------------------------------------------------------------------------------------------------------
 
+SNAPSHOT 9.1.6
+  * Added customizable strategies to set the MxSwiftMessage metadata fields: reference, main amount, value date, etc...
+
 RELEASE 9.1.5 - December 2020
   * (GH-8) (JR-428) Fixed parser to skip unbounded content such as the @XmlAnyElement(lax = true) elements used in many schemas for supplementary data
 

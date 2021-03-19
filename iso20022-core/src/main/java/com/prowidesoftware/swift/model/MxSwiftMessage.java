@@ -31,20 +31,19 @@ import javax.persistence.*;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Calendar;
 import java.util.Objects;
 import java.util.Optional;
 
 /**
- * Container of raw representation of an MX (ISO 20022) SWIFT message, intended for message persistence.
- * <p>
- * The class holds the full xml content plus message identification metadata gathered from the application header.
+ * MX (ISO 20022) messages entity for JPA persistence.
+ *
+ * <p>The class holds the full xml content plus message identification metadata gathered from the application header.
  * 
- * <p>
- * Notice, the scope of Prowide MX model is the message payload (the actual message or body data) which is the fundamental
+ * <p>Notice, the scope of Prowide MX model is the message payload (the actual message or body data) which is the fundamental
  * purpose of the transmission. The transmission wrappers (overhead data) are excluded and intentionally ignored if found.
  * 
- * <p>
- * MX messages are uniquely identify by their business process, message functionality, variant and version.<br>
+ * <p>MX messages are uniquely identify by their business process, message functionality, variant and version.<br>
  * Consider the following example: trea.001.001.02
  * <ul>
  * <li>trea refers to 'Treasury'</li>
@@ -62,7 +61,6 @@ import java.util.Optional;
  * <br>
  * <em>version</em>: Numeric code in two positions (fixed length) identifying the version.
  * 
- * @author www.prowidesoftware.com
  * @since 7.0
  */
 @Entity(name = "mx")
@@ -87,20 +85,28 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
 	public MxSwiftMessage() {
 		super();
 	}
-	
+
 	/**
-	 * Creates a new message reading the message the content from a string. 
-	 * Performs a fast parsing of the header to identify the message 
-	 * and gather metadata information for the object attributes.<br>
-	 * 
-	 * If the string contains several messages, the whole passed content will be
-	 * save in the message attribute but identification and metadata will be parser
-	 * from the first one found only.
-	 * 
-	 * @see AbstractSwiftMessage#AbstractSwiftMessage(String)
+	 * Calls {@link #MxSwiftMessage(String, MessageMetadataStrategy)} with the {@link DefaultMxMetadataStrategy}
 	 */
 	public MxSwiftMessage(final String xml) {
-		super(xml);
+		this(xml, new DefaultMxMetadataStrategy());
+	}
+
+	/**
+	 * Creates a new message reading the message the content from a string.
+	 *
+	 * <p>Performs a fast parsing of the header to identify the message.
+	 * 
+	 * If the string contains several messages, the whole passed content will be save in the message attribute but
+	 * identification and metadata will be parser from the first one found only.
+	 *
+	 * @param xml the plain ISO 20022 XML content, with or without the optional header
+	 * @param metadataStrategy a strategy for metadata extraction
+	 * @since 9.1.6
+	 */
+	public MxSwiftMessage(final String xml, final MessageMetadataStrategy metadataStrategy) {
+		super(xml, FileFormat.MX, metadataStrategy);
 	}
 	
 	/**
@@ -114,14 +120,22 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
 	}
 	
 	/**
-	 * Creates a new message reading the message the content from an input stream.
-	 * 
-	 * @see #MxSwiftMessage(String)
-	 * @see AbstractSwiftMessage#AbstractSwiftMessage(InputStream)
+	 * Calls {@link #MxSwiftMessage(InputStream, MessageMetadataStrategy)} with the {@link DefaultMxMetadataStrategy}
 	 * @since 7.7
 	 */
 	public MxSwiftMessage(final InputStream stream) throws IOException {
-		super(stream);
+		this(stream, new DefaultMxMetadataStrategy());
+	}
+
+	/**
+	 * Creates a new message reading the message the content from an input stream.
+	 *
+	 * @param stream a stream containing the XML message
+	 * @param metadataStrategy a strategy for metadata extraction
+	 * @since 9.1.6
+	 */
+	public MxSwiftMessage(final InputStream stream, final MessageMetadataStrategy metadataStrategy) throws IOException {
+		super(stream, FileFormat.MX, metadataStrategy);
 	}
 	
 	/**
@@ -135,14 +149,22 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
 	}
 
 	/**
-	 * Creates a new message reading the message the content from a file.
-	 *  
-	 * @see #MxSwiftMessage(String)
-	 * @see AbstractSwiftMessage#AbstractSwiftMessage(File)
+	 * Calls {@link #MxSwiftMessage(File, MessageMetadataStrategy)} with the {@link DefaultMxMetadataStrategy}
 	 * @since 7.7
 	 */
 	public MxSwiftMessage(final File file) throws IOException {
-		super(file);
+		this(file, new DefaultMxMetadataStrategy());
+	}
+
+	/**
+	 * Creates a new message reading the message the content from a file.
+	 *
+	 * @param file an existing file containing the XML
+	 * @param metadataStrategy a strategy for metadata extraction
+	 * @since 9.1.6
+	 */
+	public MxSwiftMessage(final File file, final MessageMetadataStrategy metadataStrategy) throws IOException {
+		super(file, FileFormat.MX, metadataStrategy);
 	}
 	
 	/**
@@ -156,84 +178,63 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
 	}
 	
 	/**
+	 * Calls {@link #MxSwiftMessage(AbstractMX, MessageMetadataStrategy)} with the {@link DefaultMxMetadataStrategy}
+	 * @param mx a message object
+	 */
+	public MxSwiftMessage(final AbstractMX mx) {
+		this(mx, new DefaultMxMetadataStrategy());
+	}
+
+	/**
 	 * Creates a new message serializing to xml the parameter message object.
 	 *
 	 * <p>If the business header is present, the sender and receiver attributes will be set with content from the
 	 * header; also the internal raw XML will include both 'AppHdr' and 'Document' under a default root element tag
 	 * as returned by {@link AbstractMX#message()}
+	 *
 	 * <br>If the header is not present, sender and receiver will be left null and the raw internal XML will include
 	 * just the 'Document' element.
-	 * 
+	 *
 	 * @param mx a message object
+	 * @param metadataStrategy a strategy for metadata extraction
+	 * @since 9.1.6
 	 */
-	public MxSwiftMessage(final AbstractMX mx) {
-		//super(mx.message());
+	public MxSwiftMessage(final AbstractMX mx, final MessageMetadataStrategy metadataStrategy) {
+		// instead of reusing the constructor from XML with mx.message() as parameter
 		// we set the message and run the update directly to avoid an unnecessary message type detection
+		Validate.notNull(mx, "the message model cannot be null");
+		Validate.notNull(metadataStrategy, "the strategy for metadata extraction cannot be null");
 		setMessage(mx.message());
-		_updateFromMessage(mx.getMxId());
+		_updateFromMessage(mx.getMxId(), metadataStrategy);
 	}
 	
 	/**
-	 * @see AbstractSwiftMessage#updateFromMessage()
+	 * Calls {@link #updateFromMessage(MessageMetadataStrategy)} with {@link DefaultMxMetadataStrategy}
 	 * @since 7.7
 	 */
 	@Override
     protected void updateFromMessage() {
-		_updateFromMessage(null);
+		_updateFromMessage(null, new DefaultMxMetadataStrategy());
 	}
-	
-	private void _updateFromMessage(final MxId id) {
-		if (message() != null && message().length() > 0) {
-			/*
-			 * update sender, receiver and reference from business header or group header
-			 */
-			Optional<AppHdr> h = AppHdrParser.parse(this.message());
-			if (h.isPresent()) {
-				_update(h.get());
-			} else {
-				_update(MxNode.parse(this.message()));
-			}
 
-			/*
-			 * update identifier and namespace
-			 */
-			if (id != null) {
-				_update(id);
-			} else {
-				Optional<MxId> detectedId = MxParseUtils.identifyMessage(this.message());
-				if (detectedId.isPresent()) {
-					_update(detectedId.get());
-				}
-			}
+	/**
+	 * Updates the object attributes with metadata parsed from the message raw content using the provided strategy
+	 * implementation for several of the metadata fields. The method is called during message creation or update.
+	 * @since 9.1.6
+	 */
+	@Override
+	protected void updateFromMessage(final MessageMetadataStrategy metadataStrategy) {
+		Validate.notNull(metadataStrategy, "the strategy for metadata extraction cannot be null");
+		_updateFromMessage(null, metadataStrategy);
+	}
+
+	private void _updateFromMessage(final MxId id, final MessageMetadataStrategy metadataStrategy) {
+		if (message() != null && message().length() > 0) {
+			MxId identifier = id != null? id : MxParseUtils.identifyMessage(this.message()).orElse(null);
+			extractMetadata(identifier, getAppHdr(), metadataStrategy);
 		}
 	}
-	
-	/**
-	 * Updates the the attributes with the raw message and its metadata from the given raw (XML) message content.
-	 * Wrapper around AppHdr/Document, if present, are preserved and ignored.
-	 *
-	 * @param xml the XML content of an MX message containing the Document and optional AppHdr elements
-	 * @see #updateFromMessage()
-	 * @since 7.8.4
-	 */
-	public void updateFromXML(final String xml) {
-		updateFromXML(xml, null);
-	}
 
-	/**
-	 * Similar to {@link #updateFromXML(String)} but providing the corresponding MxId 
-	 * to skip automatic detection for specific Mx type from content.
-	 * @param xml the XML content of an MX message containing the Document and optional AppHdr elements
-	 * @param id the specific Mx type identification
-	 * @since 7.8.4
-	 */
-	public void updateFromXML(final String xml, final MxId id) {
-		Validate.notNull(xml, "the xml message parameter cannot be null");
-		setMessage(xml);
-		setFileFormat(FileFormat.MX);
-		_updateFromMessage(id);
-	}
-	
 	/**
 	 * Updates the the attributes with the raw message and its metadata from the given raw (XML) message content.
 	 *
@@ -242,44 +243,39 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
 	 * @since 7.8.4
 	 */
 	public void updateFromModel(final AbstractMX mx) {
+		updateFromModel(mx, new DefaultMxMetadataStrategy());
+	}
+
+	public void updateFromModel(final AbstractMX mx, final MessageMetadataStrategy metadataStrategy) {
 		Validate.notNull(mx, "the mx parameter cannot be null");
+		Validate.notNull(metadataStrategy, "the strategy for metadata extraction cannot be null");
 		setMessage(mx.message());
 		setFileFormat(FileFormat.MX);
-		/*
-		 * update sender, receiver and reference from business header or group header
-		 */
-		if (!_update(mx.getAppHdr())) {
-			_update(MxNode.parse(this.message()));
-		}
-		/*
-		 * update identifier and namespace
-		 */
-		_update(mx.getMxId());
+		extractMetadata(mx.getMxId(), mx.getAppHdr(), metadataStrategy);
 	}
-	
-	/**
-	 * Updates identifier and namespace related attributes from the given id object
-	 * @param id
-	 * @return true if at least some property was updated
-	 */
-	private boolean _update(MxId id) {
-		if (id != null) {
-			this.identifier = id.id();
-			this.businessProcess = id.getBusinessProcess();
-			this.functionality = id.getFunctionality();
-			this.variant = id.getVariant();
-			this.version = id.getVersion();
-			return true;
+
+	private void extractMetadata(MxId identifier, AppHdr headerModel, MessageMetadataStrategy metadataStrategy) {
+		MxNode parsedMessage = MxNode.parse(this.message());
+		if (headerModel == null || !extractMetadata(headerModel)) {
+			extractMetadata(parsedMessage);
 		}
-		return false;
+
+		if (identifier != null) {
+			this.identifier = identifier.id();
+			this.businessProcess = identifier.getBusinessProcess();
+			this.functionality = identifier.getFunctionality();
+			this.variant = identifier.getVariant();
+			this.version = identifier.getVersion();
+		}
+
+		applyStrategy(getMessage(), metadataStrategy);
 	}
-	
+
 	/**
 	 * Updates sender, receiver and reference from parameter header
-	 * @param h
 	 * @return true if at least some property was updated
 	 */
-	private boolean _update(AppHdr h) {
+	private boolean extractMetadata(AppHdr h) {
 		boolean updated = false;
 		if (h != null) {
 			final String from = h.from();
@@ -287,27 +283,21 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
 				super.sender = bic11(from);
 				updated = true;
 			}
-			
+
 			final String to = h.to();
 			if (to != null) {
 				super.receiver = bic11(to);
 				updated = true;
 			}
-			
-			final String reference = h.reference();
-			if (reference != null) {
-				setReference(h.reference());
-				updated = true;
-			}
 		}
 		return updated;
 	}
-	
+
 	/**
-	 * Updates sender, receiver and reference from the group header element (only present in a subset of Mx messages)
+	 * Updates sender and receiver from the group header element (only present in a subset of Mx messages)
 	 * @return true if at least some property was updated
 	 */
-	private boolean _update(MxNode n) {
+	private boolean extractMetadata(MxNode n) {
 		boolean updated = false;
 		final MxNode groupHeader = n != null? n.findFirstByName("GrpHdr") : null;
 		if (groupHeader != null) {
@@ -321,15 +311,43 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
 				receiver = bic11(receiverBic.getValue());
 				updated = true;
 			}
-			MxNode reference = groupHeader.findFirst("./MsgId");
-			if (reference != null) {
-				setReference(reference.getValue());
-				updated = true;
-			}
 		}
 		return updated;
 	}
-	
+
+	/**
+	 * Calls {@link #updateFromXML(String, MxId, MessageMetadataStrategy)} with {@link DefaultMxMetadataStrategy}
+	 * @since 7.8.4
+	 */
+	public void updateFromXML(final String xml) {
+		updateFromXML(xml, null);
+	}
+
+	/**
+	 * Calls {@link #updateFromXML(String, MxId, MessageMetadataStrategy)} with {@link DefaultMxMetadataStrategy}
+	 * @since 7.8.4
+	 */
+	public void updateFromXML(final String xml, final MxId id) {
+		updateFromXML(xml, id, new DefaultMxMetadataStrategy());
+	}
+
+	/**
+	 * Updates the the attributes with the raw message and its metadata from the given raw (XML) message content.
+	 * Wrapper around AppHdr/Document, if present, are preserved and ignored.
+	 *
+	 * @param xml the XML content of an MX message containing the Document and optional AppHdr elements
+	 * @param id the specific Mx type identification or null if message is unknown
+	 * @param metadataStrategy the strategy implementation to use for metadata extraction
+	 * @since 9.1.6
+	 */
+	public void updateFromXML(final String xml, final MxId id, final MessageMetadataStrategy metadataStrategy) {
+		Validate.notNull(xml, "the xml message parameter cannot be null");
+		Validate.notNull(metadataStrategy, "the strategy for metadata extraction cannot be null");
+		setMessage(xml);
+		setFileFormat(FileFormat.MX);
+		_updateFromMessage(id, metadataStrategy);
+	}
+
 	public MxBusinessProcess getBusinessProcess() {
 		return businessProcess;
 	}
@@ -493,6 +511,42 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
 			}
 		}
 		return "";
+	}
+
+	/**
+	 * Enables injecting your own implementation for the entity metadata extraction, to set the generic properties
+	 * shared by all message types: main reference, main amount and currency, value date, trade date.
+	 *
+	 * @since 9.1.6
+	 */
+	public void updateMetadata(MessageMetadataStrategy strategy) {
+		Validate.notNull(strategy, "the strategy for metadata extraction cannot be null");
+		applyStrategy(getMessage(), strategy);
+	}
+
+	private void applyStrategy(String xml, MessageMetadataStrategy strategy) {
+		boolean isKnownType = this.businessProcess != null && this.functionality != null && this.variant != null && this.version != null;
+		AbstractMX mx = isKnownType? AbstractMX.parse(xml, getMxId()) : AbstractMX.parse(xml);
+
+		if (mx == null) {
+			// could not parse the XML into a message model
+			return;
+		}
+
+		String reference = strategy.reference(mx).orElse(null);
+		setReference(reference);
+
+		Optional<Money> money = strategy.amount(mx);
+		if (money.isPresent()) {
+			setCurrency(money.get().getCurrency());
+			setAmount(money.get().getAmount());
+		}
+
+		Calendar valueDate = strategy.valueDate(mx).orElse(null);
+		setValueDate(valueDate);
+
+		Calendar tradeDate = strategy.tradeDate(mx).orElse(null);
+		setTradeDate(tradeDate);
 	}
 
 }
