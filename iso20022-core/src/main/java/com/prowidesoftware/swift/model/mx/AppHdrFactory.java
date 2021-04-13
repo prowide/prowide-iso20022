@@ -16,6 +16,8 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.ProwideException;
+import com.prowidesoftware.deprecation.ProwideDeprecated;
+import com.prowidesoftware.deprecation.TargetYear;
 import com.prowidesoftware.swift.model.MxId;
 import com.prowidesoftware.swift.model.mx.dic.*;
 
@@ -151,6 +153,15 @@ public class AppHdrFactory {
     }
 
     /**
+     * @since 9.1.2
+     * @deprecated use {@link #createAppHdr(AppHdrType, String, String, String, MxId)} instead
+     */
+    @ProwideDeprecated(phase2 = TargetYear.SRU2022)
+    public static AppHdr createLegacyAppHdr(AppHdrType type, final String sender, final String receiver, final String reference, final MxId id) {
+        return createAppHdr(type, sender, receiver, reference, id);
+    }
+
+    /**
      * Convenient method to create a new header, initialized from simple parameters.
      *
      * @param sender optional sender BIC for the Fr element or null to leave not set
@@ -158,9 +169,9 @@ public class AppHdrFactory {
      * @param reference optional reference for the BizMsgIdr (business message identifier) or null to leave not set
      * @param id optional MX identification for the MsgDefIdr (message definition identifier) element or null to leave not set
      * @return new header initialized from parameters
-     * @since 9.1.2
+     * @since 9.1.6
      */
-    public static AppHdr createLegacyAppHdr(AppHdrType type, final String sender, final String receiver, final String reference, final MxId id) {
+    public static AppHdr createAppHdr(AppHdrType type, final String sender, final String receiver, final String reference, final MxId id) {
         switch (type) {
             case LEGACY: return createLegacyAppHdr(sender, receiver, reference, id);
             case BAH_V1: return createBusinessAppHdrV01(sender, receiver, reference, id);
