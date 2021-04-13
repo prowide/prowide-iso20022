@@ -534,7 +534,9 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
 		}
 
 		String reference = strategy.reference(mx).orElse(null);
-		setReference(reference);
+		if (StringUtils.isNotBlank(reference)) {
+			setReference(reference);
+		}
 
 		Optional<Money> money = strategy.amount(mx);
 		if (money.isPresent()) {
@@ -543,10 +545,14 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
 		}
 
 		Calendar valueDate = strategy.valueDate(mx).orElse(null);
-		setValueDate(valueDate);
+		if (valueDate != null) {
+			setValueDate(valueDate);
+		}
 
 		Calendar tradeDate = strategy.tradeDate(mx).orElse(null);
-		setTradeDate(tradeDate);
+		if (tradeDate != null) {
+			setTradeDate(tradeDate);
+		}
 	}
 
 }

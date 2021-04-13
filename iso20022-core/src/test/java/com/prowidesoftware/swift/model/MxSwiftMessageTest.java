@@ -23,6 +23,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
 
 import org.apache.commons.lang3.StringUtils;
@@ -54,7 +55,7 @@ public class MxSwiftMessageTest {
     }
 	
 	@Test
-    public void testMetadataFromGrpHr() {        
+    public void testMetadataFromGrpHr() {
         String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
                         + "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.02\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.six-interbank-clearing.com/de/pacs.008.001.02.ch.01 pacs.008.001.02.ch.01.xsd\">"
                         + "<FIToFICstmrCdtTrf>"
@@ -119,7 +120,82 @@ public class MxSwiftMessageTest {
         assertEquals("11308917", mx.getReference());
 	}
 
-	@Test
+    @Test
+    public void testUpdateMetadata() {
+        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+                + "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.02\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.six-interbank-clearing.com/de/pacs.008.001.02.ch.01 pacs.008.001.02.ch.01.xsd\">"
+                + "<FIToFICstmrCdtTrf>"
+                + "	<GrpHdr>"
+                // missing reference field on purpose
+                + "		<CreDtTm>2001-12-17T09:30:47Z</CreDtTm>"
+                + "		<NbOfTxs>1</NbOfTxs>"
+                + "		<IntrBkSttlmDt>2012-01-25</IntrBkSttlmDt>"
+                + "		<SttlmInf><SttlmMtd>INDA</SttlmMtd></SttlmInf>"
+                // missing sender on purpose
+                + "		<InstdAgt><FinInstnId><BIC>DRESDEF0VNZ</BIC></FinInstnId></InstdAgt>"
+                + "	</GrpHdr>"
+                + "	<CdtTrfTxInf>"
+                + " </CdtTrfTxInf>"
+                + "</FIToFICstmrCdtTrf>"
+                + "</Document>";
+        MxSwiftMessage mx = new MxSwiftMessage(xml);
+        assertNotNull(mx);
+
+        // default metadata from message
+        assertEquals("pacs.008.001.02", mx.getIdentifier());
+        assertNull(mx.getSender());         // not present in XML
+        assertEquals("DRESDEF0VNZ", mx.getReceiver());
+        assertNull(mx.getReference());      // not present in XML
+        assertNull(mx.getCurrency());       // not present in XML and also not handled by default strategy
+        assertNull(mx.getAmount());         // not present in XML and also not handled by default strategy
+
+        // manually set some metadata
+        mx.setReference("REFERENCE1");
+        mx.setCurrency("USD");
+        mx.setAmount(new BigDecimal("1"));
+        mx.setSender("AAAAUSXXXXX");
+
+        // update from the same XML
+        mx.updateFromXML(xml);
+
+        assertEquals("pacs.008.001.02", mx.getIdentifier());
+        assertEquals("AAAAUSXXXXX", mx.getSender());    // preserved
+        assertEquals("DRESDEF0VNZ", mx.getReceiver());
+        assertEquals("REFERENCE1", mx.getReference());  // preserved
+        assertEquals("USD", mx.getCurrency());          // preserved
+        assertEquals(new BigDecimal("1"), mx.getAmount());  // preserved
+
+        String xmlUpdate = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+                + "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.02\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.six-interbank-clearing.com/de/pacs.008.001.02.ch.01 pacs.008.001.02.ch.01.xsd\">"
+                + "<FIToFICstmrCdtTrf>"
+                + "	<GrpHdr>"
+                // added reference
+                + "		<MsgId>MSGID-0001</MsgId>"
+                + "		<CreDtTm>2001-12-17T09:30:47Z</CreDtTm>"
+                + "		<NbOfTxs>1</NbOfTxs>"
+                + "		<IntrBkSttlmDt>2012-01-25</IntrBkSttlmDt>"
+                + "		<SttlmInf><SttlmMtd>INDA</SttlmMtd></SttlmInf>"
+                // added sender
+                + "		<InstgAgt><FinInstnId><BIC>KBBECH20DSZ</BIC></FinInstnId></InstgAgt>"
+                + "		<InstdAgt><FinInstnId><BIC>DRESDEF0VNZ</BIC></FinInstnId></InstdAgt>"
+                + "	</GrpHdr>"
+                + "	<CdtTrfTxInf>"
+                + " </CdtTrfTxInf>"
+                + "</FIToFICstmrCdtTrf>"
+                + "</Document>";
+
+        // update from changed XML
+        mx.updateFromXML(xmlUpdate);
+
+        assertEquals("pacs.008.001.02", mx.getIdentifier());
+        assertEquals("KBBECH20DSZ", mx.getSender());    // updated
+        assertEquals("DRESDEF0VNZ", mx.getReceiver());
+        assertEquals("MSGID-0001", mx.getReference());  // updated
+        assertEquals("USD", mx.getCurrency());
+        assertEquals(new BigDecimal("1"), mx.getAmount());
+    }
+
+    @Test
     public void testMetadataFromDocumentWithoutNamespace() {        
 		final String xml = "<Document><setr.015.001.02><RltdRef><Ref>24512SWI67-IT</Ref><MsgNm>setr.013.001.01</MsgNm></RltdRef><SwtchExctnDtls><DealRef>IT56/89/90</DealRef><OrdrRef>20042402090912</OrdrRef><InvstmtAcctDtls><AcctId><Prtry><Id>A67367Z32-67</Id></Prtry></AcctId></InvstmtAcctDtls><AddtlCshIn Ccy=\"EUR\">200</AddtlCshIn><RedLegDtls><LegId>1</LegId><FinInstrmDtls><Id><ISIN>IT1111111111</ISIN></Id></FinInstrmDtls><UnitsNb><Unit>25</Unit></UnitsNb><NetAmt Ccy=\"EUR\">500</NetAmt><TradDtTm><Dt>2005-11-10</Dt></TradDtTm><PricDtls><Tp><Strd>SWIC</Strd></Tp><Val><Amt Ccy=\"EUR\">20</Amt></Val></PricDtls><CumDvddInd>true</CumDvddInd><PhysDlvryInd>false</PhysDlvryInd></RedLegDtls><SbcptLegDtls><LegId>2</LegId><FinInstrmDtls><Id><ISIN>IT2222222222</ISIN></Id></FinInstrmDtls><UnitsNb><Unit>100</Unit></UnitsNb><NetAmt Ccy=\"EUR\">700</NetAmt><TradDtTm><Dt>2005-11-10</Dt></TradDtTm><PricDtls><Tp><Strd>SWIC</Strd></Tp><Val><Amt Ccy=\"EUR\">7</Amt></Val></PricDtls><CumDvddInd>true</CumDvddInd><PhysDlvryInd>false</PhysDlvryInd></SbcptLegDtls></SwtchExctnDtls></setr.015.001.02></Document>";
 		MxSwiftMessage mx = new MxSwiftMessage(xml);
