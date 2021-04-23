@@ -150,4 +150,54 @@ public class AbstractMxJsonTest {
         assertEquals("account 2", mx.getBkToCstmrStmt().getStmt().get(1).getAcct().getNm());
     }
 
+    @Test
+    public void testMxDateJson()
+    {
+        String source = "{\n" +
+                "  \"sctiesSttlmTxInstr\": {\n" +
+                "    \"id\": {\n" +
+                "      \"creDtTm\": {\n" +
+                "        \"dt\": {\n" +
+                "          \"year\": 2021,\n" +
+                "          \"month\": 2,\n" +
+                "          \"day\": 3,\n" +
+                "          \"timezone\": -2147483648,\n" +
+                "          \"hour\": -2147483648,\n" +
+                "          \"minute\": -2147483648,\n" +
+                "          \"second\": -2147483648\n" +
+                "        }\n" +
+                "      }\n" +
+                "    }\n" +
+                "  },\n" +
+                "  \"type\": \"MX\",\n" +
+                "  \"@xmlns\": \"urn:swift:xsd:sese.023.002.01\",\n" +
+                "  \"identifier\": \"sese.023.002.01\"\n" +
+                "}";
+        AbstractMX mx = AbstractMX.fromJson(source);
+        assertEquals(source, mx.toJson());
+    }
+
+    @Test
+    public void testMxDateJsonSerializeAndParse()
+    {
+        String source = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n" +
+                "<RequestPayload>\n" +
+                "<Doc:Document xmlns:Doc=\"urn:swift:xsd:sese.023.002.01\">\n" +
+                "    <Doc:SctiesSttlmTxInstr>\n" +
+                "        <Doc:Id>\n" +
+                "            <Doc:CreDtTm>\n" +
+                "                <Doc:Dt>2021-02-03</Doc:Dt>\n" +
+                "            </Doc:CreDtTm>\n" +
+                "        </Doc:Id>\n" +
+                "    </Doc:SctiesSttlmTxInstr>\n" +
+                "</Doc:Document>\n" +
+                "</RequestPayload>";
+        AbstractMX mx = AbstractMX.parse(source);
+        String json = mx.toJson();
+        AbstractMX mx2 = AbstractMX.fromJson(json);
+        String json2 = mx2.toJson();
+        assertEquals(mx, mx2);
+        assertEquals(json, json2);
+    }
+
 }

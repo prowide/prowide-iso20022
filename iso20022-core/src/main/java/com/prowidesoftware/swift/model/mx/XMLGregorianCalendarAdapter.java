@@ -65,7 +65,12 @@ public class XMLGregorianCalendarAdapter implements JsonSerializer<XMLGregorianC
                     obj.get(SECOND).getAsInt(),
                     0,
                     obj.get(TIMEZONE).getAsInt());
-            xmlGregCalendar.setFractionalSecond(obj.get(FRACTIONAL).getAsBigDecimal());
+            JsonElement fractional = obj.get(FRACTIONAL);
+            if (fractional != null) {
+                xmlGregCalendar.setFractionalSecond(fractional.getAsBigDecimal());
+            } else {
+                xmlGregCalendar.setFractionalSecond(null);
+            }
             return xmlGregCalendar;
             // use the line below as implementation in Java 8
             //return DatatypeFactory.newInstance().newXMLGregorianCalendar(jsonElement.getAsString());
