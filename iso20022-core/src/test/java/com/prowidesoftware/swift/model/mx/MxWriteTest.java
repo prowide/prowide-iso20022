@@ -19,6 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -27,6 +28,7 @@ import java.util.GregorianCalendar;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 
+import com.prowidesoftware.swift.utils.Lib;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Test;
 
@@ -83,7 +85,7 @@ public class MxWriteTest {
 		mx.setGetAcct(gav5);
 
 		final String mxXml = mx.message();
-		//System.out.println("XML: "+mxXml);
+		System.out.println("XML: "+mxXml);
 
 		assertFalse(StringUtils.contains(mxXml, "com.prowidesoftware."), "com.prowidesoftware is present in generated xml");
 		assertTrue(StringUtils.contains(mxXml, MxCamt00300105.NAMESPACE), "swift namespace missing in generated xml");
@@ -91,6 +93,16 @@ public class MxWriteTest {
 			assertTrue(StringUtils.contains(mxXml, "<Doc:GetAcct>"));
 		}
 		assertFalse(StringUtils.contains(mxXml, "businessHeader"), "businessHeader is present in generated xml");
+	}
+
+	@Test
+	public void testSplmtryData() throws IOException {
+		String xml = Lib.readResource("issues/8/ABC_CANO.CA.ID.111111111.txt");
+		assertNotNull(xml);
+		MxSeev03100209 mx = MxSeev03100209.parse(xml);
+		String result =mx.message();
+		result.length();
+	//	assertMessage(mx);
 	}
 
 	@Test
@@ -107,7 +119,7 @@ public class MxWriteTest {
 			);
 
 		final String mxXml = mx.message();
-		//System.out.println(mxXml);
+		System.out.println(mxXml);
 
 		assertFalse(StringUtils.contains(mxXml, "com.prowidesoftware."), "com.prowidesoftware is present in generated xml");
 		assertTrue(StringUtils.contains(mxXml, MxAcmt00100107.NAMESPACE), "swift namespace missing in generated xml");
@@ -123,11 +135,11 @@ public class MxWriteTest {
 		final XMLGregorianCalendar cal = DatatypeFactory.newInstance().newXMLGregorianCalendar(new GregorianCalendar(2015, Calendar.NOVEMBER, 19, 12, 13, 14));
 		mx1.getFIToFICstmrCdtTrf().getCdtTrfTxInf().get(0).setSttlmTmIndctn((new SettlementDateTimeIndication1()).setCdtDtTm(cal));
 		final String xml = mx1.message();
-		//System.out.println(mx1.message());
+		System.out.println(mx1.message());
 		assertTrue(xml.contains("<Doc:CdtDtTm>2015-11-19T12:13:14.000"));
 
 		final MxPacs00800102 mx2 = MxPacs00800102.parse(xml);
-		//System.out.println(mx2.message());
+		System.out.println(mx2.message());
 		assertNotNull(mx2.getFIToFICstmrCdtTrf().getCdtTrfTxInf().get(0).getSttlmTmIndctn());
 		assertNotNull(mx2.getFIToFICstmrCdtTrf().getCdtTrfTxInf().get(0).getSttlmTmIndctn().getCdtDtTm());
 	}
@@ -136,13 +148,14 @@ public class MxWriteTest {
 	public void testWriteXmlMxFxtr01400102() {
 		final MxFxtr01400102 mx = new MxFxtr01400102();
 
+
 		mx.setFXTradInstr(
 				new ForeignExchangeTradeInstructionV02()
 						.setAgrdRate(new AgreedRate1().setUnitCcy("ARS").setXchgRate(new BigDecimal("1.2")).setQtdCcy("12"))
 		);
 
 		final String mxXml = mx.message();
-		//System.out.println("XML: "+mxXml);
+		System.out.println("XML: "+mxXml);
 
 		assertTrue(StringUtils.contains(mxXml, MxFxtr01400102.NAMESPACE), "namespace missing in generated xml");
 		assertFalse(StringUtils.contains(mxXml, "businessHeader"), "businessHeader is present in generated xml");
@@ -156,7 +169,7 @@ public class MxWriteTest {
 		mx.getGetAcct().getAcctQryDef().setAcctCrit(new AccountCriteria2Choice());
 		mx.getGetAcct().getAcctQryDef().getAcctCrit().setQryNm("FOO");
 		String xml = mx.message();
-		//System.out.println(xml);
+		System.out.println(xml);
 		assertTrue(xml.contains("     <Doc:QryNm>"));
 	}
 
@@ -172,8 +185,16 @@ public class MxWriteTest {
 		mx.getCstmrCdtTrfInitn().getPmtInf().get(0).setDbtr(new PartyIdentification43().setNm("foo"));
 		mx.getCstmrCdtTrfInitn().getPmtInf().get(0).setChrgBr(ChargeBearerType1Code.CRED);
 
-		//System.out.println(mx.message());
+		System.out.println(mx.message());
 		Arrays.stream(mx.message().split("\\r?\\n")).forEach(line -> assertTrue(StringUtils.isNotBlank(line)));
+	}
+
+	@Test
+	public void testing() throws IOException {
+	//	MxColr00200101 mx =	new MxColr00200101();
+		final String xml = Lib.readResource("pacs.002-CDATA.xml");
+
+
 	}
 
 }
