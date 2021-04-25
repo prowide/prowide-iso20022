@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2020 Prowide
+ * Copyright 2006-2021 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import java.lang.reflect.Type;
 
 /**
  * Helper class for Gson serialization and deserialization of XMLGregorianCalendar
+ *
  * @since 7.10.3
  */
 public class XMLGregorianCalendarAdapter implements JsonSerializer<XMLGregorianCalendar>, JsonDeserializer<XMLGregorianCalendar> {
@@ -55,7 +56,7 @@ public class XMLGregorianCalendarAdapter implements JsonSerializer<XMLGregorianC
     @Override
     public XMLGregorianCalendar deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) {
         try {
-            JsonObject obj  = jsonElement.getAsJsonObject();
+            JsonObject obj = jsonElement.getAsJsonObject();
             XMLGregorianCalendar xmlGregCalendar = DatatypeFactory.newInstance().newXMLGregorianCalendar(
                     obj.get(YEAR).getAsInt(),
                     obj.get(MONTH).getAsInt(),

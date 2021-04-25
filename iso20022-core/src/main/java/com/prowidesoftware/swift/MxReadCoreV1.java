@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2020 Prowide
+ * Copyright 2006-2021 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,18 +27,18 @@ import com.prowidesoftware.swift.model.mx.MxRead;
 @ProwideDeprecated(phase3 = TargetYear.SRU2021)
 public class MxReadCoreV1 implements MxRead {
 
-	/**
-	 * For the moment this is only available in the Prowide Integrator version
-	 */
-	public AbstractMX read(final Class<? extends AbstractMX> targetClass, final String xml, final Class<? extends Object>[] classes) {
-		throw new UnsupportedOperationException("For the moment this is only available in the integrator version");
-	}
+    /**
+     * For the moment this is only available in the Prowide Integrator version
+     */
+    public AbstractMX read(final Class<? extends AbstractMX> targetClass, final String xml, final Class<? extends Object>[] classes) {
+        throw new UnsupportedOperationException("For the moment this is only available in the integrator version");
+    }
 
-	/**
-	 * For the moment this is only available in the Prowide Integrator version
-	 */
-	public AbstractMX read(String xml, MxId id) {
-		throw new UnsupportedOperationException("For the moment this is only available in the integrator version");
-	}
+    /**
+     * For the moment this is only available in the Prowide Integrator version
+     */
+    public AbstractMX read(String xml, MxId id) {
+        throw new UnsupportedOperationException("For the moment this is only available in the integrator version");
+    }
 
 }

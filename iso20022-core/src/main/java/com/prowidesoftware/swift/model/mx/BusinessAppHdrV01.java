@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2020 Prowide
+ * Copyright 2006-2021 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,14 +47,24 @@ import java.util.logging.Logger;
 @XmlType(name = "AppHdr")
 @XmlRootElement(name = "AppHdr", namespace = "urn:iso:std:iso:20022:tech:xsd:head.001.001.01")
 public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implements AppHdr {
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:head.001.001.01";
+    final static transient Class[] _classes;
     private static final transient Logger log = Logger.getLogger(BusinessAppHdrV01.class.getName());
 
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:head.001.001.01";
-
-    final static transient Class[] _classes;
     static {
         _classes = Arrays.copyOf(BusinessApplicationHeaderV01Impl._classes, BusinessApplicationHeaderV01Impl._classes.length + 1);
         _classes[_classes.length - 1] = BusinessAppHdrV01.class;
+    }
+
+    /**
+     * Parse the header from an XML with optional wrapper and sibling elements that will be ignored.
+     *
+     * @param xml the XML content, can contain wrapper elements that will be ignored
+     * @return parsed element or null if cannot be parsed
+     * @throws ProwideException if severe errors occur during parse
+     */
+    public static BusinessAppHdrV01 parse(final String xml) {
+        return (BusinessAppHdrV01) MxParseUtils.parse(BusinessAppHdrV01.class, xml, _classes, HEADER_LOCALNAME);
     }
 
     /**
@@ -63,16 +73,6 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
     @SuppressWarnings("rawtypes")
     Class[] getClasses() {
         return _classes;
-    }
-
-    /**
-     * Parse the header from an XML with optional wrapper and sibling elements that will be ignored.
-     * @param xml the XML content, can contain wrapper elements that will be ignored
-     * @return parsed element or null if cannot be parsed
-     * @throws ProwideException if severe errors occur during parse
-     */
-    public static BusinessAppHdrV01 parse(final String xml) {
-        return (BusinessAppHdrV01) MxParseUtils.parse(BusinessAppHdrV01.class, xml, _classes, HEADER_LOCALNAME);
     }
 
     /**
@@ -124,6 +124,7 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
 
     /**
      * Get the message reference.
+     *
      * @see #getBizMsgIdr()
      */
     @Override
@@ -133,6 +134,7 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
 
     /**
      * Gets the message name.
+     *
      * @see #getMsgDefIdr()
      */
     @Override
@@ -142,6 +144,7 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
 
     /**
      * Gets the service name.
+     *
      * @see #getBizSvc()
      */
     @Override
@@ -150,8 +153,8 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
     }
 
     /**
-     * @see #getCpyDplct()
      * @return true if the CpyDplct element is present, false otherwise
+     * @see #getCpyDplct()
      */
     @Override
     public boolean duplicate() {
@@ -160,6 +163,7 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
 
     /**
      * Gets the creation date
+     *
      * @see #getCreDt()
      */
     @Override
@@ -169,6 +173,7 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
 
     /**
      * Sets the creation date.
+     *
      * @param overwrite if true, the creation date will always be set overwriting any previous value;
      * @see #setCreDt(XMLGregorianCalendar)
      */

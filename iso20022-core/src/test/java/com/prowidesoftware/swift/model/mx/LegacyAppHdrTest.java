@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2020 Prowide
+ * Copyright 2006-2021 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,10 +15,10 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-
-import org.junit.jupiter.api.Test;
 
 /**
  * @since 9.0.1
@@ -102,7 +102,7 @@ public class LegacyAppHdrTest {
 
     @Test
     public void testParseWithWrapper() {
-        final String xml = "<foo><bar>"+
+        final String xml = "<foo><bar>" +
                 "<AppHdr xmlns:Ah=\"urn:swift:xsd:$ahV10\">\n" +
                 "    <From>\n" +
                 "        <Type>DN</Type>\n" +
@@ -114,7 +114,7 @@ public class LegacyAppHdrTest {
                 "    </To>\n" +
                 "    <MsgRef>11308917</MsgRef>\n" +
                 "    <CrDate>2013-12-23T15:50:00</CrDate>\n" +
-                "</AppHdr>"+
+                "</AppHdr>" +
                 "</bar></foo>";
         LegacyAppHdr h = LegacyAppHdr.parse(xml);
         assertNotNull(h);

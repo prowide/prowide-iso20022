@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2020 Prowide
+ * Copyright 2006-2021 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ import com.google.gson.*;
 import com.prowidesoftware.swift.model.MxId;
 
 import java.lang.reflect.Type;
-
 
 
 /**
@@ -47,11 +46,11 @@ class AbstractMXAdapter implements JsonSerializer<AbstractMX>, JsonDeserializer<
     }
 
     @Override
-    public AbstractMX deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException  {
+    public AbstractMX deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
         JsonObject jsonObject = json.getAsJsonObject();
         JsonPrimitive prim = (JsonPrimitive) jsonObject.get(IDENTIFIER);
         if (prim == null) {
-            throw new JsonParseException("Missing "+ IDENTIFIER + " in JSON structure");
+            throw new JsonParseException("Missing " + IDENTIFIER + " in JSON structure");
         }
         MxId id = new MxId(prim.getAsString());
 
@@ -60,7 +59,7 @@ class AbstractMXAdapter implements JsonSerializer<AbstractMX>, JsonDeserializer<
             String className = "com.prowidesoftware.swift.model.mx.Mx" + id.camelized();
             klass = Class.forName(className);
         } catch (ClassNotFoundException e) {
-            throw new JsonParseException("Cannot find MX implementation for "+e.getMessage());
+            throw new JsonParseException("Cannot find MX implementation for " + e.getMessage());
         }
         return context.deserialize(json, klass);
     }

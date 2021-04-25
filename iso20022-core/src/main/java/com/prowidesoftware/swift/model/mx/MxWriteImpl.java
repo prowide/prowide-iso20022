@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2020 Prowide
+ * Copyright 2006-2021 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,55 +37,56 @@ import java.util.logging.Logger;
  * @since 9.0
  */
 public class MxWriteImpl implements MxWrite {
-	private static final transient Logger log = Logger.getLogger(MxWriteImpl.class.getName());
+    private static final transient Logger log = Logger.getLogger(MxWriteImpl.class.getName());
 
-	/**
-	 * Implements serialization to XML
-	 * @see MxWrite#message(String, AbstractMX, Class[], String, boolean)
-	 */
-	@Override
-	public String message(String namespace, AbstractMX obj, Class[] classes, final String prefix, boolean includeXMLDeclaration) {
-		return write(namespace, obj, classes, prefix, includeXMLDeclaration);
-	}
+    /**
+     * Static serialization implementation of {@link MxWrite#message(String, AbstractMX, Class[], String, boolean)}
+     *
+     * @since 9.0
+     */
+    public static String write(String namespace, AbstractMX obj, Class[] classes, final String prefix, boolean includeXMLDeclaration) {
+        Validate.notNull(namespace, "namespace can not be null");
+        Validate.notNull(obj, "MxSwiftMessage can not be null");
+        Validate.notNull(classes, "Class[] can not be null");
 
-	/**
-	 * Static serialization implementation of {@link MxWrite#message(String, AbstractMX, Class[], String, boolean)}
-	 * @since 9.0
-	 */
-	public static String write(String namespace, AbstractMX obj, Class[] classes, final String prefix, boolean includeXMLDeclaration) {
-		Validate.notNull(namespace, "namespace can not be null");
-		Validate.notNull(obj, "MxSwiftMessage can not be null");
-		Validate.notNull(classes, "Class[] can not be null");
+        try {
+            JAXBContext context = JaxbContextLoader.INSTANCE.get(obj);
 
-		try {
-			JAXBContext context = JaxbContextLoader.INSTANCE.get(obj);
-			
-			// Sin el ns en el qname, para ver si toma el default
-			@SuppressWarnings({ "unchecked" })	
-            final JAXBElement<? extends MxSwiftMessage> element = new JAXBElement(new QName("Document"), obj.getClass(), null, obj);
+            // Sin el ns en el qname, para ver si toma el default
+            @SuppressWarnings({"unchecked"}) final JAXBElement<? extends MxSwiftMessage> element = new JAXBElement(new QName("Document"), obj.getClass(), null, obj);
 
-			final Marshaller marshaller = context.createMarshaller();
+            final Marshaller marshaller = context.createMarshaller();
 
-			final StringWriter sw = new StringWriter();
-			XmlEventWriter writer = new XmlEventWriter(sw, prefix, includeXMLDeclaration, "Document");
-			
-			Map<String, String> preferredPrefixes = new HashMap<>();
-			for (XsysNamespaces xsys : XsysNamespaces.values()) {
-				preferredPrefixes.put(xsys.namespaceURI(), xsys.prefix());
-			}
-			writer.setPreferredPrefixes(preferredPrefixes);
-			
-			marshaller.marshal(element, writer);
+            final StringWriter sw = new StringWriter();
+            XmlEventWriter writer = new XmlEventWriter(sw, prefix, includeXMLDeclaration, "Document");
 
-			if (log.isLoggable(Level.FINER)) {
-				log.finer("XML: \n" + sw.getBuffer().toString());
-			}
-			return sw.getBuffer().toString();
+            Map<String, String> preferredPrefixes = new HashMap<>();
+            for (XsysNamespaces xsys : XsysNamespaces.values()) {
+                preferredPrefixes.put(xsys.namespaceURI(), xsys.prefix());
+            }
+            writer.setPreferredPrefixes(preferredPrefixes);
 
-		} catch (JAXBException | ExecutionException e) {
-			log.log(Level.SEVERE, "Error writing XML:" + e + "\n for message: " + obj);
-		}
-		return null;
-	}
+            marshaller.marshal(element, writer);
+
+            if (log.isLoggable(Level.FINER)) {
+                log.finer("XML: \n" + sw.getBuffer().toString());
+            }
+            return sw.getBuffer().toString();
+
+        } catch (JAXBException | ExecutionException e) {
+            log.log(Level.SEVERE, "Error writing XML:" + e + "\n for message: " + obj);
+        }
+        return null;
+    }
+
+    /**
+     * Implements serialization to XML
+     *
+     * @see MxWrite#message(String, AbstractMX, Class[], String, boolean)
+     */
+    @Override
+    public String message(String namespace, AbstractMX obj, Class[] classes, final String prefix, boolean includeXMLDeclaration) {
+        return write(namespace, obj, classes, prefix, includeXMLDeclaration);
+    }
 
 }

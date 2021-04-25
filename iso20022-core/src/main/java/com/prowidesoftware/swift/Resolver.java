@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2020 Prowide
+ * Copyright 2006-2021 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,27 +24,28 @@ import com.prowidesoftware.swift.model.mx.MxWriteImpl;
 
 /**
  * Helper class to find implementation of interfaces
- * @since 7.6
  *
+ * @since 7.6
  * @deprecated the MX read/write implementation injection is no longer used since the ISO20022 open source extension for Prowide Core
  */
 @ProwideDeprecated(phase3 = TargetYear.SRU2021)
 public class Resolver {
 
-	private Resolver() {}
-	
-	/**
-	 * @return an instance of MxWriteImpl
-	 */
-	public static MxWrite mxWrite() {
-		return new MxWriteImpl();
-	}
+    private Resolver() {
+    }
 
-	/**
-	 * @return returns an instance of MxReadImpl
-	 */
-	public static MxRead mxRead() {
-		return new MxReadImpl();
-	}
+    /**
+     * @return an instance of MxWriteImpl
+     */
+    public static MxWrite mxWrite() {
+        return new MxWriteImpl();
+    }
+
+    /**
+     * @return returns an instance of MxReadImpl
+     */
+    public static MxRead mxRead() {
+        return new MxReadImpl();
+    }
 
 }

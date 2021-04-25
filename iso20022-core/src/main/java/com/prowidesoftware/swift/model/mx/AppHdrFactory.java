@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2020 Prowide
+ * Copyright 2006-2021 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,10 +34,10 @@ public class AppHdrFactory {
      * <p>All parameters are optional but in order for the header to be valid the sender, receiver and reference must
      * be set. Creation date will be set to current time.
      *
-     * @param sender optional sender BIC for the Fr element or null to leave not set
-     * @param receiver optional receiver BIC for the To element or null to leave not set
+     * @param sender    optional sender BIC for the Fr element or null to leave not set
+     * @param receiver  optional receiver BIC for the To element or null to leave not set
      * @param reference optional reference for the BizMsgIdr (business message identifier) or null to leave not set
-     * @param id optional MX identification for the MsgDefIdr (message definition identifier) element or null to leave not set
+     * @param id        optional MX identification for the MsgDefIdr (message definition identifier) element or null to leave not set
      * @return new header initialized from parameters.
      */
     public static BusinessAppHdrV01 createBusinessAppHdrV01(final String sender, final String receiver, final String reference, final MxId id) {
@@ -76,10 +76,10 @@ public class AppHdrFactory {
      * <p>All parameters are optional but in order for the header to be valid the sender, receiver and reference must
      * be set. Creation date will be set to current time.
      *
-     * @param sender optional sender BIC for the Fr element or null to leave not set
-     * @param receiver optional receiver BIC for the To element or null to leave not set
+     * @param sender    optional sender BIC for the Fr element or null to leave not set
+     * @param receiver  optional receiver BIC for the To element or null to leave not set
      * @param reference optional reference for the BizMsgIdr (business message identifier) or null to leave not set
-     * @param id optional MX identification for the MsgDefIdr (message definition identifier) element or null to leave not set
+     * @param id        optional MX identification for the MsgDefIdr (message definition identifier) element or null to leave not set
      * @return new header initialized from parameters.
      */
     public static BusinessAppHdrV02 createBusinessAppHdrV02(final String sender, final String receiver, final String reference, final MxId id) {
@@ -118,10 +118,10 @@ public class AppHdrFactory {
      * <p>All parameters are optional but in order for the header to be valid the sender, receiver and reference must
      * be set. Creation date will be set to current time.
      *
-     * @param sender optional sender BIC for the Fr element or null to leave not set
-     * @param receiver optional receiver BIC for the To element or null to leave not set
+     * @param sender    optional sender BIC for the Fr element or null to leave not set
+     * @param receiver  optional receiver BIC for the To element or null to leave not set
      * @param reference optional reference for the BizMsgIdr (business message identifier) or null to leave not set
-     * @param id optional MX identification for the MsgDefIdr (message definition identifier) element or null to leave not set
+     * @param id        optional MX identification for the MsgDefIdr (message definition identifier) element or null to leave not set
      * @return new header initialized from parameters.
      */
     public static LegacyAppHdr createLegacyAppHdr(final String sender, final String receiver, final String reference, final MxId id) {
@@ -164,19 +164,23 @@ public class AppHdrFactory {
     /**
      * Convenient method to create a new header, initialized from simple parameters.
      *
-     * @param sender optional sender BIC for the Fr element or null to leave not set
-     * @param receiver optional receiver BIC for the To element or null to leave not set
+     * @param sender    optional sender BIC for the Fr element or null to leave not set
+     * @param receiver  optional receiver BIC for the To element or null to leave not set
      * @param reference optional reference for the BizMsgIdr (business message identifier) or null to leave not set
-     * @param id optional MX identification for the MsgDefIdr (message definition identifier) element or null to leave not set
+     * @param id        optional MX identification for the MsgDefIdr (message definition identifier) element or null to leave not set
      * @return new header initialized from parameters
      * @since 9.1.6
      */
     public static AppHdr createAppHdr(AppHdrType type, final String sender, final String receiver, final String reference, final MxId id) {
         switch (type) {
-            case LEGACY: return createLegacyAppHdr(sender, receiver, reference, id);
-            case BAH_V1: return createBusinessAppHdrV01(sender, receiver, reference, id);
-            case BAH_V2: return createBusinessAppHdrV02(sender, receiver, reference, id);
-            default: throw new ProwideException("Don't know how to create header " + type);
+            case LEGACY:
+                return createLegacyAppHdr(sender, receiver, reference, id);
+            case BAH_V1:
+                return createBusinessAppHdrV01(sender, receiver, reference, id);
+            case BAH_V2:
+                return createBusinessAppHdrV02(sender, receiver, reference, id);
+            default:
+                throw new ProwideException("Don't know how to create header " + type);
         }
     }
 

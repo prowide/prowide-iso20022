@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2020 Prowide
+ * Copyright 2006-2021 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,13 +26,13 @@ import javax.xml.datatype.XMLGregorianCalendar;
  * <p>When the header is used, its AppHdr element is a sibling of the Document element containing the specific message
  * type content. The parent wrapper structure that holds the AppHdr and Document is implementation/network specific
  * and not part of the scope of this model and parser.
- *
+ * <p>
  * As for the AppHdr there are at the moment two main specifications:
  * <ul>
  * <li>The ISO 20022 business application header such as the head.001.001.01.</li>
  * <li>The legacy application header originally defined by SWIFT: $ahV10</li>
  * </ul>
- *
+ * <p>
  * This interface exports shared information applicable to all header implementations (legacy and ISO based).
  *
  * @since 9.0.1
@@ -83,6 +83,7 @@ public interface AppHdr {
 
     /**
      * Gets the duplicate flag from the "PssblDplct" (BAH) or "Dup" (AH) element
+     *
      * @return true if the element is present, false otherwise
      */
     boolean duplicate();
@@ -96,6 +97,7 @@ public interface AppHdr {
 
     /**
      * Sets the creation date in the header object with current moment in UTC time zone.
+     *
      * @param overwrite if true, the creation date will always be set overwriting any previous value;
      *                  if false it will be set only if it is not already set
      */
@@ -121,7 +123,7 @@ public interface AppHdr {
     /**
      * Get this header as an XML string.
      *
-     * @param prefix optional prefix for namespace (empty by default)
+     * @param prefix                optional prefix for namespace (empty by default)
      * @param includeXMLDeclaration true to include the XML declaration (false by default)
      */
     String xml(final String prefix, boolean includeXMLDeclaration);

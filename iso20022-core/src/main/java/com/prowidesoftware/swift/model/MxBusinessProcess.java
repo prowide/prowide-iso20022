@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2020 Prowide
+ * Copyright 2006-2021 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,43 +22,43 @@ package com.prowidesoftware.swift.model;
  * @since 7.0
  */
 public enum MxBusinessProcess {
-	acmt("Account Management"),
-	admi("Administration"),
-	auth("Authorities"),
-	caaa("Acceptor to Acquirer Card Transactions"),
-	caam("ATM Management"),
-	camt("Cash Management"),
-	catm("Terminal Management"),
-	catp("ATM Card Transactions"),
-	cbrf(""),
-	colr("Collateral Management"),
-	fxtr("Foreign Exchange Trade"),
-	defp("Derivatives"),
-	head("Business Application Header"),
-	pacs("Payments Clearing and Settlement"),
-	pain("Payments Initiation"),
-	reda("Reference Data"),
-	remt("Payments Remittance Advice"),
-	secl("Securities Clearing"),
-	seev("Securities Events"),
-	semt("Securities Management"),
-	sese("Securities Settlement"),
-	seti("Securities Trade Initiation"),
-	setr("Securities Trade"),
-	supl("Supplementary Data"),
-	trea("Treasury"),
-	tsin("Trade Services Initiation"),
-	tsmt("Trade Services Management"),
-	tsrv("Trade Services"),
-	xsys("System Message");
+    acmt("Account Management"),
+    admi("Administration"),
+    auth("Authorities"),
+    caaa("Acceptor to Acquirer Card Transactions"),
+    caam("ATM Management"),
+    camt("Cash Management"),
+    catm("Terminal Management"),
+    catp("ATM Card Transactions"),
+    cbrf(""),
+    colr("Collateral Management"),
+    fxtr("Foreign Exchange Trade"),
+    defp("Derivatives"),
+    head("Business Application Header"),
+    pacs("Payments Clearing and Settlement"),
+    pain("Payments Initiation"),
+    reda("Reference Data"),
+    remt("Payments Remittance Advice"),
+    secl("Securities Clearing"),
+    seev("Securities Events"),
+    semt("Securities Management"),
+    sese("Securities Settlement"),
+    seti("Securities Trade Initiation"),
+    setr("Securities Trade"),
+    supl("Supplementary Data"),
+    trea("Treasury"),
+    tsin("Trade Services Initiation"),
+    tsmt("Trade Services Management"),
+    tsrv("Trade Services"),
+    xsys("System Message");
 
-	private String description = null;
+    private String description = null;
 
-	private MxBusinessProcess(final String description) {
-		this.description = description;
-	}
+    private MxBusinessProcess(final String description) {
+        this.description = description;
+    }
 
-	public String getDescription() {
-		return this.description;
-	}
+    public String getDescription() {
+        return this.description;
+    }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2020 Prowide
+ * Copyright 2006-2021 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,9 +15,9 @@
  */
 /**
  * This annotations are necessary for the unmarshalling of MX system messages
- * for example for the SwIntRequestHeader to propagate the namespace to the 
+ * for example for the SwIntRequestHeader to propagate the namespace to the
  * elements.
- * 
+ *
  * @author sebastian
  * @since 7.9.3
  */
