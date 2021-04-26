@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2020 Prowide
+ * Copyright 2006-2021 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,18 +15,13 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import com.prowidesoftware.swift.utils.Lib;
+import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.util.Optional;
 
-import org.junit.jupiter.api.Test;
-
-import com.prowidesoftware.swift.utils.Lib;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class AppHdrParserTest {
 
@@ -168,24 +163,24 @@ public class AppHdrParserTest {
 
     @Test
     public void testParseApplicationHeader() {
-        final String xml = "<h:AppHdr xmlns:h=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.01\">"+
-                "   <h:Fr>"+
-                "      <h:FIId>"+
-                "         <h:FinInstnId>"+
-                "            <h:Nm>Not available</h:Nm>"+
-                "         </h:FinInstnId>"+
-                "      </h:FIId>"+
-                "   </h:Fr>"+
-                "   <h:To>"+
-                "      <h:FIId>"+
-                "         <h:FinInstnId>"+
-                "            <h:Nm>Not available</h:Nm>"+
-                "         </h:FinInstnId>"+
-                "      </h:FIId>"+
-                "   </h:To>"+
-                "   <h:BizMsgIdr>AAAAAAAAAA222222</h:BizMsgIdr>"+
-                "   <h:MsgDefIdr>seev.037.002.02</h:MsgDefIdr>"+
-                "   <h:CreDt>2017-08-08T16:58:01Z</h:CreDt>"+
+        final String xml = "<h:AppHdr xmlns:h=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.01\">" +
+                "   <h:Fr>" +
+                "      <h:FIId>" +
+                "         <h:FinInstnId>" +
+                "            <h:Nm>Not available</h:Nm>" +
+                "         </h:FinInstnId>" +
+                "      </h:FIId>" +
+                "   </h:Fr>" +
+                "   <h:To>" +
+                "      <h:FIId>" +
+                "         <h:FinInstnId>" +
+                "            <h:Nm>Not available</h:Nm>" +
+                "         </h:FinInstnId>" +
+                "      </h:FIId>" +
+                "   </h:To>" +
+                "   <h:BizMsgIdr>AAAAAAAAAA222222</h:BizMsgIdr>" +
+                "   <h:MsgDefIdr>seev.037.002.02</h:MsgDefIdr>" +
+                "   <h:CreDt>2017-08-08T16:58:01Z</h:CreDt>" +
                 "</h:AppHdr>";
         Optional<AppHdr> appHdr = AppHdrParser.parse(xml);
         assertTrue(appHdr.isPresent());
@@ -203,7 +198,7 @@ public class AppHdrParserTest {
      */
     @Test
     public void testXxeDisabledInHeaderParse_01() {
-        String xml = "<!DOCTYPE foo [ <!ENTITY xxe SYSTEM \"file:///etc/passwd\" >]>"+
+        String xml = "<!DOCTYPE foo [ <!ENTITY xxe SYSTEM \"file:///etc/passwd\" >]>" +
                 "<h:AppHdr xmlns:h=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.01\">" +
                 "	<From>&xxe;</From>" +
                 "</h:AppHdr>";
@@ -213,25 +208,25 @@ public class AppHdrParserTest {
 
     @Test
     public void testXxeDisabledInHeaderParse_02() {
-        String xml = "<!DOCTYPE foo [ <!ENTITY xxe SYSTEM \"file:///etc/passwd\" >]>"+
-                "<h:AppHdr xmlns:h=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.01\">"+
-                "   <h:Fr>"+
-                "      <h:FIId>"+
-                "         <h:FinInstnId>"+
-                "            <h:Nm>Not available</h:Nm>"+
-                "         </h:FinInstnId>"+
-                "      </h:FIId>"+
-                "   </h:Fr>"+
-                "   <h:To>"+
-                "      <h:FIId>"+
-                "         <h:FinInstnId>"+
-                "            <h:Nm>foo</h:Nm>"+
-                "         </h:FinInstnId>"+
-                "      </h:FIId>"+
-                "   </h:To>"+
-                "   <h:BizMsgIdr>AAAAAAAAAA222222</h:BizMsgIdr>"+
-                "   <h:MsgDefIdr>&xxe;</h:MsgDefIdr>"+
-                "   <h:CreDt>2017-08-08T16:58:01Z</h:CreDt>"+
+        String xml = "<!DOCTYPE foo [ <!ENTITY xxe SYSTEM \"file:///etc/passwd\" >]>" +
+                "<h:AppHdr xmlns:h=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.01\">" +
+                "   <h:Fr>" +
+                "      <h:FIId>" +
+                "         <h:FinInstnId>" +
+                "            <h:Nm>Not available</h:Nm>" +
+                "         </h:FinInstnId>" +
+                "      </h:FIId>" +
+                "   </h:Fr>" +
+                "   <h:To>" +
+                "      <h:FIId>" +
+                "         <h:FinInstnId>" +
+                "            <h:Nm>foo</h:Nm>" +
+                "         </h:FinInstnId>" +
+                "      </h:FIId>" +
+                "   </h:To>" +
+                "   <h:BizMsgIdr>AAAAAAAAAA222222</h:BizMsgIdr>" +
+                "   <h:MsgDefIdr>&xxe;</h:MsgDefIdr>" +
+                "   <h:CreDt>2017-08-08T16:58:01Z</h:CreDt>" +
                 "</h:AppHdr>";
         Optional<AppHdr> appHdr = AppHdrParser.parse(xml);
         assertFalse(appHdr.isPresent());

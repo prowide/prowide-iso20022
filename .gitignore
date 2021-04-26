@@ -2,7 +2,6 @@
 gradle.properties
 build
 bin
-.idea
 *.iws
 *.iml
 *.ipr
@@ -10,3 +9,12 @@ bin
 .classpath
 lib
 .project
+.idea/gradle.xml
+.idea/jarRepositories.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/prowide-core.iml
+.idea/uiDesigner.xml
+.idea/vcs.xml
+.idea/workspace.xml
+.idea/prowide-iso20022.iml

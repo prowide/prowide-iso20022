@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2020 Prowide
+ * Copyright 2006-2021 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,15 +15,15 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
-import java.util.concurrent.ExecutionException;
-
-import javax.xml.bind.JAXBContext;
-
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 
+import javax.xml.bind.JAXBContext;
+import java.util.concurrent.ExecutionException;
+
 /**
  * A jaxb context cache with Guava to test cache implementation injection in {@link JaxbContextLoader}
+ *
  * @since 9.0
  */
 public class GuavaJaxbContextCache implements JaxbContextCache {

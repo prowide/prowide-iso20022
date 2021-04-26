@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2020 Prowide
+ * Copyright 2006-2021 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,14 +15,12 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import org.junit.jupiter.api.Test;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @since 9.0
@@ -32,7 +30,7 @@ public class JaxbContextCacheImplTest {
     @Test
     public void testCache() throws JAXBException {
         JaxbContextCacheImpl cache = new JaxbContextCacheImpl();
-        
+
         assertEquals(0, cache.size());
         cache.clear();
         assertNull(cache.clear(MxSese02300201.class));

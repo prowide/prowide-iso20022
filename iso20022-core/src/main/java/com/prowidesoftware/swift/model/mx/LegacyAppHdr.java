@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2020 Prowide
+ * Copyright 2006-2021 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,14 +46,24 @@ import java.util.logging.Logger;
 @XmlType(name = "AppHdr")
 @XmlRootElement(name = "AppHdr", namespace = "urn:swift:xsd:$ahV10")
 public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
+    public static final transient String NAMESPACE = "urn:swift:xsd:$ahV10";
+    final static transient Class[] _classes;
     private static final transient Logger log = Logger.getLogger(LegacyAppHdr.class.getName());
 
-    public static final transient String NAMESPACE = "urn:swift:xsd:$ahV10";
-
-    final static transient Class[] _classes;
     static {
         _classes = Arrays.copyOf(ApplicationHeaderImpl._classes, ApplicationHeaderImpl._classes.length + 1);
         _classes[_classes.length - 1] = LegacyAppHdr.class;
+    }
+
+    /**
+     * Parse the header from an XML with optional wrapper and sibling elements that will be ignored.
+     *
+     * @param xml the XML content, can contain wrapper elements that will be ignored
+     * @return parsed element or null if cannot be parsed
+     * @throws ProwideException if severe errors occur during parse
+     */
+    public static LegacyAppHdr parse(final String xml) {
+        return (LegacyAppHdr) MxParseUtils.parse(LegacyAppHdr.class, xml, _classes, HEADER_LOCALNAME);
     }
 
     /**
@@ -65,18 +75,9 @@ public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
     }
 
     /**
-     * Parse the header from an XML with optional wrapper and sibling elements that will be ignored.
-     * @param xml the XML content, can contain wrapper elements that will be ignored
-     * @return parsed element or null if cannot be parsed
-     * @throws ProwideException if severe errors occur during parse
-     */
-    public static LegacyAppHdr parse(final String xml) {
-        return (LegacyAppHdr) MxParseUtils.parse(LegacyAppHdr.class, xml, _classes, HEADER_LOCALNAME);
-    }
-
-    /**
      * Gets the sender BIC from ApplicationHeader/From/Type+Id where if Type is BIC the Id is returned as is,
      * otherwise the domain name is parsed to extract the SWIFT BIC
+     *
      * @return found BIC code or null if element is not found
      */
     @Override
@@ -113,6 +114,7 @@ public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
 
     /**
      * Get the message reference.
+     *
      * @see #getMsgRef()
      */
     @Override
@@ -122,6 +124,7 @@ public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
 
     /**
      * Gets the message name.
+     *
      * @see #getMsgName()
      */
     @Override
@@ -131,6 +134,7 @@ public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
 
     /**
      * Gets the service name.
+     *
      * @see #getSvcName()
      */
     @Override
@@ -139,8 +143,8 @@ public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
     }
 
     /**
-     * @see #getDup()
      * @return true if the Dup element is present, false otherwise
+     * @see #getDup()
      */
     @Override
     public boolean duplicate() {
@@ -149,6 +153,7 @@ public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
 
     /**
      * Gets the creation date
+     *
      * @see #getCrDate()
      */
     @Override
@@ -158,6 +163,7 @@ public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
 
     /**
      * Sets the creation date.
+     *
      * @param overwrite if true, the creation date will always be set overwriting any previous value;
      * @see #setCrDate(XMLGregorianCalendar)
      */

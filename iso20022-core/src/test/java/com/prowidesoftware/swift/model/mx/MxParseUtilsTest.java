@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2020 Prowide
+ * Copyright 2006-2021 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,63 +15,60 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import com.prowidesoftware.swift.model.MxBusinessProcess;
+import com.prowidesoftware.swift.model.MxId;
+import org.junit.jupiter.api.Test;
 
 import java.util.Optional;
 
-import org.junit.jupiter.api.Test;
-
-import com.prowidesoftware.swift.model.MxBusinessProcess;
-import com.prowidesoftware.swift.model.MxId;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class MxParseUtilsTest {
 
     @Test
     public void testIdentifyMessage_01() {
-        final String xml ="<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+        final String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
                 + "<Doc:Document xmlns:Doc=\"urn:swift:xsd:camt.003.001.04\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">";
         assertMxId(MxParseUtils.identifyMessage(xml).orElse(null));
     }
 
     @Test
     public void testIdentifyMessage_02() {
-        final String xml ="<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+        final String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
                 + "<Foo:Document xmlns:Foo=\"urn:swift:xsd:camt.003.001.04\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">";
         assertMxId(MxParseUtils.identifyMessage(xml).orElse(null));
     }
 
     @Test
     public void testIdentifyMessage_03() {
-        final String xml ="<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+        final String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
                 + "<Document xmlns=\"urn:swift:xsd:camt.003.001.04\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"></Doc:Document>";
         assertMxId(MxParseUtils.identifyMessage(xml).orElse(null));
     }
 
     @Test
     public void testIdentifyMessage_04() {
-        final String xml ="<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+        final String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
                 + "<Document xmlns=\"urn:swift:xsd:camt.003.001.04\"></Doc:Document>";
         assertMxId(MxParseUtils.identifyMessage(xml).orElse(null));
     }
 
     @Test
     public void testIdentifyMessage_05() {
-        final String xml ="<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+        final String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
                 + "<Doc:Document xmlns:Doc=\"urn:swift:xsd:camt.003.001.04\"></Doc:Document>";
         assertMxId(MxParseUtils.identifyMessage(xml).orElse(null));
     }
 
     @Test
     public void testIdentifyMessage_06() {
-        final String xml ="<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+        final String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
                 + "<Doc:Document xmlns:Doc=\"urn:swift:xsd:swift.eni$camt.003.001.04\"></Doc:Document>";
         assertMxId(MxParseUtils.identifyMessage(xml).orElse(null));
     }
 
     void assertMxId(MxId id) {
-        assertNotNull(id,"detected id is null");
+        assertNotNull(id, "detected id is null");
         assertEquals(MxBusinessProcess.camt, id.getBusinessProcess());
         assertEquals("003", id.getFunctionality());
         assertEquals("001", id.getVariant());
@@ -85,7 +82,7 @@ public class MxParseUtilsTest {
      */
     @Test
     public void testXxeDisabledInDetectMessage() {
-        final String xml = "<!DOCTYPE foo [ <!ENTITY xxe SYSTEM \"file:///etc/passwd\" >]>"+
+        final String xml = "<!DOCTYPE foo [ <!ENTITY xxe SYSTEM \"file:///etc/passwd\" >]>" +
                 "<Doc:Document xmlns:Doc=\"urn:swift:xsd:swift.eni$camt.003.001.04\">&xxe;</Doc:Document>";
         Optional<MxId> id = MxParseUtils.identifyMessage(xml);
         assertTrue(id.isPresent());

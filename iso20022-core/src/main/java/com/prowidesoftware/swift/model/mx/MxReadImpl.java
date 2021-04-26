@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2020 Prowide
+ * Copyright 2006-2021 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,6 @@ package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.swift.model.MxBusinessProcess;
 import com.prowidesoftware.swift.model.MxId;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.Validate;
 
 import javax.xml.transform.sax.SAXSource;
@@ -51,110 +50,111 @@ import java.util.logging.Logger;
  * @since 9.0
  */
 public class MxReadImpl implements MxRead {
-	private static final transient Logger log = Logger.getLogger(MxReadImpl.class.getName());
+    private static final transient Logger log = Logger.getLogger(MxReadImpl.class.getName());
 
-	@Override
-	public AbstractMX read(final Class<? extends AbstractMX> targetClass, final String xml, final Class<?>[] classes) {
-		return parse(targetClass, xml, classes);
-	}
+    /**
+     * Static parse implementation of {@link MxRead#read(Class, String, Class[])}
+     *
+     * @param xml the XML to parse, should contain the Document, and optional AppHdr and any type of wrapper elements
+     * @since 8.0.4
+     */
+    public static AbstractMX parse(final Class<? extends AbstractMX> targetClass, final String xml, final Class<?>[] classes) {
+        Validate.notNull(targetClass, "target class to parse must not be null");
+        Validate.notNull(xml, "XML to parse must not be null");
+        Validate.notBlank(xml, "XML to parse must not be a blank string");
+        Validate.notNull(classes, "object model classes array must not be null");
 
-	/**
-	 * Static parse implementation of {@link MxRead#read(Class, String, Class[])}
-	 * @param xml the XML to parse, should contain the Document, and optional AppHdr and any type of wrapper elements
-	 * @since 8.0.4
-	 */
-	public static AbstractMX parse(final Class<? extends AbstractMX> targetClass, final String xml, final Class<?>[] classes) {
-		Validate.notNull(targetClass, "target class to parse must not be null");
-		Validate.notNull(xml, "XML to parse must not be null");
-		Validate.notBlank(xml, "XML to parse must not be a blank string");
-		Validate.notNull(classes, "object model classes array must not be null");
+        try {
 
-		try {
+            SAXSource documentSource = MxParseUtils.createFilteredSAXSource(xml, AbstractMX.DOCUMENT_LOCALNAME);
+            Optional<AbstractMX> mx = parseDocumentFromSAXSource(documentSource, targetClass, classes);
 
-			SAXSource documentSource = MxParseUtils.createFilteredSAXSource(xml, AbstractMX.DOCUMENT_LOCALNAME);
-			Optional<AbstractMX> mx = parseDocumentFromSAXSource(documentSource, targetClass, classes);
+            Optional<AppHdr> appHdr = AppHdrParser.parse(xml);
 
-			Optional<AppHdr> appHdr = AppHdrParser.parse(xml);
-	
-			if (mx.isPresent() && appHdr.isPresent()) {
-				mx.get().setAppHdr(appHdr.get());
-			}
+            if (mx.isPresent() && appHdr.isPresent()) {
+                mx.get().setAppHdr(appHdr.get());
+            }
 
-			return mx.orElse(null);
+            return mx.orElse(null);
 
-		} catch (final Exception e) {
-			MxParseUtils.handleParseException(e);
-			return null;
-		}
-	}
+        } catch (final Exception e) {
+            MxParseUtils.handleParseException(e);
+            return null;
+        }
+    }
 
-	/**
-	 * @since 9.1.2
-	 */
-	private static Optional<AbstractMX> parseDocumentFromSAXSource(SAXSource source, Class<? extends AbstractMX> targetClass, Class<?>[] classes) {
-		final AbstractMX mx = (AbstractMX) MxParseUtils.parseSAXSource(source, targetClass, classes);
-		return Optional.ofNullable(mx);
-	}
+    /**
+     * @since 9.1.2
+     */
+    private static Optional<AbstractMX> parseDocumentFromSAXSource(SAXSource source, Class<? extends AbstractMX> targetClass, Class<?>[] classes) {
+        final AbstractMX mx = (AbstractMX) MxParseUtils.parseSAXSource(source, targetClass, classes);
+        return Optional.ofNullable(mx);
+    }
 
-	/**
-	 * Parses the XML string content into a specific instance of Mx.
-	 *
-	 * <p>If the string is empty, does not contain any MX message, the message type cannot be detected or an error occur
-	 * reading and parsing the message content; this method returns null.
-	 *
-	 * <p>The implementation detects the message type and uses reflection to call the parser in the specific Mx
-	 * subclass.
-	 *
-	 * <p>If header is present, it is also parsed into the message object.
-	 *
-	 * @param xml a string containing an MX message in XML format
-	 * @param id optional parameter to indicate the specific MX type to create; autodetected from namespace if null.
-	 * @return parser message or null if string content could not be parsed into an Mx
-	 *
-	 * @since 7.8.4
-	 */
-	@Override
-	public AbstractMX read(final String xml, MxId id) {
-		return parse(xml, id);
-	}
+    /**
+     * Static parse implementation of {@link MxRead#read(String, MxId)}
+     *
+     * @return parsed message or null if XML is malformed or unrecognized as MX message
+     * @throws IllegalArgumentException if the XML parameter is blank
+     * @throws NullPointerException     if the XML parameter is null
+     * @since 9.0
+     */
+    public static AbstractMX parse(final String xml, MxId id) {
+        Validate.notNull(xml, "XML to parse must not be null");
+        Validate.notBlank(xml, "XML to parse must not be a blank string");
 
-	/**
-	 * Static parse implementation of {@link MxRead#read(String, MxId)}
-	 * @since 9.0
-	 * @throws IllegalArgumentException if the XML parameter is blank
-	 * @throws NullPointerException if the XML parameter is null
-	 * @return parsed message or null if XML is malformed or unrecognized as MX message
-	 */
-	public static AbstractMX parse(final String xml, MxId id) {
-		Validate.notNull(xml, "XML to parse must not be null");
-		Validate.notBlank(xml, "XML to parse must not be a blank string");
+        MxId resolvedId = id;
 
-		MxId resolvedId = id;
+        if (id == null) {
+            Optional<String> namespace = NamespaceReader.findDocumentNamespace(xml);
+            if (namespace.isPresent()) {
+                resolvedId = new MxId(namespace.get());
+            } else {
+                log.severe("Cannot detect the Mx type from the XML, ensure the XML contains proper namespaces or provide an MxId object as parameter to the parse call");
+                return null;
+            }
+        }
 
-		if (id == null) {
-			Optional<String> namespace = NamespaceReader.findDocumentNamespace(xml);
-			if (namespace.isPresent()) {
-				resolvedId = new MxId(namespace.get());
-			} else {
-				log.severe("Cannot detect the Mx type from the XML, ensure the XML contains proper namespaces or provide an MxId object as parameter to the parse call");
-				return null;
-			}
-		}
+        AbstractMX mx = null;
+        String fqn = null;
+        try {
+            String subPackage = resolvedId.getBusinessProcess() == MxBusinessProcess.xsys ? ".sys" : "";
+            fqn = "com.prowidesoftware.swift.model.mx" + subPackage + ".Mx" + resolvedId.camelized();
+            Class<? extends AbstractMX> clazz = (Class<? extends AbstractMX>) Class.forName(fqn);
+            java.lang.reflect.Field _classes = clazz.getDeclaredField("_classes");
+            mx = parse(clazz, xml, (Class[]) _classes.get(null));
+        } catch (ClassNotFoundException e) {
+            log.log(Level.SEVERE, "MX model implementation not found for " + fqn, e);
+        } catch (Exception e) {
+            log.log(Level.SEVERE, "Error calling parse in specific MX model implementation", e);
+        }
+        return mx;
+    }
 
-		AbstractMX mx = null;
-		String fqn = null;
-		try {
-			String subPackage = resolvedId.getBusinessProcess() == MxBusinessProcess.xsys ? ".sys" : "";
-			fqn = "com.prowidesoftware.swift.model.mx" + subPackage + ".Mx" + resolvedId.camelized();
-			Class<? extends AbstractMX> clazz = (Class<? extends AbstractMX>) Class.forName(fqn);
-			java.lang.reflect.Field _classes = clazz.getDeclaredField("_classes");
-			mx = parse(clazz, xml, (Class[]) _classes.get(null));
-		} catch (ClassNotFoundException e) {
-			log.log(Level.SEVERE, "MX model implementation not found for " + fqn, e);
-		} catch (Exception e) {
-			log.log(Level.SEVERE, "Error calling parse in specific MX model implementation", e);
-		}
-		return mx;
-	}
+    @Override
+    public AbstractMX read(final Class<? extends AbstractMX> targetClass, final String xml, final Class<?>[] classes) {
+        return parse(targetClass, xml, classes);
+    }
+
+    /**
+     * Parses the XML string content into a specific instance of Mx.
+     *
+     * <p>If the string is empty, does not contain any MX message, the message type cannot be detected or an error occur
+     * reading and parsing the message content; this method returns null.
+     *
+     * <p>The implementation detects the message type and uses reflection to call the parser in the specific Mx
+     * subclass.
+     *
+     * <p>If header is present, it is also parsed into the message object.
+     *
+     * @param xml a string containing an MX message in XML format
+     * @param id  optional parameter to indicate the specific MX type to create; autodetected from namespace if null.
+     * @return parser message or null if string content could not be parsed into an Mx
+     * @since 7.8.4
+     */
+    @Override
+    public AbstractMX read(final String xml, MxId id) {
+        return parse(xml, id);
+    }
 
 }

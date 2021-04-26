@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2020 Prowide
+ * Copyright 2006-2021 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,8 +19,8 @@ import com.prowidesoftware.deprecation.ProwideDeprecated;
 import com.prowidesoftware.deprecation.TargetYear;
 
 /**
- * @deprecated this makes no sense since ISO 20022 is included in Core extension library
  * @since 7.7
+ * @deprecated this makes no sense since ISO 20022 is included in Core extension library
  */
 @ProwideDeprecated(phase3 = TargetYear.SRU2021)
 public class MxSimpleDocument implements IDocument {

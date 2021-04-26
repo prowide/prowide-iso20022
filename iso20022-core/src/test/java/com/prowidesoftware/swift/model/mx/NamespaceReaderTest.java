@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2020 Prowide
+ * Copyright 2006-2021 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,16 +15,13 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import com.prowidesoftware.swift.utils.Lib;
+import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.util.Optional;
 
-import org.junit.jupiter.api.Test;
-
-import com.prowidesoftware.swift.utils.Lib;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class NamespaceReaderTest {
 
@@ -43,7 +40,7 @@ public class NamespaceReaderTest {
 
     @Test
     public void testFindNamespace() {
-        final String xml ="<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+        final String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
                 + "<message>"
                 + "<h:AppHdr xmlns:h=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.01\"><From></From></h:AppHdr>"
                 + "<Doc:Document xmlns:Doc=\"urn:swift:xsd:camt.003.001.04\"></Doc:Document>"
@@ -60,7 +57,7 @@ public class NamespaceReaderTest {
 
     @Test
     public void testFindDocumentNamespace_01() {
-        final String xml ="<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+        final String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
                 + "<Doc:Document xmlns:Doc=\"urn:swift:xsd:camt.003.001.04\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">";
         Optional<String> namespace = NamespaceReader.findDocumentNamespace(xml);
         assertTrue(namespace.isPresent());
@@ -71,7 +68,7 @@ public class NamespaceReaderTest {
 
     @Test
     public void testFindDocumentNamespace_02() {
-        final String xml ="<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+        final String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
                 + "<Foo:Document xmlns:Foo=\"urn:swift:xsd:camt.003.001.04\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">";
         Optional<String> namespace = NamespaceReader.findDocumentNamespace(xml);
         assertTrue(namespace.isPresent());
@@ -82,7 +79,7 @@ public class NamespaceReaderTest {
 
     @Test
     public void testFindDocumentNamespace_03() {
-        final String xml ="<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+        final String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
                 + "<Document xmlns=\"urn:swift:xsd:camt.003.001.04\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"></Doc:Document>";
         Optional<String> namespace = NamespaceReader.findDocumentNamespace(xml);
         assertTrue(namespace.isPresent());
@@ -93,7 +90,7 @@ public class NamespaceReaderTest {
 
     @Test
     public void testFindDocumentNamespace_04() {
-        final String xml ="<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+        final String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
                 + "<Document xmlns=\"urn:swift:xsd:camt.003.001.04\"></Doc:Document>";
         Optional<String> namespace = NamespaceReader.findDocumentNamespace(xml);
         assertTrue(namespace.isPresent());
@@ -104,7 +101,7 @@ public class NamespaceReaderTest {
 
     @Test
     public void testFindDocumentNamespace_05() {
-        final String xml ="<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+        final String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
                 + "<Doc:Document xmlns:Doc=\"urn:swift:xsd:camt.003.001.04\"></Doc:Document>";
         Optional<String> namespace = NamespaceReader.findDocumentNamespace(xml);
         assertTrue(namespace.isPresent());
@@ -115,7 +112,7 @@ public class NamespaceReaderTest {
 
     @Test
     public void testFindDocumentNamespace_06() {
-        final String xml ="<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+        final String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
                 + "<Doc:Document xmlns:Doc=\"urn:swift:xsd:swift.eni$camt.003.001.04\"></Doc:Document>";
         Optional<String> namespace = NamespaceReader.findDocumentNamespace(xml);
         assertTrue(namespace.isPresent());
@@ -126,7 +123,7 @@ public class NamespaceReaderTest {
 
     @Test
     public void testFindAppHdrNamespace_01() {
-        final String xml ="<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+        final String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
                 + "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.01\"><From></From></AppHdr>";
         Optional<String> namespace = NamespaceReader.findAppHdrNamespace(xml);
         assertTrue(namespace.isPresent());
@@ -137,7 +134,7 @@ public class NamespaceReaderTest {
 
     @Test
     public void testFindAppHdrNamespace_02() {
-        final String xml ="<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+        final String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
                 + "<h:AppHdr xmlns:h=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.01\"><From></From></h:AppHdr>";
         Optional<String> namespace = NamespaceReader.findAppHdrNamespace(xml);
         assertTrue(namespace.isPresent());
@@ -148,7 +145,7 @@ public class NamespaceReaderTest {
 
     @Test
     public void testInvalidEndElementXml() {
-        final String xml ="<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+        final String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
                 + "<Doc:Document xmlns:Doc=\"urn:swift:xsd:camt.003.001.04\"></foo>";
         Optional<String> namespace = NamespaceReader.findDocumentNamespace(xml);
         assertTrue(namespace.isPresent());
@@ -157,7 +154,7 @@ public class NamespaceReaderTest {
 
     @Test
     public void testMissingElements() {
-        final String xml ="<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
+        final String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
 
         Optional<String> namespace = NamespaceReader.findDocumentNamespace(xml);
         assertFalse(namespace.isPresent());
@@ -168,7 +165,7 @@ public class NamespaceReaderTest {
 
     @Test
     public void testMissingPrefix() {
-        final String xml ="<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+        final String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
                 + "<message>"
                 // missing prefix in element on purpose
                 + "<AppHdr xmlns:h=\"urn:swift:xsd:$ahV10\"><From></From></AppHdr>"
@@ -188,7 +185,7 @@ public class NamespaceReaderTest {
      */
     @Test
     public void testXxeDisabledInAnalyzeMessage() {
-        final String xml = "<!DOCTYPE foo [ <!ENTITY xxe SYSTEM \"file:///etc/passwd\" >]>"+
+        final String xml = "<!DOCTYPE foo [ <!ENTITY xxe SYSTEM \"file:///etc/passwd\" >]>" +
                 "<Doc:Document xmlns:Doc=\"urn:swift:xsd:swift.eni$camt.003.001.04\">&xxe;</Doc:Document>";
         Optional<String> namespace = NamespaceReader.findDocumentNamespace(xml);
         assertTrue(namespace.isPresent());
@@ -197,7 +194,7 @@ public class NamespaceReaderTest {
 
     @Test
     public void testElementExists_01() {
-        final String xml ="<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+        final String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
                 + "<Doc:Document xmlns:Doc=\"urn:swift:xsd:camt.003.001.04\"></foo>";
         assertTrue(NamespaceReader.elementExists(xml, "Document"));
         assertFalse(NamespaceReader.elementExists(xml, "Foo"));
@@ -205,7 +202,7 @@ public class NamespaceReaderTest {
 
     @Test
     public void testElementExists_02() {
-        final String xml ="<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+        final String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
                 + "<message>"
                 + "<AppHdr xmlns:h=\"urn:swift:xsd:$ahV10\"><From></From></AppHdr>"
                 + "<Doc:Document xmlns:Doc=\"urn:swift:xsd:camt.003.001.04\"></Doc:Document>"

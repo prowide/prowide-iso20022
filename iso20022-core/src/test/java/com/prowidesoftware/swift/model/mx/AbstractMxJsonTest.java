@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2020 Prowide
+ * Copyright 2006-2021 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,26 +15,15 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import java.math.BigDecimal;
-import java.util.GregorianCalendar;
+import com.prowidesoftware.swift.model.mx.dic.*;
+import org.junit.jupiter.api.Test;
 
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
+import java.math.BigDecimal;
+import java.util.GregorianCalendar;
 
-import org.junit.jupiter.api.Test;
-
-import com.prowidesoftware.swift.model.mx.dic.AccountStatement6;
-import com.prowidesoftware.swift.model.mx.dic.BankToCustomerStatementV06;
-import com.prowidesoftware.swift.model.mx.dic.BranchAndFinancialInstitutionIdentification5;
-import com.prowidesoftware.swift.model.mx.dic.BranchData2;
-import com.prowidesoftware.swift.model.mx.dic.CashAccount25;
-import com.prowidesoftware.swift.model.mx.dic.CustomerCreditTransferInitiationV08;
-import com.prowidesoftware.swift.model.mx.dic.GroupHeader48;
-import com.prowidesoftware.swift.model.mx.dic.OrganisationIdentification8;
-import com.prowidesoftware.swift.model.mx.dic.Party11Choice;
-import com.prowidesoftware.swift.model.mx.dic.PartyIdentification43;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test for JSON conversion in the MX model (AbstractMX and subclasses).

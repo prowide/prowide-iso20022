@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2020 Prowide
+ * Copyright 2006-2021 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,7 @@ public class JaxbContextCacheImpl implements JaxbContextCache {
      * a new context is initialized with the given classes and stored in the cache.
      *
      * @param messageClass class of the message to be read or written
-     * @param classes comprehensive list of classes for the context
+     * @param classes      comprehensive list of classes for the context
      * @return the cached or created context for the specific message type
      */
     public JAXBContext get(final Class messageClass, final Class<?>[] classes) throws JAXBException {
@@ -60,6 +60,7 @@ public class JaxbContextCacheImpl implements JaxbContextCache {
 
     /**
      * Drops the cached context for the specific MX implementation class
+     *
      * @return the remove context, if it was present, or null otherwise
      */
     public JAXBContext clear(Class clazz) {

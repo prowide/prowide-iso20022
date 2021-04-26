@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2020 Prowide
+ * Copyright 2006-2021 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,27 +24,25 @@ import com.prowidesoftware.swift.model.MxId;
  */
 public interface MxRead {
 
-	/**
-	 * Read <code>xml</code> into a message object
-	 *
-	 * @param targetClass class of the message to be read
-	 * @param xml the string with the message
-	 * @param classes classes for the context
-	 * @return parsed message or null if string content could not be parsed into an Mx
-	 * 
-	 * @since 7.6
-	 */
-	AbstractMX read(Class<? extends AbstractMX> targetClass, final String xml, Class<?>[] classes);
+    /**
+     * Read <code>xml</code> into a message object
+     *
+     * @param targetClass class of the message to be read
+     * @param xml         the string with the message
+     * @param classes     classes for the context
+     * @return parsed message or null if string content could not be parsed into an Mx
+     * @since 7.6
+     */
+    AbstractMX read(Class<? extends AbstractMX> targetClass, final String xml, Class<?>[] classes);
 
-	/**
-	 * Read <code>xml</code> into a message object
-	 * 
-	 * @param xml the string with the message
-	 * @param id optional parameter to indicate the specific MX type to create; auto detected from namespace if null.
-	 * @return parsed message or null if string content could not be parsed into an Mx
-	 * 
-	 * @since 7.8.4
-	 */
-	AbstractMX read(final String xml, MxId id);
+    /**
+     * Read <code>xml</code> into a message object
+     *
+     * @param xml the string with the message
+     * @param id  optional parameter to indicate the specific MX type to create; auto detected from namespace if null.
+     * @return parsed message or null if string content could not be parsed into an Mx
+     * @since 7.8.4
+     */
+    AbstractMX read(final String xml, MxId id);
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2020 Prowide
+ * Copyright 2006-2021 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,9 +21,8 @@ import com.prowidesoftware.deprecation.TargetYear;
 /**
  * Marker interface to identify the document of an MX message.
  *
- * @deprecated this interface does not makes much sense since all subclasses of AbstractMX contain a Document
- *
  * @since 7.7
+ * @deprecated this interface does not makes much sense since all subclasses of AbstractMX contain a Document
  */
 @ProwideDeprecated(phase3 = TargetYear.SRU2021)
 public interface IDocument {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2020 Prowide
+ * Copyright 2006-2021 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ public interface JaxbContextCache {
      * and made available here. The context can be created directly with: <code>JAXBContext.newInstance(classes)</code>
      *
      * @param messageClass class of the message to be read or written
-     * @param classes comprehensive list of classes for the context
+     * @param classes      comprehensive list of classes for the context
      * @return cached context for the message type
      * @throws JAXBException
      * @throws ExecutionException

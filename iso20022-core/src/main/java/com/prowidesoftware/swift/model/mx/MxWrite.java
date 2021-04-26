@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2020 Prowide
+ * Copyright 2006-2021 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,17 +22,17 @@ package com.prowidesoftware.swift.model.mx;
  */
 public interface MxWrite {
 
-	/**
-	 * Converts obj into a xml string
-	 * 
-	 * @param namespace the namespace for the target message
-	 * @param obj the object containing the message to be serialized
-	 * @param classes array of all classes used or referenced by message class  
- 	 * @param prefix optional prefix for ns ("Doc" by default)
-	 * @param includeXMLDeclaration true to include the xml declaration (true by default)
-	 * @return the message content serialized to XML
-	 * @since 7.8
-	 */
-	String message(String namespace, AbstractMX obj, Class[] classes, final String prefix, boolean includeXMLDeclaration);
+    /**
+     * Converts obj into a xml string
+     *
+     * @param namespace             the namespace for the target message
+     * @param obj                   the object containing the message to be serialized
+     * @param classes               array of all classes used or referenced by message class
+     * @param prefix                optional prefix for ns ("Doc" by default)
+     * @param includeXMLDeclaration true to include the xml declaration (true by default)
+     * @return the message content serialized to XML
+     * @since 7.8
+     */
+    String message(String namespace, AbstractMX obj, Class[] classes, final String prefix, boolean includeXMLDeclaration);
 
 }

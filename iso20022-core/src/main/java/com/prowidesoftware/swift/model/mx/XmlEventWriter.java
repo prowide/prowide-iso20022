@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2020 Prowide
+ * Copyright 2006-2021 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,9 +51,7 @@ public final class XmlEventWriter implements XMLEventWriter {
     private String rootElement;
     private String currentElement;
     private boolean preserveQnamePrefixes = false;
-    private EndElement previousEndElement;
-
-
+	private EndElement previousEndElement;
     /**
      * @param baos                  output buffer to write
      * @param defaultPrefix         optional prefix (empty by default) to used for all elements that are not binded to a specific prefix
@@ -71,7 +69,6 @@ public final class XmlEventWriter implements XMLEventWriter {
     }
 
     public void add(final XMLEvent event) throws XMLStreamException {
-
         if (event != null) {
             try {
                 final int type = event.getEventType();
@@ -134,31 +131,29 @@ public final class XmlEventWriter implements XMLEventWriter {
                         break;
                     }
 
-                    case XMLEvent.END_ELEMENT: {
-                        this.nestedLevel--;
-                        closeStartTagIfNeeded();
-                        final EndElement ee = event.asEndElement();
-                        final String localPart = ee.getName().getLocalPart();
-                        // Evaluates if previous end tag is the same as current.
-                        // Needed because of embedded tags with same name.
-                        // E.g:<Doc:Dt>
-                        //          <Doc:Dt>2020-09-01</Doc:Dt>
-                        //     </Doc:Dt>
-                        if (this.previousEndElement!=null &&
-                                ee.toString().equals(this.previousEndElement.toString())) {
-                            writeIndentIfNeeded(out, nestedLevel);
-                        }
-
-                        if (!localPart.equals(this.currentElement)) {
-                            // we are closing a nested element
-                            writeIndentIfNeeded(out, nestedLevel);
-                        }
-
-                        out.write("</" + prefixString(ee.getName()) + localPart + ">");
-                        // Records previous end element
-                        previousEndElement = ee;
-                        break;
-                    }
+					case XMLEvent.END_ELEMENT: {
+						this.nestedLevel--;
+						closeStartTagIfNeeded();
+						final EndElement ee = event.asEndElement();
+						final String localPart = ee.getName().getLocalPart();
+						// Evaluates if previous end tag is the same as current.
+						// Needed because of embedded tags with same name.
+						// E.g:<Doc:Dt>
+						//          <Doc:Dt>2020-09-01</Doc:Dt>
+						//     </Doc:Dt>
+						if (this.previousEndElement!=null &&
+								ee.toString().equals(this.previousEndElement.toString())) {
+							writeIndentIfNeeded(out, nestedLevel);
+						}
+						if (!localPart.equals(this.currentElement)) {
+							// we are closing a nested element
+							writeIndentIfNeeded(out, nestedLevel);
+						}
+						out.write("</" + prefixString(ee.getName()) + localPart + ">");
+						// Records previous end element
+						previousEndElement = ee;
+						break;
+					}
 
                     case XMLEvent.END_DOCUMENT: {
                         closeStartTagIfNeeded();
@@ -170,7 +165,7 @@ public final class XmlEventWriter implements XMLEventWriter {
 
                     case XMLEvent.ATTRIBUTE: {
                         final Attribute a = (Attribute) event;
-                        out.write(" " + a.getName() + "=\"" + a.getValue() + "\"");
+                        out.write(" " + a.getName() + "=\"" + a.getValue() + "\" ");
                         break;
                     }
 
@@ -313,14 +308,14 @@ public final class XmlEventWriter implements XMLEventWriter {
         return null;
     }
 
+    public void setNamespaceContext(NamespaceContext arg0) {
+    }
+
     public String getPrefix(String arg0) {
         return null;
     }
 
     public void setDefaultNamespace(String arg0) {
-    }
-
-    public void setNamespaceContext(NamespaceContext arg0) {
     }
 
     public void setPrefix(String arg0, String arg1) {
@@ -350,19 +345,19 @@ public final class XmlEventWriter implements XMLEventWriter {
     }
 
     /**
-     * @since 9.0.2
-     */
-    public Map<String, String> getPreferredPrefixes() {
-        return preferredPrefixes;
-    }
-
-    /**
      * @deprecated use {@link #setPreferredPrefixes(Map)} instead
      */
     @ProwideDeprecated(phase2 = TargetYear.SRU2021)
     @Deprecated
     public void setPeferredPrefixes(Map<String, String> preferredPrefixes) {
         setPreferredPrefixes(preferredPrefixes);
+    }
+
+    /**
+     * @since 9.0.2
+     */
+    public Map<String, String> getPreferredPrefixes() {
+        return preferredPrefixes;
     }
 
     /**
