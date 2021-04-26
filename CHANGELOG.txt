@@ -3,6 +3,7 @@
 -----------------------------------------------------------------------------------------------------------------------
 
 SNAPSHOT 9.1.6
+  * (GH-18) Fixed NPE in json serialization/deserialization of XMLGregorianCalendar fractional second
   * Added customizable strategies to set the MxSwiftMessage metadata fields: reference, main amount, value date, etc...
 
 RELEASE 9.1.5 - December 2020

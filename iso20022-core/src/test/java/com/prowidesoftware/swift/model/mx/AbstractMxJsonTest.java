@@ -140,8 +140,7 @@ public class AbstractMxJsonTest {
     }
 
     @Test
-    public void testMxDateJson()
-    {
+    public void testMxDateJson() {
         String source = "{\n" +
                 "  \"sctiesSttlmTxInstr\": {\n" +
                 "    \"id\": {\n" +
@@ -167,8 +166,7 @@ public class AbstractMxJsonTest {
     }
 
     @Test
-    public void testMxDateJsonSerializeAndParse()
-    {
+    public void testMxDateJsonSerializeAndParse() {
         String source = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n" +
                 "<RequestPayload>\n" +
                 "<Doc:Document xmlns:Doc=\"urn:swift:xsd:sese.023.002.01\">\n" +
