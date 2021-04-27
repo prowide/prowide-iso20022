@@ -139,12 +139,12 @@ public final class XmlEventWriter implements XMLEventWriter {
                         final String localPart = ee.getName().getLocalPart();
 
                         // Evaluates if previous end tag is the same as current.
-                        // Needed because of embbeded tags with same name.
+                        // Needed because of embedded tags with same name.
                         // E.g:<Doc:Dt>
                         //          <Doc:Dt>2020-09-01</Doc:Dt>
                         //     </Doc:Dt>
-                        if (this.previousEndElement!=null &&
-                                ee.toString().equals(this.previousEndElement.toString())) {
+                        if (this.previousEndElement != null &&
+                                localPart.equals(this.previousEndElement.getName().getLocalPart())) {
                             writeIndentIfNeeded(out, nestedLevel);
                         }
 
