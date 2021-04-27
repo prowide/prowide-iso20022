@@ -51,6 +51,7 @@ public final class XmlEventWriter implements XMLEventWriter {
     private String rootElement;
     private String currentElement;
     private boolean preserveQnamePrefixes = false;
+    private EndElement previousEndElement;
 
     /**
      * @param baos                  output buffer to write
@@ -136,11 +137,25 @@ public final class XmlEventWriter implements XMLEventWriter {
                         closeStartTagIfNeeded();
                         final EndElement ee = event.asEndElement();
                         final String localPart = ee.getName().getLocalPart();
+
+                        // Evaluates if previous end tag is the same as current.
+                        // Needed because of embbeded tags with same name.
+                        // E.g:<Doc:Dt>
+                        //          <Doc:Dt>2020-09-01</Doc:Dt>
+                        //     </Doc:Dt>
+                        if (this.previousEndElement!=null &&
+                                ee.toString().equals(this.previousEndElement.toString())) {
+                            writeIndentIfNeeded(out, nestedLevel);
+                        }
+
                         if (!localPart.equals(this.currentElement)) {
                             // we are closing a nested element
                             writeIndentIfNeeded(out, nestedLevel);
                         }
                         out.write("</" + prefixString(ee.getName()) + localPart + ">");
+
+                        // Records previous end element
+                        previousEndElement = ee;
                         break;
                     }
 
@@ -154,7 +169,7 @@ public final class XmlEventWriter implements XMLEventWriter {
 
                     case XMLEvent.ATTRIBUTE: {
                         final Attribute a = (Attribute) event;
-                        out.write(" " + a.getName() + "=\"" + a.getValue() + "\" ");
+                        out.write(" " + a.getName() + "=\"" + a.getValue() + "\"");
                         break;
                     }
 
