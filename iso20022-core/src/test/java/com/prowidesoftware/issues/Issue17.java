@@ -42,7 +42,6 @@ public class Issue17 {
         assertFalse(xmlResult.contains("<Doc:Amt Ccy=\"USD\" >0.000000</Doc:Amt>"));
         // Excpected result
         assertTrue(xmlResult.contains("<Doc:Amt Ccy=\"USD\">0.000000</Doc:Amt>"));
-
     }
 
     @Test
@@ -59,7 +58,6 @@ public class Issue17 {
         assertTrue(xmlResult.contains(" <Doc:Dt>\n" +
                 "                        <Doc:Dt>2021-11-11</Doc:Dt>\n" +
                 "                    </Doc:Dt>"));
-
     }
 
     private void assertMessage(MxSeev03100209 mx) {
@@ -73,4 +71,5 @@ public class Issue17 {
         assertEquals("111111111", mx.getCorpActnNtfctn().getCorpActnGnlInf().getCorpActnEvtId());
         assertEquals(SafekeepingAccountIdentification1Code.GENR, mx.getCorpActnNtfctn().getAcctDtls().getForAllAccts().getIdCd());
     }
+
 }
