@@ -40,7 +40,7 @@ import java.util.logging.Level;
 public final class XmlEventWriter implements XMLEventWriter {
     private static final transient java.util.logging.Logger log = java.util.logging.Logger.getLogger(XmlEventWriter.class.getName());
     private static final String INDENT = "    ";
-    private Writer out;
+    private final Writer out;
     private StartElement delayedStart = null;
     private boolean startTagIncomplete = false;
     private int startElementCount;
@@ -51,6 +51,7 @@ public final class XmlEventWriter implements XMLEventWriter {
     private String rootElement;
     private String currentElement;
     private boolean preserveQnamePrefixes = false;
+    private EndElement previousEndElement;
 
     /**
      * @param baos                  output buffer to write
@@ -136,11 +137,26 @@ public final class XmlEventWriter implements XMLEventWriter {
                         closeStartTagIfNeeded();
                         final EndElement ee = event.asEndElement();
                         final String localPart = ee.getName().getLocalPart();
-                        if (!localPart.equals(this.currentElement)) {
-                            // we are closing a nested element
+
+                        // Evaluates if previous end tag is the same as current.
+                        // Needed because of embedded tags with same name.
+                        // E.g:<Doc:Dt>
+                        //          <Doc:Dt>2020-09-01</Doc:Dt>
+                        //     </Doc:Dt>
+                        if (this.previousEndElement != null &&
+                                localPart.equals(this.previousEndElement.getName().getLocalPart())) {
                             writeIndentIfNeeded(out, nestedLevel);
+                        } else {
+                            if (!localPart.equals(this.currentElement)) {
+                                // we are closing a nested element
+                                writeIndentIfNeeded(out, nestedLevel);
+                            }
                         }
+
                         out.write("</" + prefixString(ee.getName()) + localPart + ">");
+
+                        // Records previous end element
+                        previousEndElement = ee;
                         break;
                     }
 
@@ -154,7 +170,7 @@ public final class XmlEventWriter implements XMLEventWriter {
 
                     case XMLEvent.ATTRIBUTE: {
                         final Attribute a = (Attribute) event;
-                        out.write(" " + a.getName() + "=\"" + a.getValue() + "\" ");
+                        out.write(" " + a.getName() + "=\"" + a.getValue() + "\"");
                         break;
                     }
 

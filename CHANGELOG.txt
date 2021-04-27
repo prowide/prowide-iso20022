@@ -3,6 +3,7 @@
 -----------------------------------------------------------------------------------------------------------------------
 
 SNAPSHOT 9.1.6
+  * (GH-17|JIRA-506) Enhanced the XML format in the serializing, spaces and line breaks
   * (GH-18) Fixed NPE in json serialization/deserialization of XMLGregorianCalendar fractional second
   * Added customizable strategies to set the MxSwiftMessage metadata fields: reference, main amount, value date, etc...
 
