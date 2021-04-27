@@ -146,12 +146,13 @@ public final class XmlEventWriter implements XMLEventWriter {
                         if (this.previousEndElement != null &&
                                 localPart.equals(this.previousEndElement.getName().getLocalPart())) {
                             writeIndentIfNeeded(out, nestedLevel);
+                        } else {
+                            if (!localPart.equals(this.currentElement)) {
+                                // we are closing a nested element
+                                writeIndentIfNeeded(out, nestedLevel);
+                            }
                         }
 
-                        if (!localPart.equals(this.currentElement)) {
-                            // we are closing a nested element
-                            writeIndentIfNeeded(out, nestedLevel);
-                        }
                         out.write("</" + prefixString(ee.getName()) + localPart + ">");
 
                         // Records previous end element
