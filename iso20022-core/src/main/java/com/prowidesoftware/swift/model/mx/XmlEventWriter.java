@@ -128,7 +128,9 @@ public final class XmlEventWriter implements XMLEventWriter {
                     case XMLEvent.CHARACTERS: {
                         closeStartTagIfNeeded();
                         final Characters ce = event.asCharacters();
-                        if (ce.isWhiteSpace()) break;
+                        if (ce.isIgnorableWhiteSpace()) {
+                            break;
+                        }
                         final char[] arr = ce.getData().toCharArray();
                         out.write(escape(arr));
                         break;
