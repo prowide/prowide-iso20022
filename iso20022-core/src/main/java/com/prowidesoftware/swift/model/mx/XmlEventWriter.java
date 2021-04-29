@@ -51,7 +51,7 @@ public final class XmlEventWriter implements XMLEventWriter {
     private String rootElement;
     private String currentElement;
     private boolean preserveQnamePrefixes = false;
-    private EndElement previousEndElement;
+    private int previousNestedStartLevel;
 
     /**
      * @param baos                  output buffer to write
@@ -104,6 +104,7 @@ public final class XmlEventWriter implements XMLEventWriter {
                              */
                             startTagIncomplete = true;
                         }
+                        this.previousNestedStartLevel = nestedLevel;
                         this.nestedLevel++;
                         this.currentElement = localPart;
                         break;
@@ -127,6 +128,7 @@ public final class XmlEventWriter implements XMLEventWriter {
                     case XMLEvent.CHARACTERS: {
                         closeStartTagIfNeeded();
                         final Characters ce = event.asCharacters();
+                        if (ce.isWhiteSpace()) break;
                         final char[] arr = ce.getData().toCharArray();
                         out.write(escape(arr));
                         break;
@@ -143,20 +145,21 @@ public final class XmlEventWriter implements XMLEventWriter {
                         // E.g:<Doc:Dt>
                         //          <Doc:Dt>2020-09-01</Doc:Dt>
                         //     </Doc:Dt>
-                        if (this.previousEndElement != null &&
-                                localPart.equals(this.previousEndElement.getName().getLocalPart())) {
+                        if (!localPart.equals(this.currentElement)) {
+                            // we are closing a nested element
                             writeIndentIfNeeded(out, nestedLevel);
                         } else {
-                            if (!localPart.equals(this.currentElement)) {
-                                // we are closing a nested element
-                                writeIndentIfNeeded(out, nestedLevel);
+                            if (localPart.equals(this.currentElement) &&
+                                    this.previousNestedStartLevel != nestedLevel) {
+                                previousNestedStartLevel--;
+                                writeIndentIfNeeded(out, previousNestedStartLevel);
                             }
                         }
 
                         out.write("</" + prefixString(ee.getName()) + localPart + ">");
 
-                        // Records previous end element
-                        previousEndElement = ee;
+                        // Records previous level
+                        previousNestedStartLevel = nestedLevel;
                         break;
                     }
 
