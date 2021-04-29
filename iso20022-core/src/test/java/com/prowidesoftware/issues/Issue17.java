@@ -38,6 +38,7 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class Issue17 {
 
+    private  JAXPXPathEngine engine = new JAXPXPathEngine();
     @Test
     public void test_whiteSpaceInAttribute() throws IOException {
         String xml = Lib.readResource("issues/17/seev.031.002.09.xml");
@@ -174,7 +175,6 @@ public class Issue17 {
 
     private void testXpath(String xml, String nameSpace, String path, String expected) {
         Source source = new StreamSource(new StringReader(xml));
-        JAXPXPathEngine engine = new JAXPXPathEngine();
         engine.setNamespaceContext(new HashMap<String, String>(1) {{
             put(DEFAULT_NS_PREFIX, nameSpace);
         }});
