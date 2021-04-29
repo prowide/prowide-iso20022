@@ -28,13 +28,16 @@ import javax.xml.transform.stream.StreamSource;
 import java.io.IOException;
 import java.io.StringReader;
 import java.math.BigDecimal;
+import java.util.HashMap;
 
+import static javax.xml.XMLConstants.DEFAULT_NS_PREFIX;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * https://github.com/prowide/prowide-iso20022/issues/17
  */
 public class Issue17 {
+
 
     @Test
     public void test_whiteSpaceInCCY() throws IOException {
@@ -79,13 +82,14 @@ public class Issue17 {
 
     @Test
     public void testHeaderWithSignature() throws IOException {
+        String nameSpace = "urn:iso:std:iso:20022:tech:xsd:head.001.001.02";
         String xml = Lib.readResource("issues/17/header-with-signature.xml");
         assertNotNull(xml);
         BusinessAppHdrV02 h = BusinessAppHdrV02.parse(xml);
         assertNotNull(h);
         //System.out.println(h.xml());
         String xmlResult = h.xml();
-        System.out.println(xmlResult);
+        // System.out.println(xmlResult);
         assertTrue(xmlResult.contains("        <SignatureEnvelope>\n" +
                 "            <Regy>A</Regy>\n" +
                 "            <Regy>B</Regy>\n" +
@@ -96,15 +100,14 @@ public class Issue17 {
          * in the event as ignorable whitespaces but it is not. So we propagate that to the output thus producing and
          * undesirable double line feed and indentation. Apparently this only occurs with Any blocks which are rare.
          */
-
-        // TODO los assert no andan pero se ve que el test falla, genera saltos de linea invalidos, arreglar la forma de hacer el assert
-        //testXpath(xmlResult,"//AppHdr", "A");
-        //testXpath(xmlResult,"/AppHdr/Sgntr/SignatureEnvelope/Regy[2]", "B");
-        //testXpath(xmlResult,"/AppHdr/Sgntr/SignatureEnvelope/Regy[3]", "C");
+        testXpath(xmlResult, nameSpace, "/:AppHdr/:Sgntr/:SignatureEnvelope/:Regy[1]", "A");
+        testXpath(xmlResult, nameSpace, "/:AppHdr/:Sgntr/:SignatureEnvelope/:Regy[2]", "B");
+        testXpath(xmlResult, nameSpace, "/:AppHdr/:Sgntr/:SignatureEnvelope/:Regy[3]", "C");
     }
 
     @Test
     public void testPacs008WithRepetitiveCharges() {
+        String nameSpace = "urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08";
         MxPacs00800108 mx = new MxPacs00800108();
         mx.setFIToFICstmrCdtTrf(new FIToFICustomerCreditTransferV08());
         mx.getFIToFICstmrCdtTrf().addCdtTrfTxInf(new CreditTransferTransaction39());
@@ -119,22 +122,21 @@ public class Issue17 {
         tx.addChrgsInf(ch2);
         tx.addChrgsInf(ch3);
         tx.addChrgsInf(ch4);
-
         String xmlResult = mx.message();
-        System.out.println(xmlResult);
+        // System.out.println(xmlResult);
 
         // TODO ver si se pueden usar estos asserts tambien de xml unit
-        //assertThat(Input.fromString(xmlResult), hasXPath("//ChrgsInf"));
+        // assertThat(Input.fromString(xmlResult), hasXPath("//ChrgsInf"));
 
-        // TODO esto debiera andar pero hay algo mal en la forma de hacer el assert que siempre de vacio
-        //testXpath(xmlResult,"/Document/FIToFICstmrCdtTrf/CdtTrfTxInf/ChrgsInf/Amt", "1.00");
-        //testXpath(xmlResult,"/Document/FIToFICstmrCdtTrf/CdtTrfTxInf/ChrgsInf[2]/Amt", "2.00");
-        //testXpath(xmlResult,"/Document/FIToFICstmrCdtTrf/CdtTrfTxInf/ChrgsInf[3]/Amt", "3.00");
-        //testXpath(xmlResult,"/Document/FIToFICstmrCdtTrf/CdtTrfTxInf/ChrgsInf[4]/Amt", "4.00");
+        testXpath(xmlResult, nameSpace, "/:Document/:FIToFICstmrCdtTrf/:CdtTrfTxInf/:ChrgsInf/:Amt", "1.00");
+        testXpath(xmlResult, nameSpace, "/:Document/:FIToFICstmrCdtTrf/:CdtTrfTxInf/:ChrgsInf[2]/:Amt", "2.00");
+        testXpath(xmlResult, nameSpace, "/:Document/:FIToFICstmrCdtTrf/:CdtTrfTxInf/:ChrgsInf[3]/:Amt", "3.00");
+        testXpath(xmlResult, nameSpace, "/:Document/:FIToFICstmrCdtTrf/:CdtTrfTxInf/:ChrgsInf[4]/:Amt", "4.00");
     }
 
     @Test
     public void testPacs008WithRepetitiveCreditorLines() {
+        String nameSpace = "urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08";
         MxPacs00800108 mx = new MxPacs00800108();
         mx.setFIToFICstmrCdtTrf(new FIToFICustomerCreditTransferV08());
         mx.getFIToFICstmrCdtTrf().addCdtTrfTxInf(new CreditTransferTransaction39());
@@ -147,22 +149,18 @@ public class Issue17 {
         tx.getCdtr().getPstlAdr().addAdrLine("line 3");
 
         String xmlResult = mx.message();
-        System.out.println(xmlResult);
+        // System.out.println(xmlResult);
 
-        // TODO los assert no andan pero se ve que el test falla, genera saltos de linea invalidos, arreglar la forma de hacer el assert
-        //testXpath(xmlResult,"/Document/FIToFICstmrCdtTrf/CdtTrfTxInf/Cdtr/PstlAdr/AdrLine", "line 1");
-        //testXpath(xmlResult,"/Document/FIToFICstmrCdtTrf/CdtTrfTxInf/Cdtr/PstlAdr/AdrLine[2]", "line 2");
-        //testXpath(xmlResult,"/Document/FIToFICstmrCdtTrf/CdtTrfTxInf/Cdtr/PstlAdr/AdrLine[3]", "line 3");
+        testXpath(xmlResult, nameSpace, "/:Document/:FIToFICstmrCdtTrf/:CdtTrfTxInf/:Cdtr/:PstlAdr/:AdrLine[1]", "line 1");
+        testXpath(xmlResult, nameSpace, "/:Document/:FIToFICstmrCdtTrf/:CdtTrfTxInf/:Cdtr/:PstlAdr/:AdrLine[2]", "line 2");
+        testXpath(xmlResult, nameSpace, "/:Document/:FIToFICstmrCdtTrf/:CdtTrfTxInf/:Cdtr/:PstlAdr/:AdrLine[3]", "line 3");
     }
 
-    private void testXpath(String xml, String path, String expected) {
-        Source source = new StreamSource(new StringReader(xml));
-        String eval = new JAXPXPathEngine().evaluate(path, source);
-        assertEquals(expected, eval);
-    }
 
     @Test
     public void testEmptyElementPropagation() {
+        String indent = "   ";
+        String nameSpace = "urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08";
         MxPacs00800108 mx = new MxPacs00800108();
         mx.setFIToFICstmrCdtTrf(new FIToFICustomerCreditTransferV08());
         mx.getFIToFICstmrCdtTrf().addCdtTrfTxInf(new CreditTransferTransaction39());
@@ -170,13 +168,21 @@ public class Issue17 {
 
         tx.setCdtr(new PartyIdentification135());
         tx.getCdtr().setPstlAdr(new PostalAddress24());
-        tx.getCdtr().getPstlAdr().addAdrLine("   ");
+        tx.getCdtr().getPstlAdr().addAdrLine(indent);
 
         String xmlResult = mx.message();
-        System.out.println(xmlResult);
+        //  System.out.println(xmlResult);
 
-        //TODO migrar el assert a xmlunit
-        assertTrue(xmlResult.contains("<Doc:AdrLine>   </Doc:AdrLine>"));
+        testXpath(xmlResult, nameSpace, "/:Document/:FIToFICstmrCdtTrf/:CdtTrfTxInf/:Cdtr/:PstlAdr/:AdrLine", indent);
     }
 
+    private void testXpath(String xml, String nameSpace, String path, String expected) {
+        Source source = new StreamSource(new StringReader(xml));
+        JAXPXPathEngine engine = new JAXPXPathEngine();
+        engine.setNamespaceContext(new HashMap<String, String>(1) {{
+            put(DEFAULT_NS_PREFIX, nameSpace);
+        }});
+        String eval = engine.evaluate(path, source);
+        assertEquals(expected, eval);
+    }
 }
