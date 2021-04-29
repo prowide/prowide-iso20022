@@ -37,7 +37,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class Issue17 {
 
     @Test
-    public void test_whiteSpaceInCCY() throws IOException {
+    public void test_whiteSpaceInAttribute() throws IOException {
         String xml = Lib.readResource("issues/17/seev.031.002.09.xml");
         assertNotNull(xml);
         MxSeev03100209 mx = MxSeev03100209.parse(xml);
@@ -89,13 +89,8 @@ public class Issue17 {
         assertTrue(xmlResult.contains("        <SignatureEnvelope>\n" +
                 "            <Regy>A</Regy>\n" +
                 "            <Regy>B</Regy>\n" +
-                "            <Regy>C</Regy>"));
-        /*
-         * The output contains some extra line feed and spaces after the last element of the Any block, just because
-         * a character event is received at that point with the original indentation. That should probably be flagged
-         * in the event as ignorable whitespaces but it is not. So we propagate that to the output thus producing and
-         * undesirable double line feed and indentation. Apparently this only occurs with Any blocks which are rare.
-         */
+                "            <Regy>C</Regy>\n" +
+                "        </SignatureEnvelope>\n"));
 
         // TODO los assert no andan pero se ve que el test falla, genera saltos de linea invalidos, arreglar la forma de hacer el assert
         //testXpath(xmlResult,"//AppHdr", "A");
