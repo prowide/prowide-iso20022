@@ -41,7 +41,7 @@ public final class XmlEventWriter implements XMLEventWriter {
     private static final transient java.util.logging.Logger log = java.util.logging.Logger.getLogger(XmlEventWriter.class.getName());
     private static final String INDENT = "    ";
     private final Writer out;
-    private StartElement delayedStart = null;
+    private StartElement delayedStart;
     private boolean startTagIncomplete = false;
     private int startElementCount;
     private int nestedLevel;
@@ -83,6 +83,7 @@ public final class XmlEventWriter implements XMLEventWriter {
                         } else {
                             log.finest("skipping xml declaration");
                         }
+                        this.previousEvent = event;
                         break;
                     }
 
@@ -131,8 +132,12 @@ public final class XmlEventWriter implements XMLEventWriter {
                     case XMLEvent.CHARACTERS: {
                         closeStartTagIfNeeded();
                         final Characters ce = event.asCharacters();
-                        if (ce.isWhiteSpace() && this.previousEvent != null && previousEvent.getEventType() == XMLEvent.END_ELEMENT) {
-                            previousEvent = event;
+                        if (ce.isIgnorableWhiteSpace()) {
+                            this.previousEvent = event;
+                            break;
+                        }
+                        if (ce.isWhiteSpace() && this.previousEvent != null && this.previousEvent.getEventType() == XMLEvent.END_ELEMENT) {
+                            this.previousEvent = event;
                             break;
                         }
                         final char[] arr = ce.getData().toCharArray();
@@ -176,6 +181,7 @@ public final class XmlEventWriter implements XMLEventWriter {
                         /*
                          * No need to do anything while writing to a string
                          */
+                        this.previousEvent = event;
                         break;
                     }
 
@@ -188,6 +194,7 @@ public final class XmlEventWriter implements XMLEventWriter {
 
                     default: {
                         log.finer("PW Unhandled XMLEvent " + ToStringBuilder.reflectionToString(event));
+                        this.previousEvent = event;
                         break;
                     }
                 }
