@@ -52,6 +52,7 @@ public final class XmlEventWriter implements XMLEventWriter {
     private String currentElement;
     private boolean preserveQnamePrefixes = false;
     private int previousNestedStartLevel;
+    private XMLEvent previousEvent;
 
     /**
      * @param baos                  output buffer to write
@@ -107,6 +108,7 @@ public final class XmlEventWriter implements XMLEventWriter {
                         this.previousNestedStartLevel = nestedLevel;
                         this.nestedLevel++;
                         this.currentElement = localPart;
+                        this.previousEvent = event;
                         break;
                     }
 
@@ -122,17 +124,20 @@ public final class XmlEventWriter implements XMLEventWriter {
                         sb.append(namespace(ne));
                         out.write(sb.toString());
                         startTagIncomplete = true;
+                        this.previousEvent = event;
                         break;
                     }
 
                     case XMLEvent.CHARACTERS: {
                         closeStartTagIfNeeded();
                         final Characters ce = event.asCharacters();
-                        if (ce.isIgnorableWhiteSpace()) {
+                        if (ce.isWhiteSpace() && this.previousEvent != null && previousEvent.getEventType() == XMLEvent.END_ELEMENT) {
+                            previousEvent = event;
                             break;
                         }
                         final char[] arr = ce.getData().toCharArray();
                         out.write(escape(arr));
+                        this.previousEvent = event;
                         break;
                     }
 
@@ -162,6 +167,7 @@ public final class XmlEventWriter implements XMLEventWriter {
 
                         // Records previous level
                         previousNestedStartLevel = nestedLevel;
+                        this.previousEvent = event;
                         break;
                     }
 
@@ -176,6 +182,7 @@ public final class XmlEventWriter implements XMLEventWriter {
                     case XMLEvent.ATTRIBUTE: {
                         final Attribute a = (Attribute) event;
                         out.write(" " + a.getName() + "=\"" + a.getValue() + "\"");
+                        this.previousEvent = event;
                         break;
                     }
 
