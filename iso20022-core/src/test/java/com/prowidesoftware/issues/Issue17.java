@@ -21,24 +21,25 @@ import com.prowidesoftware.swift.model.mx.MxSeev03100209;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.utils.Lib;
 import org.junit.jupiter.api.Test;
+import org.xmlunit.builder.Input;
 import org.xmlunit.xpath.JAXPXPathEngine;
 
-import javax.xml.transform.Source;
-import javax.xml.transform.stream.StreamSource;
 import java.io.IOException;
-import java.io.StringReader;
 import java.math.BigDecimal;
 import java.util.HashMap;
 
 import static javax.xml.XMLConstants.DEFAULT_NS_PREFIX;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
+import static org.xmlunit.matchers.HasXPathMatcher.hasXPath;
 
 /**
  * https://github.com/prowide/prowide-iso20022/issues/17
  */
 public class Issue17 {
 
-    private  JAXPXPathEngine engine = new JAXPXPathEngine();
+    private JAXPXPathEngine engine = new JAXPXPathEngine();
+
     @Test
     public void test_whiteSpaceInAttribute() throws IOException {
         String xml = Lib.readResource("issues/17/seev.031.002.09.xml");
@@ -89,7 +90,7 @@ public class Issue17 {
         assertNotNull(h);
         //System.out.println(h.xml());
         String xmlResult = h.xml();
-        // System.out.println(xmlResult);
+        //System.out.println(xmlResult);
         assertTrue(xmlResult.contains("        <SignatureEnvelope>\n" +
                 "            <Regy>A</Regy>\n" +
                 "            <Regy>B</Regy>\n" +
@@ -120,10 +121,7 @@ public class Issue17 {
         tx.addChrgsInf(ch4);
 
         String xmlResult = mx.message();
-        // System.out.println(xmlResult);
-
-        // TODO ver si se pueden usar estos asserts tambien de xml unit
-        // assertThat(Input.fromString(xmlResult), hasXPath("//ChrgsInf"));
+        //System.out.println(xmlResult);
 
         testXpath(xmlResult, nameSpace, "/:Document/:FIToFICstmrCdtTrf/:CdtTrfTxInf/:ChrgsInf/:Amt", "1.00");
         testXpath(xmlResult, nameSpace, "/:Document/:FIToFICstmrCdtTrf/:CdtTrfTxInf/:ChrgsInf[2]/:Amt", "2.00");
@@ -146,7 +144,7 @@ public class Issue17 {
         tx.getCdtr().getPstlAdr().addAdrLine("line 3");
 
         String xmlResult = mx.message();
-        // System.out.println(xmlResult);
+        //System.out.println(xmlResult);
 
         testXpath(xmlResult, nameSpace, "/:Document/:FIToFICstmrCdtTrf/:CdtTrfTxInf/:Cdtr/:PstlAdr/:AdrLine[1]", "line 1");
         testXpath(xmlResult, nameSpace, "/:Document/:FIToFICstmrCdtTrf/:CdtTrfTxInf/:Cdtr/:PstlAdr/:AdrLine[2]", "line 2");
@@ -168,17 +166,21 @@ public class Issue17 {
         tx.getCdtr().getPstlAdr().addAdrLine(indent);
 
         String xmlResult = mx.message();
-        //  System.out.println(xmlResult);
+        //System.out.println(xmlResult);
 
         testXpath(xmlResult, nameSpace, "/:Document/:FIToFICstmrCdtTrf/:CdtTrfTxInf/:Cdtr/:PstlAdr/:AdrLine", indent);
     }
 
     private void testXpath(String xml, String nameSpace, String path, String expected) {
-        Source source = new StreamSource(new StringReader(xml));
-        engine.setNamespaceContext(new HashMap<String, String>(1) {{
+        HashMap<String, String> nameSpaceContext = new HashMap(1) {{
             put(DEFAULT_NS_PREFIX, nameSpace);
-        }});
-        String eval = engine.evaluate(path, source);
+        }};
+        // Verifies that the xml path exists
+        assertThat(Input.fromString(xml), hasXPath(path).withNamespaceContext(nameSpaceContext));
+
+        engine.setNamespaceContext(nameSpaceContext);
+        String eval = engine.evaluate(path, Input.fromString(xml).build());
+        // Verifies that the value contained in the path
         assertEquals(expected, eval);
     }
 }
