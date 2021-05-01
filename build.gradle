@@ -224,8 +224,8 @@ task writePom {
 }
 
 dependencies {
-	// included build
-	api 'com.prowidesoftware:pw-swift-core:SRU2020-9.1.2'
+	// included build (keep in sync with the latest Prowide Core version)
+	api 'com.prowidesoftware:pw-swift-core:SRU2020-9.1.4'
 	implementation 'org.apache.commons:commons-lang3:3.8.1'
 	implementation 'com.google.code.gson:gson:2.8.2'
 }
