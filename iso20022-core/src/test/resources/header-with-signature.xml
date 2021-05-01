@@ -1,0 +1,31 @@
+<AppHdr xmlns="urn:iso:std:iso:20022:tech:xsd:head.001.001.02">
+    <Fr>
+        <FIId>
+            <FinInstnId>
+                <Nm>Not available</Nm>
+            </FinInstnId>
+        </FIId>
+    </Fr>
+    <To>
+        <FIId>
+            <FinInstnId>
+                <Nm>Not available</Nm>
+            </FinInstnId>
+        </FIId>
+    </To>
+    <BizMsgIdr>AAAAAAAAAA222222</BizMsgIdr>
+    <MsgDefIdr>seev.037.002.02</MsgDefIdr>
+    <MktPrctc>
+        <Regy>FOO</Regy>
+        <Id>BAR</Id>
+    </MktPrctc>
+    <CreDt>2017-08-08T16:58:01Z</CreDt>
+    <Sgntr>
+        <!-- Invalid content for the signature, just used to force the repetitive element serialization -->
+        <SignatureEnvelope>
+            <Regy>A</Regy>
+            <Regy>B</Regy>
+            <Regy>C</Regy>
+        </SignatureEnvelope>
+    </Sgntr>
+</AppHdr>

@@ -41,7 +41,7 @@ public final class XmlEventWriter implements XMLEventWriter {
     private static final transient java.util.logging.Logger log = java.util.logging.Logger.getLogger(XmlEventWriter.class.getName());
     private static final String INDENT = "    ";
     private final Writer out;
-    private StartElement delayedStart = null;
+    private StartElement delayedStart;
     private boolean startTagIncomplete = false;
     private int startElementCount;
     private int nestedLevel;
@@ -51,7 +51,8 @@ public final class XmlEventWriter implements XMLEventWriter {
     private String rootElement;
     private String currentElement;
     private boolean preserveQnamePrefixes = false;
-    private EndElement previousEndElement;
+    private int previousNestedStartLevel;
+    private XMLEvent previousEvent;
 
     /**
      * @param baos                  output buffer to write
@@ -82,6 +83,7 @@ public final class XmlEventWriter implements XMLEventWriter {
                         } else {
                             log.finest("skipping xml declaration");
                         }
+                        this.previousEvent = event;
                         break;
                     }
 
@@ -104,8 +106,10 @@ public final class XmlEventWriter implements XMLEventWriter {
                              */
                             startTagIncomplete = true;
                         }
+                        this.previousNestedStartLevel = nestedLevel;
                         this.nestedLevel++;
                         this.currentElement = localPart;
+                        this.previousEvent = event;
                         break;
                     }
 
@@ -121,14 +125,24 @@ public final class XmlEventWriter implements XMLEventWriter {
                         sb.append(namespace(ne));
                         out.write(sb.toString());
                         startTagIncomplete = true;
+                        this.previousEvent = event;
                         break;
                     }
 
                     case XMLEvent.CHARACTERS: {
                         closeStartTagIfNeeded();
                         final Characters ce = event.asCharacters();
+                        if (ce.isIgnorableWhiteSpace()) {
+                            this.previousEvent = event;
+                            break;
+                        }
+                        if (ce.isWhiteSpace() && this.previousEvent != null && this.previousEvent.getEventType() == XMLEvent.END_ELEMENT) {
+                            this.previousEvent = event;
+                            break;
+                        }
                         final char[] arr = ce.getData().toCharArray();
                         out.write(escape(arr));
+                        this.previousEvent = event;
                         break;
                     }
 
@@ -143,20 +157,22 @@ public final class XmlEventWriter implements XMLEventWriter {
                         // E.g:<Doc:Dt>
                         //          <Doc:Dt>2020-09-01</Doc:Dt>
                         //     </Doc:Dt>
-                        if (this.previousEndElement != null &&
-                                localPart.equals(this.previousEndElement.getName().getLocalPart())) {
+                        if (!localPart.equals(this.currentElement)) {
+                            // we are closing a nested element
                             writeIndentIfNeeded(out, nestedLevel);
                         } else {
-                            if (!localPart.equals(this.currentElement)) {
-                                // we are closing a nested element
-                                writeIndentIfNeeded(out, nestedLevel);
+                            if (localPart.equals(this.currentElement) &&
+                                    this.previousNestedStartLevel != nestedLevel) {
+                                previousNestedStartLevel--;
+                                writeIndentIfNeeded(out, previousNestedStartLevel);
                             }
                         }
 
                         out.write("</" + prefixString(ee.getName()) + localPart + ">");
 
-                        // Records previous end element
-                        previousEndElement = ee;
+                        // Records previous level
+                        previousNestedStartLevel = nestedLevel;
+                        this.previousEvent = event;
                         break;
                     }
 
@@ -165,17 +181,20 @@ public final class XmlEventWriter implements XMLEventWriter {
                         /*
                          * No need to do anything while writing to a string
                          */
+                        this.previousEvent = event;
                         break;
                     }
 
                     case XMLEvent.ATTRIBUTE: {
                         final Attribute a = (Attribute) event;
                         out.write(" " + a.getName() + "=\"" + a.getValue() + "\"");
+                        this.previousEvent = event;
                         break;
                     }
 
                     default: {
                         log.finer("PW Unhandled XMLEvent " + ToStringBuilder.reflectionToString(event));
+                        this.previousEvent = event;
                         break;
                     }
                 }
