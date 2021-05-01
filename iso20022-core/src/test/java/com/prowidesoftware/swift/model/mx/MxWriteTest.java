@@ -22,12 +22,14 @@ import org.junit.jupiter.api.Test;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigDecimal;
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * General MX into XML serialization test cases
+ */
 public class MxWriteTest {
 
     @Test
@@ -121,34 +123,6 @@ public class MxWriteTest {
 
         assertTrue(StringUtils.contains(mxXml, MxFxtr01400102.NAMESPACE), "namespace missing in generated xml");
         assertFalse(StringUtils.contains(mxXml, "businessHeader"), "businessHeader is present in generated xml");
-    }
-
-    @Test
-    public void testXmlPadding() {
-        MxCamt00300106 mx = new MxCamt00300106();
-        mx.setGetAcct(new GetAccountV06());
-        mx.getGetAcct().setAcctQryDef(new AccountQuery2());
-        mx.getGetAcct().getAcctQryDef().setAcctCrit(new AccountCriteria2Choice());
-        mx.getGetAcct().getAcctQryDef().getAcctCrit().setQryNm("FOO");
-        String xml = mx.message();
-        //System.out.println(xml);
-        assertTrue(xml.contains("     <Doc:QryNm>"));
-    }
-
-    @Test
-    public void testNoBlankLines() {
-        MxPain00100108 mx = new MxPain00100108();
-
-        mx.setCstmrCdtTrfInitn(new CustomerCreditTransferInitiationV08());
-        mx.getCstmrCdtTrfInitn().setGrpHdr(new GroupHeader48());
-        mx.getCstmrCdtTrfInitn().getGrpHdr().setCtrlSum(new BigDecimal(100));
-        mx.getCstmrCdtTrfInitn().getGrpHdr().setMsgId("asdfasd");
-        mx.getCstmrCdtTrfInitn().addPmtInf(new PaymentInstruction22());
-        mx.getCstmrCdtTrfInitn().getPmtInf().get(0).setDbtr(new PartyIdentification43().setNm("foo"));
-        mx.getCstmrCdtTrfInitn().getPmtInf().get(0).setChrgBr(ChargeBearerType1Code.CRED);
-
-        //System.out.println(mx.message());
-        Arrays.stream(mx.message().split("\\r?\\n")).forEach(line -> assertTrue(StringUtils.isNotBlank(line)));
     }
 
 }

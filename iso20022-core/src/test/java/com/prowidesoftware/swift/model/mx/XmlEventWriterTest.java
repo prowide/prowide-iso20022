@@ -13,19 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.prowidesoftware.issues;
+package com.prowidesoftware.swift.model.mx;
 
-import com.prowidesoftware.swift.model.mx.BusinessAppHdrV02;
-import com.prowidesoftware.swift.model.mx.MxPacs00800108;
-import com.prowidesoftware.swift.model.mx.MxSeev03100209;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.utils.Lib;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Test;
 import org.xmlunit.builder.Input;
 import org.xmlunit.xpath.JAXPXPathEngine;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.Arrays;
 import java.util.HashMap;
 
 import static javax.xml.XMLConstants.DEFAULT_NS_PREFIX;
@@ -34,15 +33,17 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.xmlunit.matchers.HasXPathMatcher.hasXPath;
 
 /**
- * https://github.com/prowide/prowide-iso20022/issues/17
+ * Test cases for specific conditions of the {@link XmlEventWriter}
+ * <p>
+ * The test cases use the message serialization API calls though, but the intention is always to cover a specific
+ * condition of the event writer.
  */
-public class Issue17 {
-
+public class XmlEventWriterTest {
     private JAXPXPathEngine engine = new JAXPXPathEngine();
 
     @Test
     public void test_whiteSpaceInAttribute() throws IOException {
-        String xml = Lib.readResource("issues/17/seev.031.002.09.xml");
+        String xml = Lib.readResource("seev.031.002.09.xml");
         assertNotNull(xml);
         MxSeev03100209 mx = MxSeev03100209.parse(xml);
         assertMessage(mx);
@@ -55,7 +56,7 @@ public class Issue17 {
 
     @Test
     public void test_missingNewLine() throws IOException {
-        String xml = Lib.readResource("issues/17/seev.031.002.09.xml");
+        String xml = Lib.readResource("seev.031.002.09.xml");
         assertNotNull(xml);
         MxSeev03100209 mx = MxSeev03100209.parse(xml);
         assertMessage(mx);
@@ -84,7 +85,7 @@ public class Issue17 {
     @Test
     public void testHeaderWithSignature() throws IOException {
         String nameSpace = "urn:iso:std:iso:20022:tech:xsd:head.001.001.02";
-        String xml = Lib.readResource("issues/17/header-with-signature.xml");
+        String xml = Lib.readResource("header-with-signature.xml");
         assertNotNull(xml);
         BusinessAppHdrV02 h = BusinessAppHdrV02.parse(xml);
         assertNotNull(h);
@@ -171,6 +172,34 @@ public class Issue17 {
         testXpath(xmlResult, nameSpace, "/:Document/:FIToFICstmrCdtTrf/:CdtTrfTxInf/:Cdtr/:PstlAdr/:AdrLine", indent);
     }
 
+    @Test
+    public void testXmlPadding() {
+        MxCamt00300106 mx = new MxCamt00300106();
+        mx.setGetAcct(new GetAccountV06());
+        mx.getGetAcct().setAcctQryDef(new AccountQuery2());
+        mx.getGetAcct().getAcctQryDef().setAcctCrit(new AccountCriteria2Choice());
+        mx.getGetAcct().getAcctQryDef().getAcctCrit().setQryNm("FOO");
+        String xml = mx.message();
+        //System.out.println(xml);
+        assertTrue(xml.contains("     <Doc:QryNm>"));
+    }
+
+    @Test
+    public void testNoBlankLines() {
+        MxPain00100108 mx = new MxPain00100108();
+
+        mx.setCstmrCdtTrfInitn(new CustomerCreditTransferInitiationV08());
+        mx.getCstmrCdtTrfInitn().setGrpHdr(new GroupHeader48());
+        mx.getCstmrCdtTrfInitn().getGrpHdr().setCtrlSum(new BigDecimal(100));
+        mx.getCstmrCdtTrfInitn().getGrpHdr().setMsgId("asdfasd");
+        mx.getCstmrCdtTrfInitn().addPmtInf(new PaymentInstruction22());
+        mx.getCstmrCdtTrfInitn().getPmtInf().get(0).setDbtr(new PartyIdentification43().setNm("foo"));
+        mx.getCstmrCdtTrfInitn().getPmtInf().get(0).setChrgBr(ChargeBearerType1Code.CRED);
+
+        //System.out.println(mx.message());
+        Arrays.stream(mx.message().split("\\r?\\n")).forEach(line -> assertTrue(StringUtils.isNotBlank(line)));
+    }
+
     private void testXpath(String xml, String nameSpace, String path, String expected) {
         HashMap<String, String> nameSpaceContext = new HashMap(1) {{
             put(DEFAULT_NS_PREFIX, nameSpace);
@@ -183,4 +212,5 @@ public class Issue17 {
         // Verifies that the value contained in the path
         assertEquals(expected, eval);
     }
+
 }
