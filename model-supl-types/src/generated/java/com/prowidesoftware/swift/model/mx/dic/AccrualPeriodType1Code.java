@@ -67,7 +67,7 @@ public enum AccrualPeriodType1Code {
     DFLT,
 
     /**
-     * Payment is omitted.
+     * Payment has not been done.
      * 
      */
     OMIT;

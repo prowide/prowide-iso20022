@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Choice between an amount with or without the currency.
+ * Choice between an amount with or without the currency. 
  * 
  * 
  * 

@@ -111,7 +111,8 @@ public enum PersonIdentificationType6Code {
     GUNL,
 
     /**
-     * Temporary tax processing number (used in the domestic adoption of a child).
+     * Temporary tax processing number (used
+     * in the domestic adoption of a child).
      * 
      */
     ATIN,

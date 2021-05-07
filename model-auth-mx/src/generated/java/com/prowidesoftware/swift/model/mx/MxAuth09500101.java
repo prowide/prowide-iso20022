@@ -10,7 +10,6 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
-import com.prowidesoftware.swift.model.mx.AbstractMX;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadImpl;
 import org.apache.commons.lang3.builder.EqualsBuilder;
@@ -29,7 +28,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:esma:xsd:DRAFT1auth.095.001.01")
 public class MxAuth09500101
-    extends AbstractMX
+    extends com.prowidesoftware.swift.model.mx.AbstractMX
 {
 
     @XmlElement(name = "MnyMktFndAuthstnRpt", required = true)
@@ -166,7 +165,7 @@ public class MxAuth09500101
      *     a new instance of MxAuth09500101
      */
     public final static MxAuth09500101 fromJson(String json) {
-        return AbstractMX.fromJson(json, MxAuth09500101 .class);
+        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxAuth09500101 .class);
     }
 
 }

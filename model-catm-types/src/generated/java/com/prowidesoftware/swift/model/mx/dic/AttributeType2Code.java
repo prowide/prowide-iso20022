@@ -32,7 +32,7 @@ public enum AttributeType2Code {
     EMAL,
 
     /**
-     * Password by which an entity may request certificate revocation.
+     * Password by which an entity may request certificate revocation
      * 
      */
     CHLG;

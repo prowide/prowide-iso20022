@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * General cryptographic message syntax (CMS) containing data. protected by a digital signature
+ * General cryptographic message syntax (CMS) containing data. protected by a digital signature.
  * 
  * 
  * 

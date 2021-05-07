@@ -15,7 +15,6 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
-import com.prowidesoftware.swift.io.parser.MxParserTest;
 import com.prowidesoftware.swift.model.MxId;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.sys.MxXsys00200101;
@@ -29,7 +28,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class MxReadImplTest {
 
-    final static String xml1 =
+    private static final String xml1 =
             "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Doc:Document xmlns:Doc=\"urn:swift:xsd:camt.003.001.05\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n" +
                     "   <Doc:GetAcct>\n" +
                     "       <Doc:MsgHdr>\n" +
@@ -46,7 +45,8 @@ public class MxReadImplTest {
                     "       </Doc:AcctQryDef>\n" +
                     "   </Doc:GetAcct>\n" +
                     "</Doc:Document>";
-    final String camtSample = "<Doc:Document xmlns:Doc=\"urn:swift:xsd:camt.003.001.04\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n"
+
+    private static final String camtSample = "<Doc:Document xmlns:Doc=\"urn:swift:xsd:camt.003.001.04\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n"
             + "    <Doc:GetAcct>\n"
             + "        <Doc:MsgId>\n"
             + "            <Doc:Id>ABCDEFGHIJKLMNOPQRST123456789012345</Doc:Id>\n"
@@ -62,9 +62,12 @@ public class MxReadImplTest {
             + "        </Doc:AcctQryDef>\n"
             + "    </Doc:GetAcct>\n"
             + "</Doc:Document>\n";
-    String _MxCamt00300104Meta = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
-    String _MxCamt00300104Document = "<Doc:Document xmlns:Doc=\"urn:swift:xsd:camt.003.001.99\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n";
-    String _MxCamt00300104Content = "<Doc:GetAcct>\n" +
+
+    private static final String _MxCamt00300104Meta = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
+
+    private static final String _MxCamt00300104Document = "<Doc:Document xmlns:Doc=\"urn:swift:xsd:camt.003.001.99\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n";
+
+    private static final String _MxCamt00300104Content = "<Doc:GetAcct>\n" +
             "    <Doc:MsgId>\n" +
             "        <Doc:Id>ABCDEFGHIJKLMNOPQRST123456789012345</Doc:Id>\n" +
             "    </Doc:MsgId>\n" +
@@ -78,7 +81,8 @@ public class MxReadImplTest {
             "        </Doc:AcctCrit>\n" +
             "    </Doc:AcctQryDef>\n" +
             "</Doc:GetAcct>\n";
-    String _MXPortion = "<Doc:PstlAdr>\n" +
+
+    private static final String _MXPortion = "<Doc:PstlAdr>\n" +
             "	<Doc:AdrTp>MLTO</Doc:AdrTp>\n" +
             "	<Doc:AdrLine>sdfsddsfghsbvbgeotgv;:=sdrfq;qskderjvcvc;=v=dgfpqsjf</Doc:AdrLine>\n" +
             "	<Doc:StrtNm>sdfsddsfghsbvbgeotgv;:=sdrfq;qskderjvcvc;=v=dgfpqsjf</Doc:StrtNm>\n" +
@@ -228,9 +232,41 @@ public class MxReadImplTest {
 
     @Test
     public void testReadStringWithWrapperAndHeader() {
+        String sampleBAH = "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.01\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n"
+                + "<Fr> \n"
+                + "	<FIId>\n"
+                + "		<FinInstnId>\n"
+                + "			<BICFI>FOOCUS3NXXX</BICFI>\n"
+                + "			<ClrSysMmbId>\n"
+                + "				<ClrSysId>\n"
+                + "					<Prtry>T2S</Prtry>\n"
+                + "				</ClrSysId>\n"
+                + "				<MmbId>ADMNUSERLUXCSDT1</MmbId>\n"
+                + "			</ClrSysMmbId>\n"
+                + "			<Othr>\n"
+                + "				<Id>FOOTXE2SXXX</Id>\n"
+                + "				</Othr> \n"
+                + "		</FinInstnId> \n"
+                + "	</FIId> \n"
+                + "</Fr> \n"
+                + "<To> \n"
+                + "	<FIId>\n"
+                + "		<FinInstnId>\n"
+                + "			<BICFI>ABICUS33</BICFI>\n"
+                + "			<Othr>\n"
+                + "				<Id>AARBDE5W100</Id>\n"
+                + "			</Othr>\n"
+                + "		</FinInstnId> \n"
+                + "	</FIId> \n"
+                + "</To> \n"
+                + "<BizMsgIdr>2012111915360885</BizMsgIdr>\n"
+                + "<MsgDefIdr>seev.031.002.03</MsgDefIdr> \n"
+                + "<BizSvc>CSD</BizSvc> \n"
+                + "<CreDt>2015-08-27T08:59:00Z</CreDt>\n"
+                + "</AppHdr>";
         final String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
                 + "<message>\n"
-                + MxParserTest.sampleBAH
+                + sampleBAH
                 + camtSample
                 + "</message>";
         //System.out.println(xml);

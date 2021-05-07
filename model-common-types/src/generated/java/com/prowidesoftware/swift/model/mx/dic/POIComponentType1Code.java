@@ -37,7 +37,7 @@ public enum POIComponentType1Code {
     SOFT,
 
     /**
-     * EMV application kernel (EMV is the chip card specifications initially defined by Eurocard, Mastercard and Visa).
+     * EMV application kernel  (EMV is the chip card specifications initially defined by Eurocard, Mastercard and Visa).
      * 
      */
     EMVK,

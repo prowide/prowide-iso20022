@@ -60,7 +60,7 @@ public enum CorporateActionFrequencyType5Code {
     SPEC,
 
     /**
-     * Special Dividend with reinvestment component.  
+     * Special Dividend with reinvestment component.
      * 
      */
     SPRE;
