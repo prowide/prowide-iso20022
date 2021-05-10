@@ -46,6 +46,7 @@ public enum MxBusinessProcess {
     seti("Securities Trade Initiation"),
     setr("Securities Trade"),
     supl("Supplementary Data"),
+    trck("Payments Tracker"),
     trea("Treasury"),
     tsin("Trade Services Initiation"),
     tsmt("Trade Services Management"),
