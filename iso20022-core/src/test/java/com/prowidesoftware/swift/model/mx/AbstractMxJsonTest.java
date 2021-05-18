@@ -16,10 +16,12 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.swift.model.mx.dic.*;
+import com.prowidesoftware.swift.utils.Lib;
 import org.junit.jupiter.api.Test;
 
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.GregorianCalendar;
 
@@ -108,6 +110,7 @@ public class AbstractMxJsonTest {
         mx.getBkToCstmrStmt().getStmt().get(1).getAcct().setNm("account 2");
 
         assertCamt05300106(mx);
+
         //System.out.println(mx.message());
 
         /*
@@ -185,6 +188,19 @@ public class AbstractMxJsonTest {
         String json2 = mx2.toJson();
         assertEquals(mx, mx2);
         assertEquals(json, json2);
+    }
+
+    @Test
+    public void testMessageWithAppHdr() throws IOException {
+        MxPacs00800107 mx = MxPacs00800107.parse(Lib.readResource("pacs.008.001.07.xml"));
+
+        String json = mx.toJson();
+        System.out.println(json);
+
+        MxPacs00800107 mx2 = MxPacs00800107.fromJson(json);
+        //System.out.println(mx2.message());
+
+        assertEquals(mx, mx2);
     }
 
 }
