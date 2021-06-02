@@ -15,6 +15,7 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
+import com.prowidesoftware.swift.model.mx.dic.*;
 import org.junit.jupiter.api.Test;
 
 import javax.xml.datatype.DatatypeFactory;
@@ -39,7 +40,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Test for JSON conversion in the MX model (AbstractMX and subclasses).
- * * @since 7.10.2
+ * @since 7.10.2
  */
 public class AbstractMxJsonTest {
 
