@@ -25,9 +25,21 @@ import java.util.GregorianCalendar;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import com.prowidesoftware.swift.model.mx.dic.AccountStatement6;
+import com.prowidesoftware.swift.model.mx.dic.BankToCustomerStatementV06;
+import com.prowidesoftware.swift.model.mx.dic.BranchAndFinancialInstitutionIdentification5;
+import com.prowidesoftware.swift.model.mx.dic.BranchData2;
+import com.prowidesoftware.swift.model.mx.dic.CashAccount25;
+import com.prowidesoftware.swift.model.mx.dic.CustomerCreditTransferInitiationV08;
+import com.prowidesoftware.swift.model.mx.dic.GroupHeader48;
+import com.prowidesoftware.swift.model.mx.dic.OrganisationIdentification8;
+import com.prowidesoftware.swift.model.mx.dic.Party11Choice;
+import com.prowidesoftware.swift.model.mx.dic.PartyIdentification43;
+
+import static org.junit.jupiter.api.Assertions.*;
+
 /**
  * Test for JSON conversion in the MX model (AbstractMX and subclasses).
- *
  * @since 7.10.2
  */
 public class AbstractMxJsonTest {
@@ -185,6 +197,101 @@ public class AbstractMxJsonTest {
         String json2 = mx2.toJson();
         assertEquals(mx, mx2);
         assertEquals(json, json2);
+    }
+
+    @Test
+    public void parseMxWithAppHdr() {
+        final String json = "{\n" +
+                "  \"fiCdtTrf\": {\n" +
+                "    \"grpHdr\": {\n" +
+                "      \"msgId\": \"A2P76703\",\n" +
+                "      \"creDtTm\": {\n" +
+                "        \"year\": 2021,\n" +
+                "        \"month\": 4,\n" +
+                "        \"day\": 28,\n" +
+                "        \"timezone\": 0,\n" +
+                "        \"hour\": 9,\n" +
+                "        \"minute\": 22,\n" +
+                "        \"second\": 56\n" +
+                "      },\n" +
+                "      \"nbOfTxs\": \"1\"\n" +
+                "    }\n" +
+                "  },\n" +
+                "  \"appHdr\": {\n" +
+                "    \"from\": {\n" +
+                "      \"type\": \"BIC\",\n" +
+                "      \"id\": \"ABNANL20606\"\n" +
+                "    },\n" +
+                "    \"to\": {\n" +
+                "      \"type\": \"BIC\",\n" +
+                "      \"id\": \"GIISIT2TXXX\"\n" +
+                "    },\n" +
+                "    \"msgName\": \"pacs.009.001.07\",\n" +
+                "    \"msgRef\": \"CPTE190421113270\",\n" +
+                "    \"crDate\": {\n" +
+                "      \"year\": 2021,\n" +
+                "      \"month\": 4,\n" +
+                "      \"day\": 28,\n" +
+                "      \"timezone\": 0,\n" +
+                "      \"hour\": 9,\n" +
+                "      \"minute\": 22,\n" +
+                "      \"second\": 56\n" +
+                "    }\n" +
+                "  },\n" +
+                "  \"type\": \"MX\",\n" +
+                "  \"@xmlns\": \"urn:iso:std:iso:20022:tech:xsd:pacs.009.001.07\",\n" +
+                "  \"identifier\": \"pacs.009.001.07\"\n" +
+                "}";
+        assertDoesNotThrow(() -> AbstractMX.fromJson(json));
+    }
+
+    @Test
+    public void parseSerializedMxWithAppHdr() {
+        final String json = "{\n" +
+                "  \"fiCdtTrf\": {\n" +
+                "    \"grpHdr\": {\n" +
+                "      \"msgId\": \"A2P76703\",\n" +
+                "      \"creDtTm\": {\n" +
+                "        \"year\": 2021,\n" +
+                "        \"month\": 4,\n" +
+                "        \"day\": 28,\n" +
+                "        \"timezone\": 0,\n" +
+                "        \"hour\": 9,\n" +
+                "        \"minute\": 22,\n" +
+                "        \"second\": 56\n" +
+                "      },\n" +
+                "      \"nbOfTxs\": \"1\"\n" +
+                "    }\n" +
+                "  },\n" +
+                "  \"appHdr\": {\n" +
+                "    \"from\": {\n" +
+                "      \"type\": \"BIC\",\n" +
+                "      \"id\": \"ABNANL20606\"\n" +
+                "    },\n" +
+                "    \"to\": {\n" +
+                "      \"type\": \"BIC\",\n" +
+                "      \"id\": \"GIISIT2TXXX\"\n" +
+                "    },\n" +
+                "    \"msgName\": \"pacs.009.001.07\",\n" +
+                "    \"msgRef\": \"CPTE190421113270\",\n" +
+                "    \"crDate\": {\n" +
+                "      \"year\": 2021,\n" +
+                "      \"month\": 4,\n" +
+                "      \"day\": 28,\n" +
+                "      \"timezone\": 0,\n" +
+                "      \"hour\": 9,\n" +
+                "      \"minute\": 22,\n" +
+                "      \"second\": 56\n" +
+                "    }\n" +
+                "  },\n" +
+                "  \"type\": \"MX\",\n" +
+                "  \"@xmlns\": \"urn:iso:std:iso:20022:tech:xsd:pacs.009.001.07\",\n" +
+                "  \"identifier\": \"pacs.009.001.07\"\n" +
+                "}";
+        AbstractMX source = AbstractMX.fromJson(json);
+        AbstractMX mx = AbstractMX.fromJson(source.toJson());
+        AbstractMX mx2 = AbstractMX.fromJson(mx.toJson());
+        assertEquals(mx, mx2);
     }
 
 }

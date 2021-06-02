@@ -193,6 +193,7 @@ public abstract class AbstractMX extends AbstractMessage implements IDocument, J
         final Gson gson = new GsonBuilder()
                 .registerTypeAdapter(AbstractMX.class, new AbstractMXAdapter())
                 .registerTypeAdapter(XMLGregorianCalendar.class, new XMLGregorianCalendarAdapter())
+				.registerTypeAdapter(AppHdr.class, new AppHdrAdapter())
                 .create();
         return gson.fromJson(json, classOfT);
     }
@@ -208,6 +209,7 @@ public abstract class AbstractMX extends AbstractMessage implements IDocument, J
         final Gson gson = new GsonBuilder()
                 .registerTypeAdapter(AbstractMX.class, new AbstractMXAdapter())
                 .registerTypeAdapter(XMLGregorianCalendar.class, new XMLGregorianCalendarAdapter())
+				.registerTypeAdapter(AppHdr.class, new AppHdrAdapter())
                 .create();
         return gson.fromJson(json, AbstractMX.class);
     }
@@ -519,6 +521,7 @@ public abstract class AbstractMX extends AbstractMessage implements IDocument, J
         final Gson gson = new GsonBuilder()
                 .registerTypeAdapter(AbstractMX.class, new AbstractMXAdapter())
                 .registerTypeAdapter(XMLGregorianCalendar.class, new XMLGregorianCalendarAdapter())
+				.registerTypeAdapter(AppHdr.class, new AppHdrAdapter())
                 .setPrettyPrinting()
                 .create();
         // we use AbstractMX and not this.getClass() in order to force usage of the adapter
