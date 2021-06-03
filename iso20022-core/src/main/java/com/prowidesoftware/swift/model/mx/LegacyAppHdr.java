@@ -210,4 +210,13 @@ public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
         return null;
     }
 
+    /**
+     * @since 9.1.7
+     * @return NAMESPACE
+     */
+    @Override
+    public String namespace(){
+        return NAMESPACE;
+    }
+
 }

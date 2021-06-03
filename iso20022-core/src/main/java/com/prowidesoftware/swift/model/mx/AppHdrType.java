@@ -15,22 +15,46 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
+import org.apache.commons.lang3.StringUtils;
+
 /**
  * @since 9.1.2
  */
 public enum AppHdrType {
-    LEGACY(LegacyAppHdr.NAMESPACE),
-    BAH_V1(BusinessAppHdrV01.NAMESPACE),
-    BAH_V2(BusinessAppHdrV02.NAMESPACE);
+    LEGACY(LegacyAppHdr.NAMESPACE, LegacyAppHdr.class),
+    BAH_V1(BusinessAppHdrV01.NAMESPACE, BusinessAppHdrV01.class),
+    BAH_V2(BusinessAppHdrV02.NAMESPACE, BusinessAppHdrV02.class);
 
     private String namespace;
+    private Class headerClass;
 
-    AppHdrType(String namespace) {
+    AppHdrType(String namespace, Class headerClass) {
         this.namespace = namespace;
+        this.headerClass = headerClass;
+    }
+
+    /**
+     * @param namespace of the Header
+     * @return a Class of the Header Implementation
+     * @since 9.1.7
+     */
+    public static Class of(String namespace) {
+        if (StringUtils.isNotBlank(namespace)) {
+            for (AppHdrType appHdrType : AppHdrType.values()) {
+                if (appHdrType.getNamespace().equals(namespace)) {
+                    return appHdrType.headerClass;
+                }
+            }
+        }
+        return LegacyAppHdr.class;
     }
 
     public String getNamespace() {
         return this.namespace;
+    }
+
+    public Class getHeaderClass() {
+        return this.headerClass;
     }
 
 }
