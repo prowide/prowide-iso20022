@@ -451,4 +451,58 @@ public class AbstractMxJsonTest {
         BusinessAppHdrV01 legacyAppHdr = (BusinessAppHdrV01) mx.getAppHdr();
         assertNotNull(legacyAppHdr);
     }
+
+
+    @Test
+    public void parseSerializedMxWithAppHdrInvalidNamespace() {
+        final String json = "{\n" +
+                "  \"fiCdtTrf\": {\n" +
+                "    \"grpHdr\": {\n" +
+                "      \"msgId\": \"A2P76703\",\n" +
+                "      \"creDtTm\": {\n" +
+                "        \"year\": 2021,\n" +
+                "        \"month\": 4,\n" +
+                "        \"day\": 28,\n" +
+                "        \"timezone\": 0,\n" +
+                "        \"hour\": 9,\n" +
+                "        \"minute\": 22,\n" +
+                "        \"second\": 56\n" +
+                "      },\n" +
+                "      \"nbOfTxs\": \"1\"\n" +
+                "    }\n" +
+                "  },\n" +
+                "  \"appHdr\": {\n" +
+                "    \"namespace\": \"urn:iso:std:iso:00000:tech:xsd:head.000.000.00\",\n" +
+                "    \"fr\": {\n" +
+                "      \"type\": \"BIC\",\n" +
+                "      \"id\": \"ABNANL20606\"\n" +
+                "    },\n" +
+                "    \"to\": {\n" +
+                "      \"type\": \"BIC\",\n" +
+                "      \"id\": \"GIISIT2TXXX\"\n" +
+                "    },\n" +
+                "    \"msgName\": \"pacs.009.001.07\",\n" +
+                "    \"msgRef\": \"CPTE190421113270\",\n" +
+                "    \"crDate\": {\n" +
+                "      \"year\": 2021,\n" +
+                "      \"month\": 4,\n" +
+                "      \"day\": 28,\n" +
+                "      \"timezone\": 0,\n" +
+                "      \"hour\": 9,\n" +
+                "      \"minute\": 22,\n" +
+                "      \"second\": 56\n" +
+                "    }\n" +
+                "  },\n" +
+                "  \"type\": \"MX\",\n" +
+                "  \"@xmlns\": \"urn:iso:std:iso:20022:tech:xsd:pacs.009.001.07\",\n" +
+                "  \"identifier\": \"pacs.009.001.07\"\n" +
+                "}";
+        AbstractMX source = AbstractMX.fromJson(json);
+        AbstractMX mx = AbstractMX.fromJson(source.toJson());
+        AbstractMX mx2 = AbstractMX.fromJson(mx.toJson());
+        assertEquals(mx, mx2);
+
+        LegacyAppHdr legacyAppHdr = (LegacyAppHdr) mx.getAppHdr();
+        assertNotNull(legacyAppHdr);
+    }
 }
