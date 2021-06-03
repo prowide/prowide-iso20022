@@ -52,9 +52,5 @@ public enum AppHdrType {
     public String getNamespace() {
         return this.namespace;
     }
-
-    public Class getHeaderClass() {
-        return this.headerClass;
-    }
-
+    
 }
