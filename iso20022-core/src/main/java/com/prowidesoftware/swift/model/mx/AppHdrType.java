@@ -34,23 +34,23 @@ public enum AppHdrType {
     }
 
     /**
-     * @param namespace of the Header
-     * @return a Class of the Header Implementation
+     * @param namespace the namespace of the header
+     * @return the header implementation class or null if namespace is invalid or cannot be matched
      * @since 9.1.7
      */
     public static Class of(String namespace) {
         if (StringUtils.isNotBlank(namespace)) {
             for (AppHdrType appHdrType : AppHdrType.values()) {
-                if (appHdrType.getNamespace().equals(namespace)) {
+                if (namespace.equals(appHdrType.getNamespace())) {
                     return appHdrType.headerClass;
                 }
             }
         }
-        return LegacyAppHdr.class;
+        return null;
     }
 
     public String getNamespace() {
         return this.namespace;
     }
-    
+
 }

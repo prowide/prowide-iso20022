@@ -23,23 +23,11 @@ import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigDecimal;
 import java.util.GregorianCalendar;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import com.prowidesoftware.swift.model.mx.dic.AccountStatement6;
-import com.prowidesoftware.swift.model.mx.dic.BankToCustomerStatementV06;
-import com.prowidesoftware.swift.model.mx.dic.BranchAndFinancialInstitutionIdentification5;
-import com.prowidesoftware.swift.model.mx.dic.BranchData2;
-import com.prowidesoftware.swift.model.mx.dic.CashAccount25;
-import com.prowidesoftware.swift.model.mx.dic.CustomerCreditTransferInitiationV08;
-import com.prowidesoftware.swift.model.mx.dic.GroupHeader48;
-import com.prowidesoftware.swift.model.mx.dic.OrganisationIdentification8;
-import com.prowidesoftware.swift.model.mx.dic.Party11Choice;
-import com.prowidesoftware.swift.model.mx.dic.PartyIdentification43;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Test for JSON conversion in the MX model (AbstractMX and subclasses).
+ *
  * @since 7.10.2
  */
 public class AbstractMxJsonTest {
@@ -294,7 +282,6 @@ public class AbstractMxJsonTest {
         assertEquals(mx, mx2);
     }
 
-
     @Test
     public void parseSerializedMxWithAppHdrBAH_V1() {
         final String json = "{\n" +
@@ -342,10 +329,11 @@ public class AbstractMxJsonTest {
         AbstractMX source = AbstractMX.fromJson(json);
         AbstractMX mx = AbstractMX.fromJson(source.toJson());
         AbstractMX mx2 = AbstractMX.fromJson(mx.toJson());
+        assertEquals(mx, mx2);
+
         BusinessAppHdrV01 BAH_V1 = (BusinessAppHdrV01) mx.getAppHdr();
         assertNotNull(BAH_V1);
     }
-
 
     @Test
     public void parseSerializedMxWithAppHdrBAH_V2() {
@@ -394,11 +382,11 @@ public class AbstractMxJsonTest {
         AbstractMX source = AbstractMX.fromJson(json);
         AbstractMX mx = AbstractMX.fromJson(source.toJson());
         AbstractMX mx2 = AbstractMX.fromJson(mx.toJson());
-        assertEquals(mx,mx2);
+        assertEquals(mx, mx2);
+
         BusinessAppHdrV02 BAH_V2 = (BusinessAppHdrV02) mx.getAppHdr();
         assertNotNull(BAH_V2);
     }
-
 
     @Test
     public void parseSerializedMxWithAppHdrNoNameSpace() {
@@ -448,10 +436,9 @@ public class AbstractMxJsonTest {
         AbstractMX mx2 = AbstractMX.fromJson(mx.toJson());
         assertEquals(mx, mx2);
 
-        BusinessAppHdrV01 legacyAppHdr = (BusinessAppHdrV01) mx.getAppHdr();
+        LegacyAppHdr legacyAppHdr = (LegacyAppHdr) mx.getAppHdr();
         assertNotNull(legacyAppHdr);
     }
-
 
     @Test
     public void parseSerializedMxWithAppHdrInvalidNamespace() {
@@ -505,4 +492,5 @@ public class AbstractMxJsonTest {
         LegacyAppHdr legacyAppHdr = (LegacyAppHdr) mx.getAppHdr();
         assertNotNull(legacyAppHdr);
     }
+
 }

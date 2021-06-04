@@ -221,11 +221,11 @@ public class BusinessAppHdrV02 extends BusinessApplicationHeaderV02Impl implemen
     }
 
     /**
-     * @since 9.1.7
      * @return NAMESPACE
+     * @since 9.1.7
      */
     @Override
-    public String namespace(){
+    public String namespace() {
         return NAMESPACE;
     }
 }

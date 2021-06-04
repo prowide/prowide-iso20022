@@ -211,11 +211,11 @@ public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
     }
 
     /**
-     * @since 9.1.7
      * @return NAMESPACE
+     * @since 9.1.7
      */
     @Override
-    public String namespace(){
+    public String namespace() {
         return NAMESPACE;
     }
 
