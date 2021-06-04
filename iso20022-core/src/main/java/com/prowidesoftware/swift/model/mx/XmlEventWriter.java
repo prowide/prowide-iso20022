@@ -53,21 +53,34 @@ public final class XmlEventWriter implements XMLEventWriter {
     private boolean preserveQnamePrefixes = false;
     private int previousNestedStartLevel;
     private XMLEvent previousEvent;
+    private EscapeHandler escapeHandler;
+
+    /**
+     * @deprecated use {@link #XmlEventWriter(Writer, String, boolean, String, EscapeHandler)} instead
+     */
+    @Deprecated
+    @ProwideDeprecated(phase2 = TargetYear.SRU2022)
+    public XmlEventWriter(Writer baos, final String defaultPrefix, boolean includeXMLDeclaration, final String rootElement) {
+        this(baos, defaultPrefix, includeXMLDeclaration, rootElement, null);
+    }
 
     /**
      * @param baos                  output buffer to write
      * @param defaultPrefix         optional prefix (empty by default) to used for all elements that are not binded to a specific prefix
      * @param includeXMLDeclaration true to include the XML declaration (true by default)
      * @param rootElement           local name of the root element of the XML fragment to create, used to declare namespace
+     * @param escapeHandler         escape handler to use or null to use the default
      * @see #setPreferredPrefixes(Map)
+     * @since 9.1.7
      */
-    public XmlEventWriter(Writer baos, final String defaultPrefix, boolean includeXMLDeclaration, final String rootElement) {
+    public XmlEventWriter(Writer baos, final String defaultPrefix, boolean includeXMLDeclaration, final String rootElement, final EscapeHandler escapeHandler) {
         this.out = baos;
         this.startElementCount = 0;
         this.nestedLevel = 0;
         this.defaultPrefix = defaultPrefix;
         this.includeXMLDeclaration = includeXMLDeclaration;
         this.rootElement = rootElement;
+        this.escapeHandler = escapeHandler != null ? escapeHandler : new DefaultEscapeHandler();
     }
 
     public void add(final XMLEvent event) throws XMLStreamException {
@@ -141,7 +154,8 @@ public final class XmlEventWriter implements XMLEventWriter {
                             break;
                         }
                         final char[] arr = ce.getData().toCharArray();
-                        out.write(escape(arr));
+                        String escapedString = this.escapeHandler.escape(arr, false);
+                        out.write(escapedString);
                         this.previousEvent = event;
                         break;
                     }
@@ -187,7 +201,8 @@ public final class XmlEventWriter implements XMLEventWriter {
 
                     case XMLEvent.ATTRIBUTE: {
                         final Attribute a = (Attribute) event;
-                        out.write(" " + a.getName() + "=\"" + a.getValue() + "\"");
+                        String escapedString = a.getValue() != null ? this.escapeHandler.escape(a.getValue().toCharArray(), true) : "";
+                        out.write(" " + a.getName() + "=\"" + escapedString + "\"");
                         this.previousEvent = event;
                         break;
                     }
@@ -228,41 +243,6 @@ public final class XmlEventWriter implements XMLEventWriter {
             sb.append(":").append(prefix);
         }
         sb.append("=\"").append(namespace.getValue()).append("\"");
-        return sb.toString();
-    }
-
-    /**
-     * Inplace escape por xml
-     *
-     * @since 7.8
-     */
-    private String escape(char[] arr) {
-        final StringBuilder sb = new StringBuilder(arr.length);
-        // TODO Consider code in com.sun.xml.bind.marshaller.DumbEscapeHandler for replacements
-        for (int i = 0; i < arr.length; i++) {
-            switch (arr[i]) {
-                case '&':
-                    sb.append("&amp;");
-                    break;
-                case '<':
-                    sb.append("&lt;");
-                    break;
-                case '>':
-                    sb.append("&gt;");
-                    break;
-                case '\"':
-                    sb.append('\"');
-                    break;
-                default:
-                    if (arr[i] > '\u007f') {
-                        sb.append("&#");
-                        sb.append(Integer.toString(arr[i]));
-                        sb.append(';');
-                    } else {
-                        sb.append(arr[i]);
-                    }
-            }
-        }
         return sb.toString();
     }
 

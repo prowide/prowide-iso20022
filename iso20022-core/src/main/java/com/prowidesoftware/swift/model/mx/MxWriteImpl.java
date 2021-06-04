@@ -15,6 +15,8 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
+import com.prowidesoftware.deprecation.ProwideDeprecated;
+import com.prowidesoftware.deprecation.TargetYear;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import org.apache.commons.lang3.Validate;
 
@@ -40,11 +42,20 @@ public class MxWriteImpl implements MxWrite {
     private static final transient Logger log = Logger.getLogger(MxWriteImpl.class.getName());
 
     /**
-     * Static serialization implementation of {@link MxWrite#message(String, AbstractMX, Class[], String, boolean)}
-     *
-     * @since 9.0
+     * @deprecated use {@link #message(String, AbstractMX, Class[], String, boolean, EscapeHandler)} instead
      */
+    @Deprecated
+    @ProwideDeprecated(phase2 = TargetYear.SRU2022)
     public static String write(String namespace, AbstractMX obj, Class[] classes, final String prefix, boolean includeXMLDeclaration) {
+        return write(namespace, obj, classes, prefix, includeXMLDeclaration, null);
+    }
+
+    /**
+     * Static serialization implementation of {@link MxWrite#message(String, AbstractMX, Class[], String, boolean, EscapeHandler)}
+     *
+     * @since 9.1.7
+     */
+    public static String write(String namespace, AbstractMX obj, Class[] classes, final String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
         Validate.notNull(namespace, "namespace can not be null");
         Validate.notNull(obj, "MxSwiftMessage can not be null");
         Validate.notNull(classes, "Class[] can not be null");
@@ -58,7 +69,7 @@ public class MxWriteImpl implements MxWrite {
             final Marshaller marshaller = context.createMarshaller();
 
             final StringWriter sw = new StringWriter();
-            XmlEventWriter writer = new XmlEventWriter(sw, prefix, includeXMLDeclaration, "Document");
+            XmlEventWriter writer = new XmlEventWriter(sw, prefix, includeXMLDeclaration, "Document", escapeHandler);
 
             Map<String, String> preferredPrefixes = new HashMap<>();
             for (XsysNamespaces xsys : XsysNamespaces.values()) {
@@ -80,13 +91,23 @@ public class MxWriteImpl implements MxWrite {
     }
 
     /**
-     * Implements serialization to XML
-     *
-     * @see MxWrite#message(String, AbstractMX, Class[], String, boolean)
+     * @deprecated use {@link #message(String, AbstractMX, Class[], String, boolean, EscapeHandler)} instead
      */
+    @Deprecated
+    @ProwideDeprecated(phase2 = TargetYear.SRU2022)
     @Override
     public String message(String namespace, AbstractMX obj, Class[] classes, final String prefix, boolean includeXMLDeclaration) {
-        return write(namespace, obj, classes, prefix, includeXMLDeclaration);
+        return write(namespace, obj, classes, prefix, includeXMLDeclaration, null);
+    }
+
+    /**
+     * Implements serialization to XML
+     *
+     * @see MxWrite#message(String, AbstractMX, Class[], String, boolean, EscapeHandler)
+     */
+    @Override
+    public String message(String namespace, AbstractMX obj, Class[] classes, final String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
+        return write(namespace, obj, classes, prefix, includeXMLDeclaration, escapeHandler);
     }
 
 }
