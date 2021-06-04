@@ -133,4 +133,13 @@ public interface AppHdr {
      */
     Element element();
 
+    /**
+     * Gets the specific namespace of the header
+     * @return default implementation returns null
+     * @since 9.1.7
+     */
+    default String namespace() {
+        return null;
+    }
+
 }

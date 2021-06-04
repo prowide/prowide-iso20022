@@ -220,4 +220,12 @@ public class BusinessAppHdrV02 extends BusinessApplicationHeaderV02Impl implemen
         return null;
     }
 
+    /**
+     * @return NAMESPACE
+     * @since 9.1.7
+     */
+    @Override
+    public String namespace() {
+        return NAMESPACE;
+    }
 }
