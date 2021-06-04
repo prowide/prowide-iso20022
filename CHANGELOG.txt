@@ -4,6 +4,7 @@
 
 RELEASE 9.1.7 - June 2021
   * (GH-26) Fixed AppHdr JSON conversion with explicit new namespace field as discriminator
+  * (GH-24) Added a new MxWriteConfiguration and EscapeHandler API to tweak the serialization into XML
 
 RELEASE 9.1.6 - April 2021
   * (GH-17|JIRA-506) Enhanced the XML format in the serializing, spaces and line breaks

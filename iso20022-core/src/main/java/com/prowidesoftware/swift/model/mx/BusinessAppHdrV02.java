@@ -186,13 +186,19 @@ public class BusinessAppHdrV02 extends BusinessApplicationHeaderV02Impl implemen
 
     @Override
     public String xml(String prefix, boolean includeXMLDeclaration) {
+        return xml(prefix, includeXMLDeclaration, null);
+    }
+
+    @Override
+    public String xml(String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
         try {
             JAXBContext context = JAXBContext.newInstance(BusinessApplicationHeaderV02Impl.class);
             final Marshaller marshaller = context.createMarshaller();
 
             final StringWriter sw = new StringWriter();
             JAXBElement<BusinessApplicationHeaderV02Impl> element = new JAXBElement(new QName(NAMESPACE, AppHdr.HEADER_LOCALNAME), BusinessApplicationHeaderV02Impl.class, null, this);
-            marshaller.marshal(element, new XmlEventWriter(sw, prefix, includeXMLDeclaration, AppHdr.HEADER_LOCALNAME));
+            XmlEventWriter eventWriter = new XmlEventWriter(sw, prefix, includeXMLDeclaration, AppHdr.HEADER_LOCALNAME, escapeHandler);
+            marshaller.marshal(element, eventWriter);
             return sw.getBuffer().toString();
 
         } catch (JAXBException e) {
