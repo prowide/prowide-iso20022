@@ -44,6 +44,7 @@ import javax.xml.transform.Source;
 import javax.xml.transform.dom.DOMResult;
 import javax.xml.transform.stream.StreamSource;
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -67,14 +68,17 @@ import java.util.logging.Logger;
  * @since 7.6
  */
 public abstract class AbstractMX extends AbstractMessage implements IDocument, JsonSerializable {
-    public static final String DOCUMENT_LOCALNAME = "Document";
     private static final transient Logger log = Logger.getLogger(AbstractMX.class.getName());
+
+    public static final String DOCUMENT_LOCALNAME = "Document";
+
     /**
      * Default root element when an MX is serialized as XML including both AppHdr and Document
      *
      * @since 8.0.2
      */
     public static String DEFAULT_ROOT_ELEMENT = "RequestPayload";
+
     /**
      * Header portion of the message payload, common to all specific MX subclasses.
      * This information is required before opening the actual message to process the content properly.
@@ -94,8 +98,20 @@ public abstract class AbstractMX extends AbstractMessage implements IDocument, J
         this.appHdr = appHdr;
     }
 
+    /**
+     * @deprecated use {@link #message(String, AbstractMX, Class[], String, boolean, EscapeHandler)} instead
+     */
+    @Deprecated
+    @ProwideDeprecated(phase2 = TargetYear.SRU2022)
     protected static String message(final String namespace, final AbstractMX obj, @SuppressWarnings("rawtypes") final Class[] classes, final String prefix, boolean includeXMLDeclaration) {
-        return MxWriteImpl.write(namespace, obj, classes, prefix, includeXMLDeclaration);
+        return message(namespace, obj, classes, prefix, includeXMLDeclaration, null);
+    }
+
+    /**
+     * @since 9.1.7
+     */
+    protected static String message(final String namespace, final AbstractMX obj, @SuppressWarnings("rawtypes") final Class[] classes, final String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
+        return MxWriteImpl.write(namespace, obj, classes, prefix, includeXMLDeclaration, escapeHandler);
     }
 
     @SuppressWarnings({"rawtypes", "unchecked"})
@@ -194,6 +210,7 @@ public abstract class AbstractMX extends AbstractMessage implements IDocument, J
         final Gson gson = new GsonBuilder()
                 .registerTypeAdapter(AbstractMX.class, new AbstractMXAdapter())
                 .registerTypeAdapter(XMLGregorianCalendar.class, new XMLGregorianCalendarAdapter())
+                .registerTypeAdapter(AppHdr.class, new AppHdrAdapter())
                 .create();
         return gson.fromJson(json, classOfT);
     }
@@ -209,6 +226,7 @@ public abstract class AbstractMX extends AbstractMessage implements IDocument, J
         final Gson gson = new GsonBuilder()
                 .registerTypeAdapter(AbstractMX.class, new AbstractMXAdapter())
                 .registerTypeAdapter(XMLGregorianCalendar.class, new XMLGregorianCalendarAdapter())
+                .registerTypeAdapter(AppHdr.class, new AppHdrAdapter())
                 .create();
         return gson.fromJson(json, AbstractMX.class);
     }
@@ -262,76 +280,99 @@ public abstract class AbstractMX extends AbstractMessage implements IDocument, J
 
     /**
      * Get this message as an XML string.
-     * <p>If the header is present, then 'AppHdr' and 'Document' elements will be wrapped under a
-     * {@link #DEFAULT_ROOT_ELEMENT}
-     * <br>Both header and documents are generated with the corresponding namespaces and by default the prefix 'h' is
-     * used for the header and the prefix 'Doc' for the document.
      *
-     * @see #message(String, boolean)
+     * <p>If the header is present, then 'AppHdr' and 'Document' elements will be wrapped under a
+     * {@link #DEFAULT_ROOT_ELEMENT}. Both header and document are generated with the corresponding namespaces and by
+     * default the prefix 'h' is used for the header and the prefix 'Doc' for the document.
+     * <br>For more serialization options see {@link #message(MxWriteConfiguration)}
+     * <br>To serialize only the header or the document (without header) see {@link #header()} and {@link #document()}
+     *
+     * @return the XML content or null if errors occur during serialization
      * @since 7.7
      */
     @Override
     public String message() {
-        return message(null, true);
+        return message((MxWriteConfiguration) null);
+    }
+
+    /**
+     * @deprecated use {@link #message(MxWriteConfiguration)} instead
+     */
+    @Deprecated
+    @ProwideDeprecated(phase2 = TargetYear.SRU2022)
+    public String message(final String rootElement, boolean includeXMLDeclaration) {
+        MxWriteConfiguration conf = new MxWriteConfiguration();
+        conf.rootElement = rootElement;
+        conf.includeXMLDeclaration = includeXMLDeclaration;
+        return message(conf);
+    }
+
+    /**
+     * @deprecated use {@link #message(MxWriteConfiguration)} instead
+     */
+    @Deprecated
+    @ProwideDeprecated(phase2 = TargetYear.SRU2022)
+    public String message(final String rootElement) {
+        MxWriteConfiguration conf = new MxWriteConfiguration();
+        conf.rootElement = rootElement;
+        return message(conf);
     }
 
     /**
      * Get this message as an XML string.
      *
      * <p>If the business header is set, the created XML will include both the 'AppHdr' and the 'Document' elements,
-     * under a the indicated or default root element.
-     * <br>If the header is not present, the created XMl will only include the 'Document'.
-     * <br>Both 'AppHdr' and 'Document' are generated with namespace declaration and default prefixes 'h' and 'Doc'
-     * respectively.
+     * under a the indicated or default root element. If the header is not present, the created XMl will only include
+     * the 'Document'. Both 'AppHdr' and 'Document' are generated with namespace declaration and if optional prefixes
+     * if present in the configuration.
      *
      * <p>IMPORTANT: The name of the envelope element that binds a Header to the message to which it applies is
      * implementation/network specific. The header root element ‘AppHdr’ and the ISO 20022 MessageDefinition
      * root element ‘Document’ must always be sibling elements in any XML document, with the AppHdr element preceding
      * the Document element.
      *
-     * @param rootElement           optional specification of the root element if not provided {@link #DEFAULT_ROOT_ELEMENT} is used
-     * @param includeXMLDeclaration true to include the XML declaration
-     * @return header serialized into XML string or null if the header is not set or errors occur during serialization
-     * @return created XML
-     * @since 7.8
+     * @param conf specific options for the serialization or null to use the default parameters
+     * @return the XML content or null if errors occur during serialization
      */
-    public String message(final String rootElement, boolean includeXMLDeclaration) {
-        String root = rootElement != null ? rootElement : DEFAULT_ROOT_ELEMENT;
+    public String message(MxWriteConfiguration conf) {
+        MxWriteConfiguration usableConf = conf != null? conf : new MxWriteConfiguration();
+        String root = usableConf.rootElement;
         StringBuilder xml = new StringBuilder();
-        if (includeXMLDeclaration) {
+        if (usableConf.includeXMLDeclaration) {
             xml.append("<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n");
         }
-        final String header = header("h", false);
+        final String header = header(usableConf.headerPrefix, false, usableConf.escapeHandler);
         if (header != null) {
-            xml.append("<" + root + ">\n");
-            xml.append(header + "\n");
+            xml.append("<").append(root).append(">\n");
+            xml.append(header).append("\n");
         }
-        xml.append(document("Doc", false) + "\n");
+        xml.append(document(usableConf.documentPrefix, false, usableConf.escapeHandler)).append("\n");
         if (header != null) {
-            xml.append("</" + root + ">");
+            xml.append("</").append(root).append(">");
         }
         return xml.toString();
     }
 
     /**
-     * Same as {@link #message(String, boolean)} with includeXMLDeclaration set to true
-     *
-     * @since 7.8
-     */
-    public String message(final String rootElement) {
-        return message(rootElement, true);
-    }
-
-    /**
      * Get this message AppHdr as an XML string.
-     * <p>The XML will not include the XML declaration, and will include de namespace as default (without prefix).
+     *
+     * <p>The XML will not include the XML declaration, will bind the namespace to all elements without prefix and will
+     * use the default escape handler. For more serialization options use {@link #header(String, boolean, EscapeHandler)}
      *
      * @return the serialized header or null if header is not set or errors occur during serialization
-     * @see #header(String, boolean)
      * @since 7.8
      */
     public String header() {
-        return header(null, false);
+        return header(null, false, null);
+    }
+
+    /**
+     * @deprecated use {@link #header(String, boolean, EscapeHandler)} instead
+     */
+    @Deprecated
+    @ProwideDeprecated(phase2 = TargetYear.SRU2022)
+    public String header(final String prefix, boolean includeXMLDeclaration) {
+        return header(prefix, includeXMLDeclaration, null);
     }
 
     /**
@@ -339,12 +380,13 @@ public abstract class AbstractMX extends AbstractMessage implements IDocument, J
      *
      * @param prefix                optional prefix for namespace (empty by default)
      * @param includeXMLDeclaration true to include the XML declaration
+     * @param escapeHandler         a specific escape handler for the header elements content
      * @return header serialized into XML string or null if the header is not set or errors occur during serialization
-     * @since 7.8
+     * @since 9.1.7
      */
-    public String header(final String prefix, boolean includeXMLDeclaration) {
+    public String header(final String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
         if (this.appHdr != null) {
-            return this.appHdr.xml(prefix, includeXMLDeclaration);
+            return this.appHdr.xml(prefix, includeXMLDeclaration, escapeHandler);
         } else {
             return null;
         }
@@ -352,10 +394,12 @@ public abstract class AbstractMX extends AbstractMessage implements IDocument, J
 
     /**
      * Get this message Document as an XML string.
-     * <p>The XML will include the XML declaration, and will use "Doc" as prefix for the elements.
+     *
+     * <p>The XML will not include the XML declaration, will bind the namespace to all elements using "Doc" as default
+     * prefix and will use the default escape handler. For more serialization options use
+     * {@link #document(String, boolean, EscapeHandler)}
      *
      * @return document serialized into XML string or null if errors occur during serialization
-     * @see #document(String, boolean)
      * @since 7.8
      */
     public String document() {
@@ -363,15 +407,25 @@ public abstract class AbstractMX extends AbstractMessage implements IDocument, J
     }
 
     /**
+     * @deprecated use {@link #document(String, boolean, EscapeHandler)} instead
+     */
+    @Deprecated
+    @ProwideDeprecated(phase2 = TargetYear.SRU2022)
+    public String document(final String prefix, boolean includeXMLDeclaration) {
+        return document(prefix, includeXMLDeclaration, null);
+    }
+
+    /**
      * Get this message Document as an XML string.
      *
      * @param prefix                optional prefix for namespace (empty by default)
      * @param includeXMLDeclaration true to include the XML declaration
+     * @param escapeHandler         a specific escape handler for the document elements content
      * @return document serialized into XML string or null if errors occur during serialization
-     * @since 7.8
+     * @since 9.1.7
      */
-    public String document(final String prefix, boolean includeXMLDeclaration) {
-        return message(getNamespace(), this, getClasses(), prefix, includeXMLDeclaration);
+    public String document(final String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
+        return message(getNamespace(), this, getClasses(), prefix, includeXMLDeclaration, escapeHandler);
     }
 
     /**
@@ -391,7 +445,7 @@ public abstract class AbstractMX extends AbstractMessage implements IDocument, J
     }
 
     /**
-     * Writes the message document content into a file in XML format (headers not included).
+     * Writes the message content into a file in XML format.
      *
      * @param file a not null file to write, if it does not exists, it will be created
      * @since 7.7
@@ -416,7 +470,7 @@ public abstract class AbstractMX extends AbstractMessage implements IDocument, J
      */
     public void write(final OutputStream stream) throws IOException {
         Validate.notNull(stream, "the stream to write cannot be null");
-        stream.write(message().getBytes("UTF-8"));
+        stream.write(message().getBytes(StandardCharsets.UTF_8));
     }
 
     /**
@@ -522,6 +576,7 @@ public abstract class AbstractMX extends AbstractMessage implements IDocument, J
         final Gson gson = new GsonBuilder()
                 .registerTypeAdapter(AbstractMX.class, new AbstractMXAdapter())
                 .registerTypeAdapter(XMLGregorianCalendar.class, new XMLGregorianCalendarAdapter())
+                .registerTypeAdapter(AppHdr.class, new AppHdrAdapter())
                 .setPrettyPrinting()
                 .create();
         // we use AbstractMX and not this.getClass() in order to force usage of the adapter

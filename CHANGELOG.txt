@@ -3,6 +3,8 @@
 -----------------------------------------------------------------------------------------------------------------------
 
 SNAPSHOT 9.2.1
+  * (GH-26) Fixed AppHdr JSON conversion with explicit new namespace field as discriminator
+  * (GH-24) Added a new MxWriteConfiguration and EscapeHandler API to tweak the serialization into XML
 
 RELEASE 9.2.0 - May 2021
   * SWIFT Standard release update 2021 (live 22 November 2021)

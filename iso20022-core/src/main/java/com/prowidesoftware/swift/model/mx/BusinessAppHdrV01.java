@@ -185,14 +185,20 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
     }
 
     @Override
-    public String xml(String prefix, boolean includeXMLDeclaration) {
+    public String xml(final String prefix, boolean includeXMLDeclaration) {
+        return xml(prefix, includeXMLDeclaration, null);
+    }
+
+    @Override
+    public String xml(String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
         try {
             JAXBContext context = JAXBContext.newInstance(BusinessApplicationHeaderV01Impl.class);
             final Marshaller marshaller = context.createMarshaller();
 
             final StringWriter sw = new StringWriter();
             JAXBElement<BusinessApplicationHeaderV01Impl> element = new JAXBElement(new QName(NAMESPACE, AppHdr.HEADER_LOCALNAME), BusinessApplicationHeaderV01Impl.class, null, this);
-            marshaller.marshal(element, new XmlEventWriter(sw, prefix, includeXMLDeclaration, AppHdr.HEADER_LOCALNAME));
+            XmlEventWriter eventWriter = new XmlEventWriter(sw, prefix, includeXMLDeclaration, AppHdr.HEADER_LOCALNAME, escapeHandler);
+            marshaller.marshal(element, eventWriter);
             return sw.getBuffer().toString();
 
         } catch (JAXBException e) {
@@ -218,6 +224,15 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
             log.log(Level.SEVERE, "Error writing head.001.001.01 XML:" + e.getMessage());
         }
         return null;
+    }
+
+    /**
+     * @return NAMESPACE
+     * @since 9.1.7
+     */
+    @Override
+    public String namespace() {
+        return NAMESPACE;
     }
 
 }

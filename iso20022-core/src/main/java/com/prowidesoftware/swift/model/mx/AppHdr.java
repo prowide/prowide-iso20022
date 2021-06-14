@@ -114,7 +114,7 @@ public interface AppHdr {
      * Get this header as an XML string.
      * <p>The implementation uses {@link #xml(String, boolean)} with no prefix and no XML declaration.
      *
-     * @return header serialized into XML string or null if neither header version is present
+     * @return header serialized into XML string or null in case of unexpected error
      */
     default String xml() {
         return xml(null, false);
@@ -125,12 +125,36 @@ public interface AppHdr {
      *
      * @param prefix                optional prefix for namespace (empty by default)
      * @param includeXMLDeclaration true to include the XML declaration (false by default)
+     * @return header serialized into XML string or null in case of unexpected error
      */
     String xml(final String prefix, boolean includeXMLDeclaration);
+
+    /**
+     * Get this header as an XML string.
+     *
+     * @param prefix                optional prefix for namespace (empty by default)
+     * @param includeXMLDeclaration true to include the XML declaration (false by default)
+     * @param escapeHandler         a specific escape handler for the header elements content
+     * @return header serialized into XML string or null in case of unexpected error
+     * @since 9.1.7
+     */
+    default String xml(final String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
+        return xml(prefix, includeXMLDeclaration);
+    }
 
     /**
      * Gets the header as an Element object.
      */
     Element element();
+
+    /**
+     * Gets the specific namespace of the header
+     *
+     * @return default implementation returns null
+     * @since 9.1.7
+     */
+    default String namespace() {
+        return null;
+    }
 
 }

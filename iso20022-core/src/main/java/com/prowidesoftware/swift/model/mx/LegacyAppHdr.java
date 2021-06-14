@@ -175,14 +175,20 @@ public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
     }
 
     @Override
-    public String xml(String prefix, boolean includeXMLDeclaration) {
+    public String xml(final String prefix, boolean includeXMLDeclaration) {
+        return xml(prefix, includeXMLDeclaration, null);
+    }
+
+    @Override
+    public String xml(String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
         try {
             JAXBContext context = JAXBContext.newInstance(ApplicationHeaderImpl.class);
             final Marshaller marshaller = context.createMarshaller();
 
             final StringWriter sw = new StringWriter();
             JAXBElement<ApplicationHeaderImpl> element = new JAXBElement(new QName(NAMESPACE, AppHdr.HEADER_LOCALNAME), ApplicationHeaderImpl.class, null, this);
-            marshaller.marshal(element, new XmlEventWriter(sw, prefix, includeXMLDeclaration, AppHdr.HEADER_LOCALNAME));
+            XmlEventWriter eventWriter = new XmlEventWriter(sw, prefix, includeXMLDeclaration, AppHdr.HEADER_LOCALNAME, escapeHandler);
+            marshaller.marshal(element, eventWriter);
             return sw.getBuffer().toString();
 
         } catch (JAXBException e) {
@@ -208,6 +214,15 @@ public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
             log.log(Level.SEVERE, "Error writing $ahV10 XML:" + e.getMessage());
         }
         return null;
+    }
+
+    /**
+     * @return NAMESPACE
+     * @since 9.1.7
+     */
+    @Override
+    public String namespace() {
+        return NAMESPACE;
     }
 
 }
