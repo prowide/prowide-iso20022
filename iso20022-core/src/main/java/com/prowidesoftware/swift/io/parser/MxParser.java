@@ -278,7 +278,8 @@ public class MxParser {
     @Deprecated
     @ProwideDeprecated(phase3 = TargetYear.SRU2022)
     public MxStructureInfo analyzeMessage() {
-        DeprecationUtils.phase2(MxParser.class, "analyzeMessage()", "The AbstractMX#parse(String) can be used to parse any unknown message. If you just want to detect the message type you can also use the MxParseUtils#identifyMessage(String)");
+        // we do not apply phase2 since for backward compatibility this is being called by the MxCustomValidationRule in Prowide Integrator
+        // DeprecationUtils.phase2(MxParser.class, "analyzeMessage()", "The AbstractMX#parse(String) can be used to parse any unknown message. If you just want to detect the message type you can also use the MxParseUtils#identifyMessage(String)");
 
         if (this.info != null) {
             return this.info;
