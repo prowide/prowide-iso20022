@@ -3,6 +3,8 @@
 -----------------------------------------------------------------------------------------------------------------------
 
 SNAPSHOT 9.2.1
+  * NamespaceReader utility class made public with method to extract namespaces from XML, or to check if an element exists
+  * NamespaceAndElementFilter made public, used by the parser, handy to implement a validator
   * (GH-26) Fixed AppHdr JSON conversion with explicit new namespace field as discriminator
   * (GH-24) Added a new MxWriteConfiguration and EscapeHandler API to tweak the serialization into XML
 

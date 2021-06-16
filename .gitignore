@@ -19,3 +19,4 @@ lib
 .idea/workspace.xml
 .idea/prowide-iso20022.iml
 .idea/libraries-with-intellij-classes.xml
+.idea/.name
