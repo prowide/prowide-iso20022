@@ -1,0 +1,100 @@
+
+package com.prowidesoftware.swift.model.mx.dic;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+
+/**
+ * Choice of formats for the specification of how a financial product is in scope of a target market parameter.
+ * 
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "TargetMarket5Choice", propOrder = {
+    "tp",
+    "othr"
+})
+public class TargetMarket5Choice {
+
+    @XmlElement(name = "Tp")
+    @XmlSchemaType(name = "string")
+    protected InvestorType4Code tp;
+    @XmlElement(name = "Othr")
+    @XmlSchemaType(name = "string")
+    protected TargetMarket1Code othr;
+
+    /**
+     * Gets the value of the tp property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link InvestorType4Code }
+     *     
+     */
+    public InvestorType4Code getTp() {
+        return tp;
+    }
+
+    /**
+     * Sets the value of the tp property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link InvestorType4Code }
+     *     
+     */
+    public TargetMarket5Choice setTp(InvestorType4Code value) {
+        this.tp = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the othr property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link TargetMarket1Code }
+     *     
+     */
+    public TargetMarket1Code getOthr() {
+        return othr;
+    }
+
+    /**
+     * Sets the value of the othr property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link TargetMarket1Code }
+     *     
+     */
+    public TargetMarket5Choice setOthr(TargetMarket1Code value) {
+        this.othr = value;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+}

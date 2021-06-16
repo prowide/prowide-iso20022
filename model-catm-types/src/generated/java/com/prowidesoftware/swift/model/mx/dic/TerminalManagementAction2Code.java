@@ -32,49 +32,49 @@ public enum TerminalManagementAction2Code {
 
 
     /**
-     * Request to activate the element identified inside the message exchange.
+     * Data set must be activated.
      * 
      */
     ACTV,
 
     /**
-     * Request to deactivate the element identified inside the message exchange.
+     * Data set must be deactivated.
      * 
      */
     DCTV,
 
     /**
-     * Request to delete the element identified inside the message exchange.
+     * Data set must be deleted.
      * 
      */
     DELT,
 
     /**
-     * Request to download the element identified inside the message exchange.
+     * Data set must be downloaded.
      * 
      */
     DWNL,
 
     /**
-     * Request to install the element identified inside the message exchange.
+     * Data set must be installed.
      * 
      */
     INST,
 
     /**
-     * Request to restart the element identified inside the message exchange.
+     * Point of interaction must be restarted.
      * 
      */
     RSTR,
 
     /**
-     * Request to upload the element identified inside the message exchange.
+     * Data set must be uploaded.
      * 
      */
     UPLD,
 
     /**
-     * Request to update the element identified inside the message exchange.
+     * Update, or replacement of the data set.
      * 
      */
     UPDT;

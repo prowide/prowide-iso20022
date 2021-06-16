@@ -24,7 +24,17 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum DateCalculationMethod1Code {
 
+
+    /**
+     * First in, first out. 
+     * 
+     */
     FIFO,
+
+    /**
+     * Last in, first out. 
+     * 
+     */
     LIFO;
 
     public String value() {

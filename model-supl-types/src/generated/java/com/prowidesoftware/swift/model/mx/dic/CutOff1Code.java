@@ -33,13 +33,13 @@ public enum CutOff1Code {
     AERL,
 
     /**
-     * Cutoff occurs before the DTCC (The Depository Trust and Clearing Corporation) standard settlement cutoff. Early cutoff usually 1:30 Eastern Standard Time.
+     * Cut-off occurs before the DTCC (The Depository Trust and Clearing Corporation) standard settlement cut-off. Early cut-off usually 1: 30 Eastern Standard Time.
      * 
      */
     EARL,
 
     /**
-     * Cutoff is after settlement at DTCC (The Depository Trust and Clearing Corporation). 
+     * Cut-off is after settlement at DTCC (The Depository Trust and Clearing Corporation).
      * 
      */
     LATE;

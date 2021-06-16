@@ -10,7 +10,6 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
-import com.prowidesoftware.swift.model.mx.AbstractMX;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadImpl;
 import org.apache.commons.lang3.builder.EqualsBuilder;
@@ -29,7 +28,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:swift:xsd:camt.062.001.02")
 public class MxCamt06200102
-    extends AbstractMX
+    extends com.prowidesoftware.swift.model.mx.AbstractMX
 {
 
     @XmlElement(name = "PayInSchdl", required = true)
@@ -166,7 +165,7 @@ public class MxCamt06200102
      *     a new instance of MxCamt06200102
      */
     public final static MxCamt06200102 fromJson(String json) {
-        return AbstractMX.fromJson(json, MxCamt06200102 .class);
+        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxCamt06200102 .class);
     }
 
 }

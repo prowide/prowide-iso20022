@@ -22,6 +22,6 @@ import com.prowidesoftware.deprecation.TargetYear;
  * @since 7.7
  * @deprecated this makes no sense since ISO 20022 is included in Core extension library
  */
-@ProwideDeprecated(phase3 = TargetYear.SRU2021)
+@ProwideDeprecated(phase4 = TargetYear.SRU2022)
 public class MxSimpleDocument implements IDocument {
 }

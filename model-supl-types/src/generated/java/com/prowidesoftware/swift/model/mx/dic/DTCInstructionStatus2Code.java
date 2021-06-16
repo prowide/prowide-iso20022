@@ -62,7 +62,7 @@ public enum DTCInstructionStatus2Code {
     MADE,
 
     /**
-     * Instruction for CD early redemption awaiting paperwork.  Instruction will become MADE when DTC releases instruction upon paperwork.
+     * Instruction for CD early redemption awaiting paperwork. Instruction will become MADE when DTC releases instruction upon paperwork.
      * 
      */
     PDOC,
@@ -116,7 +116,7 @@ public enum DTCInstructionStatus2Code {
     WITH,
 
     /**
-     * Instruction waiting for position.  Instruction will subsequently either become “Made” or “Dropped” by end of day.
+     * Instruction waiting for position. Instruction will subsequently either become “Made” or “Dropped” by end of day.
      * 
      */
     RECY;

@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Choice of format for the registration processing status
+ * Choice of format for the registration processing status.
  * 
  * 
  * 

@@ -66,7 +66,7 @@ public enum AdditionalBusinessProcess7Code {
     CNTR,
 
     /**
-     * Relates to a consent within a corporate action event other than a Consent event (:22F::CAEV//CONS).
+     * Relates to a consent within a corporate action event other than a Consent event (: 22F:: CAEV//CONS).
      * 
      */
     CONS,
@@ -96,7 +96,7 @@ public enum AdditionalBusinessProcess7Code {
     PPUT,
 
     /**
-     * Partial pre-funding of a debt instrument prior to maturity drawn through a lottery process. One new security is issued with an earlier maturity date for the refunded (called portion) and the other new security is issued with the original maturity date for the non refunded (remaining) portion. Applicable only in the frame of a partial defeasance corporate action event. 
+     * Partial pre-funding of a debt instrument prior to maturity drawn through a lottery process. One new security is issued with an earlier maturity date for the refunded (called portion) and the other new security is issued with the original maturity date for the non refunded (remaining) portion. Applicable only in the frame of a partial defeasance corporate action event.
      * 
      */
     PPRE,

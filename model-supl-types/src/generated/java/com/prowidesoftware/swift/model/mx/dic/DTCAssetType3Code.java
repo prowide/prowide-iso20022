@@ -358,7 +358,7 @@ public enum DTCAssetType3Code {
     S_705("S705"),
 
     /**
-     * Asset is an equity unit.
+     * Asset is a equity unit.
      * 
      */
     @XmlEnumValue("S780")
@@ -414,7 +414,7 @@ public enum DTCAssetType3Code {
     S_602("S602"),
 
     /**
-     * Asset is an institutional money market instrument mutual fund share.
+     * Asset is a institutional money market instrument mutual fund share.
      * 
      */
     @XmlEnumValue("S762")
@@ -610,7 +610,7 @@ public enum DTCAssetType3Code {
     S_330("S330"),
 
     /**
-     * Asset is a municipal auction rate note (ARN).
+     * Asset is a municipal auction rate note  (ARN).
      * 
      */
     @XmlEnumValue("S312")

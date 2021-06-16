@@ -12,7 +12,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Sets of elements to identify a name of the identification scheme
+ * Sets of elements to identify a name of the identification scheme.
  * 
  * 
  * 

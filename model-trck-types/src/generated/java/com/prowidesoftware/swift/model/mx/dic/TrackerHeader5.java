@@ -1,0 +1,240 @@
+
+package com.prowidesoftware.swift.model.mx.dic;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+
+/**
+ * Set of characteristics shared by all individual transactions included in the message.
+ * 
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "TrackerHeader5", propOrder = {
+    "msgId",
+    "creDtTm",
+    "nbOfTxs",
+    "trckrInfrmgPty",
+    "trckrInfrmdPty",
+    "orgnlTrckrUpd",
+    "svcLvl"
+})
+public class TrackerHeader5 {
+
+    @XmlElement(name = "MsgId", required = true)
+    protected String msgId;
+    @XmlElement(name = "CreDtTm")
+    @XmlSchemaType(name = "dateTime")
+    protected XMLGregorianCalendar creDtTm;
+    @XmlElement(name = "NbOfTxs")
+    protected String nbOfTxs;
+    @XmlElement(name = "TrckrInfrmgPty")
+    protected TrackerPartyIdentification2 trckrInfrmgPty;
+    @XmlElement(name = "TrckrInfrmdPty")
+    protected TrackerPartyIdentification2 trckrInfrmdPty;
+    @XmlElement(name = "OrgnlTrckrUpd")
+    protected OriginalBusinessInstruction1 orgnlTrckrUpd;
+    @XmlElement(name = "SvcLvl")
+    protected ServiceLevel8Choice svcLvl;
+
+    /**
+     * Gets the value of the msgId property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getMsgId() {
+        return msgId;
+    }
+
+    /**
+     * Sets the value of the msgId property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public TrackerHeader5 setMsgId(String value) {
+        this.msgId = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the creDtTm property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public XMLGregorianCalendar getCreDtTm() {
+        return creDtTm;
+    }
+
+    /**
+     * Sets the value of the creDtTm property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public TrackerHeader5 setCreDtTm(XMLGregorianCalendar value) {
+        this.creDtTm = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the nbOfTxs property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getNbOfTxs() {
+        return nbOfTxs;
+    }
+
+    /**
+     * Sets the value of the nbOfTxs property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public TrackerHeader5 setNbOfTxs(String value) {
+        this.nbOfTxs = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the trckrInfrmgPty property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link TrackerPartyIdentification2 }
+     *     
+     */
+    public TrackerPartyIdentification2 getTrckrInfrmgPty() {
+        return trckrInfrmgPty;
+    }
+
+    /**
+     * Sets the value of the trckrInfrmgPty property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link TrackerPartyIdentification2 }
+     *     
+     */
+    public TrackerHeader5 setTrckrInfrmgPty(TrackerPartyIdentification2 value) {
+        this.trckrInfrmgPty = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the trckrInfrmdPty property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link TrackerPartyIdentification2 }
+     *     
+     */
+    public TrackerPartyIdentification2 getTrckrInfrmdPty() {
+        return trckrInfrmdPty;
+    }
+
+    /**
+     * Sets the value of the trckrInfrmdPty property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link TrackerPartyIdentification2 }
+     *     
+     */
+    public TrackerHeader5 setTrckrInfrmdPty(TrackerPartyIdentification2 value) {
+        this.trckrInfrmdPty = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the orgnlTrckrUpd property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link OriginalBusinessInstruction1 }
+     *     
+     */
+    public OriginalBusinessInstruction1 getOrgnlTrckrUpd() {
+        return orgnlTrckrUpd;
+    }
+
+    /**
+     * Sets the value of the orgnlTrckrUpd property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link OriginalBusinessInstruction1 }
+     *     
+     */
+    public TrackerHeader5 setOrgnlTrckrUpd(OriginalBusinessInstruction1 value) {
+        this.orgnlTrckrUpd = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the svcLvl property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link ServiceLevel8Choice }
+     *     
+     */
+    public ServiceLevel8Choice getSvcLvl() {
+        return svcLvl;
+    }
+
+    /**
+     * Sets the value of the svcLvl property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ServiceLevel8Choice }
+     *     
+     */
+    public TrackerHeader5 setSvcLvl(ServiceLevel8Choice value) {
+        this.svcLvl = value;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+}

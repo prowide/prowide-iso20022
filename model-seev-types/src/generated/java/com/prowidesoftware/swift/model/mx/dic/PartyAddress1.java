@@ -12,7 +12,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Java class for PartyAddress1 complex type.
+ * Provides various address types of a party. 
  * 
  * 
  * 

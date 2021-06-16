@@ -24,22 +24,28 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * This filter enables extraction of a particular element from an XML and at the same it unbinds its namespace
- * (by filtering out the namespace declaration and optional associated prefix).
+ * This filter enables extraction of a particular element from an XML.
  *
  * <p>The filter will bypass only the main element being parsed (such as the AppHdr or Document), ignoring any other
  * sibling or parent content such as a transmission envelope. Then within the main element being processed, only the
  * content with a recognized namespace is propagated, meaning for example any supplementary data with Any in the schema
  * will not be parsed.
  *
- * @since 9.1.2
+ * <p>Regarding the namespace, two different behaviours are supported; bounded or unbounded.
+ *
+ * <p>By default the filter will unbind the propagated elements from its namespace. This is done by filtering out the
+ * namespace declaration and optional associated prefix. This is useful and actually required when the filter is used
+ * by the message parser. When parsing the Document or AppHdr for an MX, we have to unbind the main message namespace
+ * because the generated jaxb model for element types is shared and not bounded to any specific message type. Meaning
+ * we don't have duplicated type classes for each message they appear in, instead we have single non-repetitive types
+ * with no namespace.
+ *
+ * <p>By constructor parameter, the namespace unbinding can also be switched off to let the elements namespace binding
+ * untouched. This is useful when the filter is used in the context of a validation against schema.
+ *
+ * @since 9.2.1
  */
-/* When parsing the Document or AppHdr for an MX, we have to unbind the main message namespace.
- * This is necessary because the generated jaxb model for element types is shared and not bounded to any specific
- * message type. Meaning we don't have duplicated type classes for each message they appear in, instead we have single
- * non-repetitive types with no namespace.
- */
-class NamespaceAndElementFilter extends XMLFilterImpl {
+public class NamespaceAndElementFilter extends XMLFilterImpl {
     private static final transient Logger log = Logger.getLogger(NamespaceAndElementFilter.class.getName());
 
     private String mainNamespace;
@@ -47,13 +53,24 @@ class NamespaceAndElementFilter extends XMLFilterImpl {
     private String localNameToPropagate;
     private boolean inInnerElementToSkip = false;
     private String localNameToSkip;
+    private boolean unbindNamespace;
 
     /**
      * @param localName the XML's element to propagate
      */
     public NamespaceAndElementFilter(String localName) {
+        this(localName, true);
+    }
+
+    /**
+     * Creates the filter with an option to unbinds or not the namespace from the propagated elements
+     * @param localName the XML's element to propagate
+     * @param unbindNamespace true to filter out the namespace declaration and optional associated prefix
+     */
+    public NamespaceAndElementFilter(String localName, boolean unbindNamespace) {
         super();
         this.localNameToPropagate = localName;
+        this.unbindNamespace = unbindNamespace;
     }
 
     @Override
@@ -86,13 +103,17 @@ class NamespaceAndElementFilter extends XMLFilterImpl {
         }
     }
 
-    // we only propagate elements in the specific main namespace of the parsed element, however we do not propagate the
-    // namespace itself for those elements because we want the content to be unbounded to it. The only other exception
-    // where we propagate the elements is for xsys messages where the messages uses a main namespace plus several
-    // complementary reusable schemas such as "Sw".
     private String resolveNamespaceToPropagate(String namespace) {
         if (StringUtils.equals(this.mainNamespace, namespace)) {
-            return "";
+            if (this.unbindNamespace) {
+                // we only propagate elements in the specific main namespace of the parsed element, however we do not propagate the
+                // namespace itself for those elements because we want the content to be unbounded to it. The only other exception
+                // where we propagate the elements is for xsys messages where the messages uses a main namespace plus several
+                // complementary reusable schemas such as "Sw".
+                return "";
+            } else {
+                return namespace;
+            }
         } else if (isXsysNamespace(namespace)) {
             return namespace;
         } else {

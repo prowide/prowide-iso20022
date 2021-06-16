@@ -69,7 +69,7 @@ public enum Frequency7Code {
     TEND,
 
     /**
-     * Event takes place at the end of the day if there was a movement on the account, otherwise nothing is sent that day. 
+     * Event takes place at the end of the day if there was a movement on the account, otherwise nothing is sent that day.
      * 
      */
     MOVE,

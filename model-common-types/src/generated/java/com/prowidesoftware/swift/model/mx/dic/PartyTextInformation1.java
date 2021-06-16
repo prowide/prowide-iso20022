@@ -12,7 +12,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Provides additional information regarding the party, eg, the contact unit or person responsible for the transaction identified in the message.
+ * Provides additional information regarding the party, for example, the contact unit or person responsible for the transaction identified in the message.
  * 
  * 
  * 

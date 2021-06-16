@@ -136,7 +136,7 @@ public enum SettlementTransactionCondition6Code {
     EXPI,
 
     /**
-     * Position to cover the pending sale will be available by contractual settlement date (accounting information).
+     * The position to cover the pending sale will be available by contractual settlement date (accounting information).
      * 
      */
     PENS,

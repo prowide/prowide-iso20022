@@ -25,10 +25,10 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 public class RejectionReason21FormatChoice {
 
-    @XmlElement(name = "Cd", required = true)
+    @XmlElement(name = "Cd")
     @XmlSchemaType(name = "string")
     protected InterestRejectionReason1Code cd;
-    @XmlElement(name = "Prtry", required = true)
+    @XmlElement(name = "Prtry")
     protected GenericIdentification30 prtry;
 
     /**

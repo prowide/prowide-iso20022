@@ -10,7 +10,6 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
-import com.prowidesoftware.swift.model.mx.AbstractMX;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadImpl;
 import org.apache.commons.lang3.builder.EqualsBuilder;
@@ -29,7 +28,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:swift:xsd:sese.001.001.07")
 public class MxSese00100107
-    extends AbstractMX
+    extends com.prowidesoftware.swift.model.mx.AbstractMX
 {
 
     @XmlElement(name = "TrfOutInstr", required = true)
@@ -166,7 +165,7 @@ public class MxSese00100107
      *     a new instance of MxSese00100107
      */
     public final static MxSese00100107 fromJson(String json) {
-        return AbstractMX.fromJson(json, MxSese00100107 .class);
+        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSese00100107 .class);
     }
 
 }

@@ -23,7 +23,6 @@ import com.prowidesoftware.deprecation.ProwideDeprecated;
 import com.prowidesoftware.deprecation.TargetYear;
 import com.prowidesoftware.swift.io.parser.MxParser;
 import com.prowidesoftware.swift.model.mx.*;
-import com.prowidesoftware.swift.model.mx.dic.ApplicationHeader;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.Validate;
 
@@ -421,8 +420,9 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
      * @deprecated use {@link #getAppHdr()} instead
      */
     @Deprecated
-    @ProwideDeprecated(phase2 = TargetYear.SRU2021)
+    @ProwideDeprecated(phase3 = TargetYear.SRU2022)
     public BusinessHeader getBusinessHeader() {
+        DeprecationUtils.phase2(MxSwiftMessage.class, "getBusinessHeader()", "Use getAppHdr() instead");
         MxParser parser = new MxParser(this.message());
         return parser.parseBusinessHeader();
     }
@@ -437,42 +437,6 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
      */
     public AppHdr getAppHdr() {
         return AppHdrParser.parse(this.message()).orElse(null);
-    }
-
-    /**
-     * @deprecated use {@link #getAppHdr()} instead
-     */
-    @Deprecated
-    @ProwideDeprecated(phase4 = TargetYear.SRU2021)
-    public ApplicationHeader getApplicationHeader() {
-        DeprecationUtils.phase3(getClass(), "getApplicationHeader()", "use getAppHdr() instead");
-        Optional<AppHdr> optionalAppHdr = AppHdrParser.parse(this.message());
-        if (optionalAppHdr.isPresent() && optionalAppHdr.get() instanceof LegacyAppHdr) {
-            ApplicationHeader result = new ApplicationHeader();
-            LegacyAppHdr legacyHdr = (LegacyAppHdr) optionalAppHdr.get();
-            result.setFrom(legacyHdr.getFrom());
-            result.setTo(legacyHdr.getTo());
-            result.setSvcName(legacyHdr.getSvcName());
-            result.setMsgName(legacyHdr.getMsgName());
-            result.setMsgRef(legacyHdr.getMsgRef());
-            result.setCrDate(legacyHdr.getCrDate());
-            result.setDup(legacyHdr.getDup());
-            return result;
-        }
-        return null;
-    }
-
-    /**
-     * The application header is no longer stored as class attribute
-     *
-     * @see #getApplicationHeader()
-     * @deprecated @see #getApplicationHeader()
-     */
-    @Deprecated
-    @ProwideDeprecated(phase4 = TargetYear.SRU2021)
-    public void setApplicationHeader(ApplicationHeader applicationHeader) {
-        String message = "Obsolete API call. The application header is no longer stored as class attribute in " + getClass().getName();
-        DeprecationUtils.phase3(getClass(), "setApplicationHeader(ApplicationHeader)", message);
     }
 
     /**

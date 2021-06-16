@@ -48,7 +48,7 @@ public enum PartyType4Code {
     ITAG,
 
     /**
-     * Bank of the Merchant providing goods and services
+     * Entity acquiring card transactions.
      * 
      */
     ACQR,

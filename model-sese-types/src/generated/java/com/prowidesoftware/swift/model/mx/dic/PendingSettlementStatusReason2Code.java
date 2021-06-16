@@ -226,7 +226,7 @@ public enum PendingSettlementStatusReason2Code {
     DRJC("DRJC"),
 
     /**
-     * Counterparty has not sent an instructon to receive. Check with counterparty.
+     * Counterparty has not sent an instruction to receive. Check with counterparty.
      * 
      */
     CYIN("CYIN"),

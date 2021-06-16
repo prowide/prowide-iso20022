@@ -69,7 +69,7 @@ public enum PendingSettlement2Code {
     AWMO,
 
     /**
-     * Awaiting securities from corporate action issue or other procedures, for example, conversion, dematerialisation, exchange, registration, stamping, splitting, etc.
+     * Awaiting securities from corporate action issue or other procedures, eg, conversion, dematerialisation, exchange, registration, stamping, splitting, etc.
      * 
      */
     CAIS,
@@ -147,7 +147,7 @@ public enum PendingSettlement2Code {
     GLOB,
 
     /**
-     * Your instruction is a preadvice, that is, matching only.
+     * Your instruction is a preadvice, ie, matching only.
      * 
      */
     PREA,
@@ -207,7 +207,7 @@ public enum PendingSettlement2Code {
     NOFX,
 
     /**
-     * Securities require income adjustment, for example, dividend or interest.
+     * Securities require income adjustment, eg, dividend or interest.
      * 
      */
     INCA,
@@ -261,7 +261,7 @@ public enum PendingSettlement2Code {
     SDUT,
 
     /**
-     * Processing batch differs in the counterparty's instruction, for example, day time/real time versus overnight.
+     * Processing batch differs in the counterparty's instruction, eg, day time/real time versus overnight.
      * 
      */
     BATC,
@@ -279,7 +279,7 @@ public enum PendingSettlement2Code {
     SBLO,
 
     /**
-     * Counterparty is in receivership, that is, the form of bankruptcy where a court appointed person, the receiver, manages the affairs of the business.
+     * Counterparty is in receivership, ie, the form of bankruptcy where a court appointed person, the receiver, manages the affairs of the business.
      * 
      */
     CPEC,

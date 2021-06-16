@@ -17,7 +17,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Unit of information showing the related provision of products and/or services and monetary summations reported as a discrete line items.
+ * Unit of information  showing the related  provision of products and/or services and monetary summations reported as a discrete line items.
  * 
  * 
  * 

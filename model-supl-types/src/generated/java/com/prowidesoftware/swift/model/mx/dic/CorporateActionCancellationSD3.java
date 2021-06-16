@@ -14,7 +14,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Provides additional information regarding linkage details. 
+ * Provides additional information regarding linkage details.
  * 
  * 
  * 

@@ -35,7 +35,7 @@ public enum Algorithm14Code {
     ERS_2("ERS2"),
 
     /**
-     * The DEPRECATED Signature algorithms with RSA (PKCS #1 version 2.1), using SHA-1 digest algorithm - (ASN.1 Object Identifier: sha1WithRSAEncryption).
+     * Signature algorithms with RSA (PKCS #1 version 2.1), using SHA-1 digest algorithm - (ASN.1 Object Identifier: sha1WithRSAEncryption).
      * 
      */
     @XmlEnumValue("ERS1")
