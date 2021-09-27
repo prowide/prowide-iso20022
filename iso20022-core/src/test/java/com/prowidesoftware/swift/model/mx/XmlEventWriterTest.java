@@ -39,6 +39,7 @@ import static org.xmlunit.matchers.HasXPathMatcher.hasXPath;
  * condition of the event writer.
  */
 public class XmlEventWriterTest {
+    public static final String LINE_SEPARATOR = System.lineSeparator();
     private JAXPXPathEngine engine = new JAXPXPathEngine();
 
     @Test
@@ -62,11 +63,11 @@ public class XmlEventWriterTest {
         assertMessage(mx);
         String xmlResult = mx.message();
         // Original issue
-        assertFalse(xmlResult.contains("<Doc:Dt>\n" +
+        assertFalse(xmlResult.contains("<Doc:Dt>" + LINE_SEPARATOR +
                 "                        <Doc:Dt>2021-11-11</Doc:Dt></Doc:Dt>"));
         // Excpected result
-        assertTrue(xmlResult.contains(" <Doc:Dt>\n" +
-                "                        <Doc:Dt>2021-11-11</Doc:Dt>\n" +
+        assertTrue(xmlResult.contains(" <Doc:Dt>" + LINE_SEPARATOR +
+                "                        <Doc:Dt>2021-11-11</Doc:Dt>" + LINE_SEPARATOR +
                 "                    </Doc:Dt>"));
     }
 
@@ -92,11 +93,11 @@ public class XmlEventWriterTest {
         //System.out.println(h.xml());
         String xmlResult = h.xml();
         //System.out.println(xmlResult);
-        assertTrue(xmlResult.contains("        <SignatureEnvelope>\n" +
-                "            <Regy>A</Regy>\n" +
-                "            <Regy>B</Regy>\n" +
-                "            <Regy>C</Regy>\n" +
-                "        </SignatureEnvelope>\n"));
+        assertTrue(xmlResult.contains("        <SignatureEnvelope>" + LINE_SEPARATOR +
+                "            <Regy>A</Regy>" + LINE_SEPARATOR +
+                "            <Regy>B</Regy>" + LINE_SEPARATOR +
+                "            <Regy>C</Regy>" + LINE_SEPARATOR +
+                "        </SignatureEnvelope>" + LINE_SEPARATOR));
 
         testXpath(xmlResult, nameSpace, "/:AppHdr/:Sgntr/:SignatureEnvelope/:Regy[1]", "A");
         testXpath(xmlResult, nameSpace, "/:AppHdr/:Sgntr/:SignatureEnvelope/:Regy[2]", "B");
