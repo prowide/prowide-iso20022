@@ -2,8 +2,8 @@
  Prowide ISO 20022 - CHANGELOG
 -----------------------------------------------------------------------------------------------------------------------
 
-SNAPSHOT 9.1.8
-  * (PW-584) Adding localized line separator in the model to XML serialization
+RELEASE 9.1.8 - October 2021
+  * (PW-584) Enhanced the XML serialization to use localized line separators
 
 RELEASE 9.1.7 - June 2021
   * (GH-26) Fixed AppHdr JSON conversion with explicit new namespace field as discriminator
