@@ -226,7 +226,7 @@ public final class XmlEventWriter implements XMLEventWriter {
      * For a nested level above zero, writes the proportional identation
      */
     private void writeIndentIfNeeded(Writer writer, int nestedLevel) throws IOException {
-        out.write("\n");
+        out.write(System.lineSeparator());
         if (nestedLevel > 0) {
             for (int i = 0; i < nestedLevel; i++) {
                 writer.write(INDENT);

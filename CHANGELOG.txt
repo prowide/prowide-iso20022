@@ -2,6 +2,9 @@
  Prowide ISO 20022 - CHANGELOG
 -----------------------------------------------------------------------------------------------------------------------
 
+RELEASE 9.2.2 - October 2021
+  * (PW-584) Enhanced the XML serialization to use localized line separators
+
 RELEASE 9.2.1 - June 2021
   * NamespaceReader utility class made public with method to extract namespaces from XML, or to check if an element exists
   * NamespaceAndElementFilter made public, used by the parser, handy to implement a validator
