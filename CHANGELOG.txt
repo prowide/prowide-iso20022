@@ -2,6 +2,11 @@
  Prowide ISO 20022 - CHANGELOG
 -----------------------------------------------------------------------------------------------------------------------
 
+RELEASE 9.2.3 - October 2021
+  * Updated dependency: Apache Commons Lang 3.8.1 -> 3.12.0
+  * Updated dependency: Apache Commons Text 1.6 -> 1.9
+  * Updated dependency: Gson 2.8.2 -> 2.8.8
+
 RELEASE 9.2.2 - October 2021
   * (PW-584) Enhanced the XML serialization to use localized line separators
 
