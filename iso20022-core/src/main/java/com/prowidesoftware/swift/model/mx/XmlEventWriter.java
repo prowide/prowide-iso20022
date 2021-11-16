@@ -15,6 +15,7 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
+import com.prowidesoftware.deprecation.DeprecationUtils;
 import com.prowidesoftware.deprecation.ProwideDeprecated;
 import com.prowidesoftware.deprecation.TargetYear;
 import org.apache.commons.lang3.StringUtils;
@@ -342,18 +343,20 @@ public final class XmlEventWriter implements XMLEventWriter {
     /**
      * @deprecated use {@link #getPreferredPrefixes()} instead
      */
-    @ProwideDeprecated(phase2 = TargetYear.SRU2021)
+    @ProwideDeprecated(phase3 = TargetYear.SRU2022)
     @Deprecated
     public Map<String, String> getPeferredPrefixes() {
+        DeprecationUtils.phase2(XmlEventWriter.class, "getPeferredPrefixes()", "Use getPreferredPrefixes() instead");
         return getPreferredPrefixes();
     }
 
     /**
      * @deprecated use {@link #setPreferredPrefixes(Map)} instead
      */
-    @ProwideDeprecated(phase2 = TargetYear.SRU2021)
+    @ProwideDeprecated(phase3 = TargetYear.SRU2022)
     @Deprecated
     public void setPeferredPrefixes(Map<String, String> preferredPrefixes) {
+        DeprecationUtils.phase2(XmlEventWriter.class, "setPeferredPrefixes(Map)", "Use setPreferredPrefixes(Map) instead");
         setPreferredPrefixes(preferredPrefixes);
     }
 

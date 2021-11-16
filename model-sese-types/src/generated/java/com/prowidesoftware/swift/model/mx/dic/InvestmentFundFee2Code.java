@@ -55,7 +55,7 @@ public enum InvestmentFundFee2Code {
     POST,
 
     /**
-     * Fee charged by a regulatory authority, for example, securities and exchange fees.
+     * Fee charged by a regulatory authority, for example, securities and exchange fees. 
      * 
      */
     REGF,

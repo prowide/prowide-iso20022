@@ -163,7 +163,7 @@ public enum PendingProcessingReason2Code {
     CERT,
 
     /**
-     * Central securities depository sets the instruction in a hold/frozen/preadvice mode.
+     * Central securities depository sets the  instruction in a hold/frozen/preadvice mode.
      * 
      */
     CSDH,

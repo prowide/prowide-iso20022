@@ -27,19 +27,19 @@ public enum TerminalManagementAction3Code {
 
 
     /**
-     * Creation or addition of a new data set.
+     * Request to create or add the element identified inside the message exchange.
      * 
      */
     CREA,
 
     /**
-     * Data set must be deleted.
+     * Request to delete the element identified inside the message exchange.
      * 
      */
     DELT,
 
     /**
-     * Update, or replacement of the data set.
+     * Request to update the element identified inside the message exchange.
      * 
      */
     UPDT;

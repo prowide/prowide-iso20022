@@ -21,6 +21,6 @@ import com.prowidesoftware.deprecation.TargetYear;
 /**
  * @deprecated use MxReadImpl instead
  */
-@ProwideDeprecated(phase3 = TargetYear.SRU2021)
+@ProwideDeprecated(phase4 = TargetYear.SRU2022)
 public class MxReadIntegratorV1 extends MxReadImpl {
 }

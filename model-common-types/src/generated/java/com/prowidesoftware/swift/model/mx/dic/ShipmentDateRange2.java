@@ -15,7 +15,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Specifies a shipment schedule, that is the quantity that must be shipped no sooner than the earliest shipment date and no later than the latest shipment date.
+ * Specifies a shipment schedule, ie, quantity that must be shipped no sooner than the earliest shipment date and no later than the latest shipment date.
  * 
  * 
  * 

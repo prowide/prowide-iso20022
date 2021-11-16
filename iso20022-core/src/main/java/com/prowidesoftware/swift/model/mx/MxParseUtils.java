@@ -39,7 +39,16 @@ import java.util.logging.Logger;
 public class MxParseUtils {
     private static final transient Logger log = Logger.getLogger(MxParseUtils.class.getName());
 
-    static SAXSource createFilteredSAXSource(final String xml, final String localName) throws SAXException {
+    /**
+     * Creates a {@link SAXSource} for the given XML, filtering a specific element with the
+     * {@link NamespaceAndElementFilter}.
+     *
+     * @param xml the whole XML element
+     * @param localName the specific element of the subtree to propagate (normally would be Document or AppHdr)
+     * @return a safe source
+     * @since 9.2.1
+     */
+    static SAXSource createFilteredSAXSource(final String xml, final String localName) {
         XMLReader documentReader = SafeXmlUtils.reader(true, null);
 
         NamespaceAndElementFilter documentFilter = new NamespaceAndElementFilter(localName);

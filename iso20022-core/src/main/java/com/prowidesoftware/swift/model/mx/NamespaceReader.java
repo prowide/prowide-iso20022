@@ -29,20 +29,41 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * @since 9.1.2
+ * Helper API to extract information from an XML using lightweight XML streams API
+ *
+ * @since 9.2.1
  */
-class NamespaceReader {
+public class NamespaceReader {
     private static final transient Logger log = Logger.getLogger(NamespaceReader.class.getName());
 
-    static Optional<String> findDocumentNamespace(final String xml) {
+    /**
+     * Extracts the document namespace from the XML, if the Document element is present
+     *
+     * @param xml the XML content
+     * @return found namespace or empty if the Document is not found or does not contain a namespace
+     */
+    public static Optional<String> findDocumentNamespace(final String xml) {
         return findNamespaceForLocalName(xml, AbstractMX.DOCUMENT_LOCALNAME);
     }
 
-    static Optional<String> findAppHdrNamespace(final String xml) {
+    /**
+     * Extracts the header namespace from the XML, if the AppHdr element is present
+     *
+     * @param xml the XML content
+     * @return found namespace or empty if the AppHdr is not found or does not contain a namespace
+     */
+    public static Optional<String> findAppHdrNamespace(final String xml) {
         return findNamespaceForLocalName(xml, AppHdr.HEADER_LOCALNAME);
     }
 
-    private static Optional<String> findNamespaceForLocalName(final String xml, final String localName) {
+    /**
+     * Extracts the namespace for a given element
+     *
+     * @param xml       the XML content
+     * @param localName the element local name
+     * @return found namespace or empty if the element is not found or does not contain a namespace
+     */
+    public static Optional<String> findNamespaceForLocalName(final String xml, final String localName) {
         Optional<XMLStreamReader> reader = findElement(xml, localName);
         if (reader.isPresent()) {
             return Optional.ofNullable(readNamespace(reader.get()));
@@ -68,7 +89,14 @@ class NamespaceReader {
         return null;
     }
 
-    static boolean elementExists(final String xml, final String localName) {
+    /**
+     * Checks if an element exists in the XML
+     *
+     * @param xml       the XML content
+     * @param localName the element name
+     * @return true if at least one element with the given name is found
+     */
+    public static boolean elementExists(final String xml, final String localName) {
         return findElement(xml, localName).isPresent();
     }
 

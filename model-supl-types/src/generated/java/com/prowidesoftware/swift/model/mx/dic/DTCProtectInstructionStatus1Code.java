@@ -53,7 +53,7 @@ public enum DTCProtectInstructionStatus1Code {
     EXPI,
 
     /**
-     * Protect instruction which has not been fully covered.  Will include partial covers.
+     * Protect instruction which has not been fully covered. Will include partial covers.
      * 
      */
     OPEN;

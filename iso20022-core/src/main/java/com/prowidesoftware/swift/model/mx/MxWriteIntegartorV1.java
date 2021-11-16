@@ -21,6 +21,6 @@ import com.prowidesoftware.deprecation.TargetYear;
 /**
  * @deprecated use MxWriteImpl instead
  */
-@ProwideDeprecated(phase3 = TargetYear.SRU2021)
+@ProwideDeprecated(phase4 = TargetYear.SRU2022)
 public class MxWriteIntegartorV1 extends MxWriteImpl {
 }

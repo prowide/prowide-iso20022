@@ -23,7 +23,7 @@ import com.prowidesoftware.swift.model.mx.MxWrite;
 /**
  * @deprecated the MX read/write implementation injection is no longer used since the ISO20022 open source extension for Prowide Core
  */
-@ProwideDeprecated(phase3 = TargetYear.SRU2021)
+@ProwideDeprecated(phase4 = TargetYear.SRU2022)
 public class MxWriteCoreV1 implements MxWrite {
 
     public String message(String namespace, AbstractMX obj, @SuppressWarnings("rawtypes") Class[] classes, String prefix, boolean includeXMLDeclaration) {

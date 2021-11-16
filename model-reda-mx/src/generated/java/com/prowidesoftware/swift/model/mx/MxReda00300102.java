@@ -10,7 +10,6 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
-import com.prowidesoftware.swift.model.mx.AbstractMX;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadImpl;
 import org.apache.commons.lang3.builder.EqualsBuilder;
@@ -29,7 +28,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:swift:xsd:reda.003.001.02")
 public class MxReda00300102
-    extends AbstractMX
+    extends com.prowidesoftware.swift.model.mx.AbstractMX
 {
 
     @XmlElement(name = "reda.003.001.02", required = true)
@@ -166,7 +165,7 @@ public class MxReda00300102
      *     a new instance of MxReda00300102
      */
     public final static MxReda00300102 fromJson(String json) {
-        return AbstractMX.fromJson(json, MxReda00300102 .class);
+        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxReda00300102 .class);
     }
 
 }

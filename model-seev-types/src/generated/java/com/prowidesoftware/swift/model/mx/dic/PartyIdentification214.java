@@ -12,7 +12,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Identification of a party.
+ * Java class for PartyIdentification214 complex type.
  * 
  * 
  * 

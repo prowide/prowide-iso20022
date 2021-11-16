@@ -29,7 +29,7 @@ public enum PartyType7Code {
 
 
     /**
-     * Bank of the Merchant providing goods and services
+     * Entity acquiring card transactions.
      * 
      */
     ACQR,

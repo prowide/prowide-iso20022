@@ -61,7 +61,7 @@ public enum RejectionReason45Code {
     DPRG,
 
     /**
-     * The instruction is irrevocable
+     * The instruction is irrevocable.
      * 
      */
     INIR,

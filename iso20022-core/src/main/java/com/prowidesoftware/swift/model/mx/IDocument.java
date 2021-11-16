@@ -24,7 +24,6 @@ import com.prowidesoftware.deprecation.TargetYear;
  * @since 7.7
  * @deprecated this interface does not makes much sense since all subclasses of AbstractMX contain a Document
  */
-@ProwideDeprecated(phase3 = TargetYear.SRU2021)
+@ProwideDeprecated(phase4 = TargetYear.SRU2022)
 public interface IDocument {
-
 }

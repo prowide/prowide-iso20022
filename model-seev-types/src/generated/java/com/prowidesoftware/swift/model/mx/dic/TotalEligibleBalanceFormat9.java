@@ -12,7 +12,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Total eligible balance for the corporate action and full and part way period units. 
+ * Total eligible balance for the corporate action and full and part way period units.
  * 
  * 
  * 

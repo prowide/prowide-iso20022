@@ -245,7 +245,7 @@ public enum RejectionReason30Code {
     IEXE,
 
     /**
-     * Instruction aims at using an invalid balance.
+     * Instruction aims at using  an invalid balance.
      * 
      */
     INVB,

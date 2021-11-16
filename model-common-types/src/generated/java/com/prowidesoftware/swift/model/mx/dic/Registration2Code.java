@@ -28,13 +28,13 @@ public enum Registration2Code {
 
 
     /**
-     * You or your party set the  instruction in a hold/frozen/preadvice mode.
+     * You or your party set the instruction in a hold/frozen/preadvice mode.
      * 
      */
     PTYH,
 
     /**
-     * Central securities depository sets the  instruction in a hold/frozen/preadvice mode.
+     * Central securities depository sets the instruction in a hold/frozen/preadvice mode.
      * 
      */
     CSDH,

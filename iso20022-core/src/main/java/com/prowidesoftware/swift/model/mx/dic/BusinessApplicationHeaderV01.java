@@ -23,6 +23,6 @@ import com.prowidesoftware.swift.model.mx.BusinessAppHdrV01;
  * @deprecated use BusinessApplicationHeaderV01 from com.prowidesoftware.swift.model.mx package instead
  */
 @Deprecated
-@ProwideDeprecated(phase2 = TargetYear.SRU2021)
+@ProwideDeprecated(phase3 = TargetYear.SRU2022)
 public class BusinessApplicationHeaderV01 extends BusinessAppHdrV01 {
 }

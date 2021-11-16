@@ -28,7 +28,7 @@ import com.prowidesoftware.swift.model.mx.MxWriteImpl;
  * @since 7.6
  * @deprecated the MX read/write implementation injection is no longer used since the ISO20022 open source extension for Prowide Core
  */
-@ProwideDeprecated(phase3 = TargetYear.SRU2021)
+@ProwideDeprecated(phase4 = TargetYear.SRU2022)
 public class Resolver {
 
     private Resolver() {

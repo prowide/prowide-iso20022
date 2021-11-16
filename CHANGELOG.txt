@@ -2,12 +2,23 @@
  Prowide ISO 20022 - CHANGELOG
 -----------------------------------------------------------------------------------------------------------------------
 
-RELEASE 9.1.8 - October 2021
+RELEASE 9.2.3 - October 2021
+  * Updated dependency: Apache Commons Lang 3.8.1 -> 3.12.0
+  * Updated dependency: Apache Commons Text 1.6 -> 1.9
+  * Updated dependency: Gson 2.8.2 -> 2.8.8
+
+RELEASE 9.2.2 - October 2021
   * (PW-584) Enhanced the XML serialization to use localized line separators
 
-RELEASE 9.1.7 - June 2021
+RELEASE 9.2.1 - June 2021
+  * NamespaceReader utility class made public with method to extract namespaces from XML, or to check if an element exists
+  * NamespaceAndElementFilter made public, used by the parser, handy to implement a validator
   * (GH-26) Fixed AppHdr JSON conversion with explicit new namespace field as discriminator
   * (GH-24) Added a new MxWriteConfiguration and EscapeHandler API to tweak the serialization into XML
+
+RELEASE 9.2.0 - May 2021
+  * SWIFT Standard release update 2021 (live 22 November 2021)
+  * Yearly revision of deprecation phase (see http://www.prowidesoftware.com/resources/deprecation-policy)
 
 RELEASE 9.1.6 - April 2021
   * (GH-17|JIRA-506) Enhanced the XML format in the serializing, spaces and line breaks

@@ -12,7 +12,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Further information related to the processing of the investigation that may need to be acted upon by the assignee. 
+ * Further information related to the processing of the investigation that may need to be acted upon by the assignee.
  * 
  * 
  * 

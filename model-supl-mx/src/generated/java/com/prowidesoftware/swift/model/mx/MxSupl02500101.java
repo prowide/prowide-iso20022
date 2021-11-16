@@ -10,7 +10,6 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
-import com.prowidesoftware.swift.model.mx.AbstractMX;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadImpl;
 import org.apache.commons.lang3.builder.EqualsBuilder;
@@ -29,7 +28,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:swift:xsd:supl.025.001.01")
 public class MxSupl02500101
-    extends AbstractMX
+    extends com.prowidesoftware.swift.model.mx.AbstractMX
 {
 
     @XmlElement(name = "DTCCCARESD1", required = true)
@@ -166,7 +165,7 @@ public class MxSupl02500101
      *     a new instance of MxSupl02500101
      */
     public final static MxSupl02500101 fromJson(String json) {
-        return AbstractMX.fromJson(json, MxSupl02500101 .class);
+        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSupl02500101 .class);
     }
 
 }

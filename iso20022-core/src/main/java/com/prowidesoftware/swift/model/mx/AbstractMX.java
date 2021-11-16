@@ -18,6 +18,7 @@ package com.prowidesoftware.swift.model.mx;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.prowidesoftware.JsonSerializable;
+import com.prowidesoftware.deprecation.DeprecationUtils;
 import com.prowidesoftware.deprecation.ProwideDeprecated;
 import com.prowidesoftware.deprecation.TargetYear;
 import com.prowidesoftware.swift.model.AbstractMessage;
@@ -479,8 +480,9 @@ public abstract class AbstractMX extends AbstractMessage implements IDocument, J
      */
     @XmlTransient
     @Deprecated
-    @ProwideDeprecated(phase2 = TargetYear.SRU2021)
+    @ProwideDeprecated(phase3 = TargetYear.SRU2022)
     public BusinessHeader getBusinessHeader() {
+        DeprecationUtils.phase2(AbstractMX.class, "getBusinessHeader()", "Use getAppHdr() instead");
         // backward compatible implementation during the deprecation phase
         if (appHdr instanceof BusinessHeader) {
             // if it is already a deprecated header we cast and return
@@ -509,9 +511,10 @@ public abstract class AbstractMX extends AbstractMessage implements IDocument, J
      * @since 7.8
      * @deprecated use {@link #setAppHdr(AppHdr)} instead
      */
-    @ProwideDeprecated(phase2 = TargetYear.SRU2021)
+    @ProwideDeprecated(phase3 = TargetYear.SRU2022)
     @Deprecated
     public void setBusinessHeader(final BusinessHeader businessHeader) {
+        DeprecationUtils.phase2(AbstractMX.class, "setBusinessHeader(BusinessHeader)", "Use setAppHdr(AppHdr) instead");
         setAppHdr(businessHeader);
     }
 

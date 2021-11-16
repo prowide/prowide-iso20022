@@ -33,13 +33,13 @@ public enum CorporateActionEventStage4Code {
     FULL,
 
     /**
-     * Cancellation and re-run of a supplemental lottery only.  A subsequent new supplemental lottery will be performed under the original event.
+     * Cancellation and re-run of a supplemental lottery only. A subsequent new supplemental lottery will be performed under the original event.
      * 
      */
     PART,
 
     /**
-     * A supplemental lottery is being cancelled by the issuer. No subsequent lottery will be performed. 
+     * A supplemental lottery is being cancelled by the issuer. No subsequent lottery will be performed.
      * 
      */
     RESC;

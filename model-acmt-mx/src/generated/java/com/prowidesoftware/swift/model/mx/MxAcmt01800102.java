@@ -10,7 +10,6 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
-import com.prowidesoftware.swift.model.mx.AbstractMX;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadImpl;
 import org.apache.commons.lang3.builder.EqualsBuilder;
@@ -29,7 +28,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:acmt.018.001.02")
 public class MxAcmt01800102
-    extends AbstractMX
+    extends com.prowidesoftware.swift.model.mx.AbstractMX
 {
 
     @XmlElement(name = "AcctMndtMntncAmdmntReq", required = true)
@@ -166,7 +165,7 @@ public class MxAcmt01800102
      *     a new instance of MxAcmt01800102
      */
     public final static MxAcmt01800102 fromJson(String json) {
-        return AbstractMX.fromJson(json, MxAcmt01800102 .class);
+        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxAcmt01800102 .class);
     }
 
 }
