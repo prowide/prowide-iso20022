@@ -5,7 +5,7 @@ apply plugin: 'maven-publish'
 
 def SRU = "2021"
 
-version = "SRU${SRU}-9.2.3"
+version = "SRU${SRU}-9.2.4-SNAPSHOT"
 group 'com.prowidesoftware'
 
 sourceCompatibility = '1.8'
@@ -38,7 +38,8 @@ allprojects {
 				'Built-OS': System.getProperty('os.name'),
 				'Source-Compatibility': project.sourceCompatibility,
 				'Target-Compatibility': project.targetCompatibility,
-				'Built-Date': new Date().format("yyyy-MM-dd")
+				'Built-Date': new Date().format("yyyy-MM-dd"),
+				'Automatic-Module-Name': 'com.prowidesoftware.iso20022'
 		)
 	}
 }
