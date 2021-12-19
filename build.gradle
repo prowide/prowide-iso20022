@@ -5,7 +5,7 @@ apply plugin: 'maven-publish'
 
 def SRU = "2021"
 
-version = "SRU${SRU}-9.2.4-SNAPSHOT"
+version = "SRU${SRU}-9.2.4"
 group 'com.prowidesoftware'
 
 sourceCompatibility = '1.8'

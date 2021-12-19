@@ -2,7 +2,7 @@
  Prowide ISO 20022 - CHANGELOG
 -----------------------------------------------------------------------------------------------------------------------
 
-SNAPSHOT 9.2.4
+RELEASE 9.2.4 - December 2021
   * Added com.prowidesoftware.iso20022 as automatic module name in the MANIFEST for JPMS support
 
 RELEASE 9.2.3 - October 2021
