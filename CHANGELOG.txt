@@ -1,6 +1,7 @@
 -----------------------------------------------------------------------------------------------------------------------
  Prowide ISO 20022 - CHANGELOG
 -----------------------------------------------------------------------------------------------------------------------
+  * (GH-37) Updated dependency: gson:2.8.8 -> gson:2.8.9
 
 RELEASE 9.2.4 - December 2021
   * Added com.prowidesoftware.iso20022 as automatic module name in the MANIFEST for JPMS support
@@ -24,7 +25,7 @@ RELEASE 9.2.0 - May 2021
   * Yearly revision of deprecation phase (see http://www.prowidesoftware.com/resources/deprecation-policy)
 
 RELEASE 9.1.6 - April 2021
-  * (GH-17|JIRA-506) Enhanced the XML format in the serializing, spaces and line breaks
+  * (GH-17|PW-506) Enhanced the XML format in the serializing, spaces and line breaks
   * (GH-18) Fixed NPE in json serialization/deserialization of XMLGregorianCalendar fractional second
   * Added customizable strategies to set the MxSwiftMessage metadata fields: reference, main amount, value date, etc...
 

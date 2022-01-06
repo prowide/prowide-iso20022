@@ -1,12 +1,18 @@
+**/.DS_Store
 .gradle
 gradle.properties
 build
-bin
+**/bin/
+out
 *.iws
 *.iml
 *.ipr
-.settings
-.classpath
+**/.settings
+**/.classpath*
+**/.project
+**/target/
+.checkstyle
+pom.xml
 lib
 .project
 .idea/gradle.xml
@@ -20,3 +26,4 @@ lib
 .idea/prowide-iso20022.iml
 .idea/libraries-with-intellij-classes.xml
 .idea/.name
+.idea/jpa-buddy.xml
