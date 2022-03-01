@@ -15,6 +15,8 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
+import com.prowidesoftware.swift.model.mx.adapters.CustomDateTimeAdapter;
+
 /**
  * Options POJO to customize the behaviour of the MX writer (model into XML serialization)
  *
@@ -55,4 +57,11 @@ public class MxWriteConfiguration {
      * It is "Doc" by default.
      */
     public String documentPrefix = "Doc";
+
+    /**
+     * Customized instances or subclasses of this adapter can be injected to change the default serialization of
+     * date time elements.
+     * @since 9.2.6
+     */
+    public CustomDateTimeAdapter dateTimeAdapter = new CustomDateTimeAdapter();
 }
