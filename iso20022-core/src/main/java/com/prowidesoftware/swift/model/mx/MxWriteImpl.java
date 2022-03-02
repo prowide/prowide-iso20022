@@ -24,6 +24,7 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
 import javax.xml.namespace.QName;
 import java.io.StringWriter;
 import java.util.HashMap;
@@ -42,20 +43,36 @@ public class MxWriteImpl implements MxWrite {
     private static final transient Logger log = Logger.getLogger(MxWriteImpl.class.getName());
 
     /**
-     * @deprecated use {@link #message(String, AbstractMX, Class[], String, boolean, EscapeHandler)} instead
+     * @deprecated use {@link #write(String, AbstractMX, Class[], MxWriteParams)} instead
      */
     @Deprecated
     @ProwideDeprecated(phase2 = TargetYear.SRU2022)
     public static String write(String namespace, AbstractMX obj, Class[] classes, final String prefix, boolean includeXMLDeclaration) {
-        return write(namespace, obj, classes, prefix, includeXMLDeclaration, null);
+        MxWriteParams params = new MxWriteParams();
+        params.prefix = prefix;
+        params.includeXMLDeclaration = includeXMLDeclaration;
+        return write(namespace, obj, classes, params);
     }
 
     /**
-     * Static serialization implementation of {@link MxWrite#message(String, AbstractMX, Class[], String, boolean, EscapeHandler)}
-     *
-     * @since 9.1.7
+     * @deprecated use {@link #write(String, AbstractMX, Class[], MxWriteParams)} instead
      */
+    @Deprecated
+    @ProwideDeprecated(phase2 = TargetYear.SRU2022)
     public static String write(String namespace, AbstractMX obj, Class[] classes, final String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
+        MxWriteParams params = new MxWriteParams();
+        params.prefix = prefix;
+        params.includeXMLDeclaration = includeXMLDeclaration;
+        params.escapeHandler = escapeHandler;
+        return write(namespace, obj, classes, params);
+    }
+
+    /**
+     * Main implementation of model to XML serialization
+     *
+     * @since 9.2.6
+     */
+    public static String write(String namespace, AbstractMX obj, Class[] classes, MxWriteParams params) {
         Validate.notNull(namespace, "namespace can not be null");
         Validate.notNull(obj, "MxSwiftMessage can not be null");
         Validate.notNull(classes, "Class[] can not be null");
@@ -68,8 +85,14 @@ public class MxWriteImpl implements MxWrite {
 
             final Marshaller marshaller = context.createMarshaller();
 
+            if (params.adapters != null) {
+                for (XmlAdapter adapter : params.adapters) {
+                    marshaller.setAdapter(adapter);
+                }
+            }
+
             final StringWriter sw = new StringWriter();
-            XmlEventWriter writer = new XmlEventWriter(sw, prefix, includeXMLDeclaration, "Document", escapeHandler);
+            XmlEventWriter writer = new XmlEventWriter(sw, params.prefix, params.includeXMLDeclaration, "Document", params.escapeHandler);
 
             Map<String, String> preferredPrefixes = new HashMap<>();
             for (XsysNamespaces xsys : XsysNamespaces.values()) {
@@ -91,23 +114,30 @@ public class MxWriteImpl implements MxWrite {
     }
 
     /**
-     * @deprecated use {@link #message(String, AbstractMX, Class[], String, boolean, EscapeHandler)} instead
+     * @deprecated use {@link #write(String, AbstractMX, Class[], MxWriteParams)} instead
      */
     @Deprecated
     @ProwideDeprecated(phase2 = TargetYear.SRU2022)
     @Override
     public String message(String namespace, AbstractMX obj, Class[] classes, final String prefix, boolean includeXMLDeclaration) {
-        return write(namespace, obj, classes, prefix, includeXMLDeclaration, null);
+        MxWriteParams params = new MxWriteParams();
+        params.prefix = prefix;
+        params.includeXMLDeclaration = includeXMLDeclaration;
+        return write(namespace, obj, classes, params);
     }
 
     /**
-     * Implements serialization to XML
-     *
-     * @see MxWrite#message(String, AbstractMX, Class[], String, boolean, EscapeHandler)
+     * @deprecated use {@link #write(String, AbstractMX, Class[], MxWriteParams)} instead
      */
     @Override
+    @Deprecated
+    @ProwideDeprecated(phase2 = TargetYear.SRU2023)
     public String message(String namespace, AbstractMX obj, Class[] classes, final String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
-        return write(namespace, obj, classes, prefix, includeXMLDeclaration, escapeHandler);
+        MxWriteParams params = new MxWriteParams();
+        params.prefix = prefix;
+        params.includeXMLDeclaration = includeXMLDeclaration;
+        params.escapeHandler = escapeHandler;
+        return write(namespace, obj, classes, params);
     }
 
 }

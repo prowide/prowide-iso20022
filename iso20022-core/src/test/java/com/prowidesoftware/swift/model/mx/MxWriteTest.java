@@ -15,20 +15,14 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
-import com.prowidesoftware.swift.model.mx.adapters.OffsetDateTimeAdapter;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Test;
 
-import javax.xml.datatype.DatatypeFactory;
-import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigDecimal;
-import java.time.OffsetDateTime;
-import java.time.ZoneId;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * General MX into XML serialization test cases
@@ -94,51 +88,6 @@ public class MxWriteTest {
         if (StringUtils.contains(mxXml, "xmlns:Doc=\"urn:swift:xsd:acmt.001.001.07\"")) {
             assertTrue(StringUtils.contains(mxXml, "<Doc:AcctOpngInstr>"));
         }
-    }
-
-    @Test
-    public void testWriteDateTime_DefaultAdapter() throws Exception {
-        final XMLGregorianCalendar cal = DatatypeFactory.newInstance().newXMLGregorianCalendar(new GregorianCalendar(2021, Calendar.OCTOBER, 19, 12, 13, 14));
-
-        final MxPacs00800102 mx1 = new MxPacs00800102();
-        mx1.setFIToFICstmrCdtTrf(new FIToFICustomerCreditTransferV02());
-        mx1.getFIToFICstmrCdtTrf().setGrpHdr(new GroupHeader33());
-        mx1.getFIToFICstmrCdtTrf().getGrpHdr().setCreDtTm(cal);
-        mx1.getFIToFICstmrCdtTrf().getGrpHdr().setIntrBkSttlmDt(cal);
-
-        final String xml = mx1.message();
-        System.out.println(mx1.message());
-        assertTrue(xml.contains("<Doc:CreDtTm>2021-10-19T12:13:14.000</Doc:CreDtTm>"));
-        assertTrue(xml.contains("<Doc:IntrBkSttlmDt>2021-10-19</Doc:IntrBkSttlmDt>"));
-
-        final MxPacs00800102 mx2 = MxPacs00800102.parse(xml);
-        //System.out.println(mx2.message());
-        assertNotNull(mx2.getFIToFICstmrCdtTrf().getGrpHdr().getCreDtTm());
-        assertNotNull(mx2.getFIToFICstmrCdtTrf().getGrpHdr().getIntrBkSttlmDt());
-    }
-
-    @Test
-    public void testWriteDateTime_OffsetAdapter() throws Exception {
-        final XMLGregorianCalendar cal = DatatypeFactory.newInstance().newXMLGregorianCalendar(new GregorianCalendar(2021, Calendar.OCTOBER, 19, 12, 13, 14));
-
-        final MxPacs00800102 mx1 = new MxPacs00800102();
-        mx1.setFIToFICstmrCdtTrf(new FIToFICustomerCreditTransferV02());
-        mx1.getFIToFICstmrCdtTrf().setGrpHdr(new GroupHeader33());
-        mx1.getFIToFICstmrCdtTrf().getGrpHdr().setCreDtTm(cal);
-        mx1.getFIToFICstmrCdtTrf().getGrpHdr().setIntrBkSttlmDt(cal);
-
-        MxWriteConfiguration conf = new MxWriteConfiguration();
-        conf.dateTimeAdapter = new OffsetDateTimeAdapter();
-
-        final String xml = mx1.message(conf);
-        System.out.println(xml);
-        assertTrue(xml.contains("<Doc:CreDtTm>2021-10-19T12:13:14.000" + OffsetDateTime.now().getOffset() + "</Doc:CreDtTm>"));
-        assertTrue(xml.contains("<Doc:IntrBkSttlmDt>2021-10-19</Doc:IntrBkSttlmDt>"));
-
-        final MxPacs00800102 mx2 = MxPacs00800102.parse(xml);
-        //System.out.println(mx2.message());
-        assertNotNull(mx2.getFIToFICstmrCdtTrf().getGrpHdr().getCreDtTm());
-        assertNotNull(mx2.getFIToFICstmrCdtTrf().getGrpHdr().getIntrBkSttlmDt());
     }
 
     @Test

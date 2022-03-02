@@ -15,26 +15,13 @@
  */
 package com.prowidesoftware.swift.model.mx.adapters;
 
-import org.apache.commons.lang3.StringUtils;
-
 import javax.xml.datatype.XMLGregorianCalendar;
-import java.text.SimpleDateFormat;
 
-/**
- * A date time adapter that will append the offset to the date time on marshall.
- * For UTC, it uses an explicit '+00:00' instead of the 'Z' code.
- *
- * @since 9.2.6
- */
-public class OffsetDateTimeAdapter extends CustomDateTimeAdapter {
-
-    public OffsetDateTimeAdapter() {
-        super(new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX"));
-    }
+public class TestDateTimeAdapter extends IsoDateTimeAdapter {
 
     @Override
     public String marshal(XMLGregorianCalendar cal) throws Exception {
-        return StringUtils.replace(super.marshal(cal), "Z", "+00:00");
+        return "foobar";
     }
 
 }

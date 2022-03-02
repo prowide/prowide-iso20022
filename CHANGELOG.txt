@@ -2,6 +2,10 @@
  Prowide ISO 20022 - CHANGELOG
 -----------------------------------------------------------------------------------------------------------------------
 
+9.2.6 SNAPSHOT
+  * (GH-36) Added customizable datetime, date and time adapter in the MxWriteConfiguration
+  * Encapsulated the serialization options in a DTO, when calling xml or message methods in AbstractMX and AppHdr
+
 RELEASE 9.2.5 - January 2022
   * (GH-37) Updated dependency: gson:2.8.8 -> gson:2.8.9
 

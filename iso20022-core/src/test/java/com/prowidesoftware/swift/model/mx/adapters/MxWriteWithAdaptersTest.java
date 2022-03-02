@@ -1,0 +1,104 @@
+/*
+ * Copyright 2006-2021 Prowide
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.prowidesoftware.swift.model.mx.adapters;
+
+import com.prowidesoftware.swift.model.mx.MxPacs00800102;
+import com.prowidesoftware.swift.model.mx.MxWriteConfiguration;
+import com.prowidesoftware.swift.model.mx.dic.FIToFICustomerCreditTransferV02;
+import com.prowidesoftware.swift.model.mx.dic.GroupHeader33;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
+
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
+import java.text.SimpleDateFormat;
+import java.time.OffsetDateTime;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+@Disabled
+public class MxWriteWithAdaptersTest {
+
+    private MxPacs00800102 sample() throws DatatypeConfigurationException {
+        final XMLGregorianCalendar cal = DatatypeFactory.newInstance().newXMLGregorianCalendar(new GregorianCalendar(2021, Calendar.OCTOBER, 19, 12, 13, 14));
+
+        final MxPacs00800102 mx = new MxPacs00800102();
+        mx.setFIToFICstmrCdtTrf(new FIToFICustomerCreditTransferV02());
+        mx.getFIToFICstmrCdtTrf().setGrpHdr(new GroupHeader33());
+        mx.getFIToFICstmrCdtTrf().getGrpHdr().setCreDtTm(cal);
+        mx.getFIToFICstmrCdtTrf().getGrpHdr().setIntrBkSttlmDt(cal);
+
+        return mx;
+    }
+
+    @Test
+    public void testWriteDateTime_DefaultAdapters() throws DatatypeConfigurationException {
+        MxPacs00800102 mx1 = sample();
+
+        final String xml = mx1.message();
+        System.out.println(mx1.message());
+        assertTrue(xml.contains("<Doc:CreDtTm>2021-10-19T12:13:14.000</Doc:CreDtTm>"));
+        assertTrue(xml.contains("<Doc:IntrBkSttlmDt>2021-10-19</Doc:IntrBkSttlmDt>"));
+
+        final MxPacs00800102 mx2 = MxPacs00800102.parse(xml);
+        //System.out.println(mx2.message());
+        assertNotNull(mx2.getFIToFICstmrCdtTrf().getGrpHdr().getCreDtTm());
+        assertNotNull(mx2.getFIToFICstmrCdtTrf().getGrpHdr().getIntrBkSttlmDt());
+    }
+
+    @Test
+    public void testWriteDateTime_CustomPatternAdapter() throws DatatypeConfigurationException {
+        MxPacs00800102 mx1 = sample();
+
+        MxWriteConfiguration conf = new MxWriteConfiguration();
+        conf.dateTimeAdapter = new IsoDateTimeAdapter(new SimpleDateFormat("yy-MM-dd HH:mm"));
+        conf.dateAdapter = new IsoDateAdapter(new SimpleDateFormat("yy-MM-dd"));
+
+        final String xml = mx1.message(conf);
+        System.out.println(xml);
+        assertTrue(xml.contains("<Doc:CreDtTm>21-10-19 12:13" + OffsetDateTime.now().getOffset() + "</Doc:CreDtTm>"));
+        assertTrue(xml.contains("<Doc:IntrBkSttlmDt>21-10-19</Doc:IntrBkSttlmDt>"));
+
+        final MxPacs00800102 mx2 = MxPacs00800102.parse(xml);
+        //System.out.println(mx2.message());
+        assertNotNull(mx2.getFIToFICstmrCdtTrf().getGrpHdr().getCreDtTm());
+        assertNotNull(mx2.getFIToFICstmrCdtTrf().getGrpHdr().getIntrBkSttlmDt());
+    }
+
+    @Test
+    public void testWriteDateTime_TestDateTimeAdapter() throws DatatypeConfigurationException {
+        MxPacs00800102 mx1 = sample();
+
+        MxWriteConfiguration conf = new MxWriteConfiguration();
+        conf.dateTimeAdapter = new TestDateTimeAdapter();
+        conf.dateAdapter = new TestDateAdapter();
+
+        final String xml = mx1.message(conf);
+        System.out.println(xml);
+        assertTrue(xml.contains("<Doc:CreDtTm>foobar</Doc:CreDtTm>"));
+        assertTrue(xml.contains("<Doc:IntrBkSttlmDt>foobar</Doc:IntrBkSttlmDt>"));
+
+        final MxPacs00800102 mx2 = MxPacs00800102.parse(xml);
+        //System.out.println(mx2.message());
+        assertNotNull(mx2.getFIToFICstmrCdtTrf().getGrpHdr().getCreDtTm());
+        assertNotNull(mx2.getFIToFICstmrCdtTrf().getGrpHdr().getIntrBkSttlmDt());
+    }
+
+}

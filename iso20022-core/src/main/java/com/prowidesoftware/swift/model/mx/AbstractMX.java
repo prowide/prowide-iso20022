@@ -99,7 +99,7 @@ public abstract class AbstractMX extends AbstractMessage implements IDocument, J
     }
 
     /**
-     * @deprecated use {@link #message(String, AbstractMX, Class[], String, boolean, EscapeHandler)} instead
+     * @deprecated use {@link #message(String, AbstractMX, Class[], MxWriteParams)} instead
      */
     @Deprecated
     @ProwideDeprecated(phase2 = TargetYear.SRU2022)
@@ -108,10 +108,23 @@ public abstract class AbstractMX extends AbstractMessage implements IDocument, J
     }
 
     /**
-     * @since 9.1.7
+     * @deprecated use {@link #message(String, AbstractMX, Class[], MxWriteParams)} instead
      */
+    @Deprecated
+    @ProwideDeprecated(phase2 = TargetYear.SRU2023)
     protected static String message(final String namespace, final AbstractMX obj, @SuppressWarnings("rawtypes") final Class[] classes, final String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
-        return MxWriteImpl.write(namespace, obj, classes, prefix, includeXMLDeclaration, escapeHandler);
+        MxWriteParams params = new MxWriteParams();
+        params.prefix = prefix;
+        params.includeXMLDeclaration = includeXMLDeclaration;
+        params.escapeHandler = escapeHandler;
+        return MxWriteImpl.write(namespace, obj, classes, params);
+    }
+
+    /**
+     * @since 9.2.6
+     */
+    protected static String message(final String namespace, final AbstractMX obj, @SuppressWarnings("rawtypes") final Class[] classes, final MxWriteParams params) {
+        return MxWriteImpl.write(namespace, obj, classes, params);
     }
 
     @SuppressWarnings({"rawtypes", "unchecked"})
@@ -335,18 +348,27 @@ public abstract class AbstractMX extends AbstractMessage implements IDocument, J
      * @return the XML content or null if errors occur during serialization
      */
     public String message(MxWriteConfiguration conf) {
-        MxWriteConfiguration usableConf = conf != null? conf : new MxWriteConfiguration();
+        MxWriteConfiguration usableConf = conf != null ? conf : new MxWriteConfiguration();
+        MxWriteParams params = new MxWriteParams(usableConf);
+
+        // handle manually at this method level
+        params.includeXMLDeclaration = false;
+
         String root = usableConf.rootElement;
         StringBuilder xml = new StringBuilder();
         if (usableConf.includeXMLDeclaration) {
             xml.append("<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n");
         }
-        final String header = header(usableConf.headerPrefix, false, usableConf.escapeHandler);
+
+        params.prefix = usableConf.headerPrefix;
+        final String header = header(params);
         if (header != null) {
             xml.append("<").append(root).append(">\n");
             xml.append(header).append("\n");
         }
-        xml.append(document(usableConf.documentPrefix, false, usableConf.escapeHandler)).append("\n");
+
+        params.prefix = usableConf.documentPrefix;
+        xml.append(document(params)).append("\n");
         if (header != null) {
             xml.append("</").append(root).append(">");
         }
@@ -357,36 +379,50 @@ public abstract class AbstractMX extends AbstractMessage implements IDocument, J
      * Get this message AppHdr as an XML string.
      *
      * <p>The XML will not include the XML declaration, will bind the namespace to all elements without prefix and will
-     * use the default escape handler. For more serialization options use {@link #header(String, boolean, EscapeHandler)}
+     * use the default escape handler and content adapters.
+     * <p>
+     * For more serialization options use {@link #header(MxWriteParams)}
      *
      * @return the serialized header or null if header is not set or errors occur during serialization
      * @since 7.8
      */
     public String header() {
-        return header(null, false, null);
+        return header(new MxWriteParams());
     }
 
     /**
-     * @deprecated use {@link #header(String, boolean, EscapeHandler)} instead
+     * @deprecated use {@link #header(MxWriteParams)} instead
      */
     @Deprecated
     @ProwideDeprecated(phase2 = TargetYear.SRU2022)
     public String header(final String prefix, boolean includeXMLDeclaration) {
-        return header(prefix, includeXMLDeclaration, null);
+        MxWriteParams params = new MxWriteParams();
+        params.prefix = prefix;
+        params.includeXMLDeclaration = includeXMLDeclaration;
+        return header(params);
+    }
+
+    /**
+     * @deprecated use {@link #header(MxWriteParams)} instead
+     */
+    @Deprecated
+    @ProwideDeprecated(phase2 = TargetYear.SRU2023)
+    public String header(final String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
+        MxWriteParams params = new MxWriteParams();
+        params.prefix = prefix;
+        params.includeXMLDeclaration = includeXMLDeclaration;
+        params.escapeHandler = escapeHandler;
+        return header(params);
     }
 
     /**
      * Get this message AppHdr as an XML string.
      *
-     * @param prefix                optional prefix for namespace (empty by default)
-     * @param includeXMLDeclaration true to include the XML declaration
-     * @param escapeHandler         a specific escape handler for the header elements content
-     * @return header serialized into XML string or null if the header is not set or errors occur during serialization
-     * @since 9.1.7
+     * @since 9.2.6
      */
-    public String header(final String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
+    public String header(final MxWriteParams params) {
         if (this.appHdr != null) {
-            return this.appHdr.xml(prefix, includeXMLDeclaration, escapeHandler);
+            return this.appHdr.xml(params);
         } else {
             return null;
         }
@@ -396,18 +432,20 @@ public abstract class AbstractMX extends AbstractMessage implements IDocument, J
      * Get this message Document as an XML string.
      *
      * <p>The XML will not include the XML declaration, will bind the namespace to all elements using "Doc" as default
-     * prefix and will use the default escape handler. For more serialization options use
-     * {@link #document(String, boolean, EscapeHandler)}
+     * prefix and will use the default escape handler. For more serialization options use {@link #document(MxWriteParams)}
      *
      * @return document serialized into XML string or null if errors occur during serialization
      * @since 7.8
      */
     public String document() {
-        return document("Doc", true);
+        MxWriteParams params = new MxWriteParams();
+        params.prefix = "Doc";
+        params.includeXMLDeclaration = true;
+        return document(params);
     }
 
     /**
-     * @deprecated use {@link #document(String, boolean, EscapeHandler)} instead
+     * @deprecated use {@link #document(MxWriteParams)} instead
      */
     @Deprecated
     @ProwideDeprecated(phase2 = TargetYear.SRU2022)
@@ -416,16 +454,25 @@ public abstract class AbstractMX extends AbstractMessage implements IDocument, J
     }
 
     /**
+     * @deprecated use {@link #document(MxWriteParams)} instead
+     */
+    @Deprecated
+    @ProwideDeprecated(phase2 = TargetYear.SRU2023)
+    public String document(final String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
+        MxWriteParams params = new MxWriteParams();
+        params.prefix = prefix;
+        params.includeXMLDeclaration = includeXMLDeclaration;
+        params.escapeHandler = escapeHandler;
+        return document(params);
+    }
+
+    /**
      * Get this message Document as an XML string.
      *
-     * @param prefix                optional prefix for namespace (empty by default)
-     * @param includeXMLDeclaration true to include the XML declaration
-     * @param escapeHandler         a specific escape handler for the document elements content
-     * @return document serialized into XML string or null if errors occur during serialization
-     * @since 9.1.7
+     * @since 9.2.6
      */
-    public String document(final String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
-        return message(getNamespace(), this, getClasses(), prefix, includeXMLDeclaration, escapeHandler);
+    public String document(MxWriteParams params) {
+        return message(getNamespace(), this, getClasses(), params);
     }
 
     /**

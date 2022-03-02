@@ -16,6 +16,8 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.ProwideException;
+import com.prowidesoftware.deprecation.ProwideDeprecated;
+import com.prowidesoftware.deprecation.TargetYear;
 import com.prowidesoftware.swift.model.mx.dic.ApplicationHeaderImpl;
 import org.apache.commons.lang3.StringUtils;
 import org.w3c.dom.Document;
@@ -29,6 +31,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.namespace.QName;
 import javax.xml.transform.dom.DOMResult;
@@ -174,20 +177,48 @@ public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
         }
     }
 
+    /**
+     * @deprecated use {@link #xml(MxWriteParams)} instead
+     */
+    @Deprecated
+    @ProwideDeprecated(phase2 = TargetYear.SRU2023)
     @Override
     public String xml(final String prefix, boolean includeXMLDeclaration) {
-        return xml(prefix, includeXMLDeclaration, null);
+        MxWriteParams params = new MxWriteParams();
+        params.prefix = prefix;
+        params.includeXMLDeclaration = includeXMLDeclaration;
+        return xml(params);
+    }
+
+    /**
+     * @deprecated use {@link #xml(MxWriteParams)} instead
+     */
+    @Deprecated
+    @ProwideDeprecated(phase2 = TargetYear.SRU2023)
+    @Override
+    public String xml(String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
+        MxWriteParams params = new MxWriteParams();
+        params.prefix = prefix;
+        params.includeXMLDeclaration = includeXMLDeclaration;
+        params.escapeHandler = escapeHandler;
+        return xml(params);
     }
 
     @Override
-    public String xml(String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
+    public String xml(MxWriteParams params) {
         try {
             JAXBContext context = JAXBContext.newInstance(ApplicationHeaderImpl.class);
             final Marshaller marshaller = context.createMarshaller();
 
+            if (params.adapters != null) {
+                for (XmlAdapter adapter : params.adapters) {
+                    marshaller.setAdapter(adapter);
+                }
+            }
+
             final StringWriter sw = new StringWriter();
             JAXBElement<ApplicationHeaderImpl> element = new JAXBElement(new QName(NAMESPACE, AppHdr.HEADER_LOCALNAME), ApplicationHeaderImpl.class, null, this);
-            XmlEventWriter eventWriter = new XmlEventWriter(sw, prefix, includeXMLDeclaration, AppHdr.HEADER_LOCALNAME, escapeHandler);
+            XmlEventWriter eventWriter = new XmlEventWriter(sw, params.prefix, params.includeXMLDeclaration, AppHdr.HEADER_LOCALNAME, params.escapeHandler);
             marshaller.marshal(element, eventWriter);
             return sw.getBuffer().toString();
 

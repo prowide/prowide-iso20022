@@ -15,6 +15,8 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
+import com.prowidesoftware.deprecation.ProwideDeprecated;
+import com.prowidesoftware.deprecation.TargetYear;
 import org.w3c.dom.Element;
 
 import javax.xml.datatype.XMLGregorianCalendar;
@@ -112,34 +114,39 @@ public interface AppHdr {
 
     /**
      * Get this header as an XML string.
-     * <p>The implementation uses {@link #xml(String, boolean)} with no prefix and no XML declaration.
+     * <p>The implementation uses {@link #xml(MxWriteParams)} with no prefix and no XML declaration.
      *
      * @return header serialized into XML string or null in case of unexpected error
      */
     default String xml() {
-        return xml(null, false);
+        return xml(new MxWriteParams());
+    }
+
+    /**
+     * @deprecated use {@link #xml(MxWriteParams)} instead
+     */
+    @Deprecated
+    @ProwideDeprecated(phase2 = TargetYear.SRU2023)
+    String xml(final String prefix, boolean includeXMLDeclaration);
+
+    /**
+     * @deprecated use {@link #xml(MxWriteParams)} instead
+     */
+    @Deprecated
+    @ProwideDeprecated(phase2 = TargetYear.SRU2023)
+    default String xml(final String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
+        return xml(prefix, includeXMLDeclaration);
     }
 
     /**
      * Get this header as an XML string.
      *
-     * @param prefix                optional prefix for namespace (empty by default)
-     * @param includeXMLDeclaration true to include the XML declaration (false by default)
+     * @param params optional serialization options
      * @return header serialized into XML string or null in case of unexpected error
+     * @since 9.2.6
      */
-    String xml(final String prefix, boolean includeXMLDeclaration);
-
-    /**
-     * Get this header as an XML string.
-     *
-     * @param prefix                optional prefix for namespace (empty by default)
-     * @param includeXMLDeclaration true to include the XML declaration (false by default)
-     * @param escapeHandler         a specific escape handler for the header elements content
-     * @return header serialized into XML string or null in case of unexpected error
-     * @since 9.1.7
-     */
-    default String xml(final String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
-        return xml(prefix, includeXMLDeclaration);
+    default String xml(MxWriteParams params) {
+        return xml(params.prefix, params.includeXMLDeclaration);
     }
 
     /**

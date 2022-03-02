@@ -15,10 +15,13 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
-import com.prowidesoftware.swift.model.mx.adapters.CustomDateTimeAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 
 /**
- * Options POJO to customize the behaviour of the MX writer (model into XML serialization)
+ * Options to customize the behaviour of the MX writer (model into XML serialization) in the {@link AbstractMX}
+ * and its specific types subclasses.
  *
  * @since 9.1.7
  */
@@ -63,5 +66,19 @@ public class MxWriteConfiguration {
      * date time elements.
      * @since 9.2.6
      */
-    public CustomDateTimeAdapter dateTimeAdapter = new CustomDateTimeAdapter();
+    public IsoDateTimeAdapter dateTimeAdapter = new IsoDateTimeAdapter();
+
+    /**
+     * Customized instances or subclasses of this adapter can be injected to change the default serialization of
+     * date time elements.
+     * @since 9.2.6
+     */
+    public IsoDateAdapter dateAdapter = new IsoDateAdapter();
+
+    /**
+     * Customized instances or subclasses of this adapter can be injected to change the default serialization of
+     * date time elements.
+     * @since 9.2.6
+     */
+    public IsoTimeAdapter timeAdapter = new IsoTimeAdapter();
 }
