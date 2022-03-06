@@ -207,7 +207,7 @@ public class MxWriteWithAdaptersTest {
 
         final String xml = h1.xml();
         //System.out.println(xml);
-        assertTrue(xml.contains("<CreDt>2021-10-19T12:13:14.000"+ OffsetDateTime.now().getOffset() + "</CreDt>"));
+        assertTrue(xml.contains("<CreDt>2021-10-19T12:13:14"+ OffsetDateTime.now().getOffset() + "</CreDt>"));
 
         final BusinessAppHdrV02 h2 = (BusinessAppHdrV02) AppHdrParser.parse(xml).get();
         //System.out.println(mx2.message());

@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -60,10 +62,12 @@ public class BusinessApplicationHeaderV02Impl {
     protected String bizSvc;
     @XmlElement(name = "MktPrctc")
     protected ImplementationSpecification1 mktPrctc;
-    @XmlElement(name = "CreDt", required = true)
+    @XmlElement(name = "CreDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar creDt;
-    @XmlElement(name = "BizPrcgDt")
+    @XmlElement(name = "BizPrcgDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar bizPrcgDt;
     @XmlElement(name = "CpyDplct")
@@ -259,7 +263,7 @@ public class BusinessApplicationHeaderV02Impl {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getCreDt() {
@@ -271,7 +275,7 @@ public class BusinessApplicationHeaderV02Impl {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public BusinessApplicationHeaderV02Impl setCreDt(XMLGregorianCalendar value) {
@@ -284,7 +288,7 @@ public class BusinessApplicationHeaderV02Impl {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getBizPrcgDt() {
@@ -296,7 +300,7 @@ public class BusinessApplicationHeaderV02Impl {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public BusinessApplicationHeaderV02Impl setBizPrcgDt(XMLGregorianCalendar value) {
