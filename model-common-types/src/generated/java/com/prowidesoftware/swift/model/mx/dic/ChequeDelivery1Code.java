@@ -78,7 +78,7 @@ public enum ChequeDelivery1Code {
     PUDB,
 
     /**
-     * Cheque will be picked up by the creditor.
+     * Cheque will be picked up by the creditor
      * 
      */
     PUCD,
@@ -90,7 +90,7 @@ public enum ChequeDelivery1Code {
     PUFA,
 
     /**
-     * Cheque is to be sent through registered mail services to debtor.
+     * Cheque is to be sent through registered mail services to debtor
      * 
      */
     RGDB,

@@ -180,7 +180,7 @@ public enum PaymentType3Code {
     TCP,
 
     /**
-     * Transaction is linked to an overnight deposit.
+     * Transaction is linked to an overnight deposit
      * 
      */
     OND,

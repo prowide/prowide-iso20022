@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -29,10 +31,12 @@ public class Restriction1 {
 
     @XmlElement(name = "RstrctnTp", required = true)
     protected CodeOrProprietary1Choice rstrctnTp;
-    @XmlElement(name = "VldFr", required = true)
+    @XmlElement(name = "VldFr", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar vldFr;
-    @XmlElement(name = "VldUntil")
+    @XmlElement(name = "VldUntil", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar vldUntil;
 
@@ -66,7 +70,7 @@ public class Restriction1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getVldFr() {
@@ -78,7 +82,7 @@ public class Restriction1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Restriction1 setVldFr(XMLGregorianCalendar value) {
@@ -91,7 +95,7 @@ public class Restriction1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getVldUntil() {
@@ -103,7 +107,7 @@ public class Restriction1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Restriction1 setVldUntil(XMLGregorianCalendar value) {

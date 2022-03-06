@@ -7,7 +7,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -43,12 +45,14 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 public class Option1 {
 
-    @XmlElement(name = "ConvsDt")
+    @XmlElement(name = "ConvsDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar convsDt;
     @XmlElement(name = "StrkPric")
     protected Price1 strkPric;
-    @XmlElement(name = "XpryDt")
+    @XmlElement(name = "XpryDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar xpryDt;
     @XmlElement(name = "MinExrcblMltplQty")
@@ -90,7 +94,7 @@ public class Option1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getConvsDt() {
@@ -102,7 +106,7 @@ public class Option1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Option1 setConvsDt(XMLGregorianCalendar value) {
@@ -140,7 +144,7 @@ public class Option1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getXpryDt() {
@@ -152,7 +156,7 @@ public class Option1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Option1 setXpryDt(XMLGregorianCalendar value) {

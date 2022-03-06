@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -32,10 +34,12 @@ public class Traceability4 {
     protected GenericIdentification77 rlayId;
     @XmlElement(name = "SeqNb")
     protected String seqNb;
-    @XmlElement(name = "TracDtTmIn", required = true)
+    @XmlElement(name = "TracDtTmIn", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar tracDtTmIn;
-    @XmlElement(name = "TracDtTmOut", required = true)
+    @XmlElement(name = "TracDtTmOut", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar tracDtTmOut;
 
@@ -94,7 +98,7 @@ public class Traceability4 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getTracDtTmIn() {
@@ -106,7 +110,7 @@ public class Traceability4 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Traceability4 setTracDtTmIn(XMLGregorianCalendar value) {
@@ -119,7 +123,7 @@ public class Traceability4 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getTracDtTmOut() {
@@ -131,7 +135,7 @@ public class Traceability4 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Traceability4 setTracDtTmOut(XMLGregorianCalendar value) {

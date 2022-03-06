@@ -39,7 +39,7 @@ public enum RiskLevel1Code {
     LOWW,
 
     /**
-     * Medium.
+     * Medium.	
      * 
      */
     MEDM;

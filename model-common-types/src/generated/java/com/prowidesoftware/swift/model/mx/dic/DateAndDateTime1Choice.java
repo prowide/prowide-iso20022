@@ -6,7 +6,10 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -26,10 +29,12 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 public class DateAndDateTime1Choice {
 
-    @XmlElement(name = "Dt")
+    @XmlElement(name = "Dt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar dt;
-    @XmlElement(name = "DtTm")
+    @XmlElement(name = "DtTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar dtTm;
 
@@ -38,7 +43,7 @@ public class DateAndDateTime1Choice {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getDt() {
@@ -50,7 +55,7 @@ public class DateAndDateTime1Choice {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public DateAndDateTime1Choice setDt(XMLGregorianCalendar value) {
@@ -63,7 +68,7 @@ public class DateAndDateTime1Choice {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getDtTm() {
@@ -75,7 +80,7 @@ public class DateAndDateTime1Choice {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public DateAndDateTime1Choice setDtTm(XMLGregorianCalendar value) {

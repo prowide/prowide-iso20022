@@ -26,7 +26,7 @@ public enum Instruction5Code {
 
 
     /**
-     * Please advise/contact (ultimate) creditor/claimant by phone
+     * Please advise/contact (ultimate) creditor/claimant by phone.
      * 
      */
     PHOB,

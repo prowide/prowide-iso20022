@@ -13,6 +13,7 @@ import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -62,7 +63,8 @@ public class QualifiedDocumentInformation1 {
     protected String itmListIdr;
     @XmlElement(name = "ItmIdr")
     protected String itmIdr;
-    @XmlElement(name = "Dt")
+    @XmlElement(name = "Dt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar dt;
     @XmlElement(name = "Vrsn")
@@ -183,7 +185,7 @@ public class QualifiedDocumentInformation1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getDt() {
@@ -195,7 +197,7 @@ public class QualifiedDocumentInformation1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public QualifiedDocumentInformation1 setDt(XMLGregorianCalendar value) {

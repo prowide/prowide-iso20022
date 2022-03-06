@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -28,16 +30,20 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 public class SettlementTimeRequest2 {
 
-    @XmlElement(name = "CLSTm")
+    @XmlElement(name = "CLSTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
     protected XMLGregorianCalendar clsTm;
-    @XmlElement(name = "TillTm")
+    @XmlElement(name = "TillTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
     protected XMLGregorianCalendar tillTm;
-    @XmlElement(name = "FrTm")
+    @XmlElement(name = "FrTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
     protected XMLGregorianCalendar frTm;
-    @XmlElement(name = "RjctTm")
+    @XmlElement(name = "RjctTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
     protected XMLGregorianCalendar rjctTm;
 
@@ -46,7 +52,7 @@ public class SettlementTimeRequest2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getCLSTm() {
@@ -58,7 +64,7 @@ public class SettlementTimeRequest2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public SettlementTimeRequest2 setCLSTm(XMLGregorianCalendar value) {
@@ -71,7 +77,7 @@ public class SettlementTimeRequest2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getTillTm() {
@@ -83,7 +89,7 @@ public class SettlementTimeRequest2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public SettlementTimeRequest2 setTillTm(XMLGregorianCalendar value) {
@@ -96,7 +102,7 @@ public class SettlementTimeRequest2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getFrTm() {
@@ -108,7 +114,7 @@ public class SettlementTimeRequest2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public SettlementTimeRequest2 setFrTm(XMLGregorianCalendar value) {
@@ -121,7 +127,7 @@ public class SettlementTimeRequest2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getRjctTm() {
@@ -133,7 +139,7 @@ public class SettlementTimeRequest2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public SettlementTimeRequest2 setRjctTm(XMLGregorianCalendar value) {

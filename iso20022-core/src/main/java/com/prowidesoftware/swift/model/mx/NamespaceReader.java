@@ -24,6 +24,7 @@ import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 import java.io.StringReader;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -101,9 +102,9 @@ public class NamespaceReader {
     }
 
     private static Optional<XMLStreamReader> findElement(final String xml, final String localName) {
-        Validate.notNull(xml, "XML to parse must not be null");
+        Objects.requireNonNull(xml, "XML to parse must not be null");
         Validate.notBlank(xml, "XML to parse must not be a blank string");
-        Validate.notNull(xml, "localName to find must not be null");
+        Objects.requireNonNull(xml, "localName to find must not be null");
 
         final XMLInputFactory xif = SafeXmlUtils.inputFactory();
         try {

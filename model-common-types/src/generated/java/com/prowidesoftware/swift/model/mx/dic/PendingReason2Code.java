@@ -294,7 +294,7 @@ public enum PendingReason2Code {
     CYCL,
 
     /**
-     * Financial instruments are blocked due to, for example, a corporate action event, realignment.
+     * Financial instruments are blocked due to a corporate action event, realignment, etc.
      * 
      */
     SBLO,
@@ -420,7 +420,7 @@ public enum PendingReason2Code {
     PRSY,
 
     /**
-     * Central securities depository sets the instruction in a hold/frozen/preadvice mode.
+     * Central securities depository sets the  instruction in a hold/frozen/preadvice mode.
      * 
      */
     CSDH,

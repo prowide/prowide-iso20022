@@ -32,7 +32,7 @@ public enum CardType1Code {
     CRDT,
 
     /**
-     * Card enabling the holder to have its purchases directly charged to its account. The card may also combine other functions, eg, cash card or cheque guaranteed card.
+     * Card enabling the holder to have its purchases directly charged to its account. The card may also combine other functions, for example, cash card or cheque guaranteed card.
      * 
      */
     DBIT;

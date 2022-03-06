@@ -23,10 +23,7 @@ import org.xml.sax.XMLReader;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.io.StringReader;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.logging.Level;
 
 /**
@@ -65,7 +62,7 @@ public class MxNode {
      * @since 9.1.2
      */
     public static MxNode parse(final String xml) {
-        Validate.notNull(xml, "the XML to parser cannot be null");
+        Objects.requireNonNull(xml, "the XML to parser cannot be null");
         Validate.notBlank(xml, "the XML to parser cannot be blank");
         try {
             XMLReader xmlReader = SafeXmlUtils.reader(true, null);

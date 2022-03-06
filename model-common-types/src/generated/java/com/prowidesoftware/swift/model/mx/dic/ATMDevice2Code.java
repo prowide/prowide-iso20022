@@ -82,7 +82,7 @@ public enum ATMDevice2Code {
     CSHD,
 
     /**
-     * Device accepting in-out of items as coupons, documents, bills and coins.
+     * Device accepting in-out of items as  coupons, documents, bills and coins.
      * 
      */
     CSHI,

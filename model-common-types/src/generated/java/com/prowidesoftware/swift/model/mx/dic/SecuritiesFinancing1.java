@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -66,7 +68,8 @@ public class SecuritiesFinancing1 {
     protected String ttlNbOfCollInstrs;
     @XmlElement(name = "ScndLegNrrtv")
     protected String scndLegNrrtv;
-    @XmlElement(name = "RateChngDtTm", required = true)
+    @XmlElement(name = "RateChngDtTm", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar rateChngDtTm;
     @XmlElement(name = "TermntnDtTm")
@@ -329,7 +332,7 @@ public class SecuritiesFinancing1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getRateChngDtTm() {
@@ -341,7 +344,7 @@ public class SecuritiesFinancing1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public SecuritiesFinancing1 setRateChngDtTm(XMLGregorianCalendar value) {

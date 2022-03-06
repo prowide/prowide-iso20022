@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -43,7 +45,8 @@ public class DirectDebitTransactionInformation15 {
     protected PaymentTypeInformation21 pmtTpInf;
     @XmlElement(name = "IntrBkSttlmAmt", required = true)
     protected ActiveCurrencyAndAmount intrBkSttlmAmt;
-    @XmlElement(name = "IntrBkSttlmDt")
+    @XmlElement(name = "IntrBkSttlmDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar intrBkSttlmDt;
     @XmlElement(name = "SttlmPrty")
@@ -146,7 +149,7 @@ public class DirectDebitTransactionInformation15 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getIntrBkSttlmDt() {
@@ -158,7 +161,7 @@ public class DirectDebitTransactionInformation15 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public DirectDebitTransactionInformation15 setIntrBkSttlmDt(XMLGregorianCalendar value) {

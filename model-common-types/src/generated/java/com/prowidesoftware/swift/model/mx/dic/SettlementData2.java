@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -51,7 +53,8 @@ public class SettlementData2 {
     protected PartyIdentification8Choice pngPty;
     @XmlElement(name = "RcvgPty", required = true)
     protected PartyIdentification8Choice rcvgPty;
-    @XmlElement(name = "SttlmDt", required = true)
+    @XmlElement(name = "SttlmDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar sttlmDt;
     @XmlElement(name = "SttlmSts")
@@ -246,7 +249,7 @@ public class SettlementData2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getSttlmDt() {
@@ -258,7 +261,7 @@ public class SettlementData2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public SettlementData2 setSttlmDt(XMLGregorianCalendar value) {

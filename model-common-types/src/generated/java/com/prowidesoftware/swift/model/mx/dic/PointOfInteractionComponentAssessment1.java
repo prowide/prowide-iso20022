@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -36,10 +38,12 @@ public class PointOfInteractionComponentAssessment1 {
     protected POIComponentAssessment1Code tp;
     @XmlElement(name = "Assgnr", required = true)
     protected List<String> assgnr;
-    @XmlElement(name = "DlvryDt")
+    @XmlElement(name = "DlvryDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar dlvryDt;
-    @XmlElement(name = "XprtnDt")
+    @XmlElement(name = "XprtnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar xprtnDt;
     @XmlElement(name = "Nb", required = true)
@@ -104,7 +108,7 @@ public class PointOfInteractionComponentAssessment1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getDlvryDt() {
@@ -116,7 +120,7 @@ public class PointOfInteractionComponentAssessment1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public PointOfInteractionComponentAssessment1 setDlvryDt(XMLGregorianCalendar value) {
@@ -129,7 +133,7 @@ public class PointOfInteractionComponentAssessment1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getXprtnDt() {
@@ -141,7 +145,7 @@ public class PointOfInteractionComponentAssessment1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public PointOfInteractionComponentAssessment1 setXprtnDt(XMLGregorianCalendar value) {

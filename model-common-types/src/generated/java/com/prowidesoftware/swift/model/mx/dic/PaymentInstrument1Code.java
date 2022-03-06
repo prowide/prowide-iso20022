@@ -70,13 +70,13 @@ public enum PaymentInstrument1Code {
     BKT,
 
     /**
-     * Payment instrument is a debit card. (The payment originated using a debit card scheme.).
+     * Payment instrument is a debit card. (The payment originated using a debit card scheme.)
      * 
      */
     DCP,
 
     /**
-     * Payment instrument is a credit card. (The payment originated using a credit card scheme.).
+     * Payment instrument is a credit card. (The payment originated using a credit card scheme.)
      * 
      */
     CCP,

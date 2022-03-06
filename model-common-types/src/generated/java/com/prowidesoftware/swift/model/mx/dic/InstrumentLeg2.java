@@ -9,7 +9,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -57,7 +59,8 @@ public class InstrumentLeg2 {
     @XmlElement(name = "LegSwpTp")
     @XmlSchemaType(name = "string")
     protected LegSwapType1Code legSwpTp;
-    @XmlElement(name = "LegSttlmDt")
+    @XmlElement(name = "LegSttlmDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar legSttlmDt;
     @XmlElement(name = "LegSttlmDtCd")
@@ -236,7 +239,7 @@ public class InstrumentLeg2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getLegSttlmDt() {
@@ -248,7 +251,7 @@ public class InstrumentLeg2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public InstrumentLeg2 setLegSttlmDt(XMLGregorianCalendar value) {
