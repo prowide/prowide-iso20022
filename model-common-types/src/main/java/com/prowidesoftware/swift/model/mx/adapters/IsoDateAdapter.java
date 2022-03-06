@@ -16,6 +16,7 @@
 package com.prowidesoftware.swift.model.mx.adapters;
 
 import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.XMLGregorianCalendar;
 
 /**
@@ -31,6 +32,13 @@ import javax.xml.datatype.XMLGregorianCalendar;
 public class IsoDateAdapter extends XmlAdapter<String, XMLGregorianCalendar> {
 
     private final XmlAdapter<String, XMLGregorianCalendar> customAdapterImpl;
+
+    /**
+     * Default constructor for jaxb when non is set via API
+     */
+    public IsoDateAdapter() throws DatatypeConfigurationException {
+        this.customAdapterImpl = new DefaultXMLGregorianCalendarAdapter();
+    }
 
     /**
      * Creates a date adapter injecting a custom implementation

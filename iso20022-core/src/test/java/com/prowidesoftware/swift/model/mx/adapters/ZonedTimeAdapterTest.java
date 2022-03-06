@@ -24,9 +24,9 @@ import java.math.BigInteger;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class DefaultTimeAdapterTest {
+public class ZonedTimeAdapterTest {
 
-    private DefaultIsoTimeAdapter adapter = new DefaultIsoTimeAdapter();
+    private ZonedTimeAdapter adapter = new ZonedTimeAdapter();
 
     @Test
     public void testUnmarshallFractionOfSeconds() throws Exception {
@@ -72,7 +72,7 @@ public class DefaultTimeAdapterTest {
     @Test
     public void testMarshallNoOffset() throws Exception {
         XMLGregorianCalendar cal = DatatypeFactory.newInstance().newXMLGregorianCalendar(BigInteger.valueOf(2022), 3, 4, 12, 50, 8, null, -0);
-        assertEquals("12:50:08", adapter.marshal(cal));
+        assertEquals("12:50:08+00:00", adapter.marshal(cal));
     }
 
 }

@@ -20,7 +20,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 import java.text.SimpleDateFormat;
 
 /**
- * Default adapter for date elements.
+ * XMLGregorianCalendar adapter for date elements.
  * <p>
  * Marshals the date time as YYY-MM-DD which is aligned with ISO 8601.
  * <p>
@@ -30,7 +30,7 @@ import java.text.SimpleDateFormat;
  * @see TypeAdaptersConfiguration
  * @since 9.2.6
  */
-public class DefaultIsoDateAdapter extends XmlAdapter<String, XMLGregorianCalendar> {
+public class SimpleDateAdapter extends XmlAdapter<String, XMLGregorianCalendar> {
 
     private final SimpleDateFormat dateFormat;
     private final XmlAdapter<String, XMLGregorianCalendar> customAdapterImpl;
@@ -38,7 +38,7 @@ public class DefaultIsoDateAdapter extends XmlAdapter<String, XMLGregorianCalend
     /**
      * Creates a date adapter with the default format
      */
-    public DefaultIsoDateAdapter() {
+    public SimpleDateAdapter() {
         this.dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         this.customAdapterImpl = null;
     }
@@ -46,7 +46,7 @@ public class DefaultIsoDateAdapter extends XmlAdapter<String, XMLGregorianCalend
     /**
      * Creates a time adapter with a specific given format that will be used for both the marshalling and unmarshalling
      */
-    public DefaultIsoDateAdapter(SimpleDateFormat dateFormat) {
+    public SimpleDateAdapter(SimpleDateFormat dateFormat) {
         this.dateFormat = dateFormat;
         this.customAdapterImpl = null;
     }
@@ -54,7 +54,7 @@ public class DefaultIsoDateAdapter extends XmlAdapter<String, XMLGregorianCalend
     /**
      * Creates a date adapter injecting a custom implementation
      */
-    public DefaultIsoDateAdapter(XmlAdapter<String, XMLGregorianCalendar> customAdapterImpl) {
+    public SimpleDateAdapter(XmlAdapter<String, XMLGregorianCalendar> customAdapterImpl) {
         this.dateFormat = null;
         this.customAdapterImpl = customAdapterImpl;
     }

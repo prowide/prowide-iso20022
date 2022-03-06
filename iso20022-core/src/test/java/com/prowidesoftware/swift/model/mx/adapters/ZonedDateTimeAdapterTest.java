@@ -24,9 +24,9 @@ import java.math.BigInteger;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class DefaultDateTimeAdapterTest {
+public class ZonedDateTimeAdapterTest {
 
-    private DefaultIsoDateTimeAdapter adapter = new DefaultIsoDateTimeAdapter();
+    private ZonedDateTimeAdapter adapter = new ZonedDateTimeAdapter();
 
     @Test
     public void testUnmarshallFractionOfSeconds() throws Exception {

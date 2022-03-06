@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Simple DTO to encapsulate type adapters parameters for the marshalling and unmarshalling API.
+ * DTO to encapsulate type adapters parameters for the marshalling and unmarshalling API.
  * <p>
  * This class is used to inject your own adapters to the marshaller and unmarshaller via the
  * {@link com.prowidesoftware.swift.model.mx.MxWriteConfiguration} and
@@ -29,7 +29,7 @@ import java.util.List;
  * Notice the configured adapters in the model are the {@link IsoDateTimeAdapter}, {@link IsoDateAdapter} and
  * {@link IsoTimeAdapter}. These are just wrapper classes configured in the model via @XmlJavaTypeAdapter annotation.
  * The actual adapter implementation is injected in the constructor, thus you can use any of the default adapters
- * such as the {@link DefaultIsoDateTimeAdapter} or your own.
+ * such as the {@link ZonedDateTimeAdapter} or your own.
  *
  * @since 9.2.6
  */
@@ -54,11 +54,14 @@ public class TypeAdaptersConfiguration {
 
     /**
      * Initializes the adapters with the default implementations
+     * @see SimpleDateAdapter
+     * @see ZonedDateTimeAdapter
+     * @see ZonedTimeAdapter
      */
     public TypeAdaptersConfiguration() {
-        this.dateTimeAdapter = new IsoDateTimeAdapter(new DefaultIsoDateTimeAdapter());
-        this.dateAdapter = new IsoDateAdapter(new DefaultIsoDateAdapter());
-        this.timeAdapter = new IsoTimeAdapter(new DefaultIsoTimeAdapter());
+        this.dateTimeAdapter = new IsoDateTimeAdapter(new ZonedDateTimeAdapter());
+        this.dateAdapter = new IsoDateAdapter(new SimpleDateAdapter());
+        this.timeAdapter = new IsoTimeAdapter(new ZonedTimeAdapter());
     }
 
     /**

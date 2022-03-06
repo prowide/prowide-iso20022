@@ -20,11 +20,12 @@ import javax.xml.datatype.XMLGregorianCalendar;
 import java.text.SimpleDateFormat;
 
 /**
- * Configured adapter for date time elements.
+ * XMLGregorianCalendar adapter for date time elements.
  * <p>
- * Marshals the date time as a local time with UTC offset format YYYY-MM-DDThh:mm:ss[.sss][+/-hh:mm] which is aligned
- * with ISO 8601. For UTC times an explicit '+00:00' offset is used instead of the 'Z'; and the fractional seconds is
- * only printed if not 0.
+ * Marshals the date time as a local time with UTC offset format YYYY-MM-DDThh:mm:ss[.sss]+/-hh:mm which is aligned
+ * with ISO 8601. Dislike the default jaxb implementation, this adapter will always print the offset, and for UTC times
+ * in particular an explicit '+00:00' offset is used instead of the 'Z'. The fractional seconds is printed only when it
+ * is different than zero.
  * <p>
  * Notice the configured adapter in the model is the {@link IsoDateTimeAdapter} wrapper class, but you can pass this
  * default implementation or your own in the constructor.
@@ -32,7 +33,7 @@ import java.text.SimpleDateFormat;
  * @see TypeAdaptersConfiguration
  * @since 9.2.6
  */
-public class DefaultIsoDateTimeAdapter extends XmlAdapter<String, XMLGregorianCalendar> {
+public class ZonedDateTimeAdapter extends XmlAdapter<String, XMLGregorianCalendar> {
 
     private final SimpleDateFormat marshalFormat;
     private final SimpleDateFormat unmarshalFormat;
@@ -41,7 +42,7 @@ public class DefaultIsoDateTimeAdapter extends XmlAdapter<String, XMLGregorianCa
     /**
      * Creates a date time adapter with the default format
      */
-    public DefaultIsoDateTimeAdapter() {
+    public ZonedDateTimeAdapter() {
         this.marshalFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
         this.unmarshalFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss[.SSS][XXX]");
         this.customAdapterImpl = null;
@@ -50,7 +51,7 @@ public class DefaultIsoDateTimeAdapter extends XmlAdapter<String, XMLGregorianCa
     /**
      * Creates a time adapter with a specific given format that will be used for both the marshalling and unmarshalling
      */
-    public DefaultIsoDateTimeAdapter(SimpleDateFormat dateFormat) {
+    public ZonedDateTimeAdapter(SimpleDateFormat dateFormat) {
         this.marshalFormat = dateFormat;
         this.unmarshalFormat = dateFormat;
         this.customAdapterImpl = null;
@@ -59,7 +60,7 @@ public class DefaultIsoDateTimeAdapter extends XmlAdapter<String, XMLGregorianCa
     /**
      * Creates a date time adapter injecting a custom implementation
      */
-    public DefaultIsoDateTimeAdapter(XmlAdapter<String, XMLGregorianCalendar> customAdapterImpl) {
+    public ZonedDateTimeAdapter(XmlAdapter<String, XMLGregorianCalendar> customAdapterImpl) {
         this.marshalFormat = null;
         this.unmarshalFormat = null;
         this.customAdapterImpl = customAdapterImpl;
