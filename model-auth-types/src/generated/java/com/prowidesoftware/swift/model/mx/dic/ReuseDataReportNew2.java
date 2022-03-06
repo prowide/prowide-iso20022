@@ -8,7 +8,10 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -35,14 +38,16 @@ public class ReuseDataReportNew2 {
 
     @XmlElement(name = "TechRcrdId", required = true)
     protected String techRcrdId;
-    @XmlElement(name = "RptgDtTm", required = true)
+    @XmlElement(name = "RptgDtTm", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar rptgDtTm;
     @XmlElement(name = "CtrPtyData", required = true)
     protected CounterpartyData46 ctrPtyData;
     @XmlElement(name = "CollCmpnt", required = true)
     protected List<CollateralType6Choice> collCmpnt;
-    @XmlElement(name = "EvtDay", required = true)
+    @XmlElement(name = "EvtDay", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar evtDay;
     @XmlElement(name = "FndgSrc")
@@ -80,7 +85,7 @@ public class ReuseDataReportNew2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getRptgDtTm() {
@@ -92,7 +97,7 @@ public class ReuseDataReportNew2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public ReuseDataReportNew2 setRptgDtTm(XMLGregorianCalendar value) {
@@ -159,7 +164,7 @@ public class ReuseDataReportNew2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getEvtDay() {
@@ -171,7 +176,7 @@ public class ReuseDataReportNew2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public ReuseDataReportNew2 setEvtDay(XMLGregorianCalendar value) {

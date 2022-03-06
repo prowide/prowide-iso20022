@@ -6,7 +6,10 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -29,10 +32,12 @@ public class CustodianOptionDateDetailsSD1 {
 
     @XmlElement(name = "PlcAndNm", required = true)
     protected String plcAndNm;
-    @XmlElement(name = "AgtDdlnDt")
+    @XmlElement(name = "AgtDdlnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar agtDdlnDt;
-    @XmlElement(name = "AgtDdlnTm")
+    @XmlElement(name = "AgtDdlnTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
     protected XMLGregorianCalendar agtDdlnTm;
 
@@ -66,7 +71,7 @@ public class CustodianOptionDateDetailsSD1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getAgtDdlnDt() {
@@ -78,7 +83,7 @@ public class CustodianOptionDateDetailsSD1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CustodianOptionDateDetailsSD1 setAgtDdlnDt(XMLGregorianCalendar value) {
@@ -91,7 +96,7 @@ public class CustodianOptionDateDetailsSD1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getAgtDdlnTm() {
@@ -103,7 +108,7 @@ public class CustodianOptionDateDetailsSD1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CustodianOptionDateDetailsSD1 setAgtDdlnTm(XMLGregorianCalendar value) {

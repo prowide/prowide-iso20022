@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -36,7 +38,8 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 public class AssetValuation1 {
 
-    @XmlElement(name = "MtrtyDt")
+    @XmlElement(name = "MtrtyDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar mtrtyDt;
     @XmlElement(name = "NtnlCcyFrstLeg", required = true)
@@ -61,7 +64,8 @@ public class AssetValuation1 {
     @XmlElement(name = "CdtAssmntRslt")
     @XmlSchemaType(name = "string")
     protected AssessmentResultType1Code cdtAssmntRslt;
-    @XmlElement(name = "RstDt")
+    @XmlElement(name = "RstDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar rstDt;
 
@@ -70,7 +74,7 @@ public class AssetValuation1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getMtrtyDt() {
@@ -82,7 +86,7 @@ public class AssetValuation1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public AssetValuation1 setMtrtyDt(XMLGregorianCalendar value) {
@@ -345,7 +349,7 @@ public class AssetValuation1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getRstDt() {
@@ -357,7 +361,7 @@ public class AssetValuation1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public AssetValuation1 setRstDt(XMLGregorianCalendar value) {

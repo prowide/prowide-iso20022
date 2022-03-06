@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -62,10 +64,12 @@ public class DeliverInformation21 {
     @XmlElement(name = "BnfcryCertfctnCmpltn")
     @XmlSchemaType(name = "string")
     protected BeneficiaryCertificationCompletion1Code bnfcryCertfctnCmpltn;
-    @XmlElement(name = "ReqdTradDt")
+    @XmlElement(name = "ReqdTradDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar reqdTradDt;
-    @XmlElement(name = "ReqdSttlmDt")
+    @XmlElement(name = "ReqdSttlmDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar reqdSttlmDt;
     @XmlElement(name = "SttlmAmt")
@@ -275,7 +279,7 @@ public class DeliverInformation21 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getReqdTradDt() {
@@ -287,7 +291,7 @@ public class DeliverInformation21 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public DeliverInformation21 setReqdTradDt(XMLGregorianCalendar value) {
@@ -300,7 +304,7 @@ public class DeliverInformation21 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getReqdSttlmDt() {
@@ -312,7 +316,7 @@ public class DeliverInformation21 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public DeliverInformation21 setReqdSttlmDt(XMLGregorianCalendar value) {

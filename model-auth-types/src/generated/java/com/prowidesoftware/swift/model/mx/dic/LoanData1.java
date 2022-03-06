@@ -9,7 +9,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -45,12 +47,14 @@ public class LoanData1 {
     protected String tradgVn;
     @XmlElement(name = "MstrAgrmt")
     protected MasterAgreement1 mstrAgrmt;
-    @XmlElement(name = "ValDt")
+    @XmlElement(name = "ValDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar valDt;
     @XmlElement(name = "MinNtcePrd")
     protected BigDecimal minNtcePrd;
-    @XmlElement(name = "EarlstCallBckDt")
+    @XmlElement(name = "EarlstCallBckDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar earlstCallBckDt;
     @XmlElement(name = "GnlColl")
@@ -148,7 +152,7 @@ public class LoanData1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getValDt() {
@@ -160,7 +164,7 @@ public class LoanData1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public LoanData1 setValDt(XMLGregorianCalendar value) {
@@ -198,7 +202,7 @@ public class LoanData1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getEarlstCallBckDt() {
@@ -210,7 +214,7 @@ public class LoanData1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public LoanData1 setEarlstCallBckDt(XMLGregorianCalendar value) {

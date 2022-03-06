@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -26,10 +28,12 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 public class UpdateLogTime1 {
 
-    @XmlElement(name = "Od", required = true)
+    @XmlElement(name = "Od", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
     protected XMLGregorianCalendar od;
-    @XmlElement(name = "New", required = true)
+    @XmlElement(name = "New", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
     protected XMLGregorianCalendar _new;
 
@@ -38,7 +42,7 @@ public class UpdateLogTime1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getOd() {
@@ -50,7 +54,7 @@ public class UpdateLogTime1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public UpdateLogTime1 setOd(XMLGregorianCalendar value) {
@@ -63,7 +67,7 @@ public class UpdateLogTime1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getNew() {
@@ -75,7 +79,7 @@ public class UpdateLogTime1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public UpdateLogTime1 setNew(XMLGregorianCalendar value) {

@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -51,10 +53,12 @@ public class OrderParameters1 {
     @XmlElement(name = "Tp", required = true)
     @XmlSchemaType(name = "string")
     protected OrderType1Code tp;
-    @XmlElement(name = "XpryDtAndTm")
+    @XmlElement(name = "XpryDtAndTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar xpryDtAndTm;
-    @XmlElement(name = "FctvDtAndTm")
+    @XmlElement(name = "FctvDtAndTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar fctvDtAndTm;
     @XmlElement(name = "HdlgInstr")
@@ -152,7 +156,7 @@ public class OrderParameters1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getXpryDtAndTm() {
@@ -164,7 +168,7 @@ public class OrderParameters1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public OrderParameters1 setXpryDtAndTm(XMLGregorianCalendar value) {
@@ -177,7 +181,7 @@ public class OrderParameters1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getFctvDtAndTm() {
@@ -189,7 +193,7 @@ public class OrderParameters1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public OrderParameters1 setFctvDtAndTm(XMLGregorianCalendar value) {

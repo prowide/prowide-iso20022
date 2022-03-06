@@ -7,7 +7,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -42,7 +44,8 @@ public class ForeignExchangeTerms37 {
     protected String qtdCcy;
     @XmlElement(name = "XchgRate", required = true)
     protected BigDecimal xchgRate;
-    @XmlElement(name = "QtnDt")
+    @XmlElement(name = "QtnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar qtnDt;
     @XmlElement(name = "QtgInstn")
@@ -178,7 +181,7 @@ public class ForeignExchangeTerms37 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getQtnDt() {
@@ -190,7 +193,7 @@ public class ForeignExchangeTerms37 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public ForeignExchangeTerms37 setQtnDt(XMLGregorianCalendar value) {

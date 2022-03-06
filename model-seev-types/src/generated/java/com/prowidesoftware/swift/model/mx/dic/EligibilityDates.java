@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -27,10 +29,12 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 public class EligibilityDates {
 
-    @XmlElement(name = "RcrdDt")
+    @XmlElement(name = "RcrdDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar rcrdDt;
-    @XmlElement(name = "SctiesRegnDt")
+    @XmlElement(name = "SctiesRegnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar sctiesRegnDt;
     @XmlElement(name = "BlckgPrd")
@@ -41,7 +45,7 @@ public class EligibilityDates {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getRcrdDt() {
@@ -53,7 +57,7 @@ public class EligibilityDates {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public EligibilityDates setRcrdDt(XMLGregorianCalendar value) {
@@ -66,7 +70,7 @@ public class EligibilityDates {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getSctiesRegnDt() {
@@ -78,7 +82,7 @@ public class EligibilityDates {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public EligibilityDates setSctiesRegnDt(XMLGregorianCalendar value) {

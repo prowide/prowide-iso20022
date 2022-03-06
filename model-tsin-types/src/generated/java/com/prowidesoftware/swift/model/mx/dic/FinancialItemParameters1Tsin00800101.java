@@ -11,7 +11,9 @@ import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlIDREF;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -48,7 +50,8 @@ public class FinancialItemParameters1Tsin00800101 {
 
     @XmlElement(name = "Idr", required = true)
     protected String idr;
-    @XmlElement(name = "IsseDt", required = true)
+    @XmlElement(name = "IsseDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar isseDt;
     @XmlElementRef(name = "RltdItm", namespace = "urn:iso:std:iso:20022:tech:xsd:tsin.008.001.01", type = JAXBElement.class, required = false)
@@ -126,7 +129,7 @@ public class FinancialItemParameters1Tsin00800101 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getIsseDt() {
@@ -138,7 +141,7 @@ public class FinancialItemParameters1Tsin00800101 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public FinancialItemParameters1Tsin00800101 setIsseDt(XMLGregorianCalendar value) {

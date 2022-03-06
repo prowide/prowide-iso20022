@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -28,15 +30,18 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 public class DateAndPeriod2Choice {
 
-    @XmlElement(name = "Dt")
+    @XmlElement(name = "Dt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar dt;
     @XmlElement(name = "Prd")
     protected Period2 prd;
-    @XmlElement(name = "FrDt")
+    @XmlElement(name = "FrDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar frDt;
-    @XmlElement(name = "ToDt")
+    @XmlElement(name = "ToDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar toDt;
 
@@ -45,7 +50,7 @@ public class DateAndPeriod2Choice {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getDt() {
@@ -57,7 +62,7 @@ public class DateAndPeriod2Choice {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public DateAndPeriod2Choice setDt(XMLGregorianCalendar value) {
@@ -95,7 +100,7 @@ public class DateAndPeriod2Choice {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getFrDt() {
@@ -107,7 +112,7 @@ public class DateAndPeriod2Choice {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public DateAndPeriod2Choice setFrDt(XMLGregorianCalendar value) {
@@ -120,7 +125,7 @@ public class DateAndPeriod2Choice {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getToDt() {
@@ -132,7 +137,7 @@ public class DateAndPeriod2Choice {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public DateAndPeriod2Choice setToDt(XMLGregorianCalendar value) {

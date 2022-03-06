@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,7 +35,8 @@ public class Unit3 {
 
     @XmlElement(name = "UnitsNb", required = true)
     protected FinancialInstrumentQuantity1 unitsNb;
-    @XmlElement(name = "AcqstnDt")
+    @XmlElement(name = "AcqstnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar acqstnDt;
     @XmlElement(name = "CertNb")
@@ -74,7 +77,7 @@ public class Unit3 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getAcqstnDt() {
@@ -86,7 +89,7 @@ public class Unit3 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Unit3 setAcqstnDt(XMLGregorianCalendar value) {

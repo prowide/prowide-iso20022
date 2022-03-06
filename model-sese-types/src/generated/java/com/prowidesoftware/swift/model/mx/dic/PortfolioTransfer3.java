@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -43,7 +45,8 @@ public class PortfolioTransfer3 {
     protected String trfId;
     @XmlElement(name = "TrfConfId")
     protected String trfConfId;
-    @XmlElement(name = "ReqdTrfDt")
+    @XmlElement(name = "ReqdTrfDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar reqdTrfDt;
     @XmlElement(name = "Prtfl")
@@ -144,7 +147,7 @@ public class PortfolioTransfer3 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getReqdTrfDt() {
@@ -156,7 +159,7 @@ public class PortfolioTransfer3 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public PortfolioTransfer3 setReqdTrfDt(XMLGregorianCalendar value) {

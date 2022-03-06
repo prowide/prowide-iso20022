@@ -7,7 +7,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,7 +35,8 @@ public class VotingPartyAndInstruction {
 
     @XmlElement(name = "Id", required = true)
     protected String id;
-    @XmlElement(name = "ReqdExctnDt")
+    @XmlElement(name = "ReqdExctnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar reqdExctnDt;
     @XmlElement(name = "PrsnDtl", required = true)
@@ -75,7 +78,7 @@ public class VotingPartyAndInstruction {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getReqdExctnDt() {
@@ -87,7 +90,7 @@ public class VotingPartyAndInstruction {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public VotingPartyAndInstruction setReqdExctnDt(XMLGregorianCalendar value) {

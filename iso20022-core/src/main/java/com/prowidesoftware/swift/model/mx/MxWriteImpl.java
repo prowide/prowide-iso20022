@@ -24,11 +24,11 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
-import javax.xml.bind.annotation.adapters.XmlAdapter;
 import javax.xml.namespace.QName;
 import java.io.StringWriter;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.ExecutionException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -73,9 +73,10 @@ public class MxWriteImpl implements MxWrite {
      * @since 9.2.6
      */
     public static String write(String namespace, AbstractMX obj, Class[] classes, MxWriteParams params) {
-        Validate.notNull(namespace, "namespace can not be null");
-        Validate.notNull(obj, "MxSwiftMessage can not be null");
-        Validate.notNull(classes, "Class[] can not be null");
+        Objects.requireNonNull(namespace, "namespace can not be null");
+        Objects.requireNonNull(obj, "MxSwiftMessage can not be null");
+        Objects.requireNonNull(classes, "Class[] can not be null");
+        Objects.requireNonNull(params, "marshalling params cannot be null");
 
         try {
             JAXBContext context = JaxbContextLoader.INSTANCE.get(obj);
@@ -83,13 +84,7 @@ public class MxWriteImpl implements MxWrite {
             // Sin el ns en el qname, para ver si toma el default
             @SuppressWarnings({"unchecked"}) final JAXBElement<? extends MxSwiftMessage> element = new JAXBElement(new QName("Document"), obj.getClass(), null, obj);
 
-            final Marshaller marshaller = context.createMarshaller();
-
-            if (params.adapters != null) {
-                for (XmlAdapter adapter : params.adapters) {
-                    marshaller.setAdapter(adapter);
-                }
-            }
+            final Marshaller marshaller = MxWriteUtils.createMarshaller(context, params);
 
             final StringWriter sw = new StringWriter();
             XmlEventWriter writer = new XmlEventWriter(sw, params.prefix, params.includeXMLDeclaration, "Document", params.escapeHandler);

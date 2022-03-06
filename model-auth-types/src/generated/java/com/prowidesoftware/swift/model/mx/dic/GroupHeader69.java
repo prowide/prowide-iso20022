@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -34,7 +36,8 @@ public class GroupHeader69 {
 
     @XmlElement(name = "Id", required = true)
     protected String id;
-    @XmlElement(name = "IssdDt", required = true)
+    @XmlElement(name = "IssdDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar issdDt;
     @XmlElement(name = "RptCtgy", required = true)
@@ -80,7 +83,7 @@ public class GroupHeader69 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getIssdDt() {
@@ -92,7 +95,7 @@ public class GroupHeader69 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public GroupHeader69 setIssdDt(XMLGregorianCalendar value) {

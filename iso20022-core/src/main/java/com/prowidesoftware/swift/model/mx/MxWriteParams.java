@@ -15,12 +15,10 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
-import javax.xml.bind.annotation.adapters.XmlAdapter;
-import java.util.ArrayList;
-import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.TypeAdaptersConfiguration;
 
 /**
- * Simple DTO to encapsulate parameters in the different model-to-XML serialization methods in the API
+ * Simple DTO to encapsulate parameters in the different model-to-XML serialization implementation methods in the API
  *
  * @since 9.2.6
  */
@@ -42,25 +40,21 @@ public class MxWriteParams {
     public EscapeHandler escapeHandler;
 
     /**
-     * Specific adapters for date time, date, time (none by default)
-     * See {@link MxWriteConfiguration}
+     * Specific adapters for date time, date, time
      */
-    public List<XmlAdapter> adapters;
+    public TypeAdaptersConfiguration adapters;
 
     public MxWriteParams() {
-        this.prefix = null;
-        this.includeXMLDeclaration = false;
-        this.escapeHandler = null;
-        this.adapters = new ArrayList<>();
+        this(new MxWriteConfiguration());
     }
 
     MxWriteParams(MxWriteConfiguration conf) {
-        this();
-        this.includeXMLDeclaration = conf.includeXMLDeclaration;
-        this.escapeHandler = conf.escapeHandler;
-        this.adapters.add(conf.dateTimeAdapter);
-        this.adapters.add(conf.dateAdapter);
-        this.adapters.add(conf.timeAdapter);
+        this.prefix = null;
+        MxWriteConfiguration notNullConf = conf == null? new MxWriteConfiguration() : conf;
+        // use same defaults as configuration
+        this.includeXMLDeclaration = notNullConf.includeXMLDeclaration;
+        this.escapeHandler = notNullConf.escapeHandler;
+        this.adapters = notNullConf.adapters;
     }
 
 }

@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -34,7 +36,8 @@ public class OriginalNotification5 {
 
     @XmlElement(name = "OrgnlMsgId", required = true)
     protected String orgnlMsgId;
-    @XmlElement(name = "OrgnlCreDtTm")
+    @XmlElement(name = "OrgnlCreDtTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar orgnlCreDtTm;
     @XmlElement(name = "OrgnlNtfctnId", required = true)
@@ -77,7 +80,7 @@ public class OriginalNotification5 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getOrgnlCreDtTm() {
@@ -89,7 +92,7 @@ public class OriginalNotification5 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public OriginalNotification5 setOrgnlCreDtTm(XMLGregorianCalendar value) {

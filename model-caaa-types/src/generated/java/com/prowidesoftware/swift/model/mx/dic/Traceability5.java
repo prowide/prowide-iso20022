@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -35,10 +37,12 @@ public class Traceability5 {
     protected String prtcolNm;
     @XmlElement(name = "PrtcolVrsn")
     protected String prtcolVrsn;
-    @XmlElement(name = "TracDtTmIn", required = true)
+    @XmlElement(name = "TracDtTmIn", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar tracDtTmIn;
-    @XmlElement(name = "TracDtTmOut", required = true)
+    @XmlElement(name = "TracDtTmOut", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar tracDtTmOut;
 
@@ -122,7 +126,7 @@ public class Traceability5 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getTracDtTmIn() {
@@ -134,7 +138,7 @@ public class Traceability5 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Traceability5 setTracDtTmIn(XMLGregorianCalendar value) {
@@ -147,7 +151,7 @@ public class Traceability5 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getTracDtTmOut() {
@@ -159,7 +163,7 @@ public class Traceability5 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Traceability5 setTracDtTmOut(XMLGregorianCalendar value) {

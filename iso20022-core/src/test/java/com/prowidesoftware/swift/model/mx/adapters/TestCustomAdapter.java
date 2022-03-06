@@ -15,9 +15,16 @@
  */
 package com.prowidesoftware.swift.model.mx.adapters;
 
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 
-public class TestDateTimeAdapter extends IsoDateTimeAdapter {
+public class TestCustomAdapter extends XmlAdapter<String, XMLGregorianCalendar> {
+
+    @Override
+    public XMLGregorianCalendar unmarshal(String v) throws Exception {
+        return DatatypeFactory.newInstance().newXMLGregorianCalendar();
+    }
 
     @Override
     public String marshal(XMLGregorianCalendar cal) throws Exception {

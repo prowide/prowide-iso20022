@@ -20,6 +20,7 @@ import com.prowidesoftware.deprecation.TargetYear;
 import org.w3c.dom.Element;
 
 import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Objects;
 
 /**
  * The business header is an optional part of the payload of an ISO 20022 message, and contains general information
@@ -141,11 +142,12 @@ public interface AppHdr {
     /**
      * Get this header as an XML string.
      *
-     * @param params optional serialization options
+     * @param params not null marshalling parameters
      * @return header serialized into XML string or null in case of unexpected error
      * @since 9.2.6
      */
     default String xml(MxWriteParams params) {
+        Objects.requireNonNull(params, "The marshalling params cannot be null");
         return xml(params.prefix, params.includeXMLDeclaration);
     }
 

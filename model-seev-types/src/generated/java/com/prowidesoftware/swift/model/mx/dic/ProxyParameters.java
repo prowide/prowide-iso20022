@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -35,13 +37,16 @@ public class ProxyParameters {
     protected List<Proxy> authrsdPrxy;
     @XmlElement(name = "PrxyAppntmntInf")
     protected String prxyAppntmntInf;
-    @XmlElement(name = "PrxyAppntmntDdln")
+    @XmlElement(name = "PrxyAppntmntDdln", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar prxyAppntmntDdln;
-    @XmlElement(name = "PrxyAppntmntElctrncDdln")
+    @XmlElement(name = "PrxyAppntmntElctrncDdln", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar prxyAppntmntElctrncDdln;
-    @XmlElement(name = "PrxyAppntmntMktDdln")
+    @XmlElement(name = "PrxyAppntmntMktDdln", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar prxyAppntmntMktDdln;
 
@@ -104,7 +109,7 @@ public class ProxyParameters {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getPrxyAppntmntDdln() {
@@ -116,7 +121,7 @@ public class ProxyParameters {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public ProxyParameters setPrxyAppntmntDdln(XMLGregorianCalendar value) {
@@ -129,7 +134,7 @@ public class ProxyParameters {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getPrxyAppntmntElctrncDdln() {
@@ -141,7 +146,7 @@ public class ProxyParameters {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public ProxyParameters setPrxyAppntmntElctrncDdln(XMLGregorianCalendar value) {
@@ -154,7 +159,7 @@ public class ProxyParameters {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getPrxyAppntmntMktDdln() {
@@ -166,7 +171,7 @@ public class ProxyParameters {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public ProxyParameters setPrxyAppntmntMktDdln(XMLGregorianCalendar value) {

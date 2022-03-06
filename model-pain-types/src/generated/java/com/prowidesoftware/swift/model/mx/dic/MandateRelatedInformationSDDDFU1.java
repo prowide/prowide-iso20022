@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -31,7 +33,8 @@ public class MandateRelatedInformationSDDDFU1 {
 
     @XmlElement(name = "MndtId", required = true)
     protected String mndtId;
-    @XmlElement(name = "DtOfSgntr", required = true)
+    @XmlElement(name = "DtOfSgntr", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar dtOfSgntr;
     @XmlElement(name = "AmdmntInd")
@@ -71,7 +74,7 @@ public class MandateRelatedInformationSDDDFU1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getDtOfSgntr() {
@@ -83,7 +86,7 @@ public class MandateRelatedInformationSDDDFU1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public MandateRelatedInformationSDDDFU1 setDtOfSgntr(XMLGregorianCalendar value) {

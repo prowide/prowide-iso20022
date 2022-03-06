@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -48,7 +50,8 @@ public class TransactionDetails1 {
     protected List<String> assoctdTradRef;
     @XmlElement(name = "PlcOfTrad", required = true)
     protected PlaceOfTradeIdentification2Choice plcOfTrad;
-    @XmlElement(name = "TradDtTm", required = true)
+    @XmlElement(name = "TradDtTm", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar tradDtTm;
     @XmlElement(name = "FinInstrmDtls", required = true)
@@ -71,7 +74,8 @@ public class TransactionDetails1 {
     protected UnitOrFaceAmountChoice exctdTradQty;
     @XmlElement(name = "SttlmAmt")
     protected ActiveCurrencyAndAmount sttlmAmt;
-    @XmlElement(name = "SttlmDt")
+    @XmlElement(name = "SttlmDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar sttlmDt;
     @XmlElement(name = "PrxyHldr")
@@ -163,7 +167,7 @@ public class TransactionDetails1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getTradDtTm() {
@@ -175,7 +179,7 @@ public class TransactionDetails1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public TransactionDetails1 setTradDtTm(XMLGregorianCalendar value) {
@@ -417,7 +421,7 @@ public class TransactionDetails1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getSttlmDt() {
@@ -429,7 +433,7 @@ public class TransactionDetails1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public TransactionDetails1 setSttlmDt(XMLGregorianCalendar value) {

@@ -57,14 +57,14 @@ public enum DTCAdjustmentPaymentType5Code {
     MISC("MISC"),
 
     /**
-     * Participant deposited a security within 10 days after a corporate action event has occurred.
+     * Participant deposited a security within 10 days after a corporate action event has occurred. 
      * 
      */
     @XmlEnumValue("RRD1")
     RRD_1("RRD1"),
 
     /**
-     * Participant deposited a security 10 days after a corporate action event has occurred.
+     * Participant deposited a security 10 days after a corporate action event has occurred. 
      * 
      */
     @XmlEnumValue("RRD2")

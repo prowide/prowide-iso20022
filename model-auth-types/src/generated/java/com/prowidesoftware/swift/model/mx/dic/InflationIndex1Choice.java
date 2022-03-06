@@ -12,7 +12,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Choice of an inflation index identification. 
+ * Choice of an inflation index identification.
  * 
  * 
  * 

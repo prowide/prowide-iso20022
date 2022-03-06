@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -35,7 +37,8 @@ public class FundParameters2 {
     protected List<FinancialInstrument17> finInstrmDtls;
     @XmlElement(name = "FndMgmtCpny")
     protected PartyIdentification2Choice fndMgmtCpny;
-    @XmlElement(name = "DtFr")
+    @XmlElement(name = "DtFr", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar dtFr;
     @XmlElement(name = "CtryOfDmcl")
@@ -102,7 +105,7 @@ public class FundParameters2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getDtFr() {
@@ -114,7 +117,7 @@ public class FundParameters2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public FundParameters2 setDtFr(XMLGregorianCalendar value) {

@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -28,7 +30,8 @@ public class Presentation2 {
 
     @XmlElement(name = "Presntr")
     protected PartyIdentification43 presntr;
-    @XmlElement(name = "BnfcryPresntnDt")
+    @XmlElement(name = "BnfcryPresntnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar bnfcryPresntnDt;
 
@@ -62,7 +65,7 @@ public class Presentation2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getBnfcryPresntnDt() {
@@ -74,7 +77,7 @@ public class Presentation2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Presentation2 setBnfcryPresntnDt(XMLGregorianCalendar value) {

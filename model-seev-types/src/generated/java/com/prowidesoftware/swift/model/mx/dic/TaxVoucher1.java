@@ -7,7 +7,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -76,10 +78,12 @@ public class TaxVoucher1 {
     protected ActiveCurrencyAndAmount ntnlTax;
     @XmlElement(name = "NtnlDvddPybl")
     protected ActiveCurrencyAndAmount ntnlDvddPybl;
-    @XmlElement(name = "BrgnDt")
+    @XmlElement(name = "BrgnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar brgnDt;
-    @XmlElement(name = "BrgnSttlmDt")
+    @XmlElement(name = "BrgnSttlmDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar brgnSttlmDt;
     @XmlElement(name = "StmpDtyAmt")
@@ -471,7 +475,7 @@ public class TaxVoucher1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getBrgnDt() {
@@ -483,7 +487,7 @@ public class TaxVoucher1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public TaxVoucher1 setBrgnDt(XMLGregorianCalendar value) {
@@ -496,7 +500,7 @@ public class TaxVoucher1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getBrgnSttlmDt() {
@@ -508,7 +512,7 @@ public class TaxVoucher1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public TaxVoucher1 setBrgnSttlmDt(XMLGregorianCalendar value) {

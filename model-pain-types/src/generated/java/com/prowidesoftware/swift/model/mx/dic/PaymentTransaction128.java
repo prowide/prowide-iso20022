@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -57,10 +59,12 @@ public class PaymentTransaction128 {
     protected PaymentConditionStatus1 pmtCondSts;
     @XmlElement(name = "ChrgsInf")
     protected List<Charges7> chrgsInf;
-    @XmlElement(name = "DbtrDcsnDtTm")
+    @XmlElement(name = "DbtrDcsnDtTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar dbtrDcsnDtTm;
-    @XmlElement(name = "AccptncDtTm")
+    @XmlElement(name = "AccptncDtTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar accptncDtTm;
     @XmlElement(name = "AcctSvcrRef")
@@ -287,7 +291,7 @@ public class PaymentTransaction128 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getDbtrDcsnDtTm() {
@@ -299,7 +303,7 @@ public class PaymentTransaction128 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public PaymentTransaction128 setDbtrDcsnDtTm(XMLGregorianCalendar value) {
@@ -312,7 +316,7 @@ public class PaymentTransaction128 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getAccptncDtTm() {
@@ -324,7 +328,7 @@ public class PaymentTransaction128 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public PaymentTransaction128 setAccptncDtTm(XMLGregorianCalendar value) {

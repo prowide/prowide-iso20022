@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -34,7 +36,8 @@ public class UpdatedAdditionalInformation11 {
     protected String lang;
     @XmlElement(name = "UpdDesc")
     protected String updDesc;
-    @XmlElement(name = "UpdDt")
+    @XmlElement(name = "UpdDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar updDt;
     @XmlElement(name = "AddtlInf", required = true)
@@ -95,7 +98,7 @@ public class UpdatedAdditionalInformation11 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getUpdDt() {
@@ -107,7 +110,7 @@ public class UpdatedAdditionalInformation11 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public UpdatedAdditionalInformation11 setUpdDt(XMLGregorianCalendar value) {

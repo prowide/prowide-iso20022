@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -36,10 +38,12 @@ public class AlternateIdentification4 {
     protected OtherIdentification4Choice tp;
     @XmlElement(name = "Issr")
     protected String issr;
-    @XmlElement(name = "IsseDt")
+    @XmlElement(name = "IsseDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar isseDt;
-    @XmlElement(name = "XpryDt")
+    @XmlElement(name = "XpryDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar xpryDt;
     @XmlElement(name = "IssrCtry")
@@ -125,7 +129,7 @@ public class AlternateIdentification4 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getIsseDt() {
@@ -137,7 +141,7 @@ public class AlternateIdentification4 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public AlternateIdentification4 setIsseDt(XMLGregorianCalendar value) {
@@ -150,7 +154,7 @@ public class AlternateIdentification4 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getXpryDt() {
@@ -162,7 +166,7 @@ public class AlternateIdentification4 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public AlternateIdentification4 setXpryDt(XMLGregorianCalendar value) {

@@ -9,7 +9,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -67,7 +69,8 @@ public class RedemptionExecution10 {
     protected String clntRef;
     @XmlElement(name = "DealRef", required = true)
     protected String dealRef;
-    @XmlElement(name = "ReqdTradDt")
+    @XmlElement(name = "ReqdTradDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar reqdTradDt;
     @XmlElement(name = "HdgFndOrdrTp")
@@ -97,10 +100,12 @@ public class RedemptionExecution10 {
     protected List<LotDetails1> lotDtls;
     @XmlElement(name = "TradDtTm", required = true)
     protected DateAndDateTimeChoice tradDtTm;
-    @XmlElement(name = "NAVDt", required = true)
+    @XmlElement(name = "NAVDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar navDt;
-    @XmlElement(name = "CshSttlmDt")
+    @XmlElement(name = "CshSttlmDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar cshSttlmDt;
     @XmlElement(name = "ReqdSttlmCcy")
@@ -233,7 +238,7 @@ public class RedemptionExecution10 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getReqdTradDt() {
@@ -245,7 +250,7 @@ public class RedemptionExecution10 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public RedemptionExecution10 setReqdTradDt(XMLGregorianCalendar value) {
@@ -595,7 +600,7 @@ public class RedemptionExecution10 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getNAVDt() {
@@ -607,7 +612,7 @@ public class RedemptionExecution10 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public RedemptionExecution10 setNAVDt(XMLGregorianCalendar value) {
@@ -620,7 +625,7 @@ public class RedemptionExecution10 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getCshSttlmDt() {
@@ -632,7 +637,7 @@ public class RedemptionExecution10 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public RedemptionExecution10 setCshSttlmDt(XMLGregorianCalendar value) {

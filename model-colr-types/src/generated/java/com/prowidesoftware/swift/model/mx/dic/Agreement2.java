@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,7 +35,8 @@ public class Agreement2 {
     protected String agrmtDtls;
     @XmlElement(name = "AgrmtId")
     protected String agrmtId;
-    @XmlElement(name = "AgrmtDt", required = true)
+    @XmlElement(name = "AgrmtDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar agrmtDt;
     @XmlElement(name = "BaseCcy", required = true)
@@ -96,7 +99,7 @@ public class Agreement2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getAgrmtDt() {
@@ -108,7 +111,7 @@ public class Agreement2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Agreement2 setAgrmtDt(XMLGregorianCalendar value) {

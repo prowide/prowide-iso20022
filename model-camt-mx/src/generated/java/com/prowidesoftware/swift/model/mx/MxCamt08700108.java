@@ -11,7 +11,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
-import com.prowidesoftware.swift.model.mx.MxReadImpl;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -124,11 +124,20 @@ public class MxCamt08700108
     }
 
     /**
-     * Creates the MX object parsing the raw content from the parameter XML
+     * Creates the MX object parsing the raw content from the parameter XML, using default unmarshalling options
      * 
      */
     public static MxCamt08700108 parse(String xml) {
-        return ((MxCamt08700108) MxReadImpl.parse(MxCamt08700108 .class, xml, _classes));
+        return ((MxCamt08700108) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxCamt08700108 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams()));
+    }
+
+    /**
+     * Creates the MX object parsing the raw content from the parameter XML, using the provided unmarshalling options
+     * @since 9.2.6
+     * 
+     */
+    public static MxCamt08700108 parse(String xml, MxReadConfiguration conf) {
+        return ((MxCamt08700108) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxCamt08700108 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams(conf)));
     }
 
     /**

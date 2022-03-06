@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -64,14 +66,16 @@ public class Transfer33 {
     protected BusinessFlowType1Code bizFlowTp;
     @XmlElement(name = "FctvTrfDt")
     protected DateAndDateTimeChoice fctvTrfDt;
-    @XmlElement(name = "ReqdSttlmDt")
+    @XmlElement(name = "ReqdSttlmDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar reqdSttlmDt;
     @XmlElement(name = "FctvSttlmDt")
     protected DateAndDateTimeChoice fctvSttlmDt;
     @XmlElement(name = "TradDt")
     protected DateAndDateTimeChoice tradDt;
-    @XmlElement(name = "TrfOrdrDtForm")
+    @XmlElement(name = "TrfOrdrDtForm", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar trfOrdrDtForm;
     @XmlElement(name = "TrfRsn")
@@ -89,10 +93,12 @@ public class Transfer33 {
     protected ActiveOrHistoricCurrencyAnd13DecimalAmount avrgPric;
     @XmlElement(name = "NewAvrgPric")
     protected ActiveOrHistoricCurrencyAnd13DecimalAmount newAvrgPric;
-    @XmlElement(name = "AvrgDt")
+    @XmlElement(name = "AvrgDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar avrgDt;
-    @XmlElement(name = "NewAvrgDt")
+    @XmlElement(name = "NewAvrgDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar newAvrgDt;
     @XmlElement(name = "TrfCcy")
@@ -263,7 +269,7 @@ public class Transfer33 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getReqdSttlmDt() {
@@ -275,7 +281,7 @@ public class Transfer33 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Transfer33 setReqdSttlmDt(XMLGregorianCalendar value) {
@@ -338,7 +344,7 @@ public class Transfer33 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getTrfOrdrDtForm() {
@@ -350,7 +356,7 @@ public class Transfer33 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Transfer33 setTrfOrdrDtForm(XMLGregorianCalendar value) {
@@ -546,7 +552,7 @@ public class Transfer33 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getAvrgDt() {
@@ -558,7 +564,7 @@ public class Transfer33 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Transfer33 setAvrgDt(XMLGregorianCalendar value) {
@@ -571,7 +577,7 @@ public class Transfer33 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getNewAvrgDt() {
@@ -583,7 +589,7 @@ public class Transfer33 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Transfer33 setNewAvrgDt(XMLGregorianCalendar value) {

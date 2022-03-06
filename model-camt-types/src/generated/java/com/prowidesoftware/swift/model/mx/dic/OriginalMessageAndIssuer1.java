@@ -14,7 +14,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 /**
  * Business reference(s) to one or more relevant messages previously sent by other parties, or by the same party issuing this message.
  * 
- * 
+ * .
  * 
  * 
  * 

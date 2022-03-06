@@ -9,7 +9,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -49,7 +51,8 @@ public class Trade3 {
     @XmlElement(name = "SttlmTp", required = true)
     @XmlSchemaType(name = "string")
     protected SettlementDateCode sttlmTp;
-    @XmlElement(name = "SttlmDt", required = true)
+    @XmlElement(name = "SttlmDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar sttlmDt;
     @XmlElement(name = "ValtnRate", required = true)
@@ -58,7 +61,8 @@ public class Trade3 {
     protected BigDecimal fwdPts;
     @XmlElement(name = "ClctdCtrPtyCcyLastQty", required = true)
     protected CurrencyAndAmount clctdCtrPtyCcyLastQty;
-    @XmlElement(name = "ValDt", required = true)
+    @XmlElement(name = "ValDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar valDt;
     @XmlElement(name = "RskAmt", required = true)
@@ -67,7 +71,8 @@ public class Trade3 {
     protected SecurityIdentification18 sctyId;
     @XmlElement(name = "FxgCcy")
     protected String fxgCcy;
-    @XmlElement(name = "FxgDt")
+    @XmlElement(name = "FxgDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar fxgDt;
     @XmlElement(name = "OptnInd")
@@ -157,7 +162,7 @@ public class Trade3 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getSttlmDt() {
@@ -169,7 +174,7 @@ public class Trade3 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Trade3 setSttlmDt(XMLGregorianCalendar value) {
@@ -257,7 +262,7 @@ public class Trade3 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getValDt() {
@@ -269,7 +274,7 @@ public class Trade3 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Trade3 setValDt(XMLGregorianCalendar value) {
@@ -357,7 +362,7 @@ public class Trade3 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getFxgDt() {
@@ -369,7 +374,7 @@ public class Trade3 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Trade3 setFxgDt(XMLGregorianCalendar value) {

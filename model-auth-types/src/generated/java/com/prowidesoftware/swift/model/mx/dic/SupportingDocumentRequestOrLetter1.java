@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -40,7 +42,8 @@ public class SupportingDocumentRequestOrLetter1 {
 
     @XmlElement(name = "ReqOrLttrId", required = true)
     protected String reqOrLttrId;
-    @XmlElement(name = "Dt")
+    @XmlElement(name = "Dt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar dt;
     @XmlElement(name = "Sndr")
@@ -58,7 +61,8 @@ public class SupportingDocumentRequestOrLetter1 {
     protected String desc;
     @XmlElement(name = "RspnReqrd")
     protected boolean rspnReqrd;
-    @XmlElement(name = "DueDt")
+    @XmlElement(name = "DueDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar dueDt;
     @XmlElement(name = "Attchmnt")
@@ -96,7 +100,7 @@ public class SupportingDocumentRequestOrLetter1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getDt() {
@@ -108,7 +112,7 @@ public class SupportingDocumentRequestOrLetter1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public SupportingDocumentRequestOrLetter1 setDt(XMLGregorianCalendar value) {
@@ -292,7 +296,7 @@ public class SupportingDocumentRequestOrLetter1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getDueDt() {
@@ -304,7 +308,7 @@ public class SupportingDocumentRequestOrLetter1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public SupportingDocumentRequestOrLetter1 setDueDt(XMLGregorianCalendar value) {

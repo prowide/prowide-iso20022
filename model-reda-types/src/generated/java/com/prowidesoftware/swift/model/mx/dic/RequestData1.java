@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -34,7 +36,8 @@ public class RequestData1 {
     protected String msgId;
     @XmlElement(name = "ReqTp", required = true)
     protected String reqTp;
-    @XmlElement(name = "ReqdActvtnDt", required = true)
+    @XmlElement(name = "ReqdActvtnDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar reqdActvtnDt;
     @XmlElement(name = "ReqSvcr")
@@ -99,7 +102,7 @@ public class RequestData1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getReqdActvtnDt() {
@@ -111,7 +114,7 @@ public class RequestData1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public RequestData1 setReqdActvtnDt(XMLGregorianCalendar value) {

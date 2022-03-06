@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -32,10 +34,12 @@ public class BuyIn4 {
     protected Boolean wrngInd;
     @XmlElement(name = "XpctdBuyInDt", required = true)
     protected DateFormat15Choice xpctdBuyInDt;
-    @XmlElement(name = "CxlLmtDt")
+    @XmlElement(name = "CxlLmtDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar cxlLmtDt;
-    @XmlElement(name = "BuyInRvrsnDt")
+    @XmlElement(name = "BuyInRvrsnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar buyInRvrsnDt;
 
@@ -94,7 +98,7 @@ public class BuyIn4 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getCxlLmtDt() {
@@ -106,7 +110,7 @@ public class BuyIn4 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public BuyIn4 setCxlLmtDt(XMLGregorianCalendar value) {
@@ -119,7 +123,7 @@ public class BuyIn4 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getBuyInRvrsnDt() {
@@ -131,7 +135,7 @@ public class BuyIn4 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public BuyIn4 setBuyInRvrsnDt(XMLGregorianCalendar value) {

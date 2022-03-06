@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -14,7 +16,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Provides details specific to the liquidity credit transfer, used to  transfer an amount of money from the debtor to the creditor, where both are financial institutions.
+ * Provides details specific to the liquidity credit transfer, used to transfer an amount of money from the debtor to the creditor, where both are financial institutions.
  * 
  * 
  * 
@@ -43,7 +45,8 @@ public class LiquidityCreditTransfer1 {
     protected BranchAndFinancialInstitutionIdentification5 dbtr;
     @XmlElement(name = "DbtrAcct")
     protected CashAccount24 dbtrAcct;
-    @XmlElement(name = "SttlmDt")
+    @XmlElement(name = "SttlmDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar sttlmDt;
 
@@ -202,7 +205,7 @@ public class LiquidityCreditTransfer1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getSttlmDt() {
@@ -214,7 +217,7 @@ public class LiquidityCreditTransfer1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public LiquidityCreditTransfer1 setSttlmDt(XMLGregorianCalendar value) {

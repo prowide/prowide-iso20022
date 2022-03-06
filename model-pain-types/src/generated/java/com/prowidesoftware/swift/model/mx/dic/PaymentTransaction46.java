@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -50,7 +52,8 @@ public class PaymentTransaction46 {
     protected List<StatusReasonInformation9> stsRsnInf;
     @XmlElement(name = "ChrgsInf")
     protected List<Charges2> chrgsInf;
-    @XmlElement(name = "AccptncDtTm")
+    @XmlElement(name = "AccptncDtTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar accptncDtTm;
     @XmlElement(name = "AcctSvcrRef")
@@ -225,7 +228,7 @@ public class PaymentTransaction46 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getAccptncDtTm() {
@@ -237,7 +240,7 @@ public class PaymentTransaction46 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public PaymentTransaction46 setAccptncDtTm(XMLGregorianCalendar value) {

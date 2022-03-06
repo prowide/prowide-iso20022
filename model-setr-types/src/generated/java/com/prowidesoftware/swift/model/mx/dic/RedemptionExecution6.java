@@ -9,7 +9,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -97,7 +99,8 @@ public class RedemptionExecution6 {
     protected DateAndDateTimeChoice tradDtTm;
     @XmlElement(name = "SttlmAmt", required = true)
     protected ActiveCurrencyAndAmount sttlmAmt;
-    @XmlElement(name = "CshSttlmDt")
+    @XmlElement(name = "CshSttlmDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar cshSttlmDt;
     @XmlElement(name = "SttlmMtd")
@@ -500,7 +503,7 @@ public class RedemptionExecution6 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getCshSttlmDt() {
@@ -512,7 +515,7 @@ public class RedemptionExecution6 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public RedemptionExecution6 setCshSttlmDt(XMLGregorianCalendar value) {

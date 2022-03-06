@@ -9,7 +9,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -63,7 +65,8 @@ public class PaymentInstruction40 {
     protected PaymentTypeInformation26 pmtTpInf;
     @XmlElement(name = "ReqdExctnDt", required = true)
     protected DateAndDateTime2Choice reqdExctnDt;
-    @XmlElement(name = "PoolgAdjstmntDt")
+    @XmlElement(name = "PoolgAdjstmntDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar poolgAdjstmntDt;
     @XmlElement(name = "Dbtr", required = true)
@@ -293,7 +296,7 @@ public class PaymentInstruction40 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getPoolgAdjstmntDt() {
@@ -305,7 +308,7 @@ public class PaymentInstruction40 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public PaymentInstruction40 setPoolgAdjstmntDt(XMLGregorianCalendar value) {

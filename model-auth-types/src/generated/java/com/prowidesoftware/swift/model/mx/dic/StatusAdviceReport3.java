@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -35,7 +37,8 @@ public class StatusAdviceReport3 {
     protected ReportingMessageStatus1Code sts;
     @XmlElement(name = "VldtnRule")
     protected List<GenericValidationRuleIdentification1> vldtnRule;
-    @XmlElement(name = "MsgDt")
+    @XmlElement(name = "MsgDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar msgDt;
     @XmlElement(name = "Sttstcs")
@@ -100,7 +103,7 @@ public class StatusAdviceReport3 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getMsgDt() {
@@ -112,7 +115,7 @@ public class StatusAdviceReport3 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public StatusAdviceReport3 setMsgDt(XMLGregorianCalendar value) {

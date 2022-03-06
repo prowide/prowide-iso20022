@@ -45,7 +45,7 @@ public enum GrossDividendRateType5Code {
     CAPO,
 
     /**
-     * Distribution rate relating to the full period units, for example Group I units in UK. 
+     * Distribution rate relating to the full period units, for example Group I units in UK.
      * 
      */
     FUPU,
@@ -75,7 +75,7 @@ public enum GrossDividendRateType5Code {
     LTCG,
 
     /**
-     * Distribution rate relating to the part way period units, for example Group II units in UK. 
+     * Distribution rate relating to the part way period units, for example Group II units in UK.
      * 
      */
     PAPU,

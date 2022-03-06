@@ -7,7 +7,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -81,10 +83,12 @@ public class TransactionDetails103 {
     protected SettlementDate17Choice sttlmDt;
     @XmlElement(name = "ValDt")
     protected DateAndDateTime2Choice valDt;
-    @XmlElement(name = "AckdStsTmStmp")
+    @XmlElement(name = "AckdStsTmStmp", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar ackdStsTmStmp;
-    @XmlElement(name = "MtchdStsTmStmp")
+    @XmlElement(name = "MtchdStsTmStmp", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar mtchdStsTmStmp;
     @XmlElement(name = "DlvrgSttlmPties")
@@ -501,7 +505,7 @@ public class TransactionDetails103 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getAckdStsTmStmp() {
@@ -513,7 +517,7 @@ public class TransactionDetails103 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public TransactionDetails103 setAckdStsTmStmp(XMLGregorianCalendar value) {
@@ -526,7 +530,7 @@ public class TransactionDetails103 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getMtchdStsTmStmp() {
@@ -538,7 +542,7 @@ public class TransactionDetails103 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public TransactionDetails103 setMtchdStsTmStmp(XMLGregorianCalendar value) {

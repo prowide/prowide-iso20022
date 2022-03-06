@@ -9,7 +9,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -49,13 +51,16 @@ public class VoteParameters {
     protected Boolean prtlVoteAllwd;
     @XmlElement(name = "SpltVoteAllwd")
     protected Boolean spltVoteAllwd;
-    @XmlElement(name = "VoteDdln")
+    @XmlElement(name = "VoteDdln", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar voteDdln;
-    @XmlElement(name = "VoteElctrncDdln")
+    @XmlElement(name = "VoteElctrncDdln", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar voteElctrncDdln;
-    @XmlElement(name = "VoteMktDdln")
+    @XmlElement(name = "VoteMktDdln", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar voteMktDdln;
     @XmlElement(name = "VoteMthds")
@@ -73,13 +78,16 @@ public class VoteParameters {
     @XmlElement(name = "VoteInstrTp")
     @XmlSchemaType(name = "string")
     protected List<VoteInstruction2Code> voteInstrTp;
-    @XmlElement(name = "VoteWthPrmDdln")
+    @XmlElement(name = "VoteWthPrmDdln", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar voteWthPrmDdln;
-    @XmlElement(name = "VoteWthPrmElctrncDdln")
+    @XmlElement(name = "VoteWthPrmElctrncDdln", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar voteWthPrmElctrncDdln;
-    @XmlElement(name = "VoteWthPrmMktDdln")
+    @XmlElement(name = "VoteWthPrmMktDdln", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar voteWthPrmMktDdln;
 
@@ -163,7 +171,7 @@ public class VoteParameters {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getVoteDdln() {
@@ -175,7 +183,7 @@ public class VoteParameters {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public VoteParameters setVoteDdln(XMLGregorianCalendar value) {
@@ -188,7 +196,7 @@ public class VoteParameters {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getVoteElctrncDdln() {
@@ -200,7 +208,7 @@ public class VoteParameters {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public VoteParameters setVoteElctrncDdln(XMLGregorianCalendar value) {
@@ -213,7 +221,7 @@ public class VoteParameters {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getVoteMktDdln() {
@@ -225,7 +233,7 @@ public class VoteParameters {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public VoteParameters setVoteMktDdln(XMLGregorianCalendar value) {
@@ -417,7 +425,7 @@ public class VoteParameters {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getVoteWthPrmDdln() {
@@ -429,7 +437,7 @@ public class VoteParameters {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public VoteParameters setVoteWthPrmDdln(XMLGregorianCalendar value) {
@@ -442,7 +450,7 @@ public class VoteParameters {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getVoteWthPrmElctrncDdln() {
@@ -454,7 +462,7 @@ public class VoteParameters {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public VoteParameters setVoteWthPrmElctrncDdln(XMLGregorianCalendar value) {
@@ -467,7 +475,7 @@ public class VoteParameters {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getVoteWthPrmMktDdln() {
@@ -479,7 +487,7 @@ public class VoteParameters {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public VoteParameters setVoteWthPrmMktDdln(XMLGregorianCalendar value) {

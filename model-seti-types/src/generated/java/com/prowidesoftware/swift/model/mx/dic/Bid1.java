@@ -7,7 +7,10 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -59,15 +62,18 @@ public class Bid1 {
     protected BigDecimal ttlNbTckts;
     @XmlElement(name = "PrgrsRptInd")
     protected Boolean prgrsRptInd;
-    @XmlElement(name = "PrgrsPrdIntrvl")
+    @XmlElement(name = "PrgrsPrdIntrvl", type = String.class)
+    @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
     protected XMLGregorianCalendar prgrsPrdIntrvl;
     @XmlElement(name = "TtlNbOfBddrs")
     protected BigDecimal ttlNbOfBddrs;
-    @XmlElement(name = "TradDt")
+    @XmlElement(name = "TradDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar tradDt;
-    @XmlElement(name = "StrkTm")
+    @XmlElement(name = "StrkTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar strkTm;
     @XmlElement(name = "BsisPricTp", required = true)
@@ -289,7 +295,7 @@ public class Bid1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getPrgrsPrdIntrvl() {
@@ -301,7 +307,7 @@ public class Bid1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Bid1 setPrgrsPrdIntrvl(XMLGregorianCalendar value) {
@@ -339,7 +345,7 @@ public class Bid1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getTradDt() {
@@ -351,7 +357,7 @@ public class Bid1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Bid1 setTradDt(XMLGregorianCalendar value) {
@@ -364,7 +370,7 @@ public class Bid1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getStrkTm() {
@@ -376,7 +382,7 @@ public class Bid1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Bid1 setStrkTm(XMLGregorianCalendar value) {

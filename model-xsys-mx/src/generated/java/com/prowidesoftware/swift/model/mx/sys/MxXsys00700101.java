@@ -10,9 +10,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
-import com.prowidesoftware.swift.model.mx.AbstractMX;
 import com.prowidesoftware.swift.model.mx.MxRead;
-import com.prowidesoftware.swift.model.mx.MxReadImpl;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -29,7 +28,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:swift:xsd:xsys.007.001.01")
 public class MxXsys00700101
-    extends AbstractMX
+    extends com.prowidesoftware.swift.model.mx.AbstractMX
 {
 
     @XmlElement(name = "xsys.007.001.01", required = true)
@@ -125,11 +124,20 @@ public class MxXsys00700101
     }
 
     /**
-     * Creates the MX object parsing the raw content from the parameter XML
+     * Creates the MX object parsing the raw content from the parameter XML, using default unmarshalling options
      * 
      */
     public static MxXsys00700101 parse(String xml) {
-        return ((MxXsys00700101) MxReadImpl.parse(MxXsys00700101 .class, xml, _classes));
+        return ((MxXsys00700101) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxXsys00700101 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams()));
+    }
+
+    /**
+     * Creates the MX object parsing the raw content from the parameter XML, using the provided unmarshalling options
+     * @since 9.2.6
+     * 
+     */
+    public static MxXsys00700101 parse(String xml, MxReadConfiguration conf) {
+        return ((MxXsys00700101) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxXsys00700101 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams(conf)));
     }
 
     /**
@@ -166,7 +174,7 @@ public class MxXsys00700101
      *     a new instance of MxXsys00700101
      */
     public final static MxXsys00700101 fromJson(String json) {
-        return AbstractMX.fromJson(json, MxXsys00700101 .class);
+        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxXsys00700101 .class);
     }
 
 }

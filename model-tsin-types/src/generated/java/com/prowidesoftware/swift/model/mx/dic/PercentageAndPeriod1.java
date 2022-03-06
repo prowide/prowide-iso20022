@@ -7,7 +7,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -30,10 +32,12 @@ public class PercentageAndPeriod1 {
 
     @XmlElement(name = "Pctg", required = true)
     protected BigDecimal pctg;
-    @XmlElement(name = "StartDt")
+    @XmlElement(name = "StartDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar startDt;
-    @XmlElement(name = "EndDt")
+    @XmlElement(name = "EndDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar endDt;
 
@@ -67,7 +71,7 @@ public class PercentageAndPeriod1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getStartDt() {
@@ -79,7 +83,7 @@ public class PercentageAndPeriod1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public PercentageAndPeriod1 setStartDt(XMLGregorianCalendar value) {
@@ -92,7 +96,7 @@ public class PercentageAndPeriod1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getEndDt() {
@@ -104,7 +108,7 @@ public class PercentageAndPeriod1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public PercentageAndPeriod1 setEndDt(XMLGregorianCalendar value) {

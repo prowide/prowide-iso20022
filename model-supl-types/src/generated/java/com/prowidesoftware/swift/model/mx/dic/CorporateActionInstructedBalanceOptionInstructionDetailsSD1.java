@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -46,7 +48,8 @@ public class CorporateActionInstructedBalanceOptionInstructionDetailsSD1 {
     protected String txId;
     @XmlElement(name = "TxSeqNb")
     protected String txSeqNb;
-    @XmlElement(name = "TxIdDt", required = true)
+    @XmlElement(name = "TxIdDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar txIdDt;
     @XmlElement(name = "TxContraCUSIP")
@@ -58,10 +61,12 @@ public class CorporateActionInstructedBalanceOptionInstructionDetailsSD1 {
     @XmlElement(name = "TxIdSts", required = true)
     @XmlSchemaType(name = "string")
     protected DTCInstructionStatus2Code txIdSts;
-    @XmlElement(name = "TxIdPrtctDt")
+    @XmlElement(name = "TxIdPrtctDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar txIdPrtctDt;
-    @XmlElement(name = "TxIdCoverPrtctDt")
+    @XmlElement(name = "TxIdCoverPrtctDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar txIdCoverPrtctDt;
     @XmlElement(name = "TxCondlQty")
@@ -176,7 +181,7 @@ public class CorporateActionInstructedBalanceOptionInstructionDetailsSD1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getTxIdDt() {
@@ -188,7 +193,7 @@ public class CorporateActionInstructedBalanceOptionInstructionDetailsSD1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CorporateActionInstructedBalanceOptionInstructionDetailsSD1 setTxIdDt(XMLGregorianCalendar value) {
@@ -301,7 +306,7 @@ public class CorporateActionInstructedBalanceOptionInstructionDetailsSD1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getTxIdPrtctDt() {
@@ -313,7 +318,7 @@ public class CorporateActionInstructedBalanceOptionInstructionDetailsSD1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CorporateActionInstructedBalanceOptionInstructionDetailsSD1 setTxIdPrtctDt(XMLGregorianCalendar value) {
@@ -326,7 +331,7 @@ public class CorporateActionInstructedBalanceOptionInstructionDetailsSD1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getTxIdCoverPrtctDt() {
@@ -338,7 +343,7 @@ public class CorporateActionInstructedBalanceOptionInstructionDetailsSD1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CorporateActionInstructedBalanceOptionInstructionDetailsSD1 setTxIdCoverPrtctDt(XMLGregorianCalendar value) {

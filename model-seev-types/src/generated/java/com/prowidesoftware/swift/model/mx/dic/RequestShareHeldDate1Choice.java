@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Java class for RequestShareHeldDate1Choice complex type.
+ * Choice between different ways of specifying the method to determine as from when shares have been held by an investor.
  * 
  * 
  * 

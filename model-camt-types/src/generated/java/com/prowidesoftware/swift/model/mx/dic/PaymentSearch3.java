@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -76,7 +78,8 @@ public class PaymentSearch3 {
     protected List<PaymentType2Choice> pmtTp;
     @XmlElement(name = "PmtInstrRef")
     protected List<String> pmtInstrRef;
-    @XmlElement(name = "IntrBkValDt")
+    @XmlElement(name = "IntrBkValDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected List<XMLGregorianCalendar> intrBkValDt;
     @XmlElement(name = "RltdRef")
@@ -533,7 +536,7 @@ public class PaymentSearch3 {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link XMLGregorianCalendar }
+     * {@link String }
      * 
      * 
      */

@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -89,13 +91,16 @@ public class FinancialInstrument86 {
     protected Account28 trfr;
     @XmlElement(name = "IntrmyInf")
     protected List<Intermediary43> intrmyInf;
-    @XmlElement(name = "ReqdTrfDt")
+    @XmlElement(name = "ReqdTrfDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar reqdTrfDt;
-    @XmlElement(name = "ReqdTradDt")
+    @XmlElement(name = "ReqdTradDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar reqdTradDt;
-    @XmlElement(name = "ReqdSttlmDt")
+    @XmlElement(name = "ReqdSttlmDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar reqdSttlmDt;
     @XmlElement(name = "PmtDtls")
@@ -572,7 +577,7 @@ public class FinancialInstrument86 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getReqdTrfDt() {
@@ -584,7 +589,7 @@ public class FinancialInstrument86 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public FinancialInstrument86 setReqdTrfDt(XMLGregorianCalendar value) {
@@ -597,7 +602,7 @@ public class FinancialInstrument86 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getReqdTradDt() {
@@ -609,7 +614,7 @@ public class FinancialInstrument86 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public FinancialInstrument86 setReqdTradDt(XMLGregorianCalendar value) {
@@ -622,7 +627,7 @@ public class FinancialInstrument86 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getReqdSttlmDt() {
@@ -634,7 +639,7 @@ public class FinancialInstrument86 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public FinancialInstrument86 setReqdSttlmDt(XMLGregorianCalendar value) {

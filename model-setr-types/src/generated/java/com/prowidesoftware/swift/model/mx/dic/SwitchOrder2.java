@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -39,7 +41,8 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 public class SwitchOrder2 {
 
-    @XmlElement(name = "OrdrDtTm")
+    @XmlElement(name = "OrdrDtTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar ordrDtTm;
     @XmlElement(name = "OrdrRef", required = true)
@@ -50,7 +53,8 @@ public class SwitchOrder2 {
     protected ActiveOrHistoricCurrencyAndAmount ttlRedAmt;
     @XmlElement(name = "TtlSbcptAmt")
     protected ActiveOrHistoricCurrencyAndAmount ttlSbcptAmt;
-    @XmlElement(name = "XpryDtTm")
+    @XmlElement(name = "XpryDtTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar xpryDtTm;
     @XmlElement(name = "AddtlCshIn")
@@ -73,7 +77,7 @@ public class SwitchOrder2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getOrdrDtTm() {
@@ -85,7 +89,7 @@ public class SwitchOrder2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public SwitchOrder2 setOrdrDtTm(XMLGregorianCalendar value) {
@@ -198,7 +202,7 @@ public class SwitchOrder2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getXpryDtTm() {
@@ -210,7 +214,7 @@ public class SwitchOrder2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public SwitchOrder2 setXpryDtTm(XMLGregorianCalendar value) {

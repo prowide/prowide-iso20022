@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -54,10 +56,12 @@ public class OvernightIndexSwapTransaction3 {
     protected CounterpartyIdentification2Choice ctrPtyId;
     @XmlElement(name = "TradDt", required = true)
     protected DateAndDateTimeChoice tradDt;
-    @XmlElement(name = "StartDt", required = true)
+    @XmlElement(name = "StartDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar startDt;
-    @XmlElement(name = "MtrtyDt", required = true)
+    @XmlElement(name = "MtrtyDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar mtrtyDt;
     @XmlElement(name = "FxdIntrstRate", required = true)
@@ -250,7 +254,7 @@ public class OvernightIndexSwapTransaction3 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getStartDt() {
@@ -262,7 +266,7 @@ public class OvernightIndexSwapTransaction3 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public OvernightIndexSwapTransaction3 setStartDt(XMLGregorianCalendar value) {
@@ -275,7 +279,7 @@ public class OvernightIndexSwapTransaction3 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getMtrtyDt() {
@@ -287,7 +291,7 @@ public class OvernightIndexSwapTransaction3 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public OvernightIndexSwapTransaction3 setMtrtyDt(XMLGregorianCalendar value) {

@@ -199,7 +199,7 @@ public enum ModificationRejection2Code {
     UM_21("UM21"),
 
     /**
-     * Debtor agent account cannot be modified (applicable for direct debits).
+     * Debtor agent acount cannot be modified (applicable for direct debits)
      * 
      */
     @XmlEnumValue("UM22")

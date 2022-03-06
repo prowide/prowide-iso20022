@@ -32,12 +32,12 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.namespace.QName;
 import javax.xml.transform.dom.DOMResult;
 import java.io.StringWriter;
 import java.util.Arrays;
+import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -62,12 +62,28 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
     /**
      * Parse the header from an XML with optional wrapper and sibling elements that will be ignored.
      *
+     * Default adapters are applied, for more options use {@link #parse(String, MxReadParams)}
+     *
      * @param xml the XML content, can contain wrapper elements that will be ignored
      * @return parsed element or null if cannot be parsed
      * @throws ProwideException if severe errors occur during parse
      */
     public static BusinessAppHdrV01 parse(final String xml) {
-        return (BusinessAppHdrV01) MxParseUtils.parse(BusinessAppHdrV01.class, xml, _classes, HEADER_LOCALNAME);
+        return parse(xml, new MxReadParams());
+    }
+
+    /**
+     * Parse the header from an XML with optional wrapper and sibling elements that will be ignored.
+     *
+     * @param xml the XML content, can contain wrapper elements that will be ignored
+     * @param params not null unmarshalling parameters
+     * @return parsed element or null if cannot be parsed
+     * @throws ProwideException if severe errors occur during parse
+     * @since 9.2.6
+     */
+    public static BusinessAppHdrV01 parse(final String xml, final MxReadParams params) {
+        Objects.requireNonNull(params, "The unmarshalling params cannot be null");
+        return (BusinessAppHdrV01) MxParseUtils.parse(BusinessAppHdrV01.class, xml, _classes, HEADER_LOCALNAME, params);
     }
 
     /**
@@ -218,13 +234,7 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
     public String xml(MxWriteParams params) {
         try {
             JAXBContext context = JAXBContext.newInstance(BusinessApplicationHeaderV01Impl.class);
-            final Marshaller marshaller = context.createMarshaller();
-
-            if (params.adapters != null) {
-                for (XmlAdapter adapter : params.adapters) {
-                    marshaller.setAdapter(adapter);
-                }
-            }
+            final Marshaller marshaller = MxWriteUtils.createMarshaller(context, params);
 
             final StringWriter sw = new StringWriter();
             JAXBElement<BusinessApplicationHeaderV01Impl> element = new JAXBElement(new QName(NAMESPACE, AppHdr.HEADER_LOCALNAME), BusinessApplicationHeaderV01Impl.class, null, this);

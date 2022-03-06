@@ -6,7 +6,10 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -38,7 +41,8 @@ public class LoanData40 {
 
     @XmlElement(name = "UnqTradIdr", required = true)
     protected String unqTradIdr;
-    @XmlElement(name = "EvtDt", required = true)
+    @XmlElement(name = "EvtDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar evtDt;
     @XmlElement(name = "CtrctTp", required = true)
@@ -50,13 +54,16 @@ public class LoanData40 {
     protected String tradgVn;
     @XmlElement(name = "MstrAgrmt")
     protected MasterAgreement1 mstrAgrmt;
-    @XmlElement(name = "ExctnDtTm", required = true)
+    @XmlElement(name = "ExctnDtTm", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar exctnDtTm;
-    @XmlElement(name = "ValDt", required = true)
+    @XmlElement(name = "ValDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar valDt;
-    @XmlElement(name = "TermntnDt", required = true)
+    @XmlElement(name = "TermntnDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar termntnDt;
     @XmlElement(name = "GnlColl")
@@ -97,7 +104,7 @@ public class LoanData40 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getEvtDt() {
@@ -109,7 +116,7 @@ public class LoanData40 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public LoanData40 setEvtDt(XMLGregorianCalendar value) {
@@ -222,7 +229,7 @@ public class LoanData40 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getExctnDtTm() {
@@ -234,7 +241,7 @@ public class LoanData40 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public LoanData40 setExctnDtTm(XMLGregorianCalendar value) {
@@ -247,7 +254,7 @@ public class LoanData40 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getValDt() {
@@ -259,7 +266,7 @@ public class LoanData40 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public LoanData40 setValDt(XMLGregorianCalendar value) {
@@ -272,7 +279,7 @@ public class LoanData40 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getTermntnDt() {
@@ -284,7 +291,7 @@ public class LoanData40 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public LoanData40 setTermntnDt(XMLGregorianCalendar value) {

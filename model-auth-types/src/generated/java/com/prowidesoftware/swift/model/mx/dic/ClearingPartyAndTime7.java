@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -30,7 +32,8 @@ public class ClearingPartyAndTime7 {
 
     @XmlElement(name = "CCP")
     protected String ccp;
-    @XmlElement(name = "ClrDtTm")
+    @XmlElement(name = "ClrDtTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar clrDtTm;
     @XmlElement(name = "RptTrckgNb")
@@ -68,7 +71,7 @@ public class ClearingPartyAndTime7 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getClrDtTm() {
@@ -80,7 +83,7 @@ public class ClearingPartyAndTime7 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public ClearingPartyAndTime7 setClrDtTm(XMLGregorianCalendar value) {

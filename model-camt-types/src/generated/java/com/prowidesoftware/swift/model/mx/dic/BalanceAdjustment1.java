@@ -7,7 +7,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -42,10 +44,12 @@ public class BalanceAdjustment1 {
     protected AmountAndDirection34 balAmt;
     @XmlElement(name = "AvrgAmt")
     protected AmountAndDirection34 avrgAmt;
-    @XmlElement(name = "ErrDt")
+    @XmlElement(name = "ErrDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar errDt;
-    @XmlElement(name = "PstngDt", required = true)
+    @XmlElement(name = "PstngDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar pstngDt;
     @XmlElement(name = "Days")
@@ -158,7 +162,7 @@ public class BalanceAdjustment1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getErrDt() {
@@ -170,7 +174,7 @@ public class BalanceAdjustment1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public BalanceAdjustment1 setErrDt(XMLGregorianCalendar value) {
@@ -183,7 +187,7 @@ public class BalanceAdjustment1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getPstngDt() {
@@ -195,7 +199,7 @@ public class BalanceAdjustment1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public BalanceAdjustment1 setPstngDt(XMLGregorianCalendar value) {

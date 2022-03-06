@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -48,7 +50,8 @@ public class TradeData2 {
     protected String xtndedCurSts;
     @XmlElement(name = "CurStsSubTp")
     protected String curStsSubTp;
-    @XmlElement(name = "CurStsTm")
+    @XmlElement(name = "CurStsTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar curStsTm;
     @XmlElement(name = "PrvsSts")
@@ -58,7 +61,8 @@ public class TradeData2 {
     protected String xtndedPrvsSts;
     @XmlElement(name = "PrvsStsSubTp")
     protected String prvsStsSubTp;
-    @XmlElement(name = "PrvsStsTm")
+    @XmlElement(name = "PrvsStsTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar prvsStsTm;
 
@@ -217,7 +221,7 @@ public class TradeData2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getCurStsTm() {
@@ -229,7 +233,7 @@ public class TradeData2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public TradeData2 setCurStsTm(XMLGregorianCalendar value) {
@@ -317,7 +321,7 @@ public class TradeData2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getPrvsStsTm() {
@@ -329,7 +333,7 @@ public class TradeData2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public TradeData2 setPrvsStsTm(XMLGregorianCalendar value) {

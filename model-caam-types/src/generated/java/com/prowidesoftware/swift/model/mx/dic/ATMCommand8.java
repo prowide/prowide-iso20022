@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,10 +35,12 @@ public class ATMCommand8 {
     @XmlElement(name = "Tp", required = true)
     @XmlSchemaType(name = "string")
     protected ATMCommand5Code tp;
-    @XmlElement(name = "ReqrdDtTm")
+    @XmlElement(name = "ReqrdDtTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar reqrdDtTm;
-    @XmlElement(name = "PrcdDtTm", required = true)
+    @XmlElement(name = "PrcdDtTm", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar prcdDtTm;
     @XmlElement(name = "CmdId")
@@ -77,7 +81,7 @@ public class ATMCommand8 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getReqrdDtTm() {
@@ -89,7 +93,7 @@ public class ATMCommand8 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public ATMCommand8 setReqrdDtTm(XMLGregorianCalendar value) {
@@ -102,7 +106,7 @@ public class ATMCommand8 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getPrcdDtTm() {
@@ -114,7 +118,7 @@ public class ATMCommand8 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public ATMCommand8 setPrcdDtTm(XMLGregorianCalendar value) {

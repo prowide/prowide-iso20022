@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -38,7 +40,8 @@ public class ProcessingCharacteristics1 {
     protected boolean unitsInd;
     @XmlElement(name = "DealgCcyAccptd", required = true)
     protected List<String> dealgCcyAccptd;
-    @XmlElement(name = "DealgCutOffTm", required = true)
+    @XmlElement(name = "DealgCutOffTm", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
     protected XMLGregorianCalendar dealgCutOffTm;
     @XmlElement(name = "DealgCutOffTmFrame", required = true)
@@ -114,7 +117,7 @@ public class ProcessingCharacteristics1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getDealgCutOffTm() {
@@ -126,7 +129,7 @@ public class ProcessingCharacteristics1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public ProcessingCharacteristics1 setDealgCutOffTm(XMLGregorianCalendar value) {

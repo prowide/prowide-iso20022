@@ -8,7 +8,10 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -36,10 +39,12 @@ public class CollateralMarginMarginUpdate1 {
 
     @XmlElement(name = "TechRcrdId")
     protected String techRcrdId;
-    @XmlElement(name = "RptgDtTm", required = true)
+    @XmlElement(name = "RptgDtTm", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar rptgDtTm;
-    @XmlElement(name = "EvtDt", required = true)
+    @XmlElement(name = "EvtDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar evtDt;
     @XmlElement(name = "CtrPty")
@@ -83,7 +88,7 @@ public class CollateralMarginMarginUpdate1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getRptgDtTm() {
@@ -95,7 +100,7 @@ public class CollateralMarginMarginUpdate1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CollateralMarginMarginUpdate1 setRptgDtTm(XMLGregorianCalendar value) {
@@ -108,7 +113,7 @@ public class CollateralMarginMarginUpdate1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getEvtDt() {
@@ -120,7 +125,7 @@ public class CollateralMarginMarginUpdate1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CollateralMarginMarginUpdate1 setEvtDt(XMLGregorianCalendar value) {

@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -39,14 +41,16 @@ public class TradeSettlement2 {
 
     @XmlElement(name = "PmtRef")
     protected CreditorReferenceInformation2 pmtRef;
-    @XmlElement(name = "DueDt")
+    @XmlElement(name = "DueDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar dueDt;
     @XmlElement(name = "DuePyblAmt", required = true)
     protected CurrencyAndAmount duePyblAmt;
     @XmlElement(name = "InvcCcyXchg")
     protected CurrencyReference3 invcCcyXchg;
-    @XmlElement(name = "DlvryDt")
+    @XmlElement(name = "DlvryDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar dlvryDt;
     @XmlElement(name = "BllgPrd")
@@ -92,7 +96,7 @@ public class TradeSettlement2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getDueDt() {
@@ -104,7 +108,7 @@ public class TradeSettlement2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public TradeSettlement2 setDueDt(XMLGregorianCalendar value) {
@@ -167,7 +171,7 @@ public class TradeSettlement2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getDlvryDt() {
@@ -179,7 +183,7 @@ public class TradeSettlement2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public TradeSettlement2 setDlvryDt(XMLGregorianCalendar value) {

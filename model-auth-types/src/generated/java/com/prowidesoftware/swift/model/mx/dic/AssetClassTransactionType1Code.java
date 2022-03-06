@@ -34,7 +34,7 @@ public enum AssetClassTransactionType1Code {
 
 
     /**
-     * Crack. 
+     * Crack.
      * 
      */
     CRCK,

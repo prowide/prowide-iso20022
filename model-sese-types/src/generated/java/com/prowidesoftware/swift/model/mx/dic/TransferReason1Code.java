@@ -89,7 +89,7 @@ public enum TransferReason1Code {
     TRPE,
 
     /**
-     * Transfer is the result of a demerger or division.
+     * Transfer is the result of a demrger or division.
      * 
      */
     TRAF,

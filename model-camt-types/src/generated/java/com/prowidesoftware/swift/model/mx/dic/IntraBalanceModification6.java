@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -42,7 +44,8 @@ public class IntraBalanceModification6 {
     protected ProcessingStatus71Choice prcgSts;
     @XmlElement(name = "ReqRef", required = true)
     protected String reqRef;
-    @XmlElement(name = "StsDt")
+    @XmlElement(name = "StsDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar stsDt;
     @XmlElement(name = "ReqDtls")
@@ -180,7 +183,7 @@ public class IntraBalanceModification6 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getStsDt() {
@@ -192,7 +195,7 @@ public class IntraBalanceModification6 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public IntraBalanceModification6 setStsDt(XMLGregorianCalendar value) {

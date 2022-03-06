@@ -6,7 +6,10 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -36,10 +39,12 @@ public class TransferInstruction1 {
     protected String cd;
     @XmlElement(name = "Prtry")
     protected String prtry;
-    @XmlElement(name = "StartDtTm")
+    @XmlElement(name = "StartDtTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar startDtTm;
-    @XmlElement(name = "StartDt")
+    @XmlElement(name = "StartDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar startDt;
     @XmlElement(name = "Desc")
@@ -125,7 +130,7 @@ public class TransferInstruction1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getStartDtTm() {
@@ -137,7 +142,7 @@ public class TransferInstruction1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public TransferInstruction1 setStartDtTm(XMLGregorianCalendar value) {
@@ -150,7 +155,7 @@ public class TransferInstruction1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getStartDt() {
@@ -162,7 +167,7 @@ public class TransferInstruction1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public TransferInstruction1 setStartDt(XMLGregorianCalendar value) {

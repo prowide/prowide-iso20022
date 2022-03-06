@@ -159,19 +159,19 @@ public enum SystemBalanceType1Code {
     EAST,
 
     /**
-     * Balance representing the sum of entries as a result of payments processing. Entries relating to fees, interest, or other movements not a result of payments sent or received by the account owner are not included.
+     * Balance representing the sum of entries as a result of payments processing.  Entries relating to fees,  interest, or other movements not a result of payments sent or received by the account owner are not included.
      * 
      */
     PYMT,
 
     /**
-     * Balance representing the regulatory reserve that a financial institution must have with the account servicing institution, such as the minimum credit balance a financial institution is to keep with its Central Bank for mandatory reserve purposes. In some countries, a blocked balance is known as a 'reserve' balance.
+     * Balance representing the regulatory reserve that a financial institution must have with the account servicing institution, such as the minimum credit balance a financial institution is to keep with its Central Bank for mandatory reserve purposes.  In some countries, a blocked balance is known as a 'reserve' balance.
      * 
      */
     BLCK,
 
     /**
-     * Balance, composed of booked entries and pending items known at the time of calculation, which projects the end of day balance if everything is booked on the account and no other entry is posted.
+     * Balance, composed of booked entries and pending items known at the time of calculation , which projects the end of day balance if everything is booked on the account and no other entry is posted.
      * 
      */
     XPCD,
@@ -226,7 +226,7 @@ public enum SystemBalanceType1Code {
     NOTE,
 
     /**
-     * Balance of the account identified (as opposed to Master Balance).
+     * Balance of the account identified (as opposed to Master Balance)
      * 
      */
     SELF,
@@ -238,7 +238,7 @@ public enum SystemBalanceType1Code {
     MSTR,
 
     /**
-     * Balance representing the forecast of total of all cash legs for trades that are ready to settle via a a central securities depository. Amounts shown are still subject to processing of the securities settlement.
+     * Balance representing the forecast of total of all cash legs for trades that are ready to settle via a a central securities depository. Amounts shown are still subject to processing of the securities settlement. 
      * 
      */
     FSET,
@@ -281,7 +281,7 @@ public enum SystemBalanceType1Code {
     FUND,
 
     /**
-     * Balance representing the fictive forecast of automated direct debits or payment based on standing arrangements between a central securities depository and the user.
+     * Balance representing the fictive forecast of automated direct debits or payment based on standing arrangements between the a central securities depository and the user.
      * 
      * Usage: Pay-Ins and Pay-Outs can be different based on individual payment instructions or available funds.
      * 
@@ -367,13 +367,13 @@ public enum SystemBalanceType1Code {
     SCOL,
 
     /**
-     * Balance representing the cash-equivalent resulting from evaluation of incoming securities, qualified to serve as collateral and actually used as collateral, which have been settled during the settlement process.
+     * Balance representing the cash-equivalent resulting from evaluation of incoming securities, qualified to serve as collateral and actually used as collateral, which have been settled during the settlement process. 
      * 
      */
     SCOU,
 
     /**
-     * Balance representing the actual total of all asset servicing transactions such as dividends, income corporate actions equivalents, tax returns, redemptions, etc.
+     * Balance representing the actual total of all asset servicing transactions such as dividends, income corporate actions equivalents, tax returns, redemptions, etc. 
      * 
      */
     CUSA,
@@ -391,13 +391,13 @@ public enum SystemBalanceType1Code {
     XCHN,
 
     /**
-     * Balance representing the cash equivalent of all settled securities transactions.
+     * Balance representing the cash equivalent of all settled securities transactions
      * 
      */
     DSET,
 
     /**
-     * Balance representing the cash equivalent of transactions with a lack of holdings.
+     * Balance representing the cash equivalent of transactions with a lack of holdings. 
      * 
      */
     LACK,
@@ -463,7 +463,7 @@ public enum SystemBalanceType1Code {
     BSCC,
 
     /**
-     * Balance represents the settlement account processor queue amount.
+     * Balance represents the settlement account processor queue amount 
      * 
      */
     SAPP,

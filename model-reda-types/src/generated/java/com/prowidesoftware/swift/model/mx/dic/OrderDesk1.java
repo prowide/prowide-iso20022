@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -31,7 +33,8 @@ public class OrderDesk1 {
 
     @XmlElement(name = "OrdrDsk")
     protected ContactAttributes5 ordrDsk;
-    @XmlElement(name = "ClsrDts")
+    @XmlElement(name = "ClsrDts", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected List<XMLGregorianCalendar> clsrDts;
     @XmlElement(name = "AddtlInf")
@@ -80,7 +83,7 @@ public class OrderDesk1 {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link XMLGregorianCalendar }
+     * {@link String }
      * 
      * 
      */

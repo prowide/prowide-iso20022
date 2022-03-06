@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -59,7 +61,8 @@ public class IndividualPerson27 {
     @XmlElement(name = "Gndr")
     @XmlSchemaType(name = "string")
     protected GenderCode gndr;
-    @XmlElement(name = "BirthDt")
+    @XmlElement(name = "BirthDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar birthDt;
     @XmlElement(name = "CtryOfBirth")
@@ -80,7 +83,8 @@ public class IndividualPerson27 {
     protected String bizFctn;
     @XmlElement(name = "PltclyXpsdPrsnTp")
     protected PoliticalExposureType1Choice pltclyXpsdPrsnTp;
-    @XmlElement(name = "DthDt")
+    @XmlElement(name = "DthDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar dthDt;
     @XmlElement(name = "CvlSts")
@@ -245,7 +249,7 @@ public class IndividualPerson27 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getBirthDt() {
@@ -257,7 +261,7 @@ public class IndividualPerson27 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public IndividualPerson27 setBirthDt(XMLGregorianCalendar value) {
@@ -503,7 +507,7 @@ public class IndividualPerson27 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getDthDt() {
@@ -515,7 +519,7 @@ public class IndividualPerson27 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public IndividualPerson27 setDthDt(XMLGregorianCalendar value) {

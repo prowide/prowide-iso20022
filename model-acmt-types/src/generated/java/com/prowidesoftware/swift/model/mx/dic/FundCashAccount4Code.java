@@ -65,7 +65,7 @@ public enum FundCashAccount4Code {
     CSDO,
 
     /**
-     * Account operated by a CSD in a direct holding market context
+     * Account operated by a CSD in a direct holding market context.
      * 
      */
     TOFF,

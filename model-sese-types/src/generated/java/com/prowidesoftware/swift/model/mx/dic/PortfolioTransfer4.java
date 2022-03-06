@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -44,7 +46,8 @@ public class PortfolioTransfer4 {
     protected String trfInstrRef;
     @XmlElement(name = "TrfConfId", required = true)
     protected String trfConfId;
-    @XmlElement(name = "ActlTrfDt")
+    @XmlElement(name = "ActlTrfDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar actlTrfDt;
     @XmlElement(name = "Prtfl")
@@ -58,7 +61,8 @@ public class PortfolioTransfer4 {
     @XmlElement(name = "RsdlCsh")
     @XmlSchemaType(name = "string")
     protected ResidualCash1Code rsdlCsh;
-    @XmlElement(name = "TaxDt")
+    @XmlElement(name = "TaxDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar taxDt;
     @XmlElement(name = "PmtDtls")
@@ -148,7 +152,7 @@ public class PortfolioTransfer4 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getActlTrfDt() {
@@ -160,7 +164,7 @@ public class PortfolioTransfer4 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public PortfolioTransfer4 setActlTrfDt(XMLGregorianCalendar value) {
@@ -273,7 +277,7 @@ public class PortfolioTransfer4 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getTaxDt() {
@@ -285,7 +289,7 @@ public class PortfolioTransfer4 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public PortfolioTransfer4 setTaxDt(XMLGregorianCalendar value) {

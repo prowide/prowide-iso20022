@@ -110,7 +110,7 @@ public enum CardPaymentServiceType9Code {
     CSHB,
 
     /**
-     * Instant transaction
+     * Instant transaction.
      * 
      */
     INST,

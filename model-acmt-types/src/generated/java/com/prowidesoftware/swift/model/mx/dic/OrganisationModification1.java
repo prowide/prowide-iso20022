@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -46,7 +48,8 @@ public class OrganisationModification1 {
     protected TradingNameModification1 tradgNm;
     @XmlElement(name = "CtryOfOpr", required = true)
     protected String ctryOfOpr;
-    @XmlElement(name = "RegnDt")
+    @XmlElement(name = "RegnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar regnDt;
     @XmlElement(name = "OprlAdr")
@@ -150,7 +153,7 @@ public class OrganisationModification1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getRegnDt() {
@@ -162,7 +165,7 @@ public class OrganisationModification1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public OrganisationModification1 setRegnDt(XMLGregorianCalendar value) {

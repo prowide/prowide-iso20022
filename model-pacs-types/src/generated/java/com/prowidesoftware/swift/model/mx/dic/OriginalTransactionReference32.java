@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -51,10 +53,12 @@ public class OriginalTransactionReference32 {
     protected ActiveOrHistoricCurrencyAndAmount intrBkSttlmAmt;
     @XmlElement(name = "Amt")
     protected AmountType4Choice amt;
-    @XmlElement(name = "IntrBkSttlmDt")
+    @XmlElement(name = "IntrBkSttlmDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar intrBkSttlmDt;
-    @XmlElement(name = "ReqdColltnDt")
+    @XmlElement(name = "ReqdColltnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar reqdColltnDt;
     @XmlElement(name = "ReqdExctnDt")
@@ -152,7 +156,7 @@ public class OriginalTransactionReference32 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getIntrBkSttlmDt() {
@@ -164,7 +168,7 @@ public class OriginalTransactionReference32 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public OriginalTransactionReference32 setIntrBkSttlmDt(XMLGregorianCalendar value) {
@@ -177,7 +181,7 @@ public class OriginalTransactionReference32 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getReqdColltnDt() {
@@ -189,7 +193,7 @@ public class OriginalTransactionReference32 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public OriginalTransactionReference32 setReqdColltnDt(XMLGregorianCalendar value) {

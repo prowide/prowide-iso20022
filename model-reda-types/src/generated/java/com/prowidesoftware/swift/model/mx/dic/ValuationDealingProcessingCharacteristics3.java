@@ -9,7 +9,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -41,7 +43,8 @@ public class ValuationDealingProcessingCharacteristics3 {
     protected EventFrequency5Code valtnFrqcy;
     @XmlElement(name = "ValtnFrqcyDesc")
     protected String valtnFrqcyDesc;
-    @XmlElement(name = "ValtnTm")
+    @XmlElement(name = "ValtnTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
     protected XMLGregorianCalendar valtnTm;
     @XmlElement(name = "DcmlstnUnits")
@@ -113,7 +116,7 @@ public class ValuationDealingProcessingCharacteristics3 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getValtnTm() {
@@ -125,7 +128,7 @@ public class ValuationDealingProcessingCharacteristics3 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public ValuationDealingProcessingCharacteristics3 setValtnTm(XMLGregorianCalendar value) {

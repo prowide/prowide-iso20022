@@ -12,7 +12,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Choice between date and date-time for the specification of a period.
+ * Choice between date and datetime for the specification of a period.
  * 
  * 
  * 

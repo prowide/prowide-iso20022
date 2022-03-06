@@ -11,7 +11,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
-import com.prowidesoftware.swift.model.mx.MxReadImpl;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -124,11 +124,20 @@ public class MxAuth03800101
     }
 
     /**
-     * Creates the MX object parsing the raw content from the parameter XML
+     * Creates the MX object parsing the raw content from the parameter XML, using default unmarshalling options
      * 
      */
     public static MxAuth03800101 parse(String xml) {
-        return ((MxAuth03800101) MxReadImpl.parse(MxAuth03800101 .class, xml, _classes));
+        return ((MxAuth03800101) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxAuth03800101 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams()));
+    }
+
+    /**
+     * Creates the MX object parsing the raw content from the parameter XML, using the provided unmarshalling options
+     * @since 9.2.6
+     * 
+     */
+    public static MxAuth03800101 parse(String xml, MxReadConfiguration conf) {
+        return ((MxAuth03800101) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxAuth03800101 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams(conf)));
     }
 
     /**

@@ -9,7 +9,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -92,31 +94,40 @@ public class FinancialInstrumentAttributes30 {
     protected OptionType3Choice optnTp;
     @XmlElement(name = "DnmtnCcy")
     protected String dnmtnCcy;
-    @XmlElement(name = "CpnDt")
+    @XmlElement(name = "CpnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar cpnDt;
-    @XmlElement(name = "XpryDt")
+    @XmlElement(name = "XpryDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar xpryDt;
-    @XmlElement(name = "FltgRateFxgDt")
+    @XmlElement(name = "FltgRateFxgDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar fltgRateFxgDt;
-    @XmlElement(name = "MtrtyDt")
+    @XmlElement(name = "MtrtyDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar mtrtyDt;
-    @XmlElement(name = "IsseDt")
+    @XmlElement(name = "IsseDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar isseDt;
-    @XmlElement(name = "NxtCllblDt")
+    @XmlElement(name = "NxtCllblDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar nxtCllblDt;
-    @XmlElement(name = "PutblDt")
+    @XmlElement(name = "PutblDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar putblDt;
-    @XmlElement(name = "DtdDt")
+    @XmlElement(name = "DtdDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar dtdDt;
-    @XmlElement(name = "FrstPmtDt")
+    @XmlElement(name = "FrstPmtDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar frstPmtDt;
     @XmlElement(name = "PrvsFctr")
@@ -465,7 +476,7 @@ public class FinancialInstrumentAttributes30 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getCpnDt() {
@@ -477,7 +488,7 @@ public class FinancialInstrumentAttributes30 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public FinancialInstrumentAttributes30 setCpnDt(XMLGregorianCalendar value) {
@@ -490,7 +501,7 @@ public class FinancialInstrumentAttributes30 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getXpryDt() {
@@ -502,7 +513,7 @@ public class FinancialInstrumentAttributes30 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public FinancialInstrumentAttributes30 setXpryDt(XMLGregorianCalendar value) {
@@ -515,7 +526,7 @@ public class FinancialInstrumentAttributes30 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getFltgRateFxgDt() {
@@ -527,7 +538,7 @@ public class FinancialInstrumentAttributes30 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public FinancialInstrumentAttributes30 setFltgRateFxgDt(XMLGregorianCalendar value) {
@@ -540,7 +551,7 @@ public class FinancialInstrumentAttributes30 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getMtrtyDt() {
@@ -552,7 +563,7 @@ public class FinancialInstrumentAttributes30 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public FinancialInstrumentAttributes30 setMtrtyDt(XMLGregorianCalendar value) {
@@ -565,7 +576,7 @@ public class FinancialInstrumentAttributes30 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getIsseDt() {
@@ -577,7 +588,7 @@ public class FinancialInstrumentAttributes30 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public FinancialInstrumentAttributes30 setIsseDt(XMLGregorianCalendar value) {
@@ -590,7 +601,7 @@ public class FinancialInstrumentAttributes30 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getNxtCllblDt() {
@@ -602,7 +613,7 @@ public class FinancialInstrumentAttributes30 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public FinancialInstrumentAttributes30 setNxtCllblDt(XMLGregorianCalendar value) {
@@ -615,7 +626,7 @@ public class FinancialInstrumentAttributes30 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getPutblDt() {
@@ -627,7 +638,7 @@ public class FinancialInstrumentAttributes30 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public FinancialInstrumentAttributes30 setPutblDt(XMLGregorianCalendar value) {
@@ -640,7 +651,7 @@ public class FinancialInstrumentAttributes30 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getDtdDt() {
@@ -652,7 +663,7 @@ public class FinancialInstrumentAttributes30 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public FinancialInstrumentAttributes30 setDtdDt(XMLGregorianCalendar value) {
@@ -665,7 +676,7 @@ public class FinancialInstrumentAttributes30 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getFrstPmtDt() {
@@ -677,7 +688,7 @@ public class FinancialInstrumentAttributes30 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public FinancialInstrumentAttributes30 setFrstPmtDt(XMLGregorianCalendar value) {

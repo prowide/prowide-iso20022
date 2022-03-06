@@ -30,7 +30,7 @@ public enum ServicePaymentMethod1Code {
 
 
     /**
-     * Allows the bank to offset a service charge with interest earned on the deposit account balance. The actual charges arising from balance compensable services are always calculated and charged at month end. Used in the USA.
+     * Allows the bank to offset a service charge with interest earned on the deposit account balance. The actual charges arising from balance compensable services are always calculated and charged at month end.  Used in the USA.
      * 
      */
     BCMP,

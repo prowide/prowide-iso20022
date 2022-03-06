@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Defines the details of a commodity derivative.
+ * Defines the details of a commodity derivative. 
  * 
  * 
  * 

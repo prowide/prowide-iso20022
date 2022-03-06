@@ -12,7 +12,9 @@ import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlIDREF;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -49,12 +51,14 @@ public class FinancingItemList1Tsin01300101 {
 
     @XmlElement(name = "Idr", required = true)
     protected String idr;
-    @XmlElement(name = "IsseDt", required = true)
+    @XmlElement(name = "IsseDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar isseDt;
     @XmlElementRef(name = "RltdDoc", namespace = "urn:iso:std:iso:20022:tech:xsd:tsin.013.001.01", type = JAXBElement.class, required = false)
     protected List<JAXBElement<Object>> rltdDoc;
-    @XmlElement(name = "AmtCutOffDt")
+    @XmlElement(name = "AmtCutOffDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar amtCutOffDt;
     @XmlElement(name = "Assgne", required = true)
@@ -118,7 +122,7 @@ public class FinancingItemList1Tsin01300101 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getIsseDt() {
@@ -130,7 +134,7 @@ public class FinancingItemList1Tsin01300101 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public FinancingItemList1Tsin01300101 setIsseDt(XMLGregorianCalendar value) {
@@ -172,7 +176,7 @@ public class FinancingItemList1Tsin01300101 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getAmtCutOffDt() {
@@ -184,7 +188,7 @@ public class FinancingItemList1Tsin01300101 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public FinancingItemList1Tsin01300101 setAmtCutOffDt(XMLGregorianCalendar value) {

@@ -27,7 +27,7 @@ public enum KnowYourCustomerCheckType1Code {
 
 
     /**
-     * Enhanced check, typically carried out on accounts that are considered high risk.
+     * Enhanced check, typically carried out on accounts that are considered high risk. 
      * 
      */
     ENHA,

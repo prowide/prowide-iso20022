@@ -16,74 +16,49 @@
 package com.prowidesoftware.swift.model.mx.adapters;
 
 import javax.xml.bind.annotation.adapters.XmlAdapter;
-import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
-import java.text.SimpleDateFormat;
-import java.util.GregorianCalendar;
 
 /**
- * Default adapter for date elements.
- * <p>
- * Marshals the date time as YYY-MM-DD which is aligned with ISO 8601.
+ * Configured adapter for date elements.
  * <p>
  * This implementation is applied in the model with the @XmlJavaTypeAdapter(IsoDateAdapter.class) annotation to
  * all schema elements with type "ISODate".
  * <p>
- * This class is provided also as a hook to inject your own instance via the {@link MxWriteConfiguration} if you need
- * the datetime elements formatted differently. You can create an instance with a specific date format parameter
- * or you can also extend this class and inject an instance of your own adapter implementation.
+ * It is implemented as wrapper to inject your own instances when calling the different write/read methods in the model.
  *
  * @since 9.2.6
  */
 public class IsoDateAdapter extends XmlAdapter<String, XMLGregorianCalendar> {
 
-    private final SimpleDateFormat dateFormat;
+    private final XmlAdapter<String, XMLGregorianCalendar> customAdapterImpl;
 
     /**
-     * Creates the adapter with the default format
+     * Creates a date adapter injecting a custom implementation
      */
-    public IsoDateAdapter() {
-        this.dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+    public IsoDateAdapter(XmlAdapter<String, XMLGregorianCalendar> customAdapterImpl) {
+        this.customAdapterImpl = customAdapterImpl;
     }
 
     /**
-     * Creates an adapter with a specific given format
-     */
-    public IsoDateAdapter(SimpleDateFormat dateFormat) {
-        this.dateFormat = dateFormat;
-    }
-
-    /**
-     * Creates a calendar from the value using the default data type factory.
+     * Invokes the wrapped adapter implementation of the unmarshal method.
      *
      * @param value the XML date time value to convert
-     * @return created calendar object
-     * @throws Exception
+     * @return created calendar object or null if cannot be parsed
      */
     @Override
     public XMLGregorianCalendar unmarshal(String value) throws Exception {
-        return DatatypeFactory.newInstance().newXMLGregorianCalendar(value);
+        return this.customAdapterImpl.unmarshal(value);
     }
 
     /**
-     * Applies the configured format to the calendar.
+     * Invokes the wrapped adapter implementation of the marshal method.
      *
      * @param cal the model calendar to marshal
      * @return formatted content for the XML
-     * @throws Exception
      */
     @Override
     public String marshal(XMLGregorianCalendar cal) throws Exception {
-        synchronized (dateFormat) {
-            return format(cal);
-        }
-    }
-
-    private String format(XMLGregorianCalendar calendar) {
-        GregorianCalendar gCalender = calendar.toGregorianCalendar();
-        java.util.Date date = gCalender.getTime();
-        dateFormat.setCalendar(gCalender);
-        return dateFormat.format(date);
+        return this.customAdapterImpl.marshal(cal);
     }
 
 }

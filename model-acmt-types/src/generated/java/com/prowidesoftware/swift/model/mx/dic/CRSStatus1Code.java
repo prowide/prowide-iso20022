@@ -60,7 +60,7 @@ public enum CRSStatus1Code {
     C_103("C103"),
 
     /**
-     * Account holder type is a financial institution such as a depositary , a custodial institution or a specified insurance company.
+     * Account holder type is a financial institution such as a depositary, a custodial institution or a specified insurance company.
      * 
      */
     @XmlEnumValue("C104")

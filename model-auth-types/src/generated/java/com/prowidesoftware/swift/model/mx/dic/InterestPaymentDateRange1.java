@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -29,10 +31,12 @@ public class InterestPaymentDateRange1 {
 
     @XmlElement(name = "IntrstSchdlId")
     protected String intrstSchdlId;
-    @XmlElement(name = "XpctdDt")
+    @XmlElement(name = "XpctdDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar xpctdDt;
-    @XmlElement(name = "DueDt")
+    @XmlElement(name = "DueDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar dueDt;
 
@@ -66,7 +70,7 @@ public class InterestPaymentDateRange1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getXpctdDt() {
@@ -78,7 +82,7 @@ public class InterestPaymentDateRange1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public InterestPaymentDateRange1 setXpctdDt(XMLGregorianCalendar value) {
@@ -91,7 +95,7 @@ public class InterestPaymentDateRange1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getDueDt() {
@@ -103,7 +107,7 @@ public class InterestPaymentDateRange1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public InterestPaymentDateRange1 setDueDt(XMLGregorianCalendar value) {

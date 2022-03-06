@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -62,12 +64,14 @@ public class ProcessingCharacteristics4 {
     protected EventFrequency5Code dealgFrqcy;
     @XmlElement(name = "DealgFrqcyDesc")
     protected String dealgFrqcyDesc;
-    @XmlElement(name = "DealgCutOffTm")
+    @XmlElement(name = "DealgCutOffTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
     protected XMLGregorianCalendar dealgCutOffTm;
     @XmlElement(name = "DealgCutOffTmFrame")
     protected TimeFrame4 dealgCutOffTmFrame;
-    @XmlElement(name = "DealConfTm")
+    @XmlElement(name = "DealConfTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
     protected XMLGregorianCalendar dealConfTm;
     @XmlElement(name = "DealConfTmFrame")
@@ -313,7 +317,7 @@ public class ProcessingCharacteristics4 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getDealgCutOffTm() {
@@ -325,7 +329,7 @@ public class ProcessingCharacteristics4 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public ProcessingCharacteristics4 setDealgCutOffTm(XMLGregorianCalendar value) {
@@ -363,7 +367,7 @@ public class ProcessingCharacteristics4 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getDealConfTm() {
@@ -375,7 +379,7 @@ public class ProcessingCharacteristics4 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public ProcessingCharacteristics4 setDealConfTm(XMLGregorianCalendar value) {

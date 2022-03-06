@@ -8,7 +8,10 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -60,10 +63,12 @@ public class SwitchExecution7 {
     protected String mstrRef;
     @XmlElement(name = "PlcOfTrad")
     protected PlaceOfTradeIdentification1Choice plcOfTrad;
-    @XmlElement(name = "OrdrDtTm")
+    @XmlElement(name = "OrdrDtTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar ordrDtTm;
-    @XmlElement(name = "RcvdDtTm")
+    @XmlElement(name = "RcvdDtTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar rcvdDtTm;
     @XmlElement(name = "DealRef", required = true)
@@ -78,12 +83,14 @@ public class SwitchExecution7 {
     protected List<Intermediary39> rltdPtyDtls;
     @XmlElement(name = "CxlRght")
     protected CancellationRight1Choice cxlRght;
-    @XmlElement(name = "ReqdFutrTradDt")
+    @XmlElement(name = "ReqdFutrTradDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar reqdFutrTradDt;
     @XmlElement(name = "SttlmAmt")
     protected ActiveCurrencyAndAmount sttlmAmt;
-    @XmlElement(name = "CshSttlmDt")
+    @XmlElement(name = "CshSttlmDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar cshSttlmDt;
     @XmlElement(name = "SttlmMtd")
@@ -200,7 +207,7 @@ public class SwitchExecution7 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getOrdrDtTm() {
@@ -212,7 +219,7 @@ public class SwitchExecution7 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public SwitchExecution7 setOrdrDtTm(XMLGregorianCalendar value) {
@@ -225,7 +232,7 @@ public class SwitchExecution7 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getRcvdDtTm() {
@@ -237,7 +244,7 @@ public class SwitchExecution7 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public SwitchExecution7 setRcvdDtTm(XMLGregorianCalendar value) {
@@ -404,7 +411,7 @@ public class SwitchExecution7 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getReqdFutrTradDt() {
@@ -416,7 +423,7 @@ public class SwitchExecution7 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public SwitchExecution7 setReqdFutrTradDt(XMLGregorianCalendar value) {
@@ -454,7 +461,7 @@ public class SwitchExecution7 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getCshSttlmDt() {
@@ -466,7 +473,7 @@ public class SwitchExecution7 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public SwitchExecution7 setCshSttlmDt(XMLGregorianCalendar value) {

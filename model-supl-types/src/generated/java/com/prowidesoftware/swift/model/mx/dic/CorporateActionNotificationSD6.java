@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -36,13 +38,16 @@ public class CorporateActionNotificationSD6 {
     @XmlElement(name = "EvtSts")
     @XmlSchemaType(name = "string")
     protected EventWorkflowStatus1Code evtSts;
-    @XmlElement(name = "ApprvdDt")
+    @XmlElement(name = "ApprvdDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar apprvdDt;
-    @XmlElement(name = "MtchDt")
+    @XmlElement(name = "MtchDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar mtchDt;
-    @XmlElement(name = "ActvUntilDt")
+    @XmlElement(name = "ActvUntilDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar actvUntilDt;
     @XmlElement(name = "SvcLvlAgrmtPrd")
@@ -105,7 +110,7 @@ public class CorporateActionNotificationSD6 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getApprvdDt() {
@@ -117,7 +122,7 @@ public class CorporateActionNotificationSD6 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CorporateActionNotificationSD6 setApprvdDt(XMLGregorianCalendar value) {
@@ -130,7 +135,7 @@ public class CorporateActionNotificationSD6 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getMtchDt() {
@@ -142,7 +147,7 @@ public class CorporateActionNotificationSD6 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CorporateActionNotificationSD6 setMtchDt(XMLGregorianCalendar value) {
@@ -155,7 +160,7 @@ public class CorporateActionNotificationSD6 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getActvUntilDt() {
@@ -167,7 +172,7 @@ public class CorporateActionNotificationSD6 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CorporateActionNotificationSD6 setActvUntilDt(XMLGregorianCalendar value) {

@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -45,7 +47,8 @@ public class StatementDetails {
     protected StatementType1Code stmtTp;
     @XmlElement(name = "XtndedStmtTp")
     protected String xtndedStmtTp;
-    @XmlElement(name = "StmtDt")
+    @XmlElement(name = "StmtDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar stmtDt;
     @XmlElement(name = "StmtPrd")
@@ -187,7 +190,7 @@ public class StatementDetails {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getStmtDt() {
@@ -199,7 +202,7 @@ public class StatementDetails {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public StatementDetails setStmtDt(XMLGregorianCalendar value) {

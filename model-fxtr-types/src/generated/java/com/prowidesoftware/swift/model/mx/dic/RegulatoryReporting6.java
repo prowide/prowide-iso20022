@@ -8,7 +8,10 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -105,10 +108,12 @@ public class RegulatoryReporting6 {
     protected Boolean comrclOrTrsrFincgInd;
     @XmlElement(name = "FinInstrmId")
     protected SecurityIdentification19 finInstrmId;
-    @XmlElement(name = "ConfDtAndTmstmp")
+    @XmlElement(name = "ConfDtAndTmstmp", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar confDtAndTmstmp;
-    @XmlElement(name = "ClrTmstmp")
+    @XmlElement(name = "ClrTmstmp", type = String.class)
+    @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
     protected XMLGregorianCalendar clrTmstmp;
     @XmlElement(name = "AddtlRptgInf")
@@ -727,7 +732,7 @@ public class RegulatoryReporting6 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getConfDtAndTmstmp() {
@@ -739,7 +744,7 @@ public class RegulatoryReporting6 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public RegulatoryReporting6 setConfDtAndTmstmp(XMLGregorianCalendar value) {
@@ -752,7 +757,7 @@ public class RegulatoryReporting6 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getClrTmstmp() {
@@ -764,7 +769,7 @@ public class RegulatoryReporting6 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public RegulatoryReporting6 setClrTmstmp(XMLGregorianCalendar value) {

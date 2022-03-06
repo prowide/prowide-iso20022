@@ -9,7 +9,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -85,10 +87,12 @@ public class ATMTransaction24 {
     protected List<DetailedAmount18> addtlChrg;
     @XmlElement(name = "Lmts")
     protected ATMTransactionAmounts6 lmts;
-    @XmlElement(name = "ReqdExctnDt")
+    @XmlElement(name = "ReqdExctnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar reqdExctnDt;
-    @XmlElement(name = "PropsdExctnDt")
+    @XmlElement(name = "PropsdExctnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar propsdExctnDt;
     @XmlElement(name = "InstntTrfPrgm")
@@ -544,7 +548,7 @@ public class ATMTransaction24 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getReqdExctnDt() {
@@ -556,7 +560,7 @@ public class ATMTransaction24 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public ATMTransaction24 setReqdExctnDt(XMLGregorianCalendar value) {
@@ -569,7 +573,7 @@ public class ATMTransaction24 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getPropsdExctnDt() {
@@ -581,7 +585,7 @@ public class ATMTransaction24 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public ATMTransaction24 setPropsdExctnDt(XMLGregorianCalendar value) {

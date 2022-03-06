@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -61,10 +63,12 @@ public class RequestedModification9 {
     protected PaymentTypeInformation27 pmtTpInf;
     @XmlElement(name = "ReqdExctnDt")
     protected DateAndDateTime2Choice reqdExctnDt;
-    @XmlElement(name = "ReqdColltnDt")
+    @XmlElement(name = "ReqdColltnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar reqdColltnDt;
-    @XmlElement(name = "IntrBkSttlmDt")
+    @XmlElement(name = "IntrBkSttlmDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar intrBkSttlmDt;
     @XmlElement(name = "SttlmTmIndctn")
@@ -235,7 +239,7 @@ public class RequestedModification9 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getReqdColltnDt() {
@@ -247,7 +251,7 @@ public class RequestedModification9 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public RequestedModification9 setReqdColltnDt(XMLGregorianCalendar value) {
@@ -260,7 +264,7 @@ public class RequestedModification9 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getIntrBkSttlmDt() {
@@ -272,7 +276,7 @@ public class RequestedModification9 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public RequestedModification9 setIntrBkSttlmDt(XMLGregorianCalendar value) {

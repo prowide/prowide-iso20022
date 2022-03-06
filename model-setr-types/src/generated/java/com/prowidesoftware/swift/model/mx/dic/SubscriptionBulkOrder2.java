@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -37,10 +39,12 @@ public class SubscriptionBulkOrder2 {
 
     @XmlElement(name = "PlcOfTrad")
     protected String plcOfTrad;
-    @XmlElement(name = "OrdrDtTm")
+    @XmlElement(name = "OrdrDtTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar ordrDtTm;
-    @XmlElement(name = "XpryDtTm")
+    @XmlElement(name = "XpryDtTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar xpryDtTm;
     @XmlElement(name = "CxlRght")
@@ -86,7 +90,7 @@ public class SubscriptionBulkOrder2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getOrdrDtTm() {
@@ -98,7 +102,7 @@ public class SubscriptionBulkOrder2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public SubscriptionBulkOrder2 setOrdrDtTm(XMLGregorianCalendar value) {
@@ -111,7 +115,7 @@ public class SubscriptionBulkOrder2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getXpryDtTm() {
@@ -123,7 +127,7 @@ public class SubscriptionBulkOrder2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public SubscriptionBulkOrder2 setXpryDtTm(XMLGregorianCalendar value) {

@@ -9,7 +9,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -58,7 +60,8 @@ public class PaymentTransactionInformation17 {
     protected EuroMax9Amount orgnlIntrBkSttlmAmt;
     @XmlElement(name = "RvsdIntrBkSttlmAmt", required = true)
     protected EuroMax9Amount rvsdIntrBkSttlmAmt;
-    @XmlElement(name = "IntrBkSttlmDt")
+    @XmlElement(name = "IntrBkSttlmDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar intrBkSttlmDt;
     @XmlElement(name = "RvsdInstdAmt")
@@ -261,7 +264,7 @@ public class PaymentTransactionInformation17 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getIntrBkSttlmDt() {
@@ -273,7 +276,7 @@ public class PaymentTransactionInformation17 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public PaymentTransactionInformation17 setIntrBkSttlmDt(XMLGregorianCalendar value) {

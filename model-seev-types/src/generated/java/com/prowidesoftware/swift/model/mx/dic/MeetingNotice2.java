@@ -9,7 +9,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -62,7 +64,8 @@ public class MeetingNotice2 {
     protected MeetingTypeClassification1Code clssfctn;
     @XmlElement(name = "XtndedClssfctn")
     protected String xtndedClssfctn;
-    @XmlElement(name = "AnncmntDt")
+    @XmlElement(name = "AnncmntDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar anncmntDt;
     @XmlElement(name = "AttndncReqrd")
@@ -231,7 +234,7 @@ public class MeetingNotice2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getAnncmntDt() {
@@ -243,7 +246,7 @@ public class MeetingNotice2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public MeetingNotice2 setAnncmntDt(XMLGregorianCalendar value) {

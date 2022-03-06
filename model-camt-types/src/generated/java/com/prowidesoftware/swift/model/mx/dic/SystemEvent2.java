@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -31,16 +33,20 @@ public class SystemEvent2 {
 
     @XmlElement(name = "Tp", required = true)
     protected SystemEventType2Choice tp;
-    @XmlElement(name = "SchdldTm", required = true)
+    @XmlElement(name = "SchdldTm", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar schdldTm;
-    @XmlElement(name = "FctvTm")
+    @XmlElement(name = "FctvTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar fctvTm;
-    @XmlElement(name = "StartTm")
+    @XmlElement(name = "StartTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar startTm;
-    @XmlElement(name = "EndTm")
+    @XmlElement(name = "EndTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar endTm;
 
@@ -74,7 +80,7 @@ public class SystemEvent2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getSchdldTm() {
@@ -86,7 +92,7 @@ public class SystemEvent2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public SystemEvent2 setSchdldTm(XMLGregorianCalendar value) {
@@ -99,7 +105,7 @@ public class SystemEvent2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getFctvTm() {
@@ -111,7 +117,7 @@ public class SystemEvent2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public SystemEvent2 setFctvTm(XMLGregorianCalendar value) {
@@ -124,7 +130,7 @@ public class SystemEvent2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getStartTm() {
@@ -136,7 +142,7 @@ public class SystemEvent2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public SystemEvent2 setStartTm(XMLGregorianCalendar value) {
@@ -149,7 +155,7 @@ public class SystemEvent2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getEndTm() {
@@ -161,7 +167,7 @@ public class SystemEvent2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public SystemEvent2 setEndTm(XMLGregorianCalendar value) {

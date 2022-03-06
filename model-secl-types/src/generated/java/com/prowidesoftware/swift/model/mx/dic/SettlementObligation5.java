@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -42,7 +44,8 @@ public class SettlementObligation5 {
     protected ObligationType1Choice oblgtnTp;
     @XmlElement(name = "Desc")
     protected String desc;
-    @XmlElement(name = "TradDt")
+    @XmlElement(name = "TradDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar tradDt;
     @XmlElement(name = "Qty", required = true)
@@ -53,7 +56,8 @@ public class SettlementObligation5 {
     protected String tradgCcy;
     @XmlElement(name = "SttlmAmt", required = true)
     protected AmountAndDirection27 sttlmAmt;
-    @XmlElement(name = "SttlmDt", required = true)
+    @XmlElement(name = "SttlmDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar sttlmDt;
     @XmlElement(name = "SctiesMvmntTp", required = true)
@@ -145,7 +149,7 @@ public class SettlementObligation5 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getTradDt() {
@@ -157,7 +161,7 @@ public class SettlementObligation5 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public SettlementObligation5 setTradDt(XMLGregorianCalendar value) {
@@ -270,7 +274,7 @@ public class SettlementObligation5 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getSttlmDt() {
@@ -282,7 +286,7 @@ public class SettlementObligation5 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public SettlementObligation5 setSttlmDt(XMLGregorianCalendar value) {

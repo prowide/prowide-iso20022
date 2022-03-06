@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -58,13 +60,16 @@ public class RequestedModification4 {
     protected String txId;
     @XmlElement(name = "PmtTpInf")
     protected PaymentTypeInformation25 pmtTpInf;
-    @XmlElement(name = "ReqdExctnDt")
+    @XmlElement(name = "ReqdExctnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar reqdExctnDt;
-    @XmlElement(name = "ReqdColltnDt")
+    @XmlElement(name = "ReqdColltnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar reqdColltnDt;
-    @XmlElement(name = "IntrBkSttlmDt")
+    @XmlElement(name = "IntrBkSttlmDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar intrBkSttlmDt;
     @XmlElement(name = "Amt")
@@ -208,7 +213,7 @@ public class RequestedModification4 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getReqdExctnDt() {
@@ -220,7 +225,7 @@ public class RequestedModification4 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public RequestedModification4 setReqdExctnDt(XMLGregorianCalendar value) {
@@ -233,7 +238,7 @@ public class RequestedModification4 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getReqdColltnDt() {
@@ -245,7 +250,7 @@ public class RequestedModification4 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public RequestedModification4 setReqdColltnDt(XMLGregorianCalendar value) {
@@ -258,7 +263,7 @@ public class RequestedModification4 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getIntrBkSttlmDt() {
@@ -270,7 +275,7 @@ public class RequestedModification4 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public RequestedModification4 setIntrBkSttlmDt(XMLGregorianCalendar value) {

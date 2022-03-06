@@ -7,7 +7,10 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -45,7 +48,8 @@ public class InstrumentLeg6 {
     @XmlElement(name = "LegSttlmTp", required = true)
     @XmlSchemaType(name = "string")
     protected SettlementDateCode legSttlmTp;
-    @XmlElement(name = "LegSttlmDt", required = true)
+    @XmlElement(name = "LegSttlmDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar legSttlmDt;
     @XmlElement(name = "LegLastPric", required = true)
@@ -62,7 +66,8 @@ public class InstrumentLeg6 {
     protected ActiveCurrencyAndAmount legRskAmt;
     @XmlElement(name = "LegValtnRate", required = true)
     protected AgreedRate3 legValtnRate;
-    @XmlElement(name = "LegValDt", required = true)
+    @XmlElement(name = "LegValDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar legValDt;
     @XmlElement(name = "LegCcy", required = true)
@@ -127,7 +132,7 @@ public class InstrumentLeg6 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getLegSttlmDt() {
@@ -139,7 +144,7 @@ public class InstrumentLeg6 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public InstrumentLeg6 setLegSttlmDt(XMLGregorianCalendar value) {
@@ -327,7 +332,7 @@ public class InstrumentLeg6 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getLegValDt() {
@@ -339,7 +344,7 @@ public class InstrumentLeg6 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public InstrumentLeg6 setLegValDt(XMLGregorianCalendar value) {
