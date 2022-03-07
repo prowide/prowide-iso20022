@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -39,40 +41,52 @@ public class CorporateActionDateSD10 {
 
     @XmlElement(name = "PlcAndNm")
     protected String plcAndNm;
-    @XmlElement(name = "DTCLastDayForEarlyRed")
+    @XmlElement(name = "DTCLastDayForEarlyRed", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar dtcLastDayForEarlyRed;
-    @XmlElement(name = "DTCPosCaptrDt")
+    @XmlElement(name = "DTCPosCaptrDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar dtcPosCaptrDt;
-    @XmlElement(name = "NewYorkCutOffDt")
+    @XmlElement(name = "NewYorkCutOffDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar newYorkCutOffDt;
-    @XmlElement(name = "DTCXtndedCutOffDt")
+    @XmlElement(name = "DTCXtndedCutOffDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar dtcXtndedCutOffDt;
-    @XmlElement(name = "FctvDtByXchg")
+    @XmlElement(name = "FctvDtByXchg", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar fctvDtByXchg;
-    @XmlElement(name = "DtDclrdWrthls")
+    @XmlElement(name = "DtDclrdWrthls", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar dtDclrdWrthls;
-    @XmlElement(name = "DelWrthlsSctyDt")
+    @XmlElement(name = "DelWrthlsSctyDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar delWrthlsSctyDt;
-    @XmlElement(name = "DTCExitDt")
+    @XmlElement(name = "DTCExitDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar dtcExitDt;
-    @XmlElement(name = "SbcptBegnDt")
+    @XmlElement(name = "SbcptBegnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar sbcptBegnDt;
-    @XmlElement(name = "RghtsDstrbtnAsOfDt")
+    @XmlElement(name = "RghtsDstrbtnAsOfDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar rghtsDstrbtnAsOfDt;
-    @XmlElement(name = "RghtsDstrbtnDt")
+    @XmlElement(name = "RghtsDstrbtnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar rghtsDstrbtnDt;
-    @XmlElement(name = "TmgDt")
+    @XmlElement(name = "TmgDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar tmgDt;
 
@@ -106,7 +120,7 @@ public class CorporateActionDateSD10 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getDTCLastDayForEarlyRed() {
@@ -118,7 +132,7 @@ public class CorporateActionDateSD10 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CorporateActionDateSD10 setDTCLastDayForEarlyRed(XMLGregorianCalendar value) {
@@ -131,7 +145,7 @@ public class CorporateActionDateSD10 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getDTCPosCaptrDt() {
@@ -143,7 +157,7 @@ public class CorporateActionDateSD10 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CorporateActionDateSD10 setDTCPosCaptrDt(XMLGregorianCalendar value) {
@@ -156,7 +170,7 @@ public class CorporateActionDateSD10 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getNewYorkCutOffDt() {
@@ -168,7 +182,7 @@ public class CorporateActionDateSD10 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CorporateActionDateSD10 setNewYorkCutOffDt(XMLGregorianCalendar value) {
@@ -181,7 +195,7 @@ public class CorporateActionDateSD10 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getDTCXtndedCutOffDt() {
@@ -193,7 +207,7 @@ public class CorporateActionDateSD10 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CorporateActionDateSD10 setDTCXtndedCutOffDt(XMLGregorianCalendar value) {
@@ -206,7 +220,7 @@ public class CorporateActionDateSD10 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getFctvDtByXchg() {
@@ -218,7 +232,7 @@ public class CorporateActionDateSD10 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CorporateActionDateSD10 setFctvDtByXchg(XMLGregorianCalendar value) {
@@ -231,7 +245,7 @@ public class CorporateActionDateSD10 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getDtDclrdWrthls() {
@@ -243,7 +257,7 @@ public class CorporateActionDateSD10 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CorporateActionDateSD10 setDtDclrdWrthls(XMLGregorianCalendar value) {
@@ -256,7 +270,7 @@ public class CorporateActionDateSD10 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getDelWrthlsSctyDt() {
@@ -268,7 +282,7 @@ public class CorporateActionDateSD10 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CorporateActionDateSD10 setDelWrthlsSctyDt(XMLGregorianCalendar value) {
@@ -281,7 +295,7 @@ public class CorporateActionDateSD10 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getDTCExitDt() {
@@ -293,7 +307,7 @@ public class CorporateActionDateSD10 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CorporateActionDateSD10 setDTCExitDt(XMLGregorianCalendar value) {
@@ -306,7 +320,7 @@ public class CorporateActionDateSD10 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getSbcptBegnDt() {
@@ -318,7 +332,7 @@ public class CorporateActionDateSD10 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CorporateActionDateSD10 setSbcptBegnDt(XMLGregorianCalendar value) {
@@ -331,7 +345,7 @@ public class CorporateActionDateSD10 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getRghtsDstrbtnAsOfDt() {
@@ -343,7 +357,7 @@ public class CorporateActionDateSD10 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CorporateActionDateSD10 setRghtsDstrbtnAsOfDt(XMLGregorianCalendar value) {
@@ -356,7 +370,7 @@ public class CorporateActionDateSD10 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getRghtsDstrbtnDt() {
@@ -368,7 +382,7 @@ public class CorporateActionDateSD10 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CorporateActionDateSD10 setRghtsDstrbtnDt(XMLGregorianCalendar value) {
@@ -381,7 +395,7 @@ public class CorporateActionDateSD10 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getTmgDt() {
@@ -393,7 +407,7 @@ public class CorporateActionDateSD10 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CorporateActionDateSD10 setTmgDt(XMLGregorianCalendar value) {

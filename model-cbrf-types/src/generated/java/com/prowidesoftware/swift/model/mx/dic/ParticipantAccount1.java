@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -42,13 +44,16 @@ public class ParticipantAccount1 {
     protected String acctTpNm;
     @XmlElement(name = "AcctTpShrtNm", required = true)
     protected String acctTpShrtNm;
-    @XmlElement(name = "OpngDt", required = true)
+    @XmlElement(name = "OpngDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar opngDt;
-    @XmlElement(name = "ClsgDt")
+    @XmlElement(name = "ClsgDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar clsgDt;
-    @XmlElement(name = "DeltnDt")
+    @XmlElement(name = "DeltnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar deltnDt;
     @XmlElement(name = "LicWdrwlDoc")
@@ -121,7 +126,7 @@ public class ParticipantAccount1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getOpngDt() {
@@ -133,7 +138,7 @@ public class ParticipantAccount1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public ParticipantAccount1 setOpngDt(XMLGregorianCalendar value) {
@@ -146,7 +151,7 @@ public class ParticipantAccount1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getClsgDt() {
@@ -158,7 +163,7 @@ public class ParticipantAccount1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public ParticipantAccount1 setClsgDt(XMLGregorianCalendar value) {
@@ -171,7 +176,7 @@ public class ParticipantAccount1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getDeltnDt() {
@@ -183,7 +188,7 @@ public class ParticipantAccount1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public ParticipantAccount1 setDeltnDt(XMLGregorianCalendar value) {

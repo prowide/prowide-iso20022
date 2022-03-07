@@ -327,7 +327,7 @@ public enum PendingFailingSettlement1Code {
     GLOB,
 
     /**
-     * Counterparty is in receivership, ie, a  form of bankruptcy.
+     * Counterparty is in receivership, ie, a form of bankruptcy.
      * 
      */
     CPEC,

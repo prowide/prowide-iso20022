@@ -9,7 +9,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -56,7 +58,8 @@ public class Drawdown1 {
     protected DrawdownAllowanceCheck1 drwdwnAllwncChck;
     @XmlElement(name = "PnsnCmcmntLumpSumRmng")
     protected ActiveCurrencyAnd13DecimalAmount pnsnCmcmntLumpSumRmng;
-    @XmlElement(name = "PnsnCmcmntLumpSumDt")
+    @XmlElement(name = "PnsnCmcmntLumpSumDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar pnsnCmcmntLumpSumDt;
     @XmlElement(name = "MltplPnsnCmcmntLumpSums")
@@ -69,7 +72,8 @@ public class Drawdown1 {
     protected BeneficiaryDrawdown1 bnfcryDtls;
     @XmlElement(name = "CapdLmts")
     protected Capped1 capdLmts;
-    @XmlElement(name = "FlxblDrwdwnTrggrdDt")
+    @XmlElement(name = "FlxblDrwdwnTrggrdDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar flxblDrwdwnTrggrdDt;
     @XmlElement(name = "AddtlInf")
@@ -255,7 +259,7 @@ public class Drawdown1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getPnsnCmcmntLumpSumDt() {
@@ -267,7 +271,7 @@ public class Drawdown1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Drawdown1 setPnsnCmcmntLumpSumDt(XMLGregorianCalendar value) {
@@ -405,7 +409,7 @@ public class Drawdown1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getFlxblDrwdwnTrggrdDt() {
@@ -417,7 +421,7 @@ public class Drawdown1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Drawdown1 setFlxblDrwdwnTrggrdDt(XMLGregorianCalendar value) {

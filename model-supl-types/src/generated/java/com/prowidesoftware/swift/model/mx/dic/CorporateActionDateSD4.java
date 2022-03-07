@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,22 +35,28 @@ public class CorporateActionDateSD4 {
 
     @XmlElement(name = "PlcAndNm", required = true)
     protected String plcAndNm;
-    @XmlElement(name = "IntrmAcctgStartDt")
+    @XmlElement(name = "IntrmAcctgStartDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar intrmAcctgStartDt;
-    @XmlElement(name = "DlistgDt")
+    @XmlElement(name = "DlistgDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar dlistgDt;
-    @XmlElement(name = "ExrcPrdBegnDt")
+    @XmlElement(name = "ExrcPrdBegnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar exrcPrdBegnDt;
-    @XmlElement(name = "ObjctnDt")
+    @XmlElement(name = "ObjctnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar objctnDt;
-    @XmlElement(name = "ExclsnDt")
+    @XmlElement(name = "ExclsnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar exclsnDt;
-    @XmlElement(name = "ProofOfClmFilgDt")
+    @XmlElement(name = "ProofOfClmFilgDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar proofOfClmFilgDt;
 
@@ -82,7 +90,7 @@ public class CorporateActionDateSD4 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getIntrmAcctgStartDt() {
@@ -94,7 +102,7 @@ public class CorporateActionDateSD4 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CorporateActionDateSD4 setIntrmAcctgStartDt(XMLGregorianCalendar value) {
@@ -107,7 +115,7 @@ public class CorporateActionDateSD4 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getDlistgDt() {
@@ -119,7 +127,7 @@ public class CorporateActionDateSD4 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CorporateActionDateSD4 setDlistgDt(XMLGregorianCalendar value) {
@@ -132,7 +140,7 @@ public class CorporateActionDateSD4 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getExrcPrdBegnDt() {
@@ -144,7 +152,7 @@ public class CorporateActionDateSD4 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CorporateActionDateSD4 setExrcPrdBegnDt(XMLGregorianCalendar value) {
@@ -157,7 +165,7 @@ public class CorporateActionDateSD4 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getObjctnDt() {
@@ -169,7 +177,7 @@ public class CorporateActionDateSD4 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CorporateActionDateSD4 setObjctnDt(XMLGregorianCalendar value) {
@@ -182,7 +190,7 @@ public class CorporateActionDateSD4 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getExclsnDt() {
@@ -194,7 +202,7 @@ public class CorporateActionDateSD4 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CorporateActionDateSD4 setExclsnDt(XMLGregorianCalendar value) {
@@ -207,7 +215,7 @@ public class CorporateActionDateSD4 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getProofOfClmFilgDt() {
@@ -219,7 +227,7 @@ public class CorporateActionDateSD4 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CorporateActionDateSD4 setProofOfClmFilgDt(XMLGregorianCalendar value) {

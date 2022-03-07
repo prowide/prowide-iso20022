@@ -28,25 +28,25 @@ public enum EquityReturnParameter1Code {
 
 
     /**
-     * Equity derivative parameter Return Dividend. 
+     * Equity derivative parameter Return Dividend.
      * 
      */
     PRDV,
 
     /**
-     * Equity derivative parameter Return Variance. 
+     * Equity derivative parameter Return Variance.
      * 
      */
     PRVA,
 
     /**
-     * Equity derivative parameter Return Volatility. 
+     * Equity derivative parameter Return Volatility.
      * 
      */
     PRVO,
 
     /**
-     * Equity derivative parameter Price Return Basis Performance. 
+     * Equity derivative parameter Price Return Basis Performance.
      * 
      */
     PRBP;

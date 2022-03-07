@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -57,7 +59,8 @@ public class CardIndividualTransaction2 {
     protected TransactionIdentifier1 txId;
     @XmlElement(name = "Pdct")
     protected Product2 pdct;
-    @XmlElement(name = "VldtnDt")
+    @XmlElement(name = "VldtnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar vldtnDt;
     @XmlElement(name = "VldtnSeqNb")
@@ -318,7 +321,7 @@ public class CardIndividualTransaction2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getVldtnDt() {
@@ -330,7 +333,7 @@ public class CardIndividualTransaction2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CardIndividualTransaction2 setVldtnDt(XMLGregorianCalendar value) {

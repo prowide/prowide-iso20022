@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,22 +35,28 @@ public class CorporateActionDateSD7 {
 
     @XmlElement(name = "PlcAndNm", required = true)
     protected String plcAndNm;
-    @XmlElement(name = "ActlEarlyXprtnDt")
+    @XmlElement(name = "ActlEarlyXprtnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar actlEarlyXprtnDt;
-    @XmlElement(name = "ActlPrtctXprtnDt")
+    @XmlElement(name = "ActlPrtctXprtnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar actlPrtctXprtnDt;
-    @XmlElement(name = "ActlEarlyPrtctXprtnDt")
+    @XmlElement(name = "ActlEarlyPrtctXprtnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar actlEarlyPrtctXprtnDt;
-    @XmlElement(name = "DTCEarlyPrtctXprtnDt")
+    @XmlElement(name = "DTCEarlyPrtctXprtnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar dtcEarlyPrtctXprtnDt;
-    @XmlElement(name = "ActlEarlyCoverPrtctXprtnDt")
+    @XmlElement(name = "ActlEarlyCoverPrtctXprtnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar actlEarlyCoverPrtctXprtnDt;
-    @XmlElement(name = "DTCEarlyCoverPrtctXprtnDt")
+    @XmlElement(name = "DTCEarlyCoverPrtctXprtnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar dtcEarlyCoverPrtctXprtnDt;
 
@@ -82,7 +90,7 @@ public class CorporateActionDateSD7 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getActlEarlyXprtnDt() {
@@ -94,7 +102,7 @@ public class CorporateActionDateSD7 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CorporateActionDateSD7 setActlEarlyXprtnDt(XMLGregorianCalendar value) {
@@ -107,7 +115,7 @@ public class CorporateActionDateSD7 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getActlPrtctXprtnDt() {
@@ -119,7 +127,7 @@ public class CorporateActionDateSD7 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CorporateActionDateSD7 setActlPrtctXprtnDt(XMLGregorianCalendar value) {
@@ -132,7 +140,7 @@ public class CorporateActionDateSD7 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getActlEarlyPrtctXprtnDt() {
@@ -144,7 +152,7 @@ public class CorporateActionDateSD7 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CorporateActionDateSD7 setActlEarlyPrtctXprtnDt(XMLGregorianCalendar value) {
@@ -157,7 +165,7 @@ public class CorporateActionDateSD7 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getDTCEarlyPrtctXprtnDt() {
@@ -169,7 +177,7 @@ public class CorporateActionDateSD7 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CorporateActionDateSD7 setDTCEarlyPrtctXprtnDt(XMLGregorianCalendar value) {
@@ -182,7 +190,7 @@ public class CorporateActionDateSD7 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getActlEarlyCoverPrtctXprtnDt() {
@@ -194,7 +202,7 @@ public class CorporateActionDateSD7 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CorporateActionDateSD7 setActlEarlyCoverPrtctXprtnDt(XMLGregorianCalendar value) {
@@ -207,7 +215,7 @@ public class CorporateActionDateSD7 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getDTCEarlyCoverPrtctXprtnDt() {
@@ -219,7 +227,7 @@ public class CorporateActionDateSD7 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CorporateActionDateSD7 setDTCEarlyCoverPrtctXprtnDt(XMLGregorianCalendar value) {

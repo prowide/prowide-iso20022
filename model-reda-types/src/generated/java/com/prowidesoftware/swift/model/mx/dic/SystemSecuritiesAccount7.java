@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -43,10 +45,12 @@ public class SystemSecuritiesAccount7 {
     protected String id;
     @XmlElement(name = "Tp", required = true)
     protected SystemSecuritiesAccountType1Choice tp;
-    @XmlElement(name = "OpngDt", required = true)
+    @XmlElement(name = "OpngDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar opngDt;
-    @XmlElement(name = "ClsgDt")
+    @XmlElement(name = "ClsgDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar clsgDt;
     @XmlElement(name = "HldInd")
@@ -142,7 +146,7 @@ public class SystemSecuritiesAccount7 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getOpngDt() {
@@ -154,7 +158,7 @@ public class SystemSecuritiesAccount7 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public SystemSecuritiesAccount7 setOpngDt(XMLGregorianCalendar value) {
@@ -167,7 +171,7 @@ public class SystemSecuritiesAccount7 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getClsgDt() {
@@ -179,7 +183,7 @@ public class SystemSecuritiesAccount7 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public SystemSecuritiesAccount7 setClsgDt(XMLGregorianCalendar value) {

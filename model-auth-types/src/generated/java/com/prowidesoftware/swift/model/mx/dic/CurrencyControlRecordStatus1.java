@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -38,7 +40,8 @@ public class CurrencyControlRecordStatus1 {
     protected StatisticalReportingStatus1Code sts;
     @XmlElement(name = "StsRsn")
     protected List<ValidationStatusReason1> stsRsn;
-    @XmlElement(name = "StsDtTm")
+    @XmlElement(name = "StsDtTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar stsDtTm;
     @XmlElement(name = "DocId")
@@ -128,7 +131,7 @@ public class CurrencyControlRecordStatus1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getStsDtTm() {
@@ -140,7 +143,7 @@ public class CurrencyControlRecordStatus1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CurrencyControlRecordStatus1 setStsDtTm(XMLGregorianCalendar value) {

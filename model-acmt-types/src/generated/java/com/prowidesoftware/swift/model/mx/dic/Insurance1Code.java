@@ -26,7 +26,7 @@ public enum Insurance1Code {
 
 
     /**
-     * Life insurance
+     * Life insurance.
      * 
      */
     LIFE,

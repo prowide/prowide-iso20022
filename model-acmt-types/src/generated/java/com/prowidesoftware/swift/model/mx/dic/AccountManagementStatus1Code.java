@@ -46,7 +46,7 @@ public enum AccountManagementStatus1Code {
     EXEC,
 
     /**
-     * The account management instruction has been sent to the next party, eg, the next intermediary.
+     * The account management instruction has been sent to the next party, for example, the next intermediary.
      * 
      */
     STNP;

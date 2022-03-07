@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -55,7 +57,8 @@ public class IntraPositionMovementDetails16 {
     protected DateAndDateTime2Choice sttlmDt;
     @XmlElement(name = "AvlblDt")
     protected DateAndDateTime2Choice avlblDt;
-    @XmlElement(name = "AckdStsTmStmp")
+    @XmlElement(name = "AckdStsTmStmp", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar ackdStsTmStmp;
     @XmlElement(name = "CorpActnEvtTp")
@@ -272,7 +275,7 @@ public class IntraPositionMovementDetails16 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getAckdStsTmStmp() {
@@ -284,7 +287,7 @@ public class IntraPositionMovementDetails16 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public IntraPositionMovementDetails16 setAckdStsTmStmp(XMLGregorianCalendar value) {

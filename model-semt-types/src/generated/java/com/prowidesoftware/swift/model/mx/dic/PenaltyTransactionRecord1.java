@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -63,10 +65,12 @@ public class PenaltyTransactionRecord1 {
     protected PartyIdentification135 cshAcctOwnr;
     @XmlElement(name = "PstngAmt")
     protected AmountAndDirection5 pstngAmt;
-    @XmlElement(name = "AckdStsTmStmp")
+    @XmlElement(name = "AckdStsTmStmp", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar ackdStsTmStmp;
-    @XmlElement(name = "MtchdStsTmStmp")
+    @XmlElement(name = "MtchdStsTmStmp", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar mtchdStsTmStmp;
     @XmlElement(name = "SttlmStsFlng")
@@ -354,7 +358,7 @@ public class PenaltyTransactionRecord1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getAckdStsTmStmp() {
@@ -366,7 +370,7 @@ public class PenaltyTransactionRecord1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public PenaltyTransactionRecord1 setAckdStsTmStmp(XMLGregorianCalendar value) {
@@ -379,7 +383,7 @@ public class PenaltyTransactionRecord1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getMtchdStsTmStmp() {
@@ -391,7 +395,7 @@ public class PenaltyTransactionRecord1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public PenaltyTransactionRecord1 setMtchdStsTmStmp(XMLGregorianCalendar value) {

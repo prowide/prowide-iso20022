@@ -7,7 +7,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -36,13 +38,16 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 public class InterestChange1 {
 
-    @XmlElement(name = "FxgDt", required = true)
+    @XmlElement(name = "FxgDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar fxgDt;
-    @XmlElement(name = "RptgDt", required = true)
+    @XmlElement(name = "RptgDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar rptgDt;
-    @XmlElement(name = "RstDt", required = true)
+    @XmlElement(name = "RstDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar rstDt;
     @XmlElement(name = "SprdRate", required = true)
@@ -69,7 +74,7 @@ public class InterestChange1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getFxgDt() {
@@ -81,7 +86,7 @@ public class InterestChange1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public InterestChange1 setFxgDt(XMLGregorianCalendar value) {
@@ -94,7 +99,7 @@ public class InterestChange1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getRptgDt() {
@@ -106,7 +111,7 @@ public class InterestChange1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public InterestChange1 setRptgDt(XMLGregorianCalendar value) {
@@ -119,7 +124,7 @@ public class InterestChange1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getRstDt() {
@@ -131,7 +136,7 @@ public class InterestChange1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public InterestChange1 setRstDt(XMLGregorianCalendar value) {

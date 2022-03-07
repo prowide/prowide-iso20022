@@ -9,7 +9,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -56,7 +58,8 @@ public class CardPaymentTransactionDetails15 {
     protected BigDecimal reqdAmt;
     @XmlElement(name = "AuthrsdAmt")
     protected BigDecimal authrsdAmt;
-    @XmlElement(name = "VldtyDt")
+    @XmlElement(name = "VldtyDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar vldtyDt;
     @XmlElement(name = "UattnddLvlCtgy")
@@ -234,7 +237,7 @@ public class CardPaymentTransactionDetails15 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getVldtyDt() {
@@ -246,7 +249,7 @@ public class CardPaymentTransactionDetails15 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CardPaymentTransactionDetails15 setVldtyDt(XMLGregorianCalendar value) {

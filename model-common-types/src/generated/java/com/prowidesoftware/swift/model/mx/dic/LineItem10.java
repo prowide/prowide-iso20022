@@ -9,7 +9,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -104,17 +106,20 @@ public class LineItem10 {
     protected Quantity3 measrQtyStart;
     @XmlElement(name = "MeasrQtyEnd")
     protected Quantity3 measrQtyEnd;
-    @XmlElement(name = "MeasrDtTmStart")
+    @XmlElement(name = "MeasrDtTmStart", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar measrDtTmStart;
-    @XmlElement(name = "MeasrDtTmEnd")
+    @XmlElement(name = "MeasrDtTmEnd", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar measrDtTmEnd;
     @XmlElement(name = "ShipTo")
     protected TradeParty1 shipTo;
     @XmlElement(name = "Incotrms")
     protected Incoterms3 incotrms;
-    @XmlElement(name = "DlvryDtTm")
+    @XmlElement(name = "DlvryDtTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar dlvryDtTm;
     @XmlElement(name = "DlvryNoteId")
@@ -740,7 +745,7 @@ public class LineItem10 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getMeasrDtTmStart() {
@@ -752,7 +757,7 @@ public class LineItem10 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public LineItem10 setMeasrDtTmStart(XMLGregorianCalendar value) {
@@ -765,7 +770,7 @@ public class LineItem10 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getMeasrDtTmEnd() {
@@ -777,7 +782,7 @@ public class LineItem10 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public LineItem10 setMeasrDtTmEnd(XMLGregorianCalendar value) {
@@ -840,7 +845,7 @@ public class LineItem10 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getDlvryDtTm() {
@@ -852,7 +857,7 @@ public class LineItem10 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public LineItem10 setDlvryDtTm(XMLGregorianCalendar value) {

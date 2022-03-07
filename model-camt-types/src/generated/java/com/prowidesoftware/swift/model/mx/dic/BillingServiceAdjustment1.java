@@ -7,7 +7,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -49,7 +51,8 @@ public class BillingServiceAdjustment1 {
     protected AmountAndDirection34 amt;
     @XmlElement(name = "BalReqrdAmt")
     protected AmountAndDirection34 balReqrdAmt;
-    @XmlElement(name = "ErrDt")
+    @XmlElement(name = "ErrDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar errDt;
     @XmlElement(name = "AdjstmntId")
@@ -178,7 +181,7 @@ public class BillingServiceAdjustment1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getErrDt() {
@@ -190,7 +193,7 @@ public class BillingServiceAdjustment1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public BillingServiceAdjustment1 setErrDt(XMLGregorianCalendar value) {

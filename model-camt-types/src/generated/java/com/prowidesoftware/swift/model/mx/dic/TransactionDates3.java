@@ -8,7 +8,10 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -34,25 +37,32 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 public class TransactionDates3 {
 
-    @XmlElement(name = "AccptncDtTm")
+    @XmlElement(name = "AccptncDtTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar accptncDtTm;
-    @XmlElement(name = "TradActvtyCtrctlSttlmDt")
+    @XmlElement(name = "TradActvtyCtrctlSttlmDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar tradActvtyCtrctlSttlmDt;
-    @XmlElement(name = "TradDt")
+    @XmlElement(name = "TradDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar tradDt;
-    @XmlElement(name = "IntrBkSttlmDt")
+    @XmlElement(name = "IntrBkSttlmDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar intrBkSttlmDt;
-    @XmlElement(name = "StartDt")
+    @XmlElement(name = "StartDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar startDt;
-    @XmlElement(name = "EndDt")
+    @XmlElement(name = "EndDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar endDt;
-    @XmlElement(name = "TxDtTm")
+    @XmlElement(name = "TxDtTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar txDtTm;
     @XmlElement(name = "Prtry")
@@ -63,7 +73,7 @@ public class TransactionDates3 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getAccptncDtTm() {
@@ -75,7 +85,7 @@ public class TransactionDates3 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public TransactionDates3 setAccptncDtTm(XMLGregorianCalendar value) {
@@ -88,7 +98,7 @@ public class TransactionDates3 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getTradActvtyCtrctlSttlmDt() {
@@ -100,7 +110,7 @@ public class TransactionDates3 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public TransactionDates3 setTradActvtyCtrctlSttlmDt(XMLGregorianCalendar value) {
@@ -113,7 +123,7 @@ public class TransactionDates3 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getTradDt() {
@@ -125,7 +135,7 @@ public class TransactionDates3 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public TransactionDates3 setTradDt(XMLGregorianCalendar value) {
@@ -138,7 +148,7 @@ public class TransactionDates3 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getIntrBkSttlmDt() {
@@ -150,7 +160,7 @@ public class TransactionDates3 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public TransactionDates3 setIntrBkSttlmDt(XMLGregorianCalendar value) {
@@ -163,7 +173,7 @@ public class TransactionDates3 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getStartDt() {
@@ -175,7 +185,7 @@ public class TransactionDates3 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public TransactionDates3 setStartDt(XMLGregorianCalendar value) {
@@ -188,7 +198,7 @@ public class TransactionDates3 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getEndDt() {
@@ -200,7 +210,7 @@ public class TransactionDates3 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public TransactionDates3 setEndDt(XMLGregorianCalendar value) {
@@ -213,7 +223,7 @@ public class TransactionDates3 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getTxDtTm() {
@@ -225,7 +235,7 @@ public class TransactionDates3 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public TransactionDates3 setTxDtTm(XMLGregorianCalendar value) {

@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -34,16 +36,20 @@ public class TradingVenueAttributes1 {
     protected String id;
     @XmlElement(name = "IssrReq")
     protected boolean issrReq;
-    @XmlElement(name = "AdmssnApprvlDtByIssr")
+    @XmlElement(name = "AdmssnApprvlDtByIssr", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar admssnApprvlDtByIssr;
-    @XmlElement(name = "ReqForAdmssnDt")
+    @XmlElement(name = "ReqForAdmssnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar reqForAdmssnDt;
-    @XmlElement(name = "FrstTradDt")
+    @XmlElement(name = "FrstTradDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar frstTradDt;
-    @XmlElement(name = "TermntnDt")
+    @XmlElement(name = "TermntnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar termntnDt;
 
@@ -94,7 +100,7 @@ public class TradingVenueAttributes1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getAdmssnApprvlDtByIssr() {
@@ -106,7 +112,7 @@ public class TradingVenueAttributes1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public TradingVenueAttributes1 setAdmssnApprvlDtByIssr(XMLGregorianCalendar value) {
@@ -119,7 +125,7 @@ public class TradingVenueAttributes1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getReqForAdmssnDt() {
@@ -131,7 +137,7 @@ public class TradingVenueAttributes1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public TradingVenueAttributes1 setReqForAdmssnDt(XMLGregorianCalendar value) {
@@ -144,7 +150,7 @@ public class TradingVenueAttributes1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getFrstTradDt() {
@@ -156,7 +162,7 @@ public class TradingVenueAttributes1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public TradingVenueAttributes1 setFrstTradDt(XMLGregorianCalendar value) {
@@ -169,7 +175,7 @@ public class TradingVenueAttributes1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getTermntnDt() {
@@ -181,7 +187,7 @@ public class TradingVenueAttributes1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public TradingVenueAttributes1 setTermntnDt(XMLGregorianCalendar value) {

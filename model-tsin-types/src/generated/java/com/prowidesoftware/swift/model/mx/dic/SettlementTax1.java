@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -36,7 +38,8 @@ public class SettlementTax1 {
     protected List<CurrencyAndAmount> clctdAmt;
     @XmlElement(name = "BsisAmt")
     protected List<CurrencyAndAmount> bsisAmt;
-    @XmlElement(name = "TaxPtDt")
+    @XmlElement(name = "TaxPtDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar taxPtDt;
 
@@ -128,7 +131,7 @@ public class SettlementTax1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getTaxPtDt() {
@@ -140,7 +143,7 @@ public class SettlementTax1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public SettlementTax1 setTaxPtDt(XMLGregorianCalendar value) {

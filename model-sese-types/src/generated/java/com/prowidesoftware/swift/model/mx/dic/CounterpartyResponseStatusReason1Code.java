@@ -27,19 +27,19 @@ public enum CounterpartyResponseStatusReason1Code {
 
 
     /**
-     * Specifies  that the response is related to an allegement from the counterparty.
+     * Specifies that the response is related to an allegement from the counterparty.
      * 
      */
     CPTR,
 
     /**
-     * Specifies  that the response is related to the cancellation request of the counterparty.
+     * Specifies that the response is related to the cancellation request of the counterparty.
      * 
      */
     CPCX,
 
     /**
-     * Specifies  that the response is related to the modification request of the counterparty.
+     * Specifies that the response is related to the modification request of the counterparty.
      * 
      */
     CPMD;

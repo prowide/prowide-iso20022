@@ -53,7 +53,7 @@ public class MxId {
      * @throws IllegalArgumentException if namespace parameter cannot be parsed as MX identification
      */
     public MxId(final String namespace) {
-        Validate.notNull(namespace);
+        Objects.requireNonNull(namespace);
         final Matcher matcher = pattern.matcher(namespace);
         if (matcher.matches()) {
             final String bpStr = matcher.group(1);

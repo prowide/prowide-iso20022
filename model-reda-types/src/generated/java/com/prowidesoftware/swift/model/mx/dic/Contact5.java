@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -66,10 +68,12 @@ public class Contact5 {
     @XmlElement(name = "PrefrdMtd")
     @XmlSchemaType(name = "string")
     protected PreferredContactMethod1Code prefrdMtd;
-    @XmlElement(name = "VldFr")
+    @XmlElement(name = "VldFr", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar vldFr;
-    @XmlElement(name = "VldTo")
+    @XmlElement(name = "VldTo", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar vldTo;
 
@@ -382,7 +386,7 @@ public class Contact5 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getVldFr() {
@@ -394,7 +398,7 @@ public class Contact5 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Contact5 setVldFr(XMLGregorianCalendar value) {
@@ -407,7 +411,7 @@ public class Contact5 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getVldTo() {
@@ -419,7 +423,7 @@ public class Contact5 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Contact5 setVldTo(XMLGregorianCalendar value) {

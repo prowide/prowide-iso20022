@@ -49,9 +49,9 @@ public class XmlEventWriterTest {
         MxSeev03100209 mx = MxSeev03100209.parse(xml);
         assertMessage(mx);
         String xmlResult = mx.message();
-        // Original issue
+        // original issue
         assertFalse(xmlResult.contains("<Doc:Amt Ccy=\"USD\" >0.000000</Doc:Amt>"));
-        // Excpected result
+        // expected result
         assertTrue(xmlResult.contains("<Doc:Amt Ccy=\"USD\">0.000000</Doc:Amt>"));
     }
 

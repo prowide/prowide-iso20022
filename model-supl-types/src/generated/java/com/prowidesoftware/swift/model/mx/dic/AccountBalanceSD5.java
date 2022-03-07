@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -32,7 +34,8 @@ public class AccountBalanceSD5 {
     protected String plcAndNm;
     @XmlElement(name = "TxPos")
     protected AdjustedBalanceTypeSD1Choice txPos;
-    @XmlElement(name = "AsOfDt")
+    @XmlElement(name = "AsOfDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar asOfDt;
     @XmlElement(name = "ContraPtcptNb")
@@ -93,7 +96,7 @@ public class AccountBalanceSD5 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getAsOfDt() {
@@ -105,7 +108,7 @@ public class AccountBalanceSD5 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public AccountBalanceSD5 setAsOfDt(XMLGregorianCalendar value) {

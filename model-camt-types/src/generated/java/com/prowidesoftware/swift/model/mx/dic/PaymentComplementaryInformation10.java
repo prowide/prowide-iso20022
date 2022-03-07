@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -75,10 +77,12 @@ public class PaymentComplementaryInformation10 {
     protected PaymentTypeInformation27 pmtTpInf;
     @XmlElement(name = "ReqdExctnDt")
     protected DateAndDateTime2Choice reqdExctnDt;
-    @XmlElement(name = "ReqdColltnDt")
+    @XmlElement(name = "ReqdColltnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar reqdColltnDt;
-    @XmlElement(name = "IntrBkSttlmDt")
+    @XmlElement(name = "IntrBkSttlmDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar intrBkSttlmDt;
     @XmlElement(name = "Amt")
@@ -277,7 +281,7 @@ public class PaymentComplementaryInformation10 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getReqdColltnDt() {
@@ -289,7 +293,7 @@ public class PaymentComplementaryInformation10 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public PaymentComplementaryInformation10 setReqdColltnDt(XMLGregorianCalendar value) {
@@ -302,7 +306,7 @@ public class PaymentComplementaryInformation10 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getIntrBkSttlmDt() {
@@ -314,7 +318,7 @@ public class PaymentComplementaryInformation10 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public PaymentComplementaryInformation10 setIntrBkSttlmDt(XMLGregorianCalendar value) {

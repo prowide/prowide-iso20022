@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -39,7 +41,8 @@ public class OtherCertificateDataSet1 {
     @XmlElement(name = "CertTp", required = true)
     @XmlSchemaType(name = "string")
     protected TradeCertificateType2Code certTp;
-    @XmlElement(name = "IsseDt", required = true)
+    @XmlElement(name = "IsseDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar isseDt;
     @XmlElement(name = "Issr", required = true)
@@ -127,7 +130,7 @@ public class OtherCertificateDataSet1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getIsseDt() {
@@ -139,7 +142,7 @@ public class OtherCertificateDataSet1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public OtherCertificateDataSet1 setIsseDt(XMLGregorianCalendar value) {

@@ -12,7 +12,9 @@ import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlIDREF;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -46,7 +48,8 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 public class ReconciliationList1 {
 
-    @XmlElement(name = "Dt", required = true)
+    @XmlElement(name = "Dt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar dt;
     @XmlElementRef(name = "RltdDoc", namespace = "urn:iso:std:iso:20022:tech:xsd:tsmt.053.001.01", type = JAXBElement.class, required = false)
@@ -65,7 +68,8 @@ public class ReconciliationList1 {
     protected PaymentIdentification1 pmtRef;
     @XmlElement(name = "PmtMeans", required = true)
     protected PaymentMeans1 pmtMeans;
-    @XmlElement(name = "PmtDt", required = true)
+    @XmlElement(name = "PmtDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar pmtDt;
     @XmlElement(name = "PmtTerms", required = true)
@@ -90,7 +94,7 @@ public class ReconciliationList1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getDt() {
@@ -102,7 +106,7 @@ public class ReconciliationList1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public ReconciliationList1 setDt(XMLGregorianCalendar value) {
@@ -269,7 +273,7 @@ public class ReconciliationList1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getPmtDt() {
@@ -281,7 +285,7 @@ public class ReconciliationList1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public ReconciliationList1 setPmtDt(XMLGregorianCalendar value) {

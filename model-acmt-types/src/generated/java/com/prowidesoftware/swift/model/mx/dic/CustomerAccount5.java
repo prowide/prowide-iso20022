@@ -9,7 +9,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -69,7 +71,8 @@ public class CustomerAccount5 {
     protected BigDecimal clngNtfctnAmt;
     @XmlElement(name = "StmtFrqcyAndFrmt")
     protected List<StatementFrequencyAndForm1> stmtFrqcyAndFrmt;
-    @XmlElement(name = "ClsgDt")
+    @XmlElement(name = "ClsgDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar clsgDt;
     @XmlElement(name = "Rstrctn")
@@ -413,7 +416,7 @@ public class CustomerAccount5 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getClsgDt() {
@@ -425,7 +428,7 @@ public class CustomerAccount5 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CustomerAccount5 setClsgDt(XMLGregorianCalendar value) {

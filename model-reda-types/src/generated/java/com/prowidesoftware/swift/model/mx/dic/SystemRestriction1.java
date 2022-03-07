@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -27,10 +29,12 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 public class SystemRestriction1 {
 
-    @XmlElement(name = "VldFr", required = true)
+    @XmlElement(name = "VldFr", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar vldFr;
-    @XmlElement(name = "VldTo")
+    @XmlElement(name = "VldTo", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar vldTo;
     @XmlElement(name = "Tp", required = true)
@@ -41,7 +45,7 @@ public class SystemRestriction1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getVldFr() {
@@ -53,7 +57,7 @@ public class SystemRestriction1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public SystemRestriction1 setVldFr(XMLGregorianCalendar value) {
@@ -66,7 +70,7 @@ public class SystemRestriction1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getVldTo() {
@@ -78,7 +82,7 @@ public class SystemRestriction1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public SystemRestriction1 setVldTo(XMLGregorianCalendar value) {

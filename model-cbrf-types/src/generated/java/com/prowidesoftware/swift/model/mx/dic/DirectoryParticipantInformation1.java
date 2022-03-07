@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -42,10 +44,12 @@ public class DirectoryParticipantInformation1 {
     protected BranchAndFinancialInstitutionIdentification5 acctSvcr;
     @XmlElement(name = "DrctPtcpt")
     protected FinancialInstitutionIdentification9 drctPtcpt;
-    @XmlElement(name = "NtryCreDt", required = true)
+    @XmlElement(name = "NtryCreDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar ntryCreDt;
-    @XmlElement(name = "NtryDeltnDt")
+    @XmlElement(name = "NtryDeltnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar ntryDeltnDt;
     @XmlElement(name = "SvcrTp", required = true)
@@ -56,7 +60,8 @@ public class DirectoryParticipantInformation1 {
     protected String xchgTp;
     @XmlElement(name = "RstrctnTp", required = true)
     protected String rstrctnTp;
-    @XmlElement(name = "RstrctnFctvDt")
+    @XmlElement(name = "RstrctnFctvDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar rstrctnFctvDt;
     @XmlElement(name = "PtcptId", required = true)
@@ -144,7 +149,7 @@ public class DirectoryParticipantInformation1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getNtryCreDt() {
@@ -156,7 +161,7 @@ public class DirectoryParticipantInformation1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public DirectoryParticipantInformation1 setNtryCreDt(XMLGregorianCalendar value) {
@@ -169,7 +174,7 @@ public class DirectoryParticipantInformation1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getNtryDeltnDt() {
@@ -181,7 +186,7 @@ public class DirectoryParticipantInformation1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public DirectoryParticipantInformation1 setNtryDeltnDt(XMLGregorianCalendar value) {
@@ -294,7 +299,7 @@ public class DirectoryParticipantInformation1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getRstrctnFctvDt() {
@@ -306,7 +311,7 @@ public class DirectoryParticipantInformation1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public DirectoryParticipantInformation1 setRstrctnFctvDt(XMLGregorianCalendar value) {

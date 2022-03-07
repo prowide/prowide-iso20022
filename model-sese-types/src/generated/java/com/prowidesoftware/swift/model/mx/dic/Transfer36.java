@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -56,10 +58,12 @@ public class Transfer36 {
     protected BusinessFlowType1Code bizFlowTp;
     @XmlElement(name = "ReqdTrfDt")
     protected DateFormat1Choice reqdTrfDt;
-    @XmlElement(name = "ReqdSttlmDt")
+    @XmlElement(name = "ReqdSttlmDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar reqdSttlmDt;
-    @XmlElement(name = "TrfOrdrDtForm")
+    @XmlElement(name = "TrfOrdrDtForm", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar trfOrdrDtForm;
     @XmlElement(name = "TrfRsn")
@@ -219,7 +223,7 @@ public class Transfer36 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getReqdSttlmDt() {
@@ -231,7 +235,7 @@ public class Transfer36 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Transfer36 setReqdSttlmDt(XMLGregorianCalendar value) {
@@ -244,7 +248,7 @@ public class Transfer36 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getTrfOrdrDtForm() {
@@ -256,7 +260,7 @@ public class Transfer36 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Transfer36 setTrfOrdrDtForm(XMLGregorianCalendar value) {

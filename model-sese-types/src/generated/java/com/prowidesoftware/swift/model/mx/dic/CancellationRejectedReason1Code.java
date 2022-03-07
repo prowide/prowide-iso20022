@@ -32,7 +32,7 @@ public enum CancellationRejectedReason1Code {
     CUTO,
 
     /**
-     * Order is already executed and confirmation has been sent.
+     * Order or transfer has already been executed and confirmation has been sent.
      * 
      */
     COSE;

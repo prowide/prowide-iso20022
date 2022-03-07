@@ -7,7 +7,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -38,12 +40,14 @@ public class YieldCalculation1 {
     protected CalculationType1Code clctnTp;
     @XmlElement(name = "RedPric")
     protected Price1 redPric;
-    @XmlElement(name = "ValDtTm", required = true)
+    @XmlElement(name = "ValDtTm", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar valDtTm;
     @XmlElement(name = "ValPrd", required = true)
     protected DateTimePeriodChoice valPrd;
-    @XmlElement(name = "ClctnDt", required = true)
+    @XmlElement(name = "ClctnDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar clctnDt;
 
@@ -127,7 +131,7 @@ public class YieldCalculation1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getValDtTm() {
@@ -139,7 +143,7 @@ public class YieldCalculation1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public YieldCalculation1 setValDtTm(XMLGregorianCalendar value) {
@@ -177,7 +181,7 @@ public class YieldCalculation1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getClctnDt() {
@@ -189,7 +193,7 @@ public class YieldCalculation1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public YieldCalculation1 setClctnDt(XMLGregorianCalendar value) {

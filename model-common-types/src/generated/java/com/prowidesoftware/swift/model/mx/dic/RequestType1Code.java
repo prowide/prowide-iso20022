@@ -51,7 +51,7 @@ public enum RequestType1Code {
     RT_03("RT03"),
 
     /**
-     * Type is a request to change the sequence of the transactions.
+     * Type is a request to change the sequence of the  transactions.
      * 
      */
     @XmlEnumValue("RT04")

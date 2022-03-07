@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -46,13 +48,15 @@ public class PartyProfileInformation2 {
     protected String rspnsblPty;
     @XmlElement(name = "CertTp", required = true)
     protected CertificationType1Choice certTp;
-    @XmlElement(name = "ChckngDt")
+    @XmlElement(name = "ChckngDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar chckngDt;
     @XmlElement(name = "ChckngFrqcy")
     @XmlSchemaType(name = "string")
     protected EventFrequency1Code chckngFrqcy;
-    @XmlElement(name = "NxtRvsnDt")
+    @XmlElement(name = "NxtRvsnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar nxtRvsnDt;
     @XmlElement(name = "SlryRg")
@@ -186,7 +190,7 @@ public class PartyProfileInformation2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getChckngDt() {
@@ -198,7 +202,7 @@ public class PartyProfileInformation2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public PartyProfileInformation2 setChckngDt(XMLGregorianCalendar value) {
@@ -236,7 +240,7 @@ public class PartyProfileInformation2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getNxtRvsnDt() {
@@ -248,7 +252,7 @@ public class PartyProfileInformation2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public PartyProfileInformation2 setNxtRvsnDt(XMLGregorianCalendar value) {

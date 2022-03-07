@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -29,10 +31,12 @@ public class LoanData11 {
 
     @XmlElement(name = "UnqTradIdr", required = true)
     protected String unqTradIdr;
-    @XmlElement(name = "EvtDt", required = true)
+    @XmlElement(name = "EvtDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar evtDt;
-    @XmlElement(name = "TermntnDt", required = true)
+    @XmlElement(name = "TermntnDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar termntnDt;
 
@@ -66,7 +70,7 @@ public class LoanData11 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getEvtDt() {
@@ -78,7 +82,7 @@ public class LoanData11 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public LoanData11 setEvtDt(XMLGregorianCalendar value) {
@@ -91,7 +95,7 @@ public class LoanData11 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getTermntnDt() {
@@ -103,7 +107,7 @@ public class LoanData11 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public LoanData11 setTermntnDt(XMLGregorianCalendar value) {

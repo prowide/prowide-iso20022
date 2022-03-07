@@ -49,7 +49,7 @@ public enum PartyType5Code {
     MERC,
 
     /**
-     * Entity acquiring card transactions.
+     * Bank of the Merchant providing goods and services
      * 
      */
     ACQR,

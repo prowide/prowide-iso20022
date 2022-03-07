@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -29,13 +31,16 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 public class FinancingDateDetails1 {
 
-    @XmlElement(name = "BookDt")
+    @XmlElement(name = "BookDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected List<XMLGregorianCalendar> bookDt;
-    @XmlElement(name = "CdtDt", required = true)
+    @XmlElement(name = "CdtDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar cdtDt;
-    @XmlElement(name = "DbtDt")
+    @XmlElement(name = "DbtDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar dbtDt;
 
@@ -57,7 +62,7 @@ public class FinancingDateDetails1 {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link XMLGregorianCalendar }
+     * {@link String }
      * 
      * 
      */
@@ -73,7 +78,7 @@ public class FinancingDateDetails1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getCdtDt() {
@@ -85,7 +90,7 @@ public class FinancingDateDetails1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public FinancingDateDetails1 setCdtDt(XMLGregorianCalendar value) {
@@ -98,7 +103,7 @@ public class FinancingDateDetails1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getDbtDt() {
@@ -110,7 +115,7 @@ public class FinancingDateDetails1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public FinancingDateDetails1 setDbtDt(XMLGregorianCalendar value) {

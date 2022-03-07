@@ -9,7 +9,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -59,7 +61,8 @@ public class IndicationOfInterest1 {
     protected Quantity1Choice ioiQty;
     @XmlElement(name = "Pric")
     protected Price1 pric;
-    @XmlElement(name = "VldUntilDtTm")
+    @XmlElement(name = "VldUntilDtTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar vldUntilDtTm;
     @XmlElement(name = "QltyIndctn")
@@ -187,7 +190,7 @@ public class IndicationOfInterest1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getVldUntilDtTm() {
@@ -199,7 +202,7 @@ public class IndicationOfInterest1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public IndicationOfInterest1 setVldUntilDtTm(XMLGregorianCalendar value) {

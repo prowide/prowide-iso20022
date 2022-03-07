@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -32,10 +34,12 @@ public class OriginalInvoiceInformation1 {
     protected String docNb;
     @XmlElement(name = "TtlInvcAmt", required = true)
     protected ActiveCurrencyAndAmount ttlInvcAmt;
-    @XmlElement(name = "IsseDt", required = true)
+    @XmlElement(name = "IsseDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar isseDt;
-    @XmlElement(name = "PmtDueDt", required = true)
+    @XmlElement(name = "PmtDueDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar pmtDueDt;
 
@@ -94,7 +98,7 @@ public class OriginalInvoiceInformation1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getIsseDt() {
@@ -106,7 +110,7 @@ public class OriginalInvoiceInformation1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public OriginalInvoiceInformation1 setIsseDt(XMLGregorianCalendar value) {
@@ -119,7 +123,7 @@ public class OriginalInvoiceInformation1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getPmtDueDt() {
@@ -131,7 +135,7 @@ public class OriginalInvoiceInformation1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public OriginalInvoiceInformation1 setPmtDueDt(XMLGregorianCalendar value) {

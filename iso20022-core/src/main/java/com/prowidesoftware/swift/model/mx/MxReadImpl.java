@@ -20,6 +20,7 @@ import com.prowidesoftware.swift.model.MxId;
 import org.apache.commons.lang3.Validate;
 
 import javax.xml.transform.sax.SAXSource;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -59,17 +60,27 @@ public class MxReadImpl implements MxRead {
      * @since 8.0.4
      */
     public static AbstractMX parse(final Class<? extends AbstractMX> targetClass, final String xml, final Class<?>[] classes) {
-        Validate.notNull(targetClass, "target class to parse must not be null");
-        Validate.notNull(xml, "XML to parse must not be null");
+        return parse(targetClass, xml, classes, new MxReadParams());
+    }
+
+    /**
+     * @since 9.2.6
+     */
+    public static AbstractMX parse(final Class<? extends AbstractMX> targetClass, final String xml, final Class<?>[] classes, final MxReadParams params) {
+        Objects.requireNonNull(targetClass, "target class to parse must not be null");
+        Objects.requireNonNull(xml, "XML to parse must not be null");
         Validate.notBlank(xml, "XML to parse must not be a blank string");
-        Validate.notNull(classes, "object model classes array must not be null");
+        Objects.requireNonNull(classes, "object model classes array must not be null");
+        Objects.requireNonNull(params, "The unmarshalling params cannot be null");
 
         try {
 
             SAXSource documentSource = MxParseUtils.createFilteredSAXSource(xml, AbstractMX.DOCUMENT_LOCALNAME);
-            Optional<AbstractMX> mx = parseDocumentFromSAXSource(documentSource, targetClass, classes);
+            final AbstractMX parsedDocument = (AbstractMX) MxParseUtils.parseSAXSource(documentSource, targetClass, classes, params);
 
-            Optional<AppHdr> appHdr = AppHdrParser.parse(xml);
+            Optional<AbstractMX> mx = Optional.ofNullable(parsedDocument);
+
+            Optional<AppHdr> appHdr = AppHdrParser.parse(xml, params);
 
             if (mx.isPresent() && appHdr.isPresent()) {
                 mx.get().setAppHdr(appHdr.get());
@@ -84,14 +95,6 @@ public class MxReadImpl implements MxRead {
     }
 
     /**
-     * @since 9.1.2
-     */
-    private static Optional<AbstractMX> parseDocumentFromSAXSource(SAXSource source, Class<? extends AbstractMX> targetClass, Class<?>[] classes) {
-        final AbstractMX mx = (AbstractMX) MxParseUtils.parseSAXSource(source, targetClass, classes);
-        return Optional.ofNullable(mx);
-    }
-
-    /**
      * Static parse implementation of {@link MxRead#read(String, MxId)}
      *
      * @return parsed message or null if XML is malformed or unrecognized as MX message
@@ -100,8 +103,16 @@ public class MxReadImpl implements MxRead {
      * @since 9.0
      */
     public static AbstractMX parse(final String xml, MxId id) {
-        Validate.notNull(xml, "XML to parse must not be null");
+        return parse(xml, id, new MxReadParams());
+    }
+
+    /**
+     * @since 9.2.6
+     */
+    static AbstractMX parse(final String xml, final MxId id, final MxReadParams params) {
+        Objects.requireNonNull(xml, "XML to parse must not be null");
         Validate.notBlank(xml, "XML to parse must not be a blank string");
+        Objects.requireNonNull(params, "unmarshalling params cannot be null");
 
         MxId resolvedId = id;
 
@@ -122,7 +133,7 @@ public class MxReadImpl implements MxRead {
             fqn = "com.prowidesoftware.swift.model.mx" + subPackage + ".Mx" + resolvedId.camelized();
             Class<? extends AbstractMX> clazz = (Class<? extends AbstractMX>) Class.forName(fqn);
             java.lang.reflect.Field _classes = clazz.getDeclaredField("_classes");
-            mx = parse(clazz, xml, (Class[]) _classes.get(null));
+            mx = parse(clazz, xml, (Class[]) _classes.get(null), params);
         } catch (ClassNotFoundException e) {
             log.log(Level.SEVERE, "MX model implementation not found for " + fqn, e);
         } catch (Exception e) {
@@ -133,7 +144,7 @@ public class MxReadImpl implements MxRead {
 
     @Override
     public AbstractMX read(final Class<? extends AbstractMX> targetClass, final String xml, final Class<?>[] classes) {
-        return parse(targetClass, xml, classes);
+        return parse(targetClass, xml, classes, new MxReadParams());
     }
 
     /**
@@ -154,7 +165,7 @@ public class MxReadImpl implements MxRead {
      */
     @Override
     public AbstractMX read(final String xml, MxId id) {
-        return parse(xml, id);
+        return parse(xml, id, new MxReadParams());
     }
 
 }

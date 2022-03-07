@@ -7,7 +7,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -39,10 +41,12 @@ public class SecurityInstrumentDescription2 {
     protected SecurityClassificationType1Choice clssfctnTp;
     @XmlElement(name = "PlcOfListg")
     protected String plcOfListg;
-    @XmlElement(name = "ExrcDt")
+    @XmlElement(name = "ExrcDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar exrcDt;
-    @XmlElement(name = "MtrtyDt")
+    @XmlElement(name = "MtrtyDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar mtrtyDt;
     @XmlElement(name = "OptnTp")
@@ -133,7 +137,7 @@ public class SecurityInstrumentDescription2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getExrcDt() {
@@ -145,7 +149,7 @@ public class SecurityInstrumentDescription2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public SecurityInstrumentDescription2 setExrcDt(XMLGregorianCalendar value) {
@@ -158,7 +162,7 @@ public class SecurityInstrumentDescription2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getMtrtyDt() {
@@ -170,7 +174,7 @@ public class SecurityInstrumentDescription2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public SecurityInstrumentDescription2 setMtrtyDt(XMLGregorianCalendar value) {

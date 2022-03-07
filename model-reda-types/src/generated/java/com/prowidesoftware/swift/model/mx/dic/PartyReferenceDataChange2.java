@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,7 +35,8 @@ public class PartyReferenceDataChange2 {
     protected SystemPartyIdentification8 ptyId;
     @XmlElement(name = "Rcrd", required = true)
     protected List<UpdateLogPartyRecord1Choice> rcrd;
-    @XmlElement(name = "OprTmStmp", required = true)
+    @XmlElement(name = "OprTmStmp", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar oprTmStmp;
 
@@ -96,7 +99,7 @@ public class PartyReferenceDataChange2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getOprTmStmp() {
@@ -108,7 +111,7 @@ public class PartyReferenceDataChange2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public PartyReferenceDataChange2 setOprTmStmp(XMLGregorianCalendar value) {

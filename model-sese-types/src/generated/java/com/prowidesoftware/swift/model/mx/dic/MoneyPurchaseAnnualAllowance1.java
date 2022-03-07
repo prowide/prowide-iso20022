@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -28,7 +30,8 @@ public class MoneyPurchaseAnnualAllowance1 {
 
     @XmlElement(name = "Trggrd")
     protected boolean trggrd;
-    @XmlElement(name = "TrggrdDt")
+    @XmlElement(name = "TrggrdDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar trggrdDt;
 
@@ -54,7 +57,7 @@ public class MoneyPurchaseAnnualAllowance1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getTrggrdDt() {
@@ -66,7 +69,7 @@ public class MoneyPurchaseAnnualAllowance1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public MoneyPurchaseAnnualAllowance1 setTrggrdDt(XMLGregorianCalendar value) {

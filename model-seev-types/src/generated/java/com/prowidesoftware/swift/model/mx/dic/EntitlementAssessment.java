@@ -7,7 +7,10 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -35,27 +38,34 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 public class EntitlementAssessment {
 
-    @XmlElement(name = "SctiesBlckgDdln")
+    @XmlElement(name = "SctiesBlckgDdln", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar sctiesBlckgDdln;
-    @XmlElement(name = "SctiesBlckgMktDdln")
+    @XmlElement(name = "SctiesBlckgMktDdln", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar sctiesBlckgMktDdln;
-    @XmlElement(name = "SctiesBlckgPrdEndDt")
+    @XmlElement(name = "SctiesBlckgPrdEndDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar sctiesBlckgPrdEndDt;
-    @XmlElement(name = "SctiesRregnDdln")
+    @XmlElement(name = "SctiesRregnDdln", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar sctiesRregnDdln;
-    @XmlElement(name = "SctiesRregnMktDdln")
+    @XmlElement(name = "SctiesRregnMktDdln", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar sctiesRregnMktDdln;
-    @XmlElement(name = "SctiesRegnDt")
+    @XmlElement(name = "SctiesRegnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar sctiesRegnDt;
     @XmlElement(name = "RegnBnfcry")
     protected PartyIdentification7Choice regnBnfcry;
-    @XmlElement(name = "RcrdDt")
+    @XmlElement(name = "RcrdDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar rcrdDt;
     @XmlElement(name = "EntitlmntDesc")
@@ -68,7 +78,7 @@ public class EntitlementAssessment {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getSctiesBlckgDdln() {
@@ -80,7 +90,7 @@ public class EntitlementAssessment {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public EntitlementAssessment setSctiesBlckgDdln(XMLGregorianCalendar value) {
@@ -93,7 +103,7 @@ public class EntitlementAssessment {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getSctiesBlckgMktDdln() {
@@ -105,7 +115,7 @@ public class EntitlementAssessment {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public EntitlementAssessment setSctiesBlckgMktDdln(XMLGregorianCalendar value) {
@@ -118,7 +128,7 @@ public class EntitlementAssessment {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getSctiesBlckgPrdEndDt() {
@@ -130,7 +140,7 @@ public class EntitlementAssessment {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public EntitlementAssessment setSctiesBlckgPrdEndDt(XMLGregorianCalendar value) {
@@ -143,7 +153,7 @@ public class EntitlementAssessment {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getSctiesRregnDdln() {
@@ -155,7 +165,7 @@ public class EntitlementAssessment {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public EntitlementAssessment setSctiesRregnDdln(XMLGregorianCalendar value) {
@@ -168,7 +178,7 @@ public class EntitlementAssessment {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getSctiesRregnMktDdln() {
@@ -180,7 +190,7 @@ public class EntitlementAssessment {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public EntitlementAssessment setSctiesRregnMktDdln(XMLGregorianCalendar value) {
@@ -193,7 +203,7 @@ public class EntitlementAssessment {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getSctiesRegnDt() {
@@ -205,7 +215,7 @@ public class EntitlementAssessment {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public EntitlementAssessment setSctiesRegnDt(XMLGregorianCalendar value) {
@@ -243,7 +253,7 @@ public class EntitlementAssessment {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getRcrdDt() {
@@ -255,7 +265,7 @@ public class EntitlementAssessment {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public EntitlementAssessment setRcrdDt(XMLGregorianCalendar value) {

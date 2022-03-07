@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -40,7 +42,8 @@ public class OptionTransactionDetailsSD3 {
     protected String txId;
     @XmlElement(name = "TxSeqNb")
     protected String txSeqNb;
-    @XmlElement(name = "TxIdDt", required = true)
+    @XmlElement(name = "TxIdDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar txIdDt;
     @XmlElement(name = "TxIdQty", required = true)
@@ -136,7 +139,7 @@ public class OptionTransactionDetailsSD3 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getTxIdDt() {
@@ -148,7 +151,7 @@ public class OptionTransactionDetailsSD3 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public OptionTransactionDetailsSD3 setTxIdDt(XMLGregorianCalendar value) {

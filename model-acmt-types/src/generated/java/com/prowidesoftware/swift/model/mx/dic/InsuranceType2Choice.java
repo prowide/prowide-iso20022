@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Choice of formats for the specification of the type of insurance.
+ * Choice of formats for the specification of the type  of insurance.
  * 
  * 
  * 

@@ -27,7 +27,7 @@ public enum Priority3Code {
 
 
     /**
-     * Priority level is urgent (highest priority possible)
+     * Priority level is urgent (highest priority possible).
      * 
      */
     URGT,

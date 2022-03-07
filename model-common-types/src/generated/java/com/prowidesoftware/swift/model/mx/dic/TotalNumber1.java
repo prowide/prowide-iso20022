@@ -12,7 +12,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Settlement transaction numbering information.
+ * Settlement transaction numbering information
  * 
  * 
  * 

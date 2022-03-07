@@ -6,7 +6,10 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -37,18 +40,22 @@ public class CreditTransferMandateData1 {
     protected String mndtId;
     @XmlElement(name = "Tp")
     protected MandateTypeInformation2 tp;
-    @XmlElement(name = "DtOfSgntr")
+    @XmlElement(name = "DtOfSgntr", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar dtOfSgntr;
-    @XmlElement(name = "DtOfVrfctn")
+    @XmlElement(name = "DtOfVrfctn", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar dtOfVrfctn;
     @XmlElement(name = "ElctrncSgntr")
     protected byte[] elctrncSgntr;
-    @XmlElement(name = "FrstPmtDt")
+    @XmlElement(name = "FrstPmtDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar frstPmtDt;
-    @XmlElement(name = "FnlPmtDt")
+    @XmlElement(name = "FnlPmtDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar fnlPmtDt;
     @XmlElement(name = "Frqcy")
@@ -111,7 +118,7 @@ public class CreditTransferMandateData1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getDtOfSgntr() {
@@ -123,7 +130,7 @@ public class CreditTransferMandateData1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CreditTransferMandateData1 setDtOfSgntr(XMLGregorianCalendar value) {
@@ -136,7 +143,7 @@ public class CreditTransferMandateData1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getDtOfVrfctn() {
@@ -148,7 +155,7 @@ public class CreditTransferMandateData1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CreditTransferMandateData1 setDtOfVrfctn(XMLGregorianCalendar value) {
@@ -184,7 +191,7 @@ public class CreditTransferMandateData1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getFrstPmtDt() {
@@ -196,7 +203,7 @@ public class CreditTransferMandateData1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CreditTransferMandateData1 setFrstPmtDt(XMLGregorianCalendar value) {
@@ -209,7 +216,7 @@ public class CreditTransferMandateData1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getFnlPmtDt() {
@@ -221,7 +228,7 @@ public class CreditTransferMandateData1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CreditTransferMandateData1 setFnlPmtDt(XMLGregorianCalendar value) {

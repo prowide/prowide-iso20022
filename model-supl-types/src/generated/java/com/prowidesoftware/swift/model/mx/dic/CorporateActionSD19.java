@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -31,12 +33,14 @@ public class CorporateActionSD19 {
 
     @XmlElement(name = "PlcAndNm")
     protected String plcAndNm;
-    @XmlElement(name = "RcrdDt")
+    @XmlElement(name = "RcrdDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar rcrdDt;
     @XmlElement(name = "PmtDt")
     protected DateFormat48Choice pmtDt;
-    @XmlElement(name = "LtryDt")
+    @XmlElement(name = "LtryDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar ltryDt;
     @XmlElement(name = "LtryTp")
@@ -73,7 +77,7 @@ public class CorporateActionSD19 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getRcrdDt() {
@@ -85,7 +89,7 @@ public class CorporateActionSD19 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CorporateActionSD19 setRcrdDt(XMLGregorianCalendar value) {
@@ -123,7 +127,7 @@ public class CorporateActionSD19 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getLtryDt() {
@@ -135,7 +139,7 @@ public class CorporateActionSD19 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CorporateActionSD19 setLtryDt(XMLGregorianCalendar value) {

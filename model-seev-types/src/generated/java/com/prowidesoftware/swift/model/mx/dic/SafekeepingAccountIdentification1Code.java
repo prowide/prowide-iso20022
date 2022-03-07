@@ -25,7 +25,7 @@ public enum SafekeepingAccountIdentification1Code {
 
 
     /**
-     * Announcement applies to all safekeeping accounts that own underlying financial instrument. (Used for general or preliminary announcements.).
+     * Announcement applies to all safekeeping accounts that own underlying financial instrument.  (Used for general or preliminary announcements.)
      * 
      */
     GENR;

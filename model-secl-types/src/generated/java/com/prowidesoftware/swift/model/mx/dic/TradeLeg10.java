@@ -6,7 +6,10 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -59,10 +62,12 @@ public class TradeLeg10 {
     protected String ordrId;
     @XmlElement(name = "AllcnId")
     protected String allcnId;
-    @XmlElement(name = "TradDt", required = true)
+    @XmlElement(name = "TradDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar tradDt;
-    @XmlElement(name = "TxDtAndTm")
+    @XmlElement(name = "TxDtAndTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar txDtAndTm;
     @XmlElement(name = "SttlmDt", required = true)
@@ -236,7 +241,7 @@ public class TradeLeg10 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getTradDt() {
@@ -248,7 +253,7 @@ public class TradeLeg10 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public TradeLeg10 setTradDt(XMLGregorianCalendar value) {
@@ -261,7 +266,7 @@ public class TradeLeg10 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getTxDtAndTm() {
@@ -273,7 +278,7 @@ public class TradeLeg10 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public TradeLeg10 setTxDtAndTm(XMLGregorianCalendar value) {

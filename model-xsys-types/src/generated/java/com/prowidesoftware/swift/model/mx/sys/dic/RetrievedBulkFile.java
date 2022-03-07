@@ -7,7 +7,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import com.prowidesoftware.swift.model.mx.sys.dic.SwDigest;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -38,10 +40,12 @@ public class RetrievedBulkFile {
     protected String size;
     @XmlElement(name = "Digest", namespace = "urn:swift:snl:ns.Sw", required = true)
     protected SwDigest digest;
-    @XmlElement(name = "FirstSnFTm", required = true)
+    @XmlElement(name = "FirstSnFTm", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar firstSnFTm;
-    @XmlElement(name = "LastSnFTm", required = true)
+    @XmlElement(name = "LastSnFTm", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar lastSnFTm;
     @XmlElement(name = "TtlNbOfMsgs", required = true)
@@ -127,7 +131,7 @@ public class RetrievedBulkFile {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getFirstSnFTm() {
@@ -139,7 +143,7 @@ public class RetrievedBulkFile {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public RetrievedBulkFile setFirstSnFTm(XMLGregorianCalendar value) {
@@ -152,7 +156,7 @@ public class RetrievedBulkFile {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getLastSnFTm() {
@@ -164,7 +168,7 @@ public class RetrievedBulkFile {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public RetrievedBulkFile setLastSnFTm(XMLGregorianCalendar value) {

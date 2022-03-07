@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -65,7 +67,8 @@ public class Order9 {
     @XmlElement(name = "CshMrgn")
     @XmlSchemaType(name = "string")
     protected CashMarginOrder1Code cshMrgn;
-    @XmlElement(name = "TradOrgtnDt")
+    @XmlElement(name = "TradOrgtnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar tradOrgtnDt;
     @XmlElement(name = "TradgCpcty")
@@ -83,7 +86,8 @@ public class Order9 {
     @XmlElement(name = "OrdrRstrctns")
     @XmlSchemaType(name = "string")
     protected List<OrderRestrictions1Code> ordrRstrctns;
-    @XmlElement(name = "TradDt")
+    @XmlElement(name = "TradDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar tradDt;
     @XmlElement(name = "ClrFeeTp")
@@ -232,7 +236,7 @@ public class Order9 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getTradOrgtnDt() {
@@ -244,7 +248,7 @@ public class Order9 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Order9 setTradOrgtnDt(XMLGregorianCalendar value) {
@@ -403,7 +407,7 @@ public class Order9 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getTradDt() {
@@ -415,7 +419,7 @@ public class Order9 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Order9 setTradDt(XMLGregorianCalendar value) {

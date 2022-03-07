@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -34,7 +36,8 @@ public class QueueReorderingNotificationV01 {
 
     @XmlElement(name = "GrpHdr", required = true)
     protected GroupHeader58 grpHdr;
-    @XmlElement(name = "OprTm", required = true)
+    @XmlElement(name = "OprTm", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
     protected XMLGregorianCalendar oprTm;
     @XmlElement(name = "RordrdMsgId", required = true)
@@ -74,7 +77,7 @@ public class QueueReorderingNotificationV01 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getOprTm() {
@@ -86,7 +89,7 @@ public class QueueReorderingNotificationV01 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public QueueReorderingNotificationV01 setOprTm(XMLGregorianCalendar value) {

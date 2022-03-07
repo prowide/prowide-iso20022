@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -29,10 +31,12 @@ public class CorporateActionNotificationSD9 {
 
     @XmlElement(name = "PlcAndNm")
     protected String plcAndNm;
-    @XmlElement(name = "CretDtAndTm", required = true)
+    @XmlElement(name = "CretDtAndTm", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar cretDtAndTm;
-    @XmlElement(name = "UpdDtAndTm")
+    @XmlElement(name = "UpdDtAndTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar updDtAndTm;
 
@@ -66,7 +70,7 @@ public class CorporateActionNotificationSD9 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getCretDtAndTm() {
@@ -78,7 +82,7 @@ public class CorporateActionNotificationSD9 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CorporateActionNotificationSD9 setCretDtAndTm(XMLGregorianCalendar value) {
@@ -91,7 +95,7 @@ public class CorporateActionNotificationSD9 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getUpdDtAndTm() {
@@ -103,7 +107,7 @@ public class CorporateActionNotificationSD9 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CorporateActionNotificationSD9 setUpdDtAndTm(XMLGregorianCalendar value) {

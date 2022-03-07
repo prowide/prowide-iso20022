@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -34,7 +36,8 @@ public class MandateRelatedInformation9 {
 
     @XmlElement(name = "MndtId")
     protected String mndtId;
-    @XmlElement(name = "DtOfSgntr")
+    @XmlElement(name = "DtOfSgntr", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar dtOfSgntr;
     @XmlElement(name = "AmdmntInd")
@@ -43,10 +46,12 @@ public class MandateRelatedInformation9 {
     protected AmendmentInformationDetails9 amdmntInfDtls;
     @XmlElement(name = "ElctrncSgntr")
     protected String elctrncSgntr;
-    @XmlElement(name = "FrstColltnDt")
+    @XmlElement(name = "FrstColltnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar frstColltnDt;
-    @XmlElement(name = "FnlColltnDt")
+    @XmlElement(name = "FnlColltnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar fnlColltnDt;
     @XmlElement(name = "Frqcy")
@@ -83,7 +88,7 @@ public class MandateRelatedInformation9 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getDtOfSgntr() {
@@ -95,7 +100,7 @@ public class MandateRelatedInformation9 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public MandateRelatedInformation9 setDtOfSgntr(XMLGregorianCalendar value) {
@@ -183,7 +188,7 @@ public class MandateRelatedInformation9 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getFrstColltnDt() {
@@ -195,7 +200,7 @@ public class MandateRelatedInformation9 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public MandateRelatedInformation9 setFrstColltnDt(XMLGregorianCalendar value) {
@@ -208,7 +213,7 @@ public class MandateRelatedInformation9 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getFnlColltnDt() {
@@ -220,7 +225,7 @@ public class MandateRelatedInformation9 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public MandateRelatedInformation9 setFnlColltnDt(XMLGregorianCalendar value) {

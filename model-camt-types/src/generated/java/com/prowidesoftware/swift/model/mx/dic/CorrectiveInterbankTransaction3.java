@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -43,7 +45,8 @@ public class CorrectiveInterbankTransaction3 {
     protected String uetr;
     @XmlElement(name = "IntrBkSttlmAmt", required = true)
     protected ActiveOrHistoricCurrencyAndAmount intrBkSttlmAmt;
-    @XmlElement(name = "IntrBkSttlmDt", required = true)
+    @XmlElement(name = "IntrBkSttlmDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar intrBkSttlmDt;
 
@@ -202,7 +205,7 @@ public class CorrectiveInterbankTransaction3 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getIntrBkSttlmDt() {
@@ -214,7 +217,7 @@ public class CorrectiveInterbankTransaction3 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CorrectiveInterbankTransaction3 setIntrBkSttlmDt(XMLGregorianCalendar value) {

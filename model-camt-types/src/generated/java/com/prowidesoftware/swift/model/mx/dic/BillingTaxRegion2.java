@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -39,7 +41,8 @@ public class BillingTaxRegion2 {
     protected String rgnNm;
     @XmlElement(name = "CstmrTaxId", required = true)
     protected String cstmrTaxId;
-    @XmlElement(name = "PtDt")
+    @XmlElement(name = "PtDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar ptDt;
     @XmlElement(name = "SndgFI")
@@ -133,7 +136,7 @@ public class BillingTaxRegion2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getPtDt() {
@@ -145,7 +148,7 @@ public class BillingTaxRegion2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public BillingTaxRegion2 setPtDt(XMLGregorianCalendar value) {

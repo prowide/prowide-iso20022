@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -45,10 +47,12 @@ public class CorporateActionInstructedBalanceOptionProtectInstructionDetailsSD1 
     protected String prtctSeqNb;
     @XmlElement(name = "OptnNb", required = true)
     protected OptionNumber1Choice optnNb;
-    @XmlElement(name = "PrtctDt", required = true)
+    @XmlElement(name = "PrtctDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar prtctDt;
-    @XmlElement(name = "CoverPrtctDt")
+    @XmlElement(name = "CoverPrtctDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar coverPrtctDt;
     @XmlElement(name = "PrtctIdQty", required = true)
@@ -172,7 +176,7 @@ public class CorporateActionInstructedBalanceOptionProtectInstructionDetailsSD1 
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getPrtctDt() {
@@ -184,7 +188,7 @@ public class CorporateActionInstructedBalanceOptionProtectInstructionDetailsSD1 
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CorporateActionInstructedBalanceOptionProtectInstructionDetailsSD1 setPrtctDt(XMLGregorianCalendar value) {
@@ -197,7 +201,7 @@ public class CorporateActionInstructedBalanceOptionProtectInstructionDetailsSD1 
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getCoverPrtctDt() {
@@ -209,7 +213,7 @@ public class CorporateActionInstructedBalanceOptionProtectInstructionDetailsSD1 
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CorporateActionInstructedBalanceOptionProtectInstructionDetailsSD1 setCoverPrtctDt(XMLGregorianCalendar value) {

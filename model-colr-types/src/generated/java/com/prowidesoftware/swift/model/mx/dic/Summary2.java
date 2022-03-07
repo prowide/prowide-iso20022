@@ -6,7 +6,10 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -47,10 +50,12 @@ public class Summary2 {
     @XmlElement(name = "NetXcssDfcitInd")
     @XmlSchemaType(name = "string")
     protected ShortLong1Code netXcssDfcitInd;
-    @XmlElement(name = "ValtnDtTm", required = true)
+    @XmlElement(name = "ValtnDtTm", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar valtnDtTm;
-    @XmlElement(name = "ReqdSttlmDt")
+    @XmlElement(name = "ReqdSttlmDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar reqdSttlmDt;
     @XmlElement(name = "SummryDtls")
@@ -211,7 +216,7 @@ public class Summary2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getValtnDtTm() {
@@ -223,7 +228,7 @@ public class Summary2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Summary2 setValtnDtTm(XMLGregorianCalendar value) {
@@ -236,7 +241,7 @@ public class Summary2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getReqdSttlmDt() {
@@ -248,7 +253,7 @@ public class Summary2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Summary2 setReqdSttlmDt(XMLGregorianCalendar value) {

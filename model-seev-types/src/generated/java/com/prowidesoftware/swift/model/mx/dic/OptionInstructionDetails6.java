@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -45,13 +47,16 @@ public class OptionInstructionDetails6 {
     protected ProtectTransactionType2Code prtctInd;
     @XmlElement(name = "InstrQty", required = true)
     protected FinancialInstrumentQuantity15Choice instrQty;
-    @XmlElement(name = "InstrDt", required = true)
+    @XmlElement(name = "InstrDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar instrDt;
-    @XmlElement(name = "PrtctDt")
+    @XmlElement(name = "PrtctDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar prtctDt;
-    @XmlElement(name = "CoverPrtctDt")
+    @XmlElement(name = "CoverPrtctDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar coverPrtctDt;
     @XmlElement(name = "BidPric")
@@ -170,7 +175,7 @@ public class OptionInstructionDetails6 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getInstrDt() {
@@ -182,7 +187,7 @@ public class OptionInstructionDetails6 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public OptionInstructionDetails6 setInstrDt(XMLGregorianCalendar value) {
@@ -195,7 +200,7 @@ public class OptionInstructionDetails6 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getPrtctDt() {
@@ -207,7 +212,7 @@ public class OptionInstructionDetails6 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public OptionInstructionDetails6 setPrtctDt(XMLGregorianCalendar value) {
@@ -220,7 +225,7 @@ public class OptionInstructionDetails6 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getCoverPrtctDt() {
@@ -232,7 +237,7 @@ public class OptionInstructionDetails6 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public OptionInstructionDetails6 setCoverPrtctDt(XMLGregorianCalendar value) {

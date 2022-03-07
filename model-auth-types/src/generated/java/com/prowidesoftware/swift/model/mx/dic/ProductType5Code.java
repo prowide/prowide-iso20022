@@ -30,7 +30,7 @@ public enum ProductType5Code {
 
 
     /**
-     * Identifies categories of instruments related to Emission Allowance
+     * Identifies categories of instruments related to Emission Allowance.
      * 
      */
     EMAL,

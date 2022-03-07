@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -82,25 +84,32 @@ public class FinancialInstrument66 {
     @XmlElement(name = "EUSvgsDrctv")
     @XmlSchemaType(name = "string")
     protected EUSavingsDirective1Code euSvgsDrctv;
-    @XmlElement(name = "LnchDt")
+    @XmlElement(name = "LnchDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar lnchDt;
-    @XmlElement(name = "FndEndDt")
+    @XmlElement(name = "FndEndDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar fndEndDt;
-    @XmlElement(name = "TermntnDt")
+    @XmlElement(name = "TermntnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar termntnDt;
-    @XmlElement(name = "InitlOfferEndDt")
+    @XmlElement(name = "InitlOfferEndDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar initlOfferEndDt;
-    @XmlElement(name = "SspnsnStartDt")
+    @XmlElement(name = "SspnsnStartDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar sspnsnStartDt;
-    @XmlElement(name = "SspnsnEndDt")
+    @XmlElement(name = "SspnsnEndDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar sspnsnEndDt;
-    @XmlElement(name = "MtrtyDt")
+    @XmlElement(name = "MtrtyDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar mtrtyDt;
     @XmlElement(name = "ClsdEndFnd")
@@ -426,7 +435,7 @@ public class FinancialInstrument66 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getLnchDt() {
@@ -438,7 +447,7 @@ public class FinancialInstrument66 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public FinancialInstrument66 setLnchDt(XMLGregorianCalendar value) {
@@ -451,7 +460,7 @@ public class FinancialInstrument66 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getFndEndDt() {
@@ -463,7 +472,7 @@ public class FinancialInstrument66 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public FinancialInstrument66 setFndEndDt(XMLGregorianCalendar value) {
@@ -476,7 +485,7 @@ public class FinancialInstrument66 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getTermntnDt() {
@@ -488,7 +497,7 @@ public class FinancialInstrument66 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public FinancialInstrument66 setTermntnDt(XMLGregorianCalendar value) {
@@ -501,7 +510,7 @@ public class FinancialInstrument66 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getInitlOfferEndDt() {
@@ -513,7 +522,7 @@ public class FinancialInstrument66 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public FinancialInstrument66 setInitlOfferEndDt(XMLGregorianCalendar value) {
@@ -526,7 +535,7 @@ public class FinancialInstrument66 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getSspnsnStartDt() {
@@ -538,7 +547,7 @@ public class FinancialInstrument66 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public FinancialInstrument66 setSspnsnStartDt(XMLGregorianCalendar value) {
@@ -551,7 +560,7 @@ public class FinancialInstrument66 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getSspnsnEndDt() {
@@ -563,7 +572,7 @@ public class FinancialInstrument66 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public FinancialInstrument66 setSspnsnEndDt(XMLGregorianCalendar value) {
@@ -576,7 +585,7 @@ public class FinancialInstrument66 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getMtrtyDt() {
@@ -588,7 +597,7 @@ public class FinancialInstrument66 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public FinancialInstrument66 setMtrtyDt(XMLGregorianCalendar value) {

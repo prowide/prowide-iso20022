@@ -8,7 +8,10 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -52,7 +55,8 @@ public class SwitchOrder3 {
 
     @XmlElement(name = "MstrRef")
     protected String mstrRef;
-    @XmlElement(name = "OrdrDtTm")
+    @XmlElement(name = "OrdrDtTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar ordrDtTm;
     @XmlElement(name = "OrdrRef", required = true)
@@ -67,12 +71,14 @@ public class SwitchOrder3 {
     protected ActiveOrHistoricCurrencyAndAmount ttlRedAmt;
     @XmlElement(name = "TtlSbcptAmt")
     protected ActiveOrHistoricCurrencyAndAmount ttlSbcptAmt;
-    @XmlElement(name = "ReqdFutrTradDt")
+    @XmlElement(name = "ReqdFutrTradDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar reqdFutrTradDt;
     @XmlElement(name = "SttlmAmt")
     protected ActiveCurrencyAndAmount sttlmAmt;
-    @XmlElement(name = "CshSttlmDt")
+    @XmlElement(name = "CshSttlmDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar cshSttlmDt;
     @XmlElement(name = "SttlmMtd")
@@ -136,7 +142,7 @@ public class SwitchOrder3 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getOrdrDtTm() {
@@ -148,7 +154,7 @@ public class SwitchOrder3 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public SwitchOrder3 setOrdrDtTm(XMLGregorianCalendar value) {
@@ -311,7 +317,7 @@ public class SwitchOrder3 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getReqdFutrTradDt() {
@@ -323,7 +329,7 @@ public class SwitchOrder3 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public SwitchOrder3 setReqdFutrTradDt(XMLGregorianCalendar value) {
@@ -361,7 +367,7 @@ public class SwitchOrder3 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getCshSttlmDt() {
@@ -373,7 +379,7 @@ public class SwitchOrder3 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public SwitchOrder3 setCshSttlmDt(XMLGregorianCalendar value) {

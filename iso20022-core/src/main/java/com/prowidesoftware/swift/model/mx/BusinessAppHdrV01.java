@@ -16,6 +16,8 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.ProwideException;
+import com.prowidesoftware.deprecation.ProwideDeprecated;
+import com.prowidesoftware.deprecation.TargetYear;
 import com.prowidesoftware.swift.model.mx.dic.BusinessApplicationHeaderV01Impl;
 import com.prowidesoftware.swift.model.mx.dic.Party9Choice;
 import org.apache.commons.lang3.StringUtils;
@@ -35,6 +37,7 @@ import javax.xml.namespace.QName;
 import javax.xml.transform.dom.DOMResult;
 import java.io.StringWriter;
 import java.util.Arrays;
+import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -59,12 +62,28 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
     /**
      * Parse the header from an XML with optional wrapper and sibling elements that will be ignored.
      *
+     * Default adapters are applied, for more options use {@link #parse(String, MxReadParams)}
+     *
      * @param xml the XML content, can contain wrapper elements that will be ignored
      * @return parsed element or null if cannot be parsed
      * @throws ProwideException if severe errors occur during parse
      */
     public static BusinessAppHdrV01 parse(final String xml) {
-        return (BusinessAppHdrV01) MxParseUtils.parse(BusinessAppHdrV01.class, xml, _classes, HEADER_LOCALNAME);
+        return parse(xml, new MxReadParams());
+    }
+
+    /**
+     * Parse the header from an XML with optional wrapper and sibling elements that will be ignored.
+     *
+     * @param xml the XML content, can contain wrapper elements that will be ignored
+     * @param params not null unmarshalling parameters
+     * @return parsed element or null if cannot be parsed
+     * @throws ProwideException if severe errors occur during parse
+     * @since 9.2.6
+     */
+    public static BusinessAppHdrV01 parse(final String xml, final MxReadParams params) {
+        Objects.requireNonNull(params, "The unmarshalling params cannot be null");
+        return (BusinessAppHdrV01) MxParseUtils.parse(BusinessAppHdrV01.class, xml, _classes, HEADER_LOCALNAME, params);
     }
 
     /**
@@ -184,20 +203,42 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
         }
     }
 
+    /**
+     * @deprecated use {@link #xml(MxWriteParams)} instead
+     */
+    @Deprecated
+    @ProwideDeprecated(phase2 = TargetYear.SRU2023)
     @Override
     public String xml(final String prefix, boolean includeXMLDeclaration) {
-        return xml(prefix, includeXMLDeclaration, null);
+        MxWriteParams params = new MxWriteParams();
+        params.prefix = prefix;
+        params.includeXMLDeclaration = includeXMLDeclaration;
+        return xml(params);
+    }
+
+    /**
+     * @deprecated use {@link #xml(MxWriteParams)} instead
+     */
+    @Deprecated
+    @ProwideDeprecated(phase2 = TargetYear.SRU2023)
+    @Override
+    public String xml(String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
+        MxWriteParams params = new MxWriteParams();
+        params.prefix = prefix;
+        params.includeXMLDeclaration = includeXMLDeclaration;
+        params.escapeHandler = escapeHandler;
+        return xml(params);
     }
 
     @Override
-    public String xml(String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
+    public String xml(MxWriteParams params) {
         try {
             JAXBContext context = JAXBContext.newInstance(BusinessApplicationHeaderV01Impl.class);
-            final Marshaller marshaller = context.createMarshaller();
+            final Marshaller marshaller = MxWriteUtils.createMarshaller(context, params);
 
             final StringWriter sw = new StringWriter();
             JAXBElement<BusinessApplicationHeaderV01Impl> element = new JAXBElement(new QName(NAMESPACE, AppHdr.HEADER_LOCALNAME), BusinessApplicationHeaderV01Impl.class, null, this);
-            XmlEventWriter eventWriter = new XmlEventWriter(sw, prefix, includeXMLDeclaration, AppHdr.HEADER_LOCALNAME, escapeHandler);
+            XmlEventWriter eventWriter = new XmlEventWriter(sw, params.prefix, params.includeXMLDeclaration, AppHdr.HEADER_LOCALNAME, params.escapeHandler);
             marshaller.marshal(element, eventWriter);
             return sw.getBuffer().toString();
 

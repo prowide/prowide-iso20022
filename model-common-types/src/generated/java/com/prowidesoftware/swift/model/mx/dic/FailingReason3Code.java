@@ -119,7 +119,7 @@ public enum FailingReason3Code {
     CAIS,
 
     /**
-     * Financial instruments are stolen, in dispute, under objection etc.
+     * Financial instruments are, for example, stolen, in dispute, under objection.
      * 
      */
     OBJT,
@@ -305,7 +305,7 @@ public enum FailingReason3Code {
     CYCL,
 
     /**
-     * Financial instruments are blocked due to a corporate action event, realignment, etc.
+     * Financial instruments are blocked due to, for example, a corporate action event, realignment.
      * 
      */
     SBLO,

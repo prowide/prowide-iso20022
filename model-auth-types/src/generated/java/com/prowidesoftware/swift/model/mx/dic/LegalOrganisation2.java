@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -32,10 +34,12 @@ public class LegalOrganisation2 {
     protected String id;
     @XmlElement(name = "Nm")
     protected String nm;
-    @XmlElement(name = "EstblishmtDt")
+    @XmlElement(name = "EstblishmtDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar estblishmtDt;
-    @XmlElement(name = "RegnDt")
+    @XmlElement(name = "RegnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar regnDt;
 
@@ -94,7 +98,7 @@ public class LegalOrganisation2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getEstblishmtDt() {
@@ -106,7 +110,7 @@ public class LegalOrganisation2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public LegalOrganisation2 setEstblishmtDt(XMLGregorianCalendar value) {
@@ -119,7 +123,7 @@ public class LegalOrganisation2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getRegnDt() {
@@ -131,7 +135,7 @@ public class LegalOrganisation2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public LegalOrganisation2 setRegnDt(XMLGregorianCalendar value) {

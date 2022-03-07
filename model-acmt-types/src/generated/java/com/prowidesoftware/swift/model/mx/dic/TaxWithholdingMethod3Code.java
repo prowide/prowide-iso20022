@@ -33,13 +33,13 @@ public enum TaxWithholdingMethod3Code {
 
 
     /**
-     * Minority interest tax is withheld. 
+     * Minority interest tax is withheld.
      * 
      */
     MITX,
 
     /**
-     * Withholding tax is applied to an investment company. 
+     * Withholding tax is applied to an investment company.
      * 
      */
     INVE,

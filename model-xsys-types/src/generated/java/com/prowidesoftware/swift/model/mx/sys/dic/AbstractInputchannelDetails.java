@@ -7,7 +7,9 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -31,7 +33,8 @@ public class AbstractInputchannelDetails {
     @XmlElement(name = "Stat", required = true)
     @XmlSchemaType(name = "string")
     protected InputChannelStateCode stat;
-    @XmlElement(name = "LastStatChngTm", required = true)
+    @XmlElement(name = "LastStatChngTm", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar lastStatChngTm;
     @XmlElement(name = "LastStatChngDN", required = true)
@@ -67,7 +70,7 @@ public class AbstractInputchannelDetails {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getLastStatChngTm() {
@@ -79,7 +82,7 @@ public class AbstractInputchannelDetails {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public AbstractInputchannelDetails setLastStatChngTm(XMLGregorianCalendar value) {

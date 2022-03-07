@@ -9,7 +9,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -88,25 +90,32 @@ public class Debt1 {
     @XmlElement(name = "PmtFrqcy")
     @XmlSchemaType(name = "string")
     protected Frequency1Code pmtFrqcy;
-    @XmlElement(name = "DtdDt")
+    @XmlElement(name = "DtdDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar dtdDt;
-    @XmlElement(name = "FrstPmtDt")
+    @XmlElement(name = "FrstPmtDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar frstPmtDt;
-    @XmlElement(name = "MtrtyDt")
+    @XmlElement(name = "MtrtyDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar mtrtyDt;
-    @XmlElement(name = "NxtCpnDt")
+    @XmlElement(name = "NxtCpnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar nxtCpnDt;
-    @XmlElement(name = "PutblDt")
+    @XmlElement(name = "PutblDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar putblDt;
-    @XmlElement(name = "NxtCllblDt")
+    @XmlElement(name = "NxtCllblDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar nxtCllblDt;
-    @XmlElement(name = "NxtFctrDt")
+    @XmlElement(name = "NxtFctrDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar nxtFctrDt;
     @XmlElement(name = "DayCntBsis")
@@ -125,7 +134,8 @@ public class Debt1 {
     protected BigDecimal cpPrgm;
     @XmlElement(name = "CPRegnTp")
     protected String cpRegnTp;
-    @XmlElement(name = "IntrstAcrlDt")
+    @XmlElement(name = "IntrstAcrlDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar intrstAcrlDt;
     @XmlElement(name = "PutblInd")
@@ -261,7 +271,7 @@ public class Debt1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getDtdDt() {
@@ -273,7 +283,7 @@ public class Debt1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Debt1 setDtdDt(XMLGregorianCalendar value) {
@@ -286,7 +296,7 @@ public class Debt1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getFrstPmtDt() {
@@ -298,7 +308,7 @@ public class Debt1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Debt1 setFrstPmtDt(XMLGregorianCalendar value) {
@@ -311,7 +321,7 @@ public class Debt1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getMtrtyDt() {
@@ -323,7 +333,7 @@ public class Debt1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Debt1 setMtrtyDt(XMLGregorianCalendar value) {
@@ -336,7 +346,7 @@ public class Debt1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getNxtCpnDt() {
@@ -348,7 +358,7 @@ public class Debt1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Debt1 setNxtCpnDt(XMLGregorianCalendar value) {
@@ -361,7 +371,7 @@ public class Debt1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getPutblDt() {
@@ -373,7 +383,7 @@ public class Debt1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Debt1 setPutblDt(XMLGregorianCalendar value) {
@@ -386,7 +396,7 @@ public class Debt1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getNxtCllblDt() {
@@ -398,7 +408,7 @@ public class Debt1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Debt1 setNxtCllblDt(XMLGregorianCalendar value) {
@@ -411,7 +421,7 @@ public class Debt1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getNxtFctrDt() {
@@ -423,7 +433,7 @@ public class Debt1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Debt1 setNxtFctrDt(XMLGregorianCalendar value) {
@@ -636,7 +646,7 @@ public class Debt1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getIntrstAcrlDt() {
@@ -648,7 +658,7 @@ public class Debt1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Debt1 setIntrstAcrlDt(XMLGregorianCalendar value) {

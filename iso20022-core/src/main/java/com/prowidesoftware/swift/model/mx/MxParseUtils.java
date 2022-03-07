@@ -16,19 +16,22 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.ProwideException;
+import com.prowidesoftware.deprecation.ProwideDeprecated;
+import com.prowidesoftware.deprecation.TargetYear;
 import com.prowidesoftware.swift.model.MxId;
 import com.prowidesoftware.swift.utils.SafeXmlUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.Validate;
 import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 import org.xml.sax.XMLReader;
 
 import javax.xml.bind.*;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.transform.sax.SAXSource;
 import java.io.StringReader;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.concurrent.ExecutionException;
 import java.util.logging.Logger;
@@ -60,6 +63,15 @@ public class MxParseUtils {
     }
 
     /**
+     * @deprecated use {@link #parseSAXSource(SAXSource, Class, Class[], MxReadParams)} instead
+     */
+    @Deprecated
+    @ProwideDeprecated(phase3 = TargetYear.SRU2023)
+    static Object parseSAXSource(final SAXSource source, final Class targetClass, final Class<?>[] classes) {
+        return parseSAXSource(source, targetClass, classes, new MxReadParams());
+    }
+
+    /**
      * Parse an object from an event reader.
      *
      * <p>IMPORTANT: the event must be positioned at the element to parse. And the xml must be filtered without ISO
@@ -68,18 +80,27 @@ public class MxParseUtils {
      * @param source      the SaxSource to parse
      * @param targetClass the class of the object being parsed
      * @param classes     the object classes to build a jaxb context
+     * @param params      not null unmarshalling parameters
      * @return parsed element or null if cannot be parsed
      * @throws ProwideException if severe errors occur during parse
-     * @since 9.1.2
+     * @since 9.2.6
      */
-    static Object parseSAXSource(final SAXSource source, final Class targetClass, final Class<?>[] classes) {
-        Validate.notNull(targetClass, "target class to parse must not be null");
-        Validate.notNull(source, "SAXSource to parse must not be null");
-        Validate.notNull(classes, "object model classes aray must not be null");
+    static Object parseSAXSource(final SAXSource source, final Class targetClass, final Class<?>[] classes, final MxReadParams params) {
+        Objects.requireNonNull(targetClass, "target class to parse must not be null");
+        Objects.requireNonNull(source, "SAXSource to parse must not be null");
+        Objects.requireNonNull(classes, "object model classes array must not be null");
+        Objects.requireNonNull(params, "unmarshalling params cannot be null");
 
         try {
             JAXBContext context = JaxbContextLoader.INSTANCE.get(targetClass, classes);
             final Unmarshaller unmarshaller = context.createUnmarshaller();
+
+            if (params.adapters != null) {
+                for (XmlAdapter adapter : params.adapters.asList()) {
+                    unmarshaller.setAdapter(adapter);
+                }
+            }
+
             JAXBElement element = unmarshaller.unmarshal(source, targetClass);
             if (element != null) {
                 return element.getValue();
@@ -109,25 +130,37 @@ public class MxParseUtils {
     }
 
     /**
+     * @deprecated use {@link #parse(Class, String, Class[], String, MxReadParams)} instead
+     */
+    @Deprecated
+    @ProwideDeprecated(phase3 = TargetYear.SRU2023)
+    static Object parse(final Class targetClass, final String xml, final Class<?>[] classes, final String localName) {
+        return parse(targetClass, xml, classes, localName, new MxReadParams());
+    }
+
+    /**
      * Parse an object from XML with optional wrapper and sibling elements that will be ignored.
      *
      * @param targetClass calss of the object being parsed
      * @param xml         the XML content, can contain wrapper elements that will be ignored
      * @param classes     the object classes to build a jaxb context
      * @param localName   the specific element to parse within the parameter XML
+     * @param params      not null unmarshalling parameters
      * @return parsed element or null if cannot be parsed
      * @throws ProwideException if severe errors occur during parse
+     * @since 9.2.6
      */
-    static Object parse(final Class targetClass, final String xml, final Class<?>[] classes, final String localName) {
-        Validate.notNull(targetClass, "target class to parse must not be null");
-        Validate.notNull(xml, "XML to parse must not be null");
+    static Object parse(final Class targetClass, final String xml, final Class<?>[] classes, final String localName, final MxReadParams params) {
+        Objects.requireNonNull(targetClass, "target class to parse must not be null");
+        Objects.requireNonNull(xml, "XML to parse must not be null");
         Validate.notBlank(xml, "XML to parse must not be a blank string");
-        Validate.notNull(classes, "object model classes aray must not be null");
+        Objects.requireNonNull(classes, "object model classes aray must not be null");
         Validate.notBlank(localName, "The XML element to parse must not be null nor a blank string");
+        Objects.requireNonNull(params, "unmarshalling params cannot be null");
 
         try {
             SAXSource saxSource = createFilteredSAXSource(xml, localName);
-            return parseSAXSource(saxSource, targetClass, classes);
+            return parseSAXSource(saxSource, targetClass, classes, params);
 
         } catch (final Exception e) {
             handleParseException(e);

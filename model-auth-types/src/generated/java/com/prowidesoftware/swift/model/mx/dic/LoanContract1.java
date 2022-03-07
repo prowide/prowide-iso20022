@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -52,12 +54,14 @@ public class LoanContract1 {
     protected List<TradeParty2> sellr;
     @XmlElement(name = "Amt", required = true)
     protected ActiveCurrencyAndAmount amt;
-    @XmlElement(name = "MtrtyDt", required = true)
+    @XmlElement(name = "MtrtyDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar mtrtyDt;
     @XmlElement(name = "PrlngtnFlg")
     protected boolean prlngtnFlg;
-    @XmlElement(name = "StartDt", required = true)
+    @XmlElement(name = "StartDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar startDt;
     @XmlElement(name = "SttlmCcy", required = true)
@@ -196,7 +200,7 @@ public class LoanContract1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getMtrtyDt() {
@@ -208,7 +212,7 @@ public class LoanContract1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public LoanContract1 setMtrtyDt(XMLGregorianCalendar value) {
@@ -238,7 +242,7 @@ public class LoanContract1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getStartDt() {
@@ -250,7 +254,7 @@ public class LoanContract1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public LoanContract1 setStartDt(XMLGregorianCalendar value) {

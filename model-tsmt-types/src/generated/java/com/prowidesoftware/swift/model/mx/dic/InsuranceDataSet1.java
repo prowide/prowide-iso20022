@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -44,10 +46,12 @@ public class InsuranceDataSet1 {
     protected DocumentIdentification1 dataSetId;
     @XmlElement(name = "Issr", required = true)
     protected PartyIdentification26 issr;
-    @XmlElement(name = "IsseDt", required = true)
+    @XmlElement(name = "IsseDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar isseDt;
-    @XmlElement(name = "FctvDt")
+    @XmlElement(name = "FctvDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar fctvDt;
     @XmlElement(name = "PlcOfIsse")
@@ -127,7 +131,7 @@ public class InsuranceDataSet1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getIsseDt() {
@@ -139,7 +143,7 @@ public class InsuranceDataSet1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public InsuranceDataSet1 setIsseDt(XMLGregorianCalendar value) {
@@ -152,7 +156,7 @@ public class InsuranceDataSet1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getFctvDt() {
@@ -164,7 +168,7 @@ public class InsuranceDataSet1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public InsuranceDataSet1 setFctvDt(XMLGregorianCalendar value) {

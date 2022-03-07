@@ -6,7 +6,10 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -30,10 +33,12 @@ public class ReportData2 {
 
     @XmlElement(name = "MsgId", required = true)
     protected String msgId;
-    @XmlElement(name = "ValDt", required = true)
+    @XmlElement(name = "ValDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar valDt;
-    @XmlElement(name = "DtAndTmStmp", required = true)
+    @XmlElement(name = "DtAndTmStmp", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar dtAndTmStmp;
     @XmlElement(name = "Tp", required = true)
@@ -70,7 +75,7 @@ public class ReportData2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getValDt() {
@@ -82,7 +87,7 @@ public class ReportData2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public ReportData2 setValDt(XMLGregorianCalendar value) {
@@ -95,7 +100,7 @@ public class ReportData2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getDtAndTmStmp() {
@@ -107,7 +112,7 @@ public class ReportData2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public ReportData2 setDtAndTmStmp(XMLGregorianCalendar value) {

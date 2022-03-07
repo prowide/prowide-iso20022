@@ -116,7 +116,7 @@ public enum EventFrequency9Code {
     ONDE,
 
     /**
-     * Event does not take place
+     * Event does not take place.
      * 
      */
     NONE;

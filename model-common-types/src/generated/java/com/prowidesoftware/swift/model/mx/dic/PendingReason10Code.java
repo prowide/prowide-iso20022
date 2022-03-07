@@ -291,7 +291,7 @@ public enum PendingReason10Code {
     CYCL,
 
     /**
-     * Financial instruments are blocked due to a corporate action event, realignment, etc.
+     * Financial instruments are blocked due to, for example, a corporate action event, realignment.
      * 
      */
     SBLO,

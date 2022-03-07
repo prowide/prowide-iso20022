@@ -7,7 +7,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -42,13 +44,16 @@ public class Confirmation1 {
     @XmlElement(name = "ConfSts", required = true)
     @XmlSchemaType(name = "string")
     protected TradeConfirmationStatus1Code confSts;
-    @XmlElement(name = "ConfTm")
+    @XmlElement(name = "ConfTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar confTm;
-    @XmlElement(name = "TradPtyConfTm")
+    @XmlElement(name = "TradPtyConfTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar tradPtyConfTm;
-    @XmlElement(name = "InitgPtyConfTm")
+    @XmlElement(name = "InitgPtyConfTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar initgPtyConfTm;
     @XmlElement(name = "ConfTp", required = true)
@@ -103,7 +108,7 @@ public class Confirmation1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getConfTm() {
@@ -115,7 +120,7 @@ public class Confirmation1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Confirmation1 setConfTm(XMLGregorianCalendar value) {
@@ -128,7 +133,7 @@ public class Confirmation1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getTradPtyConfTm() {
@@ -140,7 +145,7 @@ public class Confirmation1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Confirmation1 setTradPtyConfTm(XMLGregorianCalendar value) {
@@ -153,7 +158,7 @@ public class Confirmation1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getInitgPtyConfTm() {
@@ -165,7 +170,7 @@ public class Confirmation1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Confirmation1 setInitgPtyConfTm(XMLGregorianCalendar value) {

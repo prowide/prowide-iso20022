@@ -6,7 +6,10 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -34,12 +37,14 @@ public class NettingCutOffReportData1 {
 
     @XmlElement(name = "MsgId", required = true)
     protected String msgId;
-    @XmlElement(name = "CreDtTm", required = true)
+    @XmlElement(name = "CreDtTm", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar creDtTm;
     @XmlElement(name = "RptTp", required = true)
     protected String rptTp;
-    @XmlElement(name = "ActvtnDt", required = true)
+    @XmlElement(name = "ActvtnDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar actvtnDt;
     @XmlElement(name = "NetSvcPtcptId")
@@ -81,7 +86,7 @@ public class NettingCutOffReportData1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getCreDtTm() {
@@ -93,7 +98,7 @@ public class NettingCutOffReportData1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public NettingCutOffReportData1 setCreDtTm(XMLGregorianCalendar value) {
@@ -131,7 +136,7 @@ public class NettingCutOffReportData1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getActvtnDt() {
@@ -143,7 +148,7 @@ public class NettingCutOffReportData1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public NettingCutOffReportData1 setActvtnDt(XMLGregorianCalendar value) {

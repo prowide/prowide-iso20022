@@ -9,7 +9,10 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -57,28 +60,34 @@ public class MeetingNotice1 {
     @XmlElement(name = "Tp", required = true)
     @XmlSchemaType(name = "string")
     protected MeetingType1Code tp;
-    @XmlElement(name = "AnncmntDt")
+    @XmlElement(name = "AnncmntDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar anncmntDt;
     @XmlElement(name = "AttndncReqrd")
     protected Boolean attndncReqrd;
     @XmlElement(name = "AttndncConfInf")
     protected String attndncConfInf;
-    @XmlElement(name = "AttndncConfDdln")
+    @XmlElement(name = "AttndncConfDdln", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar attndncConfDdln;
-    @XmlElement(name = "AttndncConfElctrncDdln")
+    @XmlElement(name = "AttndncConfElctrncDdln", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar attndncConfElctrncDdln;
-    @XmlElement(name = "AttndncConfMktDdln")
+    @XmlElement(name = "AttndncConfMktDdln", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar attndncConfMktDdln;
     @XmlElement(name = "AddtlDcmnttnURLAdr")
     protected String addtlDcmnttnURLAdr;
-    @XmlElement(name = "RsltnPrpslDdln")
+    @XmlElement(name = "RsltnPrpslDdln", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar rsltnPrpslDdln;
-    @XmlElement(name = "RsltnPrpslMktDdln")
+    @XmlElement(name = "RsltnPrpslMktDdln", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar rsltnPrpslMktDdln;
     @XmlElement(name = "PrxyAppntmntNtfctnAdr")
@@ -89,7 +98,8 @@ public class MeetingNotice1 {
     protected BigDecimal ttlNbOfVtngRghts;
     @XmlElement(name = "CtctPrsnDtls")
     protected List<MeetingContactPerson> ctctPrsnDtls;
-    @XmlElement(name = "RsltPblctnDt")
+    @XmlElement(name = "RsltPblctnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar rsltPblctnDt;
     @XmlElement(name = "InittdByHldr")
@@ -186,7 +196,7 @@ public class MeetingNotice1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getAnncmntDt() {
@@ -198,7 +208,7 @@ public class MeetingNotice1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public MeetingNotice1 setAnncmntDt(XMLGregorianCalendar value) {
@@ -261,7 +271,7 @@ public class MeetingNotice1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getAttndncConfDdln() {
@@ -273,7 +283,7 @@ public class MeetingNotice1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public MeetingNotice1 setAttndncConfDdln(XMLGregorianCalendar value) {
@@ -286,7 +296,7 @@ public class MeetingNotice1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getAttndncConfElctrncDdln() {
@@ -298,7 +308,7 @@ public class MeetingNotice1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public MeetingNotice1 setAttndncConfElctrncDdln(XMLGregorianCalendar value) {
@@ -311,7 +321,7 @@ public class MeetingNotice1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getAttndncConfMktDdln() {
@@ -323,7 +333,7 @@ public class MeetingNotice1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public MeetingNotice1 setAttndncConfMktDdln(XMLGregorianCalendar value) {
@@ -361,7 +371,7 @@ public class MeetingNotice1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getRsltnPrpslDdln() {
@@ -373,7 +383,7 @@ public class MeetingNotice1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public MeetingNotice1 setRsltnPrpslDdln(XMLGregorianCalendar value) {
@@ -386,7 +396,7 @@ public class MeetingNotice1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getRsltnPrpslMktDdln() {
@@ -398,7 +408,7 @@ public class MeetingNotice1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public MeetingNotice1 setRsltnPrpslMktDdln(XMLGregorianCalendar value) {
@@ -515,7 +525,7 @@ public class MeetingNotice1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getRsltPblctnDt() {
@@ -527,7 +537,7 @@ public class MeetingNotice1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public MeetingNotice1 setRsltPblctnDt(XMLGregorianCalendar value) {

@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -34,7 +36,8 @@ public class DirectDebitTransaction7 {
     protected PartyIdentification43 cdtrSchmeId;
     @XmlElement(name = "PreNtfctnId")
     protected String preNtfctnId;
-    @XmlElement(name = "PreNtfctnDt")
+    @XmlElement(name = "PreNtfctnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar preNtfctnDt;
 
@@ -118,7 +121,7 @@ public class DirectDebitTransaction7 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getPreNtfctnDt() {
@@ -130,7 +133,7 @@ public class DirectDebitTransaction7 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public DirectDebitTransaction7 setPreNtfctnDt(XMLGregorianCalendar value) {

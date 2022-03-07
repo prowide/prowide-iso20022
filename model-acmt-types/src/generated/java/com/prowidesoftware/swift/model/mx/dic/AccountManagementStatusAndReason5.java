@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -49,10 +51,12 @@ public class AccountManagementStatusAndReason5 {
     protected AccountStatus2 acctSts;
     @XmlElement(name = "BlckdSts")
     protected BlockedStatusReason2Choice blckdSts;
-    @XmlElement(name = "FATCARptgDt")
+    @XmlElement(name = "FATCARptgDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar fatcaRptgDt;
-    @XmlElement(name = "CRSRptgDt")
+    @XmlElement(name = "CRSRptgDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar crsRptgDt;
 
@@ -244,7 +248,7 @@ public class AccountManagementStatusAndReason5 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getFATCARptgDt() {
@@ -256,7 +260,7 @@ public class AccountManagementStatusAndReason5 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public AccountManagementStatusAndReason5 setFATCARptgDt(XMLGregorianCalendar value) {
@@ -269,7 +273,7 @@ public class AccountManagementStatusAndReason5 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getCRSRptgDt() {
@@ -281,7 +285,7 @@ public class AccountManagementStatusAndReason5 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public AccountManagementStatusAndReason5 setCRSRptgDt(XMLGregorianCalendar value) {

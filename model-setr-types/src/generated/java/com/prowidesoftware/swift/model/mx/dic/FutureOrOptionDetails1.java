@@ -9,7 +9,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -50,18 +52,21 @@ public class FutureOrOptionDetails1 {
     @XmlElement(name = "FutrAndOptnCtrctTp")
     @XmlSchemaType(name = "string")
     protected FutureAndOptionContractType1Code futrAndOptnCtrctTp;
-    @XmlElement(name = "LastDlvryDt")
+    @XmlElement(name = "LastDlvryDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar lastDlvryDt;
     @XmlElement(name = "UnitOfMeasr")
     @XmlSchemaType(name = "string")
     protected UnitOfMeasure1Code unitOfMeasr;
-    @XmlElement(name = "FutrDt")
+    @XmlElement(name = "FutrDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar futrDt;
     @XmlElement(name = "MinSz")
     protected ActiveCurrencyAndAmount minSz;
-    @XmlElement(name = "AnncmntDt")
+    @XmlElement(name = "AnncmntDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar anncmntDt;
     @XmlElement(name = "Apprnc")
@@ -125,7 +130,7 @@ public class FutureOrOptionDetails1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getLastDlvryDt() {
@@ -137,7 +142,7 @@ public class FutureOrOptionDetails1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public FutureOrOptionDetails1 setLastDlvryDt(XMLGregorianCalendar value) {
@@ -175,7 +180,7 @@ public class FutureOrOptionDetails1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getFutrDt() {
@@ -187,7 +192,7 @@ public class FutureOrOptionDetails1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public FutureOrOptionDetails1 setFutrDt(XMLGregorianCalendar value) {
@@ -225,7 +230,7 @@ public class FutureOrOptionDetails1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getAnncmntDt() {
@@ -237,7 +242,7 @@ public class FutureOrOptionDetails1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public FutureOrOptionDetails1 setAnncmntDt(XMLGregorianCalendar value) {

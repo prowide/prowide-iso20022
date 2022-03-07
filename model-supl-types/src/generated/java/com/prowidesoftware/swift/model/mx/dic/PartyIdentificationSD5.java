@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Provides additional information regarding the new agent component. 
+ * Provides additional information regarding the new agent component.
  * 
  * 
  * 

@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -46,10 +48,12 @@ public class SystemParty4 {
     protected List<PostalAddress25> adr;
     @XmlElement(name = "CtctDtls")
     protected List<Contact5> ctctDtls;
-    @XmlElement(name = "OpngDt")
+    @XmlElement(name = "OpngDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar opngDt;
-    @XmlElement(name = "ClsgDt")
+    @XmlElement(name = "ClsgDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar clsgDt;
     @XmlElement(name = "Tp", required = true)
@@ -156,7 +160,7 @@ public class SystemParty4 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getOpngDt() {
@@ -168,7 +172,7 @@ public class SystemParty4 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public SystemParty4 setOpngDt(XMLGregorianCalendar value) {
@@ -181,7 +185,7 @@ public class SystemParty4 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getClsgDt() {
@@ -193,7 +197,7 @@ public class SystemParty4 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public SystemParty4 setClsgDt(XMLGregorianCalendar value) {

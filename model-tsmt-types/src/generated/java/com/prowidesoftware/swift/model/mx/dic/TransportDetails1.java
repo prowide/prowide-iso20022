@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -39,10 +41,12 @@ public class TransportDetails1 {
     protected List<TransportedGoods1> trnsprtdGoods;
     @XmlElement(name = "RtgSummry", required = true)
     protected TransportMeans2Choice rtgSummry;
-    @XmlElement(name = "PropsdShipmntDt")
+    @XmlElement(name = "PropsdShipmntDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar propsdShipmntDt;
-    @XmlElement(name = "ActlShipmntDt")
+    @XmlElement(name = "ActlShipmntDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar actlShipmntDt;
     @XmlElement(name = "Incotrms")
@@ -138,7 +142,7 @@ public class TransportDetails1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getPropsdShipmntDt() {
@@ -150,7 +154,7 @@ public class TransportDetails1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public TransportDetails1 setPropsdShipmntDt(XMLGregorianCalendar value) {
@@ -163,7 +167,7 @@ public class TransportDetails1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getActlShipmntDt() {
@@ -175,7 +179,7 @@ public class TransportDetails1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public TransportDetails1 setActlShipmntDt(XMLGregorianCalendar value) {

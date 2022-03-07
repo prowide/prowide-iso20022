@@ -9,7 +9,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -57,7 +59,8 @@ public class List1 {
     protected String exctnInstr;
     @XmlElement(name = "PrgrsRptInd")
     protected Boolean prgrsRptInd;
-    @XmlElement(name = "PrgrsPrdIntrvl")
+    @XmlElement(name = "PrgrsPrdIntrvl", type = String.class)
+    @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
     protected XMLGregorianCalendar prgrsPrdIntrvl;
     @XmlElement(name = "RealTmExctnRptInd")
@@ -230,7 +233,7 @@ public class List1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getPrgrsPrdIntrvl() {
@@ -242,7 +245,7 @@ public class List1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public List1 setPrgrsPrdIntrvl(XMLGregorianCalendar value) {

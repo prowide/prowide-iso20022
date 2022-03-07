@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -26,10 +28,12 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 public class TimePeriodDetails1 {
 
-    @XmlElement(name = "FrTm", required = true)
+    @XmlElement(name = "FrTm", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
     protected XMLGregorianCalendar frTm;
-    @XmlElement(name = "ToTm")
+    @XmlElement(name = "ToTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
     protected XMLGregorianCalendar toTm;
 
@@ -38,7 +42,7 @@ public class TimePeriodDetails1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getFrTm() {
@@ -50,7 +54,7 @@ public class TimePeriodDetails1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public TimePeriodDetails1 setFrTm(XMLGregorianCalendar value) {
@@ -63,7 +67,7 @@ public class TimePeriodDetails1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getToTm() {
@@ -75,7 +79,7 @@ public class TimePeriodDetails1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public TimePeriodDetails1 setToTm(XMLGregorianCalendar value) {

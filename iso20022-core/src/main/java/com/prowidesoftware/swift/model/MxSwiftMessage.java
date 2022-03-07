@@ -174,8 +174,8 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
     public MxSwiftMessage(final AbstractMX mx, final MessageMetadataStrategy metadataStrategy) {
         // instead of reusing the constructor from XML with mx.message() as parameter
         // we set the message and run the update directly to avoid an unnecessary message type detection
-        Validate.notNull(mx, "the message model cannot be null");
-        Validate.notNull(metadataStrategy, "the strategy for metadata extraction cannot be null");
+        Objects.requireNonNull(mx, "the message model cannot be null");
+        Objects.requireNonNull(metadataStrategy, "the strategy for metadata extraction cannot be null");
         setMessage(mx.message());
         _updateFromMessage(mx.getMxId(), metadataStrategy);
     }
@@ -239,7 +239,7 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
      */
     @Override
     protected void updateFromMessage(final MessageMetadataStrategy metadataStrategy) {
-        Validate.notNull(metadataStrategy, "the strategy for metadata extraction cannot be null");
+        Objects.requireNonNull(metadataStrategy, "the strategy for metadata extraction cannot be null");
         _updateFromMessage(null, metadataStrategy);
     }
 
@@ -262,8 +262,8 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
     }
 
     public void updateFromModel(final AbstractMX mx, final MessageMetadataStrategy metadataStrategy) {
-        Validate.notNull(mx, "the mx parameter cannot be null");
-        Validate.notNull(metadataStrategy, "the strategy for metadata extraction cannot be null");
+        Objects.requireNonNull(mx, "the mx parameter cannot be null");
+        Objects.requireNonNull(metadataStrategy, "the strategy for metadata extraction cannot be null");
         setMessage(mx.message());
         setFileFormat(FileFormat.MX);
         extractMetadata(mx.getMxId(), mx.getAppHdr(), metadataStrategy);
@@ -360,8 +360,8 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
      * @since 9.1.6
      */
     public void updateFromXML(final String xml, final MxId id, final MessageMetadataStrategy metadataStrategy) {
-        Validate.notNull(xml, "the xml message parameter cannot be null");
-        Validate.notNull(metadataStrategy, "the strategy for metadata extraction cannot be null");
+        Objects.requireNonNull(xml, "the xml message parameter cannot be null");
+        Objects.requireNonNull(metadataStrategy, "the strategy for metadata extraction cannot be null");
         setMessage(xml);
         setFileFormat(FileFormat.MX);
         _updateFromMessage(id, metadataStrategy);
@@ -499,7 +499,7 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
      * @since 9.1.6
      */
     public void updateMetadata(MessageMetadataStrategy strategy) {
-        Validate.notNull(strategy, "the strategy for metadata extraction cannot be null");
+        Objects.requireNonNull(strategy, "the strategy for metadata extraction cannot be null");
         applyStrategy(getMessage(), strategy);
     }
 

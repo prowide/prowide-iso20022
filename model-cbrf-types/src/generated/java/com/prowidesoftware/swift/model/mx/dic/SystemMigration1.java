@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -31,14 +33,16 @@ public class SystemMigration1 {
 
     @XmlElement(name = "NPSPtcptInd")
     protected Boolean npsPtcptInd;
-    @XmlElement(name = "PlandMgrtnDt")
+    @XmlElement(name = "PlandMgrtnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar plandMgrtnDt;
     @XmlElement(name = "BalRcvdInd")
     protected Boolean balRcvdInd;
     @XmlElement(name = "Mgrtd")
     protected Boolean mgrtd;
-    @XmlElement(name = "LastDt")
+    @XmlElement(name = "LastDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar lastDt;
 
@@ -72,7 +76,7 @@ public class SystemMigration1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getPlandMgrtnDt() {
@@ -84,7 +88,7 @@ public class SystemMigration1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public SystemMigration1 setPlandMgrtnDt(XMLGregorianCalendar value) {
@@ -147,7 +151,7 @@ public class SystemMigration1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getLastDt() {
@@ -159,7 +163,7 @@ public class SystemMigration1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public SystemMigration1 setLastDt(XMLGregorianCalendar value) {

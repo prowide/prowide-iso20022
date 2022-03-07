@@ -9,7 +9,10 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -97,10 +100,12 @@ public class Order16 {
     protected Boolean preAdvc;
     @XmlElement(name = "PlcOfTrad")
     protected MarketIdentification77 plcOfTrad;
-    @XmlElement(name = "OrdrBookgDt")
+    @XmlElement(name = "OrdrBookgDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar ordrBookgDt;
-    @XmlElement(name = "TradOrgtnDt")
+    @XmlElement(name = "TradOrgtnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar tradOrgtnDt;
     @XmlElement(name = "TradDt", required = true)
@@ -495,7 +500,7 @@ public class Order16 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getOrdrBookgDt() {
@@ -507,7 +512,7 @@ public class Order16 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Order16 setOrdrBookgDt(XMLGregorianCalendar value) {
@@ -520,7 +525,7 @@ public class Order16 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getTradOrgtnDt() {
@@ -532,7 +537,7 @@ public class Order16 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public Order16 setTradOrgtnDt(XMLGregorianCalendar value) {

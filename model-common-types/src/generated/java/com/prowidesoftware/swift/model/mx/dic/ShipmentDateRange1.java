@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -26,10 +28,12 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 public class ShipmentDateRange1 {
 
-    @XmlElement(name = "EarlstShipmntDt")
+    @XmlElement(name = "EarlstShipmntDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar earlstShipmntDt;
-    @XmlElement(name = "LatstShipmntDt")
+    @XmlElement(name = "LatstShipmntDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar latstShipmntDt;
 
@@ -38,7 +42,7 @@ public class ShipmentDateRange1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getEarlstShipmntDt() {
@@ -50,7 +54,7 @@ public class ShipmentDateRange1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public ShipmentDateRange1 setEarlstShipmntDt(XMLGregorianCalendar value) {
@@ -63,7 +67,7 @@ public class ShipmentDateRange1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getLatstShipmntDt() {
@@ -75,7 +79,7 @@ public class ShipmentDateRange1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public ShipmentDateRange1 setLatstShipmntDt(XMLGregorianCalendar value) {

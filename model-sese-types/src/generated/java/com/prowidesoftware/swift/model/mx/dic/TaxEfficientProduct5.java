@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -60,7 +62,8 @@ public class TaxEfficientProduct5 {
     protected ActiveCurrencyAnd13DecimalAmount prvsYrSbcptAmt;
     @XmlElement(name = "PrvsYrsSbcptAmt")
     protected ActiveCurrencyAnd13DecimalAmount prvsYrsSbcptAmt;
-    @XmlElement(name = "DtOfFrstSbcpt")
+    @XmlElement(name = "DtOfFrstSbcpt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar dtOfFrstSbcpt;
     @XmlElement(name = "CurYrSbcptDtls")
@@ -73,7 +76,8 @@ public class TaxEfficientProduct5 {
     protected ActiveCurrencyAndAmount ttlSbcptAmt;
     @XmlElement(name = "OthrAmt")
     protected List<OtherAmount3> othrAmt;
-    @XmlElement(name = "DtFrstQlfygAddtn")
+    @XmlElement(name = "DtFrstQlfygAddtn", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar dtFrstQlfygAddtn;
     @XmlElement(name = "InvstrTaxRef")
@@ -250,7 +254,7 @@ public class TaxEfficientProduct5 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getDtOfFrstSbcpt() {
@@ -262,7 +266,7 @@ public class TaxEfficientProduct5 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public TaxEfficientProduct5 setDtOfFrstSbcpt(XMLGregorianCalendar value) {
@@ -408,7 +412,7 @@ public class TaxEfficientProduct5 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getDtFrstQlfygAddtn() {
@@ -420,7 +424,7 @@ public class TaxEfficientProduct5 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public TaxEfficientProduct5 setDtFrstQlfygAddtn(XMLGregorianCalendar value) {

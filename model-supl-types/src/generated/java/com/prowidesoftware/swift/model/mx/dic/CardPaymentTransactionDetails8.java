@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -43,7 +45,8 @@ public class CardPaymentTransactionDetails8 {
     protected PaymentContext3 pmtCntxt;
     @XmlElement(name = "MrchntCtgyCd")
     protected String mrchntCtgyCd;
-    @XmlElement(name = "TxDtTm")
+    @XmlElement(name = "TxDtTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar txDtTm;
     @XmlElement(name = "SaleRefNb")
@@ -165,7 +168,7 @@ public class CardPaymentTransactionDetails8 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getTxDtTm() {
@@ -177,7 +180,7 @@ public class CardPaymentTransactionDetails8 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public CardPaymentTransactionDetails8 setTxDtTm(XMLGregorianCalendar value) {

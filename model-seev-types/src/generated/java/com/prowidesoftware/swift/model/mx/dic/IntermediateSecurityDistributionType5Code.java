@@ -99,7 +99,7 @@ public enum IntermediateSecurityDistributionType5Code {
     LIQU,
 
     /**
-     * A distribution of subsidiary stock to the shareholders.
+     * A distribution of subsidiary stock to the shareholders
      * 
      */
     SOFF,

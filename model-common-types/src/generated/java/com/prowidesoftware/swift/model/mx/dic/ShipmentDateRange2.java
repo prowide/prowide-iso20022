@@ -7,7 +7,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -30,10 +32,12 @@ public class ShipmentDateRange2 {
 
     @XmlElement(name = "SubQtyVal", required = true)
     protected BigDecimal subQtyVal;
-    @XmlElement(name = "EarlstShipmntDt")
+    @XmlElement(name = "EarlstShipmntDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar earlstShipmntDt;
-    @XmlElement(name = "LatstShipmntDt")
+    @XmlElement(name = "LatstShipmntDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar latstShipmntDt;
 
@@ -67,7 +71,7 @@ public class ShipmentDateRange2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getEarlstShipmntDt() {
@@ -79,7 +83,7 @@ public class ShipmentDateRange2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public ShipmentDateRange2 setEarlstShipmntDt(XMLGregorianCalendar value) {
@@ -92,7 +96,7 @@ public class ShipmentDateRange2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getLatstShipmntDt() {
@@ -104,7 +108,7 @@ public class ShipmentDateRange2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public ShipmentDateRange2 setLatstShipmntDt(XMLGregorianCalendar value) {

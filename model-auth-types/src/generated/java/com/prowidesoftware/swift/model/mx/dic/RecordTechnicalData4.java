@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,10 +35,12 @@ public class RecordTechnicalData4 {
 
     @XmlElement(name = "IncnsstncyInd")
     protected Boolean incnsstncyInd;
-    @XmlElement(name = "LastUpd")
+    @XmlElement(name = "LastUpd", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar lastUpd;
-    @XmlElement(name = "SubmissnDtTm")
+    @XmlElement(name = "SubmissnDtTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar submissnDtTm;
     @XmlElement(name = "RlvntCmptntAuthrty")
@@ -78,7 +82,7 @@ public class RecordTechnicalData4 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getLastUpd() {
@@ -90,7 +94,7 @@ public class RecordTechnicalData4 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public RecordTechnicalData4 setLastUpd(XMLGregorianCalendar value) {
@@ -103,7 +107,7 @@ public class RecordTechnicalData4 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getSubmissnDtTm() {
@@ -115,7 +119,7 @@ public class RecordTechnicalData4 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public RecordTechnicalData4 setSubmissnDtTm(XMLGregorianCalendar value) {

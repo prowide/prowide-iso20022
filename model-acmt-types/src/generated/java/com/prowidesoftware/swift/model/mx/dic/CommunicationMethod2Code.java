@@ -35,7 +35,7 @@ public enum CommunicationMethod2Code {
     EMAL,
 
     /**
-     * Transmission by fax.
+     * Transmission by Fax.
      * 
      */
     FAXI,

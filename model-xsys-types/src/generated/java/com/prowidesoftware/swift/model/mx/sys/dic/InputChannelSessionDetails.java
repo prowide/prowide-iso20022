@@ -7,7 +7,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -36,10 +38,12 @@ public class InputChannelSessionDetails {
     protected String authstnDN;
     @XmlElement(name = "WndwSz", required = true)
     protected BigDecimal wndwSz;
-    @XmlElement(name = "SsnOpnTm", required = true)
+    @XmlElement(name = "SsnOpnTm", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar ssnOpnTm;
-    @XmlElement(name = "SsnClsTm", required = true)
+    @XmlElement(name = "SsnClsTm", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar ssnClsTm;
     @XmlElement(name = "NbOfSntMsgs", required = true)
@@ -104,7 +108,7 @@ public class InputChannelSessionDetails {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getSsnOpnTm() {
@@ -116,7 +120,7 @@ public class InputChannelSessionDetails {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public InputChannelSessionDetails setSsnOpnTm(XMLGregorianCalendar value) {
@@ -129,7 +133,7 @@ public class InputChannelSessionDetails {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getSsnClsTm() {
@@ -141,7 +145,7 @@ public class InputChannelSessionDetails {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public InputChannelSessionDetails setSsnClsTm(XMLGregorianCalendar value) {

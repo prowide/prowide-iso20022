@@ -26,7 +26,6 @@ import com.prowidesoftware.swift.model.mx.dic.BusinessApplicationHeaderV01;
 import com.prowidesoftware.swift.utils.Lib;
 import com.prowidesoftware.swift.utils.SafeXmlUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.Validate;
 import org.w3c.dom.Element;
 import org.w3c.dom.ls.DOMImplementationLS;
 import org.w3c.dom.ls.LSSerializer;
@@ -35,6 +34,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringReader;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.logging.Level;
 
@@ -74,7 +74,7 @@ public class MxParser {
     @Deprecated
     @ProwideDeprecated(phase3 = TargetYear.SRU2022)
     public MxParser(final File file) throws IOException {
-        Validate.notNull(file);
+        Objects.requireNonNull(file);
         this.buffer = Lib.readFile(file);
         DeprecationUtils.phase2(MxParser.class, "MxParser(File)", "The MxParser class is no longer useful or has been replaced by similar features in AbstractMX, AppHdr, AppHdrParser, MxNode or MxParseUtils");
     }

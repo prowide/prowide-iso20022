@@ -19,31 +19,24 @@ import com.prowidesoftware.deprecation.ProwideDeprecated;
 import com.prowidesoftware.deprecation.TargetYear;
 
 /**
- * Interface to plug in code that serializes MX message objects to XML string
- *
- * @since 7.6
+ * @deprecated use the {@link MxWriteImpl} directly
  */
+@Deprecated
+@ProwideDeprecated(phase2 = TargetYear.SRU2023)
 public interface MxWrite {
 
     /**
-     * @deprecated use {@link #message(String, AbstractMX, Class[], String, boolean, EscapeHandler)} instead
+     * @deprecated use {@link MxWriteImpl#write(String, AbstractMX, Class[], MxWriteParams)} instead
      */
     @Deprecated
     @ProwideDeprecated(phase2 = TargetYear.SRU2022)
     String message(String namespace, AbstractMX obj, Class[] classes, final String prefix, boolean includeXMLDeclaration);
 
     /**
-     * Converts obj into a xml string
-     *
-     * @param namespace             the namespace for the target message
-     * @param obj                   the object containing the message to be serialized
-     * @param classes               array of all classes used or referenced by message class
-     * @param prefix                optional prefix for ns ("Doc" by default)
-     * @param includeXMLDeclaration true to include the xml declaration (true by default)
-     * @param escapeHandler specific escape handler to use when serializing the elements content or null to use the default
-     * @return the message content serialized to XML
-     * @since 9.1.7
+     * @deprecated use {@link MxWriteImpl#write(String, AbstractMX, Class[], MxWriteParams)} instead
      */
+    @Deprecated
+    @ProwideDeprecated(phase2 = TargetYear.SRU2023)
     default String message(String namespace, AbstractMX obj, Class[] classes, final String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
         return message(namespace, obj, classes, prefix, includeXMLDeclaration, null);
     }

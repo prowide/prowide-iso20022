@@ -19,13 +19,10 @@ import com.prowidesoftware.swift.model.mx.dic.*;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Test;
 
-import javax.xml.datatype.DatatypeFactory;
-import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigDecimal;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * General MX into XML serialization test cases
@@ -91,22 +88,6 @@ public class MxWriteTest {
         if (StringUtils.contains(mxXml, "xmlns:Doc=\"urn:swift:xsd:acmt.001.001.07\"")) {
             assertTrue(StringUtils.contains(mxXml, "<Doc:AcctOpngInstr>"));
         }
-    }
-
-    @Test
-    public void testWriteDateTime() throws Exception {
-        final MxPacs00800102 mx1 = new MxPacs00800102();
-        mx1.setFIToFICstmrCdtTrf(new FIToFICustomerCreditTransferV02().addCdtTrfTxInf(new CreditTransferTransactionInformation11()));
-        final XMLGregorianCalendar cal = DatatypeFactory.newInstance().newXMLGregorianCalendar(new GregorianCalendar(2015, Calendar.NOVEMBER, 19, 12, 13, 14));
-        mx1.getFIToFICstmrCdtTrf().getCdtTrfTxInf().get(0).setSttlmTmIndctn((new SettlementDateTimeIndication1()).setCdtDtTm(cal));
-        final String xml = mx1.message();
-        //System.out.println(mx1.message());
-        assertTrue(xml.contains("<Doc:CdtDtTm>2015-11-19T12:13:14.000"));
-
-        final MxPacs00800102 mx2 = MxPacs00800102.parse(xml);
-        //System.out.println(mx2.message());
-        assertNotNull(mx2.getFIToFICstmrCdtTrf().getCdtTrfTxInf().get(0).getSttlmTmIndctn());
-        assertNotNull(mx2.getFIToFICstmrCdtTrf().getCdtTrfTxInf().get(0).getSttlmTmIndctn().getCdtDtTm());
     }
 
     @Test

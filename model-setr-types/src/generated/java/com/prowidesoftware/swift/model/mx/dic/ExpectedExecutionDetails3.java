@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -35,7 +37,8 @@ public class ExpectedExecutionDetails3 {
 
     @XmlElement(name = "XpctdTradDtTm")
     protected DateAndDateTimeChoice xpctdTradDtTm;
-    @XmlElement(name = "XpctdCshSttlmDt")
+    @XmlElement(name = "XpctdCshSttlmDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar xpctdCshSttlmDt;
     @XmlElement(name = "XpctdExctdAmt", required = true)
@@ -44,7 +47,8 @@ public class ExpectedExecutionDetails3 {
     protected Boolean pmtInInd;
     @XmlElement(name = "PmtRef")
     protected String pmtRef;
-    @XmlElement(name = "PrepmtDt")
+    @XmlElement(name = "PrepmtDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar prepmtDt;
     @XmlElement(name = "TopUpAmt")
@@ -84,7 +88,7 @@ public class ExpectedExecutionDetails3 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getXpctdCshSttlmDt() {
@@ -96,7 +100,7 @@ public class ExpectedExecutionDetails3 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public ExpectedExecutionDetails3 setXpctdCshSttlmDt(XMLGregorianCalendar value) {
@@ -184,7 +188,7 @@ public class ExpectedExecutionDetails3 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getPrepmtDt() {
@@ -196,7 +200,7 @@ public class ExpectedExecutionDetails3 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public ExpectedExecutionDetails3 setPrepmtDt(XMLGregorianCalendar value) {

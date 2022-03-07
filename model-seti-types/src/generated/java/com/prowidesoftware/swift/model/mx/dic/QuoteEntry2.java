@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -45,7 +47,8 @@ public class QuoteEntry2 {
     @XmlElement(name = "OrdrTp")
     @XmlSchemaType(name = "string")
     protected OrderType1Code ordrTp;
-    @XmlElement(name = "VldUntilDtTm")
+    @XmlElement(name = "VldUntilDtTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar vldUntilDtTm;
     @XmlElement(name = "Ccy")
@@ -127,7 +130,7 @@ public class QuoteEntry2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getVldUntilDtTm() {
@@ -139,7 +142,7 @@ public class QuoteEntry2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public QuoteEntry2 setVldUntilDtTm(XMLGregorianCalendar value) {

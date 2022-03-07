@@ -8,7 +8,10 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -44,10 +47,12 @@ public class RedemptionMultipleExecution3 {
     protected IndividualPerson12 bnfcryDtls;
     @XmlElement(name = "PlcOfTrad")
     protected PlaceOfTradeIdentification1Choice plcOfTrad;
-    @XmlElement(name = "OrdrDtTm")
+    @XmlElement(name = "OrdrDtTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar ordrDtTm;
-    @XmlElement(name = "ReqdFutrTradDt")
+    @XmlElement(name = "ReqdFutrTradDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar reqdFutrTradDt;
     @XmlElement(name = "CxlRght")
@@ -61,7 +66,8 @@ public class RedemptionMultipleExecution3 {
     protected List<RedemptionExecution6> indvExctnDtls;
     @XmlElement(name = "TtlSttlmAmt")
     protected ActiveCurrencyAndAmount ttlSttlmAmt;
-    @XmlElement(name = "CshSttlmDt")
+    @XmlElement(name = "CshSttlmDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar cshSttlmDt;
     @XmlElement(name = "BlkCshSttlmDtls")
@@ -147,7 +153,7 @@ public class RedemptionMultipleExecution3 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getOrdrDtTm() {
@@ -159,7 +165,7 @@ public class RedemptionMultipleExecution3 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public RedemptionMultipleExecution3 setOrdrDtTm(XMLGregorianCalendar value) {
@@ -172,7 +178,7 @@ public class RedemptionMultipleExecution3 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getReqdFutrTradDt() {
@@ -184,7 +190,7 @@ public class RedemptionMultipleExecution3 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public RedemptionMultipleExecution3 setReqdFutrTradDt(XMLGregorianCalendar value) {
@@ -326,7 +332,7 @@ public class RedemptionMultipleExecution3 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getCshSttlmDt() {
@@ -338,7 +344,7 @@ public class RedemptionMultipleExecution3 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public RedemptionMultipleExecution3 setCshSttlmDt(XMLGregorianCalendar value) {

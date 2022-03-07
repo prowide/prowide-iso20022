@@ -6,7 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -28,13 +30,16 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 public class RelatedEvent2 {
 
-    @XmlElement(name = "IncptnDt")
+    @XmlElement(name = "IncptnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar incptnDt;
-    @XmlElement(name = "MrgrDt")
+    @XmlElement(name = "MrgrDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar mrgrDt;
-    @XmlElement(name = "LqdtnDt")
+    @XmlElement(name = "LqdtnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar lqdtnDt;
     @XmlElement(name = "LastRptSnt")
@@ -45,7 +50,7 @@ public class RelatedEvent2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getIncptnDt() {
@@ -57,7 +62,7 @@ public class RelatedEvent2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public RelatedEvent2 setIncptnDt(XMLGregorianCalendar value) {
@@ -70,7 +75,7 @@ public class RelatedEvent2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getMrgrDt() {
@@ -82,7 +87,7 @@ public class RelatedEvent2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public RelatedEvent2 setMrgrDt(XMLGregorianCalendar value) {
@@ -95,7 +100,7 @@ public class RelatedEvent2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getLqdtnDt() {
@@ -107,7 +112,7 @@ public class RelatedEvent2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public RelatedEvent2 setLqdtnDt(XMLGregorianCalendar value) {
