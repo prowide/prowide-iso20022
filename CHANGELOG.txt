@@ -2,9 +2,10 @@
  Prowide ISO 20022 - CHANGELOG
 -----------------------------------------------------------------------------------------------------------------------
 
-9.2.6 SNAPSHOT
+RELEASE 9.2.6 - March 2022
   * (GH-36) Added customizable datetime, date and time adapter in the MxWriteConfiguration, MxReadConfiguration
-  * Changed the default date time serialization to local time with UTC offset format YYYY-MM-DDThh:mm:ss.sss+/-hh:mm
+  * Changed the default date time serialization to local time with UTC offset format YYYY-MM-DDThh:mm:ss[.sss]+/-hh:mm
+  * Changed the default time serialization to local time with UTC offset format hh:mm:ss[.sss]+/-hh:mm
   * Encapsulated the serialization options in a DTO, when calling xml or message methods in AbstractMX and AppHdr
   * Validate.notNull -> Objects.requireNonNull
 

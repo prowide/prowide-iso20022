@@ -5,7 +5,7 @@ apply plugin: 'maven-publish'
 
 def SRU = "2021"
 
-version = "SRU${SRU}-9.2.6-SNAPSHOT"
+version = "SRU${SRU}-9.2.6"
 group 'com.prowidesoftware'
 
 sourceCompatibility = '1.8'
@@ -191,7 +191,7 @@ javadoc {
 // declared dependencies for pom generation
 dependencies {
 	// included build (keep in sync with the latest Prowide Core version)
-	api 'com.prowidesoftware:pw-swift-core:SRU2021-9.2.11'
+	api 'com.prowidesoftware:pw-swift-core:SRU2021-9.2.12'
 	implementation 'org.apache.commons:commons-lang3:3.12.0'
 	implementation 'com.google.code.gson:gson:2.8.9'
 }
