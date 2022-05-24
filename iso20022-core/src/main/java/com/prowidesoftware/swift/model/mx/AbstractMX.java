@@ -67,7 +67,7 @@ import java.util.logging.Logger;
  * @see AbstractMT
  * @since 7.6
  */
-public abstract class AbstractMX extends AbstractMessage implements IDocument, JsonSerializable {
+public abstract class AbstractMX extends AbstractMessage implements JsonSerializable {
     private static final transient Logger log = Logger.getLogger(AbstractMX.class.getName());
 
     public static final String DOCUMENT_LOCALNAME = "Document";
@@ -102,8 +102,9 @@ public abstract class AbstractMX extends AbstractMessage implements IDocument, J
      * @deprecated use {@link MxWriteImpl#write(String, AbstractMX, Class[], MxWriteParams)} instead.
      */
     @Deprecated
-    @ProwideDeprecated(phase2 = TargetYear.SRU2022)
+    @ProwideDeprecated(phase3 = TargetYear.SRU2023)
     protected static String message(final String namespace, final AbstractMX obj, @SuppressWarnings("rawtypes") final Class[] classes, final String prefix, boolean includeXMLDeclaration) {
+        DeprecationUtils.phase2(AbstractMX.class, "message(String, AbstractMX, Class[], String, boolean)", "Use MxWriteImpl.write(String, AbstractMX, Class[], MxWriteParams) instead.");
         MxWriteParams params = new MxWriteParams();
         params.prefix = prefix;
         params.includeXMLDeclaration = includeXMLDeclaration;
@@ -114,8 +115,9 @@ public abstract class AbstractMX extends AbstractMessage implements IDocument, J
      * @deprecated use {@link MxWriteImpl#write(String, AbstractMX, Class[], MxWriteParams)} instead
      */
     @Deprecated
-    @ProwideDeprecated(phase2 = TargetYear.SRU2023)
+    @ProwideDeprecated(phase3 = TargetYear.SRU2023)
     protected static String message(final String namespace, final AbstractMX obj, @SuppressWarnings("rawtypes") final Class[] classes, final String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
+        DeprecationUtils.phase2(AbstractMX.class, "message(String, AbstractMX, Class[], String, boolean, EscapeHandler)", "Use MxWriteImpl.write(String, AbstractMX, Class[], MxWriteParams) instead.");
         MxWriteParams params = new MxWriteParams();
         params.prefix = prefix;
         params.includeXMLDeclaration = includeXMLDeclaration;
@@ -329,8 +331,9 @@ public abstract class AbstractMX extends AbstractMessage implements IDocument, J
      * @deprecated use {@link #message(MxWriteConfiguration)} instead
      */
     @Deprecated
-    @ProwideDeprecated(phase2 = TargetYear.SRU2022)
+    @ProwideDeprecated(phase3 = TargetYear.SRU2023)
     public String message(final String rootElement, boolean includeXMLDeclaration) {
+        DeprecationUtils.phase2(AbstractMX.class, "message(String, boolean)", "Use message(MxWriteConfiguration) instead");
         MxWriteConfiguration conf = new MxWriteConfiguration();
         conf.rootElement = rootElement;
         conf.includeXMLDeclaration = includeXMLDeclaration;
@@ -341,8 +344,9 @@ public abstract class AbstractMX extends AbstractMessage implements IDocument, J
      * @deprecated use {@link #message(MxWriteConfiguration)} instead
      */
     @Deprecated
-    @ProwideDeprecated(phase2 = TargetYear.SRU2022)
+    @ProwideDeprecated(phase3 = TargetYear.SRU2023)
     public String message(final String rootElement) {
+        DeprecationUtils.phase2(AbstractMX.class, "message(String)", "Use message(MxWriteConfiguration) instead");
         MxWriteConfiguration conf = new MxWriteConfiguration();
         conf.rootElement = rootElement;
         return message(conf);
@@ -411,8 +415,9 @@ public abstract class AbstractMX extends AbstractMessage implements IDocument, J
      * @deprecated use {@link #header(MxWriteParams)} instead
      */
     @Deprecated
-    @ProwideDeprecated(phase2 = TargetYear.SRU2022)
+    @ProwideDeprecated(phase3 = TargetYear.SRU2023)
     public String header(final String prefix, boolean includeXMLDeclaration) {
+        DeprecationUtils.phase2(AbstractMX.class, "header(String, boolean)", "Use header(MxWriteParams) instead");
         MxWriteParams params = new MxWriteParams();
         params.prefix = prefix;
         params.includeXMLDeclaration = includeXMLDeclaration;
@@ -423,8 +428,9 @@ public abstract class AbstractMX extends AbstractMessage implements IDocument, J
      * @deprecated use {@link #header(MxWriteParams)} instead
      */
     @Deprecated
-    @ProwideDeprecated(phase2 = TargetYear.SRU2023)
+    @ProwideDeprecated(phase3 = TargetYear.SRU2023)
     public String header(final String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
+        DeprecationUtils.phase2(AbstractMX.class, "header(String, boolean, EscapeHandler)", "Use header(MxWriteParams) instead");
         MxWriteParams params = new MxWriteParams();
         params.prefix = prefix;
         params.includeXMLDeclaration = includeXMLDeclaration;
@@ -465,8 +471,9 @@ public abstract class AbstractMX extends AbstractMessage implements IDocument, J
      * @deprecated use {@link #document(MxWriteParams)} instead
      */
     @Deprecated
-    @ProwideDeprecated(phase2 = TargetYear.SRU2022)
+    @ProwideDeprecated(phase3 = TargetYear.SRU2023)
     public String document(final String prefix, boolean includeXMLDeclaration) {
+        DeprecationUtils.phase2(AbstractMX.class, "document(String, boolean)", "Use document(MxWriteParams) instead");
         return document(prefix, includeXMLDeclaration, null);
     }
 
@@ -543,9 +550,9 @@ public abstract class AbstractMX extends AbstractMessage implements IDocument, J
      */
     @XmlTransient
     @Deprecated
-    @ProwideDeprecated(phase3 = TargetYear.SRU2022)
+    @ProwideDeprecated(phase4 = TargetYear.SRU2023)
     public BusinessHeader getBusinessHeader() {
-        DeprecationUtils.phase2(AbstractMX.class, "getBusinessHeader()", "Use getAppHdr() instead");
+        DeprecationUtils.phase3(AbstractMX.class, "getBusinessHeader()", "Use getAppHdr() instead");
         // backward compatible implementation during the deprecation phase
         if (appHdr instanceof BusinessHeader) {
             // if it is already a deprecated header we cast and return
@@ -574,10 +581,10 @@ public abstract class AbstractMX extends AbstractMessage implements IDocument, J
      * @since 7.8
      * @deprecated use {@link #setAppHdr(AppHdr)} instead
      */
-    @ProwideDeprecated(phase3 = TargetYear.SRU2022)
+    @ProwideDeprecated(phase4 = TargetYear.SRU2023)
     @Deprecated
     public void setBusinessHeader(final BusinessHeader businessHeader) {
-        DeprecationUtils.phase2(AbstractMX.class, "setBusinessHeader(BusinessHeader)", "Use setAppHdr(AppHdr) instead");
+        DeprecationUtils.phase3(AbstractMX.class, "setBusinessHeader(BusinessHeader)", "Use setAppHdr(AppHdr) instead");
         setAppHdr(businessHeader);
     }
 

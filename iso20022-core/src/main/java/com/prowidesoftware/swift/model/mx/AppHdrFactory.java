@@ -16,6 +16,7 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.ProwideException;
+import com.prowidesoftware.deprecation.DeprecationUtils;
 import com.prowidesoftware.deprecation.ProwideDeprecated;
 import com.prowidesoftware.deprecation.TargetYear;
 import com.prowidesoftware.swift.model.MxId;
@@ -156,8 +157,9 @@ public class AppHdrFactory {
      * @since 9.1.2
      * @deprecated use {@link #createAppHdr(AppHdrType, String, String, String, MxId)} instead
      */
-    @ProwideDeprecated(phase2 = TargetYear.SRU2022)
+    @ProwideDeprecated(phase3 = TargetYear.SRU2023)
     public static AppHdr createLegacyAppHdr(AppHdrType type, final String sender, final String receiver, final String reference, final MxId id) {
+        DeprecationUtils.phase2(AppHdrFactory.class, "createLegacyAppHdr(AppHdrType, String, String, String, MxId)", "Use createAppHdr(AppHdrType, String, String, String, MxId) instead.");
         return createAppHdr(type, sender, receiver, reference, id);
     }
 

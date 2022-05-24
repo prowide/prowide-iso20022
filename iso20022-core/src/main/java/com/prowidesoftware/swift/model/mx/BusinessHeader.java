@@ -41,21 +41,21 @@ import javax.xml.datatype.XMLGregorianCalendar;
  * @deprecated use specific implementation of {@link AppHdr} instead, such as {@link BusinessAppHdrV01}
  */
 @Deprecated
-@ProwideDeprecated(phase3 = TargetYear.SRU2022)
+@ProwideDeprecated(phase4 = TargetYear.SRU2023)
 public class BusinessHeader implements AppHdr {
 
     /**
      * @deprecated use {@link LegacyAppHdr#NAMESPACE} instead
      */
     @Deprecated
-    @ProwideDeprecated(phase3 = TargetYear.SRU2022)
+    @ProwideDeprecated(phase4 = TargetYear.SRU2023)
     public static final transient String NAMESPACE_AH = "urn:swift:xsd:$ahV10";
 
     /**
      * @deprecated use {@link BusinessAppHdrV01#NAMESPACE} instead
      */
     @Deprecated
-    @ProwideDeprecated(phase3 = TargetYear.SRU2022)
+    @ProwideDeprecated(phase4 = TargetYear.SRU2023)
     public static final transient String NAMESPACE_BAH = "urn:iso:std:iso:20022:tech:xsd:head.001.001.01";
 
     private ApplicationHeader applicationHeader;
@@ -65,28 +65,28 @@ public class BusinessHeader implements AppHdr {
      * @deprecated use a specific implementation of {@link AppHdr} instead, such as {@link BusinessAppHdrV01}
      */
     @Deprecated
-    @ProwideDeprecated(phase3 = TargetYear.SRU2022)
+    @ProwideDeprecated(phase4 = TargetYear.SRU2023)
     public BusinessHeader() {
         super();
-        DeprecationUtils.phase2(BusinessHeader.class, "BusinessHeader()", "Use a specific implementation of AppHdr instead, such as BusinessAppHdrV01");
+        DeprecationUtils.phase3(BusinessHeader.class, "BusinessHeader()", "Use a specific implementation of AppHdr instead, such as BusinessAppHdrV01");
     }
 
     /**
      * @deprecated use specific implementation of {@link AppHdr} instead, such as {@link LegacyAppHdr}
      */
     @Deprecated
-    @ProwideDeprecated(phase3 = TargetYear.SRU2022)
+    @ProwideDeprecated(phase4 = TargetYear.SRU2023)
     public BusinessHeader(final ApplicationHeader applicationHeader) {
         this();
         this.applicationHeader = applicationHeader;
-        DeprecationUtils.phase2(BusinessHeader.class, "BusinessHeader(ApplicationHeader)", "Use a specific implementation of AppHdr instead, such as LegacyAppHdr");
+        DeprecationUtils.phase3(BusinessHeader.class, "BusinessHeader(ApplicationHeader)", "Use a specific implementation of AppHdr instead, such as LegacyAppHdr");
     }
 
     /**
      * @deprecated use specific implementation of {@link AppHdr} instead, such as {@link LegacyAppHdr}
      */
     @Deprecated
-    @ProwideDeprecated(phase3 = TargetYear.SRU2022)
+    @ProwideDeprecated(phase4 = TargetYear.SRU2023)
     public BusinessHeader(final LegacyAppHdr legacyAppHdr) {
         this();
         this.applicationHeader = new ApplicationHeader();
@@ -104,18 +104,18 @@ public class BusinessHeader implements AppHdr {
      * @deprecated use specific implementation of {@link AppHdr} instead, such as {@link BusinessAppHdrV01}
      */
     @Deprecated
-    @ProwideDeprecated(phase3 = TargetYear.SRU2022)
+    @ProwideDeprecated(phase4 = TargetYear.SRU2023)
     public BusinessHeader(final BusinessApplicationHeaderV01 businessApplicationHeader) {
         this();
         this.businessApplicationHeader = businessApplicationHeader;
-        DeprecationUtils.phase2(BusinessHeader.class, "BusinessHeader(BusinessApplicationHeaderV01)", "Use a specific implementation of AppHdr instead, such as BusinessApplicationHeaderV01");
+        DeprecationUtils.phase3(BusinessHeader.class, "BusinessHeader(BusinessApplicationHeaderV01)", "Use a specific implementation of AppHdr instead, such as BusinessApplicationHeaderV01");
     }
 
     /**
      * @deprecated use specific implementation of {@link AppHdr} instead, such as {@link BusinessAppHdrV01}
      */
     @Deprecated
-    @ProwideDeprecated(phase3 = TargetYear.SRU2022)
+    @ProwideDeprecated(phase4 = TargetYear.SRU2023)
     public BusinessHeader(final BusinessAppHdrV01 businessAppHdrV01) {
         this();
         this.businessApplicationHeader = new BusinessApplicationHeaderV01();
@@ -138,9 +138,9 @@ public class BusinessHeader implements AppHdr {
      * @deprecated use {@link AppHdrFactory#createBusinessAppHdrV01(String, String, String, MxId)} instead
      */
     @Deprecated
-    @ProwideDeprecated(phase3 = TargetYear.SRU2022)
+    @ProwideDeprecated(phase4 = TargetYear.SRU2023)
     public static BusinessApplicationHeaderV01 createBusinessApplicationHeaderV01(final String sender, final String receiver, final String reference, final MxId id) {
-        DeprecationUtils.phase2(BusinessHeader.class, "createBusinessApplicationHeaderV01(String, String, String, MxId)", "Use AppHdrFactory#createBusinessAppHdrV01(String, String, String, MxId) instead");
+        DeprecationUtils.phase3(BusinessHeader.class, "createBusinessApplicationHeaderV01(String, String, String, MxId)", "Use AppHdrFactory#createBusinessAppHdrV01(String, String, String, MxId) instead");
 
         BusinessAppHdrV01 businessAppHdrV01 = AppHdrFactory.createBusinessAppHdrV01(sender, receiver, reference, id);
         BusinessApplicationHeaderV01 result = new BusinessApplicationHeaderV01();
@@ -163,9 +163,9 @@ public class BusinessHeader implements AppHdr {
      * @deprecated use {@link AppHdrFactory#createBusinessAppHdrV01(String, String, String, MxId)} instead
      */
     @Deprecated
-    @ProwideDeprecated(phase3 = TargetYear.SRU2022)
+    @ProwideDeprecated(phase4 = TargetYear.SRU2023)
     public static BusinessHeader create(final String sender, final String receiver, final String reference, final MxId id) {
-        DeprecationUtils.phase2(BusinessHeader.class, "create(String, String, String, MxId)", "Use AppHdrFactory#createBusinessAppHdrV01(String, String, String, MxId) instead");
+        DeprecationUtils.phase3(BusinessHeader.class, "create(String, String, String, MxId)", "Use AppHdrFactory#createBusinessAppHdrV01(String, String, String, MxId) instead");
         return new BusinessHeader(createBusinessApplicationHeaderV01(sender, receiver, reference, id));
     }
 
@@ -173,9 +173,9 @@ public class BusinessHeader implements AppHdr {
      * @deprecated use {@link AppHdrFactory#createLegacyAppHdr(String, String, String, MxId)} instead
      */
     @Deprecated
-    @ProwideDeprecated(phase3 = TargetYear.SRU2022)
+    @ProwideDeprecated(phase4 = TargetYear.SRU2023)
     public static ApplicationHeader createApplicationHeader(final String sender, final String receiver, final String reference, final MxId id) {
-        DeprecationUtils.phase2(BusinessHeader.class, "createApplicationHeader(String, String, String, MxId)", "Use AppHdrFactory#createLegacyAppHdr(String, String, String, MxId) instead");
+        DeprecationUtils.phase3(BusinessHeader.class, "createApplicationHeader(String, String, String, MxId)", "Use AppHdrFactory#createLegacyAppHdr(String, String, String, MxId) instead");
         LegacyAppHdr legacyHdr = AppHdrFactory.createLegacyAppHdr(sender, receiver, reference, id);
         ApplicationHeader result = new ApplicationHeader();
         result.setFrom(legacyHdr.getFrom());

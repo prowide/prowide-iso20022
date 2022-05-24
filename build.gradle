@@ -3,9 +3,9 @@ apply plugin: 'idea'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-def SRU = "2021"
+def SRU = "2022"
 
-version = "SRU${SRU}-9.2.6"
+version = "SRU${SRU}-9.3.0-SNAPSHOT"
 group 'com.prowidesoftware'
 
 sourceCompatibility = '1.8'
