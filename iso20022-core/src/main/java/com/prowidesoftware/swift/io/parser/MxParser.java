@@ -346,7 +346,7 @@ public class MxParser {
      * <p>This implementation is intended to be lightweight and efficient so it actually does a simple substring
      * operation on the XML using information provided by the result of {@link #analyzeMessage()}. The XML is not
      * converted into DOM on purpose because we want to strip the content event when the XML is not totally well-formed.
-     *<
+     *
      * <p>If the message contains more than one Document element the expected result is as follows:
      * <ul>
      * 		<li>If the documents are nested (this can happen for example when an additional MX message is provided
