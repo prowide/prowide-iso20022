@@ -12,7 +12,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Range of sequence numbers related to card transactions.
+ * Range of sequence numbers related to card transactions
  * 
  * 
  * 

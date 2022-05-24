@@ -32,8 +32,8 @@ public class SupplementaryDataEnvelope1 {
      * 
      * @return
      *     possible object is
-     *     {@link Object }
      *     {@link Element }
+     *     {@link Object }
      *     
      */
     public Object getAny() {
@@ -45,8 +45,8 @@ public class SupplementaryDataEnvelope1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link Object }
      *     {@link Element }
+     *     {@link Object }
      *     
      */
     public SupplementaryDataEnvelope1 setAny(Object value) {

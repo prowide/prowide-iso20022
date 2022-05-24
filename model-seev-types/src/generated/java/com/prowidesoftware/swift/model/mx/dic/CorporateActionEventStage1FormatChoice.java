@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Choice of formats to  express the stage of the CA event.
+ * Choice of formats to express the stage of the CA event.
  * 
  * 
  * 

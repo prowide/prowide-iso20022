@@ -48,7 +48,7 @@ public enum CorporateActionNarrative1Code {
     WTRC,
 
     /**
-     * In the context of a corporate action, an International Central Securities Depository (ICSD) refuses a mark-up/mark-down confirmation sent by the account servicer.
+     * In the context of  a corporate action, an International Central Securities Depository (ICSD)  refuses a mark-up/mark-down confirmation sent by the account servicer.
      * 
      */
     RFMC,

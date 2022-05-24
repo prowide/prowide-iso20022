@@ -106,15 +106,15 @@ public enum TradeTransactionCondition4Code {
     XWAR,
 
     /**
-     * Indicates whether the trade is executed with a special cum 
-     * dividend, that is, buying after the ex date and getting the dividend.
+     * Indicates whether the trade is executed  with a special cum 
+     * dividend, ie, buying after the ex date and getting the dividend.
      * 
      */
     SPCU,
 
     /**
-     * Indicates whether the trade is executed with a special ex 
-     * dividend, that is, selling before the ex date without the coupon.
+     * Indicates whether the trade is executed  with a special ex 
+     * dividend, ie, selling before the ex date without the coupon.
      * 
      */
     SPEX,
@@ -127,7 +127,7 @@ public enum TradeTransactionCondition4Code {
     GTDL,
 
     /**
-     * Result of option when set. (UK specific).
+     * Result of option when set. (UK specific)
      * 
      */
     BCRO,

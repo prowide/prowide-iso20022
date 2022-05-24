@@ -86,7 +86,7 @@ public enum UnmatchedReason12Code {
     CPCA,
 
     /**
-     * Counterparty's instruction was too late for matching.
+     * Counterparty's instruction was too late for matching
      * 
      */
     CLAT,
@@ -104,7 +104,7 @@ public enum UnmatchedReason12Code {
     DDEA,
 
     /**
-     * Financial instrument identification does not match, for example, ISIN, financial instrument attributes differs.
+     * Financial instrument identification does not match, for example, ISIN, financial instrument attributes differs...
      * 
      */
     DSEC,
@@ -230,7 +230,7 @@ public enum UnmatchedReason12Code {
     SAFE,
 
     /**
-     * Settlement amount does not match.
+     * Settlement amount does not match
      * 
      */
     DMON,
@@ -242,7 +242,7 @@ public enum UnmatchedReason12Code {
     SETS,
 
     /**
-     * Settlement transaction type does not match (relates to the settlement transaction type codes available for field: 22F:: SETR.).
+     * Settlement transaction type does not match (relates to the settlement transaction type codes available for field :22F::SETR.)
      * 
      */
     SETR,

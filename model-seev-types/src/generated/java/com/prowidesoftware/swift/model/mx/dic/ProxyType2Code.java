@@ -33,7 +33,7 @@ public enum ProxyType2Code {
     CHRM,
 
     /**
-     * Any type of proxy is allowed.
+     * Any type of proxy is allowed
      * 
      */
     DISC,

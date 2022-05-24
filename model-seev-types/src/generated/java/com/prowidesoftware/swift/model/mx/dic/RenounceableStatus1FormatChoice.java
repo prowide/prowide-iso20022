@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Choice of formats to  express the renounceable status.
+ * Choice of formats to express the renounceable status.
  * 
  * 
  * 

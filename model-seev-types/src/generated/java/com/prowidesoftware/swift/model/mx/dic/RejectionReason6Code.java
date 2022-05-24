@@ -57,7 +57,7 @@ public enum RejectionReason6Code {
     SECO,
 
     /**
-     * Party is not defined as an agent
+     * Party is not defined as an agent.
      * 
      */
     AGID,
@@ -69,7 +69,7 @@ public enum RejectionReason6Code {
     ENDP,
 
     /**
-     * Period Starting Date or Code is missing
+     * Period Starting Date or Code is missing.
      * 
      */
     STAR,
@@ -129,7 +129,7 @@ public enum RejectionReason6Code {
     MCER,
 
     /**
-     * Date is not a business day for the security market
+     * Date is not a business day for the security market.
      * 
      */
     BDAY,

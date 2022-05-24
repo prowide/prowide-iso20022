@@ -26,7 +26,7 @@ public enum FormOfSecurity1Code {
 
 
     /**
-     * The financial instrument does not specify any registration of ownership, and  is payable to whomever possesses the certificate.
+     * The financial instrument does not specify any registration of ownership, and is payable to whomever possesses the certificate.
      * 
      */
     BEAR,

@@ -47,7 +47,7 @@ public enum AuthenticationMethod1Code {
     BYPS,
 
     /**
-     * On-line PIN authentication (Personal Identification Number).
+     * On-line PIN  authentication (Personal Identification Number).
      * 
      */
     NPIN,
@@ -83,7 +83,7 @@ public enum AuthenticationMethod1Code {
     MERC,
 
     /**
-     * Electronic commerce transaction secured with the X.509 certificate of a customer.
+     * Secure electronic transaction with cardholder X.509 certificate.
      * 
      */
     SCRT,

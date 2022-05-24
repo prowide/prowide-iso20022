@@ -151,13 +151,13 @@ public enum RejectionReason39Code {
     DADR,
 
     /**
-     * Instruction is irrevocable.
+     * Instruction is irrevocable
      * 
      */
     INIR,
 
     /**
-     * Option is not valid; it has been cancelled by the market or service provider, and cannot be responded to. Any responses already processed against this option are considered void and new responses will be required.
+     * Option is not valid; it has been cancelled by the market or service provider, and cannot be responded to. Any responses already processed against this option are considered void and new responses will be required .
      * 
      */
     CANC,

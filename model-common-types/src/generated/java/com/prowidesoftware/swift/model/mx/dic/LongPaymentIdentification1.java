@@ -17,7 +17,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Identifies a payment instruction by a set of characteristics (as per EBA system requirements) which provides an unambiguous identification of the instruction.
+ * Identifies a payment instruction by a set of characteristics  (as per EBA system requirements) which provides an unambiguous identification of the instruction.
  * 
  * 
  * 

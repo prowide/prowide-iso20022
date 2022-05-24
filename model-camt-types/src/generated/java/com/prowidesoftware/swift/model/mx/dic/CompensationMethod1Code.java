@@ -34,7 +34,7 @@ public enum CompensationMethod1Code {
     NOCP,
 
     /**
-     * Account is debited for  any charges or taxes due.
+     * Account is debited for any charges or taxes due.
      * 
      */
     DBTD,

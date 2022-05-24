@@ -25,7 +25,7 @@ public enum PaymentMethod2Code {
 
 
     /**
-     * Collection of an amount of money from the debtor's bank account by the creditor. The amount of money and dates of collections may vary.
+     * Collection of an amount of money from the debtor's bank account by the creditor.  The amount of money and dates of collections may vary.
      * 
      */
     DD;

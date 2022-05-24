@@ -40,7 +40,7 @@ public enum SignatureType1Code {
     DIGI,
 
     /**
-     * A copy of a physical or original signature in an electronic format.
+     * A copy of a physical or orignal signature in an electronic format.
      * 
      */
     ELEC,

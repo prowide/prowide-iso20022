@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Modification on the value of goods and / or services. For example: rebate, discount, surcharge.
+ * Modification on the value of goods and / or services. For example: rebate, discount, surcharge
  * 
  * 
  * 

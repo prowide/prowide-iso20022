@@ -90,13 +90,13 @@ public enum DTCCSubEventType6Code {
     BLOT("BLOT"),
 
     /**
-     * Identifies an event that involves a Stock Purchase Contract product that is offering an early settlement or remarketing feature prior to the contract's expiration.
+     * Identifies an event that involve a Stock Purchase Contract product that is offering an early settlement or remarketing feature prior to the contract's expiration.
      * 
      */
     RMRK("RMRK"),
 
     /**
-     * Identifies an event where "unwinding" of the basket of securities occurs.
+     * Identifies an event where "unwinding" of the basket of securities occurs. 
      * 
      */
     UNWD("UNWD"),
@@ -138,7 +138,7 @@ public enum DTCCSubEventType6Code {
     SALE("SALE"),
 
     /**
-     * Identifies an event where the company is not issuing a security with the right to subscribe for additional shares. In these instances, a User CUSIP is created by DTC (The Depository Trust Company) as opposed to a company-issued CUSIP in order to identify these issues.
+     * Identifies an event where the company is not issuing a security with the right to subscribe for additional shares. In these instances, a User CUSIP is created by DTC  (The Depository Trust Company)  as opposed to a company-issued CUSIP in order to identify these issues. 
      * 
      */
     PRNI("PRNI"),
@@ -156,13 +156,13 @@ public enum DTCCSubEventType6Code {
     DRPI("DRPI"),
 
     /**
-     * Identifies an event where redemption shares are issued in addition to shares of the original security. This is related to the Mandatory Exchange event with the same sub-event type name.
+     * Identifies an event where redemption shares are issued in addition to shares of the original security.  This is related to the Mandatory Exchange event with the same sub-event type name.
      * 
      */
     MROS("MROS"),
 
     /**
-     * Identifies an event involving the offer of shares by a corporation listed on the Australia Stock Exchange, in which ASIC will give relief so that the company can offer existing shareholders the opportunity to acquire small numbers of additional shares without needing a disclosure document or Product Disclosure Statement (PDS).
+     * Identifies an event involving the offer of shares by a corporation listed on the Australia Stock Exchange, in which ASIC will give relief so that the company can offer existing shareholders the opportunity to acquire small numbers of additional shares without needing a disclosure document or Product Disclosure Statement (PDS). 
      * 
      */
     SHPP("SHPP"),
@@ -198,7 +198,7 @@ public enum DTCCSubEventType6Code {
     FTPR("FTPR"),
 
     /**
-     * Identifies when the event security is an ADR. The underlying security is American Depositary Receipt.
+     * Identifies when the event security is an ADR. The underlying security is American Depositary Receipt.                    
      * 
      */
     ADRS("ADRS"),

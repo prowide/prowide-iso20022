@@ -132,13 +132,13 @@ public enum InvestmentFundFee1Code {
     SWIT,
 
     /**
-     * Charges paid by the investor to the fund company for subscription and redemption orders.
+     * Charges paid by the investor to the fund company for subscription and redemption orders. 
      * 
      */
     UCIC,
 
     /**
-     * Fee charged by a regulatory authority, for example, securities and exchange fees.
+     * Fee charged by a regulatory authority, for example, securities and exchange fees. 
      * 
      */
     REGF,

@@ -51,7 +51,7 @@ public enum ProcessingType1Code {
     RSVT,
 
     /**
-     * Restriction is the blocking of a party, securities account, security or cash account from settlement, blocking of securities position or cash balance for a specific purpose.
+     * Restriction is the blocking of a party, securities account, security or cash account from settlement, blocking of securities position or cash balance for a specific purpose
      * 
      */
     BLCK,

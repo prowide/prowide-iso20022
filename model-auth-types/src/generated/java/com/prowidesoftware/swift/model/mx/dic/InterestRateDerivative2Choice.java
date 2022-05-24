@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Choice element specifying the underlying types of an interest rate derivative.
+ * Choice element specifying the underlying types of an interest rate derivative. 
  * 
  * 
  * 

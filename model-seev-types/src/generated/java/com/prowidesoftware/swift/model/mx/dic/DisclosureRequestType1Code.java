@@ -24,17 +24,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum DisclosureRequestType1Code {
 
-
-    /**
-     * New disclosure request.
-     * 
-     */
     NEWM,
-
-    /**
-     * Disclosure request replacing a previously sent request.
-     * 
-     */
     REPL;
 
     public String value() {
