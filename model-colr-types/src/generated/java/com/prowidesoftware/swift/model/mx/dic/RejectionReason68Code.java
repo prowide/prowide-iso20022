@@ -1,0 +1,90 @@
+
+package com.prowidesoftware.swift.model.mx.dic;
+
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
+
+
+/**
+ * <p>Java class for RejectionReason68Code.
+ * 
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * <pre>
+ * &lt;simpleType name="RejectionReason68Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="DSEC"/&gt;
+ *     &lt;enumeration value="EVNM"/&gt;
+ *     &lt;enumeration value="UKWN"/&gt;
+ *     &lt;enumeration value="ICOL"/&gt;
+ *     &lt;enumeration value="CONL"/&gt;
+ *     &lt;enumeration value="ELIG"/&gt;
+ *     &lt;enumeration value="INID"/&gt;
+ *     &lt;enumeration value="OTHR"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
+ * 
+ */
+@XmlType(name = "RejectionReason68Code")
+@XmlEnum
+public enum RejectionReason68Code {
+
+
+    /**
+     * Unrecognised or invalid financial instrument identification.
+     * 
+     */
+    DSEC,
+
+    /**
+     * Unrecognised event number.
+     * 
+     */
+    EVNM,
+
+    /**
+     * Financial instrument's symbol has not been recognized.
+     * 
+     */
+    UKWN,
+
+    /**
+     * Insufficient collateral proposed.
+     * 
+     */
+    ICOL,
+
+    /**
+     * Concentration limit was exceeded.
+     * 
+     */
+    CONL,
+
+    /**
+     * Security is not eligible.
+     * 
+     */
+    ELIG,
+
+    /**
+     * Instruction contains an invalid message identification, identification is unknown.
+     * 
+     */
+    INID,
+
+    /**
+     * Other. See Narrative.
+     * 
+     */
+    OTHR;
+
+    public String value() {
+        return name();
+    }
+
+    public static RejectionReason68Code fromValue(String v) {
+        return valueOf(v);
+    }
+
+}
