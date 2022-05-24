@@ -27,3 +27,4 @@ lib
 .idea/libraries-with-intellij-classes.xml
 .idea/.name
 .idea/jpa-buddy.xml
+release.sh
