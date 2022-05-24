@@ -1,6 +1,6 @@
 rootProject.name = 'prowide-iso20022'
 
-includeBuild("../prowide-core") {
+includeBuild("../prowide-core.SRU2022") {
     dependencySubstitution {
         substitute module('com.prowidesoftware:pw-swift-core') with project(':')
     }
