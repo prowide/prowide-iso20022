@@ -2,6 +2,9 @@
  Prowide ISO 20022 - CHANGELOG
 -----------------------------------------------------------------------------------------------------------------------
 
+9.2.7 SNAPSHOT
+  * (GH-45) Fixed Json serialization in Java 17
+
 RELEASE 9.2.6 - March 2022
   * (GH-36) Added customizable datetime, date and time adapter in the MxWriteConfiguration, MxReadConfiguration
   * Changed the default date time serialization to local time with UTC offset format YYYY-MM-DDThh:mm:ss[.sss]+/-hh:mm
