@@ -15,14 +15,23 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
+import com.prowidesoftware.sandbox.Payload;
 import com.prowidesoftware.swift.model.MxId;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.sys.MxXsys00200101;
 import com.prowidesoftware.swift.utils.Lib;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.w3c.dom.Element;
+import org.xml.sax.InputSource;
 
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBElement;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
+import javax.xml.transform.sax.SAXSource;
 import java.io.IOException;
+import java.io.StringReader;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -948,5 +957,42 @@ public class MxReadImplTest {
         MxCatm00400102 mx = (MxCatm00400102) new MxReadImpl().read(MxCatm00400102.class, xml, MxCatm00400102._classes);
         assertNull(mx);
     }
+
+    @Test
+    public void testParseCamt998WithProprietaryContent() throws IOException {
+        String xml = Lib.readResource("camt.998.001.03.xml");
+        assertNotNull(xml);
+        MxCamt99800103 mx = MxCamt99800103.parse(xml);
+        assertNotNull(mx);
+        assertEquals("0987654321", mx.getCshMgmtPrtryMsg().getMsgHdr().getMsgId());
+
+        SupplementaryDataEnvelope1 envelope = mx.getCshMgmtPrtryMsg().getPrtryData().getData();
+        assertNotNull(envelope);
+        Object any = envelope.getAny();
+        assertNotNull(any);
+    }
+
+    @Test
+    public void testParseCamt998WithProprietaryContent_DirectMarshallingCode() throws IOException, JAXBException {
+        String xml = Lib.readResource("camt.998.001.03.xml");
+        assertNotNull(xml);
+
+        JAXBContext jc = JAXBContext.newInstance(MxCamt99800103._classes);
+        Unmarshaller unmarshaller = jc.createUnmarshaller();
+
+        SAXSource source = new SAXSource(null, new InputSource(new StringReader(xml)));
+
+        JAXBElement parsed = unmarshaller.unmarshal(source, MxCamt99800103.class);
+        MxCamt99800103 mx = (MxCamt99800103) parsed.getValue();
+
+        assertNotNull(mx);
+        assertEquals("0987654321", mx.getCshMgmtPrtryMsg().getMsgHdr().getMsgId());
+
+        SupplementaryDataEnvelope1 envelope = mx.getCshMgmtPrtryMsg().getPrtryData().getData();
+        assertNotNull(envelope);
+        Object any = envelope.getAny();
+        assertNotNull(any);
+    }
+
 
 }
