@@ -2,10 +2,11 @@
  Prowide ISO 20022 - CHANGELOG
 -----------------------------------------------------------------------------------------------------------------------
 
-9.3.0-SNAPSHOT
+RELEASE 9.3.0 - May 2022
   * SWIFT Standard release update 2022 (live 21 November 2022)
   * Yearly revision of deprecation phase (see http://www.prowidesoftware.com/resources/deprecation-policy)
   * Updated gson dependency to 2.9.0
+  * (GH-45) Fixed Json serialization in Java 17
 
 RELEASE 9.2.6 - March 2022
   * (GH-36) Added customizable datetime, date and time adapter in the MxWriteConfiguration, MxReadConfiguration

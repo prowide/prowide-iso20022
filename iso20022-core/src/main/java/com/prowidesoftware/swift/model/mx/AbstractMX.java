@@ -645,7 +645,7 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
     public String toJson() {
         final Gson gson = new GsonBuilder()
                 .registerTypeAdapter(AbstractMX.class, new AbstractMXAdapter())
-                .registerTypeAdapter(XMLGregorianCalendar.class, new XMLGregorianCalendarAdapter())
+                .registerTypeHierarchyAdapter(XMLGregorianCalendar.class, new XMLGregorianCalendarAdapter())
                 .registerTypeAdapter(AppHdr.class, new AppHdrAdapter())
                 .setPrettyPrinting()
                 .create();
