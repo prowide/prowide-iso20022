@@ -80,9 +80,6 @@ configure(subprojects.findAll {it.name.endsWith('-mx')}) {
 configure(subprojects.findAll {it.name.endsWith('-types')}) {
 	javadoc.enabled = false
 }
-configure(rootProject) {
-	javadoc.enabled = false
-}
 
 project(':iso20022-core') {
 	dependencies {
