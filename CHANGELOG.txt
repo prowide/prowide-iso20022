@@ -3,6 +3,7 @@
 -----------------------------------------------------------------------------------------------------------------------
 
 9.2.7 SNAPSHOT
+  * Added model for "trck" types
   * (GH-45) Fixed Json serialization in Java 17
 
 RELEASE 9.2.6 - March 2022

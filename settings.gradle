@@ -75,6 +75,9 @@ include 'model-setr-types'
 include 'model-supl-mx'
 include 'model-supl-types'
 
+include 'model-trck-mx'
+include 'model-trck-types'
+
 include 'model-trea-mx'
 include 'model-trea-types'
 
