@@ -1,11 +1,5 @@
 rootProject.name = 'prowide-iso20022'
 
-includeBuild("../prowide-core") {
-    dependencySubstitution {
-        substitute module('com.prowidesoftware:pw-swift-core') with project(':')
-    }
-}
-
 include 'iso20022-core'
 include 'model-common-types'
 

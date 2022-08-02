@@ -34,7 +34,6 @@ SWIFT is a trademark of S.W.I.F.T. SCRL. (www.swift.com)
 ### Dependencies
 
 This project depends on https://github.com/prowide/prowide-core
-The dependency is explicit in the pom so Maven/Gradle should resolve it.
 
 The project also needs the **javax.xml.bind** in runtime. Until Java 8 this package is part of the JDK. 
 If you use **Java above 8** you might need to activate the required modules in the JDK; or add these dependencies (or an equivalent implementation) to your application:
@@ -44,9 +43,6 @@ implementation 'com.sun.xml.bind:jaxb-impl:2.3.3'
 ```
 
 ### Build
-
-The projects uses https://github.com/prowide/prowide-core as included build, so in order to build the library you need 
-to clone the Prowide Core repository as well.
 
 For better build performance local configurations can be setup in a gradle.properties file such as:
 ```

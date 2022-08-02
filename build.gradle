@@ -1,45 +1,73 @@
-apply plugin: 'java-library-distribution'
-apply plugin: 'idea'
-apply plugin: 'eclipse'
-apply plugin: 'maven-publish'
-
-def SRU = "2021"
-
-version = "SRU${SRU}-9.2.7-SNAPSHOT"
-group 'com.prowidesoftware'
-
-sourceCompatibility = '1.8'
-targetCompatibility = '1.8'
-
-allprojects {
+buildscript {
 	repositories {
 		mavenCentral()
-		jcenter()
+		gradlePluginPortal()
+	}
+	dependencies {
+		classpath 'ru.vyarus:gradle-quality-plugin:4.7.0'
+		classpath 'pl.allegro.tech.build:axion-release-plugin:1.13.6'
+		classpath 'io.github.gradle-nexus:publish-plugin:1.1.0'
+	}
+}
+apply plugin: 'pl.allegro.tech.build.axion-release'
+apply plugin: 'java-library-distribution'
+apply plugin: 'maven-publish'
+apply plugin: 'signing'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+apply plugin: 'ru.vyarus.quality'
+apply plugin: 'io.github.gradle-nexus.publish-plugin'
+
+archivesBaseName = 'pw-iso20022'
+group 'com.prowidesoftware'
+
+project.ext {
+	SRU = 'SRU2021'
+}
+
+scmVersion {
+	tag {
+		prefix = "${SRU}"
+		versionSeparator = '-'
+	}
+}
+project.version = "${SRU}-${scmVersion.version}"
+
+allprojects {
+
+	java {
+		toolchain {
+			languageVersion.set(JavaLanguageVersion.of(8))
+		}
+	}
+	tasks.withType(JavaCompile) {
+		options.encoding = 'UTF-8'
+		doLast {
+			if (getJavaCompiler().isPresent()) {
+				println 'Compiling with ' + getJavaCompiler().get().getMetadata().getInstallationPath()
+			}
+		}
 	}
 
-	tasks.withType(JavaCompile) {
-		options.fork = true
-		if (project.hasProperty('JDK8_HOME')) {
-			options.forkOptions.executable = "$JDK8_HOME/bin/javac"
-		}
-		options.encoding = 'UTF-8'
+	repositories {
+		mavenCentral()
 	}
 
 	sourceSets.main.java.srcDirs = ['src/main/java', 'src/generated/java']
 
 	tasks.withType(Jar) {
 		manifest.attributes(
-				'Specification-Title': 'Prowide ISO 20022',
-				'Specification-Version': project.version,
-				'Specification-Vendor': "SRU${SRU}",
-				'Implementation-Title': 'Prowide ISO 20022',
-				'Implementation-Version': project.version,
-				'Implementation-Vendor': 'www.prowidesoftware.com',
-				'Built-OS': System.getProperty('os.name'),
-				'Source-Compatibility': project.sourceCompatibility,
-				'Target-Compatibility': project.targetCompatibility,
-				'Built-Date': new Date().format("yyyy-MM-dd"),
-				'Automatic-Module-Name': 'com.prowidesoftware.iso20022'
+			'Specification-Title': 'Prowide ISO 20022',
+			'Specification-Version': project.version,
+			'Specification-Vendor': "${SRU}",
+			'Implementation-Title': 'Prowide ISO 20022',
+			'Implementation-Version': project.version,
+			'Implementation-Vendor': 'www.prowidesoftware.com',
+			'Built-OS': System.getProperty('os.name'),
+			'Source-Compatibility': project.sourceCompatibility,
+			'Target-Compatibility': project.targetCompatibility,
+			'Built-Date': new Date().format("yyyy-MM-dd"),
+			'Automatic-Module-Name': 'com.prowidesoftware.iso20022'
 		)
 	}
 }
@@ -84,15 +112,15 @@ configure(subprojects.findAll {it.name.endsWith('-types')}) {
 project(':iso20022-core') {
 	dependencies {
 		// included build
-		api 'com.prowidesoftware:pw-swift-core'
+		api 'com.prowidesoftware:pw-swift-core:SRU2021-9.2.16'
+
 		implementation 'org.apache.commons:commons-lang3:3.12.0'
 		implementation 'com.google.code.gson:gson:2.8.9'
 
 		compileOnly 'javax.persistence:javax.persistence-api:2.2'
-		compileOnly group: 'javax.validation', name: 'validation-api', version: '1.0.0.GA'
+		compileOnly 'javax.validation:validation-api:2.0.1.Final'
 
 		testImplementation('org.junit.jupiter:junit-jupiter:5.8.1')
-
 		testImplementation group: 'com.google.guava', name: 'guava', version: '29.0-jre'
 		testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.21.0'
 		testImplementation group: 'org.xmlunit', name: 'xmlunit-core', version: '2.8.3'
@@ -138,12 +166,8 @@ jar {
 	duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
 
-task javadocJar(type: Jar, dependsOn: javadoc) {
-	archiveClassifier = 'javadoc'
-	from javadoc.destinationDir
-}
-
-task sourcesJar(type: Jar, dependsOn: classes) {
+tasks.register('sourcesJar', Jar) {
+	dependsOn classes
 	archiveClassifier = 'sources'
 	subprojects.each { subproject ->
 		from subproject.sourceSets.main.allSource
@@ -167,7 +191,7 @@ javadoc {
 	options.header = "${version}"
 	options.windowTitle = "Prowide ISO 20022 API Reference"
 	title = "Prowide ISO 20022 API Reference"
-	options.footer="SRU${SRU}, generated ${formattedDate()}"
+	options.footer="${SRU}, generated ${formattedDate()}"
 	options.author false
 	options.links 'http://docs.oracle.com/javase/8/docs/api/'
 	options.addStringOption 'Xdoclint:none', '-quiet'
@@ -188,17 +212,39 @@ javadoc {
 	}
 }
 
+tasks.register('javadocJar', Jar) {
+	dependsOn javadoc
+	archiveClassifier = 'javadoc'
+	from javadoc.destinationDir
+}
+
+artifacts {
+	archives javadocJar, sourcesJar
+}
+
 // declared dependencies for pom generation
 dependencies {
 	// included build (keep in sync with the latest Prowide Core version)
-	api 'com.prowidesoftware:pw-swift-core:SRU2021-9.2.13'
+	api 'com.prowidesoftware:pw-swift-core:SRU2021-9.2.16'
 	implementation 'org.apache.commons:commons-lang3:3.12.0'
 	implementation 'com.google.code.gson:gson:2.8.9'
+}
+
+project.ext {
+	nexusRepo = project.version.endsWith('-SNAPSHOT') ? 'maven-snapshots' : 'maven-releases'
 }
 
 publishing {
 	publications {
 		mavenJava(MavenPublication) {
+			versionMapping {
+				usage('java-api') {
+					fromResolutionOf('runtimeClasspath')
+				}
+				usage('java-runtime') {
+					fromResolutionResult()
+				}
+			}
 			afterEvaluate {
 				from components.java
 				groupId = 'com.prowidesoftware'
@@ -235,14 +281,45 @@ publishing {
 			}
 		}
 	}
+
+	// Prowide repo releases
+	if (project.hasProperty('prowideRepo')) {
+		repositories {
+			maven {
+				url "${project.prowideRepo}/repository/${nexusRepo}/"
+				credentials {
+					username "${project.prowideRepoUser}"
+					password "${project.prowideRepoPass}"
+				}
+			}
+		}
+	} else {
+		project.logger.info('Prowide publishing disabled because repository properties are undefined')
+	}
 }
 jar.finalizedBy generatePomFileForMavenJavaPublication
 
-// to avoid metadata in the generated pom.xml files
 tasks.withType(GenerateModuleMetadata) {
+	// to avoid metadata in the generated pom.xml files
 	enabled = false
 }
 
+// OSS Sonatype releases
+signing {
+	required { project.hasProperty('SONATYPE_RELEASE') }
+	sign publishing.publications.mavenJava
+}
+java {
+	withJavadocJar()
+	withSourcesJar()
+}
+nexusPublishing {
+	repositories {
+		sonatype()
+	}
+}
+
+// Zip GitHub releases
 distributions {
 	main {
 		contents {
@@ -264,15 +341,15 @@ distTar.enabled = false
 
 distZip {
 	dependsOn generatePomFileForMavenJavaPublication
-	doLast {
-		if (!project.hasProperty('JDK8_HOME')) {
-			println "*** WARNING: For releases an explicit JDK8_HOME variable must be set in gradle.properties ***"
-		}
-	}
 	duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
 
-task bundle(type: Zip, dependsOn: build) {
+// Alternative (manual) staging upload to OSS Sonatype
+tasks.register('bundle', Jar) {
+	dependsOn build
+	onlyIf {
+		project.hasProperty('SONATYPE_RELEASE')
+	}
 	description 'Creates the bundle.jar for Maven Central distribution'
 	from jar
 	from sourcesJar
@@ -280,5 +357,40 @@ task bundle(type: Zip, dependsOn: build) {
 	from ("$buildDir/publications/mavenJava/pom-default.xml") {
 		rename ".*", "pom.xml"
 	}
-	archiveName 'bundle.zip'
+	from ("$buildDir/publications/mavenJava/pom-default.xml.asc") {
+		rename ".*", "pom.xml.asc"
+	}
+	from ("$buildDir/libs") {
+		include '*.asc'
+	}
+	archiveName 'bundle.jar'
+}
+
+tasks.withType(Test) {
+	doFirst {
+		println 'Running test on ' + getJavaLauncher().get().getMetadata().getInstallationPath()
+	}
+}
+
+task('testOn11', type: Test) {
+	javaLauncher = javaToolchains.launcherFor {
+		languageVersion = JavaLanguageVersion.of(11)
+	}
+}
+
+task('testOn17', type: Test) {
+	javaLauncher = javaToolchains.launcherFor {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
+quality {
+	strict = false
+	// we limit this to spotbugs for the moment
+	checkstyle = false
+	codenarc = false
+	cpd = false
+	pmd = false
+	spotbugsEffort = 'min'
+	spotbugsMaxRank = 1
 }
