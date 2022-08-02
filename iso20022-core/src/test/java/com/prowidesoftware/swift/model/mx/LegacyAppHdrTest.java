@@ -17,8 +17,7 @@ package com.prowidesoftware.swift.model.mx;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @since 9.0.1
@@ -125,6 +124,33 @@ public class LegacyAppHdrTest {
         assertEquals("cn=funds,ou=dcbadeff,o=swift", h.getTo().getId());
         assertEquals("11308917", h.getMsgRef());
         assertNotNull(h.getCrDate());
+    }
+
+    @Test
+    public void testCreationDatetime() {
+        String xml = "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.01\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n" +
+                "        <Fr>\n" +
+                "            <FIId>\n" +
+                "                <FinInstnId>\n" +
+                "                    <BICFI>AAAACAX0XXX</BICFI>\n" +
+                "                </FinInstnId>\n" +
+                "            </FIId>\n" +
+                "        </Fr>\n" +
+                "        <To>\n" +
+                "            <FIId>\n" +
+                "                <FinInstnId>\n" +
+                "                    <BICFI>CITIUS33XXX</BICFI>\n" +
+                "                </FinInstnId>\n" +
+                "            </FIId>\n" +
+                "        </To>\n" +
+                "        <BizMsgIdr>asdfasdfasd</BizMsgIdr>\n" +
+                "        <MsgDefIdr>setr.004.001.04</MsgDefIdr>\n" +
+                "        <CreDt>2021-06-25T00:10:21Z</CreDt>\n" +
+                "    </AppHdr>";
+        BusinessAppHdrV01 h = BusinessAppHdrV01.parse(xml);
+        assertNotNull(h);
+        //System.out.println(h.xml());
+        assertTrue(h.xml().contains("<CreDt>2021-06-25T00:10:21Z</CreDt>"));
     }
 
 }
