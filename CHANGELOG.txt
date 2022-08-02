@@ -2,7 +2,7 @@
  Prowide ISO 20022 - CHANGELOG
 -----------------------------------------------------------------------------------------------------------------------
 
-9.2.7 SNAPSHOT
+RELEASE 9.2.7 - August 2022
   * Added model for "trck" types
   * (GH-45) Fixed Json serialization in Java 17
 
