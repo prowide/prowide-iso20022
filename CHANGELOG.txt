@@ -2,6 +2,9 @@
  Prowide ISO 20022 - CHANGELOG
 -----------------------------------------------------------------------------------------------------------------------
 
+RELEASE 9.3.1 - August 2022
+  * Added model for "trck" types
+  
 RELEASE 9.3.0 - May 2022
   * SWIFT Standard release update 2022 (live 21 November 2022)
   * Yearly revision of deprecation phase (see http://www.prowidesoftware.com/resources/deprecation-policy)
