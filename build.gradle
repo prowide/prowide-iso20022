@@ -23,6 +23,7 @@ group 'com.prowidesoftware'
 
 project.ext {
 	SRU = 'SRU2022'
+	nexusRepo = project.version.endsWith('-SNAPSHOT') ? 'maven-snapshots' : 'maven-releases'
 }
 
 scmVersion {
@@ -52,6 +53,16 @@ allprojects {
 
 	repositories {
 		mavenCentral()
+		// Prowide repo releases
+		if (project.hasProperty('prowideRepo')) {
+			maven {
+				url "${project.prowideRepo}/repository/${nexusRepo}/"
+				credentials {
+					username "${project.prowideRepoUser}"
+					password "${project.prowideRepoPass}"
+				}
+			}
+		}
 	}
 
 	sourceSets.main.java.srcDirs = ['src/main/java', 'src/generated/java']
@@ -103,6 +114,7 @@ configure(subprojects.findAll {it.name.endsWith('-mx')}) {
 		implementation project(specificTypesProject)
 		implementation 'org.apache.commons:commons-lang3:3.12.0'
 		implementation 'com.google.code.gson:gson:2.9.0'
+		compileOnly 'javax.persistence:javax.persistence-api:2.2'
 	}
 }
 
@@ -113,7 +125,7 @@ configure(subprojects.findAll {it.name.endsWith('-types')}) {
 project(':iso20022-core') {
 	dependencies {
 		// included build
-		api 'com.prowidesoftware:pw-swift-core:SRU2021-9.2.16'
+		api 'com.prowidesoftware:pw-swift-core:SRU2022-9.3.2'
 
 		implementation 'org.apache.commons:commons-lang3:3.12.0'
 		implementation 'com.google.code.gson:gson:2.9.0'
@@ -121,6 +133,7 @@ project(':iso20022-core') {
 		compileOnly 'javax.persistence:javax.persistence-api:2.2'
 		compileOnly 'javax.validation:validation-api:2.0.1.Final'
 
+		testImplementation 'javax.persistence:javax.persistence-api:2.2'
 		testImplementation('org.junit.jupiter:junit-jupiter:5.8.2')
 		testImplementation group: 'com.google.guava', name: 'guava', version: '31.1-jre'
 		testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.22.0'
@@ -203,6 +216,10 @@ javadoc {
 	options.bottom = '<script src="//static.getclicky.com/js"></script><script>try{ clicky.init(101039278); }catch(e){}</script>'
 	exclude "**/dic/**"
 
+	options.addStringOption('Xdoclint:none', '-quiet')
+	options.addStringOption('encoding', 'UTF-8')
+	options.addStringOption('charSet', 'UTF-8')
+
 	subprojects.each { proj ->
 		proj.tasks.withType(Javadoc).each { javadocTask ->
 			source += javadocTask.source
@@ -229,10 +246,6 @@ dependencies {
 	api 'com.prowidesoftware:pw-swift-core:SRU2022-9.3.2'
 	implementation 'org.apache.commons:commons-lang3:3.12.0'
 	implementation 'com.google.code.gson:gson:2.9.0'
-}
-
-project.ext {
-	nexusRepo = project.version.endsWith('-SNAPSHOT') ? 'maven-snapshots' : 'maven-releases'
 }
 
 publishing {
