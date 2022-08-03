@@ -121,6 +121,9 @@ configure(subprojects.findAll {it.name.endsWith('-mx')}) {
 configure(subprojects.findAll {it.name.endsWith('-types')}) {
 	javadoc.enabled = false
 }
+configure(subprojects.findAll {it.name.endsWith('-mx')}) {
+	javadoc.enabled = false
+}
 
 project(':iso20022-core') {
 	dependencies {
@@ -198,6 +201,7 @@ javadoc {
 	group = 'Documentation'
 	description = 'Generate javadocs from all child projects as if it was a single project'
 
+	verbose false
 	failOnError false
 	destinationDir = file("$buildDir/docs/javadoc")
 
@@ -214,7 +218,14 @@ javadoc {
 	options.addBooleanOption("-allow-script-in-comments", true)
 
 	options.bottom = '<script src="//static.getclicky.com/js"></script><script>try{ clicky.init(101039278); }catch(e){}</script>'
+
+	// exclude the dictionary package because it is huge; and being simple POJO classes does not add to much value to the Javadoc
 	exclude "**/dic/**"
+	// exclude first version of each Mx type, just to reduce Javadoc files volume
+	exclude "**/model/mx/Mx**01"
+	//exclude "**/model/mx/MxTrck**"
+	exclude "**/model/mx/MxSupl**"
+	//exclude "**/model/mx/MxTsmt**"
 
 	options.addStringOption('Xdoclint:none', '-quiet')
 	options.addStringOption('encoding', 'UTF-8')
