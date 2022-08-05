@@ -135,7 +135,7 @@ public class MxReadImpl implements MxRead {
             java.lang.reflect.Field _classes = clazz.getDeclaredField("_classes");
             mx = parse(clazz, xml, (Class[]) _classes.get(null), params);
         } catch (ClassNotFoundException e) {
-            log.log(Level.SEVERE, "MX model implementation not found for " + fqn, e);
+            log.log(Level.FINE, "MX model implementation not found for " + fqn, e);
         } catch (Exception e) {
             log.log(Level.SEVERE, "Error calling parse in specific MX model implementation", e);
         }

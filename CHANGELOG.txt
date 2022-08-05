@@ -2,6 +2,9 @@
  Prowide ISO 20022 - CHANGELOG
 -----------------------------------------------------------------------------------------------------------------------
 
+SNAPSHOT 9.2.8
+  * Reduce log severity in AbstractMX.parse when the XML is not recognized
+
 RELEASE 9.2.7 - August 2022
   * Added model for "trck" types
   * (GH-45) Fixed Json serialization in Java 17
