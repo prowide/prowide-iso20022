@@ -505,7 +505,13 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
 
     private void applyStrategy(String xml, MessageMetadataStrategy strategy) {
         boolean isKnownType = this.businessProcess != null && this.functionality != null && this.variant != null && this.version != null;
-        AbstractMX mx = isKnownType ? AbstractMX.parse(xml, getMxId()) : AbstractMX.parse(xml);
+        MxId mxId = isKnownType ? getMxId() : null;
+
+        // when parsing the message just for the metadata extraction, we want to avoid underlying error logs
+        // since this MxSwiftMessage is lenient on the constraints of the parsed XML payload
+        MxReadParams params = new MxReadParams();
+        params.verbose = false;
+        AbstractMX mx = MxReadImpl.parse(xml, mxId, params);
 
         if (mx == null) {
             // could not parse the XML into a message model

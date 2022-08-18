@@ -51,7 +51,7 @@ import java.util.logging.Logger;
  * @since 9.0
  */
 public class MxReadImpl implements MxRead {
-    private static final transient Logger log = Logger.getLogger(MxReadImpl.class.getName());
+    private static final Logger log = Logger.getLogger(MxReadImpl.class.getName());
 
     /**
      * Static parse implementation of {@link MxRead#read(Class, String, Class[])}
@@ -109,7 +109,7 @@ public class MxReadImpl implements MxRead {
     /**
      * @since 9.2.6
      */
-    static AbstractMX parse(final String xml, final MxId id, final MxReadParams params) {
+    public static AbstractMX parse(final String xml, final MxId id, final MxReadParams params) {
         Objects.requireNonNull(xml, "XML to parse must not be null");
         Validate.notBlank(xml, "XML to parse must not be a blank string");
         Objects.requireNonNull(params, "unmarshalling params cannot be null");
@@ -121,7 +121,8 @@ public class MxReadImpl implements MxRead {
             if (namespace.isPresent()) {
                 resolvedId = new MxId(namespace.get());
             } else {
-                log.severe("Cannot detect the Mx type from the XML, ensure the XML contains proper namespaces or provide an MxId object as parameter to the parse call");
+                Level level = params.verbose? Level.SEVERE: Level.FINE;
+                log.log(level, "Cannot detect the Mx type from the XML, make sure the XML contains proper namespaces or provide an MxId object as parameter to the parse call");
                 return null;
             }
         }
@@ -135,9 +136,17 @@ public class MxReadImpl implements MxRead {
             java.lang.reflect.Field _classes = clazz.getDeclaredField("_classes");
             mx = parse(clazz, xml, (Class[]) _classes.get(null), params);
         } catch (ClassNotFoundException e) {
-            log.log(Level.FINE, "MX model implementation not found for " + fqn, e);
+            if (params.verbose) {
+                log.log(Level.SEVERE, "Cannot find class " + fqn + " to parse the XML", e);
+            } else {
+                log.fine("MX model implementation not found for " + fqn);
+            }
         } catch (Exception e) {
-            log.log(Level.SEVERE, "Error calling parse in specific MX model implementation", e);
+            if (params.verbose) {
+                log.log(Level.SEVERE, "Error calling parse in specific MX model implementation", e);
+            } else {
+                log.fine("Error calling parse in specific MX model implementation");
+            }
         }
         return mx;
     }

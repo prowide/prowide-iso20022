@@ -2,8 +2,8 @@
  Prowide ISO 20022 - CHANGELOG
 -----------------------------------------------------------------------------------------------------------------------
 
-SNAPSHOT 9.2.8
-  * Reduce log severity in AbstractMX.parse when the XML is not recognized
+RELEASE 9.2.8 - August 2022
+  * (PW-922) Added a parameter in the MxReadParams used by the AbstractMX#parse to control the log verbosity when parsing unrecognized messages
 
 RELEASE 9.2.7 - August 2022
   * Added model for "trck" types
