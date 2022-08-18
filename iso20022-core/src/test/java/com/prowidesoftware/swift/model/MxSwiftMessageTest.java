@@ -227,4 +227,78 @@ public class MxSwiftMessageTest {
         assertEquals("camt", mx.getCategory());
     }
 
+    /**
+     * Tests the MxSwiftMessage can parse an XML, even if the corresponding AbstractMX subclass is missing
+     */
+    @Test
+    public void testUnrecognizedMessage() {
+        String xmlInput = "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:DRAFT6camt.077.001.01\">\n" +
+                "<BllgRpt>\n" +
+                "    <MsgHdr>\n" +
+                "        <MsgId>12345</MsgId>\n" +
+                "        <CreDtTm>2022-05-24T10:29:05+08:00</CreDtTm>\n" +
+                "        <ReqTp>\n" +
+                "            <Prtry>\n" +
+                "                <Id>Tax Invoice for RTGS Billing</Id>\n" +
+                "            </Prtry>\n" +
+                "        </ReqTp>\n" +
+                "    </MsgHdr>\n" +
+                "    <BllgRptOrErr>\n" +
+                "        <BllgRpt>\n" +
+                "            <RgltryData>\n" +
+                "                <Invcr>\n" +
+                "                    <Nm>The Monetary Authority of Foobar</Nm>\n" +
+                "                    <PstlAdr>\n" +
+                "                        <AdrLine>99 Foo Way, FOO Building 012345</AdrLine>\n" +
+                "                    </PstlAdr>\n" +
+                "                    <Id>\n" +
+                "                        <OrgId>\n" +
+                "                            <Othr>\n" +
+                "                                <Id>M12343076J</Id>\n" +
+                "                            </Othr>\n" +
+                "                        </OrgId>\n" +
+                "                    </Id>\n" +
+                "                </Invcr>\n" +
+                "                <Invcee>\n" +
+                "                    <Nm>FOO BANK OF FOOBAR</Nm>\n" +
+                "                    <PstlAdr>\n" +
+                "                        <AdrLine>44 Street Unit 27-01/08 Foobar Hub 012345</AdrLine>\n" +
+                "                    </PstlAdr>\n" +
+                "                </Invcee>\n" +
+                "                <InvcLglStmt>See further information on the RTGS Billing Detail screen</InvcLglStmt>\n" +
+                "            </RgltryData>\n" +
+                "            <InvcDt>2022-05-24</InvcDt>\n" +
+                "            <BllgId>I22/123/0123</BllgId>\n" +
+                "            <BllgPrd>\n" +
+                "                <FrDt>2022-05-25</FrDt>\n" +
+                "                <ToDt>2022-05-25</ToDt>\n" +
+                "            </BllgPrd>\n" +
+                "            <InvcTtls>\n" +
+                "                <Tax>\n" +
+                "                    <Rate>7</Rate>\n" +
+                "                    <TaxblAmt Ccy=\"SGD\">0.30</TaxblAmt>\n" +
+                "                    <Amt Ccy=\"SGD\">0.02</Amt>\n" +
+                "                </Tax>\n" +
+                "                <TtlInvcAmt Ccy=\"SGD\">0.32</TtlInvcAmt>\n" +
+                "                <PmtDueDt>2022-05-24</PmtDueDt>\n" +
+                "            </InvcTtls>\n" +
+                "            <SvcCtgyTtls>\n" +
+                "                <AcctId>\n" +
+                "                    <CshAcctId>\n" +
+                "                        <Othr>\n" +
+                "                            <Id>12340100</Id>\n" +
+                "                        </Othr>\n" +
+                "                    </CshAcctId>\n" +
+                "                </AcctId>\n" +
+                "                <TtlInvcAmt Ccy=\"SGD\">0.32</TtlInvcAmt>\n" +
+                "                <SvcCtgy>CHAR</SvcCtgy>\n" +
+                "            </SvcCtgyTtls>\n" +
+                "        </BllgRpt>\n" +
+                "    </BllgRptOrErr>\n" +
+                "</BllgRpt>\n" +
+                "</Document>\n";
+        MxSwiftMessage mx = new MxSwiftMessage(xmlInput);
+        assertNotNull(mx);
+        assertEquals("camt.077.001.01", mx.getIdentifier());
+    }
 }
