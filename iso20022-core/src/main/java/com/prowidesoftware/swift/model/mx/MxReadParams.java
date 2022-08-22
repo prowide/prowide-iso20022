@@ -29,6 +29,14 @@ public class MxReadParams {
      */
     public TypeAdaptersConfiguration adapters;
 
+    /**
+     * When true; errors during parsing, such as a ClassNotFoundException, will generate a log error, while when set
+     * to false those errors will generate finer log entries.
+     *
+     * @since 9.2.8
+     */
+    public boolean verbose = true;
+
     public MxReadParams() {
         this.adapters = new TypeAdaptersConfiguration();
     }
