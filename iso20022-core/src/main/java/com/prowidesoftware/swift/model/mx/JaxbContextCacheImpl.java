@@ -43,9 +43,14 @@ public class JaxbContextCacheImpl implements JaxbContextCache {
         if (cachedMap == null) {
             cachedMap = new ConcurrentHashMap<>();
         }
+
         JAXBContext context = cachedMap.get(messageClass);
         if (context == null) {
-            context = JAXBContext.newInstance(classes);
+            if (classes!=null && classes.length != 0) {
+                context = JAXBContext.newInstance(classes);
+            } else {
+                context = JAXBContext.newInstance(messageClass);
+            }
             cachedMap.put(messageClass, context);
         }
         return context;

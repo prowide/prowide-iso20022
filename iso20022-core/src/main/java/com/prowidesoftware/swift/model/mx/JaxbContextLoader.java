@@ -65,7 +65,11 @@ public enum JaxbContextLoader {
         if (cacheImpl != null) {
             return cacheImpl.get(messageClass, classes);
         } else {
-            return JAXBContext.newInstance(classes);
+            if (classes!=null && classes.length != 0) {
+                return JAXBContext.newInstance(classes);
+            } else {
+                return JAXBContext.newInstance(messageClass);
+            }
         }
     }
 
