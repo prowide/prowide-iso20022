@@ -31,7 +31,13 @@ public class GuavaJaxbContextCache implements JaxbContextCache {
     private final Cache<Class<? extends AbstractMX>, JAXBContext> cache = CacheBuilder.newBuilder().maximumSize(100).build();
 
     public JAXBContext get(final Class messageClass, final Class<?>[] classes) throws ExecutionException {
-        return cache.get(messageClass, () -> JAXBContext.newInstance(classes));
+        return cache.get(messageClass, () -> {
+            if (classes != null && classes.length > 0) {
+                return JAXBContext.newInstance(classes);
+            } else {
+                return JAXBContext.newInstance(messageClass);
+            }
+        });
     }
 
 }

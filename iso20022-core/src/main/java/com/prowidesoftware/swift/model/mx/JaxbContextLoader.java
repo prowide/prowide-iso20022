@@ -55,17 +55,21 @@ public enum JaxbContextLoader {
 
     /**
      * Gets a context from the static cache. If the context for the specific message type is not present,
-     * a new context is initialized with the given classes and stored in the cache.
+     * a new context is initialized with the given classes or messageClass.
      *
      * @param messageClass class of the message to be read or written
-     * @param classes      comprehensive list of classes for the context
+     * @param classes      comprehensive list of classes for the context, null or empty to create a context with the messageClass
      * @return the cached or created context for the specific message type
      */
     public JAXBContext get(final Class messageClass, final Class<?>[] classes) throws JAXBException, ExecutionException {
         if (cacheImpl != null) {
             return cacheImpl.get(messageClass, classes);
         } else {
-            return JAXBContext.newInstance(classes);
+            if (classes != null && classes.length != 0) {
+                return JAXBContext.newInstance(classes);
+            } else {
+                return JAXBContext.newInstance(messageClass);
+            }
         }
     }
 

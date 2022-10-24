@@ -2,6 +2,9 @@
  Prowide ISO 20022 - CHANGELOG
 -----------------------------------------------------------------------------------------------------------------------
 
+RELEASE 9.2.9 - October 2022
+  * (PW-1082) Added support in the JaxbContextCache and its default implementation to create the context without the classes parameter
+
 RELEASE 9.2.8 - August 2022
   * (PW-922) Added a parameter in the MxReadParams used by the AbstractMX#parse to control the log verbosity when parsing unrecognized messages
 
