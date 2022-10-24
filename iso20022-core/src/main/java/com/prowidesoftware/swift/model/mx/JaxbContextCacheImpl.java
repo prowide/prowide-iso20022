@@ -33,19 +33,24 @@ public class JaxbContextCacheImpl implements JaxbContextCache {
 
     /**
      * Gets a context from the static cache. If the context for the specific message type is not present,
-     * a new context is initialized with the given classes and stored in the cache.
+     * a new context is initialized with the given classes or messageClass and stored in the cache.
      *
      * @param messageClass class of the message to be read or written
-     * @param classes      comprehensive list of classes for the context
+     * @param classes      comprehensive list of classes for the context, null or empty to create a context with the messageClass
      * @return the cached or created context for the specific message type
      */
     public JAXBContext get(final Class messageClass, final Class<?>[] classes) throws JAXBException {
         if (cachedMap == null) {
             cachedMap = new ConcurrentHashMap<>();
         }
+
         JAXBContext context = cachedMap.get(messageClass);
         if (context == null) {
-            context = JAXBContext.newInstance(classes);
+            if (classes != null && classes.length != 0) {
+                context = JAXBContext.newInstance(classes);
+            } else {
+                context = JAXBContext.newInstance(messageClass);
+            }
             cachedMap.put(messageClass, context);
         }
         return context;
