@@ -34,11 +34,18 @@ public interface JaxbContextCache {
      * <p>Cache implementations should be per message type, so the actual message class name could be used as key.
      *
      * <p>Regarding the JAXBContext creation, notice the namespace or package cannot be used because all dictionary
-     * classes in the model share the same "dic" package. However the classes for each message are available in the API
-     * and made available here. The context can be created directly with: <code>JAXBContext.newInstance(classes)</code>
+     * classes in the model share the same "dic" package.
      *
-     * @param messageClass class of the message to be read or written
-     * @param classes      comprehensive list of classes for the context
+     * <p>The classes parameter is used to avoid reflection and improve performance. Can be used when the set of
+     * jaxb generated classes for a specific model is known. This is the case for MX messages, where the set of classes
+     * is available in the AbstractMX subclass. Thus when the classes array is received, the context can be created
+     * directly with: <code>JAXBContext.newInstance(classes)</code>. And the messageClass can be used as key.
+     *
+     * <p>When the classes parameter is not available, the context can be created with:
+     * <code>JAXBContext.newInstance(messageClass)</code>.
+     *
+     * @param messageClass class of the message to be read or written, cannot be null
+     * @param classes      comprehensive list of classes for the context, null or empty to create a context with the messageClass
      * @return cached context for the message type
      * @throws JAXBException
      * @throws ExecutionException
