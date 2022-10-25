@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns="urn:swift:xsd:camt.998.001.03">
+    <CshMgmtPrtryMsg>
+        <MsgHdr>
+            <MsgId>0987654321</MsgId>
+        </MsgHdr>
+        <PrtryData>
+            <Tp>cma.textMessage.001.01</Tp>
+            <Data>
+                <Document xmlns="urn:cma:xsd:cma.textMessage.001.01">
+                    <TxtMsg>
+                        <Rcvr>
+                            <PrtcId>
+                                <BICFI>CCCCUSLA</BICFI>
+                            </PrtcId>
+                        </Rcvr>
+                        <Sndr>
+                            <BICFI>BBBBUSLA</BICFI>
+                        </Sndr>
+                        <Impt>INFO</Impt>
+                        <Txt>Text message to Participant</Txt>
+                    </TxtMsg>
+                </Document>
+            </Data>
+        </PrtryData>
+    </CshMgmtPrtryMsg>
+</Document>

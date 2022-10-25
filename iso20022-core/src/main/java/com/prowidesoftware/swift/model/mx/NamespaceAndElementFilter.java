@@ -99,22 +99,25 @@ public class NamespaceAndElementFilter extends XMLFilterImpl {
                 // this is normally the case of an Any element in the schema
                 this.inInnerElementToSkip = true;
                 this.localNameToSkip = localName;
+                if (log.isLoggable(Level.FINEST)) {
+                    log.finest("START ANY element: " + localName);
+                }
             }
         }
     }
 
     private String resolveNamespaceToPropagate(String namespace) {
         if (StringUtils.equals(this.mainNamespace, namespace)) {
+            // we only propagate elements in the specific main namespace of the parsed element
             if (this.unbindNamespace) {
-                // we only propagate elements in the specific main namespace of the parsed element, however we do not propagate the
-                // namespace itself for those elements because we want the content to be unbounded to it. The only other exception
-                // where we propagate the elements is for xsys messages where the messages uses a main namespace plus several
-                // complementary reusable schemas such as "Sw".
+                // We do not propagate the namespace itself because we want the content to be unbounded
                 return "";
             } else {
                 return namespace;
             }
         } else if (isXsysNamespace(namespace)) {
+            // The only other exception where we propagate the elements is for xsys messages where the messages uses
+            // a main namespace plus several complementary reusable schemas such as "Sw".
             return namespace;
         } else {
             return null;
@@ -148,6 +151,10 @@ public class NamespaceAndElementFilter extends XMLFilterImpl {
                     super.endElement(namespaceToPropagate, localName, prefix);
                 } catch (Exception e) {
                     log.log(Level.WARNING, "Error parsing " + localName + " [" + namespace + "] element", e);
+                }
+            } else {
+                if (log.isLoggable(Level.FINEST)) {
+                    log.finest("END ANY element: " + localName);
                 }
             }
         }
