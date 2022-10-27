@@ -1,63 +1,61 @@
------------------------------------------------------------------------------------------------------------------------
- Prowide ISO 20022 - CHANGELOG
------------------------------------------------------------------------------------------------------------------------
+# Prowide ISO 20022 - CHANGELOG
 
-RELEASE 9.2.9 - October 2022
+#### 9.2.9 - October 2022
   * (PW-1082) Added support in the JaxbContextCache and its default implementation to create the context without the classes parameter
 
-RELEASE 9.2.8 - August 2022
+#### 9.2.8 - August 2022
   * (PW-922) Added a parameter in the MxReadParams used by the AbstractMX#parse to control the log verbosity when parsing unrecognized messages
 
-RELEASE 9.2.7 - August 2022
+#### 9.2.7 - August 2022
   * Added model for "trck" types
   * (GH-45) Fixed Json serialization in Java 17
 
-RELEASE 9.2.6 - March 2022
+#### 9.2.6 - March 2022
   * (GH-36) Added customizable datetime, date and time adapter in the MxWriteConfiguration, MxReadConfiguration
   * Changed the default date time serialization to local time with UTC offset format YYYY-MM-DDThh:mm:ss[.sss]+/-hh:mm
   * Changed the default time serialization to local time with UTC offset format hh:mm:ss[.sss]+/-hh:mm
   * Encapsulated the serialization options in a DTO, when calling xml or message methods in AbstractMX and AppHdr
   * Validate.notNull -> Objects.requireNonNull
 
-RELEASE 9.2.5 - January 2022
+#### 9.2.5 - January 2022
   * (GH-37) Updated dependency: gson:2.8.8 -> gson:2.8.9
 
-RELEASE 9.2.4 - December 2021
+#### 9.2.4 - December 2021
   * Added com.prowidesoftware.iso20022 as automatic module name in the MANIFEST for JPMS support
 
-RELEASE 9.2.3 - October 2021
+#### 9.2.3 - October 2021
   * Updated dependency: Apache Commons Lang 3.8.1 -> 3.12.0
   * Updated dependency: Apache Commons Text 1.6 -> 1.9
   * Updated dependency: Gson 2.8.2 -> 2.8.8
 
-RELEASE 9.2.2 - October 2021
+#### 9.2.2 - October 2021
   * (PW-584) Enhanced the XML serialization to use localized line separators
 
-RELEASE 9.2.1 - June 2021
+#### 9.2.1 - June 2021
   * NamespaceReader utility class made public with method to extract namespaces from XML, or to check if an element exists
   * NamespaceAndElementFilter made public, used by the parser, handy to implement a validator
   * (GH-26) Fixed AppHdr JSON conversion with explicit new namespace field as discriminator
   * (GH-24) Added a new MxWriteConfiguration and EscapeHandler API to tweak the serialization into XML
 
-RELEASE 9.2.0 - May 2021
+#### 9.2.0 - May 2021
   * SWIFT Standard release update 2021 (live 22 November 2021)
   * Yearly revision of deprecation phase (see http://www.prowidesoftware.com/resources/deprecation-policy)
 
-RELEASE 9.1.6 - April 2021
+#### 9.1.6 - April 2021
   * (GH-17|PW-506) Enhanced the XML format in the serializing, spaces and line breaks
   * (GH-18) Fixed NPE in json serialization/deserialization of XMLGregorianCalendar fractional second
   * Added customizable strategies to set the MxSwiftMessage metadata fields: reference, main amount, value date, etc...
 
-RELEASE 9.1.5 - December 2020
+#### 9.1.5 - December 2020
   * (GH-8) (JR-428) Fixed parser to skip unbounded content such as the @XmlAnyElement(lax = true) elements used in many schemas for supplementary data
 
-RELEASE 9.1.4 - November 2020
+#### 9.1.4 - November 2020
   * Fixed javadoc jar
 
-RELEASE 9.1.3 - October 2020
+#### 9.1.3 - October 2020
   * Fixed pom file
 
-RELEASE 9.1.2 - October 2020
+#### 9.1.2 - October 2020
   * Added AppHdrType enum and AppHdrFactory method to create headers with the enum as parameter
   * Added targetNamespace method to the AbstractMX
   * Internal SCM refactor for OS release
@@ -66,17 +64,17 @@ RELEASE 9.1.2 - October 2020
   * Removed the CopyableTo implementation from the generated model
   * Change the generic AbstractMX#parse to throw runtime exception when XML parameter is blank or null (same semantic as Mx classes parse method)
 
-RELEASE 9.1.1 - September 2021
+#### 9.1.1 - September 2021
   * Removed blank lines in MX writer (marshalling)
   * Fixed generic AbstractMX parse for system messages (xsys)
 
-RELEASE 9.1.0 - May 2020
+#### 9.1.0 - May 2020
   * SWIFT Standard release update 2020 (live 22 November 2020)
   * Yearly revision of deprecation phase (see http://www.prowidesoftware.com/resources/deprecation-policy)
 
-RELEASE 9.0.1 - May 2021
+#### 9.0.1 - May 2021
   * Added a new extensible interface based model for the application headers: AppHdr
   * Added support for the ISO Business Application Header version 2: head.001.001.02
 
-RELEASE 9.0.0 - May 2020
+#### 9.0.0 - May 2020
   * ISO 20022 module extracted from Prowide Integrator to its own library, with its own version from now on
