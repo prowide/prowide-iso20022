@@ -23,7 +23,7 @@ For SWIFT messages validation, restricted ISO versions (such as SEPA, CBPR+, TAR
 This repository exposes the **source code for the maintenance and LTS yearly releases**. 
 Latest public **binary DOWNLOAD** is available at https://www.prowidesoftware.com/download 
 
-SRU updates are made available on October (one month before SWIFT production date) for the general public, and 6 months in advance for subscribed customers.
+SRU updates are made available in October (one month before SWIFT production date) for the public, and 6 months in advance for subscribed customers.
 
 ### License
 
@@ -44,7 +44,7 @@ implementation 'com.sun.xml.bind:jaxb-impl:2.3.3'
 
 ### Build
 
-For better build performance local configurations can be setup in a gradle.properties file such as:
+For better build performance, local configurations can be setup in a gradle.properties file such as:
 ```
 org.gradle.jvmargs=-Xms512m -Xmx7g
 org.gradle.parallel=true
@@ -57,7 +57,7 @@ To compile and test all modules:
 
 ### Modules
 
-The project is huge because it contains the cmoplete set of jaxb generated the project is divided into multiple subprojects though as follows:
+The project is huge because it contains the complete set of jaxb generated the project is divided into multiple subprojects though as follows:
 * iso20022-core: main common code and base classes for all modules, including API for headers
 * model-common-types: common business types dictionary for many message categories
 * model-[category]-mx: the Document classes for each specific category (entry point for each message type)
@@ -78,7 +78,7 @@ model-[category]-mx
 ### Artifacts
 
 The root project creates an uber jar named **pw-iso20022-SRUYYYY-version.jar** with the library API for all ISO20022
-message categories: pacs, camt, xsys, sese, etc... So if you need to process many different message types or you 
+message categories: pacs, camt, xsys, sese, etc... So if you need to process many message types, or you 
 want to keep your dependencies simple, you can just take the single jar output. This is also the jar published in
 **Maven Central**.
 
@@ -91,4 +91,19 @@ take the base and common jars and the specific category modules. For instance to
 * model-camt-mx -> `pw-iso20022-camt-mx-SRUYYYY-version.jar`
 * model-camt-types -> `pw-iso20022-camt-types-SRUYYYY-version.jar` 
 
+In this case, you can run the following commands:
+
+`./gradlew :iso20022-core:jar`
+
+`./gradlew :model-common-types:jar`
+
+`./gradlew :model-pacs-mx:jar`
+
+`./gradlew :model-pacs-types:jar`
+
+`./gradlew :model-camt-mx:jar`
+
+`./gradlew :model-camt-types:jar`
+
+This will create individual jars in each module folder, so you can use each lib as needed.
 
