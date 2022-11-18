@@ -25,7 +25,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * - request new collateral at the initiation of an exposure
  * - request additional collateral
  * When sent by the collateral giver the MarginCallRequest message is used to:
- * - request the return of collateral
+ * - request the return of collateral.
  * 
  * 
  * 

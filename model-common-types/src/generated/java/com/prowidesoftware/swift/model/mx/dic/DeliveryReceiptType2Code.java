@@ -32,7 +32,7 @@ public enum DeliveryReceiptType2Code {
     FREE,
 
     /**
-     * Settlement of the financial instrument and cash takes place in a delivery versus payment (DVP) environment, ie, through an International Central Securities Depository (ICSD) or Central Securities Depository (CSD).
+     * Settlement of the financial instrument and cash takes place in a delivery versus payment (DVP) environment, that is, through an International Central Securities Depository (ICSD) or Central Securities Depository (CSD).
      * 
      */
     APMT;

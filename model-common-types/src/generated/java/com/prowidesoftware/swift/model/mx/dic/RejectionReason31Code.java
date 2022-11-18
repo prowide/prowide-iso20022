@@ -251,7 +251,7 @@ public enum RejectionReason31Code {
     INVL,
 
     /**
-     * Instruction aims at using  an invalid balance.
+     * Instruction aims at using an invalid balance.
      * 
      */
     INVB,

@@ -60,13 +60,13 @@ public enum ReinvestmentIncomeClassification1Code {
     CDFV,
 
     /**
-     * Cash proceeds being reinvested is classified as cash dividend at the exempt rate elected through the DTC (the Depository Trust Company)  Foreign Tax Payment service.
+     * Cash proceeds being reinvested is classified as cash dividend at the exempt rate elected through the DTC (the Depository Trust Company) Foreign Tax Payment service.
      * 
      */
     CDEX,
 
     /**
-     * Cash proceeds being reinvested is classified as special cash dividend. 
+     * Cash proceeds being reinvested is classified as special cash dividend.
      * 
      */
     CDPS,

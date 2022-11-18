@@ -95,7 +95,7 @@ public enum CorporateActionChangeType1Code {
     TERM,
 
     /**
-     * Process of changing the accounting method of a security, eg, mutual fund, from units to a quantity with decimals.
+     * Process of changing the accounting method of a security, for example, mutual fund, from units to a quantity with decimals.
      * 
      */
     DECI;

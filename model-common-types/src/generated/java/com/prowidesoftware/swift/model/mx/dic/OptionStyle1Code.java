@@ -53,7 +53,7 @@ public enum OptionStyle1Code {
     ASIA,
 
     /**
-     * Option whose exercise style lies somewhere between European options and Bermudan options. The holder can exercise the option at quaterly dates, but not before a set time period (typically one year) has elapsed.
+     * Option whose exercise style lies somewhere between European options and Bermudan options. The holder can exercise the option at quarterly dates, but not before a set time period (typically one year) has elapsed.
      * 
      */
     CANA;

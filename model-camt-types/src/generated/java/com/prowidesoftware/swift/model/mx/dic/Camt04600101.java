@@ -16,15 +16,15 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * The GetReservation message is sent by a member to the transaction administrator.
  * It is used to request information on the details of one or more reservation facilities set by the member and managed by the transaction administrator.
  * Usage
- * The purpose of establishing reservations facilities is to ensure part of the liquidity on the account will be used exclusively for specific cash flow operations .
- * There are five types of reservation facilities :
+ * The purpose of establishing reservations facilities is to ensure part of the liquidity on the account will be used exclusively for specific cash flow operations.
+ * There are five types of reservation facilities:
  * - UrgentPaymentReservation: Amount set aside by a participant to reserve liquidity from its own account, exclusively for executing critical payments called urgent payments.
  * - HighlyUrgentPaymentReservation: Amount set aside by a participant to reserve liquidity from its own account, exclusively for executing highly urgent payments.
- * - CashReservation : Amount set aside by a participant to reserve liquidity from its own account, exclusively for executing cash withdrawals.
- * - NetSSSReservation : Amount set aside by a participant to reserve liquidity from its own account, exclusively for the settlement of the multilateral cash balance stemming from the Net Security Settlement System.
- * - ThresholdForInvestment : Amount above which funds will be destined for investment.
+ * - CashReservation: Amount set aside by a participant to reserve liquidity from its own account, exclusively for executing cash withdrawals.
+ * - NetSSSReservation: Amount set aside by a participant to reserve liquidity from its own account, exclusively for the settlement of the multilateral cash balance stemming from the Net Security Settlement System.
+ * - ThresholdForInvestment: Amount above which funds will be destined for investment.
  * The reservation can be effected directly by the member.
- * He has the possibility to :
+ * He has the possibility to:
  * - reset the reserved liquidity to zero
  * - change the reservation amount during the day with immediate effect
  * - input a default reservation amount for the following day(s); valid until a new reservation amount is requested

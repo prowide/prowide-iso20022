@@ -38,7 +38,7 @@ public enum EventType1Code {
     PUT_1("PUT1"),
 
     /**
-     * In fixed income this is the call provision on the bond allowing the bond issuer "the right to redeem [the bond] prior to its maturity date, under certain conditions."
+     * In fixed income this is the call provision on the bond allowing the bond issuer "the right to redeem [the bond] prior to its maturity date, under certain conditions.".
      * 
      */
     CALL("CALL"),

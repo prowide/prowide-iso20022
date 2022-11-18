@@ -132,7 +132,7 @@ public enum PartyIdentificationType7Code {
     EMID,
 
     /**
-     * Number that identifies the type of investor registered at a securities and exchange commission.  
+     * Number that identifies the type of investor registered at a securities and exchange commission.
      * 
      */
     NINV,

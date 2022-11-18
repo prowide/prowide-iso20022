@@ -41,7 +41,7 @@ public enum AttributeType1Code {
     LATT,
 
     /**
-     * Organization name of the attribute  (ASN.1 Object Identifier: id-at-organizationName).
+     * Organization name of the attribute (ASN.1 Object Identifier: id-at-organizationName).
      * 
      */
     OATT,

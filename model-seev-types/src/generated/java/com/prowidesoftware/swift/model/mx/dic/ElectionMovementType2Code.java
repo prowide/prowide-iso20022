@@ -26,7 +26,7 @@ public enum ElectionMovementType2Code {
 
 
     /**
-     * Direct movement of resource, ie, cash or security that is directly credited to the paying agent account.
+     * Direct movement of resource, that is, cash or security that is directly credited to the paying agent account.
      * 
      */
     DRCT,

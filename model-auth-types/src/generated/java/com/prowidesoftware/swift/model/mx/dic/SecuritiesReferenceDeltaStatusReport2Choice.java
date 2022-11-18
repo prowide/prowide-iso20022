@@ -12,7 +12,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Choice defining financial instruments that are either new or have been modified. 
+ * Choice defining financial instruments that are either new or have been modified.
  * 
  * 
  * 

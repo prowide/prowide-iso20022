@@ -27,7 +27,7 @@ public class RequestReference {
     protected String snFRef;
 
     /**
-     * StoreAndForwardReference
+     * SnFRef
      * 
      * @return
      *     possible object is

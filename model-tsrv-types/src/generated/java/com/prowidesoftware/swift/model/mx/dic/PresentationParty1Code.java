@@ -27,7 +27,7 @@ public enum PresentationParty1Code {
 
 
     /**
-     * Presentation made either to the issuer or other nominated party. 
+     * Presentation made either to the issuer or other nominated party.
      * 
      */
     ETHR,

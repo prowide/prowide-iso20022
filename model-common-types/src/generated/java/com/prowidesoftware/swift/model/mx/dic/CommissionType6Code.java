@@ -33,7 +33,7 @@ public enum CommissionType6Code {
     FEND,
 
     /**
-     * Commission for redeeming  an investment, when an investor redeems an investment fund within a certain period of time.
+     * Commission for redeeming an investment, when an investor redeems an investment fund within a certain period of time.
      * 
      */
     BEND,

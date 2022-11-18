@@ -36,7 +36,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * - type of payment instructed
  * - account identification (entries booked to a specific account)
  * - entry amount and/or currency
- * - entry debit/credit indicator (if absent, all entries should be reported)
+ * - entry debit/credit indicator (if absent, all entries should be reported).
  * 
  * 
  * 

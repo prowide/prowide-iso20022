@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Percentage of ownership or of beneficial ownership of the shares/units in the account. 
+ * Percentage of ownership or of beneficial ownership of the shares/units in the account.
  * 
  * 
  * 

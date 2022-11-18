@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
  * Choice between ISIN and an alternative format for the identification of a financial instrument. ISIN is the preferred format.
- * 
+ * .
  * 
  * 
  * 

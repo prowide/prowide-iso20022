@@ -81,7 +81,7 @@ public enum RejectionReason1Code {
     RBIS,
 
     /**
-     * Unrecognised event number or identification (eg corporate action event number, a meeting identification)
+     * Unrecognised event number or identification (eg corporate action event number, a meeting identification).
      * 
      */
     EVNM,

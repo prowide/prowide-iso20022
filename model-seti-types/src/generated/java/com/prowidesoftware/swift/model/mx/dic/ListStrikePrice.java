@@ -15,7 +15,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * Scope
  * An instructing party, eg, an investment manager, sends the ListStrikePrice message to an executing party, eg, a broker, to exchange strike price information for principal trades. The ListStrikePrice may also be used to exchange reference prices for agency trades.
  * Usage
- * No additional information
+ * No additional information.
  * 
  * 
  * 

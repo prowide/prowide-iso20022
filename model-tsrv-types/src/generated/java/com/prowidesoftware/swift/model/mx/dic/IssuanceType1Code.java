@@ -30,7 +30,7 @@ public enum IssuanceType1Code {
 
 
     /**
-     * Counter-undertaking issued to a correspondent with a request to issue a local undertaking. 
+     * Counter-undertaking issued to a correspondent with a request to issue a local undertaking.
      * 
      */
     CRQL,
@@ -42,7 +42,7 @@ public enum IssuanceType1Code {
     CRQC,
 
     /**
-     * Undertaking issued direct to the beneficiary. 
+     * Undertaking issued direct to the beneficiary.
      * 
      */
     ISSU,

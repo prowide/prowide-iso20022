@@ -42,7 +42,7 @@ public enum SettledStatusReason2Code {
     GATM("GATM"),
 
     /**
-     * Redemption has been gated, all settlement will be done at the same price. 
+     * Redemption has been gated, all settlement will be done at the same price.
      * 
      */
     @XmlEnumValue("GAT1")
@@ -55,7 +55,7 @@ public enum SettledStatusReason2Code {
     UCPS("UCPS"),
 
     /**
-     * Units are partially settled
+     * Units are partially settled.
      * 
      */
     UPST("UPST");

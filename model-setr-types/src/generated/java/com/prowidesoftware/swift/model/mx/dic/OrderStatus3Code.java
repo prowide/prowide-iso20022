@@ -33,7 +33,7 @@ public enum OrderStatus3Code {
     STNP,
 
     /**
-     * Order with an Order Cancel Request pending, used to confirm receipt of an Order Cancel Request.  Does not indicate that the order has been cancelled.
+     * Order with an Order Cancel Request pending, used to confirm receipt of an Order Cancel Request. Does not indicate that the order has been cancelled.
      * 
      */
     CANP,

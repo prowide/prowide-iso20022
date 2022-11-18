@@ -130,7 +130,7 @@ public enum SecuritiesTransactionType16Code {
     NETT,
 
     /**
-     * Relates to the issue of medium and short term paper (CP, CD, MTN, notes ...) under a program and without syndication arrangement.
+     * Relates to the issue of medium and short term paper (CP, CD, MTN, notes.) under a program and without syndication arrangement.
      * 
      */
     NSYN,

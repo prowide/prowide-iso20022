@@ -27,7 +27,7 @@ public enum TransferType3Code {
 
 
     /**
-     * Transfer the security as an asset in specie, that is, 'in its actual form'..
+     * Transfer the security as an asset in specie, that is, 'in its actual form'.
      * 
      */
     SECU,

@@ -15,7 +15,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
  * Scope
- * The ModifyLimit message is sent by a member to the transaction administrator.
+ * The CreateLimit message is sent by a member to the transaction administrator.
  * It is used to create one or several limits set by the member and managed by the transaction administrator.
  * Usage
  * Based on the criteria defined in the CreateLimit message, the transaction administrator will execute or reject the requested creation and respond with a Receipt message as a reply to the request.

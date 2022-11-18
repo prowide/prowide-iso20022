@@ -147,7 +147,7 @@ public enum CashClearingSystem3Code {
     BRL,
 
     /**
-     * Scheme code for CA (Canada) - Canadian Large Value Transfer System (LVTS)
+     * Scheme code for CA (Canada) - Canadian Large Value Transfer System (LVTS).
      * 
      */
     CAD,
@@ -171,7 +171,7 @@ public enum CashClearingSystem3Code {
     CHP,
 
     /**
-     * Scheme code for DK (Denmark) - Danish Euro RTGS (KRONOS)
+     * Scheme code for DK (Denmark) - Danish Euro RTGS (KRONOS).
      * 
      */
     DKC,
@@ -321,7 +321,7 @@ public enum CashClearingSystem3Code {
     TGT,
 
     /**
-     * Scheme code for NL (Netherlands) - Dutch RTGS (TOP)
+     * Scheme code for NL (Netherlands) - Dutch RTGS (TOP).
      * 
      */
     TOP,
@@ -351,13 +351,13 @@ public enum CashClearingSystem3Code {
     ZEN,
 
     /**
-     * Scheme code for DK (Denmark) - Danish Krone RTGS (KRONOS)
+     * Scheme code for DK (Denmark) - Danish Krone RTGS (KRONOS).
      * 
      */
     DDK,
 
     /**
-     * Scheme code for AL (Albania) -  Albania Interbank Payment System.
+     * Scheme code for AL (Albania) - Albania Interbank Payment System.
      * 
      */
     AIP,

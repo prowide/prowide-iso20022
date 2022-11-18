@@ -18,7 +18,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Details of the foreign exchange trade including spot\forward\NDF\swap that is confirmed .
+ * Details of the foreign exchange trade including spot\forward\NDF\swap that is confirmed.
  * 
  * 
  * 

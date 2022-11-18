@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Choice of formats to  express how fractions resulting from derived securities will be processed or how prorated decisions will be rounding, if provided with a pro ration rate.
+ * Choice of formats to express how fractions resulting from derived securities will be processed or how prorated decisions will be rounding, if provided with a pro ration rate.
  * 
  * 
  * 

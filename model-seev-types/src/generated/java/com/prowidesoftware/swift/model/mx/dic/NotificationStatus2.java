@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Specifies if the occurence of the event contained in the notification is confirmed or unconfirmed. Details of the event can be complete or incomplete.
+ * Specifies if the occurrence of the event contained in the notification is confirmed or unconfirmed. Details of the event can be complete or incomplete.
  * 
  * 
  * 

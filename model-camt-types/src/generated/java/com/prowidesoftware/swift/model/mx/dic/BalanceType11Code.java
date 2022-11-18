@@ -155,19 +155,19 @@ public enum BalanceType11Code {
     EAST,
 
     /**
-     * Balance representing the sum of entries as a result of payments processing.  Entries relating to fees,  interest, or other movements not a result of payments sent or received by the account owner are not included.
+     * Balance representing the sum of entries as a result of payments processing. Entries relating to fees, interest, or other movements not a result of payments sent or received by the account owner are not included.
      * 
      */
     PYMT,
 
     /**
-     * Balance representing the regulatory reserve that a financial institution must have with the account servicing institution, eg, the minimum credit balance a financial institution is to keep with its Central Bank for mandatory reserve purposes.  In some countries, a blocked balance is known as a 'reserve' balance.
+     * Balance representing the regulatory reserve that a financial institution must have with the account servicing institution, eg, the minimum credit balance a financial institution is to keep with its Central Bank for mandatory reserve purposes. In some countries, a blocked balance is known as a 'reserve' balance.
      * 
      */
     BLCK,
 
     /**
-     * Balance, composed of booked entries and pending items known at the time of calculation , which projects the end of day balance if everything is booked on the account and no other entry is posted.
+     * Balance, composed of booked entries and pending items known at the time of calculation, which projects the end of day balance if everything is booked on the account and no other entry is posted.
      * 
      */
     XPCD,
@@ -332,7 +332,7 @@ public enum BalanceType11Code {
     REJB,
 
     /**
-     * Balance representing the forecast of the cash-equivalent resulting from evaluation of existing holdings at CSD that are qualified to serve as collateral
+     * Balance representing the forecast of the cash-equivalent resulting from evaluation of existing holdings at CSD that are qualified to serve as collateral.
      * 
      */
     FCOL,
@@ -374,7 +374,7 @@ public enum BalanceType11Code {
     XCHN,
 
     /**
-     * Balance representing the cash equivalent of all settled securities transactions
+     * Balance representing the cash equivalent of all settled securities transactions.
      * 
      */
     DSET,
@@ -446,7 +446,7 @@ public enum BalanceType11Code {
     BSCC,
 
     /**
-     * Balance represents the settlement account processor queue amount
+     * Balance represents the settlement account processor queue amount.
      * 
      */
     SAPP,

@@ -14,7 +14,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Choice of format between a rate, an amount or a unspecified rate.
+ * Choice of format between a rate, an amount or an unspecified rate.
  * 
  * 
  * 

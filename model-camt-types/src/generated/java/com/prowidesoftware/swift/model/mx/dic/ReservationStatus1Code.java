@@ -36,7 +36,7 @@ public enum ReservationStatus1Code {
 
     /**
      * Reservation is not currently in effect.
-     * 
+     * .
      * 
      */
     DISA,
@@ -49,7 +49,7 @@ public enum ReservationStatus1Code {
 
     /**
      * Reservation has been asked for and is not yet enabled.
-     * 
+     * .
      * 
      */
     REQD,

@@ -16,7 +16,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 /**
  * This message is sent by the authorities (police, customs, tax authorities, enforcement authorities) to a financial institution to request account and other banking and financial information. Requested information can relate to accounts, their signatories and beneficiaries and co-owners as well as movements plus positions on these accounts.
  * 
- * Requests are underpinned by specific legal texts. 
+ * Requests are underpinned by specific legal texts.
  * 
  * 
  * 

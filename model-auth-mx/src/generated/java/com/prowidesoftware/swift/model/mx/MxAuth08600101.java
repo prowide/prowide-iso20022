@@ -26,7 +26,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 @XmlType(name = "Document", propOrder = {
     "sctiesFincgRptgReusdCollDataTxStatRpt"
 })
-@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:DRAFT2auth.086.001.01")
+@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:auth.086.001.01")
 public class MxAuth08600101
     extends com.prowidesoftware.swift.model.mx.AbstractMX
 {
@@ -38,8 +38,8 @@ public class MxAuth08600101
     public final static transient int VARIANT = 1;
     public final static transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {ActiveOrHistoricCurrencyAndAmount.class, CashReuseData1 .class, CollateralType6Choice.class, ContractModification1 .class, CounterpartyData46 .class, FundingSource1 .class, FundingSourceType1Code.class, ModificationLevel1Code.class, MxAuth08600101 .class, OrganisationIdentification9Choice.class, ReconciliationFlag1 .class, ReinvestedCashTypeAndAmount1 .class, ReinvestmentType1Code.class, ReuseDataReportCorrection3 .class, ReuseValue1Choice.class, SecuritiesFinancingReportingReusedCollateralDataTransactionStateReportV01 .class, SecurityReuseData1 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TradeRepositoryReportingType1Code.class, TransactionOperationType3Code.class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:DRAFT2auth.086.001.01";
+    public final static transient Class[] _classes = new Class[] {ActiveOrHistoricCurrencyAndAmount.class, CashReuseData1 .class, CollateralType12 .class, ContractModification3 .class, CounterpartyData46 .class, FundingSource1 .class, FundingSourceType1Code.class, ModificationLevel1Code.class, MxAuth08600101 .class, OrganisationIdentification9Choice.class, ReconciliationFlag1 .class, ReinvestedCashTypeAndAmount1 .class, ReinvestmentType1Code.class, ReportPeriodActivity1Code.class, ReuseDataReportCorrection9 .class, ReuseValue1Choice.class, SecuritiesFinancingReportingReusedCollateralDataTransactionStateReportV01 .class, SecurityReuseData1 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TradeData12Choice.class, TradeRepositoryReportingType1Code.class, TransactionOperationType6Code.class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:auth.086.001.01";
 
     public MxAuth08600101() {
         super();

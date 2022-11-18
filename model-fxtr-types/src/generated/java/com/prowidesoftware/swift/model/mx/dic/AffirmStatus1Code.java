@@ -40,7 +40,7 @@ public enum AffirmStatus1Code {
     ATCN,
 
     /**
-     * Notfies the clearing status changed
+     * Notfies the clearing status changed.
      * 
      */
     ATSC,

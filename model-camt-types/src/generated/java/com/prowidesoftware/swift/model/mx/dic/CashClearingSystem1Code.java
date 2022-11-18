@@ -115,7 +115,7 @@ public enum CashClearingSystem1Code {
     BRL,
 
     /**
-     * Scheme code for CA (Canada) - Canadian Large Value Transfer System (LVTS)
+     * Scheme code for CA (Canada) - Canadian Large Value Transfer System (LVTS).
      * 
      */
     CAD,
@@ -139,7 +139,7 @@ public enum CashClearingSystem1Code {
     CHP,
 
     /**
-     * Scheme code for DK (Denmark) - Danish Euro RTGS (KRONOS)
+     * Scheme code for DK (Denmark) - Danish Euro RTGS (KRONOS).
      * 
      */
     DKC,
@@ -295,7 +295,7 @@ public enum CashClearingSystem1Code {
     TGT,
 
     /**
-     * Scheme code for NL (Netherlands) - Dutch RTGS (TOP)
+     * Scheme code for NL (Netherlands) - Dutch RTGS (TOP).
      * 
      */
     TOP,

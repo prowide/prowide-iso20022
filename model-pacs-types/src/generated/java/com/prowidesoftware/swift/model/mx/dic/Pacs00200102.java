@@ -22,7 +22,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * The PaymentStatusReport message refers to the original instruction(s) by means of references only or by means of references and a set of elements from the original instruction.
  * The PaymentStatusReport message can be used in domestic and cross-border scenarios.
  * The PaymentStatusReport message exchanged between agents is identified in the schema as follows: 
- * urn:iso:std:iso:20022:tech:xsd:pacs.002.001.02
+ * urn:iso:std:iso:20022:tech:xsd:pacs.002.001.02.
  * 
  * 
  * 

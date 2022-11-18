@@ -16,7 +16,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 /**
  * Scope
  * The AccountRequestRejection message is sent from a financial institution to an organisation. This message is sent in response to a request message from the organisation, if the business content is not valid.
- * Usage
+ * Usage.
  * 
  * 
  * 

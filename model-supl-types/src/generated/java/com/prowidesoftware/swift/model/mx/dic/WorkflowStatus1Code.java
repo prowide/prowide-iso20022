@@ -53,7 +53,7 @@ public enum WorkflowStatus1Code {
     INCO,
 
     /**
-     * Level has been deleted, cancelled/deactivated/invalidated by the source or due to error processing error. 
+     * Level has been deleted, cancelled/deactivated/invalidated by the source or due to error processing error.
      * 
      */
     DLTD;

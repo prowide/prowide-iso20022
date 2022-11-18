@@ -47,7 +47,7 @@ public enum DTCCLinkType1Code {
     DUPE,
 
     /**
-     * Events that are consecutive and evolve from a Voluntary Event to a Mandatory Event but of the same basic GCA (Global Corporate Actions validation service) event type. For example Exchange - Voluntary to Exchange - Mandatory.  Note: The old and new events should not overlap and the older event will remain in an "approved" state.
+     * Events that are consecutive and evolve from a Voluntary Event to a Mandatory Event but of the same basic GCA (Global Corporate Actions validation service) event type. For example Exchange - Voluntary to Exchange - Mandatory. Note: The old and new events should not overlap and the older event will remain in an "approved" state.
      * 
      */
     CHMA,
@@ -83,7 +83,7 @@ public enum DTCCLinkType1Code {
     IUNS,
 
     /**
-     * Event that are consecutive but of a different GCA (Global Corporate actions validation service) event type. For example Tender converts to Merger Voluntary when 429 Notice issued.  Note: the old and new events should not overlap and the older event will remain in an "approved" state.
+     * Event that are consecutive but of a different GCA (Global Corporate actions validation service) event type. For example Tender converts to Merger Voluntary when 429 Notice issued. Note: the old and new events should not overlap and the older event will remain in an "approved" state.
      * 
      */
     TONU,

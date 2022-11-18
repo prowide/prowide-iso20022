@@ -34,13 +34,13 @@ public enum RepoTerminationOption2Code {
     EGRN,
 
     /**
-     * Evergreen and extensible termination option. 
+     * Evergreen and extendable termination option. 
      * 
      */
     EGAE,
 
     /**
-     * Extensible termination option.
+     * Extendable termination option.
      * 
      */
     ETSB,

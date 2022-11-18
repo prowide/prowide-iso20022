@@ -14,7 +14,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
  * Payment processes required to transfer cash from the debtor to the creditor.
- * 
+ * .
  * 
  * 
  * 

@@ -136,25 +136,25 @@ public enum PensionSchemeType1Code {
     SSAS("SSAS"),
 
     /**
-     * Pension is an individual pension savings plan with a tax benefit. (Known as an Individual Pension Schema (IPS) in some markets.)
+     * Pension is an individual pension savings plan with a tax benefit. This is known as an Individual Pension Schema (IPS) in some markets.
      * 
      */
     IPST("IPST"),
 
     /**
-     * Pension is a personal pension account. (Known as Employee Pension Kapital (EPK) in some markets.)
+     * Pension is a personal pension account. This is known as Employee Pension Kapital (EPK) in some markets.
      * 
      */
     EPKA("EPKA"),
 
     /**
-     * Pension is a private occupational pension. (Known as an industrial and trade supplementary pension (ITP) in some markets.)
+     * Pension is a private occupational pension. This is known as an industrial and trade supplementary pension (ITP) in some markets.
      * 
      */
     ITPO("ITPO"),
 
     /**
-     * Pension is a mandatory occupational pension. (Known as an Obligatory Occupation Pension (OTP) in some markets.)
+     * Pension is a mandatory occupational pension. This is known as an Obligatory Occupation Pension (OTP) in some markets.
      * 
      */
     OTPM("OTPM");

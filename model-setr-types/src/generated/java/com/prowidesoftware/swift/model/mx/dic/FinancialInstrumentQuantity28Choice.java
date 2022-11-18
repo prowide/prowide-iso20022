@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Choice between formats for the specification of the number of units, amount of money or percentage..
+ * Choice between formats for the specification of the number of units, amount of money or percentage.
  * 
  * 
  * 

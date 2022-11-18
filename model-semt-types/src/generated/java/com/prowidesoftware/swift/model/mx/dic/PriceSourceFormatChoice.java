@@ -12,7 +12,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Choice of the source (place) of the price quotation
+ * Choice of the source (place) of the price quotation.
  * 
  * 
  * 

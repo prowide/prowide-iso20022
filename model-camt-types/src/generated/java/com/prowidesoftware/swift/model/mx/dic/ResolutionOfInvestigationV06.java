@@ -16,7 +16,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 /**
  * Scope
  * The ResolutionOfInvestigation message is sent by a case assignee to a case creator/case assigner.
- * This message is used to inform of the resolution of a case, and optionally provides details about .
+ * This message is used to inform of the resolution of a case, and optionally provides details about.
  * - the corrective action undertaken by the case assignee
  * - information on the return where applicable
  * Usage

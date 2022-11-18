@@ -41,7 +41,7 @@ public enum CommunicationMethod1Code {
     SWMX,
 
     /**
-     * Transmission by Fax.
+     * Transmission by fax.
      * 
      */
     FAXI,

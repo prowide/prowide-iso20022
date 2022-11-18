@@ -12,7 +12,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * The DTCCCARESD1 message extends ISO corporate action movement reversal advice  message with DTCC corporate action elements not covered in the standard message. 
+ * The DTCCCARESD1 message extends ISO corporate action movement reversal advice message with DTCC corporate action elements not covered in the standard message.
  * 
  * 
  * 

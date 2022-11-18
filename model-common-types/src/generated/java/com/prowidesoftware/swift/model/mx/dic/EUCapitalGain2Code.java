@@ -39,7 +39,7 @@ public enum EUCapitalGain2Code {
     EUSO,
 
     /**
-     * Unknown whether capital gain is in or out of the scope fo the directive.
+     * Unknown whether capital gain is in or out of the scope of the directive.
      * 
      */
     UKWN;

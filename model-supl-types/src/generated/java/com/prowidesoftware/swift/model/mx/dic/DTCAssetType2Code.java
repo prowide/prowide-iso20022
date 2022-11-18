@@ -554,7 +554,7 @@ public enum DTCAssetType2Code {
     S_708("S708"),
 
     /**
-     * Municipal Auction Rate Note  (ARN).
+     * Municipal Auction Rate Note (ARN).
      * 
      */
     @XmlEnumValue("S312")
@@ -603,7 +603,7 @@ public enum DTCAssetType2Code {
     S_112("S112"),
 
     /**
-     * Municipal Variable Mode Obligation  (VMO).
+     * Municipal Variable Mode Obligation (VMO).
      * 
      */
     @XmlEnumValue("S313")

@@ -89,7 +89,7 @@ public enum CommissionType9Code {
     BRKR,
 
     /**
-     * Differential or deferred payment commission rate.  
+     * Differential or deferred payment commission rate.  .
      * 
      */
     DFDP,

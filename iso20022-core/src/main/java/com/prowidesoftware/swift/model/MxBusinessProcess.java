@@ -15,10 +15,11 @@
  */
 package com.prowidesoftware.swift.model;
 
+import java.util.Collection;
+
 /**
  * SWIFT business process classification for MX messages.
  *
- * @author www.prowidesoftware.com
  * @since 7.0
  */
 public enum MxBusinessProcess {
@@ -26,8 +27,12 @@ public enum MxBusinessProcess {
     admi("Administration"),
     auth("Authorities"),
     caaa("Acceptor to Acquirer Card Transactions"),
+    caad("Card Administration"),
     caam("ATM Management"),
+    cafc("Fee Collection"),
+    cain("Acquirer to Issuer Card Transactions"),
     camt("Cash Management"),
+    casp("Sale to POI Card Transactions"),
     catm("Terminal Management"),
     catp("ATM Card Transactions"),
     cbrf(""),

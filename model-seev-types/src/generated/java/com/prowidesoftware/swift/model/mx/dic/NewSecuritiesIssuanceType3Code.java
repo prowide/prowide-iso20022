@@ -26,13 +26,13 @@ public enum NewSecuritiesIssuanceType3Code {
 
 
     /**
-     * Funds have been placed in escrow by a trustee or agent to ensure payment on a portion of the outstanding balance of the original security on maturity date.
+     * Funds have been placed in escrow by a trustee or agent to ensure payment on a portion of the outstanding balance of the original security on maturity date. Applicable only in the frame of a Partial Defeasance PDEF corporate action event.
      * 
      */
     DEFE,
 
     /**
-     * Funds will not be guaranteed at maturity by the issuer or paying agent for this newly issued non-defeased security.
+     * Funds will not be guaranteed at maturity by the issuer or paying agent for this newly issued non-defeased security. Applicable only in the frame of a Partial Defeasance PDEF corporate action event.
      * 
      */
     NDEF;

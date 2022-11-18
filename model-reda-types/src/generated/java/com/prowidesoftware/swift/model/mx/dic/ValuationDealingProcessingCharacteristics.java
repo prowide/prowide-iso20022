@@ -16,7 +16,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Valuation dealing processing characteristics linked to the instrument, ie, not to  the market.
+ * Valuation dealing processing characteristics linked to the instrument, ie, not to the market.
  * 
  * 
  * 

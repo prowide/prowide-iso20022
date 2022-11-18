@@ -17,7 +17,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * It is used to request the deletion of one particular, several or all limits set by the member and managed by the transaction administrator.
  * The DeleteLimit message may delete several types of current limits (risk or liquidity management limit), based on a multiple requests.
  * Usage
- * The member will submit a DeleteLimit message identifying which limit(s) it wants to delete (current limit risk/liquidity limit concepts have been merged) based on following criteria :
+ * The member will submit a DeleteLimit message identifying which limit(s) it wants to delete (current limit risk/liquidity limit concepts have been merged) based on following criteria:
  * - type of limit(s) (current/default)
  * - value of the limit(s) (default and/or current limit(s))
  * - identification of the counterparty (bilateral limit)

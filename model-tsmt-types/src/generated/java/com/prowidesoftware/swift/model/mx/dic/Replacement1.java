@@ -12,7 +12,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Replacement of an existing content by a different one
+ * Replacement of an existing content by a different one.
  * 
  * 
  * 

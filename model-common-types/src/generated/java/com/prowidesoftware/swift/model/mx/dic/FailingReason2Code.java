@@ -122,7 +122,7 @@ public enum FailingReason2Code {
     CAIS,
 
     /**
-     * Financial instruments are stolen, in dispute, under objection etc.
+     * Financial instruments are, for example, stolen, in dispute, under objection.
      * 
      */
     OBJT,
@@ -308,7 +308,7 @@ public enum FailingReason2Code {
     CYCL,
 
     /**
-     * Financial instruments are blocked due to a corporate action event, realignment, etc.
+     * Financial instruments are blocked due to, for example, a corporate action event, realignment.
      * 
      */
     SBLO,
@@ -440,7 +440,7 @@ public enum FailingReason2Code {
     CDLR,
 
     /**
-     * Central securities depository sets the  instruction in a hold/frozen/preadvice mode.
+     * Central securities depository sets the instruction in a hold/frozen/preadvice mode.
      * 
      */
     CSDH,

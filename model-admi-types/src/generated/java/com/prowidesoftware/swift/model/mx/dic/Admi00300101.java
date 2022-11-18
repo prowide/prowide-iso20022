@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
  * This message is used to notify the deletion of a trade which was previously notified to the receiver as an alleged trade.
- * 
+ * .
  * 
  * 
  * 

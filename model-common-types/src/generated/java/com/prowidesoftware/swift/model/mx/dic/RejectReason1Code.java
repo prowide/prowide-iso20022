@@ -45,7 +45,7 @@ public enum RejectReason1Code {
     IMSG,
 
     /**
-     * Invalid message:  At least one of the data element or data structure is not present , the format, or the content of one data element or one data structure is not correct.
+     * Invalid message: At least one of the data element or data structure is not present, the format, or the content of one data element or one data structure is not correct.
      * 
      */
     PARS,

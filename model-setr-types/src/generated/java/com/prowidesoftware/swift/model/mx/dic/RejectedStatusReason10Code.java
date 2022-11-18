@@ -84,7 +84,7 @@ public enum RejectedStatusReason10Code {
     DDAT,
 
     /**
-     * Investment account is blocked until certain legal proceedings are completed, eg, legal documents from the successor, legal proceedings due to bankruptcy.
+     * Investment account is blocked until certain legal proceedings are completed, for example, legal documents from the successor, legal proceedings due to bankruptcy.
      * 
      */
     DOCC,
@@ -234,7 +234,7 @@ public enum RejectedStatusReason10Code {
     INSU,
 
     /**
-     * Percentage holding breach, eg, PPM rules; taxation rules (ERISA).
+     * Percentage holding breach, for example, PPM rules; taxation rules (ERISA).
      * 
      */
     PRCT,
@@ -264,7 +264,7 @@ public enum RejectedStatusReason10Code {
     ILLI,
 
     /**
-     * Data in the order is invalid.
+     * Data in the order or transfer instruction is invalid.
      * 
      */
     DINV,

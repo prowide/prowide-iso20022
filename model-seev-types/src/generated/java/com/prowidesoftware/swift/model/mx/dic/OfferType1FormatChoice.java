@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Choice of formats to  express the conditions that apply to the offer.
+ * Choice of formats to express the conditions that apply to the offer.
  * 
  * 
  * 

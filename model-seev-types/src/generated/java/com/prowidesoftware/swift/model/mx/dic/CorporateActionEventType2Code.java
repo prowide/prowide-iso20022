@@ -151,7 +151,7 @@ public enum CorporateActionEventType2Code {
     CLSA,
 
     /**
-     * Procedure that aims to obtain consent of holder  to a proposal by the issuer or a third party intended to progress an event to the next stage. This procedure is not required to be linked to the organisation of a formal meeting. For example, consent to approve a plan of reorganisation for a bankruptcy proceeding.
+     * Procedure that aims to obtain consent of holder to a proposal by the issuer or a third party intended to progress an event to the next stage. This procedure is not required to be linked to the organisation of a formal meeting. For example, consent to approve a plan of reorganisation for a bankruptcy proceeding.
      * 
      */
     CONS,
@@ -175,7 +175,7 @@ public enum CorporateActionEventType2Code {
     DECR,
 
     /**
-     * Separation of components that comprise a security, eg, usually units comprised of warrants and bond or warrants and equity . Units may be broken up at the request of the security holder or based on market convention.
+     * Separation of components that comprise a security, eg, usually units comprised of warrants and bond or warrants and equity. Units may be broken up at the request of the security holder or based on market convention.
      * 
      */
     DETI,
@@ -241,7 +241,7 @@ public enum CorporateActionEventType2Code {
     DVSE,
 
     /**
-     * Exchange of holdings for other securities and/or cash. The exchange can be either mandatory or voluntary involving the exchange of outstanding securities for different securities and/or cash. For example "exchange offer", "capital reorganisation" or "funds separation" .
+     * Exchange of holdings for other securities and/or cash. The exchange can be either mandatory or voluntary involving the exchange of outstanding securities for different securities and/or cash. For example "exchange offer", "capital reorganisation" or "funds separation".
      * 
      */
     EXOF,
@@ -265,7 +265,7 @@ public enum CorporateActionEventType2Code {
     EXWA,
 
     /**
-     * Increase in the face value of a single security. The number of circulating securities remains unchanged .
+     * Increase in the face value of a single security. The number of circulating securities remains unchanged.
      * 
      */
     INCR,
@@ -295,13 +295,13 @@ public enum CorporateActionEventType2Code {
     MRGR,
 
     /**
-     * Odd Lot Sale/Purchase . Sale or purchase of odd-lots to/from the issuing company, initiated either by the holder of the security or through an offer made by the issuer.
+     * Odd Lot Sale/Purchase. Sale or purchase of odd-lots to/from the issuing company, initiated either by the holder of the security or through an offer made by the issuer.
      * 
      */
     ODLT,
 
     /**
-     * Occurs when securities with different characteristics, eg, shares with different entitlements to dividend or voting rights, become identical in all respects, eg , pari-passu or assimilation. May be scheduled in advance, eg, shares resulting from a bonus may become fungible after a pre-set period of time, or may result from outside events, eg, merger, reorganisation, issue of supplementary tranches, etc.
+     * Occurs when securities with different characteristics, eg, shares with different entitlements to dividend or voting rights, become identical in all respects, eg, pari-passu or assimilation. May be scheduled in advance, eg, shares resulting from a bonus may become fungible after a pre-set period of time, or may result from outside events, eg, merger, reorganisation, issue of supplementary tranches, etc.
      * 
      */
     PARI,

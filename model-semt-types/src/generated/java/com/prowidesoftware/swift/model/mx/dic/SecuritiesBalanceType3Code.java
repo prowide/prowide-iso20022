@@ -101,7 +101,7 @@ public enum SecuritiesBalanceType3Code {
     PRUM,
 
     /**
-     * Balance of securities, before ex-date, that are involved in a corporate action (CA). Securities blocked due to a CA, eg, proxi, in escrow, are to be identified in the BLOK sub-balance.
+     * Balance of securities, before ex-date, that are involved in a corporate action (CA). Securities blocked due to a CA, for example, proxi, in escrow, are to be identified in the BLOK sub-balance.
      * 
      */
     PECA,
@@ -143,7 +143,7 @@ public enum SecuritiesBalanceType3Code {
     RSTR,
 
     /**
-     * Balance of securities that is unclassified, ie, is  not identified with one of the existing sub-balance types.
+     * Balance of securities that is unclassified, ie, is not identified with one of the existing sub-balance types.
      * 
      */
     OTHR,

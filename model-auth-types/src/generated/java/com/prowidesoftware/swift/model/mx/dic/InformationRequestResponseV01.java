@@ -20,7 +20,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * 
  * Depending on whether the response can be provided STP within the authorities financial investigations messages, the requested information may be 
  * •	provided in part or in full within the response message itself, or 
- * •	only referred to in the response message
+ * •	only referred to in the response message.
  * 
  * 
  * 

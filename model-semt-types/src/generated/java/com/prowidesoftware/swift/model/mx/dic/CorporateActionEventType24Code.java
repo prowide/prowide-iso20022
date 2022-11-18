@@ -92,7 +92,7 @@ public enum CorporateActionEventType24Code {
 
 
     /**
-     * Trading in security has commenced or security has been re-activated after a suspension in trading.
+     * Trading in the security has commenced or security has been re-activated after a suspension in trading.
      * 
      */
     ACTV,
@@ -176,19 +176,19 @@ public enum CorporateActionEventType24Code {
     CLSA,
 
     /**
-     * Procedure that aims to obtain consent of holder  to a proposal by the issuer or a third party without convening a meeting. For example, consent to change the terms of a bond.
+     * Procedure that aims to obtain consent of holder to a proposal by the issuer or a third party without convening a meeting. For example, consent to change the terms of a bond.
      * 
      */
     CONS,
 
     /**
-     * Conversion of securities ( generally convertible bonds or preferred shares) into another form of securities ( usually common shares) at a pre-stated price/ratio.
+     * Conversion of securities (generally convertible bonds or preferred shares) into another form of securities (usually common shares) at a pre-stated price/ratio.
      * 
      */
     CONV,
 
     /**
-     * Occurrence of credit derivative for which the issuer of one or several underlying securities is unable to fulfill his financial obligations (as defined in terms and conditions).
+     * Occurrence of credit derivative for which the issuer of one or several underlying securities is unable to fulfill its financial obligations (as defined in terms and conditions).
      * 
      */
     CREV,
@@ -200,7 +200,7 @@ public enum CorporateActionEventType24Code {
     DECR,
 
     /**
-     * Separation of components that comprise a security, for example, usually units comprised of warrants and bond or warrants and equity . Units may be broken up at the request of the security holder or based on market convention.
+     * Separation of components that comprise a security, for example, usually units comprised of warrants and bond or warrants and equity. Units may be broken up at the request of the security holder or based on market convention.
      * 
      */
     DETI,
@@ -236,25 +236,25 @@ public enum CorporateActionEventType24Code {
     DTCH,
 
     /**
-     * Exchange of holdings for other securities and/or cash. The exchange can be either mandatory or voluntary involving the exchange of outstanding securities for different securities and/or cash. For example "exchange offer", "capital reorganisation" or "funds separation" .
+     * Exchange of holdings for other securities and/or cash. The exchange can be either mandatory or voluntary involving the exchange of outstanding securities for different securities and/or cash. For example "exchange offer", "capital reorganisation" or "funds separation".
      * 
      */
     EXOF,
 
     /**
-     * Redemption of an entire issue outstanding of securities, eg, bonds, preferred equity, funds, by the issuer or its agent, for example, asset manager, at final maturity.
+     * Redemption of an entire issue outstanding of securities, for example, bonds, preferred equity, funds, by the issuer or its agent, for example, asset manager, at final maturity.
      * 
      */
     REDM,
 
     /**
-     * Redemption of an entire issue outstanding of securities, eg, bonds, preferred equity, funds, by the issuer or its agent, for example, asset manager,before final maturity.
+     * Redemption of an entire issue outstanding of securities, for example, bonds, preferred equity, funds, by the issuer or its agent, for example, asset manager, before final maturity.
      * 
      */
     MCAL,
 
     /**
-     * Increase in the face value of a single security. The number of circulating securities remains unchanged .
+     * Increase in the face value of a single security. The number of circulating securities remains unchanged.
      * 
      */
     INCR,
@@ -326,7 +326,7 @@ public enum CorporateActionEventType24Code {
     OTHR,
 
     /**
-     * Occurs when securities with different characteristics, for example, shares with different entitlements to dividend or voting rights, become identical in all respects, for example , pari-passu or assimilation. May be scheduled in advance, for example, shares resulting from a bonus may become fungible after a pre-set period of time, or may result from outside events, for example, merger, reorganisation, issue of supplementary tranches.
+     * Occurs when securities with different characteristics, for example, shares with different entitlements to dividend or voting rights, become identical in all respects, for example, pari-passu or assimilation. May be scheduled in advance, for example, shares resulting from a bonus may become fungible after a pre-set period of time, or may result from outside events, for example, merger, reorganisation, issue of supplementary tranches.
      * 
      */
     PARI,
@@ -386,7 +386,7 @@ public enum CorporateActionEventType24Code {
     REMK,
 
     /**
-     * Repurchase offer/Issuer bid/ Reverse rights. Offer to existing holders by the issuing company to repurchase its own securities. The objective of the offer is to reduce the number of outstanding securities.
+     * Repurchase offer / issuer bid / reverse rights. Offer to existing holders by the issuing company to repurchase its own securities. The objective of the offer is to reduce the number of outstanding securities.
      * 
      */
     BIDS,
@@ -482,7 +482,7 @@ public enum CorporateActionEventType24Code {
     WRTH,
 
     /**
-     * Funds related event in which the income (for example accumulation units) that accrues during an accounting period is retained within the fund instead of being paid away to investors. The retained income is nonetheless deemed to have been distributed to investors for tax purposes. 
+     * Funds related event in which the income (for example accumulation units) that accrues during an accounting period is retained within the fund instead of being paid away to investors. The retained income is nonetheless deemed to have been distributed to investors for tax purposes.
      * 
      */
     ACCU,

@@ -46,7 +46,7 @@ public enum TransactionType2Code {
     SUBS,
 
     /**
-     * Transaction is a subscription for a savings plan, ie, money set aside by individuals in the framework of a structured plan for a special purpose, eg, retirement.
+     * Transaction is a subscription for a savings plan, that is, money set aside by individuals in the framework of a structured plan for a special purpose, for example, retirement.
      * 
      */
     SSPL,

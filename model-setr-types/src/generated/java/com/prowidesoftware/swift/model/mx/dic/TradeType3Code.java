@@ -96,7 +96,7 @@ public enum TradeType3Code {
     BRBR,
 
     /**
-     * Trade involving risk
+     * Trade involving risk.
      * 
      */
     RISK,
@@ -114,7 +114,7 @@ public enum TradeType3Code {
     AGEN,
 
     /**
-     * Trade which is guaranteed to be finalized
+     * Trade which is guaranteed to be finalized.
      * 
      */
     GUAR,
@@ -168,7 +168,7 @@ public enum TradeType3Code {
     BOSU,
 
     /**
-     * The security will be bought back in the future..
+     * The security will be bought back in the future.
      * 
      */
     FBBT,

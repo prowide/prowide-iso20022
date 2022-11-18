@@ -39,7 +39,7 @@ public enum ERISAEligibility1Code {
     NELI,
 
     /**
-     * Elegibility is unknown at the time the order is sent, and the instructing party will confirm later.
+     * Eligibility is unknown at the time the order is sent, and the instructing party will confirm later.
      * 
      */
     UKWN;

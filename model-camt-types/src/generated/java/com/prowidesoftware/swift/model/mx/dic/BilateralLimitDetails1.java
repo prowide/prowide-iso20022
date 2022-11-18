@@ -15,7 +15,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Characteristics and values set for a bilateral limit, including the counterparty upon which the limit applies
+ * Characteristics and values set for a bilateral limit, including the counterparty upon which the limit applies.
  * 
  * 
  * 

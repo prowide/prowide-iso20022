@@ -17,6 +17,8 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * Usage
  * The notification is sent by a central settlement system to the two trading parties after it has received Create, Amend or Cancel notifications from both.
  * 
+ * This message is obsolete please use ForeignExchangeOptionNotificationV05 - fxtr.012.001.05
+ * 
  * 
  * 
  */

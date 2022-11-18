@@ -75,7 +75,7 @@ public enum OrderStatus1Code {
     REPL,
 
     /**
-     * Order with an Order Cancel Request pending, used to confirm receipt of an Order Cancel Request.  Does not indicate that the order has been cancelled.
+     * Order with an Order Cancel Request pending, used to confirm receipt of an Order Cancel Request. Does not indicate that the order has been cancelled.
      * 
      */
     CANP,
@@ -87,7 +87,7 @@ public enum OrderStatus1Code {
     STOP,
 
     /**
-     * Order has been rejected by sell-side.  NOTE:  An order can be rejected subsequent to order acknowledgment, i.e. an order can pass from New to Rejected status.
+     * Order has been rejected by sell-side. NOTE: An order can be rejected subsequent to order acknowledgment, i.e. an order can pass from New to Rejected status.
      * 
      */
     REJT,
@@ -99,13 +99,13 @@ public enum OrderStatus1Code {
     SUSP,
 
     /**
-     * Order has been received by sell-side system but not yet accepted for execution.  An execution message with this status will only be sent in response to a Status Request message.
+     * Order has been received by sell-side system but not yet accepted for execution. An execution message with this status will only be sent in response to a Status Request message.
      * 
      */
     PENN,
 
     /**
-     * Order has been completed for the day (either filled or done for day).  Commission or currency settlement details have been calculated and reported in this execution message.
+     * Order has been completed for the day (either filled or done for day). Commission or currency settlement details have been calculated and reported in this execution message.
      * 
      */
     CALC,

@@ -26,7 +26,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * - type of member
  * - contact details for the member: name, address
  * - identification of the member's account
- * - identification of contact persons for the member, their role and details
+ * - identification of contact persons for the member, their role and details.
  * 
  * 
  * 

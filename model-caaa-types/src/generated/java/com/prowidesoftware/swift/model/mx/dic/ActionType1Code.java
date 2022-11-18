@@ -33,7 +33,7 @@ public enum ActionType1Code {
 
 
     /**
-     * Display a message.
+     * Message to display, print or log.
      * 
      */
     DISP,

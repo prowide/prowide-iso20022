@@ -33,7 +33,7 @@ public enum Status5Code {
     REJT,
 
     /**
-     * Instruction has been accepted and is validated for further processing
+     * Instruction has been accepted and is validated for further processing.
      * 
      */
     PACK,

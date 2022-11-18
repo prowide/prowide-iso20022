@@ -26,7 +26,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 @XmlType(name = "Document", propOrder = {
     "sctiesFincgRptgTxReusdCollDataRpt"
 })
-@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:DRAFT2auth.071.001.01")
+@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:auth.071.001.01")
 public class MxAuth07100101
     extends com.prowidesoftware.swift.model.mx.AbstractMX
 {
@@ -38,8 +38,8 @@ public class MxAuth07100101
     public final static transient int VARIANT = 1;
     public final static transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {ActiveOrHistoricCurrencyAndAmount.class, CashReuseData1 .class, CollateralType6Choice.class, CounterpartyData46 .class, FundingSource1 .class, FundingSourceType1Code.class, MxAuth07100101 .class, OrganisationIdentification9Choice.class, ReinvestedCashTypeAndAmount1 .class, ReinvestmentType1Code.class, ReuseDataReport2Choice.class, ReuseDataReportCorrection4 .class, ReuseDataReportError2 .class, ReuseDataReportNew2 .class, ReuseValue1Choice.class, SecuritiesFinancingReportingTransactionReusedCollateralDataReportV01 .class, SecurityReuseData1 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:DRAFT2auth.071.001.01";
+    public final static transient Class[] _classes = new Class[] {ActiveOrHistoricCurrencyAndAmount.class, CashReuseData1 .class, CollateralType12 .class, CounterpartyData46 .class, FundingSource1 .class, FundingSourceType1Code.class, MxAuth07100101 .class, OrganisationIdentification9Choice.class, ReinvestedCashTypeAndAmount1 .class, ReinvestmentType1Code.class, ReportPeriodActivity1Code.class, ReuseDataReport3Choice.class, ReuseDataReportCorrection7 .class, ReuseDataReportError3 .class, ReuseDataReportNew3 .class, ReuseValue1Choice.class, SecuritiesFinancingReportingTransactionReusedCollateralDataReportV01 .class, SecurityReuseData1 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TradeData9Choice.class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:auth.071.001.01";
 
     public MxAuth07100101() {
         super();

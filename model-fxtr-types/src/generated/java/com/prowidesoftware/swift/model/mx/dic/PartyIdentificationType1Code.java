@@ -61,7 +61,7 @@ public enum PartyIdentificationType1Code {
 
 
     /**
-     * Member identification of the FX trading system
+     * Member identification of the FX trading system.
      * 
      */
     FXID,

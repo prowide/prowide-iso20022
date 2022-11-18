@@ -15,7 +15,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
  * Information about the status of a transfer.
- * 
+ * .
  * 
  * 
  * 

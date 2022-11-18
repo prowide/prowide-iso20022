@@ -19,7 +19,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * This message is used to inform about the rejection of a request to extend the status of a transaction.
  * Usage
  * The StatusExtensionRejectionNotification message can be sent by the matching application to pass on information about the rejection of a request to extend the status of a transaction that it has obtained through the receipt of a StatusExtensionRejection message.
- * In order to pass on information about the acceptance of a request to extend the status of a transaction the matching application sends a StatusExtensionNotification message
+ * In order to pass on information about the acceptance of a request to extend the status of a transaction the matching application sends a StatusExtensionNotification message.
  * 
  * 
  * 

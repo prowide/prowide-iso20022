@@ -14,7 +14,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * The SecuritiesFinancingReportingMissingCollateralRequest is sent by the trade repositories (TRs) to the reporting entities (REs) with a request to submit collateral information for a given trade. 
+ * The SecuritiesFinancingReportingMissingCollateralRequest is made available by the trade repository (TR) to the  report submitting entity and the reporting counterparty as well as the entity responsible for reporting, if applicable, with a request to submit collateral information for a given trade. 
  * 
  * 
  * 
@@ -27,7 +27,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 public class SecuritiesFinancingReportingMissingCollateralRequestV01 {
 
     @XmlElement(name = "TxId", required = true)
-    protected List<TradeTransactionIdentification2> txId;
+    protected List<TradeTransactionIdentification6> txId;
     @XmlElement(name = "SplmtryData")
     protected List<SupplementaryData1> splmtryData;
 
@@ -49,13 +49,13 @@ public class SecuritiesFinancingReportingMissingCollateralRequestV01 {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link TradeTransactionIdentification2 }
+     * {@link TradeTransactionIdentification6 }
      * 
      * 
      */
-    public List<TradeTransactionIdentification2> getTxId() {
+    public List<TradeTransactionIdentification6> getTxId() {
         if (txId == null) {
-            txId = new ArrayList<TradeTransactionIdentification2>();
+            txId = new ArrayList<TradeTransactionIdentification6>();
         }
         return this.txId;
     }
@@ -109,7 +109,7 @@ public class SecuritiesFinancingReportingMissingCollateralRequestV01 {
      * @see #getTxId()
      * 
      */
-    public SecuritiesFinancingReportingMissingCollateralRequestV01 addTxId(TradeTransactionIdentification2 txId) {
+    public SecuritiesFinancingReportingMissingCollateralRequestV01 addTxId(TradeTransactionIdentification6 txId) {
         getTxId().add(txId);
         return this;
     }

@@ -93,7 +93,7 @@ public enum PendingFailingSettlement1Code {
     DOCY,
 
     /**
-     * Counterparty's instruction was too late for settlement, (ie, received too late, matching, or settlement problems were solved too late).
+     * Counterparty's instruction was too late for settlement, (that is, received too late, matching, or settlement problems were solved too late).
      * 
      */
     CLAT,
@@ -117,7 +117,7 @@ public enum PendingFailingSettlement1Code {
     PHSE,
 
     /**
-     * Securities are blocked, eg, because of a corporate action event or re-alignment.
+     * Securities are blocked, for example, because of a corporate action event or re-alignment.
      * 
      */
     SBLO,
@@ -147,7 +147,7 @@ public enum PendingFailingSettlement1Code {
     LACK,
 
     /**
-     * Settlement instruction was too late for settlement, ie, received too late, matching, or settlement problems were solved too late.
+     * Settlement instruction was too late for settlement, that is, received too late, matching, or settlement problems were solved too late.
      * 
      */
     LATE,
@@ -237,7 +237,7 @@ public enum PendingFailingSettlement1Code {
     NOFX,
 
     /**
-     * Securities require income adjustment, ie, dividend or interest.
+     * Securities require income adjustment, that is, dividend or interest.
      * 
      */
     INCA,
@@ -255,7 +255,7 @@ public enum PendingFailingSettlement1Code {
     BYIY,
 
     /**
-     * Awaiting securities from a corporate action issue or other procedure(s), eg, conversion, dematerialisation, exchange, registration, stamping, and splitting.
+     * Awaiting securities from a corporate action issue or other procedure(s), for example, conversion, dematerialisation, exchange, registration, stamping, and splitting.
      * 
      */
     CAIS,
@@ -303,7 +303,7 @@ public enum PendingFailingSettlement1Code {
     CYCL,
 
     /**
-     * Processing batch differs in the counterparty's instruction, eg, day time/real time vs overnight.
+     * Processing batch differs in the counterparty's instruction, for example, day time/real time vs overnight.
      * 
      */
     BATC,
@@ -315,7 +315,7 @@ public enum PendingFailingSettlement1Code {
     GUAD,
 
     /**
-     * Instruction is a preadvice, ie, matching only.
+     * Instruction is a preadvice, that is, matching only.
      * 
      */
     PREA,
@@ -327,7 +327,7 @@ public enum PendingFailingSettlement1Code {
     GLOB,
 
     /**
-     * Counterparty is in receivership, ie, a  form of bankruptcy.
+     * Counterparty is in receivership, that is, a form of bankruptcy.
      * 
      */
     CPEC,

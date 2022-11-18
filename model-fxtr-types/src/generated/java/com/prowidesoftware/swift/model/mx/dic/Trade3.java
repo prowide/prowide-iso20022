@@ -19,7 +19,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Details of the foreign exchange trade including Spot\Forward\NDF that is captured
+ * Details of the foreign exchange trade including Spot\Forward\NDF that is captured.
  * 
  * 
  * 

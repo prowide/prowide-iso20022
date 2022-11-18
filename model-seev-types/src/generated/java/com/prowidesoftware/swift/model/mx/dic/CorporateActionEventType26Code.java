@@ -188,7 +188,7 @@ public enum CorporateActionEventType26Code {
     CONV,
 
     /**
-     * Occurrence of credit derivative for which the issuer of one or several underlying securities is unable to fulfill his financial obligations (as defined in terms and conditions).
+     * Occurrence of credit derivative for which the issuer of one or several underlying securities is unable to fulfill its financial obligations (as defined in terms and conditions).
      * 
      */
     CREV,

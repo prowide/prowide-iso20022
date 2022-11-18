@@ -39,7 +39,7 @@ public enum Algorithm1Code {
     MACC("MACC"),
 
     /**
-     * Retail-CBC-MAC with SHA-256 (Secure HAsh standard)  - (ASN.1 Object Identifier: id-retail-cbc-mac-sha-256).
+     * Retail-CBC-MAC with SHA-256 (Secure HAsh standard) - (ASN.1 Object Identifier: id-retail-cbc-mac-sha-256).
      * 
      */
     MCCS("MCCS"),
@@ -51,7 +51,7 @@ public enum Algorithm1Code {
     UKPT("UKPT"),
 
     /**
-     * DUKPT (Derived Unique Key Per Transaction) algorithm, as specified in ANSI X9.24-2004, Annex A, and ISO/DIS 13492-2006.  - (ASN.1 Object Identifier: id-dukpt-wrap).
+     * DUKPT (Derived Unique Key Per Transaction) algorithm, as specified in ANSI X9.24-2004, Annex A, and ISO/DIS 13492-2006. - (ASN.1 Object Identifier: id-dukpt-wrap).
      * 
      */
     DKPT("DKPT"),

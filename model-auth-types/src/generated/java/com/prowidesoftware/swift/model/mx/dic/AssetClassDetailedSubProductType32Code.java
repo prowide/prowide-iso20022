@@ -61,13 +61,13 @@ public enum AssetClassDetailedSubProductType32Code {
     BDSL,
 
     /**
-     * Commodity attribute of type brent.
+     * Commodity attribute of type Brent.
      * 
      */
     BRNT,
 
     /**
-     * Commodity attribute of type brent NX (New Expiry).
+     * Commodity attribute of type Brent NX (New Expiry).
      * 
      */
     BRNX,

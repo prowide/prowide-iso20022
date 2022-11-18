@@ -12,7 +12,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Set of elements used  to provide information concerning the verification of identification data for which verification was requested.
+ * Set of elements used to provide information concerning the verification of identification data for which verification was requested.
  * 
  * 
  * 

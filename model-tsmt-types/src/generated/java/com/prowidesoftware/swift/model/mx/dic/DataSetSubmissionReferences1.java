@@ -12,7 +12,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Provides references to the submitted data set both for the TSU and for the user.  Also specifies whether the submission is the last one for the underlying transaction.
+ * Provides references to the submitted data set both for the TSU and for the user. Also specifies whether the submission is the last one for the underlying transaction.
  * 
  * 
  * 

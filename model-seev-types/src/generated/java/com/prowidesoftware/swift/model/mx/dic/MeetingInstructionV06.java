@@ -20,7 +20,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * The MeetingInstruction message is used to vote, require attendance to a meeting, request registration of securities and assign a proxy. One of multiple instructions can be carried within the same message.
  * Once the message is sent, it cannot be modified. It must be cancelled by a MeetingInstructionCancellationRequest. Only after receipt of a confirmed cancelled status via the
  * MeetingInstructionStatus message, a new MeetingInstruction message can be sent.
- * This message definition is intended for use with the Business Application Header (head.001.001.01).
+ * This message definition is intended for use with the Business Application Header.
  * 
  * 
  * 

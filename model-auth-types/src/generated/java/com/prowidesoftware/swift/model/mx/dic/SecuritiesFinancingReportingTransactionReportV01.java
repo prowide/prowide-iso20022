@@ -14,7 +14,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * The SecuritiesFinancingReportingTransactionReport message is sent by the reporting agent to the trade repository (TR) to report on the securities financing transactions.
+ * The SecuritiesFinancingReportingTransactionReport message is sent by the report submitting entity to the trade repository (TR) to report on the securities financing transactions or sent by the trade repository (TR) to the authority or made available by the trade repository (TR) to the  report submitting entity and the reporting counterparty as well as the entity responsible for reporting, if applicable.
  * 
  * 
  * 
@@ -27,37 +27,33 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 public class SecuritiesFinancingReportingTransactionReportV01 {
 
     @XmlElement(name = "TradData", required = true)
-    protected List<TradeTransactionReport6Choice> tradData;
+    protected TradeData15Choice tradData;
     @XmlElement(name = "SplmtryData")
     protected List<SupplementaryData1> splmtryData;
 
     /**
      * Gets the value of the tradData property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the tradData property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getTradData().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link TradeTransactionReport6Choice }
-     * 
-     * 
+     * @return
+     *     possible object is
+     *     {@link TradeData15Choice }
+     *     
      */
-    public List<TradeTransactionReport6Choice> getTradData() {
-        if (tradData == null) {
-            tradData = new ArrayList<TradeTransactionReport6Choice>();
-        }
-        return this.tradData;
+    public TradeData15Choice getTradData() {
+        return tradData;
+    }
+
+    /**
+     * Sets the value of the tradData property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link TradeData15Choice }
+     *     
+     */
+    public SecuritiesFinancingReportingTransactionReportV01 setTradData(TradeData15Choice value) {
+        this.tradData = value;
+        return this;
     }
 
     /**
@@ -102,16 +98,6 @@ public class SecuritiesFinancingReportingTransactionReportV01 {
     @Override
     public int hashCode() {
         return HashCodeBuilder.reflectionHashCode(this);
-    }
-
-    /**
-     * Adds a new item to the tradData list.
-     * @see #getTradData()
-     * 
-     */
-    public SecuritiesFinancingReportingTransactionReportV01 addTradData(TradeTransactionReport6Choice tradData) {
-        getTradData().add(tradData);
-        return this;
     }
 
     /**

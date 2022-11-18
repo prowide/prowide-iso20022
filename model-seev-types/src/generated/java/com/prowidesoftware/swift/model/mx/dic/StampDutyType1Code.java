@@ -34,7 +34,7 @@ public enum StampDutyType1Code {
     SDRU,
 
     /**
-     * SDRT paid on another transaction
+     * SDRT paid on another transaction.
      * 
      */
     SDRT,

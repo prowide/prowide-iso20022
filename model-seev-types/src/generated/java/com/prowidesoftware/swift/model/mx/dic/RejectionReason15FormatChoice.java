@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Choice of formats to  express the reason of a rejection of an information advice.
+ * Choice of formats to express the reason of a rejection of an information advice.
  * 
  * 
  * 

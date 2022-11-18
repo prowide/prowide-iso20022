@@ -48,7 +48,7 @@ public enum MoneyLaunderingCheck1Code {
     EXEM,
 
     /**
-     * Money laundering identification procedures have not been carried out because of the transaction type, eg, switch, or because the transaction is being funded from an existing investor account held by the intermediary.
+     * Money laundering identification procedures have not been carried out because of the transaction type, for example, switch, or because the transaction is being funded from an existing investor account held by the intermediary.
      * 
      */
     CLMO,

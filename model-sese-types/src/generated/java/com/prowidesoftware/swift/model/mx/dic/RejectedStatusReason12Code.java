@@ -310,7 +310,7 @@ public enum RejectedStatusReason12Code {
     DMON,
 
     /**
-     * Percentage holding breach, eg, PPM rules; taxation rules (ERISA).
+     * Percentage holding breach, for example, PPM rules; taxation rules (ERISA).
      * 
      */
     PRCT,
@@ -334,7 +334,7 @@ public enum RejectedStatusReason12Code {
     DTRD,
 
     /**
-     * Payment method, eg, cheque or payment card, is not accepted.
+     * Payment method, for example, cheque or payment card, is not accepted.
      * 
      */
     UPAY,

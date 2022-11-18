@@ -12,7 +12,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Choice between a matching system unique identification or the related reference. 
+ * Choice between a matching system unique identification or the related reference.
  * 
  * 
  * 

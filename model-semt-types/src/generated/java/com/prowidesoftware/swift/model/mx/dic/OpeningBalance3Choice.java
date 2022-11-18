@@ -12,7 +12,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Choice of opening and intermediary balances
+ * Choice of opening and intermediary balances.
  * 
  * 
  * 

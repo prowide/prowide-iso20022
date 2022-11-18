@@ -41,13 +41,13 @@ public enum RemittanceLocationMethod1Code {
     EDIC,
 
     /**
-     * Remittance advice  information needs to be sent to a Uniform Resource Identifier (URI). URI  is a compact string of characters that uniquely identify an abstract or physical resource.  URI's are the super-set of identifiers, such as URLs, email addresses, ftp sites, etc, and as such, provide the syntax for all of the identification schemes.
+     * Remittance advice information needs to be sent to a Uniform Resource Identifier (URI). URI is a compact string of characters that uniquely identify an abstract or physical resource. URI's are the super-set of identifiers, such as URLs, email addresses, ftp sites, etc, and as such, provide the syntax for all of the identification schemes.
      * 
      */
     URID,
 
     /**
-     * Remittance advice  information must be sent through e-mail.
+     * Remittance advice information must be sent through e-mail.
      * 
      */
     EMAL,

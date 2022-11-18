@@ -31,43 +31,43 @@ public enum TerminalManagementAction1Code {
 
 
     /**
-     * Data set must be activated.
+     * Request to activate the element identified inside the message exchange.
      * 
      */
     ACTV,
 
     /**
-     * Data set must be deactivated.
+     * Request to deactivate the element identified inside the message exchange.
      * 
      */
     DCTV,
 
     /**
-     * Data set must be deleted.
+     * Request to delete the element identified inside the message exchange.
      * 
      */
     DELT,
 
     /**
-     * Data set must be downloaded.
+     * Request to download the element identified inside the message exchange.
      * 
      */
     DWNL,
 
     /**
-     * Data set must be installed.
+     * Request to install the element identified inside the message exchange.
      * 
      */
     INST,
 
     /**
-     * Point of interaction must be restarted.
+     * Request to restart the element identified inside the message exchange.
      * 
      */
     RSTR,
 
     /**
-     * Data set must be uploaded.
+     * Request to upload the element identified inside the message exchange.
      * 
      */
     UPLD;

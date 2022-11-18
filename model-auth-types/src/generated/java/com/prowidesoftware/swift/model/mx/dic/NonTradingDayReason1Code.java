@@ -36,7 +36,7 @@ public enum NonTradingDayReason1Code {
     THOL,
 
     /**
-     * Other reasons a day is a non-trading day e.g. technical fault, company specific non-trading day not known in advance
+     * Other reasons a day is a non-trading day e.g. technical fault, company specific non-trading day not known in advance.
      * 
      */
     OTHR,

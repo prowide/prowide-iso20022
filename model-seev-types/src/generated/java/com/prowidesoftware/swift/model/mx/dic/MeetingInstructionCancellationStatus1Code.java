@@ -40,7 +40,7 @@ public enum MeetingInstructionCancellationStatus1Code {
     CANP,
 
     /**
-     * Cancellation will not be executed due to business reasons. 
+     * Cancellation will not be executed due to business reasons.
      * 
      */
     DEND,

@@ -44,37 +44,37 @@ public enum CorporateSectorIdentifier1Code {
     A,
 
     /**
-     * Credit Institution authorised in accordance with  European Securities and Markets Authority (ESMA) Directive 2006/48/EC.
+     * Credit Institution authorised in accordance with European Securities and Markets Authority (ESMA) Directive 2006/48/EC.
      * 
      */
     C,
 
     /**
-     * Insurance undertaking in accordance with  European Securities and Markets Authority (ESMA) Directive 73/239/EEC.
+     * Insurance undertaking in accordance with European Securities and Markets Authority (ESMA) Directive 73/239/EEC.
      * 
      */
     I,
 
     /**
-     * Investment firm in accordance with  European Securities and Markets Authority (ESMA) Directive 2004/39/EC.
+     * Investment firm in accordance with European Securities and Markets Authority (ESMA) Directive 2004/39/EC.
      * 
      */
     F,
 
     /**
-     * Institution for occupational retirement provision within the meaning of Article 6(a) of  European Securities and Markets Authority (ESMA) Directive 2003/41/EC.
+     * Institution for occupational retirement provision within the meaning of Article 6(a) of European Securities and Markets Authority (ESMA) Directive 2003/41/EC.
      * 
      */
     O,
 
     /**
-     * Reinsurance undertaking authorised in accordance with  European Securities and Markets Authority (ESMA) Directive 2005/68/EC.
+     * Reinsurance undertaking authorised in accordance with European Securities and Markets Authority (ESMA) Directive 2005/68/EC.
      * 
      */
     R,
 
     /**
-     * Undertakings for Collective Investment in Transferable Securities (UCITS) and its management company, authorised in accordance with  European Securities and Markets Authority (ESMA) Directive 2009/95/EC.
+     * Undertakings for Collective Investment in Transferable Securities (UCITS) and its management company, authorised in accordance with European Securities and Markets Authority (ESMA) Directive 2009/95/EC.
      * 
      */
     U;

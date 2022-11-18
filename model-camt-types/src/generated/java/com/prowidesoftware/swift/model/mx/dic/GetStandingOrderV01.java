@@ -16,8 +16,8 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * The GetStandingOrder message is sent by a member to the transaction administrator.
  * It is used to request information on the details of one or more standing orders, based on specific request criteria, especially to query the amount of the overall liquidity available. It will allow to query both reserved liquidity and liquidity available for normal operations.
  * Usage
- * The member can request information based on the following elements:
- * - individual standing orders (predefined or  standing liquidity transfer orders)
+ * The member can request information based on the following elements: 
+ * - individual standing orders (predefined or standing liquidity transfer orders)
  * - amount
  * - account to be credited
  * - account to be debited

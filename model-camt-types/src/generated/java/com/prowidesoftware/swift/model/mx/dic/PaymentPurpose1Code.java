@@ -146,7 +146,7 @@ public enum PaymentPurpose1Code {
     CMDT,
 
     /**
-     * Transaction is related to a payment of commercial credit or debit. (formerly CommercialCredit)
+     * Transaction is related to a payment of commercial credit or debit. (formerly CommercialCredit).
      * 
      */
     COMC,

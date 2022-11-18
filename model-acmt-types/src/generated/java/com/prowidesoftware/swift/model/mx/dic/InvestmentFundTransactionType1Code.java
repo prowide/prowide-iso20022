@@ -136,7 +136,7 @@ public enum InvestmentFundTransactionType1Code {
     DIVI,
 
     /**
-     * Transaction is an InSpecie
+     * Transaction is an InSpecie.
      * 
      */
     INSP,

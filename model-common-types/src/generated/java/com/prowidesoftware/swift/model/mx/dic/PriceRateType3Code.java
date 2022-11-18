@@ -28,13 +28,13 @@ public enum PriceRateType3Code {
 
 
     /**
-     * Price expressed as a number of percentage points below par, eg, a discount price of 2.0% equals a price of 98 when par is 100.
+     * Price expressed as a number of percentage points below par, for example, a discount price of 2.0% equals a price of 98 when par is 100.
      * 
      */
     DISC,
 
     /**
-     * Price expressed as a number of percentage points above par, eg, a premium price of 2.0% equals a price of 102 when par is 100.
+     * Price expressed as a number of percentage points above par, for example, a premium price of 2.0% equals a price of 102 when par is 100.
      * 
      */
     PREM,

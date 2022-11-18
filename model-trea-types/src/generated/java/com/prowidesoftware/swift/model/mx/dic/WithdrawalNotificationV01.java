@@ -17,6 +17,8 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * Usage
  * The message is used to confirm the cancellation of a previously notified trade.
  * 
+ * This message is obsolete please use WithdrawalNotificationV02 - fxtr.013.001.02
+ * 
  * 
  * 
  */

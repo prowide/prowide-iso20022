@@ -333,7 +333,7 @@ public enum InstructionRejectionReason1Code {
     CN_6_R("CN6R"),
 
     /**
-     * Conditional quantity cannot be zero
+     * Conditional quantity cannot be zero.
      * 
      */
     COQX("COQX"),
@@ -496,13 +496,13 @@ public enum InstructionRejectionReason1Code {
     SUME("SUME"),
 
     /**
-     * Current date is greater than protect submission end date.  
+     * Current date is greater than protect submission end date.
      * 
      */
     PROE("PROE"),
 
     /**
-     * Current date is less than protect submission start date. 
+     * Current date is less than protect submission start date.
      * 
      */
     PROS("PROS"),
@@ -569,7 +569,7 @@ public enum InstructionRejectionReason1Code {
     FRAQ("FRAQ"),
 
     /**
-     * Function is not available at this time. Please check expiration start and end times for the event.   
+     * Function is not available at this time. Please check expiration start and end times for the event.
      * 
      */
     FUNU("FUNU"),
@@ -611,7 +611,7 @@ public enum InstructionRejectionReason1Code {
     RQIN("RQIN"),
 
     /**
-     * Transaction type or withdrawal transaction type  is invalid.
+     * Transaction type or withdrawal transaction type is invalid.
      * 
      */
     TRTI("TRTI"),
@@ -623,7 +623,7 @@ public enum InstructionRejectionReason1Code {
     BOIJ("BOIJ"),
 
     /**
-     * Key data (VOI transaction) cannot be found. 
+     * Key data (VOI transaction) cannot be found.
      * 
      */
     KEYV("KEYV"),
@@ -804,7 +804,7 @@ public enum InstructionRejectionReason1Code {
     SUBL("SUBL"),
 
     /**
-     * Comments are required for solicitation fee.  
+     * Comments are required for solicitation fee.
      * 
      */
     SOCR("SOCR"),
@@ -822,7 +822,7 @@ public enum InstructionRejectionReason1Code {
     SEQM("SEQM"),
 
     /**
-     * Customer sequence number must be between 1 and 1 or for PUTS between 9999901 and  9999912.
+     * Customer sequence number must be between 1 and 1 or for PUTS between 9999901 and 9999912.
      * 
      */
     SEQP("SEQP"),
@@ -871,7 +871,7 @@ public enum InstructionRejectionReason1Code {
     TRNI("TRNI"),
 
     /**
-     * Submission date is not yet reached.  
+     * Submission date is not yet reached.
      * 
      */
     SUBE("SUBE"),

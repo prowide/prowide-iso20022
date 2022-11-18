@@ -1,5 +1,10 @@
 # Prowide ISO 20022 - CHANGELOG
 
+#### 9.3.4 SNAPSHOT
+  * (GH-63) Added message type versions in categories: acmt, admi, auth, caaa, camt, catm, fxtr, pacs, reda, seev, semt, sese, setr, supl and trck
+  * Added new business process and messages for: caad, cafc, cain, casp
+  * Added model and support for the BusinessApplicationHeaderV03
+
 #### 9.3.3 - October 2022
   * (PW-1082) Added support in the JaxbContextCache and its default implementation to create the context without the classes parameter
 

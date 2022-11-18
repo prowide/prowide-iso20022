@@ -12,7 +12,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Identifies the market and purpose for the settlement. 
+ * Identifies the market and purpose for the settlement.
  * 
  * 
  * 

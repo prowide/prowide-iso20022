@@ -16,7 +16,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Specifies  a date code and a time.
+ * Specifies a date code and a time.
  * 
  * 
  * 

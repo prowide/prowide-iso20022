@@ -12,7 +12,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Provides information about  a movement that failed the settlement.
+ * Provides information about a movement that failed the settlement.
  * 
  * 
  * 

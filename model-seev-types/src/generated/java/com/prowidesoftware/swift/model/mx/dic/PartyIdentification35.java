@@ -14,7 +14,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Provides information about identification of the party .
+ * Provides information about identification of the party.
  * 
  * 
  * 

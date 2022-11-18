@@ -18,6 +18,9 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * This message will be sent at specific times agreed upon by the central settlement system and a participant in a central settlement system.
  * 
  * 
+ * This message is obsolete please use ForeignExchangeAndDerivativeTradeStatusNotificationV03 - fxtr.008.001.03
+ * 
+ * 
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)

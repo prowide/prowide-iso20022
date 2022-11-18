@@ -37,7 +37,7 @@ public enum Algorithm12Code {
     MACC("MACC"),
 
     /**
-     * Retail-CBC-MAC with SHA-256 (Secure HAsh standard)  - (ASN.1 Object Identifier: id-retail-cbc-mac-sha-256).
+     * Retail-CBC-MAC with SHA-256 (Secure HAsh standard) - (ASN.1 Object Identifier: id-retail-cbc-mac-sha-256).
      * 
      */
     MCCS("MCCS"),
@@ -50,7 +50,7 @@ public enum Algorithm12Code {
     CMA_1("CMA1"),
 
     /**
-     * Retail-CBC-MAC with SHA-1 (Secure Hash standard) - (ASN.1 Object Identifier: id-retail-cbc-mac-sha-1).
+     * The DEPRECATED Retail-CBC-MAC with SHA-1 (Secure Hash standard) - (ASN.1 Object Identifier: id-retail-cbc-mac-sha-1).
      * 
      */
     @XmlEnumValue("MCC1")

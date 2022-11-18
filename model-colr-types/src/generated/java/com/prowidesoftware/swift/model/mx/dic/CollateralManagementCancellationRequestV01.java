@@ -15,8 +15,8 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
  * This message is sent by:
- * -  the collateral taker or its collateral manager to the collateral giver or its collateral manager,
- * -  the collateral giver or its collateral manager to the collateral taker or its collateral manager.
+ * - the collateral taker or its collateral manager to the collateral giver or its collateral manager,
+ * - the collateral giver or its collateral manager to the collateral taker or its collateral manager.
  * 
  *  It is used to request the cancellation of a previously sent MarginCallRequest message, MarginCallResponse message, CollateralProposal message, CollateralProposalResponse message, MarginCallDisputeNotification message or a CollateralSubstitutionRequest message.
  * 

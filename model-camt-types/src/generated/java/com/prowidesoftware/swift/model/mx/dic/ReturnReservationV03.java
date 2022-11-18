@@ -22,7 +22,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * - identification of the system
  * - identification of the account
  * - status of the reservation (default and/or current )
- * - type of reservation
+ * - type of reservation.
  * 
  * 
  * 

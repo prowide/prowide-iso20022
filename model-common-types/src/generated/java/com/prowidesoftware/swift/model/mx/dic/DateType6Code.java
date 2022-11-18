@@ -39,7 +39,7 @@ public enum DateType6Code {
     UKWN,
 
     /**
-     * Ongoing basis,  which indicates that the date is determined by "ongoing basis" process, for example "au fil de l'eau".
+     * Ongoing basis, which indicates that the date is determined by "ongoing basis" process, for example "au fil de l'eau".
      * 
      */
     ONGO;

@@ -40,7 +40,7 @@ public enum InvestmentFundTransactionOutType1Code {
     SWIO,
 
     /**
-     * Transaction is an InSpecie
+     * Transaction is an InSpecie.
      * 
      */
     INSP,

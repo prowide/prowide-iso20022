@@ -26,7 +26,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * If the OrderInstructionStatusReport message is used to report the status of a switch order, then SwitchOrderDetailsReport is used and the order reference of the switch order is quoted in OrderReference. The message identification of the message in which the switch order was conveyed may also be quoted in RelatedReference.
  * If the OrderInstructionStatusReport message is used to report the status of an entire order message, for example, the SubscriptionBulkOrder, or a SubscriptionOrder containing several orders, then OrderDetailsReport is used and the message identification of the order message is quoted in RelatedReference. All the orders within the message must have the same status.
  * One of the following statuses can be reported:
- * - an accepted status , or,
+ * - an accepted status, or,
  * - an already executed status, or,
  * - a sent to next party status, or,
  * - a received status, or,
