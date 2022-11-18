@@ -1,0 +1,113 @@
+
+package com.prowidesoftware.swift.model.mx.dic;
+
+import java.util.ArrayList;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+
+/**
+ * Balance of the account involved in the card transaction.
+ * 
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "AccountBalance1", propOrder = {
+    "acctTp",
+    "bal"
+})
+public class AccountBalance1 {
+
+    @XmlElement(name = "AcctTp", required = true)
+    protected String acctTp;
+    @XmlElement(name = "Bal")
+    protected List<Balance15> bal;
+
+    /**
+     * Gets the value of the acctTp property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getAcctTp() {
+        return acctTp;
+    }
+
+    /**
+     * Sets the value of the acctTp property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public AccountBalance1 setAcctTp(String value) {
+        this.acctTp = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the bal property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the bal property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getBal().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Balance15 }
+     * 
+     * 
+     */
+    public List<Balance15> getBal() {
+        if (bal == null) {
+            bal = new ArrayList<Balance15>();
+        }
+        return this.bal;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+    /**
+     * Adds a new item to the bal list.
+     * @see #getBal()
+     * 
+     */
+    public AccountBalance1 addBal(Balance15 bal) {
+        getBal().add(bal);
+        return this;
+    }
+
+}
