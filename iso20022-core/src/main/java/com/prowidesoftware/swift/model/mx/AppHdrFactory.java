@@ -114,6 +114,49 @@ public class AppHdrFactory {
     }
 
     /**
+     * Convenient method to create a new ISO header version 3, initialized from simple parameters.
+     *
+     * <p>All parameters are optional but in order for the header to be valid the sender, receiver and reference must
+     * be set. Creation date will be set to current time.
+     *
+     * @param sender    optional sender BIC for the Fr element or null to leave not set
+     * @param receiver  optional receiver BIC for the To element or null to leave not set
+     * @param reference optional reference for the BizMsgIdr (business message identifier) or null to leave not set
+     * @param id        optional MX identification for the MsgDefIdr (message definition identifier) element or null to leave not set
+     * @return new header initialized from parameters.
+     * @since 9.3.4
+     */
+    public static BusinessAppHdrV03 createBusinessAppHdrV03(final String sender, final String receiver, final String reference, final MxId id) {
+        BusinessAppHdrV03 h = new BusinessAppHdrV03();
+
+        if (sender != null) {
+            h.setFr(new Party44Choice());
+            h.getFr().setFIId(new BranchAndFinancialInstitutionIdentification6());
+            h.getFr().getFIId().setFinInstnId(new FinancialInstitutionIdentification18());
+            h.getFr().getFIId().getFinInstnId().setBICFI(sender);
+        }
+
+        if (receiver != null) {
+            h.setTo(new Party44Choice());
+            h.getTo().setFIId(new BranchAndFinancialInstitutionIdentification6());
+            h.getTo().getFIId().setFinInstnId(new FinancialInstitutionIdentification18());
+            h.getTo().getFIId().getFinInstnId().setBICFI(receiver);
+        }
+
+        if (reference != null) {
+            h.setBizMsgIdr(reference);
+        }
+
+        if (id != null) {
+            h.setMsgDefIdr(id.id());
+        }
+
+        h.setCreDt(XMLGregorianCalendarUtils.now());
+
+        return h;
+    }
+
+    /**
      * Convenient method to create a new legacy SWIFT header, initialized from simple parameters.
      *
      * <p>All parameters are optional but in order for the header to be valid the sender, receiver and reference must
@@ -181,6 +224,8 @@ public class AppHdrFactory {
                 return createBusinessAppHdrV01(sender, receiver, reference, id);
             case BAH_V2:
                 return createBusinessAppHdrV02(sender, receiver, reference, id);
+            case BAH_V3:
+                return createBusinessAppHdrV03(sender, receiver, reference, id);
             default:
                 throw new ProwideException("Don't know how to create header " + type);
         }
