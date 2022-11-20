@@ -34,8 +34,7 @@ scmVersion {
 		versionSeparator = '-'
 	}
 }
-//project.version = "${SRU}-${scmVersion.version}"
-project.version = "${SRU}-9.3.4"
+project.version = "${SRU}-${scmVersion.version}"
 
 allprojects {
 
@@ -353,10 +352,6 @@ publishing {
 	}
 }
 jar.finalizedBy generatePomFileForMavenJavaPublication
-
-publish {
-	println "Using ${nexusRepo} for publishing ${version}"
-}
 
 tasks.withType(GenerateModuleMetadata) {
 	// to avoid metadata in the generated pom.xml files
