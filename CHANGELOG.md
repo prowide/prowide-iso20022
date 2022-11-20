@@ -1,6 +1,6 @@
 # Prowide ISO 20022 - CHANGELOG
 
-#### 9.3.4 SNAPSHOT
+#### 9.3.4 - November 2022
   * (GH-63) Added message type versions in categories: acmt, admi, auth, caaa, camt, catm, fxtr, pacs, reda, seev, semt, sese, setr, supl and trck
   * Added new business process and messages for: caad, cafc, cain, casp
   * Removed obsolete trea (treasury) message types
