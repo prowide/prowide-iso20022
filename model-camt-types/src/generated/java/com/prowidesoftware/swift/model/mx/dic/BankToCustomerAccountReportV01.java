@@ -17,7 +17,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * Scope
  * The Bank-to-Customer Account Report message is sent by the account servicer to an account owner or to a party authorised by the account owner to receive the message. It can be used to inform the account owner, or authorised party, of the entries reported to the account, and/or to provide the owner with balance information on the account at a given point in time.
  * Usage
- * The Bank-to-Customer Account Report message can contain reports for more than 1 account. It provides information for cash management and/or reconciliation. It can be used to :
+ * The Bank-to-Customer Account Report message can contain reports for more than 1 account. It provides information for cash management and/or reconciliation. It can be used to:
  * - report pending and booked items;
  * - provide balance information
  * It can include underlying details of transactions that have been included in the entry.

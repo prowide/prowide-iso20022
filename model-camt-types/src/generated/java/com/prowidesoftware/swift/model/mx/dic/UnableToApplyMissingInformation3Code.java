@@ -85,7 +85,7 @@ public enum UnableToApplyMissingInformation3Code {
     MS_06("MS06"),
 
     /**
-     * SettlementAccount is missing. (former MissingNostroVostroAccount)
+     * SettlementAccount is missing. (former MissingNostroVostroAccount).
      * 
      */
     @XmlEnumValue("MS07")

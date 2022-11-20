@@ -17,7 +17,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Commercial agreement in which the buyer agrees to pay the seller an amount of cash. Some aspects of the payment may be defined in the agreement, for example, the method of the payment
+ * Commercial agreement in which the buyer agrees to pay the seller an amount of cash. Some aspects of the payment may be defined in the agreement, for example, the method of the payment.
  * 
  * 
  * 

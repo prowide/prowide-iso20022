@@ -20,7 +20,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * Usage
  * The Customer Payment Cancellation Request message must be answered with a:
  * - Resolution Of Investigation message with a positive final outcome when the case assignee can perform the requested cancellation
- * - Resolution Of Investigation message with a negative final outcome when the case assignee may perform the requested cancellation but fails to do so (too late, irrevocable instruction, ...)
+ * - Resolution Of Investigation message with a negative final outcome when the case assignee may perform the requested cancellation but fails to do so (too late, irrevocable instruction.)
  * - Reject Investigation message when the case assignee is unable or not authorised to perform the requested cancellation
  * - Notification Of Case Assignment message to indicate whether the case assignee will take on the case himself or reassign the case to a subsequent party in the payment processing chain.
  * A Customer Payment Cancellation Request message concerns one and only one original payment instruction at a time.

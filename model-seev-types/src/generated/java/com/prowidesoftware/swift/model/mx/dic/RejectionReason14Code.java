@@ -48,7 +48,7 @@ public enum RejectionReason14Code {
     LATT,
 
     /**
-     * CA Event Type does not correspond with the relating Corporate Action
+     * CA Event Type does not correspond with the relating Corporate Action.
      * 
      */
     INET,

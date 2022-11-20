@@ -16,7 +16,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Posting of an item to a cash account, in the context of a cash transaction, that results in an increase or decrease to the balance of the account. 
+ * Posting of an item to a cash account, in the context of a cash transaction, that results in an increase or decrease to the balance of the account.
  * 
  * 
  * 

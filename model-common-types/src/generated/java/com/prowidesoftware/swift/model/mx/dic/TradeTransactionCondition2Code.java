@@ -97,15 +97,15 @@ public enum TradeTransactionCondition2Code {
     SPPR,
 
     /**
-     * Indicates whether the trade is executed  with a special cum 
-     * dividend, ie, buying after the ex date and getting the dividend.
+     * Indicates whether the trade is executed with a special cum 
+     * dividend, that is, buying after the ex date and getting the dividend.
      * 
      */
     SPCU,
 
     /**
-     * Indicates whether the trade is executed  with a special ex 
-     * dividend, ie, selling before the ex date without the coupon.
+     * Indicates whether the trade is executed with a special ex 
+     * dividend, that is, selling before the ex date without the coupon.
      * 
      */
     SPEX,

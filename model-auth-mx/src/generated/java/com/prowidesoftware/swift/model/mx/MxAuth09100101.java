@@ -26,7 +26,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 @XmlType(name = "Document", propOrder = {
     "derivsTradRcncltnSttstclRpt"
 })
-@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:DRAFT2auth.091.001.01")
+@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:auth.091.001.01")
 public class MxAuth09100101
     extends com.prowidesoftware.swift.model.mx.AbstractMX
 {
@@ -38,8 +38,8 @@ public class MxAuth09100101
     public final static transient int VARIANT = 1;
     public final static transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {CompetentAuthority1 .class, Counterparty26 .class, Counterparty29 .class, CounterpartyTradeNature5Choice.class, DerivativesTradeReconciliationStatisticalReportV01 .class, DetailedReconciliationStatistics1 .class, DetailedStatisticsPerCounterparty4 .class, FinancialPartySectorType1Code.class, MxAuth09100101 .class, NoReasonCode.class, NonFinancialInstitutionSector2 .class, OptionParty1Code.class, OrganisationIdentification30 .class, OrganisationIdentification7Choice.class, OrganisationIdentification8Choice.class, OrganisationIdentification9Choice.class, ReconciliationStatisticsPerDerivativeContractGroup2 .class, ReconciliationStatisticsPerDerivativeType2 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TradeCounterpartyReport9 .class, TradingCapacity7Code.class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:DRAFT2auth.091.001.01";
+    public final static transient Class[] _classes = new Class[] {CompetentAuthority1 .class, Counterparty26 .class, Counterparty29 .class, CounterpartyTradeNature5Choice.class, DerivativesTradeReconciliationStatisticalReportV01 .class, DetailedReconciliationStatistics2 .class, DetailedStatisticsPerCounterparty5 .class, FinancialPartySectorType1Code.class, MxAuth09100101 .class, NoReasonCode.class, NonFinancialInstitutionSector2 .class, OptionParty1Code.class, OrganisationIdentification30 .class, OrganisationIdentification7Choice.class, OrganisationIdentification8Choice.class, OrganisationIdentification9Choice.class, ReconciliationStatisticsPerDerivativeContractGroup3 .class, ReconciliationStatisticsPerDerivativeType3 .class, ReportPeriodActivity1Code.class, StatisticsPerCounterparty1Choice.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TradeCounterpartyReport9 .class, TradingCapacity7Code.class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:auth.091.001.01";
 
     public MxAuth09100101() {
         super();

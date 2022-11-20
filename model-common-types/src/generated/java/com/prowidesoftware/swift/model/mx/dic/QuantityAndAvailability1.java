@@ -12,7 +12,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Net position of a segregated holding of a single security within the overall position held in the securities account, eg, sub-balance per status.
+ * Net position of a segregated holding of a single security within the overall position held in the securities account, for example, sub-balance per status.
  * 
  * 
  * 

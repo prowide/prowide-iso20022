@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Choice of formats to  express whether the event is mandatory, mandatory with options or voluntary.
+ * Choice of formats to express whether the event is mandatory, mandatory with options or voluntary.
  * 
  * 
  * 

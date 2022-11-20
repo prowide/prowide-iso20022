@@ -50,7 +50,7 @@ public enum Algorithm11Code {
     HS_51("HS51"),
 
     /**
-     * Message digest algorithm SHA-1 as defined in FIPS 180-1 - (ASN.1 Object Identifier: id-sha1).
+     * The DEPRECATED Message digest algorithm SHA-1 as defined in FIPS 180-1 - (ASN.1 Object Identifier: id-sha1).
      * 
      */
     @XmlEnumValue("HS01")

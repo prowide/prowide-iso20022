@@ -17,7 +17,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * The CurrencyControlStatusAdvice message is sent by either the reporting party (respectively the registration agent or the registration agent (respectively the reporting party) to provide a status advice on a previously sent currency control message.
  * 
  * Usage: 
- * The message may be sent in response to requests on the registration of  the currency control contract, supporting document or on the payment regulatory information notification.
+ * The message may be sent in response to requests on the registration of the currency control contract, supporting document or on the payment regulatory information notification.
  * 
  * 
  * 

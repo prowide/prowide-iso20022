@@ -26,7 +26,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 @XmlType(name = "Document", propOrder = {
     "derivsTradRjctnSttstclRpt"
 })
-@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:DRAFT2auth.092.001.01")
+@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:auth.092.001.01")
 public class MxAuth09200101
     extends com.prowidesoftware.swift.model.mx.AbstractMX
 {
@@ -38,8 +38,8 @@ public class MxAuth09200101
     public final static transient int VARIANT = 1;
     public final static transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {CompetentAuthority1 .class, CounterpartyData36 .class, DerivativesStatistics2 .class, DerivativesTradeRejectionStatisticalReportV01 .class, DetailedStatisticsPerCounterparty3 .class, MxAuth09200101 .class, Period2 .class, RejectionStatistics2 .class, StatisticsPerActionType1 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TopReasonsForRejections1 .class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:DRAFT2auth.092.001.01";
+    public final static transient Class[] _classes = new Class[] {CompetentAuthority1 .class, CounterpartyData36 .class, DerivativesStatistics3 .class, DerivativesTradeRejectionStatisticalReportV01 .class, DetailedStatisticsPerCounterparty6 .class, MxAuth09200101 .class, Period2 .class, RejectionStatistics3 .class, ReportPeriodActivity1Code.class, StatisticsPerActionType1 .class, StatisticsPerCounterparty2Choice.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TopReasonsForRejections2 .class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:auth.092.001.01";
 
     public MxAuth09200101() {
         super();

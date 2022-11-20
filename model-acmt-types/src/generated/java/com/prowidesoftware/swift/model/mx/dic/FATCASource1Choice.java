@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Choice of formats for the source of the Foreign Account Tax Compliance Act (FATCA) 
+ * Choice of formats for the source of the Foreign Account Tax Compliance Act (FATCA).
  * 
  * 
  * 

@@ -50,7 +50,7 @@ public enum PendingSettlementStatusReason1Code {
     BLOC,
 
     /**
-     * Awaiting securities from corporate action issue or other procedures, eg, conversion, dematerialisation, exchange, registration, stamping, splitting, etc.
+     * Awaiting securities from corporate action issue or other procedures, for example, conversion, dematerialisation, exchange, registration, stamping, splitting, etc.
      * 
      */
     CAIS,

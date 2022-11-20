@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Provides the report item rejection reason in a coded or proprietary  form.
+ * Provides the report item rejection reason in a coded or proprietary form.
  * 
  * 
  * 

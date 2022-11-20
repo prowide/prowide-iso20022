@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Choice of formats to  express the type of cash balance.
+ * Choice of formats to express the type of cash balance.
  * 
  * 
  * 
@@ -25,10 +25,10 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 public class CashBalanceType1FormatType {
 
-    @XmlElement(name = "Cd")
+    @XmlElement(name = "Cd", required = true)
     @XmlSchemaType(name = "string")
     protected CashBalanceType1Code cd;
-    @XmlElement(name = "Prtry")
+    @XmlElement(name = "Prtry", required = true)
     protected GenericIdentification13 prtry;
 
     /**

@@ -37,79 +37,79 @@ public enum Incoterms1Code {
 
 
     /**
-     * Ex Works (any mode of transport, including multimodal)
+     * Ex Works (any mode of transport, including multimodal).
      * 
      */
     EXW,
 
     /**
-     * Free Carrier (any mode of transport, including multimodal)
+     * Free Carrier (any mode of transport, including multimodal).
      * 
      */
     FCA,
 
     /**
-     * Free Alongside Ship (sea and inland waterway transport)
+     * Free Alongside Ship (sea and inland waterway transport).
      * 
      */
     FAS,
 
     /**
-     * Free On Board (sea and inland waterway transport)
+     * Free On Board (sea and inland waterway transport).
      * 
      */
     FOB,
 
     /**
-     * Cost and Freight (sea and inland waterway transport)
+     * Cost and Freight (sea and inland waterway transport).
      * 
      */
     CFR,
 
     /**
-     * Cost, Insurance and Freight (sea and inland waterway transport)
+     * Cost, Insurance and Freight (sea and inland waterway transport).
      * 
      */
     CIF,
 
     /**
-     * Carriage Paid To (any mode of transport, including multimodal)
+     * Carriage Paid To (any mode of transport, including multimodal).
      * 
      */
     CPT,
 
     /**
-     * Carriage and Insurance Paid to (any mode of transport, including multimodal)
+     * Carriage and Insurance Paid to (any mode of transport, including multimodal).
      * 
      */
     CIP,
 
     /**
-     * Delivered At Frontier (any mode of transport, including multimodal)
+     * Delivered At Frontier (any mode of transport, including multimodal).
      * 
      */
     DAF,
 
     /**
-     * Delivered Ex Ship (sea and inland waterway transport)
+     * Delivered Ex Ship (sea and inland waterway transport).
      * 
      */
     DES,
 
     /**
-     * Delivered Ex Quay (sea and inland waterway transport)
+     * Delivered Ex Quay (sea and inland waterway transport).
      * 
      */
     DEQ,
 
     /**
-     * Delivered Duty Unpaid (any mode of transport, including multimodal)
+     * Delivered Duty Unpaid (any mode of transport, including multimodal).
      * 
      */
     DDU,
 
     /**
-     * Delivered Duty Paid (any mode of transport, including multimodal)
+     * Delivered Duty Paid (any mode of transport, including multimodal).
      * 
      */
     DDP;

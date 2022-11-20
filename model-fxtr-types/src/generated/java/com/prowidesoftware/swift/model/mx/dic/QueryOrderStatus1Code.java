@@ -41,13 +41,13 @@ public enum QueryOrderStatus1Code {
     QOFP,
 
     /**
-     * Query for orders have been completely executed.  
+     * Query for orders have been completely executed.
      * 
      */
     QFEO,
 
     /**
-     * Query for orders have been partially executed.  
+     * Query for orders have been partially executed.
      * 
      */
     QPEO,

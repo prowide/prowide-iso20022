@@ -56,7 +56,7 @@ public enum CardDataReading1Code {
     MGST,
 
     /**
-     * ICC  (Integrated Circuit Card) with contact containing software applications conform to ISO 7816.
+     * ICC (Integrated Circuit Card) with contact containing software applications conform to ISO 7816.
      * 
      */
     CICC,

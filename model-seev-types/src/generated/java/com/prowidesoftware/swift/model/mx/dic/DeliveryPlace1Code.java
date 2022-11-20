@@ -34,7 +34,7 @@ public enum DeliveryPlace1Code {
     EMPL,
 
     /**
-     * Card needs to be mailed to individual specified in PersonDetail
+     * Card needs to be mailed to individual specified in PersonDetail.
      * 
      */
     INDI,

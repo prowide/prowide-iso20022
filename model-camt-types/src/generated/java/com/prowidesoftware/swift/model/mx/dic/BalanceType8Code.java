@@ -57,7 +57,7 @@ public enum BalanceType8Code {
 
 
     /**
-     * Book balance of the account at the beginning of the account reporting period.  It always equals the closing book balance from the previous report.
+     * Book balance of the account at the beginning of the account reporting period. It always equals the closing book balance from the previous report.
      * 
      */
     OPBD,
@@ -75,7 +75,7 @@ public enum BalanceType8Code {
     CLBD,
 
     /**
-     * Balance, composed of booked entries and pending items known at the time of calculation , which projects the end of day balance if everything is booked on the account and no other entry is posted.
+     * Balance, composed of booked entries and pending items known at the time of calculation, which projects the end of day balance if everything is booked on the account and no other entry is posted.
      * 
      */
     XPCD,
@@ -149,13 +149,13 @@ public enum BalanceType8Code {
     IITB,
 
     /**
-     * Investment book balance of the account at the beginning of the account reporting period.  It always equals the closing book balance from the previous report.
+     * Investment book balance of the account at the beginning of the account reporting period. It always equals the closing book balance from the previous report.
      * 
      */
     IOPB,
 
     /**
-     * Investment balance, composed of booked entries and pending items known at the time of calculation , which projects the end of day balance if everything is booked on the account and no other entry is posted.
+     * Investment balance, composed of booked entries and pending items known at the time of calculation, which projects the end of day balance if everything is booked on the account and no other entry is posted.
      * 
      */
     IXPC,
@@ -197,13 +197,13 @@ public enum BalanceType8Code {
     DITB,
 
     /**
-     * Disbursement book balance of the account at the beginning of the account reporting period.  It always equals the closing book balance from the previous report.
+     * Disbursement book balance of the account at the beginning of the account reporting period. It always equals the closing book balance from the previous report.
      * 
      */
     DOPB,
 
     /**
-     * Disbursement balance, composed of booked entries and pending items known at the time of calculation , which projects the end of day balance if everything is booked on the account and no other entry is posted.
+     * Disbursement balance, composed of booked entries and pending items known at the time of calculation, which projects the end of day balance if everything is booked on the account and no other entry is posted.
      * 
      */
     DXPC,
@@ -245,13 +245,13 @@ public enum BalanceType8Code {
     CITB,
 
     /**
-     * Collection book balance of the account at the beginning of the account reporting period.  It always equals the closing book balance from the previous report.
+     * Collection book balance of the account at the beginning of the account reporting period. It always equals the closing book balance from the previous report.
      * 
      */
     COPB,
 
     /**
-     * Collection balance, composed of booked entries and pending items known at the time of calculation , which projects the end of day balance if everything is booked on the account and no other entry is posted.
+     * Collection balance, composed of booked entries and pending items known at the time of calculation, which projects the end of day balance if everything is booked on the account and no other entry is posted.
      * 
      */
     CXPC;

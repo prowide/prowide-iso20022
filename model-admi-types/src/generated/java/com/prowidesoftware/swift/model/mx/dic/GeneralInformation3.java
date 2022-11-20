@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * General Information, indicating the function of the  message.
+ * General Information, indicating the function of the message.
  * 
  * 
  * 

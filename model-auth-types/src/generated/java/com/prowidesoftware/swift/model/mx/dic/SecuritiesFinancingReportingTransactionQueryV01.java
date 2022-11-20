@@ -14,7 +14,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * The SecuritiesFinancingReportingTransactionQuery message is sent by the supervisory authority system to the trade repositories, to query data based on the search criteria for the trade transaction as defined by the system user.
+ * The SecuritiesFinancingReportingTransactionQuery message is sent by the authority to the trade repositories, to query data based on the search criteria for the  transactions as defined by the system user.
  * 
  * 
  * 
@@ -30,7 +30,7 @@ public class SecuritiesFinancingReportingTransactionQueryV01 {
     @XmlElement(name = "RqstngAuthrty", required = true)
     protected PartyIdentification121Choice rqstngAuthrty;
     @XmlElement(name = "TradQryData", required = true)
-    protected TradeReportQuery5Choice tradQryData;
+    protected TradeReportQuery8Choice tradQryData;
     @XmlElement(name = "SplmtryData")
     protected List<SupplementaryData1> splmtryData;
 
@@ -64,10 +64,10 @@ public class SecuritiesFinancingReportingTransactionQueryV01 {
      * 
      * @return
      *     possible object is
-     *     {@link TradeReportQuery5Choice }
+     *     {@link TradeReportQuery8Choice }
      *     
      */
-    public TradeReportQuery5Choice getTradQryData() {
+    public TradeReportQuery8Choice getTradQryData() {
         return tradQryData;
     }
 
@@ -76,10 +76,10 @@ public class SecuritiesFinancingReportingTransactionQueryV01 {
      * 
      * @param value
      *     allowed object is
-     *     {@link TradeReportQuery5Choice }
+     *     {@link TradeReportQuery8Choice }
      *     
      */
-    public SecuritiesFinancingReportingTransactionQueryV01 setTradQryData(TradeReportQuery5Choice value) {
+    public SecuritiesFinancingReportingTransactionQueryV01 setTradQryData(TradeReportQuery8Choice value) {
         this.tradQryData = value;
         return this;
     }

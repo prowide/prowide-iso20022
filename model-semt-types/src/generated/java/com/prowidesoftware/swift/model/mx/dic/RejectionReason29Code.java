@@ -93,7 +93,7 @@ public enum RejectionReason29Code {
     DSEC,
 
     /**
-     * Instruction aims at using  an invalid balance.
+     * Instruction aims at using an invalid balance.
      * 
      */
     INVB,

@@ -28,7 +28,7 @@ import java.util.logging.Logger;
  * @deprecated replaced by new {@link com.prowidesoftware.swift.model.mx.AppHdr} parsers
  */
 @Deprecated
-@ProwideDeprecated(phase3 = TargetYear.SRU2022)
+@ProwideDeprecated(phase4 = TargetYear.SRU2023)
 class MxBusinessHeaderParser {
     private static final transient Logger log = Logger.getLogger(MxBusinessHeaderParser.class.getName());
 

@@ -82,7 +82,7 @@ public enum RejectionReason12Code {
     OPTI,
 
     /**
-     * The specified Corporate Action option already has a pending deactivation instruction
+     * The specified Corporate Action option already has a pending deactivation instruction.
      * 
      */
     PEDA,
@@ -94,7 +94,7 @@ public enum RejectionReason12Code {
     NORO,
 
     /**
-     * CA Event Type does not correspond with the relating Corporate Action
+     * CA Event Type does not correspond with the relating Corporate Action.
      * 
      */
     INET,

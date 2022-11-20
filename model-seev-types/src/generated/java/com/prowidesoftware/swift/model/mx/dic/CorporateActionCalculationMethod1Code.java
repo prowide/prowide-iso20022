@@ -46,7 +46,7 @@ public enum CorporateActionCalculationMethod1Code {
     NOMI,
 
     /**
-     * Without  reduction of nominal (via pool factor) for partial redemption.
+     * Without reduction of nominal (via pool factor) for partial redemption.
      * 
      */
     NNOM;

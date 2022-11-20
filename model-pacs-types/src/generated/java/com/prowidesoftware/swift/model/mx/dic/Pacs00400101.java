@@ -21,7 +21,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * The PaymentReturn message should not be used between agents and non-financial institution customers. Non-financial institution customers will be informed about a debit or a credit on their account(s) through an Advice of Credit/Debit message and/or Statement message.
  * The PaymentReturn message can be used to return single instructions or multiple instructions from one or different files.
  * The PaymentReturn message can be used in domestic and cross-border scenarios.
- * The PaymentReturn message refers to the original instruction(s) by means of references only or by means of references and a set of elements from the original instruction.
+ * The PaymentReturn message refers to the original instruction(s) by means of references only or by means of references and a set of elements from the original instruction..
  * 
  * 
  * 

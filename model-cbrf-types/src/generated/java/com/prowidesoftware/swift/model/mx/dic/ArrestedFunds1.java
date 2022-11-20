@@ -12,7 +12,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Information about funds that have been arrested. 
+ * Information about funds that have been arrested.
  * 
  * 
  * 

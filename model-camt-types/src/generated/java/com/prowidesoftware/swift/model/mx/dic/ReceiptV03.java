@@ -22,7 +22,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * This may happen, for instance, when an action is requested from the transaction administrator (a deletion, modification or cancellation). The transaction administrator will first acknowledge the request (with a Receipt message) and then execute it.
  * The message can contain information based on the following elements: reference of the message(s) it acknowledges, the status code (optional) and further explanation:
  * - reference of the message it acknowledges
- * - potentially, a status code and an explanation
+ * - potentially, a status code and an explanation.
  * 
  * 
  * 

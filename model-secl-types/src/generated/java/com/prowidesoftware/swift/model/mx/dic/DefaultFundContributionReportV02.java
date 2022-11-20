@@ -16,7 +16,9 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 /**
  * Scope
  * The DefaultFundContributionReport message is sent by the central counterparty (CCP) to a Clearing member to report on the calculation of the default fund contribution and the potential net excess or deficit.
- * The ISO 20022 Business Application Header must be used.
+ * 
+ * The message definition is intended for use with the ISO20022 Business Application Header.
+ * 
  * Usage
  * CCPs require participants to post assets in a clearing fund that can be used in the event of a default by a participant, to compensate non-defaulting participants for losses they suffer due to this default. The CCP evaluates each participant risk level based on their positions (monthly or daily) and calculate the excess of deficit of the default fund contribution. The DefaultFundContributionReport is usually sent on a monthly basis.
  * 

@@ -14,7 +14,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * The SecuritiesFinancingReportingTransactionStatusAdvice message is sent by the trade repository (TR) to the competent authority (CA) identifying the transactions rejected and the reasons for a rejection.
+ * The SecuritiesFinancingReportingTransactionStatusAdvice message is sent by the trade repository (TR) to the authority or made available to the report submitting entity and the reporting counterparty as well as the entity responsible for reporting, if applicable, identifying the transactions rejected and the reasons for a rejection.
  * 
  * 
  * 
@@ -27,7 +27,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 public class SecuritiesFinancingReportingTransactionStatusAdviceV01 {
 
     @XmlElement(name = "TxRptStsAndRsn", required = true)
-    protected List<TransactionReportStatusAndReason1> txRptStsAndRsn;
+    protected List<TradeData11Choice> txRptStsAndRsn;
     @XmlElement(name = "SplmtryData")
     protected List<SupplementaryData1> splmtryData;
 
@@ -49,13 +49,13 @@ public class SecuritiesFinancingReportingTransactionStatusAdviceV01 {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link TransactionReportStatusAndReason1 }
+     * {@link TradeData11Choice }
      * 
      * 
      */
-    public List<TransactionReportStatusAndReason1> getTxRptStsAndRsn() {
+    public List<TradeData11Choice> getTxRptStsAndRsn() {
         if (txRptStsAndRsn == null) {
-            txRptStsAndRsn = new ArrayList<TransactionReportStatusAndReason1>();
+            txRptStsAndRsn = new ArrayList<TradeData11Choice>();
         }
         return this.txRptStsAndRsn;
     }
@@ -109,7 +109,7 @@ public class SecuritiesFinancingReportingTransactionStatusAdviceV01 {
      * @see #getTxRptStsAndRsn()
      * 
      */
-    public SecuritiesFinancingReportingTransactionStatusAdviceV01 addTxRptStsAndRsn(TransactionReportStatusAndReason1 txRptStsAndRsn) {
+    public SecuritiesFinancingReportingTransactionStatusAdviceV01 addTxRptStsAndRsn(TradeData11Choice txRptStsAndRsn) {
         getTxRptStsAndRsn().add(txRptStsAndRsn);
         return this;
     }

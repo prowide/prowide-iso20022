@@ -19,7 +19,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * Scope
  * The DeliveryStatusNotification message is sent by a local application to a back-office application. It is used to inform the back-office application of either failed delivery, or, optionally, successful delivery of the referenced message.
  * Usage
- * For failed delivery, the DeliveryStatusNotification message informs the back-office application that a message previously emitted could not be delivered to the intended recipient for whatever reasons as indicated in the error information.  It provides information to identify the message in error. In cases where the message content is unable to be interpreted by the local application, the first 1K characters of the referenced message are reported to facilitate further analysis at the back-office.
+ * For failed delivery, the DeliveryStatusNotification message informs the back-office application that a message previously emitted could not be delivered to the intended recipient for whatever reasons as indicated in the error information. It provides information to identify the message in error. In cases where the message content is unable to be interpreted by the local application, the first 1K characters of the referenced message are reported to facilitate further analysis at the back-office.
  * For successful delivery, if the message partner configuration data indicates to do so, the local application sends the DeliveryStatusNotification message to a back-office application to inform that the referenced message was delivered successfully. It provides information to identify the delivered message.
  * 
  * 

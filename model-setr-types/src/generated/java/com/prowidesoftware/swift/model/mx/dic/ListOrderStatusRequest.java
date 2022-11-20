@@ -15,7 +15,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * Scope
  * An instructing party, eg, an investment manager, sends the ListOrderStatusRequest message to an executing party, eg, a broker, to request the status of a ListOrder message.
  * Usage
- * No additional information
+ * No additional information.
  * 
  * 
  * 

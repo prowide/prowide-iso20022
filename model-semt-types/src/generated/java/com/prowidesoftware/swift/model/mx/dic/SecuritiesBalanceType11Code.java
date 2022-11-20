@@ -208,7 +208,7 @@ public enum SecuritiesBalanceType11Code {
     ISSU,
 
     /**
-     * In Issuer Agent / Depository communication, balance of issued financial instruments for which legal documentation has not yet been received.
+     * In issuer agent / depository communication, balance of issued financial instruments for which legal documentation has not yet been received.
      * 
      */
     QUAS,

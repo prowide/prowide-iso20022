@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
  * Settlement instructions to be used to transfer cash from the Debtor to the Creditor.
- * 
+ * .
  * 
  * 
  * 

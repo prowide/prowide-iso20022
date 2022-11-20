@@ -14,82 +14,46 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * The SecuritesFinancingReportingReconciliationStatusAdvice message is sent by the trade repositories (TRs) to the reporting agent to provide a status advice for the correctness, issues or errors that arise.
+ * The SecuritesFinancingReportingReconciliationStatusAdvice message is sent by the trade repositories (TRs) ) to other TR and to the authority or made available to the report submitting entity and the reporting counterparty as well as the entity responsible for reporting, if applicable, to provide a status advice for reconciliation.
  * 
  * 
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SecuritiesFinancingReportingReconciliationStatusAdviceV01", propOrder = {
-    "pairgRcncltnSts",
-    "rcncltnRpt",
+    "rcncltnData",
     "splmtryData"
 })
 public class SecuritiesFinancingReportingReconciliationStatusAdviceV01 {
 
-    @XmlElement(name = "PairgRcncltnSts")
-    protected List<NumberOfReportsPerStatus2> pairgRcncltnSts;
-    @XmlElement(name = "RcncltnRpt", required = true)
-    protected List<ReconciliationReport3> rcncltnRpt;
+    @XmlElement(name = "RcncltnData", required = true)
+    protected TradeData14Choice rcncltnData;
     @XmlElement(name = "SplmtryData")
     protected List<SupplementaryData1> splmtryData;
 
     /**
-     * Gets the value of the pairgRcncltnSts property.
+     * Gets the value of the rcncltnData property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the pairgRcncltnSts property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getPairgRcncltnSts().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link NumberOfReportsPerStatus2 }
-     * 
-     * 
+     * @return
+     *     possible object is
+     *     {@link TradeData14Choice }
+     *     
      */
-    public List<NumberOfReportsPerStatus2> getPairgRcncltnSts() {
-        if (pairgRcncltnSts == null) {
-            pairgRcncltnSts = new ArrayList<NumberOfReportsPerStatus2>();
-        }
-        return this.pairgRcncltnSts;
+    public TradeData14Choice getRcncltnData() {
+        return rcncltnData;
     }
 
     /**
-     * Gets the value of the rcncltnRpt property.
+     * Sets the value of the rcncltnData property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rcncltnRpt property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getRcncltnRpt().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link ReconciliationReport3 }
-     * 
-     * 
+     * @param value
+     *     allowed object is
+     *     {@link TradeData14Choice }
+     *     
      */
-    public List<ReconciliationReport3> getRcncltnRpt() {
-        if (rcncltnRpt == null) {
-            rcncltnRpt = new ArrayList<ReconciliationReport3>();
-        }
-        return this.rcncltnRpt;
+    public SecuritiesFinancingReportingReconciliationStatusAdviceV01 setRcncltnData(TradeData14Choice value) {
+        this.rcncltnData = value;
+        return this;
     }
 
     /**
@@ -134,26 +98,6 @@ public class SecuritiesFinancingReportingReconciliationStatusAdviceV01 {
     @Override
     public int hashCode() {
         return HashCodeBuilder.reflectionHashCode(this);
-    }
-
-    /**
-     * Adds a new item to the pairgRcncltnSts list.
-     * @see #getPairgRcncltnSts()
-     * 
-     */
-    public SecuritiesFinancingReportingReconciliationStatusAdviceV01 addPairgRcncltnSts(NumberOfReportsPerStatus2 pairgRcncltnSts) {
-        getPairgRcncltnSts().add(pairgRcncltnSts);
-        return this;
-    }
-
-    /**
-     * Adds a new item to the rcncltnRpt list.
-     * @see #getRcncltnRpt()
-     * 
-     */
-    public SecuritiesFinancingReportingReconciliationStatusAdviceV01 addRcncltnRpt(ReconciliationReport3 rcncltnRpt) {
-        getRcncltnRpt().add(rcncltnRpt);
-        return this;
     }
 
     /**

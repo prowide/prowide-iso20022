@@ -50,7 +50,7 @@ public enum PaymentTime1Code {
     EPRD,
 
     /**
-     * Code for payment at end of period after end of month of delivery
+     * Code for payment at end of period after end of month of delivery.
      * 
      */
     PRMD,

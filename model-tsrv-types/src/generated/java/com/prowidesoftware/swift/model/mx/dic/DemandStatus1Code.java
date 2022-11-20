@@ -26,7 +26,7 @@ public enum DemandStatus1Code {
 
 
     /**
-     * Extend undertaking expiry date. 
+     * Extend undertaking expiry date.
      * 
      */
     EXTD,

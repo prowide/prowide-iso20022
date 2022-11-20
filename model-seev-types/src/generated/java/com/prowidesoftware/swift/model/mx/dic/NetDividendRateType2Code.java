@@ -42,7 +42,7 @@ public enum NetDividendRateType2Code {
     CAPO,
 
     /**
-     * Rate resulting from a fully franked dividend paid by a company; rate includes tax credit for companies that have made sufficient tax payments during fiscal period.
+     * Rate resulting from a fully franked dividend paid by a company; the rate includes tax credit for companies that have made sufficient tax payments during the fiscal period.
      * 
      */
     FLFR,
@@ -78,26 +78,25 @@ public enum NetDividendRateType2Code {
     TXDF,
 
     /**
-     * Rate relating to the underlying security which is not taxable
+     * Rate relating to the underlying security which is not taxable.
      * 
      */
     TXFR,
 
     /**
-     * Rate resulting from an unfranked dividend paid by a company; the rate
-     * doesnt include tax credit and is subject to withholding tax.
+     * Rate resulting from an unfranked dividend paid by a company; the rate does not include tax credit and is subject to withholding tax.
      * 
      */
     UNFR,
 
     /**
-     * Distribution rate relating to the full period units, for example Group I units in UK. 
+     * Distribution rate relating to the full period units, for example Group I units in UK.
      * 
      */
     FUPU,
 
     /**
-     * Distribution rate relating to the part way period units, for example Group II units in UK. 
+     * Distribution rate relating to the part way period units, for example Group II units in UK.
      * 
      */
     PAPU,

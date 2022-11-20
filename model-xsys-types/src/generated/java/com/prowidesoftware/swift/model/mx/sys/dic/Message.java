@@ -41,7 +41,7 @@ public class Message {
     protected SwIntRequestHeader requestHeader;
 
     /**
-     * StoreAndForwardReference
+     * SnFRef
      * 
      * @return
      *     possible object is
@@ -66,7 +66,7 @@ public class Message {
     }
 
     /**
-     * StoreAndForwardReferenceType
+     * SnFRefType
      * 
      * @return
      *     possible object is
@@ -91,7 +91,7 @@ public class Message {
     }
 
     /**
-     * StoreAndForwardInputTime
+     * SnFInputTime
      * 
      * @return
      *     possible object is

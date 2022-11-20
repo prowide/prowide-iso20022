@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Choice between an number and a option number in a code format.
+ * Choice between an number and an option number in a code format.
  * 
  * 
  * 

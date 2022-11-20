@@ -14,50 +14,46 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * The SecuritiesFinancingReportingTransactionMarginDataReport message is sent by the reporting agent to the trade repository (TR) to report the margin applied on the securities financing transactions.
+ * The SecuritiesFinancingReportingTransactionMarginDataReport message is sent by the report submitting entity to the trade repository (TR) to report the margins exchanged in relation to the CCP-cleared securities financing transactions or sent by the trade repository (TR) to the authority or made available by the trade repository (TR) to the report submitting entity and the reporting counterparty as well as the entity responsible for reporting, if applicable.
  * 
  * 
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SecuritiesFinancingReportingTransactionMarginDataReportV01", propOrder = {
-    "mrgnData",
+    "tradData",
     "splmtryData"
 })
 public class SecuritiesFinancingReportingTransactionMarginDataReportV01 {
 
-    @XmlElement(name = "MrgnData", required = true)
-    protected List<MarginDataReport3Choice> mrgnData;
+    @XmlElement(name = "TradData", required = true)
+    protected TradeData6Choice tradData;
     @XmlElement(name = "SplmtryData")
     protected List<SupplementaryData1> splmtryData;
 
     /**
-     * Gets the value of the mrgnData property.
+     * Gets the value of the tradData property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the mrgnData property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getMrgnData().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link MarginDataReport3Choice }
-     * 
-     * 
+     * @return
+     *     possible object is
+     *     {@link TradeData6Choice }
+     *     
      */
-    public List<MarginDataReport3Choice> getMrgnData() {
-        if (mrgnData == null) {
-            mrgnData = new ArrayList<MarginDataReport3Choice>();
-        }
-        return this.mrgnData;
+    public TradeData6Choice getTradData() {
+        return tradData;
+    }
+
+    /**
+     * Sets the value of the tradData property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link TradeData6Choice }
+     *     
+     */
+    public SecuritiesFinancingReportingTransactionMarginDataReportV01 setTradData(TradeData6Choice value) {
+        this.tradData = value;
+        return this;
     }
 
     /**
@@ -102,16 +98,6 @@ public class SecuritiesFinancingReportingTransactionMarginDataReportV01 {
     @Override
     public int hashCode() {
         return HashCodeBuilder.reflectionHashCode(this);
-    }
-
-    /**
-     * Adds a new item to the mrgnData list.
-     * @see #getMrgnData()
-     * 
-     */
-    public SecuritiesFinancingReportingTransactionMarginDataReportV01 addMrgnData(MarginDataReport3Choice mrgnData) {
-        getMrgnData().add(mrgnData);
-        return this;
     }
 
     /**

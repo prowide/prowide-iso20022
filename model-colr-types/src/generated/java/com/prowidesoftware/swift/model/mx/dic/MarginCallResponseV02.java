@@ -20,7 +20,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * Usage
  * When sent by the collateral giver the MarginCallResponse message is used to:
  * - fully accept the MarginCallRequest
- * - partial acceptance of a MarginCallrequestl
+ * - partial acceptance of a MarginCallrequestl.
  * 
  * 
  * 

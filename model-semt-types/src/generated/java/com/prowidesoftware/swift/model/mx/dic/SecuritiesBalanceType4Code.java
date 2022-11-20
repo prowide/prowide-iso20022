@@ -50,7 +50,7 @@ public enum SecuritiesBalanceType4Code {
     NOMI,
 
     /**
-     * Balance of securities that is unclassified, ie, is  not identified with one of the existing sub-balance types.
+     * Balance of securities that is unclassified, ie, is not identified with one of the existing sub-balance types.
      * 
      */
     OTHR,

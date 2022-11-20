@@ -27,19 +27,19 @@ public enum FractionalSecurityRule1Code {
 
 
     /**
-     * Round Up x and above on the beneficial owner fractions, where x is the rounding factor. For an example if rounding factor is 0.6 this means that fractional units greater than or equal to 6 will be rounded up and  less than 6 will be rounded down.
+     * Round Up x and above on the beneficial owner fractions, where x is the rounding factor. For an example if rounding factor is 0.6 this means that fractional units greater than or equal to 6 will be rounded up and less than 6 will be rounded down.
      * 
      */
     BORU,
 
     /**
-     * Cash in Lieu on the beneficial owner fractions. 
+     * Cash in Lieu on the beneficial owner fractions.
      * 
      */
     BCIL,
 
     /**
-     * Round Down x and below beneficial owner fractions, where x is the rounding factor. For an example if rounding factor is 0.6 this means that fractional units greater than or equal to 6 will be rounded up and  less than 6 will be rounded down.
+     * Round Down x and below beneficial owner fractions, where x is the rounding factor. For an example if rounding factor is 0.6 this means that fractional units greater than or equal to 6 will be rounded up and less than 6 will be rounded down.
      * 
      */
     BORD;

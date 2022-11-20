@@ -14,7 +14,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * The DTCCCACOSD1 message extends  ISO corporate action movement confirmation message with DTCC corporate action elements not covered in the standard message. 
+ * The DTCCCACOSD1 message extends ISO corporate action movement confirmation message with DTCC corporate action elements not covered in the standard message.
  * 
  * 
  * 

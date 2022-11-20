@@ -25,10 +25,10 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 public class PartiallySettledStatus2 {
 
-    @XmlElement(name = "Rsn")
+    @XmlElement(name = "Rsn", required = true)
     @XmlSchemaType(name = "string")
     protected PartiallySettledStatusReason1Code rsn;
-    @XmlElement(name = "Prtry")
+    @XmlElement(name = "Prtry", required = true)
     protected GenericIdentification13 prtry;
 
     /**

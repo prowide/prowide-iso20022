@@ -96,13 +96,13 @@ public enum DTCUnallocatedAdjustmentReason2Code {
     DFLT,
 
     /**
-     * Holiday  in country of origin.
+     * Holiday in country of origin.
      * 
      */
     HICO,
 
     /**
-     * Insufficient funds  were received from the agent.
+     * Insufficient funds were received from the agent.
      * 
      */
     MASF,
@@ -162,7 +162,7 @@ public enum DTCUnallocatedAdjustmentReason2Code {
     PCHK,
 
     /**
-     * Pending conversion of funds. 
+     * Pending conversion of funds.
      * 
      */
     RRFX,
@@ -228,19 +228,19 @@ public enum DTCUnallocatedAdjustmentReason2Code {
     MSTK,
 
     /**
-     * Pledged Position
+     * Pledged Position.
      * 
      */
     PLEG,
 
     /**
-     * Call Rescinded
+     * Call Rescinded.
      * 
      */
     RESC,
 
     /**
-     * CD Accelerated Maturity
+     * CD Accelerated Maturity.
      * 
      */
     ERLY,
@@ -264,7 +264,7 @@ public enum DTCUnallocatedAdjustmentReason2Code {
     FDIC,
 
     /**
-     * Five Day Grace Period
+     * Five Day Grace Period.
      * 
      */
     FVDG,

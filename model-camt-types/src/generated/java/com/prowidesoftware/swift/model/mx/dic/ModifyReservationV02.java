@@ -16,26 +16,26 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * The ModifyReservation message is sent by a member to the transaction administrator.
  * It is sent by a member to the transaction administrator to request a modification of details of one or more reservation facilities set by the member and managed by the transaction administrator.
  * Usage
- * The purpose of establishing reservations facilities is to ensure part of the liquidity on the account will be used exclusively for specific cash flow operations .
- * There are five types of reservation facilities :
+ * The purpose of establishing reservations facilities is to ensure part of the liquidity on the account will be used exclusively for specific cash flow operations.
+ * There are five types of reservation facilities:
  * - UrgentPaymentReservation: Amount set aside by a participant to reserve liquidity from its own account, exclusively for executing critical payments called urgent payments.
  * - HighlyUrgentPaymentReservation: Amount set aside by a participant to reserve liquidity from its own account, exclusively for executing highly urgent payments.
- * - CashReservation : Amount set aside by a participant to reserve liquidity from its own account, exclusively for executing cash withdrawals.
- * - NetSSSReservation : Amount set aside by a participant to reserve liquidity from its own account, exclusively for the settlement of the multilateral cash balance stemming from the Net Security Settlement System.
- * - ThresholdForInvestment : Amount above which funds will be destined for investment.
+ * - CashReservation: Amount set aside by a participant to reserve liquidity from its own account, exclusively for executing cash withdrawals.
+ * - NetSSSReservation: Amount set aside by a participant to reserve liquidity from its own account, exclusively for the settlement of the multilateral cash balance stemming from the Net Security Settlement System.
+ * - ThresholdForInvestment: Amount above which funds will be destined for investment.
  * The reservation can be effected directly by the member.
- * He has the possibility to :
+ * He has the possibility to:
  * - reset the reserved liquidity to zero
  * - change the reservation amount during the day with immediate effect
  * - input a default reservation amount for the following day(s); valid until a new reservation amount is requested
  * After the receipt of a ModifyReservation message the transaction administrator checks whether the amount of liquidity on the member account is sufficient to set the reservation.
- * If there is enough liquidity available, the requested amount will be reserved. In case the requested amount exceeds the available liquidity, only the available liquidity will be reserved . The difference will not be blocked at a later point, even if the account balance of the member reaches the level of the initial reservation request.
+ * If there is enough liquidity available, the requested amount will be reserved. In case the requested amount exceeds the available liquidity, only the available liquidity will be reserved. The difference will not be blocked at a later point, even if the account balance of the member reaches the level of the initial reservation request.
  * At any time during the operating hours of the system, the member can query the transaction administrator to modify the reservations facilities that the transaction administrator manages for the member.
  * The member can request to modify the reservations based on the following elements:
  * - identification of the system
  * - identification of the account
  * - status of the reservation (default and/or current )
- * - type of reservation
+ * - type of reservation.
  * 
  * 
  * 

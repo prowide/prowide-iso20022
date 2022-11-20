@@ -34,7 +34,7 @@ public enum EventWorkflowStatus1Code {
 
 
     /**
-     * All of the required data has been populated. Any conflicting data has been resolved. Either all information was in agreement (STP) or if manual validation was necessary  authorised review and changes/updates were performed.
+     * All of the required data has been populated. Any conflicting data has been resolved. Either all information was in agreement (STP) or if manual validation was necessary authorised review and changes/updates were performed.
      * 
      */
     WSAP,

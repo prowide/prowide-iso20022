@@ -14,50 +14,46 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * The SecuritiesFinancingReportingReusedCollateralDataTransactionStateReport message is sent by the trade repository (TR) to the other trade repository (TR) or the competent authority or reporting counterparty containing latest state of the transaction.
+ * The SecuritiesFinancingReportingReusedCollateralDataTransactionStateReport message is sent by the trade repository (TR) to the authority or made available to the report submitting entity and the reporting counterparty as well as the entity responsible for reporting, if applicable, containing latest state of the collateral reuse.
  * 
  * 
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SecuritiesFinancingReportingReusedCollateralDataTransactionStateReportV01", propOrder = {
-    "stat",
+    "tradData",
     "splmtryData"
 })
 public class SecuritiesFinancingReportingReusedCollateralDataTransactionStateReportV01 {
 
-    @XmlElement(name = "Stat", required = true)
-    protected List<ReuseDataReportCorrection3> stat;
+    @XmlElement(name = "TradData", required = true)
+    protected TradeData12Choice tradData;
     @XmlElement(name = "SplmtryData")
     protected List<SupplementaryData1> splmtryData;
 
     /**
-     * Gets the value of the stat property.
+     * Gets the value of the tradData property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the stat property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getStat().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link ReuseDataReportCorrection3 }
-     * 
-     * 
+     * @return
+     *     possible object is
+     *     {@link TradeData12Choice }
+     *     
      */
-    public List<ReuseDataReportCorrection3> getStat() {
-        if (stat == null) {
-            stat = new ArrayList<ReuseDataReportCorrection3>();
-        }
-        return this.stat;
+    public TradeData12Choice getTradData() {
+        return tradData;
+    }
+
+    /**
+     * Sets the value of the tradData property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link TradeData12Choice }
+     *     
+     */
+    public SecuritiesFinancingReportingReusedCollateralDataTransactionStateReportV01 setTradData(TradeData12Choice value) {
+        this.tradData = value;
+        return this;
     }
 
     /**
@@ -102,16 +98,6 @@ public class SecuritiesFinancingReportingReusedCollateralDataTransactionStateRep
     @Override
     public int hashCode() {
         return HashCodeBuilder.reflectionHashCode(this);
-    }
-
-    /**
-     * Adds a new item to the stat list.
-     * @see #getStat()
-     * 
-     */
-    public SecuritiesFinancingReportingReusedCollateralDataTransactionStateReportV01 addStat(ReuseDataReportCorrection3 stat) {
-        getStat().add(stat);
-        return this;
     }
 
     /**

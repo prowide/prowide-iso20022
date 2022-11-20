@@ -50,7 +50,7 @@ public enum PrePaymentSpeed1Code {
     ABPS,
 
     /**
-     * Repayment measure for nonamortizing assets not subject to prepayment. It is calculated by dividing the sum of the interest and principal payments received in a month by the outstanding balance
+     * Repayment measure for nonamortizing assets not subject to prepayment. It is calculated by dividing the sum of the interest and principal payments received in a month by the outstanding balance.
      * 
      */
     MOPR,
@@ -74,7 +74,7 @@ public enum PrePaymentSpeed1Code {
     PROP,
 
     /**
-     * Contains the type of prepayment speed of the financial instrument, expressed as a percentage of the Manufactured Housing Prepayment Curve (24-month seasoning scale composed of even step-ups)
+     * Contains the type of prepayment speed of the financial instrument, expressed as a percentage of the Manufactured Housing Prepayment Curve (24-month seasoning scale composed of even step-ups).
      * 
      */
     MAHP;

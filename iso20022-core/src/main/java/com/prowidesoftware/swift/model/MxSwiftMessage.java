@@ -420,9 +420,9 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
      * @deprecated use {@link #getAppHdr()} instead
      */
     @Deprecated
-    @ProwideDeprecated(phase3 = TargetYear.SRU2022)
+    @ProwideDeprecated(phase4 = TargetYear.SRU2023)
     public BusinessHeader getBusinessHeader() {
-        DeprecationUtils.phase2(MxSwiftMessage.class, "getBusinessHeader()", "Use getAppHdr() instead");
+        DeprecationUtils.phase3(MxSwiftMessage.class, "getBusinessHeader()", "Use getAppHdr() instead");
         MxParser parser = new MxParser(this.message());
         return parser.parseBusinessHeader();
     }

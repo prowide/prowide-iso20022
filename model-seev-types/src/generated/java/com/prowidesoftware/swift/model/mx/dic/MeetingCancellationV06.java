@@ -18,7 +18,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * The MeetingCancellation message is sent by the party that sent the MeetingNotification message to the original receiver. It is sent to cancel a previously announced meeting or to advise the withdrawal of a meeting.
  * Usage
  * The MeetingCancellation message is used to advise that the meeting has been cancelled by the account servicer or withdrawn by the Issuer. 
- * This message definition is intended for use with the Business Application Header (head.001.001.01).
+ * This message definition is intended for use with the Business Application Header.
  * 
  * 
  * 

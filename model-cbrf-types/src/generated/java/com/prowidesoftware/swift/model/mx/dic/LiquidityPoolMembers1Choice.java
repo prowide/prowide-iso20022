@@ -12,7 +12,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Choice between head member or subordinate member identifiers of liquidity pool. 
+ * Choice between head member or subordinate member identifiers of liquidity pool.
  * 
  * 
  * 

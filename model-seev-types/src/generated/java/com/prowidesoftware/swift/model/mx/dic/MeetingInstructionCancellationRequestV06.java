@@ -19,7 +19,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * MeetingInstruction message. It is sent to request the cancellation of one, some or all of the instructions included in the original MeetingInstruction message.
  * Usage
  * This message must be answered by a MeetingInstructionStatus message. 
- * This message definition is intended for use with the Business Application Header (head.001.001.01).
+ * This message definition is intended for use with the Business Application Header.
  * 
  * 
  * 

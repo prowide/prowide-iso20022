@@ -18,7 +18,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * The ForeignExchageTradeConfirmationStatusAdvice message is sent from a Central matching utility (CMU) to a market participant to advise the matching status of the trade. 
  * 
  * Usage
- * The confirmation status advice is sent by the CMU to the market participants after they received the confirmation request. 
+ * The confirmation status advice is sent by the CMU to the market participants after they received the confirmation request.
  * 
  * 
  * 

@@ -14,7 +14,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * The DTCCCANODerivativeSD1 message extends ISO corporate action notification (CANO) message with DTCC corporate action derivative notice elements not covered in the standard message. 
+ * The DTCCCANODerivativeSD1 message extends ISO corporate action notification (CANO) message with DTCC corporate action derivative notice elements not covered in the standard message.
  * 
  * 
  * 

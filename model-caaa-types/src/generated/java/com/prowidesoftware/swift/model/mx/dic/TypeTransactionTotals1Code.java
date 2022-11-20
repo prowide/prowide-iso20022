@@ -28,7 +28,7 @@ public enum TypeTransactionTotals1Code {
 
 
     /**
-     * Debit transactions on the cardholder account .
+     * Debit transactions on the cardholder account.
      * 
      */
     DEBT,
@@ -40,7 +40,7 @@ public enum TypeTransactionTotals1Code {
     DBTR,
 
     /**
-     * Credit transactions (refund, account, cash service, as defined  in the transaction service type).
+     * Credit transactions (refund, account, cash service, as defined in the transaction service type).
      * 
      */
     CRDT,

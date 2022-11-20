@@ -108,7 +108,7 @@ public enum InstructionProcessingStatus1Code {
     COSE("COSE"),
 
     /**
-     * Cancellation request from the counterparty is awaiting for your cancellation request or your concent.
+     * Cancellation request from the counterparty is awaiting for your cancellation request or your consent.
      * 
      */
     CPRC("CPRC"),
@@ -246,7 +246,7 @@ public enum InstructionProcessingStatus1Code {
     UNDE("UNDE"),
 
     /**
-     * Modification request from the counterparty is awaiting for your modification request or your concent.
+     * Modification request from the counterparty is awaiting for your modification request or your consent.
      * 
      */
     MPRC("MPRC");

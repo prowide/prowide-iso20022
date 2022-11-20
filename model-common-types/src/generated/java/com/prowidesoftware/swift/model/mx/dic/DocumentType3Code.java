@@ -36,7 +36,7 @@ public enum DocumentType3Code {
     RADM,
 
     /**
-     * Document is a linked payment instruction to which the current payment instruction is related, eg, in a cover scenario.
+     * Document is a linked payment instruction to which the current payment instruction is related, for example, in a cover scenario.
      * 
      */
     RPIN,

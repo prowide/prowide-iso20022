@@ -15,7 +15,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
  * Scope
- * The CreateReservation message is used to request modifications in the details of one particular reservation set by the member and managed by the transaction administrator.
+ * The CreateReservation message is used to create one particular reservation by the member and managed by the transaction administrator.
  * Usage
  * Based on the criteria defined in the CreateReservation message, the transaction administrator will execute or reject the requested creation and respond with a Receipt message as a reply to the request.
  * 

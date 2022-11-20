@@ -27,7 +27,7 @@ public enum ExtendedEventType4Code {
 
 
     /**
-     * Security, usually a form of a derivative, for which the agent or issuer has decided to terminate the derivative based on a change to the underlying security(ies) or a change in strategy. Distinguishes from  Mandatory Exchange, Exchange Offer event types mapped to the same ISO event type code.
+     * Security, usually a form of a derivative, for which the agent or issuer has decided to terminate the derivative based on a change to the underlying security(ies) or a change in strategy. Distinguishes from Mandatory Exchange, Exchange Offer event types mapped to the same ISO event type code.
      * 
      */
     TMTN,
@@ -39,7 +39,7 @@ public enum ExtendedEventType4Code {
     FPAY,
 
     /**
-     * Feature of a security that allows an issuer to make a payment to the security holder. This event will be used for securities subject to redemptions other than those categorized as full and partial calls (for example early Certificate of Deposit redemptions).
+     * Feature of a security that allows an issuer to make a payment to the security holder. This event will be used for securities subject to redemptions other than those categorised as full and partial calls (for example early Certificate of Deposit redemptions).
      * 
      */
     CDRD;

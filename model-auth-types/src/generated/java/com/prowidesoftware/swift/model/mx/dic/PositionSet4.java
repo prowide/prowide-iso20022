@@ -12,7 +12,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * The values either taken directly from the regulation's reporting fields or derived from those fields that will be used by trade repositories to calculate positions.
+ * Values either taken directly from the reporting fields as defined in the local regulation or derived from those fields that will be used by trade repositories to calculate positions.
  * 
  * 
  * 

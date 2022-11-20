@@ -118,7 +118,7 @@ public enum SettlementTransactionType7Code {
     NETT,
 
     /**
-     * Relates to the issue of medium and short term paper (CP, CD, MTN, notes ...) under a program and without syndication arrangement.
+     * Relates to the issue of medium and short term paper (CP, CD, MTN, notes.) under a program and without syndication arrangement.
      * 
      */
     NSYN,
@@ -250,7 +250,7 @@ public enum SettlementTransactionType7Code {
     TURN,
 
     /**
-     * Trade which is guaranteed to be finalized
+     * Trade which is guaranteed to be finalized.
      * 
      */
     GUAR,

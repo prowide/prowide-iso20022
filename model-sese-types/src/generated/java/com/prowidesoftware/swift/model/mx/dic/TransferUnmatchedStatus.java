@@ -26,11 +26,11 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 public class TransferUnmatchedStatus {
 
-    @XmlElement(name = "Rsn")
+    @XmlElement(name = "Rsn", required = true)
     protected TransferUnmatchedStatusReason1 rsn;
-    @XmlElement(name = "DataSrcSchme")
+    @XmlElement(name = "DataSrcSchme", required = true)
     protected GenericIdentification1 dataSrcSchme;
-    @XmlElement(name = "NoRsn")
+    @XmlElement(name = "NoRsn", required = true)
     @XmlSchemaType(name = "string")
     protected NoReasonCode noRsn;
 

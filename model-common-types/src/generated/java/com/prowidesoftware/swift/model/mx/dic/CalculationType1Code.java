@@ -81,7 +81,7 @@ public enum CalculationType1Code {
     AVMA,
 
     /**
-     * The yield of a security calculated by using its book value instead of the current market price.  This term is typically used in the US domestic market.
+     * The yield of a security calculated by using its book value instead of the current market price. This term is typically used in the US domestic market.
      * 
      */
     BOOK,
@@ -165,7 +165,7 @@ public enum CalculationType1Code {
     LSYR,
 
     /**
-     * The yield assuming only mandatory sinks are taken.  This results in a lower paydown of debt; the yield is then calculated to the final payment date.
+     * The yield assuming only mandatory sinks are taken. This results in a lower paydown of debt; the yield is then calculated to the final payment date.
      * 
      */
     LGAL,
@@ -231,7 +231,7 @@ public enum CalculationType1Code {
     SPLL,
 
     /**
-     * The after tax yield grossed up by the maximum federal tax rate of 39.6%.  For comparison to taxable yields.
+     * The after tax yield grossed up by the maximum federal tax rate of 39.6%. For comparison to taxable yields.
      * 
      */
     TXQV,

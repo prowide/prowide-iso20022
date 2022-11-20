@@ -247,7 +247,7 @@ public enum RejectionReason37Code {
     IEXE,
 
     /**
-     * Instruction aims at using  an invalid balance.
+     * Instruction aims at using an invalid balance.
      * 
      */
     INVB,

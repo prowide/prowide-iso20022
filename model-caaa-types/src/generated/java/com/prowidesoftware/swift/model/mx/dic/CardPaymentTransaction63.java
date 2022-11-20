@@ -42,7 +42,7 @@ public class CardPaymentTransaction63 {
     @XmlElement(name = "IntrchngData")
     protected String intrchngData;
     @XmlElement(name = "TxDtls", required = true)
-    protected CardPaymentTransactionDetails32 txDtls;
+    protected CardPaymentTransactionDetails43 txDtls;
 
     /**
      * Gets the value of the saleRefId property.
@@ -199,10 +199,10 @@ public class CardPaymentTransaction63 {
      * 
      * @return
      *     possible object is
-     *     {@link CardPaymentTransactionDetails32 }
+     *     {@link CardPaymentTransactionDetails43 }
      *     
      */
-    public CardPaymentTransactionDetails32 getTxDtls() {
+    public CardPaymentTransactionDetails43 getTxDtls() {
         return txDtls;
     }
 
@@ -211,10 +211,10 @@ public class CardPaymentTransaction63 {
      * 
      * @param value
      *     allowed object is
-     *     {@link CardPaymentTransactionDetails32 }
+     *     {@link CardPaymentTransactionDetails43 }
      *     
      */
-    public CardPaymentTransaction63 setTxDtls(CardPaymentTransactionDetails32 value) {
+    public CardPaymentTransaction63 setTxDtls(CardPaymentTransactionDetails43 value) {
         this.txDtls = value;
         return this;
     }

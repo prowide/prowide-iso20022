@@ -130,7 +130,7 @@ public enum TransactionRejectReason2Code {
     AM_07("AM07"),
 
     /**
-     * Identification of end customer is not consistent with associated account number. (formerly CreditorConsistency)
+     * Identification of end customer is not consistent with associated account number. (formerly CreditorConsistency).
      * 
      */
     @XmlEnumValue("BE01")

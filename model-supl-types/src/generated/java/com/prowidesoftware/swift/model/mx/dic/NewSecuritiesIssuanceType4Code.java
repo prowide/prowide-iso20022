@@ -32,7 +32,7 @@ public enum NewSecuritiesIssuanceType4Code {
     REFU,
 
     /**
-     * New Security issued that has not been refunded and the maturity date of the original underlying security is unchanged. Applicable only in the frame of a Partial Defeasance PDEF corporate action event. 
+     * New Security issued that has not been refunded and the maturity date of the original underlying security is unchanged. Applicable only in the frame of a Partial Defeasance PDEF corporate action event.
      * 
      */
     NREF;

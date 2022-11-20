@@ -37,7 +37,7 @@ public enum OrderStatus6Code {
     DONE,
 
     /**
-     * Order has been rejected by sell-side.  NOTE:  An order can be rejected subsequent to order acknowledgment, i.e. an order can pass from New to Rejected status.
+     * Order has been rejected by sell-side. NOTE: An order can be rejected subsequent to order acknowledgment, i.e. an order can pass from New to Rejected status.
      * 
      */
     REJT,

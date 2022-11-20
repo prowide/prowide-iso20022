@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Reason for a  pending settlement status.
+ * Reason for a pending settlement status.
  * 
  * 
  * 

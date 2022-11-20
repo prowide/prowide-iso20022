@@ -70,7 +70,7 @@ public enum FinancialInstrumentContractType1Code {
     OPTN,
 
     /**
-     * Contract of other financial instrument contract type. 
+     * Contract of other financial instrument contract type.
      * 
      */
     OTHR,

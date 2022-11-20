@@ -134,7 +134,7 @@ public enum CorporateActionEventType1Code {
     EXRI,
 
     /**
-     * Event is a generic change. For example,  a change in the terms of an issue, a change in the identification of a security, change of a board lot, a change from global to definitive.
+     * Event is a generic change. For example, a change in the terms of an issue, a change in the identification of a security, change of a board lot, a change from global to definitive.
      * 
      */
     CHAN,

@@ -27,7 +27,7 @@ public enum SettledStatusReason1Code {
 
 
     /**
-     * Units are partially settled
+     * Units are partially settled.
      * 
      */
     UPST,

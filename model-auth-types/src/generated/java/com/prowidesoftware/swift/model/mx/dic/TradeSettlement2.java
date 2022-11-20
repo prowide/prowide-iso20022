@@ -18,7 +18,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Trade settlement details for this invoice which involves the payment of an outstanding debt, account, or charge
+ * Trade settlement details for this invoice which involves the payment of an outstanding debt, account, or charge.
  * 
  * 
  * 

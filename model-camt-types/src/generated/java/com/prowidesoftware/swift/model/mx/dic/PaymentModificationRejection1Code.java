@@ -60,21 +60,21 @@ public enum PaymentModificationRejection1Code {
     UM_02("UM02"),
 
     /**
-     * InstructionCode  cannot be modified.
+     * InstructionCode cannot be modified.
      * 
      */
     @XmlEnumValue("UM03")
     UM_03("UM03"),
 
     /**
-     * RequestedExecutionDate  cannot be modified.
+     * RequestedExecutionDate cannot be modified.
      * 
      */
     @XmlEnumValue("UM04")
     UM_04("UM04"),
 
     /**
-     * ValueDate  cannot be modified.
+     * ValueDate cannot be modified.
      * 
      */
     @XmlEnumValue("UM05")

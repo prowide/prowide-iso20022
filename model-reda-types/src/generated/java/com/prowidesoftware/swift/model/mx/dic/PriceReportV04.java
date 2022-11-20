@@ -21,12 +21,12 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * 
  * USAGE
  * 
- * The PriceReport message is sent by the report provider to the report recipient to:
+ * The PriceReport message is sent by the report provider to the report recipient to: 
  * - report prices for one or several different financial instruments for one or several different trade dates,
  * - report statistical information about the valuation of a financial instrument,
  * - inform another party that the quotation of a financial instrument is suspended,
  * - report prices that are used for other purposes than the execution of investment funds orders.
- * 
+ * .
  * 
  * 
  * 

@@ -87,13 +87,13 @@ public enum DTCUnallocatedAdjustmentReason1Code {
     DFLT,
 
     /**
-     * Holiday  in country of origin.
+     * Holiday in country of origin.
      * 
      */
     HICO,
 
     /**
-     * Insufficient funds  were received from the agent.
+     * Insufficient funds were received from the agent.
      * 
      */
     MASF,
@@ -153,7 +153,7 @@ public enum DTCUnallocatedAdjustmentReason1Code {
     PCHK,
 
     /**
-     * Pending conversion of funds. 
+     * Pending conversion of funds.
      * 
      */
     RRFX,

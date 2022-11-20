@@ -82,7 +82,7 @@ public enum SystemEventType2Code {
     LWSU,
 
     /**
-     * Event is the cutoff time for the Euro1 system, ie, the deadline for processing Euro1 transactions.
+     * Event is the cutoff time for the Euro1 system, that is, the deadline for processing Euro1 transactions.
      * 
      */
     EUCO,

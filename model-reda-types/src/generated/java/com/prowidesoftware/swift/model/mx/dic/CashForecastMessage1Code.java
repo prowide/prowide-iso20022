@@ -36,7 +36,7 @@ public enum CashForecastMessage1Code {
     CF_40("CF40"),
 
     /**
-     * Fund detailed estimated cash forecast Report (042)
+     * Fund detailed estimated cash forecast Report (042).
      * 
      */
     @XmlEnumValue("CF42")
@@ -50,7 +50,7 @@ public enum CashForecastMessage1Code {
     CF_41("CF41"),
 
     /**
-     * Fund detailed confirmed cash forecast report (camt.043)
+     * Fund detailed confirmed cash forecast report (camt.043).
      * 
      */
     @XmlEnumValue("CF43")

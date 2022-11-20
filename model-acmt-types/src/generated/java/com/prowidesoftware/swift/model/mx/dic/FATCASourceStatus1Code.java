@@ -26,7 +26,7 @@ public enum FATCASourceStatus1Code {
 
 
     /**
-     * Source of the Foreign Account Tax Compliance Act (FATCA) status calculated
+     * Source of the Foreign Account Tax Compliance Act (FATCA) status calculated.
      * 
      */
     CALC,

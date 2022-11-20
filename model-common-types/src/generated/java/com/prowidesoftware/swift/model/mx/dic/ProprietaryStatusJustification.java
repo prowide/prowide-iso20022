@@ -12,7 +12,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Defines proprietary reason  to reject a transaction.
+ * Defines proprietary reason to reject a transaction.
  * 
  * 
  * 

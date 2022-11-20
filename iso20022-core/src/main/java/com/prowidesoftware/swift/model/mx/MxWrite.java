@@ -29,7 +29,7 @@ public interface MxWrite {
      * @deprecated use {@link MxWriteImpl#write(String, AbstractMX, Class[], MxWriteParams)} instead
      */
     @Deprecated
-    @ProwideDeprecated(phase2 = TargetYear.SRU2022)
+    @ProwideDeprecated(phase3 = TargetYear.SRU2023)
     String message(String namespace, AbstractMX obj, Class[] classes, final String prefix, boolean includeXMLDeclaration);
 
     /**

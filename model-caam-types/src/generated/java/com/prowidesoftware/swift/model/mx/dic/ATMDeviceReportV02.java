@@ -15,7 +15,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * The ATMDeviceReport message is sent to an acquirer by an ATM, or forwarded by an agent, to report:
  * - The result of maintenance commands performed by the ATM,
  * - The components of the ATM,
- * - The status of the ATM components
+ * - The status of the ATM components.
  * 
  * 
  * 

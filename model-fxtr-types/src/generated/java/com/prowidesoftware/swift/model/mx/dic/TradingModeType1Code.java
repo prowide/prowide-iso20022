@@ -49,7 +49,7 @@ public enum TradingModeType1Code {
     NETR,
 
     /**
-     * When issuer issues the deposits, market members subscribe the deposits.  
+     * When issuer issues the deposits, market members subscribe the deposits.
      * 
      */
     AUCT,
@@ -61,7 +61,7 @@ public enum TradingModeType1Code {
     MARC,
 
     /**
-     * Counterparties neogiate trading details to execute trades. .
+     * Counterparties neogiate trading details to execute trades.
      * 
      */
     BILA,

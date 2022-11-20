@@ -325,7 +325,7 @@ public enum RejectionReason28Code {
     VASU,
 
     /**
-     * The instruction is irrevocable
+     * The instruction is irrevocable.
      * 
      */
     INIR,
@@ -379,7 +379,7 @@ public enum RejectionReason28Code {
     SIDE,
 
     /**
-     * This is primarily used when the Notice of Execution received by the buy-side contains fees, gross trade amount, net trade amount, etc., values that differ from the buy-side's calculations.  Buy-side may reject the trade if they feel that the difference in calculations is too high.
+     * This is primarily used when the Notice of Execution received by the buy-side contains fees, gross trade amount, net trade amount, etc., values that differ from the buy-side's calculations. Buy-side may reject the trade if they feel that the difference in calculations is too high.
      * 
      */
     CADI,

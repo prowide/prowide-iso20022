@@ -26,13 +26,13 @@ public enum MatchingProcess1Code {
 
 
     /**
-     * The referrenced transaction is requested to be unmatched.
+     * The referenced transaction is requested to be unmatched.
      * 
      */
     UNMT,
 
     /**
-     * Matching process is to be resumed for the referrenced transaction.
+     * Matching process is to be resumed for the referenced transaction.
      * 
      */
     MTRE;

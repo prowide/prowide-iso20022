@@ -27,19 +27,19 @@ public enum HoldingsPlanType1Code {
 
 
     /**
-     * Identifies whether or not.holding to be transferred belong to an investment plan.
+     * Holding to be transferred belongs to an investment plan.
      * 
      */
     INVP,
 
     /**
-     * Identifies whether or not holdings to be transferred belong to switch plan.
+     * Holding to be transferred belongs to a switch plan.
      * 
      */
     SWIP,
 
     /**
-     * Identifies whether or not holdings to be transferred belong to a withdrawal plan.
+     * Holding to be transferred belongs to a withdrawal plan.
      * 
      */
     PLAR;

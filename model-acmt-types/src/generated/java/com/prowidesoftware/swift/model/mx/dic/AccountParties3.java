@@ -17,7 +17,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 /**
  * Any party who is related to an investment account.
  * 
- * 
+ * .
  * 
  * 
  * 

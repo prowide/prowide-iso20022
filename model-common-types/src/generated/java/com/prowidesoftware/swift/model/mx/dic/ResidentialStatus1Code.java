@@ -33,7 +33,7 @@ public enum ResidentialStatus1Code {
     RESI,
 
     /**
-     * Pernament resident.
+     * Permanent resident.
      * 
      */
     PRES,

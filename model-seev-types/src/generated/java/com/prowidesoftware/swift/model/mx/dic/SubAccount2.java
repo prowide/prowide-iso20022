@@ -12,7 +12,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * The subaccount of the safekeeping account
+ * The subaccount of the safekeeping account.
  * 
  * 
  * 

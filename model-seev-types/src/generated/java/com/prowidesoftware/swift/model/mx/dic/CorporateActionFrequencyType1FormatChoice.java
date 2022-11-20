@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Choice of formats to  express the frequency of a CA event.
+ * Choice of formats to express the frequency of a CA event.
  * 
  * 
  * 

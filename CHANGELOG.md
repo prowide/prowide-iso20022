@@ -1,13 +1,24 @@
 # Prowide ISO 20022 - CHANGELOG
 
-#### 9.2.9 - October 2022
+#### 9.3.4 SNAPSHOT
+  * (GH-63) Added message type versions in categories: acmt, admi, auth, caaa, camt, catm, fxtr, pacs, reda, seev, semt, sese, setr, supl and trck
+  * Added new business process and messages for: caad, cafc, cain, casp
+  * Removed obsolete trea (treasury) message types
+  * Added model and support for the BusinessApplicationHeaderV03
+
+#### 9.3.3 - October 2022
   * (PW-1082) Added support in the JaxbContextCache and its default implementation to create the context without the classes parameter
 
-#### 9.2.8 - August 2022
+#### 9.3.2 - August 2022
   * (PW-922) Added a parameter in the MxReadParams used by the AbstractMX#parse to control the log verbosity when parsing unrecognized messages
 
-#### 9.2.7 - August 2022
+#### 9.3.1 - August 2022
   * Added model for "trck" types
+  
+#### 9.3.0 - May 2022
+  * SWIFT Standard release update 2022 (live 21 November 2022)
+  * Yearly revision of deprecation phase (see http://www.prowidesoftware.com/resources/deprecation-policy)
+  * Updated gson dependency to 2.9.0
   * (GH-45) Fixed Json serialization in Java 17
 
 #### 9.2.6 - March 2022

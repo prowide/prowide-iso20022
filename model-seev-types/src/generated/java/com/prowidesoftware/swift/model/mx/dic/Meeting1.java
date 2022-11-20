@@ -19,7 +19,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Specifies the physical parameters of a general meeting. Several dates and places can be defined for a  meeting.
+ * Specifies the physical parameters of a general meeting. Several dates and places can be defined for a meeting.
  * 
  * 
  * 

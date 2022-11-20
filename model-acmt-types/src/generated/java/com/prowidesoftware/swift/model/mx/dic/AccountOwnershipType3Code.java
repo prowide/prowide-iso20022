@@ -51,7 +51,7 @@ public enum AccountOwnershipType3Code {
     COMO,
 
     /**
-     * Minor's account, registered in the minor's name. Since the minor cannot legally own property,  the custodian of the account maintains control of the account.
+     * Minor's account, registered in the minor's name. Since the minor cannot legally own property, the custodian of the account maintains control of the account.
      * 
      */
     CUST,
@@ -99,19 +99,19 @@ public enum AccountOwnershipType3Code {
     NFPO,
 
     /**
-     * Account owner is an other type of non individual organisation.
+     * Account owner is another type of non individual organisation.
      * 
      */
     ONIS,
 
     /**
-     * Account owner is an entity located in the European Union which can be considered neither as a legal entity (eg. company, corporate), nor as an individual person, nor as a UCITS (Undertakings for Collective Investment of Transferable Securities) fund.
+     * Account owner is an entity located in the European Union which can be considered neither as a legal entity (for example, company, corporate), nor as an individual person, nor as a UCITS (Undertakings for Collective Investment of Transferable Securities) fund.
      * 
      */
     EURE,
 
     /**
-     * Account owner is a governemental organisation.
+     * Account owner is a government organisation.
      * 
      */
     GOVO,

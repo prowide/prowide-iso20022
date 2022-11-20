@@ -26,13 +26,13 @@ public enum DataType1Code {
 
 
     /**
-     * Specified type of  data is exercise data.
+     * Specified type of data is exercise data.
      * 
      */
     EXDA,
 
     /**
-     * Specified type of  data is trading data.
+     * Specified type of data is trading data.
      * 
      */
     TRDA;

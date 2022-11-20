@@ -12,7 +12,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Certificate issuer name and serial number  (see X.509).
+ * Certificate issuer name and serial number (see X.509).
  * 
  * 
  * 

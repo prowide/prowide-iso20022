@@ -12,7 +12,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Information related to the request of a diagnostic from an ATM..
+ * Information related to the request of a diagnostic from an ATM.
  * 
  * 
  * 

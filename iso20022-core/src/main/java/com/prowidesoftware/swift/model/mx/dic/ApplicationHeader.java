@@ -23,6 +23,6 @@ import com.prowidesoftware.swift.model.mx.LegacyAppHdr;
  * @deprecated use ApplicationHeader from com.prowidesoftware.swift.model.mx package instead
  */
 @Deprecated
-@ProwideDeprecated(phase3 = TargetYear.SRU2022)
+@ProwideDeprecated(phase4 = TargetYear.SRU2023)
 public class ApplicationHeader extends LegacyAppHdr {
 }

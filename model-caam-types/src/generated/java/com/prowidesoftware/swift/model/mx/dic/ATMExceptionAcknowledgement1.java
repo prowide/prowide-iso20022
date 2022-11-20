@@ -12,7 +12,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Information related to the acknowledgement  of an ATM exception.
+ * Information related to the acknowledgement of an ATM exception.
  * 
  * 
  * 

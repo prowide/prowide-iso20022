@@ -22,7 +22,10 @@ archivesBaseName = 'pw-iso20022'
 group 'com.prowidesoftware'
 
 project.ext {
-	SRU = 'SRU2021'
+	SRU = 'SRU2022'
+	// this is not working since the version is unresolved at this point, to publish snapshots just uncomment below until this is fixed
+	//nexusRepo = 'maven-snapshots'
+	nexusRepo = project.version.endsWith('-SNAPSHOT') ? 'maven-snapshots' : 'maven-releases'
 }
 
 scmVersion {
@@ -51,6 +54,16 @@ allprojects {
 
 	repositories {
 		mavenCentral()
+		// Prowide repo releases
+		if (project.hasProperty('prowideRepo')) {
+			maven {
+				url "${project.prowideRepo}/repository/${nexusRepo}/"
+				credentials {
+					username "${project.prowideRepoUser}"
+					password "${project.prowideRepoPass}"
+				}
+			}
+		}
 	}
 
 	sourceSets.main.java.srcDirs = ['src/main/java', 'src/generated/java']
@@ -79,7 +92,7 @@ subprojects {
 
 	dependencies {
 		implementation 'org.apache.commons:commons-lang3:3.12.0'
-		implementation 'com.google.code.gson:gson:2.8.9'
+		implementation 'com.google.code.gson:gson:2.9.0'
 	}
 
 	tasks.withType(Jar) {
@@ -101,7 +114,7 @@ configure(subprojects.findAll {it.name.endsWith('-mx')}) {
 		api project(':iso20022-core')
 		implementation project(specificTypesProject)
 		implementation 'org.apache.commons:commons-lang3:3.12.0'
-		implementation 'com.google.code.gson:gson:2.8.9'
+		implementation 'com.google.code.gson:gson:2.9.0'
 		compileOnly 'javax.persistence:javax.persistence-api:2.2'
 	}
 }
@@ -109,25 +122,29 @@ configure(subprojects.findAll {it.name.endsWith('-mx')}) {
 configure(subprojects.findAll {it.name.endsWith('-types')}) {
 	javadoc.enabled = false
 }
+configure(subprojects.findAll {it.name.endsWith('-mx')}) {
+	javadoc.enabled = false
+}
 
 project(':iso20022-core') {
 	dependencies {
 		// included build
-		api 'com.prowidesoftware:pw-swift-core:SRU2021-9.2.18'
+		api 'com.prowidesoftware:pw-swift-core:SRU2022-9.3.8'
+
 
 		implementation 'org.apache.commons:commons-lang3:3.12.0'
-		implementation 'com.google.code.gson:gson:2.8.9'
+		implementation 'com.google.code.gson:gson:2.9.0'
 
 		compileOnly 'javax.persistence:javax.persistence-api:2.2'
 		compileOnly 'javax.validation:validation-api:2.0.1.Final'
 
 		testImplementation 'javax.persistence:javax.persistence-api:2.2'
-		testImplementation('org.junit.jupiter:junit-jupiter:5.8.1')
-		testImplementation group: 'com.google.guava', name: 'guava', version: '29.0-jre'
-		testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.21.0'
-		testImplementation group: 'org.xmlunit', name: 'xmlunit-core', version: '2.8.3'
-		testImplementation group: 'org.xmlunit', name: 'xmlunit-matchers', version: '2.8.3'
-		testImplementation group: 'org.xmlunit', name: 'xmlunit-assertj', version: '2.8.3'
+		testImplementation('org.junit.jupiter:junit-jupiter:5.8.2')
+		testImplementation group: 'com.google.guava', name: 'guava', version: '31.1-jre'
+		testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.22.0'
+		testImplementation group: 'org.xmlunit', name: 'xmlunit-core', version: '2.9.0'
+		testImplementation group: 'org.xmlunit', name: 'xmlunit-matchers', version: '2.9.0'
+		testImplementation group: 'org.xmlunit', name: 'xmlunit-assertj', version: '2.9.0'
 		testImplementation project(':model-acmt-mx')
 		testImplementation project(':model-acmt-types')
 		testImplementation project(':model-camt-mx')
@@ -181,12 +198,20 @@ def formattedDate() {
 	new Date().format('dd MMM yyyy')
 }
 
-//task aggregatedJavadoc(type: Javadoc) {
+// define an array of project names
+def projectsIncludedInJavadoc = [
+	'iso20022-core',
+	'model-pacs-mx',
+	'model-xsys-mx'
+]
+
 javadoc {
 	group = 'Documentation'
 	description = 'Generate javadocs from all child projects as if it was a single project'
 
+	verbose false
 	failOnError false
+	//maxMemory = 2G
 	destinationDir = file("$buildDir/docs/javadoc")
 
 	options.overview = "overview.html"
@@ -196,16 +221,32 @@ javadoc {
 	options.footer="${SRU}, generated ${formattedDate()}"
 	options.author false
 	options.links 'http://docs.oracle.com/javase/8/docs/api/'
-	options.addStringOption 'Xdoclint:none', '-quiet'
 
 	// this will fail when the option is not available (older JDK)
 	options.addBooleanOption("-allow-script-in-comments", true)
 
 	options.bottom = '<script src="//static.getclicky.com/js"></script><script>try{ clicky.init(101039278); }catch(e){}</script>'
-	exclude "**/dic/**"
 
-	subprojects.each { proj ->
-		proj.tasks.withType(Javadoc).each { javadocTask ->
+	// exclude the dictionary package because it is huge; and being simple POJO classes does not add to much value to the Javadoc
+//	exclude "**/dic/**"
+
+	// exclude miscellaneous/generic categories
+//	exclude "**/model/mx/MxAcmt**"
+//	exclude "**/model/mx/MxAdmi**"
+//	exclude "**/model/mx/MxAuth**"
+//	exclude "**/model/mx/MxCbrf**"
+//	exclude "**/model/mx/MxColr**"
+//	exclude "**/model/mx/MxFxtr**"
+//	exclude "**/model/mx/MxReda**"
+//	exclude "**/model/mx/MxTrck**"
+
+	options.addStringOption('Xdoclint:none', '-quiet')
+	options.addStringOption('encoding', 'UTF-8')
+	options.addStringOption('charSet', 'UTF-8')
+
+	// iterate projectsIncludedInJavadoc array and include projects source folders in the javadoc
+	projectsIncludedInJavadoc.each { projectName ->
+		project(projectName).tasks.withType(Javadoc).each { javadocTask ->
 			source += javadocTask.source
 			classpath += javadocTask.classpath
 			excludes += javadocTask.excludes
@@ -227,13 +268,9 @@ artifacts {
 // declared dependencies for pom generation
 dependencies {
 	// included build (keep in sync with the latest Prowide Core version)
-	api 'com.prowidesoftware:pw-swift-core:SRU2021-9.2.18'
+	api 'com.prowidesoftware:pw-swift-core:SRU2022-9.3.8'
 	implementation 'org.apache.commons:commons-lang3:3.12.0'
-	implementation 'com.google.code.gson:gson:2.8.9'
-}
-
-project.ext {
-	nexusRepo = project.version.endsWith('-SNAPSHOT') ? 'maven-snapshots' : 'maven-releases'
+	implementation 'com.google.code.gson:gson:2.9.0'
 }
 
 publishing {
@@ -300,6 +337,10 @@ publishing {
 	}
 }
 jar.finalizedBy generatePomFileForMavenJavaPublication
+
+publish {
+	println "Using ${nexusRepo} for publishing ${version}"
+}
 
 tasks.withType(GenerateModuleMetadata) {
 	// to avoid metadata in the generated pom.xml files

@@ -16,7 +16,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * The ModifyMember message is sent by a member to the transaction administrator.
  * It is used to request modifications to the static data related to the profile of a member that the transaction administrator maintains.
  * Usage
- * The transaction administrator is in charge of providing the members with business information. The term business information covers all information related to the management of the system, that is, not related to the transactions entered into the system. The type of business information available can vary depending on the system. Among other things, it can , refer to information about the membership of the system.
+ * The transaction administrator is in charge of providing the members with business information. The term business information covers all information related to the management of the system, that is, not related to the transactions entered into the system. The type of business information available can vary depending on the system. Among other things, it can, refer to information about the membership of the system.
  * At any time during the operating hours of the system, the member can request the transaction administrator to modify the information it maintains about the member.
  * The member will submit a message requesting modifications in one or more of the following criteria:
  * - identification of the member

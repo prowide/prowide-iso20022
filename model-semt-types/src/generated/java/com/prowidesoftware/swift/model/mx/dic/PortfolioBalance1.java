@@ -26,9 +26,9 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 public class PortfolioBalance1 {
 
-    @XmlElement(name = "SummryBal")
+    @XmlElement(name = "SummryBal", required = true)
     protected List<BalanceDetails5> summryBal;
-    @XmlElement(name = "DtldBal")
+    @XmlElement(name = "DtldBal", required = true)
     protected List<BalanceDetails6> dtldBal;
 
     /**

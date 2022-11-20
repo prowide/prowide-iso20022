@@ -173,7 +173,7 @@ public enum CorporateActionEventType15Code {
     COOP,
 
     /**
-     * Procedure that aims to obtain consent of holder  to a proposal by the issuer or a third party without convening a meeting. For example, consent to change the terms of a bond.
+     * Procedure that aims to obtain consent of holder to a proposal by the issuer or a third party without convening a meeting. For example, consent to change the terms of a bond.
      * 
      */
     CONS,
@@ -185,7 +185,7 @@ public enum CorporateActionEventType15Code {
     CONV,
 
     /**
-     * Occurrence of credit derivative for which the issuer of one or several underlying securities is unable to fulfill his financial obligations (as defined in terms and conditions).
+     * Occurrence of credit derivative for which the issuer of one or several underlying securities is unable to fulfill its financial obligations (as defined in terms and conditions).
      * 
      */
     CREV,
@@ -197,7 +197,7 @@ public enum CorporateActionEventType15Code {
     DECR,
 
     /**
-     * Separation of components that comprise a security, for example, usually units comprised of warrants and bond or warrants and equity . Units may be broken up at the request of the security holder or based on market convention.
+     * Separation of components that comprise a security, for example, usually units comprised of warrants and bond or warrants and equity. Units may be broken up at the request of the security holder or based on market convention.
      * 
      */
     DETI,
@@ -233,7 +233,7 @@ public enum CorporateActionEventType15Code {
     DTCH,
 
     /**
-     * Exchange of holdings for other securities and/or cash. The exchange can be either mandatory or voluntary involving the exchange of outstanding securities for different securities and/or cash. For example "exchange offer", "capital reorganisation" or "funds separation" .
+     * Exchange of holdings for other securities and/or cash. The exchange can be either mandatory or voluntary involving the exchange of outstanding securities for different securities and/or cash. For example "exchange offer", "capital reorganisation" or "funds separation".
      * 
      */
     EXOF,
@@ -251,7 +251,7 @@ public enum CorporateActionEventType15Code {
     MCAL,
 
     /**
-     * Increase in the face value of a single security. The number of circulating securities remains unchanged .
+     * Increase in the face value of a single security. The number of circulating securities remains unchanged.
      * 
      */
     INCR,
@@ -323,7 +323,7 @@ public enum CorporateActionEventType15Code {
     OTHR,
 
     /**
-     * Occurs when securities with different characteristics, for example, shares with different entitlements to dividend or voting rights, become identical in all respects, for example , pari-passu or assimilation. May be scheduled in advance, for example, shares resulting from a bonus may become fungible after a pre-set period of time, or may result from outside events, for example, merger, reorganisation, issue of supplementary tranches.
+     * Occurs when securities with different characteristics, for example, shares with different entitlements to dividend or voting rights, become identical in all respects, for example, pari-passu or assimilation. May be scheduled in advance, for example, shares resulting from a bonus may become fungible after a pre-set period of time, or may result from outside events, for example, merger, reorganisation, issue of supplementary tranches.
      * 
      */
     PARI,

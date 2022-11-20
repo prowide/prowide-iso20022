@@ -21,7 +21,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * This message is sent to advise the quantity of securities held by an account owner. The balance is specified for the securities for which the meeting is taking place. The message is also used to amend a previously sent MeetingEntitlementNotification. 
  * The MeetingEntitlementNotification message may be sent either before receiving a voting instruction to confirm the entitlement; or after having received a voting instruction to confirm details of the person attending the meeting. 
  * The message may also be used in place of an attendance card or to confirm entitlements in case of bearer shares.
- * This message definition is intended for use with the Business Application Header (head.001.001.01).
+ * This message definition is intended for use with the Business Application Header.
  * 
  * 
  * 

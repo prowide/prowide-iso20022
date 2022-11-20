@@ -253,7 +253,7 @@ public enum UnmatchedStatusReason1Code {
     NMAS,
 
     /**
-     * Safekeeping account used as a matching criteria on the market concerned  does not match.
+     * Safekeeping account used as a matching criteria on the market concerned does not match.
      * 
      */
     SAFE,

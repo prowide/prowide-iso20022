@@ -45,7 +45,7 @@ public enum Algorithm2Code {
     E_3_DC("E3DC"),
 
     /**
-     * DUKPT (Derived Unique Key Per Transaction) algorithm, as specified in ANSI X9.24-2004, Annex A, and ISO/DIS 13492-2006.  - (ASN.1 Object Identifier: id-dukpt-wrap).
+     * DUKPT (Derived Unique Key Per Transaction) algorithm, as specified in ANSI X9.24-2004, Annex A, and ISO/DIS 13492-2006. - (ASN.1 Object Identifier: id-dukpt-wrap).
      * 
      */
     DKPT("DKPT"),

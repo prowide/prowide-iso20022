@@ -20,7 +20,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * Usage
  * The FIToFIPaymentCancellationRequest message must be answered with a:
  * - ResolutionOfInvestigation message with a positive final outcome when the case assignee can perform the requested cancellation
- * - ResolutionOfInvestigation message with a negative final outcome when the case assignee may perform the requested cancellation but fails to do so (too late, irrevocable instruction, ...)
+ * - ResolutionOfInvestigation message with a negative final outcome when the case assignee may perform the requested cancellation but fails to do so (too late, irrevocable instruction.)
  * - RejectInvestigation message when the case assignee is unable or not authorised to perform the requested cancellation
  * - NotificationOfCaseAssignment message to indicate whether the case assignee will take on the case himself or reassign the case to a subsequent party in the payment processing chain.
  * A FIToFIPaymentCancellationRequest message concerns one and only one original payment instruction at a time.

@@ -33,7 +33,7 @@ public enum StayOnSideType1Code {
     OFFR,
 
     /**
-     * An order pegged against  the bid price.
+     * An order pegged against the bid price.
      * 
      */
     BIDE,

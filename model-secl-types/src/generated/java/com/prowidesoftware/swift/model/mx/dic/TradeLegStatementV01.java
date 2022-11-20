@@ -16,8 +16,8 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 /**
  * This message is sent by the central counterparty (CCP) to a Clearing member to report all trades that have been executed by the trading platform.
  * This message may be either sent:
- * -  during the day (to report trades execution by batch) or
- * -  as an end of day report.
+ * - during the day (to report trades execution by batch) or
+ * - as an end of day report.
  * 
  * 
  * 

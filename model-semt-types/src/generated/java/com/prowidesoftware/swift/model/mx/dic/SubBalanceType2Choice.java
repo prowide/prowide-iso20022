@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Choice of SubBalance
+ * Choice of SubBalance.
  * 
  * 
  * 

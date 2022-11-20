@@ -46,7 +46,7 @@ public enum TMSContactLevel2Code {
     DTIM,
 
     /**
-     * After the end of the customer session
+     * After the end of the customer session.
      * 
      */
     ENCS;

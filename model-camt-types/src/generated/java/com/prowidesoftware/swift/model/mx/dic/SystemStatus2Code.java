@@ -28,19 +28,19 @@ public enum SystemStatus2Code {
 
 
     /**
-     * System is suspended, ie, not operational.
+     * System is suspended, that is, not operational.
      * 
      */
     SUSP,
 
     /**
-     * System is functioning normally, ie, operational.
+     * System is functioning normally, that is, operational.
      * 
      */
     ACTV,
 
     /**
-     * System is closed (eg. normal closure of an RTGS)
+     * System is closed (eg. normal closure of an RTGS).
      * 
      */
     CLSD,

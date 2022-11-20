@@ -12,7 +12,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Specifies amounts in the framework of a corporate action event..
+ * Specifies amounts in the framework of a corporate action event.
  * 
  * 
  * 

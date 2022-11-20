@@ -26,7 +26,7 @@ public enum CancellationStatus2Code {
 
 
     /**
-     * Cancellation instruction / request has been sent to the next party, ie, the next intermediary.
+     * Cancellation instruction/request has been sent to the next party, that is, the next intermediary.
      * 
      */
     STNP,

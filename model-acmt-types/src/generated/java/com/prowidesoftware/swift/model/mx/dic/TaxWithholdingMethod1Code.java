@@ -28,25 +28,25 @@ public enum TaxWithholdingMethod1Code {
 
 
     /**
-     * Indicates the tax is withheld at source.
+     * Tax is withheld at source.
      * 
      */
     WTHD,
 
     /**
-     * Indicates the tax information is reported to the tax authorithies and therefore not withheld at source.
+     * Tax information is reported to the tax authorities and therefore not withheld at source.
      * 
      */
     REPT,
 
     /**
-     * Indicates that a tax certificate is provided by the beneficiary from his tax authorithy in his country of residence. Therefore, the obligation of withholding tax is waived and tax infrmation will be reported to the tax authorithies.
+     * Tax certificate is provided by the beneficiary from its tax authority in its country of residence. Therefore, the obligation of withholding tax is waived and tax information will be reported to the tax authorities.
      * 
      */
     CRTF,
 
     /**
-     * Indicates the tax is withheld at source and that the tax information is also reported to the tax authorities.
+     * Tax is withheld at source and the tax information is also reported to the tax authorities.
      * 
      */
     WTRE;

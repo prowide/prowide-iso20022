@@ -103,7 +103,7 @@ public enum DTCUnallocatedAdjustmentReason4Code {
     CSHR,
 
     /**
-     * Reason is due to a CD accelerated maturity
+     * Reason is due to a CD accelerated maturity.
      * 
      */
     ERLY,
@@ -121,7 +121,7 @@ public enum DTCUnallocatedAdjustmentReason4Code {
     DFLT,
 
     /**
-     * Reason is due to a five day grace period
+     * Reason is due to a five day grace period.
      * 
      */
     FVDG,
@@ -265,7 +265,7 @@ public enum DTCUnallocatedAdjustmentReason4Code {
     PLEG,
 
     /**
-     * Reason is due to pending conversion of funds. 
+     * Reason is due to pending conversion of funds.
      * 
      */
     RRFX,

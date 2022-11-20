@@ -27,7 +27,7 @@ public enum EntryStatus3Code {
     /**
      * Booked means that the transfer of money has been completed between account servicer and account owner
      * 
-     * Usage :   
+     * Usage: 
      * Status Booked does not necessarily imply finality of money as this depends on other factors such as the payment system used, the completion of the end-to-end transaction and the terms agreed between account servicer and owner.
      * Status Booked is the only status that can be reversed.
      * 

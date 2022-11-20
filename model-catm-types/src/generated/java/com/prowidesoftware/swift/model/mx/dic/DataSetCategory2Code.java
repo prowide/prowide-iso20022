@@ -70,7 +70,7 @@ public enum DataSetCategory2Code {
     TXCP,
 
     /**
-     * Batch upload response for the batch capture of transactions.
+     * Batch download response for the batch capture of transactions.
      * 
      */
     AKCP,

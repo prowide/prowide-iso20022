@@ -23,7 +23,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 public class PartyPrivate1 {
 
-    @XmlElement(name = "PrvtId")
+    @XmlElement(name = "PrvtId", required = true)
     protected PersonIdentification4 prvtId;
 
     /**

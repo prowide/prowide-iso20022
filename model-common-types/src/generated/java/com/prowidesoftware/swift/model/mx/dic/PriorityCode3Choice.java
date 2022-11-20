@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Priority is expressed  as a code or a text.
+ * Priority is expressed as a code or a text.
  * 
  * 
  * 

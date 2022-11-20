@@ -12,7 +12,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Organised structure that is set up for a particular purpose, eg, a business, government body, department, charity, or financial institution.
+ * Organised structure that is set up for a particular purpose, for example, a business, government body, department, charity, or financial institution.
  * 
  * 
  * 

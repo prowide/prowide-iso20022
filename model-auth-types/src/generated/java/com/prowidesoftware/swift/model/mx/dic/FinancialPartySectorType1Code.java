@@ -84,7 +84,7 @@ public enum FinancialPartySectorType1Code {
     UCIT,
 
     /**
-     * Othery type of financial institution.
+     * Other type of financial institution.
      * 
      */
     OTHR;

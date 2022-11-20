@@ -94,7 +94,7 @@ public enum Side3Code {
     TWOS,
 
     /**
-     * A round-lot market order to buy minus is an order to buy a stated amount of a stock provided that its price is:
+     * A round-lot market order to buy minus is an order to buy a stated amount of a stock provided that its price is: 
      * - not higher than the last sale if the last sale was a minus or zero minus tick and
      * - not higher than the last sale minus the minimum fractional change in the stock if the last sale was a plus or zero plus tick.
      * A limit price order to buy minus also states the highest price at which it can be executed.
@@ -103,7 +103,7 @@ public enum Side3Code {
     BUMI,
 
     /**
-     * A round-lot market order to sell plus is an order to sell a stated amount of a stock provided that its price is:
+     * A round-lot market order to sell plus is an order to sell a stated amount of a stock provided that its price is: 
      * - not lower than the last sale if the last sale was a plus or zero plus tick and
      * - not lower than the last sale minus the minimum fractional change in the stock if the last sale was a minus or zero minus tick.
      * A limit-price order to sell plus also states the lowest price at which it can be executed.

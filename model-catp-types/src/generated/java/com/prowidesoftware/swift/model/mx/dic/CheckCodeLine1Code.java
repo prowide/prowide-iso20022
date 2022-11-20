@@ -37,20 +37,20 @@ public enum CheckCodeLine1Code {
     CMC_7("CMC7"),
 
     /**
-     * Magnetic ink character recognition.,conform to ISO 1004.
+     * Magnetic ink character recognition., conform to ISO 1004.
      * 
      */
     @XmlEnumValue("E13B")
     E_13_B("E13B"),
 
     /**
-     * Optical character recognition font A, conform to ANSI X3.17:1981.
+     * Optical character recognition font A, conform to ANSI X3.17: 1981.
      * 
      */
     OCRA("OCRA"),
 
     /**
-     * Optical character recognition font B, conform to ANSI X3.49:1975.
+     * Optical character recognition font B, conform to ANSI X3.49: 1975.
      * 
      */
     OCRB("OCRB"),

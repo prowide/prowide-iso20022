@@ -26,7 +26,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 @XmlType(name = "Document", propOrder = {
     "sctiesFincgRptgTxStsAdvc"
 })
-@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:DRAFT2auth.084.001.01")
+@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:auth.084.001.01")
 public class MxAuth08400101
     extends com.prowidesoftware.swift.model.mx.AbstractMX
 {
@@ -38,8 +38,8 @@ public class MxAuth08400101
     public final static transient int VARIANT = 1;
     public final static transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {AgreementType1Choice.class, DetailedReportStatistics5 .class, DetailedTransactionStatistics6 .class, GenericValidationRuleIdentification1 .class, MasterAgreement1 .class, MxAuth08400101 .class, NumberOfTransactionsPerValidationRule3 .class, NumberOfTransactionsPerValidationRule5 .class, OrganisationIdentification9Choice.class, RejectionReason43 .class, RejectionReason45 .class, ReportingMessageStatus1Code.class, SecuritiesFinancingReportingTransactionStatusAdviceV01 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TradeTransactionIdentification2 .class, TransactionReportStatusAndReason1 .class, ValidationRuleSchemeName1Choice.class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:DRAFT2auth.084.001.01";
+    public final static transient Class[] _classes = new Class[] {AgreementType1Choice.class, DetailedReportStatistics5 .class, DetailedTransactionStatistics10 .class, GenericValidationRuleIdentification1 .class, MasterAgreement6 .class, MxAuth08400101 .class, NumberOfTransactionsPerValidationRule5 .class, OrganisationIdentification9Choice.class, RejectionReason45 .class, RejectionReason47 .class, ReportPeriodActivity1Code.class, ReportingMessageStatus1Code.class, SecuritiesFinancingReportingTransactionStatusAdviceV01 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TradeData11Choice.class, TradeData20 .class, TradeTransactionIdentification4 .class, TradeTransactionIdentification8 .class, TradeTransactionIdentification9 .class, TransactionIdentification1Choice.class, ValidationRuleSchemeName1Choice.class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:auth.084.001.01";
 
     public MxAuth08400101() {
         super();

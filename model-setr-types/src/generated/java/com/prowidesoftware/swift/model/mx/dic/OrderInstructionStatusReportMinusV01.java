@@ -22,11 +22,11 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * - one individual order instructions by using IndividualOrderDetailsReport
  * When the OrderInstructionStatusReport message is used to report the status of an individual order, then IndividualOrderDetailsReport is used and the order reference of the individual order is quoted in OrderReference. The message identification of the message in which the individual order was conveyed may also be quoted in RelatedReference.
  * One of the following statuses can be reported:
- * - an accepted status , or,
+ * - an accepted status, or,
  * - a sent to next party status, or,
  * - a received status, or,
  * - a cancelled status, or
- * - a rejected status, or,
+ * - a rejected status, or.
  * 
  * 
  * 

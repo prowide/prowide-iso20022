@@ -53,7 +53,7 @@ public enum BalanceType9Code {
 
 
     /**
-     * Book balance of the account at the beginning of the account reporting period.  It always equals the closing book balance from the previous report.
+     * Book balance of the account at the beginning of the account reporting period. It always equals the closing book balance from the previous report.
      * 
      */
     OPBD,
@@ -139,7 +139,7 @@ public enum BalanceType9Code {
     IITB,
 
     /**
-     * Investment book balance of the account at the beginning of the account reporting period.  It always equals the closing book balance from the previous report.
+     * Investment book balance of the account at the beginning of the account reporting period. It always equals the closing book balance from the previous report.
      * 
      */
     IOPB,
@@ -181,7 +181,7 @@ public enum BalanceType9Code {
     DITB,
 
     /**
-     * Disbursement book balance of the account at the beginning of the account reporting period.  It always equals the closing book balance from the previous report.
+     * Disbursement book balance of the account at the beginning of the account reporting period. It always equals the closing book balance from the previous report.
      * 
      */
     DOPB,
@@ -223,7 +223,7 @@ public enum BalanceType9Code {
     CITB,
 
     /**
-     * Collection book balance of the account at the beginning of the account reporting period.  It always equals the closing book balance from the previous report.
+     * Collection book balance of the account at the beginning of the account reporting period. It always equals the closing book balance from the previous report.
      * 
      */
     COPB;

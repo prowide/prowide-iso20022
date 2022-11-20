@@ -122,14 +122,14 @@ public enum ModificationRejection2Code {
     UM_10("UM10"),
 
     /**
-     * Clearing Channel element of payment type cannot be modified (former UnableToModifyPaymentScheme)
+     * Clearing Channel element of payment type cannot be modified (former UnableToModifyPaymentScheme).
      * 
      */
     @XmlEnumValue("UM11")
     UM_11("UM11"),
 
     /**
-     * Creditor agent account cannot be modified (former UnableToModifyAccountOfBeneficiaryInstitution)
+     * Creditor agent account cannot be modified (former UnableToModifyAccountOfBeneficiaryInstitution).
      * 
      */
     @XmlEnumValue("UM12")
@@ -199,7 +199,7 @@ public enum ModificationRejection2Code {
     UM_21("UM21"),
 
     /**
-     * Debtor agent acount cannot be modified (applicable for direct debits)
+     * Debtor agent account cannot be modified (applicable for direct debits).
      * 
      */
     @XmlEnumValue("UM22")
@@ -213,14 +213,14 @@ public enum ModificationRejection2Code {
     UM_23("UM23"),
 
     /**
-     * Instruction for debtor agent cannot be modified (applicable for direct debits)
+     * Instruction for debtor agent cannot be modified (applicable for direct debits).
      * 
      */
     @XmlEnumValue("UM24")
     UM_24("UM24"),
 
     /**
-     * Requested collection date cannot be modified (applicable for direct debits)
+     * Requested collection date cannot be modified (applicable for direct debits).
      * 
      */
     @XmlEnumValue("UM25")

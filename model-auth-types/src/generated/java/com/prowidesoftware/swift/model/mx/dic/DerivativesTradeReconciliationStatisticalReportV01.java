@@ -14,7 +14,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * The DerivativesTradeReportReconciliationStatistics message is sent by the the trade repositories to the supervisory authority system, to report cumulative information within the reference period for the reconciliation status of the reported and outstanding derivatives.
+ * The DerivativesTradeReportReconciliationStatisticalReport message is sent by the trade repositories to the supervisory authority system, to report cumulative information within the reference period for the reconciliation status of the reported and outstanding derivatives.
  * 
  * 
  * 
@@ -27,37 +27,33 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 public class DerivativesTradeReconciliationStatisticalReportV01 {
 
     @XmlElement(name = "SttstcsPerCtrPty", required = true)
-    protected List<DetailedStatisticsPerCounterparty4> sttstcsPerCtrPty;
+    protected StatisticsPerCounterparty1Choice sttstcsPerCtrPty;
     @XmlElement(name = "SplmtryData")
     protected List<SupplementaryData1> splmtryData;
 
     /**
      * Gets the value of the sttstcsPerCtrPty property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sttstcsPerCtrPty property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getSttstcsPerCtrPty().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link DetailedStatisticsPerCounterparty4 }
-     * 
-     * 
+     * @return
+     *     possible object is
+     *     {@link StatisticsPerCounterparty1Choice }
+     *     
      */
-    public List<DetailedStatisticsPerCounterparty4> getSttstcsPerCtrPty() {
-        if (sttstcsPerCtrPty == null) {
-            sttstcsPerCtrPty = new ArrayList<DetailedStatisticsPerCounterparty4>();
-        }
-        return this.sttstcsPerCtrPty;
+    public StatisticsPerCounterparty1Choice getSttstcsPerCtrPty() {
+        return sttstcsPerCtrPty;
+    }
+
+    /**
+     * Sets the value of the sttstcsPerCtrPty property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link StatisticsPerCounterparty1Choice }
+     *     
+     */
+    public DerivativesTradeReconciliationStatisticalReportV01 setSttstcsPerCtrPty(StatisticsPerCounterparty1Choice value) {
+        this.sttstcsPerCtrPty = value;
+        return this;
     }
 
     /**
@@ -102,16 +98,6 @@ public class DerivativesTradeReconciliationStatisticalReportV01 {
     @Override
     public int hashCode() {
         return HashCodeBuilder.reflectionHashCode(this);
-    }
-
-    /**
-     * Adds a new item to the sttstcsPerCtrPty list.
-     * @see #getSttstcsPerCtrPty()
-     * 
-     */
-    public DerivativesTradeReconciliationStatisticalReportV01 addSttstcsPerCtrPty(DetailedStatisticsPerCounterparty4 sttstcsPerCtrPty) {
-        getSttstcsPerCtrPty().add(sttstcsPerCtrPty);
-        return this;
     }
 
     /**

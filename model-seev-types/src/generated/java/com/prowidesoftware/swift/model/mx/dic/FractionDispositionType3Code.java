@@ -53,7 +53,7 @@ public enum FractionDispositionType3Code {
     EXPI,
 
     /**
-     * Characteristics of the disposition of fractions are unknown
+     * Characteristics of the disposition of fractions are unknown.
      * 
      */
     UKWN;

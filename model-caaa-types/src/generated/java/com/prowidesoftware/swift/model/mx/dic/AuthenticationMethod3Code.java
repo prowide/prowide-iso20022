@@ -40,7 +40,7 @@ public enum AuthenticationMethod3Code {
 
 
     /**
-     * On-line PIN  authentication (Personal Identification Number).
+     * On-line PIN authentication (Personal Identification Number).
      * 
      */
     NPIN,
