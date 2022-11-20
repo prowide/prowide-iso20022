@@ -15,7 +15,7 @@ This project is a complement for the **Prowide Core** library: https://github.co
 For SWIFT messages validation, restricted ISO versions (such as SEPA, CBPR+, TARGET), GUI application and more, please check our complementary commercial offerings at https://www.prowidesoftware.com/
 
 ### Documentation
-* Documentation site https://www.prowidesoftware.com/resources
+* Documentation site https://dev.prowidesoftware.com/
 * Javadoc https://www.javadoc.io/doc/com.prowidesoftware/pw-iso20022/
 * Code examples https://github.com/prowide/prowide-iso20022-examples
 

@@ -6,12 +6,15 @@
 
 	<p>The scope of this javadoc is the features distributed in the <b>pw-iso20022-SRUYYYY-version.jar</b></p>
 
+	<p>The Javadoc is not comprehensive. Due to the large number of classes in the library, many have been excluded from
+		this Javadoc to reduce the overall generated HTML size. Representative examples of some message categories were kept.</p>
+
 	<p>This library provides a comprehensive parser and model for all ISO 20022 message categories. The API features
 		include parsing messages from XML format to Java, serializing Java model objects into the XML format and the
 		conversion between ISO messages and JSON.</p>
 
 	<p>The library implements the general ISO 20022 standard. Complementary packages with restricted ISO versions such
-		as SEPA, and CBPR+ are provided in the complementary, proprietary (not open source) library Prowide Integrator.</p>
+		as SIC, SEPA and CBPR+ are provided in the complementary, proprietary (not open source) library Prowide Integrator.</p>
 
 	<p>This library is based on some components from the Prowide Core base library. So in order to use this, you will
 		need also the dependency for the pw-swift-core jar.</p>
@@ -32,7 +35,7 @@
 
 	<h4>Creating MX messages</h4>
 	<pre>
-	  MxAcmt001001 mx = new MxAcmt001001();
+	  MxPacs00800108 mx = new MxPacs00800108();
 	  // fill objects with setters (there is one setter per available element)
 	  String xml = mx.message();
  	</pre>
@@ -40,13 +43,12 @@
 	<h4>Parsing MX messages</h4>
 	<pre>
 	  String xml = "..."; // xml here
-	  MxAcmt001001 mx = MxAcmt001001.parse(xml);
+	  MxPacs00800108 mx = MxPacs00800108.parse(xml);
   	</pre>
 
 	<h2>Additional resources</h2>
 	<ol>
-		<li><a href="http://www.prowidesoftware.com/resources">http://www.prowidesoftware.com/resources</a></li>
-		<li><a href="https://github.com/prowide/prowide-iso20022-examples">https://github.com/prowide/prowide-iso20022-examples</a></li>
+		<li><a href="http://dev.prowidesoftware.com/">http://dev.prowidesoftware.com</a></li>
 	</ol>
 
 	<p><br>For ISO 20022 messages validation, SEPA, CBPR+, TARGET2 and other restricted ISO versions, please check the Integrator version at <a href="http://www.prowidesoftware.com/products/integrator">http://www.prowidesoftware.com/products/integrator</a></p>
