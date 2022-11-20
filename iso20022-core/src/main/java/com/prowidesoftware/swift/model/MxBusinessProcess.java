@@ -15,6 +15,9 @@
  */
 package com.prowidesoftware.swift.model;
 
+import com.prowidesoftware.deprecation.ProwideDeprecated;
+import com.prowidesoftware.deprecation.TargetYear;
+
 import java.util.Collection;
 
 /**
@@ -52,7 +55,14 @@ public enum MxBusinessProcess {
     setr("Securities Trade"),
     supl("Supplementary Data"),
     trck("Payments Tracker"),
+
+    /**
+     * @deprecated Obsolete to be withdrawn (non-ISO)
+     */
+    @ProwideDeprecated(phase2 = TargetYear.SRU2023)
+    @Deprecated
     trea("Treasury"),
+
     tsin("Trade Services Initiation"),
     tsmt("Trade Services Management"),
     tsrv("Trade Services"),

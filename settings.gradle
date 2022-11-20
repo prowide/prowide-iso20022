@@ -84,9 +84,6 @@ include 'model-supl-types'
 include 'model-trck-mx'
 include 'model-trck-types'
 
-include 'model-trea-mx'
-include 'model-trea-types'
-
 include 'model-tsin-mx'
 include 'model-tsin-types'
 
