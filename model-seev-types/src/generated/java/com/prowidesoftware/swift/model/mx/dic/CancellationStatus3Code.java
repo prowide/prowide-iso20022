@@ -46,7 +46,7 @@ public enum CancellationStatus3Code {
     CAND,
 
     /**
-     * Cancellation instruction / request has been confirmed by Issuer or Registrar.
+     * Cancellation instruction / request has been received by issuer or registrar.
      * 
      */
     RCIS;

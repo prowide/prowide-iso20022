@@ -27,13 +27,13 @@ public enum TypeOfPrice15Code {
 
 
     /**
-     * Price is the calculated bid price of a dual-priced fund (offer-bid prices), ie, the selling price of the units for the investor.
+     * Price is the calculated bid price of a dual-priced fund (offer-bid prices), that is, the selling price of the units for the investor.
      * 
      */
     BIDE,
 
     /**
-     * Price is the calculated offer price of a dual-priced investment fund (offer-bid prices), ie, the buying price of the units for an investor.
+     * Price is the calculated offer price of a dual-priced investment fund (offer-bid prices), that is, the buying price of the units for an investor.
      * 
      */
     OFFR,

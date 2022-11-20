@@ -64,7 +64,7 @@ public enum SecuritiesEntryType1Code {
     NOMI,
 
     /**
-     * Balance of securities representing only settled transactions
+     * Balance of securities representing only settled transactions.
      * 
      */
     SETD,
@@ -88,7 +88,7 @@ public enum SecuritiesEntryType1Code {
     SPOS,
 
     /**
-     * Balance of securities representing traded transactions
+     * Balance of securities representing traded transactions.
      * 
      */
     TRAD;

@@ -63,7 +63,7 @@ public enum AuthenticationMethod7Code {
     FPIN,
 
     /**
-     * On-line PIN  authentication (Personal Identification Number).
+     * On-line PIN authentication (Personal Identification Number).
      * 
      */
     NPIN,

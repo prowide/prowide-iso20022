@@ -386,7 +386,7 @@ public enum HoldingRejectionReason41Code {
     NRGN,
 
     /**
-     * Instruction aims at using  an invalid balance.
+     * Instruction aims at using an invalid balance.
      * 
      */
     INVB,

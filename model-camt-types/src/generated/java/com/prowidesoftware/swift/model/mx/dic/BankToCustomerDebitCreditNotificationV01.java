@@ -18,7 +18,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * The Bank-to-Customer Debit/Credit Notification message is sent by the account servicer to an account owner or to a party authorised by the account owner to receive the message. It can be used to inform the account owner, or authorised party, of single or multiple debit and/or credit entries reported to the account.
  * Usage
  * The Bank-to-Customer Debit/Credit Notification message can contain reports for more than 1 account. It provides information for cash management and/or reconciliation.
- * It can be used to :
+ * It can be used to:
  * - report pending and booked items;
  * - notify one or more debit entries;
  * - notify one or more credit entries;

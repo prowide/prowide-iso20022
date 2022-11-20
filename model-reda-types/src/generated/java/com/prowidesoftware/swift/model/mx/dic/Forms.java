@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Processing characteristics linked to the instrument, ie, not to  the market.
+ * Processing characteristics linked to the instrument, ie, not to the market.
  * 
  * 
  * 

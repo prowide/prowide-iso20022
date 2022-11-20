@@ -58,7 +58,7 @@ public enum InvestmentFundRole4Code {
     TRAG("TRAG"),
 
     /**
-     * The party that provides services to investors relating to financial products. These services may include some, or all of, provision of information and advice on products, placement of investment orders, transmission of payment, custody of assets, and the administration of rights and benefits. In the specific framework of investment funds industry, an intermediary may present information about Funds to potential investors, and solicit orders for the Fund. It may facilitate the transmission of the orders and information from/to the investors and/or other intermediaries. The intermediary receives commission from the Fund and/or fees from the investor.
+     * Party that provides services to investors relating to financial products. These services may include some, or all of, provision of information and advice on products, placement of investment orders, transmission of payment, custody of assets, and the administration of rights and benefits. In the specific framework of investment funds industry, an intermediary may present information about funds to potential investors, and solicit orders for the fund. This intermediary may facilitate the transmission of the orders and information from/to the investors and/or other intermediaries. The intermediary receives commission from the Fund and/or fees from the investor.
      * 
      */
     INTR("INTR"),
@@ -70,7 +70,7 @@ public enum InvestmentFundRole4Code {
     DIST("DIST"),
 
     /**
-     * Party that acts as an aggregator of funds, also called funds hub.
+     * Party that acts as an aggregator of funds, also called a funds hub.
      * 
      */
     CONC("CONC"),
@@ -90,7 +90,7 @@ public enum InvestmentFundRole4Code {
     UCL_2("UCL2"),
 
     /**
-     * Party that transmits the order to the order executing party, if it is not identified in the Investment Account Owner element.
+     * Party that transmits the instruction, advice, notification or report.
      * 
      */
     TRAN("TRAN"),
@@ -114,7 +114,7 @@ public enum InvestmentFundRole4Code {
     CONA("CONA"),
 
     /**
-     * The party that safekeeps and administers assets on behalf of the owner.
+     * Party that safekeeps and administers assets on behalf of the owner.
      * 
      */
     CUST("CUST"),

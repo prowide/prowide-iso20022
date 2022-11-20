@@ -35,7 +35,7 @@ public enum Algorithm3Code {
     MACC("MACC"),
 
     /**
-     * Retail-CBC-MAC with SHA-256 (Secure HAsh standard)  - (ASN.1 Object Identifier: id-retail-cbc-mac-sha-256).
+     * Retail-CBC-MAC with SHA-256 (Secure HAsh standard) - (ASN.1 Object Identifier: id-retail-cbc-mac-sha-256).
      * 
      */
     MCCS("MCCS"),

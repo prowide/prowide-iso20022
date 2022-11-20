@@ -89,7 +89,7 @@ public enum UnitOfMeasure1Code {
     USGA,
 
     /**
-     * Unit of measure that is equal to a 1,000th of a kilo.
+     * Unit of measure that is equal to a 1, 000th of a kilo.
      * 
      */
     GRAM,
@@ -119,7 +119,7 @@ public enum UnitOfMeasure1Code {
     METR,
 
     /**
-     * One 100th part of a metre.
+     * Unit of measure that is equal to one hundredth of a metre.
      * 
      */
     CMET,
@@ -185,13 +185,13 @@ public enum UnitOfMeasure1Code {
     USPI,
 
     /**
-     * Unit of length equal to 1,760 yards
+     * Unit of length equal to 1, 760 yards.
      * 
      */
     MILE,
 
     /**
-     * Unit of measure that is equal to 1,000 meters.
+     * Unit of measure that is equal to 1, 000 meters.
      * 
      */
     KMET,
@@ -209,7 +209,7 @@ public enum UnitOfMeasure1Code {
     SQKI,
 
     /**
-     * Unit of measure that is equal to 10,000 square meters.
+     * Unit of measure that is equal to 10, 000 square meters.
      * 
      */
     HECT,
@@ -263,7 +263,7 @@ public enum UnitOfMeasure1Code {
     SQIN,
 
     /**
-     * Unit of measure equal to 4,840 square yards.
+     * Unit of measure equal to 4, 840 square yards.
      * 
      */
     ACRE;

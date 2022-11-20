@@ -17,7 +17,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * It allows for the definition of a unique format for which another message type is not available or applicable. It also allows financial institutions to use message types which are awaiting live implementation on the SWIFT system.
  * Usage
  * The user should ensure that, at a general level, the Cash Management business area encompasses the business purpose of the message.
- * The type of document agreed by the users of a specific proprietary message, or the message type, assigned to a message format being used before its implementation, shall be identified in the element ProprietaryData/Type of the message being transmitted
+ * The type of document agreed by the users of a specific proprietary message, or the message type, assigned to a message format being used before its implementation, shall be identified in the element ProprietaryData/Type of the message being transmitted.
  * 
  * 
  * 

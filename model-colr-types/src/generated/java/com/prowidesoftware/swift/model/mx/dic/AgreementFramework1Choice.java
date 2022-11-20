@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Choice between a code or a proprietary code for  the underlying master agreement.
+ * Choice between a code or a proprietary code for the underlying master agreement.
  * 
  * 
  * 

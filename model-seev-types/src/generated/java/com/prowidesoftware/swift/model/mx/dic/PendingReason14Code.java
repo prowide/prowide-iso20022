@@ -83,7 +83,7 @@ public enum PendingReason14Code {
     DQUA,
 
     /**
-     * The instruction is pending receipt of securities, for example, from a purchase, loan etc.
+     * The instruction is pending receipt of securities, for example, from a purchase or loan.
      * 
      */
     PENR,

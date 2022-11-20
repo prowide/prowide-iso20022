@@ -44,7 +44,7 @@ public enum ReinvestmentIncomeClassification2Code {
     DVCA,
 
     /**
-     * Cash proceeds being reinvested is classified as special cash dividend. 
+     * Cash proceeds being reinvested is classified as special cash dividend.
      * 
      */
     CDPS,

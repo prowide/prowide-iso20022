@@ -33,7 +33,7 @@ public enum TradingCapacity5Code {
     PRIN,
 
     /**
-     * Trading as a riskless principal, ie, the  order to buy(sell) has been simultaneously offset by an order to sell (buy) with another party.
+     * Trading as a riskless principal, ie, the order to buy(sell) has been simultaneously offset by an order to sell (buy) with another party.
      * 
      */
     RISP,

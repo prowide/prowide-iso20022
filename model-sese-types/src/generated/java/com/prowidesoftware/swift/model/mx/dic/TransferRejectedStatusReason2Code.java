@@ -104,7 +104,7 @@ public enum TransferRejectedStatusReason2Code {
     BLCA,
 
     /**
-     * Investment account is blocked until certain legal proceedings are completed, eg, legal documents from the successor, legal proceedings due to bankruptcy.
+     * Investment account is blocked until certain legal proceedings are completed, for example, legal documents from the successor, legal proceedings due to bankruptcy.
      * 
      */
     DOCC,
@@ -170,7 +170,7 @@ public enum TransferRejectedStatusReason2Code {
     INPM,
 
     /**
-     * Partial transfer of current year is not allowed, ie, it is not possible to transfer one asset for the current year as other assets are held for the current year.
+     * Partial transfer of current year is not allowed, that is, it is not possible to transfer one asset for the current year as other assets are held for the current year.
      * 
      */
     CYPA,

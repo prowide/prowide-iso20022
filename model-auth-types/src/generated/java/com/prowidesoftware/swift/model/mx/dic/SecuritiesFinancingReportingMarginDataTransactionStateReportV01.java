@@ -14,50 +14,46 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * The SecuritiesFinancingReportingMarginDataTransactionStateReport message is sent by the trade repository (TR) to the other trade repository (TR) or the competent authority or reporting counterparty containing latest state of the transaction.
+ * The SecuritiesFinancingReportingMarginDataTransactionStateReport message is sent by the trade repository (TR) to the c authority or or made available to the report submitting entity and the reporting counterparty as well as the entity responsible for reporting, if applicable, containing latest state of the margins exchanged in relation to the CCP-cleared securities financing transactions.
  * 
  * 
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SecuritiesFinancingReportingMarginDataTransactionStateReportV01", propOrder = {
-    "stat",
+    "tradData",
     "splmtryData"
 })
 public class SecuritiesFinancingReportingMarginDataTransactionStateReportV01 {
 
-    @XmlElement(name = "Stat", required = true)
-    protected List<CollateralMarginNew3> stat;
+    @XmlElement(name = "TradData", required = true)
+    protected TradeData13Choice tradData;
     @XmlElement(name = "SplmtryData")
     protected List<SupplementaryData1> splmtryData;
 
     /**
-     * Gets the value of the stat property.
+     * Gets the value of the tradData property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the stat property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getStat().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link CollateralMarginNew3 }
-     * 
-     * 
+     * @return
+     *     possible object is
+     *     {@link TradeData13Choice }
+     *     
      */
-    public List<CollateralMarginNew3> getStat() {
-        if (stat == null) {
-            stat = new ArrayList<CollateralMarginNew3>();
-        }
-        return this.stat;
+    public TradeData13Choice getTradData() {
+        return tradData;
+    }
+
+    /**
+     * Sets the value of the tradData property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link TradeData13Choice }
+     *     
+     */
+    public SecuritiesFinancingReportingMarginDataTransactionStateReportV01 setTradData(TradeData13Choice value) {
+        this.tradData = value;
+        return this;
     }
 
     /**
@@ -102,16 +98,6 @@ public class SecuritiesFinancingReportingMarginDataTransactionStateReportV01 {
     @Override
     public int hashCode() {
         return HashCodeBuilder.reflectionHashCode(this);
-    }
-
-    /**
-     * Adds a new item to the stat list.
-     * @see #getStat()
-     * 
-     */
-    public SecuritiesFinancingReportingMarginDataTransactionStateReportV01 addStat(CollateralMarginNew3 stat) {
-        getStat().add(stat);
-        return this;
     }
 
     /**

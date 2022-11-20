@@ -103,7 +103,7 @@ public enum UnmatchedReason6Code {
     DEPT,
 
     /**
-     * Settlement amount does not match
+     * Settlement amount does not match.
      * 
      */
     DMON,
@@ -133,7 +133,7 @@ public enum UnmatchedReason6Code {
     ADEA,
 
     /**
-     * Settlement transaction type does not match (relates to the settlement transaction type codes available for field :22F::SETR.)
+     * Settlement transaction type does not match (relates to the settlement transaction type codes available for field: 22F:: SETR.).
      * 
      */
     SETR,
@@ -145,7 +145,7 @@ public enum UnmatchedReason6Code {
     SETS,
 
     /**
-     * Financial instrument identification does not match, for example, ISIN, financial instrument attributes differs...
+     * Financial instrument identification does not match, for example, ISIN, financial instrument attributes differs.
      * 
      */
     DSEC,
@@ -175,7 +175,7 @@ public enum UnmatchedReason6Code {
     REPO,
 
     /**
-     * Counterparty's instruction was too late for matching
+     * Counterparty's instruction was too late for matching.
      * 
      */
     CLAT,
@@ -337,7 +337,7 @@ public enum UnmatchedReason6Code {
     ICUS,
 
     /**
-     * The place of safekeeping information does not allow matching to take place.
+     * Place of safekeeping information does not allow matching to take place.
      * 
      */
     INPS,
@@ -355,7 +355,7 @@ public enum UnmatchedReason6Code {
     UNBR,
 
     /**
-     * Other. See Narrative.
+     * Proprietary unmatched reason code described in a narrative field.
      * 
      */
     OTHR,

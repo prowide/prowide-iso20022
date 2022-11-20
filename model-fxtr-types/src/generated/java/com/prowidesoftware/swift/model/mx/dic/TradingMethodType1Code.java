@@ -53,7 +53,7 @@ public enum TradingMethodType1Code {
     CUMA,
 
     /**
-     * Member activate an order, and if order matches with market maker's quotationa, the order will be filled automatically. 
+     * Member activate an order, and if order matches with market maker's quotationa, the order will be filled automatically.
      * 
      */
     LIOR,

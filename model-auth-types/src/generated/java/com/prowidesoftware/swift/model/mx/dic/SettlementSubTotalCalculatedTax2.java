@@ -15,7 +15,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Specifies  the subtotal calculated tax applicable for this settlement.
+ * Specifies the subtotal calculated tax applicable for this settlement.
  * 
  * 
  * 

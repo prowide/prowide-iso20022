@@ -33,13 +33,13 @@ public enum DistributionType2Code {
     ROLL,
 
     /**
-     * This is an interim payment.
+     * Interim payment.
      * 
      */
     INTE,
 
     /**
-     * This is a final payment.
+     * Final payment.
      * 
      */
     FINL;

@@ -57,7 +57,7 @@ public enum OrderStatus8Code {
     STOP,
 
     /**
-     * Order has been rejected by sell-side.  NOTE:  An order can be rejected subsequent to order acknowledgment, i.e. an order can pass from New to Rejected status.
+     * Order has been rejected by sell-side. NOTE: An order can be rejected subsequent to order acknowledgment, i.e. an order can pass from New to Rejected status.
      * 
      */
     REJT,
@@ -81,7 +81,7 @@ public enum OrderStatus8Code {
     RECE,
 
     /**
-     * Order with an Order Cancel Request pending, used to confirm receipt of an Order Cancel Request.  Does not indicate that the order has been cancelled.
+     * Order with an Order Cancel Request pending, used to confirm receipt of an Order Cancel Request. Does not indicate that the order has been cancelled.
      * 
      */
     CANP;

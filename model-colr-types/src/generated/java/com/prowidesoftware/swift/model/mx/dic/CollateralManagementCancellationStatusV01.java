@@ -15,8 +15,8 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
  * This message is sent by:
- * -  the collateral taker or its collateral manager to the collateral giver or its collateral manager,
- * -  the collateral giver or its collateral manager to the collateral taker or its collateral manager.
+ * - the collateral taker or its collateral manager to the collateral giver or its collateral manager,
+ * - the collateral giver or its collateral manager to the collateral taker or its collateral manager.
  * 
  * This message is used to provide the status of the CollateralManagementCancellationRequest message previously received.
  * 

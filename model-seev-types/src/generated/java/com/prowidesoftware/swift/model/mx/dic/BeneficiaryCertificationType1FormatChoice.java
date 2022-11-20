@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Choice of formats to  express the type of beneficiary's certification.
+ * Choice of formats to express the type of beneficiary's certification.
  * 
  * 
  * 

@@ -42,7 +42,7 @@ public enum Qualifier1Code {
 
 
     /**
-     * A limit order that is to be executed in its entirety or not at all (no partial transaction), and thus is testing the strength/conviction of the counterparty.  Unlike a fill or kill order, all or none orders are not to be treated as cancelled if not executed as soon as it is represented in the trading crowd.  Instead it remains alive until executed or cancelled.  The making of "all or none" bids or offers in stocks is prohibited, and the making of "all or none" bids or offers in bonds is subject to the restrictions of Rule 61.
+     * A limit order that is to be executed in its entirety or not at all (no partial transaction), and thus is testing the strength/conviction of the counterparty. Unlike a fill or kill order, all or none orders are not to be treated as cancelled if not executed as soon as it is represented in the trading crowd. Instead it remains alive until executed or cancelled. The making of "all or none" bids or offers in stocks is prohibited, and the making of "all or none" bids or offers in bonds is subject to the restrictions of Rule 61.
      * 
      */
     ALNO,
@@ -54,7 +54,7 @@ public enum Qualifier1Code {
     MOCE,
 
     /**
-     * An all or none market order that is to be executed at the closing price of the security on the exchange.  If the execution cannot be made under this condition, the order is to be treated as cancelled.
+     * An all or none market order that is to be executed at the closing price of the security on the exchange. If the execution cannot be made under this condition, the order is to be treated as cancelled.
      * 
      * Note that this attribute does not apply to trading of fixed income securities.
      * 
@@ -74,13 +74,13 @@ public enum Qualifier1Code {
     ITOW,
 
     /**
-     * An order to buy a stock at or below a specified price, or to sell a stock at or above a specified price.  The customer specifies a price, and the order can be executed only if the market reaches or betters that price.  A conditional trading order designed to avoid the danger of adverse unexpected price movements.
+     * An order to buy a stock at or below a specified price, or to sell a stock at or above a specified price. The customer specifies a price, and the order can be executed only if the market reaches or betters that price. A conditional trading order designed to avoid the danger of adverse unexpected price movements.
      * 
      */
     LIMI,
 
     /**
-     * More security exists to be bought or sold by the same buyer or seller, respectively.  Often, the buyer or seller does not disclose the full size of his buy or sell interest as not to affect the market adversely.
+     * More security exists to be bought or sold by the same buyer or seller, respectively. Often, the buyer or seller does not disclose the full size of his buy or sell interest as not to affect the market adversely.
      * 
      * Information that the execution is taking place in waves/iceberg.
      * 
@@ -100,7 +100,7 @@ public enum Qualifier1Code {
     POSI,
 
     /**
-     * An order to buy or sell a security at the most advantageous price obtainable after the order is represented in the trading crowd.  Other special restrictions, such as all or none (AON) or good 'til cancelled (GTC), cannot be specified on a market order.
+     * An order to buy or sell a security at the most advantageous price obtainable after the order is represented in the trading crowd. Other special restrictions, such as all or none (AON) or good 'til cancelled (GTC), cannot be specified on a market order.
      * 
      */
     MAKT,
@@ -142,7 +142,7 @@ public enum Qualifier1Code {
     CROS,
 
     /**
-     * An all or none market order that is to be executed at the mid price spread of the security on the exchange.  If the execution cannot be made under this condition, the order is to be treated as cancelled.
+     * An all or none market order that is to be executed at the mid price spread of the security on the exchange. If the execution cannot be made under this condition, the order is to be treated as cancelled.
      * 
      */
     MIDP,

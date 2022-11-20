@@ -55,7 +55,7 @@ public enum PartyType3Code {
     ITAG,
 
     /**
-     * Bank of the Merchant providing goods and services
+     * Entity acquiring card transactions.
      * 
      */
     ACQR,
@@ -67,7 +67,7 @@ public enum PartyType3Code {
     CISS,
 
     /**
-     * Party to whom the card issuer delagates to authorise card payment transactions.
+     * Party to whom the card issuer delegates to authorise card payment transactions.
      * 
      */
     DLIS;

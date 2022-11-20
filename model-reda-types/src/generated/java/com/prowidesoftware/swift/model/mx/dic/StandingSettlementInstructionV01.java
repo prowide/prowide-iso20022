@@ -29,7 +29,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * •	A counterparty, for example:
  * -	an investment manager (executing broker)
  * -	a global custodian (executing broker, prime broker)
- * •	A vendor’s application communicating on behalf of the account owner or counterparty
+ * •	A vendor’s application communicating on behalf of the account owner or counterparty.
  * 
  * 
  * 

@@ -91,7 +91,7 @@ public enum TradeStatus6Code {
     SMAT,
 
     /**
-     * For NDF instructions, if a party has submitted both the open and fix confirmations and the counterparty is yet to submit the open and fix confirmation the instruction is updated to ‘Fix Unmatched’ Status
+     * For NDF instructions, if a party has submitted both the open and fix confirmations and the counterparty is yet to submit the open and fix confirmation the instruction is updated to ‘Fix Unmatched’ Status.
      * 
      */
     FUMT,

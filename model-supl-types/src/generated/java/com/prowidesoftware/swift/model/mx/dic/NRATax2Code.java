@@ -79,7 +79,7 @@ public enum NRATax2Code {
     T_013("T013"),
 
     /**
-     * Tax category for fully exempt dividends  on municipal  type mutual funds. 
+     * Tax category for fully exempt dividends on municipal type mutual funds.
      * 
      */
     @XmlEnumValue("T014")
@@ -128,7 +128,7 @@ public enum NRATax2Code {
     T_025("T025"),
 
     /**
-     * Tax category for  limited publicly traded partnership.
+     * Tax category for limited publicly traded partnership.
      * 
      */
     @XmlEnumValue("T026")
@@ -191,7 +191,7 @@ public enum NRATax2Code {
     T_045("T045"),
 
     /**
-     * Tax category for U.S. government interest on GNMA 1 & 2 proceeds. 
+     * Tax category for U.S. government interest on GNMA 1 & 2 proceeds.
      * 
      */
     @XmlEnumValue("T046")
@@ -240,49 +240,49 @@ public enum NRATax2Code {
     T_054("T054"),
 
     /**
-     * Tax category for royalty payments proceeds. 
+     * Tax category for royalty payments proceeds.
      * 
      */
     @XmlEnumValue("T073")
     T_073("T073"),
 
     /**
-     * Tax category for other taxable income proceeds. 
+     * Tax category for other taxable income proceeds.
      * 
      */
     @XmlEnumValue("T074")
     T_074("T074"),
 
     /**
-     * Tax category for other non-taxable income proceeds. 
+     * Tax category for other non-taxable income proceeds.
      * 
      */
     @XmlEnumValue("T075")
     T_075("T075"),
 
     /**
-     * Tax category for miscellaneous payments proceeds. 
+     * Tax category for miscellaneous payments proceeds.
      * 
      */
     @XmlEnumValue("T076")
     T_076("T076"),
 
     /**
-     * Tax category for stock split proceeds. 
+     * Tax category for stock split proceeds.
      * 
      */
     @XmlEnumValue("T077")
     T_077("T077"),
 
     /**
-     * Tax category for stock dividend proceeds. 
+     * Tax category for stock dividend proceeds.
      * 
      */
     @XmlEnumValue("T078")
     T_078("T078"),
 
     /**
-     * Tax category for  spin off proceeds. 
+     * Tax category for spin off proceeds.
      * 
      */
     @XmlEnumValue("T080")

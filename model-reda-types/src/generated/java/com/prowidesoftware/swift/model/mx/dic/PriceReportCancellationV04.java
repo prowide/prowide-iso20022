@@ -18,7 +18,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * A report provider, for example, a transfer agent, fund accountant or market data provider, sends the PriceReportCancellation message to the report recipient, for example, a fund management company, transfer agent, market data provider, regulator or any other interested party to cancel previously sent prices.
  * 
  * USAGE
- * The PriceReportCancellation message is used to either:
+ * The PriceReportCancellation message is used to either: 
  * - cancel an entire PriceReport that was previously sent (by quoting the business reference of the original price report in the PriceReportIdentification element), or,
  * - cancel one or more individual prices from a previously sent price report (by using the PriceDetailsToBeCancelled sequence).
  * Technically, it is possible to cancel all the prices individually by using the PriceDetailsToBeCancelled sequence, but this is not recommended.

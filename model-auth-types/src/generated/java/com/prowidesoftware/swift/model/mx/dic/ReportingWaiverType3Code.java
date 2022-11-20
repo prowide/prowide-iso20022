@@ -68,7 +68,7 @@ public enum ReportingWaiverType3Code {
     CANC,
 
     /**
-     * Amendments
+     * Amendments.
      * 
      */
     AMND,
@@ -87,13 +87,13 @@ public enum ReportingWaiverType3Code {
     RPRI,
 
     /**
-     * Duplicative trade reports
+     * Duplicative trade reports.
      * 
      */
     DUPL,
 
     /**
-     * Large-in-scale transactions.  Applicable for all instruments.
+     * Large-in-scale transactions. Applicable for all instruments.
      * 
      */
     LRGS,
@@ -105,13 +105,13 @@ public enum ReportingWaiverType3Code {
     TNCP,
 
     /**
-     * Package transaction
+     * Package transaction.
      * 
      */
     TPAC,
 
     /**
-     * Transaction where the contract  on a commodity is exchanged for the actual physical good.
+     * Transaction where the contract on a commodity is exchanged for the actual physical good.
      * 
      */
     XFPH;

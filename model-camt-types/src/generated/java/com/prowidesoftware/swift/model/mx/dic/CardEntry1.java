@@ -12,7 +12,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * card transaction entry.
+ * Card transaction entry.
  * 
  * 
  * 

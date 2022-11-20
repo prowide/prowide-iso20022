@@ -27,7 +27,7 @@ public enum RepoCallAcknowledgementReason2Code {
 
 
     /**
-     * Repuchase agreement call is in process.
+     * Repurchase agreement call is in process.
      * 
      */
     CALD,

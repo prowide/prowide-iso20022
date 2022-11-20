@@ -18,7 +18,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Information on the shipment date, the charges, the routing and the goods described in the transport document
+ * Information on the shipment date, the charges, the routing and the goods described in the transport document.
  * 
  * 
  * 

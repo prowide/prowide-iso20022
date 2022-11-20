@@ -25,7 +25,7 @@ public enum OptionNumber1Code {
 
 
     /**
-     * The CorporateActionInstruction is unsolicited, ie, the instruction has not been preceded by an CorporateActionNotification.
+     * The corporate action instruction is unsolicited, that is, the instruction has not been preceded by a corporate action notification.
      * 
      */
     UNSO;

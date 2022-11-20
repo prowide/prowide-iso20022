@@ -15,11 +15,23 @@ include 'model-auth-types'
 include 'model-caaa-mx'
 include 'model-caaa-types'
 
+include 'model-caad-mx'
+include 'model-caad-types'
+
 include 'model-caam-mx'
 include 'model-caam-types'
 
+include 'model-cafc-mx'
+include 'model-cafc-types'
+
+include 'model-cain-mx'
+include 'model-cain-types'
+
 include 'model-camt-mx'
 include 'model-camt-types'
+
+include 'model-casp-mx'
+include 'model-casp-types'
 
 include 'model-catm-mx'
 include 'model-catm-types'
@@ -71,9 +83,6 @@ include 'model-supl-types'
 
 include 'model-trck-mx'
 include 'model-trck-types'
-
-include 'model-trea-mx'
-include 'model-trea-types'
 
 include 'model-tsin-mx'
 include 'model-tsin-types'

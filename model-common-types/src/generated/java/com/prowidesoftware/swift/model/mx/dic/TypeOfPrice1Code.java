@@ -106,13 +106,13 @@ public enum TypeOfPrice1Code {
     PARV("PARV"),
 
     /**
-     * Price  is a rounded average price.
+     * Price is a rounded average price.
      * 
      */
     RDAV("RDAV"),
 
     /**
-     * Price is a stop price used in an order to buy.  The order becomes a market order when the financial instrument trades at or above the stop price after the order is submitted.  In an order to sell the order becomes a market order when the financial instrument trades at or below the stop price.
+     * Price is a stop price used in an order to buy. The order becomes a market order when the financial instrument trades at or above the stop price after the order is submitted. In an order to sell the order becomes a market order when the financial instrument trades at or below the stop price.
      * 
      */
     STOP("STOP");

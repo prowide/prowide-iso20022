@@ -86,7 +86,7 @@ public enum RejectionReason7Code {
     DEAO,
 
     /**
-     * CA Event Type does not correspond with the relating Corporate Action
+     * CA Event Type does not correspond with the relating Corporate Action.
      * 
      */
     INET,

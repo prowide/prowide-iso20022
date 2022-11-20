@@ -28,13 +28,13 @@ public enum NewSecuritiesIssuanceType6Code {
 
 
     /**
-     * Funds have been placed in escrow by a trustee or agent to ensure payment on a portion of the outstanding balance of the original security on maturity date.  Applicable only in the frame of a Partial Defeasance PDEF corporate action event. 
+     * Funds have been placed in escrow by a trustee or agent to ensure payment on a portion of the outstanding balance of the original security on maturity date. Applicable only in the frame of a Partial Defeasance PDEF corporate action event.
      * 
      */
     DEFE,
 
     /**
-     * Funds will not be guaranteed at maturity by the issuer or paying agent for this newly issued non-defeased security.  Applicable only in the frame of a Partial Defeasance PDEF corporate action event. 
+     * Funds will not be guaranteed at maturity by the issuer or paying agent for this newly issued non-defeased security. Applicable only in the frame of a Partial Defeasance PDEF corporate action event.
      * 
      */
     NDEF,
@@ -46,7 +46,7 @@ public enum NewSecuritiesIssuanceType6Code {
     REFU,
 
     /**
-     * New Security issued that has not been refunded and the maturity date of the original underlying security is unchanged. Applicable only in the frame of a Partial Defeasance PDEF corporate action event. 
+     * New Security issued that has not been refunded and the maturity date of the original underlying security is unchanged. Applicable only in the frame of a Partial Defeasance PDEF corporate action event.
      * 
      */
     NREF;

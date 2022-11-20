@@ -12,7 +12,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Choice between a range of amount values with or without the currency. 
+ * Choice between a range of amount values with or without the currency.
  * 
  * 
  * 

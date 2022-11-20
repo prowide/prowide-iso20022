@@ -155,7 +155,7 @@ public enum RejectedStatusReason7Code {
     BLTR,
 
     /**
-     * Investment account is blocked until certain legal proceedings are completed, eg, legal documents from the successor, legal proceedings due to bankruptcy.
+     * Investment account is blocked until certain legal proceedings are completed, for example, legal documents from the successor, legal proceedings due to bankruptcy.
      * 
      */
     DOCC,
@@ -197,7 +197,7 @@ public enum RejectedStatusReason7Code {
     UNAV,
 
     /**
-     * Payment method, eg, cheque or payment card, is not accepted.
+     * Payment method, for example, cheque or payment card, is not accepted.
      * 
      */
     UPAY,

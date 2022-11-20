@@ -37,7 +37,7 @@ public enum Status7Code {
     CSUB,
 
     /**
-     * Instruction has been accepted and is validated for further processing
+     * Instruction has been accepted and is validated for further processing.
      * 
      */
     PACK,

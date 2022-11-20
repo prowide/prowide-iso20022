@@ -19,7 +19,9 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * - the exposure resulting from the trade positions
  * - the value of the collateral held by the CCP (market value of this collateral) and
  * - the resulting difference representing the risk encountered by the CCP.
- * The ISO 20022 Business Application Header must be used.
+ * 
+ * The message definition is intended for use with the ISO20022 Business Application Header.
+ * 
  * Usage
  * There are four possibilities to report the above information. Indeed, the margin report may be structured as follows:
  * - per clearing member: the report will only show the information for the clearing member, or

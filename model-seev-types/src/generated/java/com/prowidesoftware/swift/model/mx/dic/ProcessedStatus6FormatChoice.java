@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Choice of formats to  express the processing status of a deactivation instruction.
+ * Choice of formats to express the processing status of a deactivation instruction.
  * 
  * 
  * 

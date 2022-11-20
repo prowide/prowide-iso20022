@@ -33,7 +33,7 @@ public enum DTCCPayoutType3Code {
 
 
     /**
-     * Distribution of earnings to shareholders categorized by the company as capital gains.
+     * Distribution of earnings to shareholders categorised by the company as capital gains.
      * 
      */
     CAPG,
@@ -57,7 +57,7 @@ public enum DTCCPayoutType3Code {
     INTR,
 
     /**
-     * Distribution of earnings to shareholders categorized by the company as long-term capital gains.
+     * Distribution of earnings to shareholders categorised by the company as long-term capital gains.
      * 
      */
     LTCG,
@@ -75,13 +75,13 @@ public enum DTCCPayoutType3Code {
     PRPL,
 
     /**
-     * Distribution that doesn't represent earnings and is categorized by the company as return of capital.
+     * Distribution that doesn't represent earnings and is categorised by the company as return of capital.
      * 
      */
     ROCA,
 
     /**
-     * Distribution of earnings to shareholders categorized by the company as short-term capital gains.
+     * Distribution of earnings to shareholders categorised by the company as short-term capital gains.
      * 
      */
     STCG;

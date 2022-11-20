@@ -130,7 +130,7 @@ public enum TaxType16Code {
     NKAP,
 
     /**
-     * Tax is on a capital gain (realised and unrealised), ie, the profit that is gained from the sale of a financial instrument.
+     * Tax is on a capital gain (realised and unrealised), that is, the profit that is gained from the sale of a financial instrument.
      * 
      */
     KAPA;

@@ -52,31 +52,31 @@ public enum FailureReason1Code {
     PART,
 
     /**
-     * Response to the authorisation received too late.
+     * Response to the previous message was received too late.
      * 
      */
     LATE,
 
     /**
-     * Card acceptor device unable to complete transaction.
+     * Unable to complete the transaction after the authorisation response.
      * 
      */
     UCMP,
 
     /**
-     * Unable to deliver message to the acquirer.
+     * Unable to deliver the request message to the recipient party.
      * 
      */
     USND,
 
     /**
-     * Timeout waiting for response of the acquirer, or no response was received (for example connection release before receiving the response).
+     * Timeout while waiting for a response to a request message, or no response was received (for example connection release before receiving the response).
      * 
      */
     TIMO,
 
     /**
-     * Integrated circuit card declines the transaction after the authorisation.
+     * Integrated circuit card declines the transaction before or after the authorisation.
      * 
      */
     CDCL,

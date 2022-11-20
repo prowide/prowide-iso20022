@@ -23,7 +23,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * 
  * Usage
  * The acknowledgement is sent by the trading member to the CMU after they received the confirmation status advice. 
- * Note that one confirmation status advice acknowledgement responds to one confirmation status advice .
+ * Note that one confirmation status advice acknowledgement responds to one confirmation status advice.
  * 
  * 
  * 

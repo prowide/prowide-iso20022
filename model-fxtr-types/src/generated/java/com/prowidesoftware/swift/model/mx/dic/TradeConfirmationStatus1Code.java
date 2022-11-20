@@ -75,7 +75,7 @@ public enum TradeConfirmationStatus1Code {
     SNCC,
 
     /**
-     * Both the two parties are not confirmed
+     * Both the two parties are not confirmed.
      * 
      */
     SNCN,

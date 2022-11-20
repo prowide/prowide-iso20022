@@ -43,7 +43,7 @@ public class CardPaymentTransaction53 {
     @XmlElement(name = "IntrchngData")
     protected String intrchngData;
     @XmlElement(name = "TxDtls", required = true)
-    protected CardPaymentTransactionDetails28 txDtls;
+    protected CardPaymentTransactionDetails42 txDtls;
     @XmlElement(name = "MrchntRefData")
     protected String mrchntRefData;
 
@@ -202,10 +202,10 @@ public class CardPaymentTransaction53 {
      * 
      * @return
      *     possible object is
-     *     {@link CardPaymentTransactionDetails28 }
+     *     {@link CardPaymentTransactionDetails42 }
      *     
      */
-    public CardPaymentTransactionDetails28 getTxDtls() {
+    public CardPaymentTransactionDetails42 getTxDtls() {
         return txDtls;
     }
 
@@ -214,10 +214,10 @@ public class CardPaymentTransaction53 {
      * 
      * @param value
      *     allowed object is
-     *     {@link CardPaymentTransactionDetails28 }
+     *     {@link CardPaymentTransactionDetails42 }
      *     
      */
-    public CardPaymentTransaction53 setTxDtls(CardPaymentTransactionDetails28 value) {
+    public CardPaymentTransaction53 setTxDtls(CardPaymentTransactionDetails42 value) {
         this.txDtls = value;
         return this;
     }

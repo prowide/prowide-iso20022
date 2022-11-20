@@ -49,7 +49,7 @@ public enum SecuritiesBalanceType10Code {
     RDIS,
 
     /**
-     * Balance of securities which are reserved  temporarily in the SPA account before they will effectively be exchanged.
+     * Balance of securities which are reserved temporarily in the SPA account before they will effectively be exchanged.
      * 
      */
     RREM;

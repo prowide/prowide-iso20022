@@ -46,7 +46,7 @@ public enum ActionType2Code {
     CPTR,
 
     /**
-     * Display a message.
+     * Message to display, print or log.
      * 
      */
     DISP,

@@ -43,7 +43,7 @@ public enum RejectionReason2Code {
     RBIS,
 
     /**
-     * The instruction is irrevocable
+     * The instruction is irrevocable.
      * 
      */
     INIR,

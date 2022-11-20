@@ -12,7 +12,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Information related to an identification, eg, party identification or account identification.
+ * Information related to an identification of a financial institution.
  * 
  * 
  * 

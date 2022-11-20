@@ -252,7 +252,7 @@ public enum DTCAdjustmentPaymentSubReason1Code {
     SSR_4("SSR4"),
 
     /**
-     * Share adjustment resulting from a (sell) transaction affected in our DTCC/dividend trading account (#428‑10288‑1‑3‑039) .
+     * Share adjustment resulting from a (sell) transaction affected in our DTCC/dividend trading account (#428‑10288‑1‑3‑039).
      * 
      */
     @XmlEnumValue("SSR5")
@@ -296,7 +296,7 @@ public enum DTCAdjustmentPaymentSubReason1Code {
     SSPE("SSPE"),
 
     /**
-     * Supplementary interim on  user defined date.
+     * Supplementary interim on user defined date.
      * 
      */
     SAFA("SAFA"),
@@ -326,7 +326,7 @@ public enum DTCAdjustmentPaymentSubReason1Code {
     SRTJ("SRTJ"),
 
     /**
-     * Adjustment made for a withdrawal by transfer that was not transferred into your clients name by the record date. 
+     * Adjustment made for a withdrawal by transfer that was not transferred into your clients name by the record date.
      * 
      */
     @XmlEnumValue("SWL1")
@@ -351,7 +351,7 @@ public enum DTCAdjustmentPaymentSubReason1Code {
     SRAH("SRAH"),
 
     /**
-     * This adjustment is in response to your inquiry. refer to control number: 
+     * This adjustment is in response to your inquiry. refer to control number:
      * 
      */
     SRIH("SRIH"),
@@ -383,7 +383,7 @@ public enum DTCAdjustmentPaymentSubReason1Code {
     SSPJ("SSPJ"),
 
     /**
-     * Allocation adjustment. 
+     * Allocation adjustment.
      * 
      */
     SGLA("SGLA"),
@@ -401,7 +401,7 @@ public enum DTCAdjustmentPaymentSubReason1Code {
     SABA("SABA"),
 
     /**
-     * Allocation of dividend reinvestment shares - DRP/TEDS  instruction @100%.
+     * Allocation of dividend reinvestment shares - DRP/TEDS instruction @100%.
      * 
      */
     @XmlEnumValue("SST6")
@@ -562,7 +562,7 @@ public enum DTCAdjustmentPaymentSubReason1Code {
     SEEE("SEEE"),
 
     /**
-     * DTCC deposit  related adjustment.
+     * DTCC deposit related adjustment.
      * 
      */
     SJDD("SJDD"),
@@ -574,7 +574,7 @@ public enum DTCAdjustmentPaymentSubReason1Code {
     SDAD("SDAD"),
 
     /**
-     * Deposit after cut off date  transferred into the name of the CEDE on record date.
+     * Deposit after cut off date transferred into the name of the CEDE on record date.
      * 
      */
     SDCD("SDCD"),
@@ -594,7 +594,7 @@ public enum DTCAdjustmentPaymentSubReason1Code {
     SSS_6("SSS6"),
 
     /**
-     * Dividend reinvestment (DRP) allocation of cash in lieu of fractions  related adjustment.
+     * Dividend reinvestment (DRP) allocation of cash in lieu of fractions related adjustment.
      * 
      */
     @XmlEnumValue("SSE6")
@@ -701,7 +701,7 @@ public enum DTCAdjustmentPaymentSubReason1Code {
     SFF_8("SFF8"),
 
     /**
-     * Foreign cash dividends allocation at unfavorable rate
+     * Foreign cash dividends allocation at unfavorable rate.
      * 
      */
     @XmlEnumValue("SFL9")
@@ -819,13 +819,13 @@ public enum DTCAdjustmentPaymentSubReason1Code {
     SAMA("SAMA"),
 
     /**
-     * Your interim position was adjusted for deliver orderactivity. 
+     * Your interim position was adjusted for deliver orderactivity.
      * 
      */
     SIGE("SIGE"),
 
     /**
-     * DTCC investment id  related adjustment.
+     * DTCC investment id related adjustment.
      * 
      */
     SJIE("SJIE"),
@@ -880,7 +880,7 @@ public enum DTCAdjustmentPaymentSubReason1Code {
     SGLM("SGLM"),
 
     /**
-     * Muni bearer bond coupon  related adjustment.
+     * Muni bearer bond coupon related adjustment.
      * 
      */
     SMAM("SMAM"),
@@ -904,7 +904,7 @@ public enum DTCAdjustmentPaymentSubReason1Code {
     SMBM("SMBM"),
 
     /**
-     * Muni bearer bond coupon adjustment for coupon(s) missing from a withdrawal
+     * Muni bearer bond coupon adjustment for coupon(s) missing from a withdrawal.
      * 
      */
     SMCM("SMCM"),
@@ -1022,7 +1022,7 @@ public enum DTCAdjustmentPaymentSubReason1Code {
     SSA_6("SSA6"),
 
     /**
-     * Proceeds resulting from a (buy) transaction affected in our  DTCC/dividend trading account (#428‑10288‑1‑3‑039).
+     * Proceeds resulting from a (buy) transaction affected in our DTCC/dividend trading account (#428‑10288‑1‑3‑039).
      * 
      */
     @XmlEnumValue("SSP4")
@@ -1042,7 +1042,7 @@ public enum DTCAdjustmentPaymentSubReason1Code {
     SSS_5("SSS5"),
 
     /**
-     * This allocation was adjusted for a rate change. Please refer to DIVA comment field for additional information. 
+     * This allocation was adjusted for a rate change. Please refer to DIVA comment field for additional information.
      * 
      */
     SRTA("SRTA"),
@@ -1094,13 +1094,13 @@ public enum DTCAdjustmentPaymentSubReason1Code {
     SFJ_9("SFJ9"),
 
     /**
-     * Refund of french tax based on acceptance of global reclamation for the july 1992 distribution refer to important notice  b # 1352‑93
+     * Refund of french tax based on acceptance of global reclamation for the july 1992 distribution refer to important notice b # 1352‑93.
      * 
      */
     SFRB("SFRB"),
 
     /**
-     * Refund of french tax based on acceptance of global reclamation for the june 1992 distribution refer to important notice  b # 1352‑93.
+     * Refund of french tax based on acceptance of global reclamation for the june 1992 distribution refer to important notice b # 1352‑93.
      * 
      */
     SFRA("SFRA"),
@@ -1113,7 +1113,7 @@ public enum DTCAdjustmentPaymentSubReason1Code {
     SFL_2("SFL2"),
 
     /**
-     * DTCC reorganization  related adjustment.
+     * DTCC reorganization related adjustment.
      * 
      * 
      */
@@ -1153,7 +1153,7 @@ public enum DTCAdjustmentPaymentSubReason1Code {
     SRRA("SRRA"),
 
     /**
-     * DTCC WT related adjustment.   
+     * DTCC WT related adjustment.
      * 
      */
     SJWT("SJWT"),

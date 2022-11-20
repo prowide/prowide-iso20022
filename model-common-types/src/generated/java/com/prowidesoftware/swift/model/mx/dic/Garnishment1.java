@@ -16,7 +16,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Provides remittance information about a payment for garnishment-related purposes. 
+ * Provides remittance information about a payment for garnishment-related purposes.
  * 
  * 
  * 

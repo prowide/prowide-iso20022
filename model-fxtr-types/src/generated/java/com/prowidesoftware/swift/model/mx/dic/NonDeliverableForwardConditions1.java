@@ -12,7 +12,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Specifies the opening and valuation conditions for the non deliverable forward
+ * Specifies the opening and valuation conditions for the non deliverable forward.
  * 
  * 
  * 

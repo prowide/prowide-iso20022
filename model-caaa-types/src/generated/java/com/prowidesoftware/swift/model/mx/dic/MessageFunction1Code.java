@@ -45,7 +45,7 @@ public enum MessageFunction1Code {
 
 
     /**
-     * Request for authorisation without financial capture.
+     * The initiator requests an authorisation without financial impact to complete the transaction.
      * 
      */
     AUTQ,

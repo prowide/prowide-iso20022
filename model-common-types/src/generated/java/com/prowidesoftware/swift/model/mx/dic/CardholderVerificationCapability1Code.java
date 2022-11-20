@@ -60,7 +60,7 @@ public enum CardholderVerificationCapability1Code {
     FEPN,
 
     /**
-     * Offline digital signature analysis .
+     * Offline digital signature analysis.
      * 
      */
     FDSG,
@@ -72,7 +72,7 @@ public enum CardholderVerificationCapability1Code {
     FBIO,
 
     /**
-     * Other manual verification, e.g. passport or drivers license.
+     * Other manual verification, for example passport or drivers license.
      * 
      */
     MNVR,

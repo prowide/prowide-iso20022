@@ -86,6 +86,10 @@ public class AppHdrParser {
             // parse BAH version 2
             return (BusinessAppHdrV02) MxParseUtils.parseSAXSource(source, BusinessAppHdrV02.class, BusinessAppHdrV02._classes, params);
 
+        } else if (StringUtils.equals(BusinessAppHdrV03.NAMESPACE, namespace)) {
+            // parse BAH version 3
+            return (BusinessAppHdrV03) MxParseUtils.parseSAXSource(source, BusinessAppHdrV03.class, BusinessAppHdrV03._classes, params);
+
         } else {
             // by default try to parse to BAH version 1
             return (BusinessAppHdrV01) MxParseUtils.parseSAXSource(source, BusinessAppHdrV01.class, BusinessAppHdrV01._classes, params);

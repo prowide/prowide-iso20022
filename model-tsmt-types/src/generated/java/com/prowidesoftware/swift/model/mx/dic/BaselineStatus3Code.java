@@ -48,7 +48,7 @@ public enum BaselineStatus3Code {
     CLSD,
 
     /**
-     * State of the baseline when an initial and at least one twin baselines have been  submitted but it has not yet been agreed by all parties.
+     * State of the baseline when an initial and at least one twin baselines have been submitted but it has not yet been agreed by all parties.
      * 
      */
     PMTC,

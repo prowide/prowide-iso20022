@@ -39,7 +39,7 @@ public enum Grouping1Code {
     GRPD,
 
     /**
-     * Indicates that there are one or several occurrences of the payment information block where each of the occurences might contain one or several occurrences of the payment transaction block.
+     * Indicates that there are one or several occurrences of the payment information block where each of the occurrences might contain one or several occurrences of the payment transaction block.
      * 
      */
     MIXD;

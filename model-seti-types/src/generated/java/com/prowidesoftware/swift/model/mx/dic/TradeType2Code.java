@@ -28,7 +28,7 @@ public enum TradeType2Code {
 
 
     /**
-     * Trade involving risk
+     * Trade involving risk.
      * 
      */
     RISK,
@@ -46,7 +46,7 @@ public enum TradeType2Code {
     AGEN,
 
     /**
-     * Trade which is guaranteed to be finalized
+     * Trade which is guaranteed to be finalized.
      * 
      */
     GUAR;

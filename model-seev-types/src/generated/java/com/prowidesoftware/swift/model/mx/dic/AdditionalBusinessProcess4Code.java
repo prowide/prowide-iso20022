@@ -63,7 +63,7 @@ public enum AdditionalBusinessProcess4Code {
     CNTR,
 
     /**
-     * Relates to a consent within a corporate action event other than a Consent event (:22F::CAEV//CONS).
+     * Relates to a consent within a corporate action event other than a Consent event (: 22F:: CAEV//CONS).
      * 
      */
     CONS,

@@ -14,7 +14,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * The FinancialInstrumentReportingCountryCodeReport message  provides the details of the two character country codes and is created by ESMA for distribution to national competent authorities.
+ * The FinancialInstrumentReportingCountryCodeReport message provides the details of the two character country codes and is created by ESMA for distribution to national competent authorities.
  * 
  * 
  * 

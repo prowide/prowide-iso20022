@@ -69,7 +69,7 @@ public enum UnableToApplyIncorrectInformation3Code {
     IN_01("IN01"),
 
     /**
-     * Payment type service level is incorrect (former IncorrectBankOperationCode)
+     * Payment type service level is incorrect (former IncorrectBankOperationCode).
      * 
      */
     @XmlEnumValue("IN02")
@@ -181,7 +181,7 @@ public enum UnableToApplyIncorrectInformation3Code {
     IN_17("IN17"),
 
     /**
-     * Instruction for next agent is incorrect (former IncorrectSenderToReceiverInformation)
+     * Instruction for next agent is incorrect (former IncorrectSenderToReceiverInformation).
      * 
      */
     @XmlEnumValue("IN18")

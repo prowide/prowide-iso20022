@@ -93,7 +93,7 @@ public enum POIComponentType3Code {
     APLI,
 
     /**
-     * EMV application kernel  (EMV is the chip card specifications initially defined by Eurocard, Mastercard and Visa).
+     * EMV application kernel (EMV is the chip card specifications initially defined by Eurocard, Mastercard and Visa).
      * 
      */
     EMVK,

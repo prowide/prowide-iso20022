@@ -70,7 +70,7 @@ public enum TypeOfPrice3Code {
     PARV("PARV"),
 
     /**
-     * Price  is a rounded average price.
+     * Price is a rounded average price.
      * 
      */
     RDAV("RDAV");

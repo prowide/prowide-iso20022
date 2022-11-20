@@ -32,7 +32,7 @@ public enum Status4Code {
     REJT,
 
     /**
-     * Instruction has been accepted and is validated for further processing
+     * Instruction has been accepted and is validated for further processing.
      * 
      */
     PACK;

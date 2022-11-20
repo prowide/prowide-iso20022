@@ -14,7 +14,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Details of the settlement condition modification request
+ * Details of the settlement condition modification request.
  * 
  * 
  * 

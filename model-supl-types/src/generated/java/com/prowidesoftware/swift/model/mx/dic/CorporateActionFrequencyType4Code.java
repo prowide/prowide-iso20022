@@ -25,7 +25,7 @@ public enum CorporateActionFrequencyType4Code {
 
 
     /**
-     * Special Dividend with reinvestment component.  
+     * Special Dividend with reinvestment component.
      * 
      */
     SPRE;

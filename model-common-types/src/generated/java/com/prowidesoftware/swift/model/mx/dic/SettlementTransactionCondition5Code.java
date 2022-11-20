@@ -40,7 +40,7 @@ public enum SettlementTransactionCondition5Code {
     NPAR,
 
     /**
-     * Partial settlement is  allowed but must satisfy a cash value minimum (value defined in static data).
+     * Partial settlement is allowed but must satisfy a cash value minimum (value defined in static data).
      * 
      */
     PARC,

@@ -21,7 +21,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * - may be forwarded to subsequent case assigner(s) until it reaches the end point
  * - is able to indicate the fact that a case has been assigned to a party downstream in the payment processing chain
  * - may not be used in place of a Resolution Of Investigation (except for the condition given in the next bullet point) or Notification Of Case Assignment message
- * - may be skipped and replaced by a Resolution Of Investigation message if at the moment when the request for a investigation status arrives, the assignee has obtained a solution. (In this case a Resolution Of Investigation message can be sent in lieu of a Case Status Report and the case may be closed.)
+ * - may be skipped and replaced by a Resolution Of Investigation message if at the moment when the request for a investigation status arrives, the assignee has obtained a solution. (In this case a Resolution Of Investigation message can be sent in lieu of a Case Status Report and the case may be closed.).
  * 
  * 
  * 

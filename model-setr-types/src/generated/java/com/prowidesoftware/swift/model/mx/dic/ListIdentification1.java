@@ -12,7 +12,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Unique identifier for a list as assigned by institution, used to associate multiple individual orders.  Uniqueness must be guaranteed within a single trading day.  Institutions which generate multi-day orders should consider embedding a date to assure uniqueness across days.
+ * Unique identifier for a list as assigned by institution, used to associate multiple individual orders. Uniqueness must be guaranteed within a single trading day. Institutions which generate multi-day orders should consider embedding a date to assure uniqueness across days.
  * 
  * 
  * 

@@ -238,7 +238,7 @@ public enum SystemBalanceType1Code {
     MSTR,
 
     /**
-     * Balance representing the forecast of total of all cash legs for trades that are ready to settle via a a central securities depository. Amounts shown are still subject to processing of the securities settlement.
+     * Balance representing the forecast of total of all cash legs for trades that are ready to settle via a central securities depository. Amounts shown are still subject to processing of the securities settlement.
      * 
      */
     FSET,

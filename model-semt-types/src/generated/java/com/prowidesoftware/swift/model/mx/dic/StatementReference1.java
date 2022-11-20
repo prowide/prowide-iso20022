@@ -12,7 +12,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Identifies the reference of the statment  by a unique identifier and the date (and time).
+ * Identifies the reference of the statment by a unique identifier and the date (and time).
  * 
  * 
  * 

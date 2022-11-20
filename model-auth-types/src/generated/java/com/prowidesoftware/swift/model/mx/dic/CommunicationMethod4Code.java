@@ -39,7 +39,7 @@ public enum CommunicationMethod4Code {
     EMAL,
 
     /**
-     * Transmission by Fax.
+     * Transmission by fax.
      * 
      */
     FAXI,

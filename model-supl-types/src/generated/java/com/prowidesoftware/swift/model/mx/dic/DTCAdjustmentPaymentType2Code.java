@@ -86,7 +86,7 @@ public enum DTCAdjustmentPaymentType2Code {
     RCIL("RCIL"),
 
     /**
-     * Claim settlement  related adjustment.
+     * Claim settlement related adjustment.
      * 
      */
     RRCL("RRCL"),
@@ -98,13 +98,13 @@ public enum DTCAdjustmentPaymentType2Code {
     RCDP("RCDP"),
 
     /**
-     * Custody reorganization deposit  related adjustment.
+     * Custody reorganization deposit related adjustment.
      * 
      */
     RRCD("RRCD"),
 
     /**
-     * Dynamic rate change  related adjustment.
+     * Dynamic rate change related adjustment.
      * 
      */
     RRDR("RRDR"),
@@ -116,13 +116,13 @@ public enum DTCAdjustmentPaymentType2Code {
     FAIL("FAIL"),
 
     /**
-     * Fail tracking tax withholding  related adjustment.
+     * Fail tracking tax withholding related adjustment.
      * 
      */
     TJXF("TJXF"),
 
     /**
-     * Intra-day reversal of original tax withholding  related adjustment.
+     * Intra-day reversal of original tax withholding related adjustment.
      * 
      */
     TJXV("TJXV"),
@@ -146,7 +146,7 @@ public enum DTCAdjustmentPaymentType2Code {
     RRLR("RRLR"),
 
     /**
-     * Mandatory reorganization deposit  related adjustment.
+     * Mandatory reorganization deposit related adjustment.
      * 
      */
     RRMD("RRMD"),
@@ -164,7 +164,7 @@ public enum DTCAdjustmentPaymentType2Code {
     MISC("MISC"),
 
     /**
-     * Original (initial) tax withholding  related adjustment.
+     * Original (initial) tax withholding related adjustment.
      * 
      */
     TJXO("TJXO"),
@@ -177,7 +177,7 @@ public enum DTCAdjustmentPaymentType2Code {
     RRR_3("RRR3"),
 
     /**
-     * Original late tax withholding  related adjustment.
+     * Original late tax withholding related adjustment.
      * 
      */
     TJXL("TJXL"),
@@ -189,26 +189,26 @@ public enum DTCAdjustmentPaymentType2Code {
     OTHR("OTHR"),
 
     /**
-     * Rate change tax withholding  related adjustment.
+     * Rate change tax withholding related adjustment.
      * 
      */
     TJXT("TJXT"),
 
     /**
-     * Reclassification tax withholding  related adjustment.
+     * Reclassification tax withholding related adjustment.
      * 
      */
     TJXD("TJXD"),
 
     /**
-     * Participant deposited a security within 10 days after a corporate action event has occurred. 
+     * Participant deposited a security within 10 days after a corporate action event has occurred.
      * 
      */
     @XmlEnumValue("RRD1")
     RRD_1("RRD1"),
 
     /**
-     * Participant deposited a security 10 days after a corporate action event has occurred. 
+     * Participant deposited a security 10 days after a corporate action event has occurred.
      * 
      */
     @XmlEnumValue("RRD2")
@@ -221,13 +221,13 @@ public enum DTCAdjustmentPaymentType2Code {
     REPO("REPO"),
 
     /**
-     * Reversal  related adjustment.
+     * Reversal related adjustment.
      * 
      */
     REVA("REVA"),
 
     /**
-     * Reversal of tax withholding  related adjustment.
+     * Reversal of tax withholding related adjustment.
      * 
      */
     TJXR("TJXR"),
@@ -239,13 +239,13 @@ public enum DTCAdjustmentPaymentType2Code {
     RRRI("RRRI"),
 
     /**
-     * Rights sales  related adjustment.
+     * Rights sales related adjustment.
      * 
      */
     RRRS("RRRS"),
 
     /**
-     * Rights step up  related adjustment.
+     * Rights step up related adjustment.
      * 
      */
     RRRU("RRRU"),
@@ -263,13 +263,13 @@ public enum DTCAdjustmentPaymentType2Code {
     STOK("STOK"),
 
     /**
-     * Tax instruction change  related adjustment.
+     * Tax instruction change related adjustment.
      * 
      */
     TJXI("TJXI"),
 
     /**
-     * Tender offer fraction  related adjustment.
+     * Tender offer fraction related adjustment.
      * 
      */
     @XmlEnumValue("RRT2")
@@ -282,7 +282,7 @@ public enum DTCAdjustmentPaymentType2Code {
     RRWT("RRWT"),
 
     /**
-     * Warrant rate change  related adjustment.
+     * Warrant rate change related adjustment.
      * 
      */
     RRWC("RRWC");

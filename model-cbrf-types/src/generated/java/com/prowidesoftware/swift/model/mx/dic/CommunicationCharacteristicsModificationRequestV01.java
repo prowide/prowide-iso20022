@@ -15,7 +15,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
  * Scope
- * The CommunicationCharacteristicsModificationRequest message is sent by a participant to the CBR payment system to request change of the primary communication channel with the CBR payment system, or change default terminal identification.  
+ * The CommunicationCharacteristicsModificationRequest message is sent by a participant to the CBR payment system to request change of the primary communication channel with the CBR payment system, or change default terminal identification.
  * 
  * 
  * 

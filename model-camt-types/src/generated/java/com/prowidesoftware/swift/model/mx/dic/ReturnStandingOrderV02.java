@@ -13,11 +13,11 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
  * Scope
- * The ReturnStandingOrder message is sent by a transaction administrator  to a member.
+ * The ReturnStandingOrder message is sent by a transaction administrator to a member.
  * It is used to provide information on the details of one or more standing orders, based on specific request and return criteria.
  * in response to a request a on information on standing and predefined orders.
  * Usage
- * The ReturnStandingOrder message lists the standing order based on the following possible return criteria:
+ * The ReturnStandingOrder message lists the standing order based on the following possible return criteria: 
  * - Generic standing order details,
  * - Details of a specific predefined or standing liquidity transfer orders,
  * - Details on the set to which the standing order belongs to,

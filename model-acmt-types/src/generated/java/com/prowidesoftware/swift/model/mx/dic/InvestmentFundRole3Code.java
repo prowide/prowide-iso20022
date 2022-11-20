@@ -47,13 +47,13 @@ public enum InvestmentFundRole3Code {
     CACO,
 
     /**
-     * The party that safekeeps and administers assets on behalf of the owner.
+     * Party that safekeeps and administers assets on behalf of the owner.
      * 
      */
     CUST,
 
     /**
-     * A source of financial information. It provides financial news and data (eg, facts, statistics and analysis), for professional and individual investors through various media (eg, the Internet, magazine).
+     * Source of financial information. Provides financial news and data (for example, facts, statistics and analysis), for professional and individual investors through various media, for example, the Internet, magazines.
      * 
      */
     DATP,
@@ -83,13 +83,13 @@ public enum InvestmentFundRole3Code {
     INVS,
 
     /**
-     * Party that implements the investment strategy, ie, selects portfolio investments in accordance with the objectives and strategy in the fund's prospectus, and places orders to effect or liquidate selected investments in accordance with net flow of capital into or out of the fund.
+     * Party that implements the investment strategy, that is, selects portfolio investments in accordance with the objectives and strategy in the fund's prospectus, and places orders to effect or liquidate selected investments in accordance with net flow of capital into or out of the fund.
      * 
      */
     INVE,
 
     /**
-     * Agent that executes the payment.  In the context of the investment fund industry, the paying agent is the local legal representative of the fund. It may pay out dividends, and collects money for the purchase of funds when a client deals directly with the fund and/or when a client deals with bearer shares. It pays out the redemption of the fund, may distribute information about the fund, and provides legal information about the fund.
+     * Agent that executes the payment. In the context of the investment fund industry, the paying agent is the local legal representative of the fund. It may pay out dividends, and collects money for the purchase of funds when a client deals directly with the fund and/or when a client deals with bearer shares. It pays out the redemption of the fund, may distribute information about the fund, and provides legal information about the fund.
      * 
      */
     PAYI,
@@ -107,7 +107,7 @@ public enum InvestmentFundRole3Code {
     TRAG,
 
     /**
-     * The party that provides services to investors relating to financial products. These services may include some, or all of, provision of information and advice on products, placement of investment orders, transmission of payment, custody of assets, and the administration of rights and benefits. In the specific framework of investment funds industry, an intermediary may present information about Funds to potential investors, and solicit orders for the Fund. It may facilitate the transmission of the orders and information from/to the investors and/or other intermediaries. The intermediary receives commission from the Fund and/or fees from the investor.
+     * Party that provides services to investors relating to financial products. These services may include some, or all of, provision of information and advice on products, placement of investment orders, transmission of payment, custody of assets, and the administration of rights and benefits. In the specific framework of investment funds industry, an intermediary may present information about funds to potential investors, and solicit orders for the fund. This intermediary may facilitate the transmission of the orders and information from/to the investors and/or other intermediaries. The intermediary receives commission from the Fund and/or fees from the investor.
      * 
      */
     INTR,
@@ -137,7 +137,7 @@ public enum InvestmentFundRole3Code {
     DIST,
 
     /**
-     * Party that acts as an aggregator of funds, also called funds hub.
+     * Party that acts as an aggregator of funds, also called a funds hub.
      * 
      */
     CONC;

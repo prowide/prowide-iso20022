@@ -26,7 +26,7 @@ public enum Reporting1Code {
 
 
     /**
-     * Trade details are to be reported to a stock exchange
+     * Trade details are to be reported to a stock exchange.
      * 
      */
     STEX,

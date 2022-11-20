@@ -25,7 +25,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 public class SystemStatus1Choice {
 
-    @XmlElement(name = "Cd", required = true)
+    @XmlElement(name = "Cd")
     @XmlSchemaType(name = "string")
     protected SystemStatus2Code cd;
     @XmlElement(name = "Prtry")

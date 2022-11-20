@@ -15,7 +15,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
  * Specifies the Business Application Header of the Business Message.
- * Can be used when replying to a query;  can also be used when canceling or amending.
+ * Can be used when replying to a query; can also be used when canceling or amending.
  * 
  * 
  * 

@@ -19,7 +19,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * Usage
  * This message is sent after the shareholders meeting has taken place. The Sender of this message confirms the execution of the vote at the meeting and confirms that the vote has been processed as instructed via the MeetingInstruction message.
  * This messages is sent if the Sender of the MeetingInstruction message has requested such a confirmation or if market practice or regulation stipulates the need for a full audit trail.
- * This message definition is intended for use with the Business Application Header (head.001.001.01).
+ * This message definition is intended for use with the Business Application Header.
  * 
  * 
  * 

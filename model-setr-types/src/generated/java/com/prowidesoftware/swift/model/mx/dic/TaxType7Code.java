@@ -67,7 +67,7 @@ public enum TaxType7Code {
     WITH("WITH"),
 
     /**
-     * Tax is on a capital gain (realised and unrealised), ie, the profit that is gained from the sale of a financial instrument.
+     * Tax is on a capital gain (realised and unrealised), that is, the profit that is gained from the sale of a financial instrument.
      * 
      */
     KAPA("KAPA"),
@@ -134,7 +134,7 @@ public enum TaxType7Code {
     AKT_1("AKT1"),
 
     /**
-     * Share-related profit. This is a tax specific to the German market . The share-related-profit gives the fund the opportunity to pass on to the institutional investor redeeming fund units certain tax-free income from equity. The calculation method is based on the new Investment Tax Act (Investmentsteuergesetz).
+     * Share-related profit. This is a tax specific to the German market. The share-related-profit gives the fund the opportunity to pass on to the institutional investor redeeming fund units certain tax-free income from equity. The calculation method is based on the new Investment Tax Act (Investmentsteuergesetz).
      * 
      */
     @XmlEnumValue("AKT2")

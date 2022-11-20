@@ -31,7 +31,7 @@ public enum FrequencyGranularityType1Code {
 
 
     /**
-     * Event takes place at the end of each month or period of one  month.
+     * Event takes place at the end of each month or period of one month.
      * 
      */
     EMON,

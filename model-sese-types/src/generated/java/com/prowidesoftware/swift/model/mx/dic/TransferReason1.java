@@ -25,10 +25,10 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 public class TransferReason1 {
 
-    @XmlElement(name = "Cd")
+    @XmlElement(name = "Cd", required = true)
     @XmlSchemaType(name = "string")
     protected TransferReason1Code cd;
-    @XmlElement(name = "Prtry")
+    @XmlElement(name = "Prtry", required = true)
     protected GenericIdentification27 prtry;
 
     /**

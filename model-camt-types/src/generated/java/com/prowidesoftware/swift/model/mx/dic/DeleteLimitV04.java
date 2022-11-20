@@ -23,7 +23,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * Limits are set by a member of the system either with regard to another specific member (bilateral limit) or with regard to all other participants (multilateral limit). As a result, there can be a maximum of one multilateral limit and as many bilateral limits as members of the system.
  * Note that for a bilateral limit, a member always needs to identify the counterparty to which it applies.
  * At any time during the operating hours of the system, the member can request the transaction administrator to delete any of the limits it has set (current limits). For example, the reason may be to unlock the payments queue regarding a particular member, or following a risk management decision issued after an exceptional event has occurred.
- * The member will submit a DeleteLimit message identifying which limit(s) it wants to delete (current limit risk/liquidity limit concepts have been merged) based on following criteria :
+ * The member will submit a DeleteLimit message identifying which limit(s) it wants to delete (current limit risk/liquidity limit concepts have been merged) based on following criteria:
  * - type of limit(s) (current/default)
  * - value of the limit(s) (default and/or current limit(s))
  * - identification of the counterparty (bilateral limit)

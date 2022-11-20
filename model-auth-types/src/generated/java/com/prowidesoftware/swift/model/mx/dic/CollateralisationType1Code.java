@@ -28,25 +28,25 @@ public enum CollateralisationType1Code {
 
 
     /**
-     * Fully collateralised.
+     * The collateral agreement between the counterparties stipulates that both counterparties post initial margin and regularly post variation margin with respect to the derivative transaction.
      * 
      */
     FLCL,
 
     /**
-     * One way collateralised.
+     * The collateral agreement between the counterparties stipulates that one counterparty posts the initial margin and regularly posts variation margin and that the other counterparty does not post any margin with respect to the derivative transaction.
      * 
      */
     OWCL,
 
     /**
-     * Partially collateralised.
+     * The collateral agreement between the counterparties stipulates that both counterparties regularly post only variation margin with respect to the derivative transaction.
      * 
      */
     PRCL,
 
     /**
-     * Uncollateralised.
+     * There is no collateral agreement between the counterparties or the collateral agreement between the counterparties stipulates that no collateral (neither initial margin nor variation margin) has to be posted with respect to the derivative transaction.
      * 
      */
     UNCL;

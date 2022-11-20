@@ -36,7 +36,7 @@ public enum FundOrderType2Code {
     BEDB,
 
     /**
-     * Investment fund order is related to an investment plan.
+     * Investment fund order is related to an investment plan (only applicable to a subscription).
      * 
      */
     INVP,
@@ -54,7 +54,7 @@ public enum FundOrderType2Code {
     STAF,
 
     /**
-     * Investment fund order is a regular savings plan.
+     * Investment fund order is a regular savings plan (only applicable to a subscription).
      * 
      */
     RGSV,

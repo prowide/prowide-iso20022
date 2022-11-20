@@ -15,7 +15,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
  * Instrument that has or represents monetary value and is used to process a payment instruction.
- * 
+ * .
  * 
  * 
  * 

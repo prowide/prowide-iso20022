@@ -33,7 +33,7 @@ public enum OversubscriptionType1Code {
     UNLD,
 
     /**
-     * Limited subscription by quantity or percentage.
+     * The subscription is limited by quantity or percentage.
      * 
      */
     LTDB,

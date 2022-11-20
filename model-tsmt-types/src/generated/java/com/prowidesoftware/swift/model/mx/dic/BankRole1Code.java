@@ -34,7 +34,7 @@ public enum BankRole1Code {
     BUYB,
 
     /**
-     * Obligor bank
+     * Obligor bank.
      * 
      */
     OBLB,

@@ -20,7 +20,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * Usage
  * The MeetingResultDissemination message is used to provide the vote results per resolution. It may also provide information on the level of participation.
  * This message is also used to notify an update or amendment to a previously sent MeetingResultDissemination message.
- * This message definition is intended for use with the Business Application Header (head.001.001.01).
+ * This message definition is intended for use with the Business Application Header.
  * 
  * 
  * 

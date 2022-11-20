@@ -12,7 +12,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Identification of a party with the  Bank Identification Code or Market Identification Code or party issuer identification or name and address.
+ * Identification of a party with the Bank Identification Code or Market Identification Code or party issuer identification or name and address.
  * 
  * 
  * 

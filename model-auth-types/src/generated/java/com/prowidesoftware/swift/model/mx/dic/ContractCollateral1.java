@@ -14,7 +14,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Further details on the contract collateral. 
+ * Further details on the contract collateral.
  * 
  * 
  * 

@@ -32,7 +32,7 @@ public enum BusinessProcessType1Code {
 
 
     /**
-     * Specifies the processing of a transaction in a  central matching utility model.
+     * Specifies the processing of a transaction in a central matching utility model.
      * 
      */
     ISUP,

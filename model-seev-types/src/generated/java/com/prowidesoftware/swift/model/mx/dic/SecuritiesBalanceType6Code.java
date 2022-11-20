@@ -44,7 +44,7 @@ public enum SecuritiesBalanceType6Code {
     REST,
 
     /**
-     * Total quantity of financial instruments  entitled to the account owner based on the terms of the corporate action event.
+     * Total quantity of financial instruments entitled to the account owner based on the terms of the corporate action event.
      * 
      */
     TENT,
@@ -56,7 +56,7 @@ public enum SecuritiesBalanceType6Code {
     RDIS,
 
     /**
-     * Balance of securities which are reserved  temporarily in the SPA account before they will effectively be exchanged.
+     * Balance of securities which are reserved temporarily in the SPA account before they will effectively be exchanged.
      * 
      */
     RREM;

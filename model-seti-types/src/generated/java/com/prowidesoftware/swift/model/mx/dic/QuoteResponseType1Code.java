@@ -60,7 +60,7 @@ public enum QuoteResponseType1Code {
     DONE,
 
     /**
-     * Rejection of the conditions of a quote because the offer is being declined
+     * Rejection of the conditions of a quote because the offer is being declined.
      * 
      */
     PASS;

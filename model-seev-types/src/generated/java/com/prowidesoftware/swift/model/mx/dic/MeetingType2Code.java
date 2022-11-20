@@ -34,7 +34,7 @@ public enum MeetingType2Code {
     XMET,
 
     /**
-     * Includes annual and ordinary meeting. Statutory meeting(s) usually held at least once a year.  The resolutions are related to the usual business of the company, for example approval of dividends, directors, etc. These meetings are always issuer initiated.
+     * Includes annual and ordinary meeting. Statutory meeting(s) usually held at least once a year. The resolutions are related to the usual business of the company, for example approval of dividends, directors, etc. These meetings are always issuer initiated.
      * 
      */
     GMET,

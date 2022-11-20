@@ -280,14 +280,14 @@ public enum DTCAssetType1Code {
     S_311("S311"),
 
     /**
-     * Municipal Auction Rate Note  (ARN).
+     * Municipal Auction Rate Note (ARN).
      * 
      */
     @XmlEnumValue("S312")
     S_312("S312"),
 
     /**
-     * Municipal Variable Mode Obligation  (VMO).
+     * Municipal Variable Mode Obligation (VMO).
      * 
      */
     @XmlEnumValue("S313")

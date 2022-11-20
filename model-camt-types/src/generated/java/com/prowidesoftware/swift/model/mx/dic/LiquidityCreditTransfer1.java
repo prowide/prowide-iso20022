@@ -16,7 +16,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Provides details specific to the liquidity credit transfer, used to  transfer an amount of money from the debtor to the creditor, where both are financial institutions.
+ * Provides details specific to the liquidity credit transfer, used to transfer an amount of money from the debtor to the creditor, where both are financial institutions.
  * 
  * 
  * 

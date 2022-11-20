@@ -29,10 +29,10 @@ public class SwSecCrypto {
 
     @XmlElementRefs({
         @XmlElementRef(name = "CryptoUserInfo", namespace = "urn:swift:snl:ns.SwSec", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "CryptoDescriptor", namespace = "urn:swift:snl:ns.SwSec", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "CryptoControl", namespace = "urn:swift:snl:ns.SwSec", type = JAXBElement.class, required = false),
         @XmlElementRef(name = "CryptoInfo", namespace = "urn:swift:snl:ns.SwSec", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "CryptoInternal", namespace = "urn:swift:snl:ns.SwSec", type = JAXBElement.class, required = false)
+        @XmlElementRef(name = "CryptoInternal", namespace = "urn:swift:snl:ns.SwSec", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "CryptoDescriptor", namespace = "urn:swift:snl:ns.SwSec", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "CryptoControl", namespace = "urn:swift:snl:ns.SwSec", type = JAXBElement.class, required = false)
     })
     protected List<JAXBElement<?>> content;
 
@@ -42,8 +42,8 @@ public class SwSecCrypto {
      * <p>
      * You are getting this "catch-all" property because of the following reason: 
      * The field name "CryptoDescriptor" is used by two different parts of a schema. See: 
-     * line 82 of file:/Users/sebastian/IdeaProjects/pw-swift-codegen.SRU2022/codegen-mx/src/main/resources/xsd-xsys/SwSec.xsd
-     * line 79 of file:/Users/sebastian/IdeaProjects/pw-swift-codegen.SRU2022/codegen-mx/src/main/resources/xsd-xsys/SwSec.xsd
+     * line 82 of file:/Users/sebastian/IdeaProjects/pw-swift-codegen/codegen-mx/src/main/resources/xsd-xsys/SwSec.xsd
+     * line 79 of file:/Users/sebastian/IdeaProjects/pw-swift-codegen/codegen-mx/src/main/resources/xsd-xsys/SwSec.xsd
      * <p>
      * To get rid of this property, apply a property customization to one 
      * of both of the following declarations to change their names: 
@@ -64,11 +64,11 @@ public class SwSecCrypto {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link JAXBElement }{@code <}{@link SwSecMixedAny }{@code >}
-     * {@link JAXBElement }{@code <}{@link SwSecCryptoControl }{@code >}
-     * {@link JAXBElement }{@code <}{@link SwSecCryptoDescriptor }{@code >}
      * {@link JAXBElement }{@code <}{@link SwSecCryptoInfo }{@code >}
      * {@link JAXBElement }{@code <}{@link SwSecMixedAny }{@code >}
+     * {@link JAXBElement }{@code <}{@link SwSecMixedAny }{@code >}
+     * {@link JAXBElement }{@code <}{@link SwSecCryptoDescriptor }{@code >}
+     * {@link JAXBElement }{@code <}{@link SwSecCryptoControl }{@code >}
      * 
      * 
      */

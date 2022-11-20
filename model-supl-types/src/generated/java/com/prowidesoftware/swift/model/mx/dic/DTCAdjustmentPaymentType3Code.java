@@ -57,27 +57,27 @@ public enum DTCAdjustmentPaymentType3Code {
     STOK("STOK"),
 
     /**
-     * Participant deposited a security within 10 days after a corporate action event has occurred. 
+     * Participant deposited a security within 10 days after a corporate action event has occurred.
      * 
      */
     @XmlEnumValue("RRD1")
     RRD_1("RRD1"),
 
     /**
-     * Participant deposited a security 10 days after a corporate action event has occurred. 
+     * Participant deposited a security 10 days after a corporate action event has occurred.
      * 
      */
     @XmlEnumValue("RRD2")
     RRD_2("RRD2"),
 
     /**
-     * Custody reorganization deposit  related adjustment.
+     * Custody reorganization deposit related adjustment.
      * 
      */
     RRCD("RRCD"),
 
     /**
-     * Dynamic rate change  related adjustment.
+     * Dynamic rate change related adjustment.
      * 
      */
     RRDR("RRDR");

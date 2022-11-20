@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Choice of formats to  express the processing status of the standing instruction cancellation request.
+ * Choice of formats to express the processing status of the standing instruction cancellation request.
  * 
  * 
  * 

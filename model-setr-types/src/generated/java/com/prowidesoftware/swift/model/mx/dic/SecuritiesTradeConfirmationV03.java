@@ -24,8 +24,8 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * The custodian or the affirming party is typically the custodian, trustee, financial institution, intermediary system/vendor communicating on behalf of them, or their agent.
  * 
  * USAGE
- * Initiator:  In local matching, the initiator of this message is always the executing party.  In central matching the initiator may be either the executing party or instructing party.
- * Respondent: instructing party, a custodian or an affirming party responds with SecuritiesTradeConfirmationResponse (accept or reject) message. 
+ * Initiator: In local matching, the initiator of this message is always the executing party. In central matching the initiator may be either the executing party or instructing party.
+ * Respondent: instructing party, a custodian or an affirming party responds with SecuritiesTradeConfirmationResponse (accept or reject) message.
  * 
  * 
  * 

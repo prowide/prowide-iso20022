@@ -19,8 +19,8 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * This message is used to pass on information that the matching application has received from the submitter. The forwarded information can originate from an InitialBaselineSubmission or BaselineReSubmission or BaselineAmendmentRequest message.
  * Usage
  * The FullPushThroughReport message can be sent by the matching application to a party to convey
- * - the details of an InitialBaselineSubmission message that it has obtained,or
- * - the details of a BaselineResubmission message that it has obtained,or
+ * - the details of an InitialBaselineSubmission message that it has obtained, or
+ * - the details of a BaselineResubmission message that it has obtained, or
  * - the details of a BaselineAmendmentRequest message that it has obtained.
  * 
  * 

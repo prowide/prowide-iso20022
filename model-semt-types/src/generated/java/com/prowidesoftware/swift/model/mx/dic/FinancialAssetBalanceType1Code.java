@@ -234,7 +234,7 @@ public enum FinancialAssetBalanceType1Code {
     BAAP,
 
     /**
-     * Balance attributed to syndicated bank loans
+     * Balance attributed to syndicated bank loans.
      * 
      */
     SYBL,
@@ -264,7 +264,7 @@ public enum FinancialAssetBalanceType1Code {
     CLOB,
 
     /**
-     * Balance attributed to collateralised mortgage obligations
+     * Balance attributed to collateralised mortgage obligations.
      * 
      */
     CMOO,
@@ -324,7 +324,7 @@ public enum FinancialAssetBalanceType1Code {
     GNMA,
 
     /**
-     * Balance attributed to treasuries and agencies debentures
+     * Balance attributed to treasuries and agencies debentures.
      * 
      */
     TAAB,

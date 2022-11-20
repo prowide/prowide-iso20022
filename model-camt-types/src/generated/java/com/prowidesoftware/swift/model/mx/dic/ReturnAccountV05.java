@@ -22,7 +22,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * The member can request information about accounts through a series of criteria, corresponding to the known information stored at the transaction administrator.
  * The query can concern one or more specific accounts, accounts of a particular identification, or a particular type. The purpose of the query may be to obtain one or more types of balance.
  * The transaction administrator may also send a ReturnAccount message with pre-defined information, at times previously agreed with the member, or to warn the member about a particular problem that may have arisen and which needs attention.
- * The message from the transaction administrator can contain information based on the following elements:
+ * The message from the transaction administrator can contain information based on the following elements: 
  * - account identification
  * - account name
  * - account type (this is used when the account identification represents, for example, a group of accounts)
@@ -31,7 +31,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * - bilateral or multilateral limits
  * - related counterparty (when the limit or balance is bilateral)
  * - balance value date (if not present in the GetAccount message, the ReturnAccount message will contain the latest available balance)
- * - number of payments to the additional account information on the generic design of the Get/Return messages can be found in the section How to Use the Cash Management Messages
+ * - number of payments to the additional account information on the generic design of the Get/Return messages can be found in the section How to Use the Cash Management Messages.
  * 
  * 
  * 

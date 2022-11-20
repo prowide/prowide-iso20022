@@ -36,7 +36,7 @@ public enum QueryTradeStatus1Code {
     QAST,
 
     /**
-     * Query for trades have been canceled.  
+     * Query for trades have been canceled.
      * 
      */
     QCTR,
@@ -60,7 +60,7 @@ public enum QueryTradeStatus1Code {
     QNTR,
 
     /**
-     * Query for trades have been replaced.  
+     * Query for trades have been replaced.
      * 
      */
     QRTR;

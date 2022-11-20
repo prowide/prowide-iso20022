@@ -26,7 +26,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 @XmlType(name = "Document", propOrder = {
     "sctiesFincgRptgMrgnDataTxStatRpt"
 })
-@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:DRAFT2auth.085.001.01")
+@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:auth.085.001.01")
 public class MxAuth08500101
     extends com.prowidesoftware.swift.model.mx.AbstractMX
 {
@@ -38,8 +38,8 @@ public class MxAuth08500101
     public final static transient int VARIANT = 1;
     public final static transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {ActiveOrHistoricCurrencyAndAmount.class, CollateralMarginNew3 .class, ContractModification1 .class, Counterparty30 .class, ModificationLevel1Code.class, MxAuth08500101 .class, OrganisationIdentification9Choice.class, PostedMarginOrCollateral1 .class, ReceivedMarginOrCollateral1 .class, ReconciliationFlag1 .class, SecuritiesFinancingReportingMarginDataTransactionStateReportV01 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TradeRepositoryReportingType1Code.class, TransactionOperationType3Code.class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:DRAFT2auth.085.001.01";
+    public final static transient Class[] _classes = new Class[] {ActiveOrHistoricCurrencyAndAmount.class, CollateralMarginNew7 .class, ContractModification3 .class, Counterparty30 .class, ModificationLevel1Code.class, MxAuth08500101 .class, OrganisationIdentification9Choice.class, PostedMarginOrCollateral3 .class, ReceivedMarginOrCollateral3 .class, ReconciliationFlag1 .class, ReportPeriodActivity1Code.class, SecuritiesFinancingReportingMarginDataTransactionStateReportV01 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TradeData13Choice.class, TradeRepositoryReportingType1Code.class, TransactionOperationType6Code.class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:auth.085.001.01";
 
     public MxAuth08500101() {
         super();

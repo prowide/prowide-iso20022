@@ -14,7 +14,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * The DerivativesTradeReportPositionSets message is sent by the the trade repositories to the supervisory authority system, to report aggregated exposures between a pair of counterparties that comprise positions sets, collateral position sets, currency positions sets and currency collateral position sets.
+ * The DerivativesTradePositionSetReport message is sent by the trade repositories to the supervisory authority system, to report aggregated exposures between a pair of counterparties that comprise positions sets, collateral position sets, currency positions sets and currency collateral position sets.
  * 
  * 
  * 
@@ -27,7 +27,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 public class DerivativesTradePositionSetReportV01 {
 
     @XmlElement(name = "AggtdPos", required = true)
-    protected PositionSetAggregated2 aggtdPos;
+    protected PositionSetAggregated1Choice aggtdPos;
     @XmlElement(name = "SplmtryData")
     protected List<SupplementaryData1> splmtryData;
 
@@ -36,10 +36,10 @@ public class DerivativesTradePositionSetReportV01 {
      * 
      * @return
      *     possible object is
-     *     {@link PositionSetAggregated2 }
+     *     {@link PositionSetAggregated1Choice }
      *     
      */
-    public PositionSetAggregated2 getAggtdPos() {
+    public PositionSetAggregated1Choice getAggtdPos() {
         return aggtdPos;
     }
 
@@ -48,10 +48,10 @@ public class DerivativesTradePositionSetReportV01 {
      * 
      * @param value
      *     allowed object is
-     *     {@link PositionSetAggregated2 }
+     *     {@link PositionSetAggregated1Choice }
      *     
      */
-    public DerivativesTradePositionSetReportV01 setAggtdPos(PositionSetAggregated2 value) {
+    public DerivativesTradePositionSetReportV01 setAggtdPos(PositionSetAggregated1Choice value) {
         this.aggtdPos = value;
         return this;
     }

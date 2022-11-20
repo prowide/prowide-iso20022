@@ -20,7 +20,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * Each ModifyLimit message can alter only one type of limit (current or default).
  * Usage
  * At any time during the operating hours of the system, the member can request modifications in the limits it has set. For example, the reason may be to unlock the payments queue regarding a particular member, or following a risk management decision issued after an exceptional event has occurred.
- * The member will submit a message requesting modifications in one or more of the following criteria:
+ * The member will submit a message requesting modifications in one or more of the following criteria: 
  * - type of limit (current/default)
  * - identification of the system
  * - identification of the counterparty

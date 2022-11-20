@@ -30,31 +30,31 @@ public enum MeetingTypeClassification1Code {
 
 
     /**
-     * Specifies a meeting held periodically to approve the financial statements and to elect the board members and the auditors.
+     * Meeting held periodically to approve the financial statements and to elect the board members and the auditors.
      * 
      */
     AMET,
 
     /**
-     * Specifies a meeting which is planned in the by-laws.
+     * Meeting which is planned in the by-laws.
      * 
      */
     OMET,
 
     /**
-     * Meeting for holders of a specific type of asset, e.g. preferred shs, bonds, 
+     * Meeting for holders of a specific type of asset, for example, preferred shares, bonds.
      * 
      */
     CLAS,
 
     /**
-     * Specifies that the meeting is the result of an obligation or a decision made by the issuer as opposed to voting rights holder initiated, ex. contested meeting.
+     * Meeting is the result of an obligation or a decision made by the issuer as opposed to voting rights holder initiated, for example, contested meeting.
      * 
      */
     ISSU,
 
     /**
-     * Specifies that the meeting is the result of a request or an action of a voting right holder(s), e.g. contested meeting.
+     * Meeting is the result of a request or an action of a voting right holder(s), for example, contested meeting.
      * 
      */
     VRHI,

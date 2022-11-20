@@ -47,13 +47,13 @@ public enum VoteInstruction1Code {
     ABST,
 
     /**
-     * Participant to a meeting withholds its vote for a meeting resolution . This action is usually taken in order to indicate a strong disagreement with a resolution (US market).
+     * Participant to a meeting withholds its vote for a meeting resolution. This action is usually taken in order to indicate a strong disagreement with a resolution (US market).
      * 
      */
     WTHH,
 
     /**
-     * Indicates a recommendation to take no action
+     * Indicates a recommendation to take no action.
      * 
      */
     NOAC;

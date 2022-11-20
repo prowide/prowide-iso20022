@@ -26,13 +26,13 @@ public enum AccountManagementType1Code {
 
 
     /**
-     * Refer to an account opening instruction message.
+     * Refers to an account opening instruction message.
      * 
      */
     ACCO,
 
     /**
-     * Refer to an account modification instruction message.
+     * Refers to an account modification instruction message.
      * 
      */
     ACCM;

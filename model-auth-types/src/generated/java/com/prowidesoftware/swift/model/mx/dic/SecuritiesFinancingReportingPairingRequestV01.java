@@ -27,7 +27,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 public class SecuritiesFinancingReportingPairingRequestV01 {
 
     @XmlElement(name = "TxId", required = true)
-    protected List<TradeTransactionIdentification2> txId;
+    protected List<TradeTransactionIdentification4> txId;
     @XmlElement(name = "SplmtryData")
     protected List<SupplementaryData1> splmtryData;
 
@@ -49,13 +49,13 @@ public class SecuritiesFinancingReportingPairingRequestV01 {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link TradeTransactionIdentification2 }
+     * {@link TradeTransactionIdentification4 }
      * 
      * 
      */
-    public List<TradeTransactionIdentification2> getTxId() {
+    public List<TradeTransactionIdentification4> getTxId() {
         if (txId == null) {
-            txId = new ArrayList<TradeTransactionIdentification2>();
+            txId = new ArrayList<TradeTransactionIdentification4>();
         }
         return this.txId;
     }
@@ -109,7 +109,7 @@ public class SecuritiesFinancingReportingPairingRequestV01 {
      * @see #getTxId()
      * 
      */
-    public SecuritiesFinancingReportingPairingRequestV01 addTxId(TradeTransactionIdentification2 txId) {
+    public SecuritiesFinancingReportingPairingRequestV01 addTxId(TradeTransactionIdentification4 txId) {
         getTxId().add(txId);
         return this;
     }

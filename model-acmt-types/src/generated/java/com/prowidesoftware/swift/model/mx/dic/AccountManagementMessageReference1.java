@@ -13,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Information about the message reference of the account management instruction message for which the status is requested .
+ * Information about the message reference of the account management instruction message for which the status is requested.
  * 
  * 
  * 

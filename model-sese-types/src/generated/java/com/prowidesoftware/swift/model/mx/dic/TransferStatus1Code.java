@@ -37,7 +37,7 @@ public enum TransferStatus1Code {
     PACK,
 
     /**
-     * Transfer or settlement instruction has been sent to the next party, ie, the next intermediary.
+     * Transfer or settlement instruction has been sent to the next party, that is, the next intermediary.
      * 
      */
     STNP,

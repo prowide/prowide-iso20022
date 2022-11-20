@@ -23,7 +23,8 @@ import org.apache.commons.lang3.StringUtils;
 public enum AppHdrType {
     LEGACY(LegacyAppHdr.NAMESPACE, LegacyAppHdr.class),
     BAH_V1(BusinessAppHdrV01.NAMESPACE, BusinessAppHdrV01.class),
-    BAH_V2(BusinessAppHdrV02.NAMESPACE, BusinessAppHdrV02.class);
+    BAH_V2(BusinessAppHdrV02.NAMESPACE, BusinessAppHdrV02.class),
+    BAH_V3(BusinessAppHdrV03.NAMESPACE, BusinessAppHdrV03.class);
 
     private String namespace;
     private Class headerClass;

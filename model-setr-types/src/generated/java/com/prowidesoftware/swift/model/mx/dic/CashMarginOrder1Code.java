@@ -33,7 +33,7 @@ public enum CashMarginOrder1Code {
     CASH,
 
     /**
-     * The principal order, if  executed, will generate a margin account opening or margin call because the principal does not have the cash in case of a purchase or the securities in case of a sale.
+     * The principal order, if executed, will generate a margin account opening or margin call because the principal does not have the cash in case of a purchase or the securities in case of a sale.
      * 
      */
     MRGO,

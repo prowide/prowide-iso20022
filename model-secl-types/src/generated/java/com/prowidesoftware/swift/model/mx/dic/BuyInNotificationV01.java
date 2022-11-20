@@ -16,7 +16,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 /**
  * This message is sent by the central counterparty (CCP) to a clearing member to notify the start of the buy in process. 
  * 
- * Note: This message can also be sent, as a warning, by the central counterparty to the clearing member some days before the buy in process starts .
+ * Note: This message can also be sent, as a warning, by the central counterparty to the clearing member some days before the buy in process starts.
  * 
  * 
  * 

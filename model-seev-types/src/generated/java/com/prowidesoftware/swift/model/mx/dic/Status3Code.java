@@ -36,7 +36,7 @@ public enum Status3Code {
     CAND,
 
     /**
-     * Instruction has been accepted and is validated for further processing
+     * Instruction has been accepted and is validated for further processing.
      * 
      */
     PACK,
@@ -54,7 +54,7 @@ public enum Status3Code {
     COMP,
 
     /**
-     * Instruction has been confirmed by Issuer.
+     * Instruction has been received by Issuer.
      * 
      */
     RCIS,

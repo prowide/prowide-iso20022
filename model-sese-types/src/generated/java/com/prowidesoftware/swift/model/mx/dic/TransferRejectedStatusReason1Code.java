@@ -94,7 +94,7 @@ public enum TransferRejectedStatusReason1Code {
     BLCA,
 
     /**
-     * Investment account is blocked until certain legal proceedings are completed, eg, legal documents from the successor, legal proceedings due to bankruptcy.
+     * Investment account is blocked until certain legal proceedings are completed, for example, legal documents from the successor, legal proceedings due to bankruptcy.
      * 
      */
     DOCC,

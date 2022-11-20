@@ -34,7 +34,7 @@ public enum BalanceType12Code {
 
 
     /**
-     * Balance, composed of booked entries and pending items known at the time of calculation , which projects the end of day balance if everything is booked on the account and no other entry is posted.
+     * Balance, composed of booked entries and pending items known at the time of calculation, which projects the end of day balance if everything is booked on the account and no other entry is posted.
      * 
      */
     XPCD,
@@ -76,7 +76,7 @@ public enum BalanceType12Code {
     ITBD,
 
     /**
-     * Book balance of the account at the beginning of the account reporting period.  It always equals the closing book balance from the previous report.
+     * Book balance of the account at the beginning of the account reporting period. It always equals the closing book balance from the previous report.
      * 
      */
     OPBD,

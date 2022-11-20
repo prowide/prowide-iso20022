@@ -26,7 +26,7 @@ public enum TransferType1Code {
 
 
     /**
-     * Transfer as asset.
+     * Transfer the security as an asset in specie, that is, 'in its actual form'.
      * 
      */
     SECU,

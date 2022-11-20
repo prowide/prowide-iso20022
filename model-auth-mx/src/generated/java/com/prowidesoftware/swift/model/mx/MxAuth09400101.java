@@ -26,7 +26,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 @XmlType(name = "Document", propOrder = {
     "sctiesFincgRptgTxQry"
 })
-@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:DRAFT2auth.094.001.01")
+@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:auth.094.001.01")
 public class MxAuth09400101
     extends com.prowidesoftware.swift.model.mx.AbstractMX
 {
@@ -38,8 +38,8 @@ public class MxAuth09400101
     public final static transient int VARIANT = 1;
     public final static transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {AddressType2Code.class, AnyMIC1Code.class, CollateralType6Code.class, CorporateSectorCriteria4 .class, DateOrBlankQuery2Choice.class, DatePeriod1 .class, DateTimePeriod1 .class, ExposureType3Code.class, FinancialPartySectorType2Code.class, GenericIdentification1 .class, MxAuth09400101 .class, NameAndAddress5 .class, NoReasonCode.class, NotReported1Code.class, Operation3Code.class, PartyIdentification121Choice.class, PartyNatureType1Code.class, PostalAddress1 .class, SecuritiesFinancingReportingTransactionQueryV01 .class, SecuritiesTradeVenueCriteria1Choice.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TradeAdditionalQueryCriteria4 .class, TradeDateTimeQueryCriteria2 .class, TradePartyIdentificationQuery8 .class, TradePartyQueryCriteria4 .class, TradeQueryCriteria5 .class, TradeQueryExecutionFrequency1Choice.class, TradeRecurrentQuery3 .class, TradeReportQuery5Choice.class, TransactionOperationType3Code.class, WeekDay2Code.class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:DRAFT2auth.094.001.01";
+    public final static transient Class[] _classes = new Class[] {AddressType2Code.class, AnyMIC1Code.class, CollateralType6Code.class, CorporateSectorCriteria4 .class, DateOrBlankQuery2Choice.class, DatePeriod1 .class, DateTimePeriod1 .class, ExposureType6Code.class, FinancialPartySectorType2Code.class, GenericIdentification1 .class, MxAuth09400101 .class, NameAndAddress5 .class, NoReasonCode.class, NotReported1Code.class, Operation3Code.class, PartyIdentification121Choice.class, PartyNatureType1Code.class, PostalAddress1 .class, SecuritiesFinancingReportingTransactionQueryV01 .class, SecuritiesTradeVenueCriteria1Choice.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TradeAdditionalQueryCriteria6 .class, TradeDateTimeQueryCriteria2 .class, TradePartyIdentificationQuery8 .class, TradePartyIdentificationQuery9 .class, TradePartyQueryCriteria5 .class, TradeQueryCriteria8 .class, TradeQueryExecutionFrequency1Choice.class, TradeRecurrentQuery3 .class, TradeReportQuery8Choice.class, TradeTypeQueryCriteria1 .class, TransactionOperationType6Code.class, WeekDay2Code.class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:auth.094.001.01";
 
     public MxAuth09400101() {
         super();

@@ -40,7 +40,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * - account identification (entries booked to a specific account)
  * - entry amount and/or currency
  * - entry debit/credit indicator (if absent, all entries should be reported)
- * - status of the entry (pending, booked, ...)
+ * - status of the entry (pending, booked.)
  * - entry date and time
  * - currency of the account
  * - type of the account

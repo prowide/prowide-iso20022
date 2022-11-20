@@ -31,7 +31,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * - bilateral or multilateral limits
  * - related counterparty (when the limit or balance is bilateral)
  * - balance value date (if not present in the GetAccount message, the ReturnAccount message will contain the latest available balance)
- * - number of payments to the additional account information on the generic design of the Get/Return messages can be found in the section How to Use the Cash Management Messages
+ * - number of payments to the additional account information on the generic design of the Get/Return messages can be found in the section How to Use the Cash Management Messages.
  * 
  * 
  * 

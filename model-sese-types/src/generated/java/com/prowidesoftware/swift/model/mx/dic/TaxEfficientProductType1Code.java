@@ -42,7 +42,7 @@ public enum TaxEfficientProductType1Code {
     CASH,
 
     /**
-     * Cash child trust fund individual savings account. In the UK, this is known as a CTF ISA.
+     * Non-stakeholder child trust fund individual savings account. In the UK, this is known as a non-stakeholder CTF ISA.
      * 
      */
     CCTF,
@@ -66,19 +66,19 @@ public enum TaxEfficientProductType1Code {
     INNF,
 
     /**
-     * Junior cash individual savings account. In the UK, this is known as a junior cash ISA.
+     * Junior cash individual savings account. In the UK, this is known as a cash JISA.
      * 
      */
     JCSH,
 
     /**
-     * Junior stocks and shares individual savings account. In the UK, this is known as an JISA.
+     * Junior stocks and shares individual savings account. In the UK, this is known as a stocks and shares  JISA.
      * 
      */
     JISA,
 
     /**
-     * Lifetime individual savings account. In the UK, this is known as a LISA.
+     * Stocks and shares lifetime individual savings account. In the UK, this is known as a stocks and shares LISA.
      * 
      */
     LISA,
