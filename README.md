@@ -21,7 +21,7 @@ For SWIFT messages validation, restricted ISO versions (such as SEPA, CBPR+, TAR
 
 ### Distribution
 This repository exposes the **source code for the maintenance and LTS yearly releases**. 
-Latest public **binary DOWNLOAD** is available at https://www.prowidesoftware.com/download 
+Latest public **binary DOWNLOAD** is available at https://dev.prowidesoftware.com/SRU2022/getting-started/download-iso20022/ 
 
 SRU updates are made available in October (one month before SWIFT production date) for the public, and 6 months in advance for subscribed customers.
 
