@@ -1,7 +1,7 @@
 # Prowide ISO 20022 - CHANGELOG
 
 #### 9.3.5-SNAPSHOT
-  * Added DI support for JaxbContext
+  * Added an optional way to pass a JaxbContext instance to the parse and write methods
 
 
 #### 9.3.4 - November 2022

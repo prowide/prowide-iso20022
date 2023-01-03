@@ -42,7 +42,11 @@ import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.transform.Source;
 import javax.xml.transform.dom.DOMResult;
 import javax.xml.transform.stream.StreamSource;
-import java.io.*;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.StringReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
@@ -68,10 +72,8 @@ import java.util.logging.Logger;
  * @since 7.6
  */
 public abstract class AbstractMX extends AbstractMessage implements JsonSerializable {
-    private static final transient Logger log = Logger.getLogger(AbstractMX.class.getName());
-
     public static final String DOCUMENT_LOCALNAME = "Document";
-
+    private static final transient Logger log = Logger.getLogger(AbstractMX.class.getName());
     /**
      * Default root element when an MX is serialized as XML including both AppHdr and Document
      *
@@ -170,25 +172,6 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
     }
 
     /**
-     * Parses the XML string containing the Document and optional AppHdr into a specific instance of MX message object.
-     * The header version, if present, is auto detected from its namespace.
-     *
-     * <p>If the string is empty, does not contain an MX document, the message type cannot be detected or an error
-     * occur reading and parsing the message content; this method returns null.
-     *
-     * <p>The implementation detects the message type and uses reflection to call the parser in the specific subclass.
-     *
-     * @param xml string a string containing the Document of an MX message in XML format
-     * @param id  optional parameter to indicate the specific MX type to create; auto detected from namespace if null.
-     * @param conf specific options for the unmarshalling or null to use the default parameters
-     * @return parsed message or null if string content could not be parsed into an Mx
-     * @since 9.2.6
-     */
-    public static AbstractMX parse(final String xml, MxId id, final MxReadConfiguration conf) {
-        return MxReadImpl.parse(xml, id, new MxReadParams(conf));
-    }
-
-    /**
      * @deprecated use Lib.readFile(file) and any parse from String method
      */
     @Deprecated
@@ -231,6 +214,25 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
     }
 
     /**
+     * Parses the XML string containing the Document and optional AppHdr into a specific instance of MX message object.
+     * The header version, if present, is auto detected from its namespace.
+     *
+     * <p>If the string is empty, does not contain an MX document, the message type cannot be detected or an error
+     * occur reading and parsing the message content; this method returns null.
+     *
+     * <p>The implementation detects the message type and uses reflection to call the parser in the specific subclass.
+     *
+     * @param xml  string a string containing the Document of an MX message in XML format
+     * @param id   optional parameter to indicate the specific MX type to create; auto detected from namespace if null.
+     * @param conf specific options for the unmarshalling or null to use the default parameters
+     * @return parsed message or null if string content could not be parsed into an Mx
+     * @since 9.2.6
+     */
+    public static AbstractMX parse(final String xml, MxId id, final MxReadConfiguration conf) {
+        return MxReadImpl.parse(xml, id, new MxReadParams(conf));
+    }
+
+    /**
      * Used by subclasses to implement JSON deserialization.
      *
      * @param json     a JSON representation of an MX message
@@ -264,70 +266,6 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
     }
 
     /**
-     * Get the classes associated with this message
-     *
-     * @since 7.7
-     */
-    @SuppressWarnings("rawtypes")
-    public abstract Class[] getClasses();
-
-    /**
-     * Get the XML namespace of the message
-     *
-     * @since 7.7
-     */
-    public abstract String getNamespace();
-
-    /**
-     * get the Alphabetic code in four positions (fixed length) identifying the Business Process
-     *
-     * @return the business process of the implementing class
-     * @since 7.7
-     */
-    public abstract String getBusinessProcess();
-
-    /**
-     * Get the code identifying the Message Functionality
-     *
-     * @return the set functionality or null if not set
-     * @since 7.7
-     */
-    public abstract int getFunctionality();
-
-    /**
-     * Get the Message variant
-     *
-     * @return the set variant or null if not set
-     * @since 7.7
-     */
-    public abstract int getVariant();
-
-    /**
-     * Get the message version
-     *
-     * @return the set vesion or null if not set
-     * @since 7.7
-     */
-    public abstract int getVersion();
-
-    /**
-     * Get this message as an XML string.
-     *
-     * <p>If the header is present, then 'AppHdr' and 'Document' elements will be wrapped under a
-     * {@link #DEFAULT_ROOT_ELEMENT}. Both header and document are generated with the corresponding namespaces and by
-     * default the prefix 'h' is used for the header and the prefix 'Doc' for the document.
-     * <br>For more serialization options see {@link #message(MxWriteConfiguration)}
-     * <br>To serialize only the header or the document (without header) see {@link #header()} and {@link #document()}
-     *
-     * @return the XML content or null if errors occur during serialization
-     * @since 7.7
-     */
-    @Override
-    public String message() {
-        return message(new MxWriteConfiguration());
-    }
-
-    /**
      * @deprecated use {@link #message(MxWriteConfiguration)} instead
      */
     @Deprecated
@@ -337,18 +275,6 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
         MxWriteConfiguration conf = new MxWriteConfiguration();
         conf.rootElement = rootElement;
         conf.includeXMLDeclaration = includeXMLDeclaration;
-        return message(conf);
-    }
-
-    /**
-     * @deprecated use {@link #message(MxWriteConfiguration)} instead
-     */
-    @Deprecated
-    @ProwideDeprecated(phase3 = TargetYear.SRU2023)
-    public String message(final String rootElement) {
-        DeprecationUtils.phase2(AbstractMX.class, "message(String)", "Use message(MxWriteConfiguration) instead");
-        MxWriteConfiguration conf = new MxWriteConfiguration();
-        conf.rootElement = rootElement;
         return message(conf);
     }
 
@@ -399,6 +325,57 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
     /**
      * Get this message AppHdr as an XML string.
      *
+     * @since 9.2.6
+     */
+    public String header(final MxWriteParams params) {
+        if (this.appHdr != null) {
+            return this.appHdr.xml(params);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Get this message Document as an XML string.
+     *
+     * @param params not null marshalling parameters
+     * @since 9.2.6
+     */
+    public String document(MxWriteParams params) {
+        Objects.requireNonNull(params, "marshalling params cannot be null");
+        return MxWriteImpl.write(getNamespace(), this, getClasses(), params);
+    }
+
+    /**
+     * Get the classes associated with this message
+     *
+     * @since 7.7
+     */
+    @SuppressWarnings("rawtypes")
+    public abstract Class[] getClasses();
+
+    /**
+     * Get the XML namespace of the message
+     *
+     * @since 7.7
+     */
+    public abstract String getNamespace();
+
+    /**
+     * @deprecated use {@link #message(MxWriteConfiguration)} instead
+     */
+    @Deprecated
+    @ProwideDeprecated(phase3 = TargetYear.SRU2023)
+    public String message(final String rootElement) {
+        DeprecationUtils.phase2(AbstractMX.class, "message(String)", "Use message(MxWriteConfiguration) instead");
+        MxWriteConfiguration conf = new MxWriteConfiguration();
+        conf.rootElement = rootElement;
+        return message(conf);
+    }
+
+    /**
+     * Get this message AppHdr as an XML string.
+     *
      * <p>The XML will not include the XML declaration, will bind the namespace to all elements without prefix and will
      * use the default escape handler and content adapters.
      * <p>
@@ -436,19 +413,6 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
         params.includeXMLDeclaration = includeXMLDeclaration;
         params.escapeHandler = escapeHandler;
         return header(params);
-    }
-
-    /**
-     * Get this message AppHdr as an XML string.
-     *
-     * @since 9.2.6
-     */
-    public String header(final MxWriteParams params) {
-        if (this.appHdr != null) {
-            return this.appHdr.xml(params);
-        } else {
-            return null;
-        }
     }
 
     /**
@@ -491,17 +455,6 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
     }
 
     /**
-     * Get this message Document as an XML string.
-     *
-     * @param params not null marshalling parameters
-     * @since 9.2.6
-     */
-    public String document(MxWriteParams params) {
-        Objects.requireNonNull(params, "marshalling params cannot be null");
-        return MxWriteImpl.write(getNamespace(), this, getClasses(), params);
-    }
-
-    /**
      * Convenience method to get this message XML as javax.xml.transform.Source.
      *
      * @return null if message() returns null or StreamSource in other case
@@ -515,6 +468,23 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
             return new StreamSource(new StringReader(xml));
         }
         return null;
+    }
+
+    /**
+     * Get this message as an XML string.
+     *
+     * <p>If the header is present, then 'AppHdr' and 'Document' elements will be wrapped under a
+     * {@link #DEFAULT_ROOT_ELEMENT}. Both header and document are generated with the corresponding namespaces and by
+     * default the prefix 'h' is used for the header and the prefix 'Doc' for the document.
+     * <br>For more serialization options see {@link #message(MxWriteConfiguration)}
+     * <br>To serialize only the header or the document (without header) see {@link #header()} and {@link #document()}
+     *
+     * @return the XML content or null if errors occur during serialization
+     * @since 7.7
+     */
+    @Override
+    public String message() {
+        return message(new MxWriteConfiguration());
     }
 
     /**
@@ -619,11 +589,50 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
                 StringUtils.leftPad(Integer.toString(getVersion()), 2, "0"));
     }
 
-    public Element element(JAXBContext context) {
+    /**
+     * get the Alphabetic code in four positions (fixed length) identifying the Business Process
+     *
+     * @return the business process of the implementing class
+     * @since 7.7
+     */
+    public abstract String getBusinessProcess();
+
+    /**
+     * Get the code identifying the Message Functionality
+     *
+     * @return the set functionality or null if not set
+     * @since 7.7
+     */
+    public abstract int getFunctionality();
+
+    /**
+     * Get the Message variant
+     *
+     * @return the set variant or null if not set
+     * @since 7.7
+     */
+    public abstract int getVariant();
+
+    /**
+     * Get the message version
+     *
+     * @return the set vesion or null if not set
+     * @since 7.7
+     */
+    public abstract int getVersion();
+
+    public Element element() {
+        return element(null);
+    }
+
+    public Element element(JAXBContext inputContext) {
         // it didn't work as expected
         // properties.put(JAXBRIContext.DEFAULT_NAMESPACE_REMAP, namespace);
         try {
-            if(context == null) {
+            JAXBContext context;
+            if (inputContext != null) {
+                context = inputContext;
+            } else {
                 context = JaxbContextLoader.INSTANCE.get(this.getClass(), getClasses());
             }
 
@@ -636,10 +645,6 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
             log.log(Level.WARNING, "Error creating XML Document for MX", e);
             return null;
         }
-    }
-
-    public Element element() {
-        return element(null);
     }
 
     /**

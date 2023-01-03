@@ -38,6 +38,11 @@ public class MxReadParams {
      * @since 9.2.8
      */
     public boolean verbose = true;
+
+    /**
+     * Optional instance to pass to the read method, if null, a new instance will be created when needed
+     * @since 9.3.5
+     */
     public JAXBContext context;
 
     public MxReadParams() {

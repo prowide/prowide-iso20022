@@ -250,9 +250,15 @@ public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
         return element(null);
     }
 
-    public Element element(JAXBContext context) {
+    /**
+     * @since 9.3.5
+     */
+    public Element element(JAXBContext inputContext) {
         try {
-            if (context == null) {
+            JAXBContext context;
+            if (inputContext != null) {
+                context = inputContext;
+            } else {
                 context = JAXBContext.newInstance(ApplicationHeaderImpl.class);
             }
             final Marshaller marshaller = context.createMarshaller();

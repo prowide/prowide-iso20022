@@ -18,7 +18,6 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.ProwideException;
 import com.prowidesoftware.deprecation.ProwideDeprecated;
 import com.prowidesoftware.deprecation.TargetYear;
-import com.prowidesoftware.swift.model.mx.dic.BusinessApplicationHeaderV01Impl;
 import com.prowidesoftware.swift.model.mx.dic.BusinessApplicationHeaderV02Impl;
 import com.prowidesoftware.swift.model.mx.dic.Party44Choice;
 import org.apache.commons.lang3.StringUtils;
@@ -259,9 +258,15 @@ public class BusinessAppHdrV02 extends BusinessApplicationHeaderV02Impl implemen
         return element(null);
     }
 
-    public Element element(JAXBContext context) {
+    /**
+     * @since 9.3.5
+     */
+    public Element element(JAXBContext inputContext) {
         try {
-            if(context == null) {
+            JAXBContext context;
+            if (inputContext != null) {
+                context = inputContext;
+            } else {
                 context = JAXBContext.newInstance(BusinessApplicationHeaderV02Impl.class);
             }
             final Marshaller marshaller = context.createMarshaller();

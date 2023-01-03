@@ -41,6 +41,10 @@ public class MxWriteParams {
      */
     public EscapeHandler escapeHandler;
 
+    /**
+     * Optional instance to pass to the write method, if null, a new instance will be created when needed
+     * @since 9.3.5
+     */
     public JAXBContext context;
 
     /**

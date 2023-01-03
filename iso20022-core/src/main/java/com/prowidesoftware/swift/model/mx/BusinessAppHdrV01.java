@@ -233,10 +233,20 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
         }
         return null;
     }
+    @Override
+    public Element element() {
+        return element(null);
+    }
 
-    public Element element(JAXBContext context) {
+    /**
+     * @since 9.3.5
+     */
+    public Element element(JAXBContext inputContext) {
         try {
-            if(context == null) {
+            JAXBContext context;
+            if (inputContext != null) {
+                context = inputContext;
+            } else {
                 context = JAXBContext.newInstance(BusinessApplicationHeaderV01Impl.class);
             }
             final Marshaller marshaller = context.createMarshaller();
@@ -252,11 +262,6 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
             log.log(Level.SEVERE, "Error writing head.001.001.01 XML:" + e.getMessage());
         }
         return null;
-    }
-
-    @Override
-    public Element element() {
-        return element(null);
     }
 
     /**
