@@ -17,6 +17,8 @@ package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.swift.model.mx.adapters.TypeAdaptersConfiguration;
 
+import javax.xml.bind.JAXBContext;
+
 /**
  * Options to customize the behaviour of the MX writer (model into XML serialization) in the {@link AbstractMX}
  * and its specific types subclasses.
@@ -64,17 +66,24 @@ public class MxWriteConfiguration {
      * @since 9.2.6
      */
     public TypeAdaptersConfiguration adapters;
+    public JAXBContext context;
 
     /**
      * Creates a configuration with the default options and adapters
      */
     public MxWriteConfiguration() {
+
+        this((JAXBContext)null);
+    }
+
+    public MxWriteConfiguration(JAXBContext context) {
         this.rootElement = AbstractMX.DEFAULT_ROOT_ELEMENT;
         this.includeXMLDeclaration = true;
         this.escapeHandler = new DefaultEscapeHandler();
         this.headerPrefix = "h";
         this.documentPrefix = "Doc";
         this.adapters = new TypeAdaptersConfiguration();
+        this.context = context;
     }
 
     /**
@@ -84,6 +93,7 @@ public class MxWriteConfiguration {
     public MxWriteConfiguration(MxReadConfiguration readConf) {
         this();
         this.adapters = readConf.adapters;
+        this.context = readConf.context;
     }
 
 }

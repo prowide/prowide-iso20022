@@ -19,7 +19,6 @@ import com.prowidesoftware.deprecation.DeprecationUtils;
 import com.prowidesoftware.deprecation.ProwideDeprecated;
 import com.prowidesoftware.deprecation.TargetYear;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
-import org.apache.commons.lang3.Validate;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
@@ -57,20 +56,6 @@ public class MxWriteImpl implements MxWrite {
     }
 
     /**
-     * @deprecated use {@link #write(String, AbstractMX, Class[], MxWriteParams)} instead
-     */
-    @Deprecated
-    @ProwideDeprecated(phase3 = TargetYear.SRU2023)
-    public static String write(String namespace, AbstractMX obj, Class[] classes, final String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
-        DeprecationUtils.phase2(MxWriteImpl.class, "write(String, AbstractMX, Class[], String, boolean, EscapeHandler)", "Use write(String, AbstractMX, Class[], MxWriteParams) instead");
-        MxWriteParams params = new MxWriteParams();
-        params.prefix = prefix;
-        params.includeXMLDeclaration = includeXMLDeclaration;
-        params.escapeHandler = escapeHandler;
-        return write(namespace, obj, classes, params);
-    }
-
-    /**
      * Main implementation of model to XML serialization
      *
      * @since 9.2.6
@@ -82,7 +67,12 @@ public class MxWriteImpl implements MxWrite {
         Objects.requireNonNull(params, "marshalling params cannot be null");
 
         try {
-            JAXBContext context = JaxbContextLoader.INSTANCE.get(obj);
+            JAXBContext context;
+            if (params.context != null) {
+                context = params.context;
+            } else {
+                context = JaxbContextLoader.INSTANCE.get(obj);
+            }
 
             // Sin el ns en el qname, para ver si toma el default
             @SuppressWarnings({"unchecked"}) final JAXBElement<? extends MxSwiftMessage> element = new JAXBElement(new QName("Document"), obj.getClass(), null, obj);
@@ -109,6 +99,20 @@ public class MxWriteImpl implements MxWrite {
             log.log(Level.SEVERE, "Error writing XML:" + e + "\n for message: " + obj);
         }
         return null;
+    }
+
+    /**
+     * @deprecated use {@link #write(String, AbstractMX, Class[], MxWriteParams)} instead
+     */
+    @Deprecated
+    @ProwideDeprecated(phase3 = TargetYear.SRU2023)
+    public static String write(String namespace, AbstractMX obj, Class[] classes, final String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
+        DeprecationUtils.phase2(MxWriteImpl.class, "write(String, AbstractMX, Class[], String, boolean, EscapeHandler)", "Use write(String, AbstractMX, Class[], MxWriteParams) instead");
+        MxWriteParams params = new MxWriteParams();
+        params.prefix = prefix;
+        params.includeXMLDeclaration = includeXMLDeclaration;
+        params.escapeHandler = escapeHandler;
+        return write(namespace, obj, classes, params);
     }
 
     /**

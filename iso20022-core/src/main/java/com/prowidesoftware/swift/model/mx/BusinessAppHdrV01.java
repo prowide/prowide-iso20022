@@ -61,7 +61,7 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
 
     /**
      * Parse the header from an XML with optional wrapper and sibling elements that will be ignored.
-     *
+     * <p>
      * Default adapters are applied, for more options use {@link #parse(String, MxReadParams)}
      *
      * @param xml the XML content, can contain wrapper elements that will be ignored
@@ -75,7 +75,7 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
     /**
      * Parse the header from an XML with optional wrapper and sibling elements that will be ignored.
      *
-     * @param xml the XML content, can contain wrapper elements that will be ignored
+     * @param xml    the XML content, can contain wrapper elements that will be ignored
      * @param params not null unmarshalling parameters
      * @return parsed element or null if cannot be parsed
      * @throws ProwideException if severe errors occur during parse
@@ -120,25 +120,6 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
     @Override
     public String to() {
         return getBIC(this.getTo());
-    }
-
-    private String getBIC(final Party9Choice p) {
-        try {
-            final String found = p.getFIId().getFinInstnId().getBICFI();
-            if (!StringUtils.isEmpty(found)) {
-                return found;
-            }
-        } catch (NullPointerException e) {
-            try {
-                final String found = p.getOrgId().getId().getOrgId().getAnyBIC();
-                if (!StringUtils.isEmpty(found)) {
-                    return found;
-                }
-            } catch (NullPointerException e2) {
-                return null;
-            }
-        }
-        return null;
     }
 
     /**
@@ -233,7 +214,12 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
     @Override
     public String xml(MxWriteParams params) {
         try {
-            JAXBContext context = JAXBContext.newInstance(BusinessApplicationHeaderV01Impl.class);
+            JAXBContext context;
+            if (params.context != null) {
+                context = params.context;
+            } else {
+                context = JAXBContext.newInstance(BusinessApplicationHeaderV01Impl.class);
+            }
             final Marshaller marshaller = MxWriteUtils.createMarshaller(context, params);
 
             final StringWriter sw = new StringWriter();
@@ -248,10 +234,11 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
         return null;
     }
 
-    @Override
-    public Element element() {
+    public Element element(JAXBContext context) {
         try {
-            JAXBContext context = JAXBContext.newInstance(BusinessApplicationHeaderV01Impl.class);
+            if(context == null) {
+                context = JAXBContext.newInstance(BusinessApplicationHeaderV01Impl.class);
+            }
             final Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 
@@ -267,6 +254,11 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
         return null;
     }
 
+    @Override
+    public Element element() {
+        return element(null);
+    }
+
     /**
      * @return NAMESPACE
      * @since 9.1.7
@@ -274,6 +266,25 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
     @Override
     public String namespace() {
         return NAMESPACE;
+    }
+
+    private String getBIC(final Party9Choice p) {
+        try {
+            final String found = p.getFIId().getFinInstnId().getBICFI();
+            if (!StringUtils.isEmpty(found)) {
+                return found;
+            }
+        } catch (NullPointerException e) {
+            try {
+                final String found = p.getOrgId().getId().getOrgId().getAnyBIC();
+                if (!StringUtils.isEmpty(found)) {
+                    return found;
+                }
+            } catch (NullPointerException e2) {
+                return null;
+            }
+        }
+        return null;
     }
 
 }

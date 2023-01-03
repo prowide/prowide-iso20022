@@ -19,6 +19,7 @@ import com.prowidesoftware.ProwideException;
 import com.prowidesoftware.deprecation.ProwideDeprecated;
 import com.prowidesoftware.deprecation.TargetYear;
 import com.prowidesoftware.swift.model.MxId;
+import com.prowidesoftware.swift.model.mx.dic.BusinessApplicationHeaderV01Impl;
 import com.prowidesoftware.swift.utils.SafeXmlUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.Validate;
@@ -92,7 +93,13 @@ public class MxParseUtils {
         Objects.requireNonNull(params, "unmarshalling params cannot be null");
 
         try {
-            JAXBContext context = JaxbContextLoader.INSTANCE.get(targetClass, classes);
+            JAXBContext context;
+            if (params.context != null) {
+                context = params.context;
+            } else {
+                context = JaxbContextLoader.INSTANCE.get(targetClass, classes);
+            }
+
             final Unmarshaller unmarshaller = context.createUnmarshaller();
 
             if (params.adapters != null) {

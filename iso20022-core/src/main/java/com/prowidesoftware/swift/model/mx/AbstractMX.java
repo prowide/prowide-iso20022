@@ -619,11 +619,13 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
                 StringUtils.leftPad(Integer.toString(getVersion()), 2, "0"));
     }
 
-    public Element element() {
+    public Element element(JAXBContext context) {
         // it didn't work as expected
         // properties.put(JAXBRIContext.DEFAULT_NAMESPACE_REMAP, namespace);
         try {
-            JAXBContext context = JaxbContextLoader.INSTANCE.get(this.getClass(), getClasses());
+            if(context == null) {
+                context = JaxbContextLoader.INSTANCE.get(this.getClass(), getClasses());
+            }
 
             DOMResult res = new DOMResult();
             context.createMarshaller().marshal(this, res);
@@ -634,6 +636,10 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
             log.log(Level.WARNING, "Error creating XML Document for MX", e);
             return null;
         }
+    }
+
+    public Element element() {
+        return element(null);
     }
 
     /**

@@ -18,6 +18,8 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.ProwideException;
 import com.prowidesoftware.deprecation.ProwideDeprecated;
 import com.prowidesoftware.deprecation.TargetYear;
+import com.prowidesoftware.swift.model.mx.dic.BusinessApplicationHeaderV01Impl;
+import com.prowidesoftware.swift.model.mx.dic.BusinessApplicationHeaderV02Impl;
 import com.prowidesoftware.swift.model.mx.dic.BusinessApplicationHeaderV03Impl;
 import com.prowidesoftware.swift.model.mx.dic.Party44Choice;
 import org.apache.commons.lang3.StringUtils;
@@ -232,7 +234,12 @@ public class BusinessAppHdrV03 extends BusinessApplicationHeaderV03Impl implemen
     @Override
     public String xml(MxWriteParams params) {
         try {
-            JAXBContext context = JAXBContext.newInstance(BusinessApplicationHeaderV03Impl.class);
+            JAXBContext context;
+            if (params.context != null) {
+                context = params.context;
+            } else {
+                context = JAXBContext.newInstance(BusinessApplicationHeaderV03Impl.class);
+            }
             final Marshaller marshaller = MxWriteUtils.createMarshaller(context, params);
 
             final StringWriter sw = new StringWriter();
@@ -249,8 +256,14 @@ public class BusinessAppHdrV03 extends BusinessApplicationHeaderV03Impl implemen
 
     @Override
     public Element element() {
+        return element(null);
+    }
+
+    public Element element(JAXBContext context) {
         try {
-            JAXBContext context = JAXBContext.newInstance(BusinessApplicationHeaderV03Impl.class);
+            if(context == null) {
+                context = JAXBContext.newInstance(BusinessApplicationHeaderV03Impl.class);
+            }
             final Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 
