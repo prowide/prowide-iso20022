@@ -1,8 +1,7 @@
 # Prowide ISO 20022 - CHANGELOG
 
-#### 9.3.5-SNAPSHOT
+#### 9.3.5 - January 2023
   * Added an optional way to pass a JaxbContext instance to the parse and write methods
-
 
 #### 9.3.4 - November 2022
   * (GH-63) Added message type versions in categories: acmt, admi, auth, caaa, camt, catm, fxtr, pacs, reda, seev, semt, sese, setr, supl and trck
