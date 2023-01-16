@@ -232,7 +232,12 @@ public class BusinessAppHdrV03 extends BusinessApplicationHeaderV03Impl implemen
     @Override
     public String xml(MxWriteParams params) {
         try {
-            JAXBContext context = JAXBContext.newInstance(BusinessApplicationHeaderV03Impl.class);
+            JAXBContext context;
+            if (params.context != null) {
+                context = params.context;
+            } else {
+                context = JAXBContext.newInstance(BusinessApplicationHeaderV03Impl.class);
+            }
             final Marshaller marshaller = MxWriteUtils.createMarshaller(context, params);
 
             final StringWriter sw = new StringWriter();
@@ -249,8 +254,20 @@ public class BusinessAppHdrV03 extends BusinessApplicationHeaderV03Impl implemen
 
     @Override
     public Element element() {
+        return element(null);
+    }
+
+    /**
+     * @since 9.3.5
+     */
+    public Element element(JAXBContext inputContext) {
         try {
-            JAXBContext context = JAXBContext.newInstance(BusinessApplicationHeaderV03Impl.class);
+            JAXBContext context;
+            if (inputContext != null) {
+                context = inputContext;
+            } else {
+                context = JAXBContext.newInstance(BusinessApplicationHeaderV03Impl.class);
+            }
             final Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 

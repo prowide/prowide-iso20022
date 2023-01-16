@@ -17,6 +17,8 @@ package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.swift.model.mx.adapters.TypeAdaptersConfiguration;
 
+import javax.xml.bind.JAXBContext;
+
 /**
  * Simple DTO to encapsulate parameters in the different model-to-XML serialization implementation methods in the API
  *
@@ -40,6 +42,12 @@ public class MxWriteParams {
     public EscapeHandler escapeHandler;
 
     /**
+     * Optional instance to pass to the write method, if null, a new instance will be created when needed
+     * @since 9.3.5
+     */
+    public JAXBContext context;
+
+    /**
      * Specific adapters for date time, date, time
      */
     public TypeAdaptersConfiguration adapters;
@@ -55,6 +63,7 @@ public class MxWriteParams {
         this.includeXMLDeclaration = notNullConf.includeXMLDeclaration;
         this.escapeHandler = notNullConf.escapeHandler;
         this.adapters = notNullConf.adapters;
+        this.context = notNullConf.context;
     }
 
 }

@@ -17,6 +17,8 @@ package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.swift.model.mx.adapters.TypeAdaptersConfiguration;
 
+import javax.xml.bind.JAXBContext;
+
 /**
  * Options to customize the behaviour of the MX parser (XML into model) in the {@link AbstractMX} and its specific
  * types subclasses.
@@ -32,6 +34,12 @@ public class MxReadConfiguration {
     public TypeAdaptersConfiguration adapters;
 
     /**
+     * Optional instance to pass to the read method, if null, a new instance will be created when needed
+     * @since 9.3.5
+     */
+    public JAXBContext context;
+
+    /**
      * Creates a configuration with the default adapters
      */
     public MxReadConfiguration() {
@@ -43,6 +51,7 @@ public class MxReadConfiguration {
      */
     public MxReadConfiguration(MxWriteConfiguration writeConf) {
         this.adapters = writeConf.adapters;
+        this.context = writeConf.context;
     }
 
 }

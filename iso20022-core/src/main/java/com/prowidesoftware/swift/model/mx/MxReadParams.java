@@ -17,6 +17,8 @@ package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.swift.model.mx.adapters.TypeAdaptersConfiguration;
 
+import javax.xml.bind.JAXBContext;
+
 /**
  * Simple DTO to encapsulate parameters in the different XML-to-model parser implementation methods in the API
  *
@@ -37,6 +39,12 @@ public class MxReadParams {
      */
     public boolean verbose = true;
 
+    /**
+     * Optional instance to pass to the read method, if null, a new instance will be created when needed
+     * @since 9.3.5
+     */
+    public JAXBContext context;
+
     public MxReadParams() {
         this.adapters = new TypeAdaptersConfiguration();
     }
@@ -45,6 +53,7 @@ public class MxReadParams {
         this();
         if (conf != null) {
             this.adapters = conf.adapters;
+            this.context = conf.context;
         }
     }
 

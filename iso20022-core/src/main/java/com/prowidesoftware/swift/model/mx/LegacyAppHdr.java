@@ -60,7 +60,7 @@ public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
 
     /**
      * Parse the header from an XML with optional wrapper and sibling elements that will be ignored.
-     *
+     * <p>
      * Default adapters are applied, for more options use {@link #parse(String, MxReadParams)}
      *
      * @param xml the XML content, can contain wrapper elements that will be ignored
@@ -73,10 +73,10 @@ public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
 
     /**
      * Parse the header from an XML with optional wrapper and sibling elements that will be ignored.
-     *
+     * <p>
      * Default adapters are applied, for more options use {@link #parse(String, MxReadParams)}
      *
-     * @param xml the XML content, can contain wrapper elements that will be ignored
+     * @param xml    the XML content, can contain wrapper elements that will be ignored
      * @param params not null unmarshalling parameters
      * @return parsed element or null if cannot be parsed
      * @throws ProwideException if severe errors occur during parse
@@ -225,7 +225,12 @@ public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
     @Override
     public String xml(MxWriteParams params) {
         try {
-            JAXBContext context = JAXBContext.newInstance(ApplicationHeaderImpl.class);
+            JAXBContext context;
+            if (params.context != null) {
+                context = params.context;
+            } else {
+                context = JAXBContext.newInstance(ApplicationHeaderImpl.class);
+            }
             final Marshaller marshaller = MxWriteUtils.createMarshaller(context, params);
 
             final StringWriter sw = new StringWriter();
@@ -242,8 +247,20 @@ public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
 
     @Override
     public Element element() {
+        return element(null);
+    }
+
+    /**
+     * @since 9.3.5
+     */
+    public Element element(JAXBContext inputContext) {
         try {
-            JAXBContext context = JAXBContext.newInstance(ApplicationHeaderImpl.class);
+            JAXBContext context;
+            if (inputContext != null) {
+                context = inputContext;
+            } else {
+                context = JAXBContext.newInstance(ApplicationHeaderImpl.class);
+            }
             final Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 
