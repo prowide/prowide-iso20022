@@ -1,4 +1,5 @@
-![alt tag](http://www.prowidesoftware.com/img/logoPW_800x253-300dpi.jpg)
+![alt tag](https://www.prowidesoftware.com/img/logo/horizontal/500x142.png)
+
 
 
 **Prowide ISO 20022** is an open source Java framework for managing **ISO 20022** messages.
@@ -48,8 +49,6 @@ For better build performance, local configurations can be setup in a gradle.prop
 org.gradle.jvmargs=-Xms512m -Xmx7g
 org.gradle.parallel=true
 ```
-
-Run `./gradlew idea` or `./gradlew eclipse` to generate local settings and reload the project in your IDE
 
 To compile and test all modules:
 `./gradlew build`
