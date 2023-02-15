@@ -32,6 +32,7 @@ import javax.xml.bind.annotation.adapters.XmlAdapter;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.transform.sax.SAXSource;
 import java.io.StringReader;
+import java.nio.charset.Charset;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.concurrent.ExecutionException;
@@ -52,14 +53,18 @@ public class MxParseUtils {
      * @return a safe source
      * @since 9.2.1
      */
-    static SAXSource createFilteredSAXSource(final String xml, final String localName) {
+    static SAXSource createFilteredSAXSource(final String xml, final String localName, Charset charset) {
         XMLReader documentReader = SafeXmlUtils.reader(true, null);
 
         NamespaceAndElementFilter documentFilter = new NamespaceAndElementFilter(localName);
         documentFilter.setParent(documentReader);
 
         InputSource documentInputSource = new InputSource(new StringReader(xml));
-
+        if (charset != null) {
+            documentInputSource.setEncoding(charset.name());
+        } else {
+            documentInputSource.setEncoding(Charset.defaultCharset().name());
+        }
         return new SAXSource(documentFilter, documentInputSource);
     }
 
@@ -106,6 +111,12 @@ public class MxParseUtils {
                 for (XmlAdapter adapter : params.adapters.asList()) {
                     unmarshaller.setAdapter(adapter);
                 }
+            }
+
+            if(params.charset!=null){
+                source.getInputSource().setEncoding(params.charset.name());
+            } else {
+                source.getInputSource().setEncoding(Charset.defaultCharset().name());
             }
 
             JAXBElement element = unmarshaller.unmarshal(source, targetClass);
@@ -166,7 +177,7 @@ public class MxParseUtils {
         Objects.requireNonNull(params, "unmarshalling params cannot be null");
 
         try {
-            SAXSource saxSource = createFilteredSAXSource(xml, localName);
+            SAXSource saxSource = createFilteredSAXSource(xml, localName, params.charset);
             return parseSAXSource(saxSource, targetClass, classes, params);
 
         } catch (final Exception e) {

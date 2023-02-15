@@ -1,5 +1,8 @@
 # Prowide ISO 20022 - CHANGELOG
 
+#### 9.3.6-SNAPSHOT
+  * (PW-631) Changed the XML marshaling/unmarshalling to honor the default system encoding, and added optional parameters to use a specific charset if needed
+
 #### 9.3.5 - January 2023
   * Added an optional way to pass a JaxbContext instance to the parse and write methods
 
