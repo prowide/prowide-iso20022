@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -16,20 +16,29 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 /**
  * Scope
  * An account servicer sends a SecuritiesBalanceCustodyReport to an account owner to provide, at a moment in time, the quantity and identification of the financial instruments that the account servicer holds for the account owner 
- * The account servicer/owner relationship may be:
+ * 
+The account servicer/owner relationship may be:
  * - a central securities depository or another settlement market infrastructure acting on behalf of their participants, or
  * - an agent (sub-custodian) acting on behalf of their global custodian customer, or 
  * - a custodian acting on behalf of an investment management institution or a broker/dealer, or
  * - a transfer agent acting on behalf of a fund manager or an account owner's designated agent.
- * Usage
+ * 
+Usage
  * The message can also include availability and the location of holdings to facilitate trading and minimise settlement issues. The message reports all information per financial instrument, ie, when a financial instrument is held at multiple places of safekeeping, the total holdings for all locations can be provided. 
- * The message should be sent at a frequency agreed bi-laterally between the account servicer and the account owner. The message may be provided on a trade date, contractual or settlement date basis. 
- * There may be one or more intermediary parties, for example, an intermediary or a concentrator between the account owner and account servicer.
- * The message may also be used to: 
- * - re-send a message previously sent (the sub-function of the message is Duplicate) 
- * - provide a third party with a copy of a message for information (the sub-function of the message is Copy) 
+ * 
+The message should be sent at a frequency agreed bi-laterally between the account servicer and the account owner. The message may be provided on a trade date, contractual or settlement date basis. 
+ * 
+There may be one or more intermediary parties, for example, an intermediary or a concentrator between the account owner and account servicer.
+ * 
+The message may also be used to: 
+
+ * - re-send a message previously sent (the sub-function of the message is Duplicate) 
+
+ * - provide a third party with a copy of a message for information (the sub-function of the message is Copy) 
+
  * - re-send to a third party a copy of a message for information (the sub-function of the message is Copy Duplicate).
- * ISO 15022 - 20022 Coexistence
+ * 
+ISO 15022 - 20022 Coexistence
  * This ISO 20022 message is reversed engineered from ISO 15022. Both standards will coexist for a certain number of years. Until this coexistence period ends, the usage of certain data types is restricted to ensure interoperability between ISO 15022 and 20022 users. Compliance to these rules is mandatory in a coexistence environment. The coexistence restrictions are described in a Textual Rule linked to the Message Items they concern. These coexistence textual rules are clearly identified as follows: “CoexistenceXxxxRule”.
  * 
  * 

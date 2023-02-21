@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -22,7 +22,8 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * The PaymentStatusReport message refers to the original instruction(s) by means of references only or by means of references and a set of elements from the original instruction.
  * The PaymentStatusReport message can be used in domestic and cross-border scenarios.
  * The PaymentStatusReport message exchanged between agents is identified in the schema as follows: 
- * urn:iso:std:iso:20022:tech:xsd:pacs.002.001.02.
+ * urn:iso:std:iso:20022:tech:xsd:pacs.002.001.02
+.
  * 
  * 
  * 

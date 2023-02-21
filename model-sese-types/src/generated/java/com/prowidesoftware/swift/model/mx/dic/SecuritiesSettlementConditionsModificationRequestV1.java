@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -16,20 +16,28 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 /**
  * Scope
  * An account owner sends a SecuritiesSettlementConditionsModificationRequest to an account servicer to request the modification of a processing indicator or another non-matching information. 
- * The account owner/servicer relationship may be:
+ * 
+The account owner/servicer relationship may be:
  * - a central securities depository participant which has an account with a central securities depository.
- * It could also be:
+ * 
+It could also be:
  * - a global custodian which has an account with its local agent (sub-custodian), or 
  * - an investment management institution which manage a fund account opened at a custodian, or
  * - a broker which has an account with a custodian, or
  * - a central securities depository which has an account with a custodian, another central securities depository or another settlement market infrastructure.
- * Usage
- * The message may also be used to: 
- * - re-send a message previously sent (the sub-function of the message is Duplicate) 
- * - provide a third party with a copy of a message for information (the sub-function of the message is Copy) 
+ * 
+Usage
+ * The message may also be used to: 
+
+ * - re-send a message previously sent (the sub-function of the message is Duplicate) 
+
+ * - provide a third party with a copy of a message for information (the sub-function of the message is Copy) 
+
  * - re-send to a third party a copy of a message for information (the sub-function of the message is Copy Duplicate).
- * This message cannot be used to request the modification of trade or event details.
- * The use of AdditionalInformation and its fields must be pre-agreed between account servicer and
+ * 
+This message cannot be used to request the modification of trade or event details.
+ * 
+The use of AdditionalInformation and its fields must be pre-agreed between account servicer and
  * account owner. The fields in that sequence cannot be used to amend a trade or event detail unless authorised
  * by country market practice.
  * ISO 15022 - 20022 Coexistence
