@@ -18,6 +18,7 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.adapters.TypeAdaptersConfiguration;
 
 import javax.xml.bind.JAXBContext;
+import java.nio.charset.Charset;
 
 /**
  * Simple DTO to encapsulate parameters in the different model-to-XML serialization implementation methods in the API
@@ -52,6 +53,12 @@ public class MxWriteParams {
      */
     public TypeAdaptersConfiguration adapters;
 
+    /**
+     * Optional parameter to use a specific charset when marshalling into XML, if not set, the system default is used
+     * @since 9.3.6
+     */
+    public Charset charset;
+
     public MxWriteParams() {
         this(new MxWriteConfiguration());
     }
@@ -64,6 +71,7 @@ public class MxWriteParams {
         this.escapeHandler = notNullConf.escapeHandler;
         this.adapters = notNullConf.adapters;
         this.context = notNullConf.context;
+        this.charset = notNullConf.charset;
     }
 
 }

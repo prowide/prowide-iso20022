@@ -47,12 +47,17 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.StringReader;
+import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import static java.nio.charset.StandardCharsets.*;
+import static org.apache.commons.lang3.StringUtils.getBytes;
+import static org.apache.commons.lang3.StringUtils.toEncodedString;
 
 
 /**
@@ -303,10 +308,10 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
 
         String root = usableConf.rootElement;
         StringBuilder xml = new StringBuilder();
+
         if (usableConf.includeXMLDeclaration) {
             xml.append("<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n");
         }
-
         params.prefix = usableConf.headerPrefix;
         final String header = header(params);
         if (header != null) {
@@ -319,6 +324,7 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
         if (header != null) {
             xml.append("</").append(root).append(">");
         }
+
         return xml.toString();
     }
 
@@ -510,7 +516,7 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
     @ProwideDeprecated(phase2 = TargetYear.SRU2023)
     public void write(final OutputStream stream) throws IOException {
         Objects.requireNonNull(stream, "the stream to write cannot be null");
-        stream.write(message().getBytes(StandardCharsets.UTF_8));
+        stream.write(message().getBytes(UTF_8));
     }
 
     /**

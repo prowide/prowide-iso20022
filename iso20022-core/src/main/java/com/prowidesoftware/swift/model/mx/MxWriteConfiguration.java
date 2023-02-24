@@ -18,6 +18,7 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.adapters.TypeAdaptersConfiguration;
 
 import javax.xml.bind.JAXBContext;
+import java.nio.charset.Charset;
 
 /**
  * Options to customize the behaviour of the MX writer (model into XML serialization) in the {@link AbstractMX}
@@ -74,6 +75,12 @@ public class MxWriteConfiguration {
     public JAXBContext context;
 
     /**
+     * Optional parameter to use a specific charset when unmarshalling XML content, if not set, the system default is used
+     * @since 9.3.6
+     */
+    public Charset charset;
+
+    /**
      * Creates a configuration with the default options and adapters
      */
     public MxWriteConfiguration() {
@@ -99,6 +106,7 @@ public class MxWriteConfiguration {
         this();
         this.adapters = readConf.adapters;
         this.context = readConf.context;
+        this.charset = readConf.charset;
     }
 
 }

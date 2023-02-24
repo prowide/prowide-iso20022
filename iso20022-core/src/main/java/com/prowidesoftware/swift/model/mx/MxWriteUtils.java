@@ -35,7 +35,9 @@ class MxWriteUtils {
                 marshaller.setAdapter(adapter);
             }
         }
-
+        if (params.charset != null) {
+            marshaller.setProperty(Marshaller.JAXB_ENCODING, params.charset.name());
+        }
         return marshaller;
     }
 

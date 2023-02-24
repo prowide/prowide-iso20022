@@ -75,7 +75,7 @@ public class MxReadImpl implements MxRead {
 
         try {
 
-            SAXSource documentSource = MxParseUtils.createFilteredSAXSource(xml, AbstractMX.DOCUMENT_LOCALNAME);
+            SAXSource documentSource = MxParseUtils.createFilteredSAXSource(xml, AbstractMX.DOCUMENT_LOCALNAME, params.charset);
             final AbstractMX parsedDocument = (AbstractMX) MxParseUtils.parseSAXSource(documentSource, targetClass, classes, params);
 
             Optional<AbstractMX> mx = Optional.ofNullable(parsedDocument);

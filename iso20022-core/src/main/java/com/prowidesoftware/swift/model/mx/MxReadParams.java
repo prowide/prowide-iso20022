@@ -19,6 +19,8 @@ import com.prowidesoftware.swift.model.mx.adapters.TypeAdaptersConfiguration;
 
 import javax.xml.bind.JAXBContext;
 
+import java.nio.charset.Charset;
+
 /**
  * Simple DTO to encapsulate parameters in the different XML-to-model parser implementation methods in the API
  *
@@ -45,6 +47,12 @@ public class MxReadParams {
      */
     public JAXBContext context;
 
+    /**
+     * Optional parameter to use a specific charset when unmarshalling XML content, if not set, the system default is used
+     * @since 9.3.6
+     */
+    public Charset charset;
+
     public MxReadParams() {
         this.adapters = new TypeAdaptersConfiguration();
     }
@@ -54,6 +62,7 @@ public class MxReadParams {
         if (conf != null) {
             this.adapters = conf.adapters;
             this.context = conf.context;
+            this.charset = conf.charset;
         }
     }
 
