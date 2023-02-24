@@ -309,13 +309,9 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
         String root = usableConf.rootElement;
         StringBuilder xml = new StringBuilder();
 
-        Charset charsetToUse =conf.charset != null? conf.charset:Charset.defaultCharset();
         if (usableConf.includeXMLDeclaration) {
-            xml.append("<?xml version=\"1.0\" encoding=\"");
-            xml.append(charsetToUse.name());
-            xml.append("\" ?>\n");
+            xml.append("<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n");
         }
-
         params.prefix = usableConf.headerPrefix;
         final String header = header(params);
         if (header != null) {
@@ -329,7 +325,7 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
             xml.append("</").append(root).append(">");
         }
 
-        return toEncodedString(getBytes(xml.toString(), UTF_8), charsetToUse);
+        return xml.toString();
     }
 
     /**

@@ -24,6 +24,9 @@ import com.prowidesoftware.swift.model.mx.dic.PartyIdentification32;
 import com.prowidesoftware.swift.model.mx.dic.PaymentInstructionInformation3;
 import org.junit.jupiter.api.Test;
 
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -62,6 +65,7 @@ public class Issue24 {
         conf.escapeHandler = new MinimumEscapeHandler();
         String xml = mx.message(conf);
 
+        System.out.println(Charset.defaultCharset().name());
         assertTrue(xml.contains("текст текст öñ"));
 
         MxPain00100103 mx2 = MxPain00100103.parse(xml);

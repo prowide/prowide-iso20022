@@ -2,6 +2,7 @@ package com.prowidesoftware.issues;
 
 import com.prowidesoftware.swift.model.mx.BusinessAppHdrV02;
 import com.prowidesoftware.swift.model.mx.MxPacs00800108;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import com.prowidesoftware.swift.model.mx.MxReadParams;
 import com.prowidesoftware.swift.model.mx.MxWriteConfiguration;
 import org.junit.jupiter.api.Test;
@@ -24,7 +25,7 @@ public class IssueJira631Test {
         defaultCharset.set(null,null);
         System.setProperty("file.encoding","Cp1141");
 
-        String xmlAsString = "<?xml version=\"1.0\" encoding=\"IBM01141\" ?>\n" +
+        String xmlAsString = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n" +
                 "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\">\n" +
                 "    <Fr>\n" +
                 "        <FIId>\n" +
@@ -129,7 +130,9 @@ public class IssueJira631Test {
         System.out.println(modelToStringMsg);
         assertFalse(modelToStringMsg.contains("encoding="));
 
-        MxPacs00800108 stringToModelMx = MxPacs00800108.parse(modelToStringMsg);
+        MxReadConfiguration conf = new MxReadConfiguration();
+        conf.charset = Charset.forName("Cp1141");
+        MxPacs00800108 stringToModelMx = MxPacs00800108.parse(modelToStringMsg, conf);
         assertNotNull(stringToModelMx);
 
         System.setProperty("file.encoding", currentCharset);
