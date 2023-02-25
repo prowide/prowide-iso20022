@@ -40,7 +40,7 @@ import java.util.logging.Level;
  */
 public final class XmlEventWriter implements XMLEventWriter {
     private static final transient java.util.logging.Logger log = java.util.logging.Logger.getLogger(XmlEventWriter.class.getName());
-    private static final String INDENT = "    ";
+    private static String indent = "    ";
     private final Writer out;
     private StartElement delayedStart;
     private boolean startTagIncomplete = false;
@@ -57,12 +57,12 @@ public final class XmlEventWriter implements XMLEventWriter {
     private EscapeHandler escapeHandler;
 
     /**
-     * @deprecated use {@link #XmlEventWriter(Writer, String, boolean, String, EscapeHandler)} instead
+     * @deprecated use {@link #XmlEventWriter(Writer, String, boolean, String, EscapeHandler, String)} instead
      */
     @Deprecated
     @ProwideDeprecated(phase3 = TargetYear.SRU2023)
     public XmlEventWriter(Writer baos, final String defaultPrefix, boolean includeXMLDeclaration, final String rootElement) {
-        this(baos, defaultPrefix, includeXMLDeclaration, rootElement, null);
+        this(baos, defaultPrefix, includeXMLDeclaration, rootElement, null, null);
         DeprecationUtils.phase2(XmlEventWriter.class, "XmlEventWriter(Writer, String, boolean, String)", "Use XmlEventWriter(Writer, String, boolean, String, EscapeHandler) instead");
     }
 
@@ -75,7 +75,7 @@ public final class XmlEventWriter implements XMLEventWriter {
      * @see #setPreferredPrefixes(Map)
      * @since 9.1.7
      */
-    public XmlEventWriter(Writer baos, final String defaultPrefix, boolean includeXMLDeclaration, final String rootElement, final EscapeHandler escapeHandler) {
+    public XmlEventWriter(Writer baos, final String defaultPrefix, boolean includeXMLDeclaration, final String rootElement, final EscapeHandler escapeHandler, final String indent) {
         this.out = baos;
         this.startElementCount = 0;
         this.nestedLevel = 0;
@@ -83,6 +83,9 @@ public final class XmlEventWriter implements XMLEventWriter {
         this.includeXMLDeclaration = includeXMLDeclaration;
         this.rootElement = rootElement;
         this.escapeHandler = escapeHandler != null ? escapeHandler : new DefaultEscapeHandler();
+        if(indent!=null) {
+            this.indent = indent;
+        }
     }
 
     public void add(final XMLEvent event) throws XMLStreamException {
@@ -230,7 +233,7 @@ public final class XmlEventWriter implements XMLEventWriter {
         out.write(System.lineSeparator());
         if (nestedLevel > 0) {
             for (int i = 0; i < nestedLevel; i++) {
-                writer.write(INDENT);
+                writer.write(indent);
             }
         }
     }
