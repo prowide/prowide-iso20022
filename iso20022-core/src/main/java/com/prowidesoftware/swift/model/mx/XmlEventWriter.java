@@ -40,7 +40,7 @@ import java.util.logging.Level;
  */
 public final class XmlEventWriter implements XMLEventWriter {
     private static final transient java.util.logging.Logger log = java.util.logging.Logger.getLogger(XmlEventWriter.class.getName());
-    private static String indent = "    ";
+    private String indent = "    ";
     private final Writer out;
     private StartElement delayedStart;
     private boolean startTagIncomplete = false;
