@@ -100,10 +100,30 @@ public class MxWriteTest {
         );
 
         final String mxXml = mx.message();
-        //System.out.println("XML: "+mxXml);
+        System.out.println("XML: "+mxXml);
 
         assertTrue(StringUtils.contains(mxXml, MxFxtr01400102.NAMESPACE), "namespace missing in generated xml");
         assertFalse(StringUtils.contains(mxXml, "businessHeader"), "businessHeader is present in generated xml");
     }
 
+
+    @Test
+    public void testWriteXmlMxFxtr01400102Indent() {
+        final MxFxtr01400102 mx = new MxFxtr01400102();
+
+        mx.setFXTradInstr(
+                new ForeignExchangeTradeInstructionV02()
+                        .setAgrdRate(new AgreedRate1().setUnitCcy("ARS").setXchgRate(new BigDecimal("1.2")).setQtdCcy("12"))
+        );
+
+
+        assertTrue(StringUtils.contains(mx.message(), "            "), "default indent");
+
+        MxWriteConfiguration conf = new MxWriteConfiguration();
+        conf.indent = " ";
+        final String mxXml = mx.message(conf);
+        //System.out.println("XML: "+mxXml);
+
+        assertFalse(StringUtils.contains(mxXml, "            "), "custom indent");
+    }
 }
