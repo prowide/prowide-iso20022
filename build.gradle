@@ -5,11 +5,11 @@ buildscript {
 	}
 	dependencies {
 		classpath 'ru.vyarus:gradle-quality-plugin:4.7.0'
-		classpath 'pl.allegro.tech.build:axion-release-plugin:1.13.6'
+		//classpath 'pl.allegro.tech.build:axion-release-plugin:1.13.6'
 		classpath 'io.github.gradle-nexus:publish-plugin:1.1.0'
 	}
 }
-apply plugin: 'pl.allegro.tech.build.axion-release'
+//apply plugin: 'pl.allegro.tech.build.axion-release'
 apply plugin: 'java-library-distribution'
 apply plugin: 'maven-publish'
 apply plugin: 'signing'
@@ -24,20 +24,19 @@ group 'com.prowidesoftware'
 project.ext {
 	SRU = 'SRU2022'
 	// this is not working since the version is unresolved at this point, to publish snapshots just uncomment below until this is fixed
-	//nexusRepo = 'maven-snapshots'
-	nexusRepo = project.version.endsWith('-SNAPSHOT') ? 'maven-snapshots' : 'maven-releases'
+	nexusRepo = 'maven-snapshots'
+	//nexusRepo = project.version.endsWith('-SNAPSHOT') ? 'maven-snapshots' : 'maven-releases'
 }
 
-scmVersion {
-	tag {
-		prefix = "${SRU}"
-		versionSeparator = '-'
-	}
-}
-project.version = "${SRU}-${scmVersion.version}"
+//scmVersion {
+//	tag {
+//		prefix = "${SRU}"
+//		versionSeparator = '-'
+//	}
+//}
+version = 'SRU2022-10.0.0-alpha1-SNAPSHOT'
 
 allprojects {
-	apply plugin: 'java-library-distribution'
 	java {
 		toolchain {
 			languageVersion.set(JavaLanguageVersion.of(11))
@@ -134,7 +133,7 @@ project(':iso20022-core') {
 	dependencies {
 		// included build
 		//TODO: Set right version
-		api 'com.prowidesoftware:pw-swift-core:SRU2022-0.1.0-SNAPSHOT'
+		api 'com.prowidesoftware:pw-swift-core:SRU2022-10.0.0-alpha1-SNAPSHOT'
 
 		implementation 'org.apache.commons:commons-lang3:3.12.0'
 		implementation 'com.google.code.gson:gson:2.9.0'
@@ -184,7 +183,11 @@ jar {
 	archivesBaseName = 'pw-iso20022'
 	subprojects.each { subproject ->
 		from subproject.configurations.archives.allArtifacts.files.collect {
-			zipTree(it)
+			// filter out any artifacts that are not jars
+			if (it.name.endsWith('.jar')) {
+				println "Adding ${it.name} to fat jar"
+				zipTree(it)
+			}
 		}
 	}
 	duplicatesStrategy = DuplicatesStrategy.EXCLUDE
@@ -289,7 +292,7 @@ artifacts {
 dependencies {
 	// included build (keep in sync with the latest Prowide Core version)
 	//TODO: Set right version
-	api 'com.prowidesoftware:pw-swift-core:SRU2022-0.1.0-SNAPSHOT'
+	api 'com.prowidesoftware:pw-swift-core:SRU2022-10.0.0-alpha1-SNAPSHOT'
 	implementation 'org.apache.commons:commons-lang3:3.12.0'
 	implementation 'com.google.code.gson:gson:2.9.0'
 }
