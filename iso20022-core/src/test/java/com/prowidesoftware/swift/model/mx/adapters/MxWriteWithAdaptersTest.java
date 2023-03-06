@@ -28,7 +28,9 @@ import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
+import java.time.ZoneOffset;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -43,9 +45,10 @@ public class MxWriteWithAdaptersTest {
 
         final String xml = mx1.message();
         //System.out.println(xml);
-        assertTrue(xml.contains("<Doc:CreDtTm>2021-10-19T12:13:14"+ OffsetDateTime.now().getOffset() + "</Doc:CreDtTm>"));
+        ZoneOffset offset = ZoneOffset.systemDefault().getRules().getOffset(LocalDateTime.of(2021, 10, 19, 12, 13, 14));;
+        assertTrue(xml.contains("<Doc:CreDtTm>2021-10-19T12:13:14"+ offset + "</Doc:CreDtTm>"));
         assertTrue(xml.contains("<Doc:IntrBkSttlmDt>2021-10-19</Doc:IntrBkSttlmDt>"));
-        assertTrue(xml.contains("<Doc:CLSTm>12:13:14"+ OffsetDateTime.now().getOffset() + "</Doc:CLSTm>"));
+        assertTrue(xml.contains("<Doc:CLSTm>12:13:14"+ offset + "</Doc:CLSTm>"));
 
         final MxPacs00800102 mx2 = MxPacs00800102.parse(xml);
         //System.out.println(mx2.message());
@@ -119,9 +122,10 @@ public class MxWriteWithAdaptersTest {
 
         final String xml = mx1.message();
         //System.out.println(xml);
-        assertTrue(xml.contains("<Doc:CreDtTm>2021-10-19T12:13:14.123"+ OffsetDateTime.now().getOffset() + "</Doc:CreDtTm>"));
+        ZoneOffset offset = ZoneOffset.systemDefault().getRules().getOffset(LocalDateTime.of(2021, 10, 19, 12, 13, 14));
+        assertTrue(xml.contains("<Doc:CreDtTm>2021-10-19T12:13:14.123"+ offset + "</Doc:CreDtTm>"));
         assertTrue(xml.contains("<Doc:IntrBkSttlmDt>2021-10-19</Doc:IntrBkSttlmDt>"));
-        assertTrue(xml.contains("<Doc:CLSTm>12:13:14.123"+ OffsetDateTime.now().getOffset() + "</Doc:CLSTm>"));
+        assertTrue(xml.contains("<Doc:CLSTm>12:13:14.123"+ offset + "</Doc:CLSTm>"));
 
         final MxPacs00800102 mx2 = MxPacs00800102.parse(xml);
         //System.out.println(mx2.message());
@@ -207,7 +211,8 @@ public class MxWriteWithAdaptersTest {
 
         final String xml = h1.xml();
         //System.out.println(xml);
-        assertTrue(xml.contains("<CreDt>2021-10-19T12:13:14"+ OffsetDateTime.now().getOffset() + "</CreDt>"));
+        ZoneOffset offset = ZoneOffset.systemDefault().getRules().getOffset(LocalDateTime.of(2021, 10, 19, 12, 13, 14));;
+        assertTrue(xml.contains("<CreDt>2021-10-19T12:13:14"+ offset + "</CreDt>"));
 
         final BusinessAppHdrV02 h2 = (BusinessAppHdrV02) AppHdrParser.parse(xml).get();
         //System.out.println(mx2.message());

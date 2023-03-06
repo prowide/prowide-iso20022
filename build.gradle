@@ -37,22 +37,22 @@ scmVersion {
 project.version = "${SRU}-${scmVersion.version}"
 
 allprojects {
-
+	apply plugin: 'java-library-distribution'
 	java {
 		toolchain {
-			languageVersion.set(JavaLanguageVersion.of(8))
+			languageVersion.set(JavaLanguageVersion.of(11))
 		}
 	}
 	tasks.withType(JavaCompile) {
 		options.encoding = 'UTF-8'
-		doLast {
-			if (getJavaCompiler().isPresent()) {
-				println 'Compiling with ' + getJavaCompiler().get().getMetadata().getInstallationPath()
-			}
+		doFirst {
+			println 'Compiling with ' + getJavaCompiler().get().getMetadata().getInstallationPath()
 		}
 	}
 
 	repositories {
+		//TODO: Remove me
+		mavenLocal()
 		mavenCentral()
 		// Prowide repo releases
 		if (project.hasProperty('prowideRepo')) {
@@ -93,6 +93,8 @@ subprojects {
 	dependencies {
 		implementation 'org.apache.commons:commons-lang3:3.12.0'
 		implementation 'com.google.code.gson:gson:2.9.0'
+		implementation 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.0'
+		implementation 'com.sun.xml.bind:jaxb-impl:4.0.2'
 	}
 
 	tasks.withType(Jar) {
@@ -115,6 +117,8 @@ configure(subprojects.findAll {it.name.endsWith('-mx')}) {
 		implementation project(specificTypesProject)
 		implementation 'org.apache.commons:commons-lang3:3.12.0'
 		implementation 'com.google.code.gson:gson:2.9.0'
+		implementation 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.0'
+		implementation 'com.sun.xml.bind:jaxb-impl:4.0.2'
 		compileOnly 'javax.persistence:javax.persistence-api:2.2'
 	}
 }
@@ -129,16 +133,17 @@ configure(subprojects.findAll {it.name.endsWith('-mx')}) {
 project(':iso20022-core') {
 	dependencies {
 		// included build
-		api 'com.prowidesoftware:pw-swift-core:SRU2022-9.3.11'
-
+		//TODO: Set right version
+		api 'com.prowidesoftware:pw-swift-core:SRU2022-0.1.0-SNAPSHOT'
 
 		implementation 'org.apache.commons:commons-lang3:3.12.0'
 		implementation 'com.google.code.gson:gson:2.9.0'
 
-		compileOnly 'javax.persistence:javax.persistence-api:2.2'
-		compileOnly 'javax.validation:validation-api:2.0.1.Final'
+		compileOnly 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.0'
+		compileOnly 'jakarta.persistence:jakarta.persistence-api:3.1.0'
+		compileOnly 'jakarta.validation:jakarta.validation-api:3.0.2'
 
-		testImplementation 'javax.persistence:javax.persistence-api:2.2'
+		testImplementation 'jakarta.persistence:jakarta.persistence-api:3.1.0'
 		testImplementation('org.junit.jupiter:junit-jupiter:5.8.2')
 		testImplementation group: 'com.google.guava', name: 'guava', version: '31.1-jre'
 		testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.22.0'
@@ -283,7 +288,8 @@ artifacts {
 // declared dependencies for pom generation
 dependencies {
 	// included build (keep in sync with the latest Prowide Core version)
-	api 'com.prowidesoftware:pw-swift-core:SRU2022-9.3.11'
+	//TODO: Set right version
+	api 'com.prowidesoftware:pw-swift-core:SRU2022-0.1.0-SNAPSHOT'
 	implementation 'org.apache.commons:commons-lang3:3.12.0'
 	implementation 'com.google.code.gson:gson:2.9.0'
 }
@@ -423,12 +429,6 @@ tasks.register('bundle', Jar) {
 tasks.withType(Test) {
 	doFirst {
 		println 'Running test on ' + getJavaLauncher().get().getMetadata().getInstallationPath()
-	}
-}
-
-task('testOn11', type: Test) {
-	javaLauncher = javaToolchains.launcherFor {
-		languageVersion = JavaLanguageVersion.of(11)
 	}
 }
 

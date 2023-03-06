@@ -19,7 +19,6 @@ import com.prowidesoftware.ProwideException;
 import com.prowidesoftware.deprecation.ProwideDeprecated;
 import com.prowidesoftware.deprecation.TargetYear;
 import com.prowidesoftware.swift.model.MxId;
-import com.prowidesoftware.swift.model.mx.dic.BusinessApplicationHeaderV01Impl;
 import com.prowidesoftware.swift.utils.SafeXmlUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.Validate;
@@ -27,8 +26,8 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXParseException;
 import org.xml.sax.XMLReader;
 
-import javax.xml.bind.*;
-import javax.xml.bind.annotation.adapters.XmlAdapter;
+import jakarta.xml.bind.*;
+import jakarta.xml.bind.annotation.adapters.XmlAdapter;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.transform.sax.SAXSource;
 import java.io.StringReader;
