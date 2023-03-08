@@ -235,7 +235,7 @@ public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
 
             final StringWriter sw = new StringWriter();
             JAXBElement<ApplicationHeaderImpl> element = new JAXBElement(new QName(NAMESPACE, AppHdr.HEADER_LOCALNAME), ApplicationHeaderImpl.class, null, this);
-            XmlEventWriter eventWriter = new XmlEventWriter(sw, params.prefix, params.includeXMLDeclaration, AppHdr.HEADER_LOCALNAME, params.escapeHandler);
+            XmlEventWriter eventWriter = new XmlEventWriter(sw, params.prefix, params.includeXMLDeclaration, AppHdr.HEADER_LOCALNAME, params.escapeHandler, params.indent);
             marshaller.marshal(element, eventWriter);
             return sw.getBuffer().toString();
 

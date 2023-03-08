@@ -73,6 +73,13 @@ public class MxWriteConfiguration {
      */
     public JAXBContext context;
 
+
+    /**
+     * Optional indent string to use when marshalling into XML, if null, a four spaces string will be used as default
+     * @since 9.3.6
+     */
+    public String indent;
+
     /**
      * Creates a configuration with the default options and adapters
      */

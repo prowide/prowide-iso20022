@@ -80,7 +80,7 @@ public class MxWriteImpl implements MxWrite {
             final Marshaller marshaller = MxWriteUtils.createMarshaller(context, params);
 
             final StringWriter sw = new StringWriter();
-            XmlEventWriter writer = new XmlEventWriter(sw, params.prefix, params.includeXMLDeclaration, "Document", params.escapeHandler);
+            XmlEventWriter writer = new XmlEventWriter(sw, params.prefix, params.includeXMLDeclaration, "Document", params.escapeHandler, params.indent);
 
             Map<String, String> preferredPrefixes = new HashMap<>();
             for (XsysNamespaces xsys : XsysNamespaces.values()) {

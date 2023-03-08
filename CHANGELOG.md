@@ -1,5 +1,8 @@
 # Prowide ISO 20022 - CHANGELOG
 
+#### 9.3.6 - March 2023
+  * (GH-74) Added a parameter in the MxWriteParams to define a custom indentation string to use when marshalling into XML
+
 #### 9.3.5 - January 2023
   * Added an optional way to pass a JaxbContext instance to the parse and write methods
 

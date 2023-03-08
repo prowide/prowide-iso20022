@@ -132,7 +132,6 @@ configure(subprojects.findAll {it.name.endsWith('-mx')}) {
 project(':iso20022-core') {
 	dependencies {
 		// included build
-		//TODO: Set right version
 		api 'com.prowidesoftware:pw-swift-core:SRU2022-10.0.0-alpha1-SNAPSHOT'
 
 		implementation 'org.apache.commons:commons-lang3:3.12.0'
@@ -291,7 +290,6 @@ artifacts {
 // declared dependencies for pom generation
 dependencies {
 	// included build (keep in sync with the latest Prowide Core version)
-	//TODO: Set right version
 	api 'com.prowidesoftware:pw-swift-core:SRU2022-10.0.0-alpha1-SNAPSHOT'
 	implementation 'org.apache.commons:commons-lang3:3.12.0'
 	implementation 'com.google.code.gson:gson:2.9.0'

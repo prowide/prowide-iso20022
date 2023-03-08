@@ -243,7 +243,7 @@ public class BusinessAppHdrV02 extends BusinessApplicationHeaderV02Impl implemen
 
             final StringWriter sw = new StringWriter();
             JAXBElement<BusinessApplicationHeaderV02Impl> element = new JAXBElement(new QName(NAMESPACE, AppHdr.HEADER_LOCALNAME), BusinessApplicationHeaderV02Impl.class, null, this);
-            XmlEventWriter eventWriter = new XmlEventWriter(sw, params.prefix, params.includeXMLDeclaration, AppHdr.HEADER_LOCALNAME, params.escapeHandler);
+            XmlEventWriter eventWriter = new XmlEventWriter(sw, params.prefix, params.includeXMLDeclaration, AppHdr.HEADER_LOCALNAME, params.escapeHandler, params.indent);
             marshaller.marshal(element, eventWriter);
             return sw.getBuffer().toString();
 

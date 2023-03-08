@@ -52,6 +52,13 @@ public class MxWriteParams {
      */
     public TypeAdaptersConfiguration adapters;
 
+
+    /**
+     * Optional indent string to use when marshalling into XML, if null, a four spaces string will be used as default
+     * @since 9.3.6
+     */
+    public String indent;
+
     public MxWriteParams() {
         this(new MxWriteConfiguration());
     }
@@ -64,6 +71,7 @@ public class MxWriteParams {
         this.escapeHandler = notNullConf.escapeHandler;
         this.adapters = notNullConf.adapters;
         this.context = notNullConf.context;
+        this.indent = notNullConf.indent;
     }
 
 }
