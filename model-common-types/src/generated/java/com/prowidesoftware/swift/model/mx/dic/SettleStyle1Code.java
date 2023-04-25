@@ -9,15 +9,14 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for SettleStyle1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="SettleStyle1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="SETC"/&gt;
- *     &lt;enumeration value="SETO"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="SettleStyle1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="SETC"/>
+ *     <enumeration value="SETO"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "SettleStyle1Code")

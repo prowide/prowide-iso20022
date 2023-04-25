@@ -9,20 +9,19 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for TypeOfAmount19Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="TypeOfAmount19Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CONN"/&gt;
- *     &lt;enumeration value="INSU"/&gt;
- *     &lt;enumeration value="LNDS"/&gt;
- *     &lt;enumeration value="MISC"/&gt;
- *     &lt;enumeration value="OTHN"/&gt;
- *     &lt;enumeration value="OTHP"/&gt;
- *     &lt;enumeration value="USGE"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="TypeOfAmount19Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CONN"/>
+ *     <enumeration value="INSU"/>
+ *     <enumeration value="LNDS"/>
+ *     <enumeration value="MISC"/>
+ *     <enumeration value="OTHN"/>
+ *     <enumeration value="OTHP"/>
+ *     <enumeration value="USGE"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "TypeOfAmount19Code")

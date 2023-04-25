@@ -9,17 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for PartyType18Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="PartyType18Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ACQR"/&gt;
- *     &lt;enumeration value="CISS"/&gt;
- *     &lt;enumeration value="CSCH"/&gt;
- *     &lt;enumeration value="AGNT"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="PartyType18Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ACQR"/>
+ *     <enumeration value="CISS"/>
+ *     <enumeration value="CSCH"/>
+ *     <enumeration value="AGNT"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "PartyType18Code")

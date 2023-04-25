@@ -10,29 +10,28 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for Algorithm25Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="Algorithm25Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ERS2"/&gt;
- *     &lt;enumeration value="ERS1"/&gt;
- *     &lt;enumeration value="RPSS"/&gt;
- *     &lt;enumeration value="ERS3"/&gt;
- *     &lt;enumeration value="ED32"/&gt;
- *     &lt;enumeration value="ED33"/&gt;
- *     &lt;enumeration value="ED35"/&gt;
- *     &lt;enumeration value="ED23"/&gt;
- *     &lt;enumeration value="ED25"/&gt;
- *     &lt;enumeration value="ES22"/&gt;
- *     &lt;enumeration value="ES32"/&gt;
- *     &lt;enumeration value="ES33"/&gt;
- *     &lt;enumeration value="ES35"/&gt;
- *     &lt;enumeration value="ES23"/&gt;
- *     &lt;enumeration value="ES25"/&gt;
- *     &lt;enumeration value="ED22"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="Algorithm25Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ERS2"/>
+ *     <enumeration value="ERS1"/>
+ *     <enumeration value="RPSS"/>
+ *     <enumeration value="ERS3"/>
+ *     <enumeration value="ED32"/>
+ *     <enumeration value="ED33"/>
+ *     <enumeration value="ED35"/>
+ *     <enumeration value="ED23"/>
+ *     <enumeration value="ED25"/>
+ *     <enumeration value="ES22"/>
+ *     <enumeration value="ES32"/>
+ *     <enumeration value="ES33"/>
+ *     <enumeration value="ES35"/>
+ *     <enumeration value="ES23"/>
+ *     <enumeration value="ES25"/>
+ *     <enumeration value="ED22"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "Algorithm25Code")

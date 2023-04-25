@@ -9,15 +9,14 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for TradeTransactionCondition5Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="TradeTransactionCondition5Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="XCPN"/&gt;
- *     &lt;enumeration value="CCPN"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="TradeTransactionCondition5Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="XCPN"/>
+ *     <enumeration value="CCPN"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "TradeTransactionCondition5Code")

@@ -9,18 +9,17 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for PreferredContactMethod1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="PreferredContactMethod1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="LETT"/&gt;
- *     &lt;enumeration value="MAIL"/&gt;
- *     &lt;enumeration value="PHON"/&gt;
- *     &lt;enumeration value="FAXX"/&gt;
- *     &lt;enumeration value="CELL"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="PreferredContactMethod1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="LETT"/>
+ *     <enumeration value="MAIL"/>
+ *     <enumeration value="PHON"/>
+ *     <enumeration value="FAXX"/>
+ *     <enumeration value="CELL"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "PreferredContactMethod1Code")

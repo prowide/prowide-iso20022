@@ -10,41 +10,40 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for MessageFunction7Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="MessageFunction7Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="BALN"/&gt;
- *     &lt;enumeration value="CMPA"/&gt;
- *     &lt;enumeration value="CMPD"/&gt;
- *     &lt;enumeration value="ACMD"/&gt;
- *     &lt;enumeration value="DVCC"/&gt;
- *     &lt;enumeration value="DIAQ"/&gt;
- *     &lt;enumeration value="DIAP"/&gt;
- *     &lt;enumeration value="GSTS"/&gt;
- *     &lt;enumeration value="INQQ"/&gt;
- *     &lt;enumeration value="INQP"/&gt;
- *     &lt;enumeration value="KYAQ"/&gt;
- *     &lt;enumeration value="KYAP"/&gt;
- *     &lt;enumeration value="PINQ"/&gt;
- *     &lt;enumeration value="PINP"/&gt;
- *     &lt;enumeration value="RJAQ"/&gt;
- *     &lt;enumeration value="RJAP"/&gt;
- *     &lt;enumeration value="WITV"/&gt;
- *     &lt;enumeration value="WITK"/&gt;
- *     &lt;enumeration value="WITQ"/&gt;
- *     &lt;enumeration value="WITP"/&gt;
- *     &lt;enumeration value="INQC"/&gt;
- *     &lt;enumeration value="H2AP"/&gt;
- *     &lt;enumeration value="H2AQ"/&gt;
- *     &lt;enumeration value="TMOP"/&gt;
- *     &lt;enumeration value="CSEC"/&gt;
- *     &lt;enumeration value="DSEC"/&gt;
- *     &lt;enumeration value="SKSC"/&gt;
- *     &lt;enumeration value="SSTS"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="MessageFunction7Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="BALN"/>
+ *     <enumeration value="CMPA"/>
+ *     <enumeration value="CMPD"/>
+ *     <enumeration value="ACMD"/>
+ *     <enumeration value="DVCC"/>
+ *     <enumeration value="DIAQ"/>
+ *     <enumeration value="DIAP"/>
+ *     <enumeration value="GSTS"/>
+ *     <enumeration value="INQQ"/>
+ *     <enumeration value="INQP"/>
+ *     <enumeration value="KYAQ"/>
+ *     <enumeration value="KYAP"/>
+ *     <enumeration value="PINQ"/>
+ *     <enumeration value="PINP"/>
+ *     <enumeration value="RJAQ"/>
+ *     <enumeration value="RJAP"/>
+ *     <enumeration value="WITV"/>
+ *     <enumeration value="WITK"/>
+ *     <enumeration value="WITQ"/>
+ *     <enumeration value="WITP"/>
+ *     <enumeration value="INQC"/>
+ *     <enumeration value="H2AP"/>
+ *     <enumeration value="H2AQ"/>
+ *     <enumeration value="TMOP"/>
+ *     <enumeration value="CSEC"/>
+ *     <enumeration value="DSEC"/>
+ *     <enumeration value="SKSC"/>
+ *     <enumeration value="SSTS"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "MessageFunction7Code")

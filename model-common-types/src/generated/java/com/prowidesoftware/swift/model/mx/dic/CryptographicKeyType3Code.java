@@ -10,19 +10,18 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for CryptographicKeyType3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CryptographicKeyType3Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="AES2"/&gt;
- *     &lt;enumeration value="EDE3"/&gt;
- *     &lt;enumeration value="DKP9"/&gt;
- *     &lt;enumeration value="AES9"/&gt;
- *     &lt;enumeration value="AES5"/&gt;
- *     &lt;enumeration value="EDE4"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CryptographicKeyType3Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="AES2"/>
+ *     <enumeration value="EDE3"/>
+ *     <enumeration value="DKP9"/>
+ *     <enumeration value="AES9"/>
+ *     <enumeration value="AES5"/>
+ *     <enumeration value="EDE4"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CryptographicKeyType3Code")

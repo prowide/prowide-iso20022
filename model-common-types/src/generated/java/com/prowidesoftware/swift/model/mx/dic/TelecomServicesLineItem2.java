@@ -3,16 +3,16 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -45,13 +45,13 @@ public class TelecomServicesLineItem2 {
     @XmlElement(name = "StartDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar startDtTm;
+    protected Calendar startDtTm;
     @XmlElement(name = "TmPrd")
     protected String tmPrd;
     @XmlElement(name = "Drtn", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected XMLGregorianCalendar drtn;
+    protected Calendar drtn;
     @XmlElement(name = "CallFr")
     protected TelecomCallDetails2 callFr;
     @XmlElement(name = "CallTo")
@@ -75,7 +75,7 @@ public class TelecomServicesLineItem2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getStartDtTm() {
+    public Calendar getStartDtTm() {
         return startDtTm;
     }
 
@@ -87,7 +87,7 @@ public class TelecomServicesLineItem2 {
      *     {@link String }
      *     
      */
-    public TelecomServicesLineItem2 setStartDtTm(XMLGregorianCalendar value) {
+    public TelecomServicesLineItem2 setStartDtTm(Calendar value) {
         this.startDtTm = value;
         return this;
     }
@@ -125,7 +125,7 @@ public class TelecomServicesLineItem2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDrtn() {
+    public Calendar getDrtn() {
         return drtn;
     }
 
@@ -137,7 +137,7 @@ public class TelecomServicesLineItem2 {
      *     {@link String }
      *     
      */
-    public TelecomServicesLineItem2 setDrtn(XMLGregorianCalendar value) {
+    public TelecomServicesLineItem2 setDrtn(Calendar value) {
         this.drtn = value;
         return this;
     }
@@ -198,8 +198,8 @@ public class TelecomServicesLineItem2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the chrg property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the chrg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -213,10 +213,12 @@ public class TelecomServicesLineItem2 {
      * {@link Amount20 }
      * 
      * 
+     * @return
+     *     The value of the chrg property.
      */
     public List<Amount20> getChrg() {
         if (chrg == null) {
-            chrg = new ArrayList<Amount20>();
+            chrg = new ArrayList<>();
         }
         return this.chrg;
     }
@@ -227,8 +229,8 @@ public class TelecomServicesLineItem2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ttlTax property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ttlTax property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -242,10 +244,12 @@ public class TelecomServicesLineItem2 {
      * {@link Tax39 }
      * 
      * 
+     * @return
+     *     The value of the ttlTax property.
      */
     public List<Tax39> getTtlTax() {
         if (ttlTax == null) {
-            ttlTax = new ArrayList<Tax39>();
+            ttlTax = new ArrayList<>();
         }
         return this.ttlTax;
     }

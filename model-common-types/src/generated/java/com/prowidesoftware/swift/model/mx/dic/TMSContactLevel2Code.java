@@ -9,17 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for TMSContactLevel2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="TMSContactLevel2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ASAP"/&gt;
- *     &lt;enumeration value="CRIT"/&gt;
- *     &lt;enumeration value="DTIM"/&gt;
- *     &lt;enumeration value="ENCS"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="TMSContactLevel2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ASAP"/>
+ *     <enumeration value="CRIT"/>
+ *     <enumeration value="DTIM"/>
+ *     <enumeration value="ENCS"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "TMSContactLevel2Code")

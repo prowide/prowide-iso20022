@@ -9,19 +9,18 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for Verification1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="Verification1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="FAIL"/&gt;
- *     &lt;enumeration value="MISS"/&gt;
- *     &lt;enumeration value="NOVF"/&gt;
- *     &lt;enumeration value="PART"/&gt;
- *     &lt;enumeration value="SUCC"/&gt;
- *     &lt;enumeration value="ERRR"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="Verification1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="FAIL"/>
+ *     <enumeration value="MISS"/>
+ *     <enumeration value="NOVF"/>
+ *     <enumeration value="PART"/>
+ *     <enumeration value="SUCC"/>
+ *     <enumeration value="ERRR"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "Verification1Code")

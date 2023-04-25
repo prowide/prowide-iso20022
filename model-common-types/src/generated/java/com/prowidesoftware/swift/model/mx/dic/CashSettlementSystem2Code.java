@@ -9,15 +9,14 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for CashSettlementSystem2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CashSettlementSystem2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="GROS"/&gt;
- *     &lt;enumeration value="NETS"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CashSettlementSystem2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="GROS"/>
+ *     <enumeration value="NETS"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CashSettlementSystem2Code")

@@ -9,27 +9,26 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for CardPaymentServiceType9Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CardPaymentServiceType9Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="AGGR"/&gt;
- *     &lt;enumeration value="DCCV"/&gt;
- *     &lt;enumeration value="GRTT"/&gt;
- *     &lt;enumeration value="LOYT"/&gt;
- *     &lt;enumeration value="NRES"/&gt;
- *     &lt;enumeration value="PUCO"/&gt;
- *     &lt;enumeration value="RECP"/&gt;
- *     &lt;enumeration value="SOAF"/&gt;
- *     &lt;enumeration value="VCAU"/&gt;
- *     &lt;enumeration value="INSI"/&gt;
- *     &lt;enumeration value="INSA"/&gt;
- *     &lt;enumeration value="CSHB"/&gt;
- *     &lt;enumeration value="INST"/&gt;
- *     &lt;enumeration value="NRFD"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CardPaymentServiceType9Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="AGGR"/>
+ *     <enumeration value="DCCV"/>
+ *     <enumeration value="GRTT"/>
+ *     <enumeration value="LOYT"/>
+ *     <enumeration value="NRES"/>
+ *     <enumeration value="PUCO"/>
+ *     <enumeration value="RECP"/>
+ *     <enumeration value="SOAF"/>
+ *     <enumeration value="VCAU"/>
+ *     <enumeration value="INSI"/>
+ *     <enumeration value="INSA"/>
+ *     <enumeration value="CSHB"/>
+ *     <enumeration value="INST"/>
+ *     <enumeration value="NRFD"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CardPaymentServiceType9Code")

@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,7 +33,7 @@ public class UTCOffset1 {
     @XmlElement(name = "NbOfHrs", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected XMLGregorianCalendar nbOfHrs;
+    protected Calendar nbOfHrs;
 
     /**
      * Gets the value of the sgn property.
@@ -60,7 +60,7 @@ public class UTCOffset1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getNbOfHrs() {
+    public Calendar getNbOfHrs() {
         return nbOfHrs;
     }
 
@@ -72,7 +72,7 @@ public class UTCOffset1 {
      *     {@link String }
      *     
      */
-    public UTCOffset1 setNbOfHrs(XMLGregorianCalendar value) {
+    public UTCOffset1 setNbOfHrs(Calendar value) {
         this.nbOfHrs = value;
         return this;
     }

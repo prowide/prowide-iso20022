@@ -9,16 +9,15 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for OrderQuantityType3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="OrderQuantityType3Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="UNIT"/&gt;
- *     &lt;enumeration value="CASH"/&gt;
- *     &lt;enumeration value="UMPU"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="OrderQuantityType3Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="UNIT"/>
+ *     <enumeration value="CASH"/>
+ *     <enumeration value="UMPU"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "OrderQuantityType3Code")

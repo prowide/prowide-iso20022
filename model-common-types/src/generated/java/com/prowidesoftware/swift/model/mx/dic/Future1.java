@@ -2,14 +2,14 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -41,11 +41,11 @@ public class Future1 {
     @XmlElement(name = "XpryDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar xpryDt;
+    protected Calendar xpryDt;
     @XmlElement(name = "FutrDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar futrDt;
+    protected Calendar futrDt;
     @XmlElement(name = "MinSz")
     protected ActiveCurrencyAndAmount minSz;
     @XmlElement(name = "UnitOfMeasr")
@@ -112,7 +112,7 @@ public class Future1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getXpryDt() {
+    public Calendar getXpryDt() {
         return xpryDt;
     }
 
@@ -124,7 +124,7 @@ public class Future1 {
      *     {@link String }
      *     
      */
-    public Future1 setXpryDt(XMLGregorianCalendar value) {
+    public Future1 setXpryDt(Calendar value) {
         this.xpryDt = value;
         return this;
     }
@@ -137,7 +137,7 @@ public class Future1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getFutrDt() {
+    public Calendar getFutrDt() {
         return futrDt;
     }
 
@@ -149,7 +149,7 @@ public class Future1 {
      *     {@link String }
      *     
      */
-    public Future1 setFutrDt(XMLGregorianCalendar value) {
+    public Future1 setFutrDt(Calendar value) {
         this.futrDt = value;
         return this;
     }

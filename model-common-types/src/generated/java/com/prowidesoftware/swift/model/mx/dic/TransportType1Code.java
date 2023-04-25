@@ -9,19 +9,18 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for TransportType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="TransportType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="AIRR"/&gt;
- *     &lt;enumeration value="BUSS"/&gt;
- *     &lt;enumeration value="OTHN"/&gt;
- *     &lt;enumeration value="OTHP"/&gt;
- *     &lt;enumeration value="RAIL"/&gt;
- *     &lt;enumeration value="SHIP"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="TransportType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="AIRR"/>
+ *     <enumeration value="BUSS"/>
+ *     <enumeration value="OTHN"/>
+ *     <enumeration value="OTHP"/>
+ *     <enumeration value="RAIL"/>
+ *     <enumeration value="SHIP"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "TransportType1Code")

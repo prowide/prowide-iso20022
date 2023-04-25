@@ -64,8 +64,8 @@ public class ModificationStatus5Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rsn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -79,10 +79,12 @@ public class ModificationStatus5Choice {
      * {@link ModificationReason5 }
      * 
      * 
+     * @return
+     *     The value of the rsn property.
      */
     public List<ModificationReason5> getRsn() {
         if (rsn == null) {
-            rsn = new ArrayList<ModificationReason5>();
+            rsn = new ArrayList<>();
         }
         return this.rsn;
     }

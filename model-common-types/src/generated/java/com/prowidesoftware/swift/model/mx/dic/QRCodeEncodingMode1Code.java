@@ -9,17 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for QRCodeEncodingMode1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="QRCodeEncodingMode1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ALFA"/&gt;
- *     &lt;enumeration value="BINA"/&gt;
- *     &lt;enumeration value="KANJ"/&gt;
- *     &lt;enumeration value="NUME"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="QRCodeEncodingMode1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ALFA"/>
+ *     <enumeration value="BINA"/>
+ *     <enumeration value="KANJ"/>
+ *     <enumeration value="NUME"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "QRCodeEncodingMode1Code")

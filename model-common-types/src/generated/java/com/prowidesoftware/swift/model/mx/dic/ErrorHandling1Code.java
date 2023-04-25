@@ -10,16 +10,15 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for ErrorHandling1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ErrorHandling1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="X020"/&gt;
- *     &lt;enumeration value="X030"/&gt;
- *     &lt;enumeration value="X050"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ErrorHandling1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="X020"/>
+ *     <enumeration value="X030"/>
+ *     <enumeration value="X050"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ErrorHandling1Code")

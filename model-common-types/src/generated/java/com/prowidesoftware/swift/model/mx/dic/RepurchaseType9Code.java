@@ -9,21 +9,20 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for RepurchaseType9Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="RepurchaseType9Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="PAIR"/&gt;
- *     &lt;enumeration value="PADJ"/&gt;
- *     &lt;enumeration value="RATE"/&gt;
- *     &lt;enumeration value="CALL"/&gt;
- *     &lt;enumeration value="ROLP"/&gt;
- *     &lt;enumeration value="CADJ"/&gt;
- *     &lt;enumeration value="TOPU"/&gt;
- *     &lt;enumeration value="WTHD"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="RepurchaseType9Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="PAIR"/>
+ *     <enumeration value="PADJ"/>
+ *     <enumeration value="RATE"/>
+ *     <enumeration value="CALL"/>
+ *     <enumeration value="ROLP"/>
+ *     <enumeration value="CADJ"/>
+ *     <enumeration value="TOPU"/>
+ *     <enumeration value="WTHD"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "RepurchaseType9Code")

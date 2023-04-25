@@ -9,16 +9,15 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for RepoCallAcknowledgementReason2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="RepoCallAcknowledgementReason2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CALD"/&gt;
- *     &lt;enumeration value="CALP"/&gt;
- *     &lt;enumeration value="ADEA"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="RepoCallAcknowledgementReason2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CALD"/>
+ *     <enumeration value="CALP"/>
+ *     <enumeration value="ADEA"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "RepoCallAcknowledgementReason2Code")

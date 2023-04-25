@@ -9,23 +9,22 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for InstalmentAmountDetailsType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="InstalmentAmountDetailsType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="TAXX"/&gt;
- *     &lt;enumeration value="RQST"/&gt;
- *     &lt;enumeration value="OTHP"/&gt;
- *     &lt;enumeration value="OTHN"/&gt;
- *     &lt;enumeration value="OTHC"/&gt;
- *     &lt;enumeration value="INSU"/&gt;
- *     &lt;enumeration value="FUNA"/&gt;
- *     &lt;enumeration value="FEES"/&gt;
- *     &lt;enumeration value="EXPN"/&gt;
- *     &lt;enumeration value="AFCO"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="InstalmentAmountDetailsType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="TAXX"/>
+ *     <enumeration value="RQST"/>
+ *     <enumeration value="OTHP"/>
+ *     <enumeration value="OTHN"/>
+ *     <enumeration value="OTHC"/>
+ *     <enumeration value="INSU"/>
+ *     <enumeration value="FUNA"/>
+ *     <enumeration value="FEES"/>
+ *     <enumeration value="EXPN"/>
+ *     <enumeration value="AFCO"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "InstalmentAmountDetailsType1Code")

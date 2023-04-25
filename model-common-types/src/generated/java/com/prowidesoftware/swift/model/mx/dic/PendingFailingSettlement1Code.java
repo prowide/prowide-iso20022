@@ -9,58 +9,57 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for PendingFailingSettlement1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="PendingFailingSettlement1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="AWMO"/&gt;
- *     &lt;enumeration value="AWSH"/&gt;
- *     &lt;enumeration value="LAAW"/&gt;
- *     &lt;enumeration value="DOCY"/&gt;
- *     &lt;enumeration value="CLAT"/&gt;
- *     &lt;enumeration value="CERT"/&gt;
- *     &lt;enumeration value="MINO"/&gt;
- *     &lt;enumeration value="PHSE"/&gt;
- *     &lt;enumeration value="SBLO"/&gt;
- *     &lt;enumeration value="DKNY"/&gt;
- *     &lt;enumeration value="STCD"/&gt;
- *     &lt;enumeration value="BENO"/&gt;
- *     &lt;enumeration value="LACK"/&gt;
- *     &lt;enumeration value="LATE"/&gt;
- *     &lt;enumeration value="CANR"/&gt;
- *     &lt;enumeration value="MLAT"/&gt;
- *     &lt;enumeration value="OBJT"/&gt;
- *     &lt;enumeration value="DOCC"/&gt;
- *     &lt;enumeration value="BLOC"/&gt;
- *     &lt;enumeration value="CHAS"/&gt;
- *     &lt;enumeration value="NEWI"/&gt;
- *     &lt;enumeration value="CLAC"/&gt;
- *     &lt;enumeration value="PART"/&gt;
- *     &lt;enumeration value="CMON"/&gt;
- *     &lt;enumeration value="COLL"/&gt;
- *     &lt;enumeration value="DEPO"/&gt;
- *     &lt;enumeration value="FLIM"/&gt;
- *     &lt;enumeration value="NOFX"/&gt;
- *     &lt;enumeration value="INCA"/&gt;
- *     &lt;enumeration value="LINK"/&gt;
- *     &lt;enumeration value="BYIY"/&gt;
- *     &lt;enumeration value="CAIS"/&gt;
- *     &lt;enumeration value="LALO"/&gt;
- *     &lt;enumeration value="MONY"/&gt;
- *     &lt;enumeration value="NCON"/&gt;
- *     &lt;enumeration value="YCOL"/&gt;
- *     &lt;enumeration value="REFS"/&gt;
- *     &lt;enumeration value="SDUT"/&gt;
- *     &lt;enumeration value="CYCL"/&gt;
- *     &lt;enumeration value="BATC"/&gt;
- *     &lt;enumeration value="GUAD"/&gt;
- *     &lt;enumeration value="PREA"/&gt;
- *     &lt;enumeration value="GLOB"/&gt;
- *     &lt;enumeration value="CPEC"/&gt;
- *     &lt;enumeration value="MUNO"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="PendingFailingSettlement1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="AWMO"/>
+ *     <enumeration value="AWSH"/>
+ *     <enumeration value="LAAW"/>
+ *     <enumeration value="DOCY"/>
+ *     <enumeration value="CLAT"/>
+ *     <enumeration value="CERT"/>
+ *     <enumeration value="MINO"/>
+ *     <enumeration value="PHSE"/>
+ *     <enumeration value="SBLO"/>
+ *     <enumeration value="DKNY"/>
+ *     <enumeration value="STCD"/>
+ *     <enumeration value="BENO"/>
+ *     <enumeration value="LACK"/>
+ *     <enumeration value="LATE"/>
+ *     <enumeration value="CANR"/>
+ *     <enumeration value="MLAT"/>
+ *     <enumeration value="OBJT"/>
+ *     <enumeration value="DOCC"/>
+ *     <enumeration value="BLOC"/>
+ *     <enumeration value="CHAS"/>
+ *     <enumeration value="NEWI"/>
+ *     <enumeration value="CLAC"/>
+ *     <enumeration value="PART"/>
+ *     <enumeration value="CMON"/>
+ *     <enumeration value="COLL"/>
+ *     <enumeration value="DEPO"/>
+ *     <enumeration value="FLIM"/>
+ *     <enumeration value="NOFX"/>
+ *     <enumeration value="INCA"/>
+ *     <enumeration value="LINK"/>
+ *     <enumeration value="BYIY"/>
+ *     <enumeration value="CAIS"/>
+ *     <enumeration value="LALO"/>
+ *     <enumeration value="MONY"/>
+ *     <enumeration value="NCON"/>
+ *     <enumeration value="YCOL"/>
+ *     <enumeration value="REFS"/>
+ *     <enumeration value="SDUT"/>
+ *     <enumeration value="CYCL"/>
+ *     <enumeration value="BATC"/>
+ *     <enumeration value="GUAD"/>
+ *     <enumeration value="PREA"/>
+ *     <enumeration value="GLOB"/>
+ *     <enumeration value="CPEC"/>
+ *     <enumeration value="MUNO"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "PendingFailingSettlement1Code")

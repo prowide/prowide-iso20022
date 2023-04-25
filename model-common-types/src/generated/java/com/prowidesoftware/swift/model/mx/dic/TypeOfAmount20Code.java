@@ -9,35 +9,34 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for TypeOfAmount20Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="TypeOfAmount20Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="AMTH"/&gt;
- *     &lt;enumeration value="BAGG"/&gt;
- *     &lt;enumeration value="CARG"/&gt;
- *     &lt;enumeration value="CHTC"/&gt;
- *     &lt;enumeration value="CLUB"/&gt;
- *     &lt;enumeration value="DUTY"/&gt;
- *     &lt;enumeration value="EXTK"/&gt;
- *     &lt;enumeration value="EXTF"/&gt;
- *     &lt;enumeration value="EXTR"/&gt;
- *     &lt;enumeration value="FARE"/&gt;
- *     &lt;enumeration value="FDBV"/&gt;
- *     &lt;enumeration value="INSU"/&gt;
- *     &lt;enumeration value="MISC"/&gt;
- *     &lt;enumeration value="OTHN"/&gt;
- *     &lt;enumeration value="OTHP"/&gt;
- *     &lt;enumeration value="PETC"/&gt;
- *     &lt;enumeration value="PHNE"/&gt;
- *     &lt;enumeration value="PRPY"/&gt;
- *     &lt;enumeration value="TOTL"/&gt;
- *     &lt;enumeration value="TOUR"/&gt;
- *     &lt;enumeration value="UPGD"/&gt;
- *     &lt;enumeration value="TKDL"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="TypeOfAmount20Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="AMTH"/>
+ *     <enumeration value="BAGG"/>
+ *     <enumeration value="CARG"/>
+ *     <enumeration value="CHTC"/>
+ *     <enumeration value="CLUB"/>
+ *     <enumeration value="DUTY"/>
+ *     <enumeration value="EXTK"/>
+ *     <enumeration value="EXTF"/>
+ *     <enumeration value="EXTR"/>
+ *     <enumeration value="FARE"/>
+ *     <enumeration value="FDBV"/>
+ *     <enumeration value="INSU"/>
+ *     <enumeration value="MISC"/>
+ *     <enumeration value="OTHN"/>
+ *     <enumeration value="OTHP"/>
+ *     <enumeration value="PETC"/>
+ *     <enumeration value="PHNE"/>
+ *     <enumeration value="PRPY"/>
+ *     <enumeration value="TOTL"/>
+ *     <enumeration value="TOUR"/>
+ *     <enumeration value="UPGD"/>
+ *     <enumeration value="TKDL"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "TypeOfAmount20Code")

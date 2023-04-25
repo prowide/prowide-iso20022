@@ -9,16 +9,15 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for Priority1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="Priority1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="HIGH"/&gt;
- *     &lt;enumeration value="NORM"/&gt;
- *     &lt;enumeration value="LOWW"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="Priority1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="HIGH"/>
+ *     <enumeration value="NORM"/>
+ *     <enumeration value="LOWW"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "Priority1Code")

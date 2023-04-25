@@ -96,8 +96,8 @@ public class SequenceRange1Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the frToSeq property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the frToSeq property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -111,10 +111,12 @@ public class SequenceRange1Choice {
      * {@link SequenceRange1 }
      * 
      * 
+     * @return
+     *     The value of the frToSeq property.
      */
     public List<SequenceRange1> getFrToSeq() {
         if (frToSeq == null) {
-            frToSeq = new ArrayList<SequenceRange1>();
+            frToSeq = new ArrayList<>();
         }
         return this.frToSeq;
     }
@@ -125,8 +127,8 @@ public class SequenceRange1Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the eqSeq property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the eqSeq property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -140,10 +142,12 @@ public class SequenceRange1Choice {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the eqSeq property.
      */
     public List<String> getEQSeq() {
         if (eqSeq == null) {
-            eqSeq = new ArrayList<String>();
+            eqSeq = new ArrayList<>();
         }
         return this.eqSeq;
     }
@@ -154,8 +158,8 @@ public class SequenceRange1Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the neqSeq property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the neqSeq property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -169,10 +173,12 @@ public class SequenceRange1Choice {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the neqSeq property.
      */
     public List<String> getNEQSeq() {
         if (neqSeq == null) {
-            neqSeq = new ArrayList<String>();
+            neqSeq = new ArrayList<>();
         }
         return this.neqSeq;
     }

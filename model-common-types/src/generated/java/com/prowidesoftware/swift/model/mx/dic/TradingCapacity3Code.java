@@ -9,21 +9,20 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for TradingCapacity3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="TradingCapacity3Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="PRIN"/&gt;
- *     &lt;enumeration value="CPRN"/&gt;
- *     &lt;enumeration value="RISP"/&gt;
- *     &lt;enumeration value="PROP"/&gt;
- *     &lt;enumeration value="AGEN"/&gt;
- *     &lt;enumeration value="CAGN"/&gt;
- *     &lt;enumeration value="OAGN"/&gt;
- *     &lt;enumeration value="PRAG"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="TradingCapacity3Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="PRIN"/>
+ *     <enumeration value="CPRN"/>
+ *     <enumeration value="RISP"/>
+ *     <enumeration value="PROP"/>
+ *     <enumeration value="AGEN"/>
+ *     <enumeration value="CAGN"/>
+ *     <enumeration value="OAGN"/>
+ *     <enumeration value="PRAG"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "TradingCapacity3Code")

@@ -49,8 +49,8 @@ public class StructuredRemittanceInformation8 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rfrdDocInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rfrdDocInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -64,10 +64,12 @@ public class StructuredRemittanceInformation8 {
      * {@link ReferredDocumentInformation3 }
      * 
      * 
+     * @return
+     *     The value of the rfrdDocInf property.
      */
     public List<ReferredDocumentInformation3> getRfrdDocInf() {
         if (rfrdDocInf == null) {
-            rfrdDocInf = new ArrayList<ReferredDocumentInformation3>();
+            rfrdDocInf = new ArrayList<>();
         }
         return this.rfrdDocInf;
     }
@@ -178,8 +180,8 @@ public class StructuredRemittanceInformation8 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlRmtInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlRmtInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -193,10 +195,12 @@ public class StructuredRemittanceInformation8 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the addtlRmtInf property.
      */
     public List<String> getAddtlRmtInf() {
         if (addtlRmtInf == null) {
-            addtlRmtInf = new ArrayList<String>();
+            addtlRmtInf = new ArrayList<>();
         }
         return this.addtlRmtInf;
     }

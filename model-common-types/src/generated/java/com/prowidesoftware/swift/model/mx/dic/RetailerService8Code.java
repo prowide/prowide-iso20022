@@ -9,23 +9,22 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for RetailerService8Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="RetailerService8Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="DDYQ"/&gt;
- *     &lt;enumeration value="DINQ"/&gt;
- *     &lt;enumeration value="DPRQ"/&gt;
- *     &lt;enumeration value="DSOQ"/&gt;
- *     &lt;enumeration value="DSIQ"/&gt;
- *     &lt;enumeration value="DCIQ"/&gt;
- *     &lt;enumeration value="DCAQ"/&gt;
- *     &lt;enumeration value="DCPQ"/&gt;
- *     &lt;enumeration value="DCOQ"/&gt;
- *     &lt;enumeration value="DINO"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="RetailerService8Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="DDYQ"/>
+ *     <enumeration value="DINQ"/>
+ *     <enumeration value="DPRQ"/>
+ *     <enumeration value="DSOQ"/>
+ *     <enumeration value="DSIQ"/>
+ *     <enumeration value="DCIQ"/>
+ *     <enumeration value="DCAQ"/>
+ *     <enumeration value="DCPQ"/>
+ *     <enumeration value="DCOQ"/>
+ *     <enumeration value="DINO"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "RetailerService8Code")

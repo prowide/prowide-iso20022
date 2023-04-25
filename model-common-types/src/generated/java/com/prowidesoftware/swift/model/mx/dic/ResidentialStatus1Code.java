@@ -9,16 +9,15 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for ResidentialStatus1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ResidentialStatus1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="RESI"/&gt;
- *     &lt;enumeration value="PRES"/&gt;
- *     &lt;enumeration value="NRES"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ResidentialStatus1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="RESI"/>
+ *     <enumeration value="PRES"/>
+ *     <enumeration value="NRES"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ResidentialStatus1Code")

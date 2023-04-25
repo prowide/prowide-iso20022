@@ -10,16 +10,15 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for StatementType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="StatementType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ST03"/&gt;
- *     &lt;enumeration value="ST02"/&gt;
- *     &lt;enumeration value="ST06"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="StatementType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ST03"/>
+ *     <enumeration value="ST02"/>
+ *     <enumeration value="ST06"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "StatementType1Code")

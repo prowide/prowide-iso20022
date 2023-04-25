@@ -9,17 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for RiskAssessment1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="RiskAssessment1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="APPC"/&gt;
- *     &lt;enumeration value="APPH"/&gt;
- *     &lt;enumeration value="APPU"/&gt;
- *     &lt;enumeration value="DONT"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="RiskAssessment1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="APPC"/>
+ *     <enumeration value="APPH"/>
+ *     <enumeration value="APPU"/>
+ *     <enumeration value="DONT"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "RiskAssessment1Code")

@@ -10,18 +10,17 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for BytePadding1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="BytePadding1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="LNGT"/&gt;
- *     &lt;enumeration value="NUL8"/&gt;
- *     &lt;enumeration value="NULG"/&gt;
- *     &lt;enumeration value="NULL"/&gt;
- *     &lt;enumeration value="RAND"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="BytePadding1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="LNGT"/>
+ *     <enumeration value="NUL8"/>
+ *     <enumeration value="NULG"/>
+ *     <enumeration value="NULL"/>
+ *     <enumeration value="RAND"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "BytePadding1Code")

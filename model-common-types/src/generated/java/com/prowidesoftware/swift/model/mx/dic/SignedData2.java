@@ -72,8 +72,8 @@ public class SignedData2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dgstAlgo property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the dgstAlgo property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -87,10 +87,12 @@ public class SignedData2 {
      * {@link AlgorithmIdentification5 }
      * 
      * 
+     * @return
+     *     The value of the dgstAlgo property.
      */
     public List<AlgorithmIdentification5> getDgstAlgo() {
         if (dgstAlgo == null) {
-            dgstAlgo = new ArrayList<AlgorithmIdentification5>();
+            dgstAlgo = new ArrayList<>();
         }
         return this.dgstAlgo;
     }
@@ -126,8 +128,8 @@ public class SignedData2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cert property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cert property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -140,10 +142,12 @@ public class SignedData2 {
      * Objects of the following type(s) are allowed in the list
      * byte[]
      * 
+     * @return
+     *     The value of the cert property.
      */
     public List<byte[]> getCert() {
         if (cert == null) {
-            cert = new ArrayList<byte[]>();
+            cert = new ArrayList<>();
         }
         return this.cert;
     }
@@ -154,8 +158,8 @@ public class SignedData2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sgnr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sgnr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -169,10 +173,12 @@ public class SignedData2 {
      * {@link Signer2 }
      * 
      * 
+     * @return
+     *     The value of the sgnr property.
      */
     public List<Signer2> getSgnr() {
         if (sgnr == null) {
-            sgnr = new ArrayList<Signer2>();
+            sgnr = new ArrayList<>();
         }
         return this.sgnr;
     }

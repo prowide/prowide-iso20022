@@ -56,8 +56,8 @@ public class RetailerSaleEnvironment2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the saleCpblties property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the saleCpblties property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -71,10 +71,12 @@ public class RetailerSaleEnvironment2 {
      * {@link SaleCapabilities1Code }
      * 
      * 
+     * @return
+     *     The value of the saleCpblties property.
      */
     public List<SaleCapabilities1Code> getSaleCpblties() {
         if (saleCpblties == null) {
-            saleCpblties = new ArrayList<SaleCapabilities1Code>();
+            saleCpblties = new ArrayList<>();
         }
         return this.saleCpblties;
     }

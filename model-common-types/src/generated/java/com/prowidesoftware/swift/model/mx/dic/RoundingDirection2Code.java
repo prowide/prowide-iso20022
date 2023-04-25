@@ -9,15 +9,14 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for RoundingDirection2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="RoundingDirection2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="RDUP"/&gt;
- *     &lt;enumeration value="RDWN"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="RoundingDirection2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="RDUP"/>
+ *     <enumeration value="RDWN"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "RoundingDirection2Code")

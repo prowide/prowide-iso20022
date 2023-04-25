@@ -9,22 +9,21 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for DataSetCategory7Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="DataSetCategory7Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ATMC"/&gt;
- *     &lt;enumeration value="ATMP"/&gt;
- *     &lt;enumeration value="APPR"/&gt;
- *     &lt;enumeration value="CRAP"/&gt;
- *     &lt;enumeration value="CPRC"/&gt;
- *     &lt;enumeration value="OEXR"/&gt;
- *     &lt;enumeration value="AMNT"/&gt;
- *     &lt;enumeration value="LOCC"/&gt;
- *     &lt;enumeration value="MNOC"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="DataSetCategory7Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ATMC"/>
+ *     <enumeration value="ATMP"/>
+ *     <enumeration value="APPR"/>
+ *     <enumeration value="CRAP"/>
+ *     <enumeration value="CPRC"/>
+ *     <enumeration value="OEXR"/>
+ *     <enumeration value="AMNT"/>
+ *     <enumeration value="LOCC"/>
+ *     <enumeration value="MNOC"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "DataSetCategory7Code")

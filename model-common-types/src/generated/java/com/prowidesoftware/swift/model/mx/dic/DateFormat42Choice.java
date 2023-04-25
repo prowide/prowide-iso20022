@@ -1,14 +1,15 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -34,7 +35,7 @@ public class DateFormat42Choice {
     @XmlElement(name = "YrMnthDay", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar yrMnthDay;
+    protected Calendar yrMnthDay;
 
     /**
      * Gets the value of the yrMnth property.
@@ -69,7 +70,7 @@ public class DateFormat42Choice {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getYrMnthDay() {
+    public Calendar getYrMnthDay() {
         return yrMnthDay;
     }
 
@@ -81,7 +82,7 @@ public class DateFormat42Choice {
      *     {@link String }
      *     
      */
-    public DateFormat42Choice setYrMnthDay(XMLGregorianCalendar value) {
+    public DateFormat42Choice setYrMnthDay(Calendar value) {
         this.yrMnthDay = value;
         return this;
     }

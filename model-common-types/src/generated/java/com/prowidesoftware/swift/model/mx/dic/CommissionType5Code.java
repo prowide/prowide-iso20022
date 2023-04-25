@@ -9,16 +9,15 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for CommissionType5Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CommissionType5Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="FEND"/&gt;
- *     &lt;enumeration value="BEND"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CommissionType5Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="FEND"/>
+ *     <enumeration value="BEND"/>
+ *     <enumeration value="OTHR"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CommissionType5Code")

@@ -10,15 +10,14 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for EncryptionFormat1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="EncryptionFormat1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="TR31"/&gt;
- *     &lt;enumeration value="TR34"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="EncryptionFormat1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="TR31"/>
+ *     <enumeration value="TR34"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "EncryptionFormat1Code")

@@ -9,16 +9,15 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for SettlementStandingInstructionDatabase1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="SettlementStandingInstructionDatabase1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="INTE"/&gt;
- *     &lt;enumeration value="BRKR"/&gt;
- *     &lt;enumeration value="VEND"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="SettlementStandingInstructionDatabase1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="INTE"/>
+ *     <enumeration value="BRKR"/>
+ *     <enumeration value="VEND"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "SettlementStandingInstructionDatabase1Code")

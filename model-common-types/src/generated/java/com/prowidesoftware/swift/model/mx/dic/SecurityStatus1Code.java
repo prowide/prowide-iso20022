@@ -9,15 +9,14 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for SecurityStatus1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="SecurityStatus1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ACTV"/&gt;
- *     &lt;enumeration value="INAC"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="SecurityStatus1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ACTV"/>
+ *     <enumeration value="INAC"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "SecurityStatus1Code")

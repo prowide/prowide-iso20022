@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -42,7 +42,7 @@ public class InvoiceTotals1 {
     @XmlElement(name = "PmtDueDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar pmtDueDt;
+    protected Calendar pmtDueDt;
 
     /**
      * Gets the value of the ttlTaxblAmt property.
@@ -152,7 +152,7 @@ public class InvoiceTotals1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getPmtDueDt() {
+    public Calendar getPmtDueDt() {
         return pmtDueDt;
     }
 
@@ -164,7 +164,7 @@ public class InvoiceTotals1 {
      *     {@link String }
      *     
      */
-    public InvoiceTotals1 setPmtDueDt(XMLGregorianCalendar value) {
+    public InvoiceTotals1 setPmtDueDt(Calendar value) {
         this.pmtDueDt = value;
         return this;
     }

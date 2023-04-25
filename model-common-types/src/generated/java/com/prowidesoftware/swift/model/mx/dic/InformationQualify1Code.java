@@ -9,23 +9,22 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for InformationQualify1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="InformationQualify1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CUSA"/&gt;
- *     &lt;enumeration value="DISP"/&gt;
- *     &lt;enumeration value="DOCT"/&gt;
- *     &lt;enumeration value="ERRO"/&gt;
- *     &lt;enumeration value="INPT"/&gt;
- *     &lt;enumeration value="POIR"/&gt;
- *     &lt;enumeration value="RCPT"/&gt;
- *     &lt;enumeration value="SOND"/&gt;
- *     &lt;enumeration value="STAT"/&gt;
- *     &lt;enumeration value="VCHR"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="InformationQualify1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CUSA"/>
+ *     <enumeration value="DISP"/>
+ *     <enumeration value="DOCT"/>
+ *     <enumeration value="ERRO"/>
+ *     <enumeration value="INPT"/>
+ *     <enumeration value="POIR"/>
+ *     <enumeration value="RCPT"/>
+ *     <enumeration value="SOND"/>
+ *     <enumeration value="STAT"/>
+ *     <enumeration value="VCHR"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "InformationQualify1Code")

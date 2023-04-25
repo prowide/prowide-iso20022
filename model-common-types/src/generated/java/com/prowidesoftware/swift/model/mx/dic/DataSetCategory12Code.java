@@ -9,30 +9,29 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for DataSetCategory12Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="DataSetCategory12Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="AQPR"/&gt;
- *     &lt;enumeration value="APPR"/&gt;
- *     &lt;enumeration value="TXCP"/&gt;
- *     &lt;enumeration value="AKCP"/&gt;
- *     &lt;enumeration value="DLGT"/&gt;
- *     &lt;enumeration value="MGTP"/&gt;
- *     &lt;enumeration value="MRPR"/&gt;
- *     &lt;enumeration value="SCPR"/&gt;
- *     &lt;enumeration value="SWPK"/&gt;
- *     &lt;enumeration value="STRP"/&gt;
- *     &lt;enumeration value="TRPR"/&gt;
- *     &lt;enumeration value="VDPR"/&gt;
- *     &lt;enumeration value="PARA"/&gt;
- *     &lt;enumeration value="TMSP"/&gt;
- *     &lt;enumeration value="CRTF"/&gt;
- *     &lt;enumeration value="LOGF"/&gt;
- *     &lt;enumeration value="CMRQ"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="DataSetCategory12Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="AQPR"/>
+ *     <enumeration value="APPR"/>
+ *     <enumeration value="TXCP"/>
+ *     <enumeration value="AKCP"/>
+ *     <enumeration value="DLGT"/>
+ *     <enumeration value="MGTP"/>
+ *     <enumeration value="MRPR"/>
+ *     <enumeration value="SCPR"/>
+ *     <enumeration value="SWPK"/>
+ *     <enumeration value="STRP"/>
+ *     <enumeration value="TRPR"/>
+ *     <enumeration value="VDPR"/>
+ *     <enumeration value="PARA"/>
+ *     <enumeration value="TMSP"/>
+ *     <enumeration value="CRTF"/>
+ *     <enumeration value="LOGF"/>
+ *     <enumeration value="CMRQ"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "DataSetCategory12Code")

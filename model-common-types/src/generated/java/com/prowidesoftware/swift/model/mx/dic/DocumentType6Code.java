@@ -9,29 +9,28 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for DocumentType6Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="DocumentType6Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="MSIN"/&gt;
- *     &lt;enumeration value="CNFA"/&gt;
- *     &lt;enumeration value="DNFA"/&gt;
- *     &lt;enumeration value="CINV"/&gt;
- *     &lt;enumeration value="CREN"/&gt;
- *     &lt;enumeration value="DEBN"/&gt;
- *     &lt;enumeration value="HIRI"/&gt;
- *     &lt;enumeration value="SBIN"/&gt;
- *     &lt;enumeration value="CMCN"/&gt;
- *     &lt;enumeration value="SOAC"/&gt;
- *     &lt;enumeration value="DISP"/&gt;
- *     &lt;enumeration value="BOLD"/&gt;
- *     &lt;enumeration value="VCHR"/&gt;
- *     &lt;enumeration value="AROI"/&gt;
- *     &lt;enumeration value="TSUT"/&gt;
- *     &lt;enumeration value="PUOR"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="DocumentType6Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="MSIN"/>
+ *     <enumeration value="CNFA"/>
+ *     <enumeration value="DNFA"/>
+ *     <enumeration value="CINV"/>
+ *     <enumeration value="CREN"/>
+ *     <enumeration value="DEBN"/>
+ *     <enumeration value="HIRI"/>
+ *     <enumeration value="SBIN"/>
+ *     <enumeration value="CMCN"/>
+ *     <enumeration value="SOAC"/>
+ *     <enumeration value="DISP"/>
+ *     <enumeration value="BOLD"/>
+ *     <enumeration value="VCHR"/>
+ *     <enumeration value="AROI"/>
+ *     <enumeration value="TSUT"/>
+ *     <enumeration value="PUOR"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "DocumentType6Code")

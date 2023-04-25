@@ -9,18 +9,17 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for UserInterface8Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="UserInterface8Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="DSPU"/&gt;
- *     &lt;enumeration value="FILE"/&gt;
- *     &lt;enumeration value="LOGF"/&gt;
- *     &lt;enumeration value="OTHP"/&gt;
- *     &lt;enumeration value="OTHN"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="UserInterface8Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="DSPU"/>
+ *     <enumeration value="FILE"/>
+ *     <enumeration value="LOGF"/>
+ *     <enumeration value="OTHP"/>
+ *     <enumeration value="OTHN"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "UserInterface8Code")

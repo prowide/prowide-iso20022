@@ -9,24 +9,23 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for InputCommand1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="InputCommand1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="DCSG"/&gt;
- *     &lt;enumeration value="DGSG"/&gt;
- *     &lt;enumeration value="GAKY"/&gt;
- *     &lt;enumeration value="GCNF"/&gt;
- *     &lt;enumeration value="GFKY"/&gt;
- *     &lt;enumeration value="GMNE"/&gt;
- *     &lt;enumeration value="PSWD"/&gt;
- *     &lt;enumeration value="SITE"/&gt;
- *     &lt;enumeration value="TXSG"/&gt;
- *     &lt;enumeration value="HTML"/&gt;
- *     &lt;enumeration value="SIGN"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="InputCommand1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="DCSG"/>
+ *     <enumeration value="DGSG"/>
+ *     <enumeration value="GAKY"/>
+ *     <enumeration value="GCNF"/>
+ *     <enumeration value="GFKY"/>
+ *     <enumeration value="GMNE"/>
+ *     <enumeration value="PSWD"/>
+ *     <enumeration value="SITE"/>
+ *     <enumeration value="TXSG"/>
+ *     <enumeration value="HTML"/>
+ *     <enumeration value="SIGN"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "InputCommand1Code")

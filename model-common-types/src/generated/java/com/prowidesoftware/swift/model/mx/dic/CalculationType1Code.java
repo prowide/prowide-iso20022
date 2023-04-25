@@ -9,46 +9,45 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for CalculationType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CalculationType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="AFTX"/&gt;
- *     &lt;enumeration value="ANNU"/&gt;
- *     &lt;enumeration value="ISSU"/&gt;
- *     &lt;enumeration value="AVMA"/&gt;
- *     &lt;enumeration value="BOOK"/&gt;
- *     &lt;enumeration value="YTNC"/&gt;
- *     &lt;enumeration value="CHCL"/&gt;
- *     &lt;enumeration value="CLOS"/&gt;
- *     &lt;enumeration value="CMPD"/&gt;
- *     &lt;enumeration value="CUYI"/&gt;
- *     &lt;enumeration value="TRGR"/&gt;
- *     &lt;enumeration value="GVEQ"/&gt;
- *     &lt;enumeration value="FLAS"/&gt;
- *     &lt;enumeration value="NVFL"/&gt;
- *     &lt;enumeration value="LSCL"/&gt;
- *     &lt;enumeration value="LSMT"/&gt;
- *     &lt;enumeration value="LSQR"/&gt;
- *     &lt;enumeration value="LSYR"/&gt;
- *     &lt;enumeration value="LGAL"/&gt;
- *     &lt;enumeration value="MARK"/&gt;
- *     &lt;enumeration value="YTMA"/&gt;
- *     &lt;enumeration value="NXRF"/&gt;
- *     &lt;enumeration value="PNAV"/&gt;
- *     &lt;enumeration value="NXPT"/&gt;
- *     &lt;enumeration value="PRCL"/&gt;
- *     &lt;enumeration value="PRYL"/&gt;
- *     &lt;enumeration value="SEMI"/&gt;
- *     &lt;enumeration value="SHLF"/&gt;
- *     &lt;enumeration value="SPLL"/&gt;
- *     &lt;enumeration value="TXQV"/&gt;
- *     &lt;enumeration value="TTDT"/&gt;
- *     &lt;enumeration value="TRYL"/&gt;
- *     &lt;enumeration value="WRST"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CalculationType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="AFTX"/>
+ *     <enumeration value="ANNU"/>
+ *     <enumeration value="ISSU"/>
+ *     <enumeration value="AVMA"/>
+ *     <enumeration value="BOOK"/>
+ *     <enumeration value="YTNC"/>
+ *     <enumeration value="CHCL"/>
+ *     <enumeration value="CLOS"/>
+ *     <enumeration value="CMPD"/>
+ *     <enumeration value="CUYI"/>
+ *     <enumeration value="TRGR"/>
+ *     <enumeration value="GVEQ"/>
+ *     <enumeration value="FLAS"/>
+ *     <enumeration value="NVFL"/>
+ *     <enumeration value="LSCL"/>
+ *     <enumeration value="LSMT"/>
+ *     <enumeration value="LSQR"/>
+ *     <enumeration value="LSYR"/>
+ *     <enumeration value="LGAL"/>
+ *     <enumeration value="MARK"/>
+ *     <enumeration value="YTMA"/>
+ *     <enumeration value="NXRF"/>
+ *     <enumeration value="PNAV"/>
+ *     <enumeration value="NXPT"/>
+ *     <enumeration value="PRCL"/>
+ *     <enumeration value="PRYL"/>
+ *     <enumeration value="SEMI"/>
+ *     <enumeration value="SHLF"/>
+ *     <enumeration value="SPLL"/>
+ *     <enumeration value="TXQV"/>
+ *     <enumeration value="TTDT"/>
+ *     <enumeration value="TRYL"/>
+ *     <enumeration value="WRST"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CalculationType1Code")

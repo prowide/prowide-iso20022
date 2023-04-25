@@ -9,21 +9,20 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for OutputFormat4Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="OutputFormat4Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="FLNM"/&gt;
- *     &lt;enumeration value="MREF"/&gt;
- *     &lt;enumeration value="OTHN"/&gt;
- *     &lt;enumeration value="OTHP"/&gt;
- *     &lt;enumeration value="SMSI"/&gt;
- *     &lt;enumeration value="TEXT"/&gt;
- *     &lt;enumeration value="URLI"/&gt;
- *     &lt;enumeration value="HTML"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="OutputFormat4Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="FLNM"/>
+ *     <enumeration value="MREF"/>
+ *     <enumeration value="OTHN"/>
+ *     <enumeration value="OTHP"/>
+ *     <enumeration value="SMSI"/>
+ *     <enumeration value="TEXT"/>
+ *     <enumeration value="URLI"/>
+ *     <enumeration value="HTML"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "OutputFormat4Code")

@@ -9,22 +9,21 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for UserInterface6Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="UserInterface6Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CDSP"/&gt;
- *     &lt;enumeration value="CRCP"/&gt;
- *     &lt;enumeration value="MDSP"/&gt;
- *     &lt;enumeration value="MRCP"/&gt;
- *     &lt;enumeration value="CRDO"/&gt;
- *     &lt;enumeration value="FILE"/&gt;
- *     &lt;enumeration value="CHAP"/&gt;
- *     &lt;enumeration value="MRAP"/&gt;
- *     &lt;enumeration value="MRIN"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="UserInterface6Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CDSP"/>
+ *     <enumeration value="CRCP"/>
+ *     <enumeration value="MDSP"/>
+ *     <enumeration value="MRCP"/>
+ *     <enumeration value="CRDO"/>
+ *     <enumeration value="FILE"/>
+ *     <enumeration value="CHAP"/>
+ *     <enumeration value="MRAP"/>
+ *     <enumeration value="MRIN"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "UserInterface6Code")

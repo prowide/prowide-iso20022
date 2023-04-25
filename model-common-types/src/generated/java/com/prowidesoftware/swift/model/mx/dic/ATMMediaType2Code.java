@@ -9,21 +9,20 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for ATMMediaType2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ATMMediaType2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CARD"/&gt;
- *     &lt;enumeration value="COIN"/&gt;
- *     &lt;enumeration value="CMDT"/&gt;
- *     &lt;enumeration value="CPNS"/&gt;
- *     &lt;enumeration value="NOTE"/&gt;
- *     &lt;enumeration value="STMP"/&gt;
- *     &lt;enumeration value="UDTM"/&gt;
- *     &lt;enumeration value="CHCK"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ATMMediaType2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CARD"/>
+ *     <enumeration value="COIN"/>
+ *     <enumeration value="CMDT"/>
+ *     <enumeration value="CPNS"/>
+ *     <enumeration value="NOTE"/>
+ *     <enumeration value="STMP"/>
+ *     <enumeration value="UDTM"/>
+ *     <enumeration value="CHCK"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ATMMediaType2Code")

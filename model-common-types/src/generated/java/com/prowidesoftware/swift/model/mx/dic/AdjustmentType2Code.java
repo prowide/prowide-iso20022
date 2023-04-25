@@ -9,17 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for AdjustmentType2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="AdjustmentType2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="REBA"/&gt;
- *     &lt;enumeration value="DISC"/&gt;
- *     &lt;enumeration value="CREN"/&gt;
- *     &lt;enumeration value="SURC"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="AdjustmentType2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="REBA"/>
+ *     <enumeration value="DISC"/>
+ *     <enumeration value="CREN"/>
+ *     <enumeration value="SURC"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "AdjustmentType2Code")

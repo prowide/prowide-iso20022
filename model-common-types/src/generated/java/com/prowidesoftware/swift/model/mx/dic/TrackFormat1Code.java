@@ -10,19 +10,18 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for TrackFormat1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="TrackFormat1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="AAMV"/&gt;
- *     &lt;enumeration value="CMC7"/&gt;
- *     &lt;enumeration value="E13B"/&gt;
- *     &lt;enumeration value="ISOF"/&gt;
- *     &lt;enumeration value="JIS1"/&gt;
- *     &lt;enumeration value="JIS2"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="TrackFormat1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="AAMV"/>
+ *     <enumeration value="CMC7"/>
+ *     <enumeration value="E13B"/>
+ *     <enumeration value="ISOF"/>
+ *     <enumeration value="JIS1"/>
+ *     <enumeration value="JIS2"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "TrackFormat1Code")

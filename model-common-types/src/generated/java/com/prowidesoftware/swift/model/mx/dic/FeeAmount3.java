@@ -2,15 +2,15 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -46,11 +46,11 @@ public class FeeAmount3 {
     @XmlElement(name = "ConvsDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar convsDt;
+    protected Calendar convsDt;
     @XmlElement(name = "ConvsTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected XMLGregorianCalendar convsTm;
+    protected Calendar convsTm;
 
     /**
      * Gets the value of the amt property.
@@ -160,7 +160,7 @@ public class FeeAmount3 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getConvsDt() {
+    public Calendar getConvsDt() {
         return convsDt;
     }
 
@@ -172,7 +172,7 @@ public class FeeAmount3 {
      *     {@link String }
      *     
      */
-    public FeeAmount3 setConvsDt(XMLGregorianCalendar value) {
+    public FeeAmount3 setConvsDt(Calendar value) {
         this.convsDt = value;
         return this;
     }
@@ -185,7 +185,7 @@ public class FeeAmount3 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getConvsTm() {
+    public Calendar getConvsTm() {
         return convsTm;
     }
 
@@ -197,7 +197,7 @@ public class FeeAmount3 {
      *     {@link String }
      *     
      */
-    public FeeAmount3 setConvsTm(XMLGregorianCalendar value) {
+    public FeeAmount3 setConvsTm(Calendar value) {
         this.convsTm = value;
         return this;
     }

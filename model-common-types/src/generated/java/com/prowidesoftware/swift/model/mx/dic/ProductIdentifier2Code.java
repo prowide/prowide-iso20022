@@ -9,24 +9,23 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for ProductIdentifier2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ProductIdentifier2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="BINR"/&gt;
- *     &lt;enumeration value="COMD"/&gt;
- *     &lt;enumeration value="EANC"/&gt;
- *     &lt;enumeration value="HRTR"/&gt;
- *     &lt;enumeration value="MANI"/&gt;
- *     &lt;enumeration value="MODL"/&gt;
- *     &lt;enumeration value="PART"/&gt;
- *     &lt;enumeration value="QOTA"/&gt;
- *     &lt;enumeration value="STYL"/&gt;
- *     &lt;enumeration value="SUPI"/&gt;
- *     &lt;enumeration value="UPCC"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ProductIdentifier2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="BINR"/>
+ *     <enumeration value="COMD"/>
+ *     <enumeration value="EANC"/>
+ *     <enumeration value="HRTR"/>
+ *     <enumeration value="MANI"/>
+ *     <enumeration value="MODL"/>
+ *     <enumeration value="PART"/>
+ *     <enumeration value="QOTA"/>
+ *     <enumeration value="STYL"/>
+ *     <enumeration value="SUPI"/>
+ *     <enumeration value="UPCC"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ProductIdentifier2Code")

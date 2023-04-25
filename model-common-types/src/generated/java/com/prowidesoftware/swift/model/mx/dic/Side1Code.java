@@ -9,26 +9,25 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for Side1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="Side1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="BUYI"/&gt;
- *     &lt;enumeration value="SELL"/&gt;
- *     &lt;enumeration value="TWOS"/&gt;
- *     &lt;enumeration value="BUMI"/&gt;
- *     &lt;enumeration value="SEPL"/&gt;
- *     &lt;enumeration value="SESH"/&gt;
- *     &lt;enumeration value="SSEX"/&gt;
- *     &lt;enumeration value="CROS"/&gt;
- *     &lt;enumeration value="CRSH"/&gt;
- *     &lt;enumeration value="CSHE"/&gt;
- *     &lt;enumeration value="DEFI"/&gt;
- *     &lt;enumeration value="OPPO"/&gt;
- *     &lt;enumeration value="UNDI"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="Side1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="BUYI"/>
+ *     <enumeration value="SELL"/>
+ *     <enumeration value="TWOS"/>
+ *     <enumeration value="BUMI"/>
+ *     <enumeration value="SEPL"/>
+ *     <enumeration value="SESH"/>
+ *     <enumeration value="SSEX"/>
+ *     <enumeration value="CROS"/>
+ *     <enumeration value="CRSH"/>
+ *     <enumeration value="CSHE"/>
+ *     <enumeration value="DEFI"/>
+ *     <enumeration value="OPPO"/>
+ *     <enumeration value="UNDI"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "Side1Code")

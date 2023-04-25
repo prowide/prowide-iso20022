@@ -9,26 +9,25 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for TypeOfAmount12Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="TypeOfAmount12Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="AMTH"/&gt;
- *     &lt;enumeration value="DCNT"/&gt;
- *     &lt;enumeration value="ISCF"/&gt;
- *     &lt;enumeration value="CUAT"/&gt;
- *     &lt;enumeration value="MAXI"/&gt;
- *     &lt;enumeration value="AMTX"/&gt;
- *     &lt;enumeration value="AMTN"/&gt;
- *     &lt;enumeration value="AMTQ"/&gt;
- *     &lt;enumeration value="OTHN"/&gt;
- *     &lt;enumeration value="OTHP"/&gt;
- *     &lt;enumeration value="RQCH"/&gt;
- *     &lt;enumeration value="ANTA"/&gt;
- *     &lt;enumeration value="PDCC"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="TypeOfAmount12Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="AMTH"/>
+ *     <enumeration value="DCNT"/>
+ *     <enumeration value="ISCF"/>
+ *     <enumeration value="CUAT"/>
+ *     <enumeration value="MAXI"/>
+ *     <enumeration value="AMTX"/>
+ *     <enumeration value="AMTN"/>
+ *     <enumeration value="AMTQ"/>
+ *     <enumeration value="OTHN"/>
+ *     <enumeration value="OTHP"/>
+ *     <enumeration value="RQCH"/>
+ *     <enumeration value="ANTA"/>
+ *     <enumeration value="PDCC"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "TypeOfAmount12Code")

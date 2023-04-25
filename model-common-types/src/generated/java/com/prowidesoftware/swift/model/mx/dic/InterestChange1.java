@@ -2,14 +2,14 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -41,15 +41,15 @@ public class InterestChange1 {
     @XmlElement(name = "FxgDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar fxgDt;
+    protected Calendar fxgDt;
     @XmlElement(name = "RptgDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar rptgDt;
+    protected Calendar rptgDt;
     @XmlElement(name = "RstDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar rstDt;
+    protected Calendar rstDt;
     @XmlElement(name = "SprdRate", required = true)
     protected BigDecimal sprdRate;
     @XmlElement(name = "VarblRateChngFrqcy", required = true)
@@ -77,7 +77,7 @@ public class InterestChange1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getFxgDt() {
+    public Calendar getFxgDt() {
         return fxgDt;
     }
 
@@ -89,7 +89,7 @@ public class InterestChange1 {
      *     {@link String }
      *     
      */
-    public InterestChange1 setFxgDt(XMLGregorianCalendar value) {
+    public InterestChange1 setFxgDt(Calendar value) {
         this.fxgDt = value;
         return this;
     }
@@ -102,7 +102,7 @@ public class InterestChange1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getRptgDt() {
+    public Calendar getRptgDt() {
         return rptgDt;
     }
 
@@ -114,7 +114,7 @@ public class InterestChange1 {
      *     {@link String }
      *     
      */
-    public InterestChange1 setRptgDt(XMLGregorianCalendar value) {
+    public InterestChange1 setRptgDt(Calendar value) {
         this.rptgDt = value;
         return this;
     }
@@ -127,7 +127,7 @@ public class InterestChange1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getRstDt() {
+    public Calendar getRstDt() {
         return rstDt;
     }
 
@@ -139,7 +139,7 @@ public class InterestChange1 {
      *     {@link String }
      *     
      */
-    public InterestChange1 setRstDt(XMLGregorianCalendar value) {
+    public InterestChange1 setRstDt(Calendar value) {
         this.rstDt = value;
         return this;
     }

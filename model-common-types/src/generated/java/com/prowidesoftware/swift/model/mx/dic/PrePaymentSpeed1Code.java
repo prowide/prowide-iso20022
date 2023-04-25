@@ -9,21 +9,20 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for PrePaymentSpeed1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="PrePaymentSpeed1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="SIMM"/&gt;
- *     &lt;enumeration value="COPR"/&gt;
- *     &lt;enumeration value="ABPS"/&gt;
- *     &lt;enumeration value="MOPR"/&gt;
- *     &lt;enumeration value="HOEP"/&gt;
- *     &lt;enumeration value="BOMA"/&gt;
- *     &lt;enumeration value="PROP"/&gt;
- *     &lt;enumeration value="MAHP"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="PrePaymentSpeed1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="SIMM"/>
+ *     <enumeration value="COPR"/>
+ *     <enumeration value="ABPS"/>
+ *     <enumeration value="MOPR"/>
+ *     <enumeration value="HOEP"/>
+ *     <enumeration value="BOMA"/>
+ *     <enumeration value="PROP"/>
+ *     <enumeration value="MAHP"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "PrePaymentSpeed1Code")

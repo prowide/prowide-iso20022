@@ -9,24 +9,23 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for CardPaymentServiceType2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CardPaymentServiceType2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="AGGR"/&gt;
- *     &lt;enumeration value="DCCV"/&gt;
- *     &lt;enumeration value="GRTT"/&gt;
- *     &lt;enumeration value="INSP"/&gt;
- *     &lt;enumeration value="LOYT"/&gt;
- *     &lt;enumeration value="NRES"/&gt;
- *     &lt;enumeration value="PUCO"/&gt;
- *     &lt;enumeration value="RECP"/&gt;
- *     &lt;enumeration value="SOAF"/&gt;
- *     &lt;enumeration value="UNAF"/&gt;
- *     &lt;enumeration value="VCAU"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CardPaymentServiceType2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="AGGR"/>
+ *     <enumeration value="DCCV"/>
+ *     <enumeration value="GRTT"/>
+ *     <enumeration value="INSP"/>
+ *     <enumeration value="LOYT"/>
+ *     <enumeration value="NRES"/>
+ *     <enumeration value="PUCO"/>
+ *     <enumeration value="RECP"/>
+ *     <enumeration value="SOAF"/>
+ *     <enumeration value="UNAF"/>
+ *     <enumeration value="VCAU"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CardPaymentServiceType2Code")

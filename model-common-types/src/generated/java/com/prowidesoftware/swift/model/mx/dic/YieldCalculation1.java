@@ -2,14 +2,14 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -43,13 +43,13 @@ public class YieldCalculation1 {
     @XmlElement(name = "ValDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar valDtTm;
+    protected Calendar valDtTm;
     @XmlElement(name = "ValPrd", required = true)
     protected DateTimePeriodChoice valPrd;
     @XmlElement(name = "ClctnDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar clctnDt;
+    protected Calendar clctnDt;
 
     /**
      * Gets the value of the val property.
@@ -134,7 +134,7 @@ public class YieldCalculation1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getValDtTm() {
+    public Calendar getValDtTm() {
         return valDtTm;
     }
 
@@ -146,7 +146,7 @@ public class YieldCalculation1 {
      *     {@link String }
      *     
      */
-    public YieldCalculation1 setValDtTm(XMLGregorianCalendar value) {
+    public YieldCalculation1 setValDtTm(Calendar value) {
         this.valDtTm = value;
         return this;
     }
@@ -184,7 +184,7 @@ public class YieldCalculation1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getClctnDt() {
+    public Calendar getClctnDt() {
         return clctnDt;
     }
 
@@ -196,7 +196,7 @@ public class YieldCalculation1 {
      *     {@link String }
      *     
      */
-    public YieldCalculation1 setClctnDt(XMLGregorianCalendar value) {
+    public YieldCalculation1 setClctnDt(Calendar value) {
         this.clctnDt = value;
         return this;
     }

@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -31,11 +31,11 @@ public class DateTimePeriodDetails {
     @XmlElement(name = "FrDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar frDtTm;
+    protected Calendar frDtTm;
     @XmlElement(name = "ToDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar toDtTm;
+    protected Calendar toDtTm;
 
     /**
      * Gets the value of the frDtTm property.
@@ -45,7 +45,7 @@ public class DateTimePeriodDetails {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getFrDtTm() {
+    public Calendar getFrDtTm() {
         return frDtTm;
     }
 
@@ -57,7 +57,7 @@ public class DateTimePeriodDetails {
      *     {@link String }
      *     
      */
-    public DateTimePeriodDetails setFrDtTm(XMLGregorianCalendar value) {
+    public DateTimePeriodDetails setFrDtTm(Calendar value) {
         this.frDtTm = value;
         return this;
     }
@@ -70,7 +70,7 @@ public class DateTimePeriodDetails {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getToDtTm() {
+    public Calendar getToDtTm() {
         return toDtTm;
     }
 
@@ -82,7 +82,7 @@ public class DateTimePeriodDetails {
      *     {@link String }
      *     
      */
-    public DateTimePeriodDetails setToDtTm(XMLGregorianCalendar value) {
+    public DateTimePeriodDetails setToDtTm(Calendar value) {
         this.toDtTm = value;
         return this;
     }

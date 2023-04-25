@@ -9,17 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for Registration2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="Registration2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="PTYH"/&gt;
- *     &lt;enumeration value="CSDH"/&gt;
- *     &lt;enumeration value="CDEL"/&gt;
- *     &lt;enumeration value="CVAL"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="Registration2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="PTYH"/>
+ *     <enumeration value="CSDH"/>
+ *     <enumeration value="CDEL"/>
+ *     <enumeration value="CVAL"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "Registration2Code")

@@ -10,16 +10,15 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for OwnershipLegalRestrictions1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="OwnershipLegalRestrictions1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="A144"/&gt;
- *     &lt;enumeration value="NRST"/&gt;
- *     &lt;enumeration value="RSTR"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="OwnershipLegalRestrictions1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="A144"/>
+ *     <enumeration value="NRST"/>
+ *     <enumeration value="RSTR"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "OwnershipLegalRestrictions1Code")

@@ -9,19 +9,18 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for DocumentType3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="DocumentType3Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="RADM"/&gt;
- *     &lt;enumeration value="RPIN"/&gt;
- *     &lt;enumeration value="FXDR"/&gt;
- *     &lt;enumeration value="DISP"/&gt;
- *     &lt;enumeration value="PUOR"/&gt;
- *     &lt;enumeration value="SCOR"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="DocumentType3Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="RADM"/>
+ *     <enumeration value="RPIN"/>
+ *     <enumeration value="FXDR"/>
+ *     <enumeration value="DISP"/>
+ *     <enumeration value="PUOR"/>
+ *     <enumeration value="SCOR"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "DocumentType3Code")

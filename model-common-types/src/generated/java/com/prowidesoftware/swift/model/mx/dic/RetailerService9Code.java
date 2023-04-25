@@ -9,22 +9,21 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for RetailerService9Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="RetailerService9Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="DDYP"/&gt;
- *     &lt;enumeration value="DINP"/&gt;
- *     &lt;enumeration value="DPRP"/&gt;
- *     &lt;enumeration value="DSOP"/&gt;
- *     &lt;enumeration value="DSIP"/&gt;
- *     &lt;enumeration value="DCIP"/&gt;
- *     &lt;enumeration value="DCAP"/&gt;
- *     &lt;enumeration value="DCPP"/&gt;
- *     &lt;enumeration value="DCOP"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="RetailerService9Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="DDYP"/>
+ *     <enumeration value="DINP"/>
+ *     <enumeration value="DPRP"/>
+ *     <enumeration value="DSOP"/>
+ *     <enumeration value="DSIP"/>
+ *     <enumeration value="DCIP"/>
+ *     <enumeration value="DCAP"/>
+ *     <enumeration value="DCPP"/>
+ *     <enumeration value="DCOP"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "RetailerService9Code")

@@ -9,27 +9,26 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for ProductCharacteristics1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ProductCharacteristics1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="BISP"/&gt;
- *     &lt;enumeration value="CHNR"/&gt;
- *     &lt;enumeration value="CLOR"/&gt;
- *     &lt;enumeration value="EDSP"/&gt;
- *     &lt;enumeration value="ENNR"/&gt;
- *     &lt;enumeration value="OPTN"/&gt;
- *     &lt;enumeration value="ORCR"/&gt;
- *     &lt;enumeration value="PCTV"/&gt;
- *     &lt;enumeration value="SISP"/&gt;
- *     &lt;enumeration value="SIZE"/&gt;
- *     &lt;enumeration value="SZRG"/&gt;
- *     &lt;enumeration value="SPRM"/&gt;
- *     &lt;enumeration value="STOR"/&gt;
- *     &lt;enumeration value="VINR"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ProductCharacteristics1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="BISP"/>
+ *     <enumeration value="CHNR"/>
+ *     <enumeration value="CLOR"/>
+ *     <enumeration value="EDSP"/>
+ *     <enumeration value="ENNR"/>
+ *     <enumeration value="OPTN"/>
+ *     <enumeration value="ORCR"/>
+ *     <enumeration value="PCTV"/>
+ *     <enumeration value="SISP"/>
+ *     <enumeration value="SIZE"/>
+ *     <enumeration value="SZRG"/>
+ *     <enumeration value="SPRM"/>
+ *     <enumeration value="STOR"/>
+ *     <enumeration value="VINR"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ProductCharacteristics1Code")

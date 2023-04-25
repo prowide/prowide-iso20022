@@ -9,19 +9,18 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for ActionType10Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ActionType10Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ACTV"/&gt;
- *     &lt;enumeration value="DEAC"/&gt;
- *     &lt;enumeration value="DISP"/&gt;
- *     &lt;enumeration value="FUPD"/&gt;
- *     &lt;enumeration value="PRNT"/&gt;
- *     &lt;enumeration value="SNDM"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ActionType10Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ACTV"/>
+ *     <enumeration value="DEAC"/>
+ *     <enumeration value="DISP"/>
+ *     <enumeration value="FUPD"/>
+ *     <enumeration value="PRNT"/>
+ *     <enumeration value="SNDM"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ActionType10Code")

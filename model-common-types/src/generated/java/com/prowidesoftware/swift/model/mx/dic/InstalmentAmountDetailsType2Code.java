@@ -9,25 +9,24 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for InstalmentAmountDetailsType2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="InstalmentAmountDetailsType2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="AFCO"/&gt;
- *     &lt;enumeration value="EXPN"/&gt;
- *     &lt;enumeration value="FEES"/&gt;
- *     &lt;enumeration value="FUNA"/&gt;
- *     &lt;enumeration value="INSU"/&gt;
- *     &lt;enumeration value="INTR"/&gt;
- *     &lt;enumeration value="OTHC"/&gt;
- *     &lt;enumeration value="OTHN"/&gt;
- *     &lt;enumeration value="OTHP"/&gt;
- *     &lt;enumeration value="PRNC"/&gt;
- *     &lt;enumeration value="RQST"/&gt;
- *     &lt;enumeration value="TAXX"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="InstalmentAmountDetailsType2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="AFCO"/>
+ *     <enumeration value="EXPN"/>
+ *     <enumeration value="FEES"/>
+ *     <enumeration value="FUNA"/>
+ *     <enumeration value="INSU"/>
+ *     <enumeration value="INTR"/>
+ *     <enumeration value="OTHC"/>
+ *     <enumeration value="OTHN"/>
+ *     <enumeration value="OTHP"/>
+ *     <enumeration value="PRNC"/>
+ *     <enumeration value="RQST"/>
+ *     <enumeration value="TAXX"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "InstalmentAmountDetailsType2Code")

@@ -9,21 +9,20 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for PendingProcessingReason3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="PendingProcessingReason3Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ADEA"/&gt;
- *     &lt;enumeration value="BLOC"/&gt;
- *     &lt;enumeration value="MUNO"/&gt;
- *     &lt;enumeration value="NEXT"/&gt;
- *     &lt;enumeration value="MINO"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="DENO"/&gt;
- *     &lt;enumeration value="CERT"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="PendingProcessingReason3Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ADEA"/>
+ *     <enumeration value="BLOC"/>
+ *     <enumeration value="MUNO"/>
+ *     <enumeration value="NEXT"/>
+ *     <enumeration value="MINO"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="DENO"/>
+ *     <enumeration value="CERT"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "PendingProcessingReason3Code")

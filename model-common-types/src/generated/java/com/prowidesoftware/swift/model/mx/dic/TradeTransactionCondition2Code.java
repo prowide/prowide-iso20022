@@ -9,26 +9,25 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for TradeTransactionCondition2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="TradeTransactionCondition2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="SPCC"/&gt;
- *     &lt;enumeration value="SECN"/&gt;
- *     &lt;enumeration value="SEBN"/&gt;
- *     &lt;enumeration value="SCBN"/&gt;
- *     &lt;enumeration value="SCRT"/&gt;
- *     &lt;enumeration value="SERT"/&gt;
- *     &lt;enumeration value="SCCR"/&gt;
- *     &lt;enumeration value="SECR"/&gt;
- *     &lt;enumeration value="CAST"/&gt;
- *     &lt;enumeration value="SPPR"/&gt;
- *     &lt;enumeration value="SPCU"/&gt;
- *     &lt;enumeration value="SPEX"/&gt;
- *     &lt;enumeration value="GTDL"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="TradeTransactionCondition2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="SPCC"/>
+ *     <enumeration value="SECN"/>
+ *     <enumeration value="SEBN"/>
+ *     <enumeration value="SCBN"/>
+ *     <enumeration value="SCRT"/>
+ *     <enumeration value="SERT"/>
+ *     <enumeration value="SCCR"/>
+ *     <enumeration value="SECR"/>
+ *     <enumeration value="CAST"/>
+ *     <enumeration value="SPPR"/>
+ *     <enumeration value="SPCU"/>
+ *     <enumeration value="SPEX"/>
+ *     <enumeration value="GTDL"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "TradeTransactionCondition2Code")

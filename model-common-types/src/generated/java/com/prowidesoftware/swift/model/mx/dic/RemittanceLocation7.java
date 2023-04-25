@@ -62,8 +62,8 @@ public class RemittanceLocation7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rmtLctnDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rmtLctnDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -77,10 +77,12 @@ public class RemittanceLocation7 {
      * {@link RemittanceLocationData1 }
      * 
      * 
+     * @return
+     *     The value of the rmtLctnDtls property.
      */
     public List<RemittanceLocationData1> getRmtLctnDtls() {
         if (rmtLctnDtls == null) {
-            rmtLctnDtls = new ArrayList<RemittanceLocationData1>();
+            rmtLctnDtls = new ArrayList<>();
         }
         return this.rmtLctnDtls;
     }

@@ -1,15 +1,15 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -43,21 +43,21 @@ public class CreditTransferMandateData1 {
     @XmlElement(name = "DtOfSgntr", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar dtOfSgntr;
+    protected Calendar dtOfSgntr;
     @XmlElement(name = "DtOfVrfctn", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar dtOfVrfctn;
+    protected Calendar dtOfVrfctn;
     @XmlElement(name = "ElctrncSgntr")
     protected byte[] elctrncSgntr;
     @XmlElement(name = "FrstPmtDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar frstPmtDt;
+    protected Calendar frstPmtDt;
     @XmlElement(name = "FnlPmtDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar fnlPmtDt;
+    protected Calendar fnlPmtDt;
     @XmlElement(name = "Frqcy")
     protected Frequency36Choice frqcy;
     @XmlElement(name = "Rsn")
@@ -121,7 +121,7 @@ public class CreditTransferMandateData1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDtOfSgntr() {
+    public Calendar getDtOfSgntr() {
         return dtOfSgntr;
     }
 
@@ -133,7 +133,7 @@ public class CreditTransferMandateData1 {
      *     {@link String }
      *     
      */
-    public CreditTransferMandateData1 setDtOfSgntr(XMLGregorianCalendar value) {
+    public CreditTransferMandateData1 setDtOfSgntr(Calendar value) {
         this.dtOfSgntr = value;
         return this;
     }
@@ -146,7 +146,7 @@ public class CreditTransferMandateData1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDtOfVrfctn() {
+    public Calendar getDtOfVrfctn() {
         return dtOfVrfctn;
     }
 
@@ -158,7 +158,7 @@ public class CreditTransferMandateData1 {
      *     {@link String }
      *     
      */
-    public CreditTransferMandateData1 setDtOfVrfctn(XMLGregorianCalendar value) {
+    public CreditTransferMandateData1 setDtOfVrfctn(Calendar value) {
         this.dtOfVrfctn = value;
         return this;
     }
@@ -194,7 +194,7 @@ public class CreditTransferMandateData1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getFrstPmtDt() {
+    public Calendar getFrstPmtDt() {
         return frstPmtDt;
     }
 
@@ -206,7 +206,7 @@ public class CreditTransferMandateData1 {
      *     {@link String }
      *     
      */
-    public CreditTransferMandateData1 setFrstPmtDt(XMLGregorianCalendar value) {
+    public CreditTransferMandateData1 setFrstPmtDt(Calendar value) {
         this.frstPmtDt = value;
         return this;
     }
@@ -219,7 +219,7 @@ public class CreditTransferMandateData1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getFnlPmtDt() {
+    public Calendar getFnlPmtDt() {
         return fnlPmtDt;
     }
 
@@ -231,7 +231,7 @@ public class CreditTransferMandateData1 {
      *     {@link String }
      *     
      */
-    public CreditTransferMandateData1 setFnlPmtDt(XMLGregorianCalendar value) {
+    public CreditTransferMandateData1 setFnlPmtDt(Calendar value) {
         this.fnlPmtDt = value;
         return this;
     }

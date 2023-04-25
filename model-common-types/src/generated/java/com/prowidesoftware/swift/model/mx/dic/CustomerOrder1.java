@@ -2,14 +2,14 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -47,11 +47,11 @@ public class CustomerOrder1 {
     @XmlElement(name = "StartDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar startDt;
+    protected Calendar startDt;
     @XmlElement(name = "EndDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar endDt;
+    protected Calendar endDt;
     @XmlElement(name = "Unit")
     @XmlSchemaType(name = "string")
     protected AmountUnit1Code unit;
@@ -149,7 +149,7 @@ public class CustomerOrder1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getStartDt() {
+    public Calendar getStartDt() {
         return startDt;
     }
 
@@ -161,7 +161,7 @@ public class CustomerOrder1 {
      *     {@link String }
      *     
      */
-    public CustomerOrder1 setStartDt(XMLGregorianCalendar value) {
+    public CustomerOrder1 setStartDt(Calendar value) {
         this.startDt = value;
         return this;
     }
@@ -174,7 +174,7 @@ public class CustomerOrder1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getEndDt() {
+    public Calendar getEndDt() {
         return endDt;
     }
 
@@ -186,7 +186,7 @@ public class CustomerOrder1 {
      *     {@link String }
      *     
      */
-    public CustomerOrder1 setEndDt(XMLGregorianCalendar value) {
+    public CustomerOrder1 setEndDt(Calendar value) {
         this.endDt = value;
         return this;
     }

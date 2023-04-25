@@ -3,15 +3,15 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -44,7 +44,7 @@ public class OriginalGroupInformation20 {
     @XmlElement(name = "OrgnlCreDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar orgnlCreDtTm;
+    protected Calendar orgnlCreDtTm;
     @XmlElement(name = "OrgnlNbOfTxs")
     protected String orgnlNbOfTxs;
     @XmlElement(name = "OrgnlCtrlSum")
@@ -115,7 +115,7 @@ public class OriginalGroupInformation20 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getOrgnlCreDtTm() {
+    public Calendar getOrgnlCreDtTm() {
         return orgnlCreDtTm;
     }
 
@@ -127,7 +127,7 @@ public class OriginalGroupInformation20 {
      *     {@link String }
      *     
      */
-    public OriginalGroupInformation20 setOrgnlCreDtTm(XMLGregorianCalendar value) {
+    public OriginalGroupInformation20 setOrgnlCreDtTm(Calendar value) {
         this.orgnlCreDtTm = value;
         return this;
     }
@@ -213,8 +213,8 @@ public class OriginalGroupInformation20 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the stsRsnInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the stsRsnInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -228,10 +228,12 @@ public class OriginalGroupInformation20 {
      * {@link StatusReasonInformation8 }
      * 
      * 
+     * @return
+     *     The value of the stsRsnInf property.
      */
     public List<StatusReasonInformation8> getStsRsnInf() {
         if (stsRsnInf == null) {
-            stsRsnInf = new ArrayList<StatusReasonInformation8>();
+            stsRsnInf = new ArrayList<>();
         }
         return this.stsRsnInf;
     }
@@ -242,8 +244,8 @@ public class OriginalGroupInformation20 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the nbOfTxsPerSts property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the nbOfTxsPerSts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -257,10 +259,12 @@ public class OriginalGroupInformation20 {
      * {@link NumberOfTransactionsPerStatus3 }
      * 
      * 
+     * @return
+     *     The value of the nbOfTxsPerSts property.
      */
     public List<NumberOfTransactionsPerStatus3> getNbOfTxsPerSts() {
         if (nbOfTxsPerSts == null) {
-            nbOfTxsPerSts = new ArrayList<NumberOfTransactionsPerStatus3>();
+            nbOfTxsPerSts = new ArrayList<>();
         }
         return this.nbOfTxsPerSts;
     }

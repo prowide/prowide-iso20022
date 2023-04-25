@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -31,11 +31,11 @@ public class ShipmentDateRange1 {
     @XmlElement(name = "EarlstShipmntDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar earlstShipmntDt;
+    protected Calendar earlstShipmntDt;
     @XmlElement(name = "LatstShipmntDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar latstShipmntDt;
+    protected Calendar latstShipmntDt;
 
     /**
      * Gets the value of the earlstShipmntDt property.
@@ -45,7 +45,7 @@ public class ShipmentDateRange1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getEarlstShipmntDt() {
+    public Calendar getEarlstShipmntDt() {
         return earlstShipmntDt;
     }
 
@@ -57,7 +57,7 @@ public class ShipmentDateRange1 {
      *     {@link String }
      *     
      */
-    public ShipmentDateRange1 setEarlstShipmntDt(XMLGregorianCalendar value) {
+    public ShipmentDateRange1 setEarlstShipmntDt(Calendar value) {
         this.earlstShipmntDt = value;
         return this;
     }
@@ -70,7 +70,7 @@ public class ShipmentDateRange1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getLatstShipmntDt() {
+    public Calendar getLatstShipmntDt() {
         return latstShipmntDt;
     }
 
@@ -82,7 +82,7 @@ public class ShipmentDateRange1 {
      *     {@link String }
      *     
      */
-    public ShipmentDateRange1 setLatstShipmntDt(XMLGregorianCalendar value) {
+    public ShipmentDateRange1 setLatstShipmntDt(Calendar value) {
         this.latstShipmntDt = value;
         return this;
     }

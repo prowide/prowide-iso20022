@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -31,11 +31,11 @@ public class TimePeriodDetails1 {
     @XmlElement(name = "FrTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected XMLGregorianCalendar frTm;
+    protected Calendar frTm;
     @XmlElement(name = "ToTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected XMLGregorianCalendar toTm;
+    protected Calendar toTm;
 
     /**
      * Gets the value of the frTm property.
@@ -45,7 +45,7 @@ public class TimePeriodDetails1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getFrTm() {
+    public Calendar getFrTm() {
         return frTm;
     }
 
@@ -57,7 +57,7 @@ public class TimePeriodDetails1 {
      *     {@link String }
      *     
      */
-    public TimePeriodDetails1 setFrTm(XMLGregorianCalendar value) {
+    public TimePeriodDetails1 setFrTm(Calendar value) {
         this.frTm = value;
         return this;
     }
@@ -70,7 +70,7 @@ public class TimePeriodDetails1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getToTm() {
+    public Calendar getToTm() {
         return toTm;
     }
 
@@ -82,7 +82,7 @@ public class TimePeriodDetails1 {
      *     {@link String }
      *     
      */
-    public TimePeriodDetails1 setToTm(XMLGregorianCalendar value) {
+    public TimePeriodDetails1 setToTm(Calendar value) {
         this.toTm = value;
         return this;
     }

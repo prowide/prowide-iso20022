@@ -62,8 +62,8 @@ public class ExpiryDetails2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlXpryInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlXpryInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -77,10 +77,12 @@ public class ExpiryDetails2 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the addtlXpryInf property.
      */
     public List<String> getAddtlXpryInf() {
         if (addtlXpryInf == null) {
-            addtlXpryInf = new ArrayList<String>();
+            addtlXpryInf = new ArrayList<>();
         }
         return this.addtlXpryInf;
     }

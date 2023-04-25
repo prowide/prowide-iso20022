@@ -2,14 +2,14 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -51,11 +51,11 @@ public class CashCollateral5 {
     @XmlElement(name = "MtrtyDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar mtrtyDt;
+    protected Calendar mtrtyDt;
     @XmlElement(name = "ValDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar valDt;
+    protected Calendar valDt;
     @XmlElement(name = "XchgRate")
     protected BigDecimal xchgRate;
     @XmlElement(name = "CollVal", required = true)
@@ -196,7 +196,7 @@ public class CashCollateral5 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getMtrtyDt() {
+    public Calendar getMtrtyDt() {
         return mtrtyDt;
     }
 
@@ -208,7 +208,7 @@ public class CashCollateral5 {
      *     {@link String }
      *     
      */
-    public CashCollateral5 setMtrtyDt(XMLGregorianCalendar value) {
+    public CashCollateral5 setMtrtyDt(Calendar value) {
         this.mtrtyDt = value;
         return this;
     }
@@ -221,7 +221,7 @@ public class CashCollateral5 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getValDt() {
+    public Calendar getValDt() {
         return valDt;
     }
 
@@ -233,7 +233,7 @@ public class CashCollateral5 {
      *     {@link String }
      *     
      */
-    public CashCollateral5 setValDt(XMLGregorianCalendar value) {
+    public CashCollateral5 setValDt(Calendar value) {
         this.valDt = value;
         return this;
     }

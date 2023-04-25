@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -37,23 +37,23 @@ public class SettlementServiceDate2 {
     @XmlElement(name = "ReqdSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar reqdSttlmDt;
+    protected Calendar reqdSttlmDt;
     @XmlElement(name = "DfrrdSttlmInd")
     protected Boolean dfrrdSttlmInd;
     @XmlElement(name = "SttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar sttlmDt;
+    protected Calendar sttlmDt;
     @XmlElement(name = "SttlmTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected XMLGregorianCalendar sttlmTm;
+    protected Calendar sttlmTm;
     @XmlElement(name = "SttlmPrd")
     protected String sttlmPrd;
     @XmlElement(name = "SttlmCutOffTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar sttlmCutOffTm;
+    protected Calendar sttlmCutOffTm;
 
     /**
      * Gets the value of the reqdSttlmDt property.
@@ -63,7 +63,7 @@ public class SettlementServiceDate2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getReqdSttlmDt() {
+    public Calendar getReqdSttlmDt() {
         return reqdSttlmDt;
     }
 
@@ -75,7 +75,7 @@ public class SettlementServiceDate2 {
      *     {@link String }
      *     
      */
-    public SettlementServiceDate2 setReqdSttlmDt(XMLGregorianCalendar value) {
+    public SettlementServiceDate2 setReqdSttlmDt(Calendar value) {
         this.reqdSttlmDt = value;
         return this;
     }
@@ -113,7 +113,7 @@ public class SettlementServiceDate2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getSttlmDt() {
+    public Calendar getSttlmDt() {
         return sttlmDt;
     }
 
@@ -125,7 +125,7 @@ public class SettlementServiceDate2 {
      *     {@link String }
      *     
      */
-    public SettlementServiceDate2 setSttlmDt(XMLGregorianCalendar value) {
+    public SettlementServiceDate2 setSttlmDt(Calendar value) {
         this.sttlmDt = value;
         return this;
     }
@@ -138,7 +138,7 @@ public class SettlementServiceDate2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getSttlmTm() {
+    public Calendar getSttlmTm() {
         return sttlmTm;
     }
 
@@ -150,7 +150,7 @@ public class SettlementServiceDate2 {
      *     {@link String }
      *     
      */
-    public SettlementServiceDate2 setSttlmTm(XMLGregorianCalendar value) {
+    public SettlementServiceDate2 setSttlmTm(Calendar value) {
         this.sttlmTm = value;
         return this;
     }
@@ -188,7 +188,7 @@ public class SettlementServiceDate2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getSttlmCutOffTm() {
+    public Calendar getSttlmCutOffTm() {
         return sttlmCutOffTm;
     }
 
@@ -200,7 +200,7 @@ public class SettlementServiceDate2 {
      *     {@link String }
      *     
      */
-    public SettlementServiceDate2 setSttlmCutOffTm(XMLGregorianCalendar value) {
+    public SettlementServiceDate2 setSttlmCutOffTm(Calendar value) {
         this.sttlmCutOffTm = value;
         return this;
     }

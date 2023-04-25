@@ -9,30 +9,29 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for SettlementDate2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="SettlementDate2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="REGU"/&gt;
- *     &lt;enumeration value="CASH"/&gt;
- *     &lt;enumeration value="NXTD"/&gt;
- *     &lt;enumeration value="TONE"/&gt;
- *     &lt;enumeration value="TTWO"/&gt;
- *     &lt;enumeration value="TTRE"/&gt;
- *     &lt;enumeration value="TFOR"/&gt;
- *     &lt;enumeration value="TFIV"/&gt;
- *     &lt;enumeration value="SELL"/&gt;
- *     &lt;enumeration value="FUTU"/&gt;
- *     &lt;enumeration value="ASAP"/&gt;
- *     &lt;enumeration value="ENDC"/&gt;
- *     &lt;enumeration value="WHIF"/&gt;
- *     &lt;enumeration value="WDIS"/&gt;
- *     &lt;enumeration value="WHID"/&gt;
- *     &lt;enumeration value="TBAT"/&gt;
- *     &lt;enumeration value="MONT"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="SettlementDate2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="REGU"/>
+ *     <enumeration value="CASH"/>
+ *     <enumeration value="NXTD"/>
+ *     <enumeration value="TONE"/>
+ *     <enumeration value="TTWO"/>
+ *     <enumeration value="TTRE"/>
+ *     <enumeration value="TFOR"/>
+ *     <enumeration value="TFIV"/>
+ *     <enumeration value="SELL"/>
+ *     <enumeration value="FUTU"/>
+ *     <enumeration value="ASAP"/>
+ *     <enumeration value="ENDC"/>
+ *     <enumeration value="WHIF"/>
+ *     <enumeration value="WDIS"/>
+ *     <enumeration value="WHID"/>
+ *     <enumeration value="TBAT"/>
+ *     <enumeration value="MONT"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "SettlementDate2Code")

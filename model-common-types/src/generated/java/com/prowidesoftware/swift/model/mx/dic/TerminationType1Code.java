@@ -9,17 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for TerminationType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="TerminationType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="OVER"/&gt;
- *     &lt;enumeration value="TERM"/&gt;
- *     &lt;enumeration value="FLEX"/&gt;
- *     &lt;enumeration value="OPEN"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="TerminationType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="OVER"/>
+ *     <enumeration value="TERM"/>
+ *     <enumeration value="FLEX"/>
+ *     <enumeration value="OPEN"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "TerminationType1Code")

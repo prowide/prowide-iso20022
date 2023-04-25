@@ -9,17 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for ClearingChannel2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ClearingChannel2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="RTGS"/&gt;
- *     &lt;enumeration value="RTNS"/&gt;
- *     &lt;enumeration value="MPNS"/&gt;
- *     &lt;enumeration value="BOOK"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ClearingChannel2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="RTGS"/>
+ *     <enumeration value="RTNS"/>
+ *     <enumeration value="MPNS"/>
+ *     <enumeration value="BOOK"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ClearingChannel2Code")

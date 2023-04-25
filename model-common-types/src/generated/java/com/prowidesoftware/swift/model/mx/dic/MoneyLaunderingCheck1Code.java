@@ -9,19 +9,18 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for MoneyLaunderingCheck1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="MoneyLaunderingCheck1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="PASS"/&gt;
- *     &lt;enumeration value="NOTC"/&gt;
- *     &lt;enumeration value="EXEM"/&gt;
- *     &lt;enumeration value="CLMO"/&gt;
- *     &lt;enumeration value="AUTH"/&gt;
- *     &lt;enumeration value="POEP"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="MoneyLaunderingCheck1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="PASS"/>
+ *     <enumeration value="NOTC"/>
+ *     <enumeration value="EXEM"/>
+ *     <enumeration value="CLMO"/>
+ *     <enumeration value="AUTH"/>
+ *     <enumeration value="POEP"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "MoneyLaunderingCheck1Code")

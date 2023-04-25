@@ -9,35 +9,34 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for SystemEventType2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="SystemEventType2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="LVCO"/&gt;
- *     &lt;enumeration value="LVCC"/&gt;
- *     &lt;enumeration value="LVRT"/&gt;
- *     &lt;enumeration value="EUSU"/&gt;
- *     &lt;enumeration value="STSU"/&gt;
- *     &lt;enumeration value="LWSU"/&gt;
- *     &lt;enumeration value="EUCO"/&gt;
- *     &lt;enumeration value="FIRE"/&gt;
- *     &lt;enumeration value="STDY"/&gt;
- *     &lt;enumeration value="LTNC"/&gt;
- *     &lt;enumeration value="CRCO"/&gt;
- *     &lt;enumeration value="RECC"/&gt;
- *     &lt;enumeration value="LTGC"/&gt;
- *     &lt;enumeration value="LTDC"/&gt;
- *     &lt;enumeration value="CUSC"/&gt;
- *     &lt;enumeration value="IBKC"/&gt;
- *     &lt;enumeration value="SYSC"/&gt;
- *     &lt;enumeration value="SSSC"/&gt;
- *     &lt;enumeration value="REOP"/&gt;
- *     &lt;enumeration value="PCOT"/&gt;
- *     &lt;enumeration value="NPCT"/&gt;
- *     &lt;enumeration value="ESTF"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="SystemEventType2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="LVCO"/>
+ *     <enumeration value="LVCC"/>
+ *     <enumeration value="LVRT"/>
+ *     <enumeration value="EUSU"/>
+ *     <enumeration value="STSU"/>
+ *     <enumeration value="LWSU"/>
+ *     <enumeration value="EUCO"/>
+ *     <enumeration value="FIRE"/>
+ *     <enumeration value="STDY"/>
+ *     <enumeration value="LTNC"/>
+ *     <enumeration value="CRCO"/>
+ *     <enumeration value="RECC"/>
+ *     <enumeration value="LTGC"/>
+ *     <enumeration value="LTDC"/>
+ *     <enumeration value="CUSC"/>
+ *     <enumeration value="IBKC"/>
+ *     <enumeration value="SYSC"/>
+ *     <enumeration value="SSSC"/>
+ *     <enumeration value="REOP"/>
+ *     <enumeration value="PCOT"/>
+ *     <enumeration value="NPCT"/>
+ *     <enumeration value="ESTF"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "SystemEventType2Code")

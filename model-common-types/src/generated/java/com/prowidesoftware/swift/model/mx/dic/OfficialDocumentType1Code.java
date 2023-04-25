@@ -9,28 +9,27 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for OfficialDocumentType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="OfficialDocumentType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ARNU"/&gt;
- *     &lt;enumeration value="AUTH"/&gt;
- *     &lt;enumeration value="DIPL"/&gt;
- *     &lt;enumeration value="DVLC"/&gt;
- *     &lt;enumeration value="EURO"/&gt;
- *     &lt;enumeration value="IDEN"/&gt;
- *     &lt;enumeration value="INTE"/&gt;
- *     &lt;enumeration value="INPO"/&gt;
- *     &lt;enumeration value="LZPR"/&gt;
- *     &lt;enumeration value="OTHN"/&gt;
- *     &lt;enumeration value="OTHP"/&gt;
- *     &lt;enumeration value="PASS"/&gt;
- *     &lt;enumeration value="VISA"/&gt;
- *     &lt;enumeration value="PERM"/&gt;
- *     &lt;enumeration value="REFU"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="OfficialDocumentType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ARNU"/>
+ *     <enumeration value="AUTH"/>
+ *     <enumeration value="DIPL"/>
+ *     <enumeration value="DVLC"/>
+ *     <enumeration value="EURO"/>
+ *     <enumeration value="IDEN"/>
+ *     <enumeration value="INTE"/>
+ *     <enumeration value="INPO"/>
+ *     <enumeration value="LZPR"/>
+ *     <enumeration value="OTHN"/>
+ *     <enumeration value="OTHP"/>
+ *     <enumeration value="PASS"/>
+ *     <enumeration value="VISA"/>
+ *     <enumeration value="PERM"/>
+ *     <enumeration value="REFU"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "OfficialDocumentType1Code")

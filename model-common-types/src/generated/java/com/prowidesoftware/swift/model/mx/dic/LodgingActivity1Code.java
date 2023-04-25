@@ -9,27 +9,26 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for LodgingActivity1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="LodgingActivity1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="APTM"/&gt;
- *     &lt;enumeration value="BEBR"/&gt;
- *     &lt;enumeration value="COTT"/&gt;
- *     &lt;enumeration value="CRUI"/&gt;
- *     &lt;enumeration value="HOME"/&gt;
- *     &lt;enumeration value="HOST"/&gt;
- *     &lt;enumeration value="HOTL"/&gt;
- *     &lt;enumeration value="LODG"/&gt;
- *     &lt;enumeration value="MOTL"/&gt;
- *     &lt;enumeration value="OTHN"/&gt;
- *     &lt;enumeration value="OTHP"/&gt;
- *     &lt;enumeration value="RESO"/&gt;
- *     &lt;enumeration value="ROAB"/&gt;
- *     &lt;enumeration value="TOSH"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="LodgingActivity1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="APTM"/>
+ *     <enumeration value="BEBR"/>
+ *     <enumeration value="COTT"/>
+ *     <enumeration value="CRUI"/>
+ *     <enumeration value="HOME"/>
+ *     <enumeration value="HOST"/>
+ *     <enumeration value="HOTL"/>
+ *     <enumeration value="LODG"/>
+ *     <enumeration value="MOTL"/>
+ *     <enumeration value="OTHN"/>
+ *     <enumeration value="OTHP"/>
+ *     <enumeration value="RESO"/>
+ *     <enumeration value="ROAB"/>
+ *     <enumeration value="TOSH"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "LodgingActivity1Code")

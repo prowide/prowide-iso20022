@@ -9,18 +9,17 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for EventFrequency3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="EventFrequency3Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="YEAR"/&gt;
- *     &lt;enumeration value="MNTH"/&gt;
- *     &lt;enumeration value="QUTR"/&gt;
- *     &lt;enumeration value="SEMI"/&gt;
- *     &lt;enumeration value="WEEK"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="EventFrequency3Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="YEAR"/>
+ *     <enumeration value="MNTH"/>
+ *     <enumeration value="QUTR"/>
+ *     <enumeration value="SEMI"/>
+ *     <enumeration value="WEEK"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "EventFrequency3Code")

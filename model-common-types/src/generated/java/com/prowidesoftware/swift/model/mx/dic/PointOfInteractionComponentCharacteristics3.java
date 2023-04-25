@@ -53,8 +53,8 @@ public class PointOfInteractionComponentCharacteristics3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the mmry property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the mmry property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -68,10 +68,12 @@ public class PointOfInteractionComponentCharacteristics3 {
      * {@link MemoryCharacteristics1 }
      * 
      * 
+     * @return
+     *     The value of the mmry property.
      */
     public List<MemoryCharacteristics1> getMmry() {
         if (mmry == null) {
-            mmry = new ArrayList<MemoryCharacteristics1>();
+            mmry = new ArrayList<>();
         }
         return this.mmry;
     }
@@ -82,8 +84,8 @@ public class PointOfInteractionComponentCharacteristics3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the com property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the com property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -97,10 +99,12 @@ public class PointOfInteractionComponentCharacteristics3 {
      * {@link CommunicationCharacteristics3 }
      * 
      * 
+     * @return
+     *     The value of the com property.
      */
     public List<CommunicationCharacteristics3> getCom() {
         if (com == null) {
-            com = new ArrayList<CommunicationCharacteristics3>();
+            com = new ArrayList<>();
         }
         return this.com;
     }

@@ -1,15 +1,15 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -32,11 +32,11 @@ public class DateAndDateTimeChoice {
     @XmlElement(name = "Dt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar dt;
+    protected Calendar dt;
     @XmlElement(name = "DtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar dtTm;
+    protected Calendar dtTm;
 
     /**
      * Gets the value of the dt property.
@@ -46,7 +46,7 @@ public class DateAndDateTimeChoice {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDt() {
+    public Calendar getDt() {
         return dt;
     }
 
@@ -58,7 +58,7 @@ public class DateAndDateTimeChoice {
      *     {@link String }
      *     
      */
-    public DateAndDateTimeChoice setDt(XMLGregorianCalendar value) {
+    public DateAndDateTimeChoice setDt(Calendar value) {
         this.dt = value;
         return this;
     }
@@ -71,7 +71,7 @@ public class DateAndDateTimeChoice {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDtTm() {
+    public Calendar getDtTm() {
         return dtTm;
     }
 
@@ -83,7 +83,7 @@ public class DateAndDateTimeChoice {
      *     {@link String }
      *     
      */
-    public DateAndDateTimeChoice setDtTm(XMLGregorianCalendar value) {
+    public DateAndDateTimeChoice setDtTm(Calendar value) {
         this.dtTm = value;
         return this;
     }

@@ -10,16 +10,15 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for Algorithm14Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="Algorithm14Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ERS2"/&gt;
- *     &lt;enumeration value="ERS1"/&gt;
- *     &lt;enumeration value="RPSS"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="Algorithm14Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ERS2"/>
+ *     <enumeration value="ERS1"/>
+ *     <enumeration value="RPSS"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "Algorithm14Code")

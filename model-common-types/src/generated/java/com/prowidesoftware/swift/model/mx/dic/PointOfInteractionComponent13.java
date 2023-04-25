@@ -126,8 +126,8 @@ public class PointOfInteractionComponent13 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the stdCmplc property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the stdCmplc property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -141,10 +141,12 @@ public class PointOfInteractionComponent13 {
      * {@link GenericIdentification48 }
      * 
      * 
+     * @return
+     *     The value of the stdCmplc property.
      */
     public List<GenericIdentification48> getStdCmplc() {
         if (stdCmplc == null) {
-            stdCmplc = new ArrayList<GenericIdentification48>();
+            stdCmplc = new ArrayList<>();
         }
         return this.stdCmplc;
     }
@@ -180,8 +182,8 @@ public class PointOfInteractionComponent13 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the assmnt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the assmnt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -195,10 +197,12 @@ public class PointOfInteractionComponent13 {
      * {@link PointOfInteractionComponentIdentification3 }
      * 
      * 
+     * @return
+     *     The value of the assmnt property.
      */
     public List<PointOfInteractionComponentIdentification3> getAssmnt() {
         if (assmnt == null) {
-            assmnt = new ArrayList<PointOfInteractionComponentIdentification3>();
+            assmnt = new ArrayList<>();
         }
         return this.assmnt;
     }

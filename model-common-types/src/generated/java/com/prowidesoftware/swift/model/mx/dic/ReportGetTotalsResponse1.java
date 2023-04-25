@@ -62,8 +62,8 @@ public class ReportGetTotalsResponse1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the txTtlsSet property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the txTtlsSet property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -77,10 +77,12 @@ public class ReportGetTotalsResponse1 {
      * {@link TransactionTotalsSet1 }
      * 
      * 
+     * @return
+     *     The value of the txTtlsSet property.
      */
     public List<TransactionTotalsSet1> getTxTtlsSet() {
         if (txTtlsSet == null) {
-            txTtlsSet = new ArrayList<TransactionTotalsSet1>();
+            txTtlsSet = new ArrayList<>();
         }
         return this.txTtlsSet;
     }

@@ -9,35 +9,34 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for SettlementTransactionCondition6Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="SettlementTransactionCondition6Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ASGN"/&gt;
- *     &lt;enumeration value="BUTC"/&gt;
- *     &lt;enumeration value="CLEN"/&gt;
- *     &lt;enumeration value="DIRT"/&gt;
- *     &lt;enumeration value="DLWM"/&gt;
- *     &lt;enumeration value="DRAW"/&gt;
- *     &lt;enumeration value="EXER"/&gt;
- *     &lt;enumeration value="FRCL"/&gt;
- *     &lt;enumeration value="KNOC"/&gt;
- *     &lt;enumeration value="PHYS"/&gt;
- *     &lt;enumeration value="RESI"/&gt;
- *     &lt;enumeration value="SHOR"/&gt;
- *     &lt;enumeration value="SPDL"/&gt;
- *     &lt;enumeration value="SPST"/&gt;
- *     &lt;enumeration value="EXPI"/&gt;
- *     &lt;enumeration value="PENS"/&gt;
- *     &lt;enumeration value="UNEX"/&gt;
- *     &lt;enumeration value="TRIP"/&gt;
- *     &lt;enumeration value="NOMC"/&gt;
- *     &lt;enumeration value="TRAN"/&gt;
- *     &lt;enumeration value="RHYP"/&gt;
- *     &lt;enumeration value="ADEA"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="SettlementTransactionCondition6Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ASGN"/>
+ *     <enumeration value="BUTC"/>
+ *     <enumeration value="CLEN"/>
+ *     <enumeration value="DIRT"/>
+ *     <enumeration value="DLWM"/>
+ *     <enumeration value="DRAW"/>
+ *     <enumeration value="EXER"/>
+ *     <enumeration value="FRCL"/>
+ *     <enumeration value="KNOC"/>
+ *     <enumeration value="PHYS"/>
+ *     <enumeration value="RESI"/>
+ *     <enumeration value="SHOR"/>
+ *     <enumeration value="SPDL"/>
+ *     <enumeration value="SPST"/>
+ *     <enumeration value="EXPI"/>
+ *     <enumeration value="PENS"/>
+ *     <enumeration value="UNEX"/>
+ *     <enumeration value="TRIP"/>
+ *     <enumeration value="NOMC"/>
+ *     <enumeration value="TRAN"/>
+ *     <enumeration value="RHYP"/>
+ *     <enumeration value="ADEA"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "SettlementTransactionCondition6Code")

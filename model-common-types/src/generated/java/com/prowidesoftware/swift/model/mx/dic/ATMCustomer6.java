@@ -90,8 +90,8 @@ public class ATMCustomer6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the authntcnRslt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the authntcnRslt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -105,10 +105,12 @@ public class ATMCustomer6 {
      * {@link TransactionVerificationResult5 }
      * 
      * 
+     * @return
+     *     The value of the authntcnRslt property.
      */
     public List<TransactionVerificationResult5> getAuthntcnRslt() {
         if (authntcnRslt == null) {
-            authntcnRslt = new ArrayList<TransactionVerificationResult5>();
+            authntcnRslt = new ArrayList<>();
         }
         return this.authntcnRslt;
     }

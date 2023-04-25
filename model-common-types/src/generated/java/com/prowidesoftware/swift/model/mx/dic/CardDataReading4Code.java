@@ -9,17 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for CardDataReading4Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CardDataReading4Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ECTL"/&gt;
- *     &lt;enumeration value="CICC"/&gt;
- *     &lt;enumeration value="MGST"/&gt;
- *     &lt;enumeration value="CTLS"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CardDataReading4Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ECTL"/>
+ *     <enumeration value="CICC"/>
+ *     <enumeration value="MGST"/>
+ *     <enumeration value="CTLS"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CardDataReading4Code")

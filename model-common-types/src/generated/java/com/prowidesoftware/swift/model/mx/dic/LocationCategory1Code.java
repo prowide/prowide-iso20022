@@ -9,18 +9,17 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for LocationCategory1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="LocationCategory1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="MOTO"/&gt;
- *     &lt;enumeration value="HOME"/&gt;
- *     &lt;enumeration value="ABRD"/&gt;
- *     &lt;enumeration value="FIXD"/&gt;
- *     &lt;enumeration value="NMDC"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="LocationCategory1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="MOTO"/>
+ *     <enumeration value="HOME"/>
+ *     <enumeration value="ABRD"/>
+ *     <enumeration value="FIXD"/>
+ *     <enumeration value="NMDC"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "LocationCategory1Code")

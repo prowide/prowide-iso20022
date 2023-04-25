@@ -9,17 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for NonFinancialRequestType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="NonFinancialRequestType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ACQR"/&gt;
- *     &lt;enumeration value="PARQ"/&gt;
- *     &lt;enumeration value="RISK"/&gt;
- *     &lt;enumeration value="TOKN"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="NonFinancialRequestType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ACQR"/>
+ *     <enumeration value="PARQ"/>
+ *     <enumeration value="RISK"/>
+ *     <enumeration value="TOKN"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "NonFinancialRequestType1Code")

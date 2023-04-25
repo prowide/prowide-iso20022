@@ -10,17 +10,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for Algorithm3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="Algorithm3Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="MACC"/&gt;
- *     &lt;enumeration value="MCCS"/&gt;
- *     &lt;enumeration value="CMA1"/&gt;
- *     &lt;enumeration value="CMD1"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="Algorithm3Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="MACC"/>
+ *     <enumeration value="MCCS"/>
+ *     <enumeration value="CMA1"/>
+ *     <enumeration value="CMD1"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "Algorithm3Code")

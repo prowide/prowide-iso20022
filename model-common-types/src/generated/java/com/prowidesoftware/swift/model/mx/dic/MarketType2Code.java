@@ -9,18 +9,17 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for MarketType2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="MarketType2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="PRIM"/&gt;
- *     &lt;enumeration value="SECM"/&gt;
- *     &lt;enumeration value="OTCO"/&gt;
- *     &lt;enumeration value="VARI"/&gt;
- *     &lt;enumeration value="EXCH"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="MarketType2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="PRIM"/>
+ *     <enumeration value="SECM"/>
+ *     <enumeration value="OTCO"/>
+ *     <enumeration value="VARI"/>
+ *     <enumeration value="EXCH"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "MarketType2Code")

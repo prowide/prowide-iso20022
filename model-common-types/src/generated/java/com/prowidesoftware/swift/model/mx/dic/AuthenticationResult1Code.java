@@ -9,19 +9,18 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for AuthenticationResult1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="AuthenticationResult1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="DENY"/&gt;
- *     &lt;enumeration value="MRCH"/&gt;
- *     &lt;enumeration value="CARD"/&gt;
- *     &lt;enumeration value="AUTH"/&gt;
- *     &lt;enumeration value="CRPT"/&gt;
- *     &lt;enumeration value="UCRP"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="AuthenticationResult1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="DENY"/>
+ *     <enumeration value="MRCH"/>
+ *     <enumeration value="CARD"/>
+ *     <enumeration value="AUTH"/>
+ *     <enumeration value="CRPT"/>
+ *     <enumeration value="UCRP"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "AuthenticationResult1Code")

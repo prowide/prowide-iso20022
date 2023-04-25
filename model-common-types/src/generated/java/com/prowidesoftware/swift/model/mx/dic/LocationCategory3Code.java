@@ -9,20 +9,19 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for LocationCategory3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="LocationCategory3Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="INDR"/&gt;
- *     &lt;enumeration value="IPMP"/&gt;
- *     &lt;enumeration value="MPOI"/&gt;
- *     &lt;enumeration value="MPMP"/&gt;
- *     &lt;enumeration value="MSLE"/&gt;
- *     &lt;enumeration value="SSLE"/&gt;
- *     &lt;enumeration value="VNDG"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="LocationCategory3Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="INDR"/>
+ *     <enumeration value="IPMP"/>
+ *     <enumeration value="MPOI"/>
+ *     <enumeration value="MPMP"/>
+ *     <enumeration value="MSLE"/>
+ *     <enumeration value="SSLE"/>
+ *     <enumeration value="VNDG"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "LocationCategory3Code")

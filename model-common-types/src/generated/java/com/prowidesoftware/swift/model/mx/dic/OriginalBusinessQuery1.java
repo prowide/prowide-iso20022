@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -36,7 +36,7 @@ public class OriginalBusinessQuery1 {
     @XmlElement(name = "CreDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar creDtTm;
+    protected Calendar creDtTm;
 
     /**
      * Gets the value of the msgId property.
@@ -96,7 +96,7 @@ public class OriginalBusinessQuery1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getCreDtTm() {
+    public Calendar getCreDtTm() {
         return creDtTm;
     }
 
@@ -108,7 +108,7 @@ public class OriginalBusinessQuery1 {
      *     {@link String }
      *     
      */
-    public OriginalBusinessQuery1 setCreDtTm(XMLGregorianCalendar value) {
+    public OriginalBusinessQuery1 setCreDtTm(Calendar value) {
         this.creDtTm = value;
         return this;
     }

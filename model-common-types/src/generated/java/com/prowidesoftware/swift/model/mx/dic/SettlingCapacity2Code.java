@@ -9,17 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for SettlingCapacity2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="SettlingCapacity2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="SAGE"/&gt;
- *     &lt;enumeration value="CUST"/&gt;
- *     &lt;enumeration value="SPRI"/&gt;
- *     &lt;enumeration value="RISP"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="SettlingCapacity2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="SAGE"/>
+ *     <enumeration value="CUST"/>
+ *     <enumeration value="SPRI"/>
+ *     <enumeration value="RISP"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "SettlingCapacity2Code")

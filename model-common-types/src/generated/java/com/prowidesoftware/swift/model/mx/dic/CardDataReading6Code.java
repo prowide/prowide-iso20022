@@ -9,24 +9,23 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for CardDataReading6Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CardDataReading6Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="TAGC"/&gt;
- *     &lt;enumeration value="PHYS"/&gt;
- *     &lt;enumeration value="BRCD"/&gt;
- *     &lt;enumeration value="MGST"/&gt;
- *     &lt;enumeration value="CICC"/&gt;
- *     &lt;enumeration value="DFLE"/&gt;
- *     &lt;enumeration value="CTLS"/&gt;
- *     &lt;enumeration value="ECTL"/&gt;
- *     &lt;enumeration value="CDFL"/&gt;
- *     &lt;enumeration value="SICC"/&gt;
- *     &lt;enumeration value="UNKW"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CardDataReading6Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="TAGC"/>
+ *     <enumeration value="PHYS"/>
+ *     <enumeration value="BRCD"/>
+ *     <enumeration value="MGST"/>
+ *     <enumeration value="CICC"/>
+ *     <enumeration value="DFLE"/>
+ *     <enumeration value="CTLS"/>
+ *     <enumeration value="ECTL"/>
+ *     <enumeration value="CDFL"/>
+ *     <enumeration value="SICC"/>
+ *     <enumeration value="UNKW"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CardDataReading6Code")

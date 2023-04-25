@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -48,7 +48,7 @@ public class LoyaltyMember2 {
     @XmlElement(name = "XprtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar xprtnDt;
+    protected Calendar xprtnDt;
     @XmlElement(name = "LltyVal")
     protected String lltyVal;
     @XmlElement(name = "LltyValTp")
@@ -171,7 +171,7 @@ public class LoyaltyMember2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getXprtnDt() {
+    public Calendar getXprtnDt() {
         return xprtnDt;
     }
 
@@ -183,7 +183,7 @@ public class LoyaltyMember2 {
      *     {@link String }
      *     
      */
-    public LoyaltyMember2 setXprtnDt(XMLGregorianCalendar value) {
+    public LoyaltyMember2 setXprtnDt(Calendar value) {
         this.xprtnDt = value;
         return this;
     }

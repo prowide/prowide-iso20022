@@ -9,18 +9,17 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for ContentType2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ContentType2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="DATA"/&gt;
- *     &lt;enumeration value="SIGN"/&gt;
- *     &lt;enumeration value="EVLP"/&gt;
- *     &lt;enumeration value="DGST"/&gt;
- *     &lt;enumeration value="AUTH"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ContentType2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="DATA"/>
+ *     <enumeration value="SIGN"/>
+ *     <enumeration value="EVLP"/>
+ *     <enumeration value="DGST"/>
+ *     <enumeration value="AUTH"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ContentType2Code")

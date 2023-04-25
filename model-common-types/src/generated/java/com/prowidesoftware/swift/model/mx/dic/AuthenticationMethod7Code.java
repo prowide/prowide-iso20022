@@ -9,22 +9,21 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for AuthenticationMethod7Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="AuthenticationMethod7Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="TOKA"/&gt;
- *     &lt;enumeration value="BIOM"/&gt;
- *     &lt;enumeration value="MOBL"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="FPIN"/&gt;
- *     &lt;enumeration value="NPIN"/&gt;
- *     &lt;enumeration value="PSWD"/&gt;
- *     &lt;enumeration value="SCRT"/&gt;
- *     &lt;enumeration value="SCNL"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="AuthenticationMethod7Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="TOKA"/>
+ *     <enumeration value="BIOM"/>
+ *     <enumeration value="MOBL"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="FPIN"/>
+ *     <enumeration value="NPIN"/>
+ *     <enumeration value="PSWD"/>
+ *     <enumeration value="SCRT"/>
+ *     <enumeration value="SCNL"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "AuthenticationMethod7Code")

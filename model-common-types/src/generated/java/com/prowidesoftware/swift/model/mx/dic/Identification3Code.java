@@ -9,25 +9,24 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for Identification3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="Identification3Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="DRID"/&gt;
- *     &lt;enumeration value="NTID"/&gt;
- *     &lt;enumeration value="PASS"/&gt;
- *     &lt;enumeration value="SSYN"/&gt;
- *     &lt;enumeration value="ARNB"/&gt;
- *     &lt;enumeration value="OTHP"/&gt;
- *     &lt;enumeration value="OTHN"/&gt;
- *     &lt;enumeration value="EMAL"/&gt;
- *     &lt;enumeration value="PHNB"/&gt;
- *     &lt;enumeration value="CUID"/&gt;
- *     &lt;enumeration value="TXID"/&gt;
- *     &lt;enumeration value="PRXY"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="Identification3Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="DRID"/>
+ *     <enumeration value="NTID"/>
+ *     <enumeration value="PASS"/>
+ *     <enumeration value="SSYN"/>
+ *     <enumeration value="ARNB"/>
+ *     <enumeration value="OTHP"/>
+ *     <enumeration value="OTHN"/>
+ *     <enumeration value="EMAL"/>
+ *     <enumeration value="PHNB"/>
+ *     <enumeration value="CUID"/>
+ *     <enumeration value="TXID"/>
+ *     <enumeration value="PRXY"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "Identification3Code")

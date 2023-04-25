@@ -9,47 +9,46 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for CarRentalServiceType2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CarRentalServiceType2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ADJM"/&gt;
- *     &lt;enumeration value="AUTH"/&gt;
- *     &lt;enumeration value="BAST"/&gt;
- *     &lt;enumeration value="CLEA"/&gt;
- *     &lt;enumeration value="DMGS"/&gt;
- *     &lt;enumeration value="DLVR"/&gt;
- *     &lt;enumeration value="DPOF"/&gt;
- *     &lt;enumeration value="ENTE"/&gt;
- *     &lt;enumeration value="EXTC"/&gt;
- *     &lt;enumeration value="EXDY"/&gt;
- *     &lt;enumeration value="EXDI"/&gt;
- *     &lt;enumeration value="EXHR"/&gt;
- *     &lt;enumeration value="FINE"/&gt;
- *     &lt;enumeration value="FUEL"/&gt;
- *     &lt;enumeration value="GARA"/&gt;
- *     &lt;enumeration value="GPSY"/&gt;
- *     &lt;enumeration value="INSU"/&gt;
- *     &lt;enumeration value="LATE"/&gt;
- *     &lt;enumeration value="LIIN"/&gt;
- *     &lt;enumeration value="LDIN"/&gt;
- *     &lt;enumeration value="MISC"/&gt;
- *     &lt;enumeration value="NAVI"/&gt;
- *     &lt;enumeration value="NOSH"/&gt;
- *     &lt;enumeration value="ONEW"/&gt;
- *     &lt;enumeration value="OTHN"/&gt;
- *     &lt;enumeration value="OTHP"/&gt;
- *     &lt;enumeration value="PARK"/&gt;
- *     &lt;enumeration value="PRIN"/&gt;
- *     &lt;enumeration value="PFIN"/&gt;
- *     &lt;enumeration value="PHON"/&gt;
- *     &lt;enumeration value="REGD"/&gt;
- *     &lt;enumeration value="SMOK"/&gt;
- *     &lt;enumeration value="TOLL"/&gt;
- *     &lt;enumeration value="TOWI"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CarRentalServiceType2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ADJM"/>
+ *     <enumeration value="AUTH"/>
+ *     <enumeration value="BAST"/>
+ *     <enumeration value="CLEA"/>
+ *     <enumeration value="DMGS"/>
+ *     <enumeration value="DLVR"/>
+ *     <enumeration value="DPOF"/>
+ *     <enumeration value="ENTE"/>
+ *     <enumeration value="EXTC"/>
+ *     <enumeration value="EXDY"/>
+ *     <enumeration value="EXDI"/>
+ *     <enumeration value="EXHR"/>
+ *     <enumeration value="FINE"/>
+ *     <enumeration value="FUEL"/>
+ *     <enumeration value="GARA"/>
+ *     <enumeration value="GPSY"/>
+ *     <enumeration value="INSU"/>
+ *     <enumeration value="LATE"/>
+ *     <enumeration value="LIIN"/>
+ *     <enumeration value="LDIN"/>
+ *     <enumeration value="MISC"/>
+ *     <enumeration value="NAVI"/>
+ *     <enumeration value="NOSH"/>
+ *     <enumeration value="ONEW"/>
+ *     <enumeration value="OTHN"/>
+ *     <enumeration value="OTHP"/>
+ *     <enumeration value="PARK"/>
+ *     <enumeration value="PRIN"/>
+ *     <enumeration value="PFIN"/>
+ *     <enumeration value="PHON"/>
+ *     <enumeration value="REGD"/>
+ *     <enumeration value="SMOK"/>
+ *     <enumeration value="TOLL"/>
+ *     <enumeration value="TOWI"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CarRentalServiceType2Code")

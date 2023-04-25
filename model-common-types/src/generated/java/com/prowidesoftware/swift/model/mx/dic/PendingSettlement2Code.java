@@ -9,52 +9,51 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for PendingSettlement2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="PendingSettlement2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="AWMO"/&gt;
- *     &lt;enumeration value="CAIS"/&gt;
- *     &lt;enumeration value="REFU"/&gt;
- *     &lt;enumeration value="AWSH"/&gt;
- *     &lt;enumeration value="PHSE"/&gt;
- *     &lt;enumeration value="TAMM"/&gt;
- *     &lt;enumeration value="DOCY"/&gt;
- *     &lt;enumeration value="DOCC"/&gt;
- *     &lt;enumeration value="BLOC"/&gt;
- *     &lt;enumeration value="CHAS"/&gt;
- *     &lt;enumeration value="NEWI"/&gt;
- *     &lt;enumeration value="CLAC"/&gt;
- *     &lt;enumeration value="MUNO"/&gt;
- *     &lt;enumeration value="GLOB"/&gt;
- *     &lt;enumeration value="PREA"/&gt;
- *     &lt;enumeration value="GUAD"/&gt;
- *     &lt;enumeration value="PART"/&gt;
- *     &lt;enumeration value="NMAS"/&gt;
- *     &lt;enumeration value="CMON"/&gt;
- *     &lt;enumeration value="YCOL"/&gt;
- *     &lt;enumeration value="COLL"/&gt;
- *     &lt;enumeration value="DEPO"/&gt;
- *     &lt;enumeration value="FLIM"/&gt;
- *     &lt;enumeration value="NOFX"/&gt;
- *     &lt;enumeration value="INCA"/&gt;
- *     &lt;enumeration value="LINK"/&gt;
- *     &lt;enumeration value="FUTU"/&gt;
- *     &lt;enumeration value="LACK"/&gt;
- *     &lt;enumeration value="LALO"/&gt;
- *     &lt;enumeration value="MONY"/&gt;
- *     &lt;enumeration value="NCON"/&gt;
- *     &lt;enumeration value="REFS"/&gt;
- *     &lt;enumeration value="SDUT"/&gt;
- *     &lt;enumeration value="BATC"/&gt;
- *     &lt;enumeration value="CYCL"/&gt;
- *     &lt;enumeration value="SBLO"/&gt;
- *     &lt;enumeration value="CPEC"/&gt;
- *     &lt;enumeration value="MINO"/&gt;
- *     &lt;enumeration value="PCAP"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="PendingSettlement2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="AWMO"/>
+ *     <enumeration value="CAIS"/>
+ *     <enumeration value="REFU"/>
+ *     <enumeration value="AWSH"/>
+ *     <enumeration value="PHSE"/>
+ *     <enumeration value="TAMM"/>
+ *     <enumeration value="DOCY"/>
+ *     <enumeration value="DOCC"/>
+ *     <enumeration value="BLOC"/>
+ *     <enumeration value="CHAS"/>
+ *     <enumeration value="NEWI"/>
+ *     <enumeration value="CLAC"/>
+ *     <enumeration value="MUNO"/>
+ *     <enumeration value="GLOB"/>
+ *     <enumeration value="PREA"/>
+ *     <enumeration value="GUAD"/>
+ *     <enumeration value="PART"/>
+ *     <enumeration value="NMAS"/>
+ *     <enumeration value="CMON"/>
+ *     <enumeration value="YCOL"/>
+ *     <enumeration value="COLL"/>
+ *     <enumeration value="DEPO"/>
+ *     <enumeration value="FLIM"/>
+ *     <enumeration value="NOFX"/>
+ *     <enumeration value="INCA"/>
+ *     <enumeration value="LINK"/>
+ *     <enumeration value="FUTU"/>
+ *     <enumeration value="LACK"/>
+ *     <enumeration value="LALO"/>
+ *     <enumeration value="MONY"/>
+ *     <enumeration value="NCON"/>
+ *     <enumeration value="REFS"/>
+ *     <enumeration value="SDUT"/>
+ *     <enumeration value="BATC"/>
+ *     <enumeration value="CYCL"/>
+ *     <enumeration value="SBLO"/>
+ *     <enumeration value="CPEC"/>
+ *     <enumeration value="MINO"/>
+ *     <enumeration value="PCAP"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "PendingSettlement2Code")
