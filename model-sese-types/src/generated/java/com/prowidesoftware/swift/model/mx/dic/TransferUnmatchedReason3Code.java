@@ -9,24 +9,23 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for TransferUnmatchedReason3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="TransferUnmatchedReason3Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CMIS"/&gt;
- *     &lt;enumeration value="CPCA"/&gt;
- *     &lt;enumeration value="DELN"/&gt;
- *     &lt;enumeration value="DSEC"/&gt;
- *     &lt;enumeration value="PHYS"/&gt;
- *     &lt;enumeration value="PODU"/&gt;
- *     &lt;enumeration value="DEPT"/&gt;
- *     &lt;enumeration value="DDAT"/&gt;
- *     &lt;enumeration value="DQUA"/&gt;
- *     &lt;enumeration value="ICUS"/&gt;
- *     &lt;enumeration value="SAFE"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="TransferUnmatchedReason3Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CMIS"/>
+ *     <enumeration value="CPCA"/>
+ *     <enumeration value="DELN"/>
+ *     <enumeration value="DSEC"/>
+ *     <enumeration value="PHYS"/>
+ *     <enumeration value="PODU"/>
+ *     <enumeration value="DEPT"/>
+ *     <enumeration value="DDAT"/>
+ *     <enumeration value="DQUA"/>
+ *     <enumeration value="ICUS"/>
+ *     <enumeration value="SAFE"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "TransferUnmatchedReason3Code")

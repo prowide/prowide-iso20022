@@ -2,13 +2,16 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.swift.model.mx.dic.*;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -30,13 +33,13 @@ public class MxSetr01600102
 
     @XmlElement(name = "setr.016.001.02", required = true)
     protected Setr01600102 setr01600102;
-    public final static transient String BUSINESS_PROCESS = "setr";
-    public final static transient int FUNCTIONALITY = 16;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 2;
+    public static final transient String BUSINESS_PROCESS = "setr";
+    public static final transient int FUNCTIONALITY = 16;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 2;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {AccountIdentification1 .class, ActiveCurrencyAnd13DecimalAmount.class, AdditionalReference3 .class, AddressType2Code.class, AlternateSecurityIdentification1 .class, CancelledStatus1 .class, CancelledStatusReason1 .class, Charge11 .class, ChargeType1 .class, ChargeType6Code.class, Commission7 .class, CommissionType1 .class, CommissionType5Code.class, ConditionallyAcceptedStatus1 .class, ConditionallyAcceptedStatusReason1 .class, ConditionallyAcceptedStatusReason1Code.class, DateAndDateTimeChoice.class, DistributionPolicy1Code.class, ExpectedExecutionDetails1 .class, FinancialInstrument6 .class, FormOfSecurity1Code.class, GenericIdentification1 .class, InRepairStatus1 .class, InRepairStatusReason1 .class, IndividualOrderStatusAndReason1 .class, InvestmentAccount13 .class, InvestmentAccountOrFinancialInstrument1Choice.class, MxSetr01600102 .class, NameAndAddress5 .class, NoReasonCode.class, OrderStatus2Code.class, OrderStatusAndReason3 .class, PartyIdentification2Choice.class, PostalAddress1 .class, RejectedStatus3 .class, RejectedStatusReason5Code.class, RejectedStatusReason6 .class, RepairedConditions2 .class, SecurityIdentification1Choice.class, Setr01600102 .class, SimpleIdentificationInformation.class, SuspendedStatus1 .class, SuspendedStatusReason1 .class, SuspendedStatusReason2Code.class };
-    public final static transient String NAMESPACE = "urn:swift:xsd:setr.016.001.02";
+    public static final transient Class[] _classes = new Class[] {AccountIdentification1 .class, ActiveCurrencyAnd13DecimalAmount.class, AdditionalReference3 .class, AddressType2Code.class, AlternateSecurityIdentification1 .class, CancelledStatus1 .class, CancelledStatusReason1 .class, Charge11 .class, ChargeType1 .class, ChargeType6Code.class, Commission7 .class, CommissionType1 .class, CommissionType5Code.class, ConditionallyAcceptedStatus1 .class, ConditionallyAcceptedStatusReason1 .class, ConditionallyAcceptedStatusReason1Code.class, DateAndDateTimeChoice.class, DistributionPolicy1Code.class, ExpectedExecutionDetails1 .class, FinancialInstrument6 .class, FormOfSecurity1Code.class, GenericIdentification1 .class, InRepairStatus1 .class, InRepairStatusReason1 .class, IndividualOrderStatusAndReason1 .class, InvestmentAccount13 .class, InvestmentAccountOrFinancialInstrument1Choice.class, MxSetr01600102 .class, NameAndAddress5 .class, NoReasonCode.class, OrderStatus2Code.class, OrderStatusAndReason3 .class, PartyIdentification2Choice.class, PostalAddress1 .class, RejectedStatus3 .class, RejectedStatusReason5Code.class, RejectedStatusReason6 .class, RepairedConditions2 .class, SecurityIdentification1Choice.class, Setr01600102 .class, SimpleIdentificationInformation.class, SuspendedStatus1 .class, SuspendedStatusReason1 .class, SuspendedStatusReason2Code.class };
+    public static final transient String NAMESPACE = "urn:swift:xsd:setr.016.001.02";
 
     public MxSetr01600102() {
         super();
@@ -83,21 +86,6 @@ public class MxSetr01600102
     public MxSetr01600102 setSetr01600102(Setr01600102 value) {
         this.setr01600102 = value;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -170,8 +158,23 @@ public class MxSetr01600102
      * @return
      *     a new instance of MxSetr01600102
      */
-    public final static MxSetr01600102 fromJson(String json) {
+    public static final MxSetr01600102 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSetr01600102 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

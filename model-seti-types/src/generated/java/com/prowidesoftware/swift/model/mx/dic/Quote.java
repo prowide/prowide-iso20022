@@ -94,8 +94,8 @@ public class Quote {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the qtDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the qtDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -109,10 +109,12 @@ public class Quote {
      * {@link Quote2 }
      * 
      * 
+     * @return
+     *     The value of the qtDtls property.
      */
     public List<Quote2> getQtDtls() {
         if (qtDtls == null) {
-            qtDtls = new ArrayList<Quote2>();
+            qtDtls = new ArrayList<>();
         }
         return this.qtDtls;
     }

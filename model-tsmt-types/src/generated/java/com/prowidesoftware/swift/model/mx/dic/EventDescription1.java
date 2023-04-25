@@ -2,7 +2,9 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.JAXBElement;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -12,8 +14,6 @@ import jakarta.xml.bind.annotation.XmlIDREF;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -49,7 +49,7 @@ public class EventDescription1 {
     @XmlElement(name = "Dt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar dt;
+    protected Calendar dt;
     @XmlElement(name = "Rcpt", required = true)
     @XmlIDREF
     @XmlSchemaType(name = "IDREF")
@@ -112,7 +112,7 @@ public class EventDescription1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDt() {
+    public Calendar getDt() {
         return dt;
     }
 
@@ -124,7 +124,7 @@ public class EventDescription1 {
      *     {@link String }
      *     
      */
-    public EventDescription1 setDt(XMLGregorianCalendar value) {
+    public EventDescription1 setDt(Calendar value) {
         this.dt = value;
         return this;
     }
@@ -185,8 +185,8 @@ public class EventDescription1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the othrPty property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the othrPty property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -200,10 +200,12 @@ public class EventDescription1 {
      * {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
      * 
+     * @return
+     *     The value of the othrPty property.
      */
     public List<JAXBElement<Object>> getOthrPty() {
         if (othrPty == null) {
-            othrPty = new ArrayList<JAXBElement<Object>>();
+            othrPty = new ArrayList<>();
         }
         return this.othrPty;
     }
@@ -264,8 +266,8 @@ public class EventDescription1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rltdDoc property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rltdDoc property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -279,10 +281,12 @@ public class EventDescription1 {
      * {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
      * 
+     * @return
+     *     The value of the rltdDoc property.
      */
     public List<JAXBElement<Object>> getRltdDoc() {
         if (rltdDoc == null) {
-            rltdDoc = new ArrayList<JAXBElement<Object>>();
+            rltdDoc = new ArrayList<>();
         }
         return this.rltdDoc;
     }
@@ -293,8 +297,8 @@ public class EventDescription1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rltdLttr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rltdLttr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -308,10 +312,12 @@ public class EventDescription1 {
      * {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
      * 
+     * @return
+     *     The value of the rltdLttr property.
      */
     public List<JAXBElement<Object>> getRltdLttr() {
         if (rltdLttr == null) {
-            rltdLttr = new ArrayList<JAXBElement<Object>>();
+            rltdLttr = new ArrayList<>();
         }
         return this.rltdLttr;
     }
@@ -322,8 +328,8 @@ public class EventDescription1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rltdMsg property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rltdMsg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -337,10 +343,12 @@ public class EventDescription1 {
      * {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
      * 
+     * @return
+     *     The value of the rltdMsg property.
      */
     public List<JAXBElement<Object>> getRltdMsg() {
         if (rltdMsg == null) {
-            rltdMsg = new ArrayList<JAXBElement<Object>>();
+            rltdMsg = new ArrayList<>();
         }
         return this.rltdMsg;
     }
@@ -351,8 +359,8 @@ public class EventDescription1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the assoctdDoc property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the assoctdDoc property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -366,10 +374,12 @@ public class EventDescription1 {
      * {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
      * 
+     * @return
+     *     The value of the assoctdDoc property.
      */
     public List<JAXBElement<Object>> getAssoctdDoc() {
         if (assoctdDoc == null) {
-            assoctdDoc = new ArrayList<JAXBElement<Object>>();
+            assoctdDoc = new ArrayList<>();
         }
         return this.assoctdDoc;
     }
@@ -380,8 +390,8 @@ public class EventDescription1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the govngCtrct property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the govngCtrct property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -395,10 +405,12 @@ public class EventDescription1 {
      * {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
      * 
+     * @return
+     *     The value of the govngCtrct property.
      */
     public List<JAXBElement<Object>> getGovngCtrct() {
         if (govngCtrct == null) {
-            govngCtrct = new ArrayList<JAXBElement<Object>>();
+            govngCtrct = new ArrayList<>();
         }
         return this.govngCtrct;
     }

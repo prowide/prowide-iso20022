@@ -66,8 +66,8 @@ public class IncentivePremiumType2Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the perVote property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the perVote property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -81,10 +81,12 @@ public class IncentivePremiumType2Choice {
      * {@link VoteTypeAndQuantity1 }
      * 
      * 
+     * @return
+     *     The value of the perVote property.
      */
     public List<VoteTypeAndQuantity1> getPerVote() {
         if (perVote == null) {
-            perVote = new ArrayList<VoteTypeAndQuantity1>();
+            perVote = new ArrayList<>();
         }
         return this.perVote;
     }

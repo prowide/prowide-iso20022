@@ -164,8 +164,8 @@ public class SecuritiesStatementQuery002V07 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlQryParams property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlQryParams property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -179,10 +179,12 @@ public class SecuritiesStatementQuery002V07 {
      * {@link AdditionalQueryParameters12 }
      * 
      * 
+     * @return
+     *     The value of the addtlQryParams property.
      */
     public List<AdditionalQueryParameters12> getAddtlQryParams() {
         if (addtlQryParams == null) {
-            addtlQryParams = new ArrayList<AdditionalQueryParameters12>();
+            addtlQryParams = new ArrayList<>();
         }
         return this.addtlQryParams;
     }
@@ -193,8 +195,8 @@ public class SecuritiesStatementQuery002V07 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -208,10 +210,12 @@ public class SecuritiesStatementQuery002V07 {
      * {@link SupplementaryData1 }
      * 
      * 
+     * @return
+     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<SupplementaryData1>();
+            splmtryData = new ArrayList<>();
         }
         return this.splmtryData;
     }

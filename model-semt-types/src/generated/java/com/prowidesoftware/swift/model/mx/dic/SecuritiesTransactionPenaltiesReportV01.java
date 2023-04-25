@@ -124,8 +124,8 @@ public class SecuritiesTransactionPenaltiesReportV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the pnlty property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the pnlty property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -139,10 +139,12 @@ public class SecuritiesTransactionPenaltiesReportV01 {
      * {@link Penalty1 }
      * 
      * 
+     * @return
+     *     The value of the pnlty property.
      */
     public List<Penalty1> getPnlty() {
         if (pnlty == null) {
-            pnlty = new ArrayList<Penalty1>();
+            pnlty = new ArrayList<>();
         }
         return this.pnlty;
     }
@@ -153,8 +155,8 @@ public class SecuritiesTransactionPenaltiesReportV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -168,10 +170,12 @@ public class SecuritiesTransactionPenaltiesReportV01 {
      * {@link SupplementaryData1 }
      * 
      * 
+     * @return
+     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<SupplementaryData1>();
+            splmtryData = new ArrayList<>();
         }
         return this.splmtryData;
     }

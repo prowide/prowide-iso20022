@@ -9,17 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for QuoteType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="QuoteType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="INDI"/&gt;
- *     &lt;enumeration value="TRAD"/&gt;
- *     &lt;enumeration value="REST"/&gt;
- *     &lt;enumeration value="COUN"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="QuoteType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="INDI"/>
+ *     <enumeration value="TRAD"/>
+ *     <enumeration value="REST"/>
+ *     <enumeration value="COUN"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "QuoteType1Code")

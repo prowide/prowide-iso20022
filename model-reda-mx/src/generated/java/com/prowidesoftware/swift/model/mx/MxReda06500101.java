@@ -2,13 +2,16 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.swift.model.mx.dic.*;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -30,13 +33,13 @@ public class MxReda06500101
 
     @XmlElement(name = "CalRpt", required = true)
     protected CalendarReportV01 calRpt;
-    public final static transient String BUSINESS_PROCESS = "reda";
-    public final static transient int FUNCTIONALITY = 65;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 1;
+    public static final transient String BUSINESS_PROCESS = "reda";
+    public static final transient int FUNCTIONALITY = 65;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {CalendarData1 .class, CalendarOrBusinessError1Choice.class, CalendarReport1 .class, CalendarReportOrError1Choice.class, CalendarReportV01 .class, ErrorHandling1Code.class, ErrorHandling2Choice.class, ErrorHandling4 .class, GenericIdentification1 .class, MarketInfrastructureIdentification1Choice.class, MessageHeader11 .class, MxReda06500101 .class, OriginalBusinessQuery1 .class, RequestType4Choice.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, SystemAndCurrency1 .class, SystemIdentification2Choice.class, SystemStatus3Choice.class, SystemStatus3Code.class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:reda.065.001.01";
+    public static final transient Class[] _classes = new Class[] {CalendarData1 .class, CalendarOrBusinessError1Choice.class, CalendarReport1 .class, CalendarReportOrError1Choice.class, CalendarReportV01 .class, ErrorHandling1Code.class, ErrorHandling2Choice.class, ErrorHandling4 .class, GenericIdentification1 .class, MarketInfrastructureIdentification1Choice.class, MessageHeader11 .class, MxReda06500101 .class, OriginalBusinessQuery1 .class, RequestType4Choice.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, SystemAndCurrency1 .class, SystemIdentification2Choice.class, SystemStatus3Choice.class, SystemStatus3Code.class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:reda.065.001.01";
 
     public MxReda06500101() {
         super();
@@ -83,21 +86,6 @@ public class MxReda06500101
     public MxReda06500101 setCalRpt(CalendarReportV01 value) {
         this.calRpt = value;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -170,8 +158,23 @@ public class MxReda06500101
      * @return
      *     a new instance of MxReda06500101
      */
-    public final static MxReda06500101 fromJson(String json) {
+    public static final MxReda06500101 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxReda06500101 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

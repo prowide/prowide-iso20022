@@ -192,8 +192,8 @@ public class SecuritiesSettlementTransactionAuditTrailReport002V01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the stsTrl property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the stsTrl property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -207,10 +207,12 @@ public class SecuritiesSettlementTransactionAuditTrailReport002V01 {
      * {@link StatusTrail3 }
      * 
      * 
+     * @return
+     *     The value of the stsTrl property.
      */
     public List<StatusTrail3> getStsTrl() {
         if (stsTrl == null) {
-            stsTrl = new ArrayList<StatusTrail3>();
+            stsTrl = new ArrayList<>();
         }
         return this.stsTrl;
     }

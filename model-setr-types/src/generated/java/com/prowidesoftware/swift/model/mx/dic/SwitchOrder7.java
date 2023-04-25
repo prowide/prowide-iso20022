@@ -2,16 +2,16 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -58,7 +58,7 @@ public class SwitchOrder7 {
     @XmlElement(name = "OrdrDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar ordrDtTm;
+    protected Calendar ordrDtTm;
     @XmlElement(name = "PlcOfTrad")
     protected PlaceOfTradeIdentification1Choice plcOfTrad;
     @XmlElement(name = "OrdrRef", required = true)
@@ -72,13 +72,13 @@ public class SwitchOrder7 {
     @XmlElement(name = "ReqdFutrTradDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar reqdFutrTradDt;
+    protected Calendar reqdFutrTradDt;
     @XmlElement(name = "SttlmAmt")
     protected ActiveCurrencyAndAmount sttlmAmt;
     @XmlElement(name = "CshSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar cshSttlmDt;
+    protected Calendar cshSttlmDt;
     @XmlElement(name = "SttlmMtd")
     @XmlSchemaType(name = "string")
     protected DeliveryReceiptType2Code sttlmMtd;
@@ -144,7 +144,7 @@ public class SwitchOrder7 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getOrdrDtTm() {
+    public Calendar getOrdrDtTm() {
         return ordrDtTm;
     }
 
@@ -156,7 +156,7 @@ public class SwitchOrder7 {
      *     {@link String }
      *     
      */
-    public SwitchOrder7 setOrdrDtTm(XMLGregorianCalendar value) {
+    public SwitchOrder7 setOrdrDtTm(Calendar value) {
         this.ordrDtTm = value;
         return this;
     }
@@ -267,8 +267,8 @@ public class SwitchOrder7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rltdPtyDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rltdPtyDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -282,10 +282,12 @@ public class SwitchOrder7 {
      * {@link Intermediary40 }
      * 
      * 
+     * @return
+     *     The value of the rltdPtyDtls property.
      */
     public List<Intermediary40> getRltdPtyDtls() {
         if (rltdPtyDtls == null) {
-            rltdPtyDtls = new ArrayList<Intermediary40>();
+            rltdPtyDtls = new ArrayList<>();
         }
         return this.rltdPtyDtls;
     }
@@ -298,7 +300,7 @@ public class SwitchOrder7 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getReqdFutrTradDt() {
+    public Calendar getReqdFutrTradDt() {
         return reqdFutrTradDt;
     }
 
@@ -310,7 +312,7 @@ public class SwitchOrder7 {
      *     {@link String }
      *     
      */
-    public SwitchOrder7 setReqdFutrTradDt(XMLGregorianCalendar value) {
+    public SwitchOrder7 setReqdFutrTradDt(Calendar value) {
         this.reqdFutrTradDt = value;
         return this;
     }
@@ -348,7 +350,7 @@ public class SwitchOrder7 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getCshSttlmDt() {
+    public Calendar getCshSttlmDt() {
         return cshSttlmDt;
     }
 
@@ -360,7 +362,7 @@ public class SwitchOrder7 {
      *     {@link String }
      *     
      */
-    public SwitchOrder7 setCshSttlmDt(XMLGregorianCalendar value) {
+    public SwitchOrder7 setCshSttlmDt(Calendar value) {
         this.cshSttlmDt = value;
         return this;
     }
@@ -471,8 +473,8 @@ public class SwitchOrder7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the redLegDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the redLegDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -486,10 +488,12 @@ public class SwitchOrder7 {
      * {@link SwitchRedemptionLegOrder6 }
      * 
      * 
+     * @return
+     *     The value of the redLegDtls property.
      */
     public List<SwitchRedemptionLegOrder6> getRedLegDtls() {
         if (redLegDtls == null) {
-            redLegDtls = new ArrayList<SwitchRedemptionLegOrder6>();
+            redLegDtls = new ArrayList<>();
         }
         return this.redLegDtls;
     }
@@ -500,8 +504,8 @@ public class SwitchOrder7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sbcptLegDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sbcptLegDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -515,10 +519,12 @@ public class SwitchOrder7 {
      * {@link SwitchSubscriptionLegOrder6 }
      * 
      * 
+     * @return
+     *     The value of the sbcptLegDtls property.
      */
     public List<SwitchSubscriptionLegOrder6> getSbcptLegDtls() {
         if (sbcptLegDtls == null) {
-            sbcptLegDtls = new ArrayList<SwitchSubscriptionLegOrder6>();
+            sbcptLegDtls = new ArrayList<>();
         }
         return this.sbcptLegDtls;
     }

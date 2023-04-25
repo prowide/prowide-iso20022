@@ -196,8 +196,8 @@ public class ISATransfer8 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the finInstrmAsstForTrf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the finInstrmAsstForTrf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -211,10 +211,12 @@ public class ISATransfer8 {
      * {@link FinancialInstrument32 }
      * 
      * 
+     * @return
+     *     The value of the finInstrmAsstForTrf property.
      */
     public List<FinancialInstrument32> getFinInstrmAsstForTrf() {
         if (finInstrmAsstForTrf == null) {
-            finInstrmAsstForTrf = new ArrayList<FinancialInstrument32>();
+            finInstrmAsstForTrf = new ArrayList<>();
         }
         return this.finInstrmAsstForTrf;
     }

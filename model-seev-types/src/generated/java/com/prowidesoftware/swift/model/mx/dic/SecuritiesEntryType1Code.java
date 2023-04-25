@@ -9,23 +9,22 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for SecuritiesEntryType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="SecuritiesEntryType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="BLOK"/&gt;
- *     &lt;enumeration value="ELIG"/&gt;
- *     &lt;enumeration value="PEND"/&gt;
- *     &lt;enumeration value="PENR"/&gt;
- *     &lt;enumeration value="NOMI"/&gt;
- *     &lt;enumeration value="SETD"/&gt;
- *     &lt;enumeration value="BORR"/&gt;
- *     &lt;enumeration value="LOAN"/&gt;
- *     &lt;enumeration value="SPOS"/&gt;
- *     &lt;enumeration value="TRAD"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="SecuritiesEntryType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="BLOK"/>
+ *     <enumeration value="ELIG"/>
+ *     <enumeration value="PEND"/>
+ *     <enumeration value="PENR"/>
+ *     <enumeration value="NOMI"/>
+ *     <enumeration value="SETD"/>
+ *     <enumeration value="BORR"/>
+ *     <enumeration value="LOAN"/>
+ *     <enumeration value="SPOS"/>
+ *     <enumeration value="TRAD"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "SecuritiesEntryType1Code")

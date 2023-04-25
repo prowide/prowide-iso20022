@@ -68,8 +68,8 @@ public class MarginReport1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the nonClrMmb property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the nonClrMmb property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -83,10 +83,12 @@ public class MarginReport1 {
      * {@link PartyIdentificationAndAccount31 }
      * 
      * 
+     * @return
+     *     The value of the nonClrMmb property.
      */
     public List<PartyIdentificationAndAccount31> getNonClrMmb() {
         if (nonClrMmb == null) {
-            nonClrMmb = new ArrayList<PartyIdentificationAndAccount31>();
+            nonClrMmb = new ArrayList<>();
         }
         return this.nonClrMmb;
     }
@@ -97,8 +99,8 @@ public class MarginReport1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the mrgnPdct property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the mrgnPdct property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -112,10 +114,12 @@ public class MarginReport1 {
      * {@link MarginProductType1Choice }
      * 
      * 
+     * @return
+     *     The value of the mrgnPdct property.
      */
     public List<MarginProductType1Choice> getMrgnPdct() {
         if (mrgnPdct == null) {
-            mrgnPdct = new ArrayList<MarginProductType1Choice>();
+            mrgnPdct = new ArrayList<>();
         }
         return this.mrgnPdct;
     }
@@ -126,8 +130,8 @@ public class MarginReport1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the mrgnDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the mrgnDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -141,10 +145,12 @@ public class MarginReport1 {
      * {@link Margin2 }
      * 
      * 
+     * @return
+     *     The value of the mrgnDtls property.
      */
     public List<Margin2> getMrgnDtls() {
         if (mrgnDtls == null) {
-            mrgnDtls = new ArrayList<Margin2>();
+            mrgnDtls = new ArrayList<>();
         }
         return this.mrgnDtls;
     }

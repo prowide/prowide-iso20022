@@ -2,13 +2,16 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.swift.model.mx.dic.*;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -30,13 +33,13 @@ public class MxSemt01400202
 
     @XmlElement(name = "IntraPosMvmntStsAdvc", required = true)
     protected IntraPositionMovementStatusAdviceV02Subset intraPosMvmntStsAdvc;
-    public final static transient String BUSINESS_PROCESS = "semt";
-    public final static transient int FUNCTIONALITY = 14;
-    public final static transient int VARIANT = 2;
-    public final static transient int VERSION = 2;
+    public static final transient String BUSINESS_PROCESS = "semt";
+    public static final transient int FUNCTIONALITY = 14;
+    public static final transient int VARIANT = 2;
+    public static final transient int VERSION = 2;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {AcknowledgedAcceptedStatus6Choice.class, AcknowledgementReason5Code.class, AcknowledgementReason6 .class, AcknowledgementReason8Choice.class, CancellationReason4 .class, CancellationReason8Choice.class, CancellationStatus6Choice.class, CancelledStatusReason9Code.class, DateAndDateTimeChoice.class, FailingReason1Code.class, FailingReason2 .class, FailingReason2Choice.class, FailingStatus2Choice.class, FinancialInstrumentQuantity15Choice.class, GenericIdentification24 .class, GenericIdentification25 .class, IdentificationSource4Choice.class, IntraPositionDetails15 .class, IntraPositionMovementStatusAdviceV02Subset.class, IntraPositionProcessingStatus2Choice.class, MxSemt01400202 .class, NoReasonCode.class, OtherIdentification2 .class, PartyIdentification51Choice.class, PendingReason10Choice.class, PendingReason1Code.class, PendingReason4 .class, PendingStatus8Choice.class, ProprietaryReason2 .class, ProprietaryStatusAndReason2 .class, RejectionAndRepairReason8Choice.class, RejectionOrRepairReason8 .class, RejectionOrRepairStatus3Choice.class, RejectionReason22Code.class, SecuritiesAccount17 .class, SecuritiesBalanceType13Code.class, SecuritiesBalanceType4Choice.class, SecurityIdentification15 .class, SettlementStatus4Choice.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TransactionIdentifications12 .class };
-    public final static transient String NAMESPACE = "urn:swift:xsd:semt.014.002.02";
+    public static final transient Class[] _classes = new Class[] {AcknowledgedAcceptedStatus6Choice.class, AcknowledgementReason5Code.class, AcknowledgementReason6 .class, AcknowledgementReason8Choice.class, CancellationReason4 .class, CancellationReason8Choice.class, CancellationStatus6Choice.class, CancelledStatusReason9Code.class, DateAndDateTimeChoice.class, FailingReason1Code.class, FailingReason2 .class, FailingReason2Choice.class, FailingStatus2Choice.class, FinancialInstrumentQuantity15Choice.class, GenericIdentification24 .class, GenericIdentification25 .class, IdentificationSource4Choice.class, IntraPositionDetails15 .class, IntraPositionMovementStatusAdviceV02Subset.class, IntraPositionProcessingStatus2Choice.class, MxSemt01400202 .class, NoReasonCode.class, OtherIdentification2 .class, PartyIdentification51Choice.class, PendingReason10Choice.class, PendingReason1Code.class, PendingReason4 .class, PendingStatus8Choice.class, ProprietaryReason2 .class, ProprietaryStatusAndReason2 .class, RejectionAndRepairReason8Choice.class, RejectionOrRepairReason8 .class, RejectionOrRepairStatus3Choice.class, RejectionReason22Code.class, SecuritiesAccount17 .class, SecuritiesBalanceType13Code.class, SecuritiesBalanceType4Choice.class, SecurityIdentification15 .class, SettlementStatus4Choice.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TransactionIdentifications12 .class };
+    public static final transient String NAMESPACE = "urn:swift:xsd:semt.014.002.02";
 
     public MxSemt01400202() {
         super();
@@ -83,21 +86,6 @@ public class MxSemt01400202
     public MxSemt01400202 setIntraPosMvmntStsAdvc(IntraPositionMovementStatusAdviceV02Subset value) {
         this.intraPosMvmntStsAdvc = value;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -170,8 +158,23 @@ public class MxSemt01400202
      * @return
      *     a new instance of MxSemt01400202
      */
-    public final static MxSemt01400202 fromJson(String json) {
+    public static final MxSemt01400202 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSemt01400202 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

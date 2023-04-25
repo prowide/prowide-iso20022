@@ -180,8 +180,8 @@ public class LossBearing2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the othr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the othr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -195,10 +195,12 @@ public class LossBearing2 {
      * {@link OtherTargetMarketLossBearing1 }
      * 
      * 
+     * @return
+     *     The value of the othr property.
      */
     public List<OtherTargetMarketLossBearing1> getOthr() {
         if (othr == null) {
-            othr = new ArrayList<OtherTargetMarketLossBearing1>();
+            othr = new ArrayList<>();
         }
         return this.othr;
     }

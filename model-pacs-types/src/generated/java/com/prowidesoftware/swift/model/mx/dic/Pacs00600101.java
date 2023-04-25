@@ -22,8 +22,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * The PaymentCancellationRequest message can be used in domestic and cross-border scenarios.
  * The PaymentCancellationRequest message refers to the original instruction(s) by means of references only or by means of references and a set of elements from the original instruction.
  * The PaymentCancellationRequest message exchanged between agents is identified in the schema as follows: 
- * urn: iso: std: iso: 20022: tech: xsd: pacs.006.001.01
-.
+ * urn: iso: std: iso: 20022: tech: xsd: pacs.006.001.01.
  * 
  * 
  * 
@@ -99,8 +98,8 @@ public class Pacs00600101 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the txInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the txInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -114,10 +113,12 @@ public class Pacs00600101 {
      * {@link PaymentTransactionInformation3 }
      * 
      * 
+     * @return
+     *     The value of the txInf property.
      */
     public List<PaymentTransactionInformation3> getTxInf() {
         if (txInf == null) {
-            txInf = new ArrayList<PaymentTransactionInformation3>();
+            txInf = new ArrayList<>();
         }
         return this.txInf;
     }

@@ -2,13 +2,16 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.swift.model.mx.dic.*;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -30,13 +33,13 @@ public class MxSeev00400102
 
     @XmlElement(name = "MtgInstr", required = true)
     protected MeetingInstructionV02 mtgInstr;
-    public final static transient String BUSINESS_PROCESS = "seev";
-    public final static transient int FUNCTIONALITY = 4;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 2;
+    public static final transient String BUSINESS_PROCESS = "seev";
+    public static final transient int FUNCTIONALITY = 4;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 2;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {AddressType2Code.class, AlternateFinancialInstrumentIdentification1 .class, AttendanceCard1 .class, CurrencyAndAmount.class, DeliveryPlace1Code.class, GenericIdentification1 .class, GenericIdentification4 .class, GenericIdentification5 .class, HoldingBalance4 .class, IndividualPerson13 .class, Instruction1 .class, LongPostalAddress2Choice.class, MeetingInstructionV02 .class, MeetingReference3 .class, MeetingType2Code.class, MeetingTypeClassification1Code.class, MessageIdentification1 .class, MxSeev00400102 .class, NameAndAddress5 .class, NameAndAddress9 .class, PartyIdentification3 .class, PartyIdentification9Choice.class, PersonIdentification2 .class, PostalAddress1 .class, Proxy2 .class, ProxyType2Code.class, Quantity1Code.class, SafekeepingAccount3 .class, SafekeepingPlace1Code.class, SafekeepingPlaceAsCodeAndPartyIdentification.class, SafekeepingPlaceFormatChoice.class, SecuritiesEntryType2Code.class, SecurityIdentification3 .class, SpecificInstructionRequest1 .class, SubAccount2 .class, UnitOrFaceAmountOrCodeChoice.class, Vote1Choice.class, Vote3 .class, Vote4 .class, VoteDetails1 .class, VoteInstruction2Code.class, VoteInstructionAtMeeting1Code.class, VoteInstructionForMeetingResolution1 .class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:seev.004.001.02";
+    public static final transient Class[] _classes = new Class[] {AddressType2Code.class, AlternateFinancialInstrumentIdentification1 .class, AttendanceCard1 .class, CurrencyAndAmount.class, DeliveryPlace1Code.class, GenericIdentification1 .class, GenericIdentification4 .class, GenericIdentification5 .class, HoldingBalance4 .class, IndividualPerson13 .class, Instruction1 .class, LongPostalAddress2Choice.class, MeetingInstructionV02 .class, MeetingReference3 .class, MeetingType2Code.class, MeetingTypeClassification1Code.class, MessageIdentification1 .class, MxSeev00400102 .class, NameAndAddress5 .class, NameAndAddress9 .class, PartyIdentification3 .class, PartyIdentification9Choice.class, PersonIdentification2 .class, PostalAddress1 .class, Proxy2 .class, ProxyType2Code.class, Quantity1Code.class, SafekeepingAccount3 .class, SafekeepingPlace1Code.class, SafekeepingPlaceAsCodeAndPartyIdentification.class, SafekeepingPlaceFormatChoice.class, SecuritiesEntryType2Code.class, SecurityIdentification3 .class, SpecificInstructionRequest1 .class, SubAccount2 .class, UnitOrFaceAmountOrCodeChoice.class, Vote1Choice.class, Vote3 .class, Vote4 .class, VoteDetails1 .class, VoteInstruction2Code.class, VoteInstructionAtMeeting1Code.class, VoteInstructionForMeetingResolution1 .class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:seev.004.001.02";
 
     public MxSeev00400102() {
         super();
@@ -83,21 +86,6 @@ public class MxSeev00400102
     public MxSeev00400102 setMtgInstr(MeetingInstructionV02 value) {
         this.mtgInstr = value;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -170,8 +158,23 @@ public class MxSeev00400102
      * @return
      *     a new instance of MxSeev00400102
      */
-    public final static MxSeev00400102 fromJson(String json) {
+    public static final MxSeev00400102 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSeev00400102 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

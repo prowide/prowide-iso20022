@@ -118,8 +118,8 @@ public class RegistrationParameters4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the certNb property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the certNb property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -133,10 +133,12 @@ public class RegistrationParameters4 {
      * {@link SecuritiesCertificate4 }
      * 
      * 
+     * @return
+     *     The value of the certNb property.
      */
     public List<SecuritiesCertificate4> getCertNb() {
         if (certNb == null) {
-            certNb = new ArrayList<SecuritiesCertificate4>();
+            certNb = new ArrayList<>();
         }
         return this.certNb;
     }

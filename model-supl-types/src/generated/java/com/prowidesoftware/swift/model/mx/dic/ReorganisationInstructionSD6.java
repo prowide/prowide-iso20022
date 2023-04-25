@@ -205,8 +205,8 @@ public class ReorganisationInstructionSD6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rjctnRsn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rjctnRsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -220,10 +220,12 @@ public class ReorganisationInstructionSD6 {
      * {@link InstructionRejectionReason1Code }
      * 
      * 
+     * @return
+     *     The value of the rjctnRsn property.
      */
     public List<InstructionRejectionReason1Code> getRjctnRsn() {
         if (rjctnRsn == null) {
-            rjctnRsn = new ArrayList<InstructionRejectionReason1Code>();
+            rjctnRsn = new ArrayList<>();
         }
         return this.rjctnRsn;
     }

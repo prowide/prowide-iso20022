@@ -9,18 +9,17 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for QuoteStatus2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="QuoteStatus2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="SYMB"/&gt;
- *     &lt;enumeration value="SECU"/&gt;
- *     &lt;enumeration value="UNSY"/&gt;
- *     &lt;enumeration value="ALLE"/&gt;
- *     &lt;enumeration value="NQUO"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="QuoteStatus2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="SYMB"/>
+ *     <enumeration value="SECU"/>
+ *     <enumeration value="UNSY"/>
+ *     <enumeration value="ALLE"/>
+ *     <enumeration value="NQUO"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "QuoteStatus2Code")

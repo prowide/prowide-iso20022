@@ -3,15 +3,15 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -93,39 +93,39 @@ public class FinancialInstrumentAttributes95 {
     @XmlElement(name = "CpnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar cpnDt;
+    protected Calendar cpnDt;
     @XmlElement(name = "XpryDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar xpryDt;
+    protected Calendar xpryDt;
     @XmlElement(name = "FltgRateFxgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar fltgRateFxgDt;
+    protected Calendar fltgRateFxgDt;
     @XmlElement(name = "MtrtyDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar mtrtyDt;
+    protected Calendar mtrtyDt;
     @XmlElement(name = "IsseDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar isseDt;
+    protected Calendar isseDt;
     @XmlElement(name = "NxtCllblDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar nxtCllblDt;
+    protected Calendar nxtCllblDt;
     @XmlElement(name = "PutblDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar putblDt;
+    protected Calendar putblDt;
     @XmlElement(name = "DtdDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar dtdDt;
+    protected Calendar dtdDt;
     @XmlElement(name = "FrstPmtDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar frstPmtDt;
+    protected Calendar frstPmtDt;
     @XmlElement(name = "PrvsFctr")
     protected BigDecimal prvsFctr;
     @XmlElement(name = "CurFctr")
@@ -429,7 +429,7 @@ public class FinancialInstrumentAttributes95 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getCpnDt() {
+    public Calendar getCpnDt() {
         return cpnDt;
     }
 
@@ -441,7 +441,7 @@ public class FinancialInstrumentAttributes95 {
      *     {@link String }
      *     
      */
-    public FinancialInstrumentAttributes95 setCpnDt(XMLGregorianCalendar value) {
+    public FinancialInstrumentAttributes95 setCpnDt(Calendar value) {
         this.cpnDt = value;
         return this;
     }
@@ -454,7 +454,7 @@ public class FinancialInstrumentAttributes95 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getXpryDt() {
+    public Calendar getXpryDt() {
         return xpryDt;
     }
 
@@ -466,7 +466,7 @@ public class FinancialInstrumentAttributes95 {
      *     {@link String }
      *     
      */
-    public FinancialInstrumentAttributes95 setXpryDt(XMLGregorianCalendar value) {
+    public FinancialInstrumentAttributes95 setXpryDt(Calendar value) {
         this.xpryDt = value;
         return this;
     }
@@ -479,7 +479,7 @@ public class FinancialInstrumentAttributes95 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getFltgRateFxgDt() {
+    public Calendar getFltgRateFxgDt() {
         return fltgRateFxgDt;
     }
 
@@ -491,7 +491,7 @@ public class FinancialInstrumentAttributes95 {
      *     {@link String }
      *     
      */
-    public FinancialInstrumentAttributes95 setFltgRateFxgDt(XMLGregorianCalendar value) {
+    public FinancialInstrumentAttributes95 setFltgRateFxgDt(Calendar value) {
         this.fltgRateFxgDt = value;
         return this;
     }
@@ -504,7 +504,7 @@ public class FinancialInstrumentAttributes95 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getMtrtyDt() {
+    public Calendar getMtrtyDt() {
         return mtrtyDt;
     }
 
@@ -516,7 +516,7 @@ public class FinancialInstrumentAttributes95 {
      *     {@link String }
      *     
      */
-    public FinancialInstrumentAttributes95 setMtrtyDt(XMLGregorianCalendar value) {
+    public FinancialInstrumentAttributes95 setMtrtyDt(Calendar value) {
         this.mtrtyDt = value;
         return this;
     }
@@ -529,7 +529,7 @@ public class FinancialInstrumentAttributes95 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getIsseDt() {
+    public Calendar getIsseDt() {
         return isseDt;
     }
 
@@ -541,7 +541,7 @@ public class FinancialInstrumentAttributes95 {
      *     {@link String }
      *     
      */
-    public FinancialInstrumentAttributes95 setIsseDt(XMLGregorianCalendar value) {
+    public FinancialInstrumentAttributes95 setIsseDt(Calendar value) {
         this.isseDt = value;
         return this;
     }
@@ -554,7 +554,7 @@ public class FinancialInstrumentAttributes95 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getNxtCllblDt() {
+    public Calendar getNxtCllblDt() {
         return nxtCllblDt;
     }
 
@@ -566,7 +566,7 @@ public class FinancialInstrumentAttributes95 {
      *     {@link String }
      *     
      */
-    public FinancialInstrumentAttributes95 setNxtCllblDt(XMLGregorianCalendar value) {
+    public FinancialInstrumentAttributes95 setNxtCllblDt(Calendar value) {
         this.nxtCllblDt = value;
         return this;
     }
@@ -579,7 +579,7 @@ public class FinancialInstrumentAttributes95 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getPutblDt() {
+    public Calendar getPutblDt() {
         return putblDt;
     }
 
@@ -591,7 +591,7 @@ public class FinancialInstrumentAttributes95 {
      *     {@link String }
      *     
      */
-    public FinancialInstrumentAttributes95 setPutblDt(XMLGregorianCalendar value) {
+    public FinancialInstrumentAttributes95 setPutblDt(Calendar value) {
         this.putblDt = value;
         return this;
     }
@@ -604,7 +604,7 @@ public class FinancialInstrumentAttributes95 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDtdDt() {
+    public Calendar getDtdDt() {
         return dtdDt;
     }
 
@@ -616,7 +616,7 @@ public class FinancialInstrumentAttributes95 {
      *     {@link String }
      *     
      */
-    public FinancialInstrumentAttributes95 setDtdDt(XMLGregorianCalendar value) {
+    public FinancialInstrumentAttributes95 setDtdDt(Calendar value) {
         this.dtdDt = value;
         return this;
     }
@@ -629,7 +629,7 @@ public class FinancialInstrumentAttributes95 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getFrstPmtDt() {
+    public Calendar getFrstPmtDt() {
         return frstPmtDt;
     }
 
@@ -641,7 +641,7 @@ public class FinancialInstrumentAttributes95 {
      *     {@link String }
      *     
      */
-    public FinancialInstrumentAttributes95 setFrstPmtDt(XMLGregorianCalendar value) {
+    public FinancialInstrumentAttributes95 setFrstPmtDt(Calendar value) {
         this.frstPmtDt = value;
         return this;
     }
@@ -877,8 +877,8 @@ public class FinancialInstrumentAttributes95 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the qtyBrkdwn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the qtyBrkdwn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -892,10 +892,12 @@ public class FinancialInstrumentAttributes95 {
      * {@link QuantityBreakdown33 }
      * 
      * 
+     * @return
+     *     The value of the qtyBrkdwn property.
      */
     public List<QuantityBreakdown33> getQtyBrkdwn() {
         if (qtyBrkdwn == null) {
-            qtyBrkdwn = new ArrayList<QuantityBreakdown33>();
+            qtyBrkdwn = new ArrayList<>();
         }
         return this.qtyBrkdwn;
     }
@@ -1156,8 +1158,8 @@ public class FinancialInstrumentAttributes95 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the undrlygFinInstrmId property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the undrlygFinInstrmId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -1171,10 +1173,12 @@ public class FinancialInstrumentAttributes95 {
      * {@link SecurityIdentification32 }
      * 
      * 
+     * @return
+     *     The value of the undrlygFinInstrmId property.
      */
     public List<SecurityIdentification32> getUndrlygFinInstrmId() {
         if (undrlygFinInstrmId == null) {
-            undrlygFinInstrmId = new ArrayList<SecurityIdentification32>();
+            undrlygFinInstrmId = new ArrayList<>();
         }
         return this.undrlygFinInstrmId;
     }

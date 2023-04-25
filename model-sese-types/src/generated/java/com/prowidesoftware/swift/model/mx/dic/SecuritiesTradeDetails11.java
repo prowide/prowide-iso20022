@@ -227,8 +227,8 @@ public class SecuritiesTradeDetails11 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rptg property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rptg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -242,10 +242,12 @@ public class SecuritiesTradeDetails11 {
      * {@link Reporting3Choice }
      * 
      * 
+     * @return
+     *     The value of the rptg property.
      */
     public List<Reporting3Choice> getRptg() {
         if (rptg == null) {
-            rptg = new ArrayList<Reporting3Choice>();
+            rptg = new ArrayList<>();
         }
         return this.rptg;
     }
@@ -256,8 +258,8 @@ public class SecuritiesTradeDetails11 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the tradTxCond property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the tradTxCond property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -271,10 +273,12 @@ public class SecuritiesTradeDetails11 {
      * {@link TradeTransactionCondition2Choice }
      * 
      * 
+     * @return
+     *     The value of the tradTxCond property.
      */
     public List<TradeTransactionCondition2Choice> getTradTxCond() {
         if (tradTxCond == null) {
-            tradTxCond = new ArrayList<TradeTransactionCondition2Choice>();
+            tradTxCond = new ArrayList<>();
         }
         return this.tradTxCond;
     }

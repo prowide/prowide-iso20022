@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.sys.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -38,7 +38,7 @@ public class ReportCriteriaXsys01500101 {
     @XmlElement(name = "FrTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar frTm;
+    protected Calendar frTm;
     @XmlElement(name = "SnglMsgCrit")
     protected SingleMessageCriteria snglMsgCrit;
     @XmlElement(name = "MltplMsgCrit")
@@ -102,7 +102,7 @@ public class ReportCriteriaXsys01500101 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getFrTm() {
+    public Calendar getFrTm() {
         return frTm;
     }
 
@@ -114,7 +114,7 @@ public class ReportCriteriaXsys01500101 {
      *     {@link String }
      *     
      */
-    public ReportCriteriaXsys01500101 setFrTm(XMLGregorianCalendar value) {
+    public ReportCriteriaXsys01500101 setFrTm(Calendar value) {
         this.frTm = value;
         return this;
     }

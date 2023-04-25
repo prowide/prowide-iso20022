@@ -9,19 +9,18 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for Status3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="Status3Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CAND"/&gt;
- *     &lt;enumeration value="PACK"/&gt;
- *     &lt;enumeration value="NOIN"/&gt;
- *     &lt;enumeration value="COMP"/&gt;
- *     &lt;enumeration value="RCIS"/&gt;
- *     &lt;enumeration value="STIN"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="Status3Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CAND"/>
+ *     <enumeration value="PACK"/>
+ *     <enumeration value="NOIN"/>
+ *     <enumeration value="COMP"/>
+ *     <enumeration value="RCIS"/>
+ *     <enumeration value="STIN"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "Status3Code")

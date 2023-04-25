@@ -9,18 +9,17 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for LegalRestrictions2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="LegalRestrictions2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="JURO"/&gt;
- *     &lt;enumeration value="PPLA"/&gt;
- *     &lt;enumeration value="ACRI"/&gt;
- *     &lt;enumeration value="MARG"/&gt;
- *     &lt;enumeration value="PRIV"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="LegalRestrictions2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="JURO"/>
+ *     <enumeration value="PPLA"/>
+ *     <enumeration value="ACRI"/>
+ *     <enumeration value="MARG"/>
+ *     <enumeration value="PRIV"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "LegalRestrictions2Code")

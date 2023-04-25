@@ -34,8 +34,8 @@ public class InputChannelListXsys01900101 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the inptChnlDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the inptChnlDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -49,10 +49,12 @@ public class InputChannelListXsys01900101 {
      * {@link InputChannelDetailsXsys01900101 }
      * 
      * 
+     * @return
+     *     The value of the inptChnlDtls property.
      */
     public List<InputChannelDetailsXsys01900101> getInptChnlDtls() {
         if (inptChnlDtls == null) {
-            inptChnlDtls = new ArrayList<InputChannelDetailsXsys01900101>();
+            inptChnlDtls = new ArrayList<>();
         }
         return this.inptChnlDtls;
     }

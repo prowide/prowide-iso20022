@@ -206,8 +206,8 @@ public class FinancingAgreementItem1Tsin01200101 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the grnt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the grnt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -221,10 +221,12 @@ public class FinancingAgreementItem1Tsin01200101 {
      * {@link GuaranteeDetails1Tsin01200101 }
      * 
      * 
+     * @return
+     *     The value of the grnt property.
      */
     public List<GuaranteeDetails1Tsin01200101> getGrnt() {
         if (grnt == null) {
-            grnt = new ArrayList<GuaranteeDetails1Tsin01200101>();
+            grnt = new ArrayList<>();
         }
         return this.grnt;
     }
@@ -285,8 +287,8 @@ public class FinancingAgreementItem1Tsin01200101 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the assoctdDoc property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the assoctdDoc property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -300,10 +302,12 @@ public class FinancingAgreementItem1Tsin01200101 {
      * {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
      * 
+     * @return
+     *     The value of the assoctdDoc property.
      */
     public List<JAXBElement<Object>> getAssoctdDoc() {
         if (assoctdDoc == null) {
-            assoctdDoc = new ArrayList<JAXBElement<Object>>();
+            assoctdDoc = new ArrayList<>();
         }
         return this.assoctdDoc;
     }
@@ -314,8 +318,8 @@ public class FinancingAgreementItem1Tsin01200101 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -329,10 +333,12 @@ public class FinancingAgreementItem1Tsin01200101 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the addtlInf property.
      */
     public List<String> getAddtlInf() {
         if (addtlInf == null) {
-            addtlInf = new ArrayList<String>();
+            addtlInf = new ArrayList<>();
         }
         return this.addtlInf;
     }

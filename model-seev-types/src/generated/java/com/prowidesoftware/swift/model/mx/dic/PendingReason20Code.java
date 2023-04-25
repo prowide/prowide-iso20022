@@ -9,29 +9,28 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for PendingReason20Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="PendingReason20Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ADEA"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="FULL"/&gt;
- *     &lt;enumeration value="MCER"/&gt;
- *     &lt;enumeration value="MONY"/&gt;
- *     &lt;enumeration value="LACK"/&gt;
- *     &lt;enumeration value="LATE"/&gt;
- *     &lt;enumeration value="DQUA"/&gt;
- *     &lt;enumeration value="PENR"/&gt;
- *     &lt;enumeration value="CERT"/&gt;
- *     &lt;enumeration value="DQCS"/&gt;
- *     &lt;enumeration value="ITAX"/&gt;
- *     &lt;enumeration value="NTAX"/&gt;
- *     &lt;enumeration value="MTAX"/&gt;
- *     &lt;enumeration value="SNAV"/&gt;
- *     &lt;enumeration value="BSTR"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="PendingReason20Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ADEA"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="FULL"/>
+ *     <enumeration value="MCER"/>
+ *     <enumeration value="MONY"/>
+ *     <enumeration value="LACK"/>
+ *     <enumeration value="LATE"/>
+ *     <enumeration value="DQUA"/>
+ *     <enumeration value="PENR"/>
+ *     <enumeration value="CERT"/>
+ *     <enumeration value="DQCS"/>
+ *     <enumeration value="ITAX"/>
+ *     <enumeration value="NTAX"/>
+ *     <enumeration value="MTAX"/>
+ *     <enumeration value="SNAV"/>
+ *     <enumeration value="BSTR"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "PendingReason20Code")

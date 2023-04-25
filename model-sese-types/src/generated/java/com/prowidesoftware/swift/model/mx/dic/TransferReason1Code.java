@@ -9,24 +9,23 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for TransferReason1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="TransferReason1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="TRAU"/&gt;
- *     &lt;enumeration value="TRAC"/&gt;
- *     &lt;enumeration value="TRAT"/&gt;
- *     &lt;enumeration value="TRAO"/&gt;
- *     &lt;enumeration value="TRAI"/&gt;
- *     &lt;enumeration value="TRAG"/&gt;
- *     &lt;enumeration value="TPLD"/&gt;
- *     &lt;enumeration value="TTDT"/&gt;
- *     &lt;enumeration value="TRPE"/&gt;
- *     &lt;enumeration value="TRAF"/&gt;
- *     &lt;enumeration value="TRAN"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="TransferReason1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="TRAU"/>
+ *     <enumeration value="TRAC"/>
+ *     <enumeration value="TRAT"/>
+ *     <enumeration value="TRAO"/>
+ *     <enumeration value="TRAI"/>
+ *     <enumeration value="TRAG"/>
+ *     <enumeration value="TPLD"/>
+ *     <enumeration value="TTDT"/>
+ *     <enumeration value="TRPE"/>
+ *     <enumeration value="TRAF"/>
+ *     <enumeration value="TRAN"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "TransferReason1Code")

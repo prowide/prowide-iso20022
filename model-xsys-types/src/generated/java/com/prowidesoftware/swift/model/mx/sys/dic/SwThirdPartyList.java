@@ -34,8 +34,8 @@ public class SwThirdPartyList {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the thirdPartyDN property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the thirdPartyDN property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -49,10 +49,12 @@ public class SwThirdPartyList {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the thirdPartyDN property.
      */
     public List<String> getThirdPartyDN() {
         if (thirdPartyDN == null) {
-            thirdPartyDN = new ArrayList<String>();
+            thirdPartyDN = new ArrayList<>();
         }
         return this.thirdPartyDN;
     }

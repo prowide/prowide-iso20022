@@ -2,14 +2,14 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -60,7 +60,7 @@ public class CorporateActionConfirmationSecuritiesMovementDetailsSD3 {
     @XmlElement(name = "MtrtyDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar mtrtyDt;
+    protected Calendar mtrtyDt;
     @XmlElement(name = "PstngDt")
     protected DateFormat28Choice pstngDt;
     @XmlElement(name = "TaxAdjstmntRate")
@@ -254,7 +254,7 @@ public class CorporateActionConfirmationSecuritiesMovementDetailsSD3 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getMtrtyDt() {
+    public Calendar getMtrtyDt() {
         return mtrtyDt;
     }
 
@@ -266,7 +266,7 @@ public class CorporateActionConfirmationSecuritiesMovementDetailsSD3 {
      *     {@link String }
      *     
      */
-    public CorporateActionConfirmationSecuritiesMovementDetailsSD3 setMtrtyDt(XMLGregorianCalendar value) {
+    public CorporateActionConfirmationSecuritiesMovementDetailsSD3 setMtrtyDt(Calendar value) {
         this.mtrtyDt = value;
         return this;
     }

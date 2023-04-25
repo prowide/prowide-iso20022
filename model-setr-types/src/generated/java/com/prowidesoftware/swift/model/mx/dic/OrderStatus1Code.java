@@ -9,28 +9,27 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for OrderStatus1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="OrderStatus1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="NEWW"/&gt;
- *     &lt;enumeration value="PARF"/&gt;
- *     &lt;enumeration value="FILL"/&gt;
- *     &lt;enumeration value="DONE"/&gt;
- *     &lt;enumeration value="CANC"/&gt;
- *     &lt;enumeration value="REPL"/&gt;
- *     &lt;enumeration value="CANP"/&gt;
- *     &lt;enumeration value="STOP"/&gt;
- *     &lt;enumeration value="REJT"/&gt;
- *     &lt;enumeration value="SUSP"/&gt;
- *     &lt;enumeration value="PENN"/&gt;
- *     &lt;enumeration value="CALC"/&gt;
- *     &lt;enumeration value="EXPI"/&gt;
- *     &lt;enumeration value="ACBI"/&gt;
- *     &lt;enumeration value="PENR"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="OrderStatus1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="NEWW"/>
+ *     <enumeration value="PARF"/>
+ *     <enumeration value="FILL"/>
+ *     <enumeration value="DONE"/>
+ *     <enumeration value="CANC"/>
+ *     <enumeration value="REPL"/>
+ *     <enumeration value="CANP"/>
+ *     <enumeration value="STOP"/>
+ *     <enumeration value="REJT"/>
+ *     <enumeration value="SUSP"/>
+ *     <enumeration value="PENN"/>
+ *     <enumeration value="CALC"/>
+ *     <enumeration value="EXPI"/>
+ *     <enumeration value="ACBI"/>
+ *     <enumeration value="PENR"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "OrderStatus1Code")

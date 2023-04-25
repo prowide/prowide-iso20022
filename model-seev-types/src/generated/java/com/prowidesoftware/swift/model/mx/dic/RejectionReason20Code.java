@@ -9,18 +9,17 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for RejectionReason20Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="RejectionReason20Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="FAIL"/&gt;
- *     &lt;enumeration value="CASA"/&gt;
- *     &lt;enumeration value="CORR"/&gt;
- *     &lt;enumeration value="STAN"/&gt;
- *     &lt;enumeration value="NOHO"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="RejectionReason20Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="FAIL"/>
+ *     <enumeration value="CASA"/>
+ *     <enumeration value="CORR"/>
+ *     <enumeration value="STAN"/>
+ *     <enumeration value="NOHO"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "RejectionReason20Code")

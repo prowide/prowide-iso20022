@@ -9,23 +9,22 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for EventWorkflowStatus1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="EventWorkflowStatus1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="WSAP"/&gt;
- *     &lt;enumeration value="WSPA"/&gt;
- *     &lt;enumeration value="WSCA"/&gt;
- *     &lt;enumeration value="WSPN"/&gt;
- *     &lt;enumeration value="WSCT"/&gt;
- *     &lt;enumeration value="WSIN"/&gt;
- *     &lt;enumeration value="WSPD"/&gt;
- *     &lt;enumeration value="WSNS"/&gt;
- *     &lt;enumeration value="WSPS"/&gt;
- *     &lt;enumeration value="WSPC"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="EventWorkflowStatus1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="WSAP"/>
+ *     <enumeration value="WSPA"/>
+ *     <enumeration value="WSCA"/>
+ *     <enumeration value="WSPN"/>
+ *     <enumeration value="WSCT"/>
+ *     <enumeration value="WSIN"/>
+ *     <enumeration value="WSPD"/>
+ *     <enumeration value="WSNS"/>
+ *     <enumeration value="WSPS"/>
+ *     <enumeration value="WSPC"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "EventWorkflowStatus1Code")

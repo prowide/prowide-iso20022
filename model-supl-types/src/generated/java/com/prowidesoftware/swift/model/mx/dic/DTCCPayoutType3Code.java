@@ -9,22 +9,21 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for DTCCPayoutType3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="DTCCPayoutType3Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CAPG"/&gt;
- *     &lt;enumeration value="CASH"/&gt;
- *     &lt;enumeration value="DIVI"/&gt;
- *     &lt;enumeration value="INTR"/&gt;
- *     &lt;enumeration value="LTCG"/&gt;
- *     &lt;enumeration value="PREM"/&gt;
- *     &lt;enumeration value="PRPL"/&gt;
- *     &lt;enumeration value="ROCA"/&gt;
- *     &lt;enumeration value="STCG"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="DTCCPayoutType3Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CAPG"/>
+ *     <enumeration value="CASH"/>
+ *     <enumeration value="DIVI"/>
+ *     <enumeration value="INTR"/>
+ *     <enumeration value="LTCG"/>
+ *     <enumeration value="PREM"/>
+ *     <enumeration value="PRPL"/>
+ *     <enumeration value="ROCA"/>
+ *     <enumeration value="STCG"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "DTCCPayoutType3Code")

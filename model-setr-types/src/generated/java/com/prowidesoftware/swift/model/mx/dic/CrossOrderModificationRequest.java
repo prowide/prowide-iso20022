@@ -307,8 +307,8 @@ public class CrossOrderModificationRequest {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the undrlygFinInstrmDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the undrlygFinInstrmDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -322,10 +322,12 @@ public class CrossOrderModificationRequest {
      * {@link SecurityIdentification7 }
      * 
      * 
+     * @return
+     *     The value of the undrlygFinInstrmDtls property.
      */
     public List<SecurityIdentification7> getUndrlygFinInstrmDtls() {
         if (undrlygFinInstrmDtls == null) {
-            undrlygFinInstrmDtls = new ArrayList<SecurityIdentification7>();
+            undrlygFinInstrmDtls = new ArrayList<>();
         }
         return this.undrlygFinInstrmDtls;
     }
@@ -336,8 +338,8 @@ public class CrossOrderModificationRequest {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the undrlygFinInstrmAttrbts property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the undrlygFinInstrmAttrbts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -351,10 +353,12 @@ public class CrossOrderModificationRequest {
      * {@link FinancialInstrumentAttributes1 }
      * 
      * 
+     * @return
+     *     The value of the undrlygFinInstrmAttrbts property.
      */
     public List<FinancialInstrumentAttributes1> getUndrlygFinInstrmAttrbts() {
         if (undrlygFinInstrmAttrbts == null) {
-            undrlygFinInstrmAttrbts = new ArrayList<FinancialInstrumentAttributes1>();
+            undrlygFinInstrmAttrbts = new ArrayList<>();
         }
         return this.undrlygFinInstrmAttrbts;
     }
@@ -365,8 +369,8 @@ public class CrossOrderModificationRequest {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the undrlygStiptns property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the undrlygStiptns property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -380,10 +384,12 @@ public class CrossOrderModificationRequest {
      * {@link FinancialInstrumentStipulations }
      * 
      * 
+     * @return
+     *     The value of the undrlygStiptns property.
      */
     public List<FinancialInstrumentStipulations> getUndrlygStiptns() {
         if (undrlygStiptns == null) {
-            undrlygStiptns = new ArrayList<FinancialInstrumentStipulations>();
+            undrlygStiptns = new ArrayList<>();
         }
         return this.undrlygStiptns;
     }
@@ -394,8 +400,8 @@ public class CrossOrderModificationRequest {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the legGrpDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the legGrpDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -409,10 +415,12 @@ public class CrossOrderModificationRequest {
      * {@link InstrumentLeg2 }
      * 
      * 
+     * @return
+     *     The value of the legGrpDtls property.
      */
     public List<InstrumentLeg2> getLegGrpDtls() {
         if (legGrpDtls == null) {
-            legGrpDtls = new ArrayList<InstrumentLeg2>();
+            legGrpDtls = new ArrayList<>();
         }
         return this.legGrpDtls;
     }
@@ -598,8 +606,8 @@ public class CrossOrderModificationRequest {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the tradgPties property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the tradgPties property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -613,10 +621,12 @@ public class CrossOrderModificationRequest {
      * {@link Intermediary14 }
      * 
      * 
+     * @return
+     *     The value of the tradgPties property.
      */
     public List<Intermediary14> getTradgPties() {
         if (tradgPties == null) {
-            tradgPties = new ArrayList<Intermediary14>();
+            tradgPties = new ArrayList<>();
         }
         return this.tradgPties;
     }
@@ -627,8 +637,8 @@ public class CrossOrderModificationRequest {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cshPties property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cshPties property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -642,10 +652,12 @@ public class CrossOrderModificationRequest {
      * {@link CashParties1 }
      * 
      * 
+     * @return
+     *     The value of the cshPties property.
      */
     public List<CashParties1> getCshPties() {
         if (cshPties == null) {
-            cshPties = new ArrayList<CashParties1>();
+            cshPties = new ArrayList<>();
         }
         return this.cshPties;
     }

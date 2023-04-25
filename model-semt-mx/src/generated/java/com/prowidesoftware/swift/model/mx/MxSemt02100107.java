@@ -2,13 +2,16 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.swift.model.mx.dic.*;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -30,13 +33,13 @@ public class MxSemt02100107
 
     @XmlElement(name = "SctiesStmtQry", required = true)
     protected SecuritiesStatementQueryV07 sctiesStmtQry;
-    public final static transient String BUSINESS_PROCESS = "semt";
-    public final static transient int FUNCTIONALITY = 21;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 7;
+    public static final transient String BUSINESS_PROCESS = "semt";
+    public static final transient int FUNCTIONALITY = 21;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 7;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {AcknowledgementReason12Choice.class, AcknowledgementReason13Choice.class, AcknowledgementReason5Code.class, AdditionalQueryParameters11 .class, AffirmationStatus1Code.class, AffirmationStatus8Choice.class, AllocationSatus3Choice.class, AllocationStatus1Code.class, CancellationProcessingStatus1Code.class, CancellationProcessingStatus7Choice.class, CancellationReason20Choice.class, CancelledStatusReason12Code.class, CorporateActionEventProcessingStatus1Code.class, CorporateActionEventProcessingStatus3Choice.class, CorporateActionEventStage2Code.class, CorporateActionEventStage3Choice.class, DateAndDateTime2Choice.class, DateAndPeriod3Choice.class, DateTimePeriod1 .class, DeniedReason14Choice.class, DeniedReason7Code.class, DocumentNumber13 .class, DocumentNumber5Choice.class, EventFrequency4Code.class, FailingReason1Code.class, FailingReason9Choice.class, Frequency25Choice.class, GeneratedReason3Code.class, GeneratedReasons5Choice.class, GenericIdentification30 .class, GenericIdentification36 .class, IdentificationSource3Choice.class, InstructionProcessingStatus1Code.class, InstructionProcessingStatus23Choice.class, MatchingStatus1Code.class, MatchingStatus27Choice.class, MxSemt02100107 .class, OtherIdentification1 .class, PartyIdentification127Choice.class, PartyIdentification144 .class, PendingCancellationReasons4Choice.class, PendingProcessingReason11Choice.class, PendingProcessingReason1Code.class, PendingReason28Choice.class, PendingReason29Choice.class, PendingReason6Code.class, PendingReason7Code.class, PendingReason8Code.class, Period2 .class, Period7Choice.class, Reason16Choice.class, RegistrationProcessingStatus1Code.class, RegistrationProcessingStatus3Choice.class, RejectionReason22Choice.class, RejectionReason39Code.class, RepairReason11Choice.class, RepairReason6Code.class, ReplacementProcessingStatus1Code.class, ReplacementProcessingStatus8Choice.class, RepoCallAcknowledgementReason2Code.class, RepoCallRequestStatus1Code.class, RepoCallRequestStatus8Choice.class, ResponseStatus1Code.class, ResponseStatus5Choice.class, SecuritiesAccount19 .class, SecuritiesSettlementStatus2Code.class, SecuritiesStatementQueryV07 .class, SecuritiesStatementType1Code.class, SecurityIdentification19 .class, SettlementConditionModificationStatus1Code.class, SettlementConditionModificationStatus3Choice.class, SettlementStatus19Choice.class, Statement83 .class, StatementBasis1Code.class, StatementBasis7Choice.class, StatementType5Choice.class, StatementUpdateType1Code.class, Status19Choice.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, UnmatchedReason14Code.class, UnmatchedReason22Choice.class, UpdateType15Choice.class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:semt.021.001.07";
+    public static final transient Class[] _classes = new Class[] {AcknowledgementReason12Choice.class, AcknowledgementReason13Choice.class, AcknowledgementReason5Code.class, AdditionalQueryParameters11 .class, AffirmationStatus1Code.class, AffirmationStatus8Choice.class, AllocationSatus3Choice.class, AllocationStatus1Code.class, CancellationProcessingStatus1Code.class, CancellationProcessingStatus7Choice.class, CancellationReason20Choice.class, CancelledStatusReason12Code.class, CorporateActionEventProcessingStatus1Code.class, CorporateActionEventProcessingStatus3Choice.class, CorporateActionEventStage2Code.class, CorporateActionEventStage3Choice.class, DateAndDateTime2Choice.class, DateAndPeriod3Choice.class, DateTimePeriod1 .class, DeniedReason14Choice.class, DeniedReason7Code.class, DocumentNumber13 .class, DocumentNumber5Choice.class, EventFrequency4Code.class, FailingReason1Code.class, FailingReason9Choice.class, Frequency25Choice.class, GeneratedReason3Code.class, GeneratedReasons5Choice.class, GenericIdentification30 .class, GenericIdentification36 .class, IdentificationSource3Choice.class, InstructionProcessingStatus1Code.class, InstructionProcessingStatus23Choice.class, MatchingStatus1Code.class, MatchingStatus27Choice.class, MxSemt02100107 .class, OtherIdentification1 .class, PartyIdentification127Choice.class, PartyIdentification144 .class, PendingCancellationReasons4Choice.class, PendingProcessingReason11Choice.class, PendingProcessingReason1Code.class, PendingReason28Choice.class, PendingReason29Choice.class, PendingReason6Code.class, PendingReason7Code.class, PendingReason8Code.class, Period2 .class, Period7Choice.class, Reason16Choice.class, RegistrationProcessingStatus1Code.class, RegistrationProcessingStatus3Choice.class, RejectionReason22Choice.class, RejectionReason39Code.class, RepairReason11Choice.class, RepairReason6Code.class, ReplacementProcessingStatus1Code.class, ReplacementProcessingStatus8Choice.class, RepoCallAcknowledgementReason2Code.class, RepoCallRequestStatus1Code.class, RepoCallRequestStatus8Choice.class, ResponseStatus1Code.class, ResponseStatus5Choice.class, SecuritiesAccount19 .class, SecuritiesSettlementStatus2Code.class, SecuritiesStatementQueryV07 .class, SecuritiesStatementType1Code.class, SecurityIdentification19 .class, SettlementConditionModificationStatus1Code.class, SettlementConditionModificationStatus3Choice.class, SettlementStatus19Choice.class, Statement83 .class, StatementBasis1Code.class, StatementBasis7Choice.class, StatementType5Choice.class, StatementUpdateType1Code.class, Status19Choice.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, UnmatchedReason14Code.class, UnmatchedReason22Choice.class, UpdateType15Choice.class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:semt.021.001.07";
 
     public MxSemt02100107() {
         super();
@@ -83,21 +86,6 @@ public class MxSemt02100107
     public MxSemt02100107 setSctiesStmtQry(SecuritiesStatementQueryV07 value) {
         this.sctiesStmtQry = value;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -170,8 +158,23 @@ public class MxSemt02100107
      * @return
      *     a new instance of MxSemt02100107
      */
-    public final static MxSemt02100107 fromJson(String json) {
+    public static final MxSemt02100107 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSemt02100107 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

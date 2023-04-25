@@ -93,8 +93,8 @@ public class TrackerStatus1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the stsRsn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the stsRsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -108,10 +108,12 @@ public class TrackerStatus1 {
      * {@link PaymentStatusReason1 }
      * 
      * 
+     * @return
+     *     The value of the stsRsn property.
      */
     public List<PaymentStatusReason1> getStsRsn() {
         if (stsRsn == null) {
-            stsRsn = new ArrayList<PaymentStatusReason1>();
+            stsRsn = new ArrayList<>();
         }
         return this.stsRsn;
     }
@@ -122,8 +124,8 @@ public class TrackerStatus1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rjctRtrRsn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rjctRtrRsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -137,10 +139,12 @@ public class TrackerStatus1 {
      * {@link PaymentRejectReturnReason1 }
      * 
      * 
+     * @return
+     *     The value of the rjctRtrRsn property.
      */
     public List<PaymentRejectReturnReason1> getRjctRtrRsn() {
         if (rjctRtrRsn == null) {
-            rjctRtrRsn = new ArrayList<PaymentRejectReturnReason1>();
+            rjctRtrRsn = new ArrayList<>();
         }
         return this.rjctRtrRsn;
     }

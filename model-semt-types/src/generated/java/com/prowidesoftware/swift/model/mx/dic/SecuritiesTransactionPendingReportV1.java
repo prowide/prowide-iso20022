@@ -16,21 +16,15 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 /**
  * Scope
  * An account servicer sends a SecuritiesTransactionPendingReport to an account owner to provide, as at a specified time, the details of pending increases and decreases of holdings, for all or selected securities in a specified safekeeping account, for all or selected reasons why the transaction is pending. 
- * 
-The account servicer/owner relationship may be:
+ * The account servicer/owner relationship may be:
  * - a central securities depository or another settlement market infrastructure acting on behalf of their participants
  * - an agent (sub-custodian) acting on behalf of their global custodian customer, or 
  * - a custodian acting on behalf of an investment management institution or a broker/dealer.
- * 
-Usage
+ * Usage
  * The statement may also include future settlement or forward transactions which have become binding on the account owner.
- * 
-The message may also be used to: 
-
- * - re-send a message previously sent (the sub-function of the message is Duplicate) 
-
- * - provide a third party with a copy of a message for information (the sub-function of the message is Copy) 
-
+ * The message may also be used to: 
+ * - re-send a message previously sent (the sub-function of the message is Duplicate) 
+ * - provide a third party with a copy of a message for information (the sub-function of the message is Copy) 
  * - re-send to a third party a copy of a message for information (the sub-function of the message is Copy Duplicate).
  * ISO 15022 - 20022 Coexistence
  * This ISO 20022 message is reversed engineered from ISO 15022. Both standards will coexist for a certain number of years. Until this coexistence period ends, the usage of certain data types is restricted to ensure interoperability between ISO 15022 and 20022 users. Compliance to these rules is mandatory in a coexistence environment. The coexistence restrictions are described in a Textual Rule linked to the Message Items they concern. These coexistence textual rules are clearly identified as follows: “CoexistenceXxxxRule”.
@@ -202,8 +196,8 @@ public class SecuritiesTransactionPendingReportV1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sts property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -217,10 +211,12 @@ public class SecuritiesTransactionPendingReportV1 {
      * {@link StatusAndReason1 }
      * 
      * 
+     * @return
+     *     The value of the sts property.
      */
     public List<StatusAndReason1> getSts() {
         if (sts == null) {
-            sts = new ArrayList<StatusAndReason1>();
+            sts = new ArrayList<>();
         }
         return this.sts;
     }
@@ -231,8 +227,8 @@ public class SecuritiesTransactionPendingReportV1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the txs property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the txs property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -246,10 +242,12 @@ public class SecuritiesTransactionPendingReportV1 {
      * {@link Transaction8 }
      * 
      * 
+     * @return
+     *     The value of the txs property.
      */
     public List<Transaction8> getTxs() {
         if (txs == null) {
-            txs = new ArrayList<Transaction8>();
+            txs = new ArrayList<>();
         }
         return this.txs;
     }

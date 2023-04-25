@@ -9,32 +9,31 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for ConditionallyAcceptedStatusReason3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ConditionallyAcceptedStatusReason3Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="DOCC"/&gt;
- *     &lt;enumeration value="AWSM"/&gt;
- *     &lt;enumeration value="DUPL"/&gt;
- *     &lt;enumeration value="CRED"/&gt;
- *     &lt;enumeration value="BPID"/&gt;
- *     &lt;enumeration value="ERIS"/&gt;
- *     &lt;enumeration value="AMLD"/&gt;
- *     &lt;enumeration value="APPR"/&gt;
- *     &lt;enumeration value="AFUN"/&gt;
- *     &lt;enumeration value="BMIN"/&gt;
- *     &lt;enumeration value="BMTO"/&gt;
- *     &lt;enumeration value="INSU"/&gt;
- *     &lt;enumeration value="PRCT"/&gt;
- *     &lt;enumeration value="BMRA"/&gt;
- *     &lt;enumeration value="BMRV"/&gt;
- *     &lt;enumeration value="LOCK"/&gt;
- *     &lt;enumeration value="ILLI"/&gt;
- *     &lt;enumeration value="DISC"/&gt;
- *     &lt;enumeration value="STOP"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ConditionallyAcceptedStatusReason3Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="DOCC"/>
+ *     <enumeration value="AWSM"/>
+ *     <enumeration value="DUPL"/>
+ *     <enumeration value="CRED"/>
+ *     <enumeration value="BPID"/>
+ *     <enumeration value="ERIS"/>
+ *     <enumeration value="AMLD"/>
+ *     <enumeration value="APPR"/>
+ *     <enumeration value="AFUN"/>
+ *     <enumeration value="BMIN"/>
+ *     <enumeration value="BMTO"/>
+ *     <enumeration value="INSU"/>
+ *     <enumeration value="PRCT"/>
+ *     <enumeration value="BMRA"/>
+ *     <enumeration value="BMRV"/>
+ *     <enumeration value="LOCK"/>
+ *     <enumeration value="ILLI"/>
+ *     <enumeration value="DISC"/>
+ *     <enumeration value="STOP"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ConditionallyAcceptedStatusReason3Code")

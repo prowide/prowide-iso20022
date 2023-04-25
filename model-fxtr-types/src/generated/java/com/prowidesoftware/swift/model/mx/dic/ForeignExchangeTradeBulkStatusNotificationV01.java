@@ -66,8 +66,8 @@ public class ForeignExchangeTradeBulkStatusNotificationV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the tradData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the tradData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -81,10 +81,12 @@ public class ForeignExchangeTradeBulkStatusNotificationV01 {
      * {@link TradeData5 }
      * 
      * 
+     * @return
+     *     The value of the tradData property.
      */
     public List<TradeData5> getTradData() {
         if (tradData == null) {
-            tradData = new ArrayList<TradeData5>();
+            tradData = new ArrayList<>();
         }
         return this.tradData;
     }

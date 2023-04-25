@@ -232,8 +232,8 @@ public class SecuritiesBalanceAccountingReportV11 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the intrmyInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the intrmyInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -247,10 +247,12 @@ public class SecuritiesBalanceAccountingReportV11 {
      * {@link Intermediary44 }
      * 
      * 
+     * @return
+     *     The value of the intrmyInf property.
      */
     public List<Intermediary44> getIntrmyInf() {
         if (intrmyInf == null) {
-            intrmyInf = new ArrayList<Intermediary44>();
+            intrmyInf = new ArrayList<>();
         }
         return this.intrmyInf;
     }
@@ -261,8 +263,8 @@ public class SecuritiesBalanceAccountingReportV11 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the balForAcct property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the balForAcct property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -276,10 +278,12 @@ public class SecuritiesBalanceAccountingReportV11 {
      * {@link AggregateBalanceInformation40 }
      * 
      * 
+     * @return
+     *     The value of the balForAcct property.
      */
     public List<AggregateBalanceInformation40> getBalForAcct() {
         if (balForAcct == null) {
-            balForAcct = new ArrayList<AggregateBalanceInformation40>();
+            balForAcct = new ArrayList<>();
         }
         return this.balForAcct;
     }
@@ -290,8 +294,8 @@ public class SecuritiesBalanceAccountingReportV11 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the subAcctDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the subAcctDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -305,10 +309,12 @@ public class SecuritiesBalanceAccountingReportV11 {
      * {@link SubAccountIdentification65 }
      * 
      * 
+     * @return
+     *     The value of the subAcctDtls property.
      */
     public List<SubAccountIdentification65> getSubAcctDtls() {
         if (subAcctDtls == null) {
-            subAcctDtls = new ArrayList<SubAccountIdentification65>();
+            subAcctDtls = new ArrayList<>();
         }
         return this.subAcctDtls;
     }

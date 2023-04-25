@@ -2,13 +2,16 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.swift.model.mx.dic.*;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -30,13 +33,13 @@ public class MxSese03000205
 
     @XmlElement(name = "SctiesSttlmCondsModReq", required = true)
     protected SecuritiesSettlementConditionsModificationRequest002V05 sctiesSttlmCondsModReq;
-    public final static transient String BUSINESS_PROCESS = "sese";
-    public final static transient int FUNCTIONALITY = 30;
-    public final static transient int VARIANT = 2;
-    public final static transient int VERSION = 5;
+    public static final transient String BUSINESS_PROCESS = "sese";
+    public static final transient int FUNCTIONALITY = 30;
+    public static final transient int VARIANT = 2;
+    public static final transient int VERSION = 5;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {AcceptedReason6Choice.class, AcceptedStatus6Choice.class, AcceptedStatusReason6 .class, AcknowledgementReason8Code.class, AdditionalInformation10 .class, AutoBorrowing2Code.class, AutomaticBorrowing3Choice.class, CancellationReason18Choice.class, CancellationReason8 .class, CancelledStatus6Choice.class, CancelledStatusReason14Code.class, ClassificationType4Choice.class, DateAndDateTimeChoice.class, DocumentNumber3Choice.class, FinancialInstrumentQuantity15Choice.class, GenericIdentification18 .class, GenericIdentification24 .class, GenericIdentification25 .class, GenericIdentification34 .class, GenericIdentification51 .class, HoldIndicator5 .class, IdentificationSource4Choice.class, LinkageType1Code.class, LinkageType2Choice.class, Linkages28 .class, MatchingDenied2Choice.class, MatchingProcess1Code.class, MxSese03000205 .class, NameAndAddress12 .class, NoReasonCode.class, OtherIdentification2 .class, PartyIdentification51Choice.class, PartyIdentification62Choice.class, PartyIdentificationAndAccount68 .class, PriorityNumeric2Choice.class, ProcessingPosition4Code.class, ProcessingPosition6Choice.class, ProcessingStatus41Choice.class, References17 .class, References31Choice.class, Registration2Code.class, Registration8Choice.class, RegistrationReason4 .class, RejectedStatus12Choice.class, RejectionReason19Choice.class, RejectionReason21 .class, RejectionReason40Code.class, RequestDetails14 .class, SecuritiesAccount17 .class, SecuritiesRTGS2Choice.class, SecuritiesSettlementConditionsModificationRequest002V05 .class, SecuritiesTransactionType5Code.class, SecurityIdentification15 .class, SettlementTransactionCondition5Code.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, UnilateralSplit2Choice.class };
-    public final static transient String NAMESPACE = "urn:swift:xsd:sese.030.002.05";
+    public static final transient Class[] _classes = new Class[] {AcceptedReason6Choice.class, AcceptedStatus6Choice.class, AcceptedStatusReason6 .class, AcknowledgementReason8Code.class, AdditionalInformation10 .class, AutoBorrowing2Code.class, AutomaticBorrowing3Choice.class, CancellationReason18Choice.class, CancellationReason8 .class, CancelledStatus6Choice.class, CancelledStatusReason14Code.class, ClassificationType4Choice.class, DateAndDateTimeChoice.class, DocumentNumber3Choice.class, FinancialInstrumentQuantity15Choice.class, GenericIdentification18 .class, GenericIdentification24 .class, GenericIdentification25 .class, GenericIdentification34 .class, GenericIdentification51 .class, HoldIndicator5 .class, IdentificationSource4Choice.class, LinkageType1Code.class, LinkageType2Choice.class, Linkages28 .class, MatchingDenied2Choice.class, MatchingProcess1Code.class, MxSese03000205 .class, NameAndAddress12 .class, NoReasonCode.class, OtherIdentification2 .class, PartyIdentification51Choice.class, PartyIdentification62Choice.class, PartyIdentificationAndAccount68 .class, PriorityNumeric2Choice.class, ProcessingPosition4Code.class, ProcessingPosition6Choice.class, ProcessingStatus41Choice.class, References17 .class, References31Choice.class, Registration2Code.class, Registration8Choice.class, RegistrationReason4 .class, RejectedStatus12Choice.class, RejectionReason19Choice.class, RejectionReason21 .class, RejectionReason40Code.class, RequestDetails14 .class, SecuritiesAccount17 .class, SecuritiesRTGS2Choice.class, SecuritiesSettlementConditionsModificationRequest002V05 .class, SecuritiesTransactionType5Code.class, SecurityIdentification15 .class, SettlementTransactionCondition5Code.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, UnilateralSplit2Choice.class };
+    public static final transient String NAMESPACE = "urn:swift:xsd:sese.030.002.05";
 
     public MxSese03000205() {
         super();
@@ -83,21 +86,6 @@ public class MxSese03000205
     public MxSese03000205 setSctiesSttlmCondsModReq(SecuritiesSettlementConditionsModificationRequest002V05 value) {
         this.sctiesSttlmCondsModReq = value;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -170,8 +158,23 @@ public class MxSese03000205
      * @return
      *     a new instance of MxSese03000205
      */
-    public final static MxSese03000205 fromJson(String json) {
+    public static final MxSese03000205 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSese03000205 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

@@ -10,16 +10,15 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for DisplayMethod1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="DisplayMethod1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="INIT"/&gt;
- *     &lt;enumeration value="NEW1"/&gt;
- *     &lt;enumeration value="RAND"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="DisplayMethod1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="INIT"/>
+ *     <enumeration value="NEW1"/>
+ *     <enumeration value="RAND"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "DisplayMethod1Code")

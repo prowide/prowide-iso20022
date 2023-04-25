@@ -41,8 +41,8 @@ public class FinancialCard1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cdtLmtAmt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cdtLmtAmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -56,10 +56,12 @@ public class FinancialCard1 {
      * {@link CurrencyAndAmount }
      * 
      * 
+     * @return
+     *     The value of the cdtLmtAmt property.
      */
     public List<CurrencyAndAmount> getCdtLmtAmt() {
         if (cdtLmtAmt == null) {
-            cdtLmtAmt = new ArrayList<CurrencyAndAmount>();
+            cdtLmtAmt = new ArrayList<>();
         }
         return this.cdtLmtAmt;
     }
@@ -70,8 +72,8 @@ public class FinancialCard1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cdtAvlblAmt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cdtAvlblAmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -85,10 +87,12 @@ public class FinancialCard1 {
      * {@link CurrencyAndAmount }
      * 
      * 
+     * @return
+     *     The value of the cdtAvlblAmt property.
      */
     public List<CurrencyAndAmount> getCdtAvlblAmt() {
         if (cdtAvlblAmt == null) {
-            cdtAvlblAmt = new ArrayList<CurrencyAndAmount>();
+            cdtAvlblAmt = new ArrayList<>();
         }
         return this.cdtAvlblAmt;
     }

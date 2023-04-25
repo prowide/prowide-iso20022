@@ -10,23 +10,22 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for HoldingAccountLevel1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="HoldingAccountLevel1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="SAFE"/&gt;
- *     &lt;enumeration value="LVL1"/&gt;
- *     &lt;enumeration value="LVL2"/&gt;
- *     &lt;enumeration value="LVL3"/&gt;
- *     &lt;enumeration value="LVL4"/&gt;
- *     &lt;enumeration value="LVL5"/&gt;
- *     &lt;enumeration value="LVL6"/&gt;
- *     &lt;enumeration value="LVL7"/&gt;
- *     &lt;enumeration value="LVL8"/&gt;
- *     &lt;enumeration value="LVL9"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="HoldingAccountLevel1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="SAFE"/>
+ *     <enumeration value="LVL1"/>
+ *     <enumeration value="LVL2"/>
+ *     <enumeration value="LVL3"/>
+ *     <enumeration value="LVL4"/>
+ *     <enumeration value="LVL5"/>
+ *     <enumeration value="LVL6"/>
+ *     <enumeration value="LVL7"/>
+ *     <enumeration value="LVL8"/>
+ *     <enumeration value="LVL9"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "HoldingAccountLevel1Code")

@@ -9,17 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for PenaltyCalculationMethod1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="PenaltyCalculationMethod1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="BOTH"/&gt;
- *     &lt;enumeration value="CASH"/&gt;
- *     &lt;enumeration value="MIXE"/&gt;
- *     &lt;enumeration value="SECU"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="PenaltyCalculationMethod1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="BOTH"/>
+ *     <enumeration value="CASH"/>
+ *     <enumeration value="MIXE"/>
+ *     <enumeration value="SECU"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "PenaltyCalculationMethod1Code")

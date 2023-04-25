@@ -57,8 +57,8 @@ public class SwitchOrderConfirmation1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the swtchExctnDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the swtchExctnDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -72,10 +72,12 @@ public class SwitchOrderConfirmation1 {
      * {@link SwitchExecution4 }
      * 
      * 
+     * @return
+     *     The value of the swtchExctnDtls property.
      */
     public List<SwitchExecution4> getSwtchExctnDtls() {
         if (swtchExctnDtls == null) {
-            swtchExctnDtls = new ArrayList<SwitchExecution4>();
+            swtchExctnDtls = new ArrayList<>();
         }
         return this.swtchExctnDtls;
     }
@@ -86,8 +88,8 @@ public class SwitchOrderConfirmation1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the xtnsn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the xtnsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -101,10 +103,12 @@ public class SwitchOrderConfirmation1 {
      * {@link Extension1 }
      * 
      * 
+     * @return
+     *     The value of the xtnsn property.
      */
     public List<Extension1> getXtnsn() {
         if (xtnsn == null) {
-            xtnsn = new ArrayList<Extension1>();
+            xtnsn = new ArrayList<>();
         }
         return this.xtnsn;
     }

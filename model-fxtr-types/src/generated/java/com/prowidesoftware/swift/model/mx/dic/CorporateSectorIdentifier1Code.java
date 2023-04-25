@@ -9,21 +9,20 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for CorporateSectorIdentifier1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CorporateSectorIdentifier1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="L"/&gt;
- *     &lt;enumeration value="A"/&gt;
- *     &lt;enumeration value="C"/&gt;
- *     &lt;enumeration value="I"/&gt;
- *     &lt;enumeration value="F"/&gt;
- *     &lt;enumeration value="O"/&gt;
- *     &lt;enumeration value="R"/&gt;
- *     &lt;enumeration value="U"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CorporateSectorIdentifier1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="L"/>
+ *     <enumeration value="A"/>
+ *     <enumeration value="C"/>
+ *     <enumeration value="I"/>
+ *     <enumeration value="F"/>
+ *     <enumeration value="O"/>
+ *     <enumeration value="R"/>
+ *     <enumeration value="U"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CorporateSectorIdentifier1Code")

@@ -9,19 +9,18 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for CorporateActionNarrative1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CorporateActionNarrative1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="TAXE"/&gt;
- *     &lt;enumeration value="REGI"/&gt;
- *     &lt;enumeration value="WTRC"/&gt;
- *     &lt;enumeration value="RFMC"/&gt;
- *     &lt;enumeration value="PAUT"/&gt;
- *     &lt;enumeration value="CTIN"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CorporateActionNarrative1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="TAXE"/>
+ *     <enumeration value="REGI"/>
+ *     <enumeration value="WTRC"/>
+ *     <enumeration value="RFMC"/>
+ *     <enumeration value="PAUT"/>
+ *     <enumeration value="CTIN"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CorporateActionNarrative1Code")

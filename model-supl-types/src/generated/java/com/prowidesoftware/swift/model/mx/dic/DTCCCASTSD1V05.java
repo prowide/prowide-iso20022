@@ -68,8 +68,8 @@ public class DTCCCASTSD1V05 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ttlInstdBalOptnBalDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ttlInstdBalOptnBalDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -83,10 +83,12 @@ public class DTCCCASTSD1V05 {
      * {@link CorporateActionInstructedBalanceOptionBalanceSD3 }
      * 
      * 
+     * @return
+     *     The value of the ttlInstdBalOptnBalDtls property.
      */
     public List<CorporateActionInstructedBalanceOptionBalanceSD3> getTtlInstdBalOptnBalDtls() {
         if (ttlInstdBalOptnBalDtls == null) {
-            ttlInstdBalOptnBalDtls = new ArrayList<CorporateActionInstructedBalanceOptionBalanceSD3>();
+            ttlInstdBalOptnBalDtls = new ArrayList<>();
         }
         return this.ttlInstdBalOptnBalDtls;
     }
@@ -97,8 +99,8 @@ public class DTCCCASTSD1V05 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ttlInstdBalOptnInstrDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ttlInstdBalOptnInstrDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -112,10 +114,12 @@ public class DTCCCASTSD1V05 {
      * {@link CorporateActionInstructedBalanceOptionInstructionSD4 }
      * 
      * 
+     * @return
+     *     The value of the ttlInstdBalOptnInstrDtls property.
      */
     public List<CorporateActionInstructedBalanceOptionInstructionSD4> getTtlInstdBalOptnInstrDtls() {
         if (ttlInstdBalOptnInstrDtls == null) {
-            ttlInstdBalOptnInstrDtls = new ArrayList<CorporateActionInstructedBalanceOptionInstructionSD4>();
+            ttlInstdBalOptnInstrDtls = new ArrayList<>();
         }
         return this.ttlInstdBalOptnInstrDtls;
     }
@@ -126,8 +130,8 @@ public class DTCCCASTSD1V05 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ttlInstdBalOptnPrtctInstrDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ttlInstdBalOptnPrtctInstrDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -141,10 +145,12 @@ public class DTCCCASTSD1V05 {
      * {@link CorporateActionInstructedBalanceOptionProtectInstructionSD4 }
      * 
      * 
+     * @return
+     *     The value of the ttlInstdBalOptnPrtctInstrDtls property.
      */
     public List<CorporateActionInstructedBalanceOptionProtectInstructionSD4> getTtlInstdBalOptnPrtctInstrDtls() {
         if (ttlInstdBalOptnPrtctInstrDtls == null) {
-            ttlInstdBalOptnPrtctInstrDtls = new ArrayList<CorporateActionInstructedBalanceOptionProtectInstructionSD4>();
+            ttlInstdBalOptnPrtctInstrDtls = new ArrayList<>();
         }
         return this.ttlInstdBalOptnPrtctInstrDtls;
     }

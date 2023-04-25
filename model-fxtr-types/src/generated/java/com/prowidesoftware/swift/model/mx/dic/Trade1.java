@@ -2,15 +2,15 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -49,7 +49,7 @@ public class Trade1 {
     @XmlElement(name = "DtAndTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar dtAndTm;
+    protected Calendar dtAndTm;
     @XmlElement(name = "FXTradPdct")
     @XmlSchemaType(name = "string")
     protected UnderlyingProductIdentifier1Code fxTradPdct;
@@ -76,7 +76,7 @@ public class Trade1 {
     @XmlElement(name = "TxTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar txTm;
+    protected Calendar txTm;
     @XmlElement(name = "FXDtls")
     protected Trade3 fxDtls;
     @XmlElement(name = "SwpLeg")
@@ -119,7 +119,7 @@ public class Trade1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDtAndTm() {
+    public Calendar getDtAndTm() {
         return dtAndTm;
     }
 
@@ -131,7 +131,7 @@ public class Trade1 {
      *     {@link String }
      *     
      */
-    public Trade1 setDtAndTm(XMLGregorianCalendar value) {
+    public Trade1 setDtAndTm(Calendar value) {
         this.dtAndTm = value;
         return this;
     }
@@ -369,7 +369,7 @@ public class Trade1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getTxTm() {
+    public Calendar getTxTm() {
         return txTm;
     }
 
@@ -381,7 +381,7 @@ public class Trade1 {
      *     {@link String }
      *     
      */
-    public Trade1 setTxTm(XMLGregorianCalendar value) {
+    public Trade1 setTxTm(Calendar value) {
         this.txTm = value;
         return this;
     }
@@ -417,8 +417,8 @@ public class Trade1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the swpLeg property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the swpLeg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -432,10 +432,12 @@ public class Trade1 {
      * {@link InstrumentLeg6 }
      * 
      * 
+     * @return
+     *     The value of the swpLeg property.
      */
     public List<InstrumentLeg6> getSwpLeg() {
         if (swpLeg == null) {
-            swpLeg = new ArrayList<InstrumentLeg6>();
+            swpLeg = new ArrayList<>();
         }
         return this.swpLeg;
     }

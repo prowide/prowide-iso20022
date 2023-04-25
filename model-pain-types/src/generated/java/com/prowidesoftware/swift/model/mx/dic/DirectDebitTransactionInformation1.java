@@ -409,8 +409,8 @@ public class DirectDebitTransactionInformation1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rgltryRptg property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rgltryRptg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -424,10 +424,12 @@ public class DirectDebitTransactionInformation1 {
      * {@link RegulatoryReporting2 }
      * 
      * 
+     * @return
+     *     The value of the rgltryRptg property.
      */
     public List<RegulatoryReporting2> getRgltryRptg() {
         if (rgltryRptg == null) {
-            rgltryRptg = new ArrayList<RegulatoryReporting2>();
+            rgltryRptg = new ArrayList<>();
         }
         return this.rgltryRptg;
     }
@@ -463,8 +465,8 @@ public class DirectDebitTransactionInformation1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rltdRmtInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rltdRmtInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -478,10 +480,12 @@ public class DirectDebitTransactionInformation1 {
      * {@link RemittanceLocation1 }
      * 
      * 
+     * @return
+     *     The value of the rltdRmtInf property.
      */
     public List<RemittanceLocation1> getRltdRmtInf() {
         if (rltdRmtInf == null) {
-            rltdRmtInf = new ArrayList<RemittanceLocation1>();
+            rltdRmtInf = new ArrayList<>();
         }
         return this.rltdRmtInf;
     }

@@ -2,15 +2,15 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -87,7 +87,7 @@ public class Baseline3 {
     @XmlElement(name = "LatstMtchDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar latstMtchDt;
+    protected Calendar latstMtchDt;
     @XmlElement(name = "ComrclDataSetReqrd", required = true)
     protected RequiredSubmission2 comrclDataSetReqrd;
     @XmlElement(name = "TrnsprtDataSetReqrd")
@@ -282,8 +282,8 @@ public class Baseline3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the buyrSdSubmitgBk property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the buyrSdSubmitgBk property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -297,10 +297,12 @@ public class Baseline3 {
      * {@link BICIdentification1 }
      * 
      * 
+     * @return
+     *     The value of the buyrSdSubmitgBk property.
      */
     public List<BICIdentification1> getBuyrSdSubmitgBk() {
         if (buyrSdSubmitgBk == null) {
-            buyrSdSubmitgBk = new ArrayList<BICIdentification1>();
+            buyrSdSubmitgBk = new ArrayList<>();
         }
         return this.buyrSdSubmitgBk;
     }
@@ -311,8 +313,8 @@ public class Baseline3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sellrSdSubmitgBk property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sellrSdSubmitgBk property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -326,10 +328,12 @@ public class Baseline3 {
      * {@link BICIdentification1 }
      * 
      * 
+     * @return
+     *     The value of the sellrSdSubmitgBk property.
      */
     public List<BICIdentification1> getSellrSdSubmitgBk() {
         if (sellrSdSubmitgBk == null) {
-            sellrSdSubmitgBk = new ArrayList<BICIdentification1>();
+            sellrSdSubmitgBk = new ArrayList<>();
         }
         return this.sellrSdSubmitgBk;
     }
@@ -440,8 +444,8 @@ public class Baseline3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the pmtTerms property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the pmtTerms property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -455,10 +459,12 @@ public class Baseline3 {
      * {@link PaymentTerms1 }
      * 
      * 
+     * @return
+     *     The value of the pmtTerms property.
      */
     public List<PaymentTerms1> getPmtTerms() {
         if (pmtTerms == null) {
-            pmtTerms = new ArrayList<PaymentTerms1>();
+            pmtTerms = new ArrayList<>();
         }
         return this.pmtTerms;
     }
@@ -494,8 +500,8 @@ public class Baseline3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the pmtOblgtn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the pmtOblgtn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -509,10 +515,12 @@ public class Baseline3 {
      * {@link PaymentObligation1 }
      * 
      * 
+     * @return
+     *     The value of the pmtOblgtn property.
      */
     public List<PaymentObligation1> getPmtOblgtn() {
         if (pmtOblgtn == null) {
-            pmtOblgtn = new ArrayList<PaymentObligation1>();
+            pmtOblgtn = new ArrayList<>();
         }
         return this.pmtOblgtn;
     }
@@ -525,7 +533,7 @@ public class Baseline3 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getLatstMtchDt() {
+    public Calendar getLatstMtchDt() {
         return latstMtchDt;
     }
 
@@ -537,7 +545,7 @@ public class Baseline3 {
      *     {@link String }
      *     
      */
-    public Baseline3 setLatstMtchDt(XMLGregorianCalendar value) {
+    public Baseline3 setLatstMtchDt(Calendar value) {
         this.latstMtchDt = value;
         return this;
     }
@@ -623,8 +631,8 @@ public class Baseline3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the certDataSetReqrd property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the certDataSetReqrd property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -638,10 +646,12 @@ public class Baseline3 {
      * {@link RequiredSubmission4 }
      * 
      * 
+     * @return
+     *     The value of the certDataSetReqrd property.
      */
     public List<RequiredSubmission4> getCertDataSetReqrd() {
         if (certDataSetReqrd == null) {
-            certDataSetReqrd = new ArrayList<RequiredSubmission4>();
+            certDataSetReqrd = new ArrayList<>();
         }
         return this.certDataSetReqrd;
     }
@@ -652,8 +662,8 @@ public class Baseline3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the othrCertDataSetReqrd property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the othrCertDataSetReqrd property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -667,10 +677,12 @@ public class Baseline3 {
      * {@link RequiredSubmission5 }
      * 
      * 
+     * @return
+     *     The value of the othrCertDataSetReqrd property.
      */
     public List<RequiredSubmission5> getOthrCertDataSetReqrd() {
         if (othrCertDataSetReqrd == null) {
-            othrCertDataSetReqrd = new ArrayList<RequiredSubmission5>();
+            othrCertDataSetReqrd = new ArrayList<>();
         }
         return this.othrCertDataSetReqrd;
     }

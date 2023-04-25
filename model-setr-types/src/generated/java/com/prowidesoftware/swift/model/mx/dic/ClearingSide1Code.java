@@ -9,17 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for ClearingSide1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ClearingSide1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="BUYI"/&gt;
- *     &lt;enumeration value="SELL"/&gt;
- *     &lt;enumeration value="LEND"/&gt;
- *     &lt;enumeration value="BORW"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ClearingSide1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="BUYI"/>
+ *     <enumeration value="SELL"/>
+ *     <enumeration value="LEND"/>
+ *     <enumeration value="BORW"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ClearingSide1Code")

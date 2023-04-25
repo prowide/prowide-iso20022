@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -37,7 +37,7 @@ public class CutOff1 {
     @XmlElement(name = "CutOffTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected XMLGregorianCalendar cutOffTm;
+    protected Calendar cutOffTm;
     @XmlElement(name = "ValDtOffset", required = true)
     protected String valDtOffset;
 
@@ -99,7 +99,7 @@ public class CutOff1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getCutOffTm() {
+    public Calendar getCutOffTm() {
         return cutOffTm;
     }
 
@@ -111,7 +111,7 @@ public class CutOff1 {
      *     {@link String }
      *     
      */
-    public CutOff1 setCutOffTm(XMLGregorianCalendar value) {
+    public CutOff1 setCutOffTm(Calendar value) {
         this.cutOffTm = value;
         return this;
     }

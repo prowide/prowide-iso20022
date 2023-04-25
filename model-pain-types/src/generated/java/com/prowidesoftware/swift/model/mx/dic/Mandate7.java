@@ -85,8 +85,8 @@ public class Mandate7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the mndtId property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the mndtId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -100,10 +100,12 @@ public class Mandate7 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the mndtId property.
      */
     public List<String> getMndtId() {
         if (mndtId == null) {
-            mndtId = new ArrayList<String>();
+            mndtId = new ArrayList<>();
         }
         return this.mndtId;
     }
@@ -489,8 +491,8 @@ public class Mandate7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rfrdDoc property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rfrdDoc property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -504,10 +506,12 @@ public class Mandate7 {
      * {@link ReferredDocumentInformation6 }
      * 
      * 
+     * @return
+     *     The value of the rfrdDoc property.
      */
     public List<ReferredDocumentInformation6> getRfrdDoc() {
         if (rfrdDoc == null) {
-            rfrdDoc = new ArrayList<ReferredDocumentInformation6>();
+            rfrdDoc = new ArrayList<>();
         }
         return this.rfrdDoc;
     }
@@ -518,8 +522,8 @@ public class Mandate7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -533,10 +537,12 @@ public class Mandate7 {
      * {@link SupplementaryData1 }
      * 
      * 
+     * @return
+     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<SupplementaryData1>();
+            splmtryData = new ArrayList<>();
         }
         return this.splmtryData;
     }

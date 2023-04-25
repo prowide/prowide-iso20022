@@ -52,8 +52,8 @@ public class LocalMarketAnnex3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ctry property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ctry property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -67,10 +67,12 @@ public class LocalMarketAnnex3 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the ctry property.
      */
     public List<String> getCtry() {
         if (ctry == null) {
-            ctry = new ArrayList<String>();
+            ctry = new ArrayList<>();
         }
         return this.ctry;
     }
@@ -181,8 +183,8 @@ public class LocalMarketAnnex3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cshSttlmDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cshSttlmDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -196,10 +198,12 @@ public class LocalMarketAnnex3 {
      * {@link CashAccount202 }
      * 
      * 
+     * @return
+     *     The value of the cshSttlmDtls property.
      */
     public List<CashAccount202> getCshSttlmDtls() {
         if (cshSttlmDtls == null) {
-            cshSttlmDtls = new ArrayList<CashAccount202>();
+            cshSttlmDtls = new ArrayList<>();
         }
         return this.cshSttlmDtls;
     }
@@ -210,8 +214,8 @@ public class LocalMarketAnnex3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -225,10 +229,12 @@ public class LocalMarketAnnex3 {
      * {@link AdditionalInformation15 }
      * 
      * 
+     * @return
+     *     The value of the addtlInf property.
      */
     public List<AdditionalInformation15> getAddtlInf() {
         if (addtlInf == null) {
-            addtlInf = new ArrayList<AdditionalInformation15>();
+            addtlInf = new ArrayList<>();
         }
         return this.addtlInf;
     }

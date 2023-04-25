@@ -86,8 +86,8 @@ public class OrderCancellationStatusReportV03 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rltdRef property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rltdRef property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -101,10 +101,12 @@ public class OrderCancellationStatusReportV03 {
      * {@link AdditionalReference3 }
      * 
      * 
+     * @return
+     *     The value of the rltdRef property.
      */
     public List<AdditionalReference3> getRltdRef() {
         if (rltdRef == null) {
-            rltdRef = new ArrayList<AdditionalReference3>();
+            rltdRef = new ArrayList<>();
         }
         return this.rltdRef;
     }
@@ -115,8 +117,8 @@ public class OrderCancellationStatusReportV03 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the othrRef property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the othrRef property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -130,10 +132,12 @@ public class OrderCancellationStatusReportV03 {
      * {@link AdditionalReference3 }
      * 
      * 
+     * @return
+     *     The value of the othrRef property.
      */
     public List<AdditionalReference3> getOthrRef() {
         if (othrRef == null) {
-            othrRef = new ArrayList<AdditionalReference3>();
+            othrRef = new ArrayList<>();
         }
         return this.othrRef;
     }
@@ -169,8 +173,8 @@ public class OrderCancellationStatusReportV03 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the indvCxlStsRpt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the indvCxlStsRpt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -184,10 +188,12 @@ public class OrderCancellationStatusReportV03 {
      * {@link IndividualOrderStatusAndReason4 }
      * 
      * 
+     * @return
+     *     The value of the indvCxlStsRpt property.
      */
     public List<IndividualOrderStatusAndReason4> getIndvCxlStsRpt() {
         if (indvCxlStsRpt == null) {
-            indvCxlStsRpt = new ArrayList<IndividualOrderStatusAndReason4>();
+            indvCxlStsRpt = new ArrayList<>();
         }
         return this.indvCxlStsRpt;
     }
@@ -198,8 +204,8 @@ public class OrderCancellationStatusReportV03 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the xtnsn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the xtnsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -213,10 +219,12 @@ public class OrderCancellationStatusReportV03 {
      * {@link Extension1 }
      * 
      * 
+     * @return
+     *     The value of the xtnsn property.
      */
     public List<Extension1> getXtnsn() {
         if (xtnsn == null) {
-            xtnsn = new ArrayList<Extension1>();
+            xtnsn = new ArrayList<>();
         }
         return this.xtnsn;
     }

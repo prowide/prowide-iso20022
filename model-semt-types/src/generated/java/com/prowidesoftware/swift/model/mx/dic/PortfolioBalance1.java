@@ -37,8 +37,8 @@ public class PortfolioBalance1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the summryBal property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the summryBal property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -52,10 +52,12 @@ public class PortfolioBalance1 {
      * {@link BalanceDetails5 }
      * 
      * 
+     * @return
+     *     The value of the summryBal property.
      */
     public List<BalanceDetails5> getSummryBal() {
         if (summryBal == null) {
-            summryBal = new ArrayList<BalanceDetails5>();
+            summryBal = new ArrayList<>();
         }
         return this.summryBal;
     }
@@ -66,8 +68,8 @@ public class PortfolioBalance1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dtldBal property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the dtldBal property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -81,10 +83,12 @@ public class PortfolioBalance1 {
      * {@link BalanceDetails6 }
      * 
      * 
+     * @return
+     *     The value of the dtldBal property.
      */
     public List<BalanceDetails6> getDtldBal() {
         if (dtldBal == null) {
-            dtldBal = new ArrayList<BalanceDetails6>();
+            dtldBal = new ArrayList<>();
         }
         return this.dtldBal;
     }

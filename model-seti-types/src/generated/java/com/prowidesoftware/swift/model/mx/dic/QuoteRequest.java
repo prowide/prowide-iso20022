@@ -99,8 +99,8 @@ public class QuoteRequest {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the qtReqDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the qtReqDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -114,10 +114,12 @@ public class QuoteRequest {
      * {@link QuoteRequest1 }
      * 
      * 
+     * @return
+     *     The value of the qtReqDtls property.
      */
     public List<QuoteRequest1> getQtReqDtls() {
         if (qtReqDtls == null) {
-            qtReqDtls = new ArrayList<QuoteRequest1>();
+            qtReqDtls = new ArrayList<>();
         }
         return this.qtReqDtls;
     }
@@ -128,8 +130,8 @@ public class QuoteRequest {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ordr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ordr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -143,10 +145,12 @@ public class QuoteRequest {
      * {@link Order2 }
      * 
      * 
+     * @return
+     *     The value of the ordr property.
      */
     public List<Order2> getOrdr() {
         if (ordr == null) {
-            ordr = new ArrayList<Order2>();
+            ordr = new ArrayList<>();
         }
         return this.ordr;
     }
@@ -157,8 +161,8 @@ public class QuoteRequest {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sttlm property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sttlm property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -172,10 +176,12 @@ public class QuoteRequest {
      * {@link SecuritiesSettlement1 }
      * 
      * 
+     * @return
+     *     The value of the sttlm property.
      */
     public List<SecuritiesSettlement1> getSttlm() {
         if (sttlm == null) {
-            sttlm = new ArrayList<SecuritiesSettlement1>();
+            sttlm = new ArrayList<>();
         }
         return this.sttlm;
     }

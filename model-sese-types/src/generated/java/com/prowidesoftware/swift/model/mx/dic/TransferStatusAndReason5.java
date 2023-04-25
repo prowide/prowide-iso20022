@@ -3,15 +3,15 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -53,11 +53,11 @@ public class TransferStatusAndReason5 {
     @XmlElement(name = "TradDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar tradDt;
+    protected Calendar tradDt;
     @XmlElement(name = "SndOutDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar sndOutDt;
+    protected Calendar sndOutDt;
     @XmlElement(name = "TtlUnitsNb")
     protected BigDecimal ttlUnitsNb;
     @XmlElement(name = "AvrgPric")
@@ -200,7 +200,7 @@ public class TransferStatusAndReason5 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getTradDt() {
+    public Calendar getTradDt() {
         return tradDt;
     }
 
@@ -212,7 +212,7 @@ public class TransferStatusAndReason5 {
      *     {@link String }
      *     
      */
-    public TransferStatusAndReason5 setTradDt(XMLGregorianCalendar value) {
+    public TransferStatusAndReason5 setTradDt(Calendar value) {
         this.tradDt = value;
         return this;
     }
@@ -225,7 +225,7 @@ public class TransferStatusAndReason5 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getSndOutDt() {
+    public Calendar getSndOutDt() {
         return sndOutDt;
     }
 
@@ -237,7 +237,7 @@ public class TransferStatusAndReason5 {
      *     {@link String }
      *     
      */
-    public TransferStatusAndReason5 setSndOutDt(XMLGregorianCalendar value) {
+    public TransferStatusAndReason5 setSndOutDt(Calendar value) {
         this.sndOutDt = value;
         return this;
     }
@@ -298,8 +298,8 @@ public class TransferStatusAndReason5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the unitsDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the unitsDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -313,10 +313,12 @@ public class TransferStatusAndReason5 {
      * {@link Unit8 }
      * 
      * 
+     * @return
+     *     The value of the unitsDtls property.
      */
     public List<Unit8> getUnitsDtls() {
         if (unitsDtls == null) {
-            unitsDtls = new ArrayList<Unit8>();
+            unitsDtls = new ArrayList<>();
         }
         return this.unitsDtls;
     }

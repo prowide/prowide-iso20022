@@ -16,28 +16,20 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 /**
  * Scope
  * An account owner sends a SecuritiesSettlementConditionsModificationRequest to an account servicer to request the modification of a processing indicator or another non-matching information. 
- * 
-The account owner/servicer relationship may be:
+ * The account owner/servicer relationship may be:
  * - a central securities depository participant which has an account with a central securities depository.
- * 
-It could also be:
+ * It could also be:
  * - a global custodian which has an account with its local agent (sub-custodian), or 
  * - an investment management institution which manage a fund account opened at a custodian, or
  * - a broker which has an account with a custodian, or
  * - a central securities depository which has an account with a custodian, another central securities depository or another settlement market infrastructure.
- * 
-Usage
- * The message may also be used to: 
-
- * - re-send a message previously sent (the sub-function of the message is Duplicate) 
-
- * - provide a third party with a copy of a message for information (the sub-function of the message is Copy) 
-
+ * Usage
+ * The message may also be used to: 
+ * - re-send a message previously sent (the sub-function of the message is Duplicate) 
+ * - provide a third party with a copy of a message for information (the sub-function of the message is Copy) 
  * - re-send to a third party a copy of a message for information (the sub-function of the message is Copy Duplicate).
- * 
-This message cannot be used to request the modification of trade or event details.
- * 
-The use of AdditionalInformation and its fields must be pre-agreed between account servicer and
+ * This message cannot be used to request the modification of trade or event details.
+ * The use of AdditionalInformation and its fields must be pre-agreed between account servicer and
  * account owner. The fields in that sequence cannot be used to amend a trade or event detail unless authorised
  * by country market practice.
  * ISO 15022 - 20022 Coexistence
@@ -157,8 +149,8 @@ public class SecuritiesSettlementConditionsModificationRequestV1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the reqDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the reqDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -172,10 +164,12 @@ public class SecuritiesSettlementConditionsModificationRequestV1 {
      * {@link RequestDetails1 }
      * 
      * 
+     * @return
+     *     The value of the reqDtls property.
      */
     public List<RequestDetails1> getReqDtls() {
         if (reqDtls == null) {
-            reqDtls = new ArrayList<RequestDetails1>();
+            reqDtls = new ArrayList<>();
         }
         return this.reqDtls;
     }
@@ -186,8 +180,8 @@ public class SecuritiesSettlementConditionsModificationRequestV1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -201,10 +195,12 @@ public class SecuritiesSettlementConditionsModificationRequestV1 {
      * {@link AdditionalInformation3 }
      * 
      * 
+     * @return
+     *     The value of the addtlInf property.
      */
     public List<AdditionalInformation3> getAddtlInf() {
         if (addtlInf == null) {
-            addtlInf = new ArrayList<AdditionalInformation3>();
+            addtlInf = new ArrayList<>();
         }
         return this.addtlInf;
     }
@@ -265,8 +261,8 @@ public class SecuritiesSettlementConditionsModificationRequestV1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the xtnsn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the xtnsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -280,10 +276,12 @@ public class SecuritiesSettlementConditionsModificationRequestV1 {
      * {@link Extension2 }
      * 
      * 
+     * @return
+     *     The value of the xtnsn property.
      */
     public List<Extension2> getXtnsn() {
         if (xtnsn == null) {
-            xtnsn = new ArrayList<Extension2>();
+            xtnsn = new ArrayList<>();
         }
         return this.xtnsn;
     }

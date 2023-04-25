@@ -62,8 +62,8 @@ public class AccountIdentification43Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the acctsList property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the acctsList property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -77,10 +77,12 @@ public class AccountIdentification43Choice {
      * {@link AccountIdentification48 }
      * 
      * 
+     * @return
+     *     The value of the acctsList property.
      */
     public List<AccountIdentification48> getAcctsList() {
         if (acctsList == null) {
-            acctsList = new ArrayList<AccountIdentification48>();
+            acctsList = new ArrayList<>();
         }
         return this.acctsList;
     }

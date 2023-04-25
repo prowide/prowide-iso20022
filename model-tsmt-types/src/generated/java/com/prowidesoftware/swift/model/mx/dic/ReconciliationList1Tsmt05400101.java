@@ -3,7 +3,9 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.JAXBElement;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -13,8 +15,6 @@ import jakarta.xml.bind.annotation.XmlIDREF;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -51,7 +51,7 @@ public class ReconciliationList1Tsmt05400101 {
     @XmlElement(name = "Dt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar dt;
+    protected Calendar dt;
     @XmlElementRef(name = "RltdDoc", namespace = "urn:iso:std:iso:20022:tech:xsd:tsmt.054.001.01", type = JAXBElement.class, required = false)
     protected List<JAXBElement<Object>> rltdDoc;
     @XmlElement(name = "Rcpt", required = true)
@@ -71,7 +71,7 @@ public class ReconciliationList1Tsmt05400101 {
     @XmlElement(name = "PmtDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar pmtDt;
+    protected Calendar pmtDt;
     @XmlElement(name = "PmtTerms", required = true)
     protected PaymentTerms6 pmtTerms;
     @XmlElement(name = "PmtAmt", required = true)
@@ -97,7 +97,7 @@ public class ReconciliationList1Tsmt05400101 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDt() {
+    public Calendar getDt() {
         return dt;
     }
 
@@ -109,7 +109,7 @@ public class ReconciliationList1Tsmt05400101 {
      *     {@link String }
      *     
      */
-    public ReconciliationList1Tsmt05400101 setDt(XMLGregorianCalendar value) {
+    public ReconciliationList1Tsmt05400101 setDt(Calendar value) {
         this.dt = value;
         return this;
     }
@@ -120,8 +120,8 @@ public class ReconciliationList1Tsmt05400101 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rltdDoc property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rltdDoc property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -135,10 +135,12 @@ public class ReconciliationList1Tsmt05400101 {
      * {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
      * 
+     * @return
+     *     The value of the rltdDoc property.
      */
     public List<JAXBElement<Object>> getRltdDoc() {
         if (rltdDoc == null) {
-            rltdDoc = new ArrayList<JAXBElement<Object>>();
+            rltdDoc = new ArrayList<>();
         }
         return this.rltdDoc;
     }
@@ -276,7 +278,7 @@ public class ReconciliationList1Tsmt05400101 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getPmtDt() {
+    public Calendar getPmtDt() {
         return pmtDt;
     }
 
@@ -288,7 +290,7 @@ public class ReconciliationList1Tsmt05400101 {
      *     {@link String }
      *     
      */
-    public ReconciliationList1Tsmt05400101 setPmtDt(XMLGregorianCalendar value) {
+    public ReconciliationList1Tsmt05400101 setPmtDt(Calendar value) {
         this.pmtDt = value;
         return this;
     }
@@ -349,8 +351,8 @@ public class ReconciliationList1Tsmt05400101 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the itm property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the itm property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -364,10 +366,12 @@ public class ReconciliationList1Tsmt05400101 {
      * {@link FinancialItem1 }
      * 
      * 
+     * @return
+     *     The value of the itm property.
      */
     public List<FinancialItem1> getItm() {
         if (itm == null) {
-            itm = new ArrayList<FinancialItem1>();
+            itm = new ArrayList<>();
         }
         return this.itm;
     }
@@ -428,8 +432,8 @@ public class ReconciliationList1Tsmt05400101 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the assoctdDoc property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the assoctdDoc property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -443,10 +447,12 @@ public class ReconciliationList1Tsmt05400101 {
      * {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
      * 
+     * @return
+     *     The value of the assoctdDoc property.
      */
     public List<JAXBElement<Object>> getAssoctdDoc() {
         if (assoctdDoc == null) {
-            assoctdDoc = new ArrayList<JAXBElement<Object>>();
+            assoctdDoc = new ArrayList<>();
         }
         return this.assoctdDoc;
     }

@@ -91,8 +91,8 @@ public class CreditorInvoice3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ctrctFrmtTp property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ctrctFrmtTp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -106,10 +106,12 @@ public class CreditorInvoice3 {
      * {@link DocumentFormat2Choice }
      * 
      * 
+     * @return
+     *     The value of the ctrctFrmtTp property.
      */
     public List<DocumentFormat2Choice> getCtrctFrmtTp() {
         if (ctrctFrmtTp == null) {
-            ctrctFrmtTp = new ArrayList<DocumentFormat2Choice>();
+            ctrctFrmtTp = new ArrayList<>();
         }
         return this.ctrctFrmtTp;
     }
@@ -120,8 +122,8 @@ public class CreditorInvoice3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ctrctRefTp property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ctrctRefTp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -135,10 +137,12 @@ public class CreditorInvoice3 {
      * {@link DocumentType1Choice }
      * 
      * 
+     * @return
+     *     The value of the ctrctRefTp property.
      */
     public List<DocumentType1Choice> getCtrctRefTp() {
         if (ctrctRefTp == null) {
-            ctrctRefTp = new ArrayList<DocumentType1Choice>();
+            ctrctRefTp = new ArrayList<>();
         }
         return this.ctrctRefTp;
     }

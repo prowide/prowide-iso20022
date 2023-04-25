@@ -178,8 +178,8 @@ public class MeetingVoteExecutionConfirmationV03 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the voteInstrs property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the voteInstrs property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -193,10 +193,12 @@ public class MeetingVoteExecutionConfirmationV03 {
      * {@link DetailedInstructionStatus9 }
      * 
      * 
+     * @return
+     *     The value of the voteInstrs property.
      */
     public List<DetailedInstructionStatus9> getVoteInstrs() {
         if (voteInstrs == null) {
-            voteInstrs = new ArrayList<DetailedInstructionStatus9>();
+            voteInstrs = new ArrayList<>();
         }
         return this.voteInstrs;
     }

@@ -16,34 +16,23 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 /**
  * Scope
  * An account servicer sends a SecuritiesBalanceAccountingReport to an account owner to provide, at a moment in time, valuations of the portfolio together with details of each financial instrument holding.
- * 
-The account servicer/owner relationship may be:
+ * The account servicer/owner relationship may be:
  * - an accounting agent acting on behalf of an account owner, or
  * - a transfer agent acting on behalf of a fund manager or an account owner's designated agent.
- * 
-Usage
+ * Usage
  * The message should be sent at a frequency agreed bi-laterally between the account servicer and the account owner.
  * The message can be sent either audited or un-audited and may be provided on a trade date, contractual or settlement date basis. 
- * 
-This message can only be used to list the holdings of a single (master) account. However, it is possible to break down these holdings into one or several sub-accounts. Therefore, the message can be used to either specify holdings at
+ * This message can only be used to list the holdings of a single (master) account. However, it is possible to break down these holdings into one or several sub-accounts. Therefore, the message can be used to either specify holdings at
  * - the main account level, or, 
  * - the sub-account level.
- * 
-This message can be used to report where the financial instruments are safe-kept, physically or notionally. If a security is held in more than one safekeeping place, this can also be indicated. 
- * 
-The SecuritiesBalanceAccountingReport message should not be used for trading purposes.
- * 
-There may be one or more intermediary parties, eg, an intermediary or a concentrator between the account owner and account servicer.
- * 
-The message may also be used to: 
-
- * - re-send a message previously sent (the sub-function of the message is Duplicate) 
-
- * - provide a third party with a copy of a message for information (the sub-function of the message is Copy) 
-
+ * This message can be used to report where the financial instruments are safe-kept, physically or notionally. If a security is held in more than one safekeeping place, this can also be indicated. 
+ * The SecuritiesBalanceAccountingReport message should not be used for trading purposes.
+ * There may be one or more intermediary parties, eg, an intermediary or a concentrator between the account owner and account servicer.
+ * The message may also be used to: 
+ * - re-send a message previously sent (the sub-function of the message is Duplicate) 
+ * - provide a third party with a copy of a message for information (the sub-function of the message is Copy) 
  * - re-send to a third party a copy of a message for information (the sub-function of the message is Copy Duplicate).
- * 
-ISO 15022 - 20022 Coexistence
+ * ISO 15022 - 20022 Coexistence
  * This ISO 20022 message is reversed engineered from ISO 15022. Both standards will coexist for a certain number of years. Until this coexistence period ends, the usage of certain data types is restricted to ensure interoperability between ISO 15022 and 20022 users. Compliance to these rules is mandatory in a coexistence environment. The coexistence restrictions are described in a Textual Rule linked to the Message Items they concern. These coexistence textual rules are clearly identified as follows: “CoexistenceXxxxRule”.
  * 
  * 
@@ -250,8 +239,8 @@ public class SecuritiesBalanceAccountingReportV1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the intrmyInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the intrmyInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -265,10 +254,12 @@ public class SecuritiesBalanceAccountingReportV1 {
      * {@link Intermediary2 }
      * 
      * 
+     * @return
+     *     The value of the intrmyInf property.
      */
     public List<Intermediary2> getIntrmyInf() {
         if (intrmyInf == null) {
-            intrmyInf = new ArrayList<Intermediary2>();
+            intrmyInf = new ArrayList<>();
         }
         return this.intrmyInf;
     }
@@ -279,8 +270,8 @@ public class SecuritiesBalanceAccountingReportV1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the balForAcct property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the balForAcct property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -294,10 +285,12 @@ public class SecuritiesBalanceAccountingReportV1 {
      * {@link AggregateBalanceInformation8 }
      * 
      * 
+     * @return
+     *     The value of the balForAcct property.
      */
     public List<AggregateBalanceInformation8> getBalForAcct() {
         if (balForAcct == null) {
-            balForAcct = new ArrayList<AggregateBalanceInformation8>();
+            balForAcct = new ArrayList<>();
         }
         return this.balForAcct;
     }
@@ -308,8 +301,8 @@ public class SecuritiesBalanceAccountingReportV1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the subAcctDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the subAcctDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -323,10 +316,12 @@ public class SecuritiesBalanceAccountingReportV1 {
      * {@link SubAccountIdentification10 }
      * 
      * 
+     * @return
+     *     The value of the subAcctDtls property.
      */
     public List<SubAccountIdentification10> getSubAcctDtls() {
         if (subAcctDtls == null) {
-            subAcctDtls = new ArrayList<SubAccountIdentification10>();
+            subAcctDtls = new ArrayList<>();
         }
         return this.subAcctDtls;
     }

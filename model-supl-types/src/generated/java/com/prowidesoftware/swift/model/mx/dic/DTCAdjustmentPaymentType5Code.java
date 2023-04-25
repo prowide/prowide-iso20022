@@ -10,21 +10,20 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for DTCAdjustmentPaymentType5Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="DTCAdjustmentPaymentType5Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="RRCD"/&gt;
- *     &lt;enumeration value="RRDR"/&gt;
- *     &lt;enumeration value="FAIL"/&gt;
- *     &lt;enumeration value="MISC"/&gt;
- *     &lt;enumeration value="RRD1"/&gt;
- *     &lt;enumeration value="RRD2"/&gt;
- *     &lt;enumeration value="REPO"/&gt;
- *     &lt;enumeration value="STOK"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="DTCAdjustmentPaymentType5Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="RRCD"/>
+ *     <enumeration value="RRDR"/>
+ *     <enumeration value="FAIL"/>
+ *     <enumeration value="MISC"/>
+ *     <enumeration value="RRD1"/>
+ *     <enumeration value="RRD2"/>
+ *     <enumeration value="REPO"/>
+ *     <enumeration value="STOK"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "DTCAdjustmentPaymentType5Code")

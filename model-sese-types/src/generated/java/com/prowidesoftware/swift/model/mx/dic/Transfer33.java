@@ -2,15 +2,15 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -69,7 +69,7 @@ public class Transfer33 {
     @XmlElement(name = "ReqdSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar reqdSttlmDt;
+    protected Calendar reqdSttlmDt;
     @XmlElement(name = "FctvSttlmDt")
     protected DateAndDateTimeChoice fctvSttlmDt;
     @XmlElement(name = "TradDt")
@@ -77,7 +77,7 @@ public class Transfer33 {
     @XmlElement(name = "TrfOrdrDtForm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar trfOrdrDtForm;
+    protected Calendar trfOrdrDtForm;
     @XmlElement(name = "TrfRsn")
     protected TransferReason1 trfRsn;
     @XmlElement(name = "HldgsPlanTp")
@@ -96,11 +96,11 @@ public class Transfer33 {
     @XmlElement(name = "AvrgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar avrgDt;
+    protected Calendar avrgDt;
     @XmlElement(name = "NewAvrgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar newAvrgDt;
+    protected Calendar newAvrgDt;
     @XmlElement(name = "TrfCcy")
     protected String trfCcy;
     @XmlElement(name = "OwnAcctTrfInd")
@@ -272,7 +272,7 @@ public class Transfer33 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getReqdSttlmDt() {
+    public Calendar getReqdSttlmDt() {
         return reqdSttlmDt;
     }
 
@@ -284,7 +284,7 @@ public class Transfer33 {
      *     {@link String }
      *     
      */
-    public Transfer33 setReqdSttlmDt(XMLGregorianCalendar value) {
+    public Transfer33 setReqdSttlmDt(Calendar value) {
         this.reqdSttlmDt = value;
         return this;
     }
@@ -347,7 +347,7 @@ public class Transfer33 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getTrfOrdrDtForm() {
+    public Calendar getTrfOrdrDtForm() {
         return trfOrdrDtForm;
     }
 
@@ -359,7 +359,7 @@ public class Transfer33 {
      *     {@link String }
      *     
      */
-    public Transfer33 setTrfOrdrDtForm(XMLGregorianCalendar value) {
+    public Transfer33 setTrfOrdrDtForm(Calendar value) {
         this.trfOrdrDtForm = value;
         return this;
     }
@@ -395,8 +395,8 @@ public class Transfer33 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the hldgsPlanTp property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the hldgsPlanTp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -410,10 +410,12 @@ public class Transfer33 {
      * {@link HoldingsPlanType1Code }
      * 
      * 
+     * @return
+     *     The value of the hldgsPlanTp property.
      */
     public List<HoldingsPlanType1Code> getHldgsPlanTp() {
         if (hldgsPlanTp == null) {
-            hldgsPlanTp = new ArrayList<HoldingsPlanType1Code>();
+            hldgsPlanTp = new ArrayList<>();
         }
         return this.hldgsPlanTp;
     }
@@ -474,8 +476,8 @@ public class Transfer33 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the unitsDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the unitsDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -489,10 +491,12 @@ public class Transfer33 {
      * {@link Unit6 }
      * 
      * 
+     * @return
+     *     The value of the unitsDtls property.
      */
     public List<Unit6> getUnitsDtls() {
         if (unitsDtls == null) {
-            unitsDtls = new ArrayList<Unit6>();
+            unitsDtls = new ArrayList<>();
         }
         return this.unitsDtls;
     }
@@ -555,7 +559,7 @@ public class Transfer33 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getAvrgDt() {
+    public Calendar getAvrgDt() {
         return avrgDt;
     }
 
@@ -567,7 +571,7 @@ public class Transfer33 {
      *     {@link String }
      *     
      */
-    public Transfer33 setAvrgDt(XMLGregorianCalendar value) {
+    public Transfer33 setAvrgDt(Calendar value) {
         this.avrgDt = value;
         return this;
     }
@@ -580,7 +584,7 @@ public class Transfer33 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getNewAvrgDt() {
+    public Calendar getNewAvrgDt() {
         return newAvrgDt;
     }
 
@@ -592,7 +596,7 @@ public class Transfer33 {
      *     {@link String }
      *     
      */
-    public Transfer33 setNewAvrgDt(XMLGregorianCalendar value) {
+    public Transfer33 setNewAvrgDt(Calendar value) {
         this.newAvrgDt = value;
         return this;
     }

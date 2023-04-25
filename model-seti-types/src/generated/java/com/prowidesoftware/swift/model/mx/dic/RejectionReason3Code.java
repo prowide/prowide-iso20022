@@ -9,24 +9,23 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for RejectionReason3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="RejectionReason3Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="UKWN"/&gt;
- *     &lt;enumeration value="EXCL"/&gt;
- *     &lt;enumeration value="EXLI"/&gt;
- *     &lt;enumeration value="TOLA"/&gt;
- *     &lt;enumeration value="INPR"/&gt;
- *     &lt;enumeration value="NAUT"/&gt;
- *     &lt;enumeration value="NMAT"/&gt;
- *     &lt;enumeration value="NINS"/&gt;
- *     &lt;enumeration value="NINV"/&gt;
- *     &lt;enumeration value="PASS"/&gt;
- *     &lt;enumeration value="INCR"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="RejectionReason3Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="UKWN"/>
+ *     <enumeration value="EXCL"/>
+ *     <enumeration value="EXLI"/>
+ *     <enumeration value="TOLA"/>
+ *     <enumeration value="INPR"/>
+ *     <enumeration value="NAUT"/>
+ *     <enumeration value="NMAT"/>
+ *     <enumeration value="NINS"/>
+ *     <enumeration value="NINV"/>
+ *     <enumeration value="PASS"/>
+ *     <enumeration value="INCR"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "RejectionReason3Code")

@@ -9,18 +9,17 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for VoteInstruction1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="VoteInstruction1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CFOR"/&gt;
- *     &lt;enumeration value="CAGS"/&gt;
- *     &lt;enumeration value="ABST"/&gt;
- *     &lt;enumeration value="WTHH"/&gt;
- *     &lt;enumeration value="NOAC"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="VoteInstruction1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CFOR"/>
+ *     <enumeration value="CAGS"/>
+ *     <enumeration value="ABST"/>
+ *     <enumeration value="WTHH"/>
+ *     <enumeration value="NOAC"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "VoteInstruction1Code")

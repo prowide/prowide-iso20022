@@ -9,20 +9,19 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for RejectionReason61Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="RejectionReason61Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ADEA"/&gt;
- *     &lt;enumeration value="ULNK"/&gt;
- *     &lt;enumeration value="LATE"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="DCAN"/&gt;
- *     &lt;enumeration value="DSET"/&gt;
- *     &lt;enumeration value="DPRG"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="RejectionReason61Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ADEA"/>
+ *     <enumeration value="ULNK"/>
+ *     <enumeration value="LATE"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="DCAN"/>
+ *     <enumeration value="DSET"/>
+ *     <enumeration value="DPRG"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "RejectionReason61Code")

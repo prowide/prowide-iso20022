@@ -154,8 +154,8 @@ public class CorporateActionInstructionV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the othrDocId property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the othrDocId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -169,10 +169,12 @@ public class CorporateActionInstructionV01 {
      * {@link DocumentIdentification13 }
      * 
      * 
+     * @return
+     *     The value of the othrDocId property.
      */
     public List<DocumentIdentification13> getOthrDocId() {
         if (othrDocId == null) {
-            othrDocId = new ArrayList<DocumentIdentification13>();
+            othrDocId = new ArrayList<>();
         }
         return this.othrDocId;
     }
@@ -183,8 +185,8 @@ public class CorporateActionInstructionV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the evtsLkg property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the evtsLkg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -198,10 +200,12 @@ public class CorporateActionInstructionV01 {
      * {@link CorporateActionEventReference1 }
      * 
      * 
+     * @return
+     *     The value of the evtsLkg property.
      */
     public List<CorporateActionEventReference1> getEvtsLkg() {
         if (evtsLkg == null) {
-            evtsLkg = new ArrayList<CorporateActionEventReference1>();
+            evtsLkg = new ArrayList<>();
         }
         return this.evtsLkg;
     }
@@ -262,8 +266,8 @@ public class CorporateActionInstructionV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the bnfclOwnrDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the bnfclOwnrDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -277,10 +281,12 @@ public class CorporateActionInstructionV01 {
      * {@link PartyIdentification33 }
      * 
      * 
+     * @return
+     *     The value of the bnfclOwnrDtls property.
      */
     public List<PartyIdentification33> getBnfclOwnrDtls() {
         if (bnfclOwnrDtls == null) {
-            bnfclOwnrDtls = new ArrayList<PartyIdentification33>();
+            bnfclOwnrDtls = new ArrayList<>();
         }
         return this.bnfclOwnrDtls;
     }
@@ -391,8 +397,8 @@ public class CorporateActionInstructionV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the xtnsn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the xtnsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -406,10 +412,12 @@ public class CorporateActionInstructionV01 {
      * {@link Extension2 }
      * 
      * 
+     * @return
+     *     The value of the xtnsn property.
      */
     public List<Extension2> getXtnsn() {
         if (xtnsn == null) {
-            xtnsn = new ArrayList<Extension2>();
+            xtnsn = new ArrayList<>();
         }
         return this.xtnsn;
     }

@@ -9,37 +9,36 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for TradeType3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="TradeType3Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="BSKT"/&gt;
- *     &lt;enumeration value="INDX"/&gt;
- *     &lt;enumeration value="IPOO"/&gt;
- *     &lt;enumeration value="LIST"/&gt;
- *     &lt;enumeration value="PRAL"/&gt;
- *     &lt;enumeration value="PROG"/&gt;
- *     &lt;enumeration value="TRAD"/&gt;
- *     &lt;enumeration value="BRBR"/&gt;
- *     &lt;enumeration value="RISK"/&gt;
- *     &lt;enumeration value="VWAP"/&gt;
- *     &lt;enumeration value="AGEN"/&gt;
- *     &lt;enumeration value="GUAR"/&gt;
- *     &lt;enumeration value="EMTR"/&gt;
- *     &lt;enumeration value="ISSU"/&gt;
- *     &lt;enumeration value="BOST"/&gt;
- *     &lt;enumeration value="BOEN"/&gt;
- *     &lt;enumeration value="LABO"/&gt;
- *     &lt;enumeration value="BORE"/&gt;
- *     &lt;enumeration value="OFIT"/&gt;
- *     &lt;enumeration value="BOSU"/&gt;
- *     &lt;enumeration value="FBBT"/&gt;
- *     &lt;enumeration value="OPTN"/&gt;
- *     &lt;enumeration value="FUOP"/&gt;
- *     &lt;enumeration value="FUTR"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="TradeType3Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="BSKT"/>
+ *     <enumeration value="INDX"/>
+ *     <enumeration value="IPOO"/>
+ *     <enumeration value="LIST"/>
+ *     <enumeration value="PRAL"/>
+ *     <enumeration value="PROG"/>
+ *     <enumeration value="TRAD"/>
+ *     <enumeration value="BRBR"/>
+ *     <enumeration value="RISK"/>
+ *     <enumeration value="VWAP"/>
+ *     <enumeration value="AGEN"/>
+ *     <enumeration value="GUAR"/>
+ *     <enumeration value="EMTR"/>
+ *     <enumeration value="ISSU"/>
+ *     <enumeration value="BOST"/>
+ *     <enumeration value="BOEN"/>
+ *     <enumeration value="LABO"/>
+ *     <enumeration value="BORE"/>
+ *     <enumeration value="OFIT"/>
+ *     <enumeration value="BOSU"/>
+ *     <enumeration value="FBBT"/>
+ *     <enumeration value="OPTN"/>
+ *     <enumeration value="FUOP"/>
+ *     <enumeration value="FUTR"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "TradeType3Code")

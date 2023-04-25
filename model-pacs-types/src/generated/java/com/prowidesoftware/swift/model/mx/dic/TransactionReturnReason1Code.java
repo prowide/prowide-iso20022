@@ -10,29 +10,28 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for TransactionReturnReason1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="TransactionReturnReason1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="AC01"/&gt;
- *     &lt;enumeration value="AC04"/&gt;
- *     &lt;enumeration value="AC06"/&gt;
- *     &lt;enumeration value="AG01"/&gt;
- *     &lt;enumeration value="AG02"/&gt;
- *     &lt;enumeration value="AM04"/&gt;
- *     &lt;enumeration value="AM05"/&gt;
- *     &lt;enumeration value="MD01"/&gt;
- *     &lt;enumeration value="BE04"/&gt;
- *     &lt;enumeration value="MD03"/&gt;
- *     &lt;enumeration value="RC01"/&gt;
- *     &lt;enumeration value="MD06"/&gt;
- *     &lt;enumeration value="MD07"/&gt;
- *     &lt;enumeration value="MS02"/&gt;
- *     &lt;enumeration value="MS03"/&gt;
- *     &lt;enumeration value="TM01"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="TransactionReturnReason1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="AC01"/>
+ *     <enumeration value="AC04"/>
+ *     <enumeration value="AC06"/>
+ *     <enumeration value="AG01"/>
+ *     <enumeration value="AG02"/>
+ *     <enumeration value="AM04"/>
+ *     <enumeration value="AM05"/>
+ *     <enumeration value="MD01"/>
+ *     <enumeration value="BE04"/>
+ *     <enumeration value="MD03"/>
+ *     <enumeration value="RC01"/>
+ *     <enumeration value="MD06"/>
+ *     <enumeration value="MD07"/>
+ *     <enumeration value="MS02"/>
+ *     <enumeration value="MS03"/>
+ *     <enumeration value="TM01"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "TransactionReturnReason1Code")

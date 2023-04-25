@@ -9,23 +9,22 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for OptionFeatures2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="OptionFeatures2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CAOS"/&gt;
- *     &lt;enumeration value="COND"/&gt;
- *     &lt;enumeration value="MAXC"/&gt;
- *     &lt;enumeration value="MAXS"/&gt;
- *     &lt;enumeration value="OPLF"/&gt;
- *     &lt;enumeration value="PROR"/&gt;
- *     &lt;enumeration value="QOVE"/&gt;
- *     &lt;enumeration value="QREC"/&gt;
- *     &lt;enumeration value="VVPR"/&gt;
- *     &lt;enumeration value="NOSE"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="OptionFeatures2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CAOS"/>
+ *     <enumeration value="COND"/>
+ *     <enumeration value="MAXC"/>
+ *     <enumeration value="MAXS"/>
+ *     <enumeration value="OPLF"/>
+ *     <enumeration value="PROR"/>
+ *     <enumeration value="QOVE"/>
+ *     <enumeration value="QREC"/>
+ *     <enumeration value="VVPR"/>
+ *     <enumeration value="NOSE"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "OptionFeatures2Code")

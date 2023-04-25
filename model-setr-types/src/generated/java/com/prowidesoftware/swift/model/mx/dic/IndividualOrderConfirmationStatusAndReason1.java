@@ -163,8 +163,8 @@ public class IndividualOrderConfirmationStatusAndReason1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the confRjctd property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the confRjctd property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -178,10 +178,12 @@ public class IndividualOrderConfirmationStatusAndReason1 {
      * {@link ConfirmationRejectedStatus1 }
      * 
      * 
+     * @return
+     *     The value of the confRjctd property.
      */
     public List<ConfirmationRejectedStatus1> getConfRjctd() {
         if (confRjctd == null) {
-            confRjctd = new ArrayList<ConfirmationRejectedStatus1>();
+            confRjctd = new ArrayList<>();
         }
         return this.confRjctd;
     }
@@ -192,8 +194,8 @@ public class IndividualOrderConfirmationStatusAndReason1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the amdmntRjctd property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the amdmntRjctd property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -207,10 +209,12 @@ public class IndividualOrderConfirmationStatusAndReason1 {
      * {@link ConfirmationRejectedStatus1 }
      * 
      * 
+     * @return
+     *     The value of the amdmntRjctd property.
      */
     public List<ConfirmationRejectedStatus1> getAmdmntRjctd() {
         if (amdmntRjctd == null) {
-            amdmntRjctd = new ArrayList<ConfirmationRejectedStatus1>();
+            amdmntRjctd = new ArrayList<>();
         }
         return this.amdmntRjctd;
     }

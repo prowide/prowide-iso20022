@@ -9,17 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for TriggerType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="TriggerType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="PAEX"/&gt;
- *     &lt;enumeration value="SPTS"/&gt;
- *     &lt;enumeration value="NEAU"/&gt;
- *     &lt;enumeration value="PRMO"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="TriggerType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="PAEX"/>
+ *     <enumeration value="SPTS"/>
+ *     <enumeration value="NEAU"/>
+ *     <enumeration value="PRMO"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "TriggerType1Code")

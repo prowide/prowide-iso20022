@@ -9,25 +9,24 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for RejectionReason14Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="RejectionReason14Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="FAIL"/&gt;
- *     &lt;enumeration value="LATT"/&gt;
- *     &lt;enumeration value="INET"/&gt;
- *     &lt;enumeration value="INUS"/&gt;
- *     &lt;enumeration value="INPT"/&gt;
- *     &lt;enumeration value="INMV"/&gt;
- *     &lt;enumeration value="INDE"/&gt;
- *     &lt;enumeration value="AGIN"/&gt;
- *     &lt;enumeration value="INMO"/&gt;
- *     &lt;enumeration value="SAID"/&gt;
- *     &lt;enumeration value="INID"/&gt;
- *     &lt;enumeration value="MOSE"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="RejectionReason14Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="FAIL"/>
+ *     <enumeration value="LATT"/>
+ *     <enumeration value="INET"/>
+ *     <enumeration value="INUS"/>
+ *     <enumeration value="INPT"/>
+ *     <enumeration value="INMV"/>
+ *     <enumeration value="INDE"/>
+ *     <enumeration value="AGIN"/>
+ *     <enumeration value="INMO"/>
+ *     <enumeration value="SAID"/>
+ *     <enumeration value="INID"/>
+ *     <enumeration value="MOSE"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "RejectionReason14Code")

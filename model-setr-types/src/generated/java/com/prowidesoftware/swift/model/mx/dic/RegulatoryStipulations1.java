@@ -62,8 +62,8 @@ public class RegulatoryStipulations1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the stiptns property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the stiptns property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -77,10 +77,12 @@ public class RegulatoryStipulations1 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the stiptns property.
      */
     public List<String> getStiptns() {
         if (stiptns == null) {
-            stiptns = new ArrayList<String>();
+            stiptns = new ArrayList<>();
         }
         return this.stiptns;
     }

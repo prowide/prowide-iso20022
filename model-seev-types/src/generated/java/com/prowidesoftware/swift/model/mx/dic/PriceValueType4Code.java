@@ -9,17 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for PriceValueType4Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="PriceValueType4Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="OPEN"/&gt;
- *     &lt;enumeration value="TBSP"/&gt;
- *     &lt;enumeration value="UNSP"/&gt;
- *     &lt;enumeration value="UKWN"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="PriceValueType4Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="OPEN"/>
+ *     <enumeration value="TBSP"/>
+ *     <enumeration value="UNSP"/>
+ *     <enumeration value="UKWN"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "PriceValueType4Code")

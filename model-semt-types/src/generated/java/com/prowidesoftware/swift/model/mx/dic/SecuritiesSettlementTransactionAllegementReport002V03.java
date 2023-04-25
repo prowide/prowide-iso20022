@@ -163,8 +163,8 @@ public class SecuritiesSettlementTransactionAllegementReport002V03 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the allgmtDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the allgmtDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -178,10 +178,12 @@ public class SecuritiesSettlementTransactionAllegementReport002V03 {
      * {@link SecuritiesTradeDetails29 }
      * 
      * 
+     * @return
+     *     The value of the allgmtDtls property.
      */
     public List<SecuritiesTradeDetails29> getAllgmtDtls() {
         if (allgmtDtls == null) {
-            allgmtDtls = new ArrayList<SecuritiesTradeDetails29>();
+            allgmtDtls = new ArrayList<>();
         }
         return this.allgmtDtls;
     }

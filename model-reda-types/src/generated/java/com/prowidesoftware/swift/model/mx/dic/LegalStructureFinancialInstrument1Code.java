@@ -9,20 +9,19 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for LegalStructureFinancialInstrument1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="LegalStructureFinancialInstrument1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="NUCI"/&gt;
- *     &lt;enumeration value="SFUN"/&gt;
- *     &lt;enumeration value="SSEC"/&gt;
- *     &lt;enumeration value="UCIT"/&gt;
- *     &lt;enumeration value="EXTC"/&gt;
- *     &lt;enumeration value="UCMM"/&gt;
- *     &lt;enumeration value="NUMM"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="LegalStructureFinancialInstrument1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="NUCI"/>
+ *     <enumeration value="SFUN"/>
+ *     <enumeration value="SSEC"/>
+ *     <enumeration value="UCIT"/>
+ *     <enumeration value="EXTC"/>
+ *     <enumeration value="UCMM"/>
+ *     <enumeration value="NUMM"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "LegalStructureFinancialInstrument1Code")

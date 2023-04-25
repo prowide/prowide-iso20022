@@ -2,13 +2,16 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.swift.model.mx.dic.*;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -30,13 +33,13 @@ public class MxSeti01200101
 
     @XmlElement(name = "NonDscldBidReq", required = true)
     protected NonDisclosedBidRequest nonDscldBidReq;
-    public final static transient String BUSINESS_PROCESS = "seti";
-    public final static transient int FUNCTIONALITY = 12;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 1;
+    public static final transient String BUSINESS_PROCESS = "seti";
+    public static final transient int FUNCTIONALITY = 12;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {ActiveCurrencyAndAmount.class, BasisPriceType1Choice.class, BasisPriceType1Code.class, Bid1 .class, CopyDuplicate1Code.class, DateAndDateTimeChoice.class, DocumentIdentification11 .class, ExchangeForPhysicalTradeParameters1 .class, GenericIdentification13 .class, Liquidity1 .class, LiquidityAndStatistics1 .class, LiquidityIndicatorType1Code.class, MxSeti01200101 .class, NonDisclosedBid1 .class, NonDisclosedBidRequest.class, TradeType2Code.class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:seti.012.001.01";
+    public static final transient Class[] _classes = new Class[] {ActiveCurrencyAndAmount.class, BasisPriceType1Choice.class, BasisPriceType1Code.class, Bid1 .class, CopyDuplicate1Code.class, DateAndDateTimeChoice.class, DocumentIdentification11 .class, ExchangeForPhysicalTradeParameters1 .class, GenericIdentification13 .class, Liquidity1 .class, LiquidityAndStatistics1 .class, LiquidityIndicatorType1Code.class, MxSeti01200101 .class, NonDisclosedBid1 .class, NonDisclosedBidRequest.class, TradeType2Code.class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:seti.012.001.01";
 
     public MxSeti01200101() {
         super();
@@ -83,21 +86,6 @@ public class MxSeti01200101
     public MxSeti01200101 setNonDscldBidReq(NonDisclosedBidRequest value) {
         this.nonDscldBidReq = value;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -170,8 +158,23 @@ public class MxSeti01200101
      * @return
      *     a new instance of MxSeti01200101
      */
-    public final static MxSeti01200101 fromJson(String json) {
+    public static final MxSeti01200101 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSeti01200101 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

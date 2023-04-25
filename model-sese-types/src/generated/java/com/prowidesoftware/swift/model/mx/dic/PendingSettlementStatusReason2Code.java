@@ -10,50 +10,49 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for PendingSettlementStatusReason2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="PendingSettlementStatusReason2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="AWSH"/&gt;
- *     &lt;enumeration value="BLOC"/&gt;
- *     &lt;enumeration value="CAIS"/&gt;
- *     &lt;enumeration value="CLAC"/&gt;
- *     &lt;enumeration value="DOCC"/&gt;
- *     &lt;enumeration value="DOCY"/&gt;
- *     &lt;enumeration value="IAAD"/&gt;
- *     &lt;enumeration value="LACK"/&gt;
- *     &lt;enumeration value="LINK"/&gt;
- *     &lt;enumeration value="PHCK"/&gt;
- *     &lt;enumeration value="PHSE"/&gt;
- *     &lt;enumeration value="SBLO"/&gt;
- *     &lt;enumeration value="MINF"/&gt;
- *     &lt;enumeration value="ACOP"/&gt;
- *     &lt;enumeration value="IINV"/&gt;
- *     &lt;enumeration value="CINV"/&gt;
- *     &lt;enumeration value="AINV"/&gt;
- *     &lt;enumeration value="WTRF"/&gt;
- *     &lt;enumeration value="USUA"/&gt;
- *     &lt;enumeration value="ASTA"/&gt;
- *     &lt;enumeration value="AFST"/&gt;
- *     &lt;enumeration value="STST"/&gt;
- *     &lt;enumeration value="LPRO"/&gt;
- *     &lt;enumeration value="ADRQ"/&gt;
- *     &lt;enumeration value="ADS1"/&gt;
- *     &lt;enumeration value="ADS2"/&gt;
- *     &lt;enumeration value="DRJC"/&gt;
- *     &lt;enumeration value="CYIN"/&gt;
- *     &lt;enumeration value="CYDV"/&gt;
- *     &lt;enumeration value="OVER"/&gt;
- *     &lt;enumeration value="WCPA"/&gt;
- *     &lt;enumeration value="SDUT"/&gt;
- *     &lt;enumeration value="TAPR"/&gt;
- *     &lt;enumeration value="XCNF"/&gt;
- *     &lt;enumeration value="ESCA"/&gt;
- *     &lt;enumeration value="NRCP"/&gt;
- *     &lt;enumeration value="FVER"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="PendingSettlementStatusReason2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="AWSH"/>
+ *     <enumeration value="BLOC"/>
+ *     <enumeration value="CAIS"/>
+ *     <enumeration value="CLAC"/>
+ *     <enumeration value="DOCC"/>
+ *     <enumeration value="DOCY"/>
+ *     <enumeration value="IAAD"/>
+ *     <enumeration value="LACK"/>
+ *     <enumeration value="LINK"/>
+ *     <enumeration value="PHCK"/>
+ *     <enumeration value="PHSE"/>
+ *     <enumeration value="SBLO"/>
+ *     <enumeration value="MINF"/>
+ *     <enumeration value="ACOP"/>
+ *     <enumeration value="IINV"/>
+ *     <enumeration value="CINV"/>
+ *     <enumeration value="AINV"/>
+ *     <enumeration value="WTRF"/>
+ *     <enumeration value="USUA"/>
+ *     <enumeration value="ASTA"/>
+ *     <enumeration value="AFST"/>
+ *     <enumeration value="STST"/>
+ *     <enumeration value="LPRO"/>
+ *     <enumeration value="ADRQ"/>
+ *     <enumeration value="ADS1"/>
+ *     <enumeration value="ADS2"/>
+ *     <enumeration value="DRJC"/>
+ *     <enumeration value="CYIN"/>
+ *     <enumeration value="CYDV"/>
+ *     <enumeration value="OVER"/>
+ *     <enumeration value="WCPA"/>
+ *     <enumeration value="SDUT"/>
+ *     <enumeration value="TAPR"/>
+ *     <enumeration value="XCNF"/>
+ *     <enumeration value="ESCA"/>
+ *     <enumeration value="NRCP"/>
+ *     <enumeration value="FVER"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "PendingSettlementStatusReason2Code")

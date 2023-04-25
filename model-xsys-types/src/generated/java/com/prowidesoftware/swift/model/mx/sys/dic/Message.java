@@ -1,6 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.sys.dic;
 
+import com.prowidesoftware.swift.model.mx.sys.dic.SwFileRequestHeader;
+import com.prowidesoftware.swift.model.mx.sys.dic.SwIntRequestHeader;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
@@ -39,7 +41,7 @@ public class Message {
     protected SwIntRequestHeader requestHeader;
 
     /**
-     * SnFRef
+     * StoreAndForwardReference
      * 
      * @return
      *     possible object is
@@ -64,7 +66,7 @@ public class Message {
     }
 
     /**
-     * SnFRefType
+     * StoreAndForwardReferenceType
      * 
      * @return
      *     possible object is
@@ -89,7 +91,7 @@ public class Message {
     }
 
     /**
-     * SnFInputTime
+     * StoreAndForwardInputTime
      * 
      * @return
      *     possible object is

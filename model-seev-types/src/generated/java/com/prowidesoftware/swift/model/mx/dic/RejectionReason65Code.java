@@ -9,39 +9,38 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for RejectionReason65Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="RejectionReason65Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ADEA"/&gt;
- *     &lt;enumeration value="ADDM"/&gt;
- *     &lt;enumeration value="MCAN"/&gt;
- *     &lt;enumeration value="DQUA"/&gt;
- *     &lt;enumeration value="DREM"/&gt;
- *     &lt;enumeration value="DSEC"/&gt;
- *     &lt;enumeration value="EVNM"/&gt;
- *     &lt;enumeration value="FULL"/&gt;
- *     &lt;enumeration value="IPOA"/&gt;
- *     &lt;enumeration value="IPOS"/&gt;
- *     &lt;enumeration value="IREG"/&gt;
- *     &lt;enumeration value="LATE"/&gt;
- *     &lt;enumeration value="NPOS"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="PART"/&gt;
- *     &lt;enumeration value="PRXY"/&gt;
- *     &lt;enumeration value="RBIS"/&gt;
- *     &lt;enumeration value="RESN"/&gt;
- *     &lt;enumeration value="SAFE"/&gt;
- *     &lt;enumeration value="SPLT"/&gt;
- *     &lt;enumeration value="ULNK"/&gt;
- *     &lt;enumeration value="OPTY"/&gt;
- *     &lt;enumeration value="LACK"/&gt;
- *     &lt;enumeration value="LIST"/&gt;
- *     &lt;enumeration value="NOSL"/&gt;
- *     &lt;enumeration value="PMNS"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="RejectionReason65Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ADEA"/>
+ *     <enumeration value="ADDM"/>
+ *     <enumeration value="MCAN"/>
+ *     <enumeration value="DQUA"/>
+ *     <enumeration value="DREM"/>
+ *     <enumeration value="DSEC"/>
+ *     <enumeration value="EVNM"/>
+ *     <enumeration value="FULL"/>
+ *     <enumeration value="IPOA"/>
+ *     <enumeration value="IPOS"/>
+ *     <enumeration value="IREG"/>
+ *     <enumeration value="LATE"/>
+ *     <enumeration value="NPOS"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="PART"/>
+ *     <enumeration value="PRXY"/>
+ *     <enumeration value="RBIS"/>
+ *     <enumeration value="RESN"/>
+ *     <enumeration value="SAFE"/>
+ *     <enumeration value="SPLT"/>
+ *     <enumeration value="ULNK"/>
+ *     <enumeration value="OPTY"/>
+ *     <enumeration value="LACK"/>
+ *     <enumeration value="LIST"/>
+ *     <enumeration value="NOSL"/>
+ *     <enumeration value="PMNS"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "RejectionReason65Code")

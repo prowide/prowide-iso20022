@@ -9,23 +9,22 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for CorporateActionChangeType2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CorporateActionChangeType2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="BERE"/&gt;
- *     &lt;enumeration value="CERT"/&gt;
- *     &lt;enumeration value="DEPH"/&gt;
- *     &lt;enumeration value="GPPH"/&gt;
- *     &lt;enumeration value="GTGP"/&gt;
- *     &lt;enumeration value="GTPH"/&gt;
- *     &lt;enumeration value="NAME"/&gt;
- *     &lt;enumeration value="PHDE"/&gt;
- *     &lt;enumeration value="REBE"/&gt;
- *     &lt;enumeration value="TERM"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CorporateActionChangeType2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="BERE"/>
+ *     <enumeration value="CERT"/>
+ *     <enumeration value="DEPH"/>
+ *     <enumeration value="GPPH"/>
+ *     <enumeration value="GTGP"/>
+ *     <enumeration value="GTPH"/>
+ *     <enumeration value="NAME"/>
+ *     <enumeration value="PHDE"/>
+ *     <enumeration value="REBE"/>
+ *     <enumeration value="TERM"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CorporateActionChangeType2Code")

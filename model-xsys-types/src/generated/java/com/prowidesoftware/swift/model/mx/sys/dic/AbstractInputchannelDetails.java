@@ -1,6 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.sys.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
@@ -8,8 +10,6 @@ import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlSeeAlso;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -36,7 +36,7 @@ public class AbstractInputchannelDetails {
     @XmlElement(name = "LastStatChngTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar lastStatChngTm;
+    protected Calendar lastStatChngTm;
     @XmlElement(name = "LastStatChngDN", required = true)
     protected String lastStatChngDN;
 
@@ -73,7 +73,7 @@ public class AbstractInputchannelDetails {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getLastStatChngTm() {
+    public Calendar getLastStatChngTm() {
         return lastStatChngTm;
     }
 
@@ -85,7 +85,7 @@ public class AbstractInputchannelDetails {
      *     {@link String }
      *     
      */
-    public AbstractInputchannelDetails setLastStatChngTm(XMLGregorianCalendar value) {
+    public AbstractInputchannelDetails setLastStatChngTm(Calendar value) {
         this.lastStatChngTm = value;
         return this;
     }

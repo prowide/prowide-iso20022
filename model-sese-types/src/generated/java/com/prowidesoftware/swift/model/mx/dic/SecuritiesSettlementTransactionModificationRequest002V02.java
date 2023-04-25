@@ -79,8 +79,8 @@ public class SecuritiesSettlementTransactionModificationRequest002V02 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the updTp property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the updTp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -94,10 +94,12 @@ public class SecuritiesSettlementTransactionModificationRequest002V02 {
      * {@link UpdateType10Choice }
      * 
      * 
+     * @return
+     *     The value of the updTp property.
      */
     public List<UpdateType10Choice> getUpdTp() {
         if (updTp == null) {
-            updTp = new ArrayList<UpdateType10Choice>();
+            updTp = new ArrayList<>();
         }
         return this.updTp;
     }

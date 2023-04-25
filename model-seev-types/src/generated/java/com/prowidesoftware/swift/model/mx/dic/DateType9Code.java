@@ -9,21 +9,20 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for DateType9Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="DateType9Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="PWAL"/&gt;
- *     &lt;enumeration value="MKDT"/&gt;
- *     &lt;enumeration value="MEET"/&gt;
- *     &lt;enumeration value="PAYD"/&gt;
- *     &lt;enumeration value="RDTE"/&gt;
- *     &lt;enumeration value="RDDT"/&gt;
- *     &lt;enumeration value="NARR"/&gt;
- *     &lt;enumeration value="UKWN"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="DateType9Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="PWAL"/>
+ *     <enumeration value="MKDT"/>
+ *     <enumeration value="MEET"/>
+ *     <enumeration value="PAYD"/>
+ *     <enumeration value="RDTE"/>
+ *     <enumeration value="RDDT"/>
+ *     <enumeration value="NARR"/>
+ *     <enumeration value="UKWN"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "DateType9Code")

@@ -9,49 +9,48 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for RejectedStatusReason10Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="RejectedStatusReason10Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ADEA"/&gt;
- *     &lt;enumeration value="BLTR"/&gt;
- *     &lt;enumeration value="CUTO"/&gt;
- *     &lt;enumeration value="DDAT"/&gt;
- *     &lt;enumeration value="DOCC"/&gt;
- *     &lt;enumeration value="DQUA"/&gt;
- *     &lt;enumeration value="DSEC"/&gt;
- *     &lt;enumeration value="DTRD"/&gt;
- *     &lt;enumeration value="IDNA"/&gt;
- *     &lt;enumeration value="IEXE"/&gt;
- *     &lt;enumeration value="INTE"/&gt;
- *     &lt;enumeration value="IOTP"/&gt;
- *     &lt;enumeration value="IPAC"/&gt;
- *     &lt;enumeration value="LATE"/&gt;
- *     &lt;enumeration value="MONY"/&gt;
- *     &lt;enumeration value="NRGM"/&gt;
- *     &lt;enumeration value="NSLA"/&gt;
- *     &lt;enumeration value="ORRF"/&gt;
- *     &lt;enumeration value="SAFE"/&gt;
- *     &lt;enumeration value="SECU"/&gt;
- *     &lt;enumeration value="SHIG"/&gt;
- *     &lt;enumeration value="SLOW"/&gt;
- *     &lt;enumeration value="UDCY"/&gt;
- *     &lt;enumeration value="ULNK"/&gt;
- *     &lt;enumeration value="URSC"/&gt;
- *     &lt;enumeration value="ORDR"/&gt;
- *     &lt;enumeration value="BMIN"/&gt;
- *     &lt;enumeration value="BMTO"/&gt;
- *     &lt;enumeration value="INSU"/&gt;
- *     &lt;enumeration value="PRCT"/&gt;
- *     &lt;enumeration value="BMRA"/&gt;
- *     &lt;enumeration value="BMRV"/&gt;
- *     &lt;enumeration value="LOCK"/&gt;
- *     &lt;enumeration value="ILLI"/&gt;
- *     &lt;enumeration value="DINV"/&gt;
- *     &lt;enumeration value="CLOS"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="RejectedStatusReason10Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ADEA"/>
+ *     <enumeration value="BLTR"/>
+ *     <enumeration value="CUTO"/>
+ *     <enumeration value="DDAT"/>
+ *     <enumeration value="DOCC"/>
+ *     <enumeration value="DQUA"/>
+ *     <enumeration value="DSEC"/>
+ *     <enumeration value="DTRD"/>
+ *     <enumeration value="IDNA"/>
+ *     <enumeration value="IEXE"/>
+ *     <enumeration value="INTE"/>
+ *     <enumeration value="IOTP"/>
+ *     <enumeration value="IPAC"/>
+ *     <enumeration value="LATE"/>
+ *     <enumeration value="MONY"/>
+ *     <enumeration value="NRGM"/>
+ *     <enumeration value="NSLA"/>
+ *     <enumeration value="ORRF"/>
+ *     <enumeration value="SAFE"/>
+ *     <enumeration value="SECU"/>
+ *     <enumeration value="SHIG"/>
+ *     <enumeration value="SLOW"/>
+ *     <enumeration value="UDCY"/>
+ *     <enumeration value="ULNK"/>
+ *     <enumeration value="URSC"/>
+ *     <enumeration value="ORDR"/>
+ *     <enumeration value="BMIN"/>
+ *     <enumeration value="BMTO"/>
+ *     <enumeration value="INSU"/>
+ *     <enumeration value="PRCT"/>
+ *     <enumeration value="BMRA"/>
+ *     <enumeration value="BMRV"/>
+ *     <enumeration value="LOCK"/>
+ *     <enumeration value="ILLI"/>
+ *     <enumeration value="DINV"/>
+ *     <enumeration value="CLOS"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "RejectedStatusReason10Code")

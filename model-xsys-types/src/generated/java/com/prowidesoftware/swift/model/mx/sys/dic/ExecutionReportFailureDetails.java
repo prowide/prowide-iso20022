@@ -1,6 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.sys.dic;
 
+import com.prowidesoftware.swift.model.mx.sys.dic.SwGblStatusAttributes;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;

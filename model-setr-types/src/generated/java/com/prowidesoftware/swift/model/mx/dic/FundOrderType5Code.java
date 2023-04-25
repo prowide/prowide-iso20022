@@ -9,17 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for FundOrderType5Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="FundOrderType5Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="NSPN"/&gt;
- *     &lt;enumeration value="NCPN"/&gt;
- *     &lt;enumeration value="SWSP"/&gt;
- *     &lt;enumeration value="CWSP"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="FundOrderType5Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="NSPN"/>
+ *     <enumeration value="NCPN"/>
+ *     <enumeration value="SWSP"/>
+ *     <enumeration value="CWSP"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "FundOrderType5Code")

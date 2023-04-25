@@ -10,17 +10,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for InvestorType4Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="InvestorType4Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="BOT3"/&gt;
- *     &lt;enumeration value="NPRF"/&gt;
- *     &lt;enumeration value="PRF3"/&gt;
- *     &lt;enumeration value="PRF4"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="InvestorType4Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="BOT3"/>
+ *     <enumeration value="NPRF"/>
+ *     <enumeration value="PRF3"/>
+ *     <enumeration value="PRF4"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "InvestorType4Code")

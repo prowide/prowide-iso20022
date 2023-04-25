@@ -145,8 +145,8 @@ public class TransactionReportItems2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the usrTxRef property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the usrTxRef property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -160,10 +160,12 @@ public class TransactionReportItems2 {
      * {@link DocumentIdentification5 }
      * 
      * 
+     * @return
+     *     The value of the usrTxRef property.
      */
     public List<DocumentIdentification5> getUsrTxRef() {
         if (usrTxRef == null) {
-            usrTxRef = new ArrayList<DocumentIdentification5>();
+            usrTxRef = new ArrayList<>();
         }
         return this.usrTxRef;
     }
@@ -374,8 +376,8 @@ public class TransactionReportItems2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the pdgReqForActn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the pdgReqForActn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -389,10 +391,12 @@ public class TransactionReportItems2 {
      * {@link PendingActivity1 }
      * 
      * 
+     * @return
+     *     The value of the pdgReqForActn property.
      */
     public List<PendingActivity1> getPdgReqForActn() {
         if (pdgReqForActn == null) {
-            pdgReqForActn = new ArrayList<PendingActivity1>();
+            pdgReqForActn = new ArrayList<>();
         }
         return this.pdgReqForActn;
     }

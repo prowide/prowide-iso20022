@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -36,7 +36,7 @@ public class Reference9 {
     @XmlElement(name = "OrgnlOrdrModTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar orgnlOrdrModTm;
+    protected Calendar orgnlOrdrModTm;
 
     /**
      * Gets the value of the orgnlClntOrdrId property.
@@ -96,7 +96,7 @@ public class Reference9 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getOrgnlOrdrModTm() {
+    public Calendar getOrgnlOrdrModTm() {
         return orgnlOrdrModTm;
     }
 
@@ -108,7 +108,7 @@ public class Reference9 {
      *     {@link String }
      *     
      */
-    public Reference9 setOrgnlOrdrModTm(XMLGregorianCalendar value) {
+    public Reference9 setOrgnlOrdrModTm(Calendar value) {
         this.orgnlOrdrModTm = value;
         return this;
     }

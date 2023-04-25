@@ -161,8 +161,8 @@ public class SecuritiesTransactionPendingReport002V11 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sts property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -176,10 +176,12 @@ public class SecuritiesTransactionPendingReport002V11 {
      * {@link StatusAndReason41 }
      * 
      * 
+     * @return
+     *     The value of the sts property.
      */
     public List<StatusAndReason41> getSts() {
         if (sts == null) {
-            sts = new ArrayList<StatusAndReason41>();
+            sts = new ArrayList<>();
         }
         return this.sts;
     }
@@ -190,8 +192,8 @@ public class SecuritiesTransactionPendingReport002V11 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the txs property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the txs property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -205,10 +207,12 @@ public class SecuritiesTransactionPendingReport002V11 {
      * {@link Transaction112 }
      * 
      * 
+     * @return
+     *     The value of the txs property.
      */
     public List<Transaction112> getTxs() {
         if (txs == null) {
-            txs = new ArrayList<Transaction112>();
+            txs = new ArrayList<>();
         }
         return this.txs;
     }

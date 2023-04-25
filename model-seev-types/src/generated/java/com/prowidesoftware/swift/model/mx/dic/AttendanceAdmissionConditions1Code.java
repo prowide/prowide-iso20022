@@ -9,20 +9,19 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for AttendanceAdmissionConditions1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="AttendanceAdmissionConditions1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="MASH"/&gt;
- *     &lt;enumeration value="MAPO"/&gt;
- *     &lt;enumeration value="MAAL"/&gt;
- *     &lt;enumeration value="MALR"/&gt;
- *     &lt;enumeration value="MAHI"/&gt;
- *     &lt;enumeration value="MATK"/&gt;
- *     &lt;enumeration value="MANP"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="AttendanceAdmissionConditions1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="MASH"/>
+ *     <enumeration value="MAPO"/>
+ *     <enumeration value="MAAL"/>
+ *     <enumeration value="MALR"/>
+ *     <enumeration value="MAHI"/>
+ *     <enumeration value="MATK"/>
+ *     <enumeration value="MANP"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "AttendanceAdmissionConditions1Code")

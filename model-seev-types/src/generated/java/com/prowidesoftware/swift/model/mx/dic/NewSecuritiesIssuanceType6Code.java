@@ -9,17 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for NewSecuritiesIssuanceType6Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="NewSecuritiesIssuanceType6Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="DEFE"/&gt;
- *     &lt;enumeration value="NDEF"/&gt;
- *     &lt;enumeration value="REFU"/&gt;
- *     &lt;enumeration value="NREF"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="NewSecuritiesIssuanceType6Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="DEFE"/>
+ *     <enumeration value="NDEF"/>
+ *     <enumeration value="REFU"/>
+ *     <enumeration value="NREF"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "NewSecuritiesIssuanceType6Code")

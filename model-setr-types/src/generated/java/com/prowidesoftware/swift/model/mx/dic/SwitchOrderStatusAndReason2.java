@@ -211,8 +211,8 @@ public class SwitchOrderStatusAndReason2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the legInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the legInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -226,10 +226,12 @@ public class SwitchOrderStatusAndReason2 {
      * {@link SwitchLegReferences2 }
      * 
      * 
+     * @return
+     *     The value of the legInf property.
      */
     public List<SwitchLegReferences2> getLegInf() {
         if (legInf == null) {
-            legInf = new ArrayList<SwitchLegReferences2>();
+            legInf = new ArrayList<>();
         }
         return this.legInf;
     }

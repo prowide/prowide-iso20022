@@ -94,8 +94,8 @@ public class FinancialItem1Tsin00600101 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the finDocRef property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the finDocRef property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -109,10 +109,12 @@ public class FinancialItem1Tsin00600101 {
      * {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
      * 
+     * @return
+     *     The value of the finDocRef property.
      */
     public List<JAXBElement<Object>> getFinDocRef() {
         if (finDocRef == null) {
-            finDocRef = new ArrayList<JAXBElement<Object>>();
+            finDocRef = new ArrayList<>();
         }
         return this.finDocRef;
     }
@@ -198,8 +200,8 @@ public class FinancialItem1Tsin00600101 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the instlmtInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the instlmtInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -213,10 +215,12 @@ public class FinancialItem1Tsin00600101 {
      * {@link Instalment2 }
      * 
      * 
+     * @return
+     *     The value of the instlmtInf property.
      */
     public List<Instalment2> getInstlmtInf() {
         if (instlmtInf == null) {
-            instlmtInf = new ArrayList<Instalment2>();
+            instlmtInf = new ArrayList<>();
         }
         return this.instlmtInf;
     }
@@ -252,8 +256,8 @@ public class FinancialItem1Tsin00600101 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the assoctdDoc property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the assoctdDoc property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -267,10 +271,12 @@ public class FinancialItem1Tsin00600101 {
      * {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
      * 
+     * @return
+     *     The value of the assoctdDoc property.
      */
     public List<JAXBElement<Object>> getAssoctdDoc() {
         if (assoctdDoc == null) {
-            assoctdDoc = new ArrayList<JAXBElement<Object>>();
+            assoctdDoc = new ArrayList<>();
         }
         return this.assoctdDoc;
     }

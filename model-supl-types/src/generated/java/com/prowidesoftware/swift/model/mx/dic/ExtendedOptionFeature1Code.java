@@ -9,23 +9,22 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for ExtendedOptionFeature1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ExtendedOptionFeature1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="FORU"/&gt;
- *     &lt;enumeration value="FORF"/&gt;
- *     &lt;enumeration value="FORX"/&gt;
- *     &lt;enumeration value="DRPU"/&gt;
- *     &lt;enumeration value="DRPF"/&gt;
- *     &lt;enumeration value="DRPX"/&gt;
- *     &lt;enumeration value="FCPP"/&gt;
- *     &lt;enumeration value="FCPU"/&gt;
- *     &lt;enumeration value="FCPF"/&gt;
- *     &lt;enumeration value="FCPX"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ExtendedOptionFeature1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="FORU"/>
+ *     <enumeration value="FORF"/>
+ *     <enumeration value="FORX"/>
+ *     <enumeration value="DRPU"/>
+ *     <enumeration value="DRPF"/>
+ *     <enumeration value="DRPX"/>
+ *     <enumeration value="FCPP"/>
+ *     <enumeration value="FCPU"/>
+ *     <enumeration value="FCPF"/>
+ *     <enumeration value="FCPX"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ExtendedOptionFeature1Code")

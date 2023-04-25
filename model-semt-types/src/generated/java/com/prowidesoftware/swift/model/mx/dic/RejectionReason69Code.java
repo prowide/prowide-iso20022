@@ -9,28 +9,27 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for RejectionReason69Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="RejectionReason69Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="SAFE"/&gt;
- *     &lt;enumeration value="ADEA"/&gt;
- *     &lt;enumeration value="LATE"/&gt;
- *     &lt;enumeration value="CAEV"/&gt;
- *     &lt;enumeration value="DDAT"/&gt;
- *     &lt;enumeration value="REFE"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="DQUA"/&gt;
- *     &lt;enumeration value="DSEC"/&gt;
- *     &lt;enumeration value="INVB"/&gt;
- *     &lt;enumeration value="INVL"/&gt;
- *     &lt;enumeration value="INVN"/&gt;
- *     &lt;enumeration value="MINO"/&gt;
- *     &lt;enumeration value="MUNO"/&gt;
- *     &lt;enumeration value="VALR"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="RejectionReason69Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="SAFE"/>
+ *     <enumeration value="ADEA"/>
+ *     <enumeration value="LATE"/>
+ *     <enumeration value="CAEV"/>
+ *     <enumeration value="DDAT"/>
+ *     <enumeration value="REFE"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="DQUA"/>
+ *     <enumeration value="DSEC"/>
+ *     <enumeration value="INVB"/>
+ *     <enumeration value="INVL"/>
+ *     <enumeration value="INVN"/>
+ *     <enumeration value="MINO"/>
+ *     <enumeration value="MUNO"/>
+ *     <enumeration value="VALR"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "RejectionReason69Code")

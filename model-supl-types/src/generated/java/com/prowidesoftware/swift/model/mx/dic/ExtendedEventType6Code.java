@@ -9,17 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for ExtendedEventType6Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ExtendedEventType6Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="TMTN"/&gt;
- *     &lt;enumeration value="FPAY"/&gt;
- *     &lt;enumeration value="CDRD"/&gt;
- *     &lt;enumeration value="REDW"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ExtendedEventType6Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="TMTN"/>
+ *     <enumeration value="FPAY"/>
+ *     <enumeration value="CDRD"/>
+ *     <enumeration value="REDW"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ExtendedEventType6Code")

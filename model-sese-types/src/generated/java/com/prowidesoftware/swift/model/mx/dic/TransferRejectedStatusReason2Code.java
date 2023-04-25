@@ -9,39 +9,38 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for TransferRejectedStatusReason2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="TransferRejectedStatusReason2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="DDAT"/&gt;
- *     &lt;enumeration value="DEPT"/&gt;
- *     &lt;enumeration value="DSEC"/&gt;
- *     &lt;enumeration value="SECU"/&gt;
- *     &lt;enumeration value="ISTP"/&gt;
- *     &lt;enumeration value="ICTN"/&gt;
- *     &lt;enumeration value="SAFE"/&gt;
- *     &lt;enumeration value="IAQD"/&gt;
- *     &lt;enumeration value="BLCA"/&gt;
- *     &lt;enumeration value="DOCC"/&gt;
- *     &lt;enumeration value="IDNA"/&gt;
- *     &lt;enumeration value="DLVY"/&gt;
- *     &lt;enumeration value="LEGL"/&gt;
- *     &lt;enumeration value="NSLA"/&gt;
- *     &lt;enumeration value="DQUA"/&gt;
- *     &lt;enumeration value="INUK"/&gt;
- *     &lt;enumeration value="INID"/&gt;
- *     &lt;enumeration value="INAC"/&gt;
- *     &lt;enumeration value="INNA"/&gt;
- *     &lt;enumeration value="INPM"/&gt;
- *     &lt;enumeration value="CYPA"/&gt;
- *     &lt;enumeration value="PTNS"/&gt;
- *     &lt;enumeration value="FTAX"/&gt;
- *     &lt;enumeration value="ISAT"/&gt;
- *     &lt;enumeration value="CASH"/&gt;
- *     &lt;enumeration value="TREF"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="TransferRejectedStatusReason2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="DDAT"/>
+ *     <enumeration value="DEPT"/>
+ *     <enumeration value="DSEC"/>
+ *     <enumeration value="SECU"/>
+ *     <enumeration value="ISTP"/>
+ *     <enumeration value="ICTN"/>
+ *     <enumeration value="SAFE"/>
+ *     <enumeration value="IAQD"/>
+ *     <enumeration value="BLCA"/>
+ *     <enumeration value="DOCC"/>
+ *     <enumeration value="IDNA"/>
+ *     <enumeration value="DLVY"/>
+ *     <enumeration value="LEGL"/>
+ *     <enumeration value="NSLA"/>
+ *     <enumeration value="DQUA"/>
+ *     <enumeration value="INUK"/>
+ *     <enumeration value="INID"/>
+ *     <enumeration value="INAC"/>
+ *     <enumeration value="INNA"/>
+ *     <enumeration value="INPM"/>
+ *     <enumeration value="CYPA"/>
+ *     <enumeration value="PTNS"/>
+ *     <enumeration value="FTAX"/>
+ *     <enumeration value="ISAT"/>
+ *     <enumeration value="CASH"/>
+ *     <enumeration value="TREF"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "TransferRejectedStatusReason2Code")

@@ -9,20 +9,19 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for TradingModeType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="TradingModeType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="QUDR"/&gt;
- *     &lt;enumeration value="ORDR"/&gt;
- *     &lt;enumeration value="NETR"/&gt;
- *     &lt;enumeration value="AUCT"/&gt;
- *     &lt;enumeration value="MARC"/&gt;
- *     &lt;enumeration value="BILA"/&gt;
- *     &lt;enumeration value="ANON"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="TradingModeType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="QUDR"/>
+ *     <enumeration value="ORDR"/>
+ *     <enumeration value="NETR"/>
+ *     <enumeration value="AUCT"/>
+ *     <enumeration value="MARC"/>
+ *     <enumeration value="BILA"/>
+ *     <enumeration value="ANON"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "TradingModeType1Code")

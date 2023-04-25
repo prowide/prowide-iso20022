@@ -2,13 +2,16 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.swift.model.mx.dic.*;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -30,13 +33,13 @@ public class MxTsmt03700103
 
     @XmlElement(name = "StsRpt", required = true)
     protected StatusReportV03Tsmt03700103 stsRpt;
-    public final static transient String BUSINESS_PROCESS = "tsmt";
-    public final static transient int FUNCTIONALITY = 37;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 3;
+    public static final transient String BUSINESS_PROCESS = "tsmt";
+    public static final transient int FUNCTIONALITY = 37;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 3;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {BICIdentification1 .class, BaselineStatus3Code.class, MessageIdentification1 .class, MxTsmt03700103 .class, StatusReportItems2 .class, StatusReportV03Tsmt03700103 .class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:tsmt.037.001.03";
+    public static final transient Class[] _classes = new Class[] {BICIdentification1 .class, BaselineStatus3Code.class, MessageIdentification1 .class, MxTsmt03700103 .class, StatusReportItems2 .class, StatusReportV03Tsmt03700103 .class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:tsmt.037.001.03";
 
     public MxTsmt03700103() {
         super();
@@ -83,21 +86,6 @@ public class MxTsmt03700103
     public MxTsmt03700103 setStsRpt(StatusReportV03Tsmt03700103 value) {
         this.stsRpt = value;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -170,8 +158,23 @@ public class MxTsmt03700103
      * @return
      *     a new instance of MxTsmt03700103
      */
-    public final static MxTsmt03700103 fromJson(String json) {
+    public static final MxTsmt03700103 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxTsmt03700103 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

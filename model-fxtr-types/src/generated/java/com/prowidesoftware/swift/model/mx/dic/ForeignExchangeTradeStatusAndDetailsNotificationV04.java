@@ -14,12 +14,9 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Scope
-
- * The ForeignExchangeTradeStatusAndDetails message is sent by a central system to the participant to provide notification of the status and details of a foreign exchange trade.
-
- * Usage
-
+ * Scope
+ * The ForeignExchangeTradeStatusAndDetails message is sent by a central system to the participant to provide notification of the status and details of a foreign exchange trade.
+ * Usage
  * The notification is sent by a central settlement system to the two trading parties after it has received foreign exchange trade instructions from both.
  * 
  * 
@@ -326,8 +323,8 @@ public class ForeignExchangeTradeStatusAndDetailsNotificationV04 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the spltTradInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the spltTradInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -341,10 +338,12 @@ public class ForeignExchangeTradeStatusAndDetailsNotificationV04 {
      * {@link SplitTradeDetails3 }
      * 
      * 
+     * @return
+     *     The value of the spltTradInf property.
      */
     public List<SplitTradeDetails3> getSpltTradInf() {
         if (spltTradInf == null) {
-            spltTradInf = new ArrayList<SplitTradeDetails3>();
+            spltTradInf = new ArrayList<>();
         }
         return this.spltTradInf;
     }
@@ -380,8 +379,8 @@ public class ForeignExchangeTradeStatusAndDetailsNotificationV04 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -395,10 +394,12 @@ public class ForeignExchangeTradeStatusAndDetailsNotificationV04 {
      * {@link SupplementaryData1 }
      * 
      * 
+     * @return
+     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<SupplementaryData1>();
+            splmtryData = new ArrayList<>();
         }
         return this.splmtryData;
     }

@@ -10,15 +10,14 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for MsgServiceCode.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="MsgServiceCode"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="InterAct"/&gt;
- *     &lt;enumeration value="FileAct"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="MsgServiceCode">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="InterAct"/>
+ *     <enumeration value="FileAct"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "MsgServiceCode")

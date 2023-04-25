@@ -9,28 +9,27 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for RejectionReason1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="RejectionReason1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ADEA"/&gt;
- *     &lt;enumeration value="LATE"/&gt;
- *     &lt;enumeration value="DQUA"/&gt;
- *     &lt;enumeration value="IPOS"/&gt;
- *     &lt;enumeration value="LACK"/&gt;
- *     &lt;enumeration value="SAFE"/&gt;
- *     &lt;enumeration value="RBIS"/&gt;
- *     &lt;enumeration value="EVNM"/&gt;
- *     &lt;enumeration value="ULNK"/&gt;
- *     &lt;enumeration value="PRXY"/&gt;
- *     &lt;enumeration value="PART"/&gt;
- *     &lt;enumeration value="SPLT"/&gt;
- *     &lt;enumeration value="IPOA"/&gt;
- *     &lt;enumeration value="IREG"/&gt;
- *     &lt;enumeration value="DSEC"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="RejectionReason1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ADEA"/>
+ *     <enumeration value="LATE"/>
+ *     <enumeration value="DQUA"/>
+ *     <enumeration value="IPOS"/>
+ *     <enumeration value="LACK"/>
+ *     <enumeration value="SAFE"/>
+ *     <enumeration value="RBIS"/>
+ *     <enumeration value="EVNM"/>
+ *     <enumeration value="ULNK"/>
+ *     <enumeration value="PRXY"/>
+ *     <enumeration value="PART"/>
+ *     <enumeration value="SPLT"/>
+ *     <enumeration value="IPOA"/>
+ *     <enumeration value="IREG"/>
+ *     <enumeration value="DSEC"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "RejectionReason1Code")

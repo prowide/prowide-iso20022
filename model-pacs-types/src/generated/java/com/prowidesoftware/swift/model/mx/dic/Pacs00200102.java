@@ -22,8 +22,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * The PaymentStatusReport message refers to the original instruction(s) by means of references only or by means of references and a set of elements from the original instruction.
  * The PaymentStatusReport message can be used in domestic and cross-border scenarios.
  * The PaymentStatusReport message exchanged between agents is identified in the schema as follows: 
- * urn:iso:std:iso:20022:tech:xsd:pacs.002.001.02
-.
+ * urn:iso:std:iso:20022:tech:xsd:pacs.002.001.02.
  * 
  * 
  * 
@@ -99,8 +98,8 @@ public class Pacs00200102 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the txInfAndSts property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the txInfAndSts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -114,10 +113,12 @@ public class Pacs00200102 {
      * {@link PaymentTransactionInformation1 }
      * 
      * 
+     * @return
+     *     The value of the txInfAndSts property.
      */
     public List<PaymentTransactionInformation1> getTxInfAndSts() {
         if (txInfAndSts == null) {
-            txInfAndSts = new ArrayList<PaymentTransactionInformation1>();
+            txInfAndSts = new ArrayList<>();
         }
         return this.txInfAndSts;
     }

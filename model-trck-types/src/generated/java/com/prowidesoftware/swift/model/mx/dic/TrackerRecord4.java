@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -43,7 +43,7 @@ public class TrackerRecord4 {
     @XmlElement(name = "PrcgDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar prcgDtTm;
+    protected Calendar prcgDtTm;
 
     /**
      * Gets the value of the agt property.
@@ -153,7 +153,7 @@ public class TrackerRecord4 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getPrcgDtTm() {
+    public Calendar getPrcgDtTm() {
         return prcgDtTm;
     }
 
@@ -165,7 +165,7 @@ public class TrackerRecord4 {
      *     {@link String }
      *     
      */
-    public TrackerRecord4 setPrcgDtTm(XMLGregorianCalendar value) {
+    public TrackerRecord4 setPrcgDtTm(Calendar value) {
         this.prcgDtTm = value;
         return this;
     }

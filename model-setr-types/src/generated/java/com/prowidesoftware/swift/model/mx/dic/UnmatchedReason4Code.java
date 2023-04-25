@@ -9,77 +9,76 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for UnmatchedReason4Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="UnmatchedReason4Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ADEA"/&gt;
- *     &lt;enumeration value="CADE"/&gt;
- *     &lt;enumeration value="CHAR"/&gt;
- *     &lt;enumeration value="CMIS"/&gt;
- *     &lt;enumeration value="CPCA"/&gt;
- *     &lt;enumeration value="DDAT"/&gt;
- *     &lt;enumeration value="DDEA"/&gt;
- *     &lt;enumeration value="DEAL"/&gt;
- *     &lt;enumeration value="DELN"/&gt;
- *     &lt;enumeration value="DEPT"/&gt;
- *     &lt;enumeration value="DMON"/&gt;
- *     &lt;enumeration value="DQUA"/&gt;
- *     &lt;enumeration value="DSEC"/&gt;
- *     &lt;enumeration value="DTRD"/&gt;
- *     &lt;enumeration value="EXEC"/&gt;
- *     &lt;enumeration value="FORF"/&gt;
- *     &lt;enumeration value="LATE"/&gt;
- *     &lt;enumeration value="LEOG"/&gt;
- *     &lt;enumeration value="MCAN"/&gt;
- *     &lt;enumeration value="NARR"/&gt;
- *     &lt;enumeration value="PHYS"/&gt;
- *     &lt;enumeration value="PLCE"/&gt;
- *     &lt;enumeration value="PODU"/&gt;
- *     &lt;enumeration value="REPA"/&gt;
- *     &lt;enumeration value="REPO"/&gt;
- *     &lt;enumeration value="REPP"/&gt;
- *     &lt;enumeration value="RERT"/&gt;
- *     &lt;enumeration value="RSPR"/&gt;
- *     &lt;enumeration value="RTGS"/&gt;
- *     &lt;enumeration value="SAFE"/&gt;
- *     &lt;enumeration value="SETR"/&gt;
- *     &lt;enumeration value="SETS"/&gt;
- *     &lt;enumeration value="TERM"/&gt;
- *     &lt;enumeration value="TXST"/&gt;
- *     &lt;enumeration value="VASU"/&gt;
- *     &lt;enumeration value="POSE"/&gt;
- *     &lt;enumeration value="BORT"/&gt;
- *     &lt;enumeration value="COAX"/&gt;
- *     &lt;enumeration value="OTHI"/&gt;
- *     &lt;enumeration value="BOFE"/&gt;
- *     &lt;enumeration value="TACR"/&gt;
- *     &lt;enumeration value="SDAT"/&gt;
- *     &lt;enumeration value="COID"/&gt;
- *     &lt;enumeration value="SCRA"/&gt;
- *     &lt;enumeration value="ACRU"/&gt;
- *     &lt;enumeration value="SHAI"/&gt;
- *     &lt;enumeration value="ACRS"/&gt;
- *     &lt;enumeration value="DEAS"/&gt;
- *     &lt;enumeration value="CATI"/&gt;
- *     &lt;enumeration value="TACS"/&gt;
- *     &lt;enumeration value="DBNM"/&gt;
- *     &lt;enumeration value="MADA"/&gt;
- *     &lt;enumeration value="OLID"/&gt;
- *     &lt;enumeration value="TRSA"/&gt;
- *     &lt;enumeration value="TRTE"/&gt;
- *     &lt;enumeration value="BOIA"/&gt;
- *     &lt;enumeration value="OPLI"/&gt;
- *     &lt;enumeration value="TRTR"/&gt;
- *     &lt;enumeration value="LWCO"/&gt;
- *     &lt;enumeration value="INTT"/&gt;
- *     &lt;enumeration value="CUFC"/&gt;
- *     &lt;enumeration value="LTME"/&gt;
- *     &lt;enumeration value="ENFC"/&gt;
- *     &lt;enumeration value="CLSE"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="UnmatchedReason4Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ADEA"/>
+ *     <enumeration value="CADE"/>
+ *     <enumeration value="CHAR"/>
+ *     <enumeration value="CMIS"/>
+ *     <enumeration value="CPCA"/>
+ *     <enumeration value="DDAT"/>
+ *     <enumeration value="DDEA"/>
+ *     <enumeration value="DEAL"/>
+ *     <enumeration value="DELN"/>
+ *     <enumeration value="DEPT"/>
+ *     <enumeration value="DMON"/>
+ *     <enumeration value="DQUA"/>
+ *     <enumeration value="DSEC"/>
+ *     <enumeration value="DTRD"/>
+ *     <enumeration value="EXEC"/>
+ *     <enumeration value="FORF"/>
+ *     <enumeration value="LATE"/>
+ *     <enumeration value="LEOG"/>
+ *     <enumeration value="MCAN"/>
+ *     <enumeration value="NARR"/>
+ *     <enumeration value="PHYS"/>
+ *     <enumeration value="PLCE"/>
+ *     <enumeration value="PODU"/>
+ *     <enumeration value="REPA"/>
+ *     <enumeration value="REPO"/>
+ *     <enumeration value="REPP"/>
+ *     <enumeration value="RERT"/>
+ *     <enumeration value="RSPR"/>
+ *     <enumeration value="RTGS"/>
+ *     <enumeration value="SAFE"/>
+ *     <enumeration value="SETR"/>
+ *     <enumeration value="SETS"/>
+ *     <enumeration value="TERM"/>
+ *     <enumeration value="TXST"/>
+ *     <enumeration value="VASU"/>
+ *     <enumeration value="POSE"/>
+ *     <enumeration value="BORT"/>
+ *     <enumeration value="COAX"/>
+ *     <enumeration value="OTHI"/>
+ *     <enumeration value="BOFE"/>
+ *     <enumeration value="TACR"/>
+ *     <enumeration value="SDAT"/>
+ *     <enumeration value="COID"/>
+ *     <enumeration value="SCRA"/>
+ *     <enumeration value="ACRU"/>
+ *     <enumeration value="SHAI"/>
+ *     <enumeration value="ACRS"/>
+ *     <enumeration value="DEAS"/>
+ *     <enumeration value="CATI"/>
+ *     <enumeration value="TACS"/>
+ *     <enumeration value="DBNM"/>
+ *     <enumeration value="MADA"/>
+ *     <enumeration value="OLID"/>
+ *     <enumeration value="TRSA"/>
+ *     <enumeration value="TRTE"/>
+ *     <enumeration value="BOIA"/>
+ *     <enumeration value="OPLI"/>
+ *     <enumeration value="TRTR"/>
+ *     <enumeration value="LWCO"/>
+ *     <enumeration value="INTT"/>
+ *     <enumeration value="CUFC"/>
+ *     <enumeration value="LTME"/>
+ *     <enumeration value="ENFC"/>
+ *     <enumeration value="CLSE"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "UnmatchedReason4Code")

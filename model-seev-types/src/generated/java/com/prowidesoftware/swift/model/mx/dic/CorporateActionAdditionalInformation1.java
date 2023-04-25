@@ -52,8 +52,8 @@ public class CorporateActionAdditionalInformation1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the bnfclOwnrDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the bnfclOwnrDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -67,10 +67,12 @@ public class CorporateActionAdditionalInformation1 {
      * {@link BeneficialOwner1 }
      * 
      * 
+     * @return
+     *     The value of the bnfclOwnrDtls property.
      */
     public List<BeneficialOwner1> getBnfclOwnrDtls() {
         if (bnfclOwnrDtls == null) {
-            bnfclOwnrDtls = new ArrayList<BeneficialOwner1>();
+            bnfclOwnrDtls = new ArrayList<>();
         }
         return this.bnfclOwnrDtls;
     }
@@ -181,8 +183,8 @@ public class CorporateActionAdditionalInformation1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dlvryDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the dlvryDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -196,10 +198,12 @@ public class CorporateActionAdditionalInformation1 {
      * {@link ProceedsDelivery1 }
      * 
      * 
+     * @return
+     *     The value of the dlvryDtls property.
      */
     public List<ProceedsDelivery1> getDlvryDtls() {
         if (dlvryDtls == null) {
-            dlvryDtls = new ArrayList<ProceedsDelivery1>();
+            dlvryDtls = new ArrayList<>();
         }
         return this.dlvryDtls;
     }

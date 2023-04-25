@@ -78,8 +78,8 @@ public class TransferInCancellationRequestV06 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the refs property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the refs property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -93,10 +93,12 @@ public class TransferInCancellationRequestV06 {
      * {@link References15 }
      * 
      * 
+     * @return
+     *     The value of the refs property.
      */
     public List<References15> getRefs() {
         if (refs == null) {
-            refs = new ArrayList<References15>();
+            refs = new ArrayList<>();
         }
         return this.refs;
     }
@@ -107,8 +109,8 @@ public class TransferInCancellationRequestV06 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cxl property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cxl property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -122,10 +124,12 @@ public class TransferInCancellationRequestV06 {
      * {@link Cancellation9Choice }
      * 
      * 
+     * @return
+     *     The value of the cxl property.
      */
     public List<Cancellation9Choice> getCxl() {
         if (cxl == null) {
-            cxl = new ArrayList<Cancellation9Choice>();
+            cxl = new ArrayList<>();
         }
         return this.cxl;
     }

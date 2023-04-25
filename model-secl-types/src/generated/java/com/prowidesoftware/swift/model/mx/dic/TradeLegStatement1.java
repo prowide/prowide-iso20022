@@ -93,8 +93,8 @@ public class TradeLegStatement1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the tradLegsDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the tradLegsDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -108,10 +108,12 @@ public class TradeLegStatement1 {
      * {@link TradeLeg3 }
      * 
      * 
+     * @return
+     *     The value of the tradLegsDtls property.
      */
     public List<TradeLeg3> getTradLegsDtls() {
         if (tradLegsDtls == null) {
-            tradLegsDtls = new ArrayList<TradeLeg3>();
+            tradLegsDtls = new ArrayList<>();
         }
         return this.tradLegsDtls;
     }

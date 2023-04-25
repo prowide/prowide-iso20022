@@ -2,14 +2,14 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -47,15 +47,15 @@ public class Confirmation1 {
     @XmlElement(name = "ConfTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar confTm;
+    protected Calendar confTm;
     @XmlElement(name = "TradPtyConfTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar tradPtyConfTm;
+    protected Calendar tradPtyConfTm;
     @XmlElement(name = "InitgPtyConfTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar initgPtyConfTm;
+    protected Calendar initgPtyConfTm;
     @XmlElement(name = "ConfTp", required = true)
     @XmlSchemaType(name = "string")
     protected ConfirmationRequest1Code confTp;
@@ -111,7 +111,7 @@ public class Confirmation1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getConfTm() {
+    public Calendar getConfTm() {
         return confTm;
     }
 
@@ -123,7 +123,7 @@ public class Confirmation1 {
      *     {@link String }
      *     
      */
-    public Confirmation1 setConfTm(XMLGregorianCalendar value) {
+    public Confirmation1 setConfTm(Calendar value) {
         this.confTm = value;
         return this;
     }
@@ -136,7 +136,7 @@ public class Confirmation1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getTradPtyConfTm() {
+    public Calendar getTradPtyConfTm() {
         return tradPtyConfTm;
     }
 
@@ -148,7 +148,7 @@ public class Confirmation1 {
      *     {@link String }
      *     
      */
-    public Confirmation1 setTradPtyConfTm(XMLGregorianCalendar value) {
+    public Confirmation1 setTradPtyConfTm(Calendar value) {
         this.tradPtyConfTm = value;
         return this;
     }
@@ -161,7 +161,7 @@ public class Confirmation1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getInitgPtyConfTm() {
+    public Calendar getInitgPtyConfTm() {
         return initgPtyConfTm;
     }
 
@@ -173,7 +173,7 @@ public class Confirmation1 {
      *     {@link String }
      *     
      */
-    public Confirmation1 setInitgPtyConfTm(XMLGregorianCalendar value) {
+    public Confirmation1 setInitgPtyConfTm(Calendar value) {
         this.initgPtyConfTm = value;
         return this;
     }

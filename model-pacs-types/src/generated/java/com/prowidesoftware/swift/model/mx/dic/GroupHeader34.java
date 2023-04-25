@@ -3,16 +3,16 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -47,7 +47,7 @@ public class GroupHeader34 {
     @XmlElement(name = "CreDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar creDtTm;
+    protected Calendar creDtTm;
     @XmlElement(name = "Authstn")
     protected List<Authorisation1Choice> authstn;
     @XmlElement(name = "BtchBookg")
@@ -61,7 +61,7 @@ public class GroupHeader34 {
     @XmlElement(name = "IntrBkSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar intrBkSttlmDt;
+    protected Calendar intrBkSttlmDt;
     @XmlElement(name = "SttlmInf", required = true)
     protected SettlementInformation14 sttlmInf;
     @XmlElement(name = "PmtTpInf")
@@ -104,7 +104,7 @@ public class GroupHeader34 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getCreDtTm() {
+    public Calendar getCreDtTm() {
         return creDtTm;
     }
 
@@ -116,7 +116,7 @@ public class GroupHeader34 {
      *     {@link String }
      *     
      */
-    public GroupHeader34 setCreDtTm(XMLGregorianCalendar value) {
+    public GroupHeader34 setCreDtTm(Calendar value) {
         this.creDtTm = value;
         return this;
     }
@@ -127,8 +127,8 @@ public class GroupHeader34 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the authstn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the authstn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -142,10 +142,12 @@ public class GroupHeader34 {
      * {@link Authorisation1Choice }
      * 
      * 
+     * @return
+     *     The value of the authstn property.
      */
     public List<Authorisation1Choice> getAuthstn() {
         if (authstn == null) {
-            authstn = new ArrayList<Authorisation1Choice>();
+            authstn = new ArrayList<>();
         }
         return this.authstn;
     }
@@ -258,7 +260,7 @@ public class GroupHeader34 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getIntrBkSttlmDt() {
+    public Calendar getIntrBkSttlmDt() {
         return intrBkSttlmDt;
     }
 
@@ -270,7 +272,7 @@ public class GroupHeader34 {
      *     {@link String }
      *     
      */
-    public GroupHeader34 setIntrBkSttlmDt(XMLGregorianCalendar value) {
+    public GroupHeader34 setIntrBkSttlmDt(Calendar value) {
         this.intrBkSttlmDt = value;
         return this;
     }

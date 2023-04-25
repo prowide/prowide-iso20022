@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -36,13 +36,13 @@ public class CorporateActionSD9 {
     @XmlElement(name = "RcrdDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar rcrdDt;
+    protected Calendar rcrdDt;
     @XmlElement(name = "PmtDt")
     protected DateFormat28Choice pmtDt;
     @XmlElement(name = "LtryDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar ltryDt;
+    protected Calendar ltryDt;
     @XmlElement(name = "LtryTp")
     @XmlSchemaType(name = "string")
     protected LotteryType1Code ltryTp;
@@ -80,7 +80,7 @@ public class CorporateActionSD9 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getRcrdDt() {
+    public Calendar getRcrdDt() {
         return rcrdDt;
     }
 
@@ -92,7 +92,7 @@ public class CorporateActionSD9 {
      *     {@link String }
      *     
      */
-    public CorporateActionSD9 setRcrdDt(XMLGregorianCalendar value) {
+    public CorporateActionSD9 setRcrdDt(Calendar value) {
         this.rcrdDt = value;
         return this;
     }
@@ -130,7 +130,7 @@ public class CorporateActionSD9 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getLtryDt() {
+    public Calendar getLtryDt() {
         return ltryDt;
     }
 
@@ -142,7 +142,7 @@ public class CorporateActionSD9 {
      *     {@link String }
      *     
      */
-    public CorporateActionSD9 setLtryDt(XMLGregorianCalendar value) {
+    public CorporateActionSD9 setLtryDt(Calendar value) {
         this.ltryDt = value;
         return this;
     }

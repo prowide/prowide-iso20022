@@ -93,8 +93,8 @@ public class EligiblePosition10 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the hldgBal property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the hldgBal property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -108,10 +108,12 @@ public class EligiblePosition10 {
      * {@link HoldingBalance9 }
      * 
      * 
+     * @return
+     *     The value of the hldgBal property.
      */
     public List<HoldingBalance9> getHldgBal() {
         if (hldgBal == null) {
-            hldgBal = new ArrayList<HoldingBalance9>();
+            hldgBal = new ArrayList<>();
         }
         return this.hldgBal;
     }
@@ -122,8 +124,8 @@ public class EligiblePosition10 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rghtsHldr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rghtsHldr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -137,10 +139,12 @@ public class EligiblePosition10 {
      * {@link PartyIdentification239 }
      * 
      * 
+     * @return
+     *     The value of the rghtsHldr property.
      */
     public List<PartyIdentification239> getRghtsHldr() {
         if (rghtsHldr == null) {
-            rghtsHldr = new ArrayList<PartyIdentification239>();
+            rghtsHldr = new ArrayList<>();
         }
         return this.rghtsHldr;
     }

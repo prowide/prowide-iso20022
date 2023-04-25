@@ -9,64 +9,63 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for TradeTransactionCondition1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="TradeTransactionCondition1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CBNS"/&gt;
- *     &lt;enumeration value="XBNS"/&gt;
- *     &lt;enumeration value="CCPN"/&gt;
- *     &lt;enumeration value="XCPN"/&gt;
- *     &lt;enumeration value="CDIV"/&gt;
- *     &lt;enumeration value="XDIV"/&gt;
- *     &lt;enumeration value="CRTS"/&gt;
- *     &lt;enumeration value="XRTS"/&gt;
- *     &lt;enumeration value="CWAR"/&gt;
- *     &lt;enumeration value="XWAR"/&gt;
- *     &lt;enumeration value="SPCU"/&gt;
- *     &lt;enumeration value="SPEX"/&gt;
- *     &lt;enumeration value="DUEB"/&gt;
- *     &lt;enumeration value="SSTI"/&gt;
- *     &lt;enumeration value="DIRT"/&gt;
- *     &lt;enumeration value="CLEN"/&gt;
- *     &lt;enumeration value="BLKO"/&gt;
- *     &lt;enumeration value="GTDL"/&gt;
- *     &lt;enumeration value="FRAC"/&gt;
- *     &lt;enumeration value="CRST"/&gt;
- *     &lt;enumeration value="NCRS"/&gt;
- *     &lt;enumeration value="DORD"/&gt;
- *     &lt;enumeration value="DIOR"/&gt;
- *     &lt;enumeration value="WARE"/&gt;
- *     &lt;enumeration value="DNIN"/&gt;
- *     &lt;enumeration value="DNRE"/&gt;
- *     &lt;enumeration value="FORW"/&gt;
- *     &lt;enumeration value="HIST"/&gt;
- *     &lt;enumeration value="BCRO"/&gt;
- *     &lt;enumeration value="BCRP"/&gt;
- *     &lt;enumeration value="BCPD"/&gt;
- *     &lt;enumeration value="BCFD"/&gt;
- *     &lt;enumeration value="BCBL"/&gt;
- *     &lt;enumeration value="BCBN"/&gt;
- *     &lt;enumeration value="BTEX"/&gt;
- *     &lt;enumeration value="CALL"/&gt;
- *     &lt;enumeration value="CLBR"/&gt;
- *     &lt;enumeration value="MONT"/&gt;
- *     &lt;enumeration value="NBFR"/&gt;
- *     &lt;enumeration value="TRFR"/&gt;
- *     &lt;enumeration value="PUTT"/&gt;
- *     &lt;enumeration value="SPCC"/&gt;
- *     &lt;enumeration value="SECN"/&gt;
- *     &lt;enumeration value="SEBN"/&gt;
- *     &lt;enumeration value="SCBN"/&gt;
- *     &lt;enumeration value="SCRT"/&gt;
- *     &lt;enumeration value="SERT"/&gt;
- *     &lt;enumeration value="SCCR"/&gt;
- *     &lt;enumeration value="SECR"/&gt;
- *     &lt;enumeration value="CAST"/&gt;
- *     &lt;enumeration value="SPPR"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="TradeTransactionCondition1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CBNS"/>
+ *     <enumeration value="XBNS"/>
+ *     <enumeration value="CCPN"/>
+ *     <enumeration value="XCPN"/>
+ *     <enumeration value="CDIV"/>
+ *     <enumeration value="XDIV"/>
+ *     <enumeration value="CRTS"/>
+ *     <enumeration value="XRTS"/>
+ *     <enumeration value="CWAR"/>
+ *     <enumeration value="XWAR"/>
+ *     <enumeration value="SPCU"/>
+ *     <enumeration value="SPEX"/>
+ *     <enumeration value="DUEB"/>
+ *     <enumeration value="SSTI"/>
+ *     <enumeration value="DIRT"/>
+ *     <enumeration value="CLEN"/>
+ *     <enumeration value="BLKO"/>
+ *     <enumeration value="GTDL"/>
+ *     <enumeration value="FRAC"/>
+ *     <enumeration value="CRST"/>
+ *     <enumeration value="NCRS"/>
+ *     <enumeration value="DORD"/>
+ *     <enumeration value="DIOR"/>
+ *     <enumeration value="WARE"/>
+ *     <enumeration value="DNIN"/>
+ *     <enumeration value="DNRE"/>
+ *     <enumeration value="FORW"/>
+ *     <enumeration value="HIST"/>
+ *     <enumeration value="BCRO"/>
+ *     <enumeration value="BCRP"/>
+ *     <enumeration value="BCPD"/>
+ *     <enumeration value="BCFD"/>
+ *     <enumeration value="BCBL"/>
+ *     <enumeration value="BCBN"/>
+ *     <enumeration value="BTEX"/>
+ *     <enumeration value="CALL"/>
+ *     <enumeration value="CLBR"/>
+ *     <enumeration value="MONT"/>
+ *     <enumeration value="NBFR"/>
+ *     <enumeration value="TRFR"/>
+ *     <enumeration value="PUTT"/>
+ *     <enumeration value="SPCC"/>
+ *     <enumeration value="SECN"/>
+ *     <enumeration value="SEBN"/>
+ *     <enumeration value="SCBN"/>
+ *     <enumeration value="SCRT"/>
+ *     <enumeration value="SERT"/>
+ *     <enumeration value="SCCR"/>
+ *     <enumeration value="SECR"/>
+ *     <enumeration value="CAST"/>
+ *     <enumeration value="SPPR"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "TradeTransactionCondition1Code")

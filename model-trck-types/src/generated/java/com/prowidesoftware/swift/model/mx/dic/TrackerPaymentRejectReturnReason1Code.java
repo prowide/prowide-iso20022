@@ -10,29 +10,28 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for TrackerPaymentRejectReturnReason1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="TrackerPaymentRejectReturnReason1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="FOCR"/&gt;
- *     &lt;enumeration value="BE01"/&gt;
- *     &lt;enumeration value="AC01"/&gt;
- *     &lt;enumeration value="RC08"/&gt;
- *     &lt;enumeration value="FF07"/&gt;
- *     &lt;enumeration value="RR03"/&gt;
- *     &lt;enumeration value="NOAS"/&gt;
- *     &lt;enumeration value="MS03"/&gt;
- *     &lt;enumeration value="RR05"/&gt;
- *     &lt;enumeration value="CUST"/&gt;
- *     &lt;enumeration value="AM06"/&gt;
- *     &lt;enumeration value="RC01"/&gt;
- *     &lt;enumeration value="AC06"/&gt;
- *     &lt;enumeration value="AC04"/&gt;
- *     &lt;enumeration value="DUPL"/&gt;
- *     &lt;enumeration value="G004"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="TrackerPaymentRejectReturnReason1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="FOCR"/>
+ *     <enumeration value="BE01"/>
+ *     <enumeration value="AC01"/>
+ *     <enumeration value="RC08"/>
+ *     <enumeration value="FF07"/>
+ *     <enumeration value="RR03"/>
+ *     <enumeration value="NOAS"/>
+ *     <enumeration value="MS03"/>
+ *     <enumeration value="RR05"/>
+ *     <enumeration value="CUST"/>
+ *     <enumeration value="AM06"/>
+ *     <enumeration value="RC01"/>
+ *     <enumeration value="AC06"/>
+ *     <enumeration value="AC04"/>
+ *     <enumeration value="DUPL"/>
+ *     <enumeration value="G004"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "TrackerPaymentRejectReturnReason1Code")

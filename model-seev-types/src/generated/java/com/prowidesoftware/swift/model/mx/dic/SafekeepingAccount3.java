@@ -121,8 +121,8 @@ public class SafekeepingAccount3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the instdBal property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the instdBal property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -136,10 +136,12 @@ public class SafekeepingAccount3 {
      * {@link HoldingBalance4 }
      * 
      * 
+     * @return
+     *     The value of the instdBal property.
      */
     public List<HoldingBalance4> getInstdBal() {
         if (instdBal == null) {
-            instdBal = new ArrayList<HoldingBalance4>();
+            instdBal = new ArrayList<>();
         }
         return this.instdBal;
     }
@@ -150,8 +152,8 @@ public class SafekeepingAccount3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rghtsHldr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rghtsHldr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -165,10 +167,12 @@ public class SafekeepingAccount3 {
      * {@link PartyIdentification9Choice }
      * 
      * 
+     * @return
+     *     The value of the rghtsHldr property.
      */
     public List<PartyIdentification9Choice> getRghtsHldr() {
         if (rghtsHldr == null) {
-            rghtsHldr = new ArrayList<PartyIdentification9Choice>();
+            rghtsHldr = new ArrayList<>();
         }
         return this.rghtsHldr;
     }

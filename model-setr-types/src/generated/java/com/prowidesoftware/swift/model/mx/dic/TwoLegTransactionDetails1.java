@@ -164,8 +164,8 @@ public class TwoLegTransactionDetails1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the othrAmts property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the othrAmts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -179,10 +179,12 @@ public class TwoLegTransactionDetails1 {
      * {@link OtherAmounts16 }
      * 
      * 
+     * @return
+     *     The value of the othrAmts property.
      */
     public List<OtherAmounts16> getOthrAmts() {
         if (othrAmts == null) {
-            othrAmts = new ArrayList<OtherAmounts16>();
+            othrAmts = new ArrayList<>();
         }
         return this.othrAmts;
     }

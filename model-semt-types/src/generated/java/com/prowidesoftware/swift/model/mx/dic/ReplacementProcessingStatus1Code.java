@@ -9,22 +9,21 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for ReplacementProcessingStatus1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ReplacementProcessingStatus1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="DEND"/&gt;
- *     &lt;enumeration value="EXCH"/&gt;
- *     &lt;enumeration value="INTE"/&gt;
- *     &lt;enumeration value="PACK"/&gt;
- *     &lt;enumeration value="PART"/&gt;
- *     &lt;enumeration value="PEND"/&gt;
- *     &lt;enumeration value="REJT"/&gt;
- *     &lt;enumeration value="REPL"/&gt;
- *     &lt;enumeration value="REPR"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ReplacementProcessingStatus1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="DEND"/>
+ *     <enumeration value="EXCH"/>
+ *     <enumeration value="INTE"/>
+ *     <enumeration value="PACK"/>
+ *     <enumeration value="PART"/>
+ *     <enumeration value="PEND"/>
+ *     <enumeration value="REJT"/>
+ *     <enumeration value="REPL"/>
+ *     <enumeration value="REPR"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ReplacementProcessingStatus1Code")

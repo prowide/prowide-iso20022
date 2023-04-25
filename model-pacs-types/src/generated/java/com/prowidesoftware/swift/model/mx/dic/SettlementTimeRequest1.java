@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -30,7 +30,7 @@ public class SettlementTimeRequest1 {
     @XmlElement(name = "CLSTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected XMLGregorianCalendar clsTm;
+    protected Calendar clsTm;
 
     /**
      * Gets the value of the clsTm property.
@@ -40,7 +40,7 @@ public class SettlementTimeRequest1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getCLSTm() {
+    public Calendar getCLSTm() {
         return clsTm;
     }
 
@@ -52,7 +52,7 @@ public class SettlementTimeRequest1 {
      *     {@link String }
      *     
      */
-    public SettlementTimeRequest1 setCLSTm(XMLGregorianCalendar value) {
+    public SettlementTimeRequest1 setCLSTm(Calendar value) {
         this.clsTm = value;
         return this;
     }

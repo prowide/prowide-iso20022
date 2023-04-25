@@ -3,15 +3,15 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -66,7 +66,7 @@ public class PaymentTransactionInformation27 {
     @XmlElement(name = "IntrBkSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar intrBkSttlmDt;
+    protected Calendar intrBkSttlmDt;
     @XmlElement(name = "RtrdInstdAmt")
     protected ActiveOrHistoricCurrencyAndAmount rtrdInstdAmt;
     @XmlElement(name = "XchgRate")
@@ -295,7 +295,7 @@ public class PaymentTransactionInformation27 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getIntrBkSttlmDt() {
+    public Calendar getIntrBkSttlmDt() {
         return intrBkSttlmDt;
     }
 
@@ -307,7 +307,7 @@ public class PaymentTransactionInformation27 {
      *     {@link String }
      *     
      */
-    public PaymentTransactionInformation27 setIntrBkSttlmDt(XMLGregorianCalendar value) {
+    public PaymentTransactionInformation27 setIntrBkSttlmDt(Calendar value) {
         this.intrBkSttlmDt = value;
         return this;
     }
@@ -418,8 +418,8 @@ public class PaymentTransactionInformation27 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the chrgsInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the chrgsInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -433,10 +433,12 @@ public class PaymentTransactionInformation27 {
      * {@link ChargesInformation5 }
      * 
      * 
+     * @return
+     *     The value of the chrgsInf property.
      */
     public List<ChargesInformation5> getChrgsInf() {
         if (chrgsInf == null) {
-            chrgsInf = new ArrayList<ChargesInformation5>();
+            chrgsInf = new ArrayList<>();
         }
         return this.chrgsInf;
     }
@@ -497,8 +499,8 @@ public class PaymentTransactionInformation27 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rtrRsnInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rtrRsnInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -512,10 +514,12 @@ public class PaymentTransactionInformation27 {
      * {@link ReturnReasonInformation9 }
      * 
      * 
+     * @return
+     *     The value of the rtrRsnInf property.
      */
     public List<ReturnReasonInformation9> getRtrRsnInf() {
         if (rtrRsnInf == null) {
-            rtrRsnInf = new ArrayList<ReturnReasonInformation9>();
+            rtrRsnInf = new ArrayList<>();
         }
         return this.rtrRsnInf;
     }

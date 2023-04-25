@@ -9,18 +9,17 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for AmountConsistencyType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="AmountConsistencyType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CONS"/&gt;
- *     &lt;enumeration value="ICNS"/&gt;
- *     &lt;enumeration value="ICGA"/&gt;
- *     &lt;enumeration value="ICFA"/&gt;
- *     &lt;enumeration value="IISA"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="AmountConsistencyType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CONS"/>
+ *     <enumeration value="ICNS"/>
+ *     <enumeration value="ICGA"/>
+ *     <enumeration value="ICFA"/>
+ *     <enumeration value="IISA"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "AmountConsistencyType1Code")

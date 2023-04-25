@@ -2,15 +2,15 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -51,7 +51,7 @@ public class InstrumentLeg6 {
     @XmlElement(name = "LegSttlmDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar legSttlmDt;
+    protected Calendar legSttlmDt;
     @XmlElement(name = "LegLastPric", required = true)
     protected ActiveCurrencyAnd13DecimalAmount legLastPric;
     @XmlElement(name = "LegSttlmCcy", required = true)
@@ -69,7 +69,7 @@ public class InstrumentLeg6 {
     @XmlElement(name = "LegValDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar legValDt;
+    protected Calendar legValDt;
     @XmlElement(name = "LegCcy", required = true)
     protected String legCcy;
     @XmlElement(name = "LegSymb", required = true)
@@ -135,7 +135,7 @@ public class InstrumentLeg6 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getLegSttlmDt() {
+    public Calendar getLegSttlmDt() {
         return legSttlmDt;
     }
 
@@ -147,7 +147,7 @@ public class InstrumentLeg6 {
      *     {@link String }
      *     
      */
-    public InstrumentLeg6 setLegSttlmDt(XMLGregorianCalendar value) {
+    public InstrumentLeg6 setLegSttlmDt(Calendar value) {
         this.legSttlmDt = value;
         return this;
     }
@@ -335,7 +335,7 @@ public class InstrumentLeg6 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getLegValDt() {
+    public Calendar getLegValDt() {
         return legValDt;
     }
 
@@ -347,7 +347,7 @@ public class InstrumentLeg6 {
      *     {@link String }
      *     
      */
-    public InstrumentLeg6 setLegValDt(XMLGregorianCalendar value) {
+    public InstrumentLeg6 setLegValDt(Calendar value) {
         this.legValDt = value;
         return this;
     }

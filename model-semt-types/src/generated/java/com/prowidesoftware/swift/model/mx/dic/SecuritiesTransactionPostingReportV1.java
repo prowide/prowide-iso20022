@@ -16,19 +16,15 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 /**
  * SCOPE
  * An account servicer sends a SecuritiesTransactionPostingReport to an account owner to provide the details of increases and decreases of holdings which occurred during a specified period, for all or selected securities in the specified safekeeping account or sub-safekeeping account which the account servicer holds for the account owner. 
- * 
-The account servicer/owner relationship may be:
+ * The account servicer/owner relationship may be:
  * - a central securities depository or another settlement market infrastructure acting on behalf of their participants
  * - an agent (sub-custodian) acting on behalf of their global custodian customer, or 
  * - a custodian acting on behalf of an investment management institution or a broker/dealer.
  * USAGE
  * This message may be used as a trade date based or a settlement date based statement.
- * The message may also be used to: 
-
- * - re-send a message previously sent (the sub-function of the message is Duplicate) 
-
- * - provide a third party with a copy of a message for information (the sub-function of the message is Copy) 
-
+ * The message may also be used to: 
+ * - re-send a message previously sent (the sub-function of the message is Duplicate) 
+ * - provide a third party with a copy of a message for information (the sub-function of the message is Copy) 
  * - re-send to a third party a copy of a message for information (the sub-function of the message is Copy Duplicate).
  * ISO 15022 - 20022 Coexistence
  * This ISO 20022 message is reversed engineered from ISO 15022. Both standards will coexist for a certain number of years. Until this coexistence period ends, the usage of certain data types is restricted to ensure interoperability between ISO 15022 and 20022 users. Compliance to these rules is mandatory in a coexistence environment. The coexistence restrictions are described in a Textual Rule linked to the Message Items they concern. These coexistence textual rules are clearly identified as follows: “CoexistenceXxxxRule”.
@@ -200,8 +196,8 @@ public class SecuritiesTransactionPostingReportV1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the finInstrmDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the finInstrmDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -215,10 +211,12 @@ public class SecuritiesTransactionPostingReportV1 {
      * {@link FinancialInstrumentDetails2 }
      * 
      * 
+     * @return
+     *     The value of the finInstrmDtls property.
      */
     public List<FinancialInstrumentDetails2> getFinInstrmDtls() {
         if (finInstrmDtls == null) {
-            finInstrmDtls = new ArrayList<FinancialInstrumentDetails2>();
+            finInstrmDtls = new ArrayList<>();
         }
         return this.finInstrmDtls;
     }
@@ -229,8 +227,8 @@ public class SecuritiesTransactionPostingReportV1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the subAcctDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the subAcctDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -244,10 +242,12 @@ public class SecuritiesTransactionPostingReportV1 {
      * {@link SubAccountIdentification9 }
      * 
      * 
+     * @return
+     *     The value of the subAcctDtls property.
      */
     public List<SubAccountIdentification9> getSubAcctDtls() {
         if (subAcctDtls == null) {
-            subAcctDtls = new ArrayList<SubAccountIdentification9>();
+            subAcctDtls = new ArrayList<>();
         }
         return this.subAcctDtls;
     }

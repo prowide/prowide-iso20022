@@ -253,8 +253,8 @@ public class SwitchSubscriptionLegOrder3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the chrgDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the chrgDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -268,10 +268,12 @@ public class SwitchSubscriptionLegOrder3 {
      * {@link Charge17 }
      * 
      * 
+     * @return
+     *     The value of the chrgDtls property.
      */
     public List<Charge17> getChrgDtls() {
         if (chrgDtls == null) {
-            chrgDtls = new ArrayList<Charge17>();
+            chrgDtls = new ArrayList<>();
         }
         return this.chrgDtls;
     }
@@ -282,8 +284,8 @@ public class SwitchSubscriptionLegOrder3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the comssnDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the comssnDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -297,10 +299,12 @@ public class SwitchSubscriptionLegOrder3 {
      * {@link Commission10 }
      * 
      * 
+     * @return
+     *     The value of the comssnDtls property.
      */
     public List<Commission10> getComssnDtls() {
         if (comssnDtls == null) {
-            comssnDtls = new ArrayList<Commission10>();
+            comssnDtls = new ArrayList<>();
         }
         return this.comssnDtls;
     }
@@ -353,8 +357,8 @@ public class SwitchSubscriptionLegOrder3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the taxDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the taxDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -368,10 +372,12 @@ public class SwitchSubscriptionLegOrder3 {
      * {@link Tax16 }
      * 
      * 
+     * @return
+     *     The value of the taxDtls property.
      */
     public List<Tax16> getTaxDtls() {
         if (taxDtls == null) {
-            taxDtls = new ArrayList<Tax16>();
+            taxDtls = new ArrayList<>();
         }
         return this.taxDtls;
     }

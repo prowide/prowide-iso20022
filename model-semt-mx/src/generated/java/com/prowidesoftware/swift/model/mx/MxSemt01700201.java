@@ -2,13 +2,16 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.swift.model.mx.dic.*;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -30,13 +33,13 @@ public class MxSemt01700201
 
     @XmlElement(name = "SctiesTxPstngRpt", required = true)
     protected SecuritiesTransactionPostingReport002V01 sctiesTxPstngRpt;
-    public final static transient String BUSINESS_PROCESS = "semt";
-    public final static transient int FUNCTIONALITY = 17;
-    public final static transient int VARIANT = 2;
-    public final static transient int VERSION = 1;
+    public static final transient String BUSINESS_PROCESS = "semt";
+    public static final transient int FUNCTIONALITY = 17;
+    public static final transient int VARIANT = 2;
+    public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {AlternateIdentification2 .class, AmountAndDirection13 .class, AmountAndDirection18 .class, BalanceQuantity7Choice.class, BeneficialOwnership2Choice.class, BlockTrade1Code.class, BlockTrade2Choice.class, CashSettlementSystem2Choice.class, CashSettlementSystem2Code.class, CentralCounterPartyEligibility2Choice.class, ClosingBalance2 .class, ClosingBalance2Choice.class, CopyDuplicate1Code.class, CorporateActionEventType2Choice.class, CorporateActionEventType3Code.class, CreditDebitCode.class, DateAndDateTimeChoice.class, DateTimePeriodDetails.class, DateType3Code.class, DeliveryReceiptType2Code.class, DocumentIdentification16 .class, EventFrequency4Code.class, Extension2 .class, ExtensionEnvelope1 .class, FinancialInstrumentDetails3 .class, FinancialInstrumentQuantity15Choice.class, Frequency6Choice.class, GenericIdentification24 .class, GenericIdentification25 .class, GenericIdentification26 .class, GenericIdentification28 .class, IdentificationSource2Choice.class, LetterOfGuarantee2Choice.class, MarketClientSide2Choice.class, MarketClientSideCode.class, MarketIdentification10 .class, MarketIdentification2Choice.class, MarketIdentification8 .class, MarketType2Code.class, MarketType4Code.class, MarketType6Choice.class, MarketType7Choice.class, MxSemt01700201 .class, NameAndAddress12 .class, NettingEligibility2Choice.class, Number3Choice.class, OpeningBalance2 .class, OpeningBalance2Choice.class, OriginalAndCurrentQuantities4 .class, OwnershipLegalRestrictions1Code.class, Pagination.class, PartyIdentification16Choice.class, PartyIdentification17Choice.class, PartyIdentification18Choice.class, PartyIdentification38 .class, PartyIdentificationAndAccount25 .class, Period2 .class, Period2Choice.class, PriceInformation8 .class, PriceRateOrAmountOrUnknown1Choice.class, PriceValueType1Code.class, PurposeCode4Choice.class, Quantity10Choice.class, ReceiveDelivery1Code.class, Registration1Code.class, Registration2Choice.class, RepurchaseType3Code.class, RepurchaseType6Choice.class, RestrictedFINActiveOrHistoricCurrencyAnd13DecimalAmount.class, RestrictedFINActiveOrHistoricCurrencyAndAmount.class, Restriction2Choice.class, SafekeepingPlace1Code.class, SafekeepingPlace3Code.class, SafekeepingPlaceFormat4Choice.class, SafekeepingPlaceTypeAndAnyBICIdentifier1 .class, SafekeepingPlaceTypeAndText4 .class, SecuritiesAccount16 .class, SecuritiesAccount17 .class, SecuritiesAccountPurposeType1Code.class, SecuritiesRTGS2Choice.class, SecuritiesTransactionPostingReport002V01 .class, SecuritiesTransactionType4Code.class, SecuritiesTransactionType6Choice.class, SecurityIdentification12 .class, SecurityIdentification12Choice.class, SettlementDate4Choice.class, SettlementDate4Code.class, SettlementDateCode3Choice.class, SettlementDetails13 .class, SettlementOrCorporateActionEvent4Choice.class, SettlementParties6 .class, SettlementSystemMethod1Code.class, SettlementSystemMethod2Choice.class, SettlementTransactionCondition2Code.class, SettlementTransactionCondition3Choice.class, SettlingCapacity1Code.class, SettlingCapacity2Choice.class, ShortLong1Code.class, Statement27 .class, StatementBasis2Code.class, StatementBasis5Choice.class, StatementUpdateType1Code.class, SubAccountIdentification14 .class, TaxCapacityParty2Choice.class, TaxLiability1Code.class, TradeDate2Choice.class, TradeDateCode2Choice.class, Transaction11 .class, TransactionActivity1Code.class, TransactionActivity2Choice.class, TransactionDetails18 .class, TypeOfPrice16Code.class, TypeOfPrice8Choice.class, UpdateType3Choice.class, YieldedOrValueType1Choice.class };
-    public final static transient String NAMESPACE = "urn:swift:xsd:semt.017.002.01";
+    public static final transient Class[] _classes = new Class[] {AlternateIdentification2 .class, AmountAndDirection13 .class, AmountAndDirection18 .class, BalanceQuantity7Choice.class, BeneficialOwnership2Choice.class, BlockTrade1Code.class, BlockTrade2Choice.class, CashSettlementSystem2Choice.class, CashSettlementSystem2Code.class, CentralCounterPartyEligibility2Choice.class, ClosingBalance2 .class, ClosingBalance2Choice.class, CopyDuplicate1Code.class, CorporateActionEventType2Choice.class, CorporateActionEventType3Code.class, CreditDebitCode.class, DateAndDateTimeChoice.class, DateTimePeriodDetails.class, DateType3Code.class, DeliveryReceiptType2Code.class, DocumentIdentification16 .class, EventFrequency4Code.class, Extension2 .class, ExtensionEnvelope1 .class, FinancialInstrumentDetails3 .class, FinancialInstrumentQuantity15Choice.class, Frequency6Choice.class, GenericIdentification24 .class, GenericIdentification25 .class, GenericIdentification26 .class, GenericIdentification28 .class, IdentificationSource2Choice.class, LetterOfGuarantee2Choice.class, MarketClientSide2Choice.class, MarketClientSideCode.class, MarketIdentification10 .class, MarketIdentification2Choice.class, MarketIdentification8 .class, MarketType2Code.class, MarketType4Code.class, MarketType6Choice.class, MarketType7Choice.class, MxSemt01700201 .class, NameAndAddress12 .class, NettingEligibility2Choice.class, Number3Choice.class, OpeningBalance2 .class, OpeningBalance2Choice.class, OriginalAndCurrentQuantities4 .class, OwnershipLegalRestrictions1Code.class, Pagination.class, PartyIdentification16Choice.class, PartyIdentification17Choice.class, PartyIdentification18Choice.class, PartyIdentification38 .class, PartyIdentificationAndAccount25 .class, Period2 .class, Period2Choice.class, PriceInformation8 .class, PriceRateOrAmountOrUnknown1Choice.class, PriceValueType1Code.class, PurposeCode4Choice.class, Quantity10Choice.class, ReceiveDelivery1Code.class, Registration1Code.class, Registration2Choice.class, RepurchaseType3Code.class, RepurchaseType6Choice.class, RestrictedFINActiveOrHistoricCurrencyAnd13DecimalAmount.class, RestrictedFINActiveOrHistoricCurrencyAndAmount.class, Restriction2Choice.class, SafekeepingPlace1Code.class, SafekeepingPlace3Code.class, SafekeepingPlaceFormat4Choice.class, SafekeepingPlaceTypeAndAnyBICIdentifier1 .class, SafekeepingPlaceTypeAndText4 .class, SecuritiesAccount16 .class, SecuritiesAccount17 .class, SecuritiesAccountPurposeType1Code.class, SecuritiesRTGS2Choice.class, SecuritiesTransactionPostingReport002V01 .class, SecuritiesTransactionType4Code.class, SecuritiesTransactionType6Choice.class, SecurityIdentification12 .class, SecurityIdentification12Choice.class, SettlementDate4Choice.class, SettlementDate4Code.class, SettlementDateCode3Choice.class, SettlementDetails13 .class, SettlementOrCorporateActionEvent4Choice.class, SettlementParties6 .class, SettlementSystemMethod1Code.class, SettlementSystemMethod2Choice.class, SettlementTransactionCondition2Code.class, SettlementTransactionCondition3Choice.class, SettlingCapacity1Code.class, SettlingCapacity2Choice.class, ShortLong1Code.class, Statement27 .class, StatementBasis2Code.class, StatementBasis5Choice.class, StatementUpdateType1Code.class, SubAccountIdentification14 .class, TaxCapacityParty2Choice.class, TaxLiability1Code.class, TradeDate2Choice.class, TradeDateCode2Choice.class, Transaction11 .class, TransactionActivity1Code.class, TransactionActivity2Choice.class, TransactionDetails18 .class, TypeOfPrice16Code.class, TypeOfPrice8Choice.class, UpdateType3Choice.class, YieldedOrValueType1Choice.class };
+    public static final transient String NAMESPACE = "urn:swift:xsd:semt.017.002.01";
 
     public MxSemt01700201() {
         super();
@@ -83,21 +86,6 @@ public class MxSemt01700201
     public MxSemt01700201 setSctiesTxPstngRpt(SecuritiesTransactionPostingReport002V01 value) {
         this.sctiesTxPstngRpt = value;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -170,8 +158,23 @@ public class MxSemt01700201
      * @return
      *     a new instance of MxSemt01700201
      */
-    public final static MxSemt01700201 fromJson(String json) {
+    public static final MxSemt01700201 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSemt01700201 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

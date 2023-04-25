@@ -2,13 +2,16 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.swift.model.mx.dic.*;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -30,13 +33,13 @@ public class MxReda05600101
 
     @XmlElement(name = "StgSttlmInstr", required = true)
     protected StandingSettlementInstructionV01 stgSttlmInstr;
-    public final static transient String BUSINESS_PROCESS = "reda";
-    public final static transient int FUNCTIONALITY = 56;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 1;
+    public static final transient String BUSINESS_PROCESS = "reda";
+    public static final transient int FUNCTIONALITY = 56;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {AccountIdentification26 .class, AddressType2Code.class, CashParties24 .class, ClassificationType1Choice.class, EffectiveDate1 .class, GenericIdentification1 .class, GenericIdentification30 .class, GenericIdentification36 .class, GenericIdentification49 .class, MarketIdentification87 .class, MarketIdentificationOrCashPurpose1Choice.class, MxReda05600101 .class, NameAndAddress5 .class, NameAndAddress8 .class, PartyIdentification44 .class, PartyIdentification62 .class, PartyIdentification63 .class, PartyIdentification64 .class, PartyIdentification71Choice.class, PartyIdentification75Choice.class, PartyIdentification99Choice.class, PartyIdentificationAndAccount95 .class, PartyIdentificationAndAccount96 .class, PartyIdentificationAndAccount97 .class, PostalAddress1 .class, Purpose3Choice.class, SecuritiesAccount22 .class, SecuritiesOrCash1Choice.class, SettlementParties32 .class, SettlementParties35 .class, SimpleIdentificationInformation4 .class, StandingSettlementInstructionV01 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:reda.056.001.01";
+    public static final transient Class[] _classes = new Class[] {AccountIdentification26 .class, AddressType2Code.class, CashParties24 .class, ClassificationType1Choice.class, EffectiveDate1 .class, GenericIdentification1 .class, GenericIdentification30 .class, GenericIdentification36 .class, GenericIdentification49 .class, MarketIdentification87 .class, MarketIdentificationOrCashPurpose1Choice.class, MxReda05600101 .class, NameAndAddress5 .class, NameAndAddress8 .class, PartyIdentification44 .class, PartyIdentification62 .class, PartyIdentification63 .class, PartyIdentification64 .class, PartyIdentification71Choice.class, PartyIdentification75Choice.class, PartyIdentification99Choice.class, PartyIdentificationAndAccount95 .class, PartyIdentificationAndAccount96 .class, PartyIdentificationAndAccount97 .class, PostalAddress1 .class, Purpose3Choice.class, SecuritiesAccount22 .class, SecuritiesOrCash1Choice.class, SettlementParties32 .class, SettlementParties35 .class, SimpleIdentificationInformation4 .class, StandingSettlementInstructionV01 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:reda.056.001.01";
 
     public MxReda05600101() {
         super();
@@ -83,21 +86,6 @@ public class MxReda05600101
     public MxReda05600101 setStgSttlmInstr(StandingSettlementInstructionV01 value) {
         this.stgSttlmInstr = value;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -170,8 +158,23 @@ public class MxReda05600101
      * @return
      *     a new instance of MxReda05600101
      */
-    public final static MxReda05600101 fromJson(String json) {
+    public static final MxReda05600101 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxReda05600101 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

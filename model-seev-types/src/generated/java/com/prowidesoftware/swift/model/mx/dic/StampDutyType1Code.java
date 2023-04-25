@@ -9,17 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for StampDutyType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="StampDutyType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="SDRU"/&gt;
- *     &lt;enumeration value="SDRT"/&gt;
- *     &lt;enumeration value="SDRN"/&gt;
- *     &lt;enumeration value="SDRQ"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="StampDutyType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="SDRU"/>
+ *     <enumeration value="SDRT"/>
+ *     <enumeration value="SDRN"/>
+ *     <enumeration value="SDRQ"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "StampDutyType1Code")

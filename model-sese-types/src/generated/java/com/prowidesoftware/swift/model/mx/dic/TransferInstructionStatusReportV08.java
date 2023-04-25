@@ -14,43 +14,25 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Scope
-
- * The TransferInstructionStatusReport message is sent by an executing party, for example, a transfer agent, to the instructing party, for example, an investment manager or one of its authorised representatives to provide the status of a previously received request for holdings information, portfolio transfer or transfer instruction.
- It may also be used to report the status of an event related to the asset being transferred or provide additional information.
-
- * Usage
-
+ * Scope
+ * The TransferInstructionStatusReport message is sent by an executing party, for example, a transfer agent, to the instructing party, for example, an investment manager or one of its authorised representatives to provide the status of a previously received request for holdings information, portfolio transfer or transfer instruction. It may also be used to report the status of an event related to the asset being transferred or provide additional information.
+ * Usage
  * The TransferInstructionStatusReport message is sent by an executing party, for example, a transfer agent, to the instructing party, for example, an investment manager or one of its authorised representatives to provide the status of a previously received request for holdings information, portfolio transfer or transfer instruction. It may also be used to report the status of an event related to the asset being transferred or provide additional information.
- * The message identification of the transfer instruction message in which the transfer instruction was conveyed may also be quoted in RelatedReference.
-
- * One of the following statuses can be reported:
-
- * - an accepted status, or,
-
- * - an already executed status, or,
-
- * - a sent to next party status, or,
-
- * - a matched status, or,
-
- * - a settled status, or,
-
+ * The message identification of the transfer instruction message in which the transfer instruction was conveyed may also be quoted in RelatedReference.
+ * One of the following statuses can be reported:
+ * - an accepted status, or,
+ * - an already executed status, or,
+ * - a sent to next party status, or,
+ * - a matched status, or,
+ * - a settled status, or,
  * - a delayed status, or, 
- * - a pending settlement status and the reason for the status, or,
-
- * - an unmatched status and the reason for the status, or,
-
- * - an in-repair status and the reason for the status, or,
-
- * - a rejected status and the reason for the status, or,
-
- * - a failed settlement status and the reason for the status, or,
-
- * - a cancelled status and the reason for the status, or,
-
- * - a cancelled status and the reason for the status, or,
-
+ * - a pending settlement status and the reason for the status, or,
+ * - an unmatched status and the reason for the status, or,
+ * - an in-repair status and the reason for the status, or,
+ * - a rejected status and the reason for the status, or,
+ * - a failed settlement status and the reason for the status, or,
+ * - a cancelled status and the reason for the status, or,
+ * - a cancelled status and the reason for the status, or,
  * - a cancellation pending status and the reason for the status.
  * 
  * 
@@ -211,8 +193,8 @@ public class TransferInstructionStatusReportV08 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the xtnsn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the xtnsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -226,10 +208,12 @@ public class TransferInstructionStatusReportV08 {
      * {@link Extension1 }
      * 
      * 
+     * @return
+     *     The value of the xtnsn property.
      */
     public List<Extension1> getXtnsn() {
         if (xtnsn == null) {
-            xtnsn = new ArrayList<Extension1>();
+            xtnsn = new ArrayList<>();
         }
         return this.xtnsn;
     }

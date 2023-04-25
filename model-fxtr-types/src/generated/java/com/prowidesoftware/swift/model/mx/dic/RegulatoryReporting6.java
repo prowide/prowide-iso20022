@@ -2,16 +2,16 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -111,11 +111,11 @@ public class RegulatoryReporting6 {
     @XmlElement(name = "ConfDtAndTmstmp", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar confDtAndTmstmp;
+    protected Calendar confDtAndTmstmp;
     @XmlElement(name = "ClrTmstmp", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected XMLGregorianCalendar clrTmstmp;
+    protected Calendar clrTmstmp;
     @XmlElement(name = "AddtlRptgInf")
     protected String addtlRptgInf;
 
@@ -125,8 +125,8 @@ public class RegulatoryReporting6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the tradgSdTxRptg property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the tradgSdTxRptg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -140,10 +140,12 @@ public class RegulatoryReporting6 {
      * {@link TradingSideTransactionReporting1 }
      * 
      * 
+     * @return
+     *     The value of the tradgSdTxRptg property.
      */
     public List<TradingSideTransactionReporting1> getTradgSdTxRptg() {
         if (tradgSdTxRptg == null) {
-            tradgSdTxRptg = new ArrayList<TradingSideTransactionReporting1>();
+            tradgSdTxRptg = new ArrayList<>();
         }
         return this.tradgSdTxRptg;
     }
@@ -154,8 +156,8 @@ public class RegulatoryReporting6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ctrPtySdTxRptg property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ctrPtySdTxRptg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -169,10 +171,12 @@ public class RegulatoryReporting6 {
      * {@link CounterpartySideTransactionReporting1 }
      * 
      * 
+     * @return
+     *     The value of the ctrPtySdTxRptg property.
      */
     public List<CounterpartySideTransactionReporting1> getCtrPtySdTxRptg() {
         if (ctrPtySdTxRptg == null) {
-            ctrPtySdTxRptg = new ArrayList<CounterpartySideTransactionReporting1>();
+            ctrPtySdTxRptg = new ArrayList<>();
         }
         return this.ctrPtySdTxRptg;
     }
@@ -735,7 +739,7 @@ public class RegulatoryReporting6 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getConfDtAndTmstmp() {
+    public Calendar getConfDtAndTmstmp() {
         return confDtAndTmstmp;
     }
 
@@ -747,7 +751,7 @@ public class RegulatoryReporting6 {
      *     {@link String }
      *     
      */
-    public RegulatoryReporting6 setConfDtAndTmstmp(XMLGregorianCalendar value) {
+    public RegulatoryReporting6 setConfDtAndTmstmp(Calendar value) {
         this.confDtAndTmstmp = value;
         return this;
     }
@@ -760,7 +764,7 @@ public class RegulatoryReporting6 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getClrTmstmp() {
+    public Calendar getClrTmstmp() {
         return clrTmstmp;
     }
 
@@ -772,7 +776,7 @@ public class RegulatoryReporting6 {
      *     {@link String }
      *     
      */
-    public RegulatoryReporting6 setClrTmstmp(XMLGregorianCalendar value) {
+    public RegulatoryReporting6 setClrTmstmp(Calendar value) {
         this.clrTmstmp = value;
         return this;
     }

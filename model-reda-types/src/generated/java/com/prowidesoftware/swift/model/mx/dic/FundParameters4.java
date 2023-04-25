@@ -2,15 +2,15 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -40,7 +40,7 @@ public class FundParameters4 {
     @XmlElement(name = "DtFr", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar dtFr;
+    protected Calendar dtFr;
     @XmlElement(name = "CtryOfDmcl")
     protected String ctryOfDmcl;
     @XmlElement(name = "RegdDstrbtnCtry")
@@ -52,8 +52,8 @@ public class FundParameters4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the finInstrmDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the finInstrmDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -67,10 +67,12 @@ public class FundParameters4 {
      * {@link FinancialInstrument17 }
      * 
      * 
+     * @return
+     *     The value of the finInstrmDtls property.
      */
     public List<FinancialInstrument17> getFinInstrmDtls() {
         if (finInstrmDtls == null) {
-            finInstrmDtls = new ArrayList<FinancialInstrument17>();
+            finInstrmDtls = new ArrayList<>();
         }
         return this.finInstrmDtls;
     }
@@ -81,8 +83,8 @@ public class FundParameters4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the fndMgmtCpny property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the fndMgmtCpny property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -96,10 +98,12 @@ public class FundParameters4 {
      * {@link PartyIdentification2Choice }
      * 
      * 
+     * @return
+     *     The value of the fndMgmtCpny property.
      */
     public List<PartyIdentification2Choice> getFndMgmtCpny() {
         if (fndMgmtCpny == null) {
-            fndMgmtCpny = new ArrayList<PartyIdentification2Choice>();
+            fndMgmtCpny = new ArrayList<>();
         }
         return this.fndMgmtCpny;
     }
@@ -112,7 +116,7 @@ public class FundParameters4 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDtFr() {
+    public Calendar getDtFr() {
         return dtFr;
     }
 
@@ -124,7 +128,7 @@ public class FundParameters4 {
      *     {@link String }
      *     
      */
-    public FundParameters4 setDtFr(XMLGregorianCalendar value) {
+    public FundParameters4 setDtFr(Calendar value) {
         this.dtFr = value;
         return this;
     }

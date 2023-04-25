@@ -34,8 +34,8 @@ public class CorporateEventNarrative3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dsclmr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the dsclmr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -49,10 +49,12 @@ public class CorporateEventNarrative3 {
      * {@link LanguageSpecifiedNarrative1 }
      * 
      * 
+     * @return
+     *     The value of the dsclmr property.
      */
     public List<LanguageSpecifiedNarrative1> getDsclmr() {
         if (dsclmr == null) {
-            dsclmr = new ArrayList<LanguageSpecifiedNarrative1>();
+            dsclmr = new ArrayList<>();
         }
         return this.dsclmr;
     }

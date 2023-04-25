@@ -93,8 +93,8 @@ public class Quantity12 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the certNb property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the certNb property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -108,10 +108,12 @@ public class Quantity12 {
      * {@link SecuritiesCertificate5 }
      * 
      * 
+     * @return
+     *     The value of the certNb property.
      */
     public List<SecuritiesCertificate5> getCertNb() {
         if (certNb == null) {
-            certNb = new ArrayList<SecuritiesCertificate5>();
+            certNb = new ArrayList<>();
         }
         return this.certNb;
     }
@@ -122,8 +124,8 @@ public class Quantity12 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the qtyBrkdwn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the qtyBrkdwn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -137,10 +139,12 @@ public class Quantity12 {
      * {@link QuantityBreakdown38 }
      * 
      * 
+     * @return
+     *     The value of the qtyBrkdwn property.
      */
     public List<QuantityBreakdown38> getQtyBrkdwn() {
         if (qtyBrkdwn == null) {
-            qtyBrkdwn = new ArrayList<QuantityBreakdown38>();
+            qtyBrkdwn = new ArrayList<>();
         }
         return this.qtyBrkdwn;
     }

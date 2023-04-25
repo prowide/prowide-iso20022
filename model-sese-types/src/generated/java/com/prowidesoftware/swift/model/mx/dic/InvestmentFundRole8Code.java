@@ -10,27 +10,26 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for InvestmentFundRole8Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="InvestmentFundRole8Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CUST"/&gt;
- *     &lt;enumeration value="DIST"/&gt;
- *     &lt;enumeration value="FMCO"/&gt;
- *     &lt;enumeration value="INTR"/&gt;
- *     &lt;enumeration value="INVE"/&gt;
- *     &lt;enumeration value="INVS"/&gt;
- *     &lt;enumeration value="TRAG"/&gt;
- *     &lt;enumeration value="TRAN"/&gt;
- *     &lt;enumeration value="UCL1"/&gt;
- *     &lt;enumeration value="UCL2"/&gt;
- *     &lt;enumeration value="REGI"/&gt;
- *     &lt;enumeration value="CACO"/&gt;
- *     &lt;enumeration value="CONC"/&gt;
- *     &lt;enumeration value="DATP"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="InvestmentFundRole8Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CUST"/>
+ *     <enumeration value="DIST"/>
+ *     <enumeration value="FMCO"/>
+ *     <enumeration value="INTR"/>
+ *     <enumeration value="INVE"/>
+ *     <enumeration value="INVS"/>
+ *     <enumeration value="TRAG"/>
+ *     <enumeration value="TRAN"/>
+ *     <enumeration value="UCL1"/>
+ *     <enumeration value="UCL2"/>
+ *     <enumeration value="REGI"/>
+ *     <enumeration value="CACO"/>
+ *     <enumeration value="CONC"/>
+ *     <enumeration value="DATP"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "InvestmentFundRole8Code")

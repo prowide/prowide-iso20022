@@ -9,69 +9,68 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for RejectedStatusReason11Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="RejectedStatusReason11Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="BLCA"/&gt;
- *     &lt;enumeration value="BLTR"/&gt;
- *     &lt;enumeration value="DOCC"/&gt;
- *     &lt;enumeration value="ADEA"/&gt;
- *     &lt;enumeration value="ILLI"/&gt;
- *     &lt;enumeration value="BMIN"/&gt;
- *     &lt;enumeration value="BMRA"/&gt;
- *     &lt;enumeration value="BMRV"/&gt;
- *     &lt;enumeration value="CUTO"/&gt;
- *     &lt;enumeration value="ICAG"/&gt;
- *     &lt;enumeration value="IDDB"/&gt;
- *     &lt;enumeration value="ORRF"/&gt;
- *     &lt;enumeration value="FEEE"/&gt;
- *     &lt;enumeration value="DSEC"/&gt;
- *     &lt;enumeration value="IDNA"/&gt;
- *     &lt;enumeration value="DQUA"/&gt;
- *     &lt;enumeration value="CLOS"/&gt;
- *     &lt;enumeration value="IPAC"/&gt;
- *     &lt;enumeration value="INSU"/&gt;
- *     &lt;enumeration value="INTE"/&gt;
- *     &lt;enumeration value="CASH"/&gt;
- *     &lt;enumeration value="ICTR"/&gt;
- *     &lt;enumeration value="IOTP"/&gt;
- *     &lt;enumeration value="DFOR"/&gt;
- *     &lt;enumeration value="DMON"/&gt;
- *     &lt;enumeration value="SAFE"/&gt;
- *     &lt;enumeration value="LOCK"/&gt;
- *     &lt;enumeration value="NRGM"/&gt;
- *     &lt;enumeration value="NSLA"/&gt;
- *     &lt;enumeration value="MONY"/&gt;
- *     &lt;enumeration value="SECU"/&gt;
- *     &lt;enumeration value="IPAY"/&gt;
- *     &lt;enumeration value="PRCT"/&gt;
- *     &lt;enumeration value="DLVY"/&gt;
- *     &lt;enumeration value="PHYS"/&gt;
- *     &lt;enumeration value="PLCE"/&gt;
- *     &lt;enumeration value="IVAG"/&gt;
- *     &lt;enumeration value="RTGS"/&gt;
- *     &lt;enumeration value="ISAF"/&gt;
- *     &lt;enumeration value="NCRR"/&gt;
- *     &lt;enumeration value="DDAT"/&gt;
- *     &lt;enumeration value="DEPT"/&gt;
- *     &lt;enumeration value="SETR"/&gt;
- *     &lt;enumeration value="IEXE"/&gt;
- *     &lt;enumeration value="SHIG"/&gt;
- *     &lt;enumeration value="LATE"/&gt;
- *     &lt;enumeration value="SLOW"/&gt;
- *     &lt;enumeration value="DTRD"/&gt;
- *     &lt;enumeration value="UWAI"/&gt;
- *     &lt;enumeration value="UDCY"/&gt;
- *     &lt;enumeration value="UNAV"/&gt;
- *     &lt;enumeration value="UPAY"/&gt;
- *     &lt;enumeration value="URSC"/&gt;
- *     &lt;enumeration value="ULNK"/&gt;
- *     &lt;enumeration value="UNSC"/&gt;
- *     &lt;enumeration value="POIN"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="RejectedStatusReason11Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="BLCA"/>
+ *     <enumeration value="BLTR"/>
+ *     <enumeration value="DOCC"/>
+ *     <enumeration value="ADEA"/>
+ *     <enumeration value="ILLI"/>
+ *     <enumeration value="BMIN"/>
+ *     <enumeration value="BMRA"/>
+ *     <enumeration value="BMRV"/>
+ *     <enumeration value="CUTO"/>
+ *     <enumeration value="ICAG"/>
+ *     <enumeration value="IDDB"/>
+ *     <enumeration value="ORRF"/>
+ *     <enumeration value="FEEE"/>
+ *     <enumeration value="DSEC"/>
+ *     <enumeration value="IDNA"/>
+ *     <enumeration value="DQUA"/>
+ *     <enumeration value="CLOS"/>
+ *     <enumeration value="IPAC"/>
+ *     <enumeration value="INSU"/>
+ *     <enumeration value="INTE"/>
+ *     <enumeration value="CASH"/>
+ *     <enumeration value="ICTR"/>
+ *     <enumeration value="IOTP"/>
+ *     <enumeration value="DFOR"/>
+ *     <enumeration value="DMON"/>
+ *     <enumeration value="SAFE"/>
+ *     <enumeration value="LOCK"/>
+ *     <enumeration value="NRGM"/>
+ *     <enumeration value="NSLA"/>
+ *     <enumeration value="MONY"/>
+ *     <enumeration value="SECU"/>
+ *     <enumeration value="IPAY"/>
+ *     <enumeration value="PRCT"/>
+ *     <enumeration value="DLVY"/>
+ *     <enumeration value="PHYS"/>
+ *     <enumeration value="PLCE"/>
+ *     <enumeration value="IVAG"/>
+ *     <enumeration value="RTGS"/>
+ *     <enumeration value="ISAF"/>
+ *     <enumeration value="NCRR"/>
+ *     <enumeration value="DDAT"/>
+ *     <enumeration value="DEPT"/>
+ *     <enumeration value="SETR"/>
+ *     <enumeration value="IEXE"/>
+ *     <enumeration value="SHIG"/>
+ *     <enumeration value="LATE"/>
+ *     <enumeration value="SLOW"/>
+ *     <enumeration value="DTRD"/>
+ *     <enumeration value="UWAI"/>
+ *     <enumeration value="UDCY"/>
+ *     <enumeration value="UNAV"/>
+ *     <enumeration value="UPAY"/>
+ *     <enumeration value="URSC"/>
+ *     <enumeration value="ULNK"/>
+ *     <enumeration value="UNSC"/>
+ *     <enumeration value="POIN"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "RejectedStatusReason11Code")

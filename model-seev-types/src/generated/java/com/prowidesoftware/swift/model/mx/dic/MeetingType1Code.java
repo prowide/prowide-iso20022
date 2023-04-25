@@ -9,20 +9,19 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for MeetingType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="MeetingType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="AMET"/&gt;
- *     &lt;enumeration value="OMET"/&gt;
- *     &lt;enumeration value="XMET"/&gt;
- *     &lt;enumeration value="MIXD"/&gt;
- *     &lt;enumeration value="CLAS"/&gt;
- *     &lt;enumeration value="CORT"/&gt;
- *     &lt;enumeration value="SPCL"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="MeetingType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="AMET"/>
+ *     <enumeration value="OMET"/>
+ *     <enumeration value="XMET"/>
+ *     <enumeration value="MIXD"/>
+ *     <enumeration value="CLAS"/>
+ *     <enumeration value="CORT"/>
+ *     <enumeration value="SPCL"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "MeetingType1Code")

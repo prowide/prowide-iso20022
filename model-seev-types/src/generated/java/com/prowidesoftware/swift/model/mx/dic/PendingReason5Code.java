@@ -9,26 +9,25 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for PendingReason5Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="PendingReason5Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ADEA"/&gt;
- *     &lt;enumeration value="AUTH"/&gt;
- *     &lt;enumeration value="DQUA"/&gt;
- *     &lt;enumeration value="LACK"/&gt;
- *     &lt;enumeration value="LATE"/&gt;
- *     &lt;enumeration value="MCER"/&gt;
- *     &lt;enumeration value="MONY"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="NPAY"/&gt;
- *     &lt;enumeration value="NSEC"/&gt;
- *     &lt;enumeration value="PENR"/&gt;
- *     &lt;enumeration value="VLDA"/&gt;
- *     &lt;enumeration value="CERT"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="PendingReason5Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ADEA"/>
+ *     <enumeration value="AUTH"/>
+ *     <enumeration value="DQUA"/>
+ *     <enumeration value="LACK"/>
+ *     <enumeration value="LATE"/>
+ *     <enumeration value="MCER"/>
+ *     <enumeration value="MONY"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="NPAY"/>
+ *     <enumeration value="NSEC"/>
+ *     <enumeration value="PENR"/>
+ *     <enumeration value="VLDA"/>
+ *     <enumeration value="CERT"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "PendingReason5Code")

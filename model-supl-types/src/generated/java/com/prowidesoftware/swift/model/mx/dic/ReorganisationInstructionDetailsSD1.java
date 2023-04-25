@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -63,7 +63,7 @@ public class ReorganisationInstructionDetailsSD1 {
     @XmlElement(name = "PrtctDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar prtctDt;
+    protected Calendar prtctDt;
     @XmlElement(name = "SctiesQtyDtls")
     protected SecuritiesQuantityDetailsSD3 sctiesQtyDtls;
     @XmlElement(name = "WarrtSbcptChrgAmt")
@@ -270,7 +270,7 @@ public class ReorganisationInstructionDetailsSD1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getPrtctDt() {
+    public Calendar getPrtctDt() {
         return prtctDt;
     }
 
@@ -282,7 +282,7 @@ public class ReorganisationInstructionDetailsSD1 {
      *     {@link String }
      *     
      */
-    public ReorganisationInstructionDetailsSD1 setPrtctDt(XMLGregorianCalendar value) {
+    public ReorganisationInstructionDetailsSD1 setPrtctDt(Calendar value) {
         this.prtctDt = value;
         return this;
     }

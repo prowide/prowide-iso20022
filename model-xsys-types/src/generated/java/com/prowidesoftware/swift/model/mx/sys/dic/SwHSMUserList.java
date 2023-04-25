@@ -34,8 +34,8 @@ public class SwHSMUserList {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the hsmUser property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the hsmUser property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -49,10 +49,12 @@ public class SwHSMUserList {
      * {@link SwHSMUser }
      * 
      * 
+     * @return
+     *     The value of the hsmUser property.
      */
     public List<SwHSMUser> getHSMUser() {
         if (hsmUser == null) {
-            hsmUser = new ArrayList<SwHSMUser>();
+            hsmUser = new ArrayList<>();
         }
         return this.hsmUser;
     }

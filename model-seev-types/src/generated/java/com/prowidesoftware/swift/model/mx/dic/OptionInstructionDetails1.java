@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -50,15 +50,15 @@ public class OptionInstructionDetails1 {
     @XmlElement(name = "InstrDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar instrDt;
+    protected Calendar instrDt;
     @XmlElement(name = "PrtctDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar prtctDt;
+    protected Calendar prtctDt;
     @XmlElement(name = "CoverPrtctDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar coverPrtctDt;
+    protected Calendar coverPrtctDt;
     @XmlElement(name = "BidPric")
     protected PriceFormat45Choice bidPric;
     @XmlElement(name = "CondlQty")
@@ -178,7 +178,7 @@ public class OptionInstructionDetails1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getInstrDt() {
+    public Calendar getInstrDt() {
         return instrDt;
     }
 
@@ -190,7 +190,7 @@ public class OptionInstructionDetails1 {
      *     {@link String }
      *     
      */
-    public OptionInstructionDetails1 setInstrDt(XMLGregorianCalendar value) {
+    public OptionInstructionDetails1 setInstrDt(Calendar value) {
         this.instrDt = value;
         return this;
     }
@@ -203,7 +203,7 @@ public class OptionInstructionDetails1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getPrtctDt() {
+    public Calendar getPrtctDt() {
         return prtctDt;
     }
 
@@ -215,7 +215,7 @@ public class OptionInstructionDetails1 {
      *     {@link String }
      *     
      */
-    public OptionInstructionDetails1 setPrtctDt(XMLGregorianCalendar value) {
+    public OptionInstructionDetails1 setPrtctDt(Calendar value) {
         this.prtctDt = value;
         return this;
     }
@@ -228,7 +228,7 @@ public class OptionInstructionDetails1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getCoverPrtctDt() {
+    public Calendar getCoverPrtctDt() {
         return coverPrtctDt;
     }
 
@@ -240,7 +240,7 @@ public class OptionInstructionDetails1 {
      *     {@link String }
      *     
      */
-    public OptionInstructionDetails1 setCoverPrtctDt(XMLGregorianCalendar value) {
+    public OptionInstructionDetails1 setCoverPrtctDt(Calendar value) {
         this.coverPrtctDt = value;
         return this;
     }

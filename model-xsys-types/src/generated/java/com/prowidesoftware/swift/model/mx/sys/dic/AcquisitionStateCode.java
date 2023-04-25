@@ -10,15 +10,14 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for AcquisitionStateCode.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="AcquisitionStateCode"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="Open"/&gt;
- *     &lt;enumeration value="Closed"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="AcquisitionStateCode">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="Open"/>
+ *     <enumeration value="Closed"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "AcquisitionStateCode")

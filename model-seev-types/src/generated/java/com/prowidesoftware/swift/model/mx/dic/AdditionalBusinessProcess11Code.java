@@ -9,26 +9,25 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for AdditionalBusinessProcess11Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="AdditionalBusinessProcess11Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CLAI"/&gt;
- *     &lt;enumeration value="TAXR"/&gt;
- *     &lt;enumeration value="ACLA"/&gt;
- *     &lt;enumeration value="ATXF"/&gt;
- *     &lt;enumeration value="CNTR"/&gt;
- *     &lt;enumeration value="CONS"/&gt;
- *     &lt;enumeration value="NAMC"/&gt;
- *     &lt;enumeration value="NPLE"/&gt;
- *     &lt;enumeration value="SCHM"/&gt;
- *     &lt;enumeration value="PPUT"/&gt;
- *     &lt;enumeration value="PPRE"/&gt;
- *     &lt;enumeration value="FPRE"/&gt;
- *     &lt;enumeration value="INCP"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="AdditionalBusinessProcess11Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CLAI"/>
+ *     <enumeration value="TAXR"/>
+ *     <enumeration value="ACLA"/>
+ *     <enumeration value="ATXF"/>
+ *     <enumeration value="CNTR"/>
+ *     <enumeration value="CONS"/>
+ *     <enumeration value="NAMC"/>
+ *     <enumeration value="NPLE"/>
+ *     <enumeration value="SCHM"/>
+ *     <enumeration value="PPUT"/>
+ *     <enumeration value="PPRE"/>
+ *     <enumeration value="FPRE"/>
+ *     <enumeration value="INCP"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "AdditionalBusinessProcess11Code")

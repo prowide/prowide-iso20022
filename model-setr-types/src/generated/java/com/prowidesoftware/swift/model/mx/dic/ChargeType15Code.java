@@ -9,18 +9,17 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for ChargeType15Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ChargeType15Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="BEND"/&gt;
- *     &lt;enumeration value="FEND"/&gt;
- *     &lt;enumeration value="DISC"/&gt;
- *     &lt;enumeration value="UCIC"/&gt;
- *     &lt;enumeration value="CHAR"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ChargeType15Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="BEND"/>
+ *     <enumeration value="FEND"/>
+ *     <enumeration value="DISC"/>
+ *     <enumeration value="UCIC"/>
+ *     <enumeration value="CHAR"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ChargeType15Code")

@@ -9,20 +9,19 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for PenaltyStatus1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="PenaltyStatus1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ACTV"/&gt;
- *     &lt;enumeration value="NCOM"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="RLOC"/&gt;
- *     &lt;enumeration value="REIC"/&gt;
- *     &lt;enumeration value="REMO"/&gt;
- *     &lt;enumeration value="SWIC"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="PenaltyStatus1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ACTV"/>
+ *     <enumeration value="NCOM"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="RLOC"/>
+ *     <enumeration value="REIC"/>
+ *     <enumeration value="REMO"/>
+ *     <enumeration value="SWIC"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "PenaltyStatus1Code")

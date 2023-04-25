@@ -9,17 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for CancellationStatus3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CancellationStatus3Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="PACK"/&gt;
- *     &lt;enumeration value="CANP"/&gt;
- *     &lt;enumeration value="CAND"/&gt;
- *     &lt;enumeration value="RCIS"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CancellationStatus3Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="PACK"/>
+ *     <enumeration value="CANP"/>
+ *     <enumeration value="CAND"/>
+ *     <enumeration value="RCIS"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CancellationStatus3Code")

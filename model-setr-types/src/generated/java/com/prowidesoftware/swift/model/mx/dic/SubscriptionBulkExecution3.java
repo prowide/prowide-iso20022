@@ -2,16 +2,16 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -49,11 +49,11 @@ public class SubscriptionBulkExecution3 {
     @XmlElement(name = "OrdrDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar ordrDtTm;
+    protected Calendar ordrDtTm;
     @XmlElement(name = "ReqdFutrTradDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar reqdFutrTradDt;
+    protected Calendar reqdFutrTradDt;
     @XmlElement(name = "CxlRght")
     @XmlSchemaType(name = "string")
     protected CancellationRight1Code cxlRght;
@@ -72,7 +72,7 @@ public class SubscriptionBulkExecution3 {
     @XmlElement(name = "CshSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar cshSttlmDt;
+    protected Calendar cshSttlmDt;
     @XmlElement(name = "BlkCshSttlmDtls")
     protected PaymentTransaction24 blkCshSttlmDtls;
 
@@ -134,7 +134,7 @@ public class SubscriptionBulkExecution3 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getOrdrDtTm() {
+    public Calendar getOrdrDtTm() {
         return ordrDtTm;
     }
 
@@ -146,7 +146,7 @@ public class SubscriptionBulkExecution3 {
      *     {@link String }
      *     
      */
-    public SubscriptionBulkExecution3 setOrdrDtTm(XMLGregorianCalendar value) {
+    public SubscriptionBulkExecution3 setOrdrDtTm(Calendar value) {
         this.ordrDtTm = value;
         return this;
     }
@@ -159,7 +159,7 @@ public class SubscriptionBulkExecution3 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getReqdFutrTradDt() {
+    public Calendar getReqdFutrTradDt() {
         return reqdFutrTradDt;
     }
 
@@ -171,7 +171,7 @@ public class SubscriptionBulkExecution3 {
      *     {@link String }
      *     
      */
-    public SubscriptionBulkExecution3 setReqdFutrTradDt(XMLGregorianCalendar value) {
+    public SubscriptionBulkExecution3 setReqdFutrTradDt(Calendar value) {
         this.reqdFutrTradDt = value;
         return this;
     }
@@ -257,8 +257,8 @@ public class SubscriptionBulkExecution3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the indvExctnDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the indvExctnDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -272,10 +272,12 @@ public class SubscriptionBulkExecution3 {
      * {@link SubscriptionExecution5 }
      * 
      * 
+     * @return
+     *     The value of the indvExctnDtls property.
      */
     public List<SubscriptionExecution5> getIndvExctnDtls() {
         if (indvExctnDtls == null) {
-            indvExctnDtls = new ArrayList<SubscriptionExecution5>();
+            indvExctnDtls = new ArrayList<>();
         }
         return this.indvExctnDtls;
     }
@@ -363,7 +365,7 @@ public class SubscriptionBulkExecution3 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getCshSttlmDt() {
+    public Calendar getCshSttlmDt() {
         return cshSttlmDt;
     }
 
@@ -375,7 +377,7 @@ public class SubscriptionBulkExecution3 {
      *     {@link String }
      *     
      */
-    public SubscriptionBulkExecution3 setCshSttlmDt(XMLGregorianCalendar value) {
+    public SubscriptionBulkExecution3 setCshSttlmDt(Calendar value) {
         this.cshSttlmDt = value;
         return this;
     }

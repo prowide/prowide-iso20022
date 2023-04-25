@@ -2,13 +2,16 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.swift.model.mx.dic.*;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -30,13 +33,13 @@ public class MxSetr01200201
 
     @XmlElement(name = "SbcptOrdrConf", required = true)
     protected SubscriptionOrderConfirmationMinusV01 sbcptOrdrConf;
-    public final static transient String BUSINESS_PROCESS = "setr";
-    public final static transient int FUNCTIONALITY = 12;
-    public final static transient int VARIANT = 2;
-    public final static transient int VERSION = 1;
+    public static final transient String BUSINESS_PROCESS = "setr";
+    public static final transient int FUNCTIONALITY = 12;
+    public static final transient int VARIANT = 2;
+    public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {Account8 .class, AccountIdentification1 .class, AccountIdentificationAndName4 .class, AdditionalReference5 .class, AlternateSecurityIdentification4 .class, CashAccountIdentification1 .class, Charge23 .class, ChargeType16Code.class, Commission14 .class, CommissionType6Code.class, CopyInformation3 .class, CreditTransfer7 .class, DateAndDateTimeChoice.class, DeliveringPartiesAndAccount6 .class, DeliveryReceiptType2Code.class, EUCapitalGain2Code.class, Extension1 .class, FinancialInstitutionIdentification6Choice.class, FinancialInstrument19 .class, FinancialInstrumentQuantity4 .class, ForeignExchangeTerms10 .class, FormOfSecurity1Code.class, FundSettlementParameters5 .class, GenericIdentification17 .class, IncomePreference1Code.class, Intermediary20 .class, InvestmentAccount32 .class, InvestmentAccount33 .class, InvestmentFundRole5Code.class, MessageIdentification3 .class, MxSetr01200201 .class, NameAndAddress11 .class, PartyIdentification26Choice.class, PartyIdentificationAndAccount13 .class, PaymentInstrument14Choice.class, PaymentTransaction28 .class, PlaceOfTradeIdentification3Choice.class, PostalAddress7 .class, PriceValue6 .class, ReceivingPartiesAndAccount5 .class, RestrictedFINActiveCurrencyAnd13DecimalAmount.class, RestrictedFINActiveCurrencyAndAmount.class, SecurityIdentification7Choice.class, SimpleIdentificationInformation.class, SimpleIdentificationInformation3 .class, SubscriptionExecution9 .class, SubscriptionMultipleExecution4 .class, SubscriptionOrderConfirmationMinusV01 .class, Tax20 .class, TaxType14Code.class, TaxableIncomePerShareCalculated2Code.class, TotalCharges5 .class, TotalCommissions4 .class, TotalTaxes5 .class, TypeOfPrice15Code.class, UnitPrice17 .class };
-    public final static transient String NAMESPACE = "urn:swift:xsd:setr.012.002.01";
+    public static final transient Class[] _classes = new Class[] {Account8 .class, AccountIdentification1 .class, AccountIdentificationAndName4 .class, AdditionalReference5 .class, AlternateSecurityIdentification4 .class, CashAccountIdentification1 .class, Charge23 .class, ChargeType16Code.class, Commission14 .class, CommissionType6Code.class, CopyInformation3 .class, CreditTransfer7 .class, DateAndDateTimeChoice.class, DeliveringPartiesAndAccount6 .class, DeliveryReceiptType2Code.class, EUCapitalGain2Code.class, Extension1 .class, FinancialInstitutionIdentification6Choice.class, FinancialInstrument19 .class, FinancialInstrumentQuantity4 .class, ForeignExchangeTerms10 .class, FormOfSecurity1Code.class, FundSettlementParameters5 .class, GenericIdentification17 .class, IncomePreference1Code.class, Intermediary20 .class, InvestmentAccount32 .class, InvestmentAccount33 .class, InvestmentFundRole5Code.class, MessageIdentification3 .class, MxSetr01200201 .class, NameAndAddress11 .class, PartyIdentification26Choice.class, PartyIdentificationAndAccount13 .class, PaymentInstrument14Choice.class, PaymentTransaction28 .class, PlaceOfTradeIdentification3Choice.class, PostalAddress7 .class, PriceValue6 .class, ReceivingPartiesAndAccount5 .class, RestrictedFINActiveCurrencyAnd13DecimalAmount.class, RestrictedFINActiveCurrencyAndAmount.class, SecurityIdentification7Choice.class, SimpleIdentificationInformation.class, SimpleIdentificationInformation3 .class, SubscriptionExecution9 .class, SubscriptionMultipleExecution4 .class, SubscriptionOrderConfirmationMinusV01 .class, Tax20 .class, TaxType14Code.class, TaxableIncomePerShareCalculated2Code.class, TotalCharges5 .class, TotalCommissions4 .class, TotalTaxes5 .class, TypeOfPrice15Code.class, UnitPrice17 .class };
+    public static final transient String NAMESPACE = "urn:swift:xsd:setr.012.002.01";
 
     public MxSetr01200201() {
         super();
@@ -83,21 +86,6 @@ public class MxSetr01200201
     public MxSetr01200201 setSbcptOrdrConf(SubscriptionOrderConfirmationMinusV01 value) {
         this.sbcptOrdrConf = value;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -170,8 +158,23 @@ public class MxSetr01200201
      * @return
      *     a new instance of MxSetr01200201
      */
-    public final static MxSetr01200201 fromJson(String json) {
+    public static final MxSetr01200201 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSetr01200201 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

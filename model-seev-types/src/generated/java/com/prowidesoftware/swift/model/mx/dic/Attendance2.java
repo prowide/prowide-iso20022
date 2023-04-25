@@ -43,8 +43,8 @@ public class Attendance2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the admssnConds property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the admssnConds property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -58,10 +58,12 @@ public class Attendance2 {
      * {@link AttendanceAdmissionConditions2 }
      * 
      * 
+     * @return
+     *     The value of the admssnConds property.
      */
     public List<AttendanceAdmissionConditions2> getAdmssnConds() {
         if (admssnConds == null) {
-            admssnConds = new ArrayList<AttendanceAdmissionConditions2>();
+            admssnConds = new ArrayList<>();
         }
         return this.admssnConds;
     }

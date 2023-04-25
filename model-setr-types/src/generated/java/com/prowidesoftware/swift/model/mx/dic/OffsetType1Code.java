@@ -9,17 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for OffsetType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="OffsetType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="PRIC"/&gt;
- *     &lt;enumeration value="BAPO"/&gt;
- *     &lt;enumeration value="TICK"/&gt;
- *     &lt;enumeration value="PTLE"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="OffsetType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="PRIC"/>
+ *     <enumeration value="BAPO"/>
+ *     <enumeration value="TICK"/>
+ *     <enumeration value="PTLE"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "OffsetType1Code")

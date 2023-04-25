@@ -2,15 +2,15 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -40,15 +40,15 @@ public class ProxyParameters {
     @XmlElement(name = "PrxyAppntmntDdln", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar prxyAppntmntDdln;
+    protected Calendar prxyAppntmntDdln;
     @XmlElement(name = "PrxyAppntmntElctrncDdln", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar prxyAppntmntElctrncDdln;
+    protected Calendar prxyAppntmntElctrncDdln;
     @XmlElement(name = "PrxyAppntmntMktDdln", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar prxyAppntmntMktDdln;
+    protected Calendar prxyAppntmntMktDdln;
 
     /**
      * Gets the value of the authrsdPrxy property.
@@ -56,8 +56,8 @@ public class ProxyParameters {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the authrsdPrxy property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the authrsdPrxy property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -71,10 +71,12 @@ public class ProxyParameters {
      * {@link Proxy }
      * 
      * 
+     * @return
+     *     The value of the authrsdPrxy property.
      */
     public List<Proxy> getAuthrsdPrxy() {
         if (authrsdPrxy == null) {
-            authrsdPrxy = new ArrayList<Proxy>();
+            authrsdPrxy = new ArrayList<>();
         }
         return this.authrsdPrxy;
     }
@@ -112,7 +114,7 @@ public class ProxyParameters {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getPrxyAppntmntDdln() {
+    public Calendar getPrxyAppntmntDdln() {
         return prxyAppntmntDdln;
     }
 
@@ -124,7 +126,7 @@ public class ProxyParameters {
      *     {@link String }
      *     
      */
-    public ProxyParameters setPrxyAppntmntDdln(XMLGregorianCalendar value) {
+    public ProxyParameters setPrxyAppntmntDdln(Calendar value) {
         this.prxyAppntmntDdln = value;
         return this;
     }
@@ -137,7 +139,7 @@ public class ProxyParameters {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getPrxyAppntmntElctrncDdln() {
+    public Calendar getPrxyAppntmntElctrncDdln() {
         return prxyAppntmntElctrncDdln;
     }
 
@@ -149,7 +151,7 @@ public class ProxyParameters {
      *     {@link String }
      *     
      */
-    public ProxyParameters setPrxyAppntmntElctrncDdln(XMLGregorianCalendar value) {
+    public ProxyParameters setPrxyAppntmntElctrncDdln(Calendar value) {
         this.prxyAppntmntElctrncDdln = value;
         return this;
     }
@@ -162,7 +164,7 @@ public class ProxyParameters {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getPrxyAppntmntMktDdln() {
+    public Calendar getPrxyAppntmntMktDdln() {
         return prxyAppntmntMktDdln;
     }
 
@@ -174,7 +176,7 @@ public class ProxyParameters {
      *     {@link String }
      *     
      */
-    public ProxyParameters setPrxyAppntmntMktDdln(XMLGregorianCalendar value) {
+    public ProxyParameters setPrxyAppntmntMktDdln(Calendar value) {
         this.prxyAppntmntMktDdln = value;
         return this;
     }

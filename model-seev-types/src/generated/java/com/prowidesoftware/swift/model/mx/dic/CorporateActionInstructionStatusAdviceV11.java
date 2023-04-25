@@ -15,8 +15,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
  * Scope
- * The CorporateActionInstructionStatusAdvice message is sent by an account servicer to an account owner or its designated agent, to report status of a received corporate action election instruction.
-
+ * The CorporateActionInstructionStatusAdvice message is sent by an account servicer to an account owner or its designated agent, to report status of a received corporate action election instruction.
  * This message is used to advise the status, or a change in status, of a corporate action-related transaction previously instructed by, or executed on behalf of, the account owner. This will include the acknowledgement/rejection of a corporate action instruction.
  * Usage
  * The message may also be used to:
@@ -88,8 +87,8 @@ public class CorporateActionInstructionStatusAdviceV11 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the othrDocId property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the othrDocId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -103,10 +102,12 @@ public class CorporateActionInstructionStatusAdviceV11 {
      * {@link DocumentIdentification33 }
      * 
      * 
+     * @return
+     *     The value of the othrDocId property.
      */
     public List<DocumentIdentification33> getOthrDocId() {
         if (othrDocId == null) {
-            othrDocId = new ArrayList<DocumentIdentification33>();
+            othrDocId = new ArrayList<>();
         }
         return this.othrDocId;
     }
@@ -142,8 +143,8 @@ public class CorporateActionInstructionStatusAdviceV11 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the instrPrcgSts property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the instrPrcgSts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -157,10 +158,12 @@ public class CorporateActionInstructionStatusAdviceV11 {
      * {@link InstructionProcessingStatus38Choice }
      * 
      * 
+     * @return
+     *     The value of the instrPrcgSts property.
      */
     public List<InstructionProcessingStatus38Choice> getInstrPrcgSts() {
         if (instrPrcgSts == null) {
-            instrPrcgSts = new ArrayList<InstructionProcessingStatus38Choice>();
+            instrPrcgSts = new ArrayList<>();
         }
         return this.instrPrcgSts;
     }
@@ -246,8 +249,8 @@ public class CorporateActionInstructionStatusAdviceV11 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -261,10 +264,12 @@ public class CorporateActionInstructionStatusAdviceV11 {
      * {@link SupplementaryData1 }
      * 
      * 
+     * @return
+     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<SupplementaryData1>();
+            splmtryData = new ArrayList<>();
         }
         return this.splmtryData;
     }

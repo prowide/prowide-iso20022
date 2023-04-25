@@ -9,20 +9,19 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for GCAActionType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="GCAActionType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="RCON"/&gt;
- *     &lt;enumeration value="FREA"/&gt;
- *     &lt;enumeration value="CDCU"/&gt;
- *     &lt;enumeration value="NQCU"/&gt;
- *     &lt;enumeration value="NFAC"/&gt;
- *     &lt;enumeration value="NSUP"/&gt;
- *     &lt;enumeration value="INVA"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="GCAActionType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="RCON"/>
+ *     <enumeration value="FREA"/>
+ *     <enumeration value="CDCU"/>
+ *     <enumeration value="NQCU"/>
+ *     <enumeration value="NFAC"/>
+ *     <enumeration value="NSUP"/>
+ *     <enumeration value="INVA"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "GCAActionType1Code")

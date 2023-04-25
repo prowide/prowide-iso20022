@@ -9,20 +9,19 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for AgreementItemAction1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="AgreementItemAction1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="DEAC"/&gt;
- *     &lt;enumeration value="HOLD"/&gt;
- *     &lt;enumeration value="MDFY"/&gt;
- *     &lt;enumeration value="REAC"/&gt;
- *     &lt;enumeration value="OPEN"/&gt;
- *     &lt;enumeration value="SYNC"/&gt;
- *     &lt;enumeration value="VRFY"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="AgreementItemAction1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="DEAC"/>
+ *     <enumeration value="HOLD"/>
+ *     <enumeration value="MDFY"/>
+ *     <enumeration value="REAC"/>
+ *     <enumeration value="OPEN"/>
+ *     <enumeration value="SYNC"/>
+ *     <enumeration value="VRFY"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "AgreementItemAction1Code")

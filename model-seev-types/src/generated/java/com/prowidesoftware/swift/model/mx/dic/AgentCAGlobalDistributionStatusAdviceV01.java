@@ -153,8 +153,8 @@ public class AgentCAGlobalDistributionStatusAdviceV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the indvMvmntSts property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the indvMvmntSts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -168,10 +168,12 @@ public class AgentCAGlobalDistributionStatusAdviceV01 {
      * {@link IndividualMovementStatus1 }
      * 
      * 
+     * @return
+     *     The value of the indvMvmntSts property.
      */
     public List<IndividualMovementStatus1> getIndvMvmntSts() {
         if (indvMvmntSts == null) {
-            indvMvmntSts = new ArrayList<IndividualMovementStatus1>();
+            indvMvmntSts = new ArrayList<>();
         }
         return this.indvMvmntSts;
     }

@@ -10,59 +10,58 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for DTCCSubEventType10Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="DTCCSubEventType10Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="OPTO"/&gt;
- *     &lt;enumeration value="DRPD"/&gt;
- *     &lt;enumeration value="PLCL"/&gt;
- *     &lt;enumeration value="BLOT"/&gt;
- *     &lt;enumeration value="RMRK"/&gt;
- *     &lt;enumeration value="UNWD"/&gt;
- *     &lt;enumeration value="SHEX"/&gt;
- *     &lt;enumeration value="STDT"/&gt;
- *     &lt;enumeration value="XFER"/&gt;
- *     &lt;enumeration value="SOPT"/&gt;
- *     &lt;enumeration value="MBCK"/&gt;
- *     &lt;enumeration value="SALE"/&gt;
- *     &lt;enumeration value="PRNI"/&gt;
- *     &lt;enumeration value="POPI"/&gt;
- *     &lt;enumeration value="DRPI"/&gt;
- *     &lt;enumeration value="MROS"/&gt;
- *     &lt;enumeration value="SHPP"/&gt;
- *     &lt;enumeration value="OPOF"/&gt;
- *     &lt;enumeration value="TWRI"/&gt;
- *     &lt;enumeration value="CILI"/&gt;
- *     &lt;enumeration value="BTST"/&gt;
- *     &lt;enumeration value="FTPR"/&gt;
- *     &lt;enumeration value="ADRS"/&gt;
- *     &lt;enumeration value="WITH"/&gt;
- *     &lt;enumeration value="WITO"/&gt;
- *     &lt;enumeration value="CTAX"/&gt;
- *     &lt;enumeration value="A144"/&gt;
- *     &lt;enumeration value="CASE"/&gt;
- *     &lt;enumeration value="REGS"/&gt;
- *     &lt;enumeration value="NOTI"/&gt;
- *     &lt;enumeration value="RDTH"/&gt;
- *     &lt;enumeration value="CASH"/&gt;
- *     &lt;enumeration value="PREQ"/&gt;
- *     &lt;enumeration value="SECU"/&gt;
- *     &lt;enumeration value="COTE"/&gt;
- *     &lt;enumeration value="MITE"/&gt;
- *     &lt;enumeration value="SETE"/&gt;
- *     &lt;enumeration value="GDRS"/&gt;
- *     &lt;enumeration value="M871"/&gt;
- *     &lt;enumeration value="C305"/&gt;
- *     &lt;enumeration value="CONV"/&gt;
- *     &lt;enumeration value="RCLA"/&gt;
- *     &lt;enumeration value="QN92"/&gt;
- *     &lt;enumeration value="ECNI"/&gt;
- *     &lt;enumeration value="SPAC"/&gt;
- *     &lt;enumeration value="UNIT"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="DTCCSubEventType10Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="OPTO"/>
+ *     <enumeration value="DRPD"/>
+ *     <enumeration value="PLCL"/>
+ *     <enumeration value="BLOT"/>
+ *     <enumeration value="RMRK"/>
+ *     <enumeration value="UNWD"/>
+ *     <enumeration value="SHEX"/>
+ *     <enumeration value="STDT"/>
+ *     <enumeration value="XFER"/>
+ *     <enumeration value="SOPT"/>
+ *     <enumeration value="MBCK"/>
+ *     <enumeration value="SALE"/>
+ *     <enumeration value="PRNI"/>
+ *     <enumeration value="POPI"/>
+ *     <enumeration value="DRPI"/>
+ *     <enumeration value="MROS"/>
+ *     <enumeration value="SHPP"/>
+ *     <enumeration value="OPOF"/>
+ *     <enumeration value="TWRI"/>
+ *     <enumeration value="CILI"/>
+ *     <enumeration value="BTST"/>
+ *     <enumeration value="FTPR"/>
+ *     <enumeration value="ADRS"/>
+ *     <enumeration value="WITH"/>
+ *     <enumeration value="WITO"/>
+ *     <enumeration value="CTAX"/>
+ *     <enumeration value="A144"/>
+ *     <enumeration value="CASE"/>
+ *     <enumeration value="REGS"/>
+ *     <enumeration value="NOTI"/>
+ *     <enumeration value="RDTH"/>
+ *     <enumeration value="CASH"/>
+ *     <enumeration value="PREQ"/>
+ *     <enumeration value="SECU"/>
+ *     <enumeration value="COTE"/>
+ *     <enumeration value="MITE"/>
+ *     <enumeration value="SETE"/>
+ *     <enumeration value="GDRS"/>
+ *     <enumeration value="M871"/>
+ *     <enumeration value="C305"/>
+ *     <enumeration value="CONV"/>
+ *     <enumeration value="RCLA"/>
+ *     <enumeration value="QN92"/>
+ *     <enumeration value="ECNI"/>
+ *     <enumeration value="SPAC"/>
+ *     <enumeration value="UNIT"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "DTCCSubEventType10Code")

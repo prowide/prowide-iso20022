@@ -126,8 +126,8 @@ public class MeetingInstructionCancellationRequestV06 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the toBeCancInstr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the toBeCancInstr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -141,10 +141,12 @@ public class MeetingInstructionCancellationRequestV06 {
      * {@link CancelInstruction1 }
      * 
      * 
+     * @return
+     *     The value of the toBeCancInstr property.
      */
     public List<CancelInstruction1> getToBeCancInstr() {
         if (toBeCancInstr == null) {
-            toBeCancInstr = new ArrayList<CancelInstruction1>();
+            toBeCancInstr = new ArrayList<>();
         }
         return this.toBeCancInstr;
     }
@@ -155,8 +157,8 @@ public class MeetingInstructionCancellationRequestV06 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -170,10 +172,12 @@ public class MeetingInstructionCancellationRequestV06 {
      * {@link SupplementaryData1 }
      * 
      * 
+     * @return
+     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<SupplementaryData1>();
+            splmtryData = new ArrayList<>();
         }
         return this.splmtryData;
     }

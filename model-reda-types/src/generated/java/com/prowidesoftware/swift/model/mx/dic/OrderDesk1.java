@@ -2,15 +2,15 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -36,7 +36,7 @@ public class OrderDesk1 {
     @XmlElement(name = "ClsrDts", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected List<XMLGregorianCalendar> clsrDts;
+    protected List<Calendar> clsrDts;
     @XmlElement(name = "AddtlInf")
     protected List<AdditionalInformation15> addtlInf;
 
@@ -71,8 +71,8 @@ public class OrderDesk1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the clsrDts property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the clsrDts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -86,10 +86,12 @@ public class OrderDesk1 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the clsrDts property.
      */
-    public List<XMLGregorianCalendar> getClsrDts() {
+    public List<Calendar> getClsrDts() {
         if (clsrDts == null) {
-            clsrDts = new ArrayList<XMLGregorianCalendar>();
+            clsrDts = new ArrayList<>();
         }
         return this.clsrDts;
     }
@@ -100,8 +102,8 @@ public class OrderDesk1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -115,10 +117,12 @@ public class OrderDesk1 {
      * {@link AdditionalInformation15 }
      * 
      * 
+     * @return
+     *     The value of the addtlInf property.
      */
     public List<AdditionalInformation15> getAddtlInf() {
         if (addtlInf == null) {
-            addtlInf = new ArrayList<AdditionalInformation15>();
+            addtlInf = new ArrayList<>();
         }
         return this.addtlInf;
     }
@@ -143,7 +147,7 @@ public class OrderDesk1 {
      * @see #getClsrDts()
      * 
      */
-    public OrderDesk1 addClsrDts(XMLGregorianCalendar clsrDts) {
+    public OrderDesk1 addClsrDts(Calendar clsrDts) {
         getClsrDts().add(clsrDts);
         return this;
     }

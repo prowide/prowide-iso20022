@@ -9,17 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for ShareholdingType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ShareholdingType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="BENE"/&gt;
- *     &lt;enumeration value="NOMI"/&gt;
- *     &lt;enumeration value="OOAC"/&gt;
- *     &lt;enumeration value="UKWN"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ShareholdingType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="BENE"/>
+ *     <enumeration value="NOMI"/>
+ *     <enumeration value="OOAC"/>
+ *     <enumeration value="UKWN"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ShareholdingType1Code")

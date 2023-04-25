@@ -2,15 +2,15 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -44,11 +44,11 @@ public class TransportDetails1 {
     @XmlElement(name = "PropsdShipmntDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar propsdShipmntDt;
+    protected Calendar propsdShipmntDt;
     @XmlElement(name = "ActlShipmntDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar actlShipmntDt;
+    protected Calendar actlShipmntDt;
     @XmlElement(name = "Incotrms")
     protected Incoterms2 incotrms;
     @XmlElement(name = "FrghtChrgs")
@@ -60,8 +60,8 @@ public class TransportDetails1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the trnsprtDocRef property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the trnsprtDocRef property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -75,10 +75,12 @@ public class TransportDetails1 {
      * {@link DocumentIdentification7 }
      * 
      * 
+     * @return
+     *     The value of the trnsprtDocRef property.
      */
     public List<DocumentIdentification7> getTrnsprtDocRef() {
         if (trnsprtDocRef == null) {
-            trnsprtDocRef = new ArrayList<DocumentIdentification7>();
+            trnsprtDocRef = new ArrayList<>();
         }
         return this.trnsprtDocRef;
     }
@@ -89,8 +91,8 @@ public class TransportDetails1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the trnsprtdGoods property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the trnsprtdGoods property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -104,10 +106,12 @@ public class TransportDetails1 {
      * {@link TransportedGoods1 }
      * 
      * 
+     * @return
+     *     The value of the trnsprtdGoods property.
      */
     public List<TransportedGoods1> getTrnsprtdGoods() {
         if (trnsprtdGoods == null) {
-            trnsprtdGoods = new ArrayList<TransportedGoods1>();
+            trnsprtdGoods = new ArrayList<>();
         }
         return this.trnsprtdGoods;
     }
@@ -145,7 +149,7 @@ public class TransportDetails1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getPropsdShipmntDt() {
+    public Calendar getPropsdShipmntDt() {
         return propsdShipmntDt;
     }
 
@@ -157,7 +161,7 @@ public class TransportDetails1 {
      *     {@link String }
      *     
      */
-    public TransportDetails1 setPropsdShipmntDt(XMLGregorianCalendar value) {
+    public TransportDetails1 setPropsdShipmntDt(Calendar value) {
         this.propsdShipmntDt = value;
         return this;
     }
@@ -170,7 +174,7 @@ public class TransportDetails1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getActlShipmntDt() {
+    public Calendar getActlShipmntDt() {
         return actlShipmntDt;
     }
 
@@ -182,7 +186,7 @@ public class TransportDetails1 {
      *     {@link String }
      *     
      */
-    public TransportDetails1 setActlShipmntDt(XMLGregorianCalendar value) {
+    public TransportDetails1 setActlShipmntDt(Calendar value) {
         this.actlShipmntDt = value;
         return this;
     }

@@ -34,8 +34,8 @@ public class SwEmissionList {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the emissionTime property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the emissionTime property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -49,10 +49,12 @@ public class SwEmissionList {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the emissionTime property.
      */
     public List<String> getEmissionTime() {
         if (emissionTime == null) {
-            emissionTime = new ArrayList<String>();
+            emissionTime = new ArrayList<>();
         }
         return this.emissionTime;
     }

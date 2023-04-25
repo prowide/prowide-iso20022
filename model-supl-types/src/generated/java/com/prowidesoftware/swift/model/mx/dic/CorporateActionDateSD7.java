@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -38,27 +38,27 @@ public class CorporateActionDateSD7 {
     @XmlElement(name = "ActlEarlyXprtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar actlEarlyXprtnDt;
+    protected Calendar actlEarlyXprtnDt;
     @XmlElement(name = "ActlPrtctXprtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar actlPrtctXprtnDt;
+    protected Calendar actlPrtctXprtnDt;
     @XmlElement(name = "ActlEarlyPrtctXprtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar actlEarlyPrtctXprtnDt;
+    protected Calendar actlEarlyPrtctXprtnDt;
     @XmlElement(name = "DTCEarlyPrtctXprtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar dtcEarlyPrtctXprtnDt;
+    protected Calendar dtcEarlyPrtctXprtnDt;
     @XmlElement(name = "ActlEarlyCoverPrtctXprtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar actlEarlyCoverPrtctXprtnDt;
+    protected Calendar actlEarlyCoverPrtctXprtnDt;
     @XmlElement(name = "DTCEarlyCoverPrtctXprtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar dtcEarlyCoverPrtctXprtnDt;
+    protected Calendar dtcEarlyCoverPrtctXprtnDt;
 
     /**
      * Gets the value of the plcAndNm property.
@@ -93,7 +93,7 @@ public class CorporateActionDateSD7 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getActlEarlyXprtnDt() {
+    public Calendar getActlEarlyXprtnDt() {
         return actlEarlyXprtnDt;
     }
 
@@ -105,7 +105,7 @@ public class CorporateActionDateSD7 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD7 setActlEarlyXprtnDt(XMLGregorianCalendar value) {
+    public CorporateActionDateSD7 setActlEarlyXprtnDt(Calendar value) {
         this.actlEarlyXprtnDt = value;
         return this;
     }
@@ -118,7 +118,7 @@ public class CorporateActionDateSD7 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getActlPrtctXprtnDt() {
+    public Calendar getActlPrtctXprtnDt() {
         return actlPrtctXprtnDt;
     }
 
@@ -130,7 +130,7 @@ public class CorporateActionDateSD7 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD7 setActlPrtctXprtnDt(XMLGregorianCalendar value) {
+    public CorporateActionDateSD7 setActlPrtctXprtnDt(Calendar value) {
         this.actlPrtctXprtnDt = value;
         return this;
     }
@@ -143,7 +143,7 @@ public class CorporateActionDateSD7 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getActlEarlyPrtctXprtnDt() {
+    public Calendar getActlEarlyPrtctXprtnDt() {
         return actlEarlyPrtctXprtnDt;
     }
 
@@ -155,7 +155,7 @@ public class CorporateActionDateSD7 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD7 setActlEarlyPrtctXprtnDt(XMLGregorianCalendar value) {
+    public CorporateActionDateSD7 setActlEarlyPrtctXprtnDt(Calendar value) {
         this.actlEarlyPrtctXprtnDt = value;
         return this;
     }
@@ -168,7 +168,7 @@ public class CorporateActionDateSD7 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDTCEarlyPrtctXprtnDt() {
+    public Calendar getDTCEarlyPrtctXprtnDt() {
         return dtcEarlyPrtctXprtnDt;
     }
 
@@ -180,7 +180,7 @@ public class CorporateActionDateSD7 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD7 setDTCEarlyPrtctXprtnDt(XMLGregorianCalendar value) {
+    public CorporateActionDateSD7 setDTCEarlyPrtctXprtnDt(Calendar value) {
         this.dtcEarlyPrtctXprtnDt = value;
         return this;
     }
@@ -193,7 +193,7 @@ public class CorporateActionDateSD7 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getActlEarlyCoverPrtctXprtnDt() {
+    public Calendar getActlEarlyCoverPrtctXprtnDt() {
         return actlEarlyCoverPrtctXprtnDt;
     }
 
@@ -205,7 +205,7 @@ public class CorporateActionDateSD7 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD7 setActlEarlyCoverPrtctXprtnDt(XMLGregorianCalendar value) {
+    public CorporateActionDateSD7 setActlEarlyCoverPrtctXprtnDt(Calendar value) {
         this.actlEarlyCoverPrtctXprtnDt = value;
         return this;
     }
@@ -218,7 +218,7 @@ public class CorporateActionDateSD7 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDTCEarlyCoverPrtctXprtnDt() {
+    public Calendar getDTCEarlyCoverPrtctXprtnDt() {
         return dtcEarlyCoverPrtctXprtnDt;
     }
 
@@ -230,7 +230,7 @@ public class CorporateActionDateSD7 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD7 setDTCEarlyCoverPrtctXprtnDt(XMLGregorianCalendar value) {
+    public CorporateActionDateSD7 setDTCEarlyCoverPrtctXprtnDt(Calendar value) {
         this.dtcEarlyCoverPrtctXprtnDt = value;
         return this;
     }

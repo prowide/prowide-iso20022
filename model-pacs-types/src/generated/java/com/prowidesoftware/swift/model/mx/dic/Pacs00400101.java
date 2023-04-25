@@ -21,8 +21,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * The PaymentReturn message should not be used between agents and non-financial institution customers. Non-financial institution customers will be informed about a debit or a credit on their account(s) through an Advice of Credit/Debit message and/or Statement message.
  * The PaymentReturn message can be used to return single instructions or multiple instructions from one or different files.
  * The PaymentReturn message can be used in domestic and cross-border scenarios.
- * The PaymentReturn message refers to the original instruction(s) by means of references only or by means of references and a set of elements from the original instruction.
-.
+ * The PaymentReturn message refers to the original instruction(s) by means of references only or by means of references and a set of elements from the original instruction..
  * 
  * 
  * 
@@ -98,8 +97,8 @@ public class Pacs00400101 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the txInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the txInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -113,10 +112,12 @@ public class Pacs00400101 {
      * {@link PaymentTransactionInformation2 }
      * 
      * 
+     * @return
+     *     The value of the txInf property.
      */
     public List<PaymentTransactionInformation2> getTxInf() {
         if (txInf == null) {
-            txInf = new ArrayList<PaymentTransactionInformation2>();
+            txInf = new ArrayList<>();
         }
         return this.txInf;
     }

@@ -156,8 +156,8 @@ public class SecuritiesTradeConfirmationV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the refs property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the refs property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -171,10 +171,12 @@ public class SecuritiesTradeConfirmationV01 {
      * {@link Linkages15 }
      * 
      * 
+     * @return
+     *     The value of the refs property.
      */
     public List<Linkages15> getRefs() {
         if (refs == null) {
-            refs = new ArrayList<Linkages15>();
+            refs = new ArrayList<>();
         }
         return this.refs;
     }
@@ -260,8 +262,8 @@ public class SecuritiesTradeConfirmationV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the undrlygFinInstrm property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the undrlygFinInstrm property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -275,10 +277,12 @@ public class SecuritiesTradeConfirmationV01 {
      * {@link UnderlyingFinancialInstrument1 }
      * 
      * 
+     * @return
+     *     The value of the undrlygFinInstrm property.
      */
     public List<UnderlyingFinancialInstrument1> getUndrlygFinInstrm() {
         if (undrlygFinInstrm == null) {
-            undrlygFinInstrm = new ArrayList<UnderlyingFinancialInstrument1>();
+            undrlygFinInstrm = new ArrayList<>();
         }
         return this.undrlygFinInstrm;
     }
@@ -314,8 +318,8 @@ public class SecuritiesTradeConfirmationV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the confPties property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the confPties property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -329,10 +333,12 @@ public class SecuritiesTradeConfirmationV01 {
      * {@link ConfirmationParties2 }
      * 
      * 
+     * @return
+     *     The value of the confPties property.
      */
     public List<ConfirmationParties2> getConfPties() {
         if (confPties == null) {
-            confPties = new ArrayList<ConfirmationParties2>();
+            confPties = new ArrayList<>();
         }
         return this.confPties;
     }
@@ -518,8 +524,8 @@ public class SecuritiesTradeConfirmationV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the othrAmts property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the othrAmts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -533,10 +539,12 @@ public class SecuritiesTradeConfirmationV01 {
      * {@link OtherAmounts16 }
      * 
      * 
+     * @return
+     *     The value of the othrAmts property.
      */
     public List<OtherAmounts16> getOthrAmts() {
         if (othrAmts == null) {
-            othrAmts = new ArrayList<OtherAmounts16>();
+            othrAmts = new ArrayList<>();
         }
         return this.othrAmts;
     }
@@ -547,8 +555,8 @@ public class SecuritiesTradeConfirmationV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the othrPrics property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the othrPrics property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -562,10 +570,12 @@ public class SecuritiesTradeConfirmationV01 {
      * {@link OtherPrices1 }
      * 
      * 
+     * @return
+     *     The value of the othrPrics property.
      */
     public List<OtherPrices1> getOthrPrics() {
         if (othrPrics == null) {
-            othrPrics = new ArrayList<OtherPrices1>();
+            othrPrics = new ArrayList<>();
         }
         return this.othrPrics;
     }
@@ -651,8 +661,8 @@ public class SecuritiesTradeConfirmationV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -666,10 +676,12 @@ public class SecuritiesTradeConfirmationV01 {
      * {@link SupplementaryData1 }
      * 
      * 
+     * @return
+     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<SupplementaryData1>();
+            splmtryData = new ArrayList<>();
         }
         return this.splmtryData;
     }

@@ -2,14 +2,15 @@
 package com.prowidesoftware.swift.model.mx.sys.dic;
 
 import java.math.BigDecimal;
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import com.prowidesoftware.swift.model.mx.sys.dic.SwDigest;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -42,11 +43,11 @@ public class RetrievedBulkFile {
     @XmlElement(name = "FirstSnFTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar firstSnFTm;
+    protected Calendar firstSnFTm;
     @XmlElement(name = "LastSnFTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar lastSnFTm;
+    protected Calendar lastSnFTm;
     @XmlElement(name = "TtlNbOfMsgs", required = true)
     protected BigDecimal ttlNbOfMsgs;
 
@@ -133,7 +134,7 @@ public class RetrievedBulkFile {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getFirstSnFTm() {
+    public Calendar getFirstSnFTm() {
         return firstSnFTm;
     }
 
@@ -145,7 +146,7 @@ public class RetrievedBulkFile {
      *     {@link String }
      *     
      */
-    public RetrievedBulkFile setFirstSnFTm(XMLGregorianCalendar value) {
+    public RetrievedBulkFile setFirstSnFTm(Calendar value) {
         this.firstSnFTm = value;
         return this;
     }
@@ -158,7 +159,7 @@ public class RetrievedBulkFile {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getLastSnFTm() {
+    public Calendar getLastSnFTm() {
         return lastSnFTm;
     }
 
@@ -170,7 +171,7 @@ public class RetrievedBulkFile {
      *     {@link String }
      *     
      */
-    public RetrievedBulkFile setLastSnFTm(XMLGregorianCalendar value) {
+    public RetrievedBulkFile setLastSnFTm(Calendar value) {
         this.lastSnFTm = value;
         return this;
     }

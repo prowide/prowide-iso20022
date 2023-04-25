@@ -357,8 +357,8 @@ public class PaymentTransactionInformation24 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the chrgsInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the chrgsInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -372,10 +372,12 @@ public class PaymentTransactionInformation24 {
      * {@link ChargesInformation4 }
      * 
      * 
+     * @return
+     *     The value of the chrgsInf property.
      */
     public List<ChargesInformation4> getChrgsInf() {
         if (chrgsInf == null) {
-            chrgsInf = new ArrayList<ChargesInformation4>();
+            chrgsInf = new ArrayList<>();
         }
         return this.chrgsInf;
     }
@@ -436,8 +438,8 @@ public class PaymentTransactionInformation24 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rvslRsnInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rvslRsnInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -451,10 +453,12 @@ public class PaymentTransactionInformation24 {
      * {@link ReversalReasonInformation5 }
      * 
      * 
+     * @return
+     *     The value of the rvslRsnInf property.
      */
     public List<ReversalReasonInformation5> getRvslRsnInf() {
         if (rvslRsnInf == null) {
-            rvslRsnInf = new ArrayList<ReversalReasonInformation5>();
+            rvslRsnInf = new ArrayList<>();
         }
         return this.rvslRsnInf;
     }

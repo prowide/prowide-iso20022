@@ -9,17 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for FractionDispositionType2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="FractionDispositionType2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="DIST"/&gt;
- *     &lt;enumeration value="RDDN"/&gt;
- *     &lt;enumeration value="RDUP"/&gt;
- *     &lt;enumeration value="STAN"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="FractionDispositionType2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="DIST"/>
+ *     <enumeration value="RDDN"/>
+ *     <enumeration value="RDUP"/>
+ *     <enumeration value="STAN"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "FractionDispositionType2Code")

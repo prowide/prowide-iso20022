@@ -64,8 +64,8 @@ public class Charge24 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the chrgs property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the chrgs property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -79,10 +79,12 @@ public class Charge24 {
      * {@link ChargesDetails3 }
      * 
      * 
+     * @return
+     *     The value of the chrgs property.
      */
     public List<ChargesDetails3> getChrgs() {
         if (chrgs == null) {
-            chrgs = new ArrayList<ChargesDetails3>();
+            chrgs = new ArrayList<>();
         }
         return this.chrgs;
     }

@@ -9,24 +9,23 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for VoteInstruction5Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="VoteInstruction5Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ABST"/&gt;
- *     &lt;enumeration value="CAGS"/&gt;
- *     &lt;enumeration value="CHRM"/&gt;
- *     &lt;enumeration value="CFOR"/&gt;
- *     &lt;enumeration value="NOAC"/&gt;
- *     &lt;enumeration value="WTHH"/&gt;
- *     &lt;enumeration value="ONEY"/&gt;
- *     &lt;enumeration value="THRY"/&gt;
- *     &lt;enumeration value="TWOY"/&gt;
- *     &lt;enumeration value="BLNK"/&gt;
- *     &lt;enumeration value="NREC"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="VoteInstruction5Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ABST"/>
+ *     <enumeration value="CAGS"/>
+ *     <enumeration value="CHRM"/>
+ *     <enumeration value="CFOR"/>
+ *     <enumeration value="NOAC"/>
+ *     <enumeration value="WTHH"/>
+ *     <enumeration value="ONEY"/>
+ *     <enumeration value="THRY"/>
+ *     <enumeration value="TWOY"/>
+ *     <enumeration value="BLNK"/>
+ *     <enumeration value="NREC"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "VoteInstruction5Code")

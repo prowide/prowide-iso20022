@@ -319,8 +319,8 @@ public class AggregateBalanceInformation33 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the pricDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the pricDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -334,10 +334,12 @@ public class AggregateBalanceInformation33 {
      * {@link PriceInformation14 }
      * 
      * 
+     * @return
+     *     The value of the pricDtls property.
      */
     public List<PriceInformation14> getPricDtls() {
         if (pricDtls == null) {
-            pricDtls = new ArrayList<PriceInformation14>();
+            pricDtls = new ArrayList<>();
         }
         return this.pricDtls;
     }
@@ -348,8 +350,8 @@ public class AggregateBalanceInformation33 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the fxDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the fxDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -363,10 +365,12 @@ public class AggregateBalanceInformation33 {
      * {@link ForeignExchangeTerms31 }
      * 
      * 
+     * @return
+     *     The value of the fxDtls property.
      */
     public List<ForeignExchangeTerms31> getFXDtls() {
         if (fxDtls == null) {
-            fxDtls = new ArrayList<ForeignExchangeTerms31>();
+            fxDtls = new ArrayList<>();
         }
         return this.fxDtls;
     }
@@ -452,8 +456,8 @@ public class AggregateBalanceInformation33 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the qtyBrkdwn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the qtyBrkdwn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -467,10 +471,12 @@ public class AggregateBalanceInformation33 {
      * {@link QuantityBreakdown40 }
      * 
      * 
+     * @return
+     *     The value of the qtyBrkdwn property.
      */
     public List<QuantityBreakdown40> getQtyBrkdwn() {
         if (qtyBrkdwn == null) {
-            qtyBrkdwn = new ArrayList<QuantityBreakdown40>();
+            qtyBrkdwn = new ArrayList<>();
         }
         return this.qtyBrkdwn;
     }
@@ -481,8 +487,8 @@ public class AggregateBalanceInformation33 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the balBrkdwn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the balBrkdwn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -496,10 +502,12 @@ public class AggregateBalanceInformation33 {
      * {@link SubBalanceInformation17 }
      * 
      * 
+     * @return
+     *     The value of the balBrkdwn property.
      */
     public List<SubBalanceInformation17> getBalBrkdwn() {
         if (balBrkdwn == null) {
-            balBrkdwn = new ArrayList<SubBalanceInformation17>();
+            balBrkdwn = new ArrayList<>();
         }
         return this.balBrkdwn;
     }
@@ -510,8 +518,8 @@ public class AggregateBalanceInformation33 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlBalBrkdwn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlBalBrkdwn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -525,10 +533,12 @@ public class AggregateBalanceInformation33 {
      * {@link AdditionalBalanceInformation17 }
      * 
      * 
+     * @return
+     *     The value of the addtlBalBrkdwn property.
      */
     public List<AdditionalBalanceInformation17> getAddtlBalBrkdwn() {
         if (addtlBalBrkdwn == null) {
-            addtlBalBrkdwn = new ArrayList<AdditionalBalanceInformation17>();
+            addtlBalBrkdwn = new ArrayList<>();
         }
         return this.addtlBalBrkdwn;
     }
@@ -539,8 +549,8 @@ public class AggregateBalanceInformation33 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the balAtSfkpgPlc property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the balAtSfkpgPlc property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -554,10 +564,12 @@ public class AggregateBalanceInformation33 {
      * {@link AggregateBalancePerSafekeepingPlace31 }
      * 
      * 
+     * @return
+     *     The value of the balAtSfkpgPlc property.
      */
     public List<AggregateBalancePerSafekeepingPlace31> getBalAtSfkpgPlc() {
         if (balAtSfkpgPlc == null) {
-            balAtSfkpgPlc = new ArrayList<AggregateBalancePerSafekeepingPlace31>();
+            balAtSfkpgPlc = new ArrayList<>();
         }
         return this.balAtSfkpgPlc;
     }
@@ -593,8 +605,8 @@ public class AggregateBalanceInformation33 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -608,10 +620,12 @@ public class AggregateBalanceInformation33 {
      * {@link SupplementaryData1 }
      * 
      * 
+     * @return
+     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<SupplementaryData1>();
+            splmtryData = new ArrayList<>();
         }
         return this.splmtryData;
     }

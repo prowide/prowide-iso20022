@@ -9,20 +9,19 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for OfferType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="OfferType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="DISS"/&gt;
- *     &lt;enumeration value="ERUN"/&gt;
- *     &lt;enumeration value="FCFS"/&gt;
- *     &lt;enumeration value="FINL"/&gt;
- *     &lt;enumeration value="MINI"/&gt;
- *     &lt;enumeration value="PART"/&gt;
- *     &lt;enumeration value="SQUE"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="OfferType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="DISS"/>
+ *     <enumeration value="ERUN"/>
+ *     <enumeration value="FCFS"/>
+ *     <enumeration value="FINL"/>
+ *     <enumeration value="MINI"/>
+ *     <enumeration value="PART"/>
+ *     <enumeration value="SQUE"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "OfferType1Code")

@@ -9,21 +9,20 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for TradeStatus7Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="TradeStatus7Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="INVA"/&gt;
- *     &lt;enumeration value="UMTC"/&gt;
- *     &lt;enumeration value="FMTC"/&gt;
- *     &lt;enumeration value="SMAT"/&gt;
- *     &lt;enumeration value="SUSP"/&gt;
- *     &lt;enumeration value="SMAP"/&gt;
- *     &lt;enumeration value="PFIX"/&gt;
- *     &lt;enumeration value="FUMT"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="TradeStatus7Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="INVA"/>
+ *     <enumeration value="UMTC"/>
+ *     <enumeration value="FMTC"/>
+ *     <enumeration value="SMAT"/>
+ *     <enumeration value="SUSP"/>
+ *     <enumeration value="SMAP"/>
+ *     <enumeration value="PFIX"/>
+ *     <enumeration value="FUMT"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "TradeStatus7Code")

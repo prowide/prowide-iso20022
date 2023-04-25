@@ -9,20 +9,19 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for AccrualPeriodType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="AccrualPeriodType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="LONG"/&gt;
- *     &lt;enumeration value="FREG"/&gt;
- *     &lt;enumeration value="SHRT"/&gt;
- *     &lt;enumeration value="YEAR"/&gt;
- *     &lt;enumeration value="XLNG"/&gt;
- *     &lt;enumeration value="DFLT"/&gt;
- *     &lt;enumeration value="OMIT"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="AccrualPeriodType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="LONG"/>
+ *     <enumeration value="FREG"/>
+ *     <enumeration value="SHRT"/>
+ *     <enumeration value="YEAR"/>
+ *     <enumeration value="XLNG"/>
+ *     <enumeration value="DFLT"/>
+ *     <enumeration value="OMIT"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "AccrualPeriodType1Code")

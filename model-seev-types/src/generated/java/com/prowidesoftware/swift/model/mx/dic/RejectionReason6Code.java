@@ -9,34 +9,33 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for RejectionReason6Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="RejectionReason6Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="FAIL"/&gt;
- *     &lt;enumeration value="SECO"/&gt;
- *     &lt;enumeration value="AGID"/&gt;
- *     &lt;enumeration value="ENDP"/&gt;
- *     &lt;enumeration value="STAR"/&gt;
- *     &lt;enumeration value="RESU"/&gt;
- *     &lt;enumeration value="SECT"/&gt;
- *     &lt;enumeration value="DISP"/&gt;
- *     &lt;enumeration value="ELIG"/&gt;
- *     &lt;enumeration value="XRAT"/&gt;
- *     &lt;enumeration value="VALU"/&gt;
- *     &lt;enumeration value="ACRU"/&gt;
- *     &lt;enumeration value="NOAC"/&gt;
- *     &lt;enumeration value="MCER"/&gt;
- *     &lt;enumeration value="BDAY"/&gt;
- *     &lt;enumeration value="PDAY"/&gt;
- *     &lt;enumeration value="GAMN"/&gt;
- *     &lt;enumeration value="DFLT"/&gt;
- *     &lt;enumeration value="NPAT"/&gt;
- *     &lt;enumeration value="PERI"/&gt;
- *     &lt;enumeration value="RDTE"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="RejectionReason6Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="FAIL"/>
+ *     <enumeration value="SECO"/>
+ *     <enumeration value="AGID"/>
+ *     <enumeration value="ENDP"/>
+ *     <enumeration value="STAR"/>
+ *     <enumeration value="RESU"/>
+ *     <enumeration value="SECT"/>
+ *     <enumeration value="DISP"/>
+ *     <enumeration value="ELIG"/>
+ *     <enumeration value="XRAT"/>
+ *     <enumeration value="VALU"/>
+ *     <enumeration value="ACRU"/>
+ *     <enumeration value="NOAC"/>
+ *     <enumeration value="MCER"/>
+ *     <enumeration value="BDAY"/>
+ *     <enumeration value="PDAY"/>
+ *     <enumeration value="GAMN"/>
+ *     <enumeration value="DFLT"/>
+ *     <enumeration value="NPAT"/>
+ *     <enumeration value="PERI"/>
+ *     <enumeration value="RDTE"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "RejectionReason6Code")

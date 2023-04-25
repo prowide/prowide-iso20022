@@ -2,14 +2,14 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -35,11 +35,11 @@ public class PercentageAndPeriod1 {
     @XmlElement(name = "StartDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar startDt;
+    protected Calendar startDt;
     @XmlElement(name = "EndDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar endDt;
+    protected Calendar endDt;
 
     /**
      * Gets the value of the pctg property.
@@ -74,7 +74,7 @@ public class PercentageAndPeriod1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getStartDt() {
+    public Calendar getStartDt() {
         return startDt;
     }
 
@@ -86,7 +86,7 @@ public class PercentageAndPeriod1 {
      *     {@link String }
      *     
      */
-    public PercentageAndPeriod1 setStartDt(XMLGregorianCalendar value) {
+    public PercentageAndPeriod1 setStartDt(Calendar value) {
         this.startDt = value;
         return this;
     }
@@ -99,7 +99,7 @@ public class PercentageAndPeriod1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getEndDt() {
+    public Calendar getEndDt() {
         return endDt;
     }
 
@@ -111,7 +111,7 @@ public class PercentageAndPeriod1 {
      *     {@link String }
      *     
      */
-    public PercentageAndPeriod1 setEndDt(XMLGregorianCalendar value) {
+    public PercentageAndPeriod1 setEndDt(Calendar value) {
         this.endDt = value;
         return this;
     }

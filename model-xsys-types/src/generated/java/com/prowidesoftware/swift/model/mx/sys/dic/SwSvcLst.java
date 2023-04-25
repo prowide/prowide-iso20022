@@ -34,8 +34,8 @@ public class SwSvcLst {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the svcNm property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the svcNm property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -49,10 +49,12 @@ public class SwSvcLst {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the svcNm property.
      */
     public List<String> getSvcNm() {
         if (svcNm == null) {
-            svcNm = new ArrayList<String>();
+            svcNm = new ArrayList<>();
         }
         return this.svcNm;
     }

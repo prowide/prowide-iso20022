@@ -65,8 +65,8 @@ public class SwHSMStatusList {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the hsmStatus property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the hsmStatus property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -80,10 +80,12 @@ public class SwHSMStatusList {
      * {@link SwHSMStatus }
      * 
      * 
+     * @return
+     *     The value of the hsmStatus property.
      */
     public List<SwHSMStatus> getHSMStatus() {
         if (hsmStatus == null) {
-            hsmStatus = new ArrayList<SwHSMStatus>();
+            hsmStatus = new ArrayList<>();
         }
         return this.hsmStatus;
     }
@@ -94,8 +96,8 @@ public class SwHSMStatusList {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the hsmTokenStatus property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the hsmTokenStatus property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -109,10 +111,12 @@ public class SwHSMStatusList {
      * {@link SwHSMTokenStatus }
      * 
      * 
+     * @return
+     *     The value of the hsmTokenStatus property.
      */
     public List<SwHSMTokenStatus> getHSMTokenStatus() {
         if (hsmTokenStatus == null) {
-            hsmTokenStatus = new ArrayList<SwHSMTokenStatus>();
+            hsmTokenStatus = new ArrayList<>();
         }
         return this.hsmTokenStatus;
     }

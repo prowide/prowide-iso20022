@@ -9,20 +9,19 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for DeliveryReturn1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="DeliveryReturn1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="UNRE"/&gt;
- *     &lt;enumeration value="DQUA"/&gt;
- *     &lt;enumeration value="DMON"/&gt;
- *     &lt;enumeration value="PART"/&gt;
- *     &lt;enumeration value="SAFE"/&gt;
- *     &lt;enumeration value="DUEB"/&gt;
- *     &lt;enumeration value="PARD"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="DeliveryReturn1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="UNRE"/>
+ *     <enumeration value="DQUA"/>
+ *     <enumeration value="DMON"/>
+ *     <enumeration value="PART"/>
+ *     <enumeration value="SAFE"/>
+ *     <enumeration value="DUEB"/>
+ *     <enumeration value="PARD"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "DeliveryReturn1Code")

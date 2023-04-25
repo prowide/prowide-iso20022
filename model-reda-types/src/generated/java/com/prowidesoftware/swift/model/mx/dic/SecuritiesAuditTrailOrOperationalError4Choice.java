@@ -37,8 +37,8 @@ public class SecuritiesAuditTrailOrOperationalError4Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sctiesAudtTrlRpt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sctiesAudtTrlRpt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -52,10 +52,12 @@ public class SecuritiesAuditTrailOrOperationalError4Choice {
      * {@link SecuritiesAuditTrailReport4 }
      * 
      * 
+     * @return
+     *     The value of the sctiesAudtTrlRpt property.
      */
     public List<SecuritiesAuditTrailReport4> getSctiesAudtTrlRpt() {
         if (sctiesAudtTrlRpt == null) {
-            sctiesAudtTrlRpt = new ArrayList<SecuritiesAuditTrailReport4>();
+            sctiesAudtTrlRpt = new ArrayList<>();
         }
         return this.sctiesAudtTrlRpt;
     }
@@ -66,8 +68,8 @@ public class SecuritiesAuditTrailOrOperationalError4Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the oprlErr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the oprlErr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -81,10 +83,12 @@ public class SecuritiesAuditTrailOrOperationalError4Choice {
      * {@link ErrorHandling5 }
      * 
      * 
+     * @return
+     *     The value of the oprlErr property.
      */
     public List<ErrorHandling5> getOprlErr() {
         if (oprlErr == null) {
-            oprlErr = new ArrayList<ErrorHandling5>();
+            oprlErr = new ArrayList<>();
         }
         return this.oprlErr;
     }

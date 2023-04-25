@@ -9,17 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for PriceProtectionScope2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="PriceProtectionScope2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="LOCA"/&gt;
- *     &lt;enumeration value="NATI"/&gt;
- *     &lt;enumeration value="GLOB"/&gt;
- *     &lt;enumeration value="NAEL"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="PriceProtectionScope2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="LOCA"/>
+ *     <enumeration value="NATI"/>
+ *     <enumeration value="GLOB"/>
+ *     <enumeration value="NAEL"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "PriceProtectionScope2Code")

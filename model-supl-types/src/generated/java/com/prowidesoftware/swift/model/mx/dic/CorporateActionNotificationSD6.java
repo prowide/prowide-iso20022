@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -41,15 +41,15 @@ public class CorporateActionNotificationSD6 {
     @XmlElement(name = "ApprvdDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar apprvdDt;
+    protected Calendar apprvdDt;
     @XmlElement(name = "MtchDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar mtchDt;
+    protected Calendar mtchDt;
     @XmlElement(name = "ActvUntilDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar actvUntilDt;
+    protected Calendar actvUntilDt;
     @XmlElement(name = "SvcLvlAgrmtPrd")
     protected Period3 svcLvlAgrmtPrd;
     @XmlElement(name = "VldtnNotSpprtdRsn")
@@ -113,7 +113,7 @@ public class CorporateActionNotificationSD6 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getApprvdDt() {
+    public Calendar getApprvdDt() {
         return apprvdDt;
     }
 
@@ -125,7 +125,7 @@ public class CorporateActionNotificationSD6 {
      *     {@link String }
      *     
      */
-    public CorporateActionNotificationSD6 setApprvdDt(XMLGregorianCalendar value) {
+    public CorporateActionNotificationSD6 setApprvdDt(Calendar value) {
         this.apprvdDt = value;
         return this;
     }
@@ -138,7 +138,7 @@ public class CorporateActionNotificationSD6 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getMtchDt() {
+    public Calendar getMtchDt() {
         return mtchDt;
     }
 
@@ -150,7 +150,7 @@ public class CorporateActionNotificationSD6 {
      *     {@link String }
      *     
      */
-    public CorporateActionNotificationSD6 setMtchDt(XMLGregorianCalendar value) {
+    public CorporateActionNotificationSD6 setMtchDt(Calendar value) {
         this.mtchDt = value;
         return this;
     }
@@ -163,7 +163,7 @@ public class CorporateActionNotificationSD6 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getActvUntilDt() {
+    public Calendar getActvUntilDt() {
         return actvUntilDt;
     }
 
@@ -175,7 +175,7 @@ public class CorporateActionNotificationSD6 {
      *     {@link String }
      *     
      */
-    public CorporateActionNotificationSD6 setActvUntilDt(XMLGregorianCalendar value) {
+    public CorporateActionNotificationSD6 setActvUntilDt(Calendar value) {
         this.actvUntilDt = value;
         return this;
     }

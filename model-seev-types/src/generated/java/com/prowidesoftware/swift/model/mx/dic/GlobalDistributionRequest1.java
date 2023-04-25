@@ -169,8 +169,8 @@ public class GlobalDistributionRequest1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sctiesMvmnt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sctiesMvmnt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -184,10 +184,12 @@ public class GlobalDistributionRequest1 {
      * {@link SecurityMovement1 }
      * 
      * 
+     * @return
+     *     The value of the sctiesMvmnt property.
      */
     public List<SecurityMovement1> getSctiesMvmnt() {
         if (sctiesMvmnt == null) {
-            sctiesMvmnt = new ArrayList<SecurityMovement1>();
+            sctiesMvmnt = new ArrayList<>();
         }
         return this.sctiesMvmnt;
     }
@@ -198,8 +200,8 @@ public class GlobalDistributionRequest1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cshMvmnt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cshMvmnt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -213,10 +215,12 @@ public class GlobalDistributionRequest1 {
      * {@link CashMovement1 }
      * 
      * 
+     * @return
+     *     The value of the cshMvmnt property.
      */
     public List<CashMovement1> getCshMvmnt() {
         if (cshMvmnt == null) {
-            cshMvmnt = new ArrayList<CashMovement1>();
+            cshMvmnt = new ArrayList<>();
         }
         return this.cshMvmnt;
     }

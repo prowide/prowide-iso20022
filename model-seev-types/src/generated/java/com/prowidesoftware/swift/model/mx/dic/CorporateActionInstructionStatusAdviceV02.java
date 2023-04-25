@@ -87,8 +87,8 @@ public class CorporateActionInstructionStatusAdviceV02 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the othrDocId property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the othrDocId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -102,10 +102,12 @@ public class CorporateActionInstructionStatusAdviceV02 {
      * {@link DocumentIdentification14 }
      * 
      * 
+     * @return
+     *     The value of the othrDocId property.
      */
     public List<DocumentIdentification14> getOthrDocId() {
         if (othrDocId == null) {
-            othrDocId = new ArrayList<DocumentIdentification14>();
+            othrDocId = new ArrayList<>();
         }
         return this.othrDocId;
     }
@@ -141,8 +143,8 @@ public class CorporateActionInstructionStatusAdviceV02 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the instrPrcgSts property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the instrPrcgSts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -156,10 +158,12 @@ public class CorporateActionInstructionStatusAdviceV02 {
      * {@link InstructionProcessingStatus7Choice }
      * 
      * 
+     * @return
+     *     The value of the instrPrcgSts property.
      */
     public List<InstructionProcessingStatus7Choice> getInstrPrcgSts() {
         if (instrPrcgSts == null) {
-            instrPrcgSts = new ArrayList<InstructionProcessingStatus7Choice>();
+            instrPrcgSts = new ArrayList<>();
         }
         return this.instrPrcgSts;
     }
@@ -220,8 +224,8 @@ public class CorporateActionInstructionStatusAdviceV02 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -235,10 +239,12 @@ public class CorporateActionInstructionStatusAdviceV02 {
      * {@link SupplementaryData1 }
      * 
      * 
+     * @return
+     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<SupplementaryData1>();
+            splmtryData = new ArrayList<>();
         }
         return this.splmtryData;
     }

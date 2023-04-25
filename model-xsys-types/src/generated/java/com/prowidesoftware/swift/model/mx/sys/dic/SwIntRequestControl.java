@@ -136,8 +136,8 @@ public class SwIntRequestControl {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the productList property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the productList property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -151,10 +151,12 @@ public class SwIntRequestControl {
      * {@link SwProductList }
      * 
      * 
+     * @return
+     *     The value of the productList property.
      */
     public List<SwProductList> getProductList() {
         if (productList == null) {
-            productList = new ArrayList<SwProductList>();
+            productList = new ArrayList<>();
         }
         return this.productList;
     }

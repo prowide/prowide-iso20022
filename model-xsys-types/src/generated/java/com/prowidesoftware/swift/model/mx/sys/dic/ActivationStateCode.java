@@ -10,17 +10,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for ActivationStateCode.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ActivationStateCode"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="Activated"/&gt;
- *     &lt;enumeration value="ActivatedForInputOnly"/&gt;
- *     &lt;enumeration value="ActivatedForOutputOnly"/&gt;
- *     &lt;enumeration value="Disabled"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ActivationStateCode">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="Activated"/>
+ *     <enumeration value="ActivatedForInputOnly"/>
+ *     <enumeration value="ActivatedForOutputOnly"/>
+ *     <enumeration value="Disabled"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ActivationStateCode")

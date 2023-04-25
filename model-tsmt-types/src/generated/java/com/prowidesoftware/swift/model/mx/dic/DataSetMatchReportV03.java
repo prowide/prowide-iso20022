@@ -180,8 +180,8 @@ public class DataSetMatchReportV03 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the usrTxRef property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the usrTxRef property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -195,10 +195,12 @@ public class DataSetMatchReportV03 {
      * {@link DocumentIdentification5 }
      * 
      * 
+     * @return
+     *     The value of the usrTxRef property.
      */
     public List<DocumentIdentification5> getUsrTxRef() {
         if (usrTxRef == null) {
-            usrTxRef = new ArrayList<DocumentIdentification5>();
+            usrTxRef = new ArrayList<>();
         }
         return this.usrTxRef;
     }
@@ -309,8 +311,8 @@ public class DataSetMatchReportV03 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cmpardDocRef property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cmpardDocRef property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -324,10 +326,12 @@ public class DataSetMatchReportV03 {
      * {@link DocumentIdentification10 }
      * 
      * 
+     * @return
+     *     The value of the cmpardDocRef property.
      */
     public List<DocumentIdentification10> getCmpardDocRef() {
         if (cmpardDocRef == null) {
-            cmpardDocRef = new ArrayList<DocumentIdentification10>();
+            cmpardDocRef = new ArrayList<>();
         }
         return this.cmpardDocRef;
     }

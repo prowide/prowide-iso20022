@@ -10,39 +10,38 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for InvestmentFundMiFIDFee1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="InvestmentFundMiFIDFee1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="FEND"/&gt;
- *     &lt;enumeration value="DIST"/&gt;
- *     &lt;enumeration value="GEAR"/&gt;
- *     &lt;enumeration value="FES3"/&gt;
- *     &lt;enumeration value="FES2"/&gt;
- *     &lt;enumeration value="GOCF"/&gt;
- *     &lt;enumeration value="GOCS"/&gt;
- *     &lt;enumeration value="INCF"/&gt;
- *     &lt;enumeration value="INCS"/&gt;
- *     &lt;enumeration value="MANF"/&gt;
- *     &lt;enumeration value="MANS"/&gt;
- *     &lt;enumeration value="NETO"/&gt;
- *     &lt;enumeration value="OOES"/&gt;
- *     &lt;enumeration value="BENS"/&gt;
- *     &lt;enumeration value="ENAC"/&gt;
- *     &lt;enumeration value="ENFX"/&gt;
- *     &lt;enumeration value="BEND"/&gt;
- *     &lt;enumeration value="EXAC"/&gt;
- *     &lt;enumeration value="ENBX"/&gt;
- *     &lt;enumeration value="PENO"/&gt;
- *     &lt;enumeration value="OTES"/&gt;
- *     &lt;enumeration value="OCAS"/&gt;
- *     &lt;enumeration value="PERF"/&gt;
- *     &lt;enumeration value="PERS"/&gt;
- *     &lt;enumeration value="REFV"/&gt;
- *     &lt;enumeration value="TRSF"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="InvestmentFundMiFIDFee1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="FEND"/>
+ *     <enumeration value="DIST"/>
+ *     <enumeration value="GEAR"/>
+ *     <enumeration value="FES3"/>
+ *     <enumeration value="FES2"/>
+ *     <enumeration value="GOCF"/>
+ *     <enumeration value="GOCS"/>
+ *     <enumeration value="INCF"/>
+ *     <enumeration value="INCS"/>
+ *     <enumeration value="MANF"/>
+ *     <enumeration value="MANS"/>
+ *     <enumeration value="NETO"/>
+ *     <enumeration value="OOES"/>
+ *     <enumeration value="BENS"/>
+ *     <enumeration value="ENAC"/>
+ *     <enumeration value="ENFX"/>
+ *     <enumeration value="BEND"/>
+ *     <enumeration value="EXAC"/>
+ *     <enumeration value="ENBX"/>
+ *     <enumeration value="PENO"/>
+ *     <enumeration value="OTES"/>
+ *     <enumeration value="OCAS"/>
+ *     <enumeration value="PERF"/>
+ *     <enumeration value="PERS"/>
+ *     <enumeration value="REFV"/>
+ *     <enumeration value="TRSF"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "InvestmentFundMiFIDFee1Code")

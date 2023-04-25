@@ -1,6 +1,9 @@
 
 package com.prowidesoftware.swift.model.mx.sys.dic;
 
+import com.prowidesoftware.swift.model.mx.sys.dic.SwFileRequestHeader;
+import com.prowidesoftware.swift.model.mx.sys.dic.SwIntRequestHeader;
+import com.prowidesoftware.swift.model.mx.sys.dic.SwSnFOutputInfo;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;

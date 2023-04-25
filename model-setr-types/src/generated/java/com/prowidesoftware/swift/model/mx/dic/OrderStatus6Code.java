@@ -9,20 +9,19 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for OrderStatus6Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="OrderStatus6Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="DONE"/&gt;
- *     &lt;enumeration value="REJT"/&gt;
- *     &lt;enumeration value="EXEC"/&gt;
- *     &lt;enumeration value="CACE"/&gt;
- *     &lt;enumeration value="ALER"/&gt;
- *     &lt;enumeration value="PACK"/&gt;
- *     &lt;enumeration value="ACBI"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="OrderStatus6Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="DONE"/>
+ *     <enumeration value="REJT"/>
+ *     <enumeration value="EXEC"/>
+ *     <enumeration value="CACE"/>
+ *     <enumeration value="ALER"/>
+ *     <enumeration value="PACK"/>
+ *     <enumeration value="ACBI"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "OrderStatus6Code")

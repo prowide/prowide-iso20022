@@ -2,13 +2,16 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.swift.model.mx.dic.*;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -30,13 +33,13 @@ public class MxReda03400101
 
     @XmlElement(name = "SctiesAudtTrlRpt", required = true)
     protected SecuritiesAuditTrailReportV01 sctiesAudtTrlRpt;
-    public final static transient String BUSINESS_PROCESS = "reda";
-    public final static transient int FUNCTIONALITY = 34;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 1;
+    public static final transient String BUSINESS_PROCESS = "reda";
+    public static final transient int FUNCTIONALITY = 34;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {AuditTrail1 .class, AuditTrailOrBusinessError6Choice.class, DatePeriod2 .class, DatePeriodSearch1Choice.class, ErrorHandling3Choice.class, ErrorHandling5 .class, IdentificationSource3Choice.class, MessageHeader12 .class, MxReda03400101 .class, OriginalBusinessInstruction1 .class, OtherIdentification1 .class, SecuritiesAuditTrailOrOperationalError4Choice.class, SecuritiesAuditTrailReport4 .class, SecuritiesAuditTrailReportV01 .class, SecurityIdentification39 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:reda.034.001.01";
+    public static final transient Class[] _classes = new Class[] {AuditTrail1 .class, AuditTrailOrBusinessError6Choice.class, DatePeriod2 .class, DatePeriodSearch1Choice.class, ErrorHandling3Choice.class, ErrorHandling5 .class, IdentificationSource3Choice.class, MessageHeader12 .class, MxReda03400101 .class, OriginalBusinessInstruction1 .class, OtherIdentification1 .class, SecuritiesAuditTrailOrOperationalError4Choice.class, SecuritiesAuditTrailReport4 .class, SecuritiesAuditTrailReportV01 .class, SecurityIdentification39 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:reda.034.001.01";
 
     public MxReda03400101() {
         super();
@@ -83,21 +86,6 @@ public class MxReda03400101
     public MxReda03400101 setSctiesAudtTrlRpt(SecuritiesAuditTrailReportV01 value) {
         this.sctiesAudtTrlRpt = value;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -170,8 +158,23 @@ public class MxReda03400101
      * @return
      *     a new instance of MxReda03400101
      */
-    public final static MxReda03400101 fromJson(String json) {
+    public static final MxReda03400101 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxReda03400101 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

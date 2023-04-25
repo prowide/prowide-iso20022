@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -42,11 +42,11 @@ public class MandateOccurrences2 {
     @XmlElement(name = "FrstColltnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar frstColltnDt;
+    protected Calendar frstColltnDt;
     @XmlElement(name = "FnlColltnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar fnlColltnDt;
+    protected Calendar fnlColltnDt;
 
     /**
      * Gets the value of the seqTp property.
@@ -131,7 +131,7 @@ public class MandateOccurrences2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getFrstColltnDt() {
+    public Calendar getFrstColltnDt() {
         return frstColltnDt;
     }
 
@@ -143,7 +143,7 @@ public class MandateOccurrences2 {
      *     {@link String }
      *     
      */
-    public MandateOccurrences2 setFrstColltnDt(XMLGregorianCalendar value) {
+    public MandateOccurrences2 setFrstColltnDt(Calendar value) {
         this.frstColltnDt = value;
         return this;
     }
@@ -156,7 +156,7 @@ public class MandateOccurrences2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getFnlColltnDt() {
+    public Calendar getFnlColltnDt() {
         return fnlColltnDt;
     }
 
@@ -168,7 +168,7 @@ public class MandateOccurrences2 {
      *     {@link String }
      *     
      */
-    public MandateOccurrences2 setFnlColltnDt(XMLGregorianCalendar value) {
+    public MandateOccurrences2 setFnlColltnDt(Calendar value) {
         this.fnlColltnDt = value;
         return this;
     }

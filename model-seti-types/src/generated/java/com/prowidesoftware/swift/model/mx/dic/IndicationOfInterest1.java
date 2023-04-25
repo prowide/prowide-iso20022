@@ -3,15 +3,15 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -64,7 +64,7 @@ public class IndicationOfInterest1 {
     @XmlElement(name = "VldUntilDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar vldUntilDtTm;
+    protected Calendar vldUntilDtTm;
     @XmlElement(name = "QltyIndctn")
     @XmlSchemaType(name = "string")
     protected QualityIndication1Code qltyIndctn;
@@ -193,7 +193,7 @@ public class IndicationOfInterest1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getVldUntilDtTm() {
+    public Calendar getVldUntilDtTm() {
         return vldUntilDtTm;
     }
 
@@ -205,7 +205,7 @@ public class IndicationOfInterest1 {
      *     {@link String }
      *     
      */
-    public IndicationOfInterest1 setVldUntilDtTm(XMLGregorianCalendar value) {
+    public IndicationOfInterest1 setVldUntilDtTm(Calendar value) {
         this.vldUntilDtTm = value;
         return this;
     }
@@ -266,8 +266,8 @@ public class IndicationOfInterest1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the qlfr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the qlfr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -281,10 +281,12 @@ public class IndicationOfInterest1 {
      * {@link Qualifier1Code }
      * 
      * 
+     * @return
+     *     The value of the qlfr property.
      */
     public List<Qualifier1Code> getQlfr() {
         if (qlfr == null) {
-            qlfr = new ArrayList<Qualifier1Code>();
+            qlfr = new ArrayList<>();
         }
         return this.qlfr;
     }
@@ -420,8 +422,8 @@ public class IndicationOfInterest1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the undrlygFinInstrmDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the undrlygFinInstrmDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -435,10 +437,12 @@ public class IndicationOfInterest1 {
      * {@link SecurityIdentification7 }
      * 
      * 
+     * @return
+     *     The value of the undrlygFinInstrmDtls property.
      */
     public List<SecurityIdentification7> getUndrlygFinInstrmDtls() {
         if (undrlygFinInstrmDtls == null) {
-            undrlygFinInstrmDtls = new ArrayList<SecurityIdentification7>();
+            undrlygFinInstrmDtls = new ArrayList<>();
         }
         return this.undrlygFinInstrmDtls;
     }
@@ -449,8 +453,8 @@ public class IndicationOfInterest1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the undrlygFinInstrmAttrbts property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the undrlygFinInstrmAttrbts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -464,10 +468,12 @@ public class IndicationOfInterest1 {
      * {@link FinancialInstrumentAttributes1 }
      * 
      * 
+     * @return
+     *     The value of the undrlygFinInstrmAttrbts property.
      */
     public List<FinancialInstrumentAttributes1> getUndrlygFinInstrmAttrbts() {
         if (undrlygFinInstrmAttrbts == null) {
-            undrlygFinInstrmAttrbts = new ArrayList<FinancialInstrumentAttributes1>();
+            undrlygFinInstrmAttrbts = new ArrayList<>();
         }
         return this.undrlygFinInstrmAttrbts;
     }
@@ -478,8 +484,8 @@ public class IndicationOfInterest1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the undrlygStiptns property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the undrlygStiptns property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -493,10 +499,12 @@ public class IndicationOfInterest1 {
      * {@link FinancialInstrumentStipulations }
      * 
      * 
+     * @return
+     *     The value of the undrlygStiptns property.
      */
     public List<FinancialInstrumentStipulations> getUndrlygStiptns() {
         if (undrlygStiptns == null) {
-            undrlygStiptns = new ArrayList<FinancialInstrumentStipulations>();
+            undrlygStiptns = new ArrayList<>();
         }
         return this.undrlygStiptns;
     }
@@ -507,8 +515,8 @@ public class IndicationOfInterest1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the instrmLegGrpDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the instrmLegGrpDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -522,10 +530,12 @@ public class IndicationOfInterest1 {
      * {@link InstrumentLeg1 }
      * 
      * 
+     * @return
+     *     The value of the instrmLegGrpDtls property.
      */
     public List<InstrumentLeg1> getInstrmLegGrpDtls() {
         if (instrmLegGrpDtls == null) {
-            instrmLegGrpDtls = new ArrayList<InstrumentLeg1>();
+            instrmLegGrpDtls = new ArrayList<>();
         }
         return this.instrmLegGrpDtls;
     }
@@ -636,8 +646,8 @@ public class IndicationOfInterest1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the tradgPties property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the tradgPties property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -651,10 +661,12 @@ public class IndicationOfInterest1 {
      * {@link Intermediary14 }
      * 
      * 
+     * @return
+     *     The value of the tradgPties property.
      */
     public List<Intermediary14> getTradgPties() {
         if (tradgPties == null) {
-            tradgPties = new ArrayList<Intermediary14>();
+            tradgPties = new ArrayList<>();
         }
         return this.tradgPties;
     }

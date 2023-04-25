@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -39,7 +39,7 @@ public class CancellationRequestInformation1 {
     @XmlElement(name = "OrgnlCreDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar orgnlCreDtTm;
+    protected Calendar orgnlCreDtTm;
     @XmlElement(name = "NbOfInvcReqs")
     protected String nbOfInvcReqs;
     @XmlElement(name = "TtlBlkInvcAmt")
@@ -86,7 +86,7 @@ public class CancellationRequestInformation1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getOrgnlCreDtTm() {
+    public Calendar getOrgnlCreDtTm() {
         return orgnlCreDtTm;
     }
 
@@ -98,7 +98,7 @@ public class CancellationRequestInformation1 {
      *     {@link String }
      *     
      */
-    public CancellationRequestInformation1 setOrgnlCreDtTm(XMLGregorianCalendar value) {
+    public CancellationRequestInformation1 setOrgnlCreDtTm(Calendar value) {
         this.orgnlCreDtTm = value;
         return this;
     }

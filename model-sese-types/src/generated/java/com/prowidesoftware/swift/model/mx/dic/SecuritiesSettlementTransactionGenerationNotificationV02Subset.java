@@ -150,8 +150,8 @@ public class SecuritiesSettlementTransactionGenerationNotificationV02Subset {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the lnkgs property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the lnkgs property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -165,10 +165,12 @@ public class SecuritiesSettlementTransactionGenerationNotificationV02Subset {
      * {@link Linkages12 }
      * 
      * 
+     * @return
+     *     The value of the lnkgs property.
      */
     public List<Linkages12> getLnkgs() {
         if (lnkgs == null) {
-            lnkgs = new ArrayList<Linkages12>();
+            lnkgs = new ArrayList<>();
         }
         return this.lnkgs;
     }
@@ -254,8 +256,8 @@ public class SecuritiesSettlementTransactionGenerationNotificationV02Subset {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the qtyAndAcctDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the qtyAndAcctDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -269,10 +271,12 @@ public class SecuritiesSettlementTransactionGenerationNotificationV02Subset {
      * {@link QuantityAndAccount24 }
      * 
      * 
+     * @return
+     *     The value of the qtyAndAcctDtls property.
      */
     public List<QuantityAndAccount24> getQtyAndAcctDtls() {
         if (qtyAndAcctDtls == null) {
-            qtyAndAcctDtls = new ArrayList<QuantityAndAccount24>();
+            qtyAndAcctDtls = new ArrayList<>();
         }
         return this.qtyAndAcctDtls;
     }
@@ -483,8 +487,8 @@ public class SecuritiesSettlementTransactionGenerationNotificationV02Subset {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the gnrtdRsn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the gnrtdRsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -498,10 +502,12 @@ public class SecuritiesSettlementTransactionGenerationNotificationV02Subset {
      * {@link GeneratedReason2 }
      * 
      * 
+     * @return
+     *     The value of the gnrtdRsn property.
      */
     public List<GeneratedReason2> getGnrtdRsn() {
         if (gnrtdRsn == null) {
-            gnrtdRsn = new ArrayList<GeneratedReason2>();
+            gnrtdRsn = new ArrayList<>();
         }
         return this.gnrtdRsn;
     }
@@ -537,8 +543,8 @@ public class SecuritiesSettlementTransactionGenerationNotificationV02Subset {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -552,10 +558,12 @@ public class SecuritiesSettlementTransactionGenerationNotificationV02Subset {
      * {@link SupplementaryData1 }
      * 
      * 
+     * @return
+     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<SupplementaryData1>();
+            splmtryData = new ArrayList<>();
         }
         return this.splmtryData;
     }

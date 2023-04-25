@@ -9,20 +9,19 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for PegType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="PegType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="FIXE"/&gt;
- *     &lt;enumeration value="LAST"/&gt;
- *     &lt;enumeration value="MARK"/&gt;
- *     &lt;enumeration value="MIDP"/&gt;
- *     &lt;enumeration value="OPEN"/&gt;
- *     &lt;enumeration value="PRIM"/&gt;
- *     &lt;enumeration value="VWAP"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="PegType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="FIXE"/>
+ *     <enumeration value="LAST"/>
+ *     <enumeration value="MARK"/>
+ *     <enumeration value="MIDP"/>
+ *     <enumeration value="OPEN"/>
+ *     <enumeration value="PRIM"/>
+ *     <enumeration value="VWAP"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "PegType1Code")

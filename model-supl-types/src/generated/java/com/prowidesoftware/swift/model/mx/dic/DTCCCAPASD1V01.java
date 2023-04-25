@@ -65,8 +65,8 @@ public class DTCCCAPASD1V01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the corpActnMvmntSctiesMvmntDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the corpActnMvmntSctiesMvmntDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -80,10 +80,12 @@ public class DTCCCAPASD1V01 {
      * {@link CorporateActionMovementSecuritiesMovementDetailsSD1 }
      * 
      * 
+     * @return
+     *     The value of the corpActnMvmntSctiesMvmntDtls property.
      */
     public List<CorporateActionMovementSecuritiesMovementDetailsSD1> getCorpActnMvmntSctiesMvmntDtls() {
         if (corpActnMvmntSctiesMvmntDtls == null) {
-            corpActnMvmntSctiesMvmntDtls = new ArrayList<CorporateActionMovementSecuritiesMovementDetailsSD1>();
+            corpActnMvmntSctiesMvmntDtls = new ArrayList<>();
         }
         return this.corpActnMvmntSctiesMvmntDtls;
     }
@@ -94,8 +96,8 @@ public class DTCCCAPASD1V01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the corpActnMvmntCshMvmntDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the corpActnMvmntCshMvmntDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -109,10 +111,12 @@ public class DTCCCAPASD1V01 {
      * {@link CorporateActionMovementCashMovementDetailsSD1 }
      * 
      * 
+     * @return
+     *     The value of the corpActnMvmntCshMvmntDtls property.
      */
     public List<CorporateActionMovementCashMovementDetailsSD1> getCorpActnMvmntCshMvmntDtls() {
         if (corpActnMvmntCshMvmntDtls == null) {
-            corpActnMvmntCshMvmntDtls = new ArrayList<CorporateActionMovementCashMovementDetailsSD1>();
+            corpActnMvmntCshMvmntDtls = new ArrayList<>();
         }
         return this.corpActnMvmntCshMvmntDtls;
     }

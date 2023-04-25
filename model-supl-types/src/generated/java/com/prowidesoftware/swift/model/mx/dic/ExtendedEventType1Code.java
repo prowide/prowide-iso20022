@@ -9,19 +9,18 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for ExtendedEventType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ExtendedEventType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="RPLA"/&gt;
- *     &lt;enumeration value="TMTN"/&gt;
- *     &lt;enumeration value="BRIS"/&gt;
- *     &lt;enumeration value="FLPR"/&gt;
- *     &lt;enumeration value="PDEF"/&gt;
- *     &lt;enumeration value="PPRE"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ExtendedEventType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="RPLA"/>
+ *     <enumeration value="TMTN"/>
+ *     <enumeration value="BRIS"/>
+ *     <enumeration value="FLPR"/>
+ *     <enumeration value="PDEF"/>
+ *     <enumeration value="PPRE"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ExtendedEventType1Code")

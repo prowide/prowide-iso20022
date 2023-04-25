@@ -151,8 +151,8 @@ public class QuoteStatusReport {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the legGrpDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the legGrpDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -166,10 +166,12 @@ public class QuoteStatusReport {
      * {@link InstrumentLeg2 }
      * 
      * 
+     * @return
+     *     The value of the legGrpDtls property.
      */
     public List<InstrumentLeg2> getLegGrpDtls() {
         if (legGrpDtls == null) {
-            legGrpDtls = new ArrayList<InstrumentLeg2>();
+            legGrpDtls = new ArrayList<>();
         }
         return this.legGrpDtls;
     }
@@ -255,8 +257,8 @@ public class QuoteStatusReport {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the tradgPties property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the tradgPties property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -270,10 +272,12 @@ public class QuoteStatusReport {
      * {@link Intermediary14 }
      * 
      * 
+     * @return
+     *     The value of the tradgPties property.
      */
     public List<Intermediary14> getTradgPties() {
         if (tradgPties == null) {
-            tradgPties = new ArrayList<Intermediary14>();
+            tradgPties = new ArrayList<>();
         }
         return this.tradgPties;
     }

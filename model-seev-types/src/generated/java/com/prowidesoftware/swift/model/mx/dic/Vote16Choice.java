@@ -37,8 +37,8 @@ public class Vote16Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the voteInstr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the voteInstr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -52,10 +52,12 @@ public class Vote16Choice {
      * {@link Vote14 }
      * 
      * 
+     * @return
+     *     The value of the voteInstr property.
      */
     public List<Vote14> getVoteInstr() {
         if (voteInstr == null) {
-            voteInstr = new ArrayList<Vote14>();
+            voteInstr = new ArrayList<>();
         }
         return this.voteInstr;
     }
@@ -66,8 +68,8 @@ public class Vote16Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the gblVoteInstr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the gblVoteInstr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -81,10 +83,12 @@ public class Vote16Choice {
      * {@link Vote15 }
      * 
      * 
+     * @return
+     *     The value of the gblVoteInstr property.
      */
     public List<Vote15> getGblVoteInstr() {
         if (gblVoteInstr == null) {
-            gblVoteInstr = new ArrayList<Vote15>();
+            gblVoteInstr = new ArrayList<>();
         }
         return this.gblVoteInstr;
     }

@@ -9,16 +9,15 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for CorporateActionTaxableIncomePerShareCalculated1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CorporateActionTaxableIncomePerShareCalculated1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="TDIY"/&gt;
- *     &lt;enumeration value="TDIN"/&gt;
- *     &lt;enumeration value="UKWN"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CorporateActionTaxableIncomePerShareCalculated1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="TDIY"/>
+ *     <enumeration value="TDIN"/>
+ *     <enumeration value="UKWN"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CorporateActionTaxableIncomePerShareCalculated1Code")

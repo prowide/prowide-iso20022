@@ -209,8 +209,8 @@ public class PenaltyRecord1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the clctnData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the clctnData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -224,10 +224,12 @@ public class PenaltyRecord1 {
      * {@link PenaltyCalculationRecord1 }
      * 
      * 
+     * @return
+     *     The value of the clctnData property.
      */
     public List<PenaltyCalculationRecord1> getClctnData() {
         if (clctnData == null) {
-            clctnData = new ArrayList<PenaltyCalculationRecord1>();
+            clctnData = new ArrayList<>();
         }
         return this.clctnData;
     }

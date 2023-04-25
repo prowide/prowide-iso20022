@@ -3,15 +3,15 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -72,7 +72,7 @@ public class SubscriptionExecution7 {
     @XmlElement(name = "ReqdTradDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar reqdTradDt;
+    protected Calendar reqdTradDt;
     @XmlElement(name = "HdgFndOrdrTp")
     @XmlSchemaType(name = "string")
     protected List<HedgeFundOrderType1Code> hdgFndOrdrTp;
@@ -99,11 +99,11 @@ public class SubscriptionExecution7 {
     @XmlElement(name = "NAVDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar navDt;
+    protected Calendar navDt;
     @XmlElement(name = "CshSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar cshSttlmDt;
+    protected Calendar cshSttlmDt;
     @XmlElement(name = "ReqdSttlmCcy")
     protected String reqdSttlmCcy;
     @XmlElement(name = "PmtRef")
@@ -241,7 +241,7 @@ public class SubscriptionExecution7 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getReqdTradDt() {
+    public Calendar getReqdTradDt() {
         return reqdTradDt;
     }
 
@@ -253,7 +253,7 @@ public class SubscriptionExecution7 {
      *     {@link String }
      *     
      */
-    public SubscriptionExecution7 setReqdTradDt(XMLGregorianCalendar value) {
+    public SubscriptionExecution7 setReqdTradDt(Calendar value) {
         this.reqdTradDt = value;
         return this;
     }
@@ -264,8 +264,8 @@ public class SubscriptionExecution7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the hdgFndOrdrTp property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the hdgFndOrdrTp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -279,10 +279,12 @@ public class SubscriptionExecution7 {
      * {@link HedgeFundOrderType1Code }
      * 
      * 
+     * @return
+     *     The value of the hdgFndOrdrTp property.
      */
     public List<HedgeFundOrderType1Code> getHdgFndOrdrTp() {
         if (hdgFndOrdrTp == null) {
-            hdgFndOrdrTp = new ArrayList<HedgeFundOrderType1Code>();
+            hdgFndOrdrTp = new ArrayList<>();
         }
         return this.hdgFndOrdrTp;
     }
@@ -468,8 +470,8 @@ public class SubscriptionExecution7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the inftvPricDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the inftvPricDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -483,10 +485,12 @@ public class SubscriptionExecution7 {
      * {@link UnitPrice16 }
      * 
      * 
+     * @return
+     *     The value of the inftvPricDtls property.
      */
     public List<UnitPrice16> getInftvPricDtls() {
         if (inftvPricDtls == null) {
-            inftvPricDtls = new ArrayList<UnitPrice16>();
+            inftvPricDtls = new ArrayList<>();
         }
         return this.inftvPricDtls;
     }
@@ -549,7 +553,7 @@ public class SubscriptionExecution7 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getNAVDt() {
+    public Calendar getNAVDt() {
         return navDt;
     }
 
@@ -561,7 +565,7 @@ public class SubscriptionExecution7 {
      *     {@link String }
      *     
      */
-    public SubscriptionExecution7 setNAVDt(XMLGregorianCalendar value) {
+    public SubscriptionExecution7 setNAVDt(Calendar value) {
         this.navDt = value;
         return this;
     }
@@ -574,7 +578,7 @@ public class SubscriptionExecution7 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getCshSttlmDt() {
+    public Calendar getCshSttlmDt() {
         return cshSttlmDt;
     }
 
@@ -586,7 +590,7 @@ public class SubscriptionExecution7 {
      *     {@link String }
      *     
      */
-    public SubscriptionExecution7 setCshSttlmDt(XMLGregorianCalendar value) {
+    public SubscriptionExecution7 setCshSttlmDt(Calendar value) {
         this.cshSttlmDt = value;
         return this;
     }
@@ -672,8 +676,8 @@ public class SubscriptionExecution7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the frgnXchgDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the frgnXchgDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -687,10 +691,12 @@ public class SubscriptionExecution7 {
      * {@link ForeignExchangeTerms7 }
      * 
      * 
+     * @return
+     *     The value of the frgnXchgDtls property.
      */
     public List<ForeignExchangeTerms7> getFrgnXchgDtls() {
         if (frgnXchgDtls == null) {
-            frgnXchgDtls = new ArrayList<ForeignExchangeTerms7>();
+            frgnXchgDtls = new ArrayList<>();
         }
         return this.frgnXchgDtls;
     }
@@ -926,8 +932,8 @@ public class SubscriptionExecution7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rltdPtyDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rltdPtyDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -941,10 +947,12 @@ public class SubscriptionExecution7 {
      * {@link Intermediary16 }
      * 
      * 
+     * @return
+     *     The value of the rltdPtyDtls property.
      */
     public List<Intermediary16> getRltdPtyDtls() {
         if (rltdPtyDtls == null) {
-            rltdPtyDtls = new ArrayList<Intermediary16>();
+            rltdPtyDtls = new ArrayList<>();
         }
         return this.rltdPtyDtls;
     }

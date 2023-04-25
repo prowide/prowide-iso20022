@@ -10,17 +10,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for TrackerTransactionStatusReason1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="TrackerTransactionStatusReason1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="G002"/&gt;
- *     &lt;enumeration value="G003"/&gt;
- *     &lt;enumeration value="G004"/&gt;
- *     &lt;enumeration value="G001"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="TrackerTransactionStatusReason1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="G002"/>
+ *     <enumeration value="G003"/>
+ *     <enumeration value="G004"/>
+ *     <enumeration value="G001"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "TrackerTransactionStatusReason1Code")

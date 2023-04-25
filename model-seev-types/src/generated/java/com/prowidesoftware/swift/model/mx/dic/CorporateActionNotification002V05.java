@@ -15,10 +15,8 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
  * Scope
- * An account servicer sends the CorporateActionNotification message to an account owner or its designated agent to notify details of a corporate action event and optionally account information, eligible balance and entitlements.
-
- * It may also include possible elections or choices available to the account owner. The account servicer can initially send the CorporateActionNotification message as a preliminary advice, subsequently replaced by another CorporateActionNotification message with complete or confirmed information.
-
+ * An account servicer sends the CorporateActionNotification message to an account owner or its designated agent to notify details of a corporate action event and optionally account information, eligible balance and entitlements.
+ * It may also include possible elections or choices available to the account owner. The account servicer can initially send the CorporateActionNotification message as a preliminary advice, subsequently replaced by another CorporateActionNotification message with complete or confirmed information.
  * It may also be sent to an account owner or its designated agent, to remind of event details and/or of missing or incomplete instructions for a corporate action event.
  * Usage
  * The message may also be used to:
@@ -212,8 +210,8 @@ public class CorporateActionNotification002V05 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the othrDocId property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the othrDocId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -227,10 +225,12 @@ public class CorporateActionNotification002V05 {
      * {@link DocumentIdentification20 }
      * 
      * 
+     * @return
+     *     The value of the othrDocId property.
      */
     public List<DocumentIdentification20> getOthrDocId() {
         if (othrDocId == null) {
-            othrDocId = new ArrayList<DocumentIdentification20>();
+            othrDocId = new ArrayList<>();
         }
         return this.othrDocId;
     }
@@ -241,8 +241,8 @@ public class CorporateActionNotification002V05 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the evtsLkg property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the evtsLkg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -256,10 +256,12 @@ public class CorporateActionNotification002V05 {
      * {@link CorporateActionEventReference2 }
      * 
      * 
+     * @return
+     *     The value of the evtsLkg property.
      */
     public List<CorporateActionEventReference2> getEvtsLkg() {
         if (evtsLkg == null) {
-            evtsLkg = new ArrayList<CorporateActionEventReference2>();
+            evtsLkg = new ArrayList<>();
         }
         return this.evtsLkg;
     }
@@ -370,8 +372,8 @@ public class CorporateActionNotification002V05 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the corpActnOptnDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the corpActnOptnDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -385,10 +387,12 @@ public class CorporateActionNotification002V05 {
      * {@link CorporateActionOption106 }
      * 
      * 
+     * @return
+     *     The value of the corpActnOptnDtls property.
      */
     public List<CorporateActionOption106> getCorpActnOptnDtls() {
         if (corpActnOptnDtls == null) {
-            corpActnOptnDtls = new ArrayList<CorporateActionOption106>();
+            corpActnOptnDtls = new ArrayList<>();
         }
         return this.corpActnOptnDtls;
     }
@@ -424,8 +428,8 @@ public class CorporateActionNotification002V05 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the issrAgt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the issrAgt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -439,10 +443,12 @@ public class CorporateActionNotification002V05 {
      * {@link PartyIdentification57Choice }
      * 
      * 
+     * @return
+     *     The value of the issrAgt property.
      */
     public List<PartyIdentification57Choice> getIssrAgt() {
         if (issrAgt == null) {
-            issrAgt = new ArrayList<PartyIdentification57Choice>();
+            issrAgt = new ArrayList<>();
         }
         return this.issrAgt;
     }
@@ -453,8 +459,8 @@ public class CorporateActionNotification002V05 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the pngAgt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the pngAgt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -468,10 +474,12 @@ public class CorporateActionNotification002V05 {
      * {@link PartyIdentification57Choice }
      * 
      * 
+     * @return
+     *     The value of the pngAgt property.
      */
     public List<PartyIdentification57Choice> getPngAgt() {
         if (pngAgt == null) {
-            pngAgt = new ArrayList<PartyIdentification57Choice>();
+            pngAgt = new ArrayList<>();
         }
         return this.pngAgt;
     }
@@ -482,8 +490,8 @@ public class CorporateActionNotification002V05 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the subPngAgt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the subPngAgt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -497,10 +505,12 @@ public class CorporateActionNotification002V05 {
      * {@link PartyIdentification57Choice }
      * 
      * 
+     * @return
+     *     The value of the subPngAgt property.
      */
     public List<PartyIdentification57Choice> getSubPngAgt() {
         if (subPngAgt == null) {
-            subPngAgt = new ArrayList<PartyIdentification57Choice>();
+            subPngAgt = new ArrayList<>();
         }
         return this.subPngAgt;
     }
@@ -536,8 +546,8 @@ public class CorporateActionNotification002V05 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rsellngAgt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rsellngAgt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -551,10 +561,12 @@ public class CorporateActionNotification002V05 {
      * {@link PartyIdentification57Choice }
      * 
      * 
+     * @return
+     *     The value of the rsellngAgt property.
      */
     public List<PartyIdentification57Choice> getRsellngAgt() {
         if (rsellngAgt == null) {
-            rsellngAgt = new ArrayList<PartyIdentification57Choice>();
+            rsellngAgt = new ArrayList<>();
         }
         return this.rsellngAgt;
     }
@@ -615,8 +627,8 @@ public class CorporateActionNotification002V05 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the slctnAgt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the slctnAgt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -630,10 +642,12 @@ public class CorporateActionNotification002V05 {
      * {@link PartyIdentification57Choice }
      * 
      * 
+     * @return
+     *     The value of the slctnAgt property.
      */
     public List<PartyIdentification57Choice> getSlctnAgt() {
         if (slctnAgt == null) {
-            slctnAgt = new ArrayList<PartyIdentification57Choice>();
+            slctnAgt = new ArrayList<>();
         }
         return this.slctnAgt;
     }
@@ -669,8 +683,8 @@ public class CorporateActionNotification002V05 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -684,10 +698,12 @@ public class CorporateActionNotification002V05 {
      * {@link SupplementaryData1 }
      * 
      * 
+     * @return
+     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<SupplementaryData1>();
+            splmtryData = new ArrayList<>();
         }
         return this.splmtryData;
     }

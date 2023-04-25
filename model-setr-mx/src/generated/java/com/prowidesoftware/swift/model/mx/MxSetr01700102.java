@@ -2,13 +2,16 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.swift.model.mx.dic.*;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -30,13 +33,13 @@ public class MxSetr01700102
 
     @XmlElement(name = "setr.017.001.02", required = true)
     protected Setr01700102 setr01700102;
-    public final static transient String BUSINESS_PROCESS = "setr";
-    public final static transient int FUNCTIONALITY = 17;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 2;
+    public static final transient String BUSINESS_PROCESS = "setr";
+    public static final transient int FUNCTIONALITY = 17;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 2;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {AdditionalReference3 .class, AddressType2Code.class, GenericIdentification1 .class, MxSetr01700102 .class, NameAndAddress5 .class, OrderStatus3Code.class, OrderStatusAndReason4 .class, PartyIdentification2Choice.class, PostalAddress1 .class, RejectedStatus4 .class, RejectedStatusReason4 .class, RejectedStatusReason4Code.class, Setr01700102 .class };
-    public final static transient String NAMESPACE = "urn:swift:xsd:setr.017.001.02";
+    public static final transient Class[] _classes = new Class[] {AdditionalReference3 .class, AddressType2Code.class, GenericIdentification1 .class, MxSetr01700102 .class, NameAndAddress5 .class, OrderStatus3Code.class, OrderStatusAndReason4 .class, PartyIdentification2Choice.class, PostalAddress1 .class, RejectedStatus4 .class, RejectedStatusReason4 .class, RejectedStatusReason4Code.class, Setr01700102 .class };
+    public static final transient String NAMESPACE = "urn:swift:xsd:setr.017.001.02";
 
     public MxSetr01700102() {
         super();
@@ -83,21 +86,6 @@ public class MxSetr01700102
     public MxSetr01700102 setSetr01700102(Setr01700102 value) {
         this.setr01700102 = value;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -170,8 +158,23 @@ public class MxSetr01700102
      * @return
      *     a new instance of MxSetr01700102
      */
-    public final static MxSetr01700102 fromJson(String json) {
+    public static final MxSetr01700102 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSetr01700102 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

@@ -39,8 +39,8 @@ public class ConditionallyAcceptedStatusReason1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the strd property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the strd property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -54,10 +54,12 @@ public class ConditionallyAcceptedStatusReason1 {
      * {@link ConditionallyAcceptedStatusReason1Code }
      * 
      * 
+     * @return
+     *     The value of the strd property.
      */
     public List<ConditionallyAcceptedStatusReason1Code> getStrd() {
         if (strd == null) {
-            strd = new ArrayList<ConditionallyAcceptedStatusReason1Code>();
+            strd = new ArrayList<>();
         }
         return this.strd;
     }

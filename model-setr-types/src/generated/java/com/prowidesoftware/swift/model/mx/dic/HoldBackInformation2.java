@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -41,7 +41,7 @@ public class HoldBackInformation2 {
     @XmlElement(name = "XpctdRlsDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar xpctdRlsDt;
+    protected Calendar xpctdRlsDt;
     @XmlElement(name = "FinInstrmId")
     protected SecurityIdentification25Choice finInstrmId;
     @XmlElement(name = "FinInstrmNm")
@@ -110,7 +110,7 @@ public class HoldBackInformation2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getXpctdRlsDt() {
+    public Calendar getXpctdRlsDt() {
         return xpctdRlsDt;
     }
 
@@ -122,7 +122,7 @@ public class HoldBackInformation2 {
      *     {@link String }
      *     
      */
-    public HoldBackInformation2 setXpctdRlsDt(XMLGregorianCalendar value) {
+    public HoldBackInformation2 setXpctdRlsDt(Calendar value) {
         this.xpctdRlsDt = value;
         return this;
     }

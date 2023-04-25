@@ -10,32 +10,31 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for PensionSchemeType2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="PensionSchemeType2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="AAVC"/&gt;
- *     &lt;enumeration value="DBEN"/&gt;
- *     &lt;enumeration value="EXPP"/&gt;
- *     &lt;enumeration value="FAVC"/&gt;
- *     &lt;enumeration value="GPPS"/&gt;
- *     &lt;enumeration value="SIPG"/&gt;
- *     &lt;enumeration value="STKG"/&gt;
- *     &lt;enumeration value="IPST"/&gt;
- *     &lt;enumeration value="STKI"/&gt;
- *     &lt;enumeration value="OTPM"/&gt;
- *     &lt;enumeration value="OCDC"/&gt;
- *     &lt;enumeration value="PPNS"/&gt;
- *     &lt;enumeration value="EPKA"/&gt;
- *     &lt;enumeration value="ITPO"/&gt;
- *     &lt;enumeration value="REAN"/&gt;
- *     &lt;enumeration value="SC32"/&gt;
- *     &lt;enumeration value="S32A"/&gt;
- *     &lt;enumeration value="SIPP"/&gt;
- *     &lt;enumeration value="SSAS"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="PensionSchemeType2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="AAVC"/>
+ *     <enumeration value="DBEN"/>
+ *     <enumeration value="EXPP"/>
+ *     <enumeration value="FAVC"/>
+ *     <enumeration value="GPPS"/>
+ *     <enumeration value="SIPG"/>
+ *     <enumeration value="STKG"/>
+ *     <enumeration value="IPST"/>
+ *     <enumeration value="STKI"/>
+ *     <enumeration value="OTPM"/>
+ *     <enumeration value="OCDC"/>
+ *     <enumeration value="PPNS"/>
+ *     <enumeration value="EPKA"/>
+ *     <enumeration value="ITPO"/>
+ *     <enumeration value="REAN"/>
+ *     <enumeration value="SC32"/>
+ *     <enumeration value="S32A"/>
+ *     <enumeration value="SIPP"/>
+ *     <enumeration value="SSAS"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "PensionSchemeType2Code")

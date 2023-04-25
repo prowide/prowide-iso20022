@@ -10,43 +10,42 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for SecuritiesBalanceType14Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="SecuritiesBalanceType14Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="AWAS"/&gt;
- *     &lt;enumeration value="BTRA"/&gt;
- *     &lt;enumeration value="BLOK"/&gt;
- *     &lt;enumeration value="BLOV"/&gt;
- *     &lt;enumeration value="BLCA"/&gt;
- *     &lt;enumeration value="BLOT"/&gt;
- *     &lt;enumeration value="BORR"/&gt;
- *     &lt;enumeration value="OPNT"/&gt;
- *     &lt;enumeration value="PNET"/&gt;
- *     &lt;enumeration value="COLI"/&gt;
- *     &lt;enumeration value="COLO"/&gt;
- *     &lt;enumeration value="MARG"/&gt;
- *     &lt;enumeration value="DRAW"/&gt;
- *     &lt;enumeration value="TRAN"/&gt;
- *     &lt;enumeration value="LOAN"/&gt;
- *     &lt;enumeration value="REGO"/&gt;
- *     &lt;enumeration value="BODE"/&gt;
- *     &lt;enumeration value="BORE"/&gt;
- *     &lt;enumeration value="PEDA"/&gt;
- *     &lt;enumeration value="PECA"/&gt;
- *     &lt;enumeration value="PEND"/&gt;
- *     &lt;enumeration value="LODE"/&gt;
- *     &lt;enumeration value="LORE"/&gt;
- *     &lt;enumeration value="PENR"/&gt;
- *     &lt;enumeration value="PLED"/&gt;
- *     &lt;enumeration value="RSTR"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="WDOC"/&gt;
- *     &lt;enumeration value="GRP1"/&gt;
- *     &lt;enumeration value="GRP2"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="SecuritiesBalanceType14Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="AWAS"/>
+ *     <enumeration value="BTRA"/>
+ *     <enumeration value="BLOK"/>
+ *     <enumeration value="BLOV"/>
+ *     <enumeration value="BLCA"/>
+ *     <enumeration value="BLOT"/>
+ *     <enumeration value="BORR"/>
+ *     <enumeration value="OPNT"/>
+ *     <enumeration value="PNET"/>
+ *     <enumeration value="COLI"/>
+ *     <enumeration value="COLO"/>
+ *     <enumeration value="MARG"/>
+ *     <enumeration value="DRAW"/>
+ *     <enumeration value="TRAN"/>
+ *     <enumeration value="LOAN"/>
+ *     <enumeration value="REGO"/>
+ *     <enumeration value="BODE"/>
+ *     <enumeration value="BORE"/>
+ *     <enumeration value="PEDA"/>
+ *     <enumeration value="PECA"/>
+ *     <enumeration value="PEND"/>
+ *     <enumeration value="LODE"/>
+ *     <enumeration value="LORE"/>
+ *     <enumeration value="PENR"/>
+ *     <enumeration value="PLED"/>
+ *     <enumeration value="RSTR"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="WDOC"/>
+ *     <enumeration value="GRP1"/>
+ *     <enumeration value="GRP2"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "SecuritiesBalanceType14Code")

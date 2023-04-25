@@ -9,25 +9,24 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for IntermediateSecurityDistributionType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="IntermediateSecurityDistributionType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="BIDS"/&gt;
- *     &lt;enumeration value="BONU"/&gt;
- *     &lt;enumeration value="DRIP"/&gt;
- *     &lt;enumeration value="DVCA"/&gt;
- *     &lt;enumeration value="DVOP"/&gt;
- *     &lt;enumeration value="EXRI"/&gt;
- *     &lt;enumeration value="PRIO"/&gt;
- *     &lt;enumeration value="DVSC"/&gt;
- *     &lt;enumeration value="DVSE"/&gt;
- *     &lt;enumeration value="INTR"/&gt;
- *     &lt;enumeration value="LIQU"/&gt;
- *     &lt;enumeration value="SOFF"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="IntermediateSecurityDistributionType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="BIDS"/>
+ *     <enumeration value="BONU"/>
+ *     <enumeration value="DRIP"/>
+ *     <enumeration value="DVCA"/>
+ *     <enumeration value="DVOP"/>
+ *     <enumeration value="EXRI"/>
+ *     <enumeration value="PRIO"/>
+ *     <enumeration value="DVSC"/>
+ *     <enumeration value="DVSE"/>
+ *     <enumeration value="INTR"/>
+ *     <enumeration value="LIQU"/>
+ *     <enumeration value="SOFF"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "IntermediateSecurityDistributionType1Code")

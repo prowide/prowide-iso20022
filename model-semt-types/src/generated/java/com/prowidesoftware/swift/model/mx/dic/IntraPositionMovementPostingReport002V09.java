@@ -17,8 +17,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * Scope
  * The IntraPositionMovementPostingReport is sent by an account servicer to an account owner to provide the details of increases and decreases in securities with a given status within a holding, that is, intra-position transfers, which occurred during a specified period, for all or selected securities in a specified safekeeping account which the account servicer holds for the account owner. 
  * 
- * 
-The account servicer/owner relationship may be:
+ * The account servicer/owner relationship may be:
  * - a central securities depository or another settlement market infrastructure acting on behalf of its participant
  * - an agent (sub-custodian) acting on behalf of its global custodian customer, or 
  * - a custodian acting on behalf of an investment management institution or a broker/dealer.
@@ -189,8 +188,8 @@ public class IntraPositionMovementPostingReport002V09 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the finInstrm property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the finInstrm property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -204,10 +203,12 @@ public class IntraPositionMovementPostingReport002V09 {
      * {@link FinancialInstrumentDetails44 }
      * 
      * 
+     * @return
+     *     The value of the finInstrm property.
      */
     public List<FinancialInstrumentDetails44> getFinInstrm() {
         if (finInstrm == null) {
-            finInstrm = new ArrayList<FinancialInstrumentDetails44>();
+            finInstrm = new ArrayList<>();
         }
         return this.finInstrm;
     }

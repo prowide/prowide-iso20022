@@ -90,8 +90,8 @@ public class TradingSideTransactionReporting1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the tradgSdUnqTxIdr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the tradgSdUnqTxIdr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -105,10 +105,12 @@ public class TradingSideTransactionReporting1 {
      * {@link UniqueTransactionIdentifier2 }
      * 
      * 
+     * @return
+     *     The value of the tradgSdUnqTxIdr property.
      */
     public List<UniqueTransactionIdentifier2> getTradgSdUnqTxIdr() {
         if (tradgSdUnqTxIdr == null) {
-            tradgSdUnqTxIdr = new ArrayList<UniqueTransactionIdentifier2>();
+            tradgSdUnqTxIdr = new ArrayList<>();
         }
         return this.tradgSdUnqTxIdr;
     }

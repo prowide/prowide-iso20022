@@ -9,17 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for SecuritiesFinancingTransactionType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="SecuritiesFinancingTransactionType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="REPU"/&gt;
- *     &lt;enumeration value="RVPO"/&gt;
- *     &lt;enumeration value="SECB"/&gt;
- *     &lt;enumeration value="SECL"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="SecuritiesFinancingTransactionType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="REPU"/>
+ *     <enumeration value="RVPO"/>
+ *     <enumeration value="SECB"/>
+ *     <enumeration value="SECL"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "SecuritiesFinancingTransactionType1Code")

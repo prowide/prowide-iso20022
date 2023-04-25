@@ -62,8 +62,8 @@ public class TransferIn11 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the trfDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the trfDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -77,10 +77,12 @@ public class TransferIn11 {
      * {@link Transfer21 }
      * 
      * 
+     * @return
+     *     The value of the trfDtls property.
      */
     public List<Transfer21> getTrfDtls() {
         if (trfDtls == null) {
-            trfDtls = new ArrayList<Transfer21>();
+            trfDtls = new ArrayList<>();
         }
         return this.trfDtls;
     }

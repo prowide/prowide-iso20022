@@ -9,18 +9,17 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for PendingReason4Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="PendingReason4Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="NSEC"/&gt;
- *     &lt;enumeration value="NPAY"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="AUTH"/&gt;
- *     &lt;enumeration value="VLDA"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="PendingReason4Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="NSEC"/>
+ *     <enumeration value="NPAY"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="AUTH"/>
+ *     <enumeration value="VLDA"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "PendingReason4Code")

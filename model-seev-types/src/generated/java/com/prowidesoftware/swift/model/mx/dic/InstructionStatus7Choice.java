@@ -62,8 +62,8 @@ public class InstructionStatus7Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dtldInstrSts property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the dtldInstrSts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -77,10 +77,12 @@ public class InstructionStatus7Choice {
      * {@link DetailedInstructionStatus12 }
      * 
      * 
+     * @return
+     *     The value of the dtldInstrSts property.
      */
     public List<DetailedInstructionStatus12> getDtldInstrSts() {
         if (dtldInstrSts == null) {
-            dtldInstrSts = new ArrayList<DetailedInstructionStatus12>();
+            dtldInstrSts = new ArrayList<>();
         }
         return this.dtldInstrSts;
     }

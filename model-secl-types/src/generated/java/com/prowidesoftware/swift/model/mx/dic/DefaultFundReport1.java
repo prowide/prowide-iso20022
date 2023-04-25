@@ -40,8 +40,8 @@ public class DefaultFundReport1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dfltFndClctn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the dfltFndClctn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -55,10 +55,12 @@ public class DefaultFundReport1 {
      * {@link DefaultFund1 }
      * 
      * 
+     * @return
+     *     The value of the dfltFndClctn property.
      */
     public List<DefaultFund1> getDfltFndClctn() {
         if (dfltFndClctn == null) {
-            dfltFndClctn = new ArrayList<DefaultFund1>();
+            dfltFndClctn = new ArrayList<>();
         }
         return this.dfltFndClctn;
     }
@@ -69,8 +71,8 @@ public class DefaultFundReport1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the collDesc property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the collDesc property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -84,10 +86,12 @@ public class DefaultFundReport1 {
      * {@link Collateral3 }
      * 
      * 
+     * @return
+     *     The value of the collDesc property.
      */
     public List<Collateral3> getCollDesc() {
         if (collDesc == null) {
-            collDesc = new ArrayList<Collateral3>();
+            collDesc = new ArrayList<>();
         }
         return this.collDesc;
     }

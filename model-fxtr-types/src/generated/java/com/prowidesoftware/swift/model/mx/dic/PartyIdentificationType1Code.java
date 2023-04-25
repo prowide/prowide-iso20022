@@ -9,50 +9,49 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for PartyIdentificationType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="PartyIdentificationType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="FXID"/&gt;
- *     &lt;enumeration value="FXSN"/&gt;
- *     &lt;enumeration value="INGN"/&gt;
- *     &lt;enumeration value="IICS"/&gt;
- *     &lt;enumeration value="IGBT"/&gt;
- *     &lt;enumeration value="MAMA"/&gt;
- *     &lt;enumeration value="MEOC"/&gt;
- *     &lt;enumeration value="METY"/&gt;
- *     &lt;enumeration value="NOMM"/&gt;
- *     &lt;enumeration value="OSCO"/&gt;
- *     &lt;enumeration value="PASS"/&gt;
- *     &lt;enumeration value="PONU"/&gt;
- *     &lt;enumeration value="POAD"/&gt;
- *     &lt;enumeration value="RMID"/&gt;
- *     &lt;enumeration value="SLCN"/&gt;
- *     &lt;enumeration value="SLNF"/&gt;
- *     &lt;enumeration value="TACN"/&gt;
- *     &lt;enumeration value="TRCO"/&gt;
- *     &lt;enumeration value="TANA"/&gt;
- *     &lt;enumeration value="USIT"/&gt;
- *     &lt;enumeration value="USNA"/&gt;
- *     &lt;enumeration value="AUIT"/&gt;
- *     &lt;enumeration value="BRID"/&gt;
- *     &lt;enumeration value="CLIN"/&gt;
- *     &lt;enumeration value="CMID"/&gt;
- *     &lt;enumeration value="COIN"/&gt;
- *     &lt;enumeration value="CMOT"/&gt;
- *     &lt;enumeration value="CONU"/&gt;
- *     &lt;enumeration value="CMIN"/&gt;
- *     &lt;enumeration value="DECN"/&gt;
- *     &lt;enumeration value="DEPA"/&gt;
- *     &lt;enumeration value="ELCO"/&gt;
- *     &lt;enumeration value="EXVE"/&gt;
- *     &lt;enumeration value="FICO"/&gt;
- *     &lt;enumeration value="FIID"/&gt;
- *     &lt;enumeration value="FLCN"/&gt;
- *     &lt;enumeration value="FLNF"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="PartyIdentificationType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="FXID"/>
+ *     <enumeration value="FXSN"/>
+ *     <enumeration value="INGN"/>
+ *     <enumeration value="IICS"/>
+ *     <enumeration value="IGBT"/>
+ *     <enumeration value="MAMA"/>
+ *     <enumeration value="MEOC"/>
+ *     <enumeration value="METY"/>
+ *     <enumeration value="NOMM"/>
+ *     <enumeration value="OSCO"/>
+ *     <enumeration value="PASS"/>
+ *     <enumeration value="PONU"/>
+ *     <enumeration value="POAD"/>
+ *     <enumeration value="RMID"/>
+ *     <enumeration value="SLCN"/>
+ *     <enumeration value="SLNF"/>
+ *     <enumeration value="TACN"/>
+ *     <enumeration value="TRCO"/>
+ *     <enumeration value="TANA"/>
+ *     <enumeration value="USIT"/>
+ *     <enumeration value="USNA"/>
+ *     <enumeration value="AUIT"/>
+ *     <enumeration value="BRID"/>
+ *     <enumeration value="CLIN"/>
+ *     <enumeration value="CMID"/>
+ *     <enumeration value="COIN"/>
+ *     <enumeration value="CMOT"/>
+ *     <enumeration value="CONU"/>
+ *     <enumeration value="CMIN"/>
+ *     <enumeration value="DECN"/>
+ *     <enumeration value="DEPA"/>
+ *     <enumeration value="ELCO"/>
+ *     <enumeration value="EXVE"/>
+ *     <enumeration value="FICO"/>
+ *     <enumeration value="FIID"/>
+ *     <enumeration value="FLCN"/>
+ *     <enumeration value="FLNF"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "PartyIdentificationType1Code")

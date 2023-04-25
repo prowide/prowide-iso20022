@@ -149,8 +149,8 @@ public class OtherAsset2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the othrId property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the othrId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -164,10 +164,12 @@ public class OtherAsset2 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the othrId property.
      */
     public List<String> getOthrId() {
         if (othrId == null) {
-            othrId = new ArrayList<String>();
+            othrId = new ArrayList<>();
         }
         return this.othrId;
     }
@@ -178,8 +180,8 @@ public class OtherAsset2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -193,10 +195,12 @@ public class OtherAsset2 {
      * {@link AdditionalInformation15 }
      * 
      * 
+     * @return
+     *     The value of the addtlInf property.
      */
     public List<AdditionalInformation15> getAddtlInf() {
         if (addtlInf == null) {
-            addtlInf = new ArrayList<AdditionalInformation15>();
+            addtlInf = new ArrayList<>();
         }
         return this.addtlInf;
     }

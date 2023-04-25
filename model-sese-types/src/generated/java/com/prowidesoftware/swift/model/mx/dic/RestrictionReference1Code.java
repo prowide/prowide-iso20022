@@ -9,19 +9,18 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for RestrictionReference1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="RestrictionReference1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;minLength value="1"/&gt;
- *     &lt;maxLength value="4"/&gt;
- *     &lt;enumeration value="ADDC"/&gt;
- *     &lt;enumeration value="ADDS"/&gt;
- *     &lt;enumeration value="REMC"/&gt;
- *     &lt;enumeration value="REMS"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="RestrictionReference1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <minLength value="1"/>
+ *     <maxLength value="4"/>
+ *     <enumeration value="ADDC"/>
+ *     <enumeration value="ADDS"/>
+ *     <enumeration value="REMC"/>
+ *     <enumeration value="REMS"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "RestrictionReference1Code")

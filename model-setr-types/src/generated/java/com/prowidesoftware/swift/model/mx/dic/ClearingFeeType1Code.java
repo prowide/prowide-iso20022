@@ -10,27 +10,26 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for ClearingFeeType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ClearingFeeType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CBOE"/&gt;
- *     &lt;enumeration value="NONM"/&gt;
- *     &lt;enumeration value="EQCL"/&gt;
- *     &lt;enumeration value="FUAS"/&gt;
- *     &lt;enumeration value="JANF"/&gt;
- *     &lt;enumeration value="GICI"/&gt;
- *     &lt;enumeration value="LESF"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="YTR1"/&gt;
- *     &lt;enumeration value="YTR2"/&gt;
- *     &lt;enumeration value="YTR3"/&gt;
- *     &lt;enumeration value="YTR4"/&gt;
- *     &lt;enumeration value="YTR5"/&gt;
- *     &lt;enumeration value="NYTR"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ClearingFeeType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CBOE"/>
+ *     <enumeration value="NONM"/>
+ *     <enumeration value="EQCL"/>
+ *     <enumeration value="FUAS"/>
+ *     <enumeration value="JANF"/>
+ *     <enumeration value="GICI"/>
+ *     <enumeration value="LESF"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="YTR1"/>
+ *     <enumeration value="YTR2"/>
+ *     <enumeration value="YTR3"/>
+ *     <enumeration value="YTR4"/>
+ *     <enumeration value="YTR5"/>
+ *     <enumeration value="NYTR"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ClearingFeeType1Code")

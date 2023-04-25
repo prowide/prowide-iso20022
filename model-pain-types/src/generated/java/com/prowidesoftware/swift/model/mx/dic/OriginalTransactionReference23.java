@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -44,7 +44,7 @@ public class OriginalTransactionReference23 {
     @XmlElement(name = "ReqdExctnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar reqdExctnDt;
+    protected Calendar reqdExctnDt;
     @XmlElement(name = "PmtTpInf")
     protected PaymentTypeInformation19 pmtTpInf;
     @XmlElement(name = "PmtMtd")
@@ -102,7 +102,7 @@ public class OriginalTransactionReference23 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getReqdExctnDt() {
+    public Calendar getReqdExctnDt() {
         return reqdExctnDt;
     }
 
@@ -114,7 +114,7 @@ public class OriginalTransactionReference23 {
      *     {@link String }
      *     
      */
-    public OriginalTransactionReference23 setReqdExctnDt(XMLGregorianCalendar value) {
+    public OriginalTransactionReference23 setReqdExctnDt(Calendar value) {
         this.reqdExctnDt = value;
         return this;
     }

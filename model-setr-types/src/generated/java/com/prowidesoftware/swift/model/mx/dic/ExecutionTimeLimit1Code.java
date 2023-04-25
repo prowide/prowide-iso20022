@@ -9,23 +9,22 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for ExecutionTimeLimit1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ExecutionTimeLimit1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="OPEN"/&gt;
- *     &lt;enumeration value="CLOS"/&gt;
- *     &lt;enumeration value="GDAY"/&gt;
- *     &lt;enumeration value="GTCA"/&gt;
- *     &lt;enumeration value="GTHD"/&gt;
- *     &lt;enumeration value="GTMO"/&gt;
- *     &lt;enumeration value="FIKI"/&gt;
- *     &lt;enumeration value="GTNM"/&gt;
- *     &lt;enumeration value="GTXO"/&gt;
- *     &lt;enumeration value="IOCA"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ExecutionTimeLimit1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="OPEN"/>
+ *     <enumeration value="CLOS"/>
+ *     <enumeration value="GDAY"/>
+ *     <enumeration value="GTCA"/>
+ *     <enumeration value="GTHD"/>
+ *     <enumeration value="GTMO"/>
+ *     <enumeration value="FIKI"/>
+ *     <enumeration value="GTNM"/>
+ *     <enumeration value="GTXO"/>
+ *     <enumeration value="IOCA"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ExecutionTimeLimit1Code")

@@ -9,19 +9,18 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for ReorganisationTransactionType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ReorganisationTransactionType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="COVP"/&gt;
- *     &lt;enumeration value="COVA"/&gt;
- *     &lt;enumeration value="COVR"/&gt;
- *     &lt;enumeration value="PROP"/&gt;
- *     &lt;enumeration value="PROT"/&gt;
- *     &lt;enumeration value="VOIT"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ReorganisationTransactionType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="COVP"/>
+ *     <enumeration value="COVA"/>
+ *     <enumeration value="COVR"/>
+ *     <enumeration value="PROP"/>
+ *     <enumeration value="PROT"/>
+ *     <enumeration value="VOIT"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ReorganisationTransactionType1Code")

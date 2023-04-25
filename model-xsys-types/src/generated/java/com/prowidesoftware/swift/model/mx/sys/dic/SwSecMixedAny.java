@@ -37,8 +37,8 @@ public class SwSecMixedAny {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the content property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the content property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -49,14 +49,16 @@ public class SwSecMixedAny {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Element }
      * {@link String }
+     * {@link Element }
      * 
      * 
+     * @return
+     *     The value of the content property.
      */
     public List<Object> getContent() {
         if (content == null) {
-            content = new ArrayList<Object>();
+            content = new ArrayList<>();
         }
         return this.content;
     }

@@ -9,19 +9,18 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for IssuanceType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="IssuanceType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;length value="4"/&gt;
- *     &lt;enumeration value="CRQL"/&gt;
- *     &lt;enumeration value="CRQC"/&gt;
- *     &lt;enumeration value="ISSU"/&gt;
- *     &lt;enumeration value="ISCO"/&gt;
- *     &lt;enumeration value="ISAD"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="IssuanceType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <length value="4"/>
+ *     <enumeration value="CRQL"/>
+ *     <enumeration value="CRQC"/>
+ *     <enumeration value="ISSU"/>
+ *     <enumeration value="ISCO"/>
+ *     <enumeration value="ISAD"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "IssuanceType1Code")

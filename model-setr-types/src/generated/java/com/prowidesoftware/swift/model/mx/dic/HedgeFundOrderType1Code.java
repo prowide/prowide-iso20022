@@ -9,19 +9,18 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for HedgeFundOrderType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="HedgeFundOrderType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="NUNI"/&gt;
- *     &lt;enumeration value="SPCM"/&gt;
- *     &lt;enumeration value="BEDB"/&gt;
- *     &lt;enumeration value="SPOR"/&gt;
- *     &lt;enumeration value="UNIT"/&gt;
- *     &lt;enumeration value="TOPU"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="HedgeFundOrderType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="NUNI"/>
+ *     <enumeration value="SPCM"/>
+ *     <enumeration value="BEDB"/>
+ *     <enumeration value="SPOR"/>
+ *     <enumeration value="UNIT"/>
+ *     <enumeration value="TOPU"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "HedgeFundOrderType1Code")

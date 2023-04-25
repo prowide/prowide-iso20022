@@ -119,8 +119,8 @@ public class Warrant4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the warrtAgt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the warrtAgt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -134,10 +134,12 @@ public class Warrant4 {
      * {@link Organisation38 }
      * 
      * 
+     * @return
+     *     The value of the warrtAgt property.
      */
     public List<Organisation38> getWarrtAgt() {
         if (warrtAgt == null) {
-            warrtAgt = new ArrayList<Organisation38>();
+            warrtAgt = new ArrayList<>();
         }
         return this.warrtAgt;
     }

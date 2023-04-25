@@ -9,21 +9,20 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for AdditionalBusinessProcess10Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="AdditionalBusinessProcess10Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CLAI"/&gt;
- *     &lt;enumeration value="REVR"/&gt;
- *     &lt;enumeration value="TAXR"/&gt;
- *     &lt;enumeration value="PPUT"/&gt;
- *     &lt;enumeration value="PPRE"/&gt;
- *     &lt;enumeration value="FPRE"/&gt;
- *     &lt;enumeration value="REAC"/&gt;
- *     &lt;enumeration value="INCP"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="AdditionalBusinessProcess10Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CLAI"/>
+ *     <enumeration value="REVR"/>
+ *     <enumeration value="TAXR"/>
+ *     <enumeration value="PPUT"/>
+ *     <enumeration value="PPRE"/>
+ *     <enumeration value="FPRE"/>
+ *     <enumeration value="REAC"/>
+ *     <enumeration value="INCP"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "AdditionalBusinessProcess10Code")

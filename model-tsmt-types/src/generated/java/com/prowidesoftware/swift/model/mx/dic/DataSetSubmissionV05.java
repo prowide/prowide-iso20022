@@ -99,8 +99,8 @@ public class DataSetSubmissionV05 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rltdTxRefs property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rltdTxRefs property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -114,10 +114,12 @@ public class DataSetSubmissionV05 {
      * {@link DataSetSubmissionReferences3 }
      * 
      * 
+     * @return
+     *     The value of the rltdTxRefs property.
      */
     public List<DataSetSubmissionReferences3> getRltdTxRefs() {
         if (rltdTxRefs == null) {
-            rltdTxRefs = new ArrayList<DataSetSubmissionReferences3>();
+            rltdTxRefs = new ArrayList<>();
         }
         return this.rltdTxRefs;
     }
@@ -303,8 +305,8 @@ public class DataSetSubmissionV05 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the certDataSet property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the certDataSet property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -318,10 +320,12 @@ public class DataSetSubmissionV05 {
      * {@link CertificateDataSet2 }
      * 
      * 
+     * @return
+     *     The value of the certDataSet property.
      */
     public List<CertificateDataSet2> getCertDataSet() {
         if (certDataSet == null) {
-            certDataSet = new ArrayList<CertificateDataSet2>();
+            certDataSet = new ArrayList<>();
         }
         return this.certDataSet;
     }
@@ -332,8 +336,8 @@ public class DataSetSubmissionV05 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the othrCertDataSet property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the othrCertDataSet property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -347,10 +351,12 @@ public class DataSetSubmissionV05 {
      * {@link OtherCertificateDataSet2 }
      * 
      * 
+     * @return
+     *     The value of the othrCertDataSet property.
      */
     public List<OtherCertificateDataSet2> getOthrCertDataSet() {
         if (othrCertDataSet == null) {
-            othrCertDataSet = new ArrayList<OtherCertificateDataSet2>();
+            othrCertDataSet = new ArrayList<>();
         }
         return this.othrCertDataSet;
     }

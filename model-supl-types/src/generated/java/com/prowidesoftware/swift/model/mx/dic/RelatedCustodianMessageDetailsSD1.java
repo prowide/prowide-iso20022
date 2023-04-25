@@ -1,15 +1,15 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -46,11 +46,11 @@ public class RelatedCustodianMessageDetailsSD1 {
     @XmlElement(name = "RcvdDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar rcvdDt;
+    protected Calendar rcvdDt;
     @XmlElement(name = "RcvdTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected XMLGregorianCalendar rcvdTm;
+    protected Calendar rcvdTm;
     @XmlElement(name = "InbndISOMT", required = true)
     protected String inbndISOMT;
     @XmlElement(name = "InbndISOMsgRcvrBIC", required = true)
@@ -145,7 +145,7 @@ public class RelatedCustodianMessageDetailsSD1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getRcvdDt() {
+    public Calendar getRcvdDt() {
         return rcvdDt;
     }
 
@@ -157,7 +157,7 @@ public class RelatedCustodianMessageDetailsSD1 {
      *     {@link String }
      *     
      */
-    public RelatedCustodianMessageDetailsSD1 setRcvdDt(XMLGregorianCalendar value) {
+    public RelatedCustodianMessageDetailsSD1 setRcvdDt(Calendar value) {
         this.rcvdDt = value;
         return this;
     }
@@ -170,7 +170,7 @@ public class RelatedCustodianMessageDetailsSD1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getRcvdTm() {
+    public Calendar getRcvdTm() {
         return rcvdTm;
     }
 
@@ -182,7 +182,7 @@ public class RelatedCustodianMessageDetailsSD1 {
      *     {@link String }
      *     
      */
-    public RelatedCustodianMessageDetailsSD1 setRcvdTm(XMLGregorianCalendar value) {
+    public RelatedCustodianMessageDetailsSD1 setRcvdTm(Calendar value) {
         this.rcvdTm = value;
         return this;
     }

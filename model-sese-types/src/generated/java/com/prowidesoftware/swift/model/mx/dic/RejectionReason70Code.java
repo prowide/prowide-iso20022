@@ -9,55 +9,54 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for RejectionReason70Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="RejectionReason70Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="SAFE"/&gt;
- *     &lt;enumeration value="DQUA"/&gt;
- *     &lt;enumeration value="ADEA"/&gt;
- *     &lt;enumeration value="DSEC"/&gt;
- *     &lt;enumeration value="LATE"/&gt;
- *     &lt;enumeration value="CASH"/&gt;
- *     &lt;enumeration value="DDEA"/&gt;
- *     &lt;enumeration value="DTRD"/&gt;
- *     &lt;enumeration value="PLCE"/&gt;
- *     &lt;enumeration value="RTGS"/&gt;
- *     &lt;enumeration value="NCRR"/&gt;
- *     &lt;enumeration value="PHYS"/&gt;
- *     &lt;enumeration value="REFE"/&gt;
- *     &lt;enumeration value="DMON"/&gt;
- *     &lt;enumeration value="MINO"/&gt;
- *     &lt;enumeration value="BATC"/&gt;
- *     &lt;enumeration value="MUNO"/&gt;
- *     &lt;enumeration value="TXST"/&gt;
- *     &lt;enumeration value="SETS"/&gt;
- *     &lt;enumeration value="IIND"/&gt;
- *     &lt;enumeration value="CAEV"/&gt;
- *     &lt;enumeration value="CASY"/&gt;
- *     &lt;enumeration value="DDAT"/&gt;
- *     &lt;enumeration value="SETR"/&gt;
- *     &lt;enumeration value="SDUT"/&gt;
- *     &lt;enumeration value="CADE"/&gt;
- *     &lt;enumeration value="FORF"/&gt;
- *     &lt;enumeration value="TERM"/&gt;
- *     &lt;enumeration value="VASU"/&gt;
- *     &lt;enumeration value="REPA"/&gt;
- *     &lt;enumeration value="REPO"/&gt;
- *     &lt;enumeration value="REPP"/&gt;
- *     &lt;enumeration value="RERT"/&gt;
- *     &lt;enumeration value="RSPR"/&gt;
- *     &lt;enumeration value="ICAG"/&gt;
- *     &lt;enumeration value="INPS"/&gt;
- *     &lt;enumeration value="ICUS"/&gt;
- *     &lt;enumeration value="DEPT"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="IEXE"/&gt;
- *     &lt;enumeration value="INVE"/&gt;
- *     &lt;enumeration value="PLIS"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="RejectionReason70Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="SAFE"/>
+ *     <enumeration value="DQUA"/>
+ *     <enumeration value="ADEA"/>
+ *     <enumeration value="DSEC"/>
+ *     <enumeration value="LATE"/>
+ *     <enumeration value="CASH"/>
+ *     <enumeration value="DDEA"/>
+ *     <enumeration value="DTRD"/>
+ *     <enumeration value="PLCE"/>
+ *     <enumeration value="RTGS"/>
+ *     <enumeration value="NCRR"/>
+ *     <enumeration value="PHYS"/>
+ *     <enumeration value="REFE"/>
+ *     <enumeration value="DMON"/>
+ *     <enumeration value="MINO"/>
+ *     <enumeration value="BATC"/>
+ *     <enumeration value="MUNO"/>
+ *     <enumeration value="TXST"/>
+ *     <enumeration value="SETS"/>
+ *     <enumeration value="IIND"/>
+ *     <enumeration value="CAEV"/>
+ *     <enumeration value="CASY"/>
+ *     <enumeration value="DDAT"/>
+ *     <enumeration value="SETR"/>
+ *     <enumeration value="SDUT"/>
+ *     <enumeration value="CADE"/>
+ *     <enumeration value="FORF"/>
+ *     <enumeration value="TERM"/>
+ *     <enumeration value="VASU"/>
+ *     <enumeration value="REPA"/>
+ *     <enumeration value="REPO"/>
+ *     <enumeration value="REPP"/>
+ *     <enumeration value="RERT"/>
+ *     <enumeration value="RSPR"/>
+ *     <enumeration value="ICAG"/>
+ *     <enumeration value="INPS"/>
+ *     <enumeration value="ICUS"/>
+ *     <enumeration value="DEPT"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="IEXE"/>
+ *     <enumeration value="INVE"/>
+ *     <enumeration value="PLIS"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "RejectionReason70Code")

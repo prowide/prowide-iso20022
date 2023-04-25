@@ -9,22 +9,21 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for TypeOfIdentification4Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="TypeOfIdentification4Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ARNU"/&gt;
- *     &lt;enumeration value="CUST"/&gt;
- *     &lt;enumeration value="CORP"/&gt;
- *     &lt;enumeration value="DRLC"/&gt;
- *     &lt;enumeration value="IDCD"/&gt;
- *     &lt;enumeration value="NRIN"/&gt;
- *     &lt;enumeration value="CCPT"/&gt;
- *     &lt;enumeration value="SOCS"/&gt;
- *     &lt;enumeration value="TXID"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="TypeOfIdentification4Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ARNU"/>
+ *     <enumeration value="CUST"/>
+ *     <enumeration value="CORP"/>
+ *     <enumeration value="DRLC"/>
+ *     <enumeration value="IDCD"/>
+ *     <enumeration value="NRIN"/>
+ *     <enumeration value="CCPT"/>
+ *     <enumeration value="SOCS"/>
+ *     <enumeration value="TXID"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "TypeOfIdentification4Code")

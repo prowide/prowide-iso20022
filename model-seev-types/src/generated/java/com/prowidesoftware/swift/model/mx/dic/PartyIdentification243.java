@@ -37,8 +37,8 @@ public class PartyIdentification243 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the lglPrsn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the lglPrsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -52,10 +52,12 @@ public class PartyIdentification243 {
      * {@link PartyIdentification237 }
      * 
      * 
+     * @return
+     *     The value of the lglPrsn property.
      */
     public List<PartyIdentification237> getLglPrsn() {
         if (lglPrsn == null) {
-            lglPrsn = new ArrayList<PartyIdentification237>();
+            lglPrsn = new ArrayList<>();
         }
         return this.lglPrsn;
     }
@@ -66,8 +68,8 @@ public class PartyIdentification243 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ntrlPrsn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ntrlPrsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -81,10 +83,12 @@ public class PartyIdentification243 {
      * {@link PartyIdentification217 }
      * 
      * 
+     * @return
+     *     The value of the ntrlPrsn property.
      */
     public List<PartyIdentification217> getNtrlPrsn() {
         if (ntrlPrsn == null) {
-            ntrlPrsn = new ArrayList<PartyIdentification217>();
+            ntrlPrsn = new ArrayList<>();
         }
         return this.ntrlPrsn;
     }

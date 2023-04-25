@@ -2,15 +2,15 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -34,7 +34,7 @@ public class CostsAndCharges2 {
     @XmlElement(name = "ExAnteRefDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar exAnteRefDt;
+    protected Calendar exAnteRefDt;
     @XmlElement(name = "IndvCostOrChrg", required = true)
     protected List<IndividualCostOrCharge2> indvCostOrChrg;
     @XmlElement(name = "AddtlInf")
@@ -48,7 +48,7 @@ public class CostsAndCharges2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getExAnteRefDt() {
+    public Calendar getExAnteRefDt() {
         return exAnteRefDt;
     }
 
@@ -60,7 +60,7 @@ public class CostsAndCharges2 {
      *     {@link String }
      *     
      */
-    public CostsAndCharges2 setExAnteRefDt(XMLGregorianCalendar value) {
+    public CostsAndCharges2 setExAnteRefDt(Calendar value) {
         this.exAnteRefDt = value;
         return this;
     }
@@ -71,8 +71,8 @@ public class CostsAndCharges2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the indvCostOrChrg property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the indvCostOrChrg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -86,10 +86,12 @@ public class CostsAndCharges2 {
      * {@link IndividualCostOrCharge2 }
      * 
      * 
+     * @return
+     *     The value of the indvCostOrChrg property.
      */
     public List<IndividualCostOrCharge2> getIndvCostOrChrg() {
         if (indvCostOrChrg == null) {
-            indvCostOrChrg = new ArrayList<IndividualCostOrCharge2>();
+            indvCostOrChrg = new ArrayList<>();
         }
         return this.indvCostOrChrg;
     }
