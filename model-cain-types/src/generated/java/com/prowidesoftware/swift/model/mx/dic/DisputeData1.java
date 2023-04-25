@@ -158,8 +158,8 @@ public class DisputeData1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dsptRef property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the dsptRef property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -173,10 +173,12 @@ public class DisputeData1 {
      * {@link DisputeReference1 }
      * 
      * 
+     * @return
+     *     The value of the dsptRef property.
      */
     public List<DisputeReference1> getDsptRef() {
         if (dsptRef == null) {
-            dsptRef = new ArrayList<DisputeReference1>();
+            dsptRef = new ArrayList<>();
         }
         return this.dsptRef;
     }
@@ -237,8 +239,8 @@ public class DisputeData1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dsptRjctRsn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the dsptRjctRsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -252,10 +254,12 @@ public class DisputeData1 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the dsptRjctRsn property.
      */
     public List<String> getDsptRjctRsn() {
         if (dsptRjctRsn == null) {
-            dsptRjctRsn = new ArrayList<String>();
+            dsptRjctRsn = new ArrayList<>();
         }
         return this.dsptRjctRsn;
     }

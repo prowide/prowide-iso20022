@@ -9,24 +9,23 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for CashAccountType2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CashAccountType2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CASH"/&gt;
- *     &lt;enumeration value="CHAR"/&gt;
- *     &lt;enumeration value="COMM"/&gt;
- *     &lt;enumeration value="TAXE"/&gt;
- *     &lt;enumeration value="CISH"/&gt;
- *     &lt;enumeration value="TRAS"/&gt;
- *     &lt;enumeration value="SACC"/&gt;
- *     &lt;enumeration value="CACC"/&gt;
- *     &lt;enumeration value="SVGS"/&gt;
- *     &lt;enumeration value="ONDP"/&gt;
- *     &lt;enumeration value="MGLD"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CashAccountType2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CASH"/>
+ *     <enumeration value="CHAR"/>
+ *     <enumeration value="COMM"/>
+ *     <enumeration value="TAXE"/>
+ *     <enumeration value="CISH"/>
+ *     <enumeration value="TRAS"/>
+ *     <enumeration value="SACC"/>
+ *     <enumeration value="CACC"/>
+ *     <enumeration value="SVGS"/>
+ *     <enumeration value="ONDP"/>
+ *     <enumeration value="MGLD"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CashAccountType2Code")

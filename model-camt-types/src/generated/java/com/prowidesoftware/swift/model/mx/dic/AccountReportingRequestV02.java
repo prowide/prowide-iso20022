@@ -65,8 +65,8 @@ public class AccountReportingRequestV02 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rptgReq property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rptgReq property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -80,10 +80,12 @@ public class AccountReportingRequestV02 {
      * {@link ReportingRequest2 }
      * 
      * 
+     * @return
+     *     The value of the rptgReq property.
      */
     public List<ReportingRequest2> getRptgReq() {
         if (rptgReq == null) {
-            rptgReq = new ArrayList<ReportingRequest2>();
+            rptgReq = new ArrayList<>();
         }
         return this.rptgReq;
     }

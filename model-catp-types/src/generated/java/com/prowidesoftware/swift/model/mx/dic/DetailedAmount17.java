@@ -94,8 +94,8 @@ public class DetailedAmount17 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the fees property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the fees property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -109,10 +109,12 @@ public class DetailedAmount17 {
      * {@link DetailedAmount18 }
      * 
      * 
+     * @return
+     *     The value of the fees property.
      */
     public List<DetailedAmount18> getFees() {
         if (fees == null) {
-            fees = new ArrayList<DetailedAmount18>();
+            fees = new ArrayList<>();
         }
         return this.fees;
     }
@@ -123,8 +125,8 @@ public class DetailedAmount17 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dontn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the dontn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -138,10 +140,12 @@ public class DetailedAmount17 {
      * {@link DetailedAmount18 }
      * 
      * 
+     * @return
+     *     The value of the dontn property.
      */
     public List<DetailedAmount18> getDontn() {
         if (dontn == null) {
-            dontn = new ArrayList<DetailedAmount18>();
+            dontn = new ArrayList<>();
         }
         return this.dontn;
     }

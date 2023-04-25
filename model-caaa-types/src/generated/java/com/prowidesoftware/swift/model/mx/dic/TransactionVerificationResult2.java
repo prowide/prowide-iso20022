@@ -96,8 +96,8 @@ public class TransactionVerificationResult2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the crdhldrAdrVrfctnRslt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the crdhldrAdrVrfctnRslt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -111,10 +111,12 @@ public class TransactionVerificationResult2 {
      * {@link CardholderAddressVerificationResult1Code }
      * 
      * 
+     * @return
+     *     The value of the crdhldrAdrVrfctnRslt property.
      */
     public List<CardholderAddressVerificationResult1Code> getCrdhldrAdrVrfctnRslt() {
         if (crdhldrAdrVrfctnRslt == null) {
-            crdhldrAdrVrfctnRslt = new ArrayList<CardholderAddressVerificationResult1Code>();
+            crdhldrAdrVrfctnRslt = new ArrayList<>();
         }
         return this.crdhldrAdrVrfctnRslt;
     }
@@ -125,8 +127,8 @@ public class TransactionVerificationResult2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dclndPdctCd property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the dclndPdctCd property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -140,10 +142,12 @@ public class TransactionVerificationResult2 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the dclndPdctCd property.
      */
     public List<String> getDclndPdctCd() {
         if (dclndPdctCd == null) {
-            dclndPdctCd = new ArrayList<String>();
+            dclndPdctCd = new ArrayList<>();
         }
         return this.dclndPdctCd;
     }

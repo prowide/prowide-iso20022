@@ -3,15 +3,15 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -57,11 +57,11 @@ public class CurrencyConversion4 {
     @XmlElement(name = "QtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar qtnDt;
+    protected Calendar qtnDt;
     @XmlElement(name = "VldUntil", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar vldUntil;
+    protected Calendar vldUntil;
     @XmlElement(name = "SrcCcy", required = true)
     protected CurrencyDetails2 srcCcy;
     @XmlElement(name = "OrgnlAmt", required = true)
@@ -231,7 +231,7 @@ public class CurrencyConversion4 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getQtnDt() {
+    public Calendar getQtnDt() {
         return qtnDt;
     }
 
@@ -243,7 +243,7 @@ public class CurrencyConversion4 {
      *     {@link String }
      *     
      */
-    public CurrencyConversion4 setQtnDt(XMLGregorianCalendar value) {
+    public CurrencyConversion4 setQtnDt(Calendar value) {
         this.qtnDt = value;
         return this;
     }
@@ -256,7 +256,7 @@ public class CurrencyConversion4 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getVldUntil() {
+    public Calendar getVldUntil() {
         return vldUntil;
     }
 
@@ -268,7 +268,7 @@ public class CurrencyConversion4 {
      *     {@link String }
      *     
      */
-    public CurrencyConversion4 setVldUntil(XMLGregorianCalendar value) {
+    public CurrencyConversion4 setVldUntil(Calendar value) {
         this.vldUntil = value;
         return this;
     }
@@ -329,8 +329,8 @@ public class CurrencyConversion4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the comssnDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the comssnDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -344,10 +344,12 @@ public class CurrencyConversion4 {
      * {@link Commission19 }
      * 
      * 
+     * @return
+     *     The value of the comssnDtls property.
      */
     public List<Commission19> getComssnDtls() {
         if (comssnDtls == null) {
-            comssnDtls = new ArrayList<Commission19>();
+            comssnDtls = new ArrayList<>();
         }
         return this.comssnDtls;
     }
@@ -358,8 +360,8 @@ public class CurrencyConversion4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the mrkUpDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the mrkUpDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -373,10 +375,12 @@ public class CurrencyConversion4 {
      * {@link Commission18 }
      * 
      * 
+     * @return
+     *     The value of the mrkUpDtls property.
      */
     public List<Commission18> getMrkUpDtls() {
         if (mrkUpDtls == null) {
-            mrkUpDtls = new ArrayList<Commission18>();
+            mrkUpDtls = new ArrayList<>();
         }
         return this.mrkUpDtls;
     }

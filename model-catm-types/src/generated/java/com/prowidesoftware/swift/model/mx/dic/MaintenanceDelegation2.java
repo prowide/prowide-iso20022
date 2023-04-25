@@ -61,8 +61,8 @@ public class MaintenanceDelegation2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the mntncSvc property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the mntncSvc property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -76,10 +76,12 @@ public class MaintenanceDelegation2 {
      * {@link DataSetCategory6Code }
      * 
      * 
+     * @return
+     *     The value of the mntncSvc property.
      */
     public List<DataSetCategory6Code> getMntncSvc() {
         if (mntncSvc == null) {
-            mntncSvc = new ArrayList<DataSetCategory6Code>();
+            mntncSvc = new ArrayList<>();
         }
         return this.mntncSvc;
     }
@@ -140,8 +142,8 @@ public class MaintenanceDelegation2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the poiSubset property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the poiSubset property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -155,10 +157,12 @@ public class MaintenanceDelegation2 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the poiSubset property.
      */
     public List<String> getPOISubset() {
         if (poiSubset == null) {
-            poiSubset = new ArrayList<String>();
+            poiSubset = new ArrayList<>();
         }
         return this.poiSubset;
     }
@@ -265,8 +269,8 @@ public class MaintenanceDelegation2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the poiIdAssoctn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the poiIdAssoctn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -280,10 +284,12 @@ public class MaintenanceDelegation2 {
      * {@link MaintenanceIdentificationAssociation1 }
      * 
      * 
+     * @return
+     *     The value of the poiIdAssoctn property.
      */
     public List<MaintenanceIdentificationAssociation1> getPOIIdAssoctn() {
         if (poiIdAssoctn == null) {
-            poiIdAssoctn = new ArrayList<MaintenanceIdentificationAssociation1>();
+            poiIdAssoctn = new ArrayList<>();
         }
         return this.poiIdAssoctn;
     }

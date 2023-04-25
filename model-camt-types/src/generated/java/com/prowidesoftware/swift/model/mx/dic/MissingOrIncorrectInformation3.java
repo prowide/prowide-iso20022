@@ -65,8 +65,8 @@ public class MissingOrIncorrectInformation3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the mssngInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the mssngInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -80,10 +80,12 @@ public class MissingOrIncorrectInformation3 {
      * {@link UnableToApplyMissing1 }
      * 
      * 
+     * @return
+     *     The value of the mssngInf property.
      */
     public List<UnableToApplyMissing1> getMssngInf() {
         if (mssngInf == null) {
-            mssngInf = new ArrayList<UnableToApplyMissing1>();
+            mssngInf = new ArrayList<>();
         }
         return this.mssngInf;
     }
@@ -94,8 +96,8 @@ public class MissingOrIncorrectInformation3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the incrrctInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the incrrctInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -109,10 +111,12 @@ public class MissingOrIncorrectInformation3 {
      * {@link UnableToApplyIncorrect1 }
      * 
      * 
+     * @return
+     *     The value of the incrrctInf property.
      */
     public List<UnableToApplyIncorrect1> getIncrrctInf() {
         if (incrrctInf == null) {
-            incrrctInf = new ArrayList<UnableToApplyIncorrect1>();
+            incrrctInf = new ArrayList<>();
         }
         return this.incrrctInf;
     }

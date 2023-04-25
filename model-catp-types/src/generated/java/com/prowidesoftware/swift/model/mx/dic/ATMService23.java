@@ -148,8 +148,8 @@ public class ATMService23 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the svcVarntId property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the svcVarntId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -163,10 +163,12 @@ public class ATMService23 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the svcVarntId property.
      */
     public List<String> getSvcVarntId() {
         if (svcVarntId == null) {
-            svcVarntId = new ArrayList<String>();
+            svcVarntId = new ArrayList<>();
         }
         return this.svcVarntId;
     }

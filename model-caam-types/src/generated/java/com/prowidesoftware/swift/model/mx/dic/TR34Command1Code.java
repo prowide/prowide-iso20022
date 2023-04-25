@@ -9,18 +9,17 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for TR34Command1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="TR34Command1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="BIND"/&gt;
- *     &lt;enumeration value="HILR"/&gt;
- *     &lt;enumeration value="HILU"/&gt;
- *     &lt;enumeration value="RBND"/&gt;
- *     &lt;enumeration value="UBND"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="TR34Command1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="BIND"/>
+ *     <enumeration value="HILR"/>
+ *     <enumeration value="HILU"/>
+ *     <enumeration value="RBND"/>
+ *     <enumeration value="UBND"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "TR34Command1Code")

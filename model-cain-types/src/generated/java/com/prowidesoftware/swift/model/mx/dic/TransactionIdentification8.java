@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -42,7 +42,7 @@ public class TransactionIdentification8 {
     @XmlElement(name = "LclDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar lclDtTm;
+    protected Calendar lclDtTm;
     @XmlElement(name = "TmZone")
     protected String tmZone;
     @XmlElement(name = "TxRef")
@@ -50,7 +50,7 @@ public class TransactionIdentification8 {
     @XmlElement(name = "TrnsmssnDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar trnsmssnDtTm;
+    protected Calendar trnsmssnDtTm;
     @XmlElement(name = "SysTracAudtNb", required = true)
     protected String sysTracAudtNb;
     @XmlElement(name = "RtrvlRefNb", required = true)
@@ -79,7 +79,7 @@ public class TransactionIdentification8 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getLclDtTm() {
+    public Calendar getLclDtTm() {
         return lclDtTm;
     }
 
@@ -91,7 +91,7 @@ public class TransactionIdentification8 {
      *     {@link String }
      *     
      */
-    public TransactionIdentification8 setLclDtTm(XMLGregorianCalendar value) {
+    public TransactionIdentification8 setLclDtTm(Calendar value) {
         this.lclDtTm = value;
         return this;
     }
@@ -154,7 +154,7 @@ public class TransactionIdentification8 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getTrnsmssnDtTm() {
+    public Calendar getTrnsmssnDtTm() {
         return trnsmssnDtTm;
     }
 
@@ -166,7 +166,7 @@ public class TransactionIdentification8 {
      *     {@link String }
      *     
      */
-    public TransactionIdentification8 setTrnsmssnDtTm(XMLGregorianCalendar value) {
+    public TransactionIdentification8 setTrnsmssnDtTm(Calendar value) {
         this.trnsmssnDtTm = value;
         return this;
     }

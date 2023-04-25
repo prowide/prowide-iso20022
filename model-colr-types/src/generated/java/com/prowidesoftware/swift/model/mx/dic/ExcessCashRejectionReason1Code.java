@@ -9,17 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for ExcessCashRejectionReason1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ExcessCashRejectionReason1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="SHRT"/&gt;
- *     &lt;enumeration value="LCKD"/&gt;
- *     &lt;enumeration value="NESI"/&gt;
- *     &lt;enumeration value="MAXE"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ExcessCashRejectionReason1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="SHRT"/>
+ *     <enumeration value="LCKD"/>
+ *     <enumeration value="NESI"/>
+ *     <enumeration value="MAXE"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ExcessCashRejectionReason1Code")

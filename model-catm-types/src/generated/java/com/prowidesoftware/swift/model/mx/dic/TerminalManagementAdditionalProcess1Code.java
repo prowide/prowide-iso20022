@@ -9,16 +9,15 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for TerminalManagementAdditionalProcess1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="TerminalManagementAdditionalProcess1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="MANC"/&gt;
- *     &lt;enumeration value="RCNC"/&gt;
- *     &lt;enumeration value="RSRT"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="TerminalManagementAdditionalProcess1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="MANC"/>
+ *     <enumeration value="RCNC"/>
+ *     <enumeration value="RSRT"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "TerminalManagementAdditionalProcess1Code")

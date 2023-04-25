@@ -9,22 +9,21 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for RejectionReason35Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="RejectionReason35Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CASH"/&gt;
- *     &lt;enumeration value="ADEA"/&gt;
- *     &lt;enumeration value="REFE"/&gt;
- *     &lt;enumeration value="LATE"/&gt;
- *     &lt;enumeration value="DDAT"/&gt;
- *     &lt;enumeration value="NRGN"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="INVM"/&gt;
- *     &lt;enumeration value="INVL"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="RejectionReason35Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CASH"/>
+ *     <enumeration value="ADEA"/>
+ *     <enumeration value="REFE"/>
+ *     <enumeration value="LATE"/>
+ *     <enumeration value="DDAT"/>
+ *     <enumeration value="NRGN"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="INVM"/>
+ *     <enumeration value="INVL"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "RejectionReason35Code")

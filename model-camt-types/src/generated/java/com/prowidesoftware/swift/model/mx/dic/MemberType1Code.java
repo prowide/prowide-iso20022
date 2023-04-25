@@ -9,18 +9,17 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for MemberType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="MemberType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="DRCT"/&gt;
- *     &lt;enumeration value="IDRT"/&gt;
- *     &lt;enumeration value="RMTE"/&gt;
- *     &lt;enumeration value="EURO"/&gt;
- *     &lt;enumeration value="STEP"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="MemberType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="DRCT"/>
+ *     <enumeration value="IDRT"/>
+ *     <enumeration value="RMTE"/>
+ *     <enumeration value="EURO"/>
+ *     <enumeration value="STEP"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "MemberType1Code")

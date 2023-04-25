@@ -9,23 +9,22 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for InterestRateIndexTenor2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="InterestRateIndexTenor2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="INDA"/&gt;
- *     &lt;enumeration value="MNTH"/&gt;
- *     &lt;enumeration value="YEAR"/&gt;
- *     &lt;enumeration value="TOMN"/&gt;
- *     &lt;enumeration value="QUTR"/&gt;
- *     &lt;enumeration value="FOMN"/&gt;
- *     &lt;enumeration value="SEMI"/&gt;
- *     &lt;enumeration value="OVNG"/&gt;
- *     &lt;enumeration value="WEEK"/&gt;
- *     &lt;enumeration value="TOWK"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="InterestRateIndexTenor2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="INDA"/>
+ *     <enumeration value="MNTH"/>
+ *     <enumeration value="YEAR"/>
+ *     <enumeration value="TOMN"/>
+ *     <enumeration value="QUTR"/>
+ *     <enumeration value="FOMN"/>
+ *     <enumeration value="SEMI"/>
+ *     <enumeration value="OVNG"/>
+ *     <enumeration value="WEEK"/>
+ *     <enumeration value="TOWK"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "InterestRateIndexTenor2Code")

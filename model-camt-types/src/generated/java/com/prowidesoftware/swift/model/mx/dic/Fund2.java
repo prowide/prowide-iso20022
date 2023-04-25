@@ -349,8 +349,8 @@ public class Fund2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cshInFcstDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cshInFcstDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -364,10 +364,12 @@ public class Fund2 {
      * {@link CashInOutForecast7 }
      * 
      * 
+     * @return
+     *     The value of the cshInFcstDtls property.
      */
     public List<CashInOutForecast7> getCshInFcstDtls() {
         if (cshInFcstDtls == null) {
-            cshInFcstDtls = new ArrayList<CashInOutForecast7>();
+            cshInFcstDtls = new ArrayList<>();
         }
         return this.cshInFcstDtls;
     }
@@ -378,8 +380,8 @@ public class Fund2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cshOutFcstDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cshOutFcstDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -393,10 +395,12 @@ public class Fund2 {
      * {@link CashInOutForecast7 }
      * 
      * 
+     * @return
+     *     The value of the cshOutFcstDtls property.
      */
     public List<CashInOutForecast7> getCshOutFcstDtls() {
         if (cshOutFcstDtls == null) {
-            cshOutFcstDtls = new ArrayList<CashInOutForecast7>();
+            cshOutFcstDtls = new ArrayList<>();
         }
         return this.cshOutFcstDtls;
     }
@@ -407,8 +411,8 @@ public class Fund2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the netCshFcstDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the netCshFcstDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -422,10 +426,12 @@ public class Fund2 {
      * {@link NetCashForecast5 }
      * 
      * 
+     * @return
+     *     The value of the netCshFcstDtls property.
      */
     public List<NetCashForecast5> getNetCshFcstDtls() {
         if (netCshFcstDtls == null) {
-            netCshFcstDtls = new ArrayList<NetCashForecast5>();
+            netCshFcstDtls = new ArrayList<>();
         }
         return this.netCshFcstDtls;
     }

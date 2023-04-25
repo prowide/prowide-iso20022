@@ -74,8 +74,8 @@ public class InvestigationStatusChoice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rjctdMod property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rjctdMod property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -89,10 +89,12 @@ public class InvestigationStatusChoice {
      * {@link PaymentModificationRejection1Code }
      * 
      * 
+     * @return
+     *     The value of the rjctdMod property.
      */
     public List<PaymentModificationRejection1Code> getRjctdMod() {
         if (rjctdMod == null) {
-            rjctdMod = new ArrayList<PaymentModificationRejection1Code>();
+            rjctdMod = new ArrayList<>();
         }
         return this.rjctdMod;
     }

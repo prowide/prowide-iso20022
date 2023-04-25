@@ -2,13 +2,16 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.swift.model.mx.dic.*;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -30,13 +33,13 @@ public class MxCamt00500104
 
     @XmlElement(name = "GetTx", required = true)
     protected GetTransactionV04 getTx;
-    public final static transient String BUSINESS_PROCESS = "camt";
-    public final static transient int FUNCTIONALITY = 5;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 4;
+    public static final transient String BUSINESS_PROCESS = "camt";
+    public static final transient int FUNCTIONALITY = 5;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 4;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {AccountCashEntryReturnCriteria2 .class, AccountCashEntrySearch2 .class, AccountIdentification1Choice.class, AccountIdentificationSearchCriteriaChoice.class, AmountRangeBoundary1 .class, AmountRangeChoice.class, CashClearingSystem1Code.class, CashPaymentStatus2Code.class, ClearingSystemMemberIdentificationChoice.class, CreditDebitCode.class, CurrencyAndAmountRange.class, DateAndDateTimeSearchChoice.class, DatePeriodDetails.class, DateSearchChoice.class, DateTimePeriodChoice.class, DateTimePeriodDetails.class, EntryStatus1Code.class, FinalStatusCode.class, FromToAmountRange.class, GetTransactionV04 .class, ImpliedCurrencyAmountRangeChoice.class, ImpliedCurrencyAndAmountRange.class, Instruction1Code.class, InstructionStatusReturnCriteria.class, InstructionStatusSearch3 .class, MemberIdentificationChoice.class, MessageIdentification.class, MxCamt00500104 .class, PaymentIdentification3Choice.class, PaymentInstructionReferenceDetails2 .class, PaymentInstructionReferenceDetails4 .class, PaymentInstrument1Code.class, PaymentOrigin1Choice.class, PaymentReturnCriteria2 .class, PaymentSearch3 .class, PaymentStatusCodeSearch2Choice.class, PaymentTransactionParty.class, PaymentType2Choice.class, PaymentType3Code.class, PendingStatus4Code.class, Priority1Code.class, PriorityCodeChoice.class, QueryType2Code.class, QueueTransactionIdentificationDetails.class, ReportIndicator1Code.class, RequestType1Choice.class, RequestType1Code.class, RequestType2Code.class, SimpleIdentificationInformation.class, SystemReturnCriteria2 .class, SystemSearch2 .class, TransactionCriteria3 .class, TransactionCriteriaDefinition3Choice.class, TransactionQueryDefinition4 .class, TransactionReturnCriteria2 .class, TransactionSearchCriteria3 .class };
-    public final static transient String NAMESPACE = "urn:swift:xsd:camt.005.001.04";
+    public static final transient Class[] _classes = new Class[] {AccountCashEntryReturnCriteria2 .class, AccountCashEntrySearch2 .class, AccountIdentification1Choice.class, AccountIdentificationSearchCriteriaChoice.class, AmountRangeBoundary1 .class, AmountRangeChoice.class, CashClearingSystem1Code.class, CashPaymentStatus2Code.class, ClearingSystemMemberIdentificationChoice.class, CreditDebitCode.class, CurrencyAndAmountRange.class, DateAndDateTimeSearchChoice.class, DatePeriodDetails.class, DateSearchChoice.class, DateTimePeriodChoice.class, DateTimePeriodDetails.class, EntryStatus1Code.class, FinalStatusCode.class, FromToAmountRange.class, GetTransactionV04 .class, ImpliedCurrencyAmountRangeChoice.class, ImpliedCurrencyAndAmountRange.class, Instruction1Code.class, InstructionStatusReturnCriteria.class, InstructionStatusSearch3 .class, MemberIdentificationChoice.class, MessageIdentification.class, MxCamt00500104 .class, PaymentIdentification3Choice.class, PaymentInstructionReferenceDetails2 .class, PaymentInstructionReferenceDetails4 .class, PaymentInstrument1Code.class, PaymentOrigin1Choice.class, PaymentReturnCriteria2 .class, PaymentSearch3 .class, PaymentStatusCodeSearch2Choice.class, PaymentTransactionParty.class, PaymentType2Choice.class, PaymentType3Code.class, PendingStatus4Code.class, Priority1Code.class, PriorityCodeChoice.class, QueryType2Code.class, QueueTransactionIdentificationDetails.class, ReportIndicator1Code.class, RequestType1Choice.class, RequestType1Code.class, RequestType2Code.class, SimpleIdentificationInformation.class, SystemReturnCriteria2 .class, SystemSearch2 .class, TransactionCriteria3 .class, TransactionCriteriaDefinition3Choice.class, TransactionQueryDefinition4 .class, TransactionReturnCriteria2 .class, TransactionSearchCriteria3 .class };
+    public static final transient String NAMESPACE = "urn:swift:xsd:camt.005.001.04";
 
     public MxCamt00500104() {
         super();
@@ -83,21 +86,6 @@ public class MxCamt00500104
     public MxCamt00500104 setGetTx(GetTransactionV04 value) {
         this.getTx = value;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -170,8 +158,23 @@ public class MxCamt00500104
      * @return
      *     a new instance of MxCamt00500104
      */
-    public final static MxCamt00500104 fromJson(String json) {
+    public static final MxCamt00500104 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxCamt00500104 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

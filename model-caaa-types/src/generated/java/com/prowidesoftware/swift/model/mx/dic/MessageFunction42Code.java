@@ -9,47 +9,46 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for MessageFunction42Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="MessageFunction42Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="AUTQ"/&gt;
- *     &lt;enumeration value="AUTP"/&gt;
- *     &lt;enumeration value="CCAV"/&gt;
- *     &lt;enumeration value="CCAK"/&gt;
- *     &lt;enumeration value="CCAQ"/&gt;
- *     &lt;enumeration value="CCAP"/&gt;
- *     &lt;enumeration value="CMPV"/&gt;
- *     &lt;enumeration value="CMPK"/&gt;
- *     &lt;enumeration value="DCAV"/&gt;
- *     &lt;enumeration value="DCRR"/&gt;
- *     &lt;enumeration value="DCCQ"/&gt;
- *     &lt;enumeration value="DCCP"/&gt;
- *     &lt;enumeration value="DGNP"/&gt;
- *     &lt;enumeration value="DGNQ"/&gt;
- *     &lt;enumeration value="FAUQ"/&gt;
- *     &lt;enumeration value="FAUP"/&gt;
- *     &lt;enumeration value="FCMV"/&gt;
- *     &lt;enumeration value="FCMK"/&gt;
- *     &lt;enumeration value="FRVA"/&gt;
- *     &lt;enumeration value="FRVR"/&gt;
- *     &lt;enumeration value="RCLQ"/&gt;
- *     &lt;enumeration value="RCLP"/&gt;
- *     &lt;enumeration value="RVRA"/&gt;
- *     &lt;enumeration value="RVRR"/&gt;
- *     &lt;enumeration value="CDDQ"/&gt;
- *     &lt;enumeration value="CDDK"/&gt;
- *     &lt;enumeration value="CDDR"/&gt;
- *     &lt;enumeration value="CDDP"/&gt;
- *     &lt;enumeration value="TRNR"/&gt;
- *     &lt;enumeration value="TRNA"/&gt;
- *     &lt;enumeration value="NFRQ"/&gt;
- *     &lt;enumeration value="NFRP"/&gt;
- *     &lt;enumeration value="TRPQ"/&gt;
- *     &lt;enumeration value="TRPP"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="MessageFunction42Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="AUTQ"/>
+ *     <enumeration value="AUTP"/>
+ *     <enumeration value="CCAV"/>
+ *     <enumeration value="CCAK"/>
+ *     <enumeration value="CCAQ"/>
+ *     <enumeration value="CCAP"/>
+ *     <enumeration value="CMPV"/>
+ *     <enumeration value="CMPK"/>
+ *     <enumeration value="DCAV"/>
+ *     <enumeration value="DCRR"/>
+ *     <enumeration value="DCCQ"/>
+ *     <enumeration value="DCCP"/>
+ *     <enumeration value="DGNP"/>
+ *     <enumeration value="DGNQ"/>
+ *     <enumeration value="FAUQ"/>
+ *     <enumeration value="FAUP"/>
+ *     <enumeration value="FCMV"/>
+ *     <enumeration value="FCMK"/>
+ *     <enumeration value="FRVA"/>
+ *     <enumeration value="FRVR"/>
+ *     <enumeration value="RCLQ"/>
+ *     <enumeration value="RCLP"/>
+ *     <enumeration value="RVRA"/>
+ *     <enumeration value="RVRR"/>
+ *     <enumeration value="CDDQ"/>
+ *     <enumeration value="CDDK"/>
+ *     <enumeration value="CDDR"/>
+ *     <enumeration value="CDDP"/>
+ *     <enumeration value="TRNR"/>
+ *     <enumeration value="TRNA"/>
+ *     <enumeration value="NFRQ"/>
+ *     <enumeration value="NFRP"/>
+ *     <enumeration value="TRPQ"/>
+ *     <enumeration value="TRPP"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "MessageFunction42Code")

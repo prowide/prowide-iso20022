@@ -9,22 +9,21 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for ProcessingType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ProcessingType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="RJCT"/&gt;
- *     &lt;enumeration value="CVHD"/&gt;
- *     &lt;enumeration value="RSVT"/&gt;
- *     &lt;enumeration value="BLCK"/&gt;
- *     &lt;enumeration value="EARM"/&gt;
- *     &lt;enumeration value="EFAC"/&gt;
- *     &lt;enumeration value="DLVR"/&gt;
- *     &lt;enumeration value="COLD"/&gt;
- *     &lt;enumeration value="CSDB"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ProcessingType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="RJCT"/>
+ *     <enumeration value="CVHD"/>
+ *     <enumeration value="RSVT"/>
+ *     <enumeration value="BLCK"/>
+ *     <enumeration value="EARM"/>
+ *     <enumeration value="EFAC"/>
+ *     <enumeration value="DLVR"/>
+ *     <enumeration value="COLD"/>
+ *     <enumeration value="CSDB"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ProcessingType1Code")

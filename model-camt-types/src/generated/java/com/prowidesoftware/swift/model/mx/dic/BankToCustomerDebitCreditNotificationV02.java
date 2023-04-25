@@ -73,8 +73,8 @@ public class BankToCustomerDebitCreditNotificationV02 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ntfctn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ntfctn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -88,10 +88,12 @@ public class BankToCustomerDebitCreditNotificationV02 {
      * {@link AccountNotification2 }
      * 
      * 
+     * @return
+     *     The value of the ntfctn property.
      */
     public List<AccountNotification2> getNtfctn() {
         if (ntfctn == null) {
-            ntfctn = new ArrayList<AccountNotification2>();
+            ntfctn = new ArrayList<>();
         }
         return this.ntfctn;
     }

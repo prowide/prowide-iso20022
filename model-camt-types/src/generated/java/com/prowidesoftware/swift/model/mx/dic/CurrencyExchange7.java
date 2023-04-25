@@ -2,14 +2,14 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -37,7 +37,7 @@ public class CurrencyExchange7 {
     @XmlElement(name = "QtnDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar qtnDt;
+    protected Calendar qtnDt;
 
     /**
      * Gets the value of the xchgRate property.
@@ -97,7 +97,7 @@ public class CurrencyExchange7 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getQtnDt() {
+    public Calendar getQtnDt() {
         return qtnDt;
     }
 
@@ -109,7 +109,7 @@ public class CurrencyExchange7 {
      *     {@link String }
      *     
      */
-    public CurrencyExchange7 setQtnDt(XMLGregorianCalendar value) {
+    public CurrencyExchange7 setQtnDt(Calendar value) {
         this.qtnDt = value;
         return this;
     }

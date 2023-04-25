@@ -9,29 +9,28 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for PendingStatus3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="PendingStatus3Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ACPD"/&gt;
- *     &lt;enumeration value="VALD"/&gt;
- *     &lt;enumeration value="MATD"/&gt;
- *     &lt;enumeration value="AUTD"/&gt;
- *     &lt;enumeration value="INVD"/&gt;
- *     &lt;enumeration value="UMAC"/&gt;
- *     &lt;enumeration value="STLE"/&gt;
- *     &lt;enumeration value="STLM"/&gt;
- *     &lt;enumeration value="SSPD"/&gt;
- *     &lt;enumeration value="PCAN"/&gt;
- *     &lt;enumeration value="PSTL"/&gt;
- *     &lt;enumeration value="PFST"/&gt;
- *     &lt;enumeration value="SMLR"/&gt;
- *     &lt;enumeration value="RMLR"/&gt;
- *     &lt;enumeration value="SRBL"/&gt;
- *     &lt;enumeration value="AVLB"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="PendingStatus3Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ACPD"/>
+ *     <enumeration value="VALD"/>
+ *     <enumeration value="MATD"/>
+ *     <enumeration value="AUTD"/>
+ *     <enumeration value="INVD"/>
+ *     <enumeration value="UMAC"/>
+ *     <enumeration value="STLE"/>
+ *     <enumeration value="STLM"/>
+ *     <enumeration value="SSPD"/>
+ *     <enumeration value="PCAN"/>
+ *     <enumeration value="PSTL"/>
+ *     <enumeration value="PFST"/>
+ *     <enumeration value="SMLR"/>
+ *     <enumeration value="RMLR"/>
+ *     <enumeration value="SRBL"/>
+ *     <enumeration value="AVLB"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "PendingStatus3Code")

@@ -9,17 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for CancellationProcess2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CancellationProcess2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ADVC"/&gt;
- *     &lt;enumeration value="NALW"/&gt;
- *     &lt;enumeration value="REQU"/&gt;
- *     &lt;enumeration value="APPL"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CancellationProcess2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ADVC"/>
+ *     <enumeration value="NALW"/>
+ *     <enumeration value="REQU"/>
+ *     <enumeration value="APPL"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CancellationProcess2Code")

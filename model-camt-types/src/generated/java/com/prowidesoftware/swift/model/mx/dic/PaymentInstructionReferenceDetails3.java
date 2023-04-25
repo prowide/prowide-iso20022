@@ -2,14 +2,14 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -41,7 +41,7 @@ public class PaymentInstructionReferenceDetails3 {
     @XmlElement(name = "IntrBkValDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar intrBkValDt;
+    protected Calendar intrBkValDt;
     @XmlElement(name = "PmtMtd")
     protected PaymentOrigin1Choice pmtMtd;
     @XmlElement(name = "InstgAgtId", required = true)
@@ -109,7 +109,7 @@ public class PaymentInstructionReferenceDetails3 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getIntrBkValDt() {
+    public Calendar getIntrBkValDt() {
         return intrBkValDt;
     }
 
@@ -121,7 +121,7 @@ public class PaymentInstructionReferenceDetails3 {
      *     {@link String }
      *     
      */
-    public PaymentInstructionReferenceDetails3 setIntrBkValDt(XMLGregorianCalendar value) {
+    public PaymentInstructionReferenceDetails3 setIntrBkValDt(Calendar value) {
         this.intrBkValDt = value;
         return this;
     }

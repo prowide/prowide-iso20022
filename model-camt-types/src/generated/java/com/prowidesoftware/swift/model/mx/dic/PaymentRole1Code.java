@@ -9,19 +9,18 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for PaymentRole1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="PaymentRole1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="LQMG"/&gt;
- *     &lt;enumeration value="LMMG"/&gt;
- *     &lt;enumeration value="PYMG"/&gt;
- *     &lt;enumeration value="REDR"/&gt;
- *     &lt;enumeration value="BKMG"/&gt;
- *     &lt;enumeration value="STMG"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="PaymentRole1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="LQMG"/>
+ *     <enumeration value="LMMG"/>
+ *     <enumeration value="PYMG"/>
+ *     <enumeration value="REDR"/>
+ *     <enumeration value="BKMG"/>
+ *     <enumeration value="STMG"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "PaymentRole1Code")

@@ -2,16 +2,16 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -54,19 +54,19 @@ public class VehicleRentalInvoice1 {
     @XmlElement(name = "ChckOutDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar chckOutDt;
+    protected Calendar chckOutDt;
     @XmlElement(name = "ChckOutTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected XMLGregorianCalendar chckOutTm;
+    protected Calendar chckOutTm;
     @XmlElement(name = "ChckInDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar chckInDt;
+    protected Calendar chckInDt;
     @XmlElement(name = "ChckInTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected XMLGregorianCalendar chckInTm;
+    protected Calendar chckInTm;
     @XmlElement(name = "Drtn")
     protected String drtn;
     @XmlElement(name = "VhclClssInvcd")
@@ -169,7 +169,7 @@ public class VehicleRentalInvoice1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getChckOutDt() {
+    public Calendar getChckOutDt() {
         return chckOutDt;
     }
 
@@ -181,7 +181,7 @@ public class VehicleRentalInvoice1 {
      *     {@link String }
      *     
      */
-    public VehicleRentalInvoice1 setChckOutDt(XMLGregorianCalendar value) {
+    public VehicleRentalInvoice1 setChckOutDt(Calendar value) {
         this.chckOutDt = value;
         return this;
     }
@@ -194,7 +194,7 @@ public class VehicleRentalInvoice1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getChckOutTm() {
+    public Calendar getChckOutTm() {
         return chckOutTm;
     }
 
@@ -206,7 +206,7 @@ public class VehicleRentalInvoice1 {
      *     {@link String }
      *     
      */
-    public VehicleRentalInvoice1 setChckOutTm(XMLGregorianCalendar value) {
+    public VehicleRentalInvoice1 setChckOutTm(Calendar value) {
         this.chckOutTm = value;
         return this;
     }
@@ -219,7 +219,7 @@ public class VehicleRentalInvoice1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getChckInDt() {
+    public Calendar getChckInDt() {
         return chckInDt;
     }
 
@@ -231,7 +231,7 @@ public class VehicleRentalInvoice1 {
      *     {@link String }
      *     
      */
-    public VehicleRentalInvoice1 setChckInDt(XMLGregorianCalendar value) {
+    public VehicleRentalInvoice1 setChckInDt(Calendar value) {
         this.chckInDt = value;
         return this;
     }
@@ -244,7 +244,7 @@ public class VehicleRentalInvoice1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getChckInTm() {
+    public Calendar getChckInTm() {
         return chckInTm;
     }
 
@@ -256,7 +256,7 @@ public class VehicleRentalInvoice1 {
      *     {@link String }
      *     
      */
-    public VehicleRentalInvoice1 setChckInTm(XMLGregorianCalendar value) {
+    public VehicleRentalInvoice1 setChckInTm(Calendar value) {
         this.chckInTm = value;
         return this;
     }
@@ -367,8 +367,8 @@ public class VehicleRentalInvoice1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rntlChrg property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rntlChrg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -382,10 +382,12 @@ public class VehicleRentalInvoice1 {
      * {@link RentalRate1 }
      * 
      * 
+     * @return
+     *     The value of the rntlChrg property.
      */
     public List<RentalRate1> getRntlChrg() {
         if (rntlChrg == null) {
-            rntlChrg = new ArrayList<RentalRate1>();
+            rntlChrg = new ArrayList<>();
         }
         return this.rntlChrg;
     }
@@ -446,8 +448,8 @@ public class VehicleRentalInvoice1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlAmt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlAmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -461,10 +463,12 @@ public class VehicleRentalInvoice1 {
      * {@link Amount9 }
      * 
      * 
+     * @return
+     *     The value of the addtlAmt property.
      */
     public List<Amount9> getAddtlAmt() {
         if (addtlAmt == null) {
-            addtlAmt = new ArrayList<Amount9>();
+            addtlAmt = new ArrayList<>();
         }
         return this.addtlAmt;
     }
@@ -475,8 +479,8 @@ public class VehicleRentalInvoice1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the tax property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the tax property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -490,10 +494,12 @@ public class VehicleRentalInvoice1 {
      * {@link Tax33 }
      * 
      * 
+     * @return
+     *     The value of the tax property.
      */
     public List<Tax33> getTax() {
         if (tax == null) {
-            tax = new ArrayList<Tax33>();
+            tax = new ArrayList<>();
         }
         return this.tax;
     }

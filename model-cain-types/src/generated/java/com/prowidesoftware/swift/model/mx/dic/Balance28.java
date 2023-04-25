@@ -2,14 +2,14 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -51,7 +51,7 @@ public class Balance28 {
     @XmlElement(name = "BalDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar balDt;
+    protected Calendar balDt;
 
     /**
      * Gets the value of the tp property.
@@ -211,7 +211,7 @@ public class Balance28 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getBalDt() {
+    public Calendar getBalDt() {
         return balDt;
     }
 
@@ -223,7 +223,7 @@ public class Balance28 {
      *     {@link String }
      *     
      */
-    public Balance28 setBalDt(XMLGregorianCalendar value) {
+    public Balance28 setBalDt(Calendar value) {
         this.balDt = value;
         return this;
     }

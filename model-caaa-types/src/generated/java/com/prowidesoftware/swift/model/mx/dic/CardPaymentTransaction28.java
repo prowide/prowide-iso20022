@@ -214,8 +214,8 @@ public class CardPaymentTransaction28 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the failrRsn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the failrRsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -229,10 +229,12 @@ public class CardPaymentTransaction28 {
      * {@link FailureReason3Code }
      * 
      * 
+     * @return
+     *     The value of the failrRsn property.
      */
     public List<FailureReason3Code> getFailrRsn() {
         if (failrRsn == null) {
-            failrRsn = new ArrayList<FailureReason3Code>();
+            failrRsn = new ArrayList<>();
         }
         return this.failrRsn;
     }
@@ -368,8 +370,8 @@ public class CardPaymentTransaction28 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlTxData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlTxData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -383,10 +385,12 @@ public class CardPaymentTransaction28 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the addtlTxData property.
      */
     public List<String> getAddtlTxData() {
         if (addtlTxData == null) {
-            addtlTxData = new ArrayList<String>();
+            addtlTxData = new ArrayList<>();
         }
         return this.addtlTxData;
     }

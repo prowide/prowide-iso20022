@@ -9,22 +9,21 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for AdditionalServiceType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="AdditionalServiceType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CACT"/&gt;
- *     &lt;enumeration value="CSHB"/&gt;
- *     &lt;enumeration value="DCCV"/&gt;
- *     &lt;enumeration value="INTP"/&gt;
- *     &lt;enumeration value="INTT"/&gt;
- *     &lt;enumeration value="LOYT"/&gt;
- *     &lt;enumeration value="OTHN"/&gt;
- *     &lt;enumeration value="OTHP"/&gt;
- *     &lt;enumeration value="PRST"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="AdditionalServiceType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CACT"/>
+ *     <enumeration value="CSHB"/>
+ *     <enumeration value="DCCV"/>
+ *     <enumeration value="INTP"/>
+ *     <enumeration value="INTT"/>
+ *     <enumeration value="LOYT"/>
+ *     <enumeration value="OTHN"/>
+ *     <enumeration value="OTHP"/>
+ *     <enumeration value="PRST"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "AdditionalServiceType1Code")

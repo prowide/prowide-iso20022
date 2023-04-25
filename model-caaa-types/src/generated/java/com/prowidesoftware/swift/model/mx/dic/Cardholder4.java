@@ -46,8 +46,8 @@ public class Cardholder4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the id property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the id property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -61,10 +61,12 @@ public class Cardholder4 {
      * {@link CardholderIdentification1 }
      * 
      * 
+     * @return
+     *     The value of the id property.
      */
     public List<CardholderIdentification1> getId() {
         if (id == null) {
-            id = new ArrayList<CardholderIdentification1>();
+            id = new ArrayList<>();
         }
         return this.id;
     }
@@ -100,8 +102,8 @@ public class Cardholder4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the authntcn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the authntcn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -115,10 +117,12 @@ public class Cardholder4 {
      * {@link CardholderAuthentication4 }
      * 
      * 
+     * @return
+     *     The value of the authntcn property.
      */
     public List<CardholderAuthentication4> getAuthntcn() {
         if (authntcn == null) {
-            authntcn = new ArrayList<CardholderAuthentication4>();
+            authntcn = new ArrayList<>();
         }
         return this.authntcn;
     }

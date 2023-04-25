@@ -37,8 +37,8 @@ public class GeneralBusinessOrError1Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the oprlErr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the oprlErr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -52,10 +52,12 @@ public class GeneralBusinessOrError1Choice {
      * {@link ErrorHandling3 }
      * 
      * 
+     * @return
+     *     The value of the oprlErr property.
      */
     public List<ErrorHandling3> getOprlErr() {
         if (oprlErr == null) {
-            oprlErr = new ArrayList<ErrorHandling3>();
+            oprlErr = new ArrayList<>();
         }
         return this.oprlErr;
     }
@@ -66,8 +68,8 @@ public class GeneralBusinessOrError1Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the bizRpt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the bizRpt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -81,10 +83,12 @@ public class GeneralBusinessOrError1Choice {
      * {@link GeneralBusinessReport3 }
      * 
      * 
+     * @return
+     *     The value of the bizRpt property.
      */
     public List<GeneralBusinessReport3> getBizRpt() {
         if (bizRpt == null) {
-            bizRpt = new ArrayList<GeneralBusinessReport3>();
+            bizRpt = new ArrayList<>();
         }
         return this.bizRpt;
     }

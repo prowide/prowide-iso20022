@@ -239,8 +239,8 @@ public class OriginalPaymentInstruction3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cxlStsRsnInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cxlStsRsnInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -254,10 +254,12 @@ public class OriginalPaymentInstruction3 {
      * {@link CancellationStatusReason2 }
      * 
      * 
+     * @return
+     *     The value of the cxlStsRsnInf property.
      */
     public List<CancellationStatusReason2> getCxlStsRsnInf() {
         if (cxlStsRsnInf == null) {
-            cxlStsRsnInf = new ArrayList<CancellationStatusReason2>();
+            cxlStsRsnInf = new ArrayList<>();
         }
         return this.cxlStsRsnInf;
     }
@@ -268,8 +270,8 @@ public class OriginalPaymentInstruction3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the nbOfTxsPerCxlSts property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the nbOfTxsPerCxlSts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -283,10 +285,12 @@ public class OriginalPaymentInstruction3 {
      * {@link NumberOfCancellationsPerStatus1 }
      * 
      * 
+     * @return
+     *     The value of the nbOfTxsPerCxlSts property.
      */
     public List<NumberOfCancellationsPerStatus1> getNbOfTxsPerCxlSts() {
         if (nbOfTxsPerCxlSts == null) {
-            nbOfTxsPerCxlSts = new ArrayList<NumberOfCancellationsPerStatus1>();
+            nbOfTxsPerCxlSts = new ArrayList<>();
         }
         return this.nbOfTxsPerCxlSts;
     }
@@ -297,8 +301,8 @@ public class OriginalPaymentInstruction3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the txInfAndSts property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the txInfAndSts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -312,10 +316,12 @@ public class OriginalPaymentInstruction3 {
      * {@link PaymentTransaction39 }
      * 
      * 
+     * @return
+     *     The value of the txInfAndSts property.
      */
     public List<PaymentTransaction39> getTxInfAndSts() {
         if (txInfAndSts == null) {
-            txInfAndSts = new ArrayList<PaymentTransaction39>();
+            txInfAndSts = new ArrayList<>();
         }
         return this.txInfAndSts;
     }

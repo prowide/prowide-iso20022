@@ -90,8 +90,8 @@ public class Consignment5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the trnsprtMeans property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the trnsprtMeans property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -105,10 +105,12 @@ public class Consignment5 {
      * {@link TransportMeans3 }
      * 
      * 
+     * @return
+     *     The value of the trnsprtMeans property.
      */
     public List<TransportMeans3> getTrnsprtMeans() {
         if (trnsprtMeans == null) {
-            trnsprtMeans = new ArrayList<TransportMeans3>();
+            trnsprtMeans = new ArrayList<>();
         }
         return this.trnsprtMeans;
     }

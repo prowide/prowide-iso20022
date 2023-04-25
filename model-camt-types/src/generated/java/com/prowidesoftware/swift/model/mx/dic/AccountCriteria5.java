@@ -65,8 +65,8 @@ public class AccountCriteria5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the schCrit property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the schCrit property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -80,10 +80,12 @@ public class AccountCriteria5 {
      * {@link CashAccountSearchCriteria5 }
      * 
      * 
+     * @return
+     *     The value of the schCrit property.
      */
     public List<CashAccountSearchCriteria5> getSchCrit() {
         if (schCrit == null) {
-            schCrit = new ArrayList<CashAccountSearchCriteria5>();
+            schCrit = new ArrayList<>();
         }
         return this.schCrit;
     }

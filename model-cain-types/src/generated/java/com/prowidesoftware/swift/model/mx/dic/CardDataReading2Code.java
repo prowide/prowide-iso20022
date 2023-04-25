@@ -9,23 +9,22 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for CardDataReading2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CardDataReading2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="DFLE"/&gt;
- *     &lt;enumeration value="BRCD"/&gt;
- *     &lt;enumeration value="CDFL"/&gt;
- *     &lt;enumeration value="ECTL"/&gt;
- *     &lt;enumeration value="CICC"/&gt;
- *     &lt;enumeration value="MGST"/&gt;
- *     &lt;enumeration value="PHYS"/&gt;
- *     &lt;enumeration value="CTLS"/&gt;
- *     &lt;enumeration value="TAGC"/&gt;
- *     &lt;enumeration value="UNKW"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CardDataReading2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="DFLE"/>
+ *     <enumeration value="BRCD"/>
+ *     <enumeration value="CDFL"/>
+ *     <enumeration value="ECTL"/>
+ *     <enumeration value="CICC"/>
+ *     <enumeration value="MGST"/>
+ *     <enumeration value="PHYS"/>
+ *     <enumeration value="CTLS"/>
+ *     <enumeration value="TAGC"/>
+ *     <enumeration value="UNKW"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CardDataReading2Code")

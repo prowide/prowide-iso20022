@@ -123,8 +123,8 @@ public class Verification1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the vrfctnInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the vrfctnInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -138,10 +138,12 @@ public class Verification1 {
      * {@link VerificationInformation1 }
      * 
      * 
+     * @return
+     *     The value of the vrfctnInf property.
      */
     public List<VerificationInformation1> getVrfctnInf() {
         if (vrfctnInf == null) {
-            vrfctnInf = new ArrayList<VerificationInformation1>();
+            vrfctnInf = new ArrayList<>();
         }
         return this.vrfctnInf;
     }
@@ -152,8 +154,8 @@ public class Verification1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the vrfctnRslt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the vrfctnRslt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -167,10 +169,12 @@ public class Verification1 {
      * {@link VerificationResult1 }
      * 
      * 
+     * @return
+     *     The value of the vrfctnRslt property.
      */
     public List<VerificationResult1> getVrfctnRslt() {
         if (vrfctnRslt == null) {
-            vrfctnRslt = new ArrayList<VerificationResult1>();
+            vrfctnRslt = new ArrayList<>();
         }
         return this.vrfctnRslt;
     }

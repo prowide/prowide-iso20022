@@ -9,17 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for FinalStatusCode.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="FinalStatusCode"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="STLD"/&gt;
- *     &lt;enumeration value="RJTD"/&gt;
- *     &lt;enumeration value="CAND"/&gt;
- *     &lt;enumeration value="FNLD"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="FinalStatusCode">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="STLD"/>
+ *     <enumeration value="RJTD"/>
+ *     <enumeration value="CAND"/>
+ *     <enumeration value="FNLD"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "FinalStatusCode")

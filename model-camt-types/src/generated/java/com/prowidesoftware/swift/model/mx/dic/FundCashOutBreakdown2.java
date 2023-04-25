@@ -236,8 +236,8 @@ public class FundCashOutBreakdown2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the chrgDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the chrgDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -251,10 +251,12 @@ public class FundCashOutBreakdown2 {
      * {@link Charge16 }
      * 
      * 
+     * @return
+     *     The value of the chrgDtls property.
      */
     public List<Charge16> getChrgDtls() {
         if (chrgDtls == null) {
-            chrgDtls = new ArrayList<Charge16>();
+            chrgDtls = new ArrayList<>();
         }
         return this.chrgDtls;
     }
@@ -265,8 +267,8 @@ public class FundCashOutBreakdown2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the comssnDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the comssnDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -280,10 +282,12 @@ public class FundCashOutBreakdown2 {
      * {@link Commission9 }
      * 
      * 
+     * @return
+     *     The value of the comssnDtls property.
      */
     public List<Commission9> getComssnDtls() {
         if (comssnDtls == null) {
-            comssnDtls = new ArrayList<Commission9>();
+            comssnDtls = new ArrayList<>();
         }
         return this.comssnDtls;
     }

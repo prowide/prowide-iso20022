@@ -93,8 +93,8 @@ public class ATMConfigurationParameter2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cert property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cert property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -107,10 +107,12 @@ public class ATMConfigurationParameter2 {
      * Objects of the following type(s) are allowed in the list
      * byte[]
      * 
+     * @return
+     *     The value of the cert property.
      */
     public List<byte[]> getCert() {
         if (cert == null) {
-            cert = new ArrayList<byte[]>();
+            cert = new ArrayList<>();
         }
         return this.cert;
     }
@@ -121,8 +123,8 @@ public class ATMConfigurationParameter2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the keyProps property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the keyProps property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -136,10 +138,12 @@ public class ATMConfigurationParameter2 {
      * {@link KEKIdentifier4 }
      * 
      * 
+     * @return
+     *     The value of the keyProps property.
      */
     public List<KEKIdentifier4> getKeyProps() {
         if (keyProps == null) {
-            keyProps = new ArrayList<KEKIdentifier4>();
+            keyProps = new ArrayList<>();
         }
         return this.keyProps;
     }

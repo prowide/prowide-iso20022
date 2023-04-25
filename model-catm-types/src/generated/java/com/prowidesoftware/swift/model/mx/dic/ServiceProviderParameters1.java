@@ -77,8 +77,8 @@ public class ServiceProviderParameters1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the svcPrvdrId property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the svcPrvdrId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -92,10 +92,12 @@ public class ServiceProviderParameters1 {
      * {@link GenericIdentification176 }
      * 
      * 
+     * @return
+     *     The value of the svcPrvdrId property.
      */
     public List<GenericIdentification176> getSvcPrvdrId() {
         if (svcPrvdrId == null) {
-            svcPrvdrId = new ArrayList<GenericIdentification176>();
+            svcPrvdrId = new ArrayList<>();
         }
         return this.svcPrvdrId;
     }
@@ -131,8 +133,8 @@ public class ServiceProviderParameters1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the applId property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the applId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -146,10 +148,12 @@ public class ServiceProviderParameters1 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the applId property.
      */
     public List<String> getApplId() {
         if (applId == null) {
-            applId = new ArrayList<String>();
+            applId = new ArrayList<>();
         }
         return this.applId;
     }
@@ -160,8 +164,8 @@ public class ServiceProviderParameters1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the hst property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the hst property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -175,10 +179,12 @@ public class ServiceProviderParameters1 {
      * {@link AcquirerHostConfiguration8 }
      * 
      * 
+     * @return
+     *     The value of the hst property.
      */
     public List<AcquirerHostConfiguration8> getHst() {
         if (hst == null) {
-            hst = new ArrayList<AcquirerHostConfiguration8>();
+            hst = new ArrayList<>();
         }
         return this.hst;
     }
@@ -189,8 +195,8 @@ public class ServiceProviderParameters1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the nonFinActnSpprtd property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the nonFinActnSpprtd property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -204,10 +210,12 @@ public class ServiceProviderParameters1 {
      * {@link NonFinancialRequestType1Code }
      * 
      * 
+     * @return
+     *     The value of the nonFinActnSpprtd property.
      */
     public List<NonFinancialRequestType1Code> getNonFinActnSpprtd() {
         if (nonFinActnSpprtd == null) {
-            nonFinActnSpprtd = new ArrayList<NonFinancialRequestType1Code>();
+            nonFinActnSpprtd = new ArrayList<>();
         }
         return this.nonFinActnSpprtd;
     }

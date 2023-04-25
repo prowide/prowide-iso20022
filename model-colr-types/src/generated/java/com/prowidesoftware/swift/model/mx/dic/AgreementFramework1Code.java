@@ -9,18 +9,17 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for AgreementFramework1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="AgreementFramework1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="FBAA"/&gt;
- *     &lt;enumeration value="BBAA"/&gt;
- *     &lt;enumeration value="DERV"/&gt;
- *     &lt;enumeration value="ISDA"/&gt;
- *     &lt;enumeration value="NONR"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="AgreementFramework1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="FBAA"/>
+ *     <enumeration value="BBAA"/>
+ *     <enumeration value="DERV"/>
+ *     <enumeration value="ISDA"/>
+ *     <enumeration value="NONR"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "AgreementFramework1Code")

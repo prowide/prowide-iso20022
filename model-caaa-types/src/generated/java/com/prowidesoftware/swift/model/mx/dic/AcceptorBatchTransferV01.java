@@ -68,8 +68,8 @@ public class AcceptorBatchTransferV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dataSet property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the dataSet property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -83,10 +83,12 @@ public class AcceptorBatchTransferV01 {
      * {@link CardPaymentDataSet1 }
      * 
      * 
+     * @return
+     *     The value of the dataSet property.
      */
     public List<CardPaymentDataSet1> getDataSet() {
         if (dataSet == null) {
-            dataSet = new ArrayList<CardPaymentDataSet1>();
+            dataSet = new ArrayList<>();
         }
         return this.dataSet;
     }

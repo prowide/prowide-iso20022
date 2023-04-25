@@ -9,31 +9,30 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for CardPaymentServiceType8Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CardPaymentServiceType8Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="AGGR"/&gt;
- *     &lt;enumeration value="CSHB"/&gt;
- *     &lt;enumeration value="CSWD"/&gt;
- *     &lt;enumeration value="DCCV"/&gt;
- *     &lt;enumeration value="GRTT"/&gt;
- *     &lt;enumeration value="INSA"/&gt;
- *     &lt;enumeration value="INSI"/&gt;
- *     &lt;enumeration value="LOYT"/&gt;
- *     &lt;enumeration value="NRES"/&gt;
- *     &lt;enumeration value="AUWS"/&gt;
- *     &lt;enumeration value="PFWD"/&gt;
- *     &lt;enumeration value="PUCO"/&gt;
- *     &lt;enumeration value="RECP"/&gt;
- *     &lt;enumeration value="SOAF"/&gt;
- *     &lt;enumeration value="SDWD"/&gt;
- *     &lt;enumeration value="VCAU"/&gt;
- *     &lt;enumeration value="NRFD"/&gt;
- *     &lt;enumeration value="INST"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CardPaymentServiceType8Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="AGGR"/>
+ *     <enumeration value="CSHB"/>
+ *     <enumeration value="CSWD"/>
+ *     <enumeration value="DCCV"/>
+ *     <enumeration value="GRTT"/>
+ *     <enumeration value="INSA"/>
+ *     <enumeration value="INSI"/>
+ *     <enumeration value="LOYT"/>
+ *     <enumeration value="NRES"/>
+ *     <enumeration value="AUWS"/>
+ *     <enumeration value="PFWD"/>
+ *     <enumeration value="PUCO"/>
+ *     <enumeration value="RECP"/>
+ *     <enumeration value="SOAF"/>
+ *     <enumeration value="SDWD"/>
+ *     <enumeration value="VCAU"/>
+ *     <enumeration value="NRFD"/>
+ *     <enumeration value="INST"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CardPaymentServiceType8Code")

@@ -34,8 +34,8 @@ public class BusinessDayInformation2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the bizDayInfRpt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the bizDayInfRpt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -49,10 +49,12 @@ public class BusinessDayInformation2 {
      * {@link BusinessDayInformationReport2 }
      * 
      * 
+     * @return
+     *     The value of the bizDayInfRpt property.
      */
     public List<BusinessDayInformationReport2> getBizDayInfRpt() {
         if (bizDayInfRpt == null) {
-            bizDayInfRpt = new ArrayList<BusinessDayInformationReport2>();
+            bizDayInfRpt = new ArrayList<>();
         }
         return this.bizDayInfRpt;
     }

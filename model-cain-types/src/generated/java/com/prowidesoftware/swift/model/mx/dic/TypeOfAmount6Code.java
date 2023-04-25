@@ -9,25 +9,24 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for TypeOfAmount6Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="TypeOfAmount6Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ATMF"/&gt;
- *     &lt;enumeration value="AMTH"/&gt;
- *     &lt;enumeration value="CRDB"/&gt;
- *     &lt;enumeration value="DCNT"/&gt;
- *     &lt;enumeration value="FEES"/&gt;
- *     &lt;enumeration value="AMTX"/&gt;
- *     &lt;enumeration value="AMTN"/&gt;
- *     &lt;enumeration value="AMTQ"/&gt;
- *     &lt;enumeration value="SRCH"/&gt;
- *     &lt;enumeration value="VATX"/&gt;
- *     &lt;enumeration value="COMI"/&gt;
- *     &lt;enumeration value="FEEI"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="TypeOfAmount6Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ATMF"/>
+ *     <enumeration value="AMTH"/>
+ *     <enumeration value="CRDB"/>
+ *     <enumeration value="DCNT"/>
+ *     <enumeration value="FEES"/>
+ *     <enumeration value="AMTX"/>
+ *     <enumeration value="AMTN"/>
+ *     <enumeration value="AMTQ"/>
+ *     <enumeration value="SRCH"/>
+ *     <enumeration value="VATX"/>
+ *     <enumeration value="COMI"/>
+ *     <enumeration value="FEEI"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "TypeOfAmount6Code")

@@ -9,18 +9,17 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for BillingSubServiceQualifier1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="BillingSubServiceQualifier1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="LBOX"/&gt;
- *     &lt;enumeration value="STOR"/&gt;
- *     &lt;enumeration value="BILA"/&gt;
- *     &lt;enumeration value="SEQN"/&gt;
- *     &lt;enumeration value="MACT"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="BillingSubServiceQualifier1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="LBOX"/>
+ *     <enumeration value="STOR"/>
+ *     <enumeration value="BILA"/>
+ *     <enumeration value="SEQN"/>
+ *     <enumeration value="MACT"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "BillingSubServiceQualifier1Code")

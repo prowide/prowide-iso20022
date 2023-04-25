@@ -71,8 +71,8 @@ public class CardPaymentDataSetTransaction32 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the tracblt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the tracblt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -86,10 +86,12 @@ public class CardPaymentDataSetTransaction32 {
      * {@link Traceability8 }
      * 
      * 
+     * @return
+     *     The value of the tracblt property.
      */
     public List<Traceability8> getTracblt() {
         if (tracblt == null) {
-            tracblt = new ArrayList<Traceability8>();
+            tracblt = new ArrayList<>();
         }
         return this.tracblt;
     }

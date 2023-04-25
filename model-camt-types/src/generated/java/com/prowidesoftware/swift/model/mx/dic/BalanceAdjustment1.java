@@ -2,14 +2,14 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -47,11 +47,11 @@ public class BalanceAdjustment1 {
     @XmlElement(name = "ErrDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar errDt;
+    protected Calendar errDt;
     @XmlElement(name = "PstngDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar pstngDt;
+    protected Calendar pstngDt;
     @XmlElement(name = "Days")
     protected BigDecimal days;
     @XmlElement(name = "EarngsAdjstmntAmt")
@@ -165,7 +165,7 @@ public class BalanceAdjustment1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getErrDt() {
+    public Calendar getErrDt() {
         return errDt;
     }
 
@@ -177,7 +177,7 @@ public class BalanceAdjustment1 {
      *     {@link String }
      *     
      */
-    public BalanceAdjustment1 setErrDt(XMLGregorianCalendar value) {
+    public BalanceAdjustment1 setErrDt(Calendar value) {
         this.errDt = value;
         return this;
     }
@@ -190,7 +190,7 @@ public class BalanceAdjustment1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getPstngDt() {
+    public Calendar getPstngDt() {
         return pstngDt;
     }
 
@@ -202,7 +202,7 @@ public class BalanceAdjustment1 {
      *     {@link String }
      *     
      */
-    public BalanceAdjustment1 setPstngDt(XMLGregorianCalendar value) {
+    public BalanceAdjustment1 setPstngDt(Calendar value) {
         this.pstngDt = value;
         return this;
     }

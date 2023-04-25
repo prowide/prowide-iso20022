@@ -9,30 +9,29 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for RejectionReason63Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="RejectionReason63Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="REFE"/&gt;
- *     &lt;enumeration value="ADEA"/&gt;
- *     &lt;enumeration value="CCIX"/&gt;
- *     &lt;enumeration value="CCTI"/&gt;
- *     &lt;enumeration value="IIND"/&gt;
- *     &lt;enumeration value="PTYA"/&gt;
- *     &lt;enumeration value="PTYB"/&gt;
- *     &lt;enumeration value="LATE"/&gt;
- *     &lt;enumeration value="ITPA"/&gt;
- *     &lt;enumeration value="SAFA"/&gt;
- *     &lt;enumeration value="SAFB"/&gt;
- *     &lt;enumeration value="REDT"/&gt;
- *     &lt;enumeration value="DCAN"/&gt;
- *     &lt;enumeration value="DPRG"/&gt;
- *     &lt;enumeration value="RSET"/&gt;
- *     &lt;enumeration value="RREP"/&gt;
- *     &lt;enumeration value="NRJN"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="RejectionReason63Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="REFE"/>
+ *     <enumeration value="ADEA"/>
+ *     <enumeration value="CCIX"/>
+ *     <enumeration value="CCTI"/>
+ *     <enumeration value="IIND"/>
+ *     <enumeration value="PTYA"/>
+ *     <enumeration value="PTYB"/>
+ *     <enumeration value="LATE"/>
+ *     <enumeration value="ITPA"/>
+ *     <enumeration value="SAFA"/>
+ *     <enumeration value="SAFB"/>
+ *     <enumeration value="REDT"/>
+ *     <enumeration value="DCAN"/>
+ *     <enumeration value="DPRG"/>
+ *     <enumeration value="RSET"/>
+ *     <enumeration value="RREP"/>
+ *     <enumeration value="NRJN"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "RejectionReason63Code")

@@ -92,8 +92,8 @@ public class CurrencyConversion11 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the convsDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the convsDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -107,10 +107,12 @@ public class CurrencyConversion11 {
      * {@link CurrencyConversion12 }
      * 
      * 
+     * @return
+     *     The value of the convsDtls property.
      */
     public List<CurrencyConversion12> getConvsDtls() {
         if (convsDtls == null) {
-            convsDtls = new ArrayList<CurrencyConversion12>();
+            convsDtls = new ArrayList<>();
         }
         return this.convsDtls;
     }

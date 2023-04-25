@@ -121,8 +121,8 @@ public class AuditTrailSearchCriteria2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the pmtId property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the pmtId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -136,10 +136,12 @@ public class AuditTrailSearchCriteria2 {
      * {@link PaymentIdentification9 }
      * 
      * 
+     * @return
+     *     The value of the pmtId property.
      */
     public List<PaymentIdentification9> getPmtId() {
         if (pmtId == null) {
-            pmtId = new ArrayList<PaymentIdentification9>();
+            pmtId = new ArrayList<>();
         }
         return this.pmtId;
     }
@@ -150,8 +152,8 @@ public class AuditTrailSearchCriteria2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the audtTrlTp property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the audtTrlTp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -165,10 +167,12 @@ public class AuditTrailSearchCriteria2 {
      * {@link AuditTrailType1Choice }
      * 
      * 
+     * @return
+     *     The value of the audtTrlTp property.
      */
     public List<AuditTrailType1Choice> getAudtTrlTp() {
         if (audtTrlTp == null) {
-            audtTrlTp = new ArrayList<AuditTrailType1Choice>();
+            audtTrlTp = new ArrayList<>();
         }
         return this.audtTrlTp;
     }

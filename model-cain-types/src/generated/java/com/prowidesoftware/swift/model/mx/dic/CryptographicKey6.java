@@ -2,15 +2,15 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -53,11 +53,11 @@ public class CryptographicKey6 {
     @XmlElement(name = "ActvtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar actvtnDt;
+    protected Calendar actvtnDt;
     @XmlElement(name = "DeactvtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar deactvtnDt;
+    protected Calendar deactvtnDt;
     @XmlElement(name = "NcrptdKeyVal")
     protected ContentInformationType10 ncrptdKeyVal;
     @XmlElement(name = "Cert")
@@ -171,8 +171,8 @@ public class CryptographicKey6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the fctn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the fctn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -186,10 +186,12 @@ public class CryptographicKey6 {
      * {@link KeyUsage1Code }
      * 
      * 
+     * @return
+     *     The value of the fctn property.
      */
     public List<KeyUsage1Code> getFctn() {
         if (fctn == null) {
-            fctn = new ArrayList<KeyUsage1Code>();
+            fctn = new ArrayList<>();
         }
         return this.fctn;
     }
@@ -202,7 +204,7 @@ public class CryptographicKey6 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getActvtnDt() {
+    public Calendar getActvtnDt() {
         return actvtnDt;
     }
 
@@ -214,7 +216,7 @@ public class CryptographicKey6 {
      *     {@link String }
      *     
      */
-    public CryptographicKey6 setActvtnDt(XMLGregorianCalendar value) {
+    public CryptographicKey6 setActvtnDt(Calendar value) {
         this.actvtnDt = value;
         return this;
     }
@@ -227,7 +229,7 @@ public class CryptographicKey6 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDeactvtnDt() {
+    public Calendar getDeactvtnDt() {
         return deactvtnDt;
     }
 
@@ -239,7 +241,7 @@ public class CryptographicKey6 {
      *     {@link String }
      *     
      */
-    public CryptographicKey6 setDeactvtnDt(XMLGregorianCalendar value) {
+    public CryptographicKey6 setDeactvtnDt(Calendar value) {
         this.deactvtnDt = value;
         return this;
     }
@@ -275,8 +277,8 @@ public class CryptographicKey6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cert property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cert property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -289,10 +291,12 @@ public class CryptographicKey6 {
      * Objects of the following type(s) are allowed in the list
      * byte[]
      * 
+     * @return
+     *     The value of the cert property.
      */
     public List<byte[]> getCert() {
         if (cert == null) {
-            cert = new ArrayList<byte[]>();
+            cert = new ArrayList<>();
         }
         return this.cert;
     }

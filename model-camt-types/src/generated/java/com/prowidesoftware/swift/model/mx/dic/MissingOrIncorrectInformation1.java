@@ -40,8 +40,8 @@ public class MissingOrIncorrectInformation1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the mssngInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the mssngInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -55,10 +55,12 @@ public class MissingOrIncorrectInformation1 {
      * {@link UnableToApplyMissingInfo1Code }
      * 
      * 
+     * @return
+     *     The value of the mssngInf property.
      */
     public List<UnableToApplyMissingInfo1Code> getMssngInf() {
         if (mssngInf == null) {
-            mssngInf = new ArrayList<UnableToApplyMissingInfo1Code>();
+            mssngInf = new ArrayList<>();
         }
         return this.mssngInf;
     }
@@ -69,8 +71,8 @@ public class MissingOrIncorrectInformation1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the incrrctInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the incrrctInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -84,10 +86,12 @@ public class MissingOrIncorrectInformation1 {
      * {@link UnableToApplyIncorrectInfo2Code }
      * 
      * 
+     * @return
+     *     The value of the incrrctInf property.
      */
     public List<UnableToApplyIncorrectInfo2Code> getIncrrctInf() {
         if (incrrctInf == null) {
-            incrrctInf = new ArrayList<UnableToApplyIncorrectInfo2Code>();
+            incrrctInf = new ArrayList<>();
         }
         return this.incrrctInf;
     }

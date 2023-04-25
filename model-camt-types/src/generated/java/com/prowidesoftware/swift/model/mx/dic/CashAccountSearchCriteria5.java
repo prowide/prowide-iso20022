@@ -49,8 +49,8 @@ public class CashAccountSearchCriteria5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the acctId property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the acctId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -64,10 +64,12 @@ public class CashAccountSearchCriteria5 {
      * {@link AccountIdentificationSearchCriteria2Choice }
      * 
      * 
+     * @return
+     *     The value of the acctId property.
      */
     public List<AccountIdentificationSearchCriteria2Choice> getAcctId() {
         if (acctId == null) {
-            acctId = new ArrayList<AccountIdentificationSearchCriteria2Choice>();
+            acctId = new ArrayList<>();
         }
         return this.acctId;
     }
@@ -78,8 +80,8 @@ public class CashAccountSearchCriteria5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the tp property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the tp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -93,10 +95,12 @@ public class CashAccountSearchCriteria5 {
      * {@link CashAccountType2Choice }
      * 
      * 
+     * @return
+     *     The value of the tp property.
      */
     public List<CashAccountType2Choice> getTp() {
         if (tp == null) {
-            tp = new ArrayList<CashAccountType2Choice>();
+            tp = new ArrayList<>();
         }
         return this.tp;
     }
@@ -107,8 +111,8 @@ public class CashAccountSearchCriteria5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ccy property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ccy property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -122,10 +126,12 @@ public class CashAccountSearchCriteria5 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the ccy property.
      */
     public List<String> getCcy() {
         if (ccy == null) {
-            ccy = new ArrayList<String>();
+            ccy = new ArrayList<>();
         }
         return this.ccy;
     }
@@ -136,8 +142,8 @@ public class CashAccountSearchCriteria5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the bal property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the bal property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -151,10 +157,12 @@ public class CashAccountSearchCriteria5 {
      * {@link CashBalance4 }
      * 
      * 
+     * @return
+     *     The value of the bal property.
      */
     public List<CashBalance4> getBal() {
         if (bal == null) {
-            bal = new ArrayList<CashBalance4>();
+            bal = new ArrayList<>();
         }
         return this.bal;
     }

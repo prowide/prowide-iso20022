@@ -109,8 +109,8 @@ public class AdditionalInformation20 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the trgt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the trgt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -124,10 +124,12 @@ public class AdditionalInformation20 {
      * {@link UserInterface6Code }
      * 
      * 
+     * @return
+     *     The value of the trgt property.
      */
     public List<UserInterface6Code> getTrgt() {
         if (trgt == null) {
-            trgt = new ArrayList<UserInterface6Code>();
+            trgt = new ArrayList<>();
         }
         return this.trgt;
     }

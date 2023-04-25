@@ -9,18 +9,17 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for CaseStatus2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CaseStatus2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CLSD"/&gt;
- *     &lt;enumeration value="ASGN"/&gt;
- *     &lt;enumeration value="INVE"/&gt;
- *     &lt;enumeration value="UKNW"/&gt;
- *     &lt;enumeration value="ODUE"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CaseStatus2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CLSD"/>
+ *     <enumeration value="ASGN"/>
+ *     <enumeration value="INVE"/>
+ *     <enumeration value="UKNW"/>
+ *     <enumeration value="ODUE"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CaseStatus2Code")

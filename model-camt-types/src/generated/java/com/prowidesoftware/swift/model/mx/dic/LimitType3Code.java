@@ -9,28 +9,27 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for LimitType3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="LimitType3Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="MULT"/&gt;
- *     &lt;enumeration value="BILI"/&gt;
- *     &lt;enumeration value="MAND"/&gt;
- *     &lt;enumeration value="DISC"/&gt;
- *     &lt;enumeration value="NELI"/&gt;
- *     &lt;enumeration value="INBI"/&gt;
- *     &lt;enumeration value="GLBL"/&gt;
- *     &lt;enumeration value="DIDB"/&gt;
- *     &lt;enumeration value="SPLC"/&gt;
- *     &lt;enumeration value="SPLF"/&gt;
- *     &lt;enumeration value="TDLC"/&gt;
- *     &lt;enumeration value="TDLF"/&gt;
- *     &lt;enumeration value="UCDT"/&gt;
- *     &lt;enumeration value="ACOL"/&gt;
- *     &lt;enumeration value="EXGT"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="LimitType3Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="MULT"/>
+ *     <enumeration value="BILI"/>
+ *     <enumeration value="MAND"/>
+ *     <enumeration value="DISC"/>
+ *     <enumeration value="NELI"/>
+ *     <enumeration value="INBI"/>
+ *     <enumeration value="GLBL"/>
+ *     <enumeration value="DIDB"/>
+ *     <enumeration value="SPLC"/>
+ *     <enumeration value="SPLF"/>
+ *     <enumeration value="TDLC"/>
+ *     <enumeration value="TDLF"/>
+ *     <enumeration value="UCDT"/>
+ *     <enumeration value="ACOL"/>
+ *     <enumeration value="EXGT"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "LimitType3Code")

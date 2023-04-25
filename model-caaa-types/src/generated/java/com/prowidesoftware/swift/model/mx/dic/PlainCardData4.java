@@ -177,8 +177,8 @@ public class PlainCardData4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the trckData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the trckData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -192,10 +192,12 @@ public class PlainCardData4 {
      * {@link TrackData1 }
      * 
      * 
+     * @return
+     *     The value of the trckData property.
      */
     public List<TrackData1> getTrckData() {
         if (trckData == null) {
-            trckData = new ArrayList<TrackData1>();
+            trckData = new ArrayList<>();
         }
         return this.trckData;
     }

@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,7 +33,7 @@ public class PayInScheduleItems {
     @XmlElement(name = "Ddln", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected XMLGregorianCalendar ddln;
+    protected Calendar ddln;
 
     /**
      * Gets the value of the amt property.
@@ -68,7 +68,7 @@ public class PayInScheduleItems {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDdln() {
+    public Calendar getDdln() {
         return ddln;
     }
 
@@ -80,7 +80,7 @@ public class PayInScheduleItems {
      *     {@link String }
      *     
      */
-    public PayInScheduleItems setDdln(XMLGregorianCalendar value) {
+    public PayInScheduleItems setDdln(Calendar value) {
         this.ddln = value;
         return this;
     }

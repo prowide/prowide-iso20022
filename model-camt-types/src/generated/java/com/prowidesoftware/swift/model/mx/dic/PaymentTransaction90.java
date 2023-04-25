@@ -2,15 +2,15 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -68,7 +68,7 @@ public class PaymentTransaction90 {
     @XmlElement(name = "OrgnlIntrBkSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar orgnlIntrBkSttlmDt;
+    protected Calendar orgnlIntrBkSttlmDt;
     @XmlElement(name = "Assgnr")
     protected Party35Choice assgnr;
     @XmlElement(name = "Assgne")
@@ -282,8 +282,8 @@ public class PaymentTransaction90 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the modStsRsnInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the modStsRsnInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -297,10 +297,12 @@ public class PaymentTransaction90 {
      * {@link ModificationStatusReason1 }
      * 
      * 
+     * @return
+     *     The value of the modStsRsnInf property.
      */
     public List<ModificationStatusReason1> getModStsRsnInf() {
         if (modStsRsnInf == null) {
-            modStsRsnInf = new ArrayList<ModificationStatusReason1>();
+            modStsRsnInf = new ArrayList<>();
         }
         return this.modStsRsnInf;
     }
@@ -363,7 +365,7 @@ public class PaymentTransaction90 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getOrgnlIntrBkSttlmDt() {
+    public Calendar getOrgnlIntrBkSttlmDt() {
         return orgnlIntrBkSttlmDt;
     }
 
@@ -375,7 +377,7 @@ public class PaymentTransaction90 {
      *     {@link String }
      *     
      */
-    public PaymentTransaction90 setOrgnlIntrBkSttlmDt(XMLGregorianCalendar value) {
+    public PaymentTransaction90 setOrgnlIntrBkSttlmDt(Calendar value) {
         this.orgnlIntrBkSttlmDt = value;
         return this;
     }

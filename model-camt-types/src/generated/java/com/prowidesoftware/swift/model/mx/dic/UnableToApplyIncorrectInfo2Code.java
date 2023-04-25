@@ -10,37 +10,36 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for UnableToApplyIncorrectInfo2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="UnableToApplyIncorrectInfo2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="IN01"/&gt;
- *     &lt;enumeration value="IN02"/&gt;
- *     &lt;enumeration value="IN03"/&gt;
- *     &lt;enumeration value="IN04"/&gt;
- *     &lt;enumeration value="IN05"/&gt;
- *     &lt;enumeration value="IN06"/&gt;
- *     &lt;enumeration value="IN07"/&gt;
- *     &lt;enumeration value="IN08"/&gt;
- *     &lt;enumeration value="IN09"/&gt;
- *     &lt;enumeration value="IN10"/&gt;
- *     &lt;enumeration value="IN11"/&gt;
- *     &lt;enumeration value="IN12"/&gt;
- *     &lt;enumeration value="IN13"/&gt;
- *     &lt;enumeration value="IN14"/&gt;
- *     &lt;enumeration value="IN15"/&gt;
- *     &lt;enumeration value="IN16"/&gt;
- *     &lt;enumeration value="IN17"/&gt;
- *     &lt;enumeration value="IN18"/&gt;
- *     &lt;enumeration value="IN19"/&gt;
- *     &lt;enumeration value="MM20"/&gt;
- *     &lt;enumeration value="MM21"/&gt;
- *     &lt;enumeration value="MM22"/&gt;
- *     &lt;enumeration value="MM23"/&gt;
- *     &lt;enumeration value="MM24"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="UnableToApplyIncorrectInfo2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="IN01"/>
+ *     <enumeration value="IN02"/>
+ *     <enumeration value="IN03"/>
+ *     <enumeration value="IN04"/>
+ *     <enumeration value="IN05"/>
+ *     <enumeration value="IN06"/>
+ *     <enumeration value="IN07"/>
+ *     <enumeration value="IN08"/>
+ *     <enumeration value="IN09"/>
+ *     <enumeration value="IN10"/>
+ *     <enumeration value="IN11"/>
+ *     <enumeration value="IN12"/>
+ *     <enumeration value="IN13"/>
+ *     <enumeration value="IN14"/>
+ *     <enumeration value="IN15"/>
+ *     <enumeration value="IN16"/>
+ *     <enumeration value="IN17"/>
+ *     <enumeration value="IN18"/>
+ *     <enumeration value="IN19"/>
+ *     <enumeration value="MM20"/>
+ *     <enumeration value="MM21"/>
+ *     <enumeration value="MM22"/>
+ *     <enumeration value="MM23"/>
+ *     <enumeration value="MM24"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "UnableToApplyIncorrectInfo2Code")

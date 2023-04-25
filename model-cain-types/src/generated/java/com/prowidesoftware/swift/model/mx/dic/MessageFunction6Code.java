@@ -9,39 +9,38 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for MessageFunction6Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="MessageFunction6Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="RCAV"/&gt;
- *     &lt;enumeration value="RCAN"/&gt;
- *     &lt;enumeration value="RCAQ"/&gt;
- *     &lt;enumeration value="REJA"/&gt;
- *     &lt;enumeration value="REVV"/&gt;
- *     &lt;enumeration value="REVN"/&gt;
- *     &lt;enumeration value="REVQ"/&gt;
- *     &lt;enumeration value="RCPV"/&gt;
- *     &lt;enumeration value="RCPN"/&gt;
- *     &lt;enumeration value="RCPQ"/&gt;
- *     &lt;enumeration value="REJP"/&gt;
- *     &lt;enumeration value="AUTV"/&gt;
- *     &lt;enumeration value="AUTN"/&gt;
- *     &lt;enumeration value="AUTQ"/&gt;
- *     &lt;enumeration value="AUTP"/&gt;
- *     &lt;enumeration value="FNCV"/&gt;
- *     &lt;enumeration value="FNCN"/&gt;
- *     &lt;enumeration value="FNCQ"/&gt;
- *     &lt;enumeration value="RCIV"/&gt;
- *     &lt;enumeration value="RCIN"/&gt;
- *     &lt;enumeration value="RCIQ"/&gt;
- *     &lt;enumeration value="REJI"/&gt;
- *     &lt;enumeration value="KEYV"/&gt;
- *     &lt;enumeration value="KEYQ"/&gt;
- *     &lt;enumeration value="MGTV"/&gt;
- *     &lt;enumeration value="MGTQ"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="MessageFunction6Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="RCAV"/>
+ *     <enumeration value="RCAN"/>
+ *     <enumeration value="RCAQ"/>
+ *     <enumeration value="REJA"/>
+ *     <enumeration value="REVV"/>
+ *     <enumeration value="REVN"/>
+ *     <enumeration value="REVQ"/>
+ *     <enumeration value="RCPV"/>
+ *     <enumeration value="RCPN"/>
+ *     <enumeration value="RCPQ"/>
+ *     <enumeration value="REJP"/>
+ *     <enumeration value="AUTV"/>
+ *     <enumeration value="AUTN"/>
+ *     <enumeration value="AUTQ"/>
+ *     <enumeration value="AUTP"/>
+ *     <enumeration value="FNCV"/>
+ *     <enumeration value="FNCN"/>
+ *     <enumeration value="FNCQ"/>
+ *     <enumeration value="RCIV"/>
+ *     <enumeration value="RCIN"/>
+ *     <enumeration value="RCIQ"/>
+ *     <enumeration value="REJI"/>
+ *     <enumeration value="KEYV"/>
+ *     <enumeration value="KEYQ"/>
+ *     <enumeration value="MGTV"/>
+ *     <enumeration value="MGTQ"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "MessageFunction6Code")

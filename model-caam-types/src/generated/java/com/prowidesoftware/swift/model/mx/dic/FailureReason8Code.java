@@ -9,21 +9,20 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for FailureReason8Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="FailureReason8Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CDRT"/&gt;
- *     &lt;enumeration value="CDCP"/&gt;
- *     &lt;enumeration value="CUCL"/&gt;
- *     &lt;enumeration value="CDFG"/&gt;
- *     &lt;enumeration value="MALF"/&gt;
- *     &lt;enumeration value="SECU"/&gt;
- *     &lt;enumeration value="SFRD"/&gt;
- *     &lt;enumeration value="UCPT"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="FailureReason8Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CDRT"/>
+ *     <enumeration value="CDCP"/>
+ *     <enumeration value="CUCL"/>
+ *     <enumeration value="CDFG"/>
+ *     <enumeration value="MALF"/>
+ *     <enumeration value="SECU"/>
+ *     <enumeration value="SFRD"/>
+ *     <enumeration value="UCPT"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "FailureReason8Code")

@@ -9,17 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for TerminalManagementActionTrigger1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="TerminalManagementActionTrigger1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="DATE"/&gt;
- *     &lt;enumeration value="HOST"/&gt;
- *     &lt;enumeration value="MANU"/&gt;
- *     &lt;enumeration value="SALE"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="TerminalManagementActionTrigger1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="DATE"/>
+ *     <enumeration value="HOST"/>
+ *     <enumeration value="MANU"/>
+ *     <enumeration value="SALE"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "TerminalManagementActionTrigger1Code")

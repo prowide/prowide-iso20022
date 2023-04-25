@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -40,7 +40,7 @@ public class OriginalItem5 {
     @XmlElement(name = "XpctdValDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar xpctdValDt;
+    protected Calendar xpctdValDt;
     @XmlElement(name = "OrgnlItmRef")
     protected OriginalItemReference4 orgnlItmRef;
 
@@ -127,7 +127,7 @@ public class OriginalItem5 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getXpctdValDt() {
+    public Calendar getXpctdValDt() {
         return xpctdValDt;
     }
 
@@ -139,7 +139,7 @@ public class OriginalItem5 {
      *     {@link String }
      *     
      */
-    public OriginalItem5 setXpctdValDt(XMLGregorianCalendar value) {
+    public OriginalItem5 setXpctdValDt(Calendar value) {
         this.xpctdValDt = value;
         return this;
     }

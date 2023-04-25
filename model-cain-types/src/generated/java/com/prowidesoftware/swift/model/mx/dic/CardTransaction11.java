@@ -2,14 +2,14 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -42,7 +42,7 @@ public class CardTransaction11 {
     @XmlElement(name = "InitrDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar initrDtTm;
+    protected Calendar initrDtTm;
     @XmlElement(name = "TxRspn")
     protected ResponseType2 txRspn;
 
@@ -129,7 +129,7 @@ public class CardTransaction11 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getInitrDtTm() {
+    public Calendar getInitrDtTm() {
         return initrDtTm;
     }
 
@@ -141,7 +141,7 @@ public class CardTransaction11 {
      *     {@link String }
      *     
      */
-    public CardTransaction11 setInitrDtTm(XMLGregorianCalendar value) {
+    public CardTransaction11 setInitrDtTm(Calendar value) {
         this.initrDtTm = value;
         return this;
     }

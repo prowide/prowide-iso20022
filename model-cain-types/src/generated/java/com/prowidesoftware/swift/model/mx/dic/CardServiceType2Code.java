@@ -9,18 +9,17 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for CardServiceType2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CardServiceType2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="SFDS"/&gt;
- *     &lt;enumeration value="ECHO"/&gt;
- *     &lt;enumeration value="SFEN"/&gt;
- *     &lt;enumeration value="SGNF"/&gt;
- *     &lt;enumeration value="SGNN"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CardServiceType2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="SFDS"/>
+ *     <enumeration value="ECHO"/>
+ *     <enumeration value="SFEN"/>
+ *     <enumeration value="SGNF"/>
+ *     <enumeration value="SGNN"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CardServiceType2Code")

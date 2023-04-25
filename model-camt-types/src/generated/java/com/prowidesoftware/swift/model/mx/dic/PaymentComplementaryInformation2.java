@@ -2,15 +2,15 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -73,15 +73,15 @@ public class PaymentComplementaryInformation2 {
     @XmlElement(name = "ReqdExctnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar reqdExctnDt;
+    protected Calendar reqdExctnDt;
     @XmlElement(name = "ReqdColltnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar reqdColltnDt;
+    protected Calendar reqdColltnDt;
     @XmlElement(name = "IntrBkSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar intrBkSttlmDt;
+    protected Calendar intrBkSttlmDt;
     @XmlElement(name = "Amt")
     protected AmountType3Choice amt;
     @XmlElement(name = "IntrBkSttlmAmt")
@@ -246,7 +246,7 @@ public class PaymentComplementaryInformation2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getReqdExctnDt() {
+    public Calendar getReqdExctnDt() {
         return reqdExctnDt;
     }
 
@@ -258,7 +258,7 @@ public class PaymentComplementaryInformation2 {
      *     {@link String }
      *     
      */
-    public PaymentComplementaryInformation2 setReqdExctnDt(XMLGregorianCalendar value) {
+    public PaymentComplementaryInformation2 setReqdExctnDt(Calendar value) {
         this.reqdExctnDt = value;
         return this;
     }
@@ -271,7 +271,7 @@ public class PaymentComplementaryInformation2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getReqdColltnDt() {
+    public Calendar getReqdColltnDt() {
         return reqdColltnDt;
     }
 
@@ -283,7 +283,7 @@ public class PaymentComplementaryInformation2 {
      *     {@link String }
      *     
      */
-    public PaymentComplementaryInformation2 setReqdColltnDt(XMLGregorianCalendar value) {
+    public PaymentComplementaryInformation2 setReqdColltnDt(Calendar value) {
         this.reqdColltnDt = value;
         return this;
     }
@@ -296,7 +296,7 @@ public class PaymentComplementaryInformation2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getIntrBkSttlmDt() {
+    public Calendar getIntrBkSttlmDt() {
         return intrBkSttlmDt;
     }
 
@@ -308,7 +308,7 @@ public class PaymentComplementaryInformation2 {
      *     {@link String }
      *     
      */
-    public PaymentComplementaryInformation2 setIntrBkSttlmDt(XMLGregorianCalendar value) {
+    public PaymentComplementaryInformation2 setIntrBkSttlmDt(Calendar value) {
         this.intrBkSttlmDt = value;
         return this;
     }
@@ -919,8 +919,8 @@ public class PaymentComplementaryInformation2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the instrForNxtAgt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the instrForNxtAgt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -934,10 +934,12 @@ public class PaymentComplementaryInformation2 {
      * {@link InstructionForNextAgent1 }
      * 
      * 
+     * @return
+     *     The value of the instrForNxtAgt property.
      */
     public List<InstructionForNextAgent1> getInstrForNxtAgt() {
         if (instrForNxtAgt == null) {
-            instrForNxtAgt = new ArrayList<InstructionForNextAgent1>();
+            instrForNxtAgt = new ArrayList<>();
         }
         return this.instrForNxtAgt;
     }
@@ -948,8 +950,8 @@ public class PaymentComplementaryInformation2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the instrForCdtrAgt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the instrForCdtrAgt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -963,10 +965,12 @@ public class PaymentComplementaryInformation2 {
      * {@link InstructionForCreditorAgent1 }
      * 
      * 
+     * @return
+     *     The value of the instrForCdtrAgt property.
      */
     public List<InstructionForCreditorAgent1> getInstrForCdtrAgt() {
         if (instrForCdtrAgt == null) {
-            instrForCdtrAgt = new ArrayList<InstructionForCreditorAgent1>();
+            instrForCdtrAgt = new ArrayList<>();
         }
         return this.instrForCdtrAgt;
     }

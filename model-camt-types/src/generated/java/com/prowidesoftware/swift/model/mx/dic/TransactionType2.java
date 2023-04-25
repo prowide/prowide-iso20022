@@ -92,8 +92,8 @@ public class TransactionType2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the flrLmt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the flrLmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -107,10 +107,12 @@ public class TransactionType2 {
      * {@link Limit2 }
      * 
      * 
+     * @return
+     *     The value of the flrLmt property.
      */
     public List<Limit2> getFlrLmt() {
         if (flrLmt == null) {
-            flrLmt = new ArrayList<Limit2>();
+            flrLmt = new ArrayList<>();
         }
         return this.flrLmt;
     }

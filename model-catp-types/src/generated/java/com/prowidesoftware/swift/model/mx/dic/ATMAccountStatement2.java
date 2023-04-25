@@ -2,14 +2,14 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -37,11 +37,11 @@ public class ATMAccountStatement2 {
     @XmlElement(name = "TxDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar txDt;
+    protected Calendar txDt;
     @XmlElement(name = "ValDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar valDt;
+    protected Calendar valDt;
     @XmlElement(name = "ShrtTxt")
     protected String shrtTxt;
     @XmlElement(name = "CdtTx")
@@ -61,7 +61,7 @@ public class ATMAccountStatement2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getTxDt() {
+    public Calendar getTxDt() {
         return txDt;
     }
 
@@ -73,7 +73,7 @@ public class ATMAccountStatement2 {
      *     {@link String }
      *     
      */
-    public ATMAccountStatement2 setTxDt(XMLGregorianCalendar value) {
+    public ATMAccountStatement2 setTxDt(Calendar value) {
         this.txDt = value;
         return this;
     }
@@ -86,7 +86,7 @@ public class ATMAccountStatement2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getValDt() {
+    public Calendar getValDt() {
         return valDt;
     }
 
@@ -98,7 +98,7 @@ public class ATMAccountStatement2 {
      *     {@link String }
      *     
      */
-    public ATMAccountStatement2 setValDt(XMLGregorianCalendar value) {
+    public ATMAccountStatement2 setValDt(Calendar value) {
         this.valDt = value;
         return this;
     }

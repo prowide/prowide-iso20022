@@ -9,20 +9,19 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for MessageFunction20Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="MessageFunction20Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ADVC"/&gt;
- *     &lt;enumeration value="NOTI"/&gt;
- *     &lt;enumeration value="REQU"/&gt;
- *     &lt;enumeration value="RVRA"/&gt;
- *     &lt;enumeration value="RVNO"/&gt;
- *     &lt;enumeration value="STAD"/&gt;
- *     &lt;enumeration value="STNO"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="MessageFunction20Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ADVC"/>
+ *     <enumeration value="NOTI"/>
+ *     <enumeration value="REQU"/>
+ *     <enumeration value="RVRA"/>
+ *     <enumeration value="RVNO"/>
+ *     <enumeration value="STAD"/>
+ *     <enumeration value="STNO"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "MessageFunction20Code")

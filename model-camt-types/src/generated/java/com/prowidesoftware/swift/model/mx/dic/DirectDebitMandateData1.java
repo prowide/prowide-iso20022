@@ -99,8 +99,8 @@ public class DirectDebitMandateData1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the maxAmt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the maxAmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -114,10 +114,12 @@ public class DirectDebitMandateData1 {
      * {@link MaximumAmountAndType1 }
      * 
      * 
+     * @return
+     *     The value of the maxAmt property.
      */
     public List<MaximumAmountAndType1> getMaxAmt() {
         if (maxAmt == null) {
-            maxAmt = new ArrayList<MaximumAmountAndType1>();
+            maxAmt = new ArrayList<>();
         }
         return this.maxAmt;
     }

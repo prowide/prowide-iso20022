@@ -9,22 +9,21 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for ActionType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ActionType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="DISP"/&gt;
- *     &lt;enumeration value="PRNT"/&gt;
- *     &lt;enumeration value="RFRL"/&gt;
- *     &lt;enumeration value="CPTR"/&gt;
- *     &lt;enumeration value="PINR"/&gt;
- *     &lt;enumeration value="PINL"/&gt;
- *     &lt;enumeration value="RQDT"/&gt;
- *     &lt;enumeration value="BUSY"/&gt;
- *     &lt;enumeration value="RQID"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ActionType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="DISP"/>
+ *     <enumeration value="PRNT"/>
+ *     <enumeration value="RFRL"/>
+ *     <enumeration value="CPTR"/>
+ *     <enumeration value="PINR"/>
+ *     <enumeration value="PINL"/>
+ *     <enumeration value="RQDT"/>
+ *     <enumeration value="BUSY"/>
+ *     <enumeration value="RQID"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ActionType1Code")

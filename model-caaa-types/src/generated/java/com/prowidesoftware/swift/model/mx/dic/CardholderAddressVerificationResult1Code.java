@@ -9,25 +9,24 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for CardholderAddressVerificationResult1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CardholderAddressVerificationResult1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="AMCH"/&gt;
- *     &lt;enumeration value="ANMH"/&gt;
- *     &lt;enumeration value="ANMT"/&gt;
- *     &lt;enumeration value="ANMO"/&gt;
- *     &lt;enumeration value="AMSS"/&gt;
- *     &lt;enumeration value="ANUS"/&gt;
- *     &lt;enumeration value="PMCH"/&gt;
- *     &lt;enumeration value="PNMH"/&gt;
- *     &lt;enumeration value="PNMT"/&gt;
- *     &lt;enumeration value="PNMO"/&gt;
- *     &lt;enumeration value="PMSS"/&gt;
- *     &lt;enumeration value="PNUS"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CardholderAddressVerificationResult1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="AMCH"/>
+ *     <enumeration value="ANMH"/>
+ *     <enumeration value="ANMT"/>
+ *     <enumeration value="ANMO"/>
+ *     <enumeration value="AMSS"/>
+ *     <enumeration value="ANUS"/>
+ *     <enumeration value="PMCH"/>
+ *     <enumeration value="PNMH"/>
+ *     <enumeration value="PNMT"/>
+ *     <enumeration value="PNMO"/>
+ *     <enumeration value="PMSS"/>
+ *     <enumeration value="PNUS"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CardholderAddressVerificationResult1Code")

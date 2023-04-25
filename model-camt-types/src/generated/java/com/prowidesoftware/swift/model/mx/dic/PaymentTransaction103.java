@@ -2,15 +2,15 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -61,7 +61,7 @@ public class PaymentTransaction103 {
     @XmlElement(name = "OrgnlReqdColltnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar orgnlReqdColltnDt;
+    protected Calendar orgnlReqdColltnDt;
     @XmlElement(name = "OrgnlTxRef")
     protected OriginalTransactionReference28 orgnlTxRef;
 
@@ -221,8 +221,8 @@ public class PaymentTransaction103 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cxlStsRsnInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cxlStsRsnInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -236,10 +236,12 @@ public class PaymentTransaction103 {
      * {@link CancellationStatusReason4 }
      * 
      * 
+     * @return
+     *     The value of the cxlStsRsnInf property.
      */
     public List<CancellationStatusReason4> getCxlStsRsnInf() {
         if (cxlStsRsnInf == null) {
-            cxlStsRsnInf = new ArrayList<CancellationStatusReason4>();
+            cxlStsRsnInf = new ArrayList<>();
         }
         return this.cxlStsRsnInf;
     }
@@ -302,7 +304,7 @@ public class PaymentTransaction103 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getOrgnlReqdColltnDt() {
+    public Calendar getOrgnlReqdColltnDt() {
         return orgnlReqdColltnDt;
     }
 
@@ -314,7 +316,7 @@ public class PaymentTransaction103 {
      *     {@link String }
      *     
      */
-    public PaymentTransaction103 setOrgnlReqdColltnDt(XMLGregorianCalendar value) {
+    public PaymentTransaction103 setOrgnlReqdColltnDt(Calendar value) {
         this.orgnlReqdColltnDt = value;
         return this;
     }

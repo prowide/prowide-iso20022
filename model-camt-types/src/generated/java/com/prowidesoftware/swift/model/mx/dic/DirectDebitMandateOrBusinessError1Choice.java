@@ -37,8 +37,8 @@ public class DirectDebitMandateOrBusinessError1Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the drctDbtMndt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the drctDbtMndt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -52,10 +52,12 @@ public class DirectDebitMandateOrBusinessError1Choice {
      * {@link DirectDebitMandateData1 }
      * 
      * 
+     * @return
+     *     The value of the drctDbtMndt property.
      */
     public List<DirectDebitMandateData1> getDrctDbtMndt() {
         if (drctDbtMndt == null) {
-            drctDbtMndt = new ArrayList<DirectDebitMandateData1>();
+            drctDbtMndt = new ArrayList<>();
         }
         return this.drctDbtMndt;
     }
@@ -66,8 +68,8 @@ public class DirectDebitMandateOrBusinessError1Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the bizErr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the bizErr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -81,10 +83,12 @@ public class DirectDebitMandateOrBusinessError1Choice {
      * {@link ErrorHandling4 }
      * 
      * 
+     * @return
+     *     The value of the bizErr property.
      */
     public List<ErrorHandling4> getBizErr() {
         if (bizErr == null) {
-            bizErr = new ArrayList<ErrorHandling4>();
+            bizErr = new ArrayList<>();
         }
         return this.bizErr;
     }

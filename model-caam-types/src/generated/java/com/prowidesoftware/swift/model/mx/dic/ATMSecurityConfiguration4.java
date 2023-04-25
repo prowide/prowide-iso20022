@@ -93,8 +93,8 @@ public class ATMSecurityConfiguration4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dgtlSgntrAlgo property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the dgtlSgntrAlgo property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -108,10 +108,12 @@ public class ATMSecurityConfiguration4 {
      * {@link Algorithm14Code }
      * 
      * 
+     * @return
+     *     The value of the dgtlSgntrAlgo property.
      */
     public List<Algorithm14Code> getDgtlSgntrAlgo() {
         if (dgtlSgntrAlgo == null) {
-            dgtlSgntrAlgo = new ArrayList<Algorithm14Code>();
+            dgtlSgntrAlgo = new ArrayList<>();
         }
         return this.dgtlSgntrAlgo;
     }

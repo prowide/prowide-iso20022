@@ -37,8 +37,8 @@ public class RiskContext1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rskInptData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rskInptData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -52,10 +52,12 @@ public class RiskContext1 {
      * {@link RiskInputData1 }
      * 
      * 
+     * @return
+     *     The value of the rskInptData property.
      */
     public List<RiskInputData1> getRskInptData() {
         if (rskInptData == null) {
-            rskInptData = new ArrayList<RiskInputData1>();
+            rskInptData = new ArrayList<>();
         }
         return this.rskInptData;
     }
@@ -66,8 +68,8 @@ public class RiskContext1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rskAssmnt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rskAssmnt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -81,10 +83,12 @@ public class RiskContext1 {
      * {@link RiskAssessment1 }
      * 
      * 
+     * @return
+     *     The value of the rskAssmnt property.
      */
     public List<RiskAssessment1> getRskAssmnt() {
         if (rskAssmnt == null) {
-            rskAssmnt = new ArrayList<RiskAssessment1>();
+            rskAssmnt = new ArrayList<>();
         }
         return this.rskAssmnt;
     }

@@ -124,8 +124,8 @@ public class PaymentTerminalParameters2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the tmZoneLine property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the tmZoneLine property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -139,10 +139,12 @@ public class PaymentTerminalParameters2 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the tmZoneLine property.
      */
     public List<String> getTmZoneLine() {
         if (tmZoneLine == null) {
-            tmZoneLine = new ArrayList<String>();
+            tmZoneLine = new ArrayList<>();
         }
         return this.tmZoneLine;
     }
@@ -153,8 +155,8 @@ public class PaymentTerminalParameters2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the lclDtTm property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the lclDtTm property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -168,10 +170,12 @@ public class PaymentTerminalParameters2 {
      * {@link LocalDateTime1 }
      * 
      * 
+     * @return
+     *     The value of the lclDtTm property.
      */
     public List<LocalDateTime1> getLclDtTm() {
         if (lclDtTm == null) {
-            lclDtTm = new ArrayList<LocalDateTime1>();
+            lclDtTm = new ArrayList<>();
         }
         return this.lclDtTm;
     }

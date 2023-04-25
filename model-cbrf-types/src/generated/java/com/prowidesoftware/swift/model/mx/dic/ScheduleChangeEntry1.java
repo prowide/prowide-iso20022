@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -46,11 +46,11 @@ public class ScheduleChangeEntry1 {
     @XmlElement(name = "EvtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected XMLGregorianCalendar evtTm;
+    protected Calendar evtTm;
     @XmlElement(name = "EvtPrvsTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected XMLGregorianCalendar evtPrvsTm;
+    protected Calendar evtPrvsTm;
     @XmlElement(name = "EvtDrtn")
     protected String evtDrtn;
     @XmlElement(name = "EvtPrvsDrtn")
@@ -166,7 +166,7 @@ public class ScheduleChangeEntry1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getEvtTm() {
+    public Calendar getEvtTm() {
         return evtTm;
     }
 
@@ -178,7 +178,7 @@ public class ScheduleChangeEntry1 {
      *     {@link String }
      *     
      */
-    public ScheduleChangeEntry1 setEvtTm(XMLGregorianCalendar value) {
+    public ScheduleChangeEntry1 setEvtTm(Calendar value) {
         this.evtTm = value;
         return this;
     }
@@ -191,7 +191,7 @@ public class ScheduleChangeEntry1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getEvtPrvsTm() {
+    public Calendar getEvtPrvsTm() {
         return evtPrvsTm;
     }
 
@@ -203,7 +203,7 @@ public class ScheduleChangeEntry1 {
      *     {@link String }
      *     
      */
-    public ScheduleChangeEntry1 setEvtPrvsTm(XMLGregorianCalendar value) {
+    public ScheduleChangeEntry1 setEvtPrvsTm(Calendar value) {
         this.evtPrvsTm = value;
         return this;
     }

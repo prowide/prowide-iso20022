@@ -9,22 +9,21 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for RetailerService2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="RetailerService2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="FSPQ"/&gt;
- *     &lt;enumeration value="FSRQ"/&gt;
- *     &lt;enumeration value="FSIQ"/&gt;
- *     &lt;enumeration value="FSBQ"/&gt;
- *     &lt;enumeration value="FSLQ"/&gt;
- *     &lt;enumeration value="FSVQ"/&gt;
- *     &lt;enumeration value="FSEQ"/&gt;
- *     &lt;enumeration value="FSAQ"/&gt;
- *     &lt;enumeration value="FSCQ"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="RetailerService2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="FSPQ"/>
+ *     <enumeration value="FSRQ"/>
+ *     <enumeration value="FSIQ"/>
+ *     <enumeration value="FSBQ"/>
+ *     <enumeration value="FSLQ"/>
+ *     <enumeration value="FSVQ"/>
+ *     <enumeration value="FSEQ"/>
+ *     <enumeration value="FSAQ"/>
+ *     <enumeration value="FSCQ"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "RetailerService2Code")

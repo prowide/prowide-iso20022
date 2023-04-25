@@ -45,8 +45,8 @@ public class SystemSearch2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sysId property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sysId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -60,10 +60,12 @@ public class SystemSearch2 {
      * {@link CashClearingSystem1Code }
      * 
      * 
+     * @return
+     *     The value of the sysId property.
      */
     public List<CashClearingSystem1Code> getSysId() {
         if (sysId == null) {
-            sysId = new ArrayList<CashClearingSystem1Code>();
+            sysId = new ArrayList<>();
         }
         return this.sysId;
     }
@@ -74,8 +76,8 @@ public class SystemSearch2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the mmbId property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the mmbId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -89,10 +91,12 @@ public class SystemSearch2 {
      * {@link MemberIdentificationChoice }
      * 
      * 
+     * @return
+     *     The value of the mmbId property.
      */
     public List<MemberIdentificationChoice> getMmbId() {
         if (mmbId == null) {
-            mmbId = new ArrayList<MemberIdentificationChoice>();
+            mmbId = new ArrayList<>();
         }
         return this.mmbId;
     }

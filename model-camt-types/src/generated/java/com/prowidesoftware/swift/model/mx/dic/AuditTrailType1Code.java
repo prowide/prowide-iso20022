@@ -9,17 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for AuditTrailType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="AuditTrailType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CRTL"/&gt;
- *     &lt;enumeration value="LIMI"/&gt;
- *     &lt;enumeration value="RSVT"/&gt;
- *     &lt;enumeration value="TRXN"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="AuditTrailType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CRTL"/>
+ *     <enumeration value="LIMI"/>
+ *     <enumeration value="RSVT"/>
+ *     <enumeration value="TRXN"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "AuditTrailType1Code")

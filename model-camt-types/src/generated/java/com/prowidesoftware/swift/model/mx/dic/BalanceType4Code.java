@@ -9,37 +9,36 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for BalanceType4Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="BalanceType4Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="OPNG"/&gt;
- *     &lt;enumeration value="INTM"/&gt;
- *     &lt;enumeration value="CLSG"/&gt;
- *     &lt;enumeration value="BOOK"/&gt;
- *     &lt;enumeration value="CRRT"/&gt;
- *     &lt;enumeration value="PDNG"/&gt;
- *     &lt;enumeration value="LRLD"/&gt;
- *     &lt;enumeration value="AVLB"/&gt;
- *     &lt;enumeration value="LTSF"/&gt;
- *     &lt;enumeration value="CRDT"/&gt;
- *     &lt;enumeration value="EAST"/&gt;
- *     &lt;enumeration value="PYMT"/&gt;
- *     &lt;enumeration value="BLCK"/&gt;
- *     &lt;enumeration value="XPCD"/&gt;
- *     &lt;enumeration value="DLOD"/&gt;
- *     &lt;enumeration value="XCRD"/&gt;
- *     &lt;enumeration value="XDBT"/&gt;
- *     &lt;enumeration value="ADJT"/&gt;
- *     &lt;enumeration value="PRAV"/&gt;
- *     &lt;enumeration value="DBIT"/&gt;
- *     &lt;enumeration value="THRE"/&gt;
- *     &lt;enumeration value="NOTE"/&gt;
- *     &lt;enumeration value="SELF"/&gt;
- *     &lt;enumeration value="MSTR"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="BalanceType4Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="OPNG"/>
+ *     <enumeration value="INTM"/>
+ *     <enumeration value="CLSG"/>
+ *     <enumeration value="BOOK"/>
+ *     <enumeration value="CRRT"/>
+ *     <enumeration value="PDNG"/>
+ *     <enumeration value="LRLD"/>
+ *     <enumeration value="AVLB"/>
+ *     <enumeration value="LTSF"/>
+ *     <enumeration value="CRDT"/>
+ *     <enumeration value="EAST"/>
+ *     <enumeration value="PYMT"/>
+ *     <enumeration value="BLCK"/>
+ *     <enumeration value="XPCD"/>
+ *     <enumeration value="DLOD"/>
+ *     <enumeration value="XCRD"/>
+ *     <enumeration value="XDBT"/>
+ *     <enumeration value="ADJT"/>
+ *     <enumeration value="PRAV"/>
+ *     <enumeration value="DBIT"/>
+ *     <enumeration value="THRE"/>
+ *     <enumeration value="NOTE"/>
+ *     <enumeration value="SELF"/>
+ *     <enumeration value="MSTR"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "BalanceType4Code")

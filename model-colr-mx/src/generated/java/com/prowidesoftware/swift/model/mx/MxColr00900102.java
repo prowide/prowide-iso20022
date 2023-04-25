@@ -2,13 +2,16 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.swift.model.mx.dic.*;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -30,13 +33,13 @@ public class MxColr00900102
 
     @XmlElement(name = "MrgnCallDsptNtfctn", required = true)
     protected MarginCallDisputeNotificationV02 mrgnCallDsptNtfctn;
-    public final static transient String BUSINESS_PROCESS = "colr";
-    public final static transient int FUNCTIONALITY = 9;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 2;
+    public static final transient String BUSINESS_PROCESS = "colr";
+    public static final transient int FUNCTIONALITY = 9;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 2;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {ActiveCurrencyAndAmount.class, DateAndDateTimeChoice.class, Dispute1 .class, DisputeNotification1 .class, DisputeNotification1Choice.class, DisputeResolutionType1Choice.class, DisputeResolutionType1Code.class, DisputeResolutionType2Choice.class, DisputeResolutionType2Code.class, ExposureType1Code.class, GenericIdentification29 .class, GenericIdentification30 .class, MarginCallDisputeNotificationV02 .class, MxColr00900102 .class, NameAndAddress6 .class, Obligation1 .class, PartyIdentification33Choice.class, PostalAddress2 .class, SegregatedIndependentAmountDispute1 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, VariationMarginDispute1 .class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:colr.009.001.02";
+    public static final transient Class[] _classes = new Class[] {ActiveCurrencyAndAmount.class, DateAndDateTimeChoice.class, Dispute1 .class, DisputeNotification1 .class, DisputeNotification1Choice.class, DisputeResolutionType1Choice.class, DisputeResolutionType1Code.class, DisputeResolutionType2Choice.class, DisputeResolutionType2Code.class, ExposureType1Code.class, GenericIdentification29 .class, GenericIdentification30 .class, MarginCallDisputeNotificationV02 .class, MxColr00900102 .class, NameAndAddress6 .class, Obligation1 .class, PartyIdentification33Choice.class, PostalAddress2 .class, SegregatedIndependentAmountDispute1 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, VariationMarginDispute1 .class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:colr.009.001.02";
 
     public MxColr00900102() {
         super();
@@ -83,21 +86,6 @@ public class MxColr00900102
     public MxColr00900102 setMrgnCallDsptNtfctn(MarginCallDisputeNotificationV02 value) {
         this.mrgnCallDsptNtfctn = value;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -170,8 +158,23 @@ public class MxColr00900102
      * @return
      *     a new instance of MxColr00900102
      */
-    public final static MxColr00900102 fromJson(String json) {
+    public static final MxColr00900102 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxColr00900102 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

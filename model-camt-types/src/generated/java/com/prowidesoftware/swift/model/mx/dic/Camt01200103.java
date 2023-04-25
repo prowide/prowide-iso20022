@@ -79,8 +79,8 @@ public class Camt01200103 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the curLmt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the curLmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -94,10 +94,12 @@ public class Camt01200103 {
      * {@link LimitIdentificationDetails2 }
      * 
      * 
+     * @return
+     *     The value of the curLmt property.
      */
     public List<LimitIdentificationDetails2> getCurLmt() {
         if (curLmt == null) {
-            curLmt = new ArrayList<LimitIdentificationDetails2>();
+            curLmt = new ArrayList<>();
         }
         return this.curLmt;
     }

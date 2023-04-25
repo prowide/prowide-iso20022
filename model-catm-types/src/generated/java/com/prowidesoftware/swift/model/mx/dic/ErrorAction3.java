@@ -40,8 +40,8 @@ public class ErrorAction3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the actnRslt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the actnRslt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -55,10 +55,12 @@ public class ErrorAction3 {
      * {@link TerminalManagementActionResult3Code }
      * 
      * 
+     * @return
+     *     The value of the actnRslt property.
      */
     public List<TerminalManagementActionResult3Code> getActnRslt() {
         if (actnRslt == null) {
-            actnRslt = new ArrayList<TerminalManagementActionResult3Code>();
+            actnRslt = new ArrayList<>();
         }
         return this.actnRslt;
     }

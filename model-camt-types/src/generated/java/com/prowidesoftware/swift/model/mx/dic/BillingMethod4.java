@@ -37,8 +37,8 @@ public class BillingMethod4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the svcDtl property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the svcDtl property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -52,10 +52,12 @@ public class BillingMethod4 {
      * {@link BillingServiceParameters2 }
      * 
      * 
+     * @return
+     *     The value of the svcDtl property.
      */
     public List<BillingServiceParameters2> getSvcDtl() {
         if (svcDtl == null) {
-            svcDtl = new ArrayList<BillingServiceParameters2>();
+            svcDtl = new ArrayList<>();
         }
         return this.svcDtl;
     }

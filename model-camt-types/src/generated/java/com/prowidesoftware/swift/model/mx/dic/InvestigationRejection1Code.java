@@ -9,20 +9,19 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for InvestigationRejection1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="InvestigationRejection1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="NFND"/&gt;
- *     &lt;enumeration value="NAUT"/&gt;
- *     &lt;enumeration value="UKNW"/&gt;
- *     &lt;enumeration value="PCOR"/&gt;
- *     &lt;enumeration value="WMSG"/&gt;
- *     &lt;enumeration value="RNCR"/&gt;
- *     &lt;enumeration value="MROI"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="InvestigationRejection1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="NFND"/>
+ *     <enumeration value="NAUT"/>
+ *     <enumeration value="UKNW"/>
+ *     <enumeration value="PCOR"/>
+ *     <enumeration value="WMSG"/>
+ *     <enumeration value="RNCR"/>
+ *     <enumeration value="MROI"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "InvestigationRejection1Code")

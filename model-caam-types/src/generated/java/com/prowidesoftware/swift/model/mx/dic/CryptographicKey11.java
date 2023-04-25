@@ -3,15 +3,15 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -63,11 +63,11 @@ public class CryptographicKey11 {
     @XmlElement(name = "ActvtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar actvtnDt;
+    protected Calendar actvtnDt;
     @XmlElement(name = "DeactvtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar deactvtnDt;
+    protected Calendar deactvtnDt;
     @XmlElement(name = "KeyChckVal")
     protected byte[] keyChckVal;
     @XmlElement(name = "CurSts", required = true)
@@ -256,8 +256,8 @@ public class CryptographicKey11 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the fctn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the fctn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -271,10 +271,12 @@ public class CryptographicKey11 {
      * {@link KeyUsage1Code }
      * 
      * 
+     * @return
+     *     The value of the fctn property.
      */
     public List<KeyUsage1Code> getFctn() {
         if (fctn == null) {
-            fctn = new ArrayList<KeyUsage1Code>();
+            fctn = new ArrayList<>();
         }
         return this.fctn;
     }
@@ -287,7 +289,7 @@ public class CryptographicKey11 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getActvtnDt() {
+    public Calendar getActvtnDt() {
         return actvtnDt;
     }
 
@@ -299,7 +301,7 @@ public class CryptographicKey11 {
      *     {@link String }
      *     
      */
-    public CryptographicKey11 setActvtnDt(XMLGregorianCalendar value) {
+    public CryptographicKey11 setActvtnDt(Calendar value) {
         this.actvtnDt = value;
         return this;
     }
@@ -312,7 +314,7 @@ public class CryptographicKey11 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDeactvtnDt() {
+    public Calendar getDeactvtnDt() {
         return deactvtnDt;
     }
 
@@ -324,7 +326,7 @@ public class CryptographicKey11 {
      *     {@link String }
      *     
      */
-    public CryptographicKey11 setDeactvtnDt(XMLGregorianCalendar value) {
+    public CryptographicKey11 setDeactvtnDt(Calendar value) {
         this.deactvtnDt = value;
         return this;
     }

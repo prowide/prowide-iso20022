@@ -37,8 +37,8 @@ public class BusinessDayInformationSearchCriteria {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sysId property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sysId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -52,10 +52,12 @@ public class BusinessDayInformationSearchCriteria {
      * {@link SystemIdentificationChoice }
      * 
      * 
+     * @return
+     *     The value of the sysId property.
      */
     public List<SystemIdentificationChoice> getSysId() {
         if (sysId == null) {
-            sysId = new ArrayList<SystemIdentificationChoice>();
+            sysId = new ArrayList<>();
         }
         return this.sysId;
     }
@@ -66,8 +68,8 @@ public class BusinessDayInformationSearchCriteria {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sysCcy property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sysCcy property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -81,10 +83,12 @@ public class BusinessDayInformationSearchCriteria {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the sysCcy property.
      */
     public List<String> getSysCcy() {
         if (sysCcy == null) {
-            sysCcy = new ArrayList<String>();
+            sysCcy = new ArrayList<>();
         }
         return this.sysCcy;
     }

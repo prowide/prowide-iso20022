@@ -9,21 +9,20 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for ATMServiceType4Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ATMServiceType4Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ASTS"/&gt;
- *     &lt;enumeration value="BLCQ"/&gt;
- *     &lt;enumeration value="DPST"/&gt;
- *     &lt;enumeration value="PINC"/&gt;
- *     &lt;enumeration value="STDR"/&gt;
- *     &lt;enumeration value="PRFL"/&gt;
- *     &lt;enumeration value="PATH"/&gt;
- *     &lt;enumeration value="CHSN"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ATMServiceType4Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ASTS"/>
+ *     <enumeration value="BLCQ"/>
+ *     <enumeration value="DPST"/>
+ *     <enumeration value="PINC"/>
+ *     <enumeration value="STDR"/>
+ *     <enumeration value="PRFL"/>
+ *     <enumeration value="PATH"/>
+ *     <enumeration value="CHSN"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ATMServiceType4Code")

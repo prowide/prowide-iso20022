@@ -2,14 +2,14 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,11 +33,11 @@ public class LocalDateTime1 {
     @XmlElement(name = "FrDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar frDtTm;
+    protected Calendar frDtTm;
     @XmlElement(name = "ToDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar toDtTm;
+    protected Calendar toDtTm;
     @XmlElement(name = "UTCOffset", required = true)
     protected BigDecimal utcOffset;
 
@@ -49,7 +49,7 @@ public class LocalDateTime1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getFrDtTm() {
+    public Calendar getFrDtTm() {
         return frDtTm;
     }
 
@@ -61,7 +61,7 @@ public class LocalDateTime1 {
      *     {@link String }
      *     
      */
-    public LocalDateTime1 setFrDtTm(XMLGregorianCalendar value) {
+    public LocalDateTime1 setFrDtTm(Calendar value) {
         this.frDtTm = value;
         return this;
     }
@@ -74,7 +74,7 @@ public class LocalDateTime1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getToDtTm() {
+    public Calendar getToDtTm() {
         return toDtTm;
     }
 
@@ -86,7 +86,7 @@ public class LocalDateTime1 {
      *     {@link String }
      *     
      */
-    public LocalDateTime1 setToDtTm(XMLGregorianCalendar value) {
+    public LocalDateTime1 setToDtTm(Calendar value) {
         this.toDtTm = value;
         return this;
     }

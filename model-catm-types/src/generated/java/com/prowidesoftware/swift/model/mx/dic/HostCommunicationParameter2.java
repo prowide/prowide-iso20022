@@ -90,8 +90,8 @@ public class HostCommunicationParameter2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the key property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the key property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -105,10 +105,12 @@ public class HostCommunicationParameter2 {
      * {@link CryptographicKey3 }
      * 
      * 
+     * @return
+     *     The value of the key property.
      */
     public List<CryptographicKey3> getKey() {
         if (key == null) {
-            key = new ArrayList<CryptographicKey3>();
+            key = new ArrayList<>();
         }
         return this.key;
     }

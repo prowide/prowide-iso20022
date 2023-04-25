@@ -2,15 +2,15 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -43,7 +43,7 @@ public class InterestStatement1 {
     @XmlElement(name = "ValDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar valDt;
+    protected Calendar valDt;
     @XmlElement(name = "IntrstPmtReqId")
     protected String intrstPmtReqId;
     @XmlElement(name = "IntrstClctnDtls")
@@ -132,7 +132,7 @@ public class InterestStatement1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getValDt() {
+    public Calendar getValDt() {
         return valDt;
     }
 
@@ -144,7 +144,7 @@ public class InterestStatement1 {
      *     {@link String }
      *     
      */
-    public InterestStatement1 setValDt(XMLGregorianCalendar value) {
+    public InterestStatement1 setValDt(Calendar value) {
         this.valDt = value;
         return this;
     }
@@ -180,8 +180,8 @@ public class InterestStatement1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the intrstClctnDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the intrstClctnDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -195,10 +195,12 @@ public class InterestStatement1 {
      * {@link InterestCalculation1 }
      * 
      * 
+     * @return
+     *     The value of the intrstClctnDtls property.
      */
     public List<InterestCalculation1> getIntrstClctnDtls() {
         if (intrstClctnDtls == null) {
-            intrstClctnDtls = new ArrayList<InterestCalculation1>();
+            intrstClctnDtls = new ArrayList<>();
         }
         return this.intrstClctnDtls;
     }

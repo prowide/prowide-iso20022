@@ -93,8 +93,8 @@ public class BalanceInquiryResponse3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the stordValAcct property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the stordValAcct property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -108,10 +108,12 @@ public class BalanceInquiryResponse3 {
      * {@link StoredValueAccount2 }
      * 
      * 
+     * @return
+     *     The value of the stordValAcct property.
      */
     public List<StoredValueAccount2> getStordValAcct() {
         if (stordValAcct == null) {
-            stordValAcct = new ArrayList<StoredValueAccount2>();
+            stordValAcct = new ArrayList<>();
         }
         return this.stordValAcct;
     }
@@ -122,8 +124,8 @@ public class BalanceInquiryResponse3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rct property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rct property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -137,10 +139,12 @@ public class BalanceInquiryResponse3 {
      * {@link PaymentReceipt3 }
      * 
      * 
+     * @return
+     *     The value of the rct property.
      */
     public List<PaymentReceipt3> getRct() {
         if (rct == null) {
-            rct = new ArrayList<PaymentReceipt3>();
+            rct = new ArrayList<>();
         }
         return this.rct;
     }

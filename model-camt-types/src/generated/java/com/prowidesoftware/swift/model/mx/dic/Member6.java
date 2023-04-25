@@ -40,8 +40,8 @@ public class Member6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the mmbRtrAdr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the mmbRtrAdr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -55,10 +55,12 @@ public class Member6 {
      * {@link MemberIdentification3Choice }
      * 
      * 
+     * @return
+     *     The value of the mmbRtrAdr property.
      */
     public List<MemberIdentification3Choice> getMmbRtrAdr() {
         if (mmbRtrAdr == null) {
-            mmbRtrAdr = new ArrayList<MemberIdentification3Choice>();
+            mmbRtrAdr = new ArrayList<>();
         }
         return this.mmbRtrAdr;
     }
@@ -69,8 +71,8 @@ public class Member6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ctctRef property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ctctRef property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -84,10 +86,12 @@ public class Member6 {
      * {@link ContactIdentificationAndAddress1 }
      * 
      * 
+     * @return
+     *     The value of the ctctRef property.
      */
     public List<ContactIdentificationAndAddress1> getCtctRef() {
         if (ctctRef == null) {
-            ctctRef = new ArrayList<ContactIdentificationAndAddress1>();
+            ctctRef = new ArrayList<>();
         }
         return this.ctctRef;
     }

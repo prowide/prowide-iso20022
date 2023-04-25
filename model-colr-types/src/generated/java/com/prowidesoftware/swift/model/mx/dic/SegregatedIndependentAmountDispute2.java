@@ -62,8 +62,8 @@ public class SegregatedIndependentAmountDispute2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dsptRsltnTp1Chc property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the dsptRsltnTp1Chc property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -77,10 +77,12 @@ public class SegregatedIndependentAmountDispute2 {
      * {@link DisputeResolutionType1Choice }
      * 
      * 
+     * @return
+     *     The value of the dsptRsltnTp1Chc property.
      */
     public List<DisputeResolutionType1Choice> getDsptRsltnTp1Chc() {
         if (dsptRsltnTp1Chc == null) {
-            dsptRsltnTp1Chc = new ArrayList<DisputeResolutionType1Choice>();
+            dsptRsltnTp1Chc = new ArrayList<>();
         }
         return this.dsptRsltnTp1Chc;
     }

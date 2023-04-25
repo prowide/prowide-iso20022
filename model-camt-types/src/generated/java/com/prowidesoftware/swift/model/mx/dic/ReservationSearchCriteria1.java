@@ -74,8 +74,8 @@ public class ReservationSearchCriteria1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dfltRsvatnTp property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the dfltRsvatnTp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -89,10 +89,12 @@ public class ReservationSearchCriteria1 {
      * {@link ReservationType1Code }
      * 
      * 
+     * @return
+     *     The value of the dfltRsvatnTp property.
      */
     public List<ReservationType1Code> getDfltRsvatnTp() {
         if (dfltRsvatnTp == null) {
-            dfltRsvatnTp = new ArrayList<ReservationType1Code>();
+            dfltRsvatnTp = new ArrayList<>();
         }
         return this.dfltRsvatnTp;
     }
@@ -103,8 +105,8 @@ public class ReservationSearchCriteria1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the curRsvatnTp property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the curRsvatnTp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -118,10 +120,12 @@ public class ReservationSearchCriteria1 {
      * {@link ReservationType1Code }
      * 
      * 
+     * @return
+     *     The value of the curRsvatnTp property.
      */
     public List<ReservationType1Code> getCurRsvatnTp() {
         if (curRsvatnTp == null) {
-            curRsvatnTp = new ArrayList<ReservationType1Code>();
+            curRsvatnTp = new ArrayList<>();
         }
         return this.curRsvatnTp;
     }

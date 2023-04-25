@@ -9,29 +9,28 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for ATMCommand6Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ATMCommand6Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ABAL"/&gt;
- *     &lt;enumeration value="ASTS"/&gt;
- *     &lt;enumeration value="CFGT"/&gt;
- *     &lt;enumeration value="CCNT"/&gt;
- *     &lt;enumeration value="DISC"/&gt;
- *     &lt;enumeration value="KACT"/&gt;
- *     &lt;enumeration value="KDAC"/&gt;
- *     &lt;enumeration value="KDWL"/&gt;
- *     &lt;enumeration value="KRMV"/&gt;
- *     &lt;enumeration value="SCFU"/&gt;
- *     &lt;enumeration value="SSCU"/&gt;
- *     &lt;enumeration value="SSTU"/&gt;
- *     &lt;enumeration value="SNDM"/&gt;
- *     &lt;enumeration value="HKCG"/&gt;
- *     &lt;enumeration value="HKRV"/&gt;
- *     &lt;enumeration value="KCHG"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ATMCommand6Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ABAL"/>
+ *     <enumeration value="ASTS"/>
+ *     <enumeration value="CFGT"/>
+ *     <enumeration value="CCNT"/>
+ *     <enumeration value="DISC"/>
+ *     <enumeration value="KACT"/>
+ *     <enumeration value="KDAC"/>
+ *     <enumeration value="KDWL"/>
+ *     <enumeration value="KRMV"/>
+ *     <enumeration value="SCFU"/>
+ *     <enumeration value="SSCU"/>
+ *     <enumeration value="SSTU"/>
+ *     <enumeration value="SNDM"/>
+ *     <enumeration value="HKCG"/>
+ *     <enumeration value="HKRV"/>
+ *     <enumeration value="KCHG"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ATMCommand6Code")

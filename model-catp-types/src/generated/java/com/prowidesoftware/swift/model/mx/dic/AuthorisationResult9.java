@@ -98,8 +98,8 @@ public class AuthorisationResult9 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rspnTrac property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rspnTrac property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -113,10 +113,12 @@ public class AuthorisationResult9 {
      * {@link ResponseType4 }
      * 
      * 
+     * @return
+     *     The value of the rspnTrac property.
      */
     public List<ResponseType4> getRspnTrac() {
         if (rspnTrac == null) {
-            rspnTrac = new ArrayList<ResponseType4>();
+            rspnTrac = new ArrayList<>();
         }
         return this.rspnTrac;
     }
@@ -152,8 +154,8 @@ public class AuthorisationResult9 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the actn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the actn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -167,10 +169,12 @@ public class AuthorisationResult9 {
      * {@link Action5 }
      * 
      * 
+     * @return
+     *     The value of the actn property.
      */
     public List<Action5> getActn() {
         if (actn == null) {
-            actn = new ArrayList<Action5>();
+            actn = new ArrayList<>();
         }
         return this.actn;
     }

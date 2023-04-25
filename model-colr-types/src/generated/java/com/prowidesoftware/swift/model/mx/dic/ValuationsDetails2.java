@@ -38,8 +38,8 @@ public class ValuationsDetails2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the valtnDtlsAmt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the valtnDtlsAmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -53,10 +53,12 @@ public class ValuationsDetails2 {
      * {@link CollateralAmount9 }
      * 
      * 
+     * @return
+     *     The value of the valtnDtlsAmt property.
      */
     public List<CollateralAmount9> getValtnDtlsAmt() {
         if (valtnDtlsAmt == null) {
-            valtnDtlsAmt = new ArrayList<CollateralAmount9>();
+            valtnDtlsAmt = new ArrayList<>();
         }
         return this.valtnDtlsAmt;
     }

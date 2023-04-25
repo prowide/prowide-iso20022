@@ -37,8 +37,8 @@ public class CurrentAndDefaultReservation1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the curRsvatn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the curRsvatn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -52,10 +52,12 @@ public class CurrentAndDefaultReservation1 {
      * {@link ReservationReport3 }
      * 
      * 
+     * @return
+     *     The value of the curRsvatn property.
      */
     public List<ReservationReport3> getCurRsvatn() {
         if (curRsvatn == null) {
-            curRsvatn = new ArrayList<ReservationReport3>();
+            curRsvatn = new ArrayList<>();
         }
         return this.curRsvatn;
     }
@@ -66,8 +68,8 @@ public class CurrentAndDefaultReservation1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dfltRsvatn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the dfltRsvatn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -81,10 +83,12 @@ public class CurrentAndDefaultReservation1 {
      * {@link ReservationReport3 }
      * 
      * 
+     * @return
+     *     The value of the dfltRsvatn property.
      */
     public List<ReservationReport3> getDfltRsvatn() {
         if (dfltRsvatn == null) {
-            dfltRsvatn = new ArrayList<ReservationReport3>();
+            dfltRsvatn = new ArrayList<>();
         }
         return this.dfltRsvatn;
     }

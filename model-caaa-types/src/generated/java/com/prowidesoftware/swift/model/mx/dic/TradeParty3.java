@@ -90,8 +90,8 @@ public class TradeParty3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the taxPty property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the taxPty property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -105,10 +105,12 @@ public class TradeParty3 {
      * {@link TaxParty3 }
      * 
      * 
+     * @return
+     *     The value of the taxPty property.
      */
     public List<TaxParty3> getTaxPty() {
         if (taxPty == null) {
-            taxPty = new ArrayList<TaxParty3>();
+            taxPty = new ArrayList<>();
         }
         return this.taxPty;
     }

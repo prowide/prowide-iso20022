@@ -2,13 +2,16 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.swift.model.mx.dic.*;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -30,13 +33,13 @@ public class MxCamt00700103
 
     @XmlElement(name = "camt.007.001.03", required = true)
     protected Camt00700103 camt00700103;
-    public final static transient String BUSINESS_PROCESS = "camt";
-    public final static transient int FUNCTIONALITY = 7;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 3;
+    public static final transient String BUSINESS_PROCESS = "camt";
+    public static final transient int FUNCTIONALITY = 7;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 3;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {Camt00700103 .class, DateTimePeriodChoice.class, DateTimePeriodDetails.class, Instruction1Code.class, MessageIdentification.class, MxCamt00700103 .class, PaymentDetails4 .class, PaymentIdentification3Choice.class, PaymentInstructionReferenceDetails2 .class, PaymentInstructionReferenceDetails4 .class, PaymentInstrument1Code.class, PaymentOrigin1Choice.class, PaymentType2Choice.class, PaymentType3Code.class, Priority1Code.class, PriorityCodeChoice.class, QueueTransactionIdentificationDetails.class };
-    public final static transient String NAMESPACE = "urn:swift:xsd:camt.007.001.03";
+    public static final transient Class[] _classes = new Class[] {Camt00700103 .class, DateTimePeriodChoice.class, DateTimePeriodDetails.class, Instruction1Code.class, MessageIdentification.class, MxCamt00700103 .class, PaymentDetails4 .class, PaymentIdentification3Choice.class, PaymentInstructionReferenceDetails2 .class, PaymentInstructionReferenceDetails4 .class, PaymentInstrument1Code.class, PaymentOrigin1Choice.class, PaymentType2Choice.class, PaymentType3Code.class, Priority1Code.class, PriorityCodeChoice.class, QueueTransactionIdentificationDetails.class };
+    public static final transient String NAMESPACE = "urn:swift:xsd:camt.007.001.03";
 
     public MxCamt00700103() {
         super();
@@ -83,21 +86,6 @@ public class MxCamt00700103
     public MxCamt00700103 setCamt00700103(Camt00700103 value) {
         this.camt00700103 = value;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -170,8 +158,23 @@ public class MxCamt00700103
      * @return
      *     a new instance of MxCamt00700103
      */
-    public final static MxCamt00700103 fromJson(String json) {
+    public static final MxCamt00700103 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxCamt00700103 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

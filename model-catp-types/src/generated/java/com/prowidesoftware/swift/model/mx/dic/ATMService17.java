@@ -70,8 +70,8 @@ public class ATMService17 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the svcVarnt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the svcVarnt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -85,10 +85,12 @@ public class ATMService17 {
      * {@link ATMService18 }
      * 
      * 
+     * @return
+     *     The value of the svcVarnt property.
      */
     public List<ATMService18> getSvcVarnt() {
         if (svcVarnt == null) {
-            svcVarnt = new ArrayList<ATMService18>();
+            svcVarnt = new ArrayList<>();
         }
         return this.svcVarnt;
     }
@@ -99,8 +101,8 @@ public class ATMService17 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the lmts property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the lmts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -114,10 +116,12 @@ public class ATMService17 {
      * {@link ATMTransactionAmounts6 }
      * 
      * 
+     * @return
+     *     The value of the lmts property.
      */
     public List<ATMTransactionAmounts6> getLmts() {
         if (lmts == null) {
-            lmts = new ArrayList<ATMTransactionAmounts6>();
+            lmts = new ArrayList<>();
         }
         return this.lmts;
     }

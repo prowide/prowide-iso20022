@@ -64,8 +64,8 @@ public class PointOfInteractionCapabilities4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cardRdngCpblties property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cardRdngCpblties property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -79,10 +79,12 @@ public class PointOfInteractionCapabilities4 {
      * {@link CardDataReading2Code }
      * 
      * 
+     * @return
+     *     The value of the cardRdngCpblties property.
      */
     public List<CardDataReading2Code> getCardRdngCpblties() {
         if (cardRdngCpblties == null) {
-            cardRdngCpblties = new ArrayList<CardDataReading2Code>();
+            cardRdngCpblties = new ArrayList<>();
         }
         return this.cardRdngCpblties;
     }
@@ -93,8 +95,8 @@ public class PointOfInteractionCapabilities4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cardWrttgCpblties property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cardWrttgCpblties property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -108,10 +110,12 @@ public class PointOfInteractionCapabilities4 {
      * {@link CardDataReading3Code }
      * 
      * 
+     * @return
+     *     The value of the cardWrttgCpblties property.
      */
     public List<CardDataReading3Code> getCardWrttgCpblties() {
         if (cardWrttgCpblties == null) {
-            cardWrttgCpblties = new ArrayList<CardDataReading3Code>();
+            cardWrttgCpblties = new ArrayList<>();
         }
         return this.cardWrttgCpblties;
     }
@@ -122,8 +126,8 @@ public class PointOfInteractionCapabilities4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the crdhldrVrfctnCpblties property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the crdhldrVrfctnCpblties property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -137,10 +141,12 @@ public class PointOfInteractionCapabilities4 {
      * {@link CardholderVerificationCapability2Code }
      * 
      * 
+     * @return
+     *     The value of the crdhldrVrfctnCpblties property.
      */
     public List<CardholderVerificationCapability2Code> getCrdhldrVrfctnCpblties() {
         if (crdhldrVrfctnCpblties == null) {
-            crdhldrVrfctnCpblties = new ArrayList<CardholderVerificationCapability2Code>();
+            crdhldrVrfctnCpblties = new ArrayList<>();
         }
         return this.crdhldrVrfctnCpblties;
     }
@@ -276,8 +282,8 @@ public class PointOfInteractionCapabilities4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the msgCpblties property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the msgCpblties property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -291,10 +297,12 @@ public class PointOfInteractionCapabilities4 {
      * {@link DisplayCapabilities3 }
      * 
      * 
+     * @return
+     *     The value of the msgCpblties property.
      */
     public List<DisplayCapabilities3> getMsgCpblties() {
         if (msgCpblties == null) {
-            msgCpblties = new ArrayList<DisplayCapabilities3>();
+            msgCpblties = new ArrayList<>();
         }
         return this.msgCpblties;
     }

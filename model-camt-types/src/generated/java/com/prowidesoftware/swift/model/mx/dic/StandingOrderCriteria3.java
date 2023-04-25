@@ -65,8 +65,8 @@ public class StandingOrderCriteria3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the schCrit property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the schCrit property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -80,10 +80,12 @@ public class StandingOrderCriteria3 {
      * {@link StandingOrderSearchCriteria3 }
      * 
      * 
+     * @return
+     *     The value of the schCrit property.
      */
     public List<StandingOrderSearchCriteria3> getSchCrit() {
         if (schCrit == null) {
-            schCrit = new ArrayList<StandingOrderSearchCriteria3>();
+            schCrit = new ArrayList<>();
         }
         return this.schCrit;
     }

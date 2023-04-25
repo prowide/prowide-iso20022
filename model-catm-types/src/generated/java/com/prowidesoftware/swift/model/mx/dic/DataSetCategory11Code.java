@@ -9,24 +9,23 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for DataSetCategory11Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="DataSetCategory11Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ACQP"/&gt;
- *     &lt;enumeration value="APPR"/&gt;
- *     &lt;enumeration value="APSB"/&gt;
- *     &lt;enumeration value="KDWL"/&gt;
- *     &lt;enumeration value="KMGT"/&gt;
- *     &lt;enumeration value="RPRT"/&gt;
- *     &lt;enumeration value="SWPK"/&gt;
- *     &lt;enumeration value="TMSP"/&gt;
- *     &lt;enumeration value="MRPR"/&gt;
- *     &lt;enumeration value="TRPR"/&gt;
- *     &lt;enumeration value="CRTF"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="DataSetCategory11Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ACQP"/>
+ *     <enumeration value="APPR"/>
+ *     <enumeration value="APSB"/>
+ *     <enumeration value="KDWL"/>
+ *     <enumeration value="KMGT"/>
+ *     <enumeration value="RPRT"/>
+ *     <enumeration value="SWPK"/>
+ *     <enumeration value="TMSP"/>
+ *     <enumeration value="MRPR"/>
+ *     <enumeration value="TRPR"/>
+ *     <enumeration value="CRTF"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "DataSetCategory11Code")

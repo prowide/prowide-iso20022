@@ -3,15 +3,15 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -109,11 +109,11 @@ public class LineItem16 {
     @XmlElement(name = "MeasrDtTmStart", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar measrDtTmStart;
+    protected Calendar measrDtTmStart;
     @XmlElement(name = "MeasrDtTmEnd", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar measrDtTmEnd;
+    protected Calendar measrDtTmEnd;
     @XmlElement(name = "ShipTo")
     protected TradeParty3 shipTo;
     @XmlElement(name = "Incotrms")
@@ -121,7 +121,7 @@ public class LineItem16 {
     @XmlElement(name = "DlvryDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar dlvryDtTm;
+    protected Calendar dlvryDtTm;
     @XmlElement(name = "DlvryNoteId")
     protected DocumentIdentification22 dlvryNoteId;
     @XmlElement(name = "MntrySummtn")
@@ -235,8 +235,8 @@ public class LineItem16 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the purchsAcctgAcct property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the purchsAcctgAcct property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -250,10 +250,12 @@ public class LineItem16 {
      * {@link AccountingAccount1 }
      * 
      * 
+     * @return
+     *     The value of the purchsAcctgAcct property.
      */
     public List<AccountingAccount1> getPurchsAcctgAcct() {
         if (purchsAcctgAcct == null) {
-            purchsAcctgAcct = new ArrayList<AccountingAccount1>();
+            purchsAcctgAcct = new ArrayList<>();
         }
         return this.purchsAcctgAcct;
     }
@@ -264,8 +266,8 @@ public class LineItem16 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the netPric property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the netPric property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -279,10 +281,12 @@ public class LineItem16 {
      * {@link CurrencyAndAmount }
      * 
      * 
+     * @return
+     *     The value of the netPric property.
      */
     public List<CurrencyAndAmount> getNetPric() {
         if (netPric == null) {
-            netPric = new ArrayList<CurrencyAndAmount>();
+            netPric = new ArrayList<>();
         }
         return this.netPric;
     }
@@ -318,8 +322,8 @@ public class LineItem16 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the netPricAllwncChrg property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the netPricAllwncChrg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -333,10 +337,12 @@ public class LineItem16 {
      * {@link LineItemAllowanceCharge2 }
      * 
      * 
+     * @return
+     *     The value of the netPricAllwncChrg property.
      */
     public List<LineItemAllowanceCharge2> getNetPricAllwncChrg() {
         if (netPricAllwncChrg == null) {
-            netPricAllwncChrg = new ArrayList<LineItemAllowanceCharge2>();
+            netPricAllwncChrg = new ArrayList<>();
         }
         return this.netPricAllwncChrg;
     }
@@ -372,8 +378,8 @@ public class LineItem16 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the grssPric property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the grssPric property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -387,10 +393,12 @@ public class LineItem16 {
      * {@link CurrencyAndAmount }
      * 
      * 
+     * @return
+     *     The value of the grssPric property.
      */
     public List<CurrencyAndAmount> getGrssPric() {
         if (grssPric == null) {
-            grssPric = new ArrayList<CurrencyAndAmount>();
+            grssPric = new ArrayList<>();
         }
         return this.grssPric;
     }
@@ -451,8 +459,8 @@ public class LineItem16 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the logstcsChrg property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the logstcsChrg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -466,10 +474,12 @@ public class LineItem16 {
      * {@link ChargesDetails4 }
      * 
      * 
+     * @return
+     *     The value of the logstcsChrg property.
      */
     public List<ChargesDetails4> getLogstcsChrg() {
         if (logstcsChrg == null) {
-            logstcsChrg = new ArrayList<ChargesDetails4>();
+            logstcsChrg = new ArrayList<>();
         }
         return this.logstcsChrg;
     }
@@ -480,8 +490,8 @@ public class LineItem16 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the tax property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the tax property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -495,10 +505,12 @@ public class LineItem16 {
      * {@link LineItemTax1 }
      * 
      * 
+     * @return
+     *     The value of the tax property.
      */
     public List<LineItemTax1> getTax() {
         if (tax == null) {
-            tax = new ArrayList<LineItemTax1>();
+            tax = new ArrayList<>();
         }
         return this.tax;
     }
@@ -509,8 +521,8 @@ public class LineItem16 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the allwncChrg property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the allwncChrg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -524,10 +536,12 @@ public class LineItem16 {
      * {@link LineItemAllowanceCharge2 }
      * 
      * 
+     * @return
+     *     The value of the allwncChrg property.
      */
     public List<LineItemAllowanceCharge2> getAllwncChrg() {
         if (allwncChrg == null) {
-            allwncChrg = new ArrayList<LineItemAllowanceCharge2>();
+            allwncChrg = new ArrayList<>();
         }
         return this.allwncChrg;
     }
@@ -538,8 +552,8 @@ public class LineItem16 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the finAdjstmnt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the finAdjstmnt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -553,10 +567,12 @@ public class LineItem16 {
      * {@link Adjustment6 }
      * 
      * 
+     * @return
+     *     The value of the finAdjstmnt property.
      */
     public List<Adjustment6> getFinAdjstmnt() {
         if (finAdjstmnt == null) {
-            finAdjstmnt = new ArrayList<Adjustment6>();
+            finAdjstmnt = new ArrayList<>();
         }
         return this.finAdjstmnt;
     }
@@ -642,8 +658,8 @@ public class LineItem16 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the packgng property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the packgng property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -657,10 +673,12 @@ public class LineItem16 {
      * {@link Packaging1 }
      * 
      * 
+     * @return
+     *     The value of the packgng property.
      */
     public List<Packaging1> getPackgng() {
         if (packgng == null) {
-            packgng = new ArrayList<Packaging1>();
+            packgng = new ArrayList<>();
         }
         return this.packgng;
     }
@@ -748,7 +766,7 @@ public class LineItem16 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getMeasrDtTmStart() {
+    public Calendar getMeasrDtTmStart() {
         return measrDtTmStart;
     }
 
@@ -760,7 +778,7 @@ public class LineItem16 {
      *     {@link String }
      *     
      */
-    public LineItem16 setMeasrDtTmStart(XMLGregorianCalendar value) {
+    public LineItem16 setMeasrDtTmStart(Calendar value) {
         this.measrDtTmStart = value;
         return this;
     }
@@ -773,7 +791,7 @@ public class LineItem16 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getMeasrDtTmEnd() {
+    public Calendar getMeasrDtTmEnd() {
         return measrDtTmEnd;
     }
 
@@ -785,7 +803,7 @@ public class LineItem16 {
      *     {@link String }
      *     
      */
-    public LineItem16 setMeasrDtTmEnd(XMLGregorianCalendar value) {
+    public LineItem16 setMeasrDtTmEnd(Calendar value) {
         this.measrDtTmEnd = value;
         return this;
     }
@@ -848,7 +866,7 @@ public class LineItem16 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDlvryDtTm() {
+    public Calendar getDlvryDtTm() {
         return dlvryDtTm;
     }
 
@@ -860,7 +878,7 @@ public class LineItem16 {
      *     {@link String }
      *     
      */
-    public LineItem16 setDlvryDtTm(XMLGregorianCalendar value) {
+    public LineItem16 setDlvryDtTm(Calendar value) {
         this.dlvryDtTm = value;
         return this;
     }
@@ -921,8 +939,8 @@ public class LineItem16 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the inclNote property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the inclNote property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -936,10 +954,12 @@ public class LineItem16 {
      * {@link AdditionalInformation1 }
      * 
      * 
+     * @return
+     *     The value of the inclNote property.
      */
     public List<AdditionalInformation1> getInclNote() {
         if (inclNote == null) {
-            inclNote = new ArrayList<AdditionalInformation1>();
+            inclNote = new ArrayList<>();
         }
         return this.inclNote;
     }

@@ -2,15 +2,15 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -39,7 +39,7 @@ public class DebitAuthorisation2 {
     @XmlElement(name = "ValDtToDbt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar valDtToDbt;
+    protected Calendar valDtToDbt;
     @XmlElement(name = "AddtlCxlRsnInf")
     protected List<String> addtlCxlRsnInf;
 
@@ -101,7 +101,7 @@ public class DebitAuthorisation2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getValDtToDbt() {
+    public Calendar getValDtToDbt() {
         return valDtToDbt;
     }
 
@@ -113,7 +113,7 @@ public class DebitAuthorisation2 {
      *     {@link String }
      *     
      */
-    public DebitAuthorisation2 setValDtToDbt(XMLGregorianCalendar value) {
+    public DebitAuthorisation2 setValDtToDbt(Calendar value) {
         this.valDtToDbt = value;
         return this;
     }
@@ -124,8 +124,8 @@ public class DebitAuthorisation2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlCxlRsnInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlCxlRsnInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -139,10 +139,12 @@ public class DebitAuthorisation2 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the addtlCxlRsnInf property.
      */
     public List<String> getAddtlCxlRsnInf() {
         if (addtlCxlRsnInf == null) {
-            addtlCxlRsnInf = new ArrayList<String>();
+            addtlCxlRsnInf = new ArrayList<>();
         }
         return this.addtlCxlRsnInf;
     }

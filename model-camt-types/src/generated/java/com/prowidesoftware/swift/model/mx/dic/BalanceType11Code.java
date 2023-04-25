@@ -9,78 +9,77 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for BalanceType11Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="BalanceType11Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="OPNG"/&gt;
- *     &lt;enumeration value="INTM"/&gt;
- *     &lt;enumeration value="CLSG"/&gt;
- *     &lt;enumeration value="BOOK"/&gt;
- *     &lt;enumeration value="CRRT"/&gt;
- *     &lt;enumeration value="PDNG"/&gt;
- *     &lt;enumeration value="LRLD"/&gt;
- *     &lt;enumeration value="AVLB"/&gt;
- *     &lt;enumeration value="LTSF"/&gt;
- *     &lt;enumeration value="CRDT"/&gt;
- *     &lt;enumeration value="EAST"/&gt;
- *     &lt;enumeration value="PYMT"/&gt;
- *     &lt;enumeration value="BLCK"/&gt;
- *     &lt;enumeration value="XPCD"/&gt;
- *     &lt;enumeration value="DLOD"/&gt;
- *     &lt;enumeration value="XCRD"/&gt;
- *     &lt;enumeration value="XDBT"/&gt;
- *     &lt;enumeration value="ADJT"/&gt;
- *     &lt;enumeration value="PRAV"/&gt;
- *     &lt;enumeration value="DBIT"/&gt;
- *     &lt;enumeration value="THRE"/&gt;
- *     &lt;enumeration value="NOTE"/&gt;
- *     &lt;enumeration value="FSET"/&gt;
- *     &lt;enumeration value="BLOC"/&gt;
- *     &lt;enumeration value="OTHB"/&gt;
- *     &lt;enumeration value="CUST"/&gt;
- *     &lt;enumeration value="FORC"/&gt;
- *     &lt;enumeration value="COLC"/&gt;
- *     &lt;enumeration value="FUND"/&gt;
- *     &lt;enumeration value="PIPO"/&gt;
- *     &lt;enumeration value="XCHG"/&gt;
- *     &lt;enumeration value="CCPS"/&gt;
- *     &lt;enumeration value="TOHB"/&gt;
- *     &lt;enumeration value="COHB"/&gt;
- *     &lt;enumeration value="DOHB"/&gt;
- *     &lt;enumeration value="TPBL"/&gt;
- *     &lt;enumeration value="CPBL"/&gt;
- *     &lt;enumeration value="DPBL"/&gt;
- *     &lt;enumeration value="FUTB"/&gt;
- *     &lt;enumeration value="REJB"/&gt;
- *     &lt;enumeration value="FCOL"/&gt;
- *     &lt;enumeration value="FCOU"/&gt;
- *     &lt;enumeration value="SCOL"/&gt;
- *     &lt;enumeration value="SCOU"/&gt;
- *     &lt;enumeration value="CUSA"/&gt;
- *     &lt;enumeration value="XCHC"/&gt;
- *     &lt;enumeration value="XCHN"/&gt;
- *     &lt;enumeration value="DSET"/&gt;
- *     &lt;enumeration value="LACK"/&gt;
- *     &lt;enumeration value="NSET"/&gt;
- *     &lt;enumeration value="OTCC"/&gt;
- *     &lt;enumeration value="OTCG"/&gt;
- *     &lt;enumeration value="OTCN"/&gt;
- *     &lt;enumeration value="SAPD"/&gt;
- *     &lt;enumeration value="SAPC"/&gt;
- *     &lt;enumeration value="REPD"/&gt;
- *     &lt;enumeration value="REPC"/&gt;
- *     &lt;enumeration value="BSCD"/&gt;
- *     &lt;enumeration value="BSCC"/&gt;
- *     &lt;enumeration value="SAPP"/&gt;
- *     &lt;enumeration value="IRLT"/&gt;
- *     &lt;enumeration value="IRDR"/&gt;
- *     &lt;enumeration value="DWRD"/&gt;
- *     &lt;enumeration value="ADWR"/&gt;
- *     &lt;enumeration value="AIDR"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="BalanceType11Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="OPNG"/>
+ *     <enumeration value="INTM"/>
+ *     <enumeration value="CLSG"/>
+ *     <enumeration value="BOOK"/>
+ *     <enumeration value="CRRT"/>
+ *     <enumeration value="PDNG"/>
+ *     <enumeration value="LRLD"/>
+ *     <enumeration value="AVLB"/>
+ *     <enumeration value="LTSF"/>
+ *     <enumeration value="CRDT"/>
+ *     <enumeration value="EAST"/>
+ *     <enumeration value="PYMT"/>
+ *     <enumeration value="BLCK"/>
+ *     <enumeration value="XPCD"/>
+ *     <enumeration value="DLOD"/>
+ *     <enumeration value="XCRD"/>
+ *     <enumeration value="XDBT"/>
+ *     <enumeration value="ADJT"/>
+ *     <enumeration value="PRAV"/>
+ *     <enumeration value="DBIT"/>
+ *     <enumeration value="THRE"/>
+ *     <enumeration value="NOTE"/>
+ *     <enumeration value="FSET"/>
+ *     <enumeration value="BLOC"/>
+ *     <enumeration value="OTHB"/>
+ *     <enumeration value="CUST"/>
+ *     <enumeration value="FORC"/>
+ *     <enumeration value="COLC"/>
+ *     <enumeration value="FUND"/>
+ *     <enumeration value="PIPO"/>
+ *     <enumeration value="XCHG"/>
+ *     <enumeration value="CCPS"/>
+ *     <enumeration value="TOHB"/>
+ *     <enumeration value="COHB"/>
+ *     <enumeration value="DOHB"/>
+ *     <enumeration value="TPBL"/>
+ *     <enumeration value="CPBL"/>
+ *     <enumeration value="DPBL"/>
+ *     <enumeration value="FUTB"/>
+ *     <enumeration value="REJB"/>
+ *     <enumeration value="FCOL"/>
+ *     <enumeration value="FCOU"/>
+ *     <enumeration value="SCOL"/>
+ *     <enumeration value="SCOU"/>
+ *     <enumeration value="CUSA"/>
+ *     <enumeration value="XCHC"/>
+ *     <enumeration value="XCHN"/>
+ *     <enumeration value="DSET"/>
+ *     <enumeration value="LACK"/>
+ *     <enumeration value="NSET"/>
+ *     <enumeration value="OTCC"/>
+ *     <enumeration value="OTCG"/>
+ *     <enumeration value="OTCN"/>
+ *     <enumeration value="SAPD"/>
+ *     <enumeration value="SAPC"/>
+ *     <enumeration value="REPD"/>
+ *     <enumeration value="REPC"/>
+ *     <enumeration value="BSCD"/>
+ *     <enumeration value="BSCC"/>
+ *     <enumeration value="SAPP"/>
+ *     <enumeration value="IRLT"/>
+ *     <enumeration value="IRDR"/>
+ *     <enumeration value="DWRD"/>
+ *     <enumeration value="ADWR"/>
+ *     <enumeration value="AIDR"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "BalanceType11Code")

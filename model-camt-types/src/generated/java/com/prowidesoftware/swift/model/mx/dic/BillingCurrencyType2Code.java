@@ -9,17 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for BillingCurrencyType2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="BillingCurrencyType2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ACCT"/&gt;
- *     &lt;enumeration value="STLM"/&gt;
- *     &lt;enumeration value="PRCG"/&gt;
- *     &lt;enumeration value="HOST"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="BillingCurrencyType2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ACCT"/>
+ *     <enumeration value="STLM"/>
+ *     <enumeration value="PRCG"/>
+ *     <enumeration value="HOST"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "BillingCurrencyType2Code")

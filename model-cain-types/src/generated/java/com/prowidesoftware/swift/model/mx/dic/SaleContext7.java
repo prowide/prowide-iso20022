@@ -265,8 +265,8 @@ public class SaleContext7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rctTp property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rctTp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -280,10 +280,12 @@ public class SaleContext7 {
      * {@link ReceiptType1Code }
      * 
      * 
+     * @return
+     *     The value of the rctTp property.
      */
     public List<ReceiptType1Code> getRctTp() {
         if (rctTp == null) {
-            rctTp = new ArrayList<ReceiptType1Code>();
+            rctTp = new ArrayList<>();
         }
         return this.rctTp;
     }

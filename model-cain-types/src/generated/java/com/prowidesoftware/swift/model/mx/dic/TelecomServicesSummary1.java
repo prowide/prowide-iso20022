@@ -2,15 +2,15 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -41,11 +41,11 @@ public class TelecomServicesSummary1 {
     @XmlElement(name = "BllgStmtPrdStart", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar bllgStmtPrdStart;
+    protected Calendar bllgStmtPrdStart;
     @XmlElement(name = "BllgStmtPrdEnd", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar bllgStmtPrdEnd;
+    protected Calendar bllgStmtPrdEnd;
     @XmlElement(name = "BllgEvt")
     protected List<Amount10> bllgEvt;
     @XmlElement(name = "TtlTax")
@@ -86,7 +86,7 @@ public class TelecomServicesSummary1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getBllgStmtPrdStart() {
+    public Calendar getBllgStmtPrdStart() {
         return bllgStmtPrdStart;
     }
 
@@ -98,7 +98,7 @@ public class TelecomServicesSummary1 {
      *     {@link String }
      *     
      */
-    public TelecomServicesSummary1 setBllgStmtPrdStart(XMLGregorianCalendar value) {
+    public TelecomServicesSummary1 setBllgStmtPrdStart(Calendar value) {
         this.bllgStmtPrdStart = value;
         return this;
     }
@@ -111,7 +111,7 @@ public class TelecomServicesSummary1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getBllgStmtPrdEnd() {
+    public Calendar getBllgStmtPrdEnd() {
         return bllgStmtPrdEnd;
     }
 
@@ -123,7 +123,7 @@ public class TelecomServicesSummary1 {
      *     {@link String }
      *     
      */
-    public TelecomServicesSummary1 setBllgStmtPrdEnd(XMLGregorianCalendar value) {
+    public TelecomServicesSummary1 setBllgStmtPrdEnd(Calendar value) {
         this.bllgStmtPrdEnd = value;
         return this;
     }
@@ -134,8 +134,8 @@ public class TelecomServicesSummary1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the bllgEvt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the bllgEvt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -149,10 +149,12 @@ public class TelecomServicesSummary1 {
      * {@link Amount10 }
      * 
      * 
+     * @return
+     *     The value of the bllgEvt property.
      */
     public List<Amount10> getBllgEvt() {
         if (bllgEvt == null) {
-            bllgEvt = new ArrayList<Amount10>();
+            bllgEvt = new ArrayList<>();
         }
         return this.bllgEvt;
     }
@@ -163,8 +165,8 @@ public class TelecomServicesSummary1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ttlTax property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ttlTax property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -178,10 +180,12 @@ public class TelecomServicesSummary1 {
      * {@link Tax33 }
      * 
      * 
+     * @return
+     *     The value of the ttlTax property.
      */
     public List<Tax33> getTtlTax() {
         if (ttlTax == null) {
-            ttlTax = new ArrayList<Tax33>();
+            ttlTax = new ArrayList<>();
         }
         return this.ttlTax;
     }

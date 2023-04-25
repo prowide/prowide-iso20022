@@ -3,15 +3,15 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -57,7 +57,7 @@ public class CardPaymentTransactionDetails41 {
     @XmlElement(name = "VldtyDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar vldtyDt;
+    protected Calendar vldtyDt;
     @XmlElement(name = "OnLineRsn")
     @XmlSchemaType(name = "string")
     protected OnLineReason1Code onLineRsn;
@@ -191,7 +191,7 @@ public class CardPaymentTransactionDetails41 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getVldtyDt() {
+    public Calendar getVldtyDt() {
         return vldtyDt;
     }
 
@@ -203,7 +203,7 @@ public class CardPaymentTransactionDetails41 {
      *     {@link String }
      *     
      */
-    public CardPaymentTransactionDetails41 setVldtyDt(XMLGregorianCalendar value) {
+    public CardPaymentTransactionDetails41 setVldtyDt(Calendar value) {
         this.vldtyDt = value;
         return this;
     }
@@ -389,8 +389,8 @@ public class CardPaymentTransactionDetails41 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the saleItm property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the saleItm property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -404,10 +404,12 @@ public class CardPaymentTransactionDetails41 {
      * {@link Product3 }
      * 
      * 
+     * @return
+     *     The value of the saleItm property.
      */
     public List<Product3> getSaleItm() {
         if (saleItm == null) {
-            saleItm = new ArrayList<Product3>();
+            saleItm = new ArrayList<>();
         }
         return this.saleItm;
     }

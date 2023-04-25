@@ -37,8 +37,8 @@ public class AuditTrailOrBusinessError5Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the audtTrl property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the audtTrl property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -52,10 +52,12 @@ public class AuditTrailOrBusinessError5Choice {
      * {@link AuditTrail4 }
      * 
      * 
+     * @return
+     *     The value of the audtTrl property.
      */
     public List<AuditTrail4> getAudtTrl() {
         if (audtTrl == null) {
-            audtTrl = new ArrayList<AuditTrail4>();
+            audtTrl = new ArrayList<>();
         }
         return this.audtTrl;
     }
@@ -66,8 +68,8 @@ public class AuditTrailOrBusinessError5Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the bizErr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the bizErr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -81,10 +83,12 @@ public class AuditTrailOrBusinessError5Choice {
      * {@link ErrorHandling4 }
      * 
      * 
+     * @return
+     *     The value of the bizErr property.
      */
     public List<ErrorHandling4> getBizErr() {
         if (bizErr == null) {
-            bizErr = new ArrayList<ErrorHandling4>();
+            bizErr = new ArrayList<>();
         }
         return this.bizErr;
     }

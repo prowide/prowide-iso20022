@@ -154,8 +154,8 @@ public class VehicleRentalCustomer1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the pmryDrvr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the pmryDrvr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -169,10 +169,12 @@ public class VehicleRentalCustomer1 {
      * {@link DriverInParty1 }
      * 
      * 
+     * @return
+     *     The value of the pmryDrvr property.
      */
     public List<DriverInParty1> getPmryDrvr() {
         if (pmryDrvr == null) {
-            pmryDrvr = new ArrayList<DriverInParty1>();
+            pmryDrvr = new ArrayList<>();
         }
         return this.pmryDrvr;
     }
@@ -183,8 +185,8 @@ public class VehicleRentalCustomer1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlDrvr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlDrvr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -198,10 +200,12 @@ public class VehicleRentalCustomer1 {
      * {@link DriverInParty1 }
      * 
      * 
+     * @return
+     *     The value of the addtlDrvr property.
      */
     public List<DriverInParty1> getAddtlDrvr() {
         if (addtlDrvr == null) {
-            addtlDrvr = new ArrayList<DriverInParty1>();
+            addtlDrvr = new ArrayList<>();
         }
         return this.addtlDrvr;
     }

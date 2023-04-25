@@ -62,8 +62,8 @@ public class UnderlyingTransaction10 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the txInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the txInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -77,10 +77,12 @@ public class UnderlyingTransaction10 {
      * {@link PaymentTransaction55 }
      * 
      * 
+     * @return
+     *     The value of the txInf property.
      */
     public List<PaymentTransaction55> getTxInf() {
         if (txInf == null) {
-            txInf = new ArrayList<PaymentTransaction55>();
+            txInf = new ArrayList<>();
         }
         return this.txInf;
     }

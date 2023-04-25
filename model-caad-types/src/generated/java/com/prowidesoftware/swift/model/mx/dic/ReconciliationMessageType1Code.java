@@ -9,55 +9,54 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for ReconciliationMessageType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ReconciliationMessageType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="BATR"/&gt;
- *     &lt;enumeration value="CAMI"/&gt;
- *     &lt;enumeration value="CAMR"/&gt;
- *     &lt;enumeration value="CGBI"/&gt;
- *     &lt;enumeration value="CGBR"/&gt;
- *     &lt;enumeration value="EROR"/&gt;
- *     &lt;enumeration value="FECI"/&gt;
- *     &lt;enumeration value="FECR"/&gt;
- *     &lt;enumeration value="FIAI"/&gt;
- *     &lt;enumeration value="FIAR"/&gt;
- *     &lt;enumeration value="FINR"/&gt;
- *     &lt;enumeration value="FINI"/&gt;
- *     &lt;enumeration value="FRDI"/&gt;
- *     &lt;enumeration value="FRDR"/&gt;
- *     &lt;enumeration value="FRRI"/&gt;
- *     &lt;enumeration value="FRRR"/&gt;
- *     &lt;enumeration value="INQI"/&gt;
- *     &lt;enumeration value="INQR"/&gt;
- *     &lt;enumeration value="KYEI"/&gt;
- *     &lt;enumeration value="KYER"/&gt;
- *     &lt;enumeration value="NWMI"/&gt;
- *     &lt;enumeration value="NWMR"/&gt;
- *     &lt;enumeration value="RECI"/&gt;
- *     &lt;enumeration value="RECR"/&gt;
- *     &lt;enumeration value="RTFI"/&gt;
- *     &lt;enumeration value="RTFR"/&gt;
- *     &lt;enumeration value="RTRR"/&gt;
- *     &lt;enumeration value="RTRI"/&gt;
- *     &lt;enumeration value="REVI"/&gt;
- *     &lt;enumeration value="REVR"/&gt;
- *     &lt;enumeration value="SERI"/&gt;
- *     &lt;enumeration value="SERR"/&gt;
- *     &lt;enumeration value="VERI"/&gt;
- *     &lt;enumeration value="VERR"/&gt;
- *     &lt;enumeration value="AMDT"/&gt;
- *     &lt;enumeration value="ATHI"/&gt;
- *     &lt;enumeration value="ATHR"/&gt;
- *     &lt;enumeration value="BAMI"/&gt;
- *     &lt;enumeration value="BAMR"/&gt;
- *     &lt;enumeration value="BATI"/&gt;
- *     &lt;enumeration value="ADDI"/&gt;
- *     &lt;enumeration value="ADDR"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ReconciliationMessageType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="BATR"/>
+ *     <enumeration value="CAMI"/>
+ *     <enumeration value="CAMR"/>
+ *     <enumeration value="CGBI"/>
+ *     <enumeration value="CGBR"/>
+ *     <enumeration value="EROR"/>
+ *     <enumeration value="FECI"/>
+ *     <enumeration value="FECR"/>
+ *     <enumeration value="FIAI"/>
+ *     <enumeration value="FIAR"/>
+ *     <enumeration value="FINR"/>
+ *     <enumeration value="FINI"/>
+ *     <enumeration value="FRDI"/>
+ *     <enumeration value="FRDR"/>
+ *     <enumeration value="FRRI"/>
+ *     <enumeration value="FRRR"/>
+ *     <enumeration value="INQI"/>
+ *     <enumeration value="INQR"/>
+ *     <enumeration value="KYEI"/>
+ *     <enumeration value="KYER"/>
+ *     <enumeration value="NWMI"/>
+ *     <enumeration value="NWMR"/>
+ *     <enumeration value="RECI"/>
+ *     <enumeration value="RECR"/>
+ *     <enumeration value="RTFI"/>
+ *     <enumeration value="RTFR"/>
+ *     <enumeration value="RTRR"/>
+ *     <enumeration value="RTRI"/>
+ *     <enumeration value="REVI"/>
+ *     <enumeration value="REVR"/>
+ *     <enumeration value="SERI"/>
+ *     <enumeration value="SERR"/>
+ *     <enumeration value="VERI"/>
+ *     <enumeration value="VERR"/>
+ *     <enumeration value="AMDT"/>
+ *     <enumeration value="ATHI"/>
+ *     <enumeration value="ATHR"/>
+ *     <enumeration value="BAMI"/>
+ *     <enumeration value="BAMR"/>
+ *     <enumeration value="BATI"/>
+ *     <enumeration value="ADDI"/>
+ *     <enumeration value="ADDR"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ReconciliationMessageType1Code")

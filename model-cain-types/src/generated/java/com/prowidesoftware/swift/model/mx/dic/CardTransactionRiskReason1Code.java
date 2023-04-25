@@ -9,33 +9,32 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for CardTransactionRiskReason1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CardTransactionRiskReason1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="APDP"/&gt;
- *     &lt;enumeration value="APDL"/&gt;
- *     &lt;enumeration value="ATHA"/&gt;
- *     &lt;enumeration value="CRDC"/&gt;
- *     &lt;enumeration value="ECMA"/&gt;
- *     &lt;enumeration value="EXCD"/&gt;
- *     &lt;enumeration value="FGNA"/&gt;
- *     &lt;enumeration value="GEOA"/&gt;
- *     &lt;enumeration value="MCCH"/&gt;
- *     &lt;enumeration value="KEYA"/&gt;
- *     &lt;enumeration value="MCCA"/&gt;
- *     &lt;enumeration value="AMNT"/&gt;
- *     &lt;enumeration value="CRDF"/&gt;
- *     &lt;enumeration value="MRCF"/&gt;
- *     &lt;enumeration value="TXCA"/&gt;
- *     &lt;enumeration value="TXNB"/&gt;
- *     &lt;enumeration value="TXTM"/&gt;
- *     &lt;enumeration value="TMIN"/&gt;
- *     &lt;enumeration value="TXTP"/&gt;
- *     &lt;enumeration value="UATA"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CardTransactionRiskReason1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="APDP"/>
+ *     <enumeration value="APDL"/>
+ *     <enumeration value="ATHA"/>
+ *     <enumeration value="CRDC"/>
+ *     <enumeration value="ECMA"/>
+ *     <enumeration value="EXCD"/>
+ *     <enumeration value="FGNA"/>
+ *     <enumeration value="GEOA"/>
+ *     <enumeration value="MCCH"/>
+ *     <enumeration value="KEYA"/>
+ *     <enumeration value="MCCA"/>
+ *     <enumeration value="AMNT"/>
+ *     <enumeration value="CRDF"/>
+ *     <enumeration value="MRCF"/>
+ *     <enumeration value="TXCA"/>
+ *     <enumeration value="TXNB"/>
+ *     <enumeration value="TXTM"/>
+ *     <enumeration value="TMIN"/>
+ *     <enumeration value="TXTP"/>
+ *     <enumeration value="UATA"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CardTransactionRiskReason1Code")

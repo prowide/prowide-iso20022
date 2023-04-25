@@ -9,27 +9,26 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for TerminalManagementActionResult1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="TerminalManagementActionResult1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ACCD"/&gt;
- *     &lt;enumeration value="CNTE"/&gt;
- *     &lt;enumeration value="FMTE"/&gt;
- *     &lt;enumeration value="INVC"/&gt;
- *     &lt;enumeration value="LENE"/&gt;
- *     &lt;enumeration value="OVER"/&gt;
- *     &lt;enumeration value="MISS"/&gt;
- *     &lt;enumeration value="NSUP"/&gt;
- *     &lt;enumeration value="SIGE"/&gt;
- *     &lt;enumeration value="SUCC"/&gt;
- *     &lt;enumeration value="SYNE"/&gt;
- *     &lt;enumeration value="TIMO"/&gt;
- *     &lt;enumeration value="UKDT"/&gt;
- *     &lt;enumeration value="UKRF"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="TerminalManagementActionResult1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ACCD"/>
+ *     <enumeration value="CNTE"/>
+ *     <enumeration value="FMTE"/>
+ *     <enumeration value="INVC"/>
+ *     <enumeration value="LENE"/>
+ *     <enumeration value="OVER"/>
+ *     <enumeration value="MISS"/>
+ *     <enumeration value="NSUP"/>
+ *     <enumeration value="SIGE"/>
+ *     <enumeration value="SUCC"/>
+ *     <enumeration value="SYNE"/>
+ *     <enumeration value="TIMO"/>
+ *     <enumeration value="UKDT"/>
+ *     <enumeration value="UKRF"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "TerminalManagementActionResult1Code")

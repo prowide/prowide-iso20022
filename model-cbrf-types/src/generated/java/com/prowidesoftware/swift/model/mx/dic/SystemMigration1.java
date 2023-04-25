@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -36,7 +36,7 @@ public class SystemMigration1 {
     @XmlElement(name = "PlandMgrtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar plandMgrtnDt;
+    protected Calendar plandMgrtnDt;
     @XmlElement(name = "BalRcvdInd")
     protected Boolean balRcvdInd;
     @XmlElement(name = "Mgrtd")
@@ -44,7 +44,7 @@ public class SystemMigration1 {
     @XmlElement(name = "LastDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar lastDt;
+    protected Calendar lastDt;
 
     /**
      * Gets the value of the npsPtcptInd property.
@@ -79,7 +79,7 @@ public class SystemMigration1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getPlandMgrtnDt() {
+    public Calendar getPlandMgrtnDt() {
         return plandMgrtnDt;
     }
 
@@ -91,7 +91,7 @@ public class SystemMigration1 {
      *     {@link String }
      *     
      */
-    public SystemMigration1 setPlandMgrtnDt(XMLGregorianCalendar value) {
+    public SystemMigration1 setPlandMgrtnDt(Calendar value) {
         this.plandMgrtnDt = value;
         return this;
     }
@@ -154,7 +154,7 @@ public class SystemMigration1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getLastDt() {
+    public Calendar getLastDt() {
         return lastDt;
     }
 
@@ -166,7 +166,7 @@ public class SystemMigration1 {
      *     {@link String }
      *     
      */
-    public SystemMigration1 setLastDt(XMLGregorianCalendar value) {
+    public SystemMigration1 setLastDt(Calendar value) {
         this.lastDt = value;
         return this;
     }

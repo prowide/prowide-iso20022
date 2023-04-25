@@ -2,15 +2,15 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -51,7 +51,7 @@ public class OriginalNotificationReference8 {
     @XmlElement(name = "XpctdValDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar xpctdValDt;
+    protected Calendar xpctdValDt;
     @XmlElement(name = "Dbtr")
     protected Party12Choice dbtr;
     @XmlElement(name = "DbtrAgt")
@@ -194,7 +194,7 @@ public class OriginalNotificationReference8 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getXpctdValDt() {
+    public Calendar getXpctdValDt() {
         return xpctdValDt;
     }
 
@@ -206,7 +206,7 @@ public class OriginalNotificationReference8 {
      *     {@link String }
      *     
      */
-    public OriginalNotificationReference8 setXpctdValDt(XMLGregorianCalendar value) {
+    public OriginalNotificationReference8 setXpctdValDt(Calendar value) {
         this.xpctdValDt = value;
         return this;
     }
@@ -292,8 +292,8 @@ public class OriginalNotificationReference8 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the orgnlItm property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the orgnlItm property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -307,10 +307,12 @@ public class OriginalNotificationReference8 {
      * {@link OriginalItem5 }
      * 
      * 
+     * @return
+     *     The value of the orgnlItm property.
      */
     public List<OriginalItem5> getOrgnlItm() {
         if (orgnlItm == null) {
-            orgnlItm = new ArrayList<OriginalItem5>();
+            orgnlItm = new ArrayList<>();
         }
         return this.orgnlItm;
     }

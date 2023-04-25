@@ -9,21 +9,20 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for ATMSecurityScheme2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ATMSecurityScheme2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="APPK"/&gt;
- *     &lt;enumeration value="CERT"/&gt;
- *     &lt;enumeration value="FRAN"/&gt;
- *     &lt;enumeration value="DTCH"/&gt;
- *     &lt;enumeration value="LUXG"/&gt;
- *     &lt;enumeration value="MANU"/&gt;
- *     &lt;enumeration value="PKIP"/&gt;
- *     &lt;enumeration value="SIGN"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ATMSecurityScheme2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="APPK"/>
+ *     <enumeration value="CERT"/>
+ *     <enumeration value="FRAN"/>
+ *     <enumeration value="DTCH"/>
+ *     <enumeration value="LUXG"/>
+ *     <enumeration value="MANU"/>
+ *     <enumeration value="PKIP"/>
+ *     <enumeration value="SIGN"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ATMSecurityScheme2Code")

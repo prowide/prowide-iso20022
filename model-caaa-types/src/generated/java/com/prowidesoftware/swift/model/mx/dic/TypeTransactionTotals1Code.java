@@ -9,17 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for TypeTransactionTotals1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="TypeTransactionTotals1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="DEBT"/&gt;
- *     &lt;enumeration value="DBTR"/&gt;
- *     &lt;enumeration value="CRDT"/&gt;
- *     &lt;enumeration value="CRDR"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="TypeTransactionTotals1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="DEBT"/>
+ *     <enumeration value="DBTR"/>
+ *     <enumeration value="CRDT"/>
+ *     <enumeration value="CRDR"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "TypeTransactionTotals1Code")

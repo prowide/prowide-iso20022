@@ -9,20 +9,19 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for DisputeResolutionType2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="DisputeResolutionType2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="RECO"/&gt;
- *     &lt;enumeration value="REEX"/&gt;
- *     &lt;enumeration value="RETH"/&gt;
- *     &lt;enumeration value="RMTA"/&gt;
- *     &lt;enumeration value="RERO"/&gt;
- *     &lt;enumeration value="REVF"/&gt;
- *     &lt;enumeration value="RNIA"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="DisputeResolutionType2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="RECO"/>
+ *     <enumeration value="REEX"/>
+ *     <enumeration value="RETH"/>
+ *     <enumeration value="RMTA"/>
+ *     <enumeration value="RERO"/>
+ *     <enumeration value="REVF"/>
+ *     <enumeration value="RNIA"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "DisputeResolutionType2Code")

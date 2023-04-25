@@ -9,50 +9,49 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for ExposureType14Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ExposureType14Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="BFWD"/&gt;
- *     &lt;enumeration value="PAYM"/&gt;
- *     &lt;enumeration value="CBCO"/&gt;
- *     &lt;enumeration value="COMM"/&gt;
- *     &lt;enumeration value="CRDS"/&gt;
- *     &lt;enumeration value="CRTL"/&gt;
- *     &lt;enumeration value="CRSP"/&gt;
- *     &lt;enumeration value="CCIR"/&gt;
- *     &lt;enumeration value="CRPR"/&gt;
- *     &lt;enumeration value="EQPT"/&gt;
- *     &lt;enumeration value="EQUS"/&gt;
- *     &lt;enumeration value="EXTD"/&gt;
- *     &lt;enumeration value="EXPT"/&gt;
- *     &lt;enumeration value="FIXI"/&gt;
- *     &lt;enumeration value="FORX"/&gt;
- *     &lt;enumeration value="FORW"/&gt;
- *     &lt;enumeration value="FUTR"/&gt;
- *     &lt;enumeration value="OPTN"/&gt;
- *     &lt;enumeration value="LIQU"/&gt;
- *     &lt;enumeration value="OTCD"/&gt;
- *     &lt;enumeration value="RVPO"/&gt;
- *     &lt;enumeration value="SLOA"/&gt;
- *     &lt;enumeration value="SBSC"/&gt;
- *     &lt;enumeration value="SCRP"/&gt;
- *     &lt;enumeration value="SLEB"/&gt;
- *     &lt;enumeration value="SCIR"/&gt;
- *     &lt;enumeration value="SCIE"/&gt;
- *     &lt;enumeration value="SWPT"/&gt;
- *     &lt;enumeration value="TBAS"/&gt;
- *     &lt;enumeration value="TRCP"/&gt;
- *     &lt;enumeration value="UDMS"/&gt;
- *     &lt;enumeration value="CCPC"/&gt;
- *     &lt;enumeration value="EQUI"/&gt;
- *     &lt;enumeration value="TRBD"/&gt;
- *     &lt;enumeration value="REPO"/&gt;
- *     &lt;enumeration value="SHSL"/&gt;
- *     &lt;enumeration value="MGLD"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ExposureType14Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="BFWD"/>
+ *     <enumeration value="PAYM"/>
+ *     <enumeration value="CBCO"/>
+ *     <enumeration value="COMM"/>
+ *     <enumeration value="CRDS"/>
+ *     <enumeration value="CRTL"/>
+ *     <enumeration value="CRSP"/>
+ *     <enumeration value="CCIR"/>
+ *     <enumeration value="CRPR"/>
+ *     <enumeration value="EQPT"/>
+ *     <enumeration value="EQUS"/>
+ *     <enumeration value="EXTD"/>
+ *     <enumeration value="EXPT"/>
+ *     <enumeration value="FIXI"/>
+ *     <enumeration value="FORX"/>
+ *     <enumeration value="FORW"/>
+ *     <enumeration value="FUTR"/>
+ *     <enumeration value="OPTN"/>
+ *     <enumeration value="LIQU"/>
+ *     <enumeration value="OTCD"/>
+ *     <enumeration value="RVPO"/>
+ *     <enumeration value="SLOA"/>
+ *     <enumeration value="SBSC"/>
+ *     <enumeration value="SCRP"/>
+ *     <enumeration value="SLEB"/>
+ *     <enumeration value="SCIR"/>
+ *     <enumeration value="SCIE"/>
+ *     <enumeration value="SWPT"/>
+ *     <enumeration value="TBAS"/>
+ *     <enumeration value="TRCP"/>
+ *     <enumeration value="UDMS"/>
+ *     <enumeration value="CCPC"/>
+ *     <enumeration value="EQUI"/>
+ *     <enumeration value="TRBD"/>
+ *     <enumeration value="REPO"/>
+ *     <enumeration value="SHSL"/>
+ *     <enumeration value="MGLD"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ExposureType14Code")

@@ -89,8 +89,8 @@ public class CardAcquisitionRequest3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the allwdPmtBrnd property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the allwdPmtBrnd property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -104,10 +104,12 @@ public class CardAcquisitionRequest3 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the allwdPmtBrnd property.
      */
     public List<String> getAllwdPmtBrnd() {
         if (allwdPmtBrnd == null) {
-            allwdPmtBrnd = new ArrayList<String>();
+            allwdPmtBrnd = new ArrayList<>();
         }
         return this.allwdPmtBrnd;
     }
@@ -118,8 +120,8 @@ public class CardAcquisitionRequest3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the allwdLltyBrnd property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the allwdLltyBrnd property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -133,10 +135,12 @@ public class CardAcquisitionRequest3 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the allwdLltyBrnd property.
      */
     public List<String> getAllwdLltyBrnd() {
         if (allwdLltyBrnd == null) {
-            allwdLltyBrnd = new ArrayList<String>();
+            allwdLltyBrnd = new ArrayList<>();
         }
         return this.allwdLltyBrnd;
     }

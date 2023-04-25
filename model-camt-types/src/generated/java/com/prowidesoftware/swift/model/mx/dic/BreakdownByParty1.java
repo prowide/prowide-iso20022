@@ -96,8 +96,8 @@ public class BreakdownByParty1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cshInFcst property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cshInFcst property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -111,10 +111,12 @@ public class BreakdownByParty1 {
      * {@link CashInForecast3 }
      * 
      * 
+     * @return
+     *     The value of the cshInFcst property.
      */
     public List<CashInForecast3> getCshInFcst() {
         if (cshInFcst == null) {
-            cshInFcst = new ArrayList<CashInForecast3>();
+            cshInFcst = new ArrayList<>();
         }
         return this.cshInFcst;
     }
@@ -125,8 +127,8 @@ public class BreakdownByParty1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cshOutFcst property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cshOutFcst property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -140,10 +142,12 @@ public class BreakdownByParty1 {
      * {@link CashOutForecast3 }
      * 
      * 
+     * @return
+     *     The value of the cshOutFcst property.
      */
     public List<CashOutForecast3> getCshOutFcst() {
         if (cshOutFcst == null) {
-            cshOutFcst = new ArrayList<CashOutForecast3>();
+            cshOutFcst = new ArrayList<>();
         }
         return this.cshOutFcst;
     }
@@ -154,8 +158,8 @@ public class BreakdownByParty1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the netCshFcst property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the netCshFcst property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -169,10 +173,12 @@ public class BreakdownByParty1 {
      * {@link NetCashForecast2 }
      * 
      * 
+     * @return
+     *     The value of the netCshFcst property.
      */
     public List<NetCashForecast2> getNetCshFcst() {
         if (netCshFcst == null) {
-            netCshFcst = new ArrayList<NetCashForecast2>();
+            netCshFcst = new ArrayList<>();
         }
         return this.netCshFcst;
     }

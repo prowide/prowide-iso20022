@@ -9,34 +9,33 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for MessageFunction1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="MessageFunction1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="AUTQ"/&gt;
- *     &lt;enumeration value="AUTP"/&gt;
- *     &lt;enumeration value="FAUQ"/&gt;
- *     &lt;enumeration value="FAUP"/&gt;
- *     &lt;enumeration value="CMPV"/&gt;
- *     &lt;enumeration value="CMPK"/&gt;
- *     &lt;enumeration value="FCMV"/&gt;
- *     &lt;enumeration value="FCMK"/&gt;
- *     &lt;enumeration value="RVRA"/&gt;
- *     &lt;enumeration value="RVRR"/&gt;
- *     &lt;enumeration value="FRVA"/&gt;
- *     &lt;enumeration value="FRVR"/&gt;
- *     &lt;enumeration value="CCAQ"/&gt;
- *     &lt;enumeration value="CCAP"/&gt;
- *     &lt;enumeration value="CCAV"/&gt;
- *     &lt;enumeration value="CCAK"/&gt;
- *     &lt;enumeration value="DGNP"/&gt;
- *     &lt;enumeration value="DGNQ"/&gt;
- *     &lt;enumeration value="RCLQ"/&gt;
- *     &lt;enumeration value="RCLP"/&gt;
- *     &lt;enumeration value="RJCT"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="MessageFunction1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="AUTQ"/>
+ *     <enumeration value="AUTP"/>
+ *     <enumeration value="FAUQ"/>
+ *     <enumeration value="FAUP"/>
+ *     <enumeration value="CMPV"/>
+ *     <enumeration value="CMPK"/>
+ *     <enumeration value="FCMV"/>
+ *     <enumeration value="FCMK"/>
+ *     <enumeration value="RVRA"/>
+ *     <enumeration value="RVRR"/>
+ *     <enumeration value="FRVA"/>
+ *     <enumeration value="FRVR"/>
+ *     <enumeration value="CCAQ"/>
+ *     <enumeration value="CCAP"/>
+ *     <enumeration value="CCAV"/>
+ *     <enumeration value="CCAK"/>
+ *     <enumeration value="DGNP"/>
+ *     <enumeration value="DGNQ"/>
+ *     <enumeration value="RCLQ"/>
+ *     <enumeration value="RCLP"/>
+ *     <enumeration value="RJCT"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "MessageFunction1Code")

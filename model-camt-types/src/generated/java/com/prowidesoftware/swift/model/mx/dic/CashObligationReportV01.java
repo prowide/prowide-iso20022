@@ -151,8 +151,8 @@ public class CashObligationReportV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sttlmAcctNetPos property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sttlmAcctNetPos property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -166,10 +166,12 @@ public class CashObligationReportV01 {
      * {@link CashNetPosition2 }
      * 
      * 
+     * @return
+     *     The value of the sttlmAcctNetPos property.
      */
     public List<CashNetPosition2> getSttlmAcctNetPos() {
         if (sttlmAcctNetPos == null) {
-            sttlmAcctNetPos = new ArrayList<CashNetPosition2>();
+            sttlmAcctNetPos = new ArrayList<>();
         }
         return this.sttlmAcctNetPos;
     }
@@ -180,8 +182,8 @@ public class CashObligationReportV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -195,10 +197,12 @@ public class CashObligationReportV01 {
      * {@link SupplementaryData1 }
      * 
      * 
+     * @return
+     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<SupplementaryData1>();
+            splmtryData = new ArrayList<>();
         }
         return this.splmtryData;
     }

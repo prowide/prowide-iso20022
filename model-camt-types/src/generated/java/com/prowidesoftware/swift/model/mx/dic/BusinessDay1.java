@@ -37,8 +37,8 @@ public class BusinessDay1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sysId property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sysId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -52,10 +52,12 @@ public class BusinessDay1 {
      * {@link SystemIdentification2Choice }
      * 
      * 
+     * @return
+     *     The value of the sysId property.
      */
     public List<SystemIdentification2Choice> getSysId() {
         if (sysId == null) {
-            sysId = new ArrayList<SystemIdentification2Choice>();
+            sysId = new ArrayList<>();
         }
         return this.sysId;
     }

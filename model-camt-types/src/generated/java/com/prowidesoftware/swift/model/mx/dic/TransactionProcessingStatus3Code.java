@@ -9,17 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for TransactionProcessingStatus3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="TransactionProcessingStatus3Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CAND"/&gt;
- *     &lt;enumeration value="PACK"/&gt;
- *     &lt;enumeration value="REJT"/&gt;
- *     &lt;enumeration value="REPR"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="TransactionProcessingStatus3Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CAND"/>
+ *     <enumeration value="PACK"/>
+ *     <enumeration value="REJT"/>
+ *     <enumeration value="REPR"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "TransactionProcessingStatus3Code")

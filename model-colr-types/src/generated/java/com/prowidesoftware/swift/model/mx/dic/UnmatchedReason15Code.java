@@ -9,39 +9,38 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for UnmatchedReason15Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="UnmatchedReason15Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CPCA"/&gt;
- *     &lt;enumeration value="DCBS"/&gt;
- *     &lt;enumeration value="TMOP"/&gt;
- *     &lt;enumeration value="OPTP"/&gt;
- *     &lt;enumeration value="OFRF"/&gt;
- *     &lt;enumeration value="SPRD"/&gt;
- *     &lt;enumeration value="RITP"/&gt;
- *     &lt;enumeration value="RATE"/&gt;
- *     &lt;enumeration value="TMCY"/&gt;
- *     &lt;enumeration value="TXCY"/&gt;
- *     &lt;enumeration value="TXAM"/&gt;
- *     &lt;enumeration value="MNTP"/&gt;
- *     &lt;enumeration value="EGSP"/&gt;
- *     &lt;enumeration value="EXPO"/&gt;
- *     &lt;enumeration value="DTRD"/&gt;
- *     &lt;enumeration value="REDT"/&gt;
- *     &lt;enumeration value="CMIS"/&gt;
- *     &lt;enumeration value="TFRT"/&gt;
- *     &lt;enumeration value="TERM"/&gt;
- *     &lt;enumeration value="INPD"/&gt;
- *     &lt;enumeration value="PYFQ"/&gt;
- *     &lt;enumeration value="CSAC"/&gt;
- *     &lt;enumeration value="LBKD"/&gt;
- *     &lt;enumeration value="CRYD"/&gt;
- *     &lt;enumeration value="TENO"/&gt;
- *     &lt;enumeration value="SEPR"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="UnmatchedReason15Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CPCA"/>
+ *     <enumeration value="DCBS"/>
+ *     <enumeration value="TMOP"/>
+ *     <enumeration value="OPTP"/>
+ *     <enumeration value="OFRF"/>
+ *     <enumeration value="SPRD"/>
+ *     <enumeration value="RITP"/>
+ *     <enumeration value="RATE"/>
+ *     <enumeration value="TMCY"/>
+ *     <enumeration value="TXCY"/>
+ *     <enumeration value="TXAM"/>
+ *     <enumeration value="MNTP"/>
+ *     <enumeration value="EGSP"/>
+ *     <enumeration value="EXPO"/>
+ *     <enumeration value="DTRD"/>
+ *     <enumeration value="REDT"/>
+ *     <enumeration value="CMIS"/>
+ *     <enumeration value="TFRT"/>
+ *     <enumeration value="TERM"/>
+ *     <enumeration value="INPD"/>
+ *     <enumeration value="PYFQ"/>
+ *     <enumeration value="CSAC"/>
+ *     <enumeration value="LBKD"/>
+ *     <enumeration value="CRYD"/>
+ *     <enumeration value="TENO"/>
+ *     <enumeration value="SEPR"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "UnmatchedReason15Code")

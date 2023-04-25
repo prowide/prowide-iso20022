@@ -37,8 +37,8 @@ public class Limits7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the curLmt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the curLmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -52,10 +52,12 @@ public class Limits7 {
      * {@link LimitReport7 }
      * 
      * 
+     * @return
+     *     The value of the curLmt property.
      */
     public List<LimitReport7> getCurLmt() {
         if (curLmt == null) {
-            curLmt = new ArrayList<LimitReport7>();
+            curLmt = new ArrayList<>();
         }
         return this.curLmt;
     }
@@ -66,8 +68,8 @@ public class Limits7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dfltLmt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the dfltLmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -81,10 +83,12 @@ public class Limits7 {
      * {@link LimitReport7 }
      * 
      * 
+     * @return
+     *     The value of the dfltLmt property.
      */
     public List<LimitReport7> getDfltLmt() {
         if (dfltLmt == null) {
-            dfltLmt = new ArrayList<LimitReport7>();
+            dfltLmt = new ArrayList<>();
         }
         return this.dfltLmt;
     }

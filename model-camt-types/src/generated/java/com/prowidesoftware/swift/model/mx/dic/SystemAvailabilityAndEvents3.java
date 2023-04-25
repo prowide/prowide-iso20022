@@ -93,8 +93,8 @@ public class SystemAvailabilityAndEvents3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the evt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the evt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -108,10 +108,12 @@ public class SystemAvailabilityAndEvents3 {
      * {@link SystemEvent3 }
      * 
      * 
+     * @return
+     *     The value of the evt property.
      */
     public List<SystemEvent3> getEvt() {
         if (evt == null) {
-            evt = new ArrayList<SystemEvent3>();
+            evt = new ArrayList<>();
         }
         return this.evt;
     }
@@ -122,8 +124,8 @@ public class SystemAvailabilityAndEvents3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the clsrInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the clsrInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -137,10 +139,12 @@ public class SystemAvailabilityAndEvents3 {
      * {@link SystemClosure2 }
      * 
      * 
+     * @return
+     *     The value of the clsrInf property.
      */
     public List<SystemClosure2> getClsrInf() {
         if (clsrInf == null) {
-            clsrInf = new ArrayList<SystemClosure2>();
+            clsrInf = new ArrayList<>();
         }
         return this.clsrInf;
     }

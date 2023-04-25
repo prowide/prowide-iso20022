@@ -2,16 +2,16 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -35,11 +35,11 @@ public class AccountStatementData2 {
     @XmlElement(name = "StmtDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar stmtDt;
+    protected Calendar stmtDt;
     @XmlElement(name = "StmtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected XMLGregorianCalendar stmtTm;
+    protected Calendar stmtTm;
     @XmlElement(name = "AcctStmt")
     protected List<AccountStatementDetails2> acctStmt;
 
@@ -51,7 +51,7 @@ public class AccountStatementData2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getStmtDt() {
+    public Calendar getStmtDt() {
         return stmtDt;
     }
 
@@ -63,7 +63,7 @@ public class AccountStatementData2 {
      *     {@link String }
      *     
      */
-    public AccountStatementData2 setStmtDt(XMLGregorianCalendar value) {
+    public AccountStatementData2 setStmtDt(Calendar value) {
         this.stmtDt = value;
         return this;
     }
@@ -76,7 +76,7 @@ public class AccountStatementData2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getStmtTm() {
+    public Calendar getStmtTm() {
         return stmtTm;
     }
 
@@ -88,7 +88,7 @@ public class AccountStatementData2 {
      *     {@link String }
      *     
      */
-    public AccountStatementData2 setStmtTm(XMLGregorianCalendar value) {
+    public AccountStatementData2 setStmtTm(Calendar value) {
         this.stmtTm = value;
         return this;
     }
@@ -99,8 +99,8 @@ public class AccountStatementData2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the acctStmt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the acctStmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -114,10 +114,12 @@ public class AccountStatementData2 {
      * {@link AccountStatementDetails2 }
      * 
      * 
+     * @return
+     *     The value of the acctStmt property.
      */
     public List<AccountStatementDetails2> getAcctStmt() {
         if (acctStmt == null) {
-            acctStmt = new ArrayList<AccountStatementDetails2>();
+            acctStmt = new ArrayList<>();
         }
         return this.acctStmt;
     }
