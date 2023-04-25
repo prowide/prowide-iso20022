@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -31,11 +31,11 @@ public class CompareDate2 {
     @XmlElement(name = "Val1", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar val1;
+    protected Calendar val1;
     @XmlElement(name = "Val2", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar val2;
+    protected Calendar val2;
 
     /**
      * Gets the value of the val1 property.
@@ -45,7 +45,7 @@ public class CompareDate2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getVal1() {
+    public Calendar getVal1() {
         return val1;
     }
 
@@ -57,7 +57,7 @@ public class CompareDate2 {
      *     {@link String }
      *     
      */
-    public CompareDate2 setVal1(XMLGregorianCalendar value) {
+    public CompareDate2 setVal1(Calendar value) {
         this.val1 = value;
         return this;
     }
@@ -70,7 +70,7 @@ public class CompareDate2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getVal2() {
+    public Calendar getVal2() {
         return val2;
     }
 
@@ -82,7 +82,7 @@ public class CompareDate2 {
      *     {@link String }
      *     
      */
-    public CompareDate2 setVal2(XMLGregorianCalendar value) {
+    public CompareDate2 setVal2(Calendar value) {
         this.val2 = value;
         return this;
     }

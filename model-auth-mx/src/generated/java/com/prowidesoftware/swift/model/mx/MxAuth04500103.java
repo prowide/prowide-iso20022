@@ -2,13 +2,16 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.swift.model.mx.dic.*;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -30,13 +33,13 @@ public class MxAuth04500103
 
     @XmlElement(name = "FinInstrmRptgNonEqtyTradgActvtyRslt", required = true)
     protected FinancialInstrumentReportingNonEquityTradingActivityResultV03 finInstrmRptgNonEqtyTradgActvtyRslt;
-    public final static transient String BUSINESS_PROCESS = "auth";
-    public final static transient int FUNCTIONALITY = 45;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 3;
+    public static final transient String BUSINESS_PROCESS = "auth";
+    public static final transient int FUNCTIONALITY = 45;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 3;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {ActiveOrHistoricCurrencyAndAmount.class, AssetClassAndSubClassIdentification2 .class, FinancialInstrumentReportingNonEquityTradingActivityResultV03 .class, InstrumentAndSubClassIdentification2 .class, InstrumentOrSubClassIdentification2Choice.class, MxAuth04500103 .class, NonEquityAssetClass1Code.class, NonEquityInstrumentReportingClassification1Code.class, NonEquitySubClass1 .class, NonEquitySubClassSegmentationCriteria1Code.class, NonEquitySubClassSegmentationCriterion1 .class, Period2 .class, Period4Choice.class, SecuritiesMarketReportHeader1 .class, StatisticsTransparency2 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TonsOrCurrency2Choice.class, TradingVenue2Code.class, TradingVenueIdentification1Choice.class, TradingVenueIdentification2 .class, TransparencyDataReport20 .class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:auth.045.001.03";
+    public static final transient Class[] _classes = new Class[] {ActiveOrHistoricCurrencyAndAmount.class, AssetClassAndSubClassIdentification2 .class, FinancialInstrumentReportingNonEquityTradingActivityResultV03 .class, InstrumentAndSubClassIdentification2 .class, InstrumentOrSubClassIdentification2Choice.class, MxAuth04500103 .class, NonEquityAssetClass1Code.class, NonEquityInstrumentReportingClassification1Code.class, NonEquitySubClass1 .class, NonEquitySubClassSegmentationCriteria1Code.class, NonEquitySubClassSegmentationCriterion1 .class, Period2 .class, Period4Choice.class, SecuritiesMarketReportHeader1 .class, StatisticsTransparency2 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TonsOrCurrency2Choice.class, TradingVenue2Code.class, TradingVenueIdentification1Choice.class, TradingVenueIdentification2 .class, TransparencyDataReport20 .class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:auth.045.001.03";
 
     public MxAuth04500103() {
         super();
@@ -83,21 +86,6 @@ public class MxAuth04500103
     public MxAuth04500103 setFinInstrmRptgNonEqtyTradgActvtyRslt(FinancialInstrumentReportingNonEquityTradingActivityResultV03 value) {
         this.finInstrmRptgNonEqtyTradgActvtyRslt = value;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -170,8 +158,23 @@ public class MxAuth04500103
      * @return
      *     a new instance of MxAuth04500103
      */
-    public final static MxAuth04500103 fromJson(String json) {
+    public static final MxAuth04500103 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxAuth04500103 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

@@ -45,8 +45,8 @@ public class EnergySpecificAttribute6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dlvryPtOrZone property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the dlvryPtOrZone property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -60,10 +60,12 @@ public class EnergySpecificAttribute6 {
      * {@link DeliveryInterconnectionPoint1Choice }
      * 
      * 
+     * @return
+     *     The value of the dlvryPtOrZone property.
      */
     public List<DeliveryInterconnectionPoint1Choice> getDlvryPtOrZone() {
         if (dlvryPtOrZone == null) {
-            dlvryPtOrZone = new ArrayList<DeliveryInterconnectionPoint1Choice>();
+            dlvryPtOrZone = new ArrayList<>();
         }
         return this.dlvryPtOrZone;
     }
@@ -124,8 +126,8 @@ public class EnergySpecificAttribute6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dlvryAttr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the dlvryAttr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -139,10 +141,12 @@ public class EnergySpecificAttribute6 {
      * {@link EnergyDeliveryAttribute5 }
      * 
      * 
+     * @return
+     *     The value of the dlvryAttr property.
      */
     public List<EnergyDeliveryAttribute5> getDlvryAttr() {
         if (dlvryAttr == null) {
-            dlvryAttr = new ArrayList<EnergyDeliveryAttribute5>();
+            dlvryAttr = new ArrayList<>();
         }
         return this.dlvryAttr;
     }

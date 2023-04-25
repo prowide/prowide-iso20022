@@ -65,8 +65,8 @@ public class NewAccount3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the acctPty property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the acctPty property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -80,10 +80,12 @@ public class NewAccount3 {
      * {@link IndividualPerson36 }
      * 
      * 
+     * @return
+     *     The value of the acctPty property.
      */
     public List<IndividualPerson36> getAcctPty() {
         if (acctPty == null) {
-            acctPty = new ArrayList<IndividualPerson36>();
+            acctPty = new ArrayList<>();
         }
         return this.acctPty;
     }

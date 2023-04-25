@@ -2,13 +2,16 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.swift.model.mx.dic.*;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -30,13 +33,13 @@ public class MxAuth09000101
 
     @XmlElement(name = "DerivsTradPosSetRpt", required = true)
     protected DerivativesTradePositionSetReportV01 derivsTradPosSetRpt;
-    public final static transient String BUSINESS_PROCESS = "auth";
-    public final static transient int FUNCTIONALITY = 90;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 1;
+    public static final transient String BUSINESS_PROCESS = "auth";
+    public static final transient int FUNCTIONALITY = 90;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {ActiveOrHistoricCurrencyAnd20Amount.class, BenchmarkCurveName3Code.class, CollateralisationType1Code.class, Counterparty26 .class, Counterparty29 .class, CounterpartyTradeNature5Choice.class, DebtInstrumentSeniorityType2Code.class, DerivativesTradePositionSetReportV01 .class, ExchangeRateBasis1 .class, ExchangeRateBasis1Choice.class, FinancialInstrumentContractType2Code.class, FinancialPartySectorType1Code.class, MasterAgreement2 .class, MaturityTerm2 .class, MxAuth09000101 .class, NoReasonCode.class, NonFinancialInstitutionSector2 .class, OptionParty1Code.class, OptionType2Code.class, OrganisationIdentification30 .class, OrganisationIdentification7Choice.class, OrganisationIdentification8Choice.class, OrganisationIdentification9Choice.class, PositionSet4 .class, PositionSet5 .class, PositionSetAggregated1Choice.class, PositionSetAggregated3 .class, PositionSetBuyerAndSeller1 .class, PositionSetCollateralDimensions2 .class, PositionSetCollateralMetrics1 .class, PositionSetCollateralTotal1 .class, PositionSetDimensions3 .class, PositionSetMetrics1 .class, PositionSetPostedAndReceived1 .class, PositionSetTotal1 .class, PositionSetValueAndNotional1 .class, ProductType4Code.class, RateBasis1Code.class, ReportPeriodActivity1Code.class, SecurityIdentification18Choice.class, SecurityIdentification34Choice.class, SecurityIdentification35Choice.class, SpecialPurpose2Code.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TimeToMaturity1Choice.class, TimeToMaturityPeriod1 .class, TradeCounterpartyReport9 .class, TradingCapacity7Code.class, UnderlyingIdentification1Code.class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:auth.090.001.01";
+    public static final transient Class[] _classes = new Class[] {ActiveOrHistoricCurrencyAnd20Amount.class, BenchmarkCurveName3Code.class, CollateralisationType1Code.class, Counterparty26 .class, Counterparty29 .class, CounterpartyTradeNature5Choice.class, DebtInstrumentSeniorityType2Code.class, DerivativesTradePositionSetReportV01 .class, ExchangeRateBasis1 .class, ExchangeRateBasis1Choice.class, FinancialInstrumentContractType2Code.class, FinancialPartySectorType1Code.class, MasterAgreement2 .class, MaturityTerm2 .class, MxAuth09000101 .class, NoReasonCode.class, NonFinancialInstitutionSector2 .class, OptionParty1Code.class, OptionType2Code.class, OrganisationIdentification30 .class, OrganisationIdentification7Choice.class, OrganisationIdentification8Choice.class, OrganisationIdentification9Choice.class, PositionSet4 .class, PositionSet5 .class, PositionSetAggregated1Choice.class, PositionSetAggregated3 .class, PositionSetBuyerAndSeller1 .class, PositionSetCollateralDimensions2 .class, PositionSetCollateralMetrics1 .class, PositionSetCollateralTotal1 .class, PositionSetDimensions3 .class, PositionSetMetrics1 .class, PositionSetPostedAndReceived1 .class, PositionSetTotal1 .class, PositionSetValueAndNotional1 .class, ProductType4Code.class, RateBasis1Code.class, ReportPeriodActivity1Code.class, SecurityIdentification18Choice.class, SecurityIdentification34Choice.class, SecurityIdentification35Choice.class, SpecialPurpose2Code.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TimeToMaturity1Choice.class, TimeToMaturityPeriod1 .class, TradeCounterpartyReport9 .class, TradingCapacity7Code.class, UnderlyingIdentification1Code.class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:auth.090.001.01";
 
     public MxAuth09000101() {
         super();
@@ -83,21 +86,6 @@ public class MxAuth09000101
     public MxAuth09000101 setDerivsTradPosSetRpt(DerivativesTradePositionSetReportV01 value) {
         this.derivsTradPosSetRpt = value;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -170,8 +158,23 @@ public class MxAuth09000101
      * @return
      *     a new instance of MxAuth09000101
      */
-    public final static MxAuth09000101 fromJson(String json) {
+    public static final MxAuth09000101 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxAuth09000101 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

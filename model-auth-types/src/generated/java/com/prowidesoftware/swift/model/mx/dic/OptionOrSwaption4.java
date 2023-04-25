@@ -2,15 +2,15 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -43,7 +43,7 @@ public class OptionOrSwaption4 {
     @XmlElement(name = "MtrtyDtOfUndrlyg", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar mtrtyDtOfUndrlyg;
+    protected Calendar mtrtyDtOfUndrlyg;
 
     /**
      * Gets the value of the optnTp property.
@@ -101,8 +101,8 @@ public class OptionOrSwaption4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the optnExrcStyle property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the optnExrcStyle property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -116,10 +116,12 @@ public class OptionOrSwaption4 {
      * {@link OptionStyle6Code }
      * 
      * 
+     * @return
+     *     The value of the optnExrcStyle property.
      */
     public List<OptionStyle6Code> getOptnExrcStyle() {
         if (optnExrcStyle == null) {
-            optnExrcStyle = new ArrayList<OptionStyle6Code>();
+            optnExrcStyle = new ArrayList<>();
         }
         return this.optnExrcStyle;
     }
@@ -132,7 +134,7 @@ public class OptionOrSwaption4 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getMtrtyDtOfUndrlyg() {
+    public Calendar getMtrtyDtOfUndrlyg() {
         return mtrtyDtOfUndrlyg;
     }
 
@@ -144,7 +146,7 @@ public class OptionOrSwaption4 {
      *     {@link String }
      *     
      */
-    public OptionOrSwaption4 setMtrtyDtOfUndrlyg(XMLGregorianCalendar value) {
+    public OptionOrSwaption4 setMtrtyDtOfUndrlyg(Calendar value) {
         this.mtrtyDtOfUndrlyg = value;
         return this;
     }

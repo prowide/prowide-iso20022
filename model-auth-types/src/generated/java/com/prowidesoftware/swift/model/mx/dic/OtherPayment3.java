@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -38,7 +38,7 @@ public class OtherPayment3 {
     @XmlElement(name = "PmtDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar pmtDt;
+    protected Calendar pmtDt;
     @XmlElement(name = "PmtPyer")
     protected PartyIdentification235Choice pmtPyer;
     @XmlElement(name = "PmtRcvr")
@@ -102,7 +102,7 @@ public class OtherPayment3 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getPmtDt() {
+    public Calendar getPmtDt() {
         return pmtDt;
     }
 
@@ -114,7 +114,7 @@ public class OtherPayment3 {
      *     {@link String }
      *     
      */
-    public OtherPayment3 setPmtDt(XMLGregorianCalendar value) {
+    public OtherPayment3 setPmtDt(Calendar value) {
         this.pmtDt = value;
         return this;
     }

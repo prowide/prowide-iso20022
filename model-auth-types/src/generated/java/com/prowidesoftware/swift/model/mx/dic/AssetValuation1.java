@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -41,7 +41,7 @@ public class AssetValuation1 {
     @XmlElement(name = "MtrtyDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar mtrtyDt;
+    protected Calendar mtrtyDt;
     @XmlElement(name = "NtnlCcyFrstLeg", required = true)
     protected String ntnlCcyFrstLeg;
     @XmlElement(name = "NtnlCcyScndLeg")
@@ -67,7 +67,7 @@ public class AssetValuation1 {
     @XmlElement(name = "RstDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar rstDt;
+    protected Calendar rstDt;
 
     /**
      * Gets the value of the mtrtyDt property.
@@ -77,7 +77,7 @@ public class AssetValuation1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getMtrtyDt() {
+    public Calendar getMtrtyDt() {
         return mtrtyDt;
     }
 
@@ -89,7 +89,7 @@ public class AssetValuation1 {
      *     {@link String }
      *     
      */
-    public AssetValuation1 setMtrtyDt(XMLGregorianCalendar value) {
+    public AssetValuation1 setMtrtyDt(Calendar value) {
         this.mtrtyDt = value;
         return this;
     }
@@ -352,7 +352,7 @@ public class AssetValuation1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getRstDt() {
+    public Calendar getRstDt() {
         return rstDt;
     }
 
@@ -364,7 +364,7 @@ public class AssetValuation1 {
      *     {@link String }
      *     
      */
-    public AssetValuation1 setRstDt(XMLGregorianCalendar value) {
+    public AssetValuation1 setRstDt(Calendar value) {
         this.rstDt = value;
         return this;
     }

@@ -9,17 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for OptionStyle5Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="OptionStyle5Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="AMER"/&gt;
- *     &lt;enumeration value="ASIA"/&gt;
- *     &lt;enumeration value="BERM"/&gt;
- *     &lt;enumeration value="EURO"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="OptionStyle5Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="AMER"/>
+ *     <enumeration value="ASIA"/>
+ *     <enumeration value="BERM"/>
+ *     <enumeration value="EURO"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "OptionStyle5Code")

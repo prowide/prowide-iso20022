@@ -90,8 +90,8 @@ public class CustomBasket1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cnsttnts property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cnsttnts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -105,10 +105,12 @@ public class CustomBasket1 {
      * {@link BasketConstituents1 }
      * 
      * 
+     * @return
+     *     The value of the cnsttnts property.
      */
     public List<BasketConstituents1> getCnsttnts() {
         if (cnsttnts == null) {
-            cnsttnts = new ArrayList<BasketConstituents1>();
+            cnsttnts = new ArrayList<>();
         }
         return this.cnsttnts;
     }

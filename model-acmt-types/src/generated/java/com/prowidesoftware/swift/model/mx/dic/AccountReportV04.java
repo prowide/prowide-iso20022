@@ -152,8 +152,8 @@ public class AccountReportV04 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rpt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rpt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -167,10 +167,12 @@ public class AccountReportV04 {
      * {@link AccountReport28 }
      * 
      * 
+     * @return
+     *     The value of the rpt property.
      */
     public List<AccountReport28> getRpt() {
         if (rpt == null) {
-            rpt = new ArrayList<AccountReport28>();
+            rpt = new ArrayList<>();
         }
         return this.rpt;
     }
@@ -181,8 +183,8 @@ public class AccountReportV04 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dgtlSgntr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the dgtlSgntr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -196,10 +198,12 @@ public class AccountReportV04 {
      * {@link PartyAndSignature3 }
      * 
      * 
+     * @return
+     *     The value of the dgtlSgntr property.
      */
     public List<PartyAndSignature3> getDgtlSgntr() {
         if (dgtlSgntr == null) {
-            dgtlSgntr = new ArrayList<PartyAndSignature3>();
+            dgtlSgntr = new ArrayList<>();
         }
         return this.dgtlSgntr;
     }
@@ -210,8 +214,8 @@ public class AccountReportV04 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -225,10 +229,12 @@ public class AccountReportV04 {
      * {@link SupplementaryData1 }
      * 
      * 
+     * @return
+     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<SupplementaryData1>();
+            splmtryData = new ArrayList<>();
         }
         return this.splmtryData;
     }

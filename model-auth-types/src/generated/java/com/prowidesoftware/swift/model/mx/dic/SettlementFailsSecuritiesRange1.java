@@ -37,8 +37,8 @@ public class SettlementFailsSecuritiesRange1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the hghstInVol property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the hghstInVol property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -52,10 +52,12 @@ public class SettlementFailsSecuritiesRange1 {
      * {@link SettlementFailsSecurities1 }
      * 
      * 
+     * @return
+     *     The value of the hghstInVol property.
      */
     public List<SettlementFailsSecurities1> getHghstInVol() {
         if (hghstInVol == null) {
-            hghstInVol = new ArrayList<SettlementFailsSecurities1>();
+            hghstInVol = new ArrayList<>();
         }
         return this.hghstInVol;
     }
@@ -66,8 +68,8 @@ public class SettlementFailsSecuritiesRange1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the hghstInVal property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the hghstInVal property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -81,10 +83,12 @@ public class SettlementFailsSecuritiesRange1 {
      * {@link SettlementFailsSecurities1 }
      * 
      * 
+     * @return
+     *     The value of the hghstInVal property.
      */
     public List<SettlementFailsSecurities1> getHghstInVal() {
         if (hghstInVal == null) {
-            hghstInVal = new ArrayList<SettlementFailsSecurities1>();
+            hghstInVal = new ArrayList<>();
         }
         return this.hghstInVal;
     }

@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -31,7 +31,7 @@ public class ResponderDetails1 {
     @XmlElement(name = "DtTmStmp", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar dtTmStmp;
+    protected Calendar dtTmStmp;
     @XmlElement(name = "Rspndr", required = true)
     protected String rspndr;
 
@@ -43,7 +43,7 @@ public class ResponderDetails1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDtTmStmp() {
+    public Calendar getDtTmStmp() {
         return dtTmStmp;
     }
 
@@ -55,7 +55,7 @@ public class ResponderDetails1 {
      *     {@link String }
      *     
      */
-    public ResponderDetails1 setDtTmStmp(XMLGregorianCalendar value) {
+    public ResponderDetails1 setDtTmStmp(Calendar value) {
         this.dtTmStmp = value;
         return this;
     }

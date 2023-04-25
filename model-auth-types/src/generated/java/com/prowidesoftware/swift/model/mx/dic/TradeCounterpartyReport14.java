@@ -174,8 +174,8 @@ public class TradeCounterpartyReport14 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the bnfcry property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the bnfcry property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -189,10 +189,12 @@ public class TradeCounterpartyReport14 {
      * {@link PartyIdentification235Choice }
      * 
      * 
+     * @return
+     *     The value of the bnfcry property.
      */
     public List<PartyIdentification235Choice> getBnfcry() {
         if (bnfcry == null) {
-            bnfcry = new ArrayList<PartyIdentification235Choice>();
+            bnfcry = new ArrayList<>();
         }
         return this.bnfcry;
     }

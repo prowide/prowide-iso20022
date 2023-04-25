@@ -9,17 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for ArrangementType2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ArrangementType2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="RDLF"/&gt;
- *     &lt;enumeration value="NOAC"/&gt;
- *     &lt;enumeration value="GATE"/&gt;
- *     &lt;enumeration value="SPRN"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ArrangementType2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="RDLF"/>
+ *     <enumeration value="NOAC"/>
+ *     <enumeration value="GATE"/>
+ *     <enumeration value="SPRN"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ArrangementType2Code")

@@ -146,8 +146,8 @@ public class InvestmentAccountOpening3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the exstgAcctId property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the exstgAcctId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -161,10 +161,12 @@ public class InvestmentAccountOpening3 {
      * {@link Account23 }
      * 
      * 
+     * @return
+     *     The value of the exstgAcctId property.
      */
     public List<Account23> getExstgAcctId() {
         if (exstgAcctId == null) {
-            exstgAcctId = new ArrayList<Account23>();
+            exstgAcctId = new ArrayList<>();
         }
         return this.exstgAcctId;
     }

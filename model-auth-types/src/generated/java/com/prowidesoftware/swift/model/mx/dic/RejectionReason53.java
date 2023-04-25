@@ -92,8 +92,8 @@ public class RejectionReason53 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dtldVldtnRule property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the dtldVldtnRule property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -107,10 +107,12 @@ public class RejectionReason53 {
      * {@link GenericValidationRuleIdentification1 }
      * 
      * 
+     * @return
+     *     The value of the dtldVldtnRule property.
      */
     public List<GenericValidationRuleIdentification1> getDtldVldtnRule() {
         if (dtldVldtnRule == null) {
-            dtldVldtnRule = new ArrayList<GenericValidationRuleIdentification1>();
+            dtldVldtnRule = new ArrayList<>();
         }
         return this.dtldVldtnRule;
     }

@@ -9,17 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for TaxWithholdingMethod1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="TaxWithholdingMethod1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="WTHD"/&gt;
- *     &lt;enumeration value="REPT"/&gt;
- *     &lt;enumeration value="CRTF"/&gt;
- *     &lt;enumeration value="WTRE"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="TaxWithholdingMethod1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="WTHD"/>
+ *     <enumeration value="REPT"/>
+ *     <enumeration value="CRTF"/>
+ *     <enumeration value="WTRE"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "TaxWithholdingMethod1Code")

@@ -2,14 +2,14 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -37,7 +37,7 @@ public class StressTestResult2 {
     @XmlElement(name = "StrssTstDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar strssTstDt;
+    protected Calendar strssTstDt;
     @XmlElement(name = "StrssTstFctrTp")
     protected String strssTstFctrTp;
     @XmlElement(name = "NetAsstValBsis")
@@ -60,7 +60,7 @@ public class StressTestResult2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getStrssTstDt() {
+    public Calendar getStrssTstDt() {
         return strssTstDt;
     }
 
@@ -72,7 +72,7 @@ public class StressTestResult2 {
      *     {@link String }
      *     
      */
-    public StressTestResult2 setStrssTstDt(XMLGregorianCalendar value) {
+    public StressTestResult2 setStrssTstDt(Calendar value) {
         this.strssTstDt = value;
         return this;
     }

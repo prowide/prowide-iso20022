@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -37,11 +37,11 @@ public class PaymentDateRange2 {
     @XmlElement(name = "XpctdDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar xpctdDt;
+    protected Calendar xpctdDt;
     @XmlElement(name = "DueDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar dueDt;
+    protected Calendar dueDt;
 
     /**
      * Gets the value of the pmtSchdlId property.
@@ -101,7 +101,7 @@ public class PaymentDateRange2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getXpctdDt() {
+    public Calendar getXpctdDt() {
         return xpctdDt;
     }
 
@@ -113,7 +113,7 @@ public class PaymentDateRange2 {
      *     {@link String }
      *     
      */
-    public PaymentDateRange2 setXpctdDt(XMLGregorianCalendar value) {
+    public PaymentDateRange2 setXpctdDt(Calendar value) {
         this.xpctdDt = value;
         return this;
     }
@@ -126,7 +126,7 @@ public class PaymentDateRange2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDueDt() {
+    public Calendar getDueDt() {
         return dueDt;
     }
 
@@ -138,7 +138,7 @@ public class PaymentDateRange2 {
      *     {@link String }
      *     
      */
-    public PaymentDateRange2 setDueDt(XMLGregorianCalendar value) {
+    public PaymentDateRange2 setDueDt(Calendar value) {
         this.dueDt = value;
         return this;
     }

@@ -46,8 +46,8 @@ public class TradeAdditionalQueryCriteria7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the actnTp property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the actnTp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -61,10 +61,12 @@ public class TradeAdditionalQueryCriteria7 {
      * {@link TransactionOperationType6Code }
      * 
      * 
+     * @return
+     *     The value of the actnTp property.
      */
     public List<TransactionOperationType6Code> getActnTp() {
         if (actnTp == null) {
-            actnTp = new ArrayList<TransactionOperationType6Code>();
+            actnTp = new ArrayList<>();
         }
         return this.actnTp;
     }
@@ -100,8 +102,8 @@ public class TradeAdditionalQueryCriteria7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ntrOfCtrPty property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ntrOfCtrPty property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -115,10 +117,12 @@ public class TradeAdditionalQueryCriteria7 {
      * {@link PartyNatureType1Code }
      * 
      * 
+     * @return
+     *     The value of the ntrOfCtrPty property.
      */
     public List<PartyNatureType1Code> getNtrOfCtrPty() {
         if (ntrOfCtrPty == null) {
-            ntrOfCtrPty = new ArrayList<PartyNatureType1Code>();
+            ntrOfCtrPty = new ArrayList<>();
         }
         return this.ntrOfCtrPty;
     }
@@ -129,8 +133,8 @@ public class TradeAdditionalQueryCriteria7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the corpSctr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the corpSctr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -144,10 +148,12 @@ public class TradeAdditionalQueryCriteria7 {
      * {@link CorporateSectorCriteria5 }
      * 
      * 
+     * @return
+     *     The value of the corpSctr property.
      */
     public List<CorporateSectorCriteria5> getCorpSctr() {
         if (corpSctr == null) {
-            corpSctr = new ArrayList<CorporateSectorCriteria5>();
+            corpSctr = new ArrayList<>();
         }
         return this.corpSctr;
     }

@@ -9,17 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for SchemeIdentificationType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="SchemeIdentificationType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="MARG"/&gt;
- *     &lt;enumeration value="COLL"/&gt;
- *     &lt;enumeration value="POSI"/&gt;
- *     &lt;enumeration value="CLIM"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="SchemeIdentificationType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="MARG"/>
+ *     <enumeration value="COLL"/>
+ *     <enumeration value="POSI"/>
+ *     <enumeration value="CLIM"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "SchemeIdentificationType1Code")

@@ -9,17 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for ClearingAccountType3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ClearingAccountType3Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="NOSA"/&gt;
- *     &lt;enumeration value="ISEG"/&gt;
- *     &lt;enumeration value="HOUS"/&gt;
- *     &lt;enumeration value="GOSA"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ClearingAccountType3Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="NOSA"/>
+ *     <enumeration value="ISEG"/>
+ *     <enumeration value="HOUS"/>
+ *     <enumeration value="GOSA"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ClearingAccountType3Code")

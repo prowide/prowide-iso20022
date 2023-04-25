@@ -210,8 +210,8 @@ public class RegisteredContract4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ctrctBal property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ctrctBal property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -225,10 +225,12 @@ public class RegisteredContract4 {
      * {@link ContractBalance1 }
      * 
      * 
+     * @return
+     *     The value of the ctrctBal property.
      */
     public List<ContractBalance1> getCtrctBal() {
         if (ctrctBal == null) {
-            ctrctBal = new ArrayList<ContractBalance1>();
+            ctrctBal = new ArrayList<>();
         }
         return this.ctrctBal;
     }
@@ -314,8 +316,8 @@ public class RegisteredContract4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the regdCtrctJrnl property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the regdCtrctJrnl property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -329,10 +331,12 @@ public class RegisteredContract4 {
      * {@link RegisteredContractJournal1 }
      * 
      * 
+     * @return
+     *     The value of the regdCtrctJrnl property.
      */
     public List<RegisteredContractJournal1> getRegdCtrctJrnl() {
         if (regdCtrctJrnl == null) {
-            regdCtrctJrnl = new ArrayList<RegisteredContractJournal1>();
+            regdCtrctJrnl = new ArrayList<>();
         }
         return this.regdCtrctJrnl;
     }
@@ -343,8 +347,8 @@ public class RegisteredContract4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the amdmnt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the amdmnt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -358,10 +362,12 @@ public class RegisteredContract4 {
      * {@link RegisteredContractAmendment1 }
      * 
      * 
+     * @return
+     *     The value of the amdmnt property.
      */
     public List<RegisteredContractAmendment1> getAmdmnt() {
         if (amdmnt == null) {
-            amdmnt = new ArrayList<RegisteredContractAmendment1>();
+            amdmnt = new ArrayList<>();
         }
         return this.amdmnt;
     }
@@ -506,8 +512,8 @@ public class RegisteredContract4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -521,10 +527,12 @@ public class RegisteredContract4 {
      * {@link SupplementaryData1 }
      * 
      * 
+     * @return
+     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<SupplementaryData1>();
+            splmtryData = new ArrayList<>();
         }
         return this.splmtryData;
     }

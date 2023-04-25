@@ -2,13 +2,16 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.swift.model.mx.dic.*;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -30,13 +33,13 @@ public class MxAuth07700101
 
     @XmlElement(name = "FinBchmkRpt", required = true)
     protected FinancialBenchmarkReportV01 finBchmkRpt;
-    public final static transient String BUSINESS_PROCESS = "auth";
-    public final static transient int FUNCTIONALITY = 77;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 1;
+    public static final transient String BUSINESS_PROCESS = "auth";
+    public static final transient int FUNCTIONALITY = 77;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {AddressType2Code.class, BenchmarkCancellation1 .class, BenchmarkCreate1 .class, BenchmarkCurveName2Code.class, BenchmarkDetail1 .class, BenchmarkReport1Choice.class, BenchmarkUpdate1 .class, FinancialBenchmarkReportV01 .class, GenericIdentification36 .class, IdentificationSource3Choice.class, MxAuth07700101 .class, NameAndAddress5 .class, OtherIdentification1 .class, PartyIdentification120Choice.class, PartyIdentification136 .class, Period2 .class, Period4Choice.class, PostalAddress1 .class, SecurityIdentification19 .class, StatusDetail1 .class, SupervisingAuthorityIdentification1 .class, SupervisingAuthorityIdentification1Choice.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:auth.077.001.01";
+    public static final transient Class[] _classes = new Class[] {AddressType2Code.class, BenchmarkCancellation1 .class, BenchmarkCreate1 .class, BenchmarkCurveName2Code.class, BenchmarkDetail1 .class, BenchmarkReport1Choice.class, BenchmarkUpdate1 .class, FinancialBenchmarkReportV01 .class, GenericIdentification36 .class, IdentificationSource3Choice.class, MxAuth07700101 .class, NameAndAddress5 .class, OtherIdentification1 .class, PartyIdentification120Choice.class, PartyIdentification136 .class, Period2 .class, Period4Choice.class, PostalAddress1 .class, SecurityIdentification19 .class, StatusDetail1 .class, SupervisingAuthorityIdentification1 .class, SupervisingAuthorityIdentification1Choice.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:auth.077.001.01";
 
     public MxAuth07700101() {
         super();
@@ -83,21 +86,6 @@ public class MxAuth07700101
     public MxAuth07700101 setFinBchmkRpt(FinancialBenchmarkReportV01 value) {
         this.finBchmkRpt = value;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -170,8 +158,23 @@ public class MxAuth07700101
      * @return
      *     a new instance of MxAuth07700101
      */
-    public final static MxAuth07700101 fromJson(String json) {
+    public static final MxAuth07700101 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxAuth07700101 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

@@ -40,8 +40,8 @@ public class CollateralType14 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the scty property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the scty property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -55,10 +55,12 @@ public class CollateralType14 {
      * {@link Security16 }
      * 
      * 
+     * @return
+     *     The value of the scty property.
      */
     public List<Security16> getScty() {
         if (scty == null) {
-            scty = new ArrayList<Security16>();
+            scty = new ArrayList<>();
         }
         return this.scty;
     }
@@ -69,8 +71,8 @@ public class CollateralType14 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the csh property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the csh property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -84,10 +86,12 @@ public class CollateralType14 {
      * {@link AmountHaircutMargin1 }
      * 
      * 
+     * @return
+     *     The value of the csh property.
      */
     public List<AmountHaircutMargin1> getCsh() {
         if (csh == null) {
-            csh = new ArrayList<AmountHaircutMargin1>();
+            csh = new ArrayList<>();
         }
         return this.csh;
     }
@@ -98,8 +102,8 @@ public class CollateralType14 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cmmdty property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cmmdty property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -113,10 +117,12 @@ public class CollateralType14 {
      * {@link Commodity20 }
      * 
      * 
+     * @return
+     *     The value of the cmmdty property.
      */
     public List<Commodity20> getCmmdty() {
         if (cmmdty == null) {
-            cmmdty = new ArrayList<Commodity20>();
+            cmmdty = new ArrayList<>();
         }
         return this.cmmdty;
     }

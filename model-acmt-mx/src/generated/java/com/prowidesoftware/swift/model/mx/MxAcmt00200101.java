@@ -2,13 +2,16 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.swift.model.mx.dic.*;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -30,13 +33,13 @@ public class MxAcmt00200101
 
     @XmlElement(name = "AcctDtlsConfV01", required = true)
     protected AccountDetailsConfirmation acctDtlsConfV01;
-    public final static transient String BUSINESS_PROCESS = "acmt";
-    public final static transient int FUNCTIONALITY = 2;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 1;
+    public static final transient String BUSINESS_PROCESS = "acmt";
+    public static final transient int FUNCTIONALITY = 2;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {Account2 .class, AccountDetailsConfirmation.class, AccountIdentification1 .class, AccountIdentificationAndName3 .class, AccountManagementConfirmation1 .class, AccountManagementType2Code.class, AccountOwnershipType2Code.class, AccountParties2 .class, AccountStatus1Code.class, AccountStatus2Code.class, ActiveCurrencyAndAmount.class, AdditionalReference3 .class, AddressType1Code.class, AddressType2Code.class, AlternateSecurityIdentification1 .class, BranchData.class, CardType1Code.class, CashAccount4 .class, CashAccount5 .class, CashAccountIdentification1Choice.class, CashAccountType1Code.class, Cheque4 .class, CitizenshipInformation.class, ClearingSystemMemberIdentificationChoice.class, CommunicationAddress3 .class, CountryAndResidentialStatusType1 .class, DirectDebitMandate3 .class, DistributionPolicy1Code.class, Extension1 .class, FinancialInstitutionIdentification3Choice.class, FinancialInstrument6 .class, FormOfSecurity1Code.class, Frequency1Code.class, FundCashAccount2Code.class, GenderCode.class, GenericIdentification1 .class, GenericIdentification9 .class, IncomePreference1Code.class, IndividualPerson5 .class, Intermediary5 .class, InvestmentAccount17 .class, InvestmentAccountOwnershipInformation2 .class, InvestmentFundCashSettlementInformation1 .class, InvestmentFundRole1Code.class, InvestmentPlan2 .class, MxAcmt00200101 .class, NameAndAddress4 .class, NameAndAddress5 .class, NamePrefix1Code.class, OldMoneyLaunderingCheck1Code.class, Organisation2 .class, PartyIdentification2Choice.class, PartyIdentification4Choice.class, PaymentCard2 .class, PaymentInstrument6 .class, PaymentInstrument7 .class, PersonIdentificationType1Code.class, PostalAddress1 .class, PostalAddress3 .class, ResidentialStatus1Code.class, RoundingDirection1Code.class, RoundingParameters1 .class, SecuritiesAccount1 .class, SecurityIdentification1Choice.class, SimpleIdentificationInformation.class, TaxWithholdingMethod1Code.class };
-    public final static transient String NAMESPACE = "urn:swift:xsd:acmt.002.001.01";
+    public static final transient Class[] _classes = new Class[] {Account2 .class, AccountDetailsConfirmation.class, AccountIdentification1 .class, AccountIdentificationAndName3 .class, AccountManagementConfirmation1 .class, AccountManagementType2Code.class, AccountOwnershipType2Code.class, AccountParties2 .class, AccountStatus1Code.class, AccountStatus2Code.class, ActiveCurrencyAndAmount.class, AdditionalReference3 .class, AddressType1Code.class, AddressType2Code.class, AlternateSecurityIdentification1 .class, BranchData.class, CardType1Code.class, CashAccount4 .class, CashAccount5 .class, CashAccountIdentification1Choice.class, CashAccountType1Code.class, Cheque4 .class, CitizenshipInformation.class, ClearingSystemMemberIdentificationChoice.class, CommunicationAddress3 .class, CountryAndResidentialStatusType1 .class, DirectDebitMandate3 .class, DistributionPolicy1Code.class, Extension1 .class, FinancialInstitutionIdentification3Choice.class, FinancialInstrument6 .class, FormOfSecurity1Code.class, Frequency1Code.class, FundCashAccount2Code.class, GenderCode.class, GenericIdentification1 .class, GenericIdentification9 .class, IncomePreference1Code.class, IndividualPerson5 .class, Intermediary5 .class, InvestmentAccount17 .class, InvestmentAccountOwnershipInformation2 .class, InvestmentFundCashSettlementInformation1 .class, InvestmentFundRole1Code.class, InvestmentPlan2 .class, MxAcmt00200101 .class, NameAndAddress4 .class, NameAndAddress5 .class, NamePrefix1Code.class, OldMoneyLaunderingCheck1Code.class, Organisation2 .class, PartyIdentification2Choice.class, PartyIdentification4Choice.class, PaymentCard2 .class, PaymentInstrument6 .class, PaymentInstrument7 .class, PersonIdentificationType1Code.class, PostalAddress1 .class, PostalAddress3 .class, ResidentialStatus1Code.class, RoundingDirection1Code.class, RoundingParameters1 .class, SecuritiesAccount1 .class, SecurityIdentification1Choice.class, SimpleIdentificationInformation.class, TaxWithholdingMethod1Code.class };
+    public static final transient String NAMESPACE = "urn:swift:xsd:acmt.002.001.01";
 
     public MxAcmt00200101() {
         super();
@@ -83,21 +86,6 @@ public class MxAcmt00200101
     public MxAcmt00200101 setAcctDtlsConfV01(AccountDetailsConfirmation value) {
         this.acctDtlsConfV01 = value;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -170,8 +158,23 @@ public class MxAcmt00200101
      * @return
      *     a new instance of MxAcmt00200101
      */
-    public final static MxAcmt00200101 fromJson(String json) {
+    public static final MxAcmt00200101 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxAcmt00200101 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

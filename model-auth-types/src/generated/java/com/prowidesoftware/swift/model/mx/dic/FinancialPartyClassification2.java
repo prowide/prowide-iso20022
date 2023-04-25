@@ -39,8 +39,8 @@ public class FinancialPartyClassification2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the clssfctn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the clssfctn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -54,10 +54,12 @@ public class FinancialPartyClassification2 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the clssfctn property.
      */
     public List<String> getClssfctn() {
         if (clssfctn == null) {
-            clssfctn = new ArrayList<String>();
+            clssfctn = new ArrayList<>();
         }
         return this.clssfctn;
     }

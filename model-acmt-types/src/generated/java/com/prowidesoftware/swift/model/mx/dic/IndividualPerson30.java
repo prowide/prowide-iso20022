@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -43,7 +43,7 @@ public class IndividualPerson30 {
     @XmlElement(name = "BirthDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar birthDt;
+    protected Calendar birthDt;
 
     /**
      * Gets the value of the gvnNm property.
@@ -153,7 +153,7 @@ public class IndividualPerson30 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getBirthDt() {
+    public Calendar getBirthDt() {
         return birthDt;
     }
 
@@ -165,7 +165,7 @@ public class IndividualPerson30 {
      *     {@link String }
      *     
      */
-    public IndividualPerson30 setBirthDt(XMLGregorianCalendar value) {
+    public IndividualPerson30 setBirthDt(Calendar value) {
         this.birthDt = value;
         return this;
     }

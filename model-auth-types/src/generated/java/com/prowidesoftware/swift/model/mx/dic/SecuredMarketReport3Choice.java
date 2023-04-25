@@ -64,8 +64,8 @@ public class SecuredMarketReport3Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the tx property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the tx property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -79,10 +79,12 @@ public class SecuredMarketReport3Choice {
      * {@link SecuredMarketTransaction3 }
      * 
      * 
+     * @return
+     *     The value of the tx property.
      */
     public List<SecuredMarketTransaction3> getTx() {
         if (tx == null) {
-            tx = new ArrayList<SecuredMarketTransaction3>();
+            tx = new ArrayList<>();
         }
         return this.tx;
     }

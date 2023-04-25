@@ -133,8 +133,8 @@ public class AccountReport14 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the mndt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the mndt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -148,10 +148,12 @@ public class AccountReport14 {
      * {@link OperationMandate1 }
      * 
      * 
+     * @return
+     *     The value of the mndt property.
      */
     public List<OperationMandate1> getMndt() {
         if (mndt == null) {
-            mndt = new ArrayList<OperationMandate1>();
+            mndt = new ArrayList<>();
         }
         return this.mndt;
     }
@@ -262,8 +264,8 @@ public class AccountReport14 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the prtry property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the prtry property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -277,10 +279,12 @@ public class AccountReport14 {
      * {@link GenericIdentification1 }
      * 
      * 
+     * @return
+     *     The value of the prtry property.
      */
     public List<GenericIdentification1> getPrtry() {
         if (prtry == null) {
-            prtry = new ArrayList<GenericIdentification1>();
+            prtry = new ArrayList<>();
         }
         return this.prtry;
     }

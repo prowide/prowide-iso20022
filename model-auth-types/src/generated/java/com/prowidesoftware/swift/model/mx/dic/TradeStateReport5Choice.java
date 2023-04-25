@@ -64,8 +64,8 @@ public class TradeStateReport5Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the stat property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the stat property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -79,10 +79,12 @@ public class TradeStateReport5Choice {
      * {@link TradeStateReport16 }
      * 
      * 
+     * @return
+     *     The value of the stat property.
      */
     public List<TradeStateReport16> getStat() {
         if (stat == null) {
-            stat = new ArrayList<TradeStateReport16>();
+            stat = new ArrayList<>();
         }
         return this.stat;
     }

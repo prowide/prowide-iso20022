@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -34,11 +34,11 @@ public class BondDerivative2 {
     @XmlElement(name = "MtrtyDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar mtrtyDt;
+    protected Calendar mtrtyDt;
     @XmlElement(name = "IssncDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar issncDt;
+    protected Calendar issncDt;
 
     /**
      * Gets the value of the issr property.
@@ -73,7 +73,7 @@ public class BondDerivative2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getMtrtyDt() {
+    public Calendar getMtrtyDt() {
         return mtrtyDt;
     }
 
@@ -85,7 +85,7 @@ public class BondDerivative2 {
      *     {@link String }
      *     
      */
-    public BondDerivative2 setMtrtyDt(XMLGregorianCalendar value) {
+    public BondDerivative2 setMtrtyDt(Calendar value) {
         this.mtrtyDt = value;
         return this;
     }
@@ -98,7 +98,7 @@ public class BondDerivative2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getIssncDt() {
+    public Calendar getIssncDt() {
         return issncDt;
     }
 
@@ -110,7 +110,7 @@ public class BondDerivative2 {
      *     {@link String }
      *     
      */
-    public BondDerivative2 setIssncDt(XMLGregorianCalendar value) {
+    public BondDerivative2 setIssncDt(Calendar value) {
         this.issncDt = value;
         return this;
     }

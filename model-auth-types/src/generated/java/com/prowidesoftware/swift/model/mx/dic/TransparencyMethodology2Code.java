@@ -9,17 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for TransparencyMethodology2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="TransparencyMethodology2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="YEAR"/&gt;
- *     &lt;enumeration value="SINT"/&gt;
- *     &lt;enumeration value="FFWK"/&gt;
- *     &lt;enumeration value="ESTM"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="TransparencyMethodology2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="YEAR"/>
+ *     <enumeration value="SINT"/>
+ *     <enumeration value="FFWK"/>
+ *     <enumeration value="ESTM"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "TransparencyMethodology2Code")

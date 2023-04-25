@@ -99,8 +99,8 @@ public class AvailableFinancialResourcesAmount1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ccpSkinInTheGame property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ccpSkinInTheGame property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -114,10 +114,12 @@ public class AvailableFinancialResourcesAmount1 {
      * {@link ReportingAssetBreakdown1 }
      * 
      * 
+     * @return
+     *     The value of the ccpSkinInTheGame property.
      */
     public List<ReportingAssetBreakdown1> getCCPSkinInTheGame() {
         if (ccpSkinInTheGame == null) {
-            ccpSkinInTheGame = new ArrayList<ReportingAssetBreakdown1>();
+            ccpSkinInTheGame = new ArrayList<>();
         }
         return this.ccpSkinInTheGame;
     }

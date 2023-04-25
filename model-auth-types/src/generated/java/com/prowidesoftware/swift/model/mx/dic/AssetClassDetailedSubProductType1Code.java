@@ -9,19 +9,18 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for AssetClassDetailedSubProductType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="AssetClassDetailedSubProductType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="FWHT"/&gt;
- *     &lt;enumeration value="SOYB"/&gt;
- *     &lt;enumeration value="RPSD"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="CORN"/&gt;
- *     &lt;enumeration value="RICE"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="AssetClassDetailedSubProductType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="FWHT"/>
+ *     <enumeration value="SOYB"/>
+ *     <enumeration value="RPSD"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="CORN"/>
+ *     <enumeration value="RICE"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "AssetClassDetailedSubProductType1Code")

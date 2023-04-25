@@ -62,8 +62,8 @@ public class NonEquitySubClass1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sgmttnCrit property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sgmttnCrit property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -77,10 +77,12 @@ public class NonEquitySubClass1 {
      * {@link NonEquitySubClassSegmentationCriterion1 }
      * 
      * 
+     * @return
+     *     The value of the sgmttnCrit property.
      */
     public List<NonEquitySubClassSegmentationCriterion1> getSgmttnCrit() {
         if (sgmttnCrit == null) {
-            sgmttnCrit = new ArrayList<NonEquitySubClassSegmentationCriterion1>();
+            sgmttnCrit = new ArrayList<>();
         }
         return this.sgmttnCrit;
     }

@@ -9,21 +9,20 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for UnderlyingContractForDifferenceType3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="UnderlyingContractForDifferenceType3Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="BOND"/&gt;
- *     &lt;enumeration value="COMM"/&gt;
- *     &lt;enumeration value="CURR"/&gt;
- *     &lt;enumeration value="EMAL"/&gt;
- *     &lt;enumeration value="EQUI"/&gt;
- *     &lt;enumeration value="FTEQ"/&gt;
- *     &lt;enumeration value="OPEQ"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="UnderlyingContractForDifferenceType3Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="BOND"/>
+ *     <enumeration value="COMM"/>
+ *     <enumeration value="CURR"/>
+ *     <enumeration value="EMAL"/>
+ *     <enumeration value="EQUI"/>
+ *     <enumeration value="FTEQ"/>
+ *     <enumeration value="OPEQ"/>
+ *     <enumeration value="OTHR"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "UnderlyingContractForDifferenceType3Code")

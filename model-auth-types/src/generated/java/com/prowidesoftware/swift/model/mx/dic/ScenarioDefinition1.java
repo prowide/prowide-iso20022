@@ -124,8 +124,8 @@ public class ScenarioDefinition1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the strssItm property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the strssItm property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -139,10 +139,12 @@ public class ScenarioDefinition1 {
      * {@link StressItem1 }
      * 
      * 
+     * @return
+     *     The value of the strssItm property.
      */
     public List<StressItem1> getStrssItm() {
         if (strssItm == null) {
-            strssItm = new ArrayList<StressItem1>();
+            strssItm = new ArrayList<>();
         }
         return this.strssItm;
     }

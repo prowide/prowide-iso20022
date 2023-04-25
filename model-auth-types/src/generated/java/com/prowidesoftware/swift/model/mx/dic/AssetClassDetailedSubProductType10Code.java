@@ -9,26 +9,25 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for AssetClassDetailedSubProductType10Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="AssetClassDetailedSubProductType10Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ALUM"/&gt;
- *     &lt;enumeration value="ALUA"/&gt;
- *     &lt;enumeration value="CBLT"/&gt;
- *     &lt;enumeration value="COPR"/&gt;
- *     &lt;enumeration value="IRON"/&gt;
- *     &lt;enumeration value="MOLY"/&gt;
- *     &lt;enumeration value="NASC"/&gt;
- *     &lt;enumeration value="NICK"/&gt;
- *     &lt;enumeration value="STEL"/&gt;
- *     &lt;enumeration value="TINN"/&gt;
- *     &lt;enumeration value="ZINC"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="LEAD"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="AssetClassDetailedSubProductType10Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ALUM"/>
+ *     <enumeration value="ALUA"/>
+ *     <enumeration value="CBLT"/>
+ *     <enumeration value="COPR"/>
+ *     <enumeration value="IRON"/>
+ *     <enumeration value="MOLY"/>
+ *     <enumeration value="NASC"/>
+ *     <enumeration value="NICK"/>
+ *     <enumeration value="STEL"/>
+ *     <enumeration value="TINN"/>
+ *     <enumeration value="ZINC"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="LEAD"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "AssetClassDetailedSubProductType10Code")

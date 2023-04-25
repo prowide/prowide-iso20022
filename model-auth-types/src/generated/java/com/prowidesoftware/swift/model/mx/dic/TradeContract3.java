@@ -2,15 +2,15 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -54,13 +54,13 @@ public class TradeContract3 {
     @XmlElement(name = "MtrtyDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar mtrtyDt;
+    protected Calendar mtrtyDt;
     @XmlElement(name = "PrlngtnFlg")
     protected Boolean prlngtnFlg;
     @XmlElement(name = "StartDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar startDt;
+    protected Calendar startDt;
     @XmlElement(name = "SttlmCcy")
     protected String sttlmCcy;
     @XmlElement(name = "XchgRateInf")
@@ -153,8 +153,8 @@ public class TradeContract3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the buyr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the buyr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -168,10 +168,12 @@ public class TradeContract3 {
      * {@link TradeParty5 }
      * 
      * 
+     * @return
+     *     The value of the buyr property.
      */
     public List<TradeParty5> getBuyr() {
         if (buyr == null) {
-            buyr = new ArrayList<TradeParty5>();
+            buyr = new ArrayList<>();
         }
         return this.buyr;
     }
@@ -182,8 +184,8 @@ public class TradeContract3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sellr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sellr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -197,10 +199,12 @@ public class TradeContract3 {
      * {@link TradeParty5 }
      * 
      * 
+     * @return
+     *     The value of the sellr property.
      */
     public List<TradeParty5> getSellr() {
         if (sellr == null) {
-            sellr = new ArrayList<TradeParty5>();
+            sellr = new ArrayList<>();
         }
         return this.sellr;
     }
@@ -213,7 +217,7 @@ public class TradeContract3 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getMtrtyDt() {
+    public Calendar getMtrtyDt() {
         return mtrtyDt;
     }
 
@@ -225,7 +229,7 @@ public class TradeContract3 {
      *     {@link String }
      *     
      */
-    public TradeContract3 setMtrtyDt(XMLGregorianCalendar value) {
+    public TradeContract3 setMtrtyDt(Calendar value) {
         this.mtrtyDt = value;
         return this;
     }
@@ -263,7 +267,7 @@ public class TradeContract3 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getStartDt() {
+    public Calendar getStartDt() {
         return startDt;
     }
 
@@ -275,7 +279,7 @@ public class TradeContract3 {
      *     {@link String }
      *     
      */
-    public TradeContract3 setStartDt(XMLGregorianCalendar value) {
+    public TradeContract3 setStartDt(Calendar value) {
         this.startDt = value;
         return this;
     }
@@ -386,8 +390,8 @@ public class TradeContract3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the attchmnt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the attchmnt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -401,10 +405,12 @@ public class TradeContract3 {
      * {@link DocumentGeneralInformation5 }
      * 
      * 
+     * @return
+     *     The value of the attchmnt property.
      */
     public List<DocumentGeneralInformation5> getAttchmnt() {
         if (attchmnt == null) {
-            attchmnt = new ArrayList<DocumentGeneralInformation5>();
+            attchmnt = new ArrayList<>();
         }
         return this.attchmnt;
     }

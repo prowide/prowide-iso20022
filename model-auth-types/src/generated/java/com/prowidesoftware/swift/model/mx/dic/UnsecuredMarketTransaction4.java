@@ -3,15 +3,15 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -74,11 +74,11 @@ public class UnsecuredMarketTransaction4 {
     @XmlElement(name = "SttlmDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar sttlmDt;
+    protected Calendar sttlmDt;
     @XmlElement(name = "MtrtyDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar mtrtyDt;
+    protected Calendar mtrtyDt;
     @XmlElement(name = "TxTp", required = true)
     @XmlSchemaType(name = "string")
     protected MoneyMarketTransactionType1Code txTp;
@@ -337,7 +337,7 @@ public class UnsecuredMarketTransaction4 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getSttlmDt() {
+    public Calendar getSttlmDt() {
         return sttlmDt;
     }
 
@@ -349,7 +349,7 @@ public class UnsecuredMarketTransaction4 {
      *     {@link String }
      *     
      */
-    public UnsecuredMarketTransaction4 setSttlmDt(XMLGregorianCalendar value) {
+    public UnsecuredMarketTransaction4 setSttlmDt(Calendar value) {
         this.sttlmDt = value;
         return this;
     }
@@ -362,7 +362,7 @@ public class UnsecuredMarketTransaction4 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getMtrtyDt() {
+    public Calendar getMtrtyDt() {
         return mtrtyDt;
     }
 
@@ -374,7 +374,7 @@ public class UnsecuredMarketTransaction4 {
      *     {@link String }
      *     
      */
-    public UnsecuredMarketTransaction4 setMtrtyDt(XMLGregorianCalendar value) {
+    public UnsecuredMarketTransaction4 setMtrtyDt(Calendar value) {
         this.mtrtyDt = value;
         return this;
     }
@@ -585,8 +585,8 @@ public class UnsecuredMarketTransaction4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the callPutOptn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the callPutOptn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -600,10 +600,12 @@ public class UnsecuredMarketTransaction4 {
      * {@link Option12 }
      * 
      * 
+     * @return
+     *     The value of the callPutOptn property.
      */
     public List<Option12> getCallPutOptn() {
         if (callPutOptn == null) {
-            callPutOptn = new ArrayList<Option12>();
+            callPutOptn = new ArrayList<>();
         }
         return this.callPutOptn;
     }
@@ -614,8 +616,8 @@ public class UnsecuredMarketTransaction4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -629,10 +631,12 @@ public class UnsecuredMarketTransaction4 {
      * {@link SupplementaryData1 }
      * 
      * 
+     * @return
+     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<SupplementaryData1>();
+            splmtryData = new ArrayList<>();
         }
         return this.splmtryData;
     }

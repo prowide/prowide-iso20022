@@ -9,20 +9,19 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for FundOrderType6Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="FundOrderType6Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ALLL"/&gt;
- *     &lt;enumeration value="REDM"/&gt;
- *     &lt;enumeration value="SUBS"/&gt;
- *     &lt;enumeration value="SWII"/&gt;
- *     &lt;enumeration value="SWIO"/&gt;
- *     &lt;enumeration value="TRAI"/&gt;
- *     &lt;enumeration value="TRAO"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="FundOrderType6Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ALLL"/>
+ *     <enumeration value="REDM"/>
+ *     <enumeration value="SUBS"/>
+ *     <enumeration value="SWII"/>
+ *     <enumeration value="SWIO"/>
+ *     <enumeration value="TRAI"/>
+ *     <enumeration value="TRAO"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "FundOrderType6Code")

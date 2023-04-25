@@ -62,8 +62,8 @@ public class FinancialInstrument60Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the shrClssList property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the shrClssList property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -77,10 +77,12 @@ public class FinancialInstrument60Choice {
      * {@link ShareClassList1 }
      * 
      * 
+     * @return
+     *     The value of the shrClssList property.
      */
     public List<ShareClassList1> getShrClssList() {
         if (shrClssList == null) {
-            shrClssList = new ArrayList<ShareClassList1>();
+            shrClssList = new ArrayList<>();
         }
         return this.shrClssList;
     }

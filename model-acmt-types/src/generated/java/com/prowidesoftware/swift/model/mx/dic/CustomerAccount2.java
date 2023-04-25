@@ -585,8 +585,8 @@ public class CustomerAccount2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rstrctn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rstrctn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -600,10 +600,12 @@ public class CustomerAccount2 {
      * {@link Restriction1 }
      * 
      * 
+     * @return
+     *     The value of the rstrctn property.
      */
     public List<Restriction1> getRstrctn() {
         if (rstrctn == null) {
-            rstrctn = new ArrayList<Restriction1>();
+            rstrctn = new ArrayList<>();
         }
         return this.rstrctn;
     }
@@ -689,8 +691,8 @@ public class CustomerAccount2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the prtry property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the prtry property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -704,10 +706,12 @@ public class CustomerAccount2 {
      * {@link GenericIdentification1 }
      * 
      * 
+     * @return
+     *     The value of the prtry property.
      */
     public List<GenericIdentification1> getPrtry() {
         if (prtry == null) {
-            prtry = new ArrayList<GenericIdentification1>();
+            prtry = new ArrayList<>();
         }
         return this.prtry;
     }

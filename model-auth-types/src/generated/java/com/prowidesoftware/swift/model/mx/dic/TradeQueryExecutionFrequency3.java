@@ -69,8 +69,8 @@ public class TradeQueryExecutionFrequency3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dlvryDay property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the dlvryDay property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -84,10 +84,12 @@ public class TradeQueryExecutionFrequency3 {
      * {@link WeekDay3Code }
      * 
      * 
+     * @return
+     *     The value of the dlvryDay property.
      */
     public List<WeekDay3Code> getDlvryDay() {
         if (dlvryDay == null) {
-            dlvryDay = new ArrayList<WeekDay3Code>();
+            dlvryDay = new ArrayList<>();
         }
         return this.dlvryDay;
     }
@@ -98,8 +100,8 @@ public class TradeQueryExecutionFrequency3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dayOfMnth property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the dayOfMnth property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -113,10 +115,12 @@ public class TradeQueryExecutionFrequency3 {
      * {@link BigDecimal }
      * 
      * 
+     * @return
+     *     The value of the dayOfMnth property.
      */
     public List<BigDecimal> getDayOfMnth() {
         if (dayOfMnth == null) {
-            dayOfMnth = new ArrayList<BigDecimal>();
+            dayOfMnth = new ArrayList<>();
         }
         return this.dayOfMnth;
     }

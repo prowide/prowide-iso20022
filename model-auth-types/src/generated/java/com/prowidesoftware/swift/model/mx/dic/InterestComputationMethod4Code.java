@@ -10,34 +10,33 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for InterestComputationMethod4Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="InterestComputationMethod4Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="A004"/&gt;
- *     &lt;enumeration value="A019"/&gt;
- *     &lt;enumeration value="A017"/&gt;
- *     &lt;enumeration value="A005"/&gt;
- *     &lt;enumeration value="A009"/&gt;
- *     &lt;enumeration value="A014"/&gt;
- *     &lt;enumeration value="A010"/&gt;
- *     &lt;enumeration value="A006"/&gt;
- *     &lt;enumeration value="A008"/&gt;
- *     &lt;enumeration value="A015"/&gt;
- *     &lt;enumeration value="A018"/&gt;
- *     &lt;enumeration value="A011"/&gt;
- *     &lt;enumeration value="A001"/&gt;
- *     &lt;enumeration value="A002"/&gt;
- *     &lt;enumeration value="A003"/&gt;
- *     &lt;enumeration value="A012"/&gt;
- *     &lt;enumeration value="A013"/&gt;
- *     &lt;enumeration value="A007"/&gt;
- *     &lt;enumeration value="A016"/&gt;
- *     &lt;enumeration value="NARR"/&gt;
- *     &lt;enumeration value="A020"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="InterestComputationMethod4Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="A004"/>
+ *     <enumeration value="A019"/>
+ *     <enumeration value="A017"/>
+ *     <enumeration value="A005"/>
+ *     <enumeration value="A009"/>
+ *     <enumeration value="A014"/>
+ *     <enumeration value="A010"/>
+ *     <enumeration value="A006"/>
+ *     <enumeration value="A008"/>
+ *     <enumeration value="A015"/>
+ *     <enumeration value="A018"/>
+ *     <enumeration value="A011"/>
+ *     <enumeration value="A001"/>
+ *     <enumeration value="A002"/>
+ *     <enumeration value="A003"/>
+ *     <enumeration value="A012"/>
+ *     <enumeration value="A013"/>
+ *     <enumeration value="A007"/>
+ *     <enumeration value="A016"/>
+ *     <enumeration value="NARR"/>
+ *     <enumeration value="A020"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "InterestComputationMethod4Code")
@@ -188,8 +187,7 @@ public enum InterestComputationMethod4Code {
     NARR("NARR"),
 
     /**
-     * Also named 1/1. 
-
+     * Also named 1/1. 
      * ELABORATION: If parties specify the Day Count Fraction to be 1/1 then in calculating the applicable amount, 1 is simply input into the calculation as the relevant Day Count Fraction. See also 2006 ISDA Definitions, Section 4.16. Day Count Fraction, paragraph (a).
      * 
      */

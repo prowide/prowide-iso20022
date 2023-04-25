@@ -9,21 +9,20 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for UnderlyingEquityType6Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="UnderlyingEquityType6Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="BSKT"/&gt;
- *     &lt;enumeration value="DIVI"/&gt;
- *     &lt;enumeration value="ETFS"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="SHRS"/&gt;
- *     &lt;enumeration value="DVSE"/&gt;
- *     &lt;enumeration value="STIX"/&gt;
- *     &lt;enumeration value="VOLI"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="UnderlyingEquityType6Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="BSKT"/>
+ *     <enumeration value="DIVI"/>
+ *     <enumeration value="ETFS"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="SHRS"/>
+ *     <enumeration value="DVSE"/>
+ *     <enumeration value="STIX"/>
+ *     <enumeration value="VOLI"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "UnderlyingEquityType6Code")

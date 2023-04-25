@@ -9,18 +9,17 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for FundCashAccount3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="FundCashAccount3Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CASH"/&gt;
- *     &lt;enumeration value="CPFO"/&gt;
- *     &lt;enumeration value="CPFS"/&gt;
- *     &lt;enumeration value="SRSA"/&gt;
- *     &lt;enumeration value="HEDG"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="FundCashAccount3Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CASH"/>
+ *     <enumeration value="CPFO"/>
+ *     <enumeration value="CPFS"/>
+ *     <enumeration value="SRSA"/>
+ *     <enumeration value="HEDG"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "FundCashAccount3Code")

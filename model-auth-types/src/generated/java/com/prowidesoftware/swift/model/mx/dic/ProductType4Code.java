@@ -9,19 +9,18 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for ProductType4Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ProductType4Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CRDT"/&gt;
- *     &lt;enumeration value="CURR"/&gt;
- *     &lt;enumeration value="EQUI"/&gt;
- *     &lt;enumeration value="INTR"/&gt;
- *     &lt;enumeration value="COMM"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ProductType4Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CRDT"/>
+ *     <enumeration value="CURR"/>
+ *     <enumeration value="EQUI"/>
+ *     <enumeration value="INTR"/>
+ *     <enumeration value="COMM"/>
+ *     <enumeration value="OTHR"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ProductType4Code")

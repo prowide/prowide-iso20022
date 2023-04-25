@@ -9,16 +9,15 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for AssetClassSubProductEnvironmentalType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="AssetClassSubProductEnvironmentalType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="EMIS"/&gt;
- *     &lt;enumeration value="WTHR"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="AssetClassSubProductEnvironmentalType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="EMIS"/>
+ *     <enumeration value="WTHR"/>
+ *     <enumeration value="OTHR"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "AssetClassSubProductEnvironmentalType1Code")

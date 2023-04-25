@@ -9,20 +9,19 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for FinancialInstrumentProductType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="FinancialInstrumentProductType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CEOD"/&gt;
- *     &lt;enumeration value="COPR"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="ABCP"/&gt;
- *     &lt;enumeration value="FRNT"/&gt;
- *     &lt;enumeration value="CACM"/&gt;
- *     &lt;enumeration value="DPST"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="FinancialInstrumentProductType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CEOD"/>
+ *     <enumeration value="COPR"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="ABCP"/>
+ *     <enumeration value="FRNT"/>
+ *     <enumeration value="CACM"/>
+ *     <enumeration value="DPST"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "FinancialInstrumentProductType1Code")

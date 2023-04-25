@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -34,11 +34,11 @@ public class LoanData86 {
     @XmlElement(name = "EvtDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar evtDt;
+    protected Calendar evtDt;
     @XmlElement(name = "TermntnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar termntnDt;
+    protected Calendar termntnDt;
 
     /**
      * Gets the value of the unqTradIdr property.
@@ -73,7 +73,7 @@ public class LoanData86 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getEvtDt() {
+    public Calendar getEvtDt() {
         return evtDt;
     }
 
@@ -85,7 +85,7 @@ public class LoanData86 {
      *     {@link String }
      *     
      */
-    public LoanData86 setEvtDt(XMLGregorianCalendar value) {
+    public LoanData86 setEvtDt(Calendar value) {
         this.evtDt = value;
         return this;
     }
@@ -98,7 +98,7 @@ public class LoanData86 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getTermntnDt() {
+    public Calendar getTermntnDt() {
         return termntnDt;
     }
 
@@ -110,7 +110,7 @@ public class LoanData86 {
      *     {@link String }
      *     
      */
-    public LoanData86 setTermntnDt(XMLGregorianCalendar value) {
+    public LoanData86 setTermntnDt(Calendar value) {
         this.termntnDt = value;
         return this;
     }

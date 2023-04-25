@@ -98,8 +98,8 @@ public class AccountParties17 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the scndryOwnr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the scndryOwnr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -113,10 +113,12 @@ public class AccountParties17 {
      * {@link InvestmentAccountOwnershipInformation16 }
      * 
      * 
+     * @return
+     *     The value of the scndryOwnr property.
      */
     public List<InvestmentAccountOwnershipInformation16> getScndryOwnr() {
         if (scndryOwnr == null) {
-            scndryOwnr = new ArrayList<InvestmentAccountOwnershipInformation16>();
+            scndryOwnr = new ArrayList<>();
         }
         return this.scndryOwnr;
     }
@@ -127,8 +129,8 @@ public class AccountParties17 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the bnfcry property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the bnfcry property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -142,10 +144,12 @@ public class AccountParties17 {
      * {@link InvestmentAccountOwnershipInformation16 }
      * 
      * 
+     * @return
+     *     The value of the bnfcry property.
      */
     public List<InvestmentAccountOwnershipInformation16> getBnfcry() {
         if (bnfcry == null) {
-            bnfcry = new ArrayList<InvestmentAccountOwnershipInformation16>();
+            bnfcry = new ArrayList<>();
         }
         return this.bnfcry;
     }
@@ -156,8 +160,8 @@ public class AccountParties17 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the pwrOfAttny property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the pwrOfAttny property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -171,10 +175,12 @@ public class AccountParties17 {
      * {@link InvestmentAccountOwnershipInformation16 }
      * 
      * 
+     * @return
+     *     The value of the pwrOfAttny property.
      */
     public List<InvestmentAccountOwnershipInformation16> getPwrOfAttny() {
         if (pwrOfAttny == null) {
-            pwrOfAttny = new ArrayList<InvestmentAccountOwnershipInformation16>();
+            pwrOfAttny = new ArrayList<>();
         }
         return this.pwrOfAttny;
     }
@@ -185,8 +191,8 @@ public class AccountParties17 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the lglGuardn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the lglGuardn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -200,10 +206,12 @@ public class AccountParties17 {
      * {@link InvestmentAccountOwnershipInformation16 }
      * 
      * 
+     * @return
+     *     The value of the lglGuardn property.
      */
     public List<InvestmentAccountOwnershipInformation16> getLglGuardn() {
         if (lglGuardn == null) {
-            lglGuardn = new ArrayList<InvestmentAccountOwnershipInformation16>();
+            lglGuardn = new ArrayList<>();
         }
         return this.lglGuardn;
     }
@@ -214,8 +222,8 @@ public class AccountParties17 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ctdnForMnr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ctdnForMnr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -229,10 +237,12 @@ public class AccountParties17 {
      * {@link InvestmentAccountOwnershipInformation16 }
      * 
      * 
+     * @return
+     *     The value of the ctdnForMnr property.
      */
     public List<InvestmentAccountOwnershipInformation16> getCtdnForMnr() {
         if (ctdnForMnr == null) {
-            ctdnForMnr = new ArrayList<InvestmentAccountOwnershipInformation16>();
+            ctdnForMnr = new ArrayList<>();
         }
         return this.ctdnForMnr;
     }
@@ -243,8 +253,8 @@ public class AccountParties17 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sucssrOnDth property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sucssrOnDth property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -258,10 +268,12 @@ public class AccountParties17 {
      * {@link InvestmentAccountOwnershipInformation16 }
      * 
      * 
+     * @return
+     *     The value of the sucssrOnDth property.
      */
     public List<InvestmentAccountOwnershipInformation16> getSucssrOnDth() {
         if (sucssrOnDth == null) {
-            sucssrOnDth = new ArrayList<InvestmentAccountOwnershipInformation16>();
+            sucssrOnDth = new ArrayList<>();
         }
         return this.sucssrOnDth;
     }
@@ -272,8 +284,8 @@ public class AccountParties17 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the admstr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the admstr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -287,10 +299,12 @@ public class AccountParties17 {
      * {@link InvestmentAccountOwnershipInformation16 }
      * 
      * 
+     * @return
+     *     The value of the admstr property.
      */
     public List<InvestmentAccountOwnershipInformation16> getAdmstr() {
         if (admstr == null) {
-            admstr = new ArrayList<InvestmentAccountOwnershipInformation16>();
+            admstr = new ArrayList<>();
         }
         return this.admstr;
     }
@@ -301,8 +315,8 @@ public class AccountParties17 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the othrPty property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the othrPty property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -316,10 +330,12 @@ public class AccountParties17 {
      * {@link ExtendedParty14 }
      * 
      * 
+     * @return
+     *     The value of the othrPty property.
      */
     public List<ExtendedParty14> getOthrPty() {
         if (othrPty == null) {
-            othrPty = new ArrayList<ExtendedParty14>();
+            othrPty = new ArrayList<>();
         }
         return this.othrPty;
     }
@@ -330,8 +346,8 @@ public class AccountParties17 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the grntr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the grntr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -345,10 +361,12 @@ public class AccountParties17 {
      * {@link InvestmentAccountOwnershipInformation16 }
      * 
      * 
+     * @return
+     *     The value of the grntr property.
      */
     public List<InvestmentAccountOwnershipInformation16> getGrntr() {
         if (grntr == null) {
-            grntr = new ArrayList<InvestmentAccountOwnershipInformation16>();
+            grntr = new ArrayList<>();
         }
         return this.grntr;
     }
@@ -359,8 +377,8 @@ public class AccountParties17 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sttlr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sttlr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -374,10 +392,12 @@ public class AccountParties17 {
      * {@link InvestmentAccountOwnershipInformation16 }
      * 
      * 
+     * @return
+     *     The value of the sttlr property.
      */
     public List<InvestmentAccountOwnershipInformation16> getSttlr() {
         if (sttlr == null) {
-            sttlr = new ArrayList<InvestmentAccountOwnershipInformation16>();
+            sttlr = new ArrayList<>();
         }
         return this.sttlr;
     }
@@ -388,8 +408,8 @@ public class AccountParties17 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the snrMggOffcl property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the snrMggOffcl property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -403,10 +423,12 @@ public class AccountParties17 {
      * {@link InvestmentAccountOwnershipInformation16 }
      * 
      * 
+     * @return
+     *     The value of the snrMggOffcl property.
      */
     public List<InvestmentAccountOwnershipInformation16> getSnrMggOffcl() {
         if (snrMggOffcl == null) {
-            snrMggOffcl = new ArrayList<InvestmentAccountOwnershipInformation16>();
+            snrMggOffcl = new ArrayList<>();
         }
         return this.snrMggOffcl;
     }
@@ -417,8 +439,8 @@ public class AccountParties17 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the prtctr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the prtctr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -432,10 +454,12 @@ public class AccountParties17 {
      * {@link InvestmentAccountOwnershipInformation16 }
      * 
      * 
+     * @return
+     *     The value of the prtctr property.
      */
     public List<InvestmentAccountOwnershipInformation16> getPrtctr() {
         if (prtctr == null) {
-            prtctr = new ArrayList<InvestmentAccountOwnershipInformation16>();
+            prtctr = new ArrayList<>();
         }
         return this.prtctr;
     }

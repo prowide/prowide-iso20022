@@ -2,15 +2,15 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -55,7 +55,7 @@ public class Security15 {
     @XmlElement(name = "Mtrty", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar mtrty;
+    protected Calendar mtrty;
     @XmlElement(name = "Issr")
     protected SecurityIssuer2 issr;
     @XmlElement(name = "Tp")
@@ -223,7 +223,7 @@ public class Security15 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getMtrty() {
+    public Calendar getMtrty() {
         return mtrty;
     }
 
@@ -235,7 +235,7 @@ public class Security15 {
      *     {@link String }
      *     
      */
-    public Security15 setMtrty(XMLGregorianCalendar value) {
+    public Security15 setMtrty(Calendar value) {
         this.mtrty = value;
         return this;
     }
@@ -271,8 +271,8 @@ public class Security15 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the tp property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the tp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -286,10 +286,12 @@ public class Security15 {
      * {@link SecuritiesLendingType3Choice }
      * 
      * 
+     * @return
+     *     The value of the tp property.
      */
     public List<SecuritiesLendingType3Choice> getTp() {
         if (tp == null) {
-            tp = new ArrayList<SecuritiesLendingType3Choice>();
+            tp = new ArrayList<>();
         }
         return this.tp;
     }

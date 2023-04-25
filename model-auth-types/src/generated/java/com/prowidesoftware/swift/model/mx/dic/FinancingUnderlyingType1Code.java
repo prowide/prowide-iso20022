@@ -9,21 +9,20 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for FinancingUnderlyingType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="FinancingUnderlyingType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CMBS"/&gt;
- *     &lt;enumeration value="CSML"/&gt;
- *     &lt;enumeration value="CCRB"/&gt;
- *     &lt;enumeration value="LESG"/&gt;
- *     &lt;enumeration value="LTCS"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="RMBS"/&gt;
- *     &lt;enumeration value="TDRB"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="FinancingUnderlyingType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CMBS"/>
+ *     <enumeration value="CSML"/>
+ *     <enumeration value="CCRB"/>
+ *     <enumeration value="LESG"/>
+ *     <enumeration value="LTCS"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="RMBS"/>
+ *     <enumeration value="TDRB"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "FinancingUnderlyingType1Code")

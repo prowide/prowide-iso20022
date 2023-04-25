@@ -9,17 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for RepoTerminationOption2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="RepoTerminationOption2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="EGRN"/&gt;
- *     &lt;enumeration value="EGAE"/&gt;
- *     &lt;enumeration value="ETSB"/&gt;
- *     &lt;enumeration value="NOAP"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="RepoTerminationOption2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="EGRN"/>
+ *     <enumeration value="EGAE"/>
+ *     <enumeration value="ETSB"/>
+ *     <enumeration value="NOAP"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "RepoTerminationOption2Code")

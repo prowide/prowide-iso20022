@@ -64,8 +64,8 @@ public class ClearingAccount1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the collAcctOwnr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the collAcctOwnr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -79,10 +79,12 @@ public class ClearingAccount1 {
      * {@link CollateralAccount5 }
      * 
      * 
+     * @return
+     *     The value of the collAcctOwnr property.
      */
     public List<CollateralAccount5> getCollAcctOwnr() {
         if (collAcctOwnr == null) {
-            collAcctOwnr = new ArrayList<CollateralAccount5>();
+            collAcctOwnr = new ArrayList<>();
         }
         return this.collAcctOwnr;
     }

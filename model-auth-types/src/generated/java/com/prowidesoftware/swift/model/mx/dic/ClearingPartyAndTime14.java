@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -35,7 +35,7 @@ public class ClearingPartyAndTime14 {
     @XmlElement(name = "ClrDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar clrDtTm;
+    protected Calendar clrDtTm;
     @XmlElement(name = "RptTrckgNb")
     protected String rptTrckgNb;
     @XmlElement(name = "PrtflCd")
@@ -74,7 +74,7 @@ public class ClearingPartyAndTime14 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getClrDtTm() {
+    public Calendar getClrDtTm() {
         return clrDtTm;
     }
 
@@ -86,7 +86,7 @@ public class ClearingPartyAndTime14 {
      *     {@link String }
      *     
      */
-    public ClearingPartyAndTime14 setClrDtTm(XMLGregorianCalendar value) {
+    public ClearingPartyAndTime14 setClrDtTm(Calendar value) {
         this.clrDtTm = value;
         return this;
     }

@@ -2,13 +2,16 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.swift.model.mx.dic.*;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -30,13 +33,13 @@ public class MxAuth03800101
 
     @XmlElement(name = "InvcTaxRptStsAdvc", required = true)
     protected InvoiceTaxReportStatusAdviceV01 invcTaxRptStsAdvc;
-    public final static transient String BUSINESS_PROCESS = "auth";
-    public final static transient int FUNCTIONALITY = 38;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 1;
+    public static final transient String BUSINESS_PROCESS = "auth";
+    public static final transient int FUNCTIONALITY = 38;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {AddressType2Code.class, ContactDetails2 .class, GenericValidationRuleIdentification1 .class, InvoiceTaxReportStatusAdviceV01 .class, InvoiceTaxReportTransactionStatus1 .class, InvoiceTaxStatusReportHeader1 .class, MessageIdentification1 .class, MxAuth03800101 .class, NamePrefix1Code.class, PostalAddress6 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TaxOrganisationIdentification1 .class, TaxReportingStatus1Code.class, TaxReportingStatus2Code.class, ValidationRuleSchemeName1Choice.class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:auth.038.001.01";
+    public static final transient Class[] _classes = new Class[] {AddressType2Code.class, ContactDetails2 .class, GenericValidationRuleIdentification1 .class, InvoiceTaxReportStatusAdviceV01 .class, InvoiceTaxReportTransactionStatus1 .class, InvoiceTaxStatusReportHeader1 .class, MessageIdentification1 .class, MxAuth03800101 .class, NamePrefix1Code.class, PostalAddress6 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TaxOrganisationIdentification1 .class, TaxReportingStatus1Code.class, TaxReportingStatus2Code.class, ValidationRuleSchemeName1Choice.class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:auth.038.001.01";
 
     public MxAuth03800101() {
         super();
@@ -83,21 +86,6 @@ public class MxAuth03800101
     public MxAuth03800101 setInvcTaxRptStsAdvc(InvoiceTaxReportStatusAdviceV01 value) {
         this.invcTaxRptStsAdvc = value;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -170,8 +158,23 @@ public class MxAuth03800101
      * @return
      *     a new instance of MxAuth03800101
      */
-    public final static MxAuth03800101 fromJson(String json) {
+    public static final MxAuth03800101 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxAuth03800101 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

@@ -67,8 +67,8 @@ public class CashSettlement2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cshAcctDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cshAcctDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -82,10 +82,12 @@ public class CashSettlement2 {
      * {@link CashAccount33 }
      * 
      * 
+     * @return
+     *     The value of the cshAcctDtls property.
      */
     public List<CashAccount33> getCshAcctDtls() {
         if (cshAcctDtls == null) {
-            cshAcctDtls = new ArrayList<CashAccount33>();
+            cshAcctDtls = new ArrayList<>();
         }
         return this.cshAcctDtls;
     }
@@ -96,8 +98,8 @@ public class CashSettlement2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the othrCshSttlmDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the othrCshSttlmDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -111,10 +113,12 @@ public class CashSettlement2 {
      * {@link PaymentInstrument13 }
      * 
      * 
+     * @return
+     *     The value of the othrCshSttlmDtls property.
      */
     public List<PaymentInstrument13> getOthrCshSttlmDtls() {
         if (othrCshSttlmDtls == null) {
-            othrCshSttlmDtls = new ArrayList<PaymentInstrument13>();
+            othrCshSttlmDtls = new ArrayList<>();
         }
         return this.othrCshSttlmDtls;
     }

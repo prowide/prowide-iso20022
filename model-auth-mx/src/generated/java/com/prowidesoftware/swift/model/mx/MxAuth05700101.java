@@ -2,13 +2,16 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.swift.model.mx.dic.*;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -30,13 +33,13 @@ public class MxAuth05700101
 
     @XmlElement(name = "CCPPrtflStrssTstgDefRpt", required = true)
     protected CCPPortfolioStressTestingDefinitionReportV01 ccpPrtflStrssTstgDefRpt;
-    public final static transient String BUSINESS_PROCESS = "auth";
-    public final static transient int FUNCTIONALITY = 57;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 1;
+    public static final transient String BUSINESS_PROCESS = "auth";
+    public static final transient int FUNCTIONALITY = 57;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {Absolute1 .class, CCPPortfolioStressTestingDefinitionReportV01 .class, GenericIdentification165 .class, GenericIdentification168 .class, MxAuth05700101 .class, RiskFactor1 .class, ScenarioDefinition1 .class, ScenarioType1Code.class, SchemeIdentificationType1Code.class, Strategy1 .class, StrategyStressType1Code.class, StressItem1 .class, StressItem1Choice.class, StressSize1Choice.class, StressedProduct1 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:auth.057.001.01";
+    public static final transient Class[] _classes = new Class[] {Absolute1 .class, CCPPortfolioStressTestingDefinitionReportV01 .class, GenericIdentification165 .class, GenericIdentification168 .class, MxAuth05700101 .class, RiskFactor1 .class, ScenarioDefinition1 .class, ScenarioType1Code.class, SchemeIdentificationType1Code.class, Strategy1 .class, StrategyStressType1Code.class, StressItem1 .class, StressItem1Choice.class, StressSize1Choice.class, StressedProduct1 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:auth.057.001.01";
 
     public MxAuth05700101() {
         super();
@@ -83,21 +86,6 @@ public class MxAuth05700101
     public MxAuth05700101 setCCPPrtflStrssTstgDefRpt(CCPPortfolioStressTestingDefinitionReportV01 value) {
         this.ccpPrtflStrssTstgDefRpt = value;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -170,8 +158,23 @@ public class MxAuth05700101
      * @return
      *     a new instance of MxAuth05700101
      */
-    public final static MxAuth05700101 fromJson(String json) {
+    public static final MxAuth05700101 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxAuth05700101 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

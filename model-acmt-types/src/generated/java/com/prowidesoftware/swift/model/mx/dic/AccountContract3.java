@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -35,19 +35,19 @@ public class AccountContract3 {
     @XmlElement(name = "TrgtGoLiveDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar trgtGoLiveDt;
+    protected Calendar trgtGoLiveDt;
     @XmlElement(name = "TrgtClsgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar trgtClsgDt;
+    protected Calendar trgtClsgDt;
     @XmlElement(name = "GoLiveDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar goLiveDt;
+    protected Calendar goLiveDt;
     @XmlElement(name = "ClsgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar clsgDt;
+    protected Calendar clsgDt;
     @XmlElement(name = "UrgcyFlg")
     protected Boolean urgcyFlg;
     @XmlElement(name = "RmvlInd")
@@ -61,7 +61,7 @@ public class AccountContract3 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getTrgtGoLiveDt() {
+    public Calendar getTrgtGoLiveDt() {
         return trgtGoLiveDt;
     }
 
@@ -73,7 +73,7 @@ public class AccountContract3 {
      *     {@link String }
      *     
      */
-    public AccountContract3 setTrgtGoLiveDt(XMLGregorianCalendar value) {
+    public AccountContract3 setTrgtGoLiveDt(Calendar value) {
         this.trgtGoLiveDt = value;
         return this;
     }
@@ -86,7 +86,7 @@ public class AccountContract3 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getTrgtClsgDt() {
+    public Calendar getTrgtClsgDt() {
         return trgtClsgDt;
     }
 
@@ -98,7 +98,7 @@ public class AccountContract3 {
      *     {@link String }
      *     
      */
-    public AccountContract3 setTrgtClsgDt(XMLGregorianCalendar value) {
+    public AccountContract3 setTrgtClsgDt(Calendar value) {
         this.trgtClsgDt = value;
         return this;
     }
@@ -111,7 +111,7 @@ public class AccountContract3 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getGoLiveDt() {
+    public Calendar getGoLiveDt() {
         return goLiveDt;
     }
 
@@ -123,7 +123,7 @@ public class AccountContract3 {
      *     {@link String }
      *     
      */
-    public AccountContract3 setGoLiveDt(XMLGregorianCalendar value) {
+    public AccountContract3 setGoLiveDt(Calendar value) {
         this.goLiveDt = value;
         return this;
     }
@@ -136,7 +136,7 @@ public class AccountContract3 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getClsgDt() {
+    public Calendar getClsgDt() {
         return clsgDt;
     }
 
@@ -148,7 +148,7 @@ public class AccountContract3 {
      *     {@link String }
      *     
      */
-    public AccountContract3 setClsgDt(XMLGregorianCalendar value) {
+    public AccountContract3 setClsgDt(Calendar value) {
         this.clsgDt = value;
         return this;
     }

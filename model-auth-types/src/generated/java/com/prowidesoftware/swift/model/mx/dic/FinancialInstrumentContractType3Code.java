@@ -9,23 +9,22 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for FinancialInstrumentContractType3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="FinancialInstrumentContractType3Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CFDS"/&gt;
- *     &lt;enumeration value="FRAS"/&gt;
- *     &lt;enumeration value="FUTR"/&gt;
- *     &lt;enumeration value="FORW"/&gt;
- *     &lt;enumeration value="OPTN"/&gt;
- *     &lt;enumeration value="SWAP"/&gt;
- *     &lt;enumeration value="SWPT"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="FWOS"/&gt;
- *     &lt;enumeration value="FONS"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="FinancialInstrumentContractType3Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CFDS"/>
+ *     <enumeration value="FRAS"/>
+ *     <enumeration value="FUTR"/>
+ *     <enumeration value="FORW"/>
+ *     <enumeration value="OPTN"/>
+ *     <enumeration value="SWAP"/>
+ *     <enumeration value="SWPT"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="FWOS"/>
+ *     <enumeration value="FONS"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "FinancialInstrumentContractType3Code")

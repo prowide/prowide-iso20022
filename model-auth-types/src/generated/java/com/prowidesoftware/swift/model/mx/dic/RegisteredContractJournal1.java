@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -37,7 +37,7 @@ public class RegisteredContractJournal1 {
     @XmlElement(name = "ClsrDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar clsrDt;
+    protected Calendar clsrDt;
     @XmlElement(name = "ClsrRsn", required = true)
     protected ContractClosureReason1Choice clsrRsn;
 
@@ -99,7 +99,7 @@ public class RegisteredContractJournal1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getClsrDt() {
+    public Calendar getClsrDt() {
         return clsrDt;
     }
 
@@ -111,7 +111,7 @@ public class RegisteredContractJournal1 {
      *     {@link String }
      *     
      */
-    public RegisteredContractJournal1 setClsrDt(XMLGregorianCalendar value) {
+    public RegisteredContractJournal1 setClsrDt(Calendar value) {
         this.clsrDt = value;
         return this;
     }

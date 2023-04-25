@@ -9,20 +9,19 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for AssetClassSubProductAgriculturalType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="AssetClassSubProductAgriculturalType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="DIRY"/&gt;
- *     &lt;enumeration value="FRST"/&gt;
- *     &lt;enumeration value="GROS"/&gt;
- *     &lt;enumeration value="LSTK"/&gt;
- *     &lt;enumeration value="SOFT"/&gt;
- *     &lt;enumeration value="SEAF"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="AssetClassSubProductAgriculturalType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="DIRY"/>
+ *     <enumeration value="FRST"/>
+ *     <enumeration value="GROS"/>
+ *     <enumeration value="LSTK"/>
+ *     <enumeration value="SOFT"/>
+ *     <enumeration value="SEAF"/>
+ *     <enumeration value="OTHR"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "AssetClassSubProductAgriculturalType1Code")

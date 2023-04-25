@@ -9,30 +9,29 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for MarginType2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="MarginType2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ADFM"/&gt;
- *     &lt;enumeration value="COMA"/&gt;
- *     &lt;enumeration value="CEMA"/&gt;
- *     &lt;enumeration value="SEMA"/&gt;
- *     &lt;enumeration value="SCMA"/&gt;
- *     &lt;enumeration value="UFMA"/&gt;
- *     &lt;enumeration value="MARM"/&gt;
- *     &lt;enumeration value="SORM"/&gt;
- *     &lt;enumeration value="WWRM"/&gt;
- *     &lt;enumeration value="BARM"/&gt;
- *     &lt;enumeration value="LIRM"/&gt;
- *     &lt;enumeration value="CRAM"/&gt;
- *     &lt;enumeration value="CVMA"/&gt;
- *     &lt;enumeration value="SPMA"/&gt;
- *     &lt;enumeration value="JTDR"/&gt;
- *     &lt;enumeration value="DRAO"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="MarginType2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ADFM"/>
+ *     <enumeration value="COMA"/>
+ *     <enumeration value="CEMA"/>
+ *     <enumeration value="SEMA"/>
+ *     <enumeration value="SCMA"/>
+ *     <enumeration value="UFMA"/>
+ *     <enumeration value="MARM"/>
+ *     <enumeration value="SORM"/>
+ *     <enumeration value="WWRM"/>
+ *     <enumeration value="BARM"/>
+ *     <enumeration value="LIRM"/>
+ *     <enumeration value="CRAM"/>
+ *     <enumeration value="CVMA"/>
+ *     <enumeration value="SPMA"/>
+ *     <enumeration value="JTDR"/>
+ *     <enumeration value="DRAO"/>
+ *     <enumeration value="OTHR"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "MarginType2Code")

@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -31,7 +31,7 @@ public class ExerciseDate1Choice {
     @XmlElement(name = "FrstExrcDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar frstExrcDt;
+    protected Calendar frstExrcDt;
     @XmlElement(name = "PdgDtAplbl")
     @XmlSchemaType(name = "string")
     protected PriceStatus2Code pdgDtAplbl;
@@ -44,7 +44,7 @@ public class ExerciseDate1Choice {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getFrstExrcDt() {
+    public Calendar getFrstExrcDt() {
         return frstExrcDt;
     }
 
@@ -56,7 +56,7 @@ public class ExerciseDate1Choice {
      *     {@link String }
      *     
      */
-    public ExerciseDate1Choice setFrstExrcDt(XMLGregorianCalendar value) {
+    public ExerciseDate1Choice setFrstExrcDt(Calendar value) {
         this.frstExrcDt = value;
         return this;
     }

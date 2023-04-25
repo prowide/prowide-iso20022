@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -32,11 +32,11 @@ public class Schedule4 {
     @XmlElement(name = "UadjstdFctvDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar uadjstdFctvDt;
+    protected Calendar uadjstdFctvDt;
     @XmlElement(name = "UadjstdEndDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar uadjstdEndDt;
+    protected Calendar uadjstdEndDt;
     @XmlElement(name = "Pric", required = true)
     protected SecuritiesTransactionPrice17Choice pric;
 
@@ -48,7 +48,7 @@ public class Schedule4 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getUadjstdFctvDt() {
+    public Calendar getUadjstdFctvDt() {
         return uadjstdFctvDt;
     }
 
@@ -60,7 +60,7 @@ public class Schedule4 {
      *     {@link String }
      *     
      */
-    public Schedule4 setUadjstdFctvDt(XMLGregorianCalendar value) {
+    public Schedule4 setUadjstdFctvDt(Calendar value) {
         this.uadjstdFctvDt = value;
         return this;
     }
@@ -73,7 +73,7 @@ public class Schedule4 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getUadjstdEndDt() {
+    public Calendar getUadjstdEndDt() {
         return uadjstdEndDt;
     }
 
@@ -85,7 +85,7 @@ public class Schedule4 {
      *     {@link String }
      *     
      */
-    public Schedule4 setUadjstdEndDt(XMLGregorianCalendar value) {
+    public Schedule4 setUadjstdEndDt(Calendar value) {
         this.uadjstdEndDt = value;
         return this;
     }

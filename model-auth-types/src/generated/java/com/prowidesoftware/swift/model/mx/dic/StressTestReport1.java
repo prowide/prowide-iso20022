@@ -37,8 +37,8 @@ public class StressTestReport1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the strssTstRslt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the strssTstRslt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -52,10 +52,12 @@ public class StressTestReport1 {
      * {@link StressTestResult2 }
      * 
      * 
+     * @return
+     *     The value of the strssTstRslt property.
      */
     public List<StressTestResult2> getStrssTstRslt() {
         if (strssTstRslt == null) {
-            strssTstRslt = new ArrayList<StressTestResult2>();
+            strssTstRslt = new ArrayList<>();
         }
         return this.strssTstRslt;
     }

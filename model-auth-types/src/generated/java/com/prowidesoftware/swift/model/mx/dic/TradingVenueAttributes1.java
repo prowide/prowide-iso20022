@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -39,19 +39,19 @@ public class TradingVenueAttributes1 {
     @XmlElement(name = "AdmssnApprvlDtByIssr", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar admssnApprvlDtByIssr;
+    protected Calendar admssnApprvlDtByIssr;
     @XmlElement(name = "ReqForAdmssnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar reqForAdmssnDt;
+    protected Calendar reqForAdmssnDt;
     @XmlElement(name = "FrstTradDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar frstTradDt;
+    protected Calendar frstTradDt;
     @XmlElement(name = "TermntnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar termntnDt;
+    protected Calendar termntnDt;
 
     /**
      * Gets the value of the id property.
@@ -103,7 +103,7 @@ public class TradingVenueAttributes1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getAdmssnApprvlDtByIssr() {
+    public Calendar getAdmssnApprvlDtByIssr() {
         return admssnApprvlDtByIssr;
     }
 
@@ -115,7 +115,7 @@ public class TradingVenueAttributes1 {
      *     {@link String }
      *     
      */
-    public TradingVenueAttributes1 setAdmssnApprvlDtByIssr(XMLGregorianCalendar value) {
+    public TradingVenueAttributes1 setAdmssnApprvlDtByIssr(Calendar value) {
         this.admssnApprvlDtByIssr = value;
         return this;
     }
@@ -128,7 +128,7 @@ public class TradingVenueAttributes1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getReqForAdmssnDt() {
+    public Calendar getReqForAdmssnDt() {
         return reqForAdmssnDt;
     }
 
@@ -140,7 +140,7 @@ public class TradingVenueAttributes1 {
      *     {@link String }
      *     
      */
-    public TradingVenueAttributes1 setReqForAdmssnDt(XMLGregorianCalendar value) {
+    public TradingVenueAttributes1 setReqForAdmssnDt(Calendar value) {
         this.reqForAdmssnDt = value;
         return this;
     }
@@ -153,7 +153,7 @@ public class TradingVenueAttributes1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getFrstTradDt() {
+    public Calendar getFrstTradDt() {
         return frstTradDt;
     }
 
@@ -165,7 +165,7 @@ public class TradingVenueAttributes1 {
      *     {@link String }
      *     
      */
-    public TradingVenueAttributes1 setFrstTradDt(XMLGregorianCalendar value) {
+    public TradingVenueAttributes1 setFrstTradDt(Calendar value) {
         this.frstTradDt = value;
         return this;
     }
@@ -178,7 +178,7 @@ public class TradingVenueAttributes1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getTermntnDt() {
+    public Calendar getTermntnDt() {
         return termntnDt;
     }
 
@@ -190,7 +190,7 @@ public class TradingVenueAttributes1 {
      *     {@link String }
      *     
      */
-    public TradingVenueAttributes1 setTermntnDt(XMLGregorianCalendar value) {
+    public TradingVenueAttributes1 setTermntnDt(Calendar value) {
         this.termntnDt = value;
         return this;
     }

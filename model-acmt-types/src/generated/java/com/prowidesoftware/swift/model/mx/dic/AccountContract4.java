@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -32,7 +32,7 @@ public class AccountContract4 {
     @XmlElement(name = "TrgtClsgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar trgtClsgDt;
+    protected Calendar trgtClsgDt;
     @XmlElement(name = "UrgcyFlg")
     protected Boolean urgcyFlg;
     @XmlElement(name = "RmvlInd")
@@ -46,7 +46,7 @@ public class AccountContract4 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getTrgtClsgDt() {
+    public Calendar getTrgtClsgDt() {
         return trgtClsgDt;
     }
 
@@ -58,7 +58,7 @@ public class AccountContract4 {
      *     {@link String }
      *     
      */
-    public AccountContract4 setTrgtClsgDt(XMLGregorianCalendar value) {
+    public AccountContract4 setTrgtClsgDt(Calendar value) {
         this.trgtClsgDt = value;
         return this;
     }

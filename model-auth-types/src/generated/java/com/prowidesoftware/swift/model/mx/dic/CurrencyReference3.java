@@ -90,8 +90,8 @@ public class CurrencyReference3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the xchgRateInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the xchgRateInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -105,10 +105,12 @@ public class CurrencyReference3 {
      * {@link ExchangeRateInformation1 }
      * 
      * 
+     * @return
+     *     The value of the xchgRateInf property.
      */
     public List<ExchangeRateInformation1> getXchgRateInf() {
         if (xchgRateInf == null) {
-            xchgRateInf = new ArrayList<ExchangeRateInformation1>();
+            xchgRateInf = new ArrayList<>();
         }
         return this.xchgRateInf;
     }

@@ -37,8 +37,8 @@ public class AccountReportOrError1Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the err property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the err property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -52,10 +52,12 @@ public class AccountReportOrError1Choice {
      * {@link ErrorHandling3 }
      * 
      * 
+     * @return
+     *     The value of the err property.
      */
     public List<ErrorHandling3> getErr() {
         if (err == null) {
-            err = new ArrayList<ErrorHandling3>();
+            err = new ArrayList<>();
         }
         return this.err;
     }
@@ -66,8 +68,8 @@ public class AccountReportOrError1Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the acctRpt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the acctRpt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -81,10 +83,12 @@ public class AccountReportOrError1Choice {
      * {@link AccountReport14 }
      * 
      * 
+     * @return
+     *     The value of the acctRpt property.
      */
     public List<AccountReport14> getAcctRpt() {
         if (acctRpt == null) {
-            acctRpt = new ArrayList<AccountReport14>();
+            acctRpt = new ArrayList<>();
         }
         return this.acctRpt;
     }

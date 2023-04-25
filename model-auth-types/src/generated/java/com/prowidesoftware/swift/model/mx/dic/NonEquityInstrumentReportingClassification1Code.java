@@ -9,20 +9,19 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for NonEquityInstrumentReportingClassification1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="NonEquityInstrumentReportingClassification1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="SFPS"/&gt;
- *     &lt;enumeration value="SDRV"/&gt;
- *     &lt;enumeration value="DERV"/&gt;
- *     &lt;enumeration value="EMAL"/&gt;
- *     &lt;enumeration value="BOND"/&gt;
- *     &lt;enumeration value="ETCS"/&gt;
- *     &lt;enumeration value="ETNS"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="NonEquityInstrumentReportingClassification1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="SFPS"/>
+ *     <enumeration value="SDRV"/>
+ *     <enumeration value="DERV"/>
+ *     <enumeration value="EMAL"/>
+ *     <enumeration value="BOND"/>
+ *     <enumeration value="ETCS"/>
+ *     <enumeration value="ETNS"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "NonEquityInstrumentReportingClassification1Code")

@@ -68,8 +68,8 @@ public class SecuredCollateral2Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the mltplColl property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the mltplColl property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -83,10 +83,12 @@ public class SecuredCollateral2Choice {
      * {@link CollateralValuation6 }
      * 
      * 
+     * @return
+     *     The value of the mltplColl property.
      */
     public List<CollateralValuation6> getMltplColl() {
         if (mltplColl == null) {
-            mltplColl = new ArrayList<CollateralValuation6>();
+            mltplColl = new ArrayList<>();
         }
         return this.mltplColl;
     }
@@ -122,8 +124,8 @@ public class SecuredCollateral2Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the othrColl property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the othrColl property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -137,10 +139,12 @@ public class SecuredCollateral2Choice {
      * {@link CollateralValuation7 }
      * 
      * 
+     * @return
+     *     The value of the othrColl property.
      */
     public List<CollateralValuation7> getOthrColl() {
         if (othrColl == null) {
-            othrColl = new ArrayList<CollateralValuation7>();
+            othrColl = new ArrayList<>();
         }
         return this.othrColl;
     }

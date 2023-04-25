@@ -9,27 +9,26 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for PartySectorType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="PartySectorType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="SRSN"/&gt;
- *     &lt;enumeration value="SRSB"/&gt;
- *     &lt;enumeration value="SRPB"/&gt;
- *     &lt;enumeration value="SRCB"/&gt;
- *     &lt;enumeration value="RGNL"/&gt;
- *     &lt;enumeration value="OFCP"/&gt;
- *     &lt;enumeration value="NRSN"/&gt;
- *     &lt;enumeration value="NRSB"/&gt;
- *     &lt;enumeration value="NRPB"/&gt;
- *     &lt;enumeration value="NRCB"/&gt;
- *     &lt;enumeration value="NFIN"/&gt;
- *     &lt;enumeration value="NTPB"/&gt;
- *     &lt;enumeration value="LOCA"/&gt;
- *     &lt;enumeration value="CDTI"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="PartySectorType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="SRSN"/>
+ *     <enumeration value="SRSB"/>
+ *     <enumeration value="SRPB"/>
+ *     <enumeration value="SRCB"/>
+ *     <enumeration value="RGNL"/>
+ *     <enumeration value="OFCP"/>
+ *     <enumeration value="NRSN"/>
+ *     <enumeration value="NRSB"/>
+ *     <enumeration value="NRPB"/>
+ *     <enumeration value="NRCB"/>
+ *     <enumeration value="NFIN"/>
+ *     <enumeration value="NTPB"/>
+ *     <enumeration value="LOCA"/>
+ *     <enumeration value="CDTI"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "PartySectorType1Code")

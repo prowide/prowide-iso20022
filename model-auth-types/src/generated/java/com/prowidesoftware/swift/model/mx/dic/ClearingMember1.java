@@ -2,15 +2,15 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -48,11 +48,11 @@ public class ClearingMember1 {
     @XmlElement(name = "MmbshVldFr", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar mmbshVldFr;
+    protected Calendar mmbshVldFr;
     @XmlElement(name = "MmbshVldTo", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar mmbshVldTo;
+    protected Calendar mmbshVldTo;
     @XmlElement(name = "SpnsrgClrMmbId")
     protected PartyIdentification118Choice spnsrgClrMmbId;
     @XmlElement(name = "ClrAcctOwnr", required = true)
@@ -158,7 +158,7 @@ public class ClearingMember1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getMmbshVldFr() {
+    public Calendar getMmbshVldFr() {
         return mmbshVldFr;
     }
 
@@ -170,7 +170,7 @@ public class ClearingMember1 {
      *     {@link String }
      *     
      */
-    public ClearingMember1 setMmbshVldFr(XMLGregorianCalendar value) {
+    public ClearingMember1 setMmbshVldFr(Calendar value) {
         this.mmbshVldFr = value;
         return this;
     }
@@ -183,7 +183,7 @@ public class ClearingMember1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getMmbshVldTo() {
+    public Calendar getMmbshVldTo() {
         return mmbshVldTo;
     }
 
@@ -195,7 +195,7 @@ public class ClearingMember1 {
      *     {@link String }
      *     
      */
-    public ClearingMember1 setMmbshVldTo(XMLGregorianCalendar value) {
+    public ClearingMember1 setMmbshVldTo(Calendar value) {
         this.mmbshVldTo = value;
         return this;
     }
@@ -231,8 +231,8 @@ public class ClearingMember1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the clrAcctOwnr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the clrAcctOwnr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -246,10 +246,12 @@ public class ClearingMember1 {
      * {@link ClearingAccount1 }
      * 
      * 
+     * @return
+     *     The value of the clrAcctOwnr property.
      */
     public List<ClearingAccount1> getClrAcctOwnr() {
         if (clrAcctOwnr == null) {
-            clrAcctOwnr = new ArrayList<ClearingAccount1>();
+            clrAcctOwnr = new ArrayList<>();
         }
         return this.clrAcctOwnr;
     }

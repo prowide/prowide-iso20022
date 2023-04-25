@@ -9,19 +9,18 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for SettlementDate6Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="SettlementDate6Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="TFIV"/&gt;
- *     &lt;enumeration value="TFOR"/&gt;
- *     &lt;enumeration value="TONE"/&gt;
- *     &lt;enumeration value="TTRE"/&gt;
- *     &lt;enumeration value="TTWO"/&gt;
- *     &lt;enumeration value="SAMD"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="SettlementDate6Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="TFIV"/>
+ *     <enumeration value="TFOR"/>
+ *     <enumeration value="TONE"/>
+ *     <enumeration value="TTRE"/>
+ *     <enumeration value="TTWO"/>
+ *     <enumeration value="SAMD"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "SettlementDate6Code")

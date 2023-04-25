@@ -1,15 +1,15 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -44,13 +44,13 @@ public class LoanData96 {
     @XmlElement(name = "MtrtyDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar mtrtyDt;
+    protected Calendar mtrtyDt;
     @XmlElement(name = "UnqTradIdr", required = true)
     protected String unqTradIdr;
     @XmlElement(name = "EvtDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar evtDt;
+    protected Calendar evtDt;
     @XmlElement(name = "ClrSts", required = true)
     protected Cleared10Choice clrSts;
     @XmlElement(name = "TradgVn", required = true)
@@ -60,15 +60,15 @@ public class LoanData96 {
     @XmlElement(name = "ExctnDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar exctnDtTm;
+    protected Calendar exctnDtTm;
     @XmlElement(name = "ValDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar valDt;
+    protected Calendar valDt;
     @XmlElement(name = "TermntnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar termntnDt;
+    protected Calendar termntnDt;
     @XmlElement(name = "GnlColl")
     @XmlSchemaType(name = "string")
     protected SpecialCollateral1Code gnlColl;
@@ -108,7 +108,7 @@ public class LoanData96 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getMtrtyDt() {
+    public Calendar getMtrtyDt() {
         return mtrtyDt;
     }
 
@@ -120,7 +120,7 @@ public class LoanData96 {
      *     {@link String }
      *     
      */
-    public LoanData96 setMtrtyDt(XMLGregorianCalendar value) {
+    public LoanData96 setMtrtyDt(Calendar value) {
         this.mtrtyDt = value;
         return this;
     }
@@ -158,7 +158,7 @@ public class LoanData96 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getEvtDt() {
+    public Calendar getEvtDt() {
         return evtDt;
     }
 
@@ -170,7 +170,7 @@ public class LoanData96 {
      *     {@link String }
      *     
      */
-    public LoanData96 setEvtDt(XMLGregorianCalendar value) {
+    public LoanData96 setEvtDt(Calendar value) {
         this.evtDt = value;
         return this;
     }
@@ -258,7 +258,7 @@ public class LoanData96 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getExctnDtTm() {
+    public Calendar getExctnDtTm() {
         return exctnDtTm;
     }
 
@@ -270,7 +270,7 @@ public class LoanData96 {
      *     {@link String }
      *     
      */
-    public LoanData96 setExctnDtTm(XMLGregorianCalendar value) {
+    public LoanData96 setExctnDtTm(Calendar value) {
         this.exctnDtTm = value;
         return this;
     }
@@ -283,7 +283,7 @@ public class LoanData96 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getValDt() {
+    public Calendar getValDt() {
         return valDt;
     }
 
@@ -295,7 +295,7 @@ public class LoanData96 {
      *     {@link String }
      *     
      */
-    public LoanData96 setValDt(XMLGregorianCalendar value) {
+    public LoanData96 setValDt(Calendar value) {
         this.valDt = value;
         return this;
     }
@@ -308,7 +308,7 @@ public class LoanData96 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getTermntnDt() {
+    public Calendar getTermntnDt() {
         return termntnDt;
     }
 
@@ -320,7 +320,7 @@ public class LoanData96 {
      *     {@link String }
      *     
      */
-    public LoanData96 setTermntnDt(XMLGregorianCalendar value) {
+    public LoanData96 setTermntnDt(Calendar value) {
         this.termntnDt = value;
         return this;
     }

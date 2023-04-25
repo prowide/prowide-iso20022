@@ -164,8 +164,8 @@ public class AccountDetailsConfirmation {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the intrmies property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the intrmies property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -179,10 +179,12 @@ public class AccountDetailsConfirmation {
      * {@link Intermediary5 }
      * 
      * 
+     * @return
+     *     The value of the intrmies property.
      */
     public List<Intermediary5> getIntrmies() {
         if (intrmies == null) {
-            intrmies = new ArrayList<Intermediary5>();
+            intrmies = new ArrayList<>();
         }
         return this.intrmies;
     }
@@ -193,8 +195,8 @@ public class AccountDetailsConfirmation {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the svgsInvstmtPlan property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the svgsInvstmtPlan property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -208,10 +210,12 @@ public class AccountDetailsConfirmation {
      * {@link InvestmentPlan2 }
      * 
      * 
+     * @return
+     *     The value of the svgsInvstmtPlan property.
      */
     public List<InvestmentPlan2> getSvgsInvstmtPlan() {
         if (svgsInvstmtPlan == null) {
-            svgsInvstmtPlan = new ArrayList<InvestmentPlan2>();
+            svgsInvstmtPlan = new ArrayList<>();
         }
         return this.svgsInvstmtPlan;
     }
@@ -222,8 +226,8 @@ public class AccountDetailsConfirmation {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the wdrwlInvstmtPlan property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the wdrwlInvstmtPlan property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -237,10 +241,12 @@ public class AccountDetailsConfirmation {
      * {@link InvestmentPlan2 }
      * 
      * 
+     * @return
+     *     The value of the wdrwlInvstmtPlan property.
      */
     public List<InvestmentPlan2> getWdrwlInvstmtPlan() {
         if (wdrwlInvstmtPlan == null) {
-            wdrwlInvstmtPlan = new ArrayList<InvestmentPlan2>();
+            wdrwlInvstmtPlan = new ArrayList<>();
         }
         return this.wdrwlInvstmtPlan;
     }
@@ -276,8 +282,8 @@ public class AccountDetailsConfirmation {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the xtnsn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the xtnsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -291,10 +297,12 @@ public class AccountDetailsConfirmation {
      * {@link Extension1 }
      * 
      * 
+     * @return
+     *     The value of the xtnsn property.
      */
     public List<Extension1> getXtnsn() {
         if (xtnsn == null) {
-            xtnsn = new ArrayList<Extension1>();
+            xtnsn = new ArrayList<>();
         }
         return this.xtnsn;
     }

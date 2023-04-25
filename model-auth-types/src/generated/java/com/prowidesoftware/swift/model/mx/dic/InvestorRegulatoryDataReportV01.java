@@ -152,8 +152,8 @@ public class InvestorRegulatoryDataReportV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ptyId property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ptyId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -167,10 +167,12 @@ public class InvestorRegulatoryDataReportV01 {
      * {@link PartyIdentification130 }
      * 
      * 
+     * @return
+     *     The value of the ptyId property.
      */
     public List<PartyIdentification130> getPtyId() {
         if (ptyId == null) {
-            ptyId = new ArrayList<PartyIdentification130>();
+            ptyId = new ArrayList<>();
         }
         return this.ptyId;
     }
@@ -206,8 +208,8 @@ public class InvestorRegulatoryDataReportV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -221,10 +223,12 @@ public class InvestorRegulatoryDataReportV01 {
      * {@link SupplementaryData1 }
      * 
      * 
+     * @return
+     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<SupplementaryData1>();
+            splmtryData = new ArrayList<>();
         }
         return this.splmtryData;
     }

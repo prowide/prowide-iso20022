@@ -2,14 +2,14 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.util.Calendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -38,7 +38,7 @@ public class AmortisedCostMethodPriceDeviationEvent1 {
     @XmlElement(name = "ValtnDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar valtnDt;
+    protected Calendar valtnDt;
     @XmlElement(name = "AsstId", required = true)
     protected SecurityIdentification33 asstId;
     @XmlElement(name = "RptgCcyMktPric", required = true)
@@ -62,7 +62,7 @@ public class AmortisedCostMethodPriceDeviationEvent1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getValtnDt() {
+    public Calendar getValtnDt() {
         return valtnDt;
     }
 
@@ -74,7 +74,7 @@ public class AmortisedCostMethodPriceDeviationEvent1 {
      *     {@link String }
      *     
      */
-    public AmortisedCostMethodPriceDeviationEvent1 setValtnDt(XMLGregorianCalendar value) {
+    public AmortisedCostMethodPriceDeviationEvent1 setValtnDt(Calendar value) {
         this.valtnDt = value;
         return this;
     }

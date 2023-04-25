@@ -211,8 +211,8 @@ public class InvestmentAccountOwnershipInformation8 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the modfdInvstrPrflVldtn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the modfdInvstrPrflVldtn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -226,10 +226,12 @@ public class InvestmentAccountOwnershipInformation8 {
      * {@link ModificationScope19 }
      * 
      * 
+     * @return
+     *     The value of the modfdInvstrPrflVldtn property.
      */
     public List<ModificationScope19> getModfdInvstrPrflVldtn() {
         if (modfdInvstrPrflVldtn == null) {
-            modfdInvstrPrflVldtn = new ArrayList<ModificationScope19>();
+            modfdInvstrPrflVldtn = new ArrayList<>();
         }
         return this.modfdInvstrPrflVldtn;
     }

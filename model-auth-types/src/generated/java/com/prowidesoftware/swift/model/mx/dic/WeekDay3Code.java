@@ -9,25 +9,24 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for WeekDay3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="WeekDay3Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ALLD"/&gt;
- *     &lt;enumeration value="XBHL"/&gt;
- *     &lt;enumeration value="IBHL"/&gt;
- *     &lt;enumeration value="FRID"/&gt;
- *     &lt;enumeration value="MOND"/&gt;
- *     &lt;enumeration value="SATD"/&gt;
- *     &lt;enumeration value="SUND"/&gt;
- *     &lt;enumeration value="THUD"/&gt;
- *     &lt;enumeration value="TUED"/&gt;
- *     &lt;enumeration value="WEDD"/&gt;
- *     &lt;enumeration value="WDAY"/&gt;
- *     &lt;enumeration value="WEND"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="WeekDay3Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ALLD"/>
+ *     <enumeration value="XBHL"/>
+ *     <enumeration value="IBHL"/>
+ *     <enumeration value="FRID"/>
+ *     <enumeration value="MOND"/>
+ *     <enumeration value="SATD"/>
+ *     <enumeration value="SUND"/>
+ *     <enumeration value="THUD"/>
+ *     <enumeration value="TUED"/>
+ *     <enumeration value="WEDD"/>
+ *     <enumeration value="WDAY"/>
+ *     <enumeration value="WEND"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "WeekDay3Code")

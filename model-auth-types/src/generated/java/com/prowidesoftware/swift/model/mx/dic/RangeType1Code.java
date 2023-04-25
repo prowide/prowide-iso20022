@@ -10,27 +10,26 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for RangeType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="RangeType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="D2T7"/&gt;
- *     &lt;enumeration value="D829"/&gt;
- *     &lt;enumeration value="LS1D"/&gt;
- *     &lt;enumeration value="A30D"/&gt;
- *     &lt;enumeration value="YMS2"/&gt;
- *     &lt;enumeration value="YMN3"/&gt;
- *     &lt;enumeration value="LT3M"/&gt;
- *     &lt;enumeration value="LT1M"/&gt;
- *     &lt;enumeration value="LT1Y"/&gt;
- *     &lt;enumeration value="LT2Y"/&gt;
- *     &lt;enumeration value="LT3Y"/&gt;
- *     &lt;enumeration value="LT5Y"/&gt;
- *     &lt;enumeration value="CYTD"/&gt;
- *     &lt;enumeration value="YMS1"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="RangeType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="D2T7"/>
+ *     <enumeration value="D829"/>
+ *     <enumeration value="LS1D"/>
+ *     <enumeration value="A30D"/>
+ *     <enumeration value="YMS2"/>
+ *     <enumeration value="YMN3"/>
+ *     <enumeration value="LT3M"/>
+ *     <enumeration value="LT1M"/>
+ *     <enumeration value="LT1Y"/>
+ *     <enumeration value="LT2Y"/>
+ *     <enumeration value="LT3Y"/>
+ *     <enumeration value="LT5Y"/>
+ *     <enumeration value="CYTD"/>
+ *     <enumeration value="YMS1"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "RangeType1Code")

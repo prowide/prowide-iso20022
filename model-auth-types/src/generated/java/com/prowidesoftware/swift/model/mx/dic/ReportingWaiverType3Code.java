@@ -9,26 +9,25 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for ReportingWaiverType3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ReportingWaiverType3Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="BENC"/&gt;
- *     &lt;enumeration value="ACTX"/&gt;
- *     &lt;enumeration value="ILQD"/&gt;
- *     &lt;enumeration value="SIZE"/&gt;
- *     &lt;enumeration value="CANC"/&gt;
- *     &lt;enumeration value="AMND"/&gt;
- *     &lt;enumeration value="SDIV"/&gt;
- *     &lt;enumeration value="RPRI"/&gt;
- *     &lt;enumeration value="DUPL"/&gt;
- *     &lt;enumeration value="LRGS"/&gt;
- *     &lt;enumeration value="TNCP"/&gt;
- *     &lt;enumeration value="TPAC"/&gt;
- *     &lt;enumeration value="XFPH"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ReportingWaiverType3Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="BENC"/>
+ *     <enumeration value="ACTX"/>
+ *     <enumeration value="ILQD"/>
+ *     <enumeration value="SIZE"/>
+ *     <enumeration value="CANC"/>
+ *     <enumeration value="AMND"/>
+ *     <enumeration value="SDIV"/>
+ *     <enumeration value="RPRI"/>
+ *     <enumeration value="DUPL"/>
+ *     <enumeration value="LRGS"/>
+ *     <enumeration value="TNCP"/>
+ *     <enumeration value="TPAC"/>
+ *     <enumeration value="XFPH"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ReportingWaiverType3Code")

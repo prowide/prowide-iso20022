@@ -9,17 +9,16 @@ import jakarta.xml.bind.annotation.XmlType;
  * <p>Java class for MoneyMarketFundType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="MoneyMarketFundType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="STLV"/&gt;
- *     &lt;enumeration value="STCN"/&gt;
- *     &lt;enumeration value="STVN"/&gt;
- *     &lt;enumeration value="SDVN"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="MoneyMarketFundType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="STLV"/>
+ *     <enumeration value="STCN"/>
+ *     <enumeration value="STVN"/>
+ *     <enumeration value="SDVN"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "MoneyMarketFundType1Code")
