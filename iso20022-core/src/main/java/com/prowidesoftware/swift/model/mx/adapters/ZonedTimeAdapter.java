@@ -16,11 +16,13 @@
 package com.prowidesoftware.swift.model.mx.adapters;
 
 import jakarta.xml.bind.annotation.adapters.XmlAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+
 import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
 
 /**
- * XMLGregorianCalendar adapter for time elements.
+ * Calendar adapter for time elements.
  * <p>
  * Marshals the time as a local time with UTC offset format hh:mm:ss[.sss]+/-hh:mm which is aligned with ISO 8601.
  * Dislike the default jaxb implementation, this adapter will always print the offset, and for UTC times in particular
@@ -33,25 +35,25 @@ import java.text.SimpleDateFormat;
  * @see TypeAdaptersConfiguration
  * @since 9.2.6
  */
-public class ZonedTimeAdapter extends XmlAdapter<String, XMLGregorianCalendar> {
+public class ZonedTimeAdapter extends XmlAdapter<String, Calendar> {
 
-    private final SimpleDateFormat marshalFormat;
-    private final SimpleDateFormat unmarshalFormat;
-    private final XmlAdapter<String, XMLGregorianCalendar> customAdapterImpl;
+    private final DateTimeFormatter marshalFormat;
+    private final DateTimeFormatter unmarshalFormat;
+    private final XmlAdapter<String, Calendar> customAdapterImpl;
 
     /**
      * Creates a time adapter with the default format
      */
     public ZonedTimeAdapter() {
-        this.marshalFormat = new SimpleDateFormat("HH:mm:ss.SSSXXX");
-        this.unmarshalFormat = new SimpleDateFormat("HH:mm:ss[.SSS][XXX]");
+        this.marshalFormat = DateTimeFormatter.ofPattern("HH:mm:ss.SSSXXX");
+        this.unmarshalFormat = DateTimeFormatter.ofPattern("HH:mm:ss[.SSS][XXX]");
         this.customAdapterImpl = null;
     }
 
     /**
      * Creates a time adapter with a specific given format that will be used for both the marshalling and unmarshalling
      */
-    public ZonedTimeAdapter(SimpleDateFormat dateFormat) {
+    public ZonedTimeAdapter(DateTimeFormatter dateFormat) {
         this.marshalFormat = dateFormat;
         this.unmarshalFormat = dateFormat;
         this.customAdapterImpl = null;
@@ -60,7 +62,7 @@ public class ZonedTimeAdapter extends XmlAdapter<String, XMLGregorianCalendar> {
     /**
      * Creates a time adapter injecting a custom implementation
      */
-    public ZonedTimeAdapter(XmlAdapter<String, XMLGregorianCalendar> customAdapterImpl) {
+    public ZonedTimeAdapter(XmlAdapter<String, Calendar> customAdapterImpl) {
         this.marshalFormat = null;
         this.unmarshalFormat = null;
         this.customAdapterImpl = customAdapterImpl;
@@ -73,11 +75,11 @@ public class ZonedTimeAdapter extends XmlAdapter<String, XMLGregorianCalendar> {
      * @return created calendar object or null if cannot be parsed
      */
     @Override
-    public XMLGregorianCalendar unmarshal(String value) throws Exception {
+    public Calendar unmarshal(String value) throws Exception {
         if (this.customAdapterImpl != null) {
             return this.customAdapterImpl.unmarshal(value);
         } else {
-            return AdapterUtils.parse(this.unmarshalFormat, value);
+            return AdapterUtils.parseTime(this.unmarshalFormat, value);
         }
     }
 
@@ -88,13 +90,13 @@ public class ZonedTimeAdapter extends XmlAdapter<String, XMLGregorianCalendar> {
      * @return formatted content for the XML
      */
     @Override
-    public String marshal(XMLGregorianCalendar cal) throws Exception {
+    public String marshal(Calendar cal) throws Exception {
         if (this.customAdapterImpl != null) {
             return this.customAdapterImpl.marshal(cal);
         } else {
             String formatted;
             synchronized (marshalFormat) {
-                formatted = AdapterUtils.format(this.marshalFormat, cal);
+                formatted = AdapterUtils.formatTime(this.marshalFormat, cal);
             }
             return formatted.replace(".000", "").replace("Z", "+00:00");
         }

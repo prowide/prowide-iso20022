@@ -37,6 +37,7 @@ import javax.xml.namespace.QName;
 import javax.xml.transform.dom.DOMResult;
 import java.io.StringWriter;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -186,7 +187,7 @@ public class BusinessAppHdrV02 extends BusinessApplicationHeaderV02Impl implemen
      * @see #getCreDt()
      */
     @Override
-    public XMLGregorianCalendar creationDate() {
+    public Calendar creationDate() {
         return this.getCreDt();
     }
 
@@ -194,7 +195,7 @@ public class BusinessAppHdrV02 extends BusinessApplicationHeaderV02Impl implemen
      * Sets the creation date.
      *
      * @param overwrite if true, the creation date will always be set overwriting any previous value;
-     * @see #setCreDt(XMLGregorianCalendar)
+     * @see #setCreDt(Calendar)
      */
     @Override
     public void setCreationDate(boolean overwrite) {

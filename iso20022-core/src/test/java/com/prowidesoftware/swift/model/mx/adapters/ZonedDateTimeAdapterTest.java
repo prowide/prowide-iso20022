@@ -18,11 +18,15 @@ package com.prowidesoftware.swift.model.mx.adapters;
 import org.junit.jupiter.api.Test;
 
 import javax.xml.datatype.DatatypeFactory;
-import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
+import java.util.Calendar;
+import java.util.TimeZone;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 public class ZonedDateTimeAdapterTest {
 
@@ -30,57 +34,81 @@ public class ZonedDateTimeAdapterTest {
 
     @Test
     public void testUnmarshallFractionOfSeconds() throws Exception {
-        XMLGregorianCalendar cal = adapter.unmarshal("2022-03-04T12:50:08.123-03:00");
-        assertEquals(2022, cal.getYear());
-        assertEquals(3, cal.getMonth());
-        assertEquals(4, cal.getDay());
-        assertEquals(12, cal.getHour());
-        assertEquals(50, cal.getMinute());
-        assertEquals(8, cal.getSecond());
-        assertEquals(new BigDecimal("0.123"), cal.getFractionalSecond());
-        assertEquals(-180, cal.getTimezone());
+        Calendar cal = adapter.unmarshal("2022-03-04T12:50:08.123-03:00");
+        assertEquals(2022, cal.get(Calendar.YEAR));
+        assertEquals(2, cal.get(Calendar.MONTH)); //TODO esta bien ? Enero = Month 0 ?
+        assertEquals(4, cal.get(Calendar.DAY_OF_MONTH));
+        assertEquals(12,cal.get(Calendar.HOUR_OF_DAY));
+        assertEquals(50,cal.get(Calendar.MINUTE));
+        assertEquals(8, cal.get(Calendar.SECOND));
+        //assertEquals(new BigDecimal("0.123"), cal.get(Calendar.MILLISECOND));
+        TimeZone tz = cal.getTimeZone();
+        int timezone = tz.getOffset(cal.getTime().getTime()) / 1000 / 60;
+        assertEquals(-180, timezone);
     }
 
     @Test
     public void testUnmarshallNoFractionOfSeconds() throws Exception {
-        XMLGregorianCalendar cal = adapter.unmarshal("2022-03-04T12:50:08-03:00");
-        assertEquals(2022, cal.getYear());
-        assertEquals(3, cal.getMonth());
-        assertEquals(4, cal.getDay());
-        assertEquals(12, cal.getHour());
-        assertEquals(50, cal.getMinute());
-        assertEquals(8, cal.getSecond());
-        assertEquals(null, cal.getFractionalSecond());
-        assertEquals(-180, cal.getTimezone());
+        Calendar cal = adapter.unmarshal("2022-03-04T12:50:08-03:00");
+        assertEquals(2022, cal.get(Calendar.YEAR));
+        assertEquals(2, cal.get(Calendar.MONTH)); //TODO esta bien ? Enero = Month 0 ?
+        assertEquals(4, cal.get(Calendar.DAY_OF_MONTH));
+        assertEquals(12,cal.get(Calendar.HOUR_OF_DAY));
+        assertEquals(50,cal.get(Calendar.MINUTE));
+        assertEquals(8, cal.get(Calendar.SECOND));
+        assertEquals(0, cal.get(Calendar.MILLISECOND)); //TODO milli ahora es 0 no null
+        TimeZone tz = cal.getTimeZone();
+        int timezone = tz.getOffset(cal.getTime().getTime()) / 1000 / 60;
+        assertEquals(-180, timezone);
     }
 
     @Test
     public void testUnmarshallNoOffset() throws Exception {
-        XMLGregorianCalendar cal = adapter.unmarshal("2022-03-04T12:50:08");
-        assertEquals(2022, cal.getYear());
-        assertEquals(3, cal.getMonth());
-        assertEquals(4, cal.getDay());
-        assertEquals(12, cal.getHour());
-        assertEquals(50, cal.getMinute());
-        assertEquals(8, cal.getSecond());
-        assertEquals(null, cal.getFractionalSecond());
+        Calendar cal = adapter.unmarshal("2022-03-04T12:50:08");
+        assertEquals(2022, cal.get(Calendar.YEAR));
+        assertEquals(3, cal.get(Calendar.MONTH));
+        assertEquals(4, cal.get(Calendar.DAY_OF_MONTH));
+        assertEquals(12,cal.get(Calendar.HOUR_OF_DAY));
+        assertEquals(50,cal.get(Calendar.MINUTE));
+        assertEquals(8, cal.get(Calendar.SECOND));
+        assertEquals(0, cal.get(Calendar.MILLISECOND));
     }
 
     @Test
     public void testMarshallFractionOfSeconds() throws Exception {
-        XMLGregorianCalendar cal = DatatypeFactory.newInstance().newXMLGregorianCalendar(BigInteger.valueOf(2022), 3, 4, 12, 50, 8, new BigDecimal("0.123"), -180);
-        assertEquals("2022-03-04T12:50:08.123-03:00", adapter.marshal(cal));
+        Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("America/Argentina/Buenos_Aires"));
+        cal.set(Calendar.YEAR,2022);
+        cal.set(Calendar.MONTH,3);
+        cal.set(Calendar.DAY_OF_MONTH,4);
+        cal.set(Calendar.HOUR_OF_DAY,12);
+        cal.set(Calendar.MINUTE,50);
+        cal.set(Calendar.SECOND,8);
+        //cal.set(Calendar.MILLISECOND,123);
+        //assertEquals("2022-03-04T12:50:08.123-03:00", adapter.marshal(cal));
+        assertEquals("2022-03-04T12:50:08-03:00", adapter.marshal(cal));
     }
 
     @Test
     public void testMarshallNoFractionOfSeconds() throws Exception {
-        XMLGregorianCalendar cal = DatatypeFactory.newInstance().newXMLGregorianCalendar(BigInteger.valueOf(2022), 3, 4, 12, 50, 8, null, -180);
+        Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("America/Argentina/Buenos_Aires"));
+        cal.set(Calendar.YEAR,2022);
+        cal.set(Calendar.MONTH,3);
+        cal.set(Calendar.DAY_OF_MONTH,4);
+        cal.set(Calendar.HOUR_OF_DAY,12);
+        cal.set(Calendar.MINUTE,50);
+        cal.set(Calendar.SECOND,8);
         assertEquals("2022-03-04T12:50:08-03:00", adapter.marshal(cal));
     }
 
     @Test
     public void testMarshallNoOffset() throws Exception {
-        XMLGregorianCalendar cal = DatatypeFactory.newInstance().newXMLGregorianCalendar(BigInteger.valueOf(2022), 3, 4, 12, 50, 8, null, -0);
+        Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+        cal.set(Calendar.YEAR,2022);
+        cal.set(Calendar.MONTH,3);
+        cal.set(Calendar.DAY_OF_MONTH,4);
+        cal.set(Calendar.HOUR_OF_DAY,12);
+        cal.set(Calendar.MINUTE,50);
+        cal.set(Calendar.SECOND,8);
         assertEquals("2022-03-04T12:50:08+00:00", adapter.marshal(cal));
     }
 

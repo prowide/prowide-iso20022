@@ -16,11 +16,13 @@
 package com.prowidesoftware.swift.model.mx.adapters;
 
 import jakarta.xml.bind.annotation.adapters.XmlAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+
 import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
 
 /**
- * XMLGregorianCalendar adapter for date time elements.
+ * Calendar adapter for date time elements.
  * <p>
  * Marshals the date time as a local time with UTC offset format YYYY-MM-DDThh:mm:ss[.sss]+/-hh:mm which is aligned
  * with ISO 8601. Dislike the default jaxb implementation, this adapter will always print the offset, and for UTC times
@@ -33,34 +35,33 @@ import java.text.SimpleDateFormat;
  * @see TypeAdaptersConfiguration
  * @since 9.2.6
  */
-public class ZonedDateTimeAdapter extends XmlAdapter<String, XMLGregorianCalendar> {
+public class ZonedDateTimeAdapter extends XmlAdapter<String, Calendar> {
 
-    private final SimpleDateFormat marshalFormat;
-    private final SimpleDateFormat unmarshalFormat;
-    private final XmlAdapter<String, XMLGregorianCalendar> customAdapterImpl;
+    private final DateTimeFormatter marshalFormat;
+    private final DateTimeFormatter unmarshalFormat;
+    private XmlAdapter<String, Calendar> customAdapterImpl;
 
     /**
      * Creates a date time adapter with the default format
      */
     public ZonedDateTimeAdapter() {
-        this.marshalFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
-        this.unmarshalFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss[.SSS][XXX]");
-        this.customAdapterImpl = null;
+        this.marshalFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+        this.unmarshalFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss[.SSS][XXX]");
     }
 
     /**
      * Creates a time adapter with a specific given format that will be used for both the marshalling and unmarshalling
      */
-    public ZonedDateTimeAdapter(SimpleDateFormat dateFormat) {
+    public ZonedDateTimeAdapter(DateTimeFormatter dateFormat) {
         this.marshalFormat = dateFormat;
         this.unmarshalFormat = dateFormat;
-        this.customAdapterImpl = null;
+        customAdapterImpl = null;
     }
 
     /**
      * Creates a date time adapter injecting a custom implementation
      */
-    public ZonedDateTimeAdapter(XmlAdapter<String, XMLGregorianCalendar> customAdapterImpl) {
+    public ZonedDateTimeAdapter(XmlAdapter<String, Calendar> customAdapterImpl) {
         this.marshalFormat = null;
         this.unmarshalFormat = null;
         this.customAdapterImpl = customAdapterImpl;
@@ -73,7 +74,7 @@ public class ZonedDateTimeAdapter extends XmlAdapter<String, XMLGregorianCalenda
      * @return created calendar object or null if cannot be parsed
      */
     @Override
-    public XMLGregorianCalendar unmarshal(String value) throws Exception {
+    public Calendar unmarshal(String value) throws Exception {
         if (this.customAdapterImpl != null) {
             return this.customAdapterImpl.unmarshal(value);
         } else {
@@ -89,7 +90,7 @@ public class ZonedDateTimeAdapter extends XmlAdapter<String, XMLGregorianCalenda
      * @return formatted content for the XML
      */
     @Override
-    public String marshal(XMLGregorianCalendar cal) throws Exception {
+    public String marshal(Calendar cal) throws Exception {
         if (this.customAdapterImpl != null) {
             return this.customAdapterImpl.marshal(cal);
         } else {
@@ -100,5 +101,4 @@ public class ZonedDateTimeAdapter extends XmlAdapter<String, XMLGregorianCalenda
             return formatted.replace(".000", "").replace("Z", "+00:00");
         }
     }
-
 }

@@ -23,6 +23,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+import java.util.Calendar;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -121,8 +122,8 @@ public class MxReadImplTest {
         assertEquals("seev.031.002.03", bah.getMsgDefIdr());
         assertEquals("CSD", bah.getBizSvc());
         assertNotNull(bah.getCreDt());
-        assertEquals(2015, bah.getCreDt().getYear());
-        assertEquals(8, bah.getCreDt().getMonth());
+        assertEquals(2015, bah.getCreDt().get(Calendar.YEAR));
+        assertEquals(8, bah.getCreDt().get(Calendar.MONTH));
     }
 
     @Test

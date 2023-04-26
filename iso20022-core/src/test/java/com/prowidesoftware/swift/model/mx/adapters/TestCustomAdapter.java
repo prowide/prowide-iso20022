@@ -18,16 +18,17 @@ package com.prowidesoftware.swift.model.mx.adapters;
 import jakarta.xml.bind.annotation.adapters.XmlAdapter;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Calendar;
 
-public class TestCustomAdapter extends XmlAdapter<String, XMLGregorianCalendar> {
+public class TestCustomAdapter extends XmlAdapter<String, Calendar> {
 
     @Override
-    public XMLGregorianCalendar unmarshal(String v) throws Exception {
-        return DatatypeFactory.newInstance().newXMLGregorianCalendar();
+    public Calendar unmarshal(String v) throws Exception {
+        return Calendar.getInstance();
     }
 
     @Override
-    public String marshal(XMLGregorianCalendar cal) throws Exception {
+    public String marshal(Calendar cal) throws Exception {
         return "foobar";
     }
 

@@ -16,11 +16,13 @@
 package com.prowidesoftware.swift.model.mx.adapters;
 
 import jakarta.xml.bind.annotation.adapters.XmlAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+
 import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
 
 /**
- * XMLGregorianCalendar adapter for date elements.
+ * Calendar adapter for date elements.
  * <p>
  * Marshals the date time as YYY-MM-DD which is aligned with ISO 8601.
  * <p>
@@ -30,23 +32,23 @@ import java.text.SimpleDateFormat;
  * @see TypeAdaptersConfiguration
  * @since 9.2.6
  */
-public class SimpleDateAdapter extends XmlAdapter<String, XMLGregorianCalendar> {
+public class SimpleDateAdapter extends XmlAdapter<String, Calendar> {
 
-    private final SimpleDateFormat dateFormat;
-    private final XmlAdapter<String, XMLGregorianCalendar> customAdapterImpl;
+    private final DateTimeFormatter dateFormat;
+    private final XmlAdapter<String, Calendar> customAdapterImpl;
 
     /**
      * Creates a date adapter with the default format
      */
     public SimpleDateAdapter() {
-        this.dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        this.dateFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         this.customAdapterImpl = null;
     }
 
     /**
      * Creates a time adapter with a specific given format that will be used for both the marshalling and unmarshalling
      */
-    public SimpleDateAdapter(SimpleDateFormat dateFormat) {
+    public SimpleDateAdapter(DateTimeFormatter dateFormat) {
         this.dateFormat = dateFormat;
         this.customAdapterImpl = null;
     }
@@ -54,7 +56,7 @@ public class SimpleDateAdapter extends XmlAdapter<String, XMLGregorianCalendar> 
     /**
      * Creates a date adapter injecting a custom implementation
      */
-    public SimpleDateAdapter(XmlAdapter<String, XMLGregorianCalendar> customAdapterImpl) {
+    public SimpleDateAdapter(XmlAdapter<String, Calendar> customAdapterImpl) {
         this.dateFormat = null;
         this.customAdapterImpl = customAdapterImpl;
     }
@@ -66,7 +68,7 @@ public class SimpleDateAdapter extends XmlAdapter<String, XMLGregorianCalendar> 
      * @return created calendar object or null if cannot be parsed
      */
     @Override
-    public XMLGregorianCalendar unmarshal(String value) throws Exception {
+    public Calendar unmarshal(String value) throws Exception {
         if (this.customAdapterImpl != null) {
             return this.customAdapterImpl.unmarshal(value);
         } else {
@@ -81,7 +83,7 @@ public class SimpleDateAdapter extends XmlAdapter<String, XMLGregorianCalendar> 
      * @return formatted content for the XML
      */
     @Override
-    public String marshal(XMLGregorianCalendar cal) throws Exception {
+    public String marshal(Calendar cal) throws Exception {
         if (this.customAdapterImpl != null) {
             return this.customAdapterImpl.marshal(cal);
         } else {

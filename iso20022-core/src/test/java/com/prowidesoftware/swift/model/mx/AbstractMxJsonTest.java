@@ -18,10 +18,8 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import org.junit.jupiter.api.Test;
 
-import javax.xml.datatype.DatatypeFactory;
-import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigDecimal;
-import java.util.GregorianCalendar;
+import java.util.Calendar;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -40,7 +38,7 @@ public class AbstractMxJsonTest {
 
         mx.getCstmrCdtTrfInitn().getGrpHdr().setCtrlSum(new BigDecimal("1234.56"));
         mx.getCstmrCdtTrfInitn().getGrpHdr().setMsgId("MYID");
-        XMLGregorianCalendar cal = DatatypeFactory.newInstance().newXMLGregorianCalendar(new GregorianCalendar());
+        Calendar cal = Calendar.getInstance();
         mx.getCstmrCdtTrfInitn().getGrpHdr().setCreDtTm(cal);
         mx.getCstmrCdtTrfInitn().getGrpHdr().setNbOfTxs("1");
 
@@ -80,7 +78,7 @@ public class AbstractMxJsonTest {
         assertPain00100108(mx3, cal);
     }
 
-    private void assertPain00100108(final MxPain00100108 mx, final XMLGregorianCalendar cal) {
+    private void assertPain00100108(final MxPain00100108 mx, final Calendar cal) {
         assertEquals(new BigDecimal("1234.56"), mx.getCstmrCdtTrfInitn().getGrpHdr().getCtrlSum());
         assertEquals("MYID", mx.getCstmrCdtTrfInitn().getGrpHdr().getMsgId());
         assertEquals(cal, mx.getCstmrCdtTrfInitn().getGrpHdr().getCreDtTm());
@@ -149,10 +147,14 @@ public class AbstractMxJsonTest {
                 "          \"year\": 2021,\n" +
                 "          \"month\": 2,\n" +
                 "          \"day\": 3,\n" +
-                "          \"timezone\": -2147483648,\n" +
+/*                "          \"timezoneId\": -2147483648,\n" +
                 "          \"hour\": -2147483648,\n" +
                 "          \"minute\": -2147483648,\n" +
-                "          \"second\": -2147483648\n" +
+                "          \"second\": -2147483648\n" +*/
+                "          \"timezoneId\": \"America/Argentina/Buenos_Aires\",\n" +
+                "          \"hour\": 12,\n" +
+                "          \"minute\": 50,\n" +
+                "          \"second\": 03\n" +
                 "        }\n" +
                 "      }\n" +
                 "    }\n" +
@@ -181,10 +183,12 @@ public class AbstractMxJsonTest {
                 "</RequestPayload>";
         AbstractMX mx = AbstractMX.parse(source);
         String json = mx.toJson();
+
         AbstractMX mx2 = AbstractMX.fromJson(json);
         String json2 = mx2.toJson();
-        assertEquals(mx, mx2);
+
         assertEquals(json, json2);
+        assertEquals(mx, mx2);
     }
 
     @Test
