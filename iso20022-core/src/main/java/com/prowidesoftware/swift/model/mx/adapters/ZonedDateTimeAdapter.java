@@ -17,9 +17,16 @@ package com.prowidesoftware.swift.model.mx.adapters;
 
 import jakarta.xml.bind.annotation.adapters.XmlAdapter;
 
-import java.text.SimpleDateFormat;
+import java.sql.Time;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.time.temporal.ChronoField;
+import java.time.temporal.TemporalAccessor;
 import java.util.Calendar;
+import java.util.TimeZone;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Calendar adapter for date time elements.
@@ -36,25 +43,29 @@ import java.util.Calendar;
  * @since 9.2.6
  */
 public class ZonedDateTimeAdapter extends XmlAdapter<String, Calendar> {
+    private static final transient Logger log = Logger.getLogger(ZonedDateTimeAdapter.class.getName());
 
-    private final DateTimeFormatter marshalFormat;
-    private final DateTimeFormatter unmarshalFormat;
+    private final DateTimeFormatter marshallFormat;
+    private final DateTimeFormatter unmarshallFormat;
     private XmlAdapter<String, Calendar> customAdapterImpl;
 
     /**
      * Creates a date time adapter with the default format
      */
     public ZonedDateTimeAdapter() {
-        this.marshalFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
-        this.unmarshalFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss[.SSS][XXX]");
+        this.marshallFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+        this.unmarshallFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss[.[SSS][SS][S]][XXX]");
+      //this.unmarshallFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss[.SSS][XXX]");
+
+
     }
 
     /**
      * Creates a time adapter with a specific given format that will be used for both the marshalling and unmarshalling
      */
     public ZonedDateTimeAdapter(DateTimeFormatter dateFormat) {
-        this.marshalFormat = dateFormat;
-        this.unmarshalFormat = dateFormat;
+        this.marshallFormat = dateFormat;
+        this.unmarshallFormat = dateFormat;
         customAdapterImpl = null;
     }
 
@@ -62,8 +73,8 @@ public class ZonedDateTimeAdapter extends XmlAdapter<String, Calendar> {
      * Creates a date time adapter injecting a custom implementation
      */
     public ZonedDateTimeAdapter(XmlAdapter<String, Calendar> customAdapterImpl) {
-        this.marshalFormat = null;
-        this.unmarshalFormat = null;
+        this.marshallFormat = null;
+        this.unmarshallFormat = null;
         this.customAdapterImpl = customAdapterImpl;
     }
 
@@ -78,7 +89,7 @@ public class ZonedDateTimeAdapter extends XmlAdapter<String, Calendar> {
         if (this.customAdapterImpl != null) {
             return this.customAdapterImpl.unmarshal(value);
         } else {
-            return AdapterUtils.parse(this.unmarshalFormat, value);
+            return parseZonedDateTime(this.unmarshallFormat, value);
         }
     }
 
@@ -95,10 +106,118 @@ public class ZonedDateTimeAdapter extends XmlAdapter<String, Calendar> {
             return this.customAdapterImpl.marshal(cal);
         } else {
             String formatted;
-            synchronized (marshalFormat) {
-                formatted = AdapterUtils.format(this.marshalFormat, cal);
+            synchronized (marshallFormat) {
+                formatted = formatZonedDateTime(this.marshallFormat, cal);
             }
             return formatted.replace(".000", "").replace("Z", "+00:00");
         }
+    }
+
+
+    static Calendar parseZonedDateTime(DateTimeFormatter dateTimeFormatter, String value) {
+        if (value == null) {
+            return null;
+        }
+        try {
+            //OffsetDateTime falla si viene sin offset
+            //ZonedDateTime  falla si viene sin offset
+            //LocalDateTime  falla cuando queremos obtener el ZoneOffset
+            //TemporalAccessor temporalAccessor = parse(dateTimeFormatter, value);
+            TemporalAccessor dateTime = dateTimeFormatter.parse(value);
+
+/*            LocalDateTime dateTime = null;
+            if(temporalAccessor instanceof LocalDateTime){
+                dateTime = (LocalDateTime) temporalAccessor;
+            }*/
+
+
+
+            //ZonedDateTime offsetDateTime = ZonedDateTime.parse(value, dateTimeFormatter);
+            Calendar calendar = Calendar.getInstance();
+            calendar.set(dateTime.get(ChronoField.YEAR),dateTime.get(ChronoField.MONTH_OF_YEAR),dateTime.get(ChronoField.DAY_OF_MONTH),dateTime.get(ChronoField.HOUR_OF_DAY),dateTime.get(ChronoField.MINUTE_OF_HOUR), dateTime.get(ChronoField.SECOND_OF_MINUTE));
+
+            try {
+                calendar.set(Calendar.MILLISECOND, dateTime.get(ChronoField.MILLI_OF_SECOND));
+            } catch (Exception e ){
+                calendar.set(Calendar.MILLISECOND, 0);
+            }
+
+
+            try {
+                calendar.setTimeZone(TimeZone.getTimeZone(ZonedDateTime.from(dateTime).getZone()));
+            } catch (DateTimeException e) {
+                //TODO aproposito le ponemos UTC
+                log.finest("Error obtaining the TimeZone of the: " + value + "  " + e.getMessage());
+                calendar.setTimeZone(TimeZone.getDefault());
+            }
+
+
+/*          //TODO aproposito le ponemos UTC
+            if(temporalAccessor instanceof LocalDateTime){
+                calendar.setTimeZone(TimeZone.getTimeZone(ZoneOffset.UTC));
+            } else {
+                calendar.setTimeZone(TimeZone.getTimeZone(ZoneOffset.from(dateTime)));
+            }
+*/
+
+            System.out.println("----parse");
+            System.out.println("entra : " + value);
+            System.out.println("offset: " + dateTime);
+            System.out.println("sale : "  + calendar.getTime());
+
+            return calendar;
+
+        } catch (IllegalArgumentException | DateTimeParseException e) {
+            if (log.isLoggable(Level.FINEST)) {
+                log.finest("Error parsing to Calendar: " + e.getMessage());
+            }
+        }
+
+        return null;
+    }
+
+
+/*    public static TemporalAccessor parse(DateTimeFormatter formatter, String toBeParsed) {
+        return formatter.parseBest(toBeParsed, ZonedDateTime::from,
+                OffsetDateTime::from, LocalDateTime::from);
+    }*/
+
+    static String formatZonedDateTime(DateTimeFormatter dateTimeFormatter, Calendar calendar) {
+        //Aca nunca puede ser LocalDateTime porque el offset es obligatorio
+        //Si llamo al formatter directo y la dateTime viene sin offset falla
+        //return dateTimeFormatter.format(calendar.toInstant());
+
+        //Default UTC si no tiene
+        ZoneId zoneId = ZoneOffset.systemDefault();
+        ZoneOffset zoneOffset = null;
+        try {
+            zoneId = calendar.getTimeZone().toZoneId();
+            zoneOffset = ZonedDateTime.ofInstant(calendar.toInstant(), zoneId).withZoneSameInstant(zoneId).getOffset();
+        } catch (DateTimeException e) {
+            //TODO aproposito le ponemos UTC
+            log.finest("Error obtaining the TimeZone of the: " + calendar + "  " + e.getMessage());
+            calendar.setTimeZone(TimeZone.getDefault());
+            zoneOffset = ZoneOffset.systemDefault().getRules().getOffset(Instant.now());
+        }
+
+
+        OffsetDateTime offsetDateTime = OffsetDateTime.of(calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH),calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), calendar.get(Calendar.SECOND), 0, zoneOffset);
+
+        System.out.println("Calendar MONTH number:  " + calendar.get(Calendar.MONTH));
+        //OffsetDateTime offsetDateTime = OffsetDateTime.ofInstant(calendar.toInstant(), zoneOffset);
+        System.out.println("offsetDateTime MONTH number:  " + offsetDateTime.get(ChronoField.MONTH_OF_YEAR));
+        //TODO NO PODEMOS RESTAR MONTH porque si nos mandan MES 0?
+
+        offsetDateTime = offsetDateTime.withMonth(calendar.get(Calendar.MONTH));
+        return dateTimeFormatter.format(offsetDateTime);
+    }
+
+
+    public DateTimeFormatter getMarshallFormat() {
+        return marshallFormat;
+    }
+
+    public DateTimeFormatter getUnmarshallFormat() {
+        return unmarshallFormat;
     }
 }

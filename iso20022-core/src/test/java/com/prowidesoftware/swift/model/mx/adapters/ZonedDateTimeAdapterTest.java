@@ -1,115 +1,96 @@
-/*
- * Copyright 2006-2021 Prowide
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package com.prowidesoftware.swift.model.mx.adapters;
 
+import net.bytebuddy.asm.Advice;
 import org.junit.jupiter.api.Test;
 
-import javax.xml.datatype.DatatypeFactory;
-import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.time.ZoneId;
-import java.time.ZoneOffset;
+import java.sql.Time;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.TimeZone;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.*;
 
-public class ZonedDateTimeAdapterTest {
-
-    private ZonedDateTimeAdapter adapter = new ZonedDateTimeAdapter();
+class ZonedDateTimeAdapterTest {
 
     @Test
-    public void testUnmarshallFractionOfSeconds() throws Exception {
-        Calendar cal = adapter.unmarshal("2022-03-04T12:50:08.123-03:00");
-        assertEquals(2022, cal.get(Calendar.YEAR));
-        assertEquals(2, cal.get(Calendar.MONTH)); //TODO esta bien ? Enero = Month 0 ?
-        assertEquals(4, cal.get(Calendar.DAY_OF_MONTH));
-        assertEquals(12,cal.get(Calendar.HOUR_OF_DAY));
-        assertEquals(50,cal.get(Calendar.MINUTE));
-        assertEquals(8, cal.get(Calendar.SECOND));
-        //assertEquals(new BigDecimal("0.123"), cal.get(Calendar.MILLISECOND));
-        TimeZone tz = cal.getTimeZone();
-        int timezone = tz.getOffset(cal.getTime().getTime()) / 1000 / 60;
-        assertEquals(-180, timezone);
+    void testDateTime() throws Exception {
+
+        ZoneOffset offset = ZoneOffset.systemDefault().getRules().getOffset(Instant.now());
+        ZoneId zoneId = ZoneOffset.systemDefault();
+
+
+        //testDateTimeImpl("2021-09-19T12:13:14", "2021-09-19T12:13:14"+offset);
+       testDateTimeImpl("2021-01-19T12:13:14.12", "2021-01-19T12:13:14.120"+offset);
+       /* testDateTimeImpl("2021-09-19T12:13:14.12");
+        testDateTimeImpl("2021-09-19T12:13:14.123");
+
+        testDateTimeImpl("2021-09-19T12:13:14+01:00");
+        testDateTimeImpl("2021-09-19T12:13:14-01:00");
+
+        testDateTimeImpl("2021-09-19T12:13:14+00:00");
+        testDateTimeImpl("2021-09-19T12:13:14-00:00");
+
+        testDateTimeImpl("2021-09-19T12:13:14+08:30");
+        testDateTimeImpl("2021-09-19T12:13:14Z");
+
+        testDateTimeImpl("2021-09-19T12:13:14.1+01:00");
+        testDateTimeImpl("2021-09-19T12:13:14.12-01:00");
+        testDateTimeImpl("2021-09-19T12:13:14.123+00:00");
+        testDateTimeImpl("2021-09-19T12:13:14.123+08:30");
+
+        testDateTimeImpl("2021-09-19T12:13:14.000+08:30");
+        testDateTimeImpl("2021-09-19T12:13:14.000Z");
+
+        testDateTimeImpl("2021-09-19T12:13:14.123Z");*/
+
+
+
+    }
+
+    private void  testDateTimeImpl(String value, String valueResult) throws Exception {
+        ZonedDateTimeAdapter zonedDateTimeAdapter = new ZonedDateTimeAdapter();
+        Calendar calendar = zonedDateTimeAdapter.unmarshal(value);
+        String valueDateResult = zonedDateTimeAdapter.marshal(calendar);
+        assertEquals(valueResult, valueDateResult);
     }
 
     @Test
-    public void testUnmarshallNoFractionOfSeconds() throws Exception {
-        Calendar cal = adapter.unmarshal("2022-03-04T12:50:08-03:00");
-        assertEquals(2022, cal.get(Calendar.YEAR));
-        assertEquals(2, cal.get(Calendar.MONTH)); //TODO esta bien ? Enero = Month 0 ?
-        assertEquals(4, cal.get(Calendar.DAY_OF_MONTH));
-        assertEquals(12,cal.get(Calendar.HOUR_OF_DAY));
-        assertEquals(50,cal.get(Calendar.MINUTE));
-        assertEquals(8, cal.get(Calendar.SECOND));
-        assertEquals(0, cal.get(Calendar.MILLISECOND)); //TODO milli ahora es 0 no null
-        TimeZone tz = cal.getTimeZone();
-        int timezone = tz.getOffset(cal.getTime().getTime()) / 1000 / 60;
-        assertEquals(-180, timezone);
-    }
+    public void testDate(){
+    /*        DateTimeFormatter marshallFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
 
-    @Test
-    public void testUnmarshallNoOffset() throws Exception {
-        Calendar cal = adapter.unmarshal("2022-03-04T12:50:08");
-        assertEquals(2022, cal.get(Calendar.YEAR));
-        assertEquals(3, cal.get(Calendar.MONTH));
-        assertEquals(4, cal.get(Calendar.DAY_OF_MONTH));
-        assertEquals(12,cal.get(Calendar.HOUR_OF_DAY));
-        assertEquals(50,cal.get(Calendar.MINUTE));
-        assertEquals(8, cal.get(Calendar.SECOND));
-        assertEquals(0, cal.get(Calendar.MILLISECOND));
-    }
+        DateTimeFormatter unmarshallFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss[.SSS][XXX]");
 
-    @Test
-    public void testMarshallFractionOfSeconds() throws Exception {
-        Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("America/Argentina/Buenos_Aires"));
-        cal.set(Calendar.YEAR,2022);
-        cal.set(Calendar.MONTH,3);
-        cal.set(Calendar.DAY_OF_MONTH,4);
-        cal.set(Calendar.HOUR_OF_DAY,12);
-        cal.set(Calendar.MINUTE,50);
-        cal.set(Calendar.SECOND,8);
-        //cal.set(Calendar.MILLISECOND,123);
-        //assertEquals("2022-03-04T12:50:08.123-03:00", adapter.marshal(cal));
-        assertEquals("2022-03-04T12:50:08-03:00", adapter.marshal(cal));
-    }
 
-    @Test
-    public void testMarshallNoFractionOfSeconds() throws Exception {
-        Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("America/Argentina/Buenos_Aires"));
-        cal.set(Calendar.YEAR,2022);
-        cal.set(Calendar.MONTH,3);
-        cal.set(Calendar.DAY_OF_MONTH,4);
-        cal.set(Calendar.HOUR_OF_DAY,12);
-        cal.set(Calendar.MINUTE,50);
-        cal.set(Calendar.SECOND,8);
-        assertEquals("2022-03-04T12:50:08-03:00", adapter.marshal(cal));
-    }
+        System.out.println(unmarshallFormat.parse("2021-09-19T12:13:14.1"));*/
 
-    @Test
-    public void testMarshallNoOffset() throws Exception {
-        Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
-        cal.set(Calendar.YEAR,2022);
-        cal.set(Calendar.MONTH,3);
-        cal.set(Calendar.DAY_OF_MONTH,4);
-        cal.set(Calendar.HOUR_OF_DAY,12);
-        cal.set(Calendar.MINUTE,50);
-        cal.set(Calendar.SECOND,8);
-        assertEquals("2022-03-04T12:50:08+00:00", adapter.marshal(cal));
+/*
+        String strDateTime = "2012-02-22T02:06:58.1Z";
+        System.out.println(Instant.parse(strDateTime));
+        System.out.println(ZonedDateTime.parse(strDateTime));
+        System.out.println(OffsetDateTime.parse(strDateTime));
+
+        // Parsing with your pattern after correction
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss[.[SSS][SS][S]][XXX]");
+        System.out.println(formatter.parse("2021-09-19T12:13:14.1"));
+        System.out.println(formatter.parse("2021-09-19T12:13:14.12"));
+        System.out.println(formatter.parse("2021-09-19T12:13:14.123"));
+
+        System.out.println(formatter.parse("2021-09-19T12:13:14.1+01:00"));
+        System.out.println(formatter.parse("2021-09-19T12:13:14.12-01:00"));
+        System.out.println(formatter.parse("2021-09-19T12:13:14.123+00:00"));
+        System.out.println(formatter.parse("2021-09-19T12:13:14.123+08:30"));*/
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss[.[SSS][SS][S]][XXX]");
+        System.out.println(formatter.parse("2021-09-19T12:13:14.122+01:00"));
+
+
+
+       // LocalDateTime ldt = LocalDateTime.parse("2021-09-19T12:13:14.123", formatter);
+
+
+
+
     }
 
 }

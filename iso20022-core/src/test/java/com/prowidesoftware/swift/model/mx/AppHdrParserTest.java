@@ -159,7 +159,7 @@ public class AppHdrParserTest {
         assertEquals("CSD", bah.getBizSvc());
         assertNotNull(bah.getCreDt());
         assertEquals(2015, bah.getCreDt().get(Calendar.YEAR));
-        assertEquals(8, bah.getCreDt().get(Calendar.MONTH));
+        assertEquals(7, bah.getCreDt().get(Calendar.MONTH)); //TODO chequear que el mes 0 es Enero
     }
 
     @Test

@@ -176,7 +176,7 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
      * Sets the creation date.
      *
      * @param overwrite if true, the creation date will always be set overwriting any previous value;
-     * @see #setCreDt(XMLGregorianCalendar)
+     * @see #setCreDt(Calendar)
      */
     @Override
     public void setCreationDate(boolean overwrite) {

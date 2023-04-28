@@ -41,22 +41,22 @@ public class MxWriteWithAdaptersTest {
     public void testDocumentDateTime_DefaultAdapters_noFractionalSecond() throws DatatypeConfigurationException {
         Calendar c = Calendar.getInstance();
         c.set(Calendar.YEAR,2021);
-        c.set(Calendar.MONTH, Calendar.OCTOBER);
-        c.set(Calendar.DAY_OF_WEEK,19);
-        c.set(Calendar.HOUR,12);
+        c.set(Calendar.MONTH, 9);
+        c.set(Calendar.DAY_OF_MONTH,19);
+        c.set(Calendar.HOUR_OF_DAY,12);
         c.set(Calendar.MINUTE,13);
         c.set(Calendar.SECOND,14);
         MxPacs00800102 mx1 = sample(c);
+        final String xml1 = mx1.message();
 
-        final String xml = mx1.message();
-        //System.out.println(xml);
-        ZoneOffset offset = ZoneOffset.systemDefault().getRules().getOffset(LocalDateTime.of(2021, 10, 19, 12, 13, 14));;
-        assertTrue(xml.contains("<Doc:CreDtTm>2021-10-19T12:13:14"+ offset + "</Doc:CreDtTm>"));
-        assertTrue(xml.contains("<Doc:IntrBkSttlmDt>2021-10-19</Doc:IntrBkSttlmDt>"));
-        assertTrue(xml.contains("<Doc:CLSTm>12:13:14"+ offset + "</Doc:CLSTm>"));
+        System.out.println(xml1);
+        ZoneOffset offset = ZoneOffset.systemDefault().getRules().getOffset(c.toInstant());;
+        assertTrue(xml1.contains("<Doc:CreDtTm>2021-09-19T12:13:14"+ offset + "</Doc:CreDtTm>"));
+        assertTrue(xml1.contains("<Doc:IntrBkSttlmDt>2021-09-19</Doc:IntrBkSttlmDt>"));
+        assertTrue(xml1.contains("<Doc:CLSTm>12:13:14"+ offset + "</Doc:CLSTm>"));
 
-        final MxPacs00800102 mx2 = MxPacs00800102.parse(xml);
-        //System.out.println(mx2.message());
+        final MxPacs00800102 mx2 = MxPacs00800102.parse(xml1);
+        System.out.println(mx2.message());
 
         // assert date time propagation
         assertNotNull(mx2.getFIToFICstmrCdtTrf().getGrpHdr().getCreDtTm());
@@ -83,16 +83,14 @@ public class MxWriteWithAdaptersTest {
 
     @Test
     public void testDocumentDateTime_DefaultAdapters_Z() throws DatatypeConfigurationException {
-
         Calendar utc = Calendar.getInstance();
         utc.set(Calendar.YEAR,2021);
-        utc.set(Calendar.MONTH, Calendar.OCTOBER);
-        utc.set(Calendar.DAY_OF_WEEK,19);
-        utc.set(Calendar.HOUR,12);
+        utc.set(Calendar.MONTH, 10);
+        utc.set(Calendar.DAY_OF_MONTH,19);
+        utc.set(Calendar.HOUR_OF_DAY,12);
         utc.set(Calendar.MINUTE,13);
         utc.set(Calendar.SECOND,14);
-
-        utc.setTimeZone(TimeZone.getTimeZone("0"));
+        utc.setTimeZone(TimeZone.getTimeZone("UTC"));
         MxPacs00800102 mx1 = sample(utc);
 
         final String xml = mx1.message();

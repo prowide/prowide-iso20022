@@ -17,9 +17,16 @@ package com.prowidesoftware.swift.model.mx.adapters;
 
 import jakarta.xml.bind.annotation.adapters.XmlAdapter;
 
-import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Calendar;
+import java.util.TimeZone;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Calendar adapter for date elements.
@@ -33,6 +40,7 @@ import java.util.Calendar;
  * @since 9.2.6
  */
 public class SimpleDateAdapter extends XmlAdapter<String, Calendar> {
+    private static final transient Logger log = Logger.getLogger(SimpleDateAdapter.class.getName());
 
     private final DateTimeFormatter dateFormat;
     private final XmlAdapter<String, Calendar> customAdapterImpl;
@@ -72,7 +80,7 @@ public class SimpleDateAdapter extends XmlAdapter<String, Calendar> {
         if (this.customAdapterImpl != null) {
             return this.customAdapterImpl.unmarshal(value);
         } else {
-            return AdapterUtils.parse(this.dateFormat, value);
+            return parseSimpleDate(this.dateFormat, value);
         }
     }
 
@@ -88,9 +96,44 @@ public class SimpleDateAdapter extends XmlAdapter<String, Calendar> {
             return this.customAdapterImpl.marshal(cal);
         } else {
             synchronized (dateFormat) {
-                return AdapterUtils.format(this.dateFormat, cal);
+                return formatSimpleDate(this.dateFormat, cal);
             }
         }
+    }
+
+
+    static Calendar parseSimpleDate(DateTimeFormatter dateTimeFormatter, String value) {
+        if (value == null) {
+            return null;
+        }
+        try {
+            LocalDate localDate = LocalDate.parse(value, dateTimeFormatter);
+            Calendar calendar = Calendar.getInstance();
+            calendar.set(localDate.getYear(),localDate.getMonthValue(),localDate.getDayOfMonth());
+            calendar.setTimeZone(TimeZone.getTimeZone(ZoneOffset.from(localDate)));
+
+            System.out.println("----parseDate");
+            System.out.println("entra : " + value);
+            System.out.println("localDate: "+localDate);
+            System.out.println("sale : " + calendar.getTime());
+
+            return calendar;
+
+        } catch (IllegalArgumentException | DateTimeParseException e) {
+            if (log.isLoggable(Level.FINEST)) {
+                log.finest("Error parsing to Calendar: " + e.getMessage());
+            }
+        }
+        return null;
+    }
+
+    static String formatSimpleDate(DateTimeFormatter dateTimeFormatter, Calendar calendar) {
+        ZoneId zoneId = calendar.getTimeZone().toZoneId();
+        calendar.set(Calendar.MILLISECOND, 0);
+        ZoneOffset zoneOffSet = zoneId.getRules().getOffset(calendar.toInstant());
+        OffsetDateTime offsetDateTime = OffsetDateTime.of(calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH),calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), calendar.get(Calendar.SECOND), 0, zoneOffSet);
+        return dateTimeFormatter.format(offsetDateTime);
+
     }
 
 }

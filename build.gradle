@@ -45,7 +45,7 @@ allprojects {
 	tasks.withType(JavaCompile) {
 		options.encoding = 'UTF-8'
 		doFirst {
-			println 'Compiling with ' + getJavaCompiler().get().getMetadata().getInstallationPath()
+//			println 'Compiling with ' + getJavaCompiler().get().getMetadata().getInstallationPath()
 		}
 	}
 
