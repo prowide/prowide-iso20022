@@ -44,7 +44,6 @@ import javax.xml.transform.stream.StreamSource;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import java.util.Objects;
 import java.util.logging.Level;
@@ -239,7 +238,6 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
     protected static <T> T fromJson(String json, Class<T> classOfT) {
         final Gson gson = new GsonBuilder()
                 .registerTypeAdapter(AbstractMX.class, new AbstractMXAdapter())
-                .registerTypeAdapter(Calendar.class, new CalendarAdapter())
                 .registerTypeAdapter(AppHdr.class, new AppHdrAdapter())
                 .create();
         return gson.fromJson(json, classOfT);
@@ -255,7 +253,6 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
     public static AbstractMX fromJson(String json) {
         final Gson gson = new GsonBuilder()
                 .registerTypeAdapter(AbstractMX.class, new AbstractMXAdapter())
-                .registerTypeHierarchyAdapter(Calendar.class, new CalendarAdapter())
                 .registerTypeAdapter(AppHdr.class, new AppHdrAdapter())
                 .create();
         return gson.fromJson(json, AbstractMX.class);
@@ -652,7 +649,6 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
     public String toJson() {
         final Gson gson = new GsonBuilder()
                 .registerTypeAdapter(AbstractMX.class, new AbstractMXAdapter())
-                .registerTypeHierarchyAdapter(Calendar.class, new CalendarAdapter())
                 .registerTypeAdapter(AppHdr.class, new AppHdrAdapter())
                 .setPrettyPrinting()
                 .create();

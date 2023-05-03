@@ -19,7 +19,7 @@ import com.prowidesoftware.deprecation.ProwideDeprecated;
 import com.prowidesoftware.deprecation.TargetYear;
 import org.w3c.dom.Element;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import java.util.Objects;
 
 /**
@@ -96,7 +96,7 @@ public interface AppHdr {
      *
      * @return found date or null if the element is not found
      */
-    Calendar creationDate();
+    OffsetDateTime creationDate();
 
     /**
      * Sets the creation date in the header object with current moment in UTC time zone.

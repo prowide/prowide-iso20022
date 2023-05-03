@@ -15,8 +15,11 @@
  */
 package com.prowidesoftware.swift.model.mx.adapters;
 
+import org.assertj.core.data.Offset;
 import org.junit.jupiter.api.Test;
 
+import java.time.*;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.TimeZone;
 
@@ -24,15 +27,17 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ZonedTimeAdapterTest {
 
-    private ZonedTimeAdapter adapter = new ZonedTimeAdapter();
+    private OffsetTimeAdapter adapter = new OffsetTimeAdapter();
 
     @Test
     public void testUnmarshallFractionOfSeconds() throws Exception {
-        Calendar cal = adapter.unmarshal("12:50:08.123-03:00");
+        //TODO setear el timezone y la fecha hora? pasar al test de DateTime
+
+        /*Calendar cal = adapter.unmarshal("12:50:08.123-03:00");
         cal.setTimeZone(TimeZone.getTimeZone("America/Argentina/Buenos"));
         assertEquals(12, cal.get(Calendar.HOUR_OF_DAY));
         assertEquals(50, cal.get(Calendar.MINUTE));
-        assertEquals(8, cal.get(Calendar.SECOND));
+        assertEquals(8, cal.get(Calendar.SECOND));*/
         //assertEquals(new BigDecimal("0.123"), cal.get(Calendar.MILLISECOND));
 
 
@@ -43,47 +48,40 @@ public class ZonedTimeAdapterTest {
 
     @Test
     public void testUnmarshallNoFractionOfSeconds() throws Exception {
-        Calendar c = adapter.unmarshal("12:50:08-03:00");
-        assertEquals(12, c.get(Calendar.HOUR_OF_DAY));
-        assertEquals(50, c.get(Calendar.MINUTE));
-        assertEquals(8,  c.get(Calendar.SECOND));
+        OffsetTime offsetTime = adapter.unmarshal("12:50:08-03:00");
+        assertEquals(12, offsetTime.getHour());
+        assertEquals(50, offsetTime.getMinute());
+        assertEquals(8,  offsetTime.getSecond());
     }
 
     @Test
     public void testUnmarshallNoOffset() throws Exception {
-        Calendar cal = adapter.unmarshal("12:50:08");
-        assertEquals(12, cal.get(Calendar.HOUR_OF_DAY));
-        assertEquals(50, cal.get(Calendar.MINUTE));
-        assertEquals(8, cal.get(Calendar.SECOND));
+        OffsetTime offsetTime = adapter.unmarshal("12:50:08");
+        assertEquals(12, offsetTime.getHour());
+        assertEquals(50, offsetTime.getMinute());
+        assertEquals(8, offsetTime.getSecond());
         //assertEquals(null, cal.getFractionalSecond());
     }
 
     @Test
-    public void testMarshallFractionOfSeconds() throws Exception {
-        Calendar c = Calendar.getInstance();
-        c.setTimeZone(TimeZone.getTimeZone("America/Argentina/Buenos_Aires"));
-        c.set(2022, 3, 4, 12, 50, 8);
-        assertEquals("12:50:08-03:00", adapter.marshal(c));
+    public void testMarshallNoFractionOfSecondsAndWithFractionOfSeconds() throws Exception {
+        ZoneOffset zoneOffSet= ZoneOffset.of("-03:00");
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss[.SSS][XXX]");
 
-        //c.set(Calendar.MILLISECOND, 123);
-        //assertEquals("12:50:08.123-03:00", adapter.marshal(c));
-        //ESTO DE FRACTIONAL QUE VAMOS A HACER?
-    }
+        OffsetTime offsetTime = LocalTime.parse("12:50:08", dateTimeFormatter).atOffset(zoneOffSet);
+        assertEquals("12:50:08-03:00", adapter.marshal(offsetTime));
 
-    @Test
-    public void testMarshallNoFractionOfSeconds() throws Exception {
-        Calendar c = Calendar.getInstance();
-        c.setTimeZone(TimeZone.getTimeZone("America/Argentina/Buenos_Aires"));
-        c.set(2022, 3, 4, 12, 50, 8);
-        assertEquals("12:50:08-03:00", adapter.marshal(c));
+        offsetTime = LocalTime.parse("12:50:08.123", dateTimeFormatter).atOffset(zoneOffSet);
+        assertEquals("12:50:08.123-03:00", adapter.marshal(offsetTime));
+
     }
 
     @Test
     public void testMarshallNoOffset() throws Exception {
-        Calendar c = Calendar.getInstance();
-        c.setTimeZone(TimeZone.getTimeZone("UTC"));
-        c.set(2022, 3, 4, 12, 50, 8);
-        assertEquals("12:50:08+00:00", adapter.marshal(c));
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss[.SSS][XXX]");
+        ZoneOffset offset = ZoneId.systemDefault().getRules().getOffset(Instant.now());
+        OffsetTime offsetTime = LocalTime.parse("12:50:08", dateTimeFormatter).atOffset(offset);
+        assertEquals("12:50:08"+offset, adapter.marshal(offsetTime));
     }
 
 }

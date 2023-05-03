@@ -18,8 +18,7 @@ package com.prowidesoftware.swift.model.mx.adapters;
 import jakarta.xml.bind.annotation.adapters.XmlAdapter;
 
 import javax.xml.datatype.DatatypeConfigurationException;
-import java.util.Calendar;
-
+import java.time.LocalDate;
 /**
  * Configured adapter for date elements.
  * <p>
@@ -30,21 +29,21 @@ import java.util.Calendar;
  *
  * @since 9.2.6
  */
-public class IsoDateAdapter extends XmlAdapter<String, Calendar> {
+public class IsoDateAdapter extends XmlAdapter<String, LocalDate> {
 
-    private final XmlAdapter<String, Calendar> customAdapterImpl;
+    private final XmlAdapter<String, LocalDate> customAdapterImpl;
 
     /**
      * Default constructor for jaxb when non is set via API
      */
     public IsoDateAdapter() throws DatatypeConfigurationException {
-        this.customAdapterImpl = new DefaultCalendarAdapter();
+        this.customAdapterImpl = new LocalDateAdapter();
     }
 
     /**
      * Creates a date adapter injecting a custom implementation
      */
-    public IsoDateAdapter(XmlAdapter<String, Calendar> customAdapterImpl) {
+    public IsoDateAdapter(XmlAdapter<String, LocalDate> customAdapterImpl) {
         this.customAdapterImpl = customAdapterImpl;
     }
 
@@ -55,7 +54,7 @@ public class IsoDateAdapter extends XmlAdapter<String, Calendar> {
      * @return created calendar object or null if cannot be parsed
      */
     @Override
-    public Calendar unmarshal(String value) throws Exception {
+    public LocalDate unmarshal(String value) throws Exception {
         return this.customAdapterImpl.unmarshal(value);
     }
 
@@ -66,7 +65,7 @@ public class IsoDateAdapter extends XmlAdapter<String, Calendar> {
      * @return formatted content for the XML
      */
     @Override
-    public String marshal(Calendar cal) throws Exception {
+    public String marshal(LocalDate cal) throws Exception {
         return this.customAdapterImpl.marshal(cal);
     }
 

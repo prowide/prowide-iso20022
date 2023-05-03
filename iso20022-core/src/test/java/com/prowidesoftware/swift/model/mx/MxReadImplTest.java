@@ -23,6 +23,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+import java.time.temporal.ChronoField;
 import java.util.Calendar;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -122,9 +123,8 @@ public class MxReadImplTest {
         assertEquals("seev.031.002.03", bah.getMsgDefIdr());
         assertEquals("CSD", bah.getBizSvc());
         assertNotNull(bah.getCreDt());
-        assertEquals(2015, bah.getCreDt().get(Calendar.YEAR));
-        //assertEquals(8, bah.getCreDt().get(Calendar.MONTH));//TODO VALIDAR ESTO. PARA MI ESTA MAL CAMBIAR EL MONTH
-        assertEquals(7, bah.getCreDt().get(Calendar.MONTH));//TODO VALIDAR ESTO. PARA MI ESTA MAL CAMBIAR EL MONTH
+        assertEquals(2015, bah.getCreDt().get(ChronoField.YEAR));
+        assertEquals(8, bah.getCreDt().get(ChronoField.MONTH_OF_YEAR));
     }
 
     @Test
@@ -595,7 +595,7 @@ public class MxReadImplTest {
         final String xml = "<Document>"
                 + "<FXTradInstr>"
                 + "	<TradInf>"
-                + "		<TradDt>20130103</TradDt>"
+                + "		<TradDt>2013-01-03</TradDt>"
                 + "		<OrgtrRef>12345</OrgtrRef>"
                 + "		<CmonRef>BEBEB00632CRESZ0</CmonRef>"
                 + "		<OprTp>NEWT</OprTp>"

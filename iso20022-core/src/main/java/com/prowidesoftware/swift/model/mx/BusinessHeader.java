@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,11 +23,11 @@ import com.prowidesoftware.swift.model.mx.dic.ApplicationHeader;
 import com.prowidesoftware.swift.model.mx.dic.BusinessApplicationHeaderV01;
 import org.w3c.dom.Element;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 
 
 /**
- * This header model was original implemented as a holder for the two available headers:
+ * This header model was the original implemented as a holder for the two available headers:
  * <ul>
  * <li>The ISO 20022 business application header: {@link ApplicationHeader}</li>
  * <li>The application header originally defined by swift: {@link BusinessApplicationHeaderV01}</li>
@@ -315,7 +315,7 @@ public class BusinessHeader implements AppHdr {
      * @since 9.0.1
      */
     @Override
-    public Calendar creationDate() {
+    public OffsetDateTime creationDate() {
         if (this.applicationHeader != null) {
             return this.applicationHeader.creationDate();
         } else if (this.businessApplicationHeader != null) {

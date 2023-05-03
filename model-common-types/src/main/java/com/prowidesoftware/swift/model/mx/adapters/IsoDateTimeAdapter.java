@@ -16,8 +16,10 @@
 package com.prowidesoftware.swift.model.mx.adapters;
 
 import jakarta.xml.bind.annotation.adapters.XmlAdapter;
+
 import javax.xml.datatype.DatatypeConfigurationException;
-import java.util.Calendar;
+import java.time.OffsetDateTime;
+
 
 /**
  * Configured adapter for date time elements.
@@ -29,21 +31,21 @@ import java.util.Calendar;
  *
  * @since 9.2.6
  */
-public class IsoDateTimeAdapter extends XmlAdapter<String, Calendar> {
+public class IsoDateTimeAdapter extends XmlAdapter<String, OffsetDateTime> {
 
-    private final XmlAdapter<String, Calendar> customAdapterImpl;
+    private final XmlAdapter<String, OffsetDateTime> customAdapterImpl;
 
     /**
      * Default constructor for jaxb when non is set via API
      */
     public IsoDateTimeAdapter() throws DatatypeConfigurationException {
-        this.customAdapterImpl = new DefaultCalendarAdapter();
+        this.customAdapterImpl = new OffsetDateTimeAdapter();
     }
 
     /**
      * Creates a date time adapter injecting a custom implementation
      */
-    public IsoDateTimeAdapter(XmlAdapter<String, Calendar> customAdapterImpl) {
+    public IsoDateTimeAdapter(XmlAdapter<String, OffsetDateTime> customAdapterImpl) {
         this.customAdapterImpl = customAdapterImpl;
     }
 
@@ -51,21 +53,21 @@ public class IsoDateTimeAdapter extends XmlAdapter<String, Calendar> {
      * Invokes the wrapped adapter implementation of the unmarshal method.
      *
      * @param value the XML date time value to convert
-     * @return created calendar object or null if cannot be parsed
+     * @return created OffsetDateTime object or null if cannot be parsed
      */
     @Override
-    public Calendar unmarshal(String value) throws Exception {
+    public OffsetDateTime unmarshal(String value) throws Exception {
         return this.customAdapterImpl.unmarshal(value);
     }
 
     /**
      * Invokes the wrapped adapter implementation of the marshal method.
      *
-     * @param cal the model calendar to marshal
+     * @param cal the model OffsetDateTime to marshal
      * @return formatted content for the XML
      */
     @Override
-    public String marshal(Calendar cal) throws Exception {
+    public String marshal(OffsetDateTime cal) throws Exception {
         return this.customAdapterImpl.marshal(cal);
     }
 

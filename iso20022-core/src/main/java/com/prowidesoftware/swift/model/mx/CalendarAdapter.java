@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,13 +42,13 @@ public class CalendarAdapter implements JsonSerializer<Calendar>, JsonDeserializ
     public JsonElement serialize(Calendar cal, Type type, JsonSerializationContext jsonSerializationContext) {
         JsonObject obj = new JsonObject();
 
-        obj.addProperty(YEAR,         cal.get(Calendar.YEAR));
-        obj.addProperty(MONTH,        cal.get(Calendar.MONTH));
-        obj.addProperty(DAY,          cal.get(Calendar.DAY_OF_MONTH));
-        obj.addProperty(TIMEZONE_ID,  cal.getTimeZone().getID());
-        obj.addProperty(HOUR_OF_DAY,  cal.get(Calendar.HOUR_OF_DAY));
-        obj.addProperty(MINUTE,       cal.get(Calendar.MINUTE));
-        obj.addProperty(SECOND,       cal.get(Calendar.SECOND));
+        obj.addProperty(YEAR, cal.get(Calendar.YEAR));
+        obj.addProperty(MONTH, cal.get(Calendar.MONTH));
+        obj.addProperty(DAY, cal.get(Calendar.DAY_OF_MONTH));
+        obj.addProperty(TIMEZONE_ID, cal.getTimeZone().getID());
+        obj.addProperty(HOUR_OF_DAY, cal.get(Calendar.HOUR_OF_DAY));
+        obj.addProperty(MINUTE, cal.get(Calendar.MINUTE));
+        obj.addProperty(SECOND, cal.get(Calendar.SECOND));
         obj.addProperty(MILLISECONDS, cal.get(Calendar.MILLISECOND));
         //TODO ME TRUNCA LOS 0 A LA IZQ. Si en el json viene 08, entonces en el json resultante queda 8
         //TODO si agregamos milliseconds, en el json resultante estará presente mientras que en el json entrante no definen milliseconds
