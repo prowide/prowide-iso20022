@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,30 +17,27 @@ package com.prowidesoftware.swift.model.mx.adapters;
 
 import jakarta.xml.bind.annotation.adapters.XmlAdapter;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 /**
  * Default generic adapter to use when non is provided via the configuration API
  *
  * @since 9.2.6
  */
-class DefaultCalendarAdapter extends XmlAdapter<String, Calendar> {
-    private static String DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss'Z'";
-    private static SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT);
+public class LocalDateAdapter extends XmlAdapter<String, LocalDate> {
+    private static String DATE_FORMAT = "yyyy-MM-dd";
+    private static DateTimeFormatter dtf = DateTimeFormatter.ofPattern(DATE_FORMAT);
 
     @Override
-    public Calendar unmarshal(String value) throws Exception {
-        Calendar cal = Calendar.getInstance();
-        cal.setTime(sdf.parse(value));
-        return cal;
+    public LocalDate unmarshal(String value) throws Exception {
+        return LocalDate.parse(value, dtf);
     }
 
     @Override
-    public String marshal(Calendar value) throws Exception {
+    public String marshal(LocalDate value) throws Exception {
         if (value != null) {
-            String formatted = sdf.format(value.getTime());
-            return formatted;
+            return dtf.format(value);
         }
         return null;
     }

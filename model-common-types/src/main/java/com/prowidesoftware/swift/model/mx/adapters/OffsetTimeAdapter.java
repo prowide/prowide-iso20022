@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,13 +17,9 @@ package com.prowidesoftware.swift.model.mx.adapters;
 
 import jakarta.xml.bind.annotation.adapters.XmlAdapter;
 
-import java.text.SimpleDateFormat;
-import java.time.OffsetTime;
-import java.time.ZoneId;
-import java.time.ZoneOffset;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
-import java.util.TimeZone;
+import java.time.format.DateTimeParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -38,21 +34,21 @@ import java.util.logging.Logger;
  * Notice the configured adapter in the model is the {@link IsoTimeAdapter} wrapper class, but you can pass this
  * default implementation or your own in the constructor.
  *
- * @see TypeAdaptersConfiguration
+ * @see TypeAdaptersConfiguration //TODO clase que no se usa mas
  * @since 9.2.6
  */
-public class ZonedTimeAdapter extends XmlAdapter<String, Calendar> {
+public class OffsetTimeAdapter extends XmlAdapter<String, OffsetTime> {
 
-    private static final transient Logger log = Logger.getLogger(ZonedTimeAdapter.class.getName());
+    private static final transient Logger log = Logger.getLogger(OffsetTime.class.getName());
 
     private final DateTimeFormatter marshalFormat;
     private final DateTimeFormatter unmarshalFormat;
-    private final XmlAdapter<String, Calendar> customAdapterImpl;
+    private final XmlAdapter<String, OffsetTime> customAdapterImpl;
 
     /**
      * Creates a time adapter with the default format
      */
-    public ZonedTimeAdapter() {
+    public OffsetTimeAdapter() {
         this.marshalFormat = DateTimeFormatter.ofPattern("HH:mm:ss.SSSXXX");
         this.unmarshalFormat = DateTimeFormatter.ofPattern("HH:mm:ss[.SSS][XXX]");
         this.customAdapterImpl = null;
@@ -61,7 +57,7 @@ public class ZonedTimeAdapter extends XmlAdapter<String, Calendar> {
     /**
      * Creates a time adapter with a specific given format that will be used for both the marshalling and unmarshalling
      */
-    public ZonedTimeAdapter(DateTimeFormatter dateFormat) {
+    public OffsetTimeAdapter(DateTimeFormatter dateFormat) {
         this.marshalFormat = dateFormat;
         this.unmarshalFormat = dateFormat;
         this.customAdapterImpl = null;
@@ -70,7 +66,7 @@ public class ZonedTimeAdapter extends XmlAdapter<String, Calendar> {
     /**
      * Creates a time adapter injecting a custom implementation
      */
-    public ZonedTimeAdapter(XmlAdapter<String, Calendar> customAdapterImpl) {
+    public OffsetTimeAdapter(XmlAdapter<String, OffsetTime> customAdapterImpl) {
         this.marshalFormat = null;
         this.unmarshalFormat = null;
         this.customAdapterImpl = customAdapterImpl;
@@ -83,80 +79,52 @@ public class ZonedTimeAdapter extends XmlAdapter<String, Calendar> {
      * @return created calendar object or null if cannot be parsed
      */
     @Override
-    public Calendar unmarshal(String value) throws Exception {
+    public OffsetTime unmarshal(String value) throws Exception {
         if (this.customAdapterImpl != null) {
             return this.customAdapterImpl.unmarshal(value);
         } else {
-            return parseZonedTime(this.unmarshalFormat, value);
+            return parseOffsetTime(this.unmarshalFormat, value);
         }
     }
 
     /**
      * Applies the configured format to the calendar.
      *
-     * @param cal the model calendar to marshal
+     * @param offsetTime the model OffsetTime to marshal
      * @return formatted content for the XML
      */
     @Override
-    public String marshal(Calendar cal) throws Exception {
+    public String marshal(OffsetTime offsetTime) throws Exception {
         if (this.customAdapterImpl != null) {
-            return this.customAdapterImpl.marshal(cal);
+            return this.customAdapterImpl.marshal(offsetTime);
         } else {
             String formatted;
             synchronized (marshalFormat) {
-                formatted = formatZonedTime(this.marshalFormat, cal);
+                formatted = formatOffsetTime(this.marshalFormat, offsetTime);
             }
             return formatted.replace(".000", "").replace("Z", "+00:00");
         }
     }
 
-    static String formatZonedTime(DateTimeFormatter dateTimeFormatter, Calendar calendar) {
-        ZoneId zoneId = calendar.getTimeZone().toZoneId();
-        ZoneOffset zoneOffSet = ZoneOffset.of(zoneId.getRules().getOffset(calendar.toInstant()).getId());
-        OffsetTime offsetTime = OffsetTime.of(calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), calendar.get(Calendar.SECOND), 0, zoneOffSet);
-
-        System.out.println("----parseTime");
-        System.out.println("entra : " + calendar.getTime());
-        System.out.println("offsetTime: "+offsetTime);
-        System.out.println("sale : " + dateTimeFormatter.format(offsetTime));
-
+    static String formatOffsetTime(DateTimeFormatter dateTimeFormatter, OffsetTime offsetTime) {
         return dateTimeFormatter.format(offsetTime);
     }
 
-    static Calendar parseZonedTime(DateTimeFormatter dateTimeFormatter, String value) {
+    static OffsetTime parseOffsetTime(DateTimeFormatter dateTimeFormatter, String value) {
         if (value == null) {
             return null;
         }
+        OffsetTime offsetTime = null;
         try {
             // attempt lexical representation parsing
-            OffsetTime offsetTime = OffsetTime.parse(value, dateTimeFormatter);
-
-            //LocalTime localTime = LocalTime.parse(value, dateTimeFormatter);
-            Calendar calendar = Calendar.getInstance();
-            calendar.set(Calendar.HOUR_OF_DAY, offsetTime.getHour());
-            calendar.set(Calendar.MINUTE, offsetTime.getMinute());
-            calendar.set(Calendar.SECOND, offsetTime.getSecond());
-            calendar.set(Calendar.MILLISECOND, 0);
-            calendar.setTimeZone(TimeZone.getTimeZone(ZoneOffset.from(offsetTime)));
-
-
-
-            System.out.println("----parseTime");
-            System.out.println("entra : " + value);
-            System.out.println("offsetTime: "+offsetTime);
-            System.out.println("sale : " + calendar.getTime());
-
-
-
-            return calendar;
-
-            // return DatatypeFactory.newInstance().newCalendar(value);
-        } catch (IllegalArgumentException e) {
+            offsetTime = OffsetTime.parse(value, dateTimeFormatter);
+        } catch (DateTimeParseException e) {
             if (log.isLoggable(Level.FINEST)) {
                 log.finest("Error parsing to Calendar: " + e.getMessage());
             }
+            ZoneOffset offset = ZoneOffset.systemDefault().getRules().getStandardOffset(Instant.now());
+            offsetTime = LocalTime.parse(value).atOffset(offset);
         }
-        return null;
+        return offsetTime;
     }
-
 }
