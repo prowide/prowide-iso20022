@@ -16,6 +16,7 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.ProwideException;
+import com.prowidesoftware.deprecation.DeprecationUtils;
 import com.prowidesoftware.deprecation.ProwideDeprecated;
 import com.prowidesoftware.deprecation.TargetYear;
 import com.prowidesoftware.swift.model.mx.dic.ApplicationHeaderImpl;
@@ -199,9 +200,10 @@ public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
      * @deprecated use {@link #xml(MxWriteParams)} instead
      */
     @Deprecated
-    @ProwideDeprecated(phase2 = TargetYear.SRU2023)
+    @ProwideDeprecated(phase3 = TargetYear.SRU2024)
     @Override
     public String xml(final String prefix, boolean includeXMLDeclaration) {
+        DeprecationUtils.phase2(AbstractMX.class, "xml(String, boolean)", "Use xml(MxWriteParams) instead");
         MxWriteParams params = new MxWriteParams();
         params.prefix = prefix;
         params.includeXMLDeclaration = includeXMLDeclaration;
@@ -212,9 +214,10 @@ public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
      * @deprecated use {@link #xml(MxWriteParams)} instead
      */
     @Deprecated
-    @ProwideDeprecated(phase2 = TargetYear.SRU2023)
+    @ProwideDeprecated(phase3 = TargetYear.SRU2024)
     @Override
     public String xml(String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
+        DeprecationUtils.phase2(AbstractMX.class, "xml(String, boolean, EscapeHandler)", "Use xml(MxWriteParams) instead");
         MxWriteParams params = new MxWriteParams();
         params.prefix = prefix;
         params.includeXMLDeclaration = includeXMLDeclaration;

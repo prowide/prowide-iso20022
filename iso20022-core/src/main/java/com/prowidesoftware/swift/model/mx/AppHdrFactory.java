@@ -200,9 +200,9 @@ public class AppHdrFactory {
      * @since 9.1.2
      * @deprecated use {@link #createAppHdr(AppHdrType, String, String, String, MxId)} instead
      */
-    @ProwideDeprecated(phase3 = TargetYear.SRU2023)
+    @ProwideDeprecated(phase4 = TargetYear.SRU2024)
     public static AppHdr createLegacyAppHdr(AppHdrType type, final String sender, final String receiver, final String reference, final MxId id) {
-        DeprecationUtils.phase2(AppHdrFactory.class, "createLegacyAppHdr(AppHdrType, String, String, String, MxId)", "Use createAppHdr(AppHdrType, String, String, String, MxId) instead.");
+        DeprecationUtils.phase3(AppHdrFactory.class, "createLegacyAppHdr(AppHdrType, String, String, String, MxId)", "Use createAppHdr(AppHdrType, String, String, String, MxId) instead.");
         return createAppHdr(type, sender, receiver, reference, id);
     }
 

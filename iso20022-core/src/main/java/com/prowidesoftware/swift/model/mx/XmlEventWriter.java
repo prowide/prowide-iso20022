@@ -60,10 +60,10 @@ public final class XmlEventWriter implements XMLEventWriter {
      * @deprecated use {@link #XmlEventWriter(Writer, String, boolean, String, EscapeHandler, String)} instead
      */
     @Deprecated
-    @ProwideDeprecated(phase3 = TargetYear.SRU2023)
+    @ProwideDeprecated(phase4 = TargetYear.SRU2024)
     public XmlEventWriter(Writer baos, final String defaultPrefix, boolean includeXMLDeclaration, final String rootElement) {
         this(baos, defaultPrefix, includeXMLDeclaration, rootElement, null, null);
-        DeprecationUtils.phase2(XmlEventWriter.class, "XmlEventWriter(Writer, String, boolean, String)", "Use XmlEventWriter(Writer, String, boolean, String, EscapeHandler) instead");
+        DeprecationUtils.phase3(XmlEventWriter.class, "XmlEventWriter(Writer, String, boolean, String)", "Use XmlEventWriter(Writer, String, boolean, String, EscapeHandler) instead");
     }
 
     /**

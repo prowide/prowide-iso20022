@@ -15,6 +15,7 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
+import com.prowidesoftware.deprecation.DeprecationUtils;
 import com.prowidesoftware.deprecation.ProwideDeprecated;
 import com.prowidesoftware.deprecation.TargetYear;
 import org.w3c.dom.Element;
@@ -127,15 +128,16 @@ public interface AppHdr {
      * @deprecated use {@link #xml(MxWriteParams)} instead
      */
     @Deprecated
-    @ProwideDeprecated(phase2 = TargetYear.SRU2023)
+    @ProwideDeprecated(phase3 = TargetYear.SRU2024)
     String xml(final String prefix, boolean includeXMLDeclaration);
 
     /**
      * @deprecated use {@link #xml(MxWriteParams)} instead
      */
     @Deprecated
-    @ProwideDeprecated(phase2 = TargetYear.SRU2023)
+    @ProwideDeprecated(phase3 = TargetYear.SRU2024)
     default String xml(final String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
+        DeprecationUtils.phase2(AbstractMX.class, "xml(String, boolean, EscapeHandler)", "Use xml(MxWriteParams) instead");
         return xml(prefix, includeXMLDeclaration);
     }
 

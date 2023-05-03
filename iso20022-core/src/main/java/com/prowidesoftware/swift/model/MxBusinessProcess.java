@@ -59,7 +59,7 @@ public enum MxBusinessProcess {
     /**
      * @deprecated Obsolete to be withdrawn (non-ISO)
      */
-    @ProwideDeprecated(phase2 = TargetYear.SRU2023)
+    @ProwideDeprecated(phase3 = TargetYear.SRU2024)
     @Deprecated
     trea("Treasury"),
 

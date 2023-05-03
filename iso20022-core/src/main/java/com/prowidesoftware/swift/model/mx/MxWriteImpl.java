@@ -46,9 +46,9 @@ public class MxWriteImpl implements MxWrite {
      * @deprecated use {@link #write(String, AbstractMX, Class[], MxWriteParams)} instead
      */
     @Deprecated
-    @ProwideDeprecated(phase3 = TargetYear.SRU2023)
+    @ProwideDeprecated(phase4 = TargetYear.SRU2024)
     public static String write(String namespace, AbstractMX obj, Class[] classes, final String prefix, boolean includeXMLDeclaration) {
-        DeprecationUtils.phase2(MxWriteImpl.class, "write(String, AbstractMX, Class[], String, boolean)", "Use write(String, AbstractMX, Class[], MxWriteParams) instead");
+        DeprecationUtils.phase3(MxWriteImpl.class, "write(String, AbstractMX, Class[], String, boolean)", "Use write(String, AbstractMX, Class[], MxWriteParams) instead");
         MxWriteParams params = new MxWriteParams();
         params.prefix = prefix;
         params.includeXMLDeclaration = includeXMLDeclaration;
@@ -105,9 +105,9 @@ public class MxWriteImpl implements MxWrite {
      * @deprecated use {@link #write(String, AbstractMX, Class[], MxWriteParams)} instead
      */
     @Deprecated
-    @ProwideDeprecated(phase3 = TargetYear.SRU2023)
+    @ProwideDeprecated(phase4 = TargetYear.SRU2024)
     public static String write(String namespace, AbstractMX obj, Class[] classes, final String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
-        DeprecationUtils.phase2(MxWriteImpl.class, "write(String, AbstractMX, Class[], String, boolean, EscapeHandler)", "Use write(String, AbstractMX, Class[], MxWriteParams) instead");
+        DeprecationUtils.phase3(MxWriteImpl.class, "write(String, AbstractMX, Class[], String, boolean, EscapeHandler)", "Use write(String, AbstractMX, Class[], MxWriteParams) instead");
         MxWriteParams params = new MxWriteParams();
         params.prefix = prefix;
         params.includeXMLDeclaration = includeXMLDeclaration;
@@ -119,10 +119,10 @@ public class MxWriteImpl implements MxWrite {
      * @deprecated use {@link #write(String, AbstractMX, Class[], MxWriteParams)} instead
      */
     @Deprecated
-    @ProwideDeprecated(phase3 = TargetYear.SRU2023)
+    @ProwideDeprecated(phase4 = TargetYear.SRU2024)
     @Override
     public String message(String namespace, AbstractMX obj, Class[] classes, final String prefix, boolean includeXMLDeclaration) {
-        DeprecationUtils.phase2(MxWriteImpl.class, "message(String, AbstractMX, Class[], String, boolean)", "Use write(String, AbstractMX, Class[], MxWriteParams) instead");
+        DeprecationUtils.phase3(MxWriteImpl.class, "message(String, AbstractMX, Class[], String, boolean)", "Use write(String, AbstractMX, Class[], MxWriteParams) instead");
         MxWriteParams params = new MxWriteParams();
         params.prefix = prefix;
         params.includeXMLDeclaration = includeXMLDeclaration;
@@ -134,8 +134,9 @@ public class MxWriteImpl implements MxWrite {
      */
     @Override
     @Deprecated
-    @ProwideDeprecated(phase2 = TargetYear.SRU2023)
+    @ProwideDeprecated(phase3 = TargetYear.SRU2024)
     public String message(String namespace, AbstractMX obj, Class[] classes, final String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
+        DeprecationUtils.phase2(AbstractMX.class, "message(String, AbstractMX, Class[], String, boolean, EscapeHandler)", "Use write(String, AbstractMX, Class[], MxWriteParams) instead");
         MxWriteParams params = new MxWriteParams();
         params.prefix = prefix;
         params.includeXMLDeclaration = includeXMLDeclaration;

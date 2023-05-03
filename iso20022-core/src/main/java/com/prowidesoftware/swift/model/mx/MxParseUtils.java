@@ -67,7 +67,7 @@ public class MxParseUtils {
      * @deprecated use {@link #parseSAXSource(SAXSource, Class, Class[], MxReadParams)} instead
      */
     @Deprecated
-    @ProwideDeprecated(phase3 = TargetYear.SRU2023)
+    @ProwideDeprecated(phase4 = TargetYear.SRU2024)
     static Object parseSAXSource(final SAXSource source, final Class targetClass, final Class<?>[] classes) {
         return parseSAXSource(source, targetClass, classes, new MxReadParams());
     }
@@ -140,7 +140,7 @@ public class MxParseUtils {
      * @deprecated use {@link #parse(Class, String, Class[], String, MxReadParams)} instead
      */
     @Deprecated
-    @ProwideDeprecated(phase3 = TargetYear.SRU2023)
+    @ProwideDeprecated(phase4 = TargetYear.SRU2024)
     static Object parse(final Class targetClass, final String xml, final Class<?>[] classes, final String localName) {
         return parse(targetClass, xml, classes, localName, new MxReadParams());
     }
