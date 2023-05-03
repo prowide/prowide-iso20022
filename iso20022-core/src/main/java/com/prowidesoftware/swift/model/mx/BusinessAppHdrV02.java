@@ -97,8 +97,8 @@ public class BusinessAppHdrV02 extends BusinessApplicationHeaderV02Impl implemen
     /**
      * Gets the sender BIC code from these elements in the following order:
      * <ol>
-     * 	<li>BusinessApplicationHeaderV01/Fr/FIId/FinInstnId/BICFI</li>
-     *  <li>BusinessApplicationHeaderV01/Fr/OrgId/Id/OrgId/Id/AnyBIC</li>
+     * 	<li>BusinessApplicationHeaderV02/Fr/FIId/FinInstnId/BICFI</li>
+     *  <li>BusinessApplicationHeaderV02/Fr/OrgId/Id/OrgId/Id/AnyBIC</li>
      * </ol>
      *
      * @return found BIC or null if not present or cannot be parsed

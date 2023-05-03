@@ -344,25 +344,6 @@ public final class XmlEventWriter implements XMLEventWriter {
         this.defaultPrefix = defaultPrefix;
     }
 
-    /**
-     * @deprecated use {@link #getPreferredPrefixes()} instead
-     */
-    @ProwideDeprecated(phase4 = TargetYear.SRU2023)
-    @Deprecated
-    public Map<String, String> getPeferredPrefixes() {
-        DeprecationUtils.phase3(XmlEventWriter.class, "getPeferredPrefixes()", "Use getPreferredPrefixes() instead");
-        return getPreferredPrefixes();
-    }
-
-    /**
-     * @deprecated use {@link #setPreferredPrefixes(Map)} instead
-     */
-    @ProwideDeprecated(phase4 = TargetYear.SRU2023)
-    @Deprecated
-    public void setPeferredPrefixes(Map<String, String> preferredPrefixes) {
-        DeprecationUtils.phase3(XmlEventWriter.class, "setPeferredPrefixes(Map)", "Use setPreferredPrefixes(Map) instead");
-        setPreferredPrefixes(preferredPrefixes);
-    }
 
     /**
      * @since 9.0.2

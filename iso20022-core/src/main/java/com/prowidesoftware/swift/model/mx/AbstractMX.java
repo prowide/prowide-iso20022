@@ -25,8 +25,6 @@ import com.prowidesoftware.swift.model.AbstractMessage;
 import com.prowidesoftware.swift.model.MessageStandardType;
 import com.prowidesoftware.swift.model.MxId;
 import com.prowidesoftware.swift.model.mt.AbstractMT;
-import com.prowidesoftware.swift.model.mx.dic.ApplicationHeader;
-import com.prowidesoftware.swift.model.mx.dic.BusinessApplicationHeaderV01;
 import com.prowidesoftware.swift.utils.Lib;
 import org.apache.commons.lang3.StringUtils;
 import org.w3c.dom.Document;
@@ -511,51 +509,6 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
     public void write(final OutputStream stream) throws IOException {
         Objects.requireNonNull(stream, "the stream to write cannot be null");
         stream.write(message().getBytes(StandardCharsets.UTF_8));
-    }
-
-    /**
-     * @return the business header or null if not set
-     * @since 7.7
-     * @deprecated use {@link #getAppHdr()} instead
-     */
-    @XmlTransient
-    @Deprecated
-    @ProwideDeprecated(phase4 = TargetYear.SRU2023)
-    public BusinessHeader getBusinessHeader() {
-        DeprecationUtils.phase3(AbstractMX.class, "getBusinessHeader()", "Use getAppHdr() instead");
-        // backward compatible implementation during the deprecation phase
-        if (appHdr instanceof BusinessHeader) {
-            // if it is already a deprecated header we cast and return
-            return (BusinessHeader) appHdr;
-
-        } else if (appHdr instanceof ApplicationHeader) {
-            return new BusinessHeader((ApplicationHeader) appHdr);
-
-        } else if (appHdr instanceof BusinessApplicationHeaderV01) {
-            return new BusinessHeader((BusinessApplicationHeaderV01) appHdr);
-
-        } else if (appHdr instanceof LegacyAppHdr) {
-            return new BusinessHeader((LegacyAppHdr) appHdr);
-
-        }
-        if (appHdr instanceof BusinessAppHdrV01) {
-            return new BusinessHeader((BusinessAppHdrV01) appHdr);
-        }
-
-        // otherwise we return null, which would be the case for the deprecated implementation as well
-        return null;
-    }
-
-    /**
-     * @param businessHeader the header to set
-     * @since 7.8
-     * @deprecated use {@link #setAppHdr(AppHdr)} instead
-     */
-    @ProwideDeprecated(phase4 = TargetYear.SRU2023)
-    @Deprecated
-    public void setBusinessHeader(final BusinessHeader businessHeader) {
-        DeprecationUtils.phase3(AbstractMX.class, "setBusinessHeader(BusinessHeader)", "Use setAppHdr(AppHdr) instead");
-        setAppHdr(businessHeader);
     }
 
     /**
