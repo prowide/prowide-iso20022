@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -51,11 +51,11 @@ public class CashCollateral2 {
     @XmlElement(name = "MtrtyDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar mtrtyDt;
+    protected LocalDate mtrtyDt;
     @XmlElement(name = "ValDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar valDt;
+    protected LocalDate valDt;
     @XmlElement(name = "XchgRate")
     protected BigDecimal xchgRate;
     @XmlElement(name = "CollVal", required = true)
@@ -196,7 +196,7 @@ public class CashCollateral2 {
      *     {@link String }
      *     
      */
-    public Calendar getMtrtyDt() {
+    public LocalDate getMtrtyDt() {
         return mtrtyDt;
     }
 
@@ -208,7 +208,7 @@ public class CashCollateral2 {
      *     {@link String }
      *     
      */
-    public CashCollateral2 setMtrtyDt(Calendar value) {
+    public CashCollateral2 setMtrtyDt(LocalDate value) {
         this.mtrtyDt = value;
         return this;
     }
@@ -221,7 +221,7 @@ public class CashCollateral2 {
      *     {@link String }
      *     
      */
-    public Calendar getValDt() {
+    public LocalDate getValDt() {
         return valDt;
     }
 
@@ -233,7 +233,7 @@ public class CashCollateral2 {
      *     {@link String }
      *     
      */
-    public CashCollateral2 setValDt(Calendar value) {
+    public CashCollateral2 setValDt(LocalDate value) {
         this.valDt = value;
         return this;
     }

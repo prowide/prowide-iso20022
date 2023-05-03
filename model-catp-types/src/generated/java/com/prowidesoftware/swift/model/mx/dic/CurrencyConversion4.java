@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -57,11 +57,11 @@ public class CurrencyConversion4 {
     @XmlElement(name = "QtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar qtnDt;
+    protected OffsetDateTime qtnDt;
     @XmlElement(name = "VldUntil", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar vldUntil;
+    protected OffsetDateTime vldUntil;
     @XmlElement(name = "SrcCcy", required = true)
     protected CurrencyDetails2 srcCcy;
     @XmlElement(name = "OrgnlAmt", required = true)
@@ -231,7 +231,7 @@ public class CurrencyConversion4 {
      *     {@link String }
      *     
      */
-    public Calendar getQtnDt() {
+    public OffsetDateTime getQtnDt() {
         return qtnDt;
     }
 
@@ -243,7 +243,7 @@ public class CurrencyConversion4 {
      *     {@link String }
      *     
      */
-    public CurrencyConversion4 setQtnDt(Calendar value) {
+    public CurrencyConversion4 setQtnDt(OffsetDateTime value) {
         this.qtnDt = value;
         return this;
     }
@@ -256,7 +256,7 @@ public class CurrencyConversion4 {
      *     {@link String }
      *     
      */
-    public Calendar getVldUntil() {
+    public OffsetDateTime getVldUntil() {
         return vldUntil;
     }
 
@@ -268,7 +268,7 @@ public class CurrencyConversion4 {
      *     {@link String }
      *     
      */
-    public CurrencyConversion4 setVldUntil(Calendar value) {
+    public CurrencyConversion4 setVldUntil(OffsetDateTime value) {
         this.vldUntil = value;
         return this;
     }

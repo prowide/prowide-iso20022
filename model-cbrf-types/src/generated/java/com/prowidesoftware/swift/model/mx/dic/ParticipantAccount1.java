@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -47,15 +47,15 @@ public class ParticipantAccount1 {
     @XmlElement(name = "OpngDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar opngDt;
+    protected OffsetDateTime opngDt;
     @XmlElement(name = "ClsgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar clsgDt;
+    protected OffsetDateTime clsgDt;
     @XmlElement(name = "DeltnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar deltnDt;
+    protected OffsetDateTime deltnDt;
     @XmlElement(name = "LicWdrwlDoc")
     protected DocumentIdentification11 licWdrwlDoc;
     @XmlElement(name = "AcctRstrctns")
@@ -129,7 +129,7 @@ public class ParticipantAccount1 {
      *     {@link String }
      *     
      */
-    public Calendar getOpngDt() {
+    public OffsetDateTime getOpngDt() {
         return opngDt;
     }
 
@@ -141,7 +141,7 @@ public class ParticipantAccount1 {
      *     {@link String }
      *     
      */
-    public ParticipantAccount1 setOpngDt(Calendar value) {
+    public ParticipantAccount1 setOpngDt(OffsetDateTime value) {
         this.opngDt = value;
         return this;
     }
@@ -154,7 +154,7 @@ public class ParticipantAccount1 {
      *     {@link String }
      *     
      */
-    public Calendar getClsgDt() {
+    public OffsetDateTime getClsgDt() {
         return clsgDt;
     }
 
@@ -166,7 +166,7 @@ public class ParticipantAccount1 {
      *     {@link String }
      *     
      */
-    public ParticipantAccount1 setClsgDt(Calendar value) {
+    public ParticipantAccount1 setClsgDt(OffsetDateTime value) {
         this.clsgDt = value;
         return this;
     }
@@ -179,7 +179,7 @@ public class ParticipantAccount1 {
      *     {@link String }
      *     
      */
-    public Calendar getDeltnDt() {
+    public OffsetDateTime getDeltnDt() {
         return deltnDt;
     }
 
@@ -191,7 +191,7 @@ public class ParticipantAccount1 {
      *     {@link String }
      *     
      */
-    public ParticipantAccount1 setDeltnDt(Calendar value) {
+    public ParticipantAccount1 setDeltnDt(OffsetDateTime value) {
         this.deltnDt = value;
         return this;
     }

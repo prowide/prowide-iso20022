@@ -1,7 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -46,11 +47,11 @@ public class Option6 {
     @XmlElement(name = "EarlstExrcDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar earlstExrcDt;
+    protected LocalDate earlstExrcDt;
     @XmlElement(name = "XpryDtAndTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar xpryDtAndTm;
+    protected OffsetDateTime xpryDtAndTm;
     @XmlElement(name = "XpryLctn", required = true)
     protected String xpryLctn;
     @XmlElement(name = "SttlmTp", required = true)
@@ -144,7 +145,7 @@ public class Option6 {
      *     {@link String }
      *     
      */
-    public Calendar getEarlstExrcDt() {
+    public LocalDate getEarlstExrcDt() {
         return earlstExrcDt;
     }
 
@@ -156,7 +157,7 @@ public class Option6 {
      *     {@link String }
      *     
      */
-    public Option6 setEarlstExrcDt(Calendar value) {
+    public Option6 setEarlstExrcDt(LocalDate value) {
         this.earlstExrcDt = value;
         return this;
     }
@@ -169,7 +170,7 @@ public class Option6 {
      *     {@link String }
      *     
      */
-    public Calendar getXpryDtAndTm() {
+    public OffsetDateTime getXpryDtAndTm() {
         return xpryDtAndTm;
     }
 
@@ -181,7 +182,7 @@ public class Option6 {
      *     {@link String }
      *     
      */
-    public Option6 setXpryDtAndTm(Calendar value) {
+    public Option6 setXpryDtAndTm(OffsetDateTime value) {
         this.xpryDtAndTm = value;
         return this;
     }

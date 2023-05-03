@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -35,7 +35,7 @@ public class NonDeliverableForwardValuationConditions2 {
     @XmlElement(name = "ValtnDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar valtnDt;
+    protected LocalDate valtnDt;
     @XmlElement(name = "AddtlValtnInf")
     protected String addtlValtnInf;
     @XmlElement(name = "SttlmPty")
@@ -74,7 +74,7 @@ public class NonDeliverableForwardValuationConditions2 {
      *     {@link String }
      *     
      */
-    public Calendar getValtnDt() {
+    public LocalDate getValtnDt() {
         return valtnDt;
     }
 
@@ -86,7 +86,7 @@ public class NonDeliverableForwardValuationConditions2 {
      *     {@link String }
      *     
      */
-    public NonDeliverableForwardValuationConditions2 setValtnDt(Calendar value) {
+    public NonDeliverableForwardValuationConditions2 setValtnDt(LocalDate value) {
         this.valtnDt = value;
         return this;
     }

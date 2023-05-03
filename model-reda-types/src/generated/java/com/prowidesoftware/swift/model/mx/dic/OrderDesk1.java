@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -36,7 +36,7 @@ public class OrderDesk1 {
     @XmlElement(name = "ClsrDts", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected List<Calendar> clsrDts;
+    protected List<LocalDate> clsrDts;
     @XmlElement(name = "AddtlInf")
     protected List<AdditionalInformation15> addtlInf;
 
@@ -89,7 +89,7 @@ public class OrderDesk1 {
      * @return
      *     The value of the clsrDts property.
      */
-    public List<Calendar> getClsrDts() {
+    public List<LocalDate> getClsrDts() {
         if (clsrDts == null) {
             clsrDts = new ArrayList<>();
         }
@@ -147,7 +147,7 @@ public class OrderDesk1 {
      * @see #getClsrDts()
      * 
      */
-    public OrderDesk1 addClsrDts(Calendar clsrDts) {
+    public OrderDesk1 addClsrDts(LocalDate clsrDts) {
         getClsrDts().add(clsrDts);
         return this;
     }

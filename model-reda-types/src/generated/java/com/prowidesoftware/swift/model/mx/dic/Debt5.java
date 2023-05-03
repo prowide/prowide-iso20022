@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -115,39 +115,39 @@ public class Debt5 {
     @XmlElement(name = "IntrstFxgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar intrstFxgDt;
+    protected OffsetDateTime intrstFxgDt;
     @XmlElement(name = "DtdDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar dtdDt;
+    protected OffsetDateTime dtdDt;
     @XmlElement(name = "FrstPmtDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar frstPmtDt;
+    protected OffsetDateTime frstPmtDt;
     @XmlElement(name = "MtrtyDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar mtrtyDt;
+    protected OffsetDateTime mtrtyDt;
     @XmlElement(name = "NxtCpnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar nxtCpnDt;
+    protected OffsetDateTime nxtCpnDt;
     @XmlElement(name = "PutblDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar putblDt;
+    protected OffsetDateTime putblDt;
     @XmlElement(name = "NxtCllblDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar nxtCllblDt;
+    protected OffsetDateTime nxtCllblDt;
     @XmlElement(name = "NxtFctrDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar nxtFctrDt;
+    protected OffsetDateTime nxtFctrDt;
     @XmlElement(name = "XprtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar xprtnDt;
+    protected OffsetDateTime xprtnDt;
     @XmlElement(name = "PmtDrctnInd")
     protected Boolean pmtDrctnInd;
     @XmlElement(name = "IntrstRate")
@@ -165,7 +165,7 @@ public class Debt5 {
     @XmlElement(name = "IntrstAcrlDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar intrstAcrlDt;
+    protected OffsetDateTime intrstAcrlDt;
     @XmlElement(name = "PutblInd")
     protected Boolean putblInd;
     @XmlElement(name = "PreFnddInd")
@@ -365,7 +365,7 @@ public class Debt5 {
      *     {@link String }
      *     
      */
-    public Calendar getIntrstFxgDt() {
+    public OffsetDateTime getIntrstFxgDt() {
         return intrstFxgDt;
     }
 
@@ -377,7 +377,7 @@ public class Debt5 {
      *     {@link String }
      *     
      */
-    public Debt5 setIntrstFxgDt(Calendar value) {
+    public Debt5 setIntrstFxgDt(OffsetDateTime value) {
         this.intrstFxgDt = value;
         return this;
     }
@@ -390,7 +390,7 @@ public class Debt5 {
      *     {@link String }
      *     
      */
-    public Calendar getDtdDt() {
+    public OffsetDateTime getDtdDt() {
         return dtdDt;
     }
 
@@ -402,7 +402,7 @@ public class Debt5 {
      *     {@link String }
      *     
      */
-    public Debt5 setDtdDt(Calendar value) {
+    public Debt5 setDtdDt(OffsetDateTime value) {
         this.dtdDt = value;
         return this;
     }
@@ -415,7 +415,7 @@ public class Debt5 {
      *     {@link String }
      *     
      */
-    public Calendar getFrstPmtDt() {
+    public OffsetDateTime getFrstPmtDt() {
         return frstPmtDt;
     }
 
@@ -427,7 +427,7 @@ public class Debt5 {
      *     {@link String }
      *     
      */
-    public Debt5 setFrstPmtDt(Calendar value) {
+    public Debt5 setFrstPmtDt(OffsetDateTime value) {
         this.frstPmtDt = value;
         return this;
     }
@@ -440,7 +440,7 @@ public class Debt5 {
      *     {@link String }
      *     
      */
-    public Calendar getMtrtyDt() {
+    public OffsetDateTime getMtrtyDt() {
         return mtrtyDt;
     }
 
@@ -452,7 +452,7 @@ public class Debt5 {
      *     {@link String }
      *     
      */
-    public Debt5 setMtrtyDt(Calendar value) {
+    public Debt5 setMtrtyDt(OffsetDateTime value) {
         this.mtrtyDt = value;
         return this;
     }
@@ -465,7 +465,7 @@ public class Debt5 {
      *     {@link String }
      *     
      */
-    public Calendar getNxtCpnDt() {
+    public OffsetDateTime getNxtCpnDt() {
         return nxtCpnDt;
     }
 
@@ -477,7 +477,7 @@ public class Debt5 {
      *     {@link String }
      *     
      */
-    public Debt5 setNxtCpnDt(Calendar value) {
+    public Debt5 setNxtCpnDt(OffsetDateTime value) {
         this.nxtCpnDt = value;
         return this;
     }
@@ -490,7 +490,7 @@ public class Debt5 {
      *     {@link String }
      *     
      */
-    public Calendar getPutblDt() {
+    public OffsetDateTime getPutblDt() {
         return putblDt;
     }
 
@@ -502,7 +502,7 @@ public class Debt5 {
      *     {@link String }
      *     
      */
-    public Debt5 setPutblDt(Calendar value) {
+    public Debt5 setPutblDt(OffsetDateTime value) {
         this.putblDt = value;
         return this;
     }
@@ -515,7 +515,7 @@ public class Debt5 {
      *     {@link String }
      *     
      */
-    public Calendar getNxtCllblDt() {
+    public OffsetDateTime getNxtCllblDt() {
         return nxtCllblDt;
     }
 
@@ -527,7 +527,7 @@ public class Debt5 {
      *     {@link String }
      *     
      */
-    public Debt5 setNxtCllblDt(Calendar value) {
+    public Debt5 setNxtCllblDt(OffsetDateTime value) {
         this.nxtCllblDt = value;
         return this;
     }
@@ -540,7 +540,7 @@ public class Debt5 {
      *     {@link String }
      *     
      */
-    public Calendar getNxtFctrDt() {
+    public OffsetDateTime getNxtFctrDt() {
         return nxtFctrDt;
     }
 
@@ -552,7 +552,7 @@ public class Debt5 {
      *     {@link String }
      *     
      */
-    public Debt5 setNxtFctrDt(Calendar value) {
+    public Debt5 setNxtFctrDt(OffsetDateTime value) {
         this.nxtFctrDt = value;
         return this;
     }
@@ -565,7 +565,7 @@ public class Debt5 {
      *     {@link String }
      *     
      */
-    public Calendar getXprtnDt() {
+    public OffsetDateTime getXprtnDt() {
         return xprtnDt;
     }
 
@@ -577,7 +577,7 @@ public class Debt5 {
      *     {@link String }
      *     
      */
-    public Debt5 setXprtnDt(Calendar value) {
+    public Debt5 setXprtnDt(OffsetDateTime value) {
         this.xprtnDt = value;
         return this;
     }
@@ -765,7 +765,7 @@ public class Debt5 {
      *     {@link String }
      *     
      */
-    public Calendar getIntrstAcrlDt() {
+    public OffsetDateTime getIntrstAcrlDt() {
         return intrstAcrlDt;
     }
 
@@ -777,7 +777,7 @@ public class Debt5 {
      *     {@link String }
      *     
      */
-    public Debt5 setIntrstAcrlDt(Calendar value) {
+    public Debt5 setIntrstAcrlDt(OffsetDateTime value) {
         this.intrstAcrlDt = value;
         return this;
     }

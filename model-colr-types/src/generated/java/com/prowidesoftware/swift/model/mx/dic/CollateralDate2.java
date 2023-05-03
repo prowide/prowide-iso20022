@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -33,13 +33,13 @@ public class CollateralDate2 {
     @XmlElement(name = "TradDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar tradDt;
+    protected LocalDate tradDt;
     @XmlElement(name = "ReqdExctnDt")
     protected DateAndDateTime2Choice reqdExctnDt;
     @XmlElement(name = "SttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar sttlmDt;
+    protected LocalDate sttlmDt;
 
     /**
      * Gets the value of the tradDt property.
@@ -49,7 +49,7 @@ public class CollateralDate2 {
      *     {@link String }
      *     
      */
-    public Calendar getTradDt() {
+    public LocalDate getTradDt() {
         return tradDt;
     }
 
@@ -61,7 +61,7 @@ public class CollateralDate2 {
      *     {@link String }
      *     
      */
-    public CollateralDate2 setTradDt(Calendar value) {
+    public CollateralDate2 setTradDt(LocalDate value) {
         this.tradDt = value;
         return this;
     }
@@ -99,7 +99,7 @@ public class CollateralDate2 {
      *     {@link String }
      *     
      */
-    public Calendar getSttlmDt() {
+    public LocalDate getSttlmDt() {
         return sttlmDt;
     }
 
@@ -111,7 +111,7 @@ public class CollateralDate2 {
      *     {@link String }
      *     
      */
-    public CollateralDate2 setSttlmDt(Calendar value) {
+    public CollateralDate2 setSttlmDt(LocalDate value) {
         this.sttlmDt = value;
         return this;
     }

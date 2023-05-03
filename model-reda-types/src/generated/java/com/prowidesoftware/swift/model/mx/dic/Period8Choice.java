@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -33,15 +33,15 @@ public class Period8Choice {
     @XmlElement(name = "DtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar dtTm;
+    protected OffsetDateTime dtTm;
     @XmlElement(name = "FrDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar frDtTm;
+    protected OffsetDateTime frDtTm;
     @XmlElement(name = "ToDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar toDtTm;
+    protected OffsetDateTime toDtTm;
     @XmlElement(name = "FrDtToDt")
     protected DateTimePeriod1 frDtToDt;
 
@@ -53,7 +53,7 @@ public class Period8Choice {
      *     {@link String }
      *     
      */
-    public Calendar getDtTm() {
+    public OffsetDateTime getDtTm() {
         return dtTm;
     }
 
@@ -65,7 +65,7 @@ public class Period8Choice {
      *     {@link String }
      *     
      */
-    public Period8Choice setDtTm(Calendar value) {
+    public Period8Choice setDtTm(OffsetDateTime value) {
         this.dtTm = value;
         return this;
     }
@@ -78,7 +78,7 @@ public class Period8Choice {
      *     {@link String }
      *     
      */
-    public Calendar getFrDtTm() {
+    public OffsetDateTime getFrDtTm() {
         return frDtTm;
     }
 
@@ -90,7 +90,7 @@ public class Period8Choice {
      *     {@link String }
      *     
      */
-    public Period8Choice setFrDtTm(Calendar value) {
+    public Period8Choice setFrDtTm(OffsetDateTime value) {
         this.frDtTm = value;
         return this;
     }
@@ -103,7 +103,7 @@ public class Period8Choice {
      *     {@link String }
      *     
      */
-    public Calendar getToDtTm() {
+    public OffsetDateTime getToDtTm() {
         return toDtTm;
     }
 
@@ -115,7 +115,7 @@ public class Period8Choice {
      *     {@link String }
      *     
      */
-    public Period8Choice setToDtTm(Calendar value) {
+    public Period8Choice setToDtTm(OffsetDateTime value) {
         this.toDtTm = value;
         return this;
     }

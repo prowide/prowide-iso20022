@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -52,15 +52,15 @@ public class OriginalTransactionReference17 {
     @XmlElement(name = "IntrBkSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar intrBkSttlmDt;
+    protected LocalDate intrBkSttlmDt;
     @XmlElement(name = "ReqdColltnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar reqdColltnDt;
+    protected LocalDate reqdColltnDt;
     @XmlElement(name = "ReqdExctnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar reqdExctnDt;
+    protected LocalDate reqdExctnDt;
     @XmlElement(name = "CdtrSchmeId")
     protected PartyIdentification43 cdtrSchmeId;
     @XmlElement(name = "SttlmInf")
@@ -149,7 +149,7 @@ public class OriginalTransactionReference17 {
      *     {@link String }
      *     
      */
-    public Calendar getIntrBkSttlmDt() {
+    public LocalDate getIntrBkSttlmDt() {
         return intrBkSttlmDt;
     }
 
@@ -161,7 +161,7 @@ public class OriginalTransactionReference17 {
      *     {@link String }
      *     
      */
-    public OriginalTransactionReference17 setIntrBkSttlmDt(Calendar value) {
+    public OriginalTransactionReference17 setIntrBkSttlmDt(LocalDate value) {
         this.intrBkSttlmDt = value;
         return this;
     }
@@ -174,7 +174,7 @@ public class OriginalTransactionReference17 {
      *     {@link String }
      *     
      */
-    public Calendar getReqdColltnDt() {
+    public LocalDate getReqdColltnDt() {
         return reqdColltnDt;
     }
 
@@ -186,7 +186,7 @@ public class OriginalTransactionReference17 {
      *     {@link String }
      *     
      */
-    public OriginalTransactionReference17 setReqdColltnDt(Calendar value) {
+    public OriginalTransactionReference17 setReqdColltnDt(LocalDate value) {
         this.reqdColltnDt = value;
         return this;
     }
@@ -199,7 +199,7 @@ public class OriginalTransactionReference17 {
      *     {@link String }
      *     
      */
-    public Calendar getReqdExctnDt() {
+    public LocalDate getReqdExctnDt() {
         return reqdExctnDt;
     }
 
@@ -211,7 +211,7 @@ public class OriginalTransactionReference17 {
      *     {@link String }
      *     
      */
-    public OriginalTransactionReference17 setReqdExctnDt(Calendar value) {
+    public OriginalTransactionReference17 setReqdExctnDt(LocalDate value) {
         this.reqdExctnDt = value;
         return this;
     }

@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -41,11 +41,11 @@ public class MandateOccurrences4 {
     @XmlElement(name = "FrstColltnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar frstColltnDt;
+    protected LocalDate frstColltnDt;
     @XmlElement(name = "FnlColltnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar fnlColltnDt;
+    protected LocalDate fnlColltnDt;
 
     /**
      * Gets the value of the seqTp property.
@@ -130,7 +130,7 @@ public class MandateOccurrences4 {
      *     {@link String }
      *     
      */
-    public Calendar getFrstColltnDt() {
+    public LocalDate getFrstColltnDt() {
         return frstColltnDt;
     }
 
@@ -142,7 +142,7 @@ public class MandateOccurrences4 {
      *     {@link String }
      *     
      */
-    public MandateOccurrences4 setFrstColltnDt(Calendar value) {
+    public MandateOccurrences4 setFrstColltnDt(LocalDate value) {
         this.frstColltnDt = value;
         return this;
     }
@@ -155,7 +155,7 @@ public class MandateOccurrences4 {
      *     {@link String }
      *     
      */
-    public Calendar getFnlColltnDt() {
+    public LocalDate getFnlColltnDt() {
         return fnlColltnDt;
     }
 
@@ -167,7 +167,7 @@ public class MandateOccurrences4 {
      *     {@link String }
      *     
      */
-    public MandateOccurrences4 setFnlColltnDt(Calendar value) {
+    public MandateOccurrences4 setFnlColltnDt(LocalDate value) {
         this.fnlColltnDt = value;
         return this;
     }

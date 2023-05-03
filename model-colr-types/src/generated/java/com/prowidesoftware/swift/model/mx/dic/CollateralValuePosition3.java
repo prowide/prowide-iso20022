@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -35,7 +35,7 @@ public class CollateralValuePosition3 {
     @XmlElement(name = "DataAccsTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar dataAccsTm;
+    protected OffsetDateTime dataAccsTm;
     @XmlElement(name = "TtlCollValtn")
     protected ActiveCurrencyAndAmount ttlCollValtn;
     @XmlElement(name = "SctiesAcct")
@@ -51,7 +51,7 @@ public class CollateralValuePosition3 {
      *     {@link String }
      *     
      */
-    public Calendar getDataAccsTm() {
+    public OffsetDateTime getDataAccsTm() {
         return dataAccsTm;
     }
 
@@ -63,7 +63,7 @@ public class CollateralValuePosition3 {
      *     {@link String }
      *     
      */
-    public CollateralValuePosition3 setDataAccsTm(Calendar value) {
+    public CollateralValuePosition3 setDataAccsTm(OffsetDateTime value) {
         this.dataAccsTm = value;
         return this;
     }

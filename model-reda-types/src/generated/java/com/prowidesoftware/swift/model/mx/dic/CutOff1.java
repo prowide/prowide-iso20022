@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -37,7 +37,7 @@ public class CutOff1 {
     @XmlElement(name = "CutOffTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected Calendar cutOffTm;
+    protected OffsetTime cutOffTm;
     @XmlElement(name = "ValDtOffset", required = true)
     protected String valDtOffset;
 
@@ -99,7 +99,7 @@ public class CutOff1 {
      *     {@link String }
      *     
      */
-    public Calendar getCutOffTm() {
+    public OffsetTime getCutOffTm() {
         return cutOffTm;
     }
 
@@ -111,7 +111,7 @@ public class CutOff1 {
      *     {@link String }
      *     
      */
-    public CutOff1 setCutOffTm(Calendar value) {
+    public CutOff1 setCutOffTm(OffsetTime value) {
         this.cutOffTm = value;
         return this;
     }

@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -32,11 +32,11 @@ public class SystemRestriction1 {
     @XmlElement(name = "VldFr", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar vldFr;
+    protected OffsetDateTime vldFr;
     @XmlElement(name = "VldTo", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar vldTo;
+    protected OffsetDateTime vldTo;
     @XmlElement(name = "Tp", required = true)
     protected String tp;
 
@@ -48,7 +48,7 @@ public class SystemRestriction1 {
      *     {@link String }
      *     
      */
-    public Calendar getVldFr() {
+    public OffsetDateTime getVldFr() {
         return vldFr;
     }
 
@@ -60,7 +60,7 @@ public class SystemRestriction1 {
      *     {@link String }
      *     
      */
-    public SystemRestriction1 setVldFr(Calendar value) {
+    public SystemRestriction1 setVldFr(OffsetDateTime value) {
         this.vldFr = value;
         return this;
     }
@@ -73,7 +73,7 @@ public class SystemRestriction1 {
      *     {@link String }
      *     
      */
-    public Calendar getVldTo() {
+    public OffsetDateTime getVldTo() {
         return vldTo;
     }
 
@@ -85,7 +85,7 @@ public class SystemRestriction1 {
      *     {@link String }
      *     
      */
-    public SystemRestriction1 setVldTo(Calendar value) {
+    public SystemRestriction1 setVldTo(OffsetDateTime value) {
         this.vldTo = value;
         return this;
     }

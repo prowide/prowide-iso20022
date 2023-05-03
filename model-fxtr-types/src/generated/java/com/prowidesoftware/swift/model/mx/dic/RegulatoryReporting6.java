@@ -1,8 +1,9 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.OffsetDateTime;
+import java.time.OffsetTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
@@ -111,11 +112,11 @@ public class RegulatoryReporting6 {
     @XmlElement(name = "ConfDtAndTmstmp", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar confDtAndTmstmp;
+    protected OffsetDateTime confDtAndTmstmp;
     @XmlElement(name = "ClrTmstmp", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected Calendar clrTmstmp;
+    protected OffsetTime clrTmstmp;
     @XmlElement(name = "AddtlRptgInf")
     protected String addtlRptgInf;
 
@@ -739,7 +740,7 @@ public class RegulatoryReporting6 {
      *     {@link String }
      *     
      */
-    public Calendar getConfDtAndTmstmp() {
+    public OffsetDateTime getConfDtAndTmstmp() {
         return confDtAndTmstmp;
     }
 
@@ -751,7 +752,7 @@ public class RegulatoryReporting6 {
      *     {@link String }
      *     
      */
-    public RegulatoryReporting6 setConfDtAndTmstmp(Calendar value) {
+    public RegulatoryReporting6 setConfDtAndTmstmp(OffsetDateTime value) {
         this.confDtAndTmstmp = value;
         return this;
     }
@@ -764,7 +765,7 @@ public class RegulatoryReporting6 {
      *     {@link String }
      *     
      */
-    public Calendar getClrTmstmp() {
+    public OffsetTime getClrTmstmp() {
         return clrTmstmp;
     }
 
@@ -776,7 +777,7 @@ public class RegulatoryReporting6 {
      *     {@link String }
      *     
      */
-    public RegulatoryReporting6 setClrTmstmp(Calendar value) {
+    public RegulatoryReporting6 setClrTmstmp(OffsetTime value) {
         this.clrTmstmp = value;
         return this;
     }

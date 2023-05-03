@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -36,7 +36,7 @@ public class AmountsAndValueDate1 {
     @XmlElement(name = "SttlmDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar sttlmDt;
+    protected LocalDate sttlmDt;
 
     /**
      * Gets the value of the tradgSdBuyAmt property.
@@ -96,7 +96,7 @@ public class AmountsAndValueDate1 {
      *     {@link String }
      *     
      */
-    public Calendar getSttlmDt() {
+    public LocalDate getSttlmDt() {
         return sttlmDt;
     }
 
@@ -108,7 +108,7 @@ public class AmountsAndValueDate1 {
      *     {@link String }
      *     
      */
-    public AmountsAndValueDate1 setSttlmDt(Calendar value) {
+    public AmountsAndValueDate1 setSttlmDt(LocalDate value) {
         this.sttlmDt = value;
         return this;
     }

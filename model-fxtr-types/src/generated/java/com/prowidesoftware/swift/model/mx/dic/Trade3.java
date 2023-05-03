@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -54,7 +54,7 @@ public class Trade3 {
     @XmlElement(name = "SttlmDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar sttlmDt;
+    protected LocalDate sttlmDt;
     @XmlElement(name = "ValtnRate", required = true)
     protected AgreedRate3 valtnRate;
     @XmlElement(name = "FwdPts")
@@ -64,7 +64,7 @@ public class Trade3 {
     @XmlElement(name = "ValDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar valDt;
+    protected LocalDate valDt;
     @XmlElement(name = "RskAmt", required = true)
     protected ActiveCurrencyAndAmount rskAmt;
     @XmlElement(name = "SctyId", required = true)
@@ -74,7 +74,7 @@ public class Trade3 {
     @XmlElement(name = "FxgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar fxgDt;
+    protected LocalDate fxgDt;
     @XmlElement(name = "OptnInd")
     protected Boolean optnInd;
     @XmlElement(name = "DltaInd")
@@ -165,7 +165,7 @@ public class Trade3 {
      *     {@link String }
      *     
      */
-    public Calendar getSttlmDt() {
+    public LocalDate getSttlmDt() {
         return sttlmDt;
     }
 
@@ -177,7 +177,7 @@ public class Trade3 {
      *     {@link String }
      *     
      */
-    public Trade3 setSttlmDt(Calendar value) {
+    public Trade3 setSttlmDt(LocalDate value) {
         this.sttlmDt = value;
         return this;
     }
@@ -265,7 +265,7 @@ public class Trade3 {
      *     {@link String }
      *     
      */
-    public Calendar getValDt() {
+    public LocalDate getValDt() {
         return valDt;
     }
 
@@ -277,7 +277,7 @@ public class Trade3 {
      *     {@link String }
      *     
      */
-    public Trade3 setValDt(Calendar value) {
+    public Trade3 setValDt(LocalDate value) {
         this.valDt = value;
         return this;
     }
@@ -365,7 +365,7 @@ public class Trade3 {
      *     {@link String }
      *     
      */
-    public Calendar getFxgDt() {
+    public LocalDate getFxgDt() {
         return fxgDt;
     }
 
@@ -377,7 +377,7 @@ public class Trade3 {
      *     {@link String }
      *     
      */
-    public Trade3 setFxgDt(Calendar value) {
+    public Trade3 setFxgDt(LocalDate value) {
         this.fxgDt = value;
         return this;
     }

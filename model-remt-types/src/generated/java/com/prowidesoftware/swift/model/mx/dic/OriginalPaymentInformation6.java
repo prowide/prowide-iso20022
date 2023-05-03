@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -49,11 +49,11 @@ public class OriginalPaymentInformation6 {
     @XmlElement(name = "ReqdExctnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar reqdExctnDt;
+    protected LocalDate reqdExctnDt;
     @XmlElement(name = "ReqdColltnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar reqdColltnDt;
+    protected LocalDate reqdColltnDt;
     @XmlElement(name = "Dbtr")
     protected PartyIdentification43 dbtr;
     @XmlElement(name = "DbtrAcct")
@@ -175,7 +175,7 @@ public class OriginalPaymentInformation6 {
      *     {@link String }
      *     
      */
-    public Calendar getReqdExctnDt() {
+    public LocalDate getReqdExctnDt() {
         return reqdExctnDt;
     }
 
@@ -187,7 +187,7 @@ public class OriginalPaymentInformation6 {
      *     {@link String }
      *     
      */
-    public OriginalPaymentInformation6 setReqdExctnDt(Calendar value) {
+    public OriginalPaymentInformation6 setReqdExctnDt(LocalDate value) {
         this.reqdExctnDt = value;
         return this;
     }
@@ -200,7 +200,7 @@ public class OriginalPaymentInformation6 {
      *     {@link String }
      *     
      */
-    public Calendar getReqdColltnDt() {
+    public LocalDate getReqdColltnDt() {
         return reqdColltnDt;
     }
 
@@ -212,7 +212,7 @@ public class OriginalPaymentInformation6 {
      *     {@link String }
      *     
      */
-    public OriginalPaymentInformation6 setReqdColltnDt(Calendar value) {
+    public OriginalPaymentInformation6 setReqdColltnDt(LocalDate value) {
         this.reqdColltnDt = value;
         return this;
     }

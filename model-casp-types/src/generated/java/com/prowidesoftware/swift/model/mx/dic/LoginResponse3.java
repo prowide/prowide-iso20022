@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -35,7 +35,7 @@ public class LoginResponse3 {
     @XmlElement(name = "POIDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar poiDtTm;
+    protected OffsetDateTime poiDtTm;
     @XmlElement(name = "POISftwr", required = true)
     protected List<PointOfInteractionComponent11> poiSftwr;
     @XmlElement(name = "POICpblties")
@@ -51,7 +51,7 @@ public class LoginResponse3 {
      *     {@link String }
      *     
      */
-    public Calendar getPOIDtTm() {
+    public OffsetDateTime getPOIDtTm() {
         return poiDtTm;
     }
 
@@ -63,7 +63,7 @@ public class LoginResponse3 {
      *     {@link String }
      *     
      */
-    public LoginResponse3 setPOIDtTm(Calendar value) {
+    public LoginResponse3 setPOIDtTm(OffsetDateTime value) {
         this.poiDtTm = value;
         return this;
     }

@@ -1,7 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -41,7 +42,7 @@ public class GroupHeader28 {
     @XmlElement(name = "CreDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar creDtTm;
+    protected OffsetDateTime creDtTm;
     @XmlElement(name = "NbOfTxs", required = true)
     protected String nbOfTxs;
     @XmlElement(name = "GrpRvsl")
@@ -51,7 +52,7 @@ public class GroupHeader28 {
     @XmlElement(name = "IntrBkSttlmDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar intrBkSttlmDt;
+    protected LocalDate intrBkSttlmDt;
     @XmlElement(name = "SttlmInf", required = true)
     protected SettlementInformation11 sttlmInf;
     @XmlElement(name = "InstgAgt")
@@ -92,7 +93,7 @@ public class GroupHeader28 {
      *     {@link String }
      *     
      */
-    public Calendar getCreDtTm() {
+    public OffsetDateTime getCreDtTm() {
         return creDtTm;
     }
 
@@ -104,7 +105,7 @@ public class GroupHeader28 {
      *     {@link String }
      *     
      */
-    public GroupHeader28 setCreDtTm(Calendar value) {
+    public GroupHeader28 setCreDtTm(OffsetDateTime value) {
         this.creDtTm = value;
         return this;
     }
@@ -184,7 +185,7 @@ public class GroupHeader28 {
      *     {@link String }
      *     
      */
-    public Calendar getIntrBkSttlmDt() {
+    public LocalDate getIntrBkSttlmDt() {
         return intrBkSttlmDt;
     }
 
@@ -196,7 +197,7 @@ public class GroupHeader28 {
      *     {@link String }
      *     
      */
-    public GroupHeader28 setIntrBkSttlmDt(Calendar value) {
+    public GroupHeader28 setIntrBkSttlmDt(LocalDate value) {
         this.intrBkSttlmDt = value;
         return this;
     }

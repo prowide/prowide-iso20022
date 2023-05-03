@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.OffsetTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -46,7 +46,7 @@ public class ValuationDealingProcessingCharacteristics3 {
     @XmlElement(name = "ValtnTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected Calendar valtnTm;
+    protected OffsetTime valtnTm;
     @XmlElement(name = "DcmlstnUnits")
     protected BigDecimal dcmlstnUnits;
     @XmlElement(name = "DcmlstnPric")
@@ -119,7 +119,7 @@ public class ValuationDealingProcessingCharacteristics3 {
      *     {@link String }
      *     
      */
-    public Calendar getValtnTm() {
+    public OffsetTime getValtnTm() {
         return valtnTm;
     }
 
@@ -131,7 +131,7 @@ public class ValuationDealingProcessingCharacteristics3 {
      *     {@link String }
      *     
      */
-    public ValuationDealingProcessingCharacteristics3 setValtnTm(Calendar value) {
+    public ValuationDealingProcessingCharacteristics3 setValtnTm(OffsetTime value) {
         this.valtnTm = value;
         return this;
     }

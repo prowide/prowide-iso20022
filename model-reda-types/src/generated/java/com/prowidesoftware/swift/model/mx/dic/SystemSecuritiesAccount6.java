@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -42,11 +42,11 @@ public class SystemSecuritiesAccount6 {
     @XmlElement(name = "OpngDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar opngDt;
+    protected LocalDate opngDt;
     @XmlElement(name = "ClsgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar clsgDt;
+    protected LocalDate clsgDt;
     @XmlElement(name = "HldInd")
     protected Boolean hldInd;
     @XmlElement(name = "NegPos")
@@ -74,7 +74,7 @@ public class SystemSecuritiesAccount6 {
      *     {@link String }
      *     
      */
-    public Calendar getOpngDt() {
+    public LocalDate getOpngDt() {
         return opngDt;
     }
 
@@ -86,7 +86,7 @@ public class SystemSecuritiesAccount6 {
      *     {@link String }
      *     
      */
-    public SystemSecuritiesAccount6 setOpngDt(Calendar value) {
+    public SystemSecuritiesAccount6 setOpngDt(LocalDate value) {
         this.opngDt = value;
         return this;
     }
@@ -99,7 +99,7 @@ public class SystemSecuritiesAccount6 {
      *     {@link String }
      *     
      */
-    public Calendar getClsgDt() {
+    public LocalDate getClsgDt() {
         return clsgDt;
     }
 
@@ -111,7 +111,7 @@ public class SystemSecuritiesAccount6 {
      *     {@link String }
      *     
      */
-    public SystemSecuritiesAccount6 setClsgDt(Calendar value) {
+    public SystemSecuritiesAccount6 setClsgDt(LocalDate value) {
         this.clsgDt = value;
         return this;
     }

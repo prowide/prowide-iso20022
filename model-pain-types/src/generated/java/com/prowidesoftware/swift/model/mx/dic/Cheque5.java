@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -54,7 +54,7 @@ public class Cheque5 {
     @XmlElement(name = "ChqMtrtyDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar chqMtrtyDt;
+    protected LocalDate chqMtrtyDt;
     @XmlElement(name = "FrmsCd")
     protected String frmsCd;
     @XmlElement(name = "MemoFld")
@@ -222,7 +222,7 @@ public class Cheque5 {
      *     {@link String }
      *     
      */
-    public Calendar getChqMtrtyDt() {
+    public LocalDate getChqMtrtyDt() {
         return chqMtrtyDt;
     }
 
@@ -234,7 +234,7 @@ public class Cheque5 {
      *     {@link String }
      *     
      */
-    public Cheque5 setChqMtrtyDt(Calendar value) {
+    public Cheque5 setChqMtrtyDt(LocalDate value) {
         this.chqMtrtyDt = value;
         return this;
     }

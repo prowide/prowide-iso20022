@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.OffsetTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -43,7 +43,7 @@ public class ProcessingCharacteristics1 {
     @XmlElement(name = "DealgCutOffTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected Calendar dealgCutOffTm;
+    protected OffsetTime dealgCutOffTm;
     @XmlElement(name = "DealgCutOffTmFrame", required = true)
     protected TimeFrame3Choice dealgCutOffTmFrame;
     @XmlElement(name = "SttlmCycl", required = true)
@@ -122,7 +122,7 @@ public class ProcessingCharacteristics1 {
      *     {@link String }
      *     
      */
-    public Calendar getDealgCutOffTm() {
+    public OffsetTime getDealgCutOffTm() {
         return dealgCutOffTm;
     }
 
@@ -134,7 +134,7 @@ public class ProcessingCharacteristics1 {
      *     {@link String }
      *     
      */
-    public ProcessingCharacteristics1 setDealgCutOffTm(Calendar value) {
+    public ProcessingCharacteristics1 setDealgCutOffTm(OffsetTime value) {
         this.dealgCutOffTm = value;
         return this;
     }

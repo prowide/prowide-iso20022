@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -46,11 +46,11 @@ public class ScheduleChangeEntry1 {
     @XmlElement(name = "EvtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected Calendar evtTm;
+    protected OffsetTime evtTm;
     @XmlElement(name = "EvtPrvsTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected Calendar evtPrvsTm;
+    protected OffsetTime evtPrvsTm;
     @XmlElement(name = "EvtDrtn")
     protected String evtDrtn;
     @XmlElement(name = "EvtPrvsDrtn")
@@ -166,7 +166,7 @@ public class ScheduleChangeEntry1 {
      *     {@link String }
      *     
      */
-    public Calendar getEvtTm() {
+    public OffsetTime getEvtTm() {
         return evtTm;
     }
 
@@ -178,7 +178,7 @@ public class ScheduleChangeEntry1 {
      *     {@link String }
      *     
      */
-    public ScheduleChangeEntry1 setEvtTm(Calendar value) {
+    public ScheduleChangeEntry1 setEvtTm(OffsetTime value) {
         this.evtTm = value;
         return this;
     }
@@ -191,7 +191,7 @@ public class ScheduleChangeEntry1 {
      *     {@link String }
      *     
      */
-    public Calendar getEvtPrvsTm() {
+    public OffsetTime getEvtPrvsTm() {
         return evtPrvsTm;
     }
 
@@ -203,7 +203,7 @@ public class ScheduleChangeEntry1 {
      *     {@link String }
      *     
      */
-    public ScheduleChangeEntry1 setEvtPrvsTm(Calendar value) {
+    public ScheduleChangeEntry1 setEvtPrvsTm(OffsetTime value) {
         this.evtPrvsTm = value;
         return this;
     }

@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -31,7 +31,7 @@ public class EffectiveDate1 {
     @XmlElement(name = "FctvDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar fctvDt;
+    protected LocalDate fctvDt;
     @XmlElement(name = "FctvDtParam")
     protected String fctvDtParam;
 
@@ -43,7 +43,7 @@ public class EffectiveDate1 {
      *     {@link String }
      *     
      */
-    public Calendar getFctvDt() {
+    public LocalDate getFctvDt() {
         return fctvDt;
     }
 
@@ -55,7 +55,7 @@ public class EffectiveDate1 {
      *     {@link String }
      *     
      */
-    public EffectiveDate1 setFctvDt(Calendar value) {
+    public EffectiveDate1 setFctvDt(LocalDate value) {
         this.fctvDt = value;
         return this;
     }

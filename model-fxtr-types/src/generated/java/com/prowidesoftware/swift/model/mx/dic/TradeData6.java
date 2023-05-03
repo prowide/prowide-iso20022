@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -52,7 +52,7 @@ public class TradeData6 {
     @XmlElement(name = "CurStsDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar curStsDtTm;
+    protected OffsetDateTime curStsDtTm;
     @XmlElement(name = "PrvsSts")
     protected Status6Choice prvsSts;
     @XmlElement(name = "PrvsStsSubTp")
@@ -60,7 +60,7 @@ public class TradeData6 {
     @XmlElement(name = "PrvsStsDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar prvsStsDtTm;
+    protected OffsetDateTime prvsStsDtTm;
     @XmlElement(name = "PdctTp")
     protected String pdctTp;
 
@@ -222,7 +222,7 @@ public class TradeData6 {
      *     {@link String }
      *     
      */
-    public Calendar getCurStsDtTm() {
+    public OffsetDateTime getCurStsDtTm() {
         return curStsDtTm;
     }
 
@@ -234,7 +234,7 @@ public class TradeData6 {
      *     {@link String }
      *     
      */
-    public TradeData6 setCurStsDtTm(Calendar value) {
+    public TradeData6 setCurStsDtTm(OffsetDateTime value) {
         this.curStsDtTm = value;
         return this;
     }
@@ -297,7 +297,7 @@ public class TradeData6 {
      *     {@link String }
      *     
      */
-    public Calendar getPrvsStsDtTm() {
+    public OffsetDateTime getPrvsStsDtTm() {
         return prvsStsDtTm;
     }
 
@@ -309,7 +309,7 @@ public class TradeData6 {
      *     {@link String }
      *     
      */
-    public TradeData6 setPrvsStsDtTm(Calendar value) {
+    public TradeData6 setPrvsStsDtTm(OffsetDateTime value) {
         this.prvsStsDtTm = value;
         return this;
     }

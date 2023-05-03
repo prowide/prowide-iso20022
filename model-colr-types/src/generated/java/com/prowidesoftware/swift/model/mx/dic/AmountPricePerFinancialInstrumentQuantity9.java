@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -39,7 +39,7 @@ public class AmountPricePerFinancialInstrumentQuantity9 {
     @XmlElement(name = "PricFxgDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar pricFxgDt;
+    protected LocalDate pricFxgDt;
 
     /**
      * Gets the value of the amtPricTp property.
@@ -124,7 +124,7 @@ public class AmountPricePerFinancialInstrumentQuantity9 {
      *     {@link String }
      *     
      */
-    public Calendar getPricFxgDt() {
+    public LocalDate getPricFxgDt() {
         return pricFxgDt;
     }
 
@@ -136,7 +136,7 @@ public class AmountPricePerFinancialInstrumentQuantity9 {
      *     {@link String }
      *     
      */
-    public AmountPricePerFinancialInstrumentQuantity9 setPricFxgDt(Calendar value) {
+    public AmountPricePerFinancialInstrumentQuantity9 setPricFxgDt(LocalDate value) {
         this.pricFxgDt = value;
         return this;
     }

@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -35,7 +35,7 @@ public class OptionData4 {
     @XmlElement(name = "TradDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar tradDt;
+    protected LocalDate tradDt;
     @XmlElement(name = "NtfctnId", required = true)
     protected String ntfctnId;
     @XmlElement(name = "CmonRef")
@@ -55,7 +55,7 @@ public class OptionData4 {
      *     {@link String }
      *     
      */
-    public Calendar getTradDt() {
+    public LocalDate getTradDt() {
         return tradDt;
     }
 
@@ -67,7 +67,7 @@ public class OptionData4 {
      *     {@link String }
      *     
      */
-    public OptionData4 setTradDt(Calendar value) {
+    public OptionData4 setTradDt(LocalDate value) {
         this.tradDt = value;
         return this;
     }

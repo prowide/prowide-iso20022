@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -40,7 +40,7 @@ public class FundParameters2 {
     @XmlElement(name = "DtFr", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dtFr;
+    protected LocalDate dtFr;
     @XmlElement(name = "CtryOfDmcl")
     protected String ctryOfDmcl;
     @XmlElement(name = "RegdDstrbtnCtry")
@@ -110,7 +110,7 @@ public class FundParameters2 {
      *     {@link String }
      *     
      */
-    public Calendar getDtFr() {
+    public LocalDate getDtFr() {
         return dtFr;
     }
 
@@ -122,7 +122,7 @@ public class FundParameters2 {
      *     {@link String }
      *     
      */
-    public FundParameters2 setDtFr(Calendar value) {
+    public FundParameters2 setDtFr(LocalDate value) {
         this.dtFr = value;
         return this;
     }

@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -74,7 +74,7 @@ public class DirectDebitTransactionInformation29 {
     @XmlElement(name = "IntrBkSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar intrBkSttlmDt;
+    protected LocalDate intrBkSttlmDt;
     @XmlElement(name = "SttlmPrty")
     @XmlSchemaType(name = "string")
     protected Priority3Code sttlmPrty;
@@ -92,7 +92,7 @@ public class DirectDebitTransactionInformation29 {
     @XmlElement(name = "ReqdColltnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar reqdColltnDt;
+    protected LocalDate reqdColltnDt;
     @XmlElement(name = "DrctDbtTx")
     protected DirectDebitTransaction11 drctDbtTx;
     @XmlElement(name = "Cdtr", required = true)
@@ -227,7 +227,7 @@ public class DirectDebitTransactionInformation29 {
      *     {@link String }
      *     
      */
-    public Calendar getIntrBkSttlmDt() {
+    public LocalDate getIntrBkSttlmDt() {
         return intrBkSttlmDt;
     }
 
@@ -239,7 +239,7 @@ public class DirectDebitTransactionInformation29 {
      *     {@link String }
      *     
      */
-    public DirectDebitTransactionInformation29 setIntrBkSttlmDt(Calendar value) {
+    public DirectDebitTransactionInformation29 setIntrBkSttlmDt(LocalDate value) {
         this.intrBkSttlmDt = value;
         return this;
     }
@@ -408,7 +408,7 @@ public class DirectDebitTransactionInformation29 {
      *     {@link String }
      *     
      */
-    public Calendar getReqdColltnDt() {
+    public LocalDate getReqdColltnDt() {
         return reqdColltnDt;
     }
 
@@ -420,7 +420,7 @@ public class DirectDebitTransactionInformation29 {
      *     {@link String }
      *     
      */
-    public DirectDebitTransactionInformation29 setReqdColltnDt(Calendar value) {
+    public DirectDebitTransactionInformation29 setReqdColltnDt(LocalDate value) {
         this.reqdColltnDt = value;
         return this;
     }

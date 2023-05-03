@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.OffsetTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -37,7 +37,7 @@ public class ProcessRetry1 {
     @XmlElement(name = "LastReTryTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected Calendar lastReTryTm;
+    protected OffsetTime lastReTryTm;
 
     /**
      * Gets the value of the dely property.
@@ -97,7 +97,7 @@ public class ProcessRetry1 {
      *     {@link String }
      *     
      */
-    public Calendar getLastReTryTm() {
+    public OffsetTime getLastReTryTm() {
         return lastReTryTm;
     }
 
@@ -109,7 +109,7 @@ public class ProcessRetry1 {
      *     {@link String }
      *     
      */
-    public ProcessRetry1 setLastReTryTm(Calendar value) {
+    public ProcessRetry1 setLastReTryTm(OffsetTime value) {
         this.lastReTryTm = value;
         return this;
     }

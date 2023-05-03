@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -42,7 +42,7 @@ public class SecuritiesAccountReferenceDataChange2 {
     @XmlElement(name = "OprTmStmp", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar oprTmStmp;
+    protected OffsetDateTime oprTmStmp;
 
     /**
      * Gets the value of the sctiesAcctId property.
@@ -152,7 +152,7 @@ public class SecuritiesAccountReferenceDataChange2 {
      *     {@link String }
      *     
      */
-    public Calendar getOprTmStmp() {
+    public OffsetDateTime getOprTmStmp() {
         return oprTmStmp;
     }
 
@@ -164,7 +164,7 @@ public class SecuritiesAccountReferenceDataChange2 {
      *     {@link String }
      *     
      */
-    public SecuritiesAccountReferenceDataChange2 setOprTmStmp(Calendar value) {
+    public SecuritiesAccountReferenceDataChange2 setOprTmStmp(OffsetDateTime value) {
         this.oprTmStmp = value;
         return this;
     }

@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -36,7 +36,7 @@ public class Dispute1 {
     @XmlElement(name = "DsptDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dsptDt;
+    protected LocalDate dsptDt;
 
     /**
      * Gets the value of the mrgnCallReqId property.
@@ -96,7 +96,7 @@ public class Dispute1 {
      *     {@link String }
      *     
      */
-    public Calendar getDsptDt() {
+    public LocalDate getDsptDt() {
         return dsptDt;
     }
 
@@ -108,7 +108,7 @@ public class Dispute1 {
      *     {@link String }
      *     
      */
-    public Dispute1 setDsptDt(Calendar value) {
+    public Dispute1 setDsptDt(LocalDate value) {
         this.dsptDt = value;
         return this;
     }

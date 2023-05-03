@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -31,11 +31,11 @@ public class Period15 {
     @XmlElement(name = "StartDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar startDt;
+    protected LocalDate startDt;
     @XmlElement(name = "EndDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar endDt;
+    protected LocalDate endDt;
 
     /**
      * Gets the value of the startDt property.
@@ -45,7 +45,7 @@ public class Period15 {
      *     {@link String }
      *     
      */
-    public Calendar getStartDt() {
+    public LocalDate getStartDt() {
         return startDt;
     }
 
@@ -57,7 +57,7 @@ public class Period15 {
      *     {@link String }
      *     
      */
-    public Period15 setStartDt(Calendar value) {
+    public Period15 setStartDt(LocalDate value) {
         this.startDt = value;
         return this;
     }
@@ -70,7 +70,7 @@ public class Period15 {
      *     {@link String }
      *     
      */
-    public Calendar getEndDt() {
+    public LocalDate getEndDt() {
         return endDt;
     }
 
@@ -82,7 +82,7 @@ public class Period15 {
      *     {@link String }
      *     
      */
-    public Period15 setEndDt(Calendar value) {
+    public Period15 setEndDt(LocalDate value) {
         this.endDt = value;
         return this;
     }

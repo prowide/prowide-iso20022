@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -31,7 +31,7 @@ public class DailyFundTransfer1Choice {
     @XmlElement(name = "TrfTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected Calendar trfTm;
+    protected OffsetTime trfTm;
     @XmlElement(name = "TrfEvt")
     protected TransferEvent1 trfEvt;
 
@@ -43,7 +43,7 @@ public class DailyFundTransfer1Choice {
      *     {@link String }
      *     
      */
-    public Calendar getTrfTm() {
+    public OffsetTime getTrfTm() {
         return trfTm;
     }
 
@@ -55,7 +55,7 @@ public class DailyFundTransfer1Choice {
      *     {@link String }
      *     
      */
-    public DailyFundTransfer1Choice setTrfTm(Calendar value) {
+    public DailyFundTransfer1Choice setTrfTm(OffsetTime value) {
         this.trfTm = value;
         return this;
     }

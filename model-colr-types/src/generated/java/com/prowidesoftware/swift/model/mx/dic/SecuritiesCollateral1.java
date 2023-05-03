@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -52,7 +52,7 @@ public class SecuritiesCollateral1 {
     @XmlElement(name = "ValDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar valDt;
+    protected LocalDate valDt;
 
     /**
      * Gets the value of the sctyId property.
@@ -237,7 +237,7 @@ public class SecuritiesCollateral1 {
      *     {@link String }
      *     
      */
-    public Calendar getValDt() {
+    public LocalDate getValDt() {
         return valDt;
     }
 
@@ -249,7 +249,7 @@ public class SecuritiesCollateral1 {
      *     {@link String }
      *     
      */
-    public SecuritiesCollateral1 setValDt(Calendar value) {
+    public SecuritiesCollateral1 setValDt(LocalDate value) {
         this.valDt = value;
         return this;
     }
