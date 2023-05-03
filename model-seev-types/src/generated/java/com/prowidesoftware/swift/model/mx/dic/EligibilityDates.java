@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -32,11 +32,11 @@ public class EligibilityDates {
     @XmlElement(name = "RcrdDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar rcrdDt;
+    protected LocalDate rcrdDt;
     @XmlElement(name = "SctiesRegnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar sctiesRegnDt;
+    protected LocalDate sctiesRegnDt;
     @XmlElement(name = "BlckgPrd")
     protected DateTimePeriodDetails1 blckgPrd;
 
@@ -48,7 +48,7 @@ public class EligibilityDates {
      *     {@link String }
      *     
      */
-    public Calendar getRcrdDt() {
+    public LocalDate getRcrdDt() {
         return rcrdDt;
     }
 
@@ -60,7 +60,7 @@ public class EligibilityDates {
      *     {@link String }
      *     
      */
-    public EligibilityDates setRcrdDt(Calendar value) {
+    public EligibilityDates setRcrdDt(LocalDate value) {
         this.rcrdDt = value;
         return this;
     }
@@ -73,7 +73,7 @@ public class EligibilityDates {
      *     {@link String }
      *     
      */
-    public Calendar getSctiesRegnDt() {
+    public LocalDate getSctiesRegnDt() {
         return sctiesRegnDt;
     }
 
@@ -85,7 +85,7 @@ public class EligibilityDates {
      *     {@link String }
      *     
      */
-    public EligibilityDates setSctiesRegnDt(Calendar value) {
+    public EligibilityDates setSctiesRegnDt(LocalDate value) {
         this.sctiesRegnDt = value;
         return this;
     }

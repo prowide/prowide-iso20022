@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -35,11 +35,11 @@ public class PercentageAndPeriod1 {
     @XmlElement(name = "StartDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar startDt;
+    protected LocalDate startDt;
     @XmlElement(name = "EndDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar endDt;
+    protected LocalDate endDt;
 
     /**
      * Gets the value of the pctg property.
@@ -74,7 +74,7 @@ public class PercentageAndPeriod1 {
      *     {@link String }
      *     
      */
-    public Calendar getStartDt() {
+    public LocalDate getStartDt() {
         return startDt;
     }
 
@@ -86,7 +86,7 @@ public class PercentageAndPeriod1 {
      *     {@link String }
      *     
      */
-    public PercentageAndPeriod1 setStartDt(Calendar value) {
+    public PercentageAndPeriod1 setStartDt(LocalDate value) {
         this.startDt = value;
         return this;
     }
@@ -99,7 +99,7 @@ public class PercentageAndPeriod1 {
      *     {@link String }
      *     
      */
-    public Calendar getEndDt() {
+    public LocalDate getEndDt() {
         return endDt;
     }
 
@@ -111,7 +111,7 @@ public class PercentageAndPeriod1 {
      *     {@link String }
      *     
      */
-    public PercentageAndPeriod1 setEndDt(Calendar value) {
+    public PercentageAndPeriod1 setEndDt(LocalDate value) {
         this.endDt = value;
         return this;
     }

@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.JAXBElement;
@@ -53,7 +53,7 @@ public class FinancialItemParameters1Tsin01300101 {
     @XmlElement(name = "IsseDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar isseDt;
+    protected LocalDate isseDt;
     @XmlElementRef(name = "RltdItm", namespace = "urn:iso:std:iso:20022:tech:xsd:tsin.013.001.01", type = JAXBElement.class, required = false)
     protected List<JAXBElement<Object>> rltdItm;
     @XmlElement(name = "DocPurp")
@@ -132,7 +132,7 @@ public class FinancialItemParameters1Tsin01300101 {
      *     {@link String }
      *     
      */
-    public Calendar getIsseDt() {
+    public LocalDate getIsseDt() {
         return isseDt;
     }
 
@@ -144,7 +144,7 @@ public class FinancialItemParameters1Tsin01300101 {
      *     {@link String }
      *     
      */
-    public FinancialItemParameters1Tsin01300101 setIsseDt(Calendar value) {
+    public FinancialItemParameters1Tsin01300101 setIsseDt(LocalDate value) {
         this.isseDt = value;
         return this;
     }

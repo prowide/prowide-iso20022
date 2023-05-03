@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -40,7 +40,7 @@ public class ExpectedExecutionDetails3 {
     @XmlElement(name = "XpctdCshSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar xpctdCshSttlmDt;
+    protected LocalDate xpctdCshSttlmDt;
     @XmlElement(name = "XpctdExctdAmt", required = true)
     protected ActiveCurrencyAndAmount xpctdExctdAmt;
     @XmlElement(name = "PmtInInd")
@@ -50,7 +50,7 @@ public class ExpectedExecutionDetails3 {
     @XmlElement(name = "PrepmtDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar prepmtDt;
+    protected LocalDate prepmtDt;
     @XmlElement(name = "TopUpAmt")
     protected ActiveCurrencyAndAmount topUpAmt;
     @XmlElement(name = "HldBckDtls")
@@ -91,7 +91,7 @@ public class ExpectedExecutionDetails3 {
      *     {@link String }
      *     
      */
-    public Calendar getXpctdCshSttlmDt() {
+    public LocalDate getXpctdCshSttlmDt() {
         return xpctdCshSttlmDt;
     }
 
@@ -103,7 +103,7 @@ public class ExpectedExecutionDetails3 {
      *     {@link String }
      *     
      */
-    public ExpectedExecutionDetails3 setXpctdCshSttlmDt(Calendar value) {
+    public ExpectedExecutionDetails3 setXpctdCshSttlmDt(LocalDate value) {
         this.xpctdCshSttlmDt = value;
         return this;
     }
@@ -191,7 +191,7 @@ public class ExpectedExecutionDetails3 {
      *     {@link String }
      *     
      */
-    public Calendar getPrepmtDt() {
+    public LocalDate getPrepmtDt() {
         return prepmtDt;
     }
 
@@ -203,7 +203,7 @@ public class ExpectedExecutionDetails3 {
      *     {@link String }
      *     
      */
-    public ExpectedExecutionDetails3 setPrepmtDt(Calendar value) {
+    public ExpectedExecutionDetails3 setPrepmtDt(LocalDate value) {
         this.prepmtDt = value;
         return this;
     }

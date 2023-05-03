@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -49,7 +49,7 @@ public class PortfolioTransfer5 {
     @XmlElement(name = "ActlTrfDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar actlTrfDt;
+    protected LocalDate actlTrfDt;
     @XmlElement(name = "Prtfl")
     protected FundPortfolio5Choice prtfl;
     @XmlElement(name = "AllOthrCsh")
@@ -61,7 +61,7 @@ public class PortfolioTransfer5 {
     @XmlElement(name = "TaxDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar taxDt;
+    protected LocalDate taxDt;
     @XmlElement(name = "PmtDtls")
     protected PaymentInstrument14 pmtDtls;
     @XmlElement(name = "FinInstrmAsstForTrf")
@@ -152,7 +152,7 @@ public class PortfolioTransfer5 {
      *     {@link String }
      *     
      */
-    public Calendar getActlTrfDt() {
+    public LocalDate getActlTrfDt() {
         return actlTrfDt;
     }
 
@@ -164,7 +164,7 @@ public class PortfolioTransfer5 {
      *     {@link String }
      *     
      */
-    public PortfolioTransfer5 setActlTrfDt(Calendar value) {
+    public PortfolioTransfer5 setActlTrfDt(LocalDate value) {
         this.actlTrfDt = value;
         return this;
     }
@@ -295,7 +295,7 @@ public class PortfolioTransfer5 {
      *     {@link String }
      *     
      */
-    public Calendar getTaxDt() {
+    public LocalDate getTaxDt() {
         return taxDt;
     }
 
@@ -307,7 +307,7 @@ public class PortfolioTransfer5 {
      *     {@link String }
      *     
      */
-    public PortfolioTransfer5 setTaxDt(Calendar value) {
+    public PortfolioTransfer5 setTaxDt(LocalDate value) {
         this.taxDt = value;
         return this;
     }

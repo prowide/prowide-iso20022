@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -72,7 +72,7 @@ public class RedemptionExecution10 {
     @XmlElement(name = "ReqdTradDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar reqdTradDt;
+    protected LocalDate reqdTradDt;
     @XmlElement(name = "HdgFndOrdrTp")
     @XmlSchemaType(name = "string")
     protected List<HedgeFundOrderType2Code> hdgFndOrdrTp;
@@ -103,11 +103,11 @@ public class RedemptionExecution10 {
     @XmlElement(name = "NAVDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar navDt;
+    protected LocalDate navDt;
     @XmlElement(name = "CshSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar cshSttlmDt;
+    protected LocalDate cshSttlmDt;
     @XmlElement(name = "ReqdSttlmCcy")
     protected String reqdSttlmCcy;
     @XmlElement(name = "PmtRef")
@@ -241,7 +241,7 @@ public class RedemptionExecution10 {
      *     {@link String }
      *     
      */
-    public Calendar getReqdTradDt() {
+    public LocalDate getReqdTradDt() {
         return reqdTradDt;
     }
 
@@ -253,7 +253,7 @@ public class RedemptionExecution10 {
      *     {@link String }
      *     
      */
-    public RedemptionExecution10 setReqdTradDt(Calendar value) {
+    public RedemptionExecution10 setReqdTradDt(LocalDate value) {
         this.reqdTradDt = value;
         return this;
     }
@@ -609,7 +609,7 @@ public class RedemptionExecution10 {
      *     {@link String }
      *     
      */
-    public Calendar getNAVDt() {
+    public LocalDate getNAVDt() {
         return navDt;
     }
 
@@ -621,7 +621,7 @@ public class RedemptionExecution10 {
      *     {@link String }
      *     
      */
-    public RedemptionExecution10 setNAVDt(Calendar value) {
+    public RedemptionExecution10 setNAVDt(LocalDate value) {
         this.navDt = value;
         return this;
     }
@@ -634,7 +634,7 @@ public class RedemptionExecution10 {
      *     {@link String }
      *     
      */
-    public Calendar getCshSttlmDt() {
+    public LocalDate getCshSttlmDt() {
         return cshSttlmDt;
     }
 
@@ -646,7 +646,7 @@ public class RedemptionExecution10 {
      *     {@link String }
      *     
      */
-    public RedemptionExecution10 setCshSttlmDt(Calendar value) {
+    public RedemptionExecution10 setCshSttlmDt(LocalDate value) {
         this.cshSttlmDt = value;
         return this;
     }

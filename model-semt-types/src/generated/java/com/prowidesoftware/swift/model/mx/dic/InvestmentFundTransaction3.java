@@ -1,7 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -78,7 +79,7 @@ public class InvestmentFundTransaction3 {
     @XmlElement(name = "OrdrDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar ordrDtTm;
+    protected OffsetDateTime ordrDtTm;
     @XmlElement(name = "SttldTxInd")
     protected boolean sttldTxInd;
     @XmlElement(name = "RegdTxInd")
@@ -96,7 +97,7 @@ public class InvestmentFundTransaction3 {
     @XmlElement(name = "SttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar sttlmDt;
+    protected LocalDate sttlmDt;
     @XmlElement(name = "TradDtTm", required = true)
     protected DateAndDateTimeChoice tradDtTm;
     @XmlElement(name = "CumDvddInd")
@@ -389,7 +390,7 @@ public class InvestmentFundTransaction3 {
      *     {@link String }
      *     
      */
-    public Calendar getOrdrDtTm() {
+    public OffsetDateTime getOrdrDtTm() {
         return ordrDtTm;
     }
 
@@ -401,7 +402,7 @@ public class InvestmentFundTransaction3 {
      *     {@link String }
      *     
      */
-    public InvestmentFundTransaction3 setOrdrDtTm(Calendar value) {
+    public InvestmentFundTransaction3 setOrdrDtTm(OffsetDateTime value) {
         this.ordrDtTm = value;
         return this;
     }
@@ -548,7 +549,7 @@ public class InvestmentFundTransaction3 {
      *     {@link String }
      *     
      */
-    public Calendar getSttlmDt() {
+    public LocalDate getSttlmDt() {
         return sttlmDt;
     }
 
@@ -560,7 +561,7 @@ public class InvestmentFundTransaction3 {
      *     {@link String }
      *     
      */
-    public InvestmentFundTransaction3 setSttlmDt(Calendar value) {
+    public InvestmentFundTransaction3 setSttlmDt(LocalDate value) {
         this.sttlmDt = value;
         return this;
     }

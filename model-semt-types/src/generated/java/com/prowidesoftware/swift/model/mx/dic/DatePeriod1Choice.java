@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -33,7 +33,7 @@ public class DatePeriod1Choice {
     @XmlElement(name = "Dt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dt;
+    protected LocalDate dt;
     @XmlElement(name = "DtMnth")
     @XmlSchemaType(name = "gYearMonth")
     protected XMLGregorianCalendar dtMnth;
@@ -48,7 +48,7 @@ public class DatePeriod1Choice {
      *     {@link String }
      *     
      */
-    public Calendar getDt() {
+    public LocalDate getDt() {
         return dt;
     }
 
@@ -60,7 +60,7 @@ public class DatePeriod1Choice {
      *     {@link String }
      *     
      */
-    public DatePeriod1Choice setDt(Calendar value) {
+    public DatePeriod1Choice setDt(LocalDate value) {
         this.dt = value;
         return this;
     }

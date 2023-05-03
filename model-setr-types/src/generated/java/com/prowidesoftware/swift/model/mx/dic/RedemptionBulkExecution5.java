@@ -1,8 +1,9 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
@@ -51,15 +52,15 @@ public class RedemptionBulkExecution5 {
     @XmlElement(name = "OrdrDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar ordrDtTm;
+    protected OffsetDateTime ordrDtTm;
     @XmlElement(name = "RcvdDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar rcvdDtTm;
+    protected OffsetDateTime rcvdDtTm;
     @XmlElement(name = "ReqdFutrTradDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar reqdFutrTradDt;
+    protected LocalDate reqdFutrTradDt;
     @XmlElement(name = "CxlRght")
     protected CancellationRight1Choice cxlRght;
     @XmlElement(name = "FinInstrmDtls", required = true)
@@ -158,7 +159,7 @@ public class RedemptionBulkExecution5 {
      *     {@link String }
      *     
      */
-    public Calendar getOrdrDtTm() {
+    public OffsetDateTime getOrdrDtTm() {
         return ordrDtTm;
     }
 
@@ -170,7 +171,7 @@ public class RedemptionBulkExecution5 {
      *     {@link String }
      *     
      */
-    public RedemptionBulkExecution5 setOrdrDtTm(Calendar value) {
+    public RedemptionBulkExecution5 setOrdrDtTm(OffsetDateTime value) {
         this.ordrDtTm = value;
         return this;
     }
@@ -183,7 +184,7 @@ public class RedemptionBulkExecution5 {
      *     {@link String }
      *     
      */
-    public Calendar getRcvdDtTm() {
+    public OffsetDateTime getRcvdDtTm() {
         return rcvdDtTm;
     }
 
@@ -195,7 +196,7 @@ public class RedemptionBulkExecution5 {
      *     {@link String }
      *     
      */
-    public RedemptionBulkExecution5 setRcvdDtTm(Calendar value) {
+    public RedemptionBulkExecution5 setRcvdDtTm(OffsetDateTime value) {
         this.rcvdDtTm = value;
         return this;
     }
@@ -208,7 +209,7 @@ public class RedemptionBulkExecution5 {
      *     {@link String }
      *     
      */
-    public Calendar getReqdFutrTradDt() {
+    public LocalDate getReqdFutrTradDt() {
         return reqdFutrTradDt;
     }
 
@@ -220,7 +221,7 @@ public class RedemptionBulkExecution5 {
      *     {@link String }
      *     
      */
-    public RedemptionBulkExecution5 setReqdFutrTradDt(Calendar value) {
+    public RedemptionBulkExecution5 setReqdFutrTradDt(LocalDate value) {
         this.reqdFutrTradDt = value;
         return this;
     }

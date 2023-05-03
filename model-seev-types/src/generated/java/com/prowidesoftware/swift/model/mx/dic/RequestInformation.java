@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -35,7 +35,7 @@ public class RequestInformation {
     @XmlElement(name = "ReqdExctnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar reqdExctnDt;
+    protected OffsetDateTime reqdExctnDt;
     @XmlElement(name = "QtyOfScty")
     protected BigDecimal qtyOfScty;
 
@@ -72,7 +72,7 @@ public class RequestInformation {
      *     {@link String }
      *     
      */
-    public Calendar getReqdExctnDt() {
+    public OffsetDateTime getReqdExctnDt() {
         return reqdExctnDt;
     }
 
@@ -84,7 +84,7 @@ public class RequestInformation {
      *     {@link String }
      *     
      */
-    public RequestInformation setReqdExctnDt(Calendar value) {
+    public RequestInformation setReqdExctnDt(OffsetDateTime value) {
         this.reqdExctnDt = value;
         return this;
     }

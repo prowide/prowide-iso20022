@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -60,7 +60,7 @@ public class CorporateActionConfirmationSecuritiesMovementDetailsSD5 {
     @XmlElement(name = "MtrtyDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar mtrtyDt;
+    protected LocalDate mtrtyDt;
     @XmlElement(name = "PstngDt")
     protected DateFormat28Choice pstngDt;
     @XmlElement(name = "TaxAdjstmntRate")
@@ -253,7 +253,7 @@ public class CorporateActionConfirmationSecuritiesMovementDetailsSD5 {
      *     {@link String }
      *     
      */
-    public Calendar getMtrtyDt() {
+    public LocalDate getMtrtyDt() {
         return mtrtyDt;
     }
 
@@ -265,7 +265,7 @@ public class CorporateActionConfirmationSecuritiesMovementDetailsSD5 {
      *     {@link String }
      *     
      */
-    public CorporateActionConfirmationSecuritiesMovementDetailsSD5 setMtrtyDt(Calendar value) {
+    public CorporateActionConfirmationSecuritiesMovementDetailsSD5 setMtrtyDt(LocalDate value) {
         this.mtrtyDt = value;
         return this;
     }

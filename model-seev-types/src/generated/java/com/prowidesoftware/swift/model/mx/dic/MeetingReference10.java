@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -42,7 +42,7 @@ public class MeetingReference10 {
     @XmlElement(name = "MtgDtAndTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar mtgDtAndTm;
+    protected OffsetDateTime mtgDtAndTm;
     @XmlElement(name = "Tp", required = true)
     @XmlSchemaType(name = "string")
     protected MeetingType4Code tp;
@@ -111,7 +111,7 @@ public class MeetingReference10 {
      *     {@link String }
      *     
      */
-    public Calendar getMtgDtAndTm() {
+    public OffsetDateTime getMtgDtAndTm() {
         return mtgDtAndTm;
     }
 
@@ -123,7 +123,7 @@ public class MeetingReference10 {
      *     {@link String }
      *     
      */
-    public MeetingReference10 setMtgDtAndTm(Calendar value) {
+    public MeetingReference10 setMtgDtAndTm(OffsetDateTime value) {
         this.mtgDtAndTm = value;
         return this;
     }

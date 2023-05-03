@@ -2,7 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -71,7 +72,7 @@ public class SecuritiesFinancing10 {
     @XmlElement(name = "RateChngDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar rateChngDt;
+    protected OffsetDateTime rateChngDt;
     @XmlElement(name = "RateTp")
     protected RateType19Choice rateTp;
     @XmlElement(name = "Rvaltn")
@@ -146,7 +147,7 @@ public class SecuritiesFinancing10 {
     @XmlElement(name = "MinDtForCallBck", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar minDtForCallBck;
+    protected LocalDate minDtForCallBck;
     @XmlElement(name = "RollOver")
     protected Boolean rollOver;
     @XmlElement(name = "PrdcPmt")
@@ -162,7 +163,7 @@ public class SecuritiesFinancing10 {
      *     {@link String }
      *     
      */
-    public Calendar getRateChngDt() {
+    public OffsetDateTime getRateChngDt() {
         return rateChngDt;
     }
 
@@ -174,7 +175,7 @@ public class SecuritiesFinancing10 {
      *     {@link String }
      *     
      */
-    public SecuritiesFinancing10 setRateChngDt(Calendar value) {
+    public SecuritiesFinancing10 setRateChngDt(OffsetDateTime value) {
         this.rateChngDt = value;
         return this;
     }
@@ -1062,7 +1063,7 @@ public class SecuritiesFinancing10 {
      *     {@link String }
      *     
      */
-    public Calendar getMinDtForCallBck() {
+    public LocalDate getMinDtForCallBck() {
         return minDtForCallBck;
     }
 
@@ -1074,7 +1075,7 @@ public class SecuritiesFinancing10 {
      *     {@link String }
      *     
      */
-    public SecuritiesFinancing10 setMinDtForCallBck(Calendar value) {
+    public SecuritiesFinancing10 setMinDtForCallBck(LocalDate value) {
         this.minDtForCallBck = value;
         return this;
     }

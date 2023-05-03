@@ -2,8 +2,9 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
@@ -63,7 +64,7 @@ public class MeetingNotice5 {
     @XmlElement(name = "AnncmntDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar anncmntDt;
+    protected LocalDate anncmntDt;
     @XmlElement(name = "Prtcptn")
     protected List<ParticipationMethod1> prtcptn;
     @XmlElement(name = "Attndnc")
@@ -87,7 +88,7 @@ public class MeetingNotice5 {
     @XmlElement(name = "SctiesBlckgPrdEndDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar sctiesBlckgPrdEndDt;
+    protected OffsetDateTime sctiesBlckgPrdEndDt;
     @XmlElement(name = "EntitlmntFxgDt")
     protected DateFormat1 entitlmntFxgDt;
     @XmlElement(name = "RegnSctiesDdln")
@@ -207,7 +208,7 @@ public class MeetingNotice5 {
      *     {@link String }
      *     
      */
-    public Calendar getAnncmntDt() {
+    public LocalDate getAnncmntDt() {
         return anncmntDt;
     }
 
@@ -219,7 +220,7 @@ public class MeetingNotice5 {
      *     {@link String }
      *     
      */
-    public MeetingNotice5 setAnncmntDt(Calendar value) {
+    public MeetingNotice5 setAnncmntDt(LocalDate value) {
         this.anncmntDt = value;
         return this;
     }
@@ -506,7 +507,7 @@ public class MeetingNotice5 {
      *     {@link String }
      *     
      */
-    public Calendar getSctiesBlckgPrdEndDt() {
+    public OffsetDateTime getSctiesBlckgPrdEndDt() {
         return sctiesBlckgPrdEndDt;
     }
 
@@ -518,7 +519,7 @@ public class MeetingNotice5 {
      *     {@link String }
      *     
      */
-    public MeetingNotice5 setSctiesBlckgPrdEndDt(Calendar value) {
+    public MeetingNotice5 setSctiesBlckgPrdEndDt(OffsetDateTime value) {
         this.sctiesBlckgPrdEndDt = value;
         return this;
     }

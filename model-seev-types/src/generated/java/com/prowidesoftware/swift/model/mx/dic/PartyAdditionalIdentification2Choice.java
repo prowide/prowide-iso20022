@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -31,7 +31,7 @@ public class PartyAdditionalIdentification2Choice {
     @XmlElement(name = "BirthDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar birthDt;
+    protected LocalDate birthDt;
     @XmlElement(name = "RegnId")
     protected OrganisationIdentification5 regnId;
 
@@ -43,7 +43,7 @@ public class PartyAdditionalIdentification2Choice {
      *     {@link String }
      *     
      */
-    public Calendar getBirthDt() {
+    public LocalDate getBirthDt() {
         return birthDt;
     }
 
@@ -55,7 +55,7 @@ public class PartyAdditionalIdentification2Choice {
      *     {@link String }
      *     
      */
-    public PartyAdditionalIdentification2Choice setBirthDt(Calendar value) {
+    public PartyAdditionalIdentification2Choice setBirthDt(LocalDate value) {
         this.birthDt = value;
         return this;
     }

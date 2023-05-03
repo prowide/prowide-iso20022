@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -36,7 +36,7 @@ public class Capped1 {
     @XmlElement(name = "StartDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar startDt;
+    protected LocalDate startDt;
     @XmlElement(name = "IncmLmtCurPrd")
     protected ActiveCurrencyAnd13DecimalAmount incmLmtCurPrd;
     @XmlElement(name = "IncmCurPrd")
@@ -54,7 +54,7 @@ public class Capped1 {
      *     {@link String }
      *     
      */
-    public Calendar getStartDt() {
+    public LocalDate getStartDt() {
         return startDt;
     }
 
@@ -66,7 +66,7 @@ public class Capped1 {
      *     {@link String }
      *     
      */
-    public Capped1 setStartDt(Calendar value) {
+    public Capped1 setStartDt(LocalDate value) {
         this.startDt = value;
         return this;
     }

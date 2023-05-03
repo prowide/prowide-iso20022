@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -41,15 +41,15 @@ public class CorporateActionNotificationSD6 {
     @XmlElement(name = "ApprvdDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar apprvdDt;
+    protected LocalDate apprvdDt;
     @XmlElement(name = "MtchDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar mtchDt;
+    protected LocalDate mtchDt;
     @XmlElement(name = "ActvUntilDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar actvUntilDt;
+    protected LocalDate actvUntilDt;
     @XmlElement(name = "SvcLvlAgrmtPrd")
     protected Period3 svcLvlAgrmtPrd;
     @XmlElement(name = "VldtnNotSpprtdRsn")
@@ -113,7 +113,7 @@ public class CorporateActionNotificationSD6 {
      *     {@link String }
      *     
      */
-    public Calendar getApprvdDt() {
+    public LocalDate getApprvdDt() {
         return apprvdDt;
     }
 
@@ -125,7 +125,7 @@ public class CorporateActionNotificationSD6 {
      *     {@link String }
      *     
      */
-    public CorporateActionNotificationSD6 setApprvdDt(Calendar value) {
+    public CorporateActionNotificationSD6 setApprvdDt(LocalDate value) {
         this.apprvdDt = value;
         return this;
     }
@@ -138,7 +138,7 @@ public class CorporateActionNotificationSD6 {
      *     {@link String }
      *     
      */
-    public Calendar getMtchDt() {
+    public LocalDate getMtchDt() {
         return mtchDt;
     }
 
@@ -150,7 +150,7 @@ public class CorporateActionNotificationSD6 {
      *     {@link String }
      *     
      */
-    public CorporateActionNotificationSD6 setMtchDt(Calendar value) {
+    public CorporateActionNotificationSD6 setMtchDt(LocalDate value) {
         this.mtchDt = value;
         return this;
     }
@@ -163,7 +163,7 @@ public class CorporateActionNotificationSD6 {
      *     {@link String }
      *     
      */
-    public Calendar getActvUntilDt() {
+    public LocalDate getActvUntilDt() {
         return actvUntilDt;
     }
 
@@ -175,7 +175,7 @@ public class CorporateActionNotificationSD6 {
      *     {@link String }
      *     
      */
-    public CorporateActionNotificationSD6 setActvUntilDt(Calendar value) {
+    public CorporateActionNotificationSD6 setActvUntilDt(LocalDate value) {
         this.actvUntilDt = value;
         return this;
     }

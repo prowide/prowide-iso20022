@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.JAXBElement;
@@ -54,13 +54,13 @@ public class FinancingItemList1Tsin00800101 {
     @XmlElement(name = "IsseDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar isseDt;
+    protected LocalDate isseDt;
     @XmlElementRef(name = "RltdDoc", namespace = "urn:iso:std:iso:20022:tech:xsd:tsin.008.001.01", type = JAXBElement.class, required = false)
     protected List<JAXBElement<Object>> rltdDoc;
     @XmlElement(name = "AmtCutOffDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar amtCutOffDt;
+    protected LocalDate amtCutOffDt;
     @XmlElement(name = "Assgne", required = true)
     @XmlIDREF
     @XmlSchemaType(name = "IDREF")
@@ -125,7 +125,7 @@ public class FinancingItemList1Tsin00800101 {
      *     {@link String }
      *     
      */
-    public Calendar getIsseDt() {
+    public LocalDate getIsseDt() {
         return isseDt;
     }
 
@@ -137,7 +137,7 @@ public class FinancingItemList1Tsin00800101 {
      *     {@link String }
      *     
      */
-    public FinancingItemList1Tsin00800101 setIsseDt(Calendar value) {
+    public FinancingItemList1Tsin00800101 setIsseDt(LocalDate value) {
         this.isseDt = value;
         return this;
     }
@@ -181,7 +181,7 @@ public class FinancingItemList1Tsin00800101 {
      *     {@link String }
      *     
      */
-    public Calendar getAmtCutOffDt() {
+    public LocalDate getAmtCutOffDt() {
         return amtCutOffDt;
     }
 
@@ -193,7 +193,7 @@ public class FinancingItemList1Tsin00800101 {
      *     {@link String }
      *     
      */
-    public FinancingItemList1Tsin00800101 setAmtCutOffDt(Calendar value) {
+    public FinancingItemList1Tsin00800101 setAmtCutOffDt(LocalDate value) {
         this.amtCutOffDt = value;
         return this;
     }

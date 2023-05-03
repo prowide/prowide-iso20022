@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -43,7 +43,7 @@ public class TrackerRecord4 {
     @XmlElement(name = "PrcgDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar prcgDtTm;
+    protected OffsetDateTime prcgDtTm;
 
     /**
      * Gets the value of the agt property.
@@ -153,7 +153,7 @@ public class TrackerRecord4 {
      *     {@link String }
      *     
      */
-    public Calendar getPrcgDtTm() {
+    public OffsetDateTime getPrcgDtTm() {
         return prcgDtTm;
     }
 
@@ -165,7 +165,7 @@ public class TrackerRecord4 {
      *     {@link String }
      *     
      */
-    public TrackerRecord4 setPrcgDtTm(Calendar value) {
+    public TrackerRecord4 setPrcgDtTm(OffsetDateTime value) {
         this.prcgDtTm = value;
         return this;
     }

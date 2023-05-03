@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
@@ -56,20 +56,20 @@ public class FutureOrOptionDetails1 {
     @XmlElement(name = "LastDlvryDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar lastDlvryDt;
+    protected OffsetDateTime lastDlvryDt;
     @XmlElement(name = "UnitOfMeasr")
     @XmlSchemaType(name = "string")
     protected UnitOfMeasure1Code unitOfMeasr;
     @XmlElement(name = "FutrDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar futrDt;
+    protected OffsetDateTime futrDt;
     @XmlElement(name = "MinSz")
     protected ActiveCurrencyAndAmount minSz;
     @XmlElement(name = "AnncmntDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar anncmntDt;
+    protected OffsetDateTime anncmntDt;
     @XmlElement(name = "Apprnc")
     @XmlSchemaType(name = "string")
     protected Appearance1Code apprnc;
@@ -134,7 +134,7 @@ public class FutureOrOptionDetails1 {
      *     {@link String }
      *     
      */
-    public Calendar getLastDlvryDt() {
+    public OffsetDateTime getLastDlvryDt() {
         return lastDlvryDt;
     }
 
@@ -146,7 +146,7 @@ public class FutureOrOptionDetails1 {
      *     {@link String }
      *     
      */
-    public FutureOrOptionDetails1 setLastDlvryDt(Calendar value) {
+    public FutureOrOptionDetails1 setLastDlvryDt(OffsetDateTime value) {
         this.lastDlvryDt = value;
         return this;
     }
@@ -184,7 +184,7 @@ public class FutureOrOptionDetails1 {
      *     {@link String }
      *     
      */
-    public Calendar getFutrDt() {
+    public OffsetDateTime getFutrDt() {
         return futrDt;
     }
 
@@ -196,7 +196,7 @@ public class FutureOrOptionDetails1 {
      *     {@link String }
      *     
      */
-    public FutureOrOptionDetails1 setFutrDt(Calendar value) {
+    public FutureOrOptionDetails1 setFutrDt(OffsetDateTime value) {
         this.futrDt = value;
         return this;
     }
@@ -234,7 +234,7 @@ public class FutureOrOptionDetails1 {
      *     {@link String }
      *     
      */
-    public Calendar getAnncmntDt() {
+    public OffsetDateTime getAnncmntDt() {
         return anncmntDt;
     }
 
@@ -246,7 +246,7 @@ public class FutureOrOptionDetails1 {
      *     {@link String }
      *     
      */
-    public FutureOrOptionDetails1 setAnncmntDt(Calendar value) {
+    public FutureOrOptionDetails1 setAnncmntDt(OffsetDateTime value) {
         this.anncmntDt = value;
         return this;
     }

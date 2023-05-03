@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -53,7 +53,7 @@ public class SettlementObligation2 {
     @XmlElement(name = "TradDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar tradDt;
+    protected LocalDate tradDt;
 
     /**
      * Gets the value of the sttlmOblgtnId property.
@@ -244,7 +244,7 @@ public class SettlementObligation2 {
      *     {@link String }
      *     
      */
-    public Calendar getTradDt() {
+    public LocalDate getTradDt() {
         return tradDt;
     }
 
@@ -256,7 +256,7 @@ public class SettlementObligation2 {
      *     {@link String }
      *     
      */
-    public SettlementObligation2 setTradDt(Calendar value) {
+    public SettlementObligation2 setTradDt(LocalDate value) {
         this.tradDt = value;
         return this;
     }

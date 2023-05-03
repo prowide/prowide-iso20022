@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -43,11 +43,11 @@ public class Unit8 {
     @XmlElement(name = "OrdrDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar ordrDt;
+    protected LocalDate ordrDt;
     @XmlElement(name = "AcqstnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar acqstnDt;
+    protected LocalDate acqstnDt;
     @XmlElement(name = "CertNb")
     protected List<String> certNb;
     @XmlElement(name = "Grp1Or2Units")
@@ -95,7 +95,7 @@ public class Unit8 {
      *     {@link String }
      *     
      */
-    public Calendar getOrdrDt() {
+    public LocalDate getOrdrDt() {
         return ordrDt;
     }
 
@@ -107,7 +107,7 @@ public class Unit8 {
      *     {@link String }
      *     
      */
-    public Unit8 setOrdrDt(Calendar value) {
+    public Unit8 setOrdrDt(LocalDate value) {
         this.ordrDt = value;
         return this;
     }
@@ -120,7 +120,7 @@ public class Unit8 {
      *     {@link String }
      *     
      */
-    public Calendar getAcqstnDt() {
+    public LocalDate getAcqstnDt() {
         return acqstnDt;
     }
 
@@ -132,7 +132,7 @@ public class Unit8 {
      *     {@link String }
      *     
      */
-    public Unit8 setAcqstnDt(Calendar value) {
+    public Unit8 setAcqstnDt(LocalDate value) {
         this.acqstnDt = value;
         return this;
     }

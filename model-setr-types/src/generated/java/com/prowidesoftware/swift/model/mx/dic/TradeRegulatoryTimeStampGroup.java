@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -35,7 +35,7 @@ public class TradeRegulatoryTimeStampGroup {
     @XmlElement(name = "TradRgltryTmStmp", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar tradRgltryTmStmp;
+    protected OffsetDateTime tradRgltryTmStmp;
     @XmlElement(name = "TradRgltryTmStmpTp")
     protected String tradRgltryTmStmpTp;
     @XmlElement(name = "TradRgltryTmStmpOrgn", required = true)
@@ -55,7 +55,7 @@ public class TradeRegulatoryTimeStampGroup {
      *     {@link String }
      *     
      */
-    public Calendar getTradRgltryTmStmp() {
+    public OffsetDateTime getTradRgltryTmStmp() {
         return tradRgltryTmStmp;
     }
 
@@ -67,7 +67,7 @@ public class TradeRegulatoryTimeStampGroup {
      *     {@link String }
      *     
      */
-    public TradeRegulatoryTimeStampGroup setTradRgltryTmStmp(Calendar value) {
+    public TradeRegulatoryTimeStampGroup setTradRgltryTmStmp(OffsetDateTime value) {
         this.tradRgltryTmStmp = value;
         return this;
     }

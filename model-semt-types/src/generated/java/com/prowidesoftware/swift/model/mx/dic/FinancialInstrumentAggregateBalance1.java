@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -34,7 +34,7 @@ public class FinancialInstrumentAggregateBalance1 {
     @XmlElement(name = "ItmDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar itmDt;
+    protected LocalDate itmDt;
     @XmlElement(name = "Hldgs", required = true)
     protected FinancialInstrumentAggregateBalance1Choice hldgs;
     @XmlElement(name = "Pric")
@@ -48,7 +48,7 @@ public class FinancialInstrumentAggregateBalance1 {
      *     {@link String }
      *     
      */
-    public Calendar getItmDt() {
+    public LocalDate getItmDt() {
         return itmDt;
     }
 
@@ -60,7 +60,7 @@ public class FinancialInstrumentAggregateBalance1 {
      *     {@link String }
      *     
      */
-    public FinancialInstrumentAggregateBalance1 setItmDt(Calendar value) {
+    public FinancialInstrumentAggregateBalance1 setItmDt(LocalDate value) {
         this.itmDt = value;
         return this;
     }

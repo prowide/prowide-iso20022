@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -44,7 +44,7 @@ public class TradeLeg1 {
     @XmlElement(name = "TradDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar tradDt;
+    protected OffsetDateTime tradDt;
     @XmlElement(name = "SttlmDt", required = true)
     protected DateFormat15Choice sttlmDt;
     @XmlElement(name = "DealPric")
@@ -81,7 +81,7 @@ public class TradeLeg1 {
      *     {@link String }
      *     
      */
-    public Calendar getTradDt() {
+    public OffsetDateTime getTradDt() {
         return tradDt;
     }
 
@@ -93,7 +93,7 @@ public class TradeLeg1 {
      *     {@link String }
      *     
      */
-    public TradeLeg1 setTradDt(Calendar value) {
+    public TradeLeg1 setTradDt(OffsetDateTime value) {
         this.tradDt = value;
         return this;
     }

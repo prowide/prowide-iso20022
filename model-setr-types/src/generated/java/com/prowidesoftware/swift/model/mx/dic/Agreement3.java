@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -39,7 +39,7 @@ public class Agreement3 {
     @XmlElement(name = "Dt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar dt;
+    protected OffsetDateTime dt;
     @XmlElement(name = "Ccy")
     protected String ccy;
     @XmlElement(name = "ClsgTp")
@@ -48,7 +48,7 @@ public class Agreement3 {
     @XmlElement(name = "StartDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar startDt;
+    protected OffsetDateTime startDt;
     @XmlElement(name = "DlvryTp")
     @XmlSchemaType(name = "string")
     protected DeliveryType2Code dlvryTp;
@@ -88,7 +88,7 @@ public class Agreement3 {
      *     {@link String }
      *     
      */
-    public Calendar getDt() {
+    public OffsetDateTime getDt() {
         return dt;
     }
 
@@ -100,7 +100,7 @@ public class Agreement3 {
      *     {@link String }
      *     
      */
-    public Agreement3 setDt(Calendar value) {
+    public Agreement3 setDt(OffsetDateTime value) {
         this.dt = value;
         return this;
     }
@@ -163,7 +163,7 @@ public class Agreement3 {
      *     {@link String }
      *     
      */
-    public Calendar getStartDt() {
+    public OffsetDateTime getStartDt() {
         return startDt;
     }
 
@@ -175,7 +175,7 @@ public class Agreement3 {
      *     {@link String }
      *     
      */
-    public Agreement3 setStartDt(Calendar value) {
+    public Agreement3 setStartDt(OffsetDateTime value) {
         this.startDt = value;
         return this;
     }

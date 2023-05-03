@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -43,7 +43,7 @@ public class SwitchExecution3 {
     @XmlElement(name = "OrdrDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar ordrDtTm;
+    protected OffsetDateTime ordrDtTm;
     @XmlElement(name = "DealRef", required = true)
     protected String dealRef;
     @XmlElement(name = "OrdrRef", required = true)
@@ -75,7 +75,7 @@ public class SwitchExecution3 {
      *     {@link String }
      *     
      */
-    public Calendar getOrdrDtTm() {
+    public OffsetDateTime getOrdrDtTm() {
         return ordrDtTm;
     }
 
@@ -87,7 +87,7 @@ public class SwitchExecution3 {
      *     {@link String }
      *     
      */
-    public SwitchExecution3 setOrdrDtTm(Calendar value) {
+    public SwitchExecution3 setOrdrDtTm(OffsetDateTime value) {
         this.ordrDtTm = value;
         return this;
     }

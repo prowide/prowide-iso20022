@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -44,7 +44,7 @@ public class SwitchOrder2 {
     @XmlElement(name = "OrdrDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar ordrDtTm;
+    protected OffsetDateTime ordrDtTm;
     @XmlElement(name = "OrdrRef", required = true)
     protected String ordrRef;
     @XmlElement(name = "InvstmtAcctDtls", required = true)
@@ -56,7 +56,7 @@ public class SwitchOrder2 {
     @XmlElement(name = "XpryDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar xpryDtTm;
+    protected OffsetDateTime xpryDtTm;
     @XmlElement(name = "AddtlCshIn")
     protected ActiveOrHistoricCurrencyAndAmount addtlCshIn;
     @XmlElement(name = "RsltgCshOut")
@@ -80,7 +80,7 @@ public class SwitchOrder2 {
      *     {@link String }
      *     
      */
-    public Calendar getOrdrDtTm() {
+    public OffsetDateTime getOrdrDtTm() {
         return ordrDtTm;
     }
 
@@ -92,7 +92,7 @@ public class SwitchOrder2 {
      *     {@link String }
      *     
      */
-    public SwitchOrder2 setOrdrDtTm(Calendar value) {
+    public SwitchOrder2 setOrdrDtTm(OffsetDateTime value) {
         this.ordrDtTm = value;
         return this;
     }
@@ -205,7 +205,7 @@ public class SwitchOrder2 {
      *     {@link String }
      *     
      */
-    public Calendar getXpryDtTm() {
+    public OffsetDateTime getXpryDtTm() {
         return xpryDtTm;
     }
 
@@ -217,7 +217,7 @@ public class SwitchOrder2 {
      *     {@link String }
      *     
      */
-    public SwitchOrder2 setXpryDtTm(Calendar value) {
+    public SwitchOrder2 setXpryDtTm(OffsetDateTime value) {
         this.xpryDtTm = value;
         return this;
     }

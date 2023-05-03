@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -39,7 +39,7 @@ public class FundSettlementParameters12 {
     @XmlElement(name = "SttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar sttlmDt;
+    protected LocalDate sttlmDt;
     @XmlElement(name = "SttlmPlc", required = true)
     protected PartyIdentification113 sttlmPlc;
     @XmlElement(name = "SfkpgPlc")
@@ -63,7 +63,7 @@ public class FundSettlementParameters12 {
      *     {@link String }
      *     
      */
-    public Calendar getSttlmDt() {
+    public LocalDate getSttlmDt() {
         return sttlmDt;
     }
 
@@ -75,7 +75,7 @@ public class FundSettlementParameters12 {
      *     {@link String }
      *     
      */
-    public FundSettlementParameters12 setSttlmDt(Calendar value) {
+    public FundSettlementParameters12 setSttlmDt(LocalDate value) {
         this.sttlmDt = value;
         return this;
     }

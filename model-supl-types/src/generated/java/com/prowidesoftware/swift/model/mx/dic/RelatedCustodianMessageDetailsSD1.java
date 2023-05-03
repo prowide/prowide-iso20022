@@ -1,7 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
+import java.time.OffsetTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -46,11 +47,11 @@ public class RelatedCustodianMessageDetailsSD1 {
     @XmlElement(name = "RcvdDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar rcvdDt;
+    protected LocalDate rcvdDt;
     @XmlElement(name = "RcvdTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected Calendar rcvdTm;
+    protected OffsetTime rcvdTm;
     @XmlElement(name = "InbndISOMT", required = true)
     protected String inbndISOMT;
     @XmlElement(name = "InbndISOMsgRcvrBIC", required = true)
@@ -145,7 +146,7 @@ public class RelatedCustodianMessageDetailsSD1 {
      *     {@link String }
      *     
      */
-    public Calendar getRcvdDt() {
+    public LocalDate getRcvdDt() {
         return rcvdDt;
     }
 
@@ -157,7 +158,7 @@ public class RelatedCustodianMessageDetailsSD1 {
      *     {@link String }
      *     
      */
-    public RelatedCustodianMessageDetailsSD1 setRcvdDt(Calendar value) {
+    public RelatedCustodianMessageDetailsSD1 setRcvdDt(LocalDate value) {
         this.rcvdDt = value;
         return this;
     }
@@ -170,7 +171,7 @@ public class RelatedCustodianMessageDetailsSD1 {
      *     {@link String }
      *     
      */
-    public Calendar getRcvdTm() {
+    public OffsetTime getRcvdTm() {
         return rcvdTm;
     }
 
@@ -182,7 +183,7 @@ public class RelatedCustodianMessageDetailsSD1 {
      *     {@link String }
      *     
      */
-    public RelatedCustodianMessageDetailsSD1 setRcvdTm(Calendar value) {
+    public RelatedCustodianMessageDetailsSD1 setRcvdTm(OffsetTime value) {
         this.rcvdTm = value;
         return this;
     }

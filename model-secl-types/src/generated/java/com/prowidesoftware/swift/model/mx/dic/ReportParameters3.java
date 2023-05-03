@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -41,7 +41,7 @@ public class ReportParameters3 {
     @XmlElement(name = "ClctnDtAndTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar clctnDtAndTm;
+    protected OffsetDateTime clctnDtAndTm;
     @XmlElement(name = "Frqcy", required = true)
     @XmlSchemaType(name = "string")
     protected EventFrequency6Code frqcy;
@@ -131,7 +131,7 @@ public class ReportParameters3 {
      *     {@link String }
      *     
      */
-    public Calendar getClctnDtAndTm() {
+    public OffsetDateTime getClctnDtAndTm() {
         return clctnDtAndTm;
     }
 
@@ -143,7 +143,7 @@ public class ReportParameters3 {
      *     {@link String }
      *     
      */
-    public ReportParameters3 setClctnDtAndTm(Calendar value) {
+    public ReportParameters3 setClctnDtAndTm(OffsetDateTime value) {
         this.clctnDtAndTm = value;
         return this;
     }

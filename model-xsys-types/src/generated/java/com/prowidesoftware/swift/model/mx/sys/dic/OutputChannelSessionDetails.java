@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.sys.dic;
 
 import java.math.BigDecimal;
+import java.time.OffsetDateTime ;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -52,11 +52,11 @@ public class OutputChannelSessionDetails {
     @XmlElement(name = "SsnOpnTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar ssnOpnTm;
+    protected OffsetDateTime ssnOpnTm;
     @XmlElement(name = "SsnClsTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar ssnClsTm;
+    protected OffsetDateTime ssnClsTm;
     @XmlElement(name = "NbOfRcvdMsgs", required = true)
     protected BigDecimal nbOfRcvdMsgs;
     @XmlElement(name = "FrstSnFOutptSeq")
@@ -203,7 +203,7 @@ public class OutputChannelSessionDetails {
      *     {@link String }
      *     
      */
-    public Calendar getSsnOpnTm() {
+    public OffsetDateTime getSsnOpnTm() {
         return ssnOpnTm;
     }
 
@@ -215,7 +215,7 @@ public class OutputChannelSessionDetails {
      *     {@link String }
      *     
      */
-    public OutputChannelSessionDetails setSsnOpnTm(Calendar value) {
+    public OutputChannelSessionDetails setSsnOpnTm(OffsetDateTime value) {
         this.ssnOpnTm = value;
         return this;
     }
@@ -228,7 +228,7 @@ public class OutputChannelSessionDetails {
      *     {@link String }
      *     
      */
-    public Calendar getSsnClsTm() {
+    public OffsetDateTime getSsnClsTm() {
         return ssnClsTm;
     }
 
@@ -240,7 +240,7 @@ public class OutputChannelSessionDetails {
      *     {@link String }
      *     
      */
-    public OutputChannelSessionDetails setSsnClsTm(Calendar value) {
+    public OutputChannelSessionDetails setSsnClsTm(OffsetDateTime value) {
         this.ssnClsTm = value;
         return this;
     }

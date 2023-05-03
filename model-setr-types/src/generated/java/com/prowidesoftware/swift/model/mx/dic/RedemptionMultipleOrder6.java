@@ -1,8 +1,9 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
@@ -47,13 +48,13 @@ public class RedemptionMultipleOrder6 {
     @XmlElement(name = "OrdrDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar ordrDtTm;
+    protected OffsetDateTime ordrDtTm;
     @XmlElement(name = "XpryDtTm")
     protected DateAndDateTimeChoice xpryDtTm;
     @XmlElement(name = "ReqdFutrTradDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar reqdFutrTradDt;
+    protected LocalDate reqdFutrTradDt;
     @XmlElement(name = "CxlRght")
     protected CancellationRight1Choice cxlRght;
     @XmlElement(name = "InvstmtAcctDtls", required = true)
@@ -125,7 +126,7 @@ public class RedemptionMultipleOrder6 {
      *     {@link String }
      *     
      */
-    public Calendar getOrdrDtTm() {
+    public OffsetDateTime getOrdrDtTm() {
         return ordrDtTm;
     }
 
@@ -137,7 +138,7 @@ public class RedemptionMultipleOrder6 {
      *     {@link String }
      *     
      */
-    public RedemptionMultipleOrder6 setOrdrDtTm(Calendar value) {
+    public RedemptionMultipleOrder6 setOrdrDtTm(OffsetDateTime value) {
         this.ordrDtTm = value;
         return this;
     }
@@ -175,7 +176,7 @@ public class RedemptionMultipleOrder6 {
      *     {@link String }
      *     
      */
-    public Calendar getReqdFutrTradDt() {
+    public LocalDate getReqdFutrTradDt() {
         return reqdFutrTradDt;
     }
 
@@ -187,7 +188,7 @@ public class RedemptionMultipleOrder6 {
      *     {@link String }
      *     
      */
-    public RedemptionMultipleOrder6 setReqdFutrTradDt(Calendar value) {
+    public RedemptionMultipleOrder6 setReqdFutrTradDt(LocalDate value) {
         this.reqdFutrTradDt = value;
         return this;
     }

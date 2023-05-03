@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -36,7 +36,7 @@ public class PenaltyCalculationRecord1 {
     @XmlElement(name = "Dt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dt;
+    protected LocalDate dt;
     @XmlElement(name = "MssngRefData")
     protected Boolean mssngRefData;
     @XmlElement(name = "FinInstrmAttrbts", required = true)
@@ -54,7 +54,7 @@ public class PenaltyCalculationRecord1 {
      *     {@link String }
      *     
      */
-    public Calendar getDt() {
+    public LocalDate getDt() {
         return dt;
     }
 
@@ -66,7 +66,7 @@ public class PenaltyCalculationRecord1 {
      *     {@link String }
      *     
      */
-    public PenaltyCalculationRecord1 setDt(Calendar value) {
+    public PenaltyCalculationRecord1 setDt(LocalDate value) {
         this.dt = value;
         return this;
     }

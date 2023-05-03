@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -44,11 +44,11 @@ public class TransportDetails1 {
     @XmlElement(name = "PropsdShipmntDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar propsdShipmntDt;
+    protected LocalDate propsdShipmntDt;
     @XmlElement(name = "ActlShipmntDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar actlShipmntDt;
+    protected LocalDate actlShipmntDt;
     @XmlElement(name = "Incotrms")
     protected Incoterms2 incotrms;
     @XmlElement(name = "FrghtChrgs")
@@ -149,7 +149,7 @@ public class TransportDetails1 {
      *     {@link String }
      *     
      */
-    public Calendar getPropsdShipmntDt() {
+    public LocalDate getPropsdShipmntDt() {
         return propsdShipmntDt;
     }
 
@@ -161,7 +161,7 @@ public class TransportDetails1 {
      *     {@link String }
      *     
      */
-    public TransportDetails1 setPropsdShipmntDt(Calendar value) {
+    public TransportDetails1 setPropsdShipmntDt(LocalDate value) {
         this.propsdShipmntDt = value;
         return this;
     }
@@ -174,7 +174,7 @@ public class TransportDetails1 {
      *     {@link String }
      *     
      */
-    public Calendar getActlShipmntDt() {
+    public LocalDate getActlShipmntDt() {
         return actlShipmntDt;
     }
 
@@ -186,7 +186,7 @@ public class TransportDetails1 {
      *     {@link String }
      *     
      */
-    public TransportDetails1 setActlShipmntDt(Calendar value) {
+    public TransportDetails1 setActlShipmntDt(LocalDate value) {
         this.actlShipmntDt = value;
         return this;
     }

@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -41,7 +41,7 @@ public class SettlementTax1 {
     @XmlElement(name = "TaxPtDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar taxPtDt;
+    protected LocalDate taxPtDt;
 
     /**
      * Gets the value of the tpCd property.
@@ -138,7 +138,7 @@ public class SettlementTax1 {
      *     {@link String }
      *     
      */
-    public Calendar getTaxPtDt() {
+    public LocalDate getTaxPtDt() {
         return taxPtDt;
     }
 
@@ -150,7 +150,7 @@ public class SettlementTax1 {
      *     {@link String }
      *     
      */
-    public SettlementTax1 setTaxPtDt(Calendar value) {
+    public SettlementTax1 setTaxPtDt(LocalDate value) {
         this.taxPtDt = value;
         return this;
     }

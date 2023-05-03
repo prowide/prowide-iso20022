@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -67,7 +67,7 @@ public class Transfer29 {
     @XmlElement(name = "ReqdSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar reqdSttlmDt;
+    protected LocalDate reqdSttlmDt;
     @XmlElement(name = "FctvSttlmDt")
     protected DateAndDateTimeChoice fctvSttlmDt;
     @XmlElement(name = "TradDt")
@@ -75,7 +75,7 @@ public class Transfer29 {
     @XmlElement(name = "TrfOrdrDtForm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar trfOrdrDtForm;
+    protected LocalDate trfOrdrDtForm;
     @XmlElement(name = "TrfRsn")
     protected TransferReason1 trfRsn;
     @XmlElement(name = "HldgsPlanTp")
@@ -262,7 +262,7 @@ public class Transfer29 {
      *     {@link String }
      *     
      */
-    public Calendar getReqdSttlmDt() {
+    public LocalDate getReqdSttlmDt() {
         return reqdSttlmDt;
     }
 
@@ -274,7 +274,7 @@ public class Transfer29 {
      *     {@link String }
      *     
      */
-    public Transfer29 setReqdSttlmDt(Calendar value) {
+    public Transfer29 setReqdSttlmDt(LocalDate value) {
         this.reqdSttlmDt = value;
         return this;
     }
@@ -337,7 +337,7 @@ public class Transfer29 {
      *     {@link String }
      *     
      */
-    public Calendar getTrfOrdrDtForm() {
+    public LocalDate getTrfOrdrDtForm() {
         return trfOrdrDtForm;
     }
 
@@ -349,7 +349,7 @@ public class Transfer29 {
      *     {@link String }
      *     
      */
-    public Transfer29 setTrfOrdrDtForm(Calendar value) {
+    public Transfer29 setTrfOrdrDtForm(LocalDate value) {
         this.trfOrdrDtForm = value;
         return this;
     }

@@ -1,8 +1,9 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
@@ -50,13 +51,13 @@ public class RedemptionBulkOrder4 {
     @XmlElement(name = "OrdrDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar ordrDtTm;
+    protected OffsetDateTime ordrDtTm;
     @XmlElement(name = "XpryDtTm")
     protected DateAndDateTimeChoice xpryDtTm;
     @XmlElement(name = "ReqdFutrTradDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar reqdFutrTradDt;
+    protected LocalDate reqdFutrTradDt;
     @XmlElement(name = "CxlRght")
     @XmlSchemaType(name = "string")
     protected CancellationRight1Code cxlRght;
@@ -75,7 +76,7 @@ public class RedemptionBulkOrder4 {
     @XmlElement(name = "CshSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar cshSttlmDt;
+    protected LocalDate cshSttlmDt;
     @XmlElement(name = "BlkCshSttlmDtls")
     protected PaymentTransaction21 blkCshSttlmDtls;
 
@@ -137,7 +138,7 @@ public class RedemptionBulkOrder4 {
      *     {@link String }
      *     
      */
-    public Calendar getOrdrDtTm() {
+    public OffsetDateTime getOrdrDtTm() {
         return ordrDtTm;
     }
 
@@ -149,7 +150,7 @@ public class RedemptionBulkOrder4 {
      *     {@link String }
      *     
      */
-    public RedemptionBulkOrder4 setOrdrDtTm(Calendar value) {
+    public RedemptionBulkOrder4 setOrdrDtTm(OffsetDateTime value) {
         this.ordrDtTm = value;
         return this;
     }
@@ -187,7 +188,7 @@ public class RedemptionBulkOrder4 {
      *     {@link String }
      *     
      */
-    public Calendar getReqdFutrTradDt() {
+    public LocalDate getReqdFutrTradDt() {
         return reqdFutrTradDt;
     }
 
@@ -199,7 +200,7 @@ public class RedemptionBulkOrder4 {
      *     {@link String }
      *     
      */
-    public RedemptionBulkOrder4 setReqdFutrTradDt(Calendar value) {
+    public RedemptionBulkOrder4 setReqdFutrTradDt(LocalDate value) {
         this.reqdFutrTradDt = value;
         return this;
     }
@@ -393,7 +394,7 @@ public class RedemptionBulkOrder4 {
      *     {@link String }
      *     
      */
-    public Calendar getCshSttlmDt() {
+    public LocalDate getCshSttlmDt() {
         return cshSttlmDt;
     }
 
@@ -405,7 +406,7 @@ public class RedemptionBulkOrder4 {
      *     {@link String }
      *     
      */
-    public RedemptionBulkOrder4 setCshSttlmDt(Calendar value) {
+    public RedemptionBulkOrder4 setCshSttlmDt(LocalDate value) {
         this.cshSttlmDt = value;
         return this;
     }

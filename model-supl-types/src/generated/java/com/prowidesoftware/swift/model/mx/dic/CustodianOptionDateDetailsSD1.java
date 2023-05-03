@@ -1,7 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
+import java.time.OffsetTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -35,11 +36,11 @@ public class CustodianOptionDateDetailsSD1 {
     @XmlElement(name = "AgtDdlnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar agtDdlnDt;
+    protected LocalDate agtDdlnDt;
     @XmlElement(name = "AgtDdlnTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected Calendar agtDdlnTm;
+    protected OffsetTime agtDdlnTm;
 
     /**
      * Gets the value of the plcAndNm property.
@@ -74,7 +75,7 @@ public class CustodianOptionDateDetailsSD1 {
      *     {@link String }
      *     
      */
-    public Calendar getAgtDdlnDt() {
+    public LocalDate getAgtDdlnDt() {
         return agtDdlnDt;
     }
 
@@ -86,7 +87,7 @@ public class CustodianOptionDateDetailsSD1 {
      *     {@link String }
      *     
      */
-    public CustodianOptionDateDetailsSD1 setAgtDdlnDt(Calendar value) {
+    public CustodianOptionDateDetailsSD1 setAgtDdlnDt(LocalDate value) {
         this.agtDdlnDt = value;
         return this;
     }
@@ -99,7 +100,7 @@ public class CustodianOptionDateDetailsSD1 {
      *     {@link String }
      *     
      */
-    public Calendar getAgtDdlnTm() {
+    public OffsetTime getAgtDdlnTm() {
         return agtDdlnTm;
     }
 
@@ -111,7 +112,7 @@ public class CustodianOptionDateDetailsSD1 {
      *     {@link String }
      *     
      */
-    public CustodianOptionDateDetailsSD1 setAgtDdlnTm(Calendar value) {
+    public CustodianOptionDateDetailsSD1 setAgtDdlnTm(OffsetTime value) {
         this.agtDdlnTm = value;
         return this;
     }

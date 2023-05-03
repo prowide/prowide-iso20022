@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -56,11 +56,11 @@ public class OrderParameters1 {
     @XmlElement(name = "XpryDtAndTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar xpryDtAndTm;
+    protected OffsetDateTime xpryDtAndTm;
     @XmlElement(name = "FctvDtAndTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar fctvDtAndTm;
+    protected OffsetDateTime fctvDtAndTm;
     @XmlElement(name = "HdlgInstr")
     @XmlSchemaType(name = "string")
     protected TradingFloorOrderHandling1Code hdlgInstr;
@@ -159,7 +159,7 @@ public class OrderParameters1 {
      *     {@link String }
      *     
      */
-    public Calendar getXpryDtAndTm() {
+    public OffsetDateTime getXpryDtAndTm() {
         return xpryDtAndTm;
     }
 
@@ -171,7 +171,7 @@ public class OrderParameters1 {
      *     {@link String }
      *     
      */
-    public OrderParameters1 setXpryDtAndTm(Calendar value) {
+    public OrderParameters1 setXpryDtAndTm(OffsetDateTime value) {
         this.xpryDtAndTm = value;
         return this;
     }
@@ -184,7 +184,7 @@ public class OrderParameters1 {
      *     {@link String }
      *     
      */
-    public Calendar getFctvDtAndTm() {
+    public OffsetDateTime getFctvDtAndTm() {
         return fctvDtAndTm;
     }
 
@@ -196,7 +196,7 @@ public class OrderParameters1 {
      *     {@link String }
      *     
      */
-    public OrderParameters1 setFctvDtAndTm(Calendar value) {
+    public OrderParameters1 setFctvDtAndTm(OffsetDateTime value) {
         this.fctvDtAndTm = value;
         return this;
     }

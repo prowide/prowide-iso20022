@@ -1,8 +1,9 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
@@ -66,11 +67,11 @@ public class SwitchExecution7 {
     @XmlElement(name = "OrdrDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar ordrDtTm;
+    protected OffsetDateTime ordrDtTm;
     @XmlElement(name = "RcvdDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar rcvdDtTm;
+    protected OffsetDateTime rcvdDtTm;
     @XmlElement(name = "DealRef", required = true)
     protected String dealRef;
     @XmlElement(name = "OrdrRef", required = true)
@@ -86,13 +87,13 @@ public class SwitchExecution7 {
     @XmlElement(name = "ReqdFutrTradDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar reqdFutrTradDt;
+    protected LocalDate reqdFutrTradDt;
     @XmlElement(name = "SttlmAmt")
     protected ActiveCurrencyAndAmount sttlmAmt;
     @XmlElement(name = "CshSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar cshSttlmDt;
+    protected LocalDate cshSttlmDt;
     @XmlElement(name = "SttlmMtd")
     @XmlSchemaType(name = "string")
     protected DeliveryReceiptType2Code sttlmMtd;
@@ -210,7 +211,7 @@ public class SwitchExecution7 {
      *     {@link String }
      *     
      */
-    public Calendar getOrdrDtTm() {
+    public OffsetDateTime getOrdrDtTm() {
         return ordrDtTm;
     }
 
@@ -222,7 +223,7 @@ public class SwitchExecution7 {
      *     {@link String }
      *     
      */
-    public SwitchExecution7 setOrdrDtTm(Calendar value) {
+    public SwitchExecution7 setOrdrDtTm(OffsetDateTime value) {
         this.ordrDtTm = value;
         return this;
     }
@@ -235,7 +236,7 @@ public class SwitchExecution7 {
      *     {@link String }
      *     
      */
-    public Calendar getRcvdDtTm() {
+    public OffsetDateTime getRcvdDtTm() {
         return rcvdDtTm;
     }
 
@@ -247,7 +248,7 @@ public class SwitchExecution7 {
      *     {@link String }
      *     
      */
-    public SwitchExecution7 setRcvdDtTm(Calendar value) {
+    public SwitchExecution7 setRcvdDtTm(OffsetDateTime value) {
         this.rcvdDtTm = value;
         return this;
     }
@@ -416,7 +417,7 @@ public class SwitchExecution7 {
      *     {@link String }
      *     
      */
-    public Calendar getReqdFutrTradDt() {
+    public LocalDate getReqdFutrTradDt() {
         return reqdFutrTradDt;
     }
 
@@ -428,7 +429,7 @@ public class SwitchExecution7 {
      *     {@link String }
      *     
      */
-    public SwitchExecution7 setReqdFutrTradDt(Calendar value) {
+    public SwitchExecution7 setReqdFutrTradDt(LocalDate value) {
         this.reqdFutrTradDt = value;
         return this;
     }
@@ -466,7 +467,7 @@ public class SwitchExecution7 {
      *     {@link String }
      *     
      */
-    public Calendar getCshSttlmDt() {
+    public LocalDate getCshSttlmDt() {
         return cshSttlmDt;
     }
 
@@ -478,7 +479,7 @@ public class SwitchExecution7 {
      *     {@link String }
      *     
      */
-    public SwitchExecution7 setCshSttlmDt(Calendar value) {
+    public SwitchExecution7 setCshSttlmDt(LocalDate value) {
         this.cshSttlmDt = value;
         return this;
     }

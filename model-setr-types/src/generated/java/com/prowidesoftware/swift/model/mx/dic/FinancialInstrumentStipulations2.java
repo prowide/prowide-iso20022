@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -140,7 +140,7 @@ public class FinancialInstrumentStipulations2 {
     @XmlElement(name = "XprtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar xprtnDt;
+    protected OffsetDateTime xprtnDt;
     @XmlElement(name = "OverAlltmtAmt")
     protected ActiveCurrencyAndAmount overAlltmtAmt;
     @XmlElement(name = "OverAlltmtRate")
@@ -943,7 +943,7 @@ public class FinancialInstrumentStipulations2 {
      *     {@link String }
      *     
      */
-    public Calendar getXprtnDt() {
+    public OffsetDateTime getXprtnDt() {
         return xprtnDt;
     }
 
@@ -955,7 +955,7 @@ public class FinancialInstrumentStipulations2 {
      *     {@link String }
      *     
      */
-    public FinancialInstrumentStipulations2 setXprtnDt(Calendar value) {
+    public FinancialInstrumentStipulations2 setXprtnDt(OffsetDateTime value) {
         this.xprtnDt = value;
         return this;
     }

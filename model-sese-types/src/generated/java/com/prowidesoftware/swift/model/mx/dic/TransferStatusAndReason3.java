@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -47,11 +47,11 @@ public class TransferStatusAndReason3 {
     @XmlElement(name = "TradDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar tradDt;
+    protected LocalDate tradDt;
     @XmlElement(name = "SndOutDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar sndOutDt;
+    protected LocalDate sndOutDt;
     @XmlElement(name = "StsInitr")
     protected PartyIdentification2Choice stsInitr;
 
@@ -188,7 +188,7 @@ public class TransferStatusAndReason3 {
      *     {@link String }
      *     
      */
-    public Calendar getTradDt() {
+    public LocalDate getTradDt() {
         return tradDt;
     }
 
@@ -200,7 +200,7 @@ public class TransferStatusAndReason3 {
      *     {@link String }
      *     
      */
-    public TransferStatusAndReason3 setTradDt(Calendar value) {
+    public TransferStatusAndReason3 setTradDt(LocalDate value) {
         this.tradDt = value;
         return this;
     }
@@ -213,7 +213,7 @@ public class TransferStatusAndReason3 {
      *     {@link String }
      *     
      */
-    public Calendar getSndOutDt() {
+    public LocalDate getSndOutDt() {
         return sndOutDt;
     }
 
@@ -225,7 +225,7 @@ public class TransferStatusAndReason3 {
      *     {@link String }
      *     
      */
-    public TransferStatusAndReason3 setSndOutDt(Calendar value) {
+    public TransferStatusAndReason3 setSndOutDt(LocalDate value) {
         this.sndOutDt = value;
         return this;
     }

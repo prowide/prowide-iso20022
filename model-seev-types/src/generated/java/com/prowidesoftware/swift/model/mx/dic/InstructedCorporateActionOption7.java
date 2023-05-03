@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -43,7 +43,7 @@ public class InstructedCorporateActionOption7 {
     @XmlElement(name = "DdlnDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar ddlnDtTm;
+    protected OffsetDateTime ddlnDtTm;
     @XmlElement(name = "DdlnTp", required = true)
     protected DeadlineCode4Choice ddlnTp;
 
@@ -155,7 +155,7 @@ public class InstructedCorporateActionOption7 {
      *     {@link String }
      *     
      */
-    public Calendar getDdlnDtTm() {
+    public OffsetDateTime getDdlnDtTm() {
         return ddlnDtTm;
     }
 
@@ -167,7 +167,7 @@ public class InstructedCorporateActionOption7 {
      *     {@link String }
      *     
      */
-    public InstructedCorporateActionOption7 setDdlnDtTm(Calendar value) {
+    public InstructedCorporateActionOption7 setDdlnDtTm(OffsetDateTime value) {
         this.ddlnDtTm = value;
         return this;
     }
