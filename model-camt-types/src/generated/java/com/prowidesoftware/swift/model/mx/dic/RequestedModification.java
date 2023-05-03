@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -58,11 +58,11 @@ public class RequestedModification {
     @XmlElement(name = "ReqdExctnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar reqdExctnDt;
+    protected LocalDate reqdExctnDt;
     @XmlElement(name = "ValDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar valDt;
+    protected LocalDate valDt;
     @XmlElement(name = "IntrBkSttldAmt")
     protected CurrencyAndAmount intrBkSttldAmt;
     @XmlElement(name = "Dbtr")
@@ -176,7 +176,7 @@ public class RequestedModification {
      *     {@link String }
      *     
      */
-    public Calendar getReqdExctnDt() {
+    public LocalDate getReqdExctnDt() {
         return reqdExctnDt;
     }
 
@@ -188,7 +188,7 @@ public class RequestedModification {
      *     {@link String }
      *     
      */
-    public RequestedModification setReqdExctnDt(Calendar value) {
+    public RequestedModification setReqdExctnDt(LocalDate value) {
         this.reqdExctnDt = value;
         return this;
     }
@@ -201,7 +201,7 @@ public class RequestedModification {
      *     {@link String }
      *     
      */
-    public Calendar getValDt() {
+    public LocalDate getValDt() {
         return valDt;
     }
 
@@ -213,7 +213,7 @@ public class RequestedModification {
      *     {@link String }
      *     
      */
-    public RequestedModification setValDt(Calendar value) {
+    public RequestedModification setValDt(LocalDate value) {
         this.valDt = value;
         return this;
     }

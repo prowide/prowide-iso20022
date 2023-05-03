@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -109,11 +109,11 @@ public class LineItem17 {
     @XmlElement(name = "MeasrDtTmStart", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar measrDtTmStart;
+    protected OffsetDateTime measrDtTmStart;
     @XmlElement(name = "MeasrDtTmEnd", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar measrDtTmEnd;
+    protected OffsetDateTime measrDtTmEnd;
     @XmlElement(name = "ShipTo")
     protected TradeParty4 shipTo;
     @XmlElement(name = "Incotrms")
@@ -121,7 +121,7 @@ public class LineItem17 {
     @XmlElement(name = "DlvryDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar dlvryDtTm;
+    protected OffsetDateTime dlvryDtTm;
     @XmlElement(name = "DlvryNoteId")
     protected DocumentIdentification22 dlvryNoteId;
     @XmlElement(name = "MntrySummtn")
@@ -766,7 +766,7 @@ public class LineItem17 {
      *     {@link String }
      *     
      */
-    public Calendar getMeasrDtTmStart() {
+    public OffsetDateTime getMeasrDtTmStart() {
         return measrDtTmStart;
     }
 
@@ -778,7 +778,7 @@ public class LineItem17 {
      *     {@link String }
      *     
      */
-    public LineItem17 setMeasrDtTmStart(Calendar value) {
+    public LineItem17 setMeasrDtTmStart(OffsetDateTime value) {
         this.measrDtTmStart = value;
         return this;
     }
@@ -791,7 +791,7 @@ public class LineItem17 {
      *     {@link String }
      *     
      */
-    public Calendar getMeasrDtTmEnd() {
+    public OffsetDateTime getMeasrDtTmEnd() {
         return measrDtTmEnd;
     }
 
@@ -803,7 +803,7 @@ public class LineItem17 {
      *     {@link String }
      *     
      */
-    public LineItem17 setMeasrDtTmEnd(Calendar value) {
+    public LineItem17 setMeasrDtTmEnd(OffsetDateTime value) {
         this.measrDtTmEnd = value;
         return this;
     }
@@ -866,7 +866,7 @@ public class LineItem17 {
      *     {@link String }
      *     
      */
-    public Calendar getDlvryDtTm() {
+    public OffsetDateTime getDlvryDtTm() {
         return dlvryDtTm;
     }
 
@@ -878,7 +878,7 @@ public class LineItem17 {
      *     {@link String }
      *     
      */
-    public LineItem17 setDlvryDtTm(Calendar value) {
+    public LineItem17 setDlvryDtTm(OffsetDateTime value) {
         this.dlvryDtTm = value;
         return this;
     }

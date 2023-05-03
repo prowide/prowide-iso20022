@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -56,17 +56,17 @@ public class InvoiceLineItem1 {
     @XmlElement(name = "Dt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dt;
+    protected LocalDate dt;
     @XmlElement(name = "OrdrDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar ordrDt;
+    protected LocalDate ordrDt;
     @XmlElement(name = "CtrctNb")
     protected String ctrctNb;
     @XmlElement(name = "ShppgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar shppgDt;
+    protected LocalDate shppgDt;
     @XmlElement(name = "RbllgInd")
     protected Boolean rbllgInd;
     @XmlElement(name = "MdclSvcsInd")
@@ -117,7 +117,7 @@ public class InvoiceLineItem1 {
      *     {@link String }
      *     
      */
-    public Calendar getDt() {
+    public LocalDate getDt() {
         return dt;
     }
 
@@ -129,7 +129,7 @@ public class InvoiceLineItem1 {
      *     {@link String }
      *     
      */
-    public InvoiceLineItem1 setDt(Calendar value) {
+    public InvoiceLineItem1 setDt(LocalDate value) {
         this.dt = value;
         return this;
     }
@@ -142,7 +142,7 @@ public class InvoiceLineItem1 {
      *     {@link String }
      *     
      */
-    public Calendar getOrdrDt() {
+    public LocalDate getOrdrDt() {
         return ordrDt;
     }
 
@@ -154,7 +154,7 @@ public class InvoiceLineItem1 {
      *     {@link String }
      *     
      */
-    public InvoiceLineItem1 setOrdrDt(Calendar value) {
+    public InvoiceLineItem1 setOrdrDt(LocalDate value) {
         this.ordrDt = value;
         return this;
     }
@@ -192,7 +192,7 @@ public class InvoiceLineItem1 {
      *     {@link String }
      *     
      */
-    public Calendar getShppgDt() {
+    public LocalDate getShppgDt() {
         return shppgDt;
     }
 
@@ -204,7 +204,7 @@ public class InvoiceLineItem1 {
      *     {@link String }
      *     
      */
-    public InvoiceLineItem1 setShppgDt(Calendar value) {
+    public InvoiceLineItem1 setShppgDt(LocalDate value) {
         this.shppgDt = value;
         return this;
     }

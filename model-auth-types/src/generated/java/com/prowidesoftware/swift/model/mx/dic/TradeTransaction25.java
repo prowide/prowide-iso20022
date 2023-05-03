@@ -2,8 +2,9 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
@@ -81,23 +82,23 @@ public class TradeTransaction25 {
     @XmlElement(name = "ExctnDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar exctnDtTm;
+    protected OffsetDateTime exctnDtTm;
     @XmlElement(name = "FctvDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar fctvDt;
+    protected LocalDate fctvDt;
     @XmlElement(name = "MtrtyDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar mtrtyDt;
+    protected LocalDate mtrtyDt;
     @XmlElement(name = "TermntnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar termntnDt;
+    protected LocalDate termntnDt;
     @XmlElement(name = "SttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected List<Calendar> sttlmDt;
+    protected List<LocalDate> sttlmDt;
     @XmlElement(name = "MstrAgrmt")
     protected MasterAgreement5 mstrAgrmt;
     @XmlElement(name = "TradConf")
@@ -400,7 +401,7 @@ public class TradeTransaction25 {
      *     {@link String }
      *     
      */
-    public Calendar getExctnDtTm() {
+    public OffsetDateTime getExctnDtTm() {
         return exctnDtTm;
     }
 
@@ -412,7 +413,7 @@ public class TradeTransaction25 {
      *     {@link String }
      *     
      */
-    public TradeTransaction25 setExctnDtTm(Calendar value) {
+    public TradeTransaction25 setExctnDtTm(OffsetDateTime value) {
         this.exctnDtTm = value;
         return this;
     }
@@ -425,7 +426,7 @@ public class TradeTransaction25 {
      *     {@link String }
      *     
      */
-    public Calendar getFctvDt() {
+    public LocalDate getFctvDt() {
         return fctvDt;
     }
 
@@ -437,7 +438,7 @@ public class TradeTransaction25 {
      *     {@link String }
      *     
      */
-    public TradeTransaction25 setFctvDt(Calendar value) {
+    public TradeTransaction25 setFctvDt(LocalDate value) {
         this.fctvDt = value;
         return this;
     }
@@ -450,7 +451,7 @@ public class TradeTransaction25 {
      *     {@link String }
      *     
      */
-    public Calendar getMtrtyDt() {
+    public LocalDate getMtrtyDt() {
         return mtrtyDt;
     }
 
@@ -462,7 +463,7 @@ public class TradeTransaction25 {
      *     {@link String }
      *     
      */
-    public TradeTransaction25 setMtrtyDt(Calendar value) {
+    public TradeTransaction25 setMtrtyDt(LocalDate value) {
         this.mtrtyDt = value;
         return this;
     }
@@ -475,7 +476,7 @@ public class TradeTransaction25 {
      *     {@link String }
      *     
      */
-    public Calendar getTermntnDt() {
+    public LocalDate getTermntnDt() {
         return termntnDt;
     }
 
@@ -487,7 +488,7 @@ public class TradeTransaction25 {
      *     {@link String }
      *     
      */
-    public TradeTransaction25 setTermntnDt(Calendar value) {
+    public TradeTransaction25 setTermntnDt(LocalDate value) {
         this.termntnDt = value;
         return this;
     }
@@ -516,7 +517,7 @@ public class TradeTransaction25 {
      * @return
      *     The value of the sttlmDt property.
      */
-    public List<Calendar> getSttlmDt() {
+    public List<LocalDate> getSttlmDt() {
         if (sttlmDt == null) {
             sttlmDt = new ArrayList<>();
         }
@@ -768,7 +769,7 @@ public class TradeTransaction25 {
      * @see #getSttlmDt()
      * 
      */
-    public TradeTransaction25 addSttlmDt(Calendar sttlmDt) {
+    public TradeTransaction25 addSttlmDt(LocalDate sttlmDt) {
         getSttlmDt().add(sttlmDt);
         return this;
     }

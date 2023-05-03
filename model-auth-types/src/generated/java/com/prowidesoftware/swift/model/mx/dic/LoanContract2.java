@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -57,13 +57,13 @@ public class LoanContract2 {
     @XmlElement(name = "MtrtyDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar mtrtyDt;
+    protected LocalDate mtrtyDt;
     @XmlElement(name = "PrlngtnFlg")
     protected boolean prlngtnFlg;
     @XmlElement(name = "StartDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar startDt;
+    protected LocalDate startDt;
     @XmlElement(name = "SttlmCcy", required = true)
     protected String sttlmCcy;
     @XmlElement(name = "SpclConds")
@@ -207,7 +207,7 @@ public class LoanContract2 {
      *     {@link String }
      *     
      */
-    public Calendar getMtrtyDt() {
+    public LocalDate getMtrtyDt() {
         return mtrtyDt;
     }
 
@@ -219,7 +219,7 @@ public class LoanContract2 {
      *     {@link String }
      *     
      */
-    public LoanContract2 setMtrtyDt(Calendar value) {
+    public LoanContract2 setMtrtyDt(LocalDate value) {
         this.mtrtyDt = value;
         return this;
     }
@@ -249,7 +249,7 @@ public class LoanContract2 {
      *     {@link String }
      *     
      */
-    public Calendar getStartDt() {
+    public LocalDate getStartDt() {
         return startDt;
     }
 
@@ -261,7 +261,7 @@ public class LoanContract2 {
      *     {@link String }
      *     
      */
-    public LoanContract2 setStartDt(Calendar value) {
+    public LoanContract2 setStartDt(LocalDate value) {
         this.startDt = value;
         return this;
     }

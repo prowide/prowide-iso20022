@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -66,11 +66,11 @@ public class ForeignExchangeSwapTransaction3 {
     @XmlElement(name = "SpotValDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar spotValDt;
+    protected LocalDate spotValDt;
     @XmlElement(name = "MtrtyDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar mtrtyDt;
+    protected LocalDate mtrtyDt;
     @XmlElement(name = "TxTp", required = true)
     @XmlSchemaType(name = "string")
     protected SecuritiesTransactionType15Code txTp;
@@ -314,7 +314,7 @@ public class ForeignExchangeSwapTransaction3 {
      *     {@link String }
      *     
      */
-    public Calendar getSpotValDt() {
+    public LocalDate getSpotValDt() {
         return spotValDt;
     }
 
@@ -326,7 +326,7 @@ public class ForeignExchangeSwapTransaction3 {
      *     {@link String }
      *     
      */
-    public ForeignExchangeSwapTransaction3 setSpotValDt(Calendar value) {
+    public ForeignExchangeSwapTransaction3 setSpotValDt(LocalDate value) {
         this.spotValDt = value;
         return this;
     }
@@ -339,7 +339,7 @@ public class ForeignExchangeSwapTransaction3 {
      *     {@link String }
      *     
      */
-    public Calendar getMtrtyDt() {
+    public LocalDate getMtrtyDt() {
         return mtrtyDt;
     }
 
@@ -351,7 +351,7 @@ public class ForeignExchangeSwapTransaction3 {
      *     {@link String }
      *     
      */
-    public ForeignExchangeSwapTransaction3 setMtrtyDt(Calendar value) {
+    public ForeignExchangeSwapTransaction3 setMtrtyDt(LocalDate value) {
         this.mtrtyDt = value;
         return this;
     }

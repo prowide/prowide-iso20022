@@ -1,7 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -44,11 +45,11 @@ public class LoanData57 {
     @XmlElement(name = "EvtDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar evtDt;
+    protected LocalDate evtDt;
     @XmlElement(name = "ExctnDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar exctnDtTm;
+    protected OffsetDateTime exctnDtTm;
     @XmlElement(name = "ClrSts")
     protected Cleared10Choice clrSts;
     @XmlElement(name = "TradgVn")
@@ -58,11 +59,11 @@ public class LoanData57 {
     @XmlElement(name = "ValDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar valDt;
+    protected LocalDate valDt;
     @XmlElement(name = "MtrtyDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar mtrtyDt;
+    protected LocalDate mtrtyDt;
     @XmlElement(name = "GnlColl")
     @XmlSchemaType(name = "string")
     protected SpecialCollateral1Code gnlColl;
@@ -73,7 +74,7 @@ public class LoanData57 {
     @XmlElement(name = "TermntnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar termntnDt;
+    protected LocalDate termntnDt;
 
     /**
      * Gets the value of the unqTradIdr property.
@@ -108,7 +109,7 @@ public class LoanData57 {
      *     {@link String }
      *     
      */
-    public Calendar getEvtDt() {
+    public LocalDate getEvtDt() {
         return evtDt;
     }
 
@@ -120,7 +121,7 @@ public class LoanData57 {
      *     {@link String }
      *     
      */
-    public LoanData57 setEvtDt(Calendar value) {
+    public LoanData57 setEvtDt(LocalDate value) {
         this.evtDt = value;
         return this;
     }
@@ -133,7 +134,7 @@ public class LoanData57 {
      *     {@link String }
      *     
      */
-    public Calendar getExctnDtTm() {
+    public OffsetDateTime getExctnDtTm() {
         return exctnDtTm;
     }
 
@@ -145,7 +146,7 @@ public class LoanData57 {
      *     {@link String }
      *     
      */
-    public LoanData57 setExctnDtTm(Calendar value) {
+    public LoanData57 setExctnDtTm(OffsetDateTime value) {
         this.exctnDtTm = value;
         return this;
     }
@@ -233,7 +234,7 @@ public class LoanData57 {
      *     {@link String }
      *     
      */
-    public Calendar getValDt() {
+    public LocalDate getValDt() {
         return valDt;
     }
 
@@ -245,7 +246,7 @@ public class LoanData57 {
      *     {@link String }
      *     
      */
-    public LoanData57 setValDt(Calendar value) {
+    public LoanData57 setValDt(LocalDate value) {
         this.valDt = value;
         return this;
     }
@@ -258,7 +259,7 @@ public class LoanData57 {
      *     {@link String }
      *     
      */
-    public Calendar getMtrtyDt() {
+    public LocalDate getMtrtyDt() {
         return mtrtyDt;
     }
 
@@ -270,7 +271,7 @@ public class LoanData57 {
      *     {@link String }
      *     
      */
-    public LoanData57 setMtrtyDt(Calendar value) {
+    public LoanData57 setMtrtyDt(LocalDate value) {
         this.mtrtyDt = value;
         return this;
     }
@@ -358,7 +359,7 @@ public class LoanData57 {
      *     {@link String }
      *     
      */
-    public Calendar getTermntnDt() {
+    public LocalDate getTermntnDt() {
         return termntnDt;
     }
 
@@ -370,7 +371,7 @@ public class LoanData57 {
      *     {@link String }
      *     
      */
-    public LoanData57 setTermntnDt(Calendar value) {
+    public LoanData57 setTermntnDt(LocalDate value) {
         this.termntnDt = value;
         return this;
     }

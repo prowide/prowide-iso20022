@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -35,7 +35,7 @@ public class ResendSearchCriteria2 {
     @XmlElement(name = "BizDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar bizDt;
+    protected LocalDate bizDt;
     @XmlElement(name = "SeqNb")
     protected String seqNb;
     @XmlElement(name = "SeqRg")
@@ -55,7 +55,7 @@ public class ResendSearchCriteria2 {
      *     {@link String }
      *     
      */
-    public Calendar getBizDt() {
+    public LocalDate getBizDt() {
         return bizDt;
     }
 
@@ -67,7 +67,7 @@ public class ResendSearchCriteria2 {
      *     {@link String }
      *     
      */
-    public ResendSearchCriteria2 setBizDt(Calendar value) {
+    public ResendSearchCriteria2 setBizDt(LocalDate value) {
         this.bizDt = value;
         return this;
     }

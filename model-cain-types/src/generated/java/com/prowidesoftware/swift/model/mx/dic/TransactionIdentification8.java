@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -42,7 +42,7 @@ public class TransactionIdentification8 {
     @XmlElement(name = "LclDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar lclDtTm;
+    protected OffsetDateTime lclDtTm;
     @XmlElement(name = "TmZone")
     protected String tmZone;
     @XmlElement(name = "TxRef")
@@ -50,7 +50,7 @@ public class TransactionIdentification8 {
     @XmlElement(name = "TrnsmssnDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar trnsmssnDtTm;
+    protected OffsetDateTime trnsmssnDtTm;
     @XmlElement(name = "SysTracAudtNb", required = true)
     protected String sysTracAudtNb;
     @XmlElement(name = "RtrvlRefNb", required = true)
@@ -79,7 +79,7 @@ public class TransactionIdentification8 {
      *     {@link String }
      *     
      */
-    public Calendar getLclDtTm() {
+    public OffsetDateTime getLclDtTm() {
         return lclDtTm;
     }
 
@@ -91,7 +91,7 @@ public class TransactionIdentification8 {
      *     {@link String }
      *     
      */
-    public TransactionIdentification8 setLclDtTm(Calendar value) {
+    public TransactionIdentification8 setLclDtTm(OffsetDateTime value) {
         this.lclDtTm = value;
         return this;
     }
@@ -154,7 +154,7 @@ public class TransactionIdentification8 {
      *     {@link String }
      *     
      */
-    public Calendar getTrnsmssnDtTm() {
+    public OffsetDateTime getTrnsmssnDtTm() {
         return trnsmssnDtTm;
     }
 
@@ -166,7 +166,7 @@ public class TransactionIdentification8 {
      *     {@link String }
      *     
      */
-    public TransactionIdentification8 setTrnsmssnDtTm(Calendar value) {
+    public TransactionIdentification8 setTrnsmssnDtTm(OffsetDateTime value) {
         this.trnsmssnDtTm = value;
         return this;
     }

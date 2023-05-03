@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -76,13 +76,13 @@ public class CustomerAccount3 {
     @XmlElement(name = "ClsgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar clsgDt;
+    protected LocalDate clsgDt;
     @XmlElement(name = "Rstrctn")
     protected List<Restriction1> rstrctn;
     @XmlElement(name = "OpngDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar opngDt;
+    protected LocalDate opngDt;
 
     /**
      * Gets the value of the id property.
@@ -417,7 +417,7 @@ public class CustomerAccount3 {
      *     {@link String }
      *     
      */
-    public Calendar getClsgDt() {
+    public LocalDate getClsgDt() {
         return clsgDt;
     }
 
@@ -429,7 +429,7 @@ public class CustomerAccount3 {
      *     {@link String }
      *     
      */
-    public CustomerAccount3 setClsgDt(Calendar value) {
+    public CustomerAccount3 setClsgDt(LocalDate value) {
         this.clsgDt = value;
         return this;
     }
@@ -473,7 +473,7 @@ public class CustomerAccount3 {
      *     {@link String }
      *     
      */
-    public Calendar getOpngDt() {
+    public LocalDate getOpngDt() {
         return opngDt;
     }
 
@@ -485,7 +485,7 @@ public class CustomerAccount3 {
      *     {@link String }
      *     
      */
-    public CustomerAccount3 setOpngDt(Calendar value) {
+    public CustomerAccount3 setOpngDt(LocalDate value) {
         this.opngDt = value;
         return this;
     }

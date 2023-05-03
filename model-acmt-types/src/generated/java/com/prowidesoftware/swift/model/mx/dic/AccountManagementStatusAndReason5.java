@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -54,11 +54,11 @@ public class AccountManagementStatusAndReason5 {
     @XmlElement(name = "FATCARptgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar fatcaRptgDt;
+    protected LocalDate fatcaRptgDt;
     @XmlElement(name = "CRSRptgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar crsRptgDt;
+    protected LocalDate crsRptgDt;
 
     /**
      * Gets the value of the sts property.
@@ -255,7 +255,7 @@ public class AccountManagementStatusAndReason5 {
      *     {@link String }
      *     
      */
-    public Calendar getFATCARptgDt() {
+    public LocalDate getFATCARptgDt() {
         return fatcaRptgDt;
     }
 
@@ -267,7 +267,7 @@ public class AccountManagementStatusAndReason5 {
      *     {@link String }
      *     
      */
-    public AccountManagementStatusAndReason5 setFATCARptgDt(Calendar value) {
+    public AccountManagementStatusAndReason5 setFATCARptgDt(LocalDate value) {
         this.fatcaRptgDt = value;
         return this;
     }
@@ -280,7 +280,7 @@ public class AccountManagementStatusAndReason5 {
      *     {@link String }
      *     
      */
-    public Calendar getCRSRptgDt() {
+    public LocalDate getCRSRptgDt() {
         return crsRptgDt;
     }
 
@@ -292,7 +292,7 @@ public class AccountManagementStatusAndReason5 {
      *     {@link String }
      *     
      */
-    public AccountManagementStatusAndReason5 setCRSRptgDt(Calendar value) {
+    public AccountManagementStatusAndReason5 setCRSRptgDt(LocalDate value) {
         this.crsRptgDt = value;
         return this;
     }

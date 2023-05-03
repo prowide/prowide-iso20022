@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -33,7 +33,7 @@ public class Acquirer1 {
     @XmlElement(name = "ParamsVrsn", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar paramsVrsn;
+    protected OffsetDateTime paramsVrsn;
 
     /**
      * Gets the value of the id property.
@@ -68,7 +68,7 @@ public class Acquirer1 {
      *     {@link String }
      *     
      */
-    public Calendar getParamsVrsn() {
+    public OffsetDateTime getParamsVrsn() {
         return paramsVrsn;
     }
 
@@ -80,7 +80,7 @@ public class Acquirer1 {
      *     {@link String }
      *     
      */
-    public Acquirer1 setParamsVrsn(Calendar value) {
+    public Acquirer1 setParamsVrsn(OffsetDateTime value) {
         this.paramsVrsn = value;
         return this;
     }

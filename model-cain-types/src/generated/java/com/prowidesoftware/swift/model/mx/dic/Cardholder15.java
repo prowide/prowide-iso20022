@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -44,7 +44,7 @@ public class Cardholder15 {
     @XmlElement(name = "DtOfBirth", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dtOfBirth;
+    protected LocalDate dtOfBirth;
 
     /**
      * Gets the value of the crdhldrNm property.
@@ -160,7 +160,7 @@ public class Cardholder15 {
      *     {@link String }
      *     
      */
-    public Calendar getDtOfBirth() {
+    public LocalDate getDtOfBirth() {
         return dtOfBirth;
     }
 
@@ -172,7 +172,7 @@ public class Cardholder15 {
      *     {@link String }
      *     
      */
-    public Cardholder15 setDtOfBirth(Calendar value) {
+    public Cardholder15 setDtOfBirth(LocalDate value) {
         this.dtOfBirth = value;
         return this;
     }

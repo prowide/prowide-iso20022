@@ -2,8 +2,9 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
@@ -51,11 +52,11 @@ public class LoanData87 {
     @XmlElement(name = "EvtDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar evtDt;
+    protected LocalDate evtDt;
     @XmlElement(name = "ExctnDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar exctnDtTm;
+    protected OffsetDateTime exctnDtTm;
     @XmlElement(name = "ClrSts")
     protected Cleared10Choice clrSts;
     @XmlElement(name = "TradgVn")
@@ -65,7 +66,7 @@ public class LoanData87 {
     @XmlElement(name = "ValDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar valDt;
+    protected LocalDate valDt;
     @XmlElement(name = "GnlColl")
     @XmlSchemaType(name = "string")
     protected SpecialCollateral1Code gnlColl;
@@ -87,7 +88,7 @@ public class LoanData87 {
     @XmlElement(name = "TermntnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar termntnDt;
+    protected LocalDate termntnDt;
 
     /**
      * Gets the value of the unqTradIdr property.
@@ -122,7 +123,7 @@ public class LoanData87 {
      *     {@link String }
      *     
      */
-    public Calendar getEvtDt() {
+    public LocalDate getEvtDt() {
         return evtDt;
     }
 
@@ -134,7 +135,7 @@ public class LoanData87 {
      *     {@link String }
      *     
      */
-    public LoanData87 setEvtDt(Calendar value) {
+    public LoanData87 setEvtDt(LocalDate value) {
         this.evtDt = value;
         return this;
     }
@@ -147,7 +148,7 @@ public class LoanData87 {
      *     {@link String }
      *     
      */
-    public Calendar getExctnDtTm() {
+    public OffsetDateTime getExctnDtTm() {
         return exctnDtTm;
     }
 
@@ -159,7 +160,7 @@ public class LoanData87 {
      *     {@link String }
      *     
      */
-    public LoanData87 setExctnDtTm(Calendar value) {
+    public LoanData87 setExctnDtTm(OffsetDateTime value) {
         this.exctnDtTm = value;
         return this;
     }
@@ -247,7 +248,7 @@ public class LoanData87 {
      *     {@link String }
      *     
      */
-    public Calendar getValDt() {
+    public LocalDate getValDt() {
         return valDt;
     }
 
@@ -259,7 +260,7 @@ public class LoanData87 {
      *     {@link String }
      *     
      */
-    public LoanData87 setValDt(Calendar value) {
+    public LoanData87 setValDt(LocalDate value) {
         this.valDt = value;
         return this;
     }
@@ -478,7 +479,7 @@ public class LoanData87 {
      *     {@link String }
      *     
      */
-    public Calendar getTermntnDt() {
+    public LocalDate getTermntnDt() {
         return termntnDt;
     }
 
@@ -490,7 +491,7 @@ public class LoanData87 {
      *     {@link String }
      *     
      */
-    public LoanData87 setTermntnDt(Calendar value) {
+    public LoanData87 setTermntnDt(LocalDate value) {
         this.termntnDt = value;
         return this;
     }

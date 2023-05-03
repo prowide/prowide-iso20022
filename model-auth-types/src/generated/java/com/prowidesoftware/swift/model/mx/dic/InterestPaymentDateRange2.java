@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -37,7 +37,7 @@ public class InterestPaymentDateRange2 {
     @XmlElement(name = "DueDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dueDt;
+    protected LocalDate dueDt;
     @XmlElement(name = "AddtlInf")
     protected String addtlInf;
 
@@ -99,7 +99,7 @@ public class InterestPaymentDateRange2 {
      *     {@link String }
      *     
      */
-    public Calendar getDueDt() {
+    public LocalDate getDueDt() {
         return dueDt;
     }
 
@@ -111,7 +111,7 @@ public class InterestPaymentDateRange2 {
      *     {@link String }
      *     
      */
-    public InterestPaymentDateRange2 setDueDt(Calendar value) {
+    public InterestPaymentDateRange2 setDueDt(LocalDate value) {
         this.dueDt = value;
         return this;
     }

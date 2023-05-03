@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -31,7 +31,7 @@ public class FixedOpenTermContract2 {
     @XmlElement(name = "MtrtyDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar mtrtyDt;
+    protected LocalDate mtrtyDt;
     @XmlElement(name = "TermntnOptn")
     @XmlSchemaType(name = "string")
     protected RepoTerminationOption2Code termntnOptn;
@@ -44,7 +44,7 @@ public class FixedOpenTermContract2 {
      *     {@link String }
      *     
      */
-    public Calendar getMtrtyDt() {
+    public LocalDate getMtrtyDt() {
         return mtrtyDt;
     }
 
@@ -56,7 +56,7 @@ public class FixedOpenTermContract2 {
      *     {@link String }
      *     
      */
-    public FixedOpenTermContract2 setMtrtyDt(Calendar value) {
+    public FixedOpenTermContract2 setMtrtyDt(LocalDate value) {
         this.mtrtyDt = value;
         return this;
     }

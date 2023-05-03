@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -48,7 +48,7 @@ public class TransparencyDataReport11 {
     @XmlElement(name = "RptgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar rptgDt;
+    protected LocalDate rptgDt;
     @XmlElement(name = "FinInstrmClssfctn", required = true)
     @XmlSchemaType(name = "string")
     protected EquityInstrumentReportingClassification1Code finInstrmClssfctn;
@@ -169,7 +169,7 @@ public class TransparencyDataReport11 {
      *     {@link String }
      *     
      */
-    public Calendar getRptgDt() {
+    public LocalDate getRptgDt() {
         return rptgDt;
     }
 
@@ -181,7 +181,7 @@ public class TransparencyDataReport11 {
      *     {@link String }
      *     
      */
-    public TransparencyDataReport11 setRptgDt(Calendar value) {
+    public TransparencyDataReport11 setRptgDt(LocalDate value) {
         this.rptgDt = value;
         return this;
     }

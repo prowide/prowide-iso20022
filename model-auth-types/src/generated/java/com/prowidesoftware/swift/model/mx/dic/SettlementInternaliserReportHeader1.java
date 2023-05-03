@@ -1,7 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -34,11 +35,11 @@ public class SettlementInternaliserReportHeader1 {
     @XmlElement(name = "CreDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar creDtTm;
+    protected OffsetDateTime creDtTm;
     @XmlElement(name = "RptgDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar rptgDt;
+    protected LocalDate rptgDt;
     @XmlElement(name = "Ccy", required = true)
     protected String ccy;
     @XmlElement(name = "RptSts", required = true)
@@ -53,7 +54,7 @@ public class SettlementInternaliserReportHeader1 {
      *     {@link String }
      *     
      */
-    public Calendar getCreDtTm() {
+    public OffsetDateTime getCreDtTm() {
         return creDtTm;
     }
 
@@ -65,7 +66,7 @@ public class SettlementInternaliserReportHeader1 {
      *     {@link String }
      *     
      */
-    public SettlementInternaliserReportHeader1 setCreDtTm(Calendar value) {
+    public SettlementInternaliserReportHeader1 setCreDtTm(OffsetDateTime value) {
         this.creDtTm = value;
         return this;
     }
@@ -78,7 +79,7 @@ public class SettlementInternaliserReportHeader1 {
      *     {@link String }
      *     
      */
-    public Calendar getRptgDt() {
+    public LocalDate getRptgDt() {
         return rptgDt;
     }
 
@@ -90,7 +91,7 @@ public class SettlementInternaliserReportHeader1 {
      *     {@link String }
      *     
      */
-    public SettlementInternaliserReportHeader1 setRptgDt(Calendar value) {
+    public SettlementInternaliserReportHeader1 setRptgDt(LocalDate value) {
         this.rptgDt = value;
         return this;
     }

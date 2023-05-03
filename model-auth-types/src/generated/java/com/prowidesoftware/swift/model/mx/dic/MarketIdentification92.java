@@ -1,7 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -73,17 +74,17 @@ public class MarketIdentification92 {
     @XmlElement(name = "CreDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar creDt;
+    protected LocalDate creDt;
     @XmlElement(name = "VldtyPrd", required = true)
     protected Period4Choice vldtyPrd;
     @XmlElement(name = "StsDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar stsDt;
+    protected LocalDate stsDt;
     @XmlElement(name = "LastUpdtdDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar lastUpdtdDt;
+    protected OffsetDateTime lastUpdtdDt;
 
     /**
      * Gets the value of the oprg property.
@@ -393,7 +394,7 @@ public class MarketIdentification92 {
      *     {@link String }
      *     
      */
-    public Calendar getCreDt() {
+    public LocalDate getCreDt() {
         return creDt;
     }
 
@@ -405,7 +406,7 @@ public class MarketIdentification92 {
      *     {@link String }
      *     
      */
-    public MarketIdentification92 setCreDt(Calendar value) {
+    public MarketIdentification92 setCreDt(LocalDate value) {
         this.creDt = value;
         return this;
     }
@@ -443,7 +444,7 @@ public class MarketIdentification92 {
      *     {@link String }
      *     
      */
-    public Calendar getStsDt() {
+    public LocalDate getStsDt() {
         return stsDt;
     }
 
@@ -455,7 +456,7 @@ public class MarketIdentification92 {
      *     {@link String }
      *     
      */
-    public MarketIdentification92 setStsDt(Calendar value) {
+    public MarketIdentification92 setStsDt(LocalDate value) {
         this.stsDt = value;
         return this;
     }
@@ -468,7 +469,7 @@ public class MarketIdentification92 {
      *     {@link String }
      *     
      */
-    public Calendar getLastUpdtdDt() {
+    public OffsetDateTime getLastUpdtdDt() {
         return lastUpdtdDt;
     }
 
@@ -480,7 +481,7 @@ public class MarketIdentification92 {
      *     {@link String }
      *     
      */
-    public MarketIdentification92 setLastUpdtdDt(Calendar value) {
+    public MarketIdentification92 setLastUpdtdDt(OffsetDateTime value) {
         this.lastUpdtdDt = value;
         return this;
     }

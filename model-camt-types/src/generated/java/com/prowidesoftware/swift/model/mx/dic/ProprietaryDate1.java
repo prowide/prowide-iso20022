@@ -1,7 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -35,11 +36,11 @@ public class ProprietaryDate1 {
     @XmlElement(name = "Dt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dt;
+    protected LocalDate dt;
     @XmlElement(name = "DtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar dtTm;
+    protected OffsetDateTime dtTm;
 
     /**
      * Gets the value of the tp property.
@@ -74,7 +75,7 @@ public class ProprietaryDate1 {
      *     {@link String }
      *     
      */
-    public Calendar getDt() {
+    public LocalDate getDt() {
         return dt;
     }
 
@@ -86,7 +87,7 @@ public class ProprietaryDate1 {
      *     {@link String }
      *     
      */
-    public ProprietaryDate1 setDt(Calendar value) {
+    public ProprietaryDate1 setDt(LocalDate value) {
         this.dt = value;
         return this;
     }
@@ -99,7 +100,7 @@ public class ProprietaryDate1 {
      *     {@link String }
      *     
      */
-    public Calendar getDtTm() {
+    public OffsetDateTime getDtTm() {
         return dtTm;
     }
 
@@ -111,7 +112,7 @@ public class ProprietaryDate1 {
      *     {@link String }
      *     
      */
-    public ProprietaryDate1 setDtTm(Calendar value) {
+    public ProprietaryDate1 setDtTm(OffsetDateTime value) {
         this.dtTm = value;
         return this;
     }

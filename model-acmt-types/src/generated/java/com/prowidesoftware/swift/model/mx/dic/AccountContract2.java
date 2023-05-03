@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -32,11 +32,11 @@ public class AccountContract2 {
     @XmlElement(name = "TrgtGoLiveDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar trgtGoLiveDt;
+    protected LocalDate trgtGoLiveDt;
     @XmlElement(name = "TrgtClsgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar trgtClsgDt;
+    protected LocalDate trgtClsgDt;
     @XmlElement(name = "UrgcyFlg")
     protected Boolean urgcyFlg;
 
@@ -48,7 +48,7 @@ public class AccountContract2 {
      *     {@link String }
      *     
      */
-    public Calendar getTrgtGoLiveDt() {
+    public LocalDate getTrgtGoLiveDt() {
         return trgtGoLiveDt;
     }
 
@@ -60,7 +60,7 @@ public class AccountContract2 {
      *     {@link String }
      *     
      */
-    public AccountContract2 setTrgtGoLiveDt(Calendar value) {
+    public AccountContract2 setTrgtGoLiveDt(LocalDate value) {
         this.trgtGoLiveDt = value;
         return this;
     }
@@ -73,7 +73,7 @@ public class AccountContract2 {
      *     {@link String }
      *     
      */
-    public Calendar getTrgtClsgDt() {
+    public LocalDate getTrgtClsgDt() {
         return trgtClsgDt;
     }
 
@@ -85,7 +85,7 @@ public class AccountContract2 {
      *     {@link String }
      *     
      */
-    public AccountContract2 setTrgtClsgDt(Calendar value) {
+    public AccountContract2 setTrgtClsgDt(LocalDate value) {
         this.trgtClsgDt = value;
         return this;
     }

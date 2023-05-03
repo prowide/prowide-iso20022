@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -81,7 +81,7 @@ public class PaymentSearch3 {
     @XmlElement(name = "IntrBkValDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected List<Calendar> intrBkValDt;
+    protected List<LocalDate> intrBkValDt;
     @XmlElement(name = "RltdRef")
     protected List<String> rltdRef;
     @XmlElement(name = "PmtTxPty")
@@ -570,7 +570,7 @@ public class PaymentSearch3 {
      * @return
      *     The value of the intrBkValDt property.
      */
-    public List<Calendar> getIntrBkValDt() {
+    public List<LocalDate> getIntrBkValDt() {
         if (intrBkValDt == null) {
             intrBkValDt = new ArrayList<>();
         }
@@ -793,7 +793,7 @@ public class PaymentSearch3 {
      * @see #getIntrBkValDt()
      * 
      */
-    public PaymentSearch3 addIntrBkValDt(Calendar intrBkValDt) {
+    public PaymentSearch3 addIntrBkValDt(LocalDate intrBkValDt) {
         getIntrBkValDt().add(intrBkValDt);
         return this;
     }

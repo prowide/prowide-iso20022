@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -37,7 +37,7 @@ public class ReuseDataReportError3 {
     @XmlElement(name = "RptgDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar rptgDtTm;
+    protected OffsetDateTime rptgDtTm;
     @XmlElement(name = "CtrPtyData", required = true)
     protected CounterpartyData46 ctrPtyData;
     @XmlElement(name = "SplmtryData")
@@ -76,7 +76,7 @@ public class ReuseDataReportError3 {
      *     {@link String }
      *     
      */
-    public Calendar getRptgDtTm() {
+    public OffsetDateTime getRptgDtTm() {
         return rptgDtTm;
     }
 
@@ -88,7 +88,7 @@ public class ReuseDataReportError3 {
      *     {@link String }
      *     
      */
-    public ReuseDataReportError3 setRptgDtTm(Calendar value) {
+    public ReuseDataReportError3 setRptgDtTm(OffsetDateTime value) {
         this.rptgDtTm = value;
         return this;
     }

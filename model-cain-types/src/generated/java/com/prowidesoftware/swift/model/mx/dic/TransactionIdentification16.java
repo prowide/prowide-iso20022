@@ -1,7 +1,9 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
+import java.time.OffsetTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
@@ -45,11 +47,11 @@ public class TransactionIdentification16 {
     @XmlElement(name = "LclDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar lclDt;
+    protected LocalDate lclDt;
     @XmlElement(name = "LclTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected Calendar lclTm;
+    protected OffsetTime lclTm;
     @XmlElement(name = "TmZone")
     protected String tmZone;
     @XmlElement(name = "TxRef")
@@ -57,7 +59,7 @@ public class TransactionIdentification16 {
     @XmlElement(name = "TrnsmssnDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar trnsmssnDtTm;
+    protected OffsetDateTime trnsmssnDtTm;
     @XmlElement(name = "SysTracAudtNb", required = true)
     protected String sysTracAudtNb;
     @XmlElement(name = "RtrvlRefNb", required = true)
@@ -86,7 +88,7 @@ public class TransactionIdentification16 {
      *     {@link String }
      *     
      */
-    public Calendar getLclDt() {
+    public LocalDate getLclDt() {
         return lclDt;
     }
 
@@ -98,7 +100,7 @@ public class TransactionIdentification16 {
      *     {@link String }
      *     
      */
-    public TransactionIdentification16 setLclDt(Calendar value) {
+    public TransactionIdentification16 setLclDt(LocalDate value) {
         this.lclDt = value;
         return this;
     }
@@ -111,7 +113,7 @@ public class TransactionIdentification16 {
      *     {@link String }
      *     
      */
-    public Calendar getLclTm() {
+    public OffsetTime getLclTm() {
         return lclTm;
     }
 
@@ -123,7 +125,7 @@ public class TransactionIdentification16 {
      *     {@link String }
      *     
      */
-    public TransactionIdentification16 setLclTm(Calendar value) {
+    public TransactionIdentification16 setLclTm(OffsetTime value) {
         this.lclTm = value;
         return this;
     }
@@ -186,7 +188,7 @@ public class TransactionIdentification16 {
      *     {@link String }
      *     
      */
-    public Calendar getTrnsmssnDtTm() {
+    public OffsetDateTime getTrnsmssnDtTm() {
         return trnsmssnDtTm;
     }
 
@@ -198,7 +200,7 @@ public class TransactionIdentification16 {
      *     {@link String }
      *     
      */
-    public TransactionIdentification16 setTrnsmssnDtTm(Calendar value) {
+    public TransactionIdentification16 setTrnsmssnDtTm(OffsetDateTime value) {
         this.trnsmssnDtTm = value;
         return this;
     }

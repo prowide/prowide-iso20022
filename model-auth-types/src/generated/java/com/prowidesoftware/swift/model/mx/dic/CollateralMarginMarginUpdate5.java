@@ -1,8 +1,9 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
@@ -42,11 +43,11 @@ public class CollateralMarginMarginUpdate5 {
     @XmlElement(name = "RptgDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar rptgDtTm;
+    protected OffsetDateTime rptgDtTm;
     @XmlElement(name = "EvtDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar evtDt;
+    protected LocalDate evtDt;
     @XmlElement(name = "CtrPty")
     protected Counterparty39 ctrPty;
     @XmlElement(name = "CollPrtflId", required = true)
@@ -91,7 +92,7 @@ public class CollateralMarginMarginUpdate5 {
      *     {@link String }
      *     
      */
-    public Calendar getRptgDtTm() {
+    public OffsetDateTime getRptgDtTm() {
         return rptgDtTm;
     }
 
@@ -103,7 +104,7 @@ public class CollateralMarginMarginUpdate5 {
      *     {@link String }
      *     
      */
-    public CollateralMarginMarginUpdate5 setRptgDtTm(Calendar value) {
+    public CollateralMarginMarginUpdate5 setRptgDtTm(OffsetDateTime value) {
         this.rptgDtTm = value;
         return this;
     }
@@ -116,7 +117,7 @@ public class CollateralMarginMarginUpdate5 {
      *     {@link String }
      *     
      */
-    public Calendar getEvtDt() {
+    public LocalDate getEvtDt() {
         return evtDt;
     }
 
@@ -128,7 +129,7 @@ public class CollateralMarginMarginUpdate5 {
      *     {@link String }
      *     
      */
-    public CollateralMarginMarginUpdate5 setEvtDt(Calendar value) {
+    public CollateralMarginMarginUpdate5 setEvtDt(LocalDate value) {
         this.evtDt = value;
         return this;
     }

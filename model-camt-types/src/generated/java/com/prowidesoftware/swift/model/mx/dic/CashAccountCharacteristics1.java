@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -56,7 +56,7 @@ public class CashAccountCharacteristics1 {
     @XmlElement(name = "DelydDbtDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar delydDbtDt;
+    protected LocalDate delydDbtDt;
     @XmlElement(name = "SttlmAdvc")
     protected String sttlmAdvc;
     @XmlElement(name = "AcctBalCcyCd", required = true)
@@ -228,7 +228,7 @@ public class CashAccountCharacteristics1 {
      *     {@link String }
      *     
      */
-    public Calendar getDelydDbtDt() {
+    public LocalDate getDelydDbtDt() {
         return delydDbtDt;
     }
 
@@ -240,7 +240,7 @@ public class CashAccountCharacteristics1 {
      *     {@link String }
      *     
      */
-    public CashAccountCharacteristics1 setDelydDbtDt(Calendar value) {
+    public CashAccountCharacteristics1 setDelydDbtDt(LocalDate value) {
         this.delydDbtDt = value;
         return this;
     }

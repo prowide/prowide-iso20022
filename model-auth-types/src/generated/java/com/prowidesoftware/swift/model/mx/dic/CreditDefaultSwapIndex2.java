@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -43,7 +43,7 @@ public class CreditDefaultSwapIndex2 {
     @XmlElement(name = "NxtRollDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar nxtRollDt;
+    protected LocalDate nxtRollDt;
     @XmlElement(name = "NtnlCcy", required = true)
     protected String ntnlCcy;
 
@@ -136,7 +136,7 @@ public class CreditDefaultSwapIndex2 {
      *     {@link String }
      *     
      */
-    public Calendar getNxtRollDt() {
+    public LocalDate getNxtRollDt() {
         return nxtRollDt;
     }
 
@@ -148,7 +148,7 @@ public class CreditDefaultSwapIndex2 {
      *     {@link String }
      *     
      */
-    public CreditDefaultSwapIndex2 setNxtRollDt(Calendar value) {
+    public CreditDefaultSwapIndex2 setNxtRollDt(LocalDate value) {
         this.nxtRollDt = value;
         return this;
     }

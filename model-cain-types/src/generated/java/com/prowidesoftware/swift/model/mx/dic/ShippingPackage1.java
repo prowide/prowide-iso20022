@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.OffsetTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -44,7 +44,7 @@ public class ShippingPackage1 {
     @XmlElement(name = "PckpTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected Calendar pckpTm;
+    protected OffsetTime pckpTm;
     @XmlElement(name = "Dlvry")
     protected DeliveryInformation3 dlvry;
     @XmlElement(name = "Wght")
@@ -114,7 +114,7 @@ public class ShippingPackage1 {
      *     {@link String }
      *     
      */
-    public Calendar getPckpTm() {
+    public OffsetTime getPckpTm() {
         return pckpTm;
     }
 
@@ -126,7 +126,7 @@ public class ShippingPackage1 {
      *     {@link String }
      *     
      */
-    public ShippingPackage1 setPckpTm(Calendar value) {
+    public ShippingPackage1 setPckpTm(OffsetTime value) {
         this.pckpTm = value;
         return this;
     }

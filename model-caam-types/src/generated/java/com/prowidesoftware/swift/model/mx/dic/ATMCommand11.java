@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -38,11 +38,11 @@ public class ATMCommand11 {
     @XmlElement(name = "ReqrdDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar reqrdDtTm;
+    protected OffsetDateTime reqrdDtTm;
     @XmlElement(name = "PrcdDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar prcdDtTm;
+    protected OffsetDateTime prcdDtTm;
     @XmlElement(name = "CmdId")
     protected ATMCommandIdentification1 cmdId;
     @XmlElement(name = "Rslt", required = true)
@@ -84,7 +84,7 @@ public class ATMCommand11 {
      *     {@link String }
      *     
      */
-    public Calendar getReqrdDtTm() {
+    public OffsetDateTime getReqrdDtTm() {
         return reqrdDtTm;
     }
 
@@ -96,7 +96,7 @@ public class ATMCommand11 {
      *     {@link String }
      *     
      */
-    public ATMCommand11 setReqrdDtTm(Calendar value) {
+    public ATMCommand11 setReqrdDtTm(OffsetDateTime value) {
         this.reqrdDtTm = value;
         return this;
     }
@@ -109,7 +109,7 @@ public class ATMCommand11 {
      *     {@link String }
      *     
      */
-    public Calendar getPrcdDtTm() {
+    public OffsetDateTime getPrcdDtTm() {
         return prcdDtTm;
     }
 
@@ -121,7 +121,7 @@ public class ATMCommand11 {
      *     {@link String }
      *     
      */
-    public ATMCommand11 setPrcdDtTm(Calendar value) {
+    public ATMCommand11 setPrcdDtTm(OffsetDateTime value) {
         this.prcdDtTm = value;
         return this;
     }

@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -63,7 +63,7 @@ public class IntraBalanceMovement6 {
     @XmlElement(name = "StsDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar stsDt;
+    protected OffsetDateTime stsDt;
     @XmlElement(name = "CshSubBalId")
     protected GenericIdentification37 cshSubBalId;
     @XmlElement(name = "Lnkgs")
@@ -75,7 +75,7 @@ public class IntraBalanceMovement6 {
     @XmlElement(name = "CreDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar creDtTm;
+    protected OffsetDateTime creDtTm;
     @XmlElement(name = "InstrPrcgAddtlDtls")
     protected String instrPrcgAddtlDtls;
     @XmlElement(name = "SplmtryData")
@@ -289,7 +289,7 @@ public class IntraBalanceMovement6 {
      *     {@link String }
      *     
      */
-    public Calendar getStsDt() {
+    public OffsetDateTime getStsDt() {
         return stsDt;
     }
 
@@ -301,7 +301,7 @@ public class IntraBalanceMovement6 {
      *     {@link String }
      *     
      */
-    public IntraBalanceMovement6 setStsDt(Calendar value) {
+    public IntraBalanceMovement6 setStsDt(OffsetDateTime value) {
         this.stsDt = value;
         return this;
     }
@@ -420,7 +420,7 @@ public class IntraBalanceMovement6 {
      *     {@link String }
      *     
      */
-    public Calendar getCreDtTm() {
+    public OffsetDateTime getCreDtTm() {
         return creDtTm;
     }
 
@@ -432,7 +432,7 @@ public class IntraBalanceMovement6 {
      *     {@link String }
      *     
      */
-    public IntraBalanceMovement6 setCreDtTm(Calendar value) {
+    public IntraBalanceMovement6 setCreDtTm(OffsetDateTime value) {
         this.creDtTm = value;
         return this;
     }

@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -59,11 +59,11 @@ public class OptionOrSwaption7 {
     @XmlElement(name = "PrmPmtDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar prmPmtDt;
+    protected LocalDate prmPmtDt;
     @XmlElement(name = "MtrtyDtOfUndrlyg", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar mtrtyDtOfUndrlyg;
+    protected LocalDate mtrtyDtOfUndrlyg;
 
     /**
      * Gets the value of the tp property.
@@ -285,7 +285,7 @@ public class OptionOrSwaption7 {
      *     {@link String }
      *     
      */
-    public Calendar getPrmPmtDt() {
+    public LocalDate getPrmPmtDt() {
         return prmPmtDt;
     }
 
@@ -297,7 +297,7 @@ public class OptionOrSwaption7 {
      *     {@link String }
      *     
      */
-    public OptionOrSwaption7 setPrmPmtDt(Calendar value) {
+    public OptionOrSwaption7 setPrmPmtDt(LocalDate value) {
         this.prmPmtDt = value;
         return this;
     }
@@ -310,7 +310,7 @@ public class OptionOrSwaption7 {
      *     {@link String }
      *     
      */
-    public Calendar getMtrtyDtOfUndrlyg() {
+    public LocalDate getMtrtyDtOfUndrlyg() {
         return mtrtyDtOfUndrlyg;
     }
 
@@ -322,7 +322,7 @@ public class OptionOrSwaption7 {
      *     {@link String }
      *     
      */
-    public OptionOrSwaption7 setMtrtyDtOfUndrlyg(Calendar value) {
+    public OptionOrSwaption7 setMtrtyDtOfUndrlyg(LocalDate value) {
         this.mtrtyDtOfUndrlyg = value;
         return this;
     }

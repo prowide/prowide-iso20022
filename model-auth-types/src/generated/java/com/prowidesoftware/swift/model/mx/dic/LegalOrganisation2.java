@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -37,11 +37,11 @@ public class LegalOrganisation2 {
     @XmlElement(name = "EstblishmtDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar estblishmtDt;
+    protected LocalDate estblishmtDt;
     @XmlElement(name = "RegnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar regnDt;
+    protected LocalDate regnDt;
 
     /**
      * Gets the value of the id property.
@@ -101,7 +101,7 @@ public class LegalOrganisation2 {
      *     {@link String }
      *     
      */
-    public Calendar getEstblishmtDt() {
+    public LocalDate getEstblishmtDt() {
         return estblishmtDt;
     }
 
@@ -113,7 +113,7 @@ public class LegalOrganisation2 {
      *     {@link String }
      *     
      */
-    public LegalOrganisation2 setEstblishmtDt(Calendar value) {
+    public LegalOrganisation2 setEstblishmtDt(LocalDate value) {
         this.estblishmtDt = value;
         return this;
     }
@@ -126,7 +126,7 @@ public class LegalOrganisation2 {
      *     {@link String }
      *     
      */
-    public Calendar getRegnDt() {
+    public LocalDate getRegnDt() {
         return regnDt;
     }
 
@@ -138,7 +138,7 @@ public class LegalOrganisation2 {
      *     {@link String }
      *     
      */
-    public LegalOrganisation2 setRegnDt(Calendar value) {
+    public LegalOrganisation2 setRegnDt(LocalDate value) {
         this.regnDt = value;
         return this;
     }

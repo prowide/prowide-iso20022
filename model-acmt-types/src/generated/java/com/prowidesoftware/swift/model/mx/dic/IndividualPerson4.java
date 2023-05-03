@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -43,7 +43,7 @@ public class IndividualPerson4 {
     @XmlElement(name = "BirthDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar birthDt;
+    protected LocalDate birthDt;
 
     /**
      * Gets the value of the gvnNm property.
@@ -153,7 +153,7 @@ public class IndividualPerson4 {
      *     {@link String }
      *     
      */
-    public Calendar getBirthDt() {
+    public LocalDate getBirthDt() {
         return birthDt;
     }
 
@@ -165,7 +165,7 @@ public class IndividualPerson4 {
      *     {@link String }
      *     
      */
-    public IndividualPerson4 setBirthDt(Calendar value) {
+    public IndividualPerson4 setBirthDt(LocalDate value) {
         this.birthDt = value;
         return this;
     }

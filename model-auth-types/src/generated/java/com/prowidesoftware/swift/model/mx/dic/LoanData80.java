@@ -1,8 +1,9 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
@@ -43,11 +44,11 @@ public class LoanData80 {
     @XmlElement(name = "EvtDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar evtDt;
+    protected LocalDate evtDt;
     @XmlElement(name = "ExctnDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar exctnDtTm;
+    protected OffsetDateTime exctnDtTm;
     @XmlElement(name = "TradgVn")
     protected String tradgVn;
     @XmlElement(name = "CollDlvryMtd")
@@ -62,7 +63,7 @@ public class LoanData80 {
     @XmlElement(name = "TermntnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar termntnDt;
+    protected LocalDate termntnDt;
 
     /**
      * Gets the value of the unqTradIdr property.
@@ -97,7 +98,7 @@ public class LoanData80 {
      *     {@link String }
      *     
      */
-    public Calendar getEvtDt() {
+    public LocalDate getEvtDt() {
         return evtDt;
     }
 
@@ -109,7 +110,7 @@ public class LoanData80 {
      *     {@link String }
      *     
      */
-    public LoanData80 setEvtDt(Calendar value) {
+    public LoanData80 setEvtDt(LocalDate value) {
         this.evtDt = value;
         return this;
     }
@@ -122,7 +123,7 @@ public class LoanData80 {
      *     {@link String }
      *     
      */
-    public Calendar getExctnDtTm() {
+    public OffsetDateTime getExctnDtTm() {
         return exctnDtTm;
     }
 
@@ -134,7 +135,7 @@ public class LoanData80 {
      *     {@link String }
      *     
      */
-    public LoanData80 setExctnDtTm(Calendar value) {
+    public LoanData80 setExctnDtTm(OffsetDateTime value) {
         this.exctnDtTm = value;
         return this;
     }
@@ -278,7 +279,7 @@ public class LoanData80 {
      *     {@link String }
      *     
      */
-    public Calendar getTermntnDt() {
+    public LocalDate getTermntnDt() {
         return termntnDt;
     }
 
@@ -290,7 +291,7 @@ public class LoanData80 {
      *     {@link String }
      *     
      */
-    public LoanData80 setTermntnDt(Calendar value) {
+    public LoanData80 setTermntnDt(LocalDate value) {
         this.termntnDt = value;
         return this;
     }

@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -59,11 +59,11 @@ public class OvernightIndexSwapTransaction3 {
     @XmlElement(name = "StartDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar startDt;
+    protected LocalDate startDt;
     @XmlElement(name = "MtrtyDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar mtrtyDt;
+    protected LocalDate mtrtyDt;
     @XmlElement(name = "FxdIntrstRate", required = true)
     protected Rate2 fxdIntrstRate;
     @XmlElement(name = "TxTp", required = true)
@@ -257,7 +257,7 @@ public class OvernightIndexSwapTransaction3 {
      *     {@link String }
      *     
      */
-    public Calendar getStartDt() {
+    public LocalDate getStartDt() {
         return startDt;
     }
 
@@ -269,7 +269,7 @@ public class OvernightIndexSwapTransaction3 {
      *     {@link String }
      *     
      */
-    public OvernightIndexSwapTransaction3 setStartDt(Calendar value) {
+    public OvernightIndexSwapTransaction3 setStartDt(LocalDate value) {
         this.startDt = value;
         return this;
     }
@@ -282,7 +282,7 @@ public class OvernightIndexSwapTransaction3 {
      *     {@link String }
      *     
      */
-    public Calendar getMtrtyDt() {
+    public LocalDate getMtrtyDt() {
         return mtrtyDt;
     }
 
@@ -294,7 +294,7 @@ public class OvernightIndexSwapTransaction3 {
      *     {@link String }
      *     
      */
-    public OvernightIndexSwapTransaction3 setMtrtyDt(Calendar value) {
+    public OvernightIndexSwapTransaction3 setMtrtyDt(LocalDate value) {
         this.mtrtyDt = value;
         return this;
     }

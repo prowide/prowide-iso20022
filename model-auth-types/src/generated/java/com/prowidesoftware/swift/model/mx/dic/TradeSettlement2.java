@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -44,7 +44,7 @@ public class TradeSettlement2 {
     @XmlElement(name = "DueDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dueDt;
+    protected LocalDate dueDt;
     @XmlElement(name = "DuePyblAmt", required = true)
     protected CurrencyAndAmount duePyblAmt;
     @XmlElement(name = "InvcCcyXchg")
@@ -52,7 +52,7 @@ public class TradeSettlement2 {
     @XmlElement(name = "DlvryDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dlvryDt;
+    protected LocalDate dlvryDt;
     @XmlElement(name = "BllgPrd")
     protected Period2 bllgPrd;
     @XmlElement(name = "TaxTtlAmt", required = true)
@@ -99,7 +99,7 @@ public class TradeSettlement2 {
      *     {@link String }
      *     
      */
-    public Calendar getDueDt() {
+    public LocalDate getDueDt() {
         return dueDt;
     }
 
@@ -111,7 +111,7 @@ public class TradeSettlement2 {
      *     {@link String }
      *     
      */
-    public TradeSettlement2 setDueDt(Calendar value) {
+    public TradeSettlement2 setDueDt(LocalDate value) {
         this.dueDt = value;
         return this;
     }
@@ -174,7 +174,7 @@ public class TradeSettlement2 {
      *     {@link String }
      *     
      */
-    public Calendar getDlvryDt() {
+    public LocalDate getDlvryDt() {
         return dlvryDt;
     }
 
@@ -186,7 +186,7 @@ public class TradeSettlement2 {
      *     {@link String }
      *     
      */
-    public TradeSettlement2 setDlvryDt(Calendar value) {
+    public TradeSettlement2 setDlvryDt(LocalDate value) {
         this.dlvryDt = value;
         return this;
     }

@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -32,7 +32,7 @@ public class CardPaymentEnvironment8 {
     @XmlElement(name = "AcqrrParamsVrsn", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar acqrrParamsVrsn;
+    protected OffsetDateTime acqrrParamsVrsn;
     @XmlElement(name = "MrchntId")
     protected GenericIdentification32 mrchntId;
     @XmlElement(name = "POIId", required = true)
@@ -46,7 +46,7 @@ public class CardPaymentEnvironment8 {
      *     {@link String }
      *     
      */
-    public Calendar getAcqrrParamsVrsn() {
+    public OffsetDateTime getAcqrrParamsVrsn() {
         return acqrrParamsVrsn;
     }
 
@@ -58,7 +58,7 @@ public class CardPaymentEnvironment8 {
      *     {@link String }
      *     
      */
-    public CardPaymentEnvironment8 setAcqrrParamsVrsn(Calendar value) {
+    public CardPaymentEnvironment8 setAcqrrParamsVrsn(OffsetDateTime value) {
         this.acqrrParamsVrsn = value;
         return this;
     }

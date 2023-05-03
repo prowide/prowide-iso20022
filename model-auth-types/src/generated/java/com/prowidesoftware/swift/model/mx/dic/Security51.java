@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -55,7 +55,7 @@ public class Security51 {
     @XmlElement(name = "Mtrty", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar mtrty;
+    protected LocalDate mtrty;
     @XmlElement(name = "Issr")
     protected SecurityIssuer4 issr;
     @XmlElement(name = "Tp")
@@ -223,7 +223,7 @@ public class Security51 {
      *     {@link String }
      *     
      */
-    public Calendar getMtrty() {
+    public LocalDate getMtrty() {
         return mtrty;
     }
 
@@ -235,7 +235,7 @@ public class Security51 {
      *     {@link String }
      *     
      */
-    public Security51 setMtrty(Calendar value) {
+    public Security51 setMtrty(LocalDate value) {
         this.mtrty = value;
         return this;
     }

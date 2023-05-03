@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -37,7 +37,7 @@ public class CurrencyExchangeDetails {
     @XmlElement(name = "QtnDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar qtnDt;
+    protected OffsetDateTime qtnDt;
 
     /**
      * Gets the value of the xchgRate property.
@@ -97,7 +97,7 @@ public class CurrencyExchangeDetails {
      *     {@link String }
      *     
      */
-    public Calendar getQtnDt() {
+    public OffsetDateTime getQtnDt() {
         return qtnDt;
     }
 
@@ -109,7 +109,7 @@ public class CurrencyExchangeDetails {
      *     {@link String }
      *     
      */
-    public CurrencyExchangeDetails setQtnDt(Calendar value) {
+    public CurrencyExchangeDetails setQtnDt(OffsetDateTime value) {
         this.qtnDt = value;
         return this;
     }

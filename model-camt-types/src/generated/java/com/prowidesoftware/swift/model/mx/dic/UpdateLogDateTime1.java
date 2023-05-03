@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -31,11 +31,11 @@ public class UpdateLogDateTime1 {
     @XmlElement(name = "Od", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar od;
+    protected OffsetDateTime od;
     @XmlElement(name = "New", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar _new;
+    protected OffsetDateTime _new;
 
     /**
      * Gets the value of the od property.
@@ -45,7 +45,7 @@ public class UpdateLogDateTime1 {
      *     {@link String }
      *     
      */
-    public Calendar getOd() {
+    public OffsetDateTime getOd() {
         return od;
     }
 
@@ -57,7 +57,7 @@ public class UpdateLogDateTime1 {
      *     {@link String }
      *     
      */
-    public UpdateLogDateTime1 setOd(Calendar value) {
+    public UpdateLogDateTime1 setOd(OffsetDateTime value) {
         this.od = value;
         return this;
     }
@@ -70,7 +70,7 @@ public class UpdateLogDateTime1 {
      *     {@link String }
      *     
      */
-    public Calendar getNew() {
+    public OffsetDateTime getNew() {
         return _new;
     }
 
@@ -82,7 +82,7 @@ public class UpdateLogDateTime1 {
      *     {@link String }
      *     
      */
-    public UpdateLogDateTime1 setNew(Calendar value) {
+    public UpdateLogDateTime1 setNew(OffsetDateTime value) {
         this._new = value;
         return this;
     }

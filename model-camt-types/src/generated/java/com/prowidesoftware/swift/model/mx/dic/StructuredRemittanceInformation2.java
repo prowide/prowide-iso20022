@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -41,7 +41,7 @@ public class StructuredRemittanceInformation2 {
     @XmlElement(name = "RfrdDocRltdDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar rfrdDocRltdDt;
+    protected LocalDate rfrdDocRltdDt;
     @XmlElement(name = "RfrdDocAmt")
     protected List<ReferredDocumentAmount1Choice> rfrdDocAmt;
     @XmlElement(name = "DocRefNb")
@@ -86,7 +86,7 @@ public class StructuredRemittanceInformation2 {
      *     {@link String }
      *     
      */
-    public Calendar getRfrdDocRltdDt() {
+    public LocalDate getRfrdDocRltdDt() {
         return rfrdDocRltdDt;
     }
 
@@ -98,7 +98,7 @@ public class StructuredRemittanceInformation2 {
      *     {@link String }
      *     
      */
-    public StructuredRemittanceInformation2 setRfrdDocRltdDt(Calendar value) {
+    public StructuredRemittanceInformation2 setRfrdDocRltdDt(LocalDate value) {
         this.rfrdDocRltdDt = value;
         return this;
     }

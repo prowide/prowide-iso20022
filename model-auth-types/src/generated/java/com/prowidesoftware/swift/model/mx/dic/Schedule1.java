@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -32,11 +32,11 @@ public class Schedule1 {
     @XmlElement(name = "UadjstdFctvDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar uadjstdFctvDt;
+    protected LocalDate uadjstdFctvDt;
     @XmlElement(name = "UadjstdEndDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar uadjstdEndDt;
+    protected LocalDate uadjstdEndDt;
     @XmlElement(name = "Pric", required = true)
     protected SecuritiesTransactionPrice17Choice pric;
 
@@ -48,7 +48,7 @@ public class Schedule1 {
      *     {@link String }
      *     
      */
-    public Calendar getUadjstdFctvDt() {
+    public LocalDate getUadjstdFctvDt() {
         return uadjstdFctvDt;
     }
 
@@ -60,7 +60,7 @@ public class Schedule1 {
      *     {@link String }
      *     
      */
-    public Schedule1 setUadjstdFctvDt(Calendar value) {
+    public Schedule1 setUadjstdFctvDt(LocalDate value) {
         this.uadjstdFctvDt = value;
         return this;
     }
@@ -73,7 +73,7 @@ public class Schedule1 {
      *     {@link String }
      *     
      */
-    public Calendar getUadjstdEndDt() {
+    public LocalDate getUadjstdEndDt() {
         return uadjstdEndDt;
     }
 
@@ -85,7 +85,7 @@ public class Schedule1 {
      *     {@link String }
      *     
      */
-    public Schedule1 setUadjstdEndDt(Calendar value) {
+    public Schedule1 setUadjstdEndDt(LocalDate value) {
         this.uadjstdEndDt = value;
         return this;
     }

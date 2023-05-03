@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -46,7 +46,7 @@ public class InvoiceHeader3 {
     @XmlElement(name = "IsseDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar isseDtTm;
+    protected OffsetDateTime isseDtTm;
     @XmlElement(name = "Issr")
     protected TradeParty4 issr;
     @XmlElement(name = "LangCd")
@@ -147,7 +147,7 @@ public class InvoiceHeader3 {
      *     {@link String }
      *     
      */
-    public Calendar getIsseDtTm() {
+    public OffsetDateTime getIsseDtTm() {
         return isseDtTm;
     }
 
@@ -159,7 +159,7 @@ public class InvoiceHeader3 {
      *     {@link String }
      *     
      */
-    public InvoiceHeader3 setIsseDtTm(Calendar value) {
+    public InvoiceHeader3 setIsseDtTm(OffsetDateTime value) {
         this.isseDtTm = value;
         return this;
     }

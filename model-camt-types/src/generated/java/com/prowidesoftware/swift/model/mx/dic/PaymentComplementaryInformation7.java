@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -79,11 +79,11 @@ public class PaymentComplementaryInformation7 {
     @XmlElement(name = "ReqdColltnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar reqdColltnDt;
+    protected LocalDate reqdColltnDt;
     @XmlElement(name = "IntrBkSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar intrBkSttlmDt;
+    protected LocalDate intrBkSttlmDt;
     @XmlElement(name = "Amt")
     protected AmountType4Choice amt;
     @XmlElement(name = "IntrBkSttlmAmt")
@@ -281,7 +281,7 @@ public class PaymentComplementaryInformation7 {
      *     {@link String }
      *     
      */
-    public Calendar getReqdColltnDt() {
+    public LocalDate getReqdColltnDt() {
         return reqdColltnDt;
     }
 
@@ -293,7 +293,7 @@ public class PaymentComplementaryInformation7 {
      *     {@link String }
      *     
      */
-    public PaymentComplementaryInformation7 setReqdColltnDt(Calendar value) {
+    public PaymentComplementaryInformation7 setReqdColltnDt(LocalDate value) {
         this.reqdColltnDt = value;
         return this;
     }
@@ -306,7 +306,7 @@ public class PaymentComplementaryInformation7 {
      *     {@link String }
      *     
      */
-    public Calendar getIntrBkSttlmDt() {
+    public LocalDate getIntrBkSttlmDt() {
         return intrBkSttlmDt;
     }
 
@@ -318,7 +318,7 @@ public class PaymentComplementaryInformation7 {
      *     {@link String }
      *     
      */
-    public PaymentComplementaryInformation7 setIntrBkSttlmDt(Calendar value) {
+    public PaymentComplementaryInformation7 setIntrBkSttlmDt(LocalDate value) {
         this.intrBkSttlmDt = value;
         return this;
     }

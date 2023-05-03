@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -50,11 +50,11 @@ public class PaymentTransaction37 {
     @XmlElement(name = "OrgnlReqdExctnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar orgnlReqdExctnDt;
+    protected LocalDate orgnlReqdExctnDt;
     @XmlElement(name = "OrgnlReqdColltnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar orgnlReqdColltnDt;
+    protected LocalDate orgnlReqdColltnDt;
     @XmlElement(name = "CxlRsnInf")
     protected List<PaymentCancellationReason2> cxlRsnInf;
     @XmlElement(name = "OrgnlTxRef")
@@ -193,7 +193,7 @@ public class PaymentTransaction37 {
      *     {@link String }
      *     
      */
-    public Calendar getOrgnlReqdExctnDt() {
+    public LocalDate getOrgnlReqdExctnDt() {
         return orgnlReqdExctnDt;
     }
 
@@ -205,7 +205,7 @@ public class PaymentTransaction37 {
      *     {@link String }
      *     
      */
-    public PaymentTransaction37 setOrgnlReqdExctnDt(Calendar value) {
+    public PaymentTransaction37 setOrgnlReqdExctnDt(LocalDate value) {
         this.orgnlReqdExctnDt = value;
         return this;
     }
@@ -218,7 +218,7 @@ public class PaymentTransaction37 {
      *     {@link String }
      *     
      */
-    public Calendar getOrgnlReqdColltnDt() {
+    public LocalDate getOrgnlReqdColltnDt() {
         return orgnlReqdColltnDt;
     }
 
@@ -230,7 +230,7 @@ public class PaymentTransaction37 {
      *     {@link String }
      *     
      */
-    public PaymentTransaction37 setOrgnlReqdColltnDt(Calendar value) {
+    public PaymentTransaction37 setOrgnlReqdColltnDt(LocalDate value) {
         this.orgnlReqdColltnDt = value;
         return this;
     }

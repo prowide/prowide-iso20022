@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -43,7 +43,7 @@ public class ClearingBatchData2 {
     @XmlElement(name = "ClrDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar clrDt;
+    protected LocalDate clrDt;
     @XmlElement(name = "ClrTtls")
     protected ClearingTotals2 clrTtls;
     @XmlElement(name = "IntrchngFee")
@@ -134,7 +134,7 @@ public class ClearingBatchData2 {
      *     {@link String }
      *     
      */
-    public Calendar getClrDt() {
+    public LocalDate getClrDt() {
         return clrDt;
     }
 
@@ -146,7 +146,7 @@ public class ClearingBatchData2 {
      *     {@link String }
      *     
      */
-    public ClearingBatchData2 setClrDt(Calendar value) {
+    public ClearingBatchData2 setClrDt(LocalDate value) {
         this.clrDt = value;
         return this;
     }

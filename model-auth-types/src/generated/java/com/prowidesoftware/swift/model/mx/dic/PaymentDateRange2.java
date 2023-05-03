@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -37,11 +37,11 @@ public class PaymentDateRange2 {
     @XmlElement(name = "XpctdDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar xpctdDt;
+    protected LocalDate xpctdDt;
     @XmlElement(name = "DueDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dueDt;
+    protected LocalDate dueDt;
 
     /**
      * Gets the value of the pmtSchdlId property.
@@ -101,7 +101,7 @@ public class PaymentDateRange2 {
      *     {@link String }
      *     
      */
-    public Calendar getXpctdDt() {
+    public LocalDate getXpctdDt() {
         return xpctdDt;
     }
 
@@ -113,7 +113,7 @@ public class PaymentDateRange2 {
      *     {@link String }
      *     
      */
-    public PaymentDateRange2 setXpctdDt(Calendar value) {
+    public PaymentDateRange2 setXpctdDt(LocalDate value) {
         this.xpctdDt = value;
         return this;
     }
@@ -126,7 +126,7 @@ public class PaymentDateRange2 {
      *     {@link String }
      *     
      */
-    public Calendar getDueDt() {
+    public LocalDate getDueDt() {
         return dueDt;
     }
 
@@ -138,7 +138,7 @@ public class PaymentDateRange2 {
      *     {@link String }
      *     
      */
-    public PaymentDateRange2 setDueDt(Calendar value) {
+    public PaymentDateRange2 setDueDt(LocalDate value) {
         this.dueDt = value;
         return this;
     }

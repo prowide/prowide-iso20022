@@ -1,7 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -44,13 +45,13 @@ public class LoanData144 {
     @XmlElement(name = "MtrtyDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar mtrtyDt;
+    protected LocalDate mtrtyDt;
     @XmlElement(name = "UnqTradIdr", required = true)
     protected String unqTradIdr;
     @XmlElement(name = "EvtDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar evtDt;
+    protected LocalDate evtDt;
     @XmlElement(name = "ClrSts", required = true)
     protected Cleared16Choice clrSts;
     @XmlElement(name = "TradgVn", required = true)
@@ -60,15 +61,15 @@ public class LoanData144 {
     @XmlElement(name = "ExctnDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar exctnDtTm;
+    protected OffsetDateTime exctnDtTm;
     @XmlElement(name = "ValDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar valDt;
+    protected LocalDate valDt;
     @XmlElement(name = "TermntnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar termntnDt;
+    protected LocalDate termntnDt;
     @XmlElement(name = "GnlColl")
     @XmlSchemaType(name = "string")
     protected SpecialCollateral1Code gnlColl;
@@ -108,7 +109,7 @@ public class LoanData144 {
      *     {@link String }
      *     
      */
-    public Calendar getMtrtyDt() {
+    public LocalDate getMtrtyDt() {
         return mtrtyDt;
     }
 
@@ -120,7 +121,7 @@ public class LoanData144 {
      *     {@link String }
      *     
      */
-    public LoanData144 setMtrtyDt(Calendar value) {
+    public LoanData144 setMtrtyDt(LocalDate value) {
         this.mtrtyDt = value;
         return this;
     }
@@ -158,7 +159,7 @@ public class LoanData144 {
      *     {@link String }
      *     
      */
-    public Calendar getEvtDt() {
+    public LocalDate getEvtDt() {
         return evtDt;
     }
 
@@ -170,7 +171,7 @@ public class LoanData144 {
      *     {@link String }
      *     
      */
-    public LoanData144 setEvtDt(Calendar value) {
+    public LoanData144 setEvtDt(LocalDate value) {
         this.evtDt = value;
         return this;
     }
@@ -258,7 +259,7 @@ public class LoanData144 {
      *     {@link String }
      *     
      */
-    public Calendar getExctnDtTm() {
+    public OffsetDateTime getExctnDtTm() {
         return exctnDtTm;
     }
 
@@ -270,7 +271,7 @@ public class LoanData144 {
      *     {@link String }
      *     
      */
-    public LoanData144 setExctnDtTm(Calendar value) {
+    public LoanData144 setExctnDtTm(OffsetDateTime value) {
         this.exctnDtTm = value;
         return this;
     }
@@ -283,7 +284,7 @@ public class LoanData144 {
      *     {@link String }
      *     
      */
-    public Calendar getValDt() {
+    public LocalDate getValDt() {
         return valDt;
     }
 
@@ -295,7 +296,7 @@ public class LoanData144 {
      *     {@link String }
      *     
      */
-    public LoanData144 setValDt(Calendar value) {
+    public LoanData144 setValDt(LocalDate value) {
         this.valDt = value;
         return this;
     }
@@ -308,7 +309,7 @@ public class LoanData144 {
      *     {@link String }
      *     
      */
-    public Calendar getTermntnDt() {
+    public LocalDate getTermntnDt() {
         return termntnDt;
     }
 
@@ -320,7 +321,7 @@ public class LoanData144 {
      *     {@link String }
      *     
      */
-    public LoanData144 setTermntnDt(Calendar value) {
+    public LoanData144 setTermntnDt(LocalDate value) {
         this.termntnDt = value;
         return this;
     }

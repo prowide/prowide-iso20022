@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -64,7 +64,7 @@ public class IndividualPerson33 {
     @XmlElement(name = "BirthDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar birthDt;
+    protected LocalDate birthDt;
     @XmlElement(name = "CtryOfBirth")
     protected String ctryOfBirth;
     @XmlElement(name = "PrvcOfBirth")
@@ -86,7 +86,7 @@ public class IndividualPerson33 {
     @XmlElement(name = "DthDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dthDt;
+    protected LocalDate dthDt;
     @XmlElement(name = "CvlSts")
     protected CivilStatus1Choice cvlSts;
     @XmlElement(name = "EdctnLvl")
@@ -252,7 +252,7 @@ public class IndividualPerson33 {
      *     {@link String }
      *     
      */
-    public Calendar getBirthDt() {
+    public LocalDate getBirthDt() {
         return birthDt;
     }
 
@@ -264,7 +264,7 @@ public class IndividualPerson33 {
      *     {@link String }
      *     
      */
-    public IndividualPerson33 setBirthDt(Calendar value) {
+    public IndividualPerson33 setBirthDt(LocalDate value) {
         this.birthDt = value;
         return this;
     }
@@ -514,7 +514,7 @@ public class IndividualPerson33 {
      *     {@link String }
      *     
      */
-    public Calendar getDthDt() {
+    public LocalDate getDthDt() {
         return dthDt;
     }
 
@@ -526,7 +526,7 @@ public class IndividualPerson33 {
      *     {@link String }
      *     
      */
-    public IndividualPerson33 setDthDt(Calendar value) {
+    public IndividualPerson33 setDthDt(LocalDate value) {
         this.dthDt = value;
         return this;
     }

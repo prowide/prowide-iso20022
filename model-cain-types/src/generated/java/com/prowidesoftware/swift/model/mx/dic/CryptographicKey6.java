@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -53,11 +53,11 @@ public class CryptographicKey6 {
     @XmlElement(name = "ActvtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar actvtnDt;
+    protected OffsetDateTime actvtnDt;
     @XmlElement(name = "DeactvtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar deactvtnDt;
+    protected OffsetDateTime deactvtnDt;
     @XmlElement(name = "NcrptdKeyVal")
     protected ContentInformationType10 ncrptdKeyVal;
     @XmlElement(name = "Cert")
@@ -204,7 +204,7 @@ public class CryptographicKey6 {
      *     {@link String }
      *     
      */
-    public Calendar getActvtnDt() {
+    public OffsetDateTime getActvtnDt() {
         return actvtnDt;
     }
 
@@ -216,7 +216,7 @@ public class CryptographicKey6 {
      *     {@link String }
      *     
      */
-    public CryptographicKey6 setActvtnDt(Calendar value) {
+    public CryptographicKey6 setActvtnDt(OffsetDateTime value) {
         this.actvtnDt = value;
         return this;
     }
@@ -229,7 +229,7 @@ public class CryptographicKey6 {
      *     {@link String }
      *     
      */
-    public Calendar getDeactvtnDt() {
+    public OffsetDateTime getDeactvtnDt() {
         return deactvtnDt;
     }
 
@@ -241,7 +241,7 @@ public class CryptographicKey6 {
      *     {@link String }
      *     
      */
-    public CryptographicKey6 setDeactvtnDt(Calendar value) {
+    public CryptographicKey6 setDeactvtnDt(OffsetDateTime value) {
         this.deactvtnDt = value;
         return this;
     }

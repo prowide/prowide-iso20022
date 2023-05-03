@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -38,11 +38,11 @@ public class RecordTechnicalData4 {
     @XmlElement(name = "LastUpd", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar lastUpd;
+    protected OffsetDateTime lastUpd;
     @XmlElement(name = "SubmissnDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar submissnDtTm;
+    protected OffsetDateTime submissnDtTm;
     @XmlElement(name = "RlvntCmptntAuthrty")
     protected String rlvntCmptntAuthrty;
     @XmlElement(name = "PblctnPrd")
@@ -85,7 +85,7 @@ public class RecordTechnicalData4 {
      *     {@link String }
      *     
      */
-    public Calendar getLastUpd() {
+    public OffsetDateTime getLastUpd() {
         return lastUpd;
     }
 
@@ -97,7 +97,7 @@ public class RecordTechnicalData4 {
      *     {@link String }
      *     
      */
-    public RecordTechnicalData4 setLastUpd(Calendar value) {
+    public RecordTechnicalData4 setLastUpd(OffsetDateTime value) {
         this.lastUpd = value;
         return this;
     }
@@ -110,7 +110,7 @@ public class RecordTechnicalData4 {
      *     {@link String }
      *     
      */
-    public Calendar getSubmissnDtTm() {
+    public OffsetDateTime getSubmissnDtTm() {
         return submissnDtTm;
     }
 
@@ -122,7 +122,7 @@ public class RecordTechnicalData4 {
      *     {@link String }
      *     
      */
-    public RecordTechnicalData4 setSubmissnDtTm(Calendar value) {
+    public RecordTechnicalData4 setSubmissnDtTm(OffsetDateTime value) {
         this.submissnDtTm = value;
         return this;
     }

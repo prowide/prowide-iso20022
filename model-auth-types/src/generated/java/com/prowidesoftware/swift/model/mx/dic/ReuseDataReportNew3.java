@@ -1,8 +1,9 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
@@ -41,7 +42,7 @@ public class ReuseDataReportNew3 {
     @XmlElement(name = "RptgDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar rptgDtTm;
+    protected OffsetDateTime rptgDtTm;
     @XmlElement(name = "CtrPtyData", required = true)
     protected CounterpartyData46 ctrPtyData;
     @XmlElement(name = "CollCmpnt", required = true)
@@ -49,7 +50,7 @@ public class ReuseDataReportNew3 {
     @XmlElement(name = "EvtDay", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar evtDay;
+    protected LocalDate evtDay;
     @XmlElement(name = "FndgSrc")
     protected List<FundingSource1> fndgSrc;
     @XmlElement(name = "SplmtryData")
@@ -88,7 +89,7 @@ public class ReuseDataReportNew3 {
      *     {@link String }
      *     
      */
-    public Calendar getRptgDtTm() {
+    public OffsetDateTime getRptgDtTm() {
         return rptgDtTm;
     }
 
@@ -100,7 +101,7 @@ public class ReuseDataReportNew3 {
      *     {@link String }
      *     
      */
-    public ReuseDataReportNew3 setRptgDtTm(Calendar value) {
+    public ReuseDataReportNew3 setRptgDtTm(OffsetDateTime value) {
         this.rptgDtTm = value;
         return this;
     }
@@ -169,7 +170,7 @@ public class ReuseDataReportNew3 {
      *     {@link String }
      *     
      */
-    public Calendar getEvtDay() {
+    public LocalDate getEvtDay() {
         return evtDay;
     }
 
@@ -181,7 +182,7 @@ public class ReuseDataReportNew3 {
      *     {@link String }
      *     
      */
-    public ReuseDataReportNew3 setEvtDay(Calendar value) {
+    public ReuseDataReportNew3 setEvtDay(LocalDate value) {
         this.evtDay = value;
         return this;
     }

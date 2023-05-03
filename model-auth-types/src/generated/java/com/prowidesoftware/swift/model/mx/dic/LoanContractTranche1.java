@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -38,13 +38,13 @@ public class LoanContractTranche1 {
     @XmlElement(name = "XpctdDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar xpctdDt;
+    protected LocalDate xpctdDt;
     @XmlElement(name = "Amt", required = true)
     protected ActiveCurrencyAndAmount amt;
     @XmlElement(name = "DueDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dueDt;
+    protected LocalDate dueDt;
     @XmlElement(name = "DrtnCd")
     protected String drtnCd;
     @XmlElement(name = "LastTrchInd")
@@ -83,7 +83,7 @@ public class LoanContractTranche1 {
      *     {@link String }
      *     
      */
-    public Calendar getXpctdDt() {
+    public LocalDate getXpctdDt() {
         return xpctdDt;
     }
 
@@ -95,7 +95,7 @@ public class LoanContractTranche1 {
      *     {@link String }
      *     
      */
-    public LoanContractTranche1 setXpctdDt(Calendar value) {
+    public LoanContractTranche1 setXpctdDt(LocalDate value) {
         this.xpctdDt = value;
         return this;
     }
@@ -133,7 +133,7 @@ public class LoanContractTranche1 {
      *     {@link String }
      *     
      */
-    public Calendar getDueDt() {
+    public LocalDate getDueDt() {
         return dueDt;
     }
 
@@ -145,7 +145,7 @@ public class LoanContractTranche1 {
      *     {@link String }
      *     
      */
-    public LoanContractTranche1 setDueDt(Calendar value) {
+    public LoanContractTranche1 setDueDt(LocalDate value) {
         this.dueDt = value;
         return this;
     }

@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -50,11 +50,11 @@ public class PaymentTransactionInformation30 {
     @XmlElement(name = "OrgnlReqdExctnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar orgnlReqdExctnDt;
+    protected LocalDate orgnlReqdExctnDt;
     @XmlElement(name = "OrgnlReqdColltnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar orgnlReqdColltnDt;
+    protected LocalDate orgnlReqdColltnDt;
     @XmlElement(name = "CxlRsnInf")
     protected List<CancellationReasonInformation3> cxlRsnInf;
     @XmlElement(name = "OrgnlTxRef")
@@ -193,7 +193,7 @@ public class PaymentTransactionInformation30 {
      *     {@link String }
      *     
      */
-    public Calendar getOrgnlReqdExctnDt() {
+    public LocalDate getOrgnlReqdExctnDt() {
         return orgnlReqdExctnDt;
     }
 
@@ -205,7 +205,7 @@ public class PaymentTransactionInformation30 {
      *     {@link String }
      *     
      */
-    public PaymentTransactionInformation30 setOrgnlReqdExctnDt(Calendar value) {
+    public PaymentTransactionInformation30 setOrgnlReqdExctnDt(LocalDate value) {
         this.orgnlReqdExctnDt = value;
         return this;
     }
@@ -218,7 +218,7 @@ public class PaymentTransactionInformation30 {
      *     {@link String }
      *     
      */
-    public Calendar getOrgnlReqdColltnDt() {
+    public LocalDate getOrgnlReqdColltnDt() {
         return orgnlReqdColltnDt;
     }
 
@@ -230,7 +230,7 @@ public class PaymentTransactionInformation30 {
      *     {@link String }
      *     
      */
-    public PaymentTransactionInformation30 setOrgnlReqdColltnDt(Calendar value) {
+    public PaymentTransactionInformation30 setOrgnlReqdColltnDt(LocalDate value) {
         this.orgnlReqdColltnDt = value;
         return this;
     }

@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -36,7 +36,7 @@ public class SecuritiesMarketReportHeader1 {
     @XmlElement(name = "SubmissnDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar submissnDtTm;
+    protected OffsetDateTime submissnDtTm;
 
     /**
      * Gets the value of the rptgNtty property.
@@ -96,7 +96,7 @@ public class SecuritiesMarketReportHeader1 {
      *     {@link String }
      *     
      */
-    public Calendar getSubmissnDtTm() {
+    public OffsetDateTime getSubmissnDtTm() {
         return submissnDtTm;
     }
 
@@ -108,7 +108,7 @@ public class SecuritiesMarketReportHeader1 {
      *     {@link String }
      *     
      */
-    public SecuritiesMarketReportHeader1 setSubmissnDtTm(Calendar value) {
+    public SecuritiesMarketReportHeader1 setSubmissnDtTm(OffsetDateTime value) {
         this.submissnDtTm = value;
         return this;
     }

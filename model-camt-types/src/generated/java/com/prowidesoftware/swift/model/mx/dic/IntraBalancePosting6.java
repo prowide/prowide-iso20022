@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -72,7 +72,7 @@ public class IntraBalancePosting6 {
     @XmlElement(name = "StsDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar stsDt;
+    protected OffsetDateTime stsDt;
     @XmlElement(name = "CshSubBalId")
     protected GenericIdentification37 cshSubBalId;
     @XmlElement(name = "Lnkgs")
@@ -84,7 +84,7 @@ public class IntraBalancePosting6 {
     @XmlElement(name = "CreDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar creDtTm;
+    protected OffsetDateTime creDtTm;
     @XmlElement(name = "InstrPrcgAddtlDtls")
     protected String instrPrcgAddtlDtls;
     @XmlElement(name = "SplmtryData")
@@ -373,7 +373,7 @@ public class IntraBalancePosting6 {
      *     {@link String }
      *     
      */
-    public Calendar getStsDt() {
+    public OffsetDateTime getStsDt() {
         return stsDt;
     }
 
@@ -385,7 +385,7 @@ public class IntraBalancePosting6 {
      *     {@link String }
      *     
      */
-    public IntraBalancePosting6 setStsDt(Calendar value) {
+    public IntraBalancePosting6 setStsDt(OffsetDateTime value) {
         this.stsDt = value;
         return this;
     }
@@ -504,7 +504,7 @@ public class IntraBalancePosting6 {
      *     {@link String }
      *     
      */
-    public Calendar getCreDtTm() {
+    public OffsetDateTime getCreDtTm() {
         return creDtTm;
     }
 
@@ -516,7 +516,7 @@ public class IntraBalancePosting6 {
      *     {@link String }
      *     
      */
-    public IntraBalancePosting6 setCreDtTm(Calendar value) {
+    public IntraBalancePosting6 setCreDtTm(OffsetDateTime value) {
         this.creDtTm = value;
         return this;
     }

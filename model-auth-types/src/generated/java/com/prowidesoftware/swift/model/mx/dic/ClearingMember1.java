@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -48,11 +48,11 @@ public class ClearingMember1 {
     @XmlElement(name = "MmbshVldFr", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar mmbshVldFr;
+    protected LocalDate mmbshVldFr;
     @XmlElement(name = "MmbshVldTo", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar mmbshVldTo;
+    protected LocalDate mmbshVldTo;
     @XmlElement(name = "SpnsrgClrMmbId")
     protected PartyIdentification118Choice spnsrgClrMmbId;
     @XmlElement(name = "ClrAcctOwnr", required = true)
@@ -158,7 +158,7 @@ public class ClearingMember1 {
      *     {@link String }
      *     
      */
-    public Calendar getMmbshVldFr() {
+    public LocalDate getMmbshVldFr() {
         return mmbshVldFr;
     }
 
@@ -170,7 +170,7 @@ public class ClearingMember1 {
      *     {@link String }
      *     
      */
-    public ClearingMember1 setMmbshVldFr(Calendar value) {
+    public ClearingMember1 setMmbshVldFr(LocalDate value) {
         this.mmbshVldFr = value;
         return this;
     }
@@ -183,7 +183,7 @@ public class ClearingMember1 {
      *     {@link String }
      *     
      */
-    public Calendar getMmbshVldTo() {
+    public LocalDate getMmbshVldTo() {
         return mmbshVldTo;
     }
 
@@ -195,7 +195,7 @@ public class ClearingMember1 {
      *     {@link String }
      *     
      */
-    public ClearingMember1 setMmbshVldTo(Calendar value) {
+    public ClearingMember1 setMmbshVldTo(LocalDate value) {
         this.mmbshVldTo = value;
         return this;
     }

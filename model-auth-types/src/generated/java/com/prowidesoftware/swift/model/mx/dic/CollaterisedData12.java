@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -33,7 +33,7 @@ public class CollaterisedData12 {
     @XmlElement(name = "CollValDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar collValDt;
+    protected LocalDate collValDt;
     @XmlElement(name = "AsstTp")
     protected CollateralType21 asstTp;
     @XmlElement(name = "NetXpsrCollstnInd")
@@ -49,7 +49,7 @@ public class CollaterisedData12 {
      *     {@link String }
      *     
      */
-    public Calendar getCollValDt() {
+    public LocalDate getCollValDt() {
         return collValDt;
     }
 
@@ -61,7 +61,7 @@ public class CollaterisedData12 {
      *     {@link String }
      *     
      */
-    public CollaterisedData12 setCollValDt(Calendar value) {
+    public CollaterisedData12 setCollValDt(LocalDate value) {
         this.collValDt = value;
         return this;
     }

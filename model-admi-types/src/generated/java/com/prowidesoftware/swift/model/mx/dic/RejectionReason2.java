@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -36,7 +36,7 @@ public class RejectionReason2 {
     @XmlElement(name = "RjctnDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar rjctnDtTm;
+    protected OffsetDateTime rjctnDtTm;
     @XmlElement(name = "ErrLctn")
     protected String errLctn;
     @XmlElement(name = "RsnDesc")
@@ -77,7 +77,7 @@ public class RejectionReason2 {
      *     {@link String }
      *     
      */
-    public Calendar getRjctnDtTm() {
+    public OffsetDateTime getRjctnDtTm() {
         return rjctnDtTm;
     }
 
@@ -89,7 +89,7 @@ public class RejectionReason2 {
      *     {@link String }
      *     
      */
-    public RejectionReason2 setRjctnDtTm(Calendar value) {
+    public RejectionReason2 setRjctnDtTm(OffsetDateTime value) {
         this.rjctnDtTm = value;
         return this;
     }

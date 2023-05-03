@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -52,7 +52,7 @@ public class CardAccount2 {
     @XmlElement(name = "BalDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar balDt;
+    protected LocalDate balDt;
 
     /**
      * Gets the value of the selctdAcctTp property.
@@ -237,7 +237,7 @@ public class CardAccount2 {
      *     {@link String }
      *     
      */
-    public Calendar getBalDt() {
+    public LocalDate getBalDt() {
         return balDt;
     }
 
@@ -249,7 +249,7 @@ public class CardAccount2 {
      *     {@link String }
      *     
      */
-    public CardAccount2 setBalDt(Calendar value) {
+    public CardAccount2 setBalDt(LocalDate value) {
         this.balDt = value;
         return this;
     }

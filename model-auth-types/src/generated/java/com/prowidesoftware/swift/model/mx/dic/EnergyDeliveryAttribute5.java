@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.OffsetTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -40,7 +40,7 @@ public class EnergyDeliveryAttribute5 {
     @XmlElement(name = "DlvryIntrvl", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected Calendar dlvryIntrvl;
+    protected OffsetTime dlvryIntrvl;
     @XmlElement(name = "DlvryPrd")
     protected DateTimePeriod1 dlvryPrd;
     @XmlElement(name = "DlvryTm")
@@ -66,7 +66,7 @@ public class EnergyDeliveryAttribute5 {
      *     {@link String }
      *     
      */
-    public Calendar getDlvryIntrvl() {
+    public OffsetTime getDlvryIntrvl() {
         return dlvryIntrvl;
     }
 
@@ -78,7 +78,7 @@ public class EnergyDeliveryAttribute5 {
      *     {@link String }
      *     
      */
-    public EnergyDeliveryAttribute5 setDlvryIntrvl(Calendar value) {
+    public EnergyDeliveryAttribute5 setDlvryIntrvl(OffsetTime value) {
         this.dlvryIntrvl = value;
         return this;
     }

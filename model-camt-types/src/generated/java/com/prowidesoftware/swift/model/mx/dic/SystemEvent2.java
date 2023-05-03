@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -36,19 +36,19 @@ public class SystemEvent2 {
     @XmlElement(name = "SchdldTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar schdldTm;
+    protected OffsetDateTime schdldTm;
     @XmlElement(name = "FctvTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar fctvTm;
+    protected OffsetDateTime fctvTm;
     @XmlElement(name = "StartTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar startTm;
+    protected OffsetDateTime startTm;
     @XmlElement(name = "EndTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar endTm;
+    protected OffsetDateTime endTm;
 
     /**
      * Gets the value of the tp property.
@@ -83,7 +83,7 @@ public class SystemEvent2 {
      *     {@link String }
      *     
      */
-    public Calendar getSchdldTm() {
+    public OffsetDateTime getSchdldTm() {
         return schdldTm;
     }
 
@@ -95,7 +95,7 @@ public class SystemEvent2 {
      *     {@link String }
      *     
      */
-    public SystemEvent2 setSchdldTm(Calendar value) {
+    public SystemEvent2 setSchdldTm(OffsetDateTime value) {
         this.schdldTm = value;
         return this;
     }
@@ -108,7 +108,7 @@ public class SystemEvent2 {
      *     {@link String }
      *     
      */
-    public Calendar getFctvTm() {
+    public OffsetDateTime getFctvTm() {
         return fctvTm;
     }
 
@@ -120,7 +120,7 @@ public class SystemEvent2 {
      *     {@link String }
      *     
      */
-    public SystemEvent2 setFctvTm(Calendar value) {
+    public SystemEvent2 setFctvTm(OffsetDateTime value) {
         this.fctvTm = value;
         return this;
     }
@@ -133,7 +133,7 @@ public class SystemEvent2 {
      *     {@link String }
      *     
      */
-    public Calendar getStartTm() {
+    public OffsetDateTime getStartTm() {
         return startTm;
     }
 
@@ -145,7 +145,7 @@ public class SystemEvent2 {
      *     {@link String }
      *     
      */
-    public SystemEvent2 setStartTm(Calendar value) {
+    public SystemEvent2 setStartTm(OffsetDateTime value) {
         this.startTm = value;
         return this;
     }
@@ -158,7 +158,7 @@ public class SystemEvent2 {
      *     {@link String }
      *     
      */
-    public Calendar getEndTm() {
+    public OffsetDateTime getEndTm() {
         return endTm;
     }
 
@@ -170,7 +170,7 @@ public class SystemEvent2 {
      *     {@link String }
      *     
      */
-    public SystemEvent2 setEndTm(Calendar value) {
+    public SystemEvent2 setEndTm(OffsetDateTime value) {
         this.endTm = value;
         return this;
     }

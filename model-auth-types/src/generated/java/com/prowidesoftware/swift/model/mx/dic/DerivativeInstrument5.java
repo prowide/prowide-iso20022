@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -38,7 +38,7 @@ public class DerivativeInstrument5 {
     @XmlElement(name = "XpryDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar xpryDt;
+    protected LocalDate xpryDt;
     @XmlElement(name = "PricMltplr")
     protected BigDecimal pricMltplr;
     @XmlElement(name = "UndrlygInstrm")
@@ -65,7 +65,7 @@ public class DerivativeInstrument5 {
      *     {@link String }
      *     
      */
-    public Calendar getXpryDt() {
+    public LocalDate getXpryDt() {
         return xpryDt;
     }
 
@@ -77,7 +77,7 @@ public class DerivativeInstrument5 {
      *     {@link String }
      *     
      */
-    public DerivativeInstrument5 setXpryDt(Calendar value) {
+    public DerivativeInstrument5 setXpryDt(LocalDate value) {
         this.xpryDt = value;
         return this;
     }

@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -48,7 +48,7 @@ public class CorrectivePaymentInitiation3 {
     @XmlElement(name = "ReqdColltnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar reqdColltnDt;
+    protected LocalDate reqdColltnDt;
 
     /**
      * Gets the value of the grpHdr property.
@@ -208,7 +208,7 @@ public class CorrectivePaymentInitiation3 {
      *     {@link String }
      *     
      */
-    public Calendar getReqdColltnDt() {
+    public LocalDate getReqdColltnDt() {
         return reqdColltnDt;
     }
 
@@ -220,7 +220,7 @@ public class CorrectivePaymentInitiation3 {
      *     {@link String }
      *     
      */
-    public CorrectivePaymentInitiation3 setReqdColltnDt(Calendar value) {
+    public CorrectivePaymentInitiation3 setReqdColltnDt(LocalDate value) {
         this.reqdColltnDt = value;
         return this;
     }

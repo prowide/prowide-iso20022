@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -30,7 +30,7 @@ public class DebtInstrument4 {
     @XmlElement(name = "MtrtyDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar mtrtyDt;
+    protected LocalDate mtrtyDt;
 
     /**
      * Gets the value of the mtrtyDt property.
@@ -40,7 +40,7 @@ public class DebtInstrument4 {
      *     {@link String }
      *     
      */
-    public Calendar getMtrtyDt() {
+    public LocalDate getMtrtyDt() {
         return mtrtyDt;
     }
 
@@ -52,7 +52,7 @@ public class DebtInstrument4 {
      *     {@link String }
      *     
      */
-    public DebtInstrument4 setMtrtyDt(Calendar value) {
+    public DebtInstrument4 setMtrtyDt(LocalDate value) {
         this.mtrtyDt = value;
         return this;
     }

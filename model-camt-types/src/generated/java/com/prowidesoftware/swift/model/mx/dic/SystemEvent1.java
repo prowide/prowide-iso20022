@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -34,11 +34,11 @@ public class SystemEvent1 {
     @XmlElement(name = "SchdldTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar schdldTm;
+    protected OffsetDateTime schdldTm;
     @XmlElement(name = "FctvTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar fctvTm;
+    protected OffsetDateTime fctvTm;
 
     /**
      * Gets the value of the tp property.
@@ -73,7 +73,7 @@ public class SystemEvent1 {
      *     {@link String }
      *     
      */
-    public Calendar getSchdldTm() {
+    public OffsetDateTime getSchdldTm() {
         return schdldTm;
     }
 
@@ -85,7 +85,7 @@ public class SystemEvent1 {
      *     {@link String }
      *     
      */
-    public SystemEvent1 setSchdldTm(Calendar value) {
+    public SystemEvent1 setSchdldTm(OffsetDateTime value) {
         this.schdldTm = value;
         return this;
     }
@@ -98,7 +98,7 @@ public class SystemEvent1 {
      *     {@link String }
      *     
      */
-    public Calendar getFctvTm() {
+    public OffsetDateTime getFctvTm() {
         return fctvTm;
     }
 
@@ -110,7 +110,7 @@ public class SystemEvent1 {
      *     {@link String }
      *     
      */
-    public SystemEvent1 setFctvTm(Calendar value) {
+    public SystemEvent1 setFctvTm(OffsetDateTime value) {
         this.fctvTm = value;
         return this;
     }

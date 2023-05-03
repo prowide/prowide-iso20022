@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -33,7 +33,7 @@ public class PayInScheduleItems {
     @XmlElement(name = "Ddln", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected Calendar ddln;
+    protected OffsetTime ddln;
 
     /**
      * Gets the value of the amt property.
@@ -68,7 +68,7 @@ public class PayInScheduleItems {
      *     {@link String }
      *     
      */
-    public Calendar getDdln() {
+    public OffsetTime getDdln() {
         return ddln;
     }
 
@@ -80,7 +80,7 @@ public class PayInScheduleItems {
      *     {@link String }
      *     
      */
-    public PayInScheduleItems setDdln(Calendar value) {
+    public PayInScheduleItems setDdln(OffsetTime value) {
         this.ddln = value;
         return this;
     }

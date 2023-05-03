@@ -1,7 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -42,11 +43,11 @@ public class TransferInstruction1 {
     @XmlElement(name = "StartDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar startDtTm;
+    protected OffsetDateTime startDtTm;
     @XmlElement(name = "StartDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar startDt;
+    protected LocalDate startDt;
     @XmlElement(name = "Desc")
     protected String desc;
 
@@ -133,7 +134,7 @@ public class TransferInstruction1 {
      *     {@link String }
      *     
      */
-    public Calendar getStartDtTm() {
+    public OffsetDateTime getStartDtTm() {
         return startDtTm;
     }
 
@@ -145,7 +146,7 @@ public class TransferInstruction1 {
      *     {@link String }
      *     
      */
-    public TransferInstruction1 setStartDtTm(Calendar value) {
+    public TransferInstruction1 setStartDtTm(OffsetDateTime value) {
         this.startDtTm = value;
         return this;
     }
@@ -158,7 +159,7 @@ public class TransferInstruction1 {
      *     {@link String }
      *     
      */
-    public Calendar getStartDt() {
+    public LocalDate getStartDt() {
         return startDt;
     }
 
@@ -170,7 +171,7 @@ public class TransferInstruction1 {
      *     {@link String }
      *     
      */
-    public TransferInstruction1 setStartDt(Calendar value) {
+    public TransferInstruction1 setStartDt(LocalDate value) {
         this.startDt = value;
         return this;
     }

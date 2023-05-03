@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -36,7 +36,7 @@ public class TradeRecurrentQuery3 {
     @XmlElement(name = "VldUntil", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar vldUntil;
+    protected LocalDate vldUntil;
 
     /**
      * Gets the value of the qryTp property.
@@ -96,7 +96,7 @@ public class TradeRecurrentQuery3 {
      *     {@link String }
      *     
      */
-    public Calendar getVldUntil() {
+    public LocalDate getVldUntil() {
         return vldUntil;
     }
 
@@ -108,7 +108,7 @@ public class TradeRecurrentQuery3 {
      *     {@link String }
      *     
      */
-    public TradeRecurrentQuery3 setVldUntil(Calendar value) {
+    public TradeRecurrentQuery3 setVldUntil(LocalDate value) {
         this.vldUntil = value;
         return this;
     }

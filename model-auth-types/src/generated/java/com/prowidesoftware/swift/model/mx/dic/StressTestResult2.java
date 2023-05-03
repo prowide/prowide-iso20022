@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -37,7 +37,7 @@ public class StressTestResult2 {
     @XmlElement(name = "StrssTstDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar strssTstDt;
+    protected LocalDate strssTstDt;
     @XmlElement(name = "StrssTstFctrTp")
     protected String strssTstFctrTp;
     @XmlElement(name = "NetAsstValBsis")
@@ -60,7 +60,7 @@ public class StressTestResult2 {
      *     {@link String }
      *     
      */
-    public Calendar getStrssTstDt() {
+    public LocalDate getStrssTstDt() {
         return strssTstDt;
     }
 
@@ -72,7 +72,7 @@ public class StressTestResult2 {
      *     {@link String }
      *     
      */
-    public StressTestResult2 setStrssTstDt(Calendar value) {
+    public StressTestResult2 setStrssTstDt(LocalDate value) {
         this.strssTstDt = value;
         return this;
     }

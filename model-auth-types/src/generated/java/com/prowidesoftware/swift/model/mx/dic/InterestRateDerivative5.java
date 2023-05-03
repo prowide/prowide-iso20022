@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -41,7 +41,7 @@ public class InterestRateDerivative5 {
     @XmlElement(name = "UndrlygSwpMtrtyDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar undrlygSwpMtrtyDt;
+    protected LocalDate undrlygSwpMtrtyDt;
     @XmlElement(name = "InfltnIndx")
     protected InflationIndex1Choice infltnIndx;
     @XmlElement(name = "IntrstRateRef", required = true)
@@ -130,7 +130,7 @@ public class InterestRateDerivative5 {
      *     {@link String }
      *     
      */
-    public Calendar getUndrlygSwpMtrtyDt() {
+    public LocalDate getUndrlygSwpMtrtyDt() {
         return undrlygSwpMtrtyDt;
     }
 
@@ -142,7 +142,7 @@ public class InterestRateDerivative5 {
      *     {@link String }
      *     
      */
-    public InterestRateDerivative5 setUndrlygSwpMtrtyDt(Calendar value) {
+    public InterestRateDerivative5 setUndrlygSwpMtrtyDt(LocalDate value) {
         this.undrlygSwpMtrtyDt = value;
         return this;
     }
