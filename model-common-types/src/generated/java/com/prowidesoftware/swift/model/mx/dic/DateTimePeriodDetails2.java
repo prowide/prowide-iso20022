@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -31,11 +31,11 @@ public class DateTimePeriodDetails2 {
     @XmlElement(name = "FrDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar frDtTm;
+    protected OffsetDateTime frDtTm;
     @XmlElement(name = "ToDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar toDtTm;
+    protected OffsetDateTime toDtTm;
 
     /**
      * Gets the value of the frDtTm property.
@@ -45,7 +45,7 @@ public class DateTimePeriodDetails2 {
      *     {@link String }
      *     
      */
-    public Calendar getFrDtTm() {
+    public OffsetDateTime getFrDtTm() {
         return frDtTm;
     }
 
@@ -57,7 +57,7 @@ public class DateTimePeriodDetails2 {
      *     {@link String }
      *     
      */
-    public DateTimePeriodDetails2 setFrDtTm(Calendar value) {
+    public DateTimePeriodDetails2 setFrDtTm(OffsetDateTime value) {
         this.frDtTm = value;
         return this;
     }
@@ -70,7 +70,7 @@ public class DateTimePeriodDetails2 {
      *     {@link String }
      *     
      */
-    public Calendar getToDtTm() {
+    public OffsetDateTime getToDtTm() {
         return toDtTm;
     }
 
@@ -82,7 +82,7 @@ public class DateTimePeriodDetails2 {
      *     {@link String }
      *     
      */
-    public DateTimePeriodDetails2 setToDtTm(Calendar value) {
+    public DateTimePeriodDetails2 setToDtTm(OffsetDateTime value) {
         this.toDtTm = value;
         return this;
     }

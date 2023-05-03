@@ -2,8 +2,9 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
@@ -49,11 +50,11 @@ public class InvoiceSummary2 {
     @XmlElement(name = "InvcDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar invcDt;
+    protected LocalDate invcDt;
     @XmlElement(name = "InvcCreDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar invcCreDtTm;
+    protected OffsetDateTime invcCreDtTm;
     @XmlElement(name = "SummryCmmdtyId")
     protected String summryCmmdtyId;
     @XmlElement(name = "FrghtAmt")
@@ -149,7 +150,7 @@ public class InvoiceSummary2 {
      *     {@link String }
      *     
      */
-    public Calendar getInvcDt() {
+    public LocalDate getInvcDt() {
         return invcDt;
     }
 
@@ -161,7 +162,7 @@ public class InvoiceSummary2 {
      *     {@link String }
      *     
      */
-    public InvoiceSummary2 setInvcDt(Calendar value) {
+    public InvoiceSummary2 setInvcDt(LocalDate value) {
         this.invcDt = value;
         return this;
     }
@@ -174,7 +175,7 @@ public class InvoiceSummary2 {
      *     {@link String }
      *     
      */
-    public Calendar getInvcCreDtTm() {
+    public OffsetDateTime getInvcCreDtTm() {
         return invcCreDtTm;
     }
 
@@ -186,7 +187,7 @@ public class InvoiceSummary2 {
      *     {@link String }
      *     
      */
-    public InvoiceSummary2 setInvcCreDtTm(Calendar value) {
+    public InvoiceSummary2 setInvcCreDtTm(OffsetDateTime value) {
         this.invcCreDtTm = value;
         return this;
     }

@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -47,7 +47,7 @@ public class Cardholder19 {
     @XmlElement(name = "DtOfBirth", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dtOfBirth;
+    protected LocalDate dtOfBirth;
     @XmlElement(name = "HghValCstmrInd")
     protected Boolean hghValCstmrInd;
     @XmlElement(name = "AddtlData")
@@ -169,7 +169,7 @@ public class Cardholder19 {
      *     {@link String }
      *     
      */
-    public Calendar getDtOfBirth() {
+    public LocalDate getDtOfBirth() {
         return dtOfBirth;
     }
 
@@ -181,7 +181,7 @@ public class Cardholder19 {
      *     {@link String }
      *     
      */
-    public Cardholder19 setDtOfBirth(Calendar value) {
+    public Cardholder19 setDtOfBirth(LocalDate value) {
         this.dtOfBirth = value;
         return this;
     }

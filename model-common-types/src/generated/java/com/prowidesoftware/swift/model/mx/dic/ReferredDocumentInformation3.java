@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -36,7 +36,7 @@ public class ReferredDocumentInformation3 {
     @XmlElement(name = "RltdDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar rltdDt;
+    protected LocalDate rltdDt;
 
     /**
      * Gets the value of the tp property.
@@ -96,7 +96,7 @@ public class ReferredDocumentInformation3 {
      *     {@link String }
      *     
      */
-    public Calendar getRltdDt() {
+    public LocalDate getRltdDt() {
         return rltdDt;
     }
 
@@ -108,7 +108,7 @@ public class ReferredDocumentInformation3 {
      *     {@link String }
      *     
      */
-    public ReferredDocumentInformation3 setRltdDt(Calendar value) {
+    public ReferredDocumentInformation3 setRltdDt(LocalDate value) {
         this.rltdDt = value;
         return this;
     }

@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -34,21 +34,21 @@ public class DateTimeSearch2Choice {
     @XmlElement(name = "FrDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar frDtTm;
+    protected OffsetDateTime frDtTm;
     @XmlElement(name = "ToDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar toDtTm;
+    protected OffsetDateTime toDtTm;
     @XmlElement(name = "FrToDtTm")
     protected DateTimePeriod1 frToDtTm;
     @XmlElement(name = "EQDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar eqDtTm;
+    protected OffsetDateTime eqDtTm;
     @XmlElement(name = "NEQDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar neqDtTm;
+    protected OffsetDateTime neqDtTm;
 
     /**
      * Gets the value of the frDtTm property.
@@ -58,7 +58,7 @@ public class DateTimeSearch2Choice {
      *     {@link String }
      *     
      */
-    public Calendar getFrDtTm() {
+    public OffsetDateTime getFrDtTm() {
         return frDtTm;
     }
 
@@ -70,7 +70,7 @@ public class DateTimeSearch2Choice {
      *     {@link String }
      *     
      */
-    public DateTimeSearch2Choice setFrDtTm(Calendar value) {
+    public DateTimeSearch2Choice setFrDtTm(OffsetDateTime value) {
         this.frDtTm = value;
         return this;
     }
@@ -83,7 +83,7 @@ public class DateTimeSearch2Choice {
      *     {@link String }
      *     
      */
-    public Calendar getToDtTm() {
+    public OffsetDateTime getToDtTm() {
         return toDtTm;
     }
 
@@ -95,7 +95,7 @@ public class DateTimeSearch2Choice {
      *     {@link String }
      *     
      */
-    public DateTimeSearch2Choice setToDtTm(Calendar value) {
+    public DateTimeSearch2Choice setToDtTm(OffsetDateTime value) {
         this.toDtTm = value;
         return this;
     }
@@ -133,7 +133,7 @@ public class DateTimeSearch2Choice {
      *     {@link String }
      *     
      */
-    public Calendar getEQDtTm() {
+    public OffsetDateTime getEQDtTm() {
         return eqDtTm;
     }
 
@@ -145,7 +145,7 @@ public class DateTimeSearch2Choice {
      *     {@link String }
      *     
      */
-    public DateTimeSearch2Choice setEQDtTm(Calendar value) {
+    public DateTimeSearch2Choice setEQDtTm(OffsetDateTime value) {
         this.eqDtTm = value;
         return this;
     }
@@ -158,7 +158,7 @@ public class DateTimeSearch2Choice {
      *     {@link String }
      *     
      */
-    public Calendar getNEQDtTm() {
+    public OffsetDateTime getNEQDtTm() {
         return neqDtTm;
     }
 
@@ -170,7 +170,7 @@ public class DateTimeSearch2Choice {
      *     {@link String }
      *     
      */
-    public DateTimeSearch2Choice setNEQDtTm(Calendar value) {
+    public DateTimeSearch2Choice setNEQDtTm(OffsetDateTime value) {
         this.neqDtTm = value;
         return this;
     }

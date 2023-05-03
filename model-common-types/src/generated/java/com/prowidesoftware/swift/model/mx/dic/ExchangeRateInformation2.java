@@ -1,7 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
+import java.time.OffsetTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -40,11 +41,11 @@ public class ExchangeRateInformation2 {
     @XmlElement(name = "Dt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dt;
+    protected LocalDate dt;
     @XmlElement(name = "Tm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected Calendar tm;
+    protected OffsetTime tm;
     @XmlElement(name = "XchgRateDtl")
     protected ExchangeRateDetail1 xchgRateDtl;
     @XmlElement(name = "RateLck")
@@ -108,7 +109,7 @@ public class ExchangeRateInformation2 {
      *     {@link String }
      *     
      */
-    public Calendar getDt() {
+    public LocalDate getDt() {
         return dt;
     }
 
@@ -120,7 +121,7 @@ public class ExchangeRateInformation2 {
      *     {@link String }
      *     
      */
-    public ExchangeRateInformation2 setDt(Calendar value) {
+    public ExchangeRateInformation2 setDt(LocalDate value) {
         this.dt = value;
         return this;
     }
@@ -133,7 +134,7 @@ public class ExchangeRateInformation2 {
      *     {@link String }
      *     
      */
-    public Calendar getTm() {
+    public OffsetTime getTm() {
         return tm;
     }
 
@@ -145,7 +146,7 @@ public class ExchangeRateInformation2 {
      *     {@link String }
      *     
      */
-    public ExchangeRateInformation2 setTm(Calendar value) {
+    public ExchangeRateInformation2 setTm(OffsetTime value) {
         this.tm = value;
         return this;
     }

@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -49,7 +49,7 @@ public class Header32 {
     @XmlElement(name = "CreDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar creDtTm;
+    protected OffsetDateTime creDtTm;
     @XmlElement(name = "InitgPty", required = true)
     protected String initgPty;
     @XmlElement(name = "RcptPty")
@@ -167,7 +167,7 @@ public class Header32 {
      *     {@link String }
      *     
      */
-    public Calendar getCreDtTm() {
+    public OffsetDateTime getCreDtTm() {
         return creDtTm;
     }
 
@@ -179,7 +179,7 @@ public class Header32 {
      *     {@link String }
      *     
      */
-    public Header32 setCreDtTm(Calendar value) {
+    public Header32 setCreDtTm(OffsetDateTime value) {
         this.creDtTm = value;
         return this;
     }

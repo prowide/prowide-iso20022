@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -59,7 +59,7 @@ public class TaxInformation7 {
     @XmlElement(name = "Dt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dt;
+    protected LocalDate dt;
     @XmlElement(name = "SeqNb")
     protected BigDecimal seqNb;
     @XmlElement(name = "Rcrd")
@@ -273,7 +273,7 @@ public class TaxInformation7 {
      *     {@link String }
      *     
      */
-    public Calendar getDt() {
+    public LocalDate getDt() {
         return dt;
     }
 
@@ -285,7 +285,7 @@ public class TaxInformation7 {
      *     {@link String }
      *     
      */
-    public TaxInformation7 setDt(Calendar value) {
+    public TaxInformation7 setDt(LocalDate value) {
         this.dt = value;
         return this;
     }

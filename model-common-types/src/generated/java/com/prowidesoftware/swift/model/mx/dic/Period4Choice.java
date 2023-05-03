@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -33,15 +33,15 @@ public class Period4Choice {
     @XmlElement(name = "Dt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dt;
+    protected LocalDate dt;
     @XmlElement(name = "FrDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar frDt;
+    protected LocalDate frDt;
     @XmlElement(name = "ToDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar toDt;
+    protected LocalDate toDt;
     @XmlElement(name = "FrDtToDt")
     protected Period2 frDtToDt;
 
@@ -53,7 +53,7 @@ public class Period4Choice {
      *     {@link String }
      *     
      */
-    public Calendar getDt() {
+    public LocalDate getDt() {
         return dt;
     }
 
@@ -65,7 +65,7 @@ public class Period4Choice {
      *     {@link String }
      *     
      */
-    public Period4Choice setDt(Calendar value) {
+    public Period4Choice setDt(LocalDate value) {
         this.dt = value;
         return this;
     }
@@ -78,7 +78,7 @@ public class Period4Choice {
      *     {@link String }
      *     
      */
-    public Calendar getFrDt() {
+    public LocalDate getFrDt() {
         return frDt;
     }
 
@@ -90,7 +90,7 @@ public class Period4Choice {
      *     {@link String }
      *     
      */
-    public Period4Choice setFrDt(Calendar value) {
+    public Period4Choice setFrDt(LocalDate value) {
         this.frDt = value;
         return this;
     }
@@ -103,7 +103,7 @@ public class Period4Choice {
      *     {@link String }
      *     
      */
-    public Calendar getToDt() {
+    public LocalDate getToDt() {
         return toDt;
     }
 
@@ -115,7 +115,7 @@ public class Period4Choice {
      *     {@link String }
      *     
      */
-    public Period4Choice setToDt(Calendar value) {
+    public Period4Choice setToDt(LocalDate value) {
         this.toDt = value;
         return this;
     }

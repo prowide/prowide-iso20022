@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -53,7 +53,7 @@ public class BusinessApplicationHeader1 {
     @XmlElement(name = "CreDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar creDt;
+    protected OffsetDateTime creDt;
     @XmlElement(name = "CpyDplct")
     @XmlSchemaType(name = "string")
     protected CopyDuplicate1Code cpyDplct;
@@ -222,7 +222,7 @@ public class BusinessApplicationHeader1 {
      *     {@link String }
      *     
      */
-    public Calendar getCreDt() {
+    public OffsetDateTime getCreDt() {
         return creDt;
     }
 
@@ -234,7 +234,7 @@ public class BusinessApplicationHeader1 {
      *     {@link String }
      *     
      */
-    public BusinessApplicationHeader1 setCreDt(Calendar value) {
+    public BusinessApplicationHeader1 setCreDt(OffsetDateTime value) {
         this.creDt = value;
         return this;
     }

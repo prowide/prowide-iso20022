@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -32,7 +32,7 @@ public class TaxPeriod2 {
     @XmlElement(name = "Yr", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar yr;
+    protected LocalDate yr;
     @XmlElement(name = "Tp")
     @XmlSchemaType(name = "string")
     protected TaxRecordPeriod1Code tp;
@@ -47,7 +47,7 @@ public class TaxPeriod2 {
      *     {@link String }
      *     
      */
-    public Calendar getYr() {
+    public LocalDate getYr() {
         return yr;
     }
 
@@ -59,7 +59,7 @@ public class TaxPeriod2 {
      *     {@link String }
      *     
      */
-    public TaxPeriod2 setYr(Calendar value) {
+    public TaxPeriod2 setYr(LocalDate value) {
         this.yr = value;
         return this;
     }

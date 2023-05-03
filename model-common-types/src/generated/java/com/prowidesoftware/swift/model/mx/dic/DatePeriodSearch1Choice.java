@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -34,21 +34,21 @@ public class DatePeriodSearch1Choice {
     @XmlElement(name = "FrDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar frDt;
+    protected LocalDate frDt;
     @XmlElement(name = "ToDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar toDt;
+    protected LocalDate toDt;
     @XmlElement(name = "FrToDt")
     protected DatePeriod2 frToDt;
     @XmlElement(name = "EQDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar eqDt;
+    protected LocalDate eqDt;
     @XmlElement(name = "NEQDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar neqDt;
+    protected LocalDate neqDt;
 
     /**
      * Gets the value of the frDt property.
@@ -58,7 +58,7 @@ public class DatePeriodSearch1Choice {
      *     {@link String }
      *     
      */
-    public Calendar getFrDt() {
+    public LocalDate getFrDt() {
         return frDt;
     }
 
@@ -70,7 +70,7 @@ public class DatePeriodSearch1Choice {
      *     {@link String }
      *     
      */
-    public DatePeriodSearch1Choice setFrDt(Calendar value) {
+    public DatePeriodSearch1Choice setFrDt(LocalDate value) {
         this.frDt = value;
         return this;
     }
@@ -83,7 +83,7 @@ public class DatePeriodSearch1Choice {
      *     {@link String }
      *     
      */
-    public Calendar getToDt() {
+    public LocalDate getToDt() {
         return toDt;
     }
 
@@ -95,7 +95,7 @@ public class DatePeriodSearch1Choice {
      *     {@link String }
      *     
      */
-    public DatePeriodSearch1Choice setToDt(Calendar value) {
+    public DatePeriodSearch1Choice setToDt(LocalDate value) {
         this.toDt = value;
         return this;
     }
@@ -133,7 +133,7 @@ public class DatePeriodSearch1Choice {
      *     {@link String }
      *     
      */
-    public Calendar getEQDt() {
+    public LocalDate getEQDt() {
         return eqDt;
     }
 
@@ -145,7 +145,7 @@ public class DatePeriodSearch1Choice {
      *     {@link String }
      *     
      */
-    public DatePeriodSearch1Choice setEQDt(Calendar value) {
+    public DatePeriodSearch1Choice setEQDt(LocalDate value) {
         this.eqDt = value;
         return this;
     }
@@ -158,7 +158,7 @@ public class DatePeriodSearch1Choice {
      *     {@link String }
      *     
      */
-    public Calendar getNEQDt() {
+    public LocalDate getNEQDt() {
         return neqDt;
     }
 
@@ -170,7 +170,7 @@ public class DatePeriodSearch1Choice {
      *     {@link String }
      *     
      */
-    public DatePeriodSearch1Choice setNEQDt(Calendar value) {
+    public DatePeriodSearch1Choice setNEQDt(LocalDate value) {
         this.neqDt = value;
         return this;
     }

@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -65,11 +65,11 @@ public class BusinessApplicationHeaderV03Impl {
     @XmlElement(name = "CreDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar creDt;
+    protected OffsetDateTime creDt;
     @XmlElement(name = "BizPrcgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar bizPrcgDt;
+    protected OffsetDateTime bizPrcgDt;
     @XmlElement(name = "CpyDplct")
     @XmlSchemaType(name = "string")
     protected CopyDuplicate1Code cpyDplct;
@@ -266,7 +266,7 @@ public class BusinessApplicationHeaderV03Impl {
      *     {@link String }
      *     
      */
-    public Calendar getCreDt() {
+    public OffsetDateTime getCreDt() {
         return creDt;
     }
 
@@ -278,7 +278,7 @@ public class BusinessApplicationHeaderV03Impl {
      *     {@link String }
      *     
      */
-    public BusinessApplicationHeaderV03Impl setCreDt(Calendar value) {
+    public BusinessApplicationHeaderV03Impl setCreDt(OffsetDateTime value) {
         this.creDt = value;
         return this;
     }
@@ -291,7 +291,7 @@ public class BusinessApplicationHeaderV03Impl {
      *     {@link String }
      *     
      */
-    public Calendar getBizPrcgDt() {
+    public OffsetDateTime getBizPrcgDt() {
         return bizPrcgDt;
     }
 
@@ -303,7 +303,7 @@ public class BusinessApplicationHeaderV03Impl {
      *     {@link String }
      *     
      */
-    public BusinessApplicationHeaderV03Impl setBizPrcgDt(Calendar value) {
+    public BusinessApplicationHeaderV03Impl setBizPrcgDt(OffsetDateTime value) {
         this.bizPrcgDt = value;
         return this;
     }

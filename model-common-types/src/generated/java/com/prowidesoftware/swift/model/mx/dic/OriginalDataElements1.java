@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -55,7 +55,7 @@ public class OriginalDataElements1 {
     @XmlElement(name = "LclDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar lclDtTm;
+    protected OffsetDateTime lclDtTm;
     @XmlElement(name = "TmZone")
     protected String tmZone;
     @XmlElement(name = "TxRef")
@@ -63,7 +63,7 @@ public class OriginalDataElements1 {
     @XmlElement(name = "TrnsmssnDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar trnsmssnDtTm;
+    protected OffsetDateTime trnsmssnDtTm;
     @XmlElement(name = "SysTracAudtNb")
     protected String sysTracAudtNb;
     @XmlElement(name = "RtrvlRefNb", required = true)
@@ -190,7 +190,7 @@ public class OriginalDataElements1 {
      *     {@link String }
      *     
      */
-    public Calendar getLclDtTm() {
+    public OffsetDateTime getLclDtTm() {
         return lclDtTm;
     }
 
@@ -202,7 +202,7 @@ public class OriginalDataElements1 {
      *     {@link String }
      *     
      */
-    public OriginalDataElements1 setLclDtTm(Calendar value) {
+    public OriginalDataElements1 setLclDtTm(OffsetDateTime value) {
         this.lclDtTm = value;
         return this;
     }
@@ -265,7 +265,7 @@ public class OriginalDataElements1 {
      *     {@link String }
      *     
      */
-    public Calendar getTrnsmssnDtTm() {
+    public OffsetDateTime getTrnsmssnDtTm() {
         return trnsmssnDtTm;
     }
 
@@ -277,7 +277,7 @@ public class OriginalDataElements1 {
      *     {@link String }
      *     
      */
-    public OriginalDataElements1 setTrnsmssnDtTm(Calendar value) {
+    public OriginalDataElements1 setTrnsmssnDtTm(OffsetDateTime value) {
         this.trnsmssnDtTm = value;
         return this;
     }

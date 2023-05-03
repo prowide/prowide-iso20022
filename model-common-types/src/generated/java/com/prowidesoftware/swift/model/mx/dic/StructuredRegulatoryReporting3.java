@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -39,7 +39,7 @@ public class StructuredRegulatoryReporting3 {
     @XmlElement(name = "Dt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dt;
+    protected LocalDate dt;
     @XmlElement(name = "Ctry")
     protected String ctry;
     @XmlElement(name = "Cd")
@@ -82,7 +82,7 @@ public class StructuredRegulatoryReporting3 {
      *     {@link String }
      *     
      */
-    public Calendar getDt() {
+    public LocalDate getDt() {
         return dt;
     }
 
@@ -94,7 +94,7 @@ public class StructuredRegulatoryReporting3 {
      *     {@link String }
      *     
      */
-    public StructuredRegulatoryReporting3 setDt(Calendar value) {
+    public StructuredRegulatoryReporting3 setDt(LocalDate value) {
         this.dt = value;
         return this;
     }

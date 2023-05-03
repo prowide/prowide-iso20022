@@ -1,7 +1,9 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
+import java.time.OffsetTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
@@ -37,23 +39,23 @@ public class SettlementServiceDate2 {
     @XmlElement(name = "ReqdSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar reqdSttlmDt;
+    protected LocalDate reqdSttlmDt;
     @XmlElement(name = "DfrrdSttlmInd")
     protected Boolean dfrrdSttlmInd;
     @XmlElement(name = "SttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar sttlmDt;
+    protected LocalDate sttlmDt;
     @XmlElement(name = "SttlmTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected Calendar sttlmTm;
+    protected OffsetTime sttlmTm;
     @XmlElement(name = "SttlmPrd")
     protected String sttlmPrd;
     @XmlElement(name = "SttlmCutOffTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar sttlmCutOffTm;
+    protected OffsetDateTime sttlmCutOffTm;
 
     /**
      * Gets the value of the reqdSttlmDt property.
@@ -63,7 +65,7 @@ public class SettlementServiceDate2 {
      *     {@link String }
      *     
      */
-    public Calendar getReqdSttlmDt() {
+    public LocalDate getReqdSttlmDt() {
         return reqdSttlmDt;
     }
 
@@ -75,7 +77,7 @@ public class SettlementServiceDate2 {
      *     {@link String }
      *     
      */
-    public SettlementServiceDate2 setReqdSttlmDt(Calendar value) {
+    public SettlementServiceDate2 setReqdSttlmDt(LocalDate value) {
         this.reqdSttlmDt = value;
         return this;
     }
@@ -113,7 +115,7 @@ public class SettlementServiceDate2 {
      *     {@link String }
      *     
      */
-    public Calendar getSttlmDt() {
+    public LocalDate getSttlmDt() {
         return sttlmDt;
     }
 
@@ -125,7 +127,7 @@ public class SettlementServiceDate2 {
      *     {@link String }
      *     
      */
-    public SettlementServiceDate2 setSttlmDt(Calendar value) {
+    public SettlementServiceDate2 setSttlmDt(LocalDate value) {
         this.sttlmDt = value;
         return this;
     }
@@ -138,7 +140,7 @@ public class SettlementServiceDate2 {
      *     {@link String }
      *     
      */
-    public Calendar getSttlmTm() {
+    public OffsetTime getSttlmTm() {
         return sttlmTm;
     }
 
@@ -150,7 +152,7 @@ public class SettlementServiceDate2 {
      *     {@link String }
      *     
      */
-    public SettlementServiceDate2 setSttlmTm(Calendar value) {
+    public SettlementServiceDate2 setSttlmTm(OffsetTime value) {
         this.sttlmTm = value;
         return this;
     }
@@ -188,7 +190,7 @@ public class SettlementServiceDate2 {
      *     {@link String }
      *     
      */
-    public Calendar getSttlmCutOffTm() {
+    public OffsetDateTime getSttlmCutOffTm() {
         return sttlmCutOffTm;
     }
 
@@ -200,7 +202,7 @@ public class SettlementServiceDate2 {
      *     {@link String }
      *     
      */
-    public SettlementServiceDate2 setSttlmCutOffTm(Calendar value) {
+    public SettlementServiceDate2 setSttlmCutOffTm(OffsetDateTime value) {
         this.sttlmCutOffTm = value;
         return this;
     }

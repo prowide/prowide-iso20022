@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -40,7 +40,7 @@ public class ATMCommand1 {
     @XmlElement(name = "DtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar dtTm;
+    protected OffsetDateTime dtTm;
     @XmlElement(name = "CmdId")
     protected ATMCommandIdentification1 cmdId;
     @XmlElement(name = "CmdParams")
@@ -104,7 +104,7 @@ public class ATMCommand1 {
      *     {@link String }
      *     
      */
-    public Calendar getDtTm() {
+    public OffsetDateTime getDtTm() {
         return dtTm;
     }
 
@@ -116,7 +116,7 @@ public class ATMCommand1 {
      *     {@link String }
      *     
      */
-    public ATMCommand1 setDtTm(Calendar value) {
+    public ATMCommand1 setDtTm(OffsetDateTime value) {
         this.dtTm = value;
         return this;
     }

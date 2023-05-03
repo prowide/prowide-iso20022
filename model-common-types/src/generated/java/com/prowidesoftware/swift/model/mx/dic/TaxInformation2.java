@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -51,7 +51,7 @@ public class TaxInformation2 {
     @XmlElement(name = "TaxDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar taxDt;
+    protected LocalDate taxDt;
     @XmlElement(name = "TaxTpInf")
     protected List<TaxDetails> taxTpInf;
 
@@ -213,7 +213,7 @@ public class TaxInformation2 {
      *     {@link String }
      *     
      */
-    public Calendar getTaxDt() {
+    public LocalDate getTaxDt() {
         return taxDt;
     }
 
@@ -225,7 +225,7 @@ public class TaxInformation2 {
      *     {@link String }
      *     
      */
-    public TaxInformation2 setTaxDt(Calendar value) {
+    public TaxInformation2 setTaxDt(LocalDate value) {
         this.taxDt = value;
         return this;
     }

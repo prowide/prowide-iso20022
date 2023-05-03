@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -41,15 +41,15 @@ public class InterestChange1 {
     @XmlElement(name = "FxgDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar fxgDt;
+    protected OffsetDateTime fxgDt;
     @XmlElement(name = "RptgDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar rptgDt;
+    protected OffsetDateTime rptgDt;
     @XmlElement(name = "RstDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar rstDt;
+    protected OffsetDateTime rstDt;
     @XmlElement(name = "SprdRate", required = true)
     protected BigDecimal sprdRate;
     @XmlElement(name = "VarblRateChngFrqcy", required = true)
@@ -77,7 +77,7 @@ public class InterestChange1 {
      *     {@link String }
      *     
      */
-    public Calendar getFxgDt() {
+    public OffsetDateTime getFxgDt() {
         return fxgDt;
     }
 
@@ -89,7 +89,7 @@ public class InterestChange1 {
      *     {@link String }
      *     
      */
-    public InterestChange1 setFxgDt(Calendar value) {
+    public InterestChange1 setFxgDt(OffsetDateTime value) {
         this.fxgDt = value;
         return this;
     }
@@ -102,7 +102,7 @@ public class InterestChange1 {
      *     {@link String }
      *     
      */
-    public Calendar getRptgDt() {
+    public OffsetDateTime getRptgDt() {
         return rptgDt;
     }
 
@@ -114,7 +114,7 @@ public class InterestChange1 {
      *     {@link String }
      *     
      */
-    public InterestChange1 setRptgDt(Calendar value) {
+    public InterestChange1 setRptgDt(OffsetDateTime value) {
         this.rptgDt = value;
         return this;
     }
@@ -127,7 +127,7 @@ public class InterestChange1 {
      *     {@link String }
      *     
      */
-    public Calendar getRstDt() {
+    public OffsetDateTime getRstDt() {
         return rstDt;
     }
 
@@ -139,7 +139,7 @@ public class InterestChange1 {
      *     {@link String }
      *     
      */
-    public InterestChange1 setRstDt(Calendar value) {
+    public InterestChange1 setRstDt(OffsetDateTime value) {
         this.rstDt = value;
         return this;
     }

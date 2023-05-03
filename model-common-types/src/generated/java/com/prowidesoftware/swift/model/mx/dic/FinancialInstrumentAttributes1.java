@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
@@ -87,7 +87,7 @@ public class FinancialInstrumentAttributes1 {
     @XmlElement(name = "IsseDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar isseDt;
+    protected OffsetDateTime isseDt;
     @XmlElement(name = "LglRstrctns")
     @XmlSchemaType(name = "string")
     protected LegalRestrictions1Code lglRstrctns;
@@ -112,7 +112,7 @@ public class FinancialInstrumentAttributes1 {
     @XmlElement(name = "ListgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar listgDt;
+    protected OffsetDateTime listgDt;
     @XmlElement(name = "NTPosLmt")
     protected FinancialInstrumentQuantityChoice ntPosLmt;
     @XmlElement(name = "PdctTp")
@@ -380,7 +380,7 @@ public class FinancialInstrumentAttributes1 {
      *     {@link String }
      *     
      */
-    public Calendar getIsseDt() {
+    public OffsetDateTime getIsseDt() {
         return isseDt;
     }
 
@@ -392,7 +392,7 @@ public class FinancialInstrumentAttributes1 {
      *     {@link String }
      *     
      */
-    public FinancialInstrumentAttributes1 setIsseDt(Calendar value) {
+    public FinancialInstrumentAttributes1 setIsseDt(OffsetDateTime value) {
         this.isseDt = value;
         return this;
     }
@@ -655,7 +655,7 @@ public class FinancialInstrumentAttributes1 {
      *     {@link String }
      *     
      */
-    public Calendar getListgDt() {
+    public OffsetDateTime getListgDt() {
         return listgDt;
     }
 
@@ -667,7 +667,7 @@ public class FinancialInstrumentAttributes1 {
      *     {@link String }
      *     
      */
-    public FinancialInstrumentAttributes1 setListgDt(Calendar value) {
+    public FinancialInstrumentAttributes1 setListgDt(OffsetDateTime value) {
         this.listgDt = value;
         return this;
     }

@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -37,11 +37,11 @@ public class OriginalInvoiceInformation1 {
     @XmlElement(name = "IsseDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar isseDt;
+    protected LocalDate isseDt;
     @XmlElement(name = "PmtDueDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar pmtDueDt;
+    protected LocalDate pmtDueDt;
 
     /**
      * Gets the value of the docNb property.
@@ -101,7 +101,7 @@ public class OriginalInvoiceInformation1 {
      *     {@link String }
      *     
      */
-    public Calendar getIsseDt() {
+    public LocalDate getIsseDt() {
         return isseDt;
     }
 
@@ -113,7 +113,7 @@ public class OriginalInvoiceInformation1 {
      *     {@link String }
      *     
      */
-    public OriginalInvoiceInformation1 setIsseDt(Calendar value) {
+    public OriginalInvoiceInformation1 setIsseDt(LocalDate value) {
         this.isseDt = value;
         return this;
     }
@@ -126,7 +126,7 @@ public class OriginalInvoiceInformation1 {
      *     {@link String }
      *     
      */
-    public Calendar getPmtDueDt() {
+    public LocalDate getPmtDueDt() {
         return pmtDueDt;
     }
 
@@ -138,7 +138,7 @@ public class OriginalInvoiceInformation1 {
      *     {@link String }
      *     
      */
-    public OriginalInvoiceInformation1 setPmtDueDt(Calendar value) {
+    public OriginalInvoiceInformation1 setPmtDueDt(LocalDate value) {
         this.pmtDueDt = value;
         return this;
     }

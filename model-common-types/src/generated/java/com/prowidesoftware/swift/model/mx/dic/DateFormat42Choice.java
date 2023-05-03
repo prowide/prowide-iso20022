@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -35,7 +35,7 @@ public class DateFormat42Choice {
     @XmlElement(name = "YrMnthDay", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar yrMnthDay;
+    protected LocalDate yrMnthDay;
 
     /**
      * Gets the value of the yrMnth property.
@@ -70,7 +70,7 @@ public class DateFormat42Choice {
      *     {@link String }
      *     
      */
-    public Calendar getYrMnthDay() {
+    public LocalDate getYrMnthDay() {
         return yrMnthDay;
     }
 
@@ -82,7 +82,7 @@ public class DateFormat42Choice {
      *     {@link String }
      *     
      */
-    public DateFormat42Choice setYrMnthDay(Calendar value) {
+    public DateFormat42Choice setYrMnthDay(LocalDate value) {
         this.yrMnthDay = value;
         return this;
     }

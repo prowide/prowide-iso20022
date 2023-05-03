@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -62,7 +62,7 @@ public class InstrumentLeg2 {
     @XmlElement(name = "LegSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar legSttlmDt;
+    protected OffsetDateTime legSttlmDt;
     @XmlElement(name = "LegSttlmDtCd")
     protected DateType1Choice legSttlmDtCd;
     @XmlElement(name = "InstrmLegDtls")
@@ -242,7 +242,7 @@ public class InstrumentLeg2 {
      *     {@link String }
      *     
      */
-    public Calendar getLegSttlmDt() {
+    public OffsetDateTime getLegSttlmDt() {
         return legSttlmDt;
     }
 
@@ -254,7 +254,7 @@ public class InstrumentLeg2 {
      *     {@link String }
      *     
      */
-    public InstrumentLeg2 setLegSttlmDt(Calendar value) {
+    public InstrumentLeg2 setLegSttlmDt(OffsetDateTime value) {
         this.legSttlmDt = value;
         return this;
     }

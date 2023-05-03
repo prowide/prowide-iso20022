@@ -1,8 +1,10 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
+import java.time.OffsetTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
@@ -45,15 +47,15 @@ public class VerificationInformation1 {
     @XmlElement(name = "DtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar dtTm;
+    protected OffsetDateTime dtTm;
     @XmlElement(name = "VldtyEndDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar vldtyEndDt;
+    protected LocalDate vldtyEndDt;
     @XmlElement(name = "VldtyEndTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected Calendar vldtyEndTm;
+    protected OffsetTime vldtyEndTm;
 
     /**
      * Gets the value of the tp property.
@@ -144,7 +146,7 @@ public class VerificationInformation1 {
      *     {@link String }
      *     
      */
-    public Calendar getDtTm() {
+    public OffsetDateTime getDtTm() {
         return dtTm;
     }
 
@@ -156,7 +158,7 @@ public class VerificationInformation1 {
      *     {@link String }
      *     
      */
-    public VerificationInformation1 setDtTm(Calendar value) {
+    public VerificationInformation1 setDtTm(OffsetDateTime value) {
         this.dtTm = value;
         return this;
     }
@@ -169,7 +171,7 @@ public class VerificationInformation1 {
      *     {@link String }
      *     
      */
-    public Calendar getVldtyEndDt() {
+    public LocalDate getVldtyEndDt() {
         return vldtyEndDt;
     }
 
@@ -181,7 +183,7 @@ public class VerificationInformation1 {
      *     {@link String }
      *     
      */
-    public VerificationInformation1 setVldtyEndDt(Calendar value) {
+    public VerificationInformation1 setVldtyEndDt(LocalDate value) {
         this.vldtyEndDt = value;
         return this;
     }
@@ -194,7 +196,7 @@ public class VerificationInformation1 {
      *     {@link String }
      *     
      */
-    public Calendar getVldtyEndTm() {
+    public OffsetTime getVldtyEndTm() {
         return vldtyEndTm;
     }
 
@@ -206,7 +208,7 @@ public class VerificationInformation1 {
      *     {@link String }
      *     
      */
-    public VerificationInformation1 setVldtyEndTm(Calendar value) {
+    public VerificationInformation1 setVldtyEndTm(OffsetTime value) {
         this.vldtyEndTm = value;
         return this;
     }

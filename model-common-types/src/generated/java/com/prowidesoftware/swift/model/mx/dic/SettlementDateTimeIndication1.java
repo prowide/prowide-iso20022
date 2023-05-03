@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -31,11 +31,11 @@ public class SettlementDateTimeIndication1 {
     @XmlElement(name = "DbtDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar dbtDtTm;
+    protected OffsetDateTime dbtDtTm;
     @XmlElement(name = "CdtDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar cdtDtTm;
+    protected OffsetDateTime cdtDtTm;
 
     /**
      * Gets the value of the dbtDtTm property.
@@ -45,7 +45,7 @@ public class SettlementDateTimeIndication1 {
      *     {@link String }
      *     
      */
-    public Calendar getDbtDtTm() {
+    public OffsetDateTime getDbtDtTm() {
         return dbtDtTm;
     }
 
@@ -57,7 +57,7 @@ public class SettlementDateTimeIndication1 {
      *     {@link String }
      *     
      */
-    public SettlementDateTimeIndication1 setDbtDtTm(Calendar value) {
+    public SettlementDateTimeIndication1 setDbtDtTm(OffsetDateTime value) {
         this.dbtDtTm = value;
         return this;
     }
@@ -70,7 +70,7 @@ public class SettlementDateTimeIndication1 {
      *     {@link String }
      *     
      */
-    public Calendar getCdtDtTm() {
+    public OffsetDateTime getCdtDtTm() {
         return cdtDtTm;
     }
 
@@ -82,7 +82,7 @@ public class SettlementDateTimeIndication1 {
      *     {@link String }
      *     
      */
-    public SettlementDateTimeIndication1 setCdtDtTm(Calendar value) {
+    public SettlementDateTimeIndication1 setCdtDtTm(OffsetDateTime value) {
         this.cdtDtTm = value;
         return this;
     }

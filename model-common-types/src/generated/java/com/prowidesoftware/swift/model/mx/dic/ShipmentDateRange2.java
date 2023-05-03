@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -35,11 +35,11 @@ public class ShipmentDateRange2 {
     @XmlElement(name = "EarlstShipmntDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar earlstShipmntDt;
+    protected LocalDate earlstShipmntDt;
     @XmlElement(name = "LatstShipmntDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar latstShipmntDt;
+    protected LocalDate latstShipmntDt;
 
     /**
      * Gets the value of the subQtyVal property.
@@ -74,7 +74,7 @@ public class ShipmentDateRange2 {
      *     {@link String }
      *     
      */
-    public Calendar getEarlstShipmntDt() {
+    public LocalDate getEarlstShipmntDt() {
         return earlstShipmntDt;
     }
 
@@ -86,7 +86,7 @@ public class ShipmentDateRange2 {
      *     {@link String }
      *     
      */
-    public ShipmentDateRange2 setEarlstShipmntDt(Calendar value) {
+    public ShipmentDateRange2 setEarlstShipmntDt(LocalDate value) {
         this.earlstShipmntDt = value;
         return this;
     }
@@ -99,7 +99,7 @@ public class ShipmentDateRange2 {
      *     {@link String }
      *     
      */
-    public Calendar getLatstShipmntDt() {
+    public LocalDate getLatstShipmntDt() {
         return latstShipmntDt;
     }
 
@@ -111,7 +111,7 @@ public class ShipmentDateRange2 {
      *     {@link String }
      *     
      */
-    public ShipmentDateRange2 setLatstShipmntDt(Calendar value) {
+    public ShipmentDateRange2 setLatstShipmntDt(LocalDate value) {
         this.latstShipmntDt = value;
         return this;
     }

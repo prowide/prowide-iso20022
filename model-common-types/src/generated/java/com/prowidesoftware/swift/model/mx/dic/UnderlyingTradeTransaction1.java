@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -43,11 +43,11 @@ public class UnderlyingTradeTransaction1 {
     @XmlElement(name = "TxDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar txDt;
+    protected LocalDate txDt;
     @XmlElement(name = "TndrClsgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar tndrClsgDt;
+    protected LocalDate tndrClsgDt;
     @XmlElement(name = "TxAmt")
     protected ActiveCurrencyAndAmount txAmt;
     @XmlElement(name = "CtrctAmtPctg")
@@ -113,7 +113,7 @@ public class UnderlyingTradeTransaction1 {
      *     {@link String }
      *     
      */
-    public Calendar getTxDt() {
+    public LocalDate getTxDt() {
         return txDt;
     }
 
@@ -125,7 +125,7 @@ public class UnderlyingTradeTransaction1 {
      *     {@link String }
      *     
      */
-    public UnderlyingTradeTransaction1 setTxDt(Calendar value) {
+    public UnderlyingTradeTransaction1 setTxDt(LocalDate value) {
         this.txDt = value;
         return this;
     }
@@ -138,7 +138,7 @@ public class UnderlyingTradeTransaction1 {
      *     {@link String }
      *     
      */
-    public Calendar getTndrClsgDt() {
+    public LocalDate getTndrClsgDt() {
         return tndrClsgDt;
     }
 
@@ -150,7 +150,7 @@ public class UnderlyingTradeTransaction1 {
      *     {@link String }
      *     
      */
-    public UnderlyingTradeTransaction1 setTndrClsgDt(Calendar value) {
+    public UnderlyingTradeTransaction1 setTndrClsgDt(LocalDate value) {
         this.tndrClsgDt = value;
         return this;
     }
