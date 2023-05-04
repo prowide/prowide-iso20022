@@ -34,7 +34,7 @@ import java.util.logging.Logger;
  * Notice the configured adapter in the model is the {@link IsoTimeAdapter} wrapper class, but you can pass this
  * default implementation or your own in the constructor.
  *
- * @see TypeAdaptersConfiguration //TODO clase que no se usa mas
+ * @see TypeAdaptersConfiguration
  * @since 9.2.6
  */
 public class OffsetTimeAdapter extends XmlAdapter<String, OffsetTime> {
@@ -123,7 +123,7 @@ public class OffsetTimeAdapter extends XmlAdapter<String, OffsetTime> {
                 log.finest("Error parsing to Calendar: " + e.getMessage());
             }
             ZoneOffset offset = ZoneOffset.systemDefault().getRules().getStandardOffset(Instant.now());
-            offsetTime = LocalTime.parse(value).atOffset(offset);
+            offsetTime = LocalTime.parse(value, dateTimeFormatter).atOffset(offset);
         }
         return offsetTime;
     }

@@ -16,19 +16,20 @@
 package com.prowidesoftware.swift.model.mx.adapters;
 
 import jakarta.xml.bind.annotation.adapters.XmlAdapter;
-import javax.xml.datatype.DatatypeFactory;
-import javax.xml.datatype.XMLGregorianCalendar;
+
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.Calendar;
 
-public class TestCustomAdapter extends XmlAdapter<String, Calendar> {
+public class TestCustomDateAdapter extends XmlAdapter<String, LocalDate> {
 
     @Override
-    public Calendar unmarshal(String v) throws Exception {
-        return Calendar.getInstance();
+    public LocalDate unmarshal(String v){
+        return LocalDate.now();
     }
 
     @Override
-    public String marshal(Calendar cal) throws Exception {
+    public String marshal(LocalDate cal) {
         return "foobar";
     }
 

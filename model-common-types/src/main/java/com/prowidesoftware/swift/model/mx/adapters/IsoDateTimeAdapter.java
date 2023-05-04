@@ -38,7 +38,7 @@ public class IsoDateTimeAdapter extends XmlAdapter<String, OffsetDateTime> {
     /**
      * Default constructor for jaxb when non is set via API
      */
-    public IsoDateTimeAdapter() throws DatatypeConfigurationException {
+    public IsoDateTimeAdapter() {
         this.customAdapterImpl = new OffsetDateTimeAdapter();
     }
 

@@ -36,7 +36,7 @@ public class IsoDateAdapter extends XmlAdapter<String, LocalDate> {
     /**
      * Default constructor for jaxb when non is set via API
      */
-    public IsoDateAdapter() throws DatatypeConfigurationException {
+    public IsoDateAdapter() {
         this.customAdapterImpl = new LocalDateAdapter();
     }
 

@@ -121,9 +121,9 @@ public class OffsetDateTimeAdapter extends XmlAdapter<String, OffsetDateTime> {
                 log.finest("Error parsing to OffsetDateTime: " + e.getMessage());
             }
             ZoneId zoneId = ZoneOffset.systemDefault();
-            OffsetDateTime dateTime = LocalDateTime.parse(value)
+            OffsetDateTime dateTime = LocalDateTime.parse(value, dateTimeFormatter)
                     .atZone(zoneId)
-                    .withFixedOffsetZone()
+                    //.withFixedOffsetZone()
                     .toOffsetDateTime();
             return dateTime;
         }

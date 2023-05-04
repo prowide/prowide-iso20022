@@ -15,11 +15,14 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
+import com.google.gson.Gson;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
+import java.time.OffsetTime;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -31,15 +34,16 @@ import static org.junit.jupiter.api.Assertions.*;
 public class AbstractMxJsonTest {
 
     @Test
-    public void testMxJson() throws Exception {
+    public void testMxJson() {
         MxPain00100108 mx = new MxPain00100108();
         mx.setCstmrCdtTrfInitn(new CustomerCreditTransferInitiationV08());
         mx.getCstmrCdtTrfInitn().setGrpHdr(new GroupHeader48());
 
         mx.getCstmrCdtTrfInitn().getGrpHdr().setCtrlSum(new BigDecimal("1234.56"));
         mx.getCstmrCdtTrfInitn().getGrpHdr().setMsgId("MYID");
-        Calendar cal = Calendar.getInstance();
-        mx.getCstmrCdtTrfInitn().getGrpHdr().setCreDtTm(cal);
+
+        OffsetDateTime offsetDateTime = null;
+        mx.getCstmrCdtTrfInitn().getGrpHdr().setCreDtTm(offsetDateTime);
         mx.getCstmrCdtTrfInitn().getGrpHdr().setNbOfTxs("1");
 
         mx.getCstmrCdtTrfInitn().getGrpHdr().setInitgPty(new PartyIdentification43());
@@ -54,7 +58,7 @@ public class AbstractMxJsonTest {
         mx.getCstmrCdtTrfInitn().getGrpHdr().getFwdgAgt().getBrnchId().setId("Ident1234");
         mx.getCstmrCdtTrfInitn().getGrpHdr().getFwdgAgt().getBrnchId().setNm("A Name");
 
-        assertPain00100108(mx, cal);
+        assertPain00100108(mx, offsetDateTime);
         //System.out.println(mx.message());
 
         /*
@@ -68,20 +72,20 @@ public class AbstractMxJsonTest {
          */
         MxPain00100108 mx2 = MxPain00100108.fromJson(json);
         //System.out.println(mx2.message());
-        assertPain00100108(mx2, cal);
+        assertPain00100108(mx2, offsetDateTime);
 
         /*
          * Generic class from JSON
          */
         MxPain00100108 mx3 = (MxPain00100108) AbstractMX.fromJson(json);
         //System.out.println(mx2.message());
-        assertPain00100108(mx3, cal);
+        assertPain00100108(mx3, offsetDateTime);
     }
 
-    private void assertPain00100108(final MxPain00100108 mx, final Calendar cal) {
+    private void assertPain00100108(final MxPain00100108 mx, final OffsetDateTime offsetDateTime) {
         assertEquals(new BigDecimal("1234.56"), mx.getCstmrCdtTrfInitn().getGrpHdr().getCtrlSum());
         assertEquals("MYID", mx.getCstmrCdtTrfInitn().getGrpHdr().getMsgId());
-        assertEquals(cal, mx.getCstmrCdtTrfInitn().getGrpHdr().getCreDtTm());
+        assertEquals(offsetDateTime, mx.getCstmrCdtTrfInitn().getGrpHdr().getCreDtTm());
         assertEquals("1", mx.getCstmrCdtTrfInitn().getGrpHdr().getNbOfTxs());
         assertEquals("Joe Doe", mx.getCstmrCdtTrfInitn().getGrpHdr().getInitgPty().getNm());
         assertEquals("USA", mx.getCstmrCdtTrfInitn().getGrpHdr().getInitgPty().getCtryOfRes());
@@ -138,23 +142,50 @@ public class AbstractMxJsonTest {
     }
 
     @Test
-    public void testMxDateJson() {
+    public void testMxDateTimeJson() {
         String source = "{\n" +
                 "  \"sctiesSttlmTxInstr\": {\n" +
                 "    \"id\": {\n" +
                 "      \"creDtTm\": {\n" +
-                "        \"dt\": {\n" +
+                "        \"dtTm\": {\n" +
+                "          \"dateTime\": {\n" +
+                "            \"date\": {\n" +
+                "              \"year\": 2021,\n" +
+                "              \"month\": 4,\n" +
+                "              \"day\": 8\n" +
+                "            },\n" +
+                "            \"time\": {\n" +
+                "              \"hour\": 14,\n" +
+                "              \"minute\": 48,\n" +
+                "              \"second\": 38,\n" +
+                "              \"nano\": 0\n" +
+                "            }\n" +
+                "          },\n" +
+                "          \"offset\": {\n" +
+                "            \"totalSeconds\": -10800\n" +
+                "          }\n" +
+                "        }\n" +
+                "      }\n" +
+                "    }\n" +
+                "  },\n" +
+                "  \"type\": \"MX\",\n" +
+                "  \"@xmlns\": \"urn:swift:xsd:sese.023.002.01\",\n" +
+                "  \"identifier\": \"sese.023.002.01\"\n" +
+                "}";
+        AbstractMX mx = AbstractMX.fromJson(source);
+        assertEquals(source.trim(), mx.toJson().trim());
+    }
+
+    @Test
+    public void testMxLocalDateJson() {
+        String source = "{\n" +
+                "  \"sctiesSttlmTxInstr\": {\n" +
+                "    \"id\": {\n" +
+                "      \"creDtTm\": {\n" +
+                "        \"dtTm\": {\n" +
                 "          \"year\": 2021,\n" +
                 "          \"month\": 2,\n" +
-                "          \"day\": 3,\n" +
-/*                "          \"timezoneId\": -2147483648,\n" +
-                "          \"hour\": -2147483648,\n" +
-                "          \"minute\": -2147483648,\n" +
-                "          \"second\": -2147483648\n" +*/
-                "          \"timezoneId\": \"America/Argentina/Buenos_Aires\",\n" +
-                "          \"hour\": 12,\n" +
-                "          \"minute\": 50,\n" +
-                "          \"second\": 03\n" +
+                "          \"day\": 3\n" +
                 "        }\n" +
                 "      }\n" +
                 "    }\n" +
@@ -399,13 +430,22 @@ public class AbstractMxJsonTest {
                 "    \"grpHdr\": {\n" +
                 "      \"msgId\": \"A2P76703\",\n" +
                 "      \"creDtTm\": {\n" +
-                "        \"year\": 2021,\n" +
-                "        \"month\": 4,\n" +
-                "        \"day\": 28,\n" +
-                "        \"timezone\": 0,\n" +
-                "        \"hour\": 9,\n" +
-                "        \"minute\": 22,\n" +
-                "        \"second\": 56\n" +
+                "        \"dateTime\": {\n" +
+                "          \"date\": {\n" +
+                "            \"year\": 2023,\n" +
+                "            \"month\": 4,\n" +
+                "            \"day\": 21\n" +
+                "          },\n" +
+                "          \"time\": {\n" +
+                "            \"hour\": 14,\n" +
+                "            \"minute\": 48,\n" +
+                "            \"second\": 38,\n" +
+                "            \"nano\": 0\n" +
+                "          }\n" +
+                "        },\n" +
+                "        \"offset\": {\n" +
+                "          \"totalSeconds\": -10800\n" +
+                "        }\n" +
                 "      },\n" +
                 "      \"nbOfTxs\": \"1\"\n" +
                 "    }\n" +
@@ -422,19 +462,29 @@ public class AbstractMxJsonTest {
                 "    \"msgName\": \"pacs.009.001.07\",\n" +
                 "    \"msgRef\": \"CPTE190421113270\",\n" +
                 "    \"crDate\": {\n" +
-                "      \"year\": 2021,\n" +
-                "      \"month\": 4,\n" +
-                "      \"day\": 28,\n" +
-                "      \"timezone\": 0,\n" +
-                "      \"hour\": 9,\n" +
-                "      \"minute\": 22,\n" +
-                "      \"second\": 56\n" +
+                "        \"dateTime\": {\n" +
+                "          \"date\": {\n" +
+                "            \"year\": 2021,\n" +
+                "            \"month\": 4,\n" +
+                "            \"day\": 8\n" +
+                "          },\n" +
+                "          \"time\": {\n" +
+                "            \"hour\": 14,\n" +
+                "            \"minute\": 48,\n" +
+                "            \"second\": 38,\n" +
+                "            \"nano\": 0\n" +
+                "          }\n" +
+                "        },\n" +
+                "        \"offset\": {\n" +
+                "          \"totalSeconds\": -10800\n" +
+                "        }\n" +
                 "    }\n" +
                 "  },\n" +
                 "  \"type\": \"MX\",\n" +
                 "  \"@xmlns\": \"urn:iso:std:iso:20022:tech:xsd:pacs.009.001.07\",\n" +
                 "  \"identifier\": \"pacs.009.001.07\"\n" +
                 "}";
+
         AbstractMX source = AbstractMX.fromJson(json);
         AbstractMX mx = AbstractMX.fromJson(source.toJson());
         AbstractMX mx2 = AbstractMX.fromJson(mx.toJson());
@@ -449,52 +499,153 @@ public class AbstractMxJsonTest {
         final String json = "{\n" +
                 "  \"fiCdtTrf\": {\n" +
                 "    \"grpHdr\": {\n" +
-                "      \"msgId\": \"A2P76703\",\n" +
+                "      \"msgId\": \"1939E8A71727EDDF\",\n" +
                 "      \"creDtTm\": {\n" +
-                "        \"year\": 2021,\n" +
-                "        \"month\": 4,\n" +
-                "        \"day\": 28,\n" +
-                "        \"timezone\": 0,\n" +
-                "        \"hour\": 9,\n" +
-                "        \"minute\": 22,\n" +
-                "        \"second\": 56\n" +
+                "        \"dateTime\": {\n" +
+                "          \"date\": {\n" +
+                "            \"year\": 2023,\n" +
+                "            \"month\": 4,\n" +
+                "            \"day\": 21\n" +
+                "          },\n" +
+                "          \"time\": {\n" +
+                "            \"hour\": 14,\n" +
+                "            \"minute\": 48,\n" +
+                "            \"second\": 38,\n" +
+                "            \"nano\": 0\n" +
+                "          }\n" +
+                "        },\n" +
+                "        \"offset\": {\n" +
+                "          \"totalSeconds\": -10800\n" +
+                "        }\n" +
                 "      },\n" +
-                "      \"nbOfTxs\": \"1\"\n" +
-                "    }\n" +
+                "      \"nbOfTxs\": \"1\",\n" +
+                "      \"sttlmInf\": {\n" +
+                "        \"sttlmMtd\": \"INDA\"\n" +
+                "      },\n" +
+                "      \"instgAgt\": {\n" +
+                "        \"finInstnId\": {\n" +
+                "          \"bicfi\": \"ROYCFRPBTGT\"\n" +
+                "        }\n" +
+                "      },\n" +
+                "      \"instdAgt\": {\n" +
+                "        \"finInstnId\": {\n" +
+                "          \"bicfi\": \"TRGTXEPMCLM\"\n" +
+                "        }\n" +
+                "      }\n" +
+                "    },\n" +
+                "    \"cdtTrfTxInf\": [\n" +
+                "      {\n" +
+                "        \"pmtId\": {\n" +
+                "          \"instrId\": \"PA23012418819\",\n" +
+                "          \"endToEndId\": \"PA23012418819\",\n" +
+                "          \"txId\": \"PA23012418819\",\n" +
+                "          \"uetr\": \"6e8b66f5-ce02-4635-9eaa-3c0ff96ee901\"\n" +
+                "        },\n" +
+                "        \"intrBkSttlmAmt\": {\n" +
+                "          \"value\": 13000.0,\n" +
+                "          \"ccy\": \"EUR\"\n" +
+                "        },\n" +
+                "        \"intrBkSttlmDt\": {\n" +
+                "          \"year\": 2023,\n" +
+                "          \"month\": 1,\n" +
+                "          \"day\": 24\n" +
+                "        },\n" +
+                "        \"intrmyAgt1\": {\n" +
+                "          \"finInstnId\": {\n" +
+                "            \"bicfi\": \"TRGTXEPMCLM\"\n" +
+                "          }\n" +
+                "        },\n" +
+                "        \"intrmyAgt1Acct\": {\n" +
+                "          \"id\": {\n" +
+                "            \"othr\": {\n" +
+                "              \"id\": \"RBCPB-A2A-ROYCFRPBTGT\"\n" +
+                "            }\n" +
+                "          }\n" +
+                "        },\n" +
+                "        \"dbtr\": {\n" +
+                "          \"finInstnId\": {\n" +
+                "            \"bicfi\": \"ROYCFRPBTGT\"\n" +
+                "          }\n" +
+                "        },\n" +
+                "        \"cdtrAgt\": {\n" +
+                "          \"finInstnId\": {\n" +
+                "            \"bicfi\": \"ROYCFRPBTGT\"\n" +
+                "          }\n" +
+                "        },\n" +
+                "        \"cdtrAgtAcct\": {\n" +
+                "          \"id\": {\n" +
+                "            \"othr\": {\n" +
+                "              \"id\": \"MFREURROYCFRPBTGT\"\n" +
+                "            }\n" +
+                "          }\n" +
+                "        },\n" +
+                "        \"cdtr\": {\n" +
+                "          \"finInstnId\": {\n" +
+                "            \"bicfi\": \"ROYCFRPBTGT\"\n" +
+                "          }\n" +
+                "        },\n" +
+                "        \"cdtrAcct\": {\n" +
+                "          \"id\": {\n" +
+                "            \"othr\": {\n" +
+                "              \"id\": \"RFREURROYCFRPBTGT\"\n" +
+                "            }\n" +
+                "          }\n" +
+                "        }\n" +
+                "      }\n" +
+                "    ]\n" +
                 "  },\n" +
                 "  \"appHdr\": {\n" +
-                "    \"namespace\": \"urn:iso:std:iso:00000:tech:xsd:head.000.000.00\",\n" +
                 "    \"fr\": {\n" +
-                "      \"type\": \"BIC\",\n" +
-                "      \"id\": \"ABNANL20606\"\n" +
+                "      \"fiId\": {\n" +
+                "        \"finInstnId\": {\n" +
+                "          \"bicfi\": \"ROYCFRPBTGT\"\n" +
+                "        }\n" +
+                "      }\n" +
                 "    },\n" +
                 "    \"to\": {\n" +
-                "      \"type\": \"BIC\",\n" +
-                "      \"id\": \"GIISIT2TXXX\"\n" +
+                "      \"fiId\": {\n" +
+                "        \"finInstnId\": {\n" +
+                "          \"bicfi\": \"TRGTXEPMCLM\"\n" +
+                "        }\n" +
+                "      }\n" +
                 "    },\n" +
-                "    \"msgName\": \"pacs.009.001.07\",\n" +
-                "    \"msgRef\": \"CPTE190421113270\",\n" +
-                "    \"crDate\": {\n" +
-                "      \"year\": 2021,\n" +
-                "      \"month\": 4,\n" +
-                "      \"day\": 28,\n" +
-                "      \"timezone\": 0,\n" +
-                "      \"hour\": 9,\n" +
-                "      \"minute\": 22,\n" +
-                "      \"second\": 56\n" +
-                "    }\n" +
+                "    \"bizMsgIdr\": \"PA23012418819\",\n" +
+                "    \"msgDefIdr\": \"pacs.009.001.10\",\n" +
+                "    \"creDt\": {\n" +
+                "      \"dateTime\": {\n" +
+                "        \"date\": {\n" +
+                "          \"year\": 2023,\n" +
+                "          \"month\": 4,\n" +
+                "          \"day\": 21\n" +
+                "        },\n" +
+                "        \"time\": {\n" +
+                "          \"hour\": 14,\n" +
+                "          \"minute\": 48,\n" +
+                "          \"second\": 38,\n" +
+                "          \"nano\": 0\n" +
+                "        }\n" +
+                "      },\n" +
+                "      \"offset\": {\n" +
+                "        \"totalSeconds\": -10800\n" +
+                "      }\n" +
+                "    },\n" +
+                "    \"pssblDplct\": false,\n" +
+                "    \"prty\": \"NORM\",\n" +
+                "    \"namespace\": \"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\"\n" +
                 "  },\n" +
                 "  \"type\": \"MX\",\n" +
-                "  \"@xmlns\": \"urn:iso:std:iso:20022:tech:xsd:pacs.009.001.07\",\n" +
-                "  \"identifier\": \"pacs.009.001.07\"\n" +
+                "  \"@xmlns\": \"urn:iso:std:iso:20022:tech:xsd:pacs.009.001.10\",\n" +
+                "  \"identifier\": \"pacs.009.001.10\"\n" +
                 "}";
+
+
         AbstractMX source = AbstractMX.fromJson(json);
+
         AbstractMX mx = AbstractMX.fromJson(source.toJson());
         AbstractMX mx2 = AbstractMX.fromJson(mx.toJson());
         assertEquals(mx, mx2);
 
-        LegacyAppHdr legacyAppHdr = (LegacyAppHdr) mx.getAppHdr();
-        assertNotNull(legacyAppHdr);
+        BusinessAppHdrV02 businessAppHdrV02 = (BusinessAppHdrV02) mx.getAppHdr();
+        assertNotNull(businessAppHdrV02);
     }
-
 }
