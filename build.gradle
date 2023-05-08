@@ -5,11 +5,11 @@ buildscript {
 	}
 	dependencies {
 		classpath 'ru.vyarus:gradle-quality-plugin:4.7.0'
-		//classpath 'pl.allegro.tech.build:axion-release-plugin:1.13.6'
+		classpath 'pl.allegro.tech.build:axion-release-plugin:1.13.6'
 		classpath 'io.github.gradle-nexus:publish-plugin:1.1.0'
 	}
 }
-//apply plugin: 'pl.allegro.tech.build.axion-release'
+apply plugin: 'pl.allegro.tech.build.axion-release'
 apply plugin: 'java-library-distribution'
 apply plugin: 'maven-publish'
 apply plugin: 'signing'
@@ -34,24 +34,22 @@ project.ext {
 //		versionSeparator = '-'
 //	}
 //}
-version = 'SRU2022-10.0.0-alpha1-SNAPSHOT'
+version = 'SRU2022-10.0.0-RC1-SNAPSHOT'
 
 allprojects {
-	java {
-		toolchain {
-			languageVersion.set(JavaLanguageVersion.of(11))
-		}
-	}
 	tasks.withType(JavaCompile) {
 		options.encoding = 'UTF-8'
+		java {
+			toolchain {
+				languageVersion.set(JavaLanguageVersion.of(11))
+			}
+		}
 		doFirst {
-//			println 'Compiling with ' + getJavaCompiler().get().getMetadata().getInstallationPath()
+			println 'Compiling with ' + getJavaCompiler().get().getMetadata().getInstallationPath()
 		}
 	}
 
 	repositories {
-		//TODO: Remove me
-		mavenLocal()
 		mavenCentral()
 		// Prowide repo releases
 		if (project.hasProperty('prowideRepo')) {
@@ -242,7 +240,7 @@ javadoc {
 	title = "Prowide ISO 20022 API Reference"
 	options.footer="${SRU}, generated ${formattedDate()}"
 	options.author false
-	options.links 'http://docs.oracle.com/javase/8/docs/api/'
+	options.links 'http://docs.oracle.com/javase/11/docs/api/'
 
 	// this will fail when the option is not available (older JDK)
 	options.addBooleanOption("-allow-script-in-comments", true)
@@ -436,6 +434,12 @@ tasks.withType(Test) {
 task('testOn17', type: Test) {
 	javaLauncher = javaToolchains.launcherFor {
 		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
+task('testOn19', type: Test) {
+	javaLauncher = javaToolchains.launcherFor {
+		languageVersion = JavaLanguageVersion.of(19)
 	}
 }
 
