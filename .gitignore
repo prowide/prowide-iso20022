@@ -28,3 +28,4 @@ lib
 .idea/.name
 .idea/jpa-buddy.xml
 release.sh
+.idea/sonarlint
