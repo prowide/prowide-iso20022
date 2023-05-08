@@ -3,10 +3,11 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
+import java.time.YearMonth;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoYearMonthAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
@@ -118,9 +119,10 @@ public class FinancialInstrumentAttributes1 {
     @XmlElement(name = "PdctTp")
     @XmlSchemaType(name = "string")
     protected ProductType1Code pdctTp;
-    @XmlElement(name = "CtrctSttlmMnth")
+    @XmlElement(name = "CtrctSttlmMnth", type = String.class)
+    @XmlJavaTypeAdapter(IsoYearMonthAdapter.class)
     @XmlSchemaType(name = "gYearMonth")
-    protected XMLGregorianCalendar ctrctSttlmMnth;
+    protected YearMonth ctrctSttlmMnth;
     @XmlElement(name = "MinTradgPricgIncrmt")
     protected BigDecimal minTradgPricgIncrmt;
     @XmlElement(name = "Purp")
@@ -727,10 +729,10 @@ public class FinancialInstrumentAttributes1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getCtrctSttlmMnth() {
+    public YearMonth getCtrctSttlmMnth() {
         return ctrctSttlmMnth;
     }
 
@@ -739,10 +741,10 @@ public class FinancialInstrumentAttributes1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public FinancialInstrumentAttributes1 setCtrctSttlmMnth(XMLGregorianCalendar value) {
+    public FinancialInstrumentAttributes1 setCtrctSttlmMnth(YearMonth value) {
         this.ctrctSttlmMnth = value;
         return this;
     }

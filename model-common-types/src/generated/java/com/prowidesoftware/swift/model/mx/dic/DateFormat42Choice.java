@@ -2,8 +2,9 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.time.LocalDate;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.YearMonth;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoYearMonthAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
@@ -29,9 +30,10 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 public class DateFormat42Choice {
 
-    @XmlElement(name = "YrMnth")
+    @XmlElement(name = "YrMnth", type = String.class)
+    @XmlJavaTypeAdapter(IsoYearMonthAdapter.class)
     @XmlSchemaType(name = "gYearMonth")
-    protected XMLGregorianCalendar yrMnth;
+    protected YearMonth yrMnth;
     @XmlElement(name = "YrMnthDay", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
@@ -42,10 +44,10 @@ public class DateFormat42Choice {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getYrMnth() {
+    public YearMonth getYrMnth() {
         return yrMnth;
     }
 
@@ -54,10 +56,10 @@ public class DateFormat42Choice {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public DateFormat42Choice setYrMnth(XMLGregorianCalendar value) {
+    public DateFormat42Choice setYrMnth(YearMonth value) {
         this.yrMnth = value;
         return this;
     }

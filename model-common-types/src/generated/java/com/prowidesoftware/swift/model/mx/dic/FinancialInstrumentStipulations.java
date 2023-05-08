@@ -3,8 +3,9 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.YearMonth;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoYearMonthAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
@@ -98,12 +99,14 @@ public class FinancialInstrumentStipulations {
     protected Boolean insrdInd;
     @XmlElement(name = "LookBck")
     protected BigDecimal lookBck;
-    @XmlElement(name = "MtrtyDt")
+    @XmlElement(name = "MtrtyDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoYearMonthAdapter.class)
     @XmlSchemaType(name = "gYearMonth")
-    protected XMLGregorianCalendar mtrtyDt;
-    @XmlElement(name = "IsseDt")
+    protected YearMonth mtrtyDt;
+    @XmlElement(name = "IsseDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoYearMonthAdapter.class)
     @XmlSchemaType(name = "gYearMonth")
-    protected XMLGregorianCalendar isseDt;
+    protected YearMonth isseDt;
     @XmlElement(name = "IssrId")
     protected String issrId;
     @XmlElement(name = "IsseSz")
@@ -515,10 +518,10 @@ public class FinancialInstrumentStipulations {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getMtrtyDt() {
+    public YearMonth getMtrtyDt() {
         return mtrtyDt;
     }
 
@@ -527,10 +530,10 @@ public class FinancialInstrumentStipulations {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public FinancialInstrumentStipulations setMtrtyDt(XMLGregorianCalendar value) {
+    public FinancialInstrumentStipulations setMtrtyDt(YearMonth value) {
         this.mtrtyDt = value;
         return this;
     }
@@ -540,10 +543,10 @@ public class FinancialInstrumentStipulations {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getIsseDt() {
+    public YearMonth getIsseDt() {
         return isseDt;
     }
 
@@ -552,10 +555,10 @@ public class FinancialInstrumentStipulations {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public FinancialInstrumentStipulations setIsseDt(XMLGregorianCalendar value) {
+    public FinancialInstrumentStipulations setIsseDt(YearMonth value) {
         this.isseDt = value;
         return this;
     }
