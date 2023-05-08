@@ -1,12 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.Year;
+import com.prowidesoftware.swift.model.mx.adapters.IsoYearAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -60,9 +62,10 @@ public class GeneralInformation5 {
     protected ContactInformation1 ctctInf;
     @XmlElement(name = "AgrmtDtls")
     protected AgreementConditions1 agrmtDtls;
-    @XmlElement(name = "DefsYr")
+    @XmlElement(name = "DefsYr", type = String.class)
+    @XmlJavaTypeAdapter(IsoYearAdapter.class)
     @XmlSchemaType(name = "gYear")
-    protected XMLGregorianCalendar defsYr;
+    protected Year defsYr;
     @XmlElement(name = "BrkrsRef")
     protected String brkrsRef;
 
@@ -346,10 +349,10 @@ public class GeneralInformation5 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDefsYr() {
+    public Year getDefsYr() {
         return defsYr;
     }
 
@@ -358,10 +361,10 @@ public class GeneralInformation5 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public GeneralInformation5 setDefsYr(XMLGregorianCalendar value) {
+    public GeneralInformation5 setDefsYr(Year value) {
         this.defsYr = value;
         return this;
     }

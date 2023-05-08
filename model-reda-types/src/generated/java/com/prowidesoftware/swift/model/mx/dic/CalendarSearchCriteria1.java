@@ -1,12 +1,15 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.Year;
 import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoYearAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -27,9 +30,10 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 public class CalendarSearchCriteria1 {
 
-    @XmlElement(name = "Yr")
+    @XmlElement(name = "Yr", type = String.class)
+    @XmlJavaTypeAdapter(IsoYearAdapter.class)
     @XmlSchemaType(name = "gYear")
-    protected XMLGregorianCalendar yr;
+    protected Year yr;
     @XmlElement(name = "Mnth")
     @XmlSchemaType(name = "gMonth")
     protected XMLGregorianCalendar mnth;
@@ -41,10 +45,10 @@ public class CalendarSearchCriteria1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getYr() {
+    public Year getYr() {
         return yr;
     }
 
@@ -53,10 +57,10 @@ public class CalendarSearchCriteria1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public CalendarSearchCriteria1 setYr(XMLGregorianCalendar value) {
+    public CalendarSearchCriteria1 setYr(Year value) {
         this.yr = value;
         return this;
     }
