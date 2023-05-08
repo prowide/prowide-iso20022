@@ -1,87 +1,96 @@
-/*
- * Copyright 2006-2021 Prowide
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package com.prowidesoftware.swift.model.mx.adapters;
 
+import net.bytebuddy.asm.Advice;
 import org.junit.jupiter.api.Test;
 
-import javax.xml.datatype.DatatypeFactory;
-import javax.xml.datatype.XMLGregorianCalendar;
-import java.math.BigDecimal;
-import java.math.BigInteger;
+import java.sql.Time;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+import java.util.TimeZone;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
-public class ZonedDateTimeAdapterTest {
-
-    private ZonedDateTimeAdapter adapter = new ZonedDateTimeAdapter();
+class ZonedDateTimeAdapterTest {
 
     @Test
-    public void testUnmarshallFractionOfSeconds() throws Exception {
-        XMLGregorianCalendar cal = adapter.unmarshal("2022-03-04T12:50:08.123-03:00");
-        assertEquals(2022, cal.getYear());
-        assertEquals(3, cal.getMonth());
-        assertEquals(4, cal.getDay());
-        assertEquals(12, cal.getHour());
-        assertEquals(50, cal.getMinute());
-        assertEquals(8, cal.getSecond());
-        assertEquals(new BigDecimal("0.123"), cal.getFractionalSecond());
-        assertEquals(-180, cal.getTimezone());
+    void testDateTime() throws Exception {
+
+        ZoneOffset offset = ZoneOffset.systemDefault().getRules().getOffset(Instant.now());
+        ZoneId zoneId = ZoneOffset.systemDefault();
+
+
+        //testDateTimeImpl("2021-09-19T12:13:14", "2021-09-19T12:13:14"+offset);
+       testDateTimeImpl("2021-01-19T12:13:14.12", "2021-01-19T12:13:14.120"+offset);
+       /* testDateTimeImpl("2021-09-19T12:13:14.12");
+        testDateTimeImpl("2021-09-19T12:13:14.123");
+
+        testDateTimeImpl("2021-09-19T12:13:14+01:00");
+        testDateTimeImpl("2021-09-19T12:13:14-01:00");
+
+        testDateTimeImpl("2021-09-19T12:13:14+00:00");
+        testDateTimeImpl("2021-09-19T12:13:14-00:00");
+
+        testDateTimeImpl("2021-09-19T12:13:14+08:30");
+        testDateTimeImpl("2021-09-19T12:13:14Z");
+
+        testDateTimeImpl("2021-09-19T12:13:14.1+01:00");
+        testDateTimeImpl("2021-09-19T12:13:14.12-01:00");
+        testDateTimeImpl("2021-09-19T12:13:14.123+00:00");
+        testDateTimeImpl("2021-09-19T12:13:14.123+08:30");
+
+        testDateTimeImpl("2021-09-19T12:13:14.000+08:30");
+        testDateTimeImpl("2021-09-19T12:13:14.000Z");
+
+        testDateTimeImpl("2021-09-19T12:13:14.123Z");*/
+
+
+
+    }
+
+    private void  testDateTimeImpl(String value, String valueResult) throws Exception {
+        ZonedDateTimeAdapter zonedDateTimeAdapter = new ZonedDateTimeAdapter();
+        Calendar calendar = zonedDateTimeAdapter.unmarshal(value);
+        String valueDateResult = zonedDateTimeAdapter.marshal(calendar);
+        assertEquals(valueResult, valueDateResult);
     }
 
     @Test
-    public void testUnmarshallNoFractionOfSeconds() throws Exception {
-        XMLGregorianCalendar cal = adapter.unmarshal("2022-03-04T12:50:08-03:00");
-        assertEquals(2022, cal.getYear());
-        assertEquals(3, cal.getMonth());
-        assertEquals(4, cal.getDay());
-        assertEquals(12, cal.getHour());
-        assertEquals(50, cal.getMinute());
-        assertEquals(8, cal.getSecond());
-        assertEquals(null, cal.getFractionalSecond());
-        assertEquals(-180, cal.getTimezone());
-    }
+    public void testDate(){
+    /*        DateTimeFormatter marshallFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
 
-    @Test
-    public void testUnmarshallNoOffset() throws Exception {
-        XMLGregorianCalendar cal = adapter.unmarshal("2022-03-04T12:50:08");
-        assertEquals(2022, cal.getYear());
-        assertEquals(3, cal.getMonth());
-        assertEquals(4, cal.getDay());
-        assertEquals(12, cal.getHour());
-        assertEquals(50, cal.getMinute());
-        assertEquals(8, cal.getSecond());
-        assertEquals(null, cal.getFractionalSecond());
-    }
+        DateTimeFormatter unmarshallFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss[.SSS][XXX]");
 
-    @Test
-    public void testMarshallFractionOfSeconds() throws Exception {
-        XMLGregorianCalendar cal = DatatypeFactory.newInstance().newXMLGregorianCalendar(BigInteger.valueOf(2022), 3, 4, 12, 50, 8, new BigDecimal("0.123"), -180);
-        assertEquals("2022-03-04T12:50:08.123-03:00", adapter.marshal(cal));
-    }
 
-    @Test
-    public void testMarshallNoFractionOfSeconds() throws Exception {
-        XMLGregorianCalendar cal = DatatypeFactory.newInstance().newXMLGregorianCalendar(BigInteger.valueOf(2022), 3, 4, 12, 50, 8, null, -180);
-        assertEquals("2022-03-04T12:50:08-03:00", adapter.marshal(cal));
-    }
+        System.out.println(unmarshallFormat.parse("2021-09-19T12:13:14.1"));*/
 
-    @Test
-    public void testMarshallNoOffset() throws Exception {
-        XMLGregorianCalendar cal = DatatypeFactory.newInstance().newXMLGregorianCalendar(BigInteger.valueOf(2022), 3, 4, 12, 50, 8, null, -0);
-        assertEquals("2022-03-04T12:50:08+00:00", adapter.marshal(cal));
+/*
+        String strDateTime = "2012-02-22T02:06:58.1Z";
+        System.out.println(Instant.parse(strDateTime));
+        System.out.println(ZonedDateTime.parse(strDateTime));
+        System.out.println(OffsetDateTime.parse(strDateTime));
+
+        // Parsing with your pattern after correction
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss[.[SSS][SS][S]][XXX]");
+        System.out.println(formatter.parse("2021-09-19T12:13:14.1"));
+        System.out.println(formatter.parse("2021-09-19T12:13:14.12"));
+        System.out.println(formatter.parse("2021-09-19T12:13:14.123"));
+
+        System.out.println(formatter.parse("2021-09-19T12:13:14.1+01:00"));
+        System.out.println(formatter.parse("2021-09-19T12:13:14.12-01:00"));
+        System.out.println(formatter.parse("2021-09-19T12:13:14.123+00:00"));
+        System.out.println(formatter.parse("2021-09-19T12:13:14.123+08:30"));*/
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss[.[SSS][SS][S]][XXX]");
+        System.out.println(formatter.parse("2021-09-19T12:13:14.122+01:00"));
+
+
+
+       // LocalDateTime ldt = LocalDateTime.parse("2021-09-19T12:13:14.123", formatter);
+
+
+
+
     }
 
 }

@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Calendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -31,11 +31,11 @@ public class DatePeriod1 {
     @XmlElement(name = "FrDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar frDt;
+    protected Calendar frDt;
     @XmlElement(name = "ToDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar toDt;
+    protected Calendar toDt;
 
     /**
      * Gets the value of the frDt property.
@@ -45,7 +45,7 @@ public class DatePeriod1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getFrDt() {
+    public Calendar getFrDt() {
         return frDt;
     }
 
@@ -57,7 +57,7 @@ public class DatePeriod1 {
      *     {@link String }
      *     
      */
-    public DatePeriod1 setFrDt(XMLGregorianCalendar value) {
+    public DatePeriod1 setFrDt(Calendar value) {
         this.frDt = value;
         return this;
     }
@@ -70,7 +70,7 @@ public class DatePeriod1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getToDt() {
+    public Calendar getToDt() {
         return toDt;
     }
 
@@ -82,7 +82,7 @@ public class DatePeriod1 {
      *     {@link String }
      *     
      */
-    public DatePeriod1 setToDt(XMLGregorianCalendar value) {
+    public DatePeriod1 setToDt(Calendar value) {
         this.toDt = value;
         return this;
     }

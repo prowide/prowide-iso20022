@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Calendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -53,14 +53,14 @@ public class PartyProfileInformation1 {
     @XmlElement(name = "ChckngDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar chckngDt;
+    protected Calendar chckngDt;
     @XmlElement(name = "ChckngFrqcy")
     @XmlSchemaType(name = "string")
     protected EventFrequency1Code chckngFrqcy;
     @XmlElement(name = "NxtRvsnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar nxtRvsnDt;
+    protected Calendar nxtRvsnDt;
     @XmlElement(name = "SlryRg")
     protected String slryRg;
     @XmlElement(name = "SrcOfWlth")
@@ -216,7 +216,7 @@ public class PartyProfileInformation1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getChckngDt() {
+    public Calendar getChckngDt() {
         return chckngDt;
     }
 
@@ -228,7 +228,7 @@ public class PartyProfileInformation1 {
      *     {@link String }
      *     
      */
-    public PartyProfileInformation1 setChckngDt(XMLGregorianCalendar value) {
+    public PartyProfileInformation1 setChckngDt(Calendar value) {
         this.chckngDt = value;
         return this;
     }
@@ -266,7 +266,7 @@ public class PartyProfileInformation1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getNxtRvsnDt() {
+    public Calendar getNxtRvsnDt() {
         return nxtRvsnDt;
     }
 
@@ -278,7 +278,7 @@ public class PartyProfileInformation1 {
      *     {@link String }
      *     
      */
-    public PartyProfileInformation1 setNxtRvsnDt(XMLGregorianCalendar value) {
+    public PartyProfileInformation1 setNxtRvsnDt(Calendar value) {
         this.nxtRvsnDt = value;
         return this;
     }

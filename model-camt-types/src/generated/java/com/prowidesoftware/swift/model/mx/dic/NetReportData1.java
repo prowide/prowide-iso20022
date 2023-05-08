@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Calendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -42,19 +42,19 @@ public class NetReportData1 {
     @XmlElement(name = "CreDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar creDtTm;
+    protected Calendar creDtTm;
     @XmlElement(name = "NetgCutOffTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected XMLGregorianCalendar netgCutOffTm;
+    protected Calendar netgCutOffTm;
     @XmlElement(name = "RptDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar rptDt;
+    protected Calendar rptDt;
     @XmlElement(name = "ValDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar valDt;
+    protected Calendar valDt;
     @XmlElement(name = "RptTp")
     protected String rptTp;
     @XmlElement(name = "NetRptSvcr")
@@ -97,7 +97,7 @@ public class NetReportData1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getCreDtTm() {
+    public Calendar getCreDtTm() {
         return creDtTm;
     }
 
@@ -109,7 +109,7 @@ public class NetReportData1 {
      *     {@link String }
      *     
      */
-    public NetReportData1 setCreDtTm(XMLGregorianCalendar value) {
+    public NetReportData1 setCreDtTm(Calendar value) {
         this.creDtTm = value;
         return this;
     }
@@ -122,7 +122,7 @@ public class NetReportData1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getNetgCutOffTm() {
+    public Calendar getNetgCutOffTm() {
         return netgCutOffTm;
     }
 
@@ -134,7 +134,7 @@ public class NetReportData1 {
      *     {@link String }
      *     
      */
-    public NetReportData1 setNetgCutOffTm(XMLGregorianCalendar value) {
+    public NetReportData1 setNetgCutOffTm(Calendar value) {
         this.netgCutOffTm = value;
         return this;
     }
@@ -147,7 +147,7 @@ public class NetReportData1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getRptDt() {
+    public Calendar getRptDt() {
         return rptDt;
     }
 
@@ -159,7 +159,7 @@ public class NetReportData1 {
      *     {@link String }
      *     
      */
-    public NetReportData1 setRptDt(XMLGregorianCalendar value) {
+    public NetReportData1 setRptDt(Calendar value) {
         this.rptDt = value;
         return this;
     }
@@ -172,7 +172,7 @@ public class NetReportData1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getValDt() {
+    public Calendar getValDt() {
         return valDt;
     }
 
@@ -184,7 +184,7 @@ public class NetReportData1 {
      *     {@link String }
      *     
      */
-    public NetReportData1 setValDt(XMLGregorianCalendar value) {
+    public NetReportData1 setValDt(Calendar value) {
         this.valDt = value;
         return this;
     }

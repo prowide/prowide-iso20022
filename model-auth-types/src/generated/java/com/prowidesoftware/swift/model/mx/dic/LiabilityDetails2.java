@@ -4,11 +4,11 @@ package com.prowidesoftware.swift.model.mx.dic;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -123,8 +123,8 @@ public class LiabilityDetails2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the invstrGrpBrkdwn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the invstrGrpBrkdwn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -138,10 +138,12 @@ public class LiabilityDetails2 {
      * {@link InvestorGroupBreakdownType1 }
      * 
      * 
+     * @return
+     *     The value of the invstrGrpBrkdwn property.
      */
     public List<InvestorGroupBreakdownType1> getInvstrGrpBrkdwn() {
         if (invstrGrpBrkdwn == null) {
-            invstrGrpBrkdwn = new ArrayList<InvestorGroupBreakdownType1>();
+            invstrGrpBrkdwn = new ArrayList<>();
         }
         return this.invstrGrpBrkdwn;
     }
@@ -152,8 +154,8 @@ public class LiabilityDetails2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the brkdwnByCtry property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the brkdwnByCtry property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -167,10 +169,12 @@ public class LiabilityDetails2 {
      * {@link BreakdownByCountry3 }
      * 
      * 
+     * @return
+     *     The value of the brkdwnByCtry property.
      */
     public List<BreakdownByCountry3> getBrkdwnByCtry() {
         if (brkdwnByCtry == null) {
-            brkdwnByCtry = new ArrayList<BreakdownByCountry3>();
+            brkdwnByCtry = new ArrayList<>();
         }
         return this.brkdwnByCtry;
     }
@@ -231,8 +235,8 @@ public class LiabilityDetails2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the brkdwnByArrgmnt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the brkdwnByArrgmnt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -246,10 +250,12 @@ public class LiabilityDetails2 {
      * {@link BreakdownByArrangement1 }
      * 
      * 
+     * @return
+     *     The value of the brkdwnByArrgmnt property.
      */
     public List<BreakdownByArrangement1> getBrkdwnByArrgmnt() {
         if (brkdwnByArrgmnt == null) {
-            brkdwnByArrgmnt = new ArrayList<BreakdownByArrangement1>();
+            brkdwnByArrgmnt = new ArrayList<>();
         }
         return this.brkdwnByArrgmnt;
     }

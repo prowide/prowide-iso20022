@@ -2,15 +2,15 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -94,15 +94,15 @@ public class FinancialInstrument86 {
     @XmlElement(name = "ReqdTrfDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar reqdTrfDt;
+    protected Calendar reqdTrfDt;
     @XmlElement(name = "ReqdTradDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar reqdTradDt;
+    protected Calendar reqdTradDt;
     @XmlElement(name = "ReqdSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar reqdSttlmDt;
+    protected Calendar reqdSttlmDt;
     @XmlElement(name = "PmtDtls")
     protected PaymentInstrument14 pmtDtls;
     @XmlElement(name = "CrstllstnDtls")
@@ -320,8 +320,8 @@ public class FinancialInstrument86 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the unitsDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the unitsDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -335,10 +335,12 @@ public class FinancialInstrument86 {
      * {@link Unit11 }
      * 
      * 
+     * @return
+     *     The value of the unitsDtls property.
      */
     public List<Unit11> getUnitsDtls() {
         if (unitsDtls == null) {
-            unitsDtls = new ArrayList<Unit11>();
+            unitsDtls = new ArrayList<>();
         }
         return this.unitsDtls;
     }
@@ -549,8 +551,8 @@ public class FinancialInstrument86 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the intrmyInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the intrmyInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -564,10 +566,12 @@ public class FinancialInstrument86 {
      * {@link Intermediary43 }
      * 
      * 
+     * @return
+     *     The value of the intrmyInf property.
      */
     public List<Intermediary43> getIntrmyInf() {
         if (intrmyInf == null) {
-            intrmyInf = new ArrayList<Intermediary43>();
+            intrmyInf = new ArrayList<>();
         }
         return this.intrmyInf;
     }
@@ -580,7 +584,7 @@ public class FinancialInstrument86 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getReqdTrfDt() {
+    public Calendar getReqdTrfDt() {
         return reqdTrfDt;
     }
 
@@ -592,7 +596,7 @@ public class FinancialInstrument86 {
      *     {@link String }
      *     
      */
-    public FinancialInstrument86 setReqdTrfDt(XMLGregorianCalendar value) {
+    public FinancialInstrument86 setReqdTrfDt(Calendar value) {
         this.reqdTrfDt = value;
         return this;
     }
@@ -605,7 +609,7 @@ public class FinancialInstrument86 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getReqdTradDt() {
+    public Calendar getReqdTradDt() {
         return reqdTradDt;
     }
 
@@ -617,7 +621,7 @@ public class FinancialInstrument86 {
      *     {@link String }
      *     
      */
-    public FinancialInstrument86 setReqdTradDt(XMLGregorianCalendar value) {
+    public FinancialInstrument86 setReqdTradDt(Calendar value) {
         this.reqdTradDt = value;
         return this;
     }
@@ -630,7 +634,7 @@ public class FinancialInstrument86 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getReqdSttlmDt() {
+    public Calendar getReqdSttlmDt() {
         return reqdSttlmDt;
     }
 
@@ -642,7 +646,7 @@ public class FinancialInstrument86 {
      *     {@link String }
      *     
      */
-    public FinancialInstrument86 setReqdSttlmDt(XMLGregorianCalendar value) {
+    public FinancialInstrument86 setReqdSttlmDt(Calendar value) {
         this.reqdSttlmDt = value;
         return this;
     }
@@ -678,8 +682,8 @@ public class FinancialInstrument86 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the crstllstnDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the crstllstnDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -693,10 +697,12 @@ public class FinancialInstrument86 {
      * {@link Crystallisation2 }
      * 
      * 
+     * @return
+     *     The value of the crstllstnDtls property.
      */
     public List<Crystallisation2> getCrstllstnDtls() {
         if (crstllstnDtls == null) {
-            crstllstnDtls = new ArrayList<Crystallisation2>();
+            crstllstnDtls = new ArrayList<>();
         }
         return this.crstllstnDtls;
     }
@@ -757,8 +763,8 @@ public class FinancialInstrument86 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -772,10 +778,12 @@ public class FinancialInstrument86 {
      * {@link AdditionalInformation15 }
      * 
      * 
+     * @return
+     *     The value of the addtlInf property.
      */
     public List<AdditionalInformation15> getAddtlInf() {
         if (addtlInf == null) {
-            addtlInf = new ArrayList<AdditionalInformation15>();
+            addtlInf = new ArrayList<>();
         }
         return this.addtlInf;
     }

@@ -1,26 +1,25 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for ProductCategory1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ProductCategory1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="HRTR"/&gt;
- *     &lt;enumeration value="QOTA"/&gt;
- *     &lt;enumeration value="PRGP"/&gt;
- *     &lt;enumeration value="LOBU"/&gt;
- *     &lt;enumeration value="GNDR"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ProductCategory1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="HRTR"/>
+ *     <enumeration value="QOTA"/>
+ *     <enumeration value="PRGP"/>
+ *     <enumeration value="LOBU"/>
+ *     <enumeration value="GNDR"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ProductCategory1Code")

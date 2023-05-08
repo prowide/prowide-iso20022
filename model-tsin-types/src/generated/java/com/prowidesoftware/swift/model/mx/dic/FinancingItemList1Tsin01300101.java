@@ -3,18 +3,18 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
-import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementRef;
-import javax.xml.bind.annotation.XmlIDREF;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.JAXBElement;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlElementRef;
+import jakarta.xml.bind.annotation.XmlIDREF;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -54,13 +54,13 @@ public class FinancingItemList1Tsin01300101 {
     @XmlElement(name = "IsseDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar isseDt;
+    protected Calendar isseDt;
     @XmlElementRef(name = "RltdDoc", namespace = "urn:iso:std:iso:20022:tech:xsd:tsin.013.001.01", type = JAXBElement.class, required = false)
     protected List<JAXBElement<Object>> rltdDoc;
     @XmlElement(name = "AmtCutOffDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar amtCutOffDt;
+    protected Calendar amtCutOffDt;
     @XmlElement(name = "Assgne", required = true)
     @XmlIDREF
     @XmlSchemaType(name = "IDREF")
@@ -125,7 +125,7 @@ public class FinancingItemList1Tsin01300101 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getIsseDt() {
+    public Calendar getIsseDt() {
         return isseDt;
     }
 
@@ -137,7 +137,7 @@ public class FinancingItemList1Tsin01300101 {
      *     {@link String }
      *     
      */
-    public FinancingItemList1Tsin01300101 setIsseDt(XMLGregorianCalendar value) {
+    public FinancingItemList1Tsin01300101 setIsseDt(Calendar value) {
         this.isseDt = value;
         return this;
     }
@@ -148,8 +148,8 @@ public class FinancingItemList1Tsin01300101 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rltdDoc property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rltdDoc property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -163,10 +163,12 @@ public class FinancingItemList1Tsin01300101 {
      * {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
      * 
+     * @return
+     *     The value of the rltdDoc property.
      */
     public List<JAXBElement<Object>> getRltdDoc() {
         if (rltdDoc == null) {
-            rltdDoc = new ArrayList<JAXBElement<Object>>();
+            rltdDoc = new ArrayList<>();
         }
         return this.rltdDoc;
     }
@@ -179,7 +181,7 @@ public class FinancingItemList1Tsin01300101 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getAmtCutOffDt() {
+    public Calendar getAmtCutOffDt() {
         return amtCutOffDt;
     }
 
@@ -191,7 +193,7 @@ public class FinancingItemList1Tsin01300101 {
      *     {@link String }
      *     
      */
-    public FinancingItemList1Tsin01300101 setAmtCutOffDt(XMLGregorianCalendar value) {
+    public FinancingItemList1Tsin01300101 setAmtCutOffDt(Calendar value) {
         this.amtCutOffDt = value;
         return this;
     }
@@ -252,8 +254,8 @@ public class FinancingItemList1Tsin01300101 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ntfctnInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ntfctnInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -267,10 +269,12 @@ public class FinancingItemList1Tsin01300101 {
      * {@link FinancingNotificationParties1Tsin01300101 }
      * 
      * 
+     * @return
+     *     The value of the ntfctnInf property.
      */
     public List<FinancingNotificationParties1Tsin01300101> getNtfctnInf() {
         if (ntfctnInf == null) {
-            ntfctnInf = new ArrayList<FinancingNotificationParties1Tsin01300101>();
+            ntfctnInf = new ArrayList<>();
         }
         return this.ntfctnInf;
     }
@@ -281,8 +285,8 @@ public class FinancingItemList1Tsin01300101 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the finItm property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the finItm property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -296,10 +300,12 @@ public class FinancingItemList1Tsin01300101 {
      * {@link FinancialItem1Tsin01300101 }
      * 
      * 
+     * @return
+     *     The value of the finItm property.
      */
     public List<FinancialItem1Tsin01300101> getFinItm() {
         if (finItm == null) {
-            finItm = new ArrayList<FinancialItem1Tsin01300101>();
+            finItm = new ArrayList<>();
         }
         return this.finItm;
     }
@@ -435,8 +441,8 @@ public class FinancingItemList1Tsin01300101 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the fincgInstlmt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the fincgInstlmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -450,10 +456,12 @@ public class FinancingItemList1Tsin01300101 {
      * {@link Instalment2 }
      * 
      * 
+     * @return
+     *     The value of the fincgInstlmt property.
      */
     public List<Instalment2> getFincgInstlmt() {
         if (fincgInstlmt == null) {
-            fincgInstlmt = new ArrayList<Instalment2>();
+            fincgInstlmt = new ArrayList<>();
         }
         return this.fincgInstlmt;
     }

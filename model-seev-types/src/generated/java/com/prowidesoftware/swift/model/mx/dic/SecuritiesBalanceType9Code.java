@@ -1,26 +1,25 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for SecuritiesBalanceType9Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="SecuritiesBalanceType9Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="AVLB"/&gt;
- *     &lt;enumeration value="ELEC"/&gt;
- *     &lt;enumeration value="UNEL"/&gt;
- *     &lt;enumeration value="RDIS"/&gt;
- *     &lt;enumeration value="RREM"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="SecuritiesBalanceType9Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="AVLB"/>
+ *     <enumeration value="ELEC"/>
+ *     <enumeration value="UNEL"/>
+ *     <enumeration value="RDIS"/>
+ *     <enumeration value="RREM"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "SecuritiesBalanceType9Code")

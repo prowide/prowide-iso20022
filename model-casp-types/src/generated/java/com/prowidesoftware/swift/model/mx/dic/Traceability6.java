@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Calendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -40,11 +40,11 @@ public class Traceability6 {
     @XmlElement(name = "TracDtTmIn", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar tracDtTmIn;
+    protected Calendar tracDtTmIn;
     @XmlElement(name = "TracDtTmOut", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar tracDtTmOut;
+    protected Calendar tracDtTmOut;
 
     /**
      * Gets the value of the rlayId property.
@@ -129,7 +129,7 @@ public class Traceability6 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getTracDtTmIn() {
+    public Calendar getTracDtTmIn() {
         return tracDtTmIn;
     }
 
@@ -141,7 +141,7 @@ public class Traceability6 {
      *     {@link String }
      *     
      */
-    public Traceability6 setTracDtTmIn(XMLGregorianCalendar value) {
+    public Traceability6 setTracDtTmIn(Calendar value) {
         this.tracDtTmIn = value;
         return this;
     }
@@ -154,7 +154,7 @@ public class Traceability6 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getTracDtTmOut() {
+    public Calendar getTracDtTmOut() {
         return tracDtTmOut;
     }
 
@@ -166,7 +166,7 @@ public class Traceability6 {
      *     {@link String }
      *     
      */
-    public Traceability6 setTracDtTmOut(XMLGregorianCalendar value) {
+    public Traceability6 setTracDtTmOut(Calendar value) {
         this.tracDtTmOut = value;
         return this;
     }

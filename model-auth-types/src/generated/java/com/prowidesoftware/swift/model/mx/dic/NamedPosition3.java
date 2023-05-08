@@ -2,15 +2,15 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -37,7 +37,7 @@ public class NamedPosition3 {
     @XmlElement(name = "RefDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar refDt;
+    protected Calendar refDt;
     @XmlElement(name = "GnlInf")
     protected List<PositionSet16> gnlInf;
     @XmlElement(name = "Ln")
@@ -57,7 +57,7 @@ public class NamedPosition3 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getRefDt() {
+    public Calendar getRefDt() {
         return refDt;
     }
 
@@ -69,7 +69,7 @@ public class NamedPosition3 {
      *     {@link String }
      *     
      */
-    public NamedPosition3 setRefDt(XMLGregorianCalendar value) {
+    public NamedPosition3 setRefDt(Calendar value) {
         this.refDt = value;
         return this;
     }
@@ -80,8 +80,8 @@ public class NamedPosition3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the gnlInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the gnlInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -95,10 +95,12 @@ public class NamedPosition3 {
      * {@link PositionSet16 }
      * 
      * 
+     * @return
+     *     The value of the gnlInf property.
      */
     public List<PositionSet16> getGnlInf() {
         if (gnlInf == null) {
-            gnlInf = new ArrayList<PositionSet16>();
+            gnlInf = new ArrayList<>();
         }
         return this.gnlInf;
     }
@@ -109,8 +111,8 @@ public class NamedPosition3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ln property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ln property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -124,10 +126,12 @@ public class NamedPosition3 {
      * {@link PositionSet17 }
      * 
      * 
+     * @return
+     *     The value of the ln property.
      */
     public List<PositionSet17> getLn() {
         if (ln == null) {
-            ln = new ArrayList<PositionSet17>();
+            ln = new ArrayList<>();
         }
         return this.ln;
     }
@@ -138,8 +142,8 @@ public class NamedPosition3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the coll property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the coll property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -153,10 +157,12 @@ public class NamedPosition3 {
      * {@link PositionSet18 }
      * 
      * 
+     * @return
+     *     The value of the coll property.
      */
     public List<PositionSet18> getColl() {
         if (coll == null) {
-            coll = new ArrayList<PositionSet18>();
+            coll = new ArrayList<>();
         }
         return this.coll;
     }
@@ -167,8 +173,8 @@ public class NamedPosition3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the mrgn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the mrgn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -182,10 +188,12 @@ public class NamedPosition3 {
      * {@link PositionSet20 }
      * 
      * 
+     * @return
+     *     The value of the mrgn property.
      */
     public List<PositionSet20> getMrgn() {
         if (mrgn == null) {
-            mrgn = new ArrayList<PositionSet20>();
+            mrgn = new ArrayList<>();
         }
         return this.mrgn;
     }
@@ -196,8 +204,8 @@ public class NamedPosition3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the reuse property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the reuse property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -211,10 +219,12 @@ public class NamedPosition3 {
      * {@link PositionSet19 }
      * 
      * 
+     * @return
+     *     The value of the reuse property.
      */
     public List<PositionSet19> getReuse() {
         if (reuse == null) {
-            reuse = new ArrayList<PositionSet19>();
+            reuse = new ArrayList<>();
         }
         return this.reuse;
     }

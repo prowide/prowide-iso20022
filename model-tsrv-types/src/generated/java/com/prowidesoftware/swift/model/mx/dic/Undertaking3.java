@@ -2,15 +2,15 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -77,7 +77,7 @@ public class Undertaking3 {
     @XmlElement(name = "DtOfIssnc", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar dtOfIssnc;
+    protected Calendar dtOfIssnc;
     @XmlElement(name = "PlcOfIsse")
     protected PostalAddress12 plcOfIsse;
     @XmlElement(name = "AdvsgPty")
@@ -229,8 +229,8 @@ public class Undertaking3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the applcnt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the applcnt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -244,10 +244,12 @@ public class Undertaking3 {
      * {@link PartyIdentification43 }
      * 
      * 
+     * @return
+     *     The value of the applcnt property.
      */
     public List<PartyIdentification43> getApplcnt() {
         if (applcnt == null) {
-            applcnt = new ArrayList<PartyIdentification43>();
+            applcnt = new ArrayList<>();
         }
         return this.applcnt;
     }
@@ -283,8 +285,8 @@ public class Undertaking3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the bnfcry property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the bnfcry property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -298,10 +300,12 @@ public class Undertaking3 {
      * {@link PartyIdentification43 }
      * 
      * 
+     * @return
+     *     The value of the bnfcry property.
      */
     public List<PartyIdentification43> getBnfcry() {
         if (bnfcry == null) {
-            bnfcry = new ArrayList<PartyIdentification43>();
+            bnfcry = new ArrayList<>();
         }
         return this.bnfcry;
     }
@@ -314,7 +318,7 @@ public class Undertaking3 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDtOfIssnc() {
+    public Calendar getDtOfIssnc() {
         return dtOfIssnc;
     }
 
@@ -326,7 +330,7 @@ public class Undertaking3 {
      *     {@link String }
      *     
      */
-    public Undertaking3 setDtOfIssnc(XMLGregorianCalendar value) {
+    public Undertaking3 setDtOfIssnc(Calendar value) {
         this.dtOfIssnc = value;
         return this;
     }
@@ -512,8 +516,8 @@ public class Undertaking3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlPty property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlPty property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -527,10 +531,12 @@ public class Undertaking3 {
      * {@link PartyAndType1 }
      * 
      * 
+     * @return
+     *     The value of the addtlPty property.
      */
     public List<PartyAndType1> getAddtlPty() {
         if (addtlPty == null) {
-            addtlPty = new ArrayList<PartyAndType1>();
+            addtlPty = new ArrayList<>();
         }
         return this.addtlPty;
     }
@@ -566,8 +572,8 @@ public class Undertaking3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the undrlygTx property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the undrlygTx property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -581,10 +587,12 @@ public class Undertaking3 {
      * {@link UnderlyingTradeTransaction1 }
      * 
      * 
+     * @return
+     *     The value of the undrlygTx property.
      */
     public List<UnderlyingTradeTransaction1> getUndrlygTx() {
         if (undrlygTx == null) {
-            undrlygTx = new ArrayList<UnderlyingTradeTransaction1>();
+            undrlygTx = new ArrayList<>();
         }
         return this.undrlygTx;
     }
@@ -620,8 +628,8 @@ public class Undertaking3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the udrtkgTermsAndConds property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the udrtkgTermsAndConds property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -635,10 +643,12 @@ public class Undertaking3 {
      * {@link Narrative1 }
      * 
      * 
+     * @return
+     *     The value of the udrtkgTermsAndConds property.
      */
     public List<Narrative1> getUdrtkgTermsAndConds() {
         if (udrtkgTermsAndConds == null) {
-            udrtkgTermsAndConds = new ArrayList<Narrative1>();
+            udrtkgTermsAndConds = new ArrayList<>();
         }
         return this.udrtkgTermsAndConds;
     }
@@ -749,8 +759,8 @@ public class Undertaking3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the automtcAmtVartn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the automtcAmtVartn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -764,10 +774,12 @@ public class Undertaking3 {
      * {@link AutomaticVariation1 }
      * 
      * 
+     * @return
+     *     The value of the automtcAmtVartn property.
      */
     public List<AutomaticVariation1> getAutomtcAmtVartn() {
         if (automtcAmtVartn == null) {
-            automtcAmtVartn = new ArrayList<AutomaticVariation1>();
+            automtcAmtVartn = new ArrayList<>();
         }
         return this.automtcAmtVartn;
     }
@@ -828,8 +840,8 @@ public class Undertaking3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the nclsdFile property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the nclsdFile property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -843,10 +855,12 @@ public class Undertaking3 {
      * {@link Document9 }
      * 
      * 
+     * @return
+     *     The value of the nclsdFile property.
      */
     public List<Document9> getNclsdFile() {
         if (nclsdFile == null) {
-            nclsdFile = new ArrayList<Document9>();
+            nclsdFile = new ArrayList<>();
         }
         return this.nclsdFile;
     }
@@ -857,8 +871,8 @@ public class Undertaking3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -872,10 +886,12 @@ public class Undertaking3 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the addtlInf property.
      */
     public List<String> getAddtlInf() {
         if (addtlInf == null) {
-            addtlInf = new ArrayList<String>();
+            addtlInf = new ArrayList<>();
         }
         return this.addtlInf;
     }

@@ -16,13 +16,11 @@
 package com.prowidesoftware.swift.model.mx.adapters;
 
 
-import javax.xml.datatype.DatatypeConfigurationException;
-import javax.xml.datatype.DatatypeFactory;
-import javax.xml.datatype.XMLGregorianCalendar;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.GregorianCalendar;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.util.Calendar;
+import java.util.TimeZone;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -32,36 +30,17 @@ import java.util.logging.Logger;
 class AdapterUtils {
     private static final transient Logger log = Logger.getLogger(AdapterUtils.class.getName());
 
-    static String format(SimpleDateFormat dateFormat, XMLGregorianCalendar calendar) {
-        GregorianCalendar gregorianCalendar = calendar.toGregorianCalendar();
-        Date date = gregorianCalendar.getTime();
-        dateFormat.setCalendar(gregorianCalendar);
-        return dateFormat.format(date);
-    }
 
-    static XMLGregorianCalendar parse(SimpleDateFormat dateFormat, String value) {
-        if (value == null) {
-            return null;
-        }
-        try {
-            // attempt lexical representation parsing
-            return DatatypeFactory.newInstance().newXMLGregorianCalendar(value);
-        } catch (IllegalArgumentException|DatatypeConfigurationException e) {
-            if (log.isLoggable(Level.FINEST)) {
-                log.finest("Error parsing to XMLGregorianCalendar: " + e.getMessage());
-            }
-        }
-        try {
-            Date date = dateFormat.parse(value);
-            GregorianCalendar calendar = new GregorianCalendar();
-            calendar.setTime(date);
-            return DatatypeFactory.newInstance().newXMLGregorianCalendar(calendar);
-        } catch (ParseException|DatatypeConfigurationException e) {
-            if (log.isLoggable(Level.FINEST)) {
-                log.finest("Error parsing XMLGregorianCalendar with " + dateFormat.toPattern() + ": " + e.getMessage());
-            }
-        }
-        return null;
-    }
+
+
+
+
+
+
+
+
+
+
+
 
 }

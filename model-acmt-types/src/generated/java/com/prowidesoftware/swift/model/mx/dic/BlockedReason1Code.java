@@ -1,28 +1,27 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for BlockedReason1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="BlockedReason1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="BKRP"/&gt;
- *     &lt;enumeration value="CMMT"/&gt;
- *     &lt;enumeration value="CNFS"/&gt;
- *     &lt;enumeration value="MORT"/&gt;
- *     &lt;enumeration value="PLDG"/&gt;
- *     &lt;enumeration value="TRPE"/&gt;
- *     &lt;enumeration value="TRAN"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="BlockedReason1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="BKRP"/>
+ *     <enumeration value="CMMT"/>
+ *     <enumeration value="CNFS"/>
+ *     <enumeration value="MORT"/>
+ *     <enumeration value="PLDG"/>
+ *     <enumeration value="TRPE"/>
+ *     <enumeration value="TRAN"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "BlockedReason1Code")

@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Calendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -49,11 +49,11 @@ public class DrivingLicense1 {
     @XmlElement(name = "IssncDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar issncDt;
+    protected Calendar issncDt;
     @XmlElement(name = "XprtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar xprtnDt;
+    protected Calendar xprtnDt;
     @XmlElement(name = "Ctry")
     protected String ctry;
     @XmlElement(name = "Stat")
@@ -171,7 +171,7 @@ public class DrivingLicense1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getIssncDt() {
+    public Calendar getIssncDt() {
         return issncDt;
     }
 
@@ -183,7 +183,7 @@ public class DrivingLicense1 {
      *     {@link String }
      *     
      */
-    public DrivingLicense1 setIssncDt(XMLGregorianCalendar value) {
+    public DrivingLicense1 setIssncDt(Calendar value) {
         this.issncDt = value;
         return this;
     }
@@ -196,7 +196,7 @@ public class DrivingLicense1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getXprtnDt() {
+    public Calendar getXprtnDt() {
         return xprtnDt;
     }
 
@@ -208,7 +208,7 @@ public class DrivingLicense1 {
      *     {@link String }
      *     
      */
-    public DrivingLicense1 setXprtnDt(XMLGregorianCalendar value) {
+    public DrivingLicense1 setXprtnDt(Calendar value) {
         this.xprtnDt = value;
         return this;
     }

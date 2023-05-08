@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Calendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -51,7 +51,7 @@ public class CorporateActionInstructedBalanceOptionInstructionDetailsSD1 {
     @XmlElement(name = "TxIdDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar txIdDt;
+    protected Calendar txIdDt;
     @XmlElement(name = "TxContraCUSIP")
     protected OtherIdentification2 txContraCUSIP;
     @XmlElement(name = "TxIdQty", required = true)
@@ -64,11 +64,11 @@ public class CorporateActionInstructedBalanceOptionInstructionDetailsSD1 {
     @XmlElement(name = "TxIdPrtctDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar txIdPrtctDt;
+    protected Calendar txIdPrtctDt;
     @XmlElement(name = "TxIdCoverPrtctDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar txIdCoverPrtctDt;
+    protected Calendar txIdCoverPrtctDt;
     @XmlElement(name = "TxCondlQty")
     protected FinancialInstrumentQuantity15Choice txCondlQty;
     @XmlElement(name = "TxTndrBidPric")
@@ -184,7 +184,7 @@ public class CorporateActionInstructedBalanceOptionInstructionDetailsSD1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getTxIdDt() {
+    public Calendar getTxIdDt() {
         return txIdDt;
     }
 
@@ -196,7 +196,7 @@ public class CorporateActionInstructedBalanceOptionInstructionDetailsSD1 {
      *     {@link String }
      *     
      */
-    public CorporateActionInstructedBalanceOptionInstructionDetailsSD1 setTxIdDt(XMLGregorianCalendar value) {
+    public CorporateActionInstructedBalanceOptionInstructionDetailsSD1 setTxIdDt(Calendar value) {
         this.txIdDt = value;
         return this;
     }
@@ -309,7 +309,7 @@ public class CorporateActionInstructedBalanceOptionInstructionDetailsSD1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getTxIdPrtctDt() {
+    public Calendar getTxIdPrtctDt() {
         return txIdPrtctDt;
     }
 
@@ -321,7 +321,7 @@ public class CorporateActionInstructedBalanceOptionInstructionDetailsSD1 {
      *     {@link String }
      *     
      */
-    public CorporateActionInstructedBalanceOptionInstructionDetailsSD1 setTxIdPrtctDt(XMLGregorianCalendar value) {
+    public CorporateActionInstructedBalanceOptionInstructionDetailsSD1 setTxIdPrtctDt(Calendar value) {
         this.txIdPrtctDt = value;
         return this;
     }
@@ -334,7 +334,7 @@ public class CorporateActionInstructedBalanceOptionInstructionDetailsSD1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getTxIdCoverPrtctDt() {
+    public Calendar getTxIdCoverPrtctDt() {
         return txIdCoverPrtctDt;
     }
 
@@ -346,7 +346,7 @@ public class CorporateActionInstructedBalanceOptionInstructionDetailsSD1 {
      *     {@link String }
      *     
      */
-    public CorporateActionInstructedBalanceOptionInstructionDetailsSD1 setTxIdCoverPrtctDt(XMLGregorianCalendar value) {
+    public CorporateActionInstructedBalanceOptionInstructionDetailsSD1 setTxIdCoverPrtctDt(Calendar value) {
         this.txIdCoverPrtctDt = value;
         return this;
     }

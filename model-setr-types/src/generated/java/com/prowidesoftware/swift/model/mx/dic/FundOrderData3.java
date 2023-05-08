@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Calendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,7 +33,7 @@ public class FundOrderData3 {
     @XmlElement(name = "ReqdTradDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar reqdTradDt;
+    protected Calendar reqdTradDt;
     @XmlElement(name = "InvstmtAcctDtls")
     protected InvestmentAccount30 invstmtAcctDtls;
     @XmlElement(name = "FinInstrmDtls")
@@ -49,7 +49,7 @@ public class FundOrderData3 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getReqdTradDt() {
+    public Calendar getReqdTradDt() {
         return reqdTradDt;
     }
 
@@ -61,7 +61,7 @@ public class FundOrderData3 {
      *     {@link String }
      *     
      */
-    public FundOrderData3 setReqdTradDt(XMLGregorianCalendar value) {
+    public FundOrderData3 setReqdTradDt(Calendar value) {
         this.reqdTradDt = value;
         return this;
     }

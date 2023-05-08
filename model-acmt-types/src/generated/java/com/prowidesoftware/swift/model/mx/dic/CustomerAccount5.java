@@ -3,15 +3,15 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -74,7 +74,7 @@ public class CustomerAccount5 {
     @XmlElement(name = "ClsgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar clsgDt;
+    protected Calendar clsgDt;
     @XmlElement(name = "Rstrctn")
     protected List<Restriction1> rstrctn;
 
@@ -84,8 +84,8 @@ public class CustomerAccount5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the id property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the id property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -99,10 +99,12 @@ public class CustomerAccount5 {
      * {@link AccountIdentification4Choice }
      * 
      * 
+     * @return
+     *     The value of the id property.
      */
     public List<AccountIdentification4Choice> getId() {
         if (id == null) {
-            id = new ArrayList<AccountIdentification4Choice>();
+            id = new ArrayList<>();
         }
         return this.id;
     }
@@ -388,8 +390,8 @@ public class CustomerAccount5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the stmtFrqcyAndFrmt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the stmtFrqcyAndFrmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -403,10 +405,12 @@ public class CustomerAccount5 {
      * {@link StatementFrequencyAndForm1 }
      * 
      * 
+     * @return
+     *     The value of the stmtFrqcyAndFrmt property.
      */
     public List<StatementFrequencyAndForm1> getStmtFrqcyAndFrmt() {
         if (stmtFrqcyAndFrmt == null) {
-            stmtFrqcyAndFrmt = new ArrayList<StatementFrequencyAndForm1>();
+            stmtFrqcyAndFrmt = new ArrayList<>();
         }
         return this.stmtFrqcyAndFrmt;
     }
@@ -419,7 +423,7 @@ public class CustomerAccount5 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getClsgDt() {
+    public Calendar getClsgDt() {
         return clsgDt;
     }
 
@@ -431,7 +435,7 @@ public class CustomerAccount5 {
      *     {@link String }
      *     
      */
-    public CustomerAccount5 setClsgDt(XMLGregorianCalendar value) {
+    public CustomerAccount5 setClsgDt(Calendar value) {
         this.clsgDt = value;
         return this;
     }
@@ -442,8 +446,8 @@ public class CustomerAccount5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rstrctn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rstrctn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -457,10 +461,12 @@ public class CustomerAccount5 {
      * {@link Restriction1 }
      * 
      * 
+     * @return
+     *     The value of the rstrctn property.
      */
     public List<Restriction1> getRstrctn() {
         if (rstrctn == null) {
-            rstrctn = new ArrayList<Restriction1>();
+            rstrctn = new ArrayList<>();
         }
         return this.rstrctn;
     }

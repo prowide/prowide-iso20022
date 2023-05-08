@@ -15,9 +15,9 @@
  */
 package com.prowidesoftware.swift.model.mx.adapters;
 
-import javax.xml.bind.annotation.adapters.XmlAdapter;
+import jakarta.xml.bind.annotation.adapters.XmlAdapter;
 import javax.xml.datatype.DatatypeConfigurationException;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Calendar;
 
 /**
  * Configured adapter for time elements.
@@ -29,21 +29,21 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *
  * @since 9.2.6
  */
-public class IsoTimeAdapter extends XmlAdapter<String, XMLGregorianCalendar> {
+public class IsoTimeAdapter extends XmlAdapter<String, Calendar> {
 
-    private final XmlAdapter<String, XMLGregorianCalendar> customAdapterImpl;
+    private final XmlAdapter<String, Calendar> customAdapterImpl;
 
     /**
      * Default constructor for jaxb when non is set via API
      */
     public IsoTimeAdapter() throws DatatypeConfigurationException {
-        this.customAdapterImpl = new DefaultXMLGregorianCalendarAdapter();
+        this.customAdapterImpl = new DefaultCalendarAdapter();
     }
 
     /**
      * Creates a time adapter injecting a custom implementation
      */
-    public IsoTimeAdapter(XmlAdapter<String, XMLGregorianCalendar> customAdapterImpl) {
+    public IsoTimeAdapter(XmlAdapter<String, Calendar> customAdapterImpl) {
         this.customAdapterImpl = customAdapterImpl;
     }
 
@@ -54,7 +54,7 @@ public class IsoTimeAdapter extends XmlAdapter<String, XMLGregorianCalendar> {
      * @return created calendar object or null if cannot be parsed
      */
     @Override
-    public XMLGregorianCalendar unmarshal(String value) throws Exception {
+    public Calendar unmarshal(String value) throws Exception {
         return this.customAdapterImpl.unmarshal(value);
     }
 
@@ -65,7 +65,7 @@ public class IsoTimeAdapter extends XmlAdapter<String, XMLGregorianCalendar> {
      * @return formatted content for the XML
      */
     @Override
-    public String marshal(XMLGregorianCalendar cal) throws Exception {
+    public String marshal(Calendar cal) throws Exception {
         return this.customAdapterImpl.marshal(cal);
     }
 

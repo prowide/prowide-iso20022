@@ -3,15 +3,15 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -72,7 +72,7 @@ public class PaymentTransaction119 {
     @XmlElement(name = "IntrBkSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar intrBkSttlmDt;
+    protected Calendar intrBkSttlmDt;
     @XmlElement(name = "SttlmPrty")
     @XmlSchemaType(name = "string")
     protected Priority3Code sttlmPrty;
@@ -333,7 +333,7 @@ public class PaymentTransaction119 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getIntrBkSttlmDt() {
+    public Calendar getIntrBkSttlmDt() {
         return intrBkSttlmDt;
     }
 
@@ -345,7 +345,7 @@ public class PaymentTransaction119 {
      *     {@link String }
      *     
      */
-    public PaymentTransaction119 setIntrBkSttlmDt(XMLGregorianCalendar value) {
+    public PaymentTransaction119 setIntrBkSttlmDt(Calendar value) {
         this.intrBkSttlmDt = value;
         return this;
     }
@@ -506,8 +506,8 @@ public class PaymentTransaction119 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the chrgsInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the chrgsInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -521,10 +521,12 @@ public class PaymentTransaction119 {
      * {@link Charges7 }
      * 
      * 
+     * @return
+     *     The value of the chrgsInf property.
      */
     public List<Charges7> getChrgsInf() {
         if (chrgsInf == null) {
-            chrgsInf = new ArrayList<Charges7>();
+            chrgsInf = new ArrayList<>();
         }
         return this.chrgsInf;
     }
@@ -585,8 +587,8 @@ public class PaymentTransaction119 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rvslRsnInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rvslRsnInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -600,10 +602,12 @@ public class PaymentTransaction119 {
      * {@link PaymentReversalReason9 }
      * 
      * 
+     * @return
+     *     The value of the rvslRsnInf property.
      */
     public List<PaymentReversalReason9> getRvslRsnInf() {
         if (rvslRsnInf == null) {
-            rvslRsnInf = new ArrayList<PaymentReversalReason9>();
+            rvslRsnInf = new ArrayList<>();
         }
         return this.rvslRsnInf;
     }
@@ -639,8 +643,8 @@ public class PaymentTransaction119 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -654,10 +658,12 @@ public class PaymentTransaction119 {
      * {@link SupplementaryData1 }
      * 
      * 
+     * @return
+     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<SupplementaryData1>();
+            splmtryData = new ArrayList<>();
         }
         return this.splmtryData;
     }

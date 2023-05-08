@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -99,8 +99,8 @@ public class StatementGroup4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sndrIndvCtct property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sndrIndvCtct property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -114,10 +114,12 @@ public class StatementGroup4 {
      * {@link Contact4 }
      * 
      * 
+     * @return
+     *     The value of the sndrIndvCtct property.
      */
     public List<Contact4> getSndrIndvCtct() {
         if (sndrIndvCtct == null) {
-            sndrIndvCtct = new ArrayList<Contact4>();
+            sndrIndvCtct = new ArrayList<>();
         }
         return this.sndrIndvCtct;
     }
@@ -153,8 +155,8 @@ public class StatementGroup4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rcvrIndvCtct property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rcvrIndvCtct property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -168,10 +170,12 @@ public class StatementGroup4 {
      * {@link Contact4 }
      * 
      * 
+     * @return
+     *     The value of the rcvrIndvCtct property.
      */
     public List<Contact4> getRcvrIndvCtct() {
         if (rcvrIndvCtct == null) {
-            rcvrIndvCtct = new ArrayList<Contact4>();
+            rcvrIndvCtct = new ArrayList<>();
         }
         return this.rcvrIndvCtct;
     }
@@ -182,8 +186,8 @@ public class StatementGroup4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the bllgStmt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the bllgStmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -197,10 +201,12 @@ public class StatementGroup4 {
      * {@link BillingStatement4 }
      * 
      * 
+     * @return
+     *     The value of the bllgStmt property.
      */
     public List<BillingStatement4> getBllgStmt() {
         if (bllgStmt == null) {
-            bllgStmt = new ArrayList<BillingStatement4>();
+            bllgStmt = new ArrayList<>();
         }
         return this.bllgStmt;
     }

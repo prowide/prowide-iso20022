@@ -1,28 +1,27 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for PenaltyStatusReason1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="PenaltyStatusReason1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CORP"/&gt;
- *     &lt;enumeration value="NEWP"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="RALO"/&gt;
- *     &lt;enumeration value="SEMP"/&gt;
- *     &lt;enumeration value="SWIC"/&gt;
- *     &lt;enumeration value="UPDT"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="PenaltyStatusReason1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CORP"/>
+ *     <enumeration value="NEWP"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="RALO"/>
+ *     <enumeration value="SEMP"/>
+ *     <enumeration value="SWIC"/>
+ *     <enumeration value="UPDT"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "PenaltyStatusReason1Code")

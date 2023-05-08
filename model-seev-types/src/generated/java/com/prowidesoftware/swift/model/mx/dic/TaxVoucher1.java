@@ -2,14 +2,14 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Calendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -81,11 +81,11 @@ public class TaxVoucher1 {
     @XmlElement(name = "BrgnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar brgnDt;
+    protected Calendar brgnDt;
     @XmlElement(name = "BrgnSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar brgnSttlmDt;
+    protected Calendar brgnSttlmDt;
     @XmlElement(name = "StmpDtyAmt")
     protected ActiveCurrencyAndAmount stmpDtyAmt;
     @XmlElement(name = "ChrgAmt")
@@ -478,7 +478,7 @@ public class TaxVoucher1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getBrgnDt() {
+    public Calendar getBrgnDt() {
         return brgnDt;
     }
 
@@ -490,7 +490,7 @@ public class TaxVoucher1 {
      *     {@link String }
      *     
      */
-    public TaxVoucher1 setBrgnDt(XMLGregorianCalendar value) {
+    public TaxVoucher1 setBrgnDt(Calendar value) {
         this.brgnDt = value;
         return this;
     }
@@ -503,7 +503,7 @@ public class TaxVoucher1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getBrgnSttlmDt() {
+    public Calendar getBrgnSttlmDt() {
         return brgnSttlmDt;
     }
 
@@ -515,7 +515,7 @@ public class TaxVoucher1 {
      *     {@link String }
      *     
      */
-    public TaxVoucher1 setBrgnSttlmDt(XMLGregorianCalendar value) {
+    public TaxVoucher1 setBrgnSttlmDt(Calendar value) {
         this.brgnSttlmDt = value;
         return this;
     }

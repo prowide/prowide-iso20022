@@ -23,7 +23,7 @@ import com.prowidesoftware.swift.model.mx.dic.ApplicationHeader;
 import com.prowidesoftware.swift.model.mx.dic.BusinessApplicationHeaderV01;
 import org.w3c.dom.Element;
 
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Calendar;
 
 
 /**
@@ -315,7 +315,7 @@ public class BusinessHeader implements AppHdr {
      * @since 9.0.1
      */
     @Override
-    public XMLGregorianCalendar creationDate() {
+    public Calendar creationDate() {
         if (this.applicationHeader != null) {
             return this.applicationHeader.creationDate();
         } else if (this.businessApplicationHeader != null) {

@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Calendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -38,11 +38,11 @@ public class ATMCommand11 {
     @XmlElement(name = "ReqrdDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar reqrdDtTm;
+    protected Calendar reqrdDtTm;
     @XmlElement(name = "PrcdDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar prcdDtTm;
+    protected Calendar prcdDtTm;
     @XmlElement(name = "CmdId")
     protected ATMCommandIdentification1 cmdId;
     @XmlElement(name = "Rslt", required = true)
@@ -84,7 +84,7 @@ public class ATMCommand11 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getReqrdDtTm() {
+    public Calendar getReqrdDtTm() {
         return reqrdDtTm;
     }
 
@@ -96,7 +96,7 @@ public class ATMCommand11 {
      *     {@link String }
      *     
      */
-    public ATMCommand11 setReqrdDtTm(XMLGregorianCalendar value) {
+    public ATMCommand11 setReqrdDtTm(Calendar value) {
         this.reqrdDtTm = value;
         return this;
     }
@@ -109,7 +109,7 @@ public class ATMCommand11 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getPrcdDtTm() {
+    public Calendar getPrcdDtTm() {
         return prcdDtTm;
     }
 
@@ -121,7 +121,7 @@ public class ATMCommand11 {
      *     {@link String }
      *     
      */
-    public ATMCommand11 setPrcdDtTm(XMLGregorianCalendar value) {
+    public ATMCommand11 setPrcdDtTm(Calendar value) {
         this.prcdDtTm = value;
         return this;
     }

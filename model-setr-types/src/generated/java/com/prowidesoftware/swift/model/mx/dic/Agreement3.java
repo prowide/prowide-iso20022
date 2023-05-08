@@ -2,14 +2,14 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Calendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -39,7 +39,7 @@ public class Agreement3 {
     @XmlElement(name = "Dt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar dt;
+    protected Calendar dt;
     @XmlElement(name = "Ccy")
     protected String ccy;
     @XmlElement(name = "ClsgTp")
@@ -48,7 +48,7 @@ public class Agreement3 {
     @XmlElement(name = "StartDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar startDt;
+    protected Calendar startDt;
     @XmlElement(name = "DlvryTp")
     @XmlSchemaType(name = "string")
     protected DeliveryType2Code dlvryTp;
@@ -88,7 +88,7 @@ public class Agreement3 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDt() {
+    public Calendar getDt() {
         return dt;
     }
 
@@ -100,7 +100,7 @@ public class Agreement3 {
      *     {@link String }
      *     
      */
-    public Agreement3 setDt(XMLGregorianCalendar value) {
+    public Agreement3 setDt(Calendar value) {
         this.dt = value;
         return this;
     }
@@ -163,7 +163,7 @@ public class Agreement3 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getStartDt() {
+    public Calendar getStartDt() {
         return startDt;
     }
 
@@ -175,7 +175,7 @@ public class Agreement3 {
      *     {@link String }
      *     
      */
-    public Agreement3 setStartDt(XMLGregorianCalendar value) {
+    public Agreement3 setStartDt(Calendar value) {
         this.startDt = value;
         return this;
     }

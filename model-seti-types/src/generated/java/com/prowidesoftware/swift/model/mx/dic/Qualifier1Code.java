@@ -1,39 +1,38 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for Qualifier1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="Qualifier1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ALNO"/&gt;
- *     &lt;enumeration value="MOCE"/&gt;
- *     &lt;enumeration value="CLOS"/&gt;
- *     &lt;enumeration value="VWAP"/&gt;
- *     &lt;enumeration value="ITOW"/&gt;
- *     &lt;enumeration value="LIMI"/&gt;
- *     &lt;enumeration value="MOBH"/&gt;
- *     &lt;enumeration value="OPEN"/&gt;
- *     &lt;enumeration value="POSI"/&gt;
- *     &lt;enumeration value="MAKT"/&gt;
- *     &lt;enumeration value="RTRA"/&gt;
- *     &lt;enumeration value="POSH"/&gt;
- *     &lt;enumeration value="TDAY"/&gt;
- *     &lt;enumeration value="VERS"/&gt;
- *     &lt;enumeration value="AWAY"/&gt;
- *     &lt;enumeration value="CROS"/&gt;
- *     &lt;enumeration value="MIDP"/&gt;
- *     &lt;enumeration value="PREO"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="Qualifier1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ALNO"/>
+ *     <enumeration value="MOCE"/>
+ *     <enumeration value="CLOS"/>
+ *     <enumeration value="VWAP"/>
+ *     <enumeration value="ITOW"/>
+ *     <enumeration value="LIMI"/>
+ *     <enumeration value="MOBH"/>
+ *     <enumeration value="OPEN"/>
+ *     <enumeration value="POSI"/>
+ *     <enumeration value="MAKT"/>
+ *     <enumeration value="RTRA"/>
+ *     <enumeration value="POSH"/>
+ *     <enumeration value="TDAY"/>
+ *     <enumeration value="VERS"/>
+ *     <enumeration value="AWAY"/>
+ *     <enumeration value="CROS"/>
+ *     <enumeration value="MIDP"/>
+ *     <enumeration value="PREO"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "Qualifier1Code")

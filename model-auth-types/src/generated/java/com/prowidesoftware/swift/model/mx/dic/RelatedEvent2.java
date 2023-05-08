@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Calendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,15 +33,15 @@ public class RelatedEvent2 {
     @XmlElement(name = "IncptnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar incptnDt;
+    protected Calendar incptnDt;
     @XmlElement(name = "MrgrDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar mrgrDt;
+    protected Calendar mrgrDt;
     @XmlElement(name = "LqdtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar lqdtnDt;
+    protected Calendar lqdtnDt;
     @XmlElement(name = "LastRptSnt")
     protected boolean lastRptSnt;
 
@@ -53,7 +53,7 @@ public class RelatedEvent2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getIncptnDt() {
+    public Calendar getIncptnDt() {
         return incptnDt;
     }
 
@@ -65,7 +65,7 @@ public class RelatedEvent2 {
      *     {@link String }
      *     
      */
-    public RelatedEvent2 setIncptnDt(XMLGregorianCalendar value) {
+    public RelatedEvent2 setIncptnDt(Calendar value) {
         this.incptnDt = value;
         return this;
     }
@@ -78,7 +78,7 @@ public class RelatedEvent2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getMrgrDt() {
+    public Calendar getMrgrDt() {
         return mrgrDt;
     }
 
@@ -90,7 +90,7 @@ public class RelatedEvent2 {
      *     {@link String }
      *     
      */
-    public RelatedEvent2 setMrgrDt(XMLGregorianCalendar value) {
+    public RelatedEvent2 setMrgrDt(Calendar value) {
         this.mrgrDt = value;
         return this;
     }
@@ -103,7 +103,7 @@ public class RelatedEvent2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getLqdtnDt() {
+    public Calendar getLqdtnDt() {
         return lqdtnDt;
     }
 
@@ -115,7 +115,7 @@ public class RelatedEvent2 {
      *     {@link String }
      *     
      */
-    public RelatedEvent2 setLqdtnDt(XMLGregorianCalendar value) {
+    public RelatedEvent2 setLqdtnDt(Calendar value) {
         this.lqdtnDt = value;
         return this;
     }

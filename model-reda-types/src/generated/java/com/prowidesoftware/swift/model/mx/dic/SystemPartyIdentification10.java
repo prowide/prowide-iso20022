@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Calendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -31,7 +31,7 @@ public class SystemPartyIdentification10 {
     @XmlElement(name = "VldFr", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar vldFr;
+    protected Calendar vldFr;
     @XmlElement(name = "Id")
     protected PartyIdentification136 id;
 
@@ -43,7 +43,7 @@ public class SystemPartyIdentification10 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getVldFr() {
+    public Calendar getVldFr() {
         return vldFr;
     }
 
@@ -55,7 +55,7 @@ public class SystemPartyIdentification10 {
      *     {@link String }
      *     
      */
-    public SystemPartyIdentification10 setVldFr(XMLGregorianCalendar value) {
+    public SystemPartyIdentification10 setVldFr(Calendar value) {
         this.vldFr = value;
         return this;
     }

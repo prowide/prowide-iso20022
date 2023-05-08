@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Calendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -32,7 +32,7 @@ public class ActivityDetails1 {
     @XmlElement(name = "DtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar dtTm;
+    protected Calendar dtTm;
     @XmlElement(name = "Actvty", required = true)
     protected Activity1 actvty;
     @XmlElement(name = "Initr", required = true)
@@ -46,7 +46,7 @@ public class ActivityDetails1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDtTm() {
+    public Calendar getDtTm() {
         return dtTm;
     }
 
@@ -58,7 +58,7 @@ public class ActivityDetails1 {
      *     {@link String }
      *     
      */
-    public ActivityDetails1 setDtTm(XMLGregorianCalendar value) {
+    public ActivityDetails1 setDtTm(Calendar value) {
         this.dtTm = value;
         return this;
     }

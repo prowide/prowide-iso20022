@@ -2,17 +2,17 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -45,15 +45,15 @@ public class VerificationInformation1 {
     @XmlElement(name = "DtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar dtTm;
+    protected Calendar dtTm;
     @XmlElement(name = "VldtyEndDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar vldtyEndDt;
+    protected Calendar vldtyEndDt;
     @XmlElement(name = "VldtyEndTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected XMLGregorianCalendar vldtyEndTm;
+    protected Calendar vldtyEndTm;
 
     /**
      * Gets the value of the tp property.
@@ -111,8 +111,8 @@ public class VerificationInformation1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rsn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -126,10 +126,12 @@ public class VerificationInformation1 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the rsn property.
      */
     public List<String> getRsn() {
         if (rsn == null) {
-            rsn = new ArrayList<String>();
+            rsn = new ArrayList<>();
         }
         return this.rsn;
     }
@@ -142,7 +144,7 @@ public class VerificationInformation1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDtTm() {
+    public Calendar getDtTm() {
         return dtTm;
     }
 
@@ -154,7 +156,7 @@ public class VerificationInformation1 {
      *     {@link String }
      *     
      */
-    public VerificationInformation1 setDtTm(XMLGregorianCalendar value) {
+    public VerificationInformation1 setDtTm(Calendar value) {
         this.dtTm = value;
         return this;
     }
@@ -167,7 +169,7 @@ public class VerificationInformation1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getVldtyEndDt() {
+    public Calendar getVldtyEndDt() {
         return vldtyEndDt;
     }
 
@@ -179,7 +181,7 @@ public class VerificationInformation1 {
      *     {@link String }
      *     
      */
-    public VerificationInformation1 setVldtyEndDt(XMLGregorianCalendar value) {
+    public VerificationInformation1 setVldtyEndDt(Calendar value) {
         this.vldtyEndDt = value;
         return this;
     }
@@ -192,7 +194,7 @@ public class VerificationInformation1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getVldtyEndTm() {
+    public Calendar getVldtyEndTm() {
         return vldtyEndTm;
     }
 
@@ -204,7 +206,7 @@ public class VerificationInformation1 {
      *     {@link String }
      *     
      */
-    public VerificationInformation1 setVldtyEndTm(XMLGregorianCalendar value) {
+    public VerificationInformation1 setVldtyEndTm(Calendar value) {
         this.vldtyEndTm = value;
         return this;
     }

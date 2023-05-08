@@ -1,37 +1,36 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for TypeOfAmount18Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="TypeOfAmount18Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="AMTH"/&gt;
- *     &lt;enumeration value="BAGG"/&gt;
- *     &lt;enumeration value="CHTC"/&gt;
- *     &lt;enumeration value="DATA"/&gt;
- *     &lt;enumeration value="EXTK"/&gt;
- *     &lt;enumeration value="EXTR"/&gt;
- *     &lt;enumeration value="FARE"/&gt;
- *     &lt;enumeration value="INSU"/&gt;
- *     &lt;enumeration value="FDBV"/&gt;
- *     &lt;enumeration value="MISC"/&gt;
- *     &lt;enumeration value="OTHN"/&gt;
- *     &lt;enumeration value="OTHP"/&gt;
- *     &lt;enumeration value="PHNE"/&gt;
- *     &lt;enumeration value="PRPY"/&gt;
- *     &lt;enumeration value="TOTL"/&gt;
- *     &lt;enumeration value="EXTF"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="TypeOfAmount18Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="AMTH"/>
+ *     <enumeration value="BAGG"/>
+ *     <enumeration value="CHTC"/>
+ *     <enumeration value="DATA"/>
+ *     <enumeration value="EXTK"/>
+ *     <enumeration value="EXTR"/>
+ *     <enumeration value="FARE"/>
+ *     <enumeration value="INSU"/>
+ *     <enumeration value="FDBV"/>
+ *     <enumeration value="MISC"/>
+ *     <enumeration value="OTHN"/>
+ *     <enumeration value="OTHP"/>
+ *     <enumeration value="PHNE"/>
+ *     <enumeration value="PRPY"/>
+ *     <enumeration value="TOTL"/>
+ *     <enumeration value="EXTF"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "TypeOfAmount18Code")

@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Calendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -48,7 +48,7 @@ public class Organisation31 {
     @XmlElement(name = "RegnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar regnDt;
+    protected Calendar regnDt;
     @XmlElement(name = "TaxIdNb")
     protected String taxIdNb;
     @XmlElement(name = "NtlRegnNb")
@@ -189,7 +189,7 @@ public class Organisation31 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getRegnDt() {
+    public Calendar getRegnDt() {
         return regnDt;
     }
 
@@ -201,7 +201,7 @@ public class Organisation31 {
      *     {@link String }
      *     
      */
-    public Organisation31 setRegnDt(XMLGregorianCalendar value) {
+    public Organisation31 setRegnDt(Calendar value) {
         this.regnDt = value;
         return this;
     }

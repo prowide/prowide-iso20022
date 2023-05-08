@@ -1,49 +1,48 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for SecuritiesBalanceType11Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="SecuritiesBalanceType11Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="BLOK"/&gt;
- *     &lt;enumeration value="AWAS"/&gt;
- *     &lt;enumeration value="AVAI"/&gt;
- *     &lt;enumeration value="BLCA"/&gt;
- *     &lt;enumeration value="BLOT"/&gt;
- *     &lt;enumeration value="BLOV"/&gt;
- *     &lt;enumeration value="BORR"/&gt;
- *     &lt;enumeration value="COLI"/&gt;
- *     &lt;enumeration value="COLO"/&gt;
- *     &lt;enumeration value="COLA"/&gt;
- *     &lt;enumeration value="LOAN"/&gt;
- *     &lt;enumeration value="MARG"/&gt;
- *     &lt;enumeration value="PECA"/&gt;
- *     &lt;enumeration value="PEDA"/&gt;
- *     &lt;enumeration value="PLED"/&gt;
- *     &lt;enumeration value="REGO"/&gt;
- *     &lt;enumeration value="RSTR"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="TRAN"/&gt;
- *     &lt;enumeration value="DRAW"/&gt;
- *     &lt;enumeration value="CLEN"/&gt;
- *     &lt;enumeration value="DIRT"/&gt;
- *     &lt;enumeration value="NOMI"/&gt;
- *     &lt;enumeration value="SPOS"/&gt;
- *     &lt;enumeration value="UNRG"/&gt;
- *     &lt;enumeration value="ISSU"/&gt;
- *     &lt;enumeration value="QUAS"/&gt;
- *     &lt;enumeration value="LODE"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="SecuritiesBalanceType11Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="BLOK"/>
+ *     <enumeration value="AWAS"/>
+ *     <enumeration value="AVAI"/>
+ *     <enumeration value="BLCA"/>
+ *     <enumeration value="BLOT"/>
+ *     <enumeration value="BLOV"/>
+ *     <enumeration value="BORR"/>
+ *     <enumeration value="COLI"/>
+ *     <enumeration value="COLO"/>
+ *     <enumeration value="COLA"/>
+ *     <enumeration value="LOAN"/>
+ *     <enumeration value="MARG"/>
+ *     <enumeration value="PECA"/>
+ *     <enumeration value="PEDA"/>
+ *     <enumeration value="PLED"/>
+ *     <enumeration value="REGO"/>
+ *     <enumeration value="RSTR"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="TRAN"/>
+ *     <enumeration value="DRAW"/>
+ *     <enumeration value="CLEN"/>
+ *     <enumeration value="DIRT"/>
+ *     <enumeration value="NOMI"/>
+ *     <enumeration value="SPOS"/>
+ *     <enumeration value="UNRG"/>
+ *     <enumeration value="ISSU"/>
+ *     <enumeration value="QUAS"/>
+ *     <enumeration value="LODE"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "SecuritiesBalanceType11Code")

@@ -38,7 +38,7 @@ class XMLGregorianCalendarUtils {
      *
      * @return created calendar or null if DatatypeFactory fails to create the calendar instance
      */
-    static XMLGregorianCalendar now() {
+    static Calendar now() {
         GregorianCalendar c = new GregorianCalendar();
         c.setTime(Calendar.getInstance(TimeZone.getTimeZone("UTC")).getTime());
         XMLGregorianCalendar creationDate = null;
@@ -51,7 +51,12 @@ class XMLGregorianCalendarUtils {
         } catch (DatatypeConfigurationException e) {
             log.log(Level.WARNING, "error initializing header creation date", e);
         }
-        return creationDate;
+
+
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(creationDate.toGregorianCalendar().getTime());
+
+        return cal;
     }
 
 }

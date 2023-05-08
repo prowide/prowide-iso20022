@@ -1,48 +1,47 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for PendingProcessingReason4Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="PendingProcessingReason4Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ADEA"/&gt;
- *     &lt;enumeration value="CAIS"/&gt;
- *     &lt;enumeration value="DOCY"/&gt;
- *     &lt;enumeration value="NOFX"/&gt;
- *     &lt;enumeration value="BLOC"/&gt;
- *     &lt;enumeration value="MUNO"/&gt;
- *     &lt;enumeration value="GLOB"/&gt;
- *     &lt;enumeration value="YCOL"/&gt;
- *     &lt;enumeration value="COLL"/&gt;
- *     &lt;enumeration value="FLIM"/&gt;
- *     &lt;enumeration value="NEXT"/&gt;
- *     &lt;enumeration value="LACK"/&gt;
- *     &lt;enumeration value="LALO"/&gt;
- *     &lt;enumeration value="MONY"/&gt;
- *     &lt;enumeration value="MINO"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="DENO"/&gt;
- *     &lt;enumeration value="LIQU"/&gt;
- *     &lt;enumeration value="CERT"/&gt;
- *     &lt;enumeration value="CSDH"/&gt;
- *     &lt;enumeration value="CVAL"/&gt;
- *     &lt;enumeration value="CDEL"/&gt;
- *     &lt;enumeration value="CDLR"/&gt;
- *     &lt;enumeration value="CDAC"/&gt;
- *     &lt;enumeration value="INBC"/&gt;
- *     &lt;enumeration value="PREA"/&gt;
- *     &lt;enumeration value="PRSY"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="PendingProcessingReason4Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ADEA"/>
+ *     <enumeration value="CAIS"/>
+ *     <enumeration value="DOCY"/>
+ *     <enumeration value="NOFX"/>
+ *     <enumeration value="BLOC"/>
+ *     <enumeration value="MUNO"/>
+ *     <enumeration value="GLOB"/>
+ *     <enumeration value="YCOL"/>
+ *     <enumeration value="COLL"/>
+ *     <enumeration value="FLIM"/>
+ *     <enumeration value="NEXT"/>
+ *     <enumeration value="LACK"/>
+ *     <enumeration value="LALO"/>
+ *     <enumeration value="MONY"/>
+ *     <enumeration value="MINO"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="DENO"/>
+ *     <enumeration value="LIQU"/>
+ *     <enumeration value="CERT"/>
+ *     <enumeration value="CSDH"/>
+ *     <enumeration value="CVAL"/>
+ *     <enumeration value="CDEL"/>
+ *     <enumeration value="CDLR"/>
+ *     <enumeration value="CDAC"/>
+ *     <enumeration value="INBC"/>
+ *     <enumeration value="PREA"/>
+ *     <enumeration value="PRSY"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "PendingProcessingReason4Code")

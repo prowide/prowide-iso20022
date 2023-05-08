@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -40,8 +40,8 @@ public class LowVolatilityNetAssetValueReportData1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the amtsdCostMtdPricDvtnEvt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the amtsdCostMtdPricDvtnEvt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -55,10 +55,12 @@ public class LowVolatilityNetAssetValueReportData1 {
      * {@link AmortisedCostMethodPriceDeviationEvent1 }
      * 
      * 
+     * @return
+     *     The value of the amtsdCostMtdPricDvtnEvt property.
      */
     public List<AmortisedCostMethodPriceDeviationEvent1> getAmtsdCostMtdPricDvtnEvt() {
         if (amtsdCostMtdPricDvtnEvt == null) {
-            amtsdCostMtdPricDvtnEvt = new ArrayList<AmortisedCostMethodPriceDeviationEvent1>();
+            amtsdCostMtdPricDvtnEvt = new ArrayList<>();
         }
         return this.amtsdCostMtdPricDvtnEvt;
     }
@@ -69,8 +71,8 @@ public class LowVolatilityNetAssetValueReportData1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cstNetAsstValDvtnEvt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cstNetAsstValDvtnEvt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -84,10 +86,12 @@ public class LowVolatilityNetAssetValueReportData1 {
      * {@link ConstantNetAssetValueDeviationEvent1 }
      * 
      * 
+     * @return
+     *     The value of the cstNetAsstValDvtnEvt property.
      */
     public List<ConstantNetAssetValueDeviationEvent1> getCstNetAsstValDvtnEvt() {
         if (cstNetAsstValDvtnEvt == null) {
-            cstNetAsstValDvtnEvt = new ArrayList<ConstantNetAssetValueDeviationEvent1>();
+            cstNetAsstValDvtnEvt = new ArrayList<>();
         }
         return this.cstNetAsstValDvtnEvt;
     }
@@ -98,8 +102,8 @@ public class LowVolatilityNetAssetValueReportData1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the mtrgAsstThrshldEvt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the mtrgAsstThrshldEvt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -113,10 +117,12 @@ public class LowVolatilityNetAssetValueReportData1 {
      * {@link MaturingAssetThresholdEvent1 }
      * 
      * 
+     * @return
+     *     The value of the mtrgAsstThrshldEvt property.
      */
     public List<MaturingAssetThresholdEvent1> getMtrgAsstThrshldEvt() {
         if (mtrgAsstThrshldEvt == null) {
-            mtrgAsstThrshldEvt = new ArrayList<MaturingAssetThresholdEvent1>();
+            mtrgAsstThrshldEvt = new ArrayList<>();
         }
         return this.mtrgAsstThrshldEvt;
     }

@@ -2,14 +2,14 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Calendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -40,7 +40,7 @@ public class Amount4 {
     @XmlElement(name = "QtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar qtnDt;
+    protected Calendar qtnDt;
 
     /**
      * Gets the value of the amt property.
@@ -125,7 +125,7 @@ public class Amount4 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getQtnDt() {
+    public Calendar getQtnDt() {
         return qtnDt;
     }
 
@@ -137,7 +137,7 @@ public class Amount4 {
      *     {@link String }
      *     
      */
-    public Amount4 setQtnDt(XMLGregorianCalendar value) {
+    public Amount4 setQtnDt(Calendar value) {
         this.qtnDt = value;
         return this;
     }

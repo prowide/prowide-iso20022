@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Calendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -36,7 +36,7 @@ public class TransactionCertificate5 {
     @XmlElement(name = "TxDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar txDt;
+    protected Calendar txDt;
     @XmlElement(name = "TxTp")
     protected String txTp;
     @XmlElement(name = "LclInstrm", required = true)
@@ -77,7 +77,7 @@ public class TransactionCertificate5 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getTxDt() {
+    public Calendar getTxDt() {
         return txDt;
     }
 
@@ -89,7 +89,7 @@ public class TransactionCertificate5 {
      *     {@link String }
      *     
      */
-    public TransactionCertificate5 setTxDt(XMLGregorianCalendar value) {
+    public TransactionCertificate5 setTxDt(Calendar value) {
         this.txDt = value;
         return this;
     }

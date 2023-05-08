@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -62,8 +62,8 @@ public class DTCCCANOCustodianSD1V03 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ctdnOptnDtDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ctdnOptnDtDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -77,10 +77,12 @@ public class DTCCCANOCustodianSD1V03 {
      * {@link CustodianOptionDateDetailsSD1 }
      * 
      * 
+     * @return
+     *     The value of the ctdnOptnDtDtls property.
      */
     public List<CustodianOptionDateDetailsSD1> getCtdnOptnDtDtls() {
         if (ctdnOptnDtDtls == null) {
-            ctdnOptnDtDtls = new ArrayList<CustodianOptionDateDetailsSD1>();
+            ctdnOptnDtDtls = new ArrayList<>();
         }
         return this.ctdnOptnDtDtls;
     }

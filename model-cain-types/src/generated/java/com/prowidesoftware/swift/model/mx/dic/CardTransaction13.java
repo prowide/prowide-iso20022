@@ -2,15 +2,15 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -39,7 +39,7 @@ public class CardTransaction13 {
     @XmlElement(name = "InitrDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar initrDtTm;
+    protected Calendar initrDtTm;
     @XmlElement(name = "ReqdKey")
     protected List<KEKIdentifier3> reqdKey;
     @XmlElement(name = "Key")
@@ -80,7 +80,7 @@ public class CardTransaction13 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getInitrDtTm() {
+    public Calendar getInitrDtTm() {
         return initrDtTm;
     }
 
@@ -92,7 +92,7 @@ public class CardTransaction13 {
      *     {@link String }
      *     
      */
-    public CardTransaction13 setInitrDtTm(XMLGregorianCalendar value) {
+    public CardTransaction13 setInitrDtTm(Calendar value) {
         this.initrDtTm = value;
         return this;
     }
@@ -103,8 +103,8 @@ public class CardTransaction13 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the reqdKey property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the reqdKey property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -118,10 +118,12 @@ public class CardTransaction13 {
      * {@link KEKIdentifier3 }
      * 
      * 
+     * @return
+     *     The value of the reqdKey property.
      */
     public List<KEKIdentifier3> getReqdKey() {
         if (reqdKey == null) {
-            reqdKey = new ArrayList<KEKIdentifier3>();
+            reqdKey = new ArrayList<>();
         }
         return this.reqdKey;
     }
@@ -132,8 +134,8 @@ public class CardTransaction13 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the key property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the key property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -147,10 +149,12 @@ public class CardTransaction13 {
      * {@link CryptographicKey6 }
      * 
      * 
+     * @return
+     *     The value of the key property.
      */
     public List<CryptographicKey6> getKey() {
         if (key == null) {
-            key = new ArrayList<CryptographicKey6>();
+            key = new ArrayList<>();
         }
         return this.key;
     }

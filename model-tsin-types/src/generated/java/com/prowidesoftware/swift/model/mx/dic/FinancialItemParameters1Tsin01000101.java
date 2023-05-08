@@ -2,18 +2,18 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
-import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementRef;
-import javax.xml.bind.annotation.XmlIDREF;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.JAXBElement;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlElementRef;
+import jakarta.xml.bind.annotation.XmlIDREF;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -53,7 +53,7 @@ public class FinancialItemParameters1Tsin01000101 {
     @XmlElement(name = "IsseDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar isseDt;
+    protected Calendar isseDt;
     @XmlElementRef(name = "RltdItm", namespace = "urn:iso:std:iso:20022:tech:xsd:tsin.010.001.01", type = JAXBElement.class, required = false)
     protected List<JAXBElement<Object>> rltdItm;
     @XmlElement(name = "DocPurp")
@@ -132,7 +132,7 @@ public class FinancialItemParameters1Tsin01000101 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getIsseDt() {
+    public Calendar getIsseDt() {
         return isseDt;
     }
 
@@ -144,7 +144,7 @@ public class FinancialItemParameters1Tsin01000101 {
      *     {@link String }
      *     
      */
-    public FinancialItemParameters1Tsin01000101 setIsseDt(XMLGregorianCalendar value) {
+    public FinancialItemParameters1Tsin01000101 setIsseDt(Calendar value) {
         this.isseDt = value;
         return this;
     }
@@ -155,8 +155,8 @@ public class FinancialItemParameters1Tsin01000101 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rltdItm property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rltdItm property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -170,10 +170,12 @@ public class FinancialItemParameters1Tsin01000101 {
      * {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
      * 
+     * @return
+     *     The value of the rltdItm property.
      */
     public List<JAXBElement<Object>> getRltdItm() {
         if (rltdItm == null) {
-            rltdItm = new ArrayList<JAXBElement<Object>>();
+            rltdItm = new ArrayList<>();
         }
         return this.rltdItm;
     }
@@ -384,8 +386,8 @@ public class FinancialItemParameters1Tsin01000101 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the govngCtrct property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the govngCtrct property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -399,10 +401,12 @@ public class FinancialItemParameters1Tsin01000101 {
      * {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
      * 
+     * @return
+     *     The value of the govngCtrct property.
      */
     public List<JAXBElement<Object>> getGovngCtrct() {
         if (govngCtrct == null) {
-            govngCtrct = new ArrayList<JAXBElement<Object>>();
+            govngCtrct = new ArrayList<>();
         }
         return this.govngCtrct;
     }

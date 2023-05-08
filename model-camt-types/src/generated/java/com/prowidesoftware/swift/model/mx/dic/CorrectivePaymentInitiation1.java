@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Calendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -46,11 +46,11 @@ public class CorrectivePaymentInitiation1 {
     @XmlElement(name = "ReqdExctnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar reqdExctnDt;
+    protected Calendar reqdExctnDt;
     @XmlElement(name = "ReqdColltnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar reqdColltnDt;
+    protected Calendar reqdColltnDt;
 
     /**
      * Gets the value of the grpHdr property.
@@ -185,7 +185,7 @@ public class CorrectivePaymentInitiation1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getReqdExctnDt() {
+    public Calendar getReqdExctnDt() {
         return reqdExctnDt;
     }
 
@@ -197,7 +197,7 @@ public class CorrectivePaymentInitiation1 {
      *     {@link String }
      *     
      */
-    public CorrectivePaymentInitiation1 setReqdExctnDt(XMLGregorianCalendar value) {
+    public CorrectivePaymentInitiation1 setReqdExctnDt(Calendar value) {
         this.reqdExctnDt = value;
         return this;
     }
@@ -210,7 +210,7 @@ public class CorrectivePaymentInitiation1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getReqdColltnDt() {
+    public Calendar getReqdColltnDt() {
         return reqdColltnDt;
     }
 
@@ -222,7 +222,7 @@ public class CorrectivePaymentInitiation1 {
      *     {@link String }
      *     
      */
-    public CorrectivePaymentInitiation1 setReqdColltnDt(XMLGregorianCalendar value) {
+    public CorrectivePaymentInitiation1 setReqdColltnDt(Calendar value) {
         this.reqdColltnDt = value;
         return this;
     }

@@ -2,15 +2,15 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -53,7 +53,7 @@ public class Organisation29 {
     @XmlElement(name = "RegnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar regnDt;
+    protected Calendar regnDt;
     @XmlElement(name = "ModfdPstlAdr")
     protected List<ModificationScope34> modfdPstlAdr;
     @XmlElement(name = "TpOfOrg")
@@ -219,7 +219,7 @@ public class Organisation29 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getRegnDt() {
+    public Calendar getRegnDt() {
         return regnDt;
     }
 
@@ -231,7 +231,7 @@ public class Organisation29 {
      *     {@link String }
      *     
      */
-    public Organisation29 setRegnDt(XMLGregorianCalendar value) {
+    public Organisation29 setRegnDt(Calendar value) {
         this.regnDt = value;
         return this;
     }
@@ -242,8 +242,8 @@ public class Organisation29 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the modfdPstlAdr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the modfdPstlAdr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -257,10 +257,12 @@ public class Organisation29 {
      * {@link ModificationScope34 }
      * 
      * 
+     * @return
+     *     The value of the modfdPstlAdr property.
      */
     public List<ModificationScope34> getModfdPstlAdr() {
         if (modfdPstlAdr == null) {
-            modfdPstlAdr = new ArrayList<ModificationScope34>();
+            modfdPstlAdr = new ArrayList<>();
         }
         return this.modfdPstlAdr;
     }
@@ -296,8 +298,8 @@ public class Organisation29 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the plcOfListg property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the plcOfListg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -311,10 +313,12 @@ public class Organisation29 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the plcOfListg property.
      */
     public List<String> getPlcOfListg() {
         if (plcOfListg == null) {
-            plcOfListg = new ArrayList<String>();
+            plcOfListg = new ArrayList<>();
         }
         return this.plcOfListg;
     }

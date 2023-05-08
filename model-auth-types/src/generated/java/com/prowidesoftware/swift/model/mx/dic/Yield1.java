@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -43,8 +43,8 @@ public class Yield1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cmltvRtrsBrkdwn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cmltvRtrsBrkdwn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -58,10 +58,12 @@ public class Yield1 {
      * {@link RangeBreakdown1 }
      * 
      * 
+     * @return
+     *     The value of the cmltvRtrsBrkdwn property.
      */
     public List<RangeBreakdown1> getCmltvRtrsBrkdwn() {
         if (cmltvRtrsBrkdwn == null) {
-            cmltvRtrsBrkdwn = new ArrayList<RangeBreakdown1>();
+            cmltvRtrsBrkdwn = new ArrayList<>();
         }
         return this.cmltvRtrsBrkdwn;
     }
@@ -72,8 +74,8 @@ public class Yield1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the stdPrtflVoltlyBrkdwn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the stdPrtflVoltlyBrkdwn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -87,10 +89,12 @@ public class Yield1 {
      * {@link RangeBreakdown1 }
      * 
      * 
+     * @return
+     *     The value of the stdPrtflVoltlyBrkdwn property.
      */
     public List<RangeBreakdown1> getStdPrtflVoltlyBrkdwn() {
         if (stdPrtflVoltlyBrkdwn == null) {
-            stdPrtflVoltlyBrkdwn = new ArrayList<RangeBreakdown1>();
+            stdPrtflVoltlyBrkdwn = new ArrayList<>();
         }
         return this.stdPrtflVoltlyBrkdwn;
     }
@@ -101,8 +105,8 @@ public class Yield1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the shdwPrtflVoltlyBrkdwn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the shdwPrtflVoltlyBrkdwn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -116,10 +120,12 @@ public class Yield1 {
      * {@link RangeBreakdown1 }
      * 
      * 
+     * @return
+     *     The value of the shdwPrtflVoltlyBrkdwn property.
      */
     public List<RangeBreakdown1> getShdwPrtflVoltlyBrkdwn() {
         if (shdwPrtflVoltlyBrkdwn == null) {
-            shdwPrtflVoltlyBrkdwn = new ArrayList<RangeBreakdown1>();
+            shdwPrtflVoltlyBrkdwn = new ArrayList<>();
         }
         return this.shdwPrtflVoltlyBrkdwn;
     }
@@ -130,8 +136,8 @@ public class Yield1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the calYrPrfrmncBrkdwn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the calYrPrfrmncBrkdwn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -145,10 +151,12 @@ public class Yield1 {
      * {@link RangeBreakdown1 }
      * 
      * 
+     * @return
+     *     The value of the calYrPrfrmncBrkdwn property.
      */
     public List<RangeBreakdown1> getCalYrPrfrmncBrkdwn() {
         if (calYrPrfrmncBrkdwn == null) {
-            calYrPrfrmncBrkdwn = new ArrayList<RangeBreakdown1>();
+            calYrPrfrmncBrkdwn = new ArrayList<>();
         }
         return this.calYrPrfrmncBrkdwn;
     }

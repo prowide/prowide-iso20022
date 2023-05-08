@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Calendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -47,7 +47,7 @@ public class TradeStatus1 {
     @XmlElement(name = "StsTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar stsTm;
+    protected Calendar stsTm;
     @XmlElement(name = "StsOrgtr")
     protected String stsOrgtr;
 
@@ -184,7 +184,7 @@ public class TradeStatus1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getStsTm() {
+    public Calendar getStsTm() {
         return stsTm;
     }
 
@@ -196,7 +196,7 @@ public class TradeStatus1 {
      *     {@link String }
      *     
      */
-    public TradeStatus1 setStsTm(XMLGregorianCalendar value) {
+    public TradeStatus1 setStsTm(Calendar value) {
         this.stsTm = value;
         return this;
     }

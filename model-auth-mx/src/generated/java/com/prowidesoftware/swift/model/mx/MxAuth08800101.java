@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxAuth08800101
 
     @XmlElement(name = "TaxIncmStmtStsAdvc", required = true)
     protected TaxIncomeStatementStatusAdviceV01 taxIncmStmtStsAdvc;
-    public final static transient String BUSINESS_PROCESS = "auth";
-    public final static transient int FUNCTIONALITY = 88;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 1;
+    public static final transient String BUSINESS_PROCESS = "auth";
+    public static final transient int FUNCTIONALITY = 88;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {AddressType2Code.class, DateAndDateTime2Choice.class, GenericIdentification30 .class, GenericIdentification36 .class, IncomeStatementAcceptedReason1 .class, IncomeStatementAcceptedStatus11Choice.class, IncomeStatementRejectionReason1 .class, IncomeStatementRejectionReason1Choice.class, IncomeStatementRejectionStatus11Choice.class, MxAuth08800101 .class, NameAndAddress5 .class, NoReasonCode.class, OriginalBusinessReport1 .class, PartyIdentification71Choice.class, PostalAddress1 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TaxIncomeHeader1 .class, TaxIncomeReason1Code.class, TaxIncomeStatementStatusAdviceV01 .class, TaxIncomeStatus1Choice.class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:DRAFT1auth.088.001.01";
+    public static final transient Class[] _classes = new Class[] {AddressType2Code.class, DateAndDateTime2Choice.class, GenericIdentification30 .class, GenericIdentification36 .class, IncomeStatementAcceptedReason1 .class, IncomeStatementAcceptedStatus11Choice.class, IncomeStatementRejectionReason1 .class, IncomeStatementRejectionReason1Choice.class, IncomeStatementRejectionStatus11Choice.class, MxAuth08800101 .class, NameAndAddress5 .class, NoReasonCode.class, OriginalBusinessReport1 .class, PartyIdentification71Choice.class, PostalAddress1 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TaxIncomeHeader1 .class, TaxIncomeReason1Code.class, TaxIncomeStatementStatusAdviceV01 .class, TaxIncomeStatus1Choice.class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:DRAFT1auth.088.001.01";
 
     public MxAuth08800101() {
         super();
@@ -86,21 +86,6 @@ public class MxAuth08800101
     public MxAuth08800101 setTaxIncmStmtStsAdvc(TaxIncomeStatementStatusAdviceV01 value) {
         this.taxIncmStmtStsAdvc = value;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -173,8 +158,23 @@ public class MxAuth08800101
      * @return
      *     a new instance of MxAuth08800101
      */
-    public final static MxAuth08800101 fromJson(String json) {
+    public static final MxAuth08800101 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxAuth08800101 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

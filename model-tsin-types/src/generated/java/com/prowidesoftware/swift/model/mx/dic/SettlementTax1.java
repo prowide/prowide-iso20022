@@ -2,15 +2,15 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -41,7 +41,7 @@ public class SettlementTax1 {
     @XmlElement(name = "TaxPtDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar taxPtDt;
+    protected Calendar taxPtDt;
 
     /**
      * Gets the value of the tpCd property.
@@ -74,8 +74,8 @@ public class SettlementTax1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the clctdAmt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the clctdAmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -89,10 +89,12 @@ public class SettlementTax1 {
      * {@link CurrencyAndAmount }
      * 
      * 
+     * @return
+     *     The value of the clctdAmt property.
      */
     public List<CurrencyAndAmount> getClctdAmt() {
         if (clctdAmt == null) {
-            clctdAmt = new ArrayList<CurrencyAndAmount>();
+            clctdAmt = new ArrayList<>();
         }
         return this.clctdAmt;
     }
@@ -103,8 +105,8 @@ public class SettlementTax1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the bsisAmt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the bsisAmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -118,10 +120,12 @@ public class SettlementTax1 {
      * {@link CurrencyAndAmount }
      * 
      * 
+     * @return
+     *     The value of the bsisAmt property.
      */
     public List<CurrencyAndAmount> getBsisAmt() {
         if (bsisAmt == null) {
-            bsisAmt = new ArrayList<CurrencyAndAmount>();
+            bsisAmt = new ArrayList<>();
         }
         return this.bsisAmt;
     }
@@ -134,7 +138,7 @@ public class SettlementTax1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getTaxPtDt() {
+    public Calendar getTaxPtDt() {
         return taxPtDt;
     }
 
@@ -146,7 +150,7 @@ public class SettlementTax1 {
      *     {@link String }
      *     
      */
-    public SettlementTax1 setTaxPtDt(XMLGregorianCalendar value) {
+    public SettlementTax1 setTaxPtDt(Calendar value) {
         this.taxPtDt = value;
         return this;
     }

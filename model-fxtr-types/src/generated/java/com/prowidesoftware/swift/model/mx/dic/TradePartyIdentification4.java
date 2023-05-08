@@ -1,10 +1,11 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -18,15 +19,19 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TradePartyIdentification3", propOrder = {
+@XmlType(name = "TradePartyIdentification4", propOrder = {
     "fndInf",
+    "buyrOrSellrInd",
     "submitgPty",
     "tradPty"
 })
-public class TradePartyIdentification3 {
+public class TradePartyIdentification4 {
 
     @XmlElement(name = "FndInf")
     protected FundIdentification2 fndInf;
+    @XmlElement(name = "BuyrOrSellrInd", required = true)
+    @XmlSchemaType(name = "string")
+    protected OptionParty1Code buyrOrSellrInd;
     @XmlElement(name = "SubmitgPty", required = true)
     protected PartyIdentification8Choice submitgPty;
     @XmlElement(name = "TradPty", required = true)
@@ -52,8 +57,33 @@ public class TradePartyIdentification3 {
      *     {@link FundIdentification2 }
      *     
      */
-    public TradePartyIdentification3 setFndInf(FundIdentification2 value) {
+    public TradePartyIdentification4 setFndInf(FundIdentification2 value) {
         this.fndInf = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the buyrOrSellrInd property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link OptionParty1Code }
+     *     
+     */
+    public OptionParty1Code getBuyrOrSellrInd() {
+        return buyrOrSellrInd;
+    }
+
+    /**
+     * Sets the value of the buyrOrSellrInd property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link OptionParty1Code }
+     *     
+     */
+    public TradePartyIdentification4 setBuyrOrSellrInd(OptionParty1Code value) {
+        this.buyrOrSellrInd = value;
         return this;
     }
 
@@ -77,7 +107,7 @@ public class TradePartyIdentification3 {
      *     {@link PartyIdentification8Choice }
      *     
      */
-    public TradePartyIdentification3 setSubmitgPty(PartyIdentification8Choice value) {
+    public TradePartyIdentification4 setSubmitgPty(PartyIdentification8Choice value) {
         this.submitgPty = value;
         return this;
     }
@@ -102,7 +132,7 @@ public class TradePartyIdentification3 {
      *     {@link PartyIdentification8Choice }
      *     
      */
-    public TradePartyIdentification3 setTradPty(PartyIdentification8Choice value) {
+    public TradePartyIdentification4 setTradPty(PartyIdentification8Choice value) {
         this.tradPty = value;
         return this;
     }

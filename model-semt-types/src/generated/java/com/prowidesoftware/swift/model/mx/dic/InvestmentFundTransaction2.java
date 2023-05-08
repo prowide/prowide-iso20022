@@ -1,15 +1,15 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Calendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -67,7 +67,7 @@ public class InvestmentFundTransaction2 {
     @XmlElement(name = "OrdrDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar ordrDtTm;
+    protected Calendar ordrDtTm;
     @XmlElement(name = "SttldTxInd")
     protected boolean sttldTxInd;
     @XmlElement(name = "RegdTxInd")
@@ -85,7 +85,7 @@ public class InvestmentFundTransaction2 {
     @XmlElement(name = "SttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar sttlmDt;
+    protected Calendar sttlmDt;
     @XmlElement(name = "TradDtTm", required = true)
     protected DateAndDateTimeChoice tradDtTm;
     @XmlElement(name = "CumDvddInd")
@@ -303,7 +303,7 @@ public class InvestmentFundTransaction2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getOrdrDtTm() {
+    public Calendar getOrdrDtTm() {
         return ordrDtTm;
     }
 
@@ -315,7 +315,7 @@ public class InvestmentFundTransaction2 {
      *     {@link String }
      *     
      */
-    public InvestmentFundTransaction2 setOrdrDtTm(XMLGregorianCalendar value) {
+    public InvestmentFundTransaction2 setOrdrDtTm(Calendar value) {
         this.ordrDtTm = value;
         return this;
     }
@@ -462,7 +462,7 @@ public class InvestmentFundTransaction2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getSttlmDt() {
+    public Calendar getSttlmDt() {
         return sttlmDt;
     }
 
@@ -474,7 +474,7 @@ public class InvestmentFundTransaction2 {
      *     {@link String }
      *     
      */
-    public InvestmentFundTransaction2 setSttlmDt(XMLGregorianCalendar value) {
+    public InvestmentFundTransaction2 setSttlmDt(Calendar value) {
         this.sttlmDt = value;
         return this;
     }

@@ -1,34 +1,33 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for Incoterms1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="Incoterms1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="EXW"/&gt;
- *     &lt;enumeration value="FCA"/&gt;
- *     &lt;enumeration value="FAS"/&gt;
- *     &lt;enumeration value="FOB"/&gt;
- *     &lt;enumeration value="CFR"/&gt;
- *     &lt;enumeration value="CIF"/&gt;
- *     &lt;enumeration value="CPT"/&gt;
- *     &lt;enumeration value="CIP"/&gt;
- *     &lt;enumeration value="DAF"/&gt;
- *     &lt;enumeration value="DES"/&gt;
- *     &lt;enumeration value="DEQ"/&gt;
- *     &lt;enumeration value="DDU"/&gt;
- *     &lt;enumeration value="DDP"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="Incoterms1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="EXW"/>
+ *     <enumeration value="FCA"/>
+ *     <enumeration value="FAS"/>
+ *     <enumeration value="FOB"/>
+ *     <enumeration value="CFR"/>
+ *     <enumeration value="CIF"/>
+ *     <enumeration value="CPT"/>
+ *     <enumeration value="CIP"/>
+ *     <enumeration value="DAF"/>
+ *     <enumeration value="DES"/>
+ *     <enumeration value="DEQ"/>
+ *     <enumeration value="DDU"/>
+ *     <enumeration value="DDP"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "Incoterms1Code")

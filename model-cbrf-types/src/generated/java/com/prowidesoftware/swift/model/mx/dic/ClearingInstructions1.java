@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -37,8 +37,8 @@ public class ClearingInstructions1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the fiToFICdtTrfTxInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the fiToFICdtTrfTxInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -52,10 +52,12 @@ public class ClearingInstructions1 {
      * {@link FIToFICreditTransferTransactionInformationDetails1 }
      * 
      * 
+     * @return
+     *     The value of the fiToFICdtTrfTxInf property.
      */
     public List<FIToFICreditTransferTransactionInformationDetails1> getFIToFICdtTrfTxInf() {
         if (fiToFICdtTrfTxInf == null) {
-            fiToFICdtTrfTxInf = new ArrayList<FIToFICreditTransferTransactionInformationDetails1>();
+            fiToFICdtTrfTxInf = new ArrayList<>();
         }
         return this.fiToFICdtTrfTxInf;
     }
@@ -66,8 +68,8 @@ public class ClearingInstructions1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the fiToFIDrctDbtTxInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the fiToFIDrctDbtTxInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -81,10 +83,12 @@ public class ClearingInstructions1 {
      * {@link FIToFIDirectDebitTransactionInformationDetails1 }
      * 
      * 
+     * @return
+     *     The value of the fiToFIDrctDbtTxInf property.
      */
     public List<FIToFIDirectDebitTransactionInformationDetails1> getFIToFIDrctDbtTxInf() {
         if (fiToFIDrctDbtTxInf == null) {
-            fiToFIDrctDbtTxInf = new ArrayList<FIToFIDirectDebitTransactionInformationDetails1>();
+            fiToFIDrctDbtTxInf = new ArrayList<>();
         }
         return this.fiToFIDrctDbtTxInf;
     }

@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Calendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -42,7 +42,7 @@ public class TradeData4 {
     @XmlElement(name = "CurStsDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar curStsDtTm;
+    protected Calendar curStsDtTm;
     @XmlElement(name = "PrvsSts")
     protected Status5Choice prvsSts;
     @XmlElement(name = "PrvsStsSubTp")
@@ -133,7 +133,7 @@ public class TradeData4 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getCurStsDtTm() {
+    public Calendar getCurStsDtTm() {
         return curStsDtTm;
     }
 
@@ -145,7 +145,7 @@ public class TradeData4 {
      *     {@link String }
      *     
      */
-    public TradeData4 setCurStsDtTm(XMLGregorianCalendar value) {
+    public TradeData4 setCurStsDtTm(Calendar value) {
         this.curStsDtTm = value;
         return this;
     }

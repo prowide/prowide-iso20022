@@ -1,15 +1,15 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Calendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -46,11 +46,11 @@ public class Option6 {
     @XmlElement(name = "EarlstExrcDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar earlstExrcDt;
+    protected Calendar earlstExrcDt;
     @XmlElement(name = "XpryDtAndTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar xpryDtAndTm;
+    protected Calendar xpryDtAndTm;
     @XmlElement(name = "XpryLctn", required = true)
     protected String xpryLctn;
     @XmlElement(name = "SttlmTp", required = true)
@@ -144,7 +144,7 @@ public class Option6 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getEarlstExrcDt() {
+    public Calendar getEarlstExrcDt() {
         return earlstExrcDt;
     }
 
@@ -156,7 +156,7 @@ public class Option6 {
      *     {@link String }
      *     
      */
-    public Option6 setEarlstExrcDt(XMLGregorianCalendar value) {
+    public Option6 setEarlstExrcDt(Calendar value) {
         this.earlstExrcDt = value;
         return this;
     }
@@ -169,7 +169,7 @@ public class Option6 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getXpryDtAndTm() {
+    public Calendar getXpryDtAndTm() {
         return xpryDtAndTm;
     }
 
@@ -181,7 +181,7 @@ public class Option6 {
      *     {@link String }
      *     
      */
-    public Option6 setXpryDtAndTm(XMLGregorianCalendar value) {
+    public Option6 setXpryDtAndTm(Calendar value) {
         this.xpryDtAndTm = value;
         return this;
     }

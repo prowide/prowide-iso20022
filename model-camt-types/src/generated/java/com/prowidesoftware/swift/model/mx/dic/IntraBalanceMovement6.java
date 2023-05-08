@@ -2,15 +2,15 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -63,7 +63,7 @@ public class IntraBalanceMovement6 {
     @XmlElement(name = "StsDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar stsDt;
+    protected Calendar stsDt;
     @XmlElement(name = "CshSubBalId")
     protected GenericIdentification37 cshSubBalId;
     @XmlElement(name = "Lnkgs")
@@ -75,7 +75,7 @@ public class IntraBalanceMovement6 {
     @XmlElement(name = "CreDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar creDtTm;
+    protected Calendar creDtTm;
     @XmlElement(name = "InstrPrcgAddtlDtls")
     protected String instrPrcgAddtlDtls;
     @XmlElement(name = "SplmtryData")
@@ -289,7 +289,7 @@ public class IntraBalanceMovement6 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getStsDt() {
+    public Calendar getStsDt() {
         return stsDt;
     }
 
@@ -301,7 +301,7 @@ public class IntraBalanceMovement6 {
      *     {@link String }
      *     
      */
-    public IntraBalanceMovement6 setStsDt(XMLGregorianCalendar value) {
+    public IntraBalanceMovement6 setStsDt(Calendar value) {
         this.stsDt = value;
         return this;
     }
@@ -337,8 +337,8 @@ public class IntraBalanceMovement6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the lnkgs property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the lnkgs property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -352,10 +352,12 @@ public class IntraBalanceMovement6 {
      * {@link Linkages57 }
      * 
      * 
+     * @return
+     *     The value of the lnkgs property.
      */
     public List<Linkages57> getLnkgs() {
         if (lnkgs == null) {
-            lnkgs = new ArrayList<Linkages57>();
+            lnkgs = new ArrayList<>();
         }
         return this.lnkgs;
     }
@@ -418,7 +420,7 @@ public class IntraBalanceMovement6 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getCreDtTm() {
+    public Calendar getCreDtTm() {
         return creDtTm;
     }
 
@@ -430,7 +432,7 @@ public class IntraBalanceMovement6 {
      *     {@link String }
      *     
      */
-    public IntraBalanceMovement6 setCreDtTm(XMLGregorianCalendar value) {
+    public IntraBalanceMovement6 setCreDtTm(Calendar value) {
         this.creDtTm = value;
         return this;
     }
@@ -466,8 +468,8 @@ public class IntraBalanceMovement6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -481,10 +483,12 @@ public class IntraBalanceMovement6 {
      * {@link SupplementaryData1 }
      * 
      * 
+     * @return
+     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<SupplementaryData1>();
+            splmtryData = new ArrayList<>();
         }
         return this.splmtryData;
     }

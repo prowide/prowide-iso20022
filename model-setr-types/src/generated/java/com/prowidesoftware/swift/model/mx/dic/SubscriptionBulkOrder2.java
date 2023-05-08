@@ -2,15 +2,15 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -42,11 +42,11 @@ public class SubscriptionBulkOrder2 {
     @XmlElement(name = "OrdrDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar ordrDtTm;
+    protected Calendar ordrDtTm;
     @XmlElement(name = "XpryDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar xpryDtTm;
+    protected Calendar xpryDtTm;
     @XmlElement(name = "CxlRght")
     protected CancellationRight1 cxlRght;
     @XmlElement(name = "FinInstrmDtls", required = true)
@@ -93,7 +93,7 @@ public class SubscriptionBulkOrder2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getOrdrDtTm() {
+    public Calendar getOrdrDtTm() {
         return ordrDtTm;
     }
 
@@ -105,7 +105,7 @@ public class SubscriptionBulkOrder2 {
      *     {@link String }
      *     
      */
-    public SubscriptionBulkOrder2 setOrdrDtTm(XMLGregorianCalendar value) {
+    public SubscriptionBulkOrder2 setOrdrDtTm(Calendar value) {
         this.ordrDtTm = value;
         return this;
     }
@@ -118,7 +118,7 @@ public class SubscriptionBulkOrder2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getXpryDtTm() {
+    public Calendar getXpryDtTm() {
         return xpryDtTm;
     }
 
@@ -130,7 +130,7 @@ public class SubscriptionBulkOrder2 {
      *     {@link String }
      *     
      */
-    public SubscriptionBulkOrder2 setXpryDtTm(XMLGregorianCalendar value) {
+    public SubscriptionBulkOrder2 setXpryDtTm(Calendar value) {
         this.xpryDtTm = value;
         return this;
     }
@@ -191,8 +191,8 @@ public class SubscriptionBulkOrder2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the indvOrdrDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the indvOrdrDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -206,10 +206,12 @@ public class SubscriptionBulkOrder2 {
      * {@link SubscriptionOrder3 }
      * 
      * 
+     * @return
+     *     The value of the indvOrdrDtls property.
      */
     public List<SubscriptionOrder3> getIndvOrdrDtls() {
         if (indvOrdrDtls == null) {
-            indvOrdrDtls = new ArrayList<SubscriptionOrder3>();
+            indvOrdrDtls = new ArrayList<>();
         }
         return this.indvOrdrDtls;
     }

@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Calendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -48,7 +48,7 @@ public class SettlementObligation3 {
     @XmlElement(name = "TradDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar tradDt;
+    protected Calendar tradDt;
     @XmlElement(name = "Qty", required = true)
     protected FinancialInstrumentQuantity1Choice qty;
     @XmlElement(name = "NetPosPric")
@@ -60,7 +60,7 @@ public class SettlementObligation3 {
     @XmlElement(name = "SttlmDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar sttlmDt;
+    protected Calendar sttlmDt;
     @XmlElement(name = "SctiesMvmntTp", required = true)
     @XmlSchemaType(name = "string")
     protected ReceiveDelivery1Code sctiesMvmntTp;
@@ -156,7 +156,7 @@ public class SettlementObligation3 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getTradDt() {
+    public Calendar getTradDt() {
         return tradDt;
     }
 
@@ -168,7 +168,7 @@ public class SettlementObligation3 {
      *     {@link String }
      *     
      */
-    public SettlementObligation3 setTradDt(XMLGregorianCalendar value) {
+    public SettlementObligation3 setTradDt(Calendar value) {
         this.tradDt = value;
         return this;
     }
@@ -281,7 +281,7 @@ public class SettlementObligation3 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getSttlmDt() {
+    public Calendar getSttlmDt() {
         return sttlmDt;
     }
 
@@ -293,7 +293,7 @@ public class SettlementObligation3 {
      *     {@link String }
      *     
      */
-    public SettlementObligation3 setSttlmDt(XMLGregorianCalendar value) {
+    public SettlementObligation3 setSttlmDt(Calendar value) {
         this.sttlmDt = value;
         return this;
     }

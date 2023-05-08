@@ -1,33 +1,32 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for FinancialAssetType2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="FinancialAssetType2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="MMFT"/&gt;
- *     &lt;enumeration value="STSA"/&gt;
- *     &lt;enumeration value="SCRT"/&gt;
- *     &lt;enumeration value="RVPO"/&gt;
- *     &lt;enumeration value="OTCD"/&gt;
- *     &lt;enumeration value="DPSC"/&gt;
- *     &lt;enumeration value="MMII"/&gt;
- *     &lt;enumeration value="REPO"/&gt;
- *     &lt;enumeration value="ABCP"/&gt;
- *     &lt;enumeration value="STSS"/&gt;
- *     &lt;enumeration value="ANLA"/&gt;
- *     &lt;enumeration value="RMTD"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="FinancialAssetType2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="MMFT"/>
+ *     <enumeration value="STSA"/>
+ *     <enumeration value="SCRT"/>
+ *     <enumeration value="RVPO"/>
+ *     <enumeration value="OTCD"/>
+ *     <enumeration value="DPSC"/>
+ *     <enumeration value="MMII"/>
+ *     <enumeration value="REPO"/>
+ *     <enumeration value="ABCP"/>
+ *     <enumeration value="STSS"/>
+ *     <enumeration value="ANLA"/>
+ *     <enumeration value="RMTD"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "FinancialAssetType2Code")

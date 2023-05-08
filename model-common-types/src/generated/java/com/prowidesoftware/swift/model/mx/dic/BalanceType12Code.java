@@ -1,31 +1,30 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for BalanceType12Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="BalanceType12Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="XPCD"/&gt;
- *     &lt;enumeration value="OPAV"/&gt;
- *     &lt;enumeration value="ITAV"/&gt;
- *     &lt;enumeration value="CLAV"/&gt;
- *     &lt;enumeration value="FWAV"/&gt;
- *     &lt;enumeration value="CLBD"/&gt;
- *     &lt;enumeration value="ITBD"/&gt;
- *     &lt;enumeration value="OPBD"/&gt;
- *     &lt;enumeration value="PRCD"/&gt;
- *     &lt;enumeration value="INFO"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="BalanceType12Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="XPCD"/>
+ *     <enumeration value="OPAV"/>
+ *     <enumeration value="ITAV"/>
+ *     <enumeration value="CLAV"/>
+ *     <enumeration value="FWAV"/>
+ *     <enumeration value="CLBD"/>
+ *     <enumeration value="ITBD"/>
+ *     <enumeration value="OPBD"/>
+ *     <enumeration value="PRCD"/>
+ *     <enumeration value="INFO"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "BalanceType12Code")

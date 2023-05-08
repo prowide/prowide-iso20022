@@ -3,15 +3,15 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -40,7 +40,7 @@ public class EnergyDeliveryAttribute5 {
     @XmlElement(name = "DlvryIntrvl", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected XMLGregorianCalendar dlvryIntrvl;
+    protected Calendar dlvryIntrvl;
     @XmlElement(name = "DlvryPrd")
     protected DateTimePeriod1 dlvryPrd;
     @XmlElement(name = "DlvryTm")
@@ -66,7 +66,7 @@ public class EnergyDeliveryAttribute5 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDlvryIntrvl() {
+    public Calendar getDlvryIntrvl() {
         return dlvryIntrvl;
     }
 
@@ -78,7 +78,7 @@ public class EnergyDeliveryAttribute5 {
      *     {@link String }
      *     
      */
-    public EnergyDeliveryAttribute5 setDlvryIntrvl(XMLGregorianCalendar value) {
+    public EnergyDeliveryAttribute5 setDlvryIntrvl(Calendar value) {
         this.dlvryIntrvl = value;
         return this;
     }
@@ -114,8 +114,8 @@ public class EnergyDeliveryAttribute5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dlvryTm property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the dlvryTm property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -129,10 +129,12 @@ public class EnergyDeliveryAttribute5 {
      * {@link TimePeriodDetails1 }
      * 
      * 
+     * @return
+     *     The value of the dlvryTm property.
      */
     public List<TimePeriodDetails1> getDlvryTm() {
         if (dlvryTm == null) {
-            dlvryTm = new ArrayList<TimePeriodDetails1>();
+            dlvryTm = new ArrayList<>();
         }
         return this.dlvryTm;
     }
@@ -168,8 +170,8 @@ public class EnergyDeliveryAttribute5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the wkDay property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the wkDay property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -183,10 +185,12 @@ public class EnergyDeliveryAttribute5 {
      * {@link WeekDay3Code }
      * 
      * 
+     * @return
+     *     The value of the wkDay property.
      */
     public List<WeekDay3Code> getWkDay() {
         if (wkDay == null) {
-            wkDay = new ArrayList<WeekDay3Code>();
+            wkDay = new ArrayList<>();
         }
         return this.wkDay;
     }

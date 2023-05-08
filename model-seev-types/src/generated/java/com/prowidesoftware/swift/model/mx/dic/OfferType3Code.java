@@ -1,27 +1,26 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for OfferType3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="OfferType3Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="SQUE"/&gt;
- *     &lt;enumeration value="ERUN"/&gt;
- *     &lt;enumeration value="PART"/&gt;
- *     &lt;enumeration value="FCFS"/&gt;
- *     &lt;enumeration value="FINL"/&gt;
- *     &lt;enumeration value="DISS"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="OfferType3Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="SQUE"/>
+ *     <enumeration value="ERUN"/>
+ *     <enumeration value="PART"/>
+ *     <enumeration value="FCFS"/>
+ *     <enumeration value="FINL"/>
+ *     <enumeration value="DISS"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "OfferType3Code")

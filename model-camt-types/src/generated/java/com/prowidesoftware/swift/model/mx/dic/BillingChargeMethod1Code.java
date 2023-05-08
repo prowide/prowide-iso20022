@@ -1,42 +1,41 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlEnumValue;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for BillingChargeMethod1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="BillingChargeMethod1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="UPRC"/&gt;
- *     &lt;enumeration value="STAM"/&gt;
- *     &lt;enumeration value="BCHG"/&gt;
- *     &lt;enumeration value="DPRC"/&gt;
- *     &lt;enumeration value="FCHG"/&gt;
- *     &lt;enumeration value="LPRC"/&gt;
- *     &lt;enumeration value="MCHG"/&gt;
- *     &lt;enumeration value="MXRD"/&gt;
- *     &lt;enumeration value="TIR1"/&gt;
- *     &lt;enumeration value="TIR2"/&gt;
- *     &lt;enumeration value="TIR3"/&gt;
- *     &lt;enumeration value="TIR4"/&gt;
- *     &lt;enumeration value="TIR5"/&gt;
- *     &lt;enumeration value="TIR6"/&gt;
- *     &lt;enumeration value="TIR7"/&gt;
- *     &lt;enumeration value="TIR8"/&gt;
- *     &lt;enumeration value="TIR9"/&gt;
- *     &lt;enumeration value="TPRC"/&gt;
- *     &lt;enumeration value="ZPRC"/&gt;
- *     &lt;enumeration value="BBSE"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="BillingChargeMethod1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="UPRC"/>
+ *     <enumeration value="STAM"/>
+ *     <enumeration value="BCHG"/>
+ *     <enumeration value="DPRC"/>
+ *     <enumeration value="FCHG"/>
+ *     <enumeration value="LPRC"/>
+ *     <enumeration value="MCHG"/>
+ *     <enumeration value="MXRD"/>
+ *     <enumeration value="TIR1"/>
+ *     <enumeration value="TIR2"/>
+ *     <enumeration value="TIR3"/>
+ *     <enumeration value="TIR4"/>
+ *     <enumeration value="TIR5"/>
+ *     <enumeration value="TIR6"/>
+ *     <enumeration value="TIR7"/>
+ *     <enumeration value="TIR8"/>
+ *     <enumeration value="TIR9"/>
+ *     <enumeration value="TPRC"/>
+ *     <enumeration value="ZPRC"/>
+ *     <enumeration value="BBSE"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "BillingChargeMethod1Code")

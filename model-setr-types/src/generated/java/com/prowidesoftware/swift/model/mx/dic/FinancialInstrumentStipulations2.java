@@ -2,14 +2,15 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import java.util.Calendar;
 import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -139,7 +140,7 @@ public class FinancialInstrumentStipulations2 {
     @XmlElement(name = "XprtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar xprtnDt;
+    protected Calendar xprtnDt;
     @XmlElement(name = "OverAlltmtAmt")
     protected ActiveCurrencyAndAmount overAlltmtAmt;
     @XmlElement(name = "OverAlltmtRate")
@@ -942,7 +943,7 @@ public class FinancialInstrumentStipulations2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getXprtnDt() {
+    public Calendar getXprtnDt() {
         return xprtnDt;
     }
 
@@ -954,7 +955,7 @@ public class FinancialInstrumentStipulations2 {
      *     {@link String }
      *     
      */
-    public FinancialInstrumentStipulations2 setXprtnDt(XMLGregorianCalendar value) {
+    public FinancialInstrumentStipulations2 setXprtnDt(Calendar value) {
         this.xprtnDt = value;
         return this;
     }

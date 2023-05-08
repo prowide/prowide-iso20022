@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Calendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -31,11 +31,11 @@ public class TimePeriodDetails {
     @XmlElement(name = "FrTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected XMLGregorianCalendar frTm;
+    protected Calendar frTm;
     @XmlElement(name = "ToTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected XMLGregorianCalendar toTm;
+    protected Calendar toTm;
 
     /**
      * Gets the value of the frTm property.
@@ -45,7 +45,7 @@ public class TimePeriodDetails {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getFrTm() {
+    public Calendar getFrTm() {
         return frTm;
     }
 
@@ -57,7 +57,7 @@ public class TimePeriodDetails {
      *     {@link String }
      *     
      */
-    public TimePeriodDetails setFrTm(XMLGregorianCalendar value) {
+    public TimePeriodDetails setFrTm(Calendar value) {
         this.frTm = value;
         return this;
     }
@@ -70,7 +70,7 @@ public class TimePeriodDetails {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getToTm() {
+    public Calendar getToTm() {
         return toTm;
     }
 
@@ -82,7 +82,7 @@ public class TimePeriodDetails {
      *     {@link String }
      *     
      */
-    public TimePeriodDetails setToTm(XMLGregorianCalendar value) {
+    public TimePeriodDetails setToTm(Calendar value) {
         this.toTm = value;
         return this;
     }

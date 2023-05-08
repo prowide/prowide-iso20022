@@ -1,33 +1,32 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for Action2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="Action2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="SBTW"/&gt;
- *     &lt;enumeration value="RSTW"/&gt;
- *     &lt;enumeration value="RSBS"/&gt;
- *     &lt;enumeration value="ARDM"/&gt;
- *     &lt;enumeration value="ARCS"/&gt;
- *     &lt;enumeration value="ARES"/&gt;
- *     &lt;enumeration value="WAIT"/&gt;
- *     &lt;enumeration value="UPDT"/&gt;
- *     &lt;enumeration value="SBDS"/&gt;
- *     &lt;enumeration value="ARBA"/&gt;
- *     &lt;enumeration value="ARRO"/&gt;
- *     &lt;enumeration value="CINR"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="Action2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="SBTW"/>
+ *     <enumeration value="RSTW"/>
+ *     <enumeration value="RSBS"/>
+ *     <enumeration value="ARDM"/>
+ *     <enumeration value="ARCS"/>
+ *     <enumeration value="ARES"/>
+ *     <enumeration value="WAIT"/>
+ *     <enumeration value="UPDT"/>
+ *     <enumeration value="SBDS"/>
+ *     <enumeration value="ARBA"/>
+ *     <enumeration value="ARRO"/>
+ *     <enumeration value="CINR"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "Action2Code")

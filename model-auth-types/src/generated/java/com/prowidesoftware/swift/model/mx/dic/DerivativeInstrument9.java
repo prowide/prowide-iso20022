@@ -2,14 +2,14 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Calendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -38,7 +38,7 @@ public class DerivativeInstrument9 {
     @XmlElement(name = "XpryDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar xpryDt;
+    protected Calendar xpryDt;
     @XmlElement(name = "PricMltplr", required = true)
     protected BigDecimal pricMltplr;
     @XmlElement(name = "UndrlygInstrm", required = true)
@@ -65,7 +65,7 @@ public class DerivativeInstrument9 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getXpryDt() {
+    public Calendar getXpryDt() {
         return xpryDt;
     }
 
@@ -77,7 +77,7 @@ public class DerivativeInstrument9 {
      *     {@link String }
      *     
      */
-    public DerivativeInstrument9 setXpryDt(XMLGregorianCalendar value) {
+    public DerivativeInstrument9 setXpryDt(Calendar value) {
         this.xpryDt = value;
         return this;
     }

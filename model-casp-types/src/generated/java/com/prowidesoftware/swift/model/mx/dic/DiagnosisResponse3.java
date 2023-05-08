@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -40,8 +40,8 @@ public class DiagnosisResponse3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the lggdSaleId property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the lggdSaleId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -55,10 +55,12 @@ public class DiagnosisResponse3 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the lggdSaleId property.
      */
     public List<String> getLggdSaleId() {
         if (lggdSaleId == null) {
-            lggdSaleId = new ArrayList<String>();
+            lggdSaleId = new ArrayList<>();
         }
         return this.lggdSaleId;
     }
@@ -94,8 +96,8 @@ public class DiagnosisResponse3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the hstSts property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the hstSts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -109,10 +111,12 @@ public class DiagnosisResponse3 {
      * {@link HostStatus1 }
      * 
      * 
+     * @return
+     *     The value of the hstSts property.
      */
     public List<HostStatus1> getHstSts() {
         if (hstSts == null) {
-            hstSts = new ArrayList<HostStatus1>();
+            hstSts = new ArrayList<>();
         }
         return this.hstSts;
     }

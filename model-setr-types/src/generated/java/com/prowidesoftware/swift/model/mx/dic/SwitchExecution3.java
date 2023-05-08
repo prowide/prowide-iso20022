@@ -2,15 +2,15 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -43,7 +43,7 @@ public class SwitchExecution3 {
     @XmlElement(name = "OrdrDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar ordrDtTm;
+    protected Calendar ordrDtTm;
     @XmlElement(name = "DealRef", required = true)
     protected String dealRef;
     @XmlElement(name = "OrdrRef", required = true)
@@ -75,7 +75,7 @@ public class SwitchExecution3 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getOrdrDtTm() {
+    public Calendar getOrdrDtTm() {
         return ordrDtTm;
     }
 
@@ -87,7 +87,7 @@ public class SwitchExecution3 {
      *     {@link String }
      *     
      */
-    public SwitchExecution3 setOrdrDtTm(XMLGregorianCalendar value) {
+    public SwitchExecution3 setOrdrDtTm(Calendar value) {
         this.ordrDtTm = value;
         return this;
     }
@@ -273,8 +273,8 @@ public class SwitchExecution3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the redLegDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the redLegDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -288,10 +288,12 @@ public class SwitchExecution3 {
      * {@link SwitchRedemptionLegExecution2 }
      * 
      * 
+     * @return
+     *     The value of the redLegDtls property.
      */
     public List<SwitchRedemptionLegExecution2> getRedLegDtls() {
         if (redLegDtls == null) {
-            redLegDtls = new ArrayList<SwitchRedemptionLegExecution2>();
+            redLegDtls = new ArrayList<>();
         }
         return this.redLegDtls;
     }
@@ -302,8 +304,8 @@ public class SwitchExecution3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sbcptLegDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sbcptLegDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -317,10 +319,12 @@ public class SwitchExecution3 {
      * {@link SwitchSubscriptionLegExecution2 }
      * 
      * 
+     * @return
+     *     The value of the sbcptLegDtls property.
      */
     public List<SwitchSubscriptionLegExecution2> getSbcptLegDtls() {
         if (sbcptLegDtls == null) {
-            sbcptLegDtls = new ArrayList<SwitchSubscriptionLegExecution2>();
+            sbcptLegDtls = new ArrayList<>();
         }
         return this.sbcptLegDtls;
     }
@@ -356,8 +360,8 @@ public class SwitchExecution3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the fxDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the fxDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -371,10 +375,12 @@ public class SwitchExecution3 {
      * {@link ForeignExchangeTerms4 }
      * 
      * 
+     * @return
+     *     The value of the fxDtls property.
      */
     public List<ForeignExchangeTerms4> getFXDtls() {
         if (fxDtls == null) {
-            fxDtls = new ArrayList<ForeignExchangeTerms4>();
+            fxDtls = new ArrayList<>();
         }
         return this.fxDtls;
     }

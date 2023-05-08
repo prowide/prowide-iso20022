@@ -3,15 +3,15 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -115,39 +115,39 @@ public class Debt5 {
     @XmlElement(name = "IntrstFxgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar intrstFxgDt;
+    protected Calendar intrstFxgDt;
     @XmlElement(name = "DtdDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar dtdDt;
+    protected Calendar dtdDt;
     @XmlElement(name = "FrstPmtDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar frstPmtDt;
+    protected Calendar frstPmtDt;
     @XmlElement(name = "MtrtyDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar mtrtyDt;
+    protected Calendar mtrtyDt;
     @XmlElement(name = "NxtCpnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar nxtCpnDt;
+    protected Calendar nxtCpnDt;
     @XmlElement(name = "PutblDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar putblDt;
+    protected Calendar putblDt;
     @XmlElement(name = "NxtCllblDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar nxtCllblDt;
+    protected Calendar nxtCllblDt;
     @XmlElement(name = "NxtFctrDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar nxtFctrDt;
+    protected Calendar nxtFctrDt;
     @XmlElement(name = "XprtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar xprtnDt;
+    protected Calendar xprtnDt;
     @XmlElement(name = "PmtDrctnInd")
     protected Boolean pmtDrctnInd;
     @XmlElement(name = "IntrstRate")
@@ -165,7 +165,7 @@ public class Debt5 {
     @XmlElement(name = "IntrstAcrlDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar intrstAcrlDt;
+    protected Calendar intrstAcrlDt;
     @XmlElement(name = "PutblInd")
     protected Boolean putblInd;
     @XmlElement(name = "PreFnddInd")
@@ -365,7 +365,7 @@ public class Debt5 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getIntrstFxgDt() {
+    public Calendar getIntrstFxgDt() {
         return intrstFxgDt;
     }
 
@@ -377,7 +377,7 @@ public class Debt5 {
      *     {@link String }
      *     
      */
-    public Debt5 setIntrstFxgDt(XMLGregorianCalendar value) {
+    public Debt5 setIntrstFxgDt(Calendar value) {
         this.intrstFxgDt = value;
         return this;
     }
@@ -390,7 +390,7 @@ public class Debt5 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDtdDt() {
+    public Calendar getDtdDt() {
         return dtdDt;
     }
 
@@ -402,7 +402,7 @@ public class Debt5 {
      *     {@link String }
      *     
      */
-    public Debt5 setDtdDt(XMLGregorianCalendar value) {
+    public Debt5 setDtdDt(Calendar value) {
         this.dtdDt = value;
         return this;
     }
@@ -415,7 +415,7 @@ public class Debt5 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getFrstPmtDt() {
+    public Calendar getFrstPmtDt() {
         return frstPmtDt;
     }
 
@@ -427,7 +427,7 @@ public class Debt5 {
      *     {@link String }
      *     
      */
-    public Debt5 setFrstPmtDt(XMLGregorianCalendar value) {
+    public Debt5 setFrstPmtDt(Calendar value) {
         this.frstPmtDt = value;
         return this;
     }
@@ -440,7 +440,7 @@ public class Debt5 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getMtrtyDt() {
+    public Calendar getMtrtyDt() {
         return mtrtyDt;
     }
 
@@ -452,7 +452,7 @@ public class Debt5 {
      *     {@link String }
      *     
      */
-    public Debt5 setMtrtyDt(XMLGregorianCalendar value) {
+    public Debt5 setMtrtyDt(Calendar value) {
         this.mtrtyDt = value;
         return this;
     }
@@ -465,7 +465,7 @@ public class Debt5 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getNxtCpnDt() {
+    public Calendar getNxtCpnDt() {
         return nxtCpnDt;
     }
 
@@ -477,7 +477,7 @@ public class Debt5 {
      *     {@link String }
      *     
      */
-    public Debt5 setNxtCpnDt(XMLGregorianCalendar value) {
+    public Debt5 setNxtCpnDt(Calendar value) {
         this.nxtCpnDt = value;
         return this;
     }
@@ -490,7 +490,7 @@ public class Debt5 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getPutblDt() {
+    public Calendar getPutblDt() {
         return putblDt;
     }
 
@@ -502,7 +502,7 @@ public class Debt5 {
      *     {@link String }
      *     
      */
-    public Debt5 setPutblDt(XMLGregorianCalendar value) {
+    public Debt5 setPutblDt(Calendar value) {
         this.putblDt = value;
         return this;
     }
@@ -515,7 +515,7 @@ public class Debt5 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getNxtCllblDt() {
+    public Calendar getNxtCllblDt() {
         return nxtCllblDt;
     }
 
@@ -527,7 +527,7 @@ public class Debt5 {
      *     {@link String }
      *     
      */
-    public Debt5 setNxtCllblDt(XMLGregorianCalendar value) {
+    public Debt5 setNxtCllblDt(Calendar value) {
         this.nxtCllblDt = value;
         return this;
     }
@@ -540,7 +540,7 @@ public class Debt5 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getNxtFctrDt() {
+    public Calendar getNxtFctrDt() {
         return nxtFctrDt;
     }
 
@@ -552,7 +552,7 @@ public class Debt5 {
      *     {@link String }
      *     
      */
-    public Debt5 setNxtFctrDt(XMLGregorianCalendar value) {
+    public Debt5 setNxtFctrDt(Calendar value) {
         this.nxtFctrDt = value;
         return this;
     }
@@ -565,7 +565,7 @@ public class Debt5 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getXprtnDt() {
+    public Calendar getXprtnDt() {
         return xprtnDt;
     }
 
@@ -577,7 +577,7 @@ public class Debt5 {
      *     {@link String }
      *     
      */
-    public Debt5 setXprtnDt(XMLGregorianCalendar value) {
+    public Debt5 setXprtnDt(Calendar value) {
         this.xprtnDt = value;
         return this;
     }
@@ -765,7 +765,7 @@ public class Debt5 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getIntrstAcrlDt() {
+    public Calendar getIntrstAcrlDt() {
         return intrstAcrlDt;
     }
 
@@ -777,7 +777,7 @@ public class Debt5 {
      *     {@link String }
      *     
      */
-    public Debt5 setIntrstAcrlDt(XMLGregorianCalendar value) {
+    public Debt5 setIntrstAcrlDt(Calendar value) {
         this.intrstAcrlDt = value;
         return this;
     }
@@ -1113,8 +1113,8 @@ public class Debt5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the actlDnmtnAmt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the actlDnmtnAmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -1128,10 +1128,12 @@ public class Debt5 {
      * {@link ActiveCurrencyAndAmount }
      * 
      * 
+     * @return
+     *     The value of the actlDnmtnAmt property.
      */
     public List<ActiveCurrencyAndAmount> getActlDnmtnAmt() {
         if (actlDnmtnAmt == null) {
-            actlDnmtnAmt = new ArrayList<ActiveCurrencyAndAmount>();
+            actlDnmtnAmt = new ArrayList<>();
         }
         return this.actlDnmtnAmt;
     }
@@ -1567,8 +1569,8 @@ public class Debt5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the yldClctn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the yldClctn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -1582,10 +1584,12 @@ public class Debt5 {
      * {@link YieldCalculation6 }
      * 
      * 
+     * @return
+     *     The value of the yldClctn property.
      */
     public List<YieldCalculation6> getYldClctn() {
         if (yldClctn == null) {
-            yldClctn = new ArrayList<YieldCalculation6>();
+            yldClctn = new ArrayList<>();
         }
         return this.yldClctn;
     }

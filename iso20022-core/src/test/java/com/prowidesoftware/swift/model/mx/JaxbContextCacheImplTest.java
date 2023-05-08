@@ -17,8 +17,8 @@ package com.prowidesoftware.swift.model.mx;
 
 import org.junit.jupiter.api.Test;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBException;
 
 import static org.junit.jupiter.api.Assertions.*;
 

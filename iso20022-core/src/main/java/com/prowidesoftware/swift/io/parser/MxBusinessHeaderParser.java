@@ -22,6 +22,9 @@ import com.prowidesoftware.swift.model.mx.AppHdr;
 import com.prowidesoftware.swift.model.mx.BusinessAppHdrV02;
 import com.prowidesoftware.swift.model.mx.dic.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.logging.Logger;
 
 /**
@@ -110,8 +113,15 @@ class MxBusinessHeaderParser {
                     MxNode CrDate = header.findFirst("./CrDate");
                     if (CrDate != null) {
                         try {
-                            result.setCrDate(javax.xml.datatype.DatatypeFactory.newInstance().newXMLGregorianCalendar(CrDate.getValue()));
-                        } catch (final javax.xml.datatype.DatatypeConfigurationException e) {
+                            //this.marshalFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+                            //this.unmarshalFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss[.SSS][XXX]");
+
+                            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+                            //SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+                            Calendar c = Calendar.getInstance();
+                            c.setTime(sdf.parse(CrDate.getValue()));
+                            result.setCrDate(c);
+                        } catch (final ParseException e) {
                             log.warning("exception " + e + " parsign header crDate [" + CrDate.getValue() + "]");
                         }
                     }
@@ -193,13 +203,7 @@ class MxBusinessHeaderParser {
                 }
 
                 MxNode CreDt = header.findFirst("./CreDt");
-                if (CreDt != null) {
-                    try {
-                        result.setCreDt(javax.xml.datatype.DatatypeFactory.newInstance().newXMLGregorianCalendar(CreDt.getValue()));
-                    } catch (final javax.xml.datatype.DatatypeConfigurationException e) {
-                        log.warning("exception " + e + " parsing header crDate [" + CreDt.getValue() + "]");
-                    }
-                }
+
 
                 MxNode CpyDplct = header.findFirst("./CpyDplct");
                 if (CpyDplct != null) {
@@ -599,13 +603,7 @@ class MxBusinessHeaderParser {
      */
     private static void parse(MxNode node, DateAndPlaceOfBirth dtAndPlcOfBirth) {
         MxNode BirthDt = node.findFirst("./BirthDt");
-        if (BirthDt != null) {
-            try {
-                dtAndPlcOfBirth.setBirthDt(javax.xml.datatype.DatatypeFactory.newInstance().newXMLGregorianCalendar(BirthDt.getValue()));
-            } catch (final javax.xml.datatype.DatatypeConfigurationException e) {
-                log.warning("exception " + e + " parsing header BirthDt [" + BirthDt.getValue() + "]");
-            }
-        }
+
         MxNode PrvcOfBirth = node.findFirst("./PrvcOfBirth");
         if (PrvcOfBirth != null) {
             dtAndPlcOfBirth.setPrvcOfBirth(PrvcOfBirth.getValue());

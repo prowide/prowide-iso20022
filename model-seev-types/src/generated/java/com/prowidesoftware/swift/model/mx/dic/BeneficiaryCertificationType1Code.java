@@ -1,27 +1,26 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for BeneficiaryCertificationType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="BeneficiaryCertificationType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ACCI"/&gt;
- *     &lt;enumeration value="DOMI"/&gt;
- *     &lt;enumeration value="FULL"/&gt;
- *     &lt;enumeration value="QIBB"/&gt;
- *     &lt;enumeration value="TRBD"/&gt;
- *     &lt;enumeration value="NCOM"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="BeneficiaryCertificationType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ACCI"/>
+ *     <enumeration value="DOMI"/>
+ *     <enumeration value="FULL"/>
+ *     <enumeration value="QIBB"/>
+ *     <enumeration value="TRBD"/>
+ *     <enumeration value="NCOM"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "BeneficiaryCertificationType1Code")

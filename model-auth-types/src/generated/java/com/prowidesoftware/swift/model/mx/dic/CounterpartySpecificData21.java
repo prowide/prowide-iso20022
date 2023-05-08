@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Calendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -39,7 +39,7 @@ public class CounterpartySpecificData21 {
     @XmlElement(name = "RptgDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar rptgDtTm;
+    protected Calendar rptgDtTm;
 
     /**
      * Gets the value of the ctrPty property.
@@ -124,7 +124,7 @@ public class CounterpartySpecificData21 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getRptgDtTm() {
+    public Calendar getRptgDtTm() {
         return rptgDtTm;
     }
 
@@ -136,7 +136,7 @@ public class CounterpartySpecificData21 {
      *     {@link String }
      *     
      */
-    public CounterpartySpecificData21 setRptgDtTm(XMLGregorianCalendar value) {
+    public CounterpartySpecificData21 setRptgDtTm(Calendar value) {
         this.rptgDtTm = value;
         return this;
     }

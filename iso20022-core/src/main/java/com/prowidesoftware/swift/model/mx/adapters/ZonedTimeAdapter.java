@@ -15,12 +15,20 @@
  */
 package com.prowidesoftware.swift.model.mx.adapters;
 
-import javax.xml.bind.annotation.adapters.XmlAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import jakarta.xml.bind.annotation.adapters.XmlAdapter;
+
 import java.text.SimpleDateFormat;
+import java.time.OffsetTime;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+import java.util.TimeZone;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
- * XMLGregorianCalendar adapter for time elements.
+ * Calendar adapter for time elements.
  * <p>
  * Marshals the time as a local time with UTC offset format hh:mm:ss[.sss]+/-hh:mm which is aligned with ISO 8601.
  * Dislike the default jaxb implementation, this adapter will always print the offset, and for UTC times in particular
@@ -33,25 +41,27 @@ import java.text.SimpleDateFormat;
  * @see TypeAdaptersConfiguration
  * @since 9.2.6
  */
-public class ZonedTimeAdapter extends XmlAdapter<String, XMLGregorianCalendar> {
+public class ZonedTimeAdapter extends XmlAdapter<String, Calendar> {
 
-    private final SimpleDateFormat marshalFormat;
-    private final SimpleDateFormat unmarshalFormat;
-    private final XmlAdapter<String, XMLGregorianCalendar> customAdapterImpl;
+    private static final transient Logger log = Logger.getLogger(ZonedTimeAdapter.class.getName());
+
+    private final DateTimeFormatter marshalFormat;
+    private final DateTimeFormatter unmarshalFormat;
+    private final XmlAdapter<String, Calendar> customAdapterImpl;
 
     /**
      * Creates a time adapter with the default format
      */
     public ZonedTimeAdapter() {
-        this.marshalFormat = new SimpleDateFormat("HH:mm:ss.SSSXXX");
-        this.unmarshalFormat = new SimpleDateFormat("HH:mm:ss[.SSS][XXX]");
+        this.marshalFormat = DateTimeFormatter.ofPattern("HH:mm:ss.SSSXXX");
+        this.unmarshalFormat = DateTimeFormatter.ofPattern("HH:mm:ss[.SSS][XXX]");
         this.customAdapterImpl = null;
     }
 
     /**
      * Creates a time adapter with a specific given format that will be used for both the marshalling and unmarshalling
      */
-    public ZonedTimeAdapter(SimpleDateFormat dateFormat) {
+    public ZonedTimeAdapter(DateTimeFormatter dateFormat) {
         this.marshalFormat = dateFormat;
         this.unmarshalFormat = dateFormat;
         this.customAdapterImpl = null;
@@ -60,7 +70,7 @@ public class ZonedTimeAdapter extends XmlAdapter<String, XMLGregorianCalendar> {
     /**
      * Creates a time adapter injecting a custom implementation
      */
-    public ZonedTimeAdapter(XmlAdapter<String, XMLGregorianCalendar> customAdapterImpl) {
+    public ZonedTimeAdapter(XmlAdapter<String, Calendar> customAdapterImpl) {
         this.marshalFormat = null;
         this.unmarshalFormat = null;
         this.customAdapterImpl = customAdapterImpl;
@@ -73,11 +83,11 @@ public class ZonedTimeAdapter extends XmlAdapter<String, XMLGregorianCalendar> {
      * @return created calendar object or null if cannot be parsed
      */
     @Override
-    public XMLGregorianCalendar unmarshal(String value) throws Exception {
+    public Calendar unmarshal(String value) throws Exception {
         if (this.customAdapterImpl != null) {
             return this.customAdapterImpl.unmarshal(value);
         } else {
-            return AdapterUtils.parse(this.unmarshalFormat, value);
+            return parseZonedTime(this.unmarshalFormat, value);
         }
     }
 
@@ -88,16 +98,65 @@ public class ZonedTimeAdapter extends XmlAdapter<String, XMLGregorianCalendar> {
      * @return formatted content for the XML
      */
     @Override
-    public String marshal(XMLGregorianCalendar cal) throws Exception {
+    public String marshal(Calendar cal) throws Exception {
         if (this.customAdapterImpl != null) {
             return this.customAdapterImpl.marshal(cal);
         } else {
             String formatted;
             synchronized (marshalFormat) {
-                formatted = AdapterUtils.format(this.marshalFormat, cal);
+                formatted = formatZonedTime(this.marshalFormat, cal);
             }
             return formatted.replace(".000", "").replace("Z", "+00:00");
         }
+    }
+
+    static String formatZonedTime(DateTimeFormatter dateTimeFormatter, Calendar calendar) {
+        ZoneId zoneId = calendar.getTimeZone().toZoneId();
+        ZoneOffset zoneOffSet = ZoneOffset.of(zoneId.getRules().getOffset(calendar.toInstant()).getId());
+        OffsetTime offsetTime = OffsetTime.of(calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), calendar.get(Calendar.SECOND), 0, zoneOffSet);
+
+        System.out.println("----parseTime");
+        System.out.println("entra : " + calendar.getTime());
+        System.out.println("offsetTime: "+offsetTime);
+        System.out.println("sale : " + dateTimeFormatter.format(offsetTime));
+
+        return dateTimeFormatter.format(offsetTime);
+    }
+
+    static Calendar parseZonedTime(DateTimeFormatter dateTimeFormatter, String value) {
+        if (value == null) {
+            return null;
+        }
+        try {
+            // attempt lexical representation parsing
+            OffsetTime offsetTime = OffsetTime.parse(value, dateTimeFormatter);
+
+            //LocalTime localTime = LocalTime.parse(value, dateTimeFormatter);
+            Calendar calendar = Calendar.getInstance();
+            calendar.set(Calendar.HOUR_OF_DAY, offsetTime.getHour());
+            calendar.set(Calendar.MINUTE, offsetTime.getMinute());
+            calendar.set(Calendar.SECOND, offsetTime.getSecond());
+            calendar.set(Calendar.MILLISECOND, 0);
+            calendar.setTimeZone(TimeZone.getTimeZone(ZoneOffset.from(offsetTime)));
+
+
+
+            System.out.println("----parseTime");
+            System.out.println("entra : " + value);
+            System.out.println("offsetTime: "+offsetTime);
+            System.out.println("sale : " + calendar.getTime());
+
+
+
+            return calendar;
+
+            // return DatatypeFactory.newInstance().newCalendar(value);
+        } catch (IllegalArgumentException e) {
+            if (log.isLoggable(Level.FINEST)) {
+                log.finest("Error parsing to Calendar: " + e.getMessage());
+            }
+        }
+        return null;
     }
 
 }

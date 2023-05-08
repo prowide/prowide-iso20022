@@ -1,31 +1,30 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for PartyType10Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="PartyType10Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ACCP"/&gt;
- *     &lt;enumeration value="ACQR"/&gt;
- *     &lt;enumeration value="ATMG"/&gt;
- *     &lt;enumeration value="CISS"/&gt;
- *     &lt;enumeration value="DLIS"/&gt;
- *     &lt;enumeration value="HSTG"/&gt;
- *     &lt;enumeration value="ITAG"/&gt;
- *     &lt;enumeration value="MERC"/&gt;
- *     &lt;enumeration value="OATM"/&gt;
- *     &lt;enumeration value="OPOI"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="PartyType10Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ACCP"/>
+ *     <enumeration value="ACQR"/>
+ *     <enumeration value="ATMG"/>
+ *     <enumeration value="CISS"/>
+ *     <enumeration value="DLIS"/>
+ *     <enumeration value="HSTG"/>
+ *     <enumeration value="ITAG"/>
+ *     <enumeration value="MERC"/>
+ *     <enumeration value="OATM"/>
+ *     <enumeration value="OPOI"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "PartyType10Code")
