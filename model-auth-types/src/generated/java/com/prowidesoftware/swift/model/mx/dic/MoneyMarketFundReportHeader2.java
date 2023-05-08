@@ -1,14 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.Year;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoYearAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -31,9 +33,10 @@ public class MoneyMarketFundReportHeader2 {
 
     @XmlElement(name = "RptgPrdFrToQrtr", required = true)
     protected QuarterPeriod1 rptgPrdFrToQrtr;
-    @XmlElement(name = "RptgYr", required = true)
+    @XmlElement(name = "RptgYr", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoYearAdapter.class)
     @XmlSchemaType(name = "gYear")
-    protected XMLGregorianCalendar rptgYr;
+    protected Year rptgYr;
     @XmlElement(name = "ElmtJustfn")
     protected List<ReportItemJustification1> elmtJustfn;
 
@@ -67,10 +70,10 @@ public class MoneyMarketFundReportHeader2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getRptgYr() {
+    public Year getRptgYr() {
         return rptgYr;
     }
 
@@ -79,10 +82,10 @@ public class MoneyMarketFundReportHeader2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public MoneyMarketFundReportHeader2 setRptgYr(XMLGregorianCalendar value) {
+    public MoneyMarketFundReportHeader2 setRptgYr(Year value) {
         this.rptgYr = value;
         return this;
     }
