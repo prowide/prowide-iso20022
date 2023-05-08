@@ -17,7 +17,7 @@ package com.prowidesoftware.swift.model.mx.adapters;
 
 import jakarta.xml.bind.annotation.adapters.XmlAdapter;
 
-import java.time.LocalDate;
+import java.time.Month;
 import java.time.format.DateTimeFormatter;
 
 /**
@@ -25,24 +25,24 @@ import java.time.format.DateTimeFormatter;
  *
  * @since 9.2.6
  */
-public class LocalDateAdapter extends XmlAdapter<String, LocalDate> {
-    private static String DATE_FORMAT = "yyyy-MM-dd";
-    private static DateTimeFormatter dtf = DateTimeFormatter.ofPattern(DATE_FORMAT);
+public class MonthAdapter extends XmlAdapter<String, Month> {
+    private static String MONT_FORMAT = "MM";
+    private static DateTimeFormatter dtf = DateTimeFormatter.ofPattern(MONT_FORMAT);
 
-    public LocalDateAdapter(DateTimeFormatter ofPattern) {
+    public MonthAdapter(DateTimeFormatter ofPattern) {
         this.dtf = ofPattern;
     }
 
-    public LocalDateAdapter() {
+    public MonthAdapter() {
     }
 
     @Override
-    public LocalDate unmarshal(String value) throws Exception {
-        return LocalDate.parse(value, dtf);
+    public Month unmarshal(String value) throws Exception {
+        return Month.of(Integer.valueOf(value));
     }
 
     @Override
-    public String marshal(LocalDate value) throws Exception {
+    public String marshal(Month value) throws Exception {
         if (value != null) {
             return dtf.format(value);
         }

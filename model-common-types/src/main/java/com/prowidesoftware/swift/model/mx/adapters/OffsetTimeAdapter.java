@@ -24,7 +24,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Calendar adapter for time elements.
+ * OffsetTime adapter for time elements.
  * <p>
  * Marshals the time as a local time with UTC offset format hh:mm:ss[.sss]+/-hh:mm which is aligned with ISO 8601.
  * Dislike the default jaxb implementation, this adapter will always print the offset, and for UTC times in particular
@@ -38,9 +38,7 @@ import java.util.logging.Logger;
  * @since 9.2.6
  */
 public class OffsetTimeAdapter extends XmlAdapter<String, OffsetTime> {
-
     private static final transient Logger log = Logger.getLogger(OffsetTime.class.getName());
-
     private final DateTimeFormatter marshalFormat;
     private final DateTimeFormatter unmarshalFormat;
     private final XmlAdapter<String, OffsetTime> customAdapterImpl;
@@ -73,10 +71,10 @@ public class OffsetTimeAdapter extends XmlAdapter<String, OffsetTime> {
     }
 
     /**
-     * Creates a calendar parsing the value with this adapter format, or the default lexical representation as fallback.
+     * Creates a OffsetTime parsing the value with this adapter format, or the default lexical representation as fallback.
      *
      * @param value the XML date time value to convert
-     * @return created calendar object or null if cannot be parsed
+     * @return created OffsetTime object or null if it cannot be parsed
      */
     @Override
     public OffsetTime unmarshal(String value) throws Exception {
@@ -88,7 +86,7 @@ public class OffsetTimeAdapter extends XmlAdapter<String, OffsetTime> {
     }
 
     /**
-     * Applies the configured format to the calendar.
+     * Applies the configured format to the OffsetTime.
      *
      * @param offsetTime the model OffsetTime to marshal
      * @return formatted content for the XML
@@ -114,13 +112,13 @@ public class OffsetTimeAdapter extends XmlAdapter<String, OffsetTime> {
         if (value == null) {
             return null;
         }
-        OffsetTime offsetTime = null;
+        OffsetTime offsetTime;
         try {
             // attempt lexical representation parsing
             offsetTime = OffsetTime.parse(value, dateTimeFormatter);
         } catch (DateTimeParseException e) {
             if (log.isLoggable(Level.FINEST)) {
-                log.finest("Error parsing to Calendar: " + e.getMessage());
+                log.finest("Error parsing to OffsetTime: " + e.getMessage());
             }
             ZoneOffset offset = ZoneOffset.systemDefault().getRules().getStandardOffset(Instant.now());
             offsetTime = LocalTime.parse(value, dateTimeFormatter).atOffset(offset);

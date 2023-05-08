@@ -52,6 +52,27 @@ public class TypeAdaptersConfiguration {
      */
     public IsoTimeAdapter timeAdapter;
 
+
+    /**
+     * Customized instances or subclasses of this adapter can be injected to change the default serialization of
+     * date time elements.
+     */
+    public IsoYearMonthAdapter yearMonthAdapter;
+
+
+    /**
+     * Customized instances or subclasses of this adapter can be injected to change the default serialization of
+     * date time elements.
+     */
+    public IsoYearAdapter yearAdapter;
+
+
+    /**
+     * Customized instances or subclasses of this adapter can be injected to change the default serialization of
+     * date time elements.
+     */
+    public IsoMonthAdapter monthAdapter;
+
     /**
      * Initializes the adapters with the default implementations
      * @see LocalDateAdapter
@@ -62,6 +83,9 @@ public class TypeAdaptersConfiguration {
         this.dateTimeAdapter = new IsoDateTimeAdapter(new OffsetDateTimeAdapter());
         this.dateAdapter = new IsoDateAdapter(new LocalDateAdapter());
         this.timeAdapter = new IsoTimeAdapter(new OffsetTimeAdapter());
+        this.yearMonthAdapter = new IsoYearMonthAdapter(new YearMonthAdapter());
+        this.yearAdapter = new IsoYearAdapter(new YearAdapter());
+        this.monthAdapter = new IsoMonthAdapter(new MonthAdapter());
     }
 
     /**

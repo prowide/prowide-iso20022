@@ -15,35 +15,26 @@
  */
 package com.prowidesoftware.swift.model.mx.adapters;
 
-import org.assertj.core.data.Offset;
+import net.bytebuddy.asm.Advice;
 import org.junit.jupiter.api.Test;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
-import java.util.TimeZone;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class ZonedTimeAdapterTest {
+public class OffsetTimeAdapterTest {
 
     private OffsetTimeAdapter adapter = new OffsetTimeAdapter();
 
     @Test
     public void testUnmarshallFractionOfSeconds() throws Exception {
-        //TODO setear el timezone y la fecha hora? pasar al test de DateTime
-
-        /*Calendar cal = adapter.unmarshal("12:50:08.123-03:00");
-        cal.setTimeZone(TimeZone.getTimeZone("America/Argentina/Buenos"));
-        assertEquals(12, cal.get(Calendar.HOUR_OF_DAY));
-        assertEquals(50, cal.get(Calendar.MINUTE));
-        assertEquals(8, cal.get(Calendar.SECOND));*/
-        //assertEquals(new BigDecimal("0.123"), cal.get(Calendar.MILLISECOND));
-
-
-        //TODO FIX estos assertEquals
-        //assertEquals(new BigDecimal("0.123"), cal.getFractionalSecond());
-        //assertEquals(-180, cal.getTimezone());
+        OffsetTime offsetTime = adapter.unmarshal("12:50:08.123-03:00");
+        assertEquals(12, offsetTime.getHour());
+        assertEquals(50, offsetTime.getMinute());
+        assertEquals(8,  offsetTime.getSecond());
+        assertEquals(123000000,  offsetTime.getNano());
+        assertEquals(ZoneOffset.of("-03:00"),  offsetTime.getOffset());
     }
 
     @Test
@@ -52,15 +43,18 @@ public class ZonedTimeAdapterTest {
         assertEquals(12, offsetTime.getHour());
         assertEquals(50, offsetTime.getMinute());
         assertEquals(8,  offsetTime.getSecond());
+        assertEquals(ZoneOffset.of("-03:00"),  offsetTime.getOffset());
+
     }
 
     @Test
     public void testUnmarshallNoOffset() throws Exception {
+        OffsetTime systemDateTime = OffsetTime.parse("12:50:08" + ZoneOffset.systemDefault().getRules().getStandardOffset(Instant.now()));
         OffsetTime offsetTime = adapter.unmarshal("12:50:08");
         assertEquals(12, offsetTime.getHour());
         assertEquals(50, offsetTime.getMinute());
         assertEquals(8, offsetTime.getSecond());
-        //assertEquals(null, cal.getFractionalSecond());
+        assertEquals(systemDateTime.getOffset(), offsetTime.getOffset());
     }
 
     @Test

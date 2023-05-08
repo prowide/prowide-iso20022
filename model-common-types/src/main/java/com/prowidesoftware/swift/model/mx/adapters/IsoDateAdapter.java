@@ -51,7 +51,7 @@ public class IsoDateAdapter extends XmlAdapter<String, LocalDate> {
      * Invokes the wrapped adapter implementation of the unmarshal method.
      *
      * @param value the XML date time value to convert
-     * @return created calendar object or null if cannot be parsed
+     * @return created LocalDate object or null if it cannot be parsed
      */
     @Override
     public LocalDate unmarshal(String value) throws Exception {
@@ -61,12 +61,12 @@ public class IsoDateAdapter extends XmlAdapter<String, LocalDate> {
     /**
      * Invokes the wrapped adapter implementation of the marshal method.
      *
-     * @param cal the model calendar to marshal
+     * @param localDate the model LocalDate to marshal
      * @return formatted content for the XML
      */
     @Override
-    public String marshal(LocalDate cal) throws Exception {
-        return this.customAdapterImpl.marshal(cal);
+    public String marshal(LocalDate localDate) throws Exception {
+        return this.customAdapterImpl.marshal(localDate);
     }
 
 }

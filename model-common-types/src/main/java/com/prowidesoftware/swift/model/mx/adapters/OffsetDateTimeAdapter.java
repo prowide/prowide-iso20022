@@ -41,7 +41,7 @@ import java.util.logging.Logger;
  * @since 9.2.6
  */
 public class OffsetDateTimeAdapter extends XmlAdapter<String, OffsetDateTime> {
-    private static final transient Logger log = Logger.getLogger(OffsetDateTimeAdapter.class.getName());
+    private static final Logger log = Logger.getLogger(OffsetDateTimeAdapter.class.getName());
 
     private final DateTimeFormatter marshallFormat;
     private final DateTimeFormatter unmarshallFormat;
@@ -123,12 +123,10 @@ public class OffsetDateTimeAdapter extends XmlAdapter<String, OffsetDateTime> {
             ZoneId zoneId = ZoneOffset.systemDefault();
             OffsetDateTime dateTime = LocalDateTime.parse(value, dateTimeFormatter)
                     .atZone(zoneId)
-                    //.withFixedOffsetZone()
                     .toOffsetDateTime();
             return dateTime;
         }
     }
-
 
     static String formatZonedDateTime(DateTimeFormatter dateTimeFormatter, OffsetDateTime offsetDateTime) {
         return dateTimeFormatter.format(offsetDateTime);

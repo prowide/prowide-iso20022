@@ -61,7 +61,7 @@ public class IsoTimeAdapter extends XmlAdapter<String, OffsetTime> {
     /**
      * Invokes the wrapped adapter implementation of the marshal method.
      *
-     * @param offsetTime the model calendar to marshal
+     * @param offsetTime the model OffsetTime to marshal
      * @return formatted content for the XML
      */
     @Override

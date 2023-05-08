@@ -6,11 +6,10 @@ import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.time.ZoneId;
 import java.time.ZoneOffset;
-import java.time.format.DateTimeFormatter;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class ZonedDateTimeAdapterTest {
+class OffsetDateTimeAdapterTest {
 
     @Test
     void testDateTime() throws Exception {
@@ -24,11 +23,13 @@ class ZonedDateTimeAdapterTest {
 
         String offset = dateTime.getOffset().getId();
 
+        //DateTime without offset and with/without fractional seconds
         testDateTimeImpl("2021-09-19T12:13:14", "2021-09-19T12:13:14" + offset);
         testDateTimeImpl("2021-09-19T12:13:14.1", "2021-09-19T12:13:14.100" + offset);
         testDateTimeImpl("2021-09-19T12:13:14.12", "2021-09-19T12:13:14.120" + offset);
         testDateTimeImpl("2021-09-19T12:13:14.123", "2021-09-19T12:13:14.123" + offset);
 
+        //DateTime with offset and without fractional seconds
         testDateTimeImpl("2021-09-19T12:13:14+01:00", "2021-09-19T12:13:14+01:00");
         testDateTimeImpl("2021-09-19T12:13:14-01:00", "2021-09-19T12:13:14-01:00");
         testDateTimeImpl("2021-09-19T12:13:14+00:00", "2021-09-19T12:13:14+00:00");
@@ -36,6 +37,7 @@ class ZonedDateTimeAdapterTest {
         testDateTimeImpl("2021-09-19T12:13:14+08:30", "2021-09-19T12:13:14+08:30");
         testDateTimeImpl("2021-09-19T12:13:14Z", "2021-09-19T12:13:14+00:00");
 
+        //DateTime with offset and fractional seconds
         testDateTimeImpl("2021-09-19T12:13:14.1+01:00", "2021-09-19T12:13:14.100+01:00");
         testDateTimeImpl("2021-09-19T12:13:14.12-01:00", "2021-09-19T12:13:14.120-01:00");
         testDateTimeImpl("2021-09-19T12:13:14.123+00:00", "2021-09-19T12:13:14.123+00:00");

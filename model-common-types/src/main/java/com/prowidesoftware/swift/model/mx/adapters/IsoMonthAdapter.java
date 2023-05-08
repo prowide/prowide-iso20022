@@ -17,35 +17,34 @@ package com.prowidesoftware.swift.model.mx.adapters;
 
 import jakarta.xml.bind.annotation.adapters.XmlAdapter;
 
-import javax.xml.datatype.DatatypeConfigurationException;
-import java.time.OffsetDateTime;
-
+import java.time.Month;
+import java.time.YearMonth;
 
 /**
- * Configured adapter for date time elements.
+ * Configured adapter for date elements.
  * <p>
- * This implementation is applied in the model with the @XmlJavaTypeAdapter(IsoDateTimeAdapter.class) annotation to
- * all schema elements with type "ISODateTime".
+ * This implementation is applied in the model with the @XmlJavaTypeAdapter(IsoMonthAdapter.class) annotation to
+ * all schema elements with type "IsoMonth".
  * <p>
  * It is implemented as wrapper to inject your own instances when calling the different write/read methods in the model.
  *
  * @since 9.2.6
  */
-public class IsoDateTimeAdapter extends XmlAdapter<String, OffsetDateTime> {
+public class IsoMonthAdapter extends XmlAdapter<String, Month> {
 
-    private final XmlAdapter<String, OffsetDateTime> customAdapterImpl;
+    private final XmlAdapter<String, Month> customAdapterImpl;
 
     /**
      * Default constructor for jaxb when non is set via API
      */
-    public IsoDateTimeAdapter() {
-        this.customAdapterImpl = new OffsetDateTimeAdapter();
+    public IsoMonthAdapter() {
+        this.customAdapterImpl = new MonthAdapter();
     }
 
     /**
-     * Creates a date time adapter injecting a custom implementation
+     * Creates a date adapter injecting a custom implementation
      */
-    public IsoDateTimeAdapter(XmlAdapter<String, OffsetDateTime> customAdapterImpl) {
+    public IsoMonthAdapter(XmlAdapter<String, Month> customAdapterImpl) {
         this.customAdapterImpl = customAdapterImpl;
     }
 
@@ -53,22 +52,22 @@ public class IsoDateTimeAdapter extends XmlAdapter<String, OffsetDateTime> {
      * Invokes the wrapped adapter implementation of the unmarshal method.
      *
      * @param value the XML date time value to convert
-     * @return created OffsetDateTime object or null if it cannot be parsed
+     * @return created Month object or null if it cannot be parsed
      */
     @Override
-    public OffsetDateTime unmarshal(String value) throws Exception {
+    public Month unmarshal(String value) throws Exception {
         return this.customAdapterImpl.unmarshal(value);
     }
 
     /**
      * Invokes the wrapped adapter implementation of the marshal method.
      *
-     * @param offsetDateTime the model OffsetDateTime to marshal
+     * @param month the model Month to marshal
      * @return formatted content for the XML
      */
     @Override
-    public String marshal(OffsetDateTime offsetDateTime) throws Exception {
-        return this.customAdapterImpl.marshal(offsetDateTime);
+    public String marshal(Month month) throws Exception {
+        return this.customAdapterImpl.marshal(month);
     }
 
 }

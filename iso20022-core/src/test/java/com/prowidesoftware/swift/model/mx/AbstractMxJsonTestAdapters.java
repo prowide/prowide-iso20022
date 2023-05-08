@@ -16,13 +16,15 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonObject;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.OffsetDateTime;
-import java.time.OffsetTime;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -31,7 +33,7 @@ import static org.junit.jupiter.api.Assertions.*;
  *
  * @since 7.10.2
  */
-public class AbstractMxJsonTest {
+public class AbstractMxJsonTestAdapters {
 
     @Test
     public void testMxJson() {
@@ -162,7 +164,7 @@ public class AbstractMxJsonTest {
                 "            }\n" +
                 "          },\n" +
                 "          \"offset\": {\n" +
-                "            \"totalSeconds\": -10800\n" +
+                "            \"totalSeconds\": 3600\n" +
                 "          }\n" +
                 "        }\n" +
                 "      }\n" +
@@ -181,21 +183,84 @@ public class AbstractMxJsonTest {
         String source = "{\n" +
                 "  \"sctiesSttlmTxInstr\": {\n" +
                 "    \"id\": {\n" +
-                "      \"creDtTm\": {\n" +
-                "        \"dtTm\": {\n" +
-                "          \"year\": 2021,\n" +
-                "          \"month\": 2,\n" +
-                "          \"day\": 3\n" +
+                "      \"txId\": \"171618023000000\",\n" +
+                "      \"cpyDplct\": \"COPY\"\n" +
+                "    },\n" +
+                "    \"sttlmTpAndAddtlParams\": {\n" +
+                "      \"sctiesMvmntTp\": \"RECE\",\n" +
+                "      \"pmt\": \"APMT\"\n" +
+                "    },\n" +
+                "    \"lnkgs\": [\n" +
+                "      {\n" +
+                "        \"ref\": {\n" +
+                "          \"acctSvcrTxId\": \"GT6JVFKH0P4VXV\"\n" +
+                "        }\n" +
+                "      }\n" +
+                "    ],\n" +
+                "    \"tradDtls\": {\n" +
+                "      \"tradDt\": {\n" +
+                "        \"dt\": {\n" +
+                "          \"dt\": {\n" +
+                "            \"year\": 2020,\n" +
+                "            \"month\": 11,\n" +
+                "            \"day\": 2\n" +
+                "          }\n" +
+                "        }\n" +
+                "      },\n" +
+                "      \"sttlmDt\": {\n" +
+                "        \"dt\": {\n" +
+                "          \"dt\": {\n" +
+                "            \"year\": 2020,\n" +
+                "            \"month\": 11,\n" +
+                "            \"day\": 4\n" +
+                "          }\n" +
                 "        }\n" +
                 "      }\n" +
                 "    }\n" +
+                "  },\n" +
+                "  \"appHdr\": {\n" +
+                "    \"fr\": {\n" +
+                "      \"fiId\": {\n" +
+                "        \"finInstnId\": {\n" +
+                "          \"bicfi\": \"MUGCLULLXXX\"\n" +
+                "        }\n" +
+                "      }\n" +
+                "    },\n" +
+                "    \"to\": {\n" +
+                "      \"fiId\": {\n" +
+                "        \"finInstnId\": {\n" +
+                "          \"bicfi\": \"MTBJJPJTXXX\"\n" +
+                "        }\n" +
+                "      }\n" +
+                "    },\n" +
+                "    \"bizMsgIdr\": \"171618023000000\",\n" +
+                "    \"msgDefIdr\": \"sese.023.002.01\",\n" +
+                "    \"creDt\": {\n" +
+                "      \"dateTime\": {\n" +
+                "        \"date\": {\n" +
+                "          \"year\": 2020,\n" +
+                "          \"month\": 11,\n" +
+                "          \"day\": 20\n" +
+                "        },\n" +
+                "        \"time\": {\n" +
+                "          \"hour\": 4,\n" +
+                "          \"minute\": 35,\n" +
+                "          \"second\": 58,\n" +
+                "          \"nano\": 0\n" +
+                "        }\n" +
+                "      },\n" +
+                "      \"offset\": {\n" +
+                "        \"totalSeconds\": 0\n" +
+                "      }\n" +
+                "    },\n" +
+                "    \"namespace\": \"urn:iso:std:iso:20022:tech:xsd:head.001.001.01\"\n" +
                 "  },\n" +
                 "  \"type\": \"MX\",\n" +
                 "  \"@xmlns\": \"urn:swift:xsd:sese.023.002.01\",\n" +
                 "  \"identifier\": \"sese.023.002.01\"\n" +
                 "}";
         AbstractMX mx = AbstractMX.fromJson(source);
-        assertEquals(source, mx.toJson());
+        assertEquals(source.trim(), mx.toJson().trim());
     }
 
     @Test
@@ -229,13 +294,19 @@ public class AbstractMxJsonTest {
                 "    \"grpHdr\": {\n" +
                 "      \"msgId\": \"A2P76703\",\n" +
                 "      \"creDtTm\": {\n" +
-                "        \"year\": 2021,\n" +
-                "        \"month\": 4,\n" +
-                "        \"day\": 28,\n" +
-                "        \"timezone\": 0,\n" +
-                "        \"hour\": 9,\n" +
-                "        \"minute\": 22,\n" +
-                "        \"second\": 56\n" +
+                "        \"dateTime\": {\n" +
+                "          \"date\": {\n" +
+                "            \"year\": 2021,\n" +
+                "            \"month\": 4,\n" +
+                "            \"day\": 8\n" +
+                "          },\n" +
+                "          \"time\": {\n" +
+                "            \"hour\": 14,\n" +
+                "            \"minute\": 48,\n" +
+                "            \"second\": 38,\n" +
+                "            \"nano\": 0\n" +
+                "          }\n" +
+                "        }\n" +
                 "      },\n" +
                 "      \"nbOfTxs\": \"1\"\n" +
                 "    }\n" +
@@ -252,19 +323,26 @@ public class AbstractMxJsonTest {
                 "    \"msgName\": \"pacs.009.001.07\",\n" +
                 "    \"msgRef\": \"CPTE190421113270\",\n" +
                 "    \"crDate\": {\n" +
-                "      \"year\": 2021,\n" +
-                "      \"month\": 4,\n" +
-                "      \"day\": 28,\n" +
-                "      \"timezone\": 0,\n" +
-                "      \"hour\": 9,\n" +
-                "      \"minute\": 22,\n" +
-                "      \"second\": 56\n" +
+                "      \"dateTime\": {\n" +
+                "        \"date\": {\n" +
+                "          \"year\": 2021,\n" +
+                "          \"month\": 4,\n" +
+                "          \"day\": 8\n" +
+                "        },\n" +
+                "        \"time\": {\n" +
+                "          \"hour\": 14,\n" +
+                "          \"minute\": 48,\n" +
+                "          \"second\": 38,\n" +
+                "          \"nano\": 0\n" +
+                "        }\n" +
+                "      }\n" +
                 "    }\n" +
                 "  },\n" +
                 "  \"type\": \"MX\",\n" +
                 "  \"@xmlns\": \"urn:iso:std:iso:20022:tech:xsd:pacs.009.001.07\",\n" +
                 "  \"identifier\": \"pacs.009.001.07\"\n" +
                 "}";
+
         assertDoesNotThrow(() -> AbstractMX.fromJson(json));
     }
 
@@ -275,13 +353,22 @@ public class AbstractMxJsonTest {
                 "    \"grpHdr\": {\n" +
                 "      \"msgId\": \"A2P76703\",\n" +
                 "      \"creDtTm\": {\n" +
-                "        \"year\": 2021,\n" +
-                "        \"month\": 4,\n" +
-                "        \"day\": 28,\n" +
-                "        \"timezone\": 0,\n" +
-                "        \"hour\": 9,\n" +
-                "        \"minute\": 22,\n" +
-                "        \"second\": 56\n" +
+                "        \"dateTime\": {\n" +
+                "          \"date\": {\n" +
+                "            \"day\": 8,\n" +
+                "            \"month\": 4,\n" +
+                "            \"year\": 2021\n" +
+                "          },\n" +
+                "          \"time\": {\n" +
+                "            \"hour\": 14,\n" +
+                "            \"minute\": 48,\n" +
+                "            \"nano\": 0,\n" +
+                "            \"second\": 38\n" +
+                "          }\n" +
+                "        },\n" +
+                "        \"offset\": {\n" +
+                "          \"totalSeconds\": -10800\n" +
+                "        }\n" +
                 "      },\n" +
                 "      \"nbOfTxs\": \"1\"\n" +
                 "    }\n" +
@@ -298,13 +385,22 @@ public class AbstractMxJsonTest {
                 "    \"msgName\": \"pacs.009.001.07\",\n" +
                 "    \"msgRef\": \"CPTE190421113270\",\n" +
                 "    \"crDate\": {\n" +
-                "      \"year\": 2021,\n" +
-                "      \"month\": 4,\n" +
-                "      \"day\": 28,\n" +
-                "      \"timezone\": 0,\n" +
-                "      \"hour\": 9,\n" +
-                "      \"minute\": 22,\n" +
-                "      \"second\": 56\n" +
+                "      \"dateTime\": {\n" +
+                "        \"date\": {\n" +
+                "          \"day\": 8,\n" +
+                "          \"month\": 4,\n" +
+                "          \"year\": 2021\n" +
+                "        },\n" +
+                "        \"time\": {\n" +
+                "          \"hour\": 14,\n" +
+                "          \"minute\": 48,\n" +
+                "          \"nano\": 0,\n" +
+                "          \"second\": 38\n" +
+                "        }\n" +
+                "      },\n" +
+                "      \"offset\": {\n" +
+                "        \"totalSeconds\": -10800\n" +
+                "      }\n" +
                 "    }\n" +
                 "  },\n" +
                 "  \"type\": \"MX\",\n" +
@@ -324,13 +420,22 @@ public class AbstractMxJsonTest {
                 "    \"grpHdr\": {\n" +
                 "      \"msgId\": \"A2P76703\",\n" +
                 "      \"creDtTm\": {\n" +
-                "        \"year\": 2021,\n" +
-                "        \"month\": 4,\n" +
-                "        \"day\": 28,\n" +
-                "        \"timezone\": 0,\n" +
-                "        \"hour\": 9,\n" +
-                "        \"minute\": 22,\n" +
-                "        \"second\": 56\n" +
+                "        \"dateTime\": {\n" +
+                "          \"date\": {\n" +
+                "            \"year\": 2021,\n" +
+                "            \"month\": 4,\n" +
+                "            \"day\": 8\n" +
+                "          },\n" +
+                "          \"time\": {\n" +
+                "            \"hour\": 14,\n" +
+                "            \"minute\": 48,\n" +
+                "            \"second\": 38,\n" +
+                "            \"nano\": 0\n" +
+                "          }\n" +
+                "        },\n" +
+                "        \"offset\": {\n" +
+                "          \"totalSeconds\": -10800\n" +
+                "        }\n" +
                 "      },\n" +
                 "      \"nbOfTxs\": \"1\"\n" +
                 "    }\n" +
@@ -348,13 +453,22 @@ public class AbstractMxJsonTest {
                 "    \"msgName\": \"pacs.009.001.07\",\n" +
                 "    \"msgRef\": \"CPTE190421113270\",\n" +
                 "    \"crDate\": {\n" +
-                "      \"year\": 2021,\n" +
-                "      \"month\": 4,\n" +
-                "      \"day\": 28,\n" +
-                "      \"timezone\": 0,\n" +
-                "      \"hour\": 9,\n" +
-                "      \"minute\": 22,\n" +
-                "      \"second\": 56\n" +
+                "      \"dateTime\": {\n" +
+                "        \"date\": {\n" +
+                "          \"year\": 2021,\n" +
+                "          \"month\": 4,\n" +
+                "          \"day\": 8\n" +
+                "        },\n" +
+                "        \"time\": {\n" +
+                "          \"hour\": 14,\n" +
+                "          \"minute\": 48,\n" +
+                "          \"second\": 38,\n" +
+                "          \"nano\": 0\n" +
+                "        }\n" +
+                "      },\n" +
+                "      \"offset\": {\n" +
+                "        \"totalSeconds\": -10800\n" +
+                "      }\n" +
                 "    }\n" +
                 "  },\n" +
                 "  \"type\": \"MX\",\n" +
@@ -377,13 +491,22 @@ public class AbstractMxJsonTest {
                 "    \"grpHdr\": {\n" +
                 "      \"msgId\": \"A2P76703\",\n" +
                 "      \"creDtTm\": {\n" +
-                "        \"year\": 2021,\n" +
-                "        \"month\": 4,\n" +
-                "        \"day\": 28,\n" +
-                "        \"timezone\": 0,\n" +
-                "        \"hour\": 9,\n" +
-                "        \"minute\": 22,\n" +
-                "        \"second\": 56\n" +
+                "        \"dateTime\": {\n" +
+                "          \"date\": {\n" +
+                "            \"year\": 2021,\n" +
+                "            \"month\": 4,\n" +
+                "            \"day\": 8\n" +
+                "          },\n" +
+                "          \"time\": {\n" +
+                "            \"hour\": 14,\n" +
+                "            \"minute\": 48,\n" +
+                "            \"second\": 38,\n" +
+                "            \"nano\": 0\n" +
+                "          }\n" +
+                "        },\n" +
+                "        \"offset\": {\n" +
+                "          \"totalSeconds\": -10800\n" +
+                "        }\n" +
                 "      },\n" +
                 "      \"nbOfTxs\": \"1\"\n" +
                 "    }\n" +
@@ -401,13 +524,22 @@ public class AbstractMxJsonTest {
                 "    \"msgName\": \"pacs.009.001.07\",\n" +
                 "    \"msgRef\": \"CPTE190421113270\",\n" +
                 "    \"crDate\": {\n" +
-                "      \"year\": 2021,\n" +
-                "      \"month\": 4,\n" +
-                "      \"day\": 28,\n" +
-                "      \"timezone\": 0,\n" +
-                "      \"hour\": 9,\n" +
-                "      \"minute\": 22,\n" +
-                "      \"second\": 56\n" +
+                "      \"dateTime\": {\n" +
+                "        \"date\": {\n" +
+                "          \"year\": 2021,\n" +
+                "          \"month\": 4,\n" +
+                "          \"day\": 8\n" +
+                "        },\n" +
+                "        \"time\": {\n" +
+                "          \"hour\": 14,\n" +
+                "          \"minute\": 48,\n" +
+                "          \"second\": 38,\n" +
+                "          \"nano\": 0\n" +
+                "        }\n" +
+                "      },\n" +
+                "      \"offset\": {\n" +
+                "        \"totalSeconds\": -10800\n" +
+                "      }\n" +
                 "    }\n" +
                 "  },\n" +
                 "  \"type\": \"MX\",\n" +
@@ -432,7 +564,7 @@ public class AbstractMxJsonTest {
                 "      \"creDtTm\": {\n" +
                 "        \"dateTime\": {\n" +
                 "          \"date\": {\n" +
-                "            \"year\": 2023,\n" +
+                "            \"year\": 2021,\n" +
                 "            \"month\": 4,\n" +
                 "            \"day\": 21\n" +
                 "          },\n" +
@@ -503,7 +635,7 @@ public class AbstractMxJsonTest {
                 "      \"creDtTm\": {\n" +
                 "        \"dateTime\": {\n" +
                 "          \"date\": {\n" +
-                "            \"year\": 2023,\n" +
+                "            \"year\": 2021,\n" +
                 "            \"month\": 4,\n" +
                 "            \"day\": 21\n" +
                 "          },\n" +
@@ -546,7 +678,7 @@ public class AbstractMxJsonTest {
                 "          \"ccy\": \"EUR\"\n" +
                 "        },\n" +
                 "        \"intrBkSttlmDt\": {\n" +
-                "          \"year\": 2023,\n" +
+                "          \"year\": 2021,\n" +
                 "          \"month\": 1,\n" +
                 "          \"day\": 24\n" +
                 "        },\n" +
@@ -614,7 +746,7 @@ public class AbstractMxJsonTest {
                 "    \"creDt\": {\n" +
                 "      \"dateTime\": {\n" +
                 "        \"date\": {\n" +
-                "          \"year\": 2023,\n" +
+                "          \"year\": 2021,\n" +
                 "          \"month\": 4,\n" +
                 "          \"day\": 21\n" +
                 "        },\n" +
@@ -648,4 +780,321 @@ public class AbstractMxJsonTest {
         BusinessAppHdrV02 businessAppHdrV02 = (BusinessAppHdrV02) mx.getAppHdr();
         assertNotNull(businessAppHdrV02);
     }
+
+    @Test
+    public void testJSONDateTimeWithNoOffset() {
+        String jsonWithNoOffset = "{\n" +
+                "  \"fiCdtTrf\": {\n" +
+                "    \"grpHdr\": {\n" +
+                "      \"msgId\": \"A2P76703\",\n" +
+                "      \"creDtTm\": {\n" +
+                "        \"dateTime\": {\n" +
+                "          \"date\": {\n" +
+                "            \"year\": 2021,\n" +
+                "            \"month\": 4,\n" +
+                "            \"day\": 8\n" +
+                "          },\n" +
+                "          \"time\": {\n" +
+                "            \"hour\": 14,\n" +
+                "            \"minute\": 48,\n" +
+                "            \"second\": 38,\n" +
+                "            \"nano\": 0\n" +
+                "          }\n" +
+                "        }\n" +
+                "      },\n" +
+                "      \"nbOfTxs\": \"1\"\n" +
+                "    }\n" +
+                "  },\n" +
+                "  \"appHdr\": {\n" +
+                "    \"namespace\": \"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\",\n" +
+                "    \"fr\": {\n" +
+                "      \"type\": \"BIC\",\n" +
+                "      \"id\": \"ABNANL20606\"\n" +
+                "    },\n" +
+                "    \"to\": {\n" +
+                "      \"type\": \"BIC\",\n" +
+                "      \"id\": \"GIISIT2TXXX\"\n" +
+                "    },\n" +
+                "    \"msgName\": \"pacs.009.001.07\",\n" +
+                "    \"msgRef\": \"CPTE190421113270\",\n" +
+                "    \"crDate\": {\n" +
+                "      \"dateTime\": {\n" +
+                "        \"date\": {\n" +
+                "          \"year\": 2021,\n" +
+                "          \"month\": 4,\n" +
+                "          \"day\": 8\n" +
+                "        },\n" +
+                "        \"time\": {\n" +
+                "          \"hour\": 14,\n" +
+                "          \"minute\": 48,\n" +
+                "          \"second\": 38,\n" +
+                "          \"nano\": 0\n" +
+                "        }\n" +
+                "      }\n" +
+                "    }\n" +
+                "  },\n" +
+                "  \"type\": \"MX\",\n" +
+                "  \"@xmlns\": \"urn:iso:std:iso:20022:tech:xsd:pacs.009.001.07\",\n" +
+                "  \"identifier\": \"pacs.009.001.07\"\n" +
+                "}";
+
+        AbstractMX source = AbstractMX.fromJson(jsonWithNoOffset);
+
+        AbstractMX mx = AbstractMX.fromJson(source.toJson());
+        AbstractMX mx2 = AbstractMX.fromJson(mx.toJson());
+        assertEquals(mx, mx2);
+
+        BusinessAppHdrV02 businessAppHdrV02 = (BusinessAppHdrV02) mx.getAppHdr();
+        assertNotNull(businessAppHdrV02);
+    }
+
+    @Test
+    public void testJSONTimeWithOffset() {
+        String jsonTimeAndDate = "{\n" +
+                "  \"cretStgOrdr\": {\n" +
+                "    \"msgHdr\": {\n" +
+                "      \"msgId\": \"1221212121\",\n" +
+                "      \"creDtTm\": {\n" +
+                "        \"dateTime\": {\n" +
+                "          \"date\": {\n" +
+                "            \"year\": 2021,\n" +
+                "            \"month\": 5,\n" +
+                "            \"day\": 8\n" +
+                "          },\n" +
+                "          \"time\": {\n" +
+                "            \"hour\": 20,\n" +
+                "            \"minute\": 45,\n" +
+                "            \"second\": 43,\n" +
+                "            \"nano\": 0\n" +
+                "          }\n" +
+                "        },\n" +
+                "        \"offset\": {\n" +
+                "          \"totalSeconds\": -10800\n" +
+                "        }\n" +
+                "      }\n" +
+                "    },\n" +
+                "    \"stgOrdrId\": {\n" +
+                "      \"id\": \"AAAACAD0XXX\",\n" +
+                "      \"acct\": {\n" +
+                "        \"id\": {\n" +
+                "          \"iban\": \"AA00XXXAAAACAD0XXXAAAACAD0XXXAAAAC\"\n" +
+                "        }\n" +
+                "      }\n" +
+                "    },\n" +
+                "    \"valSet\": {\n" +
+                "      \"exctnTp\": {\n" +
+                "        \"tm\": {\n" +
+                "          \"time\": {\n" +
+                "            \"hour\": 20,\n" +
+                "            \"minute\": 45,\n" +
+                "            \"second\": 8,\n" +
+                "            \"nano\": 0\n" +
+                "          },\n" +
+                "          \"offset\": {\n" +
+                "            \"totalSeconds\": 7200\n" +
+                "          }\n" +
+                "        }\n" +
+                "      }\n" +
+                "    }\n" +
+                "  },\n" +
+                "  \"appHdr\": {\n" +
+                "    \"fr\": {\n" +
+                "      \"orgId\": {\n" +
+                "        \"nm\": \"dssddsqsdqdsqdqs\"\n" +
+                "      }\n" +
+                "    },\n" +
+                "    \"to\": {\n" +
+                "      \"fiId\": {\n" +
+                "        \"finInstnId\": {\n" +
+                "          \"bicfi\": \"AAAACAD0XXX\"\n" +
+                "        }\n" +
+                "      }\n" +
+                "    },\n" +
+                "    \"bizMsgIdr\": \"AAAACAD0XXX\",\n" +
+                "    \"msgDefIdr\": \"camt.102.001.02\",\n" +
+                "    \"creDt\": {\n" +
+                "      \"dateTime\": {\n" +
+                "        \"date\": {\n" +
+                "          \"year\": 2021,\n" +
+                "          \"month\": 5,\n" +
+                "          \"day\": 8\n" +
+                "        },\n" +
+                "        \"time\": {\n" +
+                "          \"hour\": 15,\n" +
+                "          \"minute\": 46,\n" +
+                "          \"second\": 9,\n" +
+                "          \"nano\": 258000000\n" +
+                "        }\n" +
+                "      },\n" +
+                "      \"offset\": {\n" +
+                "        \"totalSeconds\": -10800\n" +
+                "      }\n" +
+                "    },\n" +
+                "    \"bizPrcgDt\": {\n" +
+                "      \"dateTime\": {\n" +
+                "        \"date\": {\n" +
+                "          \"year\": 2021,\n" +
+                "          \"month\": 5,\n" +
+                "          \"day\": 8\n" +
+                "        },\n" +
+                "        \"time\": {\n" +
+                "          \"hour\": 20,\n" +
+                "          \"minute\": 45,\n" +
+                "          \"second\": 31,\n" +
+                "          \"nano\": 0\n" +
+                "        }\n" +
+                "      },\n" +
+                "      \"offset\": {\n" +
+                "        \"totalSeconds\": -10800\n" +
+                "      }\n" +
+                "    },\n" +
+                "    \"namespace\": \"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\"\n" +
+                "  },\n" +
+                "  \"type\": \"MX\",\n" +
+                "  \"@xmlns\": \"urn:iso:std:iso:20022:tech:xsd:camt.102.001.02\",\n" +
+                "  \"identifier\": \"camt.102.001.02\"\n" +
+                "}";
+
+        AbstractMX source = AbstractMX.fromJson(jsonTimeAndDate);
+
+        AbstractMX mx = AbstractMX.fromJson(source.toJson());
+        AbstractMX mx2 = AbstractMX.fromJson(mx.toJson());
+        assertEquals(mx, mx2);
+
+        BusinessAppHdrV02 businessAppHdrV02 = (BusinessAppHdrV02) mx.getAppHdr();
+        assertNotNull(businessAppHdrV02);
+    }
+
+
+    @Test
+    public void testJSONTimeWithNoOffset() {
+        String jsonTimeAndDate = "{\n" +
+                "  \"cretStgOrdr\": {\n" +
+                "    \"msgHdr\": {\n" +
+                "      \"msgId\": \"1221212121\",\n" +
+                "      \"creDtTm\": {\n" +
+                "        \"dateTime\": {\n" +
+                "          \"date\": {\n" +
+                "            \"year\": 2021,\n" +
+                "            \"month\": 5,\n" +
+                "            \"day\": 8\n" +
+                "          },\n" +
+                "          \"time\": {\n" +
+                "            \"hour\": 20,\n" +
+                "            \"minute\": 45,\n" +
+                "            \"second\": 43,\n" +
+                "            \"nano\": 0\n" +
+                "          }\n" +
+                "        }\n" +
+                "      }\n" +
+                "    },\n" +
+                "    \"stgOrdrId\": {\n" +
+                "      \"id\": \"AAAACAD0XXX\",\n" +
+                "      \"acct\": {\n" +
+                "        \"id\": {\n" +
+                "          \"iban\": \"AA00XXXAAAACAD0XXXAAAACAD0XXXAAAAC\"\n" +
+                "        }\n" +
+                "      }\n" +
+                "    },\n" +
+                "    \"valSet\": {\n" +
+                "      \"exctnTp\": {\n" +
+                "        \"tm\": {\n" +
+                "          \"time\": {\n" +
+                "            \"hour\": 20,\n" +
+                "            \"minute\": 45,\n" +
+                "            \"second\": 8,\n" +
+                "            \"nano\": 0\n" +
+                "          }\n" +
+                "        }\n" +
+                "      }\n" +
+                "    }\n" +
+                "  },\n" +
+                "  \"appHdr\": {\n" +
+                "    \"fr\": {\n" +
+                "      \"orgId\": {\n" +
+                "        \"nm\": \"dssddsqsdqdsqdqs\"\n" +
+                "      }\n" +
+                "    },\n" +
+                "    \"to\": {\n" +
+                "      \"fiId\": {\n" +
+                "        \"finInstnId\": {\n" +
+                "          \"bicfi\": \"AAAACAD0XXX\"\n" +
+                "        }\n" +
+                "      }\n" +
+                "    },\n" +
+                "    \"bizMsgIdr\": \"AAAACAD0XXX\",\n" +
+                "    \"msgDefIdr\": \"camt.102.001.02\",\n" +
+                "    \"creDt\": {\n" +
+                "      \"dateTime\": {\n" +
+                "        \"date\": {\n" +
+                "          \"year\": 2021,\n" +
+                "          \"month\": 5,\n" +
+                "          \"day\": 8\n" +
+                "        },\n" +
+                "        \"time\": {\n" +
+                "          \"hour\": 15,\n" +
+                "          \"minute\": 46,\n" +
+                "          \"second\": 9,\n" +
+                "          \"nano\": 258000000\n" +
+                "        }\n" +
+                "      }\n" +
+                "    },\n" +
+                "    \"bizPrcgDt\": {\n" +
+                "      \"dateTime\": {\n" +
+                "        \"date\": {\n" +
+                "          \"year\": 2021,\n" +
+                "          \"month\": 5,\n" +
+                "          \"day\": 8\n" +
+                "        },\n" +
+                "        \"time\": {\n" +
+                "          \"hour\": 20,\n" +
+                "          \"minute\": 45,\n" +
+                "          \"second\": 31,\n" +
+                "          \"nano\": 0\n" +
+                "        }\n" +
+                "      }\n" +
+                "    },\n" +
+                "    \"namespace\": \"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\"\n" +
+                "  },\n" +
+                "  \"type\": \"MX\",\n" +
+                "  \"@xmlns\": \"urn:iso:std:iso:20022:tech:xsd:camt.102.001.02\",\n" +
+                "  \"identifier\": \"camt.102.001.02\"\n" +
+                "}";
+
+        AbstractMX source = AbstractMX.fromJson(jsonTimeAndDate);
+
+        AbstractMX mx = AbstractMX.fromJson(source.toJson());
+        AbstractMX mx2 = AbstractMX.fromJson(mx.toJson());
+        assertEquals(mx, mx2);
+
+        BusinessAppHdrV02 businessAppHdrV02 = (BusinessAppHdrV02) mx.getAppHdr();
+        assertNotNull(businessAppHdrV02);
+    }
+
+
+    @Test
+    public void testGson() {
+        Gson gson = new Gson();
+
+        String json = "{\"date\":{\"year\":2021,\"month\":5,\"day\":8},\"time\":{\"hour\":21,\"minute\":49,\"second\":48,\"nano\":279285000}}";
+
+
+        //System.out.println(gson.toJson(Year.now()));
+        //System.out.println(gson.toJson(YearMonth.now()));
+
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("MM");
+
+        System.out.println(gson.toJson(LocalDate.now().getMonth()));
+
+        //OffsetDateTime: {"dateTime":{"date":{"year":2021,"month":5,"day":8},"time":{"hour":21,"minute":48,"second":39,"nano":61498000}},"offset":{"totalSeconds":7200}}
+        //LocalDateTime : {"date":{"year":2021,"month":5,"day":8},"time":{"hour":21,"minute":49,"second":48,"nano":279285000}}
+        //OffsetTime    : {"time":{"hour":21,"minute":49,"second":20,"nano":212849000},"offset":{"totalSeconds":7200}}
+        //LocalTime     : {"hour":21,"minute":50,"second":25,"nano":863749000}
+        //Year          : {"year":2021}
+        //YearMonth     : {"year":2021,"month":5}
+        //Month         : "MAY"
+
+    }
+
+
 }
