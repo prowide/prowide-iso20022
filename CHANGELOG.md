@@ -1,5 +1,9 @@
 # Prowide ISO 20022 - CHANGELOG
 
+#### 10.0.0-RC1-SNAPSHOT
+  * Migration to Java 11
+  * Migration to Jakarta EE 10
+
 #### 9.3.6 - March 2023
   * (GH-74) Added a parameter in the MxWriteParams to define a custom indentation string to use when marshalling into XML
 
