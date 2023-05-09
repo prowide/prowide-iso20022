@@ -25,7 +25,13 @@ import com.prowidesoftware.swift.model.AbstractMessage;
 import com.prowidesoftware.swift.model.MessageStandardType;
 import com.prowidesoftware.swift.model.MxId;
 import com.prowidesoftware.swift.model.mt.AbstractMT;
+import com.prowidesoftware.swift.model.mx.adapters.OffsetDateTimeJSONAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.OffsetTimeJSONAdapter;
+import com.prowidesoftware.swift.model.mx.dic.ApplicationHeader;
+import com.prowidesoftware.swift.model.mx.dic.BusinessApplicationHeaderV01;
 import com.prowidesoftware.swift.utils.Lib;
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.annotation.XmlTransient;
 import org.apache.commons.lang3.StringUtils;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -34,9 +40,6 @@ import org.w3c.dom.Node;
 import org.w3c.dom.ls.DOMImplementationLS;
 import org.w3c.dom.ls.LSSerializer;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.annotation.XmlTransient;
-import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.transform.Source;
 import javax.xml.transform.dom.DOMResult;
 import javax.xml.transform.stream.StreamSource;
@@ -46,6 +49,8 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.StringReader;
 import java.nio.charset.StandardCharsets;
+import java.time.OffsetDateTime;
+import java.time.OffsetTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -243,7 +248,6 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
     protected static <T> T fromJson(String json, Class<T> classOfT) {
         final Gson gson = new GsonBuilder()
                 .registerTypeAdapter(AbstractMX.class, new AbstractMXAdapter())
-                .registerTypeAdapter(XMLGregorianCalendar.class, new XMLGregorianCalendarAdapter())
                 .registerTypeAdapter(AppHdr.class, new AppHdrAdapter())
                 .create();
         return gson.fromJson(json, classOfT);
@@ -259,7 +263,8 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
     public static AbstractMX fromJson(String json) {
         final Gson gson = new GsonBuilder()
                 .registerTypeAdapter(AbstractMX.class, new AbstractMXAdapter())
-                .registerTypeAdapter(XMLGregorianCalendar.class, new XMLGregorianCalendarAdapter())
+                .registerTypeAdapter(OffsetDateTime.class, new OffsetDateTimeJSONAdapter())
+                .registerTypeAdapter(OffsetTime.class, new OffsetTimeJSONAdapter())
                 .registerTypeAdapter(AppHdr.class, new AppHdrAdapter())
                 .create();
         return gson.fromJson(json, AbstractMX.class);
@@ -614,7 +619,6 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
     public String toJson() {
         final Gson gson = new GsonBuilder()
                 .registerTypeAdapter(AbstractMX.class, new AbstractMXAdapter())
-                .registerTypeHierarchyAdapter(XMLGregorianCalendar.class, new XMLGregorianCalendarAdapter())
                 .registerTypeAdapter(AppHdr.class, new AppHdrAdapter())
                 .setPrettyPrinting()
                 .create();

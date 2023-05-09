@@ -25,18 +25,18 @@ import org.apache.commons.lang3.StringUtils;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBElement;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBElement;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Marshaller;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
 import javax.xml.transform.dom.DOMResult;
 import java.io.StringWriter;
+import java.time.OffsetDateTime;
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.logging.Level;
@@ -187,7 +187,7 @@ public class BusinessAppHdrV02 extends BusinessApplicationHeaderV02Impl implemen
      * @see #getCreDt()
      */
     @Override
-    public XMLGregorianCalendar creationDate() {
+    public OffsetDateTime creationDate() {
         return this.getCreDt();
     }
 
@@ -195,12 +195,12 @@ public class BusinessAppHdrV02 extends BusinessApplicationHeaderV02Impl implemen
      * Sets the creation date.
      *
      * @param overwrite if true, the creation date will always be set overwriting any previous value;
-     * @see #setCreDt(XMLGregorianCalendar)
+     * @see #setCreDt(OffsetDateTime)
      */
     @Override
     public void setCreationDate(boolean overwrite) {
         if (this.getCreDt() == null || overwrite) {
-            this.setCreDt(XMLGregorianCalendarUtils.now());
+            this.setCreDt(OffsetDateTime.now());
         }
     }
 

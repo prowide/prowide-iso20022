@@ -15,19 +15,21 @@
  */
 package com.prowidesoftware.swift.model.mx.adapters;
 
-import javax.xml.bind.annotation.adapters.XmlAdapter;
-import javax.xml.datatype.DatatypeFactory;
-import javax.xml.datatype.XMLGregorianCalendar;
+import jakarta.xml.bind.annotation.adapters.XmlAdapter;
 
-public class TestCustomAdapter extends XmlAdapter<String, XMLGregorianCalendar> {
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
+import java.util.Calendar;
+
+public class TestCustomDateAdapter extends XmlAdapter<String, LocalDate> {
 
     @Override
-    public XMLGregorianCalendar unmarshal(String v) throws Exception {
-        return DatatypeFactory.newInstance().newXMLGregorianCalendar();
+    public LocalDate unmarshal(String v){
+        return LocalDate.now();
     }
 
     @Override
-    public String marshal(XMLGregorianCalendar cal) throws Exception {
+    public String marshal(LocalDate cal) {
         return "foobar";
     }
 

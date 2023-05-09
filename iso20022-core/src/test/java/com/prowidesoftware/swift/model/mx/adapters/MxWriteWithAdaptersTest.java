@@ -23,31 +23,27 @@ import com.prowidesoftware.swift.model.mx.dic.GroupHeader33;
 import com.prowidesoftware.swift.model.mx.dic.SettlementTimeRequest2;
 import org.junit.jupiter.api.Test;
 
-import javax.xml.datatype.DatatypeConfigurationException;
-import javax.xml.datatype.DatatypeFactory;
-import javax.xml.datatype.XMLGregorianCalendar;
-import java.math.BigDecimal;
-import java.text.SimpleDateFormat;
-import java.time.OffsetDateTime;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoField;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class MxWriteWithAdaptersTest {
+    ZoneOffset systemOffset = ZoneOffset.systemDefault().getRules().getOffset(Instant.now());
 
     @Test
-    public void testDocumentDateTime_DefaultAdapters_noFractionalSecond() throws DatatypeConfigurationException {
-        XMLGregorianCalendar noFractionalSecond = DatatypeFactory.newInstance().newXMLGregorianCalendar(new GregorianCalendar(2021, Calendar.OCTOBER, 19, 12, 13, 14));
-        MxPacs00800102 mx1 = sample(noFractionalSecond);
+    public void testDocumentDateTime_DefaultAdapters_noFractionalSecond() {
+        MxPacs00800102 mx1 = getMxPacs00800102WithDateTimeValuesFilled();
 
-        final String xml = mx1.message();
-        //System.out.println(xml);
-        assertTrue(xml.contains("<Doc:CreDtTm>2021-10-19T12:13:14"+ OffsetDateTime.now().getOffset() + "</Doc:CreDtTm>"));
-        assertTrue(xml.contains("<Doc:IntrBkSttlmDt>2021-10-19</Doc:IntrBkSttlmDt>"));
-        assertTrue(xml.contains("<Doc:CLSTm>12:13:14"+ OffsetDateTime.now().getOffset() + "</Doc:CLSTm>"));
+        final String xml1 = mx1.message();
 
-        final MxPacs00800102 mx2 = MxPacs00800102.parse(xml);
+        //System.out.println(xml1);
+        assertTrue(xml1.contains("<Doc:CreDtTm>2021-10-19T12:13:14" + systemOffset + "</Doc:CreDtTm>"));
+        assertTrue(xml1.contains("<Doc:IntrBkSttlmDt>2021-10-19</Doc:IntrBkSttlmDt>"));
+        assertTrue(xml1.contains("<Doc:CLSTm>12:13:14" + systemOffset + "</Doc:CLSTm>"));
+
+        final MxPacs00800102 mx2 = MxPacs00800102.parse(xml1);
         //System.out.println(mx2.message());
 
         // assert date time propagation
@@ -55,29 +51,34 @@ public class MxWriteWithAdaptersTest {
         assertEquals(mx1.getFIToFICstmrCdtTrf().getGrpHdr().getCreDtTm(), mx2.getFIToFICstmrCdtTrf().getGrpHdr().getCreDtTm());
 
         // assert date propagation
-        XMLGregorianCalendar intrBkSttlmDt1 = mx1.getFIToFICstmrCdtTrf().getGrpHdr().getIntrBkSttlmDt();
-        XMLGregorianCalendar intrBkSttlmDt2 = mx2.getFIToFICstmrCdtTrf().getGrpHdr().getIntrBkSttlmDt();
+        LocalDate intrBkSttlmDt1 = mx1.getFIToFICstmrCdtTrf().getGrpHdr().getIntrBkSttlmDt();
+        LocalDate intrBkSttlmDt2 = mx2.getFIToFICstmrCdtTrf().getGrpHdr().getIntrBkSttlmDt();
         assertNotNull(intrBkSttlmDt2);
-        assertEquals(intrBkSttlmDt1.getYear(), intrBkSttlmDt2.getYear());
-        assertEquals(intrBkSttlmDt1.getMonth(), intrBkSttlmDt2.getMonth());
-        assertEquals(intrBkSttlmDt1.getDay(), intrBkSttlmDt2.getDay());
+        assertEquals(intrBkSttlmDt1.get(ChronoField.YEAR), intrBkSttlmDt2.get(ChronoField.YEAR));
+        assertEquals(intrBkSttlmDt1.get(ChronoField.MONTH_OF_YEAR), intrBkSttlmDt2.get(ChronoField.MONTH_OF_YEAR));
+        assertEquals(intrBkSttlmDt1.get(ChronoField.DAY_OF_WEEK), intrBkSttlmDt2.get(ChronoField.DAY_OF_WEEK));
 
         // assert time propagation
-        XMLGregorianCalendar clsTm1 = mx2.getFIToFICstmrCdtTrf().getCdtTrfTxInf().get(0).getSttlmTmReq().getCLSTm();
-        XMLGregorianCalendar clsTm2 = mx2.getFIToFICstmrCdtTrf().getCdtTrfTxInf().get(0).getSttlmTmReq().getCLSTm();
+        OffsetTime clsTm1 = mx2.getFIToFICstmrCdtTrf().getCdtTrfTxInf().get(0).getSttlmTmReq().getCLSTm();
+        OffsetTime clsTm2 = mx2.getFIToFICstmrCdtTrf().getCdtTrfTxInf().get(0).getSttlmTmReq().getCLSTm();
         assertNotNull(clsTm2);
-        assertEquals(clsTm1.getHour(), clsTm2.getHour());
-        assertEquals(clsTm1.getMinute(), clsTm2.getMinute());
-        assertEquals(clsTm1.getSecond(), clsTm2.getSecond());
-        assertEquals(clsTm1.getFractionalSecond(), clsTm2.getFractionalSecond());
-        assertEquals(clsTm1.getTimezone(), clsTm2.getTimezone());
+        assertEquals(clsTm1.get(ChronoField.HOUR_OF_DAY), clsTm2.get(ChronoField.HOUR_OF_DAY));
+        assertEquals(clsTm1.get(ChronoField.MINUTE_OF_HOUR), clsTm2.get(ChronoField.MINUTE_OF_HOUR));
+        assertEquals(clsTm1.get(ChronoField.SECOND_OF_MINUTE), clsTm2.get(ChronoField.SECOND_OF_MINUTE));
+        assertEquals(clsTm1.get(ChronoField.MILLI_OF_SECOND), clsTm2.get(ChronoField.MILLI_OF_SECOND));
+        assertEquals(clsTm1.getOffset(), clsTm2.getOffset());
     }
 
     @Test
-    public void testDocumentDateTime_DefaultAdapters_Z() throws DatatypeConfigurationException {
-        XMLGregorianCalendar utc = DatatypeFactory.newInstance().newXMLGregorianCalendar(new GregorianCalendar(2021, Calendar.OCTOBER, 19, 12, 13, 14));
-        utc.setTimezone(0);
-        MxPacs00800102 mx1 = sample(utc);
+    public void testDocumentDateTime_DefaultAdapters_Z() {
+        ZoneId utc = ZoneId.of("UTC");
+        ZoneOffset offsetUTC = utc.getRules().getOffset(Instant.now());
+
+        LocalDate localDate = LocalDate.parse("2021-10-19");
+        OffsetTime offsetTime = OffsetTime.parse("12:13:14" + offsetUTC);
+        OffsetDateTime offsetDateTime = OffsetDateTime.parse("2021-10-19T12:13:14" + offsetUTC);
+
+        MxPacs00800102 mx1 = setDatesIntoMessage(localDate, offsetTime, offsetDateTime);
 
         final String xml = mx1.message();
         //System.out.println(xml);
@@ -93,35 +94,37 @@ public class MxWriteWithAdaptersTest {
         assertEquals(mx1.getFIToFICstmrCdtTrf().getGrpHdr().getCreDtTm(), mx2.getFIToFICstmrCdtTrf().getGrpHdr().getCreDtTm());
 
         // assert date propagation
-        XMLGregorianCalendar intrBkSttlmDt1 = mx1.getFIToFICstmrCdtTrf().getGrpHdr().getIntrBkSttlmDt();
-        XMLGregorianCalendar intrBkSttlmDt2 = mx2.getFIToFICstmrCdtTrf().getGrpHdr().getIntrBkSttlmDt();
+        LocalDate intrBkSttlmDt1 = mx1.getFIToFICstmrCdtTrf().getGrpHdr().getIntrBkSttlmDt();
+        LocalDate intrBkSttlmDt2 = mx2.getFIToFICstmrCdtTrf().getGrpHdr().getIntrBkSttlmDt();
         assertNotNull(intrBkSttlmDt2);
-        assertEquals(intrBkSttlmDt1.getYear(), intrBkSttlmDt2.getYear());
-        assertEquals(intrBkSttlmDt1.getMonth(), intrBkSttlmDt2.getMonth());
-        assertEquals(intrBkSttlmDt1.getDay(), intrBkSttlmDt2.getDay());
+        assertEquals(intrBkSttlmDt1.get(ChronoField.YEAR), intrBkSttlmDt2.get(ChronoField.YEAR));
+        assertEquals(intrBkSttlmDt1.get(ChronoField.MONTH_OF_YEAR), intrBkSttlmDt2.get(ChronoField.MONTH_OF_YEAR));
+        assertEquals(intrBkSttlmDt1.get(ChronoField.DAY_OF_YEAR), intrBkSttlmDt2.get(ChronoField.DAY_OF_YEAR));
 
         // assert time propagation
-        XMLGregorianCalendar clsTm1 = mx2.getFIToFICstmrCdtTrf().getCdtTrfTxInf().get(0).getSttlmTmReq().getCLSTm();
-        XMLGregorianCalendar clsTm2 = mx2.getFIToFICstmrCdtTrf().getCdtTrfTxInf().get(0).getSttlmTmReq().getCLSTm();
+        OffsetTime clsTm1 = mx2.getFIToFICstmrCdtTrf().getCdtTrfTxInf().get(0).getSttlmTmReq().getCLSTm();
+        OffsetTime clsTm2 = mx2.getFIToFICstmrCdtTrf().getCdtTrfTxInf().get(0).getSttlmTmReq().getCLSTm();
         assertNotNull(clsTm2);
-        assertEquals(clsTm1.getHour(), clsTm2.getHour());
-        assertEquals(clsTm1.getMinute(), clsTm2.getMinute());
-        assertEquals(clsTm1.getSecond(), clsTm2.getSecond());
-        assertEquals(clsTm1.getFractionalSecond(), clsTm2.getFractionalSecond());
-        assertEquals(clsTm1.getTimezone(), clsTm2.getTimezone());
+        assertEquals(clsTm1.get(ChronoField.HOUR_OF_DAY), clsTm2.get(ChronoField.HOUR_OF_DAY));
+        assertEquals(clsTm1.get(ChronoField.MINUTE_OF_HOUR), clsTm2.get(ChronoField.MINUTE_OF_HOUR));
+        assertEquals(clsTm1.get(ChronoField.SECOND_OF_MINUTE), clsTm2.get(ChronoField.SECOND_OF_MINUTE));
+        assertEquals(clsTm1.get(ChronoField.NANO_OF_SECOND), clsTm2.get(ChronoField.NANO_OF_SECOND));
+        assertEquals(clsTm1.getOffset(), clsTm2.getOffset());
     }
 
     @Test
-    public void testDocumentDateTime_DefaultAdapters_fractionalSecond() throws DatatypeConfigurationException {
-        XMLGregorianCalendar fractionalSecond = DatatypeFactory.newInstance().newXMLGregorianCalendar(new GregorianCalendar(2021, Calendar.OCTOBER, 19, 12, 13, 14));
-        fractionalSecond.setFractionalSecond(new BigDecimal("0.123"));
-        MxPacs00800102 mx1 = sample(fractionalSecond);
+    public void testDocumentDateTime_DefaultAdapters_fractionalSecond() {
+        MxPacs00800102 mx1 = getMxPacs00800102WithDateTimeValuesFilled();
+        OffsetDateTime offsetDateTime = OffsetDateTime.parse("2021-10-19T12:13:14.123" + systemOffset);
+
+        mx1.getFIToFICstmrCdtTrf().getGrpHdr().setCreDtTm(offsetDateTime);  // date time
+        mx1.getFIToFICstmrCdtTrf().getCdtTrfTxInf().get(0).getSttlmTmReq().setCLSTm(OffsetTime.parse("12:13:14.123" + systemOffset)); // time
 
         final String xml = mx1.message();
         //System.out.println(xml);
-        assertTrue(xml.contains("<Doc:CreDtTm>2021-10-19T12:13:14.123"+ OffsetDateTime.now().getOffset() + "</Doc:CreDtTm>"));
+        assertTrue(xml.contains("<Doc:CreDtTm>2021-10-19T12:13:14.123" + systemOffset + "</Doc:CreDtTm>"));
         assertTrue(xml.contains("<Doc:IntrBkSttlmDt>2021-10-19</Doc:IntrBkSttlmDt>"));
-        assertTrue(xml.contains("<Doc:CLSTm>12:13:14.123"+ OffsetDateTime.now().getOffset() + "</Doc:CLSTm>"));
+        assertTrue(xml.contains("<Doc:CLSTm>12:13:14.123" + systemOffset + "</Doc:CLSTm>"));
 
         final MxPacs00800102 mx2 = MxPacs00800102.parse(xml);
         //System.out.println(mx2.message());
@@ -131,32 +134,31 @@ public class MxWriteWithAdaptersTest {
         assertEquals(mx1.getFIToFICstmrCdtTrf().getGrpHdr().getCreDtTm(), mx2.getFIToFICstmrCdtTrf().getGrpHdr().getCreDtTm());
 
         // assert date propagation
-        XMLGregorianCalendar intrBkSttlmDt1 = mx1.getFIToFICstmrCdtTrf().getGrpHdr().getIntrBkSttlmDt();
-        XMLGregorianCalendar intrBkSttlmDt2 = mx2.getFIToFICstmrCdtTrf().getGrpHdr().getIntrBkSttlmDt();
+        LocalDate intrBkSttlmDt1 = mx1.getFIToFICstmrCdtTrf().getGrpHdr().getIntrBkSttlmDt();
+        LocalDate intrBkSttlmDt2 = mx2.getFIToFICstmrCdtTrf().getGrpHdr().getIntrBkSttlmDt();
         assertNotNull(intrBkSttlmDt2);
-        assertEquals(intrBkSttlmDt1.getYear(), intrBkSttlmDt2.getYear());
-        assertEquals(intrBkSttlmDt1.getMonth(), intrBkSttlmDt2.getMonth());
-        assertEquals(intrBkSttlmDt1.getDay(), intrBkSttlmDt2.getDay());
+        assertEquals(intrBkSttlmDt1.get(ChronoField.YEAR), intrBkSttlmDt2.get(ChronoField.YEAR));
+        assertEquals(intrBkSttlmDt1.get(ChronoField.MONTH_OF_YEAR), intrBkSttlmDt2.get(ChronoField.MONTH_OF_YEAR));
+        assertEquals(intrBkSttlmDt1.get(ChronoField.DAY_OF_MONTH), intrBkSttlmDt2.get(ChronoField.DAY_OF_MONTH));
 
         // assert time propagation
-        XMLGregorianCalendar clsTm1 = mx2.getFIToFICstmrCdtTrf().getCdtTrfTxInf().get(0).getSttlmTmReq().getCLSTm();
-        XMLGregorianCalendar clsTm2 = mx2.getFIToFICstmrCdtTrf().getCdtTrfTxInf().get(0).getSttlmTmReq().getCLSTm();
+        OffsetTime clsTm1 = mx2.getFIToFICstmrCdtTrf().getCdtTrfTxInf().get(0).getSttlmTmReq().getCLSTm();
+        OffsetTime clsTm2 = mx2.getFIToFICstmrCdtTrf().getCdtTrfTxInf().get(0).getSttlmTmReq().getCLSTm();
         assertNotNull(clsTm2);
-        assertEquals(clsTm1.getHour(), clsTm2.getHour());
-        assertEquals(clsTm1.getMinute(), clsTm2.getMinute());
-        assertEquals(clsTm1.getSecond(), clsTm2.getSecond());
-        assertEquals(clsTm1.getFractionalSecond(), clsTm2.getFractionalSecond());
-        assertEquals(clsTm1.getTimezone(), clsTm2.getTimezone());
+        assertEquals(clsTm1.get(ChronoField.HOUR_OF_DAY), clsTm2.get(ChronoField.HOUR_OF_DAY));
+        assertEquals(clsTm1.get(ChronoField.MINUTE_OF_HOUR), clsTm2.get(ChronoField.MINUTE_OF_HOUR));
+        assertEquals(clsTm1.get(ChronoField.SECOND_OF_MINUTE), clsTm2.get(ChronoField.SECOND_OF_MINUTE));
+        assertEquals(clsTm1.get(ChronoField.NANO_OF_SECOND), clsTm2.get(ChronoField.NANO_OF_SECOND));
+        assertEquals(clsTm1.getOffset(), clsTm2.getOffset());
     }
 
     @Test
-    public void testDocumentDateTime_CustomPattern() throws DatatypeConfigurationException {
-        XMLGregorianCalendar noFractionalSecond = DatatypeFactory.newInstance().newXMLGregorianCalendar(new GregorianCalendar(2021, Calendar.OCTOBER, 19, 12, 13, 14));
-        MxPacs00800102 mx1 = sample(noFractionalSecond);
+    public void testDocumentDateTime_CustomPattern() {
+        MxPacs00800102 mx1 = getMxPacs00800102WithDateTimeValuesFilled();
 
         MxWriteConfiguration conf = new MxWriteConfiguration();
-        conf.adapters.dateTimeAdapter = new IsoDateTimeAdapter(new ZonedDateTimeAdapter(new SimpleDateFormat("yy-MM-dd HH:mm")));
-        conf.adapters.dateAdapter = new IsoDateAdapter(new SimpleDateAdapter(new SimpleDateFormat("yy-MM-dd")));
+        conf.adapters.dateTimeAdapter = new IsoDateTimeAdapter(new OffsetDateTimeAdapter(DateTimeFormatter.ofPattern("yy-MM-dd HH:mm")));
+        conf.adapters.dateAdapter = new IsoDateAdapter(new LocalDateAdapter(DateTimeFormatter.ofPattern("yy-MM-dd")));
 
         final String xml = mx1.message(conf);
         //System.out.println(xml);
@@ -168,27 +170,26 @@ public class MxWriteWithAdaptersTest {
 
         // assert date time propagation (seconds truncated in mx2)
         assertNotNull(mx2.getFIToFICstmrCdtTrf().getGrpHdr().getCreDtTm());
-        assertEquals(mx1.getFIToFICstmrCdtTrf().getGrpHdr().getCreDtTm().getYear(), mx2.getFIToFICstmrCdtTrf().getGrpHdr().getCreDtTm().getYear());
-        assertEquals(mx1.getFIToFICstmrCdtTrf().getGrpHdr().getCreDtTm().getMonth(), mx2.getFIToFICstmrCdtTrf().getGrpHdr().getCreDtTm().getMonth());
-        assertEquals(mx1.getFIToFICstmrCdtTrf().getGrpHdr().getCreDtTm().getDay(), mx2.getFIToFICstmrCdtTrf().getGrpHdr().getCreDtTm().getDay());
-        assertEquals(mx1.getFIToFICstmrCdtTrf().getGrpHdr().getCreDtTm().getHour(), mx2.getFIToFICstmrCdtTrf().getGrpHdr().getCreDtTm().getHour());
-        assertEquals(mx1.getFIToFICstmrCdtTrf().getGrpHdr().getCreDtTm().getMinute(), mx2.getFIToFICstmrCdtTrf().getGrpHdr().getCreDtTm().getMinute());
+        assertEquals(mx1.getFIToFICstmrCdtTrf().getGrpHdr().getCreDtTm().get(ChronoField.YEAR), mx2.getFIToFICstmrCdtTrf().getGrpHdr().getCreDtTm().get(ChronoField.YEAR));
+        assertEquals(mx1.getFIToFICstmrCdtTrf().getGrpHdr().getCreDtTm().get(ChronoField.MONTH_OF_YEAR), mx2.getFIToFICstmrCdtTrf().getGrpHdr().getCreDtTm().get(ChronoField.MONTH_OF_YEAR));
+        assertEquals(mx1.getFIToFICstmrCdtTrf().getGrpHdr().getCreDtTm().get(ChronoField.DAY_OF_WEEK), mx2.getFIToFICstmrCdtTrf().getGrpHdr().getCreDtTm().get(ChronoField.DAY_OF_WEEK));
+        assertEquals(mx1.getFIToFICstmrCdtTrf().getGrpHdr().getCreDtTm().get(ChronoField.HOUR_OF_DAY), mx2.getFIToFICstmrCdtTrf().getGrpHdr().getCreDtTm().get(ChronoField.HOUR_OF_DAY));
+        assertEquals(mx1.getFIToFICstmrCdtTrf().getGrpHdr().getCreDtTm().get(ChronoField.MINUTE_OF_HOUR), mx2.getFIToFICstmrCdtTrf().getGrpHdr().getCreDtTm().get(ChronoField.MINUTE_OF_HOUR));
 
         // assert date propagation
         assertNotNull(mx2.getFIToFICstmrCdtTrf().getGrpHdr().getIntrBkSttlmDt());
-        assertEquals(mx1.getFIToFICstmrCdtTrf().getGrpHdr().getIntrBkSttlmDt().getYear(), mx2.getFIToFICstmrCdtTrf().getGrpHdr().getIntrBkSttlmDt().getYear());
-        assertEquals(mx1.getFIToFICstmrCdtTrf().getGrpHdr().getIntrBkSttlmDt().getMonth(), mx2.getFIToFICstmrCdtTrf().getGrpHdr().getIntrBkSttlmDt().getMonth());
-        assertEquals(mx1.getFIToFICstmrCdtTrf().getGrpHdr().getIntrBkSttlmDt().getDay(), mx2.getFIToFICstmrCdtTrf().getGrpHdr().getIntrBkSttlmDt().getDay());
+        assertEquals(mx1.getFIToFICstmrCdtTrf().getGrpHdr().getIntrBkSttlmDt().get(ChronoField.YEAR), mx2.getFIToFICstmrCdtTrf().getGrpHdr().getIntrBkSttlmDt().get(ChronoField.YEAR));
+        assertEquals(mx1.getFIToFICstmrCdtTrf().getGrpHdr().getIntrBkSttlmDt().get(ChronoField.MONTH_OF_YEAR), mx2.getFIToFICstmrCdtTrf().getGrpHdr().getIntrBkSttlmDt().get(ChronoField.MONTH_OF_YEAR));
+        assertEquals(mx1.getFIToFICstmrCdtTrf().getGrpHdr().getIntrBkSttlmDt().get(ChronoField.DAY_OF_WEEK), mx2.getFIToFICstmrCdtTrf().getGrpHdr().getIntrBkSttlmDt().get(ChronoField.DAY_OF_WEEK));
     }
 
-    @Test
-    public void testDocumentDateTime_CustomAdapter() throws DatatypeConfigurationException {
-        XMLGregorianCalendar noFractionalSecond = DatatypeFactory.newInstance().newXMLGregorianCalendar(new GregorianCalendar(2021, Calendar.OCTOBER, 19, 12, 13, 14));
-        MxPacs00800102 mx1 = sample(noFractionalSecond);
 
+    @Test
+    public void testDocumentDateTime_CustomAdapter() {
+        MxPacs00800102 mx1 = getMxPacs00800102WithDateTimeValuesFilled();
         MxWriteConfiguration conf = new MxWriteConfiguration();
-        conf.adapters.dateTimeAdapter = new IsoDateTimeAdapter(new TestCustomAdapter());
-        conf.adapters.dateAdapter = new IsoDateAdapter(new TestCustomAdapter());
+        conf.adapters.dateTimeAdapter = new IsoDateTimeAdapter(new TestCustomDateTimeAdapter());
+        conf.adapters.dateAdapter = new IsoDateAdapter(new TestCustomDateAdapter());
 
         final String xml = mx1.message(conf);
         //System.out.println(xml);
@@ -202,12 +203,12 @@ public class MxWriteWithAdaptersTest {
     }
 
     @Test
-    public void testAppHdrDateTime_DefaultAdapters() throws DatatypeConfigurationException {
+    public void testAppHdrDateTime_DefaultAdapters() {
         AppHdr h1 = header();
 
         final String xml = h1.xml();
         //System.out.println(xml);
-        assertTrue(xml.contains("<CreDt>2021-10-19T12:13:14"+ OffsetDateTime.now().getOffset() + "</CreDt>"));
+        assertTrue(xml.contains("<CreDt>2021-10-19T12:13:14" + systemOffset + "</CreDt>"));
 
         final BusinessAppHdrV02 h2 = (BusinessAppHdrV02) AppHdrParser.parse(xml).get();
         //System.out.println(mx2.message());
@@ -215,23 +216,32 @@ public class MxWriteWithAdaptersTest {
         assertEquals(h1.creationDate(), h2.getCreDt());
     }
 
-    private MxPacs00800102 sample(final XMLGregorianCalendar cal) {
+    private AppHdr header() {
+        OffsetDateTime offsetDateTime = OffsetDateTime.parse("2021-10-19T12:13:14" + systemOffset);
+
+        BusinessAppHdrV02 bah = AppHdrFactory.createBusinessAppHdrV02("AAAAUSXXXXX", "BBBBUSXXXXX", "ref", new MxId("pacs.008.001.08"));
+        bah.setCreDt(offsetDateTime);
+        return bah;
+    }
+
+    private MxPacs00800102 getMxPacs00800102WithDateTimeValuesFilled() {
+        LocalDate localDate = LocalDate.parse("2021-10-19");
+        OffsetTime offsetTime = OffsetTime.parse("12:13:14" + systemOffset);
+        OffsetDateTime offsetDateTime = OffsetDateTime.parse("2021-10-19T12:13:14" + systemOffset);
+        MxPacs00800102 mx1 = setDatesIntoMessage(localDate, offsetTime, offsetDateTime);
+        return mx1;
+    }
+
+    private MxPacs00800102 setDatesIntoMessage(final LocalDate localDate, OffsetTime offsetTime, OffsetDateTime offsetDateTime) {
         final MxPacs00800102 mx = new MxPacs00800102();
         mx.setFIToFICstmrCdtTrf(new FIToFICustomerCreditTransferV02());
         mx.getFIToFICstmrCdtTrf().setGrpHdr(new GroupHeader33());
-        mx.getFIToFICstmrCdtTrf().getGrpHdr().setCreDtTm(cal);  // date time
-        mx.getFIToFICstmrCdtTrf().getGrpHdr().setIntrBkSttlmDt(cal);  //date
+        mx.getFIToFICstmrCdtTrf().getGrpHdr().setCreDtTm(offsetDateTime);  // date time
+        mx.getFIToFICstmrCdtTrf().getGrpHdr().setIntrBkSttlmDt(localDate);  //date
         mx.getFIToFICstmrCdtTrf().addCdtTrfTxInf(new CreditTransferTransactionInformation11());
         mx.getFIToFICstmrCdtTrf().getCdtTrfTxInf().get(0).setSttlmTmReq(new SettlementTimeRequest2());
-        mx.getFIToFICstmrCdtTrf().getCdtTrfTxInf().get(0).getSttlmTmReq().setCLSTm(cal); // time
+        mx.getFIToFICstmrCdtTrf().getCdtTrfTxInf().get(0).getSttlmTmReq().setCLSTm(offsetTime); // time
         return mx;
-    }
-
-    private AppHdr header() throws DatatypeConfigurationException {
-        final XMLGregorianCalendar cal = DatatypeFactory.newInstance().newXMLGregorianCalendar(new GregorianCalendar(2021, Calendar.OCTOBER, 19, 12, 13, 14));
-        BusinessAppHdrV02 bah = AppHdrFactory.createBusinessAppHdrV02("AAAAUSXXXXX", "BBBBUSXXXXX", "ref", new MxId("pacs.008.001.08"));
-        bah.setCreDt(cal);
-        return bah;
     }
 
 }

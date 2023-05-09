@@ -15,10 +15,10 @@
  */
 package com.prowidesoftware.swift.model.mx.adapters;
 
-import javax.xml.bind.annotation.adapters.XmlAdapter;
-import javax.xml.datatype.DatatypeConfigurationException;
-import javax.xml.datatype.XMLGregorianCalendar;
+import jakarta.xml.bind.annotation.adapters.XmlAdapter;
 
+import javax.xml.datatype.DatatypeConfigurationException;
+import java.time.LocalDate;
 /**
  * Configured adapter for date elements.
  * <p>
@@ -29,21 +29,21 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *
  * @since 9.2.6
  */
-public class IsoDateAdapter extends XmlAdapter<String, XMLGregorianCalendar> {
+public class IsoDateAdapter extends XmlAdapter<String, LocalDate> {
 
-    private final XmlAdapter<String, XMLGregorianCalendar> customAdapterImpl;
+    private final XmlAdapter<String, LocalDate> customAdapterImpl;
 
     /**
      * Default constructor for jaxb when non is set via API
      */
-    public IsoDateAdapter() throws DatatypeConfigurationException {
-        this.customAdapterImpl = new DefaultXMLGregorianCalendarAdapter();
+    public IsoDateAdapter() {
+        this.customAdapterImpl = new LocalDateAdapter();
     }
 
     /**
      * Creates a date adapter injecting a custom implementation
      */
-    public IsoDateAdapter(XmlAdapter<String, XMLGregorianCalendar> customAdapterImpl) {
+    public IsoDateAdapter(XmlAdapter<String, LocalDate> customAdapterImpl) {
         this.customAdapterImpl = customAdapterImpl;
     }
 
@@ -51,22 +51,22 @@ public class IsoDateAdapter extends XmlAdapter<String, XMLGregorianCalendar> {
      * Invokes the wrapped adapter implementation of the unmarshal method.
      *
      * @param value the XML date time value to convert
-     * @return created calendar object or null if cannot be parsed
+     * @return created LocalDate object or null if it cannot be parsed
      */
     @Override
-    public XMLGregorianCalendar unmarshal(String value) throws Exception {
+    public LocalDate unmarshal(String value) throws Exception {
         return this.customAdapterImpl.unmarshal(value);
     }
 
     /**
      * Invokes the wrapped adapter implementation of the marshal method.
      *
-     * @param cal the model calendar to marshal
+     * @param localDate the model LocalDate to marshal
      * @return formatted content for the XML
      */
     @Override
-    public String marshal(XMLGregorianCalendar cal) throws Exception {
-        return this.customAdapterImpl.marshal(cal);
+    public String marshal(LocalDate localDate) throws Exception {
+        return this.customAdapterImpl.marshal(localDate);
     }
 
     @Override

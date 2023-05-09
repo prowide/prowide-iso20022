@@ -97,7 +97,7 @@ public class TypeAdaptersConfiguration {
     }
 
     /**
-     * @return this configuration non null adapters into a list
+     * @return this configuration non-null adapters into a list
      */
     public List<XmlAdapter> asList() {
         List<XmlAdapter> all = new ArrayList<>();
