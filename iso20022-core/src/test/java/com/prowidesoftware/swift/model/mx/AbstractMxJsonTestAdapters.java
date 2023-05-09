@@ -956,7 +956,7 @@ public class AbstractMxJsonTestAdapters {
     }
 
     @Test
-    public void testJSONTimeWithNoOffset() {
+    public void testJSON_With_LocalDate_OffsetTimeWithNoOffset() {
         String jsonTimeAndDate = "{\n" +
                 "  \"cretStgOrdr\": {\n" +
                 "    \"msgHdr\": {\n" +
@@ -1056,7 +1056,7 @@ public class AbstractMxJsonTestAdapters {
 
 
     @Test
-    public void testJSONTimeWithNoOffsetNoNano() {
+    public void testJSONOffsetDateTimeWithNoNano_TimeWithNoNanoNoOffset() {
         String jsonTimeAndDate = "{\n" +
                 "  \"cretStgOrdr\": {\n" +
                 "    \"msgHdr\": {\n" +
@@ -1139,6 +1139,20 @@ public class AbstractMxJsonTestAdapters {
                 "  \"@xmlns\": \"urn:iso:std:iso:20022:tech:xsd:camt.102.001.02\",\n" +
                 "  \"identifier\": \"camt.102.001.02\"\n" +
                 "}";
+
+        AbstractMX source = AbstractMX.fromJson(jsonTimeAndDate);
+
+        AbstractMX mx = AbstractMX.fromJson(source.toJson());
+        AbstractMX mx2 = AbstractMX.fromJson(mx.toJson());
+        assertEquals(mx, mx2);
+
+        BusinessAppHdrV02 businessAppHdrV02 = (BusinessAppHdrV02) mx.getAppHdr();
+        assertNotNull(businessAppHdrV02);
+    }
+
+    @Test
+    public void testJSONYearMonth() {
+        String jsonTimeAndDate = "";
 
         AbstractMX source = AbstractMX.fromJson(jsonTimeAndDate);
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,33 +15,37 @@
  */
 package com.prowidesoftware.swift.model.mx.adapters;
 
-import javax.xml.bind.annotation.adapters.XmlAdapter;
-import javax.xml.datatype.DatatypeConfigurationException;
-import javax.xml.datatype.DatatypeFactory;
-import javax.xml.datatype.XMLGregorianCalendar;
+import jakarta.xml.bind.annotation.adapters.XmlAdapter;
+
+import java.time.Month;
+import java.time.YearMonth;
+import java.time.format.DateTimeFormatter;
 
 /**
  * Default generic adapter to use when non is provided via the configuration API
  *
  * @since 9.2.6
  */
-class DefaultXMLGregorianCalendarAdapter extends XmlAdapter<String, XMLGregorianCalendar> {
+public class YearMonthAdapter extends XmlAdapter<String, YearMonth> {
+    private static String YEAR_MONTH_FORMAT = "yyyy-MM";
+    private static DateTimeFormatter dtf = DateTimeFormatter.ofPattern(YEAR_MONTH_FORMAT);
 
-    private final DatatypeFactory factory;
+    public YearMonthAdapter(DateTimeFormatter ofPattern) {
+        this.dtf = ofPattern;
+    }
 
-    DefaultXMLGregorianCalendarAdapter() throws DatatypeConfigurationException {
-        this.factory = DatatypeFactory.newInstance();
+    public YearMonthAdapter() {
     }
 
     @Override
-    public XMLGregorianCalendar unmarshal(String value) throws Exception {
-        return factory.newXMLGregorianCalendar(value);
+    public YearMonth unmarshal(String value) throws Exception {
+        return YearMonth.parse(value, dtf);
     }
 
     @Override
-    public String marshal(XMLGregorianCalendar value) throws Exception {
+    public String marshal(YearMonth value) throws Exception {
         if (value != null) {
-            return value.toXMLFormat();
+            return dtf.format(value);
         }
         return null;
     }
