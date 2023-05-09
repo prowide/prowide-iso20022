@@ -67,7 +67,7 @@ public class OffsetDateTimeJSONAdapter implements JsonSerializer<OffsetDateTime>
                 offsetDateTime = OffsetDateTime.of(offsetDateTime.toLocalDateTime(), zoneoffset);
             } else {
                 //aca esperamos el json entonces como date objeto.Fixear los jsons?
-                LocalDateTime localDateTime = gson.fromJson(obj.get(DATETIME), LocalDateTime.class);
+                LocalDateTime localDateTime = gson.fromJson(obj, LocalDateTime.class);
                 ZoneId zoneId = ZoneOffset.systemDefault();
                 offsetDateTime = localDateTime.atZone(zoneId).toOffsetDateTime();
             }
