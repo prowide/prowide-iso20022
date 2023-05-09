@@ -27,7 +27,7 @@ import java.time.format.DateTimeFormatter;
  * @since 9.2.6
  */
 public class YearMonthAdapter extends XmlAdapter<String, YearMonth> {
-    private static String YEAR_MONTH_FORMAT = "YYYY-MM";
+    private static String YEAR_MONTH_FORMAT = "yyyy-MM";
     private static DateTimeFormatter dtf = DateTimeFormatter.ofPattern(YEAR_MONTH_FORMAT);
 
     public YearMonthAdapter(DateTimeFormatter ofPattern) {

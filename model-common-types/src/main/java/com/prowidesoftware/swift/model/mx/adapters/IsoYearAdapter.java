@@ -37,7 +37,7 @@ public class IsoYearAdapter extends XmlAdapter<String, Year> {
      * Default constructor for jaxb when non is set via API
      */
     public IsoYearAdapter() {
-        this.customAdapterImpl = new IsoYearAdapter();
+        this.customAdapterImpl = new YearAdapter();
     }
 
     /**

@@ -15,60 +15,139 @@
  */
 package com.prowidesoftware.swift.model.mx.adapters;
 
-import com.prowidesoftware.swift.model.mx.MxPacs00800102;
+import com.prowidesoftware.swift.model.mx.MxSese01900106;
+import com.prowidesoftware.swift.model.mx.MxWriteConfiguration;
 import org.junit.jupiter.api.Test;
 
-import java.time.*;
 import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoField;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class YearMonthAdapterTest {
 
-    private YearMonthAdapter adapter = new YearMonthAdapter();
-
     @Test
     public void testYearMonth() {
-        YearMonth yearMonth = YearMonth.parse("2021-10");
+        String xmlOrigin = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n" +
+                "<RequestPayload>\n" +
+                "<h:AppHdr xmlns:h=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\">\n" +
+                "    <h:Fr>\n" +
+                "        <h:FIId>\n" +
+                "            <h:FinInstnId>\n" +
+                "                <h:BICFI>AAAAUSXXXXX</h:BICFI>\n" +
+                "            </h:FinInstnId>\n" +
+                "        </h:FIId>\n" +
+                "    </h:Fr>\n" +
+                "    <h:To>\n" +
+                "        <h:FIId>\n" +
+                "            <h:FinInstnId>\n" +
+                "                <h:BICFI>TRGTXEPMCLM</h:BICFI>\n" +
+                "            </h:FinInstnId>\n" +
+                "        </h:FIId>\n" +
+                "    </h:To>\n" +
+                "    <h:BizMsgIdr>TRGTXEPMCLM</h:BizMsgIdr>\n" +
+                "    <h:MsgDefIdr>sese.019.001.06</h:MsgDefIdr>\n" +
+                "    <h:CreDt>2023-05-09T11:38:43.268-03:00</h:CreDt>\n" +
+                "    <h:BizPrcgDt>2023-05-09T16:35:57-03:00</h:BizPrcgDt>\n" +
+                "</h:AppHdr>\n" +
+                "<Doc:Document xmlns:Doc=\"urn:iso:std:iso:20022:tech:xsd:sese.019.001.06\">\n" +
+                "    <Doc:AcctHldgInfReq>\n" +
+                "        <Doc:MsgRef>\n" +
+                "            <Doc:Id>FFFFFFF</Doc:Id>\n" +
+                "            <Doc:CreDtTm>2023-05-09T16:35:48-03:00</Doc:CreDtTm>\n" +
+                "        </Doc:MsgRef>\n" +
+                "        <Doc:TrfrAcct>\n" +
+                "            <Doc:Id>FEEEEER</Doc:Id>\n" +
+                "            <Doc:Dsgnt>FEEEER</Doc:Dsgnt>\n" +
+                "            <Doc:AcctNm>FEEER</Doc:AcctNm>\n" +
+                "        </Doc:TrfrAcct>\n" +
+                "        <Doc:Trfee>\n" +
+                "            <Doc:AnyBIC>TRGTXEPMCLM</Doc:AnyBIC>\n" +
+                "        </Doc:Trfee>\n" +
+                "        <Doc:PdctTrf>\n" +
+                "            <Doc:MstrRef>FEEEEER</Doc:MstrRef>\n" +
+                "            <Doc:TrfId>FEEEEER</Doc:TrfId>\n" +
+                "        </Doc:PdctTrf>\n" +
+                "        <Doc:MktPrctcVrsn>\n" +
+                "            <Doc:Nm>FERNANDOFERNANDO</Doc:Nm>\n" +
+                "            <Doc:Dt>2013-10</Doc:Dt>\n" +
+                "        </Doc:MktPrctcVrsn>\n" +
+                "    </Doc:AcctHldgInfReq>\n" +
+                "</Doc:Document>\n" +
+                "</RequestPayload>";
 
-        /*
-        //TODO
-        MxPacs00800102 mx1 = new MxPacs00800102();
+        final MxSese01900106 mxSese01900106_1 = MxSese01900106.parse(xmlOrigin);
+        final String xml1 = mxSese01900106_1.message();
+        assertTrue(xml1.contains("<Doc:CreDtTm>2023-05-09T16:35:48-03:00</Doc:CreDtTm>"));
+        assertTrue(xml1.contains("<Doc:Dt>2013-10</Doc:Dt>"));
 
-        final String xml = mx1.message();
+        final MxSese01900106 mxSese01900106_2 = MxSese01900106.parse(xml1);
+        final String xml2 = mxSese01900106_1.message();
+
+        assertEquals(xml1, xml2);
+        assertEquals(mxSese01900106_1, mxSese01900106_2);
+    }
+
+
+    @Test
+    public void testYearMonth_CustomPattern() {
+        String xmlOrigin = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n" +
+                "<RequestPayload>\n" +
+                "<h:AppHdr xmlns:h=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\">\n" +
+                "    <h:Fr>\n" +
+                "        <h:FIId>\n" +
+                "            <h:FinInstnId>\n" +
+                "                <h:BICFI>AAAAUSXXXXX</h:BICFI>\n" +
+                "            </h:FinInstnId>\n" +
+                "        </h:FIId>\n" +
+                "    </h:Fr>\n" +
+                "    <h:To>\n" +
+                "        <h:FIId>\n" +
+                "            <h:FinInstnId>\n" +
+                "                <h:BICFI>TRGTXEPMCLM</h:BICFI>\n" +
+                "            </h:FinInstnId>\n" +
+                "        </h:FIId>\n" +
+                "    </h:To>\n" +
+                "    <h:BizMsgIdr>TRGTXEPMCLM</h:BizMsgIdr>\n" +
+                "    <h:MsgDefIdr>sese.019.001.06</h:MsgDefIdr>\n" +
+                "    <h:CreDt>2023-05-09T11:38:43.268-03:00</h:CreDt>\n" +
+                "    <h:BizPrcgDt>2023-05-09T16:35:57-03:00</h:BizPrcgDt>\n" +
+                "</h:AppHdr>\n" +
+                "<Doc:Document xmlns:Doc=\"urn:iso:std:iso:20022:tech:xsd:sese.019.001.06\">\n" +
+                "    <Doc:AcctHldgInfReq>\n" +
+                "        <Doc:MsgRef>\n" +
+                "            <Doc:Id>FFFFFFF</Doc:Id>\n" +
+                "            <Doc:CreDtTm>2023-05-09T16:35:48-03:00</Doc:CreDtTm>\n" +
+                "        </Doc:MsgRef>\n" +
+                "        <Doc:TrfrAcct>\n" +
+                "            <Doc:Id>FEEEEER</Doc:Id>\n" +
+                "            <Doc:Dsgnt>FEEEER</Doc:Dsgnt>\n" +
+                "            <Doc:AcctNm>FEEER</Doc:AcctNm>\n" +
+                "        </Doc:TrfrAcct>\n" +
+                "        <Doc:Trfee>\n" +
+                "            <Doc:AnyBIC>TRGTXEPMCLM</Doc:AnyBIC>\n" +
+                "        </Doc:Trfee>\n" +
+                "        <Doc:PdctTrf>\n" +
+                "            <Doc:MstrRef>FEEEEER</Doc:MstrRef>\n" +
+                "            <Doc:TrfId>FEEEEER</Doc:TrfId>\n" +
+                "        </Doc:PdctTrf>\n" +
+                "        <Doc:MktPrctcVrsn>\n" +
+                "            <Doc:Nm>FERNANDOFERNANDO</Doc:Nm>\n" +
+                "            <Doc:Dt>2013-10</Doc:Dt>\n" +
+                "        </Doc:MktPrctcVrsn>\n" +
+                "    </Doc:AcctHldgInfReq>\n" +
+                "</Doc:Document>\n" +
+                "</RequestPayload>";
+
+        final MxSese01900106 mxSese01900106_1 = MxSese01900106.parse(xmlOrigin);
+
+        MxWriteConfiguration conf = new MxWriteConfiguration();
+        conf.adapters.yearMonthAdapter = new IsoYearMonthAdapter(new YearMonthAdapter(DateTimeFormatter.ofPattern("yy-MM")));
+
+        final String xml = mxSese01900106_1.message(conf);
         //System.out.println(xml);
-        assertTrue(xml.contains("<Doc:CreDtTm>2021-10-19T12:13:14+00:00</Doc:CreDtTm>"));
-        assertTrue(xml.contains("<Doc:IntrBkSttlmDt>2021-10-19</Doc:IntrBkSttlmDt>"));
-        assertTrue(xml.contains("<Doc:CLSTm>12:13:14+00:00</Doc:CLSTm>"));
-
-        final MxPacs00800102 mx2 = MxPacs00800102.parse(xml);
-        //System.out.println(mx2.message());
-
-        // assert date time propagation
-        assertNotNull(mx2.getFIToFICstmrCdtTrf().getGrpHdr().getCreDtTm());
-        assertEquals(mx1.getFIToFICstmrCdtTrf().getGrpHdr().getCreDtTm(), mx2.getFIToFICstmrCdtTrf().getGrpHdr().getCreDtTm());
-
-        // assert date propagation
-        LocalDate intrBkSttlmDt1 = mx1.getFIToFICstmrCdtTrf().getGrpHdr().getIntrBkSttlmDt();
-        LocalDate intrBkSttlmDt2 = mx2.getFIToFICstmrCdtTrf().getGrpHdr().getIntrBkSttlmDt();
-        assertNotNull(intrBkSttlmDt2);
-        assertEquals(intrBkSttlmDt1.get(ChronoField.YEAR), intrBkSttlmDt2.get(ChronoField.YEAR));
-        assertEquals(intrBkSttlmDt1.get(ChronoField.MONTH_OF_YEAR), intrBkSttlmDt2.get(ChronoField.MONTH_OF_YEAR));
-        assertEquals(intrBkSttlmDt1.get(ChronoField.DAY_OF_YEAR), intrBkSttlmDt2.get(ChronoField.DAY_OF_YEAR));
-
-        // assert time propagation
-        OffsetTime clsTm1 = mx2.getFIToFICstmrCdtTrf().getCdtTrfTxInf().get(0).getSttlmTmReq().getCLSTm();
-        OffsetTime clsTm2 = mx2.getFIToFICstmrCdtTrf().getCdtTrfTxInf().get(0).getSttlmTmReq().getCLSTm();
-        assertNotNull(clsTm2);
-        assertEquals(clsTm1.get(ChronoField.HOUR_OF_DAY), clsTm2.get(ChronoField.HOUR_OF_DAY));
-        assertEquals(clsTm1.get(ChronoField.MINUTE_OF_HOUR), clsTm2.get(ChronoField.MINUTE_OF_HOUR));
-        assertEquals(clsTm1.get(ChronoField.SECOND_OF_MINUTE), clsTm2.get(ChronoField.SECOND_OF_MINUTE));
-        assertEquals(clsTm1.get(ChronoField.NANO_OF_SECOND), clsTm2.get(ChronoField.NANO_OF_SECOND));
-        assertEquals(clsTm1.getOffset(), clsTm2.getOffset());
-        */
-
+        assertTrue(xml.contains("<Doc:CreDtTm>2023-05-09T16:35:48-03:00</Doc:CreDtTm>"));
+        assertTrue(xml.contains("<Doc:Dt>13-10</Doc:Dt>"));
     }
 
 }
