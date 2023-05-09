@@ -20,14 +20,14 @@ import jakarta.xml.bind.annotation.adapters.XmlAdapter;
 import java.time.YearMonth;
 
 /**
- * Configured adapter for date elements.
+ * Configured adapter for year and month elements.
  * <p>
  * This implementation is applied in the model with the @XmlJavaTypeAdapter(IsoYearMonthAdapter.class) annotation to
  * all schema elements with type "IsoYearMonth".
  * <p>
  * It is implemented as wrapper to inject your own instances when calling the different write/read methods in the model.
  *
- * @since 9.2.6
+ * @since 10.0.0
  */
 public class IsoYearMonthAdapter extends XmlAdapter<String, YearMonth> {
 
@@ -69,4 +69,10 @@ public class IsoYearMonthAdapter extends XmlAdapter<String, YearMonth> {
         return this.customAdapterImpl.marshal(yearMonth);
     }
 
+    @Override
+    public String toString() {
+        return "IsoYearMonthAdapter{" +
+                "customAdapterImpl=" + customAdapterImpl +
+                '}';
+    }
 }

@@ -31,7 +31,7 @@ public class MxWriteConfiguration {
      * The name of the envelope element that binds a Header to the message to which it applies is
      * implementation/network specific. The header root element ‘AppHdr’ and the ISO 20022 MessageDefinition
      * root element ‘Document’ must always be sibling elements in any XML document, with the AppHdr element preceding
-     * the Document element. If no root elemewnt name is provided the value in {@link AbstractMX#DEFAULT_ROOT_ELEMENT}
+     * the Document element. If no root element name is provided the value in {@link AbstractMX#DEFAULT_ROOT_ELEMENT}
      * is used as default
      */
     public String rootElement;
@@ -72,7 +72,6 @@ public class MxWriteConfiguration {
      * @since 9.3.5
      */
     public JAXBContext context;
-
 
     /**
      * Optional indent string to use when marshalling into XML, if null, a four spaces string will be used as default

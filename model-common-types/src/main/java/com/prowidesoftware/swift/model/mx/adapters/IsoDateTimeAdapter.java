@@ -71,4 +71,10 @@ public class IsoDateTimeAdapter extends XmlAdapter<String, OffsetDateTime> {
         return this.customAdapterImpl.marshal(offsetDateTime);
     }
 
+    @Override
+    public String toString() {
+        return "IsoDateTimeAdapter{" +
+                "customAdapterImpl=" + customAdapterImpl +
+                '}';
+    }
 }

@@ -21,9 +21,10 @@ import java.time.Month;
 import java.time.format.DateTimeFormatter;
 
 /**
- * Default generic adapter to use when non is provided via the configuration API
+ * Default generic adapter to use when non is provided via the configuration API.
+ * Used as default implementation for the {@link IsoMonthAdapter}.
  *
- * @since 9.2.6
+ * @since 10.0.0
  */
 public class MonthAdapter extends XmlAdapter<String, Month> {
     private static String MONT_FORMAT = "MM";
@@ -49,4 +50,8 @@ public class MonthAdapter extends XmlAdapter<String, Month> {
         return null;
     }
 
+    @Override
+    public String toString() {
+        return "MonthAdapter{ " + MONT_FORMAT + " }";
+    }
 }

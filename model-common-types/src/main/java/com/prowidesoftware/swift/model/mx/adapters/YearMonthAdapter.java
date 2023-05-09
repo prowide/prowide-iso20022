@@ -22,9 +22,10 @@ import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
 
 /**
- * Default generic adapter to use when non is provided via the configuration API
+ * Default generic adapter to use when non is provided via the configuration API.
+ * Used as default implementation for the {@link IsoYearMonthAdapter}.
  *
- * @since 9.2.6
+ * @since 10.0.0
  */
 public class YearMonthAdapter extends XmlAdapter<String, YearMonth> {
     private static String YEAR_MONTH_FORMAT = "yyyy-MM";
@@ -50,4 +51,8 @@ public class YearMonthAdapter extends XmlAdapter<String, YearMonth> {
         return null;
     }
 
+    @Override
+    public String toString() {
+        return "YearMonthAdapter{ " + YEAR_MONTH_FORMAT + " }";
+    }
 }

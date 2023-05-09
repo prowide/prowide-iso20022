@@ -38,7 +38,6 @@ class AbstractMXAdapter implements JsonSerializer<AbstractMX>, JsonDeserializer<
     @Override
     public JsonElement serialize(final AbstractMX mx, Type type, final JsonSerializationContext context) {
         // default serialization
-        // in Integrator this will fill the JSON structure with the complete MX message model
         JsonObject object = context.serialize(mx).getAsJsonObject();
         object.addProperty("@xmlns", mx.getNamespace());
         object.addProperty(IDENTIFIER, mx.getMxId().id());
@@ -54,7 +53,7 @@ class AbstractMXAdapter implements JsonSerializer<AbstractMX>, JsonDeserializer<
         }
         MxId id = new MxId(prim.getAsString());
 
-        Class<?> klass = null;
+        Class<?> klass;
         try {
             String className = "com.prowidesoftware.swift.model.mx.Mx" + id.camelized();
             klass = Class.forName(className);

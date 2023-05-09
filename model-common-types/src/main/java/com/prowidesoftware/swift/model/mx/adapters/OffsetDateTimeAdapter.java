@@ -27,18 +27,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * OffsetDateTime adapter for date time elements.
- * <p>
- * Marshals the date time as a local time with UTC offset format YYYY-MM-DDThh:mm:ss[.sss]+/-hh:mm which is aligned
- * with ISO 8601. Dislike the default jaxb implementation, this adapter will always print the offset, and for UTC times
- * in particular an explicit '+00:00' offset is used instead of the 'Z'. The fractional seconds is printed only when it
- * is different than zero.
- * <p>
- * Notice the configured adapter in the model is the {@link IsoDateTimeAdapter} wrapper class, but you can pass this
- * default implementation or your own in the constructor.
+ * Default generic adapter to use when non is provided via the configuration API.
+ * Used as default implementation for the {@link IsoDateTimeAdapter}.
  *
- * @see TypeAdaptersConfiguration
- * @since 9.2.6
+ * @since 10.0.0
  */
 public class OffsetDateTimeAdapter extends XmlAdapter<String, OffsetDateTime> {
     private static final Logger log = Logger.getLogger(OffsetDateTimeAdapter.class.getName());
@@ -130,5 +122,10 @@ public class OffsetDateTimeAdapter extends XmlAdapter<String, OffsetDateTime> {
 
     static String formatZonedDateTime(DateTimeFormatter dateTimeFormatter, OffsetDateTime offsetDateTime) {
         return dateTimeFormatter.format(offsetDateTime);
+    }
+
+    @Override
+    public String toString() {
+        return "OffsetDateTimeAdapter{ yyyy-MM-dd'T'HH:mm:ss[.[SSS][SS][S]][XXX] }";
     }
 }

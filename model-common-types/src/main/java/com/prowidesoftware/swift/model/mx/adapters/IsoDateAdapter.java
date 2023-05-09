@@ -69,4 +69,10 @@ public class IsoDateAdapter extends XmlAdapter<String, LocalDate> {
         return this.customAdapterImpl.marshal(localDate);
     }
 
+    @Override
+    public String toString() {
+        return "IsoDateAdapter{" +
+                "customAdapterImpl=" + customAdapterImpl +
+                '}';
+    }
 }

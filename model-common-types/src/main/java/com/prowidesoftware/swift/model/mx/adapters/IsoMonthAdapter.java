@@ -21,14 +21,14 @@ import java.time.Month;
 import java.time.YearMonth;
 
 /**
- * Configured adapter for date elements.
+ * Configured adapter for elements containing just a month.
  * <p>
  * This implementation is applied in the model with the @XmlJavaTypeAdapter(IsoMonthAdapter.class) annotation to
  * all schema elements with type "IsoMonth".
  * <p>
  * It is implemented as wrapper to inject your own instances when calling the different write/read methods in the model.
  *
- * @since 9.2.6
+ * @since 10.0.0
  */
 public class IsoMonthAdapter extends XmlAdapter<String, Month> {
 
@@ -70,4 +70,10 @@ public class IsoMonthAdapter extends XmlAdapter<String, Month> {
         return this.customAdapterImpl.marshal(month);
     }
 
+    @Override
+    public String toString() {
+        return "IsoMonthAdapter{" +
+                "customAdapterImpl=" + customAdapterImpl +
+                '}';
+    }
 }

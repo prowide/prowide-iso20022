@@ -5,11 +5,11 @@ buildscript {
 	}
 	dependencies {
 		classpath 'ru.vyarus:gradle-quality-plugin:4.7.0'
-		//classpath 'pl.allegro.tech.build:axion-release-plugin:1.13.6'
+		classpath 'pl.allegro.tech.build:axion-release-plugin:1.13.6'
 		classpath 'io.github.gradle-nexus:publish-plugin:1.1.0'
 	}
 }
-//apply plugin: 'pl.allegro.tech.build.axion-release'
+apply plugin: 'pl.allegro.tech.build.axion-release'
 apply plugin: 'java-library-distribution'
 apply plugin: 'maven-publish'
 apply plugin: 'signing'
@@ -34,7 +34,7 @@ project.ext {
 //		versionSeparator = '-'
 //	}
 //}
-version = 'SRU2022-10.0.0-alpha1-SNAPSHOT'
+version = 'SRU2022-10.0.0-RC1-SNAPSHOT'
 
 allprojects {
 
@@ -49,13 +49,10 @@ allprojects {
 			if (getJavaCompiler().isPresent()) {
 				println 'Compiling with ' + getJavaCompiler().get().getMetadata().getInstallationPath()
 			}
-
 		}
 	}
 
 	repositories {
-		//TODO: Remove me
-		mavenLocal()
 		mavenCentral()
 		// Prowide repo releases
 		if (project.hasProperty('prowideRepo')) {
@@ -136,7 +133,7 @@ configure(subprojects.findAll {it.name.endsWith('-mx')}) {
 project(':iso20022-core') {
 	dependencies {
 		// included build
-		api 'com.prowidesoftware:pw-swift-core:SRU2022-10.0.0-alpha1-SNAPSHOT'
+		api 'com.prowidesoftware:pw-swift-core:SRU2022-10.0.0-RC1-SNAPSHOT'
 
 		implementation 'org.apache.commons:commons-lang3:3.12.0'
 		implementation 'com.google.code.gson:gson:2.9.0'
@@ -294,7 +291,7 @@ artifacts {
 // declared dependencies for pom generation
 dependencies {
 	// included build (keep in sync with the latest Prowide Core version)
-	api 'com.prowidesoftware:pw-swift-core:SRU2022-10.0.0-alpha1-SNAPSHOT'
+	api 'com.prowidesoftware:pw-swift-core:SRU2022-10.0.0-RC1-SNAPSHOT'
 	implementation 'org.apache.commons:commons-lang3:3.12.0'
 	implementation 'com.google.code.gson:gson:2.9.0'
 }
@@ -440,6 +437,12 @@ tasks.withType(Test) {
 task('testOn17', type: Test) {
 	javaLauncher = javaToolchains.launcherFor {
 		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
+task('testOn19', type: Test) {
+	javaLauncher = javaToolchains.launcherFor {
+		languageVersion = JavaLanguageVersion.of(19)
 	}
 }
 

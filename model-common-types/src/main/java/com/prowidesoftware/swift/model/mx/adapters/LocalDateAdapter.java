@@ -21,9 +21,10 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 /**
- * Default generic adapter to use when non is provided via the configuration API
+ * Default generic adapter to use when non is provided via the configuration API.
+ * Used as default implementation for the {@link IsoDateAdapter}.
  *
- * @since 9.2.6
+ * @since 10.0.0
  */
 public class LocalDateAdapter extends XmlAdapter<String, LocalDate> {
     private static String DATE_FORMAT = "yyyy-MM-dd";
@@ -49,4 +50,8 @@ public class LocalDateAdapter extends XmlAdapter<String, LocalDate> {
         return null;
     }
 
+    @Override
+    public String toString() {
+        return "LocalDateAdapter{ " + DATE_FORMAT + " }";
+    }
 }

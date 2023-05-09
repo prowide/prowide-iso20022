@@ -16,6 +16,7 @@
 package com.prowidesoftware.swift.model.mx.adapters;
 
 import jakarta.xml.bind.annotation.adapters.XmlAdapter;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,32 +53,39 @@ public class TypeAdaptersConfiguration {
      */
     public IsoTimeAdapter timeAdapter;
 
-
     /**
      * Customized instances or subclasses of this adapter can be injected to change the default serialization of
      * date time elements.
+     *
+     * @since 10.0.0
      */
     public IsoYearMonthAdapter yearMonthAdapter;
 
-
     /**
      * Customized instances or subclasses of this adapter can be injected to change the default serialization of
      * date time elements.
+     *
+     * @since 10.0.0
      */
     public IsoYearAdapter yearAdapter;
 
-
     /**
      * Customized instances or subclasses of this adapter can be injected to change the default serialization of
      * date time elements.
+     *
+     * @since 10.0.0
      */
     public IsoMonthAdapter monthAdapter;
 
     /**
      * Initializes the adapters with the default implementations
+     *
      * @see LocalDateAdapter
      * @see OffsetDateTimeAdapter
      * @see OffsetTimeAdapter
+     * @see YearMonthAdapter
+     * @see YearAdapter
+     * @see MonthAdapter
      */
     public TypeAdaptersConfiguration() {
         this.dateTimeAdapter = new IsoDateTimeAdapter(new OffsetDateTimeAdapter());
@@ -101,6 +109,15 @@ public class TypeAdaptersConfiguration {
         }
         if (this.timeAdapter != null) {
             all.add(this.timeAdapter);
+        }
+        if (this.yearMonthAdapter != null) {
+            all.add(this.yearMonthAdapter);
+        }
+        if (this.yearAdapter != null) {
+            all.add(this.yearAdapter);
+        }
+        if (this.monthAdapter != null) {
+            all.add(this.monthAdapter);
         }
         return all;
     }

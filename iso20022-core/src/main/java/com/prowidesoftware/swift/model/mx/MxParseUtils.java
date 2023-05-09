@@ -19,6 +19,7 @@ import com.prowidesoftware.ProwideException;
 import com.prowidesoftware.deprecation.ProwideDeprecated;
 import com.prowidesoftware.deprecation.TargetYear;
 import com.prowidesoftware.swift.model.MxId;
+import com.prowidesoftware.swift.model.mx.adapters.YearMonthAdapter;
 import com.prowidesoftware.swift.utils.SafeXmlUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.Validate;

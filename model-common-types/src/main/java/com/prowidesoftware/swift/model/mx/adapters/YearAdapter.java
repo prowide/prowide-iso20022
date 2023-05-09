@@ -22,9 +22,10 @@ import java.time.Year;
 import java.time.format.DateTimeFormatter;
 
 /**
- * Default generic adapter to use when non is provided via the configuration API
+ * Default generic adapter to use when non is provided via the configuration API.
+ * Used as default implementation for the {@link IsoYearAdapter}.
  *
- * @since 9.2.6
+ * @since 10.0.0
  */
 public class YearAdapter extends XmlAdapter<String, Year> {
     private static String YEAR_FORMAT = "YYYY";
@@ -50,4 +51,8 @@ public class YearAdapter extends XmlAdapter<String, Year> {
         return null;
     }
 
+    @Override
+    public String toString() {
+        return "YearAdapter{ " + YEAR_FORMAT + " }";
+    }
 }
