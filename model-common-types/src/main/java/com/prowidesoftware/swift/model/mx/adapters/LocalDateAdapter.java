@@ -17,34 +17,33 @@ package com.prowidesoftware.swift.model.mx.adapters;
 
 import jakarta.xml.bind.annotation.adapters.XmlAdapter;
 
-import java.time.Month;
-import java.time.YearMonth;
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 /**
  * Default generic adapter to use when non is provided via the configuration API.
- * Used as default implementation for the {@link IsoYearMonthAdapter}.
+ * Used as default implementation for the {@link IsoDateAdapter}.
  *
  * @since 10.0.0
  */
-public class YearMonthAdapter extends XmlAdapter<String, YearMonth> {
-    private static String YEAR_MONTH_FORMAT = "yyyy-MM";
-    private static DateTimeFormatter dtf = DateTimeFormatter.ofPattern(YEAR_MONTH_FORMAT);
+public class LocalDateAdapter extends XmlAdapter<String, LocalDate> {
+    private static String DATE_FORMAT = "yyyy-MM-dd";
+    private static DateTimeFormatter dtf = DateTimeFormatter.ofPattern(DATE_FORMAT);
 
-    public YearMonthAdapter(DateTimeFormatter ofPattern) {
+    public LocalDateAdapter(DateTimeFormatter ofPattern) {
         this.dtf = ofPattern;
     }
 
-    public YearMonthAdapter() {
+    public LocalDateAdapter() {
     }
 
     @Override
-    public YearMonth unmarshal(String value) throws Exception {
-        return YearMonth.parse(value, dtf);
+    public LocalDate unmarshal(String value) throws Exception {
+        return LocalDate.parse(value, dtf);
     }
 
     @Override
-    public String marshal(YearMonth value) throws Exception {
+    public String marshal(LocalDate value) throws Exception {
         if (value != null) {
             return dtf.format(value);
         }
@@ -53,6 +52,6 @@ public class YearMonthAdapter extends XmlAdapter<String, YearMonth> {
 
     @Override
     public String toString() {
-        return "YearMonthAdapter{ " + YEAR_MONTH_FORMAT + " }";
+        return "LocalDateAdapter{ " + DATE_FORMAT + " }";
     }
 }

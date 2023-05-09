@@ -70,24 +70,24 @@ public class YearMonthAdapterTest {
                 "        </Doc:PdctTrf>\n" +
                 "        <Doc:MktPrctcVrsn>\n" +
                 "            <Doc:Nm>FERNANDOFERNANDO</Doc:Nm>\n" +
-                "            <Doc:Dt>2013-10</Doc:Dt>\n" +
+                "            <Doc:Dt>2022-10</Doc:Dt>\n" +
                 "        </Doc:MktPrctcVrsn>\n" +
                 "    </Doc:AcctHldgInfReq>\n" +
                 "</Doc:Document>\n" +
                 "</RequestPayload>";
 
-        final MxSese01900106 mxSese01900106_1 = MxSese01900106.parse(xmlOrigin);
-        final String xml1 = mxSese01900106_1.message();
+        final MxSese01900106 mx1 = MxSese01900106.parse(xmlOrigin);
+        final String xml1 = mx1.message();
+        //System.out.println(xml1);
         assertTrue(xml1.contains("<Doc:CreDtTm>2023-05-09T16:35:48-03:00</Doc:CreDtTm>"));
-        assertTrue(xml1.contains("<Doc:Dt>2013-10</Doc:Dt>"));
+        assertTrue(xml1.contains("<Doc:Dt>2022-10</Doc:Dt>"));
 
-        final MxSese01900106 mxSese01900106_2 = MxSese01900106.parse(xml1);
-        final String xml2 = mxSese01900106_1.message();
+        final MxSese01900106 mx2 = MxSese01900106.parse(xml1);
+        final String xml2 = mx2.message();
 
         assertEquals(xml1, xml2);
-        assertEquals(mxSese01900106_1, mxSese01900106_2);
+        assertEquals(mx1, mx2);
     }
-
 
     @Test
     public void testYearMonth_CustomPattern() {
@@ -133,21 +133,24 @@ public class YearMonthAdapterTest {
                 "        </Doc:PdctTrf>\n" +
                 "        <Doc:MktPrctcVrsn>\n" +
                 "            <Doc:Nm>FERNANDOFERNANDO</Doc:Nm>\n" +
-                "            <Doc:Dt>2013-10</Doc:Dt>\n" +
+                "            <Doc:Dt>2021-10</Doc:Dt>\n" +
                 "        </Doc:MktPrctcVrsn>\n" +
                 "    </Doc:AcctHldgInfReq>\n" +
                 "</Doc:Document>\n" +
                 "</RequestPayload>";
 
-        final MxSese01900106 mxSese01900106_1 = MxSese01900106.parse(xmlOrigin);
+        final MxSese01900106 mx = MxSese01900106.parse(xmlOrigin);
+        final String xml = mx.message();
+        assertTrue(xml.contains("<Doc:CreDtTm>2023-05-09T16:35:48-03:00</Doc:CreDtTm>"));
+        assertTrue(xml.contains("<Doc:Dt>2021-10</Doc:Dt>"));
 
         MxWriteConfiguration conf = new MxWriteConfiguration();
         conf.adapters.yearMonthAdapter = new IsoYearMonthAdapter(new YearMonthAdapter(DateTimeFormatter.ofPattern("yy-MM")));
 
-        final String xml = mxSese01900106_1.message(conf);
+        final String xmlCustomFormat = mx.message(conf);
         //System.out.println(xml);
-        assertTrue(xml.contains("<Doc:CreDtTm>2023-05-09T16:35:48-03:00</Doc:CreDtTm>"));
-        assertTrue(xml.contains("<Doc:Dt>13-10</Doc:Dt>"));
+        assertTrue(xmlCustomFormat.contains("<Doc:CreDtTm>2023-05-09T16:35:48-03:00</Doc:CreDtTm>"));
+        assertTrue(xmlCustomFormat.contains("<Doc:Dt>21-10</Doc:Dt>"));
     }
 
 }

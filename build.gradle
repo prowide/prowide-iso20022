@@ -37,6 +37,14 @@ project.ext {
 	nexusRepo = project.version.endsWith('-SNAPSHOT') ? 'maven-snapshots' : 'maven-releases'
 }
 
+scmVersion {
+	tag {
+		prefix = "${SRU}"
+		versionSeparator = '-'
+	}
+}
+version = 'SRU2023-10.1.0-SNAPSHOT'
+
 allprojects {
 
 	tasks.withType(JavaCompile) {

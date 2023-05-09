@@ -17,33 +17,34 @@ package com.prowidesoftware.swift.model.mx.adapters;
 
 import jakarta.xml.bind.annotation.adapters.XmlAdapter;
 
+import java.time.Month;
 import java.time.YearMonth;
 
 /**
- * Configured adapter for year and month elements.
+ * Configured adapter for elements containing just a month.
  * <p>
- * This implementation is applied in the model with the @XmlJavaTypeAdapter(IsoYearMonthAdapter.class) annotation to
- * all schema elements with type "IsoYearMonth".
+ * This implementation is applied in the model with the @XmlJavaTypeAdapter(IsoMonthAdapter.class) annotation to
+ * all schema elements with type "IsoMonth".
  * <p>
  * It is implemented as wrapper to inject your own instances when calling the different write/read methods in the model.
  *
  * @since 10.0.0
  */
-public class IsoYearMonthAdapter extends XmlAdapter<String, YearMonth> {
+public class IsoMonthAdapter extends XmlAdapter<String, Month> {
 
-    private final XmlAdapter<String, YearMonth> customAdapterImpl;
+    private final XmlAdapter<String, Month> customAdapterImpl;
 
     /**
      * Default constructor for jaxb when non is set via API
      */
-    public IsoYearMonthAdapter() {
-        this.customAdapterImpl = new YearMonthAdapter();
+    public IsoMonthAdapter() {
+        this.customAdapterImpl = new MonthAdapter();
     }
 
     /**
      * Creates a date adapter injecting a custom implementation
      */
-    public IsoYearMonthAdapter(XmlAdapter<String, YearMonth> customAdapterImpl) {
+    public IsoMonthAdapter(XmlAdapter<String, Month> customAdapterImpl) {
         this.customAdapterImpl = customAdapterImpl;
     }
 
@@ -51,27 +52,27 @@ public class IsoYearMonthAdapter extends XmlAdapter<String, YearMonth> {
      * Invokes the wrapped adapter implementation of the unmarshal method.
      *
      * @param value the XML date time value to convert
-     * @return created YearMonth object or null if it cannot be parsed
+     * @return created Month object or null if it cannot be parsed
      */
     @Override
-    public YearMonth unmarshal(String value) throws Exception {
+    public Month unmarshal(String value) throws Exception {
         return this.customAdapterImpl.unmarshal(value);
     }
 
     /**
      * Invokes the wrapped adapter implementation of the marshal method.
      *
-     * @param yearMonth the model YearMonth to marshal
+     * @param month the model Month to marshal
      * @return formatted content for the XML
      */
     @Override
-    public String marshal(YearMonth yearMonth) throws Exception {
-        return this.customAdapterImpl.marshal(yearMonth);
+    public String marshal(Month month) throws Exception {
+        return this.customAdapterImpl.marshal(month);
     }
 
     @Override
     public String toString() {
-        return "IsoYearMonthAdapter{" +
+        return "IsoMonthAdapter{" +
                 "customAdapterImpl=" + customAdapterImpl +
                 '}';
     }

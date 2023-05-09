@@ -20,14 +20,14 @@ import jakarta.xml.bind.annotation.adapters.XmlAdapter;
 import java.time.Year;
 
 /**
- * Configured adapter for date elements.
+ * Configured adapter for elements containing just an year.
  * <p>
  * This implementation is applied in the model with the @XmlJavaTypeAdapter(IsoYearAdapter.class) annotation to
  * all schema elements with type "IsoYear".
  * <p>
  * It is implemented as wrapper to inject your own instances when calling the different write/read methods in the model.
  *
- * @since 9.2.6
+ * @since 10.0.0
  */
 public class IsoYearAdapter extends XmlAdapter<String, Year> {
 
@@ -69,4 +69,10 @@ public class IsoYearAdapter extends XmlAdapter<String, Year> {
         return this.customAdapterImpl.marshal(year);
     }
 
+    @Override
+    public String toString() {
+        return "IsoYearAdapter{" +
+                "customAdapterImpl=" + customAdapterImpl +
+                '}';
+    }
 }

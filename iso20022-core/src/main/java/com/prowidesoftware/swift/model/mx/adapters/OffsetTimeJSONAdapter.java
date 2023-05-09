@@ -18,54 +18,51 @@ package com.prowidesoftware.swift.model.mx.adapters;
 import com.google.gson.*;
 
 import java.lang.reflect.Type;
-import java.time.LocalDateTime;
-import java.time.OffsetDateTime;
-import java.time.ZoneId;
+import java.time.Instant;
+import java.time.LocalTime;
+import java.time.OffsetTime;
 import java.time.ZoneOffset;
 import java.util.logging.Logger;
 
 /**
- * This adapter enables accepting date time JSON formats with or without the offset and nanoseconds.
+ * This adapter enables accepting time JSON formats with or without the offset and nanoseconds.
  *
  * @since 10.0.0
  */
-public class OffsetDateTimeJSONAdapter implements JsonSerializer<OffsetDateTime>, JsonDeserializer<OffsetDateTime> {
+public class OffsetTimeJSONAdapter implements JsonSerializer<OffsetTime>, JsonDeserializer<OffsetTime> {
     private static final String OFFSET = "offset";
 
     private static final String TOTAL_SECONDS = "totalSeconds";
 
-    private static final String DATETIME = "dateTime";
+    private static final String TIME = "time";
 
-    private static final Logger log = Logger.getLogger(OffsetDateTimeJSONAdapter.class.getName());
+    private static final Logger log = Logger.getLogger(OffsetTimeJSONAdapter.class.getName());
 
     private static final Gson gson = new Gson();
 
 
     @Override
-    public JsonElement serialize(OffsetDateTime offsetDateTime, Type type, JsonSerializationContext jsonSerializationContext) {
+    public JsonElement serialize(OffsetTime OffsetTime, Type type, JsonSerializationContext jsonSerializationContext) {
         Gson gson = new Gson();
-        return gson.toJsonTree(offsetDateTime);
+        return gson.toJsonTree(OffsetTime);
     }
 
     @Override
-    public OffsetDateTime deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) {
+    public OffsetTime deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) {
         try {
-            OffsetDateTime offsetDateTime;
+            OffsetTime offsetTime;
             JsonObject obj = jsonElement.getAsJsonObject();
 
             if (obj.get(OFFSET) != null) {
-                //aca esperamos el json entonces como dateTime objeto
                 ZoneOffset zoneoffset = ZoneOffset.ofTotalSeconds(obj.get(OFFSET).getAsJsonObject().get(TOTAL_SECONDS).getAsInt());
-                offsetDateTime = gson.fromJson(obj, OffsetDateTime.class);
-                offsetDateTime = OffsetDateTime.of(offsetDateTime.toLocalDateTime(), zoneoffset);
+                offsetTime = gson.fromJson(obj, OffsetTime.class);
+                offsetTime = OffsetTime.of(offsetTime.toLocalTime(), zoneoffset);
             } else {
-                //aca esperamos el json entonces como date objeto.Fixear los jsons?
-                LocalDateTime localDateTime = gson.fromJson(obj, LocalDateTime.class);
-                ZoneId zoneId = ZoneOffset.systemDefault();
-                offsetDateTime = localDateTime.atZone(zoneId).toOffsetDateTime();
+                LocalTime localTime = gson.fromJson(obj.get(TIME), LocalTime.class);
+                offsetTime = localTime.atOffset(ZoneOffset.systemDefault().getRules().getStandardOffset(Instant.now()));
             }
 
-            return offsetDateTime;
+            return offsetTime;
         } catch (Exception e) {
             log.finest("Cannot parse dateTime format" + e.getMessage());
             e.printStackTrace();

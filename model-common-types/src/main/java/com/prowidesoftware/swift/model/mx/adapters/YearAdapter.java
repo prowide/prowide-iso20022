@@ -18,33 +18,33 @@ package com.prowidesoftware.swift.model.mx.adapters;
 import jakarta.xml.bind.annotation.adapters.XmlAdapter;
 
 import java.time.Month;
-import java.time.YearMonth;
+import java.time.Year;
 import java.time.format.DateTimeFormatter;
 
 /**
  * Default generic adapter to use when non is provided via the configuration API.
- * Used as default implementation for the {@link IsoYearMonthAdapter}.
+ * Used as default implementation for the {@link IsoYearAdapter}.
  *
  * @since 10.0.0
  */
-public class YearMonthAdapter extends XmlAdapter<String, YearMonth> {
-    private static String YEAR_MONTH_FORMAT = "yyyy-MM";
-    private static DateTimeFormatter dtf = DateTimeFormatter.ofPattern(YEAR_MONTH_FORMAT);
+public class YearAdapter extends XmlAdapter<String, Year> {
+    private static String YEAR_FORMAT = "YYYY";
+    private static DateTimeFormatter dtf = DateTimeFormatter.ofPattern(YEAR_FORMAT);
 
-    public YearMonthAdapter(DateTimeFormatter ofPattern) {
+    public YearAdapter(DateTimeFormatter ofPattern) {
         this.dtf = ofPattern;
     }
 
-    public YearMonthAdapter() {
+    public YearAdapter() {
     }
 
     @Override
-    public YearMonth unmarshal(String value) throws Exception {
-        return YearMonth.parse(value, dtf);
+    public Year unmarshal(String value) throws Exception {
+        return Year.parse(value, dtf);
     }
 
     @Override
-    public String marshal(YearMonth value) throws Exception {
+    public String marshal(Year value) throws Exception {
         if (value != null) {
             return dtf.format(value);
         }
@@ -53,6 +53,6 @@ public class YearMonthAdapter extends XmlAdapter<String, YearMonth> {
 
     @Override
     public String toString() {
-        return "YearMonthAdapter{ " + YEAR_MONTH_FORMAT + " }";
+        return "YearAdapter{ " + YEAR_FORMAT + " }";
     }
 }

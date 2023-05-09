@@ -69,4 +69,10 @@ public class IsoDateTimeAdapter extends XmlAdapter<String, XMLGregorianCalendar>
         return this.customAdapterImpl.marshal(cal);
     }
 
+    @Override
+    public String toString() {
+        return "IsoDateTimeAdapter{" +
+                "customAdapterImpl=" + customAdapterImpl +
+                '}';
+    }
 }
