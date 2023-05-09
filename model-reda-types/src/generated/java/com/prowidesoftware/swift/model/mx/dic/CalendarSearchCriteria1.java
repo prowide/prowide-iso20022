@@ -1,8 +1,9 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.Month;
 import java.time.Year;
-import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoMonthAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoYearAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -34,9 +35,10 @@ public class CalendarSearchCriteria1 {
     @XmlJavaTypeAdapter(IsoYearAdapter.class)
     @XmlSchemaType(name = "gYear")
     protected Year yr;
-    @XmlElement(name = "Mnth")
+    @XmlElement(name = "Mnth", type = String.class)
+    @XmlJavaTypeAdapter(IsoMonthAdapter.class)
     @XmlSchemaType(name = "gMonth")
-    protected XMLGregorianCalendar mnth;
+    protected Month mnth;
     @XmlElement(name = "Svc")
     protected SystemAndCurrency1 svc;
 
@@ -70,10 +72,10 @@ public class CalendarSearchCriteria1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getMnth() {
+    public Month getMnth() {
         return mnth;
     }
 
@@ -82,10 +84,10 @@ public class CalendarSearchCriteria1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public CalendarSearchCriteria1 setMnth(XMLGregorianCalendar value) {
+    public CalendarSearchCriteria1 setMnth(Month value) {
         this.mnth = value;
         return this;
     }
