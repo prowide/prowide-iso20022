@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -47,7 +47,7 @@ public class IntraBalanceModification6 {
     @XmlElement(name = "StsDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar stsDt;
+    protected OffsetDateTime stsDt;
     @XmlElement(name = "ReqDtls")
     protected RequestDetails22 reqDtls;
     @XmlElement(name = "UndrlygIntraBal")
@@ -186,7 +186,7 @@ public class IntraBalanceModification6 {
      *     {@link String }
      *     
      */
-    public Calendar getStsDt() {
+    public OffsetDateTime getStsDt() {
         return stsDt;
     }
 
@@ -198,7 +198,7 @@ public class IntraBalanceModification6 {
      *     {@link String }
      *     
      */
-    public IntraBalanceModification6 setStsDt(Calendar value) {
+    public IntraBalanceModification6 setStsDt(OffsetDateTime value) {
         this.stsDt = value;
         return this;
     }

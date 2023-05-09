@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -36,11 +36,11 @@ public class AggregationTransaction3 {
     @XmlElement(name = "FrstPmtDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar frstPmtDtTm;
+    protected OffsetDateTime frstPmtDtTm;
     @XmlElement(name = "LastPmtDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar lastPmtDtTm;
+    protected OffsetDateTime lastPmtDtTm;
     @XmlElement(name = "NbOfPmts")
     protected BigDecimal nbOfPmts;
     @XmlElement(name = "IndvPmt")
@@ -54,7 +54,7 @@ public class AggregationTransaction3 {
      *     {@link String }
      *     
      */
-    public Calendar getFrstPmtDtTm() {
+    public OffsetDateTime getFrstPmtDtTm() {
         return frstPmtDtTm;
     }
 
@@ -66,7 +66,7 @@ public class AggregationTransaction3 {
      *     {@link String }
      *     
      */
-    public AggregationTransaction3 setFrstPmtDtTm(Calendar value) {
+    public AggregationTransaction3 setFrstPmtDtTm(OffsetDateTime value) {
         this.frstPmtDtTm = value;
         return this;
     }
@@ -79,7 +79,7 @@ public class AggregationTransaction3 {
      *     {@link String }
      *     
      */
-    public Calendar getLastPmtDtTm() {
+    public OffsetDateTime getLastPmtDtTm() {
         return lastPmtDtTm;
     }
 
@@ -91,7 +91,7 @@ public class AggregationTransaction3 {
      *     {@link String }
      *     
      */
-    public AggregationTransaction3 setLastPmtDtTm(Calendar value) {
+    public AggregationTransaction3 setLastPmtDtTm(OffsetDateTime value) {
         this.lastPmtDtTm = value;
         return this;
     }

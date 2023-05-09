@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -70,7 +70,7 @@ public class ATMTransaction23 {
     @XmlElement(name = "ReqdExctnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar reqdExctnDt;
+    protected LocalDate reqdExctnDt;
     @XmlElement(name = "InstntTrfPrgm")
     protected String instntTrfPrgm;
     @XmlElement(name = "RcrngTrf")
@@ -369,7 +369,7 @@ public class ATMTransaction23 {
      *     {@link String }
      *     
      */
-    public Calendar getReqdExctnDt() {
+    public LocalDate getReqdExctnDt() {
         return reqdExctnDt;
     }
 
@@ -381,7 +381,7 @@ public class ATMTransaction23 {
      *     {@link String }
      *     
      */
-    public ATMTransaction23 setReqdExctnDt(Calendar value) {
+    public ATMTransaction23 setReqdExctnDt(LocalDate value) {
         this.reqdExctnDt = value;
         return this;
     }

@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -107,7 +107,7 @@ public class SubscriptionExecution12 {
     @XmlElement(name = "CshSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar cshSttlmDt;
+    protected LocalDate cshSttlmDt;
     @XmlElement(name = "SttlmMtd")
     @XmlSchemaType(name = "string")
     protected DeliveryReceiptType2Code sttlmMtd;
@@ -553,7 +553,7 @@ public class SubscriptionExecution12 {
      *     {@link String }
      *     
      */
-    public Calendar getCshSttlmDt() {
+    public LocalDate getCshSttlmDt() {
         return cshSttlmDt;
     }
 
@@ -565,7 +565,7 @@ public class SubscriptionExecution12 {
      *     {@link String }
      *     
      */
-    public SubscriptionExecution12 setCshSttlmDt(Calendar value) {
+    public SubscriptionExecution12 setCshSttlmDt(LocalDate value) {
         this.cshSttlmDt = value;
         return this;
     }

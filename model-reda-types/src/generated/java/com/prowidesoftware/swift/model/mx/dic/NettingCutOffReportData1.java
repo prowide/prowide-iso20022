@@ -1,7 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -40,13 +41,13 @@ public class NettingCutOffReportData1 {
     @XmlElement(name = "CreDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar creDtTm;
+    protected OffsetDateTime creDtTm;
     @XmlElement(name = "RptTp", required = true)
     protected String rptTp;
     @XmlElement(name = "ActvtnDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar actvtnDt;
+    protected LocalDate actvtnDt;
     @XmlElement(name = "NetSvcPtcptId")
     protected PartyIdentification73Choice netSvcPtcptId;
     @XmlElement(name = "RptSvcr")
@@ -89,7 +90,7 @@ public class NettingCutOffReportData1 {
      *     {@link String }
      *     
      */
-    public Calendar getCreDtTm() {
+    public OffsetDateTime getCreDtTm() {
         return creDtTm;
     }
 
@@ -101,7 +102,7 @@ public class NettingCutOffReportData1 {
      *     {@link String }
      *     
      */
-    public NettingCutOffReportData1 setCreDtTm(Calendar value) {
+    public NettingCutOffReportData1 setCreDtTm(OffsetDateTime value) {
         this.creDtTm = value;
         return this;
     }
@@ -139,7 +140,7 @@ public class NettingCutOffReportData1 {
      *     {@link String }
      *     
      */
-    public Calendar getActvtnDt() {
+    public LocalDate getActvtnDt() {
         return actvtnDt;
     }
 
@@ -151,7 +152,7 @@ public class NettingCutOffReportData1 {
      *     {@link String }
      *     
      */
-    public NettingCutOffReportData1 setActvtnDt(Calendar value) {
+    public NettingCutOffReportData1 setActvtnDt(LocalDate value) {
         this.actvtnDt = value;
         return this;
     }

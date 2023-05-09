@@ -1,8 +1,9 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
@@ -44,11 +45,11 @@ public class AccountSwitchDetails1 {
     @XmlElement(name = "SwtchRcvdDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar swtchRcvdDtTm;
+    protected OffsetDateTime swtchRcvdDtTm;
     @XmlElement(name = "SwtchDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar swtchDt;
+    protected LocalDate swtchDt;
     @XmlElement(name = "SwtchTp", required = true)
     @XmlSchemaType(name = "string")
     protected SwitchType1Code swtchTp;
@@ -119,7 +120,7 @@ public class AccountSwitchDetails1 {
      *     {@link String }
      *     
      */
-    public Calendar getSwtchRcvdDtTm() {
+    public OffsetDateTime getSwtchRcvdDtTm() {
         return swtchRcvdDtTm;
     }
 
@@ -131,7 +132,7 @@ public class AccountSwitchDetails1 {
      *     {@link String }
      *     
      */
-    public AccountSwitchDetails1 setSwtchRcvdDtTm(Calendar value) {
+    public AccountSwitchDetails1 setSwtchRcvdDtTm(OffsetDateTime value) {
         this.swtchRcvdDtTm = value;
         return this;
     }
@@ -144,7 +145,7 @@ public class AccountSwitchDetails1 {
      *     {@link String }
      *     
      */
-    public Calendar getSwtchDt() {
+    public LocalDate getSwtchDt() {
         return swtchDt;
     }
 
@@ -156,7 +157,7 @@ public class AccountSwitchDetails1 {
      *     {@link String }
      *     
      */
-    public AccountSwitchDetails1 setSwtchDt(Calendar value) {
+    public AccountSwitchDetails1 setSwtchDt(LocalDate value) {
         this.swtchDt = value;
         return this;
     }

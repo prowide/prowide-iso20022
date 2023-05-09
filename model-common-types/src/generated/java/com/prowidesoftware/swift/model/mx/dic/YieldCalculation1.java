@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -43,13 +43,13 @@ public class YieldCalculation1 {
     @XmlElement(name = "ValDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar valDtTm;
+    protected OffsetDateTime valDtTm;
     @XmlElement(name = "ValPrd", required = true)
     protected DateTimePeriodChoice valPrd;
     @XmlElement(name = "ClctnDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar clctnDt;
+    protected OffsetDateTime clctnDt;
 
     /**
      * Gets the value of the val property.
@@ -134,7 +134,7 @@ public class YieldCalculation1 {
      *     {@link String }
      *     
      */
-    public Calendar getValDtTm() {
+    public OffsetDateTime getValDtTm() {
         return valDtTm;
     }
 
@@ -146,7 +146,7 @@ public class YieldCalculation1 {
      *     {@link String }
      *     
      */
-    public YieldCalculation1 setValDtTm(Calendar value) {
+    public YieldCalculation1 setValDtTm(OffsetDateTime value) {
         this.valDtTm = value;
         return this;
     }
@@ -184,7 +184,7 @@ public class YieldCalculation1 {
      *     {@link String }
      *     
      */
-    public Calendar getClctnDt() {
+    public OffsetDateTime getClctnDt() {
         return clctnDt;
     }
 
@@ -196,7 +196,7 @@ public class YieldCalculation1 {
      *     {@link String }
      *     
      */
-    public YieldCalculation1 setClctnDt(Calendar value) {
+    public YieldCalculation1 setClctnDt(OffsetDateTime value) {
         this.clctnDt = value;
         return this;
     }

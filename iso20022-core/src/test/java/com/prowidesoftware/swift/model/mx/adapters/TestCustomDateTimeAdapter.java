@@ -15,32 +15,21 @@
  */
 package com.prowidesoftware.swift.model.mx.adapters;
 
+import jakarta.xml.bind.annotation.adapters.XmlAdapter;
 
-import java.time.*;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeParseException;
+import java.time.OffsetDateTime;
 import java.util.Calendar;
-import java.util.TimeZone;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-/**
- * Reusable code for adapters implementations
- */
-class AdapterUtils {
-    private static final transient Logger log = Logger.getLogger(AdapterUtils.class.getName());
+public class TestCustomDateTimeAdapter extends XmlAdapter<String, OffsetDateTime> {
 
+    @Override
+    public OffsetDateTime unmarshal(String v){
+        return OffsetDateTime.now();
+    }
 
-
-
-
-
-
-
-
-
-
-
-
+    @Override
+    public String marshal(OffsetDateTime offsetDateTime) {
+        return "foobar";
+    }
 
 }

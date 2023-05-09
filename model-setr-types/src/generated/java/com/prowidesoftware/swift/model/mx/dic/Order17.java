@@ -2,8 +2,9 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
@@ -100,11 +101,11 @@ public class Order17 {
     @XmlElement(name = "OrdrBookgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar ordrBookgDt;
+    protected LocalDate ordrBookgDt;
     @XmlElement(name = "TradOrgtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar tradOrgtnDt;
+    protected OffsetDateTime tradOrgtnDt;
     @XmlElement(name = "TradDt", required = true)
     protected TradeDate4Choice tradDt;
     @XmlElement(name = "PrcgDt")
@@ -485,7 +486,7 @@ public class Order17 {
      *     {@link String }
      *     
      */
-    public Calendar getOrdrBookgDt() {
+    public LocalDate getOrdrBookgDt() {
         return ordrBookgDt;
     }
 
@@ -497,7 +498,7 @@ public class Order17 {
      *     {@link String }
      *     
      */
-    public Order17 setOrdrBookgDt(Calendar value) {
+    public Order17 setOrdrBookgDt(LocalDate value) {
         this.ordrBookgDt = value;
         return this;
     }
@@ -510,7 +511,7 @@ public class Order17 {
      *     {@link String }
      *     
      */
-    public Calendar getTradOrgtnDt() {
+    public OffsetDateTime getTradOrgtnDt() {
         return tradOrgtnDt;
     }
 
@@ -522,7 +523,7 @@ public class Order17 {
      *     {@link String }
      *     
      */
-    public Order17 setTradOrgtnDt(Calendar value) {
+    public Order17 setTradOrgtnDt(OffsetDateTime value) {
         this.tradOrgtnDt = value;
         return this;
     }

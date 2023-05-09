@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -37,11 +37,11 @@ public class LetterIntent1 {
     @XmlElement(name = "StartDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar startDt;
+    protected LocalDate startDt;
     @XmlElement(name = "EndDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar endDt;
+    protected LocalDate endDt;
 
     /**
      * Gets the value of the lttrInttRef property.
@@ -101,7 +101,7 @@ public class LetterIntent1 {
      *     {@link String }
      *     
      */
-    public Calendar getStartDt() {
+    public LocalDate getStartDt() {
         return startDt;
     }
 
@@ -113,7 +113,7 @@ public class LetterIntent1 {
      *     {@link String }
      *     
      */
-    public LetterIntent1 setStartDt(Calendar value) {
+    public LetterIntent1 setStartDt(LocalDate value) {
         this.startDt = value;
         return this;
     }
@@ -126,7 +126,7 @@ public class LetterIntent1 {
      *     {@link String }
      *     
      */
-    public Calendar getEndDt() {
+    public LocalDate getEndDt() {
         return endDt;
     }
 
@@ -138,7 +138,7 @@ public class LetterIntent1 {
      *     {@link String }
      *     
      */
-    public LetterIntent1 setEndDt(Calendar value) {
+    public LetterIntent1 setEndDt(LocalDate value) {
         this.endDt = value;
         return this;
     }

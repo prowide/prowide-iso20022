@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -91,7 +91,7 @@ public class Order6 {
     @XmlElement(name = "TradDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar tradDt;
+    protected OffsetDateTime tradDt;
     @XmlElement(name = "Sd", required = true)
     @XmlSchemaType(name = "string")
     protected Side1Code sd;
@@ -122,7 +122,7 @@ public class Order6 {
     @XmlElement(name = "TradOrgtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar tradOrgtnDt;
+    protected OffsetDateTime tradOrgtnDt;
     @XmlElement(name = "SttlmCcy")
     protected String sttlmCcy;
     @XmlElement(name = "ClrFeeTp")
@@ -314,7 +314,7 @@ public class Order6 {
      *     {@link String }
      *     
      */
-    public Calendar getTradDt() {
+    public OffsetDateTime getTradDt() {
         return tradDt;
     }
 
@@ -326,7 +326,7 @@ public class Order6 {
      *     {@link String }
      *     
      */
-    public Order6 setTradDt(Calendar value) {
+    public Order6 setTradDt(OffsetDateTime value) {
         this.tradDt = value;
         return this;
     }
@@ -606,7 +606,7 @@ public class Order6 {
      *     {@link String }
      *     
      */
-    public Calendar getTradOrgtnDt() {
+    public OffsetDateTime getTradOrgtnDt() {
         return tradOrgtnDt;
     }
 
@@ -618,7 +618,7 @@ public class Order6 {
      *     {@link String }
      *     
      */
-    public Order6 setTradOrgtnDt(Calendar value) {
+    public Order6 setTradOrgtnDt(OffsetDateTime value) {
         this.tradOrgtnDt = value;
         return this;
     }

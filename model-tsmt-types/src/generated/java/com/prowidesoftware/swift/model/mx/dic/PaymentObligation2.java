@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -49,7 +49,7 @@ public class PaymentObligation2 {
     @XmlElement(name = "XpryDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar xpryDt;
+    protected LocalDate xpryDt;
     @XmlElement(name = "AplblRules")
     protected BPOApplicableRules1Choice aplblRules;
     @XmlElement(name = "AplblLaw")
@@ -175,7 +175,7 @@ public class PaymentObligation2 {
      *     {@link String }
      *     
      */
-    public Calendar getXpryDt() {
+    public LocalDate getXpryDt() {
         return xpryDt;
     }
 
@@ -187,7 +187,7 @@ public class PaymentObligation2 {
      *     {@link String }
      *     
      */
-    public PaymentObligation2 setXpryDt(Calendar value) {
+    public PaymentObligation2 setXpryDt(LocalDate value) {
         this.xpryDt = value;
         return this;
     }

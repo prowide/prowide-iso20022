@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.OffsetTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -67,13 +67,13 @@ public class ProcessingCharacteristics7 {
     @XmlElement(name = "DealgCutOffTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected Calendar dealgCutOffTm;
+    protected OffsetTime dealgCutOffTm;
     @XmlElement(name = "DealgCutOffTmFrame")
     protected TimeFrame4 dealgCutOffTmFrame;
     @XmlElement(name = "DealConfTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected Calendar dealConfTm;
+    protected OffsetTime dealConfTm;
     @XmlElement(name = "DealConfTmFrame")
     protected TimeFrame6 dealConfTmFrame;
     @XmlElement(name = "LtdPrd")
@@ -322,7 +322,7 @@ public class ProcessingCharacteristics7 {
      *     {@link String }
      *     
      */
-    public Calendar getDealgCutOffTm() {
+    public OffsetTime getDealgCutOffTm() {
         return dealgCutOffTm;
     }
 
@@ -334,7 +334,7 @@ public class ProcessingCharacteristics7 {
      *     {@link String }
      *     
      */
-    public ProcessingCharacteristics7 setDealgCutOffTm(Calendar value) {
+    public ProcessingCharacteristics7 setDealgCutOffTm(OffsetTime value) {
         this.dealgCutOffTm = value;
         return this;
     }
@@ -372,7 +372,7 @@ public class ProcessingCharacteristics7 {
      *     {@link String }
      *     
      */
-    public Calendar getDealConfTm() {
+    public OffsetTime getDealConfTm() {
         return dealConfTm;
     }
 
@@ -384,7 +384,7 @@ public class ProcessingCharacteristics7 {
      *     {@link String }
      *     
      */
-    public ProcessingCharacteristics7 setDealConfTm(Calendar value) {
+    public ProcessingCharacteristics7 setDealConfTm(OffsetTime value) {
         this.dealConfTm = value;
         return this;
     }

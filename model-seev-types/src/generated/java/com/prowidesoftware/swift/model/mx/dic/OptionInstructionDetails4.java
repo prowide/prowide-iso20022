@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -50,15 +50,15 @@ public class OptionInstructionDetails4 {
     @XmlElement(name = "InstrDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar instrDt;
+    protected LocalDate instrDt;
     @XmlElement(name = "PrtctDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar prtctDt;
+    protected LocalDate prtctDt;
     @XmlElement(name = "CoverPrtctDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar coverPrtctDt;
+    protected LocalDate coverPrtctDt;
     @XmlElement(name = "BidPric")
     protected PriceFormat57Choice bidPric;
     @XmlElement(name = "CondlQty")
@@ -178,7 +178,7 @@ public class OptionInstructionDetails4 {
      *     {@link String }
      *     
      */
-    public Calendar getInstrDt() {
+    public LocalDate getInstrDt() {
         return instrDt;
     }
 
@@ -190,7 +190,7 @@ public class OptionInstructionDetails4 {
      *     {@link String }
      *     
      */
-    public OptionInstructionDetails4 setInstrDt(Calendar value) {
+    public OptionInstructionDetails4 setInstrDt(LocalDate value) {
         this.instrDt = value;
         return this;
     }
@@ -203,7 +203,7 @@ public class OptionInstructionDetails4 {
      *     {@link String }
      *     
      */
-    public Calendar getPrtctDt() {
+    public LocalDate getPrtctDt() {
         return prtctDt;
     }
 
@@ -215,7 +215,7 @@ public class OptionInstructionDetails4 {
      *     {@link String }
      *     
      */
-    public OptionInstructionDetails4 setPrtctDt(Calendar value) {
+    public OptionInstructionDetails4 setPrtctDt(LocalDate value) {
         this.prtctDt = value;
         return this;
     }
@@ -228,7 +228,7 @@ public class OptionInstructionDetails4 {
      *     {@link String }
      *     
      */
-    public Calendar getCoverPrtctDt() {
+    public LocalDate getCoverPrtctDt() {
         return coverPrtctDt;
     }
 
@@ -240,7 +240,7 @@ public class OptionInstructionDetails4 {
      *     {@link String }
      *     
      */
-    public OptionInstructionDetails4 setCoverPrtctDt(Calendar value) {
+    public OptionInstructionDetails4 setCoverPrtctDt(LocalDate value) {
         this.coverPrtctDt = value;
         return this;
     }

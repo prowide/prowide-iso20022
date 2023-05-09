@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -42,7 +42,7 @@ public class BenefitCrystallisationEvent1 {
     @XmlElement(name = "EvtDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar evtDt;
+    protected LocalDate evtDt;
     @XmlElement(name = "CrstllstnAmt")
     protected ActiveCurrencyAnd13DecimalAmount crstllstnAmt;
     @XmlElement(name = "PctgOfAllwnc")
@@ -108,7 +108,7 @@ public class BenefitCrystallisationEvent1 {
      *     {@link String }
      *     
      */
-    public Calendar getEvtDt() {
+    public LocalDate getEvtDt() {
         return evtDt;
     }
 
@@ -120,7 +120,7 @@ public class BenefitCrystallisationEvent1 {
      *     {@link String }
      *     
      */
-    public BenefitCrystallisationEvent1 setEvtDt(Calendar value) {
+    public BenefitCrystallisationEvent1 setEvtDt(LocalDate value) {
         this.evtDt = value;
         return this;
     }

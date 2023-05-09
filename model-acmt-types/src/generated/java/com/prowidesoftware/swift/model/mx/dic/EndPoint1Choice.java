@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -33,7 +33,7 @@ public class EndPoint1Choice {
     @XmlElement(name = "LastPmtDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar lastPmtDt;
+    protected LocalDate lastPmtDt;
 
     /**
      * Gets the value of the nbOfPmts property.
@@ -68,7 +68,7 @@ public class EndPoint1Choice {
      *     {@link String }
      *     
      */
-    public Calendar getLastPmtDt() {
+    public LocalDate getLastPmtDt() {
         return lastPmtDt;
     }
 
@@ -80,7 +80,7 @@ public class EndPoint1Choice {
      *     {@link String }
      *     
      */
-    public EndPoint1Choice setLastPmtDt(Calendar value) {
+    public EndPoint1Choice setLastPmtDt(LocalDate value) {
         this.lastPmtDt = value;
         return this;
     }

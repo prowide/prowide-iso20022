@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -71,7 +71,7 @@ public class SecuritiesFinancing1 {
     @XmlElement(name = "RateChngDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar rateChngDtTm;
+    protected OffsetDateTime rateChngDtTm;
     @XmlElement(name = "TermntnDtTm")
     protected TerminationDate1Choice termntnDtTm;
     @XmlElement(name = "SctiesHrcut")
@@ -335,7 +335,7 @@ public class SecuritiesFinancing1 {
      *     {@link String }
      *     
      */
-    public Calendar getRateChngDtTm() {
+    public OffsetDateTime getRateChngDtTm() {
         return rateChngDtTm;
     }
 
@@ -347,7 +347,7 @@ public class SecuritiesFinancing1 {
      *     {@link String }
      *     
      */
-    public SecuritiesFinancing1 setRateChngDtTm(Calendar value) {
+    public SecuritiesFinancing1 setRateChngDtTm(OffsetDateTime value) {
         this.rateChngDtTm = value;
         return this;
     }

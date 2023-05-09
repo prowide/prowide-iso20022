@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -108,11 +108,11 @@ public class TransactionContext7 {
     @XmlElement(name = "CaptrDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar captrDt;
+    protected LocalDate captrDt;
     @XmlElement(name = "DtAntcptd", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dtAntcptd;
+    protected LocalDate dtAntcptd;
     @XmlElement(name = "AddtlData")
     protected List<AdditionalData1> addtlData;
 
@@ -730,7 +730,7 @@ public class TransactionContext7 {
      *     {@link String }
      *     
      */
-    public Calendar getCaptrDt() {
+    public LocalDate getCaptrDt() {
         return captrDt;
     }
 
@@ -742,7 +742,7 @@ public class TransactionContext7 {
      *     {@link String }
      *     
      */
-    public TransactionContext7 setCaptrDt(Calendar value) {
+    public TransactionContext7 setCaptrDt(LocalDate value) {
         this.captrDt = value;
         return this;
     }
@@ -755,7 +755,7 @@ public class TransactionContext7 {
      *     {@link String }
      *     
      */
-    public Calendar getDtAntcptd() {
+    public LocalDate getDtAntcptd() {
         return dtAntcptd;
     }
 
@@ -767,7 +767,7 @@ public class TransactionContext7 {
      *     {@link String }
      *     
      */
-    public TransactionContext7 setDtAntcptd(Calendar value) {
+    public TransactionContext7 setDtAntcptd(LocalDate value) {
         this.dtAntcptd = value;
         return this;
     }

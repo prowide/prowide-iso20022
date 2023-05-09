@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -60,7 +60,7 @@ public class IntraPositionMovementDetails18 {
     @XmlElement(name = "AckdStsTmStmp", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar ackdStsTmStmp;
+    protected OffsetDateTime ackdStsTmStmp;
     @XmlElement(name = "CorpActnEvtTp")
     protected CorporateActionEventType101Choice corpActnEvtTp;
     @XmlElement(name = "CollMntrAmt")
@@ -278,7 +278,7 @@ public class IntraPositionMovementDetails18 {
      *     {@link String }
      *     
      */
-    public Calendar getAckdStsTmStmp() {
+    public OffsetDateTime getAckdStsTmStmp() {
         return ackdStsTmStmp;
     }
 
@@ -290,7 +290,7 @@ public class IntraPositionMovementDetails18 {
      *     {@link String }
      *     
      */
-    public IntraPositionMovementDetails18 setAckdStsTmStmp(Calendar value) {
+    public IntraPositionMovementDetails18 setAckdStsTmStmp(OffsetDateTime value) {
         this.ackdStsTmStmp = value;
         return this;
     }

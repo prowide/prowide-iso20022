@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -40,7 +40,7 @@ public class Participation3 {
     @XmlElement(name = "ClctnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar clctnDt;
+    protected LocalDate clctnDt;
 
     /**
      * Gets the value of the ttlNbOfVtngRghts property.
@@ -125,7 +125,7 @@ public class Participation3 {
      *     {@link String }
      *     
      */
-    public Calendar getClctnDt() {
+    public LocalDate getClctnDt() {
         return clctnDt;
     }
 
@@ -137,7 +137,7 @@ public class Participation3 {
      *     {@link String }
      *     
      */
-    public Participation3 setClctnDt(Calendar value) {
+    public Participation3 setClctnDt(LocalDate value) {
         this.clctnDt = value;
         return this;
     }

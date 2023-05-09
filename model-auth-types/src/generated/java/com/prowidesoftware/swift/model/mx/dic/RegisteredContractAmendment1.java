@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -34,13 +34,13 @@ public class RegisteredContractAmendment1 {
     @XmlElement(name = "AmdmntDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar amdmntDt;
+    protected LocalDate amdmntDt;
     @XmlElement(name = "Doc", required = true)
     protected DocumentIdentification28 doc;
     @XmlElement(name = "StartDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar startDt;
+    protected LocalDate startDt;
     @XmlElement(name = "AmdmntRsn")
     protected String amdmntRsn;
     @XmlElement(name = "AddtlInf")
@@ -54,7 +54,7 @@ public class RegisteredContractAmendment1 {
      *     {@link String }
      *     
      */
-    public Calendar getAmdmntDt() {
+    public LocalDate getAmdmntDt() {
         return amdmntDt;
     }
 
@@ -66,7 +66,7 @@ public class RegisteredContractAmendment1 {
      *     {@link String }
      *     
      */
-    public RegisteredContractAmendment1 setAmdmntDt(Calendar value) {
+    public RegisteredContractAmendment1 setAmdmntDt(LocalDate value) {
         this.amdmntDt = value;
         return this;
     }
@@ -104,7 +104,7 @@ public class RegisteredContractAmendment1 {
      *     {@link String }
      *     
      */
-    public Calendar getStartDt() {
+    public LocalDate getStartDt() {
         return startDt;
     }
 
@@ -116,7 +116,7 @@ public class RegisteredContractAmendment1 {
      *     {@link String }
      *     
      */
-    public RegisteredContractAmendment1 setStartDt(Calendar value) {
+    public RegisteredContractAmendment1 setStartDt(LocalDate value) {
         this.startDt = value;
         return this;
     }

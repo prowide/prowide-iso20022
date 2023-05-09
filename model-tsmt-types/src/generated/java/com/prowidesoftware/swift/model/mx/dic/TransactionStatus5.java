@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -35,7 +35,7 @@ public class TransactionStatus5 {
     @XmlElement(name = "ChngDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar chngDtTm;
+    protected OffsetDateTime chngDtTm;
     @XmlElement(name = "Desc")
     protected String desc;
 
@@ -72,7 +72,7 @@ public class TransactionStatus5 {
      *     {@link String }
      *     
      */
-    public Calendar getChngDtTm() {
+    public OffsetDateTime getChngDtTm() {
         return chngDtTm;
     }
 
@@ -84,7 +84,7 @@ public class TransactionStatus5 {
      *     {@link String }
      *     
      */
-    public TransactionStatus5 setChngDtTm(Calendar value) {
+    public TransactionStatus5 setChngDtTm(OffsetDateTime value) {
         this.chngDtTm = value;
         return this;
     }

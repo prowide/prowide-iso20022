@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -41,7 +41,7 @@ public class SecuritiesTransaction1 {
     @XmlElement(name = "TradDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar tradDt;
+    protected OffsetDateTime tradDt;
     @XmlElement(name = "TradgCpcty", required = true)
     @XmlSchemaType(name = "string")
     protected RegulatoryTradingCapacity1Code tradgCpcty;
@@ -73,7 +73,7 @@ public class SecuritiesTransaction1 {
      *     {@link String }
      *     
      */
-    public Calendar getTradDt() {
+    public OffsetDateTime getTradDt() {
         return tradDt;
     }
 
@@ -85,7 +85,7 @@ public class SecuritiesTransaction1 {
      *     {@link String }
      *     
      */
-    public SecuritiesTransaction1 setTradDt(Calendar value) {
+    public SecuritiesTransaction1 setTradDt(OffsetDateTime value) {
         this.tradDt = value;
         return this;
     }

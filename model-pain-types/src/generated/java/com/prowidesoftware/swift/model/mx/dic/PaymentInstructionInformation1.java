@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -52,11 +52,11 @@ public class PaymentInstructionInformation1 {
     @XmlElement(name = "ReqdExctnDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar reqdExctnDt;
+    protected LocalDate reqdExctnDt;
     @XmlElement(name = "PoolgAdjstmntDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar poolgAdjstmntDt;
+    protected LocalDate poolgAdjstmntDt;
     @XmlElement(name = "Dbtr", required = true)
     protected PartyIdentification8 dbtr;
     @XmlElement(name = "DbtrAcct", required = true)
@@ -160,7 +160,7 @@ public class PaymentInstructionInformation1 {
      *     {@link String }
      *     
      */
-    public Calendar getReqdExctnDt() {
+    public LocalDate getReqdExctnDt() {
         return reqdExctnDt;
     }
 
@@ -172,7 +172,7 @@ public class PaymentInstructionInformation1 {
      *     {@link String }
      *     
      */
-    public PaymentInstructionInformation1 setReqdExctnDt(Calendar value) {
+    public PaymentInstructionInformation1 setReqdExctnDt(LocalDate value) {
         this.reqdExctnDt = value;
         return this;
     }
@@ -185,7 +185,7 @@ public class PaymentInstructionInformation1 {
      *     {@link String }
      *     
      */
-    public Calendar getPoolgAdjstmntDt() {
+    public LocalDate getPoolgAdjstmntDt() {
         return poolgAdjstmntDt;
     }
 
@@ -197,7 +197,7 @@ public class PaymentInstructionInformation1 {
      *     {@link String }
      *     
      */
-    public PaymentInstructionInformation1 setPoolgAdjstmntDt(Calendar value) {
+    public PaymentInstructionInformation1 setPoolgAdjstmntDt(LocalDate value) {
         this.poolgAdjstmntDt = value;
         return this;
     }

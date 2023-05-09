@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -33,7 +33,7 @@ public class FinancialInstrumentIdentificationValidity3 {
     @XmlElement(name = "ISINVldFr", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar isinVldFr;
+    protected LocalDate isinVldFr;
 
     /**
      * Gets the value of the finInstrmId property.
@@ -68,7 +68,7 @@ public class FinancialInstrumentIdentificationValidity3 {
      *     {@link String }
      *     
      */
-    public Calendar getISINVldFr() {
+    public LocalDate getISINVldFr() {
         return isinVldFr;
     }
 
@@ -80,7 +80,7 @@ public class FinancialInstrumentIdentificationValidity3 {
      *     {@link String }
      *     
      */
-    public FinancialInstrumentIdentificationValidity3 setISINVldFr(Calendar value) {
+    public FinancialInstrumentIdentificationValidity3 setISINVldFr(LocalDate value) {
         this.isinVldFr = value;
         return this;
     }

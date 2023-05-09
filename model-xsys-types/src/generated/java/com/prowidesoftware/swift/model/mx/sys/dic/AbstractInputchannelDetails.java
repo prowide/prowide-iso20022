@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.sys.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime ;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -36,7 +36,7 @@ public class AbstractInputchannelDetails {
     @XmlElement(name = "LastStatChngTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar lastStatChngTm;
+    protected OffsetDateTime lastStatChngTm;
     @XmlElement(name = "LastStatChngDN", required = true)
     protected String lastStatChngDN;
 
@@ -73,7 +73,7 @@ public class AbstractInputchannelDetails {
      *     {@link String }
      *     
      */
-    public Calendar getLastStatChngTm() {
+    public OffsetDateTime getLastStatChngTm() {
         return lastStatChngTm;
     }
 
@@ -85,7 +85,7 @@ public class AbstractInputchannelDetails {
      *     {@link String }
      *     
      */
-    public AbstractInputchannelDetails setLastStatChngTm(Calendar value) {
+    public AbstractInputchannelDetails setLastStatChngTm(OffsetDateTime value) {
         this.lastStatChngTm = value;
         return this;
     }

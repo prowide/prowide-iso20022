@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -43,7 +43,7 @@ public class CurrencyControlPackageStatus1 {
     @XmlElement(name = "StsDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar stsDtTm;
+    protected OffsetDateTime stsDtTm;
     @XmlElement(name = "RcrdSts")
     protected List<CurrencyControlRecordStatus1> rcrdSts;
 
@@ -136,7 +136,7 @@ public class CurrencyControlPackageStatus1 {
      *     {@link String }
      *     
      */
-    public Calendar getStsDtTm() {
+    public OffsetDateTime getStsDtTm() {
         return stsDtTm;
     }
 
@@ -148,7 +148,7 @@ public class CurrencyControlPackageStatus1 {
      *     {@link String }
      *     
      */
-    public CurrencyControlPackageStatus1 setStsDtTm(Calendar value) {
+    public CurrencyControlPackageStatus1 setStsDtTm(OffsetDateTime value) {
         this.stsDtTm = value;
         return this;
     }

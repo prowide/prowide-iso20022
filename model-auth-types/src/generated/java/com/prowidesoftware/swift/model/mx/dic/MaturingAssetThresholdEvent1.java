@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -32,11 +32,11 @@ public class MaturingAssetThresholdEvent1 {
     @XmlElement(name = "EvtDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar evtDt;
+    protected LocalDate evtDt;
     @XmlElement(name = "MeasrDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar measrDt;
+    protected LocalDate measrDt;
     @XmlElement(name = "MeasrInf", required = true)
     protected Measure1Choice measrInf;
 
@@ -48,7 +48,7 @@ public class MaturingAssetThresholdEvent1 {
      *     {@link String }
      *     
      */
-    public Calendar getEvtDt() {
+    public LocalDate getEvtDt() {
         return evtDt;
     }
 
@@ -60,7 +60,7 @@ public class MaturingAssetThresholdEvent1 {
      *     {@link String }
      *     
      */
-    public MaturingAssetThresholdEvent1 setEvtDt(Calendar value) {
+    public MaturingAssetThresholdEvent1 setEvtDt(LocalDate value) {
         this.evtDt = value;
         return this;
     }
@@ -73,7 +73,7 @@ public class MaturingAssetThresholdEvent1 {
      *     {@link String }
      *     
      */
-    public Calendar getMeasrDt() {
+    public LocalDate getMeasrDt() {
         return measrDt;
     }
 
@@ -85,7 +85,7 @@ public class MaturingAssetThresholdEvent1 {
      *     {@link String }
      *     
      */
-    public MaturingAssetThresholdEvent1 setMeasrDt(Calendar value) {
+    public MaturingAssetThresholdEvent1 setMeasrDt(LocalDate value) {
         this.measrDt = value;
         return this;
     }

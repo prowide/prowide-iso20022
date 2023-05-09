@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -40,15 +40,15 @@ public class ProxyParameters {
     @XmlElement(name = "PrxyAppntmntDdln", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar prxyAppntmntDdln;
+    protected OffsetDateTime prxyAppntmntDdln;
     @XmlElement(name = "PrxyAppntmntElctrncDdln", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar prxyAppntmntElctrncDdln;
+    protected OffsetDateTime prxyAppntmntElctrncDdln;
     @XmlElement(name = "PrxyAppntmntMktDdln", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar prxyAppntmntMktDdln;
+    protected OffsetDateTime prxyAppntmntMktDdln;
 
     /**
      * Gets the value of the authrsdPrxy property.
@@ -114,7 +114,7 @@ public class ProxyParameters {
      *     {@link String }
      *     
      */
-    public Calendar getPrxyAppntmntDdln() {
+    public OffsetDateTime getPrxyAppntmntDdln() {
         return prxyAppntmntDdln;
     }
 
@@ -126,7 +126,7 @@ public class ProxyParameters {
      *     {@link String }
      *     
      */
-    public ProxyParameters setPrxyAppntmntDdln(Calendar value) {
+    public ProxyParameters setPrxyAppntmntDdln(OffsetDateTime value) {
         this.prxyAppntmntDdln = value;
         return this;
     }
@@ -139,7 +139,7 @@ public class ProxyParameters {
      *     {@link String }
      *     
      */
-    public Calendar getPrxyAppntmntElctrncDdln() {
+    public OffsetDateTime getPrxyAppntmntElctrncDdln() {
         return prxyAppntmntElctrncDdln;
     }
 
@@ -151,7 +151,7 @@ public class ProxyParameters {
      *     {@link String }
      *     
      */
-    public ProxyParameters setPrxyAppntmntElctrncDdln(Calendar value) {
+    public ProxyParameters setPrxyAppntmntElctrncDdln(OffsetDateTime value) {
         this.prxyAppntmntElctrncDdln = value;
         return this;
     }
@@ -164,7 +164,7 @@ public class ProxyParameters {
      *     {@link String }
      *     
      */
-    public Calendar getPrxyAppntmntMktDdln() {
+    public OffsetDateTime getPrxyAppntmntMktDdln() {
         return prxyAppntmntMktDdln;
     }
 
@@ -176,7 +176,7 @@ public class ProxyParameters {
      *     {@link String }
      *     
      */
-    public ProxyParameters setPrxyAppntmntMktDdln(Calendar value) {
+    public ProxyParameters setPrxyAppntmntMktDdln(OffsetDateTime value) {
         this.prxyAppntmntMktDdln = value;
         return this;
     }

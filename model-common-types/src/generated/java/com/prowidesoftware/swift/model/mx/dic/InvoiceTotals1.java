@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -42,7 +42,7 @@ public class InvoiceTotals1 {
     @XmlElement(name = "PmtDueDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar pmtDueDt;
+    protected LocalDate pmtDueDt;
 
     /**
      * Gets the value of the ttlTaxblAmt property.
@@ -152,7 +152,7 @@ public class InvoiceTotals1 {
      *     {@link String }
      *     
      */
-    public Calendar getPmtDueDt() {
+    public LocalDate getPmtDueDt() {
         return pmtDueDt;
     }
 
@@ -164,7 +164,7 @@ public class InvoiceTotals1 {
      *     {@link String }
      *     
      */
-    public InvoiceTotals1 setPmtDueDt(Calendar value) {
+    public InvoiceTotals1 setPmtDueDt(LocalDate value) {
         this.pmtDueDt = value;
         return this;
     }

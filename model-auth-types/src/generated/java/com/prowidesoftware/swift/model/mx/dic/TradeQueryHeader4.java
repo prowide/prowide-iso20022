@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -33,7 +33,7 @@ public class TradeQueryHeader4 {
     @XmlElement(name = "QryExctnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar qryExctnDt;
+    protected LocalDate qryExctnDt;
     @XmlElement(name = "MsgPgntn", required = true)
     protected Pagination1 msgPgntn;
     @XmlElement(name = "NbRcrds", required = true)
@@ -47,7 +47,7 @@ public class TradeQueryHeader4 {
      *     {@link String }
      *     
      */
-    public Calendar getQryExctnDt() {
+    public LocalDate getQryExctnDt() {
         return qryExctnDt;
     }
 
@@ -59,7 +59,7 @@ public class TradeQueryHeader4 {
      *     {@link String }
      *     
      */
-    public TradeQueryHeader4 setQryExctnDt(Calendar value) {
+    public TradeQueryHeader4 setQryExctnDt(LocalDate value) {
         this.qryExctnDt = value;
         return this;
     }

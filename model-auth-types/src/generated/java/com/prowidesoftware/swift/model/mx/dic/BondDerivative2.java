@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -34,11 +34,11 @@ public class BondDerivative2 {
     @XmlElement(name = "MtrtyDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar mtrtyDt;
+    protected LocalDate mtrtyDt;
     @XmlElement(name = "IssncDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar issncDt;
+    protected LocalDate issncDt;
 
     /**
      * Gets the value of the issr property.
@@ -73,7 +73,7 @@ public class BondDerivative2 {
      *     {@link String }
      *     
      */
-    public Calendar getMtrtyDt() {
+    public LocalDate getMtrtyDt() {
         return mtrtyDt;
     }
 
@@ -85,7 +85,7 @@ public class BondDerivative2 {
      *     {@link String }
      *     
      */
-    public BondDerivative2 setMtrtyDt(Calendar value) {
+    public BondDerivative2 setMtrtyDt(LocalDate value) {
         this.mtrtyDt = value;
         return this;
     }
@@ -98,7 +98,7 @@ public class BondDerivative2 {
      *     {@link String }
      *     
      */
-    public Calendar getIssncDt() {
+    public LocalDate getIssncDt() {
         return issncDt;
     }
 
@@ -110,7 +110,7 @@ public class BondDerivative2 {
      *     {@link String }
      *     
      */
-    public BondDerivative2 setIssncDt(Calendar value) {
+    public BondDerivative2 setIssncDt(LocalDate value) {
         this.issncDt = value;
         return this;
     }

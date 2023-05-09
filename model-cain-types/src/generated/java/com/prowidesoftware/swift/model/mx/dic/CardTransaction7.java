@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -48,7 +48,7 @@ public class CardTransaction7 {
     @XmlElement(name = "AccptrTxDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar accptrTxDtTm;
+    protected OffsetDateTime accptrTxDtTm;
     @XmlElement(name = "AccptrTxId", required = true)
     protected String accptrTxId;
     @XmlElement(name = "InitrTxId", required = true)
@@ -128,7 +128,7 @@ public class CardTransaction7 {
      *     {@link String }
      *     
      */
-    public Calendar getAccptrTxDtTm() {
+    public OffsetDateTime getAccptrTxDtTm() {
         return accptrTxDtTm;
     }
 
@@ -140,7 +140,7 @@ public class CardTransaction7 {
      *     {@link String }
      *     
      */
-    public CardTransaction7 setAccptrTxDtTm(Calendar value) {
+    public CardTransaction7 setAccptrTxDtTm(OffsetDateTime value) {
         this.accptrTxDtTm = value;
         return this;
     }

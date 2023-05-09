@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -54,15 +54,15 @@ public class VoteParameters {
     @XmlElement(name = "VoteDdln", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar voteDdln;
+    protected OffsetDateTime voteDdln;
     @XmlElement(name = "VoteElctrncDdln", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar voteElctrncDdln;
+    protected OffsetDateTime voteElctrncDdln;
     @XmlElement(name = "VoteMktDdln", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar voteMktDdln;
+    protected OffsetDateTime voteMktDdln;
     @XmlElement(name = "VoteMthds")
     protected VoteMethods voteMthds;
     @XmlElement(name = "VtngBlltElctrncAdr")
@@ -81,15 +81,15 @@ public class VoteParameters {
     @XmlElement(name = "VoteWthPrmDdln", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar voteWthPrmDdln;
+    protected OffsetDateTime voteWthPrmDdln;
     @XmlElement(name = "VoteWthPrmElctrncDdln", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar voteWthPrmElctrncDdln;
+    protected OffsetDateTime voteWthPrmElctrncDdln;
     @XmlElement(name = "VoteWthPrmMktDdln", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar voteWthPrmMktDdln;
+    protected OffsetDateTime voteWthPrmMktDdln;
 
     /**
      * Gets the value of the sctiesQtyReqrdToVote property.
@@ -174,7 +174,7 @@ public class VoteParameters {
      *     {@link String }
      *     
      */
-    public Calendar getVoteDdln() {
+    public OffsetDateTime getVoteDdln() {
         return voteDdln;
     }
 
@@ -186,7 +186,7 @@ public class VoteParameters {
      *     {@link String }
      *     
      */
-    public VoteParameters setVoteDdln(Calendar value) {
+    public VoteParameters setVoteDdln(OffsetDateTime value) {
         this.voteDdln = value;
         return this;
     }
@@ -199,7 +199,7 @@ public class VoteParameters {
      *     {@link String }
      *     
      */
-    public Calendar getVoteElctrncDdln() {
+    public OffsetDateTime getVoteElctrncDdln() {
         return voteElctrncDdln;
     }
 
@@ -211,7 +211,7 @@ public class VoteParameters {
      *     {@link String }
      *     
      */
-    public VoteParameters setVoteElctrncDdln(Calendar value) {
+    public VoteParameters setVoteElctrncDdln(OffsetDateTime value) {
         this.voteElctrncDdln = value;
         return this;
     }
@@ -224,7 +224,7 @@ public class VoteParameters {
      *     {@link String }
      *     
      */
-    public Calendar getVoteMktDdln() {
+    public OffsetDateTime getVoteMktDdln() {
         return voteMktDdln;
     }
 
@@ -236,7 +236,7 @@ public class VoteParameters {
      *     {@link String }
      *     
      */
-    public VoteParameters setVoteMktDdln(Calendar value) {
+    public VoteParameters setVoteMktDdln(OffsetDateTime value) {
         this.voteMktDdln = value;
         return this;
     }
@@ -430,7 +430,7 @@ public class VoteParameters {
      *     {@link String }
      *     
      */
-    public Calendar getVoteWthPrmDdln() {
+    public OffsetDateTime getVoteWthPrmDdln() {
         return voteWthPrmDdln;
     }
 
@@ -442,7 +442,7 @@ public class VoteParameters {
      *     {@link String }
      *     
      */
-    public VoteParameters setVoteWthPrmDdln(Calendar value) {
+    public VoteParameters setVoteWthPrmDdln(OffsetDateTime value) {
         this.voteWthPrmDdln = value;
         return this;
     }
@@ -455,7 +455,7 @@ public class VoteParameters {
      *     {@link String }
      *     
      */
-    public Calendar getVoteWthPrmElctrncDdln() {
+    public OffsetDateTime getVoteWthPrmElctrncDdln() {
         return voteWthPrmElctrncDdln;
     }
 
@@ -467,7 +467,7 @@ public class VoteParameters {
      *     {@link String }
      *     
      */
-    public VoteParameters setVoteWthPrmElctrncDdln(Calendar value) {
+    public VoteParameters setVoteWthPrmElctrncDdln(OffsetDateTime value) {
         this.voteWthPrmElctrncDdln = value;
         return this;
     }
@@ -480,7 +480,7 @@ public class VoteParameters {
      *     {@link String }
      *     
      */
-    public Calendar getVoteWthPrmMktDdln() {
+    public OffsetDateTime getVoteWthPrmMktDdln() {
         return voteWthPrmMktDdln;
     }
 
@@ -492,7 +492,7 @@ public class VoteParameters {
      *     {@link String }
      *     
      */
-    public VoteParameters setVoteWthPrmMktDdln(Calendar value) {
+    public VoteParameters setVoteWthPrmMktDdln(OffsetDateTime value) {
         this.voteWthPrmMktDdln = value;
         return this;
     }

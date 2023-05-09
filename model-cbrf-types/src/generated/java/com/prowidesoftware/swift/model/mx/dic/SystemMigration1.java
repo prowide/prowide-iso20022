@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -36,7 +36,7 @@ public class SystemMigration1 {
     @XmlElement(name = "PlandMgrtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar plandMgrtnDt;
+    protected OffsetDateTime plandMgrtnDt;
     @XmlElement(name = "BalRcvdInd")
     protected Boolean balRcvdInd;
     @XmlElement(name = "Mgrtd")
@@ -44,7 +44,7 @@ public class SystemMigration1 {
     @XmlElement(name = "LastDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar lastDt;
+    protected OffsetDateTime lastDt;
 
     /**
      * Gets the value of the npsPtcptInd property.
@@ -79,7 +79,7 @@ public class SystemMigration1 {
      *     {@link String }
      *     
      */
-    public Calendar getPlandMgrtnDt() {
+    public OffsetDateTime getPlandMgrtnDt() {
         return plandMgrtnDt;
     }
 
@@ -91,7 +91,7 @@ public class SystemMigration1 {
      *     {@link String }
      *     
      */
-    public SystemMigration1 setPlandMgrtnDt(Calendar value) {
+    public SystemMigration1 setPlandMgrtnDt(OffsetDateTime value) {
         this.plandMgrtnDt = value;
         return this;
     }
@@ -154,7 +154,7 @@ public class SystemMigration1 {
      *     {@link String }
      *     
      */
-    public Calendar getLastDt() {
+    public OffsetDateTime getLastDt() {
         return lastDt;
     }
 
@@ -166,7 +166,7 @@ public class SystemMigration1 {
      *     {@link String }
      *     
      */
-    public SystemMigration1 setLastDt(Calendar value) {
+    public SystemMigration1 setLastDt(OffsetDateTime value) {
         this.lastDt = value;
         return this;
     }

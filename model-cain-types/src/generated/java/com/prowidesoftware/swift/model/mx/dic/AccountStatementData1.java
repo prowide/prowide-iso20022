@@ -1,8 +1,9 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
+import java.time.OffsetTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
@@ -35,11 +36,11 @@ public class AccountStatementData1 {
     @XmlElement(name = "StmtDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar stmtDt;
+    protected LocalDate stmtDt;
     @XmlElement(name = "StmtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected Calendar stmtTm;
+    protected OffsetTime stmtTm;
     @XmlElement(name = "AcctStmt")
     protected List<AccountStatementDetails1> acctStmt;
 
@@ -51,7 +52,7 @@ public class AccountStatementData1 {
      *     {@link String }
      *     
      */
-    public Calendar getStmtDt() {
+    public LocalDate getStmtDt() {
         return stmtDt;
     }
 
@@ -63,7 +64,7 @@ public class AccountStatementData1 {
      *     {@link String }
      *     
      */
-    public AccountStatementData1 setStmtDt(Calendar value) {
+    public AccountStatementData1 setStmtDt(LocalDate value) {
         this.stmtDt = value;
         return this;
     }
@@ -76,7 +77,7 @@ public class AccountStatementData1 {
      *     {@link String }
      *     
      */
-    public Calendar getStmtTm() {
+    public OffsetTime getStmtTm() {
         return stmtTm;
     }
 
@@ -88,7 +89,7 @@ public class AccountStatementData1 {
      *     {@link String }
      *     
      */
-    public AccountStatementData1 setStmtTm(Calendar value) {
+    public AccountStatementData1 setStmtTm(OffsetTime value) {
         this.stmtTm = value;
         return this;
     }

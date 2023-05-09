@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -37,7 +37,7 @@ public class JourneyInformation1 {
     @XmlElement(name = "DtAndTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar dtAndTm;
+    protected OffsetDateTime dtAndTm;
 
     /**
      * Gets the value of the jrnyTp property.
@@ -97,7 +97,7 @@ public class JourneyInformation1 {
      *     {@link String }
      *     
      */
-    public Calendar getDtAndTm() {
+    public OffsetDateTime getDtAndTm() {
         return dtAndTm;
     }
 
@@ -109,7 +109,7 @@ public class JourneyInformation1 {
      *     {@link String }
      *     
      */
-    public JourneyInformation1 setDtAndTm(Calendar value) {
+    public JourneyInformation1 setDtAndTm(OffsetDateTime value) {
         this.dtAndTm = value;
         return this;
     }

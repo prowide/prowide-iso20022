@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -90,11 +90,11 @@ public class ATMTransaction24 {
     @XmlElement(name = "ReqdExctnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar reqdExctnDt;
+    protected LocalDate reqdExctnDt;
     @XmlElement(name = "PropsdExctnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar propsdExctnDt;
+    protected LocalDate propsdExctnDt;
     @XmlElement(name = "InstntTrfPrgm")
     protected String instntTrfPrgm;
     @XmlElement(name = "RcrngTrf")
@@ -557,7 +557,7 @@ public class ATMTransaction24 {
      *     {@link String }
      *     
      */
-    public Calendar getReqdExctnDt() {
+    public LocalDate getReqdExctnDt() {
         return reqdExctnDt;
     }
 
@@ -569,7 +569,7 @@ public class ATMTransaction24 {
      *     {@link String }
      *     
      */
-    public ATMTransaction24 setReqdExctnDt(Calendar value) {
+    public ATMTransaction24 setReqdExctnDt(LocalDate value) {
         this.reqdExctnDt = value;
         return this;
     }
@@ -582,7 +582,7 @@ public class ATMTransaction24 {
      *     {@link String }
      *     
      */
-    public Calendar getPropsdExctnDt() {
+    public LocalDate getPropsdExctnDt() {
         return propsdExctnDt;
     }
 
@@ -594,7 +594,7 @@ public class ATMTransaction24 {
      *     {@link String }
      *     
      */
-    public ATMTransaction24 setPropsdExctnDt(Calendar value) {
+    public ATMTransaction24 setPropsdExctnDt(LocalDate value) {
         this.propsdExctnDt = value;
         return this;
     }

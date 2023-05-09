@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -47,11 +47,11 @@ public class Cheque15 {
     @XmlElement(name = "IsseDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar isseDt;
+    protected LocalDate isseDt;
     @XmlElement(name = "StlDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar stlDt;
+    protected LocalDate stlDt;
     @XmlElement(name = "Amt", required = true)
     protected ActiveCurrencyAndAmount amt;
     @XmlElement(name = "FctvDt")
@@ -150,7 +150,7 @@ public class Cheque15 {
      *     {@link String }
      *     
      */
-    public Calendar getIsseDt() {
+    public LocalDate getIsseDt() {
         return isseDt;
     }
 
@@ -162,7 +162,7 @@ public class Cheque15 {
      *     {@link String }
      *     
      */
-    public Cheque15 setIsseDt(Calendar value) {
+    public Cheque15 setIsseDt(LocalDate value) {
         this.isseDt = value;
         return this;
     }
@@ -175,7 +175,7 @@ public class Cheque15 {
      *     {@link String }
      *     
      */
-    public Calendar getStlDt() {
+    public LocalDate getStlDt() {
         return stlDt;
     }
 
@@ -187,7 +187,7 @@ public class Cheque15 {
      *     {@link String }
      *     
      */
-    public Cheque15 setStlDt(Calendar value) {
+    public Cheque15 setStlDt(LocalDate value) {
         this.stlDt = value;
         return this;
     }

@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -46,11 +46,11 @@ public class InvestmentPlan2 {
     @XmlElement(name = "StartDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar startDt;
+    protected LocalDate startDt;
     @XmlElement(name = "EndDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar endDt;
+    protected LocalDate endDt;
     @XmlElement(name = "Amt", required = true)
     protected ActiveCurrencyAndAmount amt;
     @XmlElement(name = "GrssAmtInd")
@@ -125,7 +125,7 @@ public class InvestmentPlan2 {
      *     {@link String }
      *     
      */
-    public Calendar getStartDt() {
+    public LocalDate getStartDt() {
         return startDt;
     }
 
@@ -137,7 +137,7 @@ public class InvestmentPlan2 {
      *     {@link String }
      *     
      */
-    public InvestmentPlan2 setStartDt(Calendar value) {
+    public InvestmentPlan2 setStartDt(LocalDate value) {
         this.startDt = value;
         return this;
     }
@@ -150,7 +150,7 @@ public class InvestmentPlan2 {
      *     {@link String }
      *     
      */
-    public Calendar getEndDt() {
+    public LocalDate getEndDt() {
         return endDt;
     }
 
@@ -162,7 +162,7 @@ public class InvestmentPlan2 {
      *     {@link String }
      *     
      */
-    public InvestmentPlan2 setEndDt(Calendar value) {
+    public InvestmentPlan2 setEndDt(LocalDate value) {
         this.endDt = value;
         return this;
     }

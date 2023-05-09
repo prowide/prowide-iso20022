@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -54,7 +54,7 @@ public class OptionTransactionSD6 {
     @XmlElement(name = "TxIdDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar txIdDt;
+    protected OffsetDateTime txIdDt;
     @XmlElement(name = "TxIdQty", required = true)
     protected FinancialInstrumentQuantity15Choice txIdQty;
     @XmlElement(name = "TxIdOvrsbcptQty")
@@ -169,7 +169,7 @@ public class OptionTransactionSD6 {
      *     {@link String }
      *     
      */
-    public Calendar getTxIdDt() {
+    public OffsetDateTime getTxIdDt() {
         return txIdDt;
     }
 
@@ -181,7 +181,7 @@ public class OptionTransactionSD6 {
      *     {@link String }
      *     
      */
-    public OptionTransactionSD6 setTxIdDt(Calendar value) {
+    public OptionTransactionSD6 setTxIdDt(OffsetDateTime value) {
         this.txIdDt = value;
         return this;
     }

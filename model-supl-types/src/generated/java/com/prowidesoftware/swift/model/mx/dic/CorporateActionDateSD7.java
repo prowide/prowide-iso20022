@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -38,27 +38,27 @@ public class CorporateActionDateSD7 {
     @XmlElement(name = "ActlEarlyXprtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar actlEarlyXprtnDt;
+    protected OffsetDateTime actlEarlyXprtnDt;
     @XmlElement(name = "ActlPrtctXprtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar actlPrtctXprtnDt;
+    protected OffsetDateTime actlPrtctXprtnDt;
     @XmlElement(name = "ActlEarlyPrtctXprtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar actlEarlyPrtctXprtnDt;
+    protected OffsetDateTime actlEarlyPrtctXprtnDt;
     @XmlElement(name = "DTCEarlyPrtctXprtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar dtcEarlyPrtctXprtnDt;
+    protected OffsetDateTime dtcEarlyPrtctXprtnDt;
     @XmlElement(name = "ActlEarlyCoverPrtctXprtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar actlEarlyCoverPrtctXprtnDt;
+    protected OffsetDateTime actlEarlyCoverPrtctXprtnDt;
     @XmlElement(name = "DTCEarlyCoverPrtctXprtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar dtcEarlyCoverPrtctXprtnDt;
+    protected OffsetDateTime dtcEarlyCoverPrtctXprtnDt;
 
     /**
      * Gets the value of the plcAndNm property.
@@ -93,7 +93,7 @@ public class CorporateActionDateSD7 {
      *     {@link String }
      *     
      */
-    public Calendar getActlEarlyXprtnDt() {
+    public OffsetDateTime getActlEarlyXprtnDt() {
         return actlEarlyXprtnDt;
     }
 
@@ -105,7 +105,7 @@ public class CorporateActionDateSD7 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD7 setActlEarlyXprtnDt(Calendar value) {
+    public CorporateActionDateSD7 setActlEarlyXprtnDt(OffsetDateTime value) {
         this.actlEarlyXprtnDt = value;
         return this;
     }
@@ -118,7 +118,7 @@ public class CorporateActionDateSD7 {
      *     {@link String }
      *     
      */
-    public Calendar getActlPrtctXprtnDt() {
+    public OffsetDateTime getActlPrtctXprtnDt() {
         return actlPrtctXprtnDt;
     }
 
@@ -130,7 +130,7 @@ public class CorporateActionDateSD7 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD7 setActlPrtctXprtnDt(Calendar value) {
+    public CorporateActionDateSD7 setActlPrtctXprtnDt(OffsetDateTime value) {
         this.actlPrtctXprtnDt = value;
         return this;
     }
@@ -143,7 +143,7 @@ public class CorporateActionDateSD7 {
      *     {@link String }
      *     
      */
-    public Calendar getActlEarlyPrtctXprtnDt() {
+    public OffsetDateTime getActlEarlyPrtctXprtnDt() {
         return actlEarlyPrtctXprtnDt;
     }
 
@@ -155,7 +155,7 @@ public class CorporateActionDateSD7 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD7 setActlEarlyPrtctXprtnDt(Calendar value) {
+    public CorporateActionDateSD7 setActlEarlyPrtctXprtnDt(OffsetDateTime value) {
         this.actlEarlyPrtctXprtnDt = value;
         return this;
     }
@@ -168,7 +168,7 @@ public class CorporateActionDateSD7 {
      *     {@link String }
      *     
      */
-    public Calendar getDTCEarlyPrtctXprtnDt() {
+    public OffsetDateTime getDTCEarlyPrtctXprtnDt() {
         return dtcEarlyPrtctXprtnDt;
     }
 
@@ -180,7 +180,7 @@ public class CorporateActionDateSD7 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD7 setDTCEarlyPrtctXprtnDt(Calendar value) {
+    public CorporateActionDateSD7 setDTCEarlyPrtctXprtnDt(OffsetDateTime value) {
         this.dtcEarlyPrtctXprtnDt = value;
         return this;
     }
@@ -193,7 +193,7 @@ public class CorporateActionDateSD7 {
      *     {@link String }
      *     
      */
-    public Calendar getActlEarlyCoverPrtctXprtnDt() {
+    public OffsetDateTime getActlEarlyCoverPrtctXprtnDt() {
         return actlEarlyCoverPrtctXprtnDt;
     }
 
@@ -205,7 +205,7 @@ public class CorporateActionDateSD7 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD7 setActlEarlyCoverPrtctXprtnDt(Calendar value) {
+    public CorporateActionDateSD7 setActlEarlyCoverPrtctXprtnDt(OffsetDateTime value) {
         this.actlEarlyCoverPrtctXprtnDt = value;
         return this;
     }
@@ -218,7 +218,7 @@ public class CorporateActionDateSD7 {
      *     {@link String }
      *     
      */
-    public Calendar getDTCEarlyCoverPrtctXprtnDt() {
+    public OffsetDateTime getDTCEarlyCoverPrtctXprtnDt() {
         return dtcEarlyCoverPrtctXprtnDt;
     }
 
@@ -230,7 +230,7 @@ public class CorporateActionDateSD7 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD7 setDTCEarlyCoverPrtctXprtnDt(Calendar value) {
+    public CorporateActionDateSD7 setDTCEarlyCoverPrtctXprtnDt(OffsetDateTime value) {
         this.dtcEarlyCoverPrtctXprtnDt = value;
         return this;
     }

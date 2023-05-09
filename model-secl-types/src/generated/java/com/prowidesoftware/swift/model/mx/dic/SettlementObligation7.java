@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -62,13 +62,13 @@ public class SettlementObligation7 {
     @XmlElement(name = "IntnddSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar intnddSttlmDt;
+    protected LocalDate intnddSttlmDt;
     @XmlElement(name = "FinInstrmId", required = true)
     protected SecurityIdentification14 finInstrmId;
     @XmlElement(name = "TradDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar tradDt;
+    protected LocalDate tradDt;
     @XmlElement(name = "DealPric")
     protected Price4 dealPric;
     @XmlElement(name = "Qty", required = true)
@@ -290,7 +290,7 @@ public class SettlementObligation7 {
      *     {@link String }
      *     
      */
-    public Calendar getIntnddSttlmDt() {
+    public LocalDate getIntnddSttlmDt() {
         return intnddSttlmDt;
     }
 
@@ -302,7 +302,7 @@ public class SettlementObligation7 {
      *     {@link String }
      *     
      */
-    public SettlementObligation7 setIntnddSttlmDt(Calendar value) {
+    public SettlementObligation7 setIntnddSttlmDt(LocalDate value) {
         this.intnddSttlmDt = value;
         return this;
     }
@@ -340,7 +340,7 @@ public class SettlementObligation7 {
      *     {@link String }
      *     
      */
-    public Calendar getTradDt() {
+    public LocalDate getTradDt() {
         return tradDt;
     }
 
@@ -352,7 +352,7 @@ public class SettlementObligation7 {
      *     {@link String }
      *     
      */
-    public SettlementObligation7 setTradDt(Calendar value) {
+    public SettlementObligation7 setTradDt(LocalDate value) {
         this.tradDt = value;
         return this;
     }

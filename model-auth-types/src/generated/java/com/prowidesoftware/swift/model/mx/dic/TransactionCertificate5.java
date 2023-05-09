@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -36,7 +36,7 @@ public class TransactionCertificate5 {
     @XmlElement(name = "TxDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar txDt;
+    protected LocalDate txDt;
     @XmlElement(name = "TxTp")
     protected String txTp;
     @XmlElement(name = "LclInstrm", required = true)
@@ -77,7 +77,7 @@ public class TransactionCertificate5 {
      *     {@link String }
      *     
      */
-    public Calendar getTxDt() {
+    public LocalDate getTxDt() {
         return txDt;
     }
 
@@ -89,7 +89,7 @@ public class TransactionCertificate5 {
      *     {@link String }
      *     
      */
-    public TransactionCertificate5 setTxDt(Calendar value) {
+    public TransactionCertificate5 setTxDt(LocalDate value) {
         this.txDt = value;
         return this;
     }

@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -85,7 +85,7 @@ public class MeetingNotice6 {
     @XmlElement(name = "SctiesBlckgPrdEndDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar sctiesBlckgPrdEndDt;
+    protected OffsetDateTime sctiesBlckgPrdEndDt;
     @XmlElement(name = "EntitlmntFxgDt")
     protected DateFormat1 entitlmntFxgDt;
     @XmlElement(name = "RegnSctiesDdln")
@@ -525,7 +525,7 @@ public class MeetingNotice6 {
      *     {@link String }
      *     
      */
-    public Calendar getSctiesBlckgPrdEndDt() {
+    public OffsetDateTime getSctiesBlckgPrdEndDt() {
         return sctiesBlckgPrdEndDt;
     }
 
@@ -537,7 +537,7 @@ public class MeetingNotice6 {
      *     {@link String }
      *     
      */
-    public MeetingNotice6 setSctiesBlckgPrdEndDt(Calendar value) {
+    public MeetingNotice6 setSctiesBlckgPrdEndDt(OffsetDateTime value) {
         this.sctiesBlckgPrdEndDt = value;
         return this;
     }

@@ -1,12 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.Year;
+import com.prowidesoftware.swift.model.mx.adapters.IsoYearAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -40,9 +42,10 @@ public class PartyIdentification237 {
     protected PartyIdentification198Choice id;
     @XmlElement(name = "CtryOfIncorprtn")
     protected String ctryOfIncorprtn;
-    @XmlElement(name = "YrOfIncorprtn")
+    @XmlElement(name = "YrOfIncorprtn", type = String.class)
+    @XmlJavaTypeAdapter(IsoYearAdapter.class)
     @XmlSchemaType(name = "gYear")
-    protected XMLGregorianCalendar yrOfIncorprtn;
+    protected Year yrOfIncorprtn;
     @XmlElement(name = "ActvtyInd")
     protected String actvtyInd;
     @XmlElement(name = "InvstrTp")
@@ -155,10 +158,10 @@ public class PartyIdentification237 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getYrOfIncorprtn() {
+    public Year getYrOfIncorprtn() {
         return yrOfIncorprtn;
     }
 
@@ -167,10 +170,10 @@ public class PartyIdentification237 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public PartyIdentification237 setYrOfIncorprtn(XMLGregorianCalendar value) {
+    public PartyIdentification237 setYrOfIncorprtn(Year value) {
         this.yrOfIncorprtn = value;
         return this;
     }

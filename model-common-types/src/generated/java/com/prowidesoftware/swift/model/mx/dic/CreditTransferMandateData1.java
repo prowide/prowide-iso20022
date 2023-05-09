@@ -1,7 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -43,21 +44,21 @@ public class CreditTransferMandateData1 {
     @XmlElement(name = "DtOfSgntr", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dtOfSgntr;
+    protected LocalDate dtOfSgntr;
     @XmlElement(name = "DtOfVrfctn", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar dtOfVrfctn;
+    protected OffsetDateTime dtOfVrfctn;
     @XmlElement(name = "ElctrncSgntr")
     protected byte[] elctrncSgntr;
     @XmlElement(name = "FrstPmtDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar frstPmtDt;
+    protected LocalDate frstPmtDt;
     @XmlElement(name = "FnlPmtDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar fnlPmtDt;
+    protected LocalDate fnlPmtDt;
     @XmlElement(name = "Frqcy")
     protected Frequency36Choice frqcy;
     @XmlElement(name = "Rsn")
@@ -121,7 +122,7 @@ public class CreditTransferMandateData1 {
      *     {@link String }
      *     
      */
-    public Calendar getDtOfSgntr() {
+    public LocalDate getDtOfSgntr() {
         return dtOfSgntr;
     }
 
@@ -133,7 +134,7 @@ public class CreditTransferMandateData1 {
      *     {@link String }
      *     
      */
-    public CreditTransferMandateData1 setDtOfSgntr(Calendar value) {
+    public CreditTransferMandateData1 setDtOfSgntr(LocalDate value) {
         this.dtOfSgntr = value;
         return this;
     }
@@ -146,7 +147,7 @@ public class CreditTransferMandateData1 {
      *     {@link String }
      *     
      */
-    public Calendar getDtOfVrfctn() {
+    public OffsetDateTime getDtOfVrfctn() {
         return dtOfVrfctn;
     }
 
@@ -158,7 +159,7 @@ public class CreditTransferMandateData1 {
      *     {@link String }
      *     
      */
-    public CreditTransferMandateData1 setDtOfVrfctn(Calendar value) {
+    public CreditTransferMandateData1 setDtOfVrfctn(OffsetDateTime value) {
         this.dtOfVrfctn = value;
         return this;
     }
@@ -194,7 +195,7 @@ public class CreditTransferMandateData1 {
      *     {@link String }
      *     
      */
-    public Calendar getFrstPmtDt() {
+    public LocalDate getFrstPmtDt() {
         return frstPmtDt;
     }
 
@@ -206,7 +207,7 @@ public class CreditTransferMandateData1 {
      *     {@link String }
      *     
      */
-    public CreditTransferMandateData1 setFrstPmtDt(Calendar value) {
+    public CreditTransferMandateData1 setFrstPmtDt(LocalDate value) {
         this.frstPmtDt = value;
         return this;
     }
@@ -219,7 +220,7 @@ public class CreditTransferMandateData1 {
      *     {@link String }
      *     
      */
-    public Calendar getFnlPmtDt() {
+    public LocalDate getFnlPmtDt() {
         return fnlPmtDt;
     }
 
@@ -231,7 +232,7 @@ public class CreditTransferMandateData1 {
      *     {@link String }
      *     
      */
-    public CreditTransferMandateData1 setFnlPmtDt(Calendar value) {
+    public CreditTransferMandateData1 setFnlPmtDt(LocalDate value) {
         this.fnlPmtDt = value;
         return this;
     }

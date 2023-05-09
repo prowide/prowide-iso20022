@@ -1,8 +1,9 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
@@ -41,11 +42,11 @@ public class ReportData5 {
     @XmlElement(name = "ValDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar valDt;
+    protected LocalDate valDt;
     @XmlElement(name = "DtAndTmStmp", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar dtAndTmStmp;
+    protected OffsetDateTime dtAndTmStmp;
     @XmlElement(name = "Tp", required = true)
     @XmlSchemaType(name = "string")
     protected CallIn1Code tp;
@@ -89,7 +90,7 @@ public class ReportData5 {
      *     {@link String }
      *     
      */
-    public Calendar getValDt() {
+    public LocalDate getValDt() {
         return valDt;
     }
 
@@ -101,7 +102,7 @@ public class ReportData5 {
      *     {@link String }
      *     
      */
-    public ReportData5 setValDt(Calendar value) {
+    public ReportData5 setValDt(LocalDate value) {
         this.valDt = value;
         return this;
     }
@@ -114,7 +115,7 @@ public class ReportData5 {
      *     {@link String }
      *     
      */
-    public Calendar getDtAndTmStmp() {
+    public OffsetDateTime getDtAndTmStmp() {
         return dtAndTmStmp;
     }
 
@@ -126,7 +127,7 @@ public class ReportData5 {
      *     {@link String }
      *     
      */
-    public ReportData5 setDtAndTmStmp(Calendar value) {
+    public ReportData5 setDtAndTmStmp(OffsetDateTime value) {
         this.dtAndTmStmp = value;
         return this;
     }

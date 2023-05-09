@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -37,7 +37,7 @@ public class ClearingPartyAndTime10 {
     @XmlElement(name = "ClrDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar clrDtTm;
+    protected OffsetDateTime clrDtTm;
 
     /**
      * Gets the value of the rsn property.
@@ -97,7 +97,7 @@ public class ClearingPartyAndTime10 {
      *     {@link String }
      *     
      */
-    public Calendar getClrDtTm() {
+    public OffsetDateTime getClrDtTm() {
         return clrDtTm;
     }
 
@@ -109,7 +109,7 @@ public class ClearingPartyAndTime10 {
      *     {@link String }
      *     
      */
-    public ClearingPartyAndTime10 setClrDtTm(Calendar value) {
+    public ClearingPartyAndTime10 setClrDtTm(OffsetDateTime value) {
         this.clrDtTm = value;
         return this;
     }

@@ -1,8 +1,9 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
@@ -44,11 +45,11 @@ public class CollateralMarginNew10 {
     @XmlElement(name = "RptgDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar rptgDtTm;
+    protected OffsetDateTime rptgDtTm;
     @XmlElement(name = "EvtDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar evtDt;
+    protected LocalDate evtDt;
     @XmlElement(name = "CtrPty", required = true)
     protected Counterparty39 ctrPty;
     @XmlElement(name = "CollPrtflId", required = true)
@@ -97,7 +98,7 @@ public class CollateralMarginNew10 {
      *     {@link String }
      *     
      */
-    public Calendar getRptgDtTm() {
+    public OffsetDateTime getRptgDtTm() {
         return rptgDtTm;
     }
 
@@ -109,7 +110,7 @@ public class CollateralMarginNew10 {
      *     {@link String }
      *     
      */
-    public CollateralMarginNew10 setRptgDtTm(Calendar value) {
+    public CollateralMarginNew10 setRptgDtTm(OffsetDateTime value) {
         this.rptgDtTm = value;
         return this;
     }
@@ -122,7 +123,7 @@ public class CollateralMarginNew10 {
      *     {@link String }
      *     
      */
-    public Calendar getEvtDt() {
+    public LocalDate getEvtDt() {
         return evtDt;
     }
 
@@ -134,7 +135,7 @@ public class CollateralMarginNew10 {
      *     {@link String }
      *     
      */
-    public CollateralMarginNew10 setEvtDt(Calendar value) {
+    public CollateralMarginNew10 setEvtDt(LocalDate value) {
         this.evtDt = value;
         return this;
     }

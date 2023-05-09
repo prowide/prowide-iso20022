@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.sys.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime ;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -33,7 +33,7 @@ public class InputTimeCriteria {
     @XmlElement(name = "ToTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar toTm;
+    protected OffsetDateTime toTm;
 
     /**
      * InputChannel
@@ -68,7 +68,7 @@ public class InputTimeCriteria {
      *     {@link String }
      *     
      */
-    public Calendar getToTm() {
+    public OffsetDateTime getToTm() {
         return toTm;
     }
 
@@ -80,7 +80,7 @@ public class InputTimeCriteria {
      *     {@link String }
      *     
      */
-    public InputTimeCriteria setToTm(Calendar value) {
+    public InputTimeCriteria setToTm(OffsetDateTime value) {
         this.toTm = value;
         return this;
     }

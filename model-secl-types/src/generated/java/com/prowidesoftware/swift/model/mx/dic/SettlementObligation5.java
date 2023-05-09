@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -47,7 +47,7 @@ public class SettlementObligation5 {
     @XmlElement(name = "TradDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar tradDt;
+    protected LocalDate tradDt;
     @XmlElement(name = "Qty", required = true)
     protected FinancialInstrumentQuantity1Choice qty;
     @XmlElement(name = "NetPosPric")
@@ -59,7 +59,7 @@ public class SettlementObligation5 {
     @XmlElement(name = "SttlmDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar sttlmDt;
+    protected LocalDate sttlmDt;
     @XmlElement(name = "SctiesMvmntTp", required = true)
     @XmlSchemaType(name = "string")
     protected ReceiveDelivery1Code sctiesMvmntTp;
@@ -152,7 +152,7 @@ public class SettlementObligation5 {
      *     {@link String }
      *     
      */
-    public Calendar getTradDt() {
+    public LocalDate getTradDt() {
         return tradDt;
     }
 
@@ -164,7 +164,7 @@ public class SettlementObligation5 {
      *     {@link String }
      *     
      */
-    public SettlementObligation5 setTradDt(Calendar value) {
+    public SettlementObligation5 setTradDt(LocalDate value) {
         this.tradDt = value;
         return this;
     }
@@ -277,7 +277,7 @@ public class SettlementObligation5 {
      *     {@link String }
      *     
      */
-    public Calendar getSttlmDt() {
+    public LocalDate getSttlmDt() {
         return sttlmDt;
     }
 
@@ -289,7 +289,7 @@ public class SettlementObligation5 {
      *     {@link String }
      *     
      */
-    public SettlementObligation5 setSttlmDt(Calendar value) {
+    public SettlementObligation5 setSttlmDt(LocalDate value) {
         this.sttlmDt = value;
         return this;
     }

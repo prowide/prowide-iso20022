@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -40,7 +40,7 @@ public class StatusAdviceReport3 {
     @XmlElement(name = "MsgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar msgDt;
+    protected LocalDate msgDt;
     @XmlElement(name = "Sttstcs")
     protected OriginalReportStatistics3 sttstcs;
 
@@ -108,7 +108,7 @@ public class StatusAdviceReport3 {
      *     {@link String }
      *     
      */
-    public Calendar getMsgDt() {
+    public LocalDate getMsgDt() {
         return msgDt;
     }
 
@@ -120,7 +120,7 @@ public class StatusAdviceReport3 {
      *     {@link String }
      *     
      */
-    public StatusAdviceReport3 setMsgDt(Calendar value) {
+    public StatusAdviceReport3 setMsgDt(LocalDate value) {
         this.msgDt = value;
         return this;
     }

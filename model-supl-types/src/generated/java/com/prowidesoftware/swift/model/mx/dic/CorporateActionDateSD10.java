@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -44,51 +44,51 @@ public class CorporateActionDateSD10 {
     @XmlElement(name = "DTCLastDayForEarlyRed", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dtcLastDayForEarlyRed;
+    protected LocalDate dtcLastDayForEarlyRed;
     @XmlElement(name = "DTCPosCaptrDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dtcPosCaptrDt;
+    protected LocalDate dtcPosCaptrDt;
     @XmlElement(name = "NewYorkCutOffDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar newYorkCutOffDt;
+    protected LocalDate newYorkCutOffDt;
     @XmlElement(name = "DTCXtndedCutOffDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dtcXtndedCutOffDt;
+    protected LocalDate dtcXtndedCutOffDt;
     @XmlElement(name = "FctvDtByXchg", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar fctvDtByXchg;
+    protected LocalDate fctvDtByXchg;
     @XmlElement(name = "DtDclrdWrthls", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dtDclrdWrthls;
+    protected LocalDate dtDclrdWrthls;
     @XmlElement(name = "DelWrthlsSctyDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar delWrthlsSctyDt;
+    protected LocalDate delWrthlsSctyDt;
     @XmlElement(name = "DTCExitDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dtcExitDt;
+    protected LocalDate dtcExitDt;
     @XmlElement(name = "SbcptBegnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar sbcptBegnDt;
+    protected LocalDate sbcptBegnDt;
     @XmlElement(name = "RghtsDstrbtnAsOfDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar rghtsDstrbtnAsOfDt;
+    protected LocalDate rghtsDstrbtnAsOfDt;
     @XmlElement(name = "RghtsDstrbtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar rghtsDstrbtnDt;
+    protected LocalDate rghtsDstrbtnDt;
     @XmlElement(name = "TmgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar tmgDt;
+    protected LocalDate tmgDt;
 
     /**
      * Gets the value of the plcAndNm property.
@@ -123,7 +123,7 @@ public class CorporateActionDateSD10 {
      *     {@link String }
      *     
      */
-    public Calendar getDTCLastDayForEarlyRed() {
+    public LocalDate getDTCLastDayForEarlyRed() {
         return dtcLastDayForEarlyRed;
     }
 
@@ -135,7 +135,7 @@ public class CorporateActionDateSD10 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD10 setDTCLastDayForEarlyRed(Calendar value) {
+    public CorporateActionDateSD10 setDTCLastDayForEarlyRed(LocalDate value) {
         this.dtcLastDayForEarlyRed = value;
         return this;
     }
@@ -148,7 +148,7 @@ public class CorporateActionDateSD10 {
      *     {@link String }
      *     
      */
-    public Calendar getDTCPosCaptrDt() {
+    public LocalDate getDTCPosCaptrDt() {
         return dtcPosCaptrDt;
     }
 
@@ -160,7 +160,7 @@ public class CorporateActionDateSD10 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD10 setDTCPosCaptrDt(Calendar value) {
+    public CorporateActionDateSD10 setDTCPosCaptrDt(LocalDate value) {
         this.dtcPosCaptrDt = value;
         return this;
     }
@@ -173,7 +173,7 @@ public class CorporateActionDateSD10 {
      *     {@link String }
      *     
      */
-    public Calendar getNewYorkCutOffDt() {
+    public LocalDate getNewYorkCutOffDt() {
         return newYorkCutOffDt;
     }
 
@@ -185,7 +185,7 @@ public class CorporateActionDateSD10 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD10 setNewYorkCutOffDt(Calendar value) {
+    public CorporateActionDateSD10 setNewYorkCutOffDt(LocalDate value) {
         this.newYorkCutOffDt = value;
         return this;
     }
@@ -198,7 +198,7 @@ public class CorporateActionDateSD10 {
      *     {@link String }
      *     
      */
-    public Calendar getDTCXtndedCutOffDt() {
+    public LocalDate getDTCXtndedCutOffDt() {
         return dtcXtndedCutOffDt;
     }
 
@@ -210,7 +210,7 @@ public class CorporateActionDateSD10 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD10 setDTCXtndedCutOffDt(Calendar value) {
+    public CorporateActionDateSD10 setDTCXtndedCutOffDt(LocalDate value) {
         this.dtcXtndedCutOffDt = value;
         return this;
     }
@@ -223,7 +223,7 @@ public class CorporateActionDateSD10 {
      *     {@link String }
      *     
      */
-    public Calendar getFctvDtByXchg() {
+    public LocalDate getFctvDtByXchg() {
         return fctvDtByXchg;
     }
 
@@ -235,7 +235,7 @@ public class CorporateActionDateSD10 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD10 setFctvDtByXchg(Calendar value) {
+    public CorporateActionDateSD10 setFctvDtByXchg(LocalDate value) {
         this.fctvDtByXchg = value;
         return this;
     }
@@ -248,7 +248,7 @@ public class CorporateActionDateSD10 {
      *     {@link String }
      *     
      */
-    public Calendar getDtDclrdWrthls() {
+    public LocalDate getDtDclrdWrthls() {
         return dtDclrdWrthls;
     }
 
@@ -260,7 +260,7 @@ public class CorporateActionDateSD10 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD10 setDtDclrdWrthls(Calendar value) {
+    public CorporateActionDateSD10 setDtDclrdWrthls(LocalDate value) {
         this.dtDclrdWrthls = value;
         return this;
     }
@@ -273,7 +273,7 @@ public class CorporateActionDateSD10 {
      *     {@link String }
      *     
      */
-    public Calendar getDelWrthlsSctyDt() {
+    public LocalDate getDelWrthlsSctyDt() {
         return delWrthlsSctyDt;
     }
 
@@ -285,7 +285,7 @@ public class CorporateActionDateSD10 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD10 setDelWrthlsSctyDt(Calendar value) {
+    public CorporateActionDateSD10 setDelWrthlsSctyDt(LocalDate value) {
         this.delWrthlsSctyDt = value;
         return this;
     }
@@ -298,7 +298,7 @@ public class CorporateActionDateSD10 {
      *     {@link String }
      *     
      */
-    public Calendar getDTCExitDt() {
+    public LocalDate getDTCExitDt() {
         return dtcExitDt;
     }
 
@@ -310,7 +310,7 @@ public class CorporateActionDateSD10 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD10 setDTCExitDt(Calendar value) {
+    public CorporateActionDateSD10 setDTCExitDt(LocalDate value) {
         this.dtcExitDt = value;
         return this;
     }
@@ -323,7 +323,7 @@ public class CorporateActionDateSD10 {
      *     {@link String }
      *     
      */
-    public Calendar getSbcptBegnDt() {
+    public LocalDate getSbcptBegnDt() {
         return sbcptBegnDt;
     }
 
@@ -335,7 +335,7 @@ public class CorporateActionDateSD10 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD10 setSbcptBegnDt(Calendar value) {
+    public CorporateActionDateSD10 setSbcptBegnDt(LocalDate value) {
         this.sbcptBegnDt = value;
         return this;
     }
@@ -348,7 +348,7 @@ public class CorporateActionDateSD10 {
      *     {@link String }
      *     
      */
-    public Calendar getRghtsDstrbtnAsOfDt() {
+    public LocalDate getRghtsDstrbtnAsOfDt() {
         return rghtsDstrbtnAsOfDt;
     }
 
@@ -360,7 +360,7 @@ public class CorporateActionDateSD10 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD10 setRghtsDstrbtnAsOfDt(Calendar value) {
+    public CorporateActionDateSD10 setRghtsDstrbtnAsOfDt(LocalDate value) {
         this.rghtsDstrbtnAsOfDt = value;
         return this;
     }
@@ -373,7 +373,7 @@ public class CorporateActionDateSD10 {
      *     {@link String }
      *     
      */
-    public Calendar getRghtsDstrbtnDt() {
+    public LocalDate getRghtsDstrbtnDt() {
         return rghtsDstrbtnDt;
     }
 
@@ -385,7 +385,7 @@ public class CorporateActionDateSD10 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD10 setRghtsDstrbtnDt(Calendar value) {
+    public CorporateActionDateSD10 setRghtsDstrbtnDt(LocalDate value) {
         this.rghtsDstrbtnDt = value;
         return this;
     }
@@ -398,7 +398,7 @@ public class CorporateActionDateSD10 {
      *     {@link String }
      *     
      */
-    public Calendar getTmgDt() {
+    public LocalDate getTmgDt() {
         return tmgDt;
     }
 
@@ -410,7 +410,7 @@ public class CorporateActionDateSD10 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD10 setTmgDt(Calendar value) {
+    public CorporateActionDateSD10 setTmgDt(LocalDate value) {
         this.tmgDt = value;
         return this;
     }

@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -49,11 +49,11 @@ public class TransparencyDataReport16 {
     @XmlElement(name = "RptgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar rptgDt;
+    protected LocalDate rptgDt;
     @XmlElement(name = "MtrtyDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar mtrtyDt;
+    protected LocalDate mtrtyDt;
     @XmlElement(name = "FinInstrmClssfctn", required = true)
     @XmlSchemaType(name = "string")
     protected NonEquityInstrumentReportingClassification1Code finInstrmClssfctn;
@@ -179,7 +179,7 @@ public class TransparencyDataReport16 {
      *     {@link String }
      *     
      */
-    public Calendar getRptgDt() {
+    public LocalDate getRptgDt() {
         return rptgDt;
     }
 
@@ -191,7 +191,7 @@ public class TransparencyDataReport16 {
      *     {@link String }
      *     
      */
-    public TransparencyDataReport16 setRptgDt(Calendar value) {
+    public TransparencyDataReport16 setRptgDt(LocalDate value) {
         this.rptgDt = value;
         return this;
     }
@@ -204,7 +204,7 @@ public class TransparencyDataReport16 {
      *     {@link String }
      *     
      */
-    public Calendar getMtrtyDt() {
+    public LocalDate getMtrtyDt() {
         return mtrtyDt;
     }
 
@@ -216,7 +216,7 @@ public class TransparencyDataReport16 {
      *     {@link String }
      *     
      */
-    public TransparencyDataReport16 setMtrtyDt(Calendar value) {
+    public TransparencyDataReport16 setMtrtyDt(LocalDate value) {
         this.mtrtyDt = value;
         return this;
     }

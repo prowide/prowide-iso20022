@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -31,7 +31,7 @@ public class FixedOrRecurrentDate1Choice {
     @XmlElement(name = "FxdDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar fxdDt;
+    protected LocalDate fxdDt;
     @XmlElement(name = "RcrntDt")
     protected DateInformation1 rcrntDt;
 
@@ -43,7 +43,7 @@ public class FixedOrRecurrentDate1Choice {
      *     {@link String }
      *     
      */
-    public Calendar getFxdDt() {
+    public LocalDate getFxdDt() {
         return fxdDt;
     }
 
@@ -55,7 +55,7 @@ public class FixedOrRecurrentDate1Choice {
      *     {@link String }
      *     
      */
-    public FixedOrRecurrentDate1Choice setFxdDt(Calendar value) {
+    public FixedOrRecurrentDate1Choice setFxdDt(LocalDate value) {
         this.fxdDt = value;
         return this;
     }

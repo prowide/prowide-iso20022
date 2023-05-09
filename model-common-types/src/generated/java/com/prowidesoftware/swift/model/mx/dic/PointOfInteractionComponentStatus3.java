@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -37,7 +37,7 @@ public class PointOfInteractionComponentStatus3 {
     @XmlElement(name = "XpryDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar xpryDt;
+    protected LocalDate xpryDt;
 
     /**
      * Gets the value of the vrsnNb property.
@@ -97,7 +97,7 @@ public class PointOfInteractionComponentStatus3 {
      *     {@link String }
      *     
      */
-    public Calendar getXpryDt() {
+    public LocalDate getXpryDt() {
         return xpryDt;
     }
 
@@ -109,7 +109,7 @@ public class PointOfInteractionComponentStatus3 {
      *     {@link String }
      *     
      */
-    public PointOfInteractionComponentStatus3 setXpryDt(Calendar value) {
+    public PointOfInteractionComponentStatus3 setXpryDt(LocalDate value) {
         this.xpryDt = value;
         return this;
     }

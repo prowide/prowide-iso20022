@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -56,11 +56,11 @@ public class PaymentTransaction66 {
     @XmlElement(name = "OrgnlReqdExctnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar orgnlReqdExctnDt;
+    protected LocalDate orgnlReqdExctnDt;
     @XmlElement(name = "OrgnlReqdColltnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar orgnlReqdColltnDt;
+    protected LocalDate orgnlReqdColltnDt;
     @XmlElement(name = "OrgnlTxRef")
     protected OriginalTransactionReference22 orgnlTxRef;
 
@@ -253,7 +253,7 @@ public class PaymentTransaction66 {
      *     {@link String }
      *     
      */
-    public Calendar getOrgnlReqdExctnDt() {
+    public LocalDate getOrgnlReqdExctnDt() {
         return orgnlReqdExctnDt;
     }
 
@@ -265,7 +265,7 @@ public class PaymentTransaction66 {
      *     {@link String }
      *     
      */
-    public PaymentTransaction66 setOrgnlReqdExctnDt(Calendar value) {
+    public PaymentTransaction66 setOrgnlReqdExctnDt(LocalDate value) {
         this.orgnlReqdExctnDt = value;
         return this;
     }
@@ -278,7 +278,7 @@ public class PaymentTransaction66 {
      *     {@link String }
      *     
      */
-    public Calendar getOrgnlReqdColltnDt() {
+    public LocalDate getOrgnlReqdColltnDt() {
         return orgnlReqdColltnDt;
     }
 
@@ -290,7 +290,7 @@ public class PaymentTransaction66 {
      *     {@link String }
      *     
      */
-    public PaymentTransaction66 setOrgnlReqdColltnDt(Calendar value) {
+    public PaymentTransaction66 setOrgnlReqdColltnDt(LocalDate value) {
         this.orgnlReqdColltnDt = value;
         return this;
     }

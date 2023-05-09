@@ -2,11 +2,12 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.OffsetDateTime;
+import java.time.YearMonth;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoYearMonthAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
@@ -56,20 +57,20 @@ public class FutureOrOptionDetails1 {
     @XmlElement(name = "LastDlvryDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar lastDlvryDt;
+    protected OffsetDateTime lastDlvryDt;
     @XmlElement(name = "UnitOfMeasr")
     @XmlSchemaType(name = "string")
     protected UnitOfMeasure1Code unitOfMeasr;
     @XmlElement(name = "FutrDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar futrDt;
+    protected OffsetDateTime futrDt;
     @XmlElement(name = "MinSz")
     protected ActiveCurrencyAndAmount minSz;
     @XmlElement(name = "AnncmntDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar anncmntDt;
+    protected OffsetDateTime anncmntDt;
     @XmlElement(name = "Apprnc")
     @XmlSchemaType(name = "string")
     protected Appearance1Code apprnc;
@@ -83,9 +84,10 @@ public class FutureOrOptionDetails1 {
     protected BigDecimal minTradgPricgIncrmt;
     @XmlElement(name = "Purp")
     protected String purp;
-    @XmlElement(name = "CtrctSttlmMnth")
+    @XmlElement(name = "CtrctSttlmMnth", type = String.class)
+    @XmlJavaTypeAdapter(IsoYearMonthAdapter.class)
     @XmlSchemaType(name = "gYearMonth")
-    protected XMLGregorianCalendar ctrctSttlmMnth;
+    protected YearMonth ctrctSttlmMnth;
     @XmlElement(name = "FrstDealgDt")
     protected DateAndDateTime1Choice frstDealgDt;
     @XmlElement(name = "Ratio")
@@ -134,7 +136,7 @@ public class FutureOrOptionDetails1 {
      *     {@link String }
      *     
      */
-    public Calendar getLastDlvryDt() {
+    public OffsetDateTime getLastDlvryDt() {
         return lastDlvryDt;
     }
 
@@ -146,7 +148,7 @@ public class FutureOrOptionDetails1 {
      *     {@link String }
      *     
      */
-    public FutureOrOptionDetails1 setLastDlvryDt(Calendar value) {
+    public FutureOrOptionDetails1 setLastDlvryDt(OffsetDateTime value) {
         this.lastDlvryDt = value;
         return this;
     }
@@ -184,7 +186,7 @@ public class FutureOrOptionDetails1 {
      *     {@link String }
      *     
      */
-    public Calendar getFutrDt() {
+    public OffsetDateTime getFutrDt() {
         return futrDt;
     }
 
@@ -196,7 +198,7 @@ public class FutureOrOptionDetails1 {
      *     {@link String }
      *     
      */
-    public FutureOrOptionDetails1 setFutrDt(Calendar value) {
+    public FutureOrOptionDetails1 setFutrDt(OffsetDateTime value) {
         this.futrDt = value;
         return this;
     }
@@ -234,7 +236,7 @@ public class FutureOrOptionDetails1 {
      *     {@link String }
      *     
      */
-    public Calendar getAnncmntDt() {
+    public OffsetDateTime getAnncmntDt() {
         return anncmntDt;
     }
 
@@ -246,7 +248,7 @@ public class FutureOrOptionDetails1 {
      *     {@link String }
      *     
      */
-    public FutureOrOptionDetails1 setAnncmntDt(Calendar value) {
+    public FutureOrOptionDetails1 setAnncmntDt(OffsetDateTime value) {
         this.anncmntDt = value;
         return this;
     }
@@ -406,10 +408,10 @@ public class FutureOrOptionDetails1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getCtrctSttlmMnth() {
+    public YearMonth getCtrctSttlmMnth() {
         return ctrctSttlmMnth;
     }
 
@@ -418,10 +420,10 @@ public class FutureOrOptionDetails1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public FutureOrOptionDetails1 setCtrctSttlmMnth(XMLGregorianCalendar value) {
+    public FutureOrOptionDetails1 setCtrctSttlmMnth(YearMonth value) {
         this.ctrctSttlmMnth = value;
         return this;
     }

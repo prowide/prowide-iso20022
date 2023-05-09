@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -42,7 +42,7 @@ public class LineItemTax1 {
     @XmlElement(name = "TaxPtDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar taxPtDt;
+    protected LocalDate taxPtDt;
     @XmlElement(name = "ClctdRate")
     protected BigDecimal clctdRate;
     @XmlElement(name = "CtgyCd")
@@ -114,7 +114,7 @@ public class LineItemTax1 {
      *     {@link String }
      *     
      */
-    public Calendar getTaxPtDt() {
+    public LocalDate getTaxPtDt() {
         return taxPtDt;
     }
 
@@ -126,7 +126,7 @@ public class LineItemTax1 {
      *     {@link String }
      *     
      */
-    public LineItemTax1 setTaxPtDt(Calendar value) {
+    public LineItemTax1 setTaxPtDt(LocalDate value) {
         this.taxPtDt = value;
         return this;
     }

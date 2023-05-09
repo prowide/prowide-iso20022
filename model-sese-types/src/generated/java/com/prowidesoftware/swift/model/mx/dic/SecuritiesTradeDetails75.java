@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -68,11 +68,11 @@ public class SecuritiesTradeDetails75 {
     @XmlElement(name = "AckdStsTmStmp", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar ackdStsTmStmp;
+    protected OffsetDateTime ackdStsTmStmp;
     @XmlElement(name = "MtchdStsTmStmp", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar mtchdStsTmStmp;
+    protected OffsetDateTime mtchdStsTmStmp;
     @XmlElement(name = "DealPric")
     protected Price7 dealPric;
     @XmlElement(name = "NbOfDaysAcrd")
@@ -295,7 +295,7 @@ public class SecuritiesTradeDetails75 {
      *     {@link String }
      *     
      */
-    public Calendar getAckdStsTmStmp() {
+    public OffsetDateTime getAckdStsTmStmp() {
         return ackdStsTmStmp;
     }
 
@@ -307,7 +307,7 @@ public class SecuritiesTradeDetails75 {
      *     {@link String }
      *     
      */
-    public SecuritiesTradeDetails75 setAckdStsTmStmp(Calendar value) {
+    public SecuritiesTradeDetails75 setAckdStsTmStmp(OffsetDateTime value) {
         this.ackdStsTmStmp = value;
         return this;
     }
@@ -320,7 +320,7 @@ public class SecuritiesTradeDetails75 {
      *     {@link String }
      *     
      */
-    public Calendar getMtchdStsTmStmp() {
+    public OffsetDateTime getMtchdStsTmStmp() {
         return mtchdStsTmStmp;
     }
 
@@ -332,7 +332,7 @@ public class SecuritiesTradeDetails75 {
      *     {@link String }
      *     
      */
-    public SecuritiesTradeDetails75 setMtchdStsTmStmp(Calendar value) {
+    public SecuritiesTradeDetails75 setMtchdStsTmStmp(OffsetDateTime value) {
         this.mtchdStsTmStmp = value;
         return this;
     }

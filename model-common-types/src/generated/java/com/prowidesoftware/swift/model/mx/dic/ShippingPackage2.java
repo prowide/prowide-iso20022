@@ -2,8 +2,9 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.OffsetTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
@@ -46,11 +47,11 @@ public class ShippingPackage2 {
     @XmlElement(name = "PckpDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar pckpDt;
+    protected LocalDate pckpDt;
     @XmlElement(name = "PckpTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected Calendar pckpTm;
+    protected OffsetTime pckpTm;
     @XmlElement(name = "Dlvry")
     protected DeliveryInformation4 dlvry;
     @XmlElement(name = "Wght")
@@ -120,7 +121,7 @@ public class ShippingPackage2 {
      *     {@link String }
      *     
      */
-    public Calendar getPckpDt() {
+    public LocalDate getPckpDt() {
         return pckpDt;
     }
 
@@ -132,7 +133,7 @@ public class ShippingPackage2 {
      *     {@link String }
      *     
      */
-    public ShippingPackage2 setPckpDt(Calendar value) {
+    public ShippingPackage2 setPckpDt(LocalDate value) {
         this.pckpDt = value;
         return this;
     }
@@ -145,7 +146,7 @@ public class ShippingPackage2 {
      *     {@link String }
      *     
      */
-    public Calendar getPckpTm() {
+    public OffsetTime getPckpTm() {
         return pckpTm;
     }
 
@@ -157,7 +158,7 @@ public class ShippingPackage2 {
      *     {@link String }
      *     
      */
-    public ShippingPackage2 setPckpTm(Calendar value) {
+    public ShippingPackage2 setPckpTm(OffsetTime value) {
         this.pckpTm = value;
         return this;
     }

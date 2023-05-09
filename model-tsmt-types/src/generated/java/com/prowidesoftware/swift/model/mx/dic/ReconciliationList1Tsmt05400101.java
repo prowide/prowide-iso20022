@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.JAXBElement;
@@ -51,7 +51,7 @@ public class ReconciliationList1Tsmt05400101 {
     @XmlElement(name = "Dt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dt;
+    protected LocalDate dt;
     @XmlElementRef(name = "RltdDoc", namespace = "urn:iso:std:iso:20022:tech:xsd:tsmt.054.001.01", type = JAXBElement.class, required = false)
     protected List<JAXBElement<Object>> rltdDoc;
     @XmlElement(name = "Rcpt", required = true)
@@ -71,7 +71,7 @@ public class ReconciliationList1Tsmt05400101 {
     @XmlElement(name = "PmtDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar pmtDt;
+    protected LocalDate pmtDt;
     @XmlElement(name = "PmtTerms", required = true)
     protected PaymentTerms6 pmtTerms;
     @XmlElement(name = "PmtAmt", required = true)
@@ -97,7 +97,7 @@ public class ReconciliationList1Tsmt05400101 {
      *     {@link String }
      *     
      */
-    public Calendar getDt() {
+    public LocalDate getDt() {
         return dt;
     }
 
@@ -109,7 +109,7 @@ public class ReconciliationList1Tsmt05400101 {
      *     {@link String }
      *     
      */
-    public ReconciliationList1Tsmt05400101 setDt(Calendar value) {
+    public ReconciliationList1Tsmt05400101 setDt(LocalDate value) {
         this.dt = value;
         return this;
     }
@@ -278,7 +278,7 @@ public class ReconciliationList1Tsmt05400101 {
      *     {@link String }
      *     
      */
-    public Calendar getPmtDt() {
+    public LocalDate getPmtDt() {
         return pmtDt;
     }
 
@@ -290,7 +290,7 @@ public class ReconciliationList1Tsmt05400101 {
      *     {@link String }
      *     
      */
-    public ReconciliationList1Tsmt05400101 setPmtDt(Calendar value) {
+    public ReconciliationList1Tsmt05400101 setPmtDt(LocalDate value) {
         this.pmtDt = value;
         return this;
     }

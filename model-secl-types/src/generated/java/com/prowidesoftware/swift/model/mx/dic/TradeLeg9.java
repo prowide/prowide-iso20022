@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -77,11 +77,11 @@ public class TradeLeg9 {
     @XmlElement(name = "TradDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar tradDt;
+    protected OffsetDateTime tradDt;
     @XmlElement(name = "TxDtAndTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar txDtAndTm;
+    protected OffsetDateTime txDtAndTm;
     @XmlElement(name = "SttlmDt")
     protected DateFormat15Choice sttlmDt;
     @XmlElement(name = "FinInstrmId", required = true)
@@ -339,7 +339,7 @@ public class TradeLeg9 {
      *     {@link String }
      *     
      */
-    public Calendar getTradDt() {
+    public OffsetDateTime getTradDt() {
         return tradDt;
     }
 
@@ -351,7 +351,7 @@ public class TradeLeg9 {
      *     {@link String }
      *     
      */
-    public TradeLeg9 setTradDt(Calendar value) {
+    public TradeLeg9 setTradDt(OffsetDateTime value) {
         this.tradDt = value;
         return this;
     }
@@ -364,7 +364,7 @@ public class TradeLeg9 {
      *     {@link String }
      *     
      */
-    public Calendar getTxDtAndTm() {
+    public OffsetDateTime getTxDtAndTm() {
         return txDtAndTm;
     }
 
@@ -376,7 +376,7 @@ public class TradeLeg9 {
      *     {@link String }
      *     
      */
-    public TradeLeg9 setTxDtAndTm(Calendar value) {
+    public TradeLeg9 setTxDtAndTm(OffsetDateTime value) {
         this.txDtAndTm = value;
         return this;
     }

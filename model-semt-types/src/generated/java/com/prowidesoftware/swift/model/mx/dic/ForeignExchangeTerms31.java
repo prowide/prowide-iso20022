@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -41,7 +41,7 @@ public class ForeignExchangeTerms31 {
     @XmlElement(name = "QtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar qtnDt;
+    protected OffsetDateTime qtnDt;
     @XmlElement(name = "QtgInstn")
     protected PartyIdentification104Choice qtgInstn;
 
@@ -128,7 +128,7 @@ public class ForeignExchangeTerms31 {
      *     {@link String }
      *     
      */
-    public Calendar getQtnDt() {
+    public OffsetDateTime getQtnDt() {
         return qtnDt;
     }
 
@@ -140,7 +140,7 @@ public class ForeignExchangeTerms31 {
      *     {@link String }
      *     
      */
-    public ForeignExchangeTerms31 setQtnDt(Calendar value) {
+    public ForeignExchangeTerms31 setQtnDt(OffsetDateTime value) {
         this.qtnDt = value;
         return this;
     }

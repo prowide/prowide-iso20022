@@ -2,8 +2,9 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
@@ -78,7 +79,7 @@ public class CreditTransferTransactionInformation2 {
     @XmlElement(name = "IntrBkSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar intrBkSttlmDt;
+    protected LocalDate intrBkSttlmDt;
     @XmlElement(name = "SttlmTmIndctn")
     protected SettlementDateTimeIndication1 sttlmTmIndctn;
     @XmlElement(name = "SttlmTmReq")
@@ -86,11 +87,11 @@ public class CreditTransferTransactionInformation2 {
     @XmlElement(name = "AccptncDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar accptncDtTm;
+    protected OffsetDateTime accptncDtTm;
     @XmlElement(name = "PoolgAdjstmntDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar poolgAdjstmntDt;
+    protected LocalDate poolgAdjstmntDt;
     @XmlElement(name = "InstdAmt")
     protected CurrencyAndAmount instdAmt;
     @XmlElement(name = "XchgRate")
@@ -238,7 +239,7 @@ public class CreditTransferTransactionInformation2 {
      *     {@link String }
      *     
      */
-    public Calendar getIntrBkSttlmDt() {
+    public LocalDate getIntrBkSttlmDt() {
         return intrBkSttlmDt;
     }
 
@@ -250,7 +251,7 @@ public class CreditTransferTransactionInformation2 {
      *     {@link String }
      *     
      */
-    public CreditTransferTransactionInformation2 setIntrBkSttlmDt(Calendar value) {
+    public CreditTransferTransactionInformation2 setIntrBkSttlmDt(LocalDate value) {
         this.intrBkSttlmDt = value;
         return this;
     }
@@ -313,7 +314,7 @@ public class CreditTransferTransactionInformation2 {
      *     {@link String }
      *     
      */
-    public Calendar getAccptncDtTm() {
+    public OffsetDateTime getAccptncDtTm() {
         return accptncDtTm;
     }
 
@@ -325,7 +326,7 @@ public class CreditTransferTransactionInformation2 {
      *     {@link String }
      *     
      */
-    public CreditTransferTransactionInformation2 setAccptncDtTm(Calendar value) {
+    public CreditTransferTransactionInformation2 setAccptncDtTm(OffsetDateTime value) {
         this.accptncDtTm = value;
         return this;
     }
@@ -338,7 +339,7 @@ public class CreditTransferTransactionInformation2 {
      *     {@link String }
      *     
      */
-    public Calendar getPoolgAdjstmntDt() {
+    public LocalDate getPoolgAdjstmntDt() {
         return poolgAdjstmntDt;
     }
 
@@ -350,7 +351,7 @@ public class CreditTransferTransactionInformation2 {
      *     {@link String }
      *     
      */
-    public CreditTransferTransactionInformation2 setPoolgAdjstmntDt(Calendar value) {
+    public CreditTransferTransactionInformation2 setPoolgAdjstmntDt(LocalDate value) {
         this.poolgAdjstmntDt = value;
         return this;
     }

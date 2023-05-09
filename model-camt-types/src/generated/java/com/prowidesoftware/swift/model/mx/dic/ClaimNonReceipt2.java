@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -31,7 +31,7 @@ public class ClaimNonReceipt2 {
     @XmlElement(name = "DtPrcd", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dtPrcd;
+    protected LocalDate dtPrcd;
     @XmlElement(name = "OrgnlNxtAgt")
     protected BranchAndFinancialInstitutionIdentification6 orgnlNxtAgt;
 
@@ -43,7 +43,7 @@ public class ClaimNonReceipt2 {
      *     {@link String }
      *     
      */
-    public Calendar getDtPrcd() {
+    public LocalDate getDtPrcd() {
         return dtPrcd;
     }
 
@@ -55,7 +55,7 @@ public class ClaimNonReceipt2 {
      *     {@link String }
      *     
      */
-    public ClaimNonReceipt2 setDtPrcd(Calendar value) {
+    public ClaimNonReceipt2 setDtPrcd(LocalDate value) {
         this.dtPrcd = value;
         return this;
     }

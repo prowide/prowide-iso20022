@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -33,7 +33,7 @@ public class TreasuryProfile1 {
     @XmlElement(name = "Dt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dt;
+    protected LocalDate dt;
     @XmlElement(name = "TradrTp", required = true)
     protected PartyRole5Choice tradrTp;
     @XmlElement(name = "Rate", required = true)
@@ -47,7 +47,7 @@ public class TreasuryProfile1 {
      *     {@link String }
      *     
      */
-    public Calendar getDt() {
+    public LocalDate getDt() {
         return dt;
     }
 
@@ -59,7 +59,7 @@ public class TreasuryProfile1 {
      *     {@link String }
      *     
      */
-    public TreasuryProfile1 setDt(Calendar value) {
+    public TreasuryProfile1 setDt(LocalDate value) {
         this.dt = value;
         return this;
     }

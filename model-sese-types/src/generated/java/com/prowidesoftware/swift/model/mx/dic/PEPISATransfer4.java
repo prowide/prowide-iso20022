@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -46,7 +46,7 @@ public class PEPISATransfer4 {
     @XmlElement(name = "ActlTrfDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar actlTrfDt;
+    protected LocalDate actlTrfDt;
     @XmlElement(name = "RsdlCshInd")
     protected boolean rsdlCshInd;
     @XmlElement(name = "ISA")
@@ -141,7 +141,7 @@ public class PEPISATransfer4 {
      *     {@link String }
      *     
      */
-    public Calendar getActlTrfDt() {
+    public LocalDate getActlTrfDt() {
         return actlTrfDt;
     }
 
@@ -153,7 +153,7 @@ public class PEPISATransfer4 {
      *     {@link String }
      *     
      */
-    public PEPISATransfer4 setActlTrfDt(Calendar value) {
+    public PEPISATransfer4 setActlTrfDt(LocalDate value) {
         this.actlTrfDt = value;
         return this;
     }

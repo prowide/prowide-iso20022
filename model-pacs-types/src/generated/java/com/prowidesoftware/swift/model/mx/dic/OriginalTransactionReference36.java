@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -56,11 +56,11 @@ public class OriginalTransactionReference36 {
     @XmlElement(name = "IntrBkSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar intrBkSttlmDt;
+    protected LocalDate intrBkSttlmDt;
     @XmlElement(name = "ReqdColltnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar reqdColltnDt;
+    protected LocalDate reqdColltnDt;
     @XmlElement(name = "ReqdExctnDt")
     protected DateAndDateTime2Choice reqdExctnDt;
     @XmlElement(name = "CdtrSchmeId")
@@ -159,7 +159,7 @@ public class OriginalTransactionReference36 {
      *     {@link String }
      *     
      */
-    public Calendar getIntrBkSttlmDt() {
+    public LocalDate getIntrBkSttlmDt() {
         return intrBkSttlmDt;
     }
 
@@ -171,7 +171,7 @@ public class OriginalTransactionReference36 {
      *     {@link String }
      *     
      */
-    public OriginalTransactionReference36 setIntrBkSttlmDt(Calendar value) {
+    public OriginalTransactionReference36 setIntrBkSttlmDt(LocalDate value) {
         this.intrBkSttlmDt = value;
         return this;
     }
@@ -184,7 +184,7 @@ public class OriginalTransactionReference36 {
      *     {@link String }
      *     
      */
-    public Calendar getReqdColltnDt() {
+    public LocalDate getReqdColltnDt() {
         return reqdColltnDt;
     }
 
@@ -196,7 +196,7 @@ public class OriginalTransactionReference36 {
      *     {@link String }
      *     
      */
-    public OriginalTransactionReference36 setReqdColltnDt(Calendar value) {
+    public OriginalTransactionReference36 setReqdColltnDt(LocalDate value) {
         this.reqdColltnDt = value;
         return this;
     }

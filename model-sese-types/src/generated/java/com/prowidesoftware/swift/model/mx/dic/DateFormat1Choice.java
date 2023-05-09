@@ -1,7 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -33,14 +34,14 @@ public class DateFormat1Choice {
     @XmlElement(name = "Dt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dt;
+    protected LocalDate dt;
     @XmlElement(name = "Cd")
     @XmlSchemaType(name = "string")
     protected SettlementDate1Code cd;
     @XmlElement(name = "DtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar dtTm;
+    protected OffsetDateTime dtTm;
 
     /**
      * Gets the value of the dt property.
@@ -50,7 +51,7 @@ public class DateFormat1Choice {
      *     {@link String }
      *     
      */
-    public Calendar getDt() {
+    public LocalDate getDt() {
         return dt;
     }
 
@@ -62,7 +63,7 @@ public class DateFormat1Choice {
      *     {@link String }
      *     
      */
-    public DateFormat1Choice setDt(Calendar value) {
+    public DateFormat1Choice setDt(LocalDate value) {
         this.dt = value;
         return this;
     }
@@ -100,7 +101,7 @@ public class DateFormat1Choice {
      *     {@link String }
      *     
      */
-    public Calendar getDtTm() {
+    public OffsetDateTime getDtTm() {
         return dtTm;
     }
 
@@ -112,7 +113,7 @@ public class DateFormat1Choice {
      *     {@link String }
      *     
      */
-    public DateFormat1Choice setDtTm(Calendar value) {
+    public DateFormat1Choice setDtTm(OffsetDateTime value) {
         this.dtTm = value;
         return this;
     }

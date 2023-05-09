@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -31,7 +31,7 @@ public class DateQuarter1Choice {
     @XmlElement(name = "Dt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dt;
+    protected LocalDate dt;
     @XmlElement(name = "Prd")
     protected String prd;
 
@@ -43,7 +43,7 @@ public class DateQuarter1Choice {
      *     {@link String }
      *     
      */
-    public Calendar getDt() {
+    public LocalDate getDt() {
         return dt;
     }
 
@@ -55,7 +55,7 @@ public class DateQuarter1Choice {
      *     {@link String }
      *     
      */
-    public DateQuarter1Choice setDt(Calendar value) {
+    public DateQuarter1Choice setDt(LocalDate value) {
         this.dt = value;
         return this;
     }

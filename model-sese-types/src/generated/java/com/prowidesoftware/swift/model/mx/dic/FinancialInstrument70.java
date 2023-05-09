@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -89,11 +89,11 @@ public class FinancialInstrument70 {
     @XmlElement(name = "ReqdTradDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar reqdTradDt;
+    protected LocalDate reqdTradDt;
     @XmlElement(name = "ReqdSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar reqdSttlmDt;
+    protected LocalDate reqdSttlmDt;
     @XmlElement(name = "FctvTrfDt")
     protected DateAndDateTime2Choice fctvTrfDt;
     @XmlElement(name = "FctvSttlmDt")
@@ -523,7 +523,7 @@ public class FinancialInstrument70 {
      *     {@link String }
      *     
      */
-    public Calendar getReqdTradDt() {
+    public LocalDate getReqdTradDt() {
         return reqdTradDt;
     }
 
@@ -535,7 +535,7 @@ public class FinancialInstrument70 {
      *     {@link String }
      *     
      */
-    public FinancialInstrument70 setReqdTradDt(Calendar value) {
+    public FinancialInstrument70 setReqdTradDt(LocalDate value) {
         this.reqdTradDt = value;
         return this;
     }
@@ -548,7 +548,7 @@ public class FinancialInstrument70 {
      *     {@link String }
      *     
      */
-    public Calendar getReqdSttlmDt() {
+    public LocalDate getReqdSttlmDt() {
         return reqdSttlmDt;
     }
 
@@ -560,7 +560,7 @@ public class FinancialInstrument70 {
      *     {@link String }
      *     
      */
-    public FinancialInstrument70 setReqdSttlmDt(Calendar value) {
+    public FinancialInstrument70 setReqdSttlmDt(LocalDate value) {
         this.reqdSttlmDt = value;
         return this;
     }

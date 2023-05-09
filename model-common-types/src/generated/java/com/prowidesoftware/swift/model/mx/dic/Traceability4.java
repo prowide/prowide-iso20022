@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -37,11 +37,11 @@ public class Traceability4 {
     @XmlElement(name = "TracDtTmIn", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar tracDtTmIn;
+    protected OffsetDateTime tracDtTmIn;
     @XmlElement(name = "TracDtTmOut", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar tracDtTmOut;
+    protected OffsetDateTime tracDtTmOut;
 
     /**
      * Gets the value of the rlayId property.
@@ -101,7 +101,7 @@ public class Traceability4 {
      *     {@link String }
      *     
      */
-    public Calendar getTracDtTmIn() {
+    public OffsetDateTime getTracDtTmIn() {
         return tracDtTmIn;
     }
 
@@ -113,7 +113,7 @@ public class Traceability4 {
      *     {@link String }
      *     
      */
-    public Traceability4 setTracDtTmIn(Calendar value) {
+    public Traceability4 setTracDtTmIn(OffsetDateTime value) {
         this.tracDtTmIn = value;
         return this;
     }
@@ -126,7 +126,7 @@ public class Traceability4 {
      *     {@link String }
      *     
      */
-    public Calendar getTracDtTmOut() {
+    public OffsetDateTime getTracDtTmOut() {
         return tracDtTmOut;
     }
 
@@ -138,7 +138,7 @@ public class Traceability4 {
      *     {@link String }
      *     
      */
-    public Traceability4 setTracDtTmOut(Calendar value) {
+    public Traceability4 setTracDtTmOut(OffsetDateTime value) {
         this.tracDtTmOut = value;
         return this;
     }

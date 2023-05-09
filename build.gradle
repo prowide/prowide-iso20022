@@ -37,6 +37,7 @@ project.ext {
 version = 'SRU2022-10.0.0-RC1-SNAPSHOT'
 
 allprojects {
+
 	tasks.withType(JavaCompile) {
 		options.encoding = 'UTF-8'
 		java {
@@ -44,8 +45,10 @@ allprojects {
 				languageVersion.set(JavaLanguageVersion.of(11))
 			}
 		}
-		doFirst {
-			println 'Compiling with ' + getJavaCompiler().get().getMetadata().getInstallationPath()
+		doLast {
+			if (getJavaCompiler().isPresent()) {
+				println 'Compiling with ' + getJavaCompiler().get().getMetadata().getInstallationPath()
+			}
 		}
 	}
 
@@ -240,7 +243,7 @@ javadoc {
 	title = "Prowide ISO 20022 API Reference"
 	options.footer="${SRU}, generated ${formattedDate()}"
 	options.author false
-	options.links 'http://docs.oracle.com/javase/11/docs/api/'
+	options.links 'http://docs.oracle.com/javase/8/docs/api/'
 
 	// this will fail when the option is not available (older JDK)
 	options.addBooleanOption("-allow-script-in-comments", true)

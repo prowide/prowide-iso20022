@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -33,7 +33,7 @@ public class DateCodeAndTimeFormat4 {
     @XmlElement(name = "Tm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected Calendar tm;
+    protected OffsetTime tm;
 
     /**
      * Gets the value of the dtCd property.
@@ -68,7 +68,7 @@ public class DateCodeAndTimeFormat4 {
      *     {@link String }
      *     
      */
-    public Calendar getTm() {
+    public OffsetTime getTm() {
         return tm;
     }
 
@@ -80,7 +80,7 @@ public class DateCodeAndTimeFormat4 {
      *     {@link String }
      *     
      */
-    public DateCodeAndTimeFormat4 setTm(Calendar value) {
+    public DateCodeAndTimeFormat4 setTm(OffsetTime value) {
         this.tm = value;
         return this;
     }

@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -85,7 +85,7 @@ public class InvestmentAccountOwnershipInformation14 {
     @XmlElement(name = "FATCARptgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar fatcaRptgDt;
+    protected LocalDate fatcaRptgDt;
     @XmlElement(name = "CRSFormTp")
     protected List<CRSForm1Choice> crsFormTp;
     @XmlElement(name = "CRSSts")
@@ -93,7 +93,7 @@ public class InvestmentAccountOwnershipInformation14 {
     @XmlElement(name = "CRSRptgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar crsRptgDt;
+    protected LocalDate crsRptgDt;
     @XmlElement(name = "OthrId")
     protected List<GenericIdentification82> othrId;
     @XmlElement(name = "TaxXmptn")
@@ -436,7 +436,7 @@ public class InvestmentAccountOwnershipInformation14 {
      *     {@link String }
      *     
      */
-    public Calendar getFATCARptgDt() {
+    public LocalDate getFATCARptgDt() {
         return fatcaRptgDt;
     }
 
@@ -448,7 +448,7 @@ public class InvestmentAccountOwnershipInformation14 {
      *     {@link String }
      *     
      */
-    public InvestmentAccountOwnershipInformation14 setFATCARptgDt(Calendar value) {
+    public InvestmentAccountOwnershipInformation14 setFATCARptgDt(LocalDate value) {
         this.fatcaRptgDt = value;
         return this;
     }
@@ -523,7 +523,7 @@ public class InvestmentAccountOwnershipInformation14 {
      *     {@link String }
      *     
      */
-    public Calendar getCRSRptgDt() {
+    public LocalDate getCRSRptgDt() {
         return crsRptgDt;
     }
 
@@ -535,7 +535,7 @@ public class InvestmentAccountOwnershipInformation14 {
      *     {@link String }
      *     
      */
-    public InvestmentAccountOwnershipInformation14 setCRSRptgDt(Calendar value) {
+    public InvestmentAccountOwnershipInformation14 setCRSRptgDt(LocalDate value) {
         this.crsRptgDt = value;
         return this;
     }

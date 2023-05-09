@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -82,15 +82,15 @@ public class FinancialInstrument69 {
     @XmlElement(name = "ReqdTrfDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar reqdTrfDt;
+    protected LocalDate reqdTrfDt;
     @XmlElement(name = "ReqdTradDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar reqdTradDt;
+    protected LocalDate reqdTradDt;
     @XmlElement(name = "ReqdSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar reqdSttlmDt;
+    protected LocalDate reqdSttlmDt;
     @XmlElement(name = "PmtDtls")
     protected PaymentInstrument14 pmtDtls;
     @XmlElement(name = "CrstllstnDtls")
@@ -466,7 +466,7 @@ public class FinancialInstrument69 {
      *     {@link String }
      *     
      */
-    public Calendar getReqdTrfDt() {
+    public LocalDate getReqdTrfDt() {
         return reqdTrfDt;
     }
 
@@ -478,7 +478,7 @@ public class FinancialInstrument69 {
      *     {@link String }
      *     
      */
-    public FinancialInstrument69 setReqdTrfDt(Calendar value) {
+    public FinancialInstrument69 setReqdTrfDt(LocalDate value) {
         this.reqdTrfDt = value;
         return this;
     }
@@ -491,7 +491,7 @@ public class FinancialInstrument69 {
      *     {@link String }
      *     
      */
-    public Calendar getReqdTradDt() {
+    public LocalDate getReqdTradDt() {
         return reqdTradDt;
     }
 
@@ -503,7 +503,7 @@ public class FinancialInstrument69 {
      *     {@link String }
      *     
      */
-    public FinancialInstrument69 setReqdTradDt(Calendar value) {
+    public FinancialInstrument69 setReqdTradDt(LocalDate value) {
         this.reqdTradDt = value;
         return this;
     }
@@ -516,7 +516,7 @@ public class FinancialInstrument69 {
      *     {@link String }
      *     
      */
-    public Calendar getReqdSttlmDt() {
+    public LocalDate getReqdSttlmDt() {
         return reqdSttlmDt;
     }
 
@@ -528,7 +528,7 @@ public class FinancialInstrument69 {
      *     {@link String }
      *     
      */
-    public FinancialInstrument69 setReqdSttlmDt(Calendar value) {
+    public FinancialInstrument69 setReqdSttlmDt(LocalDate value) {
         this.reqdSttlmDt = value;
         return this;
     }

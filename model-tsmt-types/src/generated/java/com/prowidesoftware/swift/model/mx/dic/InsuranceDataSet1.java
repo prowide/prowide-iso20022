@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -49,11 +49,11 @@ public class InsuranceDataSet1 {
     @XmlElement(name = "IsseDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar isseDt;
+    protected LocalDate isseDt;
     @XmlElement(name = "FctvDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar fctvDt;
+    protected LocalDate fctvDt;
     @XmlElement(name = "PlcOfIsse")
     protected PostalAddress5 plcOfIsse;
     @XmlElement(name = "InsrncDocId", required = true)
@@ -134,7 +134,7 @@ public class InsuranceDataSet1 {
      *     {@link String }
      *     
      */
-    public Calendar getIsseDt() {
+    public LocalDate getIsseDt() {
         return isseDt;
     }
 
@@ -146,7 +146,7 @@ public class InsuranceDataSet1 {
      *     {@link String }
      *     
      */
-    public InsuranceDataSet1 setIsseDt(Calendar value) {
+    public InsuranceDataSet1 setIsseDt(LocalDate value) {
         this.isseDt = value;
         return this;
     }
@@ -159,7 +159,7 @@ public class InsuranceDataSet1 {
      *     {@link String }
      *     
      */
-    public Calendar getFctvDt() {
+    public LocalDate getFctvDt() {
         return fctvDt;
     }
 
@@ -171,7 +171,7 @@ public class InsuranceDataSet1 {
      *     {@link String }
      *     
      */
-    public InsuranceDataSet1 setFctvDt(Calendar value) {
+    public InsuranceDataSet1 setFctvDt(LocalDate value) {
         this.fctvDt = value;
         return this;
     }

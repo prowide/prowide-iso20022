@@ -1,8 +1,9 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
@@ -47,11 +48,11 @@ public class ReuseDataReportCorrection15 {
     @XmlElement(name = "EvtDay", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar evtDay;
+    protected LocalDate evtDay;
     @XmlElement(name = "RptgDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar rptgDtTm;
+    protected OffsetDateTime rptgDtTm;
     @XmlElement(name = "FndgSrc")
     protected List<FundingSource3> fndgSrc;
     @XmlElement(name = "RcncltnFlg")
@@ -150,7 +151,7 @@ public class ReuseDataReportCorrection15 {
      *     {@link String }
      *     
      */
-    public Calendar getEvtDay() {
+    public LocalDate getEvtDay() {
         return evtDay;
     }
 
@@ -162,7 +163,7 @@ public class ReuseDataReportCorrection15 {
      *     {@link String }
      *     
      */
-    public ReuseDataReportCorrection15 setEvtDay(Calendar value) {
+    public ReuseDataReportCorrection15 setEvtDay(LocalDate value) {
         this.evtDay = value;
         return this;
     }
@@ -175,7 +176,7 @@ public class ReuseDataReportCorrection15 {
      *     {@link String }
      *     
      */
-    public Calendar getRptgDtTm() {
+    public OffsetDateTime getRptgDtTm() {
         return rptgDtTm;
     }
 
@@ -187,7 +188,7 @@ public class ReuseDataReportCorrection15 {
      *     {@link String }
      *     
      */
-    public ReuseDataReportCorrection15 setRptgDtTm(Calendar value) {
+    public ReuseDataReportCorrection15 setRptgDtTm(OffsetDateTime value) {
         this.rptgDtTm = value;
         return this;
     }

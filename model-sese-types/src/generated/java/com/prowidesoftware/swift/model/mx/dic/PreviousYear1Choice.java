@@ -1,14 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.Year;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoYearAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -30,9 +32,10 @@ public class PreviousYear1Choice {
 
     @XmlElement(name = "AllPrvsYrs")
     protected String allPrvsYrs;
-    @XmlElement(name = "SpcfcPrvsYrs")
+    @XmlElement(name = "SpcfcPrvsYrs", type = String.class)
+    @XmlJavaTypeAdapter(IsoYearAdapter.class)
     @XmlSchemaType(name = "gYear")
-    protected List<XMLGregorianCalendar> spcfcPrvsYrs;
+    protected List<Year> spcfcPrvsYrs;
 
     /**
      * Gets the value of the allPrvsYrs property.
@@ -77,13 +80,13 @@ public class PreviousYear1Choice {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link XMLGregorianCalendar }
+     * {@link String }
      * 
      * 
      * @return
      *     The value of the spcfcPrvsYrs property.
      */
-    public List<XMLGregorianCalendar> getSpcfcPrvsYrs() {
+    public List<Year> getSpcfcPrvsYrs() {
         if (spcfcPrvsYrs == null) {
             spcfcPrvsYrs = new ArrayList<>();
         }
@@ -110,7 +113,7 @@ public class PreviousYear1Choice {
      * @see #getSpcfcPrvsYrs()
      * 
      */
-    public PreviousYear1Choice addSpcfcPrvsYrs(XMLGregorianCalendar spcfcPrvsYrs) {
+    public PreviousYear1Choice addSpcfcPrvsYrs(Year spcfcPrvsYrs) {
         getSpcfcPrvsYrs().add(spcfcPrvsYrs);
         return this;
     }

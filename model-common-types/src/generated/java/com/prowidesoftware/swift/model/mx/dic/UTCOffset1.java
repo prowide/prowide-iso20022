@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -33,7 +33,7 @@ public class UTCOffset1 {
     @XmlElement(name = "NbOfHrs", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected Calendar nbOfHrs;
+    protected OffsetTime nbOfHrs;
 
     /**
      * Gets the value of the sgn property.
@@ -60,7 +60,7 @@ public class UTCOffset1 {
      *     {@link String }
      *     
      */
-    public Calendar getNbOfHrs() {
+    public OffsetTime getNbOfHrs() {
         return nbOfHrs;
     }
 
@@ -72,7 +72,7 @@ public class UTCOffset1 {
      *     {@link String }
      *     
      */
-    public UTCOffset1 setNbOfHrs(Calendar value) {
+    public UTCOffset1 setNbOfHrs(OffsetTime value) {
         this.nbOfHrs = value;
         return this;
     }

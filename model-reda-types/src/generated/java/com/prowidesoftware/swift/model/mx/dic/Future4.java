@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -43,7 +43,7 @@ public class Future4 {
     @XmlElement(name = "FutrDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar futrDt;
+    protected OffsetDateTime futrDt;
     @XmlElement(name = "MinSz")
     protected ActiveCurrencyAndAmount minSz;
     @XmlElement(name = "UnitOfMeasr")
@@ -111,7 +111,7 @@ public class Future4 {
      *     {@link String }
      *     
      */
-    public Calendar getFutrDt() {
+    public OffsetDateTime getFutrDt() {
         return futrDt;
     }
 
@@ -123,7 +123,7 @@ public class Future4 {
      *     {@link String }
      *     
      */
-    public Future4 setFutrDt(Calendar value) {
+    public Future4 setFutrDt(OffsetDateTime value) {
         this.futrDt = value;
         return this;
     }

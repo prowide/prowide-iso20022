@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -88,31 +88,31 @@ public class FinancialInstrument96 {
     @XmlElement(name = "LnchDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar lnchDt;
+    protected LocalDate lnchDt;
     @XmlElement(name = "FndEndDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar fndEndDt;
+    protected LocalDate fndEndDt;
     @XmlElement(name = "TermntnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar termntnDt;
+    protected LocalDate termntnDt;
     @XmlElement(name = "InitlOfferEndDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar initlOfferEndDt;
+    protected LocalDate initlOfferEndDt;
     @XmlElement(name = "SspnsnStartDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar sspnsnStartDt;
+    protected LocalDate sspnsnStartDt;
     @XmlElement(name = "SspnsnEndDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar sspnsnEndDt;
+    protected LocalDate sspnsnEndDt;
     @XmlElement(name = "MtrtyDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar mtrtyDt;
+    protected LocalDate mtrtyDt;
     @XmlElement(name = "MayBeTermntdEarly")
     @XmlSchemaType(name = "string")
     protected TargetMarket1Code mayBeTermntdEarly;
@@ -442,7 +442,7 @@ public class FinancialInstrument96 {
      *     {@link String }
      *     
      */
-    public Calendar getLnchDt() {
+    public LocalDate getLnchDt() {
         return lnchDt;
     }
 
@@ -454,7 +454,7 @@ public class FinancialInstrument96 {
      *     {@link String }
      *     
      */
-    public FinancialInstrument96 setLnchDt(Calendar value) {
+    public FinancialInstrument96 setLnchDt(LocalDate value) {
         this.lnchDt = value;
         return this;
     }
@@ -467,7 +467,7 @@ public class FinancialInstrument96 {
      *     {@link String }
      *     
      */
-    public Calendar getFndEndDt() {
+    public LocalDate getFndEndDt() {
         return fndEndDt;
     }
 
@@ -479,7 +479,7 @@ public class FinancialInstrument96 {
      *     {@link String }
      *     
      */
-    public FinancialInstrument96 setFndEndDt(Calendar value) {
+    public FinancialInstrument96 setFndEndDt(LocalDate value) {
         this.fndEndDt = value;
         return this;
     }
@@ -492,7 +492,7 @@ public class FinancialInstrument96 {
      *     {@link String }
      *     
      */
-    public Calendar getTermntnDt() {
+    public LocalDate getTermntnDt() {
         return termntnDt;
     }
 
@@ -504,7 +504,7 @@ public class FinancialInstrument96 {
      *     {@link String }
      *     
      */
-    public FinancialInstrument96 setTermntnDt(Calendar value) {
+    public FinancialInstrument96 setTermntnDt(LocalDate value) {
         this.termntnDt = value;
         return this;
     }
@@ -517,7 +517,7 @@ public class FinancialInstrument96 {
      *     {@link String }
      *     
      */
-    public Calendar getInitlOfferEndDt() {
+    public LocalDate getInitlOfferEndDt() {
         return initlOfferEndDt;
     }
 
@@ -529,7 +529,7 @@ public class FinancialInstrument96 {
      *     {@link String }
      *     
      */
-    public FinancialInstrument96 setInitlOfferEndDt(Calendar value) {
+    public FinancialInstrument96 setInitlOfferEndDt(LocalDate value) {
         this.initlOfferEndDt = value;
         return this;
     }
@@ -542,7 +542,7 @@ public class FinancialInstrument96 {
      *     {@link String }
      *     
      */
-    public Calendar getSspnsnStartDt() {
+    public LocalDate getSspnsnStartDt() {
         return sspnsnStartDt;
     }
 
@@ -554,7 +554,7 @@ public class FinancialInstrument96 {
      *     {@link String }
      *     
      */
-    public FinancialInstrument96 setSspnsnStartDt(Calendar value) {
+    public FinancialInstrument96 setSspnsnStartDt(LocalDate value) {
         this.sspnsnStartDt = value;
         return this;
     }
@@ -567,7 +567,7 @@ public class FinancialInstrument96 {
      *     {@link String }
      *     
      */
-    public Calendar getSspnsnEndDt() {
+    public LocalDate getSspnsnEndDt() {
         return sspnsnEndDt;
     }
 
@@ -579,7 +579,7 @@ public class FinancialInstrument96 {
      *     {@link String }
      *     
      */
-    public FinancialInstrument96 setSspnsnEndDt(Calendar value) {
+    public FinancialInstrument96 setSspnsnEndDt(LocalDate value) {
         this.sspnsnEndDt = value;
         return this;
     }
@@ -592,7 +592,7 @@ public class FinancialInstrument96 {
      *     {@link String }
      *     
      */
-    public Calendar getMtrtyDt() {
+    public LocalDate getMtrtyDt() {
         return mtrtyDt;
     }
 
@@ -604,7 +604,7 @@ public class FinancialInstrument96 {
      *     {@link String }
      *     
      */
-    public FinancialInstrument96 setMtrtyDt(Calendar value) {
+    public FinancialInstrument96 setMtrtyDt(LocalDate value) {
         this.mtrtyDt = value;
         return this;
     }

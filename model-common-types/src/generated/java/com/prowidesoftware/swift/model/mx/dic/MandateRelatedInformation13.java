@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -34,7 +34,7 @@ public class MandateRelatedInformation13 {
     @XmlElement(name = "DtOfSgntr", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dtOfSgntr;
+    protected LocalDate dtOfSgntr;
     @XmlElement(name = "MndtImg")
     protected byte[] mndtImg;
 
@@ -71,7 +71,7 @@ public class MandateRelatedInformation13 {
      *     {@link String }
      *     
      */
-    public Calendar getDtOfSgntr() {
+    public LocalDate getDtOfSgntr() {
         return dtOfSgntr;
     }
 
@@ -83,7 +83,7 @@ public class MandateRelatedInformation13 {
      *     {@link String }
      *     
      */
-    public MandateRelatedInformation13 setDtOfSgntr(Calendar value) {
+    public MandateRelatedInformation13 setDtOfSgntr(LocalDate value) {
         this.dtOfSgntr = value;
         return this;
     }

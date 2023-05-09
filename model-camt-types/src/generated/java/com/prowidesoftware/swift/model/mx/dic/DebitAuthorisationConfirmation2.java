@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -37,7 +37,7 @@ public class DebitAuthorisationConfirmation2 {
     @XmlElement(name = "ValDtToDbt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar valDtToDbt;
+    protected LocalDate valDtToDbt;
     @XmlElement(name = "Rsn")
     protected String rsn;
 
@@ -91,7 +91,7 @@ public class DebitAuthorisationConfirmation2 {
      *     {@link String }
      *     
      */
-    public Calendar getValDtToDbt() {
+    public LocalDate getValDtToDbt() {
         return valDtToDbt;
     }
 
@@ -103,7 +103,7 @@ public class DebitAuthorisationConfirmation2 {
      *     {@link String }
      *     
      */
-    public DebitAuthorisationConfirmation2 setValDtToDbt(Calendar value) {
+    public DebitAuthorisationConfirmation2 setValDtToDbt(LocalDate value) {
         this.valDtToDbt = value;
         return this;
     }

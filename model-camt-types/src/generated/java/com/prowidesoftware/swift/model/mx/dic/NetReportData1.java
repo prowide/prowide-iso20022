@@ -1,7 +1,9 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
+import java.time.OffsetTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
@@ -42,19 +44,19 @@ public class NetReportData1 {
     @XmlElement(name = "CreDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar creDtTm;
+    protected OffsetDateTime creDtTm;
     @XmlElement(name = "NetgCutOffTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected Calendar netgCutOffTm;
+    protected OffsetTime netgCutOffTm;
     @XmlElement(name = "RptDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar rptDt;
+    protected LocalDate rptDt;
     @XmlElement(name = "ValDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar valDt;
+    protected LocalDate valDt;
     @XmlElement(name = "RptTp")
     protected String rptTp;
     @XmlElement(name = "NetRptSvcr")
@@ -97,7 +99,7 @@ public class NetReportData1 {
      *     {@link String }
      *     
      */
-    public Calendar getCreDtTm() {
+    public OffsetDateTime getCreDtTm() {
         return creDtTm;
     }
 
@@ -109,7 +111,7 @@ public class NetReportData1 {
      *     {@link String }
      *     
      */
-    public NetReportData1 setCreDtTm(Calendar value) {
+    public NetReportData1 setCreDtTm(OffsetDateTime value) {
         this.creDtTm = value;
         return this;
     }
@@ -122,7 +124,7 @@ public class NetReportData1 {
      *     {@link String }
      *     
      */
-    public Calendar getNetgCutOffTm() {
+    public OffsetTime getNetgCutOffTm() {
         return netgCutOffTm;
     }
 
@@ -134,7 +136,7 @@ public class NetReportData1 {
      *     {@link String }
      *     
      */
-    public NetReportData1 setNetgCutOffTm(Calendar value) {
+    public NetReportData1 setNetgCutOffTm(OffsetTime value) {
         this.netgCutOffTm = value;
         return this;
     }
@@ -147,7 +149,7 @@ public class NetReportData1 {
      *     {@link String }
      *     
      */
-    public Calendar getRptDt() {
+    public LocalDate getRptDt() {
         return rptDt;
     }
 
@@ -159,7 +161,7 @@ public class NetReportData1 {
      *     {@link String }
      *     
      */
-    public NetReportData1 setRptDt(Calendar value) {
+    public NetReportData1 setRptDt(LocalDate value) {
         this.rptDt = value;
         return this;
     }
@@ -172,7 +174,7 @@ public class NetReportData1 {
      *     {@link String }
      *     
      */
-    public Calendar getValDt() {
+    public LocalDate getValDt() {
         return valDt;
     }
 
@@ -184,7 +186,7 @@ public class NetReportData1 {
      *     {@link String }
      *     
      */
-    public NetReportData1 setValDt(Calendar value) {
+    public NetReportData1 setValDt(LocalDate value) {
         this.valDt = value;
         return this;
     }

@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -33,7 +33,7 @@ public class CertificateReference2 {
     @XmlElement(name = "Dt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dt;
+    protected LocalDate dt;
 
     /**
      * Gets the value of the id property.
@@ -68,7 +68,7 @@ public class CertificateReference2 {
      *     {@link String }
      *     
      */
-    public Calendar getDt() {
+    public LocalDate getDt() {
         return dt;
     }
 
@@ -80,7 +80,7 @@ public class CertificateReference2 {
      *     {@link String }
      *     
      */
-    public CertificateReference2 setDt(Calendar value) {
+    public CertificateReference2 setDt(LocalDate value) {
         this.dt = value;
         return this;
     }

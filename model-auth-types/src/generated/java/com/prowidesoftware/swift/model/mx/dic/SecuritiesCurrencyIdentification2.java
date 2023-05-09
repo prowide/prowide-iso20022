@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -50,7 +50,7 @@ public class SecuritiesCurrencyIdentification2 {
     @XmlElement(name = "LastUpdtd", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar lastUpdtd;
+    protected LocalDate lastUpdtd;
 
     /**
      * Gets the value of the ccy property.
@@ -202,7 +202,7 @@ public class SecuritiesCurrencyIdentification2 {
      *     {@link String }
      *     
      */
-    public Calendar getLastUpdtd() {
+    public LocalDate getLastUpdtd() {
         return lastUpdtd;
     }
 
@@ -214,7 +214,7 @@ public class SecuritiesCurrencyIdentification2 {
      *     {@link String }
      *     
      */
-    public SecuritiesCurrencyIdentification2 setLastUpdtd(Calendar value) {
+    public SecuritiesCurrencyIdentification2 setLastUpdtd(LocalDate value) {
         this.lastUpdtd = value;
         return this;
     }

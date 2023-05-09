@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -53,7 +53,7 @@ public class TransactionDetails3 {
     @XmlElement(name = "TradDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar tradDtTm;
+    protected OffsetDateTime tradDtTm;
     @XmlElement(name = "FinInstrmDtls", required = true)
     protected FinancialInstrument15 finInstrmDtls;
     @XmlElement(name = "Sd", required = true)
@@ -77,7 +77,7 @@ public class TransactionDetails3 {
     @XmlElement(name = "SttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar sttlmDt;
+    protected OffsetDateTime sttlmDt;
     @XmlElement(name = "PrxyHldr")
     protected PartyIdentification2Choice prxyHldr;
     @XmlElement(name = "AddtlInf")
@@ -172,7 +172,7 @@ public class TransactionDetails3 {
      *     {@link String }
      *     
      */
-    public Calendar getTradDtTm() {
+    public OffsetDateTime getTradDtTm() {
         return tradDtTm;
     }
 
@@ -184,7 +184,7 @@ public class TransactionDetails3 {
      *     {@link String }
      *     
      */
-    public TransactionDetails3 setTradDtTm(Calendar value) {
+    public TransactionDetails3 setTradDtTm(OffsetDateTime value) {
         this.tradDtTm = value;
         return this;
     }
@@ -428,7 +428,7 @@ public class TransactionDetails3 {
      *     {@link String }
      *     
      */
-    public Calendar getSttlmDt() {
+    public OffsetDateTime getSttlmDt() {
         return sttlmDt;
     }
 
@@ -440,7 +440,7 @@ public class TransactionDetails3 {
      *     {@link String }
      *     
      */
-    public TransactionDetails3 setSttlmDt(Calendar value) {
+    public TransactionDetails3 setSttlmDt(OffsetDateTime value) {
         this.sttlmDt = value;
         return this;
     }

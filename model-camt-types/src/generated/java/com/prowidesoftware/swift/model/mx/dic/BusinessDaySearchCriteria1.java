@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -36,7 +36,7 @@ public class BusinessDaySearchCriteria1 {
     @XmlElement(name = "SysDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar sysDt;
+    protected LocalDate sysDt;
     @XmlElement(name = "SysId")
     protected List<SystemIdentification2Choice> sysId;
     @XmlElement(name = "SysCcy")
@@ -54,7 +54,7 @@ public class BusinessDaySearchCriteria1 {
      *     {@link String }
      *     
      */
-    public Calendar getSysDt() {
+    public LocalDate getSysDt() {
         return sysDt;
     }
 
@@ -66,7 +66,7 @@ public class BusinessDaySearchCriteria1 {
      *     {@link String }
      *     
      */
-    public BusinessDaySearchCriteria1 setSysDt(Calendar value) {
+    public BusinessDaySearchCriteria1 setSysDt(LocalDate value) {
         this.sysDt = value;
         return this;
     }

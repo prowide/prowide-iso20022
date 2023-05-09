@@ -22,9 +22,9 @@ import com.prowidesoftware.swift.model.mx.AppHdr;
 import com.prowidesoftware.swift.model.mx.BusinessAppHdrV02;
 import com.prowidesoftware.swift.model.mx.dic.*;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.logging.Logger;
 
 /**
@@ -113,16 +113,10 @@ class MxBusinessHeaderParser {
                     MxNode CrDate = header.findFirst("./CrDate");
                     if (CrDate != null) {
                         try {
-                            //this.marshalFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
-                            //this.unmarshalFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss[.SSS][XXX]");
-
-                            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
-                            //SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
-                            Calendar c = Calendar.getInstance();
-                            c.setTime(sdf.parse(CrDate.getValue()));
-                            result.setCrDate(c);
-                        } catch (final ParseException e) {
-                            log.warning("exception " + e + " parsign header crDate [" + CrDate.getValue() + "]");
+                            DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+                            result.setCrDate(OffsetDateTime.parse(CrDate.getValue(), dateTimeFormatter));
+                        } catch (final DateTimeParseException e) {
+                            log.warning("exception " + e + " parsing header crDate [" + CrDate.getValue() + "]");
                         }
                     }
 

@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -34,7 +34,7 @@ public class RateAdjustment1 {
     @XmlElement(name = "AdjstmntDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar adjstmntDt;
+    protected LocalDate adjstmntDt;
 
     /**
      * Gets the value of the rate property.
@@ -69,7 +69,7 @@ public class RateAdjustment1 {
      *     {@link String }
      *     
      */
-    public Calendar getAdjstmntDt() {
+    public LocalDate getAdjstmntDt() {
         return adjstmntDt;
     }
 
@@ -81,7 +81,7 @@ public class RateAdjustment1 {
      *     {@link String }
      *     
      */
-    public RateAdjustment1 setAdjstmntDt(Calendar value) {
+    public RateAdjustment1 setAdjstmntDt(LocalDate value) {
         this.adjstmntDt = value;
         return this;
     }

@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -38,13 +38,13 @@ public class AccountStatementDetails2 {
     @XmlElement(name = "TxDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar txDt;
+    protected LocalDate txDt;
     @XmlElement(name = "PdgInd")
     protected Boolean pdgInd;
     @XmlElement(name = "TxPstngDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar txPstngDt;
+    protected LocalDate txPstngDt;
     @XmlElement(name = "TxAmt")
     protected Amount7 txAmt;
     @XmlElement(name = "CrdhldrBllgAmt")
@@ -67,7 +67,7 @@ public class AccountStatementDetails2 {
      *     {@link String }
      *     
      */
-    public Calendar getTxDt() {
+    public LocalDate getTxDt() {
         return txDt;
     }
 
@@ -79,7 +79,7 @@ public class AccountStatementDetails2 {
      *     {@link String }
      *     
      */
-    public AccountStatementDetails2 setTxDt(Calendar value) {
+    public AccountStatementDetails2 setTxDt(LocalDate value) {
         this.txDt = value;
         return this;
     }
@@ -117,7 +117,7 @@ public class AccountStatementDetails2 {
      *     {@link String }
      *     
      */
-    public Calendar getTxPstngDt() {
+    public LocalDate getTxPstngDt() {
         return txPstngDt;
     }
 
@@ -129,7 +129,7 @@ public class AccountStatementDetails2 {
      *     {@link String }
      *     
      */
-    public AccountStatementDetails2 setTxPstngDt(Calendar value) {
+    public AccountStatementDetails2 setTxPstngDt(LocalDate value) {
         this.txPstngDt = value;
         return this;
     }

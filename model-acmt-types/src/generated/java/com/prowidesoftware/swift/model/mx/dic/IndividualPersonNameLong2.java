@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -53,11 +53,11 @@ public class IndividualPersonNameLong2 {
     @XmlElement(name = "StartDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar startDt;
+    protected LocalDate startDt;
     @XmlElement(name = "EndDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar endDt;
+    protected LocalDate endDt;
 
     /**
      * Gets the value of the nmPrfx property.
@@ -242,7 +242,7 @@ public class IndividualPersonNameLong2 {
      *     {@link String }
      *     
      */
-    public Calendar getStartDt() {
+    public LocalDate getStartDt() {
         return startDt;
     }
 
@@ -254,7 +254,7 @@ public class IndividualPersonNameLong2 {
      *     {@link String }
      *     
      */
-    public IndividualPersonNameLong2 setStartDt(Calendar value) {
+    public IndividualPersonNameLong2 setStartDt(LocalDate value) {
         this.startDt = value;
         return this;
     }
@@ -267,7 +267,7 @@ public class IndividualPersonNameLong2 {
      *     {@link String }
      *     
      */
-    public Calendar getEndDt() {
+    public LocalDate getEndDt() {
         return endDt;
     }
 
@@ -279,7 +279,7 @@ public class IndividualPersonNameLong2 {
      *     {@link String }
      *     
      */
-    public IndividualPersonNameLong2 setEndDt(Calendar value) {
+    public IndividualPersonNameLong2 setEndDt(LocalDate value) {
         this.endDt = value;
         return this;
     }

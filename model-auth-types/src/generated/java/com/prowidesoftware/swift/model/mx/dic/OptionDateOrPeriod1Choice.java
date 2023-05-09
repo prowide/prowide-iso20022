@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -32,7 +32,7 @@ public class OptionDateOrPeriod1Choice {
     @XmlElement(name = "EarlstExrcDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar earlstExrcDt;
+    protected LocalDate earlstExrcDt;
     @XmlElement(name = "NtcePrd")
     protected BigDecimal ntcePrd;
 
@@ -44,7 +44,7 @@ public class OptionDateOrPeriod1Choice {
      *     {@link String }
      *     
      */
-    public Calendar getEarlstExrcDt() {
+    public LocalDate getEarlstExrcDt() {
         return earlstExrcDt;
     }
 
@@ -56,7 +56,7 @@ public class OptionDateOrPeriod1Choice {
      *     {@link String }
      *     
      */
-    public OptionDateOrPeriod1Choice setEarlstExrcDt(Calendar value) {
+    public OptionDateOrPeriod1Choice setEarlstExrcDt(LocalDate value) {
         this.earlstExrcDt = value;
         return this;
     }

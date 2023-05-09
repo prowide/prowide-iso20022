@@ -1,7 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
+import java.time.OffsetTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -38,11 +39,11 @@ public class DepartureOrArrival2 {
     @XmlElement(name = "Dt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dt;
+    protected LocalDate dt;
     @XmlElement(name = "Tm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected Calendar tm;
+    protected OffsetTime tm;
 
     /**
      * Gets the value of the crrierCd property.
@@ -102,7 +103,7 @@ public class DepartureOrArrival2 {
      *     {@link String }
      *     
      */
-    public Calendar getDt() {
+    public LocalDate getDt() {
         return dt;
     }
 
@@ -114,7 +115,7 @@ public class DepartureOrArrival2 {
      *     {@link String }
      *     
      */
-    public DepartureOrArrival2 setDt(Calendar value) {
+    public DepartureOrArrival2 setDt(LocalDate value) {
         this.dt = value;
         return this;
     }
@@ -127,7 +128,7 @@ public class DepartureOrArrival2 {
      *     {@link String }
      *     
      */
-    public Calendar getTm() {
+    public OffsetTime getTm() {
         return tm;
     }
 
@@ -139,7 +140,7 @@ public class DepartureOrArrival2 {
      *     {@link String }
      *     
      */
-    public DepartureOrArrival2 setTm(Calendar value) {
+    public DepartureOrArrival2 setTm(OffsetTime value) {
         this.tm = value;
         return this;
     }

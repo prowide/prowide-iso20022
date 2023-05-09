@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -49,7 +49,7 @@ public class TransactionContext4 {
     @XmlElement(name = "CaptrDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar captrDt;
+    protected LocalDate captrDt;
 
     /**
      * Gets the value of the mrchntCtgyCd property.
@@ -209,7 +209,7 @@ public class TransactionContext4 {
      *     {@link String }
      *     
      */
-    public Calendar getCaptrDt() {
+    public LocalDate getCaptrDt() {
         return captrDt;
     }
 
@@ -221,7 +221,7 @@ public class TransactionContext4 {
      *     {@link String }
      *     
      */
-    public TransactionContext4 setCaptrDt(Calendar value) {
+    public TransactionContext4 setCaptrDt(LocalDate value) {
         this.captrDt = value;
         return this;
     }

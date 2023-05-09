@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -43,7 +43,7 @@ public class ReportParameters2 {
     @XmlElement(name = "ClctnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar clctnDt;
+    protected OffsetDateTime clctnDt;
 
     /**
      * Gets the value of the rptId property.
@@ -153,7 +153,7 @@ public class ReportParameters2 {
      *     {@link String }
      *     
      */
-    public Calendar getClctnDt() {
+    public OffsetDateTime getClctnDt() {
         return clctnDt;
     }
 
@@ -165,7 +165,7 @@ public class ReportParameters2 {
      *     {@link String }
      *     
      */
-    public ReportParameters2 setClctnDt(Calendar value) {
+    public ReportParameters2 setClctnDt(OffsetDateTime value) {
         this.clctnDt = value;
         return this;
     }

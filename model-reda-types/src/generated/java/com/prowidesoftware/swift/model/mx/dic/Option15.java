@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -50,7 +50,7 @@ public class Option15 {
     @XmlElement(name = "ConvsDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar convsDt;
+    protected OffsetDateTime convsDt;
     @XmlElement(name = "StrkPric")
     protected Price8 strkPric;
     @XmlElement(name = "MinExrcblQty")
@@ -113,7 +113,7 @@ public class Option15 {
      *     {@link String }
      *     
      */
-    public Calendar getConvsDt() {
+    public OffsetDateTime getConvsDt() {
         return convsDt;
     }
 
@@ -125,7 +125,7 @@ public class Option15 {
      *     {@link String }
      *     
      */
-    public Option15 setConvsDt(Calendar value) {
+    public Option15 setConvsDt(OffsetDateTime value) {
         this.convsDt = value;
         return this;
     }

@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -52,14 +52,14 @@ public class PartyProfileInformation3 {
     @XmlElement(name = "ChckngDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar chckngDt;
+    protected LocalDate chckngDt;
     @XmlElement(name = "ChckngFrqcy")
     @XmlSchemaType(name = "string")
     protected EventFrequency1Code chckngFrqcy;
     @XmlElement(name = "NxtRvsnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar nxtRvsnDt;
+    protected LocalDate nxtRvsnDt;
     @XmlElement(name = "SlryRg")
     protected String slryRg;
     @XmlElement(name = "SrcOfWlth")
@@ -204,7 +204,7 @@ public class PartyProfileInformation3 {
      *     {@link String }
      *     
      */
-    public Calendar getChckngDt() {
+    public LocalDate getChckngDt() {
         return chckngDt;
     }
 
@@ -216,7 +216,7 @@ public class PartyProfileInformation3 {
      *     {@link String }
      *     
      */
-    public PartyProfileInformation3 setChckngDt(Calendar value) {
+    public PartyProfileInformation3 setChckngDt(LocalDate value) {
         this.chckngDt = value;
         return this;
     }
@@ -254,7 +254,7 @@ public class PartyProfileInformation3 {
      *     {@link String }
      *     
      */
-    public Calendar getNxtRvsnDt() {
+    public LocalDate getNxtRvsnDt() {
         return nxtRvsnDt;
     }
 
@@ -266,7 +266,7 @@ public class PartyProfileInformation3 {
      *     {@link String }
      *     
      */
-    public PartyProfileInformation3 setNxtRvsnDt(Calendar value) {
+    public PartyProfileInformation3 setNxtRvsnDt(LocalDate value) {
         this.nxtRvsnDt = value;
         return this;
     }

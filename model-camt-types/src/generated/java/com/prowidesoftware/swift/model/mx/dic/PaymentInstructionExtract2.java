@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -43,11 +43,11 @@ public class PaymentInstructionExtract2 {
     @XmlElement(name = "ReqdExctnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar reqdExctnDt;
+    protected LocalDate reqdExctnDt;
     @XmlElement(name = "IntrBkSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar intrBkSttlmDt;
+    protected LocalDate intrBkSttlmDt;
 
     /**
      * Gets the value of the orgnlMsgNmId property.
@@ -157,7 +157,7 @@ public class PaymentInstructionExtract2 {
      *     {@link String }
      *     
      */
-    public Calendar getReqdExctnDt() {
+    public LocalDate getReqdExctnDt() {
         return reqdExctnDt;
     }
 
@@ -169,7 +169,7 @@ public class PaymentInstructionExtract2 {
      *     {@link String }
      *     
      */
-    public PaymentInstructionExtract2 setReqdExctnDt(Calendar value) {
+    public PaymentInstructionExtract2 setReqdExctnDt(LocalDate value) {
         this.reqdExctnDt = value;
         return this;
     }
@@ -182,7 +182,7 @@ public class PaymentInstructionExtract2 {
      *     {@link String }
      *     
      */
-    public Calendar getIntrBkSttlmDt() {
+    public LocalDate getIntrBkSttlmDt() {
         return intrBkSttlmDt;
     }
 
@@ -194,7 +194,7 @@ public class PaymentInstructionExtract2 {
      *     {@link String }
      *     
      */
-    public PaymentInstructionExtract2 setIntrBkSttlmDt(Calendar value) {
+    public PaymentInstructionExtract2 setIntrBkSttlmDt(LocalDate value) {
         this.intrBkSttlmDt = value;
         return this;
     }

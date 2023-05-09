@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -69,7 +69,7 @@ public class Transfer37 {
     @XmlElement(name = "ReqdSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar reqdSttlmDt;
+    protected LocalDate reqdSttlmDt;
     @XmlElement(name = "FctvTrfDt", required = true)
     protected DateAndDateTime2Choice fctvTrfDt;
     @XmlElement(name = "FctvSttlmDt")
@@ -79,7 +79,7 @@ public class Transfer37 {
     @XmlElement(name = "TrfOrdrDtForm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar trfOrdrDtForm;
+    protected LocalDate trfOrdrDtForm;
     @XmlElement(name = "TrfRsn")
     protected TransferReason1Choice trfRsn;
     @XmlElement(name = "HldgsPlanTp")
@@ -105,11 +105,11 @@ public class Transfer37 {
     @XmlElement(name = "AvrgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar avrgDt;
+    protected LocalDate avrgDt;
     @XmlElement(name = "NewAvrgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar newAvrgDt;
+    protected LocalDate newAvrgDt;
     @XmlElement(name = "TrfCcy")
     protected String trfCcy;
     @XmlElement(name = "OwnAcctTrfInd")
@@ -252,7 +252,7 @@ public class Transfer37 {
      *     {@link String }
      *     
      */
-    public Calendar getReqdSttlmDt() {
+    public LocalDate getReqdSttlmDt() {
         return reqdSttlmDt;
     }
 
@@ -264,7 +264,7 @@ public class Transfer37 {
      *     {@link String }
      *     
      */
-    public Transfer37 setReqdSttlmDt(Calendar value) {
+    public Transfer37 setReqdSttlmDt(LocalDate value) {
         this.reqdSttlmDt = value;
         return this;
     }
@@ -352,7 +352,7 @@ public class Transfer37 {
      *     {@link String }
      *     
      */
-    public Calendar getTrfOrdrDtForm() {
+    public LocalDate getTrfOrdrDtForm() {
         return trfOrdrDtForm;
     }
 
@@ -364,7 +364,7 @@ public class Transfer37 {
      *     {@link String }
      *     
      */
-    public Transfer37 setTrfOrdrDtForm(Calendar value) {
+    public Transfer37 setTrfOrdrDtForm(LocalDate value) {
         this.trfOrdrDtForm = value;
         return this;
     }
@@ -639,7 +639,7 @@ public class Transfer37 {
      *     {@link String }
      *     
      */
-    public Calendar getAvrgDt() {
+    public LocalDate getAvrgDt() {
         return avrgDt;
     }
 
@@ -651,7 +651,7 @@ public class Transfer37 {
      *     {@link String }
      *     
      */
-    public Transfer37 setAvrgDt(Calendar value) {
+    public Transfer37 setAvrgDt(LocalDate value) {
         this.avrgDt = value;
         return this;
     }
@@ -664,7 +664,7 @@ public class Transfer37 {
      *     {@link String }
      *     
      */
-    public Calendar getNewAvrgDt() {
+    public LocalDate getNewAvrgDt() {
         return newAvrgDt;
     }
 
@@ -676,7 +676,7 @@ public class Transfer37 {
      *     {@link String }
      *     
      */
-    public Transfer37 setNewAvrgDt(Calendar value) {
+    public Transfer37 setNewAvrgDt(LocalDate value) {
         this.newAvrgDt = value;
         return this;
     }

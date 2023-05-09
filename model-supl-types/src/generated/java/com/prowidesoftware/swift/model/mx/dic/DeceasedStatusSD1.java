@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -35,7 +35,7 @@ public class DeceasedStatusSD1 {
     @XmlElement(name = "DthDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dthDt;
+    protected LocalDate dthDt;
     @XmlElement(name = "DthCertSrlNb")
     protected String dthCertSrlNb;
     @XmlElement(name = "IssgJursdctn")
@@ -74,7 +74,7 @@ public class DeceasedStatusSD1 {
      *     {@link String }
      *     
      */
-    public Calendar getDthDt() {
+    public LocalDate getDthDt() {
         return dthDt;
     }
 
@@ -86,7 +86,7 @@ public class DeceasedStatusSD1 {
      *     {@link String }
      *     
      */
-    public DeceasedStatusSD1 setDthDt(Calendar value) {
+    public DeceasedStatusSD1 setDthDt(LocalDate value) {
         this.dthDt = value;
         return this;
     }

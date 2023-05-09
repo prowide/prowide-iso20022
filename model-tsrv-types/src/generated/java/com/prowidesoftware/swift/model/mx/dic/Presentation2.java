@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -33,7 +33,7 @@ public class Presentation2 {
     @XmlElement(name = "BnfcryPresntnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar bnfcryPresntnDt;
+    protected LocalDate bnfcryPresntnDt;
 
     /**
      * Gets the value of the presntr property.
@@ -68,7 +68,7 @@ public class Presentation2 {
      *     {@link String }
      *     
      */
-    public Calendar getBnfcryPresntnDt() {
+    public LocalDate getBnfcryPresntnDt() {
         return bnfcryPresntnDt;
     }
 
@@ -80,7 +80,7 @@ public class Presentation2 {
      *     {@link String }
      *     
      */
-    public Presentation2 setBnfcryPresntnDt(Calendar value) {
+    public Presentation2 setBnfcryPresntnDt(LocalDate value) {
         this.bnfcryPresntnDt = value;
         return this;
     }

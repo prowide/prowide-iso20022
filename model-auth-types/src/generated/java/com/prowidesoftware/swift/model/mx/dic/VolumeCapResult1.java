@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -43,7 +43,7 @@ public class VolumeCapResult1 {
     @XmlElement(name = "LastUpdDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar lastUpdDt;
+    protected LocalDate lastUpdDt;
     @XmlElement(name = "TtlTradgVol", required = true)
     protected ActiveCurrencyAndAmount ttlTradgVol;
     @XmlElement(name = "TradgUdrWvrPctg", required = true)
@@ -111,7 +111,7 @@ public class VolumeCapResult1 {
      *     {@link String }
      *     
      */
-    public Calendar getLastUpdDt() {
+    public LocalDate getLastUpdDt() {
         return lastUpdDt;
     }
 
@@ -123,7 +123,7 @@ public class VolumeCapResult1 {
      *     {@link String }
      *     
      */
-    public VolumeCapResult1 setLastUpdDt(Calendar value) {
+    public VolumeCapResult1 setLastUpdDt(LocalDate value) {
         this.lastUpdDt = value;
         return this;
     }

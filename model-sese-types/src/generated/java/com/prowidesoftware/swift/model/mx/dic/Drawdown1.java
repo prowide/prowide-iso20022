@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -61,7 +61,7 @@ public class Drawdown1 {
     @XmlElement(name = "PnsnCmcmntLumpSumDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar pnsnCmcmntLumpSumDt;
+    protected LocalDate pnsnCmcmntLumpSumDt;
     @XmlElement(name = "MltplPnsnCmcmntLumpSums")
     protected Boolean mltplPnsnCmcmntLumpSums;
     @XmlElement(name = "LftmAllwnc")
@@ -75,7 +75,7 @@ public class Drawdown1 {
     @XmlElement(name = "FlxblDrwdwnTrggrdDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar flxblDrwdwnTrggrdDt;
+    protected LocalDate flxblDrwdwnTrggrdDt;
     @XmlElement(name = "AddtlInf")
     protected List<AdditionalInformation15> addtlInf;
 
@@ -262,7 +262,7 @@ public class Drawdown1 {
      *     {@link String }
      *     
      */
-    public Calendar getPnsnCmcmntLumpSumDt() {
+    public LocalDate getPnsnCmcmntLumpSumDt() {
         return pnsnCmcmntLumpSumDt;
     }
 
@@ -274,7 +274,7 @@ public class Drawdown1 {
      *     {@link String }
      *     
      */
-    public Drawdown1 setPnsnCmcmntLumpSumDt(Calendar value) {
+    public Drawdown1 setPnsnCmcmntLumpSumDt(LocalDate value) {
         this.pnsnCmcmntLumpSumDt = value;
         return this;
     }
@@ -412,7 +412,7 @@ public class Drawdown1 {
      *     {@link String }
      *     
      */
-    public Calendar getFlxblDrwdwnTrggrdDt() {
+    public LocalDate getFlxblDrwdwnTrggrdDt() {
         return flxblDrwdwnTrggrdDt;
     }
 
@@ -424,7 +424,7 @@ public class Drawdown1 {
      *     {@link String }
      *     
      */
-    public Drawdown1 setFlxblDrwdwnTrggrdDt(Calendar value) {
+    public Drawdown1 setFlxblDrwdwnTrggrdDt(LocalDate value) {
         this.flxblDrwdwnTrggrdDt = value;
         return this;
     }

@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.sys.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime ;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -38,7 +38,7 @@ public class ReportCriteriaXsys01500101 {
     @XmlElement(name = "FrTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar frTm;
+    protected OffsetDateTime frTm;
     @XmlElement(name = "SnglMsgCrit")
     protected SingleMessageCriteria snglMsgCrit;
     @XmlElement(name = "MltplMsgCrit")
@@ -102,7 +102,7 @@ public class ReportCriteriaXsys01500101 {
      *     {@link String }
      *     
      */
-    public Calendar getFrTm() {
+    public OffsetDateTime getFrTm() {
         return frTm;
     }
 
@@ -114,7 +114,7 @@ public class ReportCriteriaXsys01500101 {
      *     {@link String }
      *     
      */
-    public ReportCriteriaXsys01500101 setFrTm(Calendar value) {
+    public ReportCriteriaXsys01500101 setFrTm(OffsetDateTime value) {
         this.frTm = value;
         return this;
     }

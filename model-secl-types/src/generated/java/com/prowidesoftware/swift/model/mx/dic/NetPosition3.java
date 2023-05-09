@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -75,7 +75,7 @@ public class NetPosition3 {
     @XmlElement(name = "TradDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar tradDt;
+    protected LocalDate tradDt;
     @XmlElement(name = "SttlmDt")
     protected DateFormat15Choice sttlmDt;
     @XmlElement(name = "TradLegDtls")
@@ -414,7 +414,7 @@ public class NetPosition3 {
      *     {@link String }
      *     
      */
-    public Calendar getTradDt() {
+    public LocalDate getTradDt() {
         return tradDt;
     }
 
@@ -426,7 +426,7 @@ public class NetPosition3 {
      *     {@link String }
      *     
      */
-    public NetPosition3 setTradDt(Calendar value) {
+    public NetPosition3 setTradDt(LocalDate value) {
         this.tradDt = value;
         return this;
     }

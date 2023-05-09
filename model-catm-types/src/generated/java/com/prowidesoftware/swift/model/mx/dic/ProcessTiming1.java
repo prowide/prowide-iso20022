@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -38,11 +38,11 @@ public class ProcessTiming1 {
     @XmlElement(name = "StartTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar startTm;
+    protected OffsetDateTime startTm;
     @XmlElement(name = "EndTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar endTm;
+    protected OffsetDateTime endTm;
     @XmlElement(name = "Prd")
     protected String prd;
     @XmlElement(name = "MaxNb")
@@ -83,7 +83,7 @@ public class ProcessTiming1 {
      *     {@link String }
      *     
      */
-    public Calendar getStartTm() {
+    public OffsetDateTime getStartTm() {
         return startTm;
     }
 
@@ -95,7 +95,7 @@ public class ProcessTiming1 {
      *     {@link String }
      *     
      */
-    public ProcessTiming1 setStartTm(Calendar value) {
+    public ProcessTiming1 setStartTm(OffsetDateTime value) {
         this.startTm = value;
         return this;
     }
@@ -108,7 +108,7 @@ public class ProcessTiming1 {
      *     {@link String }
      *     
      */
-    public Calendar getEndTm() {
+    public OffsetDateTime getEndTm() {
         return endTm;
     }
 
@@ -120,7 +120,7 @@ public class ProcessTiming1 {
      *     {@link String }
      *     
      */
-    public ProcessTiming1 setEndTm(Calendar value) {
+    public ProcessTiming1 setEndTm(OffsetDateTime value) {
         this.endTm = value;
         return this;
     }

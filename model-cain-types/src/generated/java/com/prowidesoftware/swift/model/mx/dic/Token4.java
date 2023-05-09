@@ -1,12 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.YearMonth;
+import com.prowidesoftware.swift.model.mx.adapters.IsoYearMonthAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -32,9 +34,10 @@ public class Token4 {
 
     @XmlElement(name = "PmtTkn")
     protected String pmtTkn;
-    @XmlElement(name = "TknXpryDt")
+    @XmlElement(name = "TknXpryDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoYearMonthAdapter.class)
     @XmlSchemaType(name = "gYearMonth")
-    protected XMLGregorianCalendar tknXpryDt;
+    protected YearMonth tknXpryDt;
     @XmlElement(name = "TknRqstrId")
     protected String tknRqstrId;
     @XmlElement(name = "TknAssrncData")
@@ -74,10 +77,10 @@ public class Token4 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getTknXpryDt() {
+    public YearMonth getTknXpryDt() {
         return tknXpryDt;
     }
 
@@ -86,10 +89,10 @@ public class Token4 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public Token4 setTknXpryDt(XMLGregorianCalendar value) {
+    public Token4 setTknXpryDt(YearMonth value) {
         this.tknXpryDt = value;
         return this;
     }

@@ -19,6 +19,7 @@ import com.prowidesoftware.swift.utils.Lib;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+import java.time.temporal.ChronoField;
 import java.util.Calendar;
 import java.util.Optional;
 
@@ -77,8 +78,8 @@ public class AppHdrParserTest {
         assertNotNull(h);
         assertEquals("SCRRQ01", h.getMsgRef());
         assertNotNull(h.getCrDate());
-        assertEquals(2006, h.getCrDate().get(Calendar.YEAR));
-        assertEquals(9, h.getCrDate().get(Calendar.MONTH));
+        assertEquals(2006, h.getCrDate().get(ChronoField.YEAR));
+        assertEquals(9, h.getCrDate().get(ChronoField.MONTH_OF_YEAR));
     }
 
     @Test
@@ -158,8 +159,8 @@ public class AppHdrParserTest {
         assertEquals("seev.031.002.03", bah.getMsgDefIdr());
         assertEquals("CSD", bah.getBizSvc());
         assertNotNull(bah.getCreDt());
-        assertEquals(2015, bah.getCreDt().get(Calendar.YEAR));
-        assertEquals(7, bah.getCreDt().get(Calendar.MONTH)); //TODO chequear que el mes 0 es Enero
+        assertEquals(2015, bah.getCreDt().get(ChronoField.YEAR));
+        assertEquals(8, bah.getCreDt().get(ChronoField.MONTH_OF_YEAR));
     }
 
     @Test

@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -51,7 +51,7 @@ public class Balance28 {
     @XmlElement(name = "BalDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar balDt;
+    protected LocalDate balDt;
 
     /**
      * Gets the value of the tp property.
@@ -211,7 +211,7 @@ public class Balance28 {
      *     {@link String }
      *     
      */
-    public Calendar getBalDt() {
+    public LocalDate getBalDt() {
         return balDt;
     }
 
@@ -223,7 +223,7 @@ public class Balance28 {
      *     {@link String }
      *     
      */
-    public Balance28 setBalDt(Calendar value) {
+    public Balance28 setBalDt(LocalDate value) {
         this.balDt = value;
         return this;
     }

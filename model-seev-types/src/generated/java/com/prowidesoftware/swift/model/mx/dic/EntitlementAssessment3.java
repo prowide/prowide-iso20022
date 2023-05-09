@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -47,7 +47,7 @@ public class EntitlementAssessment3 {
     @XmlElement(name = "SctiesBlckgPrdEndDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar sctiesBlckgPrdEndDt;
+    protected OffsetDateTime sctiesBlckgPrdEndDt;
     @XmlElement(name = "EntitlmntFxgDt")
     protected DateFormat1 entitlmntFxgDt;
     @XmlElement(name = "RegnSctiesDdln")
@@ -148,7 +148,7 @@ public class EntitlementAssessment3 {
      *     {@link String }
      *     
      */
-    public Calendar getSctiesBlckgPrdEndDt() {
+    public OffsetDateTime getSctiesBlckgPrdEndDt() {
         return sctiesBlckgPrdEndDt;
     }
 
@@ -160,7 +160,7 @@ public class EntitlementAssessment3 {
      *     {@link String }
      *     
      */
-    public EntitlementAssessment3 setSctiesBlckgPrdEndDt(Calendar value) {
+    public EntitlementAssessment3 setSctiesBlckgPrdEndDt(OffsetDateTime value) {
         this.sctiesBlckgPrdEndDt = value;
         return this;
     }

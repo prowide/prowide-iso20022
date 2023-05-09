@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -33,11 +33,11 @@ public class Schedule2 {
     @XmlElement(name = "UadjstdFctvDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar uadjstdFctvDt;
+    protected LocalDate uadjstdFctvDt;
     @XmlElement(name = "UadjstdEndDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar uadjstdEndDt;
+    protected LocalDate uadjstdEndDt;
     @XmlElement(name = "Qty", required = true)
     protected BigDecimal qty;
 
@@ -49,7 +49,7 @@ public class Schedule2 {
      *     {@link String }
      *     
      */
-    public Calendar getUadjstdFctvDt() {
+    public LocalDate getUadjstdFctvDt() {
         return uadjstdFctvDt;
     }
 
@@ -61,7 +61,7 @@ public class Schedule2 {
      *     {@link String }
      *     
      */
-    public Schedule2 setUadjstdFctvDt(Calendar value) {
+    public Schedule2 setUadjstdFctvDt(LocalDate value) {
         this.uadjstdFctvDt = value;
         return this;
     }
@@ -74,7 +74,7 @@ public class Schedule2 {
      *     {@link String }
      *     
      */
-    public Calendar getUadjstdEndDt() {
+    public LocalDate getUadjstdEndDt() {
         return uadjstdEndDt;
     }
 
@@ -86,7 +86,7 @@ public class Schedule2 {
      *     {@link String }
      *     
      */
-    public Schedule2 setUadjstdEndDt(Calendar value) {
+    public Schedule2 setUadjstdEndDt(LocalDate value) {
         this.uadjstdEndDt = value;
         return this;
     }

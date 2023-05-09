@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -77,19 +77,19 @@ public class TransferStatusAndReason8 {
     @XmlElement(name = "TradDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar tradDt;
+    protected LocalDate tradDt;
     @XmlElement(name = "SttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar sttlmDt;
+    protected LocalDate sttlmDt;
     @XmlElement(name = "SndOutDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar sndOutDt;
+    protected LocalDate sndOutDt;
     @XmlElement(name = "CshSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar cshSttlmDt;
+    protected LocalDate cshSttlmDt;
     @XmlElement(name = "TtlUnitsNb")
     protected BigDecimal ttlUnitsNb;
     @XmlElement(name = "AvrgPric")
@@ -364,7 +364,7 @@ public class TransferStatusAndReason8 {
      *     {@link String }
      *     
      */
-    public Calendar getTradDt() {
+    public LocalDate getTradDt() {
         return tradDt;
     }
 
@@ -376,7 +376,7 @@ public class TransferStatusAndReason8 {
      *     {@link String }
      *     
      */
-    public TransferStatusAndReason8 setTradDt(Calendar value) {
+    public TransferStatusAndReason8 setTradDt(LocalDate value) {
         this.tradDt = value;
         return this;
     }
@@ -389,7 +389,7 @@ public class TransferStatusAndReason8 {
      *     {@link String }
      *     
      */
-    public Calendar getSttlmDt() {
+    public LocalDate getSttlmDt() {
         return sttlmDt;
     }
 
@@ -401,7 +401,7 @@ public class TransferStatusAndReason8 {
      *     {@link String }
      *     
      */
-    public TransferStatusAndReason8 setSttlmDt(Calendar value) {
+    public TransferStatusAndReason8 setSttlmDt(LocalDate value) {
         this.sttlmDt = value;
         return this;
     }
@@ -414,7 +414,7 @@ public class TransferStatusAndReason8 {
      *     {@link String }
      *     
      */
-    public Calendar getSndOutDt() {
+    public LocalDate getSndOutDt() {
         return sndOutDt;
     }
 
@@ -426,7 +426,7 @@ public class TransferStatusAndReason8 {
      *     {@link String }
      *     
      */
-    public TransferStatusAndReason8 setSndOutDt(Calendar value) {
+    public TransferStatusAndReason8 setSndOutDt(LocalDate value) {
         this.sndOutDt = value;
         return this;
     }
@@ -439,7 +439,7 @@ public class TransferStatusAndReason8 {
      *     {@link String }
      *     
      */
-    public Calendar getCshSttlmDt() {
+    public LocalDate getCshSttlmDt() {
         return cshSttlmDt;
     }
 
@@ -451,7 +451,7 @@ public class TransferStatusAndReason8 {
      *     {@link String }
      *     
      */
-    public TransferStatusAndReason8 setCshSttlmDt(Calendar value) {
+    public TransferStatusAndReason8 setCshSttlmDt(LocalDate value) {
         this.cshSttlmDt = value;
         return this;
     }

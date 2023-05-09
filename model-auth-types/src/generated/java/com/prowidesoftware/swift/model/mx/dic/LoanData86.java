@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -34,11 +34,11 @@ public class LoanData86 {
     @XmlElement(name = "EvtDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar evtDt;
+    protected LocalDate evtDt;
     @XmlElement(name = "TermntnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar termntnDt;
+    protected LocalDate termntnDt;
 
     /**
      * Gets the value of the unqTradIdr property.
@@ -73,7 +73,7 @@ public class LoanData86 {
      *     {@link String }
      *     
      */
-    public Calendar getEvtDt() {
+    public LocalDate getEvtDt() {
         return evtDt;
     }
 
@@ -85,7 +85,7 @@ public class LoanData86 {
      *     {@link String }
      *     
      */
-    public LoanData86 setEvtDt(Calendar value) {
+    public LoanData86 setEvtDt(LocalDate value) {
         this.evtDt = value;
         return this;
     }
@@ -98,7 +98,7 @@ public class LoanData86 {
      *     {@link String }
      *     
      */
-    public Calendar getTermntnDt() {
+    public LocalDate getTermntnDt() {
         return termntnDt;
     }
 
@@ -110,7 +110,7 @@ public class LoanData86 {
      *     {@link String }
      *     
      */
-    public LoanData86 setTermntnDt(Calendar value) {
+    public LoanData86 setTermntnDt(LocalDate value) {
         this.termntnDt = value;
         return this;
     }

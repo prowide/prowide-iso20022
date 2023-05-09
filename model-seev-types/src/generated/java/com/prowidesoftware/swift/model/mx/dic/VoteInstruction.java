@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -36,7 +36,7 @@ public class VoteInstruction {
     @XmlElement(name = "ReqdExctnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar reqdExctnDt;
+    protected OffsetDateTime reqdExctnDt;
     @XmlElement(name = "VoteExctnConf")
     protected boolean voteExctnConf;
     @XmlElement(name = "VotePerRsltn", required = true)
@@ -77,7 +77,7 @@ public class VoteInstruction {
      *     {@link String }
      *     
      */
-    public Calendar getReqdExctnDt() {
+    public OffsetDateTime getReqdExctnDt() {
         return reqdExctnDt;
     }
 
@@ -89,7 +89,7 @@ public class VoteInstruction {
      *     {@link String }
      *     
      */
-    public VoteInstruction setReqdExctnDt(Calendar value) {
+    public VoteInstruction setReqdExctnDt(OffsetDateTime value) {
         this.reqdExctnDt = value;
         return this;
     }

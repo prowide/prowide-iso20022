@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -33,7 +33,7 @@ public class AuthorisedAmount1 {
     @XmlElement(name = "DtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar dtTm;
+    protected OffsetDateTime dtTm;
     @XmlElement(name = "Amt", required = true)
     protected BigDecimal amt;
     @XmlElement(name = "AddtlData")
@@ -47,7 +47,7 @@ public class AuthorisedAmount1 {
      *     {@link String }
      *     
      */
-    public Calendar getDtTm() {
+    public OffsetDateTime getDtTm() {
         return dtTm;
     }
 
@@ -59,7 +59,7 @@ public class AuthorisedAmount1 {
      *     {@link String }
      *     
      */
-    public AuthorisedAmount1 setDtTm(Calendar value) {
+    public AuthorisedAmount1 setDtTm(OffsetDateTime value) {
         this.dtTm = value;
         return this;
     }

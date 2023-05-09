@@ -1,8 +1,9 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
@@ -39,27 +40,27 @@ public class TransactionDates1 {
     @XmlElement(name = "AccptncDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar accptncDtTm;
+    protected OffsetDateTime accptncDtTm;
     @XmlElement(name = "TradDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar tradDt;
+    protected LocalDate tradDt;
     @XmlElement(name = "IntrBkSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar intrBkSttlmDt;
+    protected LocalDate intrBkSttlmDt;
     @XmlElement(name = "StartDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar startDt;
+    protected LocalDate startDt;
     @XmlElement(name = "EndDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar endDt;
+    protected LocalDate endDt;
     @XmlElement(name = "TxDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar txDtTm;
+    protected OffsetDateTime txDtTm;
     @XmlElement(name = "Prtry")
     protected List<ProprietaryDate1> prtry;
 
@@ -71,7 +72,7 @@ public class TransactionDates1 {
      *     {@link String }
      *     
      */
-    public Calendar getAccptncDtTm() {
+    public OffsetDateTime getAccptncDtTm() {
         return accptncDtTm;
     }
 
@@ -83,7 +84,7 @@ public class TransactionDates1 {
      *     {@link String }
      *     
      */
-    public TransactionDates1 setAccptncDtTm(Calendar value) {
+    public TransactionDates1 setAccptncDtTm(OffsetDateTime value) {
         this.accptncDtTm = value;
         return this;
     }
@@ -96,7 +97,7 @@ public class TransactionDates1 {
      *     {@link String }
      *     
      */
-    public Calendar getTradDt() {
+    public LocalDate getTradDt() {
         return tradDt;
     }
 
@@ -108,7 +109,7 @@ public class TransactionDates1 {
      *     {@link String }
      *     
      */
-    public TransactionDates1 setTradDt(Calendar value) {
+    public TransactionDates1 setTradDt(LocalDate value) {
         this.tradDt = value;
         return this;
     }
@@ -121,7 +122,7 @@ public class TransactionDates1 {
      *     {@link String }
      *     
      */
-    public Calendar getIntrBkSttlmDt() {
+    public LocalDate getIntrBkSttlmDt() {
         return intrBkSttlmDt;
     }
 
@@ -133,7 +134,7 @@ public class TransactionDates1 {
      *     {@link String }
      *     
      */
-    public TransactionDates1 setIntrBkSttlmDt(Calendar value) {
+    public TransactionDates1 setIntrBkSttlmDt(LocalDate value) {
         this.intrBkSttlmDt = value;
         return this;
     }
@@ -146,7 +147,7 @@ public class TransactionDates1 {
      *     {@link String }
      *     
      */
-    public Calendar getStartDt() {
+    public LocalDate getStartDt() {
         return startDt;
     }
 
@@ -158,7 +159,7 @@ public class TransactionDates1 {
      *     {@link String }
      *     
      */
-    public TransactionDates1 setStartDt(Calendar value) {
+    public TransactionDates1 setStartDt(LocalDate value) {
         this.startDt = value;
         return this;
     }
@@ -171,7 +172,7 @@ public class TransactionDates1 {
      *     {@link String }
      *     
      */
-    public Calendar getEndDt() {
+    public LocalDate getEndDt() {
         return endDt;
     }
 
@@ -183,7 +184,7 @@ public class TransactionDates1 {
      *     {@link String }
      *     
      */
-    public TransactionDates1 setEndDt(Calendar value) {
+    public TransactionDates1 setEndDt(LocalDate value) {
         this.endDt = value;
         return this;
     }
@@ -196,7 +197,7 @@ public class TransactionDates1 {
      *     {@link String }
      *     
      */
-    public Calendar getTxDtTm() {
+    public OffsetDateTime getTxDtTm() {
         return txDtTm;
     }
 
@@ -208,7 +209,7 @@ public class TransactionDates1 {
      *     {@link String }
      *     
      */
-    public TransactionDates1 setTxDtTm(Calendar value) {
+    public TransactionDates1 setTxDtTm(OffsetDateTime value) {
         this.txDtTm = value;
         return this;
     }

@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -48,7 +48,7 @@ public class LiquidityCreditTransfer1 {
     @XmlElement(name = "SttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar sttlmDt;
+    protected LocalDate sttlmDt;
 
     /**
      * Gets the value of the lqdtyTrfId property.
@@ -208,7 +208,7 @@ public class LiquidityCreditTransfer1 {
      *     {@link String }
      *     
      */
-    public Calendar getSttlmDt() {
+    public LocalDate getSttlmDt() {
         return sttlmDt;
     }
 
@@ -220,7 +220,7 @@ public class LiquidityCreditTransfer1 {
      *     {@link String }
      *     
      */
-    public LiquidityCreditTransfer1 setSttlmDt(Calendar value) {
+    public LiquidityCreditTransfer1 setSttlmDt(LocalDate value) {
         this.sttlmDt = value;
         return this;
     }

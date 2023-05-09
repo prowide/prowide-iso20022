@@ -2,7 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -51,7 +52,7 @@ public class InstrumentLeg6 {
     @XmlElement(name = "LegSttlmDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar legSttlmDt;
+    protected OffsetDateTime legSttlmDt;
     @XmlElement(name = "LegLastPric", required = true)
     protected ActiveCurrencyAnd13DecimalAmount legLastPric;
     @XmlElement(name = "LegSttlmCcy", required = true)
@@ -69,7 +70,7 @@ public class InstrumentLeg6 {
     @XmlElement(name = "LegValDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar legValDt;
+    protected LocalDate legValDt;
     @XmlElement(name = "LegCcy", required = true)
     protected String legCcy;
     @XmlElement(name = "LegSymb", required = true)
@@ -135,7 +136,7 @@ public class InstrumentLeg6 {
      *     {@link String }
      *     
      */
-    public Calendar getLegSttlmDt() {
+    public OffsetDateTime getLegSttlmDt() {
         return legSttlmDt;
     }
 
@@ -147,7 +148,7 @@ public class InstrumentLeg6 {
      *     {@link String }
      *     
      */
-    public InstrumentLeg6 setLegSttlmDt(Calendar value) {
+    public InstrumentLeg6 setLegSttlmDt(OffsetDateTime value) {
         this.legSttlmDt = value;
         return this;
     }
@@ -335,7 +336,7 @@ public class InstrumentLeg6 {
      *     {@link String }
      *     
      */
-    public Calendar getLegValDt() {
+    public LocalDate getLegValDt() {
         return legValDt;
     }
 
@@ -347,7 +348,7 @@ public class InstrumentLeg6 {
      *     {@link String }
      *     
      */
-    public InstrumentLeg6 setLegValDt(Calendar value) {
+    public InstrumentLeg6 setLegValDt(LocalDate value) {
         this.legValDt = value;
         return this;
     }

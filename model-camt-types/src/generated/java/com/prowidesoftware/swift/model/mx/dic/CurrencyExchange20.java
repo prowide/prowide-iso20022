@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -39,7 +39,7 @@ public class CurrencyExchange20 {
     @XmlElement(name = "QtnDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar qtnDt;
+    protected OffsetDateTime qtnDt;
     @XmlElement(name = "LwLmt")
     protected ExchangeRateOrPercentage1Choice lwLmt;
     @XmlElement(name = "HghLmt")
@@ -103,7 +103,7 @@ public class CurrencyExchange20 {
      *     {@link String }
      *     
      */
-    public Calendar getQtnDt() {
+    public OffsetDateTime getQtnDt() {
         return qtnDt;
     }
 
@@ -115,7 +115,7 @@ public class CurrencyExchange20 {
      *     {@link String }
      *     
      */
-    public CurrencyExchange20 setQtnDt(Calendar value) {
+    public CurrencyExchange20 setQtnDt(OffsetDateTime value) {
         this.qtnDt = value;
         return this;
     }

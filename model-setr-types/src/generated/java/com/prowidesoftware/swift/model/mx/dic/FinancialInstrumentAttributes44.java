@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -104,47 +104,47 @@ public class FinancialInstrumentAttributes44 {
     @XmlElement(name = "CpnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar cpnDt;
+    protected LocalDate cpnDt;
     @XmlElement(name = "XpryDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar xpryDt;
+    protected LocalDate xpryDt;
     @XmlElement(name = "FltgRateFxgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar fltgRateFxgDt;
+    protected LocalDate fltgRateFxgDt;
     @XmlElement(name = "MtrtyDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar mtrtyDt;
+    protected LocalDate mtrtyDt;
     @XmlElement(name = "IsseDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar isseDt;
+    protected LocalDate isseDt;
     @XmlElement(name = "NxtCllblDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar nxtCllblDt;
+    protected LocalDate nxtCllblDt;
     @XmlElement(name = "ConvsDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar convsDt;
+    protected LocalDate convsDt;
     @XmlElement(name = "PutblDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar putblDt;
+    protected LocalDate putblDt;
     @XmlElement(name = "DtdDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dtdDt;
+    protected LocalDate dtdDt;
     @XmlElement(name = "FrstPmtDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar frstPmtDt;
+    protected LocalDate frstPmtDt;
     @XmlElement(name = "NxtFctrDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar nxtFctrDt;
+    protected LocalDate nxtFctrDt;
     @XmlElement(name = "PrvsFctr")
     protected BigDecimal prvsFctr;
     @XmlElement(name = "CurFctr")
@@ -489,7 +489,7 @@ public class FinancialInstrumentAttributes44 {
      *     {@link String }
      *     
      */
-    public Calendar getCpnDt() {
+    public LocalDate getCpnDt() {
         return cpnDt;
     }
 
@@ -501,7 +501,7 @@ public class FinancialInstrumentAttributes44 {
      *     {@link String }
      *     
      */
-    public FinancialInstrumentAttributes44 setCpnDt(Calendar value) {
+    public FinancialInstrumentAttributes44 setCpnDt(LocalDate value) {
         this.cpnDt = value;
         return this;
     }
@@ -514,7 +514,7 @@ public class FinancialInstrumentAttributes44 {
      *     {@link String }
      *     
      */
-    public Calendar getXpryDt() {
+    public LocalDate getXpryDt() {
         return xpryDt;
     }
 
@@ -526,7 +526,7 @@ public class FinancialInstrumentAttributes44 {
      *     {@link String }
      *     
      */
-    public FinancialInstrumentAttributes44 setXpryDt(Calendar value) {
+    public FinancialInstrumentAttributes44 setXpryDt(LocalDate value) {
         this.xpryDt = value;
         return this;
     }
@@ -539,7 +539,7 @@ public class FinancialInstrumentAttributes44 {
      *     {@link String }
      *     
      */
-    public Calendar getFltgRateFxgDt() {
+    public LocalDate getFltgRateFxgDt() {
         return fltgRateFxgDt;
     }
 
@@ -551,7 +551,7 @@ public class FinancialInstrumentAttributes44 {
      *     {@link String }
      *     
      */
-    public FinancialInstrumentAttributes44 setFltgRateFxgDt(Calendar value) {
+    public FinancialInstrumentAttributes44 setFltgRateFxgDt(LocalDate value) {
         this.fltgRateFxgDt = value;
         return this;
     }
@@ -564,7 +564,7 @@ public class FinancialInstrumentAttributes44 {
      *     {@link String }
      *     
      */
-    public Calendar getMtrtyDt() {
+    public LocalDate getMtrtyDt() {
         return mtrtyDt;
     }
 
@@ -576,7 +576,7 @@ public class FinancialInstrumentAttributes44 {
      *     {@link String }
      *     
      */
-    public FinancialInstrumentAttributes44 setMtrtyDt(Calendar value) {
+    public FinancialInstrumentAttributes44 setMtrtyDt(LocalDate value) {
         this.mtrtyDt = value;
         return this;
     }
@@ -589,7 +589,7 @@ public class FinancialInstrumentAttributes44 {
      *     {@link String }
      *     
      */
-    public Calendar getIsseDt() {
+    public LocalDate getIsseDt() {
         return isseDt;
     }
 
@@ -601,7 +601,7 @@ public class FinancialInstrumentAttributes44 {
      *     {@link String }
      *     
      */
-    public FinancialInstrumentAttributes44 setIsseDt(Calendar value) {
+    public FinancialInstrumentAttributes44 setIsseDt(LocalDate value) {
         this.isseDt = value;
         return this;
     }
@@ -614,7 +614,7 @@ public class FinancialInstrumentAttributes44 {
      *     {@link String }
      *     
      */
-    public Calendar getNxtCllblDt() {
+    public LocalDate getNxtCllblDt() {
         return nxtCllblDt;
     }
 
@@ -626,7 +626,7 @@ public class FinancialInstrumentAttributes44 {
      *     {@link String }
      *     
      */
-    public FinancialInstrumentAttributes44 setNxtCllblDt(Calendar value) {
+    public FinancialInstrumentAttributes44 setNxtCllblDt(LocalDate value) {
         this.nxtCllblDt = value;
         return this;
     }
@@ -639,7 +639,7 @@ public class FinancialInstrumentAttributes44 {
      *     {@link String }
      *     
      */
-    public Calendar getConvsDt() {
+    public LocalDate getConvsDt() {
         return convsDt;
     }
 
@@ -651,7 +651,7 @@ public class FinancialInstrumentAttributes44 {
      *     {@link String }
      *     
      */
-    public FinancialInstrumentAttributes44 setConvsDt(Calendar value) {
+    public FinancialInstrumentAttributes44 setConvsDt(LocalDate value) {
         this.convsDt = value;
         return this;
     }
@@ -664,7 +664,7 @@ public class FinancialInstrumentAttributes44 {
      *     {@link String }
      *     
      */
-    public Calendar getPutblDt() {
+    public LocalDate getPutblDt() {
         return putblDt;
     }
 
@@ -676,7 +676,7 @@ public class FinancialInstrumentAttributes44 {
      *     {@link String }
      *     
      */
-    public FinancialInstrumentAttributes44 setPutblDt(Calendar value) {
+    public FinancialInstrumentAttributes44 setPutblDt(LocalDate value) {
         this.putblDt = value;
         return this;
     }
@@ -689,7 +689,7 @@ public class FinancialInstrumentAttributes44 {
      *     {@link String }
      *     
      */
-    public Calendar getDtdDt() {
+    public LocalDate getDtdDt() {
         return dtdDt;
     }
 
@@ -701,7 +701,7 @@ public class FinancialInstrumentAttributes44 {
      *     {@link String }
      *     
      */
-    public FinancialInstrumentAttributes44 setDtdDt(Calendar value) {
+    public FinancialInstrumentAttributes44 setDtdDt(LocalDate value) {
         this.dtdDt = value;
         return this;
     }
@@ -714,7 +714,7 @@ public class FinancialInstrumentAttributes44 {
      *     {@link String }
      *     
      */
-    public Calendar getFrstPmtDt() {
+    public LocalDate getFrstPmtDt() {
         return frstPmtDt;
     }
 
@@ -726,7 +726,7 @@ public class FinancialInstrumentAttributes44 {
      *     {@link String }
      *     
      */
-    public FinancialInstrumentAttributes44 setFrstPmtDt(Calendar value) {
+    public FinancialInstrumentAttributes44 setFrstPmtDt(LocalDate value) {
         this.frstPmtDt = value;
         return this;
     }
@@ -739,7 +739,7 @@ public class FinancialInstrumentAttributes44 {
      *     {@link String }
      *     
      */
-    public Calendar getNxtFctrDt() {
+    public LocalDate getNxtFctrDt() {
         return nxtFctrDt;
     }
 
@@ -751,7 +751,7 @@ public class FinancialInstrumentAttributes44 {
      *     {@link String }
      *     
      */
-    public FinancialInstrumentAttributes44 setNxtFctrDt(Calendar value) {
+    public FinancialInstrumentAttributes44 setNxtFctrDt(LocalDate value) {
         this.nxtFctrDt = value;
         return this;
     }

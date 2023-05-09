@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.sys.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.OffsetDateTime ;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -45,7 +45,7 @@ public class ReportInformation {
     @XmlElement(name = "ExctnTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar exctnTm;
+    protected OffsetDateTime exctnTm;
 
     /**
      * Gets the value of the pgNb property.
@@ -155,7 +155,7 @@ public class ReportInformation {
      *     {@link String }
      *     
      */
-    public Calendar getExctnTm() {
+    public OffsetDateTime getExctnTm() {
         return exctnTm;
     }
 
@@ -167,7 +167,7 @@ public class ReportInformation {
      *     {@link String }
      *     
      */
-    public ReportInformation setExctnTm(Calendar value) {
+    public ReportInformation setExctnTm(OffsetDateTime value) {
         this.exctnTm = value;
         return this;
     }

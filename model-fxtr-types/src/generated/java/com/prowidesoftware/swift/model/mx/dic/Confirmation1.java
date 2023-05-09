@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -47,15 +47,15 @@ public class Confirmation1 {
     @XmlElement(name = "ConfTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar confTm;
+    protected OffsetDateTime confTm;
     @XmlElement(name = "TradPtyConfTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar tradPtyConfTm;
+    protected OffsetDateTime tradPtyConfTm;
     @XmlElement(name = "InitgPtyConfTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar initgPtyConfTm;
+    protected OffsetDateTime initgPtyConfTm;
     @XmlElement(name = "ConfTp", required = true)
     @XmlSchemaType(name = "string")
     protected ConfirmationRequest1Code confTp;
@@ -111,7 +111,7 @@ public class Confirmation1 {
      *     {@link String }
      *     
      */
-    public Calendar getConfTm() {
+    public OffsetDateTime getConfTm() {
         return confTm;
     }
 
@@ -123,7 +123,7 @@ public class Confirmation1 {
      *     {@link String }
      *     
      */
-    public Confirmation1 setConfTm(Calendar value) {
+    public Confirmation1 setConfTm(OffsetDateTime value) {
         this.confTm = value;
         return this;
     }
@@ -136,7 +136,7 @@ public class Confirmation1 {
      *     {@link String }
      *     
      */
-    public Calendar getTradPtyConfTm() {
+    public OffsetDateTime getTradPtyConfTm() {
         return tradPtyConfTm;
     }
 
@@ -148,7 +148,7 @@ public class Confirmation1 {
      *     {@link String }
      *     
      */
-    public Confirmation1 setTradPtyConfTm(Calendar value) {
+    public Confirmation1 setTradPtyConfTm(OffsetDateTime value) {
         this.tradPtyConfTm = value;
         return this;
     }
@@ -161,7 +161,7 @@ public class Confirmation1 {
      *     {@link String }
      *     
      */
-    public Calendar getInitgPtyConfTm() {
+    public OffsetDateTime getInitgPtyConfTm() {
         return initgPtyConfTm;
     }
 
@@ -173,7 +173,7 @@ public class Confirmation1 {
      *     {@link String }
      *     
      */
-    public Confirmation1 setInitgPtyConfTm(Calendar value) {
+    public Confirmation1 setInitgPtyConfTm(OffsetDateTime value) {
         this.initgPtyConfTm = value;
         return this;
     }

@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -31,7 +31,7 @@ public class RecordTechnicalData2 {
     @XmlElement(name = "RctDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar rctDtTm;
+    protected OffsetDateTime rctDtTm;
     @XmlElement(name = "CxlRsn", required = true)
     @XmlSchemaType(name = "string")
     protected CancelledStatusReason15Code cxlRsn;
@@ -44,7 +44,7 @@ public class RecordTechnicalData2 {
      *     {@link String }
      *     
      */
-    public Calendar getRctDtTm() {
+    public OffsetDateTime getRctDtTm() {
         return rctDtTm;
     }
 
@@ -56,7 +56,7 @@ public class RecordTechnicalData2 {
      *     {@link String }
      *     
      */
-    public RecordTechnicalData2 setRctDtTm(Calendar value) {
+    public RecordTechnicalData2 setRctDtTm(OffsetDateTime value) {
         this.rctDtTm = value;
         return this;
     }

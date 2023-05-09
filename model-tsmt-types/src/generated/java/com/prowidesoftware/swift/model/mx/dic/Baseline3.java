@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -87,7 +87,7 @@ public class Baseline3 {
     @XmlElement(name = "LatstMtchDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar latstMtchDt;
+    protected LocalDate latstMtchDt;
     @XmlElement(name = "ComrclDataSetReqrd", required = true)
     protected RequiredSubmission2 comrclDataSetReqrd;
     @XmlElement(name = "TrnsprtDataSetReqrd")
@@ -533,7 +533,7 @@ public class Baseline3 {
      *     {@link String }
      *     
      */
-    public Calendar getLatstMtchDt() {
+    public LocalDate getLatstMtchDt() {
         return latstMtchDt;
     }
 
@@ -545,7 +545,7 @@ public class Baseline3 {
      *     {@link String }
      *     
      */
-    public Baseline3 setLatstMtchDt(Calendar value) {
+    public Baseline3 setLatstMtchDt(LocalDate value) {
         this.latstMtchDt = value;
         return this;
     }

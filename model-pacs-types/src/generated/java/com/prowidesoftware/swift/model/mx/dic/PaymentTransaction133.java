@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -75,7 +75,7 @@ public class PaymentTransaction133 {
     @XmlElement(name = "OrgnlIntrBkSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar orgnlIntrBkSttlmDt;
+    protected LocalDate orgnlIntrBkSttlmDt;
     @XmlElement(name = "PmtTpInf")
     protected PaymentTypeInformation28 pmtTpInf;
     @XmlElement(name = "RtrdIntrBkSttlmAmt", required = true)
@@ -83,7 +83,7 @@ public class PaymentTransaction133 {
     @XmlElement(name = "IntrBkSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar intrBkSttlmDt;
+    protected LocalDate intrBkSttlmDt;
     @XmlElement(name = "SttlmPrty")
     @XmlSchemaType(name = "string")
     protected Priority3Code sttlmPrty;
@@ -325,7 +325,7 @@ public class PaymentTransaction133 {
      *     {@link String }
      *     
      */
-    public Calendar getOrgnlIntrBkSttlmDt() {
+    public LocalDate getOrgnlIntrBkSttlmDt() {
         return orgnlIntrBkSttlmDt;
     }
 
@@ -337,7 +337,7 @@ public class PaymentTransaction133 {
      *     {@link String }
      *     
      */
-    public PaymentTransaction133 setOrgnlIntrBkSttlmDt(Calendar value) {
+    public PaymentTransaction133 setOrgnlIntrBkSttlmDt(LocalDate value) {
         this.orgnlIntrBkSttlmDt = value;
         return this;
     }
@@ -400,7 +400,7 @@ public class PaymentTransaction133 {
      *     {@link String }
      *     
      */
-    public Calendar getIntrBkSttlmDt() {
+    public LocalDate getIntrBkSttlmDt() {
         return intrBkSttlmDt;
     }
 
@@ -412,7 +412,7 @@ public class PaymentTransaction133 {
      *     {@link String }
      *     
      */
-    public PaymentTransaction133 setIntrBkSttlmDt(Calendar value) {
+    public PaymentTransaction133 setIntrBkSttlmDt(LocalDate value) {
         this.intrBkSttlmDt = value;
         return this;
     }

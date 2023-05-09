@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -43,7 +43,7 @@ public class OptionOrSwaption4 {
     @XmlElement(name = "MtrtyDtOfUndrlyg", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar mtrtyDtOfUndrlyg;
+    protected LocalDate mtrtyDtOfUndrlyg;
 
     /**
      * Gets the value of the optnTp property.
@@ -134,7 +134,7 @@ public class OptionOrSwaption4 {
      *     {@link String }
      *     
      */
-    public Calendar getMtrtyDtOfUndrlyg() {
+    public LocalDate getMtrtyDtOfUndrlyg() {
         return mtrtyDtOfUndrlyg;
     }
 
@@ -146,7 +146,7 @@ public class OptionOrSwaption4 {
      *     {@link String }
      *     
      */
-    public OptionOrSwaption4 setMtrtyDtOfUndrlyg(Calendar value) {
+    public OptionOrSwaption4 setMtrtyDtOfUndrlyg(LocalDate value) {
         this.mtrtyDtOfUndrlyg = value;
         return this;
     }

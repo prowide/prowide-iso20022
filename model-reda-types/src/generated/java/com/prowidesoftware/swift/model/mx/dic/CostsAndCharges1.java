@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -35,11 +35,11 @@ public class CostsAndCharges1 {
     @XmlElement(name = "ExAnteRefDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar exAnteRefDt;
+    protected LocalDate exAnteRefDt;
     @XmlElement(name = "ExPstRefDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar exPstRefDt;
+    protected LocalDate exPstRefDt;
     @XmlElement(name = "IndvCostOrChrg", required = true)
     protected List<IndividualCostOrCharge1> indvCostOrChrg;
     @XmlElement(name = "AddtlInf")
@@ -53,7 +53,7 @@ public class CostsAndCharges1 {
      *     {@link String }
      *     
      */
-    public Calendar getExAnteRefDt() {
+    public LocalDate getExAnteRefDt() {
         return exAnteRefDt;
     }
 
@@ -65,7 +65,7 @@ public class CostsAndCharges1 {
      *     {@link String }
      *     
      */
-    public CostsAndCharges1 setExAnteRefDt(Calendar value) {
+    public CostsAndCharges1 setExAnteRefDt(LocalDate value) {
         this.exAnteRefDt = value;
         return this;
     }
@@ -78,7 +78,7 @@ public class CostsAndCharges1 {
      *     {@link String }
      *     
      */
-    public Calendar getExPstRefDt() {
+    public LocalDate getExPstRefDt() {
         return exPstRefDt;
     }
 
@@ -90,7 +90,7 @@ public class CostsAndCharges1 {
      *     {@link String }
      *     
      */
-    public CostsAndCharges1 setExPstRefDt(Calendar value) {
+    public CostsAndCharges1 setExPstRefDt(LocalDate value) {
         this.exPstRefDt = value;
         return this;
     }

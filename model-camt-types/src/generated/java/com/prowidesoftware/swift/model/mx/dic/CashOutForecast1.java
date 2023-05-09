@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -36,7 +36,7 @@ public class CashOutForecast1 {
     @XmlElement(name = "SttlmDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar sttlmDt;
+    protected LocalDate sttlmDt;
     @XmlElement(name = "SubTtlAmt")
     protected ActiveOrHistoricCurrencyAndAmount subTtlAmt;
     @XmlElement(name = "SubTtlUnitsNb")
@@ -54,7 +54,7 @@ public class CashOutForecast1 {
      *     {@link String }
      *     
      */
-    public Calendar getSttlmDt() {
+    public LocalDate getSttlmDt() {
         return sttlmDt;
     }
 
@@ -66,7 +66,7 @@ public class CashOutForecast1 {
      *     {@link String }
      *     
      */
-    public CashOutForecast1 setSttlmDt(Calendar value) {
+    public CashOutForecast1 setSttlmDt(LocalDate value) {
         this.sttlmDt = value;
         return this;
     }

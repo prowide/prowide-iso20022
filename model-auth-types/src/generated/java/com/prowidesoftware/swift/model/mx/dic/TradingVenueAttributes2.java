@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -39,19 +39,19 @@ public class TradingVenueAttributes2 {
     @XmlElement(name = "AdmssnApprvlDtByIssr", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar admssnApprvlDtByIssr;
+    protected OffsetDateTime admssnApprvlDtByIssr;
     @XmlElement(name = "ReqForAdmssnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar reqForAdmssnDt;
+    protected OffsetDateTime reqForAdmssnDt;
     @XmlElement(name = "FrstTradDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar frstTradDt;
+    protected OffsetDateTime frstTradDt;
     @XmlElement(name = "TermntnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar termntnDt;
+    protected OffsetDateTime termntnDt;
 
     /**
      * Gets the value of the id property.
@@ -111,7 +111,7 @@ public class TradingVenueAttributes2 {
      *     {@link String }
      *     
      */
-    public Calendar getAdmssnApprvlDtByIssr() {
+    public OffsetDateTime getAdmssnApprvlDtByIssr() {
         return admssnApprvlDtByIssr;
     }
 
@@ -123,7 +123,7 @@ public class TradingVenueAttributes2 {
      *     {@link String }
      *     
      */
-    public TradingVenueAttributes2 setAdmssnApprvlDtByIssr(Calendar value) {
+    public TradingVenueAttributes2 setAdmssnApprvlDtByIssr(OffsetDateTime value) {
         this.admssnApprvlDtByIssr = value;
         return this;
     }
@@ -136,7 +136,7 @@ public class TradingVenueAttributes2 {
      *     {@link String }
      *     
      */
-    public Calendar getReqForAdmssnDt() {
+    public OffsetDateTime getReqForAdmssnDt() {
         return reqForAdmssnDt;
     }
 
@@ -148,7 +148,7 @@ public class TradingVenueAttributes2 {
      *     {@link String }
      *     
      */
-    public TradingVenueAttributes2 setReqForAdmssnDt(Calendar value) {
+    public TradingVenueAttributes2 setReqForAdmssnDt(OffsetDateTime value) {
         this.reqForAdmssnDt = value;
         return this;
     }
@@ -161,7 +161,7 @@ public class TradingVenueAttributes2 {
      *     {@link String }
      *     
      */
-    public Calendar getFrstTradDt() {
+    public OffsetDateTime getFrstTradDt() {
         return frstTradDt;
     }
 
@@ -173,7 +173,7 @@ public class TradingVenueAttributes2 {
      *     {@link String }
      *     
      */
-    public TradingVenueAttributes2 setFrstTradDt(Calendar value) {
+    public TradingVenueAttributes2 setFrstTradDt(OffsetDateTime value) {
         this.frstTradDt = value;
         return this;
     }
@@ -186,7 +186,7 @@ public class TradingVenueAttributes2 {
      *     {@link String }
      *     
      */
-    public Calendar getTermntnDt() {
+    public OffsetDateTime getTermntnDt() {
         return termntnDt;
     }
 
@@ -198,7 +198,7 @@ public class TradingVenueAttributes2 {
      *     {@link String }
      *     
      */
-    public TradingVenueAttributes2 setTermntnDt(Calendar value) {
+    public TradingVenueAttributes2 setTermntnDt(OffsetDateTime value) {
         this.termntnDt = value;
         return this;
     }

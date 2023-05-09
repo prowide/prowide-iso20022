@@ -2,8 +2,9 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
@@ -113,15 +114,15 @@ public class CommonFinancialInstrumentAttributes10 {
     @XmlElement(name = "ListgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar listgDt;
+    protected LocalDate listgDt;
     @XmlElement(name = "RcrdDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar rcrdDt;
+    protected OffsetDateTime rcrdDt;
     @XmlElement(name = "XpryDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar xpryDt;
+    protected LocalDate xpryDt;
     @XmlElement(name = "Purp")
     protected String purp;
     @XmlElement(name = "ClssfctnTp")
@@ -551,7 +552,7 @@ public class CommonFinancialInstrumentAttributes10 {
      *     {@link String }
      *     
      */
-    public Calendar getListgDt() {
+    public LocalDate getListgDt() {
         return listgDt;
     }
 
@@ -563,7 +564,7 @@ public class CommonFinancialInstrumentAttributes10 {
      *     {@link String }
      *     
      */
-    public CommonFinancialInstrumentAttributes10 setListgDt(Calendar value) {
+    public CommonFinancialInstrumentAttributes10 setListgDt(LocalDate value) {
         this.listgDt = value;
         return this;
     }
@@ -576,7 +577,7 @@ public class CommonFinancialInstrumentAttributes10 {
      *     {@link String }
      *     
      */
-    public Calendar getRcrdDt() {
+    public OffsetDateTime getRcrdDt() {
         return rcrdDt;
     }
 
@@ -588,7 +589,7 @@ public class CommonFinancialInstrumentAttributes10 {
      *     {@link String }
      *     
      */
-    public CommonFinancialInstrumentAttributes10 setRcrdDt(Calendar value) {
+    public CommonFinancialInstrumentAttributes10 setRcrdDt(OffsetDateTime value) {
         this.rcrdDt = value;
         return this;
     }
@@ -601,7 +602,7 @@ public class CommonFinancialInstrumentAttributes10 {
      *     {@link String }
      *     
      */
-    public Calendar getXpryDt() {
+    public LocalDate getXpryDt() {
         return xpryDt;
     }
 
@@ -613,7 +614,7 @@ public class CommonFinancialInstrumentAttributes10 {
      *     {@link String }
      *     
      */
-    public CommonFinancialInstrumentAttributes10 setXpryDt(Calendar value) {
+    public CommonFinancialInstrumentAttributes10 setXpryDt(LocalDate value) {
         this.xpryDt = value;
         return this;
     }

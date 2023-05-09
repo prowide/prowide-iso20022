@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -47,11 +47,11 @@ public class CustomerOrder1 {
     @XmlElement(name = "StartDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar startDt;
+    protected OffsetDateTime startDt;
     @XmlElement(name = "EndDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar endDt;
+    protected OffsetDateTime endDt;
     @XmlElement(name = "Unit")
     @XmlSchemaType(name = "string")
     protected AmountUnit1Code unit;
@@ -149,7 +149,7 @@ public class CustomerOrder1 {
      *     {@link String }
      *     
      */
-    public Calendar getStartDt() {
+    public OffsetDateTime getStartDt() {
         return startDt;
     }
 
@@ -161,7 +161,7 @@ public class CustomerOrder1 {
      *     {@link String }
      *     
      */
-    public CustomerOrder1 setStartDt(Calendar value) {
+    public CustomerOrder1 setStartDt(OffsetDateTime value) {
         this.startDt = value;
         return this;
     }
@@ -174,7 +174,7 @@ public class CustomerOrder1 {
      *     {@link String }
      *     
      */
-    public Calendar getEndDt() {
+    public OffsetDateTime getEndDt() {
         return endDt;
     }
 
@@ -186,7 +186,7 @@ public class CustomerOrder1 {
      *     {@link String }
      *     
      */
-    public CustomerOrder1 setEndDt(Calendar value) {
+    public CustomerOrder1 setEndDt(OffsetDateTime value) {
         this.endDt = value;
         return this;
     }

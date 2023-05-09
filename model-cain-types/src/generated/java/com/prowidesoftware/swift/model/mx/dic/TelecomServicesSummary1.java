@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -41,11 +41,11 @@ public class TelecomServicesSummary1 {
     @XmlElement(name = "BllgStmtPrdStart", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar bllgStmtPrdStart;
+    protected LocalDate bllgStmtPrdStart;
     @XmlElement(name = "BllgStmtPrdEnd", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar bllgStmtPrdEnd;
+    protected LocalDate bllgStmtPrdEnd;
     @XmlElement(name = "BllgEvt")
     protected List<Amount10> bllgEvt;
     @XmlElement(name = "TtlTax")
@@ -86,7 +86,7 @@ public class TelecomServicesSummary1 {
      *     {@link String }
      *     
      */
-    public Calendar getBllgStmtPrdStart() {
+    public LocalDate getBllgStmtPrdStart() {
         return bllgStmtPrdStart;
     }
 
@@ -98,7 +98,7 @@ public class TelecomServicesSummary1 {
      *     {@link String }
      *     
      */
-    public TelecomServicesSummary1 setBllgStmtPrdStart(Calendar value) {
+    public TelecomServicesSummary1 setBllgStmtPrdStart(LocalDate value) {
         this.bllgStmtPrdStart = value;
         return this;
     }
@@ -111,7 +111,7 @@ public class TelecomServicesSummary1 {
      *     {@link String }
      *     
      */
-    public Calendar getBllgStmtPrdEnd() {
+    public LocalDate getBllgStmtPrdEnd() {
         return bllgStmtPrdEnd;
     }
 
@@ -123,7 +123,7 @@ public class TelecomServicesSummary1 {
      *     {@link String }
      *     
      */
-    public TelecomServicesSummary1 setBllgStmtPrdEnd(Calendar value) {
+    public TelecomServicesSummary1 setBllgStmtPrdEnd(LocalDate value) {
         this.bllgStmtPrdEnd = value;
         return this;
     }

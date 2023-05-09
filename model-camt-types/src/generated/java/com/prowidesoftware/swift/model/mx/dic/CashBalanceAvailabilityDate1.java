@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -33,7 +33,7 @@ public class CashBalanceAvailabilityDate1 {
     @XmlElement(name = "ActlDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar actlDt;
+    protected LocalDate actlDt;
 
     /**
      * Gets the value of the nbOfDays property.
@@ -68,7 +68,7 @@ public class CashBalanceAvailabilityDate1 {
      *     {@link String }
      *     
      */
-    public Calendar getActlDt() {
+    public LocalDate getActlDt() {
         return actlDt;
     }
 
@@ -80,7 +80,7 @@ public class CashBalanceAvailabilityDate1 {
      *     {@link String }
      *     
      */
-    public CashBalanceAvailabilityDate1 setActlDt(Calendar value) {
+    public CashBalanceAvailabilityDate1 setActlDt(LocalDate value) {
         this.actlDt = value;
         return this;
     }

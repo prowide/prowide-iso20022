@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -37,7 +37,7 @@ public class ProtectInstruction7 {
     @XmlElement(name = "PrtctDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar prtctDt;
+    protected LocalDate prtctDt;
 
     /**
      * Gets the value of the txTp property.
@@ -97,7 +97,7 @@ public class ProtectInstruction7 {
      *     {@link String }
      *     
      */
-    public Calendar getPrtctDt() {
+    public LocalDate getPrtctDt() {
         return prtctDt;
     }
 
@@ -109,7 +109,7 @@ public class ProtectInstruction7 {
      *     {@link String }
      *     
      */
-    public ProtectInstruction7 setPrtctDt(Calendar value) {
+    public ProtectInstruction7 setPrtctDt(LocalDate value) {
         this.prtctDt = value;
         return this;
     }

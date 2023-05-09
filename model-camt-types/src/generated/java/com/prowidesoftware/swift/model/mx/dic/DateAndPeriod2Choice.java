@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -33,17 +33,17 @@ public class DateAndPeriod2Choice {
     @XmlElement(name = "Dt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dt;
+    protected LocalDate dt;
     @XmlElement(name = "Prd")
     protected Period2 prd;
     @XmlElement(name = "FrDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar frDt;
+    protected LocalDate frDt;
     @XmlElement(name = "ToDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar toDt;
+    protected LocalDate toDt;
 
     /**
      * Gets the value of the dt property.
@@ -53,7 +53,7 @@ public class DateAndPeriod2Choice {
      *     {@link String }
      *     
      */
-    public Calendar getDt() {
+    public LocalDate getDt() {
         return dt;
     }
 
@@ -65,7 +65,7 @@ public class DateAndPeriod2Choice {
      *     {@link String }
      *     
      */
-    public DateAndPeriod2Choice setDt(Calendar value) {
+    public DateAndPeriod2Choice setDt(LocalDate value) {
         this.dt = value;
         return this;
     }
@@ -103,7 +103,7 @@ public class DateAndPeriod2Choice {
      *     {@link String }
      *     
      */
-    public Calendar getFrDt() {
+    public LocalDate getFrDt() {
         return frDt;
     }
 
@@ -115,7 +115,7 @@ public class DateAndPeriod2Choice {
      *     {@link String }
      *     
      */
-    public DateAndPeriod2Choice setFrDt(Calendar value) {
+    public DateAndPeriod2Choice setFrDt(LocalDate value) {
         this.frDt = value;
         return this;
     }
@@ -128,7 +128,7 @@ public class DateAndPeriod2Choice {
      *     {@link String }
      *     
      */
-    public Calendar getToDt() {
+    public LocalDate getToDt() {
         return toDt;
     }
 
@@ -140,7 +140,7 @@ public class DateAndPeriod2Choice {
      *     {@link String }
      *     
      */
-    public DateAndPeriod2Choice setToDt(Calendar value) {
+    public DateAndPeriod2Choice setToDt(LocalDate value) {
         this.toDt = value;
         return this;
     }

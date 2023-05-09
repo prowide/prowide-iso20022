@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -39,7 +39,7 @@ public class CounterpartySpecificData21 {
     @XmlElement(name = "RptgDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar rptgDtTm;
+    protected OffsetDateTime rptgDtTm;
 
     /**
      * Gets the value of the ctrPty property.
@@ -124,7 +124,7 @@ public class CounterpartySpecificData21 {
      *     {@link String }
      *     
      */
-    public Calendar getRptgDtTm() {
+    public OffsetDateTime getRptgDtTm() {
         return rptgDtTm;
     }
 
@@ -136,7 +136,7 @@ public class CounterpartySpecificData21 {
      *     {@link String }
      *     
      */
-    public CounterpartySpecificData21 setRptgDtTm(Calendar value) {
+    public CounterpartySpecificData21 setRptgDtTm(OffsetDateTime value) {
         this.rptgDtTm = value;
         return this;
     }

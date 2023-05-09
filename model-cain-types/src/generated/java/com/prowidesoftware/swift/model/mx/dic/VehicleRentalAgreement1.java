@@ -1,8 +1,9 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
+import java.time.OffsetTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
@@ -60,21 +61,21 @@ public class VehicleRentalAgreement1 {
     @XmlElement(name = "ChckOutDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar chckOutDt;
+    protected LocalDate chckOutDt;
     @XmlElement(name = "ChckOutTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected Calendar chckOutTm;
+    protected OffsetTime chckOutTm;
     @XmlElement(name = "RtrLctn")
     protected Address1 rtrLctn;
     @XmlElement(name = "ChckInDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar chckInDt;
+    protected LocalDate chckInDt;
     @XmlElement(name = "ChckInTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected Calendar chckInTm;
+    protected OffsetTime chckInTm;
     @XmlElement(name = "Drtn")
     protected String drtn;
     @XmlElement(name = "VhclClssDtls")
@@ -212,7 +213,7 @@ public class VehicleRentalAgreement1 {
      *     {@link String }
      *     
      */
-    public Calendar getChckOutDt() {
+    public LocalDate getChckOutDt() {
         return chckOutDt;
     }
 
@@ -224,7 +225,7 @@ public class VehicleRentalAgreement1 {
      *     {@link String }
      *     
      */
-    public VehicleRentalAgreement1 setChckOutDt(Calendar value) {
+    public VehicleRentalAgreement1 setChckOutDt(LocalDate value) {
         this.chckOutDt = value;
         return this;
     }
@@ -237,7 +238,7 @@ public class VehicleRentalAgreement1 {
      *     {@link String }
      *     
      */
-    public Calendar getChckOutTm() {
+    public OffsetTime getChckOutTm() {
         return chckOutTm;
     }
 
@@ -249,7 +250,7 @@ public class VehicleRentalAgreement1 {
      *     {@link String }
      *     
      */
-    public VehicleRentalAgreement1 setChckOutTm(Calendar value) {
+    public VehicleRentalAgreement1 setChckOutTm(OffsetTime value) {
         this.chckOutTm = value;
         return this;
     }
@@ -287,7 +288,7 @@ public class VehicleRentalAgreement1 {
      *     {@link String }
      *     
      */
-    public Calendar getChckInDt() {
+    public LocalDate getChckInDt() {
         return chckInDt;
     }
 
@@ -299,7 +300,7 @@ public class VehicleRentalAgreement1 {
      *     {@link String }
      *     
      */
-    public VehicleRentalAgreement1 setChckInDt(Calendar value) {
+    public VehicleRentalAgreement1 setChckInDt(LocalDate value) {
         this.chckInDt = value;
         return this;
     }
@@ -312,7 +313,7 @@ public class VehicleRentalAgreement1 {
      *     {@link String }
      *     
      */
-    public Calendar getChckInTm() {
+    public OffsetTime getChckInTm() {
         return chckInTm;
     }
 
@@ -324,7 +325,7 @@ public class VehicleRentalAgreement1 {
      *     {@link String }
      *     
      */
-    public VehicleRentalAgreement1 setChckInTm(Calendar value) {
+    public VehicleRentalAgreement1 setChckInTm(OffsetTime value) {
         this.chckInTm = value;
         return this;
     }

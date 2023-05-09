@@ -2,8 +2,9 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.OffsetTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
@@ -45,13 +46,13 @@ public class TelecomServicesLineItem2 {
     @XmlElement(name = "StartDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar startDtTm;
+    protected LocalDate startDtTm;
     @XmlElement(name = "TmPrd")
     protected String tmPrd;
     @XmlElement(name = "Drtn", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected Calendar drtn;
+    protected OffsetTime drtn;
     @XmlElement(name = "CallFr")
     protected TelecomCallDetails2 callFr;
     @XmlElement(name = "CallTo")
@@ -75,7 +76,7 @@ public class TelecomServicesLineItem2 {
      *     {@link String }
      *     
      */
-    public Calendar getStartDtTm() {
+    public LocalDate getStartDtTm() {
         return startDtTm;
     }
 
@@ -87,7 +88,7 @@ public class TelecomServicesLineItem2 {
      *     {@link String }
      *     
      */
-    public TelecomServicesLineItem2 setStartDtTm(Calendar value) {
+    public TelecomServicesLineItem2 setStartDtTm(LocalDate value) {
         this.startDtTm = value;
         return this;
     }
@@ -125,7 +126,7 @@ public class TelecomServicesLineItem2 {
      *     {@link String }
      *     
      */
-    public Calendar getDrtn() {
+    public OffsetTime getDrtn() {
         return drtn;
     }
 
@@ -137,7 +138,7 @@ public class TelecomServicesLineItem2 {
      *     {@link String }
      *     
      */
-    public TelecomServicesLineItem2 setDrtn(Calendar value) {
+    public TelecomServicesLineItem2 setDrtn(OffsetTime value) {
         this.drtn = value;
         return this;
     }

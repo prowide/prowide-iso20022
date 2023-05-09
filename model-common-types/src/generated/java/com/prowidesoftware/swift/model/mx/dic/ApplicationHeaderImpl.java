@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -46,7 +46,7 @@ public class ApplicationHeaderImpl {
     @XmlElement(name = "CrDate", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar crDate;
+    protected OffsetDateTime crDate;
     @XmlElement(name = "Dup")
     protected DuplicateIndication dup;
     public static final transient Class[] _classes = new Class[] {ApplicationHeaderImpl.class, DuplicateIndication.class, EntityIdentification.class };
@@ -184,7 +184,7 @@ public class ApplicationHeaderImpl {
      *     {@link String }
      *     
      */
-    public Calendar getCrDate() {
+    public OffsetDateTime getCrDate() {
         return crDate;
     }
 
@@ -196,7 +196,7 @@ public class ApplicationHeaderImpl {
      *     {@link String }
      *     
      */
-    public ApplicationHeaderImpl setCrDate(Calendar value) {
+    public ApplicationHeaderImpl setCrDate(OffsetDateTime value) {
         this.crDate = value;
         return this;
     }

@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -36,7 +36,7 @@ public class GDPRData1 {
     @XmlElement(name = "CnsntDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar cnsntDt;
+    protected LocalDate cnsntDt;
 
     /**
      * Gets the value of the cnsntTp property.
@@ -88,7 +88,7 @@ public class GDPRData1 {
      *     {@link String }
      *     
      */
-    public Calendar getCnsntDt() {
+    public LocalDate getCnsntDt() {
         return cnsntDt;
     }
 
@@ -100,7 +100,7 @@ public class GDPRData1 {
      *     {@link String }
      *     
      */
-    public GDPRData1 setCnsntDt(Calendar value) {
+    public GDPRData1 setCnsntDt(LocalDate value) {
         this.cnsntDt = value;
         return this;
     }

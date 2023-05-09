@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -38,7 +38,7 @@ public class EarlyPayment1 {
     @XmlElement(name = "EarlyPmtDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar earlyPmtDt;
+    protected LocalDate earlyPmtDt;
     @XmlElement(name = "DscntPct", required = true)
     protected BigDecimal dscntPct;
     @XmlElement(name = "DscntAmt", required = true)
@@ -58,7 +58,7 @@ public class EarlyPayment1 {
      *     {@link String }
      *     
      */
-    public Calendar getEarlyPmtDt() {
+    public LocalDate getEarlyPmtDt() {
         return earlyPmtDt;
     }
 
@@ -70,7 +70,7 @@ public class EarlyPayment1 {
      *     {@link String }
      *     
      */
-    public EarlyPayment1 setEarlyPmtDt(Calendar value) {
+    public EarlyPayment1 setEarlyPmtDt(LocalDate value) {
         this.earlyPmtDt = value;
         return this;
     }

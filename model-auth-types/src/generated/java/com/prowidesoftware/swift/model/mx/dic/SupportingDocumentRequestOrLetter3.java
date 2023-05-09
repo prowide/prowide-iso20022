@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -45,7 +45,7 @@ public class SupportingDocumentRequestOrLetter3 {
     @XmlElement(name = "Dt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dt;
+    protected LocalDate dt;
     @XmlElement(name = "Sndr")
     protected Party40Choice sndr;
     @XmlElement(name = "Rcvr")
@@ -63,7 +63,7 @@ public class SupportingDocumentRequestOrLetter3 {
     @XmlElement(name = "DueDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dueDt;
+    protected LocalDate dueDt;
     @XmlElement(name = "Attchmnt")
     protected List<DocumentGeneralInformation5> attchmnt;
     @XmlElement(name = "SplmtryData")
@@ -102,7 +102,7 @@ public class SupportingDocumentRequestOrLetter3 {
      *     {@link String }
      *     
      */
-    public Calendar getDt() {
+    public LocalDate getDt() {
         return dt;
     }
 
@@ -114,7 +114,7 @@ public class SupportingDocumentRequestOrLetter3 {
      *     {@link String }
      *     
      */
-    public SupportingDocumentRequestOrLetter3 setDt(Calendar value) {
+    public SupportingDocumentRequestOrLetter3 setDt(LocalDate value) {
         this.dt = value;
         return this;
     }
@@ -300,7 +300,7 @@ public class SupportingDocumentRequestOrLetter3 {
      *     {@link String }
      *     
      */
-    public Calendar getDueDt() {
+    public LocalDate getDueDt() {
         return dueDt;
     }
 
@@ -312,7 +312,7 @@ public class SupportingDocumentRequestOrLetter3 {
      *     {@link String }
      *     
      */
-    public SupportingDocumentRequestOrLetter3 setDueDt(Calendar value) {
+    public SupportingDocumentRequestOrLetter3 setDueDt(LocalDate value) {
         this.dueDt = value;
         return this;
     }

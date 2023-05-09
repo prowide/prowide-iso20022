@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -33,15 +33,15 @@ public class RelatedEvent2 {
     @XmlElement(name = "IncptnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar incptnDt;
+    protected LocalDate incptnDt;
     @XmlElement(name = "MrgrDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar mrgrDt;
+    protected LocalDate mrgrDt;
     @XmlElement(name = "LqdtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar lqdtnDt;
+    protected LocalDate lqdtnDt;
     @XmlElement(name = "LastRptSnt")
     protected boolean lastRptSnt;
 
@@ -53,7 +53,7 @@ public class RelatedEvent2 {
      *     {@link String }
      *     
      */
-    public Calendar getIncptnDt() {
+    public LocalDate getIncptnDt() {
         return incptnDt;
     }
 
@@ -65,7 +65,7 @@ public class RelatedEvent2 {
      *     {@link String }
      *     
      */
-    public RelatedEvent2 setIncptnDt(Calendar value) {
+    public RelatedEvent2 setIncptnDt(LocalDate value) {
         this.incptnDt = value;
         return this;
     }
@@ -78,7 +78,7 @@ public class RelatedEvent2 {
      *     {@link String }
      *     
      */
-    public Calendar getMrgrDt() {
+    public LocalDate getMrgrDt() {
         return mrgrDt;
     }
 
@@ -90,7 +90,7 @@ public class RelatedEvent2 {
      *     {@link String }
      *     
      */
-    public RelatedEvent2 setMrgrDt(Calendar value) {
+    public RelatedEvent2 setMrgrDt(LocalDate value) {
         this.mrgrDt = value;
         return this;
     }
@@ -103,7 +103,7 @@ public class RelatedEvent2 {
      *     {@link String }
      *     
      */
-    public Calendar getLqdtnDt() {
+    public LocalDate getLqdtnDt() {
         return lqdtnDt;
     }
 
@@ -115,7 +115,7 @@ public class RelatedEvent2 {
      *     {@link String }
      *     
      */
-    public RelatedEvent2 setLqdtnDt(Calendar value) {
+    public RelatedEvent2 setLqdtnDt(LocalDate value) {
         this.lqdtnDt = value;
         return this;
     }

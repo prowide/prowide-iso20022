@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -68,7 +68,7 @@ public class LineItemDetails4 {
     @XmlElement(name = "LatstShipmntDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar latstShipmntDt;
+    protected LocalDate latstShipmntDt;
     @XmlElement(name = "RtgSummry")
     protected TransportMeans1Choice rtgSummry;
     @XmlElement(name = "Incotrms")
@@ -358,7 +358,7 @@ public class LineItemDetails4 {
      *     {@link String }
      *     
      */
-    public Calendar getLatstShipmntDt() {
+    public LocalDate getLatstShipmntDt() {
         return latstShipmntDt;
     }
 
@@ -370,7 +370,7 @@ public class LineItemDetails4 {
      *     {@link String }
      *     
      */
-    public LineItemDetails4 setLatstShipmntDt(Calendar value) {
+    public LineItemDetails4 setLatstShipmntDt(LocalDate value) {
         this.latstShipmntDt = value;
         return this;
     }

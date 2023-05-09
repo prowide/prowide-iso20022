@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -31,11 +31,11 @@ public class CompareDateTime2 {
     @XmlElement(name = "Val1", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar val1;
+    protected OffsetDateTime val1;
     @XmlElement(name = "Val2", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar val2;
+    protected OffsetDateTime val2;
 
     /**
      * Gets the value of the val1 property.
@@ -45,7 +45,7 @@ public class CompareDateTime2 {
      *     {@link String }
      *     
      */
-    public Calendar getVal1() {
+    public OffsetDateTime getVal1() {
         return val1;
     }
 
@@ -57,7 +57,7 @@ public class CompareDateTime2 {
      *     {@link String }
      *     
      */
-    public CompareDateTime2 setVal1(Calendar value) {
+    public CompareDateTime2 setVal1(OffsetDateTime value) {
         this.val1 = value;
         return this;
     }
@@ -70,7 +70,7 @@ public class CompareDateTime2 {
      *     {@link String }
      *     
      */
-    public Calendar getVal2() {
+    public OffsetDateTime getVal2() {
         return val2;
     }
 
@@ -82,7 +82,7 @@ public class CompareDateTime2 {
      *     {@link String }
      *     
      */
-    public CompareDateTime2 setVal2(Calendar value) {
+    public CompareDateTime2 setVal2(OffsetDateTime value) {
         this.val2 = value;
         return this;
     }

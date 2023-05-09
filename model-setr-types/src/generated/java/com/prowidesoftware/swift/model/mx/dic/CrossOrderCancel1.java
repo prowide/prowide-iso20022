@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -33,7 +33,7 @@ public class CrossOrderCancel1 {
     @XmlElement(name = "OrgnlOrdrModTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar orgnlOrdrModTm;
+    protected OffsetDateTime orgnlOrdrModTm;
 
     /**
      * Gets the value of the orgnlClntOrdrId property.
@@ -68,7 +68,7 @@ public class CrossOrderCancel1 {
      *     {@link String }
      *     
      */
-    public Calendar getOrgnlOrdrModTm() {
+    public OffsetDateTime getOrgnlOrdrModTm() {
         return orgnlOrdrModTm;
     }
 
@@ -80,7 +80,7 @@ public class CrossOrderCancel1 {
      *     {@link String }
      *     
      */
-    public CrossOrderCancel1 setOrgnlOrdrModTm(Calendar value) {
+    public CrossOrderCancel1 setOrgnlOrdrModTm(OffsetDateTime value) {
         this.orgnlOrdrModTm = value;
         return this;
     }

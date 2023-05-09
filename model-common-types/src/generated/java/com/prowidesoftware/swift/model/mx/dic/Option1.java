@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -48,13 +48,13 @@ public class Option1 {
     @XmlElement(name = "ConvsDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar convsDt;
+    protected OffsetDateTime convsDt;
     @XmlElement(name = "StrkPric")
     protected Price1 strkPric;
     @XmlElement(name = "XpryDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar xpryDt;
+    protected OffsetDateTime xpryDt;
     @XmlElement(name = "MinExrcblMltplQty")
     protected FinancialInstrumentQuantityChoice minExrcblMltplQty;
     @XmlElement(name = "MinExrcblQty")
@@ -97,7 +97,7 @@ public class Option1 {
      *     {@link String }
      *     
      */
-    public Calendar getConvsDt() {
+    public OffsetDateTime getConvsDt() {
         return convsDt;
     }
 
@@ -109,7 +109,7 @@ public class Option1 {
      *     {@link String }
      *     
      */
-    public Option1 setConvsDt(Calendar value) {
+    public Option1 setConvsDt(OffsetDateTime value) {
         this.convsDt = value;
         return this;
     }
@@ -147,7 +147,7 @@ public class Option1 {
      *     {@link String }
      *     
      */
-    public Calendar getXpryDt() {
+    public OffsetDateTime getXpryDt() {
         return xpryDt;
     }
 
@@ -159,7 +159,7 @@ public class Option1 {
      *     {@link String }
      *     
      */
-    public Option1 setXpryDt(Calendar value) {
+    public Option1 setXpryDt(OffsetDateTime value) {
         this.xpryDt = value;
         return this;
     }

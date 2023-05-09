@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -38,7 +38,7 @@ public class CardPaymentTransactionDetails5 {
     @XmlElement(name = "VldtyDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar vldtyDt;
+    protected LocalDate vldtyDt;
     @XmlElement(name = "ICCRltdData")
     protected byte[] iccRltdData;
 
@@ -100,7 +100,7 @@ public class CardPaymentTransactionDetails5 {
      *     {@link String }
      *     
      */
-    public Calendar getVldtyDt() {
+    public LocalDate getVldtyDt() {
         return vldtyDt;
     }
 
@@ -112,7 +112,7 @@ public class CardPaymentTransactionDetails5 {
      *     {@link String }
      *     
      */
-    public CardPaymentTransactionDetails5 setVldtyDt(Calendar value) {
+    public CardPaymentTransactionDetails5 setVldtyDt(LocalDate value) {
         this.vldtyDt = value;
         return this;
     }

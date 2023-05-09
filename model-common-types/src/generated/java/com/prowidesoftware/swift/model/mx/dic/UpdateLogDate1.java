@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -31,11 +31,11 @@ public class UpdateLogDate1 {
     @XmlElement(name = "Od", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar od;
+    protected LocalDate od;
     @XmlElement(name = "New", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar _new;
+    protected LocalDate _new;
 
     /**
      * Gets the value of the od property.
@@ -45,7 +45,7 @@ public class UpdateLogDate1 {
      *     {@link String }
      *     
      */
-    public Calendar getOd() {
+    public LocalDate getOd() {
         return od;
     }
 
@@ -57,7 +57,7 @@ public class UpdateLogDate1 {
      *     {@link String }
      *     
      */
-    public UpdateLogDate1 setOd(Calendar value) {
+    public UpdateLogDate1 setOd(LocalDate value) {
         this.od = value;
         return this;
     }
@@ -70,7 +70,7 @@ public class UpdateLogDate1 {
      *     {@link String }
      *     
      */
-    public Calendar getNew() {
+    public LocalDate getNew() {
         return _new;
     }
 
@@ -82,7 +82,7 @@ public class UpdateLogDate1 {
      *     {@link String }
      *     
      */
-    public UpdateLogDate1 setNew(Calendar value) {
+    public UpdateLogDate1 setNew(LocalDate value) {
         this._new = value;
         return this;
     }

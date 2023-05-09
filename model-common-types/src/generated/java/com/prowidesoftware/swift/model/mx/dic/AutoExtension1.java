@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -36,7 +36,7 @@ public class AutoExtension1 {
     @XmlElement(name = "FnlXpryDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar fnlXpryDt;
+    protected LocalDate fnlXpryDt;
     @XmlElement(name = "NonXtnsnNtfctn")
     protected List<NonExtension1> nonXtnsnNtfctn;
 
@@ -73,7 +73,7 @@ public class AutoExtension1 {
      *     {@link String }
      *     
      */
-    public Calendar getFnlXpryDt() {
+    public LocalDate getFnlXpryDt() {
         return fnlXpryDt;
     }
 
@@ -85,7 +85,7 @@ public class AutoExtension1 {
      *     {@link String }
      *     
      */
-    public AutoExtension1 setFnlXpryDt(Calendar value) {
+    public AutoExtension1 setFnlXpryDt(LocalDate value) {
         this.fnlXpryDt = value;
         return this;
     }

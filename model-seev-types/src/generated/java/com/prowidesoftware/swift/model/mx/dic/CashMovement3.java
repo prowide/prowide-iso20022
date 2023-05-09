@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -37,7 +37,7 @@ public class CashMovement3 {
     @XmlElement(name = "ValDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar valDt;
+    protected LocalDate valDt;
     @XmlElement(name = "PstngAmt", required = true)
     protected ActiveCurrencyAndAmount pstngAmt;
     @XmlElement(name = "AcctDtls", required = true)
@@ -76,7 +76,7 @@ public class CashMovement3 {
      *     {@link String }
      *     
      */
-    public Calendar getValDt() {
+    public LocalDate getValDt() {
         return valDt;
     }
 
@@ -88,7 +88,7 @@ public class CashMovement3 {
      *     {@link String }
      *     
      */
-    public CashMovement3 setValDt(Calendar value) {
+    public CashMovement3 setValDt(LocalDate value) {
         this.valDt = value;
         return this;
     }

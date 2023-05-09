@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -36,7 +36,7 @@ public class ContractCessionData1 {
     @XmlElement(name = "DocDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar docDt;
+    protected LocalDate docDt;
 
     /**
      * Gets the value of the pty property.
@@ -96,7 +96,7 @@ public class ContractCessionData1 {
      *     {@link String }
      *     
      */
-    public Calendar getDocDt() {
+    public LocalDate getDocDt() {
         return docDt;
     }
 
@@ -108,7 +108,7 @@ public class ContractCessionData1 {
      *     {@link String }
      *     
      */
-    public ContractCessionData1 setDocDt(Calendar value) {
+    public ContractCessionData1 setDocDt(LocalDate value) {
         this.docDt = value;
         return this;
     }

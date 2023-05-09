@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -72,7 +72,7 @@ public class SubscriptionExecution7 {
     @XmlElement(name = "ReqdTradDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar reqdTradDt;
+    protected LocalDate reqdTradDt;
     @XmlElement(name = "HdgFndOrdrTp")
     @XmlSchemaType(name = "string")
     protected List<HedgeFundOrderType1Code> hdgFndOrdrTp;
@@ -99,11 +99,11 @@ public class SubscriptionExecution7 {
     @XmlElement(name = "NAVDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar navDt;
+    protected LocalDate navDt;
     @XmlElement(name = "CshSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar cshSttlmDt;
+    protected LocalDate cshSttlmDt;
     @XmlElement(name = "ReqdSttlmCcy")
     protected String reqdSttlmCcy;
     @XmlElement(name = "PmtRef")
@@ -241,7 +241,7 @@ public class SubscriptionExecution7 {
      *     {@link String }
      *     
      */
-    public Calendar getReqdTradDt() {
+    public LocalDate getReqdTradDt() {
         return reqdTradDt;
     }
 
@@ -253,7 +253,7 @@ public class SubscriptionExecution7 {
      *     {@link String }
      *     
      */
-    public SubscriptionExecution7 setReqdTradDt(Calendar value) {
+    public SubscriptionExecution7 setReqdTradDt(LocalDate value) {
         this.reqdTradDt = value;
         return this;
     }
@@ -553,7 +553,7 @@ public class SubscriptionExecution7 {
      *     {@link String }
      *     
      */
-    public Calendar getNAVDt() {
+    public LocalDate getNAVDt() {
         return navDt;
     }
 
@@ -565,7 +565,7 @@ public class SubscriptionExecution7 {
      *     {@link String }
      *     
      */
-    public SubscriptionExecution7 setNAVDt(Calendar value) {
+    public SubscriptionExecution7 setNAVDt(LocalDate value) {
         this.navDt = value;
         return this;
     }
@@ -578,7 +578,7 @@ public class SubscriptionExecution7 {
      *     {@link String }
      *     
      */
-    public Calendar getCshSttlmDt() {
+    public LocalDate getCshSttlmDt() {
         return cshSttlmDt;
     }
 
@@ -590,7 +590,7 @@ public class SubscriptionExecution7 {
      *     {@link String }
      *     
      */
-    public SubscriptionExecution7 setCshSttlmDt(Calendar value) {
+    public SubscriptionExecution7 setCshSttlmDt(LocalDate value) {
         this.cshSttlmDt = value;
         return this;
     }

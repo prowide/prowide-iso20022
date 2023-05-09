@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -52,11 +52,11 @@ public class CorporateActionNotificationSD2 {
     @XmlElement(name = "DerivPblctnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar derivPblctnDt;
+    protected LocalDate derivPblctnDt;
     @XmlElement(name = "DerivAdjstmntDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar derivAdjstmntDt;
+    protected LocalDate derivAdjstmntDt;
     @XmlElement(name = "DerivClctnMtd")
     protected String derivClctnMtd;
     @XmlElement(name = "DerivFctr")
@@ -161,7 +161,7 @@ public class CorporateActionNotificationSD2 {
      *     {@link String }
      *     
      */
-    public Calendar getDerivPblctnDt() {
+    public LocalDate getDerivPblctnDt() {
         return derivPblctnDt;
     }
 
@@ -173,7 +173,7 @@ public class CorporateActionNotificationSD2 {
      *     {@link String }
      *     
      */
-    public CorporateActionNotificationSD2 setDerivPblctnDt(Calendar value) {
+    public CorporateActionNotificationSD2 setDerivPblctnDt(LocalDate value) {
         this.derivPblctnDt = value;
         return this;
     }
@@ -186,7 +186,7 @@ public class CorporateActionNotificationSD2 {
      *     {@link String }
      *     
      */
-    public Calendar getDerivAdjstmntDt() {
+    public LocalDate getDerivAdjstmntDt() {
         return derivAdjstmntDt;
     }
 
@@ -198,7 +198,7 @@ public class CorporateActionNotificationSD2 {
      *     {@link String }
      *     
      */
-    public CorporateActionNotificationSD2 setDerivAdjstmntDt(Calendar value) {
+    public CorporateActionNotificationSD2 setDerivAdjstmntDt(LocalDate value) {
         this.derivAdjstmntDt = value;
         return this;
     }

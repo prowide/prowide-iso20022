@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -33,19 +33,19 @@ public class SettlementTimeRequest2 {
     @XmlElement(name = "CLSTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected Calendar clsTm;
+    protected OffsetTime clsTm;
     @XmlElement(name = "TillTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected Calendar tillTm;
+    protected OffsetTime tillTm;
     @XmlElement(name = "FrTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected Calendar frTm;
+    protected OffsetTime frTm;
     @XmlElement(name = "RjctTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected Calendar rjctTm;
+    protected OffsetTime rjctTm;
 
     /**
      * Gets the value of the clsTm property.
@@ -55,7 +55,7 @@ public class SettlementTimeRequest2 {
      *     {@link String }
      *     
      */
-    public Calendar getCLSTm() {
+    public OffsetTime getCLSTm() {
         return clsTm;
     }
 
@@ -67,7 +67,7 @@ public class SettlementTimeRequest2 {
      *     {@link String }
      *     
      */
-    public SettlementTimeRequest2 setCLSTm(Calendar value) {
+    public SettlementTimeRequest2 setCLSTm(OffsetTime value) {
         this.clsTm = value;
         return this;
     }
@@ -80,7 +80,7 @@ public class SettlementTimeRequest2 {
      *     {@link String }
      *     
      */
-    public Calendar getTillTm() {
+    public OffsetTime getTillTm() {
         return tillTm;
     }
 
@@ -92,7 +92,7 @@ public class SettlementTimeRequest2 {
      *     {@link String }
      *     
      */
-    public SettlementTimeRequest2 setTillTm(Calendar value) {
+    public SettlementTimeRequest2 setTillTm(OffsetTime value) {
         this.tillTm = value;
         return this;
     }
@@ -105,7 +105,7 @@ public class SettlementTimeRequest2 {
      *     {@link String }
      *     
      */
-    public Calendar getFrTm() {
+    public OffsetTime getFrTm() {
         return frTm;
     }
 
@@ -117,7 +117,7 @@ public class SettlementTimeRequest2 {
      *     {@link String }
      *     
      */
-    public SettlementTimeRequest2 setFrTm(Calendar value) {
+    public SettlementTimeRequest2 setFrTm(OffsetTime value) {
         this.frTm = value;
         return this;
     }
@@ -130,7 +130,7 @@ public class SettlementTimeRequest2 {
      *     {@link String }
      *     
      */
-    public Calendar getRjctTm() {
+    public OffsetTime getRjctTm() {
         return rjctTm;
     }
 
@@ -142,7 +142,7 @@ public class SettlementTimeRequest2 {
      *     {@link String }
      *     
      */
-    public SettlementTimeRequest2 setRjctTm(Calendar value) {
+    public SettlementTimeRequest2 setRjctTm(OffsetTime value) {
         this.rjctTm = value;
         return this;
     }

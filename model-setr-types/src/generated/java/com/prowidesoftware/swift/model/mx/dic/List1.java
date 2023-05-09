@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.OffsetTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -62,7 +62,7 @@ public class List1 {
     @XmlElement(name = "PrgrsPrdIntrvl", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected Calendar prgrsPrdIntrvl;
+    protected OffsetTime prgrsPrdIntrvl;
     @XmlElement(name = "RealTmExctnRptInd")
     protected Boolean realTmExctnRptInd;
     @XmlElement(name = "BidTp")
@@ -236,7 +236,7 @@ public class List1 {
      *     {@link String }
      *     
      */
-    public Calendar getPrgrsPrdIntrvl() {
+    public OffsetTime getPrgrsPrdIntrvl() {
         return prgrsPrdIntrvl;
     }
 
@@ -248,7 +248,7 @@ public class List1 {
      *     {@link String }
      *     
      */
-    public List1 setPrgrsPrdIntrvl(Calendar value) {
+    public List1 setPrgrsPrdIntrvl(OffsetTime value) {
         this.prgrsPrdIntrvl = value;
         return this;
     }

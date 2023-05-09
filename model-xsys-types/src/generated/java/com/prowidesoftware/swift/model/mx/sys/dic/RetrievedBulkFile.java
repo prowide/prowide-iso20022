@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.sys.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.OffsetDateTime ;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import com.prowidesoftware.swift.model.mx.sys.dic.SwDigest;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -43,11 +43,11 @@ public class RetrievedBulkFile {
     @XmlElement(name = "FirstSnFTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar firstSnFTm;
+    protected OffsetDateTime firstSnFTm;
     @XmlElement(name = "LastSnFTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar lastSnFTm;
+    protected OffsetDateTime lastSnFTm;
     @XmlElement(name = "TtlNbOfMsgs", required = true)
     protected BigDecimal ttlNbOfMsgs;
 
@@ -134,7 +134,7 @@ public class RetrievedBulkFile {
      *     {@link String }
      *     
      */
-    public Calendar getFirstSnFTm() {
+    public OffsetDateTime getFirstSnFTm() {
         return firstSnFTm;
     }
 
@@ -146,7 +146,7 @@ public class RetrievedBulkFile {
      *     {@link String }
      *     
      */
-    public RetrievedBulkFile setFirstSnFTm(Calendar value) {
+    public RetrievedBulkFile setFirstSnFTm(OffsetDateTime value) {
         this.firstSnFTm = value;
         return this;
     }
@@ -159,7 +159,7 @@ public class RetrievedBulkFile {
      *     {@link String }
      *     
      */
-    public Calendar getLastSnFTm() {
+    public OffsetDateTime getLastSnFTm() {
         return lastSnFTm;
     }
 
@@ -171,7 +171,7 @@ public class RetrievedBulkFile {
      *     {@link String }
      *     
      */
-    public RetrievedBulkFile setLastSnFTm(Calendar value) {
+    public RetrievedBulkFile setLastSnFTm(OffsetDateTime value) {
         this.lastSnFTm = value;
         return this;
     }

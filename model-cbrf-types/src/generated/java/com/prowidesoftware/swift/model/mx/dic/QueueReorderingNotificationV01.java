@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.OffsetTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -39,7 +39,7 @@ public class QueueReorderingNotificationV01 {
     @XmlElement(name = "OprTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected Calendar oprTm;
+    protected OffsetTime oprTm;
     @XmlElement(name = "RordrdMsgId", required = true)
     protected String rordrdMsgId;
     @XmlElement(name = "RtrTxCpy", required = true)
@@ -80,7 +80,7 @@ public class QueueReorderingNotificationV01 {
      *     {@link String }
      *     
      */
-    public Calendar getOprTm() {
+    public OffsetTime getOprTm() {
         return oprTm;
     }
 
@@ -92,7 +92,7 @@ public class QueueReorderingNotificationV01 {
      *     {@link String }
      *     
      */
-    public QueueReorderingNotificationV01 setOprTm(Calendar value) {
+    public QueueReorderingNotificationV01 setOprTm(OffsetTime value) {
         this.oprTm = value;
         return this;
     }

@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -40,7 +40,7 @@ public class CorporateActionOptionSD5 {
     @XmlElement(name = "NewShrDsptchdDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar newShrDsptchdDt;
+    protected LocalDate newShrDsptchdDt;
 
     /**
      * Gets the value of the plcAndNm property.
@@ -125,7 +125,7 @@ public class CorporateActionOptionSD5 {
      *     {@link String }
      *     
      */
-    public Calendar getNewShrDsptchdDt() {
+    public LocalDate getNewShrDsptchdDt() {
         return newShrDsptchdDt;
     }
 
@@ -137,7 +137,7 @@ public class CorporateActionOptionSD5 {
      *     {@link String }
      *     
      */
-    public CorporateActionOptionSD5 setNewShrDsptchdDt(Calendar value) {
+    public CorporateActionOptionSD5 setNewShrDsptchdDt(LocalDate value) {
         this.newShrDsptchdDt = value;
         return this;
     }

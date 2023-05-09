@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -33,11 +33,11 @@ public class SystemParty2 {
     @XmlElement(name = "OpngDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar opngDt;
+    protected LocalDate opngDt;
     @XmlElement(name = "ClsgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar clsgDt;
+    protected LocalDate clsgDt;
 
     /**
      * Gets the value of the opngDt property.
@@ -47,7 +47,7 @@ public class SystemParty2 {
      *     {@link String }
      *     
      */
-    public Calendar getOpngDt() {
+    public LocalDate getOpngDt() {
         return opngDt;
     }
 
@@ -59,7 +59,7 @@ public class SystemParty2 {
      *     {@link String }
      *     
      */
-    public SystemParty2 setOpngDt(Calendar value) {
+    public SystemParty2 setOpngDt(LocalDate value) {
         this.opngDt = value;
         return this;
     }
@@ -72,7 +72,7 @@ public class SystemParty2 {
      *     {@link String }
      *     
      */
-    public Calendar getClsgDt() {
+    public LocalDate getClsgDt() {
         return clsgDt;
     }
 
@@ -84,7 +84,7 @@ public class SystemParty2 {
      *     {@link String }
      *     
      */
-    public SystemParty2 setClsgDt(Calendar value) {
+    public SystemParty2 setClsgDt(LocalDate value) {
         this.clsgDt = value;
         return this;
     }

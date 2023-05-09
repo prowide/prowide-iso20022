@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -63,15 +63,15 @@ public class RequestedModification3 {
     @XmlElement(name = "ReqdExctnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar reqdExctnDt;
+    protected LocalDate reqdExctnDt;
     @XmlElement(name = "ReqdColltnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar reqdColltnDt;
+    protected LocalDate reqdColltnDt;
     @XmlElement(name = "IntrBkSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar intrBkSttlmDt;
+    protected LocalDate intrBkSttlmDt;
     @XmlElement(name = "Amt")
     protected AmountType3Choice amt;
     @XmlElement(name = "IntrBkSttlmAmt")
@@ -216,7 +216,7 @@ public class RequestedModification3 {
      *     {@link String }
      *     
      */
-    public Calendar getReqdExctnDt() {
+    public LocalDate getReqdExctnDt() {
         return reqdExctnDt;
     }
 
@@ -228,7 +228,7 @@ public class RequestedModification3 {
      *     {@link String }
      *     
      */
-    public RequestedModification3 setReqdExctnDt(Calendar value) {
+    public RequestedModification3 setReqdExctnDt(LocalDate value) {
         this.reqdExctnDt = value;
         return this;
     }
@@ -241,7 +241,7 @@ public class RequestedModification3 {
      *     {@link String }
      *     
      */
-    public Calendar getReqdColltnDt() {
+    public LocalDate getReqdColltnDt() {
         return reqdColltnDt;
     }
 
@@ -253,7 +253,7 @@ public class RequestedModification3 {
      *     {@link String }
      *     
      */
-    public RequestedModification3 setReqdColltnDt(Calendar value) {
+    public RequestedModification3 setReqdColltnDt(LocalDate value) {
         this.reqdColltnDt = value;
         return this;
     }
@@ -266,7 +266,7 @@ public class RequestedModification3 {
      *     {@link String }
      *     
      */
-    public Calendar getIntrBkSttlmDt() {
+    public LocalDate getIntrBkSttlmDt() {
         return intrBkSttlmDt;
     }
 
@@ -278,7 +278,7 @@ public class RequestedModification3 {
      *     {@link String }
      *     
      */
-    public RequestedModification3 setIntrBkSttlmDt(Calendar value) {
+    public RequestedModification3 setIntrBkSttlmDt(LocalDate value) {
         this.intrBkSttlmDt = value;
         return this;
     }

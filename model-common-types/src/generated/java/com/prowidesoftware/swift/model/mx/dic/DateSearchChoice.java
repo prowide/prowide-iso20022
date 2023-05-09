@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -34,21 +34,21 @@ public class DateSearchChoice {
     @XmlElement(name = "FrDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar frDt;
+    protected LocalDate frDt;
     @XmlElement(name = "ToDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar toDt;
+    protected LocalDate toDt;
     @XmlElement(name = "FrToDt")
     protected DatePeriodDetails frToDt;
     @XmlElement(name = "EQDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar eqDt;
+    protected LocalDate eqDt;
     @XmlElement(name = "NEQDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar neqDt;
+    protected LocalDate neqDt;
 
     /**
      * Gets the value of the frDt property.
@@ -58,7 +58,7 @@ public class DateSearchChoice {
      *     {@link String }
      *     
      */
-    public Calendar getFrDt() {
+    public LocalDate getFrDt() {
         return frDt;
     }
 
@@ -70,7 +70,7 @@ public class DateSearchChoice {
      *     {@link String }
      *     
      */
-    public DateSearchChoice setFrDt(Calendar value) {
+    public DateSearchChoice setFrDt(LocalDate value) {
         this.frDt = value;
         return this;
     }
@@ -83,7 +83,7 @@ public class DateSearchChoice {
      *     {@link String }
      *     
      */
-    public Calendar getToDt() {
+    public LocalDate getToDt() {
         return toDt;
     }
 
@@ -95,7 +95,7 @@ public class DateSearchChoice {
      *     {@link String }
      *     
      */
-    public DateSearchChoice setToDt(Calendar value) {
+    public DateSearchChoice setToDt(LocalDate value) {
         this.toDt = value;
         return this;
     }
@@ -133,7 +133,7 @@ public class DateSearchChoice {
      *     {@link String }
      *     
      */
-    public Calendar getEQDt() {
+    public LocalDate getEQDt() {
         return eqDt;
     }
 
@@ -145,7 +145,7 @@ public class DateSearchChoice {
      *     {@link String }
      *     
      */
-    public DateSearchChoice setEQDt(Calendar value) {
+    public DateSearchChoice setEQDt(LocalDate value) {
         this.eqDt = value;
         return this;
     }
@@ -158,7 +158,7 @@ public class DateSearchChoice {
      *     {@link String }
      *     
      */
-    public Calendar getNEQDt() {
+    public LocalDate getNEQDt() {
         return neqDt;
     }
 
@@ -170,7 +170,7 @@ public class DateSearchChoice {
      *     {@link String }
      *     
      */
-    public DateSearchChoice setNEQDt(Calendar value) {
+    public DateSearchChoice setNEQDt(LocalDate value) {
         this.neqDt = value;
         return this;
     }

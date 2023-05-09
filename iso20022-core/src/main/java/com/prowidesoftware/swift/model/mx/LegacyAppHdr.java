@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,10 +19,6 @@ import com.prowidesoftware.ProwideException;
 import com.prowidesoftware.deprecation.ProwideDeprecated;
 import com.prowidesoftware.deprecation.TargetYear;
 import com.prowidesoftware.swift.model.mx.dic.ApplicationHeaderImpl;
-import org.apache.commons.lang3.StringUtils;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBElement;
 import jakarta.xml.bind.JAXBException;
@@ -31,12 +27,15 @@ import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
+import org.apache.commons.lang3.StringUtils;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
 import javax.xml.namespace.QName;
 import javax.xml.transform.dom.DOMResult;
 import java.io.StringWriter;
+import java.time.OffsetDateTime;
 import java.util.Arrays;
-import java.util.Calendar;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -179,7 +178,7 @@ public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
      * @see #getCrDate()
      */
     @Override
-    public Calendar creationDate() {
+    public OffsetDateTime creationDate() {
         return this.getCrDate();
     }
 
@@ -187,12 +186,12 @@ public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
      * Sets the creation date.
      *
      * @param overwrite if true, the creation date will always be set overwriting any previous value;
-     * @see #setCrDate(Calendar)
+     * @see #setCrDate(OffsetDateTime)
      */
     @Override
     public void setCreationDate(boolean overwrite) {
         if (this.getCrDate() == null || overwrite) {
-            this.setCrDate(XMLGregorianCalendarUtils.now());
+            this.setCrDate(OffsetDateTime.now());
         }
     }
 

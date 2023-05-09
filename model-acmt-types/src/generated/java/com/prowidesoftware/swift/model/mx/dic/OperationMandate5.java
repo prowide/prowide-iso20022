@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -55,11 +55,11 @@ public class OperationMandate5 {
     @XmlElement(name = "StartDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar startDt;
+    protected LocalDate startDt;
     @XmlElement(name = "EndDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar endDt;
+    protected LocalDate endDt;
 
     /**
      * Gets the value of the modCd property.
@@ -254,7 +254,7 @@ public class OperationMandate5 {
      *     {@link String }
      *     
      */
-    public Calendar getStartDt() {
+    public LocalDate getStartDt() {
         return startDt;
     }
 
@@ -266,7 +266,7 @@ public class OperationMandate5 {
      *     {@link String }
      *     
      */
-    public OperationMandate5 setStartDt(Calendar value) {
+    public OperationMandate5 setStartDt(LocalDate value) {
         this.startDt = value;
         return this;
     }
@@ -279,7 +279,7 @@ public class OperationMandate5 {
      *     {@link String }
      *     
      */
-    public Calendar getEndDt() {
+    public LocalDate getEndDt() {
         return endDt;
     }
 
@@ -291,7 +291,7 @@ public class OperationMandate5 {
      *     {@link String }
      *     
      */
-    public OperationMandate5 setEndDt(Calendar value) {
+    public OperationMandate5 setEndDt(LocalDate value) {
         this.endDt = value;
         return this;
     }

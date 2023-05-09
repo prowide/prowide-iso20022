@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -71,11 +71,11 @@ public class Contact5 {
     @XmlElement(name = "VldFr", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar vldFr;
+    protected LocalDate vldFr;
     @XmlElement(name = "VldTo", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar vldTo;
+    protected LocalDate vldTo;
 
     /**
      * Gets the value of the nmPrfx property.
@@ -391,7 +391,7 @@ public class Contact5 {
      *     {@link String }
      *     
      */
-    public Calendar getVldFr() {
+    public LocalDate getVldFr() {
         return vldFr;
     }
 
@@ -403,7 +403,7 @@ public class Contact5 {
      *     {@link String }
      *     
      */
-    public Contact5 setVldFr(Calendar value) {
+    public Contact5 setVldFr(LocalDate value) {
         this.vldFr = value;
         return this;
     }
@@ -416,7 +416,7 @@ public class Contact5 {
      *     {@link String }
      *     
      */
-    public Calendar getVldTo() {
+    public LocalDate getVldTo() {
         return vldTo;
     }
 
@@ -428,7 +428,7 @@ public class Contact5 {
      *     {@link String }
      *     
      */
-    public Contact5 setVldTo(Calendar value) {
+    public Contact5 setVldTo(LocalDate value) {
         this.vldTo = value;
         return this;
     }

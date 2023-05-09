@@ -1,8 +1,9 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
@@ -50,11 +51,11 @@ public class RedemptionMultipleExecution3 {
     @XmlElement(name = "OrdrDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar ordrDtTm;
+    protected OffsetDateTime ordrDtTm;
     @XmlElement(name = "ReqdFutrTradDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar reqdFutrTradDt;
+    protected LocalDate reqdFutrTradDt;
     @XmlElement(name = "CxlRght")
     @XmlSchemaType(name = "string")
     protected CancellationRight1Code cxlRght;
@@ -69,7 +70,7 @@ public class RedemptionMultipleExecution3 {
     @XmlElement(name = "CshSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar cshSttlmDt;
+    protected LocalDate cshSttlmDt;
     @XmlElement(name = "BlkCshSttlmDtls")
     protected PaymentTransaction22 blkCshSttlmDtls;
 
@@ -156,7 +157,7 @@ public class RedemptionMultipleExecution3 {
      *     {@link String }
      *     
      */
-    public Calendar getOrdrDtTm() {
+    public OffsetDateTime getOrdrDtTm() {
         return ordrDtTm;
     }
 
@@ -168,7 +169,7 @@ public class RedemptionMultipleExecution3 {
      *     {@link String }
      *     
      */
-    public RedemptionMultipleExecution3 setOrdrDtTm(Calendar value) {
+    public RedemptionMultipleExecution3 setOrdrDtTm(OffsetDateTime value) {
         this.ordrDtTm = value;
         return this;
     }
@@ -181,7 +182,7 @@ public class RedemptionMultipleExecution3 {
      *     {@link String }
      *     
      */
-    public Calendar getReqdFutrTradDt() {
+    public LocalDate getReqdFutrTradDt() {
         return reqdFutrTradDt;
     }
 
@@ -193,7 +194,7 @@ public class RedemptionMultipleExecution3 {
      *     {@link String }
      *     
      */
-    public RedemptionMultipleExecution3 setReqdFutrTradDt(Calendar value) {
+    public RedemptionMultipleExecution3 setReqdFutrTradDt(LocalDate value) {
         this.reqdFutrTradDt = value;
         return this;
     }
@@ -337,7 +338,7 @@ public class RedemptionMultipleExecution3 {
      *     {@link String }
      *     
      */
-    public Calendar getCshSttlmDt() {
+    public LocalDate getCshSttlmDt() {
         return cshSttlmDt;
     }
 
@@ -349,7 +350,7 @@ public class RedemptionMultipleExecution3 {
      *     {@link String }
      *     
      */
-    public RedemptionMultipleExecution3 setCshSttlmDt(Calendar value) {
+    public RedemptionMultipleExecution3 setCshSttlmDt(LocalDate value) {
         this.cshSttlmDt = value;
         return this;
     }

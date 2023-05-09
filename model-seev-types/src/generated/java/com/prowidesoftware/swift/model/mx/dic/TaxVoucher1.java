@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -81,11 +81,11 @@ public class TaxVoucher1 {
     @XmlElement(name = "BrgnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar brgnDt;
+    protected LocalDate brgnDt;
     @XmlElement(name = "BrgnSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar brgnSttlmDt;
+    protected LocalDate brgnSttlmDt;
     @XmlElement(name = "StmpDtyAmt")
     protected ActiveCurrencyAndAmount stmpDtyAmt;
     @XmlElement(name = "ChrgAmt")
@@ -478,7 +478,7 @@ public class TaxVoucher1 {
      *     {@link String }
      *     
      */
-    public Calendar getBrgnDt() {
+    public LocalDate getBrgnDt() {
         return brgnDt;
     }
 
@@ -490,7 +490,7 @@ public class TaxVoucher1 {
      *     {@link String }
      *     
      */
-    public TaxVoucher1 setBrgnDt(Calendar value) {
+    public TaxVoucher1 setBrgnDt(LocalDate value) {
         this.brgnDt = value;
         return this;
     }
@@ -503,7 +503,7 @@ public class TaxVoucher1 {
      *     {@link String }
      *     
      */
-    public Calendar getBrgnSttlmDt() {
+    public LocalDate getBrgnSttlmDt() {
         return brgnSttlmDt;
     }
 
@@ -515,7 +515,7 @@ public class TaxVoucher1 {
      *     {@link String }
      *     
      */
-    public TaxVoucher1 setBrgnSttlmDt(Calendar value) {
+    public TaxVoucher1 setBrgnSttlmDt(LocalDate value) {
         this.brgnSttlmDt = value;
         return this;
     }

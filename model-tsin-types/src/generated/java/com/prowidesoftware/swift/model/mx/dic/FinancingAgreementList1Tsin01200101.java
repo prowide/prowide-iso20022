@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.JAXBElement;
@@ -51,7 +51,7 @@ public class FinancingAgreementList1Tsin01200101 {
     @XmlElement(name = "Dt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dt;
+    protected LocalDate dt;
     @XmlElementRef(name = "RltdDoc", namespace = "urn:iso:std:iso:20022:tech:xsd:tsin.012.001.01", type = JAXBElement.class, required = false)
     protected List<JAXBElement<Object>> rltdDoc;
     @XmlElement(name = "AgrmtRqstr", required = true)
@@ -120,7 +120,7 @@ public class FinancingAgreementList1Tsin01200101 {
      *     {@link String }
      *     
      */
-    public Calendar getDt() {
+    public LocalDate getDt() {
         return dt;
     }
 
@@ -132,7 +132,7 @@ public class FinancingAgreementList1Tsin01200101 {
      *     {@link String }
      *     
      */
-    public FinancingAgreementList1Tsin01200101 setDt(Calendar value) {
+    public FinancingAgreementList1Tsin01200101 setDt(LocalDate value) {
         this.dt = value;
         return this;
     }

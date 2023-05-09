@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -67,11 +67,11 @@ public class OvernightIndexSwapTransaction4 {
     @XmlElement(name = "StartDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar startDt;
+    protected LocalDate startDt;
     @XmlElement(name = "MtrtyDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar mtrtyDt;
+    protected LocalDate mtrtyDt;
     @XmlElement(name = "FxdIntrstRate", required = true)
     protected BigDecimal fxdIntrstRate;
     @XmlElement(name = "TxTp", required = true)
@@ -315,7 +315,7 @@ public class OvernightIndexSwapTransaction4 {
      *     {@link String }
      *     
      */
-    public Calendar getStartDt() {
+    public LocalDate getStartDt() {
         return startDt;
     }
 
@@ -327,7 +327,7 @@ public class OvernightIndexSwapTransaction4 {
      *     {@link String }
      *     
      */
-    public OvernightIndexSwapTransaction4 setStartDt(Calendar value) {
+    public OvernightIndexSwapTransaction4 setStartDt(LocalDate value) {
         this.startDt = value;
         return this;
     }
@@ -340,7 +340,7 @@ public class OvernightIndexSwapTransaction4 {
      *     {@link String }
      *     
      */
-    public Calendar getMtrtyDt() {
+    public LocalDate getMtrtyDt() {
         return mtrtyDt;
     }
 
@@ -352,7 +352,7 @@ public class OvernightIndexSwapTransaction4 {
      *     {@link String }
      *     
      */
-    public OvernightIndexSwapTransaction4 setMtrtyDt(Calendar value) {
+    public OvernightIndexSwapTransaction4 setMtrtyDt(LocalDate value) {
         this.mtrtyDt = value;
         return this;
     }

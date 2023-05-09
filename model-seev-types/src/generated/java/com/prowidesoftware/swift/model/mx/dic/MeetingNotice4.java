@@ -2,8 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -59,7 +59,7 @@ public class MeetingNotice4 {
     @XmlElement(name = "AnncmntDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar anncmntDt;
+    protected LocalDate anncmntDt;
     @XmlElement(name = "AttndncReqrd")
     protected Boolean attndncReqrd;
     @XmlElement(name = "AttndncConfInf")
@@ -195,7 +195,7 @@ public class MeetingNotice4 {
      *     {@link String }
      *     
      */
-    public Calendar getAnncmntDt() {
+    public LocalDate getAnncmntDt() {
         return anncmntDt;
     }
 
@@ -207,7 +207,7 @@ public class MeetingNotice4 {
      *     {@link String }
      *     
      */
-    public MeetingNotice4 setAnncmntDt(Calendar value) {
+    public MeetingNotice4 setAnncmntDt(LocalDate value) {
         this.anncmntDt = value;
         return this;
     }

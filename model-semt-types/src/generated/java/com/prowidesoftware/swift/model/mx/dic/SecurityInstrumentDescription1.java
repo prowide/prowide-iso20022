@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -44,11 +44,11 @@ public class SecurityInstrumentDescription1 {
     @XmlElement(name = "ExrcDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar exrcDt;
+    protected LocalDate exrcDt;
     @XmlElement(name = "MtrtyDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar mtrtyDt;
+    protected LocalDate mtrtyDt;
     @XmlElement(name = "OptnTp")
     @XmlSchemaType(name = "string")
     protected OptionType1Code optnTp;
@@ -140,7 +140,7 @@ public class SecurityInstrumentDescription1 {
      *     {@link String }
      *     
      */
-    public Calendar getExrcDt() {
+    public LocalDate getExrcDt() {
         return exrcDt;
     }
 
@@ -152,7 +152,7 @@ public class SecurityInstrumentDescription1 {
      *     {@link String }
      *     
      */
-    public SecurityInstrumentDescription1 setExrcDt(Calendar value) {
+    public SecurityInstrumentDescription1 setExrcDt(LocalDate value) {
         this.exrcDt = value;
         return this;
     }
@@ -165,7 +165,7 @@ public class SecurityInstrumentDescription1 {
      *     {@link String }
      *     
      */
-    public Calendar getMtrtyDt() {
+    public LocalDate getMtrtyDt() {
         return mtrtyDt;
     }
 
@@ -177,7 +177,7 @@ public class SecurityInstrumentDescription1 {
      *     {@link String }
      *     
      */
-    public SecurityInstrumentDescription1 setMtrtyDt(Calendar value) {
+    public SecurityInstrumentDescription1 setMtrtyDt(LocalDate value) {
         this.mtrtyDt = value;
         return this;
     }

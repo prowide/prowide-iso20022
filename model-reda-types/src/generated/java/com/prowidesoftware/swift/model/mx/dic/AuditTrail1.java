@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -41,7 +41,7 @@ public class AuditTrail1 {
     @XmlElement(name = "OprTmStmp", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar oprTmStmp;
+    protected OffsetDateTime oprTmStmp;
     @XmlElement(name = "InstgUsr", required = true)
     protected String instgUsr;
     @XmlElement(name = "ApprvgUsr")
@@ -130,7 +130,7 @@ public class AuditTrail1 {
      *     {@link String }
      *     
      */
-    public Calendar getOprTmStmp() {
+    public OffsetDateTime getOprTmStmp() {
         return oprTmStmp;
     }
 
@@ -142,7 +142,7 @@ public class AuditTrail1 {
      *     {@link String }
      *     
      */
-    public AuditTrail1 setOprTmStmp(Calendar value) {
+    public AuditTrail1 setOprTmStmp(OffsetDateTime value) {
         this.oprTmStmp = value;
         return this;
     }

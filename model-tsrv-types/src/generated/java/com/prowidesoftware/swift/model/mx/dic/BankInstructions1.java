@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -35,7 +35,7 @@ public class BankInstructions1 {
     @XmlElement(name = "LastDtForRspn", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar lastDtForRspn;
+    protected LocalDate lastDtForRspn;
 
     /**
      * Gets the value of the txt property.
@@ -76,7 +76,7 @@ public class BankInstructions1 {
      *     {@link String }
      *     
      */
-    public Calendar getLastDtForRspn() {
+    public LocalDate getLastDtForRspn() {
         return lastDtForRspn;
     }
 
@@ -88,7 +88,7 @@ public class BankInstructions1 {
      *     {@link String }
      *     
      */
-    public BankInstructions1 setLastDtForRspn(Calendar value) {
+    public BankInstructions1 setLastDtForRspn(LocalDate value) {
         this.lastDtForRspn = value;
         return this;
     }

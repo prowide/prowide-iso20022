@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -31,7 +31,7 @@ public class ExecutionType1Choice {
     @XmlElement(name = "Tm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected Calendar tm;
+    protected OffsetTime tm;
     @XmlElement(name = "Evt")
     protected EventType1Choice evt;
 
@@ -43,7 +43,7 @@ public class ExecutionType1Choice {
      *     {@link String }
      *     
      */
-    public Calendar getTm() {
+    public OffsetTime getTm() {
         return tm;
     }
 
@@ -55,7 +55,7 @@ public class ExecutionType1Choice {
      *     {@link String }
      *     
      */
-    public ExecutionType1Choice setTm(Calendar value) {
+    public ExecutionType1Choice setTm(OffsetTime value) {
         this.tm = value;
         return this;
     }

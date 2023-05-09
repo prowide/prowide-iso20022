@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -63,7 +63,7 @@ public class Undertaking4 {
     @XmlElement(name = "DtOfIssnc", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dtOfIssnc;
+    protected LocalDate dtOfIssnc;
     @XmlElement(name = "AdvsgPty")
     protected PartyIdentification43 advsgPty;
     @XmlElement(name = "ScndAdvsgPty")
@@ -221,7 +221,7 @@ public class Undertaking4 {
      *     {@link String }
      *     
      */
-    public Calendar getDtOfIssnc() {
+    public LocalDate getDtOfIssnc() {
         return dtOfIssnc;
     }
 
@@ -233,7 +233,7 @@ public class Undertaking4 {
      *     {@link String }
      *     
      */
-    public Undertaking4 setDtOfIssnc(Calendar value) {
+    public Undertaking4 setDtOfIssnc(LocalDate value) {
         this.dtOfIssnc = value;
         return this;
     }

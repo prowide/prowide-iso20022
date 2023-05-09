@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -47,11 +47,11 @@ public class DirectoryParticipantInformation1 {
     @XmlElement(name = "NtryCreDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar ntryCreDt;
+    protected OffsetDateTime ntryCreDt;
     @XmlElement(name = "NtryDeltnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar ntryDeltnDt;
+    protected OffsetDateTime ntryDeltnDt;
     @XmlElement(name = "SvcrTp", required = true)
     protected String svcrTp;
     @XmlElement(name = "SvcTp", required = true)
@@ -63,7 +63,7 @@ public class DirectoryParticipantInformation1 {
     @XmlElement(name = "RstrctnFctvDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar rstrctnFctvDt;
+    protected OffsetDateTime rstrctnFctvDt;
     @XmlElement(name = "PtcptId", required = true)
     protected FinancialInstitutionIdentification9 ptcptId;
     @XmlElement(name = "MgrtnDtls", required = true)
@@ -152,7 +152,7 @@ public class DirectoryParticipantInformation1 {
      *     {@link String }
      *     
      */
-    public Calendar getNtryCreDt() {
+    public OffsetDateTime getNtryCreDt() {
         return ntryCreDt;
     }
 
@@ -164,7 +164,7 @@ public class DirectoryParticipantInformation1 {
      *     {@link String }
      *     
      */
-    public DirectoryParticipantInformation1 setNtryCreDt(Calendar value) {
+    public DirectoryParticipantInformation1 setNtryCreDt(OffsetDateTime value) {
         this.ntryCreDt = value;
         return this;
     }
@@ -177,7 +177,7 @@ public class DirectoryParticipantInformation1 {
      *     {@link String }
      *     
      */
-    public Calendar getNtryDeltnDt() {
+    public OffsetDateTime getNtryDeltnDt() {
         return ntryDeltnDt;
     }
 
@@ -189,7 +189,7 @@ public class DirectoryParticipantInformation1 {
      *     {@link String }
      *     
      */
-    public DirectoryParticipantInformation1 setNtryDeltnDt(Calendar value) {
+    public DirectoryParticipantInformation1 setNtryDeltnDt(OffsetDateTime value) {
         this.ntryDeltnDt = value;
         return this;
     }
@@ -302,7 +302,7 @@ public class DirectoryParticipantInformation1 {
      *     {@link String }
      *     
      */
-    public Calendar getRstrctnFctvDt() {
+    public OffsetDateTime getRstrctnFctvDt() {
         return rstrctnFctvDt;
     }
 
@@ -314,7 +314,7 @@ public class DirectoryParticipantInformation1 {
      *     {@link String }
      *     
      */
-    public DirectoryParticipantInformation1 setRstrctnFctvDt(Calendar value) {
+    public DirectoryParticipantInformation1 setRstrctnFctvDt(OffsetDateTime value) {
         this.rstrctnFctvDt = value;
         return this;
     }

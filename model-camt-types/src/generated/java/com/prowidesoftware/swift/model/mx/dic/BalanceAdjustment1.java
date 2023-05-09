@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -47,11 +47,11 @@ public class BalanceAdjustment1 {
     @XmlElement(name = "ErrDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar errDt;
+    protected LocalDate errDt;
     @XmlElement(name = "PstngDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar pstngDt;
+    protected LocalDate pstngDt;
     @XmlElement(name = "Days")
     protected BigDecimal days;
     @XmlElement(name = "EarngsAdjstmntAmt")
@@ -165,7 +165,7 @@ public class BalanceAdjustment1 {
      *     {@link String }
      *     
      */
-    public Calendar getErrDt() {
+    public LocalDate getErrDt() {
         return errDt;
     }
 
@@ -177,7 +177,7 @@ public class BalanceAdjustment1 {
      *     {@link String }
      *     
      */
-    public BalanceAdjustment1 setErrDt(Calendar value) {
+    public BalanceAdjustment1 setErrDt(LocalDate value) {
         this.errDt = value;
         return this;
     }
@@ -190,7 +190,7 @@ public class BalanceAdjustment1 {
      *     {@link String }
      *     
      */
-    public Calendar getPstngDt() {
+    public LocalDate getPstngDt() {
         return pstngDt;
     }
 
@@ -202,7 +202,7 @@ public class BalanceAdjustment1 {
      *     {@link String }
      *     
      */
-    public BalanceAdjustment1 setPstngDt(Calendar value) {
+    public BalanceAdjustment1 setPstngDt(LocalDate value) {
         this.pstngDt = value;
         return this;
     }

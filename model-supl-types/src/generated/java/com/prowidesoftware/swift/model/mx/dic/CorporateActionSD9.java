@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -36,13 +36,13 @@ public class CorporateActionSD9 {
     @XmlElement(name = "RcrdDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar rcrdDt;
+    protected LocalDate rcrdDt;
     @XmlElement(name = "PmtDt")
     protected DateFormat28Choice pmtDt;
     @XmlElement(name = "LtryDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar ltryDt;
+    protected LocalDate ltryDt;
     @XmlElement(name = "LtryTp")
     @XmlSchemaType(name = "string")
     protected LotteryType1Code ltryTp;
@@ -80,7 +80,7 @@ public class CorporateActionSD9 {
      *     {@link String }
      *     
      */
-    public Calendar getRcrdDt() {
+    public LocalDate getRcrdDt() {
         return rcrdDt;
     }
 
@@ -92,7 +92,7 @@ public class CorporateActionSD9 {
      *     {@link String }
      *     
      */
-    public CorporateActionSD9 setRcrdDt(Calendar value) {
+    public CorporateActionSD9 setRcrdDt(LocalDate value) {
         this.rcrdDt = value;
         return this;
     }
@@ -130,7 +130,7 @@ public class CorporateActionSD9 {
      *     {@link String }
      *     
      */
-    public Calendar getLtryDt() {
+    public LocalDate getLtryDt() {
         return ltryDt;
     }
 
@@ -142,7 +142,7 @@ public class CorporateActionSD9 {
      *     {@link String }
      *     
      */
-    public CorporateActionSD9 setLtryDt(Calendar value) {
+    public CorporateActionSD9 setLtryDt(LocalDate value) {
         this.ltryDt = value;
         return this;
     }

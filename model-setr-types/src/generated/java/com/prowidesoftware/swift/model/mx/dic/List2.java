@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -39,11 +39,11 @@ public class List2 {
     @XmlElement(name = "TradOrgtnDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar tradOrgtnDtTm;
+    protected OffsetDateTime tradOrgtnDtTm;
     @XmlElement(name = "TradDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar tradDt;
+    protected OffsetDateTime tradDt;
 
     /**
      * Gets the value of the listId property.
@@ -78,7 +78,7 @@ public class List2 {
      *     {@link String }
      *     
      */
-    public Calendar getTradOrgtnDtTm() {
+    public OffsetDateTime getTradOrgtnDtTm() {
         return tradOrgtnDtTm;
     }
 
@@ -90,7 +90,7 @@ public class List2 {
      *     {@link String }
      *     
      */
-    public List2 setTradOrgtnDtTm(Calendar value) {
+    public List2 setTradOrgtnDtTm(OffsetDateTime value) {
         this.tradOrgtnDtTm = value;
         return this;
     }
@@ -103,7 +103,7 @@ public class List2 {
      *     {@link String }
      *     
      */
-    public Calendar getTradDt() {
+    public OffsetDateTime getTradDt() {
         return tradDt;
     }
 
@@ -115,7 +115,7 @@ public class List2 {
      *     {@link String }
      *     
      */
-    public List2 setTradDt(Calendar value) {
+    public List2 setTradDt(OffsetDateTime value) {
         this.tradDt = value;
         return this;
     }

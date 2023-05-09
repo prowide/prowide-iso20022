@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -43,7 +43,7 @@ public class Commission16 {
     @XmlElement(name = "ClctnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar clctnDt;
+    protected LocalDate clctnDt;
     @XmlElement(name = "TtlComssn")
     protected AmountAndDirection29 ttlComssn;
     @XmlElement(name = "TtlVATAmt")
@@ -134,7 +134,7 @@ public class Commission16 {
      *     {@link String }
      *     
      */
-    public Calendar getClctnDt() {
+    public LocalDate getClctnDt() {
         return clctnDt;
     }
 
@@ -146,7 +146,7 @@ public class Commission16 {
      *     {@link String }
      *     
      */
-    public Commission16 setClctnDt(Calendar value) {
+    public Commission16 setClctnDt(LocalDate value) {
         this.clctnDt = value;
         return this;
     }

@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -39,7 +39,7 @@ public class CancellationRequestInformation1 {
     @XmlElement(name = "OrgnlCreDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar orgnlCreDtTm;
+    protected OffsetDateTime orgnlCreDtTm;
     @XmlElement(name = "NbOfInvcReqs")
     protected String nbOfInvcReqs;
     @XmlElement(name = "TtlBlkInvcAmt")
@@ -86,7 +86,7 @@ public class CancellationRequestInformation1 {
      *     {@link String }
      *     
      */
-    public Calendar getOrgnlCreDtTm() {
+    public OffsetDateTime getOrgnlCreDtTm() {
         return orgnlCreDtTm;
     }
 
@@ -98,7 +98,7 @@ public class CancellationRequestInformation1 {
      *     {@link String }
      *     
      */
-    public CancellationRequestInformation1 setOrgnlCreDtTm(Calendar value) {
+    public CancellationRequestInformation1 setOrgnlCreDtTm(OffsetDateTime value) {
         this.orgnlCreDtTm = value;
         return this;
     }

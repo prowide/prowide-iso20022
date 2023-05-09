@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -33,11 +33,11 @@ public class LocalDateTime1 {
     @XmlElement(name = "FrDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar frDtTm;
+    protected OffsetDateTime frDtTm;
     @XmlElement(name = "ToDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar toDtTm;
+    protected OffsetDateTime toDtTm;
     @XmlElement(name = "UTCOffset", required = true)
     protected BigDecimal utcOffset;
 
@@ -49,7 +49,7 @@ public class LocalDateTime1 {
      *     {@link String }
      *     
      */
-    public Calendar getFrDtTm() {
+    public OffsetDateTime getFrDtTm() {
         return frDtTm;
     }
 
@@ -61,7 +61,7 @@ public class LocalDateTime1 {
      *     {@link String }
      *     
      */
-    public LocalDateTime1 setFrDtTm(Calendar value) {
+    public LocalDateTime1 setFrDtTm(OffsetDateTime value) {
         this.frDtTm = value;
         return this;
     }
@@ -74,7 +74,7 @@ public class LocalDateTime1 {
      *     {@link String }
      *     
      */
-    public Calendar getToDtTm() {
+    public OffsetDateTime getToDtTm() {
         return toDtTm;
     }
 
@@ -86,7 +86,7 @@ public class LocalDateTime1 {
      *     {@link String }
      *     
      */
-    public LocalDateTime1 setToDtTm(Calendar value) {
+    public LocalDateTime1 setToDtTm(OffsetDateTime value) {
         this.toDtTm = value;
         return this;
     }

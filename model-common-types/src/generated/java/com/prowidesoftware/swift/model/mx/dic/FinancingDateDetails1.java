@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -34,15 +34,15 @@ public class FinancingDateDetails1 {
     @XmlElement(name = "BookDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected List<Calendar> bookDt;
+    protected List<LocalDate> bookDt;
     @XmlElement(name = "CdtDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar cdtDt;
+    protected LocalDate cdtDt;
     @XmlElement(name = "DbtDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dbtDt;
+    protected LocalDate dbtDt;
 
     /**
      * Gets the value of the bookDt property.
@@ -68,7 +68,7 @@ public class FinancingDateDetails1 {
      * @return
      *     The value of the bookDt property.
      */
-    public List<Calendar> getBookDt() {
+    public List<LocalDate> getBookDt() {
         if (bookDt == null) {
             bookDt = new ArrayList<>();
         }
@@ -83,7 +83,7 @@ public class FinancingDateDetails1 {
      *     {@link String }
      *     
      */
-    public Calendar getCdtDt() {
+    public LocalDate getCdtDt() {
         return cdtDt;
     }
 
@@ -95,7 +95,7 @@ public class FinancingDateDetails1 {
      *     {@link String }
      *     
      */
-    public FinancingDateDetails1 setCdtDt(Calendar value) {
+    public FinancingDateDetails1 setCdtDt(LocalDate value) {
         this.cdtDt = value;
         return this;
     }
@@ -108,7 +108,7 @@ public class FinancingDateDetails1 {
      *     {@link String }
      *     
      */
-    public Calendar getDbtDt() {
+    public LocalDate getDbtDt() {
         return dbtDt;
     }
 
@@ -120,7 +120,7 @@ public class FinancingDateDetails1 {
      *     {@link String }
      *     
      */
-    public FinancingDateDetails1 setDbtDt(Calendar value) {
+    public FinancingDateDetails1 setDbtDt(LocalDate value) {
         this.dbtDt = value;
         return this;
     }
@@ -145,7 +145,7 @@ public class FinancingDateDetails1 {
      * @see #getBookDt()
      * 
      */
-    public FinancingDateDetails1 addBookDt(Calendar bookDt) {
+    public FinancingDateDetails1 addBookDt(LocalDate bookDt) {
         getBookDt().add(bookDt);
         return this;
     }

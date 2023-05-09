@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -56,7 +56,7 @@ public class AmendmentInformationDetails10 {
     @XmlElement(name = "OrgnlFnlColltnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar orgnlFnlColltnDt;
+    protected LocalDate orgnlFnlColltnDt;
     @XmlElement(name = "OrgnlFrqcy")
     protected Frequency21Choice orgnlFrqcy;
     @XmlElement(name = "OrgnlRsn")
@@ -270,7 +270,7 @@ public class AmendmentInformationDetails10 {
      *     {@link String }
      *     
      */
-    public Calendar getOrgnlFnlColltnDt() {
+    public LocalDate getOrgnlFnlColltnDt() {
         return orgnlFnlColltnDt;
     }
 
@@ -282,7 +282,7 @@ public class AmendmentInformationDetails10 {
      *     {@link String }
      *     
      */
-    public AmendmentInformationDetails10 setOrgnlFnlColltnDt(Calendar value) {
+    public AmendmentInformationDetails10 setOrgnlFnlColltnDt(LocalDate value) {
         this.orgnlFnlColltnDt = value;
         return this;
     }

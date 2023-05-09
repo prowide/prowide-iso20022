@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -37,11 +37,11 @@ public class CorporateActionSD20 {
     @XmlElement(name = "LtryDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar ltryDt;
+    protected LocalDate ltryDt;
     @XmlElement(name = "PrcToDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar prcToDt;
+    protected LocalDate prcToDt;
 
     /**
      * Gets the value of the plcAndNm property.
@@ -101,7 +101,7 @@ public class CorporateActionSD20 {
      *     {@link String }
      *     
      */
-    public Calendar getLtryDt() {
+    public LocalDate getLtryDt() {
         return ltryDt;
     }
 
@@ -113,7 +113,7 @@ public class CorporateActionSD20 {
      *     {@link String }
      *     
      */
-    public CorporateActionSD20 setLtryDt(Calendar value) {
+    public CorporateActionSD20 setLtryDt(LocalDate value) {
         this.ltryDt = value;
         return this;
     }
@@ -126,7 +126,7 @@ public class CorporateActionSD20 {
      *     {@link String }
      *     
      */
-    public Calendar getPrcToDt() {
+    public LocalDate getPrcToDt() {
         return prcToDt;
     }
 
@@ -138,7 +138,7 @@ public class CorporateActionSD20 {
      *     {@link String }
      *     
      */
-    public CorporateActionSD20 setPrcToDt(Calendar value) {
+    public CorporateActionSD20 setPrcToDt(LocalDate value) {
         this.prcToDt = value;
         return this;
     }

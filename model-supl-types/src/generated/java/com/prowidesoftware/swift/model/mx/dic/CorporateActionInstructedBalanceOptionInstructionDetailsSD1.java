@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -51,7 +51,7 @@ public class CorporateActionInstructedBalanceOptionInstructionDetailsSD1 {
     @XmlElement(name = "TxIdDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar txIdDt;
+    protected OffsetDateTime txIdDt;
     @XmlElement(name = "TxContraCUSIP")
     protected OtherIdentification2 txContraCUSIP;
     @XmlElement(name = "TxIdQty", required = true)
@@ -64,11 +64,11 @@ public class CorporateActionInstructedBalanceOptionInstructionDetailsSD1 {
     @XmlElement(name = "TxIdPrtctDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar txIdPrtctDt;
+    protected OffsetDateTime txIdPrtctDt;
     @XmlElement(name = "TxIdCoverPrtctDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar txIdCoverPrtctDt;
+    protected OffsetDateTime txIdCoverPrtctDt;
     @XmlElement(name = "TxCondlQty")
     protected FinancialInstrumentQuantity15Choice txCondlQty;
     @XmlElement(name = "TxTndrBidPric")
@@ -184,7 +184,7 @@ public class CorporateActionInstructedBalanceOptionInstructionDetailsSD1 {
      *     {@link String }
      *     
      */
-    public Calendar getTxIdDt() {
+    public OffsetDateTime getTxIdDt() {
         return txIdDt;
     }
 
@@ -196,7 +196,7 @@ public class CorporateActionInstructedBalanceOptionInstructionDetailsSD1 {
      *     {@link String }
      *     
      */
-    public CorporateActionInstructedBalanceOptionInstructionDetailsSD1 setTxIdDt(Calendar value) {
+    public CorporateActionInstructedBalanceOptionInstructionDetailsSD1 setTxIdDt(OffsetDateTime value) {
         this.txIdDt = value;
         return this;
     }
@@ -309,7 +309,7 @@ public class CorporateActionInstructedBalanceOptionInstructionDetailsSD1 {
      *     {@link String }
      *     
      */
-    public Calendar getTxIdPrtctDt() {
+    public OffsetDateTime getTxIdPrtctDt() {
         return txIdPrtctDt;
     }
 
@@ -321,7 +321,7 @@ public class CorporateActionInstructedBalanceOptionInstructionDetailsSD1 {
      *     {@link String }
      *     
      */
-    public CorporateActionInstructedBalanceOptionInstructionDetailsSD1 setTxIdPrtctDt(Calendar value) {
+    public CorporateActionInstructedBalanceOptionInstructionDetailsSD1 setTxIdPrtctDt(OffsetDateTime value) {
         this.txIdPrtctDt = value;
         return this;
     }
@@ -334,7 +334,7 @@ public class CorporateActionInstructedBalanceOptionInstructionDetailsSD1 {
      *     {@link String }
      *     
      */
-    public Calendar getTxIdCoverPrtctDt() {
+    public OffsetDateTime getTxIdCoverPrtctDt() {
         return txIdCoverPrtctDt;
     }
 
@@ -346,7 +346,7 @@ public class CorporateActionInstructedBalanceOptionInstructionDetailsSD1 {
      *     {@link String }
      *     
      */
-    public CorporateActionInstructedBalanceOptionInstructionDetailsSD1 setTxIdCoverPrtctDt(Calendar value) {
+    public CorporateActionInstructedBalanceOptionInstructionDetailsSD1 setTxIdCoverPrtctDt(OffsetDateTime value) {
         this.txIdCoverPrtctDt = value;
         return this;
     }

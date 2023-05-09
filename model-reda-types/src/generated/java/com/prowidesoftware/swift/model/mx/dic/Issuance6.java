@@ -2,8 +2,9 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
@@ -48,11 +49,11 @@ public class Issuance6 {
     @XmlElement(name = "IsseDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar isseDt;
+    protected LocalDate isseDt;
     @XmlElement(name = "AnncmntDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar anncmntDt;
+    protected OffsetDateTime anncmntDt;
     @XmlElement(name = "IssrOrg")
     protected Organisation38 issrOrg;
     @XmlElement(name = "IsseNmnlAmt")
@@ -126,7 +127,7 @@ public class Issuance6 {
      *     {@link String }
      *     
      */
-    public Calendar getIsseDt() {
+    public LocalDate getIsseDt() {
         return isseDt;
     }
 
@@ -138,7 +139,7 @@ public class Issuance6 {
      *     {@link String }
      *     
      */
-    public Issuance6 setIsseDt(Calendar value) {
+    public Issuance6 setIsseDt(LocalDate value) {
         this.isseDt = value;
         return this;
     }
@@ -151,7 +152,7 @@ public class Issuance6 {
      *     {@link String }
      *     
      */
-    public Calendar getAnncmntDt() {
+    public OffsetDateTime getAnncmntDt() {
         return anncmntDt;
     }
 
@@ -163,7 +164,7 @@ public class Issuance6 {
      *     {@link String }
      *     
      */
-    public Issuance6 setAnncmntDt(Calendar value) {
+    public Issuance6 setAnncmntDt(OffsetDateTime value) {
         this.anncmntDt = value;
         return this;
     }

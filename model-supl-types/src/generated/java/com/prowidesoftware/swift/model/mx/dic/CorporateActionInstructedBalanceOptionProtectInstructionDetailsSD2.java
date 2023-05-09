@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -54,11 +54,11 @@ public class CorporateActionInstructedBalanceOptionProtectInstructionDetailsSD2 
     @XmlElement(name = "PrtctDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar prtctDt;
+    protected OffsetDateTime prtctDt;
     @XmlElement(name = "CoverPrtctDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar coverPrtctDt;
+    protected OffsetDateTime coverPrtctDt;
     @XmlElement(name = "PrtctIdQty", required = true)
     protected FinancialInstrumentQuantity15Choice prtctIdQty;
     @XmlElement(name = "PrtctIdUcvrdQty")
@@ -210,7 +210,7 @@ public class CorporateActionInstructedBalanceOptionProtectInstructionDetailsSD2 
      *     {@link String }
      *     
      */
-    public Calendar getPrtctDt() {
+    public OffsetDateTime getPrtctDt() {
         return prtctDt;
     }
 
@@ -222,7 +222,7 @@ public class CorporateActionInstructedBalanceOptionProtectInstructionDetailsSD2 
      *     {@link String }
      *     
      */
-    public CorporateActionInstructedBalanceOptionProtectInstructionDetailsSD2 setPrtctDt(Calendar value) {
+    public CorporateActionInstructedBalanceOptionProtectInstructionDetailsSD2 setPrtctDt(OffsetDateTime value) {
         this.prtctDt = value;
         return this;
     }
@@ -235,7 +235,7 @@ public class CorporateActionInstructedBalanceOptionProtectInstructionDetailsSD2 
      *     {@link String }
      *     
      */
-    public Calendar getCoverPrtctDt() {
+    public OffsetDateTime getCoverPrtctDt() {
         return coverPrtctDt;
     }
 
@@ -247,7 +247,7 @@ public class CorporateActionInstructedBalanceOptionProtectInstructionDetailsSD2 
      *     {@link String }
      *     
      */
-    public CorporateActionInstructedBalanceOptionProtectInstructionDetailsSD2 setCoverPrtctDt(Calendar value) {
+    public CorporateActionInstructedBalanceOptionProtectInstructionDetailsSD2 setCoverPrtctDt(OffsetDateTime value) {
         this.coverPrtctDt = value;
         return this;
     }

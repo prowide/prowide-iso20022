@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.OffsetTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -37,7 +37,7 @@ public class NetworkParameters2 {
     @XmlElement(name = "Dely", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected Calendar dely;
+    protected OffsetTime dely;
 
     /**
      * Gets the value of the adr property.
@@ -97,7 +97,7 @@ public class NetworkParameters2 {
      *     {@link String }
      *     
      */
-    public Calendar getDely() {
+    public OffsetTime getDely() {
         return dely;
     }
 
@@ -109,7 +109,7 @@ public class NetworkParameters2 {
      *     {@link String }
      *     
      */
-    public NetworkParameters2 setDely(Calendar value) {
+    public NetworkParameters2 setDely(OffsetTime value) {
         this.dely = value;
         return this;
     }

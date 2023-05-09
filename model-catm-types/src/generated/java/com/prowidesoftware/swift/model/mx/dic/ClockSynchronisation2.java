@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.OffsetTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -38,7 +38,7 @@ public class ClockSynchronisation2 {
     @XmlElement(name = "Dely", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected Calendar dely;
+    protected OffsetTime dely;
 
     /**
      * Gets the value of the poiTmZone property.
@@ -104,7 +104,7 @@ public class ClockSynchronisation2 {
      *     {@link String }
      *     
      */
-    public Calendar getDely() {
+    public OffsetTime getDely() {
         return dely;
     }
 
@@ -116,7 +116,7 @@ public class ClockSynchronisation2 {
      *     {@link String }
      *     
      */
-    public ClockSynchronisation2 setDely(Calendar value) {
+    public ClockSynchronisation2 setDely(OffsetTime value) {
         this.dely = value;
         return this;
     }

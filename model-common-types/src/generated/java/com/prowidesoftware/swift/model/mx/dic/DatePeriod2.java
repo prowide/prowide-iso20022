@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -31,11 +31,11 @@ public class DatePeriod2 {
     @XmlElement(name = "FrDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar frDt;
+    protected LocalDate frDt;
     @XmlElement(name = "ToDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar toDt;
+    protected LocalDate toDt;
 
     /**
      * Gets the value of the frDt property.
@@ -45,7 +45,7 @@ public class DatePeriod2 {
      *     {@link String }
      *     
      */
-    public Calendar getFrDt() {
+    public LocalDate getFrDt() {
         return frDt;
     }
 
@@ -57,7 +57,7 @@ public class DatePeriod2 {
      *     {@link String }
      *     
      */
-    public DatePeriod2 setFrDt(Calendar value) {
+    public DatePeriod2 setFrDt(LocalDate value) {
         this.frDt = value;
         return this;
     }
@@ -70,7 +70,7 @@ public class DatePeriod2 {
      *     {@link String }
      *     
      */
-    public Calendar getToDt() {
+    public LocalDate getToDt() {
         return toDt;
     }
 
@@ -82,7 +82,7 @@ public class DatePeriod2 {
      *     {@link String }
      *     
      */
-    public DatePeriod2 setToDt(Calendar value) {
+    public DatePeriod2 setToDt(LocalDate value) {
         this.toDt = value;
         return this;
     }

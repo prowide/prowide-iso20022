@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -37,11 +37,11 @@ public class BuyIn4 {
     @XmlElement(name = "CxlLmtDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar cxlLmtDt;
+    protected LocalDate cxlLmtDt;
     @XmlElement(name = "BuyInRvrsnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar buyInRvrsnDt;
+    protected LocalDate buyInRvrsnDt;
 
     /**
      * Gets the value of the wrngInd property.
@@ -101,7 +101,7 @@ public class BuyIn4 {
      *     {@link String }
      *     
      */
-    public Calendar getCxlLmtDt() {
+    public LocalDate getCxlLmtDt() {
         return cxlLmtDt;
     }
 
@@ -113,7 +113,7 @@ public class BuyIn4 {
      *     {@link String }
      *     
      */
-    public BuyIn4 setCxlLmtDt(Calendar value) {
+    public BuyIn4 setCxlLmtDt(LocalDate value) {
         this.cxlLmtDt = value;
         return this;
     }
@@ -126,7 +126,7 @@ public class BuyIn4 {
      *     {@link String }
      *     
      */
-    public Calendar getBuyInRvrsnDt() {
+    public LocalDate getBuyInRvrsnDt() {
         return buyInRvrsnDt;
     }
 
@@ -138,7 +138,7 @@ public class BuyIn4 {
      *     {@link String }
      *     
      */
-    public BuyIn4 setBuyInRvrsnDt(Calendar value) {
+    public BuyIn4 setBuyInRvrsnDt(LocalDate value) {
         this.buyInRvrsnDt = value;
         return this;
     }

@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -34,11 +34,11 @@ public class CorporateActionNotificationSD3 {
     @XmlElement(name = "CretDtAndTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar cretDtAndTm;
+    protected OffsetDateTime cretDtAndTm;
     @XmlElement(name = "UpdDtAndTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar updDtAndTm;
+    protected OffsetDateTime updDtAndTm;
 
     /**
      * Gets the value of the plcAndNm property.
@@ -73,7 +73,7 @@ public class CorporateActionNotificationSD3 {
      *     {@link String }
      *     
      */
-    public Calendar getCretDtAndTm() {
+    public OffsetDateTime getCretDtAndTm() {
         return cretDtAndTm;
     }
 
@@ -85,7 +85,7 @@ public class CorporateActionNotificationSD3 {
      *     {@link String }
      *     
      */
-    public CorporateActionNotificationSD3 setCretDtAndTm(Calendar value) {
+    public CorporateActionNotificationSD3 setCretDtAndTm(OffsetDateTime value) {
         this.cretDtAndTm = value;
         return this;
     }
@@ -98,7 +98,7 @@ public class CorporateActionNotificationSD3 {
      *     {@link String }
      *     
      */
-    public Calendar getUpdDtAndTm() {
+    public OffsetDateTime getUpdDtAndTm() {
         return updDtAndTm;
     }
 
@@ -110,7 +110,7 @@ public class CorporateActionNotificationSD3 {
      *     {@link String }
      *     
      */
-    public CorporateActionNotificationSD3 setUpdDtAndTm(Calendar value) {
+    public CorporateActionNotificationSD3 setUpdDtAndTm(OffsetDateTime value) {
         this.updDtAndTm = value;
         return this;
     }

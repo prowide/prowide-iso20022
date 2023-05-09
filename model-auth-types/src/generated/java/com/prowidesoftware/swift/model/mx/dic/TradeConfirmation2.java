@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -34,7 +34,7 @@ public class TradeConfirmation2 {
     @XmlElement(name = "TmStmp", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar tmStmp;
+    protected OffsetDateTime tmStmp;
 
     /**
      * Gets the value of the tp property.
@@ -69,7 +69,7 @@ public class TradeConfirmation2 {
      *     {@link String }
      *     
      */
-    public Calendar getTmStmp() {
+    public OffsetDateTime getTmStmp() {
         return tmStmp;
     }
 
@@ -81,7 +81,7 @@ public class TradeConfirmation2 {
      *     {@link String }
      *     
      */
-    public TradeConfirmation2 setTmStmp(Calendar value) {
+    public TradeConfirmation2 setTmStmp(OffsetDateTime value) {
         this.tmStmp = value;
         return this;
     }

@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -41,11 +41,11 @@ public class Future1 {
     @XmlElement(name = "XpryDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar xpryDt;
+    protected OffsetDateTime xpryDt;
     @XmlElement(name = "FutrDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar futrDt;
+    protected OffsetDateTime futrDt;
     @XmlElement(name = "MinSz")
     protected ActiveCurrencyAndAmount minSz;
     @XmlElement(name = "UnitOfMeasr")
@@ -112,7 +112,7 @@ public class Future1 {
      *     {@link String }
      *     
      */
-    public Calendar getXpryDt() {
+    public OffsetDateTime getXpryDt() {
         return xpryDt;
     }
 
@@ -124,7 +124,7 @@ public class Future1 {
      *     {@link String }
      *     
      */
-    public Future1 setXpryDt(Calendar value) {
+    public Future1 setXpryDt(OffsetDateTime value) {
         this.xpryDt = value;
         return this;
     }
@@ -137,7 +137,7 @@ public class Future1 {
      *     {@link String }
      *     
      */
-    public Calendar getFutrDt() {
+    public OffsetDateTime getFutrDt() {
         return futrDt;
     }
 
@@ -149,7 +149,7 @@ public class Future1 {
      *     {@link String }
      *     
      */
-    public Future1 setFutrDt(Calendar value) {
+    public Future1 setFutrDt(OffsetDateTime value) {
         this.futrDt = value;
         return this;
     }

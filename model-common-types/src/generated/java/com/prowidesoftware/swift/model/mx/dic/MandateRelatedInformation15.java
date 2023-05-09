@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -41,7 +41,7 @@ public class MandateRelatedInformation15 {
     @XmlElement(name = "DtOfSgntr", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dtOfSgntr;
+    protected LocalDate dtOfSgntr;
     @XmlElement(name = "AmdmntInd")
     protected Boolean amdmntInd;
     @XmlElement(name = "AmdmntInfDtls")
@@ -51,11 +51,11 @@ public class MandateRelatedInformation15 {
     @XmlElement(name = "FrstColltnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar frstColltnDt;
+    protected LocalDate frstColltnDt;
     @XmlElement(name = "FnlColltnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar fnlColltnDt;
+    protected LocalDate fnlColltnDt;
     @XmlElement(name = "Frqcy")
     protected Frequency36Choice frqcy;
     @XmlElement(name = "Rsn")
@@ -96,7 +96,7 @@ public class MandateRelatedInformation15 {
      *     {@link String }
      *     
      */
-    public Calendar getDtOfSgntr() {
+    public LocalDate getDtOfSgntr() {
         return dtOfSgntr;
     }
 
@@ -108,7 +108,7 @@ public class MandateRelatedInformation15 {
      *     {@link String }
      *     
      */
-    public MandateRelatedInformation15 setDtOfSgntr(Calendar value) {
+    public MandateRelatedInformation15 setDtOfSgntr(LocalDate value) {
         this.dtOfSgntr = value;
         return this;
     }
@@ -196,7 +196,7 @@ public class MandateRelatedInformation15 {
      *     {@link String }
      *     
      */
-    public Calendar getFrstColltnDt() {
+    public LocalDate getFrstColltnDt() {
         return frstColltnDt;
     }
 
@@ -208,7 +208,7 @@ public class MandateRelatedInformation15 {
      *     {@link String }
      *     
      */
-    public MandateRelatedInformation15 setFrstColltnDt(Calendar value) {
+    public MandateRelatedInformation15 setFrstColltnDt(LocalDate value) {
         this.frstColltnDt = value;
         return this;
     }
@@ -221,7 +221,7 @@ public class MandateRelatedInformation15 {
      *     {@link String }
      *     
      */
-    public Calendar getFnlColltnDt() {
+    public LocalDate getFnlColltnDt() {
         return fnlColltnDt;
     }
 
@@ -233,7 +233,7 @@ public class MandateRelatedInformation15 {
      *     {@link String }
      *     
      */
-    public MandateRelatedInformation15 setFnlColltnDt(Calendar value) {
+    public MandateRelatedInformation15 setFnlColltnDt(LocalDate value) {
         this.fnlColltnDt = value;
         return this;
     }

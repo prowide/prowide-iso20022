@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -66,7 +66,7 @@ public class TaxEfficientProduct7 {
     @XmlElement(name = "DtOfFrstSbcpt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dtOfFrstSbcpt;
+    protected LocalDate dtOfFrstSbcpt;
     @XmlElement(name = "CurYrSbcptDtls")
     protected SubscriptionInformation2 curYrSbcptDtls;
     @XmlElement(name = "BnsOrWdrwl")
@@ -82,7 +82,7 @@ public class TaxEfficientProduct7 {
     @XmlElement(name = "DtFrstQlfygAddtn", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dtFrstQlfygAddtn;
+    protected LocalDate dtFrstQlfygAddtn;
     @XmlElement(name = "InvstrTaxRef")
     protected TaxReference2 invstrTaxRef;
     @XmlElement(name = "InvstmtsToFllwVal")
@@ -260,7 +260,7 @@ public class TaxEfficientProduct7 {
      *     {@link String }
      *     
      */
-    public Calendar getDtOfFrstSbcpt() {
+    public LocalDate getDtOfFrstSbcpt() {
         return dtOfFrstSbcpt;
     }
 
@@ -272,7 +272,7 @@ public class TaxEfficientProduct7 {
      *     {@link String }
      *     
      */
-    public TaxEfficientProduct7 setDtOfFrstSbcpt(Calendar value) {
+    public TaxEfficientProduct7 setDtOfFrstSbcpt(LocalDate value) {
         this.dtOfFrstSbcpt = value;
         return this;
     }
@@ -447,7 +447,7 @@ public class TaxEfficientProduct7 {
      *     {@link String }
      *     
      */
-    public Calendar getDtFrstQlfygAddtn() {
+    public LocalDate getDtFrstQlfygAddtn() {
         return dtFrstQlfygAddtn;
     }
 
@@ -459,7 +459,7 @@ public class TaxEfficientProduct7 {
      *     {@link String }
      *     
      */
-    public TaxEfficientProduct7 setDtFrstQlfygAddtn(Calendar value) {
+    public TaxEfficientProduct7 setDtFrstQlfygAddtn(LocalDate value) {
         this.dtFrstQlfygAddtn = value;
         return this;
     }

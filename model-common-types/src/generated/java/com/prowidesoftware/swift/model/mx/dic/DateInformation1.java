@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -33,7 +33,7 @@ public class DateInformation1 {
     @XmlElement(name = "StartDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar startDt;
+    protected LocalDate startDt;
     @XmlElement(name = "Frqcy", required = true)
     protected String frqcy;
     @XmlElement(name = "Nb", required = true)
@@ -47,7 +47,7 @@ public class DateInformation1 {
      *     {@link String }
      *     
      */
-    public Calendar getStartDt() {
+    public LocalDate getStartDt() {
         return startDt;
     }
 
@@ -59,7 +59,7 @@ public class DateInformation1 {
      *     {@link String }
      *     
      */
-    public DateInformation1 setStartDt(Calendar value) {
+    public DateInformation1 setStartDt(LocalDate value) {
         this.startDt = value;
         return this;
     }

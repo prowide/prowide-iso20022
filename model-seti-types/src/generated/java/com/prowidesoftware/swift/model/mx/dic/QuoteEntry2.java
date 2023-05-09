@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -50,7 +50,7 @@ public class QuoteEntry2 {
     @XmlElement(name = "VldUntilDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar vldUntilDtTm;
+    protected OffsetDateTime vldUntilDtTm;
     @XmlElement(name = "Ccy")
     protected String ccy;
     @XmlElement(name = "RjctRsn")
@@ -133,7 +133,7 @@ public class QuoteEntry2 {
      *     {@link String }
      *     
      */
-    public Calendar getVldUntilDtTm() {
+    public OffsetDateTime getVldUntilDtTm() {
         return vldUntilDtTm;
     }
 
@@ -145,7 +145,7 @@ public class QuoteEntry2 {
      *     {@link String }
      *     
      */
-    public QuoteEntry2 setVldUntilDtTm(Calendar value) {
+    public QuoteEntry2 setVldUntilDtTm(OffsetDateTime value) {
         this.vldUntilDtTm = value;
         return this;
     }

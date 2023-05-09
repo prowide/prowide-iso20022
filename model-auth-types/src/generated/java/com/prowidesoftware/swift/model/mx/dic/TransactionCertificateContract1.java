@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -38,11 +38,11 @@ public class TransactionCertificateContract1 {
     @XmlElement(name = "XpctdShipmntDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar xpctdShipmntDt;
+    protected LocalDate xpctdShipmntDt;
     @XmlElement(name = "XpctdAdvncPmtRtrDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar xpctdAdvncPmtRtrDt;
+    protected LocalDate xpctdAdvncPmtRtrDt;
     @XmlElement(name = "AddtlInf")
     protected String addtlInf;
 
@@ -104,7 +104,7 @@ public class TransactionCertificateContract1 {
      *     {@link String }
      *     
      */
-    public Calendar getXpctdShipmntDt() {
+    public LocalDate getXpctdShipmntDt() {
         return xpctdShipmntDt;
     }
 
@@ -116,7 +116,7 @@ public class TransactionCertificateContract1 {
      *     {@link String }
      *     
      */
-    public TransactionCertificateContract1 setXpctdShipmntDt(Calendar value) {
+    public TransactionCertificateContract1 setXpctdShipmntDt(LocalDate value) {
         this.xpctdShipmntDt = value;
         return this;
     }
@@ -129,7 +129,7 @@ public class TransactionCertificateContract1 {
      *     {@link String }
      *     
      */
-    public Calendar getXpctdAdvncPmtRtrDt() {
+    public LocalDate getXpctdAdvncPmtRtrDt() {
         return xpctdAdvncPmtRtrDt;
     }
 
@@ -141,7 +141,7 @@ public class TransactionCertificateContract1 {
      *     {@link String }
      *     
      */
-    public TransactionCertificateContract1 setXpctdAdvncPmtRtrDt(Calendar value) {
+    public TransactionCertificateContract1 setXpctdAdvncPmtRtrDt(LocalDate value) {
         this.xpctdAdvncPmtRtrDt = value;
         return this;
     }

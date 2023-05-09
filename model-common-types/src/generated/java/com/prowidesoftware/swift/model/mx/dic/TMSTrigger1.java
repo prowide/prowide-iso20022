@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -37,7 +37,7 @@ public class TMSTrigger1 {
     @XmlElement(name = "TMSCtctDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar tmsCtctDtTm;
+    protected OffsetDateTime tmsCtctDtTm;
 
     /**
      * Gets the value of the tmsCtctLvl property.
@@ -97,7 +97,7 @@ public class TMSTrigger1 {
      *     {@link String }
      *     
      */
-    public Calendar getTMSCtctDtTm() {
+    public OffsetDateTime getTMSCtctDtTm() {
         return tmsCtctDtTm;
     }
 
@@ -109,7 +109,7 @@ public class TMSTrigger1 {
      *     {@link String }
      *     
      */
-    public TMSTrigger1 setTMSCtctDtTm(Calendar value) {
+    public TMSTrigger1 setTMSCtctDtTm(OffsetDateTime value) {
         this.tmsCtctDtTm = value;
         return this;
     }

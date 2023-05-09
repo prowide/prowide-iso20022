@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -39,7 +39,7 @@ public class AmountsAndValueDate4 {
     @XmlElement(name = "FnlSttlmDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar fnlSttlmDt;
+    protected LocalDate fnlSttlmDt;
 
     /**
      * Gets the value of the callAmt property.
@@ -124,7 +124,7 @@ public class AmountsAndValueDate4 {
      *     {@link String }
      *     
      */
-    public Calendar getFnlSttlmDt() {
+    public LocalDate getFnlSttlmDt() {
         return fnlSttlmDt;
     }
 
@@ -136,7 +136,7 @@ public class AmountsAndValueDate4 {
      *     {@link String }
      *     
      */
-    public AmountsAndValueDate4 setFnlSttlmDt(Calendar value) {
+    public AmountsAndValueDate4 setFnlSttlmDt(LocalDate value) {
         this.fnlSttlmDt = value;
         return this;
     }

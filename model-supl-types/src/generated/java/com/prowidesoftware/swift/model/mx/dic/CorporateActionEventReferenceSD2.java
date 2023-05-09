@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -38,11 +38,11 @@ public class CorporateActionEventReferenceSD2 {
     @XmlElement(name = "LkAddedDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar lkAddedDt;
+    protected LocalDate lkAddedDt;
     @XmlElement(name = "LkModfdDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar lkModfdDt;
+    protected LocalDate lkModfdDt;
 
     /**
      * Gets the value of the plcAndNm property.
@@ -102,7 +102,7 @@ public class CorporateActionEventReferenceSD2 {
      *     {@link String }
      *     
      */
-    public Calendar getLkAddedDt() {
+    public LocalDate getLkAddedDt() {
         return lkAddedDt;
     }
 
@@ -114,7 +114,7 @@ public class CorporateActionEventReferenceSD2 {
      *     {@link String }
      *     
      */
-    public CorporateActionEventReferenceSD2 setLkAddedDt(Calendar value) {
+    public CorporateActionEventReferenceSD2 setLkAddedDt(LocalDate value) {
         this.lkAddedDt = value;
         return this;
     }
@@ -127,7 +127,7 @@ public class CorporateActionEventReferenceSD2 {
      *     {@link String }
      *     
      */
-    public Calendar getLkModfdDt() {
+    public LocalDate getLkModfdDt() {
         return lkModfdDt;
     }
 
@@ -139,7 +139,7 @@ public class CorporateActionEventReferenceSD2 {
      *     {@link String }
      *     
      */
-    public CorporateActionEventReferenceSD2 setLkModfdDt(Calendar value) {
+    public CorporateActionEventReferenceSD2 setLkModfdDt(LocalDate value) {
         this.lkModfdDt = value;
         return this;
     }

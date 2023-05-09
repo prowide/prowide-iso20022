@@ -2,7 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.LocalDate;
+import java.time.OffsetTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -46,11 +47,11 @@ public class FeeAmount3 {
     @XmlElement(name = "ConvsDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar convsDt;
+    protected LocalDate convsDt;
     @XmlElement(name = "ConvsTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected Calendar convsTm;
+    protected OffsetTime convsTm;
 
     /**
      * Gets the value of the amt property.
@@ -160,7 +161,7 @@ public class FeeAmount3 {
      *     {@link String }
      *     
      */
-    public Calendar getConvsDt() {
+    public LocalDate getConvsDt() {
         return convsDt;
     }
 
@@ -172,7 +173,7 @@ public class FeeAmount3 {
      *     {@link String }
      *     
      */
-    public FeeAmount3 setConvsDt(Calendar value) {
+    public FeeAmount3 setConvsDt(LocalDate value) {
         this.convsDt = value;
         return this;
     }
@@ -185,7 +186,7 @@ public class FeeAmount3 {
      *     {@link String }
      *     
      */
-    public Calendar getConvsTm() {
+    public OffsetTime getConvsTm() {
         return convsTm;
     }
 
@@ -197,7 +198,7 @@ public class FeeAmount3 {
      *     {@link String }
      *     
      */
-    public FeeAmount3 setConvsTm(Calendar value) {
+    public FeeAmount3 setConvsTm(OffsetTime value) {
         this.convsTm = value;
         return this;
     }

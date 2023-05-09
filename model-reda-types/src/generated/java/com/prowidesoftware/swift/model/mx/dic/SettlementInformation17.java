@@ -1,14 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.YearMonth;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoYearMonthAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,9 +35,10 @@ public class SettlementInformation17 {
 
     @XmlElement(name = "SctiesQtyTp")
     protected SettlementUnitType3Choice sctiesQtyTp;
-    @XmlElement(name = "CtrctSttlmMnth")
+    @XmlElement(name = "CtrctSttlmMnth", type = String.class)
+    @XmlJavaTypeAdapter(IsoYearMonthAdapter.class)
     @XmlSchemaType(name = "gYearMonth")
-    protected XMLGregorianCalendar ctrctSttlmMnth;
+    protected YearMonth ctrctSttlmMnth;
     @XmlElement(name = "MinDnmtn")
     protected FinancialInstrumentQuantity1Choice minDnmtn;
     @XmlElement(name = "MinMltplQty")
@@ -73,10 +76,10 @@ public class SettlementInformation17 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getCtrctSttlmMnth() {
+    public YearMonth getCtrctSttlmMnth() {
         return ctrctSttlmMnth;
     }
 
@@ -85,10 +88,10 @@ public class SettlementInformation17 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public SettlementInformation17 setCtrctSttlmMnth(XMLGregorianCalendar value) {
+    public SettlementInformation17 setCtrctSttlmMnth(YearMonth value) {
         this.ctrctSttlmMnth = value;
         return this;
     }

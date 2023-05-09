@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -40,11 +40,11 @@ public class GenericIdentification44 {
     @XmlElement(name = "IsseDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar isseDt;
+    protected LocalDate isseDt;
     @XmlElement(name = "XpryDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar xpryDt;
+    protected LocalDate xpryDt;
 
     /**
      * Gets the value of the id property.
@@ -129,7 +129,7 @@ public class GenericIdentification44 {
      *     {@link String }
      *     
      */
-    public Calendar getIsseDt() {
+    public LocalDate getIsseDt() {
         return isseDt;
     }
 
@@ -141,7 +141,7 @@ public class GenericIdentification44 {
      *     {@link String }
      *     
      */
-    public GenericIdentification44 setIsseDt(Calendar value) {
+    public GenericIdentification44 setIsseDt(LocalDate value) {
         this.isseDt = value;
         return this;
     }
@@ -154,7 +154,7 @@ public class GenericIdentification44 {
      *     {@link String }
      *     
      */
-    public Calendar getXpryDt() {
+    public LocalDate getXpryDt() {
         return xpryDt;
     }
 
@@ -166,7 +166,7 @@ public class GenericIdentification44 {
      *     {@link String }
      *     
      */
-    public GenericIdentification44 setXpryDt(Calendar value) {
+    public GenericIdentification44 setXpryDt(LocalDate value) {
         this.xpryDt = value;
         return this;
     }

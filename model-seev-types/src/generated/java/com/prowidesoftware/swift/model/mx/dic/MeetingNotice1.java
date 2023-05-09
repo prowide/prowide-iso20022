@@ -2,8 +2,9 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
@@ -63,7 +64,7 @@ public class MeetingNotice1 {
     @XmlElement(name = "AnncmntDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar anncmntDt;
+    protected LocalDate anncmntDt;
     @XmlElement(name = "AttndncReqrd")
     protected Boolean attndncReqrd;
     @XmlElement(name = "AttndncConfInf")
@@ -71,25 +72,25 @@ public class MeetingNotice1 {
     @XmlElement(name = "AttndncConfDdln", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar attndncConfDdln;
+    protected OffsetDateTime attndncConfDdln;
     @XmlElement(name = "AttndncConfElctrncDdln", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar attndncConfElctrncDdln;
+    protected OffsetDateTime attndncConfElctrncDdln;
     @XmlElement(name = "AttndncConfMktDdln", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar attndncConfMktDdln;
+    protected OffsetDateTime attndncConfMktDdln;
     @XmlElement(name = "AddtlDcmnttnURLAdr")
     protected String addtlDcmnttnURLAdr;
     @XmlElement(name = "RsltnPrpslDdln", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar rsltnPrpslDdln;
+    protected LocalDate rsltnPrpslDdln;
     @XmlElement(name = "RsltnPrpslMktDdln", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar rsltnPrpslMktDdln;
+    protected LocalDate rsltnPrpslMktDdln;
     @XmlElement(name = "PrxyAppntmntNtfctnAdr")
     protected PostalAddress1 prxyAppntmntNtfctnAdr;
     @XmlElement(name = "TtlNbOfSctiesOutsdng")
@@ -101,7 +102,7 @@ public class MeetingNotice1 {
     @XmlElement(name = "RsltPblctnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar rsltPblctnDt;
+    protected LocalDate rsltPblctnDt;
     @XmlElement(name = "InittdByHldr")
     protected NameAndAddress5 inittdByHldr;
     @XmlElement(name = "InittdByCrt")
@@ -199,7 +200,7 @@ public class MeetingNotice1 {
      *     {@link String }
      *     
      */
-    public Calendar getAnncmntDt() {
+    public LocalDate getAnncmntDt() {
         return anncmntDt;
     }
 
@@ -211,7 +212,7 @@ public class MeetingNotice1 {
      *     {@link String }
      *     
      */
-    public MeetingNotice1 setAnncmntDt(Calendar value) {
+    public MeetingNotice1 setAnncmntDt(LocalDate value) {
         this.anncmntDt = value;
         return this;
     }
@@ -274,7 +275,7 @@ public class MeetingNotice1 {
      *     {@link String }
      *     
      */
-    public Calendar getAttndncConfDdln() {
+    public OffsetDateTime getAttndncConfDdln() {
         return attndncConfDdln;
     }
 
@@ -286,7 +287,7 @@ public class MeetingNotice1 {
      *     {@link String }
      *     
      */
-    public MeetingNotice1 setAttndncConfDdln(Calendar value) {
+    public MeetingNotice1 setAttndncConfDdln(OffsetDateTime value) {
         this.attndncConfDdln = value;
         return this;
     }
@@ -299,7 +300,7 @@ public class MeetingNotice1 {
      *     {@link String }
      *     
      */
-    public Calendar getAttndncConfElctrncDdln() {
+    public OffsetDateTime getAttndncConfElctrncDdln() {
         return attndncConfElctrncDdln;
     }
 
@@ -311,7 +312,7 @@ public class MeetingNotice1 {
      *     {@link String }
      *     
      */
-    public MeetingNotice1 setAttndncConfElctrncDdln(Calendar value) {
+    public MeetingNotice1 setAttndncConfElctrncDdln(OffsetDateTime value) {
         this.attndncConfElctrncDdln = value;
         return this;
     }
@@ -324,7 +325,7 @@ public class MeetingNotice1 {
      *     {@link String }
      *     
      */
-    public Calendar getAttndncConfMktDdln() {
+    public OffsetDateTime getAttndncConfMktDdln() {
         return attndncConfMktDdln;
     }
 
@@ -336,7 +337,7 @@ public class MeetingNotice1 {
      *     {@link String }
      *     
      */
-    public MeetingNotice1 setAttndncConfMktDdln(Calendar value) {
+    public MeetingNotice1 setAttndncConfMktDdln(OffsetDateTime value) {
         this.attndncConfMktDdln = value;
         return this;
     }
@@ -374,7 +375,7 @@ public class MeetingNotice1 {
      *     {@link String }
      *     
      */
-    public Calendar getRsltnPrpslDdln() {
+    public LocalDate getRsltnPrpslDdln() {
         return rsltnPrpslDdln;
     }
 
@@ -386,7 +387,7 @@ public class MeetingNotice1 {
      *     {@link String }
      *     
      */
-    public MeetingNotice1 setRsltnPrpslDdln(Calendar value) {
+    public MeetingNotice1 setRsltnPrpslDdln(LocalDate value) {
         this.rsltnPrpslDdln = value;
         return this;
     }
@@ -399,7 +400,7 @@ public class MeetingNotice1 {
      *     {@link String }
      *     
      */
-    public Calendar getRsltnPrpslMktDdln() {
+    public LocalDate getRsltnPrpslMktDdln() {
         return rsltnPrpslMktDdln;
     }
 
@@ -411,7 +412,7 @@ public class MeetingNotice1 {
      *     {@link String }
      *     
      */
-    public MeetingNotice1 setRsltnPrpslMktDdln(Calendar value) {
+    public MeetingNotice1 setRsltnPrpslMktDdln(LocalDate value) {
         this.rsltnPrpslMktDdln = value;
         return this;
     }
@@ -530,7 +531,7 @@ public class MeetingNotice1 {
      *     {@link String }
      *     
      */
-    public Calendar getRsltPblctnDt() {
+    public LocalDate getRsltPblctnDt() {
         return rsltPblctnDt;
     }
 
@@ -542,7 +543,7 @@ public class MeetingNotice1 {
      *     {@link String }
      *     
      */
-    public MeetingNotice1 setRsltPblctnDt(Calendar value) {
+    public MeetingNotice1 setRsltPblctnDt(LocalDate value) {
         this.rsltPblctnDt = value;
         return this;
     }

@@ -1,7 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -53,11 +54,11 @@ public class Summary3 {
     @XmlElement(name = "ValtnDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar valtnDtTm;
+    protected OffsetDateTime valtnDtTm;
     @XmlElement(name = "ReqdSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar reqdSttlmDt;
+    protected LocalDate reqdSttlmDt;
     @XmlElement(name = "SummryDtls")
     protected SummaryAmounts2 summryDtls;
 
@@ -219,7 +220,7 @@ public class Summary3 {
      *     {@link String }
      *     
      */
-    public Calendar getValtnDtTm() {
+    public OffsetDateTime getValtnDtTm() {
         return valtnDtTm;
     }
 
@@ -231,7 +232,7 @@ public class Summary3 {
      *     {@link String }
      *     
      */
-    public Summary3 setValtnDtTm(Calendar value) {
+    public Summary3 setValtnDtTm(OffsetDateTime value) {
         this.valtnDtTm = value;
         return this;
     }
@@ -244,7 +245,7 @@ public class Summary3 {
      *     {@link String }
      *     
      */
-    public Calendar getReqdSttlmDt() {
+    public LocalDate getReqdSttlmDt() {
         return reqdSttlmDt;
     }
 
@@ -256,7 +257,7 @@ public class Summary3 {
      *     {@link String }
      *     
      */
-    public Summary3 setReqdSttlmDt(Calendar value) {
+    public Summary3 setReqdSttlmDt(LocalDate value) {
         this.reqdSttlmDt = value;
         return this;
     }

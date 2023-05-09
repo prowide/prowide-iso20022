@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -40,11 +40,11 @@ public class AccountBalanceExtensionSD1 {
     @XmlElement(name = "AsOfDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar asOfDt;
+    protected LocalDate asOfDt;
     @XmlElement(name = "DlvryDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar dlvryDt;
+    protected LocalDate dlvryDt;
     @XmlElement(name = "ContraPtcptNb")
     protected String contraPtcptNb;
     @XmlElement(name = "RcvrAcctNb")
@@ -110,7 +110,7 @@ public class AccountBalanceExtensionSD1 {
      *     {@link String }
      *     
      */
-    public Calendar getAsOfDt() {
+    public LocalDate getAsOfDt() {
         return asOfDt;
     }
 
@@ -122,7 +122,7 @@ public class AccountBalanceExtensionSD1 {
      *     {@link String }
      *     
      */
-    public AccountBalanceExtensionSD1 setAsOfDt(Calendar value) {
+    public AccountBalanceExtensionSD1 setAsOfDt(LocalDate value) {
         this.asOfDt = value;
         return this;
     }
@@ -135,7 +135,7 @@ public class AccountBalanceExtensionSD1 {
      *     {@link String }
      *     
      */
-    public Calendar getDlvryDt() {
+    public LocalDate getDlvryDt() {
         return dlvryDt;
     }
 
@@ -147,7 +147,7 @@ public class AccountBalanceExtensionSD1 {
      *     {@link String }
      *     
      */
-    public AccountBalanceExtensionSD1 setDlvryDt(Calendar value) {
+    public AccountBalanceExtensionSD1 setDlvryDt(LocalDate value) {
         this.dlvryDt = value;
         return this;
     }

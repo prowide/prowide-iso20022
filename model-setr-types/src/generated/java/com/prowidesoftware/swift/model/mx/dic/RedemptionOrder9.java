@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -55,7 +55,7 @@ public class RedemptionOrder9 {
     @XmlElement(name = "ReqdTradDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar reqdTradDt;
+    protected LocalDate reqdTradDt;
     @XmlElement(name = "HdgFndOrdrTp")
     @XmlSchemaType(name = "string")
     protected List<HedgeFundOrderType1Code> hdgFndOrdrTp;
@@ -80,7 +80,7 @@ public class RedemptionOrder9 {
     @XmlElement(name = "CshSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar cshSttlmDt;
+    protected LocalDate cshSttlmDt;
     @XmlElement(name = "ReqdSttlmCcy")
     protected String reqdSttlmCcy;
     @XmlElement(name = "PmtRef")
@@ -171,7 +171,7 @@ public class RedemptionOrder9 {
      *     {@link String }
      *     
      */
-    public Calendar getReqdTradDt() {
+    public LocalDate getReqdTradDt() {
         return reqdTradDt;
     }
 
@@ -183,7 +183,7 @@ public class RedemptionOrder9 {
      *     {@link String }
      *     
      */
-    public RedemptionOrder9 setReqdTradDt(Calendar value) {
+    public RedemptionOrder9 setReqdTradDt(LocalDate value) {
         this.reqdTradDt = value;
         return this;
     }
@@ -470,7 +470,7 @@ public class RedemptionOrder9 {
      *     {@link String }
      *     
      */
-    public Calendar getCshSttlmDt() {
+    public LocalDate getCshSttlmDt() {
         return cshSttlmDt;
     }
 
@@ -482,7 +482,7 @@ public class RedemptionOrder9 {
      *     {@link String }
      *     
      */
-    public RedemptionOrder9 setCshSttlmDt(Calendar value) {
+    public RedemptionOrder9 setCshSttlmDt(LocalDate value) {
         this.cshSttlmDt = value;
         return this;
     }

@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -48,7 +48,7 @@ public class PortfolioTransfer8 {
     @XmlElement(name = "ReqdTrfDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar reqdTrfDt;
+    protected LocalDate reqdTrfDt;
     @XmlElement(name = "Prtfl")
     protected FundPortfolio6Choice prtfl;
     @XmlElement(name = "AllOthrCsh")
@@ -147,7 +147,7 @@ public class PortfolioTransfer8 {
      *     {@link String }
      *     
      */
-    public Calendar getReqdTrfDt() {
+    public LocalDate getReqdTrfDt() {
         return reqdTrfDt;
     }
 
@@ -159,7 +159,7 @@ public class PortfolioTransfer8 {
      *     {@link String }
      *     
      */
-    public PortfolioTransfer8 setReqdTrfDt(Calendar value) {
+    public PortfolioTransfer8 setReqdTrfDt(LocalDate value) {
         this.reqdTrfDt = value;
         return this;
     }

@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -34,7 +34,7 @@ public class PartyLockStatus1 {
     @XmlElement(name = "VldFr", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar vldFr;
+    protected LocalDate vldFr;
     @XmlElement(name = "Sts", required = true)
     @XmlSchemaType(name = "string")
     protected LockStatus1Code sts;
@@ -49,7 +49,7 @@ public class PartyLockStatus1 {
      *     {@link String }
      *     
      */
-    public Calendar getVldFr() {
+    public LocalDate getVldFr() {
         return vldFr;
     }
 
@@ -61,7 +61,7 @@ public class PartyLockStatus1 {
      *     {@link String }
      *     
      */
-    public PartyLockStatus1 setVldFr(Calendar value) {
+    public PartyLockStatus1 setVldFr(LocalDate value) {
         this.vldFr = value;
         return this;
     }

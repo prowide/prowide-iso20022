@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -41,7 +41,7 @@ public class AssetValuation1 {
     @XmlElement(name = "MtrtyDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar mtrtyDt;
+    protected LocalDate mtrtyDt;
     @XmlElement(name = "NtnlCcyFrstLeg", required = true)
     protected String ntnlCcyFrstLeg;
     @XmlElement(name = "NtnlCcyScndLeg")
@@ -67,7 +67,7 @@ public class AssetValuation1 {
     @XmlElement(name = "RstDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar rstDt;
+    protected LocalDate rstDt;
 
     /**
      * Gets the value of the mtrtyDt property.
@@ -77,7 +77,7 @@ public class AssetValuation1 {
      *     {@link String }
      *     
      */
-    public Calendar getMtrtyDt() {
+    public LocalDate getMtrtyDt() {
         return mtrtyDt;
     }
 
@@ -89,7 +89,7 @@ public class AssetValuation1 {
      *     {@link String }
      *     
      */
-    public AssetValuation1 setMtrtyDt(Calendar value) {
+    public AssetValuation1 setMtrtyDt(LocalDate value) {
         this.mtrtyDt = value;
         return this;
     }
@@ -352,7 +352,7 @@ public class AssetValuation1 {
      *     {@link String }
      *     
      */
-    public Calendar getRstDt() {
+    public LocalDate getRstDt() {
         return rstDt;
     }
 
@@ -364,7 +364,7 @@ public class AssetValuation1 {
      *     {@link String }
      *     
      */
-    public AssetValuation1 setRstDt(Calendar value) {
+    public AssetValuation1 setRstDt(LocalDate value) {
         this.rstDt = value;
         return this;
     }

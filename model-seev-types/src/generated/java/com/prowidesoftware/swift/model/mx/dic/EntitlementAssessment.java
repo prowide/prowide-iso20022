@@ -2,7 +2,8 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -41,33 +42,33 @@ public class EntitlementAssessment {
     @XmlElement(name = "SctiesBlckgDdln", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar sctiesBlckgDdln;
+    protected OffsetDateTime sctiesBlckgDdln;
     @XmlElement(name = "SctiesBlckgMktDdln", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar sctiesBlckgMktDdln;
+    protected OffsetDateTime sctiesBlckgMktDdln;
     @XmlElement(name = "SctiesBlckgPrdEndDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar sctiesBlckgPrdEndDt;
+    protected OffsetDateTime sctiesBlckgPrdEndDt;
     @XmlElement(name = "SctiesRregnDdln", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar sctiesRregnDdln;
+    protected OffsetDateTime sctiesRregnDdln;
     @XmlElement(name = "SctiesRregnMktDdln", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar sctiesRregnMktDdln;
+    protected OffsetDateTime sctiesRregnMktDdln;
     @XmlElement(name = "SctiesRegnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar sctiesRegnDt;
+    protected LocalDate sctiesRegnDt;
     @XmlElement(name = "RegnBnfcry")
     protected PartyIdentification7Choice regnBnfcry;
     @XmlElement(name = "RcrdDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar rcrdDt;
+    protected LocalDate rcrdDt;
     @XmlElement(name = "EntitlmntDesc")
     protected String entitlmntDesc;
     @XmlElement(name = "EntitlmntRatio")
@@ -81,7 +82,7 @@ public class EntitlementAssessment {
      *     {@link String }
      *     
      */
-    public Calendar getSctiesBlckgDdln() {
+    public OffsetDateTime getSctiesBlckgDdln() {
         return sctiesBlckgDdln;
     }
 
@@ -93,7 +94,7 @@ public class EntitlementAssessment {
      *     {@link String }
      *     
      */
-    public EntitlementAssessment setSctiesBlckgDdln(Calendar value) {
+    public EntitlementAssessment setSctiesBlckgDdln(OffsetDateTime value) {
         this.sctiesBlckgDdln = value;
         return this;
     }
@@ -106,7 +107,7 @@ public class EntitlementAssessment {
      *     {@link String }
      *     
      */
-    public Calendar getSctiesBlckgMktDdln() {
+    public OffsetDateTime getSctiesBlckgMktDdln() {
         return sctiesBlckgMktDdln;
     }
 
@@ -118,7 +119,7 @@ public class EntitlementAssessment {
      *     {@link String }
      *     
      */
-    public EntitlementAssessment setSctiesBlckgMktDdln(Calendar value) {
+    public EntitlementAssessment setSctiesBlckgMktDdln(OffsetDateTime value) {
         this.sctiesBlckgMktDdln = value;
         return this;
     }
@@ -131,7 +132,7 @@ public class EntitlementAssessment {
      *     {@link String }
      *     
      */
-    public Calendar getSctiesBlckgPrdEndDt() {
+    public OffsetDateTime getSctiesBlckgPrdEndDt() {
         return sctiesBlckgPrdEndDt;
     }
 
@@ -143,7 +144,7 @@ public class EntitlementAssessment {
      *     {@link String }
      *     
      */
-    public EntitlementAssessment setSctiesBlckgPrdEndDt(Calendar value) {
+    public EntitlementAssessment setSctiesBlckgPrdEndDt(OffsetDateTime value) {
         this.sctiesBlckgPrdEndDt = value;
         return this;
     }
@@ -156,7 +157,7 @@ public class EntitlementAssessment {
      *     {@link String }
      *     
      */
-    public Calendar getSctiesRregnDdln() {
+    public OffsetDateTime getSctiesRregnDdln() {
         return sctiesRregnDdln;
     }
 
@@ -168,7 +169,7 @@ public class EntitlementAssessment {
      *     {@link String }
      *     
      */
-    public EntitlementAssessment setSctiesRregnDdln(Calendar value) {
+    public EntitlementAssessment setSctiesRregnDdln(OffsetDateTime value) {
         this.sctiesRregnDdln = value;
         return this;
     }
@@ -181,7 +182,7 @@ public class EntitlementAssessment {
      *     {@link String }
      *     
      */
-    public Calendar getSctiesRregnMktDdln() {
+    public OffsetDateTime getSctiesRregnMktDdln() {
         return sctiesRregnMktDdln;
     }
 
@@ -193,7 +194,7 @@ public class EntitlementAssessment {
      *     {@link String }
      *     
      */
-    public EntitlementAssessment setSctiesRregnMktDdln(Calendar value) {
+    public EntitlementAssessment setSctiesRregnMktDdln(OffsetDateTime value) {
         this.sctiesRregnMktDdln = value;
         return this;
     }
@@ -206,7 +207,7 @@ public class EntitlementAssessment {
      *     {@link String }
      *     
      */
-    public Calendar getSctiesRegnDt() {
+    public LocalDate getSctiesRegnDt() {
         return sctiesRegnDt;
     }
 
@@ -218,7 +219,7 @@ public class EntitlementAssessment {
      *     {@link String }
      *     
      */
-    public EntitlementAssessment setSctiesRegnDt(Calendar value) {
+    public EntitlementAssessment setSctiesRegnDt(LocalDate value) {
         this.sctiesRegnDt = value;
         return this;
     }
@@ -256,7 +257,7 @@ public class EntitlementAssessment {
      *     {@link String }
      *     
      */
-    public Calendar getRcrdDt() {
+    public LocalDate getRcrdDt() {
         return rcrdDt;
     }
 
@@ -268,7 +269,7 @@ public class EntitlementAssessment {
      *     {@link String }
      *     
      */
-    public EntitlementAssessment setRcrdDt(Calendar value) {
+    public EntitlementAssessment setRcrdDt(LocalDate value) {
         this.rcrdDt = value;
         return this;
     }

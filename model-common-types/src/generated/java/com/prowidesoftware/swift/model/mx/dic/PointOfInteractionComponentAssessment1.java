@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -41,11 +41,11 @@ public class PointOfInteractionComponentAssessment1 {
     @XmlElement(name = "DlvryDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar dlvryDt;
+    protected OffsetDateTime dlvryDt;
     @XmlElement(name = "XprtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected Calendar xprtnDt;
+    protected OffsetDateTime xprtnDt;
     @XmlElement(name = "Nb", required = true)
     protected String nb;
 
@@ -113,7 +113,7 @@ public class PointOfInteractionComponentAssessment1 {
      *     {@link String }
      *     
      */
-    public Calendar getDlvryDt() {
+    public OffsetDateTime getDlvryDt() {
         return dlvryDt;
     }
 
@@ -125,7 +125,7 @@ public class PointOfInteractionComponentAssessment1 {
      *     {@link String }
      *     
      */
-    public PointOfInteractionComponentAssessment1 setDlvryDt(Calendar value) {
+    public PointOfInteractionComponentAssessment1 setDlvryDt(OffsetDateTime value) {
         this.dlvryDt = value;
         return this;
     }
@@ -138,7 +138,7 @@ public class PointOfInteractionComponentAssessment1 {
      *     {@link String }
      *     
      */
-    public Calendar getXprtnDt() {
+    public OffsetDateTime getXprtnDt() {
         return xprtnDt;
     }
 
@@ -150,7 +150,7 @@ public class PointOfInteractionComponentAssessment1 {
      *     {@link String }
      *     
      */
-    public PointOfInteractionComponentAssessment1 setXprtnDt(Calendar value) {
+    public PointOfInteractionComponentAssessment1 setXprtnDt(OffsetDateTime value) {
         this.xprtnDt = value;
         return this;
     }

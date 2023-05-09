@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -35,19 +35,19 @@ public class AccountContract3 {
     @XmlElement(name = "TrgtGoLiveDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar trgtGoLiveDt;
+    protected LocalDate trgtGoLiveDt;
     @XmlElement(name = "TrgtClsgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar trgtClsgDt;
+    protected LocalDate trgtClsgDt;
     @XmlElement(name = "GoLiveDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar goLiveDt;
+    protected LocalDate goLiveDt;
     @XmlElement(name = "ClsgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar clsgDt;
+    protected LocalDate clsgDt;
     @XmlElement(name = "UrgcyFlg")
     protected Boolean urgcyFlg;
     @XmlElement(name = "RmvlInd")
@@ -61,7 +61,7 @@ public class AccountContract3 {
      *     {@link String }
      *     
      */
-    public Calendar getTrgtGoLiveDt() {
+    public LocalDate getTrgtGoLiveDt() {
         return trgtGoLiveDt;
     }
 
@@ -73,7 +73,7 @@ public class AccountContract3 {
      *     {@link String }
      *     
      */
-    public AccountContract3 setTrgtGoLiveDt(Calendar value) {
+    public AccountContract3 setTrgtGoLiveDt(LocalDate value) {
         this.trgtGoLiveDt = value;
         return this;
     }
@@ -86,7 +86,7 @@ public class AccountContract3 {
      *     {@link String }
      *     
      */
-    public Calendar getTrgtClsgDt() {
+    public LocalDate getTrgtClsgDt() {
         return trgtClsgDt;
     }
 
@@ -98,7 +98,7 @@ public class AccountContract3 {
      *     {@link String }
      *     
      */
-    public AccountContract3 setTrgtClsgDt(Calendar value) {
+    public AccountContract3 setTrgtClsgDt(LocalDate value) {
         this.trgtClsgDt = value;
         return this;
     }
@@ -111,7 +111,7 @@ public class AccountContract3 {
      *     {@link String }
      *     
      */
-    public Calendar getGoLiveDt() {
+    public LocalDate getGoLiveDt() {
         return goLiveDt;
     }
 
@@ -123,7 +123,7 @@ public class AccountContract3 {
      *     {@link String }
      *     
      */
-    public AccountContract3 setGoLiveDt(Calendar value) {
+    public AccountContract3 setGoLiveDt(LocalDate value) {
         this.goLiveDt = value;
         return this;
     }
@@ -136,7 +136,7 @@ public class AccountContract3 {
      *     {@link String }
      *     
      */
-    public Calendar getClsgDt() {
+    public LocalDate getClsgDt() {
         return clsgDt;
     }
 
@@ -148,7 +148,7 @@ public class AccountContract3 {
      *     {@link String }
      *     
      */
-    public AccountContract3 setClsgDt(Calendar value) {
+    public AccountContract3 setClsgDt(LocalDate value) {
         this.clsgDt = value;
         return this;
     }

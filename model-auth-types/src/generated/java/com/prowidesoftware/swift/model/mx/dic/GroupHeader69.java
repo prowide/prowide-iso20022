@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -39,7 +39,7 @@ public class GroupHeader69 {
     @XmlElement(name = "IssdDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected Calendar issdDt;
+    protected LocalDate issdDt;
     @XmlElement(name = "RptCtgy", required = true)
     protected String rptCtgy;
     @XmlElement(name = "TaxRptPurp", required = true)
@@ -86,7 +86,7 @@ public class GroupHeader69 {
      *     {@link String }
      *     
      */
-    public Calendar getIssdDt() {
+    public LocalDate getIssdDt() {
         return issdDt;
     }
 
@@ -98,7 +98,7 @@ public class GroupHeader69 {
      *     {@link String }
      *     
      */
-    public GroupHeader69 setIssdDt(Calendar value) {
+    public GroupHeader69 setIssdDt(LocalDate value) {
         this.issdDt = value;
         return this;
     }
