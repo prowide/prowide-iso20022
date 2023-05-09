@@ -1167,17 +1167,6 @@ public class AbstractMxJsonTestAdapters {
     @Test
     public void testGson() {
         Gson gson = new Gson();
-
-        //VER LO DE dateTime o date o los diferentes nombres de objetos
-
-        String json = "{\"date\":{\"year\":2021,\"month\":5,\"day\":8},\"time\":{\"hour\":21,\"minute\":49,\"second\":48,\"nano\":279285000}}";
-
-
-        //System.out.println(gson.toJson(Year.now()));
-        //System.out.println(gson.toJson(YearMonth.now()));
-
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("MM");
-
         System.out.println(gson.toJson(LocalDate.now().getMonth()));
 
         //OffsetDateTime: {"dateTime":{"date":{"year":2021,"month":5,"day":8},"time":{"hour":21,"minute":48,"second":39,"nano":61498000}},"offset":{"totalSeconds":7200}}
@@ -1187,7 +1176,6 @@ public class AbstractMxJsonTestAdapters {
         //Year          : {"year":2021}
         //YearMonth     : {"year":2021,"month":5}
         //Month         : "MAY"
-
     }
 
 

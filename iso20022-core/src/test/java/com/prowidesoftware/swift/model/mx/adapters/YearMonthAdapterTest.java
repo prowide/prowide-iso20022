@@ -140,14 +140,17 @@ public class YearMonthAdapterTest {
                 "</RequestPayload>";
 
         final MxSese01900106 mxSese01900106_1 = MxSese01900106.parse(xmlOrigin);
+        final String xml = mxSese01900106_1.message();
+        assertTrue(xml.contains("<Doc:CreDtTm>2023-05-09T16:35:48-03:00</Doc:CreDtTm>"));
+        assertTrue(xml.contains("<Doc:Dt>2013-10</Doc:Dt>"));
 
         MxWriteConfiguration conf = new MxWriteConfiguration();
         conf.adapters.yearMonthAdapter = new IsoYearMonthAdapter(new YearMonthAdapter(DateTimeFormatter.ofPattern("yy-MM")));
 
-        final String xml = mxSese01900106_1.message(conf);
+        final String xmlCustomFormat = mxSese01900106_1.message(conf);
         //System.out.println(xml);
-        assertTrue(xml.contains("<Doc:CreDtTm>2023-05-09T16:35:48-03:00</Doc:CreDtTm>"));
-        assertTrue(xml.contains("<Doc:Dt>13-10</Doc:Dt>"));
+        assertTrue(xmlCustomFormat.contains("<Doc:CreDtTm>2023-05-09T16:35:48-03:00</Doc:CreDtTm>"));
+        assertTrue(xmlCustomFormat.contains("<Doc:Dt>13-10</Doc:Dt>"));
     }
 
 }
