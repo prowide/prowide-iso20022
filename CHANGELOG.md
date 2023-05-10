@@ -3,6 +3,7 @@
 #### 10.0.0-RC1 - May 2023
   * Migration to Java 11
   * Migration to Jakarta EE 10
+  * XmlGregorianCalendar was replaced model-wide by the new java.time classes
 
 #### 9.3.6 - March 2023
   * (GH-74) Added a parameter in the MxWriteParams to define a custom indentation string to use when marshalling into XML
