@@ -17,9 +17,9 @@ package com.prowidesoftware.swift.model.mx.adapters;
 
 import jakarta.xml.bind.annotation.adapters.XmlAdapter;
 
-import java.time.Month;
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 /**
  * Default generic adapter to use when non is provided via the configuration API.
@@ -29,13 +29,13 @@ import java.time.format.DateTimeFormatter;
  */
 public class YearMonthAdapter extends XmlAdapter<String, YearMonth> {
     private static String YEAR_MONTH_FORMAT = "yyyy-MM";
-    private static DateTimeFormatter dtf = DateTimeFormatter.ofPattern(YEAR_MONTH_FORMAT);
-
-    public YearMonthAdapter(DateTimeFormatter ofPattern) {
-        this.dtf = ofPattern;
-    }
+    private DateTimeFormatter dtf = DateTimeFormatter.ofPattern(YEAR_MONTH_FORMAT);
 
     public YearMonthAdapter() {
+    }
+
+    public YearMonthAdapter(DateTimeFormatter dtf) {
+        this.dtf = dtf;
     }
 
     @Override

@@ -28,14 +28,13 @@ import java.time.format.DateTimeFormatter;
  * @since 10.0.0
  */
 public class YearAdapter extends XmlAdapter<String, Year> {
-    private static String YEAR_FORMAT = "YYYY";
-    private static DateTimeFormatter dtf = DateTimeFormatter.ofPattern(YEAR_FORMAT);
-
-    public YearAdapter(DateTimeFormatter ofPattern) {
-        this.dtf = ofPattern;
-    }
+    private String YEAR_FORMAT = "YYYY";
+    private DateTimeFormatter dtf = DateTimeFormatter.ofPattern(YEAR_FORMAT);
 
     public YearAdapter() {
+    }
+    public YearAdapter(DateTimeFormatter ofPattern) {
+        this.dtf = ofPattern;
     }
 
     @Override

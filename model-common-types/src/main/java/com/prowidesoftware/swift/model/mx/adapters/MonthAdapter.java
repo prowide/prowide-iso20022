@@ -28,7 +28,7 @@ import java.time.format.DateTimeFormatter;
  */
 public class MonthAdapter extends XmlAdapter<String, Month> {
     private static String MONT_FORMAT = "MM";
-    private static DateTimeFormatter dtf = DateTimeFormatter.ofPattern(MONT_FORMAT);
+    private DateTimeFormatter dtf = DateTimeFormatter.ofPattern(MONT_FORMAT);
 
     public MonthAdapter(DateTimeFormatter ofPattern) {
         this.dtf = ofPattern;

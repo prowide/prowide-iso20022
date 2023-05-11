@@ -1152,7 +1152,111 @@ public class AbstractMxJsonTestAdapters {
 
     @Test
     public void testJSONYearMonth() {
-        String jsonTimeAndDate = "";
+
+        String jsonTimeAndDate = "{\n" +
+                "  \"acctHldgInfReq\": {\n" +
+                "    \"msgRef\": {\n" +
+                "      \"id\": \"FFFFFFF\",\n" +
+                "      \"creDtTm\": {\n" +
+                "        \"dateTime\": {\n" +
+                "          \"date\": {\n" +
+                "            \"year\": 2023,\n" +
+                "            \"month\": 5,\n" +
+                "            \"day\": 9\n" +
+                "          },\n" +
+                "          \"time\": {\n" +
+                "            \"hour\": 16,\n" +
+                "            \"minute\": 35,\n" +
+                "            \"second\": 48,\n" +
+                "            \"nano\": 0\n" +
+                "          }\n" +
+                "        },\n" +
+                "        \"offset\": {\n" +
+                "          \"totalSeconds\": -10800\n" +
+                "        }\n" +
+                "      }\n" +
+                "    },\n" +
+                "    \"trfrAcct\": {\n" +
+                "      \"id\": \"FEEEEER\",\n" +
+                "      \"dsgnt\": \"FEEEER\",\n" +
+                "      \"acctNm\": \"FEEER\"\n" +
+                "    },\n" +
+                "    \"trfee\": {\n" +
+                "      \"anyBIC\": \"TRGTXEPMCLM\"\n" +
+                "    },\n" +
+                "    \"pdctTrf\": [\n" +
+                "      {\n" +
+                "        \"mstrRef\": \"FEEEEER\",\n" +
+                "        \"trfId\": \"FEEEEER\"\n" +
+                "      }\n" +
+                "    ],\n" +
+                "    \"mktPrctcVrsn\": {\n" +
+                "      \"nm\": \"FERNANDOFERNANDO\",\n" +
+                "      \"dt\": {\n" +
+                "        \"year\": 2013,\n" +
+                "        \"month\": 10\n" +
+                "      }\n" +
+                "    }\n" +
+                "  },\n" +
+                "  \"appHdr\": {\n" +
+                "    \"fr\": {\n" +
+                "      \"fiId\": {\n" +
+                "        \"finInstnId\": {\n" +
+                "          \"bicfi\": \"AAAAUSXXXXX\"\n" +
+                "        }\n" +
+                "      }\n" +
+                "    },\n" +
+                "    \"to\": {\n" +
+                "      \"fiId\": {\n" +
+                "        \"finInstnId\": {\n" +
+                "          \"bicfi\": \"TRGTXEPMCLM\"\n" +
+                "        }\n" +
+                "      }\n" +
+                "    },\n" +
+                "    \"bizMsgIdr\": \"TRGTXEPMCLM\",\n" +
+                "    \"msgDefIdr\": \"sese.019.001.06\",\n" +
+                "    \"creDt\": {\n" +
+                "      \"dateTime\": {\n" +
+                "        \"date\": {\n" +
+                "          \"year\": 2023,\n" +
+                "          \"month\": 5,\n" +
+                "          \"day\": 9\n" +
+                "        },\n" +
+                "        \"time\": {\n" +
+                "          \"hour\": 11,\n" +
+                "          \"minute\": 38,\n" +
+                "          \"second\": 43,\n" +
+                "          \"nano\": 268000000\n" +
+                "        }\n" +
+                "      },\n" +
+                "      \"offset\": {\n" +
+                "        \"totalSeconds\": -10800\n" +
+                "      }\n" +
+                "    },\n" +
+                "    \"bizPrcgDt\": {\n" +
+                "      \"dateTime\": {\n" +
+                "        \"date\": {\n" +
+                "          \"year\": 2023,\n" +
+                "          \"month\": 5,\n" +
+                "          \"day\": 9\n" +
+                "        },\n" +
+                "        \"time\": {\n" +
+                "          \"hour\": 16,\n" +
+                "          \"minute\": 35,\n" +
+                "          \"second\": 57,\n" +
+                "          \"nano\": 0\n" +
+                "        }\n" +
+                "      },\n" +
+                "      \"offset\": {\n" +
+                "        \"totalSeconds\": -10800\n" +
+                "      }\n" +
+                "    },\n" +
+                "    \"namespace\": \"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\"\n" +
+                "  },\n" +
+                "  \"type\": \"MX\",\n" +
+                "  \"@xmlns\": \"urn:iso:std:iso:20022:tech:xsd:sese.019.001.06\",\n" +
+                "  \"identifier\": \"sese.019.001.06\"\n" +
+                "}";
 
         AbstractMX source = AbstractMX.fromJson(jsonTimeAndDate);
 
