@@ -55,7 +55,7 @@ public class MonthAdapter extends XmlAdapter<String, Month> {
  * @since 10.0.0
  */
 public class YearAdapter extends XmlAdapter<String, Year> {
-    private String YEAR_FORMAT = "YYYY";
+    private String YEAR_FORMAT = "yyyy";
     private DateTimeFormatter dtf = DateTimeFormatter.ofPattern(YEAR_FORMAT);
 
     public YearAdapter() {
