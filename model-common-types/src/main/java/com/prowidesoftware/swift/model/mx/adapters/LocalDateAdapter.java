@@ -28,7 +28,7 @@ import java.time.format.DateTimeFormatter;
  */
 public class LocalDateAdapter extends XmlAdapter<String, LocalDate> {
     private static String DATE_FORMAT = "yyyy-MM-dd";
-    private static DateTimeFormatter dtf = DateTimeFormatter.ofPattern(DATE_FORMAT);
+    private DateTimeFormatter dtf = DateTimeFormatter.ofPattern(DATE_FORMAT);
 
     public LocalDateAdapter(DateTimeFormatter ofPattern) {
         this.dtf = ofPattern;

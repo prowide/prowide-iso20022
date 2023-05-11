@@ -34,7 +34,6 @@ import java.util.logging.Logger;
  */
 public class OffsetDateTimeAdapter extends XmlAdapter<String, OffsetDateTime> {
     private static final Logger log = Logger.getLogger(OffsetDateTimeAdapter.class.getName());
-
     private final DateTimeFormatter marshallFormat;
     private final DateTimeFormatter unmarshallFormat;
     private XmlAdapter<String, OffsetDateTime> customAdapterImpl;
