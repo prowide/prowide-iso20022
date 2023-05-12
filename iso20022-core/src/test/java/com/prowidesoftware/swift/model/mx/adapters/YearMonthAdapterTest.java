@@ -155,8 +155,6 @@ public class YearMonthAdapterTest {
     }
 
 
-
-
     @Test
     public void testYear_CustomPattern() {
         String xmlOrigin = "<Doc:Document xmlns:Doc=\"urn:iso:std:iso:20022:tech:xsd:acmt.034.001.04\">\n" +
@@ -175,18 +173,12 @@ public class YearMonthAdapterTest {
 
         final MxAcmt03400104 mx = MxAcmt03400104.parse(xmlOrigin);
         final String xml = mx.message();
-
         assertTrue(xml.contains("<Doc:Yr>2022</Doc:Yr>"));
 
-        //MxWriteConfiguration conf = new MxWriteConfiguration();
-        //conf.adapters.yearMonthAdapter = new IsoYearMonthAdapter(new YearMonthAdapter(DateTimeFormatter.ofPattern("yy-MM")));
 
-        //final String xmlCustomFormat = mx.message(conf);
-        //System.out.println(xml);
-        //assertTrue(xmlCustomFormat.contains("<Doc:CreDtTm>2023-05-09T16:35:48-03:00</Doc:CreDtTm>"));
-        //assertTrue(xmlCustomFormat.contains("<Doc:Dt>21-10</Doc:Dt>"));
+        MxWriteConfiguration conf = new MxWriteConfiguration();
+        conf.adapters.yearAdapter = new IsoYearAdapter(new YearAdapter(DateTimeFormatter.ofPattern("yy")));
+        final String xmlCustomFormat = mx.message(conf);
+        assertTrue(xmlCustomFormat.contains("<Doc:Yr>22</Doc:Yr>"));
     }
-
-
-
 }
