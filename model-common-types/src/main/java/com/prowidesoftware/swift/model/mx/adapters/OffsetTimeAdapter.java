@@ -40,7 +40,7 @@ public class OffsetTimeAdapter extends XmlAdapter<String, OffsetTime> {
      */
     public OffsetTimeAdapter() {
         this.marshalFormat = DateTimeFormatter.ofPattern("HH:mm:ss.SSSXXX");
-        this.unmarshalFormat = DateTimeFormatter.ofPattern("HH:mm:ss[.SSS][XXX]");
+        this.unmarshalFormat = DateTimeFormatter.ofPattern("HH:mm:ss[.[SSS][SS][S]][XXX]");
         this.customAdapterImpl = null;
     }
 
