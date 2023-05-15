@@ -48,9 +48,9 @@ class OffsetDateTimeAdapterTest {
     }
 
     private void testDateTimeImpl(String value, String valueResult) throws Exception {
-        OffsetDateTimeAdapter zonedDateTimeAdapter = new OffsetDateTimeAdapter();
-        OffsetDateTime offsetDateTime = zonedDateTimeAdapter.unmarshal(value);
-        String valueDateResult = zonedDateTimeAdapter.marshal(offsetDateTime);
+        OffsetDateTimeAdapter offsetDateTimeAdapter = new OffsetDateTimeAdapter();
+        OffsetDateTime offsetDateTime = offsetDateTimeAdapter.unmarshal(value);
+        String valueDateResult = offsetDateTimeAdapter.marshal(offsetDateTime);
         assertEquals(valueResult, valueDateResult);
     }
 

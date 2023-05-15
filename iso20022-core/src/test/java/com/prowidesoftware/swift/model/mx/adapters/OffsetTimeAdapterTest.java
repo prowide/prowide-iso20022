@@ -15,7 +15,6 @@
  */
 package com.prowidesoftware.swift.model.mx.adapters;
 
-import net.bytebuddy.asm.Advice;
 import org.junit.jupiter.api.Test;
 
 import java.time.*;
@@ -77,5 +76,46 @@ public class OffsetTimeAdapterTest {
         OffsetTime offsetTime = LocalTime.parse("12:50:08", dateTimeFormatter).atOffset(offset);
         assertEquals("12:50:08"+offset, adapter.marshal(offsetTime));
     }
+
+    @Test
+    public void testOffsetTime() throws Exception {
+        ZoneOffset zoneOffset = ZoneId.systemDefault().getRules().getStandardOffset(Instant.now());
+
+        //DateTime without offset and with/without fractional seconds
+        testTimeImpl("12:13:14", "12:13:14" + zoneOffset);
+        testTimeImpl("12:13:14.1", "12:13:14.100" + zoneOffset);
+        testTimeImpl("12:13:14.12", "12:13:14.120" + zoneOffset);
+        testTimeImpl("12:13:14.123", "12:13:14.123" + zoneOffset);
+
+        //DateTime with offset and without fractional seconds
+        testTimeImpl("12:13:14+01:00", "12:13:14+01:00");
+        testTimeImpl("12:13:14-01:00", "12:13:14-01:00");
+        testTimeImpl("12:13:14+00:00", "12:13:14+00:00");
+        testTimeImpl("12:13:14-00:00", "12:13:14+00:00");
+        testTimeImpl("12:13:14+08:30", "12:13:14+08:30");
+        testTimeImpl("12:13:14Z", "12:13:14+00:00");
+
+        //DateTime with offset and fractional seconds
+        testTimeImpl("12:13:14.1+01:00", "12:13:14.100+01:00");
+        testTimeImpl("12:13:14.12-01:00", "12:13:14.120-01:00");
+        testTimeImpl("12:13:14.123+00:00", "12:13:14.123+00:00");
+        testTimeImpl("12:13:14.123+08:30", "12:13:14.123+08:30");
+        testTimeImpl("12:13:14.000+08:30", "12:13:14+08:30");
+        testTimeImpl("12:13:14.000Z", "12:13:14+00:00");
+        testTimeImpl("12:13:14.123Z", "12:13:14.123+00:00");
+    }
+
+
+    private void testTimeImpl(String value, String valueResult) throws Exception {
+        OffsetTimeAdapter offsetTimeAdapter = new OffsetTimeAdapter();
+        OffsetTime OffsetTime = offsetTimeAdapter.unmarshal(value);
+        String valueDateResult = offsetTimeAdapter.marshal(OffsetTime);
+        assertEquals(valueResult, valueDateResult);
+    }
+
+
+
+
+
 
 }
