@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class OffsetDateTimeAdapterTest {
 
     @Test
-    void testDateTime() throws Exception {
+    void testOffsetDateTime() throws Exception {
         ZoneId zoneId = ZoneOffset.systemDefault();
         OffsetDateTime dateTime = LocalDateTime.parse("2021-09-19T12:13:14")
                 .atZone(zoneId)
