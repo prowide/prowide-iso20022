@@ -23,9 +23,6 @@ group 'com.prowidesoftware'
 
 project.ext {
 	SRU = 'SRU2023'
-	// this is not working since the version is unresolved at this point, to publish snapshots just uncomment below until this is fixed
-	nexusRepo = 'maven-snapshots'
-//	nexusRepo = project.version.endsWith('-SNAPSHOT') ? 'maven-snapshots' : 'maven-releases'
 }
 
 scmVersion {
@@ -35,6 +32,10 @@ scmVersion {
 	}
 }
 project.version = "${SRU}-9.4.0-SNAPSHOT"
+
+project.ext {
+	nexusRepo = project.version.endsWith('-SNAPSHOT') ? 'maven-snapshots' : 'maven-releases'
+}
 
 allprojects {
 
@@ -129,7 +130,7 @@ configure(subprojects.findAll {it.name.endsWith('-mx')}) {
 project(':iso20022-core') {
 	dependencies {
 		// included build
-		api 'com.prowidesoftware:pw-swift-core:SRU2022-9.3.13'
+		api 'com.prowidesoftware:pw-swift-core:SRU2023-9.4.0'
 
 
 		implementation 'org.apache.commons:commons-lang3:3.12.0'
@@ -283,7 +284,7 @@ artifacts {
 // declared dependencies for pom generation
 dependencies {
 	// included build (keep in sync with the latest Prowide Core version)
-	api 'com.prowidesoftware:pw-swift-core:SRU2022-9.3.13'
+	api 'com.prowidesoftware:pw-swift-core:SRU2023-9.4.0'
 	implementation 'org.apache.commons:commons-lang3:3.12.0'
 	implementation 'com.google.code.gson:gson:2.9.0'
 }

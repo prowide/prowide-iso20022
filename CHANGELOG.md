@@ -1,5 +1,9 @@
 # Prowide ISO 20022 - CHANGELOG
 
+#### 9.4.0 - May 2022
+  * SWIFT Standard release update 2023 (live 19 November 2023)
+  * Yearly revision of deprecation phase (see https://dev.prowidesoftware.com/SRU2022/getting-started/deprecation/)
+
 #### 9.3.6 - March 2023
   * (GH-74) Added a parameter in the MxWriteParams to define a custom indentation string to use when marshalling into XML
 

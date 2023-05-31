@@ -34,8 +34,8 @@ public class SignatureEnvelope {
      * 
      * @return
      *     possible object is
-     *     {@link Element }
      *     {@link Object }
+     *     {@link Element }
      *     
      */
     public Object getAny() {
@@ -47,8 +47,8 @@ public class SignatureEnvelope {
      * 
      * @param value
      *     allowed object is
-     *     {@link Element }
      *     {@link Object }
+     *     {@link Element }
      *     
      */
     public SignatureEnvelope setAny(Object value) {
