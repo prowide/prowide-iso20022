@@ -31,7 +31,7 @@ scmVersion {
 		versionSeparator = '-'
 	}
 }
-project.version = "${SRU}-9.4.0"
+project.version = "${SRU}-10.1.0-SNAPSHOT"
 
 project.ext {
 	nexusRepo = project.version.endsWith('-SNAPSHOT') ? 'maven-snapshots' : 'maven-releases'
@@ -43,7 +43,7 @@ allprojects {
 		options.encoding = 'UTF-8'
 		java {
 			toolchain {
-				languageVersion.set(JavaLanguageVersion.of(8))
+				languageVersion.set(JavaLanguageVersion.of(11))
 			}
 		}
 		doLast {
@@ -94,6 +94,8 @@ subprojects {
 	dependencies {
 		implementation 'org.apache.commons:commons-lang3:3.12.0'
 		implementation 'com.google.code.gson:gson:2.9.0'
+		implementation 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.0'
+		implementation 'com.sun.xml.bind:jaxb-impl:4.0.2'
 	}
 
 	tasks.withType(Jar) {
@@ -116,6 +118,8 @@ configure(subprojects.findAll {it.name.endsWith('-mx')}) {
 		implementation project(specificTypesProject)
 		implementation 'org.apache.commons:commons-lang3:3.12.0'
 		implementation 'com.google.code.gson:gson:2.9.0'
+		implementation 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.0'
+		implementation 'com.sun.xml.bind:jaxb-impl:4.0.2'
 		compileOnly 'javax.persistence:javax.persistence-api:2.2'
 	}
 }
@@ -130,16 +134,16 @@ configure(subprojects.findAll {it.name.endsWith('-mx')}) {
 project(':iso20022-core') {
 	dependencies {
 		// included build
-		api 'com.prowidesoftware:pw-swift-core:SRU2023-9.4.0'
-
+		api 'com.prowidesoftware:pw-swift-core:SRU2023-10.1.0-SNAPSHOT'
 
 		implementation 'org.apache.commons:commons-lang3:3.12.0'
 		implementation 'com.google.code.gson:gson:2.9.0'
 
-		compileOnly 'javax.persistence:javax.persistence-api:2.2'
-		compileOnly 'javax.validation:validation-api:2.0.1.Final'
+		compileOnly 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.0'
+		compileOnly 'jakarta.persistence:jakarta.persistence-api:3.1.0'
+		compileOnly 'jakarta.validation:jakarta.validation-api:3.0.2'
 
-		testImplementation 'javax.persistence:javax.persistence-api:2.2'
+		testImplementation 'jakarta.persistence:jakarta.persistence-api:3.1.0'
 		testImplementation('org.junit.jupiter:junit-jupiter:5.8.2')
 		testImplementation group: 'com.google.guava', name: 'guava', version: '31.1-jre'
 		testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.22.0'
@@ -180,7 +184,11 @@ jar {
 	archivesBaseName = 'pw-iso20022'
 	subprojects.each { subproject ->
 		from subproject.configurations.archives.allArtifacts.files.collect {
-			zipTree(it)
+			// filter out any artifacts that are not jars
+			if (it.name.endsWith('.jar')) {
+				println "Adding ${it.name} to fat jar"
+				zipTree(it)
+			}
 		}
 	}
 	duplicatesStrategy = DuplicatesStrategy.EXCLUDE
@@ -284,7 +292,7 @@ artifacts {
 // declared dependencies for pom generation
 dependencies {
 	// included build (keep in sync with the latest Prowide Core version)
-	api 'com.prowidesoftware:pw-swift-core:SRU2023-9.4.0'
+	api 'com.prowidesoftware:pw-swift-core:SRU2023-10.1.0-SNAPSHOT'
 	implementation 'org.apache.commons:commons-lang3:3.12.0'
 	implementation 'com.google.code.gson:gson:2.9.0'
 }
@@ -427,15 +435,15 @@ tasks.withType(Test) {
 	}
 }
 
-task('testOn11', type: Test) {
-	javaLauncher = javaToolchains.launcherFor {
-		languageVersion = JavaLanguageVersion.of(11)
-	}
-}
-
 task('testOn17', type: Test) {
 	javaLauncher = javaToolchains.launcherFor {
 		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
+task('testOn19', type: Test) {
+	javaLauncher = javaToolchains.launcherFor {
+		languageVersion = JavaLanguageVersion.of(19)
 	}
 }
 
