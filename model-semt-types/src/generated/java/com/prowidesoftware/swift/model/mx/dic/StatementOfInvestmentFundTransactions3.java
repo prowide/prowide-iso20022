@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -96,8 +96,8 @@ public class StatementOfInvestmentFundTransactions3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the txOnAcct property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the txOnAcct property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -111,10 +111,12 @@ public class StatementOfInvestmentFundTransactions3 {
      * {@link InvestmentFundTransactionsByFund3 }
      * 
      * 
+     * @return
+     *     The value of the txOnAcct property.
      */
     public List<InvestmentFundTransactionsByFund3> getTxOnAcct() {
         if (txOnAcct == null) {
-            txOnAcct = new ArrayList<InvestmentFundTransactionsByFund3>();
+            txOnAcct = new ArrayList<>();
         }
         return this.txOnAcct;
     }
@@ -125,8 +127,8 @@ public class StatementOfInvestmentFundTransactions3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the subAcctDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the subAcctDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -140,10 +142,12 @@ public class StatementOfInvestmentFundTransactions3 {
      * {@link SubAccountIdentification36 }
      * 
      * 
+     * @return
+     *     The value of the subAcctDtls property.
      */
     public List<SubAccountIdentification36> getSubAcctDtls() {
         if (subAcctDtls == null) {
-            subAcctDtls = new ArrayList<SubAccountIdentification36>();
+            subAcctDtls = new ArrayList<>();
         }
         return this.subAcctDtls;
     }
@@ -154,8 +158,8 @@ public class StatementOfInvestmentFundTransactions3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the xtnsn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the xtnsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -169,10 +173,12 @@ public class StatementOfInvestmentFundTransactions3 {
      * {@link Extension1 }
      * 
      * 
+     * @return
+     *     The value of the xtnsn property.
      */
     public List<Extension1> getXtnsn() {
         if (xtnsn == null) {
-            xtnsn = new ArrayList<Extension1>();
+            xtnsn = new ArrayList<>();
         }
         return this.xtnsn;
     }

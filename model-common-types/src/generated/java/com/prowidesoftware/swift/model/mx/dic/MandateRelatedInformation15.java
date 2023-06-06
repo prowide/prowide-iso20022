@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -41,7 +41,7 @@ public class MandateRelatedInformation15 {
     @XmlElement(name = "DtOfSgntr", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar dtOfSgntr;
+    protected LocalDate dtOfSgntr;
     @XmlElement(name = "AmdmntInd")
     protected Boolean amdmntInd;
     @XmlElement(name = "AmdmntInfDtls")
@@ -51,11 +51,11 @@ public class MandateRelatedInformation15 {
     @XmlElement(name = "FrstColltnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar frstColltnDt;
+    protected LocalDate frstColltnDt;
     @XmlElement(name = "FnlColltnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar fnlColltnDt;
+    protected LocalDate fnlColltnDt;
     @XmlElement(name = "Frqcy")
     protected Frequency36Choice frqcy;
     @XmlElement(name = "Rsn")
@@ -96,7 +96,7 @@ public class MandateRelatedInformation15 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDtOfSgntr() {
+    public LocalDate getDtOfSgntr() {
         return dtOfSgntr;
     }
 
@@ -108,7 +108,7 @@ public class MandateRelatedInformation15 {
      *     {@link String }
      *     
      */
-    public MandateRelatedInformation15 setDtOfSgntr(XMLGregorianCalendar value) {
+    public MandateRelatedInformation15 setDtOfSgntr(LocalDate value) {
         this.dtOfSgntr = value;
         return this;
     }
@@ -196,7 +196,7 @@ public class MandateRelatedInformation15 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getFrstColltnDt() {
+    public LocalDate getFrstColltnDt() {
         return frstColltnDt;
     }
 
@@ -208,7 +208,7 @@ public class MandateRelatedInformation15 {
      *     {@link String }
      *     
      */
-    public MandateRelatedInformation15 setFrstColltnDt(XMLGregorianCalendar value) {
+    public MandateRelatedInformation15 setFrstColltnDt(LocalDate value) {
         this.frstColltnDt = value;
         return this;
     }
@@ -221,7 +221,7 @@ public class MandateRelatedInformation15 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getFnlColltnDt() {
+    public LocalDate getFnlColltnDt() {
         return fnlColltnDt;
     }
 
@@ -233,7 +233,7 @@ public class MandateRelatedInformation15 {
      *     {@link String }
      *     
      */
-    public MandateRelatedInformation15 setFnlColltnDt(XMLGregorianCalendar value) {
+    public MandateRelatedInformation15 setFnlColltnDt(LocalDate value) {
         this.fnlColltnDt = value;
         return this;
     }

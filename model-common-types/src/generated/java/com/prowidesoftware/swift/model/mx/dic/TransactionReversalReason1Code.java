@@ -1,27 +1,26 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlEnumValue;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for TransactionReversalReason1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="TransactionReversalReason1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="AC04"/&gt;
- *     &lt;enumeration value="AM05"/&gt;
- *     &lt;enumeration value="AG02"/&gt;
- *     &lt;enumeration value="MD01"/&gt;
- *     &lt;enumeration value="MD05"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="TransactionReversalReason1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="AC04"/>
+ *     <enumeration value="AM05"/>
+ *     <enumeration value="AG02"/>
+ *     <enumeration value="MD01"/>
+ *     <enumeration value="MD05"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "TransactionReversalReason1Code")
