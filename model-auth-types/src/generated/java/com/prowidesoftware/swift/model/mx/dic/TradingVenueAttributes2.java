@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -39,19 +39,19 @@ public class TradingVenueAttributes2 {
     @XmlElement(name = "AdmssnApprvlDtByIssr", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar admssnApprvlDtByIssr;
+    protected OffsetDateTime admssnApprvlDtByIssr;
     @XmlElement(name = "ReqForAdmssnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar reqForAdmssnDt;
+    protected OffsetDateTime reqForAdmssnDt;
     @XmlElement(name = "FrstTradDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar frstTradDt;
+    protected OffsetDateTime frstTradDt;
     @XmlElement(name = "TermntnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar termntnDt;
+    protected OffsetDateTime termntnDt;
 
     /**
      * Gets the value of the id property.
@@ -111,7 +111,7 @@ public class TradingVenueAttributes2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getAdmssnApprvlDtByIssr() {
+    public OffsetDateTime getAdmssnApprvlDtByIssr() {
         return admssnApprvlDtByIssr;
     }
 
@@ -123,7 +123,7 @@ public class TradingVenueAttributes2 {
      *     {@link String }
      *     
      */
-    public TradingVenueAttributes2 setAdmssnApprvlDtByIssr(XMLGregorianCalendar value) {
+    public TradingVenueAttributes2 setAdmssnApprvlDtByIssr(OffsetDateTime value) {
         this.admssnApprvlDtByIssr = value;
         return this;
     }
@@ -136,7 +136,7 @@ public class TradingVenueAttributes2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getReqForAdmssnDt() {
+    public OffsetDateTime getReqForAdmssnDt() {
         return reqForAdmssnDt;
     }
 
@@ -148,7 +148,7 @@ public class TradingVenueAttributes2 {
      *     {@link String }
      *     
      */
-    public TradingVenueAttributes2 setReqForAdmssnDt(XMLGregorianCalendar value) {
+    public TradingVenueAttributes2 setReqForAdmssnDt(OffsetDateTime value) {
         this.reqForAdmssnDt = value;
         return this;
     }
@@ -161,7 +161,7 @@ public class TradingVenueAttributes2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getFrstTradDt() {
+    public OffsetDateTime getFrstTradDt() {
         return frstTradDt;
     }
 
@@ -173,7 +173,7 @@ public class TradingVenueAttributes2 {
      *     {@link String }
      *     
      */
-    public TradingVenueAttributes2 setFrstTradDt(XMLGregorianCalendar value) {
+    public TradingVenueAttributes2 setFrstTradDt(OffsetDateTime value) {
         this.frstTradDt = value;
         return this;
     }
@@ -186,7 +186,7 @@ public class TradingVenueAttributes2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getTermntnDt() {
+    public OffsetDateTime getTermntnDt() {
         return termntnDt;
     }
 
@@ -198,7 +198,7 @@ public class TradingVenueAttributes2 {
      *     {@link String }
      *     
      */
-    public TradingVenueAttributes2 setTermntnDt(XMLGregorianCalendar value) {
+    public TradingVenueAttributes2 setTermntnDt(OffsetDateTime value) {
         this.termntnDt = value;
         return this;
     }

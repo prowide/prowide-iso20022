@@ -2,15 +2,16 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.OffsetDateTime;
+import java.time.OffsetTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -65,17 +66,17 @@ public class Bid1 {
     @XmlElement(name = "PrgrsPrdIntrvl", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected XMLGregorianCalendar prgrsPrdIntrvl;
+    protected OffsetTime prgrsPrdIntrvl;
     @XmlElement(name = "TtlNbOfBddrs")
     protected BigDecimal ttlNbOfBddrs;
     @XmlElement(name = "TradDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar tradDt;
+    protected OffsetDateTime tradDt;
     @XmlElement(name = "StrkTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar strkTm;
+    protected OffsetDateTime strkTm;
     @XmlElement(name = "BsisPricTp", required = true)
     protected BasisPriceType1Choice bsisPricTp;
     @XmlElement(name = "LqdtyAndSttstcs", required = true)
@@ -298,7 +299,7 @@ public class Bid1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getPrgrsPrdIntrvl() {
+    public OffsetTime getPrgrsPrdIntrvl() {
         return prgrsPrdIntrvl;
     }
 
@@ -310,7 +311,7 @@ public class Bid1 {
      *     {@link String }
      *     
      */
-    public Bid1 setPrgrsPrdIntrvl(XMLGregorianCalendar value) {
+    public Bid1 setPrgrsPrdIntrvl(OffsetTime value) {
         this.prgrsPrdIntrvl = value;
         return this;
     }
@@ -348,7 +349,7 @@ public class Bid1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getTradDt() {
+    public OffsetDateTime getTradDt() {
         return tradDt;
     }
 
@@ -360,7 +361,7 @@ public class Bid1 {
      *     {@link String }
      *     
      */
-    public Bid1 setTradDt(XMLGregorianCalendar value) {
+    public Bid1 setTradDt(OffsetDateTime value) {
         this.tradDt = value;
         return this;
     }
@@ -373,7 +374,7 @@ public class Bid1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getStrkTm() {
+    public OffsetDateTime getStrkTm() {
         return strkTm;
     }
 
@@ -385,7 +386,7 @@ public class Bid1 {
      *     {@link String }
      *     
      */
-    public Bid1 setStrkTm(XMLGregorianCalendar value) {
+    public Bid1 setStrkTm(OffsetDateTime value) {
         this.strkTm = value;
         return this;
     }

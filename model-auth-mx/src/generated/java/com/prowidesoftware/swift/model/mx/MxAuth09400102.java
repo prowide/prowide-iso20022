@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxAuth09400102
 
     @XmlElement(name = "SctiesFincgRptgTxQry", required = true)
     protected SecuritiesFinancingReportingTransactionQueryV02 sctiesFincgRptgTxQry;
-    public final static transient String BUSINESS_PROCESS = "auth";
-    public final static transient int FUNCTIONALITY = 94;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 2;
+    public static final transient String BUSINESS_PROCESS = "auth";
+    public static final transient int FUNCTIONALITY = 94;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 2;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {AddressType2Code.class, AnyMIC1Code.class, CollateralType6Code.class, CorporateSectorCriteria5 .class, DateOrBlankQuery2Choice.class, DatePeriod1 .class, DateTimePeriod1 .class, ExposureType10Code.class, FinancialPartySectorType2Code.class, Frequency14Code.class, GenericIdentification1 .class, MxAuth09400102 .class, NameAndAddress5 .class, NotReported1Code.class, Operation3Code.class, PartyIdentification121Choice.class, PartyNatureType1Code.class, PostalAddress1 .class, SecuritiesFinancingReportingTransactionQueryV02 .class, SecuritiesTradeVenueCriteria1Choice.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TradeAdditionalQueryCriteria7 .class, TradeDateTimeQueryCriteria2 .class, TradePartyIdentificationQuery8 .class, TradePartyIdentificationQuery9 .class, TradePartyQueryCriteria5 .class, TradeQueryCriteria10 .class, TradeQueryExecutionFrequency3 .class, TradeRecurrentQuery5 .class, TradeReportQuery13Choice.class, TradeTypeQueryCriteria2 .class, TransactionOperationType6Code.class, WeekDay3Code.class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:auth.094.001.02";
+    public static final transient Class[] _classes = new Class[] {AddressType2Code.class, AnyMIC1Code.class, CollateralType6Code.class, CorporateSectorCriteria5 .class, DateOrBlankQuery2Choice.class, DatePeriod1 .class, DateTimePeriod1 .class, ExposureType10Code.class, FinancialPartySectorType2Code.class, Frequency14Code.class, GenericIdentification1 .class, MxAuth09400102 .class, NameAndAddress5 .class, NotReported1Code.class, Operation3Code.class, PartyIdentification121Choice.class, PartyNatureType1Code.class, PostalAddress1 .class, SecuritiesFinancingReportingTransactionQueryV02 .class, SecuritiesTradeVenueCriteria1Choice.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TradeAdditionalQueryCriteria7 .class, TradeDateTimeQueryCriteria2 .class, TradePartyIdentificationQuery8 .class, TradePartyIdentificationQuery9 .class, TradePartyQueryCriteria5 .class, TradeQueryCriteria10 .class, TradeQueryExecutionFrequency3 .class, TradeRecurrentQuery5 .class, TradeReportQuery13Choice.class, TradeTypeQueryCriteria2 .class, TransactionOperationType6Code.class, WeekDay3Code.class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:auth.094.001.02";
 
     public MxAuth09400102() {
         super();
@@ -86,21 +86,6 @@ public class MxAuth09400102
     public MxAuth09400102 setSctiesFincgRptgTxQry(SecuritiesFinancingReportingTransactionQueryV02 value) {
         this.sctiesFincgRptgTxQry = value;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -173,8 +158,23 @@ public class MxAuth09400102
      * @return
      *     a new instance of MxAuth09400102
      */
-    public final static MxAuth09400102 fromJson(String json) {
+    public static final MxAuth09400102 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxAuth09400102 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

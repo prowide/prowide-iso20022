@@ -1,16 +1,18 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
+import java.time.OffsetTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -44,11 +46,11 @@ public class TransactionIdentification18 {
     @XmlElement(name = "LclDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar lclDt;
+    protected LocalDate lclDt;
     @XmlElement(name = "LclTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected XMLGregorianCalendar lclTm;
+    protected OffsetTime lclTm;
     @XmlElement(name = "TmZone")
     protected String tmZone;
     @XmlElement(name = "TxRef")
@@ -56,7 +58,7 @@ public class TransactionIdentification18 {
     @XmlElement(name = "TrnsmssnDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar trnsmssnDtTm;
+    protected OffsetDateTime trnsmssnDtTm;
     @XmlElement(name = "SysTracAudtNb", required = true)
     protected String sysTracAudtNb;
     @XmlElement(name = "RtrvlRefNb", required = true)
@@ -82,7 +84,7 @@ public class TransactionIdentification18 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getLclDt() {
+    public LocalDate getLclDt() {
         return lclDt;
     }
 
@@ -94,7 +96,7 @@ public class TransactionIdentification18 {
      *     {@link String }
      *     
      */
-    public TransactionIdentification18 setLclDt(XMLGregorianCalendar value) {
+    public TransactionIdentification18 setLclDt(LocalDate value) {
         this.lclDt = value;
         return this;
     }
@@ -107,7 +109,7 @@ public class TransactionIdentification18 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getLclTm() {
+    public OffsetTime getLclTm() {
         return lclTm;
     }
 
@@ -119,7 +121,7 @@ public class TransactionIdentification18 {
      *     {@link String }
      *     
      */
-    public TransactionIdentification18 setLclTm(XMLGregorianCalendar value) {
+    public TransactionIdentification18 setLclTm(OffsetTime value) {
         this.lclTm = value;
         return this;
     }
@@ -182,7 +184,7 @@ public class TransactionIdentification18 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getTrnsmssnDtTm() {
+    public OffsetDateTime getTrnsmssnDtTm() {
         return trnsmssnDtTm;
     }
 
@@ -194,7 +196,7 @@ public class TransactionIdentification18 {
      *     {@link String }
      *     
      */
-    public TransactionIdentification18 setTrnsmssnDtTm(XMLGregorianCalendar value) {
+    public TransactionIdentification18 setTrnsmssnDtTm(OffsetDateTime value) {
         this.trnsmssnDtTm = value;
         return this;
     }

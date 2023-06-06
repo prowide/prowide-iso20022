@@ -1,33 +1,32 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for LimitType2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="LimitType2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="MULT"/&gt;
- *     &lt;enumeration value="BILI"/&gt;
- *     &lt;enumeration value="MAND"/&gt;
- *     &lt;enumeration value="DISC"/&gt;
- *     &lt;enumeration value="NELI"/&gt;
- *     &lt;enumeration value="INBI"/&gt;
- *     &lt;enumeration value="GLBL"/&gt;
- *     &lt;enumeration value="DIDB"/&gt;
- *     &lt;enumeration value="SPLC"/&gt;
- *     &lt;enumeration value="SPLF"/&gt;
- *     &lt;enumeration value="TDLC"/&gt;
- *     &lt;enumeration value="TDLF"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="LimitType2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="MULT"/>
+ *     <enumeration value="BILI"/>
+ *     <enumeration value="MAND"/>
+ *     <enumeration value="DISC"/>
+ *     <enumeration value="NELI"/>
+ *     <enumeration value="INBI"/>
+ *     <enumeration value="GLBL"/>
+ *     <enumeration value="DIDB"/>
+ *     <enumeration value="SPLC"/>
+ *     <enumeration value="SPLF"/>
+ *     <enumeration value="TDLC"/>
+ *     <enumeration value="TDLF"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "LimitType2Code")

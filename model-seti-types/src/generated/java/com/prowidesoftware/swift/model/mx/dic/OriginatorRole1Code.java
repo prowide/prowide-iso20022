@@ -1,26 +1,25 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for OriginatorRole1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="OriginatorRole1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="SINT"/&gt;
- *     &lt;enumeration value="MLTF"/&gt;
- *     &lt;enumeration value="RMKT"/&gt;
- *     &lt;enumeration value="MKTM"/&gt;
- *     &lt;enumeration value="INVE"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="OriginatorRole1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="SINT"/>
+ *     <enumeration value="MLTF"/>
+ *     <enumeration value="RMKT"/>
+ *     <enumeration value="MKTM"/>
+ *     <enumeration value="INVE"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "OriginatorRole1Code")

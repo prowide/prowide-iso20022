@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -37,8 +37,8 @@ public class CardPaymentBatchTransfer6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the txTtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the txTtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -52,10 +52,12 @@ public class CardPaymentBatchTransfer6 {
      * {@link TransactionTotals7 }
      * 
      * 
+     * @return
+     *     The value of the txTtls property.
      */
     public List<TransactionTotals7> getTxTtls() {
         if (txTtls == null) {
-            txTtls = new ArrayList<TransactionTotals7>();
+            txTtls = new ArrayList<>();
         }
         return this.txTtls;
     }
@@ -66,8 +68,8 @@ public class CardPaymentBatchTransfer6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dataSet property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the dataSet property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -81,10 +83,12 @@ public class CardPaymentBatchTransfer6 {
      * {@link CardPaymentDataSet19 }
      * 
      * 
+     * @return
+     *     The value of the dataSet property.
      */
     public List<CardPaymentDataSet19> getDataSet() {
         if (dataSet == null) {
-            dataSet = new ArrayList<CardPaymentDataSet19>();
+            dataSet = new ArrayList<>();
         }
         return this.dataSet;
     }

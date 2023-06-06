@@ -2,16 +2,16 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -93,31 +93,31 @@ public class Debt1 {
     @XmlElement(name = "DtdDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar dtdDt;
+    protected OffsetDateTime dtdDt;
     @XmlElement(name = "FrstPmtDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar frstPmtDt;
+    protected OffsetDateTime frstPmtDt;
     @XmlElement(name = "MtrtyDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar mtrtyDt;
+    protected OffsetDateTime mtrtyDt;
     @XmlElement(name = "NxtCpnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar nxtCpnDt;
+    protected OffsetDateTime nxtCpnDt;
     @XmlElement(name = "PutblDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar putblDt;
+    protected OffsetDateTime putblDt;
     @XmlElement(name = "NxtCllblDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar nxtCllblDt;
+    protected OffsetDateTime nxtCllblDt;
     @XmlElement(name = "NxtFctrDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar nxtFctrDt;
+    protected OffsetDateTime nxtFctrDt;
     @XmlElement(name = "DayCntBsis")
     protected InterestComputationMethod1Choice dayCntBsis;
     @XmlElement(name = "PmtDrctnInd")
@@ -137,7 +137,7 @@ public class Debt1 {
     @XmlElement(name = "IntrstAcrlDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar intrstAcrlDt;
+    protected OffsetDateTime intrstAcrlDt;
     @XmlElement(name = "PutblInd")
     protected Boolean putblInd;
     @XmlElement(name = "ConvtblInd")
@@ -274,7 +274,7 @@ public class Debt1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDtdDt() {
+    public OffsetDateTime getDtdDt() {
         return dtdDt;
     }
 
@@ -286,7 +286,7 @@ public class Debt1 {
      *     {@link String }
      *     
      */
-    public Debt1 setDtdDt(XMLGregorianCalendar value) {
+    public Debt1 setDtdDt(OffsetDateTime value) {
         this.dtdDt = value;
         return this;
     }
@@ -299,7 +299,7 @@ public class Debt1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getFrstPmtDt() {
+    public OffsetDateTime getFrstPmtDt() {
         return frstPmtDt;
     }
 
@@ -311,7 +311,7 @@ public class Debt1 {
      *     {@link String }
      *     
      */
-    public Debt1 setFrstPmtDt(XMLGregorianCalendar value) {
+    public Debt1 setFrstPmtDt(OffsetDateTime value) {
         this.frstPmtDt = value;
         return this;
     }
@@ -324,7 +324,7 @@ public class Debt1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getMtrtyDt() {
+    public OffsetDateTime getMtrtyDt() {
         return mtrtyDt;
     }
 
@@ -336,7 +336,7 @@ public class Debt1 {
      *     {@link String }
      *     
      */
-    public Debt1 setMtrtyDt(XMLGregorianCalendar value) {
+    public Debt1 setMtrtyDt(OffsetDateTime value) {
         this.mtrtyDt = value;
         return this;
     }
@@ -349,7 +349,7 @@ public class Debt1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getNxtCpnDt() {
+    public OffsetDateTime getNxtCpnDt() {
         return nxtCpnDt;
     }
 
@@ -361,7 +361,7 @@ public class Debt1 {
      *     {@link String }
      *     
      */
-    public Debt1 setNxtCpnDt(XMLGregorianCalendar value) {
+    public Debt1 setNxtCpnDt(OffsetDateTime value) {
         this.nxtCpnDt = value;
         return this;
     }
@@ -374,7 +374,7 @@ public class Debt1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getPutblDt() {
+    public OffsetDateTime getPutblDt() {
         return putblDt;
     }
 
@@ -386,7 +386,7 @@ public class Debt1 {
      *     {@link String }
      *     
      */
-    public Debt1 setPutblDt(XMLGregorianCalendar value) {
+    public Debt1 setPutblDt(OffsetDateTime value) {
         this.putblDt = value;
         return this;
     }
@@ -399,7 +399,7 @@ public class Debt1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getNxtCllblDt() {
+    public OffsetDateTime getNxtCllblDt() {
         return nxtCllblDt;
     }
 
@@ -411,7 +411,7 @@ public class Debt1 {
      *     {@link String }
      *     
      */
-    public Debt1 setNxtCllblDt(XMLGregorianCalendar value) {
+    public Debt1 setNxtCllblDt(OffsetDateTime value) {
         this.nxtCllblDt = value;
         return this;
     }
@@ -424,7 +424,7 @@ public class Debt1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getNxtFctrDt() {
+    public OffsetDateTime getNxtFctrDt() {
         return nxtFctrDt;
     }
 
@@ -436,7 +436,7 @@ public class Debt1 {
      *     {@link String }
      *     
      */
-    public Debt1 setNxtFctrDt(XMLGregorianCalendar value) {
+    public Debt1 setNxtFctrDt(OffsetDateTime value) {
         this.nxtFctrDt = value;
         return this;
     }
@@ -649,7 +649,7 @@ public class Debt1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getIntrstAcrlDt() {
+    public OffsetDateTime getIntrstAcrlDt() {
         return intrstAcrlDt;
     }
 
@@ -661,7 +661,7 @@ public class Debt1 {
      *     {@link String }
      *     
      */
-    public Debt1 setIntrstAcrlDt(XMLGregorianCalendar value) {
+    public Debt1 setIntrstAcrlDt(OffsetDateTime value) {
         this.intrstAcrlDt = value;
         return this;
     }
@@ -1022,8 +1022,8 @@ public class Debt1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the actlDnmtnAmt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the actlDnmtnAmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -1037,10 +1037,12 @@ public class Debt1 {
      * {@link ActiveCurrencyAndAmount }
      * 
      * 
+     * @return
+     *     The value of the actlDnmtnAmt property.
      */
     public List<ActiveCurrencyAndAmount> getActlDnmtnAmt() {
         if (actlDnmtnAmt == null) {
-            actlDnmtnAmt = new ArrayList<ActiveCurrencyAndAmount>();
+            actlDnmtnAmt = new ArrayList<>();
         }
         return this.actlDnmtnAmt;
     }

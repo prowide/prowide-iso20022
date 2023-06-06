@@ -1,30 +1,29 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for ChargeType9Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ChargeType9Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="MANF"/&gt;
- *     &lt;enumeration value="BEND"/&gt;
- *     &lt;enumeration value="FEND"/&gt;
- *     &lt;enumeration value="ADVI"/&gt;
- *     &lt;enumeration value="CUST"/&gt;
- *     &lt;enumeration value="PUBL"/&gt;
- *     &lt;enumeration value="ACCT"/&gt;
- *     &lt;enumeration value="EQUL"/&gt;
- *     &lt;enumeration value="PENA"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ChargeType9Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="MANF"/>
+ *     <enumeration value="BEND"/>
+ *     <enumeration value="FEND"/>
+ *     <enumeration value="ADVI"/>
+ *     <enumeration value="CUST"/>
+ *     <enumeration value="PUBL"/>
+ *     <enumeration value="ACCT"/>
+ *     <enumeration value="EQUL"/>
+ *     <enumeration value="PENA"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ChargeType9Code")

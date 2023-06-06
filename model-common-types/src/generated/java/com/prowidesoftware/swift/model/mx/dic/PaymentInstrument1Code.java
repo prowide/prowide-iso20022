@@ -1,31 +1,30 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for PaymentInstrument1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="PaymentInstrument1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="BDT"/&gt;
- *     &lt;enumeration value="BCT"/&gt;
- *     &lt;enumeration value="CDT"/&gt;
- *     &lt;enumeration value="CCT"/&gt;
- *     &lt;enumeration value="CHK"/&gt;
- *     &lt;enumeration value="BKT"/&gt;
- *     &lt;enumeration value="DCP"/&gt;
- *     &lt;enumeration value="CCP"/&gt;
- *     &lt;enumeration value="RTI"/&gt;
- *     &lt;enumeration value="CAN"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="PaymentInstrument1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="BDT"/>
+ *     <enumeration value="BCT"/>
+ *     <enumeration value="CDT"/>
+ *     <enumeration value="CCT"/>
+ *     <enumeration value="CHK"/>
+ *     <enumeration value="BKT"/>
+ *     <enumeration value="DCP"/>
+ *     <enumeration value="CCP"/>
+ *     <enumeration value="RTI"/>
+ *     <enumeration value="CAN"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "PaymentInstrument1Code")

@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -60,7 +60,7 @@ public class PaymentTransactionInformation15 {
     @XmlElement(name = "AccptncDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar accptncDtTm;
+    protected OffsetDateTime accptncDtTm;
     @XmlElement(name = "InstgAgt")
     protected FinancialInstitution2 instgAgt;
     @XmlElement(name = "InstdAgt")
@@ -224,8 +224,8 @@ public class PaymentTransactionInformation15 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the stsRsnInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the stsRsnInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -239,10 +239,12 @@ public class PaymentTransactionInformation15 {
      * {@link StatusReasonInformation5 }
      * 
      * 
+     * @return
+     *     The value of the stsRsnInf property.
      */
     public List<StatusReasonInformation5> getStsRsnInf() {
         if (stsRsnInf == null) {
-            stsRsnInf = new ArrayList<StatusReasonInformation5>();
+            stsRsnInf = new ArrayList<>();
         }
         return this.stsRsnInf;
     }
@@ -253,8 +255,8 @@ public class PaymentTransactionInformation15 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the chrgsInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the chrgsInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -268,10 +270,12 @@ public class PaymentTransactionInformation15 {
      * {@link ChargesInformation2 }
      * 
      * 
+     * @return
+     *     The value of the chrgsInf property.
      */
     public List<ChargesInformation2> getChrgsInf() {
         if (chrgsInf == null) {
-            chrgsInf = new ArrayList<ChargesInformation2>();
+            chrgsInf = new ArrayList<>();
         }
         return this.chrgsInf;
     }
@@ -284,7 +288,7 @@ public class PaymentTransactionInformation15 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getAccptncDtTm() {
+    public OffsetDateTime getAccptncDtTm() {
         return accptncDtTm;
     }
 
@@ -296,7 +300,7 @@ public class PaymentTransactionInformation15 {
      *     {@link String }
      *     
      */
-    public PaymentTransactionInformation15 setAccptncDtTm(XMLGregorianCalendar value) {
+    public PaymentTransactionInformation15 setAccptncDtTm(OffsetDateTime value) {
         this.accptncDtTm = value;
         return this;
     }

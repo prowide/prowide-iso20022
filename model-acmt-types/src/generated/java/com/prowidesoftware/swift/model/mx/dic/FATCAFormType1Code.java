@@ -1,29 +1,28 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlEnumValue;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for FATCAFormType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="FATCAFormType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CER5"/&gt;
- *     &lt;enumeration value="CER7"/&gt;
- *     &lt;enumeration value="CER1"/&gt;
- *     &lt;enumeration value="CER2"/&gt;
- *     &lt;enumeration value="CER3"/&gt;
- *     &lt;enumeration value="CER4"/&gt;
- *     &lt;enumeration value="CER6"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="FATCAFormType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CER5"/>
+ *     <enumeration value="CER7"/>
+ *     <enumeration value="CER1"/>
+ *     <enumeration value="CER2"/>
+ *     <enumeration value="CER3"/>
+ *     <enumeration value="CER4"/>
+ *     <enumeration value="CER6"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "FATCAFormType1Code")

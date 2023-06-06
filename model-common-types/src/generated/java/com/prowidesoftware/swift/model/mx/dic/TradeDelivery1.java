@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -40,7 +40,7 @@ public class TradeDelivery1 {
     @XmlElement(name = "DlvryDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar dlvryDtTm;
+    protected OffsetDateTime dlvryDtTm;
     @XmlElement(name = "ShipFr")
     protected TradeParty1 shipFr;
     @XmlElement(name = "ShipTo")
@@ -85,7 +85,7 @@ public class TradeDelivery1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDlvryDtTm() {
+    public OffsetDateTime getDlvryDtTm() {
         return dlvryDtTm;
     }
 
@@ -97,7 +97,7 @@ public class TradeDelivery1 {
      *     {@link String }
      *     
      */
-    public TradeDelivery1 setDlvryDtTm(XMLGregorianCalendar value) {
+    public TradeDelivery1 setDlvryDtTm(OffsetDateTime value) {
         this.dlvryDtTm = value;
         return this;
     }
@@ -208,8 +208,8 @@ public class TradeDelivery1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the consgnmt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the consgnmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -223,10 +223,12 @@ public class TradeDelivery1 {
      * {@link Consignment2 }
      * 
      * 
+     * @return
+     *     The value of the consgnmt property.
      */
     public List<Consignment2> getConsgnmt() {
         if (consgnmt == null) {
-            consgnmt = new ArrayList<Consignment2>();
+            consgnmt = new ArrayList<>();
         }
         return this.consgnmt;
     }

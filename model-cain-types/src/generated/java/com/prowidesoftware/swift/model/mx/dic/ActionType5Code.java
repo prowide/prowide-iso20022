@@ -1,32 +1,31 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for ActionType5Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ActionType5Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="BUSY"/&gt;
- *     &lt;enumeration value="CPTR"/&gt;
- *     &lt;enumeration value="DISP"/&gt;
- *     &lt;enumeration value="NOVR"/&gt;
- *     &lt;enumeration value="RQID"/&gt;
- *     &lt;enumeration value="PINL"/&gt;
- *     &lt;enumeration value="PINR"/&gt;
- *     &lt;enumeration value="PRNT"/&gt;
- *     &lt;enumeration value="RFRL"/&gt;
- *     &lt;enumeration value="RQDT"/&gt;
- *     &lt;enumeration value="TRCK"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ActionType5Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="BUSY"/>
+ *     <enumeration value="CPTR"/>
+ *     <enumeration value="DISP"/>
+ *     <enumeration value="NOVR"/>
+ *     <enumeration value="RQID"/>
+ *     <enumeration value="PINL"/>
+ *     <enumeration value="PINR"/>
+ *     <enumeration value="PRNT"/>
+ *     <enumeration value="RFRL"/>
+ *     <enumeration value="RQDT"/>
+ *     <enumeration value="TRCK"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ActionType5Code")

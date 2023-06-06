@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxReda00500103
 
     @XmlElement(name = "InvstmtFndRptReq", required = true)
     protected InvestmentFundReportRequestV03 invstmtFndRptReq;
-    public final static transient String BUSINESS_PROCESS = "reda";
-    public final static transient int FUNCTIONALITY = 5;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 3;
+    public static final transient String BUSINESS_PROCESS = "reda";
+    public static final transient int FUNCTIONALITY = 5;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 3;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {AdditionalReference10 .class, AddressType2Code.class, DistributionPolicy1Code.class, FinancialInstrument71 .class, FormOfSecurity1Code.class, FundParameters4Choice.class, FundParameters5 .class, GenericIdentification1 .class, IdentificationSource3Choice.class, InvestmentFundReportRequestV03 .class, MessageIdentification1 .class, MxReda00500103 .class, NameAndAddress5 .class, NoCriteria1Code.class, OtherIdentification1 .class, PartyIdentification125Choice.class, PartyIdentification139 .class, PostalAddress1 .class, SecurityIdentification19 .class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:reda.005.001.03";
+    public static final transient Class[] _classes = new Class[] {AdditionalReference10 .class, AddressType2Code.class, DistributionPolicy1Code.class, FinancialInstrument71 .class, FormOfSecurity1Code.class, FundParameters4Choice.class, FundParameters5 .class, GenericIdentification1 .class, IdentificationSource3Choice.class, InvestmentFundReportRequestV03 .class, MessageIdentification1 .class, MxReda00500103 .class, NameAndAddress5 .class, NoCriteria1Code.class, OtherIdentification1 .class, PartyIdentification125Choice.class, PartyIdentification139 .class, PostalAddress1 .class, SecurityIdentification19 .class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:reda.005.001.03";
 
     public MxReda00500103() {
         super();
@@ -86,21 +86,6 @@ public class MxReda00500103
     public MxReda00500103 setInvstmtFndRptReq(InvestmentFundReportRequestV03 value) {
         this.invstmtFndRptReq = value;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -173,8 +158,23 @@ public class MxReda00500103
      * @return
      *     a new instance of MxReda00500103
      */
-    public final static MxReda00500103 fromJson(String json) {
+    public static final MxReda00500103 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxReda00500103 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

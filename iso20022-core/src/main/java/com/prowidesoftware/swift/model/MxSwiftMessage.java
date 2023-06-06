@@ -18,13 +18,10 @@ package com.prowidesoftware.swift.model;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.prowidesoftware.deprecation.DeprecationUtils;
-import com.prowidesoftware.deprecation.ProwideDeprecated;
-import com.prowidesoftware.deprecation.TargetYear;
 import com.prowidesoftware.swift.model.mx.*;
+import jakarta.persistence.*;
 import org.apache.commons.lang3.StringUtils;
 
-import javax.persistence.*;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;

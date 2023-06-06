@@ -1,37 +1,36 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for TransactionAttribute1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="TransactionAttribute1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="AGGR"/&gt;
- *     &lt;enumeration value="CADB"/&gt;
- *     &lt;enumeration value="DBRP"/&gt;
- *     &lt;enumeration value="DFRD"/&gt;
- *     &lt;enumeration value="INST"/&gt;
- *     &lt;enumeration value="OTHN"/&gt;
- *     &lt;enumeration value="OTHP"/&gt;
- *     &lt;enumeration value="RCPT"/&gt;
- *     &lt;enumeration value="TPUP"/&gt;
- *     &lt;enumeration value="PPYT"/&gt;
- *     &lt;enumeration value="INCR"/&gt;
- *     &lt;enumeration value="PAUT"/&gt;
- *     &lt;enumeration value="PACP"/&gt;
- *     &lt;enumeration value="SUBR"/&gt;
- *     &lt;enumeration value="FRCP"/&gt;
- *     &lt;enumeration value="CPLT"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="TransactionAttribute1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="AGGR"/>
+ *     <enumeration value="CADB"/>
+ *     <enumeration value="DBRP"/>
+ *     <enumeration value="DFRD"/>
+ *     <enumeration value="INST"/>
+ *     <enumeration value="OTHN"/>
+ *     <enumeration value="OTHP"/>
+ *     <enumeration value="RCPT"/>
+ *     <enumeration value="TPUP"/>
+ *     <enumeration value="PPYT"/>
+ *     <enumeration value="INCR"/>
+ *     <enumeration value="PAUT"/>
+ *     <enumeration value="PACP"/>
+ *     <enumeration value="SUBR"/>
+ *     <enumeration value="FRCP"/>
+ *     <enumeration value="CPLT"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "TransactionAttribute1Code")
