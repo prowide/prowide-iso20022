@@ -1,5 +1,9 @@
 # Prowide ISO 20022 - CHANGELOG
 
+#### 10.0.1 - SNAPSHOT
+  * Fixed AppHdrFactory creation to use UTC in the header default creation date time
+  * Fixed the business application header V01 serialization to use Zulu time indicator instead of +00:00 offset
+
 #### 10.0.0 - May 2023
   * Migration to Java 11
   * Migration to Jakarta EE 10
