@@ -37,6 +37,7 @@ import javax.xml.namespace.QName;
 import javax.xml.transform.dom.DOMResult;
 import java.io.StringWriter;
 import java.time.OffsetDateTime;
+import java.time.ZoneOffset;
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.logging.Level;
@@ -51,8 +52,8 @@ import java.util.logging.Logger;
 @XmlType(name = "AppHdr")
 @XmlRootElement(name = "AppHdr", namespace = "urn:iso:std:iso:20022:tech:xsd:head.001.001.01")
 public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implements AppHdr {
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:head.001.001.01";
-    final static transient Class[] _classes;
+    public static final String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:head.001.001.01";
+    final static Class[] _classes;
     private static final transient Logger log = Logger.getLogger(BusinessAppHdrV01.class.getName());
 
     static {
@@ -181,7 +182,7 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
     @Override
     public void setCreationDate(boolean overwrite) {
         if (this.getCreDt() == null || overwrite) {
-            this.setCreDt(OffsetDateTime.now());
+            this.setCreDt(OffsetDateTime.now(ZoneOffset.UTC));
         }
     }
 
@@ -229,7 +230,7 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
             JAXBElement<BusinessApplicationHeaderV01Impl> element = new JAXBElement(new QName(NAMESPACE, AppHdr.HEADER_LOCALNAME), BusinessApplicationHeaderV01Impl.class, null, this);
             XmlEventWriter eventWriter = new XmlEventWriter(sw, params.prefix, params.includeXMLDeclaration, AppHdr.HEADER_LOCALNAME, params.escapeHandler, params.indent);
             marshaller.marshal(element, eventWriter);
-            return sw.getBuffer().toString();
+            return StringUtils.replace(sw.getBuffer().toString(), "+00:00", "Z");
 
         } catch (JAXBException e) {
             log.log(Level.SEVERE, "Error writing head.001.001.01 XML:" + e.getMessage());

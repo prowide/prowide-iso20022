@@ -102,7 +102,6 @@ subprojects {
 	dependencies {
 		implementation 'org.apache.commons:commons-lang3:3.12.0'
 		implementation 'com.google.code.gson:gson:2.9.0'
-		implementation 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.0'
 		implementation 'com.sun.xml.bind:jaxb-impl:4.0.2'
 	}
 
@@ -126,7 +125,6 @@ configure(subprojects.findAll {it.name.endsWith('-mx')}) {
 		implementation project(specificTypesProject)
 		implementation 'org.apache.commons:commons-lang3:3.12.0'
 		implementation 'com.google.code.gson:gson:2.9.0'
-		implementation 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.0'
 		implementation 'com.sun.xml.bind:jaxb-impl:4.0.2'
 		compileOnly 'javax.persistence:javax.persistence-api:2.2'
 	}
@@ -147,7 +145,6 @@ project(':iso20022-core') {
 		implementation 'org.apache.commons:commons-lang3:3.12.0'
 		implementation 'com.google.code.gson:gson:2.9.0'
 
-		compileOnly 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.0'
 		compileOnly 'jakarta.persistence:jakarta.persistence-api:3.1.0'
 		compileOnly 'jakarta.validation:jakarta.validation-api:3.0.2'
 
@@ -301,8 +298,15 @@ artifacts {
 dependencies {
 	// included build (keep in sync with the latest Prowide Core version)
 	api 'com.prowidesoftware:pw-swift-core:SRU2023-10.1.0-SNAPSHOT'
-	implementation 'org.apache.commons:commons-lang3:3.12.0'
-	implementation 'com.google.code.gson:gson:2.9.0'
+
+	// included transitive dependencies from Prowide Core
+	//implementation 'org.apache.commons:commons-lang3:3.12.0'
+	//implementation 'com.google.code.gson:gson:2.9.0'
+
+	// jaxb is required because it is no longer included in the JDK
+	implementation 'com.sun.xml.bind:jaxb-impl:4.0.2'
+	// bind-api is included transitively by jaxb-impl
+	// implementation 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.0'
 }
 
 publishing {

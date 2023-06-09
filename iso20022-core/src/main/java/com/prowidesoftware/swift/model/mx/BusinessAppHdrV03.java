@@ -37,6 +37,7 @@ import javax.xml.namespace.QName;
 import javax.xml.transform.dom.DOMResult;
 import java.io.StringWriter;
 import java.time.OffsetDateTime;
+import java.time.ZoneOffset;
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.logging.Level;
@@ -51,9 +52,9 @@ import java.util.logging.Logger;
 @XmlType(name = "AppHdr")
 @XmlRootElement(name = "AppHdr", namespace = "urn:iso:std:iso:20022:tech:xsd:head.001.001.03")
 public class BusinessAppHdrV03 extends BusinessApplicationHeaderV03Impl implements AppHdr {
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:head.001.001.03";
-    final static transient Class[] _classes;
-    private static final transient Logger log = Logger.getLogger(BusinessAppHdrV03.class.getName());
+    public static final String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:head.001.001.03";
+    final static Class[] _classes;
+    private static final Logger log = Logger.getLogger(BusinessAppHdrV03.class.getName());
 
     static {
         _classes = Arrays.copyOf(BusinessApplicationHeaderV03Impl._classes, BusinessApplicationHeaderV03Impl._classes.length + 1);
@@ -199,7 +200,7 @@ public class BusinessAppHdrV03 extends BusinessApplicationHeaderV03Impl implemen
     @Override
     public void setCreationDate(boolean overwrite) {
         if (this.getCreDt() == null || overwrite) {
-            this.setCreDt(OffsetDateTime.now());
+            this.setCreDt(OffsetDateTime.now(ZoneOffset.UTC));
         }
     }
 
