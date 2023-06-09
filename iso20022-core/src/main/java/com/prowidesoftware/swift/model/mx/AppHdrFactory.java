@@ -23,6 +23,7 @@ import com.prowidesoftware.swift.model.MxId;
 import com.prowidesoftware.swift.model.mx.dic.*;
 
 import java.time.OffsetDateTime;
+import java.time.ZoneOffset;
 
 /**
  * Factory methods to create different variant of application headers.
@@ -68,7 +69,7 @@ public class AppHdrFactory {
             h.setMsgDefIdr(id.id());
         }
 
-        h.setCreDt(OffsetDateTime.now());
+        h.setCreDt(OffsetDateTime.now(ZoneOffset.UTC));
 
         return h;
     }
