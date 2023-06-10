@@ -150,7 +150,7 @@ public class LegacyAppHdrTest {
         BusinessAppHdrV01 h = BusinessAppHdrV01.parse(xml);
         assertNotNull(h);
         //System.out.println(h.xml());
-        assertTrue(h.xml().contains("<CreDt>2021-06-25T00:10:21+00:00</CreDt>"));
+        assertTrue(h.xml().contains("<CreDt>2021-06-25T00:10:21Z</CreDt>"));
     }
 
 }
