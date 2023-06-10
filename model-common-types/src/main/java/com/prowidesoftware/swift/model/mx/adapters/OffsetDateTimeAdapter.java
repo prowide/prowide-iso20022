@@ -23,8 +23,10 @@ import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import java.time.temporal.ChronoField;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.time.format.DateTimeFormatterBuilder;
 
 /**
  * Default generic adapter to use when non is provided via the configuration API.
@@ -34,33 +36,44 @@ import java.util.logging.Logger;
  */
 public class OffsetDateTimeAdapter extends XmlAdapter<String, OffsetDateTime> {
     private static final Logger log = Logger.getLogger(OffsetDateTimeAdapter.class.getName());
-    private final DateTimeFormatter marshallFormat;
-    private final DateTimeFormatter unmarshallFormat;
-    private XmlAdapter<String, OffsetDateTime> customAdapterImpl;
+    private final DateTimeFormatter marshalFormat;
+    private final DateTimeFormatter unmarshalFormat;
+    private final XmlAdapter<String, OffsetDateTime> customAdapterImpl;
+    int minPrecision = 0;
+    int maxPrecision = 9;
 
     /**
      * Creates a date time adapter with the default format
      */
     public OffsetDateTimeAdapter() {
-        this.marshallFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
-        this.unmarshallFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss[.[SSS][SS][S]][XXX]");
+        this.marshalFormat = new DateTimeFormatterBuilder()
+                .appendPattern("yyyy-MM-dd'T'HH:mm:ss")
+                .optionalStart()
+                .appendFraction(ChronoField.NANO_OF_SECOND, minPrecision, maxPrecision, true)
+                .optionalEnd()
+                .optionalStart()
+                .appendPattern("XXX")
+                .optionalEnd()
+                .toFormatter();
+        this.unmarshalFormat = this.marshalFormat;
+        this.customAdapterImpl = null;
     }
 
     /**
      * Creates a time adapter with a specific given format that will be used for both the marshalling and unmarshalling
      */
     public OffsetDateTimeAdapter(DateTimeFormatter dateFormat) {
-        this.marshallFormat = dateFormat;
-        this.unmarshallFormat = dateFormat;
-        customAdapterImpl = null;
+        this.marshalFormat = dateFormat;
+        this.unmarshalFormat = dateFormat;
+        this.customAdapterImpl = null;
     }
 
     /**
      * Creates a date time adapter injecting a custom implementation
      */
     public OffsetDateTimeAdapter(XmlAdapter<String, OffsetDateTime> customAdapterImpl) {
-        this.marshallFormat = null;
-        this.unmarshallFormat = null;
+        this.marshalFormat = null;
+        this.unmarshalFormat = null;
         this.customAdapterImpl = customAdapterImpl;
     }
 
@@ -75,13 +88,13 @@ public class OffsetDateTimeAdapter extends XmlAdapter<String, OffsetDateTime> {
         if (this.customAdapterImpl != null) {
             return this.customAdapterImpl.unmarshal(value);
         } else {
-            return parseZonedDateTime(this.unmarshallFormat, value);
+            return parseZonedDateTime(this.unmarshalFormat, value);
         }
     }
 
     /**
      * Applies the configured format to the OffsetDateTime. If the formats ends with an offset, and the OffsetDateTime is an UTC
-     * date time, we uses an explicit '+00:00' instead of the 'Z' code.
+     * date time, we use an explicit '+00:00' instead of the 'Z' code.
      *
      * @param offsetDateTime the model OffsetDateTime to marshal
      * @return formatted content for the XML
@@ -92,8 +105,8 @@ public class OffsetDateTimeAdapter extends XmlAdapter<String, OffsetDateTime> {
             return this.customAdapterImpl.marshal(offsetDateTime);
         } else {
             String formatted;
-            synchronized (marshallFormat) {
-                formatted = formatZonedDateTime(this.marshallFormat, offsetDateTime);
+            synchronized (marshalFormat) {
+                formatted = formatZonedDateTime(this.marshalFormat, offsetDateTime);
             }
             return formatted.replace(".000", "").replace("Z", "+00:00");
         }
