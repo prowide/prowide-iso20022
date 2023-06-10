@@ -19,7 +19,9 @@ import jakarta.xml.bind.annotation.adapters.XmlAdapter;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
 import java.time.format.DateTimeParseException;
+import java.time.temporal.ChronoField;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -34,13 +36,23 @@ public class OffsetTimeAdapter extends XmlAdapter<String, OffsetTime> {
     private final DateTimeFormatter marshalFormat;
     private final DateTimeFormatter unmarshalFormat;
     private final XmlAdapter<String, OffsetTime> customAdapterImpl;
+    int minPrecision = 0;
+    int maxPrecision = 9;
 
     /**
      * Creates a time adapter with the default format
      */
     public OffsetTimeAdapter() {
-        this.marshalFormat = DateTimeFormatter.ofPattern("HH:mm:ss.SSSXXX");
-        this.unmarshalFormat = DateTimeFormatter.ofPattern("HH:mm:ss[.[SSS][SS][S]][XXX]");
+        this.marshalFormat = new DateTimeFormatterBuilder()
+                .appendPattern("HH:mm:ss")
+                .optionalStart()
+                .appendFraction(ChronoField.NANO_OF_SECOND, minPrecision, maxPrecision, true)
+                .optionalEnd()
+                .optionalStart()
+                .appendPattern("XXX")
+                .optionalEnd()
+                .toFormatter();
+        this.unmarshalFormat = this.marshalFormat;
         this.customAdapterImpl = null;
     }
 

@@ -83,9 +83,10 @@ public class OffsetTimeAdapterTest {
 
         //DateTime without offset and with/without fractional seconds
         testTimeImpl("12:13:14", "12:13:14" + zoneOffset);
-        testTimeImpl("12:13:14.1", "12:13:14.100" + zoneOffset);
-        testTimeImpl("12:13:14.12", "12:13:14.120" + zoneOffset);
+        testTimeImpl("12:13:14.1", "12:13:14.1" + zoneOffset);
+        testTimeImpl("12:13:14.12", "12:13:14.12" + zoneOffset);
         testTimeImpl("12:13:14.123", "12:13:14.123" + zoneOffset);
+        testTimeImpl("12:13:14.123456789", "12:13:14.123456789" + zoneOffset);
 
         //DateTime with offset and without fractional seconds
         testTimeImpl("12:13:14+01:00", "12:13:14+01:00");
@@ -96,13 +97,14 @@ public class OffsetTimeAdapterTest {
         testTimeImpl("12:13:14Z", "12:13:14+00:00");
 
         //DateTime with offset and fractional seconds
-        testTimeImpl("12:13:14.1+01:00", "12:13:14.100+01:00");
-        testTimeImpl("12:13:14.12-01:00", "12:13:14.120-01:00");
+        testTimeImpl("12:13:14.1+01:00", "12:13:14.1+01:00");
+        testTimeImpl("12:13:14.12-01:00", "12:13:14.12-01:00");
         testTimeImpl("12:13:14.123+00:00", "12:13:14.123+00:00");
         testTimeImpl("12:13:14.123+08:30", "12:13:14.123+08:30");
         testTimeImpl("12:13:14.000+08:30", "12:13:14+08:30");
         testTimeImpl("12:13:14.000Z", "12:13:14+00:00");
         testTimeImpl("12:13:14.123Z", "12:13:14.123+00:00");
+        testTimeImpl("12:13:14.123456Z", "12:13:14.123456+00:00");
     }
 
 
