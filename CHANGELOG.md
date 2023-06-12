@@ -1,6 +1,7 @@
 # Prowide ISO 20022 - CHANGELOG
 
 #### 10.0.1 - SNAPSHOT
+  * Make the default IsoDateAdapter more flexible by ignoring the offset or time information when unmarshalling into LocalDate objects
   * Enhanced the OffsetDateTimeAdapter and OffsetTimeAdapter to support variable optional seconds precision
   * Fixed AppHdrFactory creation to use UTC in the header default creation date time
   * Fixed the business application header V01 serialization to use Zulu time indicator instead of +00:00 offset
