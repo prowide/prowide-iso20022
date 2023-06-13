@@ -15,6 +15,7 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import org.junit.jupiter.api.Test;
@@ -22,7 +23,6 @@ import org.junit.jupiter.api.Test;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.OffsetDateTime;
-import java.time.format.DateTimeFormatter;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -1281,6 +1281,319 @@ public class AbstractMxJsonTestAdapters {
         //YearMonth     : {"year":2021,"month":5}
         //Month         : "MAY"
     }
+
+
+
+    @Test
+    void testMarshalJson() throws Exception {
+
+        MxPacs00800107 message = MxPacs00800107.parse(
+                "<message>\n" +
+                        "    <AppHdr xmlns='urn:iso:std:iso:20022:tech:xsd:head.001.001.01'\n" +
+                        "            xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>\n" +
+                        "        <Fr>\n" +
+                        "            <FIId>\n" +
+                        "                <FinInstnId>\n" +
+                        "                    <BICFI>ABCDUS33XXX</BICFI>\n" +
+                        "                </FinInstnId>\n" +
+                        "            </FIId>\n" +
+                        "        </Fr>\n" +
+                        "        <To>\n" +
+                        "            <FIId>\n" +
+                        "                <FinInstnId>\n" +
+                        "                    <BICFI>EFGHUS33XXX</BICFI>\n" +
+                        "                </FinInstnId>\n" +
+                        "            </FIId>\n" +
+                        "        </To>\n" +
+                        "        <BizMsgIdr>12312312312</BizMsgIdr>\n" +
+                        "        <MsgDefIdr>pacs.008.001.07</MsgDefIdr>\n" +
+                        "        <CreDt>2019-10-19T20:53:13Z</CreDt>\n" +
+                        "        <PssblDplct>false</PssblDplct>\n" +
+                        "    </AppHdr>\n" +
+                        "    <Document xmlns='urn:iso:std:iso:20022:tech:xsd:pacs.008.001.07'\n" +
+                        "              xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>\n" +
+                        "        <FIToFICstmrCdtTrf>\n" +
+                        "            <GrpHdr>\n" +
+                        "                <MsgId>823823423</MsgId>\n" +
+                        "                <CreDtTm>2019-10-19T21:00:45Z</CreDtTm>\n" +
+                        "                <BtchBookg>false</BtchBookg>\n" +
+                        "                <NbOfTxs>1</NbOfTxs>\n" +
+                        "                <CtrlSum>10000</CtrlSum>\n" +
+                        "                <TtlIntrBkSttlmAmt Ccy='USD'>10000</TtlIntrBkSttlmAmt>\n"
+                        +
+                        "                <IntrBkSttlmDt>2019-10-28</IntrBkSttlmDt>\n" +
+                        "                <SttlmInf>\n" +
+                        "                    <SttlmMtd>INDA</SttlmMtd>\n" +
+                        "                </SttlmInf>\n" +
+                        "                <InstgAgt>\n" +
+                        "                    <FinInstnId>\n" +
+                        "                        <BICFI>CITTGB2LPBG</BICFI>\n" +
+                        "                        <Nm>Lionel Messi</Nm>\n" +
+                        "                        <Othr>\n" +
+                        "                            <Id>2342342342</Id>\n" +
+                        "                            <Issr>FOOISSUER</Issr>\n" +
+                        "                        </Othr>\n" +
+                        "                    </FinInstnId>\n" +
+                        "                </InstgAgt>\n" +
+                        "                <InstdAgt>\n" +
+                        "                    <FinInstnId>\n" +
+                        "                        <BICFI>ICBCUS4CXXX</BICFI>\n" +
+                        "                        <Nm>Manu Ginobili</Nm>\n" +
+                        "                        <PstlAdr>\n" +
+                        "                            <AdrTp>PBOX</AdrTp>\n" +
+                        "                            <Dept>1</Dept>\n" +
+                        "                            <SubDept>DFGH</SubDept>\n" +
+                        "                            <StrtNm>My Street</StrtNm>\n" +
+                        "                            <BldgNb>1122</BldgNb>\n" +
+                        "                            <PstCd>10002</PstCd>\n" +
+                        "                            <TwnNm>Los Angeles</TwnNm>\n" +
+                        "                            <CtrySubDvsn>ABCD</CtrySubDvsn>\n" +
+                        "                        </PstlAdr>\n" +
+                        "                    </FinInstnId>\n" +
+                        "                </InstdAgt>\n" +
+                        "            </GrpHdr>\n" +
+                        "            <CdtTrfTxInf>\n" +
+                        "                <PmtId>\n" +
+                        "                    <InstrId>2233445566</InstrId>\n" +
+                        "                    <EndToEndId>987654321987654321</EndToEndId>\n" +
+                        "                    <TxId>123456789</TxId>\n" +
+                        "                    <ClrSysRef>SDSDS333</ClrSysRef>\n" +
+                        "                </PmtId>\n" +
+                        "                <IntrBkSttlmAmt Ccy='USD'>5000</IntrBkSttlmAmt>\n" +
+                        "                <IntrBkSttlmDt>2019-07-31</IntrBkSttlmDt>\n" +
+                        "                <SttlmPrty>URGT</SttlmPrty>\n" +
+                        "                <AccptncDtTm>2019-04-28T20:54:39Z</AccptncDtTm>\n" +
+                        "                <PoolgAdjstmntDt>2019-04-29</PoolgAdjstmntDt>\n" +
+                        "                <InstdAmt Ccy='USD'>5000</InstdAmt>\n" +
+                        "                <ChrgBr>SHAR</ChrgBr>\n" +
+                        "                <Dbtr>\n" +
+                        "                    <Nm>Jhon Doe</Nm>\n" +
+                        "                    <PstlAdr>\n" +
+                        "                        <AdrTp>HOME</AdrTp>\n" +
+                        "                        <Dept>ABCD</Dept>\n" +
+                        "                        <SubDept>1</SubDept>\n" +
+                        "                        <StrtNm>Foo Street</StrtNm>\n" +
+                        "                        <BldgNb>1</BldgNb>\n" +
+                        "                        <PstCd>1234</PstCd>\n" +
+                        "                        <TwnNm>Buenos Aires</TwnNm>\n" +
+                        "                        <CtrySubDvsn>CABA</CtrySubDvsn>\n" +
+                        "                        <Ctry>AR</Ctry>\n" +
+                        "                    </PstlAdr>\n" +
+                        "                    <CtryOfRes>AR</CtryOfRes>\n" +
+                        "                </Dbtr>\n" +
+                        "                <DbtrAgt>\n" +
+                        "                    <FinInstnId>\n" +
+                        "                        <BICFI>ITUSUSP1XXX</BICFI>\n" +
+                        "                        <Nm>Foo Corp</Nm>\n" +
+                        "                    </FinInstnId>\n" +
+                        "                </DbtrAgt>\n" +
+                        "                <CdtrAgt>\n" +
+                        "                    <FinInstnId>\n" +
+                        "                        <BICFI>USTBUS31XXX</BICFI>\n" +
+                        "                    </FinInstnId>\n" +
+                        "                </CdtrAgt>\n" +
+                        "                <Cdtr>\n" +
+                        "                    <Nm>Mike Smith</Nm>\n" +
+                        "                </Cdtr>\n" +
+                        "            </CdtTrfTxInf>\n" +
+                        "        </FIToFICstmrCdtTrf>\n" +
+                        "    </Document>\n" +
+                        "</message>");
+
+        ObjectMapper mapper = new ObjectMapper();
+        String jsonExcpected = "{\n" +
+                "  \"fiToFICstmrCdtTrf\": {\n" +
+                "    \"grpHdr\": {\n" +
+                "      \"msgId\": \"823823423\",\n" +
+                "      \"creDtTm\": {\n" +
+                "        \"dateTime\": {\n" +
+                "          \"date\": {\n" +
+                "            \"year\": 2019,\n" +
+                "            \"month\": 10,\n" +
+                "            \"day\": 19\n" +
+                "          },\n" +
+                "          \"time\": {\n" +
+                "            \"hour\": 21,\n" +
+                "            \"minute\": 0,\n" +
+                "            \"second\": 45,\n" +
+                "            \"nano\": 0\n" +
+                "          }\n" +
+                "        },\n" +
+                "        \"offset\": {\n" +
+                "          \"totalSeconds\": 0\n" +
+                "        }\n" +
+                "      },\n" +
+                "      \"btchBookg\": false,\n" +
+                "      \"nbOfTxs\": \"1\",\n" +
+                "      \"ctrlSum\": 10000,\n" +
+                "      \"ttlIntrBkSttlmAmt\": {\n" +
+                "        \"value\": 10000,\n" +
+                "        \"ccy\": \"USD\"\n" +
+                "      },\n" +
+                "      \"intrBkSttlmDt\": {\n" +
+                "        \"year\": 2019,\n" +
+                "        \"month\": 10,\n" +
+                "        \"day\": 28\n" +
+                "      },\n" +
+                "      \"sttlmInf\": {\n" +
+                "        \"sttlmMtd\": \"INDA\"\n" +
+                "      },\n" +
+                "      \"instgAgt\": {\n" +
+                "        \"finInstnId\": {\n" +
+                "          \"bicfi\": \"CITTGB2LPBG\",\n" +
+                "          \"nm\": \"Lionel Messi\",\n" +
+                "          \"othr\": {\n" +
+                "            \"id\": \"2342342342\",\n" +
+                "            \"issr\": \"FOOISSUER\"\n" +
+                "          }\n" +
+                "        }\n" +
+                "      },\n" +
+                "      \"instdAgt\": {\n" +
+                "        \"finInstnId\": {\n" +
+                "          \"bicfi\": \"ICBCUS4CXXX\",\n" +
+                "          \"nm\": \"Manu Ginobili\",\n" +
+                "          \"pstlAdr\": {\n" +
+                "            \"adrTp\": \"PBOX\",\n" +
+                "            \"dept\": \"1\",\n" +
+                "            \"subDept\": \"DFGH\",\n" +
+                "            \"strtNm\": \"My Street\",\n" +
+                "            \"bldgNb\": \"1122\",\n" +
+                "            \"pstCd\": \"10002\",\n" +
+                "            \"twnNm\": \"Los Angeles\",\n" +
+                "            \"ctrySubDvsn\": \"ABCD\"\n" +
+                "          }\n" +
+                "        }\n" +
+                "      }\n" +
+                "    },\n" +
+                "    \"cdtTrfTxInf\": [\n" +
+                "      {\n" +
+                "        \"pmtId\": {\n" +
+                "          \"instrId\": \"2233445566\",\n" +
+                "          \"endToEndId\": \"987654321987654321\",\n" +
+                "          \"txId\": \"123456789\",\n" +
+                "          \"clrSysRef\": \"SDSDS333\"\n" +
+                "        },\n" +
+                "        \"intrBkSttlmAmt\": {\n" +
+                "          \"value\": 5000,\n" +
+                "          \"ccy\": \"USD\"\n" +
+                "        },\n" +
+                "        \"intrBkSttlmDt\": {\n" +
+                "          \"year\": 2019,\n" +
+                "          \"month\": 7,\n" +
+                "          \"day\": 31\n" +
+                "        },\n" +
+                "        \"sttlmPrty\": \"URGT\",\n" +
+                "        \"accptncDtTm\": {\n" +
+                "          \"dateTime\": {\n" +
+                "            \"date\": {\n" +
+                "              \"year\": 2019,\n" +
+                "              \"month\": 4,\n" +
+                "              \"day\": 28\n" +
+                "            },\n" +
+                "            \"time\": {\n" +
+                "              \"hour\": 20,\n" +
+                "              \"minute\": 54,\n" +
+                "              \"second\": 39,\n" +
+                "              \"nano\": 0\n" +
+                "            }\n" +
+                "          },\n" +
+                "          \"offset\": {\n" +
+                "            \"totalSeconds\": 0\n" +
+                "          }\n" +
+                "        },\n" +
+                "        \"poolgAdjstmntDt\": {\n" +
+                "          \"year\": 2019,\n" +
+                "          \"month\": 4,\n" +
+                "          \"day\": 29\n" +
+                "        },\n" +
+                "        \"instdAmt\": {\n" +
+                "          \"value\": 5000,\n" +
+                "          \"ccy\": \"USD\"\n" +
+                "        },\n" +
+                "        \"chrgBr\": \"SHAR\",\n" +
+                "        \"dbtr\": {\n" +
+                "          \"nm\": \"Jhon Doe\",\n" +
+                "          \"pstlAdr\": {\n" +
+                "            \"adrTp\": \"HOME\",\n" +
+                "            \"dept\": \"ABCD\",\n" +
+                "            \"subDept\": \"1\",\n" +
+                "            \"strtNm\": \"Foo Street\",\n" +
+                "            \"bldgNb\": \"1\",\n" +
+                "            \"pstCd\": \"1234\",\n" +
+                "            \"twnNm\": \"Buenos Aires\",\n" +
+                "            \"ctrySubDvsn\": \"CABA\",\n" +
+                "            \"ctry\": \"AR\"\n" +
+                "          },\n" +
+                "          \"ctryOfRes\": \"AR\"\n" +
+                "        },\n" +
+                "        \"dbtrAgt\": {\n" +
+                "          \"finInstnId\": {\n" +
+                "            \"bicfi\": \"ITUSUSP1XXX\",\n" +
+                "            \"nm\": \"Foo Corp\"\n" +
+                "          }\n" +
+                "        },\n" +
+                "        \"cdtrAgt\": {\n" +
+                "          \"finInstnId\": {\n" +
+                "            \"bicfi\": \"USTBUS31XXX\"\n" +
+                "          }\n" +
+                "        },\n" +
+                "        \"cdtr\": {\n" +
+                "          \"nm\": \"Mike Smith\"\n" +
+                "        }\n" +
+                "      }\n" +
+                "    ]\n" +
+                "  },\n" +
+                "  \"appHdr\": {\n" +
+                "    \"fr\": {\n" +
+                "      \"fiId\": {\n" +
+                "        \"finInstnId\": {\n" +
+                "          \"bicfi\": \"ABCDUS33XXX\"\n" +
+                "        }\n" +
+                "      }\n" +
+                "    },\n" +
+                "    \"to\": {\n" +
+                "      \"fiId\": {\n" +
+                "        \"finInstnId\": {\n" +
+                "          \"bicfi\": \"EFGHUS33XXX\"\n" +
+                "        }\n" +
+                "      }\n" +
+                "    },\n" +
+                "    \"bizMsgIdr\": \"12312312312\",\n" +
+                "    \"msgDefIdr\": \"pacs.008.001.07\",\n" +
+                "    \"creDt\": {\n" +
+                "      \"dateTime\": {\n" +
+                "        \"date\": {\n" +
+                "          \"year\": 2019,\n" +
+                "          \"month\": 10,\n" +
+                "          \"day\": 19\n" +
+                "        },\n" +
+                "        \"time\": {\n" +
+                "          \"hour\": 20,\n" +
+                "          \"minute\": 53,\n" +
+                "          \"second\": 13,\n" +
+                "          \"nano\": 0\n" +
+                "        }\n" +
+                "      },\n" +
+                "      \"offset\": {\n" +
+                "        \"totalSeconds\": 0\n" +
+                "      }\n" +
+                "    },\n" +
+                "    \"pssblDplct\": false,\n" +
+                "    \"namespace\": \"urn:iso:std:iso:20022:tech:xsd:head.001.001.01\"\n" +
+                "  },\n" +
+                "  \"type\": \"MX\",\n" +
+                "  \"@xmlns\": \"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.07\",\n" +
+                "  \"identifier\": \"pacs.008.001.07\"\n" +
+                "}";
+
+        System.out.println(jsonExcpected);
+        System.out.println(message.toJson());
+
+        assertEquals(mapper.readTree(jsonExcpected), mapper.readTree(message.toJson()));
+
+
+    }
+
 
 
 }
