@@ -22,24 +22,24 @@ public class DateTimeModel {
     private DateTimeObject dateTime;
     private OffsetObject offset;
 
-    public DateTimeModel(DateTimeObject dateTime, OffsetObject offset) {
+    DateTimeModel(DateTimeObject dateTime, OffsetObject offset) {
         this.dateTime = dateTime;
         this.offset = offset;
     }
 
-    public DateTimeObject getDateTime() {
+    DateTimeObject getDateTime() {
         return dateTime;
     }
 
-    public void setDateTime(DateTimeObject dateTime) {
+    void setDateTime(DateTimeObject dateTime) {
         this.dateTime = dateTime;
     }
 
-    public OffsetObject getOffset() {
+    OffsetObject getOffset() {
         return offset;
     }
 
-    public void setOffset(OffsetObject offset) {
+    void setOffset(OffsetObject offset) {
         this.offset = offset;
     }
 }

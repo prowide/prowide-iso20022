@@ -18,67 +18,40 @@ package com.prowidesoftware.swift.model.mx.adapters;
 /**
  * @since 10.0.1
  */
-public class DateTimeObject {
+class DateTimeObject {
 
-    public DateTimeObject(Date date, TimeObject time) {
+    Date date;
+    TimeObject time;
+
+    DateTimeObject(Date date, TimeObject time) {
         this.date = date;
         this.time = time;
     }
 
-    private final Date date;
-    private final TimeObject time;
+    static class Date {
+        int year;
+        int month;
+        int day;
 
-    public static class Date {
-        private final int day;
-        private final int month;
-        private final int year;
-
-        public Date(int day, int month, int year) {
-            this.day = day;
-            this.month = month;
+        Date(int year, int month, int day) {
             this.year = year;
-        }
-
-        public int getDay() {
-            return day;
-        }
-
-        public int getMonth() {
-            return month;
-        }
-
-        public int getYear() {
-            return year;
+            this.month = month;
+            this.day = day;
         }
     }
 
-    public static class TimeObject {
-        private final int hour;
-        private final int minute;
-        private final int second;
-        private final int nano;
+    static class TimeObject {
+       int hour;
+       int minute;
+       int second;
+       int nano;
 
-        public TimeObject(int hour, int minute, int second, int nano) {
+        TimeObject(int hour, int minute, int second, int nano) {
             this.hour = hour;
             this.minute = minute;
             this.second = second;
             this.nano = nano;
         }
 
-        public int getHour() {
-            return hour;
-        }
-
-        public int getMinute() {
-            return minute;
-        }
-
-        public int getSecond() {
-            return second;
-        }
-
-        public int getNano() {
-            return nano;
-        }
     }
 }

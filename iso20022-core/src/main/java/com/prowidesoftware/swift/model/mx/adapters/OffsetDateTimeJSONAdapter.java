@@ -18,10 +18,7 @@ package com.prowidesoftware.swift.model.mx.adapters;
 import com.google.gson.*;
 
 import java.lang.reflect.Type;
-import java.time.LocalDateTime;
-import java.time.OffsetDateTime;
-import java.time.ZoneId;
-import java.time.ZoneOffset;
+import java.time.*;
 import java.util.logging.Logger;
 
 /**
@@ -44,9 +41,9 @@ public class OffsetDateTimeJSONAdapter implements JsonSerializer<OffsetDateTime>
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
         DateTimeObject.Date date = new DateTimeObject.Date(
-                offsetDateTime.getDayOfMonth(),
+                offsetDateTime.getYear(),
                 offsetDateTime.getMonthValue(),
-                offsetDateTime.getYear()
+                offsetDateTime.getDayOfMonth()
         );
 
         DateTimeObject.TimeObject time = new DateTimeObject.TimeObject(
@@ -66,17 +63,48 @@ public class OffsetDateTimeJSONAdapter implements JsonSerializer<OffsetDateTime>
     @Override
     public OffsetDateTime deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) {
         try {
+
+
+            DateTimeModel dateTimeModel = gson.fromJson(jsonElement, DateTimeModel.class);
+
+
             OffsetDateTime offsetDateTime;
             JsonObject obj = jsonElement.getAsJsonObject();
+            JsonObject objDateTime = obj.getAsJsonObject("dateTime");
+            JsonObject objDate = objDateTime.getAsJsonObject("date");
+            JsonObject objTime = objDateTime.getAsJsonObject("time");
 
-            if (obj.get(OFFSET) != null) {
+            if (dateTimeModel.getOffset() != null) {
                 //aca esperamos el json entonces como dateTime objeto
                 ZoneOffset zoneoffset = ZoneOffset.ofTotalSeconds(obj.get(OFFSET).getAsJsonObject().get(TOTAL_SECONDS).getAsInt());
-                offsetDateTime = gson.fromJson(obj, OffsetDateTime.class);
-                offsetDateTime = OffsetDateTime.of(offsetDateTime.toLocalDateTime(), zoneoffset);
+                int nano = 0;
+                if(objTime.get("nano") != null){
+                    nano = objTime.get("nano").getAsInt();
+                }
+
+                offsetDateTime = OffsetDateTime.of(objDate.get("year").getAsInt(),
+                        objDate.get("month").getAsInt(),
+                        objDate.get("day").getAsInt(),
+                        objTime.get("hour").getAsInt(),
+                        objTime.get("minute").getAsInt(),
+                        objTime.get("second").getAsInt(),
+                        nano,
+                        zoneoffset);
+
             } else {
-                //aca esperamos el json entonces como date objeto.Fixear los jsons?
-                LocalDateTime localDateTime = gson.fromJson(obj, LocalDateTime.class);
+                int nano = 0;
+                if(objTime.get("nano") != null){
+                    nano = objTime.get("nano").getAsInt();
+                }
+
+                LocalDateTime localDateTime = LocalDateTime.of(objDate.get("year").getAsInt(),
+                        objDate.get("month").getAsInt(),
+                        objDate.get("day").getAsInt(),
+                        objTime.get("hour").getAsInt(),
+                        objTime.get("minute").getAsInt(),
+                        objTime.get("second").getAsInt(),
+                        nano);
+
                 ZoneId zoneId = ZoneOffset.systemDefault();
                 offsetDateTime = localDateTime.atZone(zoneId).toOffsetDateTime();
             }

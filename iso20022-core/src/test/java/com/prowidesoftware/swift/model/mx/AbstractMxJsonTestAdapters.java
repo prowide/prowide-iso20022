@@ -15,6 +15,7 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.prowidesoftware.swift.model.mx.dic.*;
@@ -42,7 +43,7 @@ public class AbstractMxJsonTestAdapters {
         mx.getCstmrCdtTrfInitn().getGrpHdr().setCtrlSum(new BigDecimal("1234.56"));
         mx.getCstmrCdtTrfInitn().getGrpHdr().setMsgId("MYID");
 
-        OffsetDateTime offsetDateTime = null;
+        OffsetDateTime offsetDateTime = OffsetDateTime.now();
         mx.getCstmrCdtTrfInitn().getGrpHdr().setCreDtTm(offsetDateTime);
         mx.getCstmrCdtTrfInitn().getGrpHdr().setNbOfTxs("1");
 
@@ -1152,7 +1153,6 @@ public class AbstractMxJsonTestAdapters {
 
     @Test
     public void testJSONYearMonth() {
-
         String jsonTimeAndDate = "{\n" +
                 "  \"acctHldgInfReq\": {\n" +
                 "    \"msgRef\": {\n" +
@@ -1283,10 +1283,8 @@ public class AbstractMxJsonTestAdapters {
     }
 
 
-
     @Test
-    void testMarshalJson() throws Exception {
-
+    void testMarshalJson() throws JsonProcessingException {
         MxPacs00800107 message = MxPacs00800107.parse(
                 "<message>\n" +
                         "    <AppHdr xmlns='urn:iso:std:iso:20022:tech:xsd:head.001.001.01'\n" +
@@ -1590,7 +1588,7 @@ public class AbstractMxJsonTestAdapters {
         System.out.println(message.toJson());
 
         assertEquals(mapper.readTree(jsonExcpected), mapper.readTree(message.toJson()));
+        assertEquals(jsonExcpected.trim(), message.toJson().trim());
 
     }
-
 }
