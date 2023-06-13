@@ -241,6 +241,13 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
         final Gson gson = new GsonBuilder()
                 .registerTypeAdapter(AbstractMX.class, new AbstractMXAdapter())
                 .registerTypeAdapter(AppHdr.class, new AppHdrAdapter())
+                .registerTypeAdapter(AbstractMX.class, new AbstractMXAdapter())
+                .registerTypeAdapter(OffsetDateTime.class, new OffsetDateTimeJSONAdapter())
+                .registerTypeAdapter(OffsetTime.class, new OffsetTimeJSONAdapter())
+                .registerTypeAdapter(LocalDate.class, new LocalDateJSONAdapter())
+                .registerTypeAdapter(Year.class, new YearJSONAdapter())
+                .registerTypeAdapter(YearMonth.class, new YearMonthJSONAdapter())
+                .registerTypeAdapter(AppHdr.class, new AppHdrAdapter())
                 .create();
         return gson.fromJson(json, classOfT);
     }

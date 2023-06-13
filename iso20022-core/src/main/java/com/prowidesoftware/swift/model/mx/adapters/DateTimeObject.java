@@ -44,7 +44,7 @@ class DateTimeObject {
        int hour;
        int minute;
        int second;
-       int nano;
+       Integer nano;
 
         TimeObject(int hour, int minute, int second, int nano) {
             this.hour = hour;

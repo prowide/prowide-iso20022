@@ -51,48 +51,26 @@ public class OffsetTimeJSONAdapter implements JsonSerializer<OffsetTime>, JsonDe
         );
         OffsetObject offsetObject = new OffsetObject(offsetTime.getOffset().getTotalSeconds());
 
-        Time time = new Time(timeObject, offsetObject);
-        return gson.toJsonTree(time, DateTimeObject.class);
-    }
-
-    class Time {
-        private DateTimeObject.TimeObject time;
-        private OffsetObject offset;
-
-        public Time(DateTimeObject.TimeObject time, OffsetObject offset) {
-            this.time = time;
-            this.offset = offset;
-        }
-
-        public DateTimeObject.TimeObject getTime() {
-            return time;
-        }
-
-        public void setTime(DateTimeObject.TimeObject time) {
-            this.time = time;
-        }
-
-        public OffsetObject getOffset() {
-            return offset;
-        }
-
-        public void setOffset(OffsetObject offset) {
-            this.offset = offset;
-        }
+        TimeDTO time = new TimeDTO(timeObject, offsetObject);
+        return gson.toJsonTree(time, TimeDTO.class);
     }
 
     @Override
     public OffsetTime deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) {
         try {
             OffsetTime offsetTime;
-            JsonObject obj = jsonElement.getAsJsonObject();
+            TimeDTO timeDTO = gson.fromJson(jsonElement, TimeDTO.class);
 
-            if (obj.get(OFFSET) != null) {
-                ZoneOffset zoneoffset = ZoneOffset.ofTotalSeconds(obj.get(OFFSET).getAsJsonObject().get(TOTAL_SECONDS).getAsInt());
-                offsetTime = gson.fromJson(obj, OffsetTime.class);
-                offsetTime = OffsetTime.of(offsetTime.toLocalTime(), zoneoffset);
+            int nano = 0;
+            if (timeDTO.time.nano != null) {
+                nano = timeDTO.time.nano;
+            }
+
+            if (timeDTO.offset != null) {
+                ZoneOffset zoneoffset = ZoneOffset.ofTotalSeconds(timeDTO.offset.totalSeconds);
+                offsetTime = OffsetTime.of(timeDTO.time.hour, timeDTO.time.minute, timeDTO.time.second, nano, zoneoffset);
             } else {
-                LocalTime localTime = gson.fromJson(obj.get(TIME), LocalTime.class);
+                LocalTime localTime = LocalTime.of(timeDTO.time.hour, timeDTO.time.minute, timeDTO.time.second, nano);
                 offsetTime = localTime.atOffset(ZoneOffset.systemDefault().getRules().getStandardOffset(Instant.now()));
             }
 
@@ -101,6 +79,16 @@ public class OffsetTimeJSONAdapter implements JsonSerializer<OffsetTime>, JsonDe
             log.finest("Cannot parse dateTime format" + e.getMessage());
             e.printStackTrace();
             return null;
+        }
+    }
+
+    class TimeDTO {
+        private DateTimeObject.TimeObject time;
+        private OffsetObject offset;
+
+        TimeDTO(DateTimeObject.TimeObject time, OffsetObject offset) {
+            this.time = time;
+            this.offset = offset;
         }
     }
 }

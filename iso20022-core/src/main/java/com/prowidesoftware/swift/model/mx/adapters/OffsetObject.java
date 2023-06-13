@@ -19,15 +19,9 @@ package com.prowidesoftware.swift.model.mx.adapters;
  * @since 10.0.1
  */
 public class OffsetObject {
+    int totalSeconds;
 
-    private final int totalSeconds;
-
-    public OffsetObject(int totalSeconds) {
+    OffsetObject(int totalSeconds) {
         this.totalSeconds = totalSeconds;
     }
-
-    public int getTotalSeconds() {
-        return totalSeconds;
-    }
-
 }

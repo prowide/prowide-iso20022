@@ -18,7 +18,10 @@ package com.prowidesoftware.swift.model.mx.adapters;
 import com.google.gson.*;
 
 import java.lang.reflect.Type;
-import java.time.*;
+import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
 import java.util.logging.Logger;
 
 /**
@@ -27,9 +30,6 @@ import java.util.logging.Logger;
  * @since 10.0.0
  */
 public class OffsetDateTimeJSONAdapter implements JsonSerializer<OffsetDateTime>, JsonDeserializer<OffsetDateTime> {
-    private static final String OFFSET = "offset";
-
-    private static final String TOTAL_SECONDS = "totalSeconds";
 
     private static final Logger log = Logger.getLogger(OffsetDateTimeJSONAdapter.class.getName());
 
@@ -63,46 +63,33 @@ public class OffsetDateTimeJSONAdapter implements JsonSerializer<OffsetDateTime>
     @Override
     public OffsetDateTime deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) {
         try {
-
-
+            //Parse DTO model
             DateTimeModel dateTimeModel = gson.fromJson(jsonElement, DateTimeModel.class);
 
-
+            //Prepare OffsetDateTime
             OffsetDateTime offsetDateTime;
-            JsonObject obj = jsonElement.getAsJsonObject();
-            JsonObject objDateTime = obj.getAsJsonObject("dateTime");
-            JsonObject objDate = objDateTime.getAsJsonObject("date");
-            JsonObject objTime = objDateTime.getAsJsonObject("time");
+            int nano = 0;
+            if (dateTimeModel.dateTime.time.nano != null) {
+                nano = dateTimeModel.dateTime.time.nano;
+            }
 
-            if (dateTimeModel.getOffset() != null) {
-                //aca esperamos el json entonces como dateTime objeto
-                ZoneOffset zoneoffset = ZoneOffset.ofTotalSeconds(obj.get(OFFSET).getAsJsonObject().get(TOTAL_SECONDS).getAsInt());
-                int nano = 0;
-                if(objTime.get("nano") != null){
-                    nano = objTime.get("nano").getAsInt();
-                }
-
-                offsetDateTime = OffsetDateTime.of(objDate.get("year").getAsInt(),
-                        objDate.get("month").getAsInt(),
-                        objDate.get("day").getAsInt(),
-                        objTime.get("hour").getAsInt(),
-                        objTime.get("minute").getAsInt(),
-                        objTime.get("second").getAsInt(),
+            if (dateTimeModel.offset != null) {
+                ZoneOffset zoneoffset = ZoneOffset.ofTotalSeconds(dateTimeModel.offset.totalSeconds);
+                offsetDateTime = OffsetDateTime.of(dateTimeModel.dateTime.date.year,
+                        dateTimeModel.dateTime.date.month,
+                        dateTimeModel.dateTime.date.day,
+                        dateTimeModel.dateTime.time.hour,
+                        dateTimeModel.dateTime.time.minute,
+                        dateTimeModel.dateTime.time.second,
                         nano,
                         zoneoffset);
-
             } else {
-                int nano = 0;
-                if(objTime.get("nano") != null){
-                    nano = objTime.get("nano").getAsInt();
-                }
-
-                LocalDateTime localDateTime = LocalDateTime.of(objDate.get("year").getAsInt(),
-                        objDate.get("month").getAsInt(),
-                        objDate.get("day").getAsInt(),
-                        objTime.get("hour").getAsInt(),
-                        objTime.get("minute").getAsInt(),
-                        objTime.get("second").getAsInt(),
+                LocalDateTime localDateTime = LocalDateTime.of(dateTimeModel.dateTime.date.year,
+                        dateTimeModel.dateTime.date.month,
+                        dateTimeModel.dateTime.date.day,
+                        dateTimeModel.dateTime.time.hour,
+                        dateTimeModel.dateTime.time.minute,
+                        dateTimeModel.dateTime.time.second,
                         nano);
 
                 ZoneId zoneId = ZoneOffset.systemDefault();

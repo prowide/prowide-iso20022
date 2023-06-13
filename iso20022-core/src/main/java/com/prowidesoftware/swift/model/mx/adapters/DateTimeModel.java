@@ -19,27 +19,12 @@ package com.prowidesoftware.swift.model.mx.adapters;
  * @since 10.0.1
  */
 public class DateTimeModel {
-    private DateTimeObject dateTime;
-    private OffsetObject offset;
+    DateTimeObject dateTime;
+    OffsetObject offset;
 
     DateTimeModel(DateTimeObject dateTime, OffsetObject offset) {
         this.dateTime = dateTime;
         this.offset = offset;
     }
 
-    DateTimeObject getDateTime() {
-        return dateTime;
-    }
-
-    void setDateTime(DateTimeObject dateTime) {
-        this.dateTime = dateTime;
-    }
-
-    OffsetObject getOffset() {
-        return offset;
-    }
-
-    void setOffset(OffsetObject offset) {
-        this.offset = offset;
-    }
 }

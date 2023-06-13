@@ -22,7 +22,6 @@ import com.prowidesoftware.swift.model.mx.dic.*;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.time.OffsetDateTime;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -293,6 +292,7 @@ public class AbstractMxJsonTestAdapters {
                 "    \"grpHdr\": {\n" +
                 "      \"msgId\": \"A2P76703\",\n" +
                 "      \"creDtTm\": {\n" +
+                "        \"dateTime\": {\n" +
                 "          \"date\": {\n" +
                 "            \"year\": 2021,\n" +
                 "            \"month\": 4,\n" +
@@ -304,6 +304,7 @@ public class AbstractMxJsonTestAdapters {
                 "            \"second\": 38,\n" +
                 "            \"nano\": 0\n" +
                 "          }\n" +
+                "        }\n" +
                 "      },\n" +
                 "      \"nbOfTxs\": \"1\"\n" +
                 "    }\n" +
@@ -320,6 +321,7 @@ public class AbstractMxJsonTestAdapters {
                 "    \"msgName\": \"pacs.009.001.07\",\n" +
                 "    \"msgRef\": \"CPTE190421113270\",\n" +
                 "    \"crDate\": {\n" +
+                "      \"dateTime\": {\n" +
                 "        \"date\": {\n" +
                 "          \"year\": 2021,\n" +
                 "          \"month\": 4,\n" +
@@ -331,6 +333,7 @@ public class AbstractMxJsonTestAdapters {
                 "          \"second\": 38,\n" +
                 "          \"nano\": 0\n" +
                 "        }\n" +
+                "      }\n" +
                 "    }\n" +
                 "  },\n" +
                 "  \"type\": \"MX\",\n" +
@@ -783,6 +786,7 @@ public class AbstractMxJsonTestAdapters {
                 "    \"grpHdr\": {\n" +
                 "      \"msgId\": \"A2P76703\",\n" +
                 "      \"creDtTm\": {\n" +
+                "        \"dateTime\": {\n" +
                 "          \"date\": {\n" +
                 "            \"year\": 2021,\n" +
                 "            \"month\": 4,\n" +
@@ -794,6 +798,7 @@ public class AbstractMxJsonTestAdapters {
                 "            \"second\": 38,\n" +
                 "            \"nano\": 0\n" +
                 "          }\n" +
+                "        }\n" +
                 "      },\n" +
                 "      \"nbOfTxs\": \"1\"\n" +
                 "    }\n" +
@@ -811,6 +816,7 @@ public class AbstractMxJsonTestAdapters {
                 "    \"msgName\": \"pacs.009.001.07\",\n" +
                 "    \"msgRef\": \"CPTE190421113270\",\n" +
                 "    \"crDate\": {\n" +
+                "      \"dateTime\": {\n" +
                 "        \"date\": {\n" +
                 "          \"year\": 2021,\n" +
                 "          \"month\": 4,\n" +
@@ -822,6 +828,7 @@ public class AbstractMxJsonTestAdapters {
                 "          \"second\": 38,\n" +
                 "          \"nano\": 0\n" +
                 "        }\n" +
+                "      }\n" +
                 "    }\n" +
                 "  },\n" +
                 "  \"type\": \"MX\",\n" +
@@ -963,6 +970,7 @@ public class AbstractMxJsonTestAdapters {
                 "    \"msgHdr\": {\n" +
                 "      \"msgId\": \"1221212121\",\n" +
                 "      \"creDtTm\": {\n" +
+                "        \"dateTime\": {\n" +
                 "          \"date\": {\n" +
                 "            \"year\": 2021,\n" +
                 "            \"month\": 5,\n" +
@@ -974,6 +982,7 @@ public class AbstractMxJsonTestAdapters {
                 "            \"second\": 43,\n" +
                 "            \"nano\": 0\n" +
                 "          }\n" +
+                "        }\n" +
                 "      }\n" +
                 "    },\n" +
                 "    \"stgOrdrId\": {\n" +
@@ -1013,6 +1022,7 @@ public class AbstractMxJsonTestAdapters {
                 "    \"bizMsgIdr\": \"AAAACAD0XXX\",\n" +
                 "    \"msgDefIdr\": \"camt.102.001.02\",\n" +
                 "    \"creDt\": {\n" +
+                "      \"dateTime\": {\n" +
                 "        \"date\": {\n" +
                 "          \"year\": 2021,\n" +
                 "          \"month\": 5,\n" +
@@ -1024,8 +1034,10 @@ public class AbstractMxJsonTestAdapters {
                 "          \"second\": 9,\n" +
                 "          \"nano\": 258000000\n" +
                 "        }\n" +
+                "      }\n" +
                 "    },\n" +
                 "    \"bizPrcgDt\": {\n" +
+                "      \"dateTime\": {\n" +
                 "        \"date\": {\n" +
                 "          \"year\": 2021,\n" +
                 "          \"month\": 5,\n" +
@@ -1037,6 +1049,7 @@ public class AbstractMxJsonTestAdapters {
                 "          \"second\": 31,\n" +
                 "          \"nano\": 0\n" +
                 "        }\n" +
+                "      }\n" +
                 "    },\n" +
                 "    \"namespace\": \"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\"\n" +
                 "  },\n" +
@@ -1063,6 +1076,7 @@ public class AbstractMxJsonTestAdapters {
                 "    \"msgHdr\": {\n" +
                 "      \"msgId\": \"1221212121\",\n" +
                 "      \"creDtTm\": {\n" +
+                "        \"dateTime\": {\n" +
                 "          \"date\": {\n" +
                 "            \"year\": 2021,\n" +
                 "            \"month\": 5,\n" +
@@ -1073,6 +1087,7 @@ public class AbstractMxJsonTestAdapters {
                 "            \"minute\": 45,\n" +
                 "            \"second\": 43\n" +
                 "          }\n" +
+                "        }\n" +
                 "      }\n" +
                 "    },\n" +
                 "    \"stgOrdrId\": {\n" +
@@ -1111,18 +1126,7 @@ public class AbstractMxJsonTestAdapters {
                 "    \"bizMsgIdr\": \"AAAACAD0XXX\",\n" +
                 "    \"msgDefIdr\": \"camt.102.001.02\",\n" +
                 "    \"creDt\": {\n" +
-                "        \"date\": {\n" +
-                "          \"year\": 2021,\n" +
-                "          \"month\": 5,\n" +
-                "          \"day\": 8\n" +
-                "        },\n" +
-                "        \"time\": {\n" +
-                "          \"hour\": 15,\n" +
-                "          \"minute\": 46,\n" +
-                "          \"second\": 9\n" +
-                "        }\n" +
-                "    },\n" +
-                "    \"bizPrcgDt\": {\n" +
+                "      \"dateTime\": {\n" +
                 "        \"date\": {\n" +
                 "          \"year\": 2021,\n" +
                 "          \"month\": 5,\n" +
@@ -1131,8 +1135,23 @@ public class AbstractMxJsonTestAdapters {
                 "        \"time\": {\n" +
                 "          \"hour\": 20,\n" +
                 "          \"minute\": 45,\n" +
-                "          \"second\": 31\n" +
+                "          \"second\": 43\n" +
                 "        }\n" +
+                "      }\n" +
+                "    },\n" +
+                "    \"bizPrcgDt\": {\n" +
+                "      \"dateTime\": {\n" +
+                "        \"date\": {\n" +
+                "          \"year\": 2021,\n" +
+                "          \"month\": 5,\n" +
+                "          \"day\": 8\n" +
+                "        },\n" +
+                "        \"time\": {\n" +
+                "          \"hour\": 20,\n" +
+                "          \"minute\": 45,\n" +
+                "          \"second\": 43\n" +
+                "        }\n" +
+                "      }\n" +
                 "    },\n" +
                 "    \"namespace\": \"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\"\n" +
                 "  },\n" +
@@ -1271,8 +1290,8 @@ public class AbstractMxJsonTestAdapters {
     @Test
     public void testGson() {
         Gson gson = new Gson();
-        System.out.println(gson.toJson(LocalDate.now().getMonth()));
-
+        //JDK 17 fail all those tests
+        //System.out.println(gson.toJson(LocalDate.now().getMonth()));
         //OffsetDateTime: {"dateTime":{"date":{"year":2021,"month":5,"day":8},"time":{"hour":21,"minute":48,"second":39,"nano":61498000}},"offset":{"totalSeconds":7200}}
         //LocalDateTime : {"date":{"year":2021,"month":5,"day":8},"time":{"hour":21,"minute":49,"second":48,"nano":279285000}}
         //OffsetTime    : {"time":{"hour":21,"minute":49,"second":20,"nano":212849000},"offset":{"totalSeconds":7200}}
@@ -1584,8 +1603,8 @@ public class AbstractMxJsonTestAdapters {
                 "  \"identifier\": \"pacs.008.001.07\"\n" +
                 "}";
 
-        System.out.println(jsonExcpected);
-        System.out.println(message.toJson());
+        //System.out.println(jsonExcpected);
+        //System.out.println(message.toJson());
 
         assertEquals(mapper.readTree(jsonExcpected), mapper.readTree(message.toJson()));
         assertEquals(jsonExcpected.trim(), message.toJson().trim());

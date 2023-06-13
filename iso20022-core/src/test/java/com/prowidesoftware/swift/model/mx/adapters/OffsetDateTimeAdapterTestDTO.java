@@ -9,7 +9,7 @@ import java.time.ZoneOffset;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class OffsetDateTimeAdapterTest {
+class OffsetDateTimeAdapterTestDTO {
 
     @Test
     void testOffsetDateTime() throws Exception {

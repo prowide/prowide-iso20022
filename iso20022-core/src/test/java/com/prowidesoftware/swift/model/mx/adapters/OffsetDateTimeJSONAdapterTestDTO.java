@@ -9,8 +9,10 @@ import java.time.ZoneOffset;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class OffsetDateTimeJSONAdapterTest {
+class OffsetDateTimeJSONAdapterTestDTO {
 
+
+    //TODO armar este test con json Ò
     @Test
     void testOffsetDateTime() throws Exception {
         ZoneId zoneId = ZoneOffset.systemDefault();
