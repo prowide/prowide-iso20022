@@ -34,8 +34,6 @@ public class OffsetDateTimeJSONAdapter implements JsonSerializer<OffsetDateTime>
 
     private static final String TOTAL_SECONDS = "totalSeconds";
 
-    private static final String DATETIME = "dateTime";
-
     private static final Logger log = Logger.getLogger(OffsetDateTimeJSONAdapter.class.getName());
 
     private static final Gson gson = new Gson();
@@ -43,8 +41,26 @@ public class OffsetDateTimeJSONAdapter implements JsonSerializer<OffsetDateTime>
 
     @Override
     public JsonElement serialize(OffsetDateTime offsetDateTime, Type type, JsonSerializationContext jsonSerializationContext) {
-        Gson gson = new Gson();
-        return gson.toJsonTree(offsetDateTime);
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+        DateTimeObject.Date date = new DateTimeObject.Date(
+                offsetDateTime.getDayOfMonth(),
+                offsetDateTime.getMonthValue(),
+                offsetDateTime.getYear()
+        );
+
+        DateTimeObject.TimeObject time = new DateTimeObject.TimeObject(
+                offsetDateTime.getHour(),
+                offsetDateTime.getMinute(),
+                offsetDateTime.getSecond(),
+                offsetDateTime.getNano()
+        );
+
+        OffsetObject offsetObject = new OffsetObject(offsetDateTime.getOffset().getTotalSeconds());
+
+        DateTimeObject dateTimeObject = new DateTimeObject(date, time);
+        DateTimeModel dateTimeModel = new DateTimeModel(dateTimeObject, offsetObject);
+        return gson.toJsonTree(dateTimeModel, DateTimeModel.class);
     }
 
     @Override

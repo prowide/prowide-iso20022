@@ -42,9 +42,43 @@ public class OffsetTimeJSONAdapter implements JsonSerializer<OffsetTime>, JsonDe
 
 
     @Override
-    public JsonElement serialize(OffsetTime OffsetTime, Type type, JsonSerializationContext jsonSerializationContext) {
-        Gson gson = new Gson();
-        return gson.toJsonTree(OffsetTime);
+    public JsonElement serialize(OffsetTime offsetTime, Type type, JsonSerializationContext jsonSerializationContext) {
+        DateTimeObject.TimeObject timeObject = new DateTimeObject.TimeObject(
+                offsetTime.getHour(),
+                offsetTime.getMinute(),
+                offsetTime.getSecond(),
+                offsetTime.getNano()
+        );
+        OffsetObject offsetObject = new OffsetObject(offsetTime.getOffset().getTotalSeconds());
+
+        Time time = new Time(timeObject, offsetObject);
+        return gson.toJsonTree(time, DateTimeObject.class);
+    }
+
+    class Time {
+        private DateTimeObject.TimeObject time;
+        private OffsetObject offset;
+
+        public Time(DateTimeObject.TimeObject time, OffsetObject offset) {
+            this.time = time;
+            this.offset = offset;
+        }
+
+        public DateTimeObject.TimeObject getTime() {
+            return time;
+        }
+
+        public void setTime(DateTimeObject.TimeObject time) {
+            this.time = time;
+        }
+
+        public OffsetObject getOffset() {
+            return offset;
+        }
+
+        public void setOffset(OffsetObject offset) {
+            this.offset = offset;
+        }
     }
 
     @Override
