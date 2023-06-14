@@ -22,12 +22,12 @@ import java.time.Year;
 import java.util.logging.Logger;
 
 /**
- * This adapter enables accepting time JSON formats with or without the offset and nanoseconds.
+ * This adapter enables accepting Year time Json format.
  *
  * @since 10.0.0
  */
-public class YearJSONAdapter implements JsonSerializer<Year>, JsonDeserializer<Year> {
-    private static final Logger log = Logger.getLogger(YearJSONAdapter.class.getName());
+public class YearJsonAdapter implements JsonSerializer<Year>, JsonDeserializer<Year> {
+    private static final Logger log = Logger.getLogger(YearJsonAdapter.class.getName());
 
     private static final Gson gson = new Gson();
 
@@ -47,5 +47,4 @@ public class YearJSONAdapter implements JsonSerializer<Year>, JsonDeserializer<Y
     static class YearJsonDTO {
         int year;
     }
-
 }

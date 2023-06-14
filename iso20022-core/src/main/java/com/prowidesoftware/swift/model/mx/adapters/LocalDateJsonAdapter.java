@@ -21,11 +21,11 @@ import java.lang.reflect.Type;
 import java.time.LocalDate;
 
 /**
- * This adapter enables accepting LocalDate JSON formats.
+ * This adapter enables accepting LocalDate time Json format.
  *
  * @since 10.0.0
  */
-public class LocalDateJSONAdapter implements JsonSerializer<LocalDate>, JsonDeserializer<LocalDate> {
+public class LocalDateJsonAdapter implements JsonSerializer<LocalDate>, JsonDeserializer<LocalDate> {
 
     @Override
     public JsonElement serialize(LocalDate localDate, Type typeOfSrc, JsonSerializationContext context) {

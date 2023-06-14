@@ -29,7 +29,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 
 class JsonAdapterOffsetDateTimeTest {
 
-    private final OffsetDateTimeJSONAdapter offsetDateTimeAdapter = new OffsetDateTimeJSONAdapter();
+    private final OffsetDateTimeJsonAdapter offsetDateTimeAdapter = new OffsetDateTimeJsonAdapter();
 
     @Test
     void testOffsetDateTime() {

@@ -25,12 +25,12 @@ import java.time.ZoneOffset;
 import java.util.logging.Logger;
 
 /**
- * This adapter enables accepting time JSON formats with or without the offset and nanoseconds.
+ * This adapter enables accepting OffsetTime time Json format.
  *
  * @since 10.0.0
  */
-public class OffsetTimeJSONAdapter implements JsonSerializer<OffsetTime>, JsonDeserializer<OffsetTime> {
-    private static final Logger log = Logger.getLogger(OffsetTimeJSONAdapter.class.getName());
+public class OffsetTimeJsonAdapter implements JsonSerializer<OffsetTime>, JsonDeserializer<OffsetTime> {
+    private static final Logger log = Logger.getLogger(OffsetTimeJsonAdapter.class.getName());
 
     private static final Gson gson = new Gson();
 

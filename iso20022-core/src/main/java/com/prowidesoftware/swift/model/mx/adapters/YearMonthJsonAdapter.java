@@ -18,17 +18,16 @@ package com.prowidesoftware.swift.model.mx.adapters;
 import com.google.gson.*;
 
 import java.lang.reflect.Type;
-import java.time.Year;
 import java.time.YearMonth;
 import java.util.logging.Logger;
 
 /**
- * This adapter enables accepting time JSON formats with or without the offset and nanoseconds.
+ * This adapter enables accepting YearMonth time Json format.
  *
  * @since 10.0.0
  */
-public class YearMonthJSONAdapter implements JsonSerializer<YearMonth>, JsonDeserializer<YearMonth> {
-    private static final Logger log = Logger.getLogger(YearMonthJSONAdapter.class.getName());
+public class YearMonthJsonAdapter implements JsonSerializer<YearMonth>, JsonDeserializer<YearMonth> {
+    private static final Logger log = Logger.getLogger(YearMonthJsonAdapter.class.getName());
 
     private static final Gson gson = new Gson();
 
@@ -50,5 +49,4 @@ public class YearMonthJSONAdapter implements JsonSerializer<YearMonth>, JsonDese
         int year;
         int month;
     }
-
 }
