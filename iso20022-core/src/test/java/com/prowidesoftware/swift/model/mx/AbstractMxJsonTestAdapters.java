@@ -15,6 +15,9 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import org.junit.jupiter.api.Test;
 
@@ -154,7 +157,13 @@ public class AbstractMxJsonTestAdapters {
                 "  \"identifier\": \"sese.023.002.01\"\n" +
                 "}";
         AbstractMX mx = AbstractMX.fromJson(source);
+
+        JsonElement sourceElement = JsonParser.parseString(source);
+        JsonElement mxJsonElement = JsonParser.parseString(mx.toJson().trim());
+
+        assertEquals(sourceElement, mxJsonElement);
         assertEquals(source.trim(), mx.toJson().trim());
+
     }
 
     @Test
@@ -273,6 +282,7 @@ public class AbstractMxJsonTestAdapters {
                 "    \"grpHdr\": {\n" +
                 "      \"msgId\": \"A2P76703\",\n" +
                 "      \"creDtTm\": {\n" +
+                "        \"dateTime\": {\n" +
                 "          \"date\": {\n" +
                 "            \"year\": 2021,\n" +
                 "            \"month\": 4,\n" +
@@ -284,6 +294,7 @@ public class AbstractMxJsonTestAdapters {
                 "            \"second\": 38,\n" +
                 "            \"nano\": 0\n" +
                 "          }\n" +
+                "        }\n" +
                 "      },\n" +
                 "      \"nbOfTxs\": \"1\"\n" +
                 "    }\n" +
@@ -300,6 +311,7 @@ public class AbstractMxJsonTestAdapters {
                 "    \"msgName\": \"pacs.009.001.07\",\n" +
                 "    \"msgRef\": \"CPTE190421113270\",\n" +
                 "    \"crDate\": {\n" +
+                "      \"dateTime\": {\n" +
                 "        \"date\": {\n" +
                 "          \"year\": 2021,\n" +
                 "          \"month\": 4,\n" +
@@ -311,6 +323,7 @@ public class AbstractMxJsonTestAdapters {
                 "          \"second\": 38,\n" +
                 "          \"nano\": 0\n" +
                 "        }\n" +
+                "      }\n" +
                 "    }\n" +
                 "  },\n" +
                 "  \"type\": \"MX\",\n" +
@@ -763,6 +776,7 @@ public class AbstractMxJsonTestAdapters {
                 "    \"grpHdr\": {\n" +
                 "      \"msgId\": \"A2P76703\",\n" +
                 "      \"creDtTm\": {\n" +
+                "        \"dateTime\": {\n" +
                 "          \"date\": {\n" +
                 "            \"year\": 2021,\n" +
                 "            \"month\": 4,\n" +
@@ -774,6 +788,7 @@ public class AbstractMxJsonTestAdapters {
                 "            \"second\": 38,\n" +
                 "            \"nano\": 0\n" +
                 "          }\n" +
+                "        }\n" +
                 "      },\n" +
                 "      \"nbOfTxs\": \"1\"\n" +
                 "    }\n" +
@@ -791,6 +806,7 @@ public class AbstractMxJsonTestAdapters {
                 "    \"msgName\": \"pacs.009.001.07\",\n" +
                 "    \"msgRef\": \"CPTE190421113270\",\n" +
                 "    \"crDate\": {\n" +
+                "      \"dateTime\": {\n" +
                 "        \"date\": {\n" +
                 "          \"year\": 2021,\n" +
                 "          \"month\": 4,\n" +
@@ -802,6 +818,7 @@ public class AbstractMxJsonTestAdapters {
                 "          \"second\": 38,\n" +
                 "          \"nano\": 0\n" +
                 "        }\n" +
+                "      }\n" +
                 "    }\n" +
                 "  },\n" +
                 "  \"type\": \"MX\",\n" +
@@ -943,6 +960,7 @@ public class AbstractMxJsonTestAdapters {
                 "    \"msgHdr\": {\n" +
                 "      \"msgId\": \"1221212121\",\n" +
                 "      \"creDtTm\": {\n" +
+                "        \"dateTime\": {\n" +
                 "          \"date\": {\n" +
                 "            \"year\": 2021,\n" +
                 "            \"month\": 5,\n" +
@@ -954,6 +972,7 @@ public class AbstractMxJsonTestAdapters {
                 "            \"second\": 43,\n" +
                 "            \"nano\": 0\n" +
                 "          }\n" +
+                "        }\n" +
                 "      }\n" +
                 "    },\n" +
                 "    \"stgOrdrId\": {\n" +
@@ -993,6 +1012,7 @@ public class AbstractMxJsonTestAdapters {
                 "    \"bizMsgIdr\": \"AAAACAD0XXX\",\n" +
                 "    \"msgDefIdr\": \"camt.102.001.02\",\n" +
                 "    \"creDt\": {\n" +
+                "      \"dateTime\": {\n" +
                 "        \"date\": {\n" +
                 "          \"year\": 2021,\n" +
                 "          \"month\": 5,\n" +
@@ -1004,8 +1024,10 @@ public class AbstractMxJsonTestAdapters {
                 "          \"second\": 9,\n" +
                 "          \"nano\": 258000000\n" +
                 "        }\n" +
+                "      }\n" +
                 "    },\n" +
                 "    \"bizPrcgDt\": {\n" +
+                "      \"dateTime\": {\n" +
                 "        \"date\": {\n" +
                 "          \"year\": 2021,\n" +
                 "          \"month\": 5,\n" +
@@ -1017,6 +1039,7 @@ public class AbstractMxJsonTestAdapters {
                 "          \"second\": 31,\n" +
                 "          \"nano\": 0\n" +
                 "        }\n" +
+                "      }\n" +
                 "    },\n" +
                 "    \"namespace\": \"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\"\n" +
                 "  },\n" +
@@ -1043,6 +1066,7 @@ public class AbstractMxJsonTestAdapters {
                 "    \"msgHdr\": {\n" +
                 "      \"msgId\": \"1221212121\",\n" +
                 "      \"creDtTm\": {\n" +
+                "        \"dateTime\": {\n" +
                 "          \"date\": {\n" +
                 "            \"year\": 2021,\n" +
                 "            \"month\": 5,\n" +
@@ -1053,6 +1077,7 @@ public class AbstractMxJsonTestAdapters {
                 "            \"minute\": 45,\n" +
                 "            \"second\": 43\n" +
                 "          }\n" +
+                "        }\n" +
                 "      }\n" +
                 "    },\n" +
                 "    \"stgOrdrId\": {\n" +
@@ -1091,18 +1116,7 @@ public class AbstractMxJsonTestAdapters {
                 "    \"bizMsgIdr\": \"AAAACAD0XXX\",\n" +
                 "    \"msgDefIdr\": \"camt.102.001.02\",\n" +
                 "    \"creDt\": {\n" +
-                "        \"date\": {\n" +
-                "          \"year\": 2021,\n" +
-                "          \"month\": 5,\n" +
-                "          \"day\": 8\n" +
-                "        },\n" +
-                "        \"time\": {\n" +
-                "          \"hour\": 15,\n" +
-                "          \"minute\": 46,\n" +
-                "          \"second\": 9\n" +
-                "        }\n" +
-                "    },\n" +
-                "    \"bizPrcgDt\": {\n" +
+                "      \"dateTime\": {\n" +
                 "        \"date\": {\n" +
                 "          \"year\": 2021,\n" +
                 "          \"month\": 5,\n" +
@@ -1111,8 +1125,23 @@ public class AbstractMxJsonTestAdapters {
                 "        \"time\": {\n" +
                 "          \"hour\": 20,\n" +
                 "          \"minute\": 45,\n" +
-                "          \"second\": 31\n" +
+                "          \"second\": 43\n" +
                 "        }\n" +
+                "      }\n" +
+                "    },\n" +
+                "    \"bizPrcgDt\": {\n" +
+                "      \"dateTime\": {\n" +
+                "        \"date\": {\n" +
+                "          \"year\": 2021,\n" +
+                "          \"month\": 5,\n" +
+                "          \"day\": 8\n" +
+                "        },\n" +
+                "        \"time\": {\n" +
+                "          \"hour\": 20,\n" +
+                "          \"minute\": 45,\n" +
+                "          \"second\": 43\n" +
+                "        }\n" +
+                "      }\n" +
                 "    },\n" +
                 "    \"namespace\": \"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\"\n" +
                 "  },\n" +
@@ -1133,7 +1162,6 @@ public class AbstractMxJsonTestAdapters {
 
     @Test
     public void testJSONYearMonth() {
-
         String jsonTimeAndDate = "{\n" +
                 "  \"acctHldgInfReq\": {\n" +
                 "    \"msgRef\": {\n" +
