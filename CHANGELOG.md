@@ -1,6 +1,6 @@
 # Prowide ISO 20022 - CHANGELOG
 
-#### 10.0.1 - SNAPSHOT
+#### 10.0.1 - June 2023
   * Added custom Gson adapters to marshall and unmarshall ISO Date and Time elements (needed for Java 17+ compatibility) 
   * Make the default IsoDateAdapter more flexible by ignoring the offset or time information when unmarshalling into LocalDate objects
   * Enhanced the OffsetDateTimeAdapter and OffsetTimeAdapter to support variable optional seconds precision

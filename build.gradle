@@ -33,7 +33,7 @@ project.ext {
 //		versionSeparator = '-'
 //	}
 //}
-version = 'SRU2022-10.0.1-SNAPSHOT'
+version = 'SRU2022-10.0.1'
 
 allprojects {
 
