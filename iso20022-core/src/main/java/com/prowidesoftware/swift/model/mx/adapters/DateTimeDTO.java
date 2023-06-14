@@ -18,40 +18,38 @@ package com.prowidesoftware.swift.model.mx.adapters;
 /**
  * @since 10.0.1
  */
-class DateTimeObject {
+class DateTimeDTO {
+    DateDTO date;
+    TimeDTO time;
 
-    Date date;
-    TimeObject time;
-
-    DateTimeObject(Date date, TimeObject time) {
+    DateTimeDTO(DateDTO date, TimeDTO time) {
         this.date = date;
         this.time = time;
     }
 
-    static class Date {
+    static class DateDTO {
         int year;
         int month;
         int day;
 
-        Date(int year, int month, int day) {
+        DateDTO(int year, int month, int day) {
             this.year = year;
             this.month = month;
             this.day = day;
         }
     }
 
-    static class TimeObject {
+    static class TimeDTO {
        int hour;
        int minute;
        int second;
        Integer nano;
 
-        TimeObject(int hour, int minute, int second, int nano) {
+        TimeDTO(int hour, int minute, int second, int nano) {
             this.hour = hour;
             this.minute = minute;
             this.second = second;
             this.nano = nano;
         }
-
     }
 }

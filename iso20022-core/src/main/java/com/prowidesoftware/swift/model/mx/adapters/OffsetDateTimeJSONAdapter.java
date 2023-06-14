@@ -33,63 +33,61 @@ public class OffsetDateTimeJSONAdapter implements JsonSerializer<OffsetDateTime>
 
     private static final Logger log = Logger.getLogger(OffsetDateTimeJSONAdapter.class.getName());
 
-    private static final Gson gson = new Gson();
+    Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
 
     @Override
     public JsonElement serialize(OffsetDateTime offsetDateTime, Type type, JsonSerializationContext jsonSerializationContext) {
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-
-        DateTimeObject.Date date = new DateTimeObject.Date(
+        DateTimeDTO.DateDTO date = new DateTimeDTO.DateDTO(
                 offsetDateTime.getYear(),
                 offsetDateTime.getMonthValue(),
                 offsetDateTime.getDayOfMonth()
         );
 
-        DateTimeObject.TimeObject time = new DateTimeObject.TimeObject(
+        DateTimeDTO.TimeDTO time = new DateTimeDTO.TimeDTO(
                 offsetDateTime.getHour(),
                 offsetDateTime.getMinute(),
                 offsetDateTime.getSecond(),
                 offsetDateTime.getNano()
         );
 
-        OffsetObject offsetObject = new OffsetObject(offsetDateTime.getOffset().getTotalSeconds());
+        OffsetDTO offsetDTO = new OffsetDTO(offsetDateTime.getOffset().getTotalSeconds());
 
-        DateTimeObject dateTimeObject = new DateTimeObject(date, time);
-        DateTimeModel dateTimeModel = new DateTimeModel(dateTimeObject, offsetObject);
-        return gson.toJsonTree(dateTimeModel, DateTimeModel.class);
+        DateTimeDTO dateTimeDTO = new DateTimeDTO(date, time);
+        DateTimeOffsetDTO dateTimeOffsetDTO = new DateTimeOffsetDTO(dateTimeDTO, offsetDTO);
+        return gson.toJsonTree(dateTimeOffsetDTO, DateTimeOffsetDTO.class);
     }
 
     @Override
     public OffsetDateTime deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) {
         try {
             //Parse DTO model
-            DateTimeModel dateTimeModel = gson.fromJson(jsonElement, DateTimeModel.class);
+            DateTimeOffsetDTO dateTimeOffsetDTO = gson.fromJson(jsonElement, DateTimeOffsetDTO.class);
 
             //Prepare OffsetDateTime
             OffsetDateTime offsetDateTime;
             int nano = 0;
-            if (dateTimeModel.dateTime.time.nano != null) {
-                nano = dateTimeModel.dateTime.time.nano;
+            if (dateTimeOffsetDTO.dateTime.time.nano != null) {
+                nano = dateTimeOffsetDTO.dateTime.time.nano;
             }
 
-            if (dateTimeModel.offset != null) {
-                ZoneOffset zoneoffset = ZoneOffset.ofTotalSeconds(dateTimeModel.offset.totalSeconds);
-                offsetDateTime = OffsetDateTime.of(dateTimeModel.dateTime.date.year,
-                        dateTimeModel.dateTime.date.month,
-                        dateTimeModel.dateTime.date.day,
-                        dateTimeModel.dateTime.time.hour,
-                        dateTimeModel.dateTime.time.minute,
-                        dateTimeModel.dateTime.time.second,
+            if (dateTimeOffsetDTO.offset != null) {
+                ZoneOffset zoneoffset = ZoneOffset.ofTotalSeconds(dateTimeOffsetDTO.offset.totalSeconds);
+                offsetDateTime = OffsetDateTime.of(dateTimeOffsetDTO.dateTime.date.year,
+                        dateTimeOffsetDTO.dateTime.date.month,
+                        dateTimeOffsetDTO.dateTime.date.day,
+                        dateTimeOffsetDTO.dateTime.time.hour,
+                        dateTimeOffsetDTO.dateTime.time.minute,
+                        dateTimeOffsetDTO.dateTime.time.second,
                         nano,
                         zoneoffset);
             } else {
-                LocalDateTime localDateTime = LocalDateTime.of(dateTimeModel.dateTime.date.year,
-                        dateTimeModel.dateTime.date.month,
-                        dateTimeModel.dateTime.date.day,
-                        dateTimeModel.dateTime.time.hour,
-                        dateTimeModel.dateTime.time.minute,
-                        dateTimeModel.dateTime.time.second,
+                LocalDateTime localDateTime = LocalDateTime.of(dateTimeOffsetDTO.dateTime.date.year,
+                        dateTimeOffsetDTO.dateTime.date.month,
+                        dateTimeOffsetDTO.dateTime.date.day,
+                        dateTimeOffsetDTO.dateTime.time.hour,
+                        dateTimeOffsetDTO.dateTime.time.minute,
+                        dateTimeOffsetDTO.dateTime.time.second,
                         nano);
 
                 ZoneId zoneId = ZoneOffset.systemDefault();

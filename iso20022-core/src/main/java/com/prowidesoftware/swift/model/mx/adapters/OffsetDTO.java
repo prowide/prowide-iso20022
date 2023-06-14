@@ -18,10 +18,10 @@ package com.prowidesoftware.swift.model.mx.adapters;
 /**
  * @since 10.0.1
  */
-public class OffsetObject {
+public class OffsetDTO {
     int totalSeconds;
 
-    OffsetObject(int totalSeconds) {
+    OffsetDTO(int totalSeconds) {
         this.totalSeconds = totalSeconds;
     }
 }

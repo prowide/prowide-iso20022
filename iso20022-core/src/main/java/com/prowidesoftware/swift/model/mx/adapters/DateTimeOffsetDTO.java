@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,22 +15,15 @@
  */
 package com.prowidesoftware.swift.model.mx.adapters;
 
-import jakarta.xml.bind.annotation.adapters.XmlAdapter;
+/**
+ * @since 10.0.1
+ */
+class DateTimeOffsetDTO {
+    DateTimeDTO dateTime;
+    OffsetDTO offset;
 
-import java.time.LocalDate;
-import java.time.OffsetDateTime;
-import java.util.Calendar;
-
-public class TestCustomDateAdapter extends XmlAdapter<String, LocalDate> {
-
-    @Override
-    public LocalDate unmarshal(String v){
-        return LocalDate.now();
+    DateTimeOffsetDTO(DateTimeDTO dateTime, OffsetDTO offset) {
+        this.dateTime = dateTime;
+        this.offset = offset;
     }
-
-    @Override
-    public String marshal(LocalDate cal) {
-        return "foobar";
-    }
-
 }

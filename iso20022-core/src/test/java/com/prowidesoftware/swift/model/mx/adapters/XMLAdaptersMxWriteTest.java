@@ -21,6 +21,7 @@ import com.prowidesoftware.swift.model.mx.dic.CreditTransferTransactionInformati
 import com.prowidesoftware.swift.model.mx.dic.FIToFICustomerCreditTransferV02;
 import com.prowidesoftware.swift.model.mx.dic.GroupHeader33;
 import com.prowidesoftware.swift.model.mx.dic.SettlementTimeRequest2;
+import jakarta.xml.bind.annotation.adapters.XmlAdapter;
 import org.junit.jupiter.api.Test;
 
 import java.time.*;
@@ -29,7 +30,7 @@ import java.time.temporal.ChronoField;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class MxWriteWithAdaptersTest {
+public class XMLAdaptersMxWriteTest {
     ZoneOffset systemOffset = ZoneOffset.systemDefault().getRules().getOffset(Instant.now());
 
     @Test
@@ -242,6 +243,28 @@ public class MxWriteWithAdaptersTest {
         mx.getFIToFICstmrCdtTrf().getCdtTrfTxInf().get(0).setSttlmTmReq(new SettlementTimeRequest2());
         mx.getFIToFICstmrCdtTrf().getCdtTrfTxInf().get(0).getSttlmTmReq().setCLSTm(offsetTime); // time
         return mx;
+    }
+
+    class TestCustomDateAdapter extends XmlAdapter<String, LocalDate> {
+        @Override
+        public LocalDate unmarshal(String v){
+            return LocalDate.now();
+        }
+        @Override
+        public String marshal(LocalDate cal) {
+            return "foobar";
+        }
+    }
+
+    public class TestCustomDateTimeAdapter extends XmlAdapter<String, OffsetDateTime> {
+        @Override
+        public OffsetDateTime unmarshal(String v){
+            return OffsetDateTime.now();
+        }
+        @Override
+        public String marshal(OffsetDateTime offsetDateTime) {
+            return "foobar";
+        }
     }
 
 }

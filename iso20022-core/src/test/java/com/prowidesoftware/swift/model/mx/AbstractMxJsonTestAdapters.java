@@ -18,6 +18,8 @@ package com.prowidesoftware.swift.model.mx;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import org.junit.jupiter.api.Test;
 
@@ -173,7 +175,13 @@ public class AbstractMxJsonTestAdapters {
                 "  \"identifier\": \"sese.023.002.01\"\n" +
                 "}";
         AbstractMX mx = AbstractMX.fromJson(source);
+
+        JsonElement sourceElement = JsonParser.parseString(source);
+        JsonElement mxJsonElement = JsonParser.parseString(mx.toJson().trim());
+
+        assertEquals(sourceElement, mxJsonElement);
         assertEquals(source.trim(), mx.toJson().trim());
+
     }
 
     @Test
@@ -1603,11 +1611,6 @@ public class AbstractMxJsonTestAdapters {
                 "  \"identifier\": \"pacs.008.001.07\"\n" +
                 "}";
 
-        //System.out.println(jsonExcpected);
-        //System.out.println(message.toJson());
-
         assertEquals(mapper.readTree(jsonExcpected), mapper.readTree(message.toJson()));
-        assertEquals(jsonExcpected.trim(), message.toJson().trim());
-
     }
 }

@@ -30,36 +30,29 @@ import java.util.logging.Logger;
  * @since 10.0.0
  */
 public class OffsetTimeJSONAdapter implements JsonSerializer<OffsetTime>, JsonDeserializer<OffsetTime> {
-    private static final String OFFSET = "offset";
-
-    private static final String TOTAL_SECONDS = "totalSeconds";
-
-    private static final String TIME = "time";
-
     private static final Logger log = Logger.getLogger(OffsetTimeJSONAdapter.class.getName());
 
     private static final Gson gson = new Gson();
 
-
     @Override
     public JsonElement serialize(OffsetTime offsetTime, Type type, JsonSerializationContext jsonSerializationContext) {
-        DateTimeObject.TimeObject timeObject = new DateTimeObject.TimeObject(
+        DateTimeDTO.TimeDTO timeDTO = new DateTimeDTO.TimeDTO(
                 offsetTime.getHour(),
                 offsetTime.getMinute(),
                 offsetTime.getSecond(),
                 offsetTime.getNano()
         );
-        OffsetObject offsetObject = new OffsetObject(offsetTime.getOffset().getTotalSeconds());
+        OffsetDTO offsetDTO = new OffsetDTO(offsetTime.getOffset().getTotalSeconds());
 
-        TimeDTO time = new TimeDTO(timeObject, offsetObject);
-        return gson.toJsonTree(time, TimeDTO.class);
+        TimeObject time = new TimeObject(timeDTO, offsetDTO);
+        return gson.toJsonTree(time, TimeObject.class);
     }
 
     @Override
     public OffsetTime deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) {
         try {
             OffsetTime offsetTime;
-            TimeDTO timeDTO = gson.fromJson(jsonElement, TimeDTO.class);
+            TimeObject timeDTO = gson.fromJson(jsonElement, TimeObject.class);
 
             int nano = 0;
             if (timeDTO.time.nano != null) {
@@ -82,11 +75,11 @@ public class OffsetTimeJSONAdapter implements JsonSerializer<OffsetTime>, JsonDe
         }
     }
 
-    class TimeDTO {
-        private DateTimeObject.TimeObject time;
-        private OffsetObject offset;
+    class TimeObject {
+        private DateTimeDTO.TimeDTO time;
+        private OffsetDTO offset;
 
-        TimeDTO(DateTimeObject.TimeObject time, OffsetObject offset) {
+        TimeObject(DateTimeDTO.TimeDTO time, OffsetDTO offset) {
             this.time = time;
             this.offset = offset;
         }

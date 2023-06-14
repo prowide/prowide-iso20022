@@ -15,15 +15,10 @@
  */
 package com.prowidesoftware.swift.model.mx.adapters;
 
-import com.fasterxml.jackson.databind.util.BeanUtil;
 import com.google.gson.*;
 
 import java.lang.reflect.Type;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.ZoneOffset;
-import java.time.format.DateTimeFormatter;
 
 /**
  * This adapter enables accepting time JSON formats with or without the offset and nanoseconds.
@@ -35,15 +30,15 @@ public class LocalDateJSONAdapter implements JsonSerializer<LocalDate>, JsonDese
     @Override
     public JsonElement serialize(LocalDate localDate, Type typeOfSrc, JsonSerializationContext context) {
         Gson gson = new Gson();
-        DateTimeObject.Date date = new DateTimeObject.Date(localDate.getYear(), localDate.getMonthValue(), localDate.getDayOfMonth());
-        return gson.toJsonTree(date, DateTimeObject.Date.class);
+        DateTimeDTO.DateDTO date = new DateTimeDTO.DateDTO(localDate.getYear(), localDate.getMonthValue(), localDate.getDayOfMonth());
+        return gson.toJsonTree(date, DateTimeDTO.DateDTO.class);
     }
     @Override
     public LocalDate deserialize(final JsonElement jsonElement, final Type typeOfT,
                                  final JsonDeserializationContext context) throws JsonParseException {
 
         Gson gson = new Gson();
-        DateTimeObject.Date date = gson.fromJson(jsonElement, DateTimeObject.Date.class);
+        DateTimeDTO.DateDTO date = gson.fromJson(jsonElement, DateTimeDTO.DateDTO.class);
         return LocalDate.of(date.year, date.month, date.day);
     }
 
