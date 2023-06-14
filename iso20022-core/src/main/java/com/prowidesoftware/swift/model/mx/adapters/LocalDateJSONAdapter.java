@@ -21,7 +21,7 @@ import java.lang.reflect.Type;
 import java.time.LocalDate;
 
 /**
- * This adapter enables accepting time JSON formats with or without the offset and nanoseconds.
+ * This adapter enables accepting LocalDate JSON formats.
  *
  * @since 10.0.0
  */
@@ -41,5 +41,4 @@ public class LocalDateJSONAdapter implements JsonSerializer<LocalDate>, JsonDese
         DateTimeDTO.DateDTO date = gson.fromJson(jsonElement, DateTimeDTO.DateDTO.class);
         return LocalDate.of(date.year, date.month, date.day);
     }
-
 }
