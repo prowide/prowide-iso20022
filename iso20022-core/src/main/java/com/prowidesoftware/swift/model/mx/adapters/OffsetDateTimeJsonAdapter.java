@@ -22,38 +22,35 @@ import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.time.ZoneId;
 import java.time.ZoneOffset;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
  * This adapter enables accepting OffsetDateTime time Json format.
  *
- * @since 10.0.0
+ * @since 10.0.1
  */
 public class OffsetDateTimeJsonAdapter implements JsonSerializer<OffsetDateTime>, JsonDeserializer<OffsetDateTime> {
-
     private static final Logger log = Logger.getLogger(OffsetDateTimeJsonAdapter.class.getName());
 
-    Gson gson = new GsonBuilder().setPrettyPrinting().create();
+    private final Gson gson = new Gson();
 
     @Override
     public JsonElement serialize(OffsetDateTime offsetDateTime, Type type, JsonSerializationContext jsonSerializationContext) {
-        DateTimeDTO.DateDTO date = new DateTimeDTO.DateDTO(
-                offsetDateTime.getYear(),
-                offsetDateTime.getMonthValue(),
-                offsetDateTime.getDayOfMonth()
-        );
+        DateTimeOffsetDTO dateTimeOffsetDTO = new DateTimeOffsetDTO();
 
-        DateTimeDTO.TimeDTO time = new DateTimeDTO.TimeDTO(
-                offsetDateTime.getHour(),
-                offsetDateTime.getMinute(),
-                offsetDateTime.getSecond(),
-                offsetDateTime.getNano()
-        );
+        dateTimeOffsetDTO.dateTime.date.year = offsetDateTime.getYear();
+        dateTimeOffsetDTO.dateTime.date.month = offsetDateTime.getMonthValue();
+        dateTimeOffsetDTO.dateTime.date.day = offsetDateTime.getDayOfMonth();
+        dateTimeOffsetDTO.dateTime.time.hour = offsetDateTime.getHour();
+        dateTimeOffsetDTO.dateTime.time.minute = offsetDateTime.getMinute();
+        dateTimeOffsetDTO.dateTime.time.second = offsetDateTime.getSecond();
+        dateTimeOffsetDTO.dateTime.time.nano = offsetDateTime.getNano();
+        if (offsetDateTime.getOffset() != null) {
+            dateTimeOffsetDTO.offset = new OffsetDTO();
+            dateTimeOffsetDTO.offset.totalSeconds = offsetDateTime.getOffset().getTotalSeconds();
+        }
 
-        OffsetDTO offsetDTO = new OffsetDTO(offsetDateTime.getOffset().getTotalSeconds());
-
-        DateTimeDTO dateTimeDTO = new DateTimeDTO(date, time);
-        DateTimeOffsetDTO dateTimeOffsetDTO = new DateTimeOffsetDTO(dateTimeDTO, offsetDTO);
         return gson.toJsonTree(dateTimeOffsetDTO, DateTimeOffsetDTO.class);
     }
 
@@ -95,9 +92,36 @@ public class OffsetDateTimeJsonAdapter implements JsonSerializer<OffsetDateTime>
 
             return offsetDateTime;
         } catch (Exception e) {
-            log.finest("Cannot parse dateTime format" + e.getMessage());
-            e.printStackTrace();
+            log.log(Level.FINEST, "Cannot parse JSON into OffsetDateTime: " + e.getMessage(), e);
             return null;
         }
     }
+
+    static class DateTimeOffsetDTO {
+        DateTimeDTO dateTime = new DateTimeDTO();
+        OffsetDTO offset;
+    }
+
+    static class DateTimeDTO {
+        DateDTO date = new DateDTO();
+        TimeDTO time = new TimeDTO();
+    }
+
+    static class DateDTO {
+        Integer year;
+        Integer month;
+        Integer day;
+    }
+
+    static class TimeDTO {
+        Integer hour = 0;
+        Integer minute = 0;
+        Integer second = 0;
+        Integer nano = 0;
+    }
+
+    static class OffsetDTO {
+        Integer totalSeconds = 0;
+    }
+
 }

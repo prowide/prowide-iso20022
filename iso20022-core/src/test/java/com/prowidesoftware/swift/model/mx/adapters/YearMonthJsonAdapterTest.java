@@ -15,13 +15,33 @@
  */
 package com.prowidesoftware.swift.model.mx.adapters;
 
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 import com.prowidesoftware.swift.model.mx.MxAcmt03400104;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import java.time.YearMonth;
 
-public class JsonAdapterYearMonthTest {
+import static org.junit.jupiter.api.Assertions.*;
+
+public class YearMonthJsonAdapterTest {
+
+    private final YearMonthJsonAdapter adapter = new YearMonthJsonAdapter();
+
+    @Test
+    void testSerializationAndDeserialization() {
+        testSerializationAndDeserializationImpl("{\"year\":2019,\"month\":4}");
+        testSerializationAndDeserializationImpl("{\"year\":2019,\"month\":1}");
+        testSerializationAndDeserializationImpl("{\"year\":2019,\"month\":12}");
+        testSerializationAndDeserializationImpl("{\"year\":1983,\"month\":7}");
+    }
+
+    private void testSerializationAndDeserializationImpl(String json) {
+        JsonElement jsonElement = new JsonParser().parse(json);
+        YearMonth yearMonth = adapter.deserialize(jsonElement, null, null);
+        JsonElement valueDateResult = adapter.serialize(yearMonth, null, null);
+        assertEquals(json, valueDateResult.toString());
+    }
 
     @Test
     public void testYear_CustomPattern() {
@@ -50,4 +70,5 @@ public class JsonAdapterYearMonthTest {
         final String jsonParsed = mx.toJson();
         assertTrue(jsonParsed.contains("\"year\": 2022"));
     }
+
 }

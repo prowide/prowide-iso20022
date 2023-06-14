@@ -30,7 +30,7 @@ import java.time.temporal.ChronoField;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class XMLAdaptersMxWriteTest {
+public class MxWriteAdaptersTest {
     ZoneOffset systemOffset = ZoneOffset.systemDefault().getRules().getOffset(Instant.now());
 
     @Test

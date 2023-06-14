@@ -11,7 +11,7 @@ import java.time.format.DateTimeFormatter;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class XMLAdapterLocalDateTest {
+class LocalDateAdapterTest {
 
     @Test
     void testLocalDate() throws Exception {

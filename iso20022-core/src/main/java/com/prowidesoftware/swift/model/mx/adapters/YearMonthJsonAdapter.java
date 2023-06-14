@@ -19,23 +19,20 @@ import com.google.gson.*;
 
 import java.lang.reflect.Type;
 import java.time.YearMonth;
-import java.util.logging.Logger;
 
 /**
  * This adapter enables accepting YearMonth time Json format.
  *
- * @since 10.0.0
+ * @since 10.0.1
  */
 public class YearMonthJsonAdapter implements JsonSerializer<YearMonth>, JsonDeserializer<YearMonth> {
-    private static final Logger log = Logger.getLogger(YearMonthJsonAdapter.class.getName());
-
-    private static final Gson gson = new Gson();
+    private final Gson gson = new Gson();
 
     @Override
     public JsonElement serialize(YearMonth yearMonth, Type type, JsonSerializationContext jsonSerializationContext) {
         YearMonthJsonDTO yearJsonDTO = new YearMonthJsonDTO();
-        yearJsonDTO.year=yearMonth.getYear();
-        yearJsonDTO.month=yearMonth.getMonth().getValue();
+        yearJsonDTO.year = yearMonth.getYear();
+        yearJsonDTO.month = yearMonth.getMonth().getValue();
         return gson.toJsonTree(yearJsonDTO, YearMonthJsonDTO.class);
     }
 
@@ -49,4 +46,5 @@ public class YearMonthJsonAdapter implements JsonSerializer<YearMonth>, JsonDese
         int year;
         int month;
     }
+
 }

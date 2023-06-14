@@ -19,22 +19,19 @@ import com.google.gson.*;
 
 import java.lang.reflect.Type;
 import java.time.Year;
-import java.util.logging.Logger;
 
 /**
  * This adapter enables accepting Year time Json format.
  *
- * @since 10.0.0
+ * @since 10.0.1
  */
 public class YearJsonAdapter implements JsonSerializer<Year>, JsonDeserializer<Year> {
-    private static final Logger log = Logger.getLogger(YearJsonAdapter.class.getName());
-
-    private static final Gson gson = new Gson();
+    private final Gson gson = new Gson();
 
     @Override
     public JsonElement serialize(Year year, Type type, JsonSerializationContext jsonSerializationContext) {
         YearJsonDTO yearJsonDTO = new YearJsonDTO();
-        yearJsonDTO.year=year.getValue();
+        yearJsonDTO.year = year.getValue();
         return gson.toJsonTree(yearJsonDTO, YearJsonDTO.class);
     }
 

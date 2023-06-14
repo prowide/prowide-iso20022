@@ -23,22 +23,32 @@ import java.time.LocalDate;
 /**
  * This adapter enables accepting LocalDate time Json format.
  *
- * @since 10.0.0
+ * @since 10.0.1
  */
 public class LocalDateJsonAdapter implements JsonSerializer<LocalDate>, JsonDeserializer<LocalDate> {
 
+    private final Gson gson = new Gson();
+
     @Override
     public JsonElement serialize(LocalDate localDate, Type typeOfSrc, JsonSerializationContext context) {
-        Gson gson = new Gson();
-        DateTimeDTO.DateDTO date = new DateTimeDTO.DateDTO(localDate.getYear(), localDate.getMonthValue(), localDate.getDayOfMonth());
-        return gson.toJsonTree(date, DateTimeDTO.DateDTO.class);
+        DateDTO date = new DateDTO();
+        date.year = localDate.getYear();
+        date.month = localDate.getMonthValue();
+        date.day = localDate.getDayOfMonth();
+        return gson.toJsonTree(date, DateDTO.class);
     }
+
     @Override
     public LocalDate deserialize(final JsonElement jsonElement, final Type typeOfT,
                                  final JsonDeserializationContext context) throws JsonParseException {
-
-        Gson gson = new Gson();
-        DateTimeDTO.DateDTO date = gson.fromJson(jsonElement, DateTimeDTO.DateDTO.class);
+        DateDTO date = gson.fromJson(jsonElement, DateDTO.class);
         return LocalDate.of(date.year, date.month, date.day);
     }
+
+    static class DateDTO {
+        Integer year;
+        Integer month;
+        Integer day;
+    }
+
 }

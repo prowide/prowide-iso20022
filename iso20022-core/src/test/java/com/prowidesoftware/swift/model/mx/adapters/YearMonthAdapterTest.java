@@ -25,7 +25,7 @@ import java.time.format.DateTimeFormatter;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class XMLAdapterYearMonthTest {
+public class YearMonthAdapterTest {
 
     @Test
     public void testYearMonth() {

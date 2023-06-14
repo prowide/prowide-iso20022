@@ -22,7 +22,7 @@ import java.time.format.DateTimeFormatter;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class XMLAdapterOffsetTimeTest {
+public class OffsetTimeAdapterTest {
 
     private OffsetTimeAdapter adapter = new OffsetTimeAdapter();
 
