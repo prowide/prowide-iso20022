@@ -15,14 +15,11 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
-import com.google.gson.Gson;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.time.OffsetDateTime;
-import java.time.format.DateTimeFormatter;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -34,7 +31,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class AbstractMxJsonTestAdapters {
 
     @Test
-    public void testMxJson() {
+    public void testMxPain00100108_toJson_fromJson_With_OffsetDateTime() {
         MxPain00100108 mx = new MxPain00100108();
         mx.setCstmrCdtTrfInitn(new CustomerCreditTransferInitiationV08());
         mx.getCstmrCdtTrfInitn().setGrpHdr(new GroupHeader48());
@@ -42,7 +39,7 @@ public class AbstractMxJsonTestAdapters {
         mx.getCstmrCdtTrfInitn().getGrpHdr().setCtrlSum(new BigDecimal("1234.56"));
         mx.getCstmrCdtTrfInitn().getGrpHdr().setMsgId("MYID");
 
-        OffsetDateTime offsetDateTime = null;
+        OffsetDateTime offsetDateTime = OffsetDateTime.now();
         mx.getCstmrCdtTrfInitn().getGrpHdr().setCreDtTm(offsetDateTime);
         mx.getCstmrCdtTrfInitn().getGrpHdr().setNbOfTxs("1");
 
@@ -61,17 +58,11 @@ public class AbstractMxJsonTestAdapters {
         assertPain00100108(mx, offsetDateTime);
         //System.out.println(mx.message());
 
-        /*
-         * to JSON
-         */
+        //toJson()
         final String json = mx.toJson();
-        //System.out.println(json);
 
-        /*
-         * Mx class from JSON
-         */
+        //fromJson()
         MxPain00100108 mx2 = MxPain00100108.fromJson(json);
-        //System.out.println(mx2.message());
         assertPain00100108(mx2, offsetDateTime);
 
         /*
@@ -95,7 +86,7 @@ public class AbstractMxJsonTestAdapters {
     }
 
     @Test
-    public void testMxJson2() {
+    public void testMxCamt05300106_toJson_fromJson_With_OffsetDateTime() {
         MxCamt05300106 mx = new MxCamt05300106();
         mx.setBkToCstmrStmt(new BankToCustomerStatementV06());
 
@@ -110,26 +101,16 @@ public class AbstractMxJsonTestAdapters {
         mx.getBkToCstmrStmt().getStmt().get(1).getAcct().setNm("account 2");
 
         assertCamt05300106(mx);
-        //System.out.println(mx.message());
 
-        /*
-         * to JSON
-         */
+        //toJson
         final String json = mx.toJson();
-        //System.out.println(json);
 
-        /*
-         * Mx class from JSON
-         */
+        //fromJson with MxCamt05300106
         MxCamt05300106 mx2 = MxCamt05300106.fromJson(json);
-        //System.out.println(mx2.message());
         assertCamt05300106(mx2);
 
-        /*
-         * Generic class from JSON
-         */
+        //fromJson casting to (MxCamt05300106)
         MxCamt05300106 mx3 = (MxCamt05300106) AbstractMX.fromJson(json);
-        //System.out.println(mx2.message());
         assertCamt05300106(mx3);
     }
 
@@ -1267,20 +1248,4 @@ public class AbstractMxJsonTestAdapters {
         BusinessAppHdrV02 businessAppHdrV02 = (BusinessAppHdrV02) mx.getAppHdr();
         assertNotNull(businessAppHdrV02);
     }
-
-    @Test
-    public void testGson() {
-        Gson gson = new Gson();
-        System.out.println(gson.toJson(LocalDate.now().getMonth()));
-
-        //OffsetDateTime: {"dateTime":{"date":{"year":2021,"month":5,"day":8},"time":{"hour":21,"minute":48,"second":39,"nano":61498000}},"offset":{"totalSeconds":7200}}
-        //LocalDateTime : {"date":{"year":2021,"month":5,"day":8},"time":{"hour":21,"minute":49,"second":48,"nano":279285000}}
-        //OffsetTime    : {"time":{"hour":21,"minute":49,"second":20,"nano":212849000},"offset":{"totalSeconds":7200}}
-        //LocalTime     : {"hour":21,"minute":50,"second":25,"nano":863749000}
-        //Year          : {"year":2021}
-        //YearMonth     : {"year":2021,"month":5}
-        //Month         : "MAY"
-    }
-
-
 }

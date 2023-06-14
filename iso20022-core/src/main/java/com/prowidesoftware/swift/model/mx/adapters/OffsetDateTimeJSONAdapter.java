@@ -34,8 +34,6 @@ public class OffsetDateTimeJSONAdapter implements JsonSerializer<OffsetDateTime>
 
     private static final String TOTAL_SECONDS = "totalSeconds";
 
-    private static final String DATETIME = "dateTime";
-
     private static final Logger log = Logger.getLogger(OffsetDateTimeJSONAdapter.class.getName());
 
     private static final Gson gson = new Gson();
@@ -54,12 +52,10 @@ public class OffsetDateTimeJSONAdapter implements JsonSerializer<OffsetDateTime>
             JsonObject obj = jsonElement.getAsJsonObject();
 
             if (obj.get(OFFSET) != null) {
-                //aca esperamos el json entonces como dateTime objeto
                 ZoneOffset zoneoffset = ZoneOffset.ofTotalSeconds(obj.get(OFFSET).getAsJsonObject().get(TOTAL_SECONDS).getAsInt());
                 offsetDateTime = gson.fromJson(obj, OffsetDateTime.class);
                 offsetDateTime = OffsetDateTime.of(offsetDateTime.toLocalDateTime(), zoneoffset);
             } else {
-                //aca esperamos el json entonces como date objeto.Fixear los jsons?
                 LocalDateTime localDateTime = gson.fromJson(obj, LocalDateTime.class);
                 ZoneId zoneId = ZoneOffset.systemDefault();
                 offsetDateTime = localDateTime.atZone(zoneId).toOffsetDateTime();
