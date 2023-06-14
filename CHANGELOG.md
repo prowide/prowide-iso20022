@@ -4,6 +4,8 @@
   * Migration to Java 11
   * Migration to Jakarta EE 10
   * XmlGregorianCalendar was replaced model-wide by the new java.time classes
+  * Fixed AppHdrFactory creation to use UTC in the header default creation date time
+  * Fixed the business application header V01 serialization to use Zulu time indicator instead of +00:00 offset
 
 #### 9.4.0 - May 2022
   * SWIFT Standard release update 2023 (live 19 November 2023)

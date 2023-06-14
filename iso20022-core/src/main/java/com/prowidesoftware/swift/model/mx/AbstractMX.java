@@ -25,8 +25,7 @@ import com.prowidesoftware.swift.model.AbstractMessage;
 import com.prowidesoftware.swift.model.MessageStandardType;
 import com.prowidesoftware.swift.model.MxId;
 import com.prowidesoftware.swift.model.mt.AbstractMT;
-import com.prowidesoftware.swift.model.mx.adapters.OffsetDateTimeJSONAdapter;
-import com.prowidesoftware.swift.model.mx.adapters.OffsetTimeJSONAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.*;
 import com.prowidesoftware.swift.utils.Lib;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.annotation.XmlTransient;
@@ -43,8 +42,7 @@ import javax.xml.transform.dom.DOMResult;
 import javax.xml.transform.stream.StreamSource;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
-import java.time.OffsetDateTime;
-import java.time.OffsetTime;
+import java.time.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -240,10 +238,7 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
      * @since 7.10.3
      */
     protected static <T> T fromJson(String json, Class<T> classOfT) {
-        final Gson gson = new GsonBuilder()
-                .registerTypeAdapter(AbstractMX.class, new AbstractMXAdapter())
-                .registerTypeAdapter(AppHdr.class, new AppHdrAdapter())
-                .create();
+        final Gson gson = getGsonBuilderWithCustomAdapters();
         return gson.fromJson(json, classOfT);
     }
 
@@ -255,12 +250,7 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
      * @since 7.10.3
      */
     public static AbstractMX fromJson(String json) {
-        final Gson gson = new GsonBuilder()
-                .registerTypeAdapter(AbstractMX.class, new AbstractMXAdapter())
-                .registerTypeAdapter(OffsetDateTime.class, new OffsetDateTimeJSONAdapter())
-                .registerTypeAdapter(OffsetTime.class, new OffsetTimeJSONAdapter())
-                .registerTypeAdapter(AppHdr.class, new AppHdrAdapter())
-                .create();
+        final Gson gson = getGsonBuilderWithCustomAdapters();
         return gson.fromJson(json, AbstractMX.class);
     }
 
@@ -611,13 +601,23 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
      */
     @Override
     public String toJson() {
+        // we use AbstractMX and not this.getClass() in order to force usage of the adapter
+        final Gson gson = getGsonBuilderWithCustomAdapters();
+        return gson.toJson(this, AbstractMX.class);
+    }
+
+    private static Gson getGsonBuilderWithCustomAdapters() {
         final Gson gson = new GsonBuilder()
                 .registerTypeAdapter(AbstractMX.class, new AbstractMXAdapter())
+                .registerTypeAdapter(OffsetDateTime.class, new OffsetDateTimeJsonAdapter())
+                .registerTypeAdapter(OffsetTime.class, new OffsetTimeJsonAdapter())
+                .registerTypeAdapter(LocalDate.class, new LocalDateJsonAdapter())
+                .registerTypeAdapter(Year.class, new YearJsonAdapter())
+                .registerTypeAdapter(YearMonth.class, new YearMonthJsonAdapter())
                 .registerTypeAdapter(AppHdr.class, new AppHdrAdapter())
                 .setPrettyPrinting()
                 .create();
-        // we use AbstractMX and not this.getClass() in order to force usage of the adapter
-        return gson.toJson(this, AbstractMX.class);
+        return gson;
     }
 
     /**
