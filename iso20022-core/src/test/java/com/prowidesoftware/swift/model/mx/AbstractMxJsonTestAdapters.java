@@ -34,7 +34,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class AbstractMxJsonTestAdapters {
 
     @Test
-    public void testMxJson() {
+    public void testMxPain00100108_toJson_fromJson_With_OffsetDateTime() {
         MxPain00100108 mx = new MxPain00100108();
         mx.setCstmrCdtTrfInitn(new CustomerCreditTransferInitiationV08());
         mx.getCstmrCdtTrfInitn().setGrpHdr(new GroupHeader48());
@@ -61,17 +61,11 @@ public class AbstractMxJsonTestAdapters {
         assertPain00100108(mx, offsetDateTime);
         //System.out.println(mx.message());
 
-        /*
-         * to JSON
-         */
+        //toJson()
         final String json = mx.toJson();
-        //System.out.println(json);
 
-        /*
-         * Mx class from JSON
-         */
+        //fromJson()
         MxPain00100108 mx2 = MxPain00100108.fromJson(json);
-        //System.out.println(mx2.message());
         assertPain00100108(mx2, offsetDateTime);
 
         /*
@@ -95,7 +89,7 @@ public class AbstractMxJsonTestAdapters {
     }
 
     @Test
-    public void testMxJson2() {
+    public void testMxCamt05300106_toJson_fromJson_With_OffsetDateTime() {
         MxCamt05300106 mx = new MxCamt05300106();
         mx.setBkToCstmrStmt(new BankToCustomerStatementV06());
 
@@ -110,26 +104,16 @@ public class AbstractMxJsonTestAdapters {
         mx.getBkToCstmrStmt().getStmt().get(1).getAcct().setNm("account 2");
 
         assertCamt05300106(mx);
-        //System.out.println(mx.message());
 
-        /*
-         * to JSON
-         */
+        //toJson
         final String json = mx.toJson();
-        //System.out.println(json);
 
-        /*
-         * Mx class from JSON
-         */
+        //fromJson with MxCamt05300106
         MxCamt05300106 mx2 = MxCamt05300106.fromJson(json);
-        //System.out.println(mx2.message());
         assertCamt05300106(mx2);
 
-        /*
-         * Generic class from JSON
-         */
+        //fromJson casting to (MxCamt05300106)
         MxCamt05300106 mx3 = (MxCamt05300106) AbstractMX.fromJson(json);
-        //System.out.println(mx2.message());
         assertCamt05300106(mx3);
     }
 
@@ -1610,4 +1594,5 @@ public class AbstractMxJsonTestAdapters {
         assertEquals(jsonExcpected.trim(), message.toJson().trim());
 
     }
+
 }
