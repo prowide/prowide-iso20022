@@ -1,6 +1,6 @@
 # Prowide ISO 20022 - CHANGELOG
 
-#### 10.1.0 - SNAPSHOT
+#### 10.1.0 - June 2023
   * Migration to Java 11
   * Migration to Jakarta EE 10
   * XmlGregorianCalendar was replaced model-wide by the new java.time classes

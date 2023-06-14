@@ -31,7 +31,7 @@ scmVersion {
 		versionSeparator = '-'
 	}
 }
-project.version = "${SRU}-10.1.0-SNAPSHOT"
+project.version = "${SRU}-10.1.0"
 
 project.ext {
 	nexusRepo = project.version.endsWith('-SNAPSHOT') ? 'maven-snapshots' : 'maven-releases'
@@ -43,7 +43,7 @@ scmVersion {
 		versionSeparator = '-'
 	}
 }
-version = 'SRU2023-10.1.0-SNAPSHOT'
+version = 'SRU2023-10.1.0'
 
 allprojects {
 
@@ -103,6 +103,8 @@ subprojects {
 		implementation 'org.apache.commons:commons-lang3:3.12.0'
 		implementation 'com.google.code.gson:gson:2.9.0'
 		implementation 'com.sun.xml.bind:jaxb-impl:4.0.2'
+		// bind-api is included transitively by jaxb-impl
+		// implementation 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.0'
 	}
 
 	tasks.withType(Jar) {
@@ -123,9 +125,14 @@ configure(subprojects.findAll {it.name.endsWith('-mx')}) {
 	dependencies {
 		api project(':iso20022-core')
 		implementation project(specificTypesProject)
+
 		implementation 'org.apache.commons:commons-lang3:3.12.0'
 		implementation 'com.google.code.gson:gson:2.9.0'
+
 		implementation 'com.sun.xml.bind:jaxb-impl:4.0.2'
+		// bind-api is included transitively by jaxb-impl
+		// implementation 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.0'
+
 		compileOnly 'javax.persistence:javax.persistence-api:2.2'
 	}
 }
@@ -140,9 +147,7 @@ configure(subprojects.findAll {it.name.endsWith('-mx')}) {
 project(':iso20022-core') {
 	dependencies {
 		// included build
-		api 'com.prowidesoftware:pw-swift-core:SRU2023-10.1.0-SNAPSHOT'
-
-
+		api 'com.prowidesoftware:pw-swift-core:SRU2023-10.1.0'
 
 		implementation 'org.apache.commons:commons-lang3:3.12.0'
 		implementation 'com.google.code.gson:gson:2.9.0'
@@ -300,7 +305,7 @@ artifacts {
 dependencies {
 	// included build (keep in sync with the latest Prowide Core version)
 
-	api 'com.prowidesoftware:pw-swift-core:SRU2023-10.1.0-SNAPSHOT'
+	api 'com.prowidesoftware:pw-swift-core:SRU2023-10.1.0'
 
 	// included transitive dependencies from Prowide Core
 	//implementation 'org.apache.commons:commons-lang3:3.12.0'
