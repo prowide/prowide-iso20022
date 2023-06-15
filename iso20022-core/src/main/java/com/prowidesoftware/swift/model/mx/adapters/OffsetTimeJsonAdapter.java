@@ -18,7 +18,6 @@ package com.prowidesoftware.swift.model.mx.adapters;
 import com.google.gson.*;
 
 import java.lang.reflect.Type;
-import java.time.Instant;
 import java.time.LocalTime;
 import java.time.OffsetTime;
 import java.time.ZoneOffset;
@@ -65,7 +64,7 @@ public class OffsetTimeJsonAdapter implements JsonSerializer<OffsetTime>, JsonDe
                 offsetTime = OffsetTime.of(timeDTO.time.hour, timeDTO.time.minute, timeDTO.time.second, nano, zoneoffset);
             } else {
                 LocalTime localTime = LocalTime.of(timeDTO.time.hour, timeDTO.time.minute, timeDTO.time.second, nano);
-                offsetTime = localTime.atOffset(ZoneOffset.systemDefault().getRules().getStandardOffset(Instant.now()));
+                offsetTime = localTime.atOffset(OffsetTime.now().getOffset());
             }
 
             return offsetTime;
