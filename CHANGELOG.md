@@ -1,5 +1,8 @@
 # Prowide ISO 20022 - CHANGELOG
 
+#### 9.3.7 - SNAPSHOT
+  * (PW-1392) Fixed the default escape handler when serializing model objects into XML, that was duplicated quote characters in the output
+
 #### 9.3.6 - March 2023
   * (GH-74) Added a parameter in the MxWriteParams to define a custom indentation string to use when marshalling into XML
 
