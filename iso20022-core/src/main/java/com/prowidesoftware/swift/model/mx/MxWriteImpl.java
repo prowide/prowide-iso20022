@@ -62,7 +62,7 @@ public class MxWriteImpl implements MxWrite {
      */
     public static String write(String namespace, AbstractMX obj, Class[] classes, MxWriteParams params) {
         Objects.requireNonNull(namespace, "namespace can not be null");
-        Objects.requireNonNull(obj, "MxSwiftMessage can not be null");
+        Objects.requireNonNull(obj, "AbstractMX can not be null");
         Objects.requireNonNull(classes, "Class[] can not be null");
         Objects.requireNonNull(params, "marshalling params cannot be null");
 

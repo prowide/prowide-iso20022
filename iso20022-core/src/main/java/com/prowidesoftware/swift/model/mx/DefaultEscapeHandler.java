@@ -43,7 +43,6 @@ public class DefaultEscapeHandler implements EscapeHandler {
                     } else {
                         sb.append('\"');
                     }
-                    sb.append('\"');
                     break;
                 default:
                     if (arr[i] > '\u007f') {

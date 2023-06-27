@@ -1,6 +1,7 @@
 # Prowide ISO 20022 - CHANGELOG
 
 #### 10.0.2 - SNAPSHOT
+  * (PW-1392) Fixed the default escape handler when serializing model objects into XML, that was duplicated quote characters in the output
   * Fixed the JSON to OffsetTime converter in the OffsetTimeJsonAdapter to handle DST changes
 
 #### 10.0.1 - June 2023
