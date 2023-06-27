@@ -18,7 +18,6 @@ class AppHdrFactoryTest {
         assertEquals("pacs.008.001.08", h.getMsgDefIdr());
 
         final String xml = h.xml();
-        System.out.println(xml);
         // for BAH v01 the date time must be ISONormalisedDateTime
         assertTrue(xml.contains("Z</CreDt>"));
     }

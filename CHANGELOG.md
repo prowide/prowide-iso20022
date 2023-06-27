@@ -1,5 +1,8 @@
 # Prowide ISO 20022 - CHANGELOG
 
+#### 10.1.1 - SNAPSHOT
+  * (PW-1392) Fixed the default escape handler when serializing model objects into XML, that was duplicated quote characters in the output
+
 #### 10.1.0 - June 2023
   * Migration to Java 11
   * Migration to Jakarta EE 10
