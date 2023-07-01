@@ -1,6 +1,6 @@
 # Prowide ISO 20022 - CHANGELOG
 
-#### 10.1.1 - SNAPSHOT
+#### 10.1.1 - July 2023
   * (PW-1392) Fixed the default escape handler when serializing model objects into XML, that was duplicated quote characters in the output
 
 #### 10.1.0 - June 2023
