@@ -1,5 +1,8 @@
 # Prowide ISO 20022 - CHANGELOG
 
+#### 9.3.8-SNAPSHOT
+  * Moved SupplementaryDataUtils from Integrator to ISO20022
+
 #### 9.3.7 - June 2023
   * (PW-1392) Fixed the default escape handler when serializing model objects into XML, that was duplicated quote characters in the output
 
