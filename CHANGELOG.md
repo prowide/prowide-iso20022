@@ -1,5 +1,8 @@
 # Prowide ISO 20022 - CHANGELOG
 
+#### 9.3.8-SNAPSHOT
+  * Added new utility class SupplementaryDataUtils. This class provides utility methods for extracting "SplmtryData" elements from an XML string.
+
 #### 9.3.7 - June 2023
   * (PW-1392) Fixed the default escape handler when serializing model objects into XML, that was duplicated quote characters in the output
 
