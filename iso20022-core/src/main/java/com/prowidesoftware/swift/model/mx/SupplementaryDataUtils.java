@@ -16,6 +16,20 @@ import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The SupplementaryDataUtils class provides utility methods for extracting "SplmtryData" elements
+ * from an XML string.
+ *
+ * <p>This class offers methods to convert an XML string into an XML Document, extract the "SplmtryData"
+ * elements recursively, and convert individual "SplmtryData" elements back to XML strings. The extracted
+ * "SplmtryData" elements are returned as a list of strings.
+ *
+ * <p>Example usage:
+ * <pre>{@code
+ * String xmlData = "<root><SplmtryData>...</SplmtryData><SplmtryData>...</SplmtryData></root>";
+ * List<String> extractedData = SupplementaryDataUtils.extract(xmlData);
+ * }</pre>
+ */
 public class SupplementaryDataUtils {
 
     public static List<String> extract(final String sourceXml) {
