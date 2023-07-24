@@ -37,6 +37,10 @@ project.ext {
 	nexusRepo = project.version.endsWith('-SNAPSHOT') ? 'maven-snapshots' : 'maven-releases'
 }
 
+project.ext {
+	nexusRepo = project.version.endsWith('-SNAPSHOT') ? 'maven-snapshots' : 'maven-releases'
+}
+
 allprojects {
 
 	tasks.withType(JavaCompile) {

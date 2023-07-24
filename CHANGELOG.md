@@ -1,5 +1,8 @@
 # Prowide ISO 20022 - CHANGELOG
 
+#### 10.1.2 - SNAPSHOT
+  * Added new utility class SupplementaryDataUtils to facilitate "SplmtryData" extractino from MX messages
+
 #### 10.1.1 - July 2023
   * (PW-1392) Fixed the default escape handler when serializing model objects into XML, that was duplicated quote characters in the output
 
