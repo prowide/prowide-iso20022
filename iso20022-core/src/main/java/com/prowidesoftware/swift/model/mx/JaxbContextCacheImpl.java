@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,10 +15,10 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
 
 /**
  * Simple cache based on {@link ConcurrentHashMap} without eviction. This implementation is aimed to avoid additional
@@ -84,5 +84,4 @@ public class JaxbContextCacheImpl implements JaxbContextCache {
         }
         return 0;
     }
-
 }

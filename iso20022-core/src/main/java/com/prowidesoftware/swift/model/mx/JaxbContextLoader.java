@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,9 +15,9 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
+import java.util.concurrent.ExecutionException;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
-import java.util.concurrent.ExecutionException;
 
 /**
  * Singleton to parameterize the {@link JaxbContextCache} used when marshalling or unmarshalling MX messages.
@@ -61,7 +61,8 @@ public enum JaxbContextLoader {
      * @param classes      comprehensive list of classes for the context, null or empty to create a context with the messageClass
      * @return the cached or created context for the specific message type
      */
-    public JAXBContext get(final Class messageClass, final Class<?>[] classes) throws JAXBException, ExecutionException {
+    public JAXBContext get(final Class messageClass, final Class<?>[] classes)
+            throws JAXBException, ExecutionException {
         if (cacheImpl != null) {
             return cacheImpl.get(messageClass, classes);
         } else {
@@ -98,5 +99,4 @@ public enum JaxbContextLoader {
     public void setNoCache() {
         this.cacheImpl = null;
     }
-
 }

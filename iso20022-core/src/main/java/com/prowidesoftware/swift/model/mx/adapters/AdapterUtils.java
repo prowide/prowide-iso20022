@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,16 +15,15 @@
  */
 package com.prowidesoftware.swift.model.mx.adapters;
 
-
-import javax.xml.datatype.DatatypeConfigurationException;
-import javax.xml.datatype.DatatypeFactory;
-import javax.xml.datatype.XMLGregorianCalendar;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 /**
  * Reusable code for adapters implementations
@@ -46,7 +45,7 @@ class AdapterUtils {
         try {
             // attempt lexical representation parsing
             return DatatypeFactory.newInstance().newXMLGregorianCalendar(value);
-        } catch (IllegalArgumentException|DatatypeConfigurationException e) {
+        } catch (IllegalArgumentException | DatatypeConfigurationException e) {
             if (log.isLoggable(Level.FINEST)) {
                 log.finest("Error parsing to XMLGregorianCalendar: " + e.getMessage());
             }
@@ -56,12 +55,11 @@ class AdapterUtils {
             GregorianCalendar calendar = new GregorianCalendar();
             calendar.setTime(date);
             return DatatypeFactory.newInstance().newXMLGregorianCalendar(calendar);
-        } catch (ParseException|DatatypeConfigurationException e) {
+        } catch (ParseException | DatatypeConfigurationException e) {
             if (log.isLoggable(Level.FINEST)) {
                 log.finest("Error parsing XMLGregorianCalendar with " + dateFormat.toPattern() + ": " + e.getMessage());
             }
         }
         return null;
     }
-
 }

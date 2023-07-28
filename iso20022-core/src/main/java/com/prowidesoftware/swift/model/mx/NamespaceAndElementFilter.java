@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,13 +15,12 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.apache.commons.lang3.StringUtils;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.XMLFilterImpl;
-
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * This filter enables extraction of a particular element from an XML.
@@ -74,7 +73,8 @@ public class NamespaceAndElementFilter extends XMLFilterImpl {
     }
 
     @Override
-    public void startElement(String namespace, String localName, String prefix, Attributes attributes) throws SAXException {
+    public void startElement(String namespace, String localName, String prefix, Attributes attributes)
+            throws SAXException {
 
         if (inInnerElementToSkip) {
             return;
@@ -106,9 +106,12 @@ public class NamespaceAndElementFilter extends XMLFilterImpl {
     private String resolveNamespaceToPropagate(String namespace) {
         if (StringUtils.equals(this.mainNamespace, namespace)) {
             if (this.unbindNamespace) {
-                // we only propagate elements in the specific main namespace of the parsed element, however we do not propagate the
-                // namespace itself for those elements because we want the content to be unbounded to it. The only other exception
-                // where we propagate the elements is for xsys messages where the messages uses a main namespace plus several
+                // we only propagate elements in the specific main namespace of the parsed element, however we do not
+                // propagate the
+                // namespace itself for those elements because we want the content to be unbounded to it. The only other
+                // exception
+                // where we propagate the elements is for xsys messages where the messages uses a main namespace plus
+                // several
                 // complementary reusable schemas such as "Sw".
                 return "";
             } else {
@@ -122,11 +125,11 @@ public class NamespaceAndElementFilter extends XMLFilterImpl {
     }
 
     private boolean isXsysNamespace(String namespace) {
-        return "urn:swift:snl:ns.Doc".equals(namespace) ||
-                "urn:swift:snl:ns.Sw".equals(namespace) ||
-                "urn:swift:snl:ns.SwGbl".equals(namespace) ||
-                "urn:swift:snl:ns.SwInt".equals(namespace) ||
-                "urn:swift:snl:ns.SwSec".equals(namespace);
+        return "urn:swift:snl:ns.Doc".equals(namespace)
+                || "urn:swift:snl:ns.Sw".equals(namespace)
+                || "urn:swift:snl:ns.SwGbl".equals(namespace)
+                || "urn:swift:snl:ns.SwInt".equals(namespace)
+                || "urn:swift:snl:ns.SwSec".equals(namespace);
     }
 
     @Override
@@ -171,5 +174,4 @@ public class NamespaceAndElementFilter extends XMLFilterImpl {
             }
         }
     }
-
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,14 +15,13 @@
  */
 package com.prowidesoftware.swift.model.mx.adapters;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import javax.xml.datatype.DatatypeFactory;
-import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigDecimal;
 import java.math.BigInteger;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
+import org.junit.jupiter.api.Test;
 
 public class ZonedDateTimeAdapterTest {
 
@@ -68,20 +67,22 @@ public class ZonedDateTimeAdapterTest {
 
     @Test
     public void testMarshallFractionOfSeconds() throws Exception {
-        XMLGregorianCalendar cal = DatatypeFactory.newInstance().newXMLGregorianCalendar(BigInteger.valueOf(2022), 3, 4, 12, 50, 8, new BigDecimal("0.123"), -180);
+        XMLGregorianCalendar cal = DatatypeFactory.newInstance()
+                .newXMLGregorianCalendar(BigInteger.valueOf(2022), 3, 4, 12, 50, 8, new BigDecimal("0.123"), -180);
         assertEquals("2022-03-04T12:50:08.123-03:00", adapter.marshal(cal));
     }
 
     @Test
     public void testMarshallNoFractionOfSeconds() throws Exception {
-        XMLGregorianCalendar cal = DatatypeFactory.newInstance().newXMLGregorianCalendar(BigInteger.valueOf(2022), 3, 4, 12, 50, 8, null, -180);
+        XMLGregorianCalendar cal = DatatypeFactory.newInstance()
+                .newXMLGregorianCalendar(BigInteger.valueOf(2022), 3, 4, 12, 50, 8, null, -180);
         assertEquals("2022-03-04T12:50:08-03:00", adapter.marshal(cal));
     }
 
     @Test
     public void testMarshallNoOffset() throws Exception {
-        XMLGregorianCalendar cal = DatatypeFactory.newInstance().newXMLGregorianCalendar(BigInteger.valueOf(2022), 3, 4, 12, 50, 8, null, -0);
+        XMLGregorianCalendar cal = DatatypeFactory.newInstance()
+                .newXMLGregorianCalendar(BigInteger.valueOf(2022), 3, 4, 12, 50, 8, null, -0);
         assertEquals("2022-03-04T12:50:08+00:00", adapter.marshal(cal));
     }
-
 }

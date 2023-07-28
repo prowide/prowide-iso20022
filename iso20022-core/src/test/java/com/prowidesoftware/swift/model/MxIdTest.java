@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,10 +15,9 @@
  */
 package com.prowidesoftware.swift.model;
 
+import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 public class MxIdTest {
 
@@ -84,5 +83,4 @@ public class MxIdTest {
         assertFalse(id4.matches("pacs.001.002.04"));
         assertFalse(id4.matches("camt.001.001.03"));
     }
-
 }

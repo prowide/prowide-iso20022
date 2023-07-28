@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,16 +15,15 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.utils.TestUtils;
-import org.junit.jupiter.api.Test;
-import org.xmlunit.xpath.JAXPXPathEngine;
-
+import java.io.StringReader;
 import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamSource;
-import java.io.StringReader;
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
+import org.xmlunit.xpath.JAXPXPathEngine;
 
 /**
  * Test cases for reading and writing MX headers
@@ -57,7 +56,7 @@ public class AppHdrTest {
         final String xml = bah.xml();
 
         assertNotNull(xml);
-        //System.out.println(xml);
+        // System.out.println(xml);
         testXpath(xml, "/AppHdr/Fr/FIId/FinInstnId/BICFI", "BIC");
         testXpath(xml, "/AppHdr/Fr/FIId/BrnchId/Id", "id");
         testXpath(xml, "/AppHdr/Fr/FIId/BrnchId/Nm", "name");
@@ -85,7 +84,7 @@ public class AppHdrTest {
         final String xml = bah.xml();
 
         assertNotNull(xml);
-        //System.out.println(xml);
+        // System.out.println(xml);
         testXpath(xml, "/AppHdr/Fr/FIId/FinInstnId/BICFI", "BIC");
         testXpath(xml, "/AppHdr/Fr/FIId/BrnchId/Id", "id");
         testXpath(xml, "/AppHdr/Fr/FIId/BrnchId/Nm", "name");
@@ -207,5 +206,4 @@ public class AppHdrTest {
         h.setCpyDplct(CopyDuplicate1Code.DUPL);
         assertTrue(h.duplicate());
     }
-
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,8 @@ public class AppHdrFactory {
      * @param id        optional MX identification for the MsgDefIdr (message definition identifier) element or null to leave not set
      * @return new header initialized from parameters.
      */
-    public static BusinessAppHdrV01 createBusinessAppHdrV01(final String sender, final String receiver, final String reference, final MxId id) {
+    public static BusinessAppHdrV01 createBusinessAppHdrV01(
+            final String sender, final String receiver, final String reference, final MxId id) {
         BusinessAppHdrV01 h = new BusinessAppHdrV01();
 
         if (sender != null) {
@@ -83,7 +84,8 @@ public class AppHdrFactory {
      * @param id        optional MX identification for the MsgDefIdr (message definition identifier) element or null to leave not set
      * @return new header initialized from parameters.
      */
-    public static BusinessAppHdrV02 createBusinessAppHdrV02(final String sender, final String receiver, final String reference, final MxId id) {
+    public static BusinessAppHdrV02 createBusinessAppHdrV02(
+            final String sender, final String receiver, final String reference, final MxId id) {
         BusinessAppHdrV02 h = new BusinessAppHdrV02();
 
         if (sender != null) {
@@ -126,7 +128,8 @@ public class AppHdrFactory {
      * @return new header initialized from parameters.
      * @since 9.3.4
      */
-    public static BusinessAppHdrV03 createBusinessAppHdrV03(final String sender, final String receiver, final String reference, final MxId id) {
+    public static BusinessAppHdrV03 createBusinessAppHdrV03(
+            final String sender, final String receiver, final String reference, final MxId id) {
         BusinessAppHdrV03 h = new BusinessAppHdrV03();
 
         if (sender != null) {
@@ -168,7 +171,8 @@ public class AppHdrFactory {
      * @param id        optional MX identification for the MsgDefIdr (message definition identifier) element or null to leave not set
      * @return new header initialized from parameters.
      */
-    public static LegacyAppHdr createLegacyAppHdr(final String sender, final String receiver, final String reference, final MxId id) {
+    public static LegacyAppHdr createLegacyAppHdr(
+            final String sender, final String receiver, final String reference, final MxId id) {
         LegacyAppHdr h = new LegacyAppHdr();
 
         if (sender != null) {
@@ -201,8 +205,12 @@ public class AppHdrFactory {
      * @deprecated use {@link #createAppHdr(AppHdrType, String, String, String, MxId)} instead
      */
     @ProwideDeprecated(phase4 = TargetYear.SRU2024)
-    public static AppHdr createLegacyAppHdr(AppHdrType type, final String sender, final String receiver, final String reference, final MxId id) {
-        DeprecationUtils.phase3(AppHdrFactory.class, "createLegacyAppHdr(AppHdrType, String, String, String, MxId)", "Use createAppHdr(AppHdrType, String, String, String, MxId) instead.");
+    public static AppHdr createLegacyAppHdr(
+            AppHdrType type, final String sender, final String receiver, final String reference, final MxId id) {
+        DeprecationUtils.phase3(
+                AppHdrFactory.class,
+                "createLegacyAppHdr(AppHdrType, String, String, String, MxId)",
+                "Use createAppHdr(AppHdrType, String, String, String, MxId) instead.");
         return createAppHdr(type, sender, receiver, reference, id);
     }
 
@@ -216,7 +224,8 @@ public class AppHdrFactory {
      * @return new header initialized from parameters
      * @since 9.1.6
      */
-    public static AppHdr createAppHdr(AppHdrType type, final String sender, final String receiver, final String reference, final MxId id) {
+    public static AppHdr createAppHdr(
+            AppHdrType type, final String sender, final String receiver, final String reference, final MxId id) {
         switch (type) {
             case LEGACY:
                 return createLegacyAppHdr(sender, receiver, reference, id);
@@ -230,5 +239,4 @@ public class AppHdrFactory {
                 throw new ProwideException("Don't know how to create header " + type);
         }
     }
-
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,9 +15,9 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
+import java.util.concurrent.ExecutionException;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
-import java.util.concurrent.ExecutionException;
 
 /**
  * Cache for {@link javax.xml.bind.JAXBContext} instances per message type.
@@ -51,5 +51,4 @@ public interface JaxbContextCache {
      * @throws ExecutionException
      */
     JAXBContext get(final Class messageClass, final Class<?>[] classes) throws JAXBException, ExecutionException;
-
 }

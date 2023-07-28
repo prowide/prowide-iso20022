@@ -1,7 +1,6 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.google.gson.*;
-
 import java.lang.reflect.Type;
 
 /**
@@ -19,7 +18,8 @@ public class AppHdrAdapter implements JsonSerializer<AppHdr>, JsonDeserializer<A
     }
 
     @Override
-    public AppHdr deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
+    public AppHdr deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)
+            throws JsonParseException {
 
         // resolve header implementation class
         JsonElement namespace = json.getAsJsonObject().get(NAMESPACE);
@@ -35,5 +35,4 @@ public class AppHdrAdapter implements JsonSerializer<AppHdr>, JsonDeserializer<A
 
         return context.deserialize(json, type);
     }
-
 }

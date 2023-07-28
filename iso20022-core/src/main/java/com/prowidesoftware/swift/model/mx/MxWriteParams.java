@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.swift.model.mx.adapters.TypeAdaptersConfiguration;
-
 import javax.xml.bind.JAXBContext;
 
 /**
@@ -52,7 +51,6 @@ public class MxWriteParams {
      */
     public TypeAdaptersConfiguration adapters;
 
-
     /**
      * Optional indent string to use when marshalling into XML, if null, a four spaces string will be used as default
      * @since 9.3.6
@@ -65,7 +63,7 @@ public class MxWriteParams {
 
     MxWriteParams(MxWriteConfiguration conf) {
         this.prefix = null;
-        MxWriteConfiguration notNullConf = conf == null? new MxWriteConfiguration() : conf;
+        MxWriteConfiguration notNullConf = conf == null ? new MxWriteConfiguration() : conf;
         // use same defaults as configuration
         this.includeXMLDeclaration = notNullConf.includeXMLDeclaration;
         this.escapeHandler = notNullConf.escapeHandler;
@@ -73,5 +71,4 @@ public class MxWriteParams {
         this.context = notNullConf.context;
         this.indent = notNullConf.indent;
     }
-
 }

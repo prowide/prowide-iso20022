@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,9 +15,9 @@
  */
 package com.prowidesoftware.swift.model.mx.adapters;
 
+import java.text.SimpleDateFormat;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
-import java.text.SimpleDateFormat;
 
 /**
  * XMLGregorianCalendar adapter for date elements.
@@ -90,5 +90,4 @@ public class SimpleDateAdapter extends XmlAdapter<String, XMLGregorianCalendar> 
             }
         }
     }
-
 }

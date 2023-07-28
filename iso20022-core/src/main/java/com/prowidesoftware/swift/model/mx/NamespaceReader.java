@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,18 +16,17 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.swift.utils.SafeXmlUtils;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.Validate;
-
-import javax.xml.stream.XMLInputFactory;
-import javax.xml.stream.XMLStreamConstants;
-import javax.xml.stream.XMLStreamException;
-import javax.xml.stream.XMLStreamReader;
 import java.io.StringReader;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.xml.stream.XMLInputFactory;
+import javax.xml.stream.XMLStreamConstants;
+import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.XMLStreamReader;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.Validate;
 
 /**
  * Helper API to extract information from an XML using lightweight XML streams API
@@ -82,7 +81,8 @@ public class NamespaceReader {
                 final String nsPrefix = StringUtils.trimToNull(reader.getNamespacePrefix(nsIndex));
                 final String elementPrefix = StringUtils.trimToNull(reader.getPrefix());
                 if (StringUtils.equals(nsPrefix, elementPrefix)) {
-                    // if prefix match or is not set in both the element and the namespace we return it as found namespace
+                    // if prefix match or is not set in both the element and the namespace we return it as found
+                    // namespace
                     return reader.getNamespaceURI(nsIndex);
                 }
             }
@@ -122,5 +122,4 @@ public class NamespaceReader {
         }
         return Optional.empty();
     }
-
 }

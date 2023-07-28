@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,13 +17,12 @@ package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.swift.model.MxBusinessProcess;
 import com.prowidesoftware.swift.model.MxId;
-import org.apache.commons.lang3.Validate;
-
-import javax.xml.transform.sax.SAXSource;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.xml.transform.sax.SAXSource;
+import org.apache.commons.lang3.Validate;
 
 /**
  * Default implementation of the {@link MxRead} interface to parse XML strings into Mx message objects.
@@ -59,14 +58,19 @@ public class MxReadImpl implements MxRead {
      * @param xml the XML to parse, should contain the Document, and optional AppHdr and any type of wrapper elements
      * @since 8.0.4
      */
-    public static AbstractMX parse(final Class<? extends AbstractMX> targetClass, final String xml, final Class<?>[] classes) {
+    public static AbstractMX parse(
+            final Class<? extends AbstractMX> targetClass, final String xml, final Class<?>[] classes) {
         return parse(targetClass, xml, classes, new MxReadParams());
     }
 
     /**
      * @since 9.2.6
      */
-    public static AbstractMX parse(final Class<? extends AbstractMX> targetClass, final String xml, final Class<?>[] classes, final MxReadParams params) {
+    public static AbstractMX parse(
+            final Class<? extends AbstractMX> targetClass,
+            final String xml,
+            final Class<?>[] classes,
+            final MxReadParams params) {
         Objects.requireNonNull(targetClass, "target class to parse must not be null");
         Objects.requireNonNull(xml, "XML to parse must not be null");
         Validate.notBlank(xml, "XML to parse must not be a blank string");
@@ -76,7 +80,8 @@ public class MxReadImpl implements MxRead {
         try {
 
             SAXSource documentSource = MxParseUtils.createFilteredSAXSource(xml, AbstractMX.DOCUMENT_LOCALNAME);
-            final AbstractMX parsedDocument = (AbstractMX) MxParseUtils.parseSAXSource(documentSource, targetClass, classes, params);
+            final AbstractMX parsedDocument =
+                    (AbstractMX) MxParseUtils.parseSAXSource(documentSource, targetClass, classes, params);
 
             Optional<AbstractMX> mx = Optional.ofNullable(parsedDocument);
 
@@ -121,8 +126,10 @@ public class MxReadImpl implements MxRead {
             if (namespace.isPresent()) {
                 resolvedId = new MxId(namespace.get());
             } else {
-                Level level = params.verbose? Level.SEVERE: Level.FINE;
-                log.log(level, "Cannot detect the Mx type from the XML, make sure the XML contains proper namespaces or provide an MxId object as parameter to the parse call");
+                Level level = params.verbose ? Level.SEVERE : Level.FINE;
+                log.log(
+                        level,
+                        "Cannot detect the Mx type from the XML, make sure the XML contains proper namespaces or provide an MxId object as parameter to the parse call");
                 return null;
             }
         }
@@ -176,5 +183,4 @@ public class MxReadImpl implements MxRead {
     public AbstractMX read(final String xml, MxId id) {
         return parse(xml, id, new MxReadParams());
     }
-
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,10 +15,10 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import org.junit.jupiter.api.Test;
 
 /**
  * @since 9.0.1
@@ -27,32 +27,31 @@ public class BusinessAppHdrV02Test {
 
     @Test
     public void testParseNoNamespace() {
-        final String xml = "<AppHdr>" +
-                "   <Fr>" +
-                "      <FIId>" +
-                "         <FinInstnId>" +
-                "            <Nm>Not available</Nm>" +
-                "         </FinInstnId>" +
-                "      </FIId>" +
-                "   </Fr>" +
-                "   <To>" +
-                "      <FIId>" +
-                "         <FinInstnId>" +
-                "            <Nm>Not available</Nm>" +
-                "         </FinInstnId>" +
-                "      </FIId>" +
-                "   </To>" +
-                "   <BizMsgIdr>AAAAAAAAAA222222</BizMsgIdr>" +
-                "   <MsgDefIdr>seev.037.002.02</MsgDefIdr>" +
-                "   <MktPrctc>" +
-                "       <Regy>FOO</Regy>" +
-                "       <Id>BAR</Id>·+" +
-                "   </MktPrctc>" +
-                "   <CreDt>2017-08-08T16:58:01Z</CreDt>" +
-                "</AppHdr>";
+        final String xml = "<AppHdr>" + "   <Fr>"
+                + "      <FIId>"
+                + "         <FinInstnId>"
+                + "            <Nm>Not available</Nm>"
+                + "         </FinInstnId>"
+                + "      </FIId>"
+                + "   </Fr>"
+                + "   <To>"
+                + "      <FIId>"
+                + "         <FinInstnId>"
+                + "            <Nm>Not available</Nm>"
+                + "         </FinInstnId>"
+                + "      </FIId>"
+                + "   </To>"
+                + "   <BizMsgIdr>AAAAAAAAAA222222</BizMsgIdr>"
+                + "   <MsgDefIdr>seev.037.002.02</MsgDefIdr>"
+                + "   <MktPrctc>"
+                + "       <Regy>FOO</Regy>"
+                + "       <Id>BAR</Id>·+"
+                + "   </MktPrctc>"
+                + "   <CreDt>2017-08-08T16:58:01Z</CreDt>"
+                + "</AppHdr>";
         BusinessAppHdrV02 h = BusinessAppHdrV02.parse(xml);
         assertNotNull(h);
-        //System.out.println(h.xml());
+        // System.out.println(h.xml());
         assertEquals("Not available", h.getFr().getFIId().getFinInstnId().getNm());
         assertEquals("Not available", h.getTo().getFIId().getFinInstnId().getNm());
         assertEquals("AAAAAAAAAA222222", h.getBizMsgIdr());
@@ -64,32 +63,31 @@ public class BusinessAppHdrV02Test {
 
     @Test
     public void testParseNoPrefix() {
-        final String xml = "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\">" +
-                "   <Fr>" +
-                "      <FIId>" +
-                "         <FinInstnId>" +
-                "            <Nm>Not available</Nm>" +
-                "         </FinInstnId>" +
-                "      </FIId>" +
-                "   </Fr>" +
-                "   <To>" +
-                "      <FIId>" +
-                "         <FinInstnId>" +
-                "            <Nm>Not available</Nm>" +
-                "         </FinInstnId>" +
-                "      </FIId>" +
-                "   </To>" +
-                "   <BizMsgIdr>AAAAAAAAAA222222</BizMsgIdr>" +
-                "   <MsgDefIdr>seev.037.002.02</MsgDefIdr>" +
-                "   <MktPrctc>" +
-                "       <Regy>FOO</Regy>" +
-                "       <Id>BAR</Id>·+" +
-                "   </MktPrctc>" +
-                "   <CreDt>2017-08-08T16:58:01Z</CreDt>" +
-                "</AppHdr>";
+        final String xml = "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\">" + "   <Fr>"
+                + "      <FIId>"
+                + "         <FinInstnId>"
+                + "            <Nm>Not available</Nm>"
+                + "         </FinInstnId>"
+                + "      </FIId>"
+                + "   </Fr>"
+                + "   <To>"
+                + "      <FIId>"
+                + "         <FinInstnId>"
+                + "            <Nm>Not available</Nm>"
+                + "         </FinInstnId>"
+                + "      </FIId>"
+                + "   </To>"
+                + "   <BizMsgIdr>AAAAAAAAAA222222</BizMsgIdr>"
+                + "   <MsgDefIdr>seev.037.002.02</MsgDefIdr>"
+                + "   <MktPrctc>"
+                + "       <Regy>FOO</Regy>"
+                + "       <Id>BAR</Id>·+"
+                + "   </MktPrctc>"
+                + "   <CreDt>2017-08-08T16:58:01Z</CreDt>"
+                + "</AppHdr>";
         BusinessAppHdrV02 h = BusinessAppHdrV02.parse(xml);
         assertNotNull(h);
-        //System.out.println(h.xml());
+        // System.out.println(h.xml());
         assertEquals("Not available", h.getFr().getFIId().getFinInstnId().getNm());
         assertEquals("Not available", h.getTo().getFIId().getFinInstnId().getNm());
         assertEquals("AAAAAAAAAA222222", h.getBizMsgIdr());
@@ -101,32 +99,31 @@ public class BusinessAppHdrV02Test {
 
     @Test
     public void testParseWithPrefix() {
-        final String xml = "<h:AppHdr xmlns:h=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\">" +
-                "   <h:Fr>" +
-                "      <h:FIId>" +
-                "         <h:FinInstnId>" +
-                "            <h:Nm>Not available</h:Nm>" +
-                "         </h:FinInstnId>" +
-                "      </h:FIId>" +
-                "   </h:Fr>" +
-                "   <h:To>" +
-                "      <h:FIId>" +
-                "         <h:FinInstnId>" +
-                "            <h:Nm>Not available</h:Nm>" +
-                "         </h:FinInstnId>" +
-                "      </h:FIId>" +
-                "   </h:To>" +
-                "   <h:BizMsgIdr>AAAAAAAAAA222222</h:BizMsgIdr>" +
-                "   <h:MsgDefIdr>seev.037.002.02</h:MsgDefIdr>" +
-                "   <h:MktPrctc>" +
-                "       <h:Regy>FOO</h:Regy>" +
-                "       <h:Id>BAR</h:Id>·+" +
-                "   </h:MktPrctc>" +
-                "   <h:CreDt>2017-08-08T16:58:01Z</h:CreDt>" +
-                "</h:AppHdr>";
+        final String xml = "<h:AppHdr xmlns:h=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\">" + "   <h:Fr>"
+                + "      <h:FIId>"
+                + "         <h:FinInstnId>"
+                + "            <h:Nm>Not available</h:Nm>"
+                + "         </h:FinInstnId>"
+                + "      </h:FIId>"
+                + "   </h:Fr>"
+                + "   <h:To>"
+                + "      <h:FIId>"
+                + "         <h:FinInstnId>"
+                + "            <h:Nm>Not available</h:Nm>"
+                + "         </h:FinInstnId>"
+                + "      </h:FIId>"
+                + "   </h:To>"
+                + "   <h:BizMsgIdr>AAAAAAAAAA222222</h:BizMsgIdr>"
+                + "   <h:MsgDefIdr>seev.037.002.02</h:MsgDefIdr>"
+                + "   <h:MktPrctc>"
+                + "       <h:Regy>FOO</h:Regy>"
+                + "       <h:Id>BAR</h:Id>·+"
+                + "   </h:MktPrctc>"
+                + "   <h:CreDt>2017-08-08T16:58:01Z</h:CreDt>"
+                + "</h:AppHdr>";
         BusinessAppHdrV02 h = BusinessAppHdrV02.parse(xml);
         assertNotNull(h);
-        //System.out.println(h.xml());
+        // System.out.println(h.xml());
         assertEquals("Not available", h.getFr().getFIId().getFinInstnId().getNm());
         assertEquals("Not available", h.getTo().getFIId().getFinInstnId().getNm());
         assertEquals("AAAAAAAAAA222222", h.getBizMsgIdr());
@@ -138,35 +135,33 @@ public class BusinessAppHdrV02Test {
 
     @Test
     public void testParseWithWrapper() {
-        final String xml =
-                "<foo><bar>" +
-                        "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\">" +
-                        "   <Fr>" +
-                        "      <FIId>" +
-                        "         <FinInstnId>" +
-                        "            <Nm>Not available</Nm>" +
-                        "         </FinInstnId>" +
-                        "      </FIId>" +
-                        "   </Fr>" +
-                        "   <To>" +
-                        "      <FIId>" +
-                        "         <FinInstnId>" +
-                        "            <Nm>Not available</Nm>" +
-                        "         </FinInstnId>" +
-                        "      </FIId>" +
-                        "   </To>" +
-                        "   <BizMsgIdr>AAAAAAAAAA222222</BizMsgIdr>" +
-                        "   <MsgDefIdr>seev.037.002.02</MsgDefIdr>" +
-                        "   <MktPrctc>" +
-                        "       <Regy>FOO</Regy>" +
-                        "       <Id>BAR</Id>·+" +
-                        "   </MktPrctc>" +
-                        "   <CreDt>2017-08-08T16:58:01Z</CreDt>" +
-                        "</AppHdr>" +
-                        "</bar></foo>";
+        final String xml = "<foo><bar>" + "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\">"
+                + "   <Fr>"
+                + "      <FIId>"
+                + "         <FinInstnId>"
+                + "            <Nm>Not available</Nm>"
+                + "         </FinInstnId>"
+                + "      </FIId>"
+                + "   </Fr>"
+                + "   <To>"
+                + "      <FIId>"
+                + "         <FinInstnId>"
+                + "            <Nm>Not available</Nm>"
+                + "         </FinInstnId>"
+                + "      </FIId>"
+                + "   </To>"
+                + "   <BizMsgIdr>AAAAAAAAAA222222</BizMsgIdr>"
+                + "   <MsgDefIdr>seev.037.002.02</MsgDefIdr>"
+                + "   <MktPrctc>"
+                + "       <Regy>FOO</Regy>"
+                + "       <Id>BAR</Id>·+"
+                + "   </MktPrctc>"
+                + "   <CreDt>2017-08-08T16:58:01Z</CreDt>"
+                + "</AppHdr>"
+                + "</bar></foo>";
         BusinessAppHdrV02 h = BusinessAppHdrV02.parse(xml);
         assertNotNull(h);
-        //System.out.println(h.xml());
+        // System.out.println(h.xml());
         assertEquals("Not available", h.getFr().getFIId().getFinInstnId().getNm());
         assertEquals("Not available", h.getTo().getFIId().getFinInstnId().getNm());
         assertEquals("AAAAAAAAAA222222", h.getBizMsgIdr());
@@ -175,5 +170,4 @@ public class BusinessAppHdrV02Test {
         assertEquals("BAR", h.getMktPrctc().getId());
         assertNotNull(h.getCreDt());
     }
-
 }

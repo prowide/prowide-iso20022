@@ -1,20 +1,19 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.swift.utils.SafeXmlUtils;
+import java.io.StringReader;
+import java.io.StringWriter;
+import java.util.ArrayList;
+import java.util.List;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
-import java.io.StringReader;
-import java.io.StringWriter;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * The SupplementaryDataUtils class provides utility methods for extracting "SplmtryData" elements
@@ -81,5 +80,4 @@ public class SupplementaryDataUtils {
         transformer.transform(new DOMSource(node), new StreamResult(writer));
         return writer.toString();
     }
-
 }

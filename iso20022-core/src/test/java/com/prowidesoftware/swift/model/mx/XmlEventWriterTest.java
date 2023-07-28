@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,22 +15,21 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
-import com.prowidesoftware.swift.model.mx.dic.*;
-import com.prowidesoftware.swift.utils.Lib;
-import org.apache.commons.lang3.StringUtils;
-import org.junit.jupiter.api.Test;
-import org.xmlunit.builder.Input;
-import org.xmlunit.xpath.JAXPXPathEngine;
-
-import java.io.IOException;
-import java.math.BigDecimal;
-import java.util.Arrays;
-import java.util.HashMap;
-
 import static javax.xml.XMLConstants.DEFAULT_NS_PREFIX;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.xmlunit.matchers.HasXPathMatcher.hasXPath;
+
+import com.prowidesoftware.swift.model.mx.dic.*;
+import com.prowidesoftware.swift.utils.Lib;
+import java.io.IOException;
+import java.math.BigDecimal;
+import java.util.Arrays;
+import java.util.HashMap;
+import org.apache.commons.lang3.StringUtils;
+import org.junit.jupiter.api.Test;
+import org.xmlunit.builder.Input;
+import org.xmlunit.xpath.JAXPXPathEngine;
 
 /**
  * Test cases for specific conditions of the {@link XmlEventWriter}
@@ -63,12 +62,12 @@ public class XmlEventWriterTest {
         assertMessage(mx);
         String xmlResult = mx.message();
         // Original issue
-        assertFalse(xmlResult.contains("<Doc:Dt>" + LINE_SEPARATOR +
-                "                        <Doc:Dt>2021-11-11</Doc:Dt></Doc:Dt>"));
+        assertFalse(xmlResult.contains(
+                "<Doc:Dt>" + LINE_SEPARATOR + "                        <Doc:Dt>2021-11-11</Doc:Dt></Doc:Dt>"));
         // Excpected result
-        assertTrue(xmlResult.contains(" <Doc:Dt>" + LINE_SEPARATOR +
-                "                        <Doc:Dt>2021-11-11</Doc:Dt>" + LINE_SEPARATOR +
-                "                    </Doc:Dt>"));
+        assertTrue(
+                xmlResult.contains(" <Doc:Dt>" + LINE_SEPARATOR + "                        <Doc:Dt>2021-11-11</Doc:Dt>"
+                        + LINE_SEPARATOR + "                    </Doc:Dt>"));
     }
 
     private void assertMessage(MxSeev03100209 mx) {
@@ -78,9 +77,13 @@ public class XmlEventWriterTest {
         assertEquals("XXXXXXXXXXX", mx.getAppHdr().to());
         assertEquals("1111111111111111", mx.getAppHdr().reference());
         assertNotNull(mx.getCorpActnNtfctn());
-        assertEquals(CorporateActionNotificationType1Code.REPL, mx.getCorpActnNtfctn().getNtfctnGnlInf().getNtfctnTp());
+        assertEquals(
+                CorporateActionNotificationType1Code.REPL,
+                mx.getCorpActnNtfctn().getNtfctnGnlInf().getNtfctnTp());
         assertEquals("111111111", mx.getCorpActnNtfctn().getCorpActnGnlInf().getCorpActnEvtId());
-        assertEquals(SafekeepingAccountIdentification1Code.GENR, mx.getCorpActnNtfctn().getAcctDtls().getForAllAccts().getIdCd());
+        assertEquals(
+                SafekeepingAccountIdentification1Code.GENR,
+                mx.getCorpActnNtfctn().getAcctDtls().getForAllAccts().getIdCd());
     }
 
     @Test
@@ -90,14 +93,14 @@ public class XmlEventWriterTest {
         assertNotNull(xml);
         BusinessAppHdrV02 h = BusinessAppHdrV02.parse(xml);
         assertNotNull(h);
-        //System.out.println(h.xml());
+        // System.out.println(h.xml());
         String xmlResult = h.xml();
-        //System.out.println(xmlResult);
-        assertTrue(xmlResult.contains("        <SignatureEnvelope>" + LINE_SEPARATOR +
-                "            <Regy>A</Regy>" + LINE_SEPARATOR +
-                "            <Regy>B</Regy>" + LINE_SEPARATOR +
-                "            <Regy>C</Regy>" + LINE_SEPARATOR +
-                "        </SignatureEnvelope>" + LINE_SEPARATOR));
+        // System.out.println(xmlResult);
+        assertTrue(xmlResult.contains("        <SignatureEnvelope>" + LINE_SEPARATOR + "            <Regy>A</Regy>"
+                + LINE_SEPARATOR + "            <Regy>B</Regy>"
+                + LINE_SEPARATOR + "            <Regy>C</Regy>"
+                + LINE_SEPARATOR + "        </SignatureEnvelope>"
+                + LINE_SEPARATOR));
 
         testXpath(xmlResult, nameSpace, "/:AppHdr/:Sgntr/:SignatureEnvelope/:Regy[1]", "A");
         testXpath(xmlResult, nameSpace, "/:AppHdr/:Sgntr/:SignatureEnvelope/:Regy[2]", "B");
@@ -110,12 +113,17 @@ public class XmlEventWriterTest {
         MxPacs00800108 mx = new MxPacs00800108();
         mx.setFIToFICstmrCdtTrf(new FIToFICustomerCreditTransferV08());
         mx.getFIToFICstmrCdtTrf().addCdtTrfTxInf(new CreditTransferTransaction39());
-        CreditTransferTransaction39 tx = mx.getFIToFICstmrCdtTrf().getCdtTrfTxInf().get(0);
+        CreditTransferTransaction39 tx =
+                mx.getFIToFICstmrCdtTrf().getCdtTrfTxInf().get(0);
 
-        Charges7 ch1 = new Charges7().setAmt(new ActiveOrHistoricCurrencyAndAmount().setCcy("USD").setValue(new BigDecimal("1.00")));
-        Charges7 ch2 = new Charges7().setAmt(new ActiveOrHistoricCurrencyAndAmount().setCcy("USD").setValue(new BigDecimal("2.00")));
-        Charges7 ch3 = new Charges7().setAmt(new ActiveOrHistoricCurrencyAndAmount().setCcy("USD").setValue(new BigDecimal("3.00")));
-        Charges7 ch4 = new Charges7().setAmt(new ActiveOrHistoricCurrencyAndAmount().setCcy("USD").setValue(new BigDecimal("4.00")));
+        Charges7 ch1 = new Charges7()
+                .setAmt(new ActiveOrHistoricCurrencyAndAmount().setCcy("USD").setValue(new BigDecimal("1.00")));
+        Charges7 ch2 = new Charges7()
+                .setAmt(new ActiveOrHistoricCurrencyAndAmount().setCcy("USD").setValue(new BigDecimal("2.00")));
+        Charges7 ch3 = new Charges7()
+                .setAmt(new ActiveOrHistoricCurrencyAndAmount().setCcy("USD").setValue(new BigDecimal("3.00")));
+        Charges7 ch4 = new Charges7()
+                .setAmt(new ActiveOrHistoricCurrencyAndAmount().setCcy("USD").setValue(new BigDecimal("4.00")));
 
         tx.addChrgsInf(ch1);
         tx.addChrgsInf(ch2);
@@ -123,7 +131,7 @@ public class XmlEventWriterTest {
         tx.addChrgsInf(ch4);
 
         String xmlResult = mx.message();
-        //System.out.println(xmlResult);
+        // System.out.println(xmlResult);
 
         testXpath(xmlResult, nameSpace, "/:Document/:FIToFICstmrCdtTrf/:CdtTrfTxInf/:ChrgsInf/:Amt", "1.00");
         testXpath(xmlResult, nameSpace, "/:Document/:FIToFICstmrCdtTrf/:CdtTrfTxInf/:ChrgsInf[2]/:Amt", "2.00");
@@ -137,7 +145,8 @@ public class XmlEventWriterTest {
         MxPacs00800108 mx = new MxPacs00800108();
         mx.setFIToFICstmrCdtTrf(new FIToFICustomerCreditTransferV08());
         mx.getFIToFICstmrCdtTrf().addCdtTrfTxInf(new CreditTransferTransaction39());
-        CreditTransferTransaction39 tx = mx.getFIToFICstmrCdtTrf().getCdtTrfTxInf().get(0);
+        CreditTransferTransaction39 tx =
+                mx.getFIToFICstmrCdtTrf().getCdtTrfTxInf().get(0);
 
         tx.setCdtr(new PartyIdentification135());
         tx.getCdtr().setPstlAdr(new PostalAddress24());
@@ -146,13 +155,24 @@ public class XmlEventWriterTest {
         tx.getCdtr().getPstlAdr().addAdrLine("line 3");
 
         String xmlResult = mx.message();
-        //System.out.println(xmlResult);
+        // System.out.println(xmlResult);
 
-        testXpath(xmlResult, nameSpace, "/:Document/:FIToFICstmrCdtTrf/:CdtTrfTxInf/:Cdtr/:PstlAdr/:AdrLine[1]", "line 1");
-        testXpath(xmlResult, nameSpace, "/:Document/:FIToFICstmrCdtTrf/:CdtTrfTxInf/:Cdtr/:PstlAdr/:AdrLine[2]", "line 2");
-        testXpath(xmlResult, nameSpace, "/:Document/:FIToFICstmrCdtTrf/:CdtTrfTxInf/:Cdtr/:PstlAdr/:AdrLine[3]", "line 3");
+        testXpath(
+                xmlResult,
+                nameSpace,
+                "/:Document/:FIToFICstmrCdtTrf/:CdtTrfTxInf/:Cdtr/:PstlAdr/:AdrLine[1]",
+                "line 1");
+        testXpath(
+                xmlResult,
+                nameSpace,
+                "/:Document/:FIToFICstmrCdtTrf/:CdtTrfTxInf/:Cdtr/:PstlAdr/:AdrLine[2]",
+                "line 2");
+        testXpath(
+                xmlResult,
+                nameSpace,
+                "/:Document/:FIToFICstmrCdtTrf/:CdtTrfTxInf/:Cdtr/:PstlAdr/:AdrLine[3]",
+                "line 3");
     }
-
 
     @Test
     public void testEmptyElementPropagation() {
@@ -161,14 +181,15 @@ public class XmlEventWriterTest {
         MxPacs00800108 mx = new MxPacs00800108();
         mx.setFIToFICstmrCdtTrf(new FIToFICustomerCreditTransferV08());
         mx.getFIToFICstmrCdtTrf().addCdtTrfTxInf(new CreditTransferTransaction39());
-        CreditTransferTransaction39 tx = mx.getFIToFICstmrCdtTrf().getCdtTrfTxInf().get(0);
+        CreditTransferTransaction39 tx =
+                mx.getFIToFICstmrCdtTrf().getCdtTrfTxInf().get(0);
 
         tx.setCdtr(new PartyIdentification135());
         tx.getCdtr().setPstlAdr(new PostalAddress24());
         tx.getCdtr().getPstlAdr().addAdrLine(indent);
 
         String xmlResult = mx.message();
-        //System.out.println(xmlResult);
+        // System.out.println(xmlResult);
 
         testXpath(xmlResult, nameSpace, "/:Document/:FIToFICstmrCdtTrf/:CdtTrfTxInf/:Cdtr/:PstlAdr/:AdrLine", indent);
     }
@@ -181,7 +202,7 @@ public class XmlEventWriterTest {
         mx.getGetAcct().getAcctQryDef().setAcctCrit(new AccountCriteria2Choice());
         mx.getGetAcct().getAcctQryDef().getAcctCrit().setQryNm("FOO");
         String xml = mx.message();
-        //System.out.println(xml);
+        // System.out.println(xml);
         assertTrue(xml.contains("     <Doc:QryNm>"));
     }
 
@@ -197,14 +218,16 @@ public class XmlEventWriterTest {
         mx.getCstmrCdtTrfInitn().getPmtInf().get(0).setDbtr(new PartyIdentification43().setNm("foo"));
         mx.getCstmrCdtTrfInitn().getPmtInf().get(0).setChrgBr(ChargeBearerType1Code.CRED);
 
-        //System.out.println(mx.message());
+        // System.out.println(mx.message());
         Arrays.stream(mx.message().split("\\r?\\n")).forEach(line -> assertTrue(StringUtils.isNotBlank(line)));
     }
 
     private void testXpath(String xml, String nameSpace, String path, String expected) {
-        HashMap<String, String> nameSpaceContext = new HashMap(1) {{
-            put(DEFAULT_NS_PREFIX, nameSpace);
-        }};
+        HashMap<String, String> nameSpaceContext = new HashMap(1) {
+            {
+                put(DEFAULT_NS_PREFIX, nameSpace);
+            }
+        };
         // Verifies that the xml path exists
         assertThat(Input.fromString(xml), hasXPath(path).withNamespaceContext(nameSpaceContext));
 
@@ -213,5 +236,4 @@ public class XmlEventWriterTest {
         // Verifies that the value contained in the path
         assertEquals(expected, eval);
     }
-
 }
