@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,15 +30,21 @@ public interface MxWrite {
      */
     @Deprecated
     @ProwideDeprecated(phase3 = TargetYear.SRU2023)
-    String message(String namespace, AbstractMX obj, Class[] classes, final String prefix, boolean includeXMLDeclaration);
+    String message(
+            String namespace, AbstractMX obj, Class[] classes, final String prefix, boolean includeXMLDeclaration);
 
     /**
      * @deprecated use {@link MxWriteImpl#write(String, AbstractMX, Class[], MxWriteParams)} instead
      */
     @Deprecated
     @ProwideDeprecated(phase2 = TargetYear.SRU2023)
-    default String message(String namespace, AbstractMX obj, Class[] classes, final String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
+    default String message(
+            String namespace,
+            AbstractMX obj,
+            Class[] classes,
+            final String prefix,
+            boolean includeXMLDeclaration,
+            EscapeHandler escapeHandler) {
         return message(namespace, obj, classes, prefix, includeXMLDeclaration, null);
     }
-
 }

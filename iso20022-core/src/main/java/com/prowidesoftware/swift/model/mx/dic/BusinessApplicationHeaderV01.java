@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,5 +24,4 @@ import com.prowidesoftware.swift.model.mx.BusinessAppHdrV01;
  */
 @Deprecated
 @ProwideDeprecated(phase4 = TargetYear.SRU2023)
-public class BusinessApplicationHeaderV01 extends BusinessAppHdrV01 {
-}
+public class BusinessApplicationHeaderV01 extends BusinessAppHdrV01 {}

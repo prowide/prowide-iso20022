@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,10 +17,9 @@ package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.deprecation.ProwideDeprecated;
 import com.prowidesoftware.deprecation.TargetYear;
-import org.w3c.dom.Element;
-
-import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.Objects;
+import javax.xml.datatype.XMLGregorianCalendar;
+import org.w3c.dom.Element;
 
 /**
  * The business header is an optional part of the payload of an ISO 20022 message, and contains general information
@@ -165,5 +164,4 @@ public interface AppHdr {
     default String namespace() {
         return null;
     }
-
 }

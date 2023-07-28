@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  */
 package com.prowidesoftware.swift.model;
 
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.prowidesoftware.deprecation.DeprecationUtils;
@@ -23,16 +22,14 @@ import com.prowidesoftware.deprecation.ProwideDeprecated;
 import com.prowidesoftware.deprecation.TargetYear;
 import com.prowidesoftware.swift.io.parser.MxParser;
 import com.prowidesoftware.swift.model.mx.*;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.Validate;
-
-import javax.persistence.*;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Calendar;
 import java.util.Objects;
 import java.util.Optional;
+import javax.persistence.*;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * MX (ISO 20022) messages entity for JPA persistence.
@@ -66,7 +63,8 @@ import java.util.Optional;
 @DiscriminatorValue("mx")
 public class MxSwiftMessage extends AbstractSwiftMessage {
     private static final long serialVersionUID = -4394356007627575831L;
-    private static final transient java.util.logging.Logger log = java.util.logging.Logger.getLogger(MxSwiftMessage.class.getName());
+    private static final transient java.util.logging.Logger log =
+            java.util.logging.Logger.getLogger(MxSwiftMessage.class.getName());
 
     @Enumerated(EnumType.STRING)
     @Column(length = 4, name = "business_process")
@@ -245,7 +243,9 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
 
     private void _updateFromMessage(final MxId id, final MessageMetadataStrategy metadataStrategy) {
         if (message() != null && message().length() > 0) {
-            MxId identifier = id != null ? id : MxParseUtils.identifyMessage(this.message()).orElse(null);
+            MxId identifier = id != null
+                    ? id
+                    : MxParseUtils.identifyMessage(this.message()).orElse(null);
             extractMetadata(identifier, getAppHdr(), metadataStrategy);
         }
     }
@@ -405,10 +405,10 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         MxSwiftMessage that = (MxSwiftMessage) o;
-        return businessProcess == that.businessProcess &&
-                Objects.equals(functionality, that.functionality) &&
-                Objects.equals(variant, that.variant) &&
-                Objects.equals(version, that.version);
+        return businessProcess == that.businessProcess
+                && Objects.equals(functionality, that.functionality)
+                && Objects.equals(variant, that.variant)
+                && Objects.equals(version, that.version);
     }
 
     @Override
@@ -504,7 +504,10 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
     }
 
     private void applyStrategy(String xml, MessageMetadataStrategy strategy) {
-        boolean isKnownType = this.businessProcess != null && this.functionality != null && this.variant != null && this.version != null;
+        boolean isKnownType = this.businessProcess != null
+                && this.functionality != null
+                && this.variant != null
+                && this.version != null;
         MxId mxId = isKnownType ? getMxId() : null;
 
         // when parsing the message just for the metadata extraction, we want to avoid underlying error logs
@@ -539,5 +542,4 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
             setTradeDate(tradeDate);
         }
     }
-
 }

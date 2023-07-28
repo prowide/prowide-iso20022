@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,14 +15,13 @@
  */
 package com.prowidesoftware.issues;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 import com.prowidesoftware.swift.model.mx.BusinessAppHdrV01;
 import com.prowidesoftware.swift.model.mx.MxPacs00200108;
 import com.prowidesoftware.swift.utils.Lib;
-import org.junit.jupiter.api.Test;
-
 import java.io.IOException;
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
 /**
  * https://github.com/prowide/prowide-iso20022/issues/11
@@ -47,7 +46,9 @@ public class Issue11 {
         BusinessAppHdrV01 h = (BusinessAppHdrV01) mx.getAppHdr();
         assertEquals("APPEXXXX", h.getFr().getFIId().getFinInstnId().getOthr().getId());
         assertNotNull(mx.getFIToFIPmtStsRpt());
-        assertEquals("20201008BCBCMYKL22020534605", mx.getFIToFIPmtStsRpt().getGrpHdr().getMsgId());
+        assertEquals(
+                "20201008BCBCMYKL22020534605",
+                mx.getFIToFIPmtStsRpt().getGrpHdr().getMsgId());
     }
 
     /*
@@ -97,5 +98,4 @@ public class Issue11 {
         MxPacs00200108 mx = MxPacs00200108.parse(xml);
         assertMessage(mx);
     }
-
 }

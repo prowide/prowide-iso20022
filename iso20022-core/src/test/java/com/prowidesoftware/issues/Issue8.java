@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,16 +15,15 @@
  */
 package com.prowidesoftware.issues;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 import com.prowidesoftware.swift.model.mx.MxSeev03100209;
 import com.prowidesoftware.swift.model.mx.dic.CorporateActionNotificationType1Code;
 import com.prowidesoftware.swift.model.mx.dic.SafekeepingAccountIdentification1Code;
 import com.prowidesoftware.swift.utils.Lib;
-import org.junit.jupiter.api.Test;
-
 import java.io.IOException;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import org.junit.jupiter.api.Test;
 
 /**
  * https://github.com/prowide/prowide-iso20022/issues/8
@@ -49,9 +48,13 @@ public class Issue8 {
         assertEquals("XXXXXXXXXXX", mx.getAppHdr().to());
         assertEquals("1111111111111111", mx.getAppHdr().reference());
         assertNotNull(mx.getCorpActnNtfctn());
-        assertEquals(CorporateActionNotificationType1Code.REPL, mx.getCorpActnNtfctn().getNtfctnGnlInf().getNtfctnTp());
+        assertEquals(
+                CorporateActionNotificationType1Code.REPL,
+                mx.getCorpActnNtfctn().getNtfctnGnlInf().getNtfctnTp());
         assertEquals("111111111", mx.getCorpActnNtfctn().getCorpActnGnlInf().getCorpActnEvtId());
-        assertEquals(SafekeepingAccountIdentification1Code.GENR, mx.getCorpActnNtfctn().getAcctDtls().getForAllAccts().getIdCd());
+        assertEquals(
+                SafekeepingAccountIdentification1Code.GENR,
+                mx.getCorpActnNtfctn().getAcctDtls().getForAllAccts().getIdCd());
     }
 
     @Test
@@ -85,5 +88,4 @@ public class Issue8 {
         MxSeev03100209 mx = MxSeev03100209.parse(xml);
         assertMessage(mx);
     }
-
 }

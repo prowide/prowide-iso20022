@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,6 @@ import com.prowidesoftware.swift.model.MxNode;
 import com.prowidesoftware.swift.model.mx.AppHdr;
 import com.prowidesoftware.swift.model.mx.BusinessAppHdrV02;
 import com.prowidesoftware.swift.model.mx.dic.*;
-
 import java.util.logging.Logger;
 
 /**
@@ -110,7 +109,8 @@ class MxBusinessHeaderParser {
                     MxNode CrDate = header.findFirst("./CrDate");
                     if (CrDate != null) {
                         try {
-                            result.setCrDate(javax.xml.datatype.DatatypeFactory.newInstance().newXMLGregorianCalendar(CrDate.getValue()));
+                            result.setCrDate(javax.xml.datatype.DatatypeFactory.newInstance()
+                                    .newXMLGregorianCalendar(CrDate.getValue()));
                         } catch (final javax.xml.datatype.DatatypeConfigurationException e) {
                             log.warning("exception " + e + " parsign header crDate [" + CrDate.getValue() + "]");
                         }
@@ -195,7 +195,8 @@ class MxBusinessHeaderParser {
                 MxNode CreDt = header.findFirst("./CreDt");
                 if (CreDt != null) {
                     try {
-                        result.setCreDt(javax.xml.datatype.DatatypeFactory.newInstance().newXMLGregorianCalendar(CreDt.getValue()));
+                        result.setCreDt(javax.xml.datatype.DatatypeFactory.newInstance()
+                                .newXMLGregorianCalendar(CreDt.getValue()));
                     } catch (final javax.xml.datatype.DatatypeConfigurationException e) {
                         log.warning("exception " + e + " parsing header crDate [" + CreDt.getValue() + "]");
                     }
@@ -393,7 +394,6 @@ class MxBusinessHeaderParser {
         if (ClrSysMmbId != null) {
             finInstnId.setClrSysMmbId(new ClearingSystemMemberIdentification2());
             parse(ClrSysMmbId, finInstnId.getClrSysMmbId());
-
         }
         MxNode Nm = node.findFirst("./Nm");
         if (Nm != null) {
@@ -601,7 +601,8 @@ class MxBusinessHeaderParser {
         MxNode BirthDt = node.findFirst("./BirthDt");
         if (BirthDt != null) {
             try {
-                dtAndPlcOfBirth.setBirthDt(javax.xml.datatype.DatatypeFactory.newInstance().newXMLGregorianCalendar(BirthDt.getValue()));
+                dtAndPlcOfBirth.setBirthDt(
+                        javax.xml.datatype.DatatypeFactory.newInstance().newXMLGregorianCalendar(BirthDt.getValue()));
             } catch (final javax.xml.datatype.DatatypeConfigurationException e) {
                 log.warning("exception " + e + " parsing header BirthDt [" + BirthDt.getValue() + "]");
             }

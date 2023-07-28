@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,11 +25,6 @@ import com.prowidesoftware.swift.model.mx.dic.ApplicationHeader;
 import com.prowidesoftware.swift.model.mx.dic.BusinessApplicationHeaderV01;
 import com.prowidesoftware.swift.utils.Lib;
 import com.prowidesoftware.swift.utils.SafeXmlUtils;
-import org.apache.commons.lang3.StringUtils;
-import org.w3c.dom.Element;
-import org.w3c.dom.ls.DOMImplementationLS;
-import org.w3c.dom.ls.LSSerializer;
-
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -37,6 +32,10 @@ import java.io.StringReader;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.logging.Level;
+import org.apache.commons.lang3.StringUtils;
+import org.w3c.dom.Element;
+import org.w3c.dom.ls.DOMImplementationLS;
+import org.w3c.dom.ls.LSSerializer;
 
 /**
  * This class is currently deprecated. The API provided is no longer useful or has been replaced by similar or moved
@@ -61,6 +60,7 @@ public class MxParser {
     @Deprecated
     @ProwideDeprecated(phase4 = TargetYear.SRU2023)
     public static final String DOCUMENT_LOCALNAME = "Document";
+
     private static final java.util.logging.Logger log = java.util.logging.Logger.getLogger(MxParser.class.getName());
     private String buffer;
 
@@ -76,7 +76,10 @@ public class MxParser {
     public MxParser(final File file) throws IOException {
         Objects.requireNonNull(file);
         this.buffer = Lib.readFile(file);
-        DeprecationUtils.phase3(MxParser.class, "MxParser(File)", "The MxParser class is no longer useful or has been replaced by similar features in AbstractMX, AppHdr, AppHdrParser, MxNode or MxParseUtils");
+        DeprecationUtils.phase3(
+                MxParser.class,
+                "MxParser(File)",
+                "The MxParser class is no longer useful or has been replaced by similar features in AbstractMX, AppHdr, AppHdrParser, MxNode or MxParseUtils");
     }
 
     /**
@@ -86,7 +89,10 @@ public class MxParser {
     @ProwideDeprecated(phase4 = TargetYear.SRU2023)
     public MxParser(final InputStream stream) throws IOException {
         this.buffer = Lib.readStream(stream);
-        DeprecationUtils.phase3(MxParser.class, "MxParser(File)", "The MxParser class is no longer useful or has been replaced by similar features in AbstractMX, AppHdr, AppHdrParser, MxNode or MxParseUtils");
+        DeprecationUtils.phase3(
+                MxParser.class,
+                "MxParser(File)",
+                "The MxParser class is no longer useful or has been replaced by similar features in AbstractMX, AppHdr, AppHdrParser, MxNode or MxParseUtils");
     }
 
     /**
@@ -97,7 +103,10 @@ public class MxParser {
     public MxParser(final String message) {
         super();
         buffer = message;
-        DeprecationUtils.phase3(MxParser.class, "MxParser(File)", "The MxParser class is no longer useful or has been replaced by similar features in AbstractMX, AppHdr, AppHdrParser, MxNode or MxParseUtils");
+        DeprecationUtils.phase3(
+                MxParser.class,
+                "MxParser(File)",
+                "The MxParser class is no longer useful or has been replaced by similar features in AbstractMX, AppHdr, AppHdrParser, MxNode or MxParseUtils");
     }
 
     /**
@@ -106,8 +115,10 @@ public class MxParser {
     @Deprecated
     @ProwideDeprecated(phase4 = TargetYear.SRU2023)
     public static BusinessHeader parseBusinessHeader(final Element e) {
-        DeprecationUtils.phase3(MxParser.class, "parseBusinessHeader(Element)", "Use AppHdrParser#parse(Element) instead");
-        DOMImplementationLS lsImpl = (DOMImplementationLS) e.getOwnerDocument().getImplementation().getFeature("LS", "3.0");
+        DeprecationUtils.phase3(
+                MxParser.class, "parseBusinessHeader(Element)", "Use AppHdrParser#parse(Element) instead");
+        DOMImplementationLS lsImpl =
+                (DOMImplementationLS) e.getOwnerDocument().getImplementation().getFeature("LS", "3.0");
         LSSerializer serializer = lsImpl.createLSSerializer();
         serializer.getDomConfig().setParameter("xml-declaration", false);
         String xml = serializer.writeToString(e);
@@ -131,7 +142,8 @@ public class MxParser {
     @Deprecated
     @ProwideDeprecated(phase4 = TargetYear.SRU2023)
     public static ApplicationHeader parseApplicationHeader(final MxNode tree) {
-        DeprecationUtils.phase3(MxParser.class, "parseApplicationHeader(MxNode)", "Use LegacyAppHdr#parse(String) instead");
+        DeprecationUtils.phase3(
+                MxParser.class, "parseApplicationHeader(MxNode)", "Use LegacyAppHdr#parse(String) instead");
         return MxBusinessHeaderParser.parseApplicationHeader(tree);
     }
 
@@ -141,7 +153,10 @@ public class MxParser {
     @Deprecated
     @ProwideDeprecated(phase4 = TargetYear.SRU2023)
     public static BusinessApplicationHeaderV01 parseBusinessApplicationHeaderV01(final MxNode tree) {
-        DeprecationUtils.phase3(MxParser.class, "parseBusinessApplicationHeaderV01(MxNode)", "Use BusinessAppHdrV01#parse(String) instead");
+        DeprecationUtils.phase3(
+                MxParser.class,
+                "parseBusinessApplicationHeaderV01(MxNode)",
+                "Use BusinessAppHdrV01#parse(String) instead");
         return MxBusinessHeaderParser.parseBusinessApplicationHeaderV01(tree);
     }
 
@@ -151,7 +166,8 @@ public class MxParser {
     @ProwideDeprecated(phase4 = TargetYear.SRU2023)
     @Deprecated
     public static String getBICFromDN(final String dn) {
-        DeprecationUtils.phase3(MxParser.class, "getBICFromDN(String)", "Use MxParseUtils#getBICFromDN(String) instead");
+        DeprecationUtils.phase3(
+                MxParser.class, "getBICFromDN(String)", "Use MxParseUtils#getBICFromDN(String) instead");
         return MxParseUtils.getBICFromDN(dn);
     }
 
@@ -225,7 +241,8 @@ public class MxParser {
     @Deprecated
     @ProwideDeprecated(phase4 = TargetYear.SRU2023)
     public BusinessApplicationHeaderV01 parseBusinessApplicationHeaderV01() {
-        DeprecationUtils.phase3(MxParser.class, "parseApplicationHeader()", "Use BusinessAppHdrV01#parse(String) instead");
+        DeprecationUtils.phase3(
+                MxParser.class, "parseApplicationHeader()", "Use BusinessAppHdrV01#parse(String) instead");
 
         BusinessAppHdrV01 businessAppHdrV01 = BusinessAppHdrV01.parse(this.buffer);
         BusinessApplicationHeaderV01 result = new BusinessApplicationHeaderV01();
@@ -278,8 +295,11 @@ public class MxParser {
     @Deprecated
     @ProwideDeprecated(phase4 = TargetYear.SRU2023)
     public MxStructureInfo analyzeMessage() {
-        // we do not apply phase2 since for backward compatibility this is being called by the MxCustomValidationRule in Prowide Integrator
-        // DeprecationUtils.phase2(MxParser.class, "analyzeMessage()", "The AbstractMX#parse(String) can be used to parse any unknown message. If you just want to detect the message type you can also use the MxParseUtils#identifyMessage(String)");
+        // we do not apply phase2 since for backward compatibility this is being called by the MxCustomValidationRule in
+        // Prowide Integrator
+        // DeprecationUtils.phase2(MxParser.class, "analyzeMessage()", "The AbstractMX#parse(String) can be used to
+        // parse any unknown message. If you just want to detect the message type you can also use the
+        // MxParseUtils#identifyMessage(String)");
 
         if (this.info != null) {
             return this.info;
@@ -300,7 +320,8 @@ public class MxParser {
                         this.info.containsDocument = true;
                         this.info.documentNamespace = readNamespace(reader);
                         this.info.documentPrefix = StringUtils.trimToNull(reader.getPrefix());
-                    } else if (!this.info.containsHeader && reader.getLocalName().equals(AppHdr.HEADER_LOCALNAME)) {
+                    } else if (!this.info.containsHeader
+                            && reader.getLocalName().equals(AppHdr.HEADER_LOCALNAME)) {
                         this.info.containsHeader = true;
                         this.info.headerNamespace = readNamespace(reader);
                         this.info.headerPrefix = StringUtils.trimToNull(reader.getPrefix());
@@ -320,16 +341,21 @@ public class MxParser {
     @Deprecated
     @ProwideDeprecated(phase4 = TargetYear.SRU2023)
     private String readNamespace(final javax.xml.stream.XMLStreamReader reader) {
-        DeprecationUtils.phase3(MxParser.class, "readNamespace(XMLStreamReader)", "If you just want to detect the message type you can also use the MxParseUtils#identifyMessage(String)");
+        DeprecationUtils.phase3(
+                MxParser.class,
+                "readNamespace(XMLStreamReader)",
+                "If you just want to detect the message type you can also use the MxParseUtils#identifyMessage(String)");
 
         // iterate and return the namespace matching the element prefix
         if (reader.getNamespaceCount() > 0) {
-            //log.finest("ELEMENT START: " + reader.getLocalName() + " , namespace count is: " + reader.getNamespaceCount());
+            // log.finest("ELEMENT START: " + reader.getLocalName() + " , namespace count is: " +
+            // reader.getNamespaceCount());
             for (int nsIndex = 0; nsIndex < reader.getNamespaceCount(); nsIndex++) {
                 final String nsPrefix = StringUtils.trimToNull(reader.getNamespacePrefix(nsIndex));
                 final String elementPrefix = StringUtils.trimToNull(reader.getPrefix());
                 if (StringUtils.equals(nsPrefix, elementPrefix)) {
-                    // if prefix match or is not set in both the element and the namespace we return it as found namespace
+                    // if prefix match or is not set in both the element and the namespace we return it as found
+                    // namespace
                     return reader.getNamespaceURI(nsIndex);
                 }
             }
@@ -362,11 +388,16 @@ public class MxParser {
     @Deprecated
     @ProwideDeprecated(phase4 = TargetYear.SRU2023)
     public String stripDocument() {
-        DeprecationUtils.phase3(MxParser.class, "stripDocument()", "Parse the message using AbstractMX#parse(String) instead, and then use any of the document serializer methods such as AbstractMX#document()");
+        DeprecationUtils.phase3(
+                MxParser.class,
+                "stripDocument()",
+                "Parse the message using AbstractMX#parse(String) instead, and then use any of the document serializer methods such as AbstractMX#document()");
 
         analyzeMessage();
         if (this.info.containsDocument) {
-            final String tag = this.info.getDocumentPrefix() != null ? this.info.getDocumentPrefix() + ":" + AbstractMX.DOCUMENT_LOCALNAME : AbstractMX.DOCUMENT_LOCALNAME;
+            final String tag = this.info.getDocumentPrefix() != null
+                    ? this.info.getDocumentPrefix() + ":" + AbstractMX.DOCUMENT_LOCALNAME
+                    : AbstractMX.DOCUMENT_LOCALNAME;
             int beginIndex = this.buffer.indexOf("<" + tag);
             int endIndex = this.buffer.lastIndexOf("</" + tag);
             if (beginIndex >= 0 && endIndex >= 0) {
@@ -402,10 +433,15 @@ public class MxParser {
     @Deprecated
     @ProwideDeprecated(phase4 = TargetYear.SRU2023)
     public String stripHeader() {
-        DeprecationUtils.phase3(MxParseUtils.class, "stripHeader()", "Parse the message using AbstractMX#parse(String) instead, and then use any of the header serializer methods such as AbstractMX#header()");
+        DeprecationUtils.phase3(
+                MxParseUtils.class,
+                "stripHeader()",
+                "Parse the message using AbstractMX#parse(String) instead, and then use any of the header serializer methods such as AbstractMX#header()");
         analyzeMessage();
         if (this.info.containsHeader()) {
-            final String tag = this.info.getHeaderPrefix() != null ? this.info.getHeaderPrefix() + ":" + AppHdr.HEADER_LOCALNAME : AppHdr.HEADER_LOCALNAME;
+            final String tag = this.info.getHeaderPrefix() != null
+                    ? this.info.getHeaderPrefix() + ":" + AppHdr.HEADER_LOCALNAME
+                    : AppHdr.HEADER_LOCALNAME;
             int beginIndex = this.buffer.indexOf("<" + tag);
             int endIndex = this.buffer.indexOf("</" + tag);
             if (beginIndex >= 0 && endIndex >= 0) {
@@ -487,5 +523,4 @@ public class MxParser {
                     + headerPrefix + "]";
         }
     }
-
 }

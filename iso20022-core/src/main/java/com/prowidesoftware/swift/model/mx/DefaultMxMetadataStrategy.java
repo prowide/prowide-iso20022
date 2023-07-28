@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,10 +19,9 @@ import com.prowidesoftware.swift.model.AbstractMessage;
 import com.prowidesoftware.swift.model.MessageMetadataStrategy;
 import com.prowidesoftware.swift.model.Money;
 import com.prowidesoftware.swift.model.MxNode;
-import org.apache.commons.lang3.StringUtils;
-
 import java.util.Calendar;
 import java.util.Optional;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * Default implementation of MT messages metadata extraction.
@@ -68,5 +67,4 @@ public class DefaultMxMetadataStrategy implements MessageMetadataStrategy {
     public Optional<Calendar> tradeDate(AbstractMessage message) {
         return Optional.empty();
     }
-
 }

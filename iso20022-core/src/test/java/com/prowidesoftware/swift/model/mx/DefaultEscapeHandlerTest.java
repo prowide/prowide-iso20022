@@ -1,8 +1,8 @@
 package com.prowidesoftware.swift.model.mx;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
 
 class DefaultEscapeHandlerTest {
 
@@ -28,5 +28,4 @@ class DefaultEscapeHandlerTest {
         assertEquals("&#128;&#165;&#233;&#246;", handler.escape(arr, false));
         assertEquals("&#128;&#165;&#233;&#246;", handler.escape(arr, true));
     }
-
 }
