@@ -1,6 +1,6 @@
 # Prowide ISO 20022 - CHANGELOG
 
-#### 9.3.8-SNAPSHOT
+#### 9.3.8 - July 2023
   * Added new utility class SupplementaryDataUtils. This class provides utility methods for extracting "SplmtryData" elements from an XML string.
 
 #### 9.3.7 - June 2023
