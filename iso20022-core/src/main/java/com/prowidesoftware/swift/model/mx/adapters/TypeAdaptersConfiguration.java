@@ -16,7 +16,6 @@
 package com.prowidesoftware.swift.model.mx.adapters;
 
 import jakarta.xml.bind.annotation.adapters.XmlAdapter;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -121,5 +120,4 @@ public class TypeAdaptersConfiguration {
         }
         return all;
     }
-
 }

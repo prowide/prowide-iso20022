@@ -16,7 +16,6 @@
 package com.prowidesoftware.swift.model.mx.adapters;
 
 import com.google.gson.*;
-
 import java.lang.reflect.Type;
 import java.time.YearMonth;
 
@@ -37,7 +36,8 @@ public class YearMonthJsonAdapter implements JsonSerializer<YearMonth>, JsonDese
     }
 
     @Override
-    public YearMonth deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) {
+    public YearMonth deserialize(
+            JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) {
         YearMonthJsonDTO yearMonthJsonDTO = gson.fromJson(jsonElement, YearMonthJsonDTO.class);
         return YearMonth.of(yearMonthJsonDTO.year, yearMonthJsonDTO.month);
     }
@@ -46,5 +46,4 @@ public class YearMonthJsonAdapter implements JsonSerializer<YearMonth>, JsonDese
         int year;
         int month;
     }
-
 }

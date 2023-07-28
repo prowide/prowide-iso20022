@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,12 +28,6 @@ import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
-import org.apache.commons.lang3.StringUtils;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-
-import javax.xml.namespace.QName;
-import javax.xml.transform.dom.DOMResult;
 import java.io.StringWriter;
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
@@ -41,6 +35,11 @@ import java.util.Arrays;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.xml.namespace.QName;
+import javax.xml.transform.dom.DOMResult;
+import org.apache.commons.lang3.StringUtils;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 
 /**
  * ISO 20022 business application header version 3 usually known by its namespace head.001.001.03
@@ -52,11 +51,12 @@ import java.util.logging.Logger;
 @XmlRootElement(name = "AppHdr", namespace = "urn:iso:std:iso:20022:tech:xsd:head.001.001.03")
 public class BusinessAppHdrV03 extends BusinessApplicationHeaderV03Impl implements AppHdr {
     public static final String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:head.001.001.03";
-    final static Class[] _classes;
+    static final Class[] _classes;
     private static final Logger log = Logger.getLogger(BusinessAppHdrV03.class.getName());
 
     static {
-        _classes = Arrays.copyOf(BusinessApplicationHeaderV03Impl._classes, BusinessApplicationHeaderV03Impl._classes.length + 1);
+        _classes = Arrays.copyOf(
+                BusinessApplicationHeaderV03Impl._classes, BusinessApplicationHeaderV03Impl._classes.length + 1);
         _classes[_classes.length - 1] = BusinessAppHdrV03.class;
     }
 
@@ -242,8 +242,15 @@ public class BusinessAppHdrV03 extends BusinessApplicationHeaderV03Impl implemen
             final Marshaller marshaller = MxWriteUtils.createMarshaller(context, params);
 
             final StringWriter sw = new StringWriter();
-            JAXBElement<BusinessApplicationHeaderV03Impl> element = new JAXBElement(new QName(NAMESPACE, AppHdr.HEADER_LOCALNAME), BusinessApplicationHeaderV03Impl.class, null, this);
-            XmlEventWriter eventWriter = new XmlEventWriter(sw, params.prefix, params.includeXMLDeclaration, AppHdr.HEADER_LOCALNAME, params.escapeHandler, params.indent);
+            JAXBElement<BusinessApplicationHeaderV03Impl> element = new JAXBElement(
+                    new QName(NAMESPACE, AppHdr.HEADER_LOCALNAME), BusinessApplicationHeaderV03Impl.class, null, this);
+            XmlEventWriter eventWriter = new XmlEventWriter(
+                    sw,
+                    params.prefix,
+                    params.includeXMLDeclaration,
+                    AppHdr.HEADER_LOCALNAME,
+                    params.escapeHandler,
+                    params.indent);
             marshaller.marshal(element, eventWriter);
             return sw.getBuffer().toString();
 
@@ -273,7 +280,8 @@ public class BusinessAppHdrV03 extends BusinessApplicationHeaderV03Impl implemen
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 
             DOMResult res = new DOMResult();
-            JAXBElement<BusinessApplicationHeaderV03Impl> element = new JAXBElement(new QName(NAMESPACE, AppHdr.HEADER_LOCALNAME), BusinessApplicationHeaderV03Impl.class, null, this);
+            JAXBElement<BusinessApplicationHeaderV03Impl> element = new JAXBElement(
+                    new QName(NAMESPACE, AppHdr.HEADER_LOCALNAME), BusinessApplicationHeaderV03Impl.class, null, this);
             marshaller.marshal(element, res);
             Document doc = (Document) res.getNode();
             return (Element) doc.getFirstChild();

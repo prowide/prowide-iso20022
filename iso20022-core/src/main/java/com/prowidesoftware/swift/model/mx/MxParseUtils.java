@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,23 +19,21 @@ import com.prowidesoftware.ProwideException;
 import com.prowidesoftware.deprecation.ProwideDeprecated;
 import com.prowidesoftware.deprecation.TargetYear;
 import com.prowidesoftware.swift.model.MxId;
-import com.prowidesoftware.swift.model.mx.adapters.YearMonthAdapter;
 import com.prowidesoftware.swift.utils.SafeXmlUtils;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.Validate;
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXParseException;
-import org.xml.sax.XMLReader;
-
 import jakarta.xml.bind.*;
 import jakarta.xml.bind.annotation.adapters.XmlAdapter;
-import javax.xml.stream.XMLStreamException;
-import javax.xml.transform.sax.SAXSource;
 import java.io.StringReader;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.concurrent.ExecutionException;
 import java.util.logging.Logger;
+import javax.xml.stream.XMLStreamException;
+import javax.xml.transform.sax.SAXSource;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.Validate;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXParseException;
+import org.xml.sax.XMLReader;
 
 /**
  * @since 9.1.2
@@ -86,7 +84,8 @@ public class MxParseUtils {
      * @throws ProwideException if severe errors occur during parse
      * @since 9.2.6
      */
-    static Object parseSAXSource(final SAXSource source, final Class targetClass, final Class<?>[] classes, final MxReadParams params) {
+    static Object parseSAXSource(
+            final SAXSource source, final Class targetClass, final Class<?>[] classes, final MxReadParams params) {
         Objects.requireNonNull(targetClass, "target class to parse must not be null");
         Objects.requireNonNull(source, "SAXSource to parse must not be null");
         Objects.requireNonNull(classes, "object model classes array must not be null");
@@ -124,7 +123,9 @@ public class MxParseUtils {
             final Throwable cause = e.getCause();
             if (cause instanceof SAXParseException) {
                 SAXParseException spe = (SAXParseException) cause;
-                throw new ProwideException("Error parsing message at line " + spe.getLineNumber() + ", column " + spe.getColumnNumber(), cause);
+                throw new ProwideException(
+                        "Error parsing message at line " + spe.getLineNumber() + ", column " + spe.getColumnNumber(),
+                        cause);
             } else {
                 throw new ProwideException("Error parsing message", cause);
             }
@@ -157,7 +158,12 @@ public class MxParseUtils {
      * @throws ProwideException if severe errors occur during parse
      * @since 9.2.6
      */
-    static Object parse(final Class targetClass, final String xml, final Class<?>[] classes, final String localName, final MxReadParams params) {
+    static Object parse(
+            final Class targetClass,
+            final String xml,
+            final Class<?>[] classes,
+            final String localName,
+            final MxReadParams params) {
         Objects.requireNonNull(targetClass, "target class to parse must not be null");
         Objects.requireNonNull(xml, "XML to parse must not be null");
         Validate.notBlank(xml, "XML to parse must not be a blank string");
@@ -214,5 +220,4 @@ public class MxParseUtils {
         }
         return Optional.empty();
     }
-
 }

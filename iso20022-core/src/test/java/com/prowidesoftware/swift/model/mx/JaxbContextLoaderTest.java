@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,14 +15,13 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 import com.prowidesoftware.swift.utils.Lib;
+import java.io.IOException;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.io.IOException;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @since 9.0
@@ -79,5 +78,4 @@ public class JaxbContextLoaderTest {
         assertEquals("ASDFASDF22342", pacs009.getAppHdr().reference());
         assertEquals("SDFASDF2323", pacs009.getFICdtTrf().getGrpHdr().getMsgId());
     }
-
 }

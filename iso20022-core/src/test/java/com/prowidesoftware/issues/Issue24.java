@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,9 @@
  */
 package com.prowidesoftware.issues;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import com.prowidesoftware.swift.model.mx.MinimumEscapeHandler;
 import com.prowidesoftware.swift.model.mx.MxPain00100103;
 import com.prowidesoftware.swift.model.mx.MxWriteConfiguration;
@@ -23,9 +26,6 @@ import com.prowidesoftware.swift.model.mx.dic.GroupHeader32;
 import com.prowidesoftware.swift.model.mx.dic.PartyIdentification32;
 import com.prowidesoftware.swift.model.mx.dic.PaymentInstructionInformation3;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * https://github.com/prowide/prowide-iso20022/issues/24
@@ -47,10 +47,13 @@ public class Issue24 {
     public void testWriteDefaultEscapeHandler() {
         MxPain00100103 mx = sample();
         String xml = mx.message();
-        assertTrue(xml.contains("&#1090;&#1077;&#1082;&#1089;&#1090; &#1090;&#1077;&#1082;&#1089;&#1090; &#246;&#241;"));
+        assertTrue(
+                xml.contains("&#1090;&#1077;&#1082;&#1089;&#1090; &#1090;&#1077;&#1082;&#1089;&#1090; &#246;&#241;"));
 
         MxPain00100103 mx2 = MxPain00100103.parse(xml);
-        assertEquals("текст текст öñ", mx2.getCstmrCdtTrfInitn().getPmtInf().get(0).getDbtr().getNm());
+        assertEquals(
+                "текст текст öñ",
+                mx2.getCstmrCdtTrfInitn().getPmtInf().get(0).getDbtr().getNm());
         assertEquals(mx, mx2);
     }
 
@@ -65,27 +68,30 @@ public class Issue24 {
         assertTrue(xml.contains("текст текст öñ"));
 
         MxPain00100103 mx2 = MxPain00100103.parse(xml);
-        assertEquals("текст текст öñ", mx2.getCstmrCdtTrfInitn().getPmtInf().get(0).getDbtr().getNm());
+        assertEquals(
+                "текст текст öñ",
+                mx2.getCstmrCdtTrfInitn().getPmtInf().get(0).getDbtr().getNm());
         assertEquals(mx, mx2);
     }
 
     @Test
     public void testParse() {
-        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n" +
-                "<Doc:Document xmlns:Doc=\"urn:iso:std:iso:20022:tech:xsd:pain.001.001.03\">\n" +
-                "    <Doc:CstmrCdtTrfInitn>\n" +
-                "        <Doc:GrpHdr>\n" +
-                "            <Doc:MsgId>1234</Doc:MsgId>\n" +
-                "        </Doc:GrpHdr>\n" +
-                "        <Doc:PmtInf>\n" +
-                "            <Doc:Dbtr>\n" +
-                "                <Doc:Nm>текст текст öñ</Doc:Nm>\n" +
-                "            </Doc:Dbtr>\n" +
-                "        </Doc:PmtInf>\n" +
-                "    </Doc:CstmrCdtTrfInitn>\n" +
-                "</Doc:Document>";
+        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n"
+                + "<Doc:Document xmlns:Doc=\"urn:iso:std:iso:20022:tech:xsd:pain.001.001.03\">\n"
+                + "    <Doc:CstmrCdtTrfInitn>\n"
+                + "        <Doc:GrpHdr>\n"
+                + "            <Doc:MsgId>1234</Doc:MsgId>\n"
+                + "        </Doc:GrpHdr>\n"
+                + "        <Doc:PmtInf>\n"
+                + "            <Doc:Dbtr>\n"
+                + "                <Doc:Nm>текст текст öñ</Doc:Nm>\n"
+                + "            </Doc:Dbtr>\n"
+                + "        </Doc:PmtInf>\n"
+                + "    </Doc:CstmrCdtTrfInitn>\n"
+                + "</Doc:Document>";
         MxPain00100103 mx2 = MxPain00100103.parse(xml);
-        assertEquals("текст текст öñ", mx2.getCstmrCdtTrfInitn().getPmtInf().get(0).getDbtr().getNm());
+        assertEquals(
+                "текст текст öñ",
+                mx2.getCstmrCdtTrfInitn().getPmtInf().get(0).getDbtr().getNm());
     }
-
 }

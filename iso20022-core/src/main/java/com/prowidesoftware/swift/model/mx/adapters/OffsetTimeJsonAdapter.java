@@ -16,7 +16,6 @@
 package com.prowidesoftware.swift.model.mx.adapters;
 
 import com.google.gson.*;
-
 import java.lang.reflect.Type;
 import java.time.LocalTime;
 import java.time.OffsetTime;
@@ -49,7 +48,8 @@ public class OffsetTimeJsonAdapter implements JsonSerializer<OffsetTime>, JsonDe
     }
 
     @Override
-    public OffsetTime deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) {
+    public OffsetTime deserialize(
+            JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) {
         try {
             OffsetTime offsetTime;
             TimeOffsetDTO timeDTO = gson.fromJson(jsonElement, TimeOffsetDTO.class);
@@ -61,7 +61,8 @@ public class OffsetTimeJsonAdapter implements JsonSerializer<OffsetTime>, JsonDe
 
             if (timeDTO.offset != null) {
                 ZoneOffset zoneoffset = ZoneOffset.ofTotalSeconds(timeDTO.offset.totalSeconds);
-                offsetTime = OffsetTime.of(timeDTO.time.hour, timeDTO.time.minute, timeDTO.time.second, nano, zoneoffset);
+                offsetTime =
+                        OffsetTime.of(timeDTO.time.hour, timeDTO.time.minute, timeDTO.time.second, nano, zoneoffset);
             } else {
                 LocalTime localTime = LocalTime.of(timeDTO.time.hour, timeDTO.time.minute, timeDTO.time.second, nano);
                 offsetTime = localTime.atOffset(OffsetTime.now().getOffset());
@@ -89,5 +90,4 @@ public class OffsetTimeJsonAdapter implements JsonSerializer<OffsetTime>, JsonDe
     static class OffsetDTO {
         Integer totalSeconds = 0;
     }
-
 }

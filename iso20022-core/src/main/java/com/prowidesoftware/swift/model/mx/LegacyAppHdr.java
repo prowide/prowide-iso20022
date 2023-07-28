@@ -27,12 +27,6 @@ import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
-import org.apache.commons.lang3.StringUtils;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-
-import javax.xml.namespace.QName;
-import javax.xml.transform.dom.DOMResult;
 import java.io.StringWriter;
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
@@ -40,6 +34,11 @@ import java.util.Arrays;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.xml.namespace.QName;
+import javax.xml.transform.dom.DOMResult;
+import org.apache.commons.lang3.StringUtils;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 
 /**
  * Legacy SWIFT application header usually knonw from its namespace:  $ahV10
@@ -51,7 +50,7 @@ import java.util.logging.Logger;
 @XmlRootElement(name = "AppHdr", namespace = "urn:swift:xsd:$ahV10")
 public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
     public static final String NAMESPACE = "urn:swift:xsd:$ahV10";
-    final static Class[] _classes;
+    static final Class[] _classes;
     private static final Logger log = Logger.getLogger(LegacyAppHdr.class.getName());
 
     static {
@@ -235,8 +234,15 @@ public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
             final Marshaller marshaller = MxWriteUtils.createMarshaller(context, params);
 
             final StringWriter sw = new StringWriter();
-            JAXBElement<ApplicationHeaderImpl> element = new JAXBElement(new QName(NAMESPACE, AppHdr.HEADER_LOCALNAME), ApplicationHeaderImpl.class, null, this);
-            XmlEventWriter eventWriter = new XmlEventWriter(sw, params.prefix, params.includeXMLDeclaration, AppHdr.HEADER_LOCALNAME, params.escapeHandler, params.indent);
+            JAXBElement<ApplicationHeaderImpl> element = new JAXBElement(
+                    new QName(NAMESPACE, AppHdr.HEADER_LOCALNAME), ApplicationHeaderImpl.class, null, this);
+            XmlEventWriter eventWriter = new XmlEventWriter(
+                    sw,
+                    params.prefix,
+                    params.includeXMLDeclaration,
+                    AppHdr.HEADER_LOCALNAME,
+                    params.escapeHandler,
+                    params.indent);
             marshaller.marshal(element, eventWriter);
             return sw.getBuffer().toString();
 
@@ -266,7 +272,8 @@ public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 
             DOMResult res = new DOMResult();
-            JAXBElement<ApplicationHeaderImpl> element = new JAXBElement(new QName(NAMESPACE, AppHdr.HEADER_LOCALNAME), ApplicationHeaderImpl.class, null, this);
+            JAXBElement<ApplicationHeaderImpl> element = new JAXBElement(
+                    new QName(NAMESPACE, AppHdr.HEADER_LOCALNAME), ApplicationHeaderImpl.class, null, this);
             marshaller.marshal(element, res);
             Document doc = (Document) res.getNode();
             return (Element) doc.getFirstChild();
@@ -285,5 +292,4 @@ public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
     public String namespace() {
         return NAMESPACE;
     }
-
 }

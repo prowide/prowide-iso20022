@@ -21,10 +21,8 @@ import com.prowidesoftware.deprecation.TargetYear;
 import com.prowidesoftware.swift.model.MxId;
 import com.prowidesoftware.swift.model.mx.dic.ApplicationHeader;
 import com.prowidesoftware.swift.model.mx.dic.BusinessApplicationHeaderV01;
-import org.w3c.dom.Element;
-
 import java.time.OffsetDateTime;
-
+import org.w3c.dom.Element;
 
 /**
  * This header model was the original implemented as a holder for the two available headers:
@@ -68,7 +66,10 @@ public class BusinessHeader implements AppHdr {
     @ProwideDeprecated(phase4 = TargetYear.SRU2023)
     public BusinessHeader() {
         super();
-        DeprecationUtils.phase3(BusinessHeader.class, "BusinessHeader()", "Use a specific implementation of AppHdr instead, such as BusinessAppHdrV01");
+        DeprecationUtils.phase3(
+                BusinessHeader.class,
+                "BusinessHeader()",
+                "Use a specific implementation of AppHdr instead, such as BusinessAppHdrV01");
     }
 
     /**
@@ -79,7 +80,10 @@ public class BusinessHeader implements AppHdr {
     public BusinessHeader(final ApplicationHeader applicationHeader) {
         this();
         this.applicationHeader = applicationHeader;
-        DeprecationUtils.phase3(BusinessHeader.class, "BusinessHeader(ApplicationHeader)", "Use a specific implementation of AppHdr instead, such as LegacyAppHdr");
+        DeprecationUtils.phase3(
+                BusinessHeader.class,
+                "BusinessHeader(ApplicationHeader)",
+                "Use a specific implementation of AppHdr instead, such as LegacyAppHdr");
     }
 
     /**
@@ -97,7 +101,10 @@ public class BusinessHeader implements AppHdr {
         this.applicationHeader.setMsgRef(legacyAppHdr.getMsgRef());
         this.applicationHeader.setCrDate(legacyAppHdr.getCrDate());
         this.applicationHeader.setDup(legacyAppHdr.getDup());
-        DeprecationUtils.phase2(BusinessHeader.class, "BusinessHeader(LegacyAppHdr)", "Use a specific implementation of AppHdr instead, such as LegacyAppHdr");
+        DeprecationUtils.phase2(
+                BusinessHeader.class,
+                "BusinessHeader(LegacyAppHdr)",
+                "Use a specific implementation of AppHdr instead, such as LegacyAppHdr");
     }
 
     /**
@@ -108,7 +115,10 @@ public class BusinessHeader implements AppHdr {
     public BusinessHeader(final BusinessApplicationHeaderV01 businessApplicationHeader) {
         this();
         this.businessApplicationHeader = businessApplicationHeader;
-        DeprecationUtils.phase3(BusinessHeader.class, "BusinessHeader(BusinessApplicationHeaderV01)", "Use a specific implementation of AppHdr instead, such as BusinessApplicationHeaderV01");
+        DeprecationUtils.phase3(
+                BusinessHeader.class,
+                "BusinessHeader(BusinessApplicationHeaderV01)",
+                "Use a specific implementation of AppHdr instead, such as BusinessApplicationHeaderV01");
     }
 
     /**
@@ -131,7 +141,10 @@ public class BusinessHeader implements AppHdr {
         this.businessApplicationHeader.setPrty(businessAppHdrV01.getPrty());
         this.businessApplicationHeader.setSgntr(businessAppHdrV01.getSgntr());
         this.businessApplicationHeader.setRltd(businessAppHdrV01.getRltd());
-        DeprecationUtils.phase2(BusinessHeader.class, "BusinessHeader(BusinessAppHdrV01)", "Use a specific implementation of AppHdr instead, such as BusinessAppHdrV01");
+        DeprecationUtils.phase2(
+                BusinessHeader.class,
+                "BusinessHeader(BusinessAppHdrV01)",
+                "Use a specific implementation of AppHdr instead, such as BusinessAppHdrV01");
     }
 
     /**
@@ -139,8 +152,12 @@ public class BusinessHeader implements AppHdr {
      */
     @Deprecated
     @ProwideDeprecated(phase4 = TargetYear.SRU2023)
-    public static BusinessApplicationHeaderV01 createBusinessApplicationHeaderV01(final String sender, final String receiver, final String reference, final MxId id) {
-        DeprecationUtils.phase3(BusinessHeader.class, "createBusinessApplicationHeaderV01(String, String, String, MxId)", "Use AppHdrFactory#createBusinessAppHdrV01(String, String, String, MxId) instead");
+    public static BusinessApplicationHeaderV01 createBusinessApplicationHeaderV01(
+            final String sender, final String receiver, final String reference, final MxId id) {
+        DeprecationUtils.phase3(
+                BusinessHeader.class,
+                "createBusinessApplicationHeaderV01(String, String, String, MxId)",
+                "Use AppHdrFactory#createBusinessAppHdrV01(String, String, String, MxId) instead");
 
         BusinessAppHdrV01 businessAppHdrV01 = AppHdrFactory.createBusinessAppHdrV01(sender, receiver, reference, id);
         BusinessApplicationHeaderV01 result = new BusinessApplicationHeaderV01();
@@ -164,8 +181,12 @@ public class BusinessHeader implements AppHdr {
      */
     @Deprecated
     @ProwideDeprecated(phase4 = TargetYear.SRU2023)
-    public static BusinessHeader create(final String sender, final String receiver, final String reference, final MxId id) {
-        DeprecationUtils.phase3(BusinessHeader.class, "create(String, String, String, MxId)", "Use AppHdrFactory#createBusinessAppHdrV01(String, String, String, MxId) instead");
+    public static BusinessHeader create(
+            final String sender, final String receiver, final String reference, final MxId id) {
+        DeprecationUtils.phase3(
+                BusinessHeader.class,
+                "create(String, String, String, MxId)",
+                "Use AppHdrFactory#createBusinessAppHdrV01(String, String, String, MxId) instead");
         return new BusinessHeader(createBusinessApplicationHeaderV01(sender, receiver, reference, id));
     }
 
@@ -174,8 +195,12 @@ public class BusinessHeader implements AppHdr {
      */
     @Deprecated
     @ProwideDeprecated(phase4 = TargetYear.SRU2023)
-    public static ApplicationHeader createApplicationHeader(final String sender, final String receiver, final String reference, final MxId id) {
-        DeprecationUtils.phase3(BusinessHeader.class, "createApplicationHeader(String, String, String, MxId)", "Use AppHdrFactory#createLegacyAppHdr(String, String, String, MxId) instead");
+    public static ApplicationHeader createApplicationHeader(
+            final String sender, final String receiver, final String reference, final MxId id) {
+        DeprecationUtils.phase3(
+                BusinessHeader.class,
+                "createApplicationHeader(String, String, String, MxId)",
+                "Use AppHdrFactory#createLegacyAppHdr(String, String, String, MxId) instead");
         LegacyAppHdr legacyHdr = AppHdrFactory.createLegacyAppHdr(sender, receiver, reference, id);
         ApplicationHeader result = new ApplicationHeader();
         result.setFrom(legacyHdr.getFrom());
@@ -194,7 +219,8 @@ public class BusinessHeader implements AppHdr {
 
     public void setApplicationHeader(final ApplicationHeader applicationHeader) {
         if (this.businessApplicationHeader != null) {
-            throw new IllegalStateException("can't set applicationHeader when businessApplicationHeader is not null, set it to null before. These attributes overlap each other");
+            throw new IllegalStateException(
+                    "can't set applicationHeader when businessApplicationHeader is not null, set it to null before. These attributes overlap each other");
         }
         this.applicationHeader = applicationHeader;
     }
@@ -205,7 +231,8 @@ public class BusinessHeader implements AppHdr {
 
     public void setBusinessApplicationHeader(final BusinessApplicationHeaderV01 businessApplicationHeader) {
         if (this.applicationHeader != null) {
-            throw new IllegalStateException("can't set businessApplicationHeader when applicationHeader is not null, set it to null before. These attributes overlap each other");
+            throw new IllegalStateException(
+                    "can't set businessApplicationHeader when applicationHeader is not null, set it to null before. These attributes overlap each other");
         }
         this.businessApplicationHeader = businessApplicationHeader;
     }
@@ -384,5 +411,4 @@ public class BusinessHeader implements AppHdr {
             this.applicationHeader.setCreationDate(overwrite);
         }
     }
-
 }

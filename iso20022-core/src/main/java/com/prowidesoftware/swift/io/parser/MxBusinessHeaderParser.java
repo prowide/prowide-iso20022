@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,6 @@ import com.prowidesoftware.swift.model.MxNode;
 import com.prowidesoftware.swift.model.mx.AppHdr;
 import com.prowidesoftware.swift.model.mx.BusinessAppHdrV02;
 import com.prowidesoftware.swift.model.mx.dic.*;
-
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -113,7 +112,8 @@ class MxBusinessHeaderParser {
                     MxNode CrDate = header.findFirst("./CrDate");
                     if (CrDate != null) {
                         try {
-                            DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+                            DateTimeFormatter dateTimeFormatter =
+                                    DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
                             result.setCrDate(OffsetDateTime.parse(CrDate.getValue(), dateTimeFormatter));
                         } catch (final DateTimeParseException e) {
                             log.warning("exception " + e + " parsing header crDate [" + CrDate.getValue() + "]");
@@ -197,7 +197,6 @@ class MxBusinessHeaderParser {
                 }
 
                 MxNode CreDt = header.findFirst("./CreDt");
-
 
                 MxNode CpyDplct = header.findFirst("./CpyDplct");
                 if (CpyDplct != null) {
@@ -391,7 +390,6 @@ class MxBusinessHeaderParser {
         if (ClrSysMmbId != null) {
             finInstnId.setClrSysMmbId(new ClearingSystemMemberIdentification2());
             parse(ClrSysMmbId, finInstnId.getClrSysMmbId());
-
         }
         MxNode Nm = node.findFirst("./Nm");
         if (Nm != null) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,20 +18,18 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.deprecation.DeprecationUtils;
 import com.prowidesoftware.deprecation.ProwideDeprecated;
 import com.prowidesoftware.deprecation.TargetYear;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.builder.ToStringBuilder;
-
+import java.io.IOException;
+import java.io.Writer;
+import java.util.Map;
+import java.util.logging.Level;
 import javax.xml.namespace.NamespaceContext;
 import javax.xml.namespace.QName;
 import javax.xml.stream.XMLEventReader;
 import javax.xml.stream.XMLEventWriter;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.events.*;
-import java.io.IOException;
-import java.io.Writer;
-import java.util.Map;
-import java.util.logging.Level;
-
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 /**
  * XMl writer for MX model classes.
@@ -39,7 +37,8 @@ import java.util.logging.Level;
  * @since 7.8
  */
 public final class XmlEventWriter implements XMLEventWriter {
-    private static final transient java.util.logging.Logger log = java.util.logging.Logger.getLogger(XmlEventWriter.class.getName());
+    private static final transient java.util.logging.Logger log =
+            java.util.logging.Logger.getLogger(XmlEventWriter.class.getName());
     private String indent = "    ";
     private final Writer out;
     private StartElement delayedStart;
@@ -61,9 +60,13 @@ public final class XmlEventWriter implements XMLEventWriter {
      */
     @Deprecated
     @ProwideDeprecated(phase3 = TargetYear.SRU2023)
-    public XmlEventWriter(Writer baos, final String defaultPrefix, boolean includeXMLDeclaration, final String rootElement) {
+    public XmlEventWriter(
+            Writer baos, final String defaultPrefix, boolean includeXMLDeclaration, final String rootElement) {
         this(baos, defaultPrefix, includeXMLDeclaration, rootElement, null, null);
-        DeprecationUtils.phase2(XmlEventWriter.class, "XmlEventWriter(Writer, String, boolean, String)", "Use XmlEventWriter(Writer, String, boolean, String, EscapeHandler) instead");
+        DeprecationUtils.phase2(
+                XmlEventWriter.class,
+                "XmlEventWriter(Writer, String, boolean, String)",
+                "Use XmlEventWriter(Writer, String, boolean, String, EscapeHandler) instead");
     }
 
     /**
@@ -75,7 +78,13 @@ public final class XmlEventWriter implements XMLEventWriter {
      * @see #setPreferredPrefixes(Map)
      * @since 9.1.7
      */
-    public XmlEventWriter(Writer baos, final String defaultPrefix, boolean includeXMLDeclaration, final String rootElement, final EscapeHandler escapeHandler, final String indent) {
+    public XmlEventWriter(
+            Writer baos,
+            final String defaultPrefix,
+            boolean includeXMLDeclaration,
+            final String rootElement,
+            final EscapeHandler escapeHandler,
+            final String indent) {
         this.out = baos;
         this.startElementCount = 0;
         this.nestedLevel = 0;
@@ -83,7 +92,7 @@ public final class XmlEventWriter implements XMLEventWriter {
         this.includeXMLDeclaration = includeXMLDeclaration;
         this.rootElement = rootElement;
         this.escapeHandler = escapeHandler != null ? escapeHandler : new DefaultEscapeHandler();
-        if(indent!=null) {
+        if (indent != null) {
             this.indent = indent;
         }
     }
@@ -115,7 +124,8 @@ public final class XmlEventWriter implements XMLEventWriter {
                          */
                         if (StringUtils.equals(localPart, this.rootElement) && this.startElementCount == 1) {
                             delayedStart = se;
-                            log.finest("local part is Document, initializing delayed start, startElementCount=" + this.startElementCount);
+                            log.finest("local part is Document, initializing delayed start, startElementCount="
+                                    + this.startElementCount);
                         } else {
                             writeIndentIfNeeded(out, nestedLevel);
                             out.write("<" + prefixString(se.getName()) + localPart);
@@ -154,7 +164,9 @@ public final class XmlEventWriter implements XMLEventWriter {
                             this.previousEvent = event;
                             break;
                         }
-                        if (ce.isWhiteSpace() && this.previousEvent != null && this.previousEvent.getEventType() == XMLEvent.END_ELEMENT) {
+                        if (ce.isWhiteSpace()
+                                && this.previousEvent != null
+                                && this.previousEvent.getEventType() == XMLEvent.END_ELEMENT) {
                             this.previousEvent = event;
                             break;
                         }
@@ -180,8 +192,7 @@ public final class XmlEventWriter implements XMLEventWriter {
                             // we are closing a nested element
                             writeIndentIfNeeded(out, nestedLevel);
                         } else {
-                            if (localPart.equals(this.currentElement) &&
-                                    this.previousNestedStartLevel != nestedLevel) {
+                            if (localPart.equals(this.currentElement) && this.previousNestedStartLevel != nestedLevel) {
                                 previousNestedStartLevel--;
                                 writeIndentIfNeeded(out, previousNestedStartLevel);
                             }
@@ -206,7 +217,9 @@ public final class XmlEventWriter implements XMLEventWriter {
 
                     case XMLEvent.ATTRIBUTE: {
                         final Attribute a = (Attribute) event;
-                        String escapedString = a.getValue() != null ? this.escapeHandler.escape(a.getValue().toCharArray(), true) : "";
+                        String escapedString = a.getValue() != null
+                                ? this.escapeHandler.escape(a.getValue().toCharArray(), true)
+                                : "";
                         out.write(" " + a.getName() + "=\"" + escapedString + "\"");
                         this.previousEvent = event;
                         break;
@@ -299,11 +312,9 @@ public final class XmlEventWriter implements XMLEventWriter {
         }
     }
 
-    public void add(XMLEventReader arg0) {
-    }
+    public void add(XMLEventReader arg0) {}
 
-    public void close() {
-    }
+    public void close() {}
 
     public void flush() throws XMLStreamException {
         try {
@@ -317,18 +328,15 @@ public final class XmlEventWriter implements XMLEventWriter {
         return null;
     }
 
-    public void setNamespaceContext(NamespaceContext arg0) {
-    }
+    public void setNamespaceContext(NamespaceContext arg0) {}
 
     public String getPrefix(String arg0) {
         return null;
     }
 
-    public void setDefaultNamespace(String arg0) {
-    }
+    public void setDefaultNamespace(String arg0) {}
 
-    public void setPrefix(String arg0, String arg1) {
-    }
+    public void setPrefix(String arg0, String arg1) {}
 
     /**
      * @since 7.9.3
@@ -360,7 +368,8 @@ public final class XmlEventWriter implements XMLEventWriter {
     @ProwideDeprecated(phase4 = TargetYear.SRU2023)
     @Deprecated
     public void setPeferredPrefixes(Map<String, String> preferredPrefixes) {
-        DeprecationUtils.phase3(XmlEventWriter.class, "setPeferredPrefixes(Map)", "Use setPreferredPrefixes(Map) instead");
+        DeprecationUtils.phase3(
+                XmlEventWriter.class, "setPeferredPrefixes(Map)", "Use setPreferredPrefixes(Map) instead");
         setPreferredPrefixes(preferredPrefixes);
     }
 

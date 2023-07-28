@@ -1,13 +1,12 @@
 package com.prowidesoftware.swift.model.mx.adapters;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.time.ZoneId;
 import java.time.ZoneOffset;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 
 class OffsetDateTimeAdapterTest {
 
@@ -23,14 +22,14 @@ class OffsetDateTimeAdapterTest {
 
         String offset = dateTime.getOffset().getId();
 
-        //DateTime without offset and with/without fractional seconds
+        // DateTime without offset and with/without fractional seconds
         testDateTimeImpl("2021-09-19T12:13:14", "2021-09-19T12:13:14" + offset);
         testDateTimeImpl("2021-09-19T12:13:14.1", "2021-09-19T12:13:14.1" + offset);
         testDateTimeImpl("2021-09-19T12:13:14.12", "2021-09-19T12:13:14.12" + offset);
         testDateTimeImpl("2021-09-19T12:13:14.123", "2021-09-19T12:13:14.123" + offset);
         testDateTimeImpl("2021-09-19T12:13:14.123456789", "2021-09-19T12:13:14.123456789" + offset);
 
-        //DateTime with offset and without fractional seconds
+        // DateTime with offset and without fractional seconds
         testDateTimeImpl("2021-09-19T12:13:14+01:00", "2021-09-19T12:13:14+01:00");
         testDateTimeImpl("2021-09-19T12:13:14-01:00", "2021-09-19T12:13:14-01:00");
         testDateTimeImpl("2021-09-19T12:13:14+00:00", "2021-09-19T12:13:14+00:00");
@@ -38,7 +37,7 @@ class OffsetDateTimeAdapterTest {
         testDateTimeImpl("2021-09-19T12:13:14+08:30", "2021-09-19T12:13:14+08:30");
         testDateTimeImpl("2021-09-19T12:13:14Z", "2021-09-19T12:13:14+00:00");
 
-        //DateTime with offset and fractional seconds
+        // DateTime with offset and fractional seconds
         testDateTimeImpl("2021-09-19T12:13:14.1+01:00", "2021-09-19T12:13:14.1+01:00");
         testDateTimeImpl("2021-09-19T12:13:14.12-01:00", "2021-09-19T12:13:14.12-01:00");
         testDateTimeImpl("2021-09-19T12:13:14.123+00:00", "2021-09-19T12:13:14.123+00:00");
@@ -55,5 +54,4 @@ class OffsetDateTimeAdapterTest {
         String valueDateResult = offsetDateTimeAdapter.marshal(offsetDateTime);
         assertEquals(valueResult, valueDateResult);
     }
-
 }

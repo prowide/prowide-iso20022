@@ -16,7 +16,6 @@
 package com.prowidesoftware.swift.model.mx.adapters;
 
 import com.google.gson.*;
-
 import java.lang.reflect.Type;
 import java.time.LocalDate;
 
@@ -39,8 +38,9 @@ public class LocalDateJsonAdapter implements JsonSerializer<LocalDate>, JsonDese
     }
 
     @Override
-    public LocalDate deserialize(final JsonElement jsonElement, final Type typeOfT,
-                                 final JsonDeserializationContext context) throws JsonParseException {
+    public LocalDate deserialize(
+            final JsonElement jsonElement, final Type typeOfT, final JsonDeserializationContext context)
+            throws JsonParseException {
         DateDTO date = gson.fromJson(jsonElement, DateDTO.class);
         return LocalDate.of(date.year, date.month, date.day);
     }
@@ -50,5 +50,4 @@ public class LocalDateJsonAdapter implements JsonSerializer<LocalDate>, JsonDese
         Integer month;
         Integer day;
     }
-
 }

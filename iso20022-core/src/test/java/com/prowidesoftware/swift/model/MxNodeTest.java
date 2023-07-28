@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,13 +15,11 @@
  */
 package com.prowidesoftware.swift.model;
 
-import com.prowidesoftware.swift.utils.Lib;
-import org.junit.jupiter.api.Test;
-
-import java.io.IOException;
-
 import static org.junit.jupiter.api.Assertions.*;
 
+import com.prowidesoftware.swift.utils.Lib;
+import java.io.IOException;
+import org.junit.jupiter.api.Test;
 
 /**
  * @since 7.8.8
@@ -37,225 +35,226 @@ public class MxNodeTest {
 
     @Test
     public void testParse02() {
-        final String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" +
-                "<Doc:Document xmlns:Doc=\"urn:swift:xsd:semt.002.002.03\">" +
-                "   <Doc:SecuritiesBalanceCustodyReport.002V03>" +
-                "      <Doc:Identification>" +
-                "         <Doc:Identification>ICF2750609140005</Doc:Identification>" +
-                "      </Doc:Identification>" +
-                "      <Doc:Pagination>" +
-                "         <Doc:PageNumber>00005</Doc:PageNumber>" +
-                "         <Doc:LastPageIndicator>false</Doc:LastPageIndicator>" +
-                "      </Doc:Pagination>" +
-                "      <Doc:StatementGeneralDetails>" +
-                "         <Doc:StatementDateTime>" +
-                "            <Doc:Date>2006-09-13T00:00:00</Doc:Date>" +
-                "         </Doc:StatementDateTime>" +
-                "         <Doc:Frequency>" +
-                "            <Doc:Code>DAIL</Doc:Code>" +
-                "         </Doc:Frequency>" +
-                "         <Doc:UpdateType>" +
-                "            <Doc:Code>COMP</Doc:Code>" +
-                "         </Doc:UpdateType>" +
-                "         <Doc:StatementBasis>" +
-                "            <Doc:Code>TRAD</Doc:Code>" +
-                "         </Doc:StatementBasis>" +
-                "         <Doc:ActivityIndicator>true</Doc:ActivityIndicator>" +
-                "         <Doc:SubAccountIndicator>false</Doc:SubAccountIndicator>" +
-                "      </Doc:StatementGeneralDetails>" +
-                "      <Doc:SafekeepingAccount>" +
-                "         <Doc:Identification>F275</Doc:Identification>" +
-                "      </Doc:SafekeepingAccount>" +
-                "      <Doc:BalanceForAccount>" +
-                "         <Doc:FinancialInstrumentIdentification>" +
-                "            <Doc:Identification>" +
-                "               <Doc:OtherIdentification>" +
-                "                  <Doc:Identification>31392EXH8</Doc:Identification>" +
-                "                  <Doc:IdentificationSource>" +
-                "                     <Doc:Domestic>US</Doc:Domestic>" +
-                "                  </Doc:IdentificationSource>" +
-                "               </Doc:OtherIdentification>" +
-                "            </Doc:Identification>" +
-                "            <Doc:Description>/US/31392EXH8 FEDERAL FOO MTG ASSN</Doc:Description>" +
-                "         </Doc:FinancialInstrumentIdentification>" +
-                "         <Doc:FinancialInstrumentAttributes>" +
-                "            <Doc:CurrentFactor>0.14528727</Doc:CurrentFactor>" +
-                "         </Doc:FinancialInstrumentAttributes>" +
-                "         <Doc:AggregateBalance>" +
-                "            <Doc:ShortLongIndicator>LONG</Doc:ShortLongIndicator>" +
-                "            <Doc:Quantity>" +
-                "               <Doc:Quantity>" +
-                "                  <Doc:OriginalAndCurrentFace>" +
-                "                     <Doc:FaceAmount>35732656.0</Doc:FaceAmount>" +
-                "                     <Doc:AmortisedValue>35732656.0</Doc:AmortisedValue>" +
-                "                  </Doc:OriginalAndCurrentFace>" +
-                "               </Doc:Quantity>" +
-                "            </Doc:Quantity>" +
-                "         </Doc:AggregateBalance>" +
-                "         <Doc:AvailableBalance>" +
-                "            <Doc:Quantity>" +
-                "               <Doc:FaceAmount>35732656.0</Doc:FaceAmount>" +
-                "            </Doc:Quantity>" +
-                "         </Doc:AvailableBalance>" +
-                "         <Doc:SafekeepingPlace>" +
-                "            <Doc:TypeAndIdentification>" +
-                "               <Doc:SafekeepingPlaceType>NCSD</Doc:SafekeepingPlaceType>" +
-                "               <Doc:Identification>FRNYUS33</Doc:Identification>" +
-                "            </Doc:TypeAndIdentification>" +
-                "         </Doc:SafekeepingPlace>" +
-                "         <Doc:BalanceAtSafekeepingPlace>" +
-                "            <Doc:SafekeepingPlace>" +
-                "               <Doc:TypeAndIdentification>" +
-                "                  <Doc:SafekeepingPlaceType>NCSD</Doc:SafekeepingPlaceType>" +
-                "                  <Doc:Identification>FRNYUS33</Doc:Identification>" +
-                "               </Doc:TypeAndIdentification>" +
-                "            </Doc:SafekeepingPlace>" +
-                "            <Doc:AggregateBalance>" +
-                "               <Doc:ShortLongIndicator>LONG</Doc:ShortLongIndicator>" +
-                "               <Doc:Quantity>" +
-                "                  <Doc:Quantity>" +
-                "                     <Doc:Quantity>" +
-                "                        <Doc:FaceAmount>35732656.0</Doc:FaceAmount>" +
-                "                     </Doc:Quantity>" +
-                "                  </Doc:Quantity>" +
-                "               </Doc:Quantity>" +
-                "            </Doc:AggregateBalance>" +
-                "            <Doc:AvailableBalance>" +
-                "               <Doc:Quantity>" +
-                "                  <Doc:FaceAmount>35732656.0</Doc:FaceAmount>" +
-                "               </Doc:Quantity>" +
-                "            </Doc:AvailableBalance>" +
-                "         </Doc:BalanceAtSafekeepingPlace>" +
-                "         <Doc:BalanceAtSafekeepingPlace>" +
-                "            <Doc:SafekeepingPlace>" +
-                "               <Doc:TypeAndIdentification>" +
-                "                  <Doc:SafekeepingPlaceType>NCSD</Doc:SafekeepingPlaceType>" +
-                "                  <Doc:Identification>FRNYUS33</Doc:Identification>" +
-                "               </Doc:TypeAndIdentification>" +
-                "            </Doc:SafekeepingPlace>" +
-                "            <Doc:AggregateBalance>" +
-                "               <Doc:ShortLongIndicator>LONG</Doc:ShortLongIndicator>" +
-                "               <Doc:Quantity>" +
-                "                  <Doc:Quantity>" +
-                "                     <Doc:Quantity>" +
-                "                        <Doc:FaceAmount>35732656.0</Doc:FaceAmount>" +
-                "                     </Doc:Quantity>" +
-                "                  </Doc:Quantity>" +
-                "               </Doc:Quantity>" +
-                "            </Doc:AggregateBalance>" +
-                "            <Doc:AvailableBalance>" +
-                "               <Doc:Quantity>" +
-                "                  <Doc:FaceAmount>35732656.0</Doc:FaceAmount>" +
-                "               </Doc:Quantity>" +
-                "            </Doc:AvailableBalance>" +
-                "         </Doc:BalanceAtSafekeepingPlace>" +
-                "      </Doc:BalanceForAccount>" +
-                "      <Doc:BalanceForAccount>" +
-                "         <Doc:FinancialInstrumentIdentification>" +
-                "            <Doc:Identification>" +
-                "               <Doc:OtherIdentification>" +
-                "                  <Doc:Identification>31406RR72</Doc:Identification>" +
-                "                  <Doc:IdentificationSource>" +
-                "                     <Doc:Domestic>US</Doc:Domestic>" +
-                "                  </Doc:IdentificationSource>" +
-                "               </Doc:OtherIdentification>" +
-                "            </Doc:Identification>" +
-                "            <Doc:Description>/US/31406RR72 FOO POOL 817810</Doc:Description>" +
-                "         </Doc:FinancialInstrumentIdentification>" +
-                "         <Doc:FinancialInstrumentAttributes>" +
-                "            <Doc:CurrentFactor>0.0</Doc:CurrentFactor>" +
-                "         </Doc:FinancialInstrumentAttributes>" +
-                "         <Doc:AggregateBalance>" +
-                "            <Doc:ShortLongIndicator>LONG</Doc:ShortLongIndicator>" +
-                "            <Doc:Quantity>" +
-                "               <Doc:Quantity>" +
-                "                  <Doc:OriginalAndCurrentFace>" +
-                "                     <Doc:FaceAmount>0.0</Doc:FaceAmount>" +
-                "                     <Doc:AmortisedValue>0.0</Doc:AmortisedValue>" +
-                "                  </Doc:OriginalAndCurrentFace>" +
-                "               </Doc:Quantity>" +
-                "            </Doc:Quantity>" +
-                "         </Doc:AggregateBalance>" +
-                "         <Doc:AvailableBalance>" +
-                "            <Doc:Quantity>" +
-                "               <Doc:FaceAmount>990692.0</Doc:FaceAmount>" +
-                "            </Doc:Quantity>" +
-                "         </Doc:AvailableBalance>" +
-                "         <Doc:NotAvailableBalance>" +
-                "            <Doc:Quantity>" +
-                "               <Doc:FaceAmount>990692.0</Doc:FaceAmount>" +
-                "            </Doc:Quantity>" +
-                "         </Doc:NotAvailableBalance>" +
-                "         <Doc:SafekeepingPlace>" +
-                "            <Doc:TypeAndIdentification>" +
-                "               <Doc:SafekeepingPlaceType>NCSD</Doc:SafekeepingPlaceType>" +
-                "               <Doc:Identification>FRNYUS33</Doc:Identification>" +
-                "            </Doc:TypeAndIdentification>" +
-                "         </Doc:SafekeepingPlace>" +
-                "         <Doc:BalanceAtSafekeepingPlace>" +
-                "            <Doc:SafekeepingPlace>" +
-                "               <Doc:TypeAndIdentification>" +
-                "                  <Doc:SafekeepingPlaceType>NCSD</Doc:SafekeepingPlaceType>" +
-                "                  <Doc:Identification>FRNYUS33</Doc:Identification>" +
-                "               </Doc:TypeAndIdentification>" +
-                "            </Doc:SafekeepingPlace>" +
-                "            <Doc:AggregateBalance>" +
-                "               <Doc:ShortLongIndicator>SHOR</Doc:ShortLongIndicator>" +
-                "               <Doc:Quantity>" +
-                "                  <Doc:Quantity>" +
-                "                     <Doc:Quantity>" +
-                "                        <Doc:FaceAmount>0.0</Doc:FaceAmount>" +
-                "                     </Doc:Quantity>" +
-                "                  </Doc:Quantity>" +
-                "               </Doc:Quantity>" +
-                "            </Doc:AggregateBalance>" +
-                "            <Doc:AvailableBalance>" +
-                "               <Doc:Quantity>" +
-                "                  <Doc:FaceAmount>990692.0</Doc:FaceAmount>" +
-                "               </Doc:Quantity>" +
-                "            </Doc:AvailableBalance>" +
-                "            <Doc:NotAvailableBalance>" +
-                "               <Doc:Quantity>" +
-                "                  <Doc:FaceAmount>990692.0</Doc:FaceAmount>" +
-                "               </Doc:Quantity>" +
-                "            </Doc:NotAvailableBalance>" +
-                "         </Doc:BalanceAtSafekeepingPlace>" +
-                "         <Doc:BalanceAtSafekeepingPlace>" +
-                "            <Doc:SafekeepingPlace>" +
-                "               <Doc:TypeAndIdentification>" +
-                "                  <Doc:SafekeepingPlaceType>NCSD</Doc:SafekeepingPlaceType>" +
-                "                  <Doc:Identification>FRNYUS33</Doc:Identification>" +
-                "               </Doc:TypeAndIdentification>" +
-                "            </Doc:SafekeepingPlace>" +
-                "            <Doc:AggregateBalance>" +
-                "               <Doc:ShortLongIndicator>SHOR</Doc:ShortLongIndicator>" +
-                "               <Doc:Quantity>" +
-                "                  <Doc:Quantity>" +
-                "                     <Doc:Quantity>" +
-                "                        <Doc:FaceAmount>0.0</Doc:FaceAmount>" +
-                "                     </Doc:Quantity>" +
-                "                  </Doc:Quantity>" +
-                "               </Doc:Quantity>" +
-                "            </Doc:AggregateBalance>" +
-                "            <Doc:AvailableBalance>" +
-                "               <Doc:Quantity>" +
-                "                  <Doc:FaceAmount>990692.0</Doc:FaceAmount>" +
-                "               </Doc:Quantity>" +
-                "            </Doc:AvailableBalance>" +
-                "            <Doc:NotAvailableBalance>" +
-                "               <Doc:Quantity>" +
-                "                  <Doc:FaceAmount>990692.0</Doc:FaceAmount>" +
-                "               </Doc:Quantity>" +
-                "            </Doc:NotAvailableBalance>" +
-                "         </Doc:BalanceAtSafekeepingPlace>" +
-                "      </Doc:BalanceForAccount>" +
-                "   </Doc:SecuritiesBalanceCustodyReport.002V03>" +
-                "</Doc:Document>";
+        final String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+                + "<Doc:Document xmlns:Doc=\"urn:swift:xsd:semt.002.002.03\">"
+                + "   <Doc:SecuritiesBalanceCustodyReport.002V03>"
+                + "      <Doc:Identification>"
+                + "         <Doc:Identification>ICF2750609140005</Doc:Identification>"
+                + "      </Doc:Identification>"
+                + "      <Doc:Pagination>"
+                + "         <Doc:PageNumber>00005</Doc:PageNumber>"
+                + "         <Doc:LastPageIndicator>false</Doc:LastPageIndicator>"
+                + "      </Doc:Pagination>"
+                + "      <Doc:StatementGeneralDetails>"
+                + "         <Doc:StatementDateTime>"
+                + "            <Doc:Date>2006-09-13T00:00:00</Doc:Date>"
+                + "         </Doc:StatementDateTime>"
+                + "         <Doc:Frequency>"
+                + "            <Doc:Code>DAIL</Doc:Code>"
+                + "         </Doc:Frequency>"
+                + "         <Doc:UpdateType>"
+                + "            <Doc:Code>COMP</Doc:Code>"
+                + "         </Doc:UpdateType>"
+                + "         <Doc:StatementBasis>"
+                + "            <Doc:Code>TRAD</Doc:Code>"
+                + "         </Doc:StatementBasis>"
+                + "         <Doc:ActivityIndicator>true</Doc:ActivityIndicator>"
+                + "         <Doc:SubAccountIndicator>false</Doc:SubAccountIndicator>"
+                + "      </Doc:StatementGeneralDetails>"
+                + "      <Doc:SafekeepingAccount>"
+                + "         <Doc:Identification>F275</Doc:Identification>"
+                + "      </Doc:SafekeepingAccount>"
+                + "      <Doc:BalanceForAccount>"
+                + "         <Doc:FinancialInstrumentIdentification>"
+                + "            <Doc:Identification>"
+                + "               <Doc:OtherIdentification>"
+                + "                  <Doc:Identification>31392EXH8</Doc:Identification>"
+                + "                  <Doc:IdentificationSource>"
+                + "                     <Doc:Domestic>US</Doc:Domestic>"
+                + "                  </Doc:IdentificationSource>"
+                + "               </Doc:OtherIdentification>"
+                + "            </Doc:Identification>"
+                + "            <Doc:Description>/US/31392EXH8 FEDERAL FOO MTG ASSN</Doc:Description>"
+                + "         </Doc:FinancialInstrumentIdentification>"
+                + "         <Doc:FinancialInstrumentAttributes>"
+                + "            <Doc:CurrentFactor>0.14528727</Doc:CurrentFactor>"
+                + "         </Doc:FinancialInstrumentAttributes>"
+                + "         <Doc:AggregateBalance>"
+                + "            <Doc:ShortLongIndicator>LONG</Doc:ShortLongIndicator>"
+                + "            <Doc:Quantity>"
+                + "               <Doc:Quantity>"
+                + "                  <Doc:OriginalAndCurrentFace>"
+                + "                     <Doc:FaceAmount>35732656.0</Doc:FaceAmount>"
+                + "                     <Doc:AmortisedValue>35732656.0</Doc:AmortisedValue>"
+                + "                  </Doc:OriginalAndCurrentFace>"
+                + "               </Doc:Quantity>"
+                + "            </Doc:Quantity>"
+                + "         </Doc:AggregateBalance>"
+                + "         <Doc:AvailableBalance>"
+                + "            <Doc:Quantity>"
+                + "               <Doc:FaceAmount>35732656.0</Doc:FaceAmount>"
+                + "            </Doc:Quantity>"
+                + "         </Doc:AvailableBalance>"
+                + "         <Doc:SafekeepingPlace>"
+                + "            <Doc:TypeAndIdentification>"
+                + "               <Doc:SafekeepingPlaceType>NCSD</Doc:SafekeepingPlaceType>"
+                + "               <Doc:Identification>FRNYUS33</Doc:Identification>"
+                + "            </Doc:TypeAndIdentification>"
+                + "         </Doc:SafekeepingPlace>"
+                + "         <Doc:BalanceAtSafekeepingPlace>"
+                + "            <Doc:SafekeepingPlace>"
+                + "               <Doc:TypeAndIdentification>"
+                + "                  <Doc:SafekeepingPlaceType>NCSD</Doc:SafekeepingPlaceType>"
+                + "                  <Doc:Identification>FRNYUS33</Doc:Identification>"
+                + "               </Doc:TypeAndIdentification>"
+                + "            </Doc:SafekeepingPlace>"
+                + "            <Doc:AggregateBalance>"
+                + "               <Doc:ShortLongIndicator>LONG</Doc:ShortLongIndicator>"
+                + "               <Doc:Quantity>"
+                + "                  <Doc:Quantity>"
+                + "                     <Doc:Quantity>"
+                + "                        <Doc:FaceAmount>35732656.0</Doc:FaceAmount>"
+                + "                     </Doc:Quantity>"
+                + "                  </Doc:Quantity>"
+                + "               </Doc:Quantity>"
+                + "            </Doc:AggregateBalance>"
+                + "            <Doc:AvailableBalance>"
+                + "               <Doc:Quantity>"
+                + "                  <Doc:FaceAmount>35732656.0</Doc:FaceAmount>"
+                + "               </Doc:Quantity>"
+                + "            </Doc:AvailableBalance>"
+                + "         </Doc:BalanceAtSafekeepingPlace>"
+                + "         <Doc:BalanceAtSafekeepingPlace>"
+                + "            <Doc:SafekeepingPlace>"
+                + "               <Doc:TypeAndIdentification>"
+                + "                  <Doc:SafekeepingPlaceType>NCSD</Doc:SafekeepingPlaceType>"
+                + "                  <Doc:Identification>FRNYUS33</Doc:Identification>"
+                + "               </Doc:TypeAndIdentification>"
+                + "            </Doc:SafekeepingPlace>"
+                + "            <Doc:AggregateBalance>"
+                + "               <Doc:ShortLongIndicator>LONG</Doc:ShortLongIndicator>"
+                + "               <Doc:Quantity>"
+                + "                  <Doc:Quantity>"
+                + "                     <Doc:Quantity>"
+                + "                        <Doc:FaceAmount>35732656.0</Doc:FaceAmount>"
+                + "                     </Doc:Quantity>"
+                + "                  </Doc:Quantity>"
+                + "               </Doc:Quantity>"
+                + "            </Doc:AggregateBalance>"
+                + "            <Doc:AvailableBalance>"
+                + "               <Doc:Quantity>"
+                + "                  <Doc:FaceAmount>35732656.0</Doc:FaceAmount>"
+                + "               </Doc:Quantity>"
+                + "            </Doc:AvailableBalance>"
+                + "         </Doc:BalanceAtSafekeepingPlace>"
+                + "      </Doc:BalanceForAccount>"
+                + "      <Doc:BalanceForAccount>"
+                + "         <Doc:FinancialInstrumentIdentification>"
+                + "            <Doc:Identification>"
+                + "               <Doc:OtherIdentification>"
+                + "                  <Doc:Identification>31406RR72</Doc:Identification>"
+                + "                  <Doc:IdentificationSource>"
+                + "                     <Doc:Domestic>US</Doc:Domestic>"
+                + "                  </Doc:IdentificationSource>"
+                + "               </Doc:OtherIdentification>"
+                + "            </Doc:Identification>"
+                + "            <Doc:Description>/US/31406RR72 FOO POOL 817810</Doc:Description>"
+                + "         </Doc:FinancialInstrumentIdentification>"
+                + "         <Doc:FinancialInstrumentAttributes>"
+                + "            <Doc:CurrentFactor>0.0</Doc:CurrentFactor>"
+                + "         </Doc:FinancialInstrumentAttributes>"
+                + "         <Doc:AggregateBalance>"
+                + "            <Doc:ShortLongIndicator>LONG</Doc:ShortLongIndicator>"
+                + "            <Doc:Quantity>"
+                + "               <Doc:Quantity>"
+                + "                  <Doc:OriginalAndCurrentFace>"
+                + "                     <Doc:FaceAmount>0.0</Doc:FaceAmount>"
+                + "                     <Doc:AmortisedValue>0.0</Doc:AmortisedValue>"
+                + "                  </Doc:OriginalAndCurrentFace>"
+                + "               </Doc:Quantity>"
+                + "            </Doc:Quantity>"
+                + "         </Doc:AggregateBalance>"
+                + "         <Doc:AvailableBalance>"
+                + "            <Doc:Quantity>"
+                + "               <Doc:FaceAmount>990692.0</Doc:FaceAmount>"
+                + "            </Doc:Quantity>"
+                + "         </Doc:AvailableBalance>"
+                + "         <Doc:NotAvailableBalance>"
+                + "            <Doc:Quantity>"
+                + "               <Doc:FaceAmount>990692.0</Doc:FaceAmount>"
+                + "            </Doc:Quantity>"
+                + "         </Doc:NotAvailableBalance>"
+                + "         <Doc:SafekeepingPlace>"
+                + "            <Doc:TypeAndIdentification>"
+                + "               <Doc:SafekeepingPlaceType>NCSD</Doc:SafekeepingPlaceType>"
+                + "               <Doc:Identification>FRNYUS33</Doc:Identification>"
+                + "            </Doc:TypeAndIdentification>"
+                + "         </Doc:SafekeepingPlace>"
+                + "         <Doc:BalanceAtSafekeepingPlace>"
+                + "            <Doc:SafekeepingPlace>"
+                + "               <Doc:TypeAndIdentification>"
+                + "                  <Doc:SafekeepingPlaceType>NCSD</Doc:SafekeepingPlaceType>"
+                + "                  <Doc:Identification>FRNYUS33</Doc:Identification>"
+                + "               </Doc:TypeAndIdentification>"
+                + "            </Doc:SafekeepingPlace>"
+                + "            <Doc:AggregateBalance>"
+                + "               <Doc:ShortLongIndicator>SHOR</Doc:ShortLongIndicator>"
+                + "               <Doc:Quantity>"
+                + "                  <Doc:Quantity>"
+                + "                     <Doc:Quantity>"
+                + "                        <Doc:FaceAmount>0.0</Doc:FaceAmount>"
+                + "                     </Doc:Quantity>"
+                + "                  </Doc:Quantity>"
+                + "               </Doc:Quantity>"
+                + "            </Doc:AggregateBalance>"
+                + "            <Doc:AvailableBalance>"
+                + "               <Doc:Quantity>"
+                + "                  <Doc:FaceAmount>990692.0</Doc:FaceAmount>"
+                + "               </Doc:Quantity>"
+                + "            </Doc:AvailableBalance>"
+                + "            <Doc:NotAvailableBalance>"
+                + "               <Doc:Quantity>"
+                + "                  <Doc:FaceAmount>990692.0</Doc:FaceAmount>"
+                + "               </Doc:Quantity>"
+                + "            </Doc:NotAvailableBalance>"
+                + "         </Doc:BalanceAtSafekeepingPlace>"
+                + "         <Doc:BalanceAtSafekeepingPlace>"
+                + "            <Doc:SafekeepingPlace>"
+                + "               <Doc:TypeAndIdentification>"
+                + "                  <Doc:SafekeepingPlaceType>NCSD</Doc:SafekeepingPlaceType>"
+                + "                  <Doc:Identification>FRNYUS33</Doc:Identification>"
+                + "               </Doc:TypeAndIdentification>"
+                + "            </Doc:SafekeepingPlace>"
+                + "            <Doc:AggregateBalance>"
+                + "               <Doc:ShortLongIndicator>SHOR</Doc:ShortLongIndicator>"
+                + "               <Doc:Quantity>"
+                + "                  <Doc:Quantity>"
+                + "                     <Doc:Quantity>"
+                + "                        <Doc:FaceAmount>0.0</Doc:FaceAmount>"
+                + "                     </Doc:Quantity>"
+                + "                  </Doc:Quantity>"
+                + "               </Doc:Quantity>"
+                + "            </Doc:AggregateBalance>"
+                + "            <Doc:AvailableBalance>"
+                + "               <Doc:Quantity>"
+                + "                  <Doc:FaceAmount>990692.0</Doc:FaceAmount>"
+                + "               </Doc:Quantity>"
+                + "            </Doc:AvailableBalance>"
+                + "            <Doc:NotAvailableBalance>"
+                + "               <Doc:Quantity>"
+                + "                  <Doc:FaceAmount>990692.0</Doc:FaceAmount>"
+                + "               </Doc:Quantity>"
+                + "            </Doc:NotAvailableBalance>"
+                + "         </Doc:BalanceAtSafekeepingPlace>"
+                + "      </Doc:BalanceForAccount>"
+                + "   </Doc:SecuritiesBalanceCustodyReport.002V03>"
+                + "</Doc:Document>";
 
         final MxNode n = MxNode.parse(xml);
         assertEquals(
                 "35732656.0",
-                n.singlePathValue("/Document/SecuritiesBalanceCustodyReport.002V03/BalanceForAccount/AggregateBalance/Quantity/Quantity/OriginalAndCurrentFace/FaceAmount"));
+                n.singlePathValue(
+                        "/Document/SecuritiesBalanceCustodyReport.002V03/BalanceForAccount/AggregateBalance/Quantity/Quantity/OriginalAndCurrentFace/FaceAmount"));
     }
 
     @Test
@@ -270,7 +269,9 @@ public class MxNodeTest {
     public void testParse04_ns() {
         final String xml = "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.01\"><From></From></AppHdr>";
         final MxNode doc = MxNode.parse(xml);
-        assertEquals("urn:iso:std:iso:20022:tech:xsd:head.001.001.01", doc.findFirstByName("AppHdr").getAttribute("xmlns"));
+        assertEquals(
+                "urn:iso:std:iso:20022:tech:xsd:head.001.001.01",
+                doc.findFirstByName("AppHdr").getAttribute("xmlns"));
         assertNotNull(doc.findFirst("AppHdr/From"));
         assertNull(doc.findFirst("AppHdr/From").getAttribute("xmlns"));
     }
@@ -299,10 +300,7 @@ public class MxNodeTest {
 
     @Test
     public void testFindFirstWithChildren() {
-        final String xml = "<a>"
-                + "		<b>1</b>"
-                + "		<c>2</c>"
-                + "</a>";
+        final String xml = "<a>" + "		<b>1</b>" + "		<c>2</c>" + "</a>";
         final MxNode doc = MxNode.parse(xml);
         assertNotNull(doc.singlePathValue("a/b"));
         assertNotNull(doc.singlePathValue("a/c"));
@@ -350,13 +348,7 @@ public class MxNodeTest {
 
     @Test
     public void testFindByNameAndPath() {
-        final String xml = "<a>"
-                + "	<b>"
-                + "		<c>"
-                + "			<d>4</d>"
-                + "		</c>"
-                + "	</b>"
-                + "</a>";
+        final String xml = "<a>" + "	<b>" + "		<c>" + "			<d>4</d>" + "		</c>" + "	</b>" + "</a>";
         final MxNode doc = MxNode.parse(xml);
 
         assertEquals("4", doc.singlePathValue("/a/b/c/d"));
@@ -408,7 +400,7 @@ public class MxNodeTest {
         new MxNode(n2, "CreDtTm").setValue("2001-12-17T09:30:47Z");
         new MxNode(n2, "NbOfTxs").setValue("1");
         new MxNode(n2, "IntrBkSttlmDt").setValue("2012-01-25");
-        //n.print();
+        // n.print();
     }
 
     /**
@@ -416,10 +408,9 @@ public class MxNodeTest {
      */
     @Test
     public void testXxeDisabled() {
-        String xml = "<!DOCTYPE foo [ <!ENTITY xxe SYSTEM \"file:///etc/passwd\" >]>" +
-                "<FaceAmount>&xxe;</FaceAmount>";
+        String xml =
+                "<!DOCTYPE foo [ <!ENTITY xxe SYSTEM \"file:///etc/passwd\" >]>" + "<FaceAmount>&xxe;</FaceAmount>";
         final MxNode doc = MxNode.parse(xml);
         assertNull(doc);
     }
-
 }
