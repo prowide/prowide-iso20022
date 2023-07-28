@@ -206,6 +206,7 @@ public class AppHdrFactory {
      * @since 9.1.2
      * @deprecated use {@link #createAppHdr(AppHdrType, String, String, String, MxId)} instead
      */
+    @Deprecated
     @ProwideDeprecated(phase3 = TargetYear.SRU2023)
     public static AppHdr createLegacyAppHdr(
             AppHdrType type, final String sender, final String receiver, final String reference, final MxId id) {
