@@ -34,7 +34,7 @@ project.ext {
 //		versionSeparator = '-'
 //	}
 //}
-version = 'SRU2022-10.0.1'
+version = 'SRU2022-10.0.2'
 
 project.ext {
 	nexusRepo = project.version.endsWith('-SNAPSHOT') ? 'maven-snapshots' : 'maven-releases'
