@@ -32,7 +32,7 @@ scmVersion {
 		versionSeparator = '-'
 	}
 }
-project.version = "${SRU}-10.1.1"
+project.version = "${SRU}-10.1.2"
 
 project.ext {
 	nexusRepo = project.version.endsWith('-SNAPSHOT') ? 'maven-snapshots' : 'maven-releases'

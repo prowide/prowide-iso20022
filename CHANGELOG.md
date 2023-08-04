@@ -1,6 +1,6 @@
 # Prowide ISO 20022 - CHANGELOG
 
-#### 10.1.2 - SNAPSHOT
+#### 10.1.2 - August 2023
   * Added new utility class SupplementaryDataUtils to facilitate "SplmtryData" extractino from MX messages
 
 #### 10.1.1 - July 2023
@@ -13,7 +13,7 @@
   * Fixed AppHdrFactory creation to use UTC in the header default creation date time
   * Fixed the business application header V01 serialization to use Zulu time indicator instead of +00:00 offset
 
-#### 9.4.0 - May 2022
+#### 9.4.0 - May 2023
   * SWIFT Standard release update 2023 (live 19 November 2023)
   * Yearly revision of deprecation phase (see https://dev.prowidesoftware.com/SRU2022/getting-started/deprecation/)
 
