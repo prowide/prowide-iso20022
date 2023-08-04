@@ -16,7 +16,6 @@
 package com.prowidesoftware.swift.model.mx.adapters;
 
 import com.google.gson.*;
-
 import java.lang.reflect.Type;
 import java.time.Year;
 

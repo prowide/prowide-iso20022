@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,17 +29,6 @@ import com.prowidesoftware.swift.model.mx.adapters.*;
 import com.prowidesoftware.swift.utils.Lib;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.annotation.XmlTransient;
-import org.apache.commons.lang3.StringUtils;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.w3c.dom.ls.DOMImplementationLS;
-import org.w3c.dom.ls.LSSerializer;
-
-import javax.xml.transform.Source;
-import javax.xml.transform.dom.DOMResult;
-import javax.xml.transform.stream.StreamSource;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.time.*;
@@ -48,7 +37,16 @@ import java.util.List;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+import javax.xml.transform.Source;
+import javax.xml.transform.dom.DOMResult;
+import javax.xml.transform.stream.StreamSource;
+import org.apache.commons.lang3.StringUtils;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+import org.w3c.dom.ls.DOMImplementationLS;
+import org.w3c.dom.ls.LSSerializer;
 
 /**
  * Base class for specific MX messages.<br>
@@ -100,8 +98,16 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
      */
     @Deprecated
     @ProwideDeprecated(phase4 = TargetYear.SRU2024)
-    protected static String message(final String namespace, final AbstractMX obj, @SuppressWarnings("rawtypes") final Class[] classes, final String prefix, boolean includeXMLDeclaration) {
-        DeprecationUtils.phase3(AbstractMX.class, "message(String, AbstractMX, Class[], String, boolean)", "Use MxWriteImpl.write(String, AbstractMX, Class[], MxWriteParams) instead.");
+    protected static String message(
+            final String namespace,
+            final AbstractMX obj,
+            @SuppressWarnings("rawtypes") final Class[] classes,
+            final String prefix,
+            boolean includeXMLDeclaration) {
+        DeprecationUtils.phase3(
+                AbstractMX.class,
+                "message(String, AbstractMX, Class[], String, boolean)",
+                "Use MxWriteImpl.write(String, AbstractMX, Class[], MxWriteParams) instead.");
         MxWriteParams params = new MxWriteParams();
         params.prefix = prefix;
         params.includeXMLDeclaration = includeXMLDeclaration;
@@ -113,8 +119,17 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
      */
     @Deprecated
     @ProwideDeprecated(phase4 = TargetYear.SRU2024)
-    protected static String message(final String namespace, final AbstractMX obj, @SuppressWarnings("rawtypes") final Class[] classes, final String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
-        DeprecationUtils.phase3(AbstractMX.class, "message(String, AbstractMX, Class[], String, boolean, EscapeHandler)", "Use MxWriteImpl.write(String, AbstractMX, Class[], MxWriteParams) instead.");
+    protected static String message(
+            final String namespace,
+            final AbstractMX obj,
+            @SuppressWarnings("rawtypes") final Class[] classes,
+            final String prefix,
+            boolean includeXMLDeclaration,
+            EscapeHandler escapeHandler) {
+        DeprecationUtils.phase3(
+                AbstractMX.class,
+                "message(String, AbstractMX, Class[], String, boolean, EscapeHandler)",
+                "Use MxWriteImpl.write(String, AbstractMX, Class[], MxWriteParams) instead.");
         MxWriteParams params = new MxWriteParams();
         params.prefix = prefix;
         params.includeXMLDeclaration = includeXMLDeclaration;
@@ -128,8 +143,12 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
     @Deprecated
     @ProwideDeprecated(phase3 = TargetYear.SRU2024)
     @SuppressWarnings({"rawtypes", "unchecked"})
-    protected static AbstractMX read(final Class<? extends AbstractMX> targetClass, final String xml, final Class[] classes) {
-        DeprecationUtils.phase2(AbstractMX.class, "read(String, Class, String, Class[])", "Use any of the available parse methods instead in either this class or the specific subclasses");
+    protected static AbstractMX read(
+            final Class<? extends AbstractMX> targetClass, final String xml, final Class[] classes) {
+        DeprecationUtils.phase2(
+                AbstractMX.class,
+                "read(String, Class, String, Class[])",
+                "Use any of the available parse methods instead in either this class or the specific subclasses");
         return MxReadImpl.parse(targetClass, xml, classes, new MxReadParams());
     }
 
@@ -173,7 +192,8 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
     @Deprecated
     @ProwideDeprecated(phase3 = TargetYear.SRU2024)
     public static AbstractMX parse(final File file, MxId id) throws IOException {
-        DeprecationUtils.phase2(AbstractMX.class, "parse(File, MxId)", "Use Lib.readFile(file) and any parse from String method");
+        DeprecationUtils.phase2(
+                AbstractMX.class, "parse(File, MxId)", "Use Lib.readFile(file) and any parse from String method");
         return MxReadImpl.parse(Lib.readFile(file), id, new MxReadParams());
     }
 
@@ -192,7 +212,8 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
             List<Node> removables = new ArrayList<>();
             for (int i = 0; i < attributes.getLength(); i++) {
                 Node attr = attributes.item(i);
-                if (!StringUtils.equals(attr.getNodeName(), "xmlns:" + prefix) && !StringUtils.equals(attr.getNodeName(), "xmlns:xsi")) {
+                if (!StringUtils.equals(attr.getNodeName(), "xmlns:" + prefix)
+                        && !StringUtils.equals(attr.getNodeName(), "xmlns:xsi")) {
                     removables.add(attr);
                 }
             }
@@ -200,7 +221,8 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
                 attributes.removeNamedItem(attr.getNodeName());
             }
         }
-        DOMImplementationLS lsImpl = (DOMImplementationLS) e.getOwnerDocument().getImplementation().getFeature("LS", "3.0");
+        DOMImplementationLS lsImpl =
+                (DOMImplementationLS) e.getOwnerDocument().getImplementation().getFeature("LS", "3.0");
         LSSerializer serializer = lsImpl.createLSSerializer();
         serializer.getDomConfig().setParameter("xml-declaration", false);
         String xml = serializer.writeToString(e);
@@ -260,7 +282,8 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
     @Deprecated
     @ProwideDeprecated(phase4 = TargetYear.SRU2024)
     public String message(final String rootElement, boolean includeXMLDeclaration) {
-        DeprecationUtils.phase3(AbstractMX.class, "message(String, boolean)", "Use message(MxWriteConfiguration) instead");
+        DeprecationUtils.phase3(
+                AbstractMX.class, "message(String, boolean)", "Use message(MxWriteConfiguration) instead");
         MxWriteConfiguration conf = new MxWriteConfiguration();
         conf.rootElement = rootElement;
         conf.includeXMLDeclaration = includeXMLDeclaration;
@@ -396,7 +419,8 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
     @Deprecated
     @ProwideDeprecated(phase4 = TargetYear.SRU2024)
     public String header(final String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
-        DeprecationUtils.phase3(AbstractMX.class, "header(String, boolean, EscapeHandler)", "Use header(MxWriteParams) instead");
+        DeprecationUtils.phase3(
+                AbstractMX.class, "header(String, boolean, EscapeHandler)", "Use header(MxWriteParams) instead");
         MxWriteParams params = new MxWriteParams();
         params.prefix = prefix;
         params.includeXMLDeclaration = includeXMLDeclaration;
@@ -436,7 +460,8 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
     @Deprecated
     @ProwideDeprecated(phase3 = TargetYear.SRU2024)
     public String document(final String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
-        DeprecationUtils.phase2(AbstractMX.class, "document(String, boolean, EscapeHandler)", "Use document(MxWriteParams) instead");
+        DeprecationUtils.phase2(
+                AbstractMX.class, "document(String, boolean, EscapeHandler)", "Use document(MxWriteParams) instead");
         MxWriteParams params = new MxWriteParams();
         params.prefix = prefix;
         params.includeXMLDeclaration = includeXMLDeclaration;
@@ -530,7 +555,8 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
      * @since 7.7
      */
     public MxId getMxId() {
-        return new MxId(getBusinessProcess(),
+        return new MxId(
+                getBusinessProcess(),
                 StringUtils.leftPad(Integer.toString(getFunctionality()), 3, "0"),
                 StringUtils.leftPad(Integer.toString(getVariant()), 3, "0"),
                 StringUtils.leftPad(Integer.toString(getVersion()), 2, "0"));
@@ -627,5 +653,4 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
     public String targetNamespace() {
         return getNamespace();
     }
-
 }

@@ -15,14 +15,12 @@
  */
 package com.prowidesoftware.swift.model.mx.adapters;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
-import org.junit.jupiter.api.Test;
-
 import java.time.Year;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.Test;
 
 public class YearJsonAdapterTest {
 
@@ -42,5 +40,4 @@ public class YearJsonAdapterTest {
         JsonElement valueDateResult = adapter.serialize(year, null, null);
         assertEquals(json, valueDateResult.toString());
     }
-
 }

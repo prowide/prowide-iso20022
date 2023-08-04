@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,18 +15,16 @@
  */
 package com.prowidesoftware.swift.model;
 
-
-import org.apache.commons.lang3.StringUtils;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.apache.commons.lang3.StringUtils;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  *
@@ -142,11 +140,11 @@ public class MxSwiftMessageTest {
 
         // default metadata from message
         assertEquals("pacs.008.001.02", mx.getIdentifier());
-        assertNull(mx.getSender());         // not present in XML
+        assertNull(mx.getSender()); // not present in XML
         assertEquals("DRESDEF0VNZ", mx.getReceiver());
-        assertNull(mx.getReference());      // not present in XML
-        assertNull(mx.getCurrency());       // not present in XML and also not handled by default strategy
-        assertNull(mx.getAmount());         // not present in XML and also not handled by default strategy
+        assertNull(mx.getReference()); // not present in XML
+        assertNull(mx.getCurrency()); // not present in XML and also not handled by default strategy
+        assertNull(mx.getAmount()); // not present in XML and also not handled by default strategy
 
         // manually set some metadata
         mx.setReference("REFERENCE1");
@@ -158,11 +156,11 @@ public class MxSwiftMessageTest {
         mx.updateFromXML(xml);
 
         assertEquals("pacs.008.001.02", mx.getIdentifier());
-        assertEquals("AAAAUSXXXXX", mx.getSender());    // preserved
+        assertEquals("AAAAUSXXXXX", mx.getSender()); // preserved
         assertEquals("DRESDEF0VNZ", mx.getReceiver());
-        assertEquals("REFERENCE1", mx.getReference());  // preserved
-        assertEquals("USD", mx.getCurrency());          // preserved
-        assertEquals(new BigDecimal("1"), mx.getAmount());  // preserved
+        assertEquals("REFERENCE1", mx.getReference()); // preserved
+        assertEquals("USD", mx.getCurrency()); // preserved
+        assertEquals(new BigDecimal("1"), mx.getAmount()); // preserved
 
         String xmlUpdate = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
                 + "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.02\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.six-interbank-clearing.com/de/pacs.008.001.02.ch.01 pacs.008.001.02.ch.01.xsd\">"
@@ -187,16 +185,17 @@ public class MxSwiftMessageTest {
         mx.updateFromXML(xmlUpdate);
 
         assertEquals("pacs.008.001.02", mx.getIdentifier());
-        assertEquals("KBBECH20DSZ", mx.getSender());    // updated
+        assertEquals("KBBECH20DSZ", mx.getSender()); // updated
         assertEquals("DRESDEF0VNZ", mx.getReceiver());
-        assertEquals("MSGID-0001", mx.getReference());  // updated
+        assertEquals("MSGID-0001", mx.getReference()); // updated
         assertEquals("USD", mx.getCurrency());
         assertEquals(new BigDecimal("1"), mx.getAmount());
     }
 
     @Test
     public void testMetadataFromDocumentWithoutNamespace() {
-        final String xml = "<Document><setr.015.001.02><RltdRef><Ref>24512SWI67-IT</Ref><MsgNm>setr.013.001.01</MsgNm></RltdRef><SwtchExctnDtls><DealRef>IT56/89/90</DealRef><OrdrRef>20042402090912</OrdrRef><InvstmtAcctDtls><AcctId><Prtry><Id>A67367Z32-67</Id></Prtry></AcctId></InvstmtAcctDtls><AddtlCshIn Ccy=\"EUR\">200</AddtlCshIn><RedLegDtls><LegId>1</LegId><FinInstrmDtls><Id><ISIN>IT1111111111</ISIN></Id></FinInstrmDtls><UnitsNb><Unit>25</Unit></UnitsNb><NetAmt Ccy=\"EUR\">500</NetAmt><TradDtTm><Dt>2005-11-10</Dt></TradDtTm><PricDtls><Tp><Strd>SWIC</Strd></Tp><Val><Amt Ccy=\"EUR\">20</Amt></Val></PricDtls><CumDvddInd>true</CumDvddInd><PhysDlvryInd>false</PhysDlvryInd></RedLegDtls><SbcptLegDtls><LegId>2</LegId><FinInstrmDtls><Id><ISIN>IT2222222222</ISIN></Id></FinInstrmDtls><UnitsNb><Unit>100</Unit></UnitsNb><NetAmt Ccy=\"EUR\">700</NetAmt><TradDtTm><Dt>2005-11-10</Dt></TradDtTm><PricDtls><Tp><Strd>SWIC</Strd></Tp><Val><Amt Ccy=\"EUR\">7</Amt></Val></PricDtls><CumDvddInd>true</CumDvddInd><PhysDlvryInd>false</PhysDlvryInd></SbcptLegDtls></SwtchExctnDtls></setr.015.001.02></Document>";
+        final String xml =
+                "<Document><setr.015.001.02><RltdRef><Ref>24512SWI67-IT</Ref><MsgNm>setr.013.001.01</MsgNm></RltdRef><SwtchExctnDtls><DealRef>IT56/89/90</DealRef><OrdrRef>20042402090912</OrdrRef><InvstmtAcctDtls><AcctId><Prtry><Id>A67367Z32-67</Id></Prtry></AcctId></InvstmtAcctDtls><AddtlCshIn Ccy=\"EUR\">200</AddtlCshIn><RedLegDtls><LegId>1</LegId><FinInstrmDtls><Id><ISIN>IT1111111111</ISIN></Id></FinInstrmDtls><UnitsNb><Unit>25</Unit></UnitsNb><NetAmt Ccy=\"EUR\">500</NetAmt><TradDtTm><Dt>2005-11-10</Dt></TradDtTm><PricDtls><Tp><Strd>SWIC</Strd></Tp><Val><Amt Ccy=\"EUR\">20</Amt></Val></PricDtls><CumDvddInd>true</CumDvddInd><PhysDlvryInd>false</PhysDlvryInd></RedLegDtls><SbcptLegDtls><LegId>2</LegId><FinInstrmDtls><Id><ISIN>IT2222222222</ISIN></Id></FinInstrmDtls><UnitsNb><Unit>100</Unit></UnitsNb><NetAmt Ccy=\"EUR\">700</NetAmt><TradDtTm><Dt>2005-11-10</Dt></TradDtTm><PricDtls><Tp><Strd>SWIC</Strd></Tp><Val><Amt Ccy=\"EUR\">7</Amt></Val></PricDtls><CumDvddInd>true</CumDvddInd><PhysDlvryInd>false</PhysDlvryInd></SbcptLegDtls></SwtchExctnDtls></setr.015.001.02></Document>";
         MxSwiftMessage mx = new MxSwiftMessage(xml);
         assertNotNull(mx);
     }
@@ -209,7 +208,8 @@ public class MxSwiftMessageTest {
         assertNull(m.getMxId().getVariant());
         assertNull(m.getMxId().getVersion());
 
-        String xml = "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.02\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.six-interbank-clearing.com/de/pacs.008.001.02.ch.01 pacs.008.001.02.ch.01.xsd\"></Document>";
+        String xml =
+                "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.02\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.six-interbank-clearing.com/de/pacs.008.001.02.ch.01 pacs.008.001.02.ch.01.xsd\"></Document>";
         m = new MxSwiftMessage(xml);
 
         assertEquals(new MxId(MxBusinessProcess.pacs, "008", "001", "02"), m.getMxId());
@@ -232,71 +232,70 @@ public class MxSwiftMessageTest {
      */
     @Test
     public void testUnrecognizedMessage() {
-        String xmlInput = "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:DRAFT6camt.077.001.01\">\n" +
-                "<BllgRpt>\n" +
-                "    <MsgHdr>\n" +
-                "        <MsgId>12345</MsgId>\n" +
-                "        <CreDtTm>2022-05-24T10:29:05+08:00</CreDtTm>\n" +
-                "        <ReqTp>\n" +
-                "            <Prtry>\n" +
-                "                <Id>Tax Invoice for RTGS Billing</Id>\n" +
-                "            </Prtry>\n" +
-                "        </ReqTp>\n" +
-                "    </MsgHdr>\n" +
-                "    <BllgRptOrErr>\n" +
-                "        <BllgRpt>\n" +
-                "            <RgltryData>\n" +
-                "                <Invcr>\n" +
-                "                    <Nm>The Monetary Authority of Foobar</Nm>\n" +
-                "                    <PstlAdr>\n" +
-                "                        <AdrLine>99 Foo Way, FOO Building 012345</AdrLine>\n" +
-                "                    </PstlAdr>\n" +
-                "                    <Id>\n" +
-                "                        <OrgId>\n" +
-                "                            <Othr>\n" +
-                "                                <Id>M12343076J</Id>\n" +
-                "                            </Othr>\n" +
-                "                        </OrgId>\n" +
-                "                    </Id>\n" +
-                "                </Invcr>\n" +
-                "                <Invcee>\n" +
-                "                    <Nm>FOO BANK OF FOOBAR</Nm>\n" +
-                "                    <PstlAdr>\n" +
-                "                        <AdrLine>44 Street Unit 27-01/08 Foobar Hub 012345</AdrLine>\n" +
-                "                    </PstlAdr>\n" +
-                "                </Invcee>\n" +
-                "                <InvcLglStmt>See further information on the RTGS Billing Detail screen</InvcLglStmt>\n" +
-                "            </RgltryData>\n" +
-                "            <InvcDt>2022-05-24</InvcDt>\n" +
-                "            <BllgId>I22/123/0123</BllgId>\n" +
-                "            <BllgPrd>\n" +
-                "                <FrDt>2022-05-25</FrDt>\n" +
-                "                <ToDt>2022-05-25</ToDt>\n" +
-                "            </BllgPrd>\n" +
-                "            <InvcTtls>\n" +
-                "                <Tax>\n" +
-                "                    <Rate>7</Rate>\n" +
-                "                    <TaxblAmt Ccy=\"SGD\">0.30</TaxblAmt>\n" +
-                "                    <Amt Ccy=\"SGD\">0.02</Amt>\n" +
-                "                </Tax>\n" +
-                "                <TtlInvcAmt Ccy=\"SGD\">0.32</TtlInvcAmt>\n" +
-                "                <PmtDueDt>2022-05-24</PmtDueDt>\n" +
-                "            </InvcTtls>\n" +
-                "            <SvcCtgyTtls>\n" +
-                "                <AcctId>\n" +
-                "                    <CshAcctId>\n" +
-                "                        <Othr>\n" +
-                "                            <Id>12340100</Id>\n" +
-                "                        </Othr>\n" +
-                "                    </CshAcctId>\n" +
-                "                </AcctId>\n" +
-                "                <TtlInvcAmt Ccy=\"SGD\">0.32</TtlInvcAmt>\n" +
-                "                <SvcCtgy>CHAR</SvcCtgy>\n" +
-                "            </SvcCtgyTtls>\n" +
-                "        </BllgRpt>\n" +
-                "    </BllgRptOrErr>\n" +
-                "</BllgRpt>\n" +
-                "</Document>\n";
+        String xmlInput = "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:DRAFT6camt.077.001.01\">\n" + "<BllgRpt>\n"
+                + "    <MsgHdr>\n"
+                + "        <MsgId>12345</MsgId>\n"
+                + "        <CreDtTm>2022-05-24T10:29:05+08:00</CreDtTm>\n"
+                + "        <ReqTp>\n"
+                + "            <Prtry>\n"
+                + "                <Id>Tax Invoice for RTGS Billing</Id>\n"
+                + "            </Prtry>\n"
+                + "        </ReqTp>\n"
+                + "    </MsgHdr>\n"
+                + "    <BllgRptOrErr>\n"
+                + "        <BllgRpt>\n"
+                + "            <RgltryData>\n"
+                + "                <Invcr>\n"
+                + "                    <Nm>The Monetary Authority of Foobar</Nm>\n"
+                + "                    <PstlAdr>\n"
+                + "                        <AdrLine>99 Foo Way, FOO Building 012345</AdrLine>\n"
+                + "                    </PstlAdr>\n"
+                + "                    <Id>\n"
+                + "                        <OrgId>\n"
+                + "                            <Othr>\n"
+                + "                                <Id>M12343076J</Id>\n"
+                + "                            </Othr>\n"
+                + "                        </OrgId>\n"
+                + "                    </Id>\n"
+                + "                </Invcr>\n"
+                + "                <Invcee>\n"
+                + "                    <Nm>FOO BANK OF FOOBAR</Nm>\n"
+                + "                    <PstlAdr>\n"
+                + "                        <AdrLine>44 Street Unit 27-01/08 Foobar Hub 012345</AdrLine>\n"
+                + "                    </PstlAdr>\n"
+                + "                </Invcee>\n"
+                + "                <InvcLglStmt>See further information on the RTGS Billing Detail screen</InvcLglStmt>\n"
+                + "            </RgltryData>\n"
+                + "            <InvcDt>2022-05-24</InvcDt>\n"
+                + "            <BllgId>I22/123/0123</BllgId>\n"
+                + "            <BllgPrd>\n"
+                + "                <FrDt>2022-05-25</FrDt>\n"
+                + "                <ToDt>2022-05-25</ToDt>\n"
+                + "            </BllgPrd>\n"
+                + "            <InvcTtls>\n"
+                + "                <Tax>\n"
+                + "                    <Rate>7</Rate>\n"
+                + "                    <TaxblAmt Ccy=\"SGD\">0.30</TaxblAmt>\n"
+                + "                    <Amt Ccy=\"SGD\">0.02</Amt>\n"
+                + "                </Tax>\n"
+                + "                <TtlInvcAmt Ccy=\"SGD\">0.32</TtlInvcAmt>\n"
+                + "                <PmtDueDt>2022-05-24</PmtDueDt>\n"
+                + "            </InvcTtls>\n"
+                + "            <SvcCtgyTtls>\n"
+                + "                <AcctId>\n"
+                + "                    <CshAcctId>\n"
+                + "                        <Othr>\n"
+                + "                            <Id>12340100</Id>\n"
+                + "                        </Othr>\n"
+                + "                    </CshAcctId>\n"
+                + "                </AcctId>\n"
+                + "                <TtlInvcAmt Ccy=\"SGD\">0.32</TtlInvcAmt>\n"
+                + "                <SvcCtgy>CHAR</SvcCtgy>\n"
+                + "            </SvcCtgyTtls>\n"
+                + "        </BllgRpt>\n"
+                + "    </BllgRptOrErr>\n"
+                + "</BllgRpt>\n"
+                + "</Document>\n";
         MxSwiftMessage mx = new MxSwiftMessage(xmlInput);
         assertNotNull(mx);
         assertEquals("camt.077.001.01", mx.getIdentifier());

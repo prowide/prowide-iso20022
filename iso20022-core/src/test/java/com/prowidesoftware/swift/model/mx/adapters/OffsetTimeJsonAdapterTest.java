@@ -15,14 +15,12 @@
  */
 package com.prowidesoftware.swift.model.mx.adapters;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
-import org.junit.jupiter.api.Test;
-
 import java.time.OffsetTime;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import org.junit.jupiter.api.Test;
 
 class OffsetTimeJsonAdapterTest {
 
@@ -34,31 +32,41 @@ class OffsetTimeJsonAdapterTest {
 
         // without offset, nano 0
         String jsonActual = "{\"time\":{\"hour\":12,\"minute\":13,\"second\":14,\"nano\":0}}";
-        String jsonExpected = "{\"time\":{\"hour\":12,\"minute\":13,\"second\":14,\"nano\":0},\"offset\":{\"totalSeconds\":" + systemOffsetSeconds + "}}";
+        String jsonExpected =
+                "{\"time\":{\"hour\":12,\"minute\":13,\"second\":14,\"nano\":0},\"offset\":{\"totalSeconds\":"
+                        + systemOffsetSeconds + "}}";
         testSerializationAndDeserializationImpl(jsonActual, jsonExpected);
 
         // without offset, without nano
         jsonActual = "{\"time\":{\"hour\":12,\"minute\":13,\"second\":14}}";
-        jsonExpected = "{\"time\":{\"hour\":12,\"minute\":13,\"second\":14,\"nano\":0},\"offset\":{\"totalSeconds\":" + systemOffsetSeconds + "}}";
+        jsonExpected = "{\"time\":{\"hour\":12,\"minute\":13,\"second\":14,\"nano\":0},\"offset\":{\"totalSeconds\":"
+                + systemOffsetSeconds + "}}";
         testSerializationAndDeserializationImpl(jsonActual, jsonExpected);
 
         // without offset, nano 123456789
         jsonActual = "{\"time\":{\"hour\":12,\"minute\":13,\"second\":14,\"nano\":123456789}}";
-        jsonExpected = "{\"time\":{\"hour\":12,\"minute\":13,\"second\":14,\"nano\":123456789},\"offset\":{\"totalSeconds\":" + systemOffsetSeconds + "}}";
+        jsonExpected =
+                "{\"time\":{\"hour\":12,\"minute\":13,\"second\":14,\"nano\":123456789},\"offset\":{\"totalSeconds\":"
+                        + systemOffsetSeconds + "}}";
         testSerializationAndDeserializationImpl(jsonActual, jsonExpected);
 
         // with offset
-        jsonActual = "{\"time\":{\"hour\":12,\"minute\":13,\"second\":14,\"nano\":123456789},\"offset\":{\"totalSeconds\":" + systemOffsetSeconds + "}}";
+        jsonActual =
+                "{\"time\":{\"hour\":12,\"minute\":13,\"second\":14,\"nano\":123456789},\"offset\":{\"totalSeconds\":"
+                        + systemOffsetSeconds + "}}";
         testSerializationAndDeserializationImpl(jsonActual, jsonActual);
 
         // without second, without nano
         jsonActual = "{\"time\":{\"hour\":12,\"minute\":13}}";
-        jsonExpected = "{\"time\":{\"hour\":12,\"minute\":13,\"second\":0,\"nano\":0},\"offset\":{\"totalSeconds\":" + systemOffsetSeconds + "}}";
+        jsonExpected = "{\"time\":{\"hour\":12,\"minute\":13,\"second\":0,\"nano\":0},\"offset\":{\"totalSeconds\":"
+                + systemOffsetSeconds + "}}";
         testSerializationAndDeserializationImpl(jsonActual, jsonExpected);
 
         // with offset
-        jsonActual = "{\"time\":{\"hour\":12,\"minute\":13,\"second\":0,\"nano\":0},\"offset\":{\"totalSeconds\":-1800}}";
-        jsonExpected = "{\"time\":{\"hour\":12,\"minute\":13,\"second\":0,\"nano\":0},\"offset\":{\"totalSeconds\":-1800}}";
+        jsonActual =
+                "{\"time\":{\"hour\":12,\"minute\":13,\"second\":0,\"nano\":0},\"offset\":{\"totalSeconds\":-1800}}";
+        jsonExpected =
+                "{\"time\":{\"hour\":12,\"minute\":13,\"second\":0,\"nano\":0},\"offset\":{\"totalSeconds\":-1800}}";
         testSerializationAndDeserializationImpl(jsonActual, jsonExpected);
     }
 
@@ -68,5 +76,4 @@ class OffsetTimeJsonAdapterTest {
         JsonElement valueDateResult = adapter.serialize(offsetTime, null, null);
         assertEquals(jsonResult, valueDateResult.toString());
     }
-
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,9 +17,7 @@ package com.prowidesoftware.swift.model.mx;
 
 import com.google.gson.*;
 import com.prowidesoftware.swift.model.MxId;
-
 import java.lang.reflect.Type;
-
 
 /**
  * {@link AbstractMX} JSON serialization and deserialization implementation based on Gson.
@@ -45,7 +43,8 @@ class AbstractMXAdapter implements JsonSerializer<AbstractMX>, JsonDeserializer<
     }
 
     @Override
-    public AbstractMX deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
+    public AbstractMX deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)
+            throws JsonParseException {
         JsonObject jsonObject = json.getAsJsonObject();
         JsonPrimitive prim = (JsonPrimitive) jsonObject.get(IDENTIFIER);
         if (prim == null) {
@@ -62,5 +61,4 @@ class AbstractMXAdapter implements JsonSerializer<AbstractMX>, JsonDeserializer<
         }
         return context.deserialize(json, klass);
     }
-
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,12 +15,10 @@
  */
 package com.prowidesoftware.swift.model;
 
-import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.Validate;
-
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * Class for identification of MX messages.
@@ -60,7 +58,10 @@ public class MxId {
             try {
                 this.businessProcess = MxBusinessProcess.valueOf(bpStr);
             } catch (final Exception e) {
-                throw new IllegalArgumentException("Illegal value for business process: '" + bpStr + "' see enum values in " + MxBusinessProcess.class.getName() + " for valid options", e);
+                throw new IllegalArgumentException(
+                        "Illegal value for business process: '" + bpStr + "' see enum values in "
+                                + MxBusinessProcess.class.getName() + " for valid options",
+                        e);
             }
             this.functionality = matcher.group(2);
             this.variant = matcher.group(3);
@@ -70,7 +71,11 @@ public class MxId {
         }
     }
 
-    public MxId(final MxBusinessProcess businessProcess, final String funString, final String varString, final String verString) {
+    public MxId(
+            final MxBusinessProcess businessProcess,
+            final String funString,
+            final String varString,
+            final String verString) {
         this.businessProcess = businessProcess;
         this.functionality = funString;
         this.variant = varString;
@@ -209,10 +214,10 @@ public class MxId {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         MxId mxId = (MxId) o;
-        return businessProcess == mxId.businessProcess &&
-                Objects.equals(functionality, mxId.functionality) &&
-                Objects.equals(variant, mxId.variant) &&
-                Objects.equals(version, mxId.version);
+        return businessProcess == mxId.businessProcess
+                && Objects.equals(functionality, mxId.functionality)
+                && Objects.equals(variant, mxId.variant)
+                && Objects.equals(version, mxId.version);
     }
 
     @Override
@@ -254,10 +259,15 @@ public class MxId {
      * @since 7.10.7
      */
     public boolean matches(MxId other) {
-        return this.businessProcess == other.getBusinessProcess() &&
-                (StringUtils.isBlank(this.functionality) || StringUtils.isBlank(other.getFunctionality()) || StringUtils.equals(this.functionality, other.getFunctionality())) &&
-                (StringUtils.isBlank(this.variant) || StringUtils.isBlank(other.getVariant()) || StringUtils.equals(this.variant, other.getVariant())) &&
-                (StringUtils.isBlank(this.version) || StringUtils.isBlank(other.getVersion()) || StringUtils.equals(this.version, other.getVersion()));
+        return this.businessProcess == other.getBusinessProcess()
+                && (StringUtils.isBlank(this.functionality)
+                        || StringUtils.isBlank(other.getFunctionality())
+                        || StringUtils.equals(this.functionality, other.getFunctionality()))
+                && (StringUtils.isBlank(this.variant)
+                        || StringUtils.isBlank(other.getVariant())
+                        || StringUtils.equals(this.variant, other.getVariant()))
+                && (StringUtils.isBlank(this.version)
+                        || StringUtils.isBlank(other.getVersion())
+                        || StringUtils.equals(this.version, other.getVersion()));
     }
-
 }

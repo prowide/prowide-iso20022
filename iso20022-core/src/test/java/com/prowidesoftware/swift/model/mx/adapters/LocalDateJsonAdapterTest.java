@@ -15,13 +15,12 @@
  */
 package com.prowidesoftware.swift.model.mx.adapters;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
-import org.junit.jupiter.api.Test;
-
 import java.time.LocalDate;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 
 class LocalDateJsonAdapterTest {
 
@@ -41,5 +40,4 @@ class LocalDateJsonAdapterTest {
         JsonElement valueDateResult = adapter.serialize(date, null, null);
         assertEquals(json, valueDateResult.toString());
     }
-
 }

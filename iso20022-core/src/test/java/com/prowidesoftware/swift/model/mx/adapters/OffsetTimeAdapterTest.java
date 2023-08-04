@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,12 +15,11 @@
  */
 package com.prowidesoftware.swift.model.mx.adapters;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 
 public class OffsetTimeAdapterTest {
 
@@ -31,9 +30,9 @@ public class OffsetTimeAdapterTest {
         OffsetTime offsetTime = adapter.unmarshal("12:50:08.123-03:00");
         assertEquals(12, offsetTime.getHour());
         assertEquals(50, offsetTime.getMinute());
-        assertEquals(8,  offsetTime.getSecond());
-        assertEquals(123000000,  offsetTime.getNano());
-        assertEquals(ZoneOffset.of("-03:00"),  offsetTime.getOffset());
+        assertEquals(8, offsetTime.getSecond());
+        assertEquals(123000000, offsetTime.getNano());
+        assertEquals(ZoneOffset.of("-03:00"), offsetTime.getOffset());
     }
 
     @Test
@@ -41,14 +40,14 @@ public class OffsetTimeAdapterTest {
         OffsetTime offsetTime = adapter.unmarshal("12:50:08-03:00");
         assertEquals(12, offsetTime.getHour());
         assertEquals(50, offsetTime.getMinute());
-        assertEquals(8,  offsetTime.getSecond());
-        assertEquals(ZoneOffset.of("-03:00"),  offsetTime.getOffset());
-
+        assertEquals(8, offsetTime.getSecond());
+        assertEquals(ZoneOffset.of("-03:00"), offsetTime.getOffset());
     }
 
     @Test
     public void testUnmarshallNoOffset() throws Exception {
-        OffsetTime systemDateTime = OffsetTime.parse("12:50:08" + ZoneOffset.systemDefault().getRules().getStandardOffset(Instant.now()));
+        OffsetTime systemDateTime = OffsetTime.parse(
+                "12:50:08" + ZoneOffset.systemDefault().getRules().getStandardOffset(Instant.now()));
         OffsetTime offsetTime = adapter.unmarshal("12:50:08");
         assertEquals(12, offsetTime.getHour());
         assertEquals(50, offsetTime.getMinute());
@@ -58,7 +57,7 @@ public class OffsetTimeAdapterTest {
 
     @Test
     public void testMarshallNoFractionOfSecondsAndWithFractionOfSeconds() throws Exception {
-        ZoneOffset zoneOffSet= ZoneOffset.of("-03:00");
+        ZoneOffset zoneOffSet = ZoneOffset.of("-03:00");
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss[.SSS][XXX]");
 
         OffsetTime offsetTime = LocalTime.parse("12:50:08", dateTimeFormatter).atOffset(zoneOffSet);
@@ -66,7 +65,6 @@ public class OffsetTimeAdapterTest {
 
         offsetTime = LocalTime.parse("12:50:08.123", dateTimeFormatter).atOffset(zoneOffSet);
         assertEquals("12:50:08.123-03:00", adapter.marshal(offsetTime));
-
     }
 
     @Test
@@ -74,21 +72,21 @@ public class OffsetTimeAdapterTest {
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss[.SSS][XXX]");
         ZoneOffset offset = ZoneId.systemDefault().getRules().getOffset(Instant.now());
         OffsetTime offsetTime = LocalTime.parse("12:50:08", dateTimeFormatter).atOffset(offset);
-        assertEquals("12:50:08"+offset, adapter.marshal(offsetTime));
+        assertEquals("12:50:08" + offset, adapter.marshal(offsetTime));
     }
 
     @Test
     public void testOffsetTime() throws Exception {
         ZoneOffset zoneOffset = ZoneId.systemDefault().getRules().getStandardOffset(Instant.now());
 
-        //DateTime without offset and with/without fractional seconds
+        // DateTime without offset and with/without fractional seconds
         testTimeImpl("12:13:14", "12:13:14" + zoneOffset);
         testTimeImpl("12:13:14.1", "12:13:14.1" + zoneOffset);
         testTimeImpl("12:13:14.12", "12:13:14.12" + zoneOffset);
         testTimeImpl("12:13:14.123", "12:13:14.123" + zoneOffset);
         testTimeImpl("12:13:14.123456789", "12:13:14.123456789" + zoneOffset);
 
-        //DateTime with offset and without fractional seconds
+        // DateTime with offset and without fractional seconds
         testTimeImpl("12:13:14+01:00", "12:13:14+01:00");
         testTimeImpl("12:13:14-01:00", "12:13:14-01:00");
         testTimeImpl("12:13:14+00:00", "12:13:14+00:00");
@@ -96,7 +94,7 @@ public class OffsetTimeAdapterTest {
         testTimeImpl("12:13:14+08:30", "12:13:14+08:30");
         testTimeImpl("12:13:14Z", "12:13:14+00:00");
 
-        //DateTime with offset and fractional seconds
+        // DateTime with offset and fractional seconds
         testTimeImpl("12:13:14.1+01:00", "12:13:14.1+01:00");
         testTimeImpl("12:13:14.12-01:00", "12:13:14.12-01:00");
         testTimeImpl("12:13:14.123+00:00", "12:13:14.123+00:00");
@@ -107,17 +105,10 @@ public class OffsetTimeAdapterTest {
         testTimeImpl("12:13:14.123456Z", "12:13:14.123456+00:00");
     }
 
-
     private void testTimeImpl(String value, String valueResult) throws Exception {
         OffsetTimeAdapter offsetTimeAdapter = new OffsetTimeAdapter();
         OffsetTime OffsetTime = offsetTimeAdapter.unmarshal(value);
         String valueDateResult = offsetTimeAdapter.marshal(OffsetTime);
         assertEquals(valueResult, valueDateResult);
     }
-
-
-
-
-
-
 }

@@ -15,14 +15,13 @@
  */
 package com.prowidesoftware.swift.model.mx.adapters;
 
-import com.google.gson.JsonElement;
-import com.google.gson.JsonParser;
-import org.junit.jupiter.api.Test;
-
-import java.time.OffsetDateTime;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
+
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
+import java.time.OffsetDateTime;
+import org.junit.jupiter.api.Test;
 
 class OffsetDateTimeJsonAdapterTest {
 
@@ -33,36 +32,53 @@ class OffsetDateTimeJsonAdapterTest {
         int systemOffsetSeconds = OffsetDateTime.now().getOffset().getTotalSeconds();
 
         // without offset, nano 0
-        String jsonActual = "{\"dateTime\":{\"date\":{\"year\":2019,\"month\":4,\"day\":28},\"time\":{\"hour\":12,\"minute\":13,\"second\":14,\"nano\":0}}}";
-        String jsonExpected = "{\"dateTime\":{\"date\":{\"year\":2019,\"month\":4,\"day\":28},\"time\":{\"hour\":12,\"minute\":13,\"second\":14,\"nano\":0}},\"offset\":{\"totalSeconds\":" + systemOffsetSeconds + "}}";
+        String jsonActual =
+                "{\"dateTime\":{\"date\":{\"year\":2019,\"month\":4,\"day\":28},\"time\":{\"hour\":12,\"minute\":13,\"second\":14,\"nano\":0}}}";
+        String jsonExpected =
+                "{\"dateTime\":{\"date\":{\"year\":2019,\"month\":4,\"day\":28},\"time\":{\"hour\":12,\"minute\":13,\"second\":14,\"nano\":0}},\"offset\":{\"totalSeconds\":"
+                        + systemOffsetSeconds + "}}";
         testSerializationAndDeserializationImpl(jsonActual, jsonExpected);
 
         // without offset, without nano
-        jsonActual = "{\"dateTime\":{\"date\":{\"year\":2019,\"month\":4,\"day\":28},\"time\":{\"hour\":12,\"minute\":13,\"second\":14}}}";
-        jsonExpected = "{\"dateTime\":{\"date\":{\"year\":2019,\"month\":4,\"day\":28},\"time\":{\"hour\":12,\"minute\":13,\"second\":14,\"nano\":0}},\"offset\":{\"totalSeconds\":" + systemOffsetSeconds + "}}";
+        jsonActual =
+                "{\"dateTime\":{\"date\":{\"year\":2019,\"month\":4,\"day\":28},\"time\":{\"hour\":12,\"minute\":13,\"second\":14}}}";
+        jsonExpected =
+                "{\"dateTime\":{\"date\":{\"year\":2019,\"month\":4,\"day\":28},\"time\":{\"hour\":12,\"minute\":13,\"second\":14,\"nano\":0}},\"offset\":{\"totalSeconds\":"
+                        + systemOffsetSeconds + "}}";
         testSerializationAndDeserializationImpl(jsonActual, jsonExpected);
 
         // without offset, nano 123456789
-        jsonActual = "{\"dateTime\":{\"date\":{\"year\":2019,\"month\":4,\"day\":28},\"time\":{\"hour\":12,\"minute\":13,\"second\":14,\"nano\":123456789}}}";
-        jsonExpected = "{\"dateTime\":{\"date\":{\"year\":2019,\"month\":4,\"day\":28},\"time\":{\"hour\":12,\"minute\":13,\"second\":14,\"nano\":123456789}},\"offset\":{\"totalSeconds\":" + systemOffsetSeconds + "}}";
+        jsonActual =
+                "{\"dateTime\":{\"date\":{\"year\":2019,\"month\":4,\"day\":28},\"time\":{\"hour\":12,\"minute\":13,\"second\":14,\"nano\":123456789}}}";
+        jsonExpected =
+                "{\"dateTime\":{\"date\":{\"year\":2019,\"month\":4,\"day\":28},\"time\":{\"hour\":12,\"minute\":13,\"second\":14,\"nano\":123456789}},\"offset\":{\"totalSeconds\":"
+                        + systemOffsetSeconds + "}}";
         testSerializationAndDeserializationImpl(jsonActual, jsonExpected);
 
         // with offset
-        jsonActual = "{\"dateTime\":{\"date\":{\"year\":2019,\"month\":4,\"day\":28},\"time\":{\"hour\":12,\"minute\":13,\"second\":14,\"nano\":123456789}},\"offset\":{\"totalSeconds\":" + systemOffsetSeconds + "}}";
+        jsonActual =
+                "{\"dateTime\":{\"date\":{\"year\":2019,\"month\":4,\"day\":28},\"time\":{\"hour\":12,\"minute\":13,\"second\":14,\"nano\":123456789}},\"offset\":{\"totalSeconds\":"
+                        + systemOffsetSeconds + "}}";
         testSerializationAndDeserializationImpl(jsonActual, jsonActual);
 
         // without second, without nano
-        jsonActual = "{\"dateTime\":{\"date\":{\"year\":2019,\"month\":4,\"day\":28},\"time\":{\"hour\":12,\"minute\":13}}}";
-        jsonExpected = "{\"dateTime\":{\"date\":{\"year\":2019,\"month\":4,\"day\":28},\"time\":{\"hour\":12,\"minute\":13,\"second\":0,\"nano\":0}},\"offset\":{\"totalSeconds\":" + systemOffsetSeconds + "}}";
+        jsonActual =
+                "{\"dateTime\":{\"date\":{\"year\":2019,\"month\":4,\"day\":28},\"time\":{\"hour\":12,\"minute\":13}}}";
+        jsonExpected =
+                "{\"dateTime\":{\"date\":{\"year\":2019,\"month\":4,\"day\":28},\"time\":{\"hour\":12,\"minute\":13,\"second\":0,\"nano\":0}},\"offset\":{\"totalSeconds\":"
+                        + systemOffsetSeconds + "}}";
         testSerializationAndDeserializationImpl(jsonActual, jsonExpected);
 
         // with offset
-        jsonActual = "{\"dateTime\":{\"date\":{\"year\":2019,\"month\":4,\"day\":28},\"time\":{\"hour\":12,\"minute\":13,\"second\":0,\"nano\":0}},\"offset\":{\"totalSeconds\":-1800}}";
-        jsonExpected = "{\"dateTime\":{\"date\":{\"year\":2019,\"month\":4,\"day\":28},\"time\":{\"hour\":12,\"minute\":13,\"second\":0,\"nano\":0}},\"offset\":{\"totalSeconds\":-1800}}";
+        jsonActual =
+                "{\"dateTime\":{\"date\":{\"year\":2019,\"month\":4,\"day\":28},\"time\":{\"hour\":12,\"minute\":13,\"second\":0,\"nano\":0}},\"offset\":{\"totalSeconds\":-1800}}";
+        jsonExpected =
+                "{\"dateTime\":{\"date\":{\"year\":2019,\"month\":4,\"day\":28},\"time\":{\"hour\":12,\"minute\":13,\"second\":0,\"nano\":0}},\"offset\":{\"totalSeconds\":-1800}}";
         testSerializationAndDeserializationImpl(jsonActual, jsonExpected);
 
         // wrong format
-        jsonActual = "{\"dateTime\":{\"time\":{\"hour\":12,\"minute\":13,\"second\":0,\"nano\":0},\"offset\":{\"totalSeconds\":-1800}}}";
+        jsonActual =
+                "{\"dateTime\":{\"time\":{\"hour\":12,\"minute\":13,\"second\":0,\"nano\":0},\"offset\":{\"totalSeconds\":-1800}}}";
         assertNull(adapter.deserialize(new JsonParser().parse(jsonActual), null, null));
     }
 
@@ -72,5 +88,4 @@ class OffsetDateTimeJsonAdapterTest {
         JsonElement valueDateResult = adapter.serialize(offsetDateTime, null, null);
         assertEquals(jsonResult, valueDateResult.toString());
     }
-
 }

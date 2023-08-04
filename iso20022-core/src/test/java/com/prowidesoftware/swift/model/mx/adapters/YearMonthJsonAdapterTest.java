@@ -15,14 +15,13 @@
  */
 package com.prowidesoftware.swift.model.mx.adapters;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import com.prowidesoftware.swift.model.mx.MxAcmt03400104;
-import org.junit.jupiter.api.Test;
-
 import java.time.YearMonth;
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
 public class YearMonthJsonAdapterTest {
 
@@ -45,30 +44,28 @@ public class YearMonthJsonAdapterTest {
 
     @Test
     public void testYear_CustomPattern() {
-        String jsonOrigin = "{\n" +
-                "  \"acctSwtchReqPmt\": {\n" +
-                "    \"cdtInstr\": {\n" +
-                "      \"tax\": {\n" +
-                "        \"rcrd\": [\n" +
-                "          {\n" +
-                "            \"prd\": {\n" +
-                "              \"yr\": {\n" +
-                "                \"year\": 2022\n" +
-                "              }\n" +
-                "            }\n" +
-                "          }\n" +
-                "        ]\n" +
-                "      }\n" +
-                "    }\n" +
-                "  },\n" +
-                "  \"type\": \"MX\",\n" +
-                "  \"@xmlns\": \"urn:iso:std:iso:20022:tech:xsd:acmt.034.001.04\",\n" +
-                "  \"identifier\": \"acmt.034.001.04\"\n" +
-                "}";
+        String jsonOrigin = "{\n" + "  \"acctSwtchReqPmt\": {\n"
+                + "    \"cdtInstr\": {\n"
+                + "      \"tax\": {\n"
+                + "        \"rcrd\": [\n"
+                + "          {\n"
+                + "            \"prd\": {\n"
+                + "              \"yr\": {\n"
+                + "                \"year\": 2022\n"
+                + "              }\n"
+                + "            }\n"
+                + "          }\n"
+                + "        ]\n"
+                + "      }\n"
+                + "    }\n"
+                + "  },\n"
+                + "  \"type\": \"MX\",\n"
+                + "  \"@xmlns\": \"urn:iso:std:iso:20022:tech:xsd:acmt.034.001.04\",\n"
+                + "  \"identifier\": \"acmt.034.001.04\"\n"
+                + "}";
 
         final MxAcmt03400104 mx = MxAcmt03400104.fromJson(jsonOrigin);
         final String jsonParsed = mx.toJson();
         assertTrue(jsonParsed.contains("\"year\": 2022"));
     }
-
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,15 +16,14 @@
 package com.prowidesoftware.swift.model;
 
 import com.prowidesoftware.swift.utils.SafeXmlUtils;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.Validate;
-import org.xml.sax.XMLReader;
-
 import java.io.IOException;
 import java.io.PrintStream;
 import java.io.StringReader;
 import java.util.*;
 import java.util.logging.Level;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.Validate;
+import org.xml.sax.XMLReader;
 
 /**
  * <p>This class represents a node element within a tree of MX message.
@@ -34,7 +33,8 @@ import java.util.logging.Level;
  */
 public class MxNode {
     public static final transient String PATH_SEPARATOR = "/";
-    private static final transient java.util.logging.Logger log = java.util.logging.Logger.getLogger(MxNode.class.getName());
+    private static final transient java.util.logging.Logger log =
+            java.util.logging.Logger.getLogger(MxNode.class.getName());
     private final List<MxNode> children;
     private MxNode parent;
     private String value;
@@ -139,8 +139,9 @@ public class MxNode {
         final String segment = segments[index];
         int nextIndex = index + 1;
 
-        //TODO en vez de remover el predicado, habria que soportarlo, devolviendo la/s instancia/s pedidas
-        if (StringUtils.equals(".", segment) || StringUtils.equalsIgnoreCase(node.localName, removePredicate(segment))) {
+        // TODO en vez de remover el predicado, habria que soportarlo, devolviendo la/s instancia/s pedidas
+        if (StringUtils.equals(".", segment)
+                || StringUtils.equalsIgnoreCase(node.localName, removePredicate(segment))) {
             if (nextIndex == segments.length) {
                 result.add(node);
                 return result;
@@ -150,7 +151,6 @@ public class MxNode {
                 }
                 return result;
             }
-
         }
         return result;
     }
@@ -178,9 +178,7 @@ public class MxNode {
 
     @Override
     public String toString() {
-        return "MxNode{" +
-                "localName='" + localName + '\'' +
-                '}';
+        return "MxNode{" + "localName='" + localName + '\'' + '}';
     }
 
     /**
@@ -301,5 +299,4 @@ public class MxNode {
             return this.parent.path() + PATH_SEPARATOR + this.localName;
         }
     }
-
 }

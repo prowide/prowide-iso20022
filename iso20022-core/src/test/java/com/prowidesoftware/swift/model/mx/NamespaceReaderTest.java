@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2021 Prowide
+ * Copyright 2006-2023 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,13 +15,12 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
-import com.prowidesoftware.swift.utils.Lib;
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
+import com.prowidesoftware.swift.utils.Lib;
 import java.io.IOException;
 import java.util.Optional;
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
 public class NamespaceReaderTest {
 
@@ -185,8 +184,8 @@ public class NamespaceReaderTest {
      */
     @Test
     public void testXxeDisabledInAnalyzeMessage() {
-        final String xml = "<!DOCTYPE foo [ <!ENTITY xxe SYSTEM \"file:///etc/passwd\" >]>" +
-                "<Doc:Document xmlns:Doc=\"urn:swift:xsd:swift.eni$camt.003.001.04\">&xxe;</Doc:Document>";
+        final String xml = "<!DOCTYPE foo [ <!ENTITY xxe SYSTEM \"file:///etc/passwd\" >]>"
+                + "<Doc:Document xmlns:Doc=\"urn:swift:xsd:swift.eni$camt.003.001.04\">&xxe;</Doc:Document>";
         Optional<String> namespace = NamespaceReader.findDocumentNamespace(xml);
         assertTrue(namespace.isPresent());
         assertEquals("urn:swift:xsd:swift.eni$camt.003.001.04", namespace.get());
@@ -212,5 +211,4 @@ public class NamespaceReaderTest {
         assertTrue(NamespaceReader.elementExists(xml, "message"));
         assertFalse(NamespaceReader.elementExists(xml, "Foo"));
     }
-
 }

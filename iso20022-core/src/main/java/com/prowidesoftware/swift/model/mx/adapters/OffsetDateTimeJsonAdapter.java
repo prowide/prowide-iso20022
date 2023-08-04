@@ -16,7 +16,6 @@
 package com.prowidesoftware.swift.model.mx.adapters;
 
 import com.google.gson.*;
-
 import java.lang.reflect.Type;
 import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
@@ -36,7 +35,8 @@ public class OffsetDateTimeJsonAdapter implements JsonSerializer<OffsetDateTime>
     private final Gson gson = new Gson();
 
     @Override
-    public JsonElement serialize(OffsetDateTime offsetDateTime, Type type, JsonSerializationContext jsonSerializationContext) {
+    public JsonElement serialize(
+            OffsetDateTime offsetDateTime, Type type, JsonSerializationContext jsonSerializationContext) {
         DateTimeOffsetDTO dateTimeOffsetDTO = new DateTimeOffsetDTO();
 
         dateTimeOffsetDTO.dateTime.date.year = offsetDateTime.getYear();
@@ -55,12 +55,13 @@ public class OffsetDateTimeJsonAdapter implements JsonSerializer<OffsetDateTime>
     }
 
     @Override
-    public OffsetDateTime deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) {
+    public OffsetDateTime deserialize(
+            JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) {
         try {
-            //Parse DTO model
+            // Parse DTO model
             DateTimeOffsetDTO dateTimeOffsetDTO = gson.fromJson(jsonElement, DateTimeOffsetDTO.class);
 
-            //Prepare OffsetDateTime
+            // Prepare OffsetDateTime
             OffsetDateTime offsetDateTime;
             int nano = 0;
             if (dateTimeOffsetDTO.dateTime.time.nano != null) {
@@ -69,7 +70,8 @@ public class OffsetDateTimeJsonAdapter implements JsonSerializer<OffsetDateTime>
 
             if (dateTimeOffsetDTO.offset != null) {
                 ZoneOffset zoneoffset = ZoneOffset.ofTotalSeconds(dateTimeOffsetDTO.offset.totalSeconds);
-                offsetDateTime = OffsetDateTime.of(dateTimeOffsetDTO.dateTime.date.year,
+                offsetDateTime = OffsetDateTime.of(
+                        dateTimeOffsetDTO.dateTime.date.year,
                         dateTimeOffsetDTO.dateTime.date.month,
                         dateTimeOffsetDTO.dateTime.date.day,
                         dateTimeOffsetDTO.dateTime.time.hour,
@@ -78,7 +80,8 @@ public class OffsetDateTimeJsonAdapter implements JsonSerializer<OffsetDateTime>
                         nano,
                         zoneoffset);
             } else {
-                LocalDateTime localDateTime = LocalDateTime.of(dateTimeOffsetDTO.dateTime.date.year,
+                LocalDateTime localDateTime = LocalDateTime.of(
+                        dateTimeOffsetDTO.dateTime.date.year,
                         dateTimeOffsetDTO.dateTime.date.month,
                         dateTimeOffsetDTO.dateTime.date.day,
                         dateTimeOffsetDTO.dateTime.time.hour,
@@ -123,5 +126,4 @@ public class OffsetDateTimeJsonAdapter implements JsonSerializer<OffsetDateTime>
     static class OffsetDTO {
         Integer totalSeconds = 0;
     }
-
 }
