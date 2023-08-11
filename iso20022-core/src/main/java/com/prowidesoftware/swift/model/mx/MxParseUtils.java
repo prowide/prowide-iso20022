@@ -220,4 +220,8 @@ public class MxParseUtils {
         }
         return Optional.empty();
     }
+
+    public static String makeXmlLenient(String xml) {
+        return xml != null ? xml.replaceFirst("(?i)<\\?XML", "<?xml") : null;
+    }
 }

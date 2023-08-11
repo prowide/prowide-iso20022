@@ -15,6 +15,8 @@
  */
 package com.prowidesoftware.swift.model;
 
+import static com.prowidesoftware.swift.model.mx.MxParseUtils.makeXmlLenient;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.prowidesoftware.deprecation.DeprecationUtils;
@@ -270,7 +272,7 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
     }
 
     private void extractMetadata(MxId identifier, AppHdr headerModel, MessageMetadataStrategy metadataStrategy) {
-        MxNode parsedMessage = MxNode.parse(this.message());
+        MxNode parsedMessage = MxNode.parse(makeXmlLenient(this.message()));
         if (headerModel == null || !extractMetadata(headerModel)) {
             extractMetadata(parsedMessage);
         }
@@ -514,7 +516,7 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
         // since this MxSwiftMessage is lenient on the constraints of the parsed XML payload
         MxReadParams params = new MxReadParams();
         params.verbose = false;
-        AbstractMX mx = MxReadImpl.parse(xml, mxId, params);
+        AbstractMX mx = MxReadImpl.parse(makeXmlLenient(xml), mxId, params);
 
         if (mx == null) {
             // could not parse the XML into a message model

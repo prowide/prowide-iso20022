@@ -15,6 +15,8 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
+import static com.prowidesoftware.swift.model.mx.MxParseUtils.makeXmlLenient;
+
 import com.prowidesoftware.swift.utils.SafeXmlUtils;
 import java.io.StringReader;
 import java.util.Objects;
@@ -108,7 +110,7 @@ public class NamespaceReader {
 
         final XMLInputFactory xif = SafeXmlUtils.inputFactory();
         try {
-            final XMLStreamReader reader = xif.createXMLStreamReader(new StringReader(xml));
+            final XMLStreamReader reader = xif.createXMLStreamReader(new StringReader(makeXmlLenient(xml)));
             while (reader.hasNext()) {
                 int event = reader.next();
                 if (XMLStreamConstants.START_ELEMENT == event) {
