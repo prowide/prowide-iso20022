@@ -57,16 +57,6 @@ class OffsetDateTimeAdapterTest {
 
     @Test
     public void test() throws Exception {
-        ZoneId zoneId = ZoneOffset.systemDefault();
-        OffsetDateTime dateTime = LocalDateTime.parse("2021-09-19T12:13:14")
-                .atZone(zoneId)
-                .withEarlierOffsetAtOverlap()
-                .withFixedOffsetZone()
-                .withEarlierOffsetAtOverlap()
-                .toOffsetDateTime();
-
-        String offset = dateTime.getOffset().getId();
-
         testDateTimeImpl("2018-01-15T17:30:33.0+02:00", "2018-01-15T17:30:33+02:00");
         testDateTimeImpl("2018-01-15T17:30:33.00+02:00", "2018-01-15T17:30:33+02:00");
         testDateTimeImpl("2018-01-15T17:30:33.000+02:00", "2018-01-15T17:30:33+02:00");
