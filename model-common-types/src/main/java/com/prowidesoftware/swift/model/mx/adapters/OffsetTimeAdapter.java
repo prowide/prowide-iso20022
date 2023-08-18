@@ -104,7 +104,10 @@ public class OffsetTimeAdapter extends XmlAdapter<String, OffsetTime> {
             synchronized (marshalFormat) {
                 formatted = formatOffsetTime(this.marshalFormat, offsetTime);
             }
-            return formatted.replace(".000", "").replace("Z", "+00:00");
+            if(formatted.contains("Z")){
+                formatted = formatted.replace(".000", "").replace("Z", "+00:00");
+            }
+            return formatted;
         }
     }
 

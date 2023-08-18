@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 public class IssueJira1566Test {
 
     @Test
-    public void testNano() throws Exception {
+    public void testNano() {
         String json = "{\n" + "  \"applicationHeaderPacs008\" : null,\n"
                 + "  \"accountIdentification4Choice\" : null,\n"
                 + "  \"accountSchemeName1Choice\" : null,\n"
