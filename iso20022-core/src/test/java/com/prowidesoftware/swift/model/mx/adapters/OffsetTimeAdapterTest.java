@@ -111,4 +111,38 @@ public class OffsetTimeAdapterTest {
         String valueDateResult = offsetTimeAdapter.marshal(OffsetTime);
         assertEquals(valueResult, valueDateResult);
     }
+
+    @Test
+    public void testOffsetTimeWithNanosOnlyZero() throws Exception {
+        // removable zeros
+        testTimeImpl("17:30:33.0+02:00", "17:30:33+02:00");
+        testTimeImpl("17:30:33.00+02:00", "17:30:33+02:00");
+        testTimeImpl("17:30:33.000+02:00", "17:30:33+02:00");
+        testTimeImpl("17:30:33.0000+02:00", "17:30:33+02:00");
+        testTimeImpl("17:30:33.00000+02:00", "17:30:33+02:00");
+        testTimeImpl("17:30:33.000000+02:00", "17:30:33+02:00");
+        testTimeImpl("17:30:33.0000000+02:00", "17:30:33+02:00");
+        testTimeImpl("17:30:33.00000000+02:00", "17:30:33+02:00");
+        testTimeImpl("17:30:33.000000000+02:00", "17:30:33+02:00");
+        // testTimeImpl("17:30:33.0000000000+02:00", "17:30:33+02:00"); //Cannot parse more
+        // than 9 characters in nano value
+
+        // non removable zeros
+        testTimeImpl("17:30:33.0+02:00", "17:30:33+02:00");
+        testTimeImpl("17:30:33.01+02:00", "17:30:33.01+02:00");
+        testTimeImpl("17:30:33.001+02:00", "17:30:33.001+02:00");
+        testTimeImpl("17:30:33.0001+02:00", "17:30:33.0001+02:00");
+        testTimeImpl("17:30:33.00001+02:00", "17:30:33.00001+02:00");
+        testTimeImpl("17:30:33.000001+02:00", "17:30:33.000001+02:00");
+        testTimeImpl("17:30:33.0000001+02:00", "17:30:33.0000001+02:00");
+        testTimeImpl("17:30:33.00000001+02:00", "17:30:33.00000001+02:00");
+        testTimeImpl("17:30:33.000000001+02:00", "17:30:33.000000001+02:00");
+
+        // UTC
+        testTimeImpl("17:30:33.0Z", "17:30:33+00:00");
+        testTimeImpl("17:30:33.000000000Z", "17:30:33+00:00");
+        testTimeImpl("17:30:33.000000001Z", "17:30:33.000000001+00:00");
+        testTimeImpl("17:30:33.123456789Z", "17:30:33.123456789+00:00");
+        testTimeImpl("17:30:33Z", "17:30:33+00:00");
+    }
 }
