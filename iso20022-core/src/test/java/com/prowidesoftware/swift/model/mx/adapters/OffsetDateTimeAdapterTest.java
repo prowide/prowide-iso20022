@@ -56,7 +56,7 @@ class OffsetDateTimeAdapterTest {
     }
 
     @Test
-    public void test() throws Exception {
+    public void testOffsetDateTimeWithNanosOnlyZero() throws Exception {
         testDateTimeImpl("2018-01-15T17:30:33.0+02:00", "2018-01-15T17:30:33+02:00");
         testDateTimeImpl("2018-01-15T17:30:33.00+02:00", "2018-01-15T17:30:33+02:00");
         testDateTimeImpl("2018-01-15T17:30:33.000+02:00", "2018-01-15T17:30:33+02:00");
@@ -81,5 +81,6 @@ class OffsetDateTimeAdapterTest {
         testDateTimeImpl("2018-01-15T17:30:33.000000000Z", "2018-01-15T17:30:33+00:00");
         testDateTimeImpl("2018-01-15T17:30:33.000000001Z", "2018-01-15T17:30:33.000000001+00:00");
         testDateTimeImpl("2018-01-15T17:30:33.123456789Z", "2018-01-15T17:30:33.123456789+00:00");
+        testDateTimeImpl("2018-01-15T17:30:33Z", "2018-01-15T17:30:33+00:00");
     }
 }
