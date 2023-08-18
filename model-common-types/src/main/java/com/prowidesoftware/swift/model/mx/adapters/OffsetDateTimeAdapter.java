@@ -27,6 +27,8 @@ import java.time.temporal.ChronoField;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.time.format.DateTimeFormatterBuilder;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Default generic adapter to use when non is provided via the configuration API.
@@ -39,6 +41,8 @@ public class OffsetDateTimeAdapter extends XmlAdapter<String, OffsetDateTime> {
     private final DateTimeFormatter marshalFormat;
     private final DateTimeFormatter unmarshalFormat;
     private final XmlAdapter<String, OffsetDateTime> customAdapterImpl;
+    private final String regex = "\\\\.0{1,}[Z+-]";
+    private final Pattern pattern = Pattern.compile(regex);
     int minPrecision = 0;
     int maxPrecision = 9;
 
@@ -108,10 +112,14 @@ public class OffsetDateTimeAdapter extends XmlAdapter<String, OffsetDateTime> {
             synchronized (marshalFormat) {
                 formatted = formatZonedDateTime(this.marshalFormat, offsetDateTime);
             }
-            if(formatted.contains("Z")){
-                formatted = formatted.replace(".000", "").replace("Z", "+00:00");
+
+            //Remove unused nano if it's only zeros
+            final Matcher matcher = pattern.matcher(formatted);
+            if (matcher.find()){
+                formatted = formatted.replace(matcher.group(), "");
             }
-            return formatted;
+
+            return formatted.replace("Z", "+00:00");
         }
     }
 

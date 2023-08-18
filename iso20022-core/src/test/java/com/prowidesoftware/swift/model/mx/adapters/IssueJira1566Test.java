@@ -6,6 +6,9 @@ import com.prowidesoftware.swift.model.mx.AppHdrFactory;
 import com.prowidesoftware.swift.model.mx.BusinessAppHdrV02;
 import com.prowidesoftware.swift.model.mx.MxPacs00800108;
 import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
+import java.time.temporal.ChronoField;
 import org.junit.jupiter.api.Test;
 
 public class IssueJira1566Test {
@@ -307,11 +310,39 @@ public class IssueJira1566Test {
                 mx.getFIToFICstmrCdtTrf().getGrpHdr().getCreDtTm().toString(), "2023-08-10T23:35:53.000002312-03:00");
 
         // Set Zulu Time .000Z, after marshal will be +00:00
-        OffsetDateTime offsetDateTimeZulu = OffsetDateTime.parse("2021-09-19T12:13:14.000Z");
-        mx.getFIToFICstmrCdtTrf().getGrpHdr().setCreDtTm(offsetDateTimeZulu);
+        OffsetDateTime offsetDateTime = OffsetDateTime.parse("2021-09-19T12:13:14.000Z");
+        mx.getFIToFICstmrCdtTrf().getGrpHdr().setCreDtTm(offsetDateTime);
 
         assertTrue(mx.message().contains("2021-09-19T12:13:14+00:00"));
         assertFalse(mx.message().contains("2021-09-19T12:13:14.000Z"));
         assertFalse(mx.message().contains("2021-09-19T12:13:14.Z"));
+
+        // Set nano with Zeros
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss[.[SSS][SS][S]][XXX]");
+        offsetDateTime = OffsetDateTime.parse("2021-09-19T12:13:14.1", dateTimeFormatter);
+        mx.getFIToFICstmrCdtTrf().getGrpHdr().setCreDtTm(offsetDateTime);
+        assertTrue(mx.message().contains("2021-09-19T12:13:14+00:00"));
+
+        // Set nano with Zeros and Z
+        offsetDateTime = OffsetDateTime.parse("2021-09-19T12:13:14.000000000");
+        mx.getFIToFICstmrCdtTrf().getGrpHdr().setCreDtTm(offsetDateTime);
+        assertFalse(mx.message().contains("2021-09-19T12:13:14.Z"));
+
+        // Set nano with Zeros and Offset
+        offsetDateTime = OffsetDateTime.parse("2021-09-19T12:13:14.000000000");
+        mx.getFIToFICstmrCdtTrf().getGrpHdr().setCreDtTm(offsetDateTime);
+        assertFalse(mx.message().contains("2021-09-19T12:13:14.Z"));
+    }
+
+    private DateTimeFormatter getMarshallFormat() {
+        return new DateTimeFormatterBuilder()
+                .appendPattern("yyyy-MM-dd'T'HH:mm:ss")
+                .optionalStart()
+                .appendFraction(ChronoField.NANO_OF_SECOND, 0, 9, true)
+                .optionalEnd()
+                .optionalStart()
+                .appendPattern("XXX")
+                .optionalEnd()
+                .toFormatter();
     }
 }

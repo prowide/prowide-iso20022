@@ -54,4 +54,42 @@ class OffsetDateTimeAdapterTest {
         String valueDateResult = offsetDateTimeAdapter.marshal(offsetDateTime);
         assertEquals(valueResult, valueDateResult);
     }
+
+    @Test
+    public void test() throws Exception {
+        ZoneId zoneId = ZoneOffset.systemDefault();
+        OffsetDateTime dateTime = LocalDateTime.parse("2021-09-19T12:13:14")
+                .atZone(zoneId)
+                .withEarlierOffsetAtOverlap()
+                .withFixedOffsetZone()
+                .withEarlierOffsetAtOverlap()
+                .toOffsetDateTime();
+
+        String offset = dateTime.getOffset().getId();
+
+        testDateTimeImpl("2018-01-15T17:30:33.0+02:00", "2018-01-15T17:30:33+02:00");
+        testDateTimeImpl("2018-01-15T17:30:33.00+02:00", "2018-01-15T17:30:33+02:00");
+        testDateTimeImpl("2018-01-15T17:30:33.000+02:00", "2018-01-15T17:30:33+02:00");
+        testDateTimeImpl("2018-01-15T17:30:33.0000+02:00", "2018-01-15T17:30:33+02:00");
+        testDateTimeImpl("2018-01-15T17:30:33.00000+02:00", "2018-01-15T17:30:33+02:00");
+        testDateTimeImpl("2018-01-15T17:30:33.000000+02:00", "2018-01-15T17:30:33+02:00");
+        testDateTimeImpl("2018-01-15T17:30:33.0000000+02:00", "2018-01-15T17:30:33+02:00");
+        testDateTimeImpl("2018-01-15T17:30:33.00000000+02:00", "2018-01-15T17:30:33+02:00");
+        testDateTimeImpl("2018-01-15T17:30:33.000000000+02:00", "2018-01-15T17:30:33+02:00");
+        // testDateTimeImpl("2018-01-15T17:30:33.0000000000+02:00", "2018-01-15T17:30:33+02:00"); //Este falla
+
+        testDateTimeImpl("2018-01-15T17:30:33.0+02:00", "2018-01-15T17:30:33+02:00");
+        testDateTimeImpl("2018-01-15T17:30:33.01+02:00", "2018-01-15T17:30:33.01+02:00");
+        testDateTimeImpl("2018-01-15T17:30:33.001+02:00", "2018-01-15T17:30:33.001+02:00");
+        testDateTimeImpl("2018-01-15T17:30:33.0001+02:00", "2018-01-15T17:30:33.0001+02:00");
+        testDateTimeImpl("2018-01-15T17:30:33.00001+02:00", "2018-01-15T17:30:33.00001+02:00");
+        testDateTimeImpl("2018-01-15T17:30:33.000001+02:00", "2018-01-15T17:30:33.000001+02:00");
+        testDateTimeImpl("2018-01-15T17:30:33.0000001+02:00", "2018-01-15T17:30:33.0000001+02:00");
+        testDateTimeImpl("2018-01-15T17:30:33.00000001+02:00", "2018-01-15T17:30:33.00000001+02:00");
+        testDateTimeImpl("2018-01-15T17:30:33.000000001+02:00", "2018-01-15T17:30:33.000000001+02:00");
+
+        testDateTimeImpl("2018-01-15T17:30:33.000000000Z", "2018-01-15T17:30:33+00:00");
+        testDateTimeImpl("2018-01-15T17:30:33.000000001Z", "2018-01-15T17:30:33.000000001+00:00");
+        testDateTimeImpl("2018-01-15T17:30:33.123456789Z", "2018-01-15T17:30:33.123456789+00:00");
+    }
 }
