@@ -329,7 +329,26 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
                 updated = true;
             }
         }
+        if (!updated) {
+            // Sender
+            // RITS Reference
+            String requestor = getElement(this.message(), "SwInt:Requestor");
+            String requestorBicString = MxParseUtils.getBICFromDN(requestor);
+            BIC requestorBic = new BIC(requestorBicString);
+            sender = requestorBic.getBic11();
+
+            // Receiver
+            String responder = getElement(this.message(), "SwInt:Responder");
+            String responderBICString = MxParseUtils.getBICFromDN(responder);
+            BIC responderBIC = new BIC(responderBICString);
+            receiver = responderBIC.getBic11();
+            updated = true;
+        }
         return updated;
+    }
+
+    private static String getElement(String xml, String element) {
+        return StringUtils.substringBetween(xml, "<" + element + ">", "</" + element + ">");
     }
 
     /**

@@ -18,6 +18,7 @@ package com.prowidesoftware.swift.model.mx;
 import static org.junit.jupiter.api.Assertions.*;
 
 import com.prowidesoftware.swift.model.MxId;
+import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.sys.MxXsys01200101;
 import com.prowidesoftware.swift.model.mx.sys.dic.DeliveryNotificationXsys01200101;
 import com.prowidesoftware.swift.model.mx.sys.dic.FailedDeliveryNotificationMessageXsys01200101;
@@ -200,5 +201,12 @@ public class MxXsysModelTest {
         testXpath(xml, "/Document/xsys.012.001.01/DlvryNtfctn/SnFRefType", "InterAct");
         testXpath(xml, "/Document/xsys.012.001.01/DlvryNtfctn/RequestHeader/Priority", "Normal");
         // TODO assert for prefixes and namespaces
+    }
+
+    @Test
+    public void testMetadataExtractor() {
+        MxSwiftMessage mx = new MxSwiftMessage(document);
+        assertEquals("SIMXBEBBXXX", mx.getSender());
+        assertEquals("SIMXUS33XXX", mx.getReceiver());
     }
 }
