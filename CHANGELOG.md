@@ -1,6 +1,6 @@
 # Prowide ISO 20022 - CHANGELOG
 
-#### 10.1.3 - SNAPSHOT
+#### 10.1.3 - August 2023
   * (PW-1566) Fixed manipulation of nano seconds in the OffsetTime and OffsetDateTime adapters
 
 #### 10.1.2 - August 2023
