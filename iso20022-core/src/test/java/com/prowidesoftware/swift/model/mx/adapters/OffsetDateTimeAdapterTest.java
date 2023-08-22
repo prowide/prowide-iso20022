@@ -54,4 +54,38 @@ class OffsetDateTimeAdapterTest {
         String valueDateResult = offsetDateTimeAdapter.marshal(offsetDateTime);
         assertEquals(valueResult, valueDateResult);
     }
+
+    @Test
+    public void testOffsetDateTimeWithNanosOnlyZero() throws Exception {
+        // removable zeros
+        testDateTimeImpl("2018-01-15T17:30:33.0+02:00", "2018-01-15T17:30:33+02:00");
+        testDateTimeImpl("2018-01-15T17:30:33.00+02:00", "2018-01-15T17:30:33+02:00");
+        testDateTimeImpl("2018-01-15T17:30:33.000+02:00", "2018-01-15T17:30:33+02:00");
+        testDateTimeImpl("2018-01-15T17:30:33.0000+02:00", "2018-01-15T17:30:33+02:00");
+        testDateTimeImpl("2018-01-15T17:30:33.00000+02:00", "2018-01-15T17:30:33+02:00");
+        testDateTimeImpl("2018-01-15T17:30:33.000000+02:00", "2018-01-15T17:30:33+02:00");
+        testDateTimeImpl("2018-01-15T17:30:33.0000000+02:00", "2018-01-15T17:30:33+02:00");
+        testDateTimeImpl("2018-01-15T17:30:33.00000000+02:00", "2018-01-15T17:30:33+02:00");
+        testDateTimeImpl("2018-01-15T17:30:33.000000000+02:00", "2018-01-15T17:30:33+02:00");
+        // testDateTimeImpl("2018-01-15T17:30:33.0000000000+02:00", "2018-01-15T17:30:33+02:00"); //Cannot parse more
+        // than 9 characters in nano value
+
+        // non removable zeros
+        testDateTimeImpl("2018-01-15T17:30:33.0+02:00", "2018-01-15T17:30:33+02:00");
+        testDateTimeImpl("2018-01-15T17:30:33.01+02:00", "2018-01-15T17:30:33.01+02:00");
+        testDateTimeImpl("2018-01-15T17:30:33.001+02:00", "2018-01-15T17:30:33.001+02:00");
+        testDateTimeImpl("2018-01-15T17:30:33.0001+02:00", "2018-01-15T17:30:33.0001+02:00");
+        testDateTimeImpl("2018-01-15T17:30:33.00001+02:00", "2018-01-15T17:30:33.00001+02:00");
+        testDateTimeImpl("2018-01-15T17:30:33.000001+02:00", "2018-01-15T17:30:33.000001+02:00");
+        testDateTimeImpl("2018-01-15T17:30:33.0000001+02:00", "2018-01-15T17:30:33.0000001+02:00");
+        testDateTimeImpl("2018-01-15T17:30:33.00000001+02:00", "2018-01-15T17:30:33.00000001+02:00");
+        testDateTimeImpl("2018-01-15T17:30:33.000000001+02:00", "2018-01-15T17:30:33.000000001+02:00");
+
+        // UTC
+        testDateTimeImpl("2018-01-15T17:30:33.0Z", "2018-01-15T17:30:33+00:00");
+        testDateTimeImpl("2018-01-15T17:30:33.000000000Z", "2018-01-15T17:30:33+00:00");
+        testDateTimeImpl("2018-01-15T17:30:33.000000001Z", "2018-01-15T17:30:33.000000001+00:00");
+        testDateTimeImpl("2018-01-15T17:30:33.123456789Z", "2018-01-15T17:30:33.123456789+00:00");
+        testDateTimeImpl("2018-01-15T17:30:33Z", "2018-01-15T17:30:33+00:00");
+    }
 }
