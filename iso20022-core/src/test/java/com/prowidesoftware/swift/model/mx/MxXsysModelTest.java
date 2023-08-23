@@ -204,9 +204,106 @@ public class MxXsysModelTest {
     }
 
     @Test
-    public void testMetadataExtractor() {
+    void testMetadataExtractor() {
         MxSwiftMessage mx = new MxSwiftMessage(document);
         assertEquals("SIMXBEBBXXX", mx.getSender());
         assertEquals("SIMXUS33XXX", mx.getReceiver());
+    }
+
+    @Test
+    void testMetadataExtractorNotRequestor() {
+        String documentNoRequestor = ""
+                + "<Doc:Document xmlns:Doc=\"urn:swift:xsd:xsys.012.001.01\" xmlns:Sw=\"urn:swift:snl:ns.Sw\" xmlns:SwInt=\"urn:swift:snl:ns.SwInt\" xmlns:SwGbl=\"urn:swift:snl:ns.SwGbl\">"
+                + "	<Doc:xsys.012.001.01>"
+                + "		<Doc:DlvryNtfctn>"
+                + "			<Sw:SnFRef>swi00001-2010-05-04T15:32:59.21582.11198379Z</Sw:SnFRef>"
+                + "			<Sw:SnFRefType>InterAct</Sw:SnFRefType>"
+                + "			<Sw:AcceptStatus>Failed</Sw:AcceptStatus>"
+                + "			<Sw:AckSwiftTime>2010-05-04T15:33:12Z</Sw:AckSwiftTime>"
+                + "			<Sw:AckDescription>Message delivery attempts exceeded system threshold</Sw:AckDescription>"
+                + "			<Sw:AckInfo>SwRejectcode=SwGbl.MaxRetryExceeded</Sw:AckInfo>"
+                + "			<SwInt:RequestHeader>"
+                + "				<SwInt:Responder>cn=responder,o=simxus33,o=swift</SwInt:Responder>"
+                + "				<SwInt:Service>mnop.cop</SwInt:Service>"
+                + "				<SwInt:RequestType>pain.001.002.04</SwInt:RequestType>"
+                + "				<SwInt:Priority>Normal</SwInt:Priority>"
+                + "				<SwInt:RequestRef>Ref-84884</SwInt:RequestRef>"
+                + "			</SwInt:RequestHeader>"
+                + "		</Doc:DlvryNtfctn>"
+                + "	</Doc:xsys.012.001.01>"
+                + "</Doc:Document>";
+        MxSwiftMessage mx = new MxSwiftMessage(documentNoRequestor);
+        assertNull(mx.getSender());
+        assertEquals("SIMXUS33XXX", mx.getReceiver());
+    }
+
+    @Test
+    void testMetadataExtractorEmptyResponder() {
+        String documentEmptyResponder = ""
+                + "<Doc:Document xmlns:Doc=\"urn:swift:xsd:xsys.012.001.01\" xmlns:Sw=\"urn:swift:snl:ns.Sw\" xmlns:SwInt=\"urn:swift:snl:ns.SwInt\" xmlns:SwGbl=\"urn:swift:snl:ns.SwGbl\">"
+                + "	<Doc:xsys.012.001.01>"
+                + "		<Doc:DlvryNtfctn>"
+                + "			<Sw:SnFRef>swi00001-2010-05-04T15:32:59.21582.11198379Z</Sw:SnFRef>"
+                + "			<Sw:SnFRefType>InterAct</Sw:SnFRefType>"
+                + "			<Sw:AcceptStatus>Failed</Sw:AcceptStatus>"
+                + "			<Sw:AckSwiftTime>2010-05-04T15:33:12Z</Sw:AckSwiftTime>"
+                + "			<Sw:AckDescription>Message delivery attempts exceeded system threshold</Sw:AckDescription>"
+                + "			<Sw:AckInfo>SwRejectcode=SwGbl.MaxRetryExceeded</Sw:AckInfo>"
+                + "			<SwInt:RequestHeader>"
+                + "				<SwInt:Requestor>cn=requestor,o=simxbebb,o=swift</SwInt:Requestor>"
+                + "				<SwInt:Responder></SwInt:Responder>"
+                + "				<SwInt:Service>mnop.cop</SwInt:Service>"
+                + "				<SwInt:RequestType>pain.001.002.04</SwInt:RequestType>"
+                + "				<SwInt:Priority>Normal</SwInt:Priority>"
+                + "				<SwInt:RequestRef>Ref-84884</SwInt:RequestRef>"
+                + "			</SwInt:RequestHeader>"
+                + "		</Doc:DlvryNtfctn>"
+                + "	</Doc:xsys.012.001.01>"
+                + "</Doc:Document>";
+        MxSwiftMessage mx = new MxSwiftMessage(documentEmptyResponder);
+        assertEquals("SIMXBEBBXXX", mx.getSender());
+        assertNull(mx.getReceiver());
+    }
+
+    @Test
+    void testMetadataExtractorEmptyRequestHeader() {
+        String documentEmptyRequestHeader = ""
+                + "<Doc:Document xmlns:Doc=\"urn:swift:xsd:xsys.012.001.01\" xmlns:Sw=\"urn:swift:snl:ns.Sw\" xmlns:SwInt=\"urn:swift:snl:ns.SwInt\" xmlns:SwGbl=\"urn:swift:snl:ns.SwGbl\">"
+                + "	<Doc:xsys.012.001.01>"
+                + "		<Doc:DlvryNtfctn>"
+                + "			<Sw:SnFRef>swi00001-2010-05-04T15:32:59.21582.11198379Z</Sw:SnFRef>"
+                + "			<Sw:SnFRefType>InterAct</Sw:SnFRefType>"
+                + "			<Sw:AcceptStatus>Failed</Sw:AcceptStatus>"
+                + "			<Sw:AckSwiftTime>2010-05-04T15:33:12Z</Sw:AckSwiftTime>"
+                + "			<Sw:AckDescription>Message delivery attempts exceeded system threshold</Sw:AckDescription>"
+                + "			<Sw:AckInfo>SwRejectcode=SwGbl.MaxRetryExceeded</Sw:AckInfo>"
+                + "			<SwInt:RequestHeader>"
+                + "			</SwInt:RequestHeader>"
+                + "		</Doc:DlvryNtfctn>"
+                + "	</Doc:xsys.012.001.01>"
+                + "</Doc:Document>";
+        MxSwiftMessage mx = new MxSwiftMessage(documentEmptyRequestHeader);
+        assertNull(mx.getSender());
+        assertNull(mx.getReceiver());
+    }
+
+    @Test
+    void testMetadataExtractorNoRequestHeader() {
+        String documentNoRequestHeader = ""
+                + "<Doc:Document xmlns:Doc=\"urn:swift:xsd:xsys.012.001.01\" xmlns:Sw=\"urn:swift:snl:ns.Sw\" xmlns:SwInt=\"urn:swift:snl:ns.SwInt\" xmlns:SwGbl=\"urn:swift:snl:ns.SwGbl\">"
+                + "	<Doc:xsys.012.001.01>"
+                + "		<Doc:DlvryNtfctn>"
+                + "			<Sw:SnFRef>swi00001-2010-05-04T15:32:59.21582.11198379Z</Sw:SnFRef>"
+                + "			<Sw:SnFRefType>InterAct</Sw:SnFRefType>"
+                + "			<Sw:AcceptStatus>Failed</Sw:AcceptStatus>"
+                + "			<Sw:AckSwiftTime>2010-05-04T15:33:12Z</Sw:AckSwiftTime>"
+                + "			<Sw:AckDescription>Message delivery attempts exceeded system threshold</Sw:AckDescription>"
+                + "			<Sw:AckInfo>SwRejectcode=SwGbl.MaxRetryExceeded</Sw:AckInfo>"
+                + "		</Doc:DlvryNtfctn>"
+                + "	</Doc:xsys.012.001.01>"
+                + "</Doc:Document>";
+        MxSwiftMessage mx = new MxSwiftMessage(documentNoRequestHeader);
+        assertNull(mx.getSender());
+        assertNull(mx.getReceiver());
     }
 }

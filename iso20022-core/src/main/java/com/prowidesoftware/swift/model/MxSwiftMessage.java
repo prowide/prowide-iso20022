@@ -331,24 +331,30 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
         }
         if (!updated) {
             // Sender
-            // RITS Reference
-            String requestor = getElement(this.message(), "SwInt:Requestor");
-            String requestorBicString = MxParseUtils.getBICFromDN(requestor);
-            BIC requestorBic = new BIC(requestorBicString);
-            sender = requestorBic.getBic11();
-
-            // Receiver
-            String responder = getElement(this.message(), "SwInt:Responder");
-            String responderBICString = MxParseUtils.getBICFromDN(responder);
-            BIC responderBIC = new BIC(responderBICString);
-            receiver = responderBIC.getBic11();
-            updated = true;
+            MxNode requestHeader = n != null ? n.findFirstByName("RequestHeader") : null;
+            if (requestHeader != null) {
+                MxNode requestor = requestHeader.findFirstByName("Requestor");
+                if (requestor != null && requestor.getValue() != null) {
+                    String requestorBicString = MxParseUtils.getBICFromDN(requestor.getValue());
+                    if (requestorBicString != null) {
+                        BIC requestorBic = new BIC(requestorBicString);
+                        sender = requestorBic.getBic11();
+                        updated = true;
+                    }
+                }
+                // Receiver
+                MxNode responder = requestHeader.findFirstByName("Responder");
+                if (responder != null && responder.getValue() != null) {
+                    String responderBICString = MxParseUtils.getBICFromDN(responder.getValue());
+                    if (responderBICString != null) {
+                        BIC responderBIC = new BIC(responderBICString);
+                        receiver = responderBIC.getBic11();
+                        updated = true;
+                    }
+                }
+            }
         }
         return updated;
-    }
-
-    private static String getElement(String xml, String element) {
-        return StringUtils.substringBetween(xml, "<" + element + ">", "</" + element + ">");
     }
 
     /**
