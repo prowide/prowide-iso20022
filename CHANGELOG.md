@@ -1,9 +1,9 @@
 # Prowide ISO 20022 - CHANGELOG
 
-#### 10.0.3 - SNAPSHOT
-* Enhanced metadata extraction for xsys messages getting sender/receiver BICs from the RequestHeader element
-* Make the message metadata extraction lenient, by fixing the XML instruction of the payload when it contains invalid case
-* Added new utility class SupplementaryDataUtils. This class provides utility methods for extracting "SplmtryData" elements from an XML string.
+#### 10.0.3 - August 2023
+  * Enhanced metadata extraction for xsys messages getting sender/receiver BICs from the RequestHeader element
+  * Make the message metadata extraction lenient, by fixing the XML instruction of the payload when it contains invalid case
+  * Added new utility class SupplementaryDataUtils. This class provides utility methods for extracting "SplmtryData" elements from an XML string.
 
 #### 10.0.2 - July 2023
   * (PW-1392) Fixed the default escape handler when serializing model objects into XML, that was duplicated quote characters in the output

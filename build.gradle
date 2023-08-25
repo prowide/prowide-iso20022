@@ -26,13 +26,13 @@ project.ext {
 	SRU = 'SRU2022'
 }
 
-//scmVersion {
-//	tag {
-//		prefix = "${SRU}"
-//		versionSeparator = '-'
-//	}
-//}
-version = 'SRU2022-10.0.2'
+scmVersion {
+	tag {
+		prefix = "${SRU}"
+		versionSeparator = '-'
+	}
+}
+project.version = "${SRU}-${scmVersion.version}"
 
 project.ext {
 	nexusRepo = project.version.endsWith('-SNAPSHOT') ? 'maven-snapshots' : 'maven-releases'
