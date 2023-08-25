@@ -49,12 +49,12 @@ public class MxXsysModelTest {
             + "			<Sw:AckDescription>Message delivery attempts exceeded system threshold</Sw:AckDescription>"
             + "			<Sw:AckInfo>SwRejectcode=SwGbl.MaxRetryExceeded</Sw:AckInfo>"
             + "			<SwInt:RequestHeader>"
-            + "				<SwInt:Requestor>cn=requestor,o=simxbebb,o=swift</SwInt:Requestor>"
-            + "				<SwInt:Responder>cn=responder,o=simxus33,o=swift</SwInt:Responder>"
+            + "				<SwInt:Requestor>cn=requestor,o=aaaabebb,o=swift</SwInt:Requestor>"
+            + "				<SwInt:Responder>cn=responder,o=bbbbus33,o=swift</SwInt:Responder>"
             + "				<SwInt:Service>mnop.cop</SwInt:Service>"
             + "				<SwInt:RequestType>pain.001.002.04</SwInt:RequestType>"
             + "				<SwInt:Priority>Normal</SwInt:Priority>"
-            + "				<SwInt:RequestRef>Ref-84884</SwInt:RequestRef>"
+            + "				<SwInt:RequestRef>Ref-12345</SwInt:RequestRef>"
             + "			</SwInt:RequestHeader>"
             + "		</Doc:DlvryNtfctn>"
             + "	</Doc:xsys.012.001.01>"
@@ -70,7 +70,7 @@ public class MxXsysModelTest {
             + "				<SwInt:NRType>SVCOPT</SwInt:NRType>"
             + "			</SwInt:NonRep>"
             + "			<Sw:SnFOutputInfo>"
-            + "				<Sw:SnFSessionId>simxbebb_generic:p:000047</Sw:SnFSessionId>"
+            + "				<Sw:SnFSessionId>aaaabebb_generic:p:000047</Sw:SnFSessionId>"
             + "				<Sw:SnFOutputSeq>2337176</Sw:SnFOutputSeq>"
             + "				<Sw:DeliveryTime>2010-05-04T15:33:14Z</Sw:DeliveryTime>"
             + "				<Sw:SnFInputTime>0105:2010-05-04T15:33:12</Sw:SnFInputTime>"
@@ -82,7 +82,7 @@ public class MxXsysModelTest {
             + "		</SwInt:RequestDescriptor>"
             + "		<SwInt:RequestHeader>"
             + "			<SwInt:Requestor>cn=system,o=swift,o=swift</SwInt:Requestor>"
-            + "			<SwInt:Responder>cn=requestor,o=simxbebb,o=swift</SwInt:Responder>"
+            + "			<SwInt:Responder>cn=requestor,o=aaaabebb,o=swift</SwInt:Responder>"
             + "			<SwInt:Service>swift.snf.system</SwInt:Service>"
             + "			<SwInt:RequestType>xsys.012.001.01</SwInt:RequestType>"
             + "			<SwInt:Priority>Normal</SwInt:Priority>"
@@ -133,10 +133,10 @@ public class MxXsysModelTest {
                 mx.getXsys01200101().getDlvryNtfctn().getAckInfo());
         assertNotNull(mx.getXsys01200101().getDlvryNtfctn().getRequestHeader());
         assertEquals(
-                "cn=requestor,o=simxbebb,o=swift",
+                "cn=requestor,o=aaaabebb,o=swift",
                 mx.getXsys01200101().getDlvryNtfctn().getRequestHeader().getRequestor());
         assertEquals(
-                "cn=responder,o=simxus33,o=swift",
+                "cn=responder,o=bbbbus33,o=swift",
                 mx.getXsys01200101().getDlvryNtfctn().getRequestHeader().getResponder());
         assertEquals(
                 "mnop.cop",
@@ -148,7 +148,7 @@ public class MxXsysModelTest {
                 "Normal",
                 mx.getXsys01200101().getDlvryNtfctn().getRequestHeader().getPriority());
         assertEquals(
-                "Ref-84884",
+                "Ref-12345",
                 mx.getXsys01200101().getDlvryNtfctn().getRequestHeader().getRequestRef());
         /*
          * assert serialized XML
@@ -166,15 +166,15 @@ public class MxXsysModelTest {
         testXpath(
                 xml,
                 "/Document/xsys.012.001.01/DlvryNtfctn/RequestHeader/Requestor",
-                "cn=requestor,o=simxbebb,o=swift");
+                "cn=requestor,o=aaaabebb,o=swift");
         testXpath(
                 xml,
                 "/Document/xsys.012.001.01/DlvryNtfctn/RequestHeader/Responder",
-                "cn=responder,o=simxus33,o=swift");
+                "cn=responder,o=bbbbus33,o=swift");
         testXpath(xml, "/Document/xsys.012.001.01/DlvryNtfctn/RequestHeader/Service", "mnop.cop");
         testXpath(xml, "/Document/xsys.012.001.01/DlvryNtfctn/RequestHeader/RequestType", "pain.001.002.04");
         testXpath(xml, "/Document/xsys.012.001.01/DlvryNtfctn/RequestHeader/Priority", "Normal");
-        testXpath(xml, "/Document/xsys.012.001.01/DlvryNtfctn/RequestHeader/RequestRef", "Ref-84884");
+        testXpath(xml, "/Document/xsys.012.001.01/DlvryNtfctn/RequestHeader/RequestRef", "Ref-12345");
     }
 
     @Test
@@ -206,8 +206,8 @@ public class MxXsysModelTest {
     @Test
     void testMetadataExtractor() {
         MxSwiftMessage mx = new MxSwiftMessage(document);
-        assertEquals("SIMXBEBBXXX", mx.getSender());
-        assertEquals("SIMXUS33XXX", mx.getReceiver());
+        assertEquals("AAAABEBBXXX", mx.getSender());
+        assertEquals("BBBBUS33XXX", mx.getReceiver());
     }
 
     @Test
@@ -223,18 +223,18 @@ public class MxXsysModelTest {
                 + "			<Sw:AckDescription>Message delivery attempts exceeded system threshold</Sw:AckDescription>"
                 + "			<Sw:AckInfo>SwRejectcode=SwGbl.MaxRetryExceeded</Sw:AckInfo>"
                 + "			<SwInt:RequestHeader>"
-                + "				<SwInt:Responder>cn=responder,o=simxus33,o=swift</SwInt:Responder>"
+                + "				<SwInt:Responder>cn=responder,o=bbbbus33,o=swift</SwInt:Responder>"
                 + "				<SwInt:Service>mnop.cop</SwInt:Service>"
                 + "				<SwInt:RequestType>pain.001.002.04</SwInt:RequestType>"
                 + "				<SwInt:Priority>Normal</SwInt:Priority>"
-                + "				<SwInt:RequestRef>Ref-84884</SwInt:RequestRef>"
+                + "				<SwInt:RequestRef>Ref-12345</SwInt:RequestRef>"
                 + "			</SwInt:RequestHeader>"
                 + "		</Doc:DlvryNtfctn>"
                 + "	</Doc:xsys.012.001.01>"
                 + "</Doc:Document>";
         MxSwiftMessage mx = new MxSwiftMessage(documentNoRequestor);
         assertNull(mx.getSender());
-        assertEquals("SIMXUS33XXX", mx.getReceiver());
+        assertEquals("BBBBUS33XXX", mx.getReceiver());
     }
 
     @Test
@@ -250,18 +250,18 @@ public class MxXsysModelTest {
                 + "			<Sw:AckDescription>Message delivery attempts exceeded system threshold</Sw:AckDescription>"
                 + "			<Sw:AckInfo>SwRejectcode=SwGbl.MaxRetryExceeded</Sw:AckInfo>"
                 + "			<SwInt:RequestHeader>"
-                + "				<SwInt:Requestor>cn=requestor,o=simxbebb,o=swift</SwInt:Requestor>"
+                + "				<SwInt:Requestor>cn=requestor,o=aaaabebb,o=swift</SwInt:Requestor>"
                 + "				<SwInt:Responder></SwInt:Responder>"
                 + "				<SwInt:Service>mnop.cop</SwInt:Service>"
                 + "				<SwInt:RequestType>pain.001.002.04</SwInt:RequestType>"
                 + "				<SwInt:Priority>Normal</SwInt:Priority>"
-                + "				<SwInt:RequestRef>Ref-84884</SwInt:RequestRef>"
+                + "				<SwInt:RequestRef>Ref-12345</SwInt:RequestRef>"
                 + "			</SwInt:RequestHeader>"
                 + "		</Doc:DlvryNtfctn>"
                 + "	</Doc:xsys.012.001.01>"
                 + "</Doc:Document>";
         MxSwiftMessage mx = new MxSwiftMessage(documentEmptyResponder);
-        assertEquals("SIMXBEBBXXX", mx.getSender());
+        assertEquals("AAAABEBBXXX", mx.getSender());
         assertNull(mx.getReceiver());
     }
 
