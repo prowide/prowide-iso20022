@@ -34,7 +34,7 @@ import org.apache.commons.lang3.Validate;
  * @since 9.2.1
  */
 public class NamespaceReader {
-    private static final transient Logger log = Logger.getLogger(NamespaceReader.class.getName());
+    private static final Logger log = Logger.getLogger(NamespaceReader.class.getName());
 
     /**
      * Extracts the document namespace from the XML, if the Document element is present
@@ -65,10 +65,7 @@ public class NamespaceReader {
      */
     public static Optional<String> findNamespaceForLocalName(final String xml, final String localName) {
         Optional<XMLStreamReader> reader = findElement(xml, localName);
-        if (reader.isPresent()) {
-            return Optional.ofNullable(readNamespace(reader.get()));
-        }
-        return Optional.empty();
+        return reader.map(NamespaceReader::readNamespace);
     }
 
     /**
@@ -108,7 +105,8 @@ public class NamespaceReader {
 
         final XMLInputFactory xif = SafeXmlUtils.inputFactory();
         try {
-            final XMLStreamReader reader = xif.createXMLStreamReader(new StringReader(xml));
+            final XMLStreamReader reader =
+                    xif.createXMLStreamReader(new StringReader(MxParseUtils.makeXmlLenient(xml)));
             while (reader.hasNext()) {
                 int event = reader.next();
                 if (XMLStreamConstants.START_ELEMENT == event) {

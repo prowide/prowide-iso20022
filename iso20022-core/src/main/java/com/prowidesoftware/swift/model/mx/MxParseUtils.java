@@ -45,7 +45,7 @@ public class MxParseUtils {
      * Creates a {@link SAXSource} for the given XML, filtering a specific element with the
      * {@link NamespaceAndElementFilter}.
      *
-     * @param xml the whole XML element
+     * @param xml       the whole XML element
      * @param localName the specific element of the subtree to propagate (normally would be Document or AppHdr)
      * @return a safe source
      * @since 9.2.1
@@ -199,7 +199,7 @@ public class MxParseUtils {
     }
 
     /**
-     * Takes an xml with an MX message and detects the specific message type
+     * Takes an XML with an MX message and detects the specific message type
      * parsing just the namespace from the Document element. If the Document
      * element is not present, or without the namespace or if the namespace url
      * contains invalid content it will return null.
@@ -215,9 +215,19 @@ public class MxParseUtils {
      */
     public static Optional<MxId> identifyMessage(final String xml) {
         Optional<String> namespace = NamespaceReader.findDocumentNamespace(xml);
-        if (namespace.isPresent()) {
-            return Optional.of(new MxId(namespace.get()));
-        }
-        return Optional.empty();
+        return namespace.map(MxId::new);
+    }
+
+    /**
+     * This method is intended to fix some malformed XML content that is not compliant with the XML specification
+     * to enable the parsing and processing of the payload to be lenient.
+     * For the moment, current implementation will just fix invalid case in the XML declaration, if present.
+     *
+     * @param xml original XML content
+     * @return modified XML content with the XML declaration fixed to be compliant with the XML specification
+     * @since 10.0.3
+     */
+    public static String makeXmlLenient(String xml) {
+        return xml != null ? xml.replaceFirst("(?i)<\\?XML", "<?xml") : null;
     }
 }

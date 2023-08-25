@@ -24,8 +24,6 @@ group 'com.prowidesoftware'
 
 project.ext {
 	SRU = 'SRU2022'
-	// this is not working since the version is unresolved at this point, to publish snapshots just uncomment below until this is fixed
-	nexusRepo = project.version.endsWith('-SNAPSHOT') ? 'maven-snapshots' : 'maven-releases'
 }
 
 //scmVersion {

@@ -29,4 +29,5 @@ lib
 .idea/jpa-buddy.xml
 release.sh
 .idea/sonarlint
+*.hprof
 .java-version
