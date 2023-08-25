@@ -331,6 +331,31 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
                 updated = true;
             }
         }
+        if (!updated) {
+            // Sender
+            MxNode requestHeader = n != null ? n.findFirstByName("RequestHeader") : null;
+            if (requestHeader != null) {
+                MxNode requestor = requestHeader.findFirstByName("Requestor");
+                if (requestor != null && requestor.getValue() != null) {
+                    String requestorBicString = MxParseUtils.getBICFromDN(requestor.getValue());
+                    if (requestorBicString != null) {
+                        BIC requestorBic = new BIC(requestorBicString);
+                        sender = requestorBic.getBic11();
+                        updated = true;
+                    }
+                }
+                // Receiver
+                MxNode responder = requestHeader.findFirstByName("Responder");
+                if (responder != null && responder.getValue() != null) {
+                    String responderBICString = MxParseUtils.getBICFromDN(responder.getValue());
+                    if (responderBICString != null) {
+                        BIC responderBIC = new BIC(responderBICString);
+                        receiver = responderBIC.getBic11();
+                        updated = true;
+                    }
+                }
+            }
+        }
         return updated;
     }
 
