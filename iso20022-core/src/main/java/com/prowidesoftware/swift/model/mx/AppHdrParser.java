@@ -15,8 +15,6 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
-import static com.prowidesoftware.swift.model.mx.MxParseUtils.makeXmlLenient;
-
 import java.util.Objects;
 import java.util.Optional;
 import javax.xml.transform.sax.SAXSource;
@@ -77,7 +75,8 @@ public class AppHdrParser {
 
     private static AppHdr parseHeaderFromSAXSource(
             final String xml, final String namespace, final MxReadParams params) {
-        SAXSource source = MxParseUtils.createFilteredSAXSource(makeXmlLenient(xml), AppHdr.HEADER_LOCALNAME);
+        SAXSource source =
+                MxParseUtils.createFilteredSAXSource(MxParseUtils.makeXmlLenient(xml), AppHdr.HEADER_LOCALNAME);
 
         if (StringUtils.equals(LegacyAppHdr.NAMESPACE, namespace)) {
             // parse legacy AH
