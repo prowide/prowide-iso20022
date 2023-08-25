@@ -1,7 +1,8 @@
 # Prowide ISO 20022 - CHANGELOG
 
 #### 9.3.9-SNAPSHOT
-  * Enhanced metadata extraction operations, for getting sender/receiver BICs from the provided XML RequestHeader tag for xsys messages.
+  * Enhanced metadata extraction for xsys messages getting sender/receiver BICs from the RequestHeader element
+  * Make the message metadata extraction lenient, by fixing the XML instruction of the payload when it contains invalid case
 
 #### 9.3.8 - July 2023
   * Added new utility class SupplementaryDataUtils. This class provides utility methods for extracting "SplmtryData" elements from an XML string.
