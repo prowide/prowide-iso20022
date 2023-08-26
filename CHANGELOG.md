@@ -1,6 +1,6 @@
 # Prowide ISO 20022 - CHANGELOG
 
-#### 9.4.3 - SNAPSHOT
+#### 9.4.3 - August 2023
   * Enhanced metadata extraction for xsys messages getting sender/receiver BICs from the RequestHeader element
   * Make the message metadata extraction lenient, by fixing the XML instruction of the payload when it contains invalid case
 
