@@ -2,6 +2,8 @@
 
 #### 10.1.3 - SNAPSHOT
   * (PW-1566) Fixed manipulation of nanoseconds in the OffsetTime and OffsetDateTime adapters
+  * Enhanced metadata extraction for xsys messages getting sender/receiver BICs from the RequestHeader element
+  * Make the message metadata extraction lenient, by fixing the XML instruction of the payload when it contains invalid case
 
 #### 10.1.2 - August 2023
   * Added new utility class SupplementaryDataUtils to facilitate "SplmtryData" extraction from MX messages

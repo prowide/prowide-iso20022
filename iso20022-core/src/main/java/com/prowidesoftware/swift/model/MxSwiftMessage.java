@@ -22,7 +22,6 @@ import jakarta.persistence.*;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Calendar;
 import java.util.Objects;
 import java.util.Optional;
 import org.apache.commons.lang3.StringUtils;
@@ -266,7 +265,10 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
     }
 
     private void extractMetadata(MxId identifier, AppHdr headerModel, MessageMetadataStrategy metadataStrategy) {
-        MxNode parsedMessage = MxNode.parse(this.message());
+        // when parsing the message just for the metadata extraction, we want to avoid underlying error logs
+        // since this MxSwiftMessage is lenient on the constraints of the parsed XML payload
+        final String lenientXml = MxParseUtils.makeXmlLenient(this.message());
+        MxNode parsedMessage = MxNode.parse(lenientXml);
         if (headerModel == null || !extractMetadata(headerModel)) {
             extractMetadata(parsedMessage);
         }
@@ -279,7 +281,7 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
             this.version = identifier.getVersion();
         }
 
-        applyStrategy(getMessage(), metadataStrategy);
+        applyStrategy(lenientXml, metadataStrategy);
     }
 
     /**
@@ -323,6 +325,31 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
             if (receiverBic != null) {
                 receiver = bic11(receiverBic.getValue());
                 updated = true;
+            }
+        }
+        if (!updated) {
+            // Sender
+            MxNode requestHeader = n != null ? n.findFirstByName("RequestHeader") : null;
+            if (requestHeader != null) {
+                MxNode requestor = requestHeader.findFirstByName("Requestor");
+                if (requestor != null && requestor.getValue() != null) {
+                    String requestorBicString = MxParseUtils.getBICFromDN(requestor.getValue());
+                    if (requestorBicString != null) {
+                        BIC requestorBic = new BIC(requestorBicString);
+                        sender = requestorBic.getBic11();
+                        updated = true;
+                    }
+                }
+                // Receiver
+                MxNode responder = requestHeader.findFirstByName("Responder");
+                if (responder != null && responder.getValue() != null) {
+                    String responderBICString = MxParseUtils.getBICFromDN(responder.getValue());
+                    if (responderBICString != null) {
+                        BIC responderBIC = new BIC(responderBICString);
+                        receiver = responderBIC.getBic11();
+                        updated = true;
+                    }
+                }
             }
         }
         return updated;
@@ -485,21 +512,21 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
      */
     public void updateMetadata(MessageMetadataStrategy strategy) {
         Objects.requireNonNull(strategy, "the strategy for metadata extraction cannot be null");
-        applyStrategy(getMessage(), strategy);
+        // when parsing the message just for the metadata extraction, we want to avoid underlying error logs
+        // since this MxSwiftMessage is lenient on the constraints of the parsed XML payload
+        applyStrategy(MxParseUtils.makeXmlLenient(this.message()), strategy);
     }
 
-    private void applyStrategy(String xml, MessageMetadataStrategy strategy) {
+    private void applyStrategy(String lenientXml, MessageMetadataStrategy strategy) {
         boolean isKnownType = this.businessProcess != null
                 && this.functionality != null
                 && this.variant != null
                 && this.version != null;
         MxId mxId = isKnownType ? getMxId() : null;
 
-        // when parsing the message just for the metadata extraction, we want to avoid underlying error logs
-        // since this MxSwiftMessage is lenient on the constraints of the parsed XML payload
         MxReadParams params = new MxReadParams();
         params.verbose = false;
-        AbstractMX mx = MxReadImpl.parse(xml, mxId, params);
+        AbstractMX mx = MxReadImpl.parse(lenientXml, mxId, params);
 
         if (mx == null) {
             // could not parse the XML into a message model
@@ -517,14 +544,7 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
             setAmount(money.get().getAmount());
         }
 
-        Calendar valueDate = strategy.valueDate(mx).orElse(null);
-        if (valueDate != null) {
-            setValueDate(valueDate);
-        }
-
-        Calendar tradeDate = strategy.tradeDate(mx).orElse(null);
-        if (tradeDate != null) {
-            setTradeDate(tradeDate);
-        }
+        strategy.valueDate(mx).ifPresent(this::setValueDate);
+        strategy.tradeDate(mx).ifPresent(this::setTradeDate);
     }
 }
