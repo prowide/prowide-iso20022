@@ -2,347 +2,68 @@ package com.prowidesoftware.swift.model.mx.adapters;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import com.prowidesoftware.swift.model.mx.AppHdrFactory;
-import com.prowidesoftware.swift.model.mx.BusinessAppHdrV02;
 import com.prowidesoftware.swift.model.mx.MxPacs00800108;
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeFormatterBuilder;
-import java.time.temporal.ChronoField;
 import org.junit.jupiter.api.Test;
 
 public class IssueJira1566Test {
 
     @Test
     public void testNano() {
-        String json = "{\n" + "  \"applicationHeaderPacs008\" : null,\n"
-                + "  \"accountIdentification4Choice\" : null,\n"
-                + "  \"accountSchemeName1Choice\" : null,\n"
-                + "  \"activeCurrencyAndAmount\" : null,\n"
-                + "  \"activeOrHistoricCurrencyAndAmount\" : null,\n"
-                + "  \"activeOrHistoricCurrencyCode\" : null,\n"
-                + "  \"addressType2Code\" : null,\n"
-                + "  \"addressType3Choice\" : null,\n"
-                + "  \"batchBookingIndicator\" : null,\n"
-                + "  \"branchAndFinancialInstitutionIdentification6\" : null,\n"
-                + "  \"branchData3\" : null,\n"
-                + "  \"cashAccount38\" : null,\n"
-                + "  \"cashAccountType2Choice\" : null,\n"
-                + "  \"categoryPurpose1Choice\" : null,\n"
-                + "  \"chargeBearerType1Code\" : null,\n"
-                + "  \"charges7\" : null,\n"
-                + "  \"clearingChannel2Code\" : null,\n"
-                + "  \"clearingSystemIdentification2Choice\" : null,\n"
-                + "  \"clearingSystemIdentification3Choice\" : null,\n"
-                + "  \"clearingSystemMemberIdentification2\" : null,\n"
-                + "  \"contact4\" : null,\n"
-                + "  \"creditDebitCode\" : null,\n"
-                + "  \"creditorReferenceInformation2\" : null,\n"
-                + "  \"creditorReferenceType1Choice\" : null,\n"
-                + "  \"creditorReferenceType2\" : null,\n"
-                + "  \"creditTransferMandateData1\" : null,\n"
-                + "  \"creditTransferTransaction43\" : null,\n"
-                + "  \"dateAndPlaceOfBirth1\" : null,\n"
-                + "  \"datePeriod2\" : null,\n"
-                + "  \"discountAmountAndType1\" : null,\n"
-                + "  \"discountAmountType1Choice\" : null,\n"
-                + "  \"documentAdjustment1\" : null,\n"
-                + "  \"documentLineIdentification1\" : null,\n"
-                + "  \"documentLineInformation1\" : null,\n"
-                + "  \"documentLineType1Choice\" : null,\n"
-                + "  \"documentLineType1\" : null,\n"
-                + "  \"documentType3Code\" : null,\n"
-                + "  \"documentType6Code\" : null,\n"
-                + "  \"financialIdentificationSchemeName1Choice\" : null,\n"
-                + "  \"financialInstitutionIdentification18\" : null,\n"
-                + "  \"fiToFICstmrCdtTrf\" : {\n"
-                + "    \"grpHdr\" : {\n"
-                + "      \"msgId\" : \"TETS\",\n"
-                + "      \"creDtTm\" : {\n"
-                + "         \"dateTime\" : {\n"
-                + "             \"date\" : {\n"
-                + "                 \"year\" : 2023,\n"
-                + "                 \"month\" : 8,\n"
-                + "                 \"day\" : 10\n"
-                + "             },\n"
-                + "             \"time\" : {\n"
-                + "                 \"hour\" : 23,\n"
-                + "                 \"minute\" : 35,\n"
-                + "                 \"second\" : 53,\n"
-                + "                 \"nano\" : 2312\n"
-                + "             }\n"
+        String json = "{\n" + "  \"fiToFICstmrCdtTrf\": {\n"
+                + "    \"grpHdr\": {\n"
+                + "      \"msgId\": \"TETS\",\n"
+                + "      \"creDtTm\": {\n"
+                + "        \"dateTime\": {\n"
+                + "          \"date\": {\n"
+                + "            \"year\": 2023,\n"
+                + "            \"month\": 8,\n"
+                + "            \"day\": 10\n"
+                + "          },\n"
+                + "          \"time\": {\n"
+                + "            \"hour\": 23,\n"
+                + "            \"minute\": 35,\n"
+                + "            \"second\": 53,\n"
+                + "            \"nano\": 2312\n"
+                + "          }\n"
                 + "        },\n"
-                + "         \"offset\" : {\n"
-                + "             \"totalSeconds\": -10800\n"
-                + "         }\n"
-                + "       },\n"
-                + "      \"btchBookg\" : null,\n"
-                + "      \"nbOfTxs\" : \"1\",\n"
-                + "      \"ctrlSum\" : null,\n"
-                + "      \"ttlIntrBkSttlmAmt\" : null,\n"
-                + "      \"intrBkSttlmDt\" : null,\n"
-                + "      \"sttlmInf\" : {\n"
-                + "        \"sttlmMtd\" : \"INDA\",\n"
-                + "        \"sttlmAcct\" : null,\n"
-                + "        \"clrSys\" : null,\n"
-                + "        \"instgRmbrsmntAgt\" : null,\n"
-                + "        \"instgRmbrsmntAgtAcct\" : null,\n"
-                + "        \"instdRmbrsmntAgt\" : null,\n"
-                + "        \"instdRmbrsmntAgtAcct\" : null,\n"
-                + "        \"thrdRmbrsmntAgt\" : null,\n"
-                + "        \"thrdRmbrsmntAgtAcct\" : null\n"
-                + "      },\n"
-                + "      \"pmtTpInf\" : null,\n"
-                + "      \"instgAgt\" : null,\n"
-                + "      \"instdAgt\" : null\n"
-                + "    },\n"
-                + "    \"cdtTrfTxInf\" : [ {\n"
-                + "      \"pmtId\" : {\n"
-                + "        \"instrId\" : \"TETS\",\n"
-                + "        \"endToEndId\" : \"NOTPROVIDED\",\n"
-                + "        \"txId\" : null,\n"
-                + "        \"uetr\" : \"36ae4fa9-722f-4602-a330-c5177e10ad34\",\n"
-                + "        \"clrSysRef\" : null\n"
-                + "      },\n"
-                + "      \"pmtTpInf\" : null,\n"
-                + "      \"intrBkSttlmAmt\" : {\n"
-                + "        \"ccy\" : \"EUR\",\n"
-                + "        \"value\" : 50000.0\n"
-                + "      },\n"
-                + "      \"intrBkSttlmDt\" : {\n"
-                + "         \"year\" : 2023,\n"
-                + "         \"month\" : 8,\n"
-                + "         \"day\" : 10\n"
-                + "      },\n"
-                + "      \"sttlmPrty\" : null,\n"
-                + "      \"sttlmTmIndctn\" : null,\n"
-                + "      \"sttlmTmReq\" : null,\n"
-                + "      \"accptncDtTm\" : null,\n"
-                + "      \"poolgAdjstmntDt\" : null,\n"
-                + "      \"instdAmt\" : null,\n"
-                + "      \"xchgRate\" : null,\n"
-                + "      \"chrgBr\" : \"DEBT\",\n"
-                + "      \"chrgsInf\" : null,\n"
-                + "      \"mndtRltdInf\" : null,\n"
-                + "      \"prvsInstgAgt1\" : null,\n"
-                + "      \"prvsInstgAgt1Acct\" : null,\n"
-                + "      \"prvsInstgAgt2\" : null,\n"
-                + "      \"prvsInstgAgt2Acct\" : null,\n"
-                + "      \"prvsInstgAgt3\" : null,\n"
-                + "      \"prvsInstgAgt3Acct\" : null,\n"
-                + "      \"instgAgt\" : {\n"
-                + "        \"finInstnId\" : {\n"
-                + "          \"bicfi\" : \"MERCESYX\",\n"
-                + "          \"clrSysMmbId\" : null,\n"
-                + "          \"lei\" : null,\n"
-                + "          \"nm\" : null,\n"
-                + "          \"pstlAdr\" : null,\n"
-                + "          \"othr\" : null\n"
-                + "        },\n"
-                + "        \"brnchId\" : null\n"
-                + "      },\n"
-                + "      \"instdAgt\" : {\n"
-                + "        \"finInstnId\" : {\n"
-                + "          \"bicfi\" : \"RECECOBANIL\",\n"
-                + "          \"clrSysMmbId\" : null,\n"
-                + "          \"lei\" : null,\n"
-                + "          \"nm\" : null,\n"
-                + "          \"pstlAdr\" : null,\n"
-                + "          \"othr\" : null\n"
-                + "        },\n"
-                + "        \"brnchId\" : null\n"
-                + "      },\n"
-                + "      \"intrmyAgt1\" : null,\n"
-                + "      \"intrmyAgt1Acct\" : null,\n"
-                + "      \"intrmyAgt2\" : null,\n"
-                + "      \"intrmyAgt2Acct\" : null,\n"
-                + "      \"intrmyAgt3\" : null,\n"
-                + "      \"intrmyAgt3Acct\" : null,\n"
-                + "      \"iltmtDbtr\" : null,\n"
-                + "      \"initgPty\" : null,\n"
-                + "      \"dbtr\" : {\n"
-                + "        \"nm\" : \"BCORESMMXXX\",\n"
-                + "        \"pstlAdr\" : null,\n"
-                + "        \"id\" : null,\n"
-                + "        \"ctryOfRes\" : null,\n"
-                + "        \"ctctDtls\" : null\n"
-                + "      },\n"
-                + "      \"dbtrAcct\" : null,\n"
-                + "      \"dbtrAgt\" : {\n"
-                + "        \"finInstnId\" : {\n"
-                + "          \"bicfi\" : \"MERCESYX\",\n"
-                + "          \"clrSysMmbId\" : null,\n"
-                + "          \"lei\" : null,\n"
-                + "          \"nm\" : null,\n"
-                + "          \"pstlAdr\" : null,\n"
-                + "          \"othr\" : null\n"
-                + "        },\n"
-                + "        \"brnchId\" : null\n"
-                + "      },\n"
-                + "      \"dbtrAgtAcct\" : null,\n"
-                + "      \"cdtrAgt\" : {\n"
-                + "        \"finInstnId\" : {\n"
-                + "          \"bicfi\" : \"CECAESMM\",\n"
-                + "          \"clrSysMmbId\" : null,\n"
-                + "          \"lei\" : null,\n"
-                + "          \"nm\" : null,\n"
-                + "          \"pstlAdr\" : null,\n"
-                + "          \"othr\" : null\n"
-                + "        },\n"
-                + "        \"brnchId\" : null\n"
-                + "      },\n"
-                + "      \"cdtrAgtAcct\" : null,\n"
-                + "      \"cdtr\" : {\n"
-                + "        \"nm\" : \"RBOSGB2RXXX\",\n"
-                + "        \"pstlAdr\" : null,\n"
-                + "        \"id\" : null,\n"
-                + "        \"ctryOfRes\" : null,\n"
-                + "        \"ctctDtls\" : null\n"
-                + "      },\n"
-                + "      \"cdtrAcct\" : null,\n"
-                + "      \"ultmtCdtr\" : null,\n"
-                + "      \"instrForCdtrAgt\" : null,\n"
-                + "      \"instrForNxtAgt\" : null,\n"
-                + "      \"purp\" : null,\n"
-                + "      \"rgltryRptg\" : null,\n"
-                + "      \"tax\" : null,\n"
-                + "      \"rltdRmtInf\" : null,\n"
-                + "      \"rmtInf\" : null,\n"
-                + "      \"splmtryData\" : null\n"
-                + "    } ],\n"
-                + "    \"splmtryData\" : null\n"
-                + "  },\n"
-                + "  \"frequency36Choice\" : null,\n"
-                + "  \"frequency6Code\" : null,\n"
-                + "  \"frequencyAndMoment1\" : null,\n"
-                + "  \"frequencyPeriod1\" : null,\n"
-                + "  \"farnishment3\" : null,\n"
-                + "  \"garnishmentType1Choice\" : null,\n"
-                + "  \"garnishmentType1\" : null,\n"
-                + "  \"genericAccountIdentification1\" : null,\n"
-                + "  \"genericFinancialIdentification1\" : null,\n"
-                + "  \"genericIdentification30\" : null,\n"
-                + "  \"genericOrganisationIdentification1\" : null,\n"
-                + "  \"genericPersonIdentification1\" : null,\n"
-                + "  \"groupHeader93\" : null,\n"
-                + "  \"instruction4Code\" : null,\n"
-                + "  \"instructionForCreditorAgent3\" : null,\n"
-                + "  \"instructionForNextAgent1\" : null,\n"
-                + "  \"localInstrument2Choice\" : null,\n"
-                + "  \"mandateClassification1Choice\" : null,\n"
-                + "  \"mandateSetupReason1Choice\" : null,\n"
-                + "  \"mandateTypeInformation2\" : null,\n"
-                + "  \"nameAndAddress16\" : null,\n"
-                + "  \"namePrefix2Code\" : null,\n"
-                + "  \"organisationIdentification29\" : null,\n"
-                + "  \"organisationIdentificationSchemeName1Choice\" : null,\n"
-                + "  \"otherContact1\" : null,\n"
-                + "  \"party38Choice\" : null,\n"
-                + "  \"partyIdentification135\" : null,\n"
-                + "  \"paymentIdentification7\" : null,\n"
-                + "  \"paymentTypeInformation28\" : null,\n"
-                + "  \"personIdentification13\" : null,\n"
-                + "  \"personIdentificationSchemeName1Choice\" : null,\n"
-                + "  \"postalAddress24\" : null,\n"
-                + "  \"preferredContactMethod1Code\" : null,\n"
-                + "  \"priority2Code\" : null,\n"
-                + "  \"priority3Code\" : null,\n"
-                + "  \"proxyAccountIdentification1\" : null,\n"
-                + "  \"proxyAccountType1Choice\" : null,\n"
-                + "  \"purpose2Choice\" : null,\n"
-                + "  \"referredDocumentInformation7\" : null,\n"
-                + "  \"referredDocumentType3Choice\" : null,\n"
-                + "  \"referredDocumentType4\" : null,\n"
-                + "  \"regulatoryAuthority2\" : null,\n"
-                + "  \"regulatoryReporting3\" : null,\n"
-                + "  \"regulatoryReportingType1Code\" : null,\n"
-                + "  \"remittanceAmount2\" : null,\n"
-                + "  \"remittanceAmount3\" : null,\n"
-                + "  \"remittanceInformation16\" : null,\n"
-                + "  \"remittanceLocation7\" : null,\n"
-                + "  \"remittanceLocationData1\" : null,\n"
-                + "  \"remittanceLocationMethod2Code\" : null,\n"
-                + "  \"serviceLevel8Choice\" : null,\n"
-                + "  \"settlementDateTimeIndication1\" : null,\n"
-                + "  \"settlementInstruction7\" : null,\n"
-                + "  \"settlementMethod1Code\" : null,\n"
-                + "  \"settlementTimeRequest2\" : null,\n"
-                + "  \"structuredRegulatoryReporting3\" : null,\n"
-                + "  \"structuredRemittanceInformation16\" : null,\n"
-                + "  \"supplementaryData1\" : null,\n"
-                + "  \"supplementaryDataEnvelope1\" : null,\n"
-                + "  \"taxAmount2\" : null,\n"
-                + "  \"taxAmountAndType1\" : null,\n"
-                + "  \"taxAmountType1Choice\" : null,\n"
-                + "  \"taxAuthorisation1\" : null,\n"
-                + "  \"taxInformation7\" : null,\n"
-                + "  \"taxInformation8\" : null,\n"
-                + "  \"taxParty1\" : null,\n"
-                + "  \"taxParty2\" : null,\n"
-                + "  \"taxPeriod2\" : null,\n"
-                + "  \"taxRecord2\" : null,\n"
-                + "  \"taxRecordDetails2\" : null,\n"
-                + "  \"taxRecordPeriod1Code\" : null\n"
+                + "        \"offset\": {\n"
+                + "          \"totalSeconds\": -10800\n"
+                + "        }\n"
+                + "      }\n"
+                + "    }\n"
+                + "  }\n"
                 + "}";
 
         MxPacs00800108 mx = MxPacs00800108.fromJson(json);
 
-        BusinessAppHdrV02 header = AppHdrFactory.createBusinessAppHdrV02(
-                mx.getFIToFICstmrCdtTrf()
-                        .getCdtTrfTxInf()
-                        .get(0)
-                        .getInstgAgt()
-                        .getFinInstnId()
-                        .getBICFI(),
-                mx.getFIToFICstmrCdtTrf()
-                        .getCdtTrfTxInf()
-                        .get(0)
-                        .getInstdAgt()
-                        .getFinInstnId()
-                        .getBICFI(),
-                mx.getFIToFICstmrCdtTrf().getGrpHdr().getMsgId(),
-                mx.getMxId());
-        header.setBizSvc("swift.cbprplus.02");
-        mx.setAppHdr(header);
-
         mx.message();
         assertEquals(
-                mx.getFIToFICstmrCdtTrf().getGrpHdr().getCreDtTm().toString(), "2023-08-10T23:35:53.000002312-03:00");
+                "2023-08-10T23:35:53.000002312-03:00",
+                mx.getFIToFICstmrCdtTrf().getGrpHdr().getCreDtTm().toString());
 
-        // Set Zulu Time .000Z, after marshal will be +00:00
+        // Set Zulu Time .000Z, marshaller will create +00:00 offset
         OffsetDateTime offsetDateTime = OffsetDateTime.parse("2021-09-19T12:13:14.000Z");
         mx.getFIToFICstmrCdtTrf().getGrpHdr().setCreDtTm(offsetDateTime);
-
         assertTrue(mx.message().contains("2021-09-19T12:13:14+00:00"));
         assertFalse(mx.message().contains("2021-09-19T12:13:14.000Z"));
         assertFalse(mx.message().contains("2021-09-19T12:13:14.Z"));
 
         // Set nano with Zeros
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss[.[SSS][SS][S]][XXX]");
-        offsetDateTime = OffsetDateTime.parse("2021-09-19T12:13:14.1", dateTimeFormatter);
+        offsetDateTime = OffsetDateTime.parse(
+                "2021-09-19T12:13:14.00000+00:00", DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSSSXXX"));
         mx.getFIToFICstmrCdtTrf().getGrpHdr().setCreDtTm(offsetDateTime);
         assertTrue(mx.message().contains("2021-09-19T12:13:14+00:00"));
 
         // Set nano with Zeros and Z
-        offsetDateTime = OffsetDateTime.parse("2021-09-19T12:13:14.000000000");
+        offsetDateTime = OffsetDateTime.parse("2021-09-19T12:13:14.000000000Z");
         mx.getFIToFICstmrCdtTrf().getGrpHdr().setCreDtTm(offsetDateTime);
         assertFalse(mx.message().contains("2021-09-19T12:13:14.Z"));
 
         // Set nano with Zeros and Offset
-        offsetDateTime = OffsetDateTime.parse("2021-09-19T12:13:14.000000000");
+        offsetDateTime = OffsetDateTime.parse("2021-09-19T12:13:14.000000000-03:00");
         mx.getFIToFICstmrCdtTrf().getGrpHdr().setCreDtTm(offsetDateTime);
-        assertFalse(mx.message().contains("2021-09-19T12:13:14.Z"));
-    }
-
-    private DateTimeFormatter getMarshallFormat() {
-        return new DateTimeFormatterBuilder()
-                .appendPattern("yyyy-MM-dd'T'HH:mm:ss")
-                .optionalStart()
-                .appendFraction(ChronoField.NANO_OF_SECOND, 0, 9, true)
-                .optionalEnd()
-                .optionalStart()
-                .appendPattern("XXX")
-                .optionalEnd()
-                .toFormatter();
+        assertTrue(mx.message().contains("2021-09-19T12:13:14-03:00"));
     }
 }
