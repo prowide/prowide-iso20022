@@ -34,10 +34,6 @@ scmVersion {
 }
 project.version = "${SRU}-${scmVersion.version}"
 
-project.ext {
-	nexusRepo = project.version.endsWith('-SNAPSHOT') ? 'maven-snapshots' : 'maven-releases'
-}
-
 allprojects {
 
 	tasks.withType(JavaCompile) {
@@ -59,7 +55,14 @@ allprojects {
 		// Prowide repo releases
 		if (project.hasProperty('prowideRepo')) {
 			maven {
-				url "${project.prowideRepo}/repository/${nexusRepo}/"
+				url "${project.prowideRepo}/repository/maven-releases/"
+				credentials {
+					username "${project.prowideRepoUser}"
+					password "${project.prowideRepoPass}"
+				}
+			}
+			maven {
+				url "${project.prowideRepo}/repository/maven-snapshots/"
 				credentials {
 					username "${project.prowideRepoUser}"
 					password "${project.prowideRepoPass}"
@@ -319,6 +322,11 @@ dependencies {
 	implementation 'com.sun.xml.bind:jaxb-impl:4.0.2'
 	// bind-api is included transitively by jaxb-impl
 	// implementation 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.0'
+}
+
+project.ext {
+	// publishing repository
+	nexusRepo = project.version.endsWith('-SNAPSHOT') ? 'maven-snapshots' : 'maven-releases'
 }
 
 publishing {
