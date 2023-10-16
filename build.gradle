@@ -67,6 +67,13 @@ allprojects {
 					username "${project.prowideRepoUser}"
 					password "${project.prowideRepoPass}"
 				}
+				maven {
+					url "${project.prowideRepo}/repository/maven-snapshots/"
+					credentials {
+						username "${project.prowideRepoUser}"
+						password "${project.prowideRepoPass}"
+					}
+				}
 			}
 		}
 	}
@@ -326,6 +333,11 @@ dependencies {
 
 project.ext {
 	// publishing repository
+	nexusRepo = project.version.endsWith('-SNAPSHOT') ? 'maven-snapshots' : 'maven-releases'
+}
+
+// repo for publishing
+project.ext {
 	nexusRepo = project.version.endsWith('-SNAPSHOT') ? 'maven-snapshots' : 'maven-releases'
 }
 
