@@ -1,5 +1,8 @@
 # Prowide ISO 20022 - CHANGELOG
 
+#### 9.4.5-SNAPSHOT
+  * Added default methods for sender, receiver, and identifier extraction to the MxSwiftMessage.
+
 #### 9.4.4 - SNAPSHOT
   * Replaced the DistinguishedName parse logic with proprietary util class from the Prowide Core library
 
