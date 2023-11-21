@@ -17,10 +17,6 @@ package com.prowidesoftware.swift.model;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.prowidesoftware.deprecation.DeprecationUtils;
-import com.prowidesoftware.deprecation.ProwideDeprecated;
-import com.prowidesoftware.deprecation.TargetYear;
-import com.prowidesoftware.swift.io.parser.MxParser;
 import com.prowidesoftware.swift.model.mx.*;
 import java.io.File;
 import java.io.IOException;
@@ -441,17 +437,6 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), businessProcess, functionality, variant, version);
-    }
-
-    /**
-     * @deprecated use {@link #getAppHdr()} instead
-     */
-    @Deprecated
-    @ProwideDeprecated(phase4 = TargetYear.SRU2023)
-    public BusinessHeader getBusinessHeader() {
-        DeprecationUtils.phase3(MxSwiftMessage.class, "getBusinessHeader()", "Use getAppHdr() instead");
-        MxParser parser = new MxParser(this.message());
-        return parser.parseBusinessHeader();
     }
 
     /**
