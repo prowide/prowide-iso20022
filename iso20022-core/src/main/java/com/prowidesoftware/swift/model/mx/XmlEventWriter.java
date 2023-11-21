@@ -59,11 +59,11 @@ public final class XmlEventWriter implements XMLEventWriter {
      * @deprecated use {@link #XmlEventWriter(Writer, String, boolean, String, EscapeHandler, String)} instead
      */
     @Deprecated
-    @ProwideDeprecated(phase3 = TargetYear.SRU2023)
+    @ProwideDeprecated(phase4 = TargetYear.SRU2024)
     public XmlEventWriter(
             Writer baos, final String defaultPrefix, boolean includeXMLDeclaration, final String rootElement) {
         this(baos, defaultPrefix, includeXMLDeclaration, rootElement, null, null);
-        DeprecationUtils.phase2(
+        DeprecationUtils.phase3(
                 XmlEventWriter.class,
                 "XmlEventWriter(Writer, String, boolean, String)",
                 "Use XmlEventWriter(Writer, String, boolean, String, EscapeHandler) instead");
@@ -350,27 +350,6 @@ public final class XmlEventWriter implements XMLEventWriter {
      */
     public void setDefaultPrefix(String defaultPrefix) {
         this.defaultPrefix = defaultPrefix;
-    }
-
-    /**
-     * @deprecated use {@link #getPreferredPrefixes()} instead
-     */
-    @ProwideDeprecated(phase4 = TargetYear.SRU2023)
-    @Deprecated
-    public Map<String, String> getPeferredPrefixes() {
-        DeprecationUtils.phase3(XmlEventWriter.class, "getPeferredPrefixes()", "Use getPreferredPrefixes() instead");
-        return getPreferredPrefixes();
-    }
-
-    /**
-     * @deprecated use {@link #setPreferredPrefixes(Map)} instead
-     */
-    @ProwideDeprecated(phase4 = TargetYear.SRU2023)
-    @Deprecated
-    public void setPeferredPrefixes(Map<String, String> preferredPrefixes) {
-        DeprecationUtils.phase3(
-                XmlEventWriter.class, "setPeferredPrefixes(Map)", "Use setPreferredPrefixes(Map) instead");
-        setPreferredPrefixes(preferredPrefixes);
     }
 
     /**

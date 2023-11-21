@@ -1,14 +1,18 @@
 # Prowide ISO 20022 - CHANGELOG
 
-#### 9.3.9 - August 2023
+#### 9.4.3 - August 2023
   * Enhanced metadata extraction for xsys messages getting sender/receiver BICs from the RequestHeader element
   * Make the message metadata extraction lenient, by fixing the XML instruction of the payload when it contains invalid case
 
-#### 9.3.8 - July 2023
-  * Added new utility class SupplementaryDataUtils. This class provides utility methods for extracting "SplmtryData" elements from an XML string.
+#### 9.4.2 - July 2023
+  * Added new utility class SupplementaryDataUtils to facilitate "SplmtryData" extraction from MX messages
 
-#### 9.3.7 - June 2023
+#### 9.4.1 - June 2023
   * (PW-1392) Fixed the default escape handler when serializing model objects into XML, that was duplicated quote characters in the output
+
+#### 9.4.0 - May 2023
+  * SWIFT Standard release update 2023 (live 19 November 2023)
+  * Yearly revision of deprecation phase (see https://dev.prowidesoftware.com/SRU2022/getting-started/deprecation/)
 
 #### 9.3.6 - March 2023
   * (GH-74) Added a parameter in the MxWriteParams to define a custom indentation string to use when marshalling into XML
