@@ -16,6 +16,7 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.ProwideException;
+import com.prowidesoftware.deprecation.DeprecationUtils;
 import com.prowidesoftware.deprecation.ProwideDeprecated;
 import com.prowidesoftware.deprecation.TargetYear;
 import com.prowidesoftware.swift.model.mx.dic.BusinessApplicationHeaderV03Impl;
@@ -96,8 +97,8 @@ public class BusinessAppHdrV03 extends BusinessApplicationHeaderV03Impl implemen
     /**
      * Gets the sender BIC code from these elements in the following order:
      * <ol>
-     * 	<li>BusinessApplicationHeaderV01/Fr/FIId/FinInstnId/BICFI</li>
-     *  <li>BusinessApplicationHeaderV01/Fr/OrgId/Id/OrgId/Id/AnyBIC</li>
+     * 	<li>BusinessApplicationHeaderV03/Fr/FIId/FinInstnId/BICFI</li>
+     *  <li>BusinessApplicationHeaderV03/Fr/OrgId/Id/OrgId/Id/AnyBIC</li>
      * </ol>
      *
      * @return found BIC or null if not present or cannot be parsed
@@ -206,9 +207,10 @@ public class BusinessAppHdrV03 extends BusinessApplicationHeaderV03Impl implemen
      * @deprecated use {@link #xml(MxWriteParams)} instead
      */
     @Deprecated
-    @ProwideDeprecated(phase2 = TargetYear.SRU2023)
+    @ProwideDeprecated(phase3 = TargetYear.SRU2024)
     @Override
     public String xml(String prefix, boolean includeXMLDeclaration) {
+        DeprecationUtils.phase2(AbstractMX.class, "xml(String, boolean)", "Use xml(MxWriteParams) instead");
         MxWriteParams params = new MxWriteParams();
         params.prefix = prefix;
         params.includeXMLDeclaration = includeXMLDeclaration;
@@ -219,9 +221,11 @@ public class BusinessAppHdrV03 extends BusinessApplicationHeaderV03Impl implemen
      * @deprecated use {@link #xml(MxWriteParams)} instead
      */
     @Deprecated
-    @ProwideDeprecated(phase2 = TargetYear.SRU2023)
+    @ProwideDeprecated(phase3 = TargetYear.SRU2024)
     @Override
     public String xml(String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
+        DeprecationUtils.phase2(
+                AbstractMX.class, "xml(String, boolean, EscapeHandler)", "Use xml(MxWriteParams) instead");
         MxWriteParams params = new MxWriteParams();
         params.prefix = prefix;
         params.includeXMLDeclaration = includeXMLDeclaration;
