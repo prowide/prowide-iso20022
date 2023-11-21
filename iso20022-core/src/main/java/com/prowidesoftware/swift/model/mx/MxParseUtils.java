@@ -18,6 +18,7 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.ProwideException;
 import com.prowidesoftware.deprecation.ProwideDeprecated;
 import com.prowidesoftware.deprecation.TargetYear;
+import com.prowidesoftware.swift.model.DistinguishedName;
 import com.prowidesoftware.swift.model.MxId;
 import com.prowidesoftware.swift.utils.SafeXmlUtils;
 import java.io.StringReader;
@@ -29,7 +30,6 @@ import javax.xml.bind.*;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.transform.sax.SAXSource;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.Validate;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXParseException;
@@ -190,12 +190,7 @@ public class MxParseUtils {
      * @return returns capitalized "bank", in the example SPXAINJJ
      */
     public static String getBICFromDN(final String dn) {
-        for (String s : StringUtils.split(dn, ",")) {
-            if (StringUtils.startsWith(s, "o=") && !StringUtils.equals(s, "o=swift")) {
-                return StringUtils.upperCase(StringUtils.substringAfter(s, "o="));
-            }
-        }
-        return null;
+        return DistinguishedName.parseBIC(dn);
     }
 
     /**

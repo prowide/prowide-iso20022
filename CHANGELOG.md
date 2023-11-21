@@ -1,5 +1,8 @@
 # Prowide ISO 20022 - CHANGELOG
 
+#### 9.4.4 - SNAPSHOT
+  * Replaced the DistinguishedName parse logic with proprietary util class from the Prowide Core library
+
 #### 9.4.3 - August 2023
   * Enhanced metadata extraction for xsys messages getting sender/receiver BICs from the RequestHeader element
   * Make the message metadata extraction lenient, by fixing the XML instruction of the payload when it contains invalid case
