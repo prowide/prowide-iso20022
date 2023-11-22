@@ -1,5 +1,9 @@
 # Prowide ISO 20022 - CHANGELOG
 
+#### 10.1.4 - SNAPSHOT
+  * Added default methods for sender, receiver, and identifier extraction to the MxSwiftMessage.
+  * Replaced the DistinguishedName parse logic with proprietary util class from the Prowide Core library
+
 #### 10.1.3 - August 2023
   * (PW-1566) Fixed manipulation of nanoseconds in the OffsetTime and OffsetDateTime adapters
   * Enhanced metadata extraction for xsys messages getting sender/receiver BICs from the RequestHeader element

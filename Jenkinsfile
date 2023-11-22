@@ -9,7 +9,7 @@ pipeline {
                 catchError(buildResult: 'FAILURE') {
                     checkout([
                         $class: 'GitSCM',
-                        userRemoteConfigs: [[credentialsId: CREDENTIALS_ID, url: 'git@github.com:prowide/prowide-iso20022.git']],
+                        userRemoteConfigs: [[credentialsId: CREDENTIALS_ID, url: 'https://github.com/prowide/prowide-iso20022.git']],
                         branches: [[name: CHECKOUT_BRANCH]]
                     ])
                 }

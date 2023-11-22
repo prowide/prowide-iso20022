@@ -546,5 +546,8 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
 
         strategy.valueDate(mx).ifPresent(this::setValueDate);
         strategy.tradeDate(mx).ifPresent(this::setTradeDate);
+        strategy.sender(mx).ifPresent(this::setSender);
+        strategy.receiver(mx).ifPresent(this::setReceiver);
+        strategy.identifier(mx).ifPresent(this::setIdentifier);
     }
 }
