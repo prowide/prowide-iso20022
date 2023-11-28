@@ -17,12 +17,30 @@ package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.swift.model.MxBusinessProcess;
 import com.prowidesoftware.swift.model.MxId;
+import java.io.IOException;
+import java.io.StringReader;
+import java.io.StringWriter;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.sax.SAXSource;
+import javax.xml.transform.stream.StreamResult;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
 import org.apache.commons.lang3.Validate;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
 
 /**
  * Default implementation of the {@link MxRead} interface to parse XML strings into Mx message objects.
@@ -51,6 +69,13 @@ import org.apache.commons.lang3.Validate;
  */
 public class MxReadImpl implements MxRead {
     private static final Logger log = Logger.getLogger(MxReadImpl.class.getName());
+    private static final TransformerFactory TRANSFORMER_FACTORY = TransformerFactory.newInstance();
+    private static final DocumentBuilderFactory DOCUMENT_BUILDER_FACTORY = DocumentBuilderFactory.newInstance();
+    private static final XPathFactory X_PATH_FACTORY = XPathFactory.newInstance();
+
+    static {
+        DOCUMENT_BUILDER_FACTORY.setNamespaceAware(true);
+    }
 
     /**
      * Static parse implementation of {@link MxRead#read(Class, String, Class[])}
@@ -78,14 +103,8 @@ public class MxReadImpl implements MxRead {
         Objects.requireNonNull(params, "The unmarshalling params cannot be null");
 
         try {
-
-            SAXSource documentSource = MxParseUtils.createFilteredSAXSource(xml, AbstractMX.DOCUMENT_LOCALNAME);
-            final AbstractMX parsedDocument =
-                    (AbstractMX) MxParseUtils.parseSAXSource(documentSource, targetClass, classes, params);
-
-            Optional<AbstractMX> mx = Optional.ofNullable(parsedDocument);
-
             Optional<AppHdr> appHdr = AppHdrParser.parse(xml, params);
+            Optional<AbstractMX> mx = getAbstractMX(targetClass, xml, classes, params);
 
             if (mx.isPresent() && appHdr.isPresent()) {
                 mx.get().setAppHdr(appHdr.get());
@@ -96,6 +115,38 @@ public class MxReadImpl implements MxRead {
         } catch (final Exception e) {
             MxParseUtils.handleParseException(e);
             return null;
+        }
+    }
+
+    private static Optional<AbstractMX> getAbstractMX(
+            Class<? extends AbstractMX> targetClass, String xml, Class<?>[] classes, MxReadParams params) {
+       // String documentXml = getDocumentXml(xml, params);
+        SAXSource documentSource = MxParseUtils.createFilteredSAXSource(xml, AbstractMX.DOCUMENT_LOCALNAME);
+        final AbstractMX parsedDocument =
+                (AbstractMX) MxParseUtils.parseSAXSource(documentSource, targetClass, classes, params);
+        return Optional.ofNullable(parsedDocument);
+    }
+
+    private static String getDocumentXml(String xml, MxReadParams params) {
+        StringWriter writer = new StringWriter();
+        try {
+            Document doc = DOCUMENT_BUILDER_FACTORY.newDocumentBuilder().parse(new InputSource(new StringReader(xml)));
+            Node documentNode =
+                    (Node) X_PATH_FACTORY.newXPath().evaluate("//*[local-name()='Document']", doc, XPathConstants.NODE);
+            Transformer transformer = TRANSFORMER_FACTORY.newTransformer();
+            transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes"); // Omit the XML declaration
+            transformer.transform(new DOMSource(documentNode), new StreamResult(writer));
+            return writer.toString();
+        } catch (SAXException
+                | ParserConfigurationException
+                | XPathExpressionException
+                | TransformerException
+                | IOException e) {
+            Level level = params.verbose ? Level.SEVERE : Level.FINE;
+            log.log(
+                    level,
+                    "Cannot extract the Document info from the XML, make sure the XML contains proper namespaces and tags");
+            return xml;
         }
     }
 

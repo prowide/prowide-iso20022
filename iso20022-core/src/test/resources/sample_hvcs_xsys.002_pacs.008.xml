@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<RequestPayload>
+    <Ah:AppHdr xmlns:Ah="urn:swift:xsd:$ahV10">
+        <Ah:MsgRef>2023-07-19T04:57:05Z</Ah:MsgRef>
+        <Ah:CrDate>2023-07-19T04:57:05Z</Ah:CrDate>
+    </Ah:AppHdr>
+    <Doc:Document xmlns:Doc="urn:swift:xsd:xsys.002.001.01" xmlns:Sw="urn:swift:snl:ns.Sw"
+                  xmlns:SwInt="urn:swift:snl:ns.SwInt"
+                  xmlns:SwSec="urn:swift:snl:ns.SwSec">
+        <Doc:xsys.002.001.01>
+            <Doc:AuthstnNtfctn>
+                <Sw:SnFRef>swi00003-2022-07-19T04:56:40.63614.012852Z</Sw:SnFRef>
+                <SwInt:RequestHeader>
+                    <SwInt:Requestor>ou=xxx,o=rabcdu2s,o=swift</SwInt:Requestor>
+                    <SwInt:Responder>ou=xxx,o=wvcxzsr,o=swift</SwInt:Responder>
+                    <SwInt:Service>apn.hvcs!p</SwInt:Service>
+                    <SwInt:RequestType>pacs.004.001.10</SwInt:RequestType>
+                    <SwInt:Priority>Normal</SwInt:Priority>
+                    <SwInt:RequestRef>201207190001100005007HV0</SwInt:RequestRef>
+                </SwInt:RequestHeader>
+                <Sw:ThirdPartyToSenderInformation>
+                    <Sw:ESABal Ccy="AUD">999999.99</Sw:ESABal>
+                    <Sw:RcvdDtTm>2023-07-19T14:56:42.000+10:00</Sw:RcvdDtTm>
+                    <Sw:IntrBkSttlmDtTm>2023-07-19T14:56:46.000+10:00</Sw:IntrBkSttlmDtTm>
+                    <Sw:IntrBkSttlmAmt Ccy="AUD">99.99</Sw:IntrBkSttlmAmt>
+                </Sw:ThirdPartyToSenderInformation>
+                <SwSec:SignatureValue>SignatureContent</SwSec:SignatureValue>
+            </Doc:AuthstnNtfctn>
+        </Doc:xsys.002.001.01>
+    </Doc:Document>
+</RequestPayload>
