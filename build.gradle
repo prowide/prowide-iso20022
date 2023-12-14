@@ -4,10 +4,10 @@ buildscript {
 		gradlePluginPortal()
 	}
 	dependencies {
-		classpath 'ru.vyarus:gradle-quality-plugin:4.7.0'
-		classpath 'pl.allegro.tech.build:axion-release-plugin:1.13.6'
-		classpath 'io.github.gradle-nexus:publish-plugin:1.1.0'
-		classpath 'com.diffplug.spotless:spotless-plugin-gradle:6.20.0'
+		classpath 'ru.vyarus:gradle-quality-plugin:4.9.0'
+		classpath 'pl.allegro.tech.build:axion-release-plugin:1.15.1'
+		classpath 'io.github.gradle-nexus:publish-plugin:1.3.0'
+		classpath 'com.diffplug.spotless:spotless-plugin-gradle:6.23.3'
 	}
 }
 apply plugin: 'pl.allegro.tech.build.axion-release'
@@ -78,7 +78,11 @@ allprojects {
 		}
 	}
 
-	sourceSets.main.java.srcDirs = ['src/main/java', 'src/generated/java']
+	sourceSets.named('main') {
+		java {
+			setSrcDirs(['src/main/java', 'src/generated/java'])
+		}
+	}
 
 	tasks.withType(Jar) {
 		manifest.attributes(
@@ -89,8 +93,8 @@ allprojects {
 			'Implementation-Version': project.version,
 			'Implementation-Vendor': 'www.prowidesoftware.com',
 			'Built-OS': System.getProperty('os.name'),
-			'Source-Compatibility': project.sourceCompatibility,
-			'Target-Compatibility': project.targetCompatibility,
+			'Source-Compatibility': JavaVersion.VERSION_11,
+			'Target-Compatibility': JavaVersion.VERSION_11,
 			'Built-Date': new Date().format("yyyy-MM-dd"),
 			'Automatic-Module-Name': 'com.prowidesoftware.iso20022'
 		)
@@ -470,7 +474,7 @@ tasks.register('bundle', Jar) {
 	from ("$buildDir/libs") {
 		include '*.asc'
 	}
-	archiveName 'bundle.jar'
+	archiveFileName.set('bundle.jar')
 }
 
 tasks.withType(Test) {
