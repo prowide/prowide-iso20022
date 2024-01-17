@@ -1,6 +1,6 @@
 # Prowide ISO 20022 - CHANGELOG
 
-#### 9.4.4 - SNAPSHOT
+#### 9.4.4 - Jannuary 2024
   * Enhanced the identifier extraction of the MxSwiftMessage to use the AppHdr when the Document namespace is missing
   * Enhanced the generic AbstractMX#parse to detect the message type from the AppHdr when the Document namespace is missing
   * Added default metadata extraction implementation for pacs and camt amounts and value dates
