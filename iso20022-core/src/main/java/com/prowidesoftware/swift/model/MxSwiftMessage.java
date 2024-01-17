@@ -241,10 +241,14 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
             MxId identifier = id != null
                     ? id
                     : MxParseUtils.identifyMessage(this.message()).orElse(null);
+
+            // the identifyMessage above will also attempt the header but with a generic parsing, so we try again
+            // with a specific header parsing if the identifier is still null
             AppHdr header = getAppHdr();
             if (identifier == null && header != null && header.messageName() != null) {
                 identifier = new MxId(header.messageName());
             }
+
             extractMetadata(identifier, header, metadataStrategy);
         }
     }
