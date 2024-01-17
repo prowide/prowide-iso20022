@@ -237,16 +237,20 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
     }
 
     private void _updateFromMessage(final MxId id, final MessageMetadataStrategy metadataStrategy) {
-        if (message() != null && message().length() > 0) {
+        if (message() != null && !message().isEmpty()) {
             MxId identifier = id != null
                     ? id
                     : MxParseUtils.identifyMessage(this.message()).orElse(null);
-            extractMetadata(identifier, getAppHdr(), metadataStrategy);
+            AppHdr header = getAppHdr();
+            if (identifier == null && header != null && header.messageName() != null) {
+                identifier = new MxId(header.messageName());
+            }
+            extractMetadata(identifier, header, metadataStrategy);
         }
     }
 
     /**
-     * Updates the the attributes with the raw message and its metadata from the given raw (XML) message content.
+     * Updates the attributes with the raw message and its metadata from the given raw (XML) message content.
      *
      * @param mx the new message content
      * @see #updateFromMessage()
