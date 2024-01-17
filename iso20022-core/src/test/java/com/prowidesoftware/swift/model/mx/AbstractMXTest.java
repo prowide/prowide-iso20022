@@ -18,6 +18,7 @@ package com.prowidesoftware.swift.model.mx;
 import static org.junit.jupiter.api.Assertions.*;
 
 import com.prowidesoftware.swift.model.MxId;
+import com.prowidesoftware.swift.model.mx.sys.MxXsys01100102;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -113,6 +114,7 @@ public class AbstractMXTest {
                         + "      </Doc:Document>";
         AbstractMX mx = AbstractMX.parse(xml);
         assertNotNull(mx);
+        assertInstanceOf(MxXsys01100102.class, mx);
     }
 
     @Test
@@ -183,5 +185,42 @@ public class AbstractMXTest {
                 + "</Document>\n";
         AbstractMX mx = AbstractMX.parse(xml);
         assertNull(mx);
+    }
+
+    /**
+     * Tests if the parser can recognize the message from the AppHdr message name
+     */
+    @Test
+    public void testNoDocumentNS() {
+        String xml = "<RequestPayload>\n"
+                + "<h:AppHdr xmlns:h=\"urn:swift:xsd:$ahV10\">\n"
+                + "    <h:From>\n"
+                + "        <h:Type>BIC</h:Type>\n"
+                + "        <h:Id>AAAANGL0XXX</h:Id>\n"
+                + "    </h:From>\n"
+                + "    <h:To>\n"
+                + "        <h:Type>BIC</h:Type>\n"
+                + "        <h:Id>BBBBUS33XXX</h:Id>\n"
+                + "     </h:To>\n"
+                + "     <h:MsgName>pacs.008.001.08</h:MsgName>\n"
+                + "     <h:MsgRef>FOOBAR1</h:MsgRef>\n"
+                + "     <h:CrDate>2022-05-05T06:07:14Z</h:CrDate>\n"
+                + "</h:AppHdr>\n"
+                + "<Document>\n"
+                + "    <FIToFICstmrCdtTrf>\n"
+                + "        <GrpHdr>\n"
+                + "            <MsgId>FOOBAR2</MsgId>\n"
+                + "        </GrpHdr>\n"
+                + "        <CdtTrfTxInf>\n"
+                + "            <PmtId>\n"
+                + "                <InstrId>REF333222333</InstrId>\n"
+                + "            </PmtId>\n"
+                + "        </CdtTrfTxInf>\n"
+                + "    </FIToFICstmrCdtTrf>\n"
+                + "</Document>\n"
+                + "</RequestPayload>";
+        AbstractMX mx = AbstractMX.parse(xml);
+        assertNotNull(mx);
+        assertInstanceOf(MxPacs00800108.class, mx);
     }
 }

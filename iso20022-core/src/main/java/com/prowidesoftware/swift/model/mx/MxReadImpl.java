@@ -122,14 +122,14 @@ public class MxReadImpl implements MxRead {
         MxId resolvedId = id;
 
         if (id == null) {
-            Optional<String> namespace = NamespaceReader.findDocumentNamespace(xml);
-            if (namespace.isPresent()) {
-                resolvedId = new MxId(namespace.get());
+            Optional<MxId> detectedIdentifier = MxParseUtils.identifyMessage(xml);
+            if (detectedIdentifier.isPresent()) {
+                resolvedId = detectedIdentifier.get();
             } else {
                 Level level = params.verbose ? Level.SEVERE : Level.FINE;
                 log.log(
                         level,
-                        "Cannot detect the Mx type from the XML, make sure the XML contains proper namespaces or provide an MxId object as parameter to the parse call");
+                        "Cannot detect the MX type from the XML, make sure the Document contains a valid namespace or the message contains an identifiable AppHdr");
                 return null;
             }
         }

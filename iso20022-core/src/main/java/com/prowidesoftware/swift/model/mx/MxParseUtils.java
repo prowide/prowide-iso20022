@@ -29,6 +29,7 @@ import java.util.Optional;
 import java.util.concurrent.ExecutionException;
 import java.util.logging.Logger;
 import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.XMLStreamReader;
 import javax.xml.transform.sax.SAXSource;
 import org.apache.commons.lang3.Validate;
 import org.xml.sax.InputSource;
@@ -194,10 +195,12 @@ public class MxParseUtils {
     }
 
     /**
-     * Takes an XML with an MX message and detects the specific message type
-     * parsing just the namespace from the Document element. If the Document
-     * element is not present, or without the namespace or if the namespace url
-     * contains invalid content it will return null.
+     * Takes an XML with an MX message and detects the specific message type parsing just the namespace from the
+     * Document element. If the Document element is not present, or without the namespace or if the namespace url
+     * contains invalid content, then attempts to identify the message from the AppHdr. From the header tries to
+     * get the message type from the 'MsgDefIdr' that is present in the Business Application Header, and if that
+     * is not present tries to get the 'MsgName' assuming it is a legacy Application Header. If none of the above
+     * is present or cannot be parsed, then returns empty.
      *
      * <p>
      * Example of a recognizable Document element:<br>
@@ -210,7 +213,25 @@ public class MxParseUtils {
      */
     public static Optional<MxId> identifyMessage(final String xml) {
         Optional<String> namespace = NamespaceReader.findDocumentNamespace(xml);
-        return namespace.map(MxId::new);
+        if (namespace.isPresent()) {
+            return namespace.map(MxId::new);
+        }
+
+        // if the Document does not have a namespace, try to identify the message from the header
+        Optional<XMLStreamReader> element = NamespaceReader.findElement(xml, "MsgDefIdr");
+        if (!element.isPresent()) {
+            // Legacy ahv10 header
+            element = NamespaceReader.findElement(xml, "MsgName");
+        }
+        if (element.isPresent()) {
+            try {
+                return Optional.of(new MxId(element.get().getElementText()));
+            } catch (XMLStreamException e) {
+                log.finer("Error identifying message: " + e.getMessage());
+            }
+        }
+
+        return Optional.empty();
     }
 
     /**

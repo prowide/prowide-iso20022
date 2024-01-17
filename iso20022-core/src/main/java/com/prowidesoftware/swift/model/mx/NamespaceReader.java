@@ -98,7 +98,7 @@ public class NamespaceReader {
         return findElement(xml, localName).isPresent();
     }
 
-    private static Optional<XMLStreamReader> findElement(final String xml, final String localName) {
+    static Optional<XMLStreamReader> findElement(final String xml, final String localName) {
         Objects.requireNonNull(xml, "XML to parse must not be null");
         Validate.notBlank(xml, "XML to parse must not be a blank string");
         Objects.requireNonNull(xml, "localName to find must not be null");

@@ -154,7 +154,7 @@ configure(subprojects.findAll {it.name.endsWith('-mx')}) {
 project(':iso20022-core') {
 	dependencies {
 		// included build
-		api 'com.prowidesoftware:pw-swift-core:SRU2023-10.1.12'
+		api 'com.prowidesoftware:pw-swift-core:SRU2023-10.1.13'
 
 		implementation 'org.apache.commons:commons-lang3:3.12.0'
 		implementation 'com.google.code.gson:gson:2.9.0'
@@ -240,19 +240,34 @@ def formattedDate() {
 // define an array of project names
 def projectsIncludedInJavadoc = [
 	'iso20022-core',
+//	'model-acmt-mx',
+//	'model-admi-mx',
+//	'model-auth-mx',
 	'model-caaa-mx',
 	'model-caad-mx',
 	'model-caam-mx',
 	'model-cafc-mx',
 	'model-cain-mx',
 	'model-camt-mx',
+//	'model-casp-mx',
+//	'model-catm-mx',
+//	'model-catp-mx',
+//	'model-cbrf-mx',
+//	'model-colr-mx',
+//	'model-fxtr-mx',
 	'model-pacs-mx',
 	'model-pain-mx',
+//	'model-reda-mx',
+//	'model-remt-mx',
+//	'model-secl-mx',
 	'model-seev-mx',
 	'model-semt-mx',
 	'model-sese-mx',
 	'model-seti-mx',
 	'model-setr-mx',
+//	'model-supl-mx',
+//	'model-trck-mx',
+//	'model-trea-mx',
 	'model-tsin-mx',
 	'model-tsmt-mx',
 	'model-tsrv-mx',
@@ -323,7 +338,7 @@ artifacts {
 dependencies {
 	// included build (keep in sync with the latest Prowide Core version)
 
-	api 'com.prowidesoftware:pw-swift-core:SRU2023-10.1.12'
+	api 'com.prowidesoftware:pw-swift-core:SRU2023-10.1.13'
 
 	// included transitive dependencies from Prowide Core
 	//implementation 'org.apache.commons:commons-lang3:3.12.0'

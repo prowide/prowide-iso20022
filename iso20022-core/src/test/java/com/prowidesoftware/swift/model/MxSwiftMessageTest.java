@@ -300,4 +300,48 @@ public class MxSwiftMessageTest {
         assertNotNull(mx);
         assertEquals("camt.077.001.01", mx.getIdentifier());
     }
+
+    @Test
+    public void testIdentifierFromAppHdr() {
+        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+                + "<message>"
+                + "<AppHdr> \n"
+                + "<Fr> \n"
+                + "	<FIId>\n"
+                + "		<FinInstnId>\n"
+                + "			<BICFI>FOOCUS3NXXX</BICFI>\n"
+                + "			<ClrSysMmbId>\n"
+                + "				<ClrSysId>\n"
+                + "					<Prtry>T2S</Prtry>\n"
+                + "				</ClrSysId>\n"
+                + "				<MmbId>ADMNUSERLUXCSDT1</MmbId>\n"
+                + "			</ClrSysMmbId>\n"
+                + "			<Othr>\n"
+                + "				<Id>FOOTXE2SXXX</Id>\n"
+                + "				</Othr> \n"
+                + "		</FinInstnId> \n"
+                + "	</FIId> \n"
+                + "</Fr> \n"
+                + "<To> \n"
+                + "	<FIId>\n"
+                + "		<FinInstnId>\n"
+                + "			<BICFI>ABICUS33</BICFI>\n"
+                + "			<Othr>\n"
+                + "				<Id>AARBDE5W100</Id>\n"
+                + "			</Othr>\n"
+                + "		</FinInstnId> \n"
+                + "	</FIId> \n"
+                + "</To> \n"
+                + "<BizMsgIdr>2012111915360885</BizMsgIdr>\n"
+                + "<MsgDefIdr>pacs.004.001.02.ch.02</MsgDefIdr> \n"
+                + "<BizSvc>CSD</BizSvc> \n"
+                + "<CreDt>2015-08-27T08:59:00Z</CreDt>\n"
+                + "</AppHdr>"
+                + "<Document>"
+                + "</Document>"
+                + "</message>";
+        MxSwiftMessage mx = new MxSwiftMessage(xml);
+        assertNotNull(mx);
+        assertEquals("pacs.004.001.02", mx.getIdentifier());
+    }
 }
