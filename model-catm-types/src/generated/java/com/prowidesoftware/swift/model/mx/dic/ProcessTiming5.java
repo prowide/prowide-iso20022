@@ -2,14 +2,14 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -38,11 +38,11 @@ public class ProcessTiming5 {
     @XmlElement(name = "StartTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar startTm;
+    protected OffsetDateTime startTm;
     @XmlElement(name = "EndTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar endTm;
+    protected OffsetDateTime endTm;
     @XmlElement(name = "Prd")
     protected String prd;
     @XmlElement(name = "MaxNb")
@@ -84,7 +84,7 @@ public class ProcessTiming5 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getStartTm() {
+    public OffsetDateTime getStartTm() {
         return startTm;
     }
 
@@ -96,7 +96,7 @@ public class ProcessTiming5 {
      *     {@link String }
      *     
      */
-    public ProcessTiming5 setStartTm(XMLGregorianCalendar value) {
+    public ProcessTiming5 setStartTm(OffsetDateTime value) {
         this.startTm = value;
         return this;
     }
@@ -109,7 +109,7 @@ public class ProcessTiming5 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getEndTm() {
+    public OffsetDateTime getEndTm() {
         return endTm;
     }
 
@@ -121,7 +121,7 @@ public class ProcessTiming5 {
      *     {@link String }
      *     
      */
-    public ProcessTiming5 setEndTm(XMLGregorianCalendar value) {
+    public ProcessTiming5 setEndTm(OffsetDateTime value) {
         this.endTm = value;
         return this;
     }

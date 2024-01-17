@@ -1,28 +1,27 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for WeekDay2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="WeekDay2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="WEDD"/&gt;
- *     &lt;enumeration value="TUED"/&gt;
- *     &lt;enumeration value="THUD"/&gt;
- *     &lt;enumeration value="SUND"/&gt;
- *     &lt;enumeration value="SATD"/&gt;
- *     &lt;enumeration value="MOND"/&gt;
- *     &lt;enumeration value="FRID"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="WeekDay2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="WEDD"/>
+ *     <enumeration value="TUED"/>
+ *     <enumeration value="THUD"/>
+ *     <enumeration value="SUND"/>
+ *     <enumeration value="SATD"/>
+ *     <enumeration value="MOND"/>
+ *     <enumeration value="FRID"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "WeekDay2Code")

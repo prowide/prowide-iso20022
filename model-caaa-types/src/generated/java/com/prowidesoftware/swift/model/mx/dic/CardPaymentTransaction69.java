@@ -3,11 +3,11 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -155,8 +155,8 @@ public class CardPaymentTransaction69 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlSvc property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlSvc property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -170,10 +170,12 @@ public class CardPaymentTransaction69 {
      * {@link CardPaymentServiceType9Code }
      * 
      * 
+     * @return
+     *     The value of the addtlSvc property.
      */
     public List<CardPaymentServiceType9Code> getAddtlSvc() {
         if (addtlSvc == null) {
-            addtlSvc = new ArrayList<CardPaymentServiceType9Code>();
+            addtlSvc = new ArrayList<>();
         }
         return this.addtlSvc;
     }
@@ -234,8 +236,8 @@ public class CardPaymentTransaction69 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cstmrCnsnt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cstmrCnsnt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -249,10 +251,12 @@ public class CardPaymentTransaction69 {
      * {@link Boolean }
      * 
      * 
+     * @return
+     *     The value of the cstmrCnsnt property.
      */
     public List<Boolean> getCstmrCnsnt() {
         if (cstmrCnsnt == null) {
-            cstmrCnsnt = new ArrayList<Boolean>();
+            cstmrCnsnt = new ArrayList<>();
         }
         return this.cstmrCnsnt;
     }
@@ -263,8 +267,8 @@ public class CardPaymentTransaction69 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cardPrgrmmPropsd property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cardPrgrmmPropsd property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -278,10 +282,12 @@ public class CardPaymentTransaction69 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the cardPrgrmmPropsd property.
      */
     public List<String> getCardPrgrmmPropsd() {
         if (cardPrgrmmPropsd == null) {
-            cardPrgrmmPropsd = new ArrayList<String>();
+            cardPrgrmmPropsd = new ArrayList<>();
         }
         return this.cardPrgrmmPropsd;
     }
@@ -292,8 +298,8 @@ public class CardPaymentTransaction69 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cardPrgrmmApld property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cardPrgrmmApld property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -307,10 +313,12 @@ public class CardPaymentTransaction69 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the cardPrgrmmApld property.
      */
     public List<String> getCardPrgrmmApld() {
         if (cardPrgrmmApld == null) {
-            cardPrgrmmApld = new ArrayList<String>();
+            cardPrgrmmApld = new ArrayList<>();
         }
         return this.cardPrgrmmApld;
     }
@@ -463,8 +471,8 @@ public class CardPaymentTransaction69 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the failrRsn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the failrRsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -478,10 +486,12 @@ public class CardPaymentTransaction69 {
      * {@link FailureReason3Code }
      * 
      * 
+     * @return
+     *     The value of the failrRsn property.
      */
     public List<FailureReason3Code> getFailrRsn() {
         if (failrRsn == null) {
-            failrRsn = new ArrayList<FailureReason3Code>();
+            failrRsn = new ArrayList<>();
         }
         return this.failrRsn;
     }
@@ -642,8 +652,8 @@ public class CardPaymentTransaction69 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the txVrfctnRslt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the txVrfctnRslt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -657,10 +667,12 @@ public class CardPaymentTransaction69 {
      * {@link TransactionVerificationResult4 }
      * 
      * 
+     * @return
+     *     The value of the txVrfctnRslt property.
      */
     public List<TransactionVerificationResult4> getTxVrfctnRslt() {
         if (txVrfctnRslt == null) {
-            txVrfctnRslt = new ArrayList<TransactionVerificationResult4>();
+            txVrfctnRslt = new ArrayList<>();
         }
         return this.txVrfctnRslt;
     }
@@ -671,8 +683,8 @@ public class CardPaymentTransaction69 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlTxData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlTxData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -686,10 +698,12 @@ public class CardPaymentTransaction69 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the addtlTxData property.
      */
     public List<String> getAddtlTxData() {
         if (addtlTxData == null) {
-            addtlTxData = new ArrayList<String>();
+            addtlTxData = new ArrayList<>();
         }
         return this.addtlTxData;
     }

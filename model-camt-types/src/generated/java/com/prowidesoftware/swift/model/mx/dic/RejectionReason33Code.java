@@ -1,39 +1,38 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for RejectionReason33Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="RejectionReason33Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CASH"/&gt;
- *     &lt;enumeration value="ADEA"/&gt;
- *     &lt;enumeration value="DMON"/&gt;
- *     &lt;enumeration value="NCRR"/&gt;
- *     &lt;enumeration value="LATE"/&gt;
- *     &lt;enumeration value="INVL"/&gt;
- *     &lt;enumeration value="INVB"/&gt;
- *     &lt;enumeration value="INVN"/&gt;
- *     &lt;enumeration value="VALR"/&gt;
- *     &lt;enumeration value="MONY"/&gt;
- *     &lt;enumeration value="CAEV"/&gt;
- *     &lt;enumeration value="DDAT"/&gt;
- *     &lt;enumeration value="REFE"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="DQUA"/&gt;
- *     &lt;enumeration value="DSEC"/&gt;
- *     &lt;enumeration value="MINO"/&gt;
- *     &lt;enumeration value="MUNO"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="RejectionReason33Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CASH"/>
+ *     <enumeration value="ADEA"/>
+ *     <enumeration value="DMON"/>
+ *     <enumeration value="NCRR"/>
+ *     <enumeration value="LATE"/>
+ *     <enumeration value="INVL"/>
+ *     <enumeration value="INVB"/>
+ *     <enumeration value="INVN"/>
+ *     <enumeration value="VALR"/>
+ *     <enumeration value="MONY"/>
+ *     <enumeration value="CAEV"/>
+ *     <enumeration value="DDAT"/>
+ *     <enumeration value="REFE"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="DQUA"/>
+ *     <enumeration value="DSEC"/>
+ *     <enumeration value="MINO"/>
+ *     <enumeration value="MUNO"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "RejectionReason33Code")

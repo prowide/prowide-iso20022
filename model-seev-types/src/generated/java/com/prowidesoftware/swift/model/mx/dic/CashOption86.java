@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -40,15 +40,15 @@ public class CashOption86 {
     @XmlElement(name = "PstngDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar pstngDt;
+    protected LocalDate pstngDt;
     @XmlElement(name = "OrgnlPstngDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar orgnlPstngDt;
+    protected LocalDate orgnlPstngDt;
     @XmlElement(name = "ValDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar valDt;
+    protected LocalDate valDt;
     @XmlElement(name = "PstngAmt", required = true)
     protected ActiveCurrencyAndAmount pstngAmt;
 
@@ -110,7 +110,7 @@ public class CashOption86 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getPstngDt() {
+    public LocalDate getPstngDt() {
         return pstngDt;
     }
 
@@ -122,7 +122,7 @@ public class CashOption86 {
      *     {@link String }
      *     
      */
-    public CashOption86 setPstngDt(XMLGregorianCalendar value) {
+    public CashOption86 setPstngDt(LocalDate value) {
         this.pstngDt = value;
         return this;
     }
@@ -135,7 +135,7 @@ public class CashOption86 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getOrgnlPstngDt() {
+    public LocalDate getOrgnlPstngDt() {
         return orgnlPstngDt;
     }
 
@@ -147,7 +147,7 @@ public class CashOption86 {
      *     {@link String }
      *     
      */
-    public CashOption86 setOrgnlPstngDt(XMLGregorianCalendar value) {
+    public CashOption86 setOrgnlPstngDt(LocalDate value) {
         this.orgnlPstngDt = value;
         return this;
     }
@@ -160,7 +160,7 @@ public class CashOption86 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getValDt() {
+    public LocalDate getValDt() {
         return valDt;
     }
 
@@ -172,7 +172,7 @@ public class CashOption86 {
      *     {@link String }
      *     
      */
-    public CashOption86 setValDt(XMLGregorianCalendar value) {
+    public CashOption86 setValDt(LocalDate value) {
         this.valDt = value;
         return this;
     }

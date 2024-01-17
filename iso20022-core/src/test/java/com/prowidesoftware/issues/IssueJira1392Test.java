@@ -8,7 +8,7 @@ import com.prowidesoftware.swift.model.mx.dic.GroupHeader93;
 import com.prowidesoftware.swift.model.mx.dic.SettlementInstruction7;
 import org.junit.jupiter.api.Test;
 
-public class Jira1392 {
+public class IssueJira1392Test {
 
     @Test
     public void testQuoteCharacter() {

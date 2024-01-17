@@ -16,7 +16,7 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.swift.model.mx.adapters.TypeAdaptersConfiguration;
-import javax.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBContext;
 
 /**
  * Options to customize the behaviour of the MX parser (XML into model) in the {@link AbstractMX} and its specific

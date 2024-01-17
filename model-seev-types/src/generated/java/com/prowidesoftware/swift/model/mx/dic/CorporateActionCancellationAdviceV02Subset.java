@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -156,8 +156,8 @@ public class CorporateActionCancellationAdviceV02Subset {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the issrAgt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the issrAgt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -171,10 +171,12 @@ public class CorporateActionCancellationAdviceV02Subset {
      * {@link PartyIdentification56Choice }
      * 
      * 
+     * @return
+     *     The value of the issrAgt property.
      */
     public List<PartyIdentification56Choice> getIssrAgt() {
         if (issrAgt == null) {
-            issrAgt = new ArrayList<PartyIdentification56Choice>();
+            issrAgt = new ArrayList<>();
         }
         return this.issrAgt;
     }
@@ -185,8 +187,8 @@ public class CorporateActionCancellationAdviceV02Subset {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the pngAgt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the pngAgt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -200,10 +202,12 @@ public class CorporateActionCancellationAdviceV02Subset {
      * {@link PartyIdentification56Choice }
      * 
      * 
+     * @return
+     *     The value of the pngAgt property.
      */
     public List<PartyIdentification56Choice> getPngAgt() {
         if (pngAgt == null) {
-            pngAgt = new ArrayList<PartyIdentification56Choice>();
+            pngAgt = new ArrayList<>();
         }
         return this.pngAgt;
     }
@@ -214,8 +218,8 @@ public class CorporateActionCancellationAdviceV02Subset {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the subPngAgt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the subPngAgt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -229,10 +233,12 @@ public class CorporateActionCancellationAdviceV02Subset {
      * {@link PartyIdentification56Choice }
      * 
      * 
+     * @return
+     *     The value of the subPngAgt property.
      */
     public List<PartyIdentification56Choice> getSubPngAgt() {
         if (subPngAgt == null) {
-            subPngAgt = new ArrayList<PartyIdentification56Choice>();
+            subPngAgt = new ArrayList<>();
         }
         return this.subPngAgt;
     }
@@ -268,8 +274,8 @@ public class CorporateActionCancellationAdviceV02Subset {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rsellngAgt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rsellngAgt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -283,10 +289,12 @@ public class CorporateActionCancellationAdviceV02Subset {
      * {@link PartyIdentification56Choice }
      * 
      * 
+     * @return
+     *     The value of the rsellngAgt property.
      */
     public List<PartyIdentification56Choice> getRsellngAgt() {
         if (rsellngAgt == null) {
-            rsellngAgt = new ArrayList<PartyIdentification56Choice>();
+            rsellngAgt = new ArrayList<>();
         }
         return this.rsellngAgt;
     }
@@ -347,8 +355,8 @@ public class CorporateActionCancellationAdviceV02Subset {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the slctnAgt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the slctnAgt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -362,10 +370,12 @@ public class CorporateActionCancellationAdviceV02Subset {
      * {@link PartyIdentification56Choice }
      * 
      * 
+     * @return
+     *     The value of the slctnAgt property.
      */
     public List<PartyIdentification56Choice> getSlctnAgt() {
         if (slctnAgt == null) {
-            slctnAgt = new ArrayList<PartyIdentification56Choice>();
+            slctnAgt = new ArrayList<>();
         }
         return this.slctnAgt;
     }
@@ -401,8 +411,8 @@ public class CorporateActionCancellationAdviceV02Subset {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -416,10 +426,12 @@ public class CorporateActionCancellationAdviceV02Subset {
      * {@link SupplementaryData1 }
      * 
      * 
+     * @return
+     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<SupplementaryData1>();
+            splmtryData = new ArrayList<>();
         }
         return this.splmtryData;
     }

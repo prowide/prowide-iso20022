@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -53,7 +53,7 @@ public class StatementAndFinancialInstrumentDetails {
     @XmlElement(name = "StmtDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar stmtDt;
+    protected LocalDate stmtDt;
     @XmlElement(name = "StmtPrd")
     protected DatePeriodDetails stmtPrd;
     @XmlElement(name = "Frqcy")
@@ -221,7 +221,7 @@ public class StatementAndFinancialInstrumentDetails {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getStmtDt() {
+    public LocalDate getStmtDt() {
         return stmtDt;
     }
 
@@ -233,7 +233,7 @@ public class StatementAndFinancialInstrumentDetails {
      *     {@link String }
      *     
      */
-    public StatementAndFinancialInstrumentDetails setStmtDt(XMLGregorianCalendar value) {
+    public StatementAndFinancialInstrumentDetails setStmtDt(LocalDate value) {
         this.stmtDt = value;
         return this;
     }

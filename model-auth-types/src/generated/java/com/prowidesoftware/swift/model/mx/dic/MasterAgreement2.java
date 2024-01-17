@@ -1,12 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.Year;
+import com.prowidesoftware.swift.model.mx.adapters.IsoYearAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -28,9 +30,10 @@ public class MasterAgreement2 {
 
     @XmlElement(name = "Tp")
     protected String tp;
-    @XmlElement(name = "Vrsn")
+    @XmlElement(name = "Vrsn", type = String.class)
+    @XmlJavaTypeAdapter(IsoYearAdapter.class)
     @XmlSchemaType(name = "gYear")
-    protected XMLGregorianCalendar vrsn;
+    protected Year vrsn;
 
     /**
      * Gets the value of the tp property.
@@ -62,10 +65,10 @@ public class MasterAgreement2 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getVrsn() {
+    public Year getVrsn() {
         return vrsn;
     }
 
@@ -74,10 +77,10 @@ public class MasterAgreement2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public MasterAgreement2 setVrsn(XMLGregorianCalendar value) {
+    public MasterAgreement2 setVrsn(Year value) {
         this.vrsn = value;
         return this;
     }

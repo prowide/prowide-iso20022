@@ -1,34 +1,33 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for ChargeType8Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ChargeType8Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="SIGN"/&gt;
- *     &lt;enumeration value="STDE"/&gt;
- *     &lt;enumeration value="STOR"/&gt;
- *     &lt;enumeration value="PACK"/&gt;
- *     &lt;enumeration value="PICK"/&gt;
- *     &lt;enumeration value="DNGR"/&gt;
- *     &lt;enumeration value="SECU"/&gt;
- *     &lt;enumeration value="INSU"/&gt;
- *     &lt;enumeration value="COLF"/&gt;
- *     &lt;enumeration value="CHOR"/&gt;
- *     &lt;enumeration value="CHDE"/&gt;
- *     &lt;enumeration value="AIRF"/&gt;
- *     &lt;enumeration value="TRPT"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ChargeType8Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="SIGN"/>
+ *     <enumeration value="STDE"/>
+ *     <enumeration value="STOR"/>
+ *     <enumeration value="PACK"/>
+ *     <enumeration value="PICK"/>
+ *     <enumeration value="DNGR"/>
+ *     <enumeration value="SECU"/>
+ *     <enumeration value="INSU"/>
+ *     <enumeration value="COLF"/>
+ *     <enumeration value="CHOR"/>
+ *     <enumeration value="CHDE"/>
+ *     <enumeration value="AIRF"/>
+ *     <enumeration value="TRPT"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ChargeType8Code")

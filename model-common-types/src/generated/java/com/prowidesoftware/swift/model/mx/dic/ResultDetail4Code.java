@@ -1,115 +1,114 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for ResultDetail4Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ResultDetail4Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ACTF"/&gt;
- *     &lt;enumeration value="ACQS"/&gt;
- *     &lt;enumeration value="AMLV"/&gt;
- *     &lt;enumeration value="AMTA"/&gt;
- *     &lt;enumeration value="AUTH"/&gt;
- *     &lt;enumeration value="BANK"/&gt;
- *     &lt;enumeration value="CRDR"/&gt;
- *     &lt;enumeration value="CRDF"/&gt;
- *     &lt;enumeration value="ACTC"/&gt;
- *     &lt;enumeration value="CTVG"/&gt;
- *     &lt;enumeration value="DBER"/&gt;
- *     &lt;enumeration value="FEES"/&gt;
- *     &lt;enumeration value="TXNL"/&gt;
- *     &lt;enumeration value="AMTD"/&gt;
- *     &lt;enumeration value="NMBD"/&gt;
- *     &lt;enumeration value="CRDX"/&gt;
- *     &lt;enumeration value="FDCL"/&gt;
- *     &lt;enumeration value="FMTR"/&gt;
- *     &lt;enumeration value="TXNG"/&gt;
- *     &lt;enumeration value="FNDI"/&gt;
- *     &lt;enumeration value="ACPI"/&gt;
- *     &lt;enumeration value="AMTI"/&gt;
- *     &lt;enumeration value="ADDI"/&gt;
- *     &lt;enumeration value="BRHI"/&gt;
- *     &lt;enumeration value="CHDI"/&gt;
- *     &lt;enumeration value="CRDI"/&gt;
- *     &lt;enumeration value="CTFV"/&gt;
- *     &lt;enumeration value="AMTO"/&gt;
- *     &lt;enumeration value="PINV"/&gt;
- *     &lt;enumeration value="TKKO"/&gt;
- *     &lt;enumeration value="SGNI"/&gt;
- *     &lt;enumeration value="TKID"/&gt;
- *     &lt;enumeration value="TXNV"/&gt;
- *     &lt;enumeration value="DATI"/&gt;
- *     &lt;enumeration value="ISSP"/&gt;
- *     &lt;enumeration value="ISSF"/&gt;
- *     &lt;enumeration value="ISSO"/&gt;
- *     &lt;enumeration value="ISST"/&gt;
- *     &lt;enumeration value="ISSU"/&gt;
- *     &lt;enumeration value="KEYS"/&gt;
- *     &lt;enumeration value="LBLA"/&gt;
- *     &lt;enumeration value="CRDL"/&gt;
- *     &lt;enumeration value="MACR"/&gt;
- *     &lt;enumeration value="MACK"/&gt;
- *     &lt;enumeration value="ICCM"/&gt;
- *     &lt;enumeration value="PINN"/&gt;
- *     &lt;enumeration value="CRDA"/&gt;
- *     &lt;enumeration value="LBLU"/&gt;
- *     &lt;enumeration value="PINA"/&gt;
- *     &lt;enumeration value="NPRA"/&gt;
- *     &lt;enumeration value="OFFL"/&gt;
- *     &lt;enumeration value="ONLP"/&gt;
- *     &lt;enumeration value="NPRC"/&gt;
- *     &lt;enumeration value="TXNM"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="BALO"/&gt;
- *     &lt;enumeration value="SEQO"/&gt;
- *     &lt;enumeration value="PINC"/&gt;
- *     &lt;enumeration value="PIND"/&gt;
- *     &lt;enumeration value="PINS"/&gt;
- *     &lt;enumeration value="PINX"/&gt;
- *     &lt;enumeration value="PINE"/&gt;
- *     &lt;enumeration value="QMAX"/&gt;
- *     &lt;enumeration value="RECD"/&gt;
- *     &lt;enumeration value="CRDT"/&gt;
- *     &lt;enumeration value="SECV"/&gt;
- *     &lt;enumeration value="SRVU"/&gt;
- *     &lt;enumeration value="SFWE"/&gt;
- *     &lt;enumeration value="SPCC"/&gt;
- *     &lt;enumeration value="CRDS"/&gt;
- *     &lt;enumeration value="SRCH"/&gt;
- *     &lt;enumeration value="CNTC"/&gt;
- *     &lt;enumeration value="FRDS"/&gt;
- *     &lt;enumeration value="SYSP"/&gt;
- *     &lt;enumeration value="SYSM"/&gt;
- *     &lt;enumeration value="TRMI"/&gt;
- *     &lt;enumeration value="ACTT"/&gt;
- *     &lt;enumeration value="TTLV"/&gt;
- *     &lt;enumeration value="TXNU"/&gt;
- *     &lt;enumeration value="TXND"/&gt;
- *     &lt;enumeration value="ORGF"/&gt;
- *     &lt;enumeration value="UNBO"/&gt;
- *     &lt;enumeration value="UNBP"/&gt;
- *     &lt;enumeration value="UNBC"/&gt;
- *     &lt;enumeration value="CMKY"/&gt;
- *     &lt;enumeration value="CRDU"/&gt;
- *     &lt;enumeration value="SVSU"/&gt;
- *     &lt;enumeration value="VNDR"/&gt;
- *     &lt;enumeration value="VNDF"/&gt;
- *     &lt;enumeration value="AMTW"/&gt;
- *     &lt;enumeration value="NMBW"/&gt;
- *     &lt;enumeration value="CRDW"/&gt;
- *     &lt;enumeration value="MEDI"/&gt;
- *     &lt;enumeration value="SRVI"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ResultDetail4Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ACTF"/>
+ *     <enumeration value="ACQS"/>
+ *     <enumeration value="AMLV"/>
+ *     <enumeration value="AMTA"/>
+ *     <enumeration value="AUTH"/>
+ *     <enumeration value="BANK"/>
+ *     <enumeration value="CRDR"/>
+ *     <enumeration value="CRDF"/>
+ *     <enumeration value="ACTC"/>
+ *     <enumeration value="CTVG"/>
+ *     <enumeration value="DBER"/>
+ *     <enumeration value="FEES"/>
+ *     <enumeration value="TXNL"/>
+ *     <enumeration value="AMTD"/>
+ *     <enumeration value="NMBD"/>
+ *     <enumeration value="CRDX"/>
+ *     <enumeration value="FDCL"/>
+ *     <enumeration value="FMTR"/>
+ *     <enumeration value="TXNG"/>
+ *     <enumeration value="FNDI"/>
+ *     <enumeration value="ACPI"/>
+ *     <enumeration value="AMTI"/>
+ *     <enumeration value="ADDI"/>
+ *     <enumeration value="BRHI"/>
+ *     <enumeration value="CHDI"/>
+ *     <enumeration value="CRDI"/>
+ *     <enumeration value="CTFV"/>
+ *     <enumeration value="AMTO"/>
+ *     <enumeration value="PINV"/>
+ *     <enumeration value="TKKO"/>
+ *     <enumeration value="SGNI"/>
+ *     <enumeration value="TKID"/>
+ *     <enumeration value="TXNV"/>
+ *     <enumeration value="DATI"/>
+ *     <enumeration value="ISSP"/>
+ *     <enumeration value="ISSF"/>
+ *     <enumeration value="ISSO"/>
+ *     <enumeration value="ISST"/>
+ *     <enumeration value="ISSU"/>
+ *     <enumeration value="KEYS"/>
+ *     <enumeration value="LBLA"/>
+ *     <enumeration value="CRDL"/>
+ *     <enumeration value="MACR"/>
+ *     <enumeration value="MACK"/>
+ *     <enumeration value="ICCM"/>
+ *     <enumeration value="PINN"/>
+ *     <enumeration value="CRDA"/>
+ *     <enumeration value="LBLU"/>
+ *     <enumeration value="PINA"/>
+ *     <enumeration value="NPRA"/>
+ *     <enumeration value="OFFL"/>
+ *     <enumeration value="ONLP"/>
+ *     <enumeration value="NPRC"/>
+ *     <enumeration value="TXNM"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="BALO"/>
+ *     <enumeration value="SEQO"/>
+ *     <enumeration value="PINC"/>
+ *     <enumeration value="PIND"/>
+ *     <enumeration value="PINS"/>
+ *     <enumeration value="PINX"/>
+ *     <enumeration value="PINE"/>
+ *     <enumeration value="QMAX"/>
+ *     <enumeration value="RECD"/>
+ *     <enumeration value="CRDT"/>
+ *     <enumeration value="SECV"/>
+ *     <enumeration value="SRVU"/>
+ *     <enumeration value="SFWE"/>
+ *     <enumeration value="SPCC"/>
+ *     <enumeration value="CRDS"/>
+ *     <enumeration value="SRCH"/>
+ *     <enumeration value="CNTC"/>
+ *     <enumeration value="FRDS"/>
+ *     <enumeration value="SYSP"/>
+ *     <enumeration value="SYSM"/>
+ *     <enumeration value="TRMI"/>
+ *     <enumeration value="ACTT"/>
+ *     <enumeration value="TTLV"/>
+ *     <enumeration value="TXNU"/>
+ *     <enumeration value="TXND"/>
+ *     <enumeration value="ORGF"/>
+ *     <enumeration value="UNBO"/>
+ *     <enumeration value="UNBP"/>
+ *     <enumeration value="UNBC"/>
+ *     <enumeration value="CMKY"/>
+ *     <enumeration value="CRDU"/>
+ *     <enumeration value="SVSU"/>
+ *     <enumeration value="VNDR"/>
+ *     <enumeration value="VNDF"/>
+ *     <enumeration value="AMTW"/>
+ *     <enumeration value="NMBW"/>
+ *     <enumeration value="CRDW"/>
+ *     <enumeration value="MEDI"/>
+ *     <enumeration value="SRVI"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ResultDetail4Code")

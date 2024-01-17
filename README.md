@@ -31,17 +31,6 @@ Apache License 2.0
 
 SWIFT is a trademark of S.W.I.F.T. SCRL. (www.swift.com)
 
-### Dependencies
-
-This project depends on https://github.com/prowide/prowide-core
-
-The project also needs the **javax.xml.bind** in runtime. Until Java 8 this package is part of the JDK. 
-If you use **Java above 8** you might need to activate the required modules in the JDK; or add these dependencies (or an equivalent implementation) to your application:
-```
-implementation 'javax.xml.bind:jaxb-api:2.3.1'
-implementation 'com.sun.xml.bind:jaxb-impl:2.3.3'
-```
-
 ### Build
 
 For better build performance, local configurations can be setup in a gradle.properties file such as:

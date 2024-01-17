@@ -4,10 +4,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -213,8 +213,8 @@ public class Transaction96 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the clrBtchData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the clrBtchData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -228,10 +228,12 @@ public class Transaction96 {
      * {@link ClearingBatchData1 }
      * 
      * 
+     * @return
+     *     The value of the clrBtchData property.
      */
     public List<ClearingBatchData1> getClrBtchData() {
         if (clrBtchData == null) {
-            clrBtchData = new ArrayList<ClearingBatchData1>();
+            clrBtchData = new ArrayList<>();
         }
         return this.clrBtchData;
     }
@@ -267,8 +269,8 @@ public class Transaction96 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the agtData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the agtData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -282,10 +284,12 @@ public class Transaction96 {
      * {@link AdditionalInformation21 }
      * 
      * 
+     * @return
+     *     The value of the agtData property.
      */
     public List<AdditionalInformation21> getAgtData() {
         if (agtData == null) {
-            agtData = new ArrayList<AdditionalInformation21>();
+            agtData = new ArrayList<>();
         }
         return this.agtData;
     }
@@ -296,8 +300,8 @@ public class Transaction96 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rcrd property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rcrd property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -311,10 +315,12 @@ public class Transaction96 {
      * {@link Record1 }
      * 
      * 
+     * @return
+     *     The value of the rcrd property.
      */
     public List<Record1> getRcrd() {
         if (rcrd == null) {
-            rcrd = new ArrayList<Record1>();
+            rcrd = new ArrayList<>();
         }
         return this.rcrd;
     }
@@ -325,8 +331,8 @@ public class Transaction96 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -340,10 +346,12 @@ public class Transaction96 {
      * {@link AdditionalData1 }
      * 
      * 
+     * @return
+     *     The value of the addtlData property.
      */
     public List<AdditionalData1> getAddtlData() {
         if (addtlData == null) {
-            addtlData = new ArrayList<AdditionalData1>();
+            addtlData = new ArrayList<>();
         }
         return this.addtlData;
     }

@@ -1,14 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.LocalDate;
+import java.time.YearMonth;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoYearMonthAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -32,10 +34,11 @@ public class DatePeriod1Choice {
     @XmlElement(name = "Dt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar dt;
-    @XmlElement(name = "DtMnth")
+    protected LocalDate dt;
+    @XmlElement(name = "DtMnth", type = String.class)
+    @XmlJavaTypeAdapter(IsoYearMonthAdapter.class)
     @XmlSchemaType(name = "gYearMonth")
-    protected XMLGregorianCalendar dtMnth;
+    protected YearMonth dtMnth;
     @XmlElement(name = "FrDtToDt")
     protected Period2 frDtToDt;
 
@@ -47,7 +50,7 @@ public class DatePeriod1Choice {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDt() {
+    public LocalDate getDt() {
         return dt;
     }
 
@@ -59,7 +62,7 @@ public class DatePeriod1Choice {
      *     {@link String }
      *     
      */
-    public DatePeriod1Choice setDt(XMLGregorianCalendar value) {
+    public DatePeriod1Choice setDt(LocalDate value) {
         this.dt = value;
         return this;
     }
@@ -69,10 +72,10 @@ public class DatePeriod1Choice {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDtMnth() {
+    public YearMonth getDtMnth() {
         return dtMnth;
     }
 
@@ -81,10 +84,10 @@ public class DatePeriod1Choice {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public DatePeriod1Choice setDtMnth(XMLGregorianCalendar value) {
+    public DatePeriod1Choice setDtMnth(YearMonth value) {
         this.dtMnth = value;
         return this;
     }

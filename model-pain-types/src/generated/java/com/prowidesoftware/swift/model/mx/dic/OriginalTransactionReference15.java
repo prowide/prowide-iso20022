@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -52,15 +52,15 @@ public class OriginalTransactionReference15 {
     @XmlElement(name = "IntrBkSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar intrBkSttlmDt;
+    protected LocalDate intrBkSttlmDt;
     @XmlElement(name = "ReqdColltnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar reqdColltnDt;
+    protected LocalDate reqdColltnDt;
     @XmlElement(name = "ReqdExctnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar reqdExctnDt;
+    protected LocalDate reqdExctnDt;
     @XmlElement(name = "CdtrSchmeId")
     protected PartyIdentification43 cdtrSchmeId;
     @XmlElement(name = "SttlmInf")
@@ -149,7 +149,7 @@ public class OriginalTransactionReference15 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getIntrBkSttlmDt() {
+    public LocalDate getIntrBkSttlmDt() {
         return intrBkSttlmDt;
     }
 
@@ -161,7 +161,7 @@ public class OriginalTransactionReference15 {
      *     {@link String }
      *     
      */
-    public OriginalTransactionReference15 setIntrBkSttlmDt(XMLGregorianCalendar value) {
+    public OriginalTransactionReference15 setIntrBkSttlmDt(LocalDate value) {
         this.intrBkSttlmDt = value;
         return this;
     }
@@ -174,7 +174,7 @@ public class OriginalTransactionReference15 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getReqdColltnDt() {
+    public LocalDate getReqdColltnDt() {
         return reqdColltnDt;
     }
 
@@ -186,7 +186,7 @@ public class OriginalTransactionReference15 {
      *     {@link String }
      *     
      */
-    public OriginalTransactionReference15 setReqdColltnDt(XMLGregorianCalendar value) {
+    public OriginalTransactionReference15 setReqdColltnDt(LocalDate value) {
         this.reqdColltnDt = value;
         return this;
     }
@@ -199,7 +199,7 @@ public class OriginalTransactionReference15 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getReqdExctnDt() {
+    public LocalDate getReqdExctnDt() {
         return reqdExctnDt;
     }
 
@@ -211,7 +211,7 @@ public class OriginalTransactionReference15 {
      *     {@link String }
      *     
      */
-    public OriginalTransactionReference15 setReqdExctnDt(XMLGregorianCalendar value) {
+    public OriginalTransactionReference15 setReqdExctnDt(LocalDate value) {
         this.reqdExctnDt = value;
         return this;
     }

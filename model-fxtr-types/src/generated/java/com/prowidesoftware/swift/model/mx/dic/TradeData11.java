@@ -1,15 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -48,15 +49,15 @@ public class TradeData11 {
     @XmlElement(name = "CurSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar curSttlmDt;
+    protected LocalDate curSttlmDt;
     @XmlElement(name = "NewSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar newSttlmDt;
+    protected LocalDate newSttlmDt;
     @XmlElement(name = "CurStsDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar curStsDtTm;
+    protected OffsetDateTime curStsDtTm;
     @XmlElement(name = "PdctTp")
     protected String pdctTp;
     @XmlElement(name = "SttlmSsnIdr")
@@ -172,7 +173,7 @@ public class TradeData11 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getCurSttlmDt() {
+    public LocalDate getCurSttlmDt() {
         return curSttlmDt;
     }
 
@@ -184,7 +185,7 @@ public class TradeData11 {
      *     {@link String }
      *     
      */
-    public TradeData11 setCurSttlmDt(XMLGregorianCalendar value) {
+    public TradeData11 setCurSttlmDt(LocalDate value) {
         this.curSttlmDt = value;
         return this;
     }
@@ -197,7 +198,7 @@ public class TradeData11 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getNewSttlmDt() {
+    public LocalDate getNewSttlmDt() {
         return newSttlmDt;
     }
 
@@ -209,7 +210,7 @@ public class TradeData11 {
      *     {@link String }
      *     
      */
-    public TradeData11 setNewSttlmDt(XMLGregorianCalendar value) {
+    public TradeData11 setNewSttlmDt(LocalDate value) {
         this.newSttlmDt = value;
         return this;
     }
@@ -222,7 +223,7 @@ public class TradeData11 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getCurStsDtTm() {
+    public OffsetDateTime getCurStsDtTm() {
         return curStsDtTm;
     }
 
@@ -234,7 +235,7 @@ public class TradeData11 {
      *     {@link String }
      *     
      */
-    public TradeData11 setCurStsDtTm(XMLGregorianCalendar value) {
+    public TradeData11 setCurStsDtTm(OffsetDateTime value) {
         this.curStsDtTm = value;
         return this;
     }

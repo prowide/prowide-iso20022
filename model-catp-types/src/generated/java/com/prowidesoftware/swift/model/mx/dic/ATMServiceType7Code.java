@@ -1,35 +1,34 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for ATMServiceType7Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ATMServiceType7Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CHSN"/&gt;
- *     &lt;enumeration value="PINC"/&gt;
- *     &lt;enumeration value="PINR"/&gt;
- *     &lt;enumeration value="PINU"/&gt;
- *     &lt;enumeration value="PATH"/&gt;
- *     &lt;enumeration value="PRFL"/&gt;
- *     &lt;enumeration value="STDR"/&gt;
- *     &lt;enumeration value="SPRV"/&gt;
- *     &lt;enumeration value="TRFC"/&gt;
- *     &lt;enumeration value="TRFI"/&gt;
- *     &lt;enumeration value="DPSN"/&gt;
- *     &lt;enumeration value="DPSV"/&gt;
- *     &lt;enumeration value="MCHG"/&gt;
- *     &lt;enumeration value="TRFP"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ATMServiceType7Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CHSN"/>
+ *     <enumeration value="PINC"/>
+ *     <enumeration value="PINR"/>
+ *     <enumeration value="PINU"/>
+ *     <enumeration value="PATH"/>
+ *     <enumeration value="PRFL"/>
+ *     <enumeration value="STDR"/>
+ *     <enumeration value="SPRV"/>
+ *     <enumeration value="TRFC"/>
+ *     <enumeration value="TRFI"/>
+ *     <enumeration value="DPSN"/>
+ *     <enumeration value="DPSV"/>
+ *     <enumeration value="MCHG"/>
+ *     <enumeration value="TRFP"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ATMServiceType7Code")

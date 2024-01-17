@@ -1,15 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.LocalDate;
+import java.time.OffsetTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -35,11 +36,11 @@ public class CorrectionIdentification1 {
     @XmlElement(name = "Dt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar dt;
+    protected LocalDate dt;
     @XmlElement(name = "Tm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected XMLGregorianCalendar tm;
+    protected OffsetTime tm;
 
     /**
      * Gets the value of the ind property.
@@ -74,7 +75,7 @@ public class CorrectionIdentification1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDt() {
+    public LocalDate getDt() {
         return dt;
     }
 
@@ -86,7 +87,7 @@ public class CorrectionIdentification1 {
      *     {@link String }
      *     
      */
-    public CorrectionIdentification1 setDt(XMLGregorianCalendar value) {
+    public CorrectionIdentification1 setDt(LocalDate value) {
         this.dt = value;
         return this;
     }
@@ -99,7 +100,7 @@ public class CorrectionIdentification1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getTm() {
+    public OffsetTime getTm() {
         return tm;
     }
 
@@ -111,7 +112,7 @@ public class CorrectionIdentification1 {
      *     {@link String }
      *     
      */
-    public CorrectionIdentification1 setTm(XMLGregorianCalendar value) {
+    public CorrectionIdentification1 setTm(OffsetTime value) {
         this.tm = value;
         return this;
     }

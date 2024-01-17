@@ -1,30 +1,29 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for SettlementStatus1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="SettlementStatus1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="AAUT"/&gt;
- *     &lt;enumeration value="ASTL"/&gt;
- *     &lt;enumeration value="STCR"/&gt;
- *     &lt;enumeration value="RJCT"/&gt;
- *     &lt;enumeration value="SPLT"/&gt;
- *     &lt;enumeration value="PSTL"/&gt;
- *     &lt;enumeration value="STLD"/&gt;
- *     &lt;enumeration value="ACCF"/&gt;
- *     &lt;enumeration value="ARCF"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="SettlementStatus1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="AAUT"/>
+ *     <enumeration value="ASTL"/>
+ *     <enumeration value="STCR"/>
+ *     <enumeration value="RJCT"/>
+ *     <enumeration value="SPLT"/>
+ *     <enumeration value="PSTL"/>
+ *     <enumeration value="STLD"/>
+ *     <enumeration value="ACCF"/>
+ *     <enumeration value="ARCF"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "SettlementStatus1Code")

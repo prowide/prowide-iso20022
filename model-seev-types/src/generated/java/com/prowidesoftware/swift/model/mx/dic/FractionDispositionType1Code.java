@@ -1,27 +1,26 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for FractionDispositionType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="FractionDispositionType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="BUYU"/&gt;
- *     &lt;enumeration value="CINL"/&gt;
- *     &lt;enumeration value="DIST"/&gt;
- *     &lt;enumeration value="RDDN"/&gt;
- *     &lt;enumeration value="RDUP"/&gt;
- *     &lt;enumeration value="STAN"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="FractionDispositionType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="BUYU"/>
+ *     <enumeration value="CINL"/>
+ *     <enumeration value="DIST"/>
+ *     <enumeration value="RDDN"/>
+ *     <enumeration value="RDUP"/>
+ *     <enumeration value="STAN"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "FractionDispositionType1Code")

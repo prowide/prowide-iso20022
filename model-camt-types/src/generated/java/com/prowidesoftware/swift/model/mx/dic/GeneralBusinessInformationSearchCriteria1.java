@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -40,8 +40,8 @@ public class GeneralBusinessInformationSearchCriteria1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ref property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ref property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -55,10 +55,12 @@ public class GeneralBusinessInformationSearchCriteria1 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the ref property.
      */
     public List<String> getRef() {
         if (ref == null) {
-            ref = new ArrayList<String>();
+            ref = new ArrayList<>();
         }
         return this.ref;
     }
@@ -69,8 +71,8 @@ public class GeneralBusinessInformationSearchCriteria1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sbjt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sbjt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -84,10 +86,12 @@ public class GeneralBusinessInformationSearchCriteria1 {
      * {@link CharacterSearch1Choice }
      * 
      * 
+     * @return
+     *     The value of the sbjt property.
      */
     public List<CharacterSearch1Choice> getSbjt() {
         if (sbjt == null) {
-            sbjt = new ArrayList<CharacterSearch1Choice>();
+            sbjt = new ArrayList<>();
         }
         return this.sbjt;
     }
@@ -98,8 +102,8 @@ public class GeneralBusinessInformationSearchCriteria1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the qlfr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the qlfr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -113,10 +117,12 @@ public class GeneralBusinessInformationSearchCriteria1 {
      * {@link InformationQualifierType1 }
      * 
      * 
+     * @return
+     *     The value of the qlfr property.
      */
     public List<InformationQualifierType1> getQlfr() {
         if (qlfr == null) {
-            qlfr = new ArrayList<InformationQualifierType1>();
+            qlfr = new ArrayList<>();
         }
         return this.qlfr;
     }

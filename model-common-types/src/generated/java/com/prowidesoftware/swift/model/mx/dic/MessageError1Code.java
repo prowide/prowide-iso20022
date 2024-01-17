@@ -1,39 +1,38 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for MessageError1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="MessageError1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="IDEF"/&gt;
- *     &lt;enumeration value="IDEL"/&gt;
- *     &lt;enumeration value="IDEV"/&gt;
- *     &lt;enumeration value="INME"/&gt;
- *     &lt;enumeration value="INMF"/&gt;
- *     &lt;enumeration value="MEPE"/&gt;
- *     &lt;enumeration value="OTHP"/&gt;
- *     &lt;enumeration value="PRVE"/&gt;
- *     &lt;enumeration value="RDEM"/&gt;
- *     &lt;enumeration value="SECU"/&gt;
- *     &lt;enumeration value="UDFD"/&gt;
- *     &lt;enumeration value="OTHN"/&gt;
- *     &lt;enumeration value="ITDE"/&gt;
- *     &lt;enumeration value="DUME"/&gt;
- *     &lt;enumeration value="IDWM"/&gt;
- *     &lt;enumeration value="IDRM"/&gt;
- *     &lt;enumeration value="IBAT"/&gt;
- *     &lt;enumeration value="ICOL"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="MessageError1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="IDEF"/>
+ *     <enumeration value="IDEL"/>
+ *     <enumeration value="IDEV"/>
+ *     <enumeration value="INME"/>
+ *     <enumeration value="INMF"/>
+ *     <enumeration value="MEPE"/>
+ *     <enumeration value="OTHP"/>
+ *     <enumeration value="PRVE"/>
+ *     <enumeration value="RDEM"/>
+ *     <enumeration value="SECU"/>
+ *     <enumeration value="UDFD"/>
+ *     <enumeration value="OTHN"/>
+ *     <enumeration value="ITDE"/>
+ *     <enumeration value="DUME"/>
+ *     <enumeration value="IDWM"/>
+ *     <enumeration value="IDRM"/>
+ *     <enumeration value="IBAT"/>
+ *     <enumeration value="ICOL"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "MessageError1Code")

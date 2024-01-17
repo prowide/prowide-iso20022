@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -63,8 +63,8 @@ public class ManagementPlanContent4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the keyNcphrmntCert property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the keyNcphrmntCert property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -77,10 +77,12 @@ public class ManagementPlanContent4 {
      * Objects of the following type(s) are allowed in the list
      * byte[]
      * 
+     * @return
+     *     The value of the keyNcphrmntCert property.
      */
     public List<byte[]> getKeyNcphrmntCert() {
         if (keyNcphrmntCert == null) {
-            keyNcphrmntCert = new ArrayList<byte[]>();
+            keyNcphrmntCert = new ArrayList<>();
         }
         return this.keyNcphrmntCert;
     }
@@ -91,8 +93,8 @@ public class ManagementPlanContent4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the actn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the actn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -106,10 +108,12 @@ public class ManagementPlanContent4 {
      * {@link TMSAction4 }
      * 
      * 
+     * @return
+     *     The value of the actn property.
      */
     public List<TMSAction4> getActn() {
         if (actn == null) {
-            actn = new ArrayList<TMSAction4>();
+            actn = new ArrayList<>();
         }
         return this.actn;
     }
