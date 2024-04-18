@@ -109,9 +109,9 @@ subprojects {
 	dependencies {
 		implementation 'org.apache.commons:commons-lang3:3.12.0'
 		implementation 'com.google.code.gson:gson:2.9.0'
-		implementation 'com.sun.xml.bind:jaxb-impl:4.0.2'
+		implementation 'com.sun.xml.bind:jaxb-impl:4.0.5'
 		// bind-api is included transitively by jaxb-impl
-		// implementation 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.0'
+		// implementation 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.2'
 	}
 
 	tasks.withType(Jar) {
@@ -136,9 +136,9 @@ configure(subprojects.findAll {it.name.endsWith('-mx')}) {
 		implementation 'org.apache.commons:commons-lang3:3.12.0'
 		implementation 'com.google.code.gson:gson:2.9.0'
 
-		implementation 'com.sun.xml.bind:jaxb-impl:4.0.2'
+		implementation 'com.sun.xml.bind:jaxb-impl:4.0.5'
 		// bind-api is included transitively by jaxb-impl
-		// implementation 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.0'
+		// implementation 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.2'
 
 		compileOnly 'javax.persistence:javax.persistence-api:2.2'
 	}
@@ -345,9 +345,9 @@ dependencies {
 	//implementation 'com.google.code.gson:gson:2.9.0'
 
 	// jaxb is required because it is no longer included in the JDK
-	implementation 'com.sun.xml.bind:jaxb-impl:4.0.2'
+	implementation 'com.sun.xml.bind:jaxb-impl:4.0.5'
 	// bind-api is included transitively by jaxb-impl
-	// implementation 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.0'
+	// implementation 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.2'
 }
 
 project.ext {
