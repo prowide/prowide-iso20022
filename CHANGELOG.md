@@ -1,6 +1,6 @@
 # Prowide ISO 20022 - CHANGELOG
 
-#### 10.1.5 - SNAPSHOT
+#### 10.1.5 - April 2024
   * Update jaxb dependency from com.sun.xml.bind:jaxb-impl:4.0.2 to 4.0.5 containing several jaxb bugfixes
 
 #### 10.1.4 - January 2024
