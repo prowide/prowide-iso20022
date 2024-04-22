@@ -23,7 +23,7 @@ archivesBaseName = 'pw-iso20022'
 group 'com.prowidesoftware'
 
 project.ext {
-	SRU = 'SRU2023'
+	SRU = 'SRU2024'
 }
 
 scmVersion {
