@@ -16,9 +16,6 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.ProwideException;
-import com.prowidesoftware.deprecation.DeprecationUtils;
-import com.prowidesoftware.deprecation.ProwideDeprecated;
-import com.prowidesoftware.deprecation.TargetYear;
 import com.prowidesoftware.swift.model.MxId;
 import com.prowidesoftware.swift.model.mx.dic.*;
 
@@ -198,20 +195,6 @@ public class AppHdrFactory {
         h.setCrDate(XMLGregorianCalendarUtils.now());
 
         return h;
-    }
-
-    /**
-     * @since 9.1.2
-     * @deprecated use {@link #createAppHdr(AppHdrType, String, String, String, MxId)} instead
-     */
-    @ProwideDeprecated(phase4 = TargetYear.SRU2024)
-    public static AppHdr createLegacyAppHdr(
-            AppHdrType type, final String sender, final String receiver, final String reference, final MxId id) {
-        DeprecationUtils.phase3(
-                AppHdrFactory.class,
-                "createLegacyAppHdr(AppHdrType, String, String, String, MxId)",
-                "Use createAppHdr(AppHdrType, String, String, String, MxId) instead.");
-        return createAppHdr(type, sender, receiver, reference, id);
     }
 
     /**

@@ -16,8 +16,6 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.ProwideException;
-import com.prowidesoftware.deprecation.ProwideDeprecated;
-import com.prowidesoftware.deprecation.TargetYear;
 import com.prowidesoftware.swift.model.DistinguishedName;
 import com.prowidesoftware.swift.model.MxId;
 import com.prowidesoftware.swift.utils.SafeXmlUtils;
@@ -60,15 +58,6 @@ public class MxParseUtils {
         InputSource documentInputSource = new InputSource(new StringReader(xml));
 
         return new SAXSource(documentFilter, documentInputSource);
-    }
-
-    /**
-     * @deprecated use {@link #parseSAXSource(SAXSource, Class, Class[], MxReadParams)} instead
-     */
-    @Deprecated
-    @ProwideDeprecated(phase4 = TargetYear.SRU2024)
-    static Object parseSAXSource(final SAXSource source, final Class targetClass, final Class<?>[] classes) {
-        return parseSAXSource(source, targetClass, classes, new MxReadParams());
     }
 
     /**
@@ -136,15 +125,6 @@ public class MxParseUtils {
         }
         log.severe("An error occurred while reading XML: " + e.getMessage());
         e.printStackTrace();
-    }
-
-    /**
-     * @deprecated use {@link #parse(Class, String, Class[], String, MxReadParams)} instead
-     */
-    @Deprecated
-    @ProwideDeprecated(phase4 = TargetYear.SRU2024)
-    static Object parse(final Class targetClass, final String xml, final Class<?>[] classes, final String localName) {
-        return parse(targetClass, xml, classes, localName, new MxReadParams());
     }
 
     /**

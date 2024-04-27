@@ -28,25 +28,25 @@ public enum ConditionallyAcceptedStatusReason1Code {
 
 
     /**
-     * Specifies that the order is accepted for further processing but that the execution of the order is pending until there is enough cash in the account to pay the subscription.
+     * Order is accepted for further processing but the execution of the order is pending until there is enough cash in the account to pay the subscription.
      * 
      */
     AWMO,
 
     /**
-     * Specifies that the order is accepted for further processing but that the execution of the order is pending until there are enough funds in the account to complete the redemption.
+     * Order is accepted for further processing but the execution of the order is pending until there are enough funds in the account to complete it.
      * 
      */
     AWSH,
 
     /**
-     * Specifies that the order is pending until documents are completed and received, eg, legal documents from the successor, legal proceeds because of bankruptcy, missing signature.
+     * Order is pending until documents are completed and received, eg, legal documents from the successor, legal proceeds because of bankruptcy, missing signature.
      * 
      */
     DOCC,
 
     /**
-     * Another reason for the status conditionally accepted.
+     * Another reason for the conditionally accepted status.
      * 
      */
     OTHR;

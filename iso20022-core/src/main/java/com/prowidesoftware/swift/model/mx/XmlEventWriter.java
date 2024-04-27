@@ -15,9 +15,6 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
-import com.prowidesoftware.deprecation.DeprecationUtils;
-import com.prowidesoftware.deprecation.ProwideDeprecated;
-import com.prowidesoftware.deprecation.TargetYear;
 import java.io.IOException;
 import java.io.Writer;
 import java.util.Map;
@@ -54,20 +51,6 @@ public final class XmlEventWriter implements XMLEventWriter {
     private int previousNestedStartLevel;
     private XMLEvent previousEvent;
     private EscapeHandler escapeHandler;
-
-    /**
-     * @deprecated use {@link #XmlEventWriter(Writer, String, boolean, String, EscapeHandler, String)} instead
-     */
-    @Deprecated
-    @ProwideDeprecated(phase4 = TargetYear.SRU2024)
-    public XmlEventWriter(
-            Writer baos, final String defaultPrefix, boolean includeXMLDeclaration, final String rootElement) {
-        this(baos, defaultPrefix, includeXMLDeclaration, rootElement, null, null);
-        DeprecationUtils.phase3(
-                XmlEventWriter.class,
-                "XmlEventWriter(Writer, String, boolean, String)",
-                "Use XmlEventWriter(Writer, String, boolean, String, EscapeHandler) instead");
-    }
 
     /**
      * @param baos                  output buffer to write

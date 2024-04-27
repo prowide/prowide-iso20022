@@ -127,16 +127,16 @@ public interface AppHdr {
      * @deprecated use {@link #xml(MxWriteParams)} instead
      */
     @Deprecated
-    @ProwideDeprecated(phase3 = TargetYear.SRU2024)
+    @ProwideDeprecated(phase4 = TargetYear.SRU2025)
     String xml(final String prefix, boolean includeXMLDeclaration);
 
     /**
      * @deprecated use {@link #xml(MxWriteParams)} instead
      */
     @Deprecated
-    @ProwideDeprecated(phase3 = TargetYear.SRU2024)
+    @ProwideDeprecated(phase4 = TargetYear.SRU2025)
     default String xml(final String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
-        DeprecationUtils.phase2(
+        DeprecationUtils.phase3(
                 AbstractMX.class, "xml(String, boolean, EscapeHandler)", "Use xml(MxWriteParams) instead");
         return xml(prefix, includeXMLDeclaration);
     }

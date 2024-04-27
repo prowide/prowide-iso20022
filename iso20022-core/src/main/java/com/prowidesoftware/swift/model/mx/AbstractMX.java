@@ -26,11 +26,7 @@ import com.prowidesoftware.swift.model.MessageStandardType;
 import com.prowidesoftware.swift.model.MxId;
 import com.prowidesoftware.swift.model.mt.AbstractMT;
 import com.prowidesoftware.swift.utils.Lib;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.StringReader;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
@@ -69,7 +65,7 @@ import org.w3c.dom.ls.LSSerializer;
  */
 public abstract class AbstractMX extends AbstractMessage implements JsonSerializable {
     public static final String DOCUMENT_LOCALNAME = "Document";
-    private static final transient Logger log = Logger.getLogger(AbstractMX.class.getName());
+    private static final Logger log = Logger.getLogger(AbstractMX.class.getName());
     /**
      * Default root element when an MX is serialized as XML including both AppHdr and Document
      *
@@ -97,67 +93,8 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
     }
 
     /**
-     * @deprecated use {@link MxWriteImpl#write(String, AbstractMX, Class[], MxWriteParams)} instead.
-     */
-    @Deprecated
-    @ProwideDeprecated(phase4 = TargetYear.SRU2024)
-    protected static String message(
-            final String namespace,
-            final AbstractMX obj,
-            @SuppressWarnings("rawtypes") final Class[] classes,
-            final String prefix,
-            boolean includeXMLDeclaration) {
-        DeprecationUtils.phase3(
-                AbstractMX.class,
-                "message(String, AbstractMX, Class[], String, boolean)",
-                "Use MxWriteImpl.write(String, AbstractMX, Class[], MxWriteParams) instead.");
-        MxWriteParams params = new MxWriteParams();
-        params.prefix = prefix;
-        params.includeXMLDeclaration = includeXMLDeclaration;
-        return MxWriteImpl.write(namespace, obj, classes, params);
-    }
-
-    /**
-     * @deprecated use {@link MxWriteImpl#write(String, AbstractMX, Class[], MxWriteParams)} instead
-     */
-    @Deprecated
-    @ProwideDeprecated(phase4 = TargetYear.SRU2024)
-    protected static String message(
-            final String namespace,
-            final AbstractMX obj,
-            @SuppressWarnings("rawtypes") final Class[] classes,
-            final String prefix,
-            boolean includeXMLDeclaration,
-            EscapeHandler escapeHandler) {
-        DeprecationUtils.phase3(
-                AbstractMX.class,
-                "message(String, AbstractMX, Class[], String, boolean, EscapeHandler)",
-                "Use MxWriteImpl.write(String, AbstractMX, Class[], MxWriteParams) instead.");
-        MxWriteParams params = new MxWriteParams();
-        params.prefix = prefix;
-        params.includeXMLDeclaration = includeXMLDeclaration;
-        params.escapeHandler = escapeHandler;
-        return MxWriteImpl.write(namespace, obj, classes, params);
-    }
-
-    /**
-     * @deprecated use any of the available parse methods instead in either this class or the specific subclasses
-     */
-    @Deprecated
-    @ProwideDeprecated(phase3 = TargetYear.SRU2024)
-    @SuppressWarnings({"rawtypes", "unchecked"})
-    protected static AbstractMX read(
-            final Class<? extends AbstractMX> targetClass, final String xml, final Class[] classes) {
-        DeprecationUtils.phase2(
-                AbstractMX.class,
-                "read(String, Class, String, Class[])",
-                "Use any of the available parse methods instead in either this class or the specific subclasses");
-        return MxReadImpl.parse(targetClass, xml, classes, new MxReadParams());
-    }
-
-    /**
      * Parses the XML string containing the Document and optional AppHdr into a specific instance of MX message object.
-     * The message and header types and version is auto detected.
+     * The message and header types and version is auto-detected.
      *
      * <p>The unmarshaller uses the default type adapters. For more parse options use {@link #parse(String, MxId, MxReadConfiguration)}.
      *
@@ -171,7 +108,7 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
 
     /**
      * Parses the XML string containing the Document and optional AppHdr into a specific instance of MX message object.
-     * The header version, if present, is auto detected from its namespace.
+     * The header version, if present, is auto-detected from its namespace.
      *
      * <p>If the string is empty, does not contain an MX document, the message type cannot be detected or an error
      * occur reading and parsing the message content; this method returns null.
@@ -193,9 +130,9 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
      * @deprecated use Lib.readFile(file) and any parse from String method
      */
     @Deprecated
-    @ProwideDeprecated(phase3 = TargetYear.SRU2024)
+    @ProwideDeprecated(phase4 = TargetYear.SRU2025)
     public static AbstractMX parse(final File file, MxId id) throws IOException {
-        DeprecationUtils.phase2(
+        DeprecationUtils.phase3(
                 AbstractMX.class, "parse(File, MxId)", "Use Lib.readFile(file) and any parse from String method");
         return MxReadImpl.parse(Lib.readFile(file), id, new MxReadParams());
     }
@@ -288,20 +225,6 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
     }
 
     /**
-     * @deprecated use {@link #message(MxWriteConfiguration)} instead
-     */
-    @Deprecated
-    @ProwideDeprecated(phase4 = TargetYear.SRU2024)
-    public String message(final String rootElement, boolean includeXMLDeclaration) {
-        DeprecationUtils.phase3(
-                AbstractMX.class, "message(String, boolean)", "Use message(MxWriteConfiguration) instead");
-        MxWriteConfiguration conf = new MxWriteConfiguration();
-        conf.rootElement = rootElement;
-        conf.includeXMLDeclaration = includeXMLDeclaration;
-        return message(conf);
-    }
-
-    /**
      * Get this message as an XML string.
      *
      * <p>If the business header is set, the created XML will include both the 'AppHdr' and the 'Document' elements,
@@ -385,18 +308,6 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
     public abstract String getNamespace();
 
     /**
-     * @deprecated use {@link #message(MxWriteConfiguration)} instead
-     */
-    @Deprecated
-    @ProwideDeprecated(phase4 = TargetYear.SRU2024)
-    public String message(final String rootElement) {
-        DeprecationUtils.phase3(AbstractMX.class, "message(String)", "Use message(MxWriteConfiguration) instead");
-        MxWriteConfiguration conf = new MxWriteConfiguration();
-        conf.rootElement = rootElement;
-        return message(conf);
-    }
-
-    /**
      * Get this message AppHdr as an XML string.
      *
      * <p>The XML will not include the XML declaration, will bind the namespace to all elements without prefix and will
@@ -409,34 +320,6 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
      */
     public String header() {
         return header(new MxWriteParams());
-    }
-
-    /**
-     * @deprecated use {@link #header(MxWriteParams)} instead
-     */
-    @Deprecated
-    @ProwideDeprecated(phase4 = TargetYear.SRU2024)
-    public String header(final String prefix, boolean includeXMLDeclaration) {
-        DeprecationUtils.phase3(AbstractMX.class, "header(String, boolean)", "Use header(MxWriteParams) instead");
-        MxWriteParams params = new MxWriteParams();
-        params.prefix = prefix;
-        params.includeXMLDeclaration = includeXMLDeclaration;
-        return header(params);
-    }
-
-    /**
-     * @deprecated use {@link #header(MxWriteParams)} instead
-     */
-    @Deprecated
-    @ProwideDeprecated(phase4 = TargetYear.SRU2024)
-    public String header(final String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
-        DeprecationUtils.phase3(
-                AbstractMX.class, "header(String, boolean, EscapeHandler)", "Use header(MxWriteParams) instead");
-        MxWriteParams params = new MxWriteParams();
-        params.prefix = prefix;
-        params.includeXMLDeclaration = includeXMLDeclaration;
-        params.escapeHandler = escapeHandler;
-        return header(params);
     }
 
     /**
@@ -459,19 +342,9 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
      * @deprecated use {@link #document(MxWriteParams)} instead
      */
     @Deprecated
-    @ProwideDeprecated(phase4 = TargetYear.SRU2024)
-    public String document(final String prefix, boolean includeXMLDeclaration) {
-        DeprecationUtils.phase3(AbstractMX.class, "document(String, boolean)", "Use document(MxWriteParams) instead");
-        return document(prefix, includeXMLDeclaration, null);
-    }
-
-    /**
-     * @deprecated use {@link #document(MxWriteParams)} instead
-     */
-    @Deprecated
-    @ProwideDeprecated(phase3 = TargetYear.SRU2024)
+    @ProwideDeprecated(phase4 = TargetYear.SRU2025)
     public String document(final String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
-        DeprecationUtils.phase2(
+        DeprecationUtils.phase3(
                 AbstractMX.class, "document(String, boolean, EscapeHandler)", "Use document(MxWriteParams) instead");
         MxWriteParams params = new MxWriteParams();
         params.prefix = prefix;
@@ -517,9 +390,9 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
      * @deprecated use {@link #message(MxWriteConfiguration)} and handle write from String to file with plain Java API
      */
     @Deprecated
-    @ProwideDeprecated(phase3 = TargetYear.SRU2024)
+    @ProwideDeprecated(phase4 = TargetYear.SRU2025)
     public void write(final File file) throws IOException {
-        DeprecationUtils.phase2(AbstractMX.class, "write(File)", "Use message(MxWriteConfiguration) instead");
+        DeprecationUtils.phase3(AbstractMX.class, "write(File)", "Use message(MxWriteConfiguration) instead");
         Objects.requireNonNull(file, "the file to write cannot be null");
         boolean created = file.createNewFile();
         if (created) {
@@ -534,9 +407,9 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
      * @deprecated use {@link #message(MxWriteConfiguration)} and handle write from String to stream with plain Java API
      */
     @Deprecated
-    @ProwideDeprecated(phase3 = TargetYear.SRU2024)
+    @ProwideDeprecated(phase4 = TargetYear.SRU2025)
     public void write(final OutputStream stream) throws IOException {
-        DeprecationUtils.phase2(AbstractMX.class, "write(OutputStream)", "Use message(MxWriteConfiguration) instead");
+        DeprecationUtils.phase3(AbstractMX.class, "write(OutputStream)", "Use message(MxWriteConfiguration) instead");
         Objects.requireNonNull(stream, "the stream to write cannot be null");
         stream.write(message().getBytes(StandardCharsets.UTF_8));
     }
