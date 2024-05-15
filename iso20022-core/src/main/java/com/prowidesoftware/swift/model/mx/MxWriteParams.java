@@ -55,7 +55,7 @@ public class MxWriteParams {
      * Optional indent string to use when marshalling into XML, if null, a four spaces string will be used as default
      * @since 9.3.6
      */
-    public String indent;
+    public String indent = XmlEventWriter.DEFAULT_INDENT;
 
     public MxWriteParams() {
         this(new MxWriteConfiguration());

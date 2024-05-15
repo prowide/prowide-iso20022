@@ -36,7 +36,8 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 public final class XmlEventWriter implements XMLEventWriter {
     private static final transient java.util.logging.Logger log =
             java.util.logging.Logger.getLogger(XmlEventWriter.class.getName());
-    private String indent = "    ";
+    static String DEFAULT_INDENT = "    ";
+    private String indent = DEFAULT_INDENT;
     private final Writer out;
     private StartElement delayedStart;
     private boolean startTagIncomplete = false;
@@ -58,6 +59,7 @@ public final class XmlEventWriter implements XMLEventWriter {
      * @param includeXMLDeclaration true to include the XML declaration (true by default)
      * @param rootElement           local name of the root element of the XML fragment to create, used to declare namespace
      * @param escapeHandler         escape handler to use or null to use the default
+     * @param indent                optional indent string to use when marshalling into XML, if null, a four spaces string will be used as default
      * @see #setPreferredPrefixes(Map)
      * @since 9.1.7
      */

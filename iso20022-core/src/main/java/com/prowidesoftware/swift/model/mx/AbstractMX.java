@@ -67,10 +67,10 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
     public static final String DOCUMENT_LOCALNAME = "Document";
     private static final Logger log = Logger.getLogger(AbstractMX.class.getName());
     /**
-     * Default root element when an MX is serialized as XML including both AppHdr and Document
-     *
-     * @since 8.0.2
+     * @deprecated the default root element for the custom envelope is now defined in {@link EnvelopeType#CUSTOM}
      */
+    @Deprecated
+    @ProwideDeprecated(phase2 = TargetYear.SRU2025)
     public static String DEFAULT_ROOT_ELEMENT = "RequestPayload";
 
     /**
@@ -228,14 +228,11 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
      * Get this message as an XML string.
      *
      * <p>If the business header is set, the created XML will include both the 'AppHdr' and the 'Document' elements,
-     * under a the indicated or default root element. If the header is not present, the created XMl will only include
-     * the 'Document'. Both 'AppHdr' and 'Document' are generated with namespace declaration and if optional prefixes
-     * if present in the configuration.
-     *
-     * <p>IMPORTANT: The name of the envelope element that binds a Header to the message to which it applies is
-     * implementation/network specific. The header root element ‘AppHdr’ and the ISO 20022 MessageDefinition
-     * root element ‘Document’ must always be sibling elements in any XML document, with the AppHdr element preceding
-     * the Document element.
+     * under the configured root element. If the header is not present, the created XMl will only include the
+     * 'Document'. Both 'AppHdr' and 'Document' are generated with namespace declaration and optional with prefixes as
+     * indicated in the configuration.
+     * <p>The configuration options enables customization of the XML serialization, including the root element name and
+     * prefixes. And it also provides default configurations for SWIFT and ISO 20022 envelopes.
      *
      * @param conf specific options for the serialization or null to use the default parameters
      * @return the XML content or null if errors occur during serialization
@@ -247,7 +244,9 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
         // handle manually at this method level
         params.includeXMLDeclaration = false;
 
-        String root = usableConf.rootElement;
+        EnvelopeType envelope = usableConf.envelopeTyoe;
+        String envelopeElement = envelope == EnvelopeType.CUSTOM ? usableConf.rootElement : envelope.rootElement();
+
         StringBuilder xml = new StringBuilder();
         if (usableConf.includeXMLDeclaration) {
             xml.append("<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n");
@@ -256,14 +255,59 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
         params.prefix = usableConf.headerPrefix;
         final String header = header(params);
         if (header != null) {
-            xml.append("<").append(root).append(">\n");
+            // open envelope element
+            xml.append("<");
+            if (envelope.prefix() != null) {
+                xml.append(envelope.prefix()).append(":");
+            }
+            xml.append(envelopeElement);
+
+            if (envelope != EnvelopeType.CUSTOM) {
+                xml.append(" xmlns=\"")
+                        .append(usableConf.envelopeTyoe.namespace())
+                        .append("\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"");
+            }
+            xml.append(">\n");
+
+            // for ISO envelopes we have to add an extra element wrapping the header
+            if (envelope.name().startsWith("BME")) {
+                xml.append("<").append(envelope.prefix()).append(":Hdr>\n");
+            }
+
+            // write AppHdr
             xml.append(header).append("\n");
+
+            // for ISO envelopes we have to close the extra element wrapping the header
+            if (envelope.name().startsWith("BME")) {
+                xml.append("</").append(envelope.prefix()).append(":Hdr>\n");
+            }
         }
 
-        params.prefix = usableConf.documentPrefix;
+        // for ISO envelopes we have to wrap the Document in an extra element
+        if (envelope.name().startsWith("BME")) {
+            xml.append("<").append(envelope.prefix()).append(":Doc>\n");
+        }
+
+        // write Document
+        if (usableConf.documentPrefix != null && usableConf.useCategoryAsDocumentPrefix) {
+            params.prefix = getBusinessProcess();
+        } else {
+            params.prefix = usableConf.documentPrefix;
+        }
         xml.append(document(params)).append("\n");
+
+        // for ISO envelopes we have to close the extra element wrapping the Document
+        if (envelope.name().startsWith("BME")) {
+            xml.append("</").append(envelope.prefix()).append(":Doc>\n");
+        }
+
         if (header != null) {
-            xml.append("</").append(root).append(">");
+            // close the envelope element
+            xml.append("</");
+            if (envelope.prefix() != null) {
+                xml.append(envelope.prefix()).append(":");
+            }
+            xml.append(envelopeElement).append(">");
         }
         return xml.toString();
     }
@@ -325,16 +369,16 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
     /**
      * Get this message Document as an XML string.
      *
-     * <p>The XML will not include the XML declaration, will bind the namespace to all elements using "Doc" as default
+     * <p>The XML will not include the XML declaration, will bind the namespace to all elements using "doc" as default
      * prefix and will use the default escape handler. For more serialization options use {@link #document(MxWriteParams)}
      *
      * @return document serialized into XML string or null if errors occur during serialization
      * @since 7.8
      */
     public String document() {
-        MxWriteParams params = new MxWriteParams();
-        params.prefix = "Doc";
-        params.includeXMLDeclaration = true;
+        MxWriteConfiguration conf = new MxWriteConfiguration();
+        MxWriteParams params = new MxWriteParams(conf);
+        params.prefix = conf.documentPrefix;
         return document(params);
     }
 
@@ -372,9 +416,9 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
     /**
      * Get this message as an XML string.
      *
-     * <p>If the header is present, then 'AppHdr' and 'Document' elements will be wrapped under a
-     * {@link #DEFAULT_ROOT_ELEMENT}. Both header and document are generated with the corresponding namespaces and by
-     * default the prefix 'h' is used for the header and the prefix 'Doc' for the document.
+     * <p>If the header is present, then 'AppHdr' and 'Document' elements will be wrapped under a default root element
+     * 'RequestPayload'. Both header and document are generated with the corresponding namespaces and by default the
+     * prefix 'head' is used for the header and the message category is used as prefix for the document.
      * <br>For more serialization options see {@link #message(MxWriteConfiguration)}
      * <br>To serialize only the header or the document (without header) see {@link #header()} and {@link #document()}
      *
