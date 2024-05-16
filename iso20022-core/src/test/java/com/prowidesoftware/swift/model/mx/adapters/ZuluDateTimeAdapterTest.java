@@ -42,7 +42,7 @@ public class ZuluDateTimeAdapterTest {
 
     @Test
     public void testUnmarshallNoFractionOfSeconds() throws Exception {
-        XMLGregorianCalendar cal = adapter.unmarshal("2022-03-04T12:50:08-03:00");
+        XMLGregorianCalendar cal = adapter.unmarshal("2022-03-04T12:50:08Z");
         assertEquals(2022, cal.getYear());
         assertEquals(3, cal.getMonth());
         assertEquals(4, cal.getDay());
@@ -69,20 +69,20 @@ public class ZuluDateTimeAdapterTest {
     public void testMarshallFractionOfSeconds() throws Exception {
         XMLGregorianCalendar cal = DatatypeFactory.newInstance()
                 .newXMLGregorianCalendar(BigInteger.valueOf(2022), 3, 4, 12, 50, 8, new BigDecimal("0.123"), -180);
-        assertEquals("2022-03-04T12:50:08.123-03:00", adapter.marshal(cal));
+        assertEquals("2022-03-04T12:50:08.123Z", adapter.marshal(cal));
     }
 
     @Test
     public void testMarshallNoFractionOfSeconds() throws Exception {
         XMLGregorianCalendar cal = DatatypeFactory.newInstance()
                 .newXMLGregorianCalendar(BigInteger.valueOf(2022), 3, 4, 12, 50, 8, null, -180);
-        assertEquals("2022-03-04T12:50:08-03:00", adapter.marshal(cal));
+        assertEquals("2022-03-04T12:50:08Z", adapter.marshal(cal));
     }
 
     @Test
     public void testMarshallNoOffset() throws Exception {
         XMLGregorianCalendar cal = DatatypeFactory.newInstance()
                 .newXMLGregorianCalendar(BigInteger.valueOf(2022), 3, 4, 12, 50, 8, null, -0);
-        assertEquals("2022-03-04T12:50:08+00:00", adapter.marshal(cal));
+        assertEquals("2022-03-04T12:50:08Z", adapter.marshal(cal));
     }
 }

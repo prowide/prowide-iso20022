@@ -43,8 +43,8 @@ public class ZuluDateTimeAdapter extends XmlAdapter<String, XMLGregorianCalendar
      * Creates a date time adapter with the default format
      */
     public ZuluDateTimeAdapter() {
-        this.marshalFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
-        this.unmarshalFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss[.SSS][Z]");
+        this.marshalFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+        this.unmarshalFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss[.SSS]['Z']");
         this.customAdapterImpl = null;
     }
 
@@ -97,7 +97,7 @@ public class ZuluDateTimeAdapter extends XmlAdapter<String, XMLGregorianCalendar
             synchronized (marshalFormat) {
                 formatted = AdapterUtils.format(this.marshalFormat, cal);
             }
-            return formatted;
+            return formatted.replace(".000", "");
         }
     }
 }
