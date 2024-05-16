@@ -19,6 +19,8 @@ import com.prowidesoftware.ProwideException;
 import com.prowidesoftware.deprecation.DeprecationUtils;
 import com.prowidesoftware.deprecation.ProwideDeprecated;
 import com.prowidesoftware.deprecation.TargetYear;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.ZuluDateTimeAdapter;
 import com.prowidesoftware.swift.model.mx.dic.BusinessApplicationHeaderV01Impl;
 import com.prowidesoftware.swift.model.mx.dic.Party9Choice;
 import java.io.StringWriter;
@@ -194,6 +196,7 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
     public String xml(final String prefix, boolean includeXMLDeclaration) {
         DeprecationUtils.phase2(AbstractMX.class, "xml(String, boolean)", "Use xml(MxWriteParams) instead");
         MxWriteParams params = new MxWriteParams();
+        params.adapters.dateTimeAdapter = new IsoDateTimeAdapter(new ZuluDateTimeAdapter());
         params.prefix = prefix;
         params.includeXMLDeclaration = includeXMLDeclaration;
         return xml(params);
