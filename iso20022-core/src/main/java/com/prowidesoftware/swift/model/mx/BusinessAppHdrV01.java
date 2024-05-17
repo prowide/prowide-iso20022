@@ -196,7 +196,6 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
     public String xml(final String prefix, boolean includeXMLDeclaration) {
         DeprecationUtils.phase2(AbstractMX.class, "xml(String, boolean)", "Use xml(MxWriteParams) instead");
         MxWriteParams params = new MxWriteParams();
-        params.adapters.dateTimeAdapter = new IsoDateTimeAdapter(new ZuluDateTimeAdapter());
         params.prefix = prefix;
         params.includeXMLDeclaration = includeXMLDeclaration;
         return xml(params);
@@ -212,7 +211,6 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
         DeprecationUtils.phase2(
                 AbstractMX.class, "xml(String, boolean, EscapeHandler) ", "Use xml(MxWriteParams) instead");
         MxWriteParams params = new MxWriteParams();
-        params.adapters.dateTimeAdapter = new IsoDateTimeAdapter(new ZuluDateTimeAdapter());
         params.prefix = prefix;
         params.includeXMLDeclaration = includeXMLDeclaration;
         params.escapeHandler = escapeHandler;
@@ -233,6 +231,7 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
             final StringWriter sw = new StringWriter();
             JAXBElement<BusinessApplicationHeaderV01Impl> element = new JAXBElement(
                     new QName(NAMESPACE, AppHdr.HEADER_LOCALNAME), BusinessApplicationHeaderV01Impl.class, null, this);
+            params.adapters.dateTimeAdapter = new IsoDateTimeAdapter(new ZuluDateTimeAdapter());
             XmlEventWriter eventWriter = new XmlEventWriter(
                     sw,
                     params.prefix,
