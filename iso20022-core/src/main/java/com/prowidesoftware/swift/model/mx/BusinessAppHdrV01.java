@@ -212,6 +212,7 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
         DeprecationUtils.phase2(
                 AbstractMX.class, "xml(String, boolean, EscapeHandler) ", "Use xml(MxWriteParams) instead");
         MxWriteParams params = new MxWriteParams();
+        params.adapters.dateTimeAdapter = new IsoDateTimeAdapter(new ZuluDateTimeAdapter());
         params.prefix = prefix;
         params.includeXMLDeclaration = includeXMLDeclaration;
         params.escapeHandler = escapeHandler;
