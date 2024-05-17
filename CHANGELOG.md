@@ -6,6 +6,7 @@
   * Added message categories for File Management (cafm), Fraud Reporting and Disposition (cafm), Network Management (canm) and Settlement Reporting (casr)
   * Add support in the MxWriteConfiguration to use standard envelopes for SWIFT and ISO 20022
   * Changed the default Document prefix to the message category; "camt", "pacs", etc...
+  * Enhanced MxId with optional businessService to act as a message type discriminator
 
 #### 9.4.4 - January 2024
   * Enhanced the identifier extraction of the MxSwiftMessage to use the AppHdr when the Document namespace is missing

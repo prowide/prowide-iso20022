@@ -483,11 +483,15 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
      * @since 7.7
      */
     public MxId getMxId() {
-        return new MxId(
+        MxId mxId = new MxId(
                 getBusinessProcess(),
                 StringUtils.leftPad(Integer.toString(getFunctionality()), 3, "0"),
                 StringUtils.leftPad(Integer.toString(getVariant()), 3, "0"),
                 StringUtils.leftPad(Integer.toString(getVersion()), 2, "0"));
+        if (this.appHdr != null) {
+            mxId.setBusinessService(this.appHdr.serviceName());
+        }
+        return mxId;
     }
 
     /**
