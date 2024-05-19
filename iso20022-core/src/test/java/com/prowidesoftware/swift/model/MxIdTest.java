@@ -83,4 +83,19 @@ public class MxIdTest {
         assertFalse(id4.matches("pacs.001.002.04"));
         assertFalse(id4.matches("camt.001.001.03"));
     }
+
+    @Test
+    public void testBusinessService() {
+        MxId mid = new MxId("pacs.008.001.08");
+        assertEquals(MxBusinessProcess.pacs, mid.getBusinessProcess());
+        assertEquals("008", mid.getFunctionality());
+        assertEquals("001", mid.getVariant());
+        assertEquals("08", mid.getVersion());
+        assertFalse(mid.getBusinessService().isPresent());
+
+        MxId mid2 = new MxId("pacs.008.001.08");
+        mid2.setBusinessService("srv");
+        // equals regardless of the business service
+        assertEquals(mid, mid2);
+    }
 }

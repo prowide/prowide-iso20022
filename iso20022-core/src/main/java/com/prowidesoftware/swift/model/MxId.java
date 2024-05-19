@@ -38,7 +38,7 @@ public class MxId {
     /**
      * @since 9.5.0
      */
-    private String businessService;
+    private transient String businessService;
 
     public MxId() {}
 
@@ -208,6 +208,19 @@ public class MxId {
         return id();
     }
 
+    /**
+     * Indicates whether some other object is "equal to" this one.
+     *
+     * <p>Overrides the default implementation of {@link Object#equals(Object)}.
+     * This method considers two {@code MxId} objects equal if their
+     * {@code businessProcess}, {@code functionality}, {@code variant},
+     * and {@code version} fields are equal.
+     *
+     * <p>Notice the business service field is not included in the comparison.
+     *
+     * @param o the reference object with which to compare
+     * @return {@code true} if this object is the same as the obj argument; {@code false} otherwise
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -216,13 +229,23 @@ public class MxId {
         return businessProcess == mxId.businessProcess
                 && Objects.equals(functionality, mxId.functionality)
                 && Objects.equals(variant, mxId.variant)
-                && Objects.equals(version, mxId.version)
-                && Objects.equals(businessService, mxId.businessService);
+                && Objects.equals(version, mxId.version);
     }
 
+    /**
+     * Returns a hash code value for the object.
+     *
+     * <p>Overrides the default implementation of {@link Object#hashCode()}.
+     * This method generates a hash code based on the {@code businessProcess},
+     * {@code functionality}, {@code variant}, and {@code version} fields.
+     *
+     * <p>Notice the business service field is not included in the hash code calculation.
+     *
+     * @return a hash code value for this object
+     */
     @Override
     public int hashCode() {
-        return Objects.hash(businessProcess, functionality, variant, version, businessService);
+        return Objects.hash(businessProcess, functionality, variant, version);
     }
 
     /**
@@ -268,11 +291,7 @@ public class MxId {
                         || StringUtils.equals(this.variant, other.getVariant()))
                 && (StringUtils.isBlank(this.version)
                         || StringUtils.isBlank(other.getVersion())
-                        || StringUtils.equals(this.version, other.getVersion()))
-                && (StringUtils.isBlank(this.businessService)
-                        || StringUtils.isBlank(other.getBusinessService().orElse(null))
-                        || StringUtils.equals(
-                                this.businessService, other.getBusinessService().orElse(null)));
+                        || StringUtils.equals(this.version, other.getVersion()));
     }
 
     /**
