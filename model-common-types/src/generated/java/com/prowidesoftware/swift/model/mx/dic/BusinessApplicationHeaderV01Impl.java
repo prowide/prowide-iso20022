@@ -59,6 +59,7 @@ public class BusinessApplicationHeaderV01Impl {
     @XmlElement(name = "CreDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     protected OffsetDateTime creDt;
     @XmlElement(name = "CpyDplct")
     @XmlSchemaType(name = "string")

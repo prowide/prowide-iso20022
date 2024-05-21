@@ -19,6 +19,8 @@ import com.prowidesoftware.ProwideException;
 import com.prowidesoftware.deprecation.DeprecationUtils;
 import com.prowidesoftware.deprecation.ProwideDeprecated;
 import com.prowidesoftware.deprecation.TargetYear;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.ZuluDateTimeAdapter;
 import com.prowidesoftware.swift.model.mx.dic.BusinessApplicationHeaderV01Impl;
 import com.prowidesoftware.swift.model.mx.dic.Party9Choice;
 import jakarta.xml.bind.JAXBContext;
@@ -220,6 +222,8 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
     public String xml(MxWriteParams params) {
         try {
             JAXBContext context;
+            IsoDateTimeAdapter currentAdapter = params.adapters.dateTimeAdapter;
+            params.adapters.dateTimeAdapter = new IsoDateTimeAdapter(new ZuluDateTimeAdapter());
             if (params.context != null) {
                 context = params.context;
             } else {
@@ -238,7 +242,8 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
                     params.escapeHandler,
                     params.indent);
             marshaller.marshal(element, eventWriter);
-            return StringUtils.replace(sw.getBuffer().toString(), "+00:00", "Z");
+            params.adapters.dateTimeAdapter = currentAdapter;
+            return sw.getBuffer().toString();
 
         } catch (JAXBException e) {
             log.log(Level.SEVERE, "Error writing head.001.001.01 XML:" + e.getMessage());
