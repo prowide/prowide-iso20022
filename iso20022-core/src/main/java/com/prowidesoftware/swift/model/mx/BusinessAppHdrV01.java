@@ -221,6 +221,7 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
     public String xml(MxWriteParams params) {
         try {
             JAXBContext context;
+            params.adapters.dateTimeAdapter = new IsoDateTimeAdapter(new ZuluDateTimeAdapter());
             if (params.context != null) {
                 context = params.context;
             } else {
@@ -231,7 +232,6 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
             final StringWriter sw = new StringWriter();
             JAXBElement<BusinessApplicationHeaderV01Impl> element = new JAXBElement(
                     new QName(NAMESPACE, AppHdr.HEADER_LOCALNAME), BusinessApplicationHeaderV01Impl.class, null, this);
-            params.adapters.dateTimeAdapter = new IsoDateTimeAdapter(new ZuluDateTimeAdapter());
             XmlEventWriter eventWriter = new XmlEventWriter(
                     sw,
                     params.prefix,
