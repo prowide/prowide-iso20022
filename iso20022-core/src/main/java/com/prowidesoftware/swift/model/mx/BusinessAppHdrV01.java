@@ -221,6 +221,7 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
     public String xml(MxWriteParams params) {
         try {
             JAXBContext context;
+            IsoDateTimeAdapter currentAdapter = params.adapters.dateTimeAdapter;
             params.adapters.dateTimeAdapter = new IsoDateTimeAdapter(new ZuluDateTimeAdapter());
             if (params.context != null) {
                 context = params.context;
@@ -240,6 +241,7 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
                     params.escapeHandler,
                     params.indent);
             marshaller.marshal(element, eventWriter);
+            params.adapters.dateTimeAdapter = currentAdapter;
             return sw.getBuffer().toString();
 
         } catch (JAXBException e) {
