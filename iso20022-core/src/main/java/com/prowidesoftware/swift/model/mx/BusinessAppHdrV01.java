@@ -20,7 +20,7 @@ import com.prowidesoftware.deprecation.DeprecationUtils;
 import com.prowidesoftware.deprecation.ProwideDeprecated;
 import com.prowidesoftware.deprecation.TargetYear;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import com.prowidesoftware.swift.model.mx.adapters.ZuluDateTimeAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.ZuluOffsetDateTimeAdapter;
 import com.prowidesoftware.swift.model.mx.dic.BusinessApplicationHeaderV01Impl;
 import com.prowidesoftware.swift.model.mx.dic.Party9Choice;
 import jakarta.xml.bind.JAXBContext;
@@ -223,7 +223,7 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
         try {
             JAXBContext context;
             IsoDateTimeAdapter currentAdapter = params.adapters.dateTimeAdapter;
-            params.adapters.dateTimeAdapter = new IsoDateTimeAdapter(new ZuluDateTimeAdapter());
+            params.adapters.dateTimeAdapter = new IsoDateTimeAdapter(new ZuluOffsetDateTimeAdapter());
             if (params.context != null) {
                 context = params.context;
             } else {

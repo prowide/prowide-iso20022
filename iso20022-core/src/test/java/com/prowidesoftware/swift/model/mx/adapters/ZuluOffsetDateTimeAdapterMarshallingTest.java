@@ -19,73 +19,32 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.prowidesoftware.swift.model.mx.MxPacs00800110;
-import java.math.BigDecimal;
-import java.math.BigInteger;
-import javax.xml.datatype.DatatypeFactory;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.OffsetDateTime;
+import java.time.ZoneOffset;
 import org.junit.jupiter.api.Test;
 
-public class ZuluDateTimeAdapterTest {
+public class ZuluOffsetDateTimeAdapterMarshallingTest {
 
-    private ZuluDateTimeAdapter adapter = new ZuluDateTimeAdapter();
-
-    @Test
-    public void testUnmarshallFractionOfSeconds() throws Exception {
-        XMLGregorianCalendar cal = adapter.unmarshal("2022-03-04T12:50:08.123Z");
-        assertEquals(2022, cal.getYear());
-        assertEquals(3, cal.getMonth());
-        assertEquals(4, cal.getDay());
-        assertEquals(12, cal.getHour());
-        assertEquals(50, cal.getMinute());
-        assertEquals(8, cal.getSecond());
-        assertEquals(new BigDecimal("0.123"), cal.getFractionalSecond());
-        assertEquals(0, cal.getTimezone());
-    }
-
-    @Test
-    public void testUnmarshallNoFractionOfSeconds() throws Exception {
-        XMLGregorianCalendar cal = adapter.unmarshal("2022-03-04T12:50:08Z");
-        assertEquals(2022, cal.getYear());
-        assertEquals(3, cal.getMonth());
-        assertEquals(4, cal.getDay());
-        assertEquals(12, cal.getHour());
-        assertEquals(50, cal.getMinute());
-        assertEquals(8, cal.getSecond());
-        assertEquals(null, cal.getFractionalSecond());
-        assertEquals(0, cal.getTimezone());
-    }
-
-    @Test
-    public void testUnmarshallNoOffset() throws Exception {
-        XMLGregorianCalendar cal = adapter.unmarshal("2022-03-04T12:50:08");
-        assertEquals(2022, cal.getYear());
-        assertEquals(3, cal.getMonth());
-        assertEquals(4, cal.getDay());
-        assertEquals(12, cal.getHour());
-        assertEquals(50, cal.getMinute());
-        assertEquals(8, cal.getSecond());
-        assertEquals(null, cal.getFractionalSecond());
-    }
+    private ZuluOffsetDateTimeAdapter adapter = new ZuluOffsetDateTimeAdapter();
 
     @Test
     public void testMarshallFractionOfSeconds() throws Exception {
-        XMLGregorianCalendar cal = DatatypeFactory.newInstance()
-                .newXMLGregorianCalendar(BigInteger.valueOf(2022), 3, 4, 12, 50, 8, new BigDecimal("0.123"), -180);
-        assertEquals("2022-03-04T12:50:08.123Z", adapter.marshal(cal));
+        OffsetDateTime datetime =
+                OffsetDateTime.of(2022, 3, 4, 12, 50, 8, 123000000, ZoneOffset.ofTotalSeconds(10800)); // 3 hours offset
+        assertEquals("2022-03-04T09:50:08.123Z", adapter.marshal(datetime));
     }
 
     @Test
     public void testMarshallNoFractionOfSeconds() throws Exception {
-        XMLGregorianCalendar cal = DatatypeFactory.newInstance()
-                .newXMLGregorianCalendar(BigInteger.valueOf(2022), 3, 4, 12, 50, 8, null, -180);
-        assertEquals("2022-03-04T12:50:08Z", adapter.marshal(cal));
+        OffsetDateTime datetime =
+                OffsetDateTime.of(2022, 3, 4, 12, 50, 8, 0, ZoneOffset.ofTotalSeconds(10800)); // 3 hours offset
+        assertEquals("2022-03-04T09:50:08Z", adapter.marshal(datetime));
     }
 
     @Test
     public void testMarshallNoOffset() throws Exception {
-        XMLGregorianCalendar cal = DatatypeFactory.newInstance()
-                .newXMLGregorianCalendar(BigInteger.valueOf(2022), 3, 4, 12, 50, 8, null, -0);
-        assertEquals("2022-03-04T12:50:08Z", adapter.marshal(cal));
+        OffsetDateTime datetime = OffsetDateTime.of(2022, 3, 4, 12, 50, 8, 0, ZoneOffset.UTC);
+        assertEquals("2022-03-04T12:50:08Z", adapter.marshal(datetime));
     }
 
     @Test
@@ -117,10 +76,10 @@ public class ZuluDateTimeAdapterTest {
                 + "</RequestPayload>";
 
         // Create a new instance of MxPacs00800110 with AppHdr CreDtTm ZuluDateTime
-        MxPacs00800110 mxPacs00800110 = MxPacs00800110.parse(xml);
+        MxPacs00800110 mx = MxPacs00800110.parse(xml);
 
-        // After CreDtTm is parsed, it should be 2024-03-27T20:45:56Z
-        assertTrue(mxPacs00800110.message().contains("2024-03-27T20:45:56Z"));
+        // After parse and marshalling, CreDtTm should be preserved as Zulu date time
+        assertTrue(mx.message().contains("2024-03-27T20:45:56Z"));
     }
 
     @Test
@@ -152,9 +111,9 @@ public class ZuluDateTimeAdapterTest {
                 + "</RequestPayload>";
 
         // Create a new instance of MxPacs00800110 with AppHdr CreDtTm ZuluDateTime
-        MxPacs00800110 mxPacs00800110 = MxPacs00800110.parse(xml);
+        MxPacs00800110 mx = MxPacs00800110.parse(xml);
 
-        // After CreDtTm is parsed, it should be 2024-03-27T20:45:56Z
-        assertTrue(mxPacs00800110.message().contains("2024-03-27T20:45:56Z"));
+        // After parse and marshalling, the original CreDtTm should be converted to 00:00 offset Zulu date time
+        assertTrue(mx.message().contains("2024-03-27T23:45:56Z"));
     }
 }
