@@ -1,7 +1,6 @@
 # Prowide ISO 20022 - CHANGELOG
 
-
-#### 9.4.5 - SNAPSHOT
+#### 9.4.5 - May 2024
   * (PW-1875) Changed the BusinessApplicationHeaderV01 marshaller to always use Zulu timezone with "Z" indicator
  
 #### 9.4.4 - January 2024
