@@ -2,8 +2,8 @@
 
 
 #### 9.4.5-SNAPSHOT May 2023
-  * (PW-1875) Added support for the BusinessApplicationHeaderV01 to always have CreDt with Zulu timezone.
-
+  * (PW-1875) Changed the BusinessApplicationHeaderV01 marshaller to always use Zulu timezone with "Z" indicator
+ 
 #### 9.4.4 - Jannuary 2024
   * Enhanced the identifier extraction of the MxSwiftMessage to use the AppHdr when the Document namespace is missing
   * Enhanced the generic AbstractMX#parse to detect the message type from the AppHdr when the Document namespace is missing

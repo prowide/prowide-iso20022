@@ -22,10 +22,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 /**
  * XMLGregorianCalendar adapter for date time elements.
  * <p>
- * Marshals the date time as a local time with UTC offset format YYYY-MM-DDThh:mm:ss[.sss]+/-hh:mm which is aligned
- * with ISO 8601. Dislike the default jaxb implementation, this adapter will always print the offset, and for UTC times
- * in particular an explicit '+00:00' offset is used instead of the 'Z'. The fractional seconds is printed only when it
- * is different than zero.
+ * Marshals the date time as a Zulu time with format YYYY-MM-DDThh:mm:ss[.sss]Z which is aligned
+ * with ISO 8601. Dislike the default jaxb implementation, this adapter will always print the Z
+ * The fractional seconds is printed only when it is different from zero.
  * <p>
  * Notice the configured adapter in the model is the {@link IsoDateTimeAdapter} wrapper class, but you can pass this
  * default implementation or your own in the constructor.
@@ -82,8 +81,7 @@ public class ZuluDateTimeAdapter extends XmlAdapter<String, XMLGregorianCalendar
     }
 
     /**
-     * Applies the configured format to the calendar. If the formats ends with an offset, and the calendar is an UTC
-     * date time, we uses an explicit '+00:00' instead of the 'Z' code.
+     * Applies the configured format to the calendar.
      *
      * @param cal the model calendar to marshal
      * @return formatted content for the XML
