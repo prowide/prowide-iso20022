@@ -95,6 +95,7 @@ public class ZuluDateTimeAdapter extends XmlAdapter<String, XMLGregorianCalendar
         } else {
             String formatted;
             synchronized (marshalFormat) {
+                // Viene un calendar no UTC?
                 formatted = AdapterUtils.format(this.marshalFormat, cal);
             }
             return formatted.replace(".000", "");
