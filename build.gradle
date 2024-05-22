@@ -32,8 +32,7 @@ scmVersion {
 		versionSeparator = '-'
 	}
 }
-//project.version = "${SRU}-${scmVersion.version}"
-project.version = "${SRU}-9.5.0-SNAPSHOT"
+project.version = "${SRU}-${scmVersion.version}"
 
 allprojects {
 
@@ -135,7 +134,7 @@ configure(subprojects.findAll {it.name.endsWith('-mx')}) {
 project(':iso20022-core') {
 	dependencies {
 		// included build
-		api 'com.prowidesoftware:pw-swift-core:SRU2024-9.5.0-SNAPSHOT'
+		api 'com.prowidesoftware:pw-swift-core:SRU2024-9.5.0'
 
 		implementation 'org.apache.commons:commons-lang3:3.14.0'
 		implementation 'com.google.code.gson:gson:2.11.0'
@@ -314,7 +313,7 @@ artifacts {
 // declared dependencies for pom generation
 dependencies {
 	// included build (keep in sync with the latest Prowide Core version)
-	api 'com.prowidesoftware:pw-swift-core:SRU2024-9.5.0-SNAPSHOT'
+	api 'com.prowidesoftware:pw-swift-core:SRU2024-9.5.0'
 	implementation 'org.apache.commons:commons-lang3:3.14.0'
 	implementation 'com.google.code.gson:gson:2.10'
 }
