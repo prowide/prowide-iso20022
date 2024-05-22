@@ -7,8 +7,8 @@
   * Add support in the MxWriteConfiguration to use standard envelopes for SWIFT and ISO 20022
   * Changed the default Document prefix to the message category; "camt", "pacs", etc...
   * Enhanced MxId with optional and transient businessService field to act as a message type discriminator
-  * Dependency update: commons-lang3 -> 3.14.0'
-  * Dependency update: gson -> 2.11.0'
+  * Dependency update: commons-lang3 -> 3.14.0
+  * Dependency update: gson -> 2.11.0
 
 #### 9.4.4 - January 2024
   * Enhanced the identifier extraction of the MxSwiftMessage to use the AppHdr when the Document namespace is missing
