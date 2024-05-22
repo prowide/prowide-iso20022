@@ -10,6 +10,9 @@
   * Dependency update: commons-lang3 -> 3.14.0
   * Dependency update: gson -> 2.11.0
 
+#### 9.4.5 - May 2024
+  * (PW-1875) Changed the BusinessApplicationHeaderV01 marshaller to always use Zulu timezone with "Z" indicator
+ 
 #### 9.4.4 - January 2024
   * Enhanced the identifier extraction of the MxSwiftMessage to use the AppHdr when the Document namespace is missing
   * Enhanced the generic AbstractMX#parse to detect the message type from the AppHdr when the Document namespace is missing
