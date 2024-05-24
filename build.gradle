@@ -4,10 +4,10 @@ buildscript {
 		gradlePluginPortal()
 	}
 	dependencies {
-		classpath 'ru.vyarus:gradle-quality-plugin:4.7.0'
-		classpath 'pl.allegro.tech.build:axion-release-plugin:1.13.6'
-		classpath 'io.github.gradle-nexus:publish-plugin:1.1.0'
-		classpath 'com.diffplug.spotless:spotless-plugin-gradle:6.13.0' // above this version requires Java 11
+		classpath 'ru.vyarus:gradle-quality-plugin:4.9.0'
+		classpath 'pl.allegro.tech.build:axion-release-plugin:1.15.1'
+		classpath 'io.github.gradle-nexus:publish-plugin:1.3.0'
+		classpath 'com.diffplug.spotless:spotless-plugin-gradle:6.23.3'
 	}
 }
 apply plugin: 'pl.allegro.tech.build.axion-release'
@@ -40,7 +40,7 @@ allprojects {
 		options.encoding = 'UTF-8'
 		java {
 			toolchain {
-				languageVersion.set(JavaLanguageVersion.of(8))
+				languageVersion.set(JavaLanguageVersion.of(11))
 			}
 		}
 		doLast {
@@ -71,7 +71,11 @@ allprojects {
 		}
 	}
 
-	sourceSets.main.java.srcDirs = ['src/main/java', 'src/generated/java']
+	sourceSets.named('main') {
+		java {
+			setSrcDirs(['src/main/java', 'src/generated/java'])
+		}
+	}
 
 	tasks.withType(Jar) {
 		manifest.attributes(
@@ -82,8 +86,8 @@ allprojects {
 			'Implementation-Version': project.version,
 			'Implementation-Vendor': 'www.prowidesoftware.com',
 			'Built-OS': System.getProperty('os.name'),
-			'Source-Compatibility': project.sourceCompatibility,
-			'Target-Compatibility': project.targetCompatibility,
+			'Source-Compatibility': JavaVersion.VERSION_11,
+			'Target-Compatibility': JavaVersion.VERSION_11,
 			'Built-Date': new Date().format("yyyy-MM-dd"),
 			'Automatic-Module-Name': 'com.prowidesoftware.iso20022'
 		)
@@ -98,6 +102,9 @@ subprojects {
 	dependencies {
 		implementation 'org.apache.commons:commons-lang3:3.12.0'
 		implementation 'com.google.code.gson:gson:2.9.0'
+		implementation 'com.sun.xml.bind:jaxb-impl:4.0.5'
+		// bind-api is included transitively by jaxb-impl
+		// implementation 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.2'
 	}
 
 	tasks.withType(Jar) {
@@ -118,8 +125,14 @@ configure(subprojects.findAll {it.name.endsWith('-mx')}) {
 	dependencies {
 		api project(':iso20022-core')
 		implementation project(specificTypesProject)
+
 		implementation 'org.apache.commons:commons-lang3:3.12.0'
 		implementation 'com.google.code.gson:gson:2.9.0'
+
+		implementation 'com.sun.xml.bind:jaxb-impl:4.0.5'
+		// bind-api is included transitively by jaxb-impl
+		// implementation 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.2'
+
 		compileOnly 'javax.persistence:javax.persistence-api:2.2'
 	}
 }
@@ -134,15 +147,15 @@ configure(subprojects.findAll {it.name.endsWith('-mx')}) {
 project(':iso20022-core') {
 	dependencies {
 		// included build
-		api 'com.prowidesoftware:pw-swift-core:SRU2024-9.5.0'
+		api 'com.prowidesoftware:pw-swift-core:SRU2024-10.2.0-SNAPSHOT'
 
 		implementation 'org.apache.commons:commons-lang3:3.14.0'
 		implementation 'com.google.code.gson:gson:2.11.0'
 
-		compileOnly 'javax.persistence:javax.persistence-api:2.2'
-		compileOnly 'javax.validation:validation-api:2.0.1.Final'
+		compileOnly 'jakarta.persistence:jakarta.persistence-api:3.1.0'
+		compileOnly 'jakarta.validation:jakarta.validation-api:3.0.2'
 
-		testImplementation 'javax.persistence:javax.persistence-api:2.2'
+		testImplementation 'jakarta.persistence:jakarta.persistence-api:3.1.0'
 		testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
 		testImplementation 'com.google.guava:guava:33.2.0-jre'
 		testImplementation 'org.assertj:assertj-core:3.25.3'
@@ -194,7 +207,11 @@ jar {
 	archivesBaseName = 'pw-iso20022'
 	subprojects.each { subproject ->
 		from subproject.configurations.archives.allArtifacts.files.collect {
-			zipTree(it)
+			// filter out any artifacts that are not jars
+			if (it.name.endsWith('.jar')) {
+				println "Adding ${it.name} to fat jar"
+				zipTree(it)
+			}
 		}
 	}
 	duplicatesStrategy = DuplicatesStrategy.EXCLUDE
@@ -313,9 +330,16 @@ artifacts {
 // declared dependencies for pom generation
 dependencies {
 	// included build (keep in sync with the latest Prowide Core version)
-	api 'com.prowidesoftware:pw-swift-core:SRU2024-9.5.0'
-	implementation 'org.apache.commons:commons-lang3:3.14.0'
-	implementation 'com.google.code.gson:gson:2.10'
+	api 'com.prowidesoftware:pw-swift-core:SRU2024-10.2.0-SNAPSHOT'
+
+	// included transitive dependencies from Prowide Core
+	//implementation 'org.apache.commons:commons-lang3:3.14.0'
+	//implementation 'com.google.code.gson:gson:2.10'
+
+	// jaxb is required because it is no longer included in the JDK
+	implementation 'com.sun.xml.bind:jaxb-impl:4.0.5'
+	// bind-api is included transitively by jaxb-impl
+	// implementation 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.2'
 }
 
 // repo for publishing
@@ -470,6 +494,12 @@ task('testOn11', type: Test) {
 task('testOn17', type: Test) {
 	javaLauncher = javaToolchains.launcherFor {
 		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
+task('testOn19', type: Test) {
+	javaLauncher = javaToolchains.launcherFor {
+		languageVersion = JavaLanguageVersion.of(19)
 	}
 }
 

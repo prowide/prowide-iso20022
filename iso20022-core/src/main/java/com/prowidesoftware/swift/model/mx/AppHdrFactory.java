@@ -18,6 +18,8 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.ProwideException;
 import com.prowidesoftware.swift.model.MxId;
 import com.prowidesoftware.swift.model.mx.dic.*;
+import java.time.OffsetDateTime;
+import java.time.ZoneOffset;
 
 /**
  * Factory methods to create different variant of application headers.
@@ -64,7 +66,7 @@ public class AppHdrFactory {
             h.setMsgDefIdr(id.id());
         }
 
-        h.setCreDt(XMLGregorianCalendarUtils.now());
+        h.setCreDt(OffsetDateTime.now(ZoneOffset.UTC));
 
         return h;
     }
@@ -107,7 +109,7 @@ public class AppHdrFactory {
             h.setMsgDefIdr(id.id());
         }
 
-        h.setCreDt(XMLGregorianCalendarUtils.now());
+        h.setCreDt(OffsetDateTime.now());
 
         return h;
     }
@@ -151,7 +153,7 @@ public class AppHdrFactory {
             h.setMsgDefIdr(id.id());
         }
 
-        h.setCreDt(XMLGregorianCalendarUtils.now());
+        h.setCreDt(OffsetDateTime.now());
 
         return h;
     }
@@ -192,7 +194,7 @@ public class AppHdrFactory {
             h.setMsgName(id.id());
         }
 
-        h.setCrDate(XMLGregorianCalendarUtils.now());
+        h.setCrDate(OffsetDateTime.now());
 
         return h;
     }
