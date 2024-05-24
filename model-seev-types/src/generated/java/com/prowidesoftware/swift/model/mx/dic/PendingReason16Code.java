@@ -1,35 +1,34 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for PendingReason16Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="PendingReason16Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ADEA"/&gt;
- *     &lt;enumeration value="ADDM"/&gt;
- *     &lt;enumeration value="DQUA"/&gt;
- *     &lt;enumeration value="DREM"/&gt;
- *     &lt;enumeration value="FULL"/&gt;
- *     &lt;enumeration value="IPOA"/&gt;
- *     &lt;enumeration value="IPOS"/&gt;
- *     &lt;enumeration value="LACK"/&gt;
- *     &lt;enumeration value="LATE"/&gt;
- *     &lt;enumeration value="NPOS"/&gt;
- *     &lt;enumeration value="IREG"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="PRXY"/&gt;
- *     &lt;enumeration value="PENR"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="PendingReason16Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ADEA"/>
+ *     <enumeration value="ADDM"/>
+ *     <enumeration value="DQUA"/>
+ *     <enumeration value="DREM"/>
+ *     <enumeration value="FULL"/>
+ *     <enumeration value="IPOA"/>
+ *     <enumeration value="IPOS"/>
+ *     <enumeration value="LACK"/>
+ *     <enumeration value="LATE"/>
+ *     <enumeration value="NPOS"/>
+ *     <enumeration value="IREG"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="PRXY"/>
+ *     <enumeration value="PENR"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "PendingReason16Code")

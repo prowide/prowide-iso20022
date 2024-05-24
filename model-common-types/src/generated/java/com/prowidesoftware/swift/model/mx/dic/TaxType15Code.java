@@ -1,30 +1,29 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for TaxType15Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="TaxType15Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="PROV"/&gt;
- *     &lt;enumeration value="NATI"/&gt;
- *     &lt;enumeration value="STAT"/&gt;
- *     &lt;enumeration value="WITH"/&gt;
- *     &lt;enumeration value="STAM"/&gt;
- *     &lt;enumeration value="COAX"/&gt;
- *     &lt;enumeration value="VATA"/&gt;
- *     &lt;enumeration value="CUST"/&gt;
- *     &lt;enumeration value="VATB"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="TaxType15Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="PROV"/>
+ *     <enumeration value="NATI"/>
+ *     <enumeration value="STAT"/>
+ *     <enumeration value="WITH"/>
+ *     <enumeration value="STAM"/>
+ *     <enumeration value="COAX"/>
+ *     <enumeration value="VATA"/>
+ *     <enumeration value="CUST"/>
+ *     <enumeration value="VATB"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "TaxType15Code")

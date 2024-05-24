@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx.dic;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementRef;
-import javax.xml.bind.annotation.XmlIDREF;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.JAXBElement;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlElementRef;
+import jakarta.xml.bind.annotation.XmlIDREF;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -138,8 +138,8 @@ public class GuaranteeDetails1Tsin00900101 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the grntedAmt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the grntedAmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -153,10 +153,12 @@ public class GuaranteeDetails1Tsin00900101 {
      * {@link AmountAndPeriod1 }
      * 
      * 
+     * @return
+     *     The value of the grntedAmt property.
      */
     public List<AmountAndPeriod1> getGrntedAmt() {
         if (grntedAmt == null) {
-            grntedAmt = new ArrayList<AmountAndPeriod1>();
+            grntedAmt = new ArrayList<>();
         }
         return this.grntedAmt;
     }
@@ -167,8 +169,8 @@ public class GuaranteeDetails1Tsin00900101 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the xcss property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the xcss property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -182,10 +184,12 @@ public class GuaranteeDetails1Tsin00900101 {
      * {@link AmountAndPeriod1 }
      * 
      * 
+     * @return
+     *     The value of the xcss property.
      */
     public List<AmountAndPeriod1> getXcss() {
         if (xcss == null) {
-            xcss = new ArrayList<AmountAndPeriod1>();
+            xcss = new ArrayList<>();
         }
         return this.xcss;
     }
@@ -196,8 +200,8 @@ public class GuaranteeDetails1Tsin00900101 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cvrdPctg property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cvrdPctg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -211,10 +215,12 @@ public class GuaranteeDetails1Tsin00900101 {
      * {@link PercentageAndPeriod1 }
      * 
      * 
+     * @return
+     *     The value of the cvrdPctg property.
      */
     public List<PercentageAndPeriod1> getCvrdPctg() {
         if (cvrdPctg == null) {
-            cvrdPctg = new ArrayList<PercentageAndPeriod1>();
+            cvrdPctg = new ArrayList<>();
         }
         return this.cvrdPctg;
     }
@@ -225,8 +231,8 @@ public class GuaranteeDetails1Tsin00900101 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the assoctdDoc property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the assoctdDoc property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -240,10 +246,12 @@ public class GuaranteeDetails1Tsin00900101 {
      * {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
      * 
+     * @return
+     *     The value of the assoctdDoc property.
      */
     public List<JAXBElement<Object>> getAssoctdDoc() {
         if (assoctdDoc == null) {
-            assoctdDoc = new ArrayList<JAXBElement<Object>>();
+            assoctdDoc = new ArrayList<>();
         }
         return this.assoctdDoc;
     }
@@ -254,8 +262,8 @@ public class GuaranteeDetails1Tsin00900101 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -269,10 +277,12 @@ public class GuaranteeDetails1Tsin00900101 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the addtlInf property.
      */
     public List<String> getAddtlInf() {
         if (addtlInf == null) {
-            addtlInf = new ArrayList<String>();
+            addtlInf = new ArrayList<>();
         }
         return this.addtlInf;
     }

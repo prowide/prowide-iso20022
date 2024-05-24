@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -109,8 +109,8 @@ public class Setr01500102 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the prvsRef property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the prvsRef property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -124,10 +124,12 @@ public class Setr01500102 {
      * {@link AdditionalReference3 }
      * 
      * 
+     * @return
+     *     The value of the prvsRef property.
      */
     public List<AdditionalReference3> getPrvsRef() {
         if (prvsRef == null) {
-            prvsRef = new ArrayList<AdditionalReference3>();
+            prvsRef = new ArrayList<>();
         }
         return this.prvsRef;
     }
@@ -188,8 +190,8 @@ public class Setr01500102 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the intrmyDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the intrmyDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -203,10 +205,12 @@ public class Setr01500102 {
      * {@link Intermediary4 }
      * 
      * 
+     * @return
+     *     The value of the intrmyDtls property.
      */
     public List<Intermediary4> getIntrmyDtls() {
         if (intrmyDtls == null) {
-            intrmyDtls = new ArrayList<Intermediary4>();
+            intrmyDtls = new ArrayList<>();
         }
         return this.intrmyDtls;
     }
@@ -242,8 +246,8 @@ public class Setr01500102 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the xtnsn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the xtnsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -257,10 +261,12 @@ public class Setr01500102 {
      * {@link Extension1 }
      * 
      * 
+     * @return
+     *     The value of the xtnsn property.
      */
     public List<Extension1> getXtnsn() {
         if (xtnsn == null) {
-            xtnsn = new ArrayList<Extension1>();
+            xtnsn = new ArrayList<>();
         }
         return this.xtnsn;
     }

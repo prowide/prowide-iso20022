@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -77,8 +77,8 @@ public class PartyIdentification57 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the altrnId property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the altrnId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -92,10 +92,12 @@ public class PartyIdentification57 {
      * {@link AlternatePartyIdentification3 }
      * 
      * 
+     * @return
+     *     The value of the altrnId property.
      */
     public List<AlternatePartyIdentification3> getAltrnId() {
         if (altrnId == null) {
-            altrnId = new ArrayList<AlternatePartyIdentification3>();
+            altrnId = new ArrayList<>();
         }
         return this.altrnId;
     }
@@ -131,8 +133,8 @@ public class PartyIdentification57 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the nonDmclCtry property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the nonDmclCtry property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -146,10 +148,12 @@ public class PartyIdentification57 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the nonDmclCtry property.
      */
     public List<String> getNonDmclCtry() {
         if (nonDmclCtry == null) {
-            nonDmclCtry = new ArrayList<String>();
+            nonDmclCtry = new ArrayList<>();
         }
         return this.nonDmclCtry;
     }
@@ -185,8 +189,8 @@ public class PartyIdentification57 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the certfctnTp property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the certfctnTp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -200,10 +204,12 @@ public class PartyIdentification57 {
      * {@link BeneficiaryCertificationType8Choice }
      * 
      * 
+     * @return
+     *     The value of the certfctnTp property.
      */
     public List<BeneficiaryCertificationType8Choice> getCertfctnTp() {
         if (certfctnTp == null) {
-            certfctnTp = new ArrayList<BeneficiaryCertificationType8Choice>();
+            certfctnTp = new ArrayList<>();
         }
         return this.certfctnTp;
     }

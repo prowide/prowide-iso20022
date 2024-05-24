@@ -1,39 +1,38 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for PaymentCategoryPurpose1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="PaymentCategoryPurpose1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CORT"/&gt;
- *     &lt;enumeration value="SALA"/&gt;
- *     &lt;enumeration value="TREA"/&gt;
- *     &lt;enumeration value="CASH"/&gt;
- *     &lt;enumeration value="DIVI"/&gt;
- *     &lt;enumeration value="GOVT"/&gt;
- *     &lt;enumeration value="INTE"/&gt;
- *     &lt;enumeration value="LOAN"/&gt;
- *     &lt;enumeration value="PENS"/&gt;
- *     &lt;enumeration value="SECU"/&gt;
- *     &lt;enumeration value="SSBE"/&gt;
- *     &lt;enumeration value="SUPP"/&gt;
- *     &lt;enumeration value="TAXS"/&gt;
- *     &lt;enumeration value="TRAD"/&gt;
- *     &lt;enumeration value="VATX"/&gt;
- *     &lt;enumeration value="HEDG"/&gt;
- *     &lt;enumeration value="INTC"/&gt;
- *     &lt;enumeration value="WHLD"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="PaymentCategoryPurpose1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CORT"/>
+ *     <enumeration value="SALA"/>
+ *     <enumeration value="TREA"/>
+ *     <enumeration value="CASH"/>
+ *     <enumeration value="DIVI"/>
+ *     <enumeration value="GOVT"/>
+ *     <enumeration value="INTE"/>
+ *     <enumeration value="LOAN"/>
+ *     <enumeration value="PENS"/>
+ *     <enumeration value="SECU"/>
+ *     <enumeration value="SSBE"/>
+ *     <enumeration value="SUPP"/>
+ *     <enumeration value="TAXS"/>
+ *     <enumeration value="TRAD"/>
+ *     <enumeration value="VATX"/>
+ *     <enumeration value="HEDG"/>
+ *     <enumeration value="INTC"/>
+ *     <enumeration value="WHLD"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "PaymentCategoryPurpose1Code")

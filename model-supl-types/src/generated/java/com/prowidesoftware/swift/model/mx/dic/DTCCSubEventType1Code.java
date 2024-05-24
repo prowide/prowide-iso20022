@@ -1,50 +1,49 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for DTCCSubEventType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="DTCCSubEventType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="OPTO"/&gt;
- *     &lt;enumeration value="DRPD"/&gt;
- *     &lt;enumeration value="PLCL"/&gt;
- *     &lt;enumeration value="BLOT"/&gt;
- *     &lt;enumeration value="INTE"/&gt;
- *     &lt;enumeration value="FINL"/&gt;
- *     &lt;enumeration value="RMRK"/&gt;
- *     &lt;enumeration value="UNWD"/&gt;
- *     &lt;enumeration value="AMET"/&gt;
- *     &lt;enumeration value="EXOM"/&gt;
- *     &lt;enumeration value="ORDM"/&gt;
- *     &lt;enumeration value="SPCL"/&gt;
- *     &lt;enumeration value="SHEX"/&gt;
- *     &lt;enumeration value="STDT"/&gt;
- *     &lt;enumeration value="XFER"/&gt;
- *     &lt;enumeration value="SOPT"/&gt;
- *     &lt;enumeration value="MBCK"/&gt;
- *     &lt;enumeration value="SALE"/&gt;
- *     &lt;enumeration value="PRNI"/&gt;
- *     &lt;enumeration value="POPI"/&gt;
- *     &lt;enumeration value="DRPI"/&gt;
- *     &lt;enumeration value="MROS"/&gt;
- *     &lt;enumeration value="SHPP"/&gt;
- *     &lt;enumeration value="OPOF"/&gt;
- *     &lt;enumeration value="TWRI"/&gt;
- *     &lt;enumeration value="CILI"/&gt;
- *     &lt;enumeration value="BTST"/&gt;
- *     &lt;enumeration value="FTPR"/&gt;
- *     &lt;enumeration value="ADRS"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="DTCCSubEventType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="OPTO"/>
+ *     <enumeration value="DRPD"/>
+ *     <enumeration value="PLCL"/>
+ *     <enumeration value="BLOT"/>
+ *     <enumeration value="INTE"/>
+ *     <enumeration value="FINL"/>
+ *     <enumeration value="RMRK"/>
+ *     <enumeration value="UNWD"/>
+ *     <enumeration value="AMET"/>
+ *     <enumeration value="EXOM"/>
+ *     <enumeration value="ORDM"/>
+ *     <enumeration value="SPCL"/>
+ *     <enumeration value="SHEX"/>
+ *     <enumeration value="STDT"/>
+ *     <enumeration value="XFER"/>
+ *     <enumeration value="SOPT"/>
+ *     <enumeration value="MBCK"/>
+ *     <enumeration value="SALE"/>
+ *     <enumeration value="PRNI"/>
+ *     <enumeration value="POPI"/>
+ *     <enumeration value="DRPI"/>
+ *     <enumeration value="MROS"/>
+ *     <enumeration value="SHPP"/>
+ *     <enumeration value="OPOF"/>
+ *     <enumeration value="TWRI"/>
+ *     <enumeration value="CILI"/>
+ *     <enumeration value="BTST"/>
+ *     <enumeration value="FTPR"/>
+ *     <enumeration value="ADRS"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "DTCCSubEventType1Code")

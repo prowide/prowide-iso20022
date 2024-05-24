@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -45,7 +45,7 @@ public class StatusReportContent8 {
     @XmlElement(name = "POIDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar poiDtTm;
+    protected OffsetDateTime poiDtTm;
     @XmlElement(name = "DataSetReqrd")
     protected List<TerminalManagementDataSet25> dataSetReqrd;
     @XmlElement(name = "Evt")
@@ -84,8 +84,8 @@ public class StatusReportContent8 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the poiCmpnt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the poiCmpnt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -99,10 +99,12 @@ public class StatusReportContent8 {
      * {@link PointOfInteractionComponent9 }
      * 
      * 
+     * @return
+     *     The value of the poiCmpnt property.
      */
     public List<PointOfInteractionComponent9> getPOICmpnt() {
         if (poiCmpnt == null) {
-            poiCmpnt = new ArrayList<PointOfInteractionComponent9>();
+            poiCmpnt = new ArrayList<>();
         }
         return this.poiCmpnt;
     }
@@ -140,7 +142,7 @@ public class StatusReportContent8 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getPOIDtTm() {
+    public OffsetDateTime getPOIDtTm() {
         return poiDtTm;
     }
 
@@ -152,7 +154,7 @@ public class StatusReportContent8 {
      *     {@link String }
      *     
      */
-    public StatusReportContent8 setPOIDtTm(XMLGregorianCalendar value) {
+    public StatusReportContent8 setPOIDtTm(OffsetDateTime value) {
         this.poiDtTm = value;
         return this;
     }
@@ -163,8 +165,8 @@ public class StatusReportContent8 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dataSetReqrd property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the dataSetReqrd property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -178,10 +180,12 @@ public class StatusReportContent8 {
      * {@link TerminalManagementDataSet25 }
      * 
      * 
+     * @return
+     *     The value of the dataSetReqrd property.
      */
     public List<TerminalManagementDataSet25> getDataSetReqrd() {
         if (dataSetReqrd == null) {
-            dataSetReqrd = new ArrayList<TerminalManagementDataSet25>();
+            dataSetReqrd = new ArrayList<>();
         }
         return this.dataSetReqrd;
     }
@@ -192,8 +196,8 @@ public class StatusReportContent8 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the evt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the evt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -207,10 +211,12 @@ public class StatusReportContent8 {
      * {@link TMSEvent6 }
      * 
      * 
+     * @return
+     *     The value of the evt property.
      */
     public List<TMSEvent6> getEvt() {
         if (evt == null) {
-            evt = new ArrayList<TMSEvent6>();
+            evt = new ArrayList<>();
         }
         return this.evt;
     }
@@ -221,8 +227,8 @@ public class StatusReportContent8 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the errs property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the errs property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -236,10 +242,12 @@ public class StatusReportContent8 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the errs property.
      */
     public List<String> getErrs() {
         if (errs == null) {
-            errs = new ArrayList<String>();
+            errs = new ArrayList<>();
         }
         return this.errs;
     }

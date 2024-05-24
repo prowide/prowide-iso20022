@@ -1,30 +1,29 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlEnumValue;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for DTCAdjustmentPaymentType3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="DTCAdjustmentPaymentType3Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="FAIL"/&gt;
- *     &lt;enumeration value="MISC"/&gt;
- *     &lt;enumeration value="REPO"/&gt;
- *     &lt;enumeration value="STOK"/&gt;
- *     &lt;enumeration value="RRD1"/&gt;
- *     &lt;enumeration value="RRD2"/&gt;
- *     &lt;enumeration value="RRCD"/&gt;
- *     &lt;enumeration value="RRDR"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="DTCAdjustmentPaymentType3Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="FAIL"/>
+ *     <enumeration value="MISC"/>
+ *     <enumeration value="REPO"/>
+ *     <enumeration value="STOK"/>
+ *     <enumeration value="RRD1"/>
+ *     <enumeration value="RRD2"/>
+ *     <enumeration value="RRCD"/>
+ *     <enumeration value="RRDR"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "DTCAdjustmentPaymentType3Code")

@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -152,8 +152,8 @@ public class DetailedInstructionStatus2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rghtsHldr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rghtsHldr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -167,10 +167,12 @@ public class DetailedInstructionStatus2 {
      * {@link PartyIdentification9Choice }
      * 
      * 
+     * @return
+     *     The value of the rghtsHldr property.
      */
     public List<PartyIdentification9Choice> getRghtsHldr() {
         if (rghtsHldr == null) {
-            rghtsHldr = new ArrayList<PartyIdentification9Choice>();
+            rghtsHldr = new ArrayList<>();
         }
         return this.rghtsHldr;
     }
@@ -198,8 +200,8 @@ public class DetailedInstructionStatus2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the votePerRsltn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the votePerRsltn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -213,10 +215,12 @@ public class DetailedInstructionStatus2 {
      * {@link Vote4 }
      * 
      * 
+     * @return
+     *     The value of the votePerRsltn property.
      */
     public List<Vote4> getVotePerRsltn() {
         if (votePerRsltn == null) {
-            votePerRsltn = new ArrayList<Vote4>();
+            votePerRsltn = new ArrayList<>();
         }
         return this.votePerRsltn;
     }

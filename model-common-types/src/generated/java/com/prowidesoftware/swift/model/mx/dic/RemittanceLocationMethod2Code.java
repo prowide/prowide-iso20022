@@ -1,27 +1,26 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for RemittanceLocationMethod2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="RemittanceLocationMethod2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="FAXI"/&gt;
- *     &lt;enumeration value="EDIC"/&gt;
- *     &lt;enumeration value="URID"/&gt;
- *     &lt;enumeration value="EMAL"/&gt;
- *     &lt;enumeration value="POST"/&gt;
- *     &lt;enumeration value="SMSM"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="RemittanceLocationMethod2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="FAXI"/>
+ *     <enumeration value="EDIC"/>
+ *     <enumeration value="URID"/>
+ *     <enumeration value="EMAL"/>
+ *     <enumeration value="POST"/>
+ *     <enumeration value="SMSM"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "RemittanceLocationMethod2Code")

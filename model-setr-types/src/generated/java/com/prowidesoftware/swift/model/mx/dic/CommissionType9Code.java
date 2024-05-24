@@ -1,32 +1,31 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for CommissionType9Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CommissionType9Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CLDI"/&gt;
- *     &lt;enumeration value="STEP"/&gt;
- *     &lt;enumeration value="SOFT"/&gt;
- *     &lt;enumeration value="PERN"/&gt;
- *     &lt;enumeration value="FLAT"/&gt;
- *     &lt;enumeration value="PERU"/&gt;
- *     &lt;enumeration value="PWCD"/&gt;
- *     &lt;enumeration value="PWEU"/&gt;
- *     &lt;enumeration value="BRKR"/&gt;
- *     &lt;enumeration value="DFDP"/&gt;
- *     &lt;enumeration value="PBOC"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CommissionType9Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CLDI"/>
+ *     <enumeration value="STEP"/>
+ *     <enumeration value="SOFT"/>
+ *     <enumeration value="PERN"/>
+ *     <enumeration value="FLAT"/>
+ *     <enumeration value="PERU"/>
+ *     <enumeration value="PWCD"/>
+ *     <enumeration value="PWEU"/>
+ *     <enumeration value="BRKR"/>
+ *     <enumeration value="DFDP"/>
+ *     <enumeration value="PBOC"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CommissionType9Code")

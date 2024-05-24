@@ -1,35 +1,34 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for CardDataReading10Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CardDataReading10Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ICPY"/&gt;
- *     &lt;enumeration value="MGST"/&gt;
- *     &lt;enumeration value="ICCY"/&gt;
- *     &lt;enumeration value="MICR"/&gt;
- *     &lt;enumeration value="MLEY"/&gt;
- *     &lt;enumeration value="OCRR"/&gt;
- *     &lt;enumeration value="MSIP"/&gt;
- *     &lt;enumeration value="OPTC"/&gt;
- *     &lt;enumeration value="OTHN"/&gt;
- *     &lt;enumeration value="RFID"/&gt;
- *     &lt;enumeration value="UNSP"/&gt;
- *     &lt;enumeration value="OTHP"/&gt;
- *     &lt;enumeration value="KEEN"/&gt;
- *     &lt;enumeration value="DFLE"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CardDataReading10Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ICPY"/>
+ *     <enumeration value="MGST"/>
+ *     <enumeration value="ICCY"/>
+ *     <enumeration value="MICR"/>
+ *     <enumeration value="MLEY"/>
+ *     <enumeration value="OCRR"/>
+ *     <enumeration value="MSIP"/>
+ *     <enumeration value="OPTC"/>
+ *     <enumeration value="OTHN"/>
+ *     <enumeration value="RFID"/>
+ *     <enumeration value="UNSP"/>
+ *     <enumeration value="OTHP"/>
+ *     <enumeration value="KEEN"/>
+ *     <enumeration value="DFLE"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CardDataReading10Code")

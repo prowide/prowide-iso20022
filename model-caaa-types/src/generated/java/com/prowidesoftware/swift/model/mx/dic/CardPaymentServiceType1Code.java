@@ -1,37 +1,36 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for CardPaymentServiceType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CardPaymentServiceType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CAFT"/&gt;
- *     &lt;enumeration value="ORCR"/&gt;
- *     &lt;enumeration value="CRDP"/&gt;
- *     &lt;enumeration value="CSHB"/&gt;
- *     &lt;enumeration value="CSHW"/&gt;
- *     &lt;enumeration value="CSHD"/&gt;
- *     &lt;enumeration value="DEFR"/&gt;
- *     &lt;enumeration value="RESA"/&gt;
- *     &lt;enumeration value="LOAD"/&gt;
- *     &lt;enumeration value="RFND"/&gt;
- *     &lt;enumeration value="QUCH"/&gt;
- *     &lt;enumeration value="BALC"/&gt;
- *     &lt;enumeration value="CACT"/&gt;
- *     &lt;enumeration value="CAVR"/&gt;
- *     &lt;enumeration value="PINC"/&gt;
- *     &lt;enumeration value="VALC"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CardPaymentServiceType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CAFT"/>
+ *     <enumeration value="ORCR"/>
+ *     <enumeration value="CRDP"/>
+ *     <enumeration value="CSHB"/>
+ *     <enumeration value="CSHW"/>
+ *     <enumeration value="CSHD"/>
+ *     <enumeration value="DEFR"/>
+ *     <enumeration value="RESA"/>
+ *     <enumeration value="LOAD"/>
+ *     <enumeration value="RFND"/>
+ *     <enumeration value="QUCH"/>
+ *     <enumeration value="BALC"/>
+ *     <enumeration value="CACT"/>
+ *     <enumeration value="CAVR"/>
+ *     <enumeration value="PINC"/>
+ *     <enumeration value="VALC"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CardPaymentServiceType1Code")

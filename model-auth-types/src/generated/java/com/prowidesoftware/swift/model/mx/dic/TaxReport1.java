@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -155,8 +155,8 @@ public class TaxReport1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the othrPty property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the othrPty property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -170,10 +170,12 @@ public class TaxReport1 {
      * {@link PartyIdentification72 }
      * 
      * 
+     * @return
+     *     The value of the othrPty property.
      */
     public List<PartyIdentification72> getOthrPty() {
         if (othrPty == null) {
-            othrPty = new ArrayList<PartyIdentification72>();
+            othrPty = new ArrayList<>();
         }
         return this.othrPty;
     }
@@ -184,8 +186,8 @@ public class TaxReport1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -199,10 +201,12 @@ public class TaxReport1 {
      * {@link AdditionalInformation1 }
      * 
      * 
+     * @return
+     *     The value of the addtlInf property.
      */
     public List<AdditionalInformation1> getAddtlInf() {
         if (addtlInf == null) {
-            addtlInf = new ArrayList<AdditionalInformation1>();
+            addtlInf = new ArrayList<>();
         }
         return this.addtlInf;
     }
@@ -213,8 +217,8 @@ public class TaxReport1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlRef property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlRef property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -228,10 +232,12 @@ public class TaxReport1 {
      * {@link DocumentGeneralInformation2 }
      * 
      * 
+     * @return
+     *     The value of the addtlRef property.
      */
     public List<DocumentGeneralInformation2> getAddtlRef() {
         if (addtlRef == null) {
-            addtlRef = new ArrayList<DocumentGeneralInformation2>();
+            addtlRef = new ArrayList<>();
         }
         return this.addtlRef;
     }
@@ -242,8 +248,8 @@ public class TaxReport1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -257,10 +263,12 @@ public class TaxReport1 {
      * {@link SupplementaryData1 }
      * 
      * 
+     * @return
+     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<SupplementaryData1>();
+            splmtryData = new ArrayList<>();
         }
         return this.splmtryData;
     }

@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -71,8 +71,8 @@ public class ActivityReportItems2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the usrTxRef property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the usrTxRef property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -86,10 +86,12 @@ public class ActivityReportItems2 {
      * {@link DocumentIdentification5 }
      * 
      * 
+     * @return
+     *     The value of the usrTxRef property.
      */
     public List<DocumentIdentification5> getUsrTxRef() {
         if (usrTxRef == null) {
-            usrTxRef = new ArrayList<DocumentIdentification5>();
+            usrTxRef = new ArrayList<>();
         }
         return this.usrTxRef;
     }
@@ -125,8 +127,8 @@ public class ActivityReportItems2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rptdItm property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rptdItm property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -140,10 +142,12 @@ public class ActivityReportItems2 {
      * {@link ActivityDetails1 }
      * 
      * 
+     * @return
+     *     The value of the rptdItm property.
      */
     public List<ActivityDetails1> getRptdItm() {
         if (rptdItm == null) {
-            rptdItm = new ArrayList<ActivityDetails1>();
+            rptdItm = new ArrayList<>();
         }
         return this.rptdItm;
     }
@@ -154,8 +158,8 @@ public class ActivityReportItems2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the pdgReqForActn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the pdgReqForActn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -169,10 +173,12 @@ public class ActivityReportItems2 {
      * {@link PendingActivity2 }
      * 
      * 
+     * @return
+     *     The value of the pdgReqForActn property.
      */
     public List<PendingActivity2> getPdgReqForActn() {
         if (pdgReqForActn == null) {
-            pdgReqForActn = new ArrayList<PendingActivity2>();
+            pdgReqForActn = new ArrayList<>();
         }
         return this.pdgReqForActn;
     }

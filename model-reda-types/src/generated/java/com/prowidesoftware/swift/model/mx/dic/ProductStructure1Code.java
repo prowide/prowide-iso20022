@@ -1,29 +1,28 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for ProductStructure1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ProductStructure1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="BOND"/&gt;
- *     &lt;enumeration value="NUMM"/&gt;
- *     &lt;enumeration value="UCMM"/&gt;
- *     &lt;enumeration value="EXTC"/&gt;
- *     &lt;enumeration value="UCIT"/&gt;
- *     &lt;enumeration value="SSEC"/&gt;
- *     &lt;enumeration value="SFUN"/&gt;
- *     &lt;enumeration value="NUCI"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ProductStructure1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="BOND"/>
+ *     <enumeration value="NUMM"/>
+ *     <enumeration value="UCMM"/>
+ *     <enumeration value="EXTC"/>
+ *     <enumeration value="UCIT"/>
+ *     <enumeration value="SSEC"/>
+ *     <enumeration value="SFUN"/>
+ *     <enumeration value="NUCI"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ProductStructure1Code")

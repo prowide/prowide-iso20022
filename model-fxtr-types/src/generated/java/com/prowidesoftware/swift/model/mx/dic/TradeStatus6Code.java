@@ -1,34 +1,33 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for TradeStatus6Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="TradeStatus6Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="INVA"/&gt;
- *     &lt;enumeration value="FMTC"/&gt;
- *     &lt;enumeration value="SMAP"/&gt;
- *     &lt;enumeration value="RJCT"/&gt;
- *     &lt;enumeration value="RSCD"/&gt;
- *     &lt;enumeration value="STLD"/&gt;
- *     &lt;enumeration value="SPLI"/&gt;
- *     &lt;enumeration value="UMTC"/&gt;
- *     &lt;enumeration value="SMAT"/&gt;
- *     &lt;enumeration value="FUMT"/&gt;
- *     &lt;enumeration value="NETT"/&gt;
- *     &lt;enumeration value="PFIX"/&gt;
- *     &lt;enumeration value="OMTC"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="TradeStatus6Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="INVA"/>
+ *     <enumeration value="FMTC"/>
+ *     <enumeration value="SMAP"/>
+ *     <enumeration value="RJCT"/>
+ *     <enumeration value="RSCD"/>
+ *     <enumeration value="STLD"/>
+ *     <enumeration value="SPLI"/>
+ *     <enumeration value="UMTC"/>
+ *     <enumeration value="SMAT"/>
+ *     <enumeration value="FUMT"/>
+ *     <enumeration value="NETT"/>
+ *     <enumeration value="PFIX"/>
+ *     <enumeration value="OMTC"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "TradeStatus6Code")

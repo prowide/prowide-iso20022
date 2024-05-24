@@ -1,12 +1,12 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -46,7 +46,7 @@ public class ApplicationHeaderImpl {
     protected XMLGregorianCalendar crDate;
     @XmlElement(name = "Dup")
     protected DuplicateIndication dup;
-    public final static transient Class[] _classes = new Class[] {ApplicationHeaderImpl.class, DuplicateIndication.class, EntityIdentification.class };
+    public static final transient Class[] _classes = new Class[] {ApplicationHeaderImpl.class, DuplicateIndication.class, EntityIdentification.class };
 
     /**
      * Gets the value of the from property.

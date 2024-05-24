@@ -2,16 +2,16 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -67,11 +67,11 @@ public class OvernightIndexSwapTransaction4 {
     @XmlElement(name = "StartDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar startDt;
+    protected LocalDate startDt;
     @XmlElement(name = "MtrtyDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar mtrtyDt;
+    protected LocalDate mtrtyDt;
     @XmlElement(name = "FxdIntrstRate", required = true)
     protected BigDecimal fxdIntrstRate;
     @XmlElement(name = "TxTp", required = true)
@@ -315,7 +315,7 @@ public class OvernightIndexSwapTransaction4 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getStartDt() {
+    public LocalDate getStartDt() {
         return startDt;
     }
 
@@ -327,7 +327,7 @@ public class OvernightIndexSwapTransaction4 {
      *     {@link String }
      *     
      */
-    public OvernightIndexSwapTransaction4 setStartDt(XMLGregorianCalendar value) {
+    public OvernightIndexSwapTransaction4 setStartDt(LocalDate value) {
         this.startDt = value;
         return this;
     }
@@ -340,7 +340,7 @@ public class OvernightIndexSwapTransaction4 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getMtrtyDt() {
+    public LocalDate getMtrtyDt() {
         return mtrtyDt;
     }
 
@@ -352,7 +352,7 @@ public class OvernightIndexSwapTransaction4 {
      *     {@link String }
      *     
      */
-    public OvernightIndexSwapTransaction4 setMtrtyDt(XMLGregorianCalendar value) {
+    public OvernightIndexSwapTransaction4 setMtrtyDt(LocalDate value) {
         this.mtrtyDt = value;
         return this;
     }
@@ -438,8 +438,8 @@ public class OvernightIndexSwapTransaction4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -453,10 +453,12 @@ public class OvernightIndexSwapTransaction4 {
      * {@link SupplementaryData1 }
      * 
      * 
+     * @return
+     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<SupplementaryData1>();
+            splmtryData = new ArrayList<>();
         }
         return this.splmtryData;
     }

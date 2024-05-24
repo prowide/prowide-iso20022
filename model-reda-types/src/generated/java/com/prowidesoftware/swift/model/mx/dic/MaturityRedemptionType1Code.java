@@ -1,28 +1,27 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for MaturityRedemptionType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="MaturityRedemptionType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="FRED"/&gt;
- *     &lt;enumeration value="PRNR"/&gt;
- *     &lt;enumeration value="PRWR"/&gt;
- *     &lt;enumeration value="RNDM"/&gt;
- *     &lt;enumeration value="PRRA"/&gt;
- *     &lt;enumeration value="CALL"/&gt;
- *     &lt;enumeration value="PUUT"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="MaturityRedemptionType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="FRED"/>
+ *     <enumeration value="PRNR"/>
+ *     <enumeration value="PRWR"/>
+ *     <enumeration value="RNDM"/>
+ *     <enumeration value="PRRA"/>
+ *     <enumeration value="CALL"/>
+ *     <enumeration value="PUUT"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "MaturityRedemptionType1Code")

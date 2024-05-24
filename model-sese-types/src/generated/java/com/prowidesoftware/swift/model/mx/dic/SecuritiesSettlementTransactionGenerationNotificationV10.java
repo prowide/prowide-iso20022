@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -146,8 +146,8 @@ public class SecuritiesSettlementTransactionGenerationNotificationV10 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the lnkgs property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the lnkgs property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -161,10 +161,12 @@ public class SecuritiesSettlementTransactionGenerationNotificationV10 {
      * {@link Linkages54 }
      * 
      * 
+     * @return
+     *     The value of the lnkgs property.
      */
     public List<Linkages54> getLnkgs() {
         if (lnkgs == null) {
-            lnkgs = new ArrayList<Linkages54>();
+            lnkgs = new ArrayList<>();
         }
         return this.lnkgs;
     }
@@ -250,8 +252,8 @@ public class SecuritiesSettlementTransactionGenerationNotificationV10 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the qtyAndAcctDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the qtyAndAcctDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -265,10 +267,12 @@ public class SecuritiesSettlementTransactionGenerationNotificationV10 {
      * {@link QuantityAndAccount79 }
      * 
      * 
+     * @return
+     *     The value of the qtyAndAcctDtls property.
      */
     public List<QuantityAndAccount79> getQtyAndAcctDtls() {
         if (qtyAndAcctDtls == null) {
-            qtyAndAcctDtls = new ArrayList<QuantityAndAccount79>();
+            qtyAndAcctDtls = new ArrayList<>();
         }
         return this.qtyAndAcctDtls;
     }
@@ -479,8 +483,8 @@ public class SecuritiesSettlementTransactionGenerationNotificationV10 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the gnrtdRsn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the gnrtdRsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -494,10 +498,12 @@ public class SecuritiesSettlementTransactionGenerationNotificationV10 {
      * {@link GeneratedReason5 }
      * 
      * 
+     * @return
+     *     The value of the gnrtdRsn property.
      */
     public List<GeneratedReason5> getGnrtdRsn() {
         if (gnrtdRsn == null) {
-            gnrtdRsn = new ArrayList<GeneratedReason5>();
+            gnrtdRsn = new ArrayList<>();
         }
         return this.gnrtdRsn;
     }
@@ -533,8 +539,8 @@ public class SecuritiesSettlementTransactionGenerationNotificationV10 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -548,10 +554,12 @@ public class SecuritiesSettlementTransactionGenerationNotificationV10 {
      * {@link SupplementaryData1 }
      * 
      * 
+     * @return
+     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<SupplementaryData1>();
+            splmtryData = new ArrayList<>();
         }
         return this.splmtryData;
     }

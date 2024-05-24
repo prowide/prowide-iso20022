@@ -1,77 +1,76 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for RejectedConfirmationStatusReason1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="RejectedConfirmationStatusReason1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="DSAF"/&gt;
- *     &lt;enumeration value="DFIN"/&gt;
- *     &lt;enumeration value="DBEN"/&gt;
- *     &lt;enumeration value="DPTD"/&gt;
- *     &lt;enumeration value="DORD"/&gt;
- *     &lt;enumeration value="DCXR"/&gt;
- *     &lt;enumeration value="DUNB"/&gt;
- *     &lt;enumeration value="DORT"/&gt;
- *     &lt;enumeration value="DROU"/&gt;
- *     &lt;enumeration value="DNAM"/&gt;
- *     &lt;enumeration value="DGAM"/&gt;
- *     &lt;enumeration value="DHRR"/&gt;
- *     &lt;enumeration value="DGRP"/&gt;
- *     &lt;enumeration value="DINP"/&gt;
- *     &lt;enumeration value="DLIR"/&gt;
- *     &lt;enumeration value="DARR"/&gt;
- *     &lt;enumeration value="DPDI"/&gt;
- *     &lt;enumeration value="DRSC"/&gt;
- *     &lt;enumeration value="DNAV"/&gt;
- *     &lt;enumeration value="DFXD"/&gt;
- *     &lt;enumeration value="DCHD"/&gt;
- *     &lt;enumeration value="DXOD"/&gt;
- *     &lt;enumeration value="DTAD"/&gt;
- *     &lt;enumeration value="DPDD"/&gt;
- *     &lt;enumeration value="DSCA"/&gt;
- *     &lt;enumeration value="DPID"/&gt;
- *     &lt;enumeration value="DSAM"/&gt;
- *     &lt;enumeration value="DSDT"/&gt;
- *     &lt;enumeration value="DEXD"/&gt;
- *     &lt;enumeration value="DIMD"/&gt;
- *     &lt;enumeration value="DTRA"/&gt;
- *     &lt;enumeration value="DTSA"/&gt;
- *     &lt;enumeration value="DACI"/&gt;
- *     &lt;enumeration value="DACO"/&gt;
- *     &lt;enumeration value="DPSA"/&gt;
- *     &lt;enumeration value="DPRA"/&gt;
- *     &lt;enumeration value="DLID"/&gt;
- *     &lt;enumeration value="DORF"/&gt;
- *     &lt;enumeration value="ULNK"/&gt;
- *     &lt;enumeration value="DREF"/&gt;
- *     &lt;enumeration value="IVAG"/&gt;
- *     &lt;enumeration value="IRCU"/&gt;
- *     &lt;enumeration value="IRIN"/&gt;
- *     &lt;enumeration value="ICAG"/&gt;
- *     &lt;enumeration value="IDCU"/&gt;
- *     &lt;enumeration value="IDIN"/&gt;
- *     &lt;enumeration value="ICTR"/&gt;
- *     &lt;enumeration value="DMON"/&gt;
- *     &lt;enumeration value="DDAT"/&gt;
- *     &lt;enumeration value="NSLA"/&gt;
- *     &lt;enumeration value="MEUT"/&gt;
- *     &lt;enumeration value="MCOM"/&gt;
- *     &lt;enumeration value="MCHA"/&gt;
- *     &lt;enumeration value="MTAX"/&gt;
- *     &lt;enumeration value="NATA"/&gt;
- *     &lt;enumeration value="ALAT"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="RejectedConfirmationStatusReason1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="DSAF"/>
+ *     <enumeration value="DFIN"/>
+ *     <enumeration value="DBEN"/>
+ *     <enumeration value="DPTD"/>
+ *     <enumeration value="DORD"/>
+ *     <enumeration value="DCXR"/>
+ *     <enumeration value="DUNB"/>
+ *     <enumeration value="DORT"/>
+ *     <enumeration value="DROU"/>
+ *     <enumeration value="DNAM"/>
+ *     <enumeration value="DGAM"/>
+ *     <enumeration value="DHRR"/>
+ *     <enumeration value="DGRP"/>
+ *     <enumeration value="DINP"/>
+ *     <enumeration value="DLIR"/>
+ *     <enumeration value="DARR"/>
+ *     <enumeration value="DPDI"/>
+ *     <enumeration value="DRSC"/>
+ *     <enumeration value="DNAV"/>
+ *     <enumeration value="DFXD"/>
+ *     <enumeration value="DCHD"/>
+ *     <enumeration value="DXOD"/>
+ *     <enumeration value="DTAD"/>
+ *     <enumeration value="DPDD"/>
+ *     <enumeration value="DSCA"/>
+ *     <enumeration value="DPID"/>
+ *     <enumeration value="DSAM"/>
+ *     <enumeration value="DSDT"/>
+ *     <enumeration value="DEXD"/>
+ *     <enumeration value="DIMD"/>
+ *     <enumeration value="DTRA"/>
+ *     <enumeration value="DTSA"/>
+ *     <enumeration value="DACI"/>
+ *     <enumeration value="DACO"/>
+ *     <enumeration value="DPSA"/>
+ *     <enumeration value="DPRA"/>
+ *     <enumeration value="DLID"/>
+ *     <enumeration value="DORF"/>
+ *     <enumeration value="ULNK"/>
+ *     <enumeration value="DREF"/>
+ *     <enumeration value="IVAG"/>
+ *     <enumeration value="IRCU"/>
+ *     <enumeration value="IRIN"/>
+ *     <enumeration value="ICAG"/>
+ *     <enumeration value="IDCU"/>
+ *     <enumeration value="IDIN"/>
+ *     <enumeration value="ICTR"/>
+ *     <enumeration value="DMON"/>
+ *     <enumeration value="DDAT"/>
+ *     <enumeration value="NSLA"/>
+ *     <enumeration value="MEUT"/>
+ *     <enumeration value="MCOM"/>
+ *     <enumeration value="MCHA"/>
+ *     <enumeration value="MTAX"/>
+ *     <enumeration value="NATA"/>
+ *     <enumeration value="ALAT"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "RejectedConfirmationStatusReason1Code")
