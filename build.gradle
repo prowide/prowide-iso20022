@@ -476,7 +476,7 @@ tasks.register('bundle', Jar) {
 	from ("$buildDir/libs") {
 		include '*.asc'
 	}
-	archiveName 'bundle.jar'
+	archiveFileName.set('bundle.jar')
 }
 
 tasks.withType(Test) {
