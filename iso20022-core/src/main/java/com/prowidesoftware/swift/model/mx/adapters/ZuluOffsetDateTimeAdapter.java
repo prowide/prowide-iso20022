@@ -30,7 +30,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * XMLGregorianCalendar adapter for date time elements.
+ * Zulu OffsetDateTime adapter for date time elements.
  * <p>
  * Marshals the date time as a Zulu time with format YYYY-MM-DDThh:mm:ss[.sss]Z which is aligned
  * with ISO 8601. Dislike the default jaxb implementation, this adapter will always print the Z

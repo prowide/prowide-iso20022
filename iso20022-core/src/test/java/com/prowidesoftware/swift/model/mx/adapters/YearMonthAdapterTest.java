@@ -29,60 +29,64 @@ public class YearMonthAdapterTest {
     @Test
     public void testYearMonth() {
         String xmlOrigin = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n" + "<RequestPayload>\n"
-                + "<h:AppHdr xmlns:h=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\">\n"
-                + "    <h:Fr>\n"
-                + "        <h:FIId>\n"
-                + "            <h:FinInstnId>\n"
-                + "                <h:BICFI>AAAAUSXXXXX</h:BICFI>\n"
-                + "            </h:FinInstnId>\n"
-                + "        </h:FIId>\n"
-                + "    </h:Fr>\n"
-                + "    <h:To>\n"
-                + "        <h:FIId>\n"
-                + "            <h:FinInstnId>\n"
-                + "                <h:BICFI>TRGTXEPMCLM</h:BICFI>\n"
-                + "            </h:FinInstnId>\n"
-                + "        </h:FIId>\n"
-                + "    </h:To>\n"
-                + "    <h:BizMsgIdr>TRGTXEPMCLM</h:BizMsgIdr>\n"
-                + "    <h:MsgDefIdr>sese.019.001.06</h:MsgDefIdr>\n"
-                + "    <h:CreDt>2023-05-09T11:38:43.268-03:00</h:CreDt>\n"
-                + "    <h:BizPrcgDt>2023-05-09T16:35:57-03:00</h:BizPrcgDt>\n"
-                + "</h:AppHdr>\n"
-                + "<Doc:Document xmlns:Doc=\"urn:iso:std:iso:20022:tech:xsd:sese.019.001.06\">\n"
-                + "    <Doc:AcctHldgInfReq>\n"
-                + "        <Doc:MsgRef>\n"
-                + "            <Doc:Id>FFFFFFF</Doc:Id>\n"
-                + "            <Doc:CreDtTm>2023-05-09T16:35:48-03:00</Doc:CreDtTm>\n"
-                + "        </Doc:MsgRef>\n"
-                + "        <Doc:TrfrAcct>\n"
-                + "            <Doc:Id>FEEEEER</Doc:Id>\n"
-                + "            <Doc:Dsgnt>FEEEER</Doc:Dsgnt>\n"
-                + "            <Doc:AcctNm>FEEER</Doc:AcctNm>\n"
-                + "        </Doc:TrfrAcct>\n"
-                + "        <Doc:Trfee>\n"
-                + "            <Doc:AnyBIC>TRGTXEPMCLM</Doc:AnyBIC>\n"
-                + "        </Doc:Trfee>\n"
-                + "        <Doc:PdctTrf>\n"
-                + "            <Doc:MstrRef>FEEEEER</Doc:MstrRef>\n"
-                + "            <Doc:TrfId>FEEEEER</Doc:TrfId>\n"
-                + "        </Doc:PdctTrf>\n"
-                + "        <Doc:MktPrctcVrsn>\n"
-                + "            <Doc:Nm>FERNANDOFERNANDO</Doc:Nm>\n"
-                + "            <Doc:Dt>2022-10</Doc:Dt>\n"
-                + "        </Doc:MktPrctcVrsn>\n"
-                + "    </Doc:AcctHldgInfReq>\n"
-                + "</Doc:Document>\n"
+                + "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\">\n"
+                + "    <Fr>\n"
+                + "        <FIId>\n"
+                + "            <FinInstnId>\n"
+                + "                <BICFI>AAAAUSXXXXX</BICFI>\n"
+                + "            </FinInstnId>\n"
+                + "        </FIId>\n"
+                + "    </Fr>\n"
+                + "    <To>\n"
+                + "        <FIId>\n"
+                + "            <FinInstnId>\n"
+                + "                <BICFI>TRGTXEPMCLM</BICFI>\n"
+                + "            </FinInstnId>\n"
+                + "        </FIId>\n"
+                + "    </To>\n"
+                + "    <BizMsgIdr>TRGTXEPMCLM</BizMsgIdr>\n"
+                + "    <MsgDefIdr>sese.019.001.06</MsgDefIdr>\n"
+                + "    <CreDt>2023-05-09T11:38:43.268-03:00</CreDt>\n"
+                + "    <BizPrcgDt>2023-05-09T16:35:57-03:00</BizPrcgDt>\n"
+                + "</AppHdr>\n"
+                + "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:sese.019.001.06\">\n"
+                + "    <AcctHldgInfReq>\n"
+                + "        <MsgRef>\n"
+                + "            <Id>FFFFFFF</Id>\n"
+                + "            <CreDtTm>2023-05-09T16:35:48-03:00</CreDtTm>\n"
+                + "        </MsgRef>\n"
+                + "        <TrfrAcct>\n"
+                + "            <Id>FEEEEER</Id>\n"
+                + "            <Dsgnt>FEEEER</Dsgnt>\n"
+                + "            <AcctNm>FEEER</AcctNm>\n"
+                + "        </TrfrAcct>\n"
+                + "        <Trfee>\n"
+                + "            <AnyBIC>TRGTXEPMCLM</AnyBIC>\n"
+                + "        </Trfee>\n"
+                + "        <PdctTrf>\n"
+                + "            <MstrRef>FEEEEER</MstrRef>\n"
+                + "            <TrfId>FEEEEER</TrfId>\n"
+                + "        </PdctTrf>\n"
+                + "        <MktPrctcVrsn>\n"
+                + "            <Nm>FERNANDOFERNANDO</Nm>\n"
+                + "            <Dt>2022-10</Dt>\n"
+                + "        </MktPrctcVrsn>\n"
+                + "    </AcctHldgInfReq>\n"
+                + "</Document>\n"
                 + "</RequestPayload>";
 
         final MxSese01900106 mx1 = MxSese01900106.parse(xmlOrigin);
-        final String xml1 = mx1.message();
-        // System.out.println(xml1);
-        assertTrue(xml1.contains("<Doc:CreDtTm>2023-05-09T16:35:48-03:00</Doc:CreDtTm>"));
-        assertTrue(xml1.contains("<Doc:Dt>2022-10</Doc:Dt>"));
+
+        MxWriteConfiguration conf = new MxWriteConfiguration();
+        conf.documentPrefix = null;
+        conf.headerPrefix = null;
+
+        final String xml1 = mx1.message(conf);
+        assertTrue(xml1.contains("<CreDtTm>2023-05-09T16:35:48-03:00</CreDtTm>"));
+        assertTrue(xml1.contains("<Dt>2022-10</Dt>"));
 
         final MxSese01900106 mx2 = MxSese01900106.parse(xml1);
-        final String xml2 = mx2.message();
+        final String xml2 = mx2.message(conf);
 
         assertEquals(xml1, xml2);
         assertEquals(mx1, mx2);
@@ -91,90 +95,98 @@ public class YearMonthAdapterTest {
     @Test
     public void testYearMonth_CustomPattern() {
         String xmlOrigin = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n" + "<RequestPayload>\n"
-                + "<h:AppHdr xmlns:h=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\">\n"
-                + "    <h:Fr>\n"
-                + "        <h:FIId>\n"
-                + "            <h:FinInstnId>\n"
-                + "                <h:BICFI>AAAAUSXXXXX</h:BICFI>\n"
-                + "            </h:FinInstnId>\n"
-                + "        </h:FIId>\n"
-                + "    </h:Fr>\n"
-                + "    <h:To>\n"
-                + "        <h:FIId>\n"
-                + "            <h:FinInstnId>\n"
-                + "                <h:BICFI>TRGTXEPMCLM</h:BICFI>\n"
-                + "            </h:FinInstnId>\n"
-                + "        </h:FIId>\n"
-                + "    </h:To>\n"
-                + "    <h:BizMsgIdr>TRGTXEPMCLM</h:BizMsgIdr>\n"
-                + "    <h:MsgDefIdr>sese.019.001.06</h:MsgDefIdr>\n"
-                + "    <h:CreDt>2023-05-09T11:38:43.268-03:00</h:CreDt>\n"
-                + "    <h:BizPrcgDt>2023-05-09T16:35:57-03:00</h:BizPrcgDt>\n"
-                + "</h:AppHdr>\n"
-                + "<Doc:Document xmlns:Doc=\"urn:iso:std:iso:20022:tech:xsd:sese.019.001.06\">\n"
-                + "    <Doc:AcctHldgInfReq>\n"
-                + "        <Doc:MsgRef>\n"
-                + "            <Doc:Id>FFFFFFF</Doc:Id>\n"
-                + "            <Doc:CreDtTm>2023-05-09T16:35:48-03:00</Doc:CreDtTm>\n"
-                + "        </Doc:MsgRef>\n"
-                + "        <Doc:TrfrAcct>\n"
-                + "            <Doc:Id>FEEEEER</Doc:Id>\n"
-                + "            <Doc:Dsgnt>FEEEER</Doc:Dsgnt>\n"
-                + "            <Doc:AcctNm>FEEER</Doc:AcctNm>\n"
-                + "        </Doc:TrfrAcct>\n"
-                + "        <Doc:Trfee>\n"
-                + "            <Doc:AnyBIC>TRGTXEPMCLM</Doc:AnyBIC>\n"
-                + "        </Doc:Trfee>\n"
-                + "        <Doc:PdctTrf>\n"
-                + "            <Doc:MstrRef>FEEEEER</Doc:MstrRef>\n"
-                + "            <Doc:TrfId>FEEEEER</Doc:TrfId>\n"
-                + "        </Doc:PdctTrf>\n"
-                + "        <Doc:MktPrctcVrsn>\n"
-                + "            <Doc:Nm>FERNANDOFERNANDO</Doc:Nm>\n"
-                + "            <Doc:Dt>2021-10</Doc:Dt>\n"
-                + "        </Doc:MktPrctcVrsn>\n"
-                + "    </Doc:AcctHldgInfReq>\n"
-                + "</Doc:Document>\n"
+                + "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\">\n"
+                + "    <Fr>\n"
+                + "        <FIId>\n"
+                + "            <FinInstnId>\n"
+                + "                <BICFI>AAAAUSXXXXX</BICFI>\n"
+                + "            </FinInstnId>\n"
+                + "        </FIId>\n"
+                + "    </Fr>\n"
+                + "    <To>\n"
+                + "        <FIId>\n"
+                + "            <FinInstnId>\n"
+                + "                <BICFI>TRGTXEPMCLM</BICFI>\n"
+                + "            </FinInstnId>\n"
+                + "        </FIId>\n"
+                + "    </To>\n"
+                + "    <BizMsgIdr>TRGTXEPMCLM</BizMsgIdr>\n"
+                + "    <MsgDefIdr>sese.019.001.06</MsgDefIdr>\n"
+                + "    <CreDt>2023-05-09T11:38:43.268-03:00</CreDt>\n"
+                + "    <BizPrcgDt>2023-05-09T16:35:57-03:00</BizPrcgDt>\n"
+                + "</AppHdr>\n"
+                + "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:sese.019.001.06\">\n"
+                + "    <AcctHldgInfReq>\n"
+                + "        <MsgRef>\n"
+                + "            <Id>FFFFFFF</Id>\n"
+                + "            <CreDtTm>2023-05-09T16:35:48-03:00</CreDtTm>\n"
+                + "        </MsgRef>\n"
+                + "        <TrfrAcct>\n"
+                + "            <Id>FEEEEER</Id>\n"
+                + "            <Dsgnt>FEEEER</Dsgnt>\n"
+                + "            <AcctNm>FEEER</AcctNm>\n"
+                + "        </TrfrAcct>\n"
+                + "        <Trfee>\n"
+                + "            <AnyBIC>TRGTXEPMCLM</AnyBIC>\n"
+                + "        </Trfee>\n"
+                + "        <PdctTrf>\n"
+                + "            <MstrRef>FEEEEER</MstrRef>\n"
+                + "            <TrfId>FEEEEER</TrfId>\n"
+                + "        </PdctTrf>\n"
+                + "        <MktPrctcVrsn>\n"
+                + "            <Nm>FERNANDOFERNANDO</Nm>\n"
+                + "            <Dt>2021-10</Dt>\n"
+                + "        </MktPrctcVrsn>\n"
+                + "    </AcctHldgInfReq>\n"
+                + "</Document>\n"
                 + "</RequestPayload>";
 
         final MxSese01900106 mx = MxSese01900106.parse(xmlOrigin);
-        final String xml = mx.message();
-        assertTrue(xml.contains("<Doc:CreDtTm>2023-05-09T16:35:48-03:00</Doc:CreDtTm>"));
-        assertTrue(xml.contains("<Doc:Dt>2021-10</Doc:Dt>"));
 
         MxWriteConfiguration conf = new MxWriteConfiguration();
+        conf.documentPrefix = null;
+        conf.headerPrefix = null;
+
+        final String xml = mx.message(conf);
+        assertTrue(xml.contains("<CreDtTm>2023-05-09T16:35:48-03:00</CreDtTm>"));
+        assertTrue(xml.contains("<Dt>2021-10</Dt>"));
+
         conf.adapters.yearMonthAdapter =
                 new IsoYearMonthAdapter(new YearMonthAdapter(DateTimeFormatter.ofPattern("yy-MM")));
 
         final String xmlCustomFormat = mx.message(conf);
-        // System.out.println(xml);
-        assertTrue(xmlCustomFormat.contains("<Doc:CreDtTm>2023-05-09T16:35:48-03:00</Doc:CreDtTm>"));
-        assertTrue(xmlCustomFormat.contains("<Doc:Dt>21-10</Doc:Dt>"));
+        assertTrue(xmlCustomFormat.contains("<CreDtTm>2023-05-09T16:35:48-03:00</CreDtTm>"));
+        assertTrue(xmlCustomFormat.contains("<Dt>21-10</Dt>"));
     }
 
     @Test
     public void testYear_CustomPattern() {
-        String xmlOrigin = "<Doc:Document xmlns:Doc=\"urn:iso:std:iso:20022:tech:xsd:acmt.034.001.04\">\n"
-                + "    <Doc:AcctSwtchReqPmt>\n"
-                + "        <Doc:CdtInstr>\n"
-                + "            <Doc:Tax>\n"
-                + "                <Doc:Rcrd>\n"
-                + "                    <Doc:Prd>\n"
-                + "                        <Doc:Yr>2022</Doc:Yr>\n"
-                + "                    </Doc:Prd>\n"
-                + "                </Doc:Rcrd>\n"
-                + "            </Doc:Tax>\n"
-                + "        </Doc:CdtInstr>\n"
-                + "    </Doc:AcctSwtchReqPmt>\n"
-                + "</Doc:Document>";
+        String xmlOrigin = "<Document xmlns:pacs=\"urn:iso:std:iso:20022:tech:xsd:acmt.034.001.04\">\n"
+                + "    <AcctSwtchReqPmt>\n"
+                + "        <CdtInstr>\n"
+                + "            <Tax>\n"
+                + "                <Rcrd>\n"
+                + "                    <Prd>\n"
+                + "                        <Yr>2022</Yr>\n"
+                + "                    </Prd>\n"
+                + "                </Rcrd>\n"
+                + "            </Tax>\n"
+                + "        </CdtInstr>\n"
+                + "    </AcctSwtchReqPmt>\n"
+                + "</Document>";
 
         final MxAcmt03400104 mx = MxAcmt03400104.parse(xmlOrigin);
-        final String xml = mx.message();
-        assertTrue(xml.contains("<Doc:Yr>2022</Doc:Yr>"));
 
         MxWriteConfiguration conf = new MxWriteConfiguration();
+        conf.documentPrefix = null;
+        conf.headerPrefix = null;
+
+        final String xml = mx.message(conf);
+        assertTrue(xml.contains("<Yr>2022</Yr>"));
+
         conf.adapters.yearAdapter = new IsoYearAdapter(new YearAdapter(DateTimeFormatter.ofPattern("yy")));
+
         final String xmlCustomFormat = mx.message(conf);
-        assertTrue(xmlCustomFormat.contains("<Doc:Yr>22</Doc:Yr>"));
+        assertTrue(xmlCustomFormat.contains("<Yr>22</Yr>"));
     }
 }

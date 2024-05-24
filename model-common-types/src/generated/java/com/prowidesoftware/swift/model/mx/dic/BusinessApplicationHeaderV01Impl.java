@@ -1,12 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.OffsetDateTime;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -54,9 +56,10 @@ public class BusinessApplicationHeaderV01Impl {
     protected String msgDefIdr;
     @XmlElement(name = "BizSvc")
     protected String bizSvc;
-    @XmlElement(name = "CreDt", required = true)
+    @XmlElement(name = "CreDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar creDt;
+    protected OffsetDateTime creDt;
     @XmlElement(name = "CpyDplct")
     @XmlSchemaType(name = "string")
     protected CopyDuplicate1Code cpyDplct;
@@ -225,10 +228,10 @@ public class BusinessApplicationHeaderV01Impl {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getCreDt() {
+    public OffsetDateTime getCreDt() {
         return creDt;
     }
 
@@ -237,10 +240,10 @@ public class BusinessApplicationHeaderV01Impl {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public BusinessApplicationHeaderV01Impl setCreDt(XMLGregorianCalendar value) {
+    public BusinessApplicationHeaderV01Impl setCreDt(OffsetDateTime value) {
         this.creDt = value;
         return this;
     }

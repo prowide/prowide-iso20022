@@ -32,7 +32,8 @@ scmVersion {
 		versionSeparator = '-'
 	}
 }
-project.version = "${SRU}-${scmVersion.version}"
+//project.version = "${SRU}-${scmVersion.version}"
+project.version = "${SRU}-10.2.0-SNAPSHOT"
 
 allprojects {
 

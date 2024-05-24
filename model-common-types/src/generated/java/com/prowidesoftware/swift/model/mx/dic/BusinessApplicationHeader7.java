@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -57,11 +57,11 @@ public class BusinessApplicationHeader7 {
     @XmlElement(name = "CreDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar creDt;
+    protected OffsetDateTime creDt;
     @XmlElement(name = "BizPrcgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar bizPrcgDt;
+    protected OffsetDateTime bizPrcgDt;
     @XmlElement(name = "CpyDplct")
     @XmlSchemaType(name = "string")
     protected CopyDuplicate1Code cpyDplct;
@@ -255,7 +255,7 @@ public class BusinessApplicationHeader7 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getCreDt() {
+    public OffsetDateTime getCreDt() {
         return creDt;
     }
 
@@ -267,7 +267,7 @@ public class BusinessApplicationHeader7 {
      *     {@link String }
      *     
      */
-    public BusinessApplicationHeader7 setCreDt(XMLGregorianCalendar value) {
+    public BusinessApplicationHeader7 setCreDt(OffsetDateTime value) {
         this.creDt = value;
         return this;
     }
@@ -280,7 +280,7 @@ public class BusinessApplicationHeader7 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getBizPrcgDt() {
+    public OffsetDateTime getBizPrcgDt() {
         return bizPrcgDt;
     }
 
@@ -292,7 +292,7 @@ public class BusinessApplicationHeader7 {
      *     {@link String }
      *     
      */
-    public BusinessApplicationHeader7 setBizPrcgDt(XMLGregorianCalendar value) {
+    public BusinessApplicationHeader7 setBizPrcgDt(OffsetDateTime value) {
         this.bizPrcgDt = value;
         return this;
     }

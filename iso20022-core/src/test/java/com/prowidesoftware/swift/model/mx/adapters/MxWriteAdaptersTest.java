@@ -39,9 +39,9 @@ public class MxWriteAdaptersTest {
         final String xml1 = mx1.message();
 
         // System.out.println(xml1);
-        assertTrue(xml1.contains("<Doc:CreDtTm>2021-10-19T12:13:14" + systemOffset + "</Doc:CreDtTm>"));
-        assertTrue(xml1.contains("<Doc:IntrBkSttlmDt>2021-10-19</Doc:IntrBkSttlmDt>"));
-        assertTrue(xml1.contains("<Doc:CLSTm>12:13:14" + systemOffset + "</Doc:CLSTm>"));
+        assertTrue(xml1.contains("<pacs:CreDtTm>2021-10-19T12:13:14" + systemOffset + "</pacs:CreDtTm>"));
+        assertTrue(xml1.contains("<pacs:IntrBkSttlmDt>2021-10-19</pacs:IntrBkSttlmDt>"));
+        assertTrue(xml1.contains("<pacs:CLSTm>12:13:14" + systemOffset + "</pacs:CLSTm>"));
 
         final MxPacs00800102 mx2 = MxPacs00800102.parse(xml1);
         // System.out.println(mx2.message());
@@ -92,9 +92,9 @@ public class MxWriteAdaptersTest {
 
         final String xml = mx1.message();
         // System.out.println(xml);
-        assertTrue(xml.contains("<Doc:CreDtTm>2021-10-19T12:13:14+00:00</Doc:CreDtTm>"));
-        assertTrue(xml.contains("<Doc:IntrBkSttlmDt>2021-10-19</Doc:IntrBkSttlmDt>"));
-        assertTrue(xml.contains("<Doc:CLSTm>12:13:14+00:00</Doc:CLSTm>"));
+        assertTrue(xml.contains("<pacs:CreDtTm>2021-10-19T12:13:14+00:00</pacs:CreDtTm>"));
+        assertTrue(xml.contains("<pacs:IntrBkSttlmDt>2021-10-19</pacs:IntrBkSttlmDt>"));
+        assertTrue(xml.contains("<pacs:CLSTm>12:13:14+00:00</pacs:CLSTm>"));
 
         final MxPacs00800102 mx2 = MxPacs00800102.parse(xml);
         // System.out.println(mx2.message());
@@ -146,9 +146,9 @@ public class MxWriteAdaptersTest {
 
         final String xml = mx1.message();
         // System.out.println(xml);
-        assertTrue(xml.contains("<Doc:CreDtTm>2021-10-19T12:13:14.123" + systemOffset + "</Doc:CreDtTm>"));
-        assertTrue(xml.contains("<Doc:IntrBkSttlmDt>2021-10-19</Doc:IntrBkSttlmDt>"));
-        assertTrue(xml.contains("<Doc:CLSTm>12:13:14.123" + systemOffset + "</Doc:CLSTm>"));
+        assertTrue(xml.contains("<pacs:CreDtTm>2021-10-19T12:13:14.123" + systemOffset + "</pacs:CreDtTm>"));
+        assertTrue(xml.contains("<pacs:IntrBkSttlmDt>2021-10-19</pacs:IntrBkSttlmDt>"));
+        assertTrue(xml.contains("<pacs:CLSTm>12:13:14.123" + systemOffset + "</pacs:CLSTm>"));
 
         final MxPacs00800102 mx2 = MxPacs00800102.parse(xml);
         // System.out.println(mx2.message());
@@ -197,8 +197,8 @@ public class MxWriteAdaptersTest {
 
         final String xml = mx1.message(conf);
         // System.out.println(xml);
-        assertTrue(xml.contains("<Doc:CreDtTm>21-10-19 12:13</Doc:CreDtTm>"));
-        assertTrue(xml.contains("<Doc:IntrBkSttlmDt>21-10-19</Doc:IntrBkSttlmDt>"));
+        assertTrue(xml.contains("<pacs:CreDtTm>21-10-19 12:13</pacs:CreDtTm>"));
+        assertTrue(xml.contains("<pacs:IntrBkSttlmDt>21-10-19</pacs:IntrBkSttlmDt>"));
 
         final MxPacs00800102 mx2 = MxPacs00800102.parse(xml, new MxReadConfiguration(conf));
         // System.out.println(mx2.message());
@@ -243,8 +243,8 @@ public class MxWriteAdaptersTest {
 
         final String xml = mx1.message(conf);
         // System.out.println(xml);
-        assertTrue(xml.contains("<Doc:CreDtTm>foobar</Doc:CreDtTm>"));
-        assertTrue(xml.contains("<Doc:IntrBkSttlmDt>foobar</Doc:IntrBkSttlmDt>"));
+        assertTrue(xml.contains("<pacs:CreDtTm>foobar</pacs:CreDtTm>"));
+        assertTrue(xml.contains("<pacs:IntrBkSttlmDt>foobar</pacs:IntrBkSttlmDt>"));
 
         final MxPacs00800102 mx2 = MxPacs00800102.parse(xml, new MxReadConfiguration(conf));
         // System.out.println(mx2.message());

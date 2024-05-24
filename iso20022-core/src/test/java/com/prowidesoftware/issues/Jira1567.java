@@ -12,7 +12,7 @@ import java.time.ZoneOffset;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Test;
 
-public class IssueJira1567Test {
+public class Jira1567 {
 
     @Test
     public void test() {
@@ -28,14 +28,14 @@ public class IssueJira1567Test {
 
         // default date time adapter contains the offset
         String xml = mx.message();
-        assertTrue(xml.contains("+00:00</h:CrDate>"));
+        assertTrue(xml.contains("+00:00</head:CrDate>"));
 
         // custom serialization using a custom date time adapter
         MxWriteConfiguration config = new MxWriteConfiguration();
         config.adapters.dateTimeAdapter = new IsoDateTimeAdapter(new CustomDateTimeAdapter());
 
         xml = mx.message(config);
-        assertTrue(xml.contains("Z</h:CrDate>"));
+        assertTrue(xml.contains("Z</head:CrDate>"));
     }
 
     public class CustomDateTimeAdapter extends OffsetDateTimeAdapter {

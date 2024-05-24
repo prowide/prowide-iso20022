@@ -1,9 +1,9 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -65,11 +65,11 @@ public class BusinessApplicationHeaderV02Impl {
     @XmlElement(name = "CreDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar creDt;
+    protected OffsetDateTime creDt;
     @XmlElement(name = "BizPrcgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar bizPrcgDt;
+    protected OffsetDateTime bizPrcgDt;
     @XmlElement(name = "CpyDplct")
     @XmlSchemaType(name = "string")
     protected CopyDuplicate1Code cpyDplct;
@@ -266,7 +266,7 @@ public class BusinessApplicationHeaderV02Impl {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getCreDt() {
+    public OffsetDateTime getCreDt() {
         return creDt;
     }
 
@@ -278,7 +278,7 @@ public class BusinessApplicationHeaderV02Impl {
      *     {@link String }
      *     
      */
-    public BusinessApplicationHeaderV02Impl setCreDt(XMLGregorianCalendar value) {
+    public BusinessApplicationHeaderV02Impl setCreDt(OffsetDateTime value) {
         this.creDt = value;
         return this;
     }
@@ -291,7 +291,7 @@ public class BusinessApplicationHeaderV02Impl {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getBizPrcgDt() {
+    public OffsetDateTime getBizPrcgDt() {
         return bizPrcgDt;
     }
 
@@ -303,7 +303,7 @@ public class BusinessApplicationHeaderV02Impl {
      *     {@link String }
      *     
      */
-    public BusinessApplicationHeaderV02Impl setBizPrcgDt(XMLGregorianCalendar value) {
+    public BusinessApplicationHeaderV02Impl setBizPrcgDt(OffsetDateTime value) {
         this.bizPrcgDt = value;
         return this;
     }
