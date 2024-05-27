@@ -1,6 +1,6 @@
 # Prowide ISO 20022 - CHANGELOG
 
-#### 10.2.0 - SNAPSHOT
+#### 10.2.0 - May 2024
   * SWIFT Standard release update 2024 (live 16 November 2024)
   * Yearly revision of deprecation phase (see https://dev.prowidesoftware.com/SRU2024/getting-started/deprecation/)
   * Added message categories for File Management (cafm), Fraud Reporting and Disposition (cafm), Network Management (canm) and Settlement Reporting (casr)
