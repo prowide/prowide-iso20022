@@ -21,6 +21,7 @@ import java.util.TimeZone;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
 
 /**
@@ -34,7 +35,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  * default implementation or your own in the constructor.
  *
  * @see TypeAdaptersConfiguration
- * @since 9.2.6
+ * @since 9.4,5
  */
 public class ZuluDateTimeAdapter extends XmlAdapter<String, XMLGregorianCalendar> {
 

@@ -1,10 +1,12 @@
 # Prowide ISO 20022 - CHANGELOG
 
-
-#### 9.4.5-SNAPSHOT May 2023
+#### 9.4.6 - SNAPSHOT
+  * (PW-1875) Fixed the `ZuluDateTimeAdapter` to convert the datetime to UTC offset if needed
+ 
+#### 9.4.5 - May 2024
   * (PW-1875) Changed the BusinessApplicationHeaderV01 marshaller to always use Zulu timezone with "Z" indicator
  
-#### 9.4.4 - Jannuary 2024
+#### 9.4.4 - January 2024
   * Enhanced the identifier extraction of the MxSwiftMessage to use the AppHdr when the Document namespace is missing
   * Enhanced the generic AbstractMX#parse to detect the message type from the AppHdr when the Document namespace is missing
   * Added default metadata extraction implementation for pacs and camt amounts and value dates
