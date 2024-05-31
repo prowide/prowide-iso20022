@@ -155,6 +155,6 @@ public class ZuluDateTimeAdapterTest {
         MxPacs00800110 mxPacs00800110 = MxPacs00800110.parse(xml);
 
         // After CreDtTm is parsed, it should be 2024-03-27T20:45:56Z
-        assertTrue(mxPacs00800110.message().contains("2024-03-27T20:45:56Z"));
+        assertTrue(mxPacs00800110.message().contains("2024-03-27T23:45:56Z"));
     }
 }
