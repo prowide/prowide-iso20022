@@ -71,14 +71,14 @@ public class ZuluDateTimeAdapterTest {
     public void testMarshallFractionOfSeconds() throws Exception {
         XMLGregorianCalendar cal = DatatypeFactory.newInstance()
                 .newXMLGregorianCalendar(BigInteger.valueOf(2022), 3, 4, 12, 50, 8, new BigDecimal("0.123"), -180);
-        assertEquals("2022-03-04T12:50:08.123Z", adapter.marshal(cal));
+        assertEquals("2022-03-04T15:50:08.123Z", adapter.marshal(cal));
     }
 
     @Test
     public void testMarshallNoFractionOfSeconds() throws Exception {
         XMLGregorianCalendar cal = DatatypeFactory.newInstance()
                 .newXMLGregorianCalendar(BigInteger.valueOf(2022), 3, 4, 12, 50, 8, null, -180);
-        assertEquals("2022-03-04T12:50:08Z", adapter.marshal(cal));
+        assertEquals("2022-03-04T15:50:08Z", adapter.marshal(cal));
     }
 
     @Test
@@ -154,7 +154,7 @@ public class ZuluDateTimeAdapterTest {
         // Create a new instance of MxPacs00800110 with AppHdr CreDtTm ZuluDateTime
         MxPacs00800110 mxPacs00800110 = MxPacs00800110.parse(xml);
 
-        // After CreDtTm is parsed, it should be 2024-03-27T20:45:56Z
-        assertTrue(mxPacs00800110.message().contains("2024-03-27T20:45:56Z"));
+        // After CreDtTm is parsed, it should be in UTC offset and formatted with Zulu indicator
+        assertTrue(mxPacs00800110.message().contains("2024-03-27T23:45:56Z"));
     }
 }

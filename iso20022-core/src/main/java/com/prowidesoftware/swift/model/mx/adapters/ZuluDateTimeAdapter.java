@@ -16,7 +16,11 @@
 package com.prowidesoftware.swift.model.mx.adapters;
 
 import java.text.SimpleDateFormat;
+import java.util.GregorianCalendar;
+import java.util.TimeZone;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 
 /**
@@ -93,10 +97,21 @@ public class ZuluDateTimeAdapter extends XmlAdapter<String, XMLGregorianCalendar
         } else {
             String formatted;
             synchronized (marshalFormat) {
-                // Viene un calendar no UTC?
-                formatted = AdapterUtils.format(this.marshalFormat, cal);
+                // Create a new Calendar with the Date represented in Zulu Time
+                XMLGregorianCalendar xmlGregorianCalendarZulu = getXmlGregorianCalendarInZulu(cal);
+                formatted = AdapterUtils.format(this.marshalFormat, xmlGregorianCalendarZulu);
             }
             return formatted.replace(".000", "");
         }
+    }
+
+    private static XMLGregorianCalendar getXmlGregorianCalendarInZulu(XMLGregorianCalendar cal)
+            throws DatatypeConfigurationException {
+        DatatypeFactory datatypeFactory = DatatypeFactory.newInstance();
+        XMLGregorianCalendar xmlGregorianCalendar = datatypeFactory.newXMLGregorianCalendar();
+        GregorianCalendar gregorianCalendar = xmlGregorianCalendar.toGregorianCalendar();
+        gregorianCalendar.setTime(cal.toGregorianCalendar().getTime());
+        gregorianCalendar.setTimeZone(TimeZone.getTimeZone("Z"));
+        return datatypeFactory.newXMLGregorianCalendar(gregorianCalendar);
     }
 }
