@@ -1,5 +1,9 @@
 # Prowide ISO 20022 - CHANGELOG
 
+#### 9.5.1 - SNAPSHOT
+  * Enhanced the AppHdrFactory to honor the business service set in the parameter MxId
+  * Enhanced the MxParseUtils#identifyMessage to set the business service in the MxId when present
+
 #### 9.5.0 - May 2024
   * SWIFT Standard release update 2024 (live 16 November 2024)
   * Yearly revision of deprecation phase (see https://dev.prowidesoftware.com/SRU2024/getting-started/deprecation/)
