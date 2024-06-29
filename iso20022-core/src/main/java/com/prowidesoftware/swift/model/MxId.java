@@ -323,7 +323,8 @@ public class MxId {
      * @param businessService a string value to set as discriminator, for example "swift.cbprplus.cov.02"
      * @since 9.5.0
      */
-    public void setBusinessService(String businessService) {
+    public MxId setBusinessService(String businessService) {
         this.businessService = businessService;
+        return this;
     }
 }

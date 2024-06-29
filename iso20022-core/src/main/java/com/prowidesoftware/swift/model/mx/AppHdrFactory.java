@@ -107,6 +107,9 @@ public class AppHdrFactory {
 
         if (id != null) {
             h.setMsgDefIdr(id.id());
+            if (id.getBusinessService().isPresent()) {
+                h.setBizSvc(id.getBusinessService().get());
+            }
         }
 
         h.setCreDt(OffsetDateTime.now());
@@ -151,6 +154,9 @@ public class AppHdrFactory {
 
         if (id != null) {
             h.setMsgDefIdr(id.id());
+            if (id.getBusinessService().isPresent()) {
+                h.setBizSvc(id.getBusinessService().get());
+            }
         }
 
         h.setCreDt(OffsetDateTime.now());
