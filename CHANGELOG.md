@@ -1,6 +1,6 @@
 # Prowide ISO 20022 - CHANGELOG
 
-#### 9.5.1 - SNAPSHOT
+#### 9.5.1 - June 2024
   * Enhanced the AppHdrFactory to honor the business service set in the parameter MxId
   * Enhanced the MxParseUtils#identifyMessage to set the business service in the MxId when present
 
