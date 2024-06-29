@@ -1,6 +1,6 @@
 # Prowide ISO 20022 - CHANGELOG
 
-#### 9.5.2 - SNAPSHOT
+#### 9.5.2 - June 2024
   * (PW-1875) Fixed the `ZuluDateTimeAdapter` to convert the datetime to UTC offset if needed
 
 #### 9.5.1 - June 2024
