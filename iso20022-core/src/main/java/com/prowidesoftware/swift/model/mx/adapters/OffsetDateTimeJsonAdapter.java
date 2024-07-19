@@ -16,7 +16,9 @@
 package com.prowidesoftware.swift.model.mx.adapters;
 
 import com.google.gson.*;
+
 import java.lang.reflect.Type;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.time.ZoneId;
@@ -58,46 +60,96 @@ public class OffsetDateTimeJsonAdapter implements JsonSerializer<OffsetDateTime>
     public OffsetDateTime deserialize(
             JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) {
         try {
-            // Parse DTO model
-            DateTimeOffsetDTO dateTimeOffsetDTO = gson.fromJson(jsonElement, DateTimeOffsetDTO.class);
-
-            // Prepare OffsetDateTime
-            OffsetDateTime offsetDateTime;
-            int nano = 0;
-            if (dateTimeOffsetDTO.dateTime.time.nano != null) {
-                nano = dateTimeOffsetDTO.dateTime.time.nano;
-            }
-
-            if (dateTimeOffsetDTO.offset != null) {
-                ZoneOffset zoneoffset = ZoneOffset.ofTotalSeconds(dateTimeOffsetDTO.offset.totalSeconds);
-                offsetDateTime = OffsetDateTime.of(
-                        dateTimeOffsetDTO.dateTime.date.year,
-                        dateTimeOffsetDTO.dateTime.date.month,
-                        dateTimeOffsetDTO.dateTime.date.day,
-                        dateTimeOffsetDTO.dateTime.time.hour,
-                        dateTimeOffsetDTO.dateTime.time.minute,
-                        dateTimeOffsetDTO.dateTime.time.second,
-                        nano,
-                        zoneoffset);
-            } else {
-                LocalDateTime localDateTime = LocalDateTime.of(
-                        dateTimeOffsetDTO.dateTime.date.year,
-                        dateTimeOffsetDTO.dateTime.date.month,
-                        dateTimeOffsetDTO.dateTime.date.day,
-                        dateTimeOffsetDTO.dateTime.time.hour,
-                        dateTimeOffsetDTO.dateTime.time.minute,
-                        dateTimeOffsetDTO.dateTime.time.second,
-                        nano);
-
-                ZoneId zoneId = ZoneOffset.systemDefault();
-                offsetDateTime = localDateTime.atZone(zoneId).toOffsetDateTime();
-            }
-
-            return offsetDateTime;
-        } catch (Exception e) {
-            log.log(Level.FINEST, "Cannot parse JSON into OffsetDateTime: " + e.getMessage(), e);
-            return null;
+            // Parse DTO from current OffsetDateTime model
+            return deserializeFromOffsetDateTimeDTO(gson.fromJson(jsonElement, DateTimeOffsetDTO.class));
+        } catch (final Exception e) {
+            log.log(Level.FINEST, "Cannot parse JSON into OffsetDateTime from current DTO format: " + e.getMessage(), e);
         }
+        log.log(Level.FINEST, "Attempting parsing from legacy DTO format");
+        try {
+            // Parse DTO from legacy XMLGregorianCalendar model
+            return deserializeFromXMLGregorianCalendarDTO(gson.fromJson(jsonElement, XMLGregorianCalendarDTO.class));
+        } catch (final Exception e) {
+            log.log(Level.FINEST, "Cannot parse JSON into OffsetDateTime from legacy DTO format: " + e.getMessage(), e);
+        }
+        return null;
+    }
+
+    private OffsetDateTime deserializeFromOffsetDateTimeDTO(final DateTimeOffsetDTO dateTimeOffsetDTO) {
+        // Prepare OffsetDateTime
+        OffsetDateTime offsetDateTime;
+        int nano = 0;
+        if (dateTimeOffsetDTO.dateTime.time.nano != null) {
+            nano = dateTimeOffsetDTO.dateTime.time.nano;
+        }
+
+        if (dateTimeOffsetDTO.offset != null) {
+            ZoneOffset zoneoffset = ZoneOffset.ofTotalSeconds(dateTimeOffsetDTO.offset.totalSeconds);
+            offsetDateTime = OffsetDateTime.of(
+                    dateTimeOffsetDTO.dateTime.date.year,
+                    dateTimeOffsetDTO.dateTime.date.month,
+                    dateTimeOffsetDTO.dateTime.date.day,
+                    dateTimeOffsetDTO.dateTime.time.hour,
+                    dateTimeOffsetDTO.dateTime.time.minute,
+                    dateTimeOffsetDTO.dateTime.time.second,
+                    nano,
+                    zoneoffset);
+        } else {
+            LocalDateTime localDateTime = LocalDateTime.of(
+                    dateTimeOffsetDTO.dateTime.date.year,
+                    dateTimeOffsetDTO.dateTime.date.month,
+                    dateTimeOffsetDTO.dateTime.date.day,
+                    dateTimeOffsetDTO.dateTime.time.hour,
+                    dateTimeOffsetDTO.dateTime.time.minute,
+                    dateTimeOffsetDTO.dateTime.time.second,
+                    nano);
+
+            ZoneId zoneId = ZoneOffset.systemDefault();
+            offsetDateTime = localDateTime.atZone(zoneId).toOffsetDateTime();
+        }
+
+        return offsetDateTime;
+    }
+
+    private OffsetDateTime deserializeFromXMLGregorianCalendarDTO(final XMLGregorianCalendarDTO xmlGregorianCalendarDTO) {
+        if (Integer.MIN_VALUE == xmlGregorianCalendarDTO.year) {
+            xmlGregorianCalendarDTO.year = 0;
+        }
+        if (Integer.MIN_VALUE == xmlGregorianCalendarDTO.month) {
+            xmlGregorianCalendarDTO.month = 0;
+        }
+        if (Integer.MIN_VALUE == xmlGregorianCalendarDTO.day) {
+            xmlGregorianCalendarDTO.day = 0;
+        }
+        if (Integer.MIN_VALUE == xmlGregorianCalendarDTO.hour) {
+            xmlGregorianCalendarDTO.hour = 0;
+        }
+        if (Integer.MIN_VALUE == xmlGregorianCalendarDTO.minute) {
+            xmlGregorianCalendarDTO.minute = 0;
+        }
+        if (Integer.MIN_VALUE == xmlGregorianCalendarDTO.second) {
+            xmlGregorianCalendarDTO.second = 0;
+        }
+        if (Integer.MIN_VALUE == xmlGregorianCalendarDTO.timezone) {
+            xmlGregorianCalendarDTO.timezone = null;
+        }
+
+        return LocalDateTime
+                .of(
+                        xmlGregorianCalendarDTO.year,
+                        xmlGregorianCalendarDTO.month,
+                        xmlGregorianCalendarDTO.day,
+                        xmlGregorianCalendarDTO.hour,
+                        xmlGregorianCalendarDTO.minute,
+                        xmlGregorianCalendarDTO.second,
+                        xmlGregorianCalendarDTO.fractionalSecond.scaleByPowerOfTen(9).toBigInteger().intValueExact()
+                )
+                .atZone(
+                        xmlGregorianCalendarDTO.timezone != null
+                                ? ZoneOffset.ofHours(xmlGregorianCalendarDTO.timezone)
+                                : ZoneOffset.systemDefault()
+                )
+                .toOffsetDateTime();
     }
 
     static class DateTimeOffsetDTO {
@@ -125,5 +177,16 @@ public class OffsetDateTimeJsonAdapter implements JsonSerializer<OffsetDateTime>
 
     static class OffsetDTO {
         Integer totalSeconds = 0;
+    }
+
+    static class XMLGregorianCalendarDTO {
+        Integer     year;
+        Integer     month;
+        Integer     day;
+        Integer     hour = 0;
+        Integer     minute = 0;
+        Integer     second = 0;
+        BigDecimal  fractionalSecond = BigDecimal.ZERO;
+        Integer     timezone;
     }
 }
