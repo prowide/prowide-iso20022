@@ -15,6 +15,8 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
+import com.prowidesoftware.deprecation.ProwideDeprecated;
+import com.prowidesoftware.deprecation.TargetYear;
 import com.prowidesoftware.swift.model.mx.adapters.TypeAdaptersConfiguration;
 import javax.xml.bind.JAXBContext;
 
@@ -82,14 +84,21 @@ public class MxWriteConfiguration {
     public String indent = XmlEventWriter.DEFAULT_INDENT;
 
     /**
+     * @deprecated use {@link #envelopeType} instead
+     */
+    @Deprecated
+    @ProwideDeprecated(phase2 = TargetYear.SRU2025)
+    public EnvelopeType envelopeTyoe = EnvelopeType.CUSTOM;
+
+    /**
      * Defaults to CUSTOM meaning the parameters for the envelope root element are used. This can be changed to
      * SWIFT, BME_V1 or BME_V2 to use the default values for those envelope types. If an envelope other than CUSTOM
      * is selected, the rootElement is ignored and the corresponding envelope structure and namespace will be used
      * instead.
      *
-     * @since 9.5.0
+     * @since 9.5.3
      */
-    public EnvelopeType envelopeTyoe = EnvelopeType.CUSTOM;
+    public EnvelopeType envelopeType = EnvelopeType.CUSTOM;
 
     /**
      * If true, the category code will be used as prefix for the Document element. For example "camt" or "pacs"

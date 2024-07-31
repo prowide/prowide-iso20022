@@ -244,8 +244,8 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
         // handle manually at this method level
         params.includeXMLDeclaration = false;
 
-        EnvelopeType envelope = usableConf.envelopeTyoe;
-        String envelopeElement = envelope == EnvelopeType.CUSTOM ? usableConf.rootElement : envelope.rootElement();
+        EnvelopeType envelopeType = usableConf.envelopeType;
+        String envelopeElement = envelopeType == EnvelopeType.CUSTOM ? usableConf.rootElement : envelopeType.rootElement();
 
         StringBuilder xml = new StringBuilder();
         if (usableConf.includeXMLDeclaration) {
@@ -257,35 +257,35 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
         if (header != null) {
             // open envelope element
             xml.append("<");
-            if (envelope.prefix() != null) {
-                xml.append(envelope.prefix()).append(":");
+            if (envelopeType.prefix() != null) {
+                xml.append(envelopeType.prefix()).append(":");
             }
             xml.append(envelopeElement);
 
-            if (envelope != EnvelopeType.CUSTOM) {
+            if (envelopeType != EnvelopeType.CUSTOM) {
                 xml.append(" xmlns=\"")
-                        .append(usableConf.envelopeTyoe.namespace())
+                        .append(usableConf.envelopeType.namespace())
                         .append("\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"");
             }
             xml.append(">\n");
 
             // for ISO envelopes we have to add an extra element wrapping the header
-            if (envelope.name().startsWith("BME")) {
-                xml.append("<").append(envelope.prefix()).append(":Hdr>\n");
+            if (envelopeType.name().startsWith("BME")) {
+                xml.append("<").append(envelopeType.prefix()).append(":Hdr>\n");
             }
 
             // write AppHdr
             xml.append(header).append("\n");
 
             // for ISO envelopes we have to close the extra element wrapping the header
-            if (envelope.name().startsWith("BME")) {
-                xml.append("</").append(envelope.prefix()).append(":Hdr>\n");
+            if (envelopeType.name().startsWith("BME")) {
+                xml.append("</").append(envelopeType.prefix()).append(":Hdr>\n");
             }
         }
 
         // for ISO envelopes we have to wrap the Document in an extra element
-        if (envelope.name().startsWith("BME")) {
-            xml.append("<").append(envelope.prefix()).append(":Doc>\n");
+        if (envelopeType.name().startsWith("BME")) {
+            xml.append("<").append(envelopeType.prefix()).append(":Doc>\n");
         }
 
         // write Document
@@ -297,15 +297,15 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
         xml.append(document(params)).append("\n");
 
         // for ISO envelopes we have to close the extra element wrapping the Document
-        if (envelope.name().startsWith("BME")) {
-            xml.append("</").append(envelope.prefix()).append(":Doc>\n");
+        if (envelopeType.name().startsWith("BME")) {
+            xml.append("</").append(envelopeType.prefix()).append(":Doc>\n");
         }
 
         if (header != null) {
             // close the envelope element
             xml.append("</");
-            if (envelope.prefix() != null) {
-                xml.append(envelope.prefix()).append(":");
+            if (envelopeType.prefix() != null) {
+                xml.append(envelopeType.prefix()).append(":");
             }
             xml.append(envelopeElement).append(">");
         }

@@ -10,7 +10,7 @@
 #### 9.5.0 - May 2024
   * SWIFT Standard release update 2024 (live 16 November 2024)
   * Yearly revision of deprecation phase (see https://dev.prowidesoftware.com/SRU2024/getting-started/deprecation/)
-  * Added message categories for File Management (cafm), Fraud Reporting and Disposition (cafm), Network Management (canm) and Settlement Reporting (casr)
+  * Added message categories for File Management (cafm), Fraud Reporting and Disposition (cafm), Network Management (canm), and Settlement Reporting (casr)
   * Add support in the MxWriteConfiguration to use standard envelopes for SWIFT and ISO 20022
   * Changed the default Document prefix to the message category; "camt", "pacs", etc...
   * Enhanced MxId with optional and transient businessService field to act as a message type discriminator
