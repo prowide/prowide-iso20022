@@ -16,7 +16,6 @@
 package com.prowidesoftware.swift.model.mx.adapters;
 
 import com.google.gson.*;
-
 import java.lang.reflect.Type;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -63,7 +62,10 @@ public class OffsetDateTimeJsonAdapter implements JsonSerializer<OffsetDateTime>
             // Parse DTO from current OffsetDateTime model
             return deserializeFromOffsetDateTimeDTO(gson.fromJson(jsonElement, DateTimeOffsetDTO.class));
         } catch (final Exception e) {
-            log.log(Level.FINEST, "Cannot parse JSON into OffsetDateTime from current DTO format: " + e.getMessage(), e);
+            log.log(
+                    Level.FINEST,
+                    "Cannot parse JSON into OffsetDateTime from current DTO format: " + e.getMessage(),
+                    e);
         }
         log.log(Level.FINEST, "Attempting parsing from legacy DTO format");
         try {
@@ -111,7 +113,8 @@ public class OffsetDateTimeJsonAdapter implements JsonSerializer<OffsetDateTime>
         return offsetDateTime;
     }
 
-    private OffsetDateTime deserializeFromXMLGregorianCalendarDTO(final XMLGregorianCalendarDTO xmlGregorianCalendarDTO) {
+    private OffsetDateTime deserializeFromXMLGregorianCalendarDTO(
+            final XMLGregorianCalendarDTO xmlGregorianCalendarDTO) {
         if (Integer.MIN_VALUE == xmlGregorianCalendarDTO.year) {
             xmlGregorianCalendarDTO.year = 0;
         }
@@ -134,21 +137,22 @@ public class OffsetDateTimeJsonAdapter implements JsonSerializer<OffsetDateTime>
             xmlGregorianCalendarDTO.timezone = null;
         }
 
-        return LocalDateTime
-                .of(
+        return LocalDateTime.of(
                         xmlGregorianCalendarDTO.year,
                         xmlGregorianCalendarDTO.month,
                         xmlGregorianCalendarDTO.day,
                         xmlGregorianCalendarDTO.hour,
                         xmlGregorianCalendarDTO.minute,
                         xmlGregorianCalendarDTO.second,
-                        xmlGregorianCalendarDTO.fractionalSecond.scaleByPowerOfTen(9).toBigInteger().intValueExact()
-                )
+                        xmlGregorianCalendarDTO
+                                .fractionalSecond
+                                .scaleByPowerOfTen(9)
+                                .toBigInteger()
+                                .intValueExact())
                 .atZone(
                         xmlGregorianCalendarDTO.timezone != null
                                 ? ZoneOffset.ofHours(xmlGregorianCalendarDTO.timezone)
-                                : ZoneOffset.systemDefault()
-                )
+                                : ZoneOffset.systemDefault())
                 .toOffsetDateTime();
     }
 
@@ -180,13 +184,13 @@ public class OffsetDateTimeJsonAdapter implements JsonSerializer<OffsetDateTime>
     }
 
     static class XMLGregorianCalendarDTO {
-        Integer     year;
-        Integer     month;
-        Integer     day;
-        Integer     hour = 0;
-        Integer     minute = 0;
-        Integer     second = 0;
-        BigDecimal  fractionalSecond = BigDecimal.ZERO;
-        Integer     timezone;
+        Integer year;
+        Integer month;
+        Integer day;
+        Integer hour = 0;
+        Integer minute = 0;
+        Integer second = 0;
+        BigDecimal fractionalSecond = BigDecimal.ZERO;
+        Integer timezone;
     }
 }

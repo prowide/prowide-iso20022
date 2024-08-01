@@ -19,7 +19,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
+import java.time.Instant;
 import java.time.OffsetTime;
+import java.util.TimeZone;
 import org.junit.jupiter.api.Test;
 
 class OffsetTimeJsonAdapterTest {
@@ -28,7 +30,11 @@ class OffsetTimeJsonAdapterTest {
 
     @Test
     void testSerializationAndDeserialization() {
-        int systemOffsetSeconds = OffsetTime.now().getOffset().getTotalSeconds();
+        int systemOffsetSeconds = TimeZone.getDefault()
+                .toZoneId()
+                .getRules()
+                .getStandardOffset(Instant.now())
+                .getTotalSeconds();
 
         // without offset, nano 0
         String jsonActual = "{\"time\":{\"hour\":12,\"minute\":13,\"second\":14,\"nano\":0}}";
