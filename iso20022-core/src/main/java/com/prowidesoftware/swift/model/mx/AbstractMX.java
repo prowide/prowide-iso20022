@@ -245,7 +245,8 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
         params.includeXMLDeclaration = false;
 
         EnvelopeType envelopeType = usableConf.envelopeType;
-        String envelopeElement = envelopeType == EnvelopeType.CUSTOM ? usableConf.rootElement : envelopeType.rootElement();
+        String envelopeElement =
+                envelopeType == EnvelopeType.CUSTOM ? usableConf.rootElement : envelopeType.rootElement();
 
         StringBuilder xml = new StringBuilder();
         if (usableConf.includeXMLDeclaration) {
