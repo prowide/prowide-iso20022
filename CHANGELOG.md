@@ -1,6 +1,6 @@
 # Prowide ISO 20022 - CHANGELOG
 
-#### 9.5.3 - SNAPSHOT
+#### 9.5.3 - August 2024
   * (PW-1947) Updated MX model with latest SWIFT SRU2024 schema update, including new messages such as trck.001.001.03
   * Add support for Business Application Header version head.001.001.04
 
