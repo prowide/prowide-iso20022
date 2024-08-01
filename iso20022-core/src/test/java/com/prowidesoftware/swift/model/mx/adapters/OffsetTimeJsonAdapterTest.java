@@ -21,7 +21,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import java.time.Instant;
 import java.time.OffsetTime;
-import java.util.TimeZone;
+import java.time.ZoneId;
 import org.junit.jupiter.api.Test;
 
 class OffsetTimeJsonAdapterTest {
@@ -30,8 +30,7 @@ class OffsetTimeJsonAdapterTest {
 
     @Test
     void testSerializationAndDeserialization() {
-        int systemOffsetSeconds = TimeZone.getDefault()
-                .toZoneId()
+        int systemOffsetSeconds = ZoneId.systemDefault()
                 .getRules()
                 .getStandardOffset(Instant.now())
                 .getTotalSeconds();
