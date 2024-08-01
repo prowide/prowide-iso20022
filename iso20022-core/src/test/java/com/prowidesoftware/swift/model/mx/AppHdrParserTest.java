@@ -39,8 +39,9 @@ public class AppHdrParserTest {
 
     private void assertSampleApplicationHeader(final AppHdr bh) {
         assertNotNull(bh);
+        assertInstanceOf(LegacyAppHdr.class, bh);
         LegacyAppHdr h = (LegacyAppHdr) bh;
-        assertNotNull(h);
+
         assertEquals("DN", h.getFrom().getType());
         assertEquals("cn=funds,ou=abcdchzz,o=swift", h.getFrom().getId());
         assertEquals("DN", h.getTo().getType());
@@ -70,9 +71,11 @@ public class AppHdrParserTest {
     public void testParseApplicationHeader_sample_payload_mq() throws IOException {
         final String xml = Lib.readResource("app_to_mqsq.xml");
         Optional<AppHdr> appHdr = AppHdrParser.parse(xml);
+
         assertTrue(appHdr.isPresent());
+        assertInstanceOf(LegacyAppHdr.class, appHdr.get());
         LegacyAppHdr h = (LegacyAppHdr) appHdr.get();
-        assertNotNull(h);
+
         assertEquals("SCRRQ01", h.getMsgRef());
         assertNotNull(h.getCrDate());
         assertEquals(2006, h.getCrDate().getYear());
@@ -83,8 +86,11 @@ public class AppHdrParserTest {
     public void testParseApplicationHeader_sample_bah() throws IOException {
         final String xml = Lib.readResource("mx_sample_bah.xml");
         Optional<AppHdr> appHdr = AppHdrParser.parse(xml);
+
         assertTrue(appHdr.isPresent());
+        assertInstanceOf(BusinessAppHdrV01.class, appHdr.get());
         BusinessAppHdrV01 bah = (BusinessAppHdrV01) appHdr.get();
+
         assertEquals(
                 "T2S",
                 bah.getFr()
@@ -103,7 +109,7 @@ public class AppHdrParserTest {
     }
 
     @Test
-    public void testParseBusinessApplicationHeader_sample() {
+    public void testParseBAH1_sample() {
         final String xml =
                 "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.01\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n"
                         + "<Fr> \n"
@@ -138,7 +144,9 @@ public class AppHdrParserTest {
                         + "<CreDt>2015-08-27T08:59:00Z</CreDt>\n"
                         + "</AppHdr>";
         Optional<AppHdr> appHdr = AppHdrParser.parse(xml);
+
         assertTrue(appHdr.isPresent());
+        assertInstanceOf(BusinessAppHdrV01.class, appHdr.get());
         BusinessAppHdrV01 bah = (BusinessAppHdrV01) appHdr.get();
 
         assertNotNull(bah);
@@ -181,7 +189,7 @@ public class AppHdrParserTest {
     }
 
     @Test
-    public void testParseApplicationHeader() {
+    public void testParseBAH1_sample2() {
         final String xml = "<h:AppHdr xmlns:h=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.01\">" + "   <h:Fr>"
                 + "      <h:FIId>"
                 + "         <h:FinInstnId>"
@@ -201,13 +209,139 @@ public class AppHdrParserTest {
                 + "   <h:CreDt>2017-08-08T16:58:01Z</h:CreDt>"
                 + "</h:AppHdr>";
         Optional<AppHdr> appHdr = AppHdrParser.parse(xml);
+
         assertTrue(appHdr.isPresent());
+        assertInstanceOf(BusinessAppHdrV01.class, appHdr.get());
         BusinessAppHdrV01 bah = (BusinessAppHdrV01) appHdr.get();
-        assertNotNull(bah);
+
         assertEquals("Not available", bah.getFr().getFIId().getFinInstnId().getNm());
         assertEquals("Not available", bah.getTo().getFIId().getFinInstnId().getNm());
         assertEquals("AAAAAAAAAA222222", bah.getBizMsgIdr());
         assertEquals("seev.037.002.02", bah.getMsgDefIdr());
+        assertNotNull(bah.getCreDt());
+    }
+
+    @Test
+    public void testParseBAH2_sample() {
+        final String xml = "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\">\n"
+                + "        <Fr>\n"
+                + "            <FIId>\n"
+                + "                <FinInstnId>\n"
+                + "                    <BICFI>FOOXGB2L</BICFI>\n"
+                + "                </FinInstnId>\n"
+                + "            </FIId>\n"
+                + "        </Fr>\n"
+                + "        <To>\n"
+                + "            <FIId>\n"
+                + "                <FinInstnId>\n"
+                + "                    <BICFI>FOOOSG22</BICFI>\n"
+                + "                </FinInstnId>\n"
+                + "            </FIId>\n"
+                + "        </To>\n"
+                + "        <BizMsgIdr>pacs002bizmsgidr-001</BizMsgIdr>\n"
+                + "        <MsgDefIdr>pacs.002.001.10</MsgDefIdr>\n"
+                + "        <BizSvc>swift.cbprplus.02</BizSvc>\n"
+                + "        <CreDt>2020-08-06T19:10:47+09:00</CreDt>\n"
+                + "        <Rltd>\n"
+                + "            <Fr>\n"
+                + "                <FIId>\n"
+                + "                    <FinInstnId>\n"
+                + "                        <BICFI>FOOOSG22</BICFI>\n"
+                + "                    </FinInstnId>\n"
+                + "                </FIId>\n"
+                + "            </Fr>\n"
+                + "            <To>\n"
+                + "                <FIId>\n"
+                + "                    <FinInstnId>\n"
+                + "                        <BICFI>FOOXGB2L</BICFI>\n"
+                + "                    </FinInstnId>\n"
+                + "                </FIId>\n"
+                + "            </To>\n"
+                + "            <BizMsgIdr>pacs8bizmsgidr01</BizMsgIdr>\n"
+                + "            <MsgDefIdr>pacs.008.001.08</MsgDefIdr>\n"
+                + "            <BizSvc>swift.cbprplus.cov.02</BizSvc>\n"
+                + "            <CreDt>2020-08-06T10:00:47+01:00</CreDt>\n"
+                + "        </Rltd>\n"
+                + "    </AppHdr>\n";
+        Optional<AppHdr> appHdr = AppHdrParser.parse(xml);
+
+        assertTrue(appHdr.isPresent());
+        assertInstanceOf(BusinessAppHdrV02.class, appHdr.get());
+        BusinessAppHdrV02 bah = (BusinessAppHdrV02) appHdr.get();
+
+        assertEquals("FOOXGB2L", bah.getFr().getFIId().getFinInstnId().getBICFI());
+        assertEquals("FOOOSG22", bah.getTo().getFIId().getFinInstnId().getBICFI());
+        assertEquals("pacs002bizmsgidr-001", bah.getBizMsgIdr());
+        assertEquals("pacs.002.001.10", bah.getMsgDefIdr());
+        assertEquals("swift.cbprplus.02", bah.getBizSvc());
+        assertNotNull(bah.getCreDt());
+    }
+
+    @Test
+    public void testParseBAH3_sample() {
+        final String xml = "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.03\">\n"
+                + "        <Fr>\n"
+                + "            <FIId>\n"
+                + "                <FinInstnId>\n"
+                + "                    <BICFI>FOOXGB2L</BICFI>\n"
+                + "                </FinInstnId>\n"
+                + "            </FIId>\n"
+                + "        </Fr>\n"
+                + "        <To>\n"
+                + "            <FIId>\n"
+                + "                <FinInstnId>\n"
+                + "                    <BICFI>FOOOSG22</BICFI>\n"
+                + "                </FinInstnId>\n"
+                + "            </FIId>\n"
+                + "        </To>\n"
+                + "        <BizMsgIdr>pacs002bizmsgidr-001</BizMsgIdr>\n"
+                + "        <MsgDefIdr>pacs.002.001.10</MsgDefIdr>\n"
+                + "        <CreDt>2020-08-06T19:10:47+09:00</CreDt>\n"
+                + "    </AppHdr>\n";
+        Optional<AppHdr> appHdr = AppHdrParser.parse(xml);
+
+        assertTrue(appHdr.isPresent());
+        assertInstanceOf(BusinessAppHdrV03.class, appHdr.get());
+        BusinessAppHdrV03 bah = (BusinessAppHdrV03) appHdr.get();
+
+        assertEquals("FOOXGB2L", bah.getFr().getFIId().getFinInstnId().getBICFI());
+        assertEquals("FOOOSG22", bah.getTo().getFIId().getFinInstnId().getBICFI());
+        assertEquals("pacs002bizmsgidr-001", bah.getBizMsgIdr());
+        assertEquals("pacs.002.001.10", bah.getMsgDefIdr());
+        assertNotNull(bah.getCreDt());
+    }
+
+    @Test
+    public void testParseBAH4_sample() {
+        final String xml = "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.04\">\n"
+                + "        <Fr>\n"
+                + "            <FIId>\n"
+                + "                <FinInstnId>\n"
+                + "                    <BICFI>FOOXGB2L</BICFI>\n"
+                + "                </FinInstnId>\n"
+                + "            </FIId>\n"
+                + "        </Fr>\n"
+                + "        <To>\n"
+                + "            <FIId>\n"
+                + "                <FinInstnId>\n"
+                + "                    <BICFI>FOOOSG22</BICFI>\n"
+                + "                </FinInstnId>\n"
+                + "            </FIId>\n"
+                + "        </To>\n"
+                + "        <BizMsgIdr>pacs002bizmsgidr-001</BizMsgIdr>\n"
+                + "        <MsgDefIdr>pacs.002.001.10</MsgDefIdr>\n"
+                + "        <CreDt>2020-08-06T19:10:47+09:00</CreDt>\n"
+                + "    </AppHdr>\n";
+        Optional<AppHdr> appHdr = AppHdrParser.parse(xml);
+
+        assertTrue(appHdr.isPresent());
+        assertInstanceOf(BusinessAppHdrV04.class, appHdr.get());
+        BusinessAppHdrV04 bah = (BusinessAppHdrV04) appHdr.get();
+
+        assertEquals("FOOXGB2L", bah.getFr().getFIId().getFinInstnId().getBICFI());
+        assertEquals("FOOOSG22", bah.getTo().getFIId().getFinInstnId().getBICFI());
+        assertEquals("pacs002bizmsgidr-001", bah.getBizMsgIdr());
+        assertEquals("pacs.002.001.10", bah.getMsgDefIdr());
         assertNotNull(bah.getCreDt());
     }
 
@@ -258,7 +392,7 @@ public class AppHdrParserTest {
                 + "</AppHdr>";
         Optional<AppHdr> appHdr = AppHdrParser.parse(xml);
         assertTrue(appHdr.isPresent());
-        BusinessAppHdrV01 bah = (BusinessAppHdrV01) appHdr.get();
+        BusinessAppHdrV02 bah = (BusinessAppHdrV02) appHdr.get();
         assertEquals("0001645041", bah.getBizMsgIdr());
     }
 }
