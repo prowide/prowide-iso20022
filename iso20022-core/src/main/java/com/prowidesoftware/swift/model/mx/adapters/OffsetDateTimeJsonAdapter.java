@@ -27,6 +27,9 @@ import java.util.logging.Logger;
 
 /**
  * This adapter enables accepting OffsetDateTime time Json format.
+ * <p> The adapter supports two DTO formats: the current one and the
+ * legacy one based on XMLGregorianCalendar model with Java 1.8.
+ * </p>
  *
  * @since 10.0.1
  */
