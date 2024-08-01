@@ -206,7 +206,7 @@ public class MxWriteTest {
         mx.getFIToFICstmrCdtTrf().getGrpHdr().setMsgId("123");
 
         MxWriteConfiguration conf = new MxWriteConfiguration();
-        conf.envelopeTyoe = EnvelopeType.SWIFT;
+        conf.envelopeType = EnvelopeType.SWIFT;
 
         final String xml = mx.message(conf);
 
@@ -233,7 +233,7 @@ public class MxWriteTest {
         mx.getFIToFICstmrCdtTrf().getGrpHdr().setMsgId("123");
 
         MxWriteConfiguration conf = new MxWriteConfiguration();
-        conf.envelopeTyoe = EnvelopeType.BME_V1;
+        conf.envelopeType = EnvelopeType.BME_V1;
 
         final String xml = mx.message(conf);
 
@@ -264,7 +264,7 @@ public class MxWriteTest {
         mx.getFIToFICstmrCdtTrf().getGrpHdr().setMsgId("123");
 
         MxWriteConfiguration conf = new MxWriteConfiguration();
-        conf.envelopeTyoe = EnvelopeType.BME_V2;
+        conf.envelopeType = EnvelopeType.BME_V2;
 
         final String xml = mx.message(conf);
 
