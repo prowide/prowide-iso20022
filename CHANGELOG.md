@@ -1,5 +1,8 @@
 # Prowide ISO 20022 - CHANGELOG
 
+#### 10.2.2 - SNAPSHOT
+  * (PW-1947) Updated MX model with latest SWIFT SRU2024 schema update, including new messages such as trck.001.001.03
+
 #### 10.2.1 - June 2024
   * Enhanced the AppHdrFactory to honor the business service set in the parameter MxId
   * Enhanced the MxParseUtils#identifyMessage to set the business service in the MxId when present
