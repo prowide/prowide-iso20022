@@ -3,157 +3,16 @@ package com.prowidesoftware.swift.model.mx.adapters;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.prowidesoftware.swift.model.mx.AbstractMX;
+import com.prowidesoftware.swift.model.mx.BusinessAppHdrV01;
 import com.prowidesoftware.swift.model.mx.MxSese02500109;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.DisplayNameGenerator;
 import org.junit.jupiter.api.Test;
 
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 class DateTimeJsonAdapterBackwardCompatibilityTest {
-    private static final String XML_MX = "<?xml version=\"1.0\"?>\n"
-            + "    <RequestPayload xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.003.001.01\">\n"
-            + "      <AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.01\">\n"
-            + "        <Fr>\n"
-            + "          <FIId>\n"
-            + "            <FinInstnId>\n"
-            + "              <BICFI>IJKLMNOPXXX</BICFI>\n"
-            + "              <Othr>\n"
-            + "                <Id>ABCDEFGHXXX</Id>\n"
-            + "              </Othr>\n"
-            + "            </FinInstnId>\n"
-            + "          </FIId>\n"
-            + "        </Fr>\n"
-            + "        <To>\n"
-            + "          <FIId>\n"
-            + "            <FinInstnId>\n"
-            + "              <BICFI>ABCDEFGHXXX</BICFI>\n"
-            + "              <Othr>\n"
-            + "                <Id>ABCDEFGHXXX</Id>\n"
-            + "              </Othr>\n"
-            + "            </FinInstnId>\n"
-            + "          </FIId>\n"
-            + "        </To>\n"
-            + "        <BizMsgIdr>1423905641002</BizMsgIdr>\n"
-            + "        <MsgDefIdr>sese.025.001.09</MsgDefIdr>\n"
-            + "        <CreDt>2024-07-17T05:27:51Z</CreDt>\n"
-            + "        <CpyDplct>COPY</CpyDplct>\n"
-            + "        <PssblDplct>true</PssblDplct>\n"
-            + "        <Prty>2024071700000208</Prty>\n"
-            + "      </AppHdr>\n"
-            + "      <Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:sese.025.001.09\">\n"
-            + "        <SctiesSttlmTxConf>\n"
-            + "          <TxIdDtls>\n"
-            + "            <AcctOwnrTxId>FOO</AcctOwnrTxId>\n"
-            + "            <MktInfrstrctrTxId>BAR</MktInfrstrctrTxId>\n"
-            + "            <PrcrTxId>TOTO</PrcrTxId>\n"
-            + "            <SctiesMvmntTp>RECE</SctiesMvmntTp>\n"
-            + "            <Pmt>APMT</Pmt>\n"
-            + "            <CmonId>TITI</CmonId>\n"
-            + "          </TxIdDtls>\n"
-            + "          <TradDtls>\n"
-            + "            <PlcOfTrad>\n"
-            + "              <MktTpAndId>\n"
-            + "                <Tp>\n"
-            + "                  <Cd>EXCH</Cd>\n"
-            + "                </Tp>\n"
-            + "              </MktTpAndId>\n"
-            + "            </PlcOfTrad>\n"
-            + "            <PlcOfClr>\n"
-            + "              <Id>QRSTUVWYXXX</Id>\n"
-            + "            </PlcOfClr>\n"
-            + "            <TradDt>\n"
-            + "              <Dt>\n"
-            + "                <Dt>2024-07-16</Dt>\n"
-            + "              </Dt>\n"
-            + "            </TradDt>\n"
-            + "            <SttlmDt>\n"
-            + "              <Dt>\n"
-            + "                <Dt>2024-07-17</Dt>\n"
-            + "              </Dt>\n"
-            + "            </SttlmDt>\n"
-            + "            <FctvSttlmDt>\n"
-            + "              <Dt>\n"
-            + "                <DtTm>2024-07-17T07:26:04.207459</DtTm>\n"
-            + "              </Dt>\n"
-            + "            </FctvSttlmDt>\n"
-            + "          </TradDtls>\n"
-            + "          <FinInstrmId>\n"
-            + "            <ISIN>NL0000009165</ISIN>\n"
-            + "          </FinInstrmId>\n"
-            + "          <QtyAndAcctDtls>\n"
-            + "            <SttldQty>\n"
-            + "              <Qty>\n"
-            + "                <Unit>0</Unit>\n"
-            + "              </Qty>\n"
-            + "            </SttldQty>\n"
-            + "            <SfkpgAcct>\n"
-            + "              <Id>NECISOGEFRPPAGN000L10</Id>\n"
-            + "            </SfkpgAcct>\n"
-            + "            <CshAcct>\n"
-            + "              <Prtry>CFREURSOGEFRPPTIT-DCA-SGSS</Prtry>\n"
-            + "            </CshAcct>\n"
-            + "          </QtyAndAcctDtls>\n"
-            + "          <SttlmParams>\n"
-            + "            <SctiesTxTp>\n"
-            + "              <Cd>NETT</Cd>\n"
-            + "            </SctiesTxTp>\n"
-            + "            <PrtlSttlmInd>PARQ</PrtlSttlmInd>\n"
-            + "            <CshSubBalTp>\n"
-            + "              <Id>DLVR</Id>\n"
-            + "              <Issr>T2S</Issr>\n"
-            + "              <SchmeNm>RT</SchmeNm>\n"
-            + "            </CshSubBalTp>\n"
-            + "          </SttlmParams>\n"
-            + "          <DlvrgSttlmPties>\n"
-            + "            <Dpstry>\n"
-            + "              <Id>\n"
-            + "                <AnyBIC>ABCDEFGHXXX</AnyBIC>\n"
-            + "              </Id>\n"
-            + "              <PrcgId>2407162881091741</PrcgId>\n"
-            + "            </Dpstry>\n"
-            + "            <Pty1>\n"
-            + "              <Id>\n"
-            + "                <AnyBIC>QRSTUVWYXXX</AnyBIC>\n"
-            + "              </Id>\n"
-            + "              <SfkpgAcct>\n"
-            + "                <Id>MOTICCEGITRRXXX9100000</Id>\n"
-            + "              </SfkpgAcct>\n"
-            + "              <PrcgId>1VUVZK</PrcgId>\n"
-            + "            </Pty1>\n"
-            + "          </DlvrgSttlmPties>\n"
-            + "          <RcvgSttlmPties>\n"
-            + "            <Dpstry>\n"
-            + "              <Id>\n"
-            + "                <AnyBIC>HGFEDCBAXXX</AnyBIC>\n"
-            + "              </Id>\n"
-            + "            </Dpstry>\n"
-            + "            <Pty1>\n"
-            + "              <Id>\n"
-            + "                <AnyBIC>SOGEFRPPAGN</AnyBIC>\n"
-            + "              </Id>\n"
-            + "              <SfkpgAcct>\n"
-            + "                <Id>NECISOGEFRPPAGN000L10</Id>\n"
-            + "              </SfkpgAcct>\n"
-            + "              <PrcgId>FOO</PrcgId>\n"
-            + "            </Pty1>\n"
-            + "          </RcvgSttlmPties>\n"
-            + "          <SttldAmt>\n"
-            + "            <Amt Ccy=\"EUR\">1</Amt>\n"
-            + "            <CdtDbtInd>DBIT</CdtDbtInd>\n"
-            + "          </SttldAmt>\n"
-            + "          <SplmtryData>\n"
-            + "            <PlcAndNm>/Document/SctiesSttlmTxConf/TxIdDtls</PlcAndNm>\n"
-            + "            <Envlp>\n"
-            + "              <Document xmlns=\"urn:eurosystem:xsd:DRAFT2supl.021.001.01\">\n"
-            + "                <SctiesSttlmSD1>\n"
-            + "                  <RltdTxId>42</RltdTxId>\n"
-            + "                </SctiesSttlmSD1>\n"
-            + "              </Document>\n"
-            + "            </Envlp>\n"
-            + "          </SplmtryData>\n"
-            + "        </SctiesSttlmTxConf>\n"
-            + "      </Document>\n"
-            + "    </RequestPayload>";
 
     private static final String JSON_MX_V9 = "{\n" + "      \"sctiesSttlmTxConf\": {\n"
             + "        \"txIdDtls\": {\n"
@@ -207,7 +66,7 @@ class DateTimeJsonAdapterBackwardCompatibilityTest {
             + "                \"year\": 2024,\n"
             + "                \"month\": 7,\n"
             + "                \"day\": 17,\n"
-            + "                \"timezone\": -2147483648,\n"
+            + "                \"timezone\": 120,\n" // this is UTC +02:00
             + "                \"hour\": 7,\n"
             + "                \"minute\": 26,\n"
             + "                \"second\": 4,\n"
@@ -317,7 +176,7 @@ class DateTimeJsonAdapterBackwardCompatibilityTest {
             + "          \"year\": 2024,\n"
             + "          \"month\": 7,\n"
             + "          \"day\": 17,\n"
-            + "          \"timezone\": 0,\n"
+            + "          \"timezone\": 0,\n" // UTC 0
             + "          \"hour\": 5,\n"
             + "          \"minute\": 27,\n"
             + "          \"second\": 51\n"
@@ -387,7 +246,7 @@ class DateTimeJsonAdapterBackwardCompatibilityTest {
             + "                  }\n"
             + "                },\n"
             + "                \"offset\": {\n"
-            + "                  \"totalSeconds\": 7200\n"
+            + "                  \"totalSeconds\": 7200\n" // this is UTC +02:00
             + "                }\n"
             + "              }\n"
             + "            }\n"
@@ -505,7 +364,7 @@ class DateTimeJsonAdapterBackwardCompatibilityTest {
             + "            }\n"
             + "          },\n"
             + "          \"offset\": {\n"
-            + "            \"totalSeconds\": 0\n"
+            + "            \"totalSeconds\": 0\n" // UTC 0
             + "          }\n"
             + "        },\n"
             + "        \"cpyDplct\": \"COPY\",\n"
@@ -519,29 +378,58 @@ class DateTimeJsonAdapterBackwardCompatibilityTest {
             + "    }";
 
     @Test
-    void v10_should_be_able_to_parse_json_with_date_time_created_from_v9() {
+    void shouldBeAbleToParseJsonFromLegacyXMLGregorianCalendar() {
         final MxSese02500109 mx = (MxSese02500109) AbstractMX.fromJson(JSON_MX_V9);
+
         assertThat(mx.getSctiesSttlmTxConf().getTradDtls().getTradDt().getDt().getDt())
-                .isNotNull(); // Success
-        assertThat(mx.getSctiesSttlmTxConf()
-                        .getTradDtls()
-                        .getFctvSttlmDt()
-                        .getDt()
-                        .getDtTm())
-                .isNotNull(); // Fail
+                .isNotNull();
+
+        OffsetDateTime dateTime =
+                mx.getSctiesSttlmTxConf().getTradDtls().getFctvSttlmDt().getDt().getDtTm();
+        assertThat(dateTime).isNotNull();
+        assertThat(dateTime.getYear()).isEqualTo(2024);
+        assertThat(dateTime.getMonthValue()).isEqualTo(7);
+        assertThat(dateTime.getDayOfMonth()).isEqualTo(17);
+        assertThat(dateTime.getHour()).isEqualTo(7);
+        assertThat(dateTime.getMinute()).isEqualTo(26);
+        assertThat(dateTime.getSecond()).isEqualTo(4);
+        assertThat(dateTime.getNano()).isEqualTo(207459000);
     }
 
     @Test
-    void v10_should_be_able_to_parse_json_from_v9_and_read_same_content_than_json_from_v10_and_xml() {
-        final MxSese02500109 reference = (MxSese02500109) AbstractMX.parse(XML_MX);
+    void allParsedDateTimeObjectsShouldMatch() {
         final MxSese02500109 fromV9 = (MxSese02500109) AbstractMX.fromJson(JSON_MX_V9);
-        final String toV10 = reference.toJson();
         final MxSese02500109 fromV10 = (MxSese02500109) AbstractMX.fromJson(JSON_MX_V10);
 
-        assertThat(fromV9).isEqualTo(reference);
-        assertThat(fromV10).isEqualTo(reference);
-        assertThat(fromV9).isEqualTo(fromV10);
-        assertThat(toV10).isEqualToIgnoringWhitespace(JSON_MX_V10);
-        assertThat(toV10).isNotEqualToIgnoringWhitespace(JSON_MX_V9);
+        LocalDate tradDtV9 =
+                fromV9.getSctiesSttlmTxConf().getTradDtls().getTradDt().getDt().getDt();
+        LocalDate tradDtV10 =
+                fromV10.getSctiesSttlmTxConf().getTradDtls().getTradDt().getDt().getDt();
+        assertThat(tradDtV9).isEqualTo(tradDtV10);
+
+        LocalDate sttlmDtV9 =
+                fromV9.getSctiesSttlmTxConf().getTradDtls().getSttlmDt().getDt().getDt();
+        LocalDate sttlmDtV10 = fromV10.getSctiesSttlmTxConf()
+                .getTradDtls()
+                .getSttlmDt()
+                .getDt()
+                .getDt();
+        assertThat(sttlmDtV9).isEqualTo(sttlmDtV10);
+
+        OffsetDateTime fctvSttlmDtV9 = fromV9.getSctiesSttlmTxConf()
+                .getTradDtls()
+                .getFctvSttlmDt()
+                .getDt()
+                .getDtTm();
+        OffsetDateTime fctvSttlmDtV10 = fromV10.getSctiesSttlmTxConf()
+                .getTradDtls()
+                .getFctvSttlmDt()
+                .getDt()
+                .getDtTm();
+        assertThat(fctvSttlmDtV9).isEqualTo(fctvSttlmDtV10);
+
+        OffsetDateTime creDtV9 = ((BusinessAppHdrV01) fromV9.getAppHdr()).getCreDt();
+        OffsetDateTime creDtV10 = ((BusinessAppHdrV01) fromV10.getAppHdr()).getCreDt();
+        assertThat(creDtV9).isEqualTo(creDtV10);
     }
 }

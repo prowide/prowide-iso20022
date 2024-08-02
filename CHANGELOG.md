@@ -2,7 +2,7 @@
 
 #### 10.2.2 - SNAPSHOT
   * (PW-1947) Updated MX model with latest SWIFT SRU2024 schema update, including new messages such as trck.001.001.03
-  * (PW-1933) Fix backward compatibility issue on DateTime fields when doing JSON to model conversion
+  * (PW-1933) Fix backward compatibility issue on DateTime fields when doing JSON to model conversion (thanks @elominp)
 
 #### 10.2.1 - June 2024
   * Enhanced the AppHdrFactory to honor the business service set in the parameter MxId
