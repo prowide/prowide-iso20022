@@ -538,9 +538,9 @@ class DateTimeJsonAdapterBackwardCompatibilityTest {
         final String toV10 = reference.toJson();
         final MxSese02500109 fromV10 = (MxSese02500109) AbstractMX.fromJson(JSON_MX_V10);
 
-        assertThat(fromV9).isEqualTo(reference);
-        assertThat(fromV10).isEqualTo(reference);
-        assertThat(fromV9).isEqualTo(fromV10);
+        assertThat(fromV9.message()).isEqualTo(reference.message());
+        assertThat(fromV10.message()).isEqualTo(reference.message());
+        assertThat(fromV9.message()).isEqualTo(fromV10.message());
         assertThat(toV10).isEqualToIgnoringWhitespace(JSON_MX_V10);
         assertThat(toV10).isNotEqualToIgnoringWhitespace(JSON_MX_V9);
     }
