@@ -154,7 +154,7 @@ public class OffsetDateTimeJsonAdapter implements JsonSerializer<OffsetDateTime>
                                 .intValueExact())
                 .atZone(
                         xmlGregorianCalendarDTO.timezone != null
-                                ? ZoneOffset.ofHours(xmlGregorianCalendarDTO.timezone)
+                                ? ZoneOffset.ofTotalSeconds(xmlGregorianCalendarDTO.timezone * 60)
                                 : ZoneOffset.systemDefault())
                 .toOffsetDateTime();
     }
