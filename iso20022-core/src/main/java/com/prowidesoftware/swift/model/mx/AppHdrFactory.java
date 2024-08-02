@@ -206,7 +206,7 @@ public class AppHdrFactory {
             }
         }
 
-        h.setCreDt(XMLGregorianCalendarUtils.now());
+        h.setCreDt(OffsetDateTime.now());
 
         return h;
     }
