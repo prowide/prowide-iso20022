@@ -1,8 +1,10 @@
 # Prowide ISO 20022 - CHANGELOG
 
-#### 10.2.2 - SNAPSHOT
+#### 10.2.2 - August 2024
   * (PW-1947) Updated MX model with latest SWIFT SRU2024 schema update, including new messages such as trck.001.001.03
   * (PW-1933) Fix backward compatibility issue on DateTime fields when doing JSON to model conversion (thanks @elominp)
+  * (PW-1875) Fixed the `ZuluDateTimeAdapter` to convert the datetime to UTC offset if needed
+  * Add support for Business Application Header version head.001.001.04
 
 #### 10.2.1 - June 2024
   * Enhanced the AppHdrFactory to honor the business service set in the parameter MxId
@@ -11,7 +13,7 @@
 #### 10.2.0 - May 2024
   * SWIFT Standard release update 2024 (live 16 November 2024)
   * Yearly revision of deprecation phase (see https://dev.prowidesoftware.com/SRU2024/getting-started/deprecation/)
-  * Added message categories for File Management (cafm), Fraud Reporting and Disposition (cafm), Network Management (canm) and Settlement Reporting (casr)
+  * Added message categories for File Management (cafm), Fraud Reporting and Disposition (cafm), Network Management (canm), and Settlement Reporting (casr)
   * Add support in the MxWriteConfiguration to use standard envelopes for SWIFT and ISO 20022
   * Changed the default Document prefix to the message category; "camt", "pacs", etc...
   * Enhanced MxId with optional and transient businessService field to act as a message type discriminator
