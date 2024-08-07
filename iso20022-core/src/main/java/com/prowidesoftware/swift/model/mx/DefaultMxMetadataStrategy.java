@@ -91,7 +91,7 @@ public class DefaultMxMetadataStrategy implements MessageMetadataStrategy {
 
     private Money getCamt29Amount(MxNode document) {
         MxNode amount = document.findFirst("./RsltnOfInvstgtn/CxlDtls/OrgnlPmtInfAndSts/TxInfAndSts/OrgnlInstdAmt");
-        if (amount != null) {
+        if (amount != null && amount.getValue() != null) {
             return new Money(amount.getAttribute("Ccy"), new BigDecimal(amount.getValue()));
         }
         return null;
@@ -99,7 +99,7 @@ public class DefaultMxMetadataStrategy implements MessageMetadataStrategy {
 
     private Money getCamt52Amount(MxNode document) {
         MxNode amount = document.findFirst("./BkToCstmrAcctRpt/Rpt/Bal/Amt");
-        if (amount != null) {
+        if (amount != null && amount.getValue() != null) {
             return new Money(amount.getAttribute("Ccy"), new BigDecimal(amount.getValue()));
         }
         return null;
@@ -107,7 +107,7 @@ public class DefaultMxMetadataStrategy implements MessageMetadataStrategy {
 
     private Money getCamt53Amount(MxNode document) {
         MxNode amount = document.findFirst("./BkToCstmrStmt/Stmt/Bal/Amt");
-        if (amount != null) {
+        if (amount != null && amount.getValue() != null) {
             return new Money(amount.getAttribute("Ccy"), new BigDecimal(amount.getValue()));
         }
         return null;
@@ -121,7 +121,7 @@ public class DefaultMxMetadataStrategy implements MessageMetadataStrategy {
         if (amount == null) {
             amount = document.findFirst("./BkToCstmrDbtCdtNtfctn/Ntfctn/Ntry/NtryDtls/TxDtls/Amt");
         }
-        if (amount != null) {
+        if (amount != null && amount.getValue() != null) {
             return new Money(amount.getAttribute("Ccy"), new BigDecimal(amount.getValue()));
         }
         return null;
@@ -129,7 +129,7 @@ public class DefaultMxMetadataStrategy implements MessageMetadataStrategy {
 
     private Money getCamt56Amount(MxNode document) {
         MxNode amount = document.findFirst("./FIToFIPmtCxlReq/Undrlyg/TxInf/OrgnlIntrBkSttlmAmt");
-        if (amount != null) {
+        if (amount != null && amount.getValue() != null) {
             return new Money(amount.getAttribute("Ccy"), new BigDecimal(amount.getValue()));
         }
         return null;
@@ -137,7 +137,7 @@ public class DefaultMxMetadataStrategy implements MessageMetadataStrategy {
 
     private Money getCamt57Amount(MxNode document) {
         MxNode amount = document.findFirst("./NtfctnToRcv/Ntfctn/TtlAmt");
-        if (amount != null) {
+        if (amount != null && amount.getValue() != null) {
             return new Money(amount.getAttribute("Ccy"), new BigDecimal(amount.getValue()));
         }
         return null;
@@ -148,7 +148,7 @@ public class DefaultMxMetadataStrategy implements MessageMetadataStrategy {
         if (amount == null) {
             amount = document.findFirst("./PmtRtr/TxInf/RtrdIntrBkSttlmAmt");
         }
-        if (amount != null) {
+        if (amount != null && amount.getValue() != null) {
             return new Money(amount.getAttribute("Ccy"), new BigDecimal(amount.getValue()));
         }
         return null;
@@ -181,7 +181,7 @@ public class DefaultMxMetadataStrategy implements MessageMetadataStrategy {
         MxNode cdtTrfNode = document.findFirstByName("CdtTrfTxInf");
         if (cdtTrfNode != null) {
             MxNode amount = cdtTrfNode.findFirst("./IntrBkSttlmAmt");
-            if (amount != null) {
+            if (amount != null && amount.getValue() != null) {
                 return new Money(amount.getAttribute("Ccy"), new BigDecimal(amount.getValue()));
             }
         }

@@ -1,4 +1,7 @@
 # Prowide ISO 20022 - CHANGELOG
+ 
+#### 9.4.7 - SNAPSHOT
+  * (PW-1958) Fixed the `DefaultMxMetadataStrategy` NPE issue when the amount values are null
 
 #### 9.4.6 - May 2024
   * (PW-1875) Fixed the `ZuluDateTimeAdapter` to convert the datetime to UTC offset if needed
