@@ -175,7 +175,7 @@ public class AppHdrFactory {
      * @param reference optional reference for the BizMsgIdr (business message identifier) or null to leave not set
      * @param id        optional MX identification for the MsgDefIdr (message definition identifier) element or null to leave not set
      * @return new header initialized from parameters.
-     * @since 9.5.3
+     * @since 10.2.2
      */
     public static BusinessAppHdrV04 createBusinessAppHdrV04(
             final String sender, final String receiver, final String reference, final MxId id) {
@@ -207,53 +207,6 @@ public class AppHdrFactory {
         }
 
         h.setCreDt(OffsetDateTime.now());
-
-        return h;
-    }
-
-    /**
-     * Convenient method to create a new ISO header version 4, initialized from simple parameters.
-     *
-     * <p>All parameters are optional but in order for the header to be valid the sender, receiver and reference must
-     * be set. Creation date will be set to current time.
-     *
-     * @param sender    optional sender BIC for the Fr element or null to leave not set
-     * @param receiver  optional receiver BIC for the To element or null to leave not set
-     * @param reference optional reference for the BizMsgIdr (business message identifier) or null to leave not set
-     * @param id        optional MX identification for the MsgDefIdr (message definition identifier) element or null to leave not set
-     * @return new header initialized from parameters.
-     * @since 9.5.3
-     */
-    public static BusinessAppHdrV04 createBusinessAppHdrV04(
-            final String sender, final String receiver, final String reference, final MxId id) {
-        BusinessAppHdrV04 h = new BusinessAppHdrV04();
-
-        if (sender != null) {
-            h.setFr(new Party51Choice());
-            h.getFr().setFIId(new BranchAndFinancialInstitutionIdentification8());
-            h.getFr().getFIId().setFinInstnId(new FinancialInstitutionIdentification23());
-            h.getFr().getFIId().getFinInstnId().setBICFI(sender);
-        }
-
-        if (receiver != null) {
-            h.setTo(new Party51Choice());
-            h.getTo().setFIId(new BranchAndFinancialInstitutionIdentification8());
-            h.getTo().getFIId().setFinInstnId(new FinancialInstitutionIdentification23());
-            h.getTo().getFIId().getFinInstnId().setBICFI(receiver);
-        }
-
-        if (reference != null) {
-            h.setBizMsgIdr(reference);
-        }
-
-        if (id != null) {
-            h.setMsgDefIdr(id.id());
-            if (id.getBusinessService().isPresent()) {
-                h.setBizSvc(id.getBusinessService().get());
-            }
-        }
-
-        h.setCreDt(XMLGregorianCalendarUtils.now());
 
         return h;
     }
