@@ -1,9 +1,9 @@
 package com.prowidesoftware.issues;
 
+import static org.junit.jupiter.api.Assertions.fail;
+
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.fail;
 
 public class Issue1958 {
 
