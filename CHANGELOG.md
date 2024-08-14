@@ -1,5 +1,8 @@
 # Prowide ISO 20022 - CHANGELOG
 
+#### 10.2.3 - August 2024
+  * (PW-1958) Fixed the `DefaultMxMetadataStrategy` NPE issue when the amount values are null
+
 #### 10.2.2 - August 2024
   * (PW-1947) Updated MX model with latest SWIFT SRU2024 schema update, including new messages such as trck.001.001.03
   * (PW-1933) Fix backward compatibility issue on DateTime fields when doing JSON to model conversion (thanks @elominp)
