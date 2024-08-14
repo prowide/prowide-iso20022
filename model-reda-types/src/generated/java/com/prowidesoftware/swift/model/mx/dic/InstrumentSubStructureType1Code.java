@@ -1,41 +1,40 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for InstrumentSubStructureType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="InstrumentSubStructureType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ABSE"/&gt;
- *     &lt;enumeration value="AIRT"/&gt;
- *     &lt;enumeration value="AUTT"/&gt;
- *     &lt;enumeration value="CBOB"/&gt;
- *     &lt;enumeration value="CDOB"/&gt;
- *     &lt;enumeration value="CLNO"/&gt;
- *     &lt;enumeration value="CLOB"/&gt;
- *     &lt;enumeration value="CMBS"/&gt;
- *     &lt;enumeration value="CSMR"/&gt;
- *     &lt;enumeration value="CRCT"/&gt;
- *     &lt;enumeration value="HELO"/&gt;
- *     &lt;enumeration value="LPNO"/&gt;
- *     &lt;enumeration value="PFAB"/&gt;
- *     &lt;enumeration value="PYRT"/&gt;
- *     &lt;enumeration value="REPK"/&gt;
- *     &lt;enumeration value="RMBS"/&gt;
- *     &lt;enumeration value="SCBO"/&gt;
- *     &lt;enumeration value="STRB"/&gt;
- *     &lt;enumeration value="STUT"/&gt;
- *     &lt;enumeration value="WBSE"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="InstrumentSubStructureType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ABSE"/>
+ *     <enumeration value="AIRT"/>
+ *     <enumeration value="AUTT"/>
+ *     <enumeration value="CBOB"/>
+ *     <enumeration value="CDOB"/>
+ *     <enumeration value="CLNO"/>
+ *     <enumeration value="CLOB"/>
+ *     <enumeration value="CMBS"/>
+ *     <enumeration value="CSMR"/>
+ *     <enumeration value="CRCT"/>
+ *     <enumeration value="HELO"/>
+ *     <enumeration value="LPNO"/>
+ *     <enumeration value="PFAB"/>
+ *     <enumeration value="PYRT"/>
+ *     <enumeration value="REPK"/>
+ *     <enumeration value="RMBS"/>
+ *     <enumeration value="SCBO"/>
+ *     <enumeration value="STRB"/>
+ *     <enumeration value="STUT"/>
+ *     <enumeration value="WBSE"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "InstrumentSubStructureType1Code")

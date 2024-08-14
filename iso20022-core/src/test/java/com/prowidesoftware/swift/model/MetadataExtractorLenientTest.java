@@ -1,8 +1,7 @@
-package com.prowidesoftware.issues;
+package com.prowidesoftware.swift.model;
 
 import static org.junit.jupiter.api.Assertions.fail;
 
-import com.prowidesoftware.swift.model.MxSwiftMessage;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import org.junit.jupiter.api.AfterEach;

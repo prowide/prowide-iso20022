@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,17 +33,17 @@ public class DateAndPeriod2Choice {
     @XmlElement(name = "Dt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar dt;
+    protected LocalDate dt;
     @XmlElement(name = "Prd")
     protected Period2 prd;
     @XmlElement(name = "FrDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar frDt;
+    protected LocalDate frDt;
     @XmlElement(name = "ToDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar toDt;
+    protected LocalDate toDt;
 
     /**
      * Gets the value of the dt property.
@@ -53,7 +53,7 @@ public class DateAndPeriod2Choice {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDt() {
+    public LocalDate getDt() {
         return dt;
     }
 
@@ -65,7 +65,7 @@ public class DateAndPeriod2Choice {
      *     {@link String }
      *     
      */
-    public DateAndPeriod2Choice setDt(XMLGregorianCalendar value) {
+    public DateAndPeriod2Choice setDt(LocalDate value) {
         this.dt = value;
         return this;
     }
@@ -103,7 +103,7 @@ public class DateAndPeriod2Choice {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getFrDt() {
+    public LocalDate getFrDt() {
         return frDt;
     }
 
@@ -115,7 +115,7 @@ public class DateAndPeriod2Choice {
      *     {@link String }
      *     
      */
-    public DateAndPeriod2Choice setFrDt(XMLGregorianCalendar value) {
+    public DateAndPeriod2Choice setFrDt(LocalDate value) {
         this.frDt = value;
         return this;
     }
@@ -128,7 +128,7 @@ public class DateAndPeriod2Choice {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getToDt() {
+    public LocalDate getToDt() {
         return toDt;
     }
 
@@ -140,7 +140,7 @@ public class DateAndPeriod2Choice {
      *     {@link String }
      *     
      */
-    public DateAndPeriod2Choice setToDt(XMLGregorianCalendar value) {
+    public DateAndPeriod2Choice setToDt(LocalDate value) {
         this.toDt = value;
         return this;
     }

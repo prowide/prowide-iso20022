@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxAcmt03500102
 
     @XmlElement(name = "AcctSwtchPmtRspn", required = true)
     protected AccountSwitchPaymentResponseV02 acctSwtchPmtRspn;
-    public final static transient String BUSINESS_PROCESS = "acmt";
-    public final static transient int FUNCTIONALITY = 35;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 2;
+    public static final transient String BUSINESS_PROCESS = "acmt";
+    public static final transient int FUNCTIONALITY = 35;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 2;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {AccountSwitchDetails1 .class, AccountSwitchPaymentResponseV02 .class, BalanceTransferWindow1Code.class, MessageIdentification1 .class, MxAcmt03500102 .class, ResponseDetails1 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, SwitchStatus1Code.class, SwitchType1Code.class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:acmt.035.001.02";
+    public static final transient Class[] _classes = new Class[] {AccountSwitchDetails1 .class, AccountSwitchPaymentResponseV02 .class, BalanceTransferWindow1Code.class, MessageIdentification1 .class, MxAcmt03500102 .class, ResponseDetails1 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, SwitchStatus1Code.class, SwitchType1Code.class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:acmt.035.001.02";
 
     public MxAcmt03500102() {
         super();
@@ -86,21 +86,6 @@ public class MxAcmt03500102
     public MxAcmt03500102 setAcctSwtchPmtRspn(AccountSwitchPaymentResponseV02 value) {
         this.acctSwtchPmtRspn = value;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -173,8 +158,23 @@ public class MxAcmt03500102
      * @return
      *     a new instance of MxAcmt03500102
      */
-    public final static MxAcmt03500102 fromJson(String json) {
+    public static final MxAcmt03500102 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxAcmt03500102 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

@@ -1,81 +1,80 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for AuthenticationMethod11Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="AuthenticationMethod11Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="APKI"/&gt;
- *     &lt;enumeration value="ADVF"/&gt;
- *     &lt;enumeration value="ARNB"/&gt;
- *     &lt;enumeration value="ARPC"/&gt;
- *     &lt;enumeration value="ARQC"/&gt;
- *     &lt;enumeration value="ATCC"/&gt;
- *     &lt;enumeration value="BTHD"/&gt;
- *     &lt;enumeration value="CHSA"/&gt;
- *     &lt;enumeration value="CHDN"/&gt;
- *     &lt;enumeration value="CUID"/&gt;
- *     &lt;enumeration value="DRVI"/&gt;
- *     &lt;enumeration value="DRLN"/&gt;
- *     &lt;enumeration value="EMAL"/&gt;
- *     &lt;enumeration value="EMIN"/&gt;
- *     &lt;enumeration value="EMRN"/&gt;
- *     &lt;enumeration value="IDCN"/&gt;
- *     &lt;enumeration value="MANU"/&gt;
- *     &lt;enumeration value="NVSC"/&gt;
- *     &lt;enumeration value="FBIG"/&gt;
- *     &lt;enumeration value="FBIO"/&gt;
- *     &lt;enumeration value="OLDA"/&gt;
- *     &lt;enumeration value="OLDS"/&gt;
- *     &lt;enumeration value="OFPE"/&gt;
- *     &lt;enumeration value="FCPN"/&gt;
- *     &lt;enumeration value="OTPW"/&gt;
- *     &lt;enumeration value="NBIG"/&gt;
- *     &lt;enumeration value="NPIN"/&gt;
- *     &lt;enumeration value="OCHI"/&gt;
- *     &lt;enumeration value="OTHN"/&gt;
- *     &lt;enumeration value="OTHP"/&gt;
- *     &lt;enumeration value="PPSG"/&gt;
- *     &lt;enumeration value="PSVE"/&gt;
- *     &lt;enumeration value="PASN"/&gt;
- *     &lt;enumeration value="PSWD"/&gt;
- *     &lt;enumeration value="TOKP"/&gt;
- *     &lt;enumeration value="PKIS"/&gt;
- *     &lt;enumeration value="PLOB"/&gt;
- *     &lt;enumeration value="PCDV"/&gt;
- *     &lt;enumeration value="SCRT"/&gt;
- *     &lt;enumeration value="SCNL"/&gt;
- *     &lt;enumeration value="CSEC"/&gt;
- *     &lt;enumeration value="SHAF"/&gt;
- *     &lt;enumeration value="SHAT"/&gt;
- *     &lt;enumeration value="CPSG"/&gt;
- *     &lt;enumeration value="SSNB"/&gt;
- *     &lt;enumeration value="TXIN"/&gt;
- *     &lt;enumeration value="TOKA"/&gt;
- *     &lt;enumeration value="CDHI"/&gt;
- *     &lt;enumeration value="TOKN"/&gt;
- *     &lt;enumeration value="QWAC"/&gt;
- *     &lt;enumeration value="PHOM"/&gt;
- *     &lt;enumeration value="PWOR"/&gt;
- *     &lt;enumeration value="THDS"/&gt;
- *     &lt;enumeration value="ADDB"/&gt;
- *     &lt;enumeration value="ADDS"/&gt;
- *     &lt;enumeration value="CSCV"/&gt;
- *     &lt;enumeration value="CRYP"/&gt;
- *     &lt;enumeration value="BIOM"/&gt;
- *     &lt;enumeration value="MOBL"/&gt;
- *     &lt;enumeration value="FPIN"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="AuthenticationMethod11Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="APKI"/>
+ *     <enumeration value="ADVF"/>
+ *     <enumeration value="ARNB"/>
+ *     <enumeration value="ARPC"/>
+ *     <enumeration value="ARQC"/>
+ *     <enumeration value="ATCC"/>
+ *     <enumeration value="BTHD"/>
+ *     <enumeration value="CHSA"/>
+ *     <enumeration value="CHDN"/>
+ *     <enumeration value="CUID"/>
+ *     <enumeration value="DRVI"/>
+ *     <enumeration value="DRLN"/>
+ *     <enumeration value="EMAL"/>
+ *     <enumeration value="EMIN"/>
+ *     <enumeration value="EMRN"/>
+ *     <enumeration value="IDCN"/>
+ *     <enumeration value="MANU"/>
+ *     <enumeration value="NVSC"/>
+ *     <enumeration value="FBIG"/>
+ *     <enumeration value="FBIO"/>
+ *     <enumeration value="OLDA"/>
+ *     <enumeration value="OLDS"/>
+ *     <enumeration value="OFPE"/>
+ *     <enumeration value="FCPN"/>
+ *     <enumeration value="OTPW"/>
+ *     <enumeration value="NBIG"/>
+ *     <enumeration value="NPIN"/>
+ *     <enumeration value="OCHI"/>
+ *     <enumeration value="OTHN"/>
+ *     <enumeration value="OTHP"/>
+ *     <enumeration value="PPSG"/>
+ *     <enumeration value="PSVE"/>
+ *     <enumeration value="PASN"/>
+ *     <enumeration value="PSWD"/>
+ *     <enumeration value="TOKP"/>
+ *     <enumeration value="PKIS"/>
+ *     <enumeration value="PLOB"/>
+ *     <enumeration value="PCDV"/>
+ *     <enumeration value="SCRT"/>
+ *     <enumeration value="SCNL"/>
+ *     <enumeration value="CSEC"/>
+ *     <enumeration value="SHAF"/>
+ *     <enumeration value="SHAT"/>
+ *     <enumeration value="CPSG"/>
+ *     <enumeration value="SSNB"/>
+ *     <enumeration value="TXIN"/>
+ *     <enumeration value="TOKA"/>
+ *     <enumeration value="CDHI"/>
+ *     <enumeration value="TOKN"/>
+ *     <enumeration value="QWAC"/>
+ *     <enumeration value="PHOM"/>
+ *     <enumeration value="PWOR"/>
+ *     <enumeration value="THDS"/>
+ *     <enumeration value="ADDB"/>
+ *     <enumeration value="ADDS"/>
+ *     <enumeration value="CSCV"/>
+ *     <enumeration value="CRYP"/>
+ *     <enumeration value="BIOM"/>
+ *     <enumeration value="MOBL"/>
+ *     <enumeration value="FPIN"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "AuthenticationMethod11Code")

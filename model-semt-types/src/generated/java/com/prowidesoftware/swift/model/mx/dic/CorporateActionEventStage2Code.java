@@ -1,28 +1,27 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for CorporateActionEventStage2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CorporateActionEventStage2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="PWAL"/&gt;
- *     &lt;enumeration value="SUAP"/&gt;
- *     &lt;enumeration value="APPD"/&gt;
- *     &lt;enumeration value="UNAC"/&gt;
- *     &lt;enumeration value="WHOU"/&gt;
- *     &lt;enumeration value="CLDE"/&gt;
- *     &lt;enumeration value="LAPS"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CorporateActionEventStage2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="PWAL"/>
+ *     <enumeration value="SUAP"/>
+ *     <enumeration value="APPD"/>
+ *     <enumeration value="UNAC"/>
+ *     <enumeration value="WHOU"/>
+ *     <enumeration value="CLDE"/>
+ *     <enumeration value="LAPS"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CorporateActionEventStage2Code")

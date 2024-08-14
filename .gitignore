@@ -29,5 +29,6 @@ lib
 .idea/jpa-buddy.xml
 release.sh
 .idea/sonarlint
+.java-version
 *.hprof
 .idea/copilot

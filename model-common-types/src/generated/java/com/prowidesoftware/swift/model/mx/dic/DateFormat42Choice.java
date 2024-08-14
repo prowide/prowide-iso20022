@@ -1,14 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.LocalDate;
+import java.time.YearMonth;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoYearMonthAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -28,23 +30,24 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 public class DateFormat42Choice {
 
-    @XmlElement(name = "YrMnth")
+    @XmlElement(name = "YrMnth", type = String.class)
+    @XmlJavaTypeAdapter(IsoYearMonthAdapter.class)
     @XmlSchemaType(name = "gYearMonth")
-    protected XMLGregorianCalendar yrMnth;
+    protected YearMonth yrMnth;
     @XmlElement(name = "YrMnthDay", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar yrMnthDay;
+    protected LocalDate yrMnthDay;
 
     /**
      * Gets the value of the yrMnth property.
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getYrMnth() {
+    public YearMonth getYrMnth() {
         return yrMnth;
     }
 
@@ -53,10 +56,10 @@ public class DateFormat42Choice {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public DateFormat42Choice setYrMnth(XMLGregorianCalendar value) {
+    public DateFormat42Choice setYrMnth(YearMonth value) {
         this.yrMnth = value;
         return this;
     }
@@ -69,7 +72,7 @@ public class DateFormat42Choice {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getYrMnthDay() {
+    public LocalDate getYrMnthDay() {
         return yrMnthDay;
     }
 
@@ -81,7 +84,7 @@ public class DateFormat42Choice {
      *     {@link String }
      *     
      */
-    public DateFormat42Choice setYrMnthDay(XMLGregorianCalendar value) {
+    public DateFormat42Choice setYrMnthDay(LocalDate value) {
         this.yrMnthDay = value;
         return this;
     }

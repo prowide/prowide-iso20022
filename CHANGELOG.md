@@ -3,28 +3,39 @@
 #### 9.4.7 - August 2024
   * (PW-1958) Fixed the `DefaultMxMetadataStrategy` NPE issue when the amount values are null
 
-#### 9.4.6 - May 2024
-  * (PW-1875) Fixed the `ZuluDateTimeAdapter` to convert the datetime to UTC offset if needed
- 
-#### 9.4.5 - May 2024
+#### 10.1.7 - August 2024
+  * (PW-1958) Fixed the `DefaultMxMetadataStrategy` NPE issue when the amount values are null
+
+#### 10.1.6 - May 2024
   * (PW-1875) Changed the BusinessApplicationHeaderV01 marshaller to always use Zulu timezone with "Z" indicator
- 
-#### 9.4.4 - January 2024
+
+#### 10.1.5 - April 2024
+  * Update jaxb dependency from com.sun.xml.bind:jaxb-impl:4.0.2 to 4.0.5 containing several jaxb bugfixes
+
+#### 10.1.4 - January 2024
   * Enhanced the identifier extraction of the MxSwiftMessage to use the AppHdr when the Document namespace is missing
   * Enhanced the generic AbstractMX#parse to detect the message type from the AppHdr when the Document namespace is missing
   * Added default metadata extraction implementation for pacs and camt amounts and value dates
   * Added default methods for sender, receiver, and identifier extraction to the MxSwiftMessage.
   * Replaced the DistinguishedName parse logic with proprietary util class from the Prowide Core library
 
-#### 9.4.3 - August 2023
+#### 10.1.3 - August 2023
+  * (PW-1566) Fixed manipulation of nanoseconds in the OffsetTime and OffsetDateTime adapters
   * Enhanced metadata extraction for xsys messages getting sender/receiver BICs from the RequestHeader element
   * Make the message metadata extraction lenient, by fixing the XML instruction of the payload when it contains invalid case
 
-#### 9.4.2 - July 2023
+#### 10.1.2 - August 2023
   * Added new utility class SupplementaryDataUtils to facilitate "SplmtryData" extraction from MX messages
 
-#### 9.4.1 - June 2023
+#### 10.1.1 - July 2023
   * (PW-1392) Fixed the default escape handler when serializing model objects into XML, that was duplicated quote characters in the output
+
+#### 10.1.0 - June 2023
+  * Migration to Java 11
+  * Migration to Jakarta EE 10
+  * XmlGregorianCalendar was replaced model-wide by the new java.time classes
+  * Fixed AppHdrFactory creation to use UTC in the header default creation date time
+  * Fixed the business application header V01 serialization to use Zulu time indicator instead of +00:00 offset
 
 #### 9.4.0 - May 2023
   * SWIFT Standard release update 2023 (live 19 November 2023)

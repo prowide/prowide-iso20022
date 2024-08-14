@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -35,7 +35,7 @@ public class RepurchaseAgreement2 {
     @XmlElement(name = "MtrtyDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar mtrtyDt;
+    protected LocalDate mtrtyDt;
     @XmlElement(name = "ScndLegPric", required = true)
     protected ActiveCurrencyAndAmount scndLegPric;
     @XmlElement(name = "CollMktVal", required = true)
@@ -55,7 +55,7 @@ public class RepurchaseAgreement2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getMtrtyDt() {
+    public LocalDate getMtrtyDt() {
         return mtrtyDt;
     }
 
@@ -67,7 +67,7 @@ public class RepurchaseAgreement2 {
      *     {@link String }
      *     
      */
-    public RepurchaseAgreement2 setMtrtyDt(XMLGregorianCalendar value) {
+    public RepurchaseAgreement2 setMtrtyDt(LocalDate value) {
         this.mtrtyDt = value;
         return this;
     }

@@ -1,26 +1,25 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for LimitType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="LimitType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="MULT"/&gt;
- *     &lt;enumeration value="BILI"/&gt;
- *     &lt;enumeration value="NELI"/&gt;
- *     &lt;enumeration value="INBI"/&gt;
- *     &lt;enumeration value="GLBL"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="LimitType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="MULT"/>
+ *     <enumeration value="BILI"/>
+ *     <enumeration value="NELI"/>
+ *     <enumeration value="INBI"/>
+ *     <enumeration value="GLBL"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "LimitType1Code")

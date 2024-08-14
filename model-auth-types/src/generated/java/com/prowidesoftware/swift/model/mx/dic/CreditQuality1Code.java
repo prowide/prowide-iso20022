@@ -1,31 +1,30 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for CreditQuality1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CreditQuality1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="DFIM"/&gt;
- *     &lt;enumeration value="EXSP"/&gt;
- *     &lt;enumeration value="HIGR"/&gt;
- *     &lt;enumeration value="HISP"/&gt;
- *     &lt;enumeration value="INDF"/&gt;
- *     &lt;enumeration value="LMGR"/&gt;
- *     &lt;enumeration value="NIGS"/&gt;
- *     &lt;enumeration value="PRIM"/&gt;
- *     &lt;enumeration value="SURI"/&gt;
- *     &lt;enumeration value="UMGR"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CreditQuality1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="DFIM"/>
+ *     <enumeration value="EXSP"/>
+ *     <enumeration value="HIGR"/>
+ *     <enumeration value="HISP"/>
+ *     <enumeration value="INDF"/>
+ *     <enumeration value="LMGR"/>
+ *     <enumeration value="NIGS"/>
+ *     <enumeration value="PRIM"/>
+ *     <enumeration value="SURI"/>
+ *     <enumeration value="UMGR"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CreditQuality1Code")

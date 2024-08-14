@@ -1,30 +1,29 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlEnumValue;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for BarcodeType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="BarcodeType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="COQR"/&gt;
- *     &lt;enumeration value="C128"/&gt;
- *     &lt;enumeration value="C025"/&gt;
- *     &lt;enumeration value="C039"/&gt;
- *     &lt;enumeration value="EA13"/&gt;
- *     &lt;enumeration value="EAN8"/&gt;
- *     &lt;enumeration value="P417"/&gt;
- *     &lt;enumeration value="UPCA"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="BarcodeType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="COQR"/>
+ *     <enumeration value="C128"/>
+ *     <enumeration value="C025"/>
+ *     <enumeration value="C039"/>
+ *     <enumeration value="EA13"/>
+ *     <enumeration value="EAN8"/>
+ *     <enumeration value="P417"/>
+ *     <enumeration value="UPCA"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "BarcodeType1Code")

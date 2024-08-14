@@ -93,7 +93,7 @@ public class MxWriteTest {
                         .setQtdCcy("12")));
 
         final String mxXml = mx.message();
-        System.out.println("XML: " + mxXml);
+        // System.out.println("XML: "+mxXml);
 
         assertTrue(StringUtils.contains(mxXml, MxFxtr01400102.NAMESPACE), "namespace missing in generated xml");
         assertFalse(StringUtils.contains(mxXml, "businessHeader"), "businessHeader is present in generated xml");

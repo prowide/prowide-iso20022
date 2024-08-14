@@ -1,58 +1,57 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlEnumValue;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for NonEquitySubClassSegmentationCriteria1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="NonEquitySubClassSegmentationCriteria1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ASCL"/&gt;
- *     &lt;enumeration value="BSPD"/&gt;
- *     &lt;enumeration value="CNC1"/&gt;
- *     &lt;enumeration value="CNC2"/&gt;
- *     &lt;enumeration value="NCCO"/&gt;
- *     &lt;enumeration value="CTYP"/&gt;
- *     &lt;enumeration value="NCCR"/&gt;
- *     &lt;enumeration value="DCSL"/&gt;
- *     &lt;enumeration value="DTYP"/&gt;
- *     &lt;enumeration value="EQUT"/&gt;
- *     &lt;enumeration value="FNC1"/&gt;
- *     &lt;enumeration value="FNC2"/&gt;
- *     &lt;enumeration value="FSPD"/&gt;
- *     &lt;enumeration value="IIND"/&gt;
- *     &lt;enumeration value="IRTC"/&gt;
- *     &lt;enumeration value="INC1"/&gt;
- *     &lt;enumeration value="INC2"/&gt;
- *     &lt;enumeration value="ISIN"/&gt;
- *     &lt;enumeration value="TTMO"/&gt;
- *     &lt;enumeration value="PRMT"/&gt;
- *     &lt;enumeration value="SSRF"/&gt;
- *     &lt;enumeration value="ISPT"/&gt;
- *     &lt;enumeration value="SRTC"/&gt;
- *     &lt;enumeration value="SACL"/&gt;
- *     &lt;enumeration value="SBPD"/&gt;
- *     &lt;enumeration value="TTMS"/&gt;
- *     &lt;enumeration value="NCSW"/&gt;
- *     &lt;enumeration value="TTMB"/&gt;
- *     &lt;enumeration value="IOUB"/&gt;
- *     &lt;enumeration value="TOUB"/&gt;
- *     &lt;enumeration value="UISC"/&gt;
- *     &lt;enumeration value="UIDX"/&gt;
- *     &lt;enumeration value="UINS"/&gt;
- *     &lt;enumeration value="UIRT"/&gt;
- *     &lt;enumeration value="REOU"/&gt;
- *     &lt;enumeration value="UTYP"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="NonEquitySubClassSegmentationCriteria1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ASCL"/>
+ *     <enumeration value="BSPD"/>
+ *     <enumeration value="CNC1"/>
+ *     <enumeration value="CNC2"/>
+ *     <enumeration value="NCCO"/>
+ *     <enumeration value="CTYP"/>
+ *     <enumeration value="NCCR"/>
+ *     <enumeration value="DCSL"/>
+ *     <enumeration value="DTYP"/>
+ *     <enumeration value="EQUT"/>
+ *     <enumeration value="FNC1"/>
+ *     <enumeration value="FNC2"/>
+ *     <enumeration value="FSPD"/>
+ *     <enumeration value="IIND"/>
+ *     <enumeration value="IRTC"/>
+ *     <enumeration value="INC1"/>
+ *     <enumeration value="INC2"/>
+ *     <enumeration value="ISIN"/>
+ *     <enumeration value="TTMO"/>
+ *     <enumeration value="PRMT"/>
+ *     <enumeration value="SSRF"/>
+ *     <enumeration value="ISPT"/>
+ *     <enumeration value="SRTC"/>
+ *     <enumeration value="SACL"/>
+ *     <enumeration value="SBPD"/>
+ *     <enumeration value="TTMS"/>
+ *     <enumeration value="NCSW"/>
+ *     <enumeration value="TTMB"/>
+ *     <enumeration value="IOUB"/>
+ *     <enumeration value="TOUB"/>
+ *     <enumeration value="UISC"/>
+ *     <enumeration value="UIDX"/>
+ *     <enumeration value="UINS"/>
+ *     <enumeration value="UIRT"/>
+ *     <enumeration value="REOU"/>
+ *     <enumeration value="UTYP"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "NonEquitySubClassSegmentationCriteria1Code")

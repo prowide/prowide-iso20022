@@ -1,35 +1,34 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for DTCInstructionStatus2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="DTCInstructionStatus2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CANC"/&gt;
- *     &lt;enumeration value="CCAN"/&gt;
- *     &lt;enumeration value="DROP"/&gt;
- *     &lt;enumeration value="MADE"/&gt;
- *     &lt;enumeration value="PDOC"/&gt;
- *     &lt;enumeration value="PENA"/&gt;
- *     &lt;enumeration value="PEND"/&gt;
- *     &lt;enumeration value="REJA"/&gt;
- *     &lt;enumeration value="REJT"/&gt;
- *     &lt;enumeration value="REMD"/&gt;
- *     &lt;enumeration value="RESC"/&gt;
- *     &lt;enumeration value="SWUN"/&gt;
- *     &lt;enumeration value="WITH"/&gt;
- *     &lt;enumeration value="RECY"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="DTCInstructionStatus2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CANC"/>
+ *     <enumeration value="CCAN"/>
+ *     <enumeration value="DROP"/>
+ *     <enumeration value="MADE"/>
+ *     <enumeration value="PDOC"/>
+ *     <enumeration value="PENA"/>
+ *     <enumeration value="PEND"/>
+ *     <enumeration value="REJA"/>
+ *     <enumeration value="REJT"/>
+ *     <enumeration value="REMD"/>
+ *     <enumeration value="RESC"/>
+ *     <enumeration value="SWUN"/>
+ *     <enumeration value="WITH"/>
+ *     <enumeration value="RECY"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "DTCInstructionStatus2Code")

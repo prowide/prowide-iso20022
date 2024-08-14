@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxPacs01000102
 
     @XmlElement(name = "FIDrctDbt", required = true)
     protected FinancialInstitutionDirectDebitV02 fiDrctDbt;
-    public final static transient String BUSINESS_PROCESS = "pacs";
-    public final static transient int FUNCTIONALITY = 10;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 2;
+    public static final transient String BUSINESS_PROCESS = "pacs";
+    public static final transient int FUNCTIONALITY = 10;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 2;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {AccountIdentification4Choice.class, AccountSchemeName1Choice.class, ActiveCurrencyAndAmount.class, AddressType2Code.class, BranchAndFinancialInstitutionIdentification5 .class, BranchData2 .class, CashAccount24 .class, CashAccountType2Choice.class, CategoryPurpose1Choice.class, ClearingChannel2Code.class, ClearingSystemIdentification2Choice.class, ClearingSystemMemberIdentification2 .class, CreditTransferTransaction9 .class, DirectDebitTransactionInformation15 .class, FinancialIdentificationSchemeName1Choice.class, FinancialInstitutionDirectDebitV02 .class, FinancialInstitutionIdentification8 .class, GenericAccountIdentification1 .class, GenericFinancialIdentification1 .class, GroupHeader63 .class, Instruction5Code.class, InstructionForCreditorAgent2 .class, LocalInstrument2Choice.class, MxPacs01000102 .class, PaymentIdentification3 .class, PaymentTypeInformation21 .class, PostalAddress6 .class, Priority2Code.class, Priority3Code.class, RemittanceInformation2 .class, ServiceLevel8Choice.class, SettlementTimeRequest2 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:pacs.010.001.02";
+    public static final transient Class[] _classes = new Class[] {AccountIdentification4Choice.class, AccountSchemeName1Choice.class, ActiveCurrencyAndAmount.class, AddressType2Code.class, BranchAndFinancialInstitutionIdentification5 .class, BranchData2 .class, CashAccount24 .class, CashAccountType2Choice.class, CategoryPurpose1Choice.class, ClearingChannel2Code.class, ClearingSystemIdentification2Choice.class, ClearingSystemMemberIdentification2 .class, CreditTransferTransaction9 .class, DirectDebitTransactionInformation15 .class, FinancialIdentificationSchemeName1Choice.class, FinancialInstitutionDirectDebitV02 .class, FinancialInstitutionIdentification8 .class, GenericAccountIdentification1 .class, GenericFinancialIdentification1 .class, GroupHeader63 .class, Instruction5Code.class, InstructionForCreditorAgent2 .class, LocalInstrument2Choice.class, MxPacs01000102 .class, PaymentIdentification3 .class, PaymentTypeInformation21 .class, PostalAddress6 .class, Priority2Code.class, Priority3Code.class, RemittanceInformation2 .class, ServiceLevel8Choice.class, SettlementTimeRequest2 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:pacs.010.001.02";
 
     public MxPacs01000102() {
         super();
@@ -86,21 +86,6 @@ public class MxPacs01000102
     public MxPacs01000102 setFIDrctDbt(FinancialInstitutionDirectDebitV02 value) {
         this.fiDrctDbt = value;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -173,8 +158,23 @@ public class MxPacs01000102
      * @return
      *     a new instance of MxPacs01000102
      */
-    public final static MxPacs01000102 fromJson(String json) {
+    public static final MxPacs01000102 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxPacs01000102 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

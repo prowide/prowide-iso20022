@@ -16,7 +16,7 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.swift.model.mx.adapters.TypeAdaptersConfiguration;
-import javax.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBContext;
 
 /**
  * Options to customize the behaviour of the MX writer (model into XML serialization) in the {@link AbstractMX}
@@ -30,7 +30,7 @@ public class MxWriteConfiguration {
      * The name of the envelope element that binds a Header to the message to which it applies is
      * implementation/network specific. The header root element ‘AppHdr’ and the ISO 20022 MessageDefinition
      * root element ‘Document’ must always be sibling elements in any XML document, with the AppHdr element preceding
-     * the Document element. If no root elemewnt name is provided the value in {@link AbstractMX#DEFAULT_ROOT_ELEMENT}
+     * the Document element. If no root element name is provided the value in {@link AbstractMX#DEFAULT_ROOT_ELEMENT}
      * is used as default
      */
     public String rootElement;

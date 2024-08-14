@@ -3,11 +3,11 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -186,8 +186,8 @@ public class CardPaymentTransaction16 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the failrRsn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the failrRsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -201,10 +201,12 @@ public class CardPaymentTransaction16 {
      * {@link FailureReason2Code }
      * 
      * 
+     * @return
+     *     The value of the failrRsn property.
      */
     public List<FailureReason2Code> getFailrRsn() {
         if (failrRsn == null) {
-            failrRsn = new ArrayList<FailureReason2Code>();
+            failrRsn = new ArrayList<>();
         }
         return this.failrRsn;
     }
@@ -340,8 +342,8 @@ public class CardPaymentTransaction16 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlTxData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlTxData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -355,10 +357,12 @@ public class CardPaymentTransaction16 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the addtlTxData property.
      */
     public List<String> getAddtlTxData() {
         if (addtlTxData == null) {
-            addtlTxData = new ArrayList<String>();
+            addtlTxData = new ArrayList<>();
         }
         return this.addtlTxData;
     }

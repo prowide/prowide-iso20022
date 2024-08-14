@@ -1,33 +1,32 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlEnumValue;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for TransferStatusType2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="TransferStatusType2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="S019"/&gt;
- *     &lt;enumeration value="BCEV"/&gt;
- *     &lt;enumeration value="SETT"/&gt;
- *     &lt;enumeration value="DRAW"/&gt;
- *     &lt;enumeration value="PAYA"/&gt;
- *     &lt;enumeration value="S012"/&gt;
- *     &lt;enumeration value="INFO"/&gt;
- *     &lt;enumeration value="STAT"/&gt;
- *     &lt;enumeration value="S005"/&gt;
- *     &lt;enumeration value="S001"/&gt;
- *     &lt;enumeration value="CONV"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="TransferStatusType2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="S019"/>
+ *     <enumeration value="BCEV"/>
+ *     <enumeration value="SETT"/>
+ *     <enumeration value="DRAW"/>
+ *     <enumeration value="PAYA"/>
+ *     <enumeration value="S012"/>
+ *     <enumeration value="INFO"/>
+ *     <enumeration value="STAT"/>
+ *     <enumeration value="S005"/>
+ *     <enumeration value="S001"/>
+ *     <enumeration value="CONV"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "TransferStatusType2Code")

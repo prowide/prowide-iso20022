@@ -1,39 +1,38 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlEnumValue;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for TaxType11Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="TaxType11Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="PROV"/&gt;
- *     &lt;enumeration value="NATI"/&gt;
- *     &lt;enumeration value="STAT"/&gt;
- *     &lt;enumeration value="WITH"/&gt;
- *     &lt;enumeration value="KAPA"/&gt;
- *     &lt;enumeration value="INPO"/&gt;
- *     &lt;enumeration value="STAM"/&gt;
- *     &lt;enumeration value="WTAX"/&gt;
- *     &lt;enumeration value="INHT"/&gt;
- *     &lt;enumeration value="SOSU"/&gt;
- *     &lt;enumeration value="CTAX"/&gt;
- *     &lt;enumeration value="GIFT"/&gt;
- *     &lt;enumeration value="COAX"/&gt;
- *     &lt;enumeration value="EUTR"/&gt;
- *     &lt;enumeration value="AKT1"/&gt;
- *     &lt;enumeration value="AKT2"/&gt;
- *     &lt;enumeration value="ZWIS"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="TaxType11Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="PROV"/>
+ *     <enumeration value="NATI"/>
+ *     <enumeration value="STAT"/>
+ *     <enumeration value="WITH"/>
+ *     <enumeration value="KAPA"/>
+ *     <enumeration value="INPO"/>
+ *     <enumeration value="STAM"/>
+ *     <enumeration value="WTAX"/>
+ *     <enumeration value="INHT"/>
+ *     <enumeration value="SOSU"/>
+ *     <enumeration value="CTAX"/>
+ *     <enumeration value="GIFT"/>
+ *     <enumeration value="COAX"/>
+ *     <enumeration value="EUTR"/>
+ *     <enumeration value="AKT1"/>
+ *     <enumeration value="AKT2"/>
+ *     <enumeration value="ZWIS"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "TaxType11Code")
