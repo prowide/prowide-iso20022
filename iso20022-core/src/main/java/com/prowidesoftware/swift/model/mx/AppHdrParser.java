@@ -83,6 +83,11 @@ public class AppHdrParser {
             return (LegacyAppHdr)
                     MxParseUtils.parseSAXSource(source, LegacyAppHdr.class, LegacyAppHdr._classes, params);
 
+        } else if (StringUtils.equals(BusinessAppHdrV01.NAMESPACE, namespace)) {
+            // parse BAH version 1
+            return (BusinessAppHdrV01)
+                    MxParseUtils.parseSAXSource(source, BusinessAppHdrV01.class, BusinessAppHdrV01._classes, params);
+
         } else if (StringUtils.equals(BusinessAppHdrV02.NAMESPACE, namespace)) {
             // parse BAH version 2
             return (BusinessAppHdrV02)
@@ -93,10 +98,15 @@ public class AppHdrParser {
             return (BusinessAppHdrV03)
                     MxParseUtils.parseSAXSource(source, BusinessAppHdrV03.class, BusinessAppHdrV03._classes, params);
 
+        } else if (StringUtils.equals(BusinessAppHdrV04.NAMESPACE, namespace)) {
+            // parse BAH version 4
+            return (BusinessAppHdrV04)
+                    MxParseUtils.parseSAXSource(source, BusinessAppHdrV04.class, BusinessAppHdrV04._classes, params);
+
         } else {
-            // by default try to parse to BAH version 1
-            return (BusinessAppHdrV01)
-                    MxParseUtils.parseSAXSource(source, BusinessAppHdrV01.class, BusinessAppHdrV01._classes, params);
+            // by default try to parse to BAH version 2 (most common version, used by CBPR+)
+            return (BusinessAppHdrV02)
+                    MxParseUtils.parseSAXSource(source, BusinessAppHdrV02.class, BusinessAppHdrV02._classes, params);
         }
     }
 

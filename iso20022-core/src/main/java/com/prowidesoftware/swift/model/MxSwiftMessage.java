@@ -247,6 +247,7 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
             AppHdr header = getAppHdr();
             if (identifier == null && header != null && header.messageName() != null) {
                 identifier = new MxId(header.messageName());
+                identifier.setBusinessService(header.serviceName());
             }
 
             extractMetadata(identifier, header, metadataStrategy);
@@ -456,6 +457,9 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
      * @since 9.0.1
      */
     public AppHdr getAppHdr() {
+        if (this.message() == null) {
+            return null;
+        }
         return AppHdrParser.parse(this.message()).orElse(null);
     }
 
@@ -491,7 +495,12 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
      * @since 7.10.4
      */
     public MxId getMxId() {
-        return new MxId(this.businessProcess, this.functionality, this.variant, this.version);
+        MxId mxId = new MxId(this.businessProcess, this.functionality, this.variant, this.version);
+        AppHdr header = getAppHdr();
+        if (header != null) {
+            mxId.setBusinessService(header.serviceName());
+        }
+        return mxId;
     }
 
     /**
@@ -503,6 +512,9 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
      */
     @Override
     public String getCategory() {
+        if (this.businessProcess != null) {
+            return this.businessProcess.name();
+        }
         if (!StringUtils.isBlank(this.identifier)) {
             MxBusinessProcess proc = (new MxId(this.identifier)).getBusinessProcess();
             if (proc != null) {

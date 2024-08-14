@@ -49,9 +49,9 @@ public class XmlEventWriterTest {
         assertMessage(mx);
         String xmlResult = mx.message();
         // original issue
-        assertFalse(xmlResult.contains("<Doc:Amt Ccy=\"USD\" >0.000000</Doc:Amt>"));
+        assertFalse(xmlResult.contains("<seev:Amt Ccy=\"USD\" >0.000000</seev:Amt>"));
         // expected result
-        assertTrue(xmlResult.contains("<Doc:Amt Ccy=\"USD\">0.000000</Doc:Amt>"));
+        assertTrue(xmlResult.contains("<seev:Amt Ccy=\"USD\">0.000000</seev:Amt>"));
     }
 
     @Test
@@ -63,11 +63,11 @@ public class XmlEventWriterTest {
         String xmlResult = mx.message();
         // Original issue
         assertFalse(xmlResult.contains(
-                "<Doc:Dt>" + LINE_SEPARATOR + "                        <Doc:Dt>2021-11-11</Doc:Dt></Doc:Dt>"));
+                "<seev:Dt>" + LINE_SEPARATOR + "                        <seev:Dt>2021-11-11</seev:Dt></seev:Dt>"));
         // Excpected result
-        assertTrue(
-                xmlResult.contains(" <Doc:Dt>" + LINE_SEPARATOR + "                        <Doc:Dt>2021-11-11</Doc:Dt>"
-                        + LINE_SEPARATOR + "                    </Doc:Dt>"));
+        assertTrue(xmlResult.contains(
+                " <seev:Dt>" + LINE_SEPARATOR + "                        <seev:Dt>2021-11-11</seev:Dt>" + LINE_SEPARATOR
+                        + "                    </seev:Dt>"));
     }
 
     private void assertMessage(MxSeev03100209 mx) {
@@ -203,7 +203,7 @@ public class XmlEventWriterTest {
         mx.getGetAcct().getAcctQryDef().getAcctCrit().setQryNm("FOO");
         String xml = mx.message();
         // System.out.println(xml);
-        assertTrue(xml.contains("     <Doc:QryNm>"));
+        assertTrue(xml.contains("     <camt:QryNm>"));
     }
 
     @Test

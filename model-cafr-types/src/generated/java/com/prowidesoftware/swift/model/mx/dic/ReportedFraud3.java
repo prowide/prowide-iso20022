@@ -1,0 +1,405 @@
+
+package com.prowidesoftware.swift.model.mx.dic;
+
+import java.util.ArrayList;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+
+/**
+ * Fraud reporting type information
+ * 
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "ReportedFraud3", propOrder = {
+    "frdTp",
+    "othrFrdTp",
+    "frdRptgActn",
+    "othrFrdRptgActn",
+    "rptgNtty",
+    "othrRptgNtty",
+    "cmprmsdCrdntl",
+    "crdhldrRptgDt",
+    "confRptgDt",
+    "submitrCaseRef",
+    "frdCaseDtls",
+    "frdInvstgtnSts"
+})
+public class ReportedFraud3 {
+
+    @XmlElement(name = "FrdTp", required = true)
+    @XmlSchemaType(name = "string")
+    protected FraudType1Code frdTp;
+    @XmlElement(name = "OthrFrdTp")
+    protected String othrFrdTp;
+    @XmlElement(name = "FrdRptgActn", required = true)
+    @XmlSchemaType(name = "string")
+    protected FraudReportingAction1Code frdRptgActn;
+    @XmlElement(name = "OthrFrdRptgActn")
+    protected String othrFrdRptgActn;
+    @XmlElement(name = "RptgNtty", required = true)
+    @XmlSchemaType(name = "string")
+    protected PartyType26Code rptgNtty;
+    @XmlElement(name = "OthrRptgNtty")
+    protected String othrRptgNtty;
+    @XmlElement(name = "CmprmsdCrdntl")
+    @XmlSchemaType(name = "string")
+    protected List<AuthenticationMethod12Code> cmprmsdCrdntl;
+    @XmlElement(name = "CrdhldrRptgDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
+    @XmlSchemaType(name = "date")
+    protected XMLGregorianCalendar crdhldrRptgDt;
+    @XmlElement(name = "ConfRptgDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
+    @XmlSchemaType(name = "date")
+    protected XMLGregorianCalendar confRptgDt;
+    @XmlElement(name = "SubmitrCaseRef")
+    protected String submitrCaseRef;
+    @XmlElement(name = "FrdCaseDtls")
+    protected FraudCaseDetails1 frdCaseDtls;
+    @XmlElement(name = "FrdInvstgtnSts")
+    protected String frdInvstgtnSts;
+
+    /**
+     * Gets the value of the frdTp property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link FraudType1Code }
+     *     
+     */
+    public FraudType1Code getFrdTp() {
+        return frdTp;
+    }
+
+    /**
+     * Sets the value of the frdTp property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link FraudType1Code }
+     *     
+     */
+    public ReportedFraud3 setFrdTp(FraudType1Code value) {
+        this.frdTp = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the othrFrdTp property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getOthrFrdTp() {
+        return othrFrdTp;
+    }
+
+    /**
+     * Sets the value of the othrFrdTp property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public ReportedFraud3 setOthrFrdTp(String value) {
+        this.othrFrdTp = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the frdRptgActn property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link FraudReportingAction1Code }
+     *     
+     */
+    public FraudReportingAction1Code getFrdRptgActn() {
+        return frdRptgActn;
+    }
+
+    /**
+     * Sets the value of the frdRptgActn property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link FraudReportingAction1Code }
+     *     
+     */
+    public ReportedFraud3 setFrdRptgActn(FraudReportingAction1Code value) {
+        this.frdRptgActn = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the othrFrdRptgActn property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getOthrFrdRptgActn() {
+        return othrFrdRptgActn;
+    }
+
+    /**
+     * Sets the value of the othrFrdRptgActn property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public ReportedFraud3 setOthrFrdRptgActn(String value) {
+        this.othrFrdRptgActn = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the rptgNtty property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link PartyType26Code }
+     *     
+     */
+    public PartyType26Code getRptgNtty() {
+        return rptgNtty;
+    }
+
+    /**
+     * Sets the value of the rptgNtty property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link PartyType26Code }
+     *     
+     */
+    public ReportedFraud3 setRptgNtty(PartyType26Code value) {
+        this.rptgNtty = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the othrRptgNtty property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getOthrRptgNtty() {
+        return othrRptgNtty;
+    }
+
+    /**
+     * Sets the value of the othrRptgNtty property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public ReportedFraud3 setOthrRptgNtty(String value) {
+        this.othrRptgNtty = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the cmprmsdCrdntl property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the cmprmsdCrdntl property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getCmprmsdCrdntl().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link AuthenticationMethod12Code }
+     * 
+     * 
+     */
+    public List<AuthenticationMethod12Code> getCmprmsdCrdntl() {
+        if (cmprmsdCrdntl == null) {
+            cmprmsdCrdntl = new ArrayList<AuthenticationMethod12Code>();
+        }
+        return this.cmprmsdCrdntl;
+    }
+
+    /**
+     * Gets the value of the crdhldrRptgDt property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public XMLGregorianCalendar getCrdhldrRptgDt() {
+        return crdhldrRptgDt;
+    }
+
+    /**
+     * Sets the value of the crdhldrRptgDt property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public ReportedFraud3 setCrdhldrRptgDt(XMLGregorianCalendar value) {
+        this.crdhldrRptgDt = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the confRptgDt property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public XMLGregorianCalendar getConfRptgDt() {
+        return confRptgDt;
+    }
+
+    /**
+     * Sets the value of the confRptgDt property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public ReportedFraud3 setConfRptgDt(XMLGregorianCalendar value) {
+        this.confRptgDt = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the submitrCaseRef property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getSubmitrCaseRef() {
+        return submitrCaseRef;
+    }
+
+    /**
+     * Sets the value of the submitrCaseRef property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public ReportedFraud3 setSubmitrCaseRef(String value) {
+        this.submitrCaseRef = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the frdCaseDtls property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link FraudCaseDetails1 }
+     *     
+     */
+    public FraudCaseDetails1 getFrdCaseDtls() {
+        return frdCaseDtls;
+    }
+
+    /**
+     * Sets the value of the frdCaseDtls property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link FraudCaseDetails1 }
+     *     
+     */
+    public ReportedFraud3 setFrdCaseDtls(FraudCaseDetails1 value) {
+        this.frdCaseDtls = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the frdInvstgtnSts property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getFrdInvstgtnSts() {
+        return frdInvstgtnSts;
+    }
+
+    /**
+     * Sets the value of the frdInvstgtnSts property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public ReportedFraud3 setFrdInvstgtnSts(String value) {
+        this.frdInvstgtnSts = value;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+    /**
+     * Adds a new item to the cmprmsdCrdntl list.
+     * @see #getCmprmsdCrdntl()
+     * 
+     */
+    public ReportedFraud3 addCmprmsdCrdntl(AuthenticationMethod12Code cmprmsdCrdntl) {
+        getCmprmsdCrdntl().add(cmprmsdCrdntl);
+        return this;
+    }
+
+}

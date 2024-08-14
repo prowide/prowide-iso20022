@@ -31,9 +31,13 @@ public enum MxBusinessProcess {
     caad("Card Administration"),
     caam("ATM Management"),
     cafc("Fee Collection"),
+    cafm("File Management"),
+    cafr("Fraud Reporting and Disposition"),
     cain("Acquirer to Issuer Card Transactions"),
     camt("Cash Management"),
+    canm("Network Management"),
     casp("Sale to POI Card Transactions"),
+    casr("Settlement Reporting"),
     catm("Terminal Management"),
     catp("ATM Card Transactions"),
     cbrf(""),
@@ -57,7 +61,7 @@ public enum MxBusinessProcess {
     /**
      * @deprecated Obsolete to be withdrawn (non-ISO)
      */
-    @ProwideDeprecated(phase3 = TargetYear.SRU2024)
+    @ProwideDeprecated(phase4 = TargetYear.SRU2025)
     @Deprecated
     trea("Treasury"),
 
@@ -66,7 +70,7 @@ public enum MxBusinessProcess {
     tsrv("Trade Services"),
     xsys("System Message");
 
-    private String description = null;
+    private String description;
 
     private MxBusinessProcess(final String description) {
         this.description = description;

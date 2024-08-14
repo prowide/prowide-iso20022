@@ -33,9 +33,6 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="CLEA"/&gt;
  *     &lt;enumeration value="SAVE"/&gt;
  *     &lt;enumeration value="WISS"/&gt;
- *     &lt;enumeration value="SAMD"/&gt;
- *     &lt;enumeration value="PRVD"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
  *   &lt;/restriction&gt;
  * &lt;/simpleType&gt;
  * </pre>
@@ -164,25 +161,7 @@ public enum SettlementDateCode {
      * Settlement is to be done when the security is issued.
      * 
      */
-    WISS,
-
-    /**
-     * Event occurs on the same day or at time T.
-     * 
-     */
-    SAMD,
-
-    /**
-     * Event occurs on the previous day.
-     * 
-     */
-    PRVD,
-
-    /**
-     * Any other settlement date.
-     * 
-     */
-    OTHR;
+    WISS;
 
     public String value() {
         return name();

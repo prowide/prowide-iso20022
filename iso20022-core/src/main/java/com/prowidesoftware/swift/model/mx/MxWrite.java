@@ -23,22 +23,14 @@ import com.prowidesoftware.deprecation.TargetYear;
  * @deprecated use the {@link MxWriteImpl} directly
  */
 @Deprecated
-@ProwideDeprecated(phase3 = TargetYear.SRU2024)
+@ProwideDeprecated(phase4 = TargetYear.SRU2025)
 public interface MxWrite {
 
     /**
      * @deprecated use {@link MxWriteImpl#write(String, AbstractMX, Class[], MxWriteParams)} instead
      */
     @Deprecated
-    @ProwideDeprecated(phase4 = TargetYear.SRU2024)
-    String message(
-            String namespace, AbstractMX obj, Class[] classes, final String prefix, boolean includeXMLDeclaration);
-
-    /**
-     * @deprecated use {@link MxWriteImpl#write(String, AbstractMX, Class[], MxWriteParams)} instead
-     */
-    @Deprecated
-    @ProwideDeprecated(phase3 = TargetYear.SRU2024)
+    @ProwideDeprecated(phase4 = TargetYear.SRU2025)
     default String message(
             String namespace,
             AbstractMX obj,
@@ -46,7 +38,7 @@ public interface MxWrite {
             final String prefix,
             boolean includeXMLDeclaration,
             EscapeHandler escapeHandler) {
-        DeprecationUtils.phase2(
+        DeprecationUtils.phase3(
                 AbstractMX.class,
                 "message(String, AbstractMX, Class[], String, boolean, EscapeHandler)",
                 "Use MxWriteImpl.write(String, AbstractMX, Class[], MxWriteParams) instead");

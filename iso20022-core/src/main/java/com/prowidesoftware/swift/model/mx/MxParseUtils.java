@@ -16,8 +16,6 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.ProwideException;
-import com.prowidesoftware.deprecation.ProwideDeprecated;
-import com.prowidesoftware.deprecation.TargetYear;
 import com.prowidesoftware.swift.model.DistinguishedName;
 import com.prowidesoftware.swift.model.MxId;
 import com.prowidesoftware.swift.utils.SafeXmlUtils;
@@ -60,15 +58,6 @@ public class MxParseUtils {
         InputSource documentInputSource = new InputSource(new StringReader(xml));
 
         return new SAXSource(documentFilter, documentInputSource);
-    }
-
-    /**
-     * @deprecated use {@link #parseSAXSource(SAXSource, Class, Class[], MxReadParams)} instead
-     */
-    @Deprecated
-    @ProwideDeprecated(phase4 = TargetYear.SRU2024)
-    static Object parseSAXSource(final SAXSource source, final Class targetClass, final Class<?>[] classes) {
-        return parseSAXSource(source, targetClass, classes, new MxReadParams());
     }
 
     /**
@@ -139,15 +128,6 @@ public class MxParseUtils {
     }
 
     /**
-     * @deprecated use {@link #parse(Class, String, Class[], String, MxReadParams)} instead
-     */
-    @Deprecated
-    @ProwideDeprecated(phase4 = TargetYear.SRU2024)
-    static Object parse(final Class targetClass, final String xml, final Class<?>[] classes, final String localName) {
-        return parse(targetClass, xml, classes, localName, new MxReadParams());
-    }
-
-    /**
      * Parse an object from XML with optional wrapper and sibling elements that will be ignored.
      *
      * @param targetClass calss of the object being parsed
@@ -214,7 +194,7 @@ public class MxParseUtils {
     public static Optional<MxId> identifyMessage(final String xml) {
         Optional<String> namespace = NamespaceReader.findDocumentNamespace(xml);
         if (namespace.isPresent()) {
-            return namespace.map(MxId::new);
+            return enrichBusinessService(namespace.map(MxId::new).orElse(null), xml);
         }
 
         // if the Document does not have a namespace, try to identify the message from the header
@@ -225,13 +205,28 @@ public class MxParseUtils {
         }
         if (element.isPresent()) {
             try {
-                return Optional.of(new MxId(element.get().getElementText()));
+                return enrichBusinessService(new MxId(element.get().getElementText()), xml);
             } catch (XMLStreamException e) {
                 log.finer("Error identifying message: " + e.getMessage());
             }
         }
 
         return Optional.empty();
+    }
+
+    private static Optional<MxId> enrichBusinessService(MxId mxId, final String xml) {
+        if (mxId == null) {
+            return Optional.empty();
+        }
+        Optional<XMLStreamReader> element = NamespaceReader.findElement(xml, "BizSvc");
+        if (element.isPresent()) {
+            try {
+                mxId.setBusinessService(element.get().getElementText());
+            } catch (XMLStreamException e) {
+                log.finer("Error identifying business service: " + e.getMessage());
+            }
+        }
+        return Optional.of(mxId);
     }
 
     /**

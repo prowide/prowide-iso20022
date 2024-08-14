@@ -115,7 +115,7 @@ public enum UnmatchedStatusReason1Code {
     SETR,
 
     /**
-     * Counterparty disagrees with the security/issue, eg, ISIN or a financial instrument attribute differs.
+     * Counterparty disagrees with the security/issue, for example, ISIN or a financial instrument attribute differs.
      * 
      */
     DSEC,

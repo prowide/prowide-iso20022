@@ -22,4 +22,15 @@ class AppHdrFactoryTest {
         // for BAH v01 the date time must be ISONormalisedDateTime
         assertTrue(xml.contains("Z</CreDt>"));
     }
+
+    @Test
+    void createBusinessAppHdrV02_WithBusinessService() {
+        BusinessAppHdrV02 h = AppHdrFactory.createBusinessAppHdrV02(
+                "AAAAUSXXXXX",
+                "BBBBUSXXXXX",
+                "REF12345",
+                new MxId("pacs.009.001.08").setBusinessService("swift.cbprplus.cov.02"));
+        assertNotNull(h);
+        assertEquals("swift.cbprplus.cov.02", h.getBizSvc());
+    }
 }

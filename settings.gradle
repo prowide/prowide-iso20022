@@ -24,14 +24,26 @@ include 'model-caam-types'
 include 'model-cafc-mx'
 include 'model-cafc-types'
 
+include 'model-cafm-mx'
+include 'model-cafm-types'
+
+include 'model-cafr-mx'
+include 'model-cafr-types'
+
 include 'model-cain-mx'
 include 'model-cain-types'
 
 include 'model-camt-mx'
 include 'model-camt-types'
 
+include 'model-canm-mx'
+include 'model-canm-types'
+
 include 'model-casp-mx'
 include 'model-casp-types'
+
+include 'model-casr-mx'
+include 'model-casr-types'
 
 include 'model-catm-mx'
 include 'model-catm-types'

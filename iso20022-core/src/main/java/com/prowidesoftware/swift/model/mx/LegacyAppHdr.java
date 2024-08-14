@@ -199,10 +199,10 @@ public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
      * @deprecated use {@link #xml(MxWriteParams)} instead
      */
     @Deprecated
-    @ProwideDeprecated(phase3 = TargetYear.SRU2024)
+    @ProwideDeprecated(phase4 = TargetYear.SRU2025)
     @Override
     public String xml(final String prefix, boolean includeXMLDeclaration) {
-        DeprecationUtils.phase2(AbstractMX.class, "xml(String, boolean)", "Use xml(MxWriteParams) instead");
+        DeprecationUtils.phase3(AbstractMX.class, "xml(String, boolean)", "Use xml(MxWriteParams) instead");
         MxWriteParams params = new MxWriteParams();
         params.prefix = prefix;
         params.includeXMLDeclaration = includeXMLDeclaration;
@@ -213,10 +213,10 @@ public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
      * @deprecated use {@link #xml(MxWriteParams)} instead
      */
     @Deprecated
-    @ProwideDeprecated(phase3 = TargetYear.SRU2024)
+    @ProwideDeprecated(phase4 = TargetYear.SRU2025)
     @Override
     public String xml(String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
-        DeprecationUtils.phase2(
+        DeprecationUtils.phase3(
                 AbstractMX.class, "xml(String, boolean, EscapeHandler)", "Use xml(MxWriteParams) instead");
         MxWriteParams params = new MxWriteParams();
         params.prefix = prefix;

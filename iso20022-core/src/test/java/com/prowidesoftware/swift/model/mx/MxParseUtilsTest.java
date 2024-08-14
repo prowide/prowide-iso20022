@@ -128,6 +128,7 @@ public class MxParseUtilsTest {
         MxId id = MxParseUtils.identifyMessage(xml).orElse(null);
         assertNotNull(id);
         assertEquals("seev.031.002.03", id.id());
+        assertEquals("CSD", id.getBusinessService().orElse(null));
     }
 
     @Test

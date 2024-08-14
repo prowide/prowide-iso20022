@@ -98,7 +98,7 @@ public enum UnmatchedReason15Code {
     RATE,
 
     /**
-     * Termination Currency does not match
+     * Termination Currency does not match.
      * 
      */
     TMCY,

@@ -3,9 +3,30 @@
 #### 9.4.7 - August 2024
   * (PW-1958) Fixed the `DefaultMxMetadataStrategy` NPE issue when the amount values are null
 
-#### 9.4.6 - May 2024
+#### 9.5.4 - August 2024
+  * (PW-1958) Fixed the `DefaultMxMetadataStrategy` NPE issue when the amount values are null
+
+#### 9.5.3 - August 2024
+  * (PW-1947) Updated MX model with latest SWIFT SRU2024 schema update, including new messages such as trck.001.001.03
+  * Add support for Business Application Header version head.001.001.04
+
+#### 9.5.2 - June 2024
   * (PW-1875) Fixed the `ZuluDateTimeAdapter` to convert the datetime to UTC offset if needed
- 
+
+#### 9.5.1 - June 2024
+  * Enhanced the AppHdrFactory to honor the business service set in the parameter MxId
+  * Enhanced the MxParseUtils#identifyMessage to set the business service in the MxId when present
+
+#### 9.5.0 - May 2024
+  * SWIFT Standard release update 2024 (live 16 November 2024)
+  * Yearly revision of deprecation phase (see https://dev.prowidesoftware.com/SRU2024/getting-started/deprecation/)
+  * Added message categories for File Management (cafm), Fraud Reporting and Disposition (cafm), Network Management (canm), and Settlement Reporting (casr)
+  * Add support in the MxWriteConfiguration to use standard envelopes for SWIFT and ISO 20022
+  * Changed the default Document prefix to the message category; "camt", "pacs", etc...
+  * Enhanced MxId with optional and transient businessService field to act as a message type discriminator
+  * Dependency update: commons-lang3 -> 3.14.0
+  * Dependency update: gson -> 2.11.0
+
 #### 9.4.5 - May 2024
   * (PW-1875) Changed the BusinessApplicationHeaderV01 marshaller to always use Zulu timezone with "Z" indicator
  

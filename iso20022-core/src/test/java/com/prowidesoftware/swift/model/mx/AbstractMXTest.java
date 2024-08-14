@@ -17,6 +17,7 @@ package com.prowidesoftware.swift.model.mx;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import com.prowidesoftware.swift.model.MxBusinessProcess;
 import com.prowidesoftware.swift.model.MxId;
 import com.prowidesoftware.swift.model.mx.sys.MxXsys01100102;
 import org.junit.jupiter.api.Test;
@@ -84,6 +85,14 @@ public class AbstractMXTest {
         assertNull(mx.getAppHdr());
         assertNotNull(mx.getFXTradInstr());
         assertEquals("QCOUCN", mx.getFXTradInstr().getTradInf().getOrgtrRef());
+
+        MxId id = mx.getMxId();
+        assertNotNull(id);
+        assertEquals(MxBusinessProcess.fxtr, id.getBusinessProcess());
+        assertEquals("014", id.getFunctionality());
+        assertEquals("001", id.getVariant());
+        assertEquals("02", id.getVersion());
+        assertFalse(id.getBusinessService().isPresent());
     }
 
     @Test
@@ -222,5 +231,69 @@ public class AbstractMXTest {
         AbstractMX mx = AbstractMX.parse(xml);
         assertNotNull(mx);
         assertInstanceOf(MxPacs00800108.class, mx);
+
+        MxId id = mx.getMxId();
+        assertNotNull(id);
+        assertEquals(MxBusinessProcess.pacs, id.getBusinessProcess());
+        assertEquals("008", id.getFunctionality());
+        assertEquals("001", id.getVariant());
+        assertEquals("08", id.getVersion());
+        assertFalse(id.getBusinessService().isPresent());
+    }
+
+    @Test
+    public void testIdentifierFromAppHdr() {
+        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+                + "<message>"
+                + "<AppHdr> \n"
+                + "<Fr> \n"
+                + "	<FIId>\n"
+                + "		<FinInstnId>\n"
+                + "			<BICFI>FOOCUS3NXXX</BICFI>\n"
+                + "			<ClrSysMmbId>\n"
+                + "				<ClrSysId>\n"
+                + "					<Prtry>T2S</Prtry>\n"
+                + "				</ClrSysId>\n"
+                + "				<MmbId>ADMNUSERLUXCSDT1</MmbId>\n"
+                + "			</ClrSysMmbId>\n"
+                + "			<Othr>\n"
+                + "				<Id>FOOTXE2SXXX</Id>\n"
+                + "				</Othr> \n"
+                + "		</FinInstnId> \n"
+                + "	</FIId> \n"
+                + "</Fr> \n"
+                + "<To> \n"
+                + "	<FIId>\n"
+                + "		<FinInstnId>\n"
+                + "			<BICFI>ABICUS33</BICFI>\n"
+                + "			<Othr>\n"
+                + "				<Id>AARBDE5W100</Id>\n"
+                + "			</Othr>\n"
+                + "		</FinInstnId> \n"
+                + "	</FIId> \n"
+                + "</To> \n"
+                + "<BizMsgIdr>2012111915360885</BizMsgIdr>\n"
+                + "<MsgDefIdr>pacs.004.001.02.ch.02</MsgDefIdr> \n"
+                + "<BizSvc>CSD</BizSvc> \n"
+                + "<CreDt>2015-08-27T08:59:00Z</CreDt>\n"
+                + "</AppHdr>"
+                + "<Document>"
+                + "</Document>"
+                + "</message>";
+        AbstractMX mx = AbstractMX.parse(xml);
+        assertNotNull(mx);
+        assertEquals("pacs", mx.getBusinessProcess());
+        assertEquals(4, mx.getFunctionality());
+        assertEquals(1, mx.getVariant());
+        assertEquals(2, mx.getVersion());
+
+        MxId id = mx.getMxId();
+        assertNotNull(id);
+        assertEquals(MxBusinessProcess.pacs, id.getBusinessProcess());
+        assertEquals("004", id.getFunctionality());
+        assertEquals("001", id.getVariant());
+        assertEquals("02", id.getVersion());
+        assertTrue(id.getBusinessService().isPresent());
+        assertEquals("CSD", id.getBusinessService().get());
     }
 }
