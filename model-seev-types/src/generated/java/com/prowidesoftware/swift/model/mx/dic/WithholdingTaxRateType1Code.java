@@ -1,24 +1,23 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for WithholdingTaxRateType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="WithholdingTaxRateType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="BWIT"/&gt;
- *     &lt;enumeration value="FTCA"/&gt;
- *     &lt;enumeration value="NRAT"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="WithholdingTaxRateType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="BWIT"/>
+ *     <enumeration value="FTCA"/>
+ *     <enumeration value="NRAT"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "WithholdingTaxRateType1Code")

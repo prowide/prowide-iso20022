@@ -1,37 +1,36 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for AuthenticationMethod3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="AuthenticationMethod3Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="NPIN"/&gt;
- *     &lt;enumeration value="PPSG"/&gt;
- *     &lt;enumeration value="PSWD"/&gt;
- *     &lt;enumeration value="SCRT"/&gt;
- *     &lt;enumeration value="SCNL"/&gt;
- *     &lt;enumeration value="SNCT"/&gt;
- *     &lt;enumeration value="CPSG"/&gt;
- *     &lt;enumeration value="ADDB"/&gt;
- *     &lt;enumeration value="BIOM"/&gt;
- *     &lt;enumeration value="CDHI"/&gt;
- *     &lt;enumeration value="CRYP"/&gt;
- *     &lt;enumeration value="CSCV"/&gt;
- *     &lt;enumeration value="PSVE"/&gt;
- *     &lt;enumeration value="CSEC"/&gt;
- *     &lt;enumeration value="ADDS"/&gt;
- *     &lt;enumeration value="TOKN"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="AuthenticationMethod3Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="NPIN"/>
+ *     <enumeration value="PPSG"/>
+ *     <enumeration value="PSWD"/>
+ *     <enumeration value="SCRT"/>
+ *     <enumeration value="SCNL"/>
+ *     <enumeration value="SNCT"/>
+ *     <enumeration value="CPSG"/>
+ *     <enumeration value="ADDB"/>
+ *     <enumeration value="BIOM"/>
+ *     <enumeration value="CDHI"/>
+ *     <enumeration value="CRYP"/>
+ *     <enumeration value="CSCV"/>
+ *     <enumeration value="PSVE"/>
+ *     <enumeration value="CSEC"/>
+ *     <enumeration value="ADDS"/>
+ *     <enumeration value="TOKN"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "AuthenticationMethod3Code")

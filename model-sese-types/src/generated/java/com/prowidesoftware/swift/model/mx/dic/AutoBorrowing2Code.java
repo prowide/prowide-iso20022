@@ -1,25 +1,24 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for AutoBorrowing2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="AutoBorrowing2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="LAMI"/&gt;
- *     &lt;enumeration value="NBOR"/&gt;
- *     &lt;enumeration value="YBOR"/&gt;
- *     &lt;enumeration value="RTRN"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="AutoBorrowing2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="LAMI"/>
+ *     <enumeration value="NBOR"/>
+ *     <enumeration value="YBOR"/>
+ *     <enumeration value="RTRN"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "AutoBorrowing2Code")

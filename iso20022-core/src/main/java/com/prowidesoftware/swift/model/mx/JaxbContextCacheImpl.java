@@ -15,10 +15,10 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBException;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
 
 /**
  * Simple cache based on {@link ConcurrentHashMap} without eviction. This implementation is aimed to avoid additional

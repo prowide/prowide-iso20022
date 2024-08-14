@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxCamt02300103
 
     @XmlElement(name = "BckpPmt", required = true)
     protected BackupPaymentV03 bckpPmt;
-    public final static transient String BUSINESS_PROCESS = "camt";
-    public final static transient int FUNCTIONALITY = 23;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 3;
+    public static final transient String BUSINESS_PROCESS = "camt";
+    public static final transient int FUNCTIONALITY = 23;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 3;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {AmountChoice.class, BackupPaymentV03 .class, CashClearingSystem1Code.class, ClearingSystemMemberIdentificationChoice.class, CurrencyAndAmount.class, MemberIdentificationChoice.class, MessageIdentification.class, MxCamt02300103 .class, PaymentInstructionInformation.class, PaymentType2Choice.class, PaymentType3Code.class, SystemDetails1 .class, SystemIdentificationChoice.class };
-    public final static transient String NAMESPACE = "urn:swift:xsd:camt.023.001.03";
+    public static final transient Class[] _classes = new Class[] {AmountChoice.class, BackupPaymentV03 .class, CashClearingSystem1Code.class, ClearingSystemMemberIdentificationChoice.class, CurrencyAndAmount.class, MemberIdentificationChoice.class, MessageIdentification.class, MxCamt02300103 .class, PaymentInstructionInformation.class, PaymentType2Choice.class, PaymentType3Code.class, SystemDetails1 .class, SystemIdentificationChoice.class };
+    public static final transient String NAMESPACE = "urn:swift:xsd:camt.023.001.03";
 
     public MxCamt02300103() {
         super();
@@ -86,21 +86,6 @@ public class MxCamt02300103
     public MxCamt02300103 setBckpPmt(BackupPaymentV03 value) {
         this.bckpPmt = value;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -173,8 +158,23 @@ public class MxCamt02300103
      * @return
      *     a new instance of MxCamt02300103
      */
-    public final static MxCamt02300103 fromJson(String json) {
+    public static final MxCamt02300103 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxCamt02300103 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

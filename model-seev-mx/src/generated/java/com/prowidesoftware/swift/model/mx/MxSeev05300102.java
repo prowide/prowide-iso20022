@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxSeev05300102
 
     @XmlElement(name = "MktClmCxlReqStsAdvc", required = true)
     protected MarketClaimCancellationRequestStatusAdviceV02 mktClmCxlReqStsAdvc;
-    public final static transient String BUSINESS_PROCESS = "seev";
-    public final static transient int FUNCTIONALITY = 53;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 2;
+    public static final transient String BUSINESS_PROCESS = "seev";
+    public static final transient int FUNCTIONALITY = 53;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 2;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {ActiveCurrencyAnd13DecimalAmount.class, ActiveCurrencyAndAmount.class, CancelledReason9Choice.class, CancelledStatus11Choice.class, CancelledStatusReason12 .class, CancelledStatusReason5Code.class, CashAccountIdentification5Choice.class, CashOption91 .class, CorporateActionEventType29Code.class, CorporateActionEventType85Choice.class, CorporateActionGeneralInformation157 .class, CorporateActionOption11Code.class, CorporateActionOption217 .class, CorporateActionOption30Choice.class, CreditDebitCode.class, DateAndDateTime2Choice.class, DateCode19Choice.class, DateFormat43Choice.class, DateFormat58Choice.class, DateType1Code.class, DateType8Code.class, DocumentIdentification9 .class, FinancialInstrumentQuantity1Choice.class, GenericIdentification30 .class, IdentificationSource3Choice.class, MarketClaimCancellationRequestStatus1Choice.class, MarketClaimCancellationRequestStatusAdviceV02 .class, MxSeev05300102 .class, NoReasonCode.class, NoSpecifiedReason1 .class, OriginalAndCurrentQuantities1 .class, OtherIdentification1 .class, PendingCancellationReason7Code.class, PendingCancellationReason8Choice.class, PendingCancellationStatus11Choice.class, PendingCancellationStatusReason11 .class, ProprietaryReason4 .class, ProprietaryStatusAndReason6 .class, Quantity6Choice.class, RateAndAmountFormat40Choice.class, RateType42Choice.class, RateTypeAndPercentageRate8 .class, References26 .class, RejectedReason38Choice.class, RejectedStatus38Choice.class, RejectedStatusReason36 .class, RejectionReason61Code.class, SecuritiesOption76 .class, SecurityIdentification19 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, WithholdingTaxRateType1Code.class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:seev.053.001.02";
+    public static final transient Class[] _classes = new Class[] {ActiveCurrencyAnd13DecimalAmount.class, ActiveCurrencyAndAmount.class, CancelledReason9Choice.class, CancelledStatus11Choice.class, CancelledStatusReason12 .class, CancelledStatusReason5Code.class, CashAccountIdentification5Choice.class, CashOption91 .class, CorporateActionEventType29Code.class, CorporateActionEventType85Choice.class, CorporateActionGeneralInformation157 .class, CorporateActionOption11Code.class, CorporateActionOption217 .class, CorporateActionOption30Choice.class, CreditDebitCode.class, DateAndDateTime2Choice.class, DateCode19Choice.class, DateFormat43Choice.class, DateFormat58Choice.class, DateType1Code.class, DateType8Code.class, DocumentIdentification9 .class, FinancialInstrumentQuantity1Choice.class, GenericIdentification30 .class, IdentificationSource3Choice.class, MarketClaimCancellationRequestStatus1Choice.class, MarketClaimCancellationRequestStatusAdviceV02 .class, MxSeev05300102 .class, NoReasonCode.class, NoSpecifiedReason1 .class, OriginalAndCurrentQuantities1 .class, OtherIdentification1 .class, PendingCancellationReason7Code.class, PendingCancellationReason8Choice.class, PendingCancellationStatus11Choice.class, PendingCancellationStatusReason11 .class, ProprietaryReason4 .class, ProprietaryStatusAndReason6 .class, Quantity6Choice.class, RateAndAmountFormat40Choice.class, RateType42Choice.class, RateTypeAndPercentageRate8 .class, References26 .class, RejectedReason38Choice.class, RejectedStatus38Choice.class, RejectedStatusReason36 .class, RejectionReason61Code.class, SecuritiesOption76 .class, SecurityIdentification19 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, WithholdingTaxRateType1Code.class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:seev.053.001.02";
 
     public MxSeev05300102() {
         super();
@@ -86,21 +86,6 @@ public class MxSeev05300102
     public MxSeev05300102 setMktClmCxlReqStsAdvc(MarketClaimCancellationRequestStatusAdviceV02 value) {
         this.mktClmCxlReqStsAdvc = value;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -173,8 +158,23 @@ public class MxSeev05300102
      * @return
      *     a new instance of MxSeev05300102
      */
-    public final static MxSeev05300102 fromJson(String json) {
+    public static final MxSeev05300102 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSeev05300102 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

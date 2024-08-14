@@ -2,14 +2,14 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -45,7 +45,7 @@ public class Equity1 {
     @XmlElement(name = "MtrtyDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar mtrtyDt;
+    protected OffsetDateTime mtrtyDt;
     @XmlElement(name = "NonPdAmt")
     protected ActiveCurrencyAndAmount nonPdAmt;
     @XmlElement(name = "ParVal")
@@ -136,7 +136,7 @@ public class Equity1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getMtrtyDt() {
+    public OffsetDateTime getMtrtyDt() {
         return mtrtyDt;
     }
 
@@ -148,7 +148,7 @@ public class Equity1 {
      *     {@link String }
      *     
      */
-    public Equity1 setMtrtyDt(XMLGregorianCalendar value) {
+    public Equity1 setMtrtyDt(OffsetDateTime value) {
         this.mtrtyDt = value;
         return this;
     }

@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -50,11 +50,11 @@ public class PaymentTransaction37 {
     @XmlElement(name = "OrgnlReqdExctnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar orgnlReqdExctnDt;
+    protected LocalDate orgnlReqdExctnDt;
     @XmlElement(name = "OrgnlReqdColltnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar orgnlReqdColltnDt;
+    protected LocalDate orgnlReqdColltnDt;
     @XmlElement(name = "CxlRsnInf")
     protected List<PaymentCancellationReason2> cxlRsnInf;
     @XmlElement(name = "OrgnlTxRef")
@@ -193,7 +193,7 @@ public class PaymentTransaction37 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getOrgnlReqdExctnDt() {
+    public LocalDate getOrgnlReqdExctnDt() {
         return orgnlReqdExctnDt;
     }
 
@@ -205,7 +205,7 @@ public class PaymentTransaction37 {
      *     {@link String }
      *     
      */
-    public PaymentTransaction37 setOrgnlReqdExctnDt(XMLGregorianCalendar value) {
+    public PaymentTransaction37 setOrgnlReqdExctnDt(LocalDate value) {
         this.orgnlReqdExctnDt = value;
         return this;
     }
@@ -218,7 +218,7 @@ public class PaymentTransaction37 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getOrgnlReqdColltnDt() {
+    public LocalDate getOrgnlReqdColltnDt() {
         return orgnlReqdColltnDt;
     }
 
@@ -230,7 +230,7 @@ public class PaymentTransaction37 {
      *     {@link String }
      *     
      */
-    public PaymentTransaction37 setOrgnlReqdColltnDt(XMLGregorianCalendar value) {
+    public PaymentTransaction37 setOrgnlReqdColltnDt(LocalDate value) {
         this.orgnlReqdColltnDt = value;
         return this;
     }
@@ -241,8 +241,8 @@ public class PaymentTransaction37 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cxlRsnInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cxlRsnInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -256,10 +256,12 @@ public class PaymentTransaction37 {
      * {@link PaymentCancellationReason2 }
      * 
      * 
+     * @return
+     *     The value of the cxlRsnInf property.
      */
     public List<PaymentCancellationReason2> getCxlRsnInf() {
         if (cxlRsnInf == null) {
-            cxlRsnInf = new ArrayList<PaymentCancellationReason2>();
+            cxlRsnInf = new ArrayList<>();
         }
         return this.cxlRsnInf;
     }

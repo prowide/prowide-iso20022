@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxCaaa00200106
 
     @XmlElement(name = "AccptrAuthstnRspn", required = true)
     protected AcceptorAuthorisationResponseV06 accptrAuthstnRspn;
-    public final static transient String BUSINESS_PROCESS = "caaa";
-    public final static transient int FUNCTIONALITY = 2;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 6;
+    public static final transient String BUSINESS_PROCESS = "caaa";
+    public static final transient int FUNCTIONALITY = 2;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 6;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {AcceptorAuthorisationResponse6 .class, AcceptorAuthorisationResponseV06 .class, Action8 .class, ActionMessage2 .class, ActionMessage5 .class, ActionType7Code.class, Algorithm11Code.class, Algorithm12Code.class, Algorithm13Code.class, Algorithm15Code.class, Algorithm7Code.class, Algorithm8Code.class, AlgorithmIdentification11 .class, AlgorithmIdentification12 .class, AlgorithmIdentification13 .class, AlgorithmIdentification14 .class, AlgorithmIdentification15 .class, AmountAndDirection41 .class, AttributeType1Code.class, AuthenticatedData4 .class, AuthenticationEntity2Code.class, AuthenticationMethod6Code.class, AuthorisationResult10 .class, BytePadding1Code.class, CardAccountType3Code.class, CardPaymentEnvironment65 .class, CardPaymentToken2 .class, CardPaymentTransaction67 .class, CardPaymentTransaction77 .class, CardPaymentTransactionDetails28 .class, CardProductType1Code.class, CertificateIssuer1 .class, Commission18 .class, Commission19 .class, ContentInformationType10 .class, ContentInformationType15 .class, ContentType2Code.class, CurrencyAndAmount.class, CurrencyConversion12 .class, CurrencyDetails1 .class, DetailedAmount15 .class, DetailedAmount4 .class, EncapsulatedContent3 .class, EncryptedContent3 .class, EncryptionFormat1Code.class, EnvelopedData4 .class, GenericIdentification32 .class, GenericIdentification53 .class, GenericIdentification76 .class, GenericIdentification90 .class, GenericIdentification94 .class, Header30 .class, IssuerAndSerialNumber1 .class, KEK4 .class, KEKIdentifier2 .class, KeyTransport4 .class, MessageFunction10Code.class, MxCaaa00200106 .class, NetworkParameters4 .class, NetworkParameters5 .class, NetworkType1Code.class, OriginalAmountDetails1 .class, OutputFormat1Code.class, Parameter4 .class, Parameter5 .class, Parameter6 .class, Parameter7 .class, PartyType14Code.class, PartyType3Code.class, PartyType4Code.class, PaymentCard27 .class, PlainCardData8 .class, Product4 .class, Product5 .class, Recipient4Choice.class, Recipient5Choice.class, RelativeDistinguishedName1 .class, Response4Code.class, ResponseType5 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TMSContactLevel1Code.class, TMSTrigger1 .class, Traceability5 .class, TransactionIdentifier1 .class, TransactionVerificationResult4 .class, UnitOfMeasure6Code.class, UserInterface4Code.class, Verification1Code.class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:caaa.002.001.06";
+    public static final transient Class[] _classes = new Class[] {AcceptorAuthorisationResponse6 .class, AcceptorAuthorisationResponseV06 .class, Action8 .class, ActionMessage2 .class, ActionMessage5 .class, ActionType7Code.class, Algorithm11Code.class, Algorithm12Code.class, Algorithm13Code.class, Algorithm15Code.class, Algorithm7Code.class, Algorithm8Code.class, AlgorithmIdentification11 .class, AlgorithmIdentification12 .class, AlgorithmIdentification13 .class, AlgorithmIdentification14 .class, AlgorithmIdentification15 .class, AmountAndDirection41 .class, AttributeType1Code.class, AuthenticatedData4 .class, AuthenticationEntity2Code.class, AuthenticationMethod6Code.class, AuthorisationResult10 .class, BytePadding1Code.class, CardAccountType3Code.class, CardPaymentEnvironment65 .class, CardPaymentToken2 .class, CardPaymentTransaction67 .class, CardPaymentTransaction77 .class, CardPaymentTransactionDetails28 .class, CardProductType1Code.class, CertificateIssuer1 .class, Commission18 .class, Commission19 .class, ContentInformationType10 .class, ContentInformationType15 .class, ContentType2Code.class, CurrencyAndAmount.class, CurrencyConversion12 .class, CurrencyDetails1 .class, DetailedAmount15 .class, DetailedAmount4 .class, EncapsulatedContent3 .class, EncryptedContent3 .class, EncryptionFormat1Code.class, EnvelopedData4 .class, GenericIdentification32 .class, GenericIdentification53 .class, GenericIdentification76 .class, GenericIdentification90 .class, GenericIdentification94 .class, Header30 .class, IssuerAndSerialNumber1 .class, KEK4 .class, KEKIdentifier2 .class, KeyTransport4 .class, MessageFunction10Code.class, MxCaaa00200106 .class, NetworkParameters4 .class, NetworkParameters5 .class, NetworkType1Code.class, OriginalAmountDetails1 .class, OutputFormat1Code.class, Parameter4 .class, Parameter5 .class, Parameter6 .class, Parameter7 .class, PartyType14Code.class, PartyType3Code.class, PartyType4Code.class, PaymentCard27 .class, PlainCardData8 .class, Product4 .class, Product5 .class, Recipient4Choice.class, Recipient5Choice.class, RelativeDistinguishedName1 .class, Response4Code.class, ResponseType5 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TMSContactLevel1Code.class, TMSTrigger1 .class, Traceability5 .class, TransactionIdentifier1 .class, TransactionVerificationResult4 .class, UnitOfMeasure6Code.class, UserInterface4Code.class, Verification1Code.class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:caaa.002.001.06";
 
     public MxCaaa00200106() {
         super();
@@ -86,21 +86,6 @@ public class MxCaaa00200106
     public MxCaaa00200106 setAccptrAuthstnRspn(AcceptorAuthorisationResponseV06 value) {
         this.accptrAuthstnRspn = value;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -173,8 +158,23 @@ public class MxCaaa00200106
      * @return
      *     a new instance of MxCaaa00200106
      */
-    public final static MxCaaa00200106 fromJson(String json) {
+    public static final MxCaaa00200106 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxCaaa00200106 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

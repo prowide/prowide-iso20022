@@ -1,26 +1,25 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for RiskReductionService1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="RiskReductionService1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="NORR"/&gt;
- *     &lt;enumeration value="PWOS"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="PRBM"/&gt;
- *     &lt;enumeration value="PWAS"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="RiskReductionService1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="NORR"/>
+ *     <enumeration value="PWOS"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="PRBM"/>
+ *     <enumeration value="PWAS"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "RiskReductionService1Code")

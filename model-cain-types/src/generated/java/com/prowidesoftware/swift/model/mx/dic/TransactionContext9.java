@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -77,11 +77,11 @@ public class TransactionContext9 {
     @XmlElement(name = "CaptrDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar captrDt;
+    protected LocalDate captrDt;
     @XmlElement(name = "DtAntcptd", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar dtAntcptd;
+    protected LocalDate dtAntcptd;
     @XmlElement(name = "AddtlData")
     protected List<AdditionalData1> addtlData;
 
@@ -443,7 +443,7 @@ public class TransactionContext9 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getCaptrDt() {
+    public LocalDate getCaptrDt() {
         return captrDt;
     }
 
@@ -455,7 +455,7 @@ public class TransactionContext9 {
      *     {@link String }
      *     
      */
-    public TransactionContext9 setCaptrDt(XMLGregorianCalendar value) {
+    public TransactionContext9 setCaptrDt(LocalDate value) {
         this.captrDt = value;
         return this;
     }
@@ -468,7 +468,7 @@ public class TransactionContext9 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDtAntcptd() {
+    public LocalDate getDtAntcptd() {
         return dtAntcptd;
     }
 
@@ -480,7 +480,7 @@ public class TransactionContext9 {
      *     {@link String }
      *     
      */
-    public TransactionContext9 setDtAntcptd(XMLGregorianCalendar value) {
+    public TransactionContext9 setDtAntcptd(LocalDate value) {
         this.dtAntcptd = value;
         return this;
     }
@@ -491,8 +491,8 @@ public class TransactionContext9 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -506,10 +506,12 @@ public class TransactionContext9 {
      * {@link AdditionalData1 }
      * 
      * 
+     * @return
+     *     The value of the addtlData property.
      */
     public List<AdditionalData1> getAddtlData() {
         if (addtlData == null) {
-            addtlData = new ArrayList<AdditionalData1>();
+            addtlData = new ArrayList<>();
         }
         return this.addtlData;
     }

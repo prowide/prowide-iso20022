@@ -2,16 +2,16 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -70,7 +70,7 @@ public class ATMTransaction23 {
     @XmlElement(name = "ReqdExctnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar reqdExctnDt;
+    protected LocalDate reqdExctnDt;
     @XmlElement(name = "InstntTrfPrgm")
     protected String instntTrfPrgm;
     @XmlElement(name = "RcrngTrf")
@@ -261,8 +261,8 @@ public class ATMTransaction23 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the acctTo property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the acctTo property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -276,10 +276,12 @@ public class ATMTransaction23 {
      * {@link CardAccount7 }
      * 
      * 
+     * @return
+     *     The value of the acctTo property.
      */
     public List<CardAccount7> getAcctTo() {
         if (acctTo == null) {
-            acctTo = new ArrayList<CardAccount7>();
+            acctTo = new ArrayList<>();
         }
         return this.acctTo;
     }
@@ -367,7 +369,7 @@ public class ATMTransaction23 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getReqdExctnDt() {
+    public LocalDate getReqdExctnDt() {
         return reqdExctnDt;
     }
 
@@ -379,7 +381,7 @@ public class ATMTransaction23 {
      *     {@link String }
      *     
      */
-    public ATMTransaction23 setReqdExctnDt(XMLGregorianCalendar value) {
+    public ATMTransaction23 setReqdExctnDt(LocalDate value) {
         this.reqdExctnDt = value;
         return this;
     }

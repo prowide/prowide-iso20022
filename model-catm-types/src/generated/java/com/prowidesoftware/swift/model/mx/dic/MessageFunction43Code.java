@@ -1,37 +1,36 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for MessageFunction43Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="MessageFunction43Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="FAUQ"/&gt;
- *     &lt;enumeration value="CCAQ"/&gt;
- *     &lt;enumeration value="CMPV"/&gt;
- *     &lt;enumeration value="DGNP"/&gt;
- *     &lt;enumeration value="RCLQ"/&gt;
- *     &lt;enumeration value="CCAV"/&gt;
- *     &lt;enumeration value="BTCH"/&gt;
- *     &lt;enumeration value="FRVA"/&gt;
- *     &lt;enumeration value="AUTQ"/&gt;
- *     &lt;enumeration value="FCMV"/&gt;
- *     &lt;enumeration value="DCCQ"/&gt;
- *     &lt;enumeration value="RVRA"/&gt;
- *     &lt;enumeration value="DCAV"/&gt;
- *     &lt;enumeration value="TRNA"/&gt;
- *     &lt;enumeration value="NFRQ"/&gt;
- *     &lt;enumeration value="TRPQ"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="MessageFunction43Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="FAUQ"/>
+ *     <enumeration value="CCAQ"/>
+ *     <enumeration value="CMPV"/>
+ *     <enumeration value="DGNP"/>
+ *     <enumeration value="RCLQ"/>
+ *     <enumeration value="CCAV"/>
+ *     <enumeration value="BTCH"/>
+ *     <enumeration value="FRVA"/>
+ *     <enumeration value="AUTQ"/>
+ *     <enumeration value="FCMV"/>
+ *     <enumeration value="DCCQ"/>
+ *     <enumeration value="RVRA"/>
+ *     <enumeration value="DCAV"/>
+ *     <enumeration value="TRNA"/>
+ *     <enumeration value="NFRQ"/>
+ *     <enumeration value="TRPQ"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "MessageFunction43Code")

@@ -1,82 +1,81 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for CorporateActionEventType2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CorporateActionEventType2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ACTV"/&gt;
- *     &lt;enumeration value="ATTI"/&gt;
- *     &lt;enumeration value="BIDS"/&gt;
- *     &lt;enumeration value="BONU"/&gt;
- *     &lt;enumeration value="BPUT"/&gt;
- *     &lt;enumeration value="BRUP"/&gt;
- *     &lt;enumeration value="CAPG"/&gt;
- *     &lt;enumeration value="CAPI"/&gt;
- *     &lt;enumeration value="CERT"/&gt;
- *     &lt;enumeration value="CHAN"/&gt;
- *     &lt;enumeration value="CLSA"/&gt;
- *     &lt;enumeration value="CONS"/&gt;
- *     &lt;enumeration value="CONV"/&gt;
- *     &lt;enumeration value="COOP"/&gt;
- *     &lt;enumeration value="DECR"/&gt;
- *     &lt;enumeration value="DETI"/&gt;
- *     &lt;enumeration value="DFLT"/&gt;
- *     &lt;enumeration value="DLST"/&gt;
- *     &lt;enumeration value="DRAW"/&gt;
- *     &lt;enumeration value="DRIP"/&gt;
- *     &lt;enumeration value="DSCL"/&gt;
- *     &lt;enumeration value="DTCH"/&gt;
- *     &lt;enumeration value="DVCA"/&gt;
- *     &lt;enumeration value="DVOP"/&gt;
- *     &lt;enumeration value="DVSC"/&gt;
- *     &lt;enumeration value="DVSE"/&gt;
- *     &lt;enumeration value="EXOF"/&gt;
- *     &lt;enumeration value="EXRI"/&gt;
- *     &lt;enumeration value="EXTM"/&gt;
- *     &lt;enumeration value="EXWA"/&gt;
- *     &lt;enumeration value="INCR"/&gt;
- *     &lt;enumeration value="INTR"/&gt;
- *     &lt;enumeration value="LIQU"/&gt;
- *     &lt;enumeration value="MCAL"/&gt;
- *     &lt;enumeration value="MRGR"/&gt;
- *     &lt;enumeration value="ODLT"/&gt;
- *     &lt;enumeration value="PARI"/&gt;
- *     &lt;enumeration value="PCAL"/&gt;
- *     &lt;enumeration value="PDEF"/&gt;
- *     &lt;enumeration value="PINK"/&gt;
- *     &lt;enumeration value="PLAC"/&gt;
- *     &lt;enumeration value="PPMT"/&gt;
- *     &lt;enumeration value="PRED"/&gt;
- *     &lt;enumeration value="PRII"/&gt;
- *     &lt;enumeration value="PRIO"/&gt;
- *     &lt;enumeration value="REDM"/&gt;
- *     &lt;enumeration value="REDO"/&gt;
- *     &lt;enumeration value="REMK"/&gt;
- *     &lt;enumeration value="RHDI"/&gt;
- *     &lt;enumeration value="RHTS"/&gt;
- *     &lt;enumeration value="SHPR"/&gt;
- *     &lt;enumeration value="SMAL"/&gt;
- *     &lt;enumeration value="SOFF"/&gt;
- *     &lt;enumeration value="SPLF"/&gt;
- *     &lt;enumeration value="SPLR"/&gt;
- *     &lt;enumeration value="SUSP"/&gt;
- *     &lt;enumeration value="TEND"/&gt;
- *     &lt;enumeration value="TREC"/&gt;
- *     &lt;enumeration value="WRTH"/&gt;
- *     &lt;enumeration value="WTRC"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CorporateActionEventType2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ACTV"/>
+ *     <enumeration value="ATTI"/>
+ *     <enumeration value="BIDS"/>
+ *     <enumeration value="BONU"/>
+ *     <enumeration value="BPUT"/>
+ *     <enumeration value="BRUP"/>
+ *     <enumeration value="CAPG"/>
+ *     <enumeration value="CAPI"/>
+ *     <enumeration value="CERT"/>
+ *     <enumeration value="CHAN"/>
+ *     <enumeration value="CLSA"/>
+ *     <enumeration value="CONS"/>
+ *     <enumeration value="CONV"/>
+ *     <enumeration value="COOP"/>
+ *     <enumeration value="DECR"/>
+ *     <enumeration value="DETI"/>
+ *     <enumeration value="DFLT"/>
+ *     <enumeration value="DLST"/>
+ *     <enumeration value="DRAW"/>
+ *     <enumeration value="DRIP"/>
+ *     <enumeration value="DSCL"/>
+ *     <enumeration value="DTCH"/>
+ *     <enumeration value="DVCA"/>
+ *     <enumeration value="DVOP"/>
+ *     <enumeration value="DVSC"/>
+ *     <enumeration value="DVSE"/>
+ *     <enumeration value="EXOF"/>
+ *     <enumeration value="EXRI"/>
+ *     <enumeration value="EXTM"/>
+ *     <enumeration value="EXWA"/>
+ *     <enumeration value="INCR"/>
+ *     <enumeration value="INTR"/>
+ *     <enumeration value="LIQU"/>
+ *     <enumeration value="MCAL"/>
+ *     <enumeration value="MRGR"/>
+ *     <enumeration value="ODLT"/>
+ *     <enumeration value="PARI"/>
+ *     <enumeration value="PCAL"/>
+ *     <enumeration value="PDEF"/>
+ *     <enumeration value="PINK"/>
+ *     <enumeration value="PLAC"/>
+ *     <enumeration value="PPMT"/>
+ *     <enumeration value="PRED"/>
+ *     <enumeration value="PRII"/>
+ *     <enumeration value="PRIO"/>
+ *     <enumeration value="REDM"/>
+ *     <enumeration value="REDO"/>
+ *     <enumeration value="REMK"/>
+ *     <enumeration value="RHDI"/>
+ *     <enumeration value="RHTS"/>
+ *     <enumeration value="SHPR"/>
+ *     <enumeration value="SMAL"/>
+ *     <enumeration value="SOFF"/>
+ *     <enumeration value="SPLF"/>
+ *     <enumeration value="SPLR"/>
+ *     <enumeration value="SUSP"/>
+ *     <enumeration value="TEND"/>
+ *     <enumeration value="TREC"/>
+ *     <enumeration value="WRTH"/>
+ *     <enumeration value="WTRC"/>
+ *     <enumeration value="OTHR"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CorporateActionEventType2Code")

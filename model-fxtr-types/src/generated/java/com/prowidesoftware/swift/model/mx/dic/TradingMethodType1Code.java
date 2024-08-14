@@ -1,30 +1,29 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for TradingMethodType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="TradingMethodType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="BITR"/&gt;
- *     &lt;enumeration value="CERB"/&gt;
- *     &lt;enumeration value="CUMA"/&gt;
- *     &lt;enumeration value="LIOR"/&gt;
- *     &lt;enumeration value="NETR"/&gt;
- *     &lt;enumeration value="ONCT"/&gt;
- *     &lt;enumeration value="QUAU"/&gt;
- *     &lt;enumeration value="TEAU"/&gt;
- *     &lt;enumeration value="ANCL"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="TradingMethodType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="BITR"/>
+ *     <enumeration value="CERB"/>
+ *     <enumeration value="CUMA"/>
+ *     <enumeration value="LIOR"/>
+ *     <enumeration value="NETR"/>
+ *     <enumeration value="ONCT"/>
+ *     <enumeration value="QUAU"/>
+ *     <enumeration value="TEAU"/>
+ *     <enumeration value="ANCL"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "TradingMethodType1Code")

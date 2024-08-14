@@ -1,51 +1,50 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for OrderType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="OrderType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ALNO"/&gt;
- *     &lt;enumeration value="BCSE"/&gt;
- *     &lt;enumeration value="BCSH"/&gt;
- *     &lt;enumeration value="BMIN"/&gt;
- *     &lt;enumeration value="CARE"/&gt;
- *     &lt;enumeration value="COMB"/&gt;
- *     &lt;enumeration value="DISC"/&gt;
- *     &lt;enumeration value="LMTO"/&gt;
- *     &lt;enumeration value="LIWI"/&gt;
- *     &lt;enumeration value="LIWO"/&gt;
- *     &lt;enumeration value="MRKT"/&gt;
- *     &lt;enumeration value="MANH"/&gt;
- *     &lt;enumeration value="MATH"/&gt;
- *     &lt;enumeration value="NOHE"/&gt;
- *     &lt;enumeration value="ORLI"/&gt;
- *     &lt;enumeration value="BAPR"/&gt;
- *     &lt;enumeration value="STOP"/&gt;
- *     &lt;enumeration value="STLI"/&gt;
- *     &lt;enumeration value="SLOS"/&gt;
- *     &lt;enumeration value="SPLU"/&gt;
- *     &lt;enumeration value="SSHO"/&gt;
- *     &lt;enumeration value="SSEX"/&gt;
- *     &lt;enumeration value="WTWO"/&gt;
- *     &lt;enumeration value="PRQT"/&gt;
- *     &lt;enumeration value="PRID"/&gt;
- *     &lt;enumeration value="FXSW"/&gt;
- *     &lt;enumeration value="FNRI"/&gt;
- *     &lt;enumeration value="MKLO"/&gt;
- *     &lt;enumeration value="PGGD"/&gt;
- *     &lt;enumeration value="COSE"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="OrderType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ALNO"/>
+ *     <enumeration value="BCSE"/>
+ *     <enumeration value="BCSH"/>
+ *     <enumeration value="BMIN"/>
+ *     <enumeration value="CARE"/>
+ *     <enumeration value="COMB"/>
+ *     <enumeration value="DISC"/>
+ *     <enumeration value="LMTO"/>
+ *     <enumeration value="LIWI"/>
+ *     <enumeration value="LIWO"/>
+ *     <enumeration value="MRKT"/>
+ *     <enumeration value="MANH"/>
+ *     <enumeration value="MATH"/>
+ *     <enumeration value="NOHE"/>
+ *     <enumeration value="ORLI"/>
+ *     <enumeration value="BAPR"/>
+ *     <enumeration value="STOP"/>
+ *     <enumeration value="STLI"/>
+ *     <enumeration value="SLOS"/>
+ *     <enumeration value="SPLU"/>
+ *     <enumeration value="SSHO"/>
+ *     <enumeration value="SSEX"/>
+ *     <enumeration value="WTWO"/>
+ *     <enumeration value="PRQT"/>
+ *     <enumeration value="PRID"/>
+ *     <enumeration value="FXSW"/>
+ *     <enumeration value="FNRI"/>
+ *     <enumeration value="MKLO"/>
+ *     <enumeration value="PGGD"/>
+ *     <enumeration value="COSE"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "OrderType1Code")

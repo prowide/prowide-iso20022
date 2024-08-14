@@ -1,12 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.YearMonth;
+import com.prowidesoftware.swift.model.mx.adapters.IsoYearMonthAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -40,12 +42,14 @@ public class PaymentCard29 {
     protected String nb;
     @XmlElement(name = "HldrNm", required = true)
     protected String hldrNm;
-    @XmlElement(name = "StartDt")
+    @XmlElement(name = "StartDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoYearMonthAdapter.class)
     @XmlSchemaType(name = "gYearMonth")
-    protected XMLGregorianCalendar startDt;
-    @XmlElement(name = "XpryDt", required = true)
+    protected YearMonth startDt;
+    @XmlElement(name = "XpryDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoYearMonthAdapter.class)
     @XmlSchemaType(name = "gYearMonth")
-    protected XMLGregorianCalendar xpryDt;
+    protected YearMonth xpryDt;
     @XmlElement(name = "CardIssrNm")
     protected String cardIssrNm;
     @XmlElement(name = "CardIssrId")
@@ -135,10 +139,10 @@ public class PaymentCard29 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getStartDt() {
+    public YearMonth getStartDt() {
         return startDt;
     }
 
@@ -147,10 +151,10 @@ public class PaymentCard29 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public PaymentCard29 setStartDt(XMLGregorianCalendar value) {
+    public PaymentCard29 setStartDt(YearMonth value) {
         this.startDt = value;
         return this;
     }
@@ -160,10 +164,10 @@ public class PaymentCard29 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getXpryDt() {
+    public YearMonth getXpryDt() {
         return xpryDt;
     }
 
@@ -172,10 +176,10 @@ public class PaymentCard29 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public PaymentCard29 setXpryDt(XMLGregorianCalendar value) {
+    public PaymentCard29 setXpryDt(YearMonth value) {
         this.xpryDt = value;
         return this;
     }

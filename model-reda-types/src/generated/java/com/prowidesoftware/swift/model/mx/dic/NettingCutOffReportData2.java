@@ -1,15 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -40,13 +41,13 @@ public class NettingCutOffReportData2 {
     @XmlElement(name = "CreDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar creDtTm;
+    protected OffsetDateTime creDtTm;
     @XmlElement(name = "RptTp", required = true)
     protected String rptTp;
     @XmlElement(name = "ActvtnDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar actvtnDt;
+    protected LocalDate actvtnDt;
     @XmlElement(name = "NetSvcPtcptId")
     protected PartyIdentification242Choice netSvcPtcptId;
     @XmlElement(name = "RptSvcr")
@@ -89,7 +90,7 @@ public class NettingCutOffReportData2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getCreDtTm() {
+    public OffsetDateTime getCreDtTm() {
         return creDtTm;
     }
 
@@ -101,7 +102,7 @@ public class NettingCutOffReportData2 {
      *     {@link String }
      *     
      */
-    public NettingCutOffReportData2 setCreDtTm(XMLGregorianCalendar value) {
+    public NettingCutOffReportData2 setCreDtTm(OffsetDateTime value) {
         this.creDtTm = value;
         return this;
     }
@@ -139,7 +140,7 @@ public class NettingCutOffReportData2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getActvtnDt() {
+    public LocalDate getActvtnDt() {
         return actvtnDt;
     }
 
@@ -151,7 +152,7 @@ public class NettingCutOffReportData2 {
      *     {@link String }
      *     
      */
-    public NettingCutOffReportData2 setActvtnDt(XMLGregorianCalendar value) {
+    public NettingCutOffReportData2 setActvtnDt(LocalDate value) {
         this.actvtnDt = value;
         return this;
     }

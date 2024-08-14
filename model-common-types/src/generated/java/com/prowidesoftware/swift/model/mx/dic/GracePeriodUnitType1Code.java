@@ -1,27 +1,26 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for GracePeriodUnitType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="GracePeriodUnitType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="WEKS"/&gt;
- *     &lt;enumeration value="PMTS"/&gt;
- *     &lt;enumeration value="OTHP"/&gt;
- *     &lt;enumeration value="OTHN"/&gt;
- *     &lt;enumeration value="MNTH"/&gt;
- *     &lt;enumeration value="DAYS"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="GracePeriodUnitType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="WEKS"/>
+ *     <enumeration value="PMTS"/>
+ *     <enumeration value="OTHP"/>
+ *     <enumeration value="OTHN"/>
+ *     <enumeration value="MNTH"/>
+ *     <enumeration value="DAYS"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "GracePeriodUnitType1Code")

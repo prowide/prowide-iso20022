@@ -1,34 +1,33 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for DataSetCategory4Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="DataSetCategory4Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="AQPR"/&gt;
- *     &lt;enumeration value="APPR"/&gt;
- *     &lt;enumeration value="TXCP"/&gt;
- *     &lt;enumeration value="AKCP"/&gt;
- *     &lt;enumeration value="DLGT"/&gt;
- *     &lt;enumeration value="MGTP"/&gt;
- *     &lt;enumeration value="MRPR"/&gt;
- *     &lt;enumeration value="SCPR"/&gt;
- *     &lt;enumeration value="SWPK"/&gt;
- *     &lt;enumeration value="STRP"/&gt;
- *     &lt;enumeration value="TRPR"/&gt;
- *     &lt;enumeration value="VDPR"/&gt;
- *     &lt;enumeration value="PARA"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="DataSetCategory4Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="AQPR"/>
+ *     <enumeration value="APPR"/>
+ *     <enumeration value="TXCP"/>
+ *     <enumeration value="AKCP"/>
+ *     <enumeration value="DLGT"/>
+ *     <enumeration value="MGTP"/>
+ *     <enumeration value="MRPR"/>
+ *     <enumeration value="SCPR"/>
+ *     <enumeration value="SWPK"/>
+ *     <enumeration value="STRP"/>
+ *     <enumeration value="TRPR"/>
+ *     <enumeration value="VDPR"/>
+ *     <enumeration value="PARA"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "DataSetCategory4Code")

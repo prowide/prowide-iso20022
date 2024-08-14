@@ -1,33 +1,32 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for ReinvestmentIncomeClassification1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ReinvestmentIncomeClassification1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="DVCA"/&gt;
- *     &lt;enumeration value="CDIS"/&gt;
- *     &lt;enumeration value="CDUN"/&gt;
- *     &lt;enumeration value="CDFV"/&gt;
- *     &lt;enumeration value="CDEX"/&gt;
- *     &lt;enumeration value="CDPS"/&gt;
- *     &lt;enumeration value="INTR"/&gt;
- *     &lt;enumeration value="PRPL"/&gt;
- *     &lt;enumeration value="CAPG"/&gt;
- *     &lt;enumeration value="LTCG"/&gt;
- *     &lt;enumeration value="STCG"/&gt;
- *     &lt;enumeration value="ROCA"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ReinvestmentIncomeClassification1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="DVCA"/>
+ *     <enumeration value="CDIS"/>
+ *     <enumeration value="CDUN"/>
+ *     <enumeration value="CDFV"/>
+ *     <enumeration value="CDEX"/>
+ *     <enumeration value="CDPS"/>
+ *     <enumeration value="INTR"/>
+ *     <enumeration value="PRPL"/>
+ *     <enumeration value="CAPG"/>
+ *     <enumeration value="LTCG"/>
+ *     <enumeration value="STCG"/>
+ *     <enumeration value="ROCA"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ReinvestmentIncomeClassification1Code")

@@ -2,14 +2,14 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -71,7 +71,7 @@ public class OtherCollateral10 {
     @XmlElement(name = "ValDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar valDt;
+    protected LocalDate valDt;
     @XmlElement(name = "XchgRate")
     protected BigDecimal xchgRate;
     @XmlElement(name = "MktVal")
@@ -370,7 +370,7 @@ public class OtherCollateral10 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getValDt() {
+    public LocalDate getValDt() {
         return valDt;
     }
 
@@ -382,7 +382,7 @@ public class OtherCollateral10 {
      *     {@link String }
      *     
      */
-    public OtherCollateral10 setValDt(XMLGregorianCalendar value) {
+    public OtherCollateral10 setValDt(LocalDate value) {
         this.valDt = value;
         return this;
     }

@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxSemt02200204
 
     @XmlElement(name = "SctiesSttlmTxAudtTrlRpt", required = true)
     protected SecuritiesSettlementTransactionAuditTrailReport002V04 sctiesSttlmTxAudtTrlRpt;
-    public final static transient String BUSINESS_PROCESS = "semt";
-    public final static transient int FUNCTIONALITY = 22;
-    public final static transient int VARIANT = 2;
-    public final static transient int VERSION = 4;
+    public static final transient String BUSINESS_PROCESS = "semt";
+    public static final transient int FUNCTIONALITY = 22;
+    public static final transient int VARIANT = 2;
+    public static final transient int VERSION = 4;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {AcknowledgedAcceptedStatus25Choice.class, AcknowledgedAcceptedStatus30Choice.class, AcknowledgedAcceptedStatus31Choice.class, AcknowledgementReason13 .class, AcknowledgementReason16Choice.class, AcknowledgementReason18 .class, AcknowledgementReason19 .class, AcknowledgementReason21Choice.class, AcknowledgementReason22Choice.class, AcknowledgementReason3Code.class, AcknowledgementReason5Code.class, AcknowledgementReason6Code.class, CancellationReason18 .class, CancellationReason24 .class, CancellationReason28Choice.class, CancellationReason37Choice.class, CancellationStatus20Choice.class, CancellationStatus25Choice.class, CancelledStatusReason16Code.class, CancelledStatusReason5Code.class, DeniedReason16 .class, DeniedReason17 .class, DeniedReason21Choice.class, DeniedReason24Choice.class, DeniedReason4Code.class, DeniedReason6Code.class, DeniedStatus19Choice.class, DeniedStatus21Choice.class, FailingReason10 .class, FailingReason11Choice.class, FailingReason2Code.class, FailingStatus12Choice.class, GenericIdentification47 .class, GenericIdentification84 .class, GenericOrganisationIdentification2 .class, Identification16 .class, MatchingStatus30Choice.class, ModificationProcessingStatus8Choice.class, ModificationReason5 .class, ModificationReason5Choice.class, ModificationStatus5Choice.class, ModifiedStatusReason1Code.class, MxSemt02200204 .class, NoReasonCode.class, OrganisationIdentification32 .class, OrganisationIdentificationSchemeName2Choice.class, Pagination1 .class, PartyIdentification136Choice.class, PartyIdentification156 .class, PendingProcessingReason12 .class, PendingProcessingReason13 .class, PendingProcessingReason14Choice.class, PendingProcessingReason15Choice.class, PendingProcessingReason2Code.class, PendingProcessingReason3Code.class, PendingProcessingStatus15Choice.class, PendingProcessingStatus16Choice.class, PendingReason20 .class, PendingReason24 .class, PendingReason25 .class, PendingReason2Code.class, PendingReason37Choice.class, PendingReason41Choice.class, PendingReason42Choice.class, PendingReason6Code.class, PendingReason9Code.class, PendingStatus46Choice.class, PendingStatus50Choice.class, PendingStatus51Choice.class, ProcessingStatus61Choice.class, ProcessingStatus76Choice.class, ProprietaryReason5 .class, ProprietaryStatusAndReason7 .class, RejectionAndRepairReason28Choice.class, RejectionAndRepairReason29Choice.class, RejectionOrRepairReason28 .class, RejectionOrRepairReason29 .class, RejectionOrRepairStatus34Choice.class, RejectionOrRepairStatus35Choice.class, RejectionReason27Code.class, RejectionReason30Choice.class, RejectionReason30Code.class, RejectionReason31Choice.class, RejectionReason31Code.class, RejectionReason32Code.class, RejectionReason36 .class, RejectionReason37 .class, RejectionStatus23Choice.class, RejectionStatus24Choice.class, RepairReason12 .class, RepairReason13 .class, RepairReason14Choice.class, RepairReason4Code.class, RepairStatus16Choice.class, RepairStatus17Choice.class, SecuritiesAccount37 .class, SecuritiesSettlementTransactionAuditTrailReport002V04 .class, SettlementStatus22Choice.class, StatusTrail9 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TransactionIdentifications34 .class, UnmatchedReason12Code.class, UnmatchedReason19 .class, UnmatchedReason26Choice.class, UnmatchedStatus20Choice.class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:semt.022.002.04";
+    public static final transient Class[] _classes = new Class[] {AcknowledgedAcceptedStatus25Choice.class, AcknowledgedAcceptedStatus30Choice.class, AcknowledgedAcceptedStatus31Choice.class, AcknowledgementReason13 .class, AcknowledgementReason16Choice.class, AcknowledgementReason18 .class, AcknowledgementReason19 .class, AcknowledgementReason21Choice.class, AcknowledgementReason22Choice.class, AcknowledgementReason3Code.class, AcknowledgementReason5Code.class, AcknowledgementReason6Code.class, CancellationReason18 .class, CancellationReason24 .class, CancellationReason28Choice.class, CancellationReason37Choice.class, CancellationStatus20Choice.class, CancellationStatus25Choice.class, CancelledStatusReason16Code.class, CancelledStatusReason5Code.class, DeniedReason16 .class, DeniedReason17 .class, DeniedReason21Choice.class, DeniedReason24Choice.class, DeniedReason4Code.class, DeniedReason6Code.class, DeniedStatus19Choice.class, DeniedStatus21Choice.class, FailingReason10 .class, FailingReason11Choice.class, FailingReason2Code.class, FailingStatus12Choice.class, GenericIdentification47 .class, GenericIdentification84 .class, GenericOrganisationIdentification2 .class, Identification16 .class, MatchingStatus30Choice.class, ModificationProcessingStatus8Choice.class, ModificationReason5 .class, ModificationReason5Choice.class, ModificationStatus5Choice.class, ModifiedStatusReason1Code.class, MxSemt02200204 .class, NoReasonCode.class, OrganisationIdentification32 .class, OrganisationIdentificationSchemeName2Choice.class, Pagination1 .class, PartyIdentification136Choice.class, PartyIdentification156 .class, PendingProcessingReason12 .class, PendingProcessingReason13 .class, PendingProcessingReason14Choice.class, PendingProcessingReason15Choice.class, PendingProcessingReason2Code.class, PendingProcessingReason3Code.class, PendingProcessingStatus15Choice.class, PendingProcessingStatus16Choice.class, PendingReason20 .class, PendingReason24 .class, PendingReason25 .class, PendingReason2Code.class, PendingReason37Choice.class, PendingReason41Choice.class, PendingReason42Choice.class, PendingReason6Code.class, PendingReason9Code.class, PendingStatus46Choice.class, PendingStatus50Choice.class, PendingStatus51Choice.class, ProcessingStatus61Choice.class, ProcessingStatus76Choice.class, ProprietaryReason5 .class, ProprietaryStatusAndReason7 .class, RejectionAndRepairReason28Choice.class, RejectionAndRepairReason29Choice.class, RejectionOrRepairReason28 .class, RejectionOrRepairReason29 .class, RejectionOrRepairStatus34Choice.class, RejectionOrRepairStatus35Choice.class, RejectionReason27Code.class, RejectionReason30Choice.class, RejectionReason30Code.class, RejectionReason31Choice.class, RejectionReason31Code.class, RejectionReason32Code.class, RejectionReason36 .class, RejectionReason37 .class, RejectionStatus23Choice.class, RejectionStatus24Choice.class, RepairReason12 .class, RepairReason13 .class, RepairReason14Choice.class, RepairReason4Code.class, RepairStatus16Choice.class, RepairStatus17Choice.class, SecuritiesAccount37 .class, SecuritiesSettlementTransactionAuditTrailReport002V04 .class, SettlementStatus22Choice.class, StatusTrail9 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TransactionIdentifications34 .class, UnmatchedReason12Code.class, UnmatchedReason19 .class, UnmatchedReason26Choice.class, UnmatchedStatus20Choice.class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:semt.022.002.04";
 
     public MxSemt02200204() {
         super();
@@ -86,21 +86,6 @@ public class MxSemt02200204
     public MxSemt02200204 setSctiesSttlmTxAudtTrlRpt(SecuritiesSettlementTransactionAuditTrailReport002V04 value) {
         this.sctiesSttlmTxAudtTrlRpt = value;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -173,8 +158,23 @@ public class MxSemt02200204
      * @return
      *     a new instance of MxSemt02200204
      */
-    public final static MxSemt02200204 fromJson(String json) {
+    public static final MxSemt02200204 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSemt02200204 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

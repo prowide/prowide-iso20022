@@ -1,37 +1,36 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for RejectionReason12Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="RejectionReason12Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="DEAC"/&gt;
- *     &lt;enumeration value="FAIL"/&gt;
- *     &lt;enumeration value="SAME"/&gt;
- *     &lt;enumeration value="REFI"/&gt;
- *     &lt;enumeration value="AGIN"/&gt;
- *     &lt;enumeration value="MAIN"/&gt;
- *     &lt;enumeration value="OPTI"/&gt;
- *     &lt;enumeration value="PEDA"/&gt;
- *     &lt;enumeration value="NORO"/&gt;
- *     &lt;enumeration value="INET"/&gt;
- *     &lt;enumeration value="INUS"/&gt;
- *     &lt;enumeration value="INPT"/&gt;
- *     &lt;enumeration value="INMV"/&gt;
- *     &lt;enumeration value="SAID"/&gt;
- *     &lt;enumeration value="MICA"/&gt;
- *     &lt;enumeration value="NOAP"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="RejectionReason12Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="DEAC"/>
+ *     <enumeration value="FAIL"/>
+ *     <enumeration value="SAME"/>
+ *     <enumeration value="REFI"/>
+ *     <enumeration value="AGIN"/>
+ *     <enumeration value="MAIN"/>
+ *     <enumeration value="OPTI"/>
+ *     <enumeration value="PEDA"/>
+ *     <enumeration value="NORO"/>
+ *     <enumeration value="INET"/>
+ *     <enumeration value="INUS"/>
+ *     <enumeration value="INPT"/>
+ *     <enumeration value="INMV"/>
+ *     <enumeration value="SAID"/>
+ *     <enumeration value="MICA"/>
+ *     <enumeration value="NOAP"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "RejectionReason12Code")

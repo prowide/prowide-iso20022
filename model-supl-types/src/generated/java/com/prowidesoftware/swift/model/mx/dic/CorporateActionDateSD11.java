@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -54,7 +54,7 @@ public class CorporateActionDateSD11 {
     @XmlElement(name = "DTCEarlstPmtDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar dtcEarlstPmtDt;
+    protected LocalDate dtcEarlstPmtDt;
 
     /**
      * Gets the value of the plcAndNm property.
@@ -264,7 +264,7 @@ public class CorporateActionDateSD11 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDTCEarlstPmtDt() {
+    public LocalDate getDTCEarlstPmtDt() {
         return dtcEarlstPmtDt;
     }
 
@@ -276,7 +276,7 @@ public class CorporateActionDateSD11 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD11 setDTCEarlstPmtDt(XMLGregorianCalendar value) {
+    public CorporateActionDateSD11 setDTCEarlstPmtDt(LocalDate value) {
         this.dtcEarlstPmtDt = value;
         return this;
     }

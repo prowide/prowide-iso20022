@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -52,8 +52,8 @@ public class IntraBalanceQueryCriteria10 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cxlReqId property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cxlReqId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -67,10 +67,12 @@ public class IntraBalanceQueryCriteria10 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the cxlReqId property.
      */
     public List<String> getCxlReqId() {
         if (cxlReqId == null) {
-            cxlReqId = new ArrayList<String>();
+            cxlReqId = new ArrayList<>();
         }
         return this.cxlReqId;
     }
@@ -81,8 +83,8 @@ public class IntraBalanceQueryCriteria10 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the prcgSts property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the prcgSts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -96,10 +98,12 @@ public class IntraBalanceQueryCriteria10 {
      * {@link CancellationProcessingStatus9Choice }
      * 
      * 
+     * @return
+     *     The value of the prcgSts property.
      */
     public List<CancellationProcessingStatus9Choice> getPrcgSts() {
         if (prcgSts == null) {
-            prcgSts = new ArrayList<CancellationProcessingStatus9Choice>();
+            prcgSts = new ArrayList<>();
         }
         return this.prcgSts;
     }
@@ -110,8 +114,8 @@ public class IntraBalanceQueryCriteria10 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cshAcct property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cshAcct property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -125,10 +129,12 @@ public class IntraBalanceQueryCriteria10 {
      * {@link AccountIdentificationSearchCriteria2Choice }
      * 
      * 
+     * @return
+     *     The value of the cshAcct property.
      */
     public List<AccountIdentificationSearchCriteria2Choice> getCshAcct() {
         if (cshAcct == null) {
-            cshAcct = new ArrayList<AccountIdentificationSearchCriteria2Choice>();
+            cshAcct = new ArrayList<>();
         }
         return this.cshAcct;
     }
@@ -139,8 +145,8 @@ public class IntraBalanceQueryCriteria10 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cshAcctOwnr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cshAcctOwnr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -154,10 +160,12 @@ public class IntraBalanceQueryCriteria10 {
      * {@link SystemPartyIdentification8 }
      * 
      * 
+     * @return
+     *     The value of the cshAcctOwnr property.
      */
     public List<SystemPartyIdentification8> getCshAcctOwnr() {
         if (cshAcctOwnr == null) {
-            cshAcctOwnr = new ArrayList<SystemPartyIdentification8>();
+            cshAcctOwnr = new ArrayList<>();
         }
         return this.cshAcctOwnr;
     }
@@ -193,8 +201,8 @@ public class IntraBalanceQueryCriteria10 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the msgOrgtr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the msgOrgtr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -208,10 +216,12 @@ public class IntraBalanceQueryCriteria10 {
      * {@link SystemPartyIdentification8 }
      * 
      * 
+     * @return
+     *     The value of the msgOrgtr property.
      */
     public List<SystemPartyIdentification8> getMsgOrgtr() {
         if (msgOrgtr == null) {
-            msgOrgtr = new ArrayList<SystemPartyIdentification8>();
+            msgOrgtr = new ArrayList<>();
         }
         return this.msgOrgtr;
     }

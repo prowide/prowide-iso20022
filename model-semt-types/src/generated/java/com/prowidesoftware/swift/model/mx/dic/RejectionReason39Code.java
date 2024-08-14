@@ -1,100 +1,99 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for RejectionReason39Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="RejectionReason39Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ULNK"/&gt;
- *     &lt;enumeration value="SAFE"/&gt;
- *     &lt;enumeration value="DQUA"/&gt;
- *     &lt;enumeration value="ADEA"/&gt;
- *     &lt;enumeration value="RTGS"/&gt;
- *     &lt;enumeration value="NCRR"/&gt;
- *     &lt;enumeration value="DSEC"/&gt;
- *     &lt;enumeration value="DADR"/&gt;
- *     &lt;enumeration value="INIR"/&gt;
- *     &lt;enumeration value="CANC"/&gt;
- *     &lt;enumeration value="INTV"/&gt;
- *     &lt;enumeration value="INVA"/&gt;
- *     &lt;enumeration value="REFT"/&gt;
- *     &lt;enumeration value="PHYS"/&gt;
- *     &lt;enumeration value="REFE"/&gt;
- *     &lt;enumeration value="LACK"/&gt;
- *     &lt;enumeration value="LATE"/&gt;
- *     &lt;enumeration value="NMTY"/&gt;
- *     &lt;enumeration value="OPNM"/&gt;
- *     &lt;enumeration value="DMON"/&gt;
- *     &lt;enumeration value="OPTY"/&gt;
- *     &lt;enumeration value="DCAN"/&gt;
- *     &lt;enumeration value="DPRG"/&gt;
- *     &lt;enumeration value="EVNM"/&gt;
- *     &lt;enumeration value="STAT"/&gt;
- *     &lt;enumeration value="STAM"/&gt;
- *     &lt;enumeration value="SIGN"/&gt;
- *     &lt;enumeration value="SHAR"/&gt;
- *     &lt;enumeration value="MINO"/&gt;
- *     &lt;enumeration value="NRGM"/&gt;
- *     &lt;enumeration value="MLEG"/&gt;
- *     &lt;enumeration value="BATC"/&gt;
- *     &lt;enumeration value="CADE"/&gt;
- *     &lt;enumeration value="CASH"/&gt;
- *     &lt;enumeration value="DDEA"/&gt;
- *     &lt;enumeration value="OWNT"/&gt;
- *     &lt;enumeration value="NRGN"/&gt;
- *     &lt;enumeration value="MUNO"/&gt;
- *     &lt;enumeration value="REQW"/&gt;
- *     &lt;enumeration value="TXST"/&gt;
- *     &lt;enumeration value="REPA"/&gt;
- *     &lt;enumeration value="REPO"/&gt;
- *     &lt;enumeration value="REPP"/&gt;
- *     &lt;enumeration value="RREA"/&gt;
- *     &lt;enumeration value="REQM"/&gt;
- *     &lt;enumeration value="RERT"/&gt;
- *     &lt;enumeration value="RSPR"/&gt;
- *     &lt;enumeration value="SETS"/&gt;
- *     &lt;enumeration value="DTRD"/&gt;
- *     &lt;enumeration value="IIND"/&gt;
- *     &lt;enumeration value="PLCE"/&gt;
- *     &lt;enumeration value="INNA"/&gt;
- *     &lt;enumeration value="ICOL"/&gt;
- *     &lt;enumeration value="BPAR"/&gt;
- *     &lt;enumeration value="BREF"/&gt;
- *     &lt;enumeration value="BUSE"/&gt;
- *     &lt;enumeration value="CAEV"/&gt;
- *     &lt;enumeration value="CASY"/&gt;
- *     &lt;enumeration value="COMC"/&gt;
- *     &lt;enumeration value="CONL"/&gt;
- *     &lt;enumeration value="CPTY"/&gt;
- *     &lt;enumeration value="DDAT"/&gt;
- *     &lt;enumeration value="DISC"/&gt;
- *     &lt;enumeration value="DISE"/&gt;
- *     &lt;enumeration value="DORD"/&gt;
- *     &lt;enumeration value="FEEE"/&gt;
- *     &lt;enumeration value="SETR"/&gt;
- *     &lt;enumeration value="TERM"/&gt;
- *     &lt;enumeration value="VASU"/&gt;
- *     &lt;enumeration value="INPS"/&gt;
- *     &lt;enumeration value="SDUT"/&gt;
- *     &lt;enumeration value="FORF"/&gt;
- *     &lt;enumeration value="ICUS"/&gt;
- *     &lt;enumeration value="ICAG"/&gt;
- *     &lt;enumeration value="DEPT"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="IEXE"/&gt;
- *     &lt;enumeration value="INVE"/&gt;
- *     &lt;enumeration value="PLIS"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="RejectionReason39Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ULNK"/>
+ *     <enumeration value="SAFE"/>
+ *     <enumeration value="DQUA"/>
+ *     <enumeration value="ADEA"/>
+ *     <enumeration value="RTGS"/>
+ *     <enumeration value="NCRR"/>
+ *     <enumeration value="DSEC"/>
+ *     <enumeration value="DADR"/>
+ *     <enumeration value="INIR"/>
+ *     <enumeration value="CANC"/>
+ *     <enumeration value="INTV"/>
+ *     <enumeration value="INVA"/>
+ *     <enumeration value="REFT"/>
+ *     <enumeration value="PHYS"/>
+ *     <enumeration value="REFE"/>
+ *     <enumeration value="LACK"/>
+ *     <enumeration value="LATE"/>
+ *     <enumeration value="NMTY"/>
+ *     <enumeration value="OPNM"/>
+ *     <enumeration value="DMON"/>
+ *     <enumeration value="OPTY"/>
+ *     <enumeration value="DCAN"/>
+ *     <enumeration value="DPRG"/>
+ *     <enumeration value="EVNM"/>
+ *     <enumeration value="STAT"/>
+ *     <enumeration value="STAM"/>
+ *     <enumeration value="SIGN"/>
+ *     <enumeration value="SHAR"/>
+ *     <enumeration value="MINO"/>
+ *     <enumeration value="NRGM"/>
+ *     <enumeration value="MLEG"/>
+ *     <enumeration value="BATC"/>
+ *     <enumeration value="CADE"/>
+ *     <enumeration value="CASH"/>
+ *     <enumeration value="DDEA"/>
+ *     <enumeration value="OWNT"/>
+ *     <enumeration value="NRGN"/>
+ *     <enumeration value="MUNO"/>
+ *     <enumeration value="REQW"/>
+ *     <enumeration value="TXST"/>
+ *     <enumeration value="REPA"/>
+ *     <enumeration value="REPO"/>
+ *     <enumeration value="REPP"/>
+ *     <enumeration value="RREA"/>
+ *     <enumeration value="REQM"/>
+ *     <enumeration value="RERT"/>
+ *     <enumeration value="RSPR"/>
+ *     <enumeration value="SETS"/>
+ *     <enumeration value="DTRD"/>
+ *     <enumeration value="IIND"/>
+ *     <enumeration value="PLCE"/>
+ *     <enumeration value="INNA"/>
+ *     <enumeration value="ICOL"/>
+ *     <enumeration value="BPAR"/>
+ *     <enumeration value="BREF"/>
+ *     <enumeration value="BUSE"/>
+ *     <enumeration value="CAEV"/>
+ *     <enumeration value="CASY"/>
+ *     <enumeration value="COMC"/>
+ *     <enumeration value="CONL"/>
+ *     <enumeration value="CPTY"/>
+ *     <enumeration value="DDAT"/>
+ *     <enumeration value="DISC"/>
+ *     <enumeration value="DISE"/>
+ *     <enumeration value="DORD"/>
+ *     <enumeration value="FEEE"/>
+ *     <enumeration value="SETR"/>
+ *     <enumeration value="TERM"/>
+ *     <enumeration value="VASU"/>
+ *     <enumeration value="INPS"/>
+ *     <enumeration value="SDUT"/>
+ *     <enumeration value="FORF"/>
+ *     <enumeration value="ICUS"/>
+ *     <enumeration value="ICAG"/>
+ *     <enumeration value="DEPT"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="IEXE"/>
+ *     <enumeration value="INVE"/>
+ *     <enumeration value="PLIS"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "RejectionReason39Code")

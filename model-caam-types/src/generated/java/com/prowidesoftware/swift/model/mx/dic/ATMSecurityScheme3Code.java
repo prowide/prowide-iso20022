@@ -1,32 +1,31 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlEnumValue;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for ATMSecurityScheme3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ATMSecurityScheme3Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="APPK"/&gt;
- *     &lt;enumeration value="CERT"/&gt;
- *     &lt;enumeration value="FRAN"/&gt;
- *     &lt;enumeration value="DTCH"/&gt;
- *     &lt;enumeration value="LUXG"/&gt;
- *     &lt;enumeration value="MANU"/&gt;
- *     &lt;enumeration value="PKIP"/&gt;
- *     &lt;enumeration value="SIGN"/&gt;
- *     &lt;enumeration value="NONE"/&gt;
- *     &lt;enumeration value="TR34"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ATMSecurityScheme3Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="APPK"/>
+ *     <enumeration value="CERT"/>
+ *     <enumeration value="FRAN"/>
+ *     <enumeration value="DTCH"/>
+ *     <enumeration value="LUXG"/>
+ *     <enumeration value="MANU"/>
+ *     <enumeration value="PKIP"/>
+ *     <enumeration value="SIGN"/>
+ *     <enumeration value="NONE"/>
+ *     <enumeration value="TR34"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ATMSecurityScheme3Code")

@@ -1,26 +1,25 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for CashAccountType5Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CashAccountType5Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="LEND"/&gt;
- *     &lt;enumeration value="COLL"/&gt;
- *     &lt;enumeration value="SETT"/&gt;
- *     &lt;enumeration value="MARR"/&gt;
- *     &lt;enumeration value="SEGT"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CashAccountType5Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="LEND"/>
+ *     <enumeration value="COLL"/>
+ *     <enumeration value="SETT"/>
+ *     <enumeration value="MARR"/>
+ *     <enumeration value="SEGT"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CashAccountType5Code")
