@@ -17,6 +17,9 @@ package com.prowidesoftware.swift.model.mx;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import org.apache.commons.lang3.StringUtils;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
@@ -91,7 +94,7 @@ public class NamespaceAndElementFilter extends XMLFilterImpl {
                 try {
                     super.startElement(namespaceToPropagate, localName, prefix, attributes);
                 } catch (Exception e) {
-                    log.log(Level.WARNING, "Error parsing " + localName + " [" + namespace + "] element", e);
+                    log.log(Level.WARNING, "Error parsing " + localName + " [" + namespace + "] start element", e);
                 }
             } else {
                 // we have found an element within the structure to propagate with a not recognized namespace
@@ -150,7 +153,7 @@ public class NamespaceAndElementFilter extends XMLFilterImpl {
                 try {
                     super.endElement(namespaceToPropagate, localName, prefix);
                 } catch (Exception e) {
-                    log.log(Level.WARNING, "Error parsing " + localName + " [" + namespace + "] element", e);
+                    log.log(Level.WARNING, "Error parsing " + localName + " [" + namespace + "] end element", e);
                 }
             }
         }
