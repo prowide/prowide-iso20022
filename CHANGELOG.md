@@ -1,6 +1,6 @@
 # Prowide ISO 20022 - CHANGELOG
 
-#### 10.1.8 - SNAPSHOT
+#### 10.1.8 - October 2024
   * (GH-118) Added `toJsonV9` and `fromJsonV9` in the `AbstractMX` to handle retro-compatibility with Java 8 DateTime elements in JSON serialization
 
 #### 10.1.7 - August 2024
