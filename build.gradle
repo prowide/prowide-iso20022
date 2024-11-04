@@ -337,9 +337,8 @@ dependencies {
 	//implementation 'com.google.code.gson:gson:2.10'
 
 	// jaxb is required because it is no longer included in the JDK
-	implementation 'com.sun.xml.bind:jaxb-impl:4.0.5'
 	// bind-api is included transitively by jaxb-impl
-	// implementation 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.2'
+	implementation 'com.sun.xml.bind:jaxb-impl:4.0.5'
 }
 
 // repo for publishing
