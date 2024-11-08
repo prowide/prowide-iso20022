@@ -32,14 +32,14 @@ import java.util.logging.Logger;
 public class V9DateTimeJsonAdapter implements JsonSerializer<OffsetDateTime>, JsonDeserializer<OffsetDateTime> {
     private static final Logger log = Logger.getLogger(V9DateTimeJsonAdapter.class.getName());
 
-    private final Gson gson = new Gson();
+    private static final Gson GSON = new Gson();
 
     /**
      * Serializes an {@link OffsetDateTime} into JSON format compatible with the older
      * {@code XMLGregorianCalendar} representation.
      *
-     * @param offsetDateTime the {@code OffsetDateTime} to be serialized
-     * @param type the specific genericized type of the source object
+     * @param offsetDateTime           the {@code OffsetDateTime} to be serialized
+     * @param type                     the specific genericized type of the source object
      * @param jsonSerializationContext the context for serialization
      * @return a {@link JsonElement} representing the serialized date-time information
      */
@@ -63,7 +63,7 @@ public class V9DateTimeJsonAdapter implements JsonSerializer<OffsetDateTime>, Js
             xMLGregorianCalendarDTO.timezone = offsetDateTime.getOffset().getTotalSeconds() / 60;
         }
 
-        return gson.toJsonTree(xMLGregorianCalendarDTO, XMLGregorianCalendarDTO.class);
+        return GSON.toJsonTree(xMLGregorianCalendarDTO, XMLGregorianCalendarDTO.class);
     }
 
     /**
@@ -71,8 +71,8 @@ public class V9DateTimeJsonAdapter implements JsonSerializer<OffsetDateTime>, Js
      * {@code XMLGregorianCalendar} fields into their modern equivalents.
      *
      * @param xMLGregorianCalendarJsonElement the JSON data to be deserialized
-     * @param type the specific genericized type of the source object
-     * @param jsonDeserializationContext the context for deserialization
+     * @param type                            the specific genericized type of the source object
+     * @param jsonDeserializationContext      the context for deserialization
      * @return the deserialized {@code OffsetDateTime}, or {@code null} if parsing fails
      */
     @Override
@@ -82,7 +82,7 @@ public class V9DateTimeJsonAdapter implements JsonSerializer<OffsetDateTime>, Js
             JsonDeserializationContext jsonDeserializationContext) {
         try {
             XMLGregorianCalendarDTO xMLGregorianCalendarDTO =
-                    gson.fromJson(xMLGregorianCalendarJsonElement, XMLGregorianCalendarDTO.class);
+                    GSON.fromJson(xMLGregorianCalendarJsonElement, XMLGregorianCalendarDTO.class);
 
             // Prepare OffsetDateTime
             ZoneOffset zoneoffset = ZoneOffset.ofTotalSeconds(xMLGregorianCalendarDTO.timezone * 60);
