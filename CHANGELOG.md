@@ -1,5 +1,8 @@
 # Prowide ISO 20022 - CHANGELOG
 
+#### 10.2.4 - SNAPSHOT
+  * (GH-118) Added `toJsonV9` and `fromJsonV9` in the `AbstractMX` to handle retro-compatibility with Java 8 DateTime elements in JSON serialization
+
 #### 10.2.3 - August 2024
   * (PW-1958) Fixed the `DefaultMxMetadataStrategy` NPE issue when the amount values are null
 

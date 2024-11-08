@@ -26,6 +26,7 @@ import com.prowidesoftware.swift.model.MessageStandardType;
 import com.prowidesoftware.swift.model.MxId;
 import com.prowidesoftware.swift.model.mt.AbstractMT;
 import com.prowidesoftware.swift.model.mx.adapters.*;
+import com.prowidesoftware.swift.model.mx.adapters.v9.V9DateTimeJsonAdapter;
 import com.prowidesoftware.swift.utils.Lib;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.annotation.XmlTransient;
@@ -37,6 +38,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.transform.Source;
 import javax.xml.transform.dom.DOMResult;
 import javax.xml.transform.stream.StreamSource;
@@ -201,7 +203,7 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
      * @since 7.10.3
      */
     protected static <T> T fromJson(String json, Class<T> classOfT) {
-        final Gson gson = getGsonBuilderWithCustomAdapters();
+        final Gson gson = getGsonBuilderWithV10Adapters();
         return gson.fromJson(json, classOfT);
     }
 
@@ -213,7 +215,41 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
      * @since 7.10.3
      */
     public static AbstractMX fromJson(String json) {
-        final Gson gson = getGsonBuilderWithCustomAdapters();
+        final Gson gson = getGsonBuilderWithV10Adapters();
+        return gson.fromJson(json, AbstractMX.class);
+    }
+
+    /**
+     * Deserializes the given JSON string into an object of the specified class, using version 9 (Java 8) adapters.
+     *
+     * <p>This method ensures compatibility by checking for date-time fields stored in JSON as
+     * {@link XMLGregorianCalendar} based json elements and converting them into {@link OffsetDateTime}. The Gson
+     * adapters (version 9) manage both Java 8 and Java 11 formats.
+     *
+     * @param <T> the type of the object to be deserialized
+     * @param json a JSON representation of the object
+     * @param classOfT the class of the object to be deserialized
+     * @return a deserialized instance of the specified class, or null if the JSON string cannot be parsed.
+     * @since 10.1.8
+     */
+    protected static <T> T fromJsonV9(String json, Class<T> classOfT) {
+        final Gson gson = getGsonBuilderWithV9Adapters();
+        return gson.fromJson(json, classOfT);
+    }
+
+    /**
+     * Deserializes the given JSON string into a specific MX message object, using version 9 (Java 8) adapters.
+     *
+     * <p>This method ensures compatibility with older versions by converting
+     * {@link XMLGregorianCalendar} based json elements in JSON to {@link OffsetDateTime} if needed. The
+     * deserialization uses custom adapters (version 9) that handle both formats for date-time fields.
+     *
+     * @param json a JSON representation of an MX message
+     * @return a deserialized instance of {@link AbstractMX}, or null if the JSON string cannot be parsed.
+     * @since 10.1.8
+     */
+    public static AbstractMX fromJsonV9(String json) {
+        final Gson gson = getGsonBuilderWithV9Adapters();
         return gson.fromJson(json, AbstractMX.class);
     }
 
@@ -554,19 +590,45 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
     @Override
     public String toJson() {
         // we use AbstractMX and not this.getClass() in order to force usage of the adapter
-        final Gson gson = getGsonBuilderWithCustomAdapters();
+        final Gson gson = getGsonBuilderWithV10Adapters();
         return gson.toJson(this, AbstractMX.class);
     }
 
-    private static Gson getGsonBuilderWithCustomAdapters() {
-        final Gson gson = new GsonBuilder()
+    /**
+     * Serializes this MX message into its JSON representation, using version 9 (Java 8) adapters.
+     *
+     * <p>This method ensures that when serializing to JSON, {@link OffsetDateTime} fields can be converted
+     * back into {@link XMLGregorianCalendar} based json element format for compatibility with older systems that still use the Java 8 format.
+     *
+     * @return a JSON representation of the MX message, compatible with Java 8
+     * @since 10.1.8
+     */
+    public String toJsonV9() {
+        final Gson gson = getGsonBuilderWithV9Adapters();
+        return gson.toJson(this, AbstractMX.class);
+    }
+
+    private static GsonBuilder getGsonBuilderWithCustomAdapters() {
+        return new GsonBuilder()
                 .registerTypeAdapter(AbstractMX.class, new AbstractMXAdapter())
-                .registerTypeAdapter(OffsetDateTime.class, new OffsetDateTimeJsonAdapter())
                 .registerTypeAdapter(OffsetTime.class, new OffsetTimeJsonAdapter())
                 .registerTypeAdapter(LocalDate.class, new LocalDateJsonAdapter())
                 .registerTypeAdapter(Year.class, new YearJsonAdapter())
                 .registerTypeAdapter(YearMonth.class, new YearMonthJsonAdapter())
-                .registerTypeAdapter(AppHdr.class, new AppHdrAdapter())
+                .registerTypeAdapter(AppHdr.class, new AppHdrAdapter());
+    }
+
+    private static Gson getGsonBuilderWithV9Adapters() {
+        final Gson gson = getGsonBuilderWithCustomAdapters()
+                .registerTypeAdapter(OffsetDateTime.class, new V9DateTimeJsonAdapter())
+                .setPrettyPrinting()
+                .create();
+        return gson;
+    }
+
+    private static Gson getGsonBuilderWithV10Adapters() {
+        final Gson gson = getGsonBuilderWithCustomAdapters()
+                .registerTypeAdapter(OffsetDateTime.class, new OffsetDateTimeJsonAdapter())
                 .setPrettyPrinting()
                 .create();
         return gson;
