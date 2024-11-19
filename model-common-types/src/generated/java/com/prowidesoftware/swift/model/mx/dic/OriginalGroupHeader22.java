@@ -19,21 +19,13 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
-<<<<<<< HEAD:model-common-types/src/generated/java/com/prowidesoftware/swift/model/mx/dic/OriginalGroupHeader22.java
  * Provides details on the original group, to which the message refers.
-=======
- * Provides information on the original group, to which the message refers.
->>>>>>> origin/main:model-pain-types/src/generated/java/com/prowidesoftware/swift/model/mx/dic/OriginalGroupInformation32.java
  * 
  * 
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-<<<<<<< HEAD:model-common-types/src/generated/java/com/prowidesoftware/swift/model/mx/dic/OriginalGroupHeader22.java
 @XmlType(name = "OriginalGroupHeader22", propOrder = {
-=======
-@XmlType(name = "OriginalGroupInformation32", propOrder = {
->>>>>>> origin/main:model-pain-types/src/generated/java/com/prowidesoftware/swift/model/mx/dic/OriginalGroupInformation32.java
     "orgnlMsgId",
     "orgnlMsgNmId",
     "orgnlCreDtTm",
@@ -43,11 +35,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
     "stsRsnInf",
     "nbOfTxsPerSts"
 })
-<<<<<<< HEAD:model-common-types/src/generated/java/com/prowidesoftware/swift/model/mx/dic/OriginalGroupHeader22.java
 public class OriginalGroupHeader22 {
-=======
-public class OriginalGroupInformation32 {
->>>>>>> origin/main:model-pain-types/src/generated/java/com/prowidesoftware/swift/model/mx/dic/OriginalGroupInformation32.java
 
     @XmlElement(name = "OrgnlMsgId", required = true)
     protected String orgnlMsgId;
@@ -56,11 +44,7 @@ public class OriginalGroupInformation32 {
     @XmlElement(name = "OrgnlCreDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-<<<<<<< HEAD:model-common-types/src/generated/java/com/prowidesoftware/swift/model/mx/dic/OriginalGroupHeader22.java
     protected OffsetDateTime orgnlCreDtTm;
-=======
-    protected XMLGregorianCalendar orgnlCreDtTm;
->>>>>>> origin/main:model-pain-types/src/generated/java/com/prowidesoftware/swift/model/mx/dic/OriginalGroupInformation32.java
     @XmlElement(name = "OrgnlNbOfTxs")
     protected String orgnlNbOfTxs;
     @XmlElement(name = "OrgnlCtrlSum")
@@ -92,11 +76,7 @@ public class OriginalGroupInformation32 {
      *     {@link String }
      *     
      */
-<<<<<<< HEAD:model-common-types/src/generated/java/com/prowidesoftware/swift/model/mx/dic/OriginalGroupHeader22.java
     public OriginalGroupHeader22 setOrgnlMsgId(String value) {
-=======
-    public OriginalGroupInformation32 setOrgnlMsgId(String value) {
->>>>>>> origin/main:model-pain-types/src/generated/java/com/prowidesoftware/swift/model/mx/dic/OriginalGroupInformation32.java
         this.orgnlMsgId = value;
         return this;
     }
@@ -121,11 +101,7 @@ public class OriginalGroupInformation32 {
      *     {@link String }
      *     
      */
-<<<<<<< HEAD:model-common-types/src/generated/java/com/prowidesoftware/swift/model/mx/dic/OriginalGroupHeader22.java
     public OriginalGroupHeader22 setOrgnlMsgNmId(String value) {
-=======
-    public OriginalGroupInformation32 setOrgnlMsgNmId(String value) {
->>>>>>> origin/main:model-pain-types/src/generated/java/com/prowidesoftware/swift/model/mx/dic/OriginalGroupInformation32.java
         this.orgnlMsgNmId = value;
         return this;
     }
@@ -150,11 +126,7 @@ public class OriginalGroupInformation32 {
      *     {@link String }
      *     
      */
-<<<<<<< HEAD:model-common-types/src/generated/java/com/prowidesoftware/swift/model/mx/dic/OriginalGroupHeader22.java
     public OriginalGroupHeader22 setOrgnlCreDtTm(OffsetDateTime value) {
-=======
-    public OriginalGroupInformation32 setOrgnlCreDtTm(XMLGregorianCalendar value) {
->>>>>>> origin/main:model-pain-types/src/generated/java/com/prowidesoftware/swift/model/mx/dic/OriginalGroupInformation32.java
         this.orgnlCreDtTm = value;
         return this;
     }
@@ -179,11 +151,7 @@ public class OriginalGroupInformation32 {
      *     {@link String }
      *     
      */
-<<<<<<< HEAD:model-common-types/src/generated/java/com/prowidesoftware/swift/model/mx/dic/OriginalGroupHeader22.java
     public OriginalGroupHeader22 setOrgnlNbOfTxs(String value) {
-=======
-    public OriginalGroupInformation32 setOrgnlNbOfTxs(String value) {
->>>>>>> origin/main:model-pain-types/src/generated/java/com/prowidesoftware/swift/model/mx/dic/OriginalGroupInformation32.java
         this.orgnlNbOfTxs = value;
         return this;
     }
@@ -208,11 +176,7 @@ public class OriginalGroupInformation32 {
      *     {@link BigDecimal }
      *     
      */
-<<<<<<< HEAD:model-common-types/src/generated/java/com/prowidesoftware/swift/model/mx/dic/OriginalGroupHeader22.java
     public OriginalGroupHeader22 setOrgnlCtrlSum(BigDecimal value) {
-=======
-    public OriginalGroupInformation32 setOrgnlCtrlSum(BigDecimal value) {
->>>>>>> origin/main:model-pain-types/src/generated/java/com/prowidesoftware/swift/model/mx/dic/OriginalGroupInformation32.java
         this.orgnlCtrlSum = value;
         return this;
     }
@@ -237,11 +201,7 @@ public class OriginalGroupInformation32 {
      *     {@link String }
      *     
      */
-<<<<<<< HEAD:model-common-types/src/generated/java/com/prowidesoftware/swift/model/mx/dic/OriginalGroupHeader22.java
     public OriginalGroupHeader22 setGrpSts(String value) {
-=======
-    public OriginalGroupInformation32 setGrpSts(String value) {
->>>>>>> origin/main:model-pain-types/src/generated/java/com/prowidesoftware/swift/model/mx/dic/OriginalGroupInformation32.java
         this.grpSts = value;
         return this;
     }
@@ -272,11 +232,7 @@ public class OriginalGroupInformation32 {
      */
     public List<StatusReasonInformation14> getStsRsnInf() {
         if (stsRsnInf == null) {
-<<<<<<< HEAD:model-common-types/src/generated/java/com/prowidesoftware/swift/model/mx/dic/OriginalGroupHeader22.java
             stsRsnInf = new ArrayList<>();
-=======
-            stsRsnInf = new ArrayList<StatusReasonInformation14>();
->>>>>>> origin/main:model-pain-types/src/generated/java/com/prowidesoftware/swift/model/mx/dic/OriginalGroupInformation32.java
         }
         return this.stsRsnInf;
     }
@@ -307,11 +263,7 @@ public class OriginalGroupInformation32 {
      */
     public List<NumberOfTransactionsPerStatus5> getNbOfTxsPerSts() {
         if (nbOfTxsPerSts == null) {
-<<<<<<< HEAD:model-common-types/src/generated/java/com/prowidesoftware/swift/model/mx/dic/OriginalGroupHeader22.java
             nbOfTxsPerSts = new ArrayList<>();
-=======
-            nbOfTxsPerSts = new ArrayList<NumberOfTransactionsPerStatus5>();
->>>>>>> origin/main:model-pain-types/src/generated/java/com/prowidesoftware/swift/model/mx/dic/OriginalGroupInformation32.java
         }
         return this.nbOfTxsPerSts;
     }
@@ -336,11 +288,7 @@ public class OriginalGroupInformation32 {
      * @see #getStsRsnInf()
      * 
      */
-<<<<<<< HEAD:model-common-types/src/generated/java/com/prowidesoftware/swift/model/mx/dic/OriginalGroupHeader22.java
     public OriginalGroupHeader22 addStsRsnInf(StatusReasonInformation14 stsRsnInf) {
-=======
-    public OriginalGroupInformation32 addStsRsnInf(StatusReasonInformation14 stsRsnInf) {
->>>>>>> origin/main:model-pain-types/src/generated/java/com/prowidesoftware/swift/model/mx/dic/OriginalGroupInformation32.java
         getStsRsnInf().add(stsRsnInf);
         return this;
     }
@@ -350,11 +298,7 @@ public class OriginalGroupInformation32 {
      * @see #getNbOfTxsPerSts()
      * 
      */
-<<<<<<< HEAD:model-common-types/src/generated/java/com/prowidesoftware/swift/model/mx/dic/OriginalGroupHeader22.java
     public OriginalGroupHeader22 addNbOfTxsPerSts(NumberOfTransactionsPerStatus5 nbOfTxsPerSts) {
-=======
-    public OriginalGroupInformation32 addNbOfTxsPerSts(NumberOfTransactionsPerStatus5 nbOfTxsPerSts) {
->>>>>>> origin/main:model-pain-types/src/generated/java/com/prowidesoftware/swift/model/mx/dic/OriginalGroupInformation32.java
         getNbOfTxsPerSts().add(nbOfTxsPerSts);
         return this;
     }
