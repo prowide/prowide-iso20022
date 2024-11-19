@@ -484,12 +484,6 @@ tasks.withType(Test) {
 	}
 }
 
-task('testOn11', type: Test) {
-	javaLauncher = javaToolchains.launcherFor {
-		languageVersion = JavaLanguageVersion.of(11)
-	}
-}
-
 task('testOn17', type: Test) {
 	javaLauncher = javaToolchains.launcherFor {
 		languageVersion = JavaLanguageVersion.of(17)
