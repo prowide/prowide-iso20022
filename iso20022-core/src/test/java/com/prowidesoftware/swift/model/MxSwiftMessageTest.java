@@ -299,6 +299,14 @@ public class MxSwiftMessageTest {
         MxSwiftMessage mx = new MxSwiftMessage(xmlInput);
         assertNotNull(mx);
         assertEquals("camt.077.001.01", mx.getIdentifier());
+
+        MxId id = mx.getMxId();
+        assertNotNull(id);
+        assertEquals(MxBusinessProcess.camt, id.getBusinessProcess());
+        assertEquals("077", id.getFunctionality());
+        assertEquals("001", id.getVariant());
+        assertEquals("01", id.getVersion());
+        assertFalse(id.getBusinessService().isPresent());
     }
 
     @Test
@@ -343,5 +351,14 @@ public class MxSwiftMessageTest {
         MxSwiftMessage mx = new MxSwiftMessage(xml);
         assertNotNull(mx);
         assertEquals("pacs.004.001.02", mx.getIdentifier());
+
+        MxId id = mx.getMxId();
+        assertNotNull(id);
+        assertEquals(MxBusinessProcess.pacs, id.getBusinessProcess());
+        assertEquals("004", id.getFunctionality());
+        assertEquals("001", id.getVariant());
+        assertEquals("02", id.getVersion());
+        assertTrue(id.getBusinessService().isPresent());
+        assertEquals("CSD", id.getBusinessService().get());
     }
 }

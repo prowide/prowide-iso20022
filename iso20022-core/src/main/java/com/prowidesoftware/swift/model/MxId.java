@@ -16,6 +16,7 @@
 package com.prowidesoftware.swift.model;
 
 import java.util.Objects;
+import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.apache.commons.lang3.StringUtils;
@@ -24,9 +25,8 @@ import org.apache.commons.lang3.StringUtils;
  * Class for identification of MX messages.
  *
  * <p>It is composed by the business process (business area), functionality (message type), variant and version.
- * For a better understanding of ISO 20022 variants check https://www.iso20022.org/variants.page
+ * For a better understanding of ISO 20022 variants check https://www.iso20022.org/variants page
  *
- * @author miguel
  * @since 7.7
  */
 public class MxId {
@@ -35,13 +35,12 @@ public class MxId {
     private String functionality;
     private String variant;
     private String version;
+    /**
+     * @since 9.5.0
+     */
+    private transient String businessService;
 
-    public MxId() {
-        this.businessProcess = null;
-        this.functionality = StringUtils.EMPTY;
-        this.variant = StringUtils.EMPTY;
-        this.version = StringUtils.EMPTY;
-    }
+    public MxId() {}
 
     /**
      * Creates a new object getting data from an MX message namespace.
@@ -59,8 +58,8 @@ public class MxId {
                 this.businessProcess = MxBusinessProcess.valueOf(bpStr);
             } catch (final Exception e) {
                 throw new IllegalArgumentException(
-                        "Illegal value for business process: '" + bpStr + "' see enum values in "
-                                + MxBusinessProcess.class.getName() + " for valid options",
+                        "Unrecognized value for business process: '" + bpStr + "' see enum values in "
+                                + MxBusinessProcess.class.getName() + " for expected options",
                         e);
             }
             this.functionality = matcher.group(2);
@@ -152,15 +151,15 @@ public class MxId {
     }
 
     public int getVersionInt() {
-        return Integer.valueOf(getVersion());
+        return Integer.valueOf(this.version);
     }
 
     public int getVariantInt() {
-        return Integer.valueOf(getVariant());
+        return Integer.valueOf(this.variant);
     }
 
     public int getFunctionalityInt() {
-        return Integer.valueOf(getFunctionality());
+        return Integer.valueOf(this.functionality);
     }
 
     /**
@@ -209,6 +208,19 @@ public class MxId {
         return id();
     }
 
+    /**
+     * Indicates whether some other object is "equal to" this one.
+     *
+     * <p>Overrides the default implementation of {@link Object#equals(Object)}.
+     * This method considers two {@code MxId} objects equal if their
+     * {@code businessProcess}, {@code functionality}, {@code variant},
+     * and {@code version} fields are equal.
+     *
+     * <p>Notice the business service field is not included in the comparison.
+     *
+     * @param o the reference object with which to compare
+     * @return {@code true} if this object is the same as the obj argument; {@code false} otherwise
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -220,6 +232,17 @@ public class MxId {
                 && Objects.equals(version, mxId.version);
     }
 
+    /**
+     * Returns a hash code value for the object.
+     *
+     * <p>Overrides the default implementation of {@link Object#hashCode()}.
+     * This method generates a hash code based on the {@code businessProcess},
+     * {@code functionality}, {@code variant}, and {@code version} fields.
+     *
+     * <p>Notice the business service field is not included in the hash code calculation.
+     *
+     * @return a hash code value for this object
+     */
     @Override
     public int hashCode() {
         return Objects.hash(businessProcess, functionality, variant, version);
@@ -269,5 +292,39 @@ public class MxId {
                 && (StringUtils.isBlank(this.version)
                         || StringUtils.isBlank(other.getVersion())
                         || StringUtils.equals(this.version, other.getVersion()));
+    }
+
+    /**
+     * Get the category of the message, which is the business process name.
+     * @return the business process name or null if not set
+     * @since 9.5.0
+     */
+    public String category() {
+        return this.businessProcess != null ? this.businessProcess.name() : null;
+    }
+
+    /**
+     * Get the optional business service, which could be an additional value to differentiate messages within the same
+     * message type. For example "swift.cbprplus.cov.02". Notice when the MxId is created from the namespace this value
+     * is not set. This value must be set manually by the application when the MxId is extracted from a whole message
+     * and the AppHdr is available. Alternatively, the application can set this value with any other context information
+     *  and use it as a discriminator.
+     * @return the business service value or null if not set
+     * @since 9.5.0
+     */
+    public Optional<String> getBusinessService() {
+        return Optional.ofNullable(StringUtils.trimToNull(this.businessService));
+    }
+
+    /**
+     * Set the business service, which could be an additional value to differentiate messages within the same message
+     * type. This is mainly intended to contain the business services from the message AppHdr, but could potentially
+     * be used to hold any other value that helps to differentiate messages within the same message type.
+     * @param businessService a string value to set as discriminator, for example "swift.cbprplus.cov.02"
+     * @since 9.5.0
+     */
+    public MxId setBusinessService(String businessService) {
+        this.businessService = businessService;
+        return this;
     }
 }

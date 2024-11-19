@@ -27,7 +27,7 @@ public enum AccountOwnershipType5Code {
 
 
     /**
-     * The person is ...
+     * Person having the temporary right to use and derive income or benefit from someone else's property.
      * 
      */
     USUF,
