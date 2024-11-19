@@ -1,17 +1,18 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -49,13 +50,13 @@ public class SubscriptionMultipleOrder3 {
     @XmlElement(name = "OrdrDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar ordrDtTm;
+    protected OffsetDateTime ordrDtTm;
     @XmlElement(name = "XpryDtTm")
     protected DateAndDateTimeChoice xpryDtTm;
     @XmlElement(name = "ReqdFutrTradDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar reqdFutrTradDt;
+    protected LocalDate reqdFutrTradDt;
     @XmlElement(name = "CxlRght")
     @XmlSchemaType(name = "string")
     protected CancellationRight1Code cxlRght;
@@ -72,7 +73,7 @@ public class SubscriptionMultipleOrder3 {
     @XmlElement(name = "CshSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar cshSttlmDt;
+    protected LocalDate cshSttlmDt;
     @XmlElement(name = "BlkCshSttlmDtls")
     protected PaymentTransaction23 blkCshSttlmDtls;
 
@@ -134,7 +135,7 @@ public class SubscriptionMultipleOrder3 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getOrdrDtTm() {
+    public OffsetDateTime getOrdrDtTm() {
         return ordrDtTm;
     }
 
@@ -146,7 +147,7 @@ public class SubscriptionMultipleOrder3 {
      *     {@link String }
      *     
      */
-    public SubscriptionMultipleOrder3 setOrdrDtTm(XMLGregorianCalendar value) {
+    public SubscriptionMultipleOrder3 setOrdrDtTm(OffsetDateTime value) {
         this.ordrDtTm = value;
         return this;
     }
@@ -184,7 +185,7 @@ public class SubscriptionMultipleOrder3 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getReqdFutrTradDt() {
+    public LocalDate getReqdFutrTradDt() {
         return reqdFutrTradDt;
     }
 
@@ -196,7 +197,7 @@ public class SubscriptionMultipleOrder3 {
      *     {@link String }
      *     
      */
-    public SubscriptionMultipleOrder3 setReqdFutrTradDt(XMLGregorianCalendar value) {
+    public SubscriptionMultipleOrder3 setReqdFutrTradDt(LocalDate value) {
         this.reqdFutrTradDt = value;
         return this;
     }
@@ -307,8 +308,8 @@ public class SubscriptionMultipleOrder3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the indvOrdrDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the indvOrdrDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -322,10 +323,12 @@ public class SubscriptionMultipleOrder3 {
      * {@link SubscriptionOrder6 }
      * 
      * 
+     * @return
+     *     The value of the indvOrdrDtls property.
      */
     public List<SubscriptionOrder6> getIndvOrdrDtls() {
         if (indvOrdrDtls == null) {
-            indvOrdrDtls = new ArrayList<SubscriptionOrder6>();
+            indvOrdrDtls = new ArrayList<>();
         }
         return this.indvOrdrDtls;
     }
@@ -363,7 +366,7 @@ public class SubscriptionMultipleOrder3 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getCshSttlmDt() {
+    public LocalDate getCshSttlmDt() {
         return cshSttlmDt;
     }
 
@@ -375,7 +378,7 @@ public class SubscriptionMultipleOrder3 {
      *     {@link String }
      *     
      */
-    public SubscriptionMultipleOrder3 setCshSttlmDt(XMLGregorianCalendar value) {
+    public SubscriptionMultipleOrder3 setCshSttlmDt(LocalDate value) {
         this.cshSttlmDt = value;
         return this;
     }

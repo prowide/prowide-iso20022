@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -93,8 +93,8 @@ public class CorporateActionUnallocatedDetailsSD3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the uallctdSctiesTxDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the uallctdSctiesTxDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -108,10 +108,12 @@ public class CorporateActionUnallocatedDetailsSD3 {
      * {@link CorporateActionUnallocatedSecuritiesTransactionDetailsSD4 }
      * 
      * 
+     * @return
+     *     The value of the uallctdSctiesTxDtls property.
      */
     public List<CorporateActionUnallocatedSecuritiesTransactionDetailsSD4> getUallctdSctiesTxDtls() {
         if (uallctdSctiesTxDtls == null) {
-            uallctdSctiesTxDtls = new ArrayList<CorporateActionUnallocatedSecuritiesTransactionDetailsSD4>();
+            uallctdSctiesTxDtls = new ArrayList<>();
         }
         return this.uallctdSctiesTxDtls;
     }
@@ -122,8 +124,8 @@ public class CorporateActionUnallocatedDetailsSD3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the uallctdCshTxDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the uallctdCshTxDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -137,10 +139,12 @@ public class CorporateActionUnallocatedDetailsSD3 {
      * {@link CorporateActionUnallocatedCashTransactionDetailsSD3 }
      * 
      * 
+     * @return
+     *     The value of the uallctdCshTxDtls property.
      */
     public List<CorporateActionUnallocatedCashTransactionDetailsSD3> getUallctdCshTxDtls() {
         if (uallctdCshTxDtls == null) {
-            uallctdCshTxDtls = new ArrayList<CorporateActionUnallocatedCashTransactionDetailsSD3>();
+            uallctdCshTxDtls = new ArrayList<>();
         }
         return this.uallctdCshTxDtls;
     }

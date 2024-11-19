@@ -1,25 +1,24 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for AdditionalBusinessProcess8Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="AdditionalBusinessProcess8Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CONS"/&gt;
- *     &lt;enumeration value="FPRE"/&gt;
- *     &lt;enumeration value="PPUT"/&gt;
- *     &lt;enumeration value="PPRE"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="AdditionalBusinessProcess8Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CONS"/>
+ *     <enumeration value="FPRE"/>
+ *     <enumeration value="PPUT"/>
+ *     <enumeration value="PPRE"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "AdditionalBusinessProcess8Code")

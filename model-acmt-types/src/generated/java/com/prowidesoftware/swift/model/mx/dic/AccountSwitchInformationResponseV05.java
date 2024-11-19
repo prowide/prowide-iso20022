@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -152,8 +152,8 @@ public class AccountSwitchInformationResponseV05 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the pmtInstr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the pmtInstr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -167,10 +167,12 @@ public class AccountSwitchInformationResponseV05 {
      * {@link PaymentInstruction43 }
      * 
      * 
+     * @return
+     *     The value of the pmtInstr property.
      */
     public List<PaymentInstruction43> getPmtInstr() {
         if (pmtInstr == null) {
-            pmtInstr = new ArrayList<PaymentInstruction43>();
+            pmtInstr = new ArrayList<>();
         }
         return this.pmtInstr;
     }
@@ -181,8 +183,8 @@ public class AccountSwitchInformationResponseV05 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the drctDbtInstr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the drctDbtInstr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -196,10 +198,12 @@ public class AccountSwitchInformationResponseV05 {
      * {@link DirectDebitInstructionDetails3 }
      * 
      * 
+     * @return
+     *     The value of the drctDbtInstr property.
      */
     public List<DirectDebitInstructionDetails3> getDrctDbtInstr() {
         if (drctDbtInstr == null) {
-            drctDbtInstr = new ArrayList<DirectDebitInstructionDetails3>();
+            drctDbtInstr = new ArrayList<>();
         }
         return this.drctDbtInstr;
     }
@@ -210,8 +214,8 @@ public class AccountSwitchInformationResponseV05 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -225,10 +229,12 @@ public class AccountSwitchInformationResponseV05 {
      * {@link SupplementaryData1 }
      * 
      * 
+     * @return
+     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<SupplementaryData1>();
+            splmtryData = new ArrayList<>();
         }
         return this.splmtryData;
     }

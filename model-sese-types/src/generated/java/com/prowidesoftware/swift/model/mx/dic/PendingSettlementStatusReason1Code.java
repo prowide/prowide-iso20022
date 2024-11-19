@@ -1,35 +1,34 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for PendingSettlementStatusReason1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="PendingSettlementStatusReason1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="AWSH"/&gt;
- *     &lt;enumeration value="BLOC"/&gt;
- *     &lt;enumeration value="CAIS"/&gt;
- *     &lt;enumeration value="CLAC"/&gt;
- *     &lt;enumeration value="DOCC"/&gt;
- *     &lt;enumeration value="DOCY"/&gt;
- *     &lt;enumeration value="IAAD"/&gt;
- *     &lt;enumeration value="LACK"/&gt;
- *     &lt;enumeration value="LINK"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="PHCK"/&gt;
- *     &lt;enumeration value="PHSE"/&gt;
- *     &lt;enumeration value="SBLO"/&gt;
- *     &lt;enumeration value="MINF"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="PendingSettlementStatusReason1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="AWSH"/>
+ *     <enumeration value="BLOC"/>
+ *     <enumeration value="CAIS"/>
+ *     <enumeration value="CLAC"/>
+ *     <enumeration value="DOCC"/>
+ *     <enumeration value="DOCY"/>
+ *     <enumeration value="IAAD"/>
+ *     <enumeration value="LACK"/>
+ *     <enumeration value="LINK"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="PHCK"/>
+ *     <enumeration value="PHSE"/>
+ *     <enumeration value="SBLO"/>
+ *     <enumeration value="MINF"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "PendingSettlementStatusReason1Code")

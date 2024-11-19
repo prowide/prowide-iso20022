@@ -1,54 +1,53 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlEnumValue;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for InstructionProcessingStatus1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="InstructionProcessingStatus1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CAN1"/&gt;
- *     &lt;enumeration value="CAN2"/&gt;
- *     &lt;enumeration value="CAN3"/&gt;
- *     &lt;enumeration value="CAND"/&gt;
- *     &lt;enumeration value="CANO"/&gt;
- *     &lt;enumeration value="CANP"/&gt;
- *     &lt;enumeration value="CGEN"/&gt;
- *     &lt;enumeration value="COSE"/&gt;
- *     &lt;enumeration value="CPRC"/&gt;
- *     &lt;enumeration value="DFLA"/&gt;
- *     &lt;enumeration value="DONE"/&gt;
- *     &lt;enumeration value="DONF"/&gt;
- *     &lt;enumeration value="EXCH"/&gt;
- *     &lt;enumeration value="EXSE"/&gt;
- *     &lt;enumeration value="FORC"/&gt;
- *     &lt;enumeration value="FUTU"/&gt;
- *     &lt;enumeration value="INTE"/&gt;
- *     &lt;enumeration value="NOTC"/&gt;
- *     &lt;enumeration value="OPOD"/&gt;
- *     &lt;enumeration value="OVER"/&gt;
- *     &lt;enumeration value="PACK"/&gt;
- *     &lt;enumeration value="PAFI"/&gt;
- *     &lt;enumeration value="PART"/&gt;
- *     &lt;enumeration value="PPRC"/&gt;
- *     &lt;enumeration value="REJT"/&gt;
- *     &lt;enumeration value="REPR"/&gt;
- *     &lt;enumeration value="SESE"/&gt;
- *     &lt;enumeration value="STIN"/&gt;
- *     &lt;enumeration value="SUSP"/&gt;
- *     &lt;enumeration value="TREA"/&gt;
- *     &lt;enumeration value="UNDE"/&gt;
- *     &lt;enumeration value="MPRC"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="InstructionProcessingStatus1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CAN1"/>
+ *     <enumeration value="CAN2"/>
+ *     <enumeration value="CAN3"/>
+ *     <enumeration value="CAND"/>
+ *     <enumeration value="CANO"/>
+ *     <enumeration value="CANP"/>
+ *     <enumeration value="CGEN"/>
+ *     <enumeration value="COSE"/>
+ *     <enumeration value="CPRC"/>
+ *     <enumeration value="DFLA"/>
+ *     <enumeration value="DONE"/>
+ *     <enumeration value="DONF"/>
+ *     <enumeration value="EXCH"/>
+ *     <enumeration value="EXSE"/>
+ *     <enumeration value="FORC"/>
+ *     <enumeration value="FUTU"/>
+ *     <enumeration value="INTE"/>
+ *     <enumeration value="NOTC"/>
+ *     <enumeration value="OPOD"/>
+ *     <enumeration value="OVER"/>
+ *     <enumeration value="PACK"/>
+ *     <enumeration value="PAFI"/>
+ *     <enumeration value="PART"/>
+ *     <enumeration value="PPRC"/>
+ *     <enumeration value="REJT"/>
+ *     <enumeration value="REPR"/>
+ *     <enumeration value="SESE"/>
+ *     <enumeration value="STIN"/>
+ *     <enumeration value="SUSP"/>
+ *     <enumeration value="TREA"/>
+ *     <enumeration value="UNDE"/>
+ *     <enumeration value="MPRC"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "InstructionProcessingStatus1Code")

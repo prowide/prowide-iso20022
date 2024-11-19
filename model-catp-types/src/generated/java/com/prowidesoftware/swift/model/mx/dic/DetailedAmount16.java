@@ -4,10 +4,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -150,8 +150,8 @@ public class DetailedAmount16 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the fees property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the fees property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -165,10 +165,12 @@ public class DetailedAmount16 {
      * {@link DetailedAmount13 }
      * 
      * 
+     * @return
+     *     The value of the fees property.
      */
     public List<DetailedAmount13> getFees() {
         if (fees == null) {
-            fees = new ArrayList<DetailedAmount13>();
+            fees = new ArrayList<>();
         }
         return this.fees;
     }
@@ -179,8 +181,8 @@ public class DetailedAmount16 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dontn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the dontn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -194,10 +196,12 @@ public class DetailedAmount16 {
      * {@link DetailedAmount13 }
      * 
      * 
+     * @return
+     *     The value of the dontn property.
      */
     public List<DetailedAmount13> getDontn() {
         if (dontn == null) {
-            dontn = new ArrayList<DetailedAmount13>();
+            dontn = new ArrayList<>();
         }
         return this.dontn;
     }

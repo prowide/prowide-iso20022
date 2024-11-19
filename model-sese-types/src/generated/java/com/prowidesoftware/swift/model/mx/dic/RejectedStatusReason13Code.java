@@ -1,68 +1,67 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for RejectedStatusReason13Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="RejectedStatusReason13Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="BLCA"/&gt;
- *     &lt;enumeration value="DOCC"/&gt;
- *     &lt;enumeration value="IAQD"/&gt;
- *     &lt;enumeration value="ICTN"/&gt;
- *     &lt;enumeration value="CYPA"/&gt;
- *     &lt;enumeration value="TREF"/&gt;
- *     &lt;enumeration value="DSEC"/&gt;
- *     &lt;enumeration value="IDNA"/&gt;
- *     &lt;enumeration value="DQUA"/&gt;
- *     &lt;enumeration value="FTAX"/&gt;
- *     &lt;enumeration value="INID"/&gt;
- *     &lt;enumeration value="INAC"/&gt;
- *     &lt;enumeration value="CASH"/&gt;
- *     &lt;enumeration value="INPM"/&gt;
- *     &lt;enumeration value="INNA"/&gt;
- *     &lt;enumeration value="SAFE"/&gt;
- *     &lt;enumeration value="INUK"/&gt;
- *     &lt;enumeration value="LEGL"/&gt;
- *     &lt;enumeration value="NSLA"/&gt;
- *     &lt;enumeration value="SECU"/&gt;
- *     &lt;enumeration value="PTNS"/&gt;
- *     &lt;enumeration value="DLVY"/&gt;
- *     &lt;enumeration value="DDAT"/&gt;
- *     &lt;enumeration value="ISTP"/&gt;
- *     &lt;enumeration value="DEPT"/&gt;
- *     &lt;enumeration value="ISAT"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="NCON"/&gt;
- *     &lt;enumeration value="ACLO"/&gt;
- *     &lt;enumeration value="NASS"/&gt;
- *     &lt;enumeration value="NQTY"/&gt;
- *     &lt;enumeration value="BLTR"/&gt;
- *     &lt;enumeration value="COSE"/&gt;
- *     &lt;enumeration value="ILLI"/&gt;
- *     &lt;enumeration value="BMRV"/&gt;
- *     &lt;enumeration value="DINV"/&gt;
- *     &lt;enumeration value="ICAG"/&gt;
- *     &lt;enumeration value="IPAC"/&gt;
- *     &lt;enumeration value="INTE"/&gt;
- *     &lt;enumeration value="DMON"/&gt;
- *     &lt;enumeration value="PRCT"/&gt;
- *     &lt;enumeration value="IVAG"/&gt;
- *     &lt;enumeration value="NCRR"/&gt;
- *     &lt;enumeration value="DTRD"/&gt;
- *     &lt;enumeration value="UPAY"/&gt;
- *     &lt;enumeration value="URSC"/&gt;
- *     &lt;enumeration value="NCMP"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="RejectedStatusReason13Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="BLCA"/>
+ *     <enumeration value="DOCC"/>
+ *     <enumeration value="IAQD"/>
+ *     <enumeration value="ICTN"/>
+ *     <enumeration value="CYPA"/>
+ *     <enumeration value="TREF"/>
+ *     <enumeration value="DSEC"/>
+ *     <enumeration value="IDNA"/>
+ *     <enumeration value="DQUA"/>
+ *     <enumeration value="FTAX"/>
+ *     <enumeration value="INID"/>
+ *     <enumeration value="INAC"/>
+ *     <enumeration value="CASH"/>
+ *     <enumeration value="INPM"/>
+ *     <enumeration value="INNA"/>
+ *     <enumeration value="SAFE"/>
+ *     <enumeration value="INUK"/>
+ *     <enumeration value="LEGL"/>
+ *     <enumeration value="NSLA"/>
+ *     <enumeration value="SECU"/>
+ *     <enumeration value="PTNS"/>
+ *     <enumeration value="DLVY"/>
+ *     <enumeration value="DDAT"/>
+ *     <enumeration value="ISTP"/>
+ *     <enumeration value="DEPT"/>
+ *     <enumeration value="ISAT"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="NCON"/>
+ *     <enumeration value="ACLO"/>
+ *     <enumeration value="NASS"/>
+ *     <enumeration value="NQTY"/>
+ *     <enumeration value="BLTR"/>
+ *     <enumeration value="COSE"/>
+ *     <enumeration value="ILLI"/>
+ *     <enumeration value="BMRV"/>
+ *     <enumeration value="DINV"/>
+ *     <enumeration value="ICAG"/>
+ *     <enumeration value="IPAC"/>
+ *     <enumeration value="INTE"/>
+ *     <enumeration value="DMON"/>
+ *     <enumeration value="PRCT"/>
+ *     <enumeration value="IVAG"/>
+ *     <enumeration value="NCRR"/>
+ *     <enumeration value="DTRD"/>
+ *     <enumeration value="UPAY"/>
+ *     <enumeration value="URSC"/>
+ *     <enumeration value="NCMP"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "RejectedStatusReason13Code")

@@ -1,34 +1,33 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for DerivativeEventType3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="DerivativeEventType3Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ALOC"/&gt;
- *     &lt;enumeration value="CLRG"/&gt;
- *     &lt;enumeration value="CLAL"/&gt;
- *     &lt;enumeration value="COMP"/&gt;
- *     &lt;enumeration value="CORP"/&gt;
- *     &lt;enumeration value="CREV"/&gt;
- *     &lt;enumeration value="ETRM"/&gt;
- *     &lt;enumeration value="EXER"/&gt;
- *     &lt;enumeration value="INCP"/&gt;
- *     &lt;enumeration value="NOVA"/&gt;
- *     &lt;enumeration value="PTNG"/&gt;
- *     &lt;enumeration value="TRAD"/&gt;
- *     &lt;enumeration value="UPDT"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="DerivativeEventType3Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ALOC"/>
+ *     <enumeration value="CLRG"/>
+ *     <enumeration value="CLAL"/>
+ *     <enumeration value="COMP"/>
+ *     <enumeration value="CORP"/>
+ *     <enumeration value="CREV"/>
+ *     <enumeration value="ETRM"/>
+ *     <enumeration value="EXER"/>
+ *     <enumeration value="INCP"/>
+ *     <enumeration value="NOVA"/>
+ *     <enumeration value="PTNG"/>
+ *     <enumeration value="TRAD"/>
+ *     <enumeration value="UPDT"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "DerivativeEventType3Code")

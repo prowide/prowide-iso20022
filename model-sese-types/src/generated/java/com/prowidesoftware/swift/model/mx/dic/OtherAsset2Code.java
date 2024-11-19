@@ -1,26 +1,25 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for OtherAsset2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="OtherAsset2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="DIMA"/&gt;
- *     &lt;enumeration value="EXIA"/&gt;
- *     &lt;enumeration value="MOVE"/&gt;
- *     &lt;enumeration value="PROP"/&gt;
- *     &lt;enumeration value="TIPP"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="OtherAsset2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="DIMA"/>
+ *     <enumeration value="EXIA"/>
+ *     <enumeration value="MOVE"/>
+ *     <enumeration value="PROP"/>
+ *     <enumeration value="TIPP"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "OtherAsset2Code")

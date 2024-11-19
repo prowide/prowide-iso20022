@@ -3,11 +3,11 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -220,8 +220,8 @@ public class SaleToPOIProtocolParameter3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the allwdSaleMsg property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the allwdSaleMsg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -235,10 +235,12 @@ public class SaleToPOIProtocolParameter3 {
      * {@link RetailerMessage1Code }
      * 
      * 
+     * @return
+     *     The value of the allwdSaleMsg property.
      */
     public List<RetailerMessage1Code> getAllwdSaleMsg() {
         if (allwdSaleMsg == null) {
-            allwdSaleMsg = new ArrayList<RetailerMessage1Code>();
+            allwdSaleMsg = new ArrayList<>();
         }
         return this.allwdSaleMsg;
     }
@@ -249,8 +251,8 @@ public class SaleToPOIProtocolParameter3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the allwdPOIMsg property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the allwdPOIMsg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -264,10 +266,12 @@ public class SaleToPOIProtocolParameter3 {
      * {@link RetailerMessage1Code }
      * 
      * 
+     * @return
+     *     The value of the allwdPOIMsg property.
      */
     public List<RetailerMessage1Code> getAllwdPOIMsg() {
         if (allwdPOIMsg == null) {
-            allwdPOIMsg = new ArrayList<RetailerMessage1Code>();
+            allwdPOIMsg = new ArrayList<>();
         }
         return this.allwdPOIMsg;
     }
@@ -278,8 +282,8 @@ public class SaleToPOIProtocolParameter3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the allwdPOISvc property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the allwdPOISvc property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -293,10 +297,12 @@ public class SaleToPOIProtocolParameter3 {
      * {@link RetailerService2Code }
      * 
      * 
+     * @return
+     *     The value of the allwdPOISvc property.
      */
     public List<RetailerService2Code> getAllwdPOISvc() {
         if (allwdPOISvc == null) {
-            allwdPOISvc = new ArrayList<RetailerService2Code>();
+            allwdPOISvc = new ArrayList<>();
         }
         return this.allwdPOISvc;
     }
@@ -307,8 +313,8 @@ public class SaleToPOIProtocolParameter3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the allwdSaleDvc property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the allwdSaleDvc property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -322,10 +328,12 @@ public class SaleToPOIProtocolParameter3 {
      * {@link RetailerService8Code }
      * 
      * 
+     * @return
+     *     The value of the allwdSaleDvc property.
      */
     public List<RetailerService8Code> getAllwdSaleDvc() {
         if (allwdSaleDvc == null) {
-            allwdSaleDvc = new ArrayList<RetailerService8Code>();
+            allwdSaleDvc = new ArrayList<>();
         }
         return this.allwdSaleDvc;
     }
@@ -336,8 +344,8 @@ public class SaleToPOIProtocolParameter3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the xtrnlyTpSpprtd property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the xtrnlyTpSpprtd property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -351,10 +359,12 @@ public class SaleToPOIProtocolParameter3 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the xtrnlyTpSpprtd property.
      */
     public List<String> getXtrnlyTpSpprtd() {
         if (xtrnlyTpSpprtd == null) {
-            xtrnlyTpSpprtd = new ArrayList<String>();
+            xtrnlyTpSpprtd = new ArrayList<>();
         }
         return this.xtrnlyTpSpprtd;
     }
