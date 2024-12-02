@@ -15,18 +15,12 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
-import com.prowidesoftware.swift.utils.SafeXmlUtils;
-import java.io.StringReader;
-import java.util.Objects;
+import static com.prowidesoftware.swift.model.mx.MxParseUtils.findElement;
+
 import java.util.Optional;
-import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.xml.stream.XMLInputFactory;
-import javax.xml.stream.XMLStreamConstants;
-import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.Validate;
 
 /**
  * Helper API to extract information from an XML using lightweight XML streams API
@@ -96,28 +90,5 @@ public class NamespaceReader {
      */
     public static boolean elementExists(final String xml, final String localName) {
         return findElement(xml, localName).isPresent();
-    }
-
-    static Optional<XMLStreamReader> findElement(final String xml, final String localName) {
-        Objects.requireNonNull(xml, "XML to parse must not be null");
-        Validate.notBlank(xml, "XML to parse must not be a blank string");
-        Objects.requireNonNull(xml, "localName to find must not be null");
-
-        final XMLInputFactory xif = SafeXmlUtils.inputFactory();
-        try {
-            final XMLStreamReader reader =
-                    xif.createXMLStreamReader(new StringReader(MxParseUtils.makeXmlLenient(xml)));
-            while (reader.hasNext()) {
-                int event = reader.next();
-                if (XMLStreamConstants.START_ELEMENT == event) {
-                    if (reader.getLocalName().equals(localName)) {
-                        return Optional.of(reader);
-                    }
-                }
-            }
-        } catch (XMLStreamException e) {
-            log.log(Level.WARNING, "Error reading XML", e);
-        }
-        return Optional.empty();
     }
 }

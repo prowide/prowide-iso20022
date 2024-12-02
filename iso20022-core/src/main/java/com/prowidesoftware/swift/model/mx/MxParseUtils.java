@@ -16,16 +16,18 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.ProwideException;
-import com.prowidesoftware.swift.model.DistinguishedName;
-import com.prowidesoftware.swift.model.MxId;
+import com.prowidesoftware.swift.model.*;
 import com.prowidesoftware.swift.utils.SafeXmlUtils;
 import java.io.StringReader;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.concurrent.ExecutionException;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.xml.bind.*;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.stream.XMLInputFactory;
+import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 import javax.xml.transform.sax.SAXSource;
@@ -198,10 +200,10 @@ public class MxParseUtils {
         }
 
         // if the Document does not have a namespace, try to identify the message from the header
-        Optional<XMLStreamReader> element = NamespaceReader.findElement(xml, "MsgDefIdr");
+        Optional<XMLStreamReader> element = findElement(xml, "MsgDefIdr");
         if (!element.isPresent()) {
             // Legacy ahv10 header
-            element = NamespaceReader.findElement(xml, "MsgName");
+            element = findElement(xml, "MsgName");
         }
         if (element.isPresent()) {
             try {
@@ -218,7 +220,7 @@ public class MxParseUtils {
         if (mxId == null) {
             return Optional.empty();
         }
-        Optional<XMLStreamReader> element = NamespaceReader.findElement(xml, "BizSvc");
+        Optional<XMLStreamReader> element = findElement(xml, "BizSvc");
         if (element.isPresent()) {
             try {
                 mxId.setBusinessService(element.get().getElementText());
@@ -240,5 +242,101 @@ public class MxParseUtils {
      */
     public static String makeXmlLenient(String xml) {
         return xml != null ? xml.replaceFirst("(?i)<\\?XML", "<?xml") : null;
+    }
+
+    /**
+     * Extracts settlement information from the given XML document.
+     *
+     * <p>This method attempts to parse the provided XML and extract information
+     * related to the settlement method and clearing system codes. Specifically:
+     * <ul>
+     *     <li>{@code SttlmMtd} - The settlement method.</li>
+     *     <li>{@code ClrSys > Cd} - The clearing system code.</li>
+     *     <li>{@code ClrSys > Prtry} - The clearing system proprietary.</li>
+     * </ul>
+     *
+     * <p>If any of these elements are found, a {@link SettlementInfo} object is
+     * created and populated with the extracted values.
+     *
+     * @param xml the XML document as a {@link String} to parse for settlement information.
+     * @return an {@link Optional} containing the {@link SettlementInfo} if at least one
+     *         of the required elements is found; otherwise, an empty {@link Optional}.
+     * @throws NullPointerException if the {@code xml} is null.
+     *
+     * @since 9.5.5
+     */
+    public static Optional<SettlementInfo> getSettlementInfo(final String xml) {
+
+        Optional<XMLStreamReader> sttlmMtdMaybe = findElement(xml, "SttlmMtd");
+        Optional<XMLStreamReader> clrSysCdMaybe = findElement(xml, "ClrSys", "Cd");
+        Optional<XMLStreamReader> clrSysPrtryMaybe = findElement(xml, "ClrSys", "Prtry");
+
+        if (sttlmMtdMaybe.isPresent() || clrSysCdMaybe.isPresent() || clrSysPrtryMaybe.isPresent()) {
+            SettlementInfo settlementInfo = new SettlementInfo();
+            try {
+                if (sttlmMtdMaybe.isPresent()) {
+
+                    Optional<SettlementMethod> sttlmMtdLabel =
+                            SettlementMethod.findByLabel(sttlmMtdMaybe.get().getElementText());
+                    sttlmMtdLabel.ifPresent(settlementInfo::setSettlementMethod);
+                }
+                if (clrSysCdMaybe.isPresent()) {
+                    settlementInfo.setClrSysCd(clrSysCdMaybe.get().getElementText());
+                }
+                if (clrSysPrtryMaybe.isPresent()) {
+                    settlementInfo.setClrSysPrtry(clrSysPrtryMaybe.get().getElementText());
+                }
+                return Optional.of(settlementInfo);
+            } catch (XMLStreamException e) {
+                log.finer("Error identifying business service: " + e.getMessage());
+            }
+        }
+        return Optional.empty();
+    }
+
+    /**
+     * Finds an XML element within a document by traversing a specified tag hierarchy.
+     *
+     * <p>This method uses an {@link XMLStreamReader} to parse the provided XML document.
+     * It searches for an element that matches the specified sequence of tag names (hierarchy).
+     * For example, to find the {@code <Cd>} tag within {@code <ClrSys>}, you would call:
+     * <pre>
+     *     findElement(xml, "ClrSys", "Cd");
+     * </pre>
+     *
+     * @param xml  the XML document as a {@link String} to search.
+     * @param tags the sequence of tag names that define the hierarchy of the target element.
+     * @return an {@link Optional} containing the {@link XMLStreamReader} positioned at the
+     *         matching element if found; otherwise, an empty {@link Optional}.
+     * @throws NullPointerException     if the {@code xml} or {@code tags} are null.
+     * @throws IllegalArgumentException if the {@code xml} is a blank string.
+     *
+     * @since 9.5.5
+     */
+    public static Optional<XMLStreamReader> findElement(final String xml, String... tags) {
+        Objects.requireNonNull(xml, "XML to parse must not be null");
+        Validate.notBlank(xml, "XML to parse must not be a blank string");
+        Objects.requireNonNull(xml, "localName to find must not be null");
+
+        final XMLInputFactory xif = SafeXmlUtils.inputFactory();
+        int tagsIndex = 0;
+        try {
+            final XMLStreamReader reader =
+                    xif.createXMLStreamReader(new StringReader(MxParseUtils.makeXmlLenient(xml)));
+            while (reader.hasNext()) {
+                int event = reader.next();
+                if (XMLStreamConstants.START_ELEMENT == event) {
+                    if (reader.getLocalName().equals(tags[tagsIndex])) {
+                        if (tagsIndex == tags.length - 1) {
+                            return Optional.of(reader);
+                        }
+                        tagsIndex++;
+                    }
+                }
+            }
+        } catch (XMLStreamException e) {
+            log.log(Level.WARNING, "Error reading XML", e);
+        }
+        return Optional.empty();
     }
 }

@@ -1,5 +1,9 @@
 # Prowide ISO 20022 - CHANGELOG
  
+#### 9.5.5 - SNAPSHOT
+  * Added new SettlementInfo class, and added MxParseUtils#getSettlementInfo to extract it from a raw MX message.
+  * Moved and enhanced the MxSwiftMessage#findElement to support multiple element's path 
+ 
 #### 9.4.7 - August 2024
   * (PW-1958) Fixed the `DefaultMxMetadataStrategy` NPE issue when the amount values are null
 
