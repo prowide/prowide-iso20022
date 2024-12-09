@@ -22,9 +22,80 @@ import com.prowidesoftware.swift.model.MxId;
 import com.prowidesoftware.swift.model.SettlementInfo;
 import com.prowidesoftware.swift.model.SettlementMethod;
 import java.util.Optional;
+import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.XMLStreamReader;
 import org.junit.jupiter.api.Test;
 
 public class MxParseUtilsTest {
+
+    String xml_pacs_008_001_01 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+            + "<Document xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://www.six-interbank-clearing.com/de/pacs.028.001.01.chsepa.02\" xsi:schemaLocation=\"http://www.six-interbank-clearing.com/de/pacs.028.001.01.chsepa.02 pacs.028.001.01.chsepa.02.xsd\">"
+            + "  <FIToFIPmtStsReq>"
+            + "    <GrpHdr>"
+            + "      <MsgId>MSGID-pacs028-20190529-1</MsgId>"
+            + "      <CreDtTm>2019-05-29T09:30:47Z</CreDtTm>"
+            + "      <InstgAgt>"
+            + "        <FinInstnId>"
+            + "          <BICFI>FOOICHBBXXX</BICFI>"
+            + "        </FinInstnId>"
+            + "      </InstgAgt>"
+            + "      <InstdAgt>"
+            + "        <FinInstnId>"
+            + "          <BICFI>FOOTDEFFXXX</BICFI>"
+            + "        </FinInstnId>"
+            + "      </InstdAgt>"
+            + "    </GrpHdr>"
+            + "    <OrgnlGrpInf>"
+            + "      <OrgnlMsgId>MSGID-camt056-20190522-2-SEPA</OrgnlMsgId>"
+            + "      <OrgnlMsgNmId>camt.056.001.01</OrgnlMsgNmId>"
+            + "    </OrgnlGrpInf>"
+            + "    <TxInf>"
+            + "      <StsReqId>STSREQID-pacs028StatusReqId4713</StsReqId>"
+            + "      <OrgnlInstrId>XCORW-xzng943XzmxvoRwIvu5287</OrgnlInstrId>"
+            + "      <OrgnlEndToEndId>1234567891</OrgnlEndToEndId>"
+            + "      <OrgnlTxId>79809477-7-9998</OrgnlTxId>"
+            + "      <OrgnlTxRef>"
+            + "        <SttlmInf>"
+            + "          <SttlmMtd>INDA</SttlmMtd>"
+            + "          <ClrSys>"
+            + "            <Prtry>ABE</Prtry>"
+            + "          </ClrSys>"
+            + "        </SttlmInf>"
+            + "        <PmtTpInf>"
+            + "          <SvcLvl>"
+            + "            <Cd>SEPA</Cd>"
+            + "          </SvcLvl>"
+            + "        </PmtTpInf>"
+            + "        <Dbtr>"
+            + "          <Nm>Horlogerie du Joux, Mueller et Cie.</Nm>"
+            + "        </Dbtr>"
+            + "        <DbtrAcct>"
+            + "          <Id>"
+            + "            <IBAN>CH5598064001234567890</IBAN>"
+            + "          </Id>"
+            + "        </DbtrAcct>"
+            + "        <DbtrAgt>"
+            + "          <FinInstnId>"
+            + "            <BICFI>FOOICHBBXXX</BICFI>"
+            + "          </FinInstnId>"
+            + "        </DbtrAgt>"
+            + "        <CdtrAgt>"
+            + "          <FinInstnId>"
+            + "            <BICFI>FOOYDEFFXXX</BICFI>"
+            + "          </FinInstnId>"
+            + "        </CdtrAgt>"
+            + "        <Cdtr>"
+            + "          <Nm>Uhrengrosshandel Buxtehude, Peter Maier und Co.</Nm>"
+            + "        </Cdtr>"
+            + "        <CdtrAcct>"
+            + "          <Id>"
+            + "            <IBAN>DE47100100001234567890</IBAN>"
+            + "          </Id>"
+            + "        </CdtrAcct>"
+            + "      </OrgnlTxRef>"
+            + "    </TxInf>"
+            + "  </FIToFIPmtStsReq>"
+            + "</Document>";
 
     @Test
     public void testIdentifyMessage_01() {
@@ -300,81 +371,89 @@ public class MxParseUtilsTest {
 
     @Test
     void identifySettlementMethodINDA() {
-        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
-                + "<Document xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://www.six-interbank-clearing.com/de/pacs.028.001.01.chsepa.02\" xsi:schemaLocation=\"http://www.six-interbank-clearing.com/de/pacs.028.001.01.chsepa.02 pacs.028.001.01.chsepa.02.xsd\">"
-                + "  <FIToFIPmtStsReq>"
-                + "    <GrpHdr>"
-                + "      <MsgId>MSGID-pacs028-20190529-1</MsgId>"
-                + "      <CreDtTm>2019-05-29T09:30:47Z</CreDtTm>"
-                + "      <InstgAgt>"
-                + "        <FinInstnId>"
-                + "          <BICFI>FOOICHBBXXX</BICFI>"
-                + "        </FinInstnId>"
-                + "      </InstgAgt>"
-                + "      <InstdAgt>"
-                + "        <FinInstnId>"
-                + "          <BICFI>FOOTDEFFXXX</BICFI>"
-                + "        </FinInstnId>"
-                + "      </InstdAgt>"
-                + "    </GrpHdr>"
-                + "    <OrgnlGrpInf>"
-                + "      <OrgnlMsgId>MSGID-camt056-20190522-2-SEPA</OrgnlMsgId>"
-                + "      <OrgnlMsgNmId>camt.056.001.01</OrgnlMsgNmId>"
-                + "    </OrgnlGrpInf>"
-                + "    <TxInf>"
-                + "      <StsReqId>STSREQID-pacs028StatusReqId4713</StsReqId>"
-                + "      <OrgnlInstrId>XCORW-xzng943XzmxvoRwIvu5287</OrgnlInstrId>"
-                + "      <OrgnlEndToEndId>1234567891</OrgnlEndToEndId>"
-                + "      <OrgnlTxId>79809477-7-9998</OrgnlTxId>"
-                + "      <OrgnlTxRef>"
-                + "        <SttlmInf>"
-                + "          <SttlmMtd>INDA</SttlmMtd>"
-                + "          <ClrSys>"
-                + "            <Prtry>ABE</Prtry>"
-                + "          </ClrSys>"
-                + "        </SttlmInf>"
-                + "        <PmtTpInf>"
-                + "          <SvcLvl>"
-                + "            <Cd>SEPA</Cd>"
-                + "          </SvcLvl>"
-                + "        </PmtTpInf>"
-                + "        <Dbtr>"
-                + "          <Nm>Horlogerie du Joux, Mueller et Cie.</Nm>"
-                + "        </Dbtr>"
-                + "        <DbtrAcct>"
-                + "          <Id>"
-                + "            <IBAN>CH5598064001234567890</IBAN>"
-                + "          </Id>"
-                + "        </DbtrAcct>"
-                + "        <DbtrAgt>"
-                + "          <FinInstnId>"
-                + "            <BICFI>FOOICHBBXXX</BICFI>"
-                + "          </FinInstnId>"
-                + "        </DbtrAgt>"
-                + "        <CdtrAgt>"
-                + "          <FinInstnId>"
-                + "            <BICFI>FOOYDEFFXXX</BICFI>"
-                + "          </FinInstnId>"
-                + "        </CdtrAgt>"
-                + "        <Cdtr>"
-                + "          <Nm>Uhrengrosshandel Buxtehude, Peter Maier und Co.</Nm>"
-                + "        </Cdtr>"
-                + "        <CdtrAcct>"
-                + "          <Id>"
-                + "            <IBAN>DE47100100001234567890</IBAN>"
-                + "          </Id>"
-                + "        </CdtrAcct>"
-                + "      </OrgnlTxRef>"
-                + "    </TxInf>"
-                + "  </FIToFIPmtStsReq>"
-                + "</Document>";
-        MxId id = MxParseUtils.identifyMessage(xml).orElse(null);
+        MxId id = MxParseUtils.identifyMessage(xml_pacs_008_001_01).orElse(null);
         assertNotNull(id);
         assertEquals("pacs.028.001.01", id.id());
         assertFalse(id.getBusinessService().isPresent());
-        Optional<SettlementInfo> settlementInfo = MxParseUtils.getSettlementInfo(xml);
+        Optional<SettlementInfo> settlementInfo = MxParseUtils.getSettlementInfo(xml_pacs_008_001_01);
         assertTrue(settlementInfo.isPresent());
         assertEquals(SettlementMethod.INDA, settlementInfo.get().getSettlementMethod());
         assertEquals("ABE", settlementInfo.get().getClrSysPrtry());
+    }
+
+    @Test
+    void testFindFieldValueByTags() throws XMLStreamException {
+
+        MxId id = MxParseUtils.identifyMessage(xml_pacs_008_001_01).orElse(null);
+        assertNotNull(id);
+        assertEquals("pacs.028.001.01", id.id());
+
+        Optional<XMLStreamReader> msgId =
+                MxParseUtils.findElementByTags(xml_pacs_008_001_01, "FIToFIPmtStsReq", "GrpHdr", "MsgId");
+        Optional<XMLStreamReader> BICFI = MxParseUtils.findElementByTags(
+                xml_pacs_008_001_01, "FIToFIPmtStsReq", "GrpHdr", "InstgAgt", "FinInstnId", "BICFI");
+        Optional<XMLStreamReader> sttlmMtd = MxParseUtils.findElementByTags(
+                xml_pacs_008_001_01, "FIToFIPmtStsReq", "TxInf", "OrgnlTxRef", "SttlmInf", "SttlmMtd");
+        Optional<XMLStreamReader> prtry = MxParseUtils.findElementByTags(
+                xml_pacs_008_001_01, "FIToFIPmtStsReq", "TxInf", "OrgnlTxRef", "SttlmInf", "ClrSys", "Prtry");
+        Optional<XMLStreamReader> IBAN = MxParseUtils.findElementByTags(
+                xml_pacs_008_001_01, "FIToFIPmtStsReq", "TxInf", "OrgnlTxRef", "CdtrAcct", "Id", "IBAN");
+        Optional<XMLStreamReader> IBAN_invalid =
+                MxParseUtils.findElementByTags(xml_pacs_008_001_01, "FIToFIPmtStsReq", "TxInf", "Id", "Foo", "IBAN");
+
+        assertTrue(msgId.isPresent());
+        assertEquals("MSGID-pacs028-20190529-1", msgId.get().getElementText());
+
+        assertTrue(BICFI.isPresent());
+        assertEquals("FOOICHBBXXX", BICFI.get().getElementText());
+
+        assertTrue(sttlmMtd.isPresent());
+        assertEquals("INDA", sttlmMtd.get().getElementText());
+
+        assertTrue(prtry.isPresent());
+        assertEquals("ABE", prtry.get().getElementText());
+
+        assertTrue(IBAN.isPresent());
+        assertEquals("DE47100100001234567890", IBAN.get().getElementText());
+
+        assertFalse(IBAN_invalid.isPresent());
+    }
+
+    @Test
+    void testFindFieldValueByAbsolutePath() throws XMLStreamException {
+
+        MxId id = MxParseUtils.identifyMessage(xml_pacs_008_001_01).orElse(null);
+        assertNotNull(id);
+        assertEquals("pacs.028.001.01", id.id());
+
+        Optional<XMLStreamReader> msgId =
+                MxParseUtils.findElementByPath(xml_pacs_008_001_01, "/Document/FIToFIPmtStsReq/GrpHdr/MsgId");
+        Optional<XMLStreamReader> BICFI = MxParseUtils.findElementByPath(
+                xml_pacs_008_001_01, "/Document/FIToFIPmtStsReq/GrpHdr/InstgAgt/FinInstnId/BICFI");
+        Optional<XMLStreamReader> sttlmMtd = MxParseUtils.findElementByPath(
+                xml_pacs_008_001_01, "/Document/FIToFIPmtStsReq/TxInf/OrgnlTxRef/SttlmInf/SttlmMtd");
+        Optional<XMLStreamReader> prtry = MxParseUtils.findElementByPath(
+                xml_pacs_008_001_01, "/Document/FIToFIPmtStsReq/TxInf/OrgnlTxRef/SttlmInf/ClrSys/Prtry");
+        Optional<XMLStreamReader> IBAN = MxParseUtils.findElementByPath(
+                xml_pacs_008_001_01, "/Document/FIToFIPmtStsReq/TxInf/OrgnlTxRef/CdtrAcct/Id/IBAN");
+        Optional<XMLStreamReader> IBAN_invalid =
+                MxParseUtils.findElementByPath(xml_pacs_008_001_01, "/Document/FIToFIPmtStsReq/TxInf/Id/Foo/IBAN");
+
+        assertTrue(msgId.isPresent());
+        assertEquals("MSGID-pacs028-20190529-1", msgId.get().getElementText());
+
+        assertTrue(BICFI.isPresent());
+        assertEquals("FOOICHBBXXX", BICFI.get().getElementText());
+
+        assertTrue(sttlmMtd.isPresent());
+        assertEquals("INDA", sttlmMtd.get().getElementText());
+
+        assertTrue(prtry.isPresent());
+        assertEquals("ABE", prtry.get().getElementText());
+
+        assertTrue(IBAN.isPresent());
+        assertEquals("DE47100100001234567890", IBAN.get().getElementText());
+
+        assertFalse(IBAN_invalid.isPresent());
     }
 }

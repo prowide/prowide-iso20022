@@ -15,7 +15,7 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
-import static com.prowidesoftware.swift.model.mx.MxParseUtils.findElement;
+import static com.prowidesoftware.swift.model.mx.MxParseUtils.findElementByTags;
 
 import java.util.Optional;
 import java.util.logging.Logger;
@@ -58,7 +58,7 @@ public class NamespaceReader {
      * @return found namespace or empty if the element is not found or does not contain a namespace
      */
     public static Optional<String> findNamespaceForLocalName(final String xml, final String localName) {
-        Optional<XMLStreamReader> reader = findElement(xml, localName);
+        Optional<XMLStreamReader> reader = findElementByTags(xml, localName);
         return reader.map(NamespaceReader::readNamespace);
     }
 
@@ -89,6 +89,6 @@ public class NamespaceReader {
      * @return true if at least one element with the given name is found
      */
     public static boolean elementExists(final String xml, final String localName) {
-        return findElement(xml, localName).isPresent();
+        return findElementByTags(xml, localName).isPresent();
     }
 }
