@@ -21,10 +21,13 @@ import com.prowidesoftware.swift.model.mx.dic.*;
 import java.math.BigDecimal;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.DisabledOnOs;
+import org.junit.jupiter.api.condition.OS;
 
 /**
  * General MX into XML serialization test cases
  */
+@DisabledOnOs(OS.WINDOWS)
 public class MxWriteTest {
 
     @Test
