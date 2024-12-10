@@ -44,7 +44,7 @@ import org.xml.sax.XMLReader;
  * @since 9.1.2
  */
 public class MxParseUtils {
-    private static final transient Logger log = Logger.getLogger(MxParseUtils.class.getName());
+    private static final Logger log = Logger.getLogger(MxParseUtils.class.getName());
 
     /**
      * Creates a {@link SAXSource} for the given XML, filtering a specific element with the
@@ -379,16 +379,17 @@ public class MxParseUtils {
                 switch (event) {
                     case XMLStreamConstants.START_ELEMENT:
                         // Push the current element onto the path stack
-                        pathStack.push(reader.getLocalName());
-                        // Build the current path
-                        String currentPath = buildCurrentPath(pathStack);
+                        if (!reader.getLocalName().equals("RequestPayload")) {
+                            pathStack.push(reader.getLocalName());
+                            // Build the current path
+                            String currentPath = buildCurrentPath(pathStack);
 
-                        // Check if the current path matches the target path
-                        if (currentPath.equals(targetPath)) {
-                            return Optional.of(reader);
+                            // Check if the current path matches the target path
+                            if (currentPath.equals(targetPath)) {
+                                return Optional.of(reader);
+                            }
+                            break;
                         }
-                        break;
-
                     case XMLStreamConstants.END_ELEMENT:
                         // Pop the element from the path stack
                         if (!pathStack.isEmpty()) {

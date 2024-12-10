@@ -420,7 +420,7 @@ public class MxParseUtilsTest {
     }
 
     @Test
-    void testFindFieldValueByAbsolutePath() throws XMLStreamException {
+    void testFindFieldValueByAbsolutePathPacs() throws XMLStreamException {
 
         MxId id = MxParseUtils.identifyMessage(xml_pacs_008_001_01).orElse(null);
         assertNotNull(id);
@@ -453,6 +453,101 @@ public class MxParseUtilsTest {
 
         assertTrue(IBAN.isPresent());
         assertEquals("DE47100100001234567890", IBAN.get().getElementText());
+
+        assertFalse(IBAN_invalid.isPresent());
+    }
+
+    @Test
+    void testFindFieldValueByAbsolutePathCamt() throws XMLStreamException {
+
+        String xml_camt_053_001_12 = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n" +
+                "<RequestPayload>\n" +
+                "<head:AppHdr xmlns:head=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.04\">\n" +
+                "    <head:Fr>\n" +
+                "        <head:FIId>\n" +
+                "            <head:FinInstnId>\n" +
+                "                <head:BICFI>FOOBAR22XXX</head:BICFI>\n" +
+                "            </head:FinInstnId>\n" +
+                "        </head:FIId>\n" +
+                "    </head:Fr>\n" +
+                "    <head:To>\n" +
+                "        <head:FIId>\n" +
+                "            <head:FinInstnId>\n" +
+                "                <head:BICFI>ABNABRSPBHE</head:BICFI>\n" +
+                "            </head:FinInstnId>\n" +
+                "        </head:FIId>\n" +
+                "    </head:To>\n" +
+                "    <head:BizMsgIdr>asdfasdsdd</head:BizMsgIdr>\n" +
+                "    <head:MsgDefIdr>camt.053.001.12</head:MsgDefIdr>\n" +
+                "    <head:CreDt>2024-12-09T09:45:41-03:00</head:CreDt>\n" +
+                "    <head:BizPrcgDt>2024-12-09T09:45:41-03:00</head:BizPrcgDt>\n" +
+                "</head:AppHdr>\n" +
+                "<camt:Document xmlns:camt=\"urn:iso:std:iso:20022:tech:xsd:camt.053.001.12\">\n" +
+                "    <camt:BkToCstmrStmt>\n" +
+                "        <camt:GrpHdr>\n" +
+                "            <camt:MsgId>asdfasd</camt:MsgId>\n" +
+                "            <camt:CreDtTm>2024-12-09T09:36:46-03:00</camt:CreDtTm>\n" +
+                "            <camt:MsgPgntn>\n" +
+                "                <camt:PgNb>1234</camt:PgNb>\n" +
+                "                <camt:LastPgInd>false</camt:LastPgInd>\n" +
+                "            </camt:MsgPgntn>\n" +
+                "        </camt:GrpHdr>\n" +
+                "        <camt:Stmt>\n" +
+                "            <camt:Id>asdfasdf</camt:Id>\n" +
+                "            <camt:ElctrncSeqNb>2233</camt:ElctrncSeqNb>\n" +
+                "            <camt:LglSeqNb>2445</camt:LglSeqNb>\n" +
+                "            <camt:Acct>\n" +
+                "                <camt:Ccy>USD</camt:Ccy>\n" +
+                "                <camt:Nm>asdff</camt:Nm>\n" +
+                "                <camt:Prxy>\n" +
+                "                    <camt:Tp>\n" +
+                "                        <camt:Cd>TELE</camt:Cd>\n" +
+                "                    </camt:Tp>\n" +
+                "                    <camt:Id>23423</camt:Id>\n" +
+                "                </camt:Prxy>\n" +
+                "            </camt:Acct>\n" +
+                "            <camt:Bal>\n" +
+                "                <camt:Tp>\n" +
+                "                    <camt:CdOrPrtry>\n" +
+                "                        <camt:Cd>FWAV</camt:Cd>\n" +
+                "                    </camt:CdOrPrtry>\n" +
+                "                </camt:Tp>\n" +
+                "                <camt:Amt Ccy=\"USD\">2323</camt:Amt>\n" +
+                "                <camt:CdtDbtInd>CRDT</camt:CdtDbtInd>\n" +
+                "                <camt:Dt>\n" +
+                "                    <camt:Dt>2024-12-10</camt:Dt>\n" +
+                "                </camt:Dt>\n" +
+                "            </camt:Bal>\n" +
+                "        </camt:Stmt>\n" +
+                "    </camt:BkToCstmrStmt>\n" +
+                "</camt:Document>\n" +
+                "</RequestPayload>";
+
+        MxId id = MxParseUtils.identifyMessage(xml_camt_053_001_12).orElse(null);
+        assertNotNull(id);
+        assertEquals("camt.053.001.12", id.id());
+
+        Optional<XMLStreamReader> BICFI =
+                MxParseUtils.findElementByPath(xml_camt_053_001_12, "/AppHdr/Fr/FIId/FinInstnId/BICFI");
+        Optional<XMLStreamReader> bizPrcgDt = MxParseUtils.findElementByPath(xml_camt_053_001_12, "/AppHdr/BizPrcgDt");
+        Optional<XMLStreamReader> pgNb =
+                MxParseUtils.findElementByPath(xml_camt_053_001_12, "/Document/BkToCstmrStmt/GrpHdr/MsgPgntn/PgNb");
+        Optional<XMLStreamReader> lastPgInd = MxParseUtils.findElementByPath(
+                xml_camt_053_001_12, "/Document/BkToCstmrStmt/GrpHdr/MsgPgntn/LastPgInd");
+        Optional<XMLStreamReader> IBAN_invalid =
+                MxParseUtils.findElementByPath(xml_camt_053_001_12, "/Document/FIToFIPmtStsReq/TxInf/Id/Foo/IBAN");
+
+        assertTrue(BICFI.isPresent());
+        assertEquals("FOOBAR22XXX", BICFI.get().getElementText());
+
+        assertTrue(bizPrcgDt.isPresent());
+        assertEquals("2024-12-09T09:45:41-03:00", bizPrcgDt.get().getElementText());
+
+        assertTrue(pgNb.isPresent());
+        assertEquals("1234", pgNb.get().getElementText());
+
+        assertTrue(lastPgInd.isPresent());
+        assertEquals("false", lastPgInd.get().getElementText());
 
         assertFalse(IBAN_invalid.isPresent());
     }
