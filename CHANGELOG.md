@@ -1,5 +1,8 @@
 # Prowide ISO 20022 - CHANGELOG
  
+#### 9.4.8 - SNAPSHOT
+  * (PW-2113) Added support for extracting comments from Xml messages, and added a new method to create an MT from a multi-format message
+ 
 #### 9.4.7 - August 2024
   * (PW-1958) Fixed the `DefaultMxMetadataStrategy` NPE issue when the amount values are null
 
