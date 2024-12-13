@@ -360,7 +360,7 @@ public class MxParseUtils {
      * @throws IllegalArgumentException if the {@code xml} is a blank string.
      * @since 9.5.5
      */
-    public static Optional<XMLStreamReader> findElementByPath(String xml, String targetPath) {
+    public static Optional<XMLStreamReader> findElementByAbsolutePath(String xml, String targetPath) {
         Objects.requireNonNull(xml, "XML to parse must not be null");
         Validate.notBlank(xml, "XML to parse must not be a blank string");
         Objects.requireNonNull(xml, "targetPath to find must not be null");
