@@ -298,7 +298,7 @@ public class MxParseUtils {
      *
      * <p>This method uses {@link #parseComments(String)} to extract all comments
      * from the XML, filters the comments to include only those that start with the
-     * specified prefix, removes the prefix from each matching comment.
+     * specified prefix.
      *
      * @param xml       the XML document as a {@link String} to parse
      * @param startWith the prefix to filter comments by, leading whitespaces are ignored
@@ -318,8 +318,7 @@ public class MxParseUtils {
      * Parses comments from the given XML document that contains a specific string.
      *
      * <p>This method uses {@link #parseComments(String)} to extract all comments
-     * from the XML, filters the comments to include only those that contains a specific string,
-     * removes the prefix from each matching comment.
+     * from the XML, filters the comments to include only those that contains a specific string.
      *
      * @param xml       the XML document as a {@link String} to parse
      * @param contains the content to filter comments by
