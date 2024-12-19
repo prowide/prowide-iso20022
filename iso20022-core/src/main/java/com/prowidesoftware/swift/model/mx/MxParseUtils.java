@@ -256,6 +256,9 @@ public class MxParseUtils {
      * <p>This method uses an {@link XMLStreamReader} to parse the provided XML string
      * and extract all comments present in the document. Comments are identified as
      * XML elements of type {@link XMLStreamConstants#COMMENT}.
+     * <p>
+     * All extracted comments are trimmed before being added to the result list. Meaning they will not contain any
+     * leading or trailing whitespace.
      *
      * @param xml the XML document as a {@link String} to parse
      * @return a {@link List} of comments extracted from the XML document
@@ -267,7 +270,6 @@ public class MxParseUtils {
     public static List<String> parseComments(final String xml) {
         Objects.requireNonNull(xml, "XML to parse must not be null");
         Validate.notBlank(xml, "XML to parse must not be a blank string");
-        Objects.requireNonNull(xml, "tags to find must not be null");
 
         List<String> result = new ArrayList<>();
 
@@ -279,7 +281,9 @@ public class MxParseUtils {
                 int event = reader.next();
                 if (event == XMLStreamConstants.COMMENT) {
                     String comment = reader.getText();
-                    result.add(comment);
+                    if (comment != null) {
+                        result.add(comment.trim());
+                    }
                 }
             }
             reader.close();
@@ -297,7 +301,7 @@ public class MxParseUtils {
      * specified prefix, removes the prefix from each matching comment.
      *
      * @param xml       the XML document as a {@link String} to parse
-     * @param startWith the prefix to filter comments by
+     * @param startWith the prefix to filter comments by, leading whitespaces are ignored
      * @return a {@link List} of filtered and cropped comments that start with the given prefix
      * @throws NullPointerException if the {@code xml} is null
      * @throws IllegalArgumentException if the {@code xml} is blank or empty
@@ -306,7 +310,6 @@ public class MxParseUtils {
      */
     public static List<String> parseCommentsStartsWith(final String xml, final String startWith) {
         return parseComments(xml).stream()
-                .map(String::trim) // Trim each string before filtering
                 .filter(c -> c.startsWith(startWith)) // Filter comments that start with the given prefix
                 .collect(Collectors.toList());
     }
@@ -328,13 +331,12 @@ public class MxParseUtils {
      */
     public static List<String> parseCommentsContains(final String xml, final String contains) {
         return parseComments(xml).stream()
-                .map(String::trim) // Trim each string before filtering
                 .filter(c -> c.contains(contains)) // Filter comments that start with the given prefix
                 .collect(Collectors.toList());
     }
 
     /**
-     * Parses an {@link AbstractMT} message from a multiformat XML message.
+     * Parses an {@link AbstractMT} message from a multi-format XML message.
      *
      * <p>This method searches for MT (Message Type) content within the comments
      * of the provided XML document. Specifically, it extracts comments that start
@@ -344,7 +346,7 @@ public class MxParseUtils {
      * <p>If an error occurs during parsing or no matching comments are found, the method
      * returns an empty {@link Optional}.</p>
      *
-     * @param xml the XML document as a {@link String} containing the multiformat message
+     * @param xml the XML document as a {@link String} containing the multi-format message
      * @return an {@link Optional} containing the parsed {@link AbstractMT} if successful;
      *         otherwise, an empty {@link Optional}
      * @throws NullPointerException if the {@code xml} is null

@@ -407,6 +407,11 @@ public class MxParseUtilsTest {
     public void testParseComments() {
         List<String> strings = MxParseUtils.parseComments(xml);
         assertEquals(3, strings.size());
+        assertEquals(
+                "{1:F01MTUZZZ30XXXX0000000000}{2:O2021711241101YYYXXX30XXXX00000000002411011711N}{3:{111:004}{121:2f093ecf-6359-486e-befd-1f9840c0c740}}{4:^~:20:IID/7706.0/a9689^~:21:E2E/7706.0/7f159^~:32A:241101EUR1000,^~:52A:YYYABEB0XXX^~:57A:MTUZZZ30XXX^~:58A:YYYCBEB0XXX^~:72:/INS/YYYXXX30XXX^~-}{5:{CHK:A87C6AB16C39}{TNG:}}",
+                strings.get(0));
+        assertEquals("TranslationResult=TROK", strings.get(1));
+        assertEquals("TranslationInfo version 1.0.0.1", strings.get(2));
     }
 
     @Test
@@ -419,14 +424,14 @@ public class MxParseUtilsTest {
     }
 
     @Test
-    public void testParseCommentsContents() {
-        List<String> strings = MxParseUtils.parseCommentsStartsWith(xml, "TranslationResult");
+    public void testParseCommentsContains() {
+        List<String> strings = MxParseUtils.parseCommentsContains(xml, "TROK");
         assertEquals(1, strings.size());
         assertEquals("TranslationResult=TROK", strings.get(0));
     }
 
     @Test
-    public void testParseMtFromMultiformatMessage() {
+    public void testParseMtFromMultiFormatMessage() {
         Optional<AbstractMT> abstractMT = MxParseUtils.parseMtFromMultiformatMessage(xml);
         assertTrue(abstractMT.isPresent());
         assertEquals("MTUZZZ30XXXX", abstractMT.get().getReceiver());
