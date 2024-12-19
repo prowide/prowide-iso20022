@@ -16,25 +16,17 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.ProwideException;
-import com.prowidesoftware.deprecation.ProwideDeprecated;
-import com.prowidesoftware.deprecation.TargetYear;
 import com.prowidesoftware.swift.model.DistinguishedName;
 import com.prowidesoftware.swift.model.MxId;
 import com.prowidesoftware.swift.model.SettlementInfo;
 import com.prowidesoftware.swift.model.SettlementMethod;
 import com.prowidesoftware.swift.model.mt.AbstractMT;
 import com.prowidesoftware.swift.utils.SafeXmlUtils;
-import java.io.IOException;
-import java.io.StringReader;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.Stack;
-import java.util.concurrent.ExecutionException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.util.stream.Collectors;
+import org.apache.commons.lang3.Validate;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXParseException;
+import org.xml.sax.XMLReader;
+
 import javax.xml.bind.*;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 import javax.xml.stream.XMLInputFactory;
@@ -42,16 +34,23 @@ import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 import javax.xml.transform.sax.SAXSource;
-import org.apache.commons.lang3.Validate;
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXParseException;
-import org.xml.sax.XMLReader;
+import java.io.IOException;
+import java.io.StringReader;
+import java.util.*;
+import java.util.concurrent.ExecutionException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 /**
  * @since 9.1.2
  */
 public class MxParseUtils {
     private static final Logger log = Logger.getLogger(MxParseUtils.class.getName());
+    private static String regex = "^(\\/|\\/\\/)([a-zA-Z_][\\w\\-\\.]*)(\\/([a-zA-Z_][\\w\\-\\.]*))*$";
+    private static Pattern pattern = Pattern.compile(regex);
 
     /**
      * Creates a {@link SAXSource} for the given XML, filtering a specific element with the
@@ -266,9 +265,8 @@ public class MxParseUtils {
      *
      * @param xml the XML document as a {@link String} to parse
      * @return a {@link List} of comments extracted from the XML document
-     * @throws NullPointerException if the {@code xml} is null
+     * @throws NullPointerException     if the {@code xml} is null
      * @throws IllegalArgumentException if the {@code xml} is blank or empty
-     *
      * @since 9.5.5
      */
     public static List<String> parseComments(final String xml) {
@@ -307,9 +305,8 @@ public class MxParseUtils {
      * @param xml       the XML document as a {@link String} to parse
      * @param startWith the prefix to filter comments by, leading whitespaces are ignored
      * @return a {@link List} of filtered and cropped comments that start with the given prefix
-     * @throws NullPointerException if the {@code xml} is null
+     * @throws NullPointerException     if the {@code xml} is null
      * @throws IllegalArgumentException if the {@code xml} is blank or empty
-     *
      * @since 9.5.5
      */
     public static List<String> parseCommentsStartsWith(final String xml, final String startWith) {
@@ -324,12 +321,11 @@ public class MxParseUtils {
      * <p>This method uses {@link #parseComments(String)} to extract all comments
      * from the XML, filters the comments to include only those that contains a specific string.
      *
-     * @param xml       the XML document as a {@link String} to parse
+     * @param xml      the XML document as a {@link String} to parse
      * @param contains the content to filter comments by
      * @return a {@link List} of filtered and cropped comments that start with the given prefix
-     * @throws NullPointerException if the {@code xml} is null
+     * @throws NullPointerException     if the {@code xml} is null
      * @throws IllegalArgumentException if the {@code xml} is blank or empty
-     *
      * @since 9.5.5
      */
     public static List<String> parseCommentsContains(final String xml, final String contains) {
@@ -351,9 +347,8 @@ public class MxParseUtils {
      *
      * @param xml the XML document as a {@link String} containing the multi-format message
      * @return an {@link Optional} containing the parsed {@link AbstractMT} if successful;
-     *         otherwise, an empty {@link Optional}
+     * otherwise, an empty {@link Optional}
      * @throws NullPointerException if the {@code xml} is null
-     *
      * @since 9.5.5
      */
     public static Optional<AbstractMT> parseMtFromMultiformatMessage(final String xml) {
@@ -471,7 +466,7 @@ public class MxParseUtils {
      * It searches for an element that matches the specified sequence of tag names (hierarchy).
      * For example, to find the {@code <Cd>} tag within {@code <ClrSys>}, you would call:
      * <pre>
-     *     findElement(xml, "ClrSys", "Cd");
+     *     findElementByPath(xml, /Document/BkToCstmrStmt/GrpHdr/MsgPgntn/PgNb);
      * </pre>
      *
      * @param xml        the XML document as a {@link String} to search.
@@ -482,17 +477,37 @@ public class MxParseUtils {
      * @throws IllegalArgumentException if the {@code xml} is a blank string.
      * @since 9.5.5
      */
-    public static Optional<XMLStreamReader> findElementByAbsolutePath(String xml, String targetPath) {
-        Objects.requireNonNull(xml, "XML to parse must not be null");
-        Validate.notBlank(xml, "XML to parse must not be a blank string");
-        Objects.requireNonNull(xml, "targetPath to find must not be null");
+
+    public static Optional<XMLStreamReader> findElementByPath(String xml, String targetPath) {
+        // Validate inputs
+        if (xml == null || targetPath == null || targetPath.isEmpty()) {
+            return Optional.empty();
+        }
+
+        // Define the regex to detect if the path is absolute or relative
+        Matcher matcher = pattern.matcher(targetPath);
+
+        // Check if the path matches the expected format
+        if (!matcher.matches()) {
+            throw new IllegalArgumentException("Invalid path format: " + targetPath);
+        }
+
+        //check if is valid expresion if not throws exception
+        boolean isValidExpression = matcher.matches();
+        if (!isValidExpression) {
+            throw new IllegalArgumentException("Invalid path format: " + targetPath);
+        }
+
+        // Check if the path is relative or absolute
+        boolean isRelative = targetPath.startsWith("//");
+        String[] pathSegments = targetPath.split("/");
+
         XMLInputFactory factory = XMLInputFactory.newInstance();
-
         try {
+            final XMLStreamReader reader = factory.createXMLStreamReader(new StringReader(xml));
 
-            final XMLStreamReader reader =
-                    factory.createXMLStreamReader(new StringReader(MxParseUtils.makeXmlLenient(xml)));
-
+            // Stack to track the path elements as we iterate through XML
+            boolean pathMatched = false;
             Stack<String> pathStack = new Stack<>();
 
             while (reader.hasNext()) {
@@ -500,20 +515,37 @@ public class MxParseUtils {
 
                 switch (event) {
                     case XMLStreamConstants.START_ELEMENT:
-                        // Push the current element onto the path stack
                         if (!reader.getLocalName().equals("RequestPayload")) {
-                            pathStack.push(reader.getLocalName());
-                            // Build the current path
-                            String currentPath = buildCurrentPath(pathStack);
+                            String currentElement = reader.getLocalName();  // Get local name (no namespace)
 
-                            // Check if the current path matches the target path
-                            if (currentPath.equals(targetPath)) {
+                            if (isRelative) {
+                                // If it's a relative path, check if it matches the current path segment
+                                if (currentElement.equals(pathSegments[pathSegments.length - 1])) {
+                                    pathMatched = true;  // We matched the entire path
+
+                                }
+                            } else {
+                                // If it's an absolute path, match from the start
+                                pathStack.push(reader.getLocalName());
+                                // Build the current path
+                                String currentPath = buildCurrentPath(pathStack);
+
+                                // Check if the current path matches the target path
+                                if (currentPath.equals(targetPath)) {
+                                    return Optional.of(reader);
+                                }
+                                break;
+
+                            }
+
+                            // If we found a match, return the reader
+                            if (pathMatched) {
                                 return Optional.of(reader);
                             }
                             break;
                         }
+
                     case XMLStreamConstants.END_ELEMENT:
-                        // Pop the element from the path stack
                         if (!pathStack.isEmpty()) {
                             pathStack.pop();
                         }
@@ -524,18 +556,12 @@ public class MxParseUtils {
                 }
             }
         } catch (XMLStreamException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
 
-        return Optional.empty(); // Return empty if the path is not found
+        return Optional.empty();  // Return empty if no match
     }
 
-    /**
-     *
-     * @param pathStack
-     * @return the current path
-     * Join the stack elements with "/" to form the current path
-     */
     private static String buildCurrentPath(Stack<String> pathStack) {
         return "/" + String.join("/", pathStack);
     }
