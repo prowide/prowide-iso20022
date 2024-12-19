@@ -18,16 +18,21 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.ProwideException;
 import com.prowidesoftware.swift.model.DistinguishedName;
 import com.prowidesoftware.swift.model.MxId;
+import com.prowidesoftware.swift.model.mt.AbstractMT;
 import com.prowidesoftware.swift.model.SettlementInfo;
 import com.prowidesoftware.swift.model.SettlementMethod;
 import com.prowidesoftware.swift.utils.SafeXmlUtils;
+import java.io.IOException;
 import java.io.StringReader;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Stack;
 import java.util.concurrent.ExecutionException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 import javax.xml.bind.*;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 import javax.xml.stream.XMLInputFactory;
@@ -246,6 +251,122 @@ public class MxParseUtils {
      */
     public static String makeXmlLenient(String xml) {
         return xml != null ? xml.replaceFirst("(?i)<\\?XML", "<?xml") : null;
+    }
+
+    /**
+     * Parses all comments from the given XML document.
+     *
+     * <p>This method uses an {@link XMLStreamReader} to parse the provided XML string
+     * and extract all comments present in the document. Comments are identified as
+     * XML elements of type {@link XMLStreamConstants#COMMENT}.
+     * <p>
+     * All extracted comments are trimmed before being added to the result list. Meaning they will not contain any
+     * leading or trailing whitespace.
+     *
+     * @param xml the XML document as a {@link String} to parse
+     * @return a {@link List} of comments extracted from the XML document
+     * @throws NullPointerException if the {@code xml} is null
+     * @throws IllegalArgumentException if the {@code xml} is blank or empty
+     *
+     * @since 9.4.8
+     */
+    public static List<String> parseComments(final String xml) {
+        Objects.requireNonNull(xml, "XML to parse must not be null");
+        Validate.notBlank(xml, "XML to parse must not be a blank string");
+
+        List<String> result = new ArrayList<>();
+
+        final XMLInputFactory factory = SafeXmlUtils.inputFactory();
+        try {
+            XMLStreamReader reader = factory.createXMLStreamReader(new StringReader(MxParseUtils.makeXmlLenient(xml)));
+
+            while (reader.hasNext()) {
+                int event = reader.next();
+                if (event == XMLStreamConstants.COMMENT) {
+                    String comment = reader.getText();
+                    if (comment != null) {
+                        result.add(comment.trim());
+                    }
+                }
+            }
+            reader.close();
+        } catch (XMLStreamException e) {
+            log.log(Level.WARNING, "Error parsing XML comments", e);
+        }
+        return result;
+    }
+
+    /**
+     * Parses comments from the given XML document that start with a specific prefix.
+     *
+     * <p>This method uses {@link #parseComments(String)} to extract all comments
+     * from the XML, filters the comments to include only those that start with the
+     * specified prefix.
+     *
+     * @param xml       the XML document as a {@link String} to parse
+     * @param startWith the prefix to filter comments by, leading whitespaces are ignored
+     * @return a {@link List} of filtered and cropped comments that start with the given prefix
+     * @throws NullPointerException if the {@code xml} is null
+     * @throws IllegalArgumentException if the {@code xml} is blank or empty
+     *
+     * @since 9.4.8
+     */
+    public static List<String> parseCommentsStartsWith(final String xml, final String startWith) {
+        return parseComments(xml).stream()
+                .filter(c -> c.startsWith(startWith)) // Filter comments that start with the given prefix
+                .collect(Collectors.toList());
+    }
+
+    /**
+     * Parses comments from the given XML document that contains a specific string.
+     *
+     * <p>This method uses {@link #parseComments(String)} to extract all comments
+     * from the XML, filters the comments to include only those that contains a specific string.
+     *
+     * @param xml       the XML document as a {@link String} to parse
+     * @param contains the content to filter comments by
+     * @return a {@link List} of filtered and cropped comments that start with the given prefix
+     * @throws NullPointerException if the {@code xml} is null
+     * @throws IllegalArgumentException if the {@code xml} is blank or empty
+     *
+     * @since 9.4.8
+     */
+    public static List<String> parseCommentsContains(final String xml, final String contains) {
+        return parseComments(xml).stream()
+                .filter(c -> c.contains(contains)) // Filter comments that start with the given prefix
+                .collect(Collectors.toList());
+    }
+
+    /**
+     * Parses an {@link AbstractMT} message from a multi-format XML message.
+     *
+     * <p>This method searches for MT (Message Type) content within the comments
+     * of the provided XML document. Specifically, it extracts comments that start
+     * with the prefix "{1:F0", which indicates the presence of an MT message, and
+     * attempts to parse the first matching comment into an {@link AbstractMT} object.</p>
+     *
+     * <p>If an error occurs during parsing or no matching comments are found, the method
+     * returns an empty {@link Optional}.</p>
+     *
+     * @param xml the XML document as a {@link String} containing the multi-format message
+     * @return an {@link Optional} containing the parsed {@link AbstractMT} if successful;
+     *         otherwise, an empty {@link Optional}
+     * @throws NullPointerException if the {@code xml} is null
+     *
+     * @since 9.4.8
+     */
+    public static Optional<AbstractMT> parseMtFromMultiformatMessage(final String xml) {
+        List<String> MTs = MxParseUtils.parseCommentsStartsWith(xml, "{1:F0");
+        if (!MTs.isEmpty()) {
+            String s = MTs.get(0).replace("^~", "\n");
+
+            try {
+                return Optional.of(AbstractMT.parse(s));
+            } catch (IOException e) {
+                log.log(Level.WARNING, "Error extracting AbstractMT from Mx", e);
+            }
+        }
+        return Optional.empty();
     }
 
     /**
