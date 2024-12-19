@@ -15,12 +15,12 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
-import static com.prowidesoftware.swift.model.mx.MxParseUtils.findElementByTags;
-
-import java.util.Optional;
-import java.util.logging.Logger;
-import javax.xml.stream.XMLStreamReader;
+import com.prowidesoftware.deprecation.ProwideDeprecated;
+import com.prowidesoftware.deprecation.TargetYear;
 import org.apache.commons.lang3.StringUtils;
+
+import javax.xml.stream.XMLStreamReader;
+import java.util.Optional;
 
 /**
  * Helper API to extract information from an XML using lightweight XML streams API
@@ -28,7 +28,6 @@ import org.apache.commons.lang3.StringUtils;
  * @since 9.2.1
  */
 public class NamespaceReader {
-    private static final Logger log = Logger.getLogger(NamespaceReader.class.getName());
 
     /**
      * Extracts the document namespace from the XML, if the Document element is present
@@ -58,7 +57,7 @@ public class NamespaceReader {
      * @return found namespace or empty if the element is not found or does not contain a namespace
      */
     public static Optional<String> findNamespaceForLocalName(final String xml, final String localName) {
-        Optional<XMLStreamReader> reader = findElementByTags(xml, localName);
+        Optional<XMLStreamReader> reader = MxParseUtils.findElementByTags(xml, localName);
         return reader.map(NamespaceReader::readNamespace);
     }
 
@@ -82,13 +81,11 @@ public class NamespaceReader {
     }
 
     /**
-     * Checks if an element exists in the XML
-     *
-     * @param xml       the XML content
-     * @param localName the element name
-     * @return true if at least one element with the given name is found
+     * @deprecated use {@link MxParseUtils#elementExists(String, String)} instead
      */
+    @Deprecated
+    @ProwideDeprecated(phase2 = TargetYear.SRU2025)
     public static boolean elementExists(final String xml, final String localName) {
-        return findElementByTags(xml, localName).isPresent();
+        return MxParseUtils.elementExists(xml, localName);
     }
 }

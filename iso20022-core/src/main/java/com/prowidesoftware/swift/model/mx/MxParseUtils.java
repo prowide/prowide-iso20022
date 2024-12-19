@@ -16,11 +16,13 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.ProwideException;
+import com.prowidesoftware.deprecation.ProwideDeprecated;
+import com.prowidesoftware.deprecation.TargetYear;
 import com.prowidesoftware.swift.model.DistinguishedName;
 import com.prowidesoftware.swift.model.MxId;
-import com.prowidesoftware.swift.model.mt.AbstractMT;
 import com.prowidesoftware.swift.model.SettlementInfo;
 import com.prowidesoftware.swift.model.SettlementMethod;
+import com.prowidesoftware.swift.model.mt.AbstractMT;
 import com.prowidesoftware.swift.utils.SafeXmlUtils;
 import java.io.IOException;
 import java.io.StringReader;
@@ -134,19 +136,18 @@ public class MxParseUtils {
         if (e instanceof XMLStreamException) {
             throw new ProwideException("Error parsing message: " + e.getMessage());
         }
-        log.severe("An error occurred while reading XML: " + e.getMessage());
-        e.printStackTrace();
+        log.log(Level.SEVERE, "An error occurred while reading XML: " + e.getMessage(), e);
     }
 
     /**
      * Parse an object from XML with optional wrapper and sibling elements that will be ignored.
      *
-     * @param targetClass calss of the object being parsed
+     * @param targetClass class of the object being parsed
      * @param xml         the XML content, can contain wrapper elements that will be ignored
      * @param classes     the object classes to build a jaxb context
      * @param localName   the specific element to parse within the parameter XML
      * @param params      not null unmarshalling parameters
-     * @return parsed element or null if cannot be parsed
+     * @return parsed element or null if content cannot be parsed
      * @throws ProwideException if severe errors occur during parse
      * @since 9.2.6
      */
@@ -268,7 +269,7 @@ public class MxParseUtils {
      * @throws NullPointerException if the {@code xml} is null
      * @throws IllegalArgumentException if the {@code xml} is blank or empty
      *
-     * @since 9.4.8
+     * @since 9.5.5
      */
     public static List<String> parseComments(final String xml) {
         Objects.requireNonNull(xml, "XML to parse must not be null");
@@ -309,7 +310,7 @@ public class MxParseUtils {
      * @throws NullPointerException if the {@code xml} is null
      * @throws IllegalArgumentException if the {@code xml} is blank or empty
      *
-     * @since 9.4.8
+     * @since 9.5.5
      */
     public static List<String> parseCommentsStartsWith(final String xml, final String startWith) {
         return parseComments(xml).stream()
@@ -329,7 +330,7 @@ public class MxParseUtils {
      * @throws NullPointerException if the {@code xml} is null
      * @throws IllegalArgumentException if the {@code xml} is blank or empty
      *
-     * @since 9.4.8
+     * @since 9.5.5
      */
     public static List<String> parseCommentsContains(final String xml, final String contains) {
         return parseComments(xml).stream()
@@ -353,7 +354,7 @@ public class MxParseUtils {
      *         otherwise, an empty {@link Optional}
      * @throws NullPointerException if the {@code xml} is null
      *
-     * @since 9.4.8
+     * @since 9.5.5
      */
     public static Optional<AbstractMT> parseMtFromMultiformatMessage(final String xml) {
         List<String> MTs = MxParseUtils.parseCommentsStartsWith(xml, "{1:F0");
@@ -530,12 +531,24 @@ public class MxParseUtils {
     }
 
     /**
-     * \
+     *
      * @param pathStack
      * @return the current path
      * Join the stack elements with "/" to form the current path
      */
     private static String buildCurrentPath(Stack<String> pathStack) {
         return "/" + String.join("/", pathStack);
+    }
+
+    /**
+     * Checks if an element exists in the XML
+     *
+     * @param xml       the XML content
+     * @param localName the element name
+     * @return true if at least one element with the given name is found
+     * @since 9.5.5
+     */
+    public static boolean elementExists(final String xml, final String localName) {
+        return findElementByTags(xml, localName).isPresent();
     }
 }
