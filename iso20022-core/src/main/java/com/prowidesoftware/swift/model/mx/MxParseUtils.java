@@ -49,8 +49,8 @@ import java.util.stream.Collectors;
  */
 public class MxParseUtils {
     private static final Logger log = Logger.getLogger(MxParseUtils.class.getName());
-    private static String regex = "^(\\/|\\/\\/)([a-zA-Z_][\\w\\-\\.]*)(\\/([a-zA-Z_][\\w\\-\\.]*))*$";
-    private static Pattern pattern = Pattern.compile(regex);
+    private static final String regex = "^(/|//)([a-zA-Z_][\\w\\-.]*)(/([a-zA-Z_][\\w\\-.]*))*$";
+    private static final Pattern pattern = Pattern.compile(regex);
 
     /**
      * Creates a {@link SAXSource} for the given XML, filtering a specific element with the
@@ -500,14 +500,15 @@ public class MxParseUtils {
 
         // Check if the path is relative or absolute
         boolean isRelative = targetPath.startsWith("//");
-        String[] pathSegments = targetPath.split("/");
+        if(isRelative){
+            targetPath = targetPath.substring(1);
+        }
 
         XMLInputFactory factory = XMLInputFactory.newInstance();
         try {
             final XMLStreamReader reader = factory.createXMLStreamReader(new StringReader(xml));
 
             // Stack to track the path elements as we iterate through XML
-            boolean pathMatched = false;
             Stack<String> pathStack = new Stack<>();
 
             while (reader.hasNext()) {
@@ -516,33 +517,15 @@ public class MxParseUtils {
                 switch (event) {
                     case XMLStreamConstants.START_ELEMENT:
                         if (!reader.getLocalName().equals("RequestPayload")) {
-                            String currentElement = reader.getLocalName();  // Get local name (no namespace)
-
-                            if (isRelative) {
-                                // If it's a relative path, check if it matches the current path segment
-                                if (currentElement.equals(pathSegments[pathSegments.length - 1])) {
-                                    pathMatched = true;  // We matched the entire path
-
-                                }
-                            } else {
-                                // If it's an absolute path, match from the start
+                                // Absolute path
                                 pathStack.push(reader.getLocalName());
-                                // Build the current path
                                 String currentPath = buildCurrentPath(pathStack);
 
-                                // Check if the current path matches the target path
-                                if (currentPath.equals(targetPath)) {
+                                // Check if the current path matches the target path or if the currentPath contains the relative path
+                                if (currentPath.equals(targetPath) || currentPath.contains(targetPath)) {
                                     return Optional.of(reader);
                                 }
                                 break;
-
-                            }
-
-                            // If we found a match, return the reader
-                            if (pathMatched) {
-                                return Optional.of(reader);
-                            }
-                            break;
                         }
 
                     case XMLStreamConstants.END_ELEMENT:
@@ -562,6 +545,11 @@ public class MxParseUtils {
         return Optional.empty();  // Return empty if no match
     }
 
+    /**
+     *
+     * @param pathStack the stack of path elements
+     * @return the current path as a string
+     */
     private static String buildCurrentPath(Stack<String> pathStack) {
         return "/" + String.join("/", pathStack);
     }

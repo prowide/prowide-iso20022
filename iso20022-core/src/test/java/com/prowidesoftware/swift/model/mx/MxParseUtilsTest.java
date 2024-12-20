@@ -760,8 +760,10 @@ public class MxParseUtilsTest {
                 xml_pacs_008_001_01, "//OrgnlTxRef/SttlmInf/SttlmMtd");
         Optional<XMLStreamReader> prtry = MxParseUtils.findElementByPath(
                 xml_pacs_008_001_01, "//TxInf/OrgnlTxRef/SttlmInf/ClrSys/Prtry");
-        Optional<XMLStreamReader> IBAN = MxParseUtils.findElementByPath(
+        Optional<XMLStreamReader> IBAN_CdtrAcct = MxParseUtils.findElementByPath(
                 xml_pacs_008_001_01, "//CdtrAcct/Id/IBAN");
+        Optional<XMLStreamReader> IBAN_DbtrAcct = MxParseUtils.findElementByPath(
+                xml_pacs_008_001_01, "//DbtrAcct/Id/IBAN");
         Optional<XMLStreamReader> IBAN_invalid = MxParseUtils.findElementByPath(
                 xml_pacs_008_001_01, "//FIToFIPmtStsReq/TxInf/Id/Foo/IBAN");
 
@@ -777,8 +779,11 @@ public class MxParseUtilsTest {
         assertTrue(prtry.isPresent());
         assertEquals("ABE", prtry.get().getElementText());
 
-        assertTrue(IBAN.isPresent());
-        assertEquals("CH5598064001234567890", IBAN.get().getElementText());
+        assertTrue(IBAN_DbtrAcct.isPresent());
+        assertEquals("CH5598064001234567890", IBAN_DbtrAcct.get().getElementText());
+
+        assertTrue(IBAN_CdtrAcct.isPresent());
+        assertEquals("DE47100100001234567890", IBAN_CdtrAcct.get().getElementText());
 
         assertFalse(IBAN_invalid.isPresent());
     }
