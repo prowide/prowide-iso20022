@@ -12,7 +12,7 @@ public class SettlementInfo {
 
     private SettlementMethod settlementMethod;
     private String clrSysCd; // Clearing System Code
-    private String clrSysPrtry; // Clearing System Proprietary Code
+    private String clearingSystemCode; // Clearing System Proprietary Code
 
     public SettlementInfo() {}
 
@@ -32,11 +32,11 @@ public class SettlementInfo {
         this.clrSysCd = clrSysCd;
     }
 
-    public String getClrSysPrtry() {
-        return clrSysPrtry;
+    public String getClearingSystemCode() {
+        return clearingSystemCode;
     }
 
-    public void setClrSysPrtry(String clrSysPrtry) {
-        this.clrSysPrtry = clrSysPrtry;
+    public void setClearingSystemCode(String clearingSystemCode) {
+        this.clearingSystemCode = clearingSystemCode;
     }
 }

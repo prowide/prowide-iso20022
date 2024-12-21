@@ -404,7 +404,7 @@ public class MxParseUtils {
                     settlementInfo.setClrSysCd(clrSysCdMaybe.get().getElementText());
                 }
                 if (clrSysPrtryMaybe.isPresent()) {
-                    settlementInfo.setClrSysPrtry(clrSysPrtryMaybe.get().getElementText());
+                    settlementInfo.setClearingSystemCode(clrSysPrtryMaybe.get().getElementText());
                 }
                 return Optional.of(settlementInfo);
             } catch (XMLStreamException e) {

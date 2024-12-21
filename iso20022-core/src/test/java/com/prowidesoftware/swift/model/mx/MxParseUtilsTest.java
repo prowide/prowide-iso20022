@@ -665,7 +665,7 @@ public class MxParseUtilsTest {
         Optional<SettlementInfo> settlementInfo = MxParseUtils.getSettlementInfo(xml_pacs_008_001_01);
         assertTrue(settlementInfo.isPresent());
         assertEquals(SettlementMethod.INDA, settlementInfo.get().getSettlementMethod());
-        assertEquals("ABE", settlementInfo.get().getClrSysPrtry());
+        assertEquals("ABE", settlementInfo.get().getClearingSystemCode());
     }
 
     @Test
