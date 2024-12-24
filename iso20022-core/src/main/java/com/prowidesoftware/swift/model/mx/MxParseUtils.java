@@ -387,6 +387,7 @@ public class MxParseUtils {
      */
     public static Optional<SettlementInfo> getSettlementInfo(final String xml) {
 
+        Objects.requireNonNull(xml, "XML to parse must not be null");
         Optional<XMLStreamReader> sttlmMtdMaybe = findElementByTags(xml, "SttlmMtd");
         Optional<XMLStreamReader> clrSysCdMaybe = findElementByTags(xml, "ClrSys", "Cd");
         Optional<XMLStreamReader> clrSysPrtryMaybe = findElementByTags(xml, "ClrSys", "Prtry");
@@ -435,7 +436,7 @@ public class MxParseUtils {
     public static Optional<XMLStreamReader> findElementByTags(final String xml, String... tags) {
         Objects.requireNonNull(xml, "XML to parse must not be null");
         Validate.notBlank(xml, "XML to parse must not be a blank string");
-        Objects.requireNonNull(xml, "tags to find must not be null");
+        Objects.requireNonNull(tags, "tags to find must not be null");
 
         final XMLInputFactory xif = SafeXmlUtils.inputFactory();
         int tagsIndex = 0;
@@ -463,10 +464,12 @@ public class MxParseUtils {
      * Finds an XML element within a document by traversing a specified tag hierarchy.
      *
      * <p>This method uses an {@link XMLStreamReader} to parse the provided XML document.
-     * It searches for an element that matches the specified sequence of tag names (hierarchy).
-     * For example, to find the {@code <Cd>} tag within {@code <ClrSys>}, you would call:
+     * It searches for an element that matches the specified path.
+     * For example, to find the {@code <PgNb>} you can call using absolute path or relative path:
+     * For using relative path you must use "//" at the beginning of the path. The code will detect this and treat it as a relative path.
      * <pre>
      *     findElementByPath(xml, /Document/BkToCstmrStmt/GrpHdr/MsgPgntn/PgNb);
+     *     findElementByPath(xml, //BkToCstmrStmt/GrpHdr/MsgPgntn/PgNb);
      * </pre>
      *
      * @param xml        the XML document as a {@link String} to search.
@@ -479,10 +482,10 @@ public class MxParseUtils {
      */
 
     public static Optional<XMLStreamReader> findElementByPath(String xml, String targetPath) {
-        // Validate inputs
-        if (xml == null || targetPath == null || targetPath.isEmpty()|| xml.isEmpty()) {
-            return Optional.empty();
-        }
+        Objects.requireNonNull(xml, "XML to parse must not be null");
+        Validate.notBlank(xml, "XML to parse must not be a blank string");
+        Objects.requireNonNull(targetPath, "targetPath to find must not be null");
+        Validate.notBlank(targetPath, "targetPath must not be a blank string");
 
         // Define the regex to detect if the path is absolute or relative
         Matcher matcher = pattern.matcher(targetPath);
