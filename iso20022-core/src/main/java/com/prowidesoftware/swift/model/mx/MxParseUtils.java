@@ -480,21 +480,15 @@ public class MxParseUtils {
 
     public static Optional<XMLStreamReader> findElementByPath(String xml, String targetPath) {
         // Validate inputs
-        if (xml == null || targetPath == null || targetPath.isEmpty()) {
+        if (xml == null || targetPath == null || targetPath.isEmpty()|| xml.isEmpty()) {
             return Optional.empty();
         }
 
         // Define the regex to detect if the path is absolute or relative
         Matcher matcher = pattern.matcher(targetPath);
 
-        // Check if the path matches the expected format
-        if (!matcher.matches()) {
-            throw new IllegalArgumentException("Invalid path format: " + targetPath);
-        }
-
         //check if is valid expresion if not throws exception
-        boolean isValidExpression = matcher.matches();
-        if (!isValidExpression) {
+        if (!matcher.matches()) {
             throw new IllegalArgumentException("Invalid path format: " + targetPath);
         }
 
