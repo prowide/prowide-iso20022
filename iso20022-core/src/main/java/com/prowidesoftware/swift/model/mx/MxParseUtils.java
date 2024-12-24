@@ -22,18 +22,6 @@ import com.prowidesoftware.swift.model.SettlementInfo;
 import com.prowidesoftware.swift.model.SettlementMethod;
 import com.prowidesoftware.swift.model.mt.AbstractMT;
 import com.prowidesoftware.swift.utils.SafeXmlUtils;
-import org.apache.commons.lang3.Validate;
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXParseException;
-import org.xml.sax.XMLReader;
-
-import javax.xml.bind.*;
-import javax.xml.bind.annotation.adapters.XmlAdapter;
-import javax.xml.stream.XMLInputFactory;
-import javax.xml.stream.XMLStreamConstants;
-import javax.xml.stream.XMLStreamException;
-import javax.xml.stream.XMLStreamReader;
-import javax.xml.transform.sax.SAXSource;
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.*;
@@ -43,6 +31,17 @@ import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+import javax.xml.bind.*;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.stream.XMLInputFactory;
+import javax.xml.stream.XMLStreamConstants;
+import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.XMLStreamReader;
+import javax.xml.transform.sax.SAXSource;
+import org.apache.commons.lang3.Validate;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXParseException;
+import org.xml.sax.XMLReader;
 
 /**
  * @since 9.1.2
@@ -480,7 +479,6 @@ public class MxParseUtils {
      * @throws IllegalArgumentException if the {@code xml} is a blank string.
      * @since 9.5.5
      */
-
     public static Optional<XMLStreamReader> findElementByPath(String xml, String targetPath) {
         Objects.requireNonNull(xml, "XML to parse must not be null");
         Validate.notBlank(xml, "XML to parse must not be a blank string");
@@ -490,14 +488,14 @@ public class MxParseUtils {
         // Define the regex to detect if the path is absolute or relative
         Matcher matcher = pattern.matcher(targetPath);
 
-        //check if is valid expresion if not throws exception
+        // check if is valid expresion if not throws exception
         if (!matcher.matches()) {
             throw new IllegalArgumentException("Invalid path format: " + targetPath);
         }
 
         // Check if the path is relative or absolute
         boolean isRelative = targetPath.startsWith("//");
-        if(isRelative){
+        if (isRelative) {
             targetPath = targetPath.substring(1);
         }
 
@@ -514,16 +512,17 @@ public class MxParseUtils {
                 switch (event) {
                     case XMLStreamConstants.START_ELEMENT:
                         if (!reader.getLocalName().equals("RequestPayload")) {
-                                // Absolute path
-                                pathStack.push(reader.getLocalName());
-                                String currentPath = buildCurrentPath(pathStack);
+                            // Absolute path
+                            pathStack.push(reader.getLocalName());
+                            String currentPath = buildCurrentPath(pathStack);
 
-                                // Check if the current path matches the target path or if the currentPath contains the relative path
-                                if (currentPath.equals(targetPath) || currentPath.contains(targetPath)) {
-                                    reader.close();
-                                    return Optional.of(reader);
-                                }
-                                break;
+                            // Check if the current path matches the target path or if the currentPath contains the
+                            // relative path
+                            if (currentPath.equals(targetPath) || currentPath.contains(targetPath)) {
+                                reader.close();
+                                return Optional.of(reader);
+                            }
+                            break;
                         }
 
                     case XMLStreamConstants.END_ELEMENT:
@@ -541,7 +540,7 @@ public class MxParseUtils {
             e.printStackTrace();
         }
 
-        return Optional.empty();  // Return empty if no match
+        return Optional.empty(); // Return empty if no match
     }
 
     /**
