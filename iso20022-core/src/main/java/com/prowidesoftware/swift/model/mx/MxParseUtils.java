@@ -520,6 +520,7 @@ public class MxParseUtils {
 
                                 // Check if the current path matches the target path or if the currentPath contains the relative path
                                 if (currentPath.equals(targetPath) || currentPath.contains(targetPath)) {
+                                    reader.close();
                                     return Optional.of(reader);
                                 }
                                 break;
@@ -536,6 +537,7 @@ public class MxParseUtils {
                 }
             }
         } catch (XMLStreamException e) {
+            log.finer("Error finding element by path: " + e.getMessage());
             e.printStackTrace();
         }
 
