@@ -1,6 +1,6 @@
 # Prowide ISO 20022 - CHANGELOG
  
-#### 9.5.5 - SNAPSHOT
+#### 9.5.5 - January 2025
   * (PW-2113) `MxParseUtils` added a method to extract the enclosed MT from a multi-format MX message
   * (PW-2113) `MxParseUtils` added methods to extract comments from XML string
   * Added new SettlementInfo class, and added MxParseUtils#getSettlementInfo to extract it from a raw MX message.
