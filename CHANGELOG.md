@@ -5,6 +5,8 @@
   * (PW-2113) `MxParseUtils` added methods to extract comments from XML string
   * Added new SettlementInfo class, and added MxParseUtils#getSettlementInfo to extract it from a raw MX message.
   * Moved and enhanced the MxSwiftMessage#findElement to support multiple element's path 
+  * Update apache-commons-lang3 from 3.14.0 to 3.17.0 fixing derived apache-text dependency vulnerabilities
+  * Gradle wrapper update to 8.12
  
 #### 9.5.4 - August 2024
   * (PW-1958) Fixed the `DefaultMxMetadataStrategy` NPE issue when the amount values are null
