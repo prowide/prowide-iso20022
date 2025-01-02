@@ -17,10 +17,9 @@ package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.deprecation.ProwideDeprecated;
 import com.prowidesoftware.deprecation.TargetYear;
-import org.apache.commons.lang3.StringUtils;
-
-import javax.xml.stream.XMLStreamReader;
 import java.util.Optional;
+import javax.xml.stream.XMLStreamReader;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * Helper API to extract information from an XML using lightweight XML streams API

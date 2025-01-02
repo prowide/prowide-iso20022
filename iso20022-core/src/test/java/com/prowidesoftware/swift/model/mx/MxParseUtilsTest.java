@@ -48,9 +48,9 @@ public class MxParseUtilsTest {
             + "        </Saa:FullName>"
             + "      </Saa:Sender>"
             + "      <Saa:Receiver>"
-            + "        <Saa:DN>ou=xxx,o=mtuzzz33,o=swift</Saa:DN>"
+            + "        <Saa:DN>ou=xxx,o=fooozz33,o=swift</Saa:DN>"
             + "        <Saa:FullName>"
-            + "          <Saa:X1>MTUZZZ33XXX</Saa:X1>"
+            + "          <Saa:X1>FOOOZZ33XXX</Saa:X1>"
             + "          <Saa:X2>xxx</Saa:X2>"
             + "        </Saa:FullName>"
             + "      </Saa:Receiver>"
@@ -58,7 +58,7 @@ public class MxParseUtilsTest {
             + "        <Saa:MessageCreator>SWIFTNetInterface</Saa:MessageCreator>"
             + "        <Saa:MessageContext>Original</Saa:MessageContext>"
             + "        <Saa:MessageNature>Financial</Saa:MessageNature>"
-            + "        <Saa:Sumid>18DXXXF0FFDC7548</Saa:Sumid>"
+            + "        <Saa:Sumid>1234567890</Saa:Sumid>"
             + "        <Saa:ServiceURI>mp/mx/_ImGiIFKDEeyXX57HMRFmxw</Saa:ServiceURI>"
             + "        <Saa:MessageTypeURI>mp/mx/_ImGiIFKDEeyXX57HMRFmxw/_XC3TJV9CEeyfdsiuljUhuQ</Saa:MessageTypeURI>"
             + "      </Saa:InterfaceInfo>"
@@ -75,7 +75,7 @@ public class MxParseUtilsTest {
             + "          <Saa:SWIFTRef>swi99998-2024-11-01T21:11:43.0016.645274Z</Saa:SWIFTRef>"
             + "          <Saa:SNLRef>SNL99998-2024-11-01T21:11:43.0016.575278Z</Saa:SNLRef>"
             + "          <Saa:Reference>46ce8123-2844-4e86-afd0-438af82edc9e</Saa:Reference>"
-            + "          <Saa:SnFQueueName>mtusus33_finplusfut!p</Saa:SnFQueueName>"
+            + "          <Saa:SnFQueueName>fooous33_finplusfut!p</Saa:SnFQueueName>"
             + "          <Saa:SnFInputTime>0301:2024-11-01T21:11:44</Saa:SnFInputTime>"
             + "          <Saa:SnFDeliveryTime>2024-11-01T21:11:44Z</Saa:SnFDeliveryTime>"
             + "          <Saa:ValidationDescriptor>"
@@ -97,7 +97,7 @@ public class MxParseUtilsTest {
             + "Content-Domain: RFC822"
             + "EntrustFile-Version: 2.0"
             + "Originator-DN: cn=%51,cn=test,ou=transaction-signing,ou=transactionmanager,o=swift,o=swift"
-            + "Orig-SN: 1690692917"
+            + "Orig-SN: 0987654321"
             + "MIC-Info: SHA256, RSA,"
             + " Ps/3auXoST3Y1S2EJ5swNkMS3gyfcVXH8rHnbo7uvimFX1NHd1R+AHsyejuih6Tx"
             + " tRMX99SXFIkQu6VjRd7+r7NZ2zEoBVmb5T+pd3/OmrWd+LvtN6uvIyuPq3hTgz0t"
@@ -191,7 +191,7 @@ public class MxParseUtilsTest {
             + "      <head:To>"
             + "        <head:FIId>"
             + "          <head:FinInstnId>"
-            + "            <head:BICFI>MTUZZZ30XXX</head:BICFI>"
+            + "            <head:BICFI>FOOOZZ30XXX</head:BICFI>"
             + "          </head:FinInstnId>"
             + "        </head:FIId>"
             + "      </head:To>"
@@ -230,7 +230,7 @@ public class MxParseUtilsTest {
             + "          </pacs:InstgAgt>"
             + "          <pacs:InstdAgt>"
             + "            <pacs:FinInstnId>"
-            + "              <pacs:BICFI>MTUZZZ30XXX</pacs:BICFI>"
+            + "              <pacs:BICFI>FOOOZZ30XXX</pacs:BICFI>"
             + "            </pacs:FinInstnId>"
             + "          </pacs:InstdAgt>"
             + "          <pacs:Dbtr>"
@@ -249,7 +249,7 @@ public class MxParseUtilsTest {
             + "          </pacs:DbtrAgt>"
             + "          <pacs:CdtrAgt>"
             + "            <pacs:FinInstnId>"
-            + "              <pacs:BICFI>MTUZZZ30XXX</pacs:BICFI>"
+            + "              <pacs:BICFI>FOOOZZ30XXX</pacs:BICFI>"
             + "            </pacs:FinInstnId>"
             + "          </pacs:CdtrAgt>"
             + "          <pacs:Cdtr>"
@@ -266,7 +266,7 @@ public class MxParseUtilsTest {
             + "        </pacs:CdtTrfTxInf>"
             + "      </pacs:FICdtTrf>"
             + "    </pacs:Document>"
-            + "    <!-- {1:F01MTUZZZ30XXXX0000000000}{2:O2021711241101YYYXXX30XXXX00000000002411011711N}{3:{111:004}{121:2f093ecf-6359-486e-befd-1f9840c0c740}}{4:^~:20:IID/7706.0/a9689^~:21:E2E/7706.0/7f159^~:32A:241101EUR1000,^~:52A:YYYABEB0XXX^~:57A:MTUZZZ30XXX^~:58A:YYYCBEB0XXX^~:72:/INS/YYYXXX30XXX^~-}{5:{CHK:A87C6AB16C39}{TNG:}} -->"
+            + "    <!-- {1:F01FOOOZZ30XXXX0000000000}{2:O2021711241101YYYXXX30XXXX00000000002411011711N}{3:{111:004}{121:2f093ecf-6359-486e-befd-1f9840c0c740}}{4:^~:20:IID/7706.0/a9689^~:21:E2E/7706.0/7f159^~:32A:241101EUR1000,^~:52A:YYYABEB0XXX^~:57A:FOOOZZ30XXX^~:58A:YYYCBEB0XXX^~:72:/INS/YYYXXX30XXX^~-}{5:{CHK:A87C6AB16C39}{TNG:}} -->"
             + "    <!-- TranslationResult=TROK -->"
             + "    <!-- TranslationInfo version 1.0.0.1 -->"
             + "  </Saa:Body>"
@@ -482,7 +482,7 @@ public class MxParseUtilsTest {
         List<String> strings = MxParseUtils.parseComments(xml);
         assertEquals(3, strings.size());
         assertEquals(
-                "{1:F01MTUZZZ30XXXX0000000000}{2:O2021711241101YYYXXX30XXXX00000000002411011711N}{3:{111:004}{121:2f093ecf-6359-486e-befd-1f9840c0c740}}{4:^~:20:IID/7706.0/a9689^~:21:E2E/7706.0/7f159^~:32A:241101EUR1000,^~:52A:YYYABEB0XXX^~:57A:MTUZZZ30XXX^~:58A:YYYCBEB0XXX^~:72:/INS/YYYXXX30XXX^~-}{5:{CHK:A87C6AB16C39}{TNG:}}",
+                "{1:F01FOOOZZ30XXXX0000000000}{2:O2021711241101YYYXXX30XXXX00000000002411011711N}{3:{111:004}{121:2f093ecf-6359-486e-befd-1f9840c0c740}}{4:^~:20:IID/7706.0/a9689^~:21:E2E/7706.0/7f159^~:32A:241101EUR1000,^~:52A:YYYABEB0XXX^~:57A:FOOOZZ30XXX^~:58A:YYYCBEB0XXX^~:72:/INS/YYYXXX30XXX^~-}{5:{CHK:A87C6AB16C39}{TNG:}}",
                 strings.get(0));
         assertEquals("TranslationResult=TROK", strings.get(1));
         assertEquals("TranslationInfo version 1.0.0.1", strings.get(2));
@@ -493,7 +493,7 @@ public class MxParseUtilsTest {
         List<String> strings = MxParseUtils.parseCommentsStartsWith(xml, "{1:F0");
         assertEquals(1, strings.size());
         assertEquals(
-                "{1:F01MTUZZZ30XXXX0000000000}{2:O2021711241101YYYXXX30XXXX00000000002411011711N}{3:{111:004}{121:2f093ecf-6359-486e-befd-1f9840c0c740}}{4:^~:20:IID/7706.0/a9689^~:21:E2E/7706.0/7f159^~:32A:241101EUR1000,^~:52A:YYYABEB0XXX^~:57A:MTUZZZ30XXX^~:58A:YYYCBEB0XXX^~:72:/INS/YYYXXX30XXX^~-}{5:{CHK:A87C6AB16C39}{TNG:}}",
+                "{1:F01FOOOZZ30XXXX0000000000}{2:O2021711241101YYYXXX30XXXX00000000002411011711N}{3:{111:004}{121:2f093ecf-6359-486e-befd-1f9840c0c740}}{4:^~:20:IID/7706.0/a9689^~:21:E2E/7706.0/7f159^~:32A:241101EUR1000,^~:52A:YYYABEB0XXX^~:57A:FOOOZZ30XXX^~:58A:YYYCBEB0XXX^~:72:/INS/YYYXXX30XXX^~-}{5:{CHK:A87C6AB16C39}{TNG:}}",
                 strings.get(0));
     }
 
@@ -508,7 +508,7 @@ public class MxParseUtilsTest {
     public void testParseMtFromMultiFormatMessage() {
         Optional<AbstractMT> abstractMT = MxParseUtils.parseMtFromMultiformatMessage(xml);
         assertTrue(abstractMT.isPresent());
-        assertEquals("MTUZZZ30XXXX", abstractMT.get().getReceiver());
+        assertEquals("FOOOZZ30XXXX", abstractMT.get().getReceiver());
         assertEquals("YYYXXX30XXXX", abstractMT.get().getSender());
         assertEquals(
                 "/INS/YYYXXX30XXX",
@@ -653,7 +653,7 @@ public class MxParseUtilsTest {
         Optional<SettlementInfo> settlementInfo = MxParseUtils.getSettlementInfo(xml);
         assertTrue(settlementInfo.isPresent());
         assertEquals(SettlementMethod.CLRG, settlementInfo.get().getSettlementMethod());
-        assertEquals("TGT", settlementInfo.get().getClrSysCd());
+        assertEquals("TGT", settlementInfo.get().getClearingSystemCode());
     }
 
     @Test
@@ -665,7 +665,7 @@ public class MxParseUtilsTest {
         Optional<SettlementInfo> settlementInfo = MxParseUtils.getSettlementInfo(xml_pacs_008_001_01);
         assertTrue(settlementInfo.isPresent());
         assertEquals(SettlementMethod.INDA, settlementInfo.get().getSettlementMethod());
-        assertEquals("ABE", settlementInfo.get().getClearingSystemCode());
+        assertEquals("SEPA", settlementInfo.get().getClearingSystemCode());
     }
 
     @Test

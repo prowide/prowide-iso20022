@@ -1,8 +1,5 @@
 package com.prowidesoftware.swift.model;
 
-import java.util.Arrays;
-import java.util.Optional;
-
 /**
  * Enum representing different settlement methods for financial transactions.
  *
@@ -17,45 +14,19 @@ import java.util.Optional;
  * @since 9.5.5
  */
 public enum SettlementMethod {
-    INDA("INDA", "Instructed Agent"),
-    INGA("INGA", "Instructing Agent"),
-    COVE("COVE", "Cover Method"),
-    CLRG("CLRG", "Clearing System");
+    INDA("Instructed Agent"),
+    INGA("Instructing Agent"),
+    COVE("Cover Method"),
+    CLRG("Clearing System");
 
-    private final String label;
-    private final String name;
+    private final String description;
 
     // Constructor
-    SettlementMethod(String label, String name) {
-        this.label = label;
-        this.name = name;
+    SettlementMethod(String description) {
+        this.description = description;
     }
 
-    public static Optional<SettlementMethod> findByLabel(String label) {
-        if (label == null) {
-            return Optional.empty();
-        }
-        return Arrays.stream(values())
-                .filter(method -> method.label.equalsIgnoreCase(label))
-                .findFirst();
-    }
-
-    public static Optional<SettlementMethod> findByName(String name) {
-        if (name == null) {
-            return Optional.empty();
-        }
-        return Arrays.stream(values())
-                .filter(method -> method.name.equalsIgnoreCase(name))
-                .findFirst();
-    }
-
-    // Getter for label
-    public String getLabel() {
-        return label;
-    }
-
-    // Getter for name
-    public String getName() {
-        return name;
+    public String description() {
+        return description;
     }
 }

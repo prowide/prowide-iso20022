@@ -38,12 +38,16 @@ import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 import javax.xml.transform.sax.SAXSource;
+import org.apache.commons.lang3.EnumUtils;
 import org.apache.commons.lang3.Validate;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXParseException;
 import org.xml.sax.XMLReader;
 
 /**
+ * This class provides utility methods to parse XML content using a fast event based API (no DOM) and to extract
+ * specific information from the XML content.
+ *
  * @since 9.1.2
  */
 public class MxParseUtils {
@@ -197,7 +201,7 @@ public class MxParseUtils {
      * &lt;Doc:Document xmlns:Doc="urn:swift:xsd:camt.003.001.04" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
      *
      * <p>
-     * The implementation is intended to be lightweight and efficient, based on {@link javax.xml.stream.XMLStreamReader}
+     * The implementation is intended to be lightweight and efficient, based on {@link XMLStreamReader}
      *
      * @return id with the detected MX message type or empty if it cannot be determined.
      */
@@ -385,7 +389,6 @@ public class MxParseUtils {
      * @since 9.5.5
      */
     public static Optional<SettlementInfo> getSettlementInfo(final String xml) {
-
         Objects.requireNonNull(xml, "XML to parse must not be null");
         Optional<XMLStreamReader> sttlmMtdMaybe = findElementByTags(xml, "SttlmMtd");
         Optional<XMLStreamReader> clrSysCdMaybe = findElementByTags(xml, "ClrSys", "Cd");
@@ -395,15 +398,14 @@ public class MxParseUtils {
             SettlementInfo settlementInfo = new SettlementInfo();
             try {
                 if (sttlmMtdMaybe.isPresent()) {
-
-                    Optional<SettlementMethod> sttlmMtdLabel =
-                            SettlementMethod.findByLabel(sttlmMtdMaybe.get().getElementText());
-                    sttlmMtdLabel.ifPresent(settlementInfo::setSettlementMethod);
+                    settlementInfo.setSettlementMethod(EnumUtils.getEnum(
+                            SettlementMethod.class, sttlmMtdMaybe.get().getElementText()));
                 }
                 if (clrSysCdMaybe.isPresent()) {
-                    settlementInfo.setClrSysCd(clrSysCdMaybe.get().getElementText());
-                }
-                if (clrSysPrtryMaybe.isPresent()) {
+                    // if code is present we use it as clearing system code
+                    settlementInfo.setClearingSystemCode(clrSysCdMaybe.get().getElementText());
+                } else if (clrSysPrtryMaybe.isPresent()) {
+                    // otherwise we try with the proprietary code (that also refers toa clearing system)
                     settlementInfo.setClearingSystemCode(clrSysPrtryMaybe.get().getElementText());
                 }
                 return Optional.of(settlementInfo);
@@ -439,9 +441,9 @@ public class MxParseUtils {
 
         final XMLInputFactory xif = SafeXmlUtils.inputFactory();
         int tagsIndex = 0;
+        XMLStreamReader reader = null;
         try {
-            final XMLStreamReader reader =
-                    xif.createXMLStreamReader(new StringReader(MxParseUtils.makeXmlLenient(xml)));
+            reader = xif.createXMLStreamReader(new StringReader(MxParseUtils.makeXmlLenient(xml)));
             while (reader.hasNext()) {
                 int event = reader.next();
                 if (XMLStreamConstants.START_ELEMENT == event) {
@@ -454,7 +456,15 @@ public class MxParseUtils {
                 }
             }
         } catch (XMLStreamException e) {
-            log.log(Level.WARNING, "Error reading XML", e);
+            log.log(Level.SEVERE, "Error reading XML", e);
+        } finally {
+            if (reader != null) {
+                try {
+                    reader.close();
+                } catch (XMLStreamException e) {
+                    log.log(Level.WARNING, "Error closing XMLStreamReader", e);
+                }
+            }
         }
         return Optional.empty();
     }
@@ -500,8 +510,9 @@ public class MxParseUtils {
         }
 
         XMLInputFactory factory = XMLInputFactory.newInstance();
+        XMLStreamReader reader = null;
         try {
-            final XMLStreamReader reader = factory.createXMLStreamReader(new StringReader(xml));
+            reader = factory.createXMLStreamReader(new StringReader(xml));
 
             // Stack to track the path elements as we iterate through XML
             Stack<String> pathStack = new Stack<>();
@@ -536,18 +547,20 @@ public class MxParseUtils {
                 }
             }
         } catch (XMLStreamException e) {
-            log.finer("Error finding element by path: " + e.getMessage());
-            e.printStackTrace();
+            log.log(Level.SEVERE, "Error finding element by path", e);
+        } finally {
+            if (reader != null) {
+                try {
+                    reader.close();
+                } catch (XMLStreamException e) {
+                    log.log(Level.WARNING, "Error closing XMLStreamReader", e);
+                }
+            }
         }
 
         return Optional.empty(); // Return empty if no match
     }
 
-    /**
-     *
-     * @param pathStack the stack of path elements
-     * @return the current path as a string
-     */
     private static String buildCurrentPath(Stack<String> pathStack) {
         return "/" + String.join("/", pathStack);
     }
