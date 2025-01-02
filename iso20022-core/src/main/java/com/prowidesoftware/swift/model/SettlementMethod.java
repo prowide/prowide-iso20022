@@ -32,12 +32,18 @@ public enum SettlementMethod {
     }
 
     public static Optional<SettlementMethod> findByLabel(String label) {
+        if (label == null) {
+            return Optional.empty();
+        }
         return Arrays.stream(values())
                 .filter(method -> method.label.equalsIgnoreCase(label))
                 .findFirst();
     }
 
     public static Optional<SettlementMethod> findByName(String name) {
+        if (name == null) {
+            return Optional.empty();
+        }
         return Arrays.stream(values())
                 .filter(method -> method.name.equalsIgnoreCase(name))
                 .findFirst();
