@@ -1,12 +1,11 @@
 # Prowide ISO 20022 - CHANGELOG
  
-#### 9.4.8 - SNAPSHOT
-  * (PW-2113) Added API in the `MxParseUtils` to extract comments from XML string
-  * (PW-2113) Added API in the `MxParseUtils` to extract the enclosed MT from a multi-format MX message
+#### 9.5.5 - SNAPSHOT
+  * (PW-2113) `MxParseUtils` added a method to extract the enclosed MT from a multi-format MX message
+  * (PW-2113) `MxParseUtils` added methods to extract comments from XML string
+  * Added new SettlementInfo class, and added MxParseUtils#getSettlementInfo to extract it from a raw MX message.
+  * Moved and enhanced the MxSwiftMessage#findElement to support multiple element's path 
  
-#### 9.4.7 - August 2024
-  * (PW-1958) Fixed the `DefaultMxMetadataStrategy` NPE issue when the amount values are null
-
 #### 9.5.4 - August 2024
   * (PW-1958) Fixed the `DefaultMxMetadataStrategy` NPE issue when the amount values are null
 
