@@ -1,6 +1,6 @@
 # Prowide ISO 20022 - CHANGELOG
 
-#### 9.5.6 - January 2025
+#### 9.5.6 - SNAPSHOT
   * Changed the `MxParseUtils` findByTags and findByPath methods to return the element values and not the XML stream object
 
 #### 9.5.5 - January 2025
