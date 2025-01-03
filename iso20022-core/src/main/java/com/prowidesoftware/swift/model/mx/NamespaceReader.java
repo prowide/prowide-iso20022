@@ -77,7 +77,7 @@ public class NamespaceReader {
                 }
             }
         } catch (XMLStreamException e) {
-            log.log(Level.SEVERE, "Error reading XML", e);
+            log.log(Level.SEVERE, "Error parsing XML to find namespace in " + localName, e);
         } finally {
             if (reader != null) {
                 try {
