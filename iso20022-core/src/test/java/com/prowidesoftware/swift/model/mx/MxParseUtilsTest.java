@@ -1032,4 +1032,12 @@ public class MxParseUtilsTest {
                 "This is a multiline\nnarrative text that\nspans multiple lines\nwithin the XML tag.",
                 MxParseUtils.findByTags(xml, "CdtTrfTxInf", "Ustrd").orElse(null));
     }
+
+    @Test
+    void testFindIntermediateNode() {
+        assertFalse(MxParseUtils.findByPath(xml_pacs_008_001_01, "//FIToFIPmtStsReq/GrpHdr")
+                .isPresent());
+        assertFalse(MxParseUtils.findByTags(xml_pacs_008_001_01, "FIToFIPmtStsReq", "GrpHdr")
+                .isPresent());
+    }
 }

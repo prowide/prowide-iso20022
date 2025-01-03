@@ -446,7 +446,14 @@ public class MxParseUtils {
                             try {
                                 return Optional.of(reader.getElementText());
                             } catch (XMLStreamException e1) {
-                                log.warning("Expected the found element to have text content: " + e1.getMessage());
+                                log.warning("The " + tags[tags.length - 1]
+                                        + " tag should point to a leaf, not to an intermediate XML node");
+                                if (log.isLoggable(Level.FINE)) {
+                                    log.log(
+                                            Level.FINE,
+                                            "The element at " + tags[tags.length - 1]
+                                                    + " is not an element with text content: " + e1.getMessage());
+                                }
                                 break;
                             }
                         }
@@ -568,7 +575,14 @@ public class MxParseUtils {
                             try {
                                 return Optional.of(reader.getElementText());
                             } catch (XMLStreamException e1) {
-                                log.warning("Expected the found element to have text content: " + e1.getMessage());
+                                log.warning("The " + targetPath
+                                        + " path should point to a leaf, not to an intermediate XML node");
+                                if (log.isLoggable(Level.FINE)) {
+                                    log.log(
+                                            Level.FINE,
+                                            "The element at " + targetPath + " is not an element with text content: "
+                                                    + e1.getMessage());
+                                }
                                 break;
                             }
                         }
