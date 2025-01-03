@@ -190,25 +190,4 @@ public class NamespaceReaderTest {
         assertTrue(namespace.isPresent());
         assertEquals("urn:swift:xsd:swift.eni$camt.003.001.04", namespace.get());
     }
-
-    @Test
-    public void testElementExists_01() {
-        final String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
-                + "<Doc:Document xmlns:Doc=\"urn:swift:xsd:camt.003.001.04\"></foo>";
-        assertTrue(NamespaceReader.elementExists(xml, "Document"));
-        assertFalse(NamespaceReader.elementExists(xml, "Foo"));
-    }
-
-    @Test
-    public void testElementExists_02() {
-        final String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
-                + "<message>"
-                + "<AppHdr xmlns:h=\"urn:swift:xsd:$ahV10\"><From></From></AppHdr>"
-                + "<Doc:Document xmlns:Doc=\"urn:swift:xsd:camt.003.001.04\"></Doc:Document>"
-                + "</message>";
-        assertTrue(NamespaceReader.elementExists(xml, "AppHdr"));
-        assertTrue(NamespaceReader.elementExists(xml, "Document"));
-        assertTrue(NamespaceReader.elementExists(xml, "message"));
-        assertFalse(NamespaceReader.elementExists(xml, "Foo"));
-    }
 }

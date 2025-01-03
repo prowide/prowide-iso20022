@@ -17,7 +17,14 @@ package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.deprecation.ProwideDeprecated;
 import com.prowidesoftware.deprecation.TargetYear;
+import com.prowidesoftware.swift.utils.SafeXmlUtils;
+import java.io.StringReader;
 import java.util.Optional;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.xml.stream.XMLInputFactory;
+import javax.xml.stream.XMLStreamConstants;
+import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 import org.apache.commons.lang3.StringUtils;
 
@@ -27,6 +34,7 @@ import org.apache.commons.lang3.StringUtils;
  * @since 9.2.1
  */
 public class NamespaceReader {
+    private static final Logger log = Logger.getLogger(NamespaceReader.class.getName());
 
     /**
      * Extracts the document namespace from the XML, if the Document element is present
@@ -56,8 +64,30 @@ public class NamespaceReader {
      * @return found namespace or empty if the element is not found or does not contain a namespace
      */
     public static Optional<String> findNamespaceForLocalName(final String xml, final String localName) {
-        Optional<XMLStreamReader> reader = MxParseUtils.findElementByTags(xml, localName);
-        return reader.map(NamespaceReader::readNamespace);
+        final XMLInputFactory xif = SafeXmlUtils.inputFactory();
+        XMLStreamReader reader = null;
+        try {
+            reader = xif.createXMLStreamReader(new StringReader(MxParseUtils.makeXmlLenient(xml)));
+            while (reader.hasNext()) {
+                int event = reader.next();
+                if (XMLStreamConstants.START_ELEMENT == event) {
+                    if (reader.getLocalName().equals(localName)) {
+                        return Optional.ofNullable(readNamespace(reader));
+                    }
+                }
+            }
+        } catch (XMLStreamException e) {
+            log.log(Level.SEVERE, "Error parsing XML to find namespace in " + localName, e);
+        } finally {
+            if (reader != null) {
+                try {
+                    reader.close();
+                } catch (XMLStreamException e) {
+                    log.log(Level.WARNING, "Error closing XMLStreamReader", e);
+                }
+            }
+        }
+        return Optional.empty();
     }
 
     /**

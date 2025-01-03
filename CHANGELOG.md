@@ -1,5 +1,8 @@
 # Prowide ISO 20022 - CHANGELOG
 
+#### 10.2.6 - SNAPSHOT
+  * Changed the `MxParseUtils` findByTags and findByPath methods to return the element values instead of the XML stream object
+
 #### 10.2.5 - January 2025
   * (PW-2113) `MxParseUtils` added a method to extract the enclosed MT from a multi-format MX message
   * (PW-2113) `MxParseUtils` added methods to extract comments from XML string
