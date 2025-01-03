@@ -473,6 +473,12 @@ task('testOn17', type: Test) {
 	}
 }
 
+task('testOn21', type: Test) {
+	javaLauncher = javaToolchains.launcherFor {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}
+
 quality {
 	strict = false
 	// we limit this to spotbugs for the moment
