@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -88,31 +88,31 @@ public class FinancialInstrument96 {
     @XmlElement(name = "LnchDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar lnchDt;
+    protected LocalDate lnchDt;
     @XmlElement(name = "FndEndDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar fndEndDt;
+    protected LocalDate fndEndDt;
     @XmlElement(name = "TermntnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar termntnDt;
+    protected LocalDate termntnDt;
     @XmlElement(name = "InitlOfferEndDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar initlOfferEndDt;
+    protected LocalDate initlOfferEndDt;
     @XmlElement(name = "SspnsnStartDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar sspnsnStartDt;
+    protected LocalDate sspnsnStartDt;
     @XmlElement(name = "SspnsnEndDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar sspnsnEndDt;
+    protected LocalDate sspnsnEndDt;
     @XmlElement(name = "MtrtyDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar mtrtyDt;
+    protected LocalDate mtrtyDt;
     @XmlElement(name = "MayBeTermntdEarly")
     @XmlSchemaType(name = "string")
     protected TargetMarket1Code mayBeTermntdEarly;
@@ -442,7 +442,7 @@ public class FinancialInstrument96 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getLnchDt() {
+    public LocalDate getLnchDt() {
         return lnchDt;
     }
 
@@ -454,7 +454,7 @@ public class FinancialInstrument96 {
      *     {@link String }
      *     
      */
-    public FinancialInstrument96 setLnchDt(XMLGregorianCalendar value) {
+    public FinancialInstrument96 setLnchDt(LocalDate value) {
         this.lnchDt = value;
         return this;
     }
@@ -467,7 +467,7 @@ public class FinancialInstrument96 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getFndEndDt() {
+    public LocalDate getFndEndDt() {
         return fndEndDt;
     }
 
@@ -479,7 +479,7 @@ public class FinancialInstrument96 {
      *     {@link String }
      *     
      */
-    public FinancialInstrument96 setFndEndDt(XMLGregorianCalendar value) {
+    public FinancialInstrument96 setFndEndDt(LocalDate value) {
         this.fndEndDt = value;
         return this;
     }
@@ -492,7 +492,7 @@ public class FinancialInstrument96 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getTermntnDt() {
+    public LocalDate getTermntnDt() {
         return termntnDt;
     }
 
@@ -504,7 +504,7 @@ public class FinancialInstrument96 {
      *     {@link String }
      *     
      */
-    public FinancialInstrument96 setTermntnDt(XMLGregorianCalendar value) {
+    public FinancialInstrument96 setTermntnDt(LocalDate value) {
         this.termntnDt = value;
         return this;
     }
@@ -517,7 +517,7 @@ public class FinancialInstrument96 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getInitlOfferEndDt() {
+    public LocalDate getInitlOfferEndDt() {
         return initlOfferEndDt;
     }
 
@@ -529,7 +529,7 @@ public class FinancialInstrument96 {
      *     {@link String }
      *     
      */
-    public FinancialInstrument96 setInitlOfferEndDt(XMLGregorianCalendar value) {
+    public FinancialInstrument96 setInitlOfferEndDt(LocalDate value) {
         this.initlOfferEndDt = value;
         return this;
     }
@@ -542,7 +542,7 @@ public class FinancialInstrument96 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getSspnsnStartDt() {
+    public LocalDate getSspnsnStartDt() {
         return sspnsnStartDt;
     }
 
@@ -554,7 +554,7 @@ public class FinancialInstrument96 {
      *     {@link String }
      *     
      */
-    public FinancialInstrument96 setSspnsnStartDt(XMLGregorianCalendar value) {
+    public FinancialInstrument96 setSspnsnStartDt(LocalDate value) {
         this.sspnsnStartDt = value;
         return this;
     }
@@ -567,7 +567,7 @@ public class FinancialInstrument96 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getSspnsnEndDt() {
+    public LocalDate getSspnsnEndDt() {
         return sspnsnEndDt;
     }
 
@@ -579,7 +579,7 @@ public class FinancialInstrument96 {
      *     {@link String }
      *     
      */
-    public FinancialInstrument96 setSspnsnEndDt(XMLGregorianCalendar value) {
+    public FinancialInstrument96 setSspnsnEndDt(LocalDate value) {
         this.sspnsnEndDt = value;
         return this;
     }
@@ -592,7 +592,7 @@ public class FinancialInstrument96 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getMtrtyDt() {
+    public LocalDate getMtrtyDt() {
         return mtrtyDt;
     }
 
@@ -604,7 +604,7 @@ public class FinancialInstrument96 {
      *     {@link String }
      *     
      */
-    public FinancialInstrument96 setMtrtyDt(XMLGregorianCalendar value) {
+    public FinancialInstrument96 setMtrtyDt(LocalDate value) {
         this.mtrtyDt = value;
         return this;
     }
@@ -815,8 +815,8 @@ public class FinancialInstrument96 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -830,10 +830,12 @@ public class FinancialInstrument96 {
      * {@link AdditionalInformation15 }
      * 
      * 
+     * @return
+     *     The value of the addtlInf property.
      */
     public List<AdditionalInformation15> getAddtlInf() {
         if (addtlInf == null) {
-            addtlInf = new ArrayList<AdditionalInformation15>();
+            addtlInf = new ArrayList<>();
         }
         return this.addtlInf;
     }

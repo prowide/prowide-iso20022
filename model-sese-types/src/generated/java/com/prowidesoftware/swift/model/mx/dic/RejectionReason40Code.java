@@ -1,38 +1,37 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for RejectionReason40Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="RejectionReason40Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="SETS"/&gt;
- *     &lt;enumeration value="DDAT"/&gt;
- *     &lt;enumeration value="CASY"/&gt;
- *     &lt;enumeration value="DDEA"/&gt;
- *     &lt;enumeration value="DEPT"/&gt;
- *     &lt;enumeration value="DMON"/&gt;
- *     &lt;enumeration value="DQUA"/&gt;
- *     &lt;enumeration value="DSEC"/&gt;
- *     &lt;enumeration value="DTRD"/&gt;
- *     &lt;enumeration value="ICAG"/&gt;
- *     &lt;enumeration value="ICUS"/&gt;
- *     &lt;enumeration value="IEXE"/&gt;
- *     &lt;enumeration value="NARR"/&gt;
- *     &lt;enumeration value="NCRR"/&gt;
- *     &lt;enumeration value="PLCE"/&gt;
- *     &lt;enumeration value="RTGS"/&gt;
- *     &lt;enumeration value="SETR"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="RejectionReason40Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="SETS"/>
+ *     <enumeration value="DDAT"/>
+ *     <enumeration value="CASY"/>
+ *     <enumeration value="DDEA"/>
+ *     <enumeration value="DEPT"/>
+ *     <enumeration value="DMON"/>
+ *     <enumeration value="DQUA"/>
+ *     <enumeration value="DSEC"/>
+ *     <enumeration value="DTRD"/>
+ *     <enumeration value="ICAG"/>
+ *     <enumeration value="ICUS"/>
+ *     <enumeration value="IEXE"/>
+ *     <enumeration value="NARR"/>
+ *     <enumeration value="NCRR"/>
+ *     <enumeration value="PLCE"/>
+ *     <enumeration value="RTGS"/>
+ *     <enumeration value="SETR"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "RejectionReason40Code")

@@ -1,43 +1,42 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for InvestmentFundTransactionType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="InvestmentFundTransactionType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ALLL"/&gt;
- *     &lt;enumeration value="SELL"/&gt;
- *     &lt;enumeration value="BUYI"/&gt;
- *     &lt;enumeration value="SWIO"/&gt;
- *     &lt;enumeration value="TRIN"/&gt;
- *     &lt;enumeration value="TOUT"/&gt;
- *     &lt;enumeration value="SUBS"/&gt;
- *     &lt;enumeration value="REDM"/&gt;
- *     &lt;enumeration value="CDEP"/&gt;
- *     &lt;enumeration value="CWIT"/&gt;
- *     &lt;enumeration value="DIVP"/&gt;
- *     &lt;enumeration value="CAEV"/&gt;
- *     &lt;enumeration value="CROI"/&gt;
- *     &lt;enumeration value="CROO"/&gt;
- *     &lt;enumeration value="DIVI"/&gt;
- *     &lt;enumeration value="INSP"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="REAA"/&gt;
- *     &lt;enumeration value="RWPL"/&gt;
- *     &lt;enumeration value="RDIV"/&gt;
- *     &lt;enumeration value="SSPL"/&gt;
- *     &lt;enumeration value="SUAA"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="InvestmentFundTransactionType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ALLL"/>
+ *     <enumeration value="SELL"/>
+ *     <enumeration value="BUYI"/>
+ *     <enumeration value="SWIO"/>
+ *     <enumeration value="TRIN"/>
+ *     <enumeration value="TOUT"/>
+ *     <enumeration value="SUBS"/>
+ *     <enumeration value="REDM"/>
+ *     <enumeration value="CDEP"/>
+ *     <enumeration value="CWIT"/>
+ *     <enumeration value="DIVP"/>
+ *     <enumeration value="CAEV"/>
+ *     <enumeration value="CROI"/>
+ *     <enumeration value="CROO"/>
+ *     <enumeration value="DIVI"/>
+ *     <enumeration value="INSP"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="REAA"/>
+ *     <enumeration value="RWPL"/>
+ *     <enumeration value="RDIV"/>
+ *     <enumeration value="SSPL"/>
+ *     <enumeration value="SUAA"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "InvestmentFundTransactionType1Code")

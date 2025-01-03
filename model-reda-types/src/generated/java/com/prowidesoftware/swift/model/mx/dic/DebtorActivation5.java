@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -198,8 +198,8 @@ public class DebtorActivation5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cstmrId property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cstmrId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -213,10 +213,12 @@ public class DebtorActivation5 {
      * {@link Party53Choice }
      * 
      * 
+     * @return
+     *     The value of the cstmrId property.
      */
     public List<Party53Choice> getCstmrId() {
         if (cstmrId == null) {
-            cstmrId = new ArrayList<Party53Choice>();
+            cstmrId = new ArrayList<>();
         }
         return this.cstmrId;
     }
@@ -227,8 +229,8 @@ public class DebtorActivation5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ctrctFrmtTp property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ctrctFrmtTp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -242,10 +244,12 @@ public class DebtorActivation5 {
      * {@link DocumentFormat2Choice }
      * 
      * 
+     * @return
+     *     The value of the ctrctFrmtTp property.
      */
     public List<DocumentFormat2Choice> getCtrctFrmtTp() {
         if (ctrctFrmtTp == null) {
-            ctrctFrmtTp = new ArrayList<DocumentFormat2Choice>();
+            ctrctFrmtTp = new ArrayList<>();
         }
         return this.ctrctFrmtTp;
     }
@@ -256,8 +260,8 @@ public class DebtorActivation5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ctrctRef property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ctrctRef property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -271,10 +275,12 @@ public class DebtorActivation5 {
      * {@link ContractReference1 }
      * 
      * 
+     * @return
+     *     The value of the ctrctRef property.
      */
     public List<ContractReference1> getCtrctRef() {
         if (ctrctRef == null) {
-            ctrctRef = new ArrayList<ContractReference1>();
+            ctrctRef = new ArrayList<>();
         }
         return this.ctrctRef;
     }

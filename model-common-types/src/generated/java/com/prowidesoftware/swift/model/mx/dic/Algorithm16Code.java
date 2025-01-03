@@ -1,32 +1,31 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlEnumValue;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for Algorithm16Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="Algorithm16Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="HS25"/&gt;
- *     &lt;enumeration value="HS38"/&gt;
- *     &lt;enumeration value="HS51"/&gt;
- *     &lt;enumeration value="HS01"/&gt;
- *     &lt;enumeration value="SH31"/&gt;
- *     &lt;enumeration value="SH32"/&gt;
- *     &lt;enumeration value="SH33"/&gt;
- *     &lt;enumeration value="SH35"/&gt;
- *     &lt;enumeration value="SHK1"/&gt;
- *     &lt;enumeration value="SHK2"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="Algorithm16Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="HS25"/>
+ *     <enumeration value="HS38"/>
+ *     <enumeration value="HS51"/>
+ *     <enumeration value="HS01"/>
+ *     <enumeration value="SH31"/>
+ *     <enumeration value="SH32"/>
+ *     <enumeration value="SH33"/>
+ *     <enumeration value="SH35"/>
+ *     <enumeration value="SHK1"/>
+ *     <enumeration value="SHK2"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "Algorithm16Code")

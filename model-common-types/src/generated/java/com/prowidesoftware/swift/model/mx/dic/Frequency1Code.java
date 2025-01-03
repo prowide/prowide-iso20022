@@ -1,29 +1,28 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for Frequency1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="Frequency1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="YEAR"/&gt;
- *     &lt;enumeration value="MNTH"/&gt;
- *     &lt;enumeration value="QURT"/&gt;
- *     &lt;enumeration value="MIAN"/&gt;
- *     &lt;enumeration value="WEEK"/&gt;
- *     &lt;enumeration value="DAIL"/&gt;
- *     &lt;enumeration value="ADHO"/&gt;
- *     &lt;enumeration value="INDA"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="Frequency1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="YEAR"/>
+ *     <enumeration value="MNTH"/>
+ *     <enumeration value="QURT"/>
+ *     <enumeration value="MIAN"/>
+ *     <enumeration value="WEEK"/>
+ *     <enumeration value="DAIL"/>
+ *     <enumeration value="ADHO"/>
+ *     <enumeration value="INDA"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "Frequency1Code")

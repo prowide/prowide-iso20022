@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -45,7 +45,7 @@ public class CardTransactionDetail2 {
     @XmlElement(name = "VldtyDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar vldtyDt;
+    protected LocalDate vldtyDt;
     @XmlElement(name = "ICCRltdData")
     protected byte[] iccRltdData;
 
@@ -80,8 +80,8 @@ public class CardTransactionDetail2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlAmts property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlAmts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -95,10 +95,12 @@ public class CardTransactionDetail2 {
      * {@link DetailedAmount10 }
      * 
      * 
+     * @return
+     *     The value of the addtlAmts property.
      */
     public List<DetailedAmount10> getAddtlAmts() {
         if (addtlAmts == null) {
-            addtlAmts = new ArrayList<DetailedAmount10>();
+            addtlAmts = new ArrayList<>();
         }
         return this.addtlAmts;
     }
@@ -109,8 +111,8 @@ public class CardTransactionDetail2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the acctAndBal property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the acctAndBal property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -124,10 +126,12 @@ public class CardTransactionDetail2 {
      * {@link CardAccount2 }
      * 
      * 
+     * @return
+     *     The value of the acctAndBal property.
      */
     public List<CardAccount2> getAcctAndBal() {
         if (acctAndBal == null) {
-            acctAndBal = new ArrayList<CardAccount2>();
+            acctAndBal = new ArrayList<>();
         }
         return this.acctAndBal;
     }
@@ -138,8 +142,8 @@ public class CardTransactionDetail2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the txVrfctnRslt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the txVrfctnRslt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -153,10 +157,12 @@ public class CardTransactionDetail2 {
      * {@link TransactionVerificationResult4 }
      * 
      * 
+     * @return
+     *     The value of the txVrfctnRslt property.
      */
     public List<TransactionVerificationResult4> getTxVrfctnRslt() {
         if (txVrfctnRslt == null) {
-            txVrfctnRslt = new ArrayList<TransactionVerificationResult4>();
+            txVrfctnRslt = new ArrayList<>();
         }
         return this.txVrfctnRslt;
     }
@@ -169,7 +175,7 @@ public class CardTransactionDetail2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getVldtyDt() {
+    public LocalDate getVldtyDt() {
         return vldtyDt;
     }
 
@@ -181,7 +187,7 @@ public class CardTransactionDetail2 {
      *     {@link String }
      *     
      */
-    public CardTransactionDetail2 setVldtyDt(XMLGregorianCalendar value) {
+    public CardTransactionDetail2 setVldtyDt(LocalDate value) {
         this.vldtyDt = value;
         return this;
     }

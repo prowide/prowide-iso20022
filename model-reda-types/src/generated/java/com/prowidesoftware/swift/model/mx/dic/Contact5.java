@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -71,11 +71,11 @@ public class Contact5 {
     @XmlElement(name = "VldFr", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar vldFr;
+    protected LocalDate vldFr;
     @XmlElement(name = "VldTo", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar vldTo;
+    protected LocalDate vldTo;
 
     /**
      * Gets the value of the nmPrfx property.
@@ -333,8 +333,8 @@ public class Contact5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the othr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the othr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -348,10 +348,12 @@ public class Contact5 {
      * {@link OtherContact1 }
      * 
      * 
+     * @return
+     *     The value of the othr property.
      */
     public List<OtherContact1> getOthr() {
         if (othr == null) {
-            othr = new ArrayList<OtherContact1>();
+            othr = new ArrayList<>();
         }
         return this.othr;
     }
@@ -389,7 +391,7 @@ public class Contact5 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getVldFr() {
+    public LocalDate getVldFr() {
         return vldFr;
     }
 
@@ -401,7 +403,7 @@ public class Contact5 {
      *     {@link String }
      *     
      */
-    public Contact5 setVldFr(XMLGregorianCalendar value) {
+    public Contact5 setVldFr(LocalDate value) {
         this.vldFr = value;
         return this;
     }
@@ -414,7 +416,7 @@ public class Contact5 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getVldTo() {
+    public LocalDate getVldTo() {
         return vldTo;
     }
 
@@ -426,7 +428,7 @@ public class Contact5 {
      *     {@link String }
      *     
      */
-    public Contact5 setVldTo(XMLGregorianCalendar value) {
+    public Contact5 setVldTo(LocalDate value) {
         this.vldTo = value;
         return this;
     }

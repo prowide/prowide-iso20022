@@ -1,28 +1,27 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for RepurchaseType10Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="RepurchaseType10Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="PAIR"/&gt;
- *     &lt;enumeration value="ROLP"/&gt;
- *     &lt;enumeration value="RATE"/&gt;
- *     &lt;enumeration value="CALL"/&gt;
- *     &lt;enumeration value="CADJ"/&gt;
- *     &lt;enumeration value="TOPU"/&gt;
- *     &lt;enumeration value="WTHD"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="RepurchaseType10Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="PAIR"/>
+ *     <enumeration value="ROLP"/>
+ *     <enumeration value="RATE"/>
+ *     <enumeration value="CALL"/>
+ *     <enumeration value="CADJ"/>
+ *     <enumeration value="TOPU"/>
+ *     <enumeration value="WTHD"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "RepurchaseType10Code")

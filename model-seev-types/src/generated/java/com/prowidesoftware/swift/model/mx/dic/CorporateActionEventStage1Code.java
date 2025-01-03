@@ -1,31 +1,30 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for CorporateActionEventStage1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CorporateActionEventStage1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="APPD"/&gt;
- *     &lt;enumeration value="CLDE"/&gt;
- *     &lt;enumeration value="PWAL"/&gt;
- *     &lt;enumeration value="SUAP"/&gt;
- *     &lt;enumeration value="UNAC"/&gt;
- *     &lt;enumeration value="WHOU"/&gt;
- *     &lt;enumeration value="FULL"/&gt;
- *     &lt;enumeration value="LAPS"/&gt;
- *     &lt;enumeration value="PART"/&gt;
- *     &lt;enumeration value="RESC"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CorporateActionEventStage1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="APPD"/>
+ *     <enumeration value="CLDE"/>
+ *     <enumeration value="PWAL"/>
+ *     <enumeration value="SUAP"/>
+ *     <enumeration value="UNAC"/>
+ *     <enumeration value="WHOU"/>
+ *     <enumeration value="FULL"/>
+ *     <enumeration value="LAPS"/>
+ *     <enumeration value="PART"/>
+ *     <enumeration value="RESC"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CorporateActionEventStage1Code")

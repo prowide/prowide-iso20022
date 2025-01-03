@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -31,11 +31,11 @@ public class SettlementDateTimeIndication1 {
     @XmlElement(name = "DbtDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar dbtDtTm;
+    protected OffsetDateTime dbtDtTm;
     @XmlElement(name = "CdtDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar cdtDtTm;
+    protected OffsetDateTime cdtDtTm;
 
     /**
      * Gets the value of the dbtDtTm property.
@@ -45,7 +45,7 @@ public class SettlementDateTimeIndication1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDbtDtTm() {
+    public OffsetDateTime getDbtDtTm() {
         return dbtDtTm;
     }
 
@@ -57,7 +57,7 @@ public class SettlementDateTimeIndication1 {
      *     {@link String }
      *     
      */
-    public SettlementDateTimeIndication1 setDbtDtTm(XMLGregorianCalendar value) {
+    public SettlementDateTimeIndication1 setDbtDtTm(OffsetDateTime value) {
         this.dbtDtTm = value;
         return this;
     }
@@ -70,7 +70,7 @@ public class SettlementDateTimeIndication1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getCdtDtTm() {
+    public OffsetDateTime getCdtDtTm() {
         return cdtDtTm;
     }
 
@@ -82,7 +82,7 @@ public class SettlementDateTimeIndication1 {
      *     {@link String }
      *     
      */
-    public SettlementDateTimeIndication1 setCdtDtTm(XMLGregorianCalendar value) {
+    public SettlementDateTimeIndication1 setCdtDtTm(OffsetDateTime value) {
         this.cdtDtTm = value;
         return this;
     }

@@ -1,42 +1,41 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for CorporateActionOption11Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CorporateActionOption11Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ABST"/&gt;
- *     &lt;enumeration value="BSPL"/&gt;
- *     &lt;enumeration value="BUYA"/&gt;
- *     &lt;enumeration value="CASE"/&gt;
- *     &lt;enumeration value="CASH"/&gt;
- *     &lt;enumeration value="CEXC"/&gt;
- *     &lt;enumeration value="CONN"/&gt;
- *     &lt;enumeration value="CONY"/&gt;
- *     &lt;enumeration value="CTEN"/&gt;
- *     &lt;enumeration value="EXER"/&gt;
- *     &lt;enumeration value="LAPS"/&gt;
- *     &lt;enumeration value="MPUT"/&gt;
- *     &lt;enumeration value="NOAC"/&gt;
- *     &lt;enumeration value="NOQU"/&gt;
- *     &lt;enumeration value="OFFR"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="OVER"/&gt;
- *     &lt;enumeration value="QINV"/&gt;
- *     &lt;enumeration value="SECU"/&gt;
- *     &lt;enumeration value="SLLE"/&gt;
- *     &lt;enumeration value="PRUN"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CorporateActionOption11Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ABST"/>
+ *     <enumeration value="BSPL"/>
+ *     <enumeration value="BUYA"/>
+ *     <enumeration value="CASE"/>
+ *     <enumeration value="CASH"/>
+ *     <enumeration value="CEXC"/>
+ *     <enumeration value="CONN"/>
+ *     <enumeration value="CONY"/>
+ *     <enumeration value="CTEN"/>
+ *     <enumeration value="EXER"/>
+ *     <enumeration value="LAPS"/>
+ *     <enumeration value="MPUT"/>
+ *     <enumeration value="NOAC"/>
+ *     <enumeration value="NOQU"/>
+ *     <enumeration value="OFFR"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="OVER"/>
+ *     <enumeration value="QINV"/>
+ *     <enumeration value="SECU"/>
+ *     <enumeration value="SLLE"/>
+ *     <enumeration value="PRUN"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CorporateActionOption11Code")

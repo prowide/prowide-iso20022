@@ -1,26 +1,25 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for EmbeddedType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="EmbeddedType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CANC"/&gt;
- *     &lt;enumeration value="EXTD"/&gt;
- *     &lt;enumeration value="OPET"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="MDET"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="EmbeddedType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CANC"/>
+ *     <enumeration value="EXTD"/>
+ *     <enumeration value="OPET"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="MDET"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "EmbeddedType1Code")

@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -158,8 +158,8 @@ public class SecuritiesTradeConfirmationV02 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the refs property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the refs property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -173,10 +173,12 @@ public class SecuritiesTradeConfirmationV02 {
      * {@link Linkages15 }
      * 
      * 
+     * @return
+     *     The value of the refs property.
      */
     public List<Linkages15> getRefs() {
         if (refs == null) {
-            refs = new ArrayList<Linkages15>();
+            refs = new ArrayList<>();
         }
         return this.refs;
     }
@@ -262,8 +264,8 @@ public class SecuritiesTradeConfirmationV02 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the undrlygFinInstrm property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the undrlygFinInstrm property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -277,10 +279,12 @@ public class SecuritiesTradeConfirmationV02 {
      * {@link UnderlyingFinancialInstrument2 }
      * 
      * 
+     * @return
+     *     The value of the undrlygFinInstrm property.
      */
     public List<UnderlyingFinancialInstrument2> getUndrlygFinInstrm() {
         if (undrlygFinInstrm == null) {
-            undrlygFinInstrm = new ArrayList<UnderlyingFinancialInstrument2>();
+            undrlygFinInstrm = new ArrayList<>();
         }
         return this.undrlygFinInstrm;
     }
@@ -316,8 +320,8 @@ public class SecuritiesTradeConfirmationV02 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the confPties property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the confPties property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -331,10 +335,12 @@ public class SecuritiesTradeConfirmationV02 {
      * {@link ConfirmationParties2 }
      * 
      * 
+     * @return
+     *     The value of the confPties property.
      */
     public List<ConfirmationParties2> getConfPties() {
         if (confPties == null) {
-            confPties = new ArrayList<ConfirmationParties2>();
+            confPties = new ArrayList<>();
         }
         return this.confPties;
     }
@@ -520,8 +526,8 @@ public class SecuritiesTradeConfirmationV02 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the othrAmts property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the othrAmts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -535,10 +541,12 @@ public class SecuritiesTradeConfirmationV02 {
      * {@link OtherAmounts16 }
      * 
      * 
+     * @return
+     *     The value of the othrAmts property.
      */
     public List<OtherAmounts16> getOthrAmts() {
         if (othrAmts == null) {
-            othrAmts = new ArrayList<OtherAmounts16>();
+            othrAmts = new ArrayList<>();
         }
         return this.othrAmts;
     }
@@ -549,8 +557,8 @@ public class SecuritiesTradeConfirmationV02 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the othrPrics property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the othrPrics property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -564,10 +572,12 @@ public class SecuritiesTradeConfirmationV02 {
      * {@link OtherPrices1 }
      * 
      * 
+     * @return
+     *     The value of the othrPrics property.
      */
     public List<OtherPrices1> getOthrPrics() {
         if (othrPrics == null) {
-            othrPrics = new ArrayList<OtherPrices1>();
+            othrPrics = new ArrayList<>();
         }
         return this.othrPrics;
     }
@@ -653,8 +663,8 @@ public class SecuritiesTradeConfirmationV02 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -668,10 +678,12 @@ public class SecuritiesTradeConfirmationV02 {
      * {@link SupplementaryData1 }
      * 
      * 
+     * @return
+     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<SupplementaryData1>();
+            splmtryData = new ArrayList<>();
         }
         return this.splmtryData;
     }

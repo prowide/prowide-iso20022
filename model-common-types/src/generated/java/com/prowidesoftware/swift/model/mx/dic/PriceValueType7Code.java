@@ -1,34 +1,33 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for PriceValueType7Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="PriceValueType7Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="DISC"/&gt;
- *     &lt;enumeration value="PREM"/&gt;
- *     &lt;enumeration value="PARV"/&gt;
- *     &lt;enumeration value="YIEL"/&gt;
- *     &lt;enumeration value="SPRE"/&gt;
- *     &lt;enumeration value="PEUN"/&gt;
- *     &lt;enumeration value="ABSO"/&gt;
- *     &lt;enumeration value="TEDP"/&gt;
- *     &lt;enumeration value="TEDY"/&gt;
- *     &lt;enumeration value="FICT"/&gt;
- *     &lt;enumeration value="VACT"/&gt;
- *     &lt;enumeration value="PRCT"/&gt;
- *     &lt;enumeration value="ACTU"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="PriceValueType7Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="DISC"/>
+ *     <enumeration value="PREM"/>
+ *     <enumeration value="PARV"/>
+ *     <enumeration value="YIEL"/>
+ *     <enumeration value="SPRE"/>
+ *     <enumeration value="PEUN"/>
+ *     <enumeration value="ABSO"/>
+ *     <enumeration value="TEDP"/>
+ *     <enumeration value="TEDY"/>
+ *     <enumeration value="FICT"/>
+ *     <enumeration value="VACT"/>
+ *     <enumeration value="PRCT"/>
+ *     <enumeration value="ACTU"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "PriceValueType7Code")
