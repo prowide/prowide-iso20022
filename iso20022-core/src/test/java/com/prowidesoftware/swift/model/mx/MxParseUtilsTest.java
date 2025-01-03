@@ -989,4 +989,47 @@ public class MxParseUtilsTest {
     void testFindElementsPassingNullParams() {
         assertThrows(NullPointerException.class, () -> MxParseUtils.findByPath(xml_pacs_008_001_01, null));
     }
+
+    @Test
+    public void testElementExists_01() {
+        final String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+                + "<Payload><Document xmlns=\"urn:swift:xsd:camt.003.001.04\"></Document></Payload>";
+        assertTrue(MxParseUtils.elementExists(xml, "Document"));
+        assertFalse(MxParseUtils.elementExists(xml, "Foo"));
+    }
+
+    @Test
+    public void testElementExists_02() {
+        final String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+                + "<message>"
+                + "<AppHdr xmlns:h=\"urn:swift:xsd:$ahV10\"><From></From></AppHdr>"
+                + "<Doc:Document xmlns:Doc=\"urn:swift:xsd:camt.003.001.04\"></Doc:Document>"
+                + "</message>";
+        assertTrue(MxParseUtils.elementExists(xml, "AppHdr"));
+        assertTrue(MxParseUtils.elementExists(xml, "Document"));
+        assertTrue(MxParseUtils.elementExists(xml, "message"));
+        assertFalse(MxParseUtils.elementExists(xml, "Foo"));
+    }
+
+    @Test
+    public void testFindByTagNarrative() {
+        final String xml =
+                "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.01\">\n" + "    <FIToFICstmrCdtTrf>\n"
+                        + "        <CdtTrfTxInf>\n"
+                        + "            <RmtInf>\n"
+                        + "                <Ustrd>This is a multiline\n"
+                        + "narrative text that\n"
+                        + "spans multiple lines\n"
+                        + "within the XML tag.</Ustrd>\n"
+                        + "            </RmtInf>\n"
+                        + "        </CdtTrfTxInf>\n"
+                        + "    </FIToFICstmrCdtTrf>\n"
+                        + "</Document>";
+        assertEquals(
+                "This is a multiline\nnarrative text that\nspans multiple lines\nwithin the XML tag.",
+                MxParseUtils.findByPath(xml, "//RmtInf/Ustrd").orElse(null));
+        assertEquals(
+                "This is a multiline\nnarrative text that\nspans multiple lines\nwithin the XML tag.",
+                MxParseUtils.findByTags(xml, "CdtTrfTxInf", "Ustrd").orElse(null));
+    }
 }

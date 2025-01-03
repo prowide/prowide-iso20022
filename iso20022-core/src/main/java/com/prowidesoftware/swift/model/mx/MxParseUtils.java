@@ -87,7 +87,7 @@ public class MxParseUtils {
      * @param targetClass the class of the object being parsed
      * @param classes     the object classes to build a jaxb context
      * @param params      not null unmarshalling parameters
-     * @return parsed element or null if cannot be parsed
+     * @return parsed element or null if the source cannot be parsed
      * @throws ProwideException if severe errors occur during parse
      * @since 9.2.6
      */
@@ -214,17 +214,13 @@ public class MxParseUtils {
         }
 
         // if the Document does not have a namespace, try to identify the message from the header
-        Optional<XMLStreamReader> element = findElementByTags(xml, "MsgDefIdr");
+        Optional<String> element = findByTags(xml, "MsgDefIdr");
         if (!element.isPresent()) {
             // Legacy ahv10 header
-            element = findElementByTags(xml, "MsgName");
+            element = findByTags(xml, "MsgName");
         }
         if (element.isPresent()) {
-            try {
-                return enrichBusinessService(new MxId(element.get().getElementText()), xml);
-            } catch (XMLStreamException e) {
-                log.finer("Error identifying message: " + e.getMessage());
-            }
+            return enrichBusinessService(new MxId(element.get()), xml);
         }
 
         return Optional.empty();
@@ -234,13 +230,9 @@ public class MxParseUtils {
         if (mxId == null) {
             return Optional.empty();
         }
-        Optional<XMLStreamReader> element = findElementByTags(xml, "BizSvc");
+        Optional<String> element = findByTags(xml, "BizSvc");
         if (element.isPresent()) {
-            try {
-                mxId.setBusinessService(element.get().getElementText());
-            } catch (XMLStreamException e) {
-                log.finer("Error identifying business service: " + e.getMessage());
-            }
+            mxId.setBusinessService(element.get());
         }
         return Optional.of(mxId);
     }
@@ -392,28 +384,23 @@ public class MxParseUtils {
      */
     public static Optional<SettlementInfo> getSettlementInfo(final String xml) {
         Objects.requireNonNull(xml, "XML to parse must not be null");
-        Optional<XMLStreamReader> sttlmMtdMaybe = findElementByTags(xml, "SttlmMtd");
-        Optional<XMLStreamReader> clrSysCdMaybe = findElementByTags(xml, "ClrSys", "Cd");
-        Optional<XMLStreamReader> clrSysPrtryMaybe = findElementByTags(xml, "ClrSys", "Prtry");
+        Optional<String> sttlmMtdMaybe = findByTags(xml, "SttlmMtd");
+        Optional<String> clrSysCdMaybe = findByTags(xml, "ClrSys", "Cd");
+        Optional<String> clrSysPrtryMaybe = findByTags(xml, "ClrSys", "Prtry");
 
         if (sttlmMtdMaybe.isPresent() || clrSysCdMaybe.isPresent() || clrSysPrtryMaybe.isPresent()) {
             SettlementInfo settlementInfo = new SettlementInfo();
-            try {
-                if (sttlmMtdMaybe.isPresent()) {
-                    settlementInfo.setSettlementMethod(EnumUtils.getEnum(
-                            SettlementMethod.class, sttlmMtdMaybe.get().getElementText()));
-                }
-                if (clrSysCdMaybe.isPresent()) {
-                    // if code is present we use it as clearing system code
-                    settlementInfo.setClearingSystemCode(clrSysCdMaybe.get().getElementText());
-                } else if (clrSysPrtryMaybe.isPresent()) {
-                    // otherwise we try with the proprietary code (that also refers toa clearing system)
-                    settlementInfo.setClearingSystemCode(clrSysPrtryMaybe.get().getElementText());
-                }
-                return Optional.of(settlementInfo);
-            } catch (XMLStreamException e) {
-                log.finer("Error identifying business service: " + e.getMessage());
+            if (sttlmMtdMaybe.isPresent()) {
+                settlementInfo.setSettlementMethod(EnumUtils.getEnum(SettlementMethod.class, sttlmMtdMaybe.get()));
             }
+            if (clrSysCdMaybe.isPresent()) {
+                // if code is present we use it as clearing system code
+                settlementInfo.setClearingSystemCode(clrSysCdMaybe.get());
+            } else if (clrSysPrtryMaybe.isPresent()) {
+                // otherwise we try with the proprietary code (that also refers toa clearing system)
+                settlementInfo.setClearingSystemCode(clrSysPrtryMaybe.get());
+            }
+            return Optional.of(settlementInfo);
         }
         return Optional.empty();
     }
@@ -429,6 +416,9 @@ public class MxParseUtils {
      *     findElement(xml, "ClrSys", "Cd");
      * </pre>
      * Notice that the {@code <Cd>} tag does not need to be a direct child of the {@code <ClrSys>} tag.
+     *
+     * <p>It is important to remark the last tag in the sequence is the one that is expected to have text content,
+     * and not an intermediate tag.
      *
      * @param xml  the XML document as a {@link String} to search.
      * @param tags the sequence of tag names that define the hierarchy of the target element.
@@ -452,7 +442,13 @@ public class MxParseUtils {
                 if (XMLStreamConstants.START_ELEMENT == event) {
                     if (reader.getLocalName().equals(tags[tagsIndex])) {
                         if (tagsIndex == tags.length - 1) {
-                            return Optional.of(reader.getElementText());
+                            // Ensure the next event is CHARACTERS to get the text content
+                            try {
+                                return Optional.of(reader.getElementText());
+                            } catch (XMLStreamException e1) {
+                                log.warning("Expected the found element to have text content: " + e1.getMessage());
+                                break;
+                            }
                         }
                         tagsIndex++;
                     }
@@ -519,6 +515,9 @@ public class MxParseUtils {
      *     findByPath(xml, //BkToCstmrStmt/GrpHdr/MsgPgntn/PgNb);
      * </pre>
      *
+     * <p>It is important to remark the last tag in the sequence is the one that is expected to have text content,
+     * and not an intermediate tag.
+     *
      * @param xml        the XML document as a {@link String} to search.
      * @param targetPath the path of the field to find into the xml, could be absolute or relative (indicated with starting double slash)
      * @return an {@link Optional} containing the found element value or empty if not found.
@@ -565,7 +564,13 @@ public class MxParseUtils {
                         // Check if the current path matches the target path or if the currentPath contains the relative
                         // path
                         if (currentPath.equals(targetPath) || currentPath.contains(targetPath)) {
-                            return Optional.of(reader.getElementText());
+                            // Ensure the next event is CHARACTERS to get the text content
+                            try {
+                                return Optional.of(reader.getElementText());
+                            } catch (XMLStreamException e1) {
+                                log.warning("Expected the found element to have text content: " + e1.getMessage());
+                                break;
+                            }
                         }
                         break;
 
@@ -678,6 +683,33 @@ public class MxParseUtils {
      * @since 9.5.5
      */
     public static boolean elementExists(final String xml, final String localName) {
-        return findByTags(xml, localName).isPresent();
+        Objects.requireNonNull(xml, "XML to parse must not be null");
+        Validate.notBlank(xml, "XML to parse must not be a blank string");
+        Objects.requireNonNull(localName, "Element name to find must not be null");
+        Validate.notBlank(localName, "Element name must not be a blank string");
+
+        XMLInputFactory factory = XMLInputFactory.newInstance();
+        XMLStreamReader reader = null;
+        try {
+            reader = factory.createXMLStreamReader(new StringReader(xml));
+            while (reader.hasNext()) {
+                int event = reader.next();
+                if (event == XMLStreamConstants.START_ELEMENT
+                        && reader.getLocalName().equals(localName)) {
+                    return true;
+                }
+            }
+        } catch (XMLStreamException e) {
+            log.log(Level.SEVERE, "Error reading XML", e);
+        } finally {
+            if (reader != null) {
+                try {
+                    reader.close();
+                } catch (XMLStreamException e) {
+                    log.log(Level.WARNING, "Error closing XMLStreamReader", e);
+                }
+            }
+        }
+        return false;
     }
 }
