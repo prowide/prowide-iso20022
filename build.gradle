@@ -315,7 +315,7 @@ dependencies {
 	// included build (keep in sync with the latest Prowide Core version)
 	api 'com.prowidesoftware:pw-swift-core:SRU2024-9.5.5'
 	implementation 'org.apache.commons:commons-lang3:3.17.0'
-	implementation 'com.google.code.gson:gson:2.11'
+	implementation 'com.google.code.gson:gson:2.11.0'
 }
 
 // repo for publishing

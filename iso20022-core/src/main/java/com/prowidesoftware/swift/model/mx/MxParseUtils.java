@@ -16,6 +16,8 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.ProwideException;
+import com.prowidesoftware.deprecation.ProwideDeprecated;
+import com.prowidesoftware.deprecation.TargetYear;
 import com.prowidesoftware.swift.model.DistinguishedName;
 import com.prowidesoftware.swift.model.MxId;
 import com.prowidesoftware.swift.model.SettlementInfo;
@@ -85,7 +87,7 @@ public class MxParseUtils {
      * @param targetClass the class of the object being parsed
      * @param classes     the object classes to build a jaxb context
      * @param params      not null unmarshalling parameters
-     * @return parsed element or null if cannot be parsed
+     * @return parsed element or null if the source cannot be parsed
      * @throws ProwideException if severe errors occur during parse
      * @since 9.2.6
      */
@@ -212,17 +214,13 @@ public class MxParseUtils {
         }
 
         // if the Document does not have a namespace, try to identify the message from the header
-        Optional<XMLStreamReader> element = findElementByTags(xml, "MsgDefIdr");
+        Optional<String> element = findByTags(xml, "MsgDefIdr");
         if (!element.isPresent()) {
             // Legacy ahv10 header
-            element = findElementByTags(xml, "MsgName");
+            element = findByTags(xml, "MsgName");
         }
         if (element.isPresent()) {
-            try {
-                return enrichBusinessService(new MxId(element.get().getElementText()), xml);
-            } catch (XMLStreamException e) {
-                log.finer("Error identifying message: " + e.getMessage());
-            }
+            return enrichBusinessService(new MxId(element.get()), xml);
         }
 
         return Optional.empty();
@@ -232,13 +230,9 @@ public class MxParseUtils {
         if (mxId == null) {
             return Optional.empty();
         }
-        Optional<XMLStreamReader> element = findElementByTags(xml, "BizSvc");
+        Optional<String> element = findByTags(xml, "BizSvc");
         if (element.isPresent()) {
-            try {
-                mxId.setBusinessService(element.get().getElementText());
-            } catch (XMLStreamException e) {
-                log.finer("Error identifying business service: " + e.getMessage());
-            }
+            mxId.setBusinessService(element.get());
         }
         return Optional.of(mxId);
     }
@@ -390,34 +384,30 @@ public class MxParseUtils {
      */
     public static Optional<SettlementInfo> getSettlementInfo(final String xml) {
         Objects.requireNonNull(xml, "XML to parse must not be null");
-        Optional<XMLStreamReader> sttlmMtdMaybe = findElementByTags(xml, "SttlmMtd");
-        Optional<XMLStreamReader> clrSysCdMaybe = findElementByTags(xml, "ClrSys", "Cd");
-        Optional<XMLStreamReader> clrSysPrtryMaybe = findElementByTags(xml, "ClrSys", "Prtry");
+        Optional<String> sttlmMtdMaybe = findByTags(xml, "SttlmMtd");
+        Optional<String> clrSysCdMaybe = findByTags(xml, "ClrSys", "Cd");
+        Optional<String> clrSysPrtryMaybe = findByTags(xml, "ClrSys", "Prtry");
 
         if (sttlmMtdMaybe.isPresent() || clrSysCdMaybe.isPresent() || clrSysPrtryMaybe.isPresent()) {
             SettlementInfo settlementInfo = new SettlementInfo();
-            try {
-                if (sttlmMtdMaybe.isPresent()) {
-                    settlementInfo.setSettlementMethod(EnumUtils.getEnum(
-                            SettlementMethod.class, sttlmMtdMaybe.get().getElementText()));
-                }
-                if (clrSysCdMaybe.isPresent()) {
-                    // if code is present we use it as clearing system code
-                    settlementInfo.setClearingSystemCode(clrSysCdMaybe.get().getElementText());
-                } else if (clrSysPrtryMaybe.isPresent()) {
-                    // otherwise we try with the proprietary code (that also refers toa clearing system)
-                    settlementInfo.setClearingSystemCode(clrSysPrtryMaybe.get().getElementText());
-                }
-                return Optional.of(settlementInfo);
-            } catch (XMLStreamException e) {
-                log.finer("Error identifying business service: " + e.getMessage());
+            if (sttlmMtdMaybe.isPresent()) {
+                settlementInfo.setSettlementMethod(EnumUtils.getEnum(SettlementMethod.class, sttlmMtdMaybe.get()));
             }
+            if (clrSysCdMaybe.isPresent()) {
+                // if code is present we use it as clearing system code
+                settlementInfo.setClearingSystemCode(clrSysCdMaybe.get());
+            } else if (clrSysPrtryMaybe.isPresent()) {
+                // otherwise we try with the proprietary code (that also refers toa clearing system)
+                settlementInfo.setClearingSystemCode(clrSysPrtryMaybe.get());
+            }
+            return Optional.of(settlementInfo);
         }
         return Optional.empty();
     }
 
     /**
-     * Finds an XML element within a document by traversing a specified tag hierarchy.
+     * Finds an XML element within a document by traversing a specified tag hierarchy with potential any element in
+     * between the specified tags.
      *
      * <p>This method uses an {@link XMLStreamReader} to parse the provided XML document.
      * It searches for an element that matches the specified sequence of tag names (hierarchy).
@@ -425,16 +415,19 @@ public class MxParseUtils {
      * <pre>
      *     findElement(xml, "ClrSys", "Cd");
      * </pre>
+     * Notice that the {@code <Cd>} tag does not need to be a direct child of the {@code <ClrSys>} tag.
+     *
+     * <p>It is important to remark the last tag in the sequence is the one that is expected to have text content,
+     * and not an intermediate tag.
      *
      * @param xml  the XML document as a {@link String} to search.
      * @param tags the sequence of tag names that define the hierarchy of the target element.
-     * @return an {@link Optional} containing the {@link XMLStreamReader} positioned at the
-     * matching element if found; otherwise, an empty {@link Optional}.
+     * @return an {@link Optional} containing the matching element value or empty if not found.
      * @throws NullPointerException     if the {@code xml} or {@code tags} are null.
      * @throws IllegalArgumentException if the {@code xml} is a blank string.
-     * @since 9.5.5
+     * @since 9.5.6
      */
-    public static Optional<XMLStreamReader> findElementByTags(final String xml, String... tags) {
+    public static Optional<String> findByTags(final String xml, String... tags) {
         Objects.requireNonNull(xml, "XML to parse must not be null");
         Validate.notBlank(xml, "XML to parse must not be a blank string");
         Objects.requireNonNull(tags, "tags to find must not be null");
@@ -449,7 +442,20 @@ public class MxParseUtils {
                 if (XMLStreamConstants.START_ELEMENT == event) {
                     if (reader.getLocalName().equals(tags[tagsIndex])) {
                         if (tagsIndex == tags.length - 1) {
-                            return Optional.of(reader);
+                            // Ensure the next event is CHARACTERS to get the text content
+                            try {
+                                return Optional.of(reader.getElementText());
+                            } catch (XMLStreamException e1) {
+                                log.warning("The " + tags[tags.length - 1]
+                                        + " tag should point to a leaf, not to an intermediate XML node");
+                                if (log.isLoggable(Level.FINE)) {
+                                    log.log(
+                                            Level.FINE,
+                                            "The element at " + tags[tags.length - 1]
+                                                    + " is not an element with text content: " + e1.getMessage());
+                                }
+                                break;
+                            }
                         }
                         tagsIndex++;
                     }
@@ -470,26 +476,63 @@ public class MxParseUtils {
     }
 
     /**
+     * @deprecated use {@link #findByTags(String, String...)} instead
+     */
+    @Deprecated
+    @ProwideDeprecated(phase2 = TargetYear.SRU2025)
+    // this method is deprecated because it is not a good idea to return the reader, that we are opening inside the
+    // method
+    // leaving the responsibility of closing it to the caller; where the caller probably just wants the value of the
+    // element
+    public static Optional<XMLStreamReader> findElementByTags(final String xml, String... tags) {
+        Objects.requireNonNull(xml, "XML to parse must not be null");
+        Validate.notBlank(xml, "XML to parse must not be a blank string");
+        Objects.requireNonNull(tags, "tags to find must not be null");
+
+        final XMLInputFactory xif = SafeXmlUtils.inputFactory();
+        int tagsIndex = 0;
+        try {
+            XMLStreamReader reader = xif.createXMLStreamReader(new StringReader(MxParseUtils.makeXmlLenient(xml)));
+            while (reader.hasNext()) {
+                int event = reader.next();
+                if (XMLStreamConstants.START_ELEMENT == event) {
+                    if (reader.getLocalName().equals(tags[tagsIndex])) {
+                        if (tagsIndex == tags.length - 1) {
+                            return Optional.of(reader);
+                        }
+                        tagsIndex++;
+                    }
+                }
+            }
+        } catch (XMLStreamException e) {
+            log.log(Level.SEVERE, "Error reading XML", e);
+        }
+        return Optional.empty();
+    }
+
+    /**
      * Finds an XML element within a document by traversing a specified tag hierarchy.
      *
      * <p>This method uses an {@link XMLStreamReader} to parse the provided XML document.
      * It searches for an element that matches the specified path.
      * For example, to find the {@code <PgNb>} you can call using absolute path or relative path:
-     * For using relative path you must use "//" at the beginning of the path. The code will detect this and treat it as a relative path.
+     * For relative path parameters you must use "//" as starting segment.
      * <pre>
-     *     findElementByPath(xml, /Document/BkToCstmrStmt/GrpHdr/MsgPgntn/PgNb);
-     *     findElementByPath(xml, //BkToCstmrStmt/GrpHdr/MsgPgntn/PgNb);
+     *     findByPath(xml, /Document/BkToCstmrStmt/GrpHdr/MsgPgntn/PgNb);
+     *     findByPath(xml, //BkToCstmrStmt/GrpHdr/MsgPgntn/PgNb);
      * </pre>
      *
+     * <p>It is important to remark the last tag in the sequence is the one that is expected to have text content,
+     * and not an intermediate tag.
+     *
      * @param xml        the XML document as a {@link String} to search.
-     * @param targetPath the path of the field to find into the xml.
-     * @return an {@link Optional} containing the {@link XMLStreamReader} positioned at the
-     * matching element if found; otherwise, an empty {@link Optional}.
+     * @param targetPath the path of the field to find into the xml, could be absolute or relative (indicated with starting double slash)
+     * @return an {@link Optional} containing the found element value or empty if not found.
      * @throws NullPointerException     if the {@code xml} or {@code tags} are null.
      * @throws IllegalArgumentException if the {@code xml} is a blank string.
-     * @since 9.5.5
+     * @since 9.5.6
      */
-    public static Optional<XMLStreamReader> findElementByPath(String xml, String targetPath) {
+    public static Optional<String> findByPath(String xml, String targetPath) {
         Objects.requireNonNull(xml, "XML to parse must not be null");
         Validate.notBlank(xml, "XML to parse must not be a blank string");
         Objects.requireNonNull(targetPath, "targetPath to find must not be null");
@@ -498,7 +541,7 @@ public class MxParseUtils {
         // Define the regex to detect if the path is absolute or relative
         Matcher matcher = pattern.matcher(targetPath);
 
-        // check if is valid expresion if not throws exception
+        // check if is valid expression if not throws exception
         if (!matcher.matches()) {
             throw new IllegalArgumentException("Invalid path format: " + targetPath);
         }
@@ -522,19 +565,28 @@ public class MxParseUtils {
 
                 switch (event) {
                     case XMLStreamConstants.START_ELEMENT:
-                        if (!reader.getLocalName().equals("RequestPayload")) {
-                            // Absolute path
-                            pathStack.push(reader.getLocalName());
-                            String currentPath = buildCurrentPath(pathStack);
+                        pathStack.push(reader.getLocalName());
+                        String currentPath = buildCurrentPath(pathStack);
 
-                            // Check if the current path matches the target path or if the currentPath contains the
-                            // relative path
-                            if (currentPath.equals(targetPath) || currentPath.contains(targetPath)) {
-                                reader.close();
-                                return Optional.of(reader);
+                        // Check if the current path matches the target path or if the currentPath contains the relative
+                        // path
+                        if (currentPath.equals(targetPath) || currentPath.contains(targetPath)) {
+                            // Ensure the next event is CHARACTERS to get the text content
+                            try {
+                                return Optional.of(reader.getElementText());
+                            } catch (XMLStreamException e1) {
+                                log.warning("The " + targetPath
+                                        + " path should point to a leaf, not to an intermediate XML node");
+                                if (log.isLoggable(Level.FINE)) {
+                                    log.log(
+                                            Level.FINE,
+                                            "The element at " + targetPath + " is not an element with text content: "
+                                                    + e1.getMessage());
+                                }
+                                break;
                             }
-                            break;
                         }
+                        break;
 
                     case XMLStreamConstants.END_ELEMENT:
                         if (!pathStack.isEmpty()) {
@@ -561,6 +613,77 @@ public class MxParseUtils {
         return Optional.empty(); // Return empty if no match
     }
 
+    /**
+     * @deprecated use {@link #findByTags(String, String...)} instead
+     */
+    @Deprecated
+    @ProwideDeprecated(phase2 = TargetYear.SRU2025)
+    // this method is deprecated because it is not a good idea to return the reader, that we are opening inside the
+    // method
+    // leaving the responsibility of closing it to the caller; where the caller probably just wants the value of the
+    // element
+    public static Optional<XMLStreamReader> findElementByPath(String xml, String targetPath) {
+        Objects.requireNonNull(xml, "XML to parse must not be null");
+        Validate.notBlank(xml, "XML to parse must not be a blank string");
+        Objects.requireNonNull(targetPath, "targetPath to find must not be null");
+        Validate.notBlank(targetPath, "targetPath must not be a blank string");
+
+        // Define the regex to detect if the path is absolute or relative
+        Matcher matcher = pattern.matcher(targetPath);
+
+        // check if is valid expression if not throws exception
+        if (!matcher.matches()) {
+            throw new IllegalArgumentException("Invalid path format: " + targetPath);
+        }
+
+        // Check if the path is relative or absolute
+        boolean isRelative = targetPath.startsWith("//");
+        if (isRelative) {
+            targetPath = targetPath.substring(1);
+        }
+
+        XMLInputFactory factory = XMLInputFactory.newInstance();
+        try {
+            XMLStreamReader reader = factory.createXMLStreamReader(new StringReader(xml));
+
+            // Stack to track the path elements as we iterate through XML
+            Stack<String> pathStack = new Stack<>();
+
+            while (reader.hasNext()) {
+                int event = reader.next();
+
+                switch (event) {
+                    case XMLStreamConstants.START_ELEMENT:
+                        if (!reader.getLocalName().equals("RequestPayload")) {
+                            // Absolute path
+                            pathStack.push(reader.getLocalName());
+                            String currentPath = buildCurrentPath(pathStack);
+
+                            // Check if the current path matches the target path or if the currentPath contains the
+                            // relative path
+                            if (currentPath.equals(targetPath) || currentPath.contains(targetPath)) {
+                                return Optional.of(reader);
+                            }
+                            break;
+                        }
+
+                    case XMLStreamConstants.END_ELEMENT:
+                        if (!pathStack.isEmpty()) {
+                            pathStack.pop();
+                        }
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+        } catch (XMLStreamException e) {
+            log.log(Level.SEVERE, "Error finding element by path", e);
+        }
+
+        return Optional.empty(); // Return empty if no match
+    }
+
     private static String buildCurrentPath(Stack<String> pathStack) {
         return "/" + String.join("/", pathStack);
     }
@@ -574,6 +697,33 @@ public class MxParseUtils {
      * @since 9.5.5
      */
     public static boolean elementExists(final String xml, final String localName) {
-        return findElementByTags(xml, localName).isPresent();
+        Objects.requireNonNull(xml, "XML to parse must not be null");
+        Validate.notBlank(xml, "XML to parse must not be a blank string");
+        Objects.requireNonNull(localName, "Element name to find must not be null");
+        Validate.notBlank(localName, "Element name must not be a blank string");
+
+        XMLInputFactory factory = XMLInputFactory.newInstance();
+        XMLStreamReader reader = null;
+        try {
+            reader = factory.createXMLStreamReader(new StringReader(xml));
+            while (reader.hasNext()) {
+                int event = reader.next();
+                if (event == XMLStreamConstants.START_ELEMENT
+                        && reader.getLocalName().equals(localName)) {
+                    return true;
+                }
+            }
+        } catch (XMLStreamException e) {
+            log.log(Level.SEVERE, "Error reading XML", e);
+        } finally {
+            if (reader != null) {
+                try {
+                    reader.close();
+                } catch (XMLStreamException e) {
+                    log.log(Level.WARNING, "Error closing XMLStreamReader", e);
+                }
+            }
+        }
+        return false;
     }
 }
