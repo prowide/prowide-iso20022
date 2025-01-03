@@ -1,10 +1,17 @@
 # Prowide ISO 20022 - CHANGELOG
 
+#### 10.2.5 - January 2025
+  * (PW-2113) `MxParseUtils` added a method to extract the enclosed MT from a multi-format MX message
+  * (PW-2113) `MxParseUtils` added methods to extract comments from XML string
+  * Added new SettlementInfo class, and added MxParseUtils#getSettlementInfo to extract it from a raw MX message.
+  * Moved and enhanced the MxSwiftMessage#findElement to support multiple element's path
+  * Update apache-commons-lang3 from 3.14.0 to 3.17.0 fixing derived apache-text dependency vulnerabilities
+  * Gradle wrapper update to 8.12
+
 #### 10.2.4 - November 2024
   * (GH-118) Added `toJsonV9` and `fromJsonV9` in the `AbstractMX` to handle retro-compatibility with Java 8 DateTime elements in JSON serialization
 
 #### 10.2.3 - August 2024
-  * (PW-1958) Fixed the `DefaultMxMetadataStrategy` NPE issue when the amount values are null
 
 #### 10.2.2 - August 2024
   * (PW-1947) Updated MX model with latest SWIFT SRU2024 schema update, including new messages such as trck.001.001.03
