@@ -16,7 +16,6 @@
 package com.prowidesoftware.swift.model.mx;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.prowidesoftware.swift.model.MxBusinessProcess;
 import com.prowidesoftware.swift.model.MxId;
@@ -26,7 +25,6 @@ import com.prowidesoftware.swift.model.mt.AbstractMT;
 import java.util.List;
 import java.util.Optional;
 import javax.xml.stream.XMLStreamException;
-import javax.xml.stream.XMLStreamReader;
 import org.junit.jupiter.api.Test;
 
 public class MxParseUtilsTest {
@@ -522,7 +520,7 @@ public class MxParseUtilsTest {
 
     @Test
     void identifySettlementMethodCLRG() {
-        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><RequestPayload>"
+        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Message>"
                 + "    <SwIntRef:Request xmlns:SwIntRef=\"urn:swift:snl:ns.SwInt\">"
                 + "        <SwIntRef:RequestControl/><SwIntRef:RequestHeader>"
                 + "            <SwIntRef:Requestor>ou=xxx,o=irvtdefx,o=swift</SwIntRef:Requestor>"
@@ -645,7 +643,7 @@ public class MxParseUtilsTest {
                 + "            </CdtTrfTxInf>"
                 + "        </FICdtTrf>"
                 + "    </Document>"
-                + "</RequestPayload>";
+                + "</Message>";
         MxId id = MxParseUtils.identifyMessage(xml).orElse(null);
         assertNotNull(id);
         assertEquals("pacs.009.001.08", id.id());
@@ -675,35 +673,36 @@ public class MxParseUtilsTest {
         assertNotNull(id);
         assertEquals("pacs.028.001.01", id.id());
 
-        Optional<XMLStreamReader> msgId =
-                MxParseUtils.findElementByTags(xml_pacs_008_001_01, "FIToFIPmtStsReq", "GrpHdr", "MsgId");
-        Optional<XMLStreamReader> BICFI = MxParseUtils.findElementByTags(
-                xml_pacs_008_001_01, "FIToFIPmtStsReq", "GrpHdr", "InstgAgt", "FinInstnId", "BICFI");
-        Optional<XMLStreamReader> sttlmMtd = MxParseUtils.findElementByTags(
-                xml_pacs_008_001_01, "FIToFIPmtStsReq", "TxInf", "OrgnlTxRef", "SttlmInf", "SttlmMtd");
-        Optional<XMLStreamReader> prtry = MxParseUtils.findElementByTags(
-                xml_pacs_008_001_01, "FIToFIPmtStsReq", "TxInf", "OrgnlTxRef", "SttlmInf", "ClrSys", "Prtry");
-        Optional<XMLStreamReader> IBAN = MxParseUtils.findElementByTags(
-                xml_pacs_008_001_01, "FIToFIPmtStsReq", "TxInf", "OrgnlTxRef", "CdtrAcct", "Id", "IBAN");
-        Optional<XMLStreamReader> IBAN_invalid =
-                MxParseUtils.findElementByTags(xml_pacs_008_001_01, "FIToFIPmtStsReq", "TxInf", "Id", "Foo", "IBAN");
+        assertEquals(
+                "MSGID-pacs028-20190529-1",
+                MxParseUtils.findByTags(xml_pacs_008_001_01, "FIToFIPmtStsReq", "GrpHdr", "MsgId")
+                        .orElse(null));
 
-        assertTrue(msgId.isPresent());
-        assertEquals("MSGID-pacs028-20190529-1", msgId.get().getElementText());
+        assertEquals(
+                "FOOICHBBXXX",
+                MxParseUtils.findByTags(xml_pacs_008_001_01, "FIToFIPmtStsReq", "GrpHdr", "InstgAgt", "BICFI")
+                        .orElse(null));
 
-        assertTrue(BICFI.isPresent());
-        assertEquals("FOOICHBBXXX", BICFI.get().getElementText());
+        assertEquals(
+                "INDA",
+                MxParseUtils.findByTags(
+                                xml_pacs_008_001_01, "FIToFIPmtStsReq", "TxInf", "OrgnlTxRef", "SttlmInf", "SttlmMtd")
+                        .orElse(null));
 
-        assertTrue(sttlmMtd.isPresent());
-        assertEquals("INDA", sttlmMtd.get().getElementText());
+        assertEquals(
+                "ABE",
+                MxParseUtils.findByTags(
+                                xml_pacs_008_001_01, "FIToFIPmtStsReq", "OrgnlTxRef", "SttlmInf", "ClrSys", "Prtry")
+                        .orElse(null));
 
-        assertTrue(prtry.isPresent());
-        assertEquals("ABE", prtry.get().getElementText());
+        assertEquals(
+                "DE47100100001234567890",
+                MxParseUtils.findByTags(
+                                xml_pacs_008_001_01, "FIToFIPmtStsReq", "TxInf", "OrgnlTxRef", "CdtrAcct", "Id", "IBAN")
+                        .orElse(null));
 
-        assertTrue(IBAN.isPresent());
-        assertEquals("DE47100100001234567890", IBAN.get().getElementText());
-
-        assertFalse(IBAN_invalid.isPresent());
+        assertFalse(MxParseUtils.findByTags(xml_pacs_008_001_01, "FIToFIPmtStsReq", "TxInf", "Id", "Foo", "IBAN")
+                .isPresent());
     }
 
     @Test
@@ -713,35 +712,37 @@ public class MxParseUtilsTest {
         assertNotNull(id);
         assertEquals("pacs.028.001.01", id.id());
 
-        Optional<XMLStreamReader> msgId =
-                MxParseUtils.findElementByPath(xml_pacs_008_001_01, "/Document/FIToFIPmtStsReq/GrpHdr/MsgId");
-        Optional<XMLStreamReader> BICFI = MxParseUtils.findElementByPath(
-                xml_pacs_008_001_01, "/Document/FIToFIPmtStsReq/GrpHdr/InstgAgt/FinInstnId/BICFI");
-        Optional<XMLStreamReader> sttlmMtd = MxParseUtils.findElementByPath(
-                xml_pacs_008_001_01, "/Document/FIToFIPmtStsReq/TxInf/OrgnlTxRef/SttlmInf/SttlmMtd");
-        Optional<XMLStreamReader> prtry = MxParseUtils.findElementByPath(
-                xml_pacs_008_001_01, "/Document/FIToFIPmtStsReq/TxInf/OrgnlTxRef/SttlmInf/ClrSys/Prtry");
-        Optional<XMLStreamReader> IBAN = MxParseUtils.findElementByPath(
-                xml_pacs_008_001_01, "/Document/FIToFIPmtStsReq/TxInf/OrgnlTxRef/CdtrAcct/Id/IBAN");
-        Optional<XMLStreamReader> IBAN_invalid =
-                MxParseUtils.findElementByPath(xml_pacs_008_001_01, "/Document/FIToFIPmtStsReq/TxInf/Id/Foo/IBAN");
+        assertEquals(
+                "MSGID-pacs028-20190529-1",
+                MxParseUtils.findByPath(xml_pacs_008_001_01, "/Document/FIToFIPmtStsReq/GrpHdr/MsgId")
+                        .orElse(null));
 
-        assertTrue(msgId.isPresent());
-        assertEquals("MSGID-pacs028-20190529-1", msgId.get().getElementText());
+        assertEquals(
+                "FOOICHBBXXX",
+                MxParseUtils.findByPath(
+                                xml_pacs_008_001_01, "/Document/FIToFIPmtStsReq/GrpHdr/InstgAgt/FinInstnId/BICFI")
+                        .orElse(null));
 
-        assertTrue(BICFI.isPresent());
-        assertEquals("FOOICHBBXXX", BICFI.get().getElementText());
+        assertEquals(
+                "INDA",
+                MxParseUtils.findByPath(
+                                xml_pacs_008_001_01, "/Document/FIToFIPmtStsReq/TxInf/OrgnlTxRef/SttlmInf/SttlmMtd")
+                        .orElse(null));
 
-        assertTrue(sttlmMtd.isPresent());
-        assertEquals("INDA", sttlmMtd.get().getElementText());
+        assertEquals(
+                "ABE",
+                MxParseUtils.findByPath(
+                                xml_pacs_008_001_01, "/Document/FIToFIPmtStsReq/TxInf/OrgnlTxRef/SttlmInf/ClrSys/Prtry")
+                        .orElse(null));
 
-        assertTrue(prtry.isPresent());
-        assertEquals("ABE", prtry.get().getElementText());
+        assertEquals(
+                "DE47100100001234567890",
+                MxParseUtils.findByPath(
+                                xml_pacs_008_001_01, "/Document/FIToFIPmtStsReq/TxInf/OrgnlTxRef/CdtrAcct/Id/IBAN")
+                        .orElse(null));
 
-        assertTrue(IBAN.isPresent());
-        assertEquals("DE47100100001234567890", IBAN.get().getElementText());
-
-        assertFalse(IBAN_invalid.isPresent());
+        assertFalse(MxParseUtils.findByPath(xml_pacs_008_001_01, "/Document/FIToFIPmtStsReq/TxInf/Id/Foo/IBAN")
+                .isPresent());
     }
 
     @Test
@@ -751,45 +752,43 @@ public class MxParseUtilsTest {
         assertNotNull(id);
         assertEquals("pacs.028.001.01", id.id());
 
-        Optional<XMLStreamReader> msgId =
-                MxParseUtils.findElementByPath(xml_pacs_008_001_01, "//FIToFIPmtStsReq/GrpHdr/MsgId");
-        Optional<XMLStreamReader> BICFI = MxParseUtils.findElementByPath(xml_pacs_008_001_01, "//BICFI");
-        Optional<XMLStreamReader> sttlmMtd =
-                MxParseUtils.findElementByPath(xml_pacs_008_001_01, "//OrgnlTxRef/SttlmInf/SttlmMtd");
-        Optional<XMLStreamReader> prtry =
-                MxParseUtils.findElementByPath(xml_pacs_008_001_01, "//TxInf/OrgnlTxRef/SttlmInf/ClrSys/Prtry");
-        Optional<XMLStreamReader> IBAN_CdtrAcct =
-                MxParseUtils.findElementByPath(xml_pacs_008_001_01, "//CdtrAcct/Id/IBAN");
-        Optional<XMLStreamReader> IBAN_DbtrAcct =
-                MxParseUtils.findElementByPath(xml_pacs_008_001_01, "//DbtrAcct/Id/IBAN");
-        Optional<XMLStreamReader> IBAN_invalid =
-                MxParseUtils.findElementByPath(xml_pacs_008_001_01, "//FIToFIPmtStsReq/TxInf/Id/Foo/IBAN");
+        assertEquals(
+                "MSGID-pacs028-20190529-1",
+                MxParseUtils.findByPath(xml_pacs_008_001_01, "//FIToFIPmtStsReq/GrpHdr/MsgId")
+                        .orElse(null));
 
-        assertTrue(msgId.isPresent());
-        assertEquals("MSGID-pacs028-20190529-1", msgId.get().getElementText());
+        assertEquals(
+                "FOOICHBBXXX",
+                MxParseUtils.findByPath(xml_pacs_008_001_01, "//BICFI").orElse(null));
 
-        assertTrue(BICFI.isPresent());
-        assertEquals("FOOICHBBXXX", BICFI.get().getElementText());
+        assertEquals(
+                "INDA",
+                MxParseUtils.findByPath(xml_pacs_008_001_01, "//OrgnlTxRef/SttlmInf/SttlmMtd")
+                        .orElse(null));
 
-        assertTrue(sttlmMtd.isPresent());
-        assertEquals("INDA", sttlmMtd.get().getElementText());
+        assertEquals(
+                "ABE",
+                MxParseUtils.findByPath(xml_pacs_008_001_01, "//TxInf/OrgnlTxRef/SttlmInf/ClrSys/Prtry")
+                        .orElse(null));
 
-        assertTrue(prtry.isPresent());
-        assertEquals("ABE", prtry.get().getElementText());
+        assertEquals(
+                "DE47100100001234567890",
+                MxParseUtils.findByPath(xml_pacs_008_001_01, "//CdtrAcct/Id/IBAN")
+                        .orElse(null));
 
-        assertTrue(IBAN_DbtrAcct.isPresent());
-        assertEquals("CH5598064001234567890", IBAN_DbtrAcct.get().getElementText());
+        assertEquals(
+                "CH5598064001234567890",
+                MxParseUtils.findByPath(xml_pacs_008_001_01, "//DbtrAcct/Id/IBAN")
+                        .orElse(null));
 
-        assertTrue(IBAN_CdtrAcct.isPresent());
-        assertEquals("DE47100100001234567890", IBAN_CdtrAcct.get().getElementText());
-
-        assertFalse(IBAN_invalid.isPresent());
+        assertFalse(MxParseUtils.findByPath(xml_pacs_008_001_01, "//FIToFIPmtStsReq/TxInf/Id/Foo/IBAN")
+                .isPresent());
     }
 
     @Test
     void testFindFieldValueByAbsolutePathCamt() throws XMLStreamException {
 
-        String xml_camt_053_001_12 = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n" + "<RequestPayload>\n"
+        String xml_camt_053_001_12 = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n" + "<Message>\n"
                 + "<head:AppHdr xmlns:head=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.04\">\n"
                 + "    <head:Fr>\n"
                 + "        <head:FIId>\n"
@@ -849,41 +848,40 @@ public class MxParseUtilsTest {
                 + "        </camt:Stmt>\n"
                 + "    </camt:BkToCstmrStmt>\n"
                 + "</camt:Document>\n"
-                + "</RequestPayload>";
+                + "</Message>";
 
         MxId id = MxParseUtils.identifyMessage(xml_camt_053_001_12).orElse(null);
         assertNotNull(id);
         assertEquals("camt.053.001.12", id.id());
 
-        Optional<XMLStreamReader> BICFI =
-                MxParseUtils.findElementByPath(xml_camt_053_001_12, "/AppHdr/Fr/FIId/FinInstnId/BICFI");
-        Optional<XMLStreamReader> bizPrcgDt = MxParseUtils.findElementByPath(xml_camt_053_001_12, "/AppHdr/BizPrcgDt");
-        Optional<XMLStreamReader> pgNb =
-                MxParseUtils.findElementByPath(xml_camt_053_001_12, "/Document/BkToCstmrStmt/GrpHdr/MsgPgntn/PgNb");
-        Optional<XMLStreamReader> lastPgInd = MxParseUtils.findElementByPath(
-                xml_camt_053_001_12, "/Document/BkToCstmrStmt/GrpHdr/MsgPgntn/LastPgInd");
-        Optional<XMLStreamReader> IBAN_invalid =
-                MxParseUtils.findElementByPath(xml_camt_053_001_12, "/Document/FIToFIPmtStsReq/TxInf/Id/Foo/IBAN");
+        assertEquals(
+                "FOOBAR22XXX",
+                MxParseUtils.findByPath(xml_camt_053_001_12, "/AppHdr/Fr/FIId/FinInstnId/BICFI")
+                        .orElse(null));
 
-        assertTrue(BICFI.isPresent());
-        assertEquals("FOOBAR22XXX", BICFI.get().getElementText());
+        assertEquals(
+                "2024-12-09T09:45:41-03:00",
+                MxParseUtils.findByPath(xml_camt_053_001_12, "/AppHdr/BizPrcgDt")
+                        .orElse(null));
 
-        assertTrue(bizPrcgDt.isPresent());
-        assertEquals("2024-12-09T09:45:41-03:00", bizPrcgDt.get().getElementText());
+        assertEquals(
+                "1234",
+                MxParseUtils.findByPath(xml_camt_053_001_12, "/Document/BkToCstmrStmt/GrpHdr/MsgPgntn/PgNb")
+                        .orElse(null));
 
-        assertTrue(pgNb.isPresent());
-        assertEquals("1234", pgNb.get().getElementText());
+        assertEquals(
+                "false",
+                MxParseUtils.findByPath(xml_camt_053_001_12, "/Document/BkToCstmrStmt/GrpHdr/MsgPgntn/LastPgInd")
+                        .orElse(null));
 
-        assertTrue(lastPgInd.isPresent());
-        assertEquals("false", lastPgInd.get().getElementText());
-
-        assertFalse(IBAN_invalid.isPresent());
+        assertFalse(MxParseUtils.findByPath(xml_camt_053_001_12, "/Document/FIToFIPmtStsReq/TxInf/Id/Foo/IBAN")
+                .isPresent());
     }
 
     @Test
     void testFindFieldValueByRelativePathCamt() throws XMLStreamException {
 
-        String xml_camt_053_001_12 = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n" + "<RequestPayload>\n"
+        String xml_camt_053_001_12 = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n" + "<Message>\n"
                 + "<head:AppHdr xmlns:head=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.04\">\n"
                 + "    <head:Fr>\n"
                 + "        <head:FIId>\n"
@@ -943,33 +941,33 @@ public class MxParseUtilsTest {
                 + "        </camt:Stmt>\n"
                 + "    </camt:BkToCstmrStmt>\n"
                 + "</camt:Document>\n"
-                + "</RequestPayload>";
+                + "</Message>";
 
         MxId id = MxParseUtils.identifyMessage(xml_camt_053_001_12).orElse(null);
         assertNotNull(id);
         assertEquals("camt.053.001.12", id.id());
 
-        Optional<XMLStreamReader> BICFI_from =
-                MxParseUtils.findElementByPath(xml_camt_053_001_12, "//FinInstnId/BICFI");
-        Optional<XMLStreamReader> bizPrcgDt = MxParseUtils.findElementByPath(xml_camt_053_001_12, "//BizPrcgDt");
-        Optional<XMLStreamReader> pgNb = MxParseUtils.findElementByPath(xml_camt_053_001_12, "//GrpHdr/MsgPgntn/PgNb");
-        Optional<XMLStreamReader> lastPgInd =
-                MxParseUtils.findElementByPath(xml_camt_053_001_12, "//MsgPgntn/LastPgInd");
-        Optional<XMLStreamReader> IBAN_invalid = MxParseUtils.findElementByPath(xml_camt_053_001_12, "//Id/Foo/IBAN");
+        assertEquals(
+                "FOOBAR22XXX",
+                MxParseUtils.findByPath(xml_camt_053_001_12, "//FinInstnId/BICFI")
+                        .orElse(null));
 
-        assertTrue(BICFI_from.isPresent());
-        assertEquals("FOOBAR22XXX", BICFI_from.get().getElementText());
+        assertEquals(
+                "2024-12-09T09:45:41-03:00",
+                MxParseUtils.findByPath(xml_camt_053_001_12, "//BizPrcgDt").orElse(null));
 
-        assertTrue(bizPrcgDt.isPresent());
-        assertEquals("2024-12-09T09:45:41-03:00", bizPrcgDt.get().getElementText());
+        assertEquals(
+                "1234",
+                MxParseUtils.findByPath(xml_camt_053_001_12, "//GrpHdr/MsgPgntn/PgNb")
+                        .orElse(null));
 
-        assertTrue(pgNb.isPresent());
-        assertEquals("1234", pgNb.get().getElementText());
+        assertEquals(
+                "false",
+                MxParseUtils.findByPath(xml_camt_053_001_12, "//MsgPgntn/LastPgInd")
+                        .orElse(null));
 
-        assertTrue(lastPgInd.isPresent());
-        assertEquals("false", lastPgInd.get().getElementText());
-
-        assertFalse(IBAN_invalid.isPresent());
+        assertFalse(
+                MxParseUtils.findByPath(xml_camt_053_001_12, "//Id/Foo/IBAN").isPresent());
     }
 
     @Test
@@ -977,18 +975,18 @@ public class MxParseUtilsTest {
         String xml_camt_053_001_12 = "";
         assertThrows(
                 IllegalArgumentException.class,
-                () -> MxParseUtils.findElementByPath(xml_camt_053_001_12, "//FinInstnId/BICFI"));
+                () -> MxParseUtils.findByPath(xml_camt_053_001_12, "//FinInstnId/BICFI"));
     }
 
     @Test
     void testFindElementsPassingWrongTargetPathExpression() {
         assertThrows(
                 IllegalArgumentException.class,
-                () -> MxParseUtils.findElementByPath(xml_pacs_008_001_01, "/Document//FinInstnId/BICFI)"));
+                () -> MxParseUtils.findByPath(xml_pacs_008_001_01, "/Document//FinInstnId/BICFI)"));
     }
 
     @Test
     void testFindElementsPassingNullParams() {
-        assertThrows(NullPointerException.class, () -> MxParseUtils.findElementByPath(xml_pacs_008_001_01, null));
+        assertThrows(NullPointerException.class, () -> MxParseUtils.findByPath(xml_pacs_008_001_01, null));
     }
 }
