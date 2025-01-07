@@ -38,7 +38,6 @@ public class MxWriteAdaptersTest {
 
         final String xml1 = mx1.message();
 
-        System.out.println(systemOffset);
         // System.out.println(xml1);
         assertTrue(xml1.contains("<pacs:CreDtTm>2021-10-19T12:13:14" + systemOffset + "</pacs:CreDtTm>"));
         assertTrue(xml1.contains("<pacs:IntrBkSttlmDt>2021-10-19</pacs:IntrBkSttlmDt>"));
