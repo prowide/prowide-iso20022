@@ -44,7 +44,7 @@ jobs:
         run: ./gradlew -Dorg.gradle.jvmargs="-Xms512m -Xmx7g" compileJava compileTestJava
 
       - name: Run test
-        run: ./gradlew test --INFO
+        run: ./gradlew test --info
 
   # This job generates and submits a dependency graph, enabling Dependabot Alerts for all project dependencies.
   # We only do it for the SRU2024_v10 branch to avoid spamming the Dependabot alerts for the legacy Java 8 code.
