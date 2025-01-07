@@ -28,6 +28,7 @@ import java.text.SimpleDateFormat;
 import java.time.OffsetDateTime;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.TimeZone;
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
@@ -139,18 +140,17 @@ public class MxWriteWithAdaptersTest {
 
     @Test
     public void testDocumentDateTime_DefaultAdapters_fractionalSecond() throws DatatypeConfigurationException {
-        XMLGregorianCalendar fractionalSecond = DatatypeFactory.newInstance()
-                .newXMLGregorianCalendar(new GregorianCalendar(2021, Calendar.OCTOBER, 19, 12, 13, 14));
+        GregorianCalendar calendar = new GregorianCalendar(2021, Calendar.OCTOBER, 19, 12, 13, 14);
+        calendar.setTimeZone(TimeZone.getTimeZone("UTC"));
+        XMLGregorianCalendar fractionalSecond = DatatypeFactory.newInstance().newXMLGregorianCalendar(calendar);
         fractionalSecond.setFractionalSecond(new BigDecimal("0.123"));
         MxPacs00800102 mx1 = sample(fractionalSecond);
 
         final String xml = mx1.message();
         // System.out.println(xml);
-        assertTrue(xml.contains(
-                "<pacs:CreDtTm>2021-10-19T12:13:14.123" + OffsetDateTime.now().getOffset() + "</pacs:CreDtTm>"));
+        assertTrue(xml.contains("<pacs:CreDtTm>2021-10-19T12:13:14.123+00:00</pacs:CreDtTm>"));
         assertTrue(xml.contains("<pacs:IntrBkSttlmDt>2021-10-19</pacs:IntrBkSttlmDt>"));
-        assertTrue(
-                xml.contains("<pacs:CLSTm>12:13:14.123" + OffsetDateTime.now().getOffset() + "</pacs:CLSTm>"));
+        assertTrue(xml.contains("<pacs:CLSTm>12:13:14.123+00:00</pacs:CLSTm>"));
 
         final MxPacs00800102 mx2 = MxPacs00800102.parse(xml);
         // System.out.println(mx2.message());
