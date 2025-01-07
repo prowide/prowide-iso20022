@@ -45,14 +45,14 @@ import org.xml.sax.helpers.XMLFilterImpl;
  * @since 9.2.1
  */
 public class NamespaceAndElementFilter extends XMLFilterImpl {
-    private static final transient Logger log = Logger.getLogger(NamespaceAndElementFilter.class.getName());
+    private static final Logger log = Logger.getLogger(NamespaceAndElementFilter.class.getName());
 
     private String mainNamespace;
     private boolean inElementToPropagate = false;
-    private String localNameToPropagate;
+    private final String localNameToPropagate;
     private boolean inInnerElementToSkip = false;
     private String localNameToSkip;
-    private boolean unbindNamespace;
+    private final boolean unbindNamespace;
 
     /**
      * @param localName the XML's element to propagate
@@ -91,7 +91,10 @@ public class NamespaceAndElementFilter extends XMLFilterImpl {
                 try {
                     super.startElement(namespaceToPropagate, localName, prefix, attributes);
                 } catch (Exception e) {
-                    log.log(Level.WARNING, "Error parsing " + localName + " [" + namespace + "] element", e);
+                    log.warning("Error parsing " + localName + " [" + namespace + "] element: " + exceptionMessage(e));
+                    if (log.isLoggable(Level.FINEST)) {
+                        log.log(Level.FINEST, "Error parsing " + localName + " [" + namespace + "] element", e);
+                    }
                 }
             } else {
                 // we have found an element within the structure to propagate with a not recognized namespace
@@ -150,7 +153,10 @@ public class NamespaceAndElementFilter extends XMLFilterImpl {
                 try {
                     super.endElement(namespaceToPropagate, localName, prefix);
                 } catch (Exception e) {
-                    log.log(Level.WARNING, "Error parsing " + localName + " [" + namespace + "] element", e);
+                    log.warning("Error parsing " + localName + " [" + namespace + "] element: " + exceptionMessage(e));
+                    if (log.isLoggable(Level.FINEST)) {
+                        log.log(Level.FINEST, "Error parsing " + localName + " [" + namespace + "] element", e);
+                    }
                 }
             }
         }
@@ -169,9 +175,23 @@ public class NamespaceAndElementFilter extends XMLFilterImpl {
                 try {
                     super.startPrefixMapping(prefix, url);
                 } catch (Exception e) {
-                    log.log(Level.WARNING, "Error parsing " + prefix + " [" + url + "] prefix mapping", e);
+                    log.warning("Error parsing " + prefix + " [" + url + "] prefix mapping: " + exceptionMessage(e));
+                    if (log.isLoggable(Level.FINEST)) {
+                        log.log(Level.FINEST, "Error parsing " + prefix + " [" + url + "] prefix mapping", e);
+                    }
                 }
             }
         }
+    }
+
+    private static String exceptionMessage(Exception e) {
+        String message = e.getMessage();
+        if (message == null && e.getCause() != null) {
+            message = e.getCause().getMessage();
+        }
+        if (message == null) {
+            message = e.getClass().getSimpleName();
+        }
+        return message;
     }
 }

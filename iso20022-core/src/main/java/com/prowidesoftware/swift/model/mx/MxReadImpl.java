@@ -93,6 +93,10 @@ public class MxReadImpl implements MxRead {
 
             return mx.orElse(null);
 
+        } catch (AssertionError e) {
+            // depending on the jaxb implementation used, the assertion error can be thrown when the XML is not valid
+            log.log(Level.SEVERE, "Error parsing XML", e);
+            return null;
         } catch (final Exception e) {
             MxParseUtils.handleParseException(e);
             return null;
