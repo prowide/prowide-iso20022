@@ -41,7 +41,10 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
 
       - name: Build with Gradle Wrapper
-        run: ./gradlew -Dorg.gradle.jvmargs="-Xms512m -Xmx7g" build
+        run: ./gradlew -Dorg.gradle.jvmargs="-Xms512m -Xmx7g" compileJava compileTestJava
+
+      - name: Run test
+        run: ./gradlew test --INFO
 
   # This job generates and submits a dependency graph, enabling Dependabot Alerts for all project dependencies.
   # We only do it for the SRU2024_v10 branch to avoid spamming the Dependabot alerts for the legacy Java 8 code.
