@@ -142,6 +142,12 @@ project(':iso20022-core') {
 		compileOnly 'javax.persistence:javax.persistence-api:2.2'
 		compileOnly 'javax.validation:validation-api:2.0.1.Final'
 
+		// to avoid potential differences in JAXB implementations when testing in different environments
+		testImplementation 'javax.xml.bind:jaxb-api:2.3.1'
+		testImplementation 'com.sun.xml.bind:jaxb-impl:2.3.3'
+		testImplementation 'com.sun.xml.bind:jaxb-core:2.3.0.1'
+		testImplementation 'javax.activation:activation:1.1.1'
+
 		testImplementation 'javax.persistence:javax.persistence-api:2.2'
 		testImplementation 'org.junit.jupiter:junit-jupiter:5.11.4'
 		testImplementation 'com.google.guava:guava:33.4.0-jre'
