@@ -6,7 +6,7 @@ on:
   push:
     branches: [ "main", "SRU2024_v10" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main", "SRU2024_v10" ]
 
 jobs:
 
