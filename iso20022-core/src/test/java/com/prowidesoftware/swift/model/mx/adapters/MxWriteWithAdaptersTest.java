@@ -195,7 +195,7 @@ public class MxWriteWithAdaptersTest {
         conf.adapters.dateAdapter = new IsoDateAdapter(new SimpleDateAdapter(new SimpleDateFormat("yy-MM-dd")));
 
         final String xml = mx1.message(conf);
-        System.out.println(xml);
+        // System.out.println(xml);
         assertTrue(xml.contains("<pacs:CreDtTm>21-10-19 12:13</pacs:CreDtTm>"));
         assertTrue(xml.contains("<pacs:IntrBkSttlmDt>21-10-19</pacs:IntrBkSttlmDt>"));
 
