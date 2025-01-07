@@ -43,6 +43,16 @@ jobs:
       - name: Build with Gradle Wrapper
         env:
           GRADLE_OPTS: "-Xms512m -Xmx7g"
+        run: ./gradlew :model-common-types:compileJava
+
+      - name: Build with Gradle Wrapper
+        env:
+          GRADLE_OPTS: "-Xms512m -Xmx7g"
+        run: ./gradlew compileJava
+
+      - name: Build with Gradle Wrapper
+        env:
+          GRADLE_OPTS: "-Xms512m -Xmx7g"
         run: ./gradlew build
 
   # This job generates and submits a dependency graph, enabling Dependabot Alerts for all project dependencies.
