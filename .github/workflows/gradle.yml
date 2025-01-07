@@ -41,6 +41,8 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
 
       - name: Build with Gradle Wrapper
+        env:
+          GRADLE_OPTS: "-Xmx4g -XX:+UseG1GC"
         run: ./gradlew build
 
   # This job generates and submits a dependency graph, enabling Dependabot Alerts for all project dependencies.
