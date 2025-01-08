@@ -30,7 +30,7 @@ import java.time.temporal.ChronoField;
 import org.junit.jupiter.api.Test;
 
 public class MxWriteAdaptersTest {
-    ZoneOffset systemOffset = ZoneOffset.ofHours(-3);
+    private final ZoneOffset systemOffset = ZoneOffset.ofHours(-3);
 
     @Test
     public void testDocumentDateTime_DefaultAdapters_noFractionalSecond() {
@@ -271,8 +271,7 @@ public class MxWriteAdaptersTest {
         LocalDate localDate = LocalDate.parse("2021-10-19");
         OffsetTime offsetTime = OffsetTime.parse("12:13:14" + systemOffset);
         OffsetDateTime offsetDateTime = OffsetDateTime.parse("2021-10-19T12:13:14" + systemOffset);
-        MxPacs00800102 mx1 = setDatesIntoMessage(localDate, offsetTime, offsetDateTime);
-        return mx1;
+        return setDatesIntoMessage(localDate, offsetTime, offsetDateTime);
     }
 
     private MxPacs00800102 setDatesIntoMessage(
