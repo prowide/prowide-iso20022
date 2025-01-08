@@ -1,54 +1,53 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for RejectionReason62Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="RejectionReason62Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="REFE"/&gt;
- *     &lt;enumeration value="ADEA"/&gt;
- *     &lt;enumeration value="CCIX"/&gt;
- *     &lt;enumeration value="CCTI"/&gt;
- *     &lt;enumeration value="IIND"/&gt;
- *     &lt;enumeration value="PTYA"/&gt;
- *     &lt;enumeration value="PTYB"/&gt;
- *     &lt;enumeration value="ITPA"/&gt;
- *     &lt;enumeration value="LATE"/&gt;
- *     &lt;enumeration value="SAFA"/&gt;
- *     &lt;enumeration value="SAFB"/&gt;
- *     &lt;enumeration value="REDT"/&gt;
- *     &lt;enumeration value="SEPR"/&gt;
- *     &lt;enumeration value="LBDR"/&gt;
- *     &lt;enumeration value="DCBR"/&gt;
- *     &lt;enumeration value="CSAC"/&gt;
- *     &lt;enumeration value="TERM"/&gt;
- *     &lt;enumeration value="DTRD"/&gt;
- *     &lt;enumeration value="DDAT"/&gt;
- *     &lt;enumeration value="NCRR"/&gt;
- *     &lt;enumeration value="IESP"/&gt;
- *     &lt;enumeration value="IEXT"/&gt;
- *     &lt;enumeration value="IPBI"/&gt;
- *     &lt;enumeration value="IRIT"/&gt;
- *     &lt;enumeration value="TMAC"/&gt;
- *     &lt;enumeration value="REPA"/&gt;
- *     &lt;enumeration value="TXAC"/&gt;
- *     &lt;enumeration value="NRGM"/&gt;
- *     &lt;enumeration value="TABC"/&gt;
- *     &lt;enumeration value="ICTT"/&gt;
- *     &lt;enumeration value="NRJN"/&gt;
- *     &lt;enumeration value="NFCA"/&gt;
- *     &lt;enumeration value="CTRA"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="RejectionReason62Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="REFE"/>
+ *     <enumeration value="ADEA"/>
+ *     <enumeration value="CCIX"/>
+ *     <enumeration value="CCTI"/>
+ *     <enumeration value="IIND"/>
+ *     <enumeration value="PTYA"/>
+ *     <enumeration value="PTYB"/>
+ *     <enumeration value="ITPA"/>
+ *     <enumeration value="LATE"/>
+ *     <enumeration value="SAFA"/>
+ *     <enumeration value="SAFB"/>
+ *     <enumeration value="REDT"/>
+ *     <enumeration value="SEPR"/>
+ *     <enumeration value="LBDR"/>
+ *     <enumeration value="DCBR"/>
+ *     <enumeration value="CSAC"/>
+ *     <enumeration value="TERM"/>
+ *     <enumeration value="DTRD"/>
+ *     <enumeration value="DDAT"/>
+ *     <enumeration value="NCRR"/>
+ *     <enumeration value="IESP"/>
+ *     <enumeration value="IEXT"/>
+ *     <enumeration value="IPBI"/>
+ *     <enumeration value="IRIT"/>
+ *     <enumeration value="TMAC"/>
+ *     <enumeration value="REPA"/>
+ *     <enumeration value="TXAC"/>
+ *     <enumeration value="NRGM"/>
+ *     <enumeration value="TABC"/>
+ *     <enumeration value="ICTT"/>
+ *     <enumeration value="NRJN"/>
+ *     <enumeration value="NFCA"/>
+ *     <enumeration value="CTRA"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "RejectionReason62Code")

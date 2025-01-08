@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -71,11 +71,11 @@ public class TransferStatusAndReason2 {
     @XmlElement(name = "TradDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar tradDt;
+    protected LocalDate tradDt;
     @XmlElement(name = "SndOutDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar sndOutDt;
+    protected LocalDate sndOutDt;
     @XmlElement(name = "StsInitr")
     protected PartyIdentification2Choice stsInitr;
 
@@ -412,7 +412,7 @@ public class TransferStatusAndReason2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getTradDt() {
+    public LocalDate getTradDt() {
         return tradDt;
     }
 
@@ -424,7 +424,7 @@ public class TransferStatusAndReason2 {
      *     {@link String }
      *     
      */
-    public TransferStatusAndReason2 setTradDt(XMLGregorianCalendar value) {
+    public TransferStatusAndReason2 setTradDt(LocalDate value) {
         this.tradDt = value;
         return this;
     }
@@ -437,7 +437,7 @@ public class TransferStatusAndReason2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getSndOutDt() {
+    public LocalDate getSndOutDt() {
         return sndOutDt;
     }
 
@@ -449,7 +449,7 @@ public class TransferStatusAndReason2 {
      *     {@link String }
      *     
      */
-    public TransferStatusAndReason2 setSndOutDt(XMLGregorianCalendar value) {
+    public TransferStatusAndReason2 setSndOutDt(LocalDate value) {
         this.sndOutDt = value;
         return this;
     }

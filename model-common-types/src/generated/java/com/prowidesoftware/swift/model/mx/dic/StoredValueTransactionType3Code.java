@@ -1,31 +1,30 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for StoredValueTransactionType3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="StoredValueTransactionType3Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ACTV"/&gt;
- *     &lt;enumeration value="DUPL"/&gt;
- *     &lt;enumeration value="LOAD"/&gt;
- *     &lt;enumeration value="RESV"/&gt;
- *     &lt;enumeration value="REVS"/&gt;
- *     &lt;enumeration value="ULOA"/&gt;
- *     &lt;enumeration value="CLOS"/&gt;
- *     &lt;enumeration value="DCTV"/&gt;
- *     &lt;enumeration value="OPEN"/&gt;
- *     &lt;enumeration value="BALC"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="StoredValueTransactionType3Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ACTV"/>
+ *     <enumeration value="DUPL"/>
+ *     <enumeration value="LOAD"/>
+ *     <enumeration value="RESV"/>
+ *     <enumeration value="REVS"/>
+ *     <enumeration value="ULOA"/>
+ *     <enumeration value="CLOS"/>
+ *     <enumeration value="DCTV"/>
+ *     <enumeration value="OPEN"/>
+ *     <enumeration value="BALC"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "StoredValueTransactionType3Code")

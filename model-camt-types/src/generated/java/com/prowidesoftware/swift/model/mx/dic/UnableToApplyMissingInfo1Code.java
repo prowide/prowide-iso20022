@@ -1,36 +1,35 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlEnumValue;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for UnableToApplyMissingInfo1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="UnableToApplyMissingInfo1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="MS01"/&gt;
- *     &lt;enumeration value="MS02"/&gt;
- *     &lt;enumeration value="MS03"/&gt;
- *     &lt;enumeration value="MS04"/&gt;
- *     &lt;enumeration value="MS05"/&gt;
- *     &lt;enumeration value="MS06"/&gt;
- *     &lt;enumeration value="MS07"/&gt;
- *     &lt;enumeration value="MS08"/&gt;
- *     &lt;enumeration value="MS09"/&gt;
- *     &lt;enumeration value="MS10"/&gt;
- *     &lt;enumeration value="MS11"/&gt;
- *     &lt;enumeration value="MS12"/&gt;
- *     &lt;enumeration value="MS13"/&gt;
- *     &lt;enumeration value="MS14"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="UnableToApplyMissingInfo1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="MS01"/>
+ *     <enumeration value="MS02"/>
+ *     <enumeration value="MS03"/>
+ *     <enumeration value="MS04"/>
+ *     <enumeration value="MS05"/>
+ *     <enumeration value="MS06"/>
+ *     <enumeration value="MS07"/>
+ *     <enumeration value="MS08"/>
+ *     <enumeration value="MS09"/>
+ *     <enumeration value="MS10"/>
+ *     <enumeration value="MS11"/>
+ *     <enumeration value="MS12"/>
+ *     <enumeration value="MS13"/>
+ *     <enumeration value="MS14"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "UnableToApplyMissingInfo1Code")

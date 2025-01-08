@@ -1,38 +1,37 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlEnumValue;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for FinancingStatusReason1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="FinancingStatusReason1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CA01"/&gt;
- *     &lt;enumeration value="CA02"/&gt;
- *     &lt;enumeration value="AC01"/&gt;
- *     &lt;enumeration value="AC04"/&gt;
- *     &lt;enumeration value="AC06"/&gt;
- *     &lt;enumeration value="BE08"/&gt;
- *     &lt;enumeration value="BE09"/&gt;
- *     &lt;enumeration value="BE10"/&gt;
- *     &lt;enumeration value="BE11"/&gt;
- *     &lt;enumeration value="DT02"/&gt;
- *     &lt;enumeration value="ID01"/&gt;
- *     &lt;enumeration value="ID02"/&gt;
- *     &lt;enumeration value="ID03"/&gt;
- *     &lt;enumeration value="MI01"/&gt;
- *     &lt;enumeration value="NA01"/&gt;
- *     &lt;enumeration value="CA03"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="FinancingStatusReason1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CA01"/>
+ *     <enumeration value="CA02"/>
+ *     <enumeration value="AC01"/>
+ *     <enumeration value="AC04"/>
+ *     <enumeration value="AC06"/>
+ *     <enumeration value="BE08"/>
+ *     <enumeration value="BE09"/>
+ *     <enumeration value="BE10"/>
+ *     <enumeration value="BE11"/>
+ *     <enumeration value="DT02"/>
+ *     <enumeration value="ID01"/>
+ *     <enumeration value="ID02"/>
+ *     <enumeration value="ID03"/>
+ *     <enumeration value="MI01"/>
+ *     <enumeration value="NA01"/>
+ *     <enumeration value="CA03"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "FinancingStatusReason1Code")

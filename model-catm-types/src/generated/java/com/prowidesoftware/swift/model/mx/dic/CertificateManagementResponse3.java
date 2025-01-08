@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -54,7 +54,7 @@ public class CertificateManagementResponse3 {
     @XmlElement(name = "TMSDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar tmsDtTm;
+    protected OffsetDateTime tmsDtTm;
     @XmlElement(name = "ClntCert")
     protected byte[] clntCert;
     @XmlElement(name = "ClntCertPth")
@@ -218,7 +218,7 @@ public class CertificateManagementResponse3 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getTMSDtTm() {
+    public OffsetDateTime getTMSDtTm() {
         return tmsDtTm;
     }
 
@@ -230,7 +230,7 @@ public class CertificateManagementResponse3 {
      *     {@link String }
      *     
      */
-    public CertificateManagementResponse3 setTMSDtTm(XMLGregorianCalendar value) {
+    public CertificateManagementResponse3 setTMSDtTm(OffsetDateTime value) {
         this.tmsDtTm = value;
         return this;
     }
@@ -264,8 +264,8 @@ public class CertificateManagementResponse3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the clntCertPth property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the clntCertPth property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -278,10 +278,12 @@ public class CertificateManagementResponse3 {
      * Objects of the following type(s) are allowed in the list
      * byte[]
      * 
+     * @return
+     *     The value of the clntCertPth property.
      */
     public List<byte[]> getClntCertPth() {
         if (clntCertPth == null) {
-            clntCertPth = new ArrayList<byte[]>();
+            clntCertPth = new ArrayList<>();
         }
         return this.clntCertPth;
     }
@@ -292,8 +294,8 @@ public class CertificateManagementResponse3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the svrCertPth property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the svrCertPth property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -306,10 +308,12 @@ public class CertificateManagementResponse3 {
      * Objects of the following type(s) are allowed in the list
      * byte[]
      * 
+     * @return
+     *     The value of the svrCertPth property.
      */
     public List<byte[]> getSvrCertPth() {
         if (svrCertPth == null) {
-            svrCertPth = new ArrayList<byte[]>();
+            svrCertPth = new ArrayList<>();
         }
         return this.svrCertPth;
     }

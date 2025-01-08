@@ -1,38 +1,37 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlEnumValue;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for Algorithm27Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="Algorithm27Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="MACC"/&gt;
- *     &lt;enumeration value="MCCS"/&gt;
- *     &lt;enumeration value="CMA1"/&gt;
- *     &lt;enumeration value="MCC1"/&gt;
- *     &lt;enumeration value="CMA9"/&gt;
- *     &lt;enumeration value="CMA5"/&gt;
- *     &lt;enumeration value="CMA2"/&gt;
- *     &lt;enumeration value="CM31"/&gt;
- *     &lt;enumeration value="CM32"/&gt;
- *     &lt;enumeration value="CM33"/&gt;
- *     &lt;enumeration value="MCS3"/&gt;
- *     &lt;enumeration value="CCA1"/&gt;
- *     &lt;enumeration value="CCA2"/&gt;
- *     &lt;enumeration value="CCA3"/&gt;
- *     &lt;enumeration value="S34C"/&gt;
- *     &lt;enumeration value="S34R"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="Algorithm27Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="MACC"/>
+ *     <enumeration value="MCCS"/>
+ *     <enumeration value="CMA1"/>
+ *     <enumeration value="MCC1"/>
+ *     <enumeration value="CMA9"/>
+ *     <enumeration value="CMA5"/>
+ *     <enumeration value="CMA2"/>
+ *     <enumeration value="CM31"/>
+ *     <enumeration value="CM32"/>
+ *     <enumeration value="CM33"/>
+ *     <enumeration value="MCS3"/>
+ *     <enumeration value="CCA1"/>
+ *     <enumeration value="CCA2"/>
+ *     <enumeration value="CCA3"/>
+ *     <enumeration value="S34C"/>
+ *     <enumeration value="S34R"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "Algorithm27Code")

@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -96,8 +96,8 @@ public class BreakdownByParty3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cshInFcst property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cshInFcst property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -111,10 +111,12 @@ public class BreakdownByParty3 {
      * {@link CashInForecast5 }
      * 
      * 
+     * @return
+     *     The value of the cshInFcst property.
      */
     public List<CashInForecast5> getCshInFcst() {
         if (cshInFcst == null) {
-            cshInFcst = new ArrayList<CashInForecast5>();
+            cshInFcst = new ArrayList<>();
         }
         return this.cshInFcst;
     }
@@ -125,8 +127,8 @@ public class BreakdownByParty3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cshOutFcst property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cshOutFcst property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -140,10 +142,12 @@ public class BreakdownByParty3 {
      * {@link CashOutForecast5 }
      * 
      * 
+     * @return
+     *     The value of the cshOutFcst property.
      */
     public List<CashOutForecast5> getCshOutFcst() {
         if (cshOutFcst == null) {
-            cshOutFcst = new ArrayList<CashOutForecast5>();
+            cshOutFcst = new ArrayList<>();
         }
         return this.cshOutFcst;
     }
@@ -154,8 +158,8 @@ public class BreakdownByParty3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the netCshFcst property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the netCshFcst property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -169,10 +173,12 @@ public class BreakdownByParty3 {
      * {@link NetCashForecast4 }
      * 
      * 
+     * @return
+     *     The value of the netCshFcst property.
      */
     public List<NetCashForecast4> getNetCshFcst() {
         if (netCshFcst == null) {
-            netCshFcst = new ArrayList<NetCashForecast4>();
+            netCshFcst = new ArrayList<>();
         }
         return this.netCshFcst;
     }

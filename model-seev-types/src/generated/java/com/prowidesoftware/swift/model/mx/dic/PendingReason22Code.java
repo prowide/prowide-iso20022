@@ -1,34 +1,33 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for PendingReason22Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="PendingReason22Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ADEA"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="MONY"/&gt;
- *     &lt;enumeration value="LACK"/&gt;
- *     &lt;enumeration value="LATE"/&gt;
- *     &lt;enumeration value="CLAC"/&gt;
- *     &lt;enumeration value="CMON"/&gt;
- *     &lt;enumeration value="PREA"/&gt;
- *     &lt;enumeration value="LINK"/&gt;
- *     &lt;enumeration value="CYCL"/&gt;
- *     &lt;enumeration value="BOTH"/&gt;
- *     &lt;enumeration value="PRCY"/&gt;
- *     &lt;enumeration value="FUTU"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="PendingReason22Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ADEA"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="MONY"/>
+ *     <enumeration value="LACK"/>
+ *     <enumeration value="LATE"/>
+ *     <enumeration value="CLAC"/>
+ *     <enumeration value="CMON"/>
+ *     <enumeration value="PREA"/>
+ *     <enumeration value="LINK"/>
+ *     <enumeration value="CYCL"/>
+ *     <enumeration value="BOTH"/>
+ *     <enumeration value="PRCY"/>
+ *     <enumeration value="FUTU"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "PendingReason22Code")

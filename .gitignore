@@ -31,3 +31,4 @@ release.sh
 .idea/sonarlint
 *.hprof
 .idea/copilot
+.java-version

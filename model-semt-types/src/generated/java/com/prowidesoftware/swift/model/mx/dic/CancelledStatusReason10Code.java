@@ -1,31 +1,30 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for CancelledStatusReason10Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CancelledStatusReason10Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CANI"/&gt;
- *     &lt;enumeration value="CANS"/&gt;
- *     &lt;enumeration value="CSUB"/&gt;
- *     &lt;enumeration value="CXLR"/&gt;
- *     &lt;enumeration value="CANT"/&gt;
- *     &lt;enumeration value="CANZ"/&gt;
- *     &lt;enumeration value="CORP"/&gt;
- *     &lt;enumeration value="SCEX"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="CANO"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CancelledStatusReason10Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CANI"/>
+ *     <enumeration value="CANS"/>
+ *     <enumeration value="CSUB"/>
+ *     <enumeration value="CXLR"/>
+ *     <enumeration value="CANT"/>
+ *     <enumeration value="CANZ"/>
+ *     <enumeration value="CORP"/>
+ *     <enumeration value="SCEX"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="CANO"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CancelledStatusReason10Code")

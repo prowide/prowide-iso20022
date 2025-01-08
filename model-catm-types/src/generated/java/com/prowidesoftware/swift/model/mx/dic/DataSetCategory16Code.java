@@ -1,38 +1,37 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for DataSetCategory16Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="DataSetCategory16Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ACQP"/&gt;
- *     &lt;enumeration value="APPR"/&gt;
- *     &lt;enumeration value="APSB"/&gt;
- *     &lt;enumeration value="KDWL"/&gt;
- *     &lt;enumeration value="KMGT"/&gt;
- *     &lt;enumeration value="RPRT"/&gt;
- *     &lt;enumeration value="SWPK"/&gt;
- *     &lt;enumeration value="TMSP"/&gt;
- *     &lt;enumeration value="MRPR"/&gt;
- *     &lt;enumeration value="TRPR"/&gt;
- *     &lt;enumeration value="CRTF"/&gt;
- *     &lt;enumeration value="SACP"/&gt;
- *     &lt;enumeration value="SAPR"/&gt;
- *     &lt;enumeration value="LOGF"/&gt;
- *     &lt;enumeration value="RPFL"/&gt;
- *     &lt;enumeration value="CONF"/&gt;
- *     &lt;enumeration value="SPRP"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="DataSetCategory16Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ACQP"/>
+ *     <enumeration value="APPR"/>
+ *     <enumeration value="APSB"/>
+ *     <enumeration value="KDWL"/>
+ *     <enumeration value="KMGT"/>
+ *     <enumeration value="RPRT"/>
+ *     <enumeration value="SWPK"/>
+ *     <enumeration value="TMSP"/>
+ *     <enumeration value="MRPR"/>
+ *     <enumeration value="TRPR"/>
+ *     <enumeration value="CRTF"/>
+ *     <enumeration value="SACP"/>
+ *     <enumeration value="SAPR"/>
+ *     <enumeration value="LOGF"/>
+ *     <enumeration value="RPFL"/>
+ *     <enumeration value="CONF"/>
+ *     <enumeration value="SPRP"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "DataSetCategory16Code")

@@ -1,32 +1,31 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for MeetingInstructionRejection1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="MeetingInstructionRejection1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="INMR"/&gt;
- *     &lt;enumeration value="INAC"/&gt;
- *     &lt;enumeration value="IPOS"/&gt;
- *     &lt;enumeration value="INQY"/&gt;
- *     &lt;enumeration value="INDT"/&gt;
- *     &lt;enumeration value="SPLT"/&gt;
- *     &lt;enumeration value="PART"/&gt;
- *     &lt;enumeration value="IPOA"/&gt;
- *     &lt;enumeration value="PRXY"/&gt;
- *     &lt;enumeration value="RBIS"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="MeetingInstructionRejection1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="INMR"/>
+ *     <enumeration value="INAC"/>
+ *     <enumeration value="IPOS"/>
+ *     <enumeration value="INQY"/>
+ *     <enumeration value="INDT"/>
+ *     <enumeration value="SPLT"/>
+ *     <enumeration value="PART"/>
+ *     <enumeration value="IPOA"/>
+ *     <enumeration value="PRXY"/>
+ *     <enumeration value="RBIS"/>
+ *     <enumeration value="OTHR"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "MeetingInstructionRejection1Code")

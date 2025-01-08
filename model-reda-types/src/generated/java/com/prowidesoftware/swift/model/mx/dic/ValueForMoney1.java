@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -54,11 +54,11 @@ public class ValueForMoney1 {
     @XmlElement(name = "RvwDtUK", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar rvwDtUK;
+    protected LocalDate rvwDtUK;
     @XmlElement(name = "RvwNxtDueUK", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar rvwNxtDueUK;
+    protected LocalDate rvwNxtDueUK;
 
     /**
      * Gets the value of the emtDataRptgVFMUK property.
@@ -218,7 +218,7 @@ public class ValueForMoney1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getRvwDtUK() {
+    public LocalDate getRvwDtUK() {
         return rvwDtUK;
     }
 
@@ -230,7 +230,7 @@ public class ValueForMoney1 {
      *     {@link String }
      *     
      */
-    public ValueForMoney1 setRvwDtUK(XMLGregorianCalendar value) {
+    public ValueForMoney1 setRvwDtUK(LocalDate value) {
         this.rvwDtUK = value;
         return this;
     }
@@ -243,7 +243,7 @@ public class ValueForMoney1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getRvwNxtDueUK() {
+    public LocalDate getRvwNxtDueUK() {
         return rvwNxtDueUK;
     }
 
@@ -255,7 +255,7 @@ public class ValueForMoney1 {
      *     {@link String }
      *     
      */
-    public ValueForMoney1 setRvwNxtDueUK(XMLGregorianCalendar value) {
+    public ValueForMoney1 setRvwNxtDueUK(LocalDate value) {
         this.rvwNxtDueUK = value;
         return this;
     }

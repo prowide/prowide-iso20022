@@ -1,36 +1,35 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for InvestmentFundRole1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="InvestmentFundRole1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CACO"/&gt;
- *     &lt;enumeration value="CUST"/&gt;
- *     &lt;enumeration value="DATP"/&gt;
- *     &lt;enumeration value="FIAG"/&gt;
- *     &lt;enumeration value="FMCO"/&gt;
- *     &lt;enumeration value="FACT"/&gt;
- *     &lt;enumeration value="INVS"/&gt;
- *     &lt;enumeration value="INVE"/&gt;
- *     &lt;enumeration value="PAYI"/&gt;
- *     &lt;enumeration value="REGI"/&gt;
- *     &lt;enumeration value="TRAG"/&gt;
- *     &lt;enumeration value="INTR"/&gt;
- *     &lt;enumeration value="FTAG"/&gt;
- *     &lt;enumeration value="DIST"/&gt;
- *     &lt;enumeration value="CONC"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="InvestmentFundRole1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CACO"/>
+ *     <enumeration value="CUST"/>
+ *     <enumeration value="DATP"/>
+ *     <enumeration value="FIAG"/>
+ *     <enumeration value="FMCO"/>
+ *     <enumeration value="FACT"/>
+ *     <enumeration value="INVS"/>
+ *     <enumeration value="INVE"/>
+ *     <enumeration value="PAYI"/>
+ *     <enumeration value="REGI"/>
+ *     <enumeration value="TRAG"/>
+ *     <enumeration value="INTR"/>
+ *     <enumeration value="FTAG"/>
+ *     <enumeration value="DIST"/>
+ *     <enumeration value="CONC"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "InvestmentFundRole1Code")

@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxSemt00100101
 
     @XmlElement(name = "semt.001.001.01", required = true)
     protected Semt00100101 semt00100101;
-    public final static transient String BUSINESS_PROCESS = "semt";
-    public final static transient int FUNCTIONALITY = 1;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 1;
+    public static final transient String BUSINESS_PROCESS = "semt";
+    public static final transient int FUNCTIONALITY = 1;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {AdditionalReference2 .class, GenericIdentification1 .class, LongPostalAddress1Choice.class, MessageRejectedReason1Code.class, MxSemt00100101 .class, NameAndAddress2 .class, PartyIdentification1Choice.class, RejectionReason1 .class, Semt00100101 .class, StructuredLongPostalAddress1 .class };
-    public final static transient String NAMESPACE = "urn:swift:xsd:semt.001.001.01";
+    public static final transient Class[] _classes = new Class[] {AdditionalReference2 .class, GenericIdentification1 .class, LongPostalAddress1Choice.class, MessageRejectedReason1Code.class, MxSemt00100101 .class, NameAndAddress2 .class, PartyIdentification1Choice.class, RejectionReason1 .class, Semt00100101 .class, StructuredLongPostalAddress1 .class };
+    public static final transient String NAMESPACE = "urn:swift:xsd:semt.001.001.01";
 
     public MxSemt00100101() {
         super();
@@ -86,21 +86,6 @@ public class MxSemt00100101
     public MxSemt00100101 setSemt00100101(Semt00100101 value) {
         this.semt00100101 = value;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -173,8 +158,23 @@ public class MxSemt00100101
      * @return
      *     a new instance of MxSemt00100101
      */
-    public final static MxSemt00100101 fromJson(String json) {
+    public static final MxSemt00100101 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSemt00100101 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

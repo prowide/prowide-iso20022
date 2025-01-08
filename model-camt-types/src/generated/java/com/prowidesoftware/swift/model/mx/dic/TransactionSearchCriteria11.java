@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -43,8 +43,8 @@ public class TransactionSearchCriteria11 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the pmtTo property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the pmtTo property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -58,10 +58,12 @@ public class TransactionSearchCriteria11 {
      * {@link SystemSearch5 }
      * 
      * 
+     * @return
+     *     The value of the pmtTo property.
      */
     public List<SystemSearch5> getPmtTo() {
         if (pmtTo == null) {
-            pmtTo = new ArrayList<SystemSearch5>();
+            pmtTo = new ArrayList<>();
         }
         return this.pmtTo;
     }
@@ -72,8 +74,8 @@ public class TransactionSearchCriteria11 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the pmtFr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the pmtFr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -87,10 +89,12 @@ public class TransactionSearchCriteria11 {
      * {@link SystemSearch5 }
      * 
      * 
+     * @return
+     *     The value of the pmtFr property.
      */
     public List<SystemSearch5> getPmtFr() {
         if (pmtFr == null) {
-            pmtFr = new ArrayList<SystemSearch5>();
+            pmtFr = new ArrayList<>();
         }
         return this.pmtFr;
     }
