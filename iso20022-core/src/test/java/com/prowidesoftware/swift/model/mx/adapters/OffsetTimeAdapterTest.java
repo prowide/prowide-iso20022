@@ -78,6 +78,7 @@ public class OffsetTimeAdapterTest {
     @Test
     public void testOffsetTime() throws Exception {
         ZoneOffset zoneOffset = ZoneId.systemDefault().getRules().getStandardOffset(Instant.now());
+        System.out.println("system zoneOffset: " + zoneOffset);
 
         // DateTime without offset and with/without fractional seconds
         testTimeImpl("12:13:14", "12:13:14" + zoneOffset);
@@ -109,6 +110,7 @@ public class OffsetTimeAdapterTest {
         OffsetTimeAdapter offsetTimeAdapter = new OffsetTimeAdapter();
         OffsetTime OffsetTime = offsetTimeAdapter.unmarshal(value);
         String valueDateResult = offsetTimeAdapter.marshal(OffsetTime);
+        System.out.println("Comparing: expected " + valueResult + " with actual " + valueDateResult);
         assertEquals(valueResult, valueDateResult);
     }
 

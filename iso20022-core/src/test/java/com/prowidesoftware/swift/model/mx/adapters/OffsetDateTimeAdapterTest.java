@@ -12,7 +12,7 @@ class OffsetDateTimeAdapterTest {
 
     @Test
     void testOffsetDateTime() throws Exception {
-        ZoneId zoneId = ZoneOffset.systemDefault();
+        ZoneId zoneId = ZoneOffset.ofHours(-3);
         OffsetDateTime dateTime = LocalDateTime.parse("2021-09-19T12:13:14")
                 .atZone(zoneId)
                 .withEarlierOffsetAtOverlap()
@@ -20,7 +20,7 @@ class OffsetDateTimeAdapterTest {
                 .withEarlierOffsetAtOverlap()
                 .toOffsetDateTime();
 
-        String offset = dateTime.getOffset().getId();
+        String offset = "-03:00";
 
         // DateTime without offset and with/without fractional seconds
         testDateTimeImpl("2021-09-19T12:13:14", "2021-09-19T12:13:14" + offset);
