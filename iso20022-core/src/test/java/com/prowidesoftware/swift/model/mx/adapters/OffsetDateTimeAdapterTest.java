@@ -3,7 +3,6 @@ package com.prowidesoftware.swift.model.mx.adapters;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.time.*;
-
 import org.junit.jupiter.api.Test;
 
 class OffsetDateTimeAdapterTest {
@@ -89,9 +88,5 @@ class OffsetDateTimeAdapterTest {
         testDateTimeImpl("2018-01-15T17:30:33.000000001Z", "2018-01-15T17:30:33.000000001+00:00");
         testDateTimeImpl("2018-01-15T17:30:33.123456789Z", "2018-01-15T17:30:33.123456789+00:00");
         testDateTimeImpl("2018-01-15T17:30:33Z", "2018-01-15T17:30:33+00:00");
-    }
-
-    private static String systemOffset() {
-        return offset;
     }
 }
