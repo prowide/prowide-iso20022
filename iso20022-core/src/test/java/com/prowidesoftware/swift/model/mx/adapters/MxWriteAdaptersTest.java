@@ -125,11 +125,7 @@ public class MxWriteAdaptersTest {
                 .getSttlmTmReq()
                 .getCLSTm();
         assertNotNull(clsTm2);
-        assertEquals(clsTm1.get(ChronoField.HOUR_OF_DAY), clsTm2.get(ChronoField.HOUR_OF_DAY));
-        assertEquals(clsTm1.get(ChronoField.MINUTE_OF_HOUR), clsTm2.get(ChronoField.MINUTE_OF_HOUR));
-        assertEquals(clsTm1.get(ChronoField.SECOND_OF_MINUTE), clsTm2.get(ChronoField.SECOND_OF_MINUTE));
-        assertEquals(clsTm1.get(ChronoField.NANO_OF_SECOND), clsTm2.get(ChronoField.NANO_OF_SECOND));
-        assertEquals(clsTm1.getOffset(), clsTm2.getOffset());
+        assertTimeFieldsEqual(clsTm1, clsTm2);
     }
 
     @Test
@@ -179,11 +175,7 @@ public class MxWriteAdaptersTest {
                 .getSttlmTmReq()
                 .getCLSTm();
         assertNotNull(clsTm2);
-        assertEquals(clsTm1.get(ChronoField.HOUR_OF_DAY), clsTm2.get(ChronoField.HOUR_OF_DAY));
-        assertEquals(clsTm1.get(ChronoField.MINUTE_OF_HOUR), clsTm2.get(ChronoField.MINUTE_OF_HOUR));
-        assertEquals(clsTm1.get(ChronoField.SECOND_OF_MINUTE), clsTm2.get(ChronoField.SECOND_OF_MINUTE));
-        assertEquals(clsTm1.get(ChronoField.NANO_OF_SECOND), clsTm2.get(ChronoField.NANO_OF_SECOND));
-        assertEquals(clsTm1.getOffset(), clsTm2.getOffset());
+        assertTimeFieldsEqual(clsTm1, clsTm2);
     }
 
     @Test
@@ -294,6 +286,15 @@ public class MxWriteAdaptersTest {
         mx.getFIToFICstmrCdtTrf().getCdtTrfTxInf().get(0).setSttlmTmReq(new SettlementTimeRequest2());
         mx.getFIToFICstmrCdtTrf().getCdtTrfTxInf().get(0).getSttlmTmReq().setCLSTm(offsetTime); // time
         return mx;
+    }
+
+    private void assertTimeFieldsEqual(OffsetTime time1, OffsetTime time2) {
+        assertNotNull(time2);
+        assertEquals(time1.get(ChronoField.HOUR_OF_DAY), time2.get(ChronoField.HOUR_OF_DAY));
+        assertEquals(time1.get(ChronoField.MINUTE_OF_HOUR), time2.get(ChronoField.MINUTE_OF_HOUR));
+        assertEquals(time1.get(ChronoField.SECOND_OF_MINUTE), time2.get(ChronoField.SECOND_OF_MINUTE));
+        assertEquals(time1.get(ChronoField.NANO_OF_SECOND), time2.get(ChronoField.NANO_OF_SECOND));
+        assertEquals(time1.getOffset(), time2.getOffset());
     }
 
     class TestCustomDateAdapter extends XmlAdapter<String, LocalDate> {
