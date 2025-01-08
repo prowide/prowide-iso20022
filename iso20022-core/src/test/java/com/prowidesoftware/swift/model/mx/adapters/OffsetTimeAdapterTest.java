@@ -77,11 +77,7 @@ public class OffsetTimeAdapterTest {
 
     @Test
     public void testOffsetTime() throws Exception {
-        ZoneOffset zoneOffset = ZoneId.systemDefault().getRules().getStandardOffset(Instant.now());
-        String offset = zoneOffset.toString();
-        if (offset.equals("Z")) {
-            offset = "+00:00";
-        }
+        String offset = systemOffset();
 
         // DateTime without offset and with/without fractional seconds
         testTimeImpl("12:13:14", "12:13:14" + offset);
@@ -148,5 +144,14 @@ public class OffsetTimeAdapterTest {
         testTimeImpl("17:30:33.000000001Z", "17:30:33.000000001+00:00");
         testTimeImpl("17:30:33.123456789Z", "17:30:33.123456789+00:00");
         testTimeImpl("17:30:33Z", "17:30:33+00:00");
+    }
+
+    private static String systemOffset() {
+        ZoneOffset zoneOffset = ZoneId.systemDefault().getRules().getStandardOffset(Instant.now());
+        String offset = zoneOffset.toString();
+        if (offset.equals("Z")) {
+            offset = "+00:00";
+        }
+        return offset;
     }
 }

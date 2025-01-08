@@ -2,25 +2,27 @@ package com.prowidesoftware.swift.model.mx.adapters;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.time.LocalDateTime;
-import java.time.OffsetDateTime;
-import java.time.ZoneId;
-import java.time.ZoneOffset;
+import java.time.*;
+
 import org.junit.jupiter.api.Test;
 
 class OffsetDateTimeAdapterTest {
 
     @Test
     void testOffsetDateTime() throws Exception {
-        ZoneId zoneId = ZoneOffset.ofHours(-3);
+        ZoneId zoneId = ZoneId.systemDefault();
+        ZoneOffset zoneOffset = zoneId.getRules().getStandardOffset(Instant.now());
+        String offset = zoneOffset.toString();
+        if (offset.equals("Z")) {
+            offset = "+00:00";
+        }
+
         OffsetDateTime dateTime = LocalDateTime.parse("2021-09-19T12:13:14")
                 .atZone(zoneId)
                 .withEarlierOffsetAtOverlap()
                 .withFixedOffsetZone()
                 .withEarlierOffsetAtOverlap()
                 .toOffsetDateTime();
-
-        String offset = "-03:00";
 
         // DateTime without offset and with/without fractional seconds
         testDateTimeImpl("2021-09-19T12:13:14", "2021-09-19T12:13:14" + offset);
@@ -87,5 +89,9 @@ class OffsetDateTimeAdapterTest {
         testDateTimeImpl("2018-01-15T17:30:33.000000001Z", "2018-01-15T17:30:33.000000001+00:00");
         testDateTimeImpl("2018-01-15T17:30:33.123456789Z", "2018-01-15T17:30:33.123456789+00:00");
         testDateTimeImpl("2018-01-15T17:30:33Z", "2018-01-15T17:30:33+00:00");
+    }
+
+    private static String systemOffset() {
+        return offset;
     }
 }
