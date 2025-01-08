@@ -72,7 +72,7 @@ public class OffsetTimeAdapterTest {
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss[.SSS][XXX]");
         ZoneOffset offset = ZoneId.systemDefault().getRules().getOffset(Instant.now());
         OffsetTime offsetTime = LocalTime.parse("12:50:08", dateTimeFormatter).atOffset(offset);
-        assertEquals("12:50:08" + offset, adapter.marshal(offsetTime));
+        assertEquals("12:50:08" + systemOffset(), adapter.marshal(offsetTime));
     }
 
     @Test
