@@ -30,7 +30,7 @@ import java.time.temporal.ChronoField;
 import org.junit.jupiter.api.Test;
 
 public class MxWriteAdaptersTest {
-    ZoneOffset systemOffset = ZoneOffset.ofHours(-3);
+    private final ZoneOffset systemOffset = ZoneOffset.ofHours(-3);
 
     @Test
     public void testDocumentDateTime_DefaultAdapters_noFractionalSecond() {
