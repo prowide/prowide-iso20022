@@ -145,7 +145,7 @@ project(':iso20022-core') {
 
 		// to avoid potential differences in JAXB implementations when testing in different environments
 		testImplementation 'javax.xml.bind:jaxb-api:2.3.1'
-		testImplementation 'com.sun.xml.bind:jaxb-impl:2.3.3'
+		testImplementation 'com.sun.xml.bind:jaxb-impl:4.0.5'
 		testImplementation 'com.sun.xml.bind:jaxb-core:2.3.0.1'
 		testImplementation 'javax.activation:activation:1.1.1'
 
