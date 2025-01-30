@@ -299,4 +299,35 @@ public class MxNode {
             return this.parent.path() + PATH_SEPARATOR + this.localName;
         }
     }
+
+    /**
+     * Traverses the XML tree from this node down, removing all leaves with empty attributes and empty content.
+     *
+     * @since 9.5.7
+     */
+    public void removeEmptyElements() {
+        if (this.children != null && !this.children.isEmpty()) {
+            List<MxNode> removables = new ArrayList<>();
+            for (MxNode child : this.children) {
+                if (child.isEmpty()) {
+                    removables.add(child);
+                } else {
+                    child.removeEmptyElements();
+                }
+            }
+            for (MxNode removable : removables) {
+                this.children.remove(removable);
+            }
+        }
+    }
+
+    /**
+     * @return true if this node has no value, no attributes and no children
+     * @since 9.5.7
+     */
+    public boolean isEmpty() {
+        return StringUtils.isEmpty(this.value)
+                && (this.attributes == null || this.attributes.isEmpty())
+                && (this.children == null || this.children.isEmpty());
+    }
 }

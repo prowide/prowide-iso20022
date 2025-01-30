@@ -413,4 +413,60 @@ public class MxNodeTest {
         final MxNode doc = MxNode.parse(xml);
         assertNull(doc);
     }
+
+    @Test
+    public void testRemoveEmptyElements() {
+        final MxNode n = new MxNode(null, "root");
+        new MxNode(n, "X").setValue("value"); // Add child with value
+        assertEquals(1, n.getChildren().size());
+
+        n.removeEmptyElements(); // Should not remove the child as it has value
+        assertFalse(n.getChildren().isEmpty()); // Still has children
+    }
+
+    @Test
+    public void testRemoveEmptyElements2() {
+        final MxNode n = new MxNode(null, "root");
+        MxNode x = new MxNode(n, "X");
+        x.addAttribute("a", "attr-value"); // Add an attribute
+        assertEquals(1, n.getChildren().size());
+
+        n.removeEmptyElements(); // Should not remove node as it has an attribute
+        assertFalse(n.getChildren().isEmpty());
+    }
+
+    @Test
+    public void testRemoveEmptyElements3() {
+        final MxNode n = new MxNode(null, "root");
+        new MxNode(n, "X"); // Create child node with no value and no attributes
+        assertEquals(1, n.getChildren().size());
+
+        n.removeEmptyElements(); // Should remove the child as it's empty
+        assertTrue(n.getChildren().isEmpty()); // No children left
+    }
+
+    @Test
+    public void testRemoveEmptyElements4() {
+        final MxNode n = new MxNode(null, "root");
+        MxNode x = new MxNode(n, "X");
+        new MxNode(x, "Y"); // Create an empty child under X
+
+        n.removeEmptyElements(); // Should remove Y as it's empty
+        assertEquals(1, n.getChildren().size()); // X should still exist
+        assertTrue(n.getChildren().get(0).getChildren().isEmpty()); // X should have no children
+    }
+
+    @Test
+    public void testRemoveEmptyElements5() {
+        final MxNode n = new MxNode(null, "root");
+        MxNode x = new MxNode(n, "X");
+        new MxNode(x, "Y").setValue("y"); // Add child with value
+        new MxNode(x, "Z").setValue(""); // Add child with empty value
+
+        assertEquals(1, n.getChildren().size());
+        assertEquals(2, x.getChildren().size());
+
+        n.removeEmptyElements(); // Should remove Z as it's empty
+        assertEquals(1, x.getChildren().size()); // Only Y should remain
+    }
 }
