@@ -98,7 +98,7 @@ subprojects {
 
 	dependencies {
 		implementation 'org.apache.commons:commons-lang3:3.17.0'
-		implementation 'com.google.code.gson:gson:2.11.0'
+		implementation 'com.google.code.gson:gson:2.12.1'
 	}
 
 	tasks.withType(Jar) {
@@ -120,7 +120,7 @@ configure(subprojects.findAll {it.name.endsWith('-mx')}) {
 		api project(':iso20022-core')
 		implementation project(specificTypesProject)
 		implementation 'org.apache.commons:commons-lang3:3.17.0'
-		implementation 'com.google.code.gson:gson:2.11.0'
+		implementation 'com.google.code.gson:gson:2.12.1'
 		compileOnly 'javax.persistence:javax.persistence-api:2.2'
 	}
 }
@@ -138,7 +138,7 @@ project(':iso20022-core') {
 		api "com.prowidesoftware:pw-swift-core:${prowideCoreVersion}"
 
 		implementation 'org.apache.commons:commons-lang3:3.17.0'
-		implementation 'com.google.code.gson:gson:2.11.0'
+		implementation 'com.google.code.gson:gson:2.12.1'
 
 		compileOnly 'javax.persistence:javax.persistence-api:2.2'
 		compileOnly 'javax.validation:validation-api:2.0.1.Final'
@@ -322,7 +322,7 @@ dependencies {
 	// included build (keep in sync with the latest Prowide Core version)
 	api "com.prowidesoftware:pw-swift-core:${prowideCoreVersion}"
 	implementation 'org.apache.commons:commons-lang3:3.17.0'
-	implementation 'com.google.code.gson:gson:2.11.0'
+	implementation 'com.google.code.gson:gson:2.12.1'
 }
 
 // repo for publishing
