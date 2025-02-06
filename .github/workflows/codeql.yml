@@ -2,11 +2,11 @@ name: "CodeQL"
 
 on:
   push:
-    branches: [ "main", "CU-*", "SRU*" ]
+    branches: ["main", "CU-*", "SRU*"]
     paths:
       - iso20022-core/src
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
     paths:
       - iso20022-core/src
   schedule:
@@ -24,7 +24,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: [ java ]
+        language: [java]
 
     steps:
       - name: Checkout
@@ -40,6 +40,6 @@ jobs:
         uses: github/codeql-action/autobuild@v2
 
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v2
+        uses: github/codeql-action/analyze@v3
         with:
           category: "/language:${{ matrix.language }}"
