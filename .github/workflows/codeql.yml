@@ -4,11 +4,11 @@ on:
   push:
     branches: [ "main", "CU-*", "SRU*" ]
     paths:
-      - src
+      - iso20022-core/src
   pull_request:
     branches: [ "main" ]
     paths:
-      - src
+      - iso20022-core/src
   schedule:
     - cron: "59 12 * * 2"
 
