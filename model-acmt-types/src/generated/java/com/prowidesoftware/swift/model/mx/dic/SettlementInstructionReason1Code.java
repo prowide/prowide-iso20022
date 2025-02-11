@@ -1,35 +1,34 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for SettlementInstructionReason1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="SettlementInstructionReason1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CSHI"/&gt;
- *     &lt;enumeration value="ALLL"/&gt;
- *     &lt;enumeration value="CSHO"/&gt;
- *     &lt;enumeration value="CHAR"/&gt;
- *     &lt;enumeration value="DIVI"/&gt;
- *     &lt;enumeration value="INTE"/&gt;
- *     &lt;enumeration value="SAVP"/&gt;
- *     &lt;enumeration value="REDM"/&gt;
- *     &lt;enumeration value="SAVE"/&gt;
- *     &lt;enumeration value="BUYI"/&gt;
- *     &lt;enumeration value="SELL"/&gt;
- *     &lt;enumeration value="SUBS"/&gt;
- *     &lt;enumeration value="WTHP"/&gt;
- *     &lt;enumeration value="CORP"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="SettlementInstructionReason1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CSHI"/>
+ *     <enumeration value="ALLL"/>
+ *     <enumeration value="CSHO"/>
+ *     <enumeration value="CHAR"/>
+ *     <enumeration value="DIVI"/>
+ *     <enumeration value="INTE"/>
+ *     <enumeration value="SAVP"/>
+ *     <enumeration value="REDM"/>
+ *     <enumeration value="SAVE"/>
+ *     <enumeration value="BUYI"/>
+ *     <enumeration value="SELL"/>
+ *     <enumeration value="SUBS"/>
+ *     <enumeration value="WTHP"/>
+ *     <enumeration value="CORP"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "SettlementInstructionReason1Code")

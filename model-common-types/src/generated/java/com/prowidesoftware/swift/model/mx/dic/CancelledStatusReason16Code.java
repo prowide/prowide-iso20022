@@ -1,34 +1,33 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for CancelledStatusReason16Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CancelledStatusReason16Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;minLength value="1"/&gt;
- *     &lt;maxLength value="4"/&gt;
- *     &lt;enumeration value="SCEX"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="CXLR"/&gt;
- *     &lt;enumeration value="BYIY"/&gt;
- *     &lt;enumeration value="CTHP"/&gt;
- *     &lt;enumeration value="CANZ"/&gt;
- *     &lt;enumeration value="CANT"/&gt;
- *     &lt;enumeration value="CSUB"/&gt;
- *     &lt;enumeration value="CANS"/&gt;
- *     &lt;enumeration value="CANI"/&gt;
- *     &lt;enumeration value="CORP"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CancelledStatusReason16Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <minLength value="1"/>
+ *     <maxLength value="4"/>
+ *     <enumeration value="SCEX"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="CXLR"/>
+ *     <enumeration value="BYIY"/>
+ *     <enumeration value="CTHP"/>
+ *     <enumeration value="CANZ"/>
+ *     <enumeration value="CANT"/>
+ *     <enumeration value="CSUB"/>
+ *     <enumeration value="CANS"/>
+ *     <enumeration value="CANI"/>
+ *     <enumeration value="CORP"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CancelledStatusReason16Code")

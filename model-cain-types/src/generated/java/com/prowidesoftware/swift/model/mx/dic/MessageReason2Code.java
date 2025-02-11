@@ -1,40 +1,39 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for MessageReason2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="MessageReason2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ASTD"/&gt;
- *     &lt;enumeration value="FLRL"/&gt;
- *     &lt;enumeration value="COFF"/&gt;
- *     &lt;enumeration value="ASPC"/&gt;
- *     &lt;enumeration value="CUNB"/&gt;
- *     &lt;enumeration value="CRND"/&gt;
- *     &lt;enumeration value="FORC"/&gt;
- *     &lt;enumeration value="ISGN"/&gt;
- *     &lt;enumeration value="ITIM"/&gt;
- *     &lt;enumeration value="IUNV"/&gt;
- *     &lt;enumeration value="OTHN"/&gt;
- *     &lt;enumeration value="OTHP"/&gt;
- *     &lt;enumeration value="TRND"/&gt;
- *     &lt;enumeration value="TUNB"/&gt;
- *     &lt;enumeration value="RSTD"/&gt;
- *     &lt;enumeration value="RTIM"/&gt;
- *     &lt;enumeration value="RSGN"/&gt;
- *     &lt;enumeration value="RUNV"/&gt;
- *     &lt;enumeration value="TOFF"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="MessageReason2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ASTD"/>
+ *     <enumeration value="FLRL"/>
+ *     <enumeration value="COFF"/>
+ *     <enumeration value="ASPC"/>
+ *     <enumeration value="CUNB"/>
+ *     <enumeration value="CRND"/>
+ *     <enumeration value="FORC"/>
+ *     <enumeration value="ISGN"/>
+ *     <enumeration value="ITIM"/>
+ *     <enumeration value="IUNV"/>
+ *     <enumeration value="OTHN"/>
+ *     <enumeration value="OTHP"/>
+ *     <enumeration value="TRND"/>
+ *     <enumeration value="TUNB"/>
+ *     <enumeration value="RSTD"/>
+ *     <enumeration value="RTIM"/>
+ *     <enumeration value="RSGN"/>
+ *     <enumeration value="RUNV"/>
+ *     <enumeration value="TOFF"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "MessageReason2Code")

@@ -1,37 +1,36 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlEnumValue;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for ESGLabelOrStandard1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ESGLabelOrStandard1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="E005"/&gt;
- *     &lt;enumeration value="C003"/&gt;
- *     &lt;enumeration value="B002"/&gt;
- *     &lt;enumeration value="L012"/&gt;
- *     &lt;enumeration value="D004"/&gt;
- *     &lt;enumeration value="O015"/&gt;
- *     &lt;enumeration value="A001"/&gt;
- *     &lt;enumeration value="F006"/&gt;
- *     &lt;enumeration value="K011"/&gt;
- *     &lt;enumeration value="J010"/&gt;
- *     &lt;enumeration value="H008"/&gt;
- *     &lt;enumeration value="I009"/&gt;
- *     &lt;enumeration value="G007"/&gt;
- *     &lt;enumeration value="N014"/&gt;
- *     &lt;enumeration value="M013"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ESGLabelOrStandard1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="E005"/>
+ *     <enumeration value="C003"/>
+ *     <enumeration value="B002"/>
+ *     <enumeration value="L012"/>
+ *     <enumeration value="D004"/>
+ *     <enumeration value="O015"/>
+ *     <enumeration value="A001"/>
+ *     <enumeration value="F006"/>
+ *     <enumeration value="K011"/>
+ *     <enumeration value="J010"/>
+ *     <enumeration value="H008"/>
+ *     <enumeration value="I009"/>
+ *     <enumeration value="G007"/>
+ *     <enumeration value="N014"/>
+ *     <enumeration value="M013"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ESGLabelOrStandard1Code")

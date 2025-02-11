@@ -1,28 +1,27 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for TradeCertificateType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="TradeCertificateType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ANLY"/&gt;
- *     &lt;enumeration value="QUAL"/&gt;
- *     &lt;enumeration value="QUAN"/&gt;
- *     &lt;enumeration value="WEIG"/&gt;
- *     &lt;enumeration value="ORIG"/&gt;
- *     &lt;enumeration value="HEAL"/&gt;
- *     &lt;enumeration value="PHYT"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="TradeCertificateType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ANLY"/>
+ *     <enumeration value="QUAL"/>
+ *     <enumeration value="QUAN"/>
+ *     <enumeration value="WEIG"/>
+ *     <enumeration value="ORIG"/>
+ *     <enumeration value="HEAL"/>
+ *     <enumeration value="PHYT"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "TradeCertificateType1Code")

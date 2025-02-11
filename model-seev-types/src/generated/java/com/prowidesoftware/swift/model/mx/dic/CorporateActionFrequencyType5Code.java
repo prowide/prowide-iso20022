@@ -1,27 +1,26 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for CorporateActionFrequencyType5Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CorporateActionFrequencyType5Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="FINL"/&gt;
- *     &lt;enumeration value="INTE"/&gt;
- *     &lt;enumeration value="REIN"/&gt;
- *     &lt;enumeration value="REGR"/&gt;
- *     &lt;enumeration value="SPEC"/&gt;
- *     &lt;enumeration value="SPRE"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CorporateActionFrequencyType5Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="FINL"/>
+ *     <enumeration value="INTE"/>
+ *     <enumeration value="REIN"/>
+ *     <enumeration value="REGR"/>
+ *     <enumeration value="SPEC"/>
+ *     <enumeration value="SPRE"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CorporateActionFrequencyType5Code")

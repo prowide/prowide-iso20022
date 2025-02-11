@@ -1,12 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.YearMonth;
+import com.prowidesoftware.swift.model.mx.adapters.IsoYearMonthAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -29,9 +31,10 @@ public class MarketPracticeVersion1 {
 
     @XmlElement(name = "Nm", required = true)
     protected String nm;
-    @XmlElement(name = "Dt")
+    @XmlElement(name = "Dt", type = String.class)
+    @XmlJavaTypeAdapter(IsoYearMonthAdapter.class)
     @XmlSchemaType(name = "gYearMonth")
-    protected XMLGregorianCalendar dt;
+    protected YearMonth dt;
     @XmlElement(name = "Nb")
     protected String nb;
 
@@ -65,10 +68,10 @@ public class MarketPracticeVersion1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDt() {
+    public YearMonth getDt() {
         return dt;
     }
 
@@ -77,10 +80,10 @@ public class MarketPracticeVersion1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public MarketPracticeVersion1 setDt(XMLGregorianCalendar value) {
+    public MarketPracticeVersion1 setDt(YearMonth value) {
         this.dt = value;
         return this;
     }

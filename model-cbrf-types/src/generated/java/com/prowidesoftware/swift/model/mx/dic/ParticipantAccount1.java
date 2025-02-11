@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -47,15 +47,15 @@ public class ParticipantAccount1 {
     @XmlElement(name = "OpngDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar opngDt;
+    protected OffsetDateTime opngDt;
     @XmlElement(name = "ClsgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar clsgDt;
+    protected OffsetDateTime clsgDt;
     @XmlElement(name = "DeltnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar deltnDt;
+    protected OffsetDateTime deltnDt;
     @XmlElement(name = "LicWdrwlDoc")
     protected DocumentIdentification11 licWdrwlDoc;
     @XmlElement(name = "AcctRstrctns")
@@ -129,7 +129,7 @@ public class ParticipantAccount1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getOpngDt() {
+    public OffsetDateTime getOpngDt() {
         return opngDt;
     }
 
@@ -141,7 +141,7 @@ public class ParticipantAccount1 {
      *     {@link String }
      *     
      */
-    public ParticipantAccount1 setOpngDt(XMLGregorianCalendar value) {
+    public ParticipantAccount1 setOpngDt(OffsetDateTime value) {
         this.opngDt = value;
         return this;
     }
@@ -154,7 +154,7 @@ public class ParticipantAccount1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getClsgDt() {
+    public OffsetDateTime getClsgDt() {
         return clsgDt;
     }
 
@@ -166,7 +166,7 @@ public class ParticipantAccount1 {
      *     {@link String }
      *     
      */
-    public ParticipantAccount1 setClsgDt(XMLGregorianCalendar value) {
+    public ParticipantAccount1 setClsgDt(OffsetDateTime value) {
         this.clsgDt = value;
         return this;
     }
@@ -179,7 +179,7 @@ public class ParticipantAccount1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDeltnDt() {
+    public OffsetDateTime getDeltnDt() {
         return deltnDt;
     }
 
@@ -191,7 +191,7 @@ public class ParticipantAccount1 {
      *     {@link String }
      *     
      */
-    public ParticipantAccount1 setDeltnDt(XMLGregorianCalendar value) {
+    public ParticipantAccount1 setDeltnDt(OffsetDateTime value) {
         this.deltnDt = value;
         return this;
     }
@@ -227,8 +227,8 @@ public class ParticipantAccount1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the acctRstrctns property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the acctRstrctns property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -242,10 +242,12 @@ public class ParticipantAccount1 {
      * {@link AccountRestrictions1 }
      * 
      * 
+     * @return
+     *     The value of the acctRstrctns property.
      */
     public List<AccountRestrictions1> getAcctRstrctns() {
         if (acctRstrctns == null) {
-            acctRstrctns = new ArrayList<AccountRestrictions1>();
+            acctRstrctns = new ArrayList<>();
         }
         return this.acctRstrctns;
     }
@@ -306,8 +308,8 @@ public class ParticipantAccount1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the lmts property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the lmts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -321,10 +323,12 @@ public class ParticipantAccount1 {
      * {@link AccountLimits1 }
      * 
      * 
+     * @return
+     *     The value of the lmts property.
      */
     public List<AccountLimits1> getLmts() {
         if (lmts == null) {
-            lmts = new ArrayList<AccountLimits1>();
+            lmts = new ArrayList<>();
         }
         return this.lmts;
     }
@@ -335,8 +339,8 @@ public class ParticipantAccount1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the arrsts property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the arrsts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -350,10 +354,12 @@ public class ParticipantAccount1 {
      * {@link ArrestedFunds1 }
      * 
      * 
+     * @return
+     *     The value of the arrsts property.
      */
     public List<ArrestedFunds1> getArrsts() {
         if (arrsts == null) {
-            arrsts = new ArrayList<ArrestedFunds1>();
+            arrsts = new ArrayList<>();
         }
         return this.arrsts;
     }

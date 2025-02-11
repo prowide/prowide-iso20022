@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -242,8 +242,8 @@ public class Amendment3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the newUdrtkgTermsAndConds property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the newUdrtkgTermsAndConds property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -257,10 +257,12 @@ public class Amendment3 {
      * {@link Narrative1 }
      * 
      * 
+     * @return
+     *     The value of the newUdrtkgTermsAndConds property.
      */
     public List<Narrative1> getNewUdrtkgTermsAndConds() {
         if (newUdrtkgTermsAndConds == null) {
-            newUdrtkgTermsAndConds = new ArrayList<Narrative1>();
+            newUdrtkgTermsAndConds = new ArrayList<>();
         }
         return this.newUdrtkgTermsAndConds;
     }
@@ -321,8 +323,8 @@ public class Amendment3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the nclsdFile property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the nclsdFile property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -336,10 +338,12 @@ public class Amendment3 {
      * {@link Document9 }
      * 
      * 
+     * @return
+     *     The value of the nclsdFile property.
      */
     public List<Document9> getNclsdFile() {
         if (nclsdFile == null) {
-            nclsdFile = new ArrayList<Document9>();
+            nclsdFile = new ArrayList<>();
         }
         return this.nclsdFile;
     }
@@ -350,8 +354,8 @@ public class Amendment3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -365,10 +369,12 @@ public class Amendment3 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the addtlInf property.
      */
     public List<String> getAddtlInf() {
         if (addtlInf == null) {
-            addtlInf = new ArrayList<String>();
+            addtlInf = new ArrayList<>();
         }
         return this.addtlInf;
     }

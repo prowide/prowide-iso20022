@@ -4,10 +4,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -191,8 +191,8 @@ public class Pension5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the taxRef property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the taxRef property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -206,10 +206,12 @@ public class Pension5 {
      * {@link TaxReference1 }
      * 
      * 
+     * @return
+     *     The value of the taxRef property.
      */
     public List<TaxReference1> getTaxRef() {
         if (taxRef == null) {
-            taxRef = new ArrayList<TaxReference1>();
+            taxRef = new ArrayList<>();
         }
         return this.taxRef;
     }
@@ -545,8 +547,8 @@ public class Pension5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the lumpSumTp property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the lumpSumTp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -560,10 +562,12 @@ public class Pension5 {
      * {@link LumpSumType1Choice }
      * 
      * 
+     * @return
+     *     The value of the lumpSumTp property.
      */
     public List<LumpSumType1Choice> getLumpSumTp() {
         if (lumpSumTp == null) {
-            lumpSumTp = new ArrayList<LumpSumType1Choice>();
+            lumpSumTp = new ArrayList<>();
         }
         return this.lumpSumTp;
     }
@@ -574,8 +578,8 @@ public class Pension5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the pnsnOrdr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the pnsnOrdr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -589,10 +593,12 @@ public class Pension5 {
      * {@link PensionOrder1 }
      * 
      * 
+     * @return
+     *     The value of the pnsnOrdr property.
      */
     public List<PensionOrder1> getPnsnOrdr() {
         if (pnsnOrdr == null) {
-            pnsnOrdr = new ArrayList<PensionOrder1>();
+            pnsnOrdr = new ArrayList<>();
         }
         return this.pnsnOrdr;
     }
@@ -803,8 +809,8 @@ public class Pension5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -818,10 +824,12 @@ public class Pension5 {
      * {@link AdditionalInformation15 }
      * 
      * 
+     * @return
+     *     The value of the addtlInf property.
      */
     public List<AdditionalInformation15> getAddtlInf() {
         if (addtlInf == null) {
-            addtlInf = new ArrayList<AdditionalInformation15>();
+            addtlInf = new ArrayList<>();
         }
         return this.addtlInf;
     }

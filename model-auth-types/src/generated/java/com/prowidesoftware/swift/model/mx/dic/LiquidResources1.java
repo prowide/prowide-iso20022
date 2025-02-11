@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -61,8 +61,8 @@ public class LiquidResources1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cshDue property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cshDue property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -76,10 +76,12 @@ public class LiquidResources1 {
      * {@link LiquidResourceInformation1 }
      * 
      * 
+     * @return
+     *     The value of the cshDue property.
      */
     public List<LiquidResourceInformation1> getCshDue() {
         if (cshDue == null) {
-            cshDue = new ArrayList<LiquidResourceInformation1>();
+            cshDue = new ArrayList<>();
         }
         return this.cshDue;
     }
@@ -90,8 +92,8 @@ public class LiquidResources1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the fcltiesCmmtdLinesOfCdt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the fcltiesCmmtdLinesOfCdt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -105,10 +107,12 @@ public class LiquidResources1 {
      * {@link LiquidResourceInformation1 }
      * 
      * 
+     * @return
+     *     The value of the fcltiesCmmtdLinesOfCdt property.
      */
     public List<LiquidResourceInformation1> getFcltiesCmmtdLinesOfCdt() {
         if (fcltiesCmmtdLinesOfCdt == null) {
-            fcltiesCmmtdLinesOfCdt = new ArrayList<LiquidResourceInformation1>();
+            fcltiesCmmtdLinesOfCdt = new ArrayList<>();
         }
         return this.fcltiesCmmtdLinesOfCdt;
     }
@@ -119,8 +123,8 @@ public class LiquidResources1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the fcltiesCmmtdRpAgrmts property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the fcltiesCmmtdRpAgrmts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -134,10 +138,12 @@ public class LiquidResources1 {
      * {@link LiquidResourceInformation1 }
      * 
      * 
+     * @return
+     *     The value of the fcltiesCmmtdRpAgrmts property.
      */
     public List<LiquidResourceInformation1> getFcltiesCmmtdRpAgrmts() {
         if (fcltiesCmmtdRpAgrmts == null) {
-            fcltiesCmmtdRpAgrmts = new ArrayList<LiquidResourceInformation1>();
+            fcltiesCmmtdRpAgrmts = new ArrayList<>();
         }
         return this.fcltiesCmmtdRpAgrmts;
     }
@@ -148,8 +154,8 @@ public class LiquidResources1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the fcltiesCmmtdFxSwps property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the fcltiesCmmtdFxSwps property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -163,10 +169,12 @@ public class LiquidResources1 {
      * {@link LiquidResourceInformation1 }
      * 
      * 
+     * @return
+     *     The value of the fcltiesCmmtdFxSwps property.
      */
     public List<LiquidResourceInformation1> getFcltiesCmmtdFxSwps() {
         if (fcltiesCmmtdFxSwps == null) {
-            fcltiesCmmtdFxSwps = new ArrayList<LiquidResourceInformation1>();
+            fcltiesCmmtdFxSwps = new ArrayList<>();
         }
         return this.fcltiesCmmtdFxSwps;
     }
@@ -177,8 +185,8 @@ public class LiquidResources1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the fcltiesOthrCmmtd property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the fcltiesOthrCmmtd property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -192,10 +200,12 @@ public class LiquidResources1 {
      * {@link LiquidResourceInformation1 }
      * 
      * 
+     * @return
+     *     The value of the fcltiesOthrCmmtd property.
      */
     public List<LiquidResourceInformation1> getFcltiesOthrCmmtd() {
         if (fcltiesOthrCmmtd == null) {
-            fcltiesOthrCmmtd = new ArrayList<LiquidResourceInformation1>();
+            fcltiesOthrCmmtd = new ArrayList<>();
         }
         return this.fcltiesOthrCmmtd;
     }
@@ -206,8 +216,8 @@ public class LiquidResources1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the fcltiesUcmmtd property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the fcltiesUcmmtd property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -221,10 +231,12 @@ public class LiquidResources1 {
      * {@link LiquidResourceInformation1 }
      * 
      * 
+     * @return
+     *     The value of the fcltiesUcmmtd property.
      */
     public List<LiquidResourceInformation1> getFcltiesUcmmtd() {
         if (fcltiesUcmmtd == null) {
-            fcltiesUcmmtd = new ArrayList<LiquidResourceInformation1>();
+            fcltiesUcmmtd = new ArrayList<>();
         }
         return this.fcltiesUcmmtd;
     }
@@ -235,8 +247,8 @@ public class LiquidResources1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the finInstrmsCCP property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the finInstrmsCCP property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -250,10 +262,12 @@ public class LiquidResources1 {
      * {@link LiquidResourceInformation1 }
      * 
      * 
+     * @return
+     *     The value of the finInstrmsCCP property.
      */
     public List<LiquidResourceInformation1> getFinInstrmsCCP() {
         if (finInstrmsCCP == null) {
-            finInstrmsCCP = new ArrayList<LiquidResourceInformation1>();
+            finInstrmsCCP = new ArrayList<>();
         }
         return this.finInstrmsCCP;
     }
@@ -264,8 +278,8 @@ public class LiquidResources1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the finInstrmsTrsrInvstmts property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the finInstrmsTrsrInvstmts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -279,10 +293,12 @@ public class LiquidResources1 {
      * {@link LiquidResourceInformation1 }
      * 
      * 
+     * @return
+     *     The value of the finInstrmsTrsrInvstmts property.
      */
     public List<LiquidResourceInformation1> getFinInstrmsTrsrInvstmts() {
         if (finInstrmsTrsrInvstmts == null) {
-            finInstrmsTrsrInvstmts = new ArrayList<LiquidResourceInformation1>();
+            finInstrmsTrsrInvstmts = new ArrayList<>();
         }
         return this.finInstrmsTrsrInvstmts;
     }
@@ -293,8 +309,8 @@ public class LiquidResources1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the finInstrmsDfltrsSttlmColl property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the finInstrmsDfltrsSttlmColl property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -308,10 +324,12 @@ public class LiquidResources1 {
      * {@link LiquidResourceInformation1 }
      * 
      * 
+     * @return
+     *     The value of the finInstrmsDfltrsSttlmColl property.
      */
     public List<LiquidResourceInformation1> getFinInstrmsDfltrsSttlmColl() {
         if (finInstrmsDfltrsSttlmColl == null) {
-            finInstrmsDfltrsSttlmColl = new ArrayList<LiquidResourceInformation1>();
+            finInstrmsDfltrsSttlmColl = new ArrayList<>();
         }
         return this.finInstrmsDfltrsSttlmColl;
     }
@@ -322,8 +340,8 @@ public class LiquidResources1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the finInstrmsDfltrsNonCshColl property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the finInstrmsDfltrsNonCshColl property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -337,10 +355,12 @@ public class LiquidResources1 {
      * {@link LiquidResourceInformation1 }
      * 
      * 
+     * @return
+     *     The value of the finInstrmsDfltrsNonCshColl property.
      */
     public List<LiquidResourceInformation1> getFinInstrmsDfltrsNonCshColl() {
         if (finInstrmsDfltrsNonCshColl == null) {
-            finInstrmsDfltrsNonCshColl = new ArrayList<LiquidResourceInformation1>();
+            finInstrmsDfltrsNonCshColl = new ArrayList<>();
         }
         return this.finInstrmsDfltrsNonCshColl;
     }

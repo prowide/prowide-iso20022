@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -53,7 +53,7 @@ public class SettlementObligation2 {
     @XmlElement(name = "TradDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar tradDt;
+    protected LocalDate tradDt;
 
     /**
      * Gets the value of the sttlmOblgtnId property.
@@ -186,8 +186,8 @@ public class SettlementObligation2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlSttlmOblgtnDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlSttlmOblgtnDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -201,10 +201,12 @@ public class SettlementObligation2 {
      * {@link SettlementObligation3 }
      * 
      * 
+     * @return
+     *     The value of the addtlSttlmOblgtnDtls property.
      */
     public List<SettlementObligation3> getAddtlSttlmOblgtnDtls() {
         if (addtlSttlmOblgtnDtls == null) {
-            addtlSttlmOblgtnDtls = new ArrayList<SettlementObligation3>();
+            addtlSttlmOblgtnDtls = new ArrayList<>();
         }
         return this.addtlSttlmOblgtnDtls;
     }
@@ -242,7 +244,7 @@ public class SettlementObligation2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getTradDt() {
+    public LocalDate getTradDt() {
         return tradDt;
     }
 
@@ -254,7 +256,7 @@ public class SettlementObligation2 {
      *     {@link String }
      *     
      */
-    public SettlementObligation2 setTradDt(XMLGregorianCalendar value) {
+    public SettlementObligation2 setTradDt(LocalDate value) {
         this.tradDt = value;
         return this;
     }

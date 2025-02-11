@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -32,7 +32,7 @@ public class CaseStatus2 {
     @XmlElement(name = "DtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar dtTm;
+    protected OffsetDateTime dtTm;
     @XmlElement(name = "CaseSts", required = true)
     @XmlSchemaType(name = "string")
     protected CaseStatus2Code caseSts;
@@ -47,7 +47,7 @@ public class CaseStatus2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDtTm() {
+    public OffsetDateTime getDtTm() {
         return dtTm;
     }
 
@@ -59,7 +59,7 @@ public class CaseStatus2 {
      *     {@link String }
      *     
      */
-    public CaseStatus2 setDtTm(XMLGregorianCalendar value) {
+    public CaseStatus2 setDtTm(OffsetDateTime value) {
         this.dtTm = value;
         return this;
     }

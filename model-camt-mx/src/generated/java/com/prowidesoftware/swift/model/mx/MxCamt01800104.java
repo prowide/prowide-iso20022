@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxCamt01800104
 
     @XmlElement(name = "GetBizDayInf", required = true)
     protected GetBusinessDayInformationV04 getBizDayInf;
-    public final static transient String BUSINESS_PROCESS = "camt";
-    public final static transient int FUNCTIONALITY = 18;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 4;
+    public static final transient String BUSINESS_PROCESS = "camt";
+    public static final transient int FUNCTIONALITY = 18;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 4;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {BusinessDayCriteria2 .class, BusinessDayCriteria3Choice.class, BusinessDayQuery2 .class, BusinessDayReturnCriteria2 .class, BusinessDaySearchCriteria2 .class, DateTimePeriod1 .class, DateTimePeriod1Choice.class, GenericIdentification1 .class, GetBusinessDayInformationV04 .class, MarketInfrastructureIdentification1Choice.class, MessageHeader9 .class, MxCamt01800104 .class, QueryType2Code.class, RequestType4Choice.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, SystemEventType2Choice.class, SystemEventType2Code.class, SystemIdentification2Choice.class };
-    public final static transient String NAMESPACE = "urn:swift:xsd:camt.018.001.04";
+    public static final transient Class[] _classes = new Class[] {BusinessDayCriteria2 .class, BusinessDayCriteria3Choice.class, BusinessDayQuery2 .class, BusinessDayReturnCriteria2 .class, BusinessDaySearchCriteria2 .class, DateTimePeriod1 .class, DateTimePeriod1Choice.class, GenericIdentification1 .class, GetBusinessDayInformationV04 .class, MarketInfrastructureIdentification1Choice.class, MessageHeader9 .class, MxCamt01800104 .class, QueryType2Code.class, RequestType4Choice.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, SystemEventType2Choice.class, SystemEventType2Code.class, SystemIdentification2Choice.class };
+    public static final transient String NAMESPACE = "urn:swift:xsd:camt.018.001.04";
 
     public MxCamt01800104() {
         super();
@@ -86,21 +86,6 @@ public class MxCamt01800104
     public MxCamt01800104 setGetBizDayInf(GetBusinessDayInformationV04 value) {
         this.getBizDayInf = value;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -173,8 +158,23 @@ public class MxCamt01800104
      * @return
      *     a new instance of MxCamt01800104
      */
-    public final static MxCamt01800104 fromJson(String json) {
+    public static final MxCamt01800104 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxCamt01800104 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

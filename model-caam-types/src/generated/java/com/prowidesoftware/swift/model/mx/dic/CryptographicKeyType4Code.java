@@ -1,28 +1,27 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for CryptographicKeyType4Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CryptographicKeyType4Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="APPL"/&gt;
- *     &lt;enumeration value="DATA"/&gt;
- *     &lt;enumeration value="DYNC"/&gt;
- *     &lt;enumeration value="KENC"/&gt;
- *     &lt;enumeration value="MACK"/&gt;
- *     &lt;enumeration value="PINK"/&gt;
- *     &lt;enumeration value="WRKG"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CryptographicKeyType4Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="APPL"/>
+ *     <enumeration value="DATA"/>
+ *     <enumeration value="DYNC"/>
+ *     <enumeration value="KENC"/>
+ *     <enumeration value="MACK"/>
+ *     <enumeration value="PINK"/>
+ *     <enumeration value="WRKG"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CryptographicKeyType4Code")
