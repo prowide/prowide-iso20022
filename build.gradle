@@ -150,7 +150,7 @@ project(':iso20022-core') {
 		testImplementation 'javax.activation:activation:1.1.1'
 
 		testImplementation 'javax.persistence:javax.persistence-api:2.2'
-		testImplementation 'org.junit.jupiter:junit-jupiter:5.11.4'
+		testImplementation 'org.junit.jupiter:junit-jupiter:5.12.1'
 		testImplementation 'com.google.guava:guava:33.4.0-jre'
 		testImplementation 'org.assertj:assertj-core:3.27.2'
 		testImplementation 'org.xmlunit:xmlunit-core:2.10.0'
