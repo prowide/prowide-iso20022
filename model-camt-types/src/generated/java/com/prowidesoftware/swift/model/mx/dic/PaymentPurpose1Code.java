@@ -1,65 +1,64 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for PaymentPurpose1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="PaymentPurpose1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="SALA"/&gt;
- *     &lt;enumeration value="TREA"/&gt;
- *     &lt;enumeration value="ADVA"/&gt;
- *     &lt;enumeration value="AGRT"/&gt;
- *     &lt;enumeration value="ALMY"/&gt;
- *     &lt;enumeration value="BECH"/&gt;
- *     &lt;enumeration value="BENE"/&gt;
- *     &lt;enumeration value="BONU"/&gt;
- *     &lt;enumeration value="CASH"/&gt;
- *     &lt;enumeration value="CBFF"/&gt;
- *     &lt;enumeration value="CHAR"/&gt;
- *     &lt;enumeration value="COLL"/&gt;
- *     &lt;enumeration value="CMDT"/&gt;
- *     &lt;enumeration value="COMC"/&gt;
- *     &lt;enumeration value="COMM"/&gt;
- *     &lt;enumeration value="COST"/&gt;
- *     &lt;enumeration value="CPYR"/&gt;
- *     &lt;enumeration value="DIVI"/&gt;
- *     &lt;enumeration value="FREX"/&gt;
- *     &lt;enumeration value="GDDS"/&gt;
- *     &lt;enumeration value="GOVT"/&gt;
- *     &lt;enumeration value="IHRP"/&gt;
- *     &lt;enumeration value="INTC"/&gt;
- *     &lt;enumeration value="INSU"/&gt;
- *     &lt;enumeration value="INTE"/&gt;
- *     &lt;enumeration value="LICF"/&gt;
- *     &lt;enumeration value="LOAN"/&gt;
- *     &lt;enumeration value="LOAR"/&gt;
- *     &lt;enumeration value="NETT"/&gt;
- *     &lt;enumeration value="PAYR"/&gt;
- *     &lt;enumeration value="PENS"/&gt;
- *     &lt;enumeration value="REFU"/&gt;
- *     &lt;enumeration value="RENT"/&gt;
- *     &lt;enumeration value="ROYA"/&gt;
- *     &lt;enumeration value="SCVE"/&gt;
- *     &lt;enumeration value="SECU"/&gt;
- *     &lt;enumeration value="SSBE"/&gt;
- *     &lt;enumeration value="SUBS"/&gt;
- *     &lt;enumeration value="TAXS"/&gt;
- *     &lt;enumeration value="VATX"/&gt;
- *     &lt;enumeration value="COMT"/&gt;
- *     &lt;enumeration value="DBTC"/&gt;
- *     &lt;enumeration value="SUPP"/&gt;
- *     &lt;enumeration value="HEDG"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="PaymentPurpose1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="SALA"/>
+ *     <enumeration value="TREA"/>
+ *     <enumeration value="ADVA"/>
+ *     <enumeration value="AGRT"/>
+ *     <enumeration value="ALMY"/>
+ *     <enumeration value="BECH"/>
+ *     <enumeration value="BENE"/>
+ *     <enumeration value="BONU"/>
+ *     <enumeration value="CASH"/>
+ *     <enumeration value="CBFF"/>
+ *     <enumeration value="CHAR"/>
+ *     <enumeration value="COLL"/>
+ *     <enumeration value="CMDT"/>
+ *     <enumeration value="COMC"/>
+ *     <enumeration value="COMM"/>
+ *     <enumeration value="COST"/>
+ *     <enumeration value="CPYR"/>
+ *     <enumeration value="DIVI"/>
+ *     <enumeration value="FREX"/>
+ *     <enumeration value="GDDS"/>
+ *     <enumeration value="GOVT"/>
+ *     <enumeration value="IHRP"/>
+ *     <enumeration value="INTC"/>
+ *     <enumeration value="INSU"/>
+ *     <enumeration value="INTE"/>
+ *     <enumeration value="LICF"/>
+ *     <enumeration value="LOAN"/>
+ *     <enumeration value="LOAR"/>
+ *     <enumeration value="NETT"/>
+ *     <enumeration value="PAYR"/>
+ *     <enumeration value="PENS"/>
+ *     <enumeration value="REFU"/>
+ *     <enumeration value="RENT"/>
+ *     <enumeration value="ROYA"/>
+ *     <enumeration value="SCVE"/>
+ *     <enumeration value="SECU"/>
+ *     <enumeration value="SSBE"/>
+ *     <enumeration value="SUBS"/>
+ *     <enumeration value="TAXS"/>
+ *     <enumeration value="VATX"/>
+ *     <enumeration value="COMT"/>
+ *     <enumeration value="DBTC"/>
+ *     <enumeration value="SUPP"/>
+ *     <enumeration value="HEDG"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "PaymentPurpose1Code")

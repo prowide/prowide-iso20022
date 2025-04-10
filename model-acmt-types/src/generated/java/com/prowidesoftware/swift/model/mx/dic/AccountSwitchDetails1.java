@@ -1,17 +1,18 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -44,11 +45,11 @@ public class AccountSwitchDetails1 {
     @XmlElement(name = "SwtchRcvdDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar swtchRcvdDtTm;
+    protected OffsetDateTime swtchRcvdDtTm;
     @XmlElement(name = "SwtchDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar swtchDt;
+    protected LocalDate swtchDt;
     @XmlElement(name = "SwtchTp", required = true)
     @XmlSchemaType(name = "string")
     protected SwitchType1Code swtchTp;
@@ -119,7 +120,7 @@ public class AccountSwitchDetails1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getSwtchRcvdDtTm() {
+    public OffsetDateTime getSwtchRcvdDtTm() {
         return swtchRcvdDtTm;
     }
 
@@ -131,7 +132,7 @@ public class AccountSwitchDetails1 {
      *     {@link String }
      *     
      */
-    public AccountSwitchDetails1 setSwtchRcvdDtTm(XMLGregorianCalendar value) {
+    public AccountSwitchDetails1 setSwtchRcvdDtTm(OffsetDateTime value) {
         this.swtchRcvdDtTm = value;
         return this;
     }
@@ -144,7 +145,7 @@ public class AccountSwitchDetails1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getSwtchDt() {
+    public LocalDate getSwtchDt() {
         return swtchDt;
     }
 
@@ -156,7 +157,7 @@ public class AccountSwitchDetails1 {
      *     {@link String }
      *     
      */
-    public AccountSwitchDetails1 setSwtchDt(XMLGregorianCalendar value) {
+    public AccountSwitchDetails1 setSwtchDt(LocalDate value) {
         this.swtchDt = value;
         return this;
     }
@@ -242,8 +243,8 @@ public class AccountSwitchDetails1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rspn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rspn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -257,10 +258,12 @@ public class AccountSwitchDetails1 {
      * {@link ResponseDetails1 }
      * 
      * 
+     * @return
+     *     The value of the rspn property.
      */
     public List<ResponseDetails1> getRspn() {
         if (rspn == null) {
-            rspn = new ArrayList<ResponseDetails1>();
+            rspn = new ArrayList<>();
         }
         return this.rspn;
     }

@@ -1,60 +1,59 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for MessageReason1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="MessageReason1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ASTD"/&gt;
- *     &lt;enumeration value="AMNT"/&gt;
- *     &lt;enumeration value="ASPC"/&gt;
- *     &lt;enumeration value="CDCL"/&gt;
- *     &lt;enumeration value="COFF"/&gt;
- *     &lt;enumeration value="CRND"/&gt;
- *     &lt;enumeration value="CRTN"/&gt;
- *     &lt;enumeration value="CUNB"/&gt;
- *     &lt;enumeration value="CCAN"/&gt;
- *     &lt;enumeration value="KDAC"/&gt;
- *     &lt;enumeration value="ERRP"/&gt;
- *     &lt;enumeration value="FLRL"/&gt;
- *     &lt;enumeration value="KINV"/&gt;
- *     &lt;enumeration value="ISGN"/&gt;
- *     &lt;enumeration value="ISTD"/&gt;
- *     &lt;enumeration value="ITIM"/&gt;
- *     &lt;enumeration value="IUNV"/&gt;
- *     &lt;enumeration value="ENDK"/&gt;
- *     &lt;enumeration value="MLFC"/&gt;
- *     &lt;enumeration value="FDCL"/&gt;
- *     &lt;enumeration value="NDCL"/&gt;
- *     &lt;enumeration value="FORC"/&gt;
- *     &lt;enumeration value="KSYN"/&gt;
- *     &lt;enumeration value="UDSP"/&gt;
- *     &lt;enumeration value="USND"/&gt;
- *     &lt;enumeration value="UCMP"/&gt;
- *     &lt;enumeration value="LATE"/&gt;
- *     &lt;enumeration value="TIMO"/&gt;
- *     &lt;enumeration value="TUNB"/&gt;
- *     &lt;enumeration value="TRND"/&gt;
- *     &lt;enumeration value="TOFF"/&gt;
- *     &lt;enumeration value="SUSP"/&gt;
- *     &lt;enumeration value="KSEC"/&gt;
- *     &lt;enumeration value="RUNV"/&gt;
- *     &lt;enumeration value="RTIM"/&gt;
- *     &lt;enumeration value="RSTD"/&gt;
- *     &lt;enumeration value="RSGN"/&gt;
- *     &lt;enumeration value="PART"/&gt;
- *     &lt;enumeration value="IDPS"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="MessageReason1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ASTD"/>
+ *     <enumeration value="AMNT"/>
+ *     <enumeration value="ASPC"/>
+ *     <enumeration value="CDCL"/>
+ *     <enumeration value="COFF"/>
+ *     <enumeration value="CRND"/>
+ *     <enumeration value="CRTN"/>
+ *     <enumeration value="CUNB"/>
+ *     <enumeration value="CCAN"/>
+ *     <enumeration value="KDAC"/>
+ *     <enumeration value="ERRP"/>
+ *     <enumeration value="FLRL"/>
+ *     <enumeration value="KINV"/>
+ *     <enumeration value="ISGN"/>
+ *     <enumeration value="ISTD"/>
+ *     <enumeration value="ITIM"/>
+ *     <enumeration value="IUNV"/>
+ *     <enumeration value="ENDK"/>
+ *     <enumeration value="MLFC"/>
+ *     <enumeration value="FDCL"/>
+ *     <enumeration value="NDCL"/>
+ *     <enumeration value="FORC"/>
+ *     <enumeration value="KSYN"/>
+ *     <enumeration value="UDSP"/>
+ *     <enumeration value="USND"/>
+ *     <enumeration value="UCMP"/>
+ *     <enumeration value="LATE"/>
+ *     <enumeration value="TIMO"/>
+ *     <enumeration value="TUNB"/>
+ *     <enumeration value="TRND"/>
+ *     <enumeration value="TOFF"/>
+ *     <enumeration value="SUSP"/>
+ *     <enumeration value="KSEC"/>
+ *     <enumeration value="RUNV"/>
+ *     <enumeration value="RTIM"/>
+ *     <enumeration value="RSTD"/>
+ *     <enumeration value="RSGN"/>
+ *     <enumeration value="PART"/>
+ *     <enumeration value="IDPS"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "MessageReason1Code")

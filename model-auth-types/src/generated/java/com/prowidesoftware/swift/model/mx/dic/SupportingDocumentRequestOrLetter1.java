@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -45,7 +45,7 @@ public class SupportingDocumentRequestOrLetter1 {
     @XmlElement(name = "Dt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar dt;
+    protected LocalDate dt;
     @XmlElement(name = "Sndr")
     protected Party28Choice sndr;
     @XmlElement(name = "Rcvr")
@@ -64,7 +64,7 @@ public class SupportingDocumentRequestOrLetter1 {
     @XmlElement(name = "DueDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar dueDt;
+    protected LocalDate dueDt;
     @XmlElement(name = "Attchmnt")
     protected List<DocumentGeneralInformation3> attchmnt;
     @XmlElement(name = "SplmtryData")
@@ -103,7 +103,7 @@ public class SupportingDocumentRequestOrLetter1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDt() {
+    public LocalDate getDt() {
         return dt;
     }
 
@@ -115,7 +115,7 @@ public class SupportingDocumentRequestOrLetter1 {
      *     {@link String }
      *     
      */
-    public SupportingDocumentRequestOrLetter1 setDt(XMLGregorianCalendar value) {
+    public SupportingDocumentRequestOrLetter1 setDt(LocalDate value) {
         this.dt = value;
         return this;
     }
@@ -176,8 +176,8 @@ public class SupportingDocumentRequestOrLetter1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the orgnlRefs property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the orgnlRefs property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -191,10 +191,12 @@ public class SupportingDocumentRequestOrLetter1 {
      * {@link OriginalMessage2 }
      * 
      * 
+     * @return
+     *     The value of the orgnlRefs property.
      */
     public List<OriginalMessage2> getOrgnlRefs() {
         if (orgnlRefs == null) {
-            orgnlRefs = new ArrayList<OriginalMessage2>();
+            orgnlRefs = new ArrayList<>();
         }
         return this.orgnlRefs;
     }
@@ -299,7 +301,7 @@ public class SupportingDocumentRequestOrLetter1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDueDt() {
+    public LocalDate getDueDt() {
         return dueDt;
     }
 
@@ -311,7 +313,7 @@ public class SupportingDocumentRequestOrLetter1 {
      *     {@link String }
      *     
      */
-    public SupportingDocumentRequestOrLetter1 setDueDt(XMLGregorianCalendar value) {
+    public SupportingDocumentRequestOrLetter1 setDueDt(LocalDate value) {
         this.dueDt = value;
         return this;
     }
@@ -322,8 +324,8 @@ public class SupportingDocumentRequestOrLetter1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the attchmnt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the attchmnt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -337,10 +339,12 @@ public class SupportingDocumentRequestOrLetter1 {
      * {@link DocumentGeneralInformation3 }
      * 
      * 
+     * @return
+     *     The value of the attchmnt property.
      */
     public List<DocumentGeneralInformation3> getAttchmnt() {
         if (attchmnt == null) {
-            attchmnt = new ArrayList<DocumentGeneralInformation3>();
+            attchmnt = new ArrayList<>();
         }
         return this.attchmnt;
     }
@@ -351,8 +355,8 @@ public class SupportingDocumentRequestOrLetter1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -366,10 +370,12 @@ public class SupportingDocumentRequestOrLetter1 {
      * {@link SupplementaryData1 }
      * 
      * 
+     * @return
+     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<SupplementaryData1>();
+            splmtryData = new ArrayList<>();
         }
         return this.splmtryData;
     }

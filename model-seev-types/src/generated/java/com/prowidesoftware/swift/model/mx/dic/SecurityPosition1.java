@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -108,8 +108,8 @@ public class SecurityPosition1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the mtgAttndee property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the mtgAttndee property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -123,10 +123,12 @@ public class SecurityPosition1 {
      * {@link VotingPartyAndInstruction }
      * 
      * 
+     * @return
+     *     The value of the mtgAttndee property.
      */
     public List<VotingPartyAndInstruction> getMtgAttndee() {
         if (mtgAttndee == null) {
-            mtgAttndee = new ArrayList<VotingPartyAndInstruction>();
+            mtgAttndee = new ArrayList<>();
         }
         return this.mtgAttndee;
     }
@@ -137,8 +139,8 @@ public class SecurityPosition1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the prxy property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the prxy property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -152,10 +154,12 @@ public class SecurityPosition1 {
      * {@link VotingPartyAndInstruction }
      * 
      * 
+     * @return
+     *     The value of the prxy property.
      */
     public List<VotingPartyAndInstruction> getPrxy() {
         if (prxy == null) {
-            prxy = new ArrayList<VotingPartyAndInstruction>();
+            prxy = new ArrayList<>();
         }
         return this.prxy;
     }
@@ -166,8 +170,8 @@ public class SecurityPosition1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the voteDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the voteDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -181,10 +185,12 @@ public class SecurityPosition1 {
      * {@link VoteInstruction }
      * 
      * 
+     * @return
+     *     The value of the voteDtls property.
      */
     public List<VoteInstruction> getVoteDtls() {
         if (voteDtls == null) {
-            voteDtls = new ArrayList<VoteInstruction>();
+            voteDtls = new ArrayList<>();
         }
         return this.voteDtls;
     }
@@ -195,8 +201,8 @@ public class SecurityPosition1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the prtcptnRegnReq property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the prtcptnRegnReq property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -210,10 +216,12 @@ public class SecurityPosition1 {
      * {@link RequestInformation }
      * 
      * 
+     * @return
+     *     The value of the prtcptnRegnReq property.
      */
     public List<RequestInformation> getPrtcptnRegnReq() {
         if (prtcptnRegnReq == null) {
-            prtcptnRegnReq = new ArrayList<RequestInformation>();
+            prtcptnRegnReq = new ArrayList<>();
         }
         return this.prtcptnRegnReq;
     }
@@ -224,8 +232,8 @@ public class SecurityPosition1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the blckgReq property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the blckgReq property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -239,10 +247,12 @@ public class SecurityPosition1 {
      * {@link RequestInformation }
      * 
      * 
+     * @return
+     *     The value of the blckgReq property.
      */
     public List<RequestInformation> getBlckgReq() {
         if (blckgReq == null) {
-            blckgReq = new ArrayList<RequestInformation>();
+            blckgReq = new ArrayList<>();
         }
         return this.blckgReq;
     }
@@ -253,8 +263,8 @@ public class SecurityPosition1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sctiesRegnReq property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sctiesRegnReq property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -268,10 +278,12 @@ public class SecurityPosition1 {
      * {@link RequestInformation }
      * 
      * 
+     * @return
+     *     The value of the sctiesRegnReq property.
      */
     public List<RequestInformation> getSctiesRegnReq() {
         if (sctiesRegnReq == null) {
-            sctiesRegnReq = new ArrayList<RequestInformation>();
+            sctiesRegnReq = new ArrayList<>();
         }
         return this.sctiesRegnReq;
     }
@@ -282,8 +294,8 @@ public class SecurityPosition1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sctySubPos property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sctySubPos property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -297,10 +309,12 @@ public class SecurityPosition1 {
      * {@link SecurityPosition2 }
      * 
      * 
+     * @return
+     *     The value of the sctySubPos property.
      */
     public List<SecurityPosition2> getSctySubPos() {
         if (sctySubPos == null) {
-            sctySubPos = new ArrayList<SecurityPosition2>();
+            sctySubPos = new ArrayList<>();
         }
         return this.sctySubPos;
     }

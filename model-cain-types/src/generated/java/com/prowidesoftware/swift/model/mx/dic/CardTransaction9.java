@@ -1,15 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -44,11 +45,11 @@ public class CardTransaction9 {
     @XmlElement(name = "IntrBkSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar intrBkSttlmDt;
+    protected LocalDate intrBkSttlmDt;
     @XmlElement(name = "InitrTxDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar initrTxDtTm;
+    protected OffsetDateTime initrTxDtTm;
     @XmlElement(name = "InitrTxId", required = true)
     protected String initrTxId;
     @XmlElement(name = "TxLifeCyclId")
@@ -118,7 +119,7 @@ public class CardTransaction9 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getIntrBkSttlmDt() {
+    public LocalDate getIntrBkSttlmDt() {
         return intrBkSttlmDt;
     }
 
@@ -130,7 +131,7 @@ public class CardTransaction9 {
      *     {@link String }
      *     
      */
-    public CardTransaction9 setIntrBkSttlmDt(XMLGregorianCalendar value) {
+    public CardTransaction9 setIntrBkSttlmDt(LocalDate value) {
         this.intrBkSttlmDt = value;
         return this;
     }
@@ -143,7 +144,7 @@ public class CardTransaction9 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getInitrTxDtTm() {
+    public OffsetDateTime getInitrTxDtTm() {
         return initrTxDtTm;
     }
 
@@ -155,7 +156,7 @@ public class CardTransaction9 {
      *     {@link String }
      *     
      */
-    public CardTransaction9 setInitrTxDtTm(XMLGregorianCalendar value) {
+    public CardTransaction9 setInitrTxDtTm(OffsetDateTime value) {
         this.initrTxDtTm = value;
         return this;
     }

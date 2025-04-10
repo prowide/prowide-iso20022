@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -98,8 +98,8 @@ public class OrderMassCancelRequest {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ordrIds property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ordrIds property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -113,10 +113,12 @@ public class OrderMassCancelRequest {
      * {@link OrderIdentification3 }
      * 
      * 
+     * @return
+     *     The value of the ordrIds property.
      */
     public List<OrderIdentification3> getOrdrIds() {
         if (ordrIds == null) {
-            ordrIds = new ArrayList<OrderIdentification3>();
+            ordrIds = new ArrayList<>();
         }
         return this.ordrIds;
     }
@@ -202,8 +204,8 @@ public class OrderMassCancelRequest {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cclForUndrlygInstrm property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cclForUndrlygInstrm property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -217,10 +219,12 @@ public class OrderMassCancelRequest {
      * {@link SecurityIdentification7 }
      * 
      * 
+     * @return
+     *     The value of the cclForUndrlygInstrm property.
      */
     public List<SecurityIdentification7> getCclForUndrlygInstrm() {
         if (cclForUndrlygInstrm == null) {
-            cclForUndrlygInstrm = new ArrayList<SecurityIdentification7>();
+            cclForUndrlygInstrm = new ArrayList<>();
         }
         return this.cclForUndrlygInstrm;
     }

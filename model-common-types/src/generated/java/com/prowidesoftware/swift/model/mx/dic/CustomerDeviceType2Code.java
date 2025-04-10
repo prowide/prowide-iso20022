@@ -1,37 +1,36 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for CustomerDeviceType2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CustomerDeviceType2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="MOBL"/&gt;
- *     &lt;enumeration value="OTHN"/&gt;
- *     &lt;enumeration value="OTHP"/&gt;
- *     &lt;enumeration value="PECR"/&gt;
- *     &lt;enumeration value="TBLT"/&gt;
- *     &lt;enumeration value="NSCR"/&gt;
- *     &lt;enumeration value="SECR"/&gt;
- *     &lt;enumeration value="EMBD"/&gt;
- *     &lt;enumeration value="VHCL"/&gt;
- *     &lt;enumeration value="WRBL"/&gt;
- *     &lt;enumeration value="WATC"/&gt;
- *     &lt;enumeration value="GAMB"/&gt;
- *     &lt;enumeration value="JEWL"/&gt;
- *     &lt;enumeration value="KFOB"/&gt;
- *     &lt;enumeration value="STIC"/&gt;
- *     &lt;enumeration value="UNKW"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CustomerDeviceType2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="MOBL"/>
+ *     <enumeration value="OTHN"/>
+ *     <enumeration value="OTHP"/>
+ *     <enumeration value="PECR"/>
+ *     <enumeration value="TBLT"/>
+ *     <enumeration value="NSCR"/>
+ *     <enumeration value="SECR"/>
+ *     <enumeration value="EMBD"/>
+ *     <enumeration value="VHCL"/>
+ *     <enumeration value="WRBL"/>
+ *     <enumeration value="WATC"/>
+ *     <enumeration value="GAMB"/>
+ *     <enumeration value="JEWL"/>
+ *     <enumeration value="KFOB"/>
+ *     <enumeration value="STIC"/>
+ *     <enumeration value="UNKW"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CustomerDeviceType2Code")

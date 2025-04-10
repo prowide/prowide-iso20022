@@ -1,64 +1,63 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for AccountInformationType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="AccountInformationType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="IBND"/&gt;
- *     &lt;enumeration value="IBCC"/&gt;
- *     &lt;enumeration value="IBDC"/&gt;
- *     &lt;enumeration value="BIBC"/&gt;
- *     &lt;enumeration value="BIBD"/&gt;
- *     &lt;enumeration value="BINC"/&gt;
- *     &lt;enumeration value="BIND"/&gt;
- *     &lt;enumeration value="BICC"/&gt;
- *     &lt;enumeration value="BIDC"/&gt;
- *     &lt;enumeration value="CMSA"/&gt;
- *     &lt;enumeration value="CBBC"/&gt;
- *     &lt;enumeration value="CBBD"/&gt;
- *     &lt;enumeration value="CBNC"/&gt;
- *     &lt;enumeration value="CBND"/&gt;
- *     &lt;enumeration value="CBCC"/&gt;
- *     &lt;enumeration value="CBDC"/&gt;
- *     &lt;enumeration value="CUAC"/&gt;
- *     &lt;enumeration value="DEAC"/&gt;
- *     &lt;enumeration value="FCAA"/&gt;
- *     &lt;enumeration value="FCAN"/&gt;
- *     &lt;enumeration value="FCBN"/&gt;
- *     &lt;enumeration value="IBBC"/&gt;
- *     &lt;enumeration value="IBBD"/&gt;
- *     &lt;enumeration value="IBNC"/&gt;
- *     &lt;enumeration value="MCAA"/&gt;
- *     &lt;enumeration value="MCAN"/&gt;
- *     &lt;enumeration value="MCIC"/&gt;
- *     &lt;enumeration value="MCIN"/&gt;
- *     &lt;enumeration value="MSAA"/&gt;
- *     &lt;enumeration value="MSBN"/&gt;
- *     &lt;enumeration value="MCAD"/&gt;
- *     &lt;enumeration value="NODC"/&gt;
- *     &lt;enumeration value="SCAC"/&gt;
- *     &lt;enumeration value="SCAA"/&gt;
- *     &lt;enumeration value="OMSA"/&gt;
- *     &lt;enumeration value="NOCC"/&gt;
- *     &lt;enumeration value="MSBS"/&gt;
- *     &lt;enumeration value="MSAN"/&gt;
- *     &lt;enumeration value="SCAN"/&gt;
- *     &lt;enumeration value="SCIC"/&gt;
- *     &lt;enumeration value="SCIN"/&gt;
- *     &lt;enumeration value="SOCA"/&gt;
- *     &lt;enumeration value="SSCA"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="AccountInformationType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="IBND"/>
+ *     <enumeration value="IBCC"/>
+ *     <enumeration value="IBDC"/>
+ *     <enumeration value="BIBC"/>
+ *     <enumeration value="BIBD"/>
+ *     <enumeration value="BINC"/>
+ *     <enumeration value="BIND"/>
+ *     <enumeration value="BICC"/>
+ *     <enumeration value="BIDC"/>
+ *     <enumeration value="CMSA"/>
+ *     <enumeration value="CBBC"/>
+ *     <enumeration value="CBBD"/>
+ *     <enumeration value="CBNC"/>
+ *     <enumeration value="CBND"/>
+ *     <enumeration value="CBCC"/>
+ *     <enumeration value="CBDC"/>
+ *     <enumeration value="CUAC"/>
+ *     <enumeration value="DEAC"/>
+ *     <enumeration value="FCAA"/>
+ *     <enumeration value="FCAN"/>
+ *     <enumeration value="FCBN"/>
+ *     <enumeration value="IBBC"/>
+ *     <enumeration value="IBBD"/>
+ *     <enumeration value="IBNC"/>
+ *     <enumeration value="MCAA"/>
+ *     <enumeration value="MCAN"/>
+ *     <enumeration value="MCIC"/>
+ *     <enumeration value="MCIN"/>
+ *     <enumeration value="MSAA"/>
+ *     <enumeration value="MSBN"/>
+ *     <enumeration value="MCAD"/>
+ *     <enumeration value="NODC"/>
+ *     <enumeration value="SCAC"/>
+ *     <enumeration value="SCAA"/>
+ *     <enumeration value="OMSA"/>
+ *     <enumeration value="NOCC"/>
+ *     <enumeration value="MSBS"/>
+ *     <enumeration value="MSAN"/>
+ *     <enumeration value="SCAN"/>
+ *     <enumeration value="SCIC"/>
+ *     <enumeration value="SCIN"/>
+ *     <enumeration value="SOCA"/>
+ *     <enumeration value="SSCA"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "AccountInformationType1Code")

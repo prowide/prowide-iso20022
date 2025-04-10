@@ -1,28 +1,27 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for Status7Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="Status7Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CSUB"/&gt;
- *     &lt;enumeration value="PACK"/&gt;
- *     &lt;enumeration value="CAND"/&gt;
- *     &lt;enumeration value="COMP"/&gt;
- *     &lt;enumeration value="NOIN"/&gt;
- *     &lt;enumeration value="RCIS"/&gt;
- *     &lt;enumeration value="STIN"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="Status7Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CSUB"/>
+ *     <enumeration value="PACK"/>
+ *     <enumeration value="CAND"/>
+ *     <enumeration value="COMP"/>
+ *     <enumeration value="NOIN"/>
+ *     <enumeration value="RCIS"/>
+ *     <enumeration value="STIN"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "Status7Code")

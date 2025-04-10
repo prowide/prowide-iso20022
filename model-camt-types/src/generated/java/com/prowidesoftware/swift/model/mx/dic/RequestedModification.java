@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -58,11 +58,11 @@ public class RequestedModification {
     @XmlElement(name = "ReqdExctnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar reqdExctnDt;
+    protected LocalDate reqdExctnDt;
     @XmlElement(name = "ValDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar valDt;
+    protected LocalDate valDt;
     @XmlElement(name = "IntrBkSttldAmt")
     protected CurrencyAndAmount intrBkSttldAmt;
     @XmlElement(name = "Dbtr")
@@ -176,7 +176,7 @@ public class RequestedModification {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getReqdExctnDt() {
+    public LocalDate getReqdExctnDt() {
         return reqdExctnDt;
     }
 
@@ -188,7 +188,7 @@ public class RequestedModification {
      *     {@link String }
      *     
      */
-    public RequestedModification setReqdExctnDt(XMLGregorianCalendar value) {
+    public RequestedModification setReqdExctnDt(LocalDate value) {
         this.reqdExctnDt = value;
         return this;
     }
@@ -201,7 +201,7 @@ public class RequestedModification {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getValDt() {
+    public LocalDate getValDt() {
         return valDt;
     }
 
@@ -213,7 +213,7 @@ public class RequestedModification {
      *     {@link String }
      *     
      */
-    public RequestedModification setValDt(XMLGregorianCalendar value) {
+    public RequestedModification setValDt(LocalDate value) {
         this.valDt = value;
         return this;
     }
@@ -549,8 +549,8 @@ public class RequestedModification {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sndrToRcvrInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sndrToRcvrInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -564,10 +564,12 @@ public class RequestedModification {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the sndrToRcvrInf property.
      */
     public List<String> getSndrToRcvrInf() {
         if (sndrToRcvrInf == null) {
-            sndrToRcvrInf = new ArrayList<String>();
+            sndrToRcvrInf = new ArrayList<>();
         }
         return this.sndrToRcvrInf;
     }

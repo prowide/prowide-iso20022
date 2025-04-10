@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -65,8 +65,8 @@ public class DirectoryInformation1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ptcptSwiftIdrsList property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ptcptSwiftIdrsList property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -80,10 +80,12 @@ public class DirectoryInformation1 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the ptcptSwiftIdrsList property.
      */
     public List<String> getPtcptSwiftIdrsList() {
         if (ptcptSwiftIdrsList == null) {
-            ptcptSwiftIdrsList = new ArrayList<String>();
+            ptcptSwiftIdrsList = new ArrayList<>();
         }
         return this.ptcptSwiftIdrsList;
     }
@@ -94,8 +96,8 @@ public class DirectoryInformation1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the accts property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the accts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -109,10 +111,12 @@ public class DirectoryInformation1 {
      * {@link DirectoryAccountInformation1 }
      * 
      * 
+     * @return
+     *     The value of the accts property.
      */
     public List<DirectoryAccountInformation1> getAccts() {
         if (accts == null) {
-            accts = new ArrayList<DirectoryAccountInformation1>();
+            accts = new ArrayList<>();
         }
         return this.accts;
     }

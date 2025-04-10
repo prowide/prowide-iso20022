@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -772,8 +772,8 @@ public class TransactionMatchingCriteria6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sttlmDt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sttlmDt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -787,10 +787,12 @@ public class TransactionMatchingCriteria6 {
      * {@link CompareDate3 }
      * 
      * 
+     * @return
+     *     The value of the sttlmDt property.
      */
     public List<CompareDate3> getSttlmDt() {
         if (sttlmDt == null) {
-            sttlmDt = new ArrayList<CompareDate3>();
+            sttlmDt = new ArrayList<>();
         }
         return this.sttlmDt;
     }
@@ -851,8 +853,8 @@ public class TransactionMatchingCriteria6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the pricSchdlUadjstdFctvDt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the pricSchdlUadjstdFctvDt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -866,10 +868,12 @@ public class TransactionMatchingCriteria6 {
      * {@link CompareDate3 }
      * 
      * 
+     * @return
+     *     The value of the pricSchdlUadjstdFctvDt property.
      */
     public List<CompareDate3> getPricSchdlUadjstdFctvDt() {
         if (pricSchdlUadjstdFctvDt == null) {
-            pricSchdlUadjstdFctvDt = new ArrayList<CompareDate3>();
+            pricSchdlUadjstdFctvDt = new ArrayList<>();
         }
         return this.pricSchdlUadjstdFctvDt;
     }
@@ -880,8 +884,8 @@ public class TransactionMatchingCriteria6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the pricSchdlUadjstdEndDt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the pricSchdlUadjstdEndDt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -895,10 +899,12 @@ public class TransactionMatchingCriteria6 {
      * {@link CompareDate3 }
      * 
      * 
+     * @return
+     *     The value of the pricSchdlUadjstdEndDt property.
      */
     public List<CompareDate3> getPricSchdlUadjstdEndDt() {
         if (pricSchdlUadjstdEndDt == null) {
-            pricSchdlUadjstdEndDt = new ArrayList<CompareDate3>();
+            pricSchdlUadjstdEndDt = new ArrayList<>();
         }
         return this.pricSchdlUadjstdEndDt;
     }
@@ -909,8 +915,8 @@ public class TransactionMatchingCriteria6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the txSchdlPric property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the txSchdlPric property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -924,10 +930,12 @@ public class TransactionMatchingCriteria6 {
      * {@link CompareUnitPrice5 }
      * 
      * 
+     * @return
+     *     The value of the txSchdlPric property.
      */
     public List<CompareUnitPrice5> getTxSchdlPric() {
         if (txSchdlPric == null) {
-            txSchdlPric = new ArrayList<CompareUnitPrice5>();
+            txSchdlPric = new ArrayList<>();
         }
         return this.txSchdlPric;
     }
@@ -988,8 +996,8 @@ public class TransactionMatchingCriteria6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ntnlAmtFrstLegUadjstdFctvDt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ntnlAmtFrstLegUadjstdFctvDt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -1003,10 +1011,12 @@ public class TransactionMatchingCriteria6 {
      * {@link CompareDate3 }
      * 
      * 
+     * @return
+     *     The value of the ntnlAmtFrstLegUadjstdFctvDt property.
      */
     public List<CompareDate3> getNtnlAmtFrstLegUadjstdFctvDt() {
         if (ntnlAmtFrstLegUadjstdFctvDt == null) {
-            ntnlAmtFrstLegUadjstdFctvDt = new ArrayList<CompareDate3>();
+            ntnlAmtFrstLegUadjstdFctvDt = new ArrayList<>();
         }
         return this.ntnlAmtFrstLegUadjstdFctvDt;
     }
@@ -1017,8 +1027,8 @@ public class TransactionMatchingCriteria6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ntnlAmtFrstLegUadjstdEndDt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ntnlAmtFrstLegUadjstdEndDt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -1032,10 +1042,12 @@ public class TransactionMatchingCriteria6 {
      * {@link CompareDate3 }
      * 
      * 
+     * @return
+     *     The value of the ntnlAmtFrstLegUadjstdEndDt property.
      */
     public List<CompareDate3> getNtnlAmtFrstLegUadjstdEndDt() {
         if (ntnlAmtFrstLegUadjstdEndDt == null) {
-            ntnlAmtFrstLegUadjstdEndDt = new ArrayList<CompareDate3>();
+            ntnlAmtFrstLegUadjstdEndDt = new ArrayList<>();
         }
         return this.ntnlAmtFrstLegUadjstdEndDt;
     }
@@ -1046,8 +1058,8 @@ public class TransactionMatchingCriteria6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ntnlAmtFrstLegSchdlAmt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ntnlAmtFrstLegSchdlAmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -1061,10 +1073,12 @@ public class TransactionMatchingCriteria6 {
      * {@link CompareAmountAndDirection3 }
      * 
      * 
+     * @return
+     *     The value of the ntnlAmtFrstLegSchdlAmt property.
      */
     public List<CompareAmountAndDirection3> getNtnlAmtFrstLegSchdlAmt() {
         if (ntnlAmtFrstLegSchdlAmt == null) {
-            ntnlAmtFrstLegSchdlAmt = new ArrayList<CompareAmountAndDirection3>();
+            ntnlAmtFrstLegSchdlAmt = new ArrayList<>();
         }
         return this.ntnlAmtFrstLegSchdlAmt;
     }
@@ -1100,8 +1114,8 @@ public class TransactionMatchingCriteria6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ntnlQtyFrstLegUadjstdFctvDt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ntnlQtyFrstLegUadjstdFctvDt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -1115,10 +1129,12 @@ public class TransactionMatchingCriteria6 {
      * {@link CompareDate3 }
      * 
      * 
+     * @return
+     *     The value of the ntnlQtyFrstLegUadjstdFctvDt property.
      */
     public List<CompareDate3> getNtnlQtyFrstLegUadjstdFctvDt() {
         if (ntnlQtyFrstLegUadjstdFctvDt == null) {
-            ntnlQtyFrstLegUadjstdFctvDt = new ArrayList<CompareDate3>();
+            ntnlQtyFrstLegUadjstdFctvDt = new ArrayList<>();
         }
         return this.ntnlQtyFrstLegUadjstdFctvDt;
     }
@@ -1129,8 +1145,8 @@ public class TransactionMatchingCriteria6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ntnlQtyFrstLegUadjstdEndDt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ntnlQtyFrstLegUadjstdEndDt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -1144,10 +1160,12 @@ public class TransactionMatchingCriteria6 {
      * {@link CompareDate3 }
      * 
      * 
+     * @return
+     *     The value of the ntnlQtyFrstLegUadjstdEndDt property.
      */
     public List<CompareDate3> getNtnlQtyFrstLegUadjstdEndDt() {
         if (ntnlQtyFrstLegUadjstdEndDt == null) {
-            ntnlQtyFrstLegUadjstdEndDt = new ArrayList<CompareDate3>();
+            ntnlQtyFrstLegUadjstdEndDt = new ArrayList<>();
         }
         return this.ntnlQtyFrstLegUadjstdEndDt;
     }
@@ -1158,8 +1176,8 @@ public class TransactionMatchingCriteria6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ntnlQtyFrstLegSchdlQty property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ntnlQtyFrstLegSchdlQty property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -1173,10 +1191,12 @@ public class TransactionMatchingCriteria6 {
      * {@link CompareLongFraction19DecimalNumber1 }
      * 
      * 
+     * @return
+     *     The value of the ntnlQtyFrstLegSchdlQty property.
      */
     public List<CompareLongFraction19DecimalNumber1> getNtnlQtyFrstLegSchdlQty() {
         if (ntnlQtyFrstLegSchdlQty == null) {
-            ntnlQtyFrstLegSchdlQty = new ArrayList<CompareLongFraction19DecimalNumber1>();
+            ntnlQtyFrstLegSchdlQty = new ArrayList<>();
         }
         return this.ntnlQtyFrstLegSchdlQty;
     }
@@ -1212,8 +1232,8 @@ public class TransactionMatchingCriteria6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ntnlAmtScndLegUadjstdFctvDt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ntnlAmtScndLegUadjstdFctvDt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -1227,10 +1247,12 @@ public class TransactionMatchingCriteria6 {
      * {@link CompareDate3 }
      * 
      * 
+     * @return
+     *     The value of the ntnlAmtScndLegUadjstdFctvDt property.
      */
     public List<CompareDate3> getNtnlAmtScndLegUadjstdFctvDt() {
         if (ntnlAmtScndLegUadjstdFctvDt == null) {
-            ntnlAmtScndLegUadjstdFctvDt = new ArrayList<CompareDate3>();
+            ntnlAmtScndLegUadjstdFctvDt = new ArrayList<>();
         }
         return this.ntnlAmtScndLegUadjstdFctvDt;
     }
@@ -1241,8 +1263,8 @@ public class TransactionMatchingCriteria6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ntnlAmtScndLegUadjstdEndDt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ntnlAmtScndLegUadjstdEndDt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -1256,10 +1278,12 @@ public class TransactionMatchingCriteria6 {
      * {@link CompareDate3 }
      * 
      * 
+     * @return
+     *     The value of the ntnlAmtScndLegUadjstdEndDt property.
      */
     public List<CompareDate3> getNtnlAmtScndLegUadjstdEndDt() {
         if (ntnlAmtScndLegUadjstdEndDt == null) {
-            ntnlAmtScndLegUadjstdEndDt = new ArrayList<CompareDate3>();
+            ntnlAmtScndLegUadjstdEndDt = new ArrayList<>();
         }
         return this.ntnlAmtScndLegUadjstdEndDt;
     }
@@ -1270,8 +1294,8 @@ public class TransactionMatchingCriteria6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ntnlAmtScndLegSchdlAmt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ntnlAmtScndLegSchdlAmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -1285,10 +1309,12 @@ public class TransactionMatchingCriteria6 {
      * {@link CompareAmountAndDirection3 }
      * 
      * 
+     * @return
+     *     The value of the ntnlAmtScndLegSchdlAmt property.
      */
     public List<CompareAmountAndDirection3> getNtnlAmtScndLegSchdlAmt() {
         if (ntnlAmtScndLegSchdlAmt == null) {
-            ntnlAmtScndLegSchdlAmt = new ArrayList<CompareAmountAndDirection3>();
+            ntnlAmtScndLegSchdlAmt = new ArrayList<>();
         }
         return this.ntnlAmtScndLegSchdlAmt;
     }
@@ -1324,8 +1350,8 @@ public class TransactionMatchingCriteria6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ntnlQtyScndLegUadjstdFctvDt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ntnlQtyScndLegUadjstdFctvDt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -1339,10 +1365,12 @@ public class TransactionMatchingCriteria6 {
      * {@link CompareDate3 }
      * 
      * 
+     * @return
+     *     The value of the ntnlQtyScndLegUadjstdFctvDt property.
      */
     public List<CompareDate3> getNtnlQtyScndLegUadjstdFctvDt() {
         if (ntnlQtyScndLegUadjstdFctvDt == null) {
-            ntnlQtyScndLegUadjstdFctvDt = new ArrayList<CompareDate3>();
+            ntnlQtyScndLegUadjstdFctvDt = new ArrayList<>();
         }
         return this.ntnlQtyScndLegUadjstdFctvDt;
     }
@@ -1353,8 +1381,8 @@ public class TransactionMatchingCriteria6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ntnlQtyScndLegUadjstdEndDt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ntnlQtyScndLegUadjstdEndDt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -1368,10 +1396,12 @@ public class TransactionMatchingCriteria6 {
      * {@link CompareDate3 }
      * 
      * 
+     * @return
+     *     The value of the ntnlQtyScndLegUadjstdEndDt property.
      */
     public List<CompareDate3> getNtnlQtyScndLegUadjstdEndDt() {
         if (ntnlQtyScndLegUadjstdEndDt == null) {
-            ntnlQtyScndLegUadjstdEndDt = new ArrayList<CompareDate3>();
+            ntnlQtyScndLegUadjstdEndDt = new ArrayList<>();
         }
         return this.ntnlQtyScndLegUadjstdEndDt;
     }
@@ -1382,8 +1412,8 @@ public class TransactionMatchingCriteria6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ntnlQtyScndLegSchdlQty property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ntnlQtyScndLegSchdlQty property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -1397,10 +1427,12 @@ public class TransactionMatchingCriteria6 {
      * {@link CompareLongFraction19DecimalNumber1 }
      * 
      * 
+     * @return
+     *     The value of the ntnlQtyScndLegSchdlQty property.
      */
     public List<CompareLongFraction19DecimalNumber1> getNtnlQtyScndLegSchdlQty() {
         if (ntnlQtyScndLegSchdlQty == null) {
-            ntnlQtyScndLegSchdlQty = new ArrayList<CompareLongFraction19DecimalNumber1>();
+            ntnlQtyScndLegSchdlQty = new ArrayList<>();
         }
         return this.ntnlQtyScndLegSchdlQty;
     }
@@ -1411,8 +1443,8 @@ public class TransactionMatchingCriteria6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the othrPmt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the othrPmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -1426,10 +1458,12 @@ public class TransactionMatchingCriteria6 {
      * {@link CompareOtherPayment1 }
      * 
      * 
+     * @return
+     *     The value of the othrPmt property.
      */
     public List<CompareOtherPayment1> getOthrPmt() {
         if (othrPmt == null) {
-            othrPmt = new ArrayList<CompareOtherPayment1>();
+            othrPmt = new ArrayList<>();
         }
         return this.othrPmt;
     }
@@ -2315,8 +2349,8 @@ public class TransactionMatchingCriteria6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the nrgyDlvryPtOrZone property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the nrgyDlvryPtOrZone property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -2330,10 +2364,12 @@ public class TransactionMatchingCriteria6 {
      * {@link CompareDeliveryInterconnectionPoint1 }
      * 
      * 
+     * @return
+     *     The value of the nrgyDlvryPtOrZone property.
      */
     public List<CompareDeliveryInterconnectionPoint1> getNrgyDlvryPtOrZone() {
         if (nrgyDlvryPtOrZone == null) {
-            nrgyDlvryPtOrZone = new ArrayList<CompareDeliveryInterconnectionPoint1>();
+            nrgyDlvryPtOrZone = new ArrayList<>();
         }
         return this.nrgyDlvryPtOrZone;
     }
@@ -2394,8 +2430,8 @@ public class TransactionMatchingCriteria6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dlvryAttr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the dlvryAttr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -2409,10 +2445,12 @@ public class TransactionMatchingCriteria6 {
      * {@link CompareEnergyDeliveryAttribute1 }
      * 
      * 
+     * @return
+     *     The value of the dlvryAttr property.
      */
     public List<CompareEnergyDeliveryAttribute1> getDlvryAttr() {
         if (dlvryAttr == null) {
-            dlvryAttr = new ArrayList<CompareEnergyDeliveryAttribute1>();
+            dlvryAttr = new ArrayList<>();
         }
         return this.dlvryAttr;
     }
@@ -2448,8 +2486,8 @@ public class TransactionMatchingCriteria6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the optnExrcStyle property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the optnExrcStyle property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -2463,10 +2501,12 @@ public class TransactionMatchingCriteria6 {
      * {@link CompareOptionStyle1 }
      * 
      * 
+     * @return
+     *     The value of the optnExrcStyle property.
      */
     public List<CompareOptionStyle1> getOptnExrcStyle() {
         if (optnExrcStyle == null) {
-            optnExrcStyle = new ArrayList<CompareOptionStyle1>();
+            optnExrcStyle = new ArrayList<>();
         }
         return this.optnExrcStyle;
     }
@@ -2502,8 +2542,8 @@ public class TransactionMatchingCriteria6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the optnStrkPricSchdlUadjstdFctvDt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the optnStrkPricSchdlUadjstdFctvDt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -2517,10 +2557,12 @@ public class TransactionMatchingCriteria6 {
      * {@link CompareDate3 }
      * 
      * 
+     * @return
+     *     The value of the optnStrkPricSchdlUadjstdFctvDt property.
      */
     public List<CompareDate3> getOptnStrkPricSchdlUadjstdFctvDt() {
         if (optnStrkPricSchdlUadjstdFctvDt == null) {
-            optnStrkPricSchdlUadjstdFctvDt = new ArrayList<CompareDate3>();
+            optnStrkPricSchdlUadjstdFctvDt = new ArrayList<>();
         }
         return this.optnStrkPricSchdlUadjstdFctvDt;
     }
@@ -2531,8 +2573,8 @@ public class TransactionMatchingCriteria6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the optnStrkPricSchdlUadjstdEndDt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the optnStrkPricSchdlUadjstdEndDt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -2546,10 +2588,12 @@ public class TransactionMatchingCriteria6 {
      * {@link CompareDate3 }
      * 
      * 
+     * @return
+     *     The value of the optnStrkPricSchdlUadjstdEndDt property.
      */
     public List<CompareDate3> getOptnStrkPricSchdlUadjstdEndDt() {
         if (optnStrkPricSchdlUadjstdEndDt == null) {
-            optnStrkPricSchdlUadjstdEndDt = new ArrayList<CompareDate3>();
+            optnStrkPricSchdlUadjstdEndDt = new ArrayList<>();
         }
         return this.optnStrkPricSchdlUadjstdEndDt;
     }
@@ -2560,8 +2604,8 @@ public class TransactionMatchingCriteria6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the optnStrkPricSchdlAmt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the optnStrkPricSchdlAmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -2575,10 +2619,12 @@ public class TransactionMatchingCriteria6 {
      * {@link CompareUnitPrice4 }
      * 
      * 
+     * @return
+     *     The value of the optnStrkPricSchdlAmt property.
      */
     public List<CompareUnitPrice4> getOptnStrkPricSchdlAmt() {
         if (optnStrkPricSchdlAmt == null) {
-            optnStrkPricSchdlAmt = new ArrayList<CompareUnitPrice4>();
+            optnStrkPricSchdlAmt = new ArrayList<>();
         }
         return this.optnStrkPricSchdlAmt;
     }

@@ -1,30 +1,29 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for SwitchStatus1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="SwitchStatus1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ACPT"/&gt;
- *     &lt;enumeration value="BTRQ"/&gt;
- *     &lt;enumeration value="BTRS"/&gt;
- *     &lt;enumeration value="COMP"/&gt;
- *     &lt;enumeration value="REDT"/&gt;
- *     &lt;enumeration value="REDE"/&gt;
- *     &lt;enumeration value="REJT"/&gt;
- *     &lt;enumeration value="REQU"/&gt;
- *     &lt;enumeration value="TMTN"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="SwitchStatus1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ACPT"/>
+ *     <enumeration value="BTRQ"/>
+ *     <enumeration value="BTRS"/>
+ *     <enumeration value="COMP"/>
+ *     <enumeration value="REDT"/>
+ *     <enumeration value="REDE"/>
+ *     <enumeration value="REJT"/>
+ *     <enumeration value="REQU"/>
+ *     <enumeration value="TMTN"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "SwitchStatus1Code")

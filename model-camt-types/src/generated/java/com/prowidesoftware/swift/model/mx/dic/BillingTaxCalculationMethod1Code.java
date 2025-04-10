@@ -1,27 +1,26 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for BillingTaxCalculationMethod1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="BillingTaxCalculationMethod1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="NTAX"/&gt;
- *     &lt;enumeration value="MTDA"/&gt;
- *     &lt;enumeration value="MTDB"/&gt;
- *     &lt;enumeration value="MTDC"/&gt;
- *     &lt;enumeration value="MTDD"/&gt;
- *     &lt;enumeration value="UDFD"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="BillingTaxCalculationMethod1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="NTAX"/>
+ *     <enumeration value="MTDA"/>
+ *     <enumeration value="MTDB"/>
+ *     <enumeration value="MTDC"/>
+ *     <enumeration value="MTDD"/>
+ *     <enumeration value="UDFD"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "BillingTaxCalculationMethod1Code")

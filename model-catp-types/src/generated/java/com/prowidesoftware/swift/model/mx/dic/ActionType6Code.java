@@ -1,33 +1,32 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for ActionType6Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ActionType6Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="DCCQ"/&gt;
- *     &lt;enumeration value="FEES"/&gt;
- *     &lt;enumeration value="HAMT"/&gt;
- *     &lt;enumeration value="LAMT"/&gt;
- *     &lt;enumeration value="BUSY"/&gt;
- *     &lt;enumeration value="CPTR"/&gt;
- *     &lt;enumeration value="DISP"/&gt;
- *     &lt;enumeration value="CPNS"/&gt;
- *     &lt;enumeration value="RQST"/&gt;
- *     &lt;enumeration value="PINL"/&gt;
- *     &lt;enumeration value="PINR"/&gt;
- *     &lt;enumeration value="TRCK"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ActionType6Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="DCCQ"/>
+ *     <enumeration value="FEES"/>
+ *     <enumeration value="HAMT"/>
+ *     <enumeration value="LAMT"/>
+ *     <enumeration value="BUSY"/>
+ *     <enumeration value="CPTR"/>
+ *     <enumeration value="DISP"/>
+ *     <enumeration value="CPNS"/>
+ *     <enumeration value="RQST"/>
+ *     <enumeration value="PINL"/>
+ *     <enumeration value="PINR"/>
+ *     <enumeration value="TRCK"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ActionType6Code")

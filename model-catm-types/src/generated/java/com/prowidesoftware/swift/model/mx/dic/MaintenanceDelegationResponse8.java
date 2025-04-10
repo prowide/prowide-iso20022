@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -40,7 +40,7 @@ public class MaintenanceDelegationResponse8 {
     @XmlElement(name = "TMDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar tmDtTm;
+    protected OffsetDateTime tmDtTm;
     @XmlElement(name = "TMChllngVal", required = true)
     protected byte[] tmChllngVal;
     @XmlElement(name = "DlgtnRspn", required = true)
@@ -104,7 +104,7 @@ public class MaintenanceDelegationResponse8 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getTMDtTm() {
+    public OffsetDateTime getTMDtTm() {
         return tmDtTm;
     }
 
@@ -116,7 +116,7 @@ public class MaintenanceDelegationResponse8 {
      *     {@link String }
      *     
      */
-    public MaintenanceDelegationResponse8 setTMDtTm(XMLGregorianCalendar value) {
+    public MaintenanceDelegationResponse8 setTMDtTm(OffsetDateTime value) {
         this.tmDtTm = value;
         return this;
     }
@@ -150,8 +150,8 @@ public class MaintenanceDelegationResponse8 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dlgtnRspn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the dlgtnRspn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -165,10 +165,12 @@ public class MaintenanceDelegationResponse8 {
      * {@link MaintenanceDelegation17 }
      * 
      * 
+     * @return
+     *     The value of the dlgtnRspn property.
      */
     public List<MaintenanceDelegation17> getDlgtnRspn() {
         if (dlgtnRspn == null) {
-            dlgtnRspn = new ArrayList<MaintenanceDelegation17>();
+            dlgtnRspn = new ArrayList<>();
         }
         return this.dlgtnRspn;
     }

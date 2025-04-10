@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -49,11 +49,11 @@ public class TransparencyDataReport21 {
     @XmlElement(name = "RptgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar rptgDt;
+    protected LocalDate rptgDt;
     @XmlElement(name = "MtrtyDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar mtrtyDt;
+    protected LocalDate mtrtyDt;
     @XmlElement(name = "FinInstrmClssfctn", required = true)
     @XmlSchemaType(name = "string")
     protected NonEquityInstrumentReportingClassification1Code finInstrmClssfctn;
@@ -177,7 +177,7 @@ public class TransparencyDataReport21 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getRptgDt() {
+    public LocalDate getRptgDt() {
         return rptgDt;
     }
 
@@ -189,7 +189,7 @@ public class TransparencyDataReport21 {
      *     {@link String }
      *     
      */
-    public TransparencyDataReport21 setRptgDt(XMLGregorianCalendar value) {
+    public TransparencyDataReport21 setRptgDt(LocalDate value) {
         this.rptgDt = value;
         return this;
     }
@@ -202,7 +202,7 @@ public class TransparencyDataReport21 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getMtrtyDt() {
+    public LocalDate getMtrtyDt() {
         return mtrtyDt;
     }
 
@@ -214,7 +214,7 @@ public class TransparencyDataReport21 {
      *     {@link String }
      *     
      */
-    public TransparencyDataReport21 setMtrtyDt(XMLGregorianCalendar value) {
+    public TransparencyDataReport21 setMtrtyDt(LocalDate value) {
         this.mtrtyDt = value;
         return this;
     }

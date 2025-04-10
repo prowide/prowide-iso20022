@@ -1,17 +1,18 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -41,11 +42,11 @@ public class ReportData5 {
     @XmlElement(name = "ValDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar valDt;
+    protected LocalDate valDt;
     @XmlElement(name = "DtAndTmStmp", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar dtAndTmStmp;
+    protected OffsetDateTime dtAndTmStmp;
     @XmlElement(name = "Tp", required = true)
     @XmlSchemaType(name = "string")
     protected CallIn1Code tp;
@@ -89,7 +90,7 @@ public class ReportData5 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getValDt() {
+    public LocalDate getValDt() {
         return valDt;
     }
 
@@ -101,7 +102,7 @@ public class ReportData5 {
      *     {@link String }
      *     
      */
-    public ReportData5 setValDt(XMLGregorianCalendar value) {
+    public ReportData5 setValDt(LocalDate value) {
         this.valDt = value;
         return this;
     }
@@ -114,7 +115,7 @@ public class ReportData5 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDtAndTmStmp() {
+    public OffsetDateTime getDtAndTmStmp() {
         return dtAndTmStmp;
     }
 
@@ -126,7 +127,7 @@ public class ReportData5 {
      *     {@link String }
      *     
      */
-    public ReportData5 setDtAndTmStmp(XMLGregorianCalendar value) {
+    public ReportData5 setDtAndTmStmp(OffsetDateTime value) {
         this.dtAndTmStmp = value;
         return this;
     }
@@ -162,8 +163,8 @@ public class ReportData5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the payInCallAmt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the payInCallAmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -177,10 +178,12 @@ public class ReportData5 {
      * {@link PayInCallItem }
      * 
      * 
+     * @return
+     *     The value of the payInCallAmt property.
      */
     public List<PayInCallItem> getPayInCallAmt() {
         if (payInCallAmt == null) {
-            payInCallAmt = new ArrayList<PayInCallItem>();
+            payInCallAmt = new ArrayList<>();
         }
         return this.payInCallAmt;
     }

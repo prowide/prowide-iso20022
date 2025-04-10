@@ -3,11 +3,11 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -61,8 +61,8 @@ public class TradeAdditionalQueryCriteria9 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the actnTp property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the actnTp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -76,10 +76,12 @@ public class TradeAdditionalQueryCriteria9 {
      * {@link TransactionOperationType8Code }
      * 
      * 
+     * @return
+     *     The value of the actnTp property.
      */
     public List<TransactionOperationType8Code> getActnTp() {
         if (actnTp == null) {
-            actnTp = new ArrayList<TransactionOperationType8Code>();
+            actnTp = new ArrayList<>();
         }
         return this.actnTp;
     }
@@ -165,8 +167,8 @@ public class TradeAdditionalQueryCriteria9 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the asstClss property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the asstClss property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -180,10 +182,12 @@ public class TradeAdditionalQueryCriteria9 {
      * {@link ProductType4Code }
      * 
      * 
+     * @return
+     *     The value of the asstClss property.
      */
     public List<ProductType4Code> getAsstClss() {
         if (asstClss == null) {
-            asstClss = new ArrayList<ProductType4Code>();
+            asstClss = new ArrayList<>();
         }
         return this.asstClss;
     }
@@ -244,8 +248,8 @@ public class TradeAdditionalQueryCriteria9 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the evtTp property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the evtTp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -259,10 +263,12 @@ public class TradeAdditionalQueryCriteria9 {
      * {@link DerivativeEventType3Code }
      * 
      * 
+     * @return
+     *     The value of the evtTp property.
      */
     public List<DerivativeEventType3Code> getEvtTp() {
         if (evtTp == null) {
-            evtTp = new ArrayList<DerivativeEventType3Code>();
+            evtTp = new ArrayList<>();
         }
         return this.evtTp;
     }

@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -41,11 +41,11 @@ public class PointOfInteractionComponentAssessment1 {
     @XmlElement(name = "DlvryDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar dlvryDt;
+    protected OffsetDateTime dlvryDt;
     @XmlElement(name = "XprtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar xprtnDt;
+    protected OffsetDateTime xprtnDt;
     @XmlElement(name = "Nb", required = true)
     protected String nb;
 
@@ -80,8 +80,8 @@ public class PointOfInteractionComponentAssessment1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the assgnr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the assgnr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -95,10 +95,12 @@ public class PointOfInteractionComponentAssessment1 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the assgnr property.
      */
     public List<String> getAssgnr() {
         if (assgnr == null) {
-            assgnr = new ArrayList<String>();
+            assgnr = new ArrayList<>();
         }
         return this.assgnr;
     }
@@ -111,7 +113,7 @@ public class PointOfInteractionComponentAssessment1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDlvryDt() {
+    public OffsetDateTime getDlvryDt() {
         return dlvryDt;
     }
 
@@ -123,7 +125,7 @@ public class PointOfInteractionComponentAssessment1 {
      *     {@link String }
      *     
      */
-    public PointOfInteractionComponentAssessment1 setDlvryDt(XMLGregorianCalendar value) {
+    public PointOfInteractionComponentAssessment1 setDlvryDt(OffsetDateTime value) {
         this.dlvryDt = value;
         return this;
     }
@@ -136,7 +138,7 @@ public class PointOfInteractionComponentAssessment1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getXprtnDt() {
+    public OffsetDateTime getXprtnDt() {
         return xprtnDt;
     }
 
@@ -148,7 +150,7 @@ public class PointOfInteractionComponentAssessment1 {
      *     {@link String }
      *     
      */
-    public PointOfInteractionComponentAssessment1 setXprtnDt(XMLGregorianCalendar value) {
+    public PointOfInteractionComponentAssessment1 setXprtnDt(OffsetDateTime value) {
         this.xprtnDt = value;
         return this;
     }

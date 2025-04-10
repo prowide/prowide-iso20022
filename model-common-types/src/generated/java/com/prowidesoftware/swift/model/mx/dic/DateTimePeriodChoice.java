@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -32,11 +32,11 @@ public class DateTimePeriodChoice {
     @XmlElement(name = "FrDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar frDtTm;
+    protected OffsetDateTime frDtTm;
     @XmlElement(name = "ToDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar toDtTm;
+    protected OffsetDateTime toDtTm;
     @XmlElement(name = "DtTmRg")
     protected DateTimePeriodDetails dtTmRg;
 
@@ -48,7 +48,7 @@ public class DateTimePeriodChoice {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getFrDtTm() {
+    public OffsetDateTime getFrDtTm() {
         return frDtTm;
     }
 
@@ -60,7 +60,7 @@ public class DateTimePeriodChoice {
      *     {@link String }
      *     
      */
-    public DateTimePeriodChoice setFrDtTm(XMLGregorianCalendar value) {
+    public DateTimePeriodChoice setFrDtTm(OffsetDateTime value) {
         this.frDtTm = value;
         return this;
     }
@@ -73,7 +73,7 @@ public class DateTimePeriodChoice {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getToDtTm() {
+    public OffsetDateTime getToDtTm() {
         return toDtTm;
     }
 
@@ -85,7 +85,7 @@ public class DateTimePeriodChoice {
      *     {@link String }
      *     
      */
-    public DateTimePeriodChoice setToDtTm(XMLGregorianCalendar value) {
+    public DateTimePeriodChoice setToDtTm(OffsetDateTime value) {
         this.toDtTm = value;
         return this;
     }

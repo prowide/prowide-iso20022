@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -38,11 +38,11 @@ public class ClearingPartyAndTime22 {
     @XmlElement(name = "ClrRctDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar clrRctDtTm;
+    protected OffsetDateTime clrRctDtTm;
     @XmlElement(name = "ClrDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar clrDtTm;
+    protected OffsetDateTime clrDtTm;
     @XmlElement(name = "ClrIdr")
     protected UniqueTransactionIdentifier2Choice clrIdr;
     @XmlElement(name = "OrgnlIdr")
@@ -86,7 +86,7 @@ public class ClearingPartyAndTime22 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getClrRctDtTm() {
+    public OffsetDateTime getClrRctDtTm() {
         return clrRctDtTm;
     }
 
@@ -98,7 +98,7 @@ public class ClearingPartyAndTime22 {
      *     {@link String }
      *     
      */
-    public ClearingPartyAndTime22 setClrRctDtTm(XMLGregorianCalendar value) {
+    public ClearingPartyAndTime22 setClrRctDtTm(OffsetDateTime value) {
         this.clrRctDtTm = value;
         return this;
     }
@@ -111,7 +111,7 @@ public class ClearingPartyAndTime22 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getClrDtTm() {
+    public OffsetDateTime getClrDtTm() {
         return clrDtTm;
     }
 
@@ -123,7 +123,7 @@ public class ClearingPartyAndTime22 {
      *     {@link String }
      *     
      */
-    public ClearingPartyAndTime22 setClrDtTm(XMLGregorianCalendar value) {
+    public ClearingPartyAndTime22 setClrDtTm(OffsetDateTime value) {
         this.clrDtTm = value;
         return this;
     }

@@ -1,63 +1,62 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlEnumValue;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for Algorithm29Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="Algorithm29Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ERS2"/&gt;
- *     &lt;enumeration value="ERS1"/&gt;
- *     &lt;enumeration value="RPSS"/&gt;
- *     &lt;enumeration value="ERS3"/&gt;
- *     &lt;enumeration value="ED32"/&gt;
- *     &lt;enumeration value="ED33"/&gt;
- *     &lt;enumeration value="ED35"/&gt;
- *     &lt;enumeration value="ED23"/&gt;
- *     &lt;enumeration value="ED25"/&gt;
- *     &lt;enumeration value="ES22"/&gt;
- *     &lt;enumeration value="ES32"/&gt;
- *     &lt;enumeration value="ES33"/&gt;
- *     &lt;enumeration value="ES35"/&gt;
- *     &lt;enumeration value="ES23"/&gt;
- *     &lt;enumeration value="ES25"/&gt;
- *     &lt;enumeration value="ED22"/&gt;
- *     &lt;enumeration value="EF32"/&gt;
- *     &lt;enumeration value="EF22"/&gt;
- *     &lt;enumeration value="EF33"/&gt;
- *     &lt;enumeration value="EF35"/&gt;
- *     &lt;enumeration value="EF23"/&gt;
- *     &lt;enumeration value="EO33"/&gt;
- *     &lt;enumeration value="EF25"/&gt;
- *     &lt;enumeration value="EO32"/&gt;
- *     &lt;enumeration value="EO22"/&gt;
- *     &lt;enumeration value="EO35"/&gt;
- *     &lt;enumeration value="EO23"/&gt;
- *     &lt;enumeration value="EO25"/&gt;
- *     &lt;enumeration value="DD22"/&gt;
- *     &lt;enumeration value="DD32"/&gt;
- *     &lt;enumeration value="DD33"/&gt;
- *     &lt;enumeration value="DD35"/&gt;
- *     &lt;enumeration value="DD23"/&gt;
- *     &lt;enumeration value="DD25"/&gt;
- *     &lt;enumeration value="SM22"/&gt;
- *     &lt;enumeration value="SM33"/&gt;
- *     &lt;enumeration value="SM32"/&gt;
- *     &lt;enumeration value="SM35"/&gt;
- *     &lt;enumeration value="SM23"/&gt;
- *     &lt;enumeration value="SM25"/&gt;
- *     &lt;enumeration value="S2S3"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="Algorithm29Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ERS2"/>
+ *     <enumeration value="ERS1"/>
+ *     <enumeration value="RPSS"/>
+ *     <enumeration value="ERS3"/>
+ *     <enumeration value="ED32"/>
+ *     <enumeration value="ED33"/>
+ *     <enumeration value="ED35"/>
+ *     <enumeration value="ED23"/>
+ *     <enumeration value="ED25"/>
+ *     <enumeration value="ES22"/>
+ *     <enumeration value="ES32"/>
+ *     <enumeration value="ES33"/>
+ *     <enumeration value="ES35"/>
+ *     <enumeration value="ES23"/>
+ *     <enumeration value="ES25"/>
+ *     <enumeration value="ED22"/>
+ *     <enumeration value="EF32"/>
+ *     <enumeration value="EF22"/>
+ *     <enumeration value="EF33"/>
+ *     <enumeration value="EF35"/>
+ *     <enumeration value="EF23"/>
+ *     <enumeration value="EO33"/>
+ *     <enumeration value="EF25"/>
+ *     <enumeration value="EO32"/>
+ *     <enumeration value="EO22"/>
+ *     <enumeration value="EO35"/>
+ *     <enumeration value="EO23"/>
+ *     <enumeration value="EO25"/>
+ *     <enumeration value="DD22"/>
+ *     <enumeration value="DD32"/>
+ *     <enumeration value="DD33"/>
+ *     <enumeration value="DD35"/>
+ *     <enumeration value="DD23"/>
+ *     <enumeration value="DD25"/>
+ *     <enumeration value="SM22"/>
+ *     <enumeration value="SM33"/>
+ *     <enumeration value="SM32"/>
+ *     <enumeration value="SM35"/>
+ *     <enumeration value="SM23"/>
+ *     <enumeration value="SM25"/>
+ *     <enumeration value="S2S3"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "Algorithm29Code")

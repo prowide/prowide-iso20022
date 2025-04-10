@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -48,7 +48,7 @@ public class BillingStatement4 {
     @XmlElement(name = "CreDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar creDtTm;
+    protected OffsetDateTime creDtTm;
     @XmlElement(name = "Sts", required = true)
     @XmlSchemaType(name = "string")
     protected BillingStatementStatus1Code sts;
@@ -129,7 +129,7 @@ public class BillingStatement4 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getCreDtTm() {
+    public OffsetDateTime getCreDtTm() {
         return creDtTm;
     }
 
@@ -141,7 +141,7 @@ public class BillingStatement4 {
      *     {@link String }
      *     
      */
-    public BillingStatement4 setCreDtTm(XMLGregorianCalendar value) {
+    public BillingStatement4 setCreDtTm(OffsetDateTime value) {
         this.creDtTm = value;
         return this;
     }
@@ -202,8 +202,8 @@ public class BillingStatement4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rateData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rateData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -217,10 +217,12 @@ public class BillingStatement4 {
      * {@link BillingRate1 }
      * 
      * 
+     * @return
+     *     The value of the rateData property.
      */
     public List<BillingRate1> getRateData() {
         if (rateData == null) {
-            rateData = new ArrayList<BillingRate1>();
+            rateData = new ArrayList<>();
         }
         return this.rateData;
     }
@@ -231,8 +233,8 @@ public class BillingStatement4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ccyXchg property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ccyXchg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -246,10 +248,12 @@ public class BillingStatement4 {
      * {@link CurrencyExchange6 }
      * 
      * 
+     * @return
+     *     The value of the ccyXchg property.
      */
     public List<CurrencyExchange6> getCcyXchg() {
         if (ccyXchg == null) {
-            ccyXchg = new ArrayList<CurrencyExchange6>();
+            ccyXchg = new ArrayList<>();
         }
         return this.ccyXchg;
     }
@@ -260,8 +264,8 @@ public class BillingStatement4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the bal property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the bal property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -275,10 +279,12 @@ public class BillingStatement4 {
      * {@link BillingBalance1 }
      * 
      * 
+     * @return
+     *     The value of the bal property.
      */
     public List<BillingBalance1> getBal() {
         if (bal == null) {
-            bal = new ArrayList<BillingBalance1>();
+            bal = new ArrayList<>();
         }
         return this.bal;
     }
@@ -289,8 +295,8 @@ public class BillingStatement4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the compstn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the compstn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -304,10 +310,12 @@ public class BillingStatement4 {
      * {@link BillingCompensation1 }
      * 
      * 
+     * @return
+     *     The value of the compstn property.
      */
     public List<BillingCompensation1> getCompstn() {
         if (compstn == null) {
-            compstn = new ArrayList<BillingCompensation1>();
+            compstn = new ArrayList<>();
         }
         return this.compstn;
     }
@@ -318,8 +326,8 @@ public class BillingStatement4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the svc property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the svc property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -333,10 +341,12 @@ public class BillingStatement4 {
      * {@link BillingService2 }
      * 
      * 
+     * @return
+     *     The value of the svc property.
      */
     public List<BillingService2> getSvc() {
         if (svc == null) {
-            svc = new ArrayList<BillingService2>();
+            svc = new ArrayList<>();
         }
         return this.svc;
     }
@@ -347,8 +357,8 @@ public class BillingStatement4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the taxRgn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the taxRgn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -362,10 +372,12 @@ public class BillingStatement4 {
      * {@link BillingTaxRegion2 }
      * 
      * 
+     * @return
+     *     The value of the taxRgn property.
      */
     public List<BillingTaxRegion2> getTaxRgn() {
         if (taxRgn == null) {
-            taxRgn = new ArrayList<BillingTaxRegion2>();
+            taxRgn = new ArrayList<>();
         }
         return this.taxRgn;
     }
@@ -376,8 +388,8 @@ public class BillingStatement4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the balAdjstmnt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the balAdjstmnt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -391,10 +403,12 @@ public class BillingStatement4 {
      * {@link BalanceAdjustment1 }
      * 
      * 
+     * @return
+     *     The value of the balAdjstmnt property.
      */
     public List<BalanceAdjustment1> getBalAdjstmnt() {
         if (balAdjstmnt == null) {
-            balAdjstmnt = new ArrayList<BalanceAdjustment1>();
+            balAdjstmnt = new ArrayList<>();
         }
         return this.balAdjstmnt;
     }
@@ -405,8 +419,8 @@ public class BillingStatement4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the svcAdjstmnt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the svcAdjstmnt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -420,10 +434,12 @@ public class BillingStatement4 {
      * {@link BillingServiceAdjustment1 }
      * 
      * 
+     * @return
+     *     The value of the svcAdjstmnt property.
      */
     public List<BillingServiceAdjustment1> getSvcAdjstmnt() {
         if (svcAdjstmnt == null) {
-            svcAdjstmnt = new ArrayList<BillingServiceAdjustment1>();
+            svcAdjstmnt = new ArrayList<>();
         }
         return this.svcAdjstmnt;
     }

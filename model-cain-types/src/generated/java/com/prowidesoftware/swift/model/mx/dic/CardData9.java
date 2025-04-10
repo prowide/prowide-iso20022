@@ -1,14 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.YearMonth;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoYearMonthAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -47,12 +49,14 @@ public class CardData9 {
     protected Boolean prtctdPANInd;
     @XmlElement(name = "CardSeqNb")
     protected String cardSeqNb;
-    @XmlElement(name = "FctvDt")
+    @XmlElement(name = "FctvDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoYearMonthAdapter.class)
     @XmlSchemaType(name = "gYearMonth")
-    protected XMLGregorianCalendar fctvDt;
-    @XmlElement(name = "XpryDt")
+    protected YearMonth fctvDt;
+    @XmlElement(name = "XpryDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoYearMonthAdapter.class)
     @XmlSchemaType(name = "gYearMonth")
-    protected XMLGregorianCalendar xpryDt;
+    protected YearMonth xpryDt;
     @XmlElement(name = "Trck3")
     protected String trck3;
     @XmlElement(name = "PmtAcctRef")
@@ -154,10 +158,10 @@ public class CardData9 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getFctvDt() {
+    public YearMonth getFctvDt() {
         return fctvDt;
     }
 
@@ -166,10 +170,10 @@ public class CardData9 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public CardData9 setFctvDt(XMLGregorianCalendar value) {
+    public CardData9 setFctvDt(YearMonth value) {
         this.fctvDt = value;
         return this;
     }
@@ -179,10 +183,10 @@ public class CardData9 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getXpryDt() {
+    public YearMonth getXpryDt() {
         return xpryDt;
     }
 
@@ -191,10 +195,10 @@ public class CardData9 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public CardData9 setXpryDt(XMLGregorianCalendar value) {
+    public CardData9 setXpryDt(YearMonth value) {
         this.xpryDt = value;
         return this;
     }
@@ -430,8 +434,8 @@ public class CardData9 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlCardData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlCardData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -445,10 +449,12 @@ public class CardData9 {
      * {@link AdditionalData1 }
      * 
      * 
+     * @return
+     *     The value of the addtlCardData property.
      */
     public List<AdditionalData1> getAddtlCardData() {
         if (addtlCardData == null) {
-            addtlCardData = new ArrayList<AdditionalData1>();
+            addtlCardData = new ArrayList<>();
         }
         return this.addtlCardData;
     }

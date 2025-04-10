@@ -1,26 +1,25 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for LoyaltyHandling1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="LoyaltyHandling1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ALLO"/&gt;
- *     &lt;enumeration value="DENY"/&gt;
- *     &lt;enumeration value="PRCS"/&gt;
- *     &lt;enumeration value="PROP"/&gt;
- *     &lt;enumeration value="REQU"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="LoyaltyHandling1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ALLO"/>
+ *     <enumeration value="DENY"/>
+ *     <enumeration value="PRCS"/>
+ *     <enumeration value="PROP"/>
+ *     <enumeration value="REQU"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "LoyaltyHandling1Code")

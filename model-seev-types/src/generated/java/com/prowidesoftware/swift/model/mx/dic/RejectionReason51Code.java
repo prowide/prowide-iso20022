@@ -1,33 +1,32 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for RejectionReason51Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="RejectionReason51Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ADEA"/&gt;
- *     &lt;enumeration value="DQUA"/&gt;
- *     &lt;enumeration value="DCAN"/&gt;
- *     &lt;enumeration value="DPRG"/&gt;
- *     &lt;enumeration value="DSEC"/&gt;
- *     &lt;enumeration value="EVNM"/&gt;
- *     &lt;enumeration value="INIR"/&gt;
- *     &lt;enumeration value="LATE"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="RBIS"/&gt;
- *     &lt;enumeration value="SAFE"/&gt;
- *     &lt;enumeration value="ULNK"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="RejectionReason51Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ADEA"/>
+ *     <enumeration value="DQUA"/>
+ *     <enumeration value="DCAN"/>
+ *     <enumeration value="DPRG"/>
+ *     <enumeration value="DSEC"/>
+ *     <enumeration value="EVNM"/>
+ *     <enumeration value="INIR"/>
+ *     <enumeration value="LATE"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="RBIS"/>
+ *     <enumeration value="SAFE"/>
+ *     <enumeration value="ULNK"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "RejectionReason51Code")

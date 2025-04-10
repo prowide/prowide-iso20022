@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,7 +33,7 @@ public class RecordTechnicalData1 {
     @XmlElement(name = "RctDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar rctDtTm;
+    protected OffsetDateTime rctDtTm;
     @XmlElement(name = "XchgRsn", required = true)
     @XmlSchemaType(name = "string")
     protected List<AuthorityExchangeReason1Code> xchgRsn;
@@ -46,7 +46,7 @@ public class RecordTechnicalData1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getRctDtTm() {
+    public OffsetDateTime getRctDtTm() {
         return rctDtTm;
     }
 
@@ -58,7 +58,7 @@ public class RecordTechnicalData1 {
      *     {@link String }
      *     
      */
-    public RecordTechnicalData1 setRctDtTm(XMLGregorianCalendar value) {
+    public RecordTechnicalData1 setRctDtTm(OffsetDateTime value) {
         this.rctDtTm = value;
         return this;
     }
@@ -69,8 +69,8 @@ public class RecordTechnicalData1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the xchgRsn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the xchgRsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -84,10 +84,12 @@ public class RecordTechnicalData1 {
      * {@link AuthorityExchangeReason1Code }
      * 
      * 
+     * @return
+     *     The value of the xchgRsn property.
      */
     public List<AuthorityExchangeReason1Code> getXchgRsn() {
         if (xchgRsn == null) {
-            xchgRsn = new ArrayList<AuthorityExchangeReason1Code>();
+            xchgRsn = new ArrayList<>();
         }
         return this.xchgRsn;
     }
