@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxSemt01400103
 
     @XmlElement(name = "IntraPosMvmntStsAdvc", required = true)
     protected IntraPositionMovementStatusAdviceV03 intraPosMvmntStsAdvc;
-    public static final transient String BUSINESS_PROCESS = "semt";
-    public static final transient int FUNCTIONALITY = 14;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 3;
+    public final static transient String BUSINESS_PROCESS = "semt";
+    public final static transient int FUNCTIONALITY = 14;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 3;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {AcknowledgedAcceptedStatus7Choice.class, AcknowledgementReason3 .class, AcknowledgementReason4Choice.class, AcknowledgementReason5Code.class, CancellationReason12Choice.class, CancellationReason5 .class, CancellationStatus7Choice.class, CancelledStatusReason13Code.class, DateAndDateTimeChoice.class, FailingReason3Code.class, FailingReason4 .class, FailingReason4Choice.class, FailingStatus4Choice.class, FinancialInstrumentQuantity1Choice.class, GenericIdentification19 .class, GenericIdentification20 .class, GenericIdentification37 .class, IdentificationSource3Choice.class, IntraPositionDetails19 .class, IntraPositionMovementStatusAdviceV03 .class, IntraPositionProcessingStatus3Choice.class, MxSemt01400103 .class, NoReasonCode.class, OtherIdentification1 .class, PartyIdentification36Choice.class, PendingReason10Code.class, PendingReason16Choice.class, PendingReason8 .class, PendingStatus12Choice.class, ProprietaryReason1 .class, ProprietaryStatusAndReason1 .class, RejectionAndRepairReason14Choice.class, RejectionOrRepairReason14 .class, RejectionOrRepairStatus15Choice.class, RejectionReason29Code.class, SecuritiesAccount13 .class, SecuritiesBalanceType13Code.class, SecuritiesBalanceType2Choice.class, SecurityIdentification14 .class, SettlementStatus9Choice.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TransactionIdentifications15 .class };
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:semt.014.001.03";
+    public final static transient Class[] _classes = new Class[] {AcknowledgedAcceptedStatus7Choice.class, AcknowledgementReason3 .class, AcknowledgementReason4Choice.class, AcknowledgementReason5Code.class, CancellationReason12Choice.class, CancellationReason5 .class, CancellationStatus7Choice.class, CancelledStatusReason13Code.class, DateAndDateTimeChoice.class, FailingReason3Code.class, FailingReason4 .class, FailingReason4Choice.class, FailingStatus4Choice.class, FinancialInstrumentQuantity1Choice.class, GenericIdentification19 .class, GenericIdentification20 .class, GenericIdentification37 .class, IdentificationSource3Choice.class, IntraPositionDetails19 .class, IntraPositionMovementStatusAdviceV03 .class, IntraPositionProcessingStatus3Choice.class, MxSemt01400103 .class, NoReasonCode.class, OtherIdentification1 .class, PartyIdentification36Choice.class, PendingReason10Code.class, PendingReason16Choice.class, PendingReason8 .class, PendingStatus12Choice.class, ProprietaryReason1 .class, ProprietaryStatusAndReason1 .class, RejectionAndRepairReason14Choice.class, RejectionOrRepairReason14 .class, RejectionOrRepairStatus15Choice.class, RejectionReason29Code.class, SecuritiesAccount13 .class, SecuritiesBalanceType13Code.class, SecuritiesBalanceType2Choice.class, SecurityIdentification14 .class, SettlementStatus9Choice.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TransactionIdentifications15 .class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:semt.014.001.03";
 
     public MxSemt01400103() {
         super();
@@ -86,6 +86,21 @@ public class MxSemt01400103
     public MxSemt01400103 setIntraPosMvmntStsAdvc(IntraPositionMovementStatusAdviceV03 value) {
         this.intraPosMvmntStsAdvc = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxSemt01400103
      * @return
      *     a new instance of MxSemt01400103
      */
-    public static final MxSemt01400103 fromJson(String json) {
+    public final static MxSemt01400103 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSemt01400103 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

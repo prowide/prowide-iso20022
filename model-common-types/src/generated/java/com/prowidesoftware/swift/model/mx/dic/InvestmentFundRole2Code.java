@@ -1,30 +1,31 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlEnumValue;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlEnumValue;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for InvestmentFundRole2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="InvestmentFundRole2Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="FMCO"/>
- *     <enumeration value="REGI"/>
- *     <enumeration value="TRAG"/>
- *     <enumeration value="INTR"/>
- *     <enumeration value="DIST"/>
- *     <enumeration value="CONC"/>
- *     <enumeration value="UCL1"/>
- *     <enumeration value="UCL2"/>
- *     <enumeration value="TRAN"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="InvestmentFundRole2Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="FMCO"/&gt;
+ *     &lt;enumeration value="REGI"/&gt;
+ *     &lt;enumeration value="TRAG"/&gt;
+ *     &lt;enumeration value="INTR"/&gt;
+ *     &lt;enumeration value="DIST"/&gt;
+ *     &lt;enumeration value="CONC"/&gt;
+ *     &lt;enumeration value="UCL1"/&gt;
+ *     &lt;enumeration value="UCL2"/&gt;
+ *     &lt;enumeration value="TRAN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "InvestmentFundRole2Code")

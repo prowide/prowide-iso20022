@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -40,7 +40,7 @@ public class DetailedStatisticsPerCounterparty18 {
     @XmlElement(name = "RefDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate refDt;
+    protected XMLGregorianCalendar refDt;
     @XmlElement(name = "TtlNbOfRpts", required = true)
     protected String ttlNbOfRpts;
     @XmlElement(name = "TtlNbOfRptsAccptd", required = true)
@@ -66,7 +66,7 @@ public class DetailedStatisticsPerCounterparty18 {
      *     {@link String }
      *     
      */
-    public LocalDate getRefDt() {
+    public XMLGregorianCalendar getRefDt() {
         return refDt;
     }
 
@@ -78,7 +78,7 @@ public class DetailedStatisticsPerCounterparty18 {
      *     {@link String }
      *     
      */
-    public DetailedStatisticsPerCounterparty18 setRefDt(LocalDate value) {
+    public DetailedStatisticsPerCounterparty18 setRefDt(XMLGregorianCalendar value) {
         this.refDt = value;
         return this;
     }
@@ -264,8 +264,8 @@ public class DetailedStatisticsPerCounterparty18 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the rjctnSttstcs property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the rjctnSttstcs property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -279,12 +279,10 @@ public class DetailedStatisticsPerCounterparty18 {
      * {@link RejectionStatistics8 }
      * 
      * 
-     * @return
-     *     The value of the rjctnSttstcs property.
      */
     public List<RejectionStatistics8> getRjctnSttstcs() {
         if (rjctnSttstcs == null) {
-            rjctnSttstcs = new ArrayList<>();
+            rjctnSttstcs = new ArrayList<RejectionStatistics8>();
         }
         return this.rjctnSttstcs;
     }

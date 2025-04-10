@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -234,8 +234,8 @@ public class PEPOrISAOrPortfolioTransferInstructionV02 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the othrIndvInvstr property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the othrIndvInvstr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -249,12 +249,10 @@ public class PEPOrISAOrPortfolioTransferInstructionV02 {
      * {@link IndividualPerson8 }
      * 
      * 
-     * @return
-     *     The value of the othrIndvInvstr property.
      */
     public List<IndividualPerson8> getOthrIndvInvstr() {
         if (othrIndvInvstr == null) {
-            othrIndvInvstr = new ArrayList<>();
+            othrIndvInvstr = new ArrayList<IndividualPerson8>();
         }
         return this.othrIndvInvstr;
     }
@@ -315,8 +313,8 @@ public class PEPOrISAOrPortfolioTransferInstructionV02 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the othrCorpInvstr property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the othrCorpInvstr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -330,12 +328,10 @@ public class PEPOrISAOrPortfolioTransferInstructionV02 {
      * {@link Organisation4 }
      * 
      * 
-     * @return
-     *     The value of the othrCorpInvstr property.
      */
     public List<Organisation4> getOthrCorpInvstr() {
         if (othrCorpInvstr == null) {
-            othrCorpInvstr = new ArrayList<>();
+            othrCorpInvstr = new ArrayList<Organisation4>();
         }
         return this.othrCorpInvstr;
     }
@@ -446,8 +442,8 @@ public class PEPOrISAOrPortfolioTransferInstructionV02 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the pdctTrf property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the pdctTrf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -461,12 +457,10 @@ public class PEPOrISAOrPortfolioTransferInstructionV02 {
      * {@link PEPISATransfer3 }
      * 
      * 
-     * @return
-     *     The value of the pdctTrf property.
      */
     public List<PEPISATransfer3> getPdctTrf() {
         if (pdctTrf == null) {
-            pdctTrf = new ArrayList<>();
+            pdctTrf = new ArrayList<PEPISATransfer3>();
         }
         return this.pdctTrf;
     }
@@ -477,8 +471,8 @@ public class PEPOrISAOrPortfolioTransferInstructionV02 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the xtnsn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the xtnsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -492,12 +486,10 @@ public class PEPOrISAOrPortfolioTransferInstructionV02 {
      * {@link Extension1 }
      * 
      * 
-     * @return
-     *     The value of the xtnsn property.
      */
     public List<Extension1> getXtnsn() {
         if (xtnsn == null) {
-            xtnsn = new ArrayList<>();
+            xtnsn = new ArrayList<Extension1>();
         }
         return this.xtnsn;
     }

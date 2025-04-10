@@ -1,27 +1,28 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for CivilStatus1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="CivilStatus1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="DIVO"/>
- *     <enumeration value="LDIV"/>
- *     <enumeration value="MARR"/>
- *     <enumeration value="SEPA"/>
- *     <enumeration value="SING"/>
- *     <enumeration value="UNIO"/>
- *     <enumeration value="WIDO"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="CivilStatus1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="DIVO"/&gt;
+ *     &lt;enumeration value="LDIV"/&gt;
+ *     &lt;enumeration value="MARR"/&gt;
+ *     &lt;enumeration value="SEPA"/&gt;
+ *     &lt;enumeration value="SING"/&gt;
+ *     &lt;enumeration value="UNIO"/&gt;
+ *     &lt;enumeration value="WIDO"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "CivilStatus1Code")

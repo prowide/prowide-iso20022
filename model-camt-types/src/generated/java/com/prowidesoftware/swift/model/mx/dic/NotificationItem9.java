@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -63,7 +63,7 @@ public class NotificationItem9 {
     @XmlElement(name = "XpctdValDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate xpctdValDt;
+    protected XMLGregorianCalendar xpctdValDt;
     @XmlElement(name = "Dbtr")
     protected Party50Choice dbtr;
     @XmlElement(name = "DbtrAgt")
@@ -287,7 +287,7 @@ public class NotificationItem9 {
      *     {@link String }
      *     
      */
-    public LocalDate getXpctdValDt() {
+    public XMLGregorianCalendar getXpctdValDt() {
         return xpctdValDt;
     }
 
@@ -299,7 +299,7 @@ public class NotificationItem9 {
      *     {@link String }
      *     
      */
-    public NotificationItem9 setXpctdValDt(LocalDate value) {
+    public NotificationItem9 setXpctdValDt(XMLGregorianCalendar value) {
         this.xpctdValDt = value;
         return this;
     }
@@ -460,8 +460,8 @@ public class NotificationItem9 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the undrlygAllcn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the undrlygAllcn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -475,12 +475,10 @@ public class NotificationItem9 {
      * {@link TransactionAllocation1 }
      * 
      * 
-     * @return
-     *     The value of the undrlygAllcn property.
      */
     public List<TransactionAllocation1> getUndrlygAllcn() {
         if (undrlygAllcn == null) {
-            undrlygAllcn = new ArrayList<>();
+            undrlygAllcn = new ArrayList<TransactionAllocation1>();
         }
         return this.undrlygAllcn;
     }

@@ -2,18 +2,16 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.time.OffsetDateTime;
-import java.time.YearMonth;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import com.prowidesoftware.swift.model.mx.adapters.IsoYearMonthAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -57,20 +55,20 @@ public class FutureOrOptionDetails3 {
     @XmlElement(name = "LastDlvryDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime lastDlvryDt;
+    protected XMLGregorianCalendar lastDlvryDt;
     @XmlElement(name = "UnitOfMeasr")
     @XmlSchemaType(name = "string")
     protected UnitOfMeasure1Code unitOfMeasr;
     @XmlElement(name = "FutrDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime futrDt;
+    protected XMLGregorianCalendar futrDt;
     @XmlElement(name = "MinSz")
     protected ActiveCurrencyAndAmount minSz;
     @XmlElement(name = "AnncmntDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime anncmntDt;
+    protected XMLGregorianCalendar anncmntDt;
     @XmlElement(name = "Apprnc")
     @XmlSchemaType(name = "string")
     protected Appearance1Code apprnc;
@@ -84,10 +82,9 @@ public class FutureOrOptionDetails3 {
     protected BigDecimal minTradgPricgIncrmt;
     @XmlElement(name = "Purp")
     protected String purp;
-    @XmlElement(name = "CtrctSttlmMnth", type = String.class)
-    @XmlJavaTypeAdapter(IsoYearMonthAdapter.class)
+    @XmlElement(name = "CtrctSttlmMnth")
     @XmlSchemaType(name = "gYearMonth")
-    protected YearMonth ctrctSttlmMnth;
+    protected XMLGregorianCalendar ctrctSttlmMnth;
     @XmlElement(name = "FrstDealgDt")
     protected DateAndDateTime1Choice frstDealgDt;
     @XmlElement(name = "Ratio")
@@ -136,7 +133,7 @@ public class FutureOrOptionDetails3 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getLastDlvryDt() {
+    public XMLGregorianCalendar getLastDlvryDt() {
         return lastDlvryDt;
     }
 
@@ -148,7 +145,7 @@ public class FutureOrOptionDetails3 {
      *     {@link String }
      *     
      */
-    public FutureOrOptionDetails3 setLastDlvryDt(OffsetDateTime value) {
+    public FutureOrOptionDetails3 setLastDlvryDt(XMLGregorianCalendar value) {
         this.lastDlvryDt = value;
         return this;
     }
@@ -186,7 +183,7 @@ public class FutureOrOptionDetails3 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getFutrDt() {
+    public XMLGregorianCalendar getFutrDt() {
         return futrDt;
     }
 
@@ -198,7 +195,7 @@ public class FutureOrOptionDetails3 {
      *     {@link String }
      *     
      */
-    public FutureOrOptionDetails3 setFutrDt(OffsetDateTime value) {
+    public FutureOrOptionDetails3 setFutrDt(XMLGregorianCalendar value) {
         this.futrDt = value;
         return this;
     }
@@ -236,7 +233,7 @@ public class FutureOrOptionDetails3 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getAnncmntDt() {
+    public XMLGregorianCalendar getAnncmntDt() {
         return anncmntDt;
     }
 
@@ -248,7 +245,7 @@ public class FutureOrOptionDetails3 {
      *     {@link String }
      *     
      */
-    public FutureOrOptionDetails3 setAnncmntDt(OffsetDateTime value) {
+    public FutureOrOptionDetails3 setAnncmntDt(XMLGregorianCalendar value) {
         this.anncmntDt = value;
         return this;
     }
@@ -408,10 +405,10 @@ public class FutureOrOptionDetails3 {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public YearMonth getCtrctSttlmMnth() {
+    public XMLGregorianCalendar getCtrctSttlmMnth() {
         return ctrctSttlmMnth;
     }
 
@@ -420,10 +417,10 @@ public class FutureOrOptionDetails3 {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public FutureOrOptionDetails3 setCtrctSttlmMnth(YearMonth value) {
+    public FutureOrOptionDetails3 setCtrctSttlmMnth(XMLGregorianCalendar value) {
         this.ctrctSttlmMnth = value;
         return this;
     }
@@ -459,8 +456,8 @@ public class FutureOrOptionDetails3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the ratio property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the ratio property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -474,12 +471,10 @@ public class FutureOrOptionDetails3 {
      * {@link UnderlyingRatio2 }
      * 
      * 
-     * @return
-     *     The value of the ratio property.
      */
     public List<UnderlyingRatio2> getRatio() {
         if (ratio == null) {
-            ratio = new ArrayList<>();
+            ratio = new ArrayList<UnderlyingRatio2>();
         }
         return this.ratio;
     }
@@ -490,8 +485,8 @@ public class FutureOrOptionDetails3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the ratg property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the ratg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -505,12 +500,10 @@ public class FutureOrOptionDetails3 {
      * {@link Rating1 }
      * 
      * 
-     * @return
-     *     The value of the ratg property.
      */
     public List<Rating1> getRatg() {
         if (ratg == null) {
-            ratg = new ArrayList<>();
+            ratg = new ArrayList<Rating1>();
         }
         return this.ratg;
     }

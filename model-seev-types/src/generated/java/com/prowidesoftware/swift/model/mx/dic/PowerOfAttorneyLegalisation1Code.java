@@ -1,24 +1,25 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for PowerOfAttorneyLegalisation1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="PowerOfAttorneyLegalisation1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="NOTA"/>
- *     <enumeration value="LOCA"/>
- *     <enumeration value="APOS"/>
- *     <enumeration value="COUN"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="PowerOfAttorneyLegalisation1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="NOTA"/&gt;
+ *     &lt;enumeration value="LOCA"/&gt;
+ *     &lt;enumeration value="APOS"/&gt;
+ *     &lt;enumeration value="COUN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "PowerOfAttorneyLegalisation1Code")

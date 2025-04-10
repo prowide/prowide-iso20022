@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -54,7 +54,7 @@ public class AccountNotification18 {
     @XmlElement(name = "XpctdValDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate xpctdValDt;
+    protected XMLGregorianCalendar xpctdValDt;
     @XmlElement(name = "Dbtr")
     protected Party40Choice dbtr;
     @XmlElement(name = "DbtrAgt")
@@ -222,7 +222,7 @@ public class AccountNotification18 {
      *     {@link String }
      *     
      */
-    public LocalDate getXpctdValDt() {
+    public XMLGregorianCalendar getXpctdValDt() {
         return xpctdValDt;
     }
 
@@ -234,7 +234,7 @@ public class AccountNotification18 {
      *     {@link String }
      *     
      */
-    public AccountNotification18 setXpctdValDt(LocalDate value) {
+    public AccountNotification18 setXpctdValDt(XMLGregorianCalendar value) {
         this.xpctdValDt = value;
         return this;
     }
@@ -320,8 +320,8 @@ public class AccountNotification18 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the itm property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the itm property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -335,12 +335,10 @@ public class AccountNotification18 {
      * {@link NotificationItem8 }
      * 
      * 
-     * @return
-     *     The value of the itm property.
      */
     public List<NotificationItem8> getItm() {
         if (itm == null) {
-            itm = new ArrayList<>();
+            itm = new ArrayList<NotificationItem8>();
         }
         return this.itm;
     }

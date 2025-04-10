@@ -1,34 +1,35 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for TaxType13Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="TaxType13Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="COAX"/>
- *     <enumeration value="EUTR"/>
- *     <enumeration value="LOCL"/>
- *     <enumeration value="NATI"/>
- *     <enumeration value="LEVY"/>
- *     <enumeration value="PROV"/>
- *     <enumeration value="STAM"/>
- *     <enumeration value="STAT"/>
- *     <enumeration value="STEX"/>
- *     <enumeration value="CTAX"/>
- *     <enumeration value="TRAX"/>
- *     <enumeration value="TRAN"/>
- *     <enumeration value="VATA"/>
- *     <enumeration value="WITH"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="TaxType13Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="COAX"/&gt;
+ *     &lt;enumeration value="EUTR"/&gt;
+ *     &lt;enumeration value="LOCL"/&gt;
+ *     &lt;enumeration value="NATI"/&gt;
+ *     &lt;enumeration value="LEVY"/&gt;
+ *     &lt;enumeration value="PROV"/&gt;
+ *     &lt;enumeration value="STAM"/&gt;
+ *     &lt;enumeration value="STAT"/&gt;
+ *     &lt;enumeration value="STEX"/&gt;
+ *     &lt;enumeration value="CTAX"/&gt;
+ *     &lt;enumeration value="TRAX"/&gt;
+ *     &lt;enumeration value="TRAN"/&gt;
+ *     &lt;enumeration value="VATA"/&gt;
+ *     &lt;enumeration value="WITH"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "TaxType13Code")

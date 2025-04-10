@@ -15,11 +15,9 @@
  */
 package com.prowidesoftware.swift.model.mx.adapters;
 
-import jakarta.xml.bind.annotation.adapters.XmlAdapter;
-
+import javax.xml.bind.annotation.adapters.XmlAdapter;
 import javax.xml.datatype.DatatypeConfigurationException;
-import java.time.OffsetDateTime;
-
+import javax.xml.datatype.XMLGregorianCalendar;
 
 /**
  * Configured adapter for date time elements.
@@ -31,21 +29,21 @@ import java.time.OffsetDateTime;
  *
  * @since 9.2.6
  */
-public class IsoDateTimeAdapter extends XmlAdapter<String, OffsetDateTime> {
+public class IsoDateTimeAdapter extends XmlAdapter<String, XMLGregorianCalendar> {
 
-    private final XmlAdapter<String, OffsetDateTime> customAdapterImpl;
+    private final XmlAdapter<String, XMLGregorianCalendar> customAdapterImpl;
 
     /**
      * Default constructor for jaxb when non is set via API
      */
-    public IsoDateTimeAdapter() {
-        this.customAdapterImpl = new OffsetDateTimeAdapter();
+    public IsoDateTimeAdapter() throws DatatypeConfigurationException {
+        this.customAdapterImpl = new DefaultXMLGregorianCalendarAdapter();
     }
 
     /**
      * Creates a date time adapter injecting a custom implementation
      */
-    public IsoDateTimeAdapter(XmlAdapter<String, OffsetDateTime> customAdapterImpl) {
+    public IsoDateTimeAdapter(XmlAdapter<String, XMLGregorianCalendar> customAdapterImpl) {
         this.customAdapterImpl = customAdapterImpl;
     }
 
@@ -53,28 +51,22 @@ public class IsoDateTimeAdapter extends XmlAdapter<String, OffsetDateTime> {
      * Invokes the wrapped adapter implementation of the unmarshal method.
      *
      * @param value the XML date time value to convert
-     * @return created OffsetDateTime object or null if it cannot be parsed
+     * @return created calendar object or null if cannot be parsed
      */
     @Override
-    public OffsetDateTime unmarshal(String value) throws Exception {
+    public XMLGregorianCalendar unmarshal(String value) throws Exception {
         return this.customAdapterImpl.unmarshal(value);
     }
 
     /**
      * Invokes the wrapped adapter implementation of the marshal method.
      *
-     * @param offsetDateTime the model OffsetDateTime to marshal
+     * @param cal the model calendar to marshal
      * @return formatted content for the XML
      */
     @Override
-    public String marshal(OffsetDateTime offsetDateTime) throws Exception {
-        return this.customAdapterImpl.marshal(offsetDateTime);
+    public String marshal(XMLGregorianCalendar cal) throws Exception {
+        return this.customAdapterImpl.marshal(cal);
     }
 
-    @Override
-    public String toString() {
-        return "IsoDateTimeAdapter{" +
-                "customAdapterImpl=" + customAdapterImpl +
-                '}';
-    }
 }

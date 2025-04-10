@@ -1,26 +1,27 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for MeetingTypeClassification1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="MeetingTypeClassification1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="AMET"/>
- *     <enumeration value="OMET"/>
- *     <enumeration value="CLAS"/>
- *     <enumeration value="ISSU"/>
- *     <enumeration value="VRHI"/>
- *     <enumeration value="CORT"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="MeetingTypeClassification1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="AMET"/&gt;
+ *     &lt;enumeration value="OMET"/&gt;
+ *     &lt;enumeration value="CLAS"/&gt;
+ *     &lt;enumeration value="ISSU"/&gt;
+ *     &lt;enumeration value="VRHI"/&gt;
+ *     &lt;enumeration value="CORT"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "MeetingTypeClassification1Code")

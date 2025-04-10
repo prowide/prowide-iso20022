@@ -1,36 +1,37 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for RejectionReason79Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="RejectionReason79Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="ADEA"/>
- *     <enumeration value="INIR"/>
- *     <enumeration value="ULNK"/>
- *     <enumeration value="LATE"/>
- *     <enumeration value="OTHR"/>
- *     <enumeration value="DCAN"/>
- *     <enumeration value="DPRG"/>
- *     <enumeration value="REJA"/>
- *     <enumeration value="CTCT"/>
- *     <enumeration value="DSEC"/>
- *     <enumeration value="DQUA"/>
- *     <enumeration value="PROT"/>
- *     <enumeration value="SAFE"/>
- *     <enumeration value="PROI"/>
- *     <enumeration value="TRTI"/>
- *     <enumeration value="DUPL"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="RejectionReason79Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ADEA"/&gt;
+ *     &lt;enumeration value="INIR"/&gt;
+ *     &lt;enumeration value="ULNK"/&gt;
+ *     &lt;enumeration value="LATE"/&gt;
+ *     &lt;enumeration value="OTHR"/&gt;
+ *     &lt;enumeration value="DCAN"/&gt;
+ *     &lt;enumeration value="DPRG"/&gt;
+ *     &lt;enumeration value="REJA"/&gt;
+ *     &lt;enumeration value="CTCT"/&gt;
+ *     &lt;enumeration value="DSEC"/&gt;
+ *     &lt;enumeration value="DQUA"/&gt;
+ *     &lt;enumeration value="PROT"/&gt;
+ *     &lt;enumeration value="SAFE"/&gt;
+ *     &lt;enumeration value="PROI"/&gt;
+ *     &lt;enumeration value="TRTI"/&gt;
+ *     &lt;enumeration value="DUPL"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "RejectionReason79Code")

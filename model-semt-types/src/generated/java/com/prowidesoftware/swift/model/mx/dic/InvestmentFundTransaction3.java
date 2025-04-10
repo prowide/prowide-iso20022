@@ -1,16 +1,15 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
-import java.time.OffsetDateTime;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -79,7 +78,7 @@ public class InvestmentFundTransaction3 {
     @XmlElement(name = "OrdrDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime ordrDtTm;
+    protected XMLGregorianCalendar ordrDtTm;
     @XmlElement(name = "SttldTxInd")
     protected boolean sttldTxInd;
     @XmlElement(name = "RegdTxInd")
@@ -97,7 +96,7 @@ public class InvestmentFundTransaction3 {
     @XmlElement(name = "SttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate sttlmDt;
+    protected XMLGregorianCalendar sttlmDt;
     @XmlElement(name = "TradDtTm", required = true)
     protected DateAndDateTimeChoice tradDtTm;
     @XmlElement(name = "CumDvddInd")
@@ -390,7 +389,7 @@ public class InvestmentFundTransaction3 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getOrdrDtTm() {
+    public XMLGregorianCalendar getOrdrDtTm() {
         return ordrDtTm;
     }
 
@@ -402,7 +401,7 @@ public class InvestmentFundTransaction3 {
      *     {@link String }
      *     
      */
-    public InvestmentFundTransaction3 setOrdrDtTm(OffsetDateTime value) {
+    public InvestmentFundTransaction3 setOrdrDtTm(XMLGregorianCalendar value) {
         this.ordrDtTm = value;
         return this;
     }
@@ -549,7 +548,7 @@ public class InvestmentFundTransaction3 {
      *     {@link String }
      *     
      */
-    public LocalDate getSttlmDt() {
+    public XMLGregorianCalendar getSttlmDt() {
         return sttlmDt;
     }
 
@@ -561,7 +560,7 @@ public class InvestmentFundTransaction3 {
      *     {@link String }
      *     
      */
-    public InvestmentFundTransaction3 setSttlmDt(LocalDate value) {
+    public InvestmentFundTransaction3 setSttlmDt(XMLGregorianCalendar value) {
         this.sttlmDt = value;
         return this;
     }

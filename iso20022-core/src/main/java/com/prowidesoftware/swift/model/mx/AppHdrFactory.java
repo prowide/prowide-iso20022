@@ -18,8 +18,6 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.ProwideException;
 import com.prowidesoftware.swift.model.MxId;
 import com.prowidesoftware.swift.model.mx.dic.*;
-import java.time.OffsetDateTime;
-import java.time.ZoneOffset;
 
 /**
  * Factory methods to create different variant of application headers.
@@ -66,7 +64,7 @@ public class AppHdrFactory {
             h.setMsgDefIdr(id.id());
         }
 
-        h.setCreDt(OffsetDateTime.now(ZoneOffset.UTC));
+        h.setCreDt(XMLGregorianCalendarUtils.now());
 
         return h;
     }
@@ -112,7 +110,7 @@ public class AppHdrFactory {
             }
         }
 
-        h.setCreDt(OffsetDateTime.now());
+        h.setCreDt(XMLGregorianCalendarUtils.now());
 
         return h;
     }
@@ -159,7 +157,7 @@ public class AppHdrFactory {
             }
         }
 
-        h.setCreDt(OffsetDateTime.now());
+        h.setCreDt(XMLGregorianCalendarUtils.now());
 
         return h;
     }
@@ -175,7 +173,7 @@ public class AppHdrFactory {
      * @param reference optional reference for the BizMsgIdr (business message identifier) or null to leave not set
      * @param id        optional MX identification for the MsgDefIdr (message definition identifier) element or null to leave not set
      * @return new header initialized from parameters.
-     * @since 10.2.2
+     * @since 9.5.3
      */
     public static BusinessAppHdrV04 createBusinessAppHdrV04(
             final String sender, final String receiver, final String reference, final MxId id) {
@@ -206,7 +204,7 @@ public class AppHdrFactory {
             }
         }
 
-        h.setCreDt(OffsetDateTime.now());
+        h.setCreDt(XMLGregorianCalendarUtils.now());
 
         return h;
     }
@@ -247,7 +245,7 @@ public class AppHdrFactory {
             h.setMsgName(id.id());
         }
 
-        h.setCrDate(OffsetDateTime.now());
+        h.setCrDate(XMLGregorianCalendarUtils.now());
 
         return h;
     }

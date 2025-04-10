@@ -1,26 +1,27 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for PartyType9Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="PartyType9Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="ACQR"/>
- *     <enumeration value="ACQP"/>
- *     <enumeration value="CISS"/>
- *     <enumeration value="CISP"/>
- *     <enumeration value="CSCH"/>
- *     <enumeration value="SCHP"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="PartyType9Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ACQR"/&gt;
+ *     &lt;enumeration value="ACQP"/&gt;
+ *     &lt;enumeration value="CISS"/&gt;
+ *     &lt;enumeration value="CISP"/&gt;
+ *     &lt;enumeration value="CSCH"/&gt;
+ *     &lt;enumeration value="SCHP"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "PartyType9Code")

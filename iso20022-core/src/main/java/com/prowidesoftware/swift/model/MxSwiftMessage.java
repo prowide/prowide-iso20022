@@ -18,12 +18,12 @@ package com.prowidesoftware.swift.model;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.prowidesoftware.swift.model.mx.*;
-import jakarta.persistence.*;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Objects;
 import java.util.Optional;
+import javax.persistence.*;
 import org.apache.commons.lang3.StringUtils;
 
 /**

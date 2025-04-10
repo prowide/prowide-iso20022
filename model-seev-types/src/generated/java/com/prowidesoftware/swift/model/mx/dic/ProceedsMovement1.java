@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -40,8 +40,8 @@ public class ProceedsMovement1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the cshPrcdsMvmntDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the cshPrcdsMvmntDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -55,12 +55,10 @@ public class ProceedsMovement1 {
      * {@link CashProceeds1 }
      * 
      * 
-     * @return
-     *     The value of the cshPrcdsMvmntDtls property.
      */
     public List<CashProceeds1> getCshPrcdsMvmntDtls() {
         if (cshPrcdsMvmntDtls == null) {
-            cshPrcdsMvmntDtls = new ArrayList<>();
+            cshPrcdsMvmntDtls = new ArrayList<CashProceeds1>();
         }
         return this.cshPrcdsMvmntDtls;
     }
@@ -71,8 +69,8 @@ public class ProceedsMovement1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the sctiesPrcdsMvmntDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the sctiesPrcdsMvmntDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -86,12 +84,10 @@ public class ProceedsMovement1 {
      * {@link SecuritiesProceeds1 }
      * 
      * 
-     * @return
-     *     The value of the sctiesPrcdsMvmntDtls property.
      */
     public List<SecuritiesProceeds1> getSctiesPrcdsMvmntDtls() {
         if (sctiesPrcdsMvmntDtls == null) {
-            sctiesPrcdsMvmntDtls = new ArrayList<>();
+            sctiesPrcdsMvmntDtls = new ArrayList<SecuritiesProceeds1>();
         }
         return this.sctiesPrcdsMvmntDtls;
     }

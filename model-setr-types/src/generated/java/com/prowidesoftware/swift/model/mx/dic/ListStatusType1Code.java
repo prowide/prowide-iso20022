@@ -1,26 +1,27 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for ListStatusType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="ListStatusType1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="ACKN"/>
- *     <enumeration value="RESP"/>
- *     <enumeration value="ADON"/>
- *     <enumeration value="ALER"/>
- *     <enumeration value="EXST"/>
- *     <enumeration value="TIME"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="ListStatusType1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ACKN"/&gt;
+ *     &lt;enumeration value="RESP"/&gt;
+ *     &lt;enumeration value="ADON"/&gt;
+ *     &lt;enumeration value="ALER"/&gt;
+ *     &lt;enumeration value="EXST"/&gt;
+ *     &lt;enumeration value="TIME"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "ListStatusType1Code")

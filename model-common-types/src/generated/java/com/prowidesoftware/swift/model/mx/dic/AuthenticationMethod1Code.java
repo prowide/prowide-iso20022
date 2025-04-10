@@ -1,31 +1,32 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for AuthenticationMethod1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="AuthenticationMethod1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="UKNW"/>
- *     <enumeration value="BYPS"/>
- *     <enumeration value="NPIN"/>
- *     <enumeration value="FPIN"/>
- *     <enumeration value="CPSG"/>
- *     <enumeration value="PPSG"/>
- *     <enumeration value="MANU"/>
- *     <enumeration value="MERC"/>
- *     <enumeration value="SCRT"/>
- *     <enumeration value="SNCT"/>
- *     <enumeration value="SCNL"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="AuthenticationMethod1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="UKNW"/&gt;
+ *     &lt;enumeration value="BYPS"/&gt;
+ *     &lt;enumeration value="NPIN"/&gt;
+ *     &lt;enumeration value="FPIN"/&gt;
+ *     &lt;enumeration value="CPSG"/&gt;
+ *     &lt;enumeration value="PPSG"/&gt;
+ *     &lt;enumeration value="MANU"/&gt;
+ *     &lt;enumeration value="MERC"/&gt;
+ *     &lt;enumeration value="SCRT"/&gt;
+ *     &lt;enumeration value="SNCT"/&gt;
+ *     &lt;enumeration value="SCNL"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "AuthenticationMethod1Code")

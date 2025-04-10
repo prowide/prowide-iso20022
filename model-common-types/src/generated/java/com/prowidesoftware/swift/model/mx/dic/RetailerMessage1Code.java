@@ -1,37 +1,38 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for RetailerMessage1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="RetailerMessage1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="SSAB"/>
- *     <enumeration value="SAAQ"/>
- *     <enumeration value="SAAP"/>
- *     <enumeration value="SDDR"/>
- *     <enumeration value="SDDP"/>
- *     <enumeration value="SSEN"/>
- *     <enumeration value="SSMQ"/>
- *     <enumeration value="SSMR"/>
- *     <enumeration value="SSRJ"/>
- *     <enumeration value="SARQ"/>
- *     <enumeration value="SARP"/>
- *     <enumeration value="SFRP"/>
- *     <enumeration value="SFRQ"/>
- *     <enumeration value="SFSQ"/>
- *     <enumeration value="SFSP"/>
- *     <enumeration value="SASQ"/>
- *     <enumeration value="SASP"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="RetailerMessage1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="SSAB"/&gt;
+ *     &lt;enumeration value="SAAQ"/&gt;
+ *     &lt;enumeration value="SAAP"/&gt;
+ *     &lt;enumeration value="SDDR"/&gt;
+ *     &lt;enumeration value="SDDP"/&gt;
+ *     &lt;enumeration value="SSEN"/&gt;
+ *     &lt;enumeration value="SSMQ"/&gt;
+ *     &lt;enumeration value="SSMR"/&gt;
+ *     &lt;enumeration value="SSRJ"/&gt;
+ *     &lt;enumeration value="SARQ"/&gt;
+ *     &lt;enumeration value="SARP"/&gt;
+ *     &lt;enumeration value="SFRP"/&gt;
+ *     &lt;enumeration value="SFRQ"/&gt;
+ *     &lt;enumeration value="SFSQ"/&gt;
+ *     &lt;enumeration value="SFSP"/&gt;
+ *     &lt;enumeration value="SASQ"/&gt;
+ *     &lt;enumeration value="SASP"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "RetailerMessage1Code")

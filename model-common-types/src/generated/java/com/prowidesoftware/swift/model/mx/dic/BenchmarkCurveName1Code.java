@@ -1,28 +1,29 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for BenchmarkCurveName1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="BenchmarkCurveName1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="MAAA"/>
- *     <enumeration value="FUSW"/>
- *     <enumeration value="LIBI"/>
- *     <enumeration value="LIBO"/>
- *     <enumeration value="SWAP"/>
- *     <enumeration value="TREA"/>
- *     <enumeration value="EURI"/>
- *     <enumeration value="PFAN"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="BenchmarkCurveName1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="MAAA"/&gt;
+ *     &lt;enumeration value="FUSW"/&gt;
+ *     &lt;enumeration value="LIBI"/&gt;
+ *     &lt;enumeration value="LIBO"/&gt;
+ *     &lt;enumeration value="SWAP"/&gt;
+ *     &lt;enumeration value="TREA"/&gt;
+ *     &lt;enumeration value="EURI"/&gt;
+ *     &lt;enumeration value="PFAN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "BenchmarkCurveName1Code")

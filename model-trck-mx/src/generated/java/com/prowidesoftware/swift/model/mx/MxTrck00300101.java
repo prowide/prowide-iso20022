@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxTrck00300101
 
     @XmlElement(name = "TrckrAlrtNtfctn", required = true)
     protected TrackerAlertNotificationV01 trckrAlrtNtfctn;
-    public static final transient String BUSINESS_PROCESS = "trck";
-    public static final transient int FUNCTIONALITY = 3;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 1;
+    public final static transient String BUSINESS_PROCESS = "trck";
+    public final static transient int FUNCTIONALITY = 3;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {MxTrck00300101 .class, OrganisationIdentification33 .class, OriginalBusinessInstruction2 .class, OriginalBusinessInstruction3 .class, PaymentIdentification11 .class, TrackerAlertNotificationStatus2 .class, TrackerAlertNotificationV01 .class, TrackerAlertStatus1 .class, TrackerAlertStatus1Code.class, TrackerAlertStatusReason1 .class, TrackerHeader4 .class, TrackerParty1 .class, TrackerPartyIdentification1 .class, TrackerPaymentTransaction4 .class, TrackerStatusAndTransaction4 .class, TransactionServiceLevel1 .class };
-    public static final transient String NAMESPACE = "urn:swift:xsd:trck.003.001.01";
+    public final static transient Class[] _classes = new Class[] {MxTrck00300101 .class, OrganisationIdentification33 .class, OriginalBusinessInstruction2 .class, OriginalBusinessInstruction3 .class, PaymentIdentification11 .class, TrackerAlertNotificationStatus2 .class, TrackerAlertNotificationV01 .class, TrackerAlertStatus1 .class, TrackerAlertStatus1Code.class, TrackerAlertStatusReason1 .class, TrackerHeader4 .class, TrackerParty1 .class, TrackerPartyIdentification1 .class, TrackerPaymentTransaction4 .class, TrackerStatusAndTransaction4 .class, TransactionServiceLevel1 .class };
+    public final static transient String NAMESPACE = "urn:swift:xsd:trck.003.001.01";
 
     public MxTrck00300101() {
         super();
@@ -86,6 +86,21 @@ public class MxTrck00300101
     public MxTrck00300101 setTrckrAlrtNtfctn(TrackerAlertNotificationV01 value) {
         this.trckrAlrtNtfctn = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxTrck00300101
      * @return
      *     a new instance of MxTrck00300101
      */
-    public static final MxTrck00300101 fromJson(String json) {
+    public final static MxTrck00300101 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxTrck00300101 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

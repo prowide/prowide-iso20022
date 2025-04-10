@@ -1,81 +1,82 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for RejectionReason28Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="RejectionReason28Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="ASTM"/>
- *     <enumeration value="BUSE"/>
- *     <enumeration value="CADE"/>
- *     <enumeration value="COMC"/>
- *     <enumeration value="DDAT"/>
- *     <enumeration value="DDEA"/>
- *     <enumeration value="DEPT"/>
- *     <enumeration value="DMON"/>
- *     <enumeration value="DQUA"/>
- *     <enumeration value="DSEC"/>
- *     <enumeration value="DTRD"/>
- *     <enumeration value="FEEE"/>
- *     <enumeration value="FORF"/>
- *     <enumeration value="ICAG"/>
- *     <enumeration value="ICUS"/>
- *     <enumeration value="IEXE"/>
- *     <enumeration value="IIND"/>
- *     <enumeration value="INNA"/>
- *     <enumeration value="NARR"/>
- *     <enumeration value="NCRR"/>
- *     <enumeration value="ODNP"/>
- *     <enumeration value="PLCE"/>
- *     <enumeration value="QUNP"/>
- *     <enumeration value="REFE"/>
- *     <enumeration value="CTRA"/>
- *     <enumeration value="REPO"/>
- *     <enumeration value="REPP"/>
- *     <enumeration value="RERT"/>
- *     <enumeration value="RSPR"/>
- *     <enumeration value="SAFE"/>
- *     <enumeration value="SETR"/>
- *     <enumeration value="SETS"/>
- *     <enumeration value="TERM"/>
- *     <enumeration value="TNAR"/>
- *     <enumeration value="TNIU"/>
- *     <enumeration value="TQHI"/>
- *     <enumeration value="TQNP"/>
- *     <enumeration value="TXST"/>
- *     <enumeration value="ULNK"/>
- *     <enumeration value="VASU"/>
- *     <enumeration value="INIR"/>
- *     <enumeration value="OPNM"/>
- *     <enumeration value="OPTY"/>
- *     <enumeration value="UKWN"/>
- *     <enumeration value="EXLI"/>
- *     <enumeration value="INPR"/>
- *     <enumeration value="PRIC"/>
- *     <enumeration value="EQTY"/>
- *     <enumeration value="SIDE"/>
- *     <enumeration value="CADI"/>
- *     <enumeration value="CPTY"/>
- *     <enumeration value="DISC"/>
- *     <enumeration value="DISE"/>
- *     <enumeration value="RESU"/>
- *     <enumeration value="XRAT"/>
- *     <enumeration value="ACRU"/>
- *     <enumeration value="GAMN"/>
- *     <enumeration value="DFLT"/>
- *     <enumeration value="FAIL"/>
- *     <enumeration value="INDT"/>
- *     <enumeration value="OTHR"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="RejectionReason28Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ASTM"/&gt;
+ *     &lt;enumeration value="BUSE"/&gt;
+ *     &lt;enumeration value="CADE"/&gt;
+ *     &lt;enumeration value="COMC"/&gt;
+ *     &lt;enumeration value="DDAT"/&gt;
+ *     &lt;enumeration value="DDEA"/&gt;
+ *     &lt;enumeration value="DEPT"/&gt;
+ *     &lt;enumeration value="DMON"/&gt;
+ *     &lt;enumeration value="DQUA"/&gt;
+ *     &lt;enumeration value="DSEC"/&gt;
+ *     &lt;enumeration value="DTRD"/&gt;
+ *     &lt;enumeration value="FEEE"/&gt;
+ *     &lt;enumeration value="FORF"/&gt;
+ *     &lt;enumeration value="ICAG"/&gt;
+ *     &lt;enumeration value="ICUS"/&gt;
+ *     &lt;enumeration value="IEXE"/&gt;
+ *     &lt;enumeration value="IIND"/&gt;
+ *     &lt;enumeration value="INNA"/&gt;
+ *     &lt;enumeration value="NARR"/&gt;
+ *     &lt;enumeration value="NCRR"/&gt;
+ *     &lt;enumeration value="ODNP"/&gt;
+ *     &lt;enumeration value="PLCE"/&gt;
+ *     &lt;enumeration value="QUNP"/&gt;
+ *     &lt;enumeration value="REFE"/&gt;
+ *     &lt;enumeration value="CTRA"/&gt;
+ *     &lt;enumeration value="REPO"/&gt;
+ *     &lt;enumeration value="REPP"/&gt;
+ *     &lt;enumeration value="RERT"/&gt;
+ *     &lt;enumeration value="RSPR"/&gt;
+ *     &lt;enumeration value="SAFE"/&gt;
+ *     &lt;enumeration value="SETR"/&gt;
+ *     &lt;enumeration value="SETS"/&gt;
+ *     &lt;enumeration value="TERM"/&gt;
+ *     &lt;enumeration value="TNAR"/&gt;
+ *     &lt;enumeration value="TNIU"/&gt;
+ *     &lt;enumeration value="TQHI"/&gt;
+ *     &lt;enumeration value="TQNP"/&gt;
+ *     &lt;enumeration value="TXST"/&gt;
+ *     &lt;enumeration value="ULNK"/&gt;
+ *     &lt;enumeration value="VASU"/&gt;
+ *     &lt;enumeration value="INIR"/&gt;
+ *     &lt;enumeration value="OPNM"/&gt;
+ *     &lt;enumeration value="OPTY"/&gt;
+ *     &lt;enumeration value="UKWN"/&gt;
+ *     &lt;enumeration value="EXLI"/&gt;
+ *     &lt;enumeration value="INPR"/&gt;
+ *     &lt;enumeration value="PRIC"/&gt;
+ *     &lt;enumeration value="EQTY"/&gt;
+ *     &lt;enumeration value="SIDE"/&gt;
+ *     &lt;enumeration value="CADI"/&gt;
+ *     &lt;enumeration value="CPTY"/&gt;
+ *     &lt;enumeration value="DISC"/&gt;
+ *     &lt;enumeration value="DISE"/&gt;
+ *     &lt;enumeration value="RESU"/&gt;
+ *     &lt;enumeration value="XRAT"/&gt;
+ *     &lt;enumeration value="ACRU"/&gt;
+ *     &lt;enumeration value="GAMN"/&gt;
+ *     &lt;enumeration value="DFLT"/&gt;
+ *     &lt;enumeration value="FAIL"/&gt;
+ *     &lt;enumeration value="INDT"/&gt;
+ *     &lt;enumeration value="OTHR"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "RejectionReason28Code")

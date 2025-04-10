@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxCamt00600104
 
     @XmlElement(name = "RtrTx", required = true)
     protected ReturnTransactionV04 rtrTx;
-    public static final transient String BUSINESS_PROCESS = "camt";
-    public static final transient int FUNCTIONALITY = 6;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 4;
+    public final static transient String BUSINESS_PROCESS = "camt";
+    public final static transient int FUNCTIONALITY = 6;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 4;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {AccountCashEntryDetails3 .class, AccountIdentification1Choice.class, AmountChoice.class, CancelledStatusReason1Code.class, CashAccountType2Code.class, CashClearingSystem1Code.class, ClearingSystemMemberIdentificationChoice.class, CreditDebitCode.class, CurrencyAndAmount.class, DateAndDateTimeChoice.class, DateTimePeriodChoice.class, DateTimePeriodDetails.class, EntryStatus1Code.class, ErrorHandling1Choice.class, ErrorHandling1Code.class, ErrorHandling3 .class, FinalStatusCode.class, MemberIdentificationChoice.class, MessageIdentification.class, MxCamt00600104 .class, NumberAndSumOfTransactions2 .class, Pagination.class, PaymentCommonDetails4 .class, PaymentDetails7 .class, PaymentIdentification3Choice.class, PaymentInstructionReferenceDetails2 .class, PaymentInstructionReferenceDetails4 .class, PaymentInstrument1Code.class, PaymentOrigin1Choice.class, PaymentStatusCode4Choice.class, PaymentStatusDetails4 .class, PaymentStatusReasonCode4Choice.class, PaymentTransactionParty.class, PaymentType2Choice.class, PaymentType3Code.class, PendingFailingSettlement1Code.class, PendingSettlement2Code.class, PendingStatus4Code.class, Priority1Code.class, PriorityCodeChoice.class, ProprietaryStatusJustification.class, QueryReference.class, QueueTransactionIdentificationDetails.class, ReturnTransactionV04 .class, SimpleIdentificationInformation.class, SuspendedStatusReason1Code.class, SystemDetails2 .class, Transaction5 .class, TransactionReportDetails5 .class, Transactions4 .class, UnmatchedStatusReason1Code.class };
-    public static final transient String NAMESPACE = "urn:swift:xsd:camt.006.001.04";
+    public final static transient Class[] _classes = new Class[] {AccountCashEntryDetails3 .class, AccountIdentification1Choice.class, AmountChoice.class, CancelledStatusReason1Code.class, CashAccountType2Code.class, CashClearingSystem1Code.class, ClearingSystemMemberIdentificationChoice.class, CreditDebitCode.class, CurrencyAndAmount.class, DateAndDateTimeChoice.class, DateTimePeriodChoice.class, DateTimePeriodDetails.class, EntryStatus1Code.class, ErrorHandling1Choice.class, ErrorHandling1Code.class, ErrorHandling3 .class, FinalStatusCode.class, MemberIdentificationChoice.class, MessageIdentification.class, MxCamt00600104 .class, NumberAndSumOfTransactions2 .class, Pagination.class, PaymentCommonDetails4 .class, PaymentDetails7 .class, PaymentIdentification3Choice.class, PaymentInstructionReferenceDetails2 .class, PaymentInstructionReferenceDetails4 .class, PaymentInstrument1Code.class, PaymentOrigin1Choice.class, PaymentStatusCode4Choice.class, PaymentStatusDetails4 .class, PaymentStatusReasonCode4Choice.class, PaymentTransactionParty.class, PaymentType2Choice.class, PaymentType3Code.class, PendingFailingSettlement1Code.class, PendingSettlement2Code.class, PendingStatus4Code.class, Priority1Code.class, PriorityCodeChoice.class, ProprietaryStatusJustification.class, QueryReference.class, QueueTransactionIdentificationDetails.class, ReturnTransactionV04 .class, SimpleIdentificationInformation.class, SuspendedStatusReason1Code.class, SystemDetails2 .class, Transaction5 .class, TransactionReportDetails5 .class, Transactions4 .class, UnmatchedStatusReason1Code.class };
+    public final static transient String NAMESPACE = "urn:swift:xsd:camt.006.001.04";
 
     public MxCamt00600104() {
         super();
@@ -86,6 +86,21 @@ public class MxCamt00600104
     public MxCamt00600104 setRtrTx(ReturnTransactionV04 value) {
         this.rtrTx = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxCamt00600104
      * @return
      *     a new instance of MxCamt00600104
      */
-    public static final MxCamt00600104 fromJson(String json) {
+    public final static MxCamt00600104 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxCamt00600104 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

@@ -1,25 +1,26 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for ReservationStatus1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="ReservationStatus1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="ENAB"/>
- *     <enumeration value="DISA"/>
- *     <enumeration value="DELD"/>
- *     <enumeration value="REQD"/>
- *     <enumeration value="BLKD"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="ReservationStatus1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ENAB"/&gt;
+ *     &lt;enumeration value="DISA"/&gt;
+ *     &lt;enumeration value="DELD"/&gt;
+ *     &lt;enumeration value="REQD"/&gt;
+ *     &lt;enumeration value="BLKD"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "ReservationStatus1Code")

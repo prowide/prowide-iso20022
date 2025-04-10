@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -313,8 +313,8 @@ public class DTCCCANOCSDDataSD1V11 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the optnDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the optnDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -328,12 +328,10 @@ public class DTCCCANOCSDDataSD1V11 {
      * {@link CorporateActionOptionSD12 }
      * 
      * 
-     * @return
-     *     The value of the optnDtls property.
      */
     public List<CorporateActionOptionSD12> getOptnDtls() {
         if (optnDtls == null) {
-            optnDtls = new ArrayList<>();
+            optnDtls = new ArrayList<CorporateActionOptionSD12>();
         }
         return this.optnDtls;
     }
@@ -344,8 +342,8 @@ public class DTCCCANOCSDDataSD1V11 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the optnDtDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the optnDtDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -359,12 +357,10 @@ public class DTCCCANOCSDDataSD1V11 {
      * {@link CorporateActionDateSD11 }
      * 
      * 
-     * @return
-     *     The value of the optnDtDtls property.
      */
     public List<CorporateActionDateSD11> getOptnDtDtls() {
         if (optnDtDtls == null) {
-            optnDtDtls = new ArrayList<>();
+            optnDtDtls = new ArrayList<CorporateActionDateSD11>();
         }
         return this.optnDtDtls;
     }
@@ -375,8 +371,8 @@ public class DTCCCANOCSDDataSD1V11 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the sctiesMvmntDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the sctiesMvmntDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -390,12 +386,10 @@ public class DTCCCANOCSDDataSD1V11 {
      * {@link SecuritiesOptionSD9 }
      * 
      * 
-     * @return
-     *     The value of the sctiesMvmntDtls property.
      */
     public List<SecuritiesOptionSD9> getSctiesMvmntDtls() {
         if (sctiesMvmntDtls == null) {
-            sctiesMvmntDtls = new ArrayList<>();
+            sctiesMvmntDtls = new ArrayList<SecuritiesOptionSD9>();
         }
         return this.sctiesMvmntDtls;
     }
@@ -406,8 +400,8 @@ public class DTCCCANOCSDDataSD1V11 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the sctiesMvmntSctyDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the sctiesMvmntSctyDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -421,12 +415,10 @@ public class DTCCCANOCSDDataSD1V11 {
      * {@link FinancialInstrumentAttributesSD16 }
      * 
      * 
-     * @return
-     *     The value of the sctiesMvmntSctyDtls property.
      */
     public List<FinancialInstrumentAttributesSD16> getSctiesMvmntSctyDtls() {
         if (sctiesMvmntSctyDtls == null) {
-            sctiesMvmntSctyDtls = new ArrayList<>();
+            sctiesMvmntSctyDtls = new ArrayList<FinancialInstrumentAttributesSD16>();
         }
         return this.sctiesMvmntSctyDtls;
     }
@@ -437,8 +429,8 @@ public class DTCCCANOCSDDataSD1V11 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the sctiesMvmntRateDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the sctiesMvmntRateDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -452,12 +444,10 @@ public class DTCCCANOCSDDataSD1V11 {
      * {@link CorporateActionRateSD10 }
      * 
      * 
-     * @return
-     *     The value of the sctiesMvmntRateDtls property.
      */
     public List<CorporateActionRateSD10> getSctiesMvmntRateDtls() {
         if (sctiesMvmntRateDtls == null) {
-            sctiesMvmntRateDtls = new ArrayList<>();
+            sctiesMvmntRateDtls = new ArrayList<CorporateActionRateSD10>();
         }
         return this.sctiesMvmntRateDtls;
     }
@@ -468,8 +458,8 @@ public class DTCCCANOCSDDataSD1V11 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the sctiesMvmntCshInLieuDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the sctiesMvmntCshInLieuDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -483,12 +473,10 @@ public class DTCCCANOCSDDataSD1V11 {
      * {@link CorporateActionPriceSD5 }
      * 
      * 
-     * @return
-     *     The value of the sctiesMvmntCshInLieuDtls property.
      */
     public List<CorporateActionPriceSD5> getSctiesMvmntCshInLieuDtls() {
         if (sctiesMvmntCshInLieuDtls == null) {
-            sctiesMvmntCshInLieuDtls = new ArrayList<>();
+            sctiesMvmntCshInLieuDtls = new ArrayList<CorporateActionPriceSD5>();
         }
         return this.sctiesMvmntCshInLieuDtls;
     }
@@ -499,8 +487,8 @@ public class DTCCCANOCSDDataSD1V11 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the sctiesMvmntFrctnDspstn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the sctiesMvmntFrctnDspstn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -514,12 +502,10 @@ public class DTCCCANOCSDDataSD1V11 {
      * {@link FractionDispositionTypeSD3 }
      * 
      * 
-     * @return
-     *     The value of the sctiesMvmntFrctnDspstn property.
      */
     public List<FractionDispositionTypeSD3> getSctiesMvmntFrctnDspstn() {
         if (sctiesMvmntFrctnDspstn == null) {
-            sctiesMvmntFrctnDspstn = new ArrayList<>();
+            sctiesMvmntFrctnDspstn = new ArrayList<FractionDispositionTypeSD3>();
         }
         return this.sctiesMvmntFrctnDspstn;
     }
@@ -530,8 +516,8 @@ public class DTCCCANOCSDDataSD1V11 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the cshMvmntDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the cshMvmntDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -545,12 +531,10 @@ public class DTCCCANOCSDDataSD1V11 {
      * {@link CashOptionSD11 }
      * 
      * 
-     * @return
-     *     The value of the cshMvmntDtls property.
      */
     public List<CashOptionSD11> getCshMvmntDtls() {
         if (cshMvmntDtls == null) {
-            cshMvmntDtls = new ArrayList<>();
+            cshMvmntDtls = new ArrayList<CashOptionSD11>();
         }
         return this.cshMvmntDtls;
     }
@@ -561,8 +545,8 @@ public class DTCCCANOCSDDataSD1V11 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the newAgt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the newAgt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -576,12 +560,10 @@ public class DTCCCANOCSDDataSD1V11 {
      * {@link PartyIdentificationSD5 }
      * 
      * 
-     * @return
-     *     The value of the newAgt property.
      */
     public List<PartyIdentificationSD5> getNewAgt() {
         if (newAgt == null) {
-            newAgt = new ArrayList<>();
+            newAgt = new ArrayList<PartyIdentificationSD5>();
         }
         return this.newAgt;
     }
@@ -592,8 +574,8 @@ public class DTCCCANOCSDDataSD1V11 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the agt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the agt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -607,12 +589,10 @@ public class DTCCCANOCSDDataSD1V11 {
      * {@link PartyIdentificationSD6 }
      * 
      * 
-     * @return
-     *     The value of the agt property.
      */
     public List<PartyIdentificationSD6> getAgt() {
         if (agt == null) {
-            agt = new ArrayList<>();
+            agt = new ArrayList<PartyIdentificationSD6>();
         }
         return this.agt;
     }

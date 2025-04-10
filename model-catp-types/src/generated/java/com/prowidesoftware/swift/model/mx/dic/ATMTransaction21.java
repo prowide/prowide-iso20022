@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -111,8 +111,8 @@ public class ATMTransaction21 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the actn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the actn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -126,12 +126,10 @@ public class ATMTransaction21 {
      * {@link Action7 }
      * 
      * 
-     * @return
-     *     The value of the actn property.
      */
     public List<Action7> getActn() {
         if (actn == null) {
-            actn = new ArrayList<>();
+            actn = new ArrayList<Action7>();
         }
         return this.actn;
     }
@@ -192,8 +190,8 @@ public class ATMTransaction21 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the acctInf property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the acctInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -207,12 +205,10 @@ public class ATMTransaction21 {
      * {@link CardAccount12 }
      * 
      * 
-     * @return
-     *     The value of the acctInf property.
      */
     public List<CardAccount12> getAcctInf() {
         if (acctInf == null) {
-            acctInf = new ArrayList<>();
+            acctInf = new ArrayList<CardAccount12>();
         }
         return this.acctInf;
     }
@@ -223,8 +219,8 @@ public class ATMTransaction21 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the acctStmtData property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the acctStmtData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -238,12 +234,10 @@ public class ATMTransaction21 {
      * {@link ATMAccountStatement1 }
      * 
      * 
-     * @return
-     *     The value of the acctStmtData property.
      */
     public List<ATMAccountStatement1> getAcctStmtData() {
         if (acctStmtData == null) {
-            acctStmtData = new ArrayList<>();
+            acctStmtData = new ArrayList<ATMAccountStatement1>();
         }
         return this.acctStmtData;
     }
@@ -302,8 +296,8 @@ public class ATMTransaction21 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the cmd property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the cmd property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -317,12 +311,10 @@ public class ATMTransaction21 {
      * {@link ATMCommand7 }
      * 
      * 
-     * @return
-     *     The value of the cmd property.
      */
     public List<ATMCommand7> getCmd() {
         if (cmd == null) {
-            cmd = new ArrayList<>();
+            cmd = new ArrayList<ATMCommand7>();
         }
         return this.cmd;
     }

@@ -1,58 +1,59 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for UnitOfMeasure6Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="UnitOfMeasure6Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="PIEC"/>
- *     <enumeration value="TONS"/>
- *     <enumeration value="FOOT"/>
- *     <enumeration value="GBGA"/>
- *     <enumeration value="USGA"/>
- *     <enumeration value="GRAM"/>
- *     <enumeration value="INCH"/>
- *     <enumeration value="KILO"/>
- *     <enumeration value="PUND"/>
- *     <enumeration value="METR"/>
- *     <enumeration value="CMET"/>
- *     <enumeration value="MMET"/>
- *     <enumeration value="LITR"/>
- *     <enumeration value="CELI"/>
- *     <enumeration value="MILI"/>
- *     <enumeration value="GBOU"/>
- *     <enumeration value="USOU"/>
- *     <enumeration value="GBQA"/>
- *     <enumeration value="USQA"/>
- *     <enumeration value="GBPI"/>
- *     <enumeration value="USPI"/>
- *     <enumeration value="MILE"/>
- *     <enumeration value="KMET"/>
- *     <enumeration value="YARD"/>
- *     <enumeration value="SQKI"/>
- *     <enumeration value="HECT"/>
- *     <enumeration value="ARES"/>
- *     <enumeration value="SMET"/>
- *     <enumeration value="SCMT"/>
- *     <enumeration value="SMIL"/>
- *     <enumeration value="SQMI"/>
- *     <enumeration value="SQYA"/>
- *     <enumeration value="SQFO"/>
- *     <enumeration value="SQIN"/>
- *     <enumeration value="ACRE"/>
- *     <enumeration value="KWHO"/>
- *     <enumeration value="DGEU"/>
- *     <enumeration value="GGEU"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="UnitOfMeasure6Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="PIEC"/&gt;
+ *     &lt;enumeration value="TONS"/&gt;
+ *     &lt;enumeration value="FOOT"/&gt;
+ *     &lt;enumeration value="GBGA"/&gt;
+ *     &lt;enumeration value="USGA"/&gt;
+ *     &lt;enumeration value="GRAM"/&gt;
+ *     &lt;enumeration value="INCH"/&gt;
+ *     &lt;enumeration value="KILO"/&gt;
+ *     &lt;enumeration value="PUND"/&gt;
+ *     &lt;enumeration value="METR"/&gt;
+ *     &lt;enumeration value="CMET"/&gt;
+ *     &lt;enumeration value="MMET"/&gt;
+ *     &lt;enumeration value="LITR"/&gt;
+ *     &lt;enumeration value="CELI"/&gt;
+ *     &lt;enumeration value="MILI"/&gt;
+ *     &lt;enumeration value="GBOU"/&gt;
+ *     &lt;enumeration value="USOU"/&gt;
+ *     &lt;enumeration value="GBQA"/&gt;
+ *     &lt;enumeration value="USQA"/&gt;
+ *     &lt;enumeration value="GBPI"/&gt;
+ *     &lt;enumeration value="USPI"/&gt;
+ *     &lt;enumeration value="MILE"/&gt;
+ *     &lt;enumeration value="KMET"/&gt;
+ *     &lt;enumeration value="YARD"/&gt;
+ *     &lt;enumeration value="SQKI"/&gt;
+ *     &lt;enumeration value="HECT"/&gt;
+ *     &lt;enumeration value="ARES"/&gt;
+ *     &lt;enumeration value="SMET"/&gt;
+ *     &lt;enumeration value="SCMT"/&gt;
+ *     &lt;enumeration value="SMIL"/&gt;
+ *     &lt;enumeration value="SQMI"/&gt;
+ *     &lt;enumeration value="SQYA"/&gt;
+ *     &lt;enumeration value="SQFO"/&gt;
+ *     &lt;enumeration value="SQIN"/&gt;
+ *     &lt;enumeration value="ACRE"/&gt;
+ *     &lt;enumeration value="KWHO"/&gt;
+ *     &lt;enumeration value="DGEU"/&gt;
+ *     &lt;enumeration value="GGEU"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "UnitOfMeasure6Code")

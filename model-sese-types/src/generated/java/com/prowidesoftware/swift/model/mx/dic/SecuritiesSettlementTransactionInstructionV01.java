@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -182,8 +182,8 @@ public class SecuritiesSettlementTransactionInstructionV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the lnkgs property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the lnkgs property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -197,12 +197,10 @@ public class SecuritiesSettlementTransactionInstructionV01 {
      * {@link Linkages1 }
      * 
      * 
-     * @return
-     *     The value of the lnkgs property.
      */
     public List<Linkages1> getLnkgs() {
         if (lnkgs == null) {
-            lnkgs = new ArrayList<>();
+            lnkgs = new ArrayList<Linkages1>();
         }
         return this.lnkgs;
     }
@@ -588,8 +586,8 @@ public class SecuritiesSettlementTransactionInstructionV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the xtnsn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the xtnsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -603,12 +601,10 @@ public class SecuritiesSettlementTransactionInstructionV01 {
      * {@link Extension2 }
      * 
      * 
-     * @return
-     *     The value of the xtnsn property.
      */
     public List<Extension2> getXtnsn() {
         if (xtnsn == null) {
-            xtnsn = new ArrayList<>();
+            xtnsn = new ArrayList<Extension2>();
         }
         return this.xtnsn;
     }

@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxReda06900102
 
     @XmlElement(name = "ReqToPayCdtrEnrlmntStsRpt", required = true)
     protected RequestToPayCreditorEnrolmentStatusReportV02 reqToPayCdtrEnrlmntStsRpt;
-    public static final transient String BUSINESS_PROCESS = "reda";
-    public static final transient int FUNCTIONALITY = 69;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 2;
+    public final static transient String BUSINESS_PROCESS = "reda";
+    public final static transient int FUNCTIONALITY = 69;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 2;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {AddressType2Code.class, AddressType3Choice.class, Contact13 .class, CreditorEnrolment5 .class, CreditorEnrolmentStatusReason2Choice.class, CreditorEnrolmentStatusReason3 .class, CreditorServiceEnrolment1 .class, DateAndDateTime2Choice.class, DateAndPlaceOfBirth1 .class, EnrolmentHeader3 .class, EnrolmentStatus3 .class, GenericIdentification30 .class, GenericOrganisationIdentification3 .class, GenericPersonIdentification2 .class, MxReda06900102 .class, NamePrefix2Code.class, OrganisationIdentification40 .class, OrganisationIdentificationSchemeName1Choice.class, OriginalBusinessInstruction1 .class, OriginalEnrolment3Choice.class, OtherContact1 .class, Party53Choice.class, PersonIdentification20 .class, PersonIdentificationSchemeName1Choice.class, PostalAddress27 .class, PreferredContactMethod2Code.class, RTPPartyIdentification2 .class, RequestToPayCreditorEnrolmentStatusReportV02 .class, ServiceRequestStatus1Code.class, ServiceStatus1Choice.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, Visibilty1 .class };
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:reda.069.001.02";
+    public final static transient Class[] _classes = new Class[] {AddressType2Code.class, AddressType3Choice.class, Contact13 .class, CreditorEnrolment5 .class, CreditorEnrolmentStatusReason2Choice.class, CreditorEnrolmentStatusReason3 .class, CreditorServiceEnrolment1 .class, DateAndDateTime2Choice.class, DateAndPlaceOfBirth1 .class, EnrolmentHeader3 .class, EnrolmentStatus3 .class, GenericIdentification30 .class, GenericOrganisationIdentification3 .class, GenericPersonIdentification2 .class, MxReda06900102 .class, NamePrefix2Code.class, OrganisationIdentification40 .class, OrganisationIdentificationSchemeName1Choice.class, OriginalBusinessInstruction1 .class, OriginalEnrolment3Choice.class, OtherContact1 .class, Party53Choice.class, PersonIdentification20 .class, PersonIdentificationSchemeName1Choice.class, PostalAddress27 .class, PreferredContactMethod2Code.class, RTPPartyIdentification2 .class, RequestToPayCreditorEnrolmentStatusReportV02 .class, ServiceRequestStatus1Code.class, ServiceStatus1Choice.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, Visibilty1 .class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:reda.069.001.02";
 
     public MxReda06900102() {
         super();
@@ -86,6 +86,21 @@ public class MxReda06900102
     public MxReda06900102 setReqToPayCdtrEnrlmntStsRpt(RequestToPayCreditorEnrolmentStatusReportV02 value) {
         this.reqToPayCdtrEnrlmntStsRpt = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxReda06900102
      * @return
      *     a new instance of MxReda06900102
      */
-    public static final MxReda06900102 fromJson(String json) {
+    public final static MxReda06900102 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxReda06900102 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

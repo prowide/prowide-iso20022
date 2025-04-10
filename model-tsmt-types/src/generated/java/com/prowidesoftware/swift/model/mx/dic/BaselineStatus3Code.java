@@ -1,32 +1,33 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for BaselineStatus3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="BaselineStatus3Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="PROP"/>
- *     <enumeration value="CLSD"/>
- *     <enumeration value="PMTC"/>
- *     <enumeration value="ESTD"/>
- *     <enumeration value="ACTV"/>
- *     <enumeration value="COMP"/>
- *     <enumeration value="AMRQ"/>
- *     <enumeration value="RARQ"/>
- *     <enumeration value="CLRQ"/>
- *     <enumeration value="SCRQ"/>
- *     <enumeration value="SERQ"/>
- *     <enumeration value="DARQ"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="BaselineStatus3Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="PROP"/&gt;
+ *     &lt;enumeration value="CLSD"/&gt;
+ *     &lt;enumeration value="PMTC"/&gt;
+ *     &lt;enumeration value="ESTD"/&gt;
+ *     &lt;enumeration value="ACTV"/&gt;
+ *     &lt;enumeration value="COMP"/&gt;
+ *     &lt;enumeration value="AMRQ"/&gt;
+ *     &lt;enumeration value="RARQ"/&gt;
+ *     &lt;enumeration value="CLRQ"/&gt;
+ *     &lt;enumeration value="SCRQ"/&gt;
+ *     &lt;enumeration value="SERQ"/&gt;
+ *     &lt;enumeration value="DARQ"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "BaselineStatus3Code")

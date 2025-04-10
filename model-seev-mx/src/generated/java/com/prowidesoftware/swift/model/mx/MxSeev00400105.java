@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxSeev00400105
 
     @XmlElement(name = "MtgInstr", required = true)
     protected MeetingInstructionV05 mtgInstr;
-    public static final transient String BUSINESS_PROCESS = "seev";
-    public static final transient int FUNCTIONALITY = 4;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 5;
+    public final static transient String BUSINESS_PROCESS = "seev";
+    public final static transient int FUNCTIONALITY = 4;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 5;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {ActiveCurrencyAndAmount.class, AddressType2Code.class, AttendanceCard2 .class, DeliveryPlace1Code.class, GenericIdentification13 .class, GenericIdentification19 .class, GenericIdentification20 .class, GenericIdentification21 .class, GenericIdentification4 .class, HoldingBalance8 .class, IdentificationSource3Choice.class, IndividualPerson26 .class, Instruction3 .class, LongPostalAddress2Choice.class, MeetingInstructionV05 .class, MeetingReference7 .class, MeetingType3Code.class, MeetingTypeClassification1Choice.class, MeetingTypeClassification1Code.class, MxSeev00400105 .class, NameAndAddress5 .class, NameAndAddress9 .class, OtherIdentification1 .class, PartyIdentification40Choice.class, PersonIdentification6 .class, PersonIdentificationType1Choice.class, PostalAddress1 .class, Proxy6 .class, ProxyType2Code.class, Quantity1Code.class, SafekeepingAccount6 .class, SafekeepingPlace1Code.class, SafekeepingPlace2Code.class, SafekeepingPlaceFormat2Choice.class, SafekeepingPlaceTypeAndAnyBICIdentifier1 .class, SafekeepingPlaceTypeAndText2 .class, SecuritiesEntryType2Code.class, SecurityIdentification14 .class, SpecificInstructionRequest1 .class, SubAccount2 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, UnitOrFaceAmountOrCode1Choice.class, Vote3Choice.class, Vote8 .class, Vote9 .class, VoteDetails3 .class, VoteInstruction3Code.class, VoteInstruction4Code.class, VoteInstructionForMeetingResolution2Choice.class };
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:seev.004.001.05";
+    public final static transient Class[] _classes = new Class[] {ActiveCurrencyAndAmount.class, AddressType2Code.class, AttendanceCard2 .class, DeliveryPlace1Code.class, GenericIdentification13 .class, GenericIdentification19 .class, GenericIdentification20 .class, GenericIdentification21 .class, GenericIdentification4 .class, HoldingBalance8 .class, IdentificationSource3Choice.class, IndividualPerson26 .class, Instruction3 .class, LongPostalAddress2Choice.class, MeetingInstructionV05 .class, MeetingReference7 .class, MeetingType3Code.class, MeetingTypeClassification1Choice.class, MeetingTypeClassification1Code.class, MxSeev00400105 .class, NameAndAddress5 .class, NameAndAddress9 .class, OtherIdentification1 .class, PartyIdentification40Choice.class, PersonIdentification6 .class, PersonIdentificationType1Choice.class, PostalAddress1 .class, Proxy6 .class, ProxyType2Code.class, Quantity1Code.class, SafekeepingAccount6 .class, SafekeepingPlace1Code.class, SafekeepingPlace2Code.class, SafekeepingPlaceFormat2Choice.class, SafekeepingPlaceTypeAndAnyBICIdentifier1 .class, SafekeepingPlaceTypeAndText2 .class, SecuritiesEntryType2Code.class, SecurityIdentification14 .class, SpecificInstructionRequest1 .class, SubAccount2 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, UnitOrFaceAmountOrCode1Choice.class, Vote3Choice.class, Vote8 .class, Vote9 .class, VoteDetails3 .class, VoteInstruction3Code.class, VoteInstruction4Code.class, VoteInstructionForMeetingResolution2Choice.class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:seev.004.001.05";
 
     public MxSeev00400105() {
         super();
@@ -86,6 +86,21 @@ public class MxSeev00400105
     public MxSeev00400105 setMtgInstr(MeetingInstructionV05 value) {
         this.mtgInstr = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxSeev00400105
      * @return
      *     a new instance of MxSeev00400105
      */
-    public static final MxSeev00400105 fromJson(String json) {
+    public final static MxSeev00400105 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSeev00400105 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

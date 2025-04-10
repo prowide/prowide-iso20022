@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -41,7 +41,7 @@ public class SubscriptionBulkExecution2 {
     @XmlElement(name = "OrdrDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime ordrDtTm;
+    protected XMLGregorianCalendar ordrDtTm;
     @XmlElement(name = "CxlRght")
     protected CancellationRight1 cxlRght;
     @XmlElement(name = "FinInstrmDtls", required = true)
@@ -88,7 +88,7 @@ public class SubscriptionBulkExecution2 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getOrdrDtTm() {
+    public XMLGregorianCalendar getOrdrDtTm() {
         return ordrDtTm;
     }
 
@@ -100,7 +100,7 @@ public class SubscriptionBulkExecution2 {
      *     {@link String }
      *     
      */
-    public SubscriptionBulkExecution2 setOrdrDtTm(OffsetDateTime value) {
+    public SubscriptionBulkExecution2 setOrdrDtTm(XMLGregorianCalendar value) {
         this.ordrDtTm = value;
         return this;
     }
@@ -161,8 +161,8 @@ public class SubscriptionBulkExecution2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the indvExctnDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the indvExctnDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -176,12 +176,10 @@ public class SubscriptionBulkExecution2 {
      * {@link SubscriptionExecution3 }
      * 
      * 
-     * @return
-     *     The value of the indvExctnDtls property.
      */
     public List<SubscriptionExecution3> getIndvExctnDtls() {
         if (indvExctnDtls == null) {
-            indvExctnDtls = new ArrayList<>();
+            indvExctnDtls = new ArrayList<SubscriptionExecution3>();
         }
         return this.indvExctnDtls;
     }

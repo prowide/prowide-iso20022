@@ -1,33 +1,34 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for EventFrequency7Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="EventFrequency7Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="YEAR"/>
- *     <enumeration value="ADHO"/>
- *     <enumeration value="MNTH"/>
- *     <enumeration value="DAIL"/>
- *     <enumeration value="INDA"/>
- *     <enumeration value="WEEK"/>
- *     <enumeration value="SEMI"/>
- *     <enumeration value="QUTR"/>
- *     <enumeration value="TOMN"/>
- *     <enumeration value="TOWK"/>
- *     <enumeration value="TWMN"/>
- *     <enumeration value="OVNG"/>
- *     <enumeration value="ONDE"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="EventFrequency7Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="YEAR"/&gt;
+ *     &lt;enumeration value="ADHO"/&gt;
+ *     &lt;enumeration value="MNTH"/&gt;
+ *     &lt;enumeration value="DAIL"/&gt;
+ *     &lt;enumeration value="INDA"/&gt;
+ *     &lt;enumeration value="WEEK"/&gt;
+ *     &lt;enumeration value="SEMI"/&gt;
+ *     &lt;enumeration value="QUTR"/&gt;
+ *     &lt;enumeration value="TOMN"/&gt;
+ *     &lt;enumeration value="TOWK"/&gt;
+ *     &lt;enumeration value="TWMN"/&gt;
+ *     &lt;enumeration value="OVNG"/&gt;
+ *     &lt;enumeration value="ONDE"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "EventFrequency7Code")

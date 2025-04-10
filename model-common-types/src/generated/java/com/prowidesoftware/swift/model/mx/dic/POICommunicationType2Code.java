@@ -1,34 +1,35 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlEnumValue;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlEnumValue;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for POICommunicationType2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="POICommunicationType2Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="BLTH"/>
- *     <enumeration value="ETHR"/>
- *     <enumeration value="GPRS"/>
- *     <enumeration value="GSMF"/>
- *     <enumeration value="PSTN"/>
- *     <enumeration value="RS23"/>
- *     <enumeration value="USBD"/>
- *     <enumeration value="USBH"/>
- *     <enumeration value="WIFI"/>
- *     <enumeration value="WT2G"/>
- *     <enumeration value="WT3G"/>
- *     <enumeration value="WT4G"/>
- *     <enumeration value="WT5G"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="POICommunicationType2Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="BLTH"/&gt;
+ *     &lt;enumeration value="ETHR"/&gt;
+ *     &lt;enumeration value="GPRS"/&gt;
+ *     &lt;enumeration value="GSMF"/&gt;
+ *     &lt;enumeration value="PSTN"/&gt;
+ *     &lt;enumeration value="RS23"/&gt;
+ *     &lt;enumeration value="USBD"/&gt;
+ *     &lt;enumeration value="USBH"/&gt;
+ *     &lt;enumeration value="WIFI"/&gt;
+ *     &lt;enumeration value="WT2G"/&gt;
+ *     &lt;enumeration value="WT3G"/&gt;
+ *     &lt;enumeration value="WT4G"/&gt;
+ *     &lt;enumeration value="WT5G"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "POICommunicationType2Code")

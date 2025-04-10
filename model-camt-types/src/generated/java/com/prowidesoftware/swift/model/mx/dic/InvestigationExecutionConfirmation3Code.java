@@ -1,38 +1,39 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for InvestigationExecutionConfirmation3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="InvestigationExecutionConfirmation3Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="CNCL"/>
- *     <enumeration value="MODI"/>
- *     <enumeration value="IPAY"/>
- *     <enumeration value="ICOV"/>
- *     <enumeration value="MCOV"/>
- *     <enumeration value="INFO"/>
- *     <enumeration value="CONF"/>
- *     <enumeration value="CWFW"/>
- *     <enumeration value="MWFW"/>
- *     <enumeration value="UWFW"/>
- *     <enumeration value="PECR"/>
- *     <enumeration value="PDCR"/>
- *     <enumeration value="RJCR"/>
- *     <enumeration value="SMTC"/>
- *     <enumeration value="SMTI"/>
- *     <enumeration value="CHRG"/>
- *     <enumeration value="PURP"/>
- *     <enumeration value="IDUP"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="InvestigationExecutionConfirmation3Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="CNCL"/&gt;
+ *     &lt;enumeration value="MODI"/&gt;
+ *     &lt;enumeration value="IPAY"/&gt;
+ *     &lt;enumeration value="ICOV"/&gt;
+ *     &lt;enumeration value="MCOV"/&gt;
+ *     &lt;enumeration value="INFO"/&gt;
+ *     &lt;enumeration value="CONF"/&gt;
+ *     &lt;enumeration value="CWFW"/&gt;
+ *     &lt;enumeration value="MWFW"/&gt;
+ *     &lt;enumeration value="UWFW"/&gt;
+ *     &lt;enumeration value="PECR"/&gt;
+ *     &lt;enumeration value="PDCR"/&gt;
+ *     &lt;enumeration value="RJCR"/&gt;
+ *     &lt;enumeration value="SMTC"/&gt;
+ *     &lt;enumeration value="SMTI"/&gt;
+ *     &lt;enumeration value="CHRG"/&gt;
+ *     &lt;enumeration value="PURP"/&gt;
+ *     &lt;enumeration value="IDUP"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "InvestigationExecutionConfirmation3Code")

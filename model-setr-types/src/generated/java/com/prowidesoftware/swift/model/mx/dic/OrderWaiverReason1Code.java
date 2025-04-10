@@ -1,25 +1,26 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for OrderWaiverReason1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="OrderWaiverReason1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="LATE"/>
- *     <enumeration value="FEND"/>
- *     <enumeration value="BMIN"/>
- *     <enumeration value="CUTO"/>
- *     <enumeration value="COMW"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="OrderWaiverReason1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="LATE"/&gt;
+ *     &lt;enumeration value="FEND"/&gt;
+ *     &lt;enumeration value="BMIN"/&gt;
+ *     &lt;enumeration value="CUTO"/&gt;
+ *     &lt;enumeration value="COMW"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "OrderWaiverReason1Code")

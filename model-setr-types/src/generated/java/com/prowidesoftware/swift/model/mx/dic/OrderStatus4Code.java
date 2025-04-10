@@ -1,31 +1,32 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for OrderStatus4Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="OrderStatus4Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="PACK"/>
- *     <enumeration value="COSE"/>
- *     <enumeration value="STNP"/>
- *     <enumeration value="RECE"/>
- *     <enumeration value="SETT"/>
- *     <enumeration value="CPNP"/>
- *     <enumeration value="CNFC"/>
- *     <enumeration value="DONE"/>
- *     <enumeration value="DONF"/>
- *     <enumeration value="OPOD"/>
- *     <enumeration value="IACO"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="OrderStatus4Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="PACK"/&gt;
+ *     &lt;enumeration value="COSE"/&gt;
+ *     &lt;enumeration value="STNP"/&gt;
+ *     &lt;enumeration value="RECE"/&gt;
+ *     &lt;enumeration value="SETT"/&gt;
+ *     &lt;enumeration value="CPNP"/&gt;
+ *     &lt;enumeration value="CNFC"/&gt;
+ *     &lt;enumeration value="DONE"/&gt;
+ *     &lt;enumeration value="DONF"/&gt;
+ *     &lt;enumeration value="OPOD"/&gt;
+ *     &lt;enumeration value="IACO"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "OrderStatus4Code")

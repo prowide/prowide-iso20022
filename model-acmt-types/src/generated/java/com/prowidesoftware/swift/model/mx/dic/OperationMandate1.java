@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -48,11 +48,11 @@ public class OperationMandate1 {
     @XmlElement(name = "StartDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate startDt;
+    protected XMLGregorianCalendar startDt;
     @XmlElement(name = "EndDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate endDt;
+    protected XMLGregorianCalendar endDt;
 
     /**
      * Gets the value of the id property.
@@ -127,8 +127,8 @@ public class OperationMandate1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the mndtHldr property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the mndtHldr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -142,12 +142,10 @@ public class OperationMandate1 {
      * {@link PartyAndCertificate1 }
      * 
      * 
-     * @return
-     *     The value of the mndtHldr property.
      */
     public List<PartyAndCertificate1> getMndtHldr() {
         if (mndtHldr == null) {
-            mndtHldr = new ArrayList<>();
+            mndtHldr = new ArrayList<PartyAndCertificate1>();
         }
         return this.mndtHldr;
     }
@@ -158,8 +156,8 @@ public class OperationMandate1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the bkOpr property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the bkOpr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -173,12 +171,10 @@ public class OperationMandate1 {
      * {@link BankTransactionCodeStructure4 }
      * 
      * 
-     * @return
-     *     The value of the bkOpr property.
      */
     public List<BankTransactionCodeStructure4> getBkOpr() {
         if (bkOpr == null) {
-            bkOpr = new ArrayList<>();
+            bkOpr = new ArrayList<BankTransactionCodeStructure4>();
         }
         return this.bkOpr;
     }
@@ -191,7 +187,7 @@ public class OperationMandate1 {
      *     {@link String }
      *     
      */
-    public LocalDate getStartDt() {
+    public XMLGregorianCalendar getStartDt() {
         return startDt;
     }
 
@@ -203,7 +199,7 @@ public class OperationMandate1 {
      *     {@link String }
      *     
      */
-    public OperationMandate1 setStartDt(LocalDate value) {
+    public OperationMandate1 setStartDt(XMLGregorianCalendar value) {
         this.startDt = value;
         return this;
     }
@@ -216,7 +212,7 @@ public class OperationMandate1 {
      *     {@link String }
      *     
      */
-    public LocalDate getEndDt() {
+    public XMLGregorianCalendar getEndDt() {
         return endDt;
     }
 
@@ -228,7 +224,7 @@ public class OperationMandate1 {
      *     {@link String }
      *     
      */
-    public OperationMandate1 setEndDt(LocalDate value) {
+    public OperationMandate1 setEndDt(XMLGregorianCalendar value) {
         this.endDt = value;
         return this;
     }

@@ -1,25 +1,26 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for TaxationBasis5Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="TaxationBasis5Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="FLAT"/>
- *     <enumeration value="GRAM"/>
- *     <enumeration value="NEAM"/>
- *     <enumeration value="NAVP"/>
- *     <enumeration value="PERU"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="TaxationBasis5Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="FLAT"/&gt;
+ *     &lt;enumeration value="GRAM"/&gt;
+ *     &lt;enumeration value="NEAM"/&gt;
+ *     &lt;enumeration value="NAVP"/&gt;
+ *     &lt;enumeration value="PERU"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "TaxationBasis5Code")

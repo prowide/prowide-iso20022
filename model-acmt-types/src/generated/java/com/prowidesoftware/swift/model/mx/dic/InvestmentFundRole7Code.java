@@ -1,31 +1,32 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for InvestmentFundRole7Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="InvestmentFundRole7Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="CONC"/>
- *     <enumeration value="DIST"/>
- *     <enumeration value="FMCO"/>
- *     <enumeration value="INTR"/>
- *     <enumeration value="PAYI"/>
- *     <enumeration value="TRAG"/>
- *     <enumeration value="CUST"/>
- *     <enumeration value="CACO"/>
- *     <enumeration value="FACT"/>
- *     <enumeration value="INVE"/>
- *     <enumeration value="INVS"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="InvestmentFundRole7Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="CONC"/&gt;
+ *     &lt;enumeration value="DIST"/&gt;
+ *     &lt;enumeration value="FMCO"/&gt;
+ *     &lt;enumeration value="INTR"/&gt;
+ *     &lt;enumeration value="PAYI"/&gt;
+ *     &lt;enumeration value="TRAG"/&gt;
+ *     &lt;enumeration value="CUST"/&gt;
+ *     &lt;enumeration value="CACO"/&gt;
+ *     &lt;enumeration value="FACT"/&gt;
+ *     &lt;enumeration value="INVE"/&gt;
+ *     &lt;enumeration value="INVS"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "InvestmentFundRole7Code")

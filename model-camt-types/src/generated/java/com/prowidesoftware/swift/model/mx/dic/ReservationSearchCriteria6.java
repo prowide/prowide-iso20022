@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -99,8 +99,8 @@ public class ReservationSearchCriteria6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the dfltRsvatnTp property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the dfltRsvatnTp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -114,12 +114,10 @@ public class ReservationSearchCriteria6 {
      * {@link ReservationType2Choice }
      * 
      * 
-     * @return
-     *     The value of the dfltRsvatnTp property.
      */
     public List<ReservationType2Choice> getDfltRsvatnTp() {
         if (dfltRsvatnTp == null) {
-            dfltRsvatnTp = new ArrayList<>();
+            dfltRsvatnTp = new ArrayList<ReservationType2Choice>();
         }
         return this.dfltRsvatnTp;
     }
@@ -130,8 +128,8 @@ public class ReservationSearchCriteria6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the curRsvatnTp property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the curRsvatnTp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -145,12 +143,10 @@ public class ReservationSearchCriteria6 {
      * {@link ReservationType2Choice }
      * 
      * 
-     * @return
-     *     The value of the curRsvatnTp property.
      */
     public List<ReservationType2Choice> getCurRsvatnTp() {
         if (curRsvatnTp == null) {
-            curRsvatnTp = new ArrayList<>();
+            curRsvatnTp = new ArrayList<ReservationType2Choice>();
         }
         return this.curRsvatnTp;
     }

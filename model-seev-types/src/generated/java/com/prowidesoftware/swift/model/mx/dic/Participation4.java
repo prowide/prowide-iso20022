@@ -2,14 +2,14 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -40,7 +40,7 @@ public class Participation4 {
     @XmlElement(name = "ClctnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate clctnDt;
+    protected XMLGregorianCalendar clctnDt;
 
     /**
      * Gets the value of the ttlNbOfVtngRghts property.
@@ -125,7 +125,7 @@ public class Participation4 {
      *     {@link String }
      *     
      */
-    public LocalDate getClctnDt() {
+    public XMLGregorianCalendar getClctnDt() {
         return clctnDt;
     }
 
@@ -137,7 +137,7 @@ public class Participation4 {
      *     {@link String }
      *     
      */
-    public Participation4 setClctnDt(LocalDate value) {
+    public Participation4 setClctnDt(XMLGregorianCalendar value) {
         this.clctnDt = value;
         return this;
     }

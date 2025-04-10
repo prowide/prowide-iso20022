@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxAdmi00900101
 
     @XmlElement(name = "StatcDataReq", required = true)
     protected StaticDataRequestV01 statcDataReq;
-    public static final transient String BUSINESS_PROCESS = "admi";
-    public static final transient int FUNCTIONALITY = 9;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 1;
+    public final static transient String BUSINESS_PROCESS = "admi";
+    public final static transient int FUNCTIONALITY = 9;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {MessageIdentification.class, MxAdmi00900101 .class, RequestDetails3 .class, StaticDataRequestV01 .class };
-    public static final transient String NAMESPACE = "urn:swift:xsd:admi.009.001.01";
+    public final static transient Class[] _classes = new Class[] {MessageIdentification.class, MxAdmi00900101 .class, RequestDetails3 .class, StaticDataRequestV01 .class };
+    public final static transient String NAMESPACE = "urn:swift:xsd:admi.009.001.01";
 
     public MxAdmi00900101() {
         super();
@@ -86,6 +86,21 @@ public class MxAdmi00900101
     public MxAdmi00900101 setStatcDataReq(StaticDataRequestV01 value) {
         this.statcDataReq = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxAdmi00900101
      * @return
      *     a new instance of MxAdmi00900101
      */
-    public static final MxAdmi00900101 fromJson(String json) {
+    public final static MxAdmi00900101 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxAdmi00900101 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

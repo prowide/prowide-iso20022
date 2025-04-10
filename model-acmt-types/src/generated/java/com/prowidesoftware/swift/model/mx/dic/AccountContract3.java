@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -35,19 +35,19 @@ public class AccountContract3 {
     @XmlElement(name = "TrgtGoLiveDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate trgtGoLiveDt;
+    protected XMLGregorianCalendar trgtGoLiveDt;
     @XmlElement(name = "TrgtClsgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate trgtClsgDt;
+    protected XMLGregorianCalendar trgtClsgDt;
     @XmlElement(name = "GoLiveDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate goLiveDt;
+    protected XMLGregorianCalendar goLiveDt;
     @XmlElement(name = "ClsgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate clsgDt;
+    protected XMLGregorianCalendar clsgDt;
     @XmlElement(name = "UrgcyFlg")
     protected Boolean urgcyFlg;
     @XmlElement(name = "RmvlInd")
@@ -61,7 +61,7 @@ public class AccountContract3 {
      *     {@link String }
      *     
      */
-    public LocalDate getTrgtGoLiveDt() {
+    public XMLGregorianCalendar getTrgtGoLiveDt() {
         return trgtGoLiveDt;
     }
 
@@ -73,7 +73,7 @@ public class AccountContract3 {
      *     {@link String }
      *     
      */
-    public AccountContract3 setTrgtGoLiveDt(LocalDate value) {
+    public AccountContract3 setTrgtGoLiveDt(XMLGregorianCalendar value) {
         this.trgtGoLiveDt = value;
         return this;
     }
@@ -86,7 +86,7 @@ public class AccountContract3 {
      *     {@link String }
      *     
      */
-    public LocalDate getTrgtClsgDt() {
+    public XMLGregorianCalendar getTrgtClsgDt() {
         return trgtClsgDt;
     }
 
@@ -98,7 +98,7 @@ public class AccountContract3 {
      *     {@link String }
      *     
      */
-    public AccountContract3 setTrgtClsgDt(LocalDate value) {
+    public AccountContract3 setTrgtClsgDt(XMLGregorianCalendar value) {
         this.trgtClsgDt = value;
         return this;
     }
@@ -111,7 +111,7 @@ public class AccountContract3 {
      *     {@link String }
      *     
      */
-    public LocalDate getGoLiveDt() {
+    public XMLGregorianCalendar getGoLiveDt() {
         return goLiveDt;
     }
 
@@ -123,7 +123,7 @@ public class AccountContract3 {
      *     {@link String }
      *     
      */
-    public AccountContract3 setGoLiveDt(LocalDate value) {
+    public AccountContract3 setGoLiveDt(XMLGregorianCalendar value) {
         this.goLiveDt = value;
         return this;
     }
@@ -136,7 +136,7 @@ public class AccountContract3 {
      *     {@link String }
      *     
      */
-    public LocalDate getClsgDt() {
+    public XMLGregorianCalendar getClsgDt() {
         return clsgDt;
     }
 
@@ -148,7 +148,7 @@ public class AccountContract3 {
      *     {@link String }
      *     
      */
-    public AccountContract3 setClsgDt(LocalDate value) {
+    public AccountContract3 setClsgDt(XMLGregorianCalendar value) {
         this.clsgDt = value;
         return this;
     }

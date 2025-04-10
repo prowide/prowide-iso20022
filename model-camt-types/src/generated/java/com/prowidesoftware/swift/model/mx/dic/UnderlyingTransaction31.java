@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -65,8 +65,8 @@ public class UnderlyingTransaction31 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the orgnlPmtInfAndSts property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the orgnlPmtInfAndSts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -80,12 +80,10 @@ public class UnderlyingTransaction31 {
      * {@link OriginalPaymentInstruction43 }
      * 
      * 
-     * @return
-     *     The value of the orgnlPmtInfAndSts property.
      */
     public List<OriginalPaymentInstruction43> getOrgnlPmtInfAndSts() {
         if (orgnlPmtInfAndSts == null) {
-            orgnlPmtInfAndSts = new ArrayList<>();
+            orgnlPmtInfAndSts = new ArrayList<OriginalPaymentInstruction43>();
         }
         return this.orgnlPmtInfAndSts;
     }
@@ -96,8 +94,8 @@ public class UnderlyingTransaction31 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the txInfAndSts property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the txInfAndSts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -111,12 +109,10 @@ public class UnderlyingTransaction31 {
      * {@link PaymentTransaction148 }
      * 
      * 
-     * @return
-     *     The value of the txInfAndSts property.
      */
     public List<PaymentTransaction148> getTxInfAndSts() {
         if (txInfAndSts == null) {
-            txInfAndSts = new ArrayList<>();
+            txInfAndSts = new ArrayList<PaymentTransaction148>();
         }
         return this.txInfAndSts;
     }

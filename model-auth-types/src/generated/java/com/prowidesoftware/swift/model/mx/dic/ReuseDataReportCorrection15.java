@@ -1,18 +1,17 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -48,11 +47,11 @@ public class ReuseDataReportCorrection15 {
     @XmlElement(name = "EvtDay", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate evtDay;
+    protected XMLGregorianCalendar evtDay;
     @XmlElement(name = "RptgDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime rptgDtTm;
+    protected XMLGregorianCalendar rptgDtTm;
     @XmlElement(name = "FndgSrc")
     protected List<FundingSource3> fndgSrc;
     @XmlElement(name = "RcncltnFlg")
@@ -118,8 +117,8 @@ public class ReuseDataReportCorrection15 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the collCmpnt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the collCmpnt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -133,12 +132,10 @@ public class ReuseDataReportCorrection15 {
      * {@link CollateralType19 }
      * 
      * 
-     * @return
-     *     The value of the collCmpnt property.
      */
     public List<CollateralType19> getCollCmpnt() {
         if (collCmpnt == null) {
-            collCmpnt = new ArrayList<>();
+            collCmpnt = new ArrayList<CollateralType19>();
         }
         return this.collCmpnt;
     }
@@ -151,7 +148,7 @@ public class ReuseDataReportCorrection15 {
      *     {@link String }
      *     
      */
-    public LocalDate getEvtDay() {
+    public XMLGregorianCalendar getEvtDay() {
         return evtDay;
     }
 
@@ -163,7 +160,7 @@ public class ReuseDataReportCorrection15 {
      *     {@link String }
      *     
      */
-    public ReuseDataReportCorrection15 setEvtDay(LocalDate value) {
+    public ReuseDataReportCorrection15 setEvtDay(XMLGregorianCalendar value) {
         this.evtDay = value;
         return this;
     }
@@ -176,7 +173,7 @@ public class ReuseDataReportCorrection15 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getRptgDtTm() {
+    public XMLGregorianCalendar getRptgDtTm() {
         return rptgDtTm;
     }
 
@@ -188,7 +185,7 @@ public class ReuseDataReportCorrection15 {
      *     {@link String }
      *     
      */
-    public ReuseDataReportCorrection15 setRptgDtTm(OffsetDateTime value) {
+    public ReuseDataReportCorrection15 setRptgDtTm(XMLGregorianCalendar value) {
         this.rptgDtTm = value;
         return this;
     }
@@ -199,8 +196,8 @@ public class ReuseDataReportCorrection15 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the fndgSrc property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the fndgSrc property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -214,12 +211,10 @@ public class ReuseDataReportCorrection15 {
      * {@link FundingSource3 }
      * 
      * 
-     * @return
-     *     The value of the fndgSrc property.
      */
     public List<FundingSource3> getFndgSrc() {
         if (fndgSrc == null) {
-            fndgSrc = new ArrayList<>();
+            fndgSrc = new ArrayList<FundingSource3>();
         }
         return this.fndgSrc;
     }
@@ -280,8 +275,8 @@ public class ReuseDataReportCorrection15 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the splmtryData property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -295,12 +290,10 @@ public class ReuseDataReportCorrection15 {
      * {@link SupplementaryData1 }
      * 
      * 
-     * @return
-     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<>();
+            splmtryData = new ArrayList<SupplementaryData1>();
         }
         return this.splmtryData;
     }

@@ -1,34 +1,35 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for CardDataReading7Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="CardDataReading7Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="CDFL"/>
- *     <enumeration value="ICPY"/>
- *     <enumeration value="MGST"/>
- *     <enumeration value="ICCY"/>
- *     <enumeration value="MICR"/>
- *     <enumeration value="MLEY"/>
- *     <enumeration value="OCRR"/>
- *     <enumeration value="MSIP"/>
- *     <enumeration value="OPTC"/>
- *     <enumeration value="OTHN"/>
- *     <enumeration value="RFID"/>
- *     <enumeration value="UNSP"/>
- *     <enumeration value="OTHP"/>
- *     <enumeration value="KEEN"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="CardDataReading7Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="CDFL"/&gt;
+ *     &lt;enumeration value="ICPY"/&gt;
+ *     &lt;enumeration value="MGST"/&gt;
+ *     &lt;enumeration value="ICCY"/&gt;
+ *     &lt;enumeration value="MICR"/&gt;
+ *     &lt;enumeration value="MLEY"/&gt;
+ *     &lt;enumeration value="OCRR"/&gt;
+ *     &lt;enumeration value="MSIP"/&gt;
+ *     &lt;enumeration value="OPTC"/&gt;
+ *     &lt;enumeration value="OTHN"/&gt;
+ *     &lt;enumeration value="RFID"/&gt;
+ *     &lt;enumeration value="UNSP"/&gt;
+ *     &lt;enumeration value="OTHP"/&gt;
+ *     &lt;enumeration value="KEEN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "CardDataReading7Code")

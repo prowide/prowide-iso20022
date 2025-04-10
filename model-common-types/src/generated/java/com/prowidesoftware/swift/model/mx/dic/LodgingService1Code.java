@@ -1,48 +1,49 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for LodgingService1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="LodgingService1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="ACCO"/>
- *     <enumeration value="AUDI"/>
- *     <enumeration value="BANQ"/>
- *     <enumeration value="BREK"/>
- *     <enumeration value="BUSS"/>
- *     <enumeration value="CONC"/>
- *     <enumeration value="EARA"/>
- *     <enumeration value="EARD"/>
- *     <enumeration value="ENTR"/>
- *     <enumeration value="FCAA"/>
- *     <enumeration value="GAME"/>
- *     <enumeration value="GARA"/>
- *     <enumeration value="GIFT"/>
- *     <enumeration value="HEAL"/>
- *     <enumeration value="INTE"/>
- *     <enumeration value="LAUN"/>
- *     <enumeration value="LONG"/>
- *     <enumeration value="MINI"/>
- *     <enumeration value="NOSH"/>
- *     <enumeration value="OTHR"/>
- *     <enumeration value="PARK"/>
- *     <enumeration value="PHON"/>
- *     <enumeration value="REST"/>
- *     <enumeration value="RMSE"/>
- *     <enumeration value="SPAS"/>
- *     <enumeration value="THRD"/>
- *     <enumeration value="TRAN"/>
- *     <enumeration value="VODS"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="LodgingService1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ACCO"/&gt;
+ *     &lt;enumeration value="AUDI"/&gt;
+ *     &lt;enumeration value="BANQ"/&gt;
+ *     &lt;enumeration value="BREK"/&gt;
+ *     &lt;enumeration value="BUSS"/&gt;
+ *     &lt;enumeration value="CONC"/&gt;
+ *     &lt;enumeration value="EARA"/&gt;
+ *     &lt;enumeration value="EARD"/&gt;
+ *     &lt;enumeration value="ENTR"/&gt;
+ *     &lt;enumeration value="FCAA"/&gt;
+ *     &lt;enumeration value="GAME"/&gt;
+ *     &lt;enumeration value="GARA"/&gt;
+ *     &lt;enumeration value="GIFT"/&gt;
+ *     &lt;enumeration value="HEAL"/&gt;
+ *     &lt;enumeration value="INTE"/&gt;
+ *     &lt;enumeration value="LAUN"/&gt;
+ *     &lt;enumeration value="LONG"/&gt;
+ *     &lt;enumeration value="MINI"/&gt;
+ *     &lt;enumeration value="NOSH"/&gt;
+ *     &lt;enumeration value="OTHR"/&gt;
+ *     &lt;enumeration value="PARK"/&gt;
+ *     &lt;enumeration value="PHON"/&gt;
+ *     &lt;enumeration value="REST"/&gt;
+ *     &lt;enumeration value="RMSE"/&gt;
+ *     &lt;enumeration value="SPAS"/&gt;
+ *     &lt;enumeration value="THRD"/&gt;
+ *     &lt;enumeration value="TRAN"/&gt;
+ *     &lt;enumeration value="VODS"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "LodgingService1Code")

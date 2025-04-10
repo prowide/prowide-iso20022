@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxCbrf00500101
 
     @XmlElement(name = "PtcptPrflRpt", required = true)
     protected ParticipantProfileReportV01 ptcptPrflRpt;
-    public static final transient String BUSINESS_PROCESS = "cbrf";
-    public static final transient int FUNCTIONALITY = 5;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 1;
+    public final static transient String BUSINESS_PROCESS = "cbrf";
+    public final static transient int FUNCTIONALITY = 5;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {AccountIdentification4Choice.class, AccountLimits1 .class, AccountOwnerAndIdentification1 .class, AccountOwnerAndIdentificationList1 .class, AccountRestrictions1 .class, AccountSchemeName1Choice.class, ActiveCurrencyAndAmount.class, AddressType2Code.class, ArrestedFunds1 .class, BranchAndFinancialInstitutionIdentification5 .class, BranchData2 .class, CashAccount24 .class, CashAccount25 .class, CashAccountType2Choice.class, CentralisedAndAuthorisedBranchIdentification1Choice.class, ClearingCircuits1 .class, ClearingScheme1Choice.class, ClearingSystemIdentification2Choice.class, ClearingSystemMemberIdentification2 .class, ContactDetails2 .class, CopyDuplicate1Code.class, DailyFundTransfer1Choice.class, DateAndDateTimeChoice.class, DateAndPlaceOfBirth.class, DateTimePeriodDetails1 .class, DefaultAccountDetails1 .class, DirectoryAccountInformation1 .class, DirectoryEntry1 .class, DirectoryInformation1 .class, DirectoryParticipantInformation1 .class, DocumentIdentification11 .class, EnglishNameLocalNameAndAddress1 .class, ExternalPaymentSystemDetails1 .class, FinancialIdentificationSchemeName1Choice.class, FinancialInstitutionIdentification8 .class, FinancialInstitutionIdentification9 .class, FinancialInstitutionIdentificationList1 .class, GenericAccountIdentification1 .class, GenericFinancialIdentification1 .class, GenericIdentification1 .class, GenericIdentification47 .class, GenericOrganisationIdentification1 .class, GenericPersonIdentification1 .class, GuaranteeFundInformation1 .class, GuaranteeFunds1 .class, LiquidityPoolMembers1Choice.class, MessageHeader3 .class, MxCbrf00500101 .class, NameAndAddress5 .class, NamePrefix1Code.class, OrganisationIdentification8 .class, OrganisationIdentificationSchemeName1Choice.class, OriginalBusinessQuery1 .class, Pagination.class, ParticipantAccount1 .class, ParticipantInformation1 .class, ParticipantProfile1 .class, ParticipantProfileReportV01 .class, Party11Choice.class, PartyIdentification43 .class, PartyIdentification70Choice.class, PartyIdentification77 .class, PersonIdentification5 .class, PersonIdentificationSchemeName1Choice.class, PostalAddress1 .class, PostalAddress19 .class, PostalAddress6 .class, RequestType1Code.class, RequestType2Choice.class, RequestType2Code.class, RestrictionStatus1Choice.class, RestrictionStatus1Code.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, SystemMigration1 .class, TransferEvent1 .class };
-    public static final transient String NAMESPACE = "urn:cbrf:xsd:cbrf.005.001.01";
+    public final static transient Class[] _classes = new Class[] {AccountIdentification4Choice.class, AccountLimits1 .class, AccountOwnerAndIdentification1 .class, AccountOwnerAndIdentificationList1 .class, AccountRestrictions1 .class, AccountSchemeName1Choice.class, ActiveCurrencyAndAmount.class, AddressType2Code.class, ArrestedFunds1 .class, BranchAndFinancialInstitutionIdentification5 .class, BranchData2 .class, CashAccount24 .class, CashAccount25 .class, CashAccountType2Choice.class, CentralisedAndAuthorisedBranchIdentification1Choice.class, ClearingCircuits1 .class, ClearingScheme1Choice.class, ClearingSystemIdentification2Choice.class, ClearingSystemMemberIdentification2 .class, ContactDetails2 .class, CopyDuplicate1Code.class, DailyFundTransfer1Choice.class, DateAndDateTimeChoice.class, DateAndPlaceOfBirth.class, DateTimePeriodDetails1 .class, DefaultAccountDetails1 .class, DirectoryAccountInformation1 .class, DirectoryEntry1 .class, DirectoryInformation1 .class, DirectoryParticipantInformation1 .class, DocumentIdentification11 .class, EnglishNameLocalNameAndAddress1 .class, ExternalPaymentSystemDetails1 .class, FinancialIdentificationSchemeName1Choice.class, FinancialInstitutionIdentification8 .class, FinancialInstitutionIdentification9 .class, FinancialInstitutionIdentificationList1 .class, GenericAccountIdentification1 .class, GenericFinancialIdentification1 .class, GenericIdentification1 .class, GenericIdentification47 .class, GenericOrganisationIdentification1 .class, GenericPersonIdentification1 .class, GuaranteeFundInformation1 .class, GuaranteeFunds1 .class, LiquidityPoolMembers1Choice.class, MessageHeader3 .class, MxCbrf00500101 .class, NameAndAddress5 .class, NamePrefix1Code.class, OrganisationIdentification8 .class, OrganisationIdentificationSchemeName1Choice.class, OriginalBusinessQuery1 .class, Pagination.class, ParticipantAccount1 .class, ParticipantInformation1 .class, ParticipantProfile1 .class, ParticipantProfileReportV01 .class, Party11Choice.class, PartyIdentification43 .class, PartyIdentification70Choice.class, PartyIdentification77 .class, PersonIdentification5 .class, PersonIdentificationSchemeName1Choice.class, PostalAddress1 .class, PostalAddress19 .class, PostalAddress6 .class, RequestType1Code.class, RequestType2Choice.class, RequestType2Code.class, RestrictionStatus1Choice.class, RestrictionStatus1Code.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, SystemMigration1 .class, TransferEvent1 .class };
+    public final static transient String NAMESPACE = "urn:cbrf:xsd:cbrf.005.001.01";
 
     public MxCbrf00500101() {
         super();
@@ -86,6 +86,21 @@ public class MxCbrf00500101
     public MxCbrf00500101 setPtcptPrflRpt(ParticipantProfileReportV01 value) {
         this.ptcptPrflRpt = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxCbrf00500101
      * @return
      *     a new instance of MxCbrf00500101
      */
-    public static final MxCbrf00500101 fromJson(String json) {
+    public final static MxCbrf00500101 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxCbrf00500101 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

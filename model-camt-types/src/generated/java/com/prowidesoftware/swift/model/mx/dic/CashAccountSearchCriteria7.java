@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -49,8 +49,8 @@ public class CashAccountSearchCriteria7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the acctId property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the acctId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -64,12 +64,10 @@ public class CashAccountSearchCriteria7 {
      * {@link AccountIdentificationSearchCriteria2Choice }
      * 
      * 
-     * @return
-     *     The value of the acctId property.
      */
     public List<AccountIdentificationSearchCriteria2Choice> getAcctId() {
         if (acctId == null) {
-            acctId = new ArrayList<>();
+            acctId = new ArrayList<AccountIdentificationSearchCriteria2Choice>();
         }
         return this.acctId;
     }
@@ -80,8 +78,8 @@ public class CashAccountSearchCriteria7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the tp property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the tp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -95,12 +93,10 @@ public class CashAccountSearchCriteria7 {
      * {@link CashAccountType2Choice }
      * 
      * 
-     * @return
-     *     The value of the tp property.
      */
     public List<CashAccountType2Choice> getTp() {
         if (tp == null) {
-            tp = new ArrayList<>();
+            tp = new ArrayList<CashAccountType2Choice>();
         }
         return this.tp;
     }
@@ -111,8 +107,8 @@ public class CashAccountSearchCriteria7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the ccy property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the ccy property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -126,12 +122,10 @@ public class CashAccountSearchCriteria7 {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the ccy property.
      */
     public List<String> getCcy() {
         if (ccy == null) {
-            ccy = new ArrayList<>();
+            ccy = new ArrayList<String>();
         }
         return this.ccy;
     }
@@ -142,8 +136,8 @@ public class CashAccountSearchCriteria7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the bal property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the bal property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -157,12 +151,10 @@ public class CashAccountSearchCriteria7 {
      * {@link CashBalance12 }
      * 
      * 
-     * @return
-     *     The value of the bal property.
      */
     public List<CashBalance12> getBal() {
         if (bal == null) {
-            bal = new ArrayList<>();
+            bal = new ArrayList<CashBalance12>();
         }
         return this.bal;
     }

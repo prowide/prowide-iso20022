@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -150,8 +150,8 @@ public class ReceiveInformation3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the chrgDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the chrgDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -165,12 +165,10 @@ public class ReceiveInformation3 {
      * {@link Charge20 }
      * 
      * 
-     * @return
-     *     The value of the chrgDtls property.
      */
     public List<Charge20> getChrgDtls() {
         if (chrgDtls == null) {
-            chrgDtls = new ArrayList<>();
+            chrgDtls = new ArrayList<Charge20>();
         }
         return this.chrgDtls;
     }
@@ -181,8 +179,8 @@ public class ReceiveInformation3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the comssnDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the comssnDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -196,12 +194,10 @@ public class ReceiveInformation3 {
      * {@link Commission12 }
      * 
      * 
-     * @return
-     *     The value of the comssnDtls property.
      */
     public List<Commission12> getComssnDtls() {
         if (comssnDtls == null) {
-            comssnDtls = new ArrayList<>();
+            comssnDtls = new ArrayList<Commission12>();
         }
         return this.comssnDtls;
     }
@@ -212,8 +208,8 @@ public class ReceiveInformation3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the taxDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the taxDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -227,12 +223,10 @@ public class ReceiveInformation3 {
      * {@link Tax15 }
      * 
      * 
-     * @return
-     *     The value of the taxDtls property.
      */
     public List<Tax15> getTaxDtls() {
         if (taxDtls == null) {
-            taxDtls = new ArrayList<>();
+            taxDtls = new ArrayList<Tax15>();
         }
         return this.taxDtls;
     }

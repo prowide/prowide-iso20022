@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.OffsetDateTime;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,7 +33,7 @@ public class ClearingPartyAndTime8 {
     @XmlElement(name = "ClrDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime clrDtTm;
+    protected XMLGregorianCalendar clrDtTm;
 
     /**
      * Gets the value of the ccp property.
@@ -68,7 +68,7 @@ public class ClearingPartyAndTime8 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getClrDtTm() {
+    public XMLGregorianCalendar getClrDtTm() {
         return clrDtTm;
     }
 
@@ -80,7 +80,7 @@ public class ClearingPartyAndTime8 {
      *     {@link String }
      *     
      */
-    public ClearingPartyAndTime8 setClrDtTm(OffsetDateTime value) {
+    public ClearingPartyAndTime8 setClrDtTm(XMLGregorianCalendar value) {
         this.clrDtTm = value;
         return this;
     }

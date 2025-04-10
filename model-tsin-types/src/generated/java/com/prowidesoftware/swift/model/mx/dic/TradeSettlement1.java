@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -112,8 +112,8 @@ public class TradeSettlement1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the duePyblAmt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the duePyblAmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -127,12 +127,10 @@ public class TradeSettlement1 {
      * {@link CurrencyAndAmount }
      * 
      * 
-     * @return
-     *     The value of the duePyblAmt property.
      */
     public List<CurrencyAndAmount> getDuePyblAmt() {
         if (duePyblAmt == null) {
-            duePyblAmt = new ArrayList<>();
+            duePyblAmt = new ArrayList<CurrencyAndAmount>();
         }
         return this.duePyblAmt;
     }
@@ -143,8 +141,8 @@ public class TradeSettlement1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the cdtrRef property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the cdtrRef property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -158,12 +156,10 @@ public class TradeSettlement1 {
      * {@link CreditorReferenceInformation2 }
      * 
      * 
-     * @return
-     *     The value of the cdtrRef property.
      */
     public List<CreditorReferenceInformation2> getCdtrRef() {
         if (cdtrRef == null) {
-            cdtrRef = new ArrayList<>();
+            cdtrRef = new ArrayList<CreditorReferenceInformation2>();
         }
         return this.cdtrRef;
     }
@@ -174,8 +170,8 @@ public class TradeSettlement1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the pmtRef property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the pmtRef property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -189,12 +185,10 @@ public class TradeSettlement1 {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the pmtRef property.
      */
     public List<String> getPmtRef() {
         if (pmtRef == null) {
-            pmtRef = new ArrayList<>();
+            pmtRef = new ArrayList<String>();
         }
         return this.pmtRef;
     }
@@ -405,8 +399,8 @@ public class TradeSettlement1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the pmtMeans property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the pmtMeans property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -420,12 +414,10 @@ public class TradeSettlement1 {
      * {@link PaymentMeans1 }
      * 
      * 
-     * @return
-     *     The value of the pmtMeans property.
      */
     public List<PaymentMeans1> getPmtMeans() {
         if (pmtMeans == null) {
-            pmtMeans = new ArrayList<>();
+            pmtMeans = new ArrayList<PaymentMeans1>();
         }
         return this.pmtMeans;
     }
@@ -436,8 +428,8 @@ public class TradeSettlement1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the tax property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the tax property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -451,12 +443,10 @@ public class TradeSettlement1 {
      * {@link SettlementTax1 }
      * 
      * 
-     * @return
-     *     The value of the tax property.
      */
     public List<SettlementTax1> getTax() {
         if (tax == null) {
-            tax = new ArrayList<>();
+            tax = new ArrayList<SettlementTax1>();
         }
         return this.tax;
     }
@@ -492,8 +482,8 @@ public class TradeSettlement1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the allwncChrg property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the allwncChrg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -507,12 +497,10 @@ public class TradeSettlement1 {
      * {@link SettlementAllowanceCharge1 }
      * 
      * 
-     * @return
-     *     The value of the allwncChrg property.
      */
     public List<SettlementAllowanceCharge1> getAllwncChrg() {
         if (allwncChrg == null) {
-            allwncChrg = new ArrayList<>();
+            allwncChrg = new ArrayList<SettlementAllowanceCharge1>();
         }
         return this.allwncChrg;
     }
@@ -523,8 +511,8 @@ public class TradeSettlement1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the subTtlClctdTax property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the subTtlClctdTax property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -538,12 +526,10 @@ public class TradeSettlement1 {
      * {@link SettlementSubTotalCalculatedTax1 }
      * 
      * 
-     * @return
-     *     The value of the subTtlClctdTax property.
      */
     public List<SettlementSubTotalCalculatedTax1> getSubTtlClctdTax() {
         if (subTtlClctdTax == null) {
-            subTtlClctdTax = new ArrayList<>();
+            subTtlClctdTax = new ArrayList<SettlementSubTotalCalculatedTax1>();
         }
         return this.subTtlClctdTax;
     }
@@ -554,8 +540,8 @@ public class TradeSettlement1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the logstcsChrg property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the logstcsChrg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -569,12 +555,10 @@ public class TradeSettlement1 {
      * {@link ChargesDetails2 }
      * 
      * 
-     * @return
-     *     The value of the logstcsChrg property.
      */
     public List<ChargesDetails2> getLogstcsChrg() {
         if (logstcsChrg == null) {
-            logstcsChrg = new ArrayList<>();
+            logstcsChrg = new ArrayList<ChargesDetails2>();
         }
         return this.logstcsChrg;
     }
@@ -585,8 +569,8 @@ public class TradeSettlement1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the pmtTerms property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the pmtTerms property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -600,12 +584,10 @@ public class TradeSettlement1 {
      * {@link PaymentTerms3 }
      * 
      * 
-     * @return
-     *     The value of the pmtTerms property.
      */
     public List<PaymentTerms3> getPmtTerms() {
         if (pmtTerms == null) {
-            pmtTerms = new ArrayList<>();
+            pmtTerms = new ArrayList<PaymentTerms3>();
         }
         return this.pmtTerms;
     }
@@ -641,8 +623,8 @@ public class TradeSettlement1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the adjstmntAmtAndRsn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the adjstmntAmtAndRsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -656,12 +638,10 @@ public class TradeSettlement1 {
      * {@link DocumentAdjustment2 }
      * 
      * 
-     * @return
-     *     The value of the adjstmntAmtAndRsn property.
      */
     public List<DocumentAdjustment2> getAdjstmntAmtAndRsn() {
         if (adjstmntAmtAndRsn == null) {
-            adjstmntAmtAndRsn = new ArrayList<>();
+            adjstmntAmtAndRsn = new ArrayList<DocumentAdjustment2>();
         }
         return this.adjstmntAmtAndRsn;
     }
@@ -747,8 +727,8 @@ public class TradeSettlement1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the finCard property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the finCard property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -762,12 +742,10 @@ public class TradeSettlement1 {
      * {@link FinancialCard1 }
      * 
      * 
-     * @return
-     *     The value of the finCard property.
      */
     public List<FinancialCard1> getFinCard() {
         if (finCard == null) {
-            finCard = new ArrayList<>();
+            finCard = new ArrayList<FinancialCard1>();
         }
         return this.finCard;
     }
@@ -778,8 +756,8 @@ public class TradeSettlement1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the purchsAcctgAcct property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the purchsAcctgAcct property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -793,12 +771,10 @@ public class TradeSettlement1 {
      * {@link AccountingAccount1 }
      * 
      * 
-     * @return
-     *     The value of the purchsAcctgAcct property.
      */
     public List<AccountingAccount1> getPurchsAcctgAcct() {
         if (purchsAcctgAcct == null) {
-            purchsAcctgAcct = new ArrayList<>();
+            purchsAcctgAcct = new ArrayList<AccountingAccount1>();
         }
         return this.purchsAcctgAcct;
     }
@@ -809,8 +785,8 @@ public class TradeSettlement1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the issrFactrgListId property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the issrFactrgListId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -824,12 +800,10 @@ public class TradeSettlement1 {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the issrFactrgListId property.
      */
     public List<String> getIssrFactrgListId() {
         if (issrFactrgListId == null) {
-            issrFactrgListId = new ArrayList<>();
+            issrFactrgListId = new ArrayList<String>();
         }
         return this.issrFactrgListId;
     }
@@ -840,8 +814,8 @@ public class TradeSettlement1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the issrFactrgAgrmtId property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the issrFactrgAgrmtId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -855,12 +829,10 @@ public class TradeSettlement1 {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the issrFactrgAgrmtId property.
      */
     public List<String> getIssrFactrgAgrmtId() {
         if (issrFactrgAgrmtId == null) {
-            issrFactrgAgrmtId = new ArrayList<>();
+            issrFactrgAgrmtId = new ArrayList<String>();
         }
         return this.issrFactrgAgrmtId;
     }

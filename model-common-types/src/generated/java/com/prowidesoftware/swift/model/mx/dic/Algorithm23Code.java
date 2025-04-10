@@ -1,32 +1,33 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlEnumValue;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlEnumValue;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for Algorithm23Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="Algorithm23Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="EA2C"/>
- *     <enumeration value="E3DC"/>
- *     <enumeration value="EA9C"/>
- *     <enumeration value="EA5C"/>
- *     <enumeration value="EA2R"/>
- *     <enumeration value="EA9R"/>
- *     <enumeration value="EA5R"/>
- *     <enumeration value="E3DR"/>
- *     <enumeration value="E36C"/>
- *     <enumeration value="E36R"/>
- *     <enumeration value="SD5C"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="Algorithm23Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="EA2C"/&gt;
+ *     &lt;enumeration value="E3DC"/&gt;
+ *     &lt;enumeration value="EA9C"/&gt;
+ *     &lt;enumeration value="EA5C"/&gt;
+ *     &lt;enumeration value="EA2R"/&gt;
+ *     &lt;enumeration value="EA9R"/&gt;
+ *     &lt;enumeration value="EA5R"/&gt;
+ *     &lt;enumeration value="E3DR"/&gt;
+ *     &lt;enumeration value="E36C"/&gt;
+ *     &lt;enumeration value="E36R"/&gt;
+ *     &lt;enumeration value="SD5C"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "Algorithm23Code")

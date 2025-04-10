@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -61,8 +61,8 @@ public class SettlementMonetarySummation1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the lineTtlAmt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the lineTtlAmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -76,12 +76,10 @@ public class SettlementMonetarySummation1 {
      * {@link CurrencyAndAmount }
      * 
      * 
-     * @return
-     *     The value of the lineTtlAmt property.
      */
     public List<CurrencyAndAmount> getLineTtlAmt() {
         if (lineTtlAmt == null) {
-            lineTtlAmt = new ArrayList<>();
+            lineTtlAmt = new ArrayList<CurrencyAndAmount>();
         }
         return this.lineTtlAmt;
     }
@@ -92,8 +90,8 @@ public class SettlementMonetarySummation1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the allwncTtlAmt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the allwncTtlAmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -107,12 +105,10 @@ public class SettlementMonetarySummation1 {
      * {@link CurrencyAndAmount }
      * 
      * 
-     * @return
-     *     The value of the allwncTtlAmt property.
      */
     public List<CurrencyAndAmount> getAllwncTtlAmt() {
         if (allwncTtlAmt == null) {
-            allwncTtlAmt = new ArrayList<>();
+            allwncTtlAmt = new ArrayList<CurrencyAndAmount>();
         }
         return this.allwncTtlAmt;
     }
@@ -123,8 +119,8 @@ public class SettlementMonetarySummation1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the ttlDscntAmt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the ttlDscntAmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -138,12 +134,10 @@ public class SettlementMonetarySummation1 {
      * {@link CurrencyAndAmount }
      * 
      * 
-     * @return
-     *     The value of the ttlDscntAmt property.
      */
     public List<CurrencyAndAmount> getTtlDscntAmt() {
         if (ttlDscntAmt == null) {
-            ttlDscntAmt = new ArrayList<>();
+            ttlDscntAmt = new ArrayList<CurrencyAndAmount>();
         }
         return this.ttlDscntAmt;
     }
@@ -154,8 +148,8 @@ public class SettlementMonetarySummation1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the chrgTtlAmt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the chrgTtlAmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -169,12 +163,10 @@ public class SettlementMonetarySummation1 {
      * {@link CurrencyAndAmount }
      * 
      * 
-     * @return
-     *     The value of the chrgTtlAmt property.
      */
     public List<CurrencyAndAmount> getChrgTtlAmt() {
         if (chrgTtlAmt == null) {
-            chrgTtlAmt = new ArrayList<>();
+            chrgTtlAmt = new ArrayList<CurrencyAndAmount>();
         }
         return this.chrgTtlAmt;
     }
@@ -185,8 +177,8 @@ public class SettlementMonetarySummation1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the ttlPrepdAmt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the ttlPrepdAmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -200,12 +192,10 @@ public class SettlementMonetarySummation1 {
      * {@link CurrencyAndAmount }
      * 
      * 
-     * @return
-     *     The value of the ttlPrepdAmt property.
      */
     public List<CurrencyAndAmount> getTtlPrepdAmt() {
         if (ttlPrepdAmt == null) {
-            ttlPrepdAmt = new ArrayList<>();
+            ttlPrepdAmt = new ArrayList<CurrencyAndAmount>();
         }
         return this.ttlPrepdAmt;
     }
@@ -216,8 +206,8 @@ public class SettlementMonetarySummation1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the taxTtlAmt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the taxTtlAmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -231,12 +221,10 @@ public class SettlementMonetarySummation1 {
      * {@link CurrencyAndAmount }
      * 
      * 
-     * @return
-     *     The value of the taxTtlAmt property.
      */
     public List<CurrencyAndAmount> getTaxTtlAmt() {
         if (taxTtlAmt == null) {
-            taxTtlAmt = new ArrayList<>();
+            taxTtlAmt = new ArrayList<CurrencyAndAmount>();
         }
         return this.taxTtlAmt;
     }
@@ -247,8 +235,8 @@ public class SettlementMonetarySummation1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the taxBsisAmt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the taxBsisAmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -262,12 +250,10 @@ public class SettlementMonetarySummation1 {
      * {@link CurrencyAndAmount }
      * 
      * 
-     * @return
-     *     The value of the taxBsisAmt property.
      */
     public List<CurrencyAndAmount> getTaxBsisAmt() {
         if (taxBsisAmt == null) {
-            taxBsisAmt = new ArrayList<>();
+            taxBsisAmt = new ArrayList<CurrencyAndAmount>();
         }
         return this.taxBsisAmt;
     }
@@ -278,8 +264,8 @@ public class SettlementMonetarySummation1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the rndgAmt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the rndgAmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -293,12 +279,10 @@ public class SettlementMonetarySummation1 {
      * {@link CurrencyAndAmount }
      * 
      * 
-     * @return
-     *     The value of the rndgAmt property.
      */
     public List<CurrencyAndAmount> getRndgAmt() {
         if (rndgAmt == null) {
-            rndgAmt = new ArrayList<>();
+            rndgAmt = new ArrayList<CurrencyAndAmount>();
         }
         return this.rndgAmt;
     }
@@ -309,8 +293,8 @@ public class SettlementMonetarySummation1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the grdTtlAmt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the grdTtlAmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -324,12 +308,10 @@ public class SettlementMonetarySummation1 {
      * {@link CurrencyAndAmount }
      * 
      * 
-     * @return
-     *     The value of the grdTtlAmt property.
      */
     public List<CurrencyAndAmount> getGrdTtlAmt() {
         if (grdTtlAmt == null) {
-            grdTtlAmt = new ArrayList<>();
+            grdTtlAmt = new ArrayList<CurrencyAndAmount>();
         }
         return this.grdTtlAmt;
     }
@@ -340,8 +322,8 @@ public class SettlementMonetarySummation1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the infAmt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the infAmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -355,12 +337,10 @@ public class SettlementMonetarySummation1 {
      * {@link CurrencyAndAmount }
      * 
      * 
-     * @return
-     *     The value of the infAmt property.
      */
     public List<CurrencyAndAmount> getInfAmt() {
         if (infAmt == null) {
-            infAmt = new ArrayList<>();
+            infAmt = new ArrayList<CurrencyAndAmount>();
         }
         return this.infAmt;
     }

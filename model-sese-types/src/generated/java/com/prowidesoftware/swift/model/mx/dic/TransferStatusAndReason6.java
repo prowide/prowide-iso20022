@@ -2,16 +2,16 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -63,15 +63,15 @@ public class TransferStatusAndReason6 {
     @XmlElement(name = "TradDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate tradDt;
+    protected XMLGregorianCalendar tradDt;
     @XmlElement(name = "SttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate sttlmDt;
+    protected XMLGregorianCalendar sttlmDt;
     @XmlElement(name = "SndOutDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate sndOutDt;
+    protected XMLGregorianCalendar sndOutDt;
     @XmlElement(name = "TtlUnitsNb")
     protected BigDecimal ttlUnitsNb;
     @XmlElement(name = "AvrgPric")
@@ -199,8 +199,8 @@ public class TransferStatusAndReason6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the trfEvtTp property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the trfEvtTp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -214,12 +214,10 @@ public class TransferStatusAndReason6 {
      * {@link TransferStatusType1Choice }
      * 
      * 
-     * @return
-     *     The value of the trfEvtTp property.
      */
     public List<TransferStatusType1Choice> getTrfEvtTp() {
         if (trfEvtTp == null) {
-            trfEvtTp = new ArrayList<>();
+            trfEvtTp = new ArrayList<TransferStatusType1Choice>();
         }
         return this.trfEvtTp;
     }
@@ -257,7 +255,7 @@ public class TransferStatusAndReason6 {
      *     {@link String }
      *     
      */
-    public LocalDate getTradDt() {
+    public XMLGregorianCalendar getTradDt() {
         return tradDt;
     }
 
@@ -269,7 +267,7 @@ public class TransferStatusAndReason6 {
      *     {@link String }
      *     
      */
-    public TransferStatusAndReason6 setTradDt(LocalDate value) {
+    public TransferStatusAndReason6 setTradDt(XMLGregorianCalendar value) {
         this.tradDt = value;
         return this;
     }
@@ -282,7 +280,7 @@ public class TransferStatusAndReason6 {
      *     {@link String }
      *     
      */
-    public LocalDate getSttlmDt() {
+    public XMLGregorianCalendar getSttlmDt() {
         return sttlmDt;
     }
 
@@ -294,7 +292,7 @@ public class TransferStatusAndReason6 {
      *     {@link String }
      *     
      */
-    public TransferStatusAndReason6 setSttlmDt(LocalDate value) {
+    public TransferStatusAndReason6 setSttlmDt(XMLGregorianCalendar value) {
         this.sttlmDt = value;
         return this;
     }
@@ -307,7 +305,7 @@ public class TransferStatusAndReason6 {
      *     {@link String }
      *     
      */
-    public LocalDate getSndOutDt() {
+    public XMLGregorianCalendar getSndOutDt() {
         return sndOutDt;
     }
 
@@ -319,7 +317,7 @@ public class TransferStatusAndReason6 {
      *     {@link String }
      *     
      */
-    public TransferStatusAndReason6 setSndOutDt(LocalDate value) {
+    public TransferStatusAndReason6 setSndOutDt(XMLGregorianCalendar value) {
         this.sndOutDt = value;
         return this;
     }
@@ -380,8 +378,8 @@ public class TransferStatusAndReason6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the unitsDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the unitsDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -395,12 +393,10 @@ public class TransferStatusAndReason6 {
      * {@link Unit11 }
      * 
      * 
-     * @return
-     *     The value of the unitsDtls property.
      */
     public List<Unit11> getUnitsDtls() {
         if (unitsDtls == null) {
-            unitsDtls = new ArrayList<>();
+            unitsDtls = new ArrayList<Unit11>();
         }
         return this.unitsDtls;
     }
@@ -436,8 +432,8 @@ public class TransferStatusAndReason6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the pmtDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the pmtDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -451,12 +447,10 @@ public class TransferStatusAndReason6 {
      * {@link PaymentInstrument15 }
      * 
      * 
-     * @return
-     *     The value of the pmtDtls property.
      */
     public List<PaymentInstrument15> getPmtDtls() {
         if (pmtDtls == null) {
-            pmtDtls = new ArrayList<>();
+            pmtDtls = new ArrayList<PaymentInstrument15>();
         }
         return this.pmtDtls;
     }
@@ -467,8 +461,8 @@ public class TransferStatusAndReason6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the bnftCrstllstnEvt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the bnftCrstllstnEvt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -482,12 +476,10 @@ public class TransferStatusAndReason6 {
      * {@link BenefitCrystallisationEvent1 }
      * 
      * 
-     * @return
-     *     The value of the bnftCrstllstnEvt property.
      */
     public List<BenefitCrystallisationEvent1> getBnftCrstllstnEvt() {
         if (bnftCrstllstnEvt == null) {
-            bnftCrstllstnEvt = new ArrayList<>();
+            bnftCrstllstnEvt = new ArrayList<BenefitCrystallisationEvent1>();
         }
         return this.bnftCrstllstnEvt;
     }
@@ -498,8 +490,8 @@ public class TransferStatusAndReason6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the drwdwnTrch property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the drwdwnTrch property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -513,12 +505,10 @@ public class TransferStatusAndReason6 {
      * {@link Drawdown1 }
      * 
      * 
-     * @return
-     *     The value of the drwdwnTrch property.
      */
     public List<Drawdown1> getDrwdwnTrch() {
         if (drwdwnTrch == null) {
-            drwdwnTrch = new ArrayList<>();
+            drwdwnTrch = new ArrayList<Drawdown1>();
         }
         return this.drwdwnTrch;
     }

@@ -1,29 +1,30 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for PersonIdentificationType2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="PersonIdentificationType2Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="PASS"/>
- *     <enumeration value="CPFA"/>
- *     <enumeration value="SRSA"/>
- *     <enumeration value="NRIN"/>
- *     <enumeration value="DRLC"/>
- *     <enumeration value="SOCS"/>
- *     <enumeration value="AREG"/>
- *     <enumeration value="IDCD"/>
- *     <enumeration value="EMID"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="PersonIdentificationType2Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="PASS"/&gt;
+ *     &lt;enumeration value="CPFA"/&gt;
+ *     &lt;enumeration value="SRSA"/&gt;
+ *     &lt;enumeration value="NRIN"/&gt;
+ *     &lt;enumeration value="DRLC"/&gt;
+ *     &lt;enumeration value="SOCS"/&gt;
+ *     &lt;enumeration value="AREG"/&gt;
+ *     &lt;enumeration value="IDCD"/&gt;
+ *     &lt;enumeration value="EMID"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "PersonIdentificationType2Code")

@@ -18,7 +18,7 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.deprecation.ProwideDeprecated;
 import com.prowidesoftware.deprecation.TargetYear;
 import com.prowidesoftware.swift.model.mx.adapters.TypeAdaptersConfiguration;
-import jakarta.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBContext;
 
 /**
  * Options to customize the behaviour of the MX writer (model into XML serialization) in the {@link AbstractMX}

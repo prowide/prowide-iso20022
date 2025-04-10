@@ -1,14 +1,12 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.YearMonth;
-import com.prowidesoftware.swift.model.mx.adapters.IsoYearMonthAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -34,10 +32,9 @@ public class Token4 {
 
     @XmlElement(name = "PmtTkn")
     protected String pmtTkn;
-    @XmlElement(name = "TknXpryDt", type = String.class)
-    @XmlJavaTypeAdapter(IsoYearMonthAdapter.class)
+    @XmlElement(name = "TknXpryDt")
     @XmlSchemaType(name = "gYearMonth")
-    protected YearMonth tknXpryDt;
+    protected XMLGregorianCalendar tknXpryDt;
     @XmlElement(name = "TknRqstrId")
     protected String tknRqstrId;
     @XmlElement(name = "TknAssrncData")
@@ -77,10 +74,10 @@ public class Token4 {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public YearMonth getTknXpryDt() {
+    public XMLGregorianCalendar getTknXpryDt() {
         return tknXpryDt;
     }
 
@@ -89,10 +86,10 @@ public class Token4 {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public Token4 setTknXpryDt(YearMonth value) {
+    public Token4 setTknXpryDt(XMLGregorianCalendar value) {
         this.tknXpryDt = value;
         return this;
     }

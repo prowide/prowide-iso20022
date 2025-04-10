@@ -1,66 +1,67 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for SecuritiesTransactionType27Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="SecuritiesTransactionType27Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="BSBK"/>
- *     <enumeration value="BYIY"/>
- *     <enumeration value="CNCB"/>
- *     <enumeration value="COLI"/>
- *     <enumeration value="COLO"/>
- *     <enumeration value="CONV"/>
- *     <enumeration value="FCTA"/>
- *     <enumeration value="INSP"/>
- *     <enumeration value="ISSU"/>
- *     <enumeration value="MKDW"/>
- *     <enumeration value="MKUP"/>
- *     <enumeration value="NETT"/>
- *     <enumeration value="NSYN"/>
- *     <enumeration value="OWNE"/>
- *     <enumeration value="OWNI"/>
- *     <enumeration value="PAIR"/>
- *     <enumeration value="PLAC"/>
- *     <enumeration value="PORT"/>
- *     <enumeration value="REAL"/>
- *     <enumeration value="REDI"/>
- *     <enumeration value="REDM"/>
- *     <enumeration value="RELE"/>
- *     <enumeration value="REPU"/>
- *     <enumeration value="RODE"/>
- *     <enumeration value="RVPO"/>
- *     <enumeration value="SBBK"/>
- *     <enumeration value="SBRE"/>
- *     <enumeration value="SECB"/>
- *     <enumeration value="SECL"/>
- *     <enumeration value="SLRE"/>
- *     <enumeration value="SUBS"/>
- *     <enumeration value="SYND"/>
- *     <enumeration value="TBAC"/>
- *     <enumeration value="TRAD"/>
- *     <enumeration value="TRPO"/>
- *     <enumeration value="TRVO"/>
- *     <enumeration value="TURN"/>
- *     <enumeration value="CLAI"/>
- *     <enumeration value="CORP"/>
- *     <enumeration value="AUTO"/>
- *     <enumeration value="SWIF"/>
- *     <enumeration value="SWIT"/>
- *     <enumeration value="ETFT"/>
- *     <enumeration value="REBL"/>
- *     <enumeration value="TRIN"/>
- *     <enumeration value="TOUT"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="SecuritiesTransactionType27Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="BSBK"/&gt;
+ *     &lt;enumeration value="BYIY"/&gt;
+ *     &lt;enumeration value="CNCB"/&gt;
+ *     &lt;enumeration value="COLI"/&gt;
+ *     &lt;enumeration value="COLO"/&gt;
+ *     &lt;enumeration value="CONV"/&gt;
+ *     &lt;enumeration value="FCTA"/&gt;
+ *     &lt;enumeration value="INSP"/&gt;
+ *     &lt;enumeration value="ISSU"/&gt;
+ *     &lt;enumeration value="MKDW"/&gt;
+ *     &lt;enumeration value="MKUP"/&gt;
+ *     &lt;enumeration value="NETT"/&gt;
+ *     &lt;enumeration value="NSYN"/&gt;
+ *     &lt;enumeration value="OWNE"/&gt;
+ *     &lt;enumeration value="OWNI"/&gt;
+ *     &lt;enumeration value="PAIR"/&gt;
+ *     &lt;enumeration value="PLAC"/&gt;
+ *     &lt;enumeration value="PORT"/&gt;
+ *     &lt;enumeration value="REAL"/&gt;
+ *     &lt;enumeration value="REDI"/&gt;
+ *     &lt;enumeration value="REDM"/&gt;
+ *     &lt;enumeration value="RELE"/&gt;
+ *     &lt;enumeration value="REPU"/&gt;
+ *     &lt;enumeration value="RODE"/&gt;
+ *     &lt;enumeration value="RVPO"/&gt;
+ *     &lt;enumeration value="SBBK"/&gt;
+ *     &lt;enumeration value="SBRE"/&gt;
+ *     &lt;enumeration value="SECB"/&gt;
+ *     &lt;enumeration value="SECL"/&gt;
+ *     &lt;enumeration value="SLRE"/&gt;
+ *     &lt;enumeration value="SUBS"/&gt;
+ *     &lt;enumeration value="SYND"/&gt;
+ *     &lt;enumeration value="TBAC"/&gt;
+ *     &lt;enumeration value="TRAD"/&gt;
+ *     &lt;enumeration value="TRPO"/&gt;
+ *     &lt;enumeration value="TRVO"/&gt;
+ *     &lt;enumeration value="TURN"/&gt;
+ *     &lt;enumeration value="CLAI"/&gt;
+ *     &lt;enumeration value="CORP"/&gt;
+ *     &lt;enumeration value="AUTO"/&gt;
+ *     &lt;enumeration value="SWIF"/&gt;
+ *     &lt;enumeration value="SWIT"/&gt;
+ *     &lt;enumeration value="ETFT"/&gt;
+ *     &lt;enumeration value="REBL"/&gt;
+ *     &lt;enumeration value="TRIN"/&gt;
+ *     &lt;enumeration value="TOUT"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "SecuritiesTransactionType27Code")

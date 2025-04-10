@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -108,11 +108,11 @@ public class TransactionContext7 {
     @XmlElement(name = "CaptrDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate captrDt;
+    protected XMLGregorianCalendar captrDt;
     @XmlElement(name = "DtAntcptd", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate dtAntcptd;
+    protected XMLGregorianCalendar dtAntcptd;
     @XmlElement(name = "AddtlData")
     protected List<AdditionalData1> addtlData;
 
@@ -697,8 +697,8 @@ public class TransactionContext7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the xchgRateInf property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the xchgRateInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -712,12 +712,10 @@ public class TransactionContext7 {
      * {@link ExchangeRateInformation2 }
      * 
      * 
-     * @return
-     *     The value of the xchgRateInf property.
      */
     public List<ExchangeRateInformation2> getXchgRateInf() {
         if (xchgRateInf == null) {
-            xchgRateInf = new ArrayList<>();
+            xchgRateInf = new ArrayList<ExchangeRateInformation2>();
         }
         return this.xchgRateInf;
     }
@@ -730,7 +728,7 @@ public class TransactionContext7 {
      *     {@link String }
      *     
      */
-    public LocalDate getCaptrDt() {
+    public XMLGregorianCalendar getCaptrDt() {
         return captrDt;
     }
 
@@ -742,7 +740,7 @@ public class TransactionContext7 {
      *     {@link String }
      *     
      */
-    public TransactionContext7 setCaptrDt(LocalDate value) {
+    public TransactionContext7 setCaptrDt(XMLGregorianCalendar value) {
         this.captrDt = value;
         return this;
     }
@@ -755,7 +753,7 @@ public class TransactionContext7 {
      *     {@link String }
      *     
      */
-    public LocalDate getDtAntcptd() {
+    public XMLGregorianCalendar getDtAntcptd() {
         return dtAntcptd;
     }
 
@@ -767,7 +765,7 @@ public class TransactionContext7 {
      *     {@link String }
      *     
      */
-    public TransactionContext7 setDtAntcptd(LocalDate value) {
+    public TransactionContext7 setDtAntcptd(XMLGregorianCalendar value) {
         this.dtAntcptd = value;
         return this;
     }
@@ -778,8 +776,8 @@ public class TransactionContext7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the addtlData property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the addtlData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -793,12 +791,10 @@ public class TransactionContext7 {
      * {@link AdditionalData1 }
      * 
      * 
-     * @return
-     *     The value of the addtlData property.
      */
     public List<AdditionalData1> getAddtlData() {
         if (addtlData == null) {
-            addtlData = new ArrayList<>();
+            addtlData = new ArrayList<AdditionalData1>();
         }
         return this.addtlData;
     }
