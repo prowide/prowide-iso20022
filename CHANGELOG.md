@@ -2,6 +2,7 @@
 
 #### 9.5.7 - SNAPSHOT
   * Enhanced the MX parser log verbosity when parsing malformed content
+  * Added new logic to MxNode to removing all leaves with empty attributes and empty content
 
 #### 9.5.6 - January 2025
   * Changed the `MxParseUtils` findByTags and findByPath methods to return the element values instead of the XML stream object
