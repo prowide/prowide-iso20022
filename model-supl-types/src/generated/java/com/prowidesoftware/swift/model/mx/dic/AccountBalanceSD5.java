@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -37,7 +37,7 @@ public class AccountBalanceSD5 {
     @XmlElement(name = "AsOfDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar asOfDt;
+    protected LocalDate asOfDt;
     @XmlElement(name = "ContraPtcptNb")
     protected String contraPtcptNb;
 
@@ -99,7 +99,7 @@ public class AccountBalanceSD5 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getAsOfDt() {
+    public LocalDate getAsOfDt() {
         return asOfDt;
     }
 
@@ -111,7 +111,7 @@ public class AccountBalanceSD5 {
      *     {@link String }
      *     
      */
-    public AccountBalanceSD5 setAsOfDt(XMLGregorianCalendar value) {
+    public AccountBalanceSD5 setAsOfDt(LocalDate value) {
         this.asOfDt = value;
         return this;
     }

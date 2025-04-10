@@ -2,17 +2,18 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -49,11 +50,11 @@ public class InvoiceSummary2 {
     @XmlElement(name = "InvcDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar invcDt;
+    protected LocalDate invcDt;
     @XmlElement(name = "InvcCreDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar invcCreDtTm;
+    protected OffsetDateTime invcCreDtTm;
     @XmlElement(name = "SummryCmmdtyId")
     protected String summryCmmdtyId;
     @XmlElement(name = "FrghtAmt")
@@ -149,7 +150,7 @@ public class InvoiceSummary2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getInvcDt() {
+    public LocalDate getInvcDt() {
         return invcDt;
     }
 
@@ -161,7 +162,7 @@ public class InvoiceSummary2 {
      *     {@link String }
      *     
      */
-    public InvoiceSummary2 setInvcDt(XMLGregorianCalendar value) {
+    public InvoiceSummary2 setInvcDt(LocalDate value) {
         this.invcDt = value;
         return this;
     }
@@ -174,7 +175,7 @@ public class InvoiceSummary2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getInvcCreDtTm() {
+    public OffsetDateTime getInvcCreDtTm() {
         return invcCreDtTm;
     }
 
@@ -186,7 +187,7 @@ public class InvoiceSummary2 {
      *     {@link String }
      *     
      */
-    public InvoiceSummary2 setInvcCreDtTm(XMLGregorianCalendar value) {
+    public InvoiceSummary2 setInvcCreDtTm(OffsetDateTime value) {
         this.invcCreDtTm = value;
         return this;
     }
@@ -247,8 +248,8 @@ public class InvoiceSummary2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the taxTtl property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the taxTtl property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -262,10 +263,12 @@ public class InvoiceSummary2 {
      * {@link Tax39 }
      * 
      * 
+     * @return
+     *     The value of the taxTtl property.
      */
     public List<Tax39> getTaxTtl() {
         if (taxTtl == null) {
-            taxTtl = new ArrayList<Tax39>();
+            taxTtl = new ArrayList<>();
         }
         return this.taxTtl;
     }

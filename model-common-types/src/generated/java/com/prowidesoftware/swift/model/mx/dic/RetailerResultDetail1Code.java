@@ -1,37 +1,36 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for RetailerResultDetail1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="RetailerResultDetail1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ABRT"/&gt;
- *     &lt;enumeration value="BUSY"/&gt;
- *     &lt;enumeration value="CANC"/&gt;
- *     &lt;enumeration value="DEVO"/&gt;
- *     &lt;enumeration value="WPIN"/&gt;
- *     &lt;enumeration value="NHOS"/&gt;
- *     &lt;enumeration value="UNVS"/&gt;
- *     &lt;enumeration value="UNVD"/&gt;
- *     &lt;enumeration value="REFU"/&gt;
- *     &lt;enumeration value="PAYR"/&gt;
- *     &lt;enumeration value="TNFD"/&gt;
- *     &lt;enumeration value="NALW"/&gt;
- *     &lt;enumeration value="LOUT"/&gt;
- *     &lt;enumeration value="IVCA"/&gt;
- *     &lt;enumeration value="ICAR"/&gt;
- *     &lt;enumeration value="WIPG"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="RetailerResultDetail1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ABRT"/>
+ *     <enumeration value="BUSY"/>
+ *     <enumeration value="CANC"/>
+ *     <enumeration value="DEVO"/>
+ *     <enumeration value="WPIN"/>
+ *     <enumeration value="NHOS"/>
+ *     <enumeration value="UNVS"/>
+ *     <enumeration value="UNVD"/>
+ *     <enumeration value="REFU"/>
+ *     <enumeration value="PAYR"/>
+ *     <enumeration value="TNFD"/>
+ *     <enumeration value="NALW"/>
+ *     <enumeration value="LOUT"/>
+ *     <enumeration value="IVCA"/>
+ *     <enumeration value="ICAR"/>
+ *     <enumeration value="WIPG"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "RetailerResultDetail1Code")

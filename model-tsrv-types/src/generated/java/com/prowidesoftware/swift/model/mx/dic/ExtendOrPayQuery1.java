@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -42,7 +42,7 @@ public class ExtendOrPayQuery1 {
     @XmlElement(name = "ReqdXpryDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar reqdXpryDt;
+    protected LocalDate reqdXpryDt;
     @XmlElement(name = "BkInstrs")
     protected BankInstructions1 bkInstrs;
     @XmlElement(name = "BkCtct")
@@ -110,7 +110,7 @@ public class ExtendOrPayQuery1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getReqdXpryDt() {
+    public LocalDate getReqdXpryDt() {
         return reqdXpryDt;
     }
 
@@ -122,7 +122,7 @@ public class ExtendOrPayQuery1 {
      *     {@link String }
      *     
      */
-    public ExtendOrPayQuery1 setReqdXpryDt(XMLGregorianCalendar value) {
+    public ExtendOrPayQuery1 setReqdXpryDt(LocalDate value) {
         this.reqdXpryDt = value;
         return this;
     }
@@ -158,8 +158,8 @@ public class ExtendOrPayQuery1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the bkCtct property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the bkCtct property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -173,10 +173,12 @@ public class ExtendOrPayQuery1 {
      * {@link Contacts3 }
      * 
      * 
+     * @return
+     *     The value of the bkCtct property.
      */
     public List<Contacts3> getBkCtct() {
         if (bkCtct == null) {
-            bkCtct = new ArrayList<Contacts3>();
+            bkCtct = new ArrayList<>();
         }
         return this.bkCtct;
     }
@@ -187,8 +189,8 @@ public class ExtendOrPayQuery1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the nclsdFile property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the nclsdFile property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -202,10 +204,12 @@ public class ExtendOrPayQuery1 {
      * {@link Document9 }
      * 
      * 
+     * @return
+     *     The value of the nclsdFile property.
      */
     public List<Document9> getNclsdFile() {
         if (nclsdFile == null) {
-            nclsdFile = new ArrayList<Document9>();
+            nclsdFile = new ArrayList<>();
         }
         return this.nclsdFile;
     }
@@ -216,8 +220,8 @@ public class ExtendOrPayQuery1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -231,10 +235,12 @@ public class ExtendOrPayQuery1 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the addtlInf property.
      */
     public List<String> getAddtlInf() {
         if (addtlInf == null) {
-            addtlInf = new ArrayList<String>();
+            addtlInf = new ArrayList<>();
         }
         return this.addtlInf;
     }

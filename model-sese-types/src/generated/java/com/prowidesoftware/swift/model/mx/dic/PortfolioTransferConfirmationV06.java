@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -236,8 +236,8 @@ public class PortfolioTransferConfirmationV06 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the othrIndvInvstr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the othrIndvInvstr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -251,10 +251,12 @@ public class PortfolioTransferConfirmationV06 {
      * {@link IndividualPerson8 }
      * 
      * 
+     * @return
+     *     The value of the othrIndvInvstr property.
      */
     public List<IndividualPerson8> getOthrIndvInvstr() {
         if (othrIndvInvstr == null) {
-            othrIndvInvstr = new ArrayList<IndividualPerson8>();
+            othrIndvInvstr = new ArrayList<>();
         }
         return this.othrIndvInvstr;
     }
@@ -315,8 +317,8 @@ public class PortfolioTransferConfirmationV06 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the othrCorpInvstr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the othrCorpInvstr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -330,10 +332,12 @@ public class PortfolioTransferConfirmationV06 {
      * {@link Organisation4 }
      * 
      * 
+     * @return
+     *     The value of the othrCorpInvstr property.
      */
     public List<Organisation4> getOthrCorpInvstr() {
         if (othrCorpInvstr == null) {
-            othrCorpInvstr = new ArrayList<Organisation4>();
+            othrCorpInvstr = new ArrayList<>();
         }
         return this.othrCorpInvstr;
     }
@@ -444,8 +448,8 @@ public class PortfolioTransferConfirmationV06 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the pdctTrf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the pdctTrf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -459,10 +463,12 @@ public class PortfolioTransferConfirmationV06 {
      * {@link ISATransfer21 }
      * 
      * 
+     * @return
+     *     The value of the pdctTrf property.
      */
     public List<ISATransfer21> getPdctTrf() {
         if (pdctTrf == null) {
-            pdctTrf = new ArrayList<ISATransfer21>();
+            pdctTrf = new ArrayList<>();
         }
         return this.pdctTrf;
     }
@@ -498,8 +504,8 @@ public class PortfolioTransferConfirmationV06 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the xtnsn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the xtnsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -513,10 +519,12 @@ public class PortfolioTransferConfirmationV06 {
      * {@link Extension1 }
      * 
      * 
+     * @return
+     *     The value of the xtnsn property.
      */
     public List<Extension1> getXtnsn() {
         if (xtnsn == null) {
-            xtnsn = new ArrayList<Extension1>();
+            xtnsn = new ArrayList<>();
         }
         return this.xtnsn;
     }

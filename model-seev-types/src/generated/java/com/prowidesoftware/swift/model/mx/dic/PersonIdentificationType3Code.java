@@ -1,27 +1,26 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for PersonIdentificationType3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="PersonIdentificationType3Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ARNU"/&gt;
- *     &lt;enumeration value="CCPT"/&gt;
- *     &lt;enumeration value="EMID"/&gt;
- *     &lt;enumeration value="DRLC"/&gt;
- *     &lt;enumeration value="FINN"/&gt;
- *     &lt;enumeration value="TXID"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="PersonIdentificationType3Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ARNU"/>
+ *     <enumeration value="CCPT"/>
+ *     <enumeration value="EMID"/>
+ *     <enumeration value="DRLC"/>
+ *     <enumeration value="FINN"/>
+ *     <enumeration value="TXID"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "PersonIdentificationType3Code")

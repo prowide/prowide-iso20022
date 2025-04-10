@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -65,8 +65,8 @@ public class Margin3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the vartnMrgn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the vartnMrgn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -80,10 +80,12 @@ public class Margin3 {
      * {@link VariationMargin3 }
      * 
      * 
+     * @return
+     *     The value of the vartnMrgn property.
      */
     public List<VariationMargin3> getVartnMrgn() {
         if (vartnMrgn == null) {
-            vartnMrgn = new ArrayList<VariationMargin3>();
+            vartnMrgn = new ArrayList<>();
         }
         return this.vartnMrgn;
     }
@@ -94,8 +96,8 @@ public class Margin3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the othrMrgn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the othrMrgn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -109,10 +111,12 @@ public class Margin3 {
      * {@link Margin4 }
      * 
      * 
+     * @return
+     *     The value of the othrMrgn property.
      */
     public List<Margin4> getOthrMrgn() {
         if (othrMrgn == null) {
-            othrMrgn = new ArrayList<Margin4>();
+            othrMrgn = new ArrayList<>();
         }
         return this.othrMrgn;
     }

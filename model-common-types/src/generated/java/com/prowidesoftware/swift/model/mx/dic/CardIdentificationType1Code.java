@@ -1,29 +1,28 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlEnumValue;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for CardIdentificationType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CardIdentificationType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ACCT"/&gt;
- *     &lt;enumeration value="BARC"/&gt;
- *     &lt;enumeration value="ISO2"/&gt;
- *     &lt;enumeration value="PHON"/&gt;
- *     &lt;enumeration value="CPAN"/&gt;
- *     &lt;enumeration value="PRIV"/&gt;
- *     &lt;enumeration value="UUID"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CardIdentificationType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ACCT"/>
+ *     <enumeration value="BARC"/>
+ *     <enumeration value="ISO2"/>
+ *     <enumeration value="PHON"/>
+ *     <enumeration value="CPAN"/>
+ *     <enumeration value="PRIV"/>
+ *     <enumeration value="UUID"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CardIdentificationType1Code")

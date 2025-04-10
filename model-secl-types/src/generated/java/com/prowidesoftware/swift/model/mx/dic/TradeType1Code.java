@@ -1,27 +1,26 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for TradeType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="TradeType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="OOBK"/&gt;
- *     &lt;enumeration value="OFBK"/&gt;
- *     &lt;enumeration value="BKTR"/&gt;
- *     &lt;enumeration value="COTR"/&gt;
- *     &lt;enumeration value="GUTR"/&gt;
- *     &lt;enumeration value="LKTR"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="TradeType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="OOBK"/>
+ *     <enumeration value="OFBK"/>
+ *     <enumeration value="BKTR"/>
+ *     <enumeration value="COTR"/>
+ *     <enumeration value="GUTR"/>
+ *     <enumeration value="LKTR"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "TradeType1Code")

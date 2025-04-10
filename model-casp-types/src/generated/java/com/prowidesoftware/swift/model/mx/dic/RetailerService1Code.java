@@ -1,75 +1,74 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for RetailerService1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="RetailerService1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="DCAQ"/&gt;
- *     &lt;enumeration value="ADAQ"/&gt;
- *     &lt;enumeration value="ADAP"/&gt;
- *     &lt;enumeration value="RPAP"/&gt;
- *     &lt;enumeration value="RPAQ"/&gt;
- *     &lt;enumeration value="RPTQ"/&gt;
- *     &lt;enumeration value="RPTP"/&gt;
- *     &lt;enumeration value="SMDQ"/&gt;
- *     &lt;enumeration value="SMDP"/&gt;
- *     &lt;enumeration value="SMIQ"/&gt;
- *     &lt;enumeration value="SMIP"/&gt;
- *     &lt;enumeration value="SMOQ"/&gt;
- *     &lt;enumeration value="SMOP"/&gt;
- *     &lt;enumeration value="DDYQ"/&gt;
- *     &lt;enumeration value="DDYP"/&gt;
- *     &lt;enumeration value="DCIQ"/&gt;
- *     &lt;enumeration value="DCIP"/&gt;
- *     &lt;enumeration value="DINO"/&gt;
- *     &lt;enumeration value="DINQ"/&gt;
- *     &lt;enumeration value="DINP"/&gt;
- *     &lt;enumeration value="DSOQ"/&gt;
- *     &lt;enumeration value="DSOP"/&gt;
- *     &lt;enumeration value="DCPQ"/&gt;
- *     &lt;enumeration value="DCPP"/&gt;
- *     &lt;enumeration value="DPRQ"/&gt;
- *     &lt;enumeration value="DPRP"/&gt;
- *     &lt;enumeration value="DSIQ"/&gt;
- *     &lt;enumeration value="DSIP"/&gt;
- *     &lt;enumeration value="DCAP"/&gt;
- *     &lt;enumeration value="DCOQ"/&gt;
- *     &lt;enumeration value="DCOP"/&gt;
- *     &lt;enumeration value="FSIQ"/&gt;
- *     &lt;enumeration value="FSIP"/&gt;
- *     &lt;enumeration value="FSBQ"/&gt;
- *     &lt;enumeration value="FSBP"/&gt;
- *     &lt;enumeration value="FSAQ"/&gt;
- *     &lt;enumeration value="FSAP"/&gt;
- *     &lt;enumeration value="FSEQ"/&gt;
- *     &lt;enumeration value="FSEP"/&gt;
- *     &lt;enumeration value="FSLQ"/&gt;
- *     &lt;enumeration value="FSLP"/&gt;
- *     &lt;enumeration value="FSPQ"/&gt;
- *     &lt;enumeration value="FSPP"/&gt;
- *     &lt;enumeration value="FSCQ"/&gt;
- *     &lt;enumeration value="FSCP"/&gt;
- *     &lt;enumeration value="FSRQ"/&gt;
- *     &lt;enumeration value="FSRP"/&gt;
- *     &lt;enumeration value="FSVQ"/&gt;
- *     &lt;enumeration value="FSVP"/&gt;
- *     &lt;enumeration value="SSAB"/&gt;
- *     &lt;enumeration value="SSEN"/&gt;
- *     &lt;enumeration value="SSRR"/&gt;
- *     &lt;enumeration value="SSSQ"/&gt;
- *     &lt;enumeration value="SSSP"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="RetailerService1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="DCAQ"/>
+ *     <enumeration value="ADAQ"/>
+ *     <enumeration value="ADAP"/>
+ *     <enumeration value="RPAP"/>
+ *     <enumeration value="RPAQ"/>
+ *     <enumeration value="RPTQ"/>
+ *     <enumeration value="RPTP"/>
+ *     <enumeration value="SMDQ"/>
+ *     <enumeration value="SMDP"/>
+ *     <enumeration value="SMIQ"/>
+ *     <enumeration value="SMIP"/>
+ *     <enumeration value="SMOQ"/>
+ *     <enumeration value="SMOP"/>
+ *     <enumeration value="DDYQ"/>
+ *     <enumeration value="DDYP"/>
+ *     <enumeration value="DCIQ"/>
+ *     <enumeration value="DCIP"/>
+ *     <enumeration value="DINO"/>
+ *     <enumeration value="DINQ"/>
+ *     <enumeration value="DINP"/>
+ *     <enumeration value="DSOQ"/>
+ *     <enumeration value="DSOP"/>
+ *     <enumeration value="DCPQ"/>
+ *     <enumeration value="DCPP"/>
+ *     <enumeration value="DPRQ"/>
+ *     <enumeration value="DPRP"/>
+ *     <enumeration value="DSIQ"/>
+ *     <enumeration value="DSIP"/>
+ *     <enumeration value="DCAP"/>
+ *     <enumeration value="DCOQ"/>
+ *     <enumeration value="DCOP"/>
+ *     <enumeration value="FSIQ"/>
+ *     <enumeration value="FSIP"/>
+ *     <enumeration value="FSBQ"/>
+ *     <enumeration value="FSBP"/>
+ *     <enumeration value="FSAQ"/>
+ *     <enumeration value="FSAP"/>
+ *     <enumeration value="FSEQ"/>
+ *     <enumeration value="FSEP"/>
+ *     <enumeration value="FSLQ"/>
+ *     <enumeration value="FSLP"/>
+ *     <enumeration value="FSPQ"/>
+ *     <enumeration value="FSPP"/>
+ *     <enumeration value="FSCQ"/>
+ *     <enumeration value="FSCP"/>
+ *     <enumeration value="FSRQ"/>
+ *     <enumeration value="FSRP"/>
+ *     <enumeration value="FSVQ"/>
+ *     <enumeration value="FSVP"/>
+ *     <enumeration value="SSAB"/>
+ *     <enumeration value="SSEN"/>
+ *     <enumeration value="SSRR"/>
+ *     <enumeration value="SSSQ"/>
+ *     <enumeration value="SSSP"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "RetailerService1Code")

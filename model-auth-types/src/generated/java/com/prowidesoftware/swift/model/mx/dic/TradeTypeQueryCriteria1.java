@@ -3,11 +3,11 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -69,8 +69,8 @@ public class TradeTypeQueryCriteria1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sctiesFincgTxTp property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sctiesFincgTxTp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -84,10 +84,12 @@ public class TradeTypeQueryCriteria1 {
      * {@link ExposureType6Code }
      * 
      * 
+     * @return
+     *     The value of the sctiesFincgTxTp property.
      */
     public List<ExposureType6Code> getSctiesFincgTxTp() {
         if (sctiesFincgTxTp == null) {
-            sctiesFincgTxTp = new ArrayList<ExposureType6Code>();
+            sctiesFincgTxTp = new ArrayList<>();
         }
         return this.sctiesFincgTxTp;
     }
@@ -98,8 +100,8 @@ public class TradeTypeQueryCriteria1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the collCmpntTp property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the collCmpntTp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -113,10 +115,12 @@ public class TradeTypeQueryCriteria1 {
      * {@link CollateralType6Code }
      * 
      * 
+     * @return
+     *     The value of the collCmpntTp property.
      */
     public List<CollateralType6Code> getCollCmpntTp() {
         if (collCmpntTp == null) {
-            collCmpntTp = new ArrayList<CollateralType6Code>();
+            collCmpntTp = new ArrayList<>();
         }
         return this.collCmpntTp;
     }

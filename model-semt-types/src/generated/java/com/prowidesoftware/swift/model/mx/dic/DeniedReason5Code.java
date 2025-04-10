@@ -1,34 +1,33 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for DeniedReason5Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="DeniedReason5Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ADEA"/&gt;
- *     &lt;enumeration value="DCAL"/&gt;
- *     &lt;enumeration value="DCAN"/&gt;
- *     &lt;enumeration value="DFOR"/&gt;
- *     &lt;enumeration value="DPRG"/&gt;
- *     &lt;enumeration value="DREP"/&gt;
- *     &lt;enumeration value="DSET"/&gt;
- *     &lt;enumeration value="IPNC"/&gt;
- *     &lt;enumeration value="LATE"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="CDCY"/&gt;
- *     &lt;enumeration value="CDRE"/&gt;
- *     &lt;enumeration value="CDRG"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="DeniedReason5Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ADEA"/>
+ *     <enumeration value="DCAL"/>
+ *     <enumeration value="DCAN"/>
+ *     <enumeration value="DFOR"/>
+ *     <enumeration value="DPRG"/>
+ *     <enumeration value="DREP"/>
+ *     <enumeration value="DSET"/>
+ *     <enumeration value="IPNC"/>
+ *     <enumeration value="LATE"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="CDCY"/>
+ *     <enumeration value="CDRE"/>
+ *     <enumeration value="CDRG"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "DeniedReason5Code")

@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -65,8 +65,8 @@ public class SwitchOrder5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the redLeg property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the redLeg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -80,10 +80,12 @@ public class SwitchOrder5 {
      * {@link SwitchRedemptionLegOrder4 }
      * 
      * 
+     * @return
+     *     The value of the redLeg property.
      */
     public List<SwitchRedemptionLegOrder4> getRedLeg() {
         if (redLeg == null) {
-            redLeg = new ArrayList<SwitchRedemptionLegOrder4>();
+            redLeg = new ArrayList<>();
         }
         return this.redLeg;
     }
@@ -94,8 +96,8 @@ public class SwitchOrder5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sbcptLeg property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sbcptLeg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -109,10 +111,12 @@ public class SwitchOrder5 {
      * {@link SwitchSubscriptionLegOrder4 }
      * 
      * 
+     * @return
+     *     The value of the sbcptLeg property.
      */
     public List<SwitchSubscriptionLegOrder4> getSbcptLeg() {
         if (sbcptLeg == null) {
-            sbcptLeg = new ArrayList<SwitchSubscriptionLegOrder4>();
+            sbcptLeg = new ArrayList<>();
         }
         return this.sbcptLeg;
     }

@@ -3,11 +3,11 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -98,8 +98,8 @@ public class FraudDispositionStatus2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the errData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the errData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -113,10 +113,12 @@ public class FraudDispositionStatus2 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the errData property.
      */
     public List<String> getErrData() {
         if (errData == null) {
-            errData = new ArrayList<String>();
+            errData = new ArrayList<>();
         }
         return this.errData;
     }
@@ -127,8 +129,8 @@ public class FraudDispositionStatus2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the wrngData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the wrngData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -142,10 +144,12 @@ public class FraudDispositionStatus2 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the wrngData property.
      */
     public List<String> getWrngData() {
         if (wrngData == null) {
-            wrngData = new ArrayList<String>();
+            wrngData = new ArrayList<>();
         }
         return this.wrngData;
     }
@@ -156,8 +160,8 @@ public class FraudDispositionStatus2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -171,10 +175,12 @@ public class FraudDispositionStatus2 {
      * {@link AdditionalInformation30 }
      * 
      * 
+     * @return
+     *     The value of the addtlInf property.
      */
     public List<AdditionalInformation30> getAddtlInf() {
         if (addtlInf == null) {
-            addtlInf = new ArrayList<AdditionalInformation30>();
+            addtlInf = new ArrayList<>();
         }
         return this.addtlInf;
     }

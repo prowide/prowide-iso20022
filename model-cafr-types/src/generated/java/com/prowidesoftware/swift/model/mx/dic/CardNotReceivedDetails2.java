@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -38,7 +38,7 @@ public class CardNotReceivedDetails2 {
     @XmlElement(name = "DtOfCardMld", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar dtOfCardMld;
+    protected LocalDate dtOfCardMld;
     @XmlElement(name = "MlngAdr")
     protected Address2 mlngAdr;
     @XmlElement(name = "MlngAdrUstrd")
@@ -48,7 +48,7 @@ public class CardNotReceivedDetails2 {
     @XmlElement(name = "VldFr", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar vldFr;
+    protected LocalDate vldFr;
     @XmlElement(name = "CardSctyCdInd")
     protected Boolean cardSctyCdInd;
     @XmlElement(name = "CardSctyCpblty")
@@ -62,7 +62,7 @@ public class CardNotReceivedDetails2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDtOfCardMld() {
+    public LocalDate getDtOfCardMld() {
         return dtOfCardMld;
     }
 
@@ -74,7 +74,7 @@ public class CardNotReceivedDetails2 {
      *     {@link String }
      *     
      */
-    public CardNotReceivedDetails2 setDtOfCardMld(XMLGregorianCalendar value) {
+    public CardNotReceivedDetails2 setDtOfCardMld(LocalDate value) {
         this.dtOfCardMld = value;
         return this;
     }
@@ -162,7 +162,7 @@ public class CardNotReceivedDetails2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getVldFr() {
+    public LocalDate getVldFr() {
         return vldFr;
     }
 
@@ -174,7 +174,7 @@ public class CardNotReceivedDetails2 {
      *     {@link String }
      *     
      */
-    public CardNotReceivedDetails2 setVldFr(XMLGregorianCalendar value) {
+    public CardNotReceivedDetails2 setVldFr(LocalDate value) {
         this.vldFr = value;
         return this;
     }
@@ -210,8 +210,8 @@ public class CardNotReceivedDetails2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cardSctyCpblty property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cardSctyCpblty property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -225,10 +225,12 @@ public class CardNotReceivedDetails2 {
      * {@link CardSecurityCapability1 }
      * 
      * 
+     * @return
+     *     The value of the cardSctyCpblty property.
      */
     public List<CardSecurityCapability1> getCardSctyCpblty() {
         if (cardSctyCpblty == null) {
-            cardSctyCpblty = new ArrayList<CardSecurityCapability1>();
+            cardSctyCpblty = new ArrayList<>();
         }
         return this.cardSctyCpblty;
     }

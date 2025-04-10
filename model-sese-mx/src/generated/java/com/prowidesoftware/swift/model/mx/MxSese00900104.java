@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxSese00900104
 
     @XmlElement(name = "ReqForTrfStsRpt", required = true)
     protected RequestForTransferStatusReportV04 reqForTrfStsRpt;
-    public final static transient String BUSINESS_PROCESS = "sese";
-    public final static transient int FUNCTIONALITY = 9;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 4;
+    public static final transient String BUSINESS_PROCESS = "sese";
+    public static final transient int FUNCTIONALITY = 9;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 4;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {Account14 .class, AccountIdentification1 .class, AdditionalReference3 .class, AddressType2Code.class, BeneficiaryCertificationCompletion1Code.class, Extension1 .class, FormOfSecurity1Code.class, GenericIdentification1 .class, GenericIdentification47 .class, IncomePreference1Code.class, Intermediary25 .class, InvestmentAccount40 .class, InvestmentFundRole2Code.class, MarketPracticeVersion1 .class, MessageAndBusinessReference7 .class, MessageIdentification1 .class, MxSese00900104 .class, NameAndAddress5 .class, PartyIdentification2Choice.class, PostalAddress1 .class, References39Choice.class, RequestForTransferStatusReportV04 .class, Role4Choice.class, SimpleIdentificationInformation.class, SubAccount1 .class };
-    public final static transient String NAMESPACE = "urn:swift:xsd:sese.009.001.04";
+    public static final transient Class[] _classes = new Class[] {Account14 .class, AccountIdentification1 .class, AdditionalReference3 .class, AddressType2Code.class, BeneficiaryCertificationCompletion1Code.class, Extension1 .class, FormOfSecurity1Code.class, GenericIdentification1 .class, GenericIdentification47 .class, IncomePreference1Code.class, Intermediary25 .class, InvestmentAccount40 .class, InvestmentFundRole2Code.class, MarketPracticeVersion1 .class, MessageAndBusinessReference7 .class, MessageIdentification1 .class, MxSese00900104 .class, NameAndAddress5 .class, PartyIdentification2Choice.class, PostalAddress1 .class, References39Choice.class, RequestForTransferStatusReportV04 .class, Role4Choice.class, SimpleIdentificationInformation.class, SubAccount1 .class };
+    public static final transient String NAMESPACE = "urn:swift:xsd:sese.009.001.04";
 
     public MxSese00900104() {
         super();
@@ -86,21 +86,6 @@ public class MxSese00900104
     public MxSese00900104 setReqForTrfStsRpt(RequestForTransferStatusReportV04 value) {
         this.reqForTrfStsRpt = value;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -173,8 +158,23 @@ public class MxSese00900104
      * @return
      *     a new instance of MxSese00900104
      */
-    public final static MxSese00900104 fromJson(String json) {
+    public static final MxSese00900104 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSese00900104 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -34,21 +34,21 @@ public class DateTimeSearch2Choice {
     @XmlElement(name = "FrDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar frDtTm;
+    protected OffsetDateTime frDtTm;
     @XmlElement(name = "ToDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar toDtTm;
+    protected OffsetDateTime toDtTm;
     @XmlElement(name = "FrToDtTm")
     protected DateTimePeriod1 frToDtTm;
     @XmlElement(name = "EQDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar eqDtTm;
+    protected OffsetDateTime eqDtTm;
     @XmlElement(name = "NEQDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar neqDtTm;
+    protected OffsetDateTime neqDtTm;
 
     /**
      * Gets the value of the frDtTm property.
@@ -58,7 +58,7 @@ public class DateTimeSearch2Choice {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getFrDtTm() {
+    public OffsetDateTime getFrDtTm() {
         return frDtTm;
     }
 
@@ -70,7 +70,7 @@ public class DateTimeSearch2Choice {
      *     {@link String }
      *     
      */
-    public DateTimeSearch2Choice setFrDtTm(XMLGregorianCalendar value) {
+    public DateTimeSearch2Choice setFrDtTm(OffsetDateTime value) {
         this.frDtTm = value;
         return this;
     }
@@ -83,7 +83,7 @@ public class DateTimeSearch2Choice {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getToDtTm() {
+    public OffsetDateTime getToDtTm() {
         return toDtTm;
     }
 
@@ -95,7 +95,7 @@ public class DateTimeSearch2Choice {
      *     {@link String }
      *     
      */
-    public DateTimeSearch2Choice setToDtTm(XMLGregorianCalendar value) {
+    public DateTimeSearch2Choice setToDtTm(OffsetDateTime value) {
         this.toDtTm = value;
         return this;
     }
@@ -133,7 +133,7 @@ public class DateTimeSearch2Choice {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getEQDtTm() {
+    public OffsetDateTime getEQDtTm() {
         return eqDtTm;
     }
 
@@ -145,7 +145,7 @@ public class DateTimeSearch2Choice {
      *     {@link String }
      *     
      */
-    public DateTimeSearch2Choice setEQDtTm(XMLGregorianCalendar value) {
+    public DateTimeSearch2Choice setEQDtTm(OffsetDateTime value) {
         this.eqDtTm = value;
         return this;
     }
@@ -158,7 +158,7 @@ public class DateTimeSearch2Choice {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getNEQDtTm() {
+    public OffsetDateTime getNEQDtTm() {
         return neqDtTm;
     }
 
@@ -170,7 +170,7 @@ public class DateTimeSearch2Choice {
      *     {@link String }
      *     
      */
-    public DateTimeSearch2Choice setNEQDtTm(XMLGregorianCalendar value) {
+    public DateTimeSearch2Choice setNEQDtTm(OffsetDateTime value) {
         this.neqDtTm = value;
         return this;
     }

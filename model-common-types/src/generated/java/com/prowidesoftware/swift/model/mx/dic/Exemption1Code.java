@@ -1,29 +1,28 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for Exemption1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="Exemption1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="LOWA"/&gt;
- *     &lt;enumeration value="MINT"/&gt;
- *     &lt;enumeration value="RECP"/&gt;
- *     &lt;enumeration value="SCPE"/&gt;
- *     &lt;enumeration value="SCAD"/&gt;
- *     &lt;enumeration value="TRAE"/&gt;
- *     &lt;enumeration value="PKGE"/&gt;
- *     &lt;enumeration value="TMBE"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="Exemption1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="LOWA"/>
+ *     <enumeration value="MINT"/>
+ *     <enumeration value="RECP"/>
+ *     <enumeration value="SCPE"/>
+ *     <enumeration value="SCAD"/>
+ *     <enumeration value="TRAE"/>
+ *     <enumeration value="PKGE"/>
+ *     <enumeration value="TMBE"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "Exemption1Code")

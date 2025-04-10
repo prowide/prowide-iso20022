@@ -1,34 +1,33 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for SettlementTransactionCondition3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="SettlementTransactionCondition3Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ASGN"/&gt;
- *     &lt;enumeration value="CLEN"/&gt;
- *     &lt;enumeration value="DIRT"/&gt;
- *     &lt;enumeration value="DLWM"/&gt;
- *     &lt;enumeration value="DRAW"/&gt;
- *     &lt;enumeration value="EXER"/&gt;
- *     &lt;enumeration value="FRCL"/&gt;
- *     &lt;enumeration value="KNOC"/&gt;
- *     &lt;enumeration value="PHYS"/&gt;
- *     &lt;enumeration value="RESI"/&gt;
- *     &lt;enumeration value="SPDL"/&gt;
- *     &lt;enumeration value="SPST"/&gt;
- *     &lt;enumeration value="UNEX"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="SettlementTransactionCondition3Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ASGN"/>
+ *     <enumeration value="CLEN"/>
+ *     <enumeration value="DIRT"/>
+ *     <enumeration value="DLWM"/>
+ *     <enumeration value="DRAW"/>
+ *     <enumeration value="EXER"/>
+ *     <enumeration value="FRCL"/>
+ *     <enumeration value="KNOC"/>
+ *     <enumeration value="PHYS"/>
+ *     <enumeration value="RESI"/>
+ *     <enumeration value="SPDL"/>
+ *     <enumeration value="SPST"/>
+ *     <enumeration value="UNEX"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "SettlementTransactionCondition3Code")

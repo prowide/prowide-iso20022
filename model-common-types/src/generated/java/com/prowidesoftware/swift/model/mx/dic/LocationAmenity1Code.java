@@ -1,39 +1,38 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for LocationAmenity1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="LocationAmenity1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="AADA"/&gt;
- *     &lt;enumeration value="AFLA"/&gt;
- *     &lt;enumeration value="AVLA"/&gt;
- *     &lt;enumeration value="CRWA"/&gt;
- *     &lt;enumeration value="CVSA"/&gt;
- *     &lt;enumeration value="DISA"/&gt;
- *     &lt;enumeration value="EWAA"/&gt;
- *     &lt;enumeration value="MRLA"/&gt;
- *     &lt;enumeration value="OTHN"/&gt;
- *     &lt;enumeration value="OTHP"/&gt;
- *     &lt;enumeration value="PAPA"/&gt;
- *     &lt;enumeration value="TSHA"/&gt;
- *     &lt;enumeration value="TSRA"/&gt;
- *     &lt;enumeration value="TSSA"/&gt;
- *     &lt;enumeration value="TFHA"/&gt;
- *     &lt;enumeration value="VSWA"/&gt;
- *     &lt;enumeration value="VHPA"/&gt;
- *     &lt;enumeration value="VMRA"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="LocationAmenity1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="AADA"/>
+ *     <enumeration value="AFLA"/>
+ *     <enumeration value="AVLA"/>
+ *     <enumeration value="CRWA"/>
+ *     <enumeration value="CVSA"/>
+ *     <enumeration value="DISA"/>
+ *     <enumeration value="EWAA"/>
+ *     <enumeration value="MRLA"/>
+ *     <enumeration value="OTHN"/>
+ *     <enumeration value="OTHP"/>
+ *     <enumeration value="PAPA"/>
+ *     <enumeration value="TSHA"/>
+ *     <enumeration value="TSRA"/>
+ *     <enumeration value="TSSA"/>
+ *     <enumeration value="TFHA"/>
+ *     <enumeration value="VSWA"/>
+ *     <enumeration value="VHPA"/>
+ *     <enumeration value="VMRA"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "LocationAmenity1Code")

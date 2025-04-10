@@ -2,16 +2,16 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.OffsetTime;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -62,7 +62,7 @@ public class List1 {
     @XmlElement(name = "PrgrsPrdIntrvl", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected XMLGregorianCalendar prgrsPrdIntrvl;
+    protected OffsetTime prgrsPrdIntrvl;
     @XmlElement(name = "RealTmExctnRptInd")
     protected Boolean realTmExctnRptInd;
     @XmlElement(name = "BidTp")
@@ -236,7 +236,7 @@ public class List1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getPrgrsPrdIntrvl() {
+    public OffsetTime getPrgrsPrdIntrvl() {
         return prgrsPrdIntrvl;
     }
 
@@ -248,7 +248,7 @@ public class List1 {
      *     {@link String }
      *     
      */
-    public List1 setPrgrsPrdIntrvl(XMLGregorianCalendar value) {
+    public List1 setPrgrsPrdIntrvl(OffsetTime value) {
         this.prgrsPrdIntrvl = value;
         return this;
     }
@@ -384,8 +384,8 @@ public class List1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ordrDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ordrDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -399,10 +399,12 @@ public class List1 {
      * {@link Order6 }
      * 
      * 
+     * @return
+     *     The value of the ordrDtls property.
      */
     public List<Order6> getOrdrDtls() {
         if (ordrDtls == null) {
-            ordrDtls = new ArrayList<Order6>();
+            ordrDtls = new ArrayList<>();
         }
         return this.ordrDtls;
     }

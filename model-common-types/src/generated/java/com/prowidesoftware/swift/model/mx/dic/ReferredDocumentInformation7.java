@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -39,7 +39,7 @@ public class ReferredDocumentInformation7 {
     @XmlElement(name = "RltdDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar rltdDt;
+    protected LocalDate rltdDt;
     @XmlElement(name = "LineDtls")
     protected List<DocumentLineInformation1> lineDtls;
 
@@ -101,7 +101,7 @@ public class ReferredDocumentInformation7 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getRltdDt() {
+    public LocalDate getRltdDt() {
         return rltdDt;
     }
 
@@ -113,7 +113,7 @@ public class ReferredDocumentInformation7 {
      *     {@link String }
      *     
      */
-    public ReferredDocumentInformation7 setRltdDt(XMLGregorianCalendar value) {
+    public ReferredDocumentInformation7 setRltdDt(LocalDate value) {
         this.rltdDt = value;
         return this;
     }
@@ -124,8 +124,8 @@ public class ReferredDocumentInformation7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the lineDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the lineDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -139,10 +139,12 @@ public class ReferredDocumentInformation7 {
      * {@link DocumentLineInformation1 }
      * 
      * 
+     * @return
+     *     The value of the lineDtls property.
      */
     public List<DocumentLineInformation1> getLineDtls() {
         if (lineDtls == null) {
-            lineDtls = new ArrayList<DocumentLineInformation1>();
+            lineDtls = new ArrayList<>();
         }
         return this.lineDtls;
     }

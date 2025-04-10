@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -34,21 +34,21 @@ public class DatePeriodSearch1Choice {
     @XmlElement(name = "FrDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar frDt;
+    protected LocalDate frDt;
     @XmlElement(name = "ToDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar toDt;
+    protected LocalDate toDt;
     @XmlElement(name = "FrToDt")
     protected DatePeriod2 frToDt;
     @XmlElement(name = "EQDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar eqDt;
+    protected LocalDate eqDt;
     @XmlElement(name = "NEQDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar neqDt;
+    protected LocalDate neqDt;
 
     /**
      * Gets the value of the frDt property.
@@ -58,7 +58,7 @@ public class DatePeriodSearch1Choice {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getFrDt() {
+    public LocalDate getFrDt() {
         return frDt;
     }
 
@@ -70,7 +70,7 @@ public class DatePeriodSearch1Choice {
      *     {@link String }
      *     
      */
-    public DatePeriodSearch1Choice setFrDt(XMLGregorianCalendar value) {
+    public DatePeriodSearch1Choice setFrDt(LocalDate value) {
         this.frDt = value;
         return this;
     }
@@ -83,7 +83,7 @@ public class DatePeriodSearch1Choice {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getToDt() {
+    public LocalDate getToDt() {
         return toDt;
     }
 
@@ -95,7 +95,7 @@ public class DatePeriodSearch1Choice {
      *     {@link String }
      *     
      */
-    public DatePeriodSearch1Choice setToDt(XMLGregorianCalendar value) {
+    public DatePeriodSearch1Choice setToDt(LocalDate value) {
         this.toDt = value;
         return this;
     }
@@ -133,7 +133,7 @@ public class DatePeriodSearch1Choice {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getEQDt() {
+    public LocalDate getEQDt() {
         return eqDt;
     }
 
@@ -145,7 +145,7 @@ public class DatePeriodSearch1Choice {
      *     {@link String }
      *     
      */
-    public DatePeriodSearch1Choice setEQDt(XMLGregorianCalendar value) {
+    public DatePeriodSearch1Choice setEQDt(LocalDate value) {
         this.eqDt = value;
         return this;
     }
@@ -158,7 +158,7 @@ public class DatePeriodSearch1Choice {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getNEQDt() {
+    public LocalDate getNEQDt() {
         return neqDt;
     }
 
@@ -170,7 +170,7 @@ public class DatePeriodSearch1Choice {
      *     {@link String }
      *     
      */
-    public DatePeriodSearch1Choice setNEQDt(XMLGregorianCalendar value) {
+    public DatePeriodSearch1Choice setNEQDt(LocalDate value) {
         this.neqDt = value;
         return this;
     }

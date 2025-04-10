@@ -2,17 +2,18 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -48,11 +49,11 @@ public class Issuance6 {
     @XmlElement(name = "IsseDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar isseDt;
+    protected LocalDate isseDt;
     @XmlElement(name = "AnncmntDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar anncmntDt;
+    protected OffsetDateTime anncmntDt;
     @XmlElement(name = "IssrOrg")
     protected Organisation38 issrOrg;
     @XmlElement(name = "IsseNmnlAmt")
@@ -126,7 +127,7 @@ public class Issuance6 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getIsseDt() {
+    public LocalDate getIsseDt() {
         return isseDt;
     }
 
@@ -138,7 +139,7 @@ public class Issuance6 {
      *     {@link String }
      *     
      */
-    public Issuance6 setIsseDt(XMLGregorianCalendar value) {
+    public Issuance6 setIsseDt(LocalDate value) {
         this.isseDt = value;
         return this;
     }
@@ -151,7 +152,7 @@ public class Issuance6 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getAnncmntDt() {
+    public OffsetDateTime getAnncmntDt() {
         return anncmntDt;
     }
 
@@ -163,7 +164,7 @@ public class Issuance6 {
      *     {@link String }
      *     
      */
-    public Issuance6 setAnncmntDt(XMLGregorianCalendar value) {
+    public Issuance6 setAnncmntDt(OffsetDateTime value) {
         this.anncmntDt = value;
         return this;
     }
@@ -324,8 +325,8 @@ public class Issuance6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the govngLaw property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the govngLaw property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -339,10 +340,12 @@ public class Issuance6 {
      * {@link Jurisdiction1 }
      * 
      * 
+     * @return
+     *     The value of the govngLaw property.
      */
     public List<Jurisdiction1> getGovngLaw() {
         if (govngLaw == null) {
-            govngLaw = new ArrayList<Jurisdiction1>();
+            govngLaw = new ArrayList<>();
         }
         return this.govngLaw;
     }

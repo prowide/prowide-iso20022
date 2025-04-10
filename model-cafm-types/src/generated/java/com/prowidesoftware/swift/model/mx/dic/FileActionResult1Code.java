@@ -1,32 +1,31 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for FileActionResult1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="FileActionResult1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="DUPR"/&gt;
- *     &lt;enumeration value="FERD"/&gt;
- *     &lt;enumeration value="INFD"/&gt;
- *     &lt;enumeration value="FLCK"/&gt;
- *     &lt;enumeration value="FTER"/&gt;
- *     &lt;enumeration value="NSUP"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="SUCC"/&gt;
- *     &lt;enumeration value="UTLR"/&gt;
- *     &lt;enumeration value="UNKF"/&gt;
- *     &lt;enumeration value="USUC"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="FileActionResult1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="DUPR"/>
+ *     <enumeration value="FERD"/>
+ *     <enumeration value="INFD"/>
+ *     <enumeration value="FLCK"/>
+ *     <enumeration value="FTER"/>
+ *     <enumeration value="NSUP"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="SUCC"/>
+ *     <enumeration value="UTLR"/>
+ *     <enumeration value="UNKF"/>
+ *     <enumeration value="USUC"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "FileActionResult1Code")

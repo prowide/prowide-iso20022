@@ -1,15 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.LocalDate;
+import java.time.OffsetTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -35,11 +36,11 @@ public class CustodianOptionDateDetailsSD1 {
     @XmlElement(name = "AgtDdlnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar agtDdlnDt;
+    protected LocalDate agtDdlnDt;
     @XmlElement(name = "AgtDdlnTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected XMLGregorianCalendar agtDdlnTm;
+    protected OffsetTime agtDdlnTm;
 
     /**
      * Gets the value of the plcAndNm property.
@@ -74,7 +75,7 @@ public class CustodianOptionDateDetailsSD1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getAgtDdlnDt() {
+    public LocalDate getAgtDdlnDt() {
         return agtDdlnDt;
     }
 
@@ -86,7 +87,7 @@ public class CustodianOptionDateDetailsSD1 {
      *     {@link String }
      *     
      */
-    public CustodianOptionDateDetailsSD1 setAgtDdlnDt(XMLGregorianCalendar value) {
+    public CustodianOptionDateDetailsSD1 setAgtDdlnDt(LocalDate value) {
         this.agtDdlnDt = value;
         return this;
     }
@@ -99,7 +100,7 @@ public class CustodianOptionDateDetailsSD1 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getAgtDdlnTm() {
+    public OffsetTime getAgtDdlnTm() {
         return agtDdlnTm;
     }
 
@@ -111,7 +112,7 @@ public class CustodianOptionDateDetailsSD1 {
      *     {@link String }
      *     
      */
-    public CustodianOptionDateDetailsSD1 setAgtDdlnTm(XMLGregorianCalendar value) {
+    public CustodianOptionDateDetailsSD1 setAgtDdlnTm(OffsetTime value) {
         this.agtDdlnTm = value;
         return this;
     }

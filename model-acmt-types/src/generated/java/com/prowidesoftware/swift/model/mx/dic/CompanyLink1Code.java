@@ -1,27 +1,26 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for CompanyLink1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CompanyLink1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="AGEN"/&gt;
- *     &lt;enumeration value="BROK"/&gt;
- *     &lt;enumeration value="PART"/&gt;
- *     &lt;enumeration value="MEMB"/&gt;
- *     &lt;enumeration value="PCOM"/&gt;
- *     &lt;enumeration value="RELA"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CompanyLink1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="AGEN"/>
+ *     <enumeration value="BROK"/>
+ *     <enumeration value="PART"/>
+ *     <enumeration value="MEMB"/>
+ *     <enumeration value="PCOM"/>
+ *     <enumeration value="RELA"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CompanyLink1Code")
