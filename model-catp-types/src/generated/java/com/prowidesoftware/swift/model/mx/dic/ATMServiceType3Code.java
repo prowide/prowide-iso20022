@@ -1,29 +1,28 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for ATMServiceType3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ATMServiceType3Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ASTS"/&gt;
- *     &lt;enumeration value="CDVF"/&gt;
- *     &lt;enumeration value="DCCS"/&gt;
- *     &lt;enumeration value="XRTD"/&gt;
- *     &lt;enumeration value="XRTW"/&gt;
- *     &lt;enumeration value="EMVS"/&gt;
- *     &lt;enumeration value="CMPF"/&gt;
- *     &lt;enumeration value="BLCQ"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ATMServiceType3Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ASTS"/>
+ *     <enumeration value="CDVF"/>
+ *     <enumeration value="DCCS"/>
+ *     <enumeration value="XRTD"/>
+ *     <enumeration value="XRTW"/>
+ *     <enumeration value="EMVS"/>
+ *     <enumeration value="CMPF"/>
+ *     <enumeration value="BLCQ"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ATMServiceType3Code")

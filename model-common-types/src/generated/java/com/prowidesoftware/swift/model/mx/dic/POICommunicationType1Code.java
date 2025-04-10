@@ -1,31 +1,30 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlEnumValue;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for POICommunicationType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="POICommunicationType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="BLTH"/&gt;
- *     &lt;enumeration value="ETHR"/&gt;
- *     &lt;enumeration value="GPRS"/&gt;
- *     &lt;enumeration value="GSMF"/&gt;
- *     &lt;enumeration value="PSTN"/&gt;
- *     &lt;enumeration value="RS23"/&gt;
- *     &lt;enumeration value="USBD"/&gt;
- *     &lt;enumeration value="USBH"/&gt;
- *     &lt;enumeration value="WIFI"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="POICommunicationType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="BLTH"/>
+ *     <enumeration value="ETHR"/>
+ *     <enumeration value="GPRS"/>
+ *     <enumeration value="GSMF"/>
+ *     <enumeration value="PSTN"/>
+ *     <enumeration value="RS23"/>
+ *     <enumeration value="USBD"/>
+ *     <enumeration value="USBH"/>
+ *     <enumeration value="WIFI"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "POICommunicationType1Code")

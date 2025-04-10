@@ -1,39 +1,38 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for PartyIdentificationType7Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="PartyIdentificationType7Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ATIN"/&gt;
- *     &lt;enumeration value="IDCD"/&gt;
- *     &lt;enumeration value="NRIN"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="PASS"/&gt;
- *     &lt;enumeration value="POCD"/&gt;
- *     &lt;enumeration value="SOCS"/&gt;
- *     &lt;enumeration value="SRSA"/&gt;
- *     &lt;enumeration value="GUNL"/&gt;
- *     &lt;enumeration value="GTIN"/&gt;
- *     &lt;enumeration value="ITIN"/&gt;
- *     &lt;enumeration value="CPFA"/&gt;
- *     &lt;enumeration value="AREG"/&gt;
- *     &lt;enumeration value="DRLC"/&gt;
- *     &lt;enumeration value="EMID"/&gt;
- *     &lt;enumeration value="NINV"/&gt;
- *     &lt;enumeration value="INCL"/&gt;
- *     &lt;enumeration value="GIIN"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="PartyIdentificationType7Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ATIN"/>
+ *     <enumeration value="IDCD"/>
+ *     <enumeration value="NRIN"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="PASS"/>
+ *     <enumeration value="POCD"/>
+ *     <enumeration value="SOCS"/>
+ *     <enumeration value="SRSA"/>
+ *     <enumeration value="GUNL"/>
+ *     <enumeration value="GTIN"/>
+ *     <enumeration value="ITIN"/>
+ *     <enumeration value="CPFA"/>
+ *     <enumeration value="AREG"/>
+ *     <enumeration value="DRLC"/>
+ *     <enumeration value="EMID"/>
+ *     <enumeration value="NINV"/>
+ *     <enumeration value="INCL"/>
+ *     <enumeration value="GIIN"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "PartyIdentificationType7Code")

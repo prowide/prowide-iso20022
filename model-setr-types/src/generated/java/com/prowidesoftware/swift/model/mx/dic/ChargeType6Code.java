@@ -1,38 +1,37 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for ChargeType6Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ChargeType6Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="BEND"/&gt;
- *     &lt;enumeration value="FEND"/&gt;
- *     &lt;enumeration value="SWIT"/&gt;
- *     &lt;enumeration value="DLEV"/&gt;
- *     &lt;enumeration value="DISC"/&gt;
- *     &lt;enumeration value="PENA"/&gt;
- *     &lt;enumeration value="MANF"/&gt;
- *     &lt;enumeration value="POST"/&gt;
- *     &lt;enumeration value="REGF"/&gt;
- *     &lt;enumeration value="SHIP"/&gt;
- *     &lt;enumeration value="CHAR"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="CDSC"/&gt;
- *     &lt;enumeration value="EQUL"/&gt;
- *     &lt;enumeration value="CBCH"/&gt;
- *     &lt;enumeration value="PREM"/&gt;
- *     &lt;enumeration value="INIT"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ChargeType6Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="BEND"/>
+ *     <enumeration value="FEND"/>
+ *     <enumeration value="SWIT"/>
+ *     <enumeration value="DLEV"/>
+ *     <enumeration value="DISC"/>
+ *     <enumeration value="PENA"/>
+ *     <enumeration value="MANF"/>
+ *     <enumeration value="POST"/>
+ *     <enumeration value="REGF"/>
+ *     <enumeration value="SHIP"/>
+ *     <enumeration value="CHAR"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="CDSC"/>
+ *     <enumeration value="EQUL"/>
+ *     <enumeration value="CBCH"/>
+ *     <enumeration value="PREM"/>
+ *     <enumeration value="INIT"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ChargeType6Code")

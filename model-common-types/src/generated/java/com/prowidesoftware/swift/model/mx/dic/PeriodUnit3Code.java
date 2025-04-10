@@ -1,28 +1,27 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for PeriodUnit3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="PeriodUnit3Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="OTHP"/&gt;
- *     &lt;enumeration value="OTHN"/&gt;
- *     &lt;enumeration value="MNTH"/&gt;
- *     &lt;enumeration value="WEEK"/&gt;
- *     &lt;enumeration value="YEAR"/&gt;
- *     &lt;enumeration value="DAYS"/&gt;
- *     &lt;enumeration value="EXDY"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="PeriodUnit3Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="OTHP"/>
+ *     <enumeration value="OTHN"/>
+ *     <enumeration value="MNTH"/>
+ *     <enumeration value="WEEK"/>
+ *     <enumeration value="YEAR"/>
+ *     <enumeration value="DAYS"/>
+ *     <enumeration value="EXDY"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "PeriodUnit3Code")

@@ -1,30 +1,29 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for CurrencyConversionResponse3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CurrencyConversionResponse3Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ODCC"/&gt;
- *     &lt;enumeration value="DCCA"/&gt;
- *     &lt;enumeration value="ICRD"/&gt;
- *     &lt;enumeration value="IMER"/&gt;
- *     &lt;enumeration value="IPRD"/&gt;
- *     &lt;enumeration value="IRAT"/&gt;
- *     &lt;enumeration value="NDCC"/&gt;
- *     &lt;enumeration value="REST"/&gt;
- *     &lt;enumeration value="CATG"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CurrencyConversionResponse3Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ODCC"/>
+ *     <enumeration value="DCCA"/>
+ *     <enumeration value="ICRD"/>
+ *     <enumeration value="IMER"/>
+ *     <enumeration value="IPRD"/>
+ *     <enumeration value="IRAT"/>
+ *     <enumeration value="NDCC"/>
+ *     <enumeration value="REST"/>
+ *     <enumeration value="CATG"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CurrencyConversionResponse3Code")

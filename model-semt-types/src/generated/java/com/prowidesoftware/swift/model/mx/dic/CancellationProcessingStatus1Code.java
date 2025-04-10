@@ -1,30 +1,29 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for CancellationProcessingStatus1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CancellationProcessingStatus1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CAND"/&gt;
- *     &lt;enumeration value="CANP"/&gt;
- *     &lt;enumeration value="DEND"/&gt;
- *     &lt;enumeration value="EXCH"/&gt;
- *     &lt;enumeration value="INTE"/&gt;
- *     &lt;enumeration value="PACK"/&gt;
- *     &lt;enumeration value="PARF"/&gt;
- *     &lt;enumeration value="REJT"/&gt;
- *     &lt;enumeration value="REPR"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CancellationProcessingStatus1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CAND"/>
+ *     <enumeration value="CANP"/>
+ *     <enumeration value="DEND"/>
+ *     <enumeration value="EXCH"/>
+ *     <enumeration value="INTE"/>
+ *     <enumeration value="PACK"/>
+ *     <enumeration value="PARF"/>
+ *     <enumeration value="REJT"/>
+ *     <enumeration value="REPR"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CancellationProcessingStatus1Code")

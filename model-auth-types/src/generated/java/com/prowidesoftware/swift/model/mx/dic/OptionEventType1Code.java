@@ -1,27 +1,26 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for OptionEventType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="OptionEventType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CLST"/&gt;
- *     &lt;enumeration value="CONF"/&gt;
- *     &lt;enumeration value="KNIN"/&gt;
- *     &lt;enumeration value="KNOC"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="TRIG"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="OptionEventType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CLST"/>
+ *     <enumeration value="CONF"/>
+ *     <enumeration value="KNIN"/>
+ *     <enumeration value="KNOC"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="TRIG"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "OptionEventType1Code")

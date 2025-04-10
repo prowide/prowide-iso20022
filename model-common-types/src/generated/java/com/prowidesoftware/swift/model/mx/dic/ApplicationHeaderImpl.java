@@ -1,12 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.OffsetDateTime;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -41,12 +43,13 @@ public class ApplicationHeaderImpl {
     protected String msgName;
     @XmlElement(name = "MsgRef", required = true)
     protected String msgRef;
-    @XmlElement(name = "CrDate", required = true)
+    @XmlElement(name = "CrDate", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar crDate;
+    protected OffsetDateTime crDate;
     @XmlElement(name = "Dup")
     protected DuplicateIndication dup;
-    public final static transient Class[] _classes = new Class[] {ApplicationHeaderImpl.class, DuplicateIndication.class, EntityIdentification.class };
+    public static final transient Class[] _classes = new Class[] {ApplicationHeaderImpl.class, DuplicateIndication.class, EntityIdentification.class };
 
     /**
      * Gets the value of the from property.
@@ -178,10 +181,10 @@ public class ApplicationHeaderImpl {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getCrDate() {
+    public OffsetDateTime getCrDate() {
         return crDate;
     }
 
@@ -190,10 +193,10 @@ public class ApplicationHeaderImpl {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public ApplicationHeaderImpl setCrDate(XMLGregorianCalendar value) {
+    public ApplicationHeaderImpl setCrDate(OffsetDateTime value) {
         this.crDate = value;
         return this;
     }

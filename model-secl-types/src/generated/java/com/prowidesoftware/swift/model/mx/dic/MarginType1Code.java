@@ -1,32 +1,31 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for MarginType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="MarginType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="SEMA"/&gt;
- *     &lt;enumeration value="ADFM"/&gt;
- *     &lt;enumeration value="SCMA"/&gt;
- *     &lt;enumeration value="COMA"/&gt;
- *     &lt;enumeration value="UFMA"/&gt;
- *     &lt;enumeration value="CEMA"/&gt;
- *     &lt;enumeration value="INDE"/&gt;
- *     &lt;enumeration value="NEMA"/&gt;
- *     &lt;enumeration value="INMA"/&gt;
- *     &lt;enumeration value="VAMA"/&gt;
- *     &lt;enumeration value="INCA"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="MarginType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="SEMA"/>
+ *     <enumeration value="ADFM"/>
+ *     <enumeration value="SCMA"/>
+ *     <enumeration value="COMA"/>
+ *     <enumeration value="UFMA"/>
+ *     <enumeration value="CEMA"/>
+ *     <enumeration value="INDE"/>
+ *     <enumeration value="NEMA"/>
+ *     <enumeration value="INMA"/>
+ *     <enumeration value="VAMA"/>
+ *     <enumeration value="INCA"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "MarginType1Code")

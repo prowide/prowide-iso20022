@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxReda01700101
 
     @XmlElement(name = "PtyRpt", required = true)
     protected PartyReportV01 ptyRpt;
-    public final static transient String BUSINESS_PROCESS = "reda";
-    public final static transient int FUNCTIONALITY = 17;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 1;
+    public static final transient String BUSINESS_PROCESS = "reda";
+    public static final transient int FUNCTIONALITY = 17;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {AddressType2Code.class, AddressType3Choice.class, Contact5 .class, ErrorHandling1Code.class, ErrorHandling2Choice.class, ErrorHandling3Choice.class, ErrorHandling4 .class, ErrorHandling5 .class, GenericIdentification1 .class, GenericIdentification30 .class, GenericIdentification36 .class, LockStatus1Code.class, MarketSpecificAttribute1 .class, MessageHeader3 .class, MxReda01700101 .class, NameAndAddress5 .class, NamePrefix2Code.class, OriginalBusinessQuery1 .class, OtherContact1 .class, PartyIdentification120Choice.class, PartyIdentification136 .class, PartyLockStatus1 .class, PartyName4 .class, PartyOrBusinessError3Choice.class, PartyOrOperationalError3Choice.class, PartyReport3 .class, PartyReportV01 .class, PostalAddress1 .class, PostalAddress25 .class, PreferredContactMethod1Code.class, RequestType1Code.class, RequestType2Choice.class, RequestType2Code.class, ResidenceType1Code.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, SystemParty5 .class, SystemPartyIdentification8 .class, SystemPartyIdentification9 .class, SystemPartyType1Choice.class, SystemRestriction1 .class, TechnicalIdentification2Choice.class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:reda.017.001.01";
+    public static final transient Class[] _classes = new Class[] {AddressType2Code.class, AddressType3Choice.class, Contact5 .class, ErrorHandling1Code.class, ErrorHandling2Choice.class, ErrorHandling3Choice.class, ErrorHandling4 .class, ErrorHandling5 .class, GenericIdentification1 .class, GenericIdentification30 .class, GenericIdentification36 .class, LockStatus1Code.class, MarketSpecificAttribute1 .class, MessageHeader3 .class, MxReda01700101 .class, NameAndAddress5 .class, NamePrefix2Code.class, OriginalBusinessQuery1 .class, OtherContact1 .class, PartyIdentification120Choice.class, PartyIdentification136 .class, PartyLockStatus1 .class, PartyName4 .class, PartyOrBusinessError3Choice.class, PartyOrOperationalError3Choice.class, PartyReport3 .class, PartyReportV01 .class, PostalAddress1 .class, PostalAddress25 .class, PreferredContactMethod1Code.class, RequestType1Code.class, RequestType2Choice.class, RequestType2Code.class, ResidenceType1Code.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, SystemParty5 .class, SystemPartyIdentification8 .class, SystemPartyIdentification9 .class, SystemPartyType1Choice.class, SystemRestriction1 .class, TechnicalIdentification2Choice.class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:reda.017.001.01";
 
     public MxReda01700101() {
         super();
@@ -86,21 +86,6 @@ public class MxReda01700101
     public MxReda01700101 setPtyRpt(PartyReportV01 value) {
         this.ptyRpt = value;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -173,8 +158,23 @@ public class MxReda01700101
      * @return
      *     a new instance of MxReda01700101
      */
-    public final static MxReda01700101 fromJson(String json) {
+    public static final MxReda01700101 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxReda01700101 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

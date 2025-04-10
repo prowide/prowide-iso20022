@@ -1,43 +1,42 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for ATMDevice2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ATMDevice2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ALRM"/&gt;
- *     &lt;enumeration value="BRCD"/&gt;
- *     &lt;enumeration value="CAMR"/&gt;
- *     &lt;enumeration value="CRDD"/&gt;
- *     &lt;enumeration value="CRDR"/&gt;
- *     &lt;enumeration value="CSHD"/&gt;
- *     &lt;enumeration value="CSHI"/&gt;
- *     &lt;enumeration value="CSHR"/&gt;
- *     &lt;enumeration value="CHCK"/&gt;
- *     &lt;enumeration value="CDIS"/&gt;
- *     &lt;enumeration value="DPST"/&gt;
- *     &lt;enumeration value="DPRN"/&gt;
- *     &lt;enumeration value="DOOR"/&gt;
- *     &lt;enumeration value="INPM"/&gt;
- *     &lt;enumeration value="JRNL"/&gt;
- *     &lt;enumeration value="JPRN"/&gt;
- *     &lt;enumeration value="SNSR"/&gt;
- *     &lt;enumeration value="PSBK"/&gt;
- *     &lt;enumeration value="PINR"/&gt;
- *     &lt;enumeration value="RPRN"/&gt;
- *     &lt;enumeration value="SCAN"/&gt;
- *     &lt;enumeration value="RWDR"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ATMDevice2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ALRM"/>
+ *     <enumeration value="BRCD"/>
+ *     <enumeration value="CAMR"/>
+ *     <enumeration value="CRDD"/>
+ *     <enumeration value="CRDR"/>
+ *     <enumeration value="CSHD"/>
+ *     <enumeration value="CSHI"/>
+ *     <enumeration value="CSHR"/>
+ *     <enumeration value="CHCK"/>
+ *     <enumeration value="CDIS"/>
+ *     <enumeration value="DPST"/>
+ *     <enumeration value="DPRN"/>
+ *     <enumeration value="DOOR"/>
+ *     <enumeration value="INPM"/>
+ *     <enumeration value="JRNL"/>
+ *     <enumeration value="JPRN"/>
+ *     <enumeration value="SNSR"/>
+ *     <enumeration value="PSBK"/>
+ *     <enumeration value="PINR"/>
+ *     <enumeration value="RPRN"/>
+ *     <enumeration value="SCAN"/>
+ *     <enumeration value="RWDR"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ATMDevice2Code")

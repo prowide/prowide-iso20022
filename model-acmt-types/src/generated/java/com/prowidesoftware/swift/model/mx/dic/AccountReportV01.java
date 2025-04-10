@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -99,8 +99,8 @@ public class AccountReportV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the org property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the org property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -114,10 +114,12 @@ public class AccountReportV01 {
      * {@link Organisation6 }
      * 
      * 
+     * @return
+     *     The value of the org property.
      */
     public List<Organisation6> getOrg() {
         if (org == null) {
-            org = new ArrayList<Organisation6>();
+            org = new ArrayList<>();
         }
         return this.org;
     }
@@ -128,8 +130,8 @@ public class AccountReportV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rpt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rpt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -143,10 +145,12 @@ public class AccountReportV01 {
      * {@link AccountReport1 }
      * 
      * 
+     * @return
+     *     The value of the rpt property.
      */
     public List<AccountReport1> getRpt() {
         if (rpt == null) {
-            rpt = new ArrayList<AccountReport1>();
+            rpt = new ArrayList<>();
         }
         return this.rpt;
     }
@@ -157,8 +161,8 @@ public class AccountReportV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dgtlSgntr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the dgtlSgntr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -172,10 +176,12 @@ public class AccountReportV01 {
      * {@link PartyAndSignature1 }
      * 
      * 
+     * @return
+     *     The value of the dgtlSgntr property.
      */
     public List<PartyAndSignature1> getDgtlSgntr() {
         if (dgtlSgntr == null) {
-            dgtlSgntr = new ArrayList<PartyAndSignature1>();
+            dgtlSgntr = new ArrayList<>();
         }
         return this.dgtlSgntr;
     }

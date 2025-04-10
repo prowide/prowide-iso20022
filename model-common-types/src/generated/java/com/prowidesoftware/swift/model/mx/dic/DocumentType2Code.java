@@ -1,32 +1,31 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for DocumentType2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="DocumentType2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="MSIN"/&gt;
- *     &lt;enumeration value="CNFA"/&gt;
- *     &lt;enumeration value="DNFA"/&gt;
- *     &lt;enumeration value="CINV"/&gt;
- *     &lt;enumeration value="CREN"/&gt;
- *     &lt;enumeration value="DEBN"/&gt;
- *     &lt;enumeration value="HIRI"/&gt;
- *     &lt;enumeration value="SBIN"/&gt;
- *     &lt;enumeration value="CMCN"/&gt;
- *     &lt;enumeration value="SOAC"/&gt;
- *     &lt;enumeration value="DISP"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="DocumentType2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="MSIN"/>
+ *     <enumeration value="CNFA"/>
+ *     <enumeration value="DNFA"/>
+ *     <enumeration value="CINV"/>
+ *     <enumeration value="CREN"/>
+ *     <enumeration value="DEBN"/>
+ *     <enumeration value="HIRI"/>
+ *     <enumeration value="SBIN"/>
+ *     <enumeration value="CMCN"/>
+ *     <enumeration value="SOAC"/>
+ *     <enumeration value="DISP"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "DocumentType2Code")

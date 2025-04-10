@@ -1,28 +1,27 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for MessageItemCondition1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="MessageItemCondition1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="MNDT"/&gt;
- *     &lt;enumeration value="CFVL"/&gt;
- *     &lt;enumeration value="DFLT"/&gt;
- *     &lt;enumeration value="ALWV"/&gt;
- *     &lt;enumeration value="IFAV"/&gt;
- *     &lt;enumeration value="COPY"/&gt;
- *     &lt;enumeration value="UNSP"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="MessageItemCondition1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="MNDT"/>
+ *     <enumeration value="CFVL"/>
+ *     <enumeration value="DFLT"/>
+ *     <enumeration value="ALWV"/>
+ *     <enumeration value="IFAV"/>
+ *     <enumeration value="COPY"/>
+ *     <enumeration value="UNSP"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "MessageItemCondition1Code")

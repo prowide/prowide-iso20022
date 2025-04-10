@@ -1,32 +1,31 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for DisabledReason2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="DisabledReason2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CLOS"/&gt;
- *     &lt;enumeration value="BKRP"/&gt;
- *     &lt;enumeration value="CMMT"/&gt;
- *     &lt;enumeration value="CNFS"/&gt;
- *     &lt;enumeration value="MORT"/&gt;
- *     &lt;enumeration value="PCOM"/&gt;
- *     &lt;enumeration value="PLDG"/&gt;
- *     &lt;enumeration value="TRPE"/&gt;
- *     &lt;enumeration value="SANC"/&gt;
- *     &lt;enumeration value="TRAN"/&gt;
- *     &lt;enumeration value="REJT"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="DisabledReason2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CLOS"/>
+ *     <enumeration value="BKRP"/>
+ *     <enumeration value="CMMT"/>
+ *     <enumeration value="CNFS"/>
+ *     <enumeration value="MORT"/>
+ *     <enumeration value="PCOM"/>
+ *     <enumeration value="PLDG"/>
+ *     <enumeration value="TRPE"/>
+ *     <enumeration value="SANC"/>
+ *     <enumeration value="TRAN"/>
+ *     <enumeration value="REJT"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "DisabledReason2Code")

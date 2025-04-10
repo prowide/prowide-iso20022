@@ -1,45 +1,44 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for SecuritiesTransactionType6Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="SecuritiesTransactionType6Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CNCB"/&gt;
- *     &lt;enumeration value="BSBK"/&gt;
- *     &lt;enumeration value="COLI"/&gt;
- *     &lt;enumeration value="COLO"/&gt;
- *     &lt;enumeration value="NETT"/&gt;
- *     &lt;enumeration value="OWNE"/&gt;
- *     &lt;enumeration value="OWNI"/&gt;
- *     &lt;enumeration value="PAIR"/&gt;
- *     &lt;enumeration value="PLAC"/&gt;
- *     &lt;enumeration value="PORT"/&gt;
- *     &lt;enumeration value="REAL"/&gt;
- *     &lt;enumeration value="REDM"/&gt;
- *     &lt;enumeration value="REPU"/&gt;
- *     &lt;enumeration value="RVPO"/&gt;
- *     &lt;enumeration value="SECB"/&gt;
- *     &lt;enumeration value="SECL"/&gt;
- *     &lt;enumeration value="SUBS"/&gt;
- *     &lt;enumeration value="TRAD"/&gt;
- *     &lt;enumeration value="TRPO"/&gt;
- *     &lt;enumeration value="TRVO"/&gt;
- *     &lt;enumeration value="TURN"/&gt;
- *     &lt;enumeration value="AUTO"/&gt;
- *     &lt;enumeration value="CLAI"/&gt;
- *     &lt;enumeration value="CORP"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="SecuritiesTransactionType6Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CNCB"/>
+ *     <enumeration value="BSBK"/>
+ *     <enumeration value="COLI"/>
+ *     <enumeration value="COLO"/>
+ *     <enumeration value="NETT"/>
+ *     <enumeration value="OWNE"/>
+ *     <enumeration value="OWNI"/>
+ *     <enumeration value="PAIR"/>
+ *     <enumeration value="PLAC"/>
+ *     <enumeration value="PORT"/>
+ *     <enumeration value="REAL"/>
+ *     <enumeration value="REDM"/>
+ *     <enumeration value="REPU"/>
+ *     <enumeration value="RVPO"/>
+ *     <enumeration value="SECB"/>
+ *     <enumeration value="SECL"/>
+ *     <enumeration value="SUBS"/>
+ *     <enumeration value="TRAD"/>
+ *     <enumeration value="TRPO"/>
+ *     <enumeration value="TRVO"/>
+ *     <enumeration value="TURN"/>
+ *     <enumeration value="AUTO"/>
+ *     <enumeration value="CLAI"/>
+ *     <enumeration value="CORP"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "SecuritiesTransactionType6Code")

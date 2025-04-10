@@ -2,16 +2,16 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -52,11 +52,11 @@ public class InvestmentPlan12 {
     @XmlElement(name = "StartDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar startDt;
+    protected LocalDate startDt;
     @XmlElement(name = "EndDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar endDt;
+    protected LocalDate endDt;
     @XmlElement(name = "Qty", required = true)
     protected UnitsOrAmount1Choice qty;
     @XmlElement(name = "GrssAmtInd")
@@ -123,7 +123,7 @@ public class InvestmentPlan12 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getStartDt() {
+    public LocalDate getStartDt() {
         return startDt;
     }
 
@@ -135,7 +135,7 @@ public class InvestmentPlan12 {
      *     {@link String }
      *     
      */
-    public InvestmentPlan12 setStartDt(XMLGregorianCalendar value) {
+    public InvestmentPlan12 setStartDt(LocalDate value) {
         this.startDt = value;
         return this;
     }
@@ -148,7 +148,7 @@ public class InvestmentPlan12 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getEndDt() {
+    public LocalDate getEndDt() {
         return endDt;
     }
 
@@ -160,7 +160,7 @@ public class InvestmentPlan12 {
      *     {@link String }
      *     
      */
-    public InvestmentPlan12 setEndDt(XMLGregorianCalendar value) {
+    public InvestmentPlan12 setEndDt(LocalDate value) {
         this.endDt = value;
         return this;
     }
@@ -321,8 +321,8 @@ public class InvestmentPlan12 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sctyDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sctyDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -336,10 +336,12 @@ public class InvestmentPlan12 {
      * {@link Repartition4 }
      * 
      * 
+     * @return
+     *     The value of the sctyDtls property.
      */
     public List<Repartition4> getSctyDtls() {
         if (sctyDtls == null) {
-            sctyDtls = new ArrayList<Repartition4>();
+            sctyDtls = new ArrayList<>();
         }
         return this.sctyDtls;
     }
@@ -350,8 +352,8 @@ public class InvestmentPlan12 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cshSttlm property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cshSttlm property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -365,10 +367,12 @@ public class InvestmentPlan12 {
      * {@link CashSettlement1 }
      * 
      * 
+     * @return
+     *     The value of the cshSttlm property.
      */
     public List<CashSettlement1> getCshSttlm() {
         if (cshSttlm == null) {
-            cshSttlm = new ArrayList<CashSettlement1>();
+            cshSttlm = new ArrayList<>();
         }
         return this.cshSttlm;
     }

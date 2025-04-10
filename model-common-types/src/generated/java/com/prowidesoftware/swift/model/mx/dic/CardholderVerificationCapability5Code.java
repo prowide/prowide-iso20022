@@ -1,38 +1,37 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for CardholderVerificationCapability5Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CardholderVerificationCapability5Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="APKI"/&gt;
- *     &lt;enumeration value="NOVF"/&gt;
- *     &lt;enumeration value="FBIG"/&gt;
- *     &lt;enumeration value="FBIO"/&gt;
- *     &lt;enumeration value="FDSG"/&gt;
- *     &lt;enumeration value="FCPN"/&gt;
- *     &lt;enumeration value="FEPN"/&gt;
- *     &lt;enumeration value="NBIO"/&gt;
- *     &lt;enumeration value="NPIN"/&gt;
- *     &lt;enumeration value="OTHN"/&gt;
- *     &lt;enumeration value="OTHP"/&gt;
- *     &lt;enumeration value="SIGN"/&gt;
- *     &lt;enumeration value="UNSP"/&gt;
- *     &lt;enumeration value="VORN"/&gt;
- *     &lt;enumeration value="PKIS"/&gt;
- *     &lt;enumeration value="NOPN"/&gt;
- *     &lt;enumeration value="NOOP"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CardholderVerificationCapability5Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="APKI"/>
+ *     <enumeration value="NOVF"/>
+ *     <enumeration value="FBIG"/>
+ *     <enumeration value="FBIO"/>
+ *     <enumeration value="FDSG"/>
+ *     <enumeration value="FCPN"/>
+ *     <enumeration value="FEPN"/>
+ *     <enumeration value="NBIO"/>
+ *     <enumeration value="NPIN"/>
+ *     <enumeration value="OTHN"/>
+ *     <enumeration value="OTHP"/>
+ *     <enumeration value="SIGN"/>
+ *     <enumeration value="UNSP"/>
+ *     <enumeration value="VORN"/>
+ *     <enumeration value="PKIS"/>
+ *     <enumeration value="NOPN"/>
+ *     <enumeration value="NOOP"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CardholderVerificationCapability5Code")

@@ -1,38 +1,37 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for FailureReason4Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="FailureReason4Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CDCP"/&gt;
- *     &lt;enumeration value="CDCL"/&gt;
- *     &lt;enumeration value="CDER"/&gt;
- *     &lt;enumeration value="CUCL"/&gt;
- *     &lt;enumeration value="CUDC"/&gt;
- *     &lt;enumeration value="CDFG"/&gt;
- *     &lt;enumeration value="FILL"/&gt;
- *     &lt;enumeration value="MALF"/&gt;
- *     &lt;enumeration value="NDCL"/&gt;
- *     &lt;enumeration value="SECU"/&gt;
- *     &lt;enumeration value="SFRD"/&gt;
- *     &lt;enumeration value="TIMO"/&gt;
- *     &lt;enumeration value="LATE"/&gt;
- *     &lt;enumeration value="UCPT"/&gt;
- *     &lt;enumeration value="UCMP"/&gt;
- *     &lt;enumeration value="USND"/&gt;
- *     &lt;enumeration value="CSRV"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="FailureReason4Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CDCP"/>
+ *     <enumeration value="CDCL"/>
+ *     <enumeration value="CDER"/>
+ *     <enumeration value="CUCL"/>
+ *     <enumeration value="CUDC"/>
+ *     <enumeration value="CDFG"/>
+ *     <enumeration value="FILL"/>
+ *     <enumeration value="MALF"/>
+ *     <enumeration value="NDCL"/>
+ *     <enumeration value="SECU"/>
+ *     <enumeration value="SFRD"/>
+ *     <enumeration value="TIMO"/>
+ *     <enumeration value="LATE"/>
+ *     <enumeration value="UCPT"/>
+ *     <enumeration value="UCMP"/>
+ *     <enumeration value="USND"/>
+ *     <enumeration value="CSRV"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "FailureReason4Code")

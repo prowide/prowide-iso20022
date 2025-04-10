@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -77,8 +77,8 @@ public class CollateralValueSearchCriteria4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ccy property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ccy property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -92,10 +92,12 @@ public class CollateralValueSearchCriteria4 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the ccy property.
      */
     public List<String> getCcy() {
         if (ccy == null) {
-            ccy = new ArrayList<String>();
+            ccy = new ArrayList<>();
         }
         return this.ccy;
     }
@@ -156,8 +158,8 @@ public class CollateralValueSearchCriteria4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the finInstrmId property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the finInstrmId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -171,10 +173,12 @@ public class CollateralValueSearchCriteria4 {
      * {@link SecurityIdentification19 }
      * 
      * 
+     * @return
+     *     The value of the finInstrmId property.
      */
     public List<SecurityIdentification19> getFinInstrmId() {
         if (finInstrmId == null) {
-            finInstrmId = new ArrayList<SecurityIdentification19>();
+            finInstrmId = new ArrayList<>();
         }
         return this.finInstrmId;
     }

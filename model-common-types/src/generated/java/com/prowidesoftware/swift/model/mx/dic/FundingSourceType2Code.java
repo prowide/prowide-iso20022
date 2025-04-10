@@ -1,35 +1,34 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for FundingSourceType2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="FundingSourceType2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="LOYL"/&gt;
- *     &lt;enumeration value="OTHN"/&gt;
- *     &lt;enumeration value="OTHP"/&gt;
- *     &lt;enumeration value="SVNG"/&gt;
- *     &lt;enumeration value="UVRL"/&gt;
- *     &lt;enumeration value="CASH"/&gt;
- *     &lt;enumeration value="CRDT"/&gt;
- *     &lt;enumeration value="CDBT"/&gt;
- *     &lt;enumeration value="EPRS"/&gt;
- *     &lt;enumeration value="DBAC"/&gt;
- *     &lt;enumeration value="CURR"/&gt;
- *     &lt;enumeration value="CHQE"/&gt;
- *     &lt;enumeration value="PRPD"/&gt;
- *     &lt;enumeration value="LCDT"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="FundingSourceType2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="LOYL"/>
+ *     <enumeration value="OTHN"/>
+ *     <enumeration value="OTHP"/>
+ *     <enumeration value="SVNG"/>
+ *     <enumeration value="UVRL"/>
+ *     <enumeration value="CASH"/>
+ *     <enumeration value="CRDT"/>
+ *     <enumeration value="CDBT"/>
+ *     <enumeration value="EPRS"/>
+ *     <enumeration value="DBAC"/>
+ *     <enumeration value="CURR"/>
+ *     <enumeration value="CHQE"/>
+ *     <enumeration value="PRPD"/>
+ *     <enumeration value="LCDT"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "FundingSourceType2Code")

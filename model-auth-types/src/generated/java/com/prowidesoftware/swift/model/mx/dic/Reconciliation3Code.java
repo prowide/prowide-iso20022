@@ -1,32 +1,31 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for Reconciliation3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="Reconciliation3Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="DPRW"/&gt;
- *     &lt;enumeration value="DPRV"/&gt;
- *     &lt;enumeration value="DSMA"/&gt;
- *     &lt;enumeration value="DSNM"/&gt;
- *     &lt;enumeration value="NORE"/&gt;
- *     &lt;enumeration value="SSMA"/&gt;
- *     &lt;enumeration value="SSPA"/&gt;
- *     &lt;enumeration value="SPRW"/&gt;
- *     &lt;enumeration value="SPRV"/&gt;
- *     &lt;enumeration value="SSUN"/&gt;
- *     &lt;enumeration value="SSNE"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="Reconciliation3Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="DPRW"/>
+ *     <enumeration value="DPRV"/>
+ *     <enumeration value="DSMA"/>
+ *     <enumeration value="DSNM"/>
+ *     <enumeration value="NORE"/>
+ *     <enumeration value="SSMA"/>
+ *     <enumeration value="SSPA"/>
+ *     <enumeration value="SPRW"/>
+ *     <enumeration value="SPRV"/>
+ *     <enumeration value="SSUN"/>
+ *     <enumeration value="SSNE"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "Reconciliation3Code")

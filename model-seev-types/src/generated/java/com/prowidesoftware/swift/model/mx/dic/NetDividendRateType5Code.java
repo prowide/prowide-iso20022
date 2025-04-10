@@ -1,34 +1,33 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for NetDividendRateType5Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="NetDividendRateType5Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CAPO"/&gt;
- *     &lt;enumeration value="FLFR"/&gt;
- *     &lt;enumeration value="INCO"/&gt;
- *     &lt;enumeration value="INTR"/&gt;
- *     &lt;enumeration value="SOIC"/&gt;
- *     &lt;enumeration value="TXBL"/&gt;
- *     &lt;enumeration value="TXDF"/&gt;
- *     &lt;enumeration value="TXFR"/&gt;
- *     &lt;enumeration value="UNFR"/&gt;
- *     &lt;enumeration value="FUPU"/&gt;
- *     &lt;enumeration value="PAPU"/&gt;
- *     &lt;enumeration value="REES"/&gt;
- *     &lt;enumeration value="CDFI"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="NetDividendRateType5Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CAPO"/>
+ *     <enumeration value="FLFR"/>
+ *     <enumeration value="INCO"/>
+ *     <enumeration value="INTR"/>
+ *     <enumeration value="SOIC"/>
+ *     <enumeration value="TXBL"/>
+ *     <enumeration value="TXDF"/>
+ *     <enumeration value="TXFR"/>
+ *     <enumeration value="UNFR"/>
+ *     <enumeration value="FUPU"/>
+ *     <enumeration value="PAPU"/>
+ *     <enumeration value="REES"/>
+ *     <enumeration value="CDFI"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "NetDividendRateType5Code")

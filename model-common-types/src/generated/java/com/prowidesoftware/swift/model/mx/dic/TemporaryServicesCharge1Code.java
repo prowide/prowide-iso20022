@@ -1,30 +1,29 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for TemporaryServicesCharge1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="TemporaryServicesCharge1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="WKND"/&gt;
- *     &lt;enumeration value="REGL"/&gt;
- *     &lt;enumeration value="OVRT"/&gt;
- *     &lt;enumeration value="OTHP"/&gt;
- *     &lt;enumeration value="OTHN"/&gt;
- *     &lt;enumeration value="ONCL"/&gt;
- *     &lt;enumeration value="NITE"/&gt;
- *     &lt;enumeration value="HOLI"/&gt;
- *     &lt;enumeration value="HAZD"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="TemporaryServicesCharge1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="WKND"/>
+ *     <enumeration value="REGL"/>
+ *     <enumeration value="OVRT"/>
+ *     <enumeration value="OTHP"/>
+ *     <enumeration value="OTHN"/>
+ *     <enumeration value="ONCL"/>
+ *     <enumeration value="NITE"/>
+ *     <enumeration value="HOLI"/>
+ *     <enumeration value="HAZD"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "TemporaryServicesCharge1Code")

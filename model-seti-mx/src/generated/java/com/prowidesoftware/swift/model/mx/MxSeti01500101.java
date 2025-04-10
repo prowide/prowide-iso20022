@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxSeti01500101
 
     @XmlElement(name = "DscldBidRspn", required = true)
     protected DisclosedBidResponse dscldBidRspn;
-    public final static transient String BUSINESS_PROCESS = "seti";
-    public final static transient int FUNCTIONALITY = 15;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 1;
+    public static final transient String BUSINESS_PROCESS = "seti";
+    public static final transient int FUNCTIONALITY = 15;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {ActiveCurrencyAndAmount.class, ActiveOrHistoricCurrencyAnd13DecimalAmount.class, AddressType2Code.class, AmountOrRate1Choice.class, Bid2 .class, BidResponsePrice1 .class, Commission2 .class, CommissionType1Choice.class, CommissionValueType1Code.class, CopyDuplicate1Code.class, DateAndDateTimeChoice.class, DateType1Choice.class, DisclosedBidResponse.class, DocumentIdentification11 .class, GenericIdentification1 .class, GenericIdentification13 .class, MxSeti01500101 .class, NameAndAddress5 .class, PartyIdentification23 .class, PostalAddress1 .class, Price1 .class, PriceRateOrAmountChoice.class, PriceValueType3Code.class, SecuritiesSettlement2 .class, SettlementDate2Code.class, Side1Code.class, TradingSession1 .class, TypeOfPrice1Code.class };
-    public final static transient String NAMESPACE = "urn:swift:xsd:seti.015.001.01";
+    public static final transient Class[] _classes = new Class[] {ActiveCurrencyAndAmount.class, ActiveOrHistoricCurrencyAnd13DecimalAmount.class, AddressType2Code.class, AmountOrRate1Choice.class, Bid2 .class, BidResponsePrice1 .class, Commission2 .class, CommissionType1Choice.class, CommissionValueType1Code.class, CopyDuplicate1Code.class, DateAndDateTimeChoice.class, DateType1Choice.class, DisclosedBidResponse.class, DocumentIdentification11 .class, GenericIdentification1 .class, GenericIdentification13 .class, MxSeti01500101 .class, NameAndAddress5 .class, PartyIdentification23 .class, PostalAddress1 .class, Price1 .class, PriceRateOrAmountChoice.class, PriceValueType3Code.class, SecuritiesSettlement2 .class, SettlementDate2Code.class, Side1Code.class, TradingSession1 .class, TypeOfPrice1Code.class };
+    public static final transient String NAMESPACE = "urn:swift:xsd:seti.015.001.01";
 
     public MxSeti01500101() {
         super();
@@ -86,21 +86,6 @@ public class MxSeti01500101
     public MxSeti01500101 setDscldBidRspn(DisclosedBidResponse value) {
         this.dscldBidRspn = value;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -173,8 +158,23 @@ public class MxSeti01500101
      * @return
      *     a new instance of MxSeti01500101
      */
-    public final static MxSeti01500101 fromJson(String json) {
+    public static final MxSeti01500101 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSeti01500101 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

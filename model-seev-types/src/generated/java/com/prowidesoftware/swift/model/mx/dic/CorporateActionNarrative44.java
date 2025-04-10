@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -40,8 +40,8 @@ public class CorporateActionNarrative44 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the offerr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the offerr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -55,10 +55,12 @@ public class CorporateActionNarrative44 {
      * {@link UpdatedAdditionalInformation3 }
      * 
      * 
+     * @return
+     *     The value of the offerr property.
      */
     public List<UpdatedAdditionalInformation3> getOfferr() {
         if (offerr == null) {
-            offerr = new ArrayList<UpdatedAdditionalInformation3>();
+            offerr = new ArrayList<>();
         }
         return this.offerr;
     }
@@ -94,8 +96,8 @@ public class CorporateActionNarrative44 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the urlAdr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the urlAdr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -109,10 +111,12 @@ public class CorporateActionNarrative44 {
      * {@link UpdatedURLlnformation4 }
      * 
      * 
+     * @return
+     *     The value of the urlAdr property.
      */
     public List<UpdatedURLlnformation4> getURLAdr() {
         if (urlAdr == null) {
-            urlAdr = new ArrayList<UpdatedURLlnformation4>();
+            urlAdr = new ArrayList<>();
         }
         return this.urlAdr;
     }

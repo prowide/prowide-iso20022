@@ -1,59 +1,58 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlEnumValue;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for DTCAdjustmentPaymentType4Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="DTCAdjustmentPaymentType4Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="RRRA"/&gt;
- *     &lt;enumeration value="RADC"/&gt;
- *     &lt;enumeration value="RADR"/&gt;
- *     &lt;enumeration value="RCIL"/&gt;
- *     &lt;enumeration value="RRCL"/&gt;
- *     &lt;enumeration value="RCDP"/&gt;
- *     &lt;enumeration value="RRCD"/&gt;
- *     &lt;enumeration value="RRDR"/&gt;
- *     &lt;enumeration value="FAIL"/&gt;
- *     &lt;enumeration value="TJXF"/&gt;
- *     &lt;enumeration value="RRRL"/&gt;
- *     &lt;enumeration value="RRLR"/&gt;
- *     &lt;enumeration value="RRR3"/&gt;
- *     &lt;enumeration value="TJXU"/&gt;
- *     &lt;enumeration value="MISC"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="TJXD"/&gt;
- *     &lt;enumeration value="RRD1"/&gt;
- *     &lt;enumeration value="RRD2"/&gt;
- *     &lt;enumeration value="REVA"/&gt;
- *     &lt;enumeration value="TJXR"/&gt;
- *     &lt;enumeration value="TJXV"/&gt;
- *     &lt;enumeration value="RRML"/&gt;
- *     &lt;enumeration value="RRMD"/&gt;
- *     &lt;enumeration value="TJXO"/&gt;
- *     &lt;enumeration value="TJXL"/&gt;
- *     &lt;enumeration value="TJXT"/&gt;
- *     &lt;enumeration value="REPO"/&gt;
- *     &lt;enumeration value="RRRI"/&gt;
- *     &lt;enumeration value="RRRS"/&gt;
- *     &lt;enumeration value="RRRU"/&gt;
- *     &lt;enumeration value="RRRE"/&gt;
- *     &lt;enumeration value="STOK"/&gt;
- *     &lt;enumeration value="TJXI"/&gt;
- *     &lt;enumeration value="RRT2"/&gt;
- *     &lt;enumeration value="RRWT"/&gt;
- *     &lt;enumeration value="RRWC"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="DTCAdjustmentPaymentType4Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="RRRA"/>
+ *     <enumeration value="RADC"/>
+ *     <enumeration value="RADR"/>
+ *     <enumeration value="RCIL"/>
+ *     <enumeration value="RRCL"/>
+ *     <enumeration value="RCDP"/>
+ *     <enumeration value="RRCD"/>
+ *     <enumeration value="RRDR"/>
+ *     <enumeration value="FAIL"/>
+ *     <enumeration value="TJXF"/>
+ *     <enumeration value="RRRL"/>
+ *     <enumeration value="RRLR"/>
+ *     <enumeration value="RRR3"/>
+ *     <enumeration value="TJXU"/>
+ *     <enumeration value="MISC"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="TJXD"/>
+ *     <enumeration value="RRD1"/>
+ *     <enumeration value="RRD2"/>
+ *     <enumeration value="REVA"/>
+ *     <enumeration value="TJXR"/>
+ *     <enumeration value="TJXV"/>
+ *     <enumeration value="RRML"/>
+ *     <enumeration value="RRMD"/>
+ *     <enumeration value="TJXO"/>
+ *     <enumeration value="TJXL"/>
+ *     <enumeration value="TJXT"/>
+ *     <enumeration value="REPO"/>
+ *     <enumeration value="RRRI"/>
+ *     <enumeration value="RRRS"/>
+ *     <enumeration value="RRRU"/>
+ *     <enumeration value="RRRE"/>
+ *     <enumeration value="STOK"/>
+ *     <enumeration value="TJXI"/>
+ *     <enumeration value="RRT2"/>
+ *     <enumeration value="RRWT"/>
+ *     <enumeration value="RRWC"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "DTCAdjustmentPaymentType4Code")

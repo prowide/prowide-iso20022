@@ -1,33 +1,32 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for CardholderVerificationCapability1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CardholderVerificationCapability1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="MNSG"/&gt;
- *     &lt;enumeration value="NPIN"/&gt;
- *     &lt;enumeration value="FCPN"/&gt;
- *     &lt;enumeration value="FEPN"/&gt;
- *     &lt;enumeration value="FDSG"/&gt;
- *     &lt;enumeration value="FBIO"/&gt;
- *     &lt;enumeration value="MNVR"/&gt;
- *     &lt;enumeration value="FBIG"/&gt;
- *     &lt;enumeration value="APKI"/&gt;
- *     &lt;enumeration value="PKIS"/&gt;
- *     &lt;enumeration value="CHDT"/&gt;
- *     &lt;enumeration value="SCEC"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CardholderVerificationCapability1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="MNSG"/>
+ *     <enumeration value="NPIN"/>
+ *     <enumeration value="FCPN"/>
+ *     <enumeration value="FEPN"/>
+ *     <enumeration value="FDSG"/>
+ *     <enumeration value="FBIO"/>
+ *     <enumeration value="MNVR"/>
+ *     <enumeration value="FBIG"/>
+ *     <enumeration value="APKI"/>
+ *     <enumeration value="PKIS"/>
+ *     <enumeration value="CHDT"/>
+ *     <enumeration value="SCEC"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CardholderVerificationCapability1Code")

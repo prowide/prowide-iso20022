@@ -1,33 +1,32 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for SaleCapabilities1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="SaleCapabilities1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CHDI"/&gt;
- *     &lt;enumeration value="CHER"/&gt;
- *     &lt;enumeration value="CHIN"/&gt;
- *     &lt;enumeration value="CHST"/&gt;
- *     &lt;enumeration value="CUDI"/&gt;
- *     &lt;enumeration value="CUAS"/&gt;
- *     &lt;enumeration value="CUER"/&gt;
- *     &lt;enumeration value="CUIN"/&gt;
- *     &lt;enumeration value="POIR"/&gt;
- *     &lt;enumeration value="PRDC"/&gt;
- *     &lt;enumeration value="PRRP"/&gt;
- *     &lt;enumeration value="PRVC"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="SaleCapabilities1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CHDI"/>
+ *     <enumeration value="CHER"/>
+ *     <enumeration value="CHIN"/>
+ *     <enumeration value="CHST"/>
+ *     <enumeration value="CUDI"/>
+ *     <enumeration value="CUAS"/>
+ *     <enumeration value="CUER"/>
+ *     <enumeration value="CUIN"/>
+ *     <enumeration value="POIR"/>
+ *     <enumeration value="PRDC"/>
+ *     <enumeration value="PRRP"/>
+ *     <enumeration value="PRVC"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "SaleCapabilities1Code")

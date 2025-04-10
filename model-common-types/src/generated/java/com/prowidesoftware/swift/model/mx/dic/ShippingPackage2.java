@@ -2,17 +2,18 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.OffsetTime;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -46,11 +47,11 @@ public class ShippingPackage2 {
     @XmlElement(name = "PckpDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar pckpDt;
+    protected LocalDate pckpDt;
     @XmlElement(name = "PckpTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected XMLGregorianCalendar pckpTm;
+    protected OffsetTime pckpTm;
     @XmlElement(name = "Dlvry")
     protected DeliveryInformation4 dlvry;
     @XmlElement(name = "Wght")
@@ -120,7 +121,7 @@ public class ShippingPackage2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getPckpDt() {
+    public LocalDate getPckpDt() {
         return pckpDt;
     }
 
@@ -132,7 +133,7 @@ public class ShippingPackage2 {
      *     {@link String }
      *     
      */
-    public ShippingPackage2 setPckpDt(XMLGregorianCalendar value) {
+    public ShippingPackage2 setPckpDt(LocalDate value) {
         this.pckpDt = value;
         return this;
     }
@@ -145,7 +146,7 @@ public class ShippingPackage2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getPckpTm() {
+    public OffsetTime getPckpTm() {
         return pckpTm;
     }
 
@@ -157,7 +158,7 @@ public class ShippingPackage2 {
      *     {@link String }
      *     
      */
-    public ShippingPackage2 setPckpTm(XMLGregorianCalendar value) {
+    public ShippingPackage2 setPckpTm(OffsetTime value) {
         this.pckpTm = value;
         return this;
     }
@@ -218,8 +219,8 @@ public class ShippingPackage2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the pdct property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the pdct property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -233,10 +234,12 @@ public class ShippingPackage2 {
      * {@link Product7 }
      * 
      * 
+     * @return
+     *     The value of the pdct property.
      */
     public List<Product7> getPdct() {
         if (pdct == null) {
-            pdct = new ArrayList<Product7>();
+            pdct = new ArrayList<>();
         }
         return this.pdct;
     }

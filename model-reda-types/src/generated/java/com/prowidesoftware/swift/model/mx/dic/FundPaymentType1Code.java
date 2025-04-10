@@ -1,27 +1,26 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for FundPaymentType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="FundPaymentType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="DRAF"/&gt;
- *     &lt;enumeration value="CACC"/&gt;
- *     &lt;enumeration value="CHEQ"/&gt;
- *     &lt;enumeration value="CRDT"/&gt;
- *     &lt;enumeration value="DDEB"/&gt;
- *     &lt;enumeration value="CARD"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="FundPaymentType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="DRAF"/>
+ *     <enumeration value="CACC"/>
+ *     <enumeration value="CHEQ"/>
+ *     <enumeration value="CRDT"/>
+ *     <enumeration value="DDEB"/>
+ *     <enumeration value="CARD"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "FundPaymentType1Code")

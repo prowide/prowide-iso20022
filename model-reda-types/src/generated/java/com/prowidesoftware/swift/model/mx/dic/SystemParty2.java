@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.LocalDate;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,11 +33,11 @@ public class SystemParty2 {
     @XmlElement(name = "OpngDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar opngDt;
+    protected LocalDate opngDt;
     @XmlElement(name = "ClsgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar clsgDt;
+    protected LocalDate clsgDt;
 
     /**
      * Gets the value of the opngDt property.
@@ -47,7 +47,7 @@ public class SystemParty2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getOpngDt() {
+    public LocalDate getOpngDt() {
         return opngDt;
     }
 
@@ -59,7 +59,7 @@ public class SystemParty2 {
      *     {@link String }
      *     
      */
-    public SystemParty2 setOpngDt(XMLGregorianCalendar value) {
+    public SystemParty2 setOpngDt(LocalDate value) {
         this.opngDt = value;
         return this;
     }
@@ -72,7 +72,7 @@ public class SystemParty2 {
      *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getClsgDt() {
+    public LocalDate getClsgDt() {
         return clsgDt;
     }
 
@@ -84,7 +84,7 @@ public class SystemParty2 {
      *     {@link String }
      *     
      */
-    public SystemParty2 setClsgDt(XMLGregorianCalendar value) {
+    public SystemParty2 setClsgDt(LocalDate value) {
         this.clsgDt = value;
         return this;
     }

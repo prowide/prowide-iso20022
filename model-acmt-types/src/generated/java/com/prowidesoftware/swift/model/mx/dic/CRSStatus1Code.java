@@ -1,36 +1,35 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlEnumValue;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for CRSStatus1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CRSStatus1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="C101"/&gt;
- *     &lt;enumeration value="C102"/&gt;
- *     &lt;enumeration value="C103"/&gt;
- *     &lt;enumeration value="C104"/&gt;
- *     &lt;enumeration value="C105"/&gt;
- *     &lt;enumeration value="C106"/&gt;
- *     &lt;enumeration value="C107"/&gt;
- *     &lt;enumeration value="C108"/&gt;
- *     &lt;enumeration value="C109"/&gt;
- *     &lt;enumeration value="C110"/&gt;
- *     &lt;enumeration value="C111"/&gt;
- *     &lt;enumeration value="C112"/&gt;
- *     &lt;enumeration value="C113"/&gt;
- *     &lt;enumeration value="C114"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CRSStatus1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="C101"/>
+ *     <enumeration value="C102"/>
+ *     <enumeration value="C103"/>
+ *     <enumeration value="C104"/>
+ *     <enumeration value="C105"/>
+ *     <enumeration value="C106"/>
+ *     <enumeration value="C107"/>
+ *     <enumeration value="C108"/>
+ *     <enumeration value="C109"/>
+ *     <enumeration value="C110"/>
+ *     <enumeration value="C111"/>
+ *     <enumeration value="C112"/>
+ *     <enumeration value="C113"/>
+ *     <enumeration value="C114"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CRSStatus1Code")
