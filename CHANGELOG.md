@@ -1,6 +1,6 @@
 # Prowide ISO 20022 - CHANGELOG
 
-#### 10.2.7 - SNAPSHOT
+#### 10.2.7 - April 2025
   * Enhanced the MX parser log verbosity when parsing malformed content
   * Added new logic to MxNode to removing all leaves with empty attributes and empty content
 
