@@ -15,9 +15,6 @@
  */
 package com.prowidesoftware.swift.model;
 
-import com.prowidesoftware.deprecation.ProwideDeprecated;
-import com.prowidesoftware.deprecation.TargetYear;
-
 /**
  * SWIFT business process classification for MX messages.
  *
@@ -57,14 +54,6 @@ public enum MxBusinessProcess {
     setr("Securities Trade"),
     supl("Supplementary Data"),
     trck("Payments Tracker"),
-
-    /**
-     * @deprecated Obsolete to be withdrawn (non-ISO)
-     */
-    @ProwideDeprecated(phase4 = TargetYear.SRU2025)
-    @Deprecated
-    trea("Treasury"),
-
     tsin("Trade Services Initiation"),
     tsmt("Trade Services Management"),
     tsrv("Trade Services"),
