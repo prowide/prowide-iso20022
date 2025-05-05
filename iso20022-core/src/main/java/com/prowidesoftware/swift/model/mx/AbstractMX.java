@@ -18,6 +18,7 @@ package com.prowidesoftware.swift.model.mx;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.prowidesoftware.JsonSerializable;
+import com.prowidesoftware.deprecation.DeprecationUtils;
 import com.prowidesoftware.deprecation.ProwideDeprecated;
 import com.prowidesoftware.deprecation.TargetYear;
 import com.prowidesoftware.swift.model.AbstractMessage;
@@ -26,9 +27,11 @@ import com.prowidesoftware.swift.model.MxId;
 import com.prowidesoftware.swift.model.mt.AbstractMT;
 import com.prowidesoftware.swift.model.mx.adapters.*;
 import com.prowidesoftware.swift.model.mx.adapters.v9.V9DateTimeJsonAdapter;
+import com.prowidesoftware.swift.utils.Lib;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.annotation.XmlTransient;
-import java.io.StringReader;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.time.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -70,7 +73,7 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
      * @deprecated the default root element for the custom envelope is now defined in {@link EnvelopeType#CUSTOM}
      */
     @Deprecated
-    @ProwideDeprecated(phase3 = TargetYear.SRU2026)
+    @ProwideDeprecated(phase2 = TargetYear.SRU2025)
     public static String DEFAULT_ROOT_ELEMENT = "RequestPayload";
 
     /**
@@ -124,6 +127,17 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
      */
     public static AbstractMX parse(final String xml, MxId id) {
         return MxReadImpl.parse(xml, id, new MxReadParams());
+    }
+
+    /**
+     * @deprecated use Lib.readFile(file) and any parse from String method
+     */
+    @Deprecated
+    @ProwideDeprecated(phase4 = TargetYear.SRU2025)
+    public static AbstractMX parse(final File file, MxId id) throws IOException {
+        DeprecationUtils.phase3(
+                AbstractMX.class, "parse(File, MxId)", "Use Lib.readFile(file) and any parse from String method");
+        return MxReadImpl.parse(Lib.readFile(file), id, new MxReadParams());
     }
 
     /**
@@ -399,6 +413,21 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
     }
 
     /**
+     * @deprecated use {@link #document(MxWriteParams)} instead
+     */
+    @Deprecated
+    @ProwideDeprecated(phase4 = TargetYear.SRU2025)
+    public String document(final String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
+        DeprecationUtils.phase3(
+                AbstractMX.class, "document(String, boolean, EscapeHandler)", "Use document(MxWriteParams) instead");
+        MxWriteParams params = new MxWriteParams();
+        params.prefix = prefix;
+        params.includeXMLDeclaration = includeXMLDeclaration;
+        params.escapeHandler = escapeHandler;
+        return document(params);
+    }
+
+    /**
      * Convenience method to get this message XML as javax.xml.transform.Source.
      *
      * @return null if message() returns null or StreamSource in other case
@@ -429,6 +458,34 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
     @Override
     public String message() {
         return message(new MxWriteConfiguration());
+    }
+
+    /**
+     * @deprecated use {@link #message(MxWriteConfiguration)} and handle write from String to file with plain Java API
+     */
+    @Deprecated
+    @ProwideDeprecated(phase4 = TargetYear.SRU2025)
+    public void write(final File file) throws IOException {
+        DeprecationUtils.phase3(AbstractMX.class, "write(File)", "Use message(MxWriteConfiguration) instead");
+        Objects.requireNonNull(file, "the file to write cannot be null");
+        boolean created = file.createNewFile();
+        if (created) {
+            log.fine("new file created: " + file.getAbsolutePath());
+        }
+        final FileOutputStream stream = new FileOutputStream(file.getAbsoluteFile());
+        write(stream);
+        stream.close();
+    }
+
+    /**
+     * @deprecated use {@link #message(MxWriteConfiguration)} and handle write from String to stream with plain Java API
+     */
+    @Deprecated
+    @ProwideDeprecated(phase4 = TargetYear.SRU2025)
+    public void write(final OutputStream stream) throws IOException {
+        DeprecationUtils.phase3(AbstractMX.class, "write(OutputStream)", "Use message(MxWriteConfiguration) instead");
+        Objects.requireNonNull(stream, "the stream to write cannot be null");
+        stream.write(message().getBytes(StandardCharsets.UTF_8));
     }
 
     /**

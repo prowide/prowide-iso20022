@@ -15,7 +15,6 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
-import com.prowidesoftware.deprecation.DeprecationUtils;
 import com.prowidesoftware.deprecation.ProwideDeprecated;
 import com.prowidesoftware.deprecation.TargetYear;
 import com.prowidesoftware.swift.utils.SafeXmlUtils;
@@ -114,10 +113,8 @@ public class NamespaceReader {
      * @deprecated use {@link MxParseUtils#elementExists(String, String)} instead
      */
     @Deprecated
-    @ProwideDeprecated(phase3 = TargetYear.SRU2026)
+    @ProwideDeprecated(phase2 = TargetYear.SRU2025)
     public static boolean elementExists(final String xml, final String localName) {
-        DeprecationUtils.phase2(
-                NamespaceReader.class, "elementExists", "Use MxParseUtils.elementExists(String, String) instead");
         return MxParseUtils.elementExists(xml, localName);
     }
 }

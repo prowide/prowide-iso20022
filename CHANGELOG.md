@@ -1,11 +1,5 @@
 # Prowide ISO 20022 - CHANGELOG
 
-#### 10.3.0 - SNAPSHOT
-  * SWIFT Standard release update 2025 (live 22 November 2025)
-  * Yearly revision of deprecation phase (see https://dev.prowidesoftware.com/SRU2024/getting-started/deprecation/)
-  * Dependency update: commons-lang3 -> 3.17.0
-  * Dependency update: gson -> 2.13.1
-
 #### 10.2.7 - April 2025
   * Enhanced the MX parser log verbosity when parsing malformed content
   * Added new logic to MxNode to removing all leaves with empty attributes and empty content

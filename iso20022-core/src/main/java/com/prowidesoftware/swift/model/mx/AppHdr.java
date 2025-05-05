@@ -15,7 +15,11 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
+import com.prowidesoftware.deprecation.DeprecationUtils;
+import com.prowidesoftware.deprecation.ProwideDeprecated;
+import com.prowidesoftware.deprecation.TargetYear;
 import java.time.OffsetDateTime;
+import java.util.Objects;
 import org.w3c.dom.Element;
 
 /**
@@ -102,6 +106,13 @@ public interface AppHdr {
      */
     void setCreationDate(boolean overwrite);
 
+    /*
+     *  ver MX Headers/stdsmx_usgi.pdf
+     *  doc 3.2.3 Correspondence between the ISO Business Application Header and the Application Header
+     *  de ahi sintentizar los atributos aca.
+     *  replicar metodos unificados segun el mapeo de la seccion 3.2.3
+     */
+
     /**
      * Get this header as an XML string.
      * <p>The implementation uses {@link #xml(MxWriteParams)} with no prefix and no XML declaration.
@@ -113,13 +124,34 @@ public interface AppHdr {
     }
 
     /**
+     * @deprecated use {@link #xml(MxWriteParams)} instead
+     */
+    @Deprecated
+    @ProwideDeprecated(phase4 = TargetYear.SRU2025)
+    String xml(final String prefix, boolean includeXMLDeclaration);
+
+    /**
+     * @deprecated use {@link #xml(MxWriteParams)} instead
+     */
+    @Deprecated
+    @ProwideDeprecated(phase4 = TargetYear.SRU2025)
+    default String xml(final String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
+        DeprecationUtils.phase3(
+                AbstractMX.class, "xml(String, boolean, EscapeHandler)", "Use xml(MxWriteParams) instead");
+        return xml(prefix, includeXMLDeclaration);
+    }
+
+    /**
      * Get this header as an XML string.
      *
      * @param params not null marshalling parameters
      * @return header serialized into XML string or null in case of unexpected error
      * @since 9.2.6
      */
-    String xml(MxWriteParams params);
+    default String xml(MxWriteParams params) {
+        Objects.requireNonNull(params, "The marshalling params cannot be null");
+        return xml(params.prefix, params.includeXMLDeclaration);
+    }
 
     /**
      * Gets the header as an Element object.
