@@ -1,0 +1,145 @@
+
+package com.prowidesoftware.swift.model.mx.dic;
+
+import java.util.ArrayList;
+import java.util.List;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+
+/**
+ * Conversion between the currency of a card acceptor and the currency of a card issuer, provided by a dedicated service provider.
+ * 
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "CurrencyConversion28", propOrder = {
+    "rslt",
+    "rsltRsn",
+    "convsDtls"
+})
+public class CurrencyConversion28 {
+
+    @XmlElement(name = "Rslt", required = true)
+    @XmlSchemaType(name = "string")
+    protected CurrencyConversionResponse3Code rslt;
+    @XmlElement(name = "RsltRsn")
+    protected String rsltRsn;
+    @XmlElement(name = "ConvsDtls")
+    protected List<CurrencyConversion26> convsDtls;
+
+    /**
+     * Gets the value of the rslt property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link CurrencyConversionResponse3Code }
+     *     
+     */
+    public CurrencyConversionResponse3Code getRslt() {
+        return rslt;
+    }
+
+    /**
+     * Sets the value of the rslt property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link CurrencyConversionResponse3Code }
+     *     
+     */
+    public CurrencyConversion28 setRslt(CurrencyConversionResponse3Code value) {
+        this.rslt = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the rsltRsn property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getRsltRsn() {
+        return rsltRsn;
+    }
+
+    /**
+     * Sets the value of the rsltRsn property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public CurrencyConversion28 setRsltRsn(String value) {
+        this.rsltRsn = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the convsDtls property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the convsDtls property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getConvsDtls().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link CurrencyConversion26 }
+     * 
+     * 
+     * @return
+     *     The value of the convsDtls property.
+     */
+    public List<CurrencyConversion26> getConvsDtls() {
+        if (convsDtls == null) {
+            convsDtls = new ArrayList<>();
+        }
+        return this.convsDtls;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+    /**
+     * Adds a new item to the convsDtls list.
+     * @see #getConvsDtls()
+     * 
+     */
+    public CurrencyConversion28 addConvsDtls(CurrencyConversion26 convsDtls) {
+        getConvsDtls().add(convsDtls);
+        return this;
+    }
+
+}

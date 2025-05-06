@@ -1,0 +1,125 @@
+
+package com.prowidesoftware.swift.model.mx.dic;
+
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+
+/**
+ * Provides information about the prices related to a corporate action option.
+ * 
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "PriceDetails43", propOrder = {
+    "gncCshPricPdPerPdct",
+    "gncCshPricRcvdPerPdct",
+    "cshInLieuOfShrPric"
+})
+public class PriceDetails43 {
+
+    @XmlElement(name = "GncCshPricPdPerPdct")
+    protected PriceFormat93Choice gncCshPricPdPerPdct;
+    @XmlElement(name = "GncCshPricRcvdPerPdct")
+    protected PriceFormat94Choice gncCshPricRcvdPerPdct;
+    @XmlElement(name = "CshInLieuOfShrPric")
+    protected PriceFormat92Choice cshInLieuOfShrPric;
+
+    /**
+     * Gets the value of the gncCshPricPdPerPdct property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link PriceFormat93Choice }
+     *     
+     */
+    public PriceFormat93Choice getGncCshPricPdPerPdct() {
+        return gncCshPricPdPerPdct;
+    }
+
+    /**
+     * Sets the value of the gncCshPricPdPerPdct property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link PriceFormat93Choice }
+     *     
+     */
+    public PriceDetails43 setGncCshPricPdPerPdct(PriceFormat93Choice value) {
+        this.gncCshPricPdPerPdct = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the gncCshPricRcvdPerPdct property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link PriceFormat94Choice }
+     *     
+     */
+    public PriceFormat94Choice getGncCshPricRcvdPerPdct() {
+        return gncCshPricRcvdPerPdct;
+    }
+
+    /**
+     * Sets the value of the gncCshPricRcvdPerPdct property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link PriceFormat94Choice }
+     *     
+     */
+    public PriceDetails43 setGncCshPricRcvdPerPdct(PriceFormat94Choice value) {
+        this.gncCshPricRcvdPerPdct = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the cshInLieuOfShrPric property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link PriceFormat92Choice }
+     *     
+     */
+    public PriceFormat92Choice getCshInLieuOfShrPric() {
+        return cshInLieuOfShrPric;
+    }
+
+    /**
+     * Sets the value of the cshInLieuOfShrPric property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link PriceFormat92Choice }
+     *     
+     */
+    public PriceDetails43 setCshInLieuOfShrPric(PriceFormat92Choice value) {
+        this.cshInLieuOfShrPric = value;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+}
