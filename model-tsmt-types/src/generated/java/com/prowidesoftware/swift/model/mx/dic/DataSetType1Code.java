@@ -1,23 +1,24 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for DataSetType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="DataSetType1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="BASE"/>
- *     <enumeration value="TRDS"/>
- *     <enumeration value="CODS"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="DataSetType1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="BASE"/&gt;
+ *     &lt;enumeration value="TRDS"/&gt;
+ *     &lt;enumeration value="CODS"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "DataSetType1Code")

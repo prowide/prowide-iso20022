@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -52,8 +52,8 @@ public class CorporateActionAdditionalInformation1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the bnfclOwnrDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the bnfclOwnrDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -67,12 +67,10 @@ public class CorporateActionAdditionalInformation1 {
      * {@link BeneficialOwner1 }
      * 
      * 
-     * @return
-     *     The value of the bnfclOwnrDtls property.
      */
     public List<BeneficialOwner1> getBnfclOwnrDtls() {
         if (bnfclOwnrDtls == null) {
-            bnfclOwnrDtls = new ArrayList<>();
+            bnfclOwnrDtls = new ArrayList<BeneficialOwner1>();
         }
         return this.bnfclOwnrDtls;
     }
@@ -183,8 +181,8 @@ public class CorporateActionAdditionalInformation1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the dlvryDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the dlvryDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -198,12 +196,10 @@ public class CorporateActionAdditionalInformation1 {
      * {@link ProceedsDelivery1 }
      * 
      * 
-     * @return
-     *     The value of the dlvryDtls property.
      */
     public List<ProceedsDelivery1> getDlvryDtls() {
         if (dlvryDtls == null) {
-            dlvryDtls = new ArrayList<>();
+            dlvryDtls = new ArrayList<ProceedsDelivery1>();
         }
         return this.dlvryDtls;
     }

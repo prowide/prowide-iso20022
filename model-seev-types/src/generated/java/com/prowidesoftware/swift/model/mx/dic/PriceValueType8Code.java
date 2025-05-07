@@ -1,24 +1,25 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for PriceValueType8Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="PriceValueType8Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="TBSP"/>
- *     <enumeration value="UNSP"/>
- *     <enumeration value="UKWN"/>
- *     <enumeration value="NILP"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="PriceValueType8Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="TBSP"/&gt;
+ *     &lt;enumeration value="UNSP"/&gt;
+ *     &lt;enumeration value="UKWN"/&gt;
+ *     &lt;enumeration value="NILP"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "PriceValueType8Code")

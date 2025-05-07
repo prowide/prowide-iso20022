@@ -2,18 +2,17 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -64,7 +63,7 @@ public class MeetingNotice5 {
     @XmlElement(name = "AnncmntDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate anncmntDt;
+    protected XMLGregorianCalendar anncmntDt;
     @XmlElement(name = "Prtcptn")
     protected List<ParticipationMethod1> prtcptn;
     @XmlElement(name = "Attndnc")
@@ -88,7 +87,7 @@ public class MeetingNotice5 {
     @XmlElement(name = "SctiesBlckgPrdEndDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime sctiesBlckgPrdEndDt;
+    protected XMLGregorianCalendar sctiesBlckgPrdEndDt;
     @XmlElement(name = "EntitlmntFxgDt")
     protected DateFormat1 entitlmntFxgDt;
     @XmlElement(name = "RegnSctiesDdln")
@@ -208,7 +207,7 @@ public class MeetingNotice5 {
      *     {@link String }
      *     
      */
-    public LocalDate getAnncmntDt() {
+    public XMLGregorianCalendar getAnncmntDt() {
         return anncmntDt;
     }
 
@@ -220,7 +219,7 @@ public class MeetingNotice5 {
      *     {@link String }
      *     
      */
-    public MeetingNotice5 setAnncmntDt(LocalDate value) {
+    public MeetingNotice5 setAnncmntDt(XMLGregorianCalendar value) {
         this.anncmntDt = value;
         return this;
     }
@@ -231,8 +230,8 @@ public class MeetingNotice5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the prtcptn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the prtcptn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -246,12 +245,10 @@ public class MeetingNotice5 {
      * {@link ParticipationMethod1 }
      * 
      * 
-     * @return
-     *     The value of the prtcptn property.
      */
     public List<ParticipationMethod1> getPrtcptn() {
         if (prtcptn == null) {
-            prtcptn = new ArrayList<>();
+            prtcptn = new ArrayList<ParticipationMethod1>();
         }
         return this.prtcptn;
     }
@@ -287,8 +284,8 @@ public class MeetingNotice5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the addtlDcmnttnURLAdr property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the addtlDcmnttnURLAdr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -302,12 +299,10 @@ public class MeetingNotice5 {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the addtlDcmnttnURLAdr property.
      */
     public List<String> getAddtlDcmnttnURLAdr() {
         if (addtlDcmnttnURLAdr == null) {
-            addtlDcmnttnURLAdr = new ArrayList<>();
+            addtlDcmnttnURLAdr = new ArrayList<String>();
         }
         return this.addtlDcmnttnURLAdr;
     }
@@ -318,8 +313,8 @@ public class MeetingNotice5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the addtlPrcdrDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the addtlPrcdrDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -333,12 +328,10 @@ public class MeetingNotice5 {
      * {@link AdditionalRights3 }
      * 
      * 
-     * @return
-     *     The value of the addtlPrcdrDtls property.
      */
     public List<AdditionalRights3> getAddtlPrcdrDtls() {
         if (addtlPrcdrDtls == null) {
-            addtlPrcdrDtls = new ArrayList<>();
+            addtlPrcdrDtls = new ArrayList<AdditionalRights3>();
         }
         return this.addtlPrcdrDtls;
     }
@@ -449,8 +442,8 @@ public class MeetingNotice5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the ctctPrsnDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the ctctPrsnDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -464,12 +457,10 @@ public class MeetingNotice5 {
      * {@link MeetingContactPerson3 }
      * 
      * 
-     * @return
-     *     The value of the ctctPrsnDtls property.
      */
     public List<MeetingContactPerson3> getCtctPrsnDtls() {
         if (ctctPrsnDtls == null) {
-            ctctPrsnDtls = new ArrayList<>();
+            ctctPrsnDtls = new ArrayList<MeetingContactPerson3>();
         }
         return this.ctctPrsnDtls;
     }
@@ -507,7 +498,7 @@ public class MeetingNotice5 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getSctiesBlckgPrdEndDt() {
+    public XMLGregorianCalendar getSctiesBlckgPrdEndDt() {
         return sctiesBlckgPrdEndDt;
     }
 
@@ -519,7 +510,7 @@ public class MeetingNotice5 {
      *     {@link String }
      *     
      */
-    public MeetingNotice5 setSctiesBlckgPrdEndDt(OffsetDateTime value) {
+    public MeetingNotice5 setSctiesBlckgPrdEndDt(XMLGregorianCalendar value) {
         this.sctiesBlckgPrdEndDt = value;
         return this;
     }

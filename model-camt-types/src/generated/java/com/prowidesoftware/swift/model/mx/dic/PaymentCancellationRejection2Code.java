@@ -1,29 +1,30 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlEnumValue;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlEnumValue;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for PaymentCancellationRejection2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="PaymentCancellationRejection2Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="LEGL"/>
- *     <enumeration value="AGNT"/>
- *     <enumeration value="CUST"/>
- *     <enumeration value="ARDT"/>
- *     <enumeration value="NOAS"/>
- *     <enumeration value="NOOR"/>
- *     <enumeration value="AC04"/>
- *     <enumeration value="AM04"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="PaymentCancellationRejection2Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="LEGL"/&gt;
+ *     &lt;enumeration value="AGNT"/&gt;
+ *     &lt;enumeration value="CUST"/&gt;
+ *     &lt;enumeration value="ARDT"/&gt;
+ *     &lt;enumeration value="NOAS"/&gt;
+ *     &lt;enumeration value="NOOR"/&gt;
+ *     &lt;enumeration value="AC04"/&gt;
+ *     &lt;enumeration value="AM04"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "PaymentCancellationRejection2Code")

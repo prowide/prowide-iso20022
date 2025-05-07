@@ -1,29 +1,30 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for Exemption2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="Exemption2Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="PKGE"/>
- *     <enumeration value="TMBE"/>
- *     <enumeration value="RECP"/>
- *     <enumeration value="LOWA"/>
- *     <enumeration value="SCPE"/>
- *     <enumeration value="TRAE"/>
- *     <enumeration value="CTLS"/>
- *     <enumeration value="PAAC"/>
- *     <enumeration value="TRSP"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="Exemption2Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="PKGE"/&gt;
+ *     &lt;enumeration value="TMBE"/&gt;
+ *     &lt;enumeration value="RECP"/&gt;
+ *     &lt;enumeration value="LOWA"/&gt;
+ *     &lt;enumeration value="SCPE"/&gt;
+ *     &lt;enumeration value="TRAE"/&gt;
+ *     &lt;enumeration value="CTLS"/&gt;
+ *     &lt;enumeration value="PAAC"/&gt;
+ *     &lt;enumeration value="TRSP"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "Exemption2Code")

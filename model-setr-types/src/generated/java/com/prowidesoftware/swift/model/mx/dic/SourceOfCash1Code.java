@@ -1,35 +1,36 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for SourceOfCash1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="SourceOfCash1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="ALMY"/>
- *     <enumeration value="CASH"/>
- *     <enumeration value="COMP"/>
- *     <enumeration value="EMIN"/>
- *     <enumeration value="GIFT"/>
- *     <enumeration value="INHE"/>
- *     <enumeration value="INLQ"/>
- *     <enumeration value="REST"/>
- *     <enumeration value="REDM"/>
- *     <enumeration value="REPY"/>
- *     <enumeration value="SEAQ"/>
- *     <enumeration value="SALE"/>
- *     <enumeration value="SVGS"/>
- *     <enumeration value="SELF"/>
- *     <enumeration value="WINS"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="SourceOfCash1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ALMY"/&gt;
+ *     &lt;enumeration value="CASH"/&gt;
+ *     &lt;enumeration value="COMP"/&gt;
+ *     &lt;enumeration value="EMIN"/&gt;
+ *     &lt;enumeration value="GIFT"/&gt;
+ *     &lt;enumeration value="INHE"/&gt;
+ *     &lt;enumeration value="INLQ"/&gt;
+ *     &lt;enumeration value="REST"/&gt;
+ *     &lt;enumeration value="REDM"/&gt;
+ *     &lt;enumeration value="REPY"/&gt;
+ *     &lt;enumeration value="SEAQ"/&gt;
+ *     &lt;enumeration value="SALE"/&gt;
+ *     &lt;enumeration value="SVGS"/&gt;
+ *     &lt;enumeration value="SELF"/&gt;
+ *     &lt;enumeration value="WINS"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "SourceOfCash1Code")

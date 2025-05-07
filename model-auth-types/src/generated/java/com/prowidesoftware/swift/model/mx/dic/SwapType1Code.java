@@ -1,30 +1,31 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for SwapType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="SwapType1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="OSSC"/>
- *     <enumeration value="XFSC"/>
- *     <enumeration value="XFMC"/>
- *     <enumeration value="XXSC"/>
- *     <enumeration value="XXMC"/>
- *     <enumeration value="IFMC"/>
- *     <enumeration value="FFSC"/>
- *     <enumeration value="FFMC"/>
- *     <enumeration value="IFSC"/>
- *     <enumeration value="OSMC"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="SwapType1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="OSSC"/&gt;
+ *     &lt;enumeration value="XFSC"/&gt;
+ *     &lt;enumeration value="XFMC"/&gt;
+ *     &lt;enumeration value="XXSC"/&gt;
+ *     &lt;enumeration value="XXMC"/&gt;
+ *     &lt;enumeration value="IFMC"/&gt;
+ *     &lt;enumeration value="FFSC"/&gt;
+ *     &lt;enumeration value="FFMC"/&gt;
+ *     &lt;enumeration value="IFSC"/&gt;
+ *     &lt;enumeration value="OSMC"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "SwapType1Code")

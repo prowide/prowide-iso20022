@@ -1,28 +1,29 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for CollateralType3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="CollateralType3Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="CASH"/>
- *     <enumeration value="SECU"/>
- *     <enumeration value="PHYS"/>
- *     <enumeration value="INSU"/>
- *     <enumeration value="STCF"/>
- *     <enumeration value="BOND"/>
- *     <enumeration value="GBBK"/>
- *     <enumeration value="OTHR"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="CollateralType3Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="CASH"/&gt;
+ *     &lt;enumeration value="SECU"/&gt;
+ *     &lt;enumeration value="PHYS"/&gt;
+ *     &lt;enumeration value="INSU"/&gt;
+ *     &lt;enumeration value="STCF"/&gt;
+ *     &lt;enumeration value="BOND"/&gt;
+ *     &lt;enumeration value="GBBK"/&gt;
+ *     &lt;enumeration value="OTHR"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "CollateralType3Code")

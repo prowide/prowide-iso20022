@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -65,11 +65,11 @@ public class BusinessApplicationHeaderV04Impl {
     @XmlElement(name = "CreDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime creDt;
+    protected XMLGregorianCalendar creDt;
     @XmlElement(name = "BizPrcgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime bizPrcgDt;
+    protected XMLGregorianCalendar bizPrcgDt;
     @XmlElement(name = "CpyDplct")
     @XmlSchemaType(name = "string")
     protected CopyDuplicate1Code cpyDplct;
@@ -81,7 +81,7 @@ public class BusinessApplicationHeaderV04Impl {
     protected SignatureEnvelope sgntr;
     @XmlElement(name = "Rltd")
     protected List<BusinessApplicationHeader8> rltd;
-    public static final transient Class[] _classes = new Class[] {AddressType2Code.class, AddressType3Choice.class, BranchAndFinancialInstitutionIdentification8 .class, BranchData5 .class, BusinessApplicationHeader8 .class, BusinessApplicationHeaderV04Impl.class, ClearingSystemIdentification2Choice.class, ClearingSystemMemberIdentification2 .class, Contact13 .class, CopyDuplicate1Code.class, DateAndPlaceOfBirth1 .class, FinancialIdentificationSchemeName1Choice.class, FinancialInstitutionIdentification23 .class, GenericFinancialIdentification1 .class, GenericIdentification30 .class, GenericOrganisationIdentification3 .class, GenericPersonIdentification2 .class, ImplementationSpecification1 .class, NamePrefix2Code.class, OrganisationIdentification39 .class, OrganisationIdentificationSchemeName1Choice.class, OtherContact1 .class, Party51Choice.class, Party52Choice.class, PartyIdentification272 .class, PersonIdentification18 .class, PersonIdentificationSchemeName1Choice.class, PostalAddress27 .class, PreferredContactMethod2Code.class, SignatureEnvelope.class };
+    public final static transient Class[] _classes = new Class[] {AddressType2Code.class, AddressType3Choice.class, BranchAndFinancialInstitutionIdentification8 .class, BranchData5 .class, BusinessApplicationHeader8 .class, BusinessApplicationHeaderV04Impl.class, ClearingSystemIdentification2Choice.class, ClearingSystemMemberIdentification2 .class, Contact13 .class, CopyDuplicate1Code.class, DateAndPlaceOfBirth1 .class, FinancialIdentificationSchemeName1Choice.class, FinancialInstitutionIdentification23 .class, GenericFinancialIdentification1 .class, GenericIdentification30 .class, GenericOrganisationIdentification3 .class, GenericPersonIdentification2 .class, ImplementationSpecification1 .class, NamePrefix2Code.class, OrganisationIdentification39 .class, OrganisationIdentificationSchemeName1Choice.class, OtherContact1 .class, Party51Choice.class, Party52Choice.class, PartyIdentification272 .class, PersonIdentification18 .class, PersonIdentificationSchemeName1Choice.class, PostalAddress27 .class, PreferredContactMethod2Code.class, SignatureEnvelope.class };
 
     /**
      * Gets the value of the charSet property.
@@ -266,7 +266,7 @@ public class BusinessApplicationHeaderV04Impl {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getCreDt() {
+    public XMLGregorianCalendar getCreDt() {
         return creDt;
     }
 
@@ -278,7 +278,7 @@ public class BusinessApplicationHeaderV04Impl {
      *     {@link String }
      *     
      */
-    public BusinessApplicationHeaderV04Impl setCreDt(OffsetDateTime value) {
+    public BusinessApplicationHeaderV04Impl setCreDt(XMLGregorianCalendar value) {
         this.creDt = value;
         return this;
     }
@@ -291,7 +291,7 @@ public class BusinessApplicationHeaderV04Impl {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getBizPrcgDt() {
+    public XMLGregorianCalendar getBizPrcgDt() {
         return bizPrcgDt;
     }
 
@@ -303,7 +303,7 @@ public class BusinessApplicationHeaderV04Impl {
      *     {@link String }
      *     
      */
-    public BusinessApplicationHeaderV04Impl setBizPrcgDt(OffsetDateTime value) {
+    public BusinessApplicationHeaderV04Impl setBizPrcgDt(XMLGregorianCalendar value) {
         this.bizPrcgDt = value;
         return this;
     }
@@ -414,8 +414,8 @@ public class BusinessApplicationHeaderV04Impl {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the rltd property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the rltd property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -429,12 +429,10 @@ public class BusinessApplicationHeaderV04Impl {
      * {@link BusinessApplicationHeader8 }
      * 
      * 
-     * @return
-     *     The value of the rltd property.
      */
     public List<BusinessApplicationHeader8> getRltd() {
         if (rltd == null) {
-            rltd = new ArrayList<>();
+            rltd = new ArrayList<BusinessApplicationHeader8>();
         }
         return this.rltd;
     }

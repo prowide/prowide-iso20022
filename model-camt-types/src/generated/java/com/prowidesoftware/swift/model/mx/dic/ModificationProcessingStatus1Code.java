@@ -1,26 +1,27 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for ModificationProcessingStatus1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="ModificationProcessingStatus1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="PACK"/>
- *     <enumeration value="REJT"/>
- *     <enumeration value="MODC"/>
- *     <enumeration value="DEND"/>
- *     <enumeration value="MODP"/>
- *     <enumeration value="REPR"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="ModificationProcessingStatus1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="PACK"/&gt;
+ *     &lt;enumeration value="REJT"/&gt;
+ *     &lt;enumeration value="MODC"/&gt;
+ *     &lt;enumeration value="DEND"/&gt;
+ *     &lt;enumeration value="MODP"/&gt;
+ *     &lt;enumeration value="REPR"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "ModificationProcessingStatus1Code")

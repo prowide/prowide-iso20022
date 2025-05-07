@@ -2,16 +2,16 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -42,7 +42,7 @@ public class RentalDetails2 {
     @XmlElement(name = "RntlDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime rntlDtTm;
+    protected XMLGregorianCalendar rntlDtTm;
     @XmlElement(name = "RntlStart")
     protected ServiceStartEnd2 rntlStart;
     @XmlElement(name = "RntlRtr")
@@ -90,7 +90,7 @@ public class RentalDetails2 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getRntlDtTm() {
+    public XMLGregorianCalendar getRntlDtTm() {
         return rntlDtTm;
     }
 
@@ -102,7 +102,7 @@ public class RentalDetails2 {
      *     {@link String }
      *     
      */
-    public RentalDetails2 setRntlDtTm(OffsetDateTime value) {
+    public RentalDetails2 setRntlDtTm(XMLGregorianCalendar value) {
         this.rntlDtTm = value;
         return this;
     }
@@ -163,8 +163,8 @@ public class RentalDetails2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the rntlTmPrd property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the rntlTmPrd property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -178,12 +178,10 @@ public class RentalDetails2 {
      * {@link PeriodUnit2Code }
      * 
      * 
-     * @return
-     *     The value of the rntlTmPrd property.
      */
     public List<PeriodUnit2Code> getRntlTmPrd() {
         if (rntlTmPrd == null) {
-            rntlTmPrd = new ArrayList<>();
+            rntlTmPrd = new ArrayList<PeriodUnit2Code>();
         }
         return this.rntlTmPrd;
     }

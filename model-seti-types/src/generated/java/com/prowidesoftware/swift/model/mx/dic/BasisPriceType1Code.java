@@ -1,29 +1,30 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for BasisPriceType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="BasisPriceType1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="MSCP"/>
- *     <enumeration value="CLOS"/>
- *     <enumeration value="CURR"/>
- *     <enumeration value="SPQO"/>
- *     <enumeration value="VWPD"/>
- *     <enumeration value="VWPM"/>
- *     <enumeration value="VWPA"/>
- *     <enumeration value="STIK"/>
- *     <enumeration value="OPEN"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="BasisPriceType1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="MSCP"/&gt;
+ *     &lt;enumeration value="CLOS"/&gt;
+ *     &lt;enumeration value="CURR"/&gt;
+ *     &lt;enumeration value="SPQO"/&gt;
+ *     &lt;enumeration value="VWPD"/&gt;
+ *     &lt;enumeration value="VWPM"/&gt;
+ *     &lt;enumeration value="VWPA"/&gt;
+ *     &lt;enumeration value="STIK"/&gt;
+ *     &lt;enumeration value="OPEN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "BasisPriceType1Code")

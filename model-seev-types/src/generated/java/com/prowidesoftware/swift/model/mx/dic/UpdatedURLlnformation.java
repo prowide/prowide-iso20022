@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -34,7 +34,7 @@ public class UpdatedURLlnformation {
     @XmlElement(name = "UpdDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate updDt;
+    protected XMLGregorianCalendar updDt;
     @XmlElement(name = "URLAdr", required = true)
     protected String urlAdr;
 
@@ -71,7 +71,7 @@ public class UpdatedURLlnformation {
      *     {@link String }
      *     
      */
-    public LocalDate getUpdDt() {
+    public XMLGregorianCalendar getUpdDt() {
         return updDt;
     }
 
@@ -83,7 +83,7 @@ public class UpdatedURLlnformation {
      *     {@link String }
      *     
      */
-    public UpdatedURLlnformation setUpdDt(LocalDate value) {
+    public UpdatedURLlnformation setUpdDt(XMLGregorianCalendar value) {
         this.updDt = value;
         return this;
     }

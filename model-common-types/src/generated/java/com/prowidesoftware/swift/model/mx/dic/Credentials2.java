@@ -1,14 +1,12 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.YearMonth;
-import com.prowidesoftware.swift.model.mx.adapters.IsoYearMonthAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -38,10 +36,9 @@ public class Credentials2 {
     protected String othrIdCd;
     @XmlElement(name = "IdVal", required = true)
     protected String idVal;
-    @XmlElement(name = "IdXpryDt", type = String.class)
-    @XmlJavaTypeAdapter(IsoYearMonthAdapter.class)
+    @XmlElement(name = "IdXpryDt")
     @XmlSchemaType(name = "gYearMonth")
-    protected YearMonth idXpryDt;
+    protected XMLGregorianCalendar idXpryDt;
     @XmlElement(name = "AssgnrAuthrty")
     protected Authority1 assgnrAuthrty;
 
@@ -125,10 +122,10 @@ public class Credentials2 {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public YearMonth getIdXpryDt() {
+    public XMLGregorianCalendar getIdXpryDt() {
         return idXpryDt;
     }
 
@@ -137,10 +134,10 @@ public class Credentials2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public Credentials2 setIdXpryDt(YearMonth value) {
+    public Credentials2 setIdXpryDt(XMLGregorianCalendar value) {
         this.idXpryDt = value;
         return this;
     }

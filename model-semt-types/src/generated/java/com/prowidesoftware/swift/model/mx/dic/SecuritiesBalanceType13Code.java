@@ -1,33 +1,34 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for SecuritiesBalanceType13Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="SecuritiesBalanceType13Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="BLOK"/>
- *     <enumeration value="AWAS"/>
- *     <enumeration value="AVAI"/>
- *     <enumeration value="NOMI"/>
- *     <enumeration value="PLED"/>
- *     <enumeration value="REGO"/>
- *     <enumeration value="RSTR"/>
- *     <enumeration value="OTHR"/>
- *     <enumeration value="SPOS"/>
- *     <enumeration value="UNRG"/>
- *     <enumeration value="ISSU"/>
- *     <enumeration value="QUAS"/>
- *     <enumeration value="COLA"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="SecuritiesBalanceType13Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="BLOK"/&gt;
+ *     &lt;enumeration value="AWAS"/&gt;
+ *     &lt;enumeration value="AVAI"/&gt;
+ *     &lt;enumeration value="NOMI"/&gt;
+ *     &lt;enumeration value="PLED"/&gt;
+ *     &lt;enumeration value="REGO"/&gt;
+ *     &lt;enumeration value="RSTR"/&gt;
+ *     &lt;enumeration value="OTHR"/&gt;
+ *     &lt;enumeration value="SPOS"/&gt;
+ *     &lt;enumeration value="UNRG"/&gt;
+ *     &lt;enumeration value="ISSU"/&gt;
+ *     &lt;enumeration value="QUAS"/&gt;
+ *     &lt;enumeration value="COLA"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "SecuritiesBalanceType13Code")

@@ -1,63 +1,64 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for CashClearingSystem1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="CashClearingSystem1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="ABE"/>
- *     <enumeration value="ART"/>
- *     <enumeration value="AVP"/>
- *     <enumeration value="AZM"/>
- *     <enumeration value="BAP"/>
- *     <enumeration value="BEL"/>
- *     <enumeration value="BOF"/>
- *     <enumeration value="BRL"/>
- *     <enumeration value="CAD"/>
- *     <enumeration value="CAM"/>
- *     <enumeration value="CBJ"/>
- *     <enumeration value="CHP"/>
- *     <enumeration value="DKC"/>
- *     <enumeration value="RTP"/>
- *     <enumeration value="EBA"/>
- *     <enumeration value="ELS"/>
- *     <enumeration value="ERP"/>
- *     <enumeration value="XCT"/>
- *     <enumeration value="HRK"/>
- *     <enumeration value="HRM"/>
- *     <enumeration value="HUF"/>
- *     <enumeration value="LGS"/>
- *     <enumeration value="LVL"/>
- *     <enumeration value="MOS"/>
- *     <enumeration value="MUP"/>
- *     <enumeration value="NOC"/>
- *     <enumeration value="PCH"/>
- *     <enumeration value="PDS"/>
- *     <enumeration value="PEG"/>
- *     <enumeration value="PNS"/>
- *     <enumeration value="PVE"/>
- *     <enumeration value="SEC"/>
- *     <enumeration value="SIT"/>
- *     <enumeration value="SLB"/>
- *     <enumeration value="SPG"/>
- *     <enumeration value="SSK"/>
- *     <enumeration value="TBF"/>
- *     <enumeration value="TGT"/>
- *     <enumeration value="TOP"/>
- *     <enumeration value="FDW"/>
- *     <enumeration value="BOJ"/>
- *     <enumeration value="FEY"/>
- *     <enumeration value="ZEN"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="CashClearingSystem1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ABE"/&gt;
+ *     &lt;enumeration value="ART"/&gt;
+ *     &lt;enumeration value="AVP"/&gt;
+ *     &lt;enumeration value="AZM"/&gt;
+ *     &lt;enumeration value="BAP"/&gt;
+ *     &lt;enumeration value="BEL"/&gt;
+ *     &lt;enumeration value="BOF"/&gt;
+ *     &lt;enumeration value="BRL"/&gt;
+ *     &lt;enumeration value="CAD"/&gt;
+ *     &lt;enumeration value="CAM"/&gt;
+ *     &lt;enumeration value="CBJ"/&gt;
+ *     &lt;enumeration value="CHP"/&gt;
+ *     &lt;enumeration value="DKC"/&gt;
+ *     &lt;enumeration value="RTP"/&gt;
+ *     &lt;enumeration value="EBA"/&gt;
+ *     &lt;enumeration value="ELS"/&gt;
+ *     &lt;enumeration value="ERP"/&gt;
+ *     &lt;enumeration value="XCT"/&gt;
+ *     &lt;enumeration value="HRK"/&gt;
+ *     &lt;enumeration value="HRM"/&gt;
+ *     &lt;enumeration value="HUF"/&gt;
+ *     &lt;enumeration value="LGS"/&gt;
+ *     &lt;enumeration value="LVL"/&gt;
+ *     &lt;enumeration value="MOS"/&gt;
+ *     &lt;enumeration value="MUP"/&gt;
+ *     &lt;enumeration value="NOC"/&gt;
+ *     &lt;enumeration value="PCH"/&gt;
+ *     &lt;enumeration value="PDS"/&gt;
+ *     &lt;enumeration value="PEG"/&gt;
+ *     &lt;enumeration value="PNS"/&gt;
+ *     &lt;enumeration value="PVE"/&gt;
+ *     &lt;enumeration value="SEC"/&gt;
+ *     &lt;enumeration value="SIT"/&gt;
+ *     &lt;enumeration value="SLB"/&gt;
+ *     &lt;enumeration value="SPG"/&gt;
+ *     &lt;enumeration value="SSK"/&gt;
+ *     &lt;enumeration value="TBF"/&gt;
+ *     &lt;enumeration value="TGT"/&gt;
+ *     &lt;enumeration value="TOP"/&gt;
+ *     &lt;enumeration value="FDW"/&gt;
+ *     &lt;enumeration value="BOJ"/&gt;
+ *     &lt;enumeration value="FEY"/&gt;
+ *     &lt;enumeration value="ZEN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "CashClearingSystem1Code")

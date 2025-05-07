@@ -1,29 +1,30 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for BalanceType14Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="BalanceType14Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="AMOH"/>
- *     <enumeration value="AMTO"/>
- *     <enumeration value="AMTD"/>
- *     <enumeration value="CRDL"/>
- *     <enumeration value="OTHN"/>
- *     <enumeration value="OTHP"/>
- *     <enumeration value="AVLB"/>
- *     <enumeration value="CLRI"/>
- *     <enumeration value="LDGR"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="BalanceType14Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="AMOH"/&gt;
+ *     &lt;enumeration value="AMTO"/&gt;
+ *     &lt;enumeration value="AMTD"/&gt;
+ *     &lt;enumeration value="CRDL"/&gt;
+ *     &lt;enumeration value="OTHN"/&gt;
+ *     &lt;enumeration value="OTHP"/&gt;
+ *     &lt;enumeration value="AVLB"/&gt;
+ *     &lt;enumeration value="CLRI"/&gt;
+ *     &lt;enumeration value="LDGR"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "BalanceType14Code")

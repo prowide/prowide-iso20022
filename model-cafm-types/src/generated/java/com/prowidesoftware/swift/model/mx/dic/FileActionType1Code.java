@@ -1,29 +1,30 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for FileActionType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="FileActionType1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="ADDD"/>
- *     <enumeration value="DELT"/>
- *     <enumeration value="ENQR"/>
- *     <enumeration value="OTHN"/>
- *     <enumeration value="OTHP"/>
- *     <enumeration value="REPL"/>
- *     <enumeration value="UPDT"/>
- *     <enumeration value="BRPT"/>
- *     <enumeration value="DLSP"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="FileActionType1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ADDD"/&gt;
+ *     &lt;enumeration value="DELT"/&gt;
+ *     &lt;enumeration value="ENQR"/&gt;
+ *     &lt;enumeration value="OTHN"/&gt;
+ *     &lt;enumeration value="OTHP"/&gt;
+ *     &lt;enumeration value="REPL"/&gt;
+ *     &lt;enumeration value="UPDT"/&gt;
+ *     &lt;enumeration value="BRPT"/&gt;
+ *     &lt;enumeration value="DLSP"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "FileActionType1Code")

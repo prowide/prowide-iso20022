@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -37,8 +37,8 @@ public class SecurityOrBusinessError4Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the sctyRpt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the sctyRpt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -52,12 +52,10 @@ public class SecurityOrBusinessError4Choice {
      * {@link SecurityAttributes11 }
      * 
      * 
-     * @return
-     *     The value of the sctyRpt property.
      */
     public List<SecurityAttributes11> getSctyRpt() {
         if (sctyRpt == null) {
-            sctyRpt = new ArrayList<>();
+            sctyRpt = new ArrayList<SecurityAttributes11>();
         }
         return this.sctyRpt;
     }
@@ -68,8 +66,8 @@ public class SecurityOrBusinessError4Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the bizErr property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the bizErr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -83,12 +81,10 @@ public class SecurityOrBusinessError4Choice {
      * {@link BusinessError4 }
      * 
      * 
-     * @return
-     *     The value of the bizErr property.
      */
     public List<BusinessError4> getBizErr() {
         if (bizErr == null) {
-            bizErr = new ArrayList<>();
+            bizErr = new ArrayList<BusinessError4>();
         }
         return this.bizErr;
     }

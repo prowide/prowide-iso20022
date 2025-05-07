@@ -1,30 +1,31 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for AssetClassTransactionType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="AssetClassTransactionType1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="CRCK"/>
- *     <enumeration value="DIFF"/>
- *     <enumeration value="FUTR"/>
- *     <enumeration value="MINI"/>
- *     <enumeration value="OPTN"/>
- *     <enumeration value="OTCT"/>
- *     <enumeration value="ORIT"/>
- *     <enumeration value="SWAP"/>
- *     <enumeration value="TAPO"/>
- *     <enumeration value="OTHR"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="AssetClassTransactionType1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="CRCK"/&gt;
+ *     &lt;enumeration value="DIFF"/&gt;
+ *     &lt;enumeration value="FUTR"/&gt;
+ *     &lt;enumeration value="MINI"/&gt;
+ *     &lt;enumeration value="OPTN"/&gt;
+ *     &lt;enumeration value="OTCT"/&gt;
+ *     &lt;enumeration value="ORIT"/&gt;
+ *     &lt;enumeration value="SWAP"/&gt;
+ *     &lt;enumeration value="TAPO"/&gt;
+ *     &lt;enumeration value="OTHR"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "AssetClassTransactionType1Code")

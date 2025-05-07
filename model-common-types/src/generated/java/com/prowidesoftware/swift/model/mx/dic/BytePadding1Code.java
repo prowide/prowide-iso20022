@@ -1,26 +1,27 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlEnumValue;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlEnumValue;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for BytePadding1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="BytePadding1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="LNGT"/>
- *     <enumeration value="NUL8"/>
- *     <enumeration value="NULG"/>
- *     <enumeration value="NULL"/>
- *     <enumeration value="RAND"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="BytePadding1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="LNGT"/&gt;
+ *     &lt;enumeration value="NUL8"/&gt;
+ *     &lt;enumeration value="NULG"/&gt;
+ *     &lt;enumeration value="NULL"/&gt;
+ *     &lt;enumeration value="RAND"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "BytePadding1Code")

@@ -1,25 +1,26 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for TerminalType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="TerminalType1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="ATMT"/>
- *     <enumeration value="MPOS"/>
- *     <enumeration value="OTHN"/>
- *     <enumeration value="OTHP"/>
- *     <enumeration value="POST"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="TerminalType1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ATMT"/&gt;
+ *     &lt;enumeration value="MPOS"/&gt;
+ *     &lt;enumeration value="OTHN"/&gt;
+ *     &lt;enumeration value="OTHP"/&gt;
+ *     &lt;enumeration value="POST"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "TerminalType1Code")

@@ -1,42 +1,43 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for ConfirmationCancellationReason1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="ConfirmationCancellationReason1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="CSHN"/>
- *     <enumeration value="REPL"/>
- *     <enumeration value="BENA"/>
- *     <enumeration value="CSHW"/>
- *     <enumeration value="DISA"/>
- *     <enumeration value="DISC"/>
- *     <enumeration value="EXCH"/>
- *     <enumeration value="FEEE"/>
- *     <enumeration value="DQUA"/>
- *     <enumeration value="FENA"/>
- *     <enumeration value="GROA"/>
- *     <enumeration value="GROC"/>
- *     <enumeration value="NETA"/>
- *     <enumeration value="NETC"/>
- *     <enumeration value="OPER"/>
- *     <enumeration value="MINI"/>
- *     <enumeration value="DMON"/>
- *     <enumeration value="NCRR"/>
- *     <enumeration value="DDAT"/>
- *     <enumeration value="SETS"/>
- *     <enumeration value="DDEA"/>
- *     <enumeration value="REFE"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="ConfirmationCancellationReason1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="CSHN"/&gt;
+ *     &lt;enumeration value="REPL"/&gt;
+ *     &lt;enumeration value="BENA"/&gt;
+ *     &lt;enumeration value="CSHW"/&gt;
+ *     &lt;enumeration value="DISA"/&gt;
+ *     &lt;enumeration value="DISC"/&gt;
+ *     &lt;enumeration value="EXCH"/&gt;
+ *     &lt;enumeration value="FEEE"/&gt;
+ *     &lt;enumeration value="DQUA"/&gt;
+ *     &lt;enumeration value="FENA"/&gt;
+ *     &lt;enumeration value="GROA"/&gt;
+ *     &lt;enumeration value="GROC"/&gt;
+ *     &lt;enumeration value="NETA"/&gt;
+ *     &lt;enumeration value="NETC"/&gt;
+ *     &lt;enumeration value="OPER"/&gt;
+ *     &lt;enumeration value="MINI"/&gt;
+ *     &lt;enumeration value="DMON"/&gt;
+ *     &lt;enumeration value="NCRR"/&gt;
+ *     &lt;enumeration value="DDAT"/&gt;
+ *     &lt;enumeration value="SETS"/&gt;
+ *     &lt;enumeration value="DDEA"/&gt;
+ *     &lt;enumeration value="REFE"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "ConfirmationCancellationReason1Code")
