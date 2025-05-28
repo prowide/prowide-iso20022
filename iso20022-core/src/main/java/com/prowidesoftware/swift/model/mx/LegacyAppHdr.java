@@ -16,9 +16,6 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.ProwideException;
-import com.prowidesoftware.deprecation.DeprecationUtils;
-import com.prowidesoftware.deprecation.ProwideDeprecated;
-import com.prowidesoftware.deprecation.TargetYear;
 import com.prowidesoftware.swift.model.mx.dic.ApplicationHeaderImpl;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBElement;
@@ -194,36 +191,6 @@ public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
         if (this.getCrDate() == null || overwrite) {
             this.setCrDate(OffsetDateTime.now(ZoneOffset.UTC));
         }
-    }
-
-    /**
-     * @deprecated use {@link #xml(MxWriteParams)} instead
-     */
-    @Deprecated
-    @ProwideDeprecated(phase4 = TargetYear.SRU2025)
-    @Override
-    public String xml(final String prefix, boolean includeXMLDeclaration) {
-        DeprecationUtils.phase3(AbstractMX.class, "xml(String, boolean)", "Use xml(MxWriteParams) instead");
-        MxWriteParams params = new MxWriteParams();
-        params.prefix = prefix;
-        params.includeXMLDeclaration = includeXMLDeclaration;
-        return xml(params);
-    }
-
-    /**
-     * @deprecated use {@link #xml(MxWriteParams)} instead
-     */
-    @Deprecated
-    @ProwideDeprecated(phase4 = TargetYear.SRU2025)
-    @Override
-    public String xml(String prefix, boolean includeXMLDeclaration, EscapeHandler escapeHandler) {
-        DeprecationUtils.phase3(
-                AbstractMX.class, "xml(String, boolean, EscapeHandler)", "Use xml(MxWriteParams) instead");
-        MxWriteParams params = new MxWriteParams();
-        params.prefix = prefix;
-        params.includeXMLDeclaration = includeXMLDeclaration;
-        params.escapeHandler = escapeHandler;
-        return xml(params);
     }
 
     @Override
