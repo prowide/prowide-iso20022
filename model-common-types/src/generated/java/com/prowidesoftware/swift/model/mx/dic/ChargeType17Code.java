@@ -1,31 +1,32 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for ChargeType17Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="ChargeType17Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="POST"/>
- *     <enumeration value="REGF"/>
- *     <enumeration value="SHIP"/>
- *     <enumeration value="CHAR"/>
- *     <enumeration value="OTHR"/>
- *     <enumeration value="PREM"/>
- *     <enumeration value="PACK"/>
- *     <enumeration value="PICK"/>
- *     <enumeration value="SECU"/>
- *     <enumeration value="INSU"/>
- *     <enumeration value="MISC"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="ChargeType17Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="POST"/&gt;
+ *     &lt;enumeration value="REGF"/&gt;
+ *     &lt;enumeration value="SHIP"/&gt;
+ *     &lt;enumeration value="CHAR"/&gt;
+ *     &lt;enumeration value="OTHR"/&gt;
+ *     &lt;enumeration value="PREM"/&gt;
+ *     &lt;enumeration value="PACK"/&gt;
+ *     &lt;enumeration value="PICK"/&gt;
+ *     &lt;enumeration value="SECU"/&gt;
+ *     &lt;enumeration value="INSU"/&gt;
+ *     &lt;enumeration value="MISC"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "ChargeType17Code")

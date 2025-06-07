@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.OffsetDateTime;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -46,7 +46,7 @@ public class ServiceStartEnd3 {
     @XmlElement(name = "DtAndTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime dtAndTm;
+    protected XMLGregorianCalendar dtAndTm;
     @XmlElement(name = "TmSgmt")
     @XmlSchemaType(name = "string")
     protected TimeSegment1Code tmSgmt;
@@ -58,7 +58,7 @@ public class ServiceStartEnd3 {
     @XmlElement(name = "JrnyDtAndTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime jrnyDtAndTm;
+    protected XMLGregorianCalendar jrnyDtAndTm;
 
     /**
      * Gets the value of the lctn property.
@@ -168,7 +168,7 @@ public class ServiceStartEnd3 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getDtAndTm() {
+    public XMLGregorianCalendar getDtAndTm() {
         return dtAndTm;
     }
 
@@ -180,7 +180,7 @@ public class ServiceStartEnd3 {
      *     {@link String }
      *     
      */
-    public ServiceStartEnd3 setDtAndTm(OffsetDateTime value) {
+    public ServiceStartEnd3 setDtAndTm(XMLGregorianCalendar value) {
         this.dtAndTm = value;
         return this;
     }
@@ -268,7 +268,7 @@ public class ServiceStartEnd3 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getJrnyDtAndTm() {
+    public XMLGregorianCalendar getJrnyDtAndTm() {
         return jrnyDtAndTm;
     }
 
@@ -280,7 +280,7 @@ public class ServiceStartEnd3 {
      *     {@link String }
      *     
      */
-    public ServiceStartEnd3 setJrnyDtAndTm(OffsetDateTime value) {
+    public ServiceStartEnd3 setJrnyDtAndTm(XMLGregorianCalendar value) {
         this.jrnyDtAndTm = value;
         return this;
     }

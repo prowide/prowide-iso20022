@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -208,8 +208,8 @@ public class AccountModificationInstructionV03 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the modfdAcctPties property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the modfdAcctPties property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -223,12 +223,10 @@ public class AccountModificationInstructionV03 {
      * {@link AccountParties7 }
      * 
      * 
-     * @return
-     *     The value of the modfdAcctPties property.
      */
     public List<AccountParties7> getModfdAcctPties() {
         if (modfdAcctPties == null) {
-            modfdAcctPties = new ArrayList<>();
+            modfdAcctPties = new ArrayList<AccountParties7>();
         }
         return this.modfdAcctPties;
     }
@@ -239,8 +237,8 @@ public class AccountModificationInstructionV03 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the modfdIntrmies property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the modfdIntrmies property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -254,12 +252,10 @@ public class AccountModificationInstructionV03 {
      * {@link ModificationScope7 }
      * 
      * 
-     * @return
-     *     The value of the modfdIntrmies property.
      */
     public List<ModificationScope7> getModfdIntrmies() {
         if (modfdIntrmies == null) {
-            modfdIntrmies = new ArrayList<>();
+            modfdIntrmies = new ArrayList<ModificationScope7>();
         }
         return this.modfdIntrmies;
     }
@@ -320,8 +316,8 @@ public class AccountModificationInstructionV03 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the modfdSvgsInvstmtPlan property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the modfdSvgsInvstmtPlan property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -335,12 +331,10 @@ public class AccountModificationInstructionV03 {
      * {@link ModificationScope16 }
      * 
      * 
-     * @return
-     *     The value of the modfdSvgsInvstmtPlan property.
      */
     public List<ModificationScope16> getModfdSvgsInvstmtPlan() {
         if (modfdSvgsInvstmtPlan == null) {
-            modfdSvgsInvstmtPlan = new ArrayList<>();
+            modfdSvgsInvstmtPlan = new ArrayList<ModificationScope16>();
         }
         return this.modfdSvgsInvstmtPlan;
     }
@@ -351,8 +345,8 @@ public class AccountModificationInstructionV03 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the modfdWdrwlInvstmtPlan property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the modfdWdrwlInvstmtPlan property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -366,12 +360,10 @@ public class AccountModificationInstructionV03 {
      * {@link ModificationScope16 }
      * 
      * 
-     * @return
-     *     The value of the modfdWdrwlInvstmtPlan property.
      */
     public List<ModificationScope16> getModfdWdrwlInvstmtPlan() {
         if (modfdWdrwlInvstmtPlan == null) {
-            modfdWdrwlInvstmtPlan = new ArrayList<>();
+            modfdWdrwlInvstmtPlan = new ArrayList<ModificationScope16>();
         }
         return this.modfdWdrwlInvstmtPlan;
     }
@@ -382,8 +374,8 @@ public class AccountModificationInstructionV03 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the modfdCshSttlm property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the modfdCshSttlm property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -397,12 +389,10 @@ public class AccountModificationInstructionV03 {
      * {@link InvestmentFundCashSettlementInformation6 }
      * 
      * 
-     * @return
-     *     The value of the modfdCshSttlm property.
      */
     public List<InvestmentFundCashSettlementInformation6> getModfdCshSttlm() {
         if (modfdCshSttlm == null) {
-            modfdCshSttlm = new ArrayList<>();
+            modfdCshSttlm = new ArrayList<InvestmentFundCashSettlementInformation6>();
         }
         return this.modfdCshSttlm;
     }
@@ -413,8 +403,8 @@ public class AccountModificationInstructionV03 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the modfdSvcLvlAgrmt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the modfdSvcLvlAgrmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -428,12 +418,10 @@ public class AccountModificationInstructionV03 {
      * {@link ModificationScope10 }
      * 
      * 
-     * @return
-     *     The value of the modfdSvcLvlAgrmt property.
      */
     public List<ModificationScope10> getModfdSvcLvlAgrmt() {
         if (modfdSvcLvlAgrmt == null) {
-            modfdSvcLvlAgrmt = new ArrayList<>();
+            modfdSvcLvlAgrmt = new ArrayList<ModificationScope10>();
         }
         return this.modfdSvcLvlAgrmt;
     }
@@ -444,8 +432,8 @@ public class AccountModificationInstructionV03 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the xtnsn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the xtnsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -459,12 +447,10 @@ public class AccountModificationInstructionV03 {
      * {@link Extension1 }
      * 
      * 
-     * @return
-     *     The value of the xtnsn property.
      */
     public List<Extension1> getXtnsn() {
         if (xtnsn == null) {
-            xtnsn = new ArrayList<>();
+            xtnsn = new ArrayList<Extension1>();
         }
         return this.xtnsn;
     }

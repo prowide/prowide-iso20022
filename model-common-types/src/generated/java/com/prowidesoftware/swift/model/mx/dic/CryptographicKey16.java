@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -62,11 +62,11 @@ public class CryptographicKey16 {
     @XmlElement(name = "ActvtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime actvtnDt;
+    protected XMLGregorianCalendar actvtnDt;
     @XmlElement(name = "DeactvtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime deactvtnDt;
+    protected XMLGregorianCalendar deactvtnDt;
     @XmlElement(name = "KeyVal")
     protected ContentInformationType30 keyVal;
     @XmlElement(name = "KeyChckVal")
@@ -253,8 +253,8 @@ public class CryptographicKey16 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the fctn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the fctn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -268,12 +268,10 @@ public class CryptographicKey16 {
      * {@link KeyUsage1Code }
      * 
      * 
-     * @return
-     *     The value of the fctn property.
      */
     public List<KeyUsage1Code> getFctn() {
         if (fctn == null) {
-            fctn = new ArrayList<>();
+            fctn = new ArrayList<KeyUsage1Code>();
         }
         return this.fctn;
     }
@@ -286,7 +284,7 @@ public class CryptographicKey16 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getActvtnDt() {
+    public XMLGregorianCalendar getActvtnDt() {
         return actvtnDt;
     }
 
@@ -298,7 +296,7 @@ public class CryptographicKey16 {
      *     {@link String }
      *     
      */
-    public CryptographicKey16 setActvtnDt(OffsetDateTime value) {
+    public CryptographicKey16 setActvtnDt(XMLGregorianCalendar value) {
         this.actvtnDt = value;
         return this;
     }
@@ -311,7 +309,7 @@ public class CryptographicKey16 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getDeactvtnDt() {
+    public XMLGregorianCalendar getDeactvtnDt() {
         return deactvtnDt;
     }
 
@@ -323,7 +321,7 @@ public class CryptographicKey16 {
      *     {@link String }
      *     
      */
-    public CryptographicKey16 setDeactvtnDt(OffsetDateTime value) {
+    public CryptographicKey16 setDeactvtnDt(XMLGregorianCalendar value) {
         this.deactvtnDt = value;
         return this;
     }
@@ -382,8 +380,8 @@ public class CryptographicKey16 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the addtlMgmtInf property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the addtlMgmtInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -397,12 +395,10 @@ public class CryptographicKey16 {
      * {@link GenericInformation1 }
      * 
      * 
-     * @return
-     *     The value of the addtlMgmtInf property.
      */
     public List<GenericInformation1> getAddtlMgmtInf() {
         if (addtlMgmtInf == null) {
-            addtlMgmtInf = new ArrayList<>();
+            addtlMgmtInf = new ArrayList<GenericInformation1>();
         }
         return this.addtlMgmtInf;
     }

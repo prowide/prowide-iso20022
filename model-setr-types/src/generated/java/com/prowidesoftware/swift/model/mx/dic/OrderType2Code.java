@@ -1,37 +1,38 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for OrderType2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="OrderType2Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="MRKT"/>
- *     <enumeration value="LMTO"/>
- *     <enumeration value="STOP"/>
- *     <enumeration value="LIWI"/>
- *     <enumeration value="LIWO"/>
- *     <enumeration value="BAPR"/>
- *     <enumeration value="MATH"/>
- *     <enumeration value="WTWO"/>
- *     <enumeration value="PRQT"/>
- *     <enumeration value="PRID"/>
- *     <enumeration value="FXSW"/>
- *     <enumeration value="FNRI"/>
- *     <enumeration value="MKLO"/>
- *     <enumeration value="PGGD"/>
- *     <enumeration value="SLOS"/>
- *     <enumeration value="STLI"/>
- *     <enumeration value="COSE"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="OrderType2Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="MRKT"/&gt;
+ *     &lt;enumeration value="LMTO"/&gt;
+ *     &lt;enumeration value="STOP"/&gt;
+ *     &lt;enumeration value="LIWI"/&gt;
+ *     &lt;enumeration value="LIWO"/&gt;
+ *     &lt;enumeration value="BAPR"/&gt;
+ *     &lt;enumeration value="MATH"/&gt;
+ *     &lt;enumeration value="WTWO"/&gt;
+ *     &lt;enumeration value="PRQT"/&gt;
+ *     &lt;enumeration value="PRID"/&gt;
+ *     &lt;enumeration value="FXSW"/&gt;
+ *     &lt;enumeration value="FNRI"/&gt;
+ *     &lt;enumeration value="MKLO"/&gt;
+ *     &lt;enumeration value="PGGD"/&gt;
+ *     &lt;enumeration value="SLOS"/&gt;
+ *     &lt;enumeration value="STLI"/&gt;
+ *     &lt;enumeration value="COSE"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "OrderType2Code")

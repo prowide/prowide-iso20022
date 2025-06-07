@@ -1,36 +1,37 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for TransferRejectedStatusReason1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="TransferRejectedStatusReason1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="DDAT"/>
- *     <enumeration value="DEPT"/>
- *     <enumeration value="DSEC"/>
- *     <enumeration value="SECU"/>
- *     <enumeration value="ISTP"/>
- *     <enumeration value="ICTN"/>
- *     <enumeration value="SAFE"/>
- *     <enumeration value="IAQD"/>
- *     <enumeration value="BLCA"/>
- *     <enumeration value="DOCC"/>
- *     <enumeration value="IDNA"/>
- *     <enumeration value="DLVY"/>
- *     <enumeration value="LEGL"/>
- *     <enumeration value="NSLA"/>
- *     <enumeration value="OTHR"/>
- *     <enumeration value="DQUA"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="TransferRejectedStatusReason1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="DDAT"/&gt;
+ *     &lt;enumeration value="DEPT"/&gt;
+ *     &lt;enumeration value="DSEC"/&gt;
+ *     &lt;enumeration value="SECU"/&gt;
+ *     &lt;enumeration value="ISTP"/&gt;
+ *     &lt;enumeration value="ICTN"/&gt;
+ *     &lt;enumeration value="SAFE"/&gt;
+ *     &lt;enumeration value="IAQD"/&gt;
+ *     &lt;enumeration value="BLCA"/&gt;
+ *     &lt;enumeration value="DOCC"/&gt;
+ *     &lt;enumeration value="IDNA"/&gt;
+ *     &lt;enumeration value="DLVY"/&gt;
+ *     &lt;enumeration value="LEGL"/&gt;
+ *     &lt;enumeration value="NSLA"/&gt;
+ *     &lt;enumeration value="OTHR"/&gt;
+ *     &lt;enumeration value="DQUA"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "TransferRejectedStatusReason1Code")

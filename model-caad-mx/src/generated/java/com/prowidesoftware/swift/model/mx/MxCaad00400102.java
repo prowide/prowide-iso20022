@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxCaad00400102
 
     @XmlElement(name = "BtchTrfRspn", required = true)
     protected BatchTransferResponseV02 btchTrfRspn;
-    public static final transient String BUSINESS_PROCESS = "caad";
-    public static final transient int FUNCTIONALITY = 4;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 2;
+    public final static transient String BUSINESS_PROCESS = "caad";
+    public final static transient int FUNCTIONALITY = 4;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 2;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {AdditionalData1 .class, AdditionalInformation21 .class, AdditionalInformation29 .class, Algorithm13Code.class, Algorithm20Code.class, Algorithm23Code.class, Algorithm5Code.class, Algorithm7Code.class, Algorithm8Code.class, AlgorithmIdentification25 .class, AlgorithmIdentification26 .class, AlgorithmIdentification27 .class, AlgorithmIdentification28 .class, Amount17 .class, ApprovalEntity2 .class, AttributeType1Code.class, BatchManagementInformation1 .class, BatchTransferResponse2 .class, BatchTransferResponseV02 .class, BytePadding1Code.class, CardProgrammeMode3 .class, CertificateIssuer1 .class, ClearingBatchData2 .class, ClearingControlTotals2 .class, ClearingMethod2Code.class, ClearingRecordData2 .class, ClearingTotals2 .class, ContentInformationType20 .class, ContentType2Code.class, ContentType3Code.class, Context17 .class, CreditDebit3Code.class, Destination1 .class, EncryptedContent5 .class, EncryptedData1 .class, EncryptedData1Choice.class, EncryptedDataElement1 .class, EncryptedDataFormat1Code.class, EncryptionFormat3Code.class, EnvelopedData6 .class, Environment4 .class, ErrorDetails2 .class, GenericIdentification183 .class, Header60 .class, IssuerAndSerialNumber1 .class, Jurisdiction2 .class, KEK6 .class, KEKIdentifier2 .class, KEKIdentifier6 .class, KeyTransport6 .class, MACData1 .class, MessageError1Code.class, MessageFunction17Code.class, MxCaad00400102 .class, Originator1 .class, OtherAmount4 .class, OutputFormat4Code.class, Parameter13 .class, Parameter14 .class, Parameter7 .class, PartyType17Code.class, PartyType18Code.class, PartyType22Code.class, PartyType23Code.class, PartyType26Code.class, PartyType9Code.class, Priority3Code.class, ProcessingResult13 .class, ProtectedData1 .class, Recipient5Choice.class, Recipient7Choice.class, Reconciliation3 .class, Record2 .class, RecordMessage1Choice.class, RelativeDistinguishedName1 .class, Response6Code.class, Response8Code.class, ResultData7 .class, ResultData8 .class, SettlementReportingEntity1 .class, SettlementService4 .class, SettlementServiceDate2 .class, SettlementServiceMode1 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, Traceability9 .class, Transaction141 .class, TransactionContext10 .class, TransactionIdentification12 .class, TransactionLifeCycleIdentification2 .class, UserInterface6Code.class, UserInterface7Code.class };
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:caad.004.001.02";
+    public final static transient Class[] _classes = new Class[] {AdditionalData1 .class, AdditionalInformation21 .class, AdditionalInformation29 .class, Algorithm13Code.class, Algorithm20Code.class, Algorithm23Code.class, Algorithm5Code.class, Algorithm7Code.class, Algorithm8Code.class, AlgorithmIdentification25 .class, AlgorithmIdentification26 .class, AlgorithmIdentification27 .class, AlgorithmIdentification28 .class, Amount17 .class, ApprovalEntity2 .class, AttributeType1Code.class, BatchManagementInformation1 .class, BatchTransferResponse2 .class, BatchTransferResponseV02 .class, BytePadding1Code.class, CardProgrammeMode3 .class, CertificateIssuer1 .class, ClearingBatchData2 .class, ClearingControlTotals2 .class, ClearingMethod2Code.class, ClearingRecordData2 .class, ClearingTotals2 .class, ContentInformationType20 .class, ContentType2Code.class, ContentType3Code.class, Context17 .class, CreditDebit3Code.class, Destination1 .class, EncryptedContent5 .class, EncryptedData1 .class, EncryptedData1Choice.class, EncryptedDataElement1 .class, EncryptedDataFormat1Code.class, EncryptionFormat3Code.class, EnvelopedData6 .class, Environment4 .class, ErrorDetails2 .class, GenericIdentification183 .class, Header60 .class, IssuerAndSerialNumber1 .class, Jurisdiction2 .class, KEK6 .class, KEKIdentifier2 .class, KEKIdentifier6 .class, KeyTransport6 .class, MACData1 .class, MessageError1Code.class, MessageFunction17Code.class, MxCaad00400102 .class, Originator1 .class, OtherAmount4 .class, OutputFormat4Code.class, Parameter13 .class, Parameter14 .class, Parameter7 .class, PartyType17Code.class, PartyType18Code.class, PartyType22Code.class, PartyType23Code.class, PartyType26Code.class, PartyType9Code.class, Priority3Code.class, ProcessingResult13 .class, ProtectedData1 .class, Recipient5Choice.class, Recipient7Choice.class, Reconciliation3 .class, Record2 .class, RecordMessage1Choice.class, RelativeDistinguishedName1 .class, Response6Code.class, Response8Code.class, ResultData7 .class, ResultData8 .class, SettlementReportingEntity1 .class, SettlementService4 .class, SettlementServiceDate2 .class, SettlementServiceMode1 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, Traceability9 .class, Transaction141 .class, TransactionContext10 .class, TransactionIdentification12 .class, TransactionLifeCycleIdentification2 .class, UserInterface6Code.class, UserInterface7Code.class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:caad.004.001.02";
 
     public MxCaad00400102() {
         super();
@@ -86,6 +86,21 @@ public class MxCaad00400102
     public MxCaad00400102 setBtchTrfRspn(BatchTransferResponseV02 value) {
         this.btchTrfRspn = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxCaad00400102
      * @return
      *     a new instance of MxCaad00400102
      */
-    public static final MxCaad00400102 fromJson(String json) {
+    public final static MxCaad00400102 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxCaad00400102 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

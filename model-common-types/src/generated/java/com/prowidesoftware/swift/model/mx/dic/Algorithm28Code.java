@@ -1,43 +1,44 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlEnumValue;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlEnumValue;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for Algorithm28Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="Algorithm28Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="EA2C"/>
- *     <enumeration value="E3DC"/>
- *     <enumeration value="DKP9"/>
- *     <enumeration value="UKPT"/>
- *     <enumeration value="UKA2"/>
- *     <enumeration value="EA9C"/>
- *     <enumeration value="EA5C"/>
- *     <enumeration value="DA12"/>
- *     <enumeration value="DA19"/>
- *     <enumeration value="DA25"/>
- *     <enumeration value="N108"/>
- *     <enumeration value="EA5R"/>
- *     <enumeration value="EA9R"/>
- *     <enumeration value="EA2R"/>
- *     <enumeration value="E3DR"/>
- *     <enumeration value="E36C"/>
- *     <enumeration value="E36R"/>
- *     <enumeration value="SD5C"/>
- *     <enumeration value="UKA1"/>
- *     <enumeration value="UKA3"/>
- *     <enumeration value="SM4C"/>
- *     <enumeration value="SM4R"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="Algorithm28Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="EA2C"/&gt;
+ *     &lt;enumeration value="E3DC"/&gt;
+ *     &lt;enumeration value="DKP9"/&gt;
+ *     &lt;enumeration value="UKPT"/&gt;
+ *     &lt;enumeration value="UKA2"/&gt;
+ *     &lt;enumeration value="EA9C"/&gt;
+ *     &lt;enumeration value="EA5C"/&gt;
+ *     &lt;enumeration value="DA12"/&gt;
+ *     &lt;enumeration value="DA19"/&gt;
+ *     &lt;enumeration value="DA25"/&gt;
+ *     &lt;enumeration value="N108"/&gt;
+ *     &lt;enumeration value="EA5R"/&gt;
+ *     &lt;enumeration value="EA9R"/&gt;
+ *     &lt;enumeration value="EA2R"/&gt;
+ *     &lt;enumeration value="E3DR"/&gt;
+ *     &lt;enumeration value="E36C"/&gt;
+ *     &lt;enumeration value="E36R"/&gt;
+ *     &lt;enumeration value="SD5C"/&gt;
+ *     &lt;enumeration value="UKA1"/&gt;
+ *     &lt;enumeration value="UKA3"/&gt;
+ *     &lt;enumeration value="SM4C"/&gt;
+ *     &lt;enumeration value="SM4R"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "Algorithm28Code")

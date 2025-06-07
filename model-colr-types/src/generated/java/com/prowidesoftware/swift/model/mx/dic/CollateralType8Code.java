@@ -1,33 +1,34 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for CollateralType8Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="CollateralType8Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="COMO"/>
- *     <enumeration value="CCCL"/>
- *     <enumeration value="CEMC"/>
- *     <enumeration value="CXCC"/>
- *     <enumeration value="CFTD"/>
- *     <enumeration value="CFTI"/>
- *     <enumeration value="CTRC"/>
- *     <enumeration value="CASH"/>
- *     <enumeration value="LCRE"/>
- *     <enumeration value="OTHR"/>
- *     <enumeration value="SECU"/>
- *     <enumeration value="CTCO"/>
- *     <enumeration value="CCVR"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="CollateralType8Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="COMO"/&gt;
+ *     &lt;enumeration value="CCCL"/&gt;
+ *     &lt;enumeration value="CEMC"/&gt;
+ *     &lt;enumeration value="CXCC"/&gt;
+ *     &lt;enumeration value="CFTD"/&gt;
+ *     &lt;enumeration value="CFTI"/&gt;
+ *     &lt;enumeration value="CTRC"/&gt;
+ *     &lt;enumeration value="CASH"/&gt;
+ *     &lt;enumeration value="LCRE"/&gt;
+ *     &lt;enumeration value="OTHR"/&gt;
+ *     &lt;enumeration value="SECU"/&gt;
+ *     &lt;enumeration value="CTCO"/&gt;
+ *     &lt;enumeration value="CCVR"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "CollateralType8Code")

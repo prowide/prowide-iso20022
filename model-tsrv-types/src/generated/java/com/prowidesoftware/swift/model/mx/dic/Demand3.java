@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.OffsetDateTime;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -34,7 +34,7 @@ public class Demand3 {
     @XmlElement(name = "SubmissnDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime submissnDtTm;
+    protected XMLGregorianCalendar submissnDtTm;
     @XmlElement(name = "Amt", required = true)
     protected ActiveCurrencyAndAmount amt;
 
@@ -71,7 +71,7 @@ public class Demand3 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getSubmissnDtTm() {
+    public XMLGregorianCalendar getSubmissnDtTm() {
         return submissnDtTm;
     }
 
@@ -83,7 +83,7 @@ public class Demand3 {
      *     {@link String }
      *     
      */
-    public Demand3 setSubmissnDtTm(OffsetDateTime value) {
+    public Demand3 setSubmissnDtTm(XMLGregorianCalendar value) {
         this.submissnDtTm = value;
         return this;
     }

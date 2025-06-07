@@ -1,31 +1,32 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for FundCashAccount4Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="FundCashAccount4Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="HEDG"/>
- *     <enumeration value="CPFO"/>
- *     <enumeration value="CPFS"/>
- *     <enumeration value="SRSA"/>
- *     <enumeration value="CSDO"/>
- *     <enumeration value="TOFF"/>
- *     <enumeration value="ICSA"/>
- *     <enumeration value="CSDM"/>
- *     <enumeration value="CSDP"/>
- *     <enumeration value="PPEN"/>
- *     <enumeration value="CPEN"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="FundCashAccount4Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="HEDG"/&gt;
+ *     &lt;enumeration value="CPFO"/&gt;
+ *     &lt;enumeration value="CPFS"/&gt;
+ *     &lt;enumeration value="SRSA"/&gt;
+ *     &lt;enumeration value="CSDO"/&gt;
+ *     &lt;enumeration value="TOFF"/&gt;
+ *     &lt;enumeration value="ICSA"/&gt;
+ *     &lt;enumeration value="CSDM"/&gt;
+ *     &lt;enumeration value="CSDP"/&gt;
+ *     &lt;enumeration value="PPEN"/&gt;
+ *     &lt;enumeration value="CPEN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "FundCashAccount4Code")

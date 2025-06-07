@@ -1,28 +1,29 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for DataSetCategory5Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="DataSetCategory5Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="AQPR"/>
- *     <enumeration value="APPR"/>
- *     <enumeration value="MTMG"/>
- *     <enumeration value="MRPR"/>
- *     <enumeration value="MTOR"/>
- *     <enumeration value="SCPR"/>
- *     <enumeration value="SWPK"/>
- *     <enumeration value="TRPR"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="DataSetCategory5Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="AQPR"/&gt;
+ *     &lt;enumeration value="APPR"/&gt;
+ *     &lt;enumeration value="MTMG"/&gt;
+ *     &lt;enumeration value="MRPR"/&gt;
+ *     &lt;enumeration value="MTOR"/&gt;
+ *     &lt;enumeration value="SCPR"/&gt;
+ *     &lt;enumeration value="SWPK"/&gt;
+ *     &lt;enumeration value="TRPR"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "DataSetCategory5Code")

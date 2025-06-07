@@ -1,50 +1,51 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlEnumValue;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlEnumValue;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for InvestmentFundMiFIDFee2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="InvestmentFundMiFIDFee2Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="BORF"/>
- *     <enumeration value="DIS2"/>
- *     <enumeration value="FES3"/>
- *     <enumeration value="FEND"/>
- *     <enumeration value="FES2"/>
- *     <enumeration value="GOC1"/>
- *     <enumeration value="GOCS"/>
- *     <enumeration value="INCF"/>
- *     <enumeration value="INCS"/>
- *     <enumeration value="MNF1"/>
- *     <enumeration value="MANS"/>
- *     <enumeration value="NET2"/>
- *     <enumeration value="NESF"/>
- *     <enumeration value="NETO"/>
- *     <enumeration value="NRAM"/>
- *     <enumeration value="OOEA"/>
- *     <enumeration value="OOSF"/>
- *     <enumeration value="OOSS"/>
- *     <enumeration value="BENS"/>
- *     <enumeration value="ENAC"/>
- *     <enumeration value="ENFX"/>
- *     <enumeration value="EXAC"/>
- *     <enumeration value="ENBX"/>
- *     <enumeration value="BEND"/>
- *     <enumeration value="PENO"/>
- *     <enumeration value="OTES"/>
- *     <enumeration value="OCAS"/>
- *     <enumeration value="RPSS"/>
- *     <enumeration value="TRS1"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="InvestmentFundMiFIDFee2Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="BORF"/&gt;
+ *     &lt;enumeration value="DIS2"/&gt;
+ *     &lt;enumeration value="FES3"/&gt;
+ *     &lt;enumeration value="FEND"/&gt;
+ *     &lt;enumeration value="FES2"/&gt;
+ *     &lt;enumeration value="GOC1"/&gt;
+ *     &lt;enumeration value="GOCS"/&gt;
+ *     &lt;enumeration value="INCF"/&gt;
+ *     &lt;enumeration value="INCS"/&gt;
+ *     &lt;enumeration value="MNF1"/&gt;
+ *     &lt;enumeration value="MANS"/&gt;
+ *     &lt;enumeration value="NET2"/&gt;
+ *     &lt;enumeration value="NESF"/&gt;
+ *     &lt;enumeration value="NETO"/&gt;
+ *     &lt;enumeration value="NRAM"/&gt;
+ *     &lt;enumeration value="OOEA"/&gt;
+ *     &lt;enumeration value="OOSF"/&gt;
+ *     &lt;enumeration value="OOSS"/&gt;
+ *     &lt;enumeration value="BENS"/&gt;
+ *     &lt;enumeration value="ENAC"/&gt;
+ *     &lt;enumeration value="ENFX"/&gt;
+ *     &lt;enumeration value="EXAC"/&gt;
+ *     &lt;enumeration value="ENBX"/&gt;
+ *     &lt;enumeration value="BEND"/&gt;
+ *     &lt;enumeration value="PENO"/&gt;
+ *     &lt;enumeration value="OTES"/&gt;
+ *     &lt;enumeration value="OCAS"/&gt;
+ *     &lt;enumeration value="RPSS"/&gt;
+ *     &lt;enumeration value="TRS1"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "InvestmentFundMiFIDFee2Code")

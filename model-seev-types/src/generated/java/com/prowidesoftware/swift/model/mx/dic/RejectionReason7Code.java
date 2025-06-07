@@ -1,34 +1,35 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for RejectionReason7Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="RejectionReason7Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="DEAC"/>
- *     <enumeration value="FAIL"/>
- *     <enumeration value="PDEA"/>
- *     <enumeration value="INID"/>
- *     <enumeration value="REFI"/>
- *     <enumeration value="AGIN"/>
- *     <enumeration value="SAID"/>
- *     <enumeration value="DEAO"/>
- *     <enumeration value="INET"/>
- *     <enumeration value="INUS"/>
- *     <enumeration value="INPT"/>
- *     <enumeration value="INMV"/>
- *     <enumeration value="INDE"/>
- *     <enumeration value="INDT"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="RejectionReason7Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="DEAC"/&gt;
+ *     &lt;enumeration value="FAIL"/&gt;
+ *     &lt;enumeration value="PDEA"/&gt;
+ *     &lt;enumeration value="INID"/&gt;
+ *     &lt;enumeration value="REFI"/&gt;
+ *     &lt;enumeration value="AGIN"/&gt;
+ *     &lt;enumeration value="SAID"/&gt;
+ *     &lt;enumeration value="DEAO"/&gt;
+ *     &lt;enumeration value="INET"/&gt;
+ *     &lt;enumeration value="INUS"/&gt;
+ *     &lt;enumeration value="INPT"/&gt;
+ *     &lt;enumeration value="INMV"/&gt;
+ *     &lt;enumeration value="INDE"/&gt;
+ *     &lt;enumeration value="INDT"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "RejectionReason7Code")

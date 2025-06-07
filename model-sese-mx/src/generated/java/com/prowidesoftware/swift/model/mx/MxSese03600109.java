@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxSese03600109
 
     @XmlElement(name = "SctiesFincgModInstr", required = true)
     protected SecuritiesFinancingModificationInstructionV09 sctiesFincgModInstr;
-    public static final transient String BUSINESS_PROCESS = "sese";
-    public static final transient int FUNCTIONALITY = 36;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 9;
+    public final static transient String BUSINESS_PROCESS = "sese";
+    public final static transient int FUNCTIONALITY = 36;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 9;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {ActiveCurrencyAndAmount.class, ActiveOrHistoricCurrencyAndAmount.class, AddressType2Code.class, AlternatePartyIdentification7 .class, AmountAndDirection21 .class, AmountAndDirection49 .class, AutoBorrowing1Code.class, AutomaticBorrowing6Choice.class, BeneficialOwnership4Choice.class, BlockChainAddressWallet3 .class, BlockTrade1Code.class, BlockTrade4Choice.class, CashAccountIdentification9Choice.class, CashSettlementSystem2Code.class, CashSettlementSystem4Choice.class, CentralCounterPartyEligibility4Choice.class, CreditDebitCode.class, DateAndDateTime2Choice.class, DateCode18Choice.class, DateType5Code.class, DeliveryReceiptType2Code.class, FXStandingInstruction4Choice.class, FinancialInstrumentQuantity33Choice.class, ForeignExchangeTerms23 .class, GenericIdentification30 .class, GenericIdentification36 .class, GenericIdentification78 .class, IdentificationSource3Choice.class, IdentificationType42Choice.class, InterestComputationMethod2Code.class, InterestComputationMethodFormat4Choice.class, LegalFramework1Code.class, LegalFramework3Choice.class, MarketClientSide1Code.class, MarketClientSide6Choice.class, MxSese03600109 .class, NameAndAddress5 .class, NettingEligibility4Choice.class, OtherIdentification1 .class, OwnershipLegalRestrictions1Code.class, PartyIdentification120Choice.class, PartyIdentification127Choice.class, PartyIdentification144 .class, PartyIdentification257Choice.class, PartyIdentification315 .class, PartyIdentificationAndAccount199 .class, PartyTextInformation1 .class, PostalAddress1 .class, PriorityNumeric4Choice.class, QuantityAndAccount119 .class, Rate2 .class, RateName1 .class, RateOrName1Choice.class, RateType1Code.class, RateType35Choice.class, RepurchaseType21Choice.class, RepurchaseType8Code.class, Restriction5Choice.class, RevaluationIndicator3Choice.class, SafeKeepingPlace5 .class, SafekeepingPlace1Code.class, SafekeepingPlace3Code.class, SafekeepingPlaceFormat41Choice.class, SafekeepingPlaceTypeAndIdentification1 .class, SafekeepingPlaceTypeAndText8 .class, SecuritiesAccount19 .class, SecuritiesAccount22 .class, SecuritiesFinancingModificationInstructionV09 .class, SecuritiesFinancingTransactionDetails58 .class, SecuritiesFinancingTransactionType2Code.class, SecuritiesRTGS4Choice.class, SecuritiesTradeDetails100 .class, SecurityIdentification19 .class, SettlementDetails148 .class, SettlementParties127 .class, SettlementSystemMethod1Code.class, SettlementSystemMethod4Choice.class, SettlementTransactionCondition18Choice.class, SettlementTransactionCondition5Code.class, SettlementTransactionCondition6Code.class, SettlingCapacity2Code.class, SettlingCapacity7Choice.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TaxCapacityParty4Choice.class, TaxLiability1Code.class, TerminationDate6Choice.class, Tracking4Choice.class, TransactionTypeAndAdditionalParameters23 .class, TypeOfIdentification1Code.class };
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:sese.036.001.09";
+    public final static transient Class[] _classes = new Class[] {ActiveCurrencyAndAmount.class, ActiveOrHistoricCurrencyAndAmount.class, AddressType2Code.class, AlternatePartyIdentification7 .class, AmountAndDirection21 .class, AmountAndDirection49 .class, AutoBorrowing1Code.class, AutomaticBorrowing6Choice.class, BeneficialOwnership4Choice.class, BlockChainAddressWallet3 .class, BlockTrade1Code.class, BlockTrade4Choice.class, CashAccountIdentification9Choice.class, CashSettlementSystem2Code.class, CashSettlementSystem4Choice.class, CentralCounterPartyEligibility4Choice.class, CreditDebitCode.class, DateAndDateTime2Choice.class, DateCode18Choice.class, DateType5Code.class, DeliveryReceiptType2Code.class, FXStandingInstruction4Choice.class, FinancialInstrumentQuantity33Choice.class, ForeignExchangeTerms23 .class, GenericIdentification30 .class, GenericIdentification36 .class, GenericIdentification78 .class, IdentificationSource3Choice.class, IdentificationType42Choice.class, InterestComputationMethod2Code.class, InterestComputationMethodFormat4Choice.class, LegalFramework1Code.class, LegalFramework3Choice.class, MarketClientSide1Code.class, MarketClientSide6Choice.class, MxSese03600109 .class, NameAndAddress5 .class, NettingEligibility4Choice.class, OtherIdentification1 .class, OwnershipLegalRestrictions1Code.class, PartyIdentification120Choice.class, PartyIdentification127Choice.class, PartyIdentification144 .class, PartyIdentification257Choice.class, PartyIdentification315 .class, PartyIdentificationAndAccount199 .class, PartyTextInformation1 .class, PostalAddress1 .class, PriorityNumeric4Choice.class, QuantityAndAccount119 .class, Rate2 .class, RateName1 .class, RateOrName1Choice.class, RateType1Code.class, RateType35Choice.class, RepurchaseType21Choice.class, RepurchaseType8Code.class, Restriction5Choice.class, RevaluationIndicator3Choice.class, SafeKeepingPlace5 .class, SafekeepingPlace1Code.class, SafekeepingPlace3Code.class, SafekeepingPlaceFormat41Choice.class, SafekeepingPlaceTypeAndIdentification1 .class, SafekeepingPlaceTypeAndText8 .class, SecuritiesAccount19 .class, SecuritiesAccount22 .class, SecuritiesFinancingModificationInstructionV09 .class, SecuritiesFinancingTransactionDetails58 .class, SecuritiesFinancingTransactionType2Code.class, SecuritiesRTGS4Choice.class, SecuritiesTradeDetails100 .class, SecurityIdentification19 .class, SettlementDetails148 .class, SettlementParties127 .class, SettlementSystemMethod1Code.class, SettlementSystemMethod4Choice.class, SettlementTransactionCondition18Choice.class, SettlementTransactionCondition5Code.class, SettlementTransactionCondition6Code.class, SettlingCapacity2Code.class, SettlingCapacity7Choice.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TaxCapacityParty4Choice.class, TaxLiability1Code.class, TerminationDate6Choice.class, Tracking4Choice.class, TransactionTypeAndAdditionalParameters23 .class, TypeOfIdentification1Code.class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:sese.036.001.09";
 
     public MxSese03600109() {
         super();
@@ -86,6 +86,21 @@ public class MxSese03600109
     public MxSese03600109 setSctiesFincgModInstr(SecuritiesFinancingModificationInstructionV09 value) {
         this.sctiesFincgModInstr = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxSese03600109
      * @return
      *     a new instance of MxSese03600109
      */
-    public static final MxSese03600109 fromJson(String json) {
+    public final static MxSese03600109 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSese03600109 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

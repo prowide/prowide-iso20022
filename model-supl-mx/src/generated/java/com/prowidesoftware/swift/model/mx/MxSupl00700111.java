@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxSupl00700111
 
     @XmlElement(name = "DTCCCANOElgblBalSD1", required = true)
     protected DTCCCANOEligibleBalanceSD1V11 dtcccanoElgblBalSD1;
-    public static final transient String BUSINESS_PROCESS = "supl";
-    public static final transient int FUNCTIONALITY = 7;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 11;
+    public final static transient String BUSINESS_PROCESS = "supl";
+    public final static transient int FUNCTIONALITY = 7;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 11;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {AccountBalanceSD10 .class, AccountBalanceSD11 .class, AccountBalanceSD12 .class, AdjustedBalanceTypeSD4Choice.class, CorporateActionGeneralInformationSD49 .class, DTCCCANOEligibleBalanceSD1V11 .class, DTCCSubEventType9Code.class, EventGroup1Code.class, ExtendedEventType6Code.class, FinancialInstrumentAttributesSD21 .class, FinancialInstrumentQuantity15Choice.class, IdentificationSource4Choice.class, MxSupl00700111 .class, OtherIdentification2 .class, ShortLong1Code.class, SignedQuantityFormat9 .class };
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:supl.007.001.11";
+    public final static transient Class[] _classes = new Class[] {AccountBalanceSD10 .class, AccountBalanceSD11 .class, AccountBalanceSD12 .class, AdjustedBalanceTypeSD4Choice.class, CorporateActionGeneralInformationSD49 .class, DTCCCANOEligibleBalanceSD1V11 .class, DTCCSubEventType9Code.class, EventGroup1Code.class, ExtendedEventType6Code.class, FinancialInstrumentAttributesSD21 .class, FinancialInstrumentQuantity15Choice.class, IdentificationSource4Choice.class, MxSupl00700111 .class, OtherIdentification2 .class, ShortLong1Code.class, SignedQuantityFormat9 .class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:supl.007.001.11";
 
     public MxSupl00700111() {
         super();
@@ -86,6 +86,21 @@ public class MxSupl00700111
     public MxSupl00700111 setDTCCCANOElgblBalSD1(DTCCCANOEligibleBalanceSD1V11 value) {
         this.dtcccanoElgblBalSD1 = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxSupl00700111
      * @return
      *     a new instance of MxSupl00700111
      */
-    public static final MxSupl00700111 fromJson(String json) {
+    public final static MxSupl00700111 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSupl00700111 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

@@ -1,41 +1,42 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for AccountOwnershipType6Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="AccountOwnershipType6Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="BOWN"/>
- *     <enumeration value="CORP"/>
- *     <enumeration value="CUST"/>
- *     <enumeration value="ENTR"/>
- *     <enumeration value="EURE"/>
- *     <enumeration value="PART"/>
- *     <enumeration value="TRUS"/>
- *     <enumeration value="GOVO"/>
- *     <enumeration value="JOIT"/>
- *     <enumeration value="COMO"/>
- *     <enumeration value="JOIN"/>
- *     <enumeration value="LLCO"/>
- *     <enumeration value="LIPA"/>
- *     <enumeration value="NOMI"/>
- *     <enumeration value="NFPO"/>
- *     <enumeration value="ONIS"/>
- *     <enumeration value="OWNR"/>
- *     <enumeration value="RGIC"/>
- *     <enumeration value="SIGL"/>
- *     <enumeration value="UNCO"/>
- *     <enumeration value="USUF"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="AccountOwnershipType6Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="BOWN"/&gt;
+ *     &lt;enumeration value="CORP"/&gt;
+ *     &lt;enumeration value="CUST"/&gt;
+ *     &lt;enumeration value="ENTR"/&gt;
+ *     &lt;enumeration value="EURE"/&gt;
+ *     &lt;enumeration value="PART"/&gt;
+ *     &lt;enumeration value="TRUS"/&gt;
+ *     &lt;enumeration value="GOVO"/&gt;
+ *     &lt;enumeration value="JOIT"/&gt;
+ *     &lt;enumeration value="COMO"/&gt;
+ *     &lt;enumeration value="JOIN"/&gt;
+ *     &lt;enumeration value="LLCO"/&gt;
+ *     &lt;enumeration value="LIPA"/&gt;
+ *     &lt;enumeration value="NOMI"/&gt;
+ *     &lt;enumeration value="NFPO"/&gt;
+ *     &lt;enumeration value="ONIS"/&gt;
+ *     &lt;enumeration value="OWNR"/&gt;
+ *     &lt;enumeration value="RGIC"/&gt;
+ *     &lt;enumeration value="SIGL"/&gt;
+ *     &lt;enumeration value="UNCO"/&gt;
+ *     &lt;enumeration value="USUF"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "AccountOwnershipType6Code")

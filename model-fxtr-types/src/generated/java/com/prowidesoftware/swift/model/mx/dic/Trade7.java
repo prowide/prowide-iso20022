@@ -1,18 +1,17 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -57,7 +56,7 @@ public class Trade7 {
     @XmlElement(name = "DtAndTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime dtAndTm;
+    protected XMLGregorianCalendar dtAndTm;
     @XmlElement(name = "FXTradPdct")
     @XmlSchemaType(name = "string")
     protected UnderlyingProductIdentifier1Code fxTradPdct;
@@ -84,7 +83,7 @@ public class Trade7 {
     @XmlElement(name = "TxTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime txTm;
+    protected XMLGregorianCalendar txTm;
     @XmlElement(name = "FXDtls")
     protected Trade10 fxDtls;
     @XmlElement(name = "SwpLeg")
@@ -106,7 +105,7 @@ public class Trade7 {
     @XmlElement(name = "DtConfd", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate dtConfd;
+    protected XMLGregorianCalendar dtConfd;
 
     /**
      * Gets the value of the tradId property.
@@ -141,7 +140,7 @@ public class Trade7 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getDtAndTm() {
+    public XMLGregorianCalendar getDtAndTm() {
         return dtAndTm;
     }
 
@@ -153,7 +152,7 @@ public class Trade7 {
      *     {@link String }
      *     
      */
-    public Trade7 setDtAndTm(OffsetDateTime value) {
+    public Trade7 setDtAndTm(XMLGregorianCalendar value) {
         this.dtAndTm = value;
         return this;
     }
@@ -391,7 +390,7 @@ public class Trade7 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getTxTm() {
+    public XMLGregorianCalendar getTxTm() {
         return txTm;
     }
 
@@ -403,7 +402,7 @@ public class Trade7 {
      *     {@link String }
      *     
      */
-    public Trade7 setTxTm(OffsetDateTime value) {
+    public Trade7 setTxTm(XMLGregorianCalendar value) {
         this.txTm = value;
         return this;
     }
@@ -439,8 +438,8 @@ public class Trade7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the swpLeg property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the swpLeg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -454,12 +453,10 @@ public class Trade7 {
      * {@link InstrumentLeg7 }
      * 
      * 
-     * @return
-     *     The value of the swpLeg property.
      */
     public List<InstrumentLeg7> getSwpLeg() {
         if (swpLeg == null) {
-            swpLeg = new ArrayList<>();
+            swpLeg = new ArrayList<InstrumentLeg7>();
         }
         return this.swpLeg;
     }
@@ -647,7 +644,7 @@ public class Trade7 {
      *     {@link String }
      *     
      */
-    public LocalDate getDtConfd() {
+    public XMLGregorianCalendar getDtConfd() {
         return dtConfd;
     }
 
@@ -659,7 +656,7 @@ public class Trade7 {
      *     {@link String }
      *     
      */
-    public Trade7 setDtConfd(LocalDate value) {
+    public Trade7 setDtConfd(XMLGregorianCalendar value) {
         this.dtConfd = value;
         return this;
     }

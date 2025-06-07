@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -41,7 +41,7 @@ public class TransparencyDataReport13 {
     @XmlElement(name = "RptgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate rptgDt;
+    protected XMLGregorianCalendar rptgDt;
     @XmlElement(name = "TradgVn")
     protected String tradgVn;
     @XmlElement(name = "Sspnsn")
@@ -111,7 +111,7 @@ public class TransparencyDataReport13 {
      *     {@link String }
      *     
      */
-    public LocalDate getRptgDt() {
+    public XMLGregorianCalendar getRptgDt() {
         return rptgDt;
     }
 
@@ -123,7 +123,7 @@ public class TransparencyDataReport13 {
      *     {@link String }
      *     
      */
-    public TransparencyDataReport13 setRptgDt(LocalDate value) {
+    public TransparencyDataReport13 setRptgDt(XMLGregorianCalendar value) {
         this.rptgDt = value;
         return this;
     }

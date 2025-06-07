@@ -1,34 +1,35 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for NetworkManagementType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="NetworkManagementType1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="ECTS"/>
- *     <enumeration value="ESFW"/>
- *     <enumeration value="OTHN"/>
- *     <enumeration value="OTHP"/>
- *     <enumeration value="SGNF"/>
- *     <enumeration value="SGNN"/>
- *     <enumeration value="DSFW"/>
- *     <enumeration value="TSUN"/>
- *     <enumeration value="MOSB"/>
- *     <enumeration value="SPIN"/>
- *     <enumeration value="IART"/>
- *     <enumeration value="SYCL"/>
- *     <enumeration value="DRBI"/>
- *     <enumeration value="ERBI"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="NetworkManagementType1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ECTS"/&gt;
+ *     &lt;enumeration value="ESFW"/&gt;
+ *     &lt;enumeration value="OTHN"/&gt;
+ *     &lt;enumeration value="OTHP"/&gt;
+ *     &lt;enumeration value="SGNF"/&gt;
+ *     &lt;enumeration value="SGNN"/&gt;
+ *     &lt;enumeration value="DSFW"/&gt;
+ *     &lt;enumeration value="TSUN"/&gt;
+ *     &lt;enumeration value="MOSB"/&gt;
+ *     &lt;enumeration value="SPIN"/&gt;
+ *     &lt;enumeration value="IART"/&gt;
+ *     &lt;enumeration value="SYCL"/&gt;
+ *     &lt;enumeration value="DRBI"/&gt;
+ *     &lt;enumeration value="ERBI"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "NetworkManagementType1Code")

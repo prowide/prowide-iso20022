@@ -1,27 +1,28 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for FundingSourceType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="FundingSourceType1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="SECL"/>
- *     <enumeration value="FREE"/>
- *     <enumeration value="OTHR"/>
- *     <enumeration value="BSHS"/>
- *     <enumeration value="CSHS"/>
- *     <enumeration value="REPO"/>
- *     <enumeration value="UBOR"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="FundingSourceType1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="SECL"/&gt;
+ *     &lt;enumeration value="FREE"/&gt;
+ *     &lt;enumeration value="OTHR"/&gt;
+ *     &lt;enumeration value="BSHS"/&gt;
+ *     &lt;enumeration value="CSHS"/&gt;
+ *     &lt;enumeration value="REPO"/&gt;
+ *     &lt;enumeration value="UBOR"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "FundingSourceType1Code")

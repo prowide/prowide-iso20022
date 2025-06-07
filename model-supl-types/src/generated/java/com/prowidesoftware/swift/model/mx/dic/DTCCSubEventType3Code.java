@@ -1,41 +1,42 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for DTCCSubEventType3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="DTCCSubEventType3Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="PLCL"/>
- *     <enumeration value="BLOT"/>
- *     <enumeration value="RMRK"/>
- *     <enumeration value="UNWD"/>
- *     <enumeration value="SHEX"/>
- *     <enumeration value="STDT"/>
- *     <enumeration value="XFER"/>
- *     <enumeration value="SOPT"/>
- *     <enumeration value="MBCK"/>
- *     <enumeration value="SALE"/>
- *     <enumeration value="PRNI"/>
- *     <enumeration value="POPI"/>
- *     <enumeration value="DRPI"/>
- *     <enumeration value="MROS"/>
- *     <enumeration value="SHPP"/>
- *     <enumeration value="OPOF"/>
- *     <enumeration value="TWRI"/>
- *     <enumeration value="CILI"/>
- *     <enumeration value="BTST"/>
- *     <enumeration value="FTPR"/>
- *     <enumeration value="ADRS"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="DTCCSubEventType3Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="PLCL"/&gt;
+ *     &lt;enumeration value="BLOT"/&gt;
+ *     &lt;enumeration value="RMRK"/&gt;
+ *     &lt;enumeration value="UNWD"/&gt;
+ *     &lt;enumeration value="SHEX"/&gt;
+ *     &lt;enumeration value="STDT"/&gt;
+ *     &lt;enumeration value="XFER"/&gt;
+ *     &lt;enumeration value="SOPT"/&gt;
+ *     &lt;enumeration value="MBCK"/&gt;
+ *     &lt;enumeration value="SALE"/&gt;
+ *     &lt;enumeration value="PRNI"/&gt;
+ *     &lt;enumeration value="POPI"/&gt;
+ *     &lt;enumeration value="DRPI"/&gt;
+ *     &lt;enumeration value="MROS"/&gt;
+ *     &lt;enumeration value="SHPP"/&gt;
+ *     &lt;enumeration value="OPOF"/&gt;
+ *     &lt;enumeration value="TWRI"/&gt;
+ *     &lt;enumeration value="CILI"/&gt;
+ *     &lt;enumeration value="BTST"/&gt;
+ *     &lt;enumeration value="FTPR"/&gt;
+ *     &lt;enumeration value="ADRS"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "DTCCSubEventType3Code")

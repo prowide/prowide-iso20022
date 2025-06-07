@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -45,7 +45,7 @@ public class ATMConfigurationControlComponent1 {
     @XmlElement(name = "ActvtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime actvtnDt;
+    protected XMLGregorianCalendar actvtnDt;
 
     /**
      * Gets the value of the envt property.
@@ -128,8 +128,8 @@ public class ATMConfigurationControlComponent1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the prprty property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the prprty property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -143,12 +143,10 @@ public class ATMConfigurationControlComponent1 {
      * {@link ATMPropertyComponent1 }
      * 
      * 
-     * @return
-     *     The value of the prprty property.
      */
     public List<ATMPropertyComponent1> getPrprty() {
         if (prprty == null) {
-            prprty = new ArrayList<>();
+            prprty = new ArrayList<ATMPropertyComponent1>();
         }
         return this.prprty;
     }
@@ -161,7 +159,7 @@ public class ATMConfigurationControlComponent1 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getActvtnDt() {
+    public XMLGregorianCalendar getActvtnDt() {
         return actvtnDt;
     }
 
@@ -173,7 +171,7 @@ public class ATMConfigurationControlComponent1 {
      *     {@link String }
      *     
      */
-    public ATMConfigurationControlComponent1 setActvtnDt(OffsetDateTime value) {
+    public ATMConfigurationControlComponent1 setActvtnDt(XMLGregorianCalendar value) {
         this.actvtnDt = value;
         return this;
     }

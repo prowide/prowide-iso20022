@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -45,7 +45,7 @@ public class Ticket2 {
     @XmlElement(name = "TcktIsseDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate tcktIsseDt;
+    protected XMLGregorianCalendar tcktIsseDt;
     @XmlElement(name = "TcktIsseLctn")
     protected String tcktIsseLctn;
     @XmlElement(name = "CnjnctnTcktNb")
@@ -123,7 +123,7 @@ public class Ticket2 {
      *     {@link String }
      *     
      */
-    public LocalDate getTcktIsseDt() {
+    public XMLGregorianCalendar getTcktIsseDt() {
         return tcktIsseDt;
     }
 
@@ -135,7 +135,7 @@ public class Ticket2 {
      *     {@link String }
      *     
      */
-    public Ticket2 setTcktIsseDt(LocalDate value) {
+    public Ticket2 setTcktIsseDt(XMLGregorianCalendar value) {
         this.tcktIsseDt = value;
         return this;
     }

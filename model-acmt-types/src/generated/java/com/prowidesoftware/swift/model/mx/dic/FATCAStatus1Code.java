@@ -1,32 +1,33 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlEnumValue;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlEnumValue;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for FATCAStatus1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="FATCAStatus1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="F101"/>
- *     <enumeration value="F102"/>
- *     <enumeration value="F103"/>
- *     <enumeration value="F104"/>
- *     <enumeration value="F105"/>
- *     <enumeration value="F201"/>
- *     <enumeration value="F202"/>
- *     <enumeration value="F203"/>
- *     <enumeration value="F204"/>
- *     <enumeration value="F205"/>
- *     <enumeration value="F206"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="FATCAStatus1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="F101"/&gt;
+ *     &lt;enumeration value="F102"/&gt;
+ *     &lt;enumeration value="F103"/&gt;
+ *     &lt;enumeration value="F104"/&gt;
+ *     &lt;enumeration value="F105"/&gt;
+ *     &lt;enumeration value="F201"/&gt;
+ *     &lt;enumeration value="F202"/&gt;
+ *     &lt;enumeration value="F203"/&gt;
+ *     &lt;enumeration value="F204"/&gt;
+ *     &lt;enumeration value="F205"/&gt;
+ *     &lt;enumeration value="F206"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "FATCAStatus1Code")

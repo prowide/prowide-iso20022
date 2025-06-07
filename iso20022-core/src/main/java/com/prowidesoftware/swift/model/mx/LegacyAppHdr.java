@@ -17,21 +17,20 @@ package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.ProwideException;
 import com.prowidesoftware.swift.model.mx.dic.ApplicationHeaderImpl;
-import jakarta.xml.bind.JAXBContext;
-import jakarta.xml.bind.JAXBElement;
-import jakarta.xml.bind.JAXBException;
-import jakarta.xml.bind.Marshaller;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import java.io.StringWriter;
-import java.time.OffsetDateTime;
-import java.time.ZoneOffset;
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBElement;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.namespace.QName;
 import javax.xml.transform.dom.DOMResult;
 import org.apache.commons.lang3.StringUtils;
@@ -176,7 +175,7 @@ public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
      * @see #getCrDate()
      */
     @Override
-    public OffsetDateTime creationDate() {
+    public XMLGregorianCalendar creationDate() {
         return this.getCrDate();
     }
 
@@ -184,12 +183,12 @@ public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
      * Sets the creation date.
      *
      * @param overwrite if true, the creation date will always be set overwriting any previous value;
-     * @see #setCrDate(OffsetDateTime)
+     * @see #setCrDate(XMLGregorianCalendar)
      */
     @Override
     public void setCreationDate(boolean overwrite) {
         if (this.getCrDate() == null || overwrite) {
-            this.setCrDate(OffsetDateTime.now(ZoneOffset.UTC));
+            this.setCrDate(XMLGregorianCalendarUtils.now());
         }
     }
 

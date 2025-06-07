@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxCaaa01500105
 
     @XmlElement(name = "AccptrRjctn", required = true)
     protected AcceptorRejectionV05 accptrRjctn;
-    public static final transient String BUSINESS_PROCESS = "caaa";
-    public static final transient int FUNCTIONALITY = 15;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 5;
+    public final static transient String BUSINESS_PROCESS = "caaa";
+    public final static transient int FUNCTIONALITY = 15;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 5;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {AcceptorRejection2 .class, AcceptorRejectionV05 .class, GenericIdentification53 .class, GenericIdentification76 .class, GenericIdentification94 .class, Header26 .class, MessageFunction9Code.class, MxCaaa01500105 .class, NetworkParameters4 .class, NetworkParameters5 .class, NetworkType1Code.class, PartyType3Code.class, PartyType4Code.class, RejectReason1Code.class, Traceability5 .class };
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:caaa.015.001.05";
+    public final static transient Class[] _classes = new Class[] {AcceptorRejection2 .class, AcceptorRejectionV05 .class, GenericIdentification53 .class, GenericIdentification76 .class, GenericIdentification94 .class, Header26 .class, MessageFunction9Code.class, MxCaaa01500105 .class, NetworkParameters4 .class, NetworkParameters5 .class, NetworkType1Code.class, PartyType3Code.class, PartyType4Code.class, RejectReason1Code.class, Traceability5 .class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:caaa.015.001.05";
 
     public MxCaaa01500105() {
         super();
@@ -86,6 +86,21 @@ public class MxCaaa01500105
     public MxCaaa01500105 setAccptrRjctn(AcceptorRejectionV05 value) {
         this.accptrRjctn = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxCaaa01500105
      * @return
      *     a new instance of MxCaaa01500105
      */
-    public static final MxCaaa01500105 fromJson(String json) {
+    public final static MxCaaa01500105 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxCaaa01500105 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

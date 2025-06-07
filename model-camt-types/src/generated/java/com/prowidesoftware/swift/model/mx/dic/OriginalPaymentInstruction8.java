@@ -4,10 +4,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -234,8 +234,8 @@ public class OriginalPaymentInstruction8 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the cxlRsnInf property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the cxlRsnInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -249,12 +249,10 @@ public class OriginalPaymentInstruction8 {
      * {@link PaymentCancellationReason2 }
      * 
      * 
-     * @return
-     *     The value of the cxlRsnInf property.
      */
     public List<PaymentCancellationReason2> getCxlRsnInf() {
         if (cxlRsnInf == null) {
-            cxlRsnInf = new ArrayList<>();
+            cxlRsnInf = new ArrayList<PaymentCancellationReason2>();
         }
         return this.cxlRsnInf;
     }
@@ -265,8 +263,8 @@ public class OriginalPaymentInstruction8 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the txInf property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the txInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -280,12 +278,10 @@ public class OriginalPaymentInstruction8 {
      * {@link PaymentTransaction47 }
      * 
      * 
-     * @return
-     *     The value of the txInf property.
      */
     public List<PaymentTransaction47> getTxInf() {
         if (txInf == null) {
-            txInf = new ArrayList<>();
+            txInf = new ArrayList<PaymentTransaction47>();
         }
         return this.txInf;
     }

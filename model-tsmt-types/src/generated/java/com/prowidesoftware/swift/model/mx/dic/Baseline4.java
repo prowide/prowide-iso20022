@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -87,7 +87,7 @@ public class Baseline4 {
     @XmlElement(name = "LatstMtchDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate latstMtchDt;
+    protected XMLGregorianCalendar latstMtchDt;
     @XmlElement(name = "ComrclDataSetReqrd", required = true)
     protected RequiredSubmission2 comrclDataSetReqrd;
     @XmlElement(name = "TrnsprtDataSetReqrd")
@@ -282,8 +282,8 @@ public class Baseline4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the buyrSdSubmitgBk property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the buyrSdSubmitgBk property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -297,12 +297,10 @@ public class Baseline4 {
      * {@link BICIdentification1 }
      * 
      * 
-     * @return
-     *     The value of the buyrSdSubmitgBk property.
      */
     public List<BICIdentification1> getBuyrSdSubmitgBk() {
         if (buyrSdSubmitgBk == null) {
-            buyrSdSubmitgBk = new ArrayList<>();
+            buyrSdSubmitgBk = new ArrayList<BICIdentification1>();
         }
         return this.buyrSdSubmitgBk;
     }
@@ -313,8 +311,8 @@ public class Baseline4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the sellrSdSubmitgBk property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the sellrSdSubmitgBk property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -328,12 +326,10 @@ public class Baseline4 {
      * {@link BICIdentification1 }
      * 
      * 
-     * @return
-     *     The value of the sellrSdSubmitgBk property.
      */
     public List<BICIdentification1> getSellrSdSubmitgBk() {
         if (sellrSdSubmitgBk == null) {
-            sellrSdSubmitgBk = new ArrayList<>();
+            sellrSdSubmitgBk = new ArrayList<BICIdentification1>();
         }
         return this.sellrSdSubmitgBk;
     }
@@ -444,8 +440,8 @@ public class Baseline4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the pmtTerms property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the pmtTerms property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -459,12 +455,10 @@ public class Baseline4 {
      * {@link PaymentTerms5 }
      * 
      * 
-     * @return
-     *     The value of the pmtTerms property.
      */
     public List<PaymentTerms5> getPmtTerms() {
         if (pmtTerms == null) {
-            pmtTerms = new ArrayList<>();
+            pmtTerms = new ArrayList<PaymentTerms5>();
         }
         return this.pmtTerms;
     }
@@ -500,8 +494,8 @@ public class Baseline4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the pmtOblgtn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the pmtOblgtn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -515,12 +509,10 @@ public class Baseline4 {
      * {@link PaymentObligation2 }
      * 
      * 
-     * @return
-     *     The value of the pmtOblgtn property.
      */
     public List<PaymentObligation2> getPmtOblgtn() {
         if (pmtOblgtn == null) {
-            pmtOblgtn = new ArrayList<>();
+            pmtOblgtn = new ArrayList<PaymentObligation2>();
         }
         return this.pmtOblgtn;
     }
@@ -533,7 +525,7 @@ public class Baseline4 {
      *     {@link String }
      *     
      */
-    public LocalDate getLatstMtchDt() {
+    public XMLGregorianCalendar getLatstMtchDt() {
         return latstMtchDt;
     }
 
@@ -545,7 +537,7 @@ public class Baseline4 {
      *     {@link String }
      *     
      */
-    public Baseline4 setLatstMtchDt(LocalDate value) {
+    public Baseline4 setLatstMtchDt(XMLGregorianCalendar value) {
         this.latstMtchDt = value;
         return this;
     }
@@ -631,8 +623,8 @@ public class Baseline4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the certDataSetReqrd property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the certDataSetReqrd property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -646,12 +638,10 @@ public class Baseline4 {
      * {@link RequiredSubmission4 }
      * 
      * 
-     * @return
-     *     The value of the certDataSetReqrd property.
      */
     public List<RequiredSubmission4> getCertDataSetReqrd() {
         if (certDataSetReqrd == null) {
-            certDataSetReqrd = new ArrayList<>();
+            certDataSetReqrd = new ArrayList<RequiredSubmission4>();
         }
         return this.certDataSetReqrd;
     }
@@ -662,8 +652,8 @@ public class Baseline4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the othrCertDataSetReqrd property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the othrCertDataSetReqrd property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -677,12 +667,10 @@ public class Baseline4 {
      * {@link RequiredSubmission5 }
      * 
      * 
-     * @return
-     *     The value of the othrCertDataSetReqrd property.
      */
     public List<RequiredSubmission5> getOthrCertDataSetReqrd() {
         if (othrCertDataSetReqrd == null) {
-            othrCertDataSetReqrd = new ArrayList<>();
+            othrCertDataSetReqrd = new ArrayList<RequiredSubmission5>();
         }
         return this.othrCertDataSetReqrd;
     }

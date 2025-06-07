@@ -1,14 +1,12 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.YearMonth;
-import com.prowidesoftware.swift.model.mx.adapters.IsoYearMonthAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -34,14 +32,12 @@ public class PlainCardData3 {
     protected String pan;
     @XmlElement(name = "CardSeqNb")
     protected String cardSeqNb;
-    @XmlElement(name = "FctvDt", type = String.class)
-    @XmlJavaTypeAdapter(IsoYearMonthAdapter.class)
+    @XmlElement(name = "FctvDt")
     @XmlSchemaType(name = "gYearMonth")
-    protected YearMonth fctvDt;
-    @XmlElement(name = "XpryDt", required = true, type = String.class)
-    @XmlJavaTypeAdapter(IsoYearMonthAdapter.class)
+    protected XMLGregorianCalendar fctvDt;
+    @XmlElement(name = "XpryDt", required = true)
     @XmlSchemaType(name = "gYearMonth")
-    protected YearMonth xpryDt;
+    protected XMLGregorianCalendar xpryDt;
 
     /**
      * Gets the value of the pan property.
@@ -98,10 +94,10 @@ public class PlainCardData3 {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public YearMonth getFctvDt() {
+    public XMLGregorianCalendar getFctvDt() {
         return fctvDt;
     }
 
@@ -110,10 +106,10 @@ public class PlainCardData3 {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public PlainCardData3 setFctvDt(YearMonth value) {
+    public PlainCardData3 setFctvDt(XMLGregorianCalendar value) {
         this.fctvDt = value;
         return this;
     }
@@ -123,10 +119,10 @@ public class PlainCardData3 {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public YearMonth getXpryDt() {
+    public XMLGregorianCalendar getXpryDt() {
         return xpryDt;
     }
 
@@ -135,10 +131,10 @@ public class PlainCardData3 {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public PlainCardData3 setXpryDt(YearMonth value) {
+    public PlainCardData3 setXpryDt(XMLGregorianCalendar value) {
         this.xpryDt = value;
         return this;
     }

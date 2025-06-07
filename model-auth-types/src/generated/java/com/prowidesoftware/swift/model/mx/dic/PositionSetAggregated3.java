@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -36,7 +36,7 @@ public class PositionSetAggregated3 {
     @XmlElement(name = "RefDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate refDt;
+    protected XMLGregorianCalendar refDt;
     @XmlElement(name = "PosSet")
     protected List<PositionSet5> posSet;
     @XmlElement(name = "CcyPosSet")
@@ -54,7 +54,7 @@ public class PositionSetAggregated3 {
      *     {@link String }
      *     
      */
-    public LocalDate getRefDt() {
+    public XMLGregorianCalendar getRefDt() {
         return refDt;
     }
 
@@ -66,7 +66,7 @@ public class PositionSetAggregated3 {
      *     {@link String }
      *     
      */
-    public PositionSetAggregated3 setRefDt(LocalDate value) {
+    public PositionSetAggregated3 setRefDt(XMLGregorianCalendar value) {
         this.refDt = value;
         return this;
     }
@@ -77,8 +77,8 @@ public class PositionSetAggregated3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the posSet property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the posSet property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -92,12 +92,10 @@ public class PositionSetAggregated3 {
      * {@link PositionSet5 }
      * 
      * 
-     * @return
-     *     The value of the posSet property.
      */
     public List<PositionSet5> getPosSet() {
         if (posSet == null) {
-            posSet = new ArrayList<>();
+            posSet = new ArrayList<PositionSet5>();
         }
         return this.posSet;
     }
@@ -108,8 +106,8 @@ public class PositionSetAggregated3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the ccyPosSet property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the ccyPosSet property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -123,12 +121,10 @@ public class PositionSetAggregated3 {
      * {@link PositionSet5 }
      * 
      * 
-     * @return
-     *     The value of the ccyPosSet property.
      */
     public List<PositionSet5> getCcyPosSet() {
         if (ccyPosSet == null) {
-            ccyPosSet = new ArrayList<>();
+            ccyPosSet = new ArrayList<PositionSet5>();
         }
         return this.ccyPosSet;
     }
@@ -139,8 +135,8 @@ public class PositionSetAggregated3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the collPosSet property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the collPosSet property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -154,12 +150,10 @@ public class PositionSetAggregated3 {
      * {@link PositionSet4 }
      * 
      * 
-     * @return
-     *     The value of the collPosSet property.
      */
     public List<PositionSet4> getCollPosSet() {
         if (collPosSet == null) {
-            collPosSet = new ArrayList<>();
+            collPosSet = new ArrayList<PositionSet4>();
         }
         return this.collPosSet;
     }
@@ -170,8 +164,8 @@ public class PositionSetAggregated3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the ccyCollPosSet property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the ccyCollPosSet property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -185,12 +179,10 @@ public class PositionSetAggregated3 {
      * {@link PositionSet4 }
      * 
      * 
-     * @return
-     *     The value of the ccyCollPosSet property.
      */
     public List<PositionSet4> getCcyCollPosSet() {
         if (ccyCollPosSet == null) {
-            ccyCollPosSet = new ArrayList<>();
+            ccyCollPosSet = new ArrayList<PositionSet4>();
         }
         return this.ccyCollPosSet;
     }

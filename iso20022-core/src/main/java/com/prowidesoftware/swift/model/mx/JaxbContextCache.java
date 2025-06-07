@@ -15,12 +15,12 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
-import jakarta.xml.bind.JAXBContext;
-import jakarta.xml.bind.JAXBException;
 import java.util.concurrent.ExecutionException;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
 
 /**
- * Cache for {@link jakarta.xml.bind.JAXBContext} instances per message type.
+ * Cache for {@link javax.xml.bind.JAXBContext} instances per message type.
  *
  * <p>It is used to achieve better performance when marshalling or unmarshalling MX messages.
  *

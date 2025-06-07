@@ -3,11 +3,11 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -138,8 +138,8 @@ public class RiskAssessment2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the rsn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the rsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -153,12 +153,10 @@ public class RiskAssessment2 {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the rsn property.
      */
     public List<String> getRsn() {
         if (rsn == null) {
-            rsn = new ArrayList<>();
+            rsn = new ArrayList<String>();
         }
         return this.rsn;
     }
@@ -194,8 +192,8 @@ public class RiskAssessment2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the rskCond property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the rskCond property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -209,12 +207,10 @@ public class RiskAssessment2 {
      * {@link AdditionalData1 }
      * 
      * 
-     * @return
-     *     The value of the rskCond property.
      */
     public List<AdditionalData1> getRskCond() {
         if (rskCond == null) {
-            rskCond = new ArrayList<>();
+            rskCond = new ArrayList<AdditionalData1>();
         }
         return this.rskCond;
     }
@@ -225,8 +221,8 @@ public class RiskAssessment2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the addtlRskData property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the addtlRskData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -240,12 +236,10 @@ public class RiskAssessment2 {
      * {@link AdditionalRiskData1 }
      * 
      * 
-     * @return
-     *     The value of the addtlRskData property.
      */
     public List<AdditionalRiskData1> getAddtlRskData() {
         if (addtlRskData == null) {
-            addtlRskData = new ArrayList<>();
+            addtlRskData = new ArrayList<AdditionalRiskData1>();
         }
         return this.addtlRskData;
     }
@@ -256,8 +250,8 @@ public class RiskAssessment2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the rcmmnddActn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the rcmmnddActn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -271,12 +265,10 @@ public class RiskAssessment2 {
      * {@link ActionType8Code }
      * 
      * 
-     * @return
-     *     The value of the rcmmnddActn property.
      */
     public List<ActionType8Code> getRcmmnddActn() {
         if (rcmmnddActn == null) {
-            rcmmnddActn = new ArrayList<>();
+            rcmmnddActn = new ArrayList<ActionType8Code>();
         }
         return this.rcmmnddActn;
     }

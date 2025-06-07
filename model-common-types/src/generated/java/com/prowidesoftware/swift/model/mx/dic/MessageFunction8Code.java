@@ -1,26 +1,27 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for MessageFunction8Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="MessageFunction8Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="BALN"/>
- *     <enumeration value="GSTS"/>
- *     <enumeration value="DSEC"/>
- *     <enumeration value="INQC"/>
- *     <enumeration value="KEYQ"/>
- *     <enumeration value="SSTS"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="MessageFunction8Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="BALN"/&gt;
+ *     &lt;enumeration value="GSTS"/&gt;
+ *     &lt;enumeration value="DSEC"/&gt;
+ *     &lt;enumeration value="INQC"/&gt;
+ *     &lt;enumeration value="KEYQ"/&gt;
+ *     &lt;enumeration value="SSTS"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "MessageFunction8Code")

@@ -1,26 +1,27 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for GeneratedReason2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="GeneratedReason2Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="COLL"/>
- *     <enumeration value="RODE"/>
- *     <enumeration value="SPLI"/>
- *     <enumeration value="THRD"/>
- *     <enumeration value="TRAN"/>
- *     <enumeration value="OTHR"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="GeneratedReason2Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="COLL"/&gt;
+ *     &lt;enumeration value="RODE"/&gt;
+ *     &lt;enumeration value="SPLI"/&gt;
+ *     &lt;enumeration value="THRD"/&gt;
+ *     &lt;enumeration value="TRAN"/&gt;
+ *     &lt;enumeration value="OTHR"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "GeneratedReason2Code")

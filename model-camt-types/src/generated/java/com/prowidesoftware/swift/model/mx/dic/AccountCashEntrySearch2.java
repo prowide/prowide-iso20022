@@ -3,11 +3,11 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -58,8 +58,8 @@ public class AccountCashEntrySearch2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the acctId property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the acctId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -73,12 +73,10 @@ public class AccountCashEntrySearch2 {
      * {@link AccountIdentificationSearchCriteriaChoice }
      * 
      * 
-     * @return
-     *     The value of the acctId property.
      */
     public List<AccountIdentificationSearchCriteriaChoice> getAcctId() {
         if (acctId == null) {
-            acctId = new ArrayList<>();
+            acctId = new ArrayList<AccountIdentificationSearchCriteriaChoice>();
         }
         return this.acctId;
     }
@@ -89,8 +87,8 @@ public class AccountCashEntrySearch2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the ntryAmt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the ntryAmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -104,12 +102,10 @@ public class AccountCashEntrySearch2 {
      * {@link AmountRangeChoice }
      * 
      * 
-     * @return
-     *     The value of the ntryAmt property.
      */
     public List<AmountRangeChoice> getNtryAmt() {
         if (ntryAmt == null) {
-            ntryAmt = new ArrayList<>();
+            ntryAmt = new ArrayList<AmountRangeChoice>();
         }
         return this.ntryAmt;
     }
@@ -120,8 +116,8 @@ public class AccountCashEntrySearch2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the ntryAmtCcy property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the ntryAmtCcy property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -135,12 +131,10 @@ public class AccountCashEntrySearch2 {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the ntryAmtCcy property.
      */
     public List<String> getNtryAmtCcy() {
         if (ntryAmtCcy == null) {
-            ntryAmtCcy = new ArrayList<>();
+            ntryAmtCcy = new ArrayList<String>();
         }
         return this.ntryAmtCcy;
     }
@@ -176,8 +170,8 @@ public class AccountCashEntrySearch2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the ntrySts property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the ntrySts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -191,12 +185,10 @@ public class AccountCashEntrySearch2 {
      * {@link EntryStatus1Code }
      * 
      * 
-     * @return
-     *     The value of the ntrySts property.
      */
     public List<EntryStatus1Code> getNtrySts() {
         if (ntrySts == null) {
-            ntrySts = new ArrayList<>();
+            ntrySts = new ArrayList<EntryStatus1Code>();
         }
         return this.ntrySts;
     }
@@ -207,8 +199,8 @@ public class AccountCashEntrySearch2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the ntryDt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the ntryDt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -222,12 +214,10 @@ public class AccountCashEntrySearch2 {
      * {@link DateAndDateTimeSearchChoice }
      * 
      * 
-     * @return
-     *     The value of the ntryDt property.
      */
     public List<DateAndDateTimeSearchChoice> getNtryDt() {
         if (ntryDt == null) {
-            ntryDt = new ArrayList<>();
+            ntryDt = new ArrayList<DateAndDateTimeSearchChoice>();
         }
         return this.ntryDt;
     }

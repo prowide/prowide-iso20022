@@ -1,30 +1,31 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for TransactionType2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="TransactionType2Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="REDM"/>
- *     <enumeration value="SUBS"/>
- *     <enumeration value="SSPL"/>
- *     <enumeration value="RWPL"/>
- *     <enumeration value="TRIN"/>
- *     <enumeration value="TOUT"/>
- *     <enumeration value="SWII"/>
- *     <enumeration value="SWIO"/>
- *     <enumeration value="SUAA"/>
- *     <enumeration value="REAA"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="TransactionType2Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="REDM"/&gt;
+ *     &lt;enumeration value="SUBS"/&gt;
+ *     &lt;enumeration value="SSPL"/&gt;
+ *     &lt;enumeration value="RWPL"/&gt;
+ *     &lt;enumeration value="TRIN"/&gt;
+ *     &lt;enumeration value="TOUT"/&gt;
+ *     &lt;enumeration value="SWII"/&gt;
+ *     &lt;enumeration value="SWIO"/&gt;
+ *     &lt;enumeration value="SUAA"/&gt;
+ *     &lt;enumeration value="REAA"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "TransactionType2Code")

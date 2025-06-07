@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxTsmt01500103
 
     @XmlElement(name = "DltaRpt", required = true)
     protected DeltaReportV03 dltaRpt;
-    public static final transient String BUSINESS_PROCESS = "tsmt";
-    public static final transient int FUNCTIONALITY = 15;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 3;
+    public final static transient String BUSINESS_PROCESS = "tsmt";
+    public final static transient int FUNCTIONALITY = 15;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 3;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {Action2Code.class, Addition2 .class, BICIdentification1 .class, BaselineStatus3Code.class, ComparisonResult2 .class, Count1 .class, Deletion2 .class, DeltaReportV03 .class, DocumentIdentification1 .class, DocumentIdentification3 .class, DocumentIdentification5 .class, GenericIdentification4 .class, MessageIdentification1 .class, MxTsmt01500103 .class, PartyIdentification26 .class, PendingActivity2 .class, PostalAddress5 .class, Replacement2 .class, SimpleIdentificationInformation.class, TransactionStatus4 .class };
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:tsmt.015.001.03";
+    public final static transient Class[] _classes = new Class[] {Action2Code.class, Addition2 .class, BICIdentification1 .class, BaselineStatus3Code.class, ComparisonResult2 .class, Count1 .class, Deletion2 .class, DeltaReportV03 .class, DocumentIdentification1 .class, DocumentIdentification3 .class, DocumentIdentification5 .class, GenericIdentification4 .class, MessageIdentification1 .class, MxTsmt01500103 .class, PartyIdentification26 .class, PendingActivity2 .class, PostalAddress5 .class, Replacement2 .class, SimpleIdentificationInformation.class, TransactionStatus4 .class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:tsmt.015.001.03";
 
     public MxTsmt01500103() {
         super();
@@ -86,6 +86,21 @@ public class MxTsmt01500103
     public MxTsmt01500103 setDltaRpt(DeltaReportV03 value) {
         this.dltaRpt = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxTsmt01500103
      * @return
      *     a new instance of MxTsmt01500103
      */
-    public static final MxTsmt01500103 fromJson(String json) {
+    public final static MxTsmt01500103 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxTsmt01500103 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

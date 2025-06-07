@@ -58,7 +58,8 @@ public class AppHdrParser {
 
             Optional<String> namespace = NamespaceReader.findAppHdrNamespace(xml);
 
-            boolean headerIsPresent = namespace.isPresent() || MxParseUtils.elementExists(xml, AppHdr.HEADER_LOCALNAME);
+            boolean headerIsPresent =
+                    namespace.isPresent() || NamespaceReader.elementExists(xml, AppHdr.HEADER_LOCALNAME);
 
             if (headerIsPresent) {
                 AppHdr parsedHeader = parseHeaderFromSAXSource(xml, namespace.orElse(null), params);

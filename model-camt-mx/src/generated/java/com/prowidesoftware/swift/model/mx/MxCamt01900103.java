@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxCamt01900103
 
     @XmlElement(name = "RtrBizDayInf", required = true)
     protected ReturnBusinessDayInformationV03 rtrBizDayInf;
-    public static final transient String BUSINESS_PROCESS = "camt";
-    public static final transient int FUNCTIONALITY = 19;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 3;
+    public final static transient String BUSINESS_PROCESS = "camt";
+    public final static transient int FUNCTIONALITY = 19;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 3;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {BusinessDayInformation2 .class, BusinessDayInformationDetails1 .class, BusinessDayInformationReport2 .class, CashClearingSystem1Code.class, ClosureReasonChoice.class, DateTimePeriodChoice.class, DateTimePeriodDetails.class, ErrorHandling1Choice.class, ErrorHandling1Code.class, ErrorHandling3 .class, MessageIdentification.class, MxCamt01900103 .class, QueryReference.class, ReturnBusinessDayInformationV03 .class, SystemAvailabilityAndEventsDetails1 .class, SystemClosureDetails.class, SystemClosureReason1Code.class, SystemEvent1 .class, SystemEventType1Choice.class, SystemEventType2Code.class, SystemIdentificationChoice.class, SystemStatus2Code.class, SystemStatusDetails1 .class, TimePeriodDetails.class };
-    public static final transient String NAMESPACE = "urn:swift:xsd:camt.019.001.03";
+    public final static transient Class[] _classes = new Class[] {BusinessDayInformation2 .class, BusinessDayInformationDetails1 .class, BusinessDayInformationReport2 .class, CashClearingSystem1Code.class, ClosureReasonChoice.class, DateTimePeriodChoice.class, DateTimePeriodDetails.class, ErrorHandling1Choice.class, ErrorHandling1Code.class, ErrorHandling3 .class, MessageIdentification.class, MxCamt01900103 .class, QueryReference.class, ReturnBusinessDayInformationV03 .class, SystemAvailabilityAndEventsDetails1 .class, SystemClosureDetails.class, SystemClosureReason1Code.class, SystemEvent1 .class, SystemEventType1Choice.class, SystemEventType2Code.class, SystemIdentificationChoice.class, SystemStatus2Code.class, SystemStatusDetails1 .class, TimePeriodDetails.class };
+    public final static transient String NAMESPACE = "urn:swift:xsd:camt.019.001.03";
 
     public MxCamt01900103() {
         super();
@@ -86,6 +86,21 @@ public class MxCamt01900103
     public MxCamt01900103 setRtrBizDayInf(ReturnBusinessDayInformationV03 value) {
         this.rtrBizDayInf = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxCamt01900103
      * @return
      *     a new instance of MxCamt01900103
      */
-    public static final MxCamt01900103 fromJson(String json) {
+    public final static MxCamt01900103 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxCamt01900103 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

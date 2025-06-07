@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -45,7 +45,7 @@ public class ATMCommand14 {
     @XmlElement(name = "DtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime dtTm;
+    protected XMLGregorianCalendar dtTm;
     @XmlElement(name = "CmdId")
     protected ATMCommandIdentification1 cmdId;
     @XmlElement(name = "Rsn")
@@ -117,7 +117,7 @@ public class ATMCommand14 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getDtTm() {
+    public XMLGregorianCalendar getDtTm() {
         return dtTm;
     }
 
@@ -129,7 +129,7 @@ public class ATMCommand14 {
      *     {@link String }
      *     
      */
-    public ATMCommand14 setDtTm(OffsetDateTime value) {
+    public ATMCommand14 setDtTm(XMLGregorianCalendar value) {
         this.dtTm = value;
         return this;
     }
@@ -190,8 +190,8 @@ public class ATMCommand14 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the tracRsn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the tracRsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -205,12 +205,10 @@ public class ATMCommand14 {
      * {@link ATMCommandReason1Code }
      * 
      * 
-     * @return
-     *     The value of the tracRsn property.
      */
     public List<ATMCommandReason1Code> getTracRsn() {
         if (tracRsn == null) {
-            tracRsn = new ArrayList<>();
+            tracRsn = new ArrayList<ATMCommandReason1Code>();
         }
         return this.tracRsn;
     }

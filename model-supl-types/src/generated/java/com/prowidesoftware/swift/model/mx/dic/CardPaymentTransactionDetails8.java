@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -48,7 +48,7 @@ public class CardPaymentTransactionDetails8 {
     @XmlElement(name = "TxDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime txDtTm;
+    protected XMLGregorianCalendar txDtTm;
     @XmlElement(name = "SaleRefNb")
     protected String saleRefNb;
     @XmlElement(name = "RePresntmntRsn")
@@ -65,8 +65,8 @@ public class CardPaymentTransactionDetails8 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the amt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the amt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -80,12 +80,10 @@ public class CardPaymentTransactionDetails8 {
      * {@link CardAmountAndCurrencyExchange1 }
      * 
      * 
-     * @return
-     *     The value of the amt property.
      */
     public List<CardAmountAndCurrencyExchange1> getAmt() {
         if (amt == null) {
-            amt = new ArrayList<>();
+            amt = new ArrayList<CardAmountAndCurrencyExchange1>();
         }
         return this.amt;
     }
@@ -173,7 +171,7 @@ public class CardPaymentTransactionDetails8 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getTxDtTm() {
+    public XMLGregorianCalendar getTxDtTm() {
         return txDtTm;
     }
 
@@ -185,7 +183,7 @@ public class CardPaymentTransactionDetails8 {
      *     {@link String }
      *     
      */
-    public CardPaymentTransactionDetails8 setTxDtTm(OffsetDateTime value) {
+    public CardPaymentTransactionDetails8 setTxDtTm(XMLGregorianCalendar value) {
         this.txDtTm = value;
         return this;
     }

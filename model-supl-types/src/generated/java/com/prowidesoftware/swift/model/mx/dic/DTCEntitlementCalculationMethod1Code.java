@@ -1,27 +1,28 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlEnumValue;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlEnumValue;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for DTCEntitlementCalculationMethod1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="DTCEntitlementCalculationMethod1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="SR15"/>
- *     <enumeration value="CR17"/>
- *     <enumeration value="SR18"/>
- *     <enumeration value="SC19"/>
- *     <enumeration value="SB20"/>
- *     <enumeration value="SHST"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="DTCEntitlementCalculationMethod1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="SR15"/&gt;
+ *     &lt;enumeration value="CR17"/&gt;
+ *     &lt;enumeration value="SR18"/&gt;
+ *     &lt;enumeration value="SC19"/&gt;
+ *     &lt;enumeration value="SB20"/&gt;
+ *     &lt;enumeration value="SHST"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "DTCEntitlementCalculationMethod1Code")

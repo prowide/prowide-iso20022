@@ -1,39 +1,40 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlEnumValue;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlEnumValue;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for PartyType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="PartyType1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="EXEC"/>
- *     <enumeration value="BROK"/>
- *     <enumeration value="CORR"/>
- *     <enumeration value="COFI"/>
- *     <enumeration value="COCL"/>
- *     <enumeration value="UNDE"/>
- *     <enumeration value="GIVE"/>
- *     <enumeration value="ORDE"/>
- *     <enumeration value="SPON"/>
- *     <enumeration value="CLEA"/>
- *     <enumeration value="INTR"/>
- *     <enumeration value="ENTE"/>
- *     <enumeration value="CLIE"/>
- *     <enumeration value="STEP"/>
- *     <enumeration value="AFFI"/>
- *     <enumeration value="ETC1"/>
- *     <enumeration value="ETC2"/>
- *     <enumeration value="INVE"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="PartyType1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="EXEC"/&gt;
+ *     &lt;enumeration value="BROK"/&gt;
+ *     &lt;enumeration value="CORR"/&gt;
+ *     &lt;enumeration value="COFI"/&gt;
+ *     &lt;enumeration value="COCL"/&gt;
+ *     &lt;enumeration value="UNDE"/&gt;
+ *     &lt;enumeration value="GIVE"/&gt;
+ *     &lt;enumeration value="ORDE"/&gt;
+ *     &lt;enumeration value="SPON"/&gt;
+ *     &lt;enumeration value="CLEA"/&gt;
+ *     &lt;enumeration value="INTR"/&gt;
+ *     &lt;enumeration value="ENTE"/&gt;
+ *     &lt;enumeration value="CLIE"/&gt;
+ *     &lt;enumeration value="STEP"/&gt;
+ *     &lt;enumeration value="AFFI"/&gt;
+ *     &lt;enumeration value="ETC1"/&gt;
+ *     &lt;enumeration value="ETC2"/&gt;
+ *     &lt;enumeration value="INVE"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "PartyType1Code")

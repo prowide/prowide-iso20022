@@ -1,27 +1,28 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for CompanyAssigner2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="CompanyAssigner2Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="ASSO"/>
- *     <enumeration value="AUTH"/>
- *     <enumeration value="CPNY"/>
- *     <enumeration value="LEII"/>
- *     <enumeration value="TRAG"/>
- *     <enumeration value="OTHP"/>
- *     <enumeration value="OTHN"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="CompanyAssigner2Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ASSO"/&gt;
+ *     &lt;enumeration value="AUTH"/&gt;
+ *     &lt;enumeration value="CPNY"/&gt;
+ *     &lt;enumeration value="LEII"/&gt;
+ *     &lt;enumeration value="TRAG"/&gt;
+ *     &lt;enumeration value="OTHP"/&gt;
+ *     &lt;enumeration value="OTHN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "CompanyAssigner2Code")

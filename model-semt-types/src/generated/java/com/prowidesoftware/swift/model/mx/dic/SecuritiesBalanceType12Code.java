@@ -1,46 +1,47 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for SecuritiesBalanceType12Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="SecuritiesBalanceType12Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="BLOK"/>
- *     <enumeration value="AWAS"/>
- *     <enumeration value="BLCA"/>
- *     <enumeration value="BLOT"/>
- *     <enumeration value="BLOV"/>
- *     <enumeration value="BORR"/>
- *     <enumeration value="BODE"/>
- *     <enumeration value="BORE"/>
- *     <enumeration value="COLI"/>
- *     <enumeration value="COLO"/>
- *     <enumeration value="LOAN"/>
- *     <enumeration value="LODE"/>
- *     <enumeration value="LORE"/>
- *     <enumeration value="MARG"/>
- *     <enumeration value="PECA"/>
- *     <enumeration value="PEDA"/>
- *     <enumeration value="PEND"/>
- *     <enumeration value="PENR"/>
- *     <enumeration value="PLED"/>
- *     <enumeration value="REGO"/>
- *     <enumeration value="RSTR"/>
- *     <enumeration value="OTHR"/>
- *     <enumeration value="TRAN"/>
- *     <enumeration value="DRAW"/>
- *     <enumeration value="WDOC"/>
- *     <enumeration value="BTRA"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="SecuritiesBalanceType12Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="BLOK"/&gt;
+ *     &lt;enumeration value="AWAS"/&gt;
+ *     &lt;enumeration value="BLCA"/&gt;
+ *     &lt;enumeration value="BLOT"/&gt;
+ *     &lt;enumeration value="BLOV"/&gt;
+ *     &lt;enumeration value="BORR"/&gt;
+ *     &lt;enumeration value="BODE"/&gt;
+ *     &lt;enumeration value="BORE"/&gt;
+ *     &lt;enumeration value="COLI"/&gt;
+ *     &lt;enumeration value="COLO"/&gt;
+ *     &lt;enumeration value="LOAN"/&gt;
+ *     &lt;enumeration value="LODE"/&gt;
+ *     &lt;enumeration value="LORE"/&gt;
+ *     &lt;enumeration value="MARG"/&gt;
+ *     &lt;enumeration value="PECA"/&gt;
+ *     &lt;enumeration value="PEDA"/&gt;
+ *     &lt;enumeration value="PEND"/&gt;
+ *     &lt;enumeration value="PENR"/&gt;
+ *     &lt;enumeration value="PLED"/&gt;
+ *     &lt;enumeration value="REGO"/&gt;
+ *     &lt;enumeration value="RSTR"/&gt;
+ *     &lt;enumeration value="OTHR"/&gt;
+ *     &lt;enumeration value="TRAN"/&gt;
+ *     &lt;enumeration value="DRAW"/&gt;
+ *     &lt;enumeration value="WDOC"/&gt;
+ *     &lt;enumeration value="BTRA"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "SecuritiesBalanceType12Code")

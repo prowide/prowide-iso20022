@@ -1,29 +1,30 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for AttendanceAdmissionConditions2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="AttendanceAdmissionConditions2Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="MASH"/>
- *     <enumeration value="MASL"/>
- *     <enumeration value="MAPO"/>
- *     <enumeration value="MAAL"/>
- *     <enumeration value="MALR"/>
- *     <enumeration value="MAHI"/>
- *     <enumeration value="MATK"/>
- *     <enumeration value="MADS"/>
- *     <enumeration value="MANP"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="AttendanceAdmissionConditions2Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="MASH"/&gt;
+ *     &lt;enumeration value="MASL"/&gt;
+ *     &lt;enumeration value="MAPO"/&gt;
+ *     &lt;enumeration value="MAAL"/&gt;
+ *     &lt;enumeration value="MALR"/&gt;
+ *     &lt;enumeration value="MAHI"/&gt;
+ *     &lt;enumeration value="MATK"/&gt;
+ *     &lt;enumeration value="MADS"/&gt;
+ *     &lt;enumeration value="MANP"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "AttendanceAdmissionConditions2Code")

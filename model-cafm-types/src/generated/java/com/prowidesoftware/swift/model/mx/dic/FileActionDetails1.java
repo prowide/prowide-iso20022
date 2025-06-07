@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -37,7 +37,7 @@ public class FileActionDetails1 {
     @XmlElement(name = "ActnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate actnDt;
+    protected XMLGregorianCalendar actnDt;
     @XmlElement(name = "FileSctyCd")
     protected String fileSctyCd;
 
@@ -97,7 +97,7 @@ public class FileActionDetails1 {
      *     {@link String }
      *     
      */
-    public LocalDate getActnDt() {
+    public XMLGregorianCalendar getActnDt() {
         return actnDt;
     }
 
@@ -109,7 +109,7 @@ public class FileActionDetails1 {
      *     {@link String }
      *     
      */
-    public FileActionDetails1 setActnDt(LocalDate value) {
+    public FileActionDetails1 setActnDt(XMLGregorianCalendar value) {
         this.actnDt = value;
         return this;
     }

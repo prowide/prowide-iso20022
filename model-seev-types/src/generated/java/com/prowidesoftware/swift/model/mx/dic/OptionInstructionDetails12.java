@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -50,15 +50,15 @@ public class OptionInstructionDetails12 {
     @XmlElement(name = "InstrDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate instrDt;
+    protected XMLGregorianCalendar instrDt;
     @XmlElement(name = "PrtctDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate prtctDt;
+    protected XMLGregorianCalendar prtctDt;
     @XmlElement(name = "CoverPrtctDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate coverPrtctDt;
+    protected XMLGregorianCalendar coverPrtctDt;
     @XmlElement(name = "BidPric")
     protected PriceFormat82Choice bidPric;
     @XmlElement(name = "CondlQty")
@@ -178,7 +178,7 @@ public class OptionInstructionDetails12 {
      *     {@link String }
      *     
      */
-    public LocalDate getInstrDt() {
+    public XMLGregorianCalendar getInstrDt() {
         return instrDt;
     }
 
@@ -190,7 +190,7 @@ public class OptionInstructionDetails12 {
      *     {@link String }
      *     
      */
-    public OptionInstructionDetails12 setInstrDt(LocalDate value) {
+    public OptionInstructionDetails12 setInstrDt(XMLGregorianCalendar value) {
         this.instrDt = value;
         return this;
     }
@@ -203,7 +203,7 @@ public class OptionInstructionDetails12 {
      *     {@link String }
      *     
      */
-    public LocalDate getPrtctDt() {
+    public XMLGregorianCalendar getPrtctDt() {
         return prtctDt;
     }
 
@@ -215,7 +215,7 @@ public class OptionInstructionDetails12 {
      *     {@link String }
      *     
      */
-    public OptionInstructionDetails12 setPrtctDt(LocalDate value) {
+    public OptionInstructionDetails12 setPrtctDt(XMLGregorianCalendar value) {
         this.prtctDt = value;
         return this;
     }
@@ -228,7 +228,7 @@ public class OptionInstructionDetails12 {
      *     {@link String }
      *     
      */
-    public LocalDate getCoverPrtctDt() {
+    public XMLGregorianCalendar getCoverPrtctDt() {
         return coverPrtctDt;
     }
 
@@ -240,7 +240,7 @@ public class OptionInstructionDetails12 {
      *     {@link String }
      *     
      */
-    public OptionInstructionDetails12 setCoverPrtctDt(LocalDate value) {
+    public OptionInstructionDetails12 setCoverPrtctDt(XMLGregorianCalendar value) {
         this.coverPrtctDt = value;
         return this;
     }

@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxAuth02900103
 
     @XmlElement(name = "DerivsTradRptQry", required = true)
     protected DerivativesTradeReportQueryV03 derivsTradRptQry;
-    public static final transient String BUSINESS_PROCESS = "auth";
-    public static final transient int FUNCTIONALITY = 29;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 3;
+    public final static transient String BUSINESS_PROCESS = "auth";
+    public final static transient int FUNCTIONALITY = 29;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 3;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {AddressType2Code.class, AnyMIC1Code.class, BasketQuery1 .class, CorporateSectorCriteria6 .class, DateOrBlankQuery2Choice.class, DatePeriod1 .class, DateTimeOrBlankQuery1Choice.class, DateTimePeriod1 .class, DerivativeEventType3Code.class, DerivativesTradeReportQueryV03 .class, FinancialInstrumentContractType2Code.class, FinancialPartySectorType2Code.class, Frequency14Code.class, GenericIdentification1 .class, ISINQueryCriteria1 .class, ModificationLevel1Code.class, MxAuth02900103 .class, NameAndAddress5 .class, NonFinancialPartySector1Code.class, NotAvailable1Code.class, NotReported1Code.class, Operation3Code.class, PartyIdentification121Choice.class, PartyNatureType1Code.class, PostalAddress1 .class, ProductClassificationCriteria1 .class, ProductType4Code.class, SecuritiesTradeVenueCriteria1Choice.class, SecurityIdentification20Choice.class, SecurityIdentificationQuery4Choice.class, SecurityIdentificationQueryCriteria1 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TradeAdditionalQueryCriteria9 .class, TradeDateTimeQueryCriteria5 .class, TradePartyIdentificationQuery8 .class, TradePartyQueryCriteria6 .class, TradeQueryCriteria13 .class, TradeQueryExecutionFrequency3 .class, TradeRecurrentQuery5 .class, TradeReportQuery16Choice.class, TradeSecurityIdentificationQueryCriteria3 .class, TransactionOperationType8Code.class, UPIQueryCriteria1 .class, WeekDay3Code.class };
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:auth.029.001.03";
+    public final static transient Class[] _classes = new Class[] {AddressType2Code.class, AnyMIC1Code.class, BasketQuery1 .class, CorporateSectorCriteria6 .class, DateOrBlankQuery2Choice.class, DatePeriod1 .class, DateTimeOrBlankQuery1Choice.class, DateTimePeriod1 .class, DerivativeEventType3Code.class, DerivativesTradeReportQueryV03 .class, FinancialInstrumentContractType2Code.class, FinancialPartySectorType2Code.class, Frequency14Code.class, GenericIdentification1 .class, ISINQueryCriteria1 .class, ModificationLevel1Code.class, MxAuth02900103 .class, NameAndAddress5 .class, NonFinancialPartySector1Code.class, NotAvailable1Code.class, NotReported1Code.class, Operation3Code.class, PartyIdentification121Choice.class, PartyNatureType1Code.class, PostalAddress1 .class, ProductClassificationCriteria1 .class, ProductType4Code.class, SecuritiesTradeVenueCriteria1Choice.class, SecurityIdentification20Choice.class, SecurityIdentificationQuery4Choice.class, SecurityIdentificationQueryCriteria1 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TradeAdditionalQueryCriteria9 .class, TradeDateTimeQueryCriteria5 .class, TradePartyIdentificationQuery8 .class, TradePartyQueryCriteria6 .class, TradeQueryCriteria13 .class, TradeQueryExecutionFrequency3 .class, TradeRecurrentQuery5 .class, TradeReportQuery16Choice.class, TradeSecurityIdentificationQueryCriteria3 .class, TransactionOperationType8Code.class, UPIQueryCriteria1 .class, WeekDay3Code.class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:auth.029.001.03";
 
     public MxAuth02900103() {
         super();
@@ -86,6 +86,21 @@ public class MxAuth02900103
     public MxAuth02900103 setDerivsTradRptQry(DerivativesTradeReportQueryV03 value) {
         this.derivsTradRptQry = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxAuth02900103
      * @return
      *     a new instance of MxAuth02900103
      */
-    public static final MxAuth02900103 fromJson(String json) {
+    public final static MxAuth02900103 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxAuth02900103 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

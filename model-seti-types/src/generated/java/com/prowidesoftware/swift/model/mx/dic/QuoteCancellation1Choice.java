@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -52,8 +52,8 @@ public class QuoteCancellation1Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the finInstrmDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the finInstrmDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -67,12 +67,10 @@ public class QuoteCancellation1Choice {
      * {@link SecurityIdentification7 }
      * 
      * 
-     * @return
-     *     The value of the finInstrmDtls property.
      */
     public List<SecurityIdentification7> getFinInstrmDtls() {
         if (finInstrmDtls == null) {
-            finInstrmDtls = new ArrayList<>();
+            finInstrmDtls = new ArrayList<SecurityIdentification7>();
         }
         return this.finInstrmDtls;
     }
@@ -83,8 +81,8 @@ public class QuoteCancellation1Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the finInstrmAttrbts property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the finInstrmAttrbts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -98,12 +96,10 @@ public class QuoteCancellation1Choice {
      * {@link FinancialInstrumentAttributes1 }
      * 
      * 
-     * @return
-     *     The value of the finInstrmAttrbts property.
      */
     public List<FinancialInstrumentAttributes1> getFinInstrmAttrbts() {
         if (finInstrmAttrbts == null) {
-            finInstrmAttrbts = new ArrayList<>();
+            finInstrmAttrbts = new ArrayList<FinancialInstrumentAttributes1>();
         }
         return this.finInstrmAttrbts;
     }
@@ -114,8 +110,8 @@ public class QuoteCancellation1Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the stiptns property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the stiptns property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -129,12 +125,10 @@ public class QuoteCancellation1Choice {
      * {@link FinancialInstrumentStipulations }
      * 
      * 
-     * @return
-     *     The value of the stiptns property.
      */
     public List<FinancialInstrumentStipulations> getStiptns() {
         if (stiptns == null) {
-            stiptns = new ArrayList<>();
+            stiptns = new ArrayList<FinancialInstrumentStipulations>();
         }
         return this.stiptns;
     }
@@ -145,8 +139,8 @@ public class QuoteCancellation1Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the undrlygFinInstrmDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the undrlygFinInstrmDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -160,12 +154,10 @@ public class QuoteCancellation1Choice {
      * {@link SecurityIdentification7 }
      * 
      * 
-     * @return
-     *     The value of the undrlygFinInstrmDtls property.
      */
     public List<SecurityIdentification7> getUndrlygFinInstrmDtls() {
         if (undrlygFinInstrmDtls == null) {
-            undrlygFinInstrmDtls = new ArrayList<>();
+            undrlygFinInstrmDtls = new ArrayList<SecurityIdentification7>();
         }
         return this.undrlygFinInstrmDtls;
     }
@@ -176,8 +168,8 @@ public class QuoteCancellation1Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the undrlygFinInstrmAttrbts property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the undrlygFinInstrmAttrbts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -191,12 +183,10 @@ public class QuoteCancellation1Choice {
      * {@link FinancialInstrumentAttributes1 }
      * 
      * 
-     * @return
-     *     The value of the undrlygFinInstrmAttrbts property.
      */
     public List<FinancialInstrumentAttributes1> getUndrlygFinInstrmAttrbts() {
         if (undrlygFinInstrmAttrbts == null) {
-            undrlygFinInstrmAttrbts = new ArrayList<>();
+            undrlygFinInstrmAttrbts = new ArrayList<FinancialInstrumentAttributes1>();
         }
         return this.undrlygFinInstrmAttrbts;
     }
@@ -207,8 +197,8 @@ public class QuoteCancellation1Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the undrlygStiptns property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the undrlygStiptns property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -222,12 +212,10 @@ public class QuoteCancellation1Choice {
      * {@link FinancialInstrumentStipulations }
      * 
      * 
-     * @return
-     *     The value of the undrlygStiptns property.
      */
     public List<FinancialInstrumentStipulations> getUndrlygStiptns() {
         if (undrlygStiptns == null) {
-            undrlygStiptns = new ArrayList<>();
+            undrlygStiptns = new ArrayList<FinancialInstrumentStipulations>();
         }
         return this.undrlygStiptns;
     }
@@ -238,8 +226,8 @@ public class QuoteCancellation1Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the instrmLegGrpDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the instrmLegGrpDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -253,12 +241,10 @@ public class QuoteCancellation1Choice {
      * {@link InstrumentLeg2 }
      * 
      * 
-     * @return
-     *     The value of the instrmLegGrpDtls property.
      */
     public List<InstrumentLeg2> getInstrmLegGrpDtls() {
         if (instrmLegGrpDtls == null) {
-            instrmLegGrpDtls = new ArrayList<>();
+            instrmLegGrpDtls = new ArrayList<InstrumentLeg2>();
         }
         return this.instrmLegGrpDtls;
     }

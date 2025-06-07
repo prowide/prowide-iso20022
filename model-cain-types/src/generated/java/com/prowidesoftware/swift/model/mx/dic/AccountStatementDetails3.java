@@ -2,14 +2,14 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -41,13 +41,13 @@ public class AccountStatementDetails3 {
     @XmlElement(name = "TxDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate txDt;
+    protected XMLGregorianCalendar txDt;
     @XmlElement(name = "Pdg")
     protected Boolean pdg;
     @XmlElement(name = "PstngDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate pstngDt;
+    protected XMLGregorianCalendar pstngDt;
     @XmlElement(name = "CdtDbt")
     @XmlSchemaType(name = "string")
     protected CreditDebit3Code cdtDbt;
@@ -74,7 +74,7 @@ public class AccountStatementDetails3 {
      *     {@link String }
      *     
      */
-    public LocalDate getTxDt() {
+    public XMLGregorianCalendar getTxDt() {
         return txDt;
     }
 
@@ -86,7 +86,7 @@ public class AccountStatementDetails3 {
      *     {@link String }
      *     
      */
-    public AccountStatementDetails3 setTxDt(LocalDate value) {
+    public AccountStatementDetails3 setTxDt(XMLGregorianCalendar value) {
         this.txDt = value;
         return this;
     }
@@ -124,7 +124,7 @@ public class AccountStatementDetails3 {
      *     {@link String }
      *     
      */
-    public LocalDate getPstngDt() {
+    public XMLGregorianCalendar getPstngDt() {
         return pstngDt;
     }
 
@@ -136,7 +136,7 @@ public class AccountStatementDetails3 {
      *     {@link String }
      *     
      */
-    public AccountStatementDetails3 setPstngDt(LocalDate value) {
+    public AccountStatementDetails3 setPstngDt(XMLGregorianCalendar value) {
         this.pstngDt = value;
         return this;
     }

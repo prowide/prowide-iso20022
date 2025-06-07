@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -38,27 +38,27 @@ public class CorporateActionDateSD4 {
     @XmlElement(name = "IntrmAcctgStartDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate intrmAcctgStartDt;
+    protected XMLGregorianCalendar intrmAcctgStartDt;
     @XmlElement(name = "DlistgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate dlistgDt;
+    protected XMLGregorianCalendar dlistgDt;
     @XmlElement(name = "ExrcPrdBegnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate exrcPrdBegnDt;
+    protected XMLGregorianCalendar exrcPrdBegnDt;
     @XmlElement(name = "ObjctnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate objctnDt;
+    protected XMLGregorianCalendar objctnDt;
     @XmlElement(name = "ExclsnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate exclsnDt;
+    protected XMLGregorianCalendar exclsnDt;
     @XmlElement(name = "ProofOfClmFilgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate proofOfClmFilgDt;
+    protected XMLGregorianCalendar proofOfClmFilgDt;
 
     /**
      * Gets the value of the plcAndNm property.
@@ -93,7 +93,7 @@ public class CorporateActionDateSD4 {
      *     {@link String }
      *     
      */
-    public LocalDate getIntrmAcctgStartDt() {
+    public XMLGregorianCalendar getIntrmAcctgStartDt() {
         return intrmAcctgStartDt;
     }
 
@@ -105,7 +105,7 @@ public class CorporateActionDateSD4 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD4 setIntrmAcctgStartDt(LocalDate value) {
+    public CorporateActionDateSD4 setIntrmAcctgStartDt(XMLGregorianCalendar value) {
         this.intrmAcctgStartDt = value;
         return this;
     }
@@ -118,7 +118,7 @@ public class CorporateActionDateSD4 {
      *     {@link String }
      *     
      */
-    public LocalDate getDlistgDt() {
+    public XMLGregorianCalendar getDlistgDt() {
         return dlistgDt;
     }
 
@@ -130,7 +130,7 @@ public class CorporateActionDateSD4 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD4 setDlistgDt(LocalDate value) {
+    public CorporateActionDateSD4 setDlistgDt(XMLGregorianCalendar value) {
         this.dlistgDt = value;
         return this;
     }
@@ -143,7 +143,7 @@ public class CorporateActionDateSD4 {
      *     {@link String }
      *     
      */
-    public LocalDate getExrcPrdBegnDt() {
+    public XMLGregorianCalendar getExrcPrdBegnDt() {
         return exrcPrdBegnDt;
     }
 
@@ -155,7 +155,7 @@ public class CorporateActionDateSD4 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD4 setExrcPrdBegnDt(LocalDate value) {
+    public CorporateActionDateSD4 setExrcPrdBegnDt(XMLGregorianCalendar value) {
         this.exrcPrdBegnDt = value;
         return this;
     }
@@ -168,7 +168,7 @@ public class CorporateActionDateSD4 {
      *     {@link String }
      *     
      */
-    public LocalDate getObjctnDt() {
+    public XMLGregorianCalendar getObjctnDt() {
         return objctnDt;
     }
 
@@ -180,7 +180,7 @@ public class CorporateActionDateSD4 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD4 setObjctnDt(LocalDate value) {
+    public CorporateActionDateSD4 setObjctnDt(XMLGregorianCalendar value) {
         this.objctnDt = value;
         return this;
     }
@@ -193,7 +193,7 @@ public class CorporateActionDateSD4 {
      *     {@link String }
      *     
      */
-    public LocalDate getExclsnDt() {
+    public XMLGregorianCalendar getExclsnDt() {
         return exclsnDt;
     }
 
@@ -205,7 +205,7 @@ public class CorporateActionDateSD4 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD4 setExclsnDt(LocalDate value) {
+    public CorporateActionDateSD4 setExclsnDt(XMLGregorianCalendar value) {
         this.exclsnDt = value;
         return this;
     }
@@ -218,7 +218,7 @@ public class CorporateActionDateSD4 {
      *     {@link String }
      *     
      */
-    public LocalDate getProofOfClmFilgDt() {
+    public XMLGregorianCalendar getProofOfClmFilgDt() {
         return proofOfClmFilgDt;
     }
 
@@ -230,7 +230,7 @@ public class CorporateActionDateSD4 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD4 setProofOfClmFilgDt(LocalDate value) {
+    public CorporateActionDateSD4 setProofOfClmFilgDt(XMLGregorianCalendar value) {
         this.proofOfClmFilgDt = value;
         return this;
     }

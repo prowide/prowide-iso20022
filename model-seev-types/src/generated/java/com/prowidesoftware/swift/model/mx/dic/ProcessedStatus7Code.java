@@ -1,26 +1,27 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for ProcessedStatus7Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="ProcessedStatus7Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="RECE"/>
- *     <enumeration value="SENT"/>
- *     <enumeration value="SNAV"/>
- *     <enumeration value="WARN"/>
- *     <enumeration value="PACK"/>
- *     <enumeration value="PEND"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="ProcessedStatus7Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="RECE"/&gt;
+ *     &lt;enumeration value="SENT"/&gt;
+ *     &lt;enumeration value="SNAV"/&gt;
+ *     &lt;enumeration value="WARN"/&gt;
+ *     &lt;enumeration value="PACK"/&gt;
+ *     &lt;enumeration value="PEND"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "ProcessedStatus7Code")

@@ -1,29 +1,30 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for Status11Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="Status11Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="PACK"/>
- *     <enumeration value="ATTC"/>
- *     <enumeration value="CAND"/>
- *     <enumeration value="CSUB"/>
- *     <enumeration value="FRWD"/>
- *     <enumeration value="RCIS"/>
- *     <enumeration value="REGM"/>
- *     <enumeration value="STIN"/>
- *     <enumeration value="DREG"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="Status11Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="PACK"/&gt;
+ *     &lt;enumeration value="ATTC"/&gt;
+ *     &lt;enumeration value="CAND"/&gt;
+ *     &lt;enumeration value="CSUB"/&gt;
+ *     &lt;enumeration value="FRWD"/&gt;
+ *     &lt;enumeration value="RCIS"/&gt;
+ *     &lt;enumeration value="REGM"/&gt;
+ *     &lt;enumeration value="STIN"/&gt;
+ *     &lt;enumeration value="DREG"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "Status11Code")

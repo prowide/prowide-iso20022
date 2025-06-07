@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -31,11 +31,11 @@ public class UpdateLogDate1 {
     @XmlElement(name = "Od", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate od;
+    protected XMLGregorianCalendar od;
     @XmlElement(name = "New", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate _new;
+    protected XMLGregorianCalendar _new;
 
     /**
      * Gets the value of the od property.
@@ -45,7 +45,7 @@ public class UpdateLogDate1 {
      *     {@link String }
      *     
      */
-    public LocalDate getOd() {
+    public XMLGregorianCalendar getOd() {
         return od;
     }
 
@@ -57,7 +57,7 @@ public class UpdateLogDate1 {
      *     {@link String }
      *     
      */
-    public UpdateLogDate1 setOd(LocalDate value) {
+    public UpdateLogDate1 setOd(XMLGregorianCalendar value) {
         this.od = value;
         return this;
     }
@@ -70,7 +70,7 @@ public class UpdateLogDate1 {
      *     {@link String }
      *     
      */
-    public LocalDate getNew() {
+    public XMLGregorianCalendar getNew() {
         return _new;
     }
 
@@ -82,7 +82,7 @@ public class UpdateLogDate1 {
      *     {@link String }
      *     
      */
-    public UpdateLogDate1 setNew(LocalDate value) {
+    public UpdateLogDate1 setNew(XMLGregorianCalendar value) {
         this._new = value;
         return this;
     }

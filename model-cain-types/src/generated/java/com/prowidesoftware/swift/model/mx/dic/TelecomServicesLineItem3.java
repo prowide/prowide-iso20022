@@ -2,18 +2,17 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.OffsetTime;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -58,13 +57,13 @@ public class TelecomServicesLineItem3 {
     @XmlElement(name = "StartDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate startDtTm;
+    protected XMLGregorianCalendar startDtTm;
     @XmlElement(name = "TmPrd")
     protected String tmPrd;
     @XmlElement(name = "Drtn", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected OffsetTime drtn;
+    protected XMLGregorianCalendar drtn;
     @XmlElement(name = "CallFrTp")
     @XmlSchemaType(name = "string")
     protected TelephonyCallType1Code callFrTp;
@@ -114,7 +113,7 @@ public class TelecomServicesLineItem3 {
      *     {@link String }
      *     
      */
-    public LocalDate getStartDtTm() {
+    public XMLGregorianCalendar getStartDtTm() {
         return startDtTm;
     }
 
@@ -126,7 +125,7 @@ public class TelecomServicesLineItem3 {
      *     {@link String }
      *     
      */
-    public TelecomServicesLineItem3 setStartDtTm(LocalDate value) {
+    public TelecomServicesLineItem3 setStartDtTm(XMLGregorianCalendar value) {
         this.startDtTm = value;
         return this;
     }
@@ -164,7 +163,7 @@ public class TelecomServicesLineItem3 {
      *     {@link String }
      *     
      */
-    public OffsetTime getDrtn() {
+    public XMLGregorianCalendar getDrtn() {
         return drtn;
     }
 
@@ -176,7 +175,7 @@ public class TelecomServicesLineItem3 {
      *     {@link String }
      *     
      */
-    public TelecomServicesLineItem3 setDrtn(OffsetTime value) {
+    public TelecomServicesLineItem3 setDrtn(XMLGregorianCalendar value) {
         this.drtn = value;
         return this;
     }
@@ -537,8 +536,8 @@ public class TelecomServicesLineItem3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the chrg property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the chrg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -552,12 +551,10 @@ public class TelecomServicesLineItem3 {
      * {@link Amount23 }
      * 
      * 
-     * @return
-     *     The value of the chrg property.
      */
     public List<Amount23> getChrg() {
         if (chrg == null) {
-            chrg = new ArrayList<>();
+            chrg = new ArrayList<Amount23>();
         }
         return this.chrg;
     }
@@ -568,8 +565,8 @@ public class TelecomServicesLineItem3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the tax property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the tax property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -583,12 +580,10 @@ public class TelecomServicesLineItem3 {
      * {@link Tax41 }
      * 
      * 
-     * @return
-     *     The value of the tax property.
      */
     public List<Tax41> getTax() {
         if (tax == null) {
-            tax = new ArrayList<>();
+            tax = new ArrayList<Tax41>();
         }
         return this.tax;
     }
@@ -649,8 +644,8 @@ public class TelecomServicesLineItem3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the addtlData property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the addtlData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -664,12 +659,10 @@ public class TelecomServicesLineItem3 {
      * {@link AdditionalData1 }
      * 
      * 
-     * @return
-     *     The value of the addtlData property.
      */
     public List<AdditionalData1> getAddtlData() {
         if (addtlData == null) {
-            addtlData = new ArrayList<>();
+            addtlData = new ArrayList<AdditionalData1>();
         }
         return this.addtlData;
     }

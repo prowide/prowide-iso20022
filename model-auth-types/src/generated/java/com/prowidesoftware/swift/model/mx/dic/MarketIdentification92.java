@@ -1,16 +1,15 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
-import java.time.OffsetDateTime;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -74,17 +73,17 @@ public class MarketIdentification92 {
     @XmlElement(name = "CreDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate creDt;
+    protected XMLGregorianCalendar creDt;
     @XmlElement(name = "VldtyPrd", required = true)
     protected Period4Choice vldtyPrd;
     @XmlElement(name = "StsDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate stsDt;
+    protected XMLGregorianCalendar stsDt;
     @XmlElement(name = "LastUpdtdDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime lastUpdtdDt;
+    protected XMLGregorianCalendar lastUpdtdDt;
 
     /**
      * Gets the value of the oprg property.
@@ -394,7 +393,7 @@ public class MarketIdentification92 {
      *     {@link String }
      *     
      */
-    public LocalDate getCreDt() {
+    public XMLGregorianCalendar getCreDt() {
         return creDt;
     }
 
@@ -406,7 +405,7 @@ public class MarketIdentification92 {
      *     {@link String }
      *     
      */
-    public MarketIdentification92 setCreDt(LocalDate value) {
+    public MarketIdentification92 setCreDt(XMLGregorianCalendar value) {
         this.creDt = value;
         return this;
     }
@@ -444,7 +443,7 @@ public class MarketIdentification92 {
      *     {@link String }
      *     
      */
-    public LocalDate getStsDt() {
+    public XMLGregorianCalendar getStsDt() {
         return stsDt;
     }
 
@@ -456,7 +455,7 @@ public class MarketIdentification92 {
      *     {@link String }
      *     
      */
-    public MarketIdentification92 setStsDt(LocalDate value) {
+    public MarketIdentification92 setStsDt(XMLGregorianCalendar value) {
         this.stsDt = value;
         return this;
     }
@@ -469,7 +468,7 @@ public class MarketIdentification92 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getLastUpdtdDt() {
+    public XMLGregorianCalendar getLastUpdtdDt() {
         return lastUpdtdDt;
     }
 
@@ -481,7 +480,7 @@ public class MarketIdentification92 {
      *     {@link String }
      *     
      */
-    public MarketIdentification92 setLastUpdtdDt(OffsetDateTime value) {
+    public MarketIdentification92 setLastUpdtdDt(XMLGregorianCalendar value) {
         this.lastUpdtdDt = value;
         return this;
     }

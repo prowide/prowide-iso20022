@@ -1,18 +1,17 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -58,7 +57,7 @@ public class SwitchExecution4 {
     @XmlElement(name = "OrdrDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime ordrDtTm;
+    protected XMLGregorianCalendar ordrDtTm;
     @XmlElement(name = "InvstmtAcctDtls")
     protected InvestmentAccount21 invstmtAcctDtls;
     @XmlElement(name = "DealRef", required = true)
@@ -76,7 +75,7 @@ public class SwitchExecution4 {
     @XmlElement(name = "ReqdFutrTradDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate reqdFutrTradDt;
+    protected XMLGregorianCalendar reqdFutrTradDt;
     @XmlElement(name = "AddtlCshIn")
     protected ActiveCurrencyAndAmount addtlCshIn;
     @XmlElement(name = "RsltgCshOut")
@@ -86,7 +85,7 @@ public class SwitchExecution4 {
     @XmlElement(name = "CshSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate cshSttlmDt;
+    protected XMLGregorianCalendar cshSttlmDt;
     @XmlElement(name = "SttlmMtd")
     @XmlSchemaType(name = "string")
     protected DeliveryReceiptType2Code sttlmMtd;
@@ -144,7 +143,7 @@ public class SwitchExecution4 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getOrdrDtTm() {
+    public XMLGregorianCalendar getOrdrDtTm() {
         return ordrDtTm;
     }
 
@@ -156,7 +155,7 @@ public class SwitchExecution4 {
      *     {@link String }
      *     
      */
-    public SwitchExecution4 setOrdrDtTm(OffsetDateTime value) {
+    public SwitchExecution4 setOrdrDtTm(XMLGregorianCalendar value) {
         this.ordrDtTm = value;
         return this;
     }
@@ -317,8 +316,8 @@ public class SwitchExecution4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the rltdPtyDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the rltdPtyDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -332,12 +331,10 @@ public class SwitchExecution4 {
      * {@link Intermediary9 }
      * 
      * 
-     * @return
-     *     The value of the rltdPtyDtls property.
      */
     public List<Intermediary9> getRltdPtyDtls() {
         if (rltdPtyDtls == null) {
-            rltdPtyDtls = new ArrayList<>();
+            rltdPtyDtls = new ArrayList<Intermediary9>();
         }
         return this.rltdPtyDtls;
     }
@@ -350,7 +347,7 @@ public class SwitchExecution4 {
      *     {@link String }
      *     
      */
-    public LocalDate getReqdFutrTradDt() {
+    public XMLGregorianCalendar getReqdFutrTradDt() {
         return reqdFutrTradDt;
     }
 
@@ -362,7 +359,7 @@ public class SwitchExecution4 {
      *     {@link String }
      *     
      */
-    public SwitchExecution4 setReqdFutrTradDt(LocalDate value) {
+    public SwitchExecution4 setReqdFutrTradDt(XMLGregorianCalendar value) {
         this.reqdFutrTradDt = value;
         return this;
     }
@@ -450,7 +447,7 @@ public class SwitchExecution4 {
      *     {@link String }
      *     
      */
-    public LocalDate getCshSttlmDt() {
+    public XMLGregorianCalendar getCshSttlmDt() {
         return cshSttlmDt;
     }
 
@@ -462,7 +459,7 @@ public class SwitchExecution4 {
      *     {@link String }
      *     
      */
-    public SwitchExecution4 setCshSttlmDt(LocalDate value) {
+    public SwitchExecution4 setCshSttlmDt(XMLGregorianCalendar value) {
         this.cshSttlmDt = value;
         return this;
     }
@@ -523,8 +520,8 @@ public class SwitchExecution4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the redLegDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the redLegDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -538,12 +535,10 @@ public class SwitchExecution4 {
      * {@link SwitchRedemptionLegExecution3 }
      * 
      * 
-     * @return
-     *     The value of the redLegDtls property.
      */
     public List<SwitchRedemptionLegExecution3> getRedLegDtls() {
         if (redLegDtls == null) {
-            redLegDtls = new ArrayList<>();
+            redLegDtls = new ArrayList<SwitchRedemptionLegExecution3>();
         }
         return this.redLegDtls;
     }
@@ -554,8 +549,8 @@ public class SwitchExecution4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the sbcptLegDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the sbcptLegDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -569,12 +564,10 @@ public class SwitchExecution4 {
      * {@link SwitchSubscriptionLegExecution3 }
      * 
      * 
-     * @return
-     *     The value of the sbcptLegDtls property.
      */
     public List<SwitchSubscriptionLegExecution3> getSbcptLegDtls() {
         if (sbcptLegDtls == null) {
-            sbcptLegDtls = new ArrayList<>();
+            sbcptLegDtls = new ArrayList<SwitchSubscriptionLegExecution3>();
         }
         return this.sbcptLegDtls;
     }
@@ -610,8 +603,8 @@ public class SwitchExecution4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the fxDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the fxDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -625,12 +618,10 @@ public class SwitchExecution4 {
      * {@link ForeignExchangeTerms7 }
      * 
      * 
-     * @return
-     *     The value of the fxDtls property.
      */
     public List<ForeignExchangeTerms7> getFXDtls() {
         if (fxDtls == null) {
-            fxDtls = new ArrayList<>();
+            fxDtls = new ArrayList<ForeignExchangeTerms7>();
         }
         return this.fxDtls;
     }

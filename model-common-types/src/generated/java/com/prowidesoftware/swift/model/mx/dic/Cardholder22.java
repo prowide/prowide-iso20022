@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -47,7 +47,7 @@ public class Cardholder22 {
     @XmlElement(name = "DtOfBirth", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate dtOfBirth;
+    protected XMLGregorianCalendar dtOfBirth;
     @XmlElement(name = "HghVal")
     protected Boolean hghVal;
     @XmlElement(name = "AddtlData")
@@ -86,8 +86,8 @@ public class Cardholder22 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the id property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the id property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -101,12 +101,10 @@ public class Cardholder22 {
      * {@link Credentials3 }
      * 
      * 
-     * @return
-     *     The value of the id property.
      */
     public List<Credentials3> getId() {
         if (id == null) {
-            id = new ArrayList<>();
+            id = new ArrayList<Credentials3>();
         }
         return this.id;
     }
@@ -169,7 +167,7 @@ public class Cardholder22 {
      *     {@link String }
      *     
      */
-    public LocalDate getDtOfBirth() {
+    public XMLGregorianCalendar getDtOfBirth() {
         return dtOfBirth;
     }
 
@@ -181,7 +179,7 @@ public class Cardholder22 {
      *     {@link String }
      *     
      */
-    public Cardholder22 setDtOfBirth(LocalDate value) {
+    public Cardholder22 setDtOfBirth(XMLGregorianCalendar value) {
         this.dtOfBirth = value;
         return this;
     }
@@ -217,8 +215,8 @@ public class Cardholder22 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the addtlData property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the addtlData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -232,12 +230,10 @@ public class Cardholder22 {
      * {@link AdditionalData1 }
      * 
      * 
-     * @return
-     *     The value of the addtlData property.
      */
     public List<AdditionalData1> getAddtlData() {
         if (addtlData == null) {
-            addtlData = new ArrayList<>();
+            addtlData = new ArrayList<AdditionalData1>();
         }
         return this.addtlData;
     }

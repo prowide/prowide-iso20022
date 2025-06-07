@@ -1,57 +1,58 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for SecuritiesTransactionType21Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="SecuritiesTransactionType21Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="CNCB"/>
- *     <enumeration value="BSBK"/>
- *     <enumeration value="COLI"/>
- *     <enumeration value="COLO"/>
- *     <enumeration value="NETT"/>
- *     <enumeration value="OWNE"/>
- *     <enumeration value="OWNI"/>
- *     <enumeration value="PAIR"/>
- *     <enumeration value="PLAC"/>
- *     <enumeration value="PORT"/>
- *     <enumeration value="REAL"/>
- *     <enumeration value="REDM"/>
- *     <enumeration value="REPU"/>
- *     <enumeration value="RVPO"/>
- *     <enumeration value="SECB"/>
- *     <enumeration value="SECL"/>
- *     <enumeration value="SUBS"/>
- *     <enumeration value="TRAD"/>
- *     <enumeration value="TRPO"/>
- *     <enumeration value="TRVO"/>
- *     <enumeration value="TURN"/>
- *     <enumeration value="AUTO"/>
- *     <enumeration value="CLAI"/>
- *     <enumeration value="CORP"/>
- *     <enumeration value="ETFT"/>
- *     <enumeration value="BIYI"/>
- *     <enumeration value="CONV"/>
- *     <enumeration value="ISSU"/>
- *     <enumeration value="MKDW"/>
- *     <enumeration value="MKUP"/>
- *     <enumeration value="NSYN"/>
- *     <enumeration value="REDI"/>
- *     <enumeration value="RELE"/>
- *     <enumeration value="SBBK"/>
- *     <enumeration value="SYND"/>
- *     <enumeration value="SWIF"/>
- *     <enumeration value="SWIT"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="SecuritiesTransactionType21Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="CNCB"/&gt;
+ *     &lt;enumeration value="BSBK"/&gt;
+ *     &lt;enumeration value="COLI"/&gt;
+ *     &lt;enumeration value="COLO"/&gt;
+ *     &lt;enumeration value="NETT"/&gt;
+ *     &lt;enumeration value="OWNE"/&gt;
+ *     &lt;enumeration value="OWNI"/&gt;
+ *     &lt;enumeration value="PAIR"/&gt;
+ *     &lt;enumeration value="PLAC"/&gt;
+ *     &lt;enumeration value="PORT"/&gt;
+ *     &lt;enumeration value="REAL"/&gt;
+ *     &lt;enumeration value="REDM"/&gt;
+ *     &lt;enumeration value="REPU"/&gt;
+ *     &lt;enumeration value="RVPO"/&gt;
+ *     &lt;enumeration value="SECB"/&gt;
+ *     &lt;enumeration value="SECL"/&gt;
+ *     &lt;enumeration value="SUBS"/&gt;
+ *     &lt;enumeration value="TRAD"/&gt;
+ *     &lt;enumeration value="TRPO"/&gt;
+ *     &lt;enumeration value="TRVO"/&gt;
+ *     &lt;enumeration value="TURN"/&gt;
+ *     &lt;enumeration value="AUTO"/&gt;
+ *     &lt;enumeration value="CLAI"/&gt;
+ *     &lt;enumeration value="CORP"/&gt;
+ *     &lt;enumeration value="ETFT"/&gt;
+ *     &lt;enumeration value="BIYI"/&gt;
+ *     &lt;enumeration value="CONV"/&gt;
+ *     &lt;enumeration value="ISSU"/&gt;
+ *     &lt;enumeration value="MKDW"/&gt;
+ *     &lt;enumeration value="MKUP"/&gt;
+ *     &lt;enumeration value="NSYN"/&gt;
+ *     &lt;enumeration value="REDI"/&gt;
+ *     &lt;enumeration value="RELE"/&gt;
+ *     &lt;enumeration value="SBBK"/&gt;
+ *     &lt;enumeration value="SYND"/&gt;
+ *     &lt;enumeration value="SWIF"/&gt;
+ *     &lt;enumeration value="SWIT"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "SecuritiesTransactionType21Code")

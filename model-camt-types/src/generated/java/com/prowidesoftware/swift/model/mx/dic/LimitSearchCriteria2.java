@@ -3,11 +3,11 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -77,8 +77,8 @@ public class LimitSearchCriteria2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the bilLmtCtrPtyId property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the bilLmtCtrPtyId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -92,12 +92,10 @@ public class LimitSearchCriteria2 {
      * {@link MemberIdentificationChoice }
      * 
      * 
-     * @return
-     *     The value of the bilLmtCtrPtyId property.
      */
     public List<MemberIdentificationChoice> getBilLmtCtrPtyId() {
         if (bilLmtCtrPtyId == null) {
-            bilLmtCtrPtyId = new ArrayList<>();
+            bilLmtCtrPtyId = new ArrayList<MemberIdentificationChoice>();
         }
         return this.bilLmtCtrPtyId;
     }
@@ -108,8 +106,8 @@ public class LimitSearchCriteria2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the dfltLmtTp property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the dfltLmtTp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -123,12 +121,10 @@ public class LimitSearchCriteria2 {
      * {@link LimitType2Code }
      * 
      * 
-     * @return
-     *     The value of the dfltLmtTp property.
      */
     public List<LimitType2Code> getDfltLmtTp() {
         if (dfltLmtTp == null) {
-            dfltLmtTp = new ArrayList<>();
+            dfltLmtTp = new ArrayList<LimitType2Code>();
         }
         return this.dfltLmtTp;
     }
@@ -139,8 +135,8 @@ public class LimitSearchCriteria2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the curLmtTp property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the curLmtTp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -154,12 +150,10 @@ public class LimitSearchCriteria2 {
      * {@link LimitType2Code }
      * 
      * 
-     * @return
-     *     The value of the curLmtTp property.
      */
     public List<LimitType2Code> getCurLmtTp() {
         if (curLmtTp == null) {
-            curLmtTp = new ArrayList<>();
+            curLmtTp = new ArrayList<LimitType2Code>();
         }
         return this.curLmtTp;
     }

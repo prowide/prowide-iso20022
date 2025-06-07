@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -48,7 +48,7 @@ public class PortfolioTransfer11 {
     @XmlElement(name = "ReqdTrfDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate reqdTrfDt;
+    protected XMLGregorianCalendar reqdTrfDt;
     @XmlElement(name = "Prtfl")
     protected FundPortfolio8Choice prtfl;
     @XmlElement(name = "AllOthrCsh")
@@ -147,7 +147,7 @@ public class PortfolioTransfer11 {
      *     {@link String }
      *     
      */
-    public LocalDate getReqdTrfDt() {
+    public XMLGregorianCalendar getReqdTrfDt() {
         return reqdTrfDt;
     }
 
@@ -159,7 +159,7 @@ public class PortfolioTransfer11 {
      *     {@link String }
      *     
      */
-    public PortfolioTransfer11 setReqdTrfDt(LocalDate value) {
+    public PortfolioTransfer11 setReqdTrfDt(XMLGregorianCalendar value) {
         this.reqdTrfDt = value;
         return this;
     }
@@ -195,8 +195,8 @@ public class PortfolioTransfer11 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the allOthrCsh property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the allOthrCsh property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -210,12 +210,10 @@ public class PortfolioTransfer11 {
      * {@link AllOtherCash1 }
      * 
      * 
-     * @return
-     *     The value of the allOthrCsh property.
      */
     public List<AllOtherCash1> getAllOthrCsh() {
         if (allOthrCsh == null) {
-            allOthrCsh = new ArrayList<>();
+            allOthrCsh = new ArrayList<AllOtherCash1>();
         }
         return this.allOthrCsh;
     }
@@ -226,8 +224,8 @@ public class PortfolioTransfer11 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the cshAll property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the cshAll property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -241,12 +239,10 @@ public class PortfolioTransfer11 {
      * {@link CashAll1 }
      * 
      * 
-     * @return
-     *     The value of the cshAll property.
      */
     public List<CashAll1> getCshAll() {
         if (cshAll == null) {
-            cshAll = new ArrayList<>();
+            cshAll = new ArrayList<CashAll1>();
         }
         return this.cshAll;
     }
@@ -257,8 +253,8 @@ public class PortfolioTransfer11 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the rsdlCsh property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the rsdlCsh property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -272,12 +268,10 @@ public class PortfolioTransfer11 {
      * {@link ResidualCash2 }
      * 
      * 
-     * @return
-     *     The value of the rsdlCsh property.
      */
     public List<ResidualCash2> getRsdlCsh() {
         if (rsdlCsh == null) {
-            rsdlCsh = new ArrayList<>();
+            rsdlCsh = new ArrayList<ResidualCash2>();
         }
         return this.rsdlCsh;
     }
@@ -313,8 +307,8 @@ public class PortfolioTransfer11 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the finInstrmAsstForTrf property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the finInstrmAsstForTrf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -328,12 +322,10 @@ public class PortfolioTransfer11 {
      * {@link FinancialInstrument102 }
      * 
      * 
-     * @return
-     *     The value of the finInstrmAsstForTrf property.
      */
     public List<FinancialInstrument102> getFinInstrmAsstForTrf() {
         if (finInstrmAsstForTrf == null) {
-            finInstrmAsstForTrf = new ArrayList<>();
+            finInstrmAsstForTrf = new ArrayList<FinancialInstrument102>();
         }
         return this.finInstrmAsstForTrf;
     }
@@ -344,8 +336,8 @@ public class PortfolioTransfer11 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the addtlInf property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the addtlInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -359,12 +351,10 @@ public class PortfolioTransfer11 {
      * {@link AdditionalInformation15 }
      * 
      * 
-     * @return
-     *     The value of the addtlInf property.
      */
     public List<AdditionalInformation15> getAddtlInf() {
         if (addtlInf == null) {
-            addtlInf = new ArrayList<>();
+            addtlInf = new ArrayList<AdditionalInformation15>();
         }
         return this.addtlInf;
     }

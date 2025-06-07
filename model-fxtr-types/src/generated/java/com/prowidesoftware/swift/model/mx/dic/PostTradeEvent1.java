@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -41,7 +41,7 @@ public class PostTradeEvent1 {
     @XmlElement(name = "PrftOrLossSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate prftOrLossSttlmDt;
+    protected XMLGregorianCalendar prftOrLossSttlmDt;
     @XmlElement(name = "PrftOrLoss")
     protected ProfitAndLossAmount2 prftOrLoss;
     @XmlElement(name = "OutsdngSttlmAmt")
@@ -130,7 +130,7 @@ public class PostTradeEvent1 {
      *     {@link String }
      *     
      */
-    public LocalDate getPrftOrLossSttlmDt() {
+    public XMLGregorianCalendar getPrftOrLossSttlmDt() {
         return prftOrLossSttlmDt;
     }
 
@@ -142,7 +142,7 @@ public class PostTradeEvent1 {
      *     {@link String }
      *     
      */
-    public PostTradeEvent1 setPrftOrLossSttlmDt(LocalDate value) {
+    public PostTradeEvent1 setPrftOrLossSttlmDt(XMLGregorianCalendar value) {
         this.prftOrLossSttlmDt = value;
         return this;
     }

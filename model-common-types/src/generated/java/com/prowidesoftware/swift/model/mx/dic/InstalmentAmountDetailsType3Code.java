@@ -1,33 +1,34 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for InstalmentAmountDetailsType3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="InstalmentAmountDetailsType3Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="AFCO"/>
- *     <enumeration value="EXPN"/>
- *     <enumeration value="FEES"/>
- *     <enumeration value="FUNA"/>
- *     <enumeration value="INSU"/>
- *     <enumeration value="INTR"/>
- *     <enumeration value="OTHC"/>
- *     <enumeration value="OTHN"/>
- *     <enumeration value="OTHP"/>
- *     <enumeration value="PRNC"/>
- *     <enumeration value="RQST"/>
- *     <enumeration value="TAXX"/>
- *     <enumeration value="DCNT"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="InstalmentAmountDetailsType3Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="AFCO"/&gt;
+ *     &lt;enumeration value="EXPN"/&gt;
+ *     &lt;enumeration value="FEES"/&gt;
+ *     &lt;enumeration value="FUNA"/&gt;
+ *     &lt;enumeration value="INSU"/&gt;
+ *     &lt;enumeration value="INTR"/&gt;
+ *     &lt;enumeration value="OTHC"/&gt;
+ *     &lt;enumeration value="OTHN"/&gt;
+ *     &lt;enumeration value="OTHP"/&gt;
+ *     &lt;enumeration value="PRNC"/&gt;
+ *     &lt;enumeration value="RQST"/&gt;
+ *     &lt;enumeration value="TAXX"/&gt;
+ *     &lt;enumeration value="DCNT"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "InstalmentAmountDetailsType3Code")

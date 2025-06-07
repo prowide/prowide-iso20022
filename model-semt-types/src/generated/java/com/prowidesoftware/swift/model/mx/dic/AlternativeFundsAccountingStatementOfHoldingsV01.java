@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -93,8 +93,8 @@ public class AlternativeFundsAccountingStatementOfHoldingsV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the prvsRef property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the prvsRef property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -108,12 +108,10 @@ public class AlternativeFundsAccountingStatementOfHoldingsV01 {
      * {@link AdditionalReference4 }
      * 
      * 
-     * @return
-     *     The value of the prvsRef property.
      */
     public List<AdditionalReference4> getPrvsRef() {
         if (prvsRef == null) {
-            prvsRef = new ArrayList<>();
+            prvsRef = new ArrayList<AdditionalReference4>();
         }
         return this.prvsRef;
     }
@@ -124,8 +122,8 @@ public class AlternativeFundsAccountingStatementOfHoldingsV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the rltdRef property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the rltdRef property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -139,12 +137,10 @@ public class AlternativeFundsAccountingStatementOfHoldingsV01 {
      * {@link AdditionalReference4 }
      * 
      * 
-     * @return
-     *     The value of the rltdRef property.
      */
     public List<AdditionalReference4> getRltdRef() {
         if (rltdRef == null) {
-            rltdRef = new ArrayList<>();
+            rltdRef = new ArrayList<AdditionalReference4>();
         }
         return this.rltdRef;
     }
@@ -230,8 +226,8 @@ public class AlternativeFundsAccountingStatementOfHoldingsV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the rltdPtyDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the rltdPtyDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -245,12 +241,10 @@ public class AlternativeFundsAccountingStatementOfHoldingsV01 {
      * {@link Intermediary17 }
      * 
      * 
-     * @return
-     *     The value of the rltdPtyDtls property.
      */
     public List<Intermediary17> getRltdPtyDtls() {
         if (rltdPtyDtls == null) {
-            rltdPtyDtls = new ArrayList<>();
+            rltdPtyDtls = new ArrayList<Intermediary17>();
         }
         return this.rltdPtyDtls;
     }
@@ -261,8 +255,8 @@ public class AlternativeFundsAccountingStatementOfHoldingsV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the balForAcct property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the balForAcct property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -276,12 +270,10 @@ public class AlternativeFundsAccountingStatementOfHoldingsV01 {
      * {@link AggregateBalanceInformation5 }
      * 
      * 
-     * @return
-     *     The value of the balForAcct property.
      */
     public List<AggregateBalanceInformation5> getBalForAcct() {
         if (balForAcct == null) {
-            balForAcct = new ArrayList<>();
+            balForAcct = new ArrayList<AggregateBalanceInformation5>();
         }
         return this.balForAcct;
     }
@@ -317,8 +309,8 @@ public class AlternativeFundsAccountingStatementOfHoldingsV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the xtnsn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the xtnsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -332,12 +324,10 @@ public class AlternativeFundsAccountingStatementOfHoldingsV01 {
      * {@link Extension1 }
      * 
      * 
-     * @return
-     *     The value of the xtnsn property.
      */
     public List<Extension1> getXtnsn() {
         if (xtnsn == null) {
-            xtnsn = new ArrayList<>();
+            xtnsn = new ArrayList<Extension1>();
         }
         return this.xtnsn;
     }

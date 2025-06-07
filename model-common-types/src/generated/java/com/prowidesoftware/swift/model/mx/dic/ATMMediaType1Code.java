@@ -1,27 +1,28 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for ATMMediaType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="ATMMediaType1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="CARD"/>
- *     <enumeration value="COIN"/>
- *     <enumeration value="CMDT"/>
- *     <enumeration value="CPNS"/>
- *     <enumeration value="NOTE"/>
- *     <enumeration value="STMP"/>
- *     <enumeration value="UDTM"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="ATMMediaType1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="CARD"/&gt;
+ *     &lt;enumeration value="COIN"/&gt;
+ *     &lt;enumeration value="CMDT"/&gt;
+ *     &lt;enumeration value="CPNS"/&gt;
+ *     &lt;enumeration value="NOTE"/&gt;
+ *     &lt;enumeration value="STMP"/&gt;
+ *     &lt;enumeration value="UDTM"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "ATMMediaType1Code")

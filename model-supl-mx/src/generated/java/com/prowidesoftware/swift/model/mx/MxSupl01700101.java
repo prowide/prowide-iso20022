@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxSupl01700101
 
     @XmlElement(name = "PmtSD1", required = true)
     protected PaymentSD1V01 pmtSD1;
-    public static final transient String BUSINESS_PROCESS = "supl";
-    public static final transient int FUNCTIONALITY = 17;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 1;
+    public final static transient String BUSINESS_PROCESS = "supl";
+    public final static transient int FUNCTIONALITY = 17;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {AccountIdentification4Choice.class, AccountSchemeName1Choice.class, ActiveCurrencyAndAmount.class, AttendanceContext1Code.class, AuthenticationEntity1Code.class, AuthenticationMethod1Code.class, CardAmountAndCurrencyExchange1 .class, CardDataReading1Code.class, CardPaymentServiceType2Code.class, CardPaymentTransactionDetails8 .class, CardholderAuthentication2 .class, CardholderVerificationCapability1Code.class, CashAccount24 .class, CashAccountType2Choice.class, CurrencyExchange3 .class, DisplayCapabilities1 .class, GenericAccountIdentification1 .class, GenericIdentification32 .class, MxSupl01700101 .class, OnLineCapability1Code.class, POIComponentType1Code.class, PartyType3Code.class, PartyType4Code.class, PaymentContext3 .class, PaymentSD1V01 .class, PlainCardData3 .class, PointOfInteraction1 .class, PointOfInteractionCapabilities1 .class, PointOfInteractionComponent1 .class, TransactionChannel1Code.class, TransactionData1 .class, TransactionEnvironment1Code.class, TypeOfAmount3Code.class, UserInterface2Code.class };
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:supl.017.001.01";
+    public final static transient Class[] _classes = new Class[] {AccountIdentification4Choice.class, AccountSchemeName1Choice.class, ActiveCurrencyAndAmount.class, AttendanceContext1Code.class, AuthenticationEntity1Code.class, AuthenticationMethod1Code.class, CardAmountAndCurrencyExchange1 .class, CardDataReading1Code.class, CardPaymentServiceType2Code.class, CardPaymentTransactionDetails8 .class, CardholderAuthentication2 .class, CardholderVerificationCapability1Code.class, CashAccount24 .class, CashAccountType2Choice.class, CurrencyExchange3 .class, DisplayCapabilities1 .class, GenericAccountIdentification1 .class, GenericIdentification32 .class, MxSupl01700101 .class, OnLineCapability1Code.class, POIComponentType1Code.class, PartyType3Code.class, PartyType4Code.class, PaymentContext3 .class, PaymentSD1V01 .class, PlainCardData3 .class, PointOfInteraction1 .class, PointOfInteractionCapabilities1 .class, PointOfInteractionComponent1 .class, TransactionChannel1Code.class, TransactionData1 .class, TransactionEnvironment1Code.class, TypeOfAmount3Code.class, UserInterface2Code.class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:supl.017.001.01";
 
     public MxSupl01700101() {
         super();
@@ -86,6 +86,21 @@ public class MxSupl01700101
     public MxSupl01700101 setPmtSD1(PaymentSD1V01 value) {
         this.pmtSD1 = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxSupl01700101
      * @return
      *     a new instance of MxSupl01700101
      */
-    public static final MxSupl01700101 fromJson(String json) {
+    public final static MxSupl01700101 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSupl01700101 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

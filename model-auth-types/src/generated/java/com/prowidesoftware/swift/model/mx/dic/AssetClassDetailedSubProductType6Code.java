@@ -1,25 +1,26 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for AssetClassDetailedSubProductType6Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="AssetClassDetailedSubProductType6Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="GASP"/>
- *     <enumeration value="LNGG"/>
- *     <enumeration value="NCGG"/>
- *     <enumeration value="TTFG"/>
- *     <enumeration value="NBPG"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="AssetClassDetailedSubProductType6Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="GASP"/&gt;
+ *     &lt;enumeration value="LNGG"/&gt;
+ *     &lt;enumeration value="NCGG"/&gt;
+ *     &lt;enumeration value="TTFG"/&gt;
+ *     &lt;enumeration value="NBPG"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "AssetClassDetailedSubProductType6Code")

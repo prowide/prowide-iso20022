@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -52,8 +52,8 @@ public class CompareEnergyDeliveryAttribute1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the nrgyDlvryIntrvl property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the nrgyDlvryIntrvl property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -67,12 +67,10 @@ public class CompareEnergyDeliveryAttribute1 {
      * {@link CompareTimePeriod2 }
      * 
      * 
-     * @return
-     *     The value of the nrgyDlvryIntrvl property.
      */
     public List<CompareTimePeriod2> getNrgyDlvryIntrvl() {
         if (nrgyDlvryIntrvl == null) {
-            nrgyDlvryIntrvl = new ArrayList<>();
+            nrgyDlvryIntrvl = new ArrayList<CompareTimePeriod2>();
         }
         return this.nrgyDlvryIntrvl;
     }
@@ -133,8 +131,8 @@ public class CompareEnergyDeliveryAttribute1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the nrgyWkDay property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the nrgyWkDay property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -148,12 +146,10 @@ public class CompareEnergyDeliveryAttribute1 {
      * {@link CompareWeekDay1 }
      * 
      * 
-     * @return
-     *     The value of the nrgyWkDay property.
      */
     public List<CompareWeekDay1> getNrgyWkDay() {
         if (nrgyWkDay == null) {
-            nrgyWkDay = new ArrayList<>();
+            nrgyWkDay = new ArrayList<CompareWeekDay1>();
         }
         return this.nrgyWkDay;
     }

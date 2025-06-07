@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxSese01000101
 
     @XmlElement(name = "sese.010.001.01", required = true)
     protected Sese01000101 sese01000101;
-    public static final transient String BUSINESS_PROCESS = "sese";
-    public static final transient int FUNCTIONALITY = 10;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 1;
+    public final static transient String BUSINESS_PROCESS = "sese";
+    public final static transient int FUNCTIONALITY = 10;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {AdditionalReference2 .class, CancellationCompleteStatusReason1Code.class, CancellationRejectedReason1Code.class, CancellationStatus1Code.class, CancellationStatusAndReason.class, GenericIdentification1 .class, LongPostalAddress1Choice.class, MxSese01000101 .class, NameAndAddress2 .class, PartyIdentification1Choice.class, Sese01000101 .class, StructuredLongPostalAddress1 .class, TransferCancellationCompleteReason1 .class, TransferCancellationCompleteStatusChoice.class, TransferCancellationRejectedStatus1Choice.class, TransferCancellationRejectionReason1 .class, TransferCancellationStatus.class };
-    public static final transient String NAMESPACE = "urn:swift:xsd:sese.010.001.01";
+    public final static transient Class[] _classes = new Class[] {AdditionalReference2 .class, CancellationCompleteStatusReason1Code.class, CancellationRejectedReason1Code.class, CancellationStatus1Code.class, CancellationStatusAndReason.class, GenericIdentification1 .class, LongPostalAddress1Choice.class, MxSese01000101 .class, NameAndAddress2 .class, PartyIdentification1Choice.class, Sese01000101 .class, StructuredLongPostalAddress1 .class, TransferCancellationCompleteReason1 .class, TransferCancellationCompleteStatusChoice.class, TransferCancellationRejectedStatus1Choice.class, TransferCancellationRejectionReason1 .class, TransferCancellationStatus.class };
+    public final static transient String NAMESPACE = "urn:swift:xsd:sese.010.001.01";
 
     public MxSese01000101() {
         super();
@@ -86,6 +86,21 @@ public class MxSese01000101
     public MxSese01000101 setSese01000101(Sese01000101 value) {
         this.sese01000101 = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxSese01000101
      * @return
      *     a new instance of MxSese01000101
      */
-    public static final MxSese01000101 fromJson(String json) {
+    public final static MxSese01000101 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSese01000101 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

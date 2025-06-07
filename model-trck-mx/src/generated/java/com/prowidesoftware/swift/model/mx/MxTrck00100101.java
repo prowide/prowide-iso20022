@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxTrck00100101
 
     @XmlElement(name = "PmtStsTrckrUpd", required = true)
     protected PaymentStatusTrackerUpdateV01 pmtStsTrckrUpd;
-    public static final transient String BUSINESS_PROCESS = "trck";
-    public static final transient int FUNCTIONALITY = 1;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 1;
+    public final static transient String BUSINESS_PROCESS = "trck";
+    public final static transient int FUNCTIONALITY = 1;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {ChargeBearerType4Code.class, CurrencyExchange16 .class, DateTime1 .class, FinancialInstitutionIdentification20 .class, MxTrck00100101 .class, OrganisationIdentification33 .class, OriginalBusinessInstruction2 .class, PaymentIdentification11 .class, PaymentRejectReturnReason2 .class, PaymentStatusReason2 .class, PaymentStatusTrackerUpdateV01 .class, RestrictedFINActiveCurrencyAndAmount.class, RestrictedFINActiveOrHistoricCurrencyAndAmount.class, SettlementInstruction10 .class, SettlementMethod1Code.class, TrackerCharges1 .class, TrackerClearingSystemIdentification1 .class, TrackerData3 .class, TrackerFinancialInstitutionIdentification1 .class, TrackerHeader3 .class, TrackerParty1 .class, TrackerPartyIdentification1 .class, TrackerPaymentRejectReturnReason1Code.class, TrackerPaymentStatus1Code.class, TrackerPaymentTransaction3 .class, TrackerRecord3 .class, TrackerReturnReason1 .class, TrackerStatus3 .class, TrackerStatusAndTransaction3 .class, TrackerStatusReason1 .class, TrackerTransactionStatusReason1Code.class };
-    public static final transient String NAMESPACE = "urn:swift:xsd:trck.001.001.01";
+    public final static transient Class[] _classes = new Class[] {ChargeBearerType4Code.class, CurrencyExchange16 .class, DateTime1 .class, FinancialInstitutionIdentification20 .class, MxTrck00100101 .class, OrganisationIdentification33 .class, OriginalBusinessInstruction2 .class, PaymentIdentification11 .class, PaymentRejectReturnReason2 .class, PaymentStatusReason2 .class, PaymentStatusTrackerUpdateV01 .class, RestrictedFINActiveCurrencyAndAmount.class, RestrictedFINActiveOrHistoricCurrencyAndAmount.class, SettlementInstruction10 .class, SettlementMethod1Code.class, TrackerCharges1 .class, TrackerClearingSystemIdentification1 .class, TrackerData3 .class, TrackerFinancialInstitutionIdentification1 .class, TrackerHeader3 .class, TrackerParty1 .class, TrackerPartyIdentification1 .class, TrackerPaymentRejectReturnReason1Code.class, TrackerPaymentStatus1Code.class, TrackerPaymentTransaction3 .class, TrackerRecord3 .class, TrackerReturnReason1 .class, TrackerStatus3 .class, TrackerStatusAndTransaction3 .class, TrackerStatusReason1 .class, TrackerTransactionStatusReason1Code.class };
+    public final static transient String NAMESPACE = "urn:swift:xsd:trck.001.001.01";
 
     public MxTrck00100101() {
         super();
@@ -86,6 +86,21 @@ public class MxTrck00100101
     public MxTrck00100101 setPmtStsTrckrUpd(PaymentStatusTrackerUpdateV01 value) {
         this.pmtStsTrckrUpd = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxTrck00100101
      * @return
      *     a new instance of MxTrck00100101
      */
-    public static final MxTrck00100101 fromJson(String json) {
+    public final static MxTrck00100101 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxTrck00100101 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

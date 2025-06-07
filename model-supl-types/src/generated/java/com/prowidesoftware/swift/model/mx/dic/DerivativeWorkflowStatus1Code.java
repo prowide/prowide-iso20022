@@ -1,25 +1,26 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for DerivativeWorkflowStatus1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="DerivativeWorkflowStatus1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="PREL"/>
- *     <enumeration value="ADJU"/>
- *     <enumeration value="NOAC"/>
- *     <enumeration value="UCON"/>
- *     <enumeration value="DLTD"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="DerivativeWorkflowStatus1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="PREL"/&gt;
+ *     &lt;enumeration value="ADJU"/&gt;
+ *     &lt;enumeration value="NOAC"/&gt;
+ *     &lt;enumeration value="UCON"/&gt;
+ *     &lt;enumeration value="DLTD"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "DerivativeWorkflowStatus1Code")

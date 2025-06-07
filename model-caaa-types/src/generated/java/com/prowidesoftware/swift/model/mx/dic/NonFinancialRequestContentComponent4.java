@@ -3,11 +3,11 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -42,8 +42,8 @@ public class NonFinancialRequestContentComponent4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the nonFinReqTp property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the nonFinReqTp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -57,12 +57,10 @@ public class NonFinancialRequestContentComponent4 {
      * {@link NonFinancialRequestType2Code }
      * 
      * 
-     * @return
-     *     The value of the nonFinReqTp property.
      */
     public List<NonFinancialRequestType2Code> getNonFinReqTp() {
         if (nonFinReqTp == null) {
-            nonFinReqTp = new ArrayList<>();
+            nonFinReqTp = new ArrayList<NonFinancialRequestType2Code>();
         }
         return this.nonFinReqTp;
     }
@@ -98,8 +96,8 @@ public class NonFinancialRequestContentComponent4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the addtlReq property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the addtlReq property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -113,12 +111,10 @@ public class NonFinancialRequestContentComponent4 {
      * {@link ExternallyDefinedData5 }
      * 
      * 
-     * @return
-     *     The value of the addtlReq property.
      */
     public List<ExternallyDefinedData5> getAddtlReq() {
         if (addtlReq == null) {
-            addtlReq = new ArrayList<>();
+            addtlReq = new ArrayList<ExternallyDefinedData5>();
         }
         return this.addtlReq;
     }

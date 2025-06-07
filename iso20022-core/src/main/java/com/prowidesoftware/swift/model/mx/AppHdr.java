@@ -15,7 +15,7 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
-import java.time.OffsetDateTime;
+import javax.xml.datatype.XMLGregorianCalendar;
 import org.w3c.dom.Element;
 
 /**
@@ -92,7 +92,7 @@ public interface AppHdr {
      *
      * @return found date or null if the element is not found
      */
-    OffsetDateTime creationDate();
+    XMLGregorianCalendar creationDate();
 
     /**
      * Sets the creation date in the header object with current moment in UTC time zone.

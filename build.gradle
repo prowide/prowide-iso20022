@@ -5,9 +5,9 @@ buildscript {
 	}
 	dependencies {
 		classpath 'ru.vyarus:gradle-quality-plugin:5.0.0'
-		classpath 'pl.allegro.tech.build:axion-release-plugin:1.18.18'
+		classpath 'pl.allegro.tech.build:axion-release-plugin:1.13.6'
 		classpath 'io.github.gradle-nexus:publish-plugin:2.0.0'
-		classpath 'com.diffplug.spotless:spotless-plugin-gradle:7.0.3'
+		classpath 'com.diffplug.spotless:spotless-plugin-gradle:6.13.0' // above this version requires Java 11
 	}
 }
 apply plugin: 'pl.allegro.tech.build.axion-release'
@@ -24,22 +24,17 @@ group 'com.prowidesoftware'
 
 project.ext {
 	SRU = 'SRU2025'
-    prowideCoreVersion = 'SRU2025-10.3.0'
-	commonsLangVersion = '3.17.0'
-	gsonVersion = '2.13.1'
-	jaxbVersion = '4.0.5'
-	jakartaPersistenceVersion = '3.1.0' // jakarta 3.1 is Jakarta EE 10, jakarta 3.2 would imply migration to Jakarta EE 11
+    prowideCoreVersion = 'SRU2025-9.6.0-SNAPSHOT'
 }
 
 scmVersion {
-	versionCreator('simple')
 	tag {
 		prefix = "${SRU}"
 		versionSeparator = '-'
 	}
 }
-project.version = "${SRU}-${scmVersion.version}"
-//project.version = "SRU2025-10.3.0"
+//project.version = "${SRU}-${scmVersion.version}"
+project.version = "SRU2025-9.6.0-SNAPSHOT"
 
 allprojects {
 
@@ -47,7 +42,7 @@ allprojects {
 		options.encoding = 'UTF-8'
 		java {
 			toolchain {
-				languageVersion.set(JavaLanguageVersion.of(11))
+				languageVersion.set(JavaLanguageVersion.of(8))
 			}
 		}
 		doLast {
@@ -93,8 +88,8 @@ allprojects {
 			'Implementation-Version': project.version,
 			'Implementation-Vendor': 'www.prowidesoftware.com',
 			'Built-OS': System.getProperty('os.name'),
-			'Source-Compatibility': JavaVersion.VERSION_11,
-			'Target-Compatibility': JavaVersion.VERSION_11,
+			'Source-Compatibility': project.sourceCompatibility,
+			'Target-Compatibility': project.targetCompatibility,
 			'Built-Date': new Date().format("yyyy-MM-dd"),
 			'Automatic-Module-Name': 'com.prowidesoftware.iso20022'
 		)
@@ -107,11 +102,8 @@ subprojects {
 	version = rootProject.version
 
 	dependencies {
-		implementation "org.apache.commons:commons-lang3:${commonsLangVersion}"
-		implementation "com.google.code.gson:gson:${gsonVersion}"
-		implementation "com.sun.xml.bind:jaxb-impl:${jaxbVersion}"
-		// bind-api is included transitively by jaxb-impl
-		// implementation 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.2'
+		implementation 'org.apache.commons:commons-lang3:3.17.0'
+		implementation 'com.google.code.gson:gson:2.11.0'
 	}
 
 	tasks.withType(Jar) {
@@ -132,15 +124,9 @@ configure(subprojects.findAll {it.name.endsWith('-mx')}) {
 	dependencies {
 		api project(':iso20022-core')
 		implementation project(specificTypesProject)
-
-		implementation "org.apache.commons:commons-lang3:${commonsLangVersion}"
-		implementation "com.google.code.gson:gson:${gsonVersion}"
-
-		implementation "com.sun.xml.bind:jaxb-impl:${jaxbVersion}"
-		// bind-api is included transitively by jaxb-impl
-		// implementation 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.2'
-
-		compileOnly "jakarta.persistence:jakarta.persistence-api:${jakartaPersistenceVersion}"
+		implementation 'org.apache.commons:commons-lang3:3.17.0'
+		implementation 'com.google.code.gson:gson:2.11.0'
+		compileOnly 'javax.persistence:javax.persistence-api:2.2'
 	}
 }
 
@@ -156,13 +142,19 @@ project(':iso20022-core') {
 		// included build
 		api "com.prowidesoftware:pw-swift-core:${prowideCoreVersion}"
 
-		implementation "org.apache.commons:commons-lang3:${commonsLangVersion}"
-		implementation "com.google.code.gson:gson:${gsonVersion}"
+		implementation 'org.apache.commons:commons-lang3:3.17.0'
+		implementation 'com.google.code.gson:gson:2.11.0'
 
-		compileOnly "jakarta.persistence:jakarta.persistence-api:${jakartaPersistenceVersion}"
-		compileOnly 'jakarta.validation:jakarta.validation-api:3.1.0'
+		compileOnly 'javax.persistence:javax.persistence-api:2.2'
+		compileOnly 'javax.validation:validation-api:2.0.1.Final'
 
-		testImplementation "jakarta.persistence:jakarta.persistence-api:${jakartaPersistenceVersion}"
+		// to avoid potential differences in JAXB implementations when testing in different environments
+		testImplementation 'javax.xml.bind:jaxb-api:2.3.1'
+		testImplementation 'com.sun.xml.bind:jaxb-impl:2.3.3'
+		testImplementation 'com.sun.xml.bind:jaxb-core:2.3.0.1'
+		testImplementation 'javax.activation:activation:1.1.1'
+
+		testImplementation 'javax.persistence:javax.persistence-api:2.2'
 		testImplementation 'org.junit.jupiter:junit-jupiter:5.11.4'
 		testImplementation 'com.google.guava:guava:33.4.0-jre'
 		testImplementation 'org.assertj:assertj-core:3.27.2'
@@ -337,11 +329,9 @@ artifacts {
 // declared dependencies for pom generation
 dependencies {
 	// included build (keep in sync with the latest Prowide Core version)
-    api "com.prowidesoftware:pw-swift-core:${prowideCoreVersion}"
-
-	// jaxb is required because it is no longer included in the JDK
-	// bind-api is included transitively by jaxb-impl
-	implementation 'com.sun.xml.bind:jaxb-impl:4.0.5'
+	api "com.prowidesoftware:pw-swift-core:${prowideCoreVersion}"
+	implementation 'org.apache.commons:commons-lang3:3.17.0'
+	implementation 'com.google.code.gson:gson:2.11.0'
 }
 
 // repo for publishing
@@ -484,6 +474,12 @@ tasks.register('bundle', Jar) {
 tasks.withType(Test) {
 	doFirst {
 		println 'Running test on ' + getJavaLauncher().get().getMetadata().getInstallationPath()
+	}
+}
+
+task('testOn11', type: Test) {
+	javaLauncher = javaToolchains.launcherFor {
+		languageVersion = JavaLanguageVersion.of(11)
 	}
 }
 

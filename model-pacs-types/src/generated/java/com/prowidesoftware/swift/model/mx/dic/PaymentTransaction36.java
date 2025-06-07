@@ -2,16 +2,16 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -63,7 +63,7 @@ public class PaymentTransaction36 {
     @XmlElement(name = "IntrBkSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate intrBkSttlmDt;
+    protected XMLGregorianCalendar intrBkSttlmDt;
     @XmlElement(name = "RvsdInstdAmt")
     protected ActiveOrHistoricCurrencyAndAmount rvsdInstdAmt;
     @XmlElement(name = "XchgRate")
@@ -267,7 +267,7 @@ public class PaymentTransaction36 {
      *     {@link String }
      *     
      */
-    public LocalDate getIntrBkSttlmDt() {
+    public XMLGregorianCalendar getIntrBkSttlmDt() {
         return intrBkSttlmDt;
     }
 
@@ -279,7 +279,7 @@ public class PaymentTransaction36 {
      *     {@link String }
      *     
      */
-    public PaymentTransaction36 setIntrBkSttlmDt(LocalDate value) {
+    public PaymentTransaction36 setIntrBkSttlmDt(XMLGregorianCalendar value) {
         this.intrBkSttlmDt = value;
         return this;
     }
@@ -390,8 +390,8 @@ public class PaymentTransaction36 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the chrgsInf property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the chrgsInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -405,12 +405,10 @@ public class PaymentTransaction36 {
      * {@link Charges2 }
      * 
      * 
-     * @return
-     *     The value of the chrgsInf property.
      */
     public List<Charges2> getChrgsInf() {
         if (chrgsInf == null) {
-            chrgsInf = new ArrayList<>();
+            chrgsInf = new ArrayList<Charges2>();
         }
         return this.chrgsInf;
     }
@@ -471,8 +469,8 @@ public class PaymentTransaction36 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the rvslRsnInf property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the rvslRsnInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -486,12 +484,10 @@ public class PaymentTransaction36 {
      * {@link PaymentReversalReason7 }
      * 
      * 
-     * @return
-     *     The value of the rvslRsnInf property.
      */
     public List<PaymentReversalReason7> getRvslRsnInf() {
         if (rvslRsnInf == null) {
-            rvslRsnInf = new ArrayList<>();
+            rvslRsnInf = new ArrayList<PaymentReversalReason7>();
         }
         return this.rvslRsnInf;
     }

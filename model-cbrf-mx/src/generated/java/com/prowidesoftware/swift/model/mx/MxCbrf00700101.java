@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxCbrf00700101
 
     @XmlElement(name = "SchdlChngNtfctn", required = true)
     protected ScheduleChangeNotificationV01 schdlChngNtfctn;
-    public static final transient String BUSINESS_PROCESS = "cbrf";
-    public static final transient int FUNCTIONALITY = 7;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 1;
+    public final static transient String BUSINESS_PROCESS = "cbrf";
+    public final static transient int FUNCTIONALITY = 7;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {GenericIdentification1 .class, MessageHeader3 .class, MxCbrf00700101 .class, OriginalBusinessQuery1 .class, RequestType1Code.class, RequestType2Choice.class, RequestType2Code.class, ScheduleChangeDetails1 .class, ScheduleChangeEntry1 .class, ScheduleChangeNotificationV01 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, SystemEventType2Choice.class, SystemEventType2Code.class };
-    public static final transient String NAMESPACE = "urn:cbrf:xsd:cbrf.007.001.01";
+    public final static transient Class[] _classes = new Class[] {GenericIdentification1 .class, MessageHeader3 .class, MxCbrf00700101 .class, OriginalBusinessQuery1 .class, RequestType1Code.class, RequestType2Choice.class, RequestType2Code.class, ScheduleChangeDetails1 .class, ScheduleChangeEntry1 .class, ScheduleChangeNotificationV01 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, SystemEventType2Choice.class, SystemEventType2Code.class };
+    public final static transient String NAMESPACE = "urn:cbrf:xsd:cbrf.007.001.01";
 
     public MxCbrf00700101() {
         super();
@@ -86,6 +86,21 @@ public class MxCbrf00700101
     public MxCbrf00700101 setSchdlChngNtfctn(ScheduleChangeNotificationV01 value) {
         this.schdlChngNtfctn = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxCbrf00700101
      * @return
      *     a new instance of MxCbrf00700101
      */
-    public static final MxCbrf00700101 fromJson(String json) {
+    public final static MxCbrf00700101 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxCbrf00700101 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }
