@@ -46,9 +46,9 @@ import org.w3c.dom.Element;
 @XmlType(name = "AppHdr")
 @XmlRootElement(name = "AppHdr", namespace = "urn:swift:xsd:$ahV10")
 public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
-    public static final String NAMESPACE = "urn:swift:xsd:$ahV10";
-    static final Class[] _classes;
-    private static final Logger log = Logger.getLogger(LegacyAppHdr.class.getName());
+    public static final transient String NAMESPACE = "urn:swift:xsd:$ahV10";
+    static final transient Class[] _classes;
+    private static final transient Logger log = Logger.getLogger(LegacyAppHdr.class.getName());
 
     static {
         _classes = Arrays.copyOf(ApplicationHeaderImpl._classes, ApplicationHeaderImpl._classes.length + 1);

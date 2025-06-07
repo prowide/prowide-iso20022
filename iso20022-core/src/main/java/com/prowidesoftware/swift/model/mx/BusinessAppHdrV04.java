@@ -47,9 +47,9 @@ import org.w3c.dom.Element;
 @XmlType(name = "AppHdr")
 @XmlRootElement(name = "AppHdr", namespace = "urn:iso:std:iso:20022:tech:xsd:head.001.001.04")
 public class BusinessAppHdrV04 extends BusinessApplicationHeaderV04Impl implements AppHdr {
-    public static final String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:head.001.001.04";
-    static final Class[] _classes;
-    private static final Logger log = Logger.getLogger(BusinessAppHdrV04.class.getName());
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:head.001.001.04";
+    static final transient Class[] _classes;
+    private static final transient Logger log = Logger.getLogger(BusinessAppHdrV04.class.getName());
 
     static {
         _classes = Arrays.copyOf(
