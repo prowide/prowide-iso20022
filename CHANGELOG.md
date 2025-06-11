@@ -1,6 +1,6 @@
 # Prowide ISO 20022 - CHANGELOG
 
-#### 9.6.0 - SNAPSHOT
+#### 9.6.0 - June 2025
   * SWIFT Standard release update 2025 (live 22 November 2025)
   * Yearly revision of deprecation phase (see https://dev.prowidesoftware.com/SRU2024/getting-started/deprecation/)
 
