@@ -23,8 +23,8 @@ archivesBaseName = 'pw-iso20022'
 group 'com.prowidesoftware'
 
 project.ext {
-	SRU = 'SRU2024'
-    prowideCoreVersion = 'SRU2024-9.5.6'
+	SRU = 'SRU2025'
+    prowideCoreVersion = 'SRU2025-9.6.0'
 }
 
 scmVersion {
@@ -72,7 +72,11 @@ allprojects {
 		}
 	}
 
-	sourceSets.main.java.srcDirs = ['src/main/java', 'src/generated/java']
+	sourceSets.named('main') {
+		java {
+			setSrcDirs(['src/main/java', 'src/generated/java'])
+		}
+	}
 
 	tasks.withType(Jar) {
 		manifest.attributes(
@@ -201,7 +205,11 @@ jar {
 	archivesBaseName = 'pw-iso20022'
 	subprojects.each { subproject ->
 		from subproject.configurations.archives.allArtifacts.files.collect {
-			zipTree(it)
+			// filter out any artifacts that are not jars
+			if (it.name.endsWith('.jar')) {
+				println "Adding ${it.name} to fat jar"
+				zipTree(it)
+			}
 		}
 	}
 	duplicatesStrategy = DuplicatesStrategy.EXCLUDE

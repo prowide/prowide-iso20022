@@ -6,4 +6,11 @@
       <module name="prowide-core.test" target="8" />
     </bytecodeTargetLevel>
   </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="prowide-iso20022" options="-Xlint:deprecation -Xlint:unchecked" />
+      <module name="prowide-iso20022.main" options="-Xlint:deprecation -Xlint:unchecked" />
+      <module name="prowide-iso20022.test" options="-Xlint:deprecation -Xlint:unchecked" />
+    </option>
+  </component>
 </project>
