@@ -1,5 +1,8 @@
 # Prowide ISO 20022 - CHANGELOG
 
+### 10.2.8 - SNAPSHOT
+  * Feat: Enhanced the `MxParseUtils` to be lenient when the XML declaration has empty or invalid version attribute
+
 #### 10.2.7 - April 2025
   * Enhanced the MX parser log verbosity when parsing malformed content
   * Added new logic to MxNode to removing all leaves with empty attributes and empty content

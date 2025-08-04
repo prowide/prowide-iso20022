@@ -247,7 +247,21 @@ public class MxParseUtils {
      * @since 9.3.9
      */
     public static String makeXmlLenient(String xml) {
-        return xml != null ? xml.replaceFirst("(?i)<\\?XML", "<?xml") : null;
+        if (xml == null) return null;
+        Pattern declPattern = Pattern.compile("(?i)<\\?xml([^>]*)\\?>");
+        Matcher declMatcher = declPattern.matcher(xml);
+        if (declMatcher.find()) {
+            String attrs = declMatcher.group(1);
+            // Replace invalid or empty version values with 1.0
+            attrs = attrs.replaceAll("(?i)(version\\s*=\\s*['\"])(?!1\\.0['\"]|1\\.1['\"])[^'\"]*(['\"])", "$11.0$2");
+            // If version is missing or empty, add version="1.0"
+            if (!attrs.matches(".*(?i)version\\s*=\\s*['\"][^'\"]*['\"].*")) {
+                attrs = " version=\"1.0\"" + attrs;
+            }
+            String fixed = "<?xml" + attrs + "?>";
+            return declMatcher.replaceFirst(Matcher.quoteReplacement(fixed));
+        }
+        return xml;
     }
 
     /**
