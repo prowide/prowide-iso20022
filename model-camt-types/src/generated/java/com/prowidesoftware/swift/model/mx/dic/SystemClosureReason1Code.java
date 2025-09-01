@@ -1,25 +1,26 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for SystemClosureReason1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="SystemClosureReason1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="BHOL"/>
- *     <enumeration value="SMTN"/>
- *     <enumeration value="NOOP"/>
- *     <enumeration value="RCVR"/>
- *     <enumeration value="ADTW"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="SystemClosureReason1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="BHOL"/&gt;
+ *     &lt;enumeration value="SMTN"/&gt;
+ *     &lt;enumeration value="NOOP"/&gt;
+ *     &lt;enumeration value="RCVR"/&gt;
+ *     &lt;enumeration value="ADTW"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "SystemClosureReason1Code")

@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -68,8 +68,8 @@ public class DTCCCASTSD1V01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the ttlInstdBalOptnBalDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the ttlInstdBalOptnBalDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -83,12 +83,10 @@ public class DTCCCASTSD1V01 {
      * {@link CorporateActionInstructedBalanceOptionBalanceDetailsSD1 }
      * 
      * 
-     * @return
-     *     The value of the ttlInstdBalOptnBalDtls property.
      */
     public List<CorporateActionInstructedBalanceOptionBalanceDetailsSD1> getTtlInstdBalOptnBalDtls() {
         if (ttlInstdBalOptnBalDtls == null) {
-            ttlInstdBalOptnBalDtls = new ArrayList<>();
+            ttlInstdBalOptnBalDtls = new ArrayList<CorporateActionInstructedBalanceOptionBalanceDetailsSD1>();
         }
         return this.ttlInstdBalOptnBalDtls;
     }
@@ -99,8 +97,8 @@ public class DTCCCASTSD1V01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the ttlInstdBalOptnInstrDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the ttlInstdBalOptnInstrDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -114,12 +112,10 @@ public class DTCCCASTSD1V01 {
      * {@link CorporateActionInstructedBalanceOptionInstructionDetailsSD1 }
      * 
      * 
-     * @return
-     *     The value of the ttlInstdBalOptnInstrDtls property.
      */
     public List<CorporateActionInstructedBalanceOptionInstructionDetailsSD1> getTtlInstdBalOptnInstrDtls() {
         if (ttlInstdBalOptnInstrDtls == null) {
-            ttlInstdBalOptnInstrDtls = new ArrayList<>();
+            ttlInstdBalOptnInstrDtls = new ArrayList<CorporateActionInstructedBalanceOptionInstructionDetailsSD1>();
         }
         return this.ttlInstdBalOptnInstrDtls;
     }
@@ -130,8 +126,8 @@ public class DTCCCASTSD1V01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the ttlInstdBalOptnPrtctInstrDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the ttlInstdBalOptnPrtctInstrDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -145,12 +141,10 @@ public class DTCCCASTSD1V01 {
      * {@link CorporateActionInstructedBalanceOptionProtectInstructionDetailsSD1 }
      * 
      * 
-     * @return
-     *     The value of the ttlInstdBalOptnPrtctInstrDtls property.
      */
     public List<CorporateActionInstructedBalanceOptionProtectInstructionDetailsSD1> getTtlInstdBalOptnPrtctInstrDtls() {
         if (ttlInstdBalOptnPrtctInstrDtls == null) {
-            ttlInstdBalOptnPrtctInstrDtls = new ArrayList<>();
+            ttlInstdBalOptnPrtctInstrDtls = new ArrayList<CorporateActionInstructedBalanceOptionProtectInstructionDetailsSD1>();
         }
         return this.ttlInstdBalOptnPrtctInstrDtls;
     }

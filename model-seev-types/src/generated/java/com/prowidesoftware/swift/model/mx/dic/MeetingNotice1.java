@@ -2,18 +2,17 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -64,7 +63,7 @@ public class MeetingNotice1 {
     @XmlElement(name = "AnncmntDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate anncmntDt;
+    protected XMLGregorianCalendar anncmntDt;
     @XmlElement(name = "AttndncReqrd")
     protected Boolean attndncReqrd;
     @XmlElement(name = "AttndncConfInf")
@@ -72,25 +71,25 @@ public class MeetingNotice1 {
     @XmlElement(name = "AttndncConfDdln", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime attndncConfDdln;
+    protected XMLGregorianCalendar attndncConfDdln;
     @XmlElement(name = "AttndncConfElctrncDdln", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime attndncConfElctrncDdln;
+    protected XMLGregorianCalendar attndncConfElctrncDdln;
     @XmlElement(name = "AttndncConfMktDdln", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime attndncConfMktDdln;
+    protected XMLGregorianCalendar attndncConfMktDdln;
     @XmlElement(name = "AddtlDcmnttnURLAdr")
     protected String addtlDcmnttnURLAdr;
     @XmlElement(name = "RsltnPrpslDdln", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate rsltnPrpslDdln;
+    protected XMLGregorianCalendar rsltnPrpslDdln;
     @XmlElement(name = "RsltnPrpslMktDdln", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate rsltnPrpslMktDdln;
+    protected XMLGregorianCalendar rsltnPrpslMktDdln;
     @XmlElement(name = "PrxyAppntmntNtfctnAdr")
     protected PostalAddress1 prxyAppntmntNtfctnAdr;
     @XmlElement(name = "TtlNbOfSctiesOutsdng")
@@ -102,7 +101,7 @@ public class MeetingNotice1 {
     @XmlElement(name = "RsltPblctnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate rsltPblctnDt;
+    protected XMLGregorianCalendar rsltPblctnDt;
     @XmlElement(name = "InittdByHldr")
     protected NameAndAddress5 inittdByHldr;
     @XmlElement(name = "InittdByCrt")
@@ -200,7 +199,7 @@ public class MeetingNotice1 {
      *     {@link String }
      *     
      */
-    public LocalDate getAnncmntDt() {
+    public XMLGregorianCalendar getAnncmntDt() {
         return anncmntDt;
     }
 
@@ -212,7 +211,7 @@ public class MeetingNotice1 {
      *     {@link String }
      *     
      */
-    public MeetingNotice1 setAnncmntDt(LocalDate value) {
+    public MeetingNotice1 setAnncmntDt(XMLGregorianCalendar value) {
         this.anncmntDt = value;
         return this;
     }
@@ -275,7 +274,7 @@ public class MeetingNotice1 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getAttndncConfDdln() {
+    public XMLGregorianCalendar getAttndncConfDdln() {
         return attndncConfDdln;
     }
 
@@ -287,7 +286,7 @@ public class MeetingNotice1 {
      *     {@link String }
      *     
      */
-    public MeetingNotice1 setAttndncConfDdln(OffsetDateTime value) {
+    public MeetingNotice1 setAttndncConfDdln(XMLGregorianCalendar value) {
         this.attndncConfDdln = value;
         return this;
     }
@@ -300,7 +299,7 @@ public class MeetingNotice1 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getAttndncConfElctrncDdln() {
+    public XMLGregorianCalendar getAttndncConfElctrncDdln() {
         return attndncConfElctrncDdln;
     }
 
@@ -312,7 +311,7 @@ public class MeetingNotice1 {
      *     {@link String }
      *     
      */
-    public MeetingNotice1 setAttndncConfElctrncDdln(OffsetDateTime value) {
+    public MeetingNotice1 setAttndncConfElctrncDdln(XMLGregorianCalendar value) {
         this.attndncConfElctrncDdln = value;
         return this;
     }
@@ -325,7 +324,7 @@ public class MeetingNotice1 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getAttndncConfMktDdln() {
+    public XMLGregorianCalendar getAttndncConfMktDdln() {
         return attndncConfMktDdln;
     }
 
@@ -337,7 +336,7 @@ public class MeetingNotice1 {
      *     {@link String }
      *     
      */
-    public MeetingNotice1 setAttndncConfMktDdln(OffsetDateTime value) {
+    public MeetingNotice1 setAttndncConfMktDdln(XMLGregorianCalendar value) {
         this.attndncConfMktDdln = value;
         return this;
     }
@@ -375,7 +374,7 @@ public class MeetingNotice1 {
      *     {@link String }
      *     
      */
-    public LocalDate getRsltnPrpslDdln() {
+    public XMLGregorianCalendar getRsltnPrpslDdln() {
         return rsltnPrpslDdln;
     }
 
@@ -387,7 +386,7 @@ public class MeetingNotice1 {
      *     {@link String }
      *     
      */
-    public MeetingNotice1 setRsltnPrpslDdln(LocalDate value) {
+    public MeetingNotice1 setRsltnPrpslDdln(XMLGregorianCalendar value) {
         this.rsltnPrpslDdln = value;
         return this;
     }
@@ -400,7 +399,7 @@ public class MeetingNotice1 {
      *     {@link String }
      *     
      */
-    public LocalDate getRsltnPrpslMktDdln() {
+    public XMLGregorianCalendar getRsltnPrpslMktDdln() {
         return rsltnPrpslMktDdln;
     }
 
@@ -412,7 +411,7 @@ public class MeetingNotice1 {
      *     {@link String }
      *     
      */
-    public MeetingNotice1 setRsltnPrpslMktDdln(LocalDate value) {
+    public MeetingNotice1 setRsltnPrpslMktDdln(XMLGregorianCalendar value) {
         this.rsltnPrpslMktDdln = value;
         return this;
     }
@@ -498,8 +497,8 @@ public class MeetingNotice1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the ctctPrsnDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the ctctPrsnDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -513,12 +512,10 @@ public class MeetingNotice1 {
      * {@link MeetingContactPerson }
      * 
      * 
-     * @return
-     *     The value of the ctctPrsnDtls property.
      */
     public List<MeetingContactPerson> getCtctPrsnDtls() {
         if (ctctPrsnDtls == null) {
-            ctctPrsnDtls = new ArrayList<>();
+            ctctPrsnDtls = new ArrayList<MeetingContactPerson>();
         }
         return this.ctctPrsnDtls;
     }
@@ -531,7 +528,7 @@ public class MeetingNotice1 {
      *     {@link String }
      *     
      */
-    public LocalDate getRsltPblctnDt() {
+    public XMLGregorianCalendar getRsltPblctnDt() {
         return rsltPblctnDt;
     }
 
@@ -543,7 +540,7 @@ public class MeetingNotice1 {
      *     {@link String }
      *     
      */
-    public MeetingNotice1 setRsltPblctnDt(LocalDate value) {
+    public MeetingNotice1 setRsltPblctnDt(XMLGregorianCalendar value) {
         this.rsltPblctnDt = value;
         return this;
     }

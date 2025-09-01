@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxSemt02400101
 
     @XmlElement(name = "TtlPrtflValtnRpt", required = true)
     protected TotalPortfolioValuationReportV01 ttlPrtflValtnRpt;
-    public static final transient String BUSINESS_PROCESS = "semt";
-    public static final transient int FUNCTIONALITY = 24;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 1;
+    public final static transient String BUSINESS_PROCESS = "semt";
+    public final static transient int FUNCTIONALITY = 24;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {AccountIdentification5 .class, ActiveOrHistoricCurrencyAnd13DecimalAmount.class, ActiveOrHistoricCurrencyAndAmount.class, AmountAndDirection30 .class, AmountAndDirection31 .class, AmountAndRate2 .class, BalanceDetails5 .class, BalanceDetails6 .class, BalanceType13Code.class, BalanceType6Choice.class, BalanceType7Choice.class, DateAndDateTimeChoice.class, DatePeriodDetails.class, EventFrequency1Code.class, FinancialAssetBalanceType1Code.class, FinancialAssetTypeCategory1Code.class, Frequency8Choice.class, GenericIdentification29 .class, GenericIdentification30 .class, IdentificationSource3Choice.class, InvestmentFund1 .class, MxSemt02400101 .class, OtherIdentification1 .class, Pagination.class, PortfolioBalance1 .class, PriceAndDirection1 .class, PriceInformation10 .class, PriceValueAndRate4 .class, Report4 .class, SecuritiesAccount21 .class, SecurityIdentification14 .class, ShortLong1Code.class, StatementBasis1Code.class, StatementBasis6Choice.class, StatementSource1Choice.class, StatementSource1Code.class, StatementUpdateType1Code.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TotalPortfolioValuation1 .class, TotalPortfolioValuationReportV01 .class, TypeOfPrice27Choice.class, TypeOfPrice30Code.class, Unrealised1Code.class, UpdateType4Choice.class };
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:semt.024.001.01";
+    public final static transient Class[] _classes = new Class[] {AccountIdentification5 .class, ActiveOrHistoricCurrencyAnd13DecimalAmount.class, ActiveOrHistoricCurrencyAndAmount.class, AmountAndDirection30 .class, AmountAndDirection31 .class, AmountAndRate2 .class, BalanceDetails5 .class, BalanceDetails6 .class, BalanceType13Code.class, BalanceType6Choice.class, BalanceType7Choice.class, DateAndDateTimeChoice.class, DatePeriodDetails.class, EventFrequency1Code.class, FinancialAssetBalanceType1Code.class, FinancialAssetTypeCategory1Code.class, Frequency8Choice.class, GenericIdentification29 .class, GenericIdentification30 .class, IdentificationSource3Choice.class, InvestmentFund1 .class, MxSemt02400101 .class, OtherIdentification1 .class, Pagination.class, PortfolioBalance1 .class, PriceAndDirection1 .class, PriceInformation10 .class, PriceValueAndRate4 .class, Report4 .class, SecuritiesAccount21 .class, SecurityIdentification14 .class, ShortLong1Code.class, StatementBasis1Code.class, StatementBasis6Choice.class, StatementSource1Choice.class, StatementSource1Code.class, StatementUpdateType1Code.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TotalPortfolioValuation1 .class, TotalPortfolioValuationReportV01 .class, TypeOfPrice27Choice.class, TypeOfPrice30Code.class, Unrealised1Code.class, UpdateType4Choice.class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:semt.024.001.01";
 
     public MxSemt02400101() {
         super();
@@ -86,6 +86,21 @@ public class MxSemt02400101
     public MxSemt02400101 setTtlPrtflValtnRpt(TotalPortfolioValuationReportV01 value) {
         this.ttlPrtflValtnRpt = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxSemt02400101
      * @return
      *     a new instance of MxSemt02400101
      */
-    public static final MxSemt02400101 fromJson(String json) {
+    public final static MxSemt02400101 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSemt02400101 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

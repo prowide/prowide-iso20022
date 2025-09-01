@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxCaaa01000103
 
     @XmlElement(name = "AccptrRcncltnRspn", required = true)
     protected AcceptorReconciliationResponseV03 accptrRcncltnRspn;
-    public static final transient String BUSINESS_PROCESS = "caaa";
-    public static final transient int FUNCTIONALITY = 10;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 3;
+    public final static transient String BUSINESS_PROCESS = "caaa";
+    public final static transient int FUNCTIONALITY = 10;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 3;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {AcceptorReconciliationResponse2 .class, AcceptorReconciliationResponseV03 .class, Algorithm10Code.class, Algorithm5Code.class, Algorithm7Code.class, Algorithm8Code.class, Algorithm9Code.class, AlgorithmIdentification10 .class, AlgorithmIdentification7 .class, AlgorithmIdentification8 .class, AlgorithmIdentification9 .class, AttributeType1Code.class, AuthenticatedData3 .class, CardPaymentEnvironment19 .class, CertificateIdentifier1 .class, CertificateIssuer1 .class, ContentInformationType8 .class, ContentType1Code.class, EncapsulatedContent2 .class, GenericIdentification31 .class, GenericIdentification32 .class, Header7 .class, IssuerAndSerialNumber1 .class, KEK3 .class, KEKIdentifier1 .class, KeyTransport3 .class, MessageFunction4Code.class, MxCaaa01000103 .class, Parameter1 .class, Parameter2 .class, Parameter3 .class, PartyType3Code.class, PartyType4Code.class, Recipient3Choice.class, RelativeDistinguishedName1 .class, Response1Code.class, ResponseType1 .class, Traceability1 .class, TransactionIdentifier1 .class, TransactionReconciliation2 .class, TransactionTotals2 .class, TypeTransactionTotals2Code.class };
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:caaa.010.001.03";
+    public final static transient Class[] _classes = new Class[] {AcceptorReconciliationResponse2 .class, AcceptorReconciliationResponseV03 .class, Algorithm10Code.class, Algorithm5Code.class, Algorithm7Code.class, Algorithm8Code.class, Algorithm9Code.class, AlgorithmIdentification10 .class, AlgorithmIdentification7 .class, AlgorithmIdentification8 .class, AlgorithmIdentification9 .class, AttributeType1Code.class, AuthenticatedData3 .class, CardPaymentEnvironment19 .class, CertificateIdentifier1 .class, CertificateIssuer1 .class, ContentInformationType8 .class, ContentType1Code.class, EncapsulatedContent2 .class, GenericIdentification31 .class, GenericIdentification32 .class, Header7 .class, IssuerAndSerialNumber1 .class, KEK3 .class, KEKIdentifier1 .class, KeyTransport3 .class, MessageFunction4Code.class, MxCaaa01000103 .class, Parameter1 .class, Parameter2 .class, Parameter3 .class, PartyType3Code.class, PartyType4Code.class, Recipient3Choice.class, RelativeDistinguishedName1 .class, Response1Code.class, ResponseType1 .class, Traceability1 .class, TransactionIdentifier1 .class, TransactionReconciliation2 .class, TransactionTotals2 .class, TypeTransactionTotals2Code.class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:caaa.010.001.03";
 
     public MxCaaa01000103() {
         super();
@@ -86,6 +86,21 @@ public class MxCaaa01000103
     public MxCaaa01000103 setAccptrRcncltnRspn(AcceptorReconciliationResponseV03 value) {
         this.accptrRcncltnRspn = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxCaaa01000103
      * @return
      *     a new instance of MxCaaa01000103
      */
-    public static final MxCaaa01000103 fromJson(String json) {
+    public final static MxCaaa01000103 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxCaaa01000103 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

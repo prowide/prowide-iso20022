@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxSeev04000110
 
     @XmlElement(name = "CorpActnInstrCxlReq", required = true)
     protected CorporateActionInstructionCancellationRequestV10 corpActnInstrCxlReq;
-    public static final transient String BUSINESS_PROCESS = "seev";
-    public static final transient int FUNCTIONALITY = 40;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 10;
+    public final static transient String BUSINESS_PROCESS = "seev";
+    public final static transient int FUNCTIONALITY = 40;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 10;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {AccountIdentification46 .class, CorporateActionEventType102Choice.class, CorporateActionEventType34Code.class, CorporateActionGeneralInformation155 .class, CorporateActionInstructionCancellationRequestV10 .class, CorporateActionOption16Code.class, CorporateActionOption181 .class, CorporateActionOption40Choice.class, DocumentIdentification31 .class, FinancialInstrumentQuantity1Choice.class, GenericIdentification30 .class, GenericIdentification36 .class, GenericIdentification78 .class, IdentificationSource3Choice.class, MxSeev04000110 .class, OptionNumber1Choice.class, OptionNumber1Code.class, OriginalAndCurrentQuantities1 .class, OtherIdentification1 .class, PartyIdentification127Choice.class, ProcessingPosition3Code.class, ProcessingPosition7Choice.class, ProtectInstruction3 .class, ProtectTransactionType3Code.class, Quantity1Code.class, Quantity20Choice.class, SafekeepingPlace1Code.class, SafekeepingPlace2Code.class, SafekeepingPlaceFormat28Choice.class, SafekeepingPlaceTypeAndIdentification1 .class, SafekeepingPlaceTypeAndText6 .class, SecurityIdentification19 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class };
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:seev.040.001.10";
+    public final static transient Class[] _classes = new Class[] {AccountIdentification46 .class, CorporateActionEventType102Choice.class, CorporateActionEventType34Code.class, CorporateActionGeneralInformation155 .class, CorporateActionInstructionCancellationRequestV10 .class, CorporateActionOption16Code.class, CorporateActionOption181 .class, CorporateActionOption40Choice.class, DocumentIdentification31 .class, FinancialInstrumentQuantity1Choice.class, GenericIdentification30 .class, GenericIdentification36 .class, GenericIdentification78 .class, IdentificationSource3Choice.class, MxSeev04000110 .class, OptionNumber1Choice.class, OptionNumber1Code.class, OriginalAndCurrentQuantities1 .class, OtherIdentification1 .class, PartyIdentification127Choice.class, ProcessingPosition3Code.class, ProcessingPosition7Choice.class, ProtectInstruction3 .class, ProtectTransactionType3Code.class, Quantity1Code.class, Quantity20Choice.class, SafekeepingPlace1Code.class, SafekeepingPlace2Code.class, SafekeepingPlaceFormat28Choice.class, SafekeepingPlaceTypeAndIdentification1 .class, SafekeepingPlaceTypeAndText6 .class, SecurityIdentification19 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:seev.040.001.10";
 
     public MxSeev04000110() {
         super();
@@ -86,6 +86,21 @@ public class MxSeev04000110
     public MxSeev04000110 setCorpActnInstrCxlReq(CorporateActionInstructionCancellationRequestV10 value) {
         this.corpActnInstrCxlReq = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxSeev04000110
      * @return
      *     a new instance of MxSeev04000110
      */
-    public static final MxSeev04000110 fromJson(String json) {
+    public final static MxSeev04000110 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSeev04000110 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

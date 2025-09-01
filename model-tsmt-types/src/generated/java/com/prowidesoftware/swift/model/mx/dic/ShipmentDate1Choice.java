@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -31,11 +31,11 @@ public class ShipmentDate1Choice {
     @XmlElement(name = "PropsdShipmntDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate propsdShipmntDt;
+    protected XMLGregorianCalendar propsdShipmntDt;
     @XmlElement(name = "ActlShipmntDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate actlShipmntDt;
+    protected XMLGregorianCalendar actlShipmntDt;
 
     /**
      * Gets the value of the propsdShipmntDt property.
@@ -45,7 +45,7 @@ public class ShipmentDate1Choice {
      *     {@link String }
      *     
      */
-    public LocalDate getPropsdShipmntDt() {
+    public XMLGregorianCalendar getPropsdShipmntDt() {
         return propsdShipmntDt;
     }
 
@@ -57,7 +57,7 @@ public class ShipmentDate1Choice {
      *     {@link String }
      *     
      */
-    public ShipmentDate1Choice setPropsdShipmntDt(LocalDate value) {
+    public ShipmentDate1Choice setPropsdShipmntDt(XMLGregorianCalendar value) {
         this.propsdShipmntDt = value;
         return this;
     }
@@ -70,7 +70,7 @@ public class ShipmentDate1Choice {
      *     {@link String }
      *     
      */
-    public LocalDate getActlShipmntDt() {
+    public XMLGregorianCalendar getActlShipmntDt() {
         return actlShipmntDt;
     }
 
@@ -82,7 +82,7 @@ public class ShipmentDate1Choice {
      *     {@link String }
      *     
      */
-    public ShipmentDate1Choice setActlShipmntDt(LocalDate value) {
+    public ShipmentDate1Choice setActlShipmntDt(XMLGregorianCalendar value) {
         this.actlShipmntDt = value;
         return this;
     }

@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -139,8 +139,8 @@ public class Transaction10 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the tradId property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the tradId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -154,12 +154,10 @@ public class Transaction10 {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the tradId property.
      */
     public List<String> getTradId() {
         if (tradId == null) {
-            tradId = new ArrayList<>();
+            tradId = new ArrayList<String>();
         }
         return this.tradId;
     }
@@ -320,8 +318,8 @@ public class Transaction10 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the stsAndRsn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the stsAndRsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -335,12 +333,10 @@ public class Transaction10 {
      * {@link StatusAndReason5 }
      * 
      * 
-     * @return
-     *     The value of the stsAndRsn property.
      */
     public List<StatusAndReason5> getStsAndRsn() {
         if (stsAndRsn == null) {
-            stsAndRsn = new ArrayList<>();
+            stsAndRsn = new ArrayList<StatusAndReason5>();
         }
         return this.stsAndRsn;
     }

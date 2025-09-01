@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxColr00500106
 
     @XmlElement(name = "CollMgmtCxlReq", required = true)
     protected CollateralManagementCancellationRequestV06 collMgmtCxlReq;
-    public static final transient String BUSINESS_PROCESS = "colr";
-    public static final transient int FUNCTIONALITY = 5;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 6;
+    public final static transient String BUSINESS_PROCESS = "colr";
+    public final static transient int FUNCTIONALITY = 5;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 6;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {ActiveOrHistoricCurrencyAndAmount.class, BlockChainAddressWallet5 .class, ClosingDate4Choice.class, CollateralAccount3 .class, CollateralAccountIdentificationType3Choice.class, CollateralAccountType1Code.class, CollateralCancellationReason1 .class, CollateralCancellationType1Choice.class, CollateralManagementCancellationReason1Code.class, CollateralManagementCancellationRequestV06 .class, CollateralRole1Code.class, CollateralTransactionType1Choice.class, CollateralTransactionType1Code.class, Date3Choice.class, DateAndDateTime2Choice.class, DateType2Code.class, ExposureType11Code.class, ExposureType21Choice.class, GenericIdentification30 .class, GenericIdentification36 .class, MxColr00500106 .class, NameAndAddress6 .class, Obligation8 .class, PartyIdentification178Choice.class, PostalAddress2 .class, Reference3Choice.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class };
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:colr.005.001.06";
+    public final static transient Class[] _classes = new Class[] {ActiveOrHistoricCurrencyAndAmount.class, BlockChainAddressWallet5 .class, ClosingDate4Choice.class, CollateralAccount3 .class, CollateralAccountIdentificationType3Choice.class, CollateralAccountType1Code.class, CollateralCancellationReason1 .class, CollateralCancellationType1Choice.class, CollateralManagementCancellationReason1Code.class, CollateralManagementCancellationRequestV06 .class, CollateralRole1Code.class, CollateralTransactionType1Choice.class, CollateralTransactionType1Code.class, Date3Choice.class, DateAndDateTime2Choice.class, DateType2Code.class, ExposureType11Code.class, ExposureType21Choice.class, GenericIdentification30 .class, GenericIdentification36 .class, MxColr00500106 .class, NameAndAddress6 .class, Obligation8 .class, PartyIdentification178Choice.class, PostalAddress2 .class, Reference3Choice.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:colr.005.001.06";
 
     public MxColr00500106() {
         super();
@@ -86,6 +86,21 @@ public class MxColr00500106
     public MxColr00500106 setCollMgmtCxlReq(CollateralManagementCancellationRequestV06 value) {
         this.collMgmtCxlReq = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxColr00500106
      * @return
      *     a new instance of MxColr00500106
      */
-    public static final MxColr00500106 fromJson(String json) {
+    public final static MxColr00500106 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxColr00500106 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

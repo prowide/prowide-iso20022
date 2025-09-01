@@ -2,18 +2,16 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.time.OffsetDateTime;
-import java.time.YearMonth;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import com.prowidesoftware.swift.model.mx.adapters.IsoYearMonthAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -88,7 +86,7 @@ public class FinancialInstrumentAttributes1 {
     @XmlElement(name = "IsseDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime isseDt;
+    protected XMLGregorianCalendar isseDt;
     @XmlElement(name = "LglRstrctns")
     @XmlSchemaType(name = "string")
     protected LegalRestrictions1Code lglRstrctns;
@@ -113,16 +111,15 @@ public class FinancialInstrumentAttributes1 {
     @XmlElement(name = "ListgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime listgDt;
+    protected XMLGregorianCalendar listgDt;
     @XmlElement(name = "NTPosLmt")
     protected FinancialInstrumentQuantityChoice ntPosLmt;
     @XmlElement(name = "PdctTp")
     @XmlSchemaType(name = "string")
     protected ProductType1Code pdctTp;
-    @XmlElement(name = "CtrctSttlmMnth", type = String.class)
-    @XmlJavaTypeAdapter(IsoYearMonthAdapter.class)
+    @XmlElement(name = "CtrctSttlmMnth")
     @XmlSchemaType(name = "gYearMonth")
-    protected YearMonth ctrctSttlmMnth;
+    protected XMLGregorianCalendar ctrctSttlmMnth;
     @XmlElement(name = "MinTradgPricgIncrmt")
     protected BigDecimal minTradgPricgIncrmt;
     @XmlElement(name = "Purp")
@@ -382,7 +379,7 @@ public class FinancialInstrumentAttributes1 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getIsseDt() {
+    public XMLGregorianCalendar getIsseDt() {
         return isseDt;
     }
 
@@ -394,7 +391,7 @@ public class FinancialInstrumentAttributes1 {
      *     {@link String }
      *     
      */
-    public FinancialInstrumentAttributes1 setIsseDt(OffsetDateTime value) {
+    public FinancialInstrumentAttributes1 setIsseDt(XMLGregorianCalendar value) {
         this.isseDt = value;
         return this;
     }
@@ -657,7 +654,7 @@ public class FinancialInstrumentAttributes1 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getListgDt() {
+    public XMLGregorianCalendar getListgDt() {
         return listgDt;
     }
 
@@ -669,7 +666,7 @@ public class FinancialInstrumentAttributes1 {
      *     {@link String }
      *     
      */
-    public FinancialInstrumentAttributes1 setListgDt(OffsetDateTime value) {
+    public FinancialInstrumentAttributes1 setListgDt(XMLGregorianCalendar value) {
         this.listgDt = value;
         return this;
     }
@@ -729,10 +726,10 @@ public class FinancialInstrumentAttributes1 {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public YearMonth getCtrctSttlmMnth() {
+    public XMLGregorianCalendar getCtrctSttlmMnth() {
         return ctrctSttlmMnth;
     }
 
@@ -741,10 +738,10 @@ public class FinancialInstrumentAttributes1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public FinancialInstrumentAttributes1 setCtrctSttlmMnth(YearMonth value) {
+    public FinancialInstrumentAttributes1 setCtrctSttlmMnth(XMLGregorianCalendar value) {
         this.ctrctSttlmMnth = value;
         return this;
     }
@@ -855,8 +852,8 @@ public class FinancialInstrumentAttributes1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the scndryPlcOfListg property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the scndryPlcOfListg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -870,12 +867,10 @@ public class FinancialInstrumentAttributes1 {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the scndryPlcOfListg property.
      */
     public List<String> getScndryPlcOfListg() {
         if (scndryPlcOfListg == null) {
-            scndryPlcOfListg = new ArrayList<>();
+            scndryPlcOfListg = new ArrayList<String>();
         }
         return this.scndryPlcOfListg;
     }
@@ -986,8 +981,8 @@ public class FinancialInstrumentAttributes1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the evtGrpDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the evtGrpDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -1001,12 +996,10 @@ public class FinancialInstrumentAttributes1 {
      * {@link EventGroup1 }
      * 
      * 
-     * @return
-     *     The value of the evtGrpDtls property.
      */
     public List<EventGroup1> getEvtGrpDtls() {
         if (evtGrpDtls == null) {
-            evtGrpDtls = new ArrayList<>();
+            evtGrpDtls = new ArrayList<EventGroup1>();
         }
         return this.evtGrpDtls;
     }

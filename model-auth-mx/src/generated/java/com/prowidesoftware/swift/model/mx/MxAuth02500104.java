@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxAuth02500104
 
     @XmlElement(name = "CcyCtrlSpprtgDocDlvry", required = true)
     protected CurrencyControlSupportingDocumentDeliveryV04 ccyCtrlSpprtgDocDlvry;
-    public static final transient String BUSINESS_PROCESS = "auth";
-    public static final transient int FUNCTIONALITY = 25;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 4;
+    public final static transient String BUSINESS_PROCESS = "auth";
+    public final static transient int FUNCTIONALITY = 25;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 4;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {ActiveCurrencyAndAmount.class, AddressType2Code.class, AddressType3Choice.class, BinaryFile1 .class, BranchAndFinancialInstitutionIdentification8 .class, BranchData5 .class, ClearingSystemIdentification2Choice.class, ClearingSystemMemberIdentification2 .class, Contact13 .class, ContractRegistrationReference2Choice.class, CurrencyControlHeader9 .class, CurrencyControlSupportingDocumentDeliveryV04 .class, DateAndPlaceOfBirth1 .class, DocumentAmendment1 .class, DocumentEntryAmendment1 .class, DocumentGeneralInformation5 .class, DocumentIdentification22 .class, DocumentIdentification28 .class, DocumentIdentification35 .class, FinancialIdentificationSchemeName1Choice.class, FinancialInstitutionIdentification23 .class, GenericFinancialIdentification1 .class, GenericIdentification30 .class, GenericOrganisationIdentification3 .class, GenericPersonIdentification2 .class, MxAuth02500104 .class, NamePrefix2Code.class, OrganisationIdentification39 .class, OrganisationIdentificationSchemeName1Choice.class, OtherContact1 .class, Party50Choice.class, Party52Choice.class, PartyIdentification272 .class, PersonIdentification18 .class, PersonIdentificationSchemeName1Choice.class, PostalAddress27 .class, PreferredContactMethod2Code.class, ShipmentAttribute2 .class, ShipmentCondition1Choice.class, SignatureEnvelopeReference.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, SupportingDocument4 .class, SupportingDocumentEntry2 .class };
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:auth.025.001.04";
+    public final static transient Class[] _classes = new Class[] {ActiveCurrencyAndAmount.class, AddressType2Code.class, AddressType3Choice.class, BinaryFile1 .class, BranchAndFinancialInstitutionIdentification8 .class, BranchData5 .class, ClearingSystemIdentification2Choice.class, ClearingSystemMemberIdentification2 .class, Contact13 .class, ContractRegistrationReference2Choice.class, CurrencyControlHeader9 .class, CurrencyControlSupportingDocumentDeliveryV04 .class, DateAndPlaceOfBirth1 .class, DocumentAmendment1 .class, DocumentEntryAmendment1 .class, DocumentGeneralInformation5 .class, DocumentIdentification22 .class, DocumentIdentification28 .class, DocumentIdentification35 .class, FinancialIdentificationSchemeName1Choice.class, FinancialInstitutionIdentification23 .class, GenericFinancialIdentification1 .class, GenericIdentification30 .class, GenericOrganisationIdentification3 .class, GenericPersonIdentification2 .class, MxAuth02500104 .class, NamePrefix2Code.class, OrganisationIdentification39 .class, OrganisationIdentificationSchemeName1Choice.class, OtherContact1 .class, Party50Choice.class, Party52Choice.class, PartyIdentification272 .class, PersonIdentification18 .class, PersonIdentificationSchemeName1Choice.class, PostalAddress27 .class, PreferredContactMethod2Code.class, ShipmentAttribute2 .class, ShipmentCondition1Choice.class, SignatureEnvelopeReference.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, SupportingDocument4 .class, SupportingDocumentEntry2 .class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:auth.025.001.04";
 
     public MxAuth02500104() {
         super();
@@ -86,6 +86,21 @@ public class MxAuth02500104
     public MxAuth02500104 setCcyCtrlSpprtgDocDlvry(CurrencyControlSupportingDocumentDeliveryV04 value) {
         this.ccyCtrlSpprtgDocDlvry = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxAuth02500104
      * @return
      *     a new instance of MxAuth02500104
      */
-    public static final MxAuth02500104 fromJson(String json) {
+    public final static MxAuth02500104 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxAuth02500104 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

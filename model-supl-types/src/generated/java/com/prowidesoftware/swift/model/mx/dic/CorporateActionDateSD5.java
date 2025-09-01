@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -41,39 +41,39 @@ public class CorporateActionDateSD5 {
     @XmlElement(name = "DTCLastDayForEarlyRed", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate dtcLastDayForEarlyRed;
+    protected XMLGregorianCalendar dtcLastDayForEarlyRed;
     @XmlElement(name = "DTCPosCaptrDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate dtcPosCaptrDt;
+    protected XMLGregorianCalendar dtcPosCaptrDt;
     @XmlElement(name = "NewYorkCutOffDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate newYorkCutOffDt;
+    protected XMLGregorianCalendar newYorkCutOffDt;
     @XmlElement(name = "DTCXtndedCutOffDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate dtcXtndedCutOffDt;
+    protected XMLGregorianCalendar dtcXtndedCutOffDt;
     @XmlElement(name = "FctvDtByXchg", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate fctvDtByXchg;
+    protected XMLGregorianCalendar fctvDtByXchg;
     @XmlElement(name = "DtDclrdWrthls", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate dtDclrdWrthls;
+    protected XMLGregorianCalendar dtDclrdWrthls;
     @XmlElement(name = "DelWrthlsSctyDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate delWrthlsSctyDt;
+    protected XMLGregorianCalendar delWrthlsSctyDt;
     @XmlElement(name = "DTCExitDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate dtcExitDt;
+    protected XMLGregorianCalendar dtcExitDt;
     @XmlElement(name = "SbcptBegnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate sbcptBegnDt;
+    protected XMLGregorianCalendar sbcptBegnDt;
 
     /**
      * Gets the value of the plcAndNm property.
@@ -108,7 +108,7 @@ public class CorporateActionDateSD5 {
      *     {@link String }
      *     
      */
-    public LocalDate getDTCLastDayForEarlyRed() {
+    public XMLGregorianCalendar getDTCLastDayForEarlyRed() {
         return dtcLastDayForEarlyRed;
     }
 
@@ -120,7 +120,7 @@ public class CorporateActionDateSD5 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD5 setDTCLastDayForEarlyRed(LocalDate value) {
+    public CorporateActionDateSD5 setDTCLastDayForEarlyRed(XMLGregorianCalendar value) {
         this.dtcLastDayForEarlyRed = value;
         return this;
     }
@@ -133,7 +133,7 @@ public class CorporateActionDateSD5 {
      *     {@link String }
      *     
      */
-    public LocalDate getDTCPosCaptrDt() {
+    public XMLGregorianCalendar getDTCPosCaptrDt() {
         return dtcPosCaptrDt;
     }
 
@@ -145,7 +145,7 @@ public class CorporateActionDateSD5 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD5 setDTCPosCaptrDt(LocalDate value) {
+    public CorporateActionDateSD5 setDTCPosCaptrDt(XMLGregorianCalendar value) {
         this.dtcPosCaptrDt = value;
         return this;
     }
@@ -158,7 +158,7 @@ public class CorporateActionDateSD5 {
      *     {@link String }
      *     
      */
-    public LocalDate getNewYorkCutOffDt() {
+    public XMLGregorianCalendar getNewYorkCutOffDt() {
         return newYorkCutOffDt;
     }
 
@@ -170,7 +170,7 @@ public class CorporateActionDateSD5 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD5 setNewYorkCutOffDt(LocalDate value) {
+    public CorporateActionDateSD5 setNewYorkCutOffDt(XMLGregorianCalendar value) {
         this.newYorkCutOffDt = value;
         return this;
     }
@@ -183,7 +183,7 @@ public class CorporateActionDateSD5 {
      *     {@link String }
      *     
      */
-    public LocalDate getDTCXtndedCutOffDt() {
+    public XMLGregorianCalendar getDTCXtndedCutOffDt() {
         return dtcXtndedCutOffDt;
     }
 
@@ -195,7 +195,7 @@ public class CorporateActionDateSD5 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD5 setDTCXtndedCutOffDt(LocalDate value) {
+    public CorporateActionDateSD5 setDTCXtndedCutOffDt(XMLGregorianCalendar value) {
         this.dtcXtndedCutOffDt = value;
         return this;
     }
@@ -208,7 +208,7 @@ public class CorporateActionDateSD5 {
      *     {@link String }
      *     
      */
-    public LocalDate getFctvDtByXchg() {
+    public XMLGregorianCalendar getFctvDtByXchg() {
         return fctvDtByXchg;
     }
 
@@ -220,7 +220,7 @@ public class CorporateActionDateSD5 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD5 setFctvDtByXchg(LocalDate value) {
+    public CorporateActionDateSD5 setFctvDtByXchg(XMLGregorianCalendar value) {
         this.fctvDtByXchg = value;
         return this;
     }
@@ -233,7 +233,7 @@ public class CorporateActionDateSD5 {
      *     {@link String }
      *     
      */
-    public LocalDate getDtDclrdWrthls() {
+    public XMLGregorianCalendar getDtDclrdWrthls() {
         return dtDclrdWrthls;
     }
 
@@ -245,7 +245,7 @@ public class CorporateActionDateSD5 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD5 setDtDclrdWrthls(LocalDate value) {
+    public CorporateActionDateSD5 setDtDclrdWrthls(XMLGregorianCalendar value) {
         this.dtDclrdWrthls = value;
         return this;
     }
@@ -258,7 +258,7 @@ public class CorporateActionDateSD5 {
      *     {@link String }
      *     
      */
-    public LocalDate getDelWrthlsSctyDt() {
+    public XMLGregorianCalendar getDelWrthlsSctyDt() {
         return delWrthlsSctyDt;
     }
 
@@ -270,7 +270,7 @@ public class CorporateActionDateSD5 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD5 setDelWrthlsSctyDt(LocalDate value) {
+    public CorporateActionDateSD5 setDelWrthlsSctyDt(XMLGregorianCalendar value) {
         this.delWrthlsSctyDt = value;
         return this;
     }
@@ -283,7 +283,7 @@ public class CorporateActionDateSD5 {
      *     {@link String }
      *     
      */
-    public LocalDate getDTCExitDt() {
+    public XMLGregorianCalendar getDTCExitDt() {
         return dtcExitDt;
     }
 
@@ -295,7 +295,7 @@ public class CorporateActionDateSD5 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD5 setDTCExitDt(LocalDate value) {
+    public CorporateActionDateSD5 setDTCExitDt(XMLGregorianCalendar value) {
         this.dtcExitDt = value;
         return this;
     }
@@ -308,7 +308,7 @@ public class CorporateActionDateSD5 {
      *     {@link String }
      *     
      */
-    public LocalDate getSbcptBegnDt() {
+    public XMLGregorianCalendar getSbcptBegnDt() {
         return sbcptBegnDt;
     }
 
@@ -320,7 +320,7 @@ public class CorporateActionDateSD5 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD5 setSbcptBegnDt(LocalDate value) {
+    public CorporateActionDateSD5 setSbcptBegnDt(XMLGregorianCalendar value) {
         this.sbcptBegnDt = value;
         return this;
     }

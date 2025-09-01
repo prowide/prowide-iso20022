@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -172,8 +172,8 @@ public class Tsmt01200102 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the buyrCtctPrsn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the buyrCtctPrsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -187,12 +187,10 @@ public class Tsmt01200102 {
      * {@link ContactIdentification1 }
      * 
      * 
-     * @return
-     *     The value of the buyrCtctPrsn property.
      */
     public List<ContactIdentification1> getBuyrCtctPrsn() {
         if (buyrCtctPrsn == null) {
-            buyrCtctPrsn = new ArrayList<>();
+            buyrCtctPrsn = new ArrayList<ContactIdentification1>();
         }
         return this.buyrCtctPrsn;
     }
@@ -203,8 +201,8 @@ public class Tsmt01200102 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the sellrCtctPrsn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the sellrCtctPrsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -218,12 +216,10 @@ public class Tsmt01200102 {
      * {@link ContactIdentification1 }
      * 
      * 
-     * @return
-     *     The value of the sellrCtctPrsn property.
      */
     public List<ContactIdentification1> getSellrCtctPrsn() {
         if (sellrCtctPrsn == null) {
-            sellrCtctPrsn = new ArrayList<>();
+            sellrCtctPrsn = new ArrayList<ContactIdentification1>();
         }
         return this.sellrCtctPrsn;
     }
@@ -234,8 +230,8 @@ public class Tsmt01200102 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the buyrBkCtctPrsn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the buyrBkCtctPrsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -249,12 +245,10 @@ public class Tsmt01200102 {
      * {@link ContactIdentification1 }
      * 
      * 
-     * @return
-     *     The value of the buyrBkCtctPrsn property.
      */
     public List<ContactIdentification1> getBuyrBkCtctPrsn() {
         if (buyrBkCtctPrsn == null) {
-            buyrBkCtctPrsn = new ArrayList<>();
+            buyrBkCtctPrsn = new ArrayList<ContactIdentification1>();
         }
         return this.buyrBkCtctPrsn;
     }
@@ -265,8 +259,8 @@ public class Tsmt01200102 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the sellrBkCtctPrsn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the sellrBkCtctPrsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -280,12 +274,10 @@ public class Tsmt01200102 {
      * {@link ContactIdentification1 }
      * 
      * 
-     * @return
-     *     The value of the sellrBkCtctPrsn property.
      */
     public List<ContactIdentification1> getSellrBkCtctPrsn() {
         if (sellrBkCtctPrsn == null) {
-            sellrBkCtctPrsn = new ArrayList<>();
+            sellrBkCtctPrsn = new ArrayList<ContactIdentification1>();
         }
         return this.sellrBkCtctPrsn;
     }
@@ -296,8 +288,8 @@ public class Tsmt01200102 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the bllToCtctPrsn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the bllToCtctPrsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -311,12 +303,10 @@ public class Tsmt01200102 {
      * {@link ContactIdentification1 }
      * 
      * 
-     * @return
-     *     The value of the bllToCtctPrsn property.
      */
     public List<ContactIdentification1> getBllToCtctPrsn() {
         if (bllToCtctPrsn == null) {
-            bllToCtctPrsn = new ArrayList<>();
+            bllToCtctPrsn = new ArrayList<ContactIdentification1>();
         }
         return this.bllToCtctPrsn;
     }
@@ -327,8 +317,8 @@ public class Tsmt01200102 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the shipToCtctPrsn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the shipToCtctPrsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -342,12 +332,10 @@ public class Tsmt01200102 {
      * {@link ContactIdentification1 }
      * 
      * 
-     * @return
-     *     The value of the shipToCtctPrsn property.
      */
     public List<ContactIdentification1> getShipToCtctPrsn() {
         if (shipToCtctPrsn == null) {
-            shipToCtctPrsn = new ArrayList<>();
+            shipToCtctPrsn = new ArrayList<ContactIdentification1>();
         }
         return this.shipToCtctPrsn;
     }
@@ -358,8 +346,8 @@ public class Tsmt01200102 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the consgnCtctPrsn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the consgnCtctPrsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -373,12 +361,10 @@ public class Tsmt01200102 {
      * {@link ContactIdentification1 }
      * 
      * 
-     * @return
-     *     The value of the consgnCtctPrsn property.
      */
     public List<ContactIdentification1> getConsgnCtctPrsn() {
         if (consgnCtctPrsn == null) {
-            consgnCtctPrsn = new ArrayList<>();
+            consgnCtctPrsn = new ArrayList<ContactIdentification1>();
         }
         return this.consgnCtctPrsn;
     }

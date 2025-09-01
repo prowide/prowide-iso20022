@@ -1,26 +1,27 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlEnumValue;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlEnumValue;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for CheckCodeLine1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="CheckCodeLine1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="CMC7"/>
- *     <enumeration value="E13B"/>
- *     <enumeration value="OCRA"/>
- *     <enumeration value="OCRB"/>
- *     <enumeration value="OCRF"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="CheckCodeLine1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="CMC7"/&gt;
+ *     &lt;enumeration value="E13B"/&gt;
+ *     &lt;enumeration value="OCRA"/&gt;
+ *     &lt;enumeration value="OCRB"/&gt;
+ *     &lt;enumeration value="OCRF"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "CheckCodeLine1Code")

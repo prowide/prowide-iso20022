@@ -1,31 +1,32 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for VoteInstruction7Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="VoteInstruction7Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="ABST"/>
- *     <enumeration value="CAGS"/>
- *     <enumeration value="AMGT"/>
- *     <enumeration value="BLNK"/>
- *     <enumeration value="CFOR"/>
- *     <enumeration value="NOAC"/>
- *     <enumeration value="ONEY"/>
- *     <enumeration value="THRY"/>
- *     <enumeration value="TWOY"/>
- *     <enumeration value="WTHH"/>
- *     <enumeration value="WMGT"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="VoteInstruction7Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ABST"/&gt;
+ *     &lt;enumeration value="CAGS"/&gt;
+ *     &lt;enumeration value="AMGT"/&gt;
+ *     &lt;enumeration value="BLNK"/&gt;
+ *     &lt;enumeration value="CFOR"/&gt;
+ *     &lt;enumeration value="NOAC"/&gt;
+ *     &lt;enumeration value="ONEY"/&gt;
+ *     &lt;enumeration value="THRY"/&gt;
+ *     &lt;enumeration value="TWOY"/&gt;
+ *     &lt;enumeration value="WTHH"/&gt;
+ *     &lt;enumeration value="WMGT"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "VoteInstruction7Code")

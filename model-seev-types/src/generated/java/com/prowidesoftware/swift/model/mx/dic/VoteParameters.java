@@ -2,16 +2,16 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -54,15 +54,15 @@ public class VoteParameters {
     @XmlElement(name = "VoteDdln", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime voteDdln;
+    protected XMLGregorianCalendar voteDdln;
     @XmlElement(name = "VoteElctrncDdln", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime voteElctrncDdln;
+    protected XMLGregorianCalendar voteElctrncDdln;
     @XmlElement(name = "VoteMktDdln", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime voteMktDdln;
+    protected XMLGregorianCalendar voteMktDdln;
     @XmlElement(name = "VoteMthds")
     protected VoteMethods voteMthds;
     @XmlElement(name = "VtngBlltElctrncAdr")
@@ -81,15 +81,15 @@ public class VoteParameters {
     @XmlElement(name = "VoteWthPrmDdln", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime voteWthPrmDdln;
+    protected XMLGregorianCalendar voteWthPrmDdln;
     @XmlElement(name = "VoteWthPrmElctrncDdln", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime voteWthPrmElctrncDdln;
+    protected XMLGregorianCalendar voteWthPrmElctrncDdln;
     @XmlElement(name = "VoteWthPrmMktDdln", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime voteWthPrmMktDdln;
+    protected XMLGregorianCalendar voteWthPrmMktDdln;
 
     /**
      * Gets the value of the sctiesQtyReqrdToVote property.
@@ -174,7 +174,7 @@ public class VoteParameters {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getVoteDdln() {
+    public XMLGregorianCalendar getVoteDdln() {
         return voteDdln;
     }
 
@@ -186,7 +186,7 @@ public class VoteParameters {
      *     {@link String }
      *     
      */
-    public VoteParameters setVoteDdln(OffsetDateTime value) {
+    public VoteParameters setVoteDdln(XMLGregorianCalendar value) {
         this.voteDdln = value;
         return this;
     }
@@ -199,7 +199,7 @@ public class VoteParameters {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getVoteElctrncDdln() {
+    public XMLGregorianCalendar getVoteElctrncDdln() {
         return voteElctrncDdln;
     }
 
@@ -211,7 +211,7 @@ public class VoteParameters {
      *     {@link String }
      *     
      */
-    public VoteParameters setVoteElctrncDdln(OffsetDateTime value) {
+    public VoteParameters setVoteElctrncDdln(XMLGregorianCalendar value) {
         this.voteElctrncDdln = value;
         return this;
     }
@@ -224,7 +224,7 @@ public class VoteParameters {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getVoteMktDdln() {
+    public XMLGregorianCalendar getVoteMktDdln() {
         return voteMktDdln;
     }
 
@@ -236,7 +236,7 @@ public class VoteParameters {
      *     {@link String }
      *     
      */
-    public VoteParameters setVoteMktDdln(OffsetDateTime value) {
+    public VoteParameters setVoteMktDdln(XMLGregorianCalendar value) {
         this.voteMktDdln = value;
         return this;
     }
@@ -397,8 +397,8 @@ public class VoteParameters {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the voteInstrTp property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the voteInstrTp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -412,12 +412,10 @@ public class VoteParameters {
      * {@link VoteInstruction2Code }
      * 
      * 
-     * @return
-     *     The value of the voteInstrTp property.
      */
     public List<VoteInstruction2Code> getVoteInstrTp() {
         if (voteInstrTp == null) {
-            voteInstrTp = new ArrayList<>();
+            voteInstrTp = new ArrayList<VoteInstruction2Code>();
         }
         return this.voteInstrTp;
     }
@@ -430,7 +428,7 @@ public class VoteParameters {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getVoteWthPrmDdln() {
+    public XMLGregorianCalendar getVoteWthPrmDdln() {
         return voteWthPrmDdln;
     }
 
@@ -442,7 +440,7 @@ public class VoteParameters {
      *     {@link String }
      *     
      */
-    public VoteParameters setVoteWthPrmDdln(OffsetDateTime value) {
+    public VoteParameters setVoteWthPrmDdln(XMLGregorianCalendar value) {
         this.voteWthPrmDdln = value;
         return this;
     }
@@ -455,7 +453,7 @@ public class VoteParameters {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getVoteWthPrmElctrncDdln() {
+    public XMLGregorianCalendar getVoteWthPrmElctrncDdln() {
         return voteWthPrmElctrncDdln;
     }
 
@@ -467,7 +465,7 @@ public class VoteParameters {
      *     {@link String }
      *     
      */
-    public VoteParameters setVoteWthPrmElctrncDdln(OffsetDateTime value) {
+    public VoteParameters setVoteWthPrmElctrncDdln(XMLGregorianCalendar value) {
         this.voteWthPrmElctrncDdln = value;
         return this;
     }
@@ -480,7 +478,7 @@ public class VoteParameters {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getVoteWthPrmMktDdln() {
+    public XMLGregorianCalendar getVoteWthPrmMktDdln() {
         return voteWthPrmMktDdln;
     }
 
@@ -492,7 +490,7 @@ public class VoteParameters {
      *     {@link String }
      *     
      */
-    public VoteParameters setVoteWthPrmMktDdln(OffsetDateTime value) {
+    public VoteParameters setVoteWthPrmMktDdln(XMLGregorianCalendar value) {
         this.voteWthPrmMktDdln = value;
         return this;
     }

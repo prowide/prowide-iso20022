@@ -1,30 +1,31 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for DetailAmount1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="DetailAmount1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="CSHB"/>
- *     <enumeration value="DONN"/>
- *     <enumeration value="DCCF"/>
- *     <enumeration value="EXTR"/>
- *     <enumeration value="FORX"/>
- *     <enumeration value="GRTY"/>
- *     <enumeration value="OTHN"/>
- *     <enumeration value="OTHP"/>
- *     <enumeration value="SRCH"/>
- *     <enumeration value="TAXT"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="DetailAmount1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="CSHB"/&gt;
+ *     &lt;enumeration value="DONN"/&gt;
+ *     &lt;enumeration value="DCCF"/&gt;
+ *     &lt;enumeration value="EXTR"/&gt;
+ *     &lt;enumeration value="FORX"/&gt;
+ *     &lt;enumeration value="GRTY"/&gt;
+ *     &lt;enumeration value="OTHN"/&gt;
+ *     &lt;enumeration value="OTHP"/&gt;
+ *     &lt;enumeration value="SRCH"/&gt;
+ *     &lt;enumeration value="TAXT"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "DetailAmount1Code")

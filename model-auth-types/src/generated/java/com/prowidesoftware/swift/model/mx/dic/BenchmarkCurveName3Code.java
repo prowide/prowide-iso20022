@@ -1,49 +1,50 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for BenchmarkCurveName3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="BenchmarkCurveName3Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="ESTR"/>
- *     <enumeration value="BBSW"/>
- *     <enumeration value="BUBO"/>
- *     <enumeration value="CDOR"/>
- *     <enumeration value="CIBO"/>
- *     <enumeration value="EONA"/>
- *     <enumeration value="EONS"/>
- *     <enumeration value="EURI"/>
- *     <enumeration value="EUUS"/>
- *     <enumeration value="EUCH"/>
- *     <enumeration value="FUSW"/>
- *     <enumeration value="GCFR"/>
- *     <enumeration value="ISDA"/>
- *     <enumeration value="JIBA"/>
- *     <enumeration value="LIBI"/>
- *     <enumeration value="LIBO"/>
- *     <enumeration value="MOSP"/>
- *     <enumeration value="MAAA"/>
- *     <enumeration value="NIBO"/>
- *     <enumeration value="PFAN"/>
- *     <enumeration value="PRBO"/>
- *     <enumeration value="STBO"/>
- *     <enumeration value="SWAP"/>
- *     <enumeration value="TLBO"/>
- *     <enumeration value="TIBO"/>
- *     <enumeration value="TREA"/>
- *     <enumeration value="WIBO"/>
- *     <enumeration value="SOFR"/>
- *     <enumeration value="SONA"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="BenchmarkCurveName3Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ESTR"/&gt;
+ *     &lt;enumeration value="BBSW"/&gt;
+ *     &lt;enumeration value="BUBO"/&gt;
+ *     &lt;enumeration value="CDOR"/&gt;
+ *     &lt;enumeration value="CIBO"/&gt;
+ *     &lt;enumeration value="EONA"/&gt;
+ *     &lt;enumeration value="EONS"/&gt;
+ *     &lt;enumeration value="EURI"/&gt;
+ *     &lt;enumeration value="EUUS"/&gt;
+ *     &lt;enumeration value="EUCH"/&gt;
+ *     &lt;enumeration value="FUSW"/&gt;
+ *     &lt;enumeration value="GCFR"/&gt;
+ *     &lt;enumeration value="ISDA"/&gt;
+ *     &lt;enumeration value="JIBA"/&gt;
+ *     &lt;enumeration value="LIBI"/&gt;
+ *     &lt;enumeration value="LIBO"/&gt;
+ *     &lt;enumeration value="MOSP"/&gt;
+ *     &lt;enumeration value="MAAA"/&gt;
+ *     &lt;enumeration value="NIBO"/&gt;
+ *     &lt;enumeration value="PFAN"/&gt;
+ *     &lt;enumeration value="PRBO"/&gt;
+ *     &lt;enumeration value="STBO"/&gt;
+ *     &lt;enumeration value="SWAP"/&gt;
+ *     &lt;enumeration value="TLBO"/&gt;
+ *     &lt;enumeration value="TIBO"/&gt;
+ *     &lt;enumeration value="TREA"/&gt;
+ *     &lt;enumeration value="WIBO"/&gt;
+ *     &lt;enumeration value="SOFR"/&gt;
+ *     &lt;enumeration value="SONA"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "BenchmarkCurveName3Code")

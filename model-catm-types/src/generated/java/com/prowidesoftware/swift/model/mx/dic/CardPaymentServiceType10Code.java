@@ -1,25 +1,26 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for CardPaymentServiceType10Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="CardPaymentServiceType10Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="CRTC"/>
- *     <enumeration value="CRTR"/>
- *     <enumeration value="CRTK"/>
- *     <enumeration value="WLSR"/>
- *     <enumeration value="WLSA"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="CardPaymentServiceType10Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="CRTC"/&gt;
+ *     &lt;enumeration value="CRTR"/&gt;
+ *     &lt;enumeration value="CRTK"/&gt;
+ *     &lt;enumeration value="WLSR"/&gt;
+ *     &lt;enumeration value="WLSA"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "CardPaymentServiceType10Code")

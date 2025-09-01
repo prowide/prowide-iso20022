@@ -1,25 +1,26 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for DistributionInstructionType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="DistributionInstructionType1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="GDEB"/>
- *     <enumeration value="IDEB"/>
- *     <enumeration value="GRET"/>
- *     <enumeration value="CHAN"/>
- *     <enumeration value="IRET"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="DistributionInstructionType1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="GDEB"/&gt;
+ *     &lt;enumeration value="IDEB"/&gt;
+ *     &lt;enumeration value="GRET"/&gt;
+ *     &lt;enumeration value="CHAN"/&gt;
+ *     &lt;enumeration value="IRET"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "DistributionInstructionType1Code")

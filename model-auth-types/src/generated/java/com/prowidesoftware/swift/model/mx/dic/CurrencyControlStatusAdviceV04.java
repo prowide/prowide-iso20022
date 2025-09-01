@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -71,8 +71,8 @@ public class CurrencyControlStatusAdviceV04 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the grpSts property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the grpSts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -86,12 +86,10 @@ public class CurrencyControlStatusAdviceV04 {
      * {@link CurrencyControlGroupStatus3 }
      * 
      * 
-     * @return
-     *     The value of the grpSts property.
      */
     public List<CurrencyControlGroupStatus3> getGrpSts() {
         if (grpSts == null) {
-            grpSts = new ArrayList<>();
+            grpSts = new ArrayList<CurrencyControlGroupStatus3>();
         }
         return this.grpSts;
     }
@@ -102,8 +100,8 @@ public class CurrencyControlStatusAdviceV04 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the packgSts property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the packgSts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -117,12 +115,10 @@ public class CurrencyControlStatusAdviceV04 {
      * {@link CurrencyControlPackageStatus3 }
      * 
      * 
-     * @return
-     *     The value of the packgSts property.
      */
     public List<CurrencyControlPackageStatus3> getPackgSts() {
         if (packgSts == null) {
-            packgSts = new ArrayList<>();
+            packgSts = new ArrayList<CurrencyControlPackageStatus3>();
         }
         return this.packgSts;
     }
@@ -133,8 +129,8 @@ public class CurrencyControlStatusAdviceV04 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the splmtryData property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -148,12 +144,10 @@ public class CurrencyControlStatusAdviceV04 {
      * {@link SupplementaryData1 }
      * 
      * 
-     * @return
-     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<>();
+            splmtryData = new ArrayList<SupplementaryData1>();
         }
         return this.splmtryData;
     }

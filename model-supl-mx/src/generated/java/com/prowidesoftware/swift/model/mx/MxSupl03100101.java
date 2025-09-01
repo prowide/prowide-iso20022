@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxSupl03100101
 
     @XmlElement(name = "DTCCCASTSD1", required = true)
     protected DTCCCASTSD1V01 dtcccastsd1;
-    public static final transient String BUSINESS_PROCESS = "supl";
-    public static final transient int FUNCTIONALITY = 31;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 1;
+    public final static transient String BUSINESS_PROCESS = "supl";
+    public final static transient int FUNCTIONALITY = 31;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {AmountPrice5 .class, AmountPriceType1Code.class, CorporateActionBalanceSD2 .class, CorporateActionInstructedBalanceOptionBalanceDetailsSD1 .class, CorporateActionInstructedBalanceOptionInstructionDetailsSD1 .class, CorporateActionInstructedBalanceOptionProtectInstructionDetailsSD1 .class, DTCCCASTSD1V01 .class, DTCInstructionStatus2Code.class, DTCProtectInstructionStatus1Code.class, FinancialInstrumentQuantity15Choice.class, IdentificationSource4Choice.class, MxSupl03100101 .class, OptionNumber1Choice.class, OptionNumber1Code.class, OtherIdentification2 .class, PercentagePrice1 .class, PriceFormat57Choice.class, PriceRateType3Code.class, PriceValueType10Code.class, RestrictedFINActiveCurrencyAnd13DecimalAmount.class, ShortLong1Code.class, SignedQuantityFormat9 .class };
-    public static final transient String NAMESPACE = "urn:swift:xsd:supl.031.001.01";
+    public final static transient Class[] _classes = new Class[] {AmountPrice5 .class, AmountPriceType1Code.class, CorporateActionBalanceSD2 .class, CorporateActionInstructedBalanceOptionBalanceDetailsSD1 .class, CorporateActionInstructedBalanceOptionInstructionDetailsSD1 .class, CorporateActionInstructedBalanceOptionProtectInstructionDetailsSD1 .class, DTCCCASTSD1V01 .class, DTCInstructionStatus2Code.class, DTCProtectInstructionStatus1Code.class, FinancialInstrumentQuantity15Choice.class, IdentificationSource4Choice.class, MxSupl03100101 .class, OptionNumber1Choice.class, OptionNumber1Code.class, OtherIdentification2 .class, PercentagePrice1 .class, PriceFormat57Choice.class, PriceRateType3Code.class, PriceValueType10Code.class, RestrictedFINActiveCurrencyAnd13DecimalAmount.class, ShortLong1Code.class, SignedQuantityFormat9 .class };
+    public final static transient String NAMESPACE = "urn:swift:xsd:supl.031.001.01";
 
     public MxSupl03100101() {
         super();
@@ -86,6 +86,21 @@ public class MxSupl03100101
     public MxSupl03100101 setDTCCCASTSD1(DTCCCASTSD1V01 value) {
         this.dtcccastsd1 = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxSupl03100101
      * @return
      *     a new instance of MxSupl03100101
      */
-    public static final MxSupl03100101 fromJson(String json) {
+    public final static MxSupl03100101 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSupl03100101 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.OffsetTime;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,19 +33,19 @@ public class SettlementTimeRequest2 {
     @XmlElement(name = "CLSTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected OffsetTime clsTm;
+    protected XMLGregorianCalendar clsTm;
     @XmlElement(name = "TillTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected OffsetTime tillTm;
+    protected XMLGregorianCalendar tillTm;
     @XmlElement(name = "FrTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected OffsetTime frTm;
+    protected XMLGregorianCalendar frTm;
     @XmlElement(name = "RjctTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected OffsetTime rjctTm;
+    protected XMLGregorianCalendar rjctTm;
 
     /**
      * Gets the value of the clsTm property.
@@ -55,7 +55,7 @@ public class SettlementTimeRequest2 {
      *     {@link String }
      *     
      */
-    public OffsetTime getCLSTm() {
+    public XMLGregorianCalendar getCLSTm() {
         return clsTm;
     }
 
@@ -67,7 +67,7 @@ public class SettlementTimeRequest2 {
      *     {@link String }
      *     
      */
-    public SettlementTimeRequest2 setCLSTm(OffsetTime value) {
+    public SettlementTimeRequest2 setCLSTm(XMLGregorianCalendar value) {
         this.clsTm = value;
         return this;
     }
@@ -80,7 +80,7 @@ public class SettlementTimeRequest2 {
      *     {@link String }
      *     
      */
-    public OffsetTime getTillTm() {
+    public XMLGregorianCalendar getTillTm() {
         return tillTm;
     }
 
@@ -92,7 +92,7 @@ public class SettlementTimeRequest2 {
      *     {@link String }
      *     
      */
-    public SettlementTimeRequest2 setTillTm(OffsetTime value) {
+    public SettlementTimeRequest2 setTillTm(XMLGregorianCalendar value) {
         this.tillTm = value;
         return this;
     }
@@ -105,7 +105,7 @@ public class SettlementTimeRequest2 {
      *     {@link String }
      *     
      */
-    public OffsetTime getFrTm() {
+    public XMLGregorianCalendar getFrTm() {
         return frTm;
     }
 
@@ -117,7 +117,7 @@ public class SettlementTimeRequest2 {
      *     {@link String }
      *     
      */
-    public SettlementTimeRequest2 setFrTm(OffsetTime value) {
+    public SettlementTimeRequest2 setFrTm(XMLGregorianCalendar value) {
         this.frTm = value;
         return this;
     }
@@ -130,7 +130,7 @@ public class SettlementTimeRequest2 {
      *     {@link String }
      *     
      */
-    public OffsetTime getRjctTm() {
+    public XMLGregorianCalendar getRjctTm() {
         return rjctTm;
     }
 
@@ -142,7 +142,7 @@ public class SettlementTimeRequest2 {
      *     {@link String }
      *     
      */
-    public SettlementTimeRequest2 setRjctTm(OffsetTime value) {
+    public SettlementTimeRequest2 setRjctTm(XMLGregorianCalendar value) {
         this.rjctTm = value;
         return this;
     }

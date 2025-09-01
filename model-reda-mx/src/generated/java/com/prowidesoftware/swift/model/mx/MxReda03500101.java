@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxReda03500101
 
     @XmlElement(name = "SctiesAcctActvtyAdvc", required = true)
     protected SecuritiesAccountActivityAdviceV01 sctiesAcctActvtyAdvc;
-    public static final transient String BUSINESS_PROCESS = "reda";
-    public static final transient int FUNCTIONALITY = 35;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 1;
+    public final static transient String BUSINESS_PROCESS = "reda";
+    public final static transient int FUNCTIONALITY = 35;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {GenericIdentification30 .class, MessageHeader1 .class, MxReda03500101 .class, Pagination1 .class, SecuritiesAccount19 .class, SecuritiesAccountActivityAdviceV01 .class, SecuritiesAccountReferenceDataChange2 .class, SecuritiesAccountStatement2 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class };
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:reda.035.001.01";
+    public final static transient Class[] _classes = new Class[] {GenericIdentification30 .class, MessageHeader1 .class, MxReda03500101 .class, Pagination1 .class, SecuritiesAccount19 .class, SecuritiesAccountActivityAdviceV01 .class, SecuritiesAccountReferenceDataChange2 .class, SecuritiesAccountStatement2 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:reda.035.001.01";
 
     public MxReda03500101() {
         super();
@@ -86,6 +86,21 @@ public class MxReda03500101
     public MxReda03500101 setSctiesAcctActvtyAdvc(SecuritiesAccountActivityAdviceV01 value) {
         this.sctiesAcctActvtyAdvc = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxReda03500101
      * @return
      *     a new instance of MxReda03500101
      */
-    public static final MxReda03500101 fromJson(String json) {
+    public final static MxReda03500101 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxReda03500101 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

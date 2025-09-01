@@ -1,31 +1,32 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for AuthorityExchangeReason1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="AuthorityExchangeReason1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="CAFI"/>
- *     <enumeration value="ADHR"/>
- *     <enumeration value="CABC"/>
- *     <enumeration value="CABB"/>
- *     <enumeration value="CADB"/>
- *     <enumeration value="CADU"/>
- *     <enumeration value="CAEB"/>
- *     <enumeration value="CAIX"/>
- *     <enumeration value="CAMB"/>
- *     <enumeration value="CASB"/>
- *     <enumeration value="CATV"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="AuthorityExchangeReason1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="CAFI"/&gt;
+ *     &lt;enumeration value="ADHR"/&gt;
+ *     &lt;enumeration value="CABC"/&gt;
+ *     &lt;enumeration value="CABB"/&gt;
+ *     &lt;enumeration value="CADB"/&gt;
+ *     &lt;enumeration value="CADU"/&gt;
+ *     &lt;enumeration value="CAEB"/&gt;
+ *     &lt;enumeration value="CAIX"/&gt;
+ *     &lt;enumeration value="CAMB"/&gt;
+ *     &lt;enumeration value="CASB"/&gt;
+ *     &lt;enumeration value="CATV"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "AuthorityExchangeReason1Code")

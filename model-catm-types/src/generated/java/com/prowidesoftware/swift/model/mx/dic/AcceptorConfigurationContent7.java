@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -83,8 +83,8 @@ public class AcceptorConfigurationContent7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the tmsPrtcolParams property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the tmsPrtcolParams property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -98,12 +98,10 @@ public class AcceptorConfigurationContent7 {
      * {@link TMSProtocolParameters3 }
      * 
      * 
-     * @return
-     *     The value of the tmsPrtcolParams property.
      */
     public List<TMSProtocolParameters3> getTMSPrtcolParams() {
         if (tmsPrtcolParams == null) {
-            tmsPrtcolParams = new ArrayList<>();
+            tmsPrtcolParams = new ArrayList<TMSProtocolParameters3>();
         }
         return this.tmsPrtcolParams;
     }
@@ -114,8 +112,8 @@ public class AcceptorConfigurationContent7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the acqrrPrtcolParams property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the acqrrPrtcolParams property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -129,12 +127,10 @@ public class AcceptorConfigurationContent7 {
      * {@link AcquirerProtocolParameters11 }
      * 
      * 
-     * @return
-     *     The value of the acqrrPrtcolParams property.
      */
     public List<AcquirerProtocolParameters11> getAcqrrPrtcolParams() {
         if (acqrrPrtcolParams == null) {
-            acqrrPrtcolParams = new ArrayList<>();
+            acqrrPrtcolParams = new ArrayList<AcquirerProtocolParameters11>();
         }
         return this.acqrrPrtcolParams;
     }
@@ -145,8 +141,8 @@ public class AcceptorConfigurationContent7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the mrchntParams property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the mrchntParams property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -160,12 +156,10 @@ public class AcceptorConfigurationContent7 {
      * {@link MerchantConfigurationParameters3 }
      * 
      * 
-     * @return
-     *     The value of the mrchntParams property.
      */
     public List<MerchantConfigurationParameters3> getMrchntParams() {
         if (mrchntParams == null) {
-            mrchntParams = new ArrayList<>();
+            mrchntParams = new ArrayList<MerchantConfigurationParameters3>();
         }
         return this.mrchntParams;
     }
@@ -176,8 +170,8 @@ public class AcceptorConfigurationContent7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the termnlParams property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the termnlParams property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -191,12 +185,10 @@ public class AcceptorConfigurationContent7 {
      * {@link PaymentTerminalParameters5 }
      * 
      * 
-     * @return
-     *     The value of the termnlParams property.
      */
     public List<PaymentTerminalParameters5> getTermnlParams() {
         if (termnlParams == null) {
-            termnlParams = new ArrayList<>();
+            termnlParams = new ArrayList<PaymentTerminalParameters5>();
         }
         return this.termnlParams;
     }
@@ -207,8 +199,8 @@ public class AcceptorConfigurationContent7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the applParams property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the applParams property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -222,12 +214,10 @@ public class AcceptorConfigurationContent7 {
      * {@link ApplicationParameters7 }
      * 
      * 
-     * @return
-     *     The value of the applParams property.
      */
     public List<ApplicationParameters7> getApplParams() {
         if (applParams == null) {
-            applParams = new ArrayList<>();
+            applParams = new ArrayList<ApplicationParameters7>();
         }
         return this.applParams;
     }
@@ -238,8 +228,8 @@ public class AcceptorConfigurationContent7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the hstComParams property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the hstComParams property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -253,12 +243,10 @@ public class AcceptorConfigurationContent7 {
      * {@link HostCommunicationParameter5 }
      * 
      * 
-     * @return
-     *     The value of the hstComParams property.
      */
     public List<HostCommunicationParameter5> getHstComParams() {
         if (hstComParams == null) {
-            hstComParams = new ArrayList<>();
+            hstComParams = new ArrayList<HostCommunicationParameter5>();
         }
         return this.hstComParams;
     }
@@ -269,8 +257,8 @@ public class AcceptorConfigurationContent7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the sctyParams property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the sctyParams property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -284,12 +272,10 @@ public class AcceptorConfigurationContent7 {
      * {@link SecurityParameters11 }
      * 
      * 
-     * @return
-     *     The value of the sctyParams property.
      */
     public List<SecurityParameters11> getSctyParams() {
         if (sctyParams == null) {
-            sctyParams = new ArrayList<>();
+            sctyParams = new ArrayList<SecurityParameters11>();
         }
         return this.sctyParams;
     }
@@ -300,8 +286,8 @@ public class AcceptorConfigurationContent7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the saleToPOIParams property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the saleToPOIParams property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -315,12 +301,10 @@ public class AcceptorConfigurationContent7 {
      * {@link SaleToPOIProtocolParameter1 }
      * 
      * 
-     * @return
-     *     The value of the saleToPOIParams property.
      */
     public List<SaleToPOIProtocolParameter1> getSaleToPOIParams() {
         if (saleToPOIParams == null) {
-            saleToPOIParams = new ArrayList<>();
+            saleToPOIParams = new ArrayList<SaleToPOIProtocolParameter1>();
         }
         return this.saleToPOIParams;
     }

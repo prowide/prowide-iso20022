@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxSetr01800104
 
     @XmlElement(name = "ReqForOrdrStsRpt", required = true)
     protected RequestForOrderStatusReportV04 reqForOrdrStsRpt;
-    public static final transient String BUSINESS_PROCESS = "setr";
-    public static final transient int FUNCTIONALITY = 18;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 4;
+    public final static transient String BUSINESS_PROCESS = "setr";
+    public final static transient int FUNCTIONALITY = 18;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 4;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {AdditionalReference8 .class, AddressType2Code.class, AlternateSecurityIdentification7 .class, DateFormat42Choice.class, DistributionPolicy1Code.class, Extension1 .class, FinancialInstrument57 .class, FormOfSecurity1Code.class, GenericIdentification1 .class, IdentificationSource1Choice.class, InvestmentAccount58 .class, InvestmentFundOrder8 .class, MessageAndBusinessReference10 .class, MessageIdentification1 .class, MxSetr01800104 .class, NameAndAddress5 .class, OrderOriginatorEligibility1Code.class, PartyIdentification113 .class, PartyIdentification90Choice.class, PostalAddress1 .class, References62Choice.class, RequestForOrderStatusReportV04 .class, SecurityIdentification25Choice.class, Series1 .class, SubAccount6 .class };
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:setr.018.001.04";
+    public final static transient Class[] _classes = new Class[] {AdditionalReference8 .class, AddressType2Code.class, AlternateSecurityIdentification7 .class, DateFormat42Choice.class, DistributionPolicy1Code.class, Extension1 .class, FinancialInstrument57 .class, FormOfSecurity1Code.class, GenericIdentification1 .class, IdentificationSource1Choice.class, InvestmentAccount58 .class, InvestmentFundOrder8 .class, MessageAndBusinessReference10 .class, MessageIdentification1 .class, MxSetr01800104 .class, NameAndAddress5 .class, OrderOriginatorEligibility1Code.class, PartyIdentification113 .class, PartyIdentification90Choice.class, PostalAddress1 .class, References62Choice.class, RequestForOrderStatusReportV04 .class, SecurityIdentification25Choice.class, Series1 .class, SubAccount6 .class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:setr.018.001.04";
 
     public MxSetr01800104() {
         super();
@@ -86,6 +86,21 @@ public class MxSetr01800104
     public MxSetr01800104 setReqForOrdrStsRpt(RequestForOrderStatusReportV04 value) {
         this.reqForOrdrStsRpt = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxSetr01800104
      * @return
      *     a new instance of MxSetr01800104
      */
-    public static final MxSetr01800104 fromJson(String json) {
+    public final static MxSetr01800104 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSetr01800104 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

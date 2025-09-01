@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -96,8 +96,8 @@ public class ForwardDataSetSubmissionReportV03 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the rltdTxRefs property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the rltdTxRefs property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -111,12 +111,10 @@ public class ForwardDataSetSubmissionReportV03 {
      * {@link DataSetSubmissionReferences4 }
      * 
      * 
-     * @return
-     *     The value of the rltdTxRefs property.
      */
     public List<DataSetSubmissionReferences4> getRltdTxRefs() {
         if (rltdTxRefs == null) {
-            rltdTxRefs = new ArrayList<>();
+            rltdTxRefs = new ArrayList<DataSetSubmissionReferences4>();
         }
         return this.rltdTxRefs;
     }
@@ -302,8 +300,8 @@ public class ForwardDataSetSubmissionReportV03 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the certDataSet property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the certDataSet property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -317,12 +315,10 @@ public class ForwardDataSetSubmissionReportV03 {
      * {@link CertificateDataSet1 }
      * 
      * 
-     * @return
-     *     The value of the certDataSet property.
      */
     public List<CertificateDataSet1> getCertDataSet() {
         if (certDataSet == null) {
-            certDataSet = new ArrayList<>();
+            certDataSet = new ArrayList<CertificateDataSet1>();
         }
         return this.certDataSet;
     }
@@ -333,8 +329,8 @@ public class ForwardDataSetSubmissionReportV03 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the othrCertDataSet property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the othrCertDataSet property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -348,12 +344,10 @@ public class ForwardDataSetSubmissionReportV03 {
      * {@link OtherCertificateDataSet1 }
      * 
      * 
-     * @return
-     *     The value of the othrCertDataSet property.
      */
     public List<OtherCertificateDataSet1> getOthrCertDataSet() {
         if (othrCertDataSet == null) {
-            othrCertDataSet = new ArrayList<>();
+            othrCertDataSet = new ArrayList<OtherCertificateDataSet1>();
         }
         return this.othrCertDataSet;
     }

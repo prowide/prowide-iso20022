@@ -1,30 +1,31 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for POIComponentType2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="POIComponentType2Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="SOFT"/>
- *     <enumeration value="EMVK"/>
- *     <enumeration value="EMVO"/>
- *     <enumeration value="MRIT"/>
- *     <enumeration value="CHIT"/>
- *     <enumeration value="SECM"/>
- *     <enumeration value="PEDV"/>
- *     <enumeration value="AQPR"/>
- *     <enumeration value="MRPR"/>
- *     <enumeration value="VDPR"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="POIComponentType2Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="SOFT"/&gt;
+ *     &lt;enumeration value="EMVK"/&gt;
+ *     &lt;enumeration value="EMVO"/&gt;
+ *     &lt;enumeration value="MRIT"/&gt;
+ *     &lt;enumeration value="CHIT"/&gt;
+ *     &lt;enumeration value="SECM"/&gt;
+ *     &lt;enumeration value="PEDV"/&gt;
+ *     &lt;enumeration value="AQPR"/&gt;
+ *     &lt;enumeration value="MRPR"/&gt;
+ *     &lt;enumeration value="VDPR"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "POIComponentType2Code")

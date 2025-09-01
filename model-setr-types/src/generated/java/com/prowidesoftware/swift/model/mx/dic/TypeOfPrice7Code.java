@@ -1,33 +1,34 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for TypeOfPrice7Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="TypeOfPrice7Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="BIDE"/>
- *     <enumeration value="OFFR"/>
- *     <enumeration value="NAVL"/>
- *     <enumeration value="CREA"/>
- *     <enumeration value="CANC"/>
- *     <enumeration value="INTE"/>
- *     <enumeration value="SWNG"/>
- *     <enumeration value="OTHR"/>
- *     <enumeration value="MIDD"/>
- *     <enumeration value="RINV"/>
- *     <enumeration value="SWIC"/>
- *     <enumeration value="DDVR"/>
- *     <enumeration value="ACTU"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="TypeOfPrice7Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="BIDE"/&gt;
+ *     &lt;enumeration value="OFFR"/&gt;
+ *     &lt;enumeration value="NAVL"/&gt;
+ *     &lt;enumeration value="CREA"/&gt;
+ *     &lt;enumeration value="CANC"/&gt;
+ *     &lt;enumeration value="INTE"/&gt;
+ *     &lt;enumeration value="SWNG"/&gt;
+ *     &lt;enumeration value="OTHR"/&gt;
+ *     &lt;enumeration value="MIDD"/&gt;
+ *     &lt;enumeration value="RINV"/&gt;
+ *     &lt;enumeration value="SWIC"/&gt;
+ *     &lt;enumeration value="DDVR"/&gt;
+ *     &lt;enumeration value="ACTU"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "TypeOfPrice7Code")

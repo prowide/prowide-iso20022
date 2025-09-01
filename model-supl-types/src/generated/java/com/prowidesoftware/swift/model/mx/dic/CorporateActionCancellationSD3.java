@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -41,11 +41,11 @@ public class CorporateActionCancellationSD3 {
     @XmlElement(name = "LkAddedDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate lkAddedDt;
+    protected XMLGregorianCalendar lkAddedDt;
     @XmlElement(name = "LkModfdDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate lkModfdDt;
+    protected XMLGregorianCalendar lkModfdDt;
 
     /**
      * Gets the value of the plcAndNm property.
@@ -130,7 +130,7 @@ public class CorporateActionCancellationSD3 {
      *     {@link String }
      *     
      */
-    public LocalDate getLkAddedDt() {
+    public XMLGregorianCalendar getLkAddedDt() {
         return lkAddedDt;
     }
 
@@ -142,7 +142,7 @@ public class CorporateActionCancellationSD3 {
      *     {@link String }
      *     
      */
-    public CorporateActionCancellationSD3 setLkAddedDt(LocalDate value) {
+    public CorporateActionCancellationSD3 setLkAddedDt(XMLGregorianCalendar value) {
         this.lkAddedDt = value;
         return this;
     }
@@ -155,7 +155,7 @@ public class CorporateActionCancellationSD3 {
      *     {@link String }
      *     
      */
-    public LocalDate getLkModfdDt() {
+    public XMLGregorianCalendar getLkModfdDt() {
         return lkModfdDt;
     }
 
@@ -167,7 +167,7 @@ public class CorporateActionCancellationSD3 {
      *     {@link String }
      *     
      */
-    public CorporateActionCancellationSD3 setLkModfdDt(LocalDate value) {
+    public CorporateActionCancellationSD3 setLkModfdDt(XMLGregorianCalendar value) {
         this.lkModfdDt = value;
         return this;
     }

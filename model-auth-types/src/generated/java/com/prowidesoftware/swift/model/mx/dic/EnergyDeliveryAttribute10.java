@@ -3,11 +3,11 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -55,8 +55,8 @@ public class EnergyDeliveryAttribute10 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the dlvryIntrvl property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the dlvryIntrvl property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -70,12 +70,10 @@ public class EnergyDeliveryAttribute10 {
      * {@link TimePeriodDetails1 }
      * 
      * 
-     * @return
-     *     The value of the dlvryIntrvl property.
      */
     public List<TimePeriodDetails1> getDlvryIntrvl() {
         if (dlvryIntrvl == null) {
-            dlvryIntrvl = new ArrayList<>();
+            dlvryIntrvl = new ArrayList<TimePeriodDetails1>();
         }
         return this.dlvryIntrvl;
     }
@@ -136,8 +134,8 @@ public class EnergyDeliveryAttribute10 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the wkDay property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the wkDay property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -151,12 +149,10 @@ public class EnergyDeliveryAttribute10 {
      * {@link WeekDay3Code }
      * 
      * 
-     * @return
-     *     The value of the wkDay property.
      */
     public List<WeekDay3Code> getWkDay() {
         if (wkDay == null) {
-            wkDay = new ArrayList<>();
+            wkDay = new ArrayList<WeekDay3Code>();
         }
         return this.wkDay;
     }

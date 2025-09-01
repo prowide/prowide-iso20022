@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxTsrv01900101
 
     @XmlElement(name = "UdrtkgStsRpt", required = true)
     protected UndertakingStatusReportV01 udrtkgStsRpt;
-    public static final transient String BUSINESS_PROCESS = "tsrv";
-    public static final transient int FUNCTIONALITY = 19;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 1;
+    public final static transient String BUSINESS_PROCESS = "tsrv";
+    public final static transient int FUNCTIONALITY = 19;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {ActiveCurrencyAndAmount.class, AddressType2Code.class, BranchAndFinancialInstitutionIdentification5 .class, BranchData2 .class, ClearingSystemIdentification2Choice.class, ClearingSystemMemberIdentification2 .class, ContactDetails2 .class, CopyDuplicate1Code.class, DateAndPlaceOfBirth.class, Document9 .class, DocumentFormat1Choice.class, FinancialIdentificationSchemeName1Choice.class, FinancialInstitutionIdentification8 .class, GenericFinancialIdentification1 .class, GenericIdentification1 .class, GenericOrganisationIdentification1 .class, GenericPersonIdentification1 .class, MxTsrv01900101 .class, NamePrefix1Code.class, OrganisationIdentification4 .class, OrganisationIdentification7 .class, OrganisationIdentification8 .class, OrganisationIdentificationSchemeName1Choice.class, OriginalMessage1 .class, Party10Choice.class, Party11Choice.class, Party6Choice.class, Party9Choice.class, PartyAndSignature2 .class, PartyIdentification32 .class, PartyIdentification42 .class, PartyIdentification43 .class, PersonIdentification5 .class, PersonIdentificationSchemeName1Choice.class, PostalAddress6 .class, ProprietaryData3 .class, ReportedAmount1 .class, StatusReason6Choice.class, StatusReasonInformation8 .class, Undertaking8 .class, UndertakingDocumentType1Choice.class, UndertakingStatus3Code.class, UndertakingStatusAdvice1 .class, UndertakingStatusReportV01 .class };
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:tsrv.019.001.01";
+    public final static transient Class[] _classes = new Class[] {ActiveCurrencyAndAmount.class, AddressType2Code.class, BranchAndFinancialInstitutionIdentification5 .class, BranchData2 .class, ClearingSystemIdentification2Choice.class, ClearingSystemMemberIdentification2 .class, ContactDetails2 .class, CopyDuplicate1Code.class, DateAndPlaceOfBirth.class, Document9 .class, DocumentFormat1Choice.class, FinancialIdentificationSchemeName1Choice.class, FinancialInstitutionIdentification8 .class, GenericFinancialIdentification1 .class, GenericIdentification1 .class, GenericOrganisationIdentification1 .class, GenericPersonIdentification1 .class, MxTsrv01900101 .class, NamePrefix1Code.class, OrganisationIdentification4 .class, OrganisationIdentification7 .class, OrganisationIdentification8 .class, OrganisationIdentificationSchemeName1Choice.class, OriginalMessage1 .class, Party10Choice.class, Party11Choice.class, Party6Choice.class, Party9Choice.class, PartyAndSignature2 .class, PartyIdentification32 .class, PartyIdentification42 .class, PartyIdentification43 .class, PersonIdentification5 .class, PersonIdentificationSchemeName1Choice.class, PostalAddress6 .class, ProprietaryData3 .class, ReportedAmount1 .class, StatusReason6Choice.class, StatusReasonInformation8 .class, Undertaking8 .class, UndertakingDocumentType1Choice.class, UndertakingStatus3Code.class, UndertakingStatusAdvice1 .class, UndertakingStatusReportV01 .class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:tsrv.019.001.01";
 
     public MxTsrv01900101() {
         super();
@@ -86,6 +86,21 @@ public class MxTsrv01900101
     public MxTsrv01900101 setUdrtkgStsRpt(UndertakingStatusReportV01 value) {
         this.udrtkgStsRpt = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxTsrv01900101
      * @return
      *     a new instance of MxTsrv01900101
      */
-    public static final MxTsrv01900101 fromJson(String json) {
+    public final static MxTsrv01900101 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxTsrv01900101 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

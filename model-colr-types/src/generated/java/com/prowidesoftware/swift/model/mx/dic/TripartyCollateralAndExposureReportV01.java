@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -164,8 +164,8 @@ public class TripartyCollateralAndExposureReportV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the xpsrTpAggtn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the xpsrTpAggtn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -179,12 +179,10 @@ public class TripartyCollateralAndExposureReportV01 {
      * {@link ExposureTypeAggregation3 }
      * 
      * 
-     * @return
-     *     The value of the xpsrTpAggtn property.
      */
     public List<ExposureTypeAggregation3> getXpsrTpAggtn() {
         if (xpsrTpAggtn == null) {
-            xpsrTpAggtn = new ArrayList<>();
+            xpsrTpAggtn = new ArrayList<ExposureTypeAggregation3>();
         }
         return this.xpsrTpAggtn;
     }
@@ -195,8 +193,8 @@ public class TripartyCollateralAndExposureReportV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the ctrPtyAggtn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the ctrPtyAggtn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -210,12 +208,10 @@ public class TripartyCollateralAndExposureReportV01 {
      * {@link CounterpartyAggregation3 }
      * 
      * 
-     * @return
-     *     The value of the ctrPtyAggtn property.
      */
     public List<CounterpartyAggregation3> getCtrPtyAggtn() {
         if (ctrPtyAggtn == null) {
-            ctrPtyAggtn = new ArrayList<>();
+            ctrPtyAggtn = new ArrayList<CounterpartyAggregation3>();
         }
         return this.ctrPtyAggtn;
     }
@@ -226,8 +222,8 @@ public class TripartyCollateralAndExposureReportV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the txs property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the txs property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -241,12 +237,10 @@ public class TripartyCollateralAndExposureReportV01 {
      * {@link Transaction124 }
      * 
      * 
-     * @return
-     *     The value of the txs property.
      */
     public List<Transaction124> getTxs() {
         if (txs == null) {
-            txs = new ArrayList<>();
+            txs = new ArrayList<Transaction124>();
         }
         return this.txs;
     }
@@ -282,8 +276,8 @@ public class TripartyCollateralAndExposureReportV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the splmtryData property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -297,12 +291,10 @@ public class TripartyCollateralAndExposureReportV01 {
      * {@link SupplementaryData1 }
      * 
      * 
-     * @return
-     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<>();
+            splmtryData = new ArrayList<SupplementaryData1>();
         }
         return this.splmtryData;
     }

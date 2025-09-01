@@ -1,32 +1,33 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for ActionType11Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="ActionType11Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="CNTI"/>
- *     <enumeration value="CNIS"/>
- *     <enumeration value="CNTA"/>
- *     <enumeration value="CNAS"/>
- *     <enumeration value="CPTR"/>
- *     <enumeration value="CHDV"/>
- *     <enumeration value="VIPM"/>
- *     <enumeration value="TRCK"/>
- *     <enumeration value="TRXR"/>
- *     <enumeration value="OTHN"/>
- *     <enumeration value="OTHP"/>
- *     <enumeration value="SIGN"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="ActionType11Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="CNTI"/&gt;
+ *     &lt;enumeration value="CNIS"/&gt;
+ *     &lt;enumeration value="CNTA"/&gt;
+ *     &lt;enumeration value="CNAS"/&gt;
+ *     &lt;enumeration value="CPTR"/&gt;
+ *     &lt;enumeration value="CHDV"/&gt;
+ *     &lt;enumeration value="VIPM"/&gt;
+ *     &lt;enumeration value="TRCK"/&gt;
+ *     &lt;enumeration value="TRXR"/&gt;
+ *     &lt;enumeration value="OTHN"/&gt;
+ *     &lt;enumeration value="OTHP"/&gt;
+ *     &lt;enumeration value="SIGN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "ActionType11Code")
