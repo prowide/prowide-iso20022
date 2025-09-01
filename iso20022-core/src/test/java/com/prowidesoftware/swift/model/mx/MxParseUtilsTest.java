@@ -381,6 +381,26 @@ public class MxParseUtilsTest {
         assertMxId(MxParseUtils.identifyMessage(xml).orElse(null));
     }
 
+    /**
+     * Testing lenient parsing
+     */
+    @Test
+    public void testIdentifyMessage_InvalidPrologVersion() {
+        final String xml = "<?xml version=\"foo\" encoding=\"UTF-8\"?>"
+                + "<Doc:Document xmlns:Doc=\"urn:swift:xsd:camt.003.001.04\"></Doc:Document>";
+        assertMxId(MxParseUtils.identifyMessage(xml).orElse(null));
+    }
+
+    /**
+     * Testing lenient parsing
+     */
+    @Test
+    public void testIdentifyMessage_EmptyPrologVersion() {
+        final String xml = "<?xml version=\"\" encoding=\"UTF-8\"?>"
+                + "<Doc:Document xmlns:Doc=\"urn:swift:xsd:camt.003.001.04\"></Doc:Document>";
+        assertMxId(MxParseUtils.identifyMessage(xml).orElse(null));
+    }
+
     void assertMxId(MxId id) {
         assertNotNull(id, "detected id is null");
         assertEquals(MxBusinessProcess.camt, id.getBusinessProcess());
@@ -1039,5 +1059,53 @@ public class MxParseUtilsTest {
                 .isPresent());
         assertFalse(MxParseUtils.findByTags(xml_pacs_008_001_01, "FIToFIPmtStsReq", "GrpHdr")
                 .isPresent());
+    }
+
+    @Test
+    void testMakeXmlLenient_NullInput() {
+        assertNull(MxParseUtils.makeXmlLenient(null));
+    }
+
+    @Test
+    void testMakeXmlLenient_NoXmlDeclaration() {
+        String xml = "<root></root>";
+        assertEquals(xml, MxParseUtils.makeXmlLenient(xml));
+    }
+
+    @Test
+    void testMakeXmlLenient_UppercaseXmlDeclaration() {
+        String xml = "<?XML version=\"1.0\"?><root/>";
+        assertEquals("<?xml version=\"1.0\"?><root/>", MxParseUtils.makeXmlLenient(xml));
+    }
+
+    @Test
+    void testMakeXmlLenient_EmptyVersion() {
+        String xml = "<?xml version=\"\"?><root/>";
+        assertEquals("<?xml version=\"1.0\"?><root/>", MxParseUtils.makeXmlLenient(xml));
+    }
+
+    @Test
+    void testMakeXmlLenient_MissingVersion() {
+        String xml = "<?xml encoding=\"UTF-8\"?><root/>";
+        assertEquals("<?xml version=\"1.0\" encoding=\"UTF-8\"?><root/>", MxParseUtils.makeXmlLenient(xml));
+    }
+
+    @Test
+    void testMakeXmlLenient_InvalidVersion() {
+        String xml = "<?xml version=\"2.0\"?><root/>";
+        assertEquals("<?xml version=\"1.0\"?><root/>", MxParseUtils.makeXmlLenient(xml));
+    }
+
+    @Test
+    void testMakeXmlLenient_ValidVersionAndEncoding() {
+        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><root/>";
+        assertEquals(xml, MxParseUtils.makeXmlLenient(xml));
+    }
+
+    @Test
+    void testMakeXmlLenient_StandaloneAttribute() {
+        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><root/>";
+        String expected = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><root/>";
+        assertEquals(expected, MxParseUtils.makeXmlLenient(xml));
     }
 }
