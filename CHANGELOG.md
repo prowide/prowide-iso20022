@@ -1,8 +1,8 @@
 # Prowide ISO 20022 - CHANGELOG
 
-### 10.2.8 - SNAPSHOT
+### 10.2.8 - September 2025
+  * (PW-2637) Fix: do not consider copy duplicate flag (CpyDplct) in app header to mark the header a duplicate
   * Feat: Enhanced the `MxParseUtils` to be lenient when the XML declaration has empty or invalid version attribute
-  * (PW-2637) Fix: Block 5 PDE was generated even when PssblDplct=false in MX AppHdr; exclude CpyDplct from PDE checks.
 
 #### 10.2.7 - April 2025
   * Enhanced the MX parser log verbosity when parsing malformed content
