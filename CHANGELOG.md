@@ -2,6 +2,7 @@
 
 ### 10.2.8 - SNAPSHOT
   * Feat: Enhanced the `MxParseUtils` to be lenient when the XML declaration has empty or invalid version attribute
+  * (PW-2637) Fix: Block 5 PDE was generated even when PssblDplct=false in MX AppHdr; exclude CpyDplct from PDE checks.
 
 #### 10.2.7 - April 2025
   * Enhanced the MX parser log verbosity when parsing malformed content
