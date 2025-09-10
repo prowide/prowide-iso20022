@@ -171,7 +171,7 @@ public class BusinessAppHdrV02Test {
     }
 
     @Test
-    public void testPDE() {
+    public void testParseEnvelope_PssblDplctFalse_IgnoresCpyDplct() {
         String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n" + "<Envelope>\n"
                 + "  <AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n"
                 + "    <CharSet>TEXT</CharSet>\n"
