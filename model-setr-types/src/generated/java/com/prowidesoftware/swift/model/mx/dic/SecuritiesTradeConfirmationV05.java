@@ -1,0 +1,766 @@
+
+package com.prowidesoftware.swift.model.mx.dic;
+
+import java.util.ArrayList;
+import java.util.List;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+
+/**
+ * SCOPE
+ * Sent by an executing party to an instructing party directly or through Central Matching Utility (CMU) to provide trade confirmation on a per-account basis based on instructions provided by the instructing party in the SecuritiesAllocationInstruction message.
+ * 
+ * It may also be used to provide trade confirmation on the trade level from an executing party or an instructing party to the custodian or an affirming party directly or through CMU.
+ * 
+ * The instructing party is typically the investment manager or an intermediary system/vendor communicating on behalf of the investment manager or of other categories of investors.
+ * The executing party is typically the broker/dealer or an intermediary system/vendor communicating on behalf of the broker/dealer.
+ * The custodian or the affirming party is typically the custodian, trustee, financial institution, intermediary system/vendor communicating on behalf of them, or their agent.
+ * 
+ * USAGE
+ * Initiator: In local matching, the initiator of this message is always the executing party. In central matching the initiator may be either the executing party or instructing party.
+ * Respondent: instructing party, a custodian or an affirming party responds with SecuritiesTradeConfirmationResponse (accept or reject) message.
+ * 
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "SecuritiesTradeConfirmationV05", propOrder = {
+    "id",
+    "nbCnt",
+    "refs",
+    "tradDtls",
+    "finInstrmId",
+    "finInstrmAttrbts",
+    "undrlygFinInstrm",
+    "stiptns",
+    "confPties",
+    "sttlmParams",
+    "stgSttlmInstr",
+    "dlvrgSttlmPties",
+    "rcvgSttlmPties",
+    "cshPties",
+    "clrDtls",
+    "sttlmAmt",
+    "othrAmts",
+    "othrPrics",
+    "othrBizPties",
+    "twoLegTxDtls",
+    "rgltryStiptns",
+    "splmtryData"
+})
+public class SecuritiesTradeConfirmationV05 {
+
+    @XmlElement(name = "Id", required = true)
+    protected TransactiontIdentification4 id;
+    @XmlElement(name = "NbCnt")
+    protected NumberCount1Choice nbCnt;
+    @XmlElement(name = "Refs")
+    protected List<Linkages76> refs;
+    @XmlElement(name = "TradDtls", required = true)
+    protected Order24 tradDtls;
+    @XmlElement(name = "FinInstrmId", required = true)
+    protected SecurityIdentification19 finInstrmId;
+    @XmlElement(name = "FinInstrmAttrbts")
+    protected FinancialInstrumentAttributes124 finInstrmAttrbts;
+    @XmlElement(name = "UndrlygFinInstrm")
+    protected List<UnderlyingFinancialInstrument7> undrlygFinInstrm;
+    @XmlElement(name = "Stiptns")
+    protected FinancialInstrumentStipulations4 stiptns;
+    @XmlElement(name = "ConfPties", required = true)
+    protected List<ConfirmationParties6> confPties;
+    @XmlElement(name = "SttlmParams")
+    protected SettlementDetails213 sttlmParams;
+    @XmlElement(name = "StgSttlmInstr")
+    protected StandingSettlementInstruction13 stgSttlmInstr;
+    @XmlElement(name = "DlvrgSttlmPties")
+    protected SettlementParties59 dlvrgSttlmPties;
+    @XmlElement(name = "RcvgSttlmPties")
+    protected SettlementParties59 rcvgSttlmPties;
+    @XmlElement(name = "CshPties")
+    protected CashParties33 cshPties;
+    @XmlElement(name = "ClrDtls")
+    protected Clearing5 clrDtls;
+    @XmlElement(name = "SttlmAmt")
+    protected AmountAndDirection28 sttlmAmt;
+    @XmlElement(name = "OthrAmts")
+    protected List<OtherAmounts16> othrAmts;
+    @XmlElement(name = "OthrPrics")
+    protected List<OtherPrices5> othrPrics;
+    @XmlElement(name = "OthrBizPties")
+    protected OtherParties32 othrBizPties;
+    @XmlElement(name = "TwoLegTxDtls")
+    protected TwoLegTransactionDetails5 twoLegTxDtls;
+    @XmlElement(name = "RgltryStiptns")
+    protected RegulatoryStipulations1 rgltryStiptns;
+    @XmlElement(name = "SplmtryData")
+    protected List<SupplementaryData1> splmtryData;
+
+    /**
+     * Gets the value of the id property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link TransactiontIdentification4 }
+     *     
+     */
+    public TransactiontIdentification4 getId() {
+        return id;
+    }
+
+    /**
+     * Sets the value of the id property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link TransactiontIdentification4 }
+     *     
+     */
+    public SecuritiesTradeConfirmationV05 setId(TransactiontIdentification4 value) {
+        this.id = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the nbCnt property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link NumberCount1Choice }
+     *     
+     */
+    public NumberCount1Choice getNbCnt() {
+        return nbCnt;
+    }
+
+    /**
+     * Sets the value of the nbCnt property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link NumberCount1Choice }
+     *     
+     */
+    public SecuritiesTradeConfirmationV05 setNbCnt(NumberCount1Choice value) {
+        this.nbCnt = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the refs property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the refs property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getRefs().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Linkages76 }
+     * 
+     * 
+     * @return
+     *     The value of the refs property.
+     */
+    public List<Linkages76> getRefs() {
+        if (refs == null) {
+            refs = new ArrayList<>();
+        }
+        return this.refs;
+    }
+
+    /**
+     * Gets the value of the tradDtls property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Order24 }
+     *     
+     */
+    public Order24 getTradDtls() {
+        return tradDtls;
+    }
+
+    /**
+     * Sets the value of the tradDtls property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Order24 }
+     *     
+     */
+    public SecuritiesTradeConfirmationV05 setTradDtls(Order24 value) {
+        this.tradDtls = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the finInstrmId property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link SecurityIdentification19 }
+     *     
+     */
+    public SecurityIdentification19 getFinInstrmId() {
+        return finInstrmId;
+    }
+
+    /**
+     * Sets the value of the finInstrmId property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link SecurityIdentification19 }
+     *     
+     */
+    public SecuritiesTradeConfirmationV05 setFinInstrmId(SecurityIdentification19 value) {
+        this.finInstrmId = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the finInstrmAttrbts property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link FinancialInstrumentAttributes124 }
+     *     
+     */
+    public FinancialInstrumentAttributes124 getFinInstrmAttrbts() {
+        return finInstrmAttrbts;
+    }
+
+    /**
+     * Sets the value of the finInstrmAttrbts property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link FinancialInstrumentAttributes124 }
+     *     
+     */
+    public SecuritiesTradeConfirmationV05 setFinInstrmAttrbts(FinancialInstrumentAttributes124 value) {
+        this.finInstrmAttrbts = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the undrlygFinInstrm property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the undrlygFinInstrm property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getUndrlygFinInstrm().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link UnderlyingFinancialInstrument7 }
+     * 
+     * 
+     * @return
+     *     The value of the undrlygFinInstrm property.
+     */
+    public List<UnderlyingFinancialInstrument7> getUndrlygFinInstrm() {
+        if (undrlygFinInstrm == null) {
+            undrlygFinInstrm = new ArrayList<>();
+        }
+        return this.undrlygFinInstrm;
+    }
+
+    /**
+     * Gets the value of the stiptns property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link FinancialInstrumentStipulations4 }
+     *     
+     */
+    public FinancialInstrumentStipulations4 getStiptns() {
+        return stiptns;
+    }
+
+    /**
+     * Sets the value of the stiptns property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link FinancialInstrumentStipulations4 }
+     *     
+     */
+    public SecuritiesTradeConfirmationV05 setStiptns(FinancialInstrumentStipulations4 value) {
+        this.stiptns = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the confPties property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the confPties property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getConfPties().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link ConfirmationParties6 }
+     * 
+     * 
+     * @return
+     *     The value of the confPties property.
+     */
+    public List<ConfirmationParties6> getConfPties() {
+        if (confPties == null) {
+            confPties = new ArrayList<>();
+        }
+        return this.confPties;
+    }
+
+    /**
+     * Gets the value of the sttlmParams property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link SettlementDetails213 }
+     *     
+     */
+    public SettlementDetails213 getSttlmParams() {
+        return sttlmParams;
+    }
+
+    /**
+     * Sets the value of the sttlmParams property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link SettlementDetails213 }
+     *     
+     */
+    public SecuritiesTradeConfirmationV05 setSttlmParams(SettlementDetails213 value) {
+        this.sttlmParams = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the stgSttlmInstr property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link StandingSettlementInstruction13 }
+     *     
+     */
+    public StandingSettlementInstruction13 getStgSttlmInstr() {
+        return stgSttlmInstr;
+    }
+
+    /**
+     * Sets the value of the stgSttlmInstr property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link StandingSettlementInstruction13 }
+     *     
+     */
+    public SecuritiesTradeConfirmationV05 setStgSttlmInstr(StandingSettlementInstruction13 value) {
+        this.stgSttlmInstr = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the dlvrgSttlmPties property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link SettlementParties59 }
+     *     
+     */
+    public SettlementParties59 getDlvrgSttlmPties() {
+        return dlvrgSttlmPties;
+    }
+
+    /**
+     * Sets the value of the dlvrgSttlmPties property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link SettlementParties59 }
+     *     
+     */
+    public SecuritiesTradeConfirmationV05 setDlvrgSttlmPties(SettlementParties59 value) {
+        this.dlvrgSttlmPties = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the rcvgSttlmPties property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link SettlementParties59 }
+     *     
+     */
+    public SettlementParties59 getRcvgSttlmPties() {
+        return rcvgSttlmPties;
+    }
+
+    /**
+     * Sets the value of the rcvgSttlmPties property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link SettlementParties59 }
+     *     
+     */
+    public SecuritiesTradeConfirmationV05 setRcvgSttlmPties(SettlementParties59 value) {
+        this.rcvgSttlmPties = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the cshPties property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link CashParties33 }
+     *     
+     */
+    public CashParties33 getCshPties() {
+        return cshPties;
+    }
+
+    /**
+     * Sets the value of the cshPties property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link CashParties33 }
+     *     
+     */
+    public SecuritiesTradeConfirmationV05 setCshPties(CashParties33 value) {
+        this.cshPties = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the clrDtls property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Clearing5 }
+     *     
+     */
+    public Clearing5 getClrDtls() {
+        return clrDtls;
+    }
+
+    /**
+     * Sets the value of the clrDtls property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Clearing5 }
+     *     
+     */
+    public SecuritiesTradeConfirmationV05 setClrDtls(Clearing5 value) {
+        this.clrDtls = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the sttlmAmt property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link AmountAndDirection28 }
+     *     
+     */
+    public AmountAndDirection28 getSttlmAmt() {
+        return sttlmAmt;
+    }
+
+    /**
+     * Sets the value of the sttlmAmt property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link AmountAndDirection28 }
+     *     
+     */
+    public SecuritiesTradeConfirmationV05 setSttlmAmt(AmountAndDirection28 value) {
+        this.sttlmAmt = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the othrAmts property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the othrAmts property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getOthrAmts().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link OtherAmounts16 }
+     * 
+     * 
+     * @return
+     *     The value of the othrAmts property.
+     */
+    public List<OtherAmounts16> getOthrAmts() {
+        if (othrAmts == null) {
+            othrAmts = new ArrayList<>();
+        }
+        return this.othrAmts;
+    }
+
+    /**
+     * Gets the value of the othrPrics property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the othrPrics property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getOthrPrics().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link OtherPrices5 }
+     * 
+     * 
+     * @return
+     *     The value of the othrPrics property.
+     */
+    public List<OtherPrices5> getOthrPrics() {
+        if (othrPrics == null) {
+            othrPrics = new ArrayList<>();
+        }
+        return this.othrPrics;
+    }
+
+    /**
+     * Gets the value of the othrBizPties property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link OtherParties32 }
+     *     
+     */
+    public OtherParties32 getOthrBizPties() {
+        return othrBizPties;
+    }
+
+    /**
+     * Sets the value of the othrBizPties property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link OtherParties32 }
+     *     
+     */
+    public SecuritiesTradeConfirmationV05 setOthrBizPties(OtherParties32 value) {
+        this.othrBizPties = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the twoLegTxDtls property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link TwoLegTransactionDetails5 }
+     *     
+     */
+    public TwoLegTransactionDetails5 getTwoLegTxDtls() {
+        return twoLegTxDtls;
+    }
+
+    /**
+     * Sets the value of the twoLegTxDtls property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link TwoLegTransactionDetails5 }
+     *     
+     */
+    public SecuritiesTradeConfirmationV05 setTwoLegTxDtls(TwoLegTransactionDetails5 value) {
+        this.twoLegTxDtls = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the rgltryStiptns property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link RegulatoryStipulations1 }
+     *     
+     */
+    public RegulatoryStipulations1 getRgltryStiptns() {
+        return rgltryStiptns;
+    }
+
+    /**
+     * Sets the value of the rgltryStiptns property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link RegulatoryStipulations1 }
+     *     
+     */
+    public SecuritiesTradeConfirmationV05 setRgltryStiptns(RegulatoryStipulations1 value) {
+        this.rgltryStiptns = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the splmtryData property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the splmtryData property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getSplmtryData().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link SupplementaryData1 }
+     * 
+     * 
+     * @return
+     *     The value of the splmtryData property.
+     */
+    public List<SupplementaryData1> getSplmtryData() {
+        if (splmtryData == null) {
+            splmtryData = new ArrayList<>();
+        }
+        return this.splmtryData;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+    /**
+     * Adds a new item to the refs list.
+     * @see #getRefs()
+     * 
+     */
+    public SecuritiesTradeConfirmationV05 addRefs(Linkages76 refs) {
+        getRefs().add(refs);
+        return this;
+    }
+
+    /**
+     * Adds a new item to the undrlygFinInstrm list.
+     * @see #getUndrlygFinInstrm()
+     * 
+     */
+    public SecuritiesTradeConfirmationV05 addUndrlygFinInstrm(UnderlyingFinancialInstrument7 undrlygFinInstrm) {
+        getUndrlygFinInstrm().add(undrlygFinInstrm);
+        return this;
+    }
+
+    /**
+     * Adds a new item to the confPties list.
+     * @see #getConfPties()
+     * 
+     */
+    public SecuritiesTradeConfirmationV05 addConfPties(ConfirmationParties6 confPties) {
+        getConfPties().add(confPties);
+        return this;
+    }
+
+    /**
+     * Adds a new item to the othrAmts list.
+     * @see #getOthrAmts()
+     * 
+     */
+    public SecuritiesTradeConfirmationV05 addOthrAmts(OtherAmounts16 othrAmts) {
+        getOthrAmts().add(othrAmts);
+        return this;
+    }
+
+    /**
+     * Adds a new item to the othrPrics list.
+     * @see #getOthrPrics()
+     * 
+     */
+    public SecuritiesTradeConfirmationV05 addOthrPrics(OtherPrices5 othrPrics) {
+        getOthrPrics().add(othrPrics);
+        return this;
+    }
+
+    /**
+     * Adds a new item to the splmtryData list.
+     * @see #getSplmtryData()
+     * 
+     */
+    public SecuritiesTradeConfirmationV05 addSplmtryData(SupplementaryData1 splmtryData) {
+        getSplmtryData().add(splmtryData);
+        return this;
+    }
+
+}
