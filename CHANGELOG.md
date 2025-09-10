@@ -1,6 +1,6 @@
 # Prowide ISO 20022 - CHANGELOG
 
-### 10.3.1 - SNAPSHOT
+### 10.3.1 - September 2025
   * (PW-2637) Fix: do not consider copy duplicate flag (CpyDplct) in app header to mark the header a duplicate
   * Feat: Enhanced the `MxParseUtils` to be lenient when the XML declaration has empty or invalid version attribute
 
