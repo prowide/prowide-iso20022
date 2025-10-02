@@ -49,7 +49,7 @@ public class IssueJira2810Test {
         MxWriteConfiguration config = new MxWriteConfiguration();
         config.adapters.dateTimeAdapter = new IsoDateTimeAdapter(new CustomDateTimeAdapter());
         String strXML1 = mx.message(config);
-        //Modify after Fix
+        // Modify value after Fix
         Assertions.assertTrue(strXML1.contains("<pacs:CreDtTm>2025-09-16T12:31:42.78-03:00</pacs:CreDtTm>"));
     }
 
