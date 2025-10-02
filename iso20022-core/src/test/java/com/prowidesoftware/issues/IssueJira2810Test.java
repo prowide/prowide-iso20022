@@ -5,6 +5,7 @@ import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.OffsetDateTimeAdapter;
 import java.time.OffsetDateTime;
 import org.apache.commons.lang3.StringUtils;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class IssueJira2810Test {
@@ -48,7 +49,7 @@ public class IssueJira2810Test {
         MxWriteConfiguration config = new MxWriteConfiguration();
         config.adapters.dateTimeAdapter = new IsoDateTimeAdapter(new CustomDateTimeAdapter());
         String strXML1 = mx.message(config);
-        System.out.println("MX:" + strXML1);
+        Assertions.assertTrue(strXML1.contains("<pacs:CreDtTm>2025-09-16T12:31:42.780-03:00</pacs:CreDtTm>"));
     }
 
     public class CustomDateTimeAdapter extends OffsetDateTimeAdapter {
