@@ -8,19 +8,6 @@ import org.junit.jupiter.api.Test;
 
 public class IssueJira2810Test {
     @Test
-    public void testCreationDt() {
-        String xml = "";
-        MxPacs00900108 mx = new MxPacs00900108(xml);
-        // default date time adapter contains the offset
-        String strXML = mx.message();
-        System.out.println(strXML);
-
-        // custom serialization using a custom date time adapter
-        // MxWriteConfiguration config = new MxWriteConfiguration();
-        // config.adapters.dateTimeAdapter = new IsoDateTimeAdapter(new CustomDateTimeAdapter());
-    }
-
-    @Test
     public void testXMLCreationDt() {
         String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
                 + "<message>"
