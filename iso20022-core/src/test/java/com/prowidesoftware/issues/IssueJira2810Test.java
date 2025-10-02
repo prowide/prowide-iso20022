@@ -1,6 +1,7 @@
 package com.prowidesoftware.issues;
 
 import com.prowidesoftware.swift.model.mx.*;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.OffsetDateTimeAdapter;
 import java.time.OffsetDateTime;
 import org.apache.commons.lang3.StringUtils;
@@ -43,13 +44,11 @@ public class IssueJira2810Test {
         // String strXML = amx.message();
         // System.out.println("AMX:" + strXML);
         MxPacs00800108 mx = new MxPacs00800108(xml);
-        // default date time adapter contains the offset
-        String strXML1 = mx.message();
-        System.out.println("MX:" + strXML1);
-
         // custom serialization using a custom date time adapter
-        // MxWriteConfiguration config = new MxWriteConfiguration();
-        // config.adapters.dateTimeAdapter = new IsoDateTimeAdapter(new CustomDateTimeAdapter());
+        MxWriteConfiguration config = new MxWriteConfiguration();
+        config.adapters.dateTimeAdapter = new IsoDateTimeAdapter(new CustomDateTimeAdapter());
+        String strXML1 = mx.message(config);
+        System.out.println("MX:" + strXML1);
     }
 
     public class CustomDateTimeAdapter extends OffsetDateTimeAdapter {
