@@ -1,5 +1,9 @@
 # Prowide ISO 20022 - CHANGELOG
 
+### 9.6.1 - SNAPSHOT
+  * (PW-2637) Fix: do not consider copy duplicate flag (CpyDplct) in app header to mark the header a duplicate
+  * Feat: Enhanced the `MxParseUtils` to be lenient when the XML declaration has empty or invalid version attribute
+
 #### 9.6.0 - June 2025
   * SWIFT Standard release update 2025 (live 22 November 2025)
   * Yearly revision of deprecation phase (see https://dev.prowidesoftware.com/SRU2024/getting-started/deprecation/)
