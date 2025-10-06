@@ -3,8 +3,9 @@ package com.prowidesoftware.issues;
 import com.prowidesoftware.swift.model.mx.*;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.OffsetDateTimeAdapter;
-import java.time.OffsetDateTime;
-import org.apache.commons.lang3.StringUtils;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
+import java.time.temporal.ChronoField;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -43,20 +44,21 @@ public class IssueJira2810Test {
                 + "</message>";
         // AbstractMX amx = AbstractMX.parse(xml);
         // String strXML = amx.message();
-        // System.out.println("AMX:" + strXML);
         MxPacs00800108 mx = new MxPacs00800108(xml);
         // custom serialization using a custom date time adapter
         MxWriteConfiguration config = new MxWriteConfiguration();
-        config.adapters.dateTimeAdapter = new IsoDateTimeAdapter(new CustomDateTimeAdapter());
+        DateTimeFormatter dateTimeFormatterBuilder = new DateTimeFormatterBuilder()
+                .appendPattern("yyyy-MM-dd'T'HH:mm:ss")
+                .optionalStart()
+                .appendFraction(ChronoField.NANO_OF_SECOND, 3, 3, true)
+                .optionalEnd()
+                .optionalStart()
+                .appendPattern("XXX")
+                .optionalEnd()
+                .toFormatter();
+        config.adapters.dateTimeAdapter = new IsoDateTimeAdapter(new OffsetDateTimeAdapter(dateTimeFormatterBuilder));
         String strXML1 = mx.message(config);
-        // Modify value after Fix
-        Assertions.assertTrue(strXML1.contains("<pacs:CreDtTm>2025-09-16T12:31:42.78-03:00</pacs:CreDtTm>"));
-    }
-
-    public class CustomDateTimeAdapter extends OffsetDateTimeAdapter {
-        @Override
-        public String marshal(OffsetDateTime offsetDateTime) throws Exception {
-            return StringUtils.replace(super.marshal(offsetDateTime), "+00:00", "Z");
-        }
+        // Modified value after Fix
+        Assertions.assertTrue(strXML1.contains("<pacs:CreDtTm>2025-09-16T12:31:42.780-03:00</pacs:CreDtTm>"));
     }
 }
