@@ -25,8 +25,8 @@ class OffsetDateTimeAdapterTest {
 
         // DateTime without offset and with/without fractional seconds
         testDateTimeImpl("2021-09-19T12:13:14", "2021-09-19T12:13:14" + offset);
-        testDateTimeImpl("2021-09-19T12:13:14.1", "2021-09-19T12:13:14.1" + offset);
-        testDateTimeImpl("2021-09-19T12:13:14.12", "2021-09-19T12:13:14.12" + offset);
+        testDateTimeImpl("2021-09-19T12:13:14.1", "2021-09-19T12:13:14.100" + offset);
+        testDateTimeImpl("2021-09-19T12:13:14.12", "2021-09-19T12:13:14.120" + offset);
         testDateTimeImpl("2021-09-19T12:13:14.123", "2021-09-19T12:13:14.123" + offset);
         testDateTimeImpl("2021-09-19T12:13:14.123456789", "2021-09-19T12:13:14.123456789" + offset);
 
@@ -39,8 +39,8 @@ class OffsetDateTimeAdapterTest {
         testDateTimeImpl("2021-09-19T12:13:14Z", "2021-09-19T12:13:14+00:00");
 
         // DateTime with offset and fractional seconds
-        testDateTimeImpl("2021-09-19T12:13:14.1+01:00", "2021-09-19T12:13:14.1+01:00");
-        testDateTimeImpl("2021-09-19T12:13:14.12-01:00", "2021-09-19T12:13:14.12-01:00");
+        testDateTimeImpl("2021-09-19T12:13:14.1+01:00", "2021-09-19T12:13:14.100+01:00");
+        testDateTimeImpl("2021-09-19T12:13:14.12-01:00", "2021-09-19T12:13:14.120-01:00");
         testDateTimeImpl("2021-09-19T12:13:14.123+00:00", "2021-09-19T12:13:14.123+00:00");
         testDateTimeImpl("2021-09-19T12:13:14.123+08:30", "2021-09-19T12:13:14.123+08:30");
         testDateTimeImpl("2021-09-19T12:13:14.000+08:30", "2021-09-19T12:13:14+08:30");
@@ -73,7 +73,7 @@ class OffsetDateTimeAdapterTest {
 
         // non removable zeros
         testDateTimeImpl("2018-01-15T17:30:33.0+02:00", "2018-01-15T17:30:33+02:00");
-        testDateTimeImpl("2018-01-15T17:30:33.01+02:00", "2018-01-15T17:30:33.01+02:00");
+        testDateTimeImpl("2018-01-15T17:30:33.01+02:00", "2018-01-15T17:30:33.010+02:00");
         testDateTimeImpl("2018-01-15T17:30:33.001+02:00", "2018-01-15T17:30:33.001+02:00");
         testDateTimeImpl("2018-01-15T17:30:33.0001+02:00", "2018-01-15T17:30:33.0001+02:00");
         testDateTimeImpl("2018-01-15T17:30:33.00001+02:00", "2018-01-15T17:30:33.00001+02:00");

@@ -1,11 +1,6 @@
 package com.prowidesoftware.issues;
 
 import com.prowidesoftware.swift.model.mx.*;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import com.prowidesoftware.swift.model.mx.adapters.OffsetDateTimeAdapter;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeFormatterBuilder;
-import java.time.temporal.ChronoField;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -47,7 +42,7 @@ public class IssueJira2810Test {
         MxPacs00800108 mx = new MxPacs00800108(xml);
         // custom serialization using a custom date time adapter
         MxWriteConfiguration config = new MxWriteConfiguration();
-        DateTimeFormatter dateTimeFormatterBuilder = new DateTimeFormatterBuilder()
+        /*DateTimeFormatter dateTimeFormatterBuilder = new DateTimeFormatterBuilder()
                 .appendPattern("yyyy-MM-dd'T'HH:mm:ss")
                 .optionalStart()
                 .appendFraction(ChronoField.NANO_OF_SECOND, 3, 3, true)
@@ -57,7 +52,8 @@ public class IssueJira2810Test {
                 .optionalEnd()
                 .toFormatter();
         config.adapters.dateTimeAdapter = new IsoDateTimeAdapter(new OffsetDateTimeAdapter(dateTimeFormatterBuilder));
-        String strXML1 = mx.message(config);
+         */
+        String strXML1 = mx.message();
         // Modified value after Fix
         Assertions.assertTrue(strXML1.contains("<pacs:CreDtTm>2025-09-16T12:31:42.780-03:00</pacs:CreDtTm>"));
     }
