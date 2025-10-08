@@ -14,7 +14,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Subbalances providing additional information on a specific position but that is not to be accounted for in the building of the aggregate balance, for example, registered.
+ * Sub-balances providing additional information on a specific position but that is not to be accounted for in the building of the aggregate balance, for example, registered.
  * 
  * 
  * 

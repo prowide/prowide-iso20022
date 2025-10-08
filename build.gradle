@@ -21,8 +21,8 @@ archivesBaseName = 'pw-iso20022'
 group 'com.prowidesoftware'
 
 project.ext {
-	SRU = 'SRU2024'
-    prowideCoreVersion = 'SRU2024-9.5.12'
+	SRU = 'SRU2025'
+    prowideCoreVersion = 'SRU2025-9.6.0'
 }
 
 scmVersion {
@@ -121,7 +121,6 @@ configure(subprojects.findAll {it.name.endsWith('-mx')}) {
 	dependencies {
 		api project(':iso20022-core')
 		implementation project(specificTypesProject)
-
 		implementation 'org.apache.commons:commons-lang3:3.17.0'
 		implementation 'com.google.code.gson:gson:2.11.0'
 		compileOnly 'javax.persistence:javax.persistence-api:2.2'
