@@ -15,9 +15,9 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
-import jakarta.xml.bind.JAXBContext;
-import jakarta.xml.bind.JAXBException;
 import java.util.concurrent.ExecutionException;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
 
 /**
  * Singleton to parameterize the {@link JaxbContextCache} used when marshalling or unmarshalling MX messages.

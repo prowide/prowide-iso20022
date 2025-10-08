@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.OffsetDateTime;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -77,11 +77,11 @@ public class TradeLeg9 {
     @XmlElement(name = "TradDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime tradDt;
+    protected XMLGregorianCalendar tradDt;
     @XmlElement(name = "TxDtAndTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime txDtAndTm;
+    protected XMLGregorianCalendar txDtAndTm;
     @XmlElement(name = "SttlmDt")
     protected DateFormat15Choice sttlmDt;
     @XmlElement(name = "FinInstrmId", required = true)
@@ -339,7 +339,7 @@ public class TradeLeg9 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getTradDt() {
+    public XMLGregorianCalendar getTradDt() {
         return tradDt;
     }
 
@@ -351,7 +351,7 @@ public class TradeLeg9 {
      *     {@link String }
      *     
      */
-    public TradeLeg9 setTradDt(OffsetDateTime value) {
+    public TradeLeg9 setTradDt(XMLGregorianCalendar value) {
         this.tradDt = value;
         return this;
     }
@@ -364,7 +364,7 @@ public class TradeLeg9 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getTxDtAndTm() {
+    public XMLGregorianCalendar getTxDtAndTm() {
         return txDtAndTm;
     }
 
@@ -376,7 +376,7 @@ public class TradeLeg9 {
      *     {@link String }
      *     
      */
-    public TradeLeg9 setTxDtAndTm(OffsetDateTime value) {
+    public TradeLeg9 setTxDtAndTm(XMLGregorianCalendar value) {
         this.txDtAndTm = value;
         return this;
     }

@@ -2,16 +2,16 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -54,7 +54,7 @@ public class Trade3 {
     @XmlElement(name = "SttlmDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate sttlmDt;
+    protected XMLGregorianCalendar sttlmDt;
     @XmlElement(name = "ValtnRate", required = true)
     protected AgreedRate3 valtnRate;
     @XmlElement(name = "FwdPts")
@@ -64,7 +64,7 @@ public class Trade3 {
     @XmlElement(name = "ValDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate valDt;
+    protected XMLGregorianCalendar valDt;
     @XmlElement(name = "RskAmt", required = true)
     protected ActiveCurrencyAndAmount rskAmt;
     @XmlElement(name = "SctyId", required = true)
@@ -74,7 +74,7 @@ public class Trade3 {
     @XmlElement(name = "FxgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate fxgDt;
+    protected XMLGregorianCalendar fxgDt;
     @XmlElement(name = "OptnInd")
     protected Boolean optnInd;
     @XmlElement(name = "DltaInd")
@@ -165,7 +165,7 @@ public class Trade3 {
      *     {@link String }
      *     
      */
-    public LocalDate getSttlmDt() {
+    public XMLGregorianCalendar getSttlmDt() {
         return sttlmDt;
     }
 
@@ -177,7 +177,7 @@ public class Trade3 {
      *     {@link String }
      *     
      */
-    public Trade3 setSttlmDt(LocalDate value) {
+    public Trade3 setSttlmDt(XMLGregorianCalendar value) {
         this.sttlmDt = value;
         return this;
     }
@@ -265,7 +265,7 @@ public class Trade3 {
      *     {@link String }
      *     
      */
-    public LocalDate getValDt() {
+    public XMLGregorianCalendar getValDt() {
         return valDt;
     }
 
@@ -277,7 +277,7 @@ public class Trade3 {
      *     {@link String }
      *     
      */
-    public Trade3 setValDt(LocalDate value) {
+    public Trade3 setValDt(XMLGregorianCalendar value) {
         this.valDt = value;
         return this;
     }
@@ -365,7 +365,7 @@ public class Trade3 {
      *     {@link String }
      *     
      */
-    public LocalDate getFxgDt() {
+    public XMLGregorianCalendar getFxgDt() {
         return fxgDt;
     }
 
@@ -377,7 +377,7 @@ public class Trade3 {
      *     {@link String }
      *     
      */
-    public Trade3 setFxgDt(LocalDate value) {
+    public Trade3 setFxgDt(XMLGregorianCalendar value) {
         this.fxgDt = value;
         return this;
     }
@@ -438,8 +438,8 @@ public class Trade3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the assoctdTradRef property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the assoctdTradRef property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -453,12 +453,10 @@ public class Trade3 {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the assoctdTradRef property.
      */
     public List<String> getAssoctdTradRef() {
         if (assoctdTradRef == null) {
-            assoctdTradRef = new ArrayList<>();
+            assoctdTradRef = new ArrayList<String>();
         }
         return this.assoctdTradRef;
     }

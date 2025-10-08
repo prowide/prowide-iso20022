@@ -20,24 +20,23 @@ import com.prowidesoftware.deprecation.DeprecationUtils;
 import com.prowidesoftware.deprecation.ProwideDeprecated;
 import com.prowidesoftware.deprecation.TargetYear;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import com.prowidesoftware.swift.model.mx.adapters.ZuluOffsetDateTimeAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.ZuluDateTimeAdapter;
 import com.prowidesoftware.swift.model.mx.dic.BusinessApplicationHeaderV01Impl;
 import com.prowidesoftware.swift.model.mx.dic.Party9Choice;
-import jakarta.xml.bind.JAXBContext;
-import jakarta.xml.bind.JAXBElement;
-import jakarta.xml.bind.JAXBException;
-import jakarta.xml.bind.Marshaller;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import java.io.StringWriter;
-import java.time.OffsetDateTime;
-import java.time.ZoneOffset;
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBElement;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.namespace.QName;
 import javax.xml.transform.dom.DOMResult;
 import org.apache.commons.lang3.StringUtils;
@@ -53,8 +52,8 @@ import org.w3c.dom.Element;
 @XmlType(name = "AppHdr")
 @XmlRootElement(name = "AppHdr", namespace = "urn:iso:std:iso:20022:tech:xsd:head.001.001.01")
 public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implements AppHdr {
-    public static final String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:head.001.001.01";
-    static final Class[] _classes;
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:head.001.001.01";
+    static final transient Class[] _classes;
     private static final transient Logger log = Logger.getLogger(BusinessAppHdrV01.class.getName());
 
     static {
@@ -171,7 +170,7 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
      * @see #getCreDt()
      */
     @Override
-    public OffsetDateTime creationDate() {
+    public XMLGregorianCalendar creationDate() {
         return this.getCreDt();
     }
 
@@ -179,12 +178,12 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
      * Sets the creation date.
      *
      * @param overwrite if true, the creation date will always be set overwriting any previous value;
-     * @see #setCreDt(OffsetDateTime)
+     * @see #setCreDt(XMLGregorianCalendar)
      */
     @Override
     public void setCreationDate(boolean overwrite) {
         if (this.getCreDt() == null || overwrite) {
-            this.setCreDt(OffsetDateTime.now(ZoneOffset.UTC));
+            this.setCreDt(XMLGregorianCalendarUtils.now());
         }
     }
 
@@ -223,7 +222,7 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
         try {
             JAXBContext context;
             IsoDateTimeAdapter currentAdapter = params.adapters.dateTimeAdapter;
-            params.adapters.dateTimeAdapter = new IsoDateTimeAdapter(new ZuluOffsetDateTimeAdapter());
+            params.adapters.dateTimeAdapter = new IsoDateTimeAdapter(new ZuluDateTimeAdapter());
             if (params.context != null) {
                 context = params.context;
             } else {

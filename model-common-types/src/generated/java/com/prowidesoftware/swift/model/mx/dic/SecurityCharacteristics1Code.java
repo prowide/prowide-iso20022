@@ -1,38 +1,39 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for SecurityCharacteristics1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="SecurityCharacteristics1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="CETE"/>
- *     <enumeration value="CPTE"/>
- *     <enumeration value="CENC"/>
- *     <enumeration value="CMAC"/>
- *     <enumeration value="ETEE"/>
- *     <enumeration value="METE"/>
- *     <enumeration value="MPTE"/>
- *     <enumeration value="OPNN"/>
- *     <enumeration value="PMAC"/>
- *     <enumeration value="PKIE"/>
- *     <enumeration value="PRAE"/>
- *     <enumeration value="PRAM"/>
- *     <enumeration value="PRVN"/>
- *     <enumeration value="STAM"/>
- *     <enumeration value="APTE"/>
- *     <enumeration value="AETE"/>
- *     <enumeration value="OTHN"/>
- *     <enumeration value="OTHP"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="SecurityCharacteristics1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="CETE"/&gt;
+ *     &lt;enumeration value="CPTE"/&gt;
+ *     &lt;enumeration value="CENC"/&gt;
+ *     &lt;enumeration value="CMAC"/&gt;
+ *     &lt;enumeration value="ETEE"/&gt;
+ *     &lt;enumeration value="METE"/&gt;
+ *     &lt;enumeration value="MPTE"/&gt;
+ *     &lt;enumeration value="OPNN"/&gt;
+ *     &lt;enumeration value="PMAC"/&gt;
+ *     &lt;enumeration value="PKIE"/&gt;
+ *     &lt;enumeration value="PRAE"/&gt;
+ *     &lt;enumeration value="PRAM"/&gt;
+ *     &lt;enumeration value="PRVN"/&gt;
+ *     &lt;enumeration value="STAM"/&gt;
+ *     &lt;enumeration value="APTE"/&gt;
+ *     &lt;enumeration value="AETE"/&gt;
+ *     &lt;enumeration value="OTHN"/&gt;
+ *     &lt;enumeration value="OTHP"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "SecurityCharacteristics1Code")

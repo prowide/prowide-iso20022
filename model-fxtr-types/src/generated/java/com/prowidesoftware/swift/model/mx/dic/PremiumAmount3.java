@@ -2,14 +2,14 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -45,7 +45,7 @@ public class PremiumAmount3 {
     @XmlElement(name = "PrmSttlmDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate prmSttlmDt;
+    protected XMLGregorianCalendar prmSttlmDt;
     @XmlElement(name = "PyerPtyRef", required = true)
     protected String pyerPtyRef;
     @XmlElement(name = "RcvrPtyRef", required = true)
@@ -159,7 +159,7 @@ public class PremiumAmount3 {
      *     {@link String }
      *     
      */
-    public LocalDate getPrmSttlmDt() {
+    public XMLGregorianCalendar getPrmSttlmDt() {
         return prmSttlmDt;
     }
 
@@ -171,7 +171,7 @@ public class PremiumAmount3 {
      *     {@link String }
      *     
      */
-    public PremiumAmount3 setPrmSttlmDt(LocalDate value) {
+    public PremiumAmount3 setPrmSttlmDt(XMLGregorianCalendar value) {
         this.prmSttlmDt = value;
         return this;
     }

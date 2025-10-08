@@ -1,26 +1,27 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for MICEntityType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="MICEntityType1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="APPA"/>
- *     <enumeration value="CTPS"/>
- *     <enumeration value="MLTF"/>
- *     <enumeration value="OTFS"/>
- *     <enumeration value="RMKT"/>
- *     <enumeration value="SINT"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="MICEntityType1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="APPA"/&gt;
+ *     &lt;enumeration value="CTPS"/&gt;
+ *     &lt;enumeration value="MLTF"/&gt;
+ *     &lt;enumeration value="OTFS"/&gt;
+ *     &lt;enumeration value="RMKT"/&gt;
+ *     &lt;enumeration value="SINT"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "MICEntityType1Code")

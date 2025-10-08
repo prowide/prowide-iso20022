@@ -2,14 +2,14 @@
 package com.prowidesoftware.swift.model.mx.sys.dic;
 
 import java.math.BigDecimal;
-import java.time.OffsetDateTime ;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -41,11 +41,11 @@ public class InputChannelSessionDetails {
     @XmlElement(name = "SsnOpnTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime ssnOpnTm;
+    protected XMLGregorianCalendar ssnOpnTm;
     @XmlElement(name = "SsnClsTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime ssnClsTm;
+    protected XMLGregorianCalendar ssnClsTm;
     @XmlElement(name = "NbOfSntMsgs", required = true)
     protected BigDecimal nbOfSntMsgs;
     @XmlElement(name = "FrstSnFInptSeq")
@@ -111,7 +111,7 @@ public class InputChannelSessionDetails {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getSsnOpnTm() {
+    public XMLGregorianCalendar getSsnOpnTm() {
         return ssnOpnTm;
     }
 
@@ -123,7 +123,7 @@ public class InputChannelSessionDetails {
      *     {@link String }
      *     
      */
-    public InputChannelSessionDetails setSsnOpnTm(OffsetDateTime value) {
+    public InputChannelSessionDetails setSsnOpnTm(XMLGregorianCalendar value) {
         this.ssnOpnTm = value;
         return this;
     }
@@ -136,7 +136,7 @@ public class InputChannelSessionDetails {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getSsnClsTm() {
+    public XMLGregorianCalendar getSsnClsTm() {
         return ssnClsTm;
     }
 
@@ -148,7 +148,7 @@ public class InputChannelSessionDetails {
      *     {@link String }
      *     
      */
-    public InputChannelSessionDetails setSsnClsTm(OffsetDateTime value) {
+    public InputChannelSessionDetails setSsnClsTm(XMLGregorianCalendar value) {
         this.ssnClsTm = value;
         return this;
     }

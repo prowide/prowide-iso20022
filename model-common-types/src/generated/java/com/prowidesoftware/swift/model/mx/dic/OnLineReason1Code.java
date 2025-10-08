@@ -1,33 +1,34 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for OnLineReason1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="OnLineReason1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="RNDM"/>
- *     <enumeration value="ICCF"/>
- *     <enumeration value="MERF"/>
- *     <enumeration value="TRMF"/>
- *     <enumeration value="ISSF"/>
- *     <enumeration value="FRLT"/>
- *     <enumeration value="EXFL"/>
- *     <enumeration value="TAMT"/>
- *     <enumeration value="CBIN"/>
- *     <enumeration value="UBIN"/>
- *     <enumeration value="CPAN"/>
- *     <enumeration value="FLOW"/>
- *     <enumeration value="CRCY"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="OnLineReason1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="RNDM"/&gt;
+ *     &lt;enumeration value="ICCF"/&gt;
+ *     &lt;enumeration value="MERF"/&gt;
+ *     &lt;enumeration value="TRMF"/&gt;
+ *     &lt;enumeration value="ISSF"/&gt;
+ *     &lt;enumeration value="FRLT"/&gt;
+ *     &lt;enumeration value="EXFL"/&gt;
+ *     &lt;enumeration value="TAMT"/&gt;
+ *     &lt;enumeration value="CBIN"/&gt;
+ *     &lt;enumeration value="UBIN"/&gt;
+ *     &lt;enumeration value="CPAN"/&gt;
+ *     &lt;enumeration value="FLOW"/&gt;
+ *     &lt;enumeration value="CRCY"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "OnLineReason1Code")

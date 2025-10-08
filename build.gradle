@@ -5,8 +5,8 @@ buildscript {
 	}
 	dependencies {
 		classpath 'ru.vyarus:gradle-quality-plugin:5.0.0'
-		classpath 'pl.allegro.tech.build:axion-release-plugin:1.15.1'
-		classpath 'com.diffplug.spotless:spotless-plugin-gradle:6.23.3'
+		classpath 'pl.allegro.tech.build:axion-release-plugin:1.13.6'
+		classpath 'com.diffplug.spotless:spotless-plugin-gradle:6.13.0' // above this version requires Java 11
 	}
 }
 apply plugin: 'pl.allegro.tech.build.axion-release'
@@ -22,7 +22,7 @@ group 'com.prowidesoftware'
 
 project.ext {
 	SRU = 'SRU2024'
-    prowideCoreVersion = 'SRU2024-10.2.13'
+    prowideCoreVersion = 'SRU2024-9.5.12'
 }
 
 scmVersion {
@@ -39,7 +39,7 @@ allprojects {
 		options.encoding = 'UTF-8'
 		java {
 			toolchain {
-				languageVersion.set(JavaLanguageVersion.of(11))
+				languageVersion.set(JavaLanguageVersion.of(8))
 			}
 		}
 		doLast {
@@ -85,8 +85,8 @@ allprojects {
 			'Implementation-Version': project.version,
 			'Implementation-Vendor': 'www.prowidesoftware.com',
 			'Built-OS': System.getProperty('os.name'),
-			'Source-Compatibility': JavaVersion.VERSION_11,
-			'Target-Compatibility': JavaVersion.VERSION_11,
+			'Source-Compatibility': project.sourceCompatibility,
+			'Target-Compatibility': project.targetCompatibility,
 			'Built-Date': new Date().format("yyyy-MM-dd"),
 			'Automatic-Module-Name': 'com.prowidesoftware.iso20022'
 		)
@@ -101,9 +101,6 @@ subprojects {
 	dependencies {
 		implementation 'org.apache.commons:commons-lang3:3.17.0'
 		implementation 'com.google.code.gson:gson:2.11.0'
-		implementation 'com.sun.xml.bind:jaxb-impl:4.0.5'
-		// bind-api is included transitively by jaxb-impl
-		// implementation 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.2'
 	}
 
 	tasks.withType(Jar) {
@@ -127,11 +124,6 @@ configure(subprojects.findAll {it.name.endsWith('-mx')}) {
 
 		implementation 'org.apache.commons:commons-lang3:3.17.0'
 		implementation 'com.google.code.gson:gson:2.11.0'
-
-		implementation 'com.sun.xml.bind:jaxb-impl:4.0.5'
-		// bind-api is included transitively by jaxb-impl
-		// implementation 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.2'
-
 		compileOnly 'javax.persistence:javax.persistence-api:2.2'
 	}
 }
@@ -151,10 +143,16 @@ project(':iso20022-core') {
 		implementation 'org.apache.commons:commons-lang3:3.17.0'
 		implementation 'com.google.code.gson:gson:2.11.0'
 
-		compileOnly 'jakarta.persistence:jakarta.persistence-api:3.1.0'
-		compileOnly 'jakarta.validation:jakarta.validation-api:3.0.2'
+		compileOnly 'javax.persistence:javax.persistence-api:2.2'
+		compileOnly 'javax.validation:validation-api:2.0.1.Final'
 
-		testImplementation 'jakarta.persistence:jakarta.persistence-api:3.1.0'
+		// to avoid potential differences in JAXB implementations when testing in different environments
+		testImplementation 'javax.xml.bind:jaxb-api:2.3.1'
+		testImplementation 'com.sun.xml.bind:jaxb-impl:2.3.3'
+		testImplementation 'com.sun.xml.bind:jaxb-core:2.3.0.1'
+		testImplementation 'javax.activation:activation:1.1.1'
+
+		testImplementation 'javax.persistence:javax.persistence-api:2.2'
 		testImplementation 'org.junit.jupiter:junit-jupiter:5.11.4'
 		testImplementation 'com.google.guava:guava:33.4.0-jre'
 		testImplementation 'org.assertj:assertj-core:3.27.2'
@@ -329,11 +327,9 @@ artifacts {
 // declared dependencies for pom generation
 dependencies {
 	// included build (keep in sync with the latest Prowide Core version)
-    api "com.prowidesoftware:pw-swift-core:${prowideCoreVersion}"
-
-	// jaxb is required because it is no longer included in the JDK
-	// bind-api is included transitively by jaxb-impl
-	implementation 'com.sun.xml.bind:jaxb-impl:4.0.5'
+	api "com.prowidesoftware:pw-swift-core:${prowideCoreVersion}"
+	implementation 'org.apache.commons:commons-lang3:3.17.0'
+	implementation 'com.google.code.gson:gson:2.11.0'
 }
 
 // repo for publishing
@@ -528,6 +524,12 @@ tasks.withType(Test) {
 	}
 }
 
+task('testOn11', type: Test) {
+	javaLauncher = javaToolchains.launcherFor {
+		languageVersion = JavaLanguageVersion.of(11)
+	}
+}
+
 task('testOn17', type: Test) {
 	javaLauncher = javaToolchains.launcherFor {
 		languageVersion = JavaLanguageVersion.of(17)
@@ -539,7 +541,6 @@ task('testOn21', type: Test) {
 		languageVersion = JavaLanguageVersion.of(21)
 	}
 }
-
 
 quality {
 	strict = false

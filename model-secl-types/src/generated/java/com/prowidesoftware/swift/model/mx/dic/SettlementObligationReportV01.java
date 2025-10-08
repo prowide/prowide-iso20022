@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -211,8 +211,8 @@ public class SettlementObligationReportV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the rptDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the rptDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -226,12 +226,10 @@ public class SettlementObligationReportV01 {
      * {@link Report1 }
      * 
      * 
-     * @return
-     *     The value of the rptDtls property.
      */
     public List<Report1> getRptDtls() {
         if (rptDtls == null) {
-            rptDtls = new ArrayList<>();
+            rptDtls = new ArrayList<Report1>();
         }
         return this.rptDtls;
     }
@@ -242,8 +240,8 @@ public class SettlementObligationReportV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the dlvrgPties property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the dlvrgPties property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -257,12 +255,10 @@ public class SettlementObligationReportV01 {
      * {@link DeliveringPartiesAndAccount5 }
      * 
      * 
-     * @return
-     *     The value of the dlvrgPties property.
      */
     public List<DeliveringPartiesAndAccount5> getDlvrgPties() {
         if (dlvrgPties == null) {
-            dlvrgPties = new ArrayList<>();
+            dlvrgPties = new ArrayList<DeliveringPartiesAndAccount5>();
         }
         return this.dlvrgPties;
     }
@@ -273,8 +269,8 @@ public class SettlementObligationReportV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the rcvgPties property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the rcvgPties property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -288,12 +284,10 @@ public class SettlementObligationReportV01 {
      * {@link ReceivingPartiesAndAccount6 }
      * 
      * 
-     * @return
-     *     The value of the rcvgPties property.
      */
     public List<ReceivingPartiesAndAccount6> getRcvgPties() {
         if (rcvgPties == null) {
-            rcvgPties = new ArrayList<>();
+            rcvgPties = new ArrayList<ReceivingPartiesAndAccount6>();
         }
         return this.rcvgPties;
     }
@@ -304,8 +298,8 @@ public class SettlementObligationReportV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the splmtryData property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -319,12 +313,10 @@ public class SettlementObligationReportV01 {
      * {@link SupplementaryData1 }
      * 
      * 
-     * @return
-     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<>();
+            splmtryData = new ArrayList<SupplementaryData1>();
         }
         return this.splmtryData;
     }

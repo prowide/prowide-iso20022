@@ -1,44 +1,45 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for AssetClassDetailedSubProductType7Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="AssetClassDetailedSubProductType7Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="BAKK"/>
- *     <enumeration value="BDSL"/>
- *     <enumeration value="BRNT"/>
- *     <enumeration value="BRNX"/>
- *     <enumeration value="CNDA"/>
- *     <enumeration value="COND"/>
- *     <enumeration value="DSEL"/>
- *     <enumeration value="DUBA"/>
- *     <enumeration value="ESPO"/>
- *     <enumeration value="ETHA"/>
- *     <enumeration value="FUEL"/>
- *     <enumeration value="FOIL"/>
- *     <enumeration value="GOIL"/>
- *     <enumeration value="GSLN"/>
- *     <enumeration value="HEAT"/>
- *     <enumeration value="JTFL"/>
- *     <enumeration value="KERO"/>
- *     <enumeration value="LLSO"/>
- *     <enumeration value="MARS"/>
- *     <enumeration value="NAPH"/>
- *     <enumeration value="NGLO"/>
- *     <enumeration value="TAPI"/>
- *     <enumeration value="WTIO"/>
- *     <enumeration value="URAL"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="AssetClassDetailedSubProductType7Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="BAKK"/&gt;
+ *     &lt;enumeration value="BDSL"/&gt;
+ *     &lt;enumeration value="BRNT"/&gt;
+ *     &lt;enumeration value="BRNX"/&gt;
+ *     &lt;enumeration value="CNDA"/&gt;
+ *     &lt;enumeration value="COND"/&gt;
+ *     &lt;enumeration value="DSEL"/&gt;
+ *     &lt;enumeration value="DUBA"/&gt;
+ *     &lt;enumeration value="ESPO"/&gt;
+ *     &lt;enumeration value="ETHA"/&gt;
+ *     &lt;enumeration value="FUEL"/&gt;
+ *     &lt;enumeration value="FOIL"/&gt;
+ *     &lt;enumeration value="GOIL"/&gt;
+ *     &lt;enumeration value="GSLN"/&gt;
+ *     &lt;enumeration value="HEAT"/&gt;
+ *     &lt;enumeration value="JTFL"/&gt;
+ *     &lt;enumeration value="KERO"/&gt;
+ *     &lt;enumeration value="LLSO"/&gt;
+ *     &lt;enumeration value="MARS"/&gt;
+ *     &lt;enumeration value="NAPH"/&gt;
+ *     &lt;enumeration value="NGLO"/&gt;
+ *     &lt;enumeration value="TAPI"/&gt;
+ *     &lt;enumeration value="WTIO"/&gt;
+ *     &lt;enumeration value="URAL"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "AssetClassDetailedSubProductType7Code")

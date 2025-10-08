@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -41,11 +41,11 @@ public class SecuritiesOption94 {
     @XmlElement(name = "PstngDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate pstngDt;
+    protected XMLGregorianCalendar pstngDt;
     @XmlElement(name = "OrgnlPstngDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate orgnlPstngDt;
+    protected XMLGregorianCalendar orgnlPstngDt;
 
     /**
      * Gets the value of the finInstrmId property.
@@ -130,7 +130,7 @@ public class SecuritiesOption94 {
      *     {@link String }
      *     
      */
-    public LocalDate getPstngDt() {
+    public XMLGregorianCalendar getPstngDt() {
         return pstngDt;
     }
 
@@ -142,7 +142,7 @@ public class SecuritiesOption94 {
      *     {@link String }
      *     
      */
-    public SecuritiesOption94 setPstngDt(LocalDate value) {
+    public SecuritiesOption94 setPstngDt(XMLGregorianCalendar value) {
         this.pstngDt = value;
         return this;
     }
@@ -155,7 +155,7 @@ public class SecuritiesOption94 {
      *     {@link String }
      *     
      */
-    public LocalDate getOrgnlPstngDt() {
+    public XMLGregorianCalendar getOrgnlPstngDt() {
         return orgnlPstngDt;
     }
 
@@ -167,7 +167,7 @@ public class SecuritiesOption94 {
      *     {@link String }
      *     
      */
-    public SecuritiesOption94 setOrgnlPstngDt(LocalDate value) {
+    public SecuritiesOption94 setOrgnlPstngDt(XMLGregorianCalendar value) {
         this.orgnlPstngDt = value;
         return this;
     }

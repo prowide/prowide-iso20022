@@ -1,51 +1,52 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for ExposureType2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="ExposureType2Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="CCIR"/>
- *     <enumeration value="COMM"/>
- *     <enumeration value="CRDS"/>
- *     <enumeration value="CRPR"/>
- *     <enumeration value="CRSP"/>
- *     <enumeration value="CRTL"/>
- *     <enumeration value="EQPT"/>
- *     <enumeration value="EQUS"/>
- *     <enumeration value="EXPT"/>
- *     <enumeration value="EXTD"/>
- *     <enumeration value="FIXI"/>
- *     <enumeration value="FORW"/>
- *     <enumeration value="FORX"/>
- *     <enumeration value="FUTR"/>
- *     <enumeration value="LIQU"/>
- *     <enumeration value="OPTN"/>
- *     <enumeration value="OTCD"/>
- *     <enumeration value="PAYM"/>
- *     <enumeration value="REPO"/>
- *     <enumeration value="SBSC"/>
- *     <enumeration value="SCIE"/>
- *     <enumeration value="SCIR"/>
- *     <enumeration value="SCRP"/>
- *     <enumeration value="SLEB"/>
- *     <enumeration value="SLOA"/>
- *     <enumeration value="SWPT"/>
- *     <enumeration value="TRCP"/>
- *     <enumeration value="BFWD"/>
- *     <enumeration value="RVPO"/>
- *     <enumeration value="TBAS"/>
- *     <enumeration value="SHSL"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="ExposureType2Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="CCIR"/&gt;
+ *     &lt;enumeration value="COMM"/&gt;
+ *     &lt;enumeration value="CRDS"/&gt;
+ *     &lt;enumeration value="CRPR"/&gt;
+ *     &lt;enumeration value="CRSP"/&gt;
+ *     &lt;enumeration value="CRTL"/&gt;
+ *     &lt;enumeration value="EQPT"/&gt;
+ *     &lt;enumeration value="EQUS"/&gt;
+ *     &lt;enumeration value="EXPT"/&gt;
+ *     &lt;enumeration value="EXTD"/&gt;
+ *     &lt;enumeration value="FIXI"/&gt;
+ *     &lt;enumeration value="FORW"/&gt;
+ *     &lt;enumeration value="FORX"/&gt;
+ *     &lt;enumeration value="FUTR"/&gt;
+ *     &lt;enumeration value="LIQU"/&gt;
+ *     &lt;enumeration value="OPTN"/&gt;
+ *     &lt;enumeration value="OTCD"/&gt;
+ *     &lt;enumeration value="PAYM"/&gt;
+ *     &lt;enumeration value="REPO"/&gt;
+ *     &lt;enumeration value="SBSC"/&gt;
+ *     &lt;enumeration value="SCIE"/&gt;
+ *     &lt;enumeration value="SCIR"/&gt;
+ *     &lt;enumeration value="SCRP"/&gt;
+ *     &lt;enumeration value="SLEB"/&gt;
+ *     &lt;enumeration value="SLOA"/&gt;
+ *     &lt;enumeration value="SWPT"/&gt;
+ *     &lt;enumeration value="TRCP"/&gt;
+ *     &lt;enumeration value="BFWD"/&gt;
+ *     &lt;enumeration value="RVPO"/&gt;
+ *     &lt;enumeration value="TBAS"/&gt;
+ *     &lt;enumeration value="SHSL"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "ExposureType2Code")

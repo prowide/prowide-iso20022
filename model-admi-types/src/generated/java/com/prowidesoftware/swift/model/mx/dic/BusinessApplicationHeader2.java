@@ -1,14 +1,12 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.OffsetDateTime;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -43,10 +41,9 @@ public class BusinessApplicationHeader2 {
     protected String msgDefIdr;
     @XmlElement(name = "BizSvc")
     protected String bizSvc;
-    @XmlElement(name = "CreDt", type = String.class)
-    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
+    @XmlElement(name = "CreDt")
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime creDt;
+    protected XMLGregorianCalendar creDt;
 
     /**
      * Gets the value of the fr property.
@@ -178,10 +175,10 @@ public class BusinessApplicationHeader2 {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public OffsetDateTime getCreDt() {
+    public XMLGregorianCalendar getCreDt() {
         return creDt;
     }
 
@@ -190,10 +187,10 @@ public class BusinessApplicationHeader2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public BusinessApplicationHeader2 setCreDt(OffsetDateTime value) {
+    public BusinessApplicationHeader2 setCreDt(XMLGregorianCalendar value) {
         this.creDt = value;
         return this;
     }

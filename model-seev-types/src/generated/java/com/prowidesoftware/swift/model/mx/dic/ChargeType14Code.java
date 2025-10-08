@@ -1,26 +1,27 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for ChargeType14Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="ChargeType14Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="ADRF"/>
- *     <enumeration value="ISSC"/>
- *     <enumeration value="CUST"/>
- *     <enumeration value="CHAR"/>
- *     <enumeration value="MISC"/>
- *     <enumeration value="ISSU"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="ChargeType14Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ADRF"/&gt;
+ *     &lt;enumeration value="ISSC"/&gt;
+ *     &lt;enumeration value="CUST"/&gt;
+ *     &lt;enumeration value="CHAR"/&gt;
+ *     &lt;enumeration value="MISC"/&gt;
+ *     &lt;enumeration value="ISSU"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "ChargeType14Code")

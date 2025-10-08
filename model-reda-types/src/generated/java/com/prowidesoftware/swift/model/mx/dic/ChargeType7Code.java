@@ -1,28 +1,29 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for ChargeType7Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="ChargeType7Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="MANF"/>
- *     <enumeration value="BEND"/>
- *     <enumeration value="ADVI"/>
- *     <enumeration value="CUST"/>
- *     <enumeration value="PUBL"/>
- *     <enumeration value="ACCT"/>
- *     <enumeration value="OTHR"/>
- *     <enumeration value="EQUL"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="ChargeType7Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="MANF"/&gt;
+ *     &lt;enumeration value="BEND"/&gt;
+ *     &lt;enumeration value="ADVI"/&gt;
+ *     &lt;enumeration value="CUST"/&gt;
+ *     &lt;enumeration value="PUBL"/&gt;
+ *     &lt;enumeration value="ACCT"/&gt;
+ *     &lt;enumeration value="OTHR"/&gt;
+ *     &lt;enumeration value="EQUL"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "ChargeType7Code")

@@ -2,16 +2,16 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -90,11 +90,11 @@ public class ATMTransaction24 {
     @XmlElement(name = "ReqdExctnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate reqdExctnDt;
+    protected XMLGregorianCalendar reqdExctnDt;
     @XmlElement(name = "PropsdExctnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate propsdExctnDt;
+    protected XMLGregorianCalendar propsdExctnDt;
     @XmlElement(name = "InstntTrfPrgm")
     protected String instntTrfPrgm;
     @XmlElement(name = "RcrngTrf")
@@ -287,8 +287,8 @@ public class ATMTransaction24 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the actn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the actn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -302,12 +302,10 @@ public class ATMTransaction24 {
      * {@link Action7 }
      * 
      * 
-     * @return
-     *     The value of the actn property.
      */
     public List<Action7> getActn() {
         if (actn == null) {
-            actn = new ArrayList<>();
+            actn = new ArrayList<Action7>();
         }
         return this.actn;
     }
@@ -368,8 +366,8 @@ public class ATMTransaction24 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the acctTo property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the acctTo property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -383,12 +381,10 @@ public class ATMTransaction24 {
      * {@link CardAccount13 }
      * 
      * 
-     * @return
-     *     The value of the acctTo property.
      */
     public List<CardAccount13> getAcctTo() {
         if (acctTo == null) {
-            acctTo = new ArrayList<>();
+            acctTo = new ArrayList<CardAccount13>();
         }
         return this.acctTo;
     }
@@ -499,8 +495,8 @@ public class ATMTransaction24 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the addtlChrg property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the addtlChrg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -514,12 +510,10 @@ public class ATMTransaction24 {
      * {@link DetailedAmount18 }
      * 
      * 
-     * @return
-     *     The value of the addtlChrg property.
      */
     public List<DetailedAmount18> getAddtlChrg() {
         if (addtlChrg == null) {
-            addtlChrg = new ArrayList<>();
+            addtlChrg = new ArrayList<DetailedAmount18>();
         }
         return this.addtlChrg;
     }
@@ -557,7 +551,7 @@ public class ATMTransaction24 {
      *     {@link String }
      *     
      */
-    public LocalDate getReqdExctnDt() {
+    public XMLGregorianCalendar getReqdExctnDt() {
         return reqdExctnDt;
     }
 
@@ -569,7 +563,7 @@ public class ATMTransaction24 {
      *     {@link String }
      *     
      */
-    public ATMTransaction24 setReqdExctnDt(LocalDate value) {
+    public ATMTransaction24 setReqdExctnDt(XMLGregorianCalendar value) {
         this.reqdExctnDt = value;
         return this;
     }
@@ -582,7 +576,7 @@ public class ATMTransaction24 {
      *     {@link String }
      *     
      */
-    public LocalDate getPropsdExctnDt() {
+    public XMLGregorianCalendar getPropsdExctnDt() {
         return propsdExctnDt;
     }
 
@@ -594,7 +588,7 @@ public class ATMTransaction24 {
      *     {@link String }
      *     
      */
-    public ATMTransaction24 setPropsdExctnDt(LocalDate value) {
+    public ATMTransaction24 setPropsdExctnDt(XMLGregorianCalendar value) {
         this.propsdExctnDt = value;
         return this;
     }
@@ -703,8 +697,8 @@ public class ATMTransaction24 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the cmd property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the cmd property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -718,12 +712,10 @@ public class ATMTransaction24 {
      * {@link ATMCommand7 }
      * 
      * 
-     * @return
-     *     The value of the cmd property.
      */
     public List<ATMCommand7> getCmd() {
         if (cmd == null) {
-            cmd = new ArrayList<>();
+            cmd = new ArrayList<ATMCommand7>();
         }
         return this.cmd;
     }

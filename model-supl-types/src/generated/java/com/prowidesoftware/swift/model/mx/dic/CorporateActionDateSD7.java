@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.OffsetDateTime;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -38,27 +38,27 @@ public class CorporateActionDateSD7 {
     @XmlElement(name = "ActlEarlyXprtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime actlEarlyXprtnDt;
+    protected XMLGregorianCalendar actlEarlyXprtnDt;
     @XmlElement(name = "ActlPrtctXprtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime actlPrtctXprtnDt;
+    protected XMLGregorianCalendar actlPrtctXprtnDt;
     @XmlElement(name = "ActlEarlyPrtctXprtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime actlEarlyPrtctXprtnDt;
+    protected XMLGregorianCalendar actlEarlyPrtctXprtnDt;
     @XmlElement(name = "DTCEarlyPrtctXprtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime dtcEarlyPrtctXprtnDt;
+    protected XMLGregorianCalendar dtcEarlyPrtctXprtnDt;
     @XmlElement(name = "ActlEarlyCoverPrtctXprtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime actlEarlyCoverPrtctXprtnDt;
+    protected XMLGregorianCalendar actlEarlyCoverPrtctXprtnDt;
     @XmlElement(name = "DTCEarlyCoverPrtctXprtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime dtcEarlyCoverPrtctXprtnDt;
+    protected XMLGregorianCalendar dtcEarlyCoverPrtctXprtnDt;
 
     /**
      * Gets the value of the plcAndNm property.
@@ -93,7 +93,7 @@ public class CorporateActionDateSD7 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getActlEarlyXprtnDt() {
+    public XMLGregorianCalendar getActlEarlyXprtnDt() {
         return actlEarlyXprtnDt;
     }
 
@@ -105,7 +105,7 @@ public class CorporateActionDateSD7 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD7 setActlEarlyXprtnDt(OffsetDateTime value) {
+    public CorporateActionDateSD7 setActlEarlyXprtnDt(XMLGregorianCalendar value) {
         this.actlEarlyXprtnDt = value;
         return this;
     }
@@ -118,7 +118,7 @@ public class CorporateActionDateSD7 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getActlPrtctXprtnDt() {
+    public XMLGregorianCalendar getActlPrtctXprtnDt() {
         return actlPrtctXprtnDt;
     }
 
@@ -130,7 +130,7 @@ public class CorporateActionDateSD7 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD7 setActlPrtctXprtnDt(OffsetDateTime value) {
+    public CorporateActionDateSD7 setActlPrtctXprtnDt(XMLGregorianCalendar value) {
         this.actlPrtctXprtnDt = value;
         return this;
     }
@@ -143,7 +143,7 @@ public class CorporateActionDateSD7 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getActlEarlyPrtctXprtnDt() {
+    public XMLGregorianCalendar getActlEarlyPrtctXprtnDt() {
         return actlEarlyPrtctXprtnDt;
     }
 
@@ -155,7 +155,7 @@ public class CorporateActionDateSD7 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD7 setActlEarlyPrtctXprtnDt(OffsetDateTime value) {
+    public CorporateActionDateSD7 setActlEarlyPrtctXprtnDt(XMLGregorianCalendar value) {
         this.actlEarlyPrtctXprtnDt = value;
         return this;
     }
@@ -168,7 +168,7 @@ public class CorporateActionDateSD7 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getDTCEarlyPrtctXprtnDt() {
+    public XMLGregorianCalendar getDTCEarlyPrtctXprtnDt() {
         return dtcEarlyPrtctXprtnDt;
     }
 
@@ -180,7 +180,7 @@ public class CorporateActionDateSD7 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD7 setDTCEarlyPrtctXprtnDt(OffsetDateTime value) {
+    public CorporateActionDateSD7 setDTCEarlyPrtctXprtnDt(XMLGregorianCalendar value) {
         this.dtcEarlyPrtctXprtnDt = value;
         return this;
     }
@@ -193,7 +193,7 @@ public class CorporateActionDateSD7 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getActlEarlyCoverPrtctXprtnDt() {
+    public XMLGregorianCalendar getActlEarlyCoverPrtctXprtnDt() {
         return actlEarlyCoverPrtctXprtnDt;
     }
 
@@ -205,7 +205,7 @@ public class CorporateActionDateSD7 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD7 setActlEarlyCoverPrtctXprtnDt(OffsetDateTime value) {
+    public CorporateActionDateSD7 setActlEarlyCoverPrtctXprtnDt(XMLGregorianCalendar value) {
         this.actlEarlyCoverPrtctXprtnDt = value;
         return this;
     }
@@ -218,7 +218,7 @@ public class CorporateActionDateSD7 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getDTCEarlyCoverPrtctXprtnDt() {
+    public XMLGregorianCalendar getDTCEarlyCoverPrtctXprtnDt() {
         return dtcEarlyCoverPrtctXprtnDt;
     }
 
@@ -230,7 +230,7 @@ public class CorporateActionDateSD7 {
      *     {@link String }
      *     
      */
-    public CorporateActionDateSD7 setDTCEarlyCoverPrtctXprtnDt(OffsetDateTime value) {
+    public CorporateActionDateSD7 setDTCEarlyCoverPrtctXprtnDt(XMLGregorianCalendar value) {
         this.dtcEarlyCoverPrtctXprtnDt = value;
         return this;
     }

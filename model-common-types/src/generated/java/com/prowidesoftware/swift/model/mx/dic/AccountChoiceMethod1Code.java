@@ -1,26 +1,27 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for AccountChoiceMethod1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="AccountChoiceMethod1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="ACSL"/>
- *     <enumeration value="ENTR"/>
- *     <enumeration value="IMAC"/>
- *     <enumeration value="IMPL"/>
- *     <enumeration value="NOSL"/>
- *     <enumeration value="TPSL"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="AccountChoiceMethod1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ACSL"/&gt;
+ *     &lt;enumeration value="ENTR"/&gt;
+ *     &lt;enumeration value="IMAC"/&gt;
+ *     &lt;enumeration value="IMPL"/&gt;
+ *     &lt;enumeration value="NOSL"/&gt;
+ *     &lt;enumeration value="TPSL"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "AccountChoiceMethod1Code")

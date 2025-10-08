@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -62,13 +62,13 @@ public class SettlementObligation7 {
     @XmlElement(name = "IntnddSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate intnddSttlmDt;
+    protected XMLGregorianCalendar intnddSttlmDt;
     @XmlElement(name = "FinInstrmId", required = true)
     protected SecurityIdentification14 finInstrmId;
     @XmlElement(name = "TradDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate tradDt;
+    protected XMLGregorianCalendar tradDt;
     @XmlElement(name = "DealPric")
     protected Price4 dealPric;
     @XmlElement(name = "Qty", required = true)
@@ -290,7 +290,7 @@ public class SettlementObligation7 {
      *     {@link String }
      *     
      */
-    public LocalDate getIntnddSttlmDt() {
+    public XMLGregorianCalendar getIntnddSttlmDt() {
         return intnddSttlmDt;
     }
 
@@ -302,7 +302,7 @@ public class SettlementObligation7 {
      *     {@link String }
      *     
      */
-    public SettlementObligation7 setIntnddSttlmDt(LocalDate value) {
+    public SettlementObligation7 setIntnddSttlmDt(XMLGregorianCalendar value) {
         this.intnddSttlmDt = value;
         return this;
     }
@@ -340,7 +340,7 @@ public class SettlementObligation7 {
      *     {@link String }
      *     
      */
-    public LocalDate getTradDt() {
+    public XMLGregorianCalendar getTradDt() {
         return tradDt;
     }
 
@@ -352,7 +352,7 @@ public class SettlementObligation7 {
      *     {@link String }
      *     
      */
-    public SettlementObligation7 setTradDt(LocalDate value) {
+    public SettlementObligation7 setTradDt(XMLGregorianCalendar value) {
         this.tradDt = value;
         return this;
     }

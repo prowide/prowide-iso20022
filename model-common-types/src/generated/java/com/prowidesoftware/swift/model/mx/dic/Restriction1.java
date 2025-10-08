@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.OffsetDateTime;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -34,11 +34,11 @@ public class Restriction1 {
     @XmlElement(name = "VldFr", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime vldFr;
+    protected XMLGregorianCalendar vldFr;
     @XmlElement(name = "VldUntil", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime vldUntil;
+    protected XMLGregorianCalendar vldUntil;
 
     /**
      * Gets the value of the rstrctnTp property.
@@ -73,7 +73,7 @@ public class Restriction1 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getVldFr() {
+    public XMLGregorianCalendar getVldFr() {
         return vldFr;
     }
 
@@ -85,7 +85,7 @@ public class Restriction1 {
      *     {@link String }
      *     
      */
-    public Restriction1 setVldFr(OffsetDateTime value) {
+    public Restriction1 setVldFr(XMLGregorianCalendar value) {
         this.vldFr = value;
         return this;
     }
@@ -98,7 +98,7 @@ public class Restriction1 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getVldUntil() {
+    public XMLGregorianCalendar getVldUntil() {
         return vldUntil;
     }
 
@@ -110,7 +110,7 @@ public class Restriction1 {
      *     {@link String }
      *     
      */
-    public Restriction1 setVldUntil(OffsetDateTime value) {
+    public Restriction1 setVldUntil(XMLGregorianCalendar value) {
         this.vldUntil = value;
         return this;
     }

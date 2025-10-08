@@ -1,25 +1,26 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for BusinessArea2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="BusinessArea2Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="AIBD"/>
- *     <enumeration value="PPAY"/>
- *     <enumeration value="TKNF"/>
- *     <enumeration value="EOPT"/>
- *     <enumeration value="TOPT"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="BusinessArea2Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="AIBD"/&gt;
+ *     &lt;enumeration value="PPAY"/&gt;
+ *     &lt;enumeration value="TKNF"/&gt;
+ *     &lt;enumeration value="EOPT"/&gt;
+ *     &lt;enumeration value="TOPT"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "BusinessArea2Code")

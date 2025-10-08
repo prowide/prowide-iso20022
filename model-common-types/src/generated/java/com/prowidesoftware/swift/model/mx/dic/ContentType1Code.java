@@ -1,26 +1,27 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for ContentType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="ContentType1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="DATA"/>
- *     <enumeration value="SIGN"/>
- *     <enumeration value="EVLP"/>
- *     <enumeration value="DGST"/>
- *     <enumeration value="ECRP"/>
- *     <enumeration value="AUTH"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="ContentType1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="DATA"/&gt;
+ *     &lt;enumeration value="SIGN"/&gt;
+ *     &lt;enumeration value="EVLP"/&gt;
+ *     &lt;enumeration value="DGST"/&gt;
+ *     &lt;enumeration value="ECRP"/&gt;
+ *     &lt;enumeration value="AUTH"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "ContentType1Code")

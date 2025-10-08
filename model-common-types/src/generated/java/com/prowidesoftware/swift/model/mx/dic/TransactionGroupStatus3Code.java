@@ -1,29 +1,30 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for TransactionGroupStatus3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="TransactionGroupStatus3Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="ACTC"/>
- *     <enumeration value="RCVD"/>
- *     <enumeration value="PART"/>
- *     <enumeration value="RJCT"/>
- *     <enumeration value="PDNG"/>
- *     <enumeration value="ACCP"/>
- *     <enumeration value="ACSP"/>
- *     <enumeration value="ACSC"/>
- *     <enumeration value="ACWC"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="TransactionGroupStatus3Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ACTC"/&gt;
+ *     &lt;enumeration value="RCVD"/&gt;
+ *     &lt;enumeration value="PART"/&gt;
+ *     &lt;enumeration value="RJCT"/&gt;
+ *     &lt;enumeration value="PDNG"/&gt;
+ *     &lt;enumeration value="ACCP"/&gt;
+ *     &lt;enumeration value="ACSP"/&gt;
+ *     &lt;enumeration value="ACSC"/&gt;
+ *     &lt;enumeration value="ACWC"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "TransactionGroupStatus3Code")

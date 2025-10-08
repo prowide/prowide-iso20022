@@ -2,16 +2,16 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -68,11 +68,11 @@ public class SecuritiesTradeDetails70 {
     @XmlElement(name = "AckdStsTmStmp", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime ackdStsTmStmp;
+    protected XMLGregorianCalendar ackdStsTmStmp;
     @XmlElement(name = "MtchdStsTmStmp", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime mtchdStsTmStmp;
+    protected XMLGregorianCalendar mtchdStsTmStmp;
     @XmlElement(name = "DealPric")
     protected Price3 dealPric;
     @XmlElement(name = "NbOfDaysAcrd")
@@ -106,8 +106,8 @@ public class SecuritiesTradeDetails70 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the tradId property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the tradId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -121,12 +121,10 @@ public class SecuritiesTradeDetails70 {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the tradId property.
      */
     public List<String> getTradId() {
         if (tradId == null) {
-            tradId = new ArrayList<>();
+            tradId = new ArrayList<String>();
         }
         return this.tradId;
     }
@@ -137,8 +135,8 @@ public class SecuritiesTradeDetails70 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the collTxId property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the collTxId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -152,12 +150,10 @@ public class SecuritiesTradeDetails70 {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the collTxId property.
      */
     public List<String> getCollTxId() {
         if (collTxId == null) {
-            collTxId = new ArrayList<>();
+            collTxId = new ArrayList<String>();
         }
         return this.collTxId;
     }
@@ -295,7 +291,7 @@ public class SecuritiesTradeDetails70 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getAckdStsTmStmp() {
+    public XMLGregorianCalendar getAckdStsTmStmp() {
         return ackdStsTmStmp;
     }
 
@@ -307,7 +303,7 @@ public class SecuritiesTradeDetails70 {
      *     {@link String }
      *     
      */
-    public SecuritiesTradeDetails70 setAckdStsTmStmp(OffsetDateTime value) {
+    public SecuritiesTradeDetails70 setAckdStsTmStmp(XMLGregorianCalendar value) {
         this.ackdStsTmStmp = value;
         return this;
     }
@@ -320,7 +316,7 @@ public class SecuritiesTradeDetails70 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getMtchdStsTmStmp() {
+    public XMLGregorianCalendar getMtchdStsTmStmp() {
         return mtchdStsTmStmp;
     }
 
@@ -332,7 +328,7 @@ public class SecuritiesTradeDetails70 {
      *     {@link String }
      *     
      */
-    public SecuritiesTradeDetails70 setMtchdStsTmStmp(OffsetDateTime value) {
+    public SecuritiesTradeDetails70 setMtchdStsTmStmp(XMLGregorianCalendar value) {
         this.mtchdStsTmStmp = value;
         return this;
     }
@@ -418,8 +414,8 @@ public class SecuritiesTradeDetails70 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the rptg property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the rptg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -433,12 +429,10 @@ public class SecuritiesTradeDetails70 {
      * {@link Reporting9Choice }
      * 
      * 
-     * @return
-     *     The value of the rptg property.
      */
     public List<Reporting9Choice> getRptg() {
         if (rptg == null) {
-            rptg = new ArrayList<>();
+            rptg = new ArrayList<Reporting9Choice>();
         }
         return this.rptg;
     }
@@ -449,8 +443,8 @@ public class SecuritiesTradeDetails70 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the tradTxCond property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the tradTxCond property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -464,12 +458,10 @@ public class SecuritiesTradeDetails70 {
      * {@link TradeTransactionCondition6Choice }
      * 
      * 
-     * @return
-     *     The value of the tradTxCond property.
      */
     public List<TradeTransactionCondition6Choice> getTradTxCond() {
         if (tradTxCond == null) {
-            tradTxCond = new ArrayList<>();
+            tradTxCond = new ArrayList<TradeTransactionCondition6Choice>();
         }
         return this.tradTxCond;
     }

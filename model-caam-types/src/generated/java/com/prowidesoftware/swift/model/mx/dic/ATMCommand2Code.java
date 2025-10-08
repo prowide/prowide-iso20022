@@ -1,33 +1,34 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for ATMCommand2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="ATMCommand2Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="ABAL"/>
- *     <enumeration value="ASTS"/>
- *     <enumeration value="CFGT"/>
- *     <enumeration value="CCNT"/>
- *     <enumeration value="DISC"/>
- *     <enumeration value="KACT"/>
- *     <enumeration value="KDAC"/>
- *     <enumeration value="KDWL"/>
- *     <enumeration value="KRMV"/>
- *     <enumeration value="SCFU"/>
- *     <enumeration value="SSCU"/>
- *     <enumeration value="SSTU"/>
- *     <enumeration value="SNDM"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="ATMCommand2Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ABAL"/&gt;
+ *     &lt;enumeration value="ASTS"/&gt;
+ *     &lt;enumeration value="CFGT"/&gt;
+ *     &lt;enumeration value="CCNT"/&gt;
+ *     &lt;enumeration value="DISC"/&gt;
+ *     &lt;enumeration value="KACT"/&gt;
+ *     &lt;enumeration value="KDAC"/&gt;
+ *     &lt;enumeration value="KDWL"/&gt;
+ *     &lt;enumeration value="KRMV"/&gt;
+ *     &lt;enumeration value="SCFU"/&gt;
+ *     &lt;enumeration value="SSCU"/&gt;
+ *     &lt;enumeration value="SSTU"/&gt;
+ *     &lt;enumeration value="SNDM"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "ATMCommand2Code")

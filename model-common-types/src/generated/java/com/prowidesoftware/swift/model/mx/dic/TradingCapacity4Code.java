@@ -1,35 +1,36 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for TradingCapacity4Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="TradingCapacity4Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="PRIN"/>
- *     <enumeration value="CPRN"/>
- *     <enumeration value="RISP"/>
- *     <enumeration value="PROP"/>
- *     <enumeration value="AGEN"/>
- *     <enumeration value="CAGN"/>
- *     <enumeration value="OAGN"/>
- *     <enumeration value="PRAG"/>
- *     <enumeration value="BAGN"/>
- *     <enumeration value="INFI"/>
- *     <enumeration value="MKTM"/>
- *     <enumeration value="MLTF"/>
- *     <enumeration value="RMKT"/>
- *     <enumeration value="SINT"/>
- *     <enumeration value="TAGT"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="TradingCapacity4Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="PRIN"/&gt;
+ *     &lt;enumeration value="CPRN"/&gt;
+ *     &lt;enumeration value="RISP"/&gt;
+ *     &lt;enumeration value="PROP"/&gt;
+ *     &lt;enumeration value="AGEN"/&gt;
+ *     &lt;enumeration value="CAGN"/&gt;
+ *     &lt;enumeration value="OAGN"/&gt;
+ *     &lt;enumeration value="PRAG"/&gt;
+ *     &lt;enumeration value="BAGN"/&gt;
+ *     &lt;enumeration value="INFI"/&gt;
+ *     &lt;enumeration value="MKTM"/&gt;
+ *     &lt;enumeration value="MLTF"/&gt;
+ *     &lt;enumeration value="RMKT"/&gt;
+ *     &lt;enumeration value="SINT"/&gt;
+ *     &lt;enumeration value="TAGT"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "TradingCapacity4Code")
