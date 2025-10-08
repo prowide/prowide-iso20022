@@ -1,7 +1,7 @@
 # Prowide ISO 20022 - CHANGELOG
 
 ### 10.2.9 - SNAPSHOT
-  * (PW-2810) Fix: ISODateTime millisecond trailing zeros are omitted during XML marshal. Fixed to maintain milliseconds in the output to 3 decimal digits. 
+  * (PW-2810) Fix: ISODateTime fractional seconds losing trailing zeros during XML serialization, milliseconds now padded to exactly 3 digits. 
 
 ### 10.2.8 - September 2025
   * (PW-2637) Fix: do not consider copy duplicate flag (CpyDplct) in app header to mark the header a duplicate
