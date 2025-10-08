@@ -178,7 +178,7 @@ public class BusinessAppHdrV02 extends BusinessApplicationHeaderV02Impl implemen
      */
     @Override
     public boolean duplicate() {
-        return (this.isPssblDplct() != null && this.isPssblDplct()) || this.getCpyDplct() != null;
+        return (this.isPssblDplct() != null && this.isPssblDplct()); // || this.getCpyDplct() != null;
     }
 
     /**
