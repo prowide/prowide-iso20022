@@ -32,3 +32,4 @@ release.sh
 *.hprof
 .idea/copilot
 .java-version
+.idea/copilot.*
