@@ -51,7 +51,7 @@ public enum InformationQualify1Code {
     DOCT,
 
     /**
-     * The information is related to an error situation occurring on the message sender.
+     * Information is related to an error situation occurring on the message sender.
      * 
      */
     ERRO,
@@ -81,7 +81,7 @@ public enum InformationQualify1Code {
     SOND,
 
     /**
-     * The information is a new state on which the message sender is entering. For instance, during a payment, the POI could display to the Cashier that POI request an authorisation to the host acquirer.
+     * Information is a new state on which the message sender is entering. For instance, during a payment, the POI could display to the Cashier that POI request an authorisation to the host acquirer.
      * 
      */
     STAT,

@@ -66,7 +66,7 @@ public enum OfferType4Code {
     NDIS,
 
     /**
-     * Securities holder has the right to disagree with a mandatory event. This right is not inherent in all offers and therefore must be noted in announcements only when applicable.
+     * Securities holder has the right to disagree with a mandatory event. This right is not inherent in all offers and therefore must be noted in announcements only when applicable.
      * 
      */
     DISS;

@@ -1,0 +1,180 @@
+
+package com.prowidesoftware.swift.model.mx;
+
+import com.prowidesoftware.swift.model.mx.dic.*;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
+
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+
+/**
+ * Class for sese.038.001.10 ISO 20022 message.
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "Document", propOrder = {
+    "sctiesSttlmTxModReq"
+})
+@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:sese.038.001.10")
+public class MxSese03800110
+    extends com.prowidesoftware.swift.model.mx.AbstractMX
+{
+
+    @XmlElement(name = "SctiesSttlmTxModReq", required = true)
+    protected SecuritiesSettlementTransactionModificationRequestV10 sctiesSttlmTxModReq;
+    public static final transient String BUSINESS_PROCESS = "sese";
+    public static final transient int FUNCTIONALITY = 38;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 10;
+    @SuppressWarnings("rawtypes")
+    public static final transient Class[] _classes = new Class[] {ActiveCurrencyAndAmount.class, ActiveOrHistoricCurrencyAnd13DecimalAmount.class, ActiveOrHistoricCurrencyAndAmount.class, AddressType2Code.class, AffirmationStatus1Code.class, AffirmationStatus8Choice.class, AlternatePartyIdentification7 .class, AmountAndDirection44 .class, AmountAndDirection51 .class, AmountAndDirection95 .class, BeneficialOwnership4Choice.class, BlockChainAddressWallet3 .class, CashAccountIdentification5Choice.class, CashAccountIdentification9Choice.class, CashParties41 .class, CashSettlementSystem2Code.class, CashSettlementSystem4Choice.class, CentralCounterPartyEligibility4Choice.class, ClassificationType32Choice.class, Counterparty15Choice.class, CreditDebitCode.class, CurrencyToBuyOrSell1Choice.class, DateAndDateTime2Choice.class, DateType3Code.class, DeliveryReceiptType2Code.class, DeliveryReturn1Code.class, DeliveryReturn3Choice.class, DocumentNumber5Choice.class, Eligibility1Code.class, EventFrequency3Code.class, ExposureType15Code.class, ExposureType25Choice.class, FXStandingInstruction4Choice.class, FinancialInstrumentAttributes111 .class, FinancialInstrumentQuantity33Choice.class, ForeignExchangeTerms23 .class, FormOfSecurity1Code.class, FormOfSecurity6Choice.class, Frequency23Choice.class, GenericIdentification1 .class, GenericIdentification30 .class, GenericIdentification36 .class, GenericIdentification37 .class, GenericIdentification78 .class, IdentificationSource3Choice.class, IdentificationType42Choice.class, InterestComputationMethod2Code.class, InterestComputationMethodFormat4Choice.class, InvestorCapacity4Choice.class, LetterOfGuarantee4Choice.class, Linkages40 .class, Linkages63 .class, MarketClientSide1Code.class, MarketClientSide6Choice.class, MarketIdentification1Choice.class, MarketIdentification3Choice.class, MarketIdentification84 .class, MarketType2Code.class, MarketType8Choice.class, MatchingStatus1Code.class, MatchingStatus27Choice.class, ModificationCancellationAllowed4Choice.class, MxSese03800110 .class, NameAndAddress5 .class, NettingEligibility4Choice.class, Number22Choice.class, OpeningClosing1Code.class, OpeningClosing3Choice.class, OptionStyle2Code.class, OptionStyle8Choice.class, OptionType1Code.class, OptionType6Choice.class, OriginalAndCurrentQuantities1 .class, OriginatorRole2Code.class, OtherAmounts39 .class, OtherIdentification1 .class, OtherParties43 .class, OwnershipLegalRestrictions1Code.class, PairedOrTurnedQuantity5Choice.class, PartyIdentification120Choice.class, PartyIdentification127Choice.class, PartyIdentification133Choice.class, PartyIdentification134Choice.class, PartyIdentification136 .class, PartyIdentification144 .class, PartyIdentification149 .class, PartyIdentification257Choice.class, PartyIdentification314 .class, PartyIdentification315 .class, PartyIdentificationAndAccount165 .class, PartyIdentificationAndAccount195 .class, PartyIdentificationAndAccount196 .class, PartyIdentificationAndAccount197 .class, PartyIdentificationAndAccount198 .class, PartyIdentificationAndAccount223 .class, PartyIdentificationAndAccount224 .class, PartyTextInformation1 .class, PartyTextInformation2 .class, PlaceOfClearingIdentification2 .class, PlaceOfTradeIdentification1 .class, PostalAddress1 .class, Price10 .class, Price7 .class, PriceRateOrAmount3Choice.class, PriceType4Choice.class, PriceValueType12Code.class, PriceValueType1Code.class, ProcessingPosition3Code.class, ProcessingPosition7Choice.class, Quantity51Choice.class, QuantityAndAccount113 .class, QuantityAndAccount118 .class, QuantityBreakdown62 .class, ReceiveDelivery1Code.class, References47Choice.class, Registration1Code.class, Registration9Choice.class, RegistrationParameters6 .class, Reporting2Code.class, Reporting6Choice.class, Restriction5Choice.class, SafeKeepingPlace5 .class, SafekeepingPlace1Code.class, SafekeepingPlace3Code.class, SafekeepingPlaceFormat41Choice.class, SafekeepingPlaceTypeAndIdentification1 .class, SafekeepingPlaceTypeAndText8 .class, SecuritiesAccount19 .class, SecuritiesCertificate4 .class, SecuritiesPaymentStatus1Code.class, SecuritiesPaymentStatus5Choice.class, SecuritiesSettlementTransactionDetails56 .class, SecuritiesSettlementTransactionDetails57 .class, SecuritiesSettlementTransactionDetails58 .class, SecuritiesSettlementTransactionModificationRequestV10 .class, SecuritiesTradeDetails146 .class, SecuritiesTradeDetails147 .class, SecuritiesTransactionType28Code.class, SecuritiesTransactionType59Choice.class, SecurityIdentification19 .class, SettlementDate17Choice.class, SettlementDate4Code.class, SettlementDateCode7Choice.class, SettlementDetails218 .class, SettlementParties125 .class, SettlementParties126 .class, SettlementParties98 .class, SettlementStandingInstructionDatabase1Code.class, SettlementStandingInstructionDatabase4Choice.class, SettlementTransactionCondition10Code.class, SettlementTransactionCondition16Choice.class, SettlementTypeAndAdditionalParameters13 .class, SettlementTypeAndAdditionalParameters14 .class, SettlementTypeAndIdentification18 .class, SettlingCapacity2Code.class, SettlingCapacity7Choice.class, StandingSettlementInstruction20 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TaxCapacityParty4Choice.class, TaxLiability1Code.class, Tracking4Choice.class, TradeDate8Choice.class, TradeDateCode3Choice.class, TradeOriginator3Choice.class, TradeTransactionCondition4Code.class, TradeTransactionCondition5Choice.class, TransactionDetails172 .class, TransactionDetails176 .class, TypeOfIdentification1Code.class, TypeOfPrice14Code.class, TypeOfPrice29Choice.class, UpdateType39Choice.class, YieldedOrValueType1Choice.class, YieldedOrValueType2Choice.class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:sese.038.001.10";
+
+    public MxSese03800110() {
+        super();
+    }
+
+    /**
+     * Creates the MX object parsing the parameter String with the XML content
+     * 
+     */
+    public MxSese03800110(final String xml) {
+        this();
+        MxSese03800110 tmp = parse(xml);
+        sctiesSttlmTxModReq = tmp.getSctiesSttlmTxModReq();
+    }
+
+    /**
+     * Creates the MX object parsing the raw content from the parameter MxSwiftMessage
+     * 
+     */
+    public MxSese03800110(final MxSwiftMessage mxSwiftMessage) {
+        this(mxSwiftMessage.message());
+    }
+
+    /**
+     * Gets the value of the sctiesSttlmTxModReq property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link SecuritiesSettlementTransactionModificationRequestV10 }
+     *     
+     */
+    public SecuritiesSettlementTransactionModificationRequestV10 getSctiesSttlmTxModReq() {
+        return sctiesSttlmTxModReq;
+    }
+
+    /**
+     * Sets the value of the sctiesSttlmTxModReq property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link SecuritiesSettlementTransactionModificationRequestV10 }
+     *     
+     */
+    public MxSese03800110 setSctiesSttlmTxModReq(SecuritiesSettlementTransactionModificationRequestV10 value) {
+        this.sctiesSttlmTxModReq = value;
+        return this;
+    }
+
+    @Override
+    public String getBusinessProcess() {
+        return BUSINESS_PROCESS;
+    }
+
+    @Override
+    public int getFunctionality() {
+        return FUNCTIONALITY;
+    }
+
+    @Override
+    public int getVariant() {
+        return VARIANT;
+    }
+
+    @Override
+    public int getVersion() {
+        return VERSION;
+    }
+
+    /**
+     * Creates the MX object parsing the raw content from the parameter XML, using default unmarshalling options
+     * 
+     */
+    public static MxSese03800110 parse(String xml) {
+        return ((MxSese03800110) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxSese03800110 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams()));
+    }
+
+    /**
+     * Creates the MX object parsing the raw content from the parameter XML, using the provided unmarshalling options
+     * @since 9.2.6
+     * 
+     */
+    public static MxSese03800110 parse(String xml, MxReadConfiguration conf) {
+        return ((MxSese03800110) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxSese03800110 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams(conf)));
+    }
+
+    /**
+     * Creates the MX object parsing the raw content from the parameter XML with injected read implementation
+     * @since 9.0.1
+     * 
+     * @param parserImpl an MX unmarshall implementation
+     */
+    public static MxSese03800110 parse(String xml, MxRead parserImpl) {
+        return ((MxSese03800110) parserImpl.read(MxSese03800110 .class, xml, _classes));
+    }
+
+    @Override
+    public String getNamespace() {
+        return NAMESPACE;
+    }
+
+    @Override
+    @SuppressWarnings("rawtypes")
+    public Class[] getClasses() {
+        return _classes;
+    }
+
+    /**
+     * Creates an MxSese03800110 messages from its JSON representation.
+     * <p>
+     * For generic conversion of JSON into the corresponding MX instance 
+     * see {@link AbstractMX#fromJson(String)}
+     * 
+     * @since 7.10.2
+     * 
+     * @param json a JSON representation of an MxSese03800110 message
+     * @return
+     *     a new instance of MxSese03800110
+     */
+    public static final MxSese03800110 fromJson(String json) {
+        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSese03800110 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+}

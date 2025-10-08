@@ -96,7 +96,7 @@ public enum DTCUnallocatedAdjustmentReason4Code {
     CDIN,
 
     /**
-     * Cash rate for allocation is zero.
+     * Cash rate for allocation is unknown.
      * 
      */
     CSHR,
