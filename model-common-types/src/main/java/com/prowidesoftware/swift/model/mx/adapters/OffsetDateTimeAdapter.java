@@ -41,7 +41,12 @@ public class OffsetDateTimeAdapter extends XmlAdapter<String, OffsetDateTime> {
     private final DateTimeFormatter marshalFormat;
     private final DateTimeFormatter unmarshalFormat;
     private final XmlAdapter<String, OffsetDateTime> customAdapterImpl;
-    private final String regex = "\\\\.0{1,}[Z+-]";
+    //private final String regex = "\\\\.0{1,}[Z+-]";
+    // Regex to capture three digits after a dot, representing milliseconds
+    // The (?:\\d{3}) part makes the group non-capturing, but the \\d{3} matches the digits.
+    // The \\. ensures we match a literal dot.
+    // The (Z|[+-]\\d{2}:\\d{2}) part matches the timezone indicator (Z or offset).
+    private final String regex = "(\\.\\d{1,3})(?:Z|[+-]\\d{2}:\\d{2})";
     private final Pattern pattern = Pattern.compile(regex);
     int minPrecision = 0;
     int maxPrecision = 9;
@@ -116,9 +121,12 @@ public class OffsetDateTimeAdapter extends XmlAdapter<String, OffsetDateTime> {
             //Remove unused nano if it's only zeros
             final Matcher matcher = pattern.matcher(formatted);
             if (matcher.find()){
-                formatted = formatted.replace(matcher.group(), "");
+                String milliSec = matcher.group(1);
+                if(milliSec!=null) {
+                    String padMilliSec= String.format("%-4s", milliSec).replace(' ', '0');
+                    formatted = formatted.replace(matcher.group(1), padMilliSec);
+                }
             }
-
             return formatted.replace("Z", "+00:00");
         }
     }
