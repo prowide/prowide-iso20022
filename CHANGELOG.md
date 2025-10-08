@@ -1,5 +1,8 @@
 # Prowide ISO 20022 - CHANGELOG
 
+### 10.3.2 - October 2025
+  * (PW-2810) Fix: ISODateTime fractional seconds losing trailing zeros during XML serialization, milliseconds now padded to exactly 3 digits.
+
 ### 10.3.1 - September 2025
   * (PW-2637) Fix: do not consider copy duplicate flag (CpyDplct) in app header to mark the header a duplicate
   * Feat: Enhanced the `MxParseUtils` to be lenient when the XML declaration has empty or invalid version attribute
