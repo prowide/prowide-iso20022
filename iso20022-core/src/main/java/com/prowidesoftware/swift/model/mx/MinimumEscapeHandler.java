@@ -43,7 +43,6 @@ public class MinimumEscapeHandler implements EscapeHandler {
                     } else {
                         sb.append('\"');
                     }
-                    sb.append('\"');
                     break;
                 default:
                     sb.append(arr[i]);
