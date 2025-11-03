@@ -1,0 +1,171 @@
+package com.prowidesoftware;
+
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+import java.math.BigDecimal;
+
+public class IssueJira2731Test {
+
+    @Test
+    public void camt057Amount() {
+        String camt057_amount_from_xmlNode_TtlAmt_String = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\" ?>\n" +
+                "<RequestPayload>\n" +
+                "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\">\n" +
+                "      <Fr>\n" +
+                "        <FIId>\n" +
+                "          <FinInstnId>\n" +
+                "            <BICFI>FOOBAR20XXX</BICFI>\n" +
+                "          </FinInstnId>\n" +
+                "        </FIId>\n" +
+                "      </Fr>\n" +
+                "      <To>\n" +
+                "        <FIId>\n" +
+                "          <FinInstnId>\n" +
+                "            <BICFI>TESTBA22XXX</BICFI>\n" +
+                "          </FinInstnId>\n" +
+                "        </FIId>\n" +
+                "      </To>\n" +
+                "      <BizMsgIdr>123456789/2XXXXX</BizMsgIdr>\n" +
+                "      <MsgDefIdr>camt.057.001.06</MsgDefIdr>\n" +
+                "      <BizSvc>swift.cbprplus.02</BizSvc>\n" +
+                "      <CreDt>2025-09-02T15:10:16+01:00</CreDt>\n" +
+                "    </AppHdr><Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:camt.057.001.06\">\n" +
+                "      <NtfctnToRcv>\n" +
+                "        <GrpHdr>\n" +
+                "          <MsgId>123456789/2XXXXX</MsgId>\n" +
+                "          <CreDtTm>2025-09-02T15:10:16+01:00</CreDtTm>\n" +
+                "          <MsgSndr>\n" +
+                "            <Agt>\n" +
+                "              <FinInstnId>\n" +
+                "                <BICFI>FOOBAR20XXX</BICFI>\n" +
+                "              </FinInstnId>\n" +
+                "            </Agt>\n" +
+                "          </MsgSndr>\n" +
+                "        </GrpHdr>\n" +
+                "        <Ntfctn>\n" +
+                "          <Id>123456789/2XXXXX</Id>\n" +
+                "          <Acct>\n" +
+                "            <Id>\n" +
+                "              <Othr>\n" +
+                "                <Id>999 123456</Id>\n" +
+                "              </Othr>\n" +
+                "            </Id>\n" +
+                "          </Acct>\n" +
+                "          <TtlAmt Ccy=\"USD\">12966</TtlAmt>\n" +
+                "          <XpctdValDt>2025-09-03</XpctdValDt>\n" +
+                "          <Dbtr>\n" +
+                "            <Agt>\n" +
+                "              <FinInstnId>\n" +
+                "                <BICFI>BARFOO2LCTY</BICFI>\n" +
+                "              </FinInstnId>\n" +
+                "            </Agt>\n" +
+                "          </Dbtr>\n" +
+                "          <DbtrAgt>\n" +
+                "            <FinInstnId>\n" +
+                "              <BICFI>FOOBAR20</BICFI>\n" +
+                "            </FinInstnId>\n" +
+                "          </DbtrAgt>\n" +
+                "          <Itm>\n" +
+                "            <Id>BDUSD4R</Id>\n" +
+                "            <EndToEndId>123456789/1XXXXX</EndToEndId>\n" +
+                "            <UETR>c2278259-7d2c-432a-913e-701e46617f45</UETR>\n" +
+                "            <Amt Ccy=\"USD\">12966</Amt>\n" +
+                "          </Itm>\n" +
+                "        </Ntfctn>\n" +
+                "      </NtfctnToRcv>\n" +
+                "    </Document>\n" +
+                "    </RequestPayload>";
+
+        String camt057_amount_from_xmlNode_Itm_Amt_String = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n" +
+                "<RequestPayload>\n" +
+                "<head:AppHdr xmlns:head=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\">\n" +
+                "    <head:Fr>\n" +
+                "        <head:FIId>\n" +
+                "            <head:FinInstnId>\n" +
+                "                <head:BICFI>FOOBAR2LXXX</head:BICFI>\n" +
+                "            </head:FinInstnId>\n" +
+                "        </head:FIId>\n" +
+                "    </head:Fr>\n" +
+                "    <head:To>\n" +
+                "        <head:FIId>\n" +
+                "            <head:FinInstnId>\n" +
+                "                <head:BICFI>BARFOO2LXXX</head:BICFI>\n" +
+                "            </head:FinInstnId>\n" +
+                "        </head:FIId>\n" +
+                "    </head:To>\n" +
+                "    <head:BizMsgIdr>PA12345678938</head:BizMsgIdr>\n" +
+                "    <head:MsgDefIdr>camt.057.001.06</head:MsgDefIdr>\n" +
+                "    <head:BizSvc>swift.cbprplus.02</head:BizSvc>\n" +
+                "    <head:CreDt>2025-09-02T15:52:11-05:00</head:CreDt>\n" +
+                "    <head:PssblDplct>false</head:PssblDplct>\n" +
+                "    <head:Prty>NORM</head:Prty>\n" +
+                "</head:AppHdr>\n" +
+                "<camt:Document xmlns:camt=\"urn:iso:std:iso:20022:tech:xsd:camt.057.001.06\">\n" +
+                "    <camt:NtfctnToRcv>\n" +
+                "        <camt:GrpHdr>\n" +
+                "            <camt:MsgId>PA12345678938</camt:MsgId>\n" +
+                "            <camt:CreDtTm>2025-09-02T15:52:11-05:00</camt:CreDtTm>\n" +
+                "        </camt:GrpHdr>\n" +
+                "        <camt:Ntfctn>\n" +
+                "            <camt:Id>PA12345678938</camt:Id>\n" +
+                "            <camt:Acct>\n" +
+                "                <camt:Id>\n" +
+                "                    <camt:Othr>\n" +
+                "                        <camt:Id>12345678904013</camt:Id>\n" +
+                "                    </camt:Othr>\n" +
+                "                </camt:Id>\n" +
+                "            </camt:Acct>\n" +
+                "            <camt:Itm>\n" +
+                "                <camt:Id>PA12345678938</camt:Id>\n" +
+                "                <camt:EndToEndId>PA12345678938</camt:EndToEndId>\n" +
+                "                <camt:UETR>82908dcd-b145-46ca-b6fb-0b436f75eaa9</camt:UETR>\n" +
+                "                <camt:Amt Ccy=\"CZK\">1001015.94</camt:Amt>\n" +
+                "                <camt:XpctdValDt>2025-09-02</camt:XpctdValDt>\n" +
+                "                <camt:Dbtr>\n" +
+                "                    <camt:Agt>\n" +
+                "                        <camt:FinInstnId>\n" +
+                "                            <camt:Nm>FOO - TEST BARR FOOLOREP IPSUM</camt:Nm>\n" +
+                "                            <camt:PstlAdr>\n" +
+                "                                <camt:AdrLine>LONDON</camt:AdrLine>\n" +
+                "                            </camt:PstlAdr>\n" +
+                "                        </camt:FinInstnId>\n" +
+                "                    </camt:Agt>\n" +
+                "                </camt:Dbtr>\n" +
+                "                <camt:DbtrAgt>\n" +
+                "                    <camt:FinInstnId>\n" +
+                "                        <camt:Nm>NOT PROVIDED</camt:Nm>\n" +
+                "                        <camt:PstlAdr>\n" +
+                "                            <camt:AdrLine>NOT PROVIDED</camt:AdrLine>\n" +
+                "                        </camt:PstlAdr>\n" +
+                "                    </camt:FinInstnId>\n" +
+                "                </camt:DbtrAgt>\n" +
+                "                <camt:IntrmyAgt>\n" +
+                "                    <camt:FinInstnId>\n" +
+                "                        <camt:Nm>UNKNOWN</camt:Nm>\n" +
+                "                        <camt:PstlAdr>\n" +
+                "                            <camt:AdrLine>NOTPROVIDED</camt:AdrLine>\n" +
+                "                        </camt:PstlAdr>\n" +
+                "                    </camt:FinInstnId>\n" +
+                "                </camt:IntrmyAgt>\n" +
+                "            </camt:Itm>\n" +
+                "        </camt:Ntfctn>\n" +
+                "    </camt:NtfctnToRcv>\n" +
+                "</camt:Document>\n" +
+                "</RequestPayload>";
+
+        //First Amount Node for camt057
+        MxSwiftMessage camt057_amount_TtlAmt = MxSwiftMessage.parse(camt057_amount_from_xmlNode_TtlAmt_String);
+        Assertions.assertNotNull(camt057_amount_TtlAmt.getAmount());
+        Assertions.assertEquals(BigDecimal.valueOf(12966), camt057_amount_TtlAmt.getAmount());
+        Assertions.assertEquals("USD", camt057_amount_TtlAmt.getCurrency());
+
+        //Second Amount Node for camt057
+        MxSwiftMessage camt057_amount_Itm_Amt_String = MxSwiftMessage.parse(camt057_amount_from_xmlNode_Itm_Amt_String);
+        Assertions.assertNotNull(camt057_amount_Itm_Amt_String.getAmount());
+        Assertions.assertEquals(BigDecimal.valueOf(1001015.94), camt057_amount_Itm_Amt_String.getAmount());
+        Assertions.assertEquals("CZK", camt057_amount_Itm_Amt_String.getCurrency());
+
+    }
+}
