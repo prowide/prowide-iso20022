@@ -1,6 +1,7 @@
 # Prowide ISO 20022 - CHANGELOG
 
 ### 10.3.3 - November 2025
+  * (PW-2895) Fix namespace prefix handling for custom envelope types in XML serialization
   * (PW-2731) Enhanced camt.057 amount extraction to fallback to Itm/Amt when TtlAmt is not present
   * (GH-174) Fix: MinimumEscapeHandler duplicating quote characters in non-attribute contexts
   * (GH-168) Fix: MX parsing error when AppHdr appears before Document element in xsys messages

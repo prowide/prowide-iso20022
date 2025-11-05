@@ -279,7 +279,11 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
             xml.append(envelopeElement);
 
             if (envelopeType != EnvelopeType.CUSTOM) {
-                xml.append(" xmlns=\"")
+                xml.append(" xmlns");
+                if (envelopeType.prefix() != null) {
+                    xml.append(":").append(envelopeType.prefix());
+                }
+                xml.append("=\"")
                         .append(usableConf.envelopeType.namespace())
                         .append("\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"");
             }
