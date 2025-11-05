@@ -1,5 +1,11 @@
 # Prowide ISO 20022 - CHANGELOG
 
+### 10.3.3 - November 2025
+  * (PW-2731) Enhanced camt.057 amount extraction to fallback to Itm/Amt when TtlAmt is not present
+  * (GH-174) Fix: MinimumEscapeHandler duplicating quote characters in non-attribute contexts
+  * (GH-168) Fix: MX parsing error when AppHdr appears before Document element in xsys messages
+  * (GH-165) Added MxParseUtils.parseElement to parse standalone JAXB elements like SwIntWaitResponse from non-standard wrapper structures
+
 ### 10.3.2 - October 2025
   * (PW-2810) Fix: ISODateTime fractional seconds losing trailing zeros during XML serialization, milliseconds now padded to exactly 3 digits.
 

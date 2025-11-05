@@ -15,6 +15,8 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.apache.commons.lang3.StringUtils;
@@ -53,6 +55,17 @@ public class NamespaceAndElementFilter extends XMLFilterImpl {
     private boolean inInnerElementToSkip = false;
     private String localNameToSkip;
     private final boolean unbindNamespace;
+    private final List<PrefixMapping> pendingPrefixMappings = new ArrayList<>();
+
+    private static class PrefixMapping {
+        final String prefix;
+        final String url;
+
+        PrefixMapping(String prefix, String url) {
+            this.prefix = prefix;
+            this.url = url;
+        }
+    }
 
     /**
      * @param localName the XML's element to propagate
@@ -83,6 +96,21 @@ public class NamespaceAndElementFilter extends XMLFilterImpl {
         if (!this.inElementToPropagate && localName.equals(this.localNameToPropagate)) {
             this.inElementToPropagate = true;
             this.mainNamespace = namespace;
+
+            // Propagate any prefix mappings that were declared before we entered the element to propagate
+            // This handles the case where AppHdr appears before Document in the XML
+            for (PrefixMapping pm : pendingPrefixMappings) {
+                try {
+                    super.startPrefixMapping(pm.prefix, pm.url);
+                } catch (Exception e) {
+                    log.warning("Error propagating pending prefix mapping " + pm.prefix + " [" + pm.url + "]: "
+                            + exceptionMessage(e));
+                    if (log.isLoggable(Level.FINEST)) {
+                        log.log(Level.FINEST, "Error propagating pending prefix mapping", e);
+                    }
+                }
+            }
+            pendingPrefixMappings.clear();
         }
 
         if (this.inElementToPropagate) {
@@ -169,8 +197,8 @@ public class NamespaceAndElementFilter extends XMLFilterImpl {
 
     @Override
     public void startPrefixMapping(String prefix, String url) throws SAXException {
-        if (this.inElementToPropagate && this.mainNamespace != null) {
-            if (isXsysNamespace(url)) {
+        if (isXsysNamespace(url)) {
+            if (this.inElementToPropagate && this.mainNamespace != null) {
                 // we only propagate the xsys messages namespaces, for the main namespace we want it unbounded
                 try {
                     super.startPrefixMapping(prefix, url);
@@ -180,6 +208,10 @@ public class NamespaceAndElementFilter extends XMLFilterImpl {
                         log.log(Level.FINEST, "Error parsing " + prefix + " [" + url + "] prefix mapping", e);
                     }
                 }
+            } else {
+                // Store xsys namespace mappings that appear before the element to propagate
+                // This handles the case where AppHdr with xsys namespaces appears before Document
+                pendingPrefixMappings.add(new PrefixMapping(prefix, url));
             }
         }
     }
