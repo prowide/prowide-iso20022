@@ -15,6 +15,8 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.apache.commons.lang3.StringUtils;
@@ -53,7 +55,7 @@ public class NamespaceAndElementFilter extends XMLFilterImpl {
     private boolean inInnerElementToSkip = false;
     private String localNameToSkip;
     private final boolean unbindNamespace;
-    private final java.util.List<PrefixMapping> pendingPrefixMappings = new java.util.ArrayList<>();
+    private final List<PrefixMapping> pendingPrefixMappings = new ArrayList<>();
 
     private static class PrefixMapping {
         final String prefix;
