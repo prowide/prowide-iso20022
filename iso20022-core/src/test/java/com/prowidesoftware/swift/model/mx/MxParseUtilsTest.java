@@ -1108,4 +1108,60 @@ public class MxParseUtilsTest {
         String expected = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><root/>";
         assertEquals(expected, MxParseUtils.makeXmlLenient(xml));
     }
+
+    /**
+     * Wrapper class with @XmlRootElement to wrap SwIntWaitResponse
+     * This demonstrates a workaround for parsing elements without @XmlRootElement
+     */
+    @jakarta.xml.bind.annotation.XmlRootElement(name = "WaitResponse", namespace = "urn:swift:snl:ns.SwInt")
+    @jakarta.xml.bind.annotation.XmlAccessorType(jakarta.xml.bind.annotation.XmlAccessType.FIELD)
+    public static class WaitResponseWrapper {
+        @jakarta.xml.bind.annotation.XmlElement(name = "SwiftRequestRef")
+        private String swiftRequestRef;
+
+        public String getSwiftRequestRef() {
+            return swiftRequestRef;
+        }
+
+        public void setSwiftRequestRef(String value) {
+            this.swiftRequestRef = value;
+        }
+    }
+
+    @Test
+    void testParseElement_WithXmlRootElementWrapper() {
+        // Test parsing with a user-defined wrapper class that has @XmlRootElement
+        // This demonstrates a workaround for SwIntWaitResponse which only has @XmlType
+        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+                + "<Data>"
+                + "  <WaitResponse xmlns=\"urn:swift:snl:ns.SwInt\">"
+                + "    <SwiftRequestRef>SNL00110-2025-01-05T10:30:00.123Z</SwiftRequestRef>"
+                + "  </WaitResponse>"
+                + "  <Message>"
+                + "    <!-- Original message content -->"
+                + "  </Message>"
+                + "</Data>";
+
+        WaitResponseWrapper response = MxParseUtils.parseElement(
+                WaitResponseWrapper.class, xml, "WaitResponse", new Class<?>[] {WaitResponseWrapper.class});
+
+        assertNotNull(response, "Response should not be null when using @XmlRootElement wrapper");
+        assertNotNull(response.getSwiftRequestRef());
+        assertEquals("SNL00110-2025-01-05T10:30:00.123Z", response.getSwiftRequestRef());
+    }
+
+    @Test
+    void testParseElement_ElementNotFound() {
+        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+                + "<Data>"
+                + "  <SomeOtherElement>content</SomeOtherElement>"
+                + "</Data>";
+
+        // Test that null is returned when element is not found
+        // Using a simple string as target since we're just testing the filtering logic
+        String result =
+                MxParseUtils.parseElement(String.class, xml, "NonExistentElement", new Class<?>[] {String.class});
+
+        assertNull(result);
+    }
 }
