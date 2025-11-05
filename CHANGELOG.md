@@ -1,5 +1,8 @@
 # Prowide ISO 20022 - CHANGELOG
 
+### 10.2.10-SNAPSHOT
+  * (GH-174) Fix: MinimumEscapeHandler duplicating quote characters in non-attribute contexts
+
 ### 10.2.9 - October 2025
   * (PW-2810) Fix: ISODateTime fractional seconds losing trailing zeros during XML serialization, milliseconds now padded to exactly 3 digits. 
 
