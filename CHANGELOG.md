@@ -1,10 +1,11 @@
 # Prowide ISO 20022 - CHANGELOG
 
-### 10.2.10-SNAPSHOT
+### 10.2.10 - SNAPSHOT
+  * (PW-2731) Enhanced camt.057 amount extraction to fallback to Itm/Amt when TtlAmt is not present
   * (GH-174) Fix: MinimumEscapeHandler duplicating quote characters in non-attribute contexts
-
+  
 ### 10.2.9 - October 2025
-  * (PW-2810) Fix: ISODateTime fractional seconds losing trailing zeros during XML serialization, milliseconds now padded to exactly 3 digits. 
+  * (PW-2810) Fix: ISODateTime fractional seconds losing trailing zeros during XML serialization, milliseconds now padded to exactly 3 digits.
 
 ### 10.2.8 - September 2025
   * (PW-2637) Fix: do not consider copy duplicate flag (CpyDplct) in app header to mark the header a duplicate
