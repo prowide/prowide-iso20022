@@ -306,4 +306,66 @@ public class MxXsysModelTest {
         assertNull(mx.getSender());
         assertNull(mx.getReceiver());
     }
+
+    /**
+     * Test case for GitHub issue #168: Parsing error in MxXsys003.001.01 when AppHdr comes before Document
+     * https://github.com/prowide/prowide-iso20022/issues/168
+     */
+    @Test
+    void testParseXsys003WithAppHdrBeforeDocument() {
+        String document = ""
+                + "<Doc:Document xmlns:Doc=\"urn:swift:xsd:xsys.003.001.01\" xmlns:Sw=\"urn:swift:snl:ns.Sw\" xmlns:SwInt=\"urn:swift:snl:ns.SwInt\" xmlns:SwGbl=\"urn:swift:snl:ns.SwGbl\">"
+                + "	<Doc:xsys.003.001.01>"
+                + "		<Doc:AuthstnRfslNtfctn>"
+                + "			<Sw:SnFRef>swi00001-2010-05-04T15:32:59.21582.11198379Z</Sw:SnFRef>"
+                + "			<Sw:SnFRef>InterAct</Sw:SnFRef>"
+                + "			<SwInt:RequestHeader>"
+                + "				<SwInt:Requestor>cn=requestor,o=aaaabebb,o=swift</SwInt:Requestor>"
+                + "				<SwInt:Responder>cn=responder,o=bbbbus33,o=swift</SwInt:Responder>"
+                + "				<SwInt:Service>mnop.cop</SwInt:Service>"
+                + "				<SwInt:RequestType>pain.001.002.04</SwInt:RequestType>"
+                + "				<SwInt:Priority>Normal</SwInt:Priority>"
+                + "				<SwInt:RequestRef>Ref-12345</SwInt:RequestRef>"
+                + "			</SwInt:RequestHeader>"
+                + "         <Sw:ThirdPartyRefusalReason>"
+                + "<Sw:Cd>hhe</Sw:Cd><Sw:TPInfo>hreehud</Sw:TPInfo>"
+                + " </Sw:ThirdPartyRefusalReason>"
+                + "		</Doc:AuthstnRfslNtfctn>"
+                + "	</Doc:xsys.003.001.01>"
+                + "</Doc:Document>";
+
+        String appHdr = "<Ah:AppHdr xmlns:Ah=\"urn:swift:xsd:$ahV10\">"
+                + "				<Ah:MsgRef>2010-05-04T15:33:12Z</Ah:MsgRef>"
+                + "				<Ah:CrDate>2010-05-04T15:33:12Z</Ah:CrDate>"
+                + "			</Ah:AppHdr>";
+
+        // Test with AppHdr BEFORE Document (correct order, but currently fails)
+        String xmlAppHdrBeforeDocument =
+                "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Envelope xmlns=\"urn:swift:xsd:envelope\">" + appHdr
+                        + document + "</Envelope>";
+
+        // Test with AppHdr AFTER Document (incorrect order, but currently works as workaround)
+        String xmlAppHdrAfterDocument =
+                "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Envelope xmlns=\"urn:swift:xsd:envelope\">" + document
+                        + appHdr + "</Envelope>";
+
+        // Test without AppHdr (currently works)
+        String xmlDocumentOnly = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Envelope xmlns=\"urn:swift:xsd:envelope\">"
+                + document + "</Envelope>";
+
+        // This should work but currently throws "negative size array" exception
+        AbstractMX mx1 = AbstractMX.parse(xmlAppHdrBeforeDocument);
+        assertNotNull(mx1, "Should parse successfully when AppHdr is before Document");
+        assertNotNull(mx1.getAppHdr(), "AppHdr should be parsed");
+
+        // This works as a workaround (but violates SWIFT standards)
+        AbstractMX mx2 = AbstractMX.parse(xmlAppHdrAfterDocument);
+        assertNotNull(mx2, "Should parse when AppHdr is after Document");
+        assertNotNull(mx2.getAppHdr(), "AppHdr should be parsed");
+
+        // This works (no AppHdr)
+        AbstractMX mx3 = AbstractMX.parse(xmlDocumentOnly);
+        assertNotNull(mx3, "Should parse when no AppHdr is present");
+        assertNull(mx3.getAppHdr(), "AppHdr should be null");
+    }
 }

@@ -3,6 +3,7 @@
 ### 10.2.10 - SNAPSHOT
   * (PW-2731) Enhanced camt.057 amount extraction to fallback to Itm/Amt when TtlAmt is not present
   * (GH-174) Fix: MinimumEscapeHandler duplicating quote characters in non-attribute contexts
+  * (GH-168) Fix: MX parsing error when AppHdr appears before Document element in xsys messages
   * (GH-165) Added MxParseUtils.parseElement to parse standalone JAXB elements like SwIntWaitResponse from non-standard wrapper structures
   
 ### 10.2.9 - October 2025
