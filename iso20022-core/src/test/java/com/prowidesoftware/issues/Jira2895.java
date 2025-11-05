@@ -1,0 +1,140 @@
+package com.prowidesoftware.issues;
+
+import com.prowidesoftware.swift.model.mx.AbstractMX;
+import com.prowidesoftware.swift.model.mx.EnvelopeType;
+import com.prowidesoftware.swift.model.mx.MxWriteConfiguration;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+public class Jira2895 {
+
+    @Test
+    public void test() {
+        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
+                + "<ns3:RequestPayload xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\"\n"
+                + "                    xmlns:ns2=\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08\"\n"
+                + "                    xmlns:ns3=\"urn:swift:xsd:pacs008.xxx.xx.2024\">\n"
+                + "    <AppHdr>\n"
+                + "        <Fr>\n"
+                + "            <FIId>\n"
+                + "                <FinInstnId>\n"
+                + "                    <BICFI>RZBMRUM0XXX</BICFI>\n"
+                + "                </FinInstnId>\n"
+                + "            </FIId>\n"
+                + "        </Fr>\n"
+                + "        <To>\n"
+                + "            <FIId>\n"
+                + "                <FinInstnId>\n"
+                + "                    <BICFI>RZBAATWWXXX</BICFI>\n"
+                + "                </FinInstnId>\n"
+                + "            </FIId>\n"
+                + "        </To>\n"
+                + "        <BizMsgIdr>FT251001AAANOP08</BizMsgIdr>\n"
+                + "        <MsgDefIdr>pacs.008.001.08</MsgDefIdr>\n"
+                + "        <BizSvc>swift.cbprplus.02</BizSvc>\n"
+                + "        <CreDt>2025-10-01T07:36:05.785+03:00</CreDt>\n"
+                + "    </AppHdr>\n"
+                + "    <ns2:Document>\n"
+                + "        <ns2:FIToFICstmrCdtTrf>\n"
+                + "            <ns2:GrpHdr>\n"
+                + "                <ns2:MsgId>FT251001AAANOP08</ns2:MsgId>\n"
+                + "                <ns2:CreDtTm>2025-10-01T07:36:05.785+03:00</ns2:CreDtTm>\n"
+                + "                <ns2:NbOfTxs>1</ns2:NbOfTxs>\n"
+                + "                <ns2:SttlmInf>\n"
+                + "                    <ns2:SttlmMtd>INDA</ns2:SttlmMtd>\n"
+                + "                </ns2:SttlmInf>\n"
+                + "            </ns2:GrpHdr>\n"
+                + "            <ns2:CdtTrfTxInf>\n"
+                + "                <ns2:PmtId>\n"
+                + "                    <ns2:InstrId>FT251001AAANOP08</ns2:InstrId>\n"
+                + "                    <ns2:EndToEndId>NOTPROVIDED</ns2:EndToEndId>\n"
+                + "                    <ns2:UETR>cd7a5fe1-7825-4f60-ad53-3996dec87c6a</ns2:UETR>\n"
+                + "                </ns2:PmtId>\n"
+                + "                <ns2:PmtTpInf>\n"
+                + "                    <ns2:SvcLvl>\n"
+                + "                        <ns2:Cd>G001</ns2:Cd>\n"
+                + "                    </ns2:SvcLvl>\n"
+                + "                </ns2:PmtTpInf>\n"
+                + "                <ns2:IntrBkSttlmAmt Ccy=\"KZT\">163561.95</ns2:IntrBkSttlmAmt>\n"
+                + "                <ns2:IntrBkSttlmDt>2025-10-02</ns2:IntrBkSttlmDt>\n"
+                + "                <ns2:InstdAmt Ccy=\"KZT\">200100.00</ns2:InstdAmt>\n"
+                + "                <ns2:ChrgBr>CRED</ns2:ChrgBr>\n"
+                + "                <ns2:ChrgsInf>\n"
+                + "                    <ns2:Amt Ccy=\"KZT\">36538.05</ns2:Amt>\n"
+                + "                    <ns2:Agt>\n"
+                + "                        <ns2:FinInstnId>\n"
+                + "                            <ns2:BICFI>RZBMRUM0XXX</ns2:BICFI>\n"
+                + "                        </ns2:FinInstnId>\n"
+                + "                    </ns2:Agt>\n"
+                + "                </ns2:ChrgsInf>\n"
+                + "                <ns2:InstgAgt>\n"
+                + "                    <ns2:FinInstnId>\n"
+                + "                        <ns2:BICFI>RZBMRUM0XXX</ns2:BICFI>\n"
+                + "                    </ns2:FinInstnId>\n"
+                + "                </ns2:InstgAgt>\n"
+                + "                <ns2:InstdAgt>\n"
+                + "                    <ns2:FinInstnId>\n"
+                + "                        <ns2:BICFI>RZBAATWWXXX</ns2:BICFI>\n"
+                + "                    </ns2:FinInstnId>\n"
+                + "                </ns2:InstdAgt>\n"
+                + "                <ns2:Dbtr>\n"
+                + "                    <ns2:Nm>IVA Partners Limited Liability Company 7771903552</ns2:Nm>\n"
+                + "                    <ns2:PstlAdr>\n"
+                + "                        <ns2:AdrLine>PRESNENSKAYA NAB, 8-1-POM. I N 1231</ns2:AdrLine>\n"
+                + "                        <ns2:AdrLine>12, MOSCOW, RF</ns2:AdrLine>\n"
+                + "                    </ns2:PstlAdr>\n"
+                + "                </ns2:Dbtr>\n"
+                + "                <ns2:DbtrAcct>\n"
+                + "                    <ns2:Id>\n"
+                + "                        <ns2:Othr>\n"
+                + "                            <ns2:Id>40701398200000000034</ns2:Id>\n"
+                + "                        </ns2:Othr>\n"
+                + "                    </ns2:Id>\n"
+                + "                </ns2:DbtrAcct>\n"
+                + "                <ns2:DbtrAgt>\n"
+                + "                    <ns2:FinInstnId>\n"
+                + "                        <ns2:BICFI>RZBMRUMMXXX</ns2:BICFI>\n"
+                + "                    </ns2:FinInstnId>\n"
+                + "                </ns2:DbtrAgt>\n"
+                + "                <ns2:CdtrAgt>\n"
+                + "                    <ns2:FinInstnId>\n"
+                + "                        <ns2:BICFI>ATYNKZKAXXX</ns2:BICFI>\n"
+                + "                    </ns2:FinInstnId>\n"
+                + "                </ns2:CdtrAgt>\n"
+                + "                <ns2:Cdtr>\n"
+                + "                    <ns2:Nm>BIN 001240005208 Global air</ns2:Nm>\n"
+                + "                    <ns2:PstlAdr>\n"
+                + "                        <ns2:AdrLine>st. Kazybek bi / Kunaeva, house num</ns2:AdrLine>\n"
+                + "                        <ns2:AdrLine>ber 40/85 Almaty KZ</ns2:AdrLine>\n"
+                + "                    </ns2:PstlAdr>\n"
+                + "                </ns2:Cdtr>\n"
+                + "                <ns2:CdtrAcct>\n"
+                + "                    <ns2:Id>\n"
+                + "                        <ns2:IBAN>KZ939491100003370917</ns2:IBAN>\n"
+                + "                    </ns2:Id>\n"
+                + "                </ns2:CdtrAcct>\n"
+                + "                <ns2:InstrForCdtrAgt>\n"
+                + "                    <ns2:InstrInf>/ACC/ test</ns2:InstrInf>\n"
+                + "                </ns2:InstrForCdtrAgt>\n"
+                + "                <ns2:RmtInf>\n"
+                + "                    <ns2:Ustrd>KNP8112717 7 Payment for tourist serv ices for invoice 334 dd 24.02.2024 without VAT\n"
+                + "                    </ns2:Ustrd>\n"
+                + "                </ns2:RmtInf>\n"
+                + "            </ns2:CdtTrfTxInf>\n"
+                + "        </ns2:FIToFICstmrCdtTrf>\n"
+                + "    </ns2:Document>\n"
+                + "</ns3:RequestPayload>";
+
+        MxWriteConfiguration conf = new MxWriteConfiguration();
+        conf.useCategoryAsDocumentPrefix = false;
+        conf.envelopeType = EnvelopeType.BME_V2;
+        conf.rootElement = EnvelopeType.BME_V2.rootElement();
+
+        AbstractMX mx = AbstractMX.parse(xml);
+        String resultBMEv2 = mx.message(conf);
+
+        AbstractMX mxBMEv2 = AbstractMX.parse(resultBMEv2);
+
+        Assertions.assertNotNull(mxBMEv2);
+    }
+}
