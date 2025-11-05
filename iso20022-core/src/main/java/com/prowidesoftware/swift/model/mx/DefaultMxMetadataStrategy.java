@@ -140,7 +140,7 @@ public class DefaultMxMetadataStrategy implements MessageMetadataStrategy {
         if (amount != null && amount.getValue() != null) {
             return new Money(amount.getAttribute("Ccy"), new BigDecimal(amount.getValue()));
         }
-        if(amount == null) {
+        if (amount == null) {
             amount = document.findFirst("./NtfctnToRcv/Ntfctn/Itm/Amt");
             if (amount != null && amount.getValue() != null) {
                 return new Money(amount.getAttribute("Ccy"), new BigDecimal(amount.getValue()));
