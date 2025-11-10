@@ -163,6 +163,8 @@ project(':iso20022-core') {
 		testImplementation 'org.xmlunit:xmlunit-assertj:2.10.0'
 		testImplementation project(':model-acmt-mx')
 		testImplementation project(':model-acmt-types')
+		testImplementation project(':model-admi-mx')
+		testImplementation project(':model-admi-types')
 		testImplementation project(':model-camt-mx')
 		testImplementation project(':model-camt-types')
 		testImplementation project(':model-catm-mx')
