@@ -22,7 +22,7 @@ group 'com.prowidesoftware'
 
 project.ext {
 	SRU = 'SRU2025'
-    prowideCoreVersion = 'SRU2025-9.6.0'
+    prowideCoreVersion = 'SRU2025-9.6.6'
 }
 
 scmVersion {
