@@ -241,7 +241,7 @@ public class MxWriteTest {
         final String xml = mx.message(conf);
 
         final String expected = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n"
-                + "<env:BizMsgEnvlp xmlns=\"urn:iso:std:iso:20022:tech:xsd:nvlp.001.001.01\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n"
+                + "<env:BizMsgEnvlp xmlns:env=\"urn:iso:std:iso:20022:tech:xsd:nvlp.001.001.01\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n"
                 + "<env:Hdr>\n"
                 + "<head:AppHdr xmlns:head=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\"></head:AppHdr>\n"
                 + "</env:Hdr>\n"
@@ -272,7 +272,7 @@ public class MxWriteTest {
         final String xml = mx.message(conf);
 
         final String expected = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n"
-                + "<env:BizMsgEnvlp xmlns=\"urn:iso:std:iso:20022:tech:xsd:nvlp.001.001.02\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n"
+                + "<env:BizMsgEnvlp xmlns:env=\"urn:iso:std:iso:20022:tech:xsd:nvlp.001.001.02\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n"
                 + "<env:Hdr>\n"
                 + "<head:AppHdr xmlns:head=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\"></head:AppHdr>\n"
                 + "</env:Hdr>\n"
