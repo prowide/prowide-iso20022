@@ -1,5 +1,13 @@
 # Prowide ISO 20022 - CHANGELOG
 
+### 9.6.2 - SNAPSHOT
+  * (PW-2895) Fix namespace prefix handling for custom envelope types in XML serialization
+  * (PW-2731) Enhanced camt.057 amount extraction to fallback to Itm/Amt when TtlAmt is not present
+  * (GH-174) Fix: MinimumEscapeHandler duplicating quote characters in non-attribute contexts
+  * (GH-168) Fix: MX parsing error when AppHdr appears before Document element in xsys messages
+  * (GH-165) Added MxParseUtils.parseElement to parse standalone JAXB elements like SwIntWaitResponse from non-standard wrapper structures
+  * (PW-2810) Fix: ISODateTime fractional seconds losing trailing zeros during XML serialization, milliseconds now padded to exactly 3 digits.
+
 ### 9.6.1 - October 2025
   * (PW-2637) Fix: do not consider copy duplicate flag (CpyDplct) in app header to mark the header a duplicate
   * Feat: Enhanced the `MxParseUtils` to be lenient when the XML declaration has empty or invalid version attribute
