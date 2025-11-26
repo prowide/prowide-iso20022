@@ -1,5 +1,8 @@
 # Prowide ISO 20022 - CHANGELOG
 
+### 10.3.4 - SNAPSHOT
+  * Update commons-lang3 dependency from 3.17.0 to 3.20.0
+
 ### 10.3.3 - November 2025
   * (PW-2895) Fix namespace prefix handling for custom envelope types in XML serialization
   * (PW-2731) Enhanced camt.057 amount extraction to fallback to Itm/Amt when TtlAmt is not present
