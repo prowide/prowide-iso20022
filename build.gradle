@@ -25,7 +25,7 @@ project.ext {
     prowideCoreVersion = 'SRU2025-10.3.6'
 	commonsLangVersion = '3.17.0'
 	gsonVersion = '2.13.1'
-	jaxbVersion = '4.0.5'
+	jaxbVersion = '4.0.6'
 	jakartaPersistenceVersion = '3.1.0' // jakarta 3.1 is Jakarta EE 10, jakarta 3.2 would imply migration to Jakarta EE 11
 }
 
@@ -339,7 +339,7 @@ dependencies {
 
 	// jaxb is required because it is no longer included in the JDK
 	// bind-api is included transitively by jaxb-impl
-	implementation 'com.sun.xml.bind:jaxb-impl:4.0.5'
+	implementation 'com.sun.xml.bind:jaxb-impl:4.0.6'
 }
 
 // repo for publishing
