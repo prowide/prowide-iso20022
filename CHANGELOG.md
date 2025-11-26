@@ -2,6 +2,7 @@
 
 ### 10.3.4 - SNAPSHOT
   * Update jaxb dependency from com.sun.xml.bind:jaxb-impl:4.0.5 to 4.0.6
+  * Update commons-lang3 dependency from 3.17.0 to 3.20.0
 
 ### 10.3.3 - November 2025
   * (PW-2895) Fix namespace prefix handling for custom envelope types in XML serialization
