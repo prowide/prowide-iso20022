@@ -15,8 +15,7 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
@@ -169,5 +168,94 @@ public class BusinessAppHdrV02Test {
         assertEquals("FOO", h.getMktPrctc().getRegy());
         assertEquals("BAR", h.getMktPrctc().getId());
         assertNotNull(h.getCreDt());
+    }
+
+    @Test
+    public void testParseEnvelope_PssblDplctFalse_IgnoresCpyDplct() {
+        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n" + "<Envelope>\n"
+                + "  <AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n"
+                + "    <CharSet>TEXT</CharSet>\n"
+                + "    <Fr>\n"
+                + "      <FIId>\n"
+                + "        <FinInstnId>\n"
+                + "          <BICFI>BANKABCDXXX</BICFI>\n"
+                + "          <ClrSysMmbId>\n"
+                + "            <ClrSysId>\n"
+                + "              <Cd>JONCC</Cd>\n"
+                + "            </ClrSysId>\n"
+                + "            <MmbId>456</MmbId>\n"
+                + "          </ClrSysMmbId>\n"
+                + "          <LEI>LEIABCDEFGHJIK089098</LEI>\n"
+                + "        </FinInstnId>\n"
+                + "      </FIId>\n"
+                + "    </Fr>\n"
+                + "    <To>\n"
+                + "      <FIId>\n"
+                + "        <FinInstnId>\n"
+                + "          <BICFI>BANKDEFGXXXXXX</BICFI>\n"
+                + "          <ClrSysMmbId>\n"
+                + "            <ClrSysId>\n"
+                + "              <Cd>JONCC</Cd>\n"
+                + "            </ClrSysId>\n"
+                + "            <MmbId>789</MmbId>\n"
+                + "          </ClrSysMmbId>\n"
+                + "          <LEI>LEIABCDEFGHJIK089123</LEI>\n"
+                + "        </FinInstnId>\n"
+                + "      </FIId>\n"
+                + "    </To>\n"
+                + "    <BizMsgIdr>TESTCNVTXXX2022</BizMsgIdr>\n"
+                + "    <MsgDefIdr>pacs.009.001.08</MsgDefIdr>\n"
+                + "    <BizSvc>swift.iap.tia.01</BizSvc>\n"
+                + "    <MktPrctc>\n"
+                + "      <Regy>MktPrctc1Regy350</Regy>\n"
+                + "      <Id>MktPrctc1Id2048</Id>\n"
+                + "    </MktPrctc>\n"
+                + "    <CreDt>2020-03-24T10:48:00+05:30</CreDt>\n"
+                + "    <CpyDplct>DUPL</CpyDplct>\n"
+                + "    <PssblDplct>false</PssblDplct>\n"
+                + "    <Prty>HIGH</Prty>\n"
+                + "    <Rltd>\n"
+                + "      <CharSet>TEXT</CharSet>\n"
+                + "      <Fr>\n"
+                + "        <FIId>\n"
+                + "          <FinInstnId>\n"
+                + "            <BICFI>BKJOJOTP252</BICFI>\n"
+                + "            <ClrSysMmbId>\n"
+                + "              <ClrSysId>\n"
+                + "                <Cd>JONCC</Cd>\n"
+                + "              </ClrSysId>\n"
+                + "              <MmbId>456</MmbId>\n"
+                + "            </ClrSysMmbId>\n"
+                + "            <LEI>LEIABCDEFGHJIK089098</LEI>\n"
+                + "          </FinInstnId>\n"
+                + "        </FIId>\n"
+                + "      </Fr>\n"
+                + "      <To>\n"
+                + "        <FIId>\n"
+                + "          <FinInstnId>\n"
+                + "            <BICFI>BANKABCDXXX</BICFI>\n"
+                + "            <ClrSysMmbId>\n"
+                + "              <ClrSysId>\n"
+                + "                <Cd>JONCC</Cd>\n"
+                + "              </ClrSysId>\n"
+                + "              <MmbId>789</MmbId>\n"
+                + "            </ClrSysMmbId>\n"
+                + "            <LEI>LEIABCDEFGHJIK089123</LEI>\n"
+                + "          </FinInstnId>\n"
+                + "        </FIId>\n"
+                + "      </To>\n"
+                + "      <BizMsgIdr>JOCFTD3051831210</BizMsgIdr>\n"
+                + "      <MsgDefIdr>pacs.008.001.09</MsgDefIdr>\n"
+                + "      <BizSvc>swift.iap.02</BizSvc>\n"
+                + "      <CreDt>2024-10-24T09:10:00+08:00</CreDt>\n"
+                + "      <CpyDplct>DUPL</CpyDplct>\n"
+                + "      <Prty>HIGH</Prty>\n"
+                + "    </Rltd>\n"
+                + "  </AppHdr>\n"
+                + "</Envelope>";
+
+        BusinessAppHdrV02 h = BusinessAppHdrV02.parse(xml);
+        assertNotNull(h);
+        assertFalse(h.isPssblDplct());
     }
 }

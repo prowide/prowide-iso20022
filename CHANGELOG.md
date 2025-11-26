@@ -1,5 +1,25 @@
 # Prowide ISO 20022 - CHANGELOG
 
+### 10.3.3 - November 2025
+  * (PW-2895) Fix namespace prefix handling for custom envelope types in XML serialization
+  * (PW-2731) Enhanced camt.057 amount extraction to fallback to Itm/Amt when TtlAmt is not present
+  * (GH-174) Fix: MinimumEscapeHandler duplicating quote characters in non-attribute contexts
+  * (GH-168) Fix: MX parsing error when AppHdr appears before Document element in xsys messages
+  * (GH-165) Added MxParseUtils.parseElement to parse standalone JAXB elements like SwIntWaitResponse from non-standard wrapper structures
+
+### 10.3.2 - October 2025
+  * (PW-2810) Fix: ISODateTime fractional seconds losing trailing zeros during XML serialization, milliseconds now padded to exactly 3 digits.
+
+### 10.3.1 - September 2025
+  * (PW-2637) Fix: do not consider copy duplicate flag (CpyDplct) in app header to mark the header a duplicate
+  * Feat: Enhanced the `MxParseUtils` to be lenient when the XML declaration has empty or invalid version attribute
+
+#### 10.3.0 - May 2025
+  * SWIFT Standard release update 2025 (live 22 November 2025)
+  * Yearly revision of deprecation phase (see https://dev.prowidesoftware.com/SRU2024/getting-started/deprecation/)
+  * Dependency update: commons-lang3 -> 3.17.0
+  * Dependency update: gson -> 2.13.1
+
 #### 10.2.7 - April 2025
   * Enhanced the MX parser log verbosity when parsing malformed content
   * Added new logic to MxNode to removing all leaves with empty attributes and empty content

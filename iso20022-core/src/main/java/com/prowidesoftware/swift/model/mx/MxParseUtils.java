@@ -16,6 +16,7 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.ProwideException;
+import com.prowidesoftware.deprecation.DeprecationUtils;
 import com.prowidesoftware.deprecation.ProwideDeprecated;
 import com.prowidesoftware.deprecation.TargetYear;
 import com.prowidesoftware.swift.model.DistinguishedName;
@@ -191,6 +192,83 @@ public class MxParseUtils {
     }
 
     /**
+     * Parses a standalone JAXB element from XML, ignoring any wrapper elements.
+     *
+     * <p>This method is useful for parsing SWIFTNet infrastructure elements such as {@code SwIntWaitResponse},
+     * {@code SwIntHandleResponse}, or other elements that may appear in non-standard wrapper structures outside
+     * the typical ISO 20022 Document/AppHdr pattern.
+     *
+     * <p>The parser uses SAX filtering to extract only the specified element from the XML, making it efficient
+     * even when processing large documents with multiple wrapper levels.
+     *
+     * <p><b>Important:</b> For JAXB classes that only have {@code @XmlType} annotation (not {@code @XmlRootElement}),
+     * such as {@code SwIntWaitResponse}, you may need to create a wrapper class with {@code @XmlRootElement} annotation
+     * in your project. Example:
+     * <pre>{@code
+     * @XmlRootElement(name = "WaitResponse", namespace = "urn:swift:snl:ns.SwInt")
+     * @XmlAccessorType(XmlAccessType.FIELD)
+     * public class WaitResponseWrapper {
+     *     @XmlElement(name = "SwiftRequestRef")
+     *     private String swiftRequestRef;
+     *     // getters and setters, plus any other fields you need
+     * }
+     *
+     * // Then use it:
+     * String xml = "<Data><WaitResponse xmlns=\"urn:swift:snl:ns.SwInt\">...</WaitResponse></Data>";
+     * WaitResponseWrapper response = MxParseUtils.parseElement(
+     *     WaitResponseWrapper.class,
+     *     xml,
+     *     "WaitResponse",
+     *     new Class<?>[] { WaitResponseWrapper.class }
+     * );
+     * }</pre>
+     *
+     * @param <T> the type of the element being parsed
+     * @param targetClass the class to parse (must have {@code @XmlRootElement} or be wrapped in a class that does)
+     * @param xml the XML content, may contain wrapper elements that will be ignored
+     * @param elementName the local name of the element to extract and parse (e.g., "WaitResponse")
+     * @param classes the JAXB context classes array, typically contains the target class and its dependencies
+     * @return parsed element or null if the content cannot be parsed or the element is not found
+     * @throws ProwideException if severe errors occur during parse
+     * @throws NullPointerException if any parameter is null
+     * @throws IllegalArgumentException if xml or elementName are blank
+     * @since 10.2.10
+     * @see #parseElement(Class, String, String, Class[], MxReadParams)
+     */
+    public static <T> T parseElement(
+            final Class<T> targetClass, final String xml, final String elementName, final Class<?>[] classes) {
+        return parseElement(targetClass, xml, elementName, classes, new MxReadParams());
+    }
+
+    /**
+     * Parses a standalone JAXB element from XML with custom unmarshalling parameters.
+     *
+     * <p>This is an overloaded version of {@link #parseElement(Class, String, String, Class[])} that accepts
+     * custom {@link MxReadParams} for controlling the unmarshalling behavior (e.g., custom adapters, JAXB context).
+     *
+     * @param <T> the type of the element being parsed
+     * @param targetClass the class to parse
+     * @param xml the XML content, may contain wrapper elements that will be ignored
+     * @param elementName the local name of the element to extract and parse
+     * @param classes the JAXB context classes array
+     * @param params unmarshalling parameters for customizing the parse behavior
+     * @return parsed element or null if the content cannot be parsed or the element is not found
+     * @throws ProwideException if severe errors occur during parse
+     * @throws NullPointerException if any parameter is null
+     * @throws IllegalArgumentException if xml or elementName are blank
+     * @since 10.2.10
+     */
+    @SuppressWarnings("unchecked")
+    public static <T> T parseElement(
+            final Class<T> targetClass,
+            final String xml,
+            final String elementName,
+            final Class<?>[] classes,
+            final MxReadParams params) {
+        return (T) parse(targetClass, xml, classes, elementName, params);
+    }
+
+    /**
      * Takes an XML with an MX message and detects the specific message type parsing just the namespace from the
      * Document element. If the Document element is not present, or without the namespace or if the namespace url
      * contains invalid content, then attempts to identify the message from the AppHdr. From the header tries to
@@ -247,7 +325,21 @@ public class MxParseUtils {
      * @since 9.3.9
      */
     public static String makeXmlLenient(String xml) {
-        return xml != null ? xml.replaceFirst("(?i)<\\?XML", "<?xml") : null;
+        if (xml == null) return null;
+        Pattern declPattern = Pattern.compile("(?i)<\\?xml([^>]*)\\?>");
+        Matcher declMatcher = declPattern.matcher(xml);
+        if (declMatcher.find()) {
+            String attrs = declMatcher.group(1);
+            // Replace invalid or empty version values with 1.0
+            attrs = attrs.replaceAll("(?i)(version\\s*=\\s*['\"])(?!1\\.0['\"]|1\\.1['\"])[^'\"]*(['\"])", "$11.0$2");
+            // If version is missing or empty, add version="1.0"
+            if (!attrs.matches(".*(?i)version\\s*=\\s*['\"][^'\"]*['\"].*")) {
+                attrs = " version=\"1.0\"" + attrs;
+            }
+            String fixed = "<?xml" + attrs + "?>";
+            return declMatcher.replaceFirst(Matcher.quoteReplacement(fixed));
+        }
+        return xml;
     }
 
     /**
@@ -476,15 +568,17 @@ public class MxParseUtils {
     }
 
     /**
+     * This method is deprecated because it is not a good idea to return the reader, that we are opening inside the
+     * method leaving the responsibility of closing it to the caller; where the caller probably just wants the value
+     * of the element
+     *
      * @deprecated use {@link #findByTags(String, String...)} instead
      */
     @Deprecated
-    @ProwideDeprecated(phase2 = TargetYear.SRU2025)
-    // this method is deprecated because it is not a good idea to return the reader, that we are opening inside the
-    // method
-    // leaving the responsibility of closing it to the caller; where the caller probably just wants the value of the
-    // element
+    @ProwideDeprecated(phase3 = TargetYear.SRU2026)
     public static Optional<XMLStreamReader> findElementByTags(final String xml, String... tags) {
+        DeprecationUtils.phase2(MxParseUtils.class, "findElementByTags", "Use findByTags instead");
+
         Objects.requireNonNull(xml, "XML to parse must not be null");
         Validate.notBlank(xml, "XML to parse must not be a blank string");
         Objects.requireNonNull(tags, "tags to find must not be null");
@@ -614,15 +708,16 @@ public class MxParseUtils {
     }
 
     /**
+     * This method is deprecated because it is not a good idea to return the reader, that we are opening inside the
+     * method leaving the responsibility of closing it to the caller; where the caller probably just wants the value
+     * of the element
      * @deprecated use {@link #findByTags(String, String...)} instead
      */
     @Deprecated
-    @ProwideDeprecated(phase2 = TargetYear.SRU2025)
-    // this method is deprecated because it is not a good idea to return the reader, that we are opening inside the
-    // method
-    // leaving the responsibility of closing it to the caller; where the caller probably just wants the value of the
-    // element
+    @ProwideDeprecated(phase3 = TargetYear.SRU2026)
     public static Optional<XMLStreamReader> findElementByPath(String xml, String targetPath) {
+        DeprecationUtils.phase2(MxParseUtils.class, "findElementByPath", "Use findByPath instead");
+
         Objects.requireNonNull(xml, "XML to parse must not be null");
         Validate.notBlank(xml, "XML to parse must not be a blank string");
         Objects.requireNonNull(targetPath, "targetPath to find must not be null");
