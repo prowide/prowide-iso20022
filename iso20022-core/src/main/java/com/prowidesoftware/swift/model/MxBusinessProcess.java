@@ -15,9 +15,6 @@
  */
 package com.prowidesoftware.swift.model;
 
-import com.prowidesoftware.deprecation.ProwideDeprecated;
-import com.prowidesoftware.deprecation.TargetYear;
-
 /**
  * SWIFT business process classification for MX messages.
  *
@@ -40,10 +37,9 @@ public enum MxBusinessProcess {
     casr("Settlement Reporting"),
     catm("Terminal Management"),
     catp("ATM Card Transactions"),
-    cbrf(""),
+    cbrf("Clearing Operations and Reporting"),
     colr("Collateral Management"),
     fxtr("Foreign Exchange Trade"),
-    defp("Derivatives"),
     head("Business Application Header"),
     pacs("Payments Clearing and Settlement"),
     pain("Payments Initiation"),
@@ -57,14 +53,7 @@ public enum MxBusinessProcess {
     setr("Securities Trade"),
     supl("Supplementary Data"),
     trck("Payments Tracker"),
-
-    /**
-     * @deprecated Obsolete to be withdrawn (non-ISO)
-     */
-    @ProwideDeprecated(phase4 = TargetYear.SRU2025)
-    @Deprecated
     trea("Treasury"),
-
     tsin("Trade Services Initiation"),
     tsmt("Trade Services Management"),
     tsrv("Trade Services"),

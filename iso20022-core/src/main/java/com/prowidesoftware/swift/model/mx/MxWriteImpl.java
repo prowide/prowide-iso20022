@@ -30,12 +30,12 @@ import java.util.logging.Logger;
 import javax.xml.namespace.QName;
 
 /**
- * Default implementation of the {@link MxWrite} interface to serialize MX message objects into XML strings.
+ * Default implementation to serialize MX message objects into XML strings.
  * The implementation expects instances of specific subclasses of AbstractMX, such as MxCamt03400102
  *
  * @since 9.0
  */
-public class MxWriteImpl implements MxWrite {
+public class MxWriteImpl {
     private static final Logger log = Logger.getLogger(MxWriteImpl.class.getName());
 
     /**

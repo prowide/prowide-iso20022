@@ -16,6 +16,7 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.ProwideException;
+import com.prowidesoftware.deprecation.DeprecationUtils;
 import com.prowidesoftware.deprecation.ProwideDeprecated;
 import com.prowidesoftware.deprecation.TargetYear;
 import com.prowidesoftware.swift.model.DistinguishedName;
@@ -567,15 +568,17 @@ public class MxParseUtils {
     }
 
     /**
+     * This method is deprecated because it is not a good idea to return the reader, that we are opening inside the
+     * method leaving the responsibility of closing it to the caller; where the caller probably just wants the value
+     * of the element
+     *
      * @deprecated use {@link #findByTags(String, String...)} instead
      */
     @Deprecated
-    @ProwideDeprecated(phase2 = TargetYear.SRU2025)
-    // this method is deprecated because it is not a good idea to return the reader, that we are opening inside the
-    // method
-    // leaving the responsibility of closing it to the caller; where the caller probably just wants the value of the
-    // element
+    @ProwideDeprecated(phase3 = TargetYear.SRU2026)
     public static Optional<XMLStreamReader> findElementByTags(final String xml, String... tags) {
+        DeprecationUtils.phase2(MxParseUtils.class, "findElementByTags", "Use findByTags instead");
+
         Objects.requireNonNull(xml, "XML to parse must not be null");
         Validate.notBlank(xml, "XML to parse must not be a blank string");
         Objects.requireNonNull(tags, "tags to find must not be null");
@@ -705,15 +708,16 @@ public class MxParseUtils {
     }
 
     /**
+     * This method is deprecated because it is not a good idea to return the reader, that we are opening inside the
+     * method leaving the responsibility of closing it to the caller; where the caller probably just wants the value
+     * of the element
      * @deprecated use {@link #findByTags(String, String...)} instead
      */
     @Deprecated
-    @ProwideDeprecated(phase2 = TargetYear.SRU2025)
-    // this method is deprecated because it is not a good idea to return the reader, that we are opening inside the
-    // method
-    // leaving the responsibility of closing it to the caller; where the caller probably just wants the value of the
-    // element
+    @ProwideDeprecated(phase3 = TargetYear.SRU2026)
     public static Optional<XMLStreamReader> findElementByPath(String xml, String targetPath) {
+        DeprecationUtils.phase2(MxParseUtils.class, "findElementByPath", "Use findByPath instead");
+
         Objects.requireNonNull(xml, "XML to parse must not be null");
         Validate.notBlank(xml, "XML to parse must not be a blank string");
         Objects.requireNonNull(targetPath, "targetPath to find must not be null");
