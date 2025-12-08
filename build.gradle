@@ -162,7 +162,7 @@ project(':iso20022-core') {
 
 		testImplementation "jakarta.persistence:jakarta.persistence-api:${jakartaPersistenceVersion}"
 		testImplementation 'org.junit.jupiter:junit-jupiter:5.11.4'
-		testImplementation 'com.google.guava:guava:33.4.0-jre'
+		testImplementation 'com.google.guava:guava:33.5.0-jre'
 		testImplementation 'org.assertj:assertj-core:3.27.6'
 		testImplementation 'org.xmlunit:xmlunit-core:2.10.0'
 		testImplementation 'org.xmlunit:xmlunit-matchers:2.10.0'
