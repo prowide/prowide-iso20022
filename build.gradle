@@ -24,7 +24,7 @@ project.ext {
 	SRU = 'SRU2025'
     prowideCoreVersion = 'SRU2025-10.3.6'
 	commonsLangVersion = '3.20.0'
-	gsonVersion = '2.13.1'
+	gsonVersion = '2.13.2'
 	jaxbVersion = '4.0.6'
 	jakartaPersistenceVersion = '3.1.0' // jakarta 3.1 is Jakarta EE 10, jakarta 3.2 would imply migration to Jakarta EE 11
 }
