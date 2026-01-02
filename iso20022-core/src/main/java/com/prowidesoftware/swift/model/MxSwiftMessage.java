@@ -291,6 +291,7 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
         }
 
         applyStrategy(lenientXml, metadataStrategy);
+        extractUetr(parsedMessage);
     }
 
     /**
@@ -362,6 +363,22 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
             }
         }
         return updated;
+    }
+
+    /**
+     * Extracts UETR from the parsed MX message if present.
+     * The UETR is typically found in payment identification structures.
+     *
+     * @param n the parsed message node
+     * @since 10.3.4
+     */
+    private void extractUetr(MxNode n) {
+        if (n != null) {
+            MxNode uetrNode = n.findFirstByName("UETR");
+            if (uetrNode != null && StringUtils.isNotBlank(uetrNode.getValue())) {
+                setUetr(uetrNode.getValue());
+            }
+        }
     }
 
     /**
