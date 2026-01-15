@@ -369,6 +369,9 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
      * Extracts UETR from the parsed MX message if present.
      * The UETR is typically found in payment identification structures.
      *
+     * <p>Note: UETR extraction could be added to the MessageMetadataStrategy interface in Prowide Core
+     * to enable custom extraction logic per message type.
+     *
      * @param n the parsed message node
      * @since 10.3.4
      */
@@ -551,7 +554,10 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
         Objects.requireNonNull(strategy, "the strategy for metadata extraction cannot be null");
         // when parsing the message just for the metadata extraction, we want to avoid underlying error logs
         // since this MxSwiftMessage is lenient on the constraints of the parsed XML payload
-        applyStrategy(MxParseUtils.makeXmlLenient(this.message()), strategy);
+        final String lenientXml = MxParseUtils.makeXmlLenient(this.message());
+        MxNode parsedMessage = MxNode.parse(lenientXml);
+        extractUetr(parsedMessage);
+        applyStrategy(lenientXml, strategy);
     }
 
     private void applyStrategy(String lenientXml, MessageMetadataStrategy strategy) {

@@ -17,6 +17,7 @@ package com.prowidesoftware.swift.model;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import com.prowidesoftware.swift.model.mx.DefaultMxMetadataStrategy;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -725,5 +726,40 @@ public class MxSwiftMessageTest {
                 + "</Envelope>";
         MxSwiftMessage mx = new MxSwiftMessage(xml);
         assertNull(mx.getUetr());
+    }
+
+    @Test
+    void testUetrExtractionWithUpdateMetadata() {
+        // Test that UETR is extracted when updateMetadata() is called
+        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+                + "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08\">\n"
+                + "    <FIToFICstmrCdtTrf>\n"
+                + "        <GrpHdr>\n"
+                + "            <MsgId>1234567890</MsgId>\n"
+                + "            <CreDtTm>2019-08-12T12:59:26+01:00</CreDtTm>\n"
+                + "            <NbOfTxs>1</NbOfTxs>\n"
+                + "            <SttlmInf>\n"
+                + "                <SttlmMtd>INGA</SttlmMtd>\n"
+                + "            </SttlmInf>\n"
+                + "        </GrpHdr>\n"
+                + "        <CdtTrfTxInf>\n"
+                + "            <PmtId>\n"
+                + "                <InstrId>wS4</InstrId>\n"
+                + "                <EndToEndId>tddt1wofdaT</EndToEndId>\n"
+                + "                <UETR>a1b2c3d4-e5f6-7890-abcd-ef1234567890</UETR>\n"
+                + "            </PmtId>\n"
+                + "            <IntrBkSttlmAmt Ccy=\"USD\">1000.00</IntrBkSttlmAmt>\n"
+                + "            <IntrBkSttlmDt>2019-08-13</IntrBkSttlmDt>\n"
+                + "        </CdtTrfTxInf>\n"
+                + "    </FIToFICstmrCdtTrf>\n"
+                + "</Document>";
+        MxSwiftMessage mx = new MxSwiftMessage(xml);
+        assertEquals("a1b2c3d4-e5f6-7890-abcd-ef1234567890", mx.getUetr());
+
+        // Now clear UETR and call updateMetadata - UETR should be re-extracted
+        mx.setUetr(null);
+        assertNull(mx.getUetr());
+        mx.updateMetadata(new DefaultMxMetadataStrategy());
+        assertEquals("a1b2c3d4-e5f6-7890-abcd-ef1234567890", mx.getUetr());
     }
 }
