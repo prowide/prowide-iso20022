@@ -1,5 +1,8 @@
 # Prowide ISO 20022 - CHANGELOG
 
+### 10.3.5 - SNAPSHOT
+  * (PW-3104) Fix: OffsetDateTimeAdapter now preserves the original format for datetime values parsed without an explicit offset, marshalling them back without appending the system default offset
+
 ### 10.3.4 - January 2026
   * (PW-2371) Feat: `MxSwiftMessage` now automatically extracts and persists UETR from MX messages during parsing
   * Update gson dependency from 2.13.1 to 2.13.2

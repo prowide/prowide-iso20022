@@ -24,11 +24,11 @@ class OffsetDateTimeAdapterTest {
                 .toOffsetDateTime();
 
         // DateTime without offset and with/without fractional seconds
-        testDateTimeImpl("2021-09-19T12:13:14", "2021-09-19T12:13:14" + offset);
-        testDateTimeImpl("2021-09-19T12:13:14.1", "2021-09-19T12:13:14.100" + offset);
-        testDateTimeImpl("2021-09-19T12:13:14.12", "2021-09-19T12:13:14.120" + offset);
-        testDateTimeImpl("2021-09-19T12:13:14.123", "2021-09-19T12:13:14.123" + offset);
-        testDateTimeImpl("2021-09-19T12:13:14.123456789", "2021-09-19T12:13:14.123456789" + offset);
+        testDateTimeImpl("2021-09-19T12:13:14", "2021-09-19T12:13:14");
+        testDateTimeImpl("2021-09-19T12:13:14.1", "2021-09-19T12:13:14.1");
+        testDateTimeImpl("2021-09-19T12:13:14.12", "2021-09-19T12:13:14.12");
+        testDateTimeImpl("2021-09-19T12:13:14.123", "2021-09-19T12:13:14.123");
+        testDateTimeImpl("2021-09-19T12:13:14.123456789", "2021-09-19T12:13:14.123456789");
 
         // DateTime with offset and without fractional seconds
         testDateTimeImpl("2021-09-19T12:13:14+01:00", "2021-09-19T12:13:14+01:00");
