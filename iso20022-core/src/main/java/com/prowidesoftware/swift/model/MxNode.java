@@ -248,6 +248,14 @@ public class MxNode {
     }
 
     /**
+     * @return the local name of this node
+     * @since 10.3.10
+     */
+    public String getLocalName() {
+        return localName;
+    }
+
+    /**
      * @since 7.8
      */
     public Map<String, String> getAttributes() {

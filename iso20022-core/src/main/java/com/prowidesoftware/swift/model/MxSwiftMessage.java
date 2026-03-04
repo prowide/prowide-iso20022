@@ -592,5 +592,15 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
         strategy.sender(mx).ifPresent(this::setSender);
         strategy.receiver(mx).ifPresent(this::setReceiver);
         strategy.identifier(mx).ifPresent(this::setIdentifier);
+
+        // Compute checksums for duplicate detection
+        String checksum = strategy.checksum(mx);
+        if (StringUtils.isNotBlank(checksum)) {
+            setChecksum(checksum);
+        }
+        String checksumBody = strategy.checksumBody(mx);
+        if (StringUtils.isNotBlank(checksumBody)) {
+            setChecksumBody(checksumBody);
+        }
     }
 }
