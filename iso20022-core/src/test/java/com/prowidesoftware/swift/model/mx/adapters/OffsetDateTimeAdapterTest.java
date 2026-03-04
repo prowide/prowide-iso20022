@@ -10,14 +10,15 @@ class OffsetDateTimeAdapterTest {
     @Test
     void testOffsetDateTime() throws Exception {
         ZoneId zoneId = ZoneId.systemDefault();
-        ZoneOffset zoneOffset = zoneId.getRules().getStandardOffset(Instant.now());
+        // Use the offset for the specific date being tested, not "now" or "standard"
+        LocalDateTime testDate = LocalDateTime.parse("2021-09-19T12:13:14");
+        ZoneOffset zoneOffset = zoneId.getRules().getOffset(testDate);
         String offset = zoneOffset.toString();
         if (offset.equals("Z")) {
             offset = "+00:00";
         }
 
-        OffsetDateTime dateTime = LocalDateTime.parse("2021-09-19T12:13:14")
-                .atZone(zoneId)
+        OffsetDateTime dateTime = testDate.atZone(zoneId)
                 .withEarlierOffsetAtOverlap()
                 .withFixedOffsetZone()
                 .withEarlierOffsetAtOverlap()

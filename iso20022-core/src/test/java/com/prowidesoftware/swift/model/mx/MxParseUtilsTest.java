@@ -1228,8 +1228,5 @@ public class MxParseUtilsTest {
         MxSwiftMessage mxSwiftMessage = MxSwiftMessage.parse(xml);
 
         MxParseUtils.parseComments(xml).forEach(System.out::println);
-
-
-
     }
 }

@@ -20,7 +20,9 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
+import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
+import java.time.ZoneId;
 import org.junit.jupiter.api.Test;
 
 class OffsetDateTimeJsonAdapterTest {
@@ -29,7 +31,10 @@ class OffsetDateTimeJsonAdapterTest {
 
     @Test
     void testSerializationAndDeserialization() {
-        int systemOffsetSeconds = OffsetDateTime.now().getOffset().getTotalSeconds();
+        // Use the offset for the specific date being tested (2019-04-28), not "now"
+        LocalDateTime testDate = LocalDateTime.of(2019, 4, 28, 12, 13, 14);
+        ZoneId zoneId = ZoneId.systemDefault();
+        int systemOffsetSeconds = zoneId.getRules().getOffset(testDate).getTotalSeconds();
 
         // without offset, nano 0
         String jsonActual =
