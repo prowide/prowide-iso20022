@@ -729,6 +729,37 @@ public class MxSwiftMessageTest {
     }
 
     @Test
+    public void testMetadataFromXsysRequestHeader() {
+        // xsys.012.001.01 delivery notification — no AppHdr, sender/receiver in RequestHeader DN
+        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>"
+                + "<xsys:Document xmlns:xsys=\"urn:swift:xsd:xsys.012.001.01\" xmlns:Sw=\"urn:swift:snl:ns.Sw\" xmlns:SwInt=\"urn:swift:snl:ns.SwInt\">"
+                + "    <xsys:xsys.012.001.01>"
+                + "        <xsys:DlvryNtfctn>"
+                + "            <Sw:SnFRef>NOTPROVIDED</Sw:SnFRef>"
+                + "            <Sw:SnFRefType>INTERACT</Sw:SnFRefType>"
+                + "            <Sw:AcceptStatus>Failed</Sw:AcceptStatus>"
+                + "            <Sw:AckDescription>Validation Failure</Sw:AckDescription>"
+                + "            <Sw:AckInfo>Message failed Prowide syntactic validation</Sw:AckInfo>"
+                + "            <SwInt:RequestHeader>"
+                + "                <SwInt:Requestor>ou=xxx,o=rcmcdeff,o=swift</SwInt:Requestor>"
+                + "                <SwInt:Responder>ou=ecl,o=mgtcbebe,o=swift</SwInt:Responder>"
+                + "                <SwInt:Service>swift.cbprplus.03</SwInt:Service>"
+                + "                <SwInt:RequestType>pacs.008.001.08</SwInt:RequestType>"
+                + "                <SwInt:Priority>Normal</SwInt:Priority>"
+                + "                <SwInt:RequestRef>TEST_PYMNT</SwInt:RequestRef>"
+                + "            </SwInt:RequestHeader>"
+                + "        </xsys:DlvryNtfctn>"
+                + "    </xsys:xsys.012.001.01>"
+                + "</xsys:Document>";
+        MxSwiftMessage mx = new MxSwiftMessage(xml);
+        assertNotNull(mx);
+        assertEquals("xsys.012.001.01", mx.getIdentifier());
+        // branch must come from the ou= component of the DN, not default XXX
+        assertEquals("RCMCDEFFXXX", mx.getSender());
+        assertEquals("MGTCBEBEECL", mx.getReceiver());
+    }
+
+    @Test
     void testUetrExtractionWithUpdateMetadata() {
         // Test that UETR is extracted when updateMetadata() is called
         String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
