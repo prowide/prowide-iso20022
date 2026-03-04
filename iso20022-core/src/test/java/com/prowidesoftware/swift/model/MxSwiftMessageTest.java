@@ -18,6 +18,7 @@ package com.prowidesoftware.swift.model;
 import static org.junit.jupiter.api.Assertions.*;
 
 import com.prowidesoftware.swift.model.mx.DefaultMxMetadataStrategy;
+import com.prowidesoftware.swift.utils.Lib;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -792,5 +793,66 @@ public class MxSwiftMessageTest {
         assertNull(mx.getUetr());
         mx.updateMetadata(new DefaultMxMetadataStrategy());
         assertEquals("a1b2c3d4-e5f6-7890-abcd-ef1234567890", mx.getUetr());
+    }
+
+    @Test
+    void testChecksumPopulatedOnParse() throws IOException {
+        String xml = Lib.readResource("pacs.008.001.07.xml");
+        MxSwiftMessage mx = new MxSwiftMessage(xml);
+        assertNotNull(mx.getChecksum(), "checksum should be populated after parsing");
+        assertNotNull(mx.getChecksumBody(), "checksumBody should be populated after parsing");
+        assertNotEquals(mx.getChecksum(), mx.getChecksumBody(), "full checksum and body checksum should differ");
+    }
+
+    @Test
+    void testChecksumDeterministic() throws IOException {
+        String xml = Lib.readResource("pacs.008.001.07.xml");
+        MxSwiftMessage mx1 = new MxSwiftMessage(xml);
+        MxSwiftMessage mx2 = new MxSwiftMessage(xml);
+        assertEquals(mx1.getChecksum(), mx2.getChecksum());
+        assertEquals(mx1.getChecksumBody(), mx2.getChecksumBody());
+    }
+
+    @Test
+    void testChecksumDifferentFormattingSameResult() throws IOException {
+        String xml = Lib.readResource("pacs.008.001.07.xml");
+        // Remove all formatting whitespace between elements
+        String compact = xml.replaceAll(">\\s+<", "><").trim();
+        assertNotEquals(xml, compact, "compact and original should differ in formatting");
+
+        MxSwiftMessage mx1 = new MxSwiftMessage(xml);
+        MxSwiftMessage mx2 = new MxSwiftMessage(compact);
+        assertEquals(mx1.getChecksum(), mx2.getChecksum());
+        assertEquals(mx1.getChecksumBody(), mx2.getChecksumBody());
+    }
+
+    @Test
+    void testChecksumHeaderChangeDiffersFullButNotBody() throws IOException {
+        String xml = Lib.readResource("pacs.008.001.07.xml");
+        // Modify only the header: change sender BIC
+        String modified = xml.replace("MLCOUS33XXX", "CHASUS33XXX");
+
+        MxSwiftMessage original = new MxSwiftMessage(xml);
+        MxSwiftMessage changed = new MxSwiftMessage(modified);
+
+        // Full checksum must differ because header changed
+        assertNotEquals(original.getChecksum(), changed.getChecksum());
+        // Body checksum must remain the same since Document is untouched
+        assertEquals(original.getChecksumBody(), changed.getChecksumBody());
+    }
+
+    @Test
+    void testChecksumDocumentChangeDiffersBoth() throws IOException {
+        String xml = Lib.readResource("pacs.008.001.07.xml");
+        // Modify the Document section: change amount
+        String modified = xml.replace(
+                "<IntrBkSttlmAmt Ccy='USD'>5000</IntrBkSttlmAmt>", "<IntrBkSttlmAmt Ccy='USD'>9999</IntrBkSttlmAmt>");
+
+        MxSwiftMessage original = new MxSwiftMessage(xml);
+        MxSwiftMessage changed = new MxSwiftMessage(modified);
+
+        // Both checksums must differ since Document changed
+        assertNotEquals(original.getChecksum(), changed.getChecksum());
+        assertNotEquals(original.getChecksumBody(), changed.getChecksumBody());
     }
 }

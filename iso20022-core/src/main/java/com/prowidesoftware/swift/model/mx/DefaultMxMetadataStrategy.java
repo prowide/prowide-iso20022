@@ -19,6 +19,7 @@ import com.prowidesoftware.swift.model.AbstractMessage;
 import com.prowidesoftware.swift.model.MessageMetadataStrategy;
 import com.prowidesoftware.swift.model.Money;
 import com.prowidesoftware.swift.model.MxNode;
+import com.prowidesoftware.swift.model.SwiftMessageUtils;
 import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -331,5 +332,73 @@ public class DefaultMxMetadataStrategy implements MessageMetadataStrategy {
     @Override
     public Optional<Calendar> tradeDate(AbstractMessage message) {
         return Optional.empty();
+    }
+
+    /**
+     * Computes an MD5 checksum of the full MX message XML content after canonicalization.
+     * Canonicalization normalizes whitespace and line endings to ensure consistent checksums
+     * for logically equivalent XML regardless of formatting differences.
+     *
+     * @param message the MX message to compute the checksum for
+     * @return the MD5 checksum string, or null if the message is not MX or has no content
+     * @since 10.3.5
+     */
+    @Override
+    public String checksum(AbstractMessage message) {
+        if (!message.isMX()) {
+            return null;
+        }
+        AbstractMX mx = (AbstractMX) message;
+        String xml = mx.message();
+        if (StringUtils.isBlank(xml)) {
+            return null;
+        }
+        String canonicalized = canonicalizeXml(xml);
+        return SwiftMessageUtils.md5(canonicalized);
+    }
+
+    /**
+     * Computes an MD5 checksum of the MX Document element only (excluding AppHdr) after canonicalization.
+     * Canonicalization normalizes whitespace and line endings to ensure consistent checksums
+     * for logically equivalent XML regardless of formatting differences.
+     *
+     * @param message the MX message to compute the checksum for
+     * @return the MD5 checksum string, or null if the message is not MX or has no Document content
+     * @since 10.3.5
+     */
+    @Override
+    public String checksumBody(AbstractMessage message) {
+        if (!message.isMX()) {
+            return null;
+        }
+        AbstractMX mx = (AbstractMX) message;
+        String document = mx.document();
+        if (StringUtils.isBlank(document)) {
+            return null;
+        }
+        String canonicalized = canonicalizeXml(document);
+        return SwiftMessageUtils.md5(canonicalized);
+    }
+
+    /**
+     * Builds a canonical string representation of the XML by parsing it into an {@link MxNode} tree
+     * and serializing element local names and text values without whitespace, namespace prefixes,
+     * or attributes. This produces a consistent checksum for semantically equivalent XML documents
+     * regardless of formatting, namespace prefix choices, or attribute ordering.
+     *
+     * <p>This is not full W3C C14N canonicalization, but sufficient for duplicate detection purposes.
+     *
+     * @param xml the XML string to canonicalize
+     * @return the canonical string representation, or null if the XML cannot be parsed
+     */
+    protected String canonicalizeXml(String xml) {
+        if (xml == null) {
+            return null;
+        }
+        MxNode root = MxNode.parse(xml);
+        if (root == null) {
+            return null;
+        }
+        return root.toCanonicalString();
     }
 }

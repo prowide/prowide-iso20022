@@ -1,5 +1,9 @@
 # Prowide ISO 20022 - CHANGELOG
 
+### 10.3.5 - SNAPSHOT
+  * (PW-3123) Feat: MX duplicate detection via `checksum()` and `checksumBody()` with XML canonicalization in `DefaultMxMetadataStrategy`
+  * Added `MxNode.getLocalName()` getter for XML node name access
+
 ### 10.3.4 - January 2026
   * (PW-2371) Feat: `MxSwiftMessage` now automatically extracts and persists UETR from MX messages during parsing
   * Update gson dependency from 2.13.1 to 2.13.2
