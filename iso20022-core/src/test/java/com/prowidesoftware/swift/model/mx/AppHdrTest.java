@@ -142,8 +142,8 @@ public class AppHdrTest {
         h.setMsgName("pacs.008.001.08");
         h.setSvcName("TGS");
 
-        assertEquals("ABCDCHZZ", h.from());
-        assertEquals("DCBADEFF", h.to());
+        assertEquals("ABCDCHZZXXX", h.from());
+        assertEquals("DCBADEFFXXX", h.to());
         assertEquals("MYREF1234", h.reference());
         assertEquals("pacs.008.001.08", h.messageName());
         assertEquals("TGS", h.serviceName());
