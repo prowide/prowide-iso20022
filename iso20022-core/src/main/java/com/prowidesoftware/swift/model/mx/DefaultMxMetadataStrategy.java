@@ -341,7 +341,7 @@ public class DefaultMxMetadataStrategy implements MessageMetadataStrategy {
      *
      * @param message the MX message to compute the checksum for
      * @return the MD5 checksum string, or null if the message is not MX or has no content
-     * @since 10.3.10
+     * @since 10.3.5
      */
     @Override
     public String checksum(AbstractMessage message) {
@@ -364,7 +364,7 @@ public class DefaultMxMetadataStrategy implements MessageMetadataStrategy {
      *
      * @param message the MX message to compute the checksum for
      * @return the MD5 checksum string, or null if the message is not MX or has no Document content
-     * @since 10.3.10
+     * @since 10.3.5
      */
     @Override
     public String checksumBody(AbstractMessage message) {
@@ -381,28 +381,24 @@ public class DefaultMxMetadataStrategy implements MessageMetadataStrategy {
     }
 
     /**
-     * Performs simple XML canonicalization suitable for checksum computation.
-     * <ul>
-     *   <li>Removes whitespace-only text nodes between elements</li>
-     *   <li>Normalizes line endings to LF</li>
-     *   <li>Trims leading/trailing whitespace from text content</li>
-     * </ul>
-     * This is not full W3C C14N canonicalization, but sufficient for duplicate detection purposes.
+     * Builds a canonical string representation of the XML by parsing it into an {@link MxNode} tree
+     * and serializing element local names and text values without whitespace, namespace prefixes,
+     * or attributes. This produces a consistent checksum for semantically equivalent XML documents
+     * regardless of formatting, namespace prefix choices, or attribute ordering.
+     *
+     * <p>This is not full W3C C14N canonicalization, but sufficient for duplicate detection purposes.
      *
      * @param xml the XML string to canonicalize
-     * @return the canonicalized XML string
+     * @return the canonical string representation, or null if the XML cannot be parsed
      */
     protected String canonicalizeXml(String xml) {
         if (xml == null) {
             return null;
         }
-        // Normalize line endings to LF
-        String normalized = xml.replace("\r\n", "\n").replace("\r", "\n");
-
-        // Remove whitespace between elements: >whitespace< becomes ><
-        normalized = normalized.replaceAll(">\\s+<", "><");
-
-        // Trim leading/trailing whitespace from the entire document
-        return normalized.trim();
+        MxNode root = MxNode.parse(xml);
+        if (root == null) {
+            return null;
+        }
+        return root.toCanonicalString();
     }
 }

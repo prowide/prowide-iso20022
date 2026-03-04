@@ -1,9 +1,8 @@
 # Prowide ISO 20022 - CHANGELOG
 
 ### 10.3.5 - SNAPSHOT
-  * (PW-3123) Feat: Implemented `checksum()` and `checksumBody()` in `DefaultMxMetadataStrategy` with XML canonicalization for MX duplicate detection
-  * (PW-3123) Feat: `MxSwiftMessage` now computes and stores checksum/checksumBody during metadata extraction via strategy
-  * (PW-3123) Feat: Added `MxNode.getLocalName()` getter for XML node name access
+  * (PW-3123) Feat: MX duplicate detection via `checksum()` and `checksumBody()` with XML canonicalization in `DefaultMxMetadataStrategy`
+  * Added `MxNode.getLocalName()` getter for XML node name access
 
 ### 10.3.4 - January 2026
   * (PW-2371) Feat: `MxSwiftMessage` now automatically extracts and persists UETR from MX messages during parsing

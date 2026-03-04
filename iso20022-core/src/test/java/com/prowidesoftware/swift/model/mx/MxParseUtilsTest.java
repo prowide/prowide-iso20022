@@ -17,7 +17,10 @@ package com.prowidesoftware.swift.model.mx;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import com.prowidesoftware.swift.model.*;
+import com.prowidesoftware.swift.model.MxBusinessProcess;
+import com.prowidesoftware.swift.model.MxId;
+import com.prowidesoftware.swift.model.SettlementInfo;
+import com.prowidesoftware.swift.model.SettlementMethod;
 import com.prowidesoftware.swift.model.mt.AbstractMT;
 import java.util.List;
 import java.util.Optional;
@@ -1160,73 +1163,5 @@ public class MxParseUtilsTest {
                 MxParseUtils.parseElement(String.class, xml, "NonExistentElement", new Class<?>[] {String.class});
 
         assertNull(result);
-    }
-
-    @Test
-    public void testSWNameSpace() {
-        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
-                + "<SwInt:HandleRequest xmlns:Sw=\"urn:swift:snl:ns.Sw\"\n"
-                + "                     xmlns:SwGbl=\"urn:swift:snl:ns.SwGbl\"\n"
-                + "                     xmlns:SwSec=\"urn:swift:snl:ns.SwSec\"\n"
-                + "                     xmlns:SwInt=\"urn:swift:snl:ns.SwInt\">\n"
-                + "    <SwInt:RequestHandle>\n"
-                + "        <SwInt:RequestDescriptor>\n"
-                + "            <SwInt:SwiftRequestRef>SNL00110-2010-05-04T15:32:59.3912.000004Z</SwInt:SwiftRequestRef>\n"
-                + "            <SwInt:SwiftRef>swi00001-2010-05-04T15:32:59.21582.11198379Z</SwInt:SwiftRef>\n"
-                + "            <SwInt:NonRep>\n"
-                + "                <SwInt:NRType>SVCOPT</SwInt:NRType>\n"
-                + "            </SwInt:NonRep>\n"
-                + "            <Sw:SnFOutputInfo>\n"
-                + "                <Sw:SnFSessionId>simxbebb_generic:p:000047</Sw:SnFSessionId>\n"
-                + "                <Sw:SnFOutputSeq>2337176</Sw:SnFOutputSeq>\n"
-                + "                <Sw:DeliveryTime>2010-05-04T15:33:14Z</Sw:DeliveryTime>\n"
-                + "                <Sw:SnFInputTime>0105:2010-05-04T15:33:12</Sw:SnFInputTime>\n"
-                + "            </Sw:SnFOutputInfo>\n"
-                + "            <SwInt:MRRResult>\n"
-                + "                <SwInt:SNLId>snl00110</SwInt:SNLId>\n"
-                + "                <SwInt:SNLEP>spark_ap2</SwInt:SNLEP>\n"
-                + "            </SwInt:MRRResult>\n"
-                + "        </SwInt:RequestDescriptor>\n"
-                + "        <SwInt:RequestHeader>\n"
-                + "            <SwInt:Requestor>cn=system,o=swift,o=swift</SwInt:Requestor>\n"
-                + "            <SwInt:Responder>cn=requestor,o=simxbebb,o=swift</SwInt:Responder>\n"
-                + "            <SwInt:Service>swift.snf.system</SwInt:Service>\n"
-                + "            <SwInt:RequestType>xsys.012.001.01</SwInt:RequestType>\n"
-                + "            <SwInt:Priority>Normal</SwInt:Priority>\n"
-                + "        </SwInt:RequestHeader>\n"
-                + "        <SwInt:RequestPayload>\n"
-                + "            <Ah:AppHdr xmlns:Ah=\"urn:swift:xsd:$ahV10\">\n"
-                + "                <Ah:MsgRef>2010-05-04T15:33:12Z</Ah:MsgRef>\n"
-                + "                <Ah:CrDate>2010-05-04T15:33:12Z</Ah:CrDate>\n"
-                + "            </Ah:AppHdr>\n"
-                + "            <Doc:Document xmlns:Doc=\"urn:swift:xsd:xsys.012.001.01\" xmlns:Sw=\"urn:swift:snl:ns.Sw\"\n"
-                + "                          xmlns:SwInt=\"urn:swift:snl:ns.SwInt\"\n"
-                + "                          xmlns:SwGbl=\"urn:swift:snl:ns.SwGbl\">\n"
-                + "                <Doc:xsys.012.001.01>\n"
-                + "                    <Doc:DlvryNtfctn>\n"
-                + "                        <Sw:SnFRef>swi00001-2010-05-04T15:32:59.21582.11198379Z</Sw:SnFRef>\n"
-                + "                        <Sw:SnFRefType>InterAct</Sw:SnFRefType>\n"
-                + "                        <Sw:AcceptStatus>Failed</Sw:AcceptStatus>\n"
-                + "                        <Sw:AckSwiftTime>2010-05-04T15:33:12Z</Sw:AckSwiftTime>\n"
-                + "                        <Sw:AckDescription>Message delivery attempts exceeded system threshold</Sw:AckDescription>\n"
-                + "                        <Sw:AckInfo>SwRejectcode=SwGbl.MaxRetryExceeded</Sw:AckInfo>\n"
-                + "                        <SwInt:RequestHeader>\n"
-                + "                            <SwInt:Requestor>cn=requestor,o=simxbebb,o=swift</SwInt:Requestor>\n"
-                + "                            <SwInt:Responder>cn=responder,o=simxus33,o=swift</SwInt:Responder>\n"
-                + "                            <SwInt:Service>mnop.cop</SwInt:Service>\n"
-                + "                            <SwInt:RequestType>pain.001.002.04</SwInt:RequestType>\n"
-                + "                            <SwInt:Priority>Normal</SwInt:Priority>\n"
-                + "                            <SwInt:RequestRef>Ref-84884</SwInt:RequestRef>\n"
-                + "                        </SwInt:RequestHeader>\n"
-                + "                    </Doc:DlvryNtfctn>\n"
-                + "                </Doc:xsys.012.001.01>\n"
-                + "            </Doc:Document>\n"
-                + "        </SwInt:RequestPayload>\n"
-                + "    </SwInt:RequestHandle>\n"
-                + "</SwInt:HandleRequest>";
-
-        MxSwiftMessage mxSwiftMessage = MxSwiftMessage.parse(xml);
-
-        MxParseUtils.parseComments(xml).forEach(System.out::println);
     }
 }

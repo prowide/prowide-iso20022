@@ -18,6 +18,7 @@ package com.prowidesoftware.swift.model;
 import static org.junit.jupiter.api.Assertions.*;
 
 import com.prowidesoftware.swift.model.mx.DefaultMxMetadataStrategy;
+import com.prowidesoftware.swift.utils.Lib;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -729,6 +730,37 @@ public class MxSwiftMessageTest {
     }
 
     @Test
+    public void testMetadataFromXsysRequestHeader() {
+        // xsys.012.001.01 delivery notification — no AppHdr, sender/receiver in RequestHeader DN
+        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>"
+                + "<xsys:Document xmlns:xsys=\"urn:swift:xsd:xsys.012.001.01\" xmlns:Sw=\"urn:swift:snl:ns.Sw\" xmlns:SwInt=\"urn:swift:snl:ns.SwInt\">"
+                + "    <xsys:xsys.012.001.01>"
+                + "        <xsys:DlvryNtfctn>"
+                + "            <Sw:SnFRef>NOTPROVIDED</Sw:SnFRef>"
+                + "            <Sw:SnFRefType>INTERACT</Sw:SnFRefType>"
+                + "            <Sw:AcceptStatus>Failed</Sw:AcceptStatus>"
+                + "            <Sw:AckDescription>Validation Failure</Sw:AckDescription>"
+                + "            <Sw:AckInfo>Message failed Prowide syntactic validation</Sw:AckInfo>"
+                + "            <SwInt:RequestHeader>"
+                + "                <SwInt:Requestor>ou=xxx,o=rcmcdeff,o=swift</SwInt:Requestor>"
+                + "                <SwInt:Responder>ou=ecl,o=mgtcbebe,o=swift</SwInt:Responder>"
+                + "                <SwInt:Service>swift.cbprplus.03</SwInt:Service>"
+                + "                <SwInt:RequestType>pacs.008.001.08</SwInt:RequestType>"
+                + "                <SwInt:Priority>Normal</SwInt:Priority>"
+                + "                <SwInt:RequestRef>TEST_PYMNT</SwInt:RequestRef>"
+                + "            </SwInt:RequestHeader>"
+                + "        </xsys:DlvryNtfctn>"
+                + "    </xsys:xsys.012.001.01>"
+                + "</xsys:Document>";
+        MxSwiftMessage mx = new MxSwiftMessage(xml);
+        assertNotNull(mx);
+        assertEquals("xsys.012.001.01", mx.getIdentifier());
+        // branch must come from the ou= component of the DN, not default XXX
+        assertEquals("RCMCDEFFXXX", mx.getSender());
+        assertEquals("MGTCBEBEECL", mx.getReceiver());
+    }
+
+    @Test
     void testUetrExtractionWithUpdateMetadata() {
         // Test that UETR is extracted when updateMetadata() is called
         String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
@@ -761,5 +793,66 @@ public class MxSwiftMessageTest {
         assertNull(mx.getUetr());
         mx.updateMetadata(new DefaultMxMetadataStrategy());
         assertEquals("a1b2c3d4-e5f6-7890-abcd-ef1234567890", mx.getUetr());
+    }
+
+    @Test
+    void testChecksumPopulatedOnParse() throws IOException {
+        String xml = Lib.readResource("pacs.008.001.07.xml");
+        MxSwiftMessage mx = new MxSwiftMessage(xml);
+        assertNotNull(mx.getChecksum(), "checksum should be populated after parsing");
+        assertNotNull(mx.getChecksumBody(), "checksumBody should be populated after parsing");
+        assertNotEquals(mx.getChecksum(), mx.getChecksumBody(), "full checksum and body checksum should differ");
+    }
+
+    @Test
+    void testChecksumDeterministic() throws IOException {
+        String xml = Lib.readResource("pacs.008.001.07.xml");
+        MxSwiftMessage mx1 = new MxSwiftMessage(xml);
+        MxSwiftMessage mx2 = new MxSwiftMessage(xml);
+        assertEquals(mx1.getChecksum(), mx2.getChecksum());
+        assertEquals(mx1.getChecksumBody(), mx2.getChecksumBody());
+    }
+
+    @Test
+    void testChecksumDifferentFormattingSameResult() throws IOException {
+        String xml = Lib.readResource("pacs.008.001.07.xml");
+        // Remove all formatting whitespace between elements
+        String compact = xml.replaceAll(">\\s+<", "><").trim();
+        assertNotEquals(xml, compact, "compact and original should differ in formatting");
+
+        MxSwiftMessage mx1 = new MxSwiftMessage(xml);
+        MxSwiftMessage mx2 = new MxSwiftMessage(compact);
+        assertEquals(mx1.getChecksum(), mx2.getChecksum());
+        assertEquals(mx1.getChecksumBody(), mx2.getChecksumBody());
+    }
+
+    @Test
+    void testChecksumHeaderChangeDiffersFullButNotBody() throws IOException {
+        String xml = Lib.readResource("pacs.008.001.07.xml");
+        // Modify only the header: change sender BIC
+        String modified = xml.replace("MLCOUS33XXX", "CHASUS33XXX");
+
+        MxSwiftMessage original = new MxSwiftMessage(xml);
+        MxSwiftMessage changed = new MxSwiftMessage(modified);
+
+        // Full checksum must differ because header changed
+        assertNotEquals(original.getChecksum(), changed.getChecksum());
+        // Body checksum must remain the same since Document is untouched
+        assertEquals(original.getChecksumBody(), changed.getChecksumBody());
+    }
+
+    @Test
+    void testChecksumDocumentChangeDiffersBoth() throws IOException {
+        String xml = Lib.readResource("pacs.008.001.07.xml");
+        // Modify the Document section: change amount
+        String modified = xml.replace(
+                "<IntrBkSttlmAmt Ccy='USD'>5000</IntrBkSttlmAmt>", "<IntrBkSttlmAmt Ccy='USD'>9999</IntrBkSttlmAmt>");
+
+        MxSwiftMessage original = new MxSwiftMessage(xml);
+        MxSwiftMessage changed = new MxSwiftMessage(modified);
+
+        // Both checksums must differ since Document changed
+        assertNotEquals(original.getChecksum(), changed.getChecksum());
+        assertNotEquals(original.getChecksumBody(), changed.getChecksumBody());
     }
 }
