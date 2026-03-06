@@ -24,17 +24,17 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 public class NonDeliveryWarning {
 
     @XmlElement(name = "OvrdueWrng", required = true)
-    protected OverdueWarning ovrdueWrng;
+    protected OverdueWarningXsys01001 ovrdueWrng;
 
     /**
      * Gets the value of the ovrdueWrng property.
      * 
      * @return
      *     possible object is
-     *     {@link OverdueWarning }
+     *     {@link OverdueWarningXsys01001 }
      *     
      */
-    public OverdueWarning getOvrdueWrng() {
+    public OverdueWarningXsys01001 getOvrdueWrng() {
         return ovrdueWrng;
     }
 
@@ -43,10 +43,10 @@ public class NonDeliveryWarning {
      * 
      * @param value
      *     allowed object is
-     *     {@link OverdueWarning }
+     *     {@link OverdueWarningXsys01001 }
      *     
      */
-    public NonDeliveryWarning setOvrdueWrng(OverdueWarning value) {
+    public NonDeliveryWarning setOvrdueWrng(OverdueWarningXsys01001 value) {
         this.ovrdueWrng = value;
         return this;
     }

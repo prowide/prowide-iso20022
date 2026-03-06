@@ -38,7 +38,7 @@ public class MxXsys01000101
     public static final transient int VARIANT = 1;
     public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {MxXsys01000101 .class, NonDeliveryWarning.class, OverdueWarning.class };
+    public static final transient Class[] _classes = new Class[] {MxXsys01000101 .class, NonDeliveryWarning.class, OverdueWarningXsys01001 .class };
     public static final transient String NAMESPACE = "urn:swift:xsd:xsys.010.001.01";
 
     public MxXsys01000101() {

@@ -24,17 +24,17 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 public class BulkRetrievalRequest {
 
     @XmlElement(name = "RptCrit", required = true)
-    protected ReportCriteriaXsys01300101 rptCrit;
+    protected ReportCriteriaXsys013 rptCrit;
 
     /**
      * Gets the value of the rptCrit property.
      * 
      * @return
      *     possible object is
-     *     {@link ReportCriteriaXsys01300101 }
+     *     {@link ReportCriteriaXsys013 }
      *     
      */
-    public ReportCriteriaXsys01300101 getRptCrit() {
+    public ReportCriteriaXsys013 getRptCrit() {
         return rptCrit;
     }
 
@@ -43,10 +43,10 @@ public class BulkRetrievalRequest {
      * 
      * @param value
      *     allowed object is
-     *     {@link ReportCriteriaXsys01300101 }
+     *     {@link ReportCriteriaXsys013 }
      *     
      */
-    public BulkRetrievalRequest setRptCrit(ReportCriteriaXsys01300101 value) {
+    public BulkRetrievalRequest setRptCrit(ReportCriteriaXsys013 value) {
         this.rptCrit = value;
         return this;
     }

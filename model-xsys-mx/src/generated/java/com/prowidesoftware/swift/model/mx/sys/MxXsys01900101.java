@@ -38,7 +38,7 @@ public class MxXsys01900101
     public static final transient int VARIANT = 1;
     public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {ExecutionReportFailureDetails.class, InputChannelDetailsXsys01900101 .class, InputChannelListXsys01900101 .class, InputChannelSessionDetails.class, InputChannelSessionList.class, InputOutputChannelListXsys01900101 .class, MxXsys01900101 .class, OutputChannelDetails.class, OutputChannelList.class, OutputChannelSessionDetails.class, OutputChannelSessionList.class, ReportInformation.class, RequestReference.class, ResultCode.class, SessionHistoryReport.class, SwBooleanIndicator.class };
+    public static final transient Class[] _classes = new Class[] {ExecutionReportFailureDetails.class, InputChannelDetails.class, InputChannelListXsys019 .class, InputChannelSessionDetails.class, InputChannelSessionList.class, InputOutputChannelList.class, MxXsys01900101 .class, OutputChannelDetails.class, OutputChannelListXsys019 .class, OutputChannelSessionDetails.class, OutputChannelSessionList.class, ReportInformation.class, RequestReference.class, ResultCode.class, SessionHistoryReport.class, SwBooleanIndicator.class };
     public static final transient String NAMESPACE = "urn:swift:xsd:xsys.019.001.01";
 
     public MxXsys01900101() {

@@ -26,7 +26,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 public class QueueStatusList {
 
     @XmlElement(name = "QSts", required = true)
-    protected List<QueueStatusXsys00900102> qSts;
+    protected List<QueueStatusXsys00902> qSts;
 
     /**
      * Gets the value of the qSts property.
@@ -46,13 +46,13 @@ public class QueueStatusList {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link QueueStatusXsys00900102 }
+     * {@link QueueStatusXsys00902 }
      * 
      * 
      * @return
      *     The value of the qSts property.
      */
-    public List<QueueStatusXsys00900102> getQSts() {
+    public List<QueueStatusXsys00902> getQSts() {
         if (qSts == null) {
             qSts = new ArrayList<>();
         }
@@ -79,7 +79,7 @@ public class QueueStatusList {
      * @see #getQSts()
      * 
      */
-    public QueueStatusList addQSts(QueueStatusXsys00900102 qSts) {
+    public QueueStatusList addQSts(QueueStatusXsys00902 qSts) {
         getQSts().add(qSts);
         return this;
     }

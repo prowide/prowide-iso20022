@@ -38,7 +38,7 @@ public class MxXsys01300101
     public static final transient int VARIANT = 1;
     public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {BulkRetrievalCriteria.class, BulkRetrievalRequest.class, MxXsys01300101 .class, ReportCriteriaXsys01300101 .class, TimeRange.class };
+    public static final transient Class[] _classes = new Class[] {BulkRetrievalCriteria.class, BulkRetrievalRequest.class, MxXsys01300101 .class, ReportCriteriaXsys013 .class, TimeRange.class };
     public static final transient String NAMESPACE = "urn:swift:xsd:xsys.013.001.01";
 
     public MxXsys01300101() {

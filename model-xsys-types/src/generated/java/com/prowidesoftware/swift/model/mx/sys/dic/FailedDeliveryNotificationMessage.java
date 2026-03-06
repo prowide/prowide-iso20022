@@ -24,17 +24,17 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 public class FailedDeliveryNotificationMessage {
 
     @XmlElement(name = "DlvryNtfctn", required = true)
-    protected DeliveryNotificationXsys01200102 dlvryNtfctn;
+    protected DeliveryNotificationXsys01201 dlvryNtfctn;
 
     /**
      * Gets the value of the dlvryNtfctn property.
      * 
      * @return
      *     possible object is
-     *     {@link DeliveryNotificationXsys01200102 }
+     *     {@link DeliveryNotificationXsys01201 }
      *     
      */
-    public DeliveryNotificationXsys01200102 getDlvryNtfctn() {
+    public DeliveryNotificationXsys01201 getDlvryNtfctn() {
         return dlvryNtfctn;
     }
 
@@ -43,10 +43,10 @@ public class FailedDeliveryNotificationMessage {
      * 
      * @param value
      *     allowed object is
-     *     {@link DeliveryNotificationXsys01200102 }
+     *     {@link DeliveryNotificationXsys01201 }
      *     
      */
-    public FailedDeliveryNotificationMessage setDlvryNtfctn(DeliveryNotificationXsys01200102 value) {
+    public FailedDeliveryNotificationMessage setDlvryNtfctn(DeliveryNotificationXsys01201 value) {
         this.dlvryNtfctn = value;
         return this;
     }

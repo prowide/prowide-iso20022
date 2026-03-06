@@ -30,7 +30,7 @@ public class SessionHistoryReport {
     @XmlElement(name = "RptInf", required = true)
     protected ReportInformation rptInf;
     @XmlElement(name = "InptOutptChnlList")
-    protected InputOutputChannelListXsys01900101 inptOutptChnlList;
+    protected InputOutputChannelList inptOutptChnlList;
 
     /**
      * Gets the value of the reqRef property.
@@ -87,10 +87,10 @@ public class SessionHistoryReport {
      * 
      * @return
      *     possible object is
-     *     {@link InputOutputChannelListXsys01900101 }
+     *     {@link InputOutputChannelList }
      *     
      */
-    public InputOutputChannelListXsys01900101 getInptOutptChnlList() {
+    public InputOutputChannelList getInptOutptChnlList() {
         return inptOutptChnlList;
     }
 
@@ -99,10 +99,10 @@ public class SessionHistoryReport {
      * 
      * @param value
      *     allowed object is
-     *     {@link InputOutputChannelListXsys01900101 }
+     *     {@link InputOutputChannelList }
      *     
      */
-    public SessionHistoryReport setInptOutptChnlList(InputOutputChannelListXsys01900101 value) {
+    public SessionHistoryReport setInptOutptChnlList(InputOutputChannelList value) {
         this.inptOutptChnlList = value;
         return this;
     }

@@ -1,6 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.sys.dic;
 
+import java.util.ArrayList;
+import java.util.List;
 import com.prowidesoftware.swift.model.mx.sys.dic.SwAny;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -26,7 +28,8 @@ import org.apache.commons.lang3.builder.ToStringStyle;
     "thirdPartyToReceiverInformation",
     "thirdPartyToSenderInformation",
     "thirdPartyRefusalReason",
-    "signatureValue"
+    "signatureValue",
+    "xtnsn"
 })
 public class Authorisation
     extends AbstractAuthorisation
@@ -46,6 +49,8 @@ public class Authorisation
     protected SwAny thirdPartyRefusalReason;
     @XmlElement(name = "SignatureValue", namespace = "urn:swift:snl:ns.SwSec")
     protected String signatureValue;
+    @XmlElement(name = "Xtnsn")
+    protected List<Extension> xtnsn;
 
     /**
      * SnFRef
@@ -222,6 +227,37 @@ public class Authorisation
         return this;
     }
 
+    /**
+     * Gets the value of the xtnsn property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the xtnsn property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getXtnsn().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Extension }
+     * 
+     * 
+     * @return
+     *     The value of the xtnsn property.
+     */
+    public List<Extension> getXtnsn() {
+        if (xtnsn == null) {
+            xtnsn = new ArrayList<>();
+        }
+        return this.xtnsn;
+    }
+
     @Override
     public String toString() {
         return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
@@ -235,6 +271,16 @@ public class Authorisation
     @Override
     public int hashCode() {
         return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+    /**
+     * Adds a new item to the xtnsn list.
+     * @see #getXtnsn()
+     * 
+     */
+    public Authorisation addXtnsn(Extension xtnsn) {
+        getXtnsn().add(xtnsn);
+        return this;
     }
 
 }

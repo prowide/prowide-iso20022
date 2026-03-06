@@ -30,7 +30,7 @@ public class OutputChannelReport {
     @XmlElement(name = "RptInf", required = true)
     protected ReportInformation rptInf;
     @XmlElement(name = "OutptChanlList")
-    protected OutputChannelListXsys02700101 outptChanlList;
+    protected OutputChannelList outptChanlList;
 
     /**
      * Gets the value of the reqRef property.
@@ -87,10 +87,10 @@ public class OutputChannelReport {
      * 
      * @return
      *     possible object is
-     *     {@link OutputChannelListXsys02700101 }
+     *     {@link OutputChannelList }
      *     
      */
-    public OutputChannelListXsys02700101 getOutptChanlList() {
+    public OutputChannelList getOutptChanlList() {
         return outptChanlList;
     }
 
@@ -99,10 +99,10 @@ public class OutputChannelReport {
      * 
      * @param value
      *     allowed object is
-     *     {@link OutputChannelListXsys02700101 }
+     *     {@link OutputChannelList }
      *     
      */
-    public OutputChannelReport setOutptChanlList(OutputChannelListXsys02700101 value) {
+    public OutputChannelReport setOutptChanlList(OutputChannelList value) {
         this.outptChanlList = value;
         return this;
     }

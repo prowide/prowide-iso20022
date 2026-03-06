@@ -22,7 +22,8 @@ import org.apache.commons.lang3.builder.ToStringStyle;
     "msgId",
     "creationTime",
     "pdIndication",
-    "headerInfo"
+    "headerInfo",
+    "senderInfo"
 })
 public class SwE2EControl {
 
@@ -34,6 +35,8 @@ public class SwE2EControl {
     protected SwPDIndication pdIndication;
     @XmlElement(name = "HeaderInfo")
     protected SwAny headerInfo;
+    @XmlElement(name = "SenderInfo")
+    protected String senderInfo;
 
     /**
      * Gets the value of the msgId property.
@@ -132,6 +135,31 @@ public class SwE2EControl {
      */
     public SwE2EControl setHeaderInfo(SwAny value) {
         this.headerInfo = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the senderInfo property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getSenderInfo() {
+        return senderInfo;
+    }
+
+    /**
+     * Sets the value of the senderInfo property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public SwE2EControl setSenderInfo(String value) {
+        this.senderInfo = value;
         return this;
     }
 

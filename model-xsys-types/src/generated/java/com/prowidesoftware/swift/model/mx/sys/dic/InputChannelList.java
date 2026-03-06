@@ -26,7 +26,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 public class InputChannelList {
 
     @XmlElement(name = "InptChanlDtls", required = true)
-    protected List<InputChannelDetails> inptChanlDtls;
+    protected List<InputChannelDetailsXsys007> inptChanlDtls;
 
     /**
      * Gets the value of the inptChanlDtls property.
@@ -46,13 +46,13 @@ public class InputChannelList {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link InputChannelDetails }
+     * {@link InputChannelDetailsXsys007 }
      * 
      * 
      * @return
      *     The value of the inptChanlDtls property.
      */
-    public List<InputChannelDetails> getInptChanlDtls() {
+    public List<InputChannelDetailsXsys007> getInptChanlDtls() {
         if (inptChanlDtls == null) {
             inptChanlDtls = new ArrayList<>();
         }
@@ -79,7 +79,7 @@ public class InputChannelList {
      * @see #getInptChanlDtls()
      * 
      */
-    public InputChannelList addInptChanlDtls(InputChannelDetails inptChanlDtls) {
+    public InputChannelList addInptChanlDtls(InputChannelDetailsXsys007 inptChanlDtls) {
         getInptChanlDtls().add(inptChanlDtls);
         return this;
     }

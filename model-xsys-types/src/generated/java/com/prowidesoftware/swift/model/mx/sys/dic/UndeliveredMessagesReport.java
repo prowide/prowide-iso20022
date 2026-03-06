@@ -19,41 +19,41 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "UndeliveredMessagesReport", propOrder = {
-    "reqRef",
+    "rptCrit",
     "rptInf",
     "udlvrdMsgList"
 })
 public class UndeliveredMessagesReport {
 
-    @XmlElement(name = "ReqRef", required = true)
-    protected RequestReference reqRef;
+    @XmlElement(name = "RptCrit", required = true)
+    protected ReportCriteria rptCrit;
     @XmlElement(name = "RptInf", required = true)
     protected ReportInfo rptInf;
     @XmlElement(name = "UdlvrdMsgList")
     protected UndeliveredMessageList udlvrdMsgList;
 
     /**
-     * Gets the value of the reqRef property.
+     * Gets the value of the rptCrit property.
      * 
      * @return
      *     possible object is
-     *     {@link RequestReference }
+     *     {@link ReportCriteria }
      *     
      */
-    public RequestReference getReqRef() {
-        return reqRef;
+    public ReportCriteria getRptCrit() {
+        return rptCrit;
     }
 
     /**
-     * Sets the value of the reqRef property.
+     * Sets the value of the rptCrit property.
      * 
      * @param value
      *     allowed object is
-     *     {@link RequestReference }
+     *     {@link ReportCriteria }
      *     
      */
-    public UndeliveredMessagesReport setReqRef(RequestReference value) {
-        this.reqRef = value;
+    public UndeliveredMessagesReport setRptCrit(ReportCriteria value) {
+        this.rptCrit = value;
         return this;
     }
 

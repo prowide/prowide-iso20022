@@ -26,7 +26,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 public class RetrievalReport {
 
     @XmlElement(name = "ReqRef", required = true)
-    protected RequestReferenceXsys01600101 reqRef;
+    protected RequestReferenceXsys016 reqRef;
     @XmlElement(name = "RptInf", required = true)
     protected ReportInfo rptInf;
     @XmlElement(name = "RtrvdMsgLst")
@@ -37,10 +37,10 @@ public class RetrievalReport {
      * 
      * @return
      *     possible object is
-     *     {@link RequestReferenceXsys01600101 }
+     *     {@link RequestReferenceXsys016 }
      *     
      */
-    public RequestReferenceXsys01600101 getReqRef() {
+    public RequestReferenceXsys016 getReqRef() {
         return reqRef;
     }
 
@@ -49,10 +49,10 @@ public class RetrievalReport {
      * 
      * @param value
      *     allowed object is
-     *     {@link RequestReferenceXsys01600101 }
+     *     {@link RequestReferenceXsys016 }
      *     
      */
-    public RetrievalReport setReqRef(RequestReferenceXsys01600101 value) {
+    public RetrievalReport setReqRef(RequestReferenceXsys016 value) {
         this.reqRef = value;
         return this;
     }

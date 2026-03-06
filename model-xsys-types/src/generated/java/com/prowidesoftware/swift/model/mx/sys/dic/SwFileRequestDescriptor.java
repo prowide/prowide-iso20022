@@ -29,7 +29,9 @@ import org.apache.commons.lang3.builder.ToStringStyle;
     "secSecuredData",
     "signatureList",
     "copy",
-    "distributionInfo"
+    "distributionInfo",
+    "retrievedDescriptor",
+    "informCopyList"
 })
 public class SwFileRequestDescriptor {
 
@@ -55,6 +57,10 @@ public class SwFileRequestDescriptor {
     protected SwCopy copy;
     @XmlElement(name = "DistributionInfo")
     protected SwDistributionInfo distributionInfo;
+    @XmlElement(name = "RetrievedDescriptor")
+    protected SwRetrievedDescriptor retrievedDescriptor;
+    @XmlElement(name = "InformCopyList")
+    protected SwInformCopyList informCopyList;
 
     /**
      * Gets the value of the rbac property.
@@ -328,6 +334,56 @@ public class SwFileRequestDescriptor {
      */
     public SwFileRequestDescriptor setDistributionInfo(SwDistributionInfo value) {
         this.distributionInfo = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the retrievedDescriptor property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link SwRetrievedDescriptor }
+     *     
+     */
+    public SwRetrievedDescriptor getRetrievedDescriptor() {
+        return retrievedDescriptor;
+    }
+
+    /**
+     * Sets the value of the retrievedDescriptor property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link SwRetrievedDescriptor }
+     *     
+     */
+    public SwFileRequestDescriptor setRetrievedDescriptor(SwRetrievedDescriptor value) {
+        this.retrievedDescriptor = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the informCopyList property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link SwInformCopyList }
+     *     
+     */
+    public SwInformCopyList getInformCopyList() {
+        return informCopyList;
+    }
+
+    /**
+     * Sets the value of the informCopyList property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link SwInformCopyList }
+     *     
+     */
+    public SwFileRequestDescriptor setInformCopyList(SwInformCopyList value) {
+        this.informCopyList = value;
         return this;
     }
 

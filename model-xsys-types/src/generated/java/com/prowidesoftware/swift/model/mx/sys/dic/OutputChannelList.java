@@ -21,42 +21,42 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "OutputChannelList", propOrder = {
-    "outptChnlDtls"
+    "outptChanlDtls"
 })
 public class OutputChannelList {
 
-    @XmlElement(name = "OutptChnlDtls", required = true)
-    protected List<OutputChannelDetails> outptChnlDtls;
+    @XmlElement(name = "OutptChanlDtls", required = true)
+    protected List<OutputChannelDetailsXsys027> outptChanlDtls;
 
     /**
-     * Gets the value of the outptChnlDtls property.
+     * Gets the value of the outptChanlDtls property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the outptChnlDtls property.
+     * This is why there is not a {@code set} method for the outptChanlDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getOutptChnlDtls().add(newItem);
+     *    getOutptChanlDtls().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link OutputChannelDetails }
+     * {@link OutputChannelDetailsXsys027 }
      * 
      * 
      * @return
-     *     The value of the outptChnlDtls property.
+     *     The value of the outptChanlDtls property.
      */
-    public List<OutputChannelDetails> getOutptChnlDtls() {
-        if (outptChnlDtls == null) {
-            outptChnlDtls = new ArrayList<>();
+    public List<OutputChannelDetailsXsys027> getOutptChanlDtls() {
+        if (outptChanlDtls == null) {
+            outptChanlDtls = new ArrayList<>();
         }
-        return this.outptChnlDtls;
+        return this.outptChanlDtls;
     }
 
     @Override
@@ -75,12 +75,12 @@ public class OutputChannelList {
     }
 
     /**
-     * Adds a new item to the outptChnlDtls list.
-     * @see #getOutptChnlDtls()
+     * Adds a new item to the outptChanlDtls list.
+     * @see #getOutptChanlDtls()
      * 
      */
-    public OutputChannelList addOutptChnlDtls(OutputChannelDetails outptChnlDtls) {
-        getOutptChnlDtls().add(outptChnlDtls);
+    public OutputChannelList addOutptChanlDtls(OutputChannelDetailsXsys027 outptChanlDtls) {
+        getOutptChanlDtls().add(outptChanlDtls);
         return this;
     }
 

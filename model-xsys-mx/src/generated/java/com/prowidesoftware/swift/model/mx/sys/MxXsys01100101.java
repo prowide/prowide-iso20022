@@ -32,13 +32,13 @@ public class MxXsys01100101
 {
 
     @XmlElement(name = "xsys.011.001.01", required = true)
-    protected DeliveryNotificationMessage xsys01100101;
+    protected DeliveryNotificationMessageXsys01101 xsys01100101;
     public static final transient String BUSINESS_PROCESS = "xsys";
     public static final transient int FUNCTIONALITY = 11;
     public static final transient int VARIANT = 1;
     public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {DeliveryNotificationMessage.class, DeliveryNotificationXsys01100101 .class, MxXsys01100101 .class };
+    public static final transient Class[] _classes = new Class[] {DeliveryNotificationMessageXsys01101 .class, DeliveryNotificationXsys01101 .class, MxXsys01100101 .class };
     public static final transient String NAMESPACE = "urn:swift:xsd:xsys.011.001.01";
 
     public MxXsys01100101() {
@@ -68,10 +68,10 @@ public class MxXsys01100101
      * 
      * @return
      *     possible object is
-     *     {@link DeliveryNotificationMessage }
+     *     {@link DeliveryNotificationMessageXsys01101 }
      *     
      */
-    public DeliveryNotificationMessage getXsys01100101() {
+    public DeliveryNotificationMessageXsys01101 getXsys01100101() {
         return xsys01100101;
     }
 
@@ -80,10 +80,10 @@ public class MxXsys01100101
      * 
      * @param value
      *     allowed object is
-     *     {@link DeliveryNotificationMessage }
+     *     {@link DeliveryNotificationMessageXsys01101 }
      *     
      */
-    public MxXsys01100101 setXsys01100101(DeliveryNotificationMessage value) {
+    public MxXsys01100101 setXsys01100101(DeliveryNotificationMessageXsys01101 value) {
         this.xsys01100101 = value;
         return this;
     }

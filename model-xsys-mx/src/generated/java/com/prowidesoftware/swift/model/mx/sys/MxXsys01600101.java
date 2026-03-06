@@ -38,7 +38,7 @@ public class MxXsys01600101
     public static final transient int VARIANT = 1;
     public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {DeliverySummary.class, MxXsys01600101 .class, PossibleDuplicateMessage.class, PossibleDuplicateMessageList.class, ReportInfo.class, RequestReferenceXsys01600101 .class, ResultCode.class, RetrievalReport.class, RetrievedInputMessage.class, RetrievedInputMessageList.class, RetrievedMessageList.class, RetrievedOutputMessage.class, RetrievedOutputMessageList.class, SwBooleanIndicator.class, UndeliveredMessageXsys01600101 .class };
+    public static final transient Class[] _classes = new Class[] {DeliverySummary.class, MxXsys01600101 .class, PossibleDuplicateMessage.class, PossibleDuplicateMessageList.class, ReportInfo.class, RequestReferenceXsys016 .class, ResultCode.class, RetrievalReport.class, RetrievedInputMessage.class, RetrievedInputMessageList.class, RetrievedMessageList.class, RetrievedOutputMessage.class, RetrievedOutputMessageList.class, SwBooleanIndicator.class, UndeliveredMessageXsys016 .class };
     public static final transient String NAMESPACE = "urn:swift:xsd:xsys.016.001.01";
 
     public MxXsys01600101() {

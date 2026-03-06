@@ -32,13 +32,13 @@ public class MxXsys00800101
 {
 
     @XmlElement(name = "xsys.008.001.01", required = true)
-    protected QueueStatusReportRequestXsys00800101 xsys00800101;
+    protected QueueStatusReportRequestXsys00801 xsys00800101;
     public static final transient String BUSINESS_PROCESS = "xsys";
     public static final transient int FUNCTIONALITY = 8;
     public static final transient int VARIANT = 1;
     public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {MxXsys00800101 .class, QueueStatusReportRequestXsys00800101 .class, ReportCriteria.class, ReportOptionCode.class, SwBooleanIndicator.class };
+    public static final transient Class[] _classes = new Class[] {MxXsys00800101 .class, QueueStatusReportRequestXsys00801 .class, ReportCriteriaXsys00801 .class, ReportOptionCode.class, SwBooleanIndicator.class };
     public static final transient String NAMESPACE = "urn:swift:xsd:xsys.008.001.01";
 
     public MxXsys00800101() {
@@ -68,10 +68,10 @@ public class MxXsys00800101
      * 
      * @return
      *     possible object is
-     *     {@link QueueStatusReportRequestXsys00800101 }
+     *     {@link QueueStatusReportRequestXsys00801 }
      *     
      */
-    public QueueStatusReportRequestXsys00800101 getXsys00800101() {
+    public QueueStatusReportRequestXsys00801 getXsys00800101() {
         return xsys00800101;
     }
 
@@ -80,10 +80,10 @@ public class MxXsys00800101
      * 
      * @param value
      *     allowed object is
-     *     {@link QueueStatusReportRequestXsys00800101 }
+     *     {@link QueueStatusReportRequestXsys00801 }
      *     
      */
-    public MxXsys00800101 setXsys00800101(QueueStatusReportRequestXsys00800101 value) {
+    public MxXsys00800101 setXsys00800101(QueueStatusReportRequestXsys00801 value) {
         this.xsys00800101 = value;
         return this;
     }

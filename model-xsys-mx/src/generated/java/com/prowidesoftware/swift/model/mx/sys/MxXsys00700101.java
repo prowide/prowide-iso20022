@@ -38,7 +38,7 @@ public class MxXsys00700101
     public static final transient int VARIANT = 1;
     public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {AbstractInputchannelDetails.class, InputChannelDetails.class, InputChannelList.class, InputChannelReport.class, InputChannelStateCode.class, MxXsys00700101 .class, ReportInfo.class, RequestReference.class, ResultCode.class, SwBooleanIndicator.class };
+    public static final transient Class[] _classes = new Class[] {AbstractInputchannelDetails.class, InputChannelDetailsXsys007 .class, InputChannelList.class, InputChannelReport.class, InputChannelStateCode.class, MxXsys00700101 .class, ReportInfo.class, RequestReference.class, ResultCode.class, SwBooleanIndicator.class };
     public static final transient String NAMESPACE = "urn:swift:xsd:xsys.007.001.01";
 
     public MxXsys00700101() {

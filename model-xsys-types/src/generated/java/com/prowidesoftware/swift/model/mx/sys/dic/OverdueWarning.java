@@ -29,6 +29,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
     "overdueTime",
     "fileRequestHeader",
     "requestHeader",
+    "recipientDN",
     "code",
     "swiftTime"
 })
@@ -50,13 +51,15 @@ public class OverdueWarning {
     protected SwFileRequestHeader fileRequestHeader;
     @XmlElement(name = "RequestHeader", namespace = "urn:swift:snl:ns.SwInt")
     protected SwIntRequestHeader requestHeader;
+    @XmlElement(name = "RecipientDN", namespace = "urn:swift:snl:ns.Sw")
+    protected String recipientDN;
     @XmlElement(name = "Code", namespace = "urn:swift:snl:ns.SwGbl")
     protected String code;
     @XmlElement(name = "SwiftTime", namespace = "urn:swift:snl:ns.Sw")
     protected String swiftTime;
 
     /**
-     * SnFRef
+     * StoreAndForwardReference
      * 
      * @return
      *     possible object is
@@ -81,7 +84,7 @@ public class OverdueWarning {
     }
 
     /**
-     * SnFRefType
+     * StoreAndForwardReferenceType
      * 
      * @return
      *     possible object is
@@ -131,7 +134,7 @@ public class OverdueWarning {
     }
 
     /**
-     * SnFInputSeq
+     * StoreAndForwardInputSequence
      * 
      * @return
      *     possible object is
@@ -156,7 +159,7 @@ public class OverdueWarning {
     }
 
     /**
-     * SnFInputTime
+     * StoreAndForwardInputTime
      * 
      * @return
      *     possible object is
@@ -252,6 +255,31 @@ public class OverdueWarning {
      */
     public OverdueWarning setRequestHeader(SwIntRequestHeader value) {
         this.requestHeader = value;
+        return this;
+    }
+
+    /**
+     * RecipientDN
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getRecipientDN() {
+        return recipientDN;
+    }
+
+    /**
+     * Sets the value of the recipientDN property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public OverdueWarning setRecipientDN(String value) {
+        this.recipientDN = value;
         return this;
     }
 

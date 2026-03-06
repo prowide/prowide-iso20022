@@ -32,13 +32,13 @@ public class MxXsys00500201
 {
 
     @XmlElement(name = "xsys.005.002.01", required = true)
-    protected UndeliveredMessagesReportXsys00500201 xsys00500201;
+    protected UndeliveredMessagesReport xsys00500201;
     public static final transient String BUSINESS_PROCESS = "xsys";
     public static final transient int FUNCTIONALITY = 5;
     public static final transient int VARIANT = 2;
     public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {MxXsys00500201 .class, ReportCriteriaXsys00500201 .class, ReportInfo.class, ResultCode.class, SwBooleanIndicator.class, UndeliveredMessageListXsys00500201 .class, UndeliveredMessageXsys00500201 .class, UndeliveredMessagesReportXsys00500201 .class };
+    public static final transient Class[] _classes = new Class[] {MxXsys00500201 .class, ReportCriteria.class, ReportInfo.class, ResultCode.class, SwBooleanIndicator.class, UndeliveredMessage.class, UndeliveredMessageList.class, UndeliveredMessagesReport.class };
     public static final transient String NAMESPACE = "urn:swift:xsd:xsys.005.002.01";
 
     public MxXsys00500201() {
@@ -68,10 +68,10 @@ public class MxXsys00500201
      * 
      * @return
      *     possible object is
-     *     {@link UndeliveredMessagesReportXsys00500201 }
+     *     {@link UndeliveredMessagesReport }
      *     
      */
-    public UndeliveredMessagesReportXsys00500201 getXsys00500201() {
+    public UndeliveredMessagesReport getXsys00500201() {
         return xsys00500201;
     }
 
@@ -80,10 +80,10 @@ public class MxXsys00500201
      * 
      * @param value
      *     allowed object is
-     *     {@link UndeliveredMessagesReportXsys00500201 }
+     *     {@link UndeliveredMessagesReport }
      *     
      */
-    public MxXsys00500201 setXsys00500201(UndeliveredMessagesReportXsys00500201 value) {
+    public MxXsys00500201 setXsys00500201(UndeliveredMessagesReport value) {
         this.xsys00500201 = value;
         return this;
     }

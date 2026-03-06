@@ -1,6 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.sys.dic;
 
+import java.math.BigDecimal;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
@@ -19,93 +20,91 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "InputChannelDetails", propOrder = {
-    "inputChannel",
-    "windowSize",
-    "nextSnFInputSeq"
+    "inptChnl",
+    "inptChnlSsnList",
+    "ttlNbOfSntMsgs"
 })
-public class InputChannelDetails
-    extends AbstractInputchannelDetails
-{
+public class InputChannelDetails {
 
-    @XmlElement(name = "InputChannel", namespace = "urn:swift:snl:ns.Sw", required = true)
-    protected String inputChannel;
-    @XmlElement(name = "WindowSize", namespace = "urn:swift:snl:ns.Sw", required = true)
-    protected String windowSize;
-    @XmlElement(name = "NextSnFInputSeq", namespace = "urn:swift:snl:ns.Sw", required = true)
-    protected String nextSnFInputSeq;
+    @XmlElement(name = "InptChnl", required = true)
+    protected String inptChnl;
+    @XmlElement(name = "InptChnlSsnList")
+    protected InputChannelSessionList inptChnlSsnList;
+    @XmlElement(name = "TtlNbOfSntMsgs", required = true)
+    protected BigDecimal ttlNbOfSntMsgs;
 
     /**
-     * InputChannel
+     * Gets the value of the inptChnl property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getInputChannel() {
-        return inputChannel;
+    public String getInptChnl() {
+        return inptChnl;
     }
 
     /**
-     * Sets the value of the inputChannel property.
+     * Sets the value of the inptChnl property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public InputChannelDetails setInputChannel(String value) {
-        this.inputChannel = value;
+    public InputChannelDetails setInptChnl(String value) {
+        this.inptChnl = value;
         return this;
     }
 
     /**
-     * WindowSize
+     * Gets the value of the inptChnlSsnList property.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link InputChannelSessionList }
      *     
      */
-    public String getWindowSize() {
-        return windowSize;
+    public InputChannelSessionList getInptChnlSsnList() {
+        return inptChnlSsnList;
     }
 
     /**
-     * Sets the value of the windowSize property.
+     * Sets the value of the inptChnlSsnList property.
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link InputChannelSessionList }
      *     
      */
-    public InputChannelDetails setWindowSize(String value) {
-        this.windowSize = value;
+    public InputChannelDetails setInptChnlSsnList(InputChannelSessionList value) {
+        this.inptChnlSsnList = value;
         return this;
     }
 
     /**
-     * NextSnFInputSeq
+     * Gets the value of the ttlNbOfSntMsgs property.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link BigDecimal }
      *     
      */
-    public String getNextSnFInputSeq() {
-        return nextSnFInputSeq;
+    public BigDecimal getTtlNbOfSntMsgs() {
+        return ttlNbOfSntMsgs;
     }
 
     /**
-     * Sets the value of the nextSnFInputSeq property.
+     * Sets the value of the ttlNbOfSntMsgs property.
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link BigDecimal }
      *     
      */
-    public InputChannelDetails setNextSnFInputSeq(String value) {
-        this.nextSnFInputSeq = value;
+    public InputChannelDetails setTtlNbOfSntMsgs(BigDecimal value) {
+        this.ttlNbOfSntMsgs = value;
         return this;
     }
 

@@ -32,13 +32,13 @@ public class MxXsys01500101
 {
 
     @XmlElement(name = "xsys.015.001.01", required = true)
-    protected RetrievalRequest xsys01500101;
+    protected RetrievalRequestXsys01501 xsys01500101;
     public static final transient String BUSINESS_PROCESS = "xsys";
     public static final transient int FUNCTIONALITY = 15;
     public static final transient int VARIANT = 1;
     public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {AdditionalFilterCriteria.class, InputOutputCriteria.class, InputSequenceCriteria.class, InputTimeCriteria.class, MultipleMessageCriteria.class, MxXsys01500101 .class, OutputSequenceCriteria.class, OutputTimeCriteria.class, ReportCriteriaXsys01500101 .class, RetrievalRequest.class, SingleMessageCriteria.class };
+    public static final transient Class[] _classes = new Class[] {AdditionalFilterCriteria.class, InputOutputCriteria.class, InputSequenceCriteria.class, InputTimeCriteria.class, MultipleMessageCriteria.class, MxXsys01500101 .class, OutputSequenceCriteria.class, OutputTimeCriteria.class, ReportCriteriaXsys01501 .class, RetrievalRequestXsys01501 .class, SingleMessageCriteria.class };
     public static final transient String NAMESPACE = "urn:swift:xsd:xsys.015.001.01";
 
     public MxXsys01500101() {
@@ -68,10 +68,10 @@ public class MxXsys01500101
      * 
      * @return
      *     possible object is
-     *     {@link RetrievalRequest }
+     *     {@link RetrievalRequestXsys01501 }
      *     
      */
-    public RetrievalRequest getXsys01500101() {
+    public RetrievalRequestXsys01501 getXsys01500101() {
         return xsys01500101;
     }
 
@@ -80,10 +80,10 @@ public class MxXsys01500101
      * 
      * @param value
      *     allowed object is
-     *     {@link RetrievalRequest }
+     *     {@link RetrievalRequestXsys01501 }
      *     
      */
-    public MxXsys01500101 setXsys01500101(RetrievalRequest value) {
+    public MxXsys01500101 setXsys01500101(RetrievalRequestXsys01501 value) {
         this.xsys01500101 = value;
         return this;
     }

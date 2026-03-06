@@ -24,17 +24,17 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 public class RetrievalRequest {
 
     @XmlElement(name = "RptCrit", required = true)
-    protected ReportCriteriaXsys01500101 rptCrit;
+    protected ReportCriteriaXsys01502 rptCrit;
 
     /**
      * Gets the value of the rptCrit property.
      * 
      * @return
      *     possible object is
-     *     {@link ReportCriteriaXsys01500101 }
+     *     {@link ReportCriteriaXsys01502 }
      *     
      */
-    public ReportCriteriaXsys01500101 getRptCrit() {
+    public ReportCriteriaXsys01502 getRptCrit() {
         return rptCrit;
     }
 
@@ -43,10 +43,10 @@ public class RetrievalRequest {
      * 
      * @param value
      *     allowed object is
-     *     {@link ReportCriteriaXsys01500101 }
+     *     {@link ReportCriteriaXsys01502 }
      *     
      */
-    public RetrievalRequest setRptCrit(ReportCriteriaXsys01500101 value) {
+    public RetrievalRequest setRptCrit(ReportCriteriaXsys01502 value) {
         this.rptCrit = value;
         return this;
     }
