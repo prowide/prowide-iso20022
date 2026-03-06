@@ -32,13 +32,13 @@ public class MxXsys00500202
 {
 
     @XmlElement(name = "xsys.005.002.02", required = true)
-    protected UndeliveredMessagesReportXsys005022 xsys00500202;
+    protected UndeliveredMessagesReportXsys00500202 xsys00500202;
     public static final transient String BUSINESS_PROCESS = "xsys";
     public static final transient int FUNCTIONALITY = 5;
     public static final transient int VARIANT = 2;
     public static final transient int VERSION = 2;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {MxXsys00500202 .class, ReportCriteria.class, ReportInfo.class, ResultCode.class, SwBooleanIndicator.class, UndeliveredMessage.class, UndeliveredMessageList.class, UndeliveredMessagesReportXsys005022 .class };
+    public static final transient Class[] _classes = new Class[] {MxXsys00500202 .class, ReportCriteria.class, ReportInfo.class, ResultCode.class, SwBooleanIndicator.class, UndeliveredMessage.class, UndeliveredMessageList.class, UndeliveredMessagesReportXsys00500202 .class };
     public static final transient String NAMESPACE = "urn:swift:xsd:xsys.005.002.02";
 
     public MxXsys00500202() {
@@ -68,10 +68,10 @@ public class MxXsys00500202
      * 
      * @return
      *     possible object is
-     *     {@link UndeliveredMessagesReportXsys005022 }
+     *     {@link UndeliveredMessagesReportXsys00500202 }
      *     
      */
-    public UndeliveredMessagesReportXsys005022 getXsys00500202() {
+    public UndeliveredMessagesReportXsys00500202 getXsys00500202() {
         return xsys00500202;
     }
 
@@ -80,10 +80,10 @@ public class MxXsys00500202
      * 
      * @param value
      *     allowed object is
-     *     {@link UndeliveredMessagesReportXsys005022 }
+     *     {@link UndeliveredMessagesReportXsys00500202 }
      *     
      */
-    public MxXsys00500202 setXsys00500202(UndeliveredMessagesReportXsys005022 value) {
+    public MxXsys00500202 setXsys00500202(UndeliveredMessagesReportXsys00500202 value) {
         this.xsys00500202 = value;
         return this;
     }

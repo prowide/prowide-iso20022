@@ -32,13 +32,13 @@ public class MxXsys01200102
 {
 
     @XmlElement(name = "xsys.012.001.02", required = true)
-    protected FailedDeliveryNotificationMessageXsys01202 xsys01200102;
+    protected FailedDeliveryNotificationMessageXsys01200102 xsys01200102;
     public static final transient String BUSINESS_PROCESS = "xsys";
     public static final transient int FUNCTIONALITY = 12;
     public static final transient int VARIANT = 1;
     public static final transient int VERSION = 2;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {DeliveryNotification.class, Extension.class, ExtensionEnvelope.class, FailedDeliveryNotificationMessageXsys01202 .class, MxXsys01200102 .class };
+    public static final transient Class[] _classes = new Class[] {DeliveryNotificationXsys01200102 .class, Extension.class, ExtensionEnvelope.class, FailedDeliveryNotificationMessageXsys01200102 .class, MxXsys01200102 .class };
     public static final transient String NAMESPACE = "urn:swift:xsd:xsys.012.001.02";
 
     public MxXsys01200102() {
@@ -68,10 +68,10 @@ public class MxXsys01200102
      * 
      * @return
      *     possible object is
-     *     {@link FailedDeliveryNotificationMessageXsys01202 }
+     *     {@link FailedDeliveryNotificationMessageXsys01200102 }
      *     
      */
-    public FailedDeliveryNotificationMessageXsys01202 getXsys01200102() {
+    public FailedDeliveryNotificationMessageXsys01200102 getXsys01200102() {
         return xsys01200102;
     }
 
@@ -80,10 +80,10 @@ public class MxXsys01200102
      * 
      * @param value
      *     allowed object is
-     *     {@link FailedDeliveryNotificationMessageXsys01202 }
+     *     {@link FailedDeliveryNotificationMessageXsys01200102 }
      *     
      */
-    public MxXsys01200102 setXsys01200102(FailedDeliveryNotificationMessageXsys01202 value) {
+    public MxXsys01200102 setXsys01200102(FailedDeliveryNotificationMessageXsys01200102 value) {
         this.xsys01200102 = value;
         return this;
     }

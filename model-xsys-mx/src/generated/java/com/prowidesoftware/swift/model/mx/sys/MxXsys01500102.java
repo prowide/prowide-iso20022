@@ -32,13 +32,13 @@ public class MxXsys01500102
 {
 
     @XmlElement(name = "xsys.015.001.02", required = true)
-    protected RetrievalRequest xsys01500102;
+    protected RetrievalRequestXsys01500102 xsys01500102;
     public static final transient String BUSINESS_PROCESS = "xsys";
     public static final transient int FUNCTIONALITY = 15;
     public static final transient int VARIANT = 1;
     public static final transient int VERSION = 2;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {AdditionalFilterCriteria.class, InputOutputCriteria.class, InputSequenceCriteria.class, InputTimeCriteria.class, MultipleMessageCriteria.class, MxXsys01500102 .class, OutputSequenceCriteria.class, OutputTimeCriteria.class, ReportCriteriaXsys01502 .class, RetrievalRequest.class, SingleMessageCriteria.class };
+    public static final transient Class[] _classes = new Class[] {AdditionalFilterCriteria.class, InputOutputCriteria.class, InputSequenceCriteria.class, InputTimeCriteria.class, MultipleMessageCriteria.class, MxXsys01500102 .class, OutputSequenceCriteria.class, OutputTimeCriteria.class, ReportCriteriaXsys01500102 .class, RetrievalRequestXsys01500102 .class, SingleMessageCriteria.class };
     public static final transient String NAMESPACE = "urn:swift:xsd:xsys.015.001.02";
 
     public MxXsys01500102() {
@@ -68,10 +68,10 @@ public class MxXsys01500102
      * 
      * @return
      *     possible object is
-     *     {@link RetrievalRequest }
+     *     {@link RetrievalRequestXsys01500102 }
      *     
      */
-    public RetrievalRequest getXsys01500102() {
+    public RetrievalRequestXsys01500102 getXsys01500102() {
         return xsys01500102;
     }
 
@@ -80,10 +80,10 @@ public class MxXsys01500102
      * 
      * @param value
      *     allowed object is
-     *     {@link RetrievalRequest }
+     *     {@link RetrievalRequestXsys01500102 }
      *     
      */
-    public MxXsys01500102 setXsys01500102(RetrievalRequest value) {
+    public MxXsys01500102 setXsys01500102(RetrievalRequestXsys01500102 value) {
         this.xsys01500102 = value;
         return this;
     }

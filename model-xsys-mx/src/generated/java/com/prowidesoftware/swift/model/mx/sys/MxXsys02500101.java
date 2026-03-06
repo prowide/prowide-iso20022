@@ -32,13 +32,13 @@ public class MxXsys02500101
 {
 
     @XmlElement(name = "xsys.025.001.01", required = true)
-    protected YCopyStatusResponse xsys02500101;
+    protected YCopyStatusResponseXsys02500101 xsys02500101;
     public static final transient String BUSINESS_PROCESS = "xsys";
     public static final transient int FUNCTIONALITY = 25;
     public static final transient int VARIANT = 1;
     public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {CopyStatus.class, MessageListXsys025 .class, MessageXsys025 .class, MxXsys02500101 .class, ReferenceList.class, ReportInfo.class, RequestReference.class, ResultCode.class, SwBooleanIndicator.class, YCopyStatusResponse.class };
+    public static final transient Class[] _classes = new Class[] {CopyStatusXsys02500101 .class, MessageListXsys02500101 .class, MessageXsys02500101 .class, MxXsys02500101 .class, ReferenceList.class, ReportInfo.class, RequestReference.class, ResultCode.class, SwBooleanIndicator.class, YCopyStatusResponseXsys02500101 .class };
     public static final transient String NAMESPACE = "urn:swift:xsd:xsys.025.001.01";
 
     public MxXsys02500101() {
@@ -68,10 +68,10 @@ public class MxXsys02500101
      * 
      * @return
      *     possible object is
-     *     {@link YCopyStatusResponse }
+     *     {@link YCopyStatusResponseXsys02500101 }
      *     
      */
-    public YCopyStatusResponse getXsys02500101() {
+    public YCopyStatusResponseXsys02500101 getXsys02500101() {
         return xsys02500101;
     }
 
@@ -80,10 +80,10 @@ public class MxXsys02500101
      * 
      * @param value
      *     allowed object is
-     *     {@link YCopyStatusResponse }
+     *     {@link YCopyStatusResponseXsys02500101 }
      *     
      */
-    public MxXsys02500101 setXsys02500101(YCopyStatusResponse value) {
+    public MxXsys02500101 setXsys02500101(YCopyStatusResponseXsys02500101 value) {
         this.xsys02500101 = value;
         return this;
     }

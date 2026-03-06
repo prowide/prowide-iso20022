@@ -32,13 +32,13 @@ public class MxXsys00500101
 {
 
     @XmlElement(name = "xsys.005.001.01", required = true)
-    protected UndeliveredMessagesReportXsys00501 xsys00500101;
+    protected UndeliveredMessagesReportXsys00500101 xsys00500101;
     public static final transient String BUSINESS_PROCESS = "xsys";
     public static final transient int FUNCTIONALITY = 5;
     public static final transient int VARIANT = 1;
     public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {MxXsys00500101 .class, ReportInfo.class, RequestReference.class, ResultCode.class, SwBooleanIndicator.class, UndeliveredMessageListXsys00501 .class, UndeliveredMessageXsys00501 .class, UndeliveredMessagesReportXsys00501 .class };
+    public static final transient Class[] _classes = new Class[] {MxXsys00500101 .class, ReportInfo.class, RequestReference.class, ResultCode.class, SwBooleanIndicator.class, UndeliveredMessageListXsys00500101 .class, UndeliveredMessageXsys00500101 .class, UndeliveredMessagesReportXsys00500101 .class };
     public static final transient String NAMESPACE = "urn:swift:xsd:xsys.005.001.01";
 
     public MxXsys00500101() {
@@ -68,10 +68,10 @@ public class MxXsys00500101
      * 
      * @return
      *     possible object is
-     *     {@link UndeliveredMessagesReportXsys00501 }
+     *     {@link UndeliveredMessagesReportXsys00500101 }
      *     
      */
-    public UndeliveredMessagesReportXsys00501 getXsys00500101() {
+    public UndeliveredMessagesReportXsys00500101 getXsys00500101() {
         return xsys00500101;
     }
 
@@ -80,10 +80,10 @@ public class MxXsys00500101
      * 
      * @param value
      *     allowed object is
-     *     {@link UndeliveredMessagesReportXsys00501 }
+     *     {@link UndeliveredMessagesReportXsys00500101 }
      *     
      */
-    public MxXsys00500101 setXsys00500101(UndeliveredMessagesReportXsys00501 value) {
+    public MxXsys00500101 setXsys00500101(UndeliveredMessagesReportXsys00500101 value) {
         this.xsys00500101 = value;
         return this;
     }

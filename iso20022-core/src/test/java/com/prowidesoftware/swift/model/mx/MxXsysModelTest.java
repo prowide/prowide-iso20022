@@ -20,8 +20,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import com.prowidesoftware.swift.model.MxId;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.sys.MxXsys01200101;
-import com.prowidesoftware.swift.model.mx.sys.dic.DeliveryNotificationXsys01201;
-import com.prowidesoftware.swift.model.mx.sys.dic.FailedDeliveryNotificationMessage;
+import com.prowidesoftware.swift.model.mx.sys.dic.DeliveryNotificationXsys01200101;
+import com.prowidesoftware.swift.model.mx.sys.dic.FailedDeliveryNotificationMessageXsys01200101;
 import com.prowidesoftware.swift.model.mx.sys.dic.SwIntRequestHeader;
 import com.prowidesoftware.swift.utils.TestUtils;
 import java.io.StringReader;
@@ -188,8 +188,8 @@ public class MxXsysModelTest {
     @Test
     public void testCreate() {
         MxXsys01200101 mx = new MxXsys01200101();
-        mx.setXsys01200101(new FailedDeliveryNotificationMessage());
-        mx.getXsys01200101().setDlvryNtfctn(new DeliveryNotificationXsys01201());
+        mx.setXsys01200101(new FailedDeliveryNotificationMessageXsys01200101());
+        mx.getXsys01200101().setDlvryNtfctn(new DeliveryNotificationXsys01200101());
         mx.getXsys01200101().getDlvryNtfctn().setSnFRef("ref");
         mx.getXsys01200101().getDlvryNtfctn().setSnFRefType("InterAct");
         mx.getXsys01200101().getDlvryNtfctn().setAcceptStatus("Failed");

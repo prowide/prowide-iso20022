@@ -32,13 +32,13 @@ public class MxXsys00900102
 {
 
     @XmlElement(name = "xsys.009.001.02", required = true)
-    protected QueueStatusReportXsys00902 xsys00900102;
+    protected QueueStatusReportXsys00900102 xsys00900102;
     public static final transient String BUSINESS_PROCESS = "xsys";
     public static final transient int FUNCTIONALITY = 9;
     public static final transient int VARIANT = 1;
     public static final transient int VERSION = 2;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {AcquisitionStateCode.class, ActivationStateCode.class, ExecutionReportFailureDetails.class, Message.class, MessageList.class, MxXsys00900102 .class, QueueStatusList.class, QueueStatusReportXsys00902 .class, QueueStatusXsys00902 .class, ReportInformation.class, RequestReference.class, ResultCode.class, SessionDetails.class, SessionList.class, SwBooleanIndicator.class };
+    public static final transient Class[] _classes = new Class[] {AcquisitionStateCode.class, ActivationStateCode.class, ExecutionReportFailureDetails.class, Message.class, MessageList.class, MxXsys00900102 .class, QueueStatusListXsys00900102 .class, QueueStatusReportXsys00900102 .class, QueueStatusXsys00900102 .class, ReportInformation.class, RequestReference.class, ResultCode.class, SessionDetails.class, SessionList.class, SwBooleanIndicator.class };
     public static final transient String NAMESPACE = "urn:swift:xsd:xsys.009.001.02";
 
     public MxXsys00900102() {
@@ -68,10 +68,10 @@ public class MxXsys00900102
      * 
      * @return
      *     possible object is
-     *     {@link QueueStatusReportXsys00902 }
+     *     {@link QueueStatusReportXsys00900102 }
      *     
      */
-    public QueueStatusReportXsys00902 getXsys00900102() {
+    public QueueStatusReportXsys00900102 getXsys00900102() {
         return xsys00900102;
     }
 
@@ -80,10 +80,10 @@ public class MxXsys00900102
      * 
      * @param value
      *     allowed object is
-     *     {@link QueueStatusReportXsys00902 }
+     *     {@link QueueStatusReportXsys00900102 }
      *     
      */
-    public MxXsys00900102 setXsys00900102(QueueStatusReportXsys00902 value) {
+    public MxXsys00900102 setXsys00900102(QueueStatusReportXsys00900102 value) {
         this.xsys00900102 = value;
         return this;
     }

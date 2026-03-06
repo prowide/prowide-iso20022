@@ -32,13 +32,13 @@ public class MxXsys01000102
 {
 
     @XmlElement(name = "xsys.010.001.02", required = true)
-    protected NonDeliveryWarningXsys01002 xsys01000102;
+    protected NonDeliveryWarningXsys01000102 xsys01000102;
     public static final transient String BUSINESS_PROCESS = "xsys";
     public static final transient int FUNCTIONALITY = 10;
     public static final transient int VARIANT = 1;
     public static final transient int VERSION = 2;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {MxXsys01000102 .class, NonDeliveryWarningXsys01002 .class, OverdueWarning.class };
+    public static final transient Class[] _classes = new Class[] {MxXsys01000102 .class, NonDeliveryWarningXsys01000102 .class, OverdueWarningXsys01000102 .class };
     public static final transient String NAMESPACE = "urn:swift:xsd:xsys.010.001.02";
 
     public MxXsys01000102() {
@@ -68,10 +68,10 @@ public class MxXsys01000102
      * 
      * @return
      *     possible object is
-     *     {@link NonDeliveryWarningXsys01002 }
+     *     {@link NonDeliveryWarningXsys01000102 }
      *     
      */
-    public NonDeliveryWarningXsys01002 getXsys01000102() {
+    public NonDeliveryWarningXsys01000102 getXsys01000102() {
         return xsys01000102;
     }
 
@@ -80,10 +80,10 @@ public class MxXsys01000102
      * 
      * @param value
      *     allowed object is
-     *     {@link NonDeliveryWarningXsys01002 }
+     *     {@link NonDeliveryWarningXsys01000102 }
      *     
      */
-    public MxXsys01000102 setXsys01000102(NonDeliveryWarningXsys01002 value) {
+    public MxXsys01000102 setXsys01000102(NonDeliveryWarningXsys01000102 value) {
         this.xsys01000102 = value;
         return this;
     }

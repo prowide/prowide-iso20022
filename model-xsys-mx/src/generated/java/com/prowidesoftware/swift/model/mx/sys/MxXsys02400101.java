@@ -32,13 +32,13 @@ public class MxXsys02400101
 {
 
     @XmlElement(name = "xsys.024.001.01", required = true)
-    protected YCopyStatusRequest xsys02400101;
+    protected YCopyStatusRequestXsys02400101 xsys02400101;
     public static final transient String BUSINESS_PROCESS = "xsys";
     public static final transient int FUNCTIONALITY = 24;
     public static final transient int VARIANT = 1;
     public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {MxXsys02400101 .class, ReportCriteriaXsys024 .class, TimeRange.class, YCopyStatusRequest.class };
+    public static final transient Class[] _classes = new Class[] {MxXsys02400101 .class, ReportCriteriaXsys02400101 .class, TimeRange.class, YCopyStatusRequestXsys02400101 .class };
     public static final transient String NAMESPACE = "urn:swift:xsd:xsys.024.001.01";
 
     public MxXsys02400101() {
@@ -68,10 +68,10 @@ public class MxXsys02400101
      * 
      * @return
      *     possible object is
-     *     {@link YCopyStatusRequest }
+     *     {@link YCopyStatusRequestXsys02400101 }
      *     
      */
-    public YCopyStatusRequest getXsys02400101() {
+    public YCopyStatusRequestXsys02400101 getXsys02400101() {
         return xsys02400101;
     }
 
@@ -80,10 +80,10 @@ public class MxXsys02400101
      * 
      * @param value
      *     allowed object is
-     *     {@link YCopyStatusRequest }
+     *     {@link YCopyStatusRequestXsys02400101 }
      *     
      */
-    public MxXsys02400101 setXsys02400101(YCopyStatusRequest value) {
+    public MxXsys02400101 setXsys02400101(YCopyStatusRequestXsys02400101 value) {
         this.xsys02400101 = value;
         return this;
     }

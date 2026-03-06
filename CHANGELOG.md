@@ -2,10 +2,10 @@
 
 ### 10.3.5 - SNAPSHOT
   * (PW-3123) Feat: MX duplicate detection via `checksum()` and `checksumBody()` with XML canonicalization in `DefaultMxMetadataStrategy`
-  * Added `MxNode.getLocalName()` getter for XML node name access
-  * Added 12 new semt message types (semt.025 through semt.034, semt.040, semt.044) - T2 drafts
-  * Added supl.021.001.01 message type
-  * Regenerated xsys model with updated type naming and 6 new message versions
+  * Feat: Added `MxNode.getLocalName()` getter for XML node name access
+  * Feat: Added 12 new semt message types; semt.025 through semt.034, semt.040, semt.044 (T2 drafts)
+  * Feat: Added supl.021.001.01 message type
+  * Feat: Added 6 new message versions of xsys messages (few model dictionary classes renamed in consequence)
 
 ### 10.3.4 - January 2026
   * (PW-2371) Feat: `MxSwiftMessage` now automatically extracts and persists UETR from MX messages during parsing

@@ -32,13 +32,13 @@ public class MxXsys00100102
 {
 
     @XmlElement(name = "xsys.001.001.02", required = true)
-    protected SystemAuthorisation xsys00100102;
+    protected SystemAuthorisationXsys00100102 xsys00100102;
     public static final transient String BUSINESS_PROCESS = "xsys";
     public static final transient int FUNCTIONALITY = 1;
     public static final transient int VARIANT = 1;
     public static final transient int VERSION = 2;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {AbstractAuthorisation.class, Authorisation.class, AuthorisationStatusCode.class, Extension.class, ExtensionEnvelope.class, MxXsys00100102 .class, SystemAuthorisation.class };
+    public static final transient Class[] _classes = new Class[] {AbstractAuthorisation.class, AuthorisationStatusCode.class, AuthorisationXsys00100102 .class, Extension.class, ExtensionEnvelope.class, MxXsys00100102 .class, SystemAuthorisationXsys00100102 .class };
     public static final transient String NAMESPACE = "urn:swift:xsd:xsys.001.001.02";
 
     public MxXsys00100102() {
@@ -68,10 +68,10 @@ public class MxXsys00100102
      * 
      * @return
      *     possible object is
-     *     {@link SystemAuthorisation }
+     *     {@link SystemAuthorisationXsys00100102 }
      *     
      */
-    public SystemAuthorisation getXsys00100102() {
+    public SystemAuthorisationXsys00100102 getXsys00100102() {
         return xsys00100102;
     }
 
@@ -80,10 +80,10 @@ public class MxXsys00100102
      * 
      * @param value
      *     allowed object is
-     *     {@link SystemAuthorisation }
+     *     {@link SystemAuthorisationXsys00100102 }
      *     
      */
-    public MxXsys00100102 setXsys00100102(SystemAuthorisation value) {
+    public MxXsys00100102 setXsys00100102(SystemAuthorisationXsys00100102 value) {
         this.xsys00100102 = value;
         return this;
     }
