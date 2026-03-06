@@ -15,7 +15,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
  * Scope
- * The CorporateActionInstructionStatusAdvice message is sent by an account servicer to an account owner or its designated agent, to report status of a received corporate action election instruction.
+ * The CorporateActionInstructionStatusAdvice message is sent by an account servicer to an account owner or its designated agent, to report status of a received corporate action election instruction.
  * This message is used to advise the status, or a change in status, of a corporate action-related transaction previously instructed by, or executed on behalf of, the account owner. This will include the acknowledgement/rejection of a corporate action instruction.
  * Usage
  * The message may also be used to:

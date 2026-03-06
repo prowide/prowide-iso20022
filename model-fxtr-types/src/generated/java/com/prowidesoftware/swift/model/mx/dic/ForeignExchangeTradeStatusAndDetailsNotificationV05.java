@@ -14,9 +14,9 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Scope
- * The ForeignExchangeTradeStatusAndDetails message is sent by a central system to the participant to provide notification of the status and details of a foreign exchange trade.
- * Usage
+ * Scope
+ * The ForeignExchangeTradeStatusAndDetails message is sent by a central system to the participant to provide notification of the status and details of a foreign exchange trade.
+ * Usage
  * The notification is sent by a central settlement system to the two trading parties after it has received foreign exchange trade instructions from both.
  * 
  * 

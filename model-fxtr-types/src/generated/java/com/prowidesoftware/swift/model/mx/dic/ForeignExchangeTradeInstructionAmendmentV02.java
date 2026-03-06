@@ -14,9 +14,9 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * Scope
- * The ForeignExchangeTradeInstructionAmendement message is sent by a participant to a central settlement system to notify the amendment of the foreign exchange trade previously confirmed by the sender.
- * Usage
+ * Scope
+ * The ForeignExchangeTradeInstructionAmendement message is sent by a participant to a central settlement system to notify the amendment of the foreign exchange trade previously confirmed by the sender.
+ * Usage
  * The ForeignExchangeTradeInstructionAmendement message is sent from a participant to a central settlement system to advise of the update of a previously sent notification. The "Related Reference" must be used to link it to the previous notification.
  * 
  * 

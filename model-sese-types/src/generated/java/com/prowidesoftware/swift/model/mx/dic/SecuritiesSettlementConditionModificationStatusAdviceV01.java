@@ -22,9 +22,9 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * - a custodian acting on behalf of an investment management institution or a broker/dealer.
  * Usage
  * A SecuritiesSettlementConditionsModificatioRequest may contain requests on multiple transactions. However, one SecuritiesSettlementConditionsModificationStatusAdvice must be sent per transaction modified unless the SecuritiesSettlementConditionsModificationRequest is rejected as a whole.			
- * The message may also be used to: 
- * - re-send a message previously sent (the sub-function of the message is Duplicate) 
- * - provide a third party with a copy of a message for information (the sub-function of the message is Copy) 
+ * The message may also be used to: 
+ * - re-send a message previously sent (the sub-function of the message is Duplicate) 
+ * - provide a third party with a copy of a message for information (the sub-function of the message is Copy) 
  * - re-send to a third party a copy of a message for information (the sub-function of the message is Copy Duplicate).
  * ISO 15022 - 20022 Coexistence
  * This ISO 20022 message is reversed engineered from ISO 15022. Both standards will coexist for a certain number of years. Until this coexistence period ends, the usage of certain data types is restricted to ensure interoperability between ISO 15022 and 20022 users. Compliance to these rules is mandatory in a coexistence environment. The coexistence restrictions are described in a Textual Rule linked to the Message Items they concern. These coexistence textual rules are clearly identified as follows: “CoexistenceXxxxRule”.
