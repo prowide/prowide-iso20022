@@ -27,7 +27,7 @@ public class InputOutputChannelListXsys01900101 {
     @XmlElement(name = "InptChnlList")
     protected InputChannelListXsys01900101 inptChnlList;
     @XmlElement(name = "OutptChnlList")
-    protected OutputChannelList outptChnlList;
+    protected OutputChannelListXsys01900101 outptChnlList;
 
     /**
      * Gets the value of the inptChnlList property.
@@ -59,10 +59,10 @@ public class InputOutputChannelListXsys01900101 {
      * 
      * @return
      *     possible object is
-     *     {@link OutputChannelList }
+     *     {@link OutputChannelListXsys01900101 }
      *     
      */
-    public OutputChannelList getOutptChnlList() {
+    public OutputChannelListXsys01900101 getOutptChnlList() {
         return outptChnlList;
     }
 
@@ -71,10 +71,10 @@ public class InputOutputChannelListXsys01900101 {
      * 
      * @param value
      *     allowed object is
-     *     {@link OutputChannelList }
+     *     {@link OutputChannelListXsys01900101 }
      *     
      */
-    public InputOutputChannelListXsys01900101 setOutptChnlList(OutputChannelList value) {
+    public InputOutputChannelListXsys01900101 setOutptChnlList(OutputChannelListXsys01900101 value) {
         this.outptChnlList = value;
         return this;
     }

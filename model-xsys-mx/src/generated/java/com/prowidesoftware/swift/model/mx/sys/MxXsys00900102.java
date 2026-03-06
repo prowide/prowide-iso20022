@@ -38,7 +38,7 @@ public class MxXsys00900102
     public static final transient int VARIANT = 1;
     public static final transient int VERSION = 2;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {AcquisitionStateCode.class, ActivationStateCode.class, ExecutionReportFailureDetails.class, Message.class, MessageList.class, MxXsys00900102 .class, QueueStatusList.class, QueueStatusReportXsys00900102 .class, QueueStatusXsys00900102 .class, ReportInformation.class, RequestReference.class, ResultCode.class, SessionDetails.class, SessionList.class, SwBooleanIndicator.class };
+    public static final transient Class[] _classes = new Class[] {AcquisitionStateCode.class, ActivationStateCode.class, ExecutionReportFailureDetails.class, Message.class, MessageList.class, MxXsys00900102 .class, QueueStatusListXsys00900102 .class, QueueStatusReportXsys00900102 .class, QueueStatusXsys00900102 .class, ReportInformation.class, RequestReference.class, ResultCode.class, SessionDetails.class, SessionList.class, SwBooleanIndicator.class };
     public static final transient String NAMESPACE = "urn:swift:xsd:xsys.009.001.02";
 
     public MxXsys00900102() {

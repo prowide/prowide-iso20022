@@ -32,13 +32,13 @@ public class MxXsys01600101
 {
 
     @XmlElement(name = "xsys.016.001.01", required = true)
-    protected RetrievalReport xsys01600101;
+    protected RetrievalReportXsys01600101 xsys01600101;
     public static final transient String BUSINESS_PROCESS = "xsys";
     public static final transient int FUNCTIONALITY = 16;
     public static final transient int VARIANT = 1;
     public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {DeliverySummary.class, MxXsys01600101 .class, PossibleDuplicateMessage.class, PossibleDuplicateMessageList.class, ReportInfo.class, RequestReferenceXsys01600101 .class, ResultCode.class, RetrievalReport.class, RetrievedInputMessage.class, RetrievedInputMessageList.class, RetrievedMessageList.class, RetrievedOutputMessage.class, RetrievedOutputMessageList.class, SwBooleanIndicator.class, UndeliveredMessageXsys01600101 .class };
+    public static final transient Class[] _classes = new Class[] {DeliverySummary.class, MxXsys01600101 .class, PossibleDuplicateMessage.class, PossibleDuplicateMessageList.class, ReportInfo.class, RequestReferenceXsys01600101 .class, ResultCode.class, RetrievalReportXsys01600101 .class, RetrievedInputMessage.class, RetrievedInputMessageList.class, RetrievedMessageList.class, RetrievedOutputMessage.class, RetrievedOutputMessageList.class, SwBooleanIndicator.class, UndeliveredMessageXsys01600101 .class };
     public static final transient String NAMESPACE = "urn:swift:xsd:xsys.016.001.01";
 
     public MxXsys01600101() {
@@ -68,10 +68,10 @@ public class MxXsys01600101
      * 
      * @return
      *     possible object is
-     *     {@link RetrievalReport }
+     *     {@link RetrievalReportXsys01600101 }
      *     
      */
-    public RetrievalReport getXsys01600101() {
+    public RetrievalReportXsys01600101 getXsys01600101() {
         return xsys01600101;
     }
 
@@ -80,10 +80,10 @@ public class MxXsys01600101
      * 
      * @param value
      *     allowed object is
-     *     {@link RetrievalReport }
+     *     {@link RetrievalReportXsys01600101 }
      *     
      */
-    public MxXsys01600101 setXsys01600101(RetrievalReport value) {
+    public MxXsys01600101 setXsys01600101(RetrievalReportXsys01600101 value) {
         this.xsys01600101 = value;
         return this;
     }

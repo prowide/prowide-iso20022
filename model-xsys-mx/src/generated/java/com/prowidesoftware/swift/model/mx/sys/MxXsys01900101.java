@@ -32,13 +32,13 @@ public class MxXsys01900101
 {
 
     @XmlElement(name = "xsys.019.001.01", required = true)
-    protected SessionHistoryReport xsys01900101;
+    protected SessionHistoryReportXsys01900101 xsys01900101;
     public static final transient String BUSINESS_PROCESS = "xsys";
     public static final transient int FUNCTIONALITY = 19;
     public static final transient int VARIANT = 1;
     public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {ExecutionReportFailureDetails.class, InputChannelDetailsXsys01900101 .class, InputChannelListXsys01900101 .class, InputChannelSessionDetails.class, InputChannelSessionList.class, InputOutputChannelListXsys01900101 .class, MxXsys01900101 .class, OutputChannelDetails.class, OutputChannelList.class, OutputChannelSessionDetails.class, OutputChannelSessionList.class, ReportInformation.class, RequestReference.class, ResultCode.class, SessionHistoryReport.class, SwBooleanIndicator.class };
+    public static final transient Class[] _classes = new Class[] {ExecutionReportFailureDetails.class, InputChannelDetailsXsys01900101 .class, InputChannelListXsys01900101 .class, InputChannelSessionDetails.class, InputChannelSessionList.class, InputOutputChannelListXsys01900101 .class, MxXsys01900101 .class, OutputChannelDetails.class, OutputChannelListXsys01900101 .class, OutputChannelSessionDetails.class, OutputChannelSessionList.class, ReportInformation.class, RequestReference.class, ResultCode.class, SessionHistoryReportXsys01900101 .class, SwBooleanIndicator.class };
     public static final transient String NAMESPACE = "urn:swift:xsd:xsys.019.001.01";
 
     public MxXsys01900101() {
@@ -68,10 +68,10 @@ public class MxXsys01900101
      * 
      * @return
      *     possible object is
-     *     {@link SessionHistoryReport }
+     *     {@link SessionHistoryReportXsys01900101 }
      *     
      */
-    public SessionHistoryReport getXsys01900101() {
+    public SessionHistoryReportXsys01900101 getXsys01900101() {
         return xsys01900101;
     }
 
@@ -80,10 +80,10 @@ public class MxXsys01900101
      * 
      * @param value
      *     allowed object is
-     *     {@link SessionHistoryReport }
+     *     {@link SessionHistoryReportXsys01900101 }
      *     
      */
-    public MxXsys01900101 setXsys01900101(SessionHistoryReport value) {
+    public MxXsys01900101 setXsys01900101(SessionHistoryReportXsys01900101 value) {
         this.xsys01900101 = value;
         return this;
     }

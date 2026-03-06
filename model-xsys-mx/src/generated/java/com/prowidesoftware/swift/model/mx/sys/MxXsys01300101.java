@@ -32,13 +32,13 @@ public class MxXsys01300101
 {
 
     @XmlElement(name = "xsys.013.001.01", required = true)
-    protected BulkRetrievalRequest xsys01300101;
+    protected BulkRetrievalRequestXsys01300101 xsys01300101;
     public static final transient String BUSINESS_PROCESS = "xsys";
     public static final transient int FUNCTIONALITY = 13;
     public static final transient int VARIANT = 1;
     public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {BulkRetrievalCriteria.class, BulkRetrievalRequest.class, MxXsys01300101 .class, ReportCriteriaXsys01300101 .class, TimeRange.class };
+    public static final transient Class[] _classes = new Class[] {BulkRetrievalCriteria.class, BulkRetrievalRequestXsys01300101 .class, MxXsys01300101 .class, ReportCriteriaXsys01300101 .class, TimeRange.class };
     public static final transient String NAMESPACE = "urn:swift:xsd:xsys.013.001.01";
 
     public MxXsys01300101() {
@@ -68,10 +68,10 @@ public class MxXsys01300101
      * 
      * @return
      *     possible object is
-     *     {@link BulkRetrievalRequest }
+     *     {@link BulkRetrievalRequestXsys01300101 }
      *     
      */
-    public BulkRetrievalRequest getXsys01300101() {
+    public BulkRetrievalRequestXsys01300101 getXsys01300101() {
         return xsys01300101;
     }
 
@@ -80,10 +80,10 @@ public class MxXsys01300101
      * 
      * @param value
      *     allowed object is
-     *     {@link BulkRetrievalRequest }
+     *     {@link BulkRetrievalRequestXsys01300101 }
      *     
      */
-    public MxXsys01300101 setXsys01300101(BulkRetrievalRequest value) {
+    public MxXsys01300101 setXsys01300101(BulkRetrievalRequestXsys01300101 value) {
         this.xsys01300101 = value;
         return this;
     }

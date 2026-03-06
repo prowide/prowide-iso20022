@@ -32,13 +32,13 @@ public class MxXsys02700101
 {
 
     @XmlElement(name = "xsys.027.001.01", required = true)
-    protected OutputChannelReport xsys02700101;
+    protected OutputChannelReportXsys02700101 xsys02700101;
     public static final transient String BUSINESS_PROCESS = "xsys";
     public static final transient int FUNCTIONALITY = 27;
     public static final transient int VARIANT = 1;
     public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {ExecutionReportFailureDetails.class, MxXsys02700101 .class, OutputChannelDetailsXsys02700101 .class, OutputChannelListXsys02700101 .class, OutputChannelReport.class, ReportInformation.class, RequestReference.class, ResultCode.class, SwBooleanIndicator.class };
+    public static final transient Class[] _classes = new Class[] {ExecutionReportFailureDetails.class, MxXsys02700101 .class, OutputChannelDetailsXsys02700101 .class, OutputChannelListXsys02700101 .class, OutputChannelReportXsys02700101 .class, ReportInformation.class, RequestReference.class, ResultCode.class, SwBooleanIndicator.class };
     public static final transient String NAMESPACE = "urn:swift:xsd:xsys.027.001.01";
 
     public MxXsys02700101() {
@@ -68,10 +68,10 @@ public class MxXsys02700101
      * 
      * @return
      *     possible object is
-     *     {@link OutputChannelReport }
+     *     {@link OutputChannelReportXsys02700101 }
      *     
      */
-    public OutputChannelReport getXsys02700101() {
+    public OutputChannelReportXsys02700101 getXsys02700101() {
         return xsys02700101;
     }
 
@@ -80,10 +80,10 @@ public class MxXsys02700101
      * 
      * @param value
      *     allowed object is
-     *     {@link OutputChannelReport }
+     *     {@link OutputChannelReportXsys02700101 }
      *     
      */
-    public MxXsys02700101 setXsys02700101(OutputChannelReport value) {
+    public MxXsys02700101 setXsys02700101(OutputChannelReportXsys02700101 value) {
         this.xsys02700101 = value;
         return this;
     }

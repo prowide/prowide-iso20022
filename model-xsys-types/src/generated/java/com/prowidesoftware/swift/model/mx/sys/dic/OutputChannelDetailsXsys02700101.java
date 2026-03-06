@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.sys.dic;
 
-import java.time.OffsetDateTime ;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;

@@ -32,13 +32,13 @@ public class MxXsys00700101
 {
 
     @XmlElement(name = "xsys.007.001.01", required = true)
-    protected InputChannelReport xsys00700101;
+    protected InputChannelReportXsys00700101 xsys00700101;
     public static final transient String BUSINESS_PROCESS = "xsys";
     public static final transient int FUNCTIONALITY = 7;
     public static final transient int VARIANT = 1;
     public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {AbstractInputchannelDetails.class, InputChannelDetails.class, InputChannelList.class, InputChannelReport.class, InputChannelStateCode.class, MxXsys00700101 .class, ReportInfo.class, RequestReference.class, ResultCode.class, SwBooleanIndicator.class };
+    public static final transient Class[] _classes = new Class[] {AbstractInputchannelDetails.class, InputChannelDetailsXsys00700101 .class, InputChannelListXsys00700101 .class, InputChannelReportXsys00700101 .class, InputChannelStateCode.class, MxXsys00700101 .class, ReportInfo.class, RequestReference.class, ResultCode.class, SwBooleanIndicator.class };
     public static final transient String NAMESPACE = "urn:swift:xsd:xsys.007.001.01";
 
     public MxXsys00700101() {
@@ -68,10 +68,10 @@ public class MxXsys00700101
      * 
      * @return
      *     possible object is
-     *     {@link InputChannelReport }
+     *     {@link InputChannelReportXsys00700101 }
      *     
      */
-    public InputChannelReport getXsys00700101() {
+    public InputChannelReportXsys00700101 getXsys00700101() {
         return xsys00700101;
     }
 
@@ -80,10 +80,10 @@ public class MxXsys00700101
      * 
      * @param value
      *     allowed object is
-     *     {@link InputChannelReport }
+     *     {@link InputChannelReportXsys00700101 }
      *     
      */
-    public MxXsys00700101 setXsys00700101(InputChannelReport value) {
+    public MxXsys00700101 setXsys00700101(InputChannelReportXsys00700101 value) {
         this.xsys00700101 = value;
         return this;
     }

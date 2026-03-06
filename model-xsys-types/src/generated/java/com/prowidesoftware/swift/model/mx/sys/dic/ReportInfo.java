@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.sys.dic;
 
 import java.math.BigDecimal;
-import java.time.OffsetDateTime ;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import com.prowidesoftware.swift.model.mx.sys.dic.SwGblStatus;
 import jakarta.xml.bind.annotation.XmlAccessType;

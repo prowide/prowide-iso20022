@@ -21,7 +21,9 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 @XmlType(name = "RetrievedDescriptor", propOrder = {
     "retrievalInfo",
     "requestE2EControl",
+    "fileRequestE2EControl",
     "requestDescriptor",
+    "fileRequestDescriptor",
     "retrievalDescriptor"
 })
 public class SwRetrievedDescriptor {
@@ -30,8 +32,12 @@ public class SwRetrievedDescriptor {
     protected SwRetrievalInfo retrievalInfo;
     @XmlElement(name = "RequestE2EControl")
     protected SwE2EControl requestE2EControl;
+    @XmlElement(name = "FileRequestE2EControl")
+    protected SwE2EControl fileRequestE2EControl;
     @XmlElement(name = "RequestDescriptor", namespace = "urn:swift:snl:ns.SwInt", required = true)
     protected SwIntRequestDescriptor requestDescriptor;
+    @XmlElement(name = "FileRequestDescriptor")
+    protected SwFileRequestDescriptor fileRequestDescriptor;
     @XmlElement(name = "RetrievalDescriptor", required = true)
     protected SwRetrievalDescriptor retrievalDescriptor;
 
@@ -86,6 +92,31 @@ public class SwRetrievedDescriptor {
     }
 
     /**
+     * Gets the value of the fileRequestE2EControl property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link SwE2EControl }
+     *     
+     */
+    public SwE2EControl getFileRequestE2EControl() {
+        return fileRequestE2EControl;
+    }
+
+    /**
+     * Sets the value of the fileRequestE2EControl property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link SwE2EControl }
+     *     
+     */
+    public SwRetrievedDescriptor setFileRequestE2EControl(SwE2EControl value) {
+        this.fileRequestE2EControl = value;
+        return this;
+    }
+
+    /**
      * Gets the value of the requestDescriptor property.
      * 
      * @return
@@ -107,6 +138,31 @@ public class SwRetrievedDescriptor {
      */
     public SwRetrievedDescriptor setRequestDescriptor(SwIntRequestDescriptor value) {
         this.requestDescriptor = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the fileRequestDescriptor property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link SwFileRequestDescriptor }
+     *     
+     */
+    public SwFileRequestDescriptor getFileRequestDescriptor() {
+        return fileRequestDescriptor;
+    }
+
+    /**
+     * Sets the value of the fileRequestDescriptor property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link SwFileRequestDescriptor }
+     *     
+     */
+    public SwRetrievedDescriptor setFileRequestDescriptor(SwFileRequestDescriptor value) {
+        this.fileRequestDescriptor = value;
         return this;
     }
 

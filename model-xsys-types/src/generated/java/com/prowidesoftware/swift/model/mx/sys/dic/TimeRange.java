@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.sys.dic;
 
-import java.time.OffsetDateTime ;
+import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;

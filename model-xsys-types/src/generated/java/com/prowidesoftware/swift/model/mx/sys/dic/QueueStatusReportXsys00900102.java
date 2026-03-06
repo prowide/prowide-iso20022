@@ -30,7 +30,7 @@ public class QueueStatusReportXsys00900102 {
     @XmlElement(name = "RptInf", required = true)
     protected ReportInformation rptInf;
     @XmlElement(name = "QStsList")
-    protected QueueStatusList qStsList;
+    protected QueueStatusListXsys00900102 qStsList;
 
     /**
      * Gets the value of the reqRef property.
@@ -87,10 +87,10 @@ public class QueueStatusReportXsys00900102 {
      * 
      * @return
      *     possible object is
-     *     {@link QueueStatusList }
+     *     {@link QueueStatusListXsys00900102 }
      *     
      */
-    public QueueStatusList getQStsList() {
+    public QueueStatusListXsys00900102 getQStsList() {
         return qStsList;
     }
 
@@ -99,10 +99,10 @@ public class QueueStatusReportXsys00900102 {
      * 
      * @param value
      *     allowed object is
-     *     {@link QueueStatusList }
+     *     {@link QueueStatusListXsys00900102 }
      *     
      */
-    public QueueStatusReportXsys00900102 setQStsList(QueueStatusList value) {
+    public QueueStatusReportXsys00900102 setQStsList(QueueStatusListXsys00900102 value) {
         this.qStsList = value;
         return this;
     }

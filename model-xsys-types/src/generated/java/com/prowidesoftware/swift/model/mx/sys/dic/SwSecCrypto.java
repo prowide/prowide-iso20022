@@ -42,8 +42,8 @@ public class SwSecCrypto {
      * <p>
      * You are getting this "catch-all" property because of the following reason: 
      * The field name "CryptoDescriptor" is used by two different parts of a schema. See: 
-     * line 82 of file:/Users/sebastian/IdeaProjects/pw-swift-codegen/codegen-mx/src/main/resources/xsd-xsys/SwSec.xsd
-     * line 79 of file:/Users/sebastian/IdeaProjects/pw-swift-codegen/codegen-mx/src/main/resources/xsd-xsys/SwSec.xsd
+     * line 64 of file:/Users/sebastian/IdeaProjects/pw-swift-codegen/codegen-mx/src/main/resources/xsd-xsys/SwSec.xsd
+     * line 61 of file:/Users/sebastian/IdeaProjects/pw-swift-codegen/codegen-mx/src/main/resources/xsd-xsys/SwSec.xsd
      * <p>
      * To get rid of this property, apply a property customization to one 
      * of both of the following declarations to change their names:Gets the value of the content property.
