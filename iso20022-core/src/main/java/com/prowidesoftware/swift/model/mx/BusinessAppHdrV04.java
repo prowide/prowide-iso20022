@@ -16,6 +16,8 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.ProwideException;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.ZuluOffsetDateTimeAdapter;
 import com.prowidesoftware.swift.model.mx.dic.BusinessApplicationHeaderV04Impl;
 import com.prowidesoftware.swift.model.mx.dic.Party51Choice;
 import jakarta.xml.bind.JAXBContext;
@@ -205,6 +207,8 @@ public class BusinessAppHdrV04 extends BusinessApplicationHeaderV04Impl implemen
     public String xml(MxWriteParams params) {
         try {
             JAXBContext context;
+            IsoDateTimeAdapter currentAdapter = params.adapters.dateTimeAdapter;
+            params.adapters.dateTimeAdapter = new IsoDateTimeAdapter(new ZuluOffsetDateTimeAdapter());
             if (params.context != null) {
                 context = params.context;
             } else {
@@ -223,6 +227,7 @@ public class BusinessAppHdrV04 extends BusinessApplicationHeaderV04Impl implemen
                     params.escapeHandler,
                     params.indent);
             marshaller.marshal(element, eventWriter);
+            params.adapters.dateTimeAdapter = currentAdapter;
             return sw.getBuffer().toString();
 
         } catch (JAXBException e) {
