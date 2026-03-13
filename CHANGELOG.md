@@ -1,5 +1,8 @@
 # Prowide ISO 20022 - CHANGELOG
 
+### 10.3.6 - SNAPSHOT
+  * (PW-3133) Feat: Changed the BusinessApplicationHeaderV04 marshaller to always use Zulu timezone with "Z" indicator
+
 ### 10.3.5 - March 2026
   * (PW-3123) Feat: MX duplicate detection via `checksum()` and `checksumBody()` with XML canonicalization in `DefaultMxMetadataStrategy`
   * Feat: Added `MxNode.getLocalName()` getter for XML node name access
