@@ -54,6 +54,15 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
     static final Class[] _classes;
     private static final transient Logger log = Logger.getLogger(BusinessAppHdrV01.class.getName());
 
+    /**
+     * When true, datetime fields will be serialized using Zulu timezone with "Z" indicator
+     * instead of the default offset format.
+     * Defaults to true for BAH V01 as per ISONormalisedDateTime requirement.
+     *
+     * @since 10.3.6
+     */
+    private transient boolean useZuluCreationDateTime = true;
+
     static {
         _classes = Arrays.copyOf(
                 BusinessApplicationHeaderV01Impl._classes, BusinessApplicationHeaderV01Impl._classes.length + 1);
@@ -185,12 +194,31 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
         }
     }
 
+    /**
+     * @return true if Zulu timezone formatting with "Z" indicator is enabled for datetime serialization
+     * @since 10.3.6
+     */
+    public boolean isUseZuluCreationDateTime() {
+        return useZuluCreationDateTime;
+    }
+
+    /**
+     * @param useZuluCreationDateTime true to enable Zulu timezone formatting with "Z" indicator for datetime serialization
+     * @since 10.3.6
+     */
+    public void setUseZuluCreationDateTime(boolean useZuluCreationDateTime) {
+        this.useZuluCreationDateTime = useZuluCreationDateTime;
+    }
+
     @Override
     public String xml(MxWriteParams params) {
+        IsoDateTimeAdapter currentAdapter = null;
         try {
             JAXBContext context;
-            IsoDateTimeAdapter currentAdapter = params.adapters.dateTimeAdapter;
-            params.adapters.dateTimeAdapter = new IsoDateTimeAdapter(new ZuluOffsetDateTimeAdapter());
+            if (this.useZuluCreationDateTime) {
+                currentAdapter = params.adapters.dateTimeAdapter;
+                params.adapters.dateTimeAdapter = new IsoDateTimeAdapter(new ZuluOffsetDateTimeAdapter());
+            }
             if (params.context != null) {
                 context = params.context;
             } else {
@@ -209,11 +237,14 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
                     params.escapeHandler,
                     params.indent);
             marshaller.marshal(element, eventWriter);
-            params.adapters.dateTimeAdapter = currentAdapter;
             return sw.getBuffer().toString();
 
         } catch (JAXBException e) {
             log.log(Level.SEVERE, "Error writing head.001.001.01 XML:" + e.getMessage());
+        } finally {
+            if (currentAdapter != null) {
+                params.adapters.dateTimeAdapter = currentAdapter;
+            }
         }
         return null;
     }
