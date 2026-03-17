@@ -16,6 +16,8 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.ProwideException;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.ZuluOffsetDateTimeAdapter;
 import com.prowidesoftware.swift.model.mx.dic.BusinessApplicationHeaderV03Impl;
 import com.prowidesoftware.swift.model.mx.dic.Party44Choice;
 import jakarta.xml.bind.JAXBContext;
@@ -51,6 +53,14 @@ public class BusinessAppHdrV03 extends BusinessApplicationHeaderV03Impl implemen
     public static final String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:head.001.001.03";
     static final Class[] _classes;
     private static final Logger log = Logger.getLogger(BusinessAppHdrV03.class.getName());
+
+    /**
+     * When true, datetime fields will be serialized using Zulu timezone with "Z" indicator
+     * instead of the default offset format. This is typically enabled for T2/RTGS systems.
+     *
+     * @since 10.3.6
+     */
+    private transient boolean useZuluCreationDateTime = false;
 
     static {
         _classes = Arrays.copyOf(
@@ -201,10 +211,31 @@ public class BusinessAppHdrV03 extends BusinessApplicationHeaderV03Impl implemen
         }
     }
 
+    /**
+     * @return true if Zulu timezone formatting with "Z" indicator is enabled for datetime serialization
+     * @since 10.3.6
+     */
+    public boolean isUseZuluCreationDateTime() {
+        return useZuluCreationDateTime;
+    }
+
+    /**
+     * @param useZuluCreationDateTime true to enable Zulu timezone formatting with "Z" indicator for datetime serialization
+     * @since 10.3.6
+     */
+    public void setUseZuluCreationDateTime(boolean useZuluCreationDateTime) {
+        this.useZuluCreationDateTime = useZuluCreationDateTime;
+    }
+
     @Override
     public String xml(MxWriteParams params) {
+        IsoDateTimeAdapter currentAdapter = null;
         try {
             JAXBContext context;
+            if (this.useZuluCreationDateTime) {
+                currentAdapter = params.adapters.dateTimeAdapter;
+                params.adapters.dateTimeAdapter = new IsoDateTimeAdapter(new ZuluOffsetDateTimeAdapter());
+            }
             if (params.context != null) {
                 context = params.context;
             } else {
@@ -227,6 +258,10 @@ public class BusinessAppHdrV03 extends BusinessApplicationHeaderV03Impl implemen
 
         } catch (JAXBException e) {
             log.log(Level.SEVERE, "Error writing head.001.001.03 XML:" + e.getMessage());
+        } finally {
+            if (currentAdapter != null) {
+                params.adapters.dateTimeAdapter = currentAdapter;
+            }
         }
         return null;
     }
