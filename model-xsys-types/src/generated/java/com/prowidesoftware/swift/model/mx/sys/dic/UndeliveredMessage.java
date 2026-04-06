@@ -23,12 +23,9 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 @XmlType(name = "UndeliveredMessage", propOrder = {
     "snFRef",
     "snFInputTime",
-    "inputChannel",
-    "snFInputSeq",
     "fileRequestHeader",
     "requestHeader",
     "code",
-    "swiftTime",
     "origSnFRef",
     "recipientDN"
 })
@@ -38,18 +35,12 @@ public class UndeliveredMessage {
     protected String snFRef;
     @XmlElement(name = "SnFInputTime", namespace = "urn:swift:snl:ns.Sw", required = true)
     protected String snFInputTime;
-    @XmlElement(name = "InputChannel", namespace = "urn:swift:snl:ns.Sw")
-    protected String inputChannel;
-    @XmlElement(name = "SnFInputSeq", namespace = "urn:swift:snl:ns.Sw")
-    protected String snFInputSeq;
     @XmlElement(name = "FileRequestHeader", namespace = "urn:swift:snl:ns.Sw")
     protected SwFileRequestHeader fileRequestHeader;
     @XmlElement(name = "RequestHeader", namespace = "urn:swift:snl:ns.SwInt")
     protected SwIntRequestHeader requestHeader;
     @XmlElement(name = "Code", namespace = "urn:swift:snl:ns.SwGbl")
     protected String code;
-    @XmlElement(name = "SwiftTime", namespace = "urn:swift:snl:ns.Sw")
-    protected String swiftTime;
     @XmlElement(name = "OrigSnFRef", namespace = "urn:swift:snl:ns.Sw")
     protected String origSnFRef;
     @XmlElement(name = "RecipientDN", namespace = "urn:swift:snl:ns.Sw")
@@ -102,56 +93,6 @@ public class UndeliveredMessage {
      */
     public UndeliveredMessage setSnFInputTime(String value) {
         this.snFInputTime = value;
-        return this;
-    }
-
-    /**
-     * InputChannel
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getInputChannel() {
-        return inputChannel;
-    }
-
-    /**
-     * Sets the value of the inputChannel property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public UndeliveredMessage setInputChannel(String value) {
-        this.inputChannel = value;
-        return this;
-    }
-
-    /**
-     * SnFInputSeq
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getSnFInputSeq() {
-        return snFInputSeq;
-    }
-
-    /**
-     * Sets the value of the snFInputSeq property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public UndeliveredMessage setSnFInputSeq(String value) {
-        this.snFInputSeq = value;
         return this;
     }
 
@@ -227,31 +168,6 @@ public class UndeliveredMessage {
      */
     public UndeliveredMessage setCode(String value) {
         this.code = value;
-        return this;
-    }
-
-    /**
-     * SwiftTime
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getSwiftTime() {
-        return swiftTime;
-    }
-
-    /**
-     * Sets the value of the swiftTime property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public UndeliveredMessage setSwiftTime(String value) {
-        this.swiftTime = value;
         return this;
     }
 

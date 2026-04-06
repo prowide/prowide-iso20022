@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx.sys;
 import com.prowidesoftware.swift.model.mx.sys.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
-import com.prowidesoftware.swift.model.mx.MxRead;
-import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -32,14 +32,14 @@ public class MxXsys01200102
 {
 
     @XmlElement(name = "xsys.012.001.02", required = true)
-    protected FailedDeliveryNotificationMessage xsys01200102;
-    public final static transient String BUSINESS_PROCESS = "xsys";
-    public final static transient int FUNCTIONALITY = 12;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 2;
+    protected FailedDeliveryNotificationMessageXsys01200102 xsys01200102;
+    public static final transient String BUSINESS_PROCESS = "xsys";
+    public static final transient int FUNCTIONALITY = 12;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 2;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {DeliveryNotificationXsys01200102 .class, Extension.class, ExtensionEnvelope.class, FailedDeliveryNotificationMessage.class, MxXsys01200102 .class };
-    public final static transient String NAMESPACE = "urn:swift:xsd:xsys.012.001.02";
+    public static final transient Class[] _classes = new Class[] {DeliveryNotificationXsys01200102 .class, Extension.class, ExtensionEnvelope.class, FailedDeliveryNotificationMessageXsys01200102 .class, MxXsys01200102 .class };
+    public static final transient String NAMESPACE = "urn:swift:xsd:xsys.012.001.02";
 
     public MxXsys01200102() {
         super();
@@ -68,10 +68,10 @@ public class MxXsys01200102
      * 
      * @return
      *     possible object is
-     *     {@link FailedDeliveryNotificationMessage }
+     *     {@link FailedDeliveryNotificationMessageXsys01200102 }
      *     
      */
-    public FailedDeliveryNotificationMessage getXsys01200102() {
+    public FailedDeliveryNotificationMessageXsys01200102 getXsys01200102() {
         return xsys01200102;
     }
 
@@ -80,27 +80,12 @@ public class MxXsys01200102
      * 
      * @param value
      *     allowed object is
-     *     {@link FailedDeliveryNotificationMessage }
+     *     {@link FailedDeliveryNotificationMessageXsys01200102 }
      *     
      */
-    public MxXsys01200102 setXsys01200102(FailedDeliveryNotificationMessage value) {
+    public MxXsys01200102 setXsys01200102(FailedDeliveryNotificationMessageXsys01200102 value) {
         this.xsys01200102 = value;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -173,8 +158,23 @@ public class MxXsys01200102
      * @return
      *     a new instance of MxXsys01200102
      */
-    public final static MxXsys01200102 fromJson(String json) {
+    public static final MxXsys01200102 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxXsys01200102 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

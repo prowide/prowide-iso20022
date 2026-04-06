@@ -248,6 +248,42 @@ public class MxNode {
     }
 
     /**
+     * @return the local name of this node
+     * @since 10.3.5
+     */
+    public String getLocalName() {
+        return localName;
+    }
+
+    /**
+     * Returns a canonical string representation of this node and its subtree.
+     * The output contains only element local names and trimmed text values, without namespace prefixes,
+     * attributes, or formatting whitespace. Useful for producing consistent checksums of semantically
+     * equivalent XML regardless of formatting or namespace prefix differences.
+     *
+     * <p>This is not full W3C C14N canonicalization, but sufficient for several purposes.
+     *
+     * @return canonical string representation of this node tree
+     * @since 10.3.5
+     */
+    public String toCanonicalString() {
+        StringBuilder sb = new StringBuilder();
+        if (this.localName != null) {
+            sb.append('<').append(this.localName).append('>');
+        }
+        if (this.value != null) {
+            sb.append(this.value.trim());
+        }
+        for (MxNode child : this.children) {
+            sb.append(child.toCanonicalString());
+        }
+        if (this.localName != null) {
+            sb.append("</").append(this.localName).append('>');
+        }
+        return sb.toString();
+    }
+
+    /**
      * @since 7.8
      */
     public Map<String, String> getAttributes() {

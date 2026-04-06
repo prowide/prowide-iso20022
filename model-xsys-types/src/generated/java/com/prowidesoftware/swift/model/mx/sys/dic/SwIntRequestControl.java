@@ -30,7 +30,8 @@ import org.apache.commons.lang3.builder.ToStringStyle;
     "authNotifInd",
     "recipientList",
     "publicRecipientListInd",
-    "rmaChecked"
+    "rmaChecked",
+    "requestSubType"
 })
 public class SwIntRequestControl {
 
@@ -54,6 +55,8 @@ public class SwIntRequestControl {
     protected String publicRecipientListInd;
     @XmlElement(name = "RMAChecked", namespace = "urn:swift:snl:ns.Sw")
     protected String rmaChecked;
+    @XmlElement(name = "RequestSubType", namespace = "urn:swift:snl:ns.Sw")
+    protected String requestSubType;
 
     /**
      * Gets the value of the requestCrypto property.
@@ -306,6 +309,31 @@ public class SwIntRequestControl {
      */
     public SwIntRequestControl setRMAChecked(String value) {
         this.rmaChecked = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the requestSubType property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getRequestSubType() {
+        return requestSubType;
+    }
+
+    /**
+     * Sets the value of the requestSubType property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public SwIntRequestControl setRequestSubType(String value) {
+        this.requestSubType = value;
         return this;
     }
 

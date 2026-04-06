@@ -30,6 +30,7 @@ public class MxNodeTest {
     public void testParse01() {
         final String xml = "<FaceAmount>1234567.89</FaceAmount>";
         final MxNode doc = MxNode.parse(xml);
+        assertNotNull(doc);
         assertEquals("1234567.89", doc.findFirstByName("FaceAmount").getValue());
     }
 
@@ -261,6 +262,7 @@ public class MxNodeTest {
     public void testParse03_attributes() {
         final String xml = "<FaceAmount Ccy='USD'>1234567.89</FaceAmount>";
         final MxNode doc = MxNode.parse(xml);
+        assertNotNull(doc);
         assertEquals("1234567.89", doc.findFirstByName("FaceAmount").getValue());
         assertEquals("USD", doc.findFirstByName("FaceAmount").getAttribute("Ccy"));
     }
@@ -269,6 +271,7 @@ public class MxNodeTest {
     public void testParse04_ns() {
         final String xml = "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.01\"><From></From></AppHdr>";
         final MxNode doc = MxNode.parse(xml);
+        assertNotNull(doc);
         assertEquals(
                 "urn:iso:std:iso:20022:tech:xsd:head.001.001.01",
                 doc.findFirstByName("AppHdr").getAttribute("xmlns"));
@@ -280,10 +283,12 @@ public class MxNodeTest {
     public void testFindFirst() {
         String xml = "<a></a>";
         MxNode doc = MxNode.parse(xml);
+        assertNotNull(doc);
         assertNull(doc.singlePathValue("a"));
 
         xml = "<a>1</a>";
         doc = MxNode.parse(xml);
+        assertNotNull(doc);
         assertEquals("1", doc.singlePathValue("a"));
     }
 
@@ -291,10 +296,12 @@ public class MxNodeTest {
     public void testFindFirstLevel2() {
         String xml = "<a><a>1</a></a>";
         MxNode doc = MxNode.parse(xml);
+        assertNotNull(doc);
         assertEquals("1", doc.singlePathValue("a/a"));
 
         xml = "<a><b>2</b></a>";
         doc = MxNode.parse(xml);
+        assertNotNull(doc);
         assertEquals("2", doc.singlePathValue("a/b"));
     }
 
@@ -302,6 +309,7 @@ public class MxNodeTest {
     public void testFindFirstWithChildren() {
         final String xml = "<a>" + "		<b>1</b>" + "		<c>2</c>" + "</a>";
         final MxNode doc = MxNode.parse(xml);
+        assertNotNull(doc);
         assertNotNull(doc.singlePathValue("a/b"));
         assertNotNull(doc.singlePathValue("a/c"));
     }
@@ -313,6 +321,7 @@ public class MxNodeTest {
         /*
          * absolute
          */
+        assertNotNull(doc);
         assertEquals("1", doc.singlePathValue("/a/b/c"));
         /*
          * relative from root
@@ -332,6 +341,7 @@ public class MxNodeTest {
     public void testFindByName() {
         final String xml = "<a>1</a>";
         final MxNode doc = MxNode.parse(xml);
+        assertNotNull(doc);
         assertNotNull(doc.findFirstByName("a"));
         assertEquals("1", doc.findFirstByName("a").getValue());
         assertNull(doc.findFirstByName("b"));
@@ -341,6 +351,7 @@ public class MxNodeTest {
     public void testFindByNameLevel2() {
         final String xml = "<a><b>2</b><b>3</b></a>";
         final MxNode doc = MxNode.parse(xml);
+        assertNotNull(doc);
         assertNotNull(doc.findFirstByName("a"));
         assertNotNull(doc.findFirstByName("b"));
         assertEquals("2", doc.findFirstByName("b").getValue());
@@ -351,6 +362,7 @@ public class MxNodeTest {
         final String xml = "<a>" + "	<b>" + "		<c>" + "			<d>4</d>" + "		</c>" + "	</b>" + "</a>";
         final MxNode doc = MxNode.parse(xml);
 
+        assertNotNull(doc);
         assertEquals("4", doc.singlePathValue("/a/b/c/d"));
 
         final MxNode b = doc.findFirstByName("b");
@@ -468,5 +480,83 @@ public class MxNodeTest {
 
         n.removeEmptyElements(); // Should remove Z as it's empty
         assertEquals(1, x.getChildren().size()); // Only Y should remain
+    }
+
+    @Test
+    public void testToCanonicalStringSimpleElement() {
+        String xml = "<Root><Name>John</Name></Root>";
+        MxNode node = MxNode.parse(xml);
+        assertNotNull(node);
+        assertEquals("<Root><Name>John</Name></Root>", node.toCanonicalString());
+    }
+
+    @Test
+    public void testToCanonicalStringStripsNamespacePrefixes() {
+        String xml = "<ns:Root xmlns:ns=\"urn:test\"><ns:Name>John</ns:Name></ns:Root>";
+        MxNode node = MxNode.parse(xml);
+        assertNotNull(node);
+        assertEquals("<Root><Name>John</Name></Root>", node.toCanonicalString());
+    }
+
+    @Test
+    public void testToCanonicalStringIgnoresAttributes() {
+        String xml = "<Root attr=\"value\"><Amount Ccy=\"USD\">1000</Amount></Root>";
+        MxNode node = MxNode.parse(xml);
+        assertNotNull(node);
+        assertEquals("<Root><Amount>1000</Amount></Root>", node.toCanonicalString());
+    }
+
+    @Test
+    public void testToCanonicalStringTrimsWhitespace() {
+        String xml = "<Root>\n  <Name>  John  </Name>\n  <Age>30</Age>\n</Root>";
+        MxNode node = MxNode.parse(xml);
+        assertNotNull(node);
+        assertEquals("<Root><Name>John</Name><Age>30</Age></Root>", node.toCanonicalString());
+    }
+
+    @Test
+    public void testToCanonicalStringDifferentFormattingSameResult() {
+        String compact = "<Doc><GrpHdr><MsgId>REF123</MsgId></GrpHdr></Doc>";
+        String pretty = "<Doc>\n    <GrpHdr>\n        <MsgId>REF123</MsgId>\n    </GrpHdr>\n</Doc>";
+        String withNs =
+                "<ns:Doc xmlns:ns=\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08\"><ns:GrpHdr><ns:MsgId>REF123</ns:MsgId></ns:GrpHdr></ns:Doc>";
+
+        MxNode compactNode = MxNode.parse(compact);
+        MxNode prettyNode = MxNode.parse(pretty);
+        MxNode withNsNode = MxNode.parse(withNs);
+        assertNotNull(compactNode);
+        assertNotNull(prettyNode);
+        assertNotNull(withNsNode);
+
+        String expected = "<Doc><GrpHdr><MsgId>REF123</MsgId></GrpHdr></Doc>";
+        assertEquals(expected, compactNode.toCanonicalString());
+        assertEquals(expected, prettyNode.toCanonicalString());
+        assertEquals(expected, withNsNode.toCanonicalString());
+    }
+
+    @Test
+    public void testToCanonicalStringNestedStructure() {
+        String xml = "<Document>"
+                + "<FIToFICstmrCdtTrf>"
+                + "<GrpHdr><MsgId>MSG001</MsgId><NbOfTxs>1</NbOfTxs></GrpHdr>"
+                + "<CdtTrfTxInf><IntrBkSttlmAmt Ccy=\"EUR\">5000</IntrBkSttlmAmt></CdtTrfTxInf>"
+                + "</FIToFICstmrCdtTrf>"
+                + "</Document>";
+        MxNode node = MxNode.parse(xml);
+        assertNotNull(node);
+        assertEquals(
+                "<Document><FIToFICstmrCdtTrf>"
+                        + "<GrpHdr><MsgId>MSG001</MsgId><NbOfTxs>1</NbOfTxs></GrpHdr>"
+                        + "<CdtTrfTxInf><IntrBkSttlmAmt>5000</IntrBkSttlmAmt></CdtTrfTxInf>"
+                        + "</FIToFICstmrCdtTrf></Document>",
+                node.toCanonicalString());
+    }
+
+    @Test
+    public void testToCanonicalStringEmptyElement() {
+        String xml = "<Root><Empty/><Name>Test</Name></Root>";
+        MxNode node = MxNode.parse(xml);
+        assertNotNull(node);
+        assertEquals("<Root><Empty></Empty><Name>Test</Name></Root>", node.toCanonicalString());
     }
 }

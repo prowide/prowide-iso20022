@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx.sys;
 import com.prowidesoftware.swift.model.mx.sys.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
-import com.prowidesoftware.swift.model.mx.MxRead;
-import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -32,14 +32,14 @@ public class MxXsys00700101
 {
 
     @XmlElement(name = "xsys.007.001.01", required = true)
-    protected InputChannelReport xsys00700101;
-    public final static transient String BUSINESS_PROCESS = "xsys";
-    public final static transient int FUNCTIONALITY = 7;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 1;
+    protected InputChannelReportXsys00700101 xsys00700101;
+    public static final transient String BUSINESS_PROCESS = "xsys";
+    public static final transient int FUNCTIONALITY = 7;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {AbstractInputchannelDetails.class, InputChannelDetails.class, InputChannelList.class, InputChannelReport.class, InputChannelStateCode.class, MxXsys00700101 .class, ReportInfo.class, RequestReference.class, ResultCode.class, SwBooleanIndicator.class };
-    public final static transient String NAMESPACE = "urn:swift:xsd:xsys.007.001.01";
+    public static final transient Class[] _classes = new Class[] {AbstractInputchannelDetails.class, InputChannelDetailsXsys00700101 .class, InputChannelListXsys00700101 .class, InputChannelReportXsys00700101 .class, InputChannelStateCode.class, MxXsys00700101 .class, ReportInfo.class, RequestReference.class, ResultCode.class, SwBooleanIndicator.class };
+    public static final transient String NAMESPACE = "urn:swift:xsd:xsys.007.001.01";
 
     public MxXsys00700101() {
         super();
@@ -68,10 +68,10 @@ public class MxXsys00700101
      * 
      * @return
      *     possible object is
-     *     {@link InputChannelReport }
+     *     {@link InputChannelReportXsys00700101 }
      *     
      */
-    public InputChannelReport getXsys00700101() {
+    public InputChannelReportXsys00700101 getXsys00700101() {
         return xsys00700101;
     }
 
@@ -80,27 +80,12 @@ public class MxXsys00700101
      * 
      * @param value
      *     allowed object is
-     *     {@link InputChannelReport }
+     *     {@link InputChannelReportXsys00700101 }
      *     
      */
-    public MxXsys00700101 setXsys00700101(InputChannelReport value) {
+    public MxXsys00700101 setXsys00700101(InputChannelReportXsys00700101 value) {
         this.xsys00700101 = value;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -173,8 +158,23 @@ public class MxXsys00700101
      * @return
      *     a new instance of MxXsys00700101
      */
-    public final static MxXsys00700101 fromJson(String json) {
+    public static final MxXsys00700101 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxXsys00700101 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

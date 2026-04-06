@@ -30,7 +30,9 @@ import org.apache.commons.lang3.builder.ToStringStyle;
     "signatureList",
     "copy",
     "distributionInfo",
-    "retrievedDescriptor"
+    "retrievedDescriptor",
+    "requestSubType",
+    "informCopyList"
 })
 public class SwIntRequestDescriptor {
 
@@ -58,6 +60,10 @@ public class SwIntRequestDescriptor {
     protected SwDistributionInfo distributionInfo;
     @XmlElement(name = "RetrievedDescriptor", namespace = "urn:swift:snl:ns.Sw")
     protected SwRetrievedDescriptor retrievedDescriptor;
+    @XmlElement(name = "RequestSubType", namespace = "urn:swift:snl:ns.Sw")
+    protected String requestSubType;
+    @XmlElement(name = "InformCopyList", namespace = "urn:swift:snl:ns.Sw")
+    protected SwInformCopyList informCopyList;
 
     /**
      * Gets the value of the rbac property.
@@ -356,6 +362,56 @@ public class SwIntRequestDescriptor {
      */
     public SwIntRequestDescriptor setRetrievedDescriptor(SwRetrievedDescriptor value) {
         this.retrievedDescriptor = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the requestSubType property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getRequestSubType() {
+        return requestSubType;
+    }
+
+    /**
+     * Sets the value of the requestSubType property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public SwIntRequestDescriptor setRequestSubType(String value) {
+        this.requestSubType = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the informCopyList property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link SwInformCopyList }
+     *     
+     */
+    public SwInformCopyList getInformCopyList() {
+        return informCopyList;
+    }
+
+    /**
+     * Sets the value of the informCopyList property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link SwInformCopyList }
+     *     
+     */
+    public SwIntRequestDescriptor setInformCopyList(SwInformCopyList value) {
+        this.informCopyList = value;
         return this;
     }
 

@@ -34,7 +34,7 @@ public class SwFileRequestHeader {
     protected String responder;
     @XmlElement(name = "Service", namespace = "urn:swift:snl:ns.SwInt", required = true)
     protected String service;
-    @XmlElement(name = "RequestType", namespace = "urn:swift:snl:ns.SwInt", required = true)
+    @XmlElement(name = "RequestType", namespace = "urn:swift:snl:ns.SwInt")
     protected String requestType;
     @XmlElement(name = "Priority", namespace = "urn:swift:snl:ns.SwInt")
     protected String priority;

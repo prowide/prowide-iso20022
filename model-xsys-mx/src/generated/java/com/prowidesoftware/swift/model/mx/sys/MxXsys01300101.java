@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx.sys;
 import com.prowidesoftware.swift.model.mx.sys.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
-import com.prowidesoftware.swift.model.mx.MxRead;
-import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -32,14 +32,14 @@ public class MxXsys01300101
 {
 
     @XmlElement(name = "xsys.013.001.01", required = true)
-    protected BulkRetrievalRequest xsys01300101;
-    public final static transient String BUSINESS_PROCESS = "xsys";
-    public final static transient int FUNCTIONALITY = 13;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 1;
+    protected BulkRetrievalRequestXsys01300101 xsys01300101;
+    public static final transient String BUSINESS_PROCESS = "xsys";
+    public static final transient int FUNCTIONALITY = 13;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {BulkRetrievalCriteria.class, BulkRetrievalRequest.class, MxXsys01300101 .class, ReportCriteriaXsys01300101 .class, TimeRange.class };
-    public final static transient String NAMESPACE = "urn:swift:xsd:xsys.013.001.01";
+    public static final transient Class[] _classes = new Class[] {BulkRetrievalCriteria.class, BulkRetrievalRequestXsys01300101 .class, MxXsys01300101 .class, ReportCriteriaXsys01300101 .class, TimeRange.class };
+    public static final transient String NAMESPACE = "urn:swift:xsd:xsys.013.001.01";
 
     public MxXsys01300101() {
         super();
@@ -68,10 +68,10 @@ public class MxXsys01300101
      * 
      * @return
      *     possible object is
-     *     {@link BulkRetrievalRequest }
+     *     {@link BulkRetrievalRequestXsys01300101 }
      *     
      */
-    public BulkRetrievalRequest getXsys01300101() {
+    public BulkRetrievalRequestXsys01300101 getXsys01300101() {
         return xsys01300101;
     }
 
@@ -80,27 +80,12 @@ public class MxXsys01300101
      * 
      * @param value
      *     allowed object is
-     *     {@link BulkRetrievalRequest }
+     *     {@link BulkRetrievalRequestXsys01300101 }
      *     
      */
-    public MxXsys01300101 setXsys01300101(BulkRetrievalRequest value) {
+    public MxXsys01300101 setXsys01300101(BulkRetrievalRequestXsys01300101 value) {
         this.xsys01300101 = value;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -173,8 +158,23 @@ public class MxXsys01300101
      * @return
      *     a new instance of MxXsys01300101
      */
-    public final static MxXsys01300101 fromJson(String json) {
+    public static final MxXsys01300101 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxXsys01300101 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx.sys;
 import com.prowidesoftware.swift.model.mx.sys.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
-import com.prowidesoftware.swift.model.mx.MxRead;
-import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -32,14 +32,14 @@ public class MxXsys00900101
 {
 
     @XmlElement(name = "xsys.009.001.01", required = true)
-    protected QueueStatusReport xsys00900101;
-    public final static transient String BUSINESS_PROCESS = "xsys";
-    public final static transient int FUNCTIONALITY = 9;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 1;
+    protected QueueStatusReportXsys00900101 xsys00900101;
+    public static final transient String BUSINESS_PROCESS = "xsys";
+    public static final transient int FUNCTIONALITY = 9;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {AcquisitionStateCode.class, ActivationStateCode.class, ExecutionReportFailureDetails.class, Message.class, MessageList.class, MxXsys00900101 .class, QueueStatus.class, QueueStatusListXsys00900101 .class, QueueStatusReport.class, ReportInformation.class, RequestReference.class, ResultCode.class, SwBooleanIndicator.class };
-    public final static transient String NAMESPACE = "urn:swift:xsd:xsys.009.001.01";
+    public static final transient Class[] _classes = new Class[] {AcquisitionStateCode.class, ActivationStateCode.class, ExecutionReportFailureDetails.class, Message.class, MessageList.class, MxXsys00900101 .class, QueueStatus.class, QueueStatusListXsys00900101 .class, QueueStatusReportXsys00900101 .class, ReportInformation.class, RequestReference.class, ResultCode.class, SwBooleanIndicator.class };
+    public static final transient String NAMESPACE = "urn:swift:xsd:xsys.009.001.01";
 
     public MxXsys00900101() {
         super();
@@ -68,10 +68,10 @@ public class MxXsys00900101
      * 
      * @return
      *     possible object is
-     *     {@link QueueStatusReport }
+     *     {@link QueueStatusReportXsys00900101 }
      *     
      */
-    public QueueStatusReport getXsys00900101() {
+    public QueueStatusReportXsys00900101 getXsys00900101() {
         return xsys00900101;
     }
 
@@ -80,27 +80,12 @@ public class MxXsys00900101
      * 
      * @param value
      *     allowed object is
-     *     {@link QueueStatusReport }
+     *     {@link QueueStatusReportXsys00900101 }
      *     
      */
-    public MxXsys00900101 setXsys00900101(QueueStatusReport value) {
+    public MxXsys00900101 setXsys00900101(QueueStatusReportXsys00900101 value) {
         this.xsys00900101 = value;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -173,8 +158,23 @@ public class MxXsys00900101
      * @return
      *     a new instance of MxXsys00900101
      */
-    public final static MxXsys00900101 fromJson(String json) {
+    public static final MxXsys00900101 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxXsys00900101 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }
