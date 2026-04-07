@@ -1,12 +1,12 @@
 # Prowide ISO 20022 - CHANGELOG
 
-### 9.6.3-SNAPSHOT
+### 9.6.3 - April 2026
   * (PW-3123) Feat: MX duplicate detection via `checksum()` and `checksumBody()` with XML canonicalization in `DefaultMxMetadataStrategy`
+  * (PW-2371) Feat: `MxSwiftMessage` now automatically extracts and persists UETR from MX messages during parsing
   * Feat: Added `MxNode.getLocalName()` getter for XML node name access
   * Feat: Added 12 new semt message types; semt.025 through semt.034, semt.040, semt.044 (T2 drafts)
   * Feat: Added supl.021.001.01 message type
-  * Feat: Added 6 new message versions of xsys messages (few model dictionary classes renamed in consequence)
-  * (PW-2371) Feat: `MxSwiftMessage` now automatically extracts and persists UETR from MX messages during parsing
+  * Feat: Added six new message versions of xsys messages (few model dictionary classes renamed in consequence)
 
 ### 9.6.2 - November 2025
   * (PW-2895) Fix namespace prefix handling for custom envelope types in XML serialization
