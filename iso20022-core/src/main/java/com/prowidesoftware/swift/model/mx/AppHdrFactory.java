@@ -255,6 +255,7 @@ public class AppHdrFactory {
     /**
      * Convenient method to create a new header, initialized from simple parameters.
      *
+     * @param type      the header type to create (e.g. LEGACY, BAH_V1, BAH_V2, BAH_V3, BAH_V4)
      * @param sender    optional sender BIC for the Fr element or null to leave not set
      * @param receiver  optional receiver BIC for the To element or null to leave not set
      * @param reference optional reference for the BizMsgIdr (business message identifier) or null to leave not set

@@ -4,6 +4,12 @@ import com.google.gson.*;
 import java.lang.reflect.Type;
 
 /**
+ * Gson {@link JsonSerializer} and {@link JsonDeserializer} for {@link AppHdr}.
+ *
+ * <p>During serialization, the header namespace is added to the JSON object so that the concrete
+ * implementation class can be resolved during deserialization. If no namespace is found in the JSON
+ * upon deserialization, {@link LegacyAppHdr} is used as the default.
+ *
  * @since 9.1.7
  */
 public class AppHdrAdapter implements JsonSerializer<AppHdr>, JsonDeserializer<AppHdr> {

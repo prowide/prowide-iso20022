@@ -229,6 +229,10 @@ public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
     }
 
     /**
+     * Gets the header as a DOM Element, using the given JAXB context.
+     *
+     * @param inputContext optional JAXB context to use for marshalling, or null to create a default one
+     * @return DOM Element representing this header, or null if marshalling fails
      * @since 9.3.5
      */
     public Element element(JAXBContext inputContext) {

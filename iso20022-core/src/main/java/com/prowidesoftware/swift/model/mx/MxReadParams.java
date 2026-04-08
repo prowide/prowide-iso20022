@@ -44,10 +44,16 @@ public class MxReadParams {
      */
     public JAXBContext context;
 
+    /** Creates params with default type adapters. */
     public MxReadParams() {
         this.adapters = new TypeAdaptersConfiguration();
     }
 
+    /**
+     * Creates params propagating adapters and JAXB context from the given read configuration.
+     *
+     * @param conf the read configuration to copy settings from; if {@code null} defaults are used
+     */
     public MxReadParams(MxReadConfiguration conf) {
         this();
         if (conf != null) {

@@ -57,6 +57,7 @@ public class MxWriteParams {
      */
     public String indent = XmlEventWriter.DEFAULT_INDENT;
 
+    /** Creates params with default write configuration options. */
     public MxWriteParams() {
         this(new MxWriteConfiguration());
     }
