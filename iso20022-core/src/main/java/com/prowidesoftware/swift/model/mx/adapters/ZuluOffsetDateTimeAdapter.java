@@ -40,7 +40,7 @@ import java.util.regex.Pattern;
  * default implementation or your own in the constructor.
  *
  * @see TypeAdaptersConfiguration
- * @since 9.4,5
+ * @since 9.4.5
  */
 public class ZuluOffsetDateTimeAdapter extends XmlAdapter<String, OffsetDateTime> {
     private static final Logger log = Logger.getLogger(ZuluOffsetDateTimeAdapter.class.getName());
@@ -79,6 +79,7 @@ public class ZuluOffsetDateTimeAdapter extends XmlAdapter<String, OffsetDateTime
      *
      * @param offsetDateTime the model OffsetDateTime to marshal
      * @return formatted content for the XML
+     * @throws Exception if the OffsetDateTime cannot be formatted
      */
     @Override
     public String marshal(OffsetDateTime offsetDateTime) throws Exception {

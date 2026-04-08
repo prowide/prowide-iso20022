@@ -123,6 +123,8 @@ public interface AppHdr {
 
     /**
      * Gets the header as an Element object.
+     *
+     * @return DOM Element representing this header, or null if serialization fails
      */
     Element element();
 

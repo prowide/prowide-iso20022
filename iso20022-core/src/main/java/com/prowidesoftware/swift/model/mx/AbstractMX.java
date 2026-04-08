@@ -183,6 +183,7 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
     /**
      * Used by subclasses to implement JSON deserialization.
      *
+     * @param <T>      the target MX message type
      * @param json     a JSON representation of an MX message
      * @param classOfT the specific MX subclass
      * @return a specific deserialized MX message object
@@ -335,6 +336,8 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
     /**
      * Get this message AppHdr as an XML string.
      *
+     * @param params not null marshalling parameters
+     * @return the serialized header or null if header is not set
      * @since 9.2.6
      */
     public String header(final MxWriteParams params) {
@@ -349,6 +352,7 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
      * Get this message Document as an XML string.
      *
      * @param params not null marshalling parameters
+     * @return the serialized document XML
      * @since 9.2.6
      */
     public String document(MxWriteParams params) {
@@ -359,6 +363,7 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
     /**
      * Get the classes associated with this message
      *
+     * @return array of JAXB classes used for marshalling/unmarshalling this message type
      * @since 7.7
      */
     @SuppressWarnings("rawtypes")
@@ -367,6 +372,7 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
     /**
      * Get the XML namespace of the message
      *
+     * @return the namespace URI for this message type
      * @since 7.7
      */
     public abstract String getNamespace();

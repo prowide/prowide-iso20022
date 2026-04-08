@@ -22,8 +22,11 @@ package com.prowidesoftware.swift.model.mx;
 public interface EscapeHandler {
 
     /**
+     * Escapes the given characters for safe inclusion in the XML output.
+     *
      * @param arr the characters to escape
      * @param isAttribute true if it is an attribute value
+     * @return the escaped string
      */
     String escape(char[] arr, boolean isAttribute);
 }

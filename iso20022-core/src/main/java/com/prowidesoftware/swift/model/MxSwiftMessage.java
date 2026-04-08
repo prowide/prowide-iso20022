@@ -80,6 +80,8 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
 
     /**
      * Calls {@link #MxSwiftMessage(String, MessageMetadataStrategy)} with the {@link DefaultMxMetadataStrategy}
+     *
+     * @param xml the plain ISO 20022 XML content
      */
     public MxSwiftMessage(final String xml) {
         this(xml, new DefaultMxMetadataStrategy());
@@ -104,6 +106,8 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
     /**
      * Calls {@link #MxSwiftMessage(InputStream, MessageMetadataStrategy)} with the {@link DefaultMxMetadataStrategy}
      *
+     * @param stream a stream containing the XML message
+     * @throws IOException if an error occurs reading the stream
      * @since 7.7
      */
     public MxSwiftMessage(final InputStream stream) throws IOException {
@@ -115,6 +119,7 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
      *
      * @param stream           a stream containing the XML message
      * @param metadataStrategy a strategy for metadata extraction
+     * @throws IOException if an error occurs reading the stream
      * @since 9.1.6
      */
     public MxSwiftMessage(final InputStream stream, final MessageMetadataStrategy metadataStrategy) throws IOException {
@@ -124,6 +129,8 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
     /**
      * Calls {@link #MxSwiftMessage(File, MessageMetadataStrategy)} with the {@link DefaultMxMetadataStrategy}
      *
+     * @param file an existing file containing the XML
+     * @throws IOException if an error occurs reading the file
      * @since 7.7
      */
     public MxSwiftMessage(final File file) throws IOException {
@@ -135,6 +142,7 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
      *
      * @param file             an existing file containing the XML
      * @param metadataStrategy a strategy for metadata extraction
+     * @throws IOException if an error occurs reading the file
      * @since 9.1.6
      */
     public MxSwiftMessage(final File file, final MessageMetadataStrategy metadataStrategy) throws IOException {
@@ -174,9 +182,11 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
     }
 
     /**
-     * Creates a new message reading the message the content from a string.
+     * Creates a new message reading the content from a string.
      * This is a static version of the constructor {@link #MxSwiftMessage(String)}
      *
+     * @param xml the plain ISO 20022 XML content
+     * @return new instance populated from the XML
      * @since 7.7
      */
     public static MxSwiftMessage parse(final String xml) {
@@ -184,9 +194,12 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
     }
 
     /**
-     * Creates a new message reading the message the content from an input stream.
+     * Creates a new message reading the content from an input stream.
      * This is a static version of the constructor {@link #MxSwiftMessage(InputStream)}
      *
+     * @param stream a stream containing the XML message
+     * @return new instance populated from the stream content
+     * @throws IOException if an error occurs reading the stream
      * @since 7.7
      */
     public static MxSwiftMessage parse(final InputStream stream) throws IOException {
@@ -194,9 +207,12 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
     }
 
     /**
-     * Creates a new message reading the message the content from a file.
+     * Creates a new message reading the content from a file.
      * This is a static version of the constructor {@link #MxSwiftMessage(File)}
      *
+     * @param file an existing file containing the XML
+     * @return new instance populated from the file content
+     * @throws IOException if an error occurs reading the file
      * @since 7.7
      */
     public static MxSwiftMessage parse(final File file) throws IOException {
@@ -204,8 +220,10 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
     }
 
     /**
-     * This method deserializes the JSON data into an MX message object.
+     * Deserializes the JSON data into an MxSwiftMessage object.
      *
+     * @param json the JSON representation of the message
+     * @return deserialized message object
      * @see #toJson()
      * @since 7.10.3
      */
@@ -387,6 +405,7 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
     /**
      * Calls {@link #updateFromXML(String, MxId, MessageMetadataStrategy)} with {@link DefaultMxMetadataStrategy}
      *
+     * @param xml the XML content of an MX message
      * @since 7.8.4
      */
     public void updateFromXML(final String xml) {
@@ -396,6 +415,8 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
     /**
      * Calls {@link #updateFromXML(String, MxId, MessageMetadataStrategy)} with {@link DefaultMxMetadataStrategy}
      *
+     * @param xml the XML content of an MX message
+     * @param id  the specific MX type identification or null if unknown
      * @since 7.8.4
      */
     public void updateFromXML(final String xml, final MxId id) {
@@ -548,6 +569,7 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
      * Enables injecting your own implementation for the entity metadata extraction, to set the generic properties
      * shared by all message types: main reference, main amount and currency, value date, trade date.
      *
+     * @param strategy the strategy implementation to use for metadata extraction
      * @since 9.1.6
      */
     public void updateMetadata(MessageMetadataStrategy strategy) {

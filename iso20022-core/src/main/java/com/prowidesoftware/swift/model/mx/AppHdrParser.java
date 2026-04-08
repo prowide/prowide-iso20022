@@ -110,8 +110,11 @@ public class AppHdrParser {
     }
 
     /**
-     * Parse the business header from an XML Element node
+     * Parse the business header from an XML Element node.
      * <p>The implementation serializes the element into XML and calls {@link #parse(String)}
+     *
+     * @param e the DOM Element containing the header
+     * @return the parsed header or empty if the element does not contain a recognizable header
      */
     public static Optional<AppHdr> parse(final Element e) {
         return parse(asXml(e));

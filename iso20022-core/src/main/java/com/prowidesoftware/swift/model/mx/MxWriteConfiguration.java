@@ -121,7 +121,9 @@ public class MxWriteConfiguration {
     }
 
     /**
-     * Creates a configuration with the default options and propagates the adapters from read to write configuration
+     * Creates a configuration with the default options and propagates the adapters from read to write configuration.
+     *
+     * @param readConf the read configuration whose adapters and context will be propagated
      * @since 9.2.6
      */
     public MxWriteConfiguration(MxReadConfiguration readConf) {

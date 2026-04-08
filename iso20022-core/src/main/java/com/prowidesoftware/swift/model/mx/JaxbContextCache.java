@@ -47,8 +47,8 @@ public interface JaxbContextCache {
      * @param messageClass class of the message to be read or written, cannot be null
      * @param classes      comprehensive list of classes for the context, null or empty to create a context with the messageClass
      * @return cached context for the message type
-     * @throws JAXBException
-     * @throws ExecutionException
+     * @throws JAXBException      if JAXB context creation fails
+     * @throws ExecutionException if a cached computation fails
      */
     JAXBContext get(final Class messageClass, final Class<?>[] classes) throws JAXBException, ExecutionException;
 }

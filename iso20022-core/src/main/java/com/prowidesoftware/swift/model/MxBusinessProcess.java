@@ -65,6 +65,11 @@ public enum MxBusinessProcess {
         this.description = description;
     }
 
+    /**
+     * Returns the human-readable description of this business process.
+     *
+     * @return the description, e.g. {@code "Cash Management"} for {@link #camt}
+     */
     public String getDescription() {
         return this.description;
     }

@@ -324,6 +324,7 @@ public final class XmlEventWriter implements XMLEventWriter {
     public void setPrefix(String arg0, String arg1) {}
 
     /**
+     * @return the namespace prefix used for elements that have no explicit prefix configured
      * @since 7.9.3
      */
     public String getDefaultPrefix() {
@@ -331,6 +332,7 @@ public final class XmlEventWriter implements XMLEventWriter {
     }
 
     /**
+     * @param defaultPrefix the namespace prefix to use for elements with no explicit prefix configured
      * @since 7.9.3
      */
     public void setDefaultPrefix(String defaultPrefix) {
@@ -338,6 +340,7 @@ public final class XmlEventWriter implements XMLEventWriter {
     }
 
     /**
+     * @return the map of namespace URI to preferred prefix overrides, or null if not set
      * @since 9.0.2
      */
     public Map<String, String> getPreferredPrefixes() {
@@ -356,6 +359,7 @@ public final class XmlEventWriter implements XMLEventWriter {
     }
 
     /**
+     * @return true if the XML declaration line will be included in the output
      * @since 7.9.3
      */
     public boolean isIncludeXMLDeclaration() {
@@ -363,6 +367,7 @@ public final class XmlEventWriter implements XMLEventWriter {
     }
 
     /**
+     * @param includeXMLDeclaration true to include the XML declaration in the output
      * @since 7.9.3
      */
     public void setIncludeXMLDeclaration(boolean includeXMLDeclaration) {
@@ -370,6 +375,7 @@ public final class XmlEventWriter implements XMLEventWriter {
     }
 
     /**
+     * @return the local name of the root element being written
      * @since 7.9.3
      */
     public String getRootElement() {
@@ -377,6 +383,7 @@ public final class XmlEventWriter implements XMLEventWriter {
     }
 
     /**
+     * @param rootElement the local name of the root element being written
      * @since 7.9.3
      */
     public void setRootElement(String rootElement) {
@@ -384,6 +391,7 @@ public final class XmlEventWriter implements XMLEventWriter {
     }
 
     /**
+     * @param preserveQnamePrefixes if true, QName prefixes from the JAXB model are preserved in the output
      * @since 9.0.2
      */
     public void setPreserveQnamePrefixes(boolean preserveQnamePrefixes) {

@@ -40,6 +40,7 @@ public class MxId {
      */
     private transient String businessService;
 
+    /** Creates an empty identification with all fields set to {@code null}. */
     public MxId() {}
 
     /**
@@ -70,6 +71,14 @@ public class MxId {
         }
     }
 
+    /**
+     * Creates an identification from its individual components.
+     *
+     * @param businessProcess the business process (area), e.g. {@link MxBusinessProcess#pacs}
+     * @param funString       the functionality (message type), e.g. {@code "008"}
+     * @param varString       the variant, e.g. {@code "001"}
+     * @param verString       the version, e.g. {@code "02"}
+     */
     public MxId(
             final MxBusinessProcess businessProcess,
             final String funString,
@@ -81,6 +90,15 @@ public class MxId {
         this.version = verString;
     }
 
+    /**
+     * Creates an identification from string components where the business process is parsed by name.
+     *
+     * @param bpString  the business process name, e.g. {@code "pacs"}
+     * @param funString the functionality (message type), e.g. {@code "008"}
+     * @param varString the variant, e.g. {@code "001"}
+     * @param verString the version, e.g. {@code "02"}
+     * @throws IllegalArgumentException if {@code bpString} does not match a known {@link MxBusinessProcess}
+     */
     public MxId(final String bpString, final String funString, final String varString, final String verString) {
         this(MxBusinessProcess.valueOf(bpString), funString, varString, verString);
     }
@@ -94,6 +112,10 @@ public class MxId {
         return businessProcess;
     }
 
+    /**
+     * @param businessProcess the business process to set
+     * @return this instance for method chaining
+     */
     public MxId setBusinessProcess(final MxBusinessProcess businessProcess) {
         this.businessProcess = businessProcess;
         return this;
@@ -108,29 +130,57 @@ public class MxId {
         return functionality;
     }
 
+    /**
+     * @param functionality the functionality (message type) to set, e.g. {@code "008"}
+     * @return this instance for method chaining
+     */
     public MxId setFunctionality(final String functionality) {
         this.functionality = functionality;
         return this;
     }
 
+    /**
+     * Gets the variant.
+     *
+     * @return the variant set, e.g. {@code "001"}
+     */
     public String getVariant() {
         return variant;
     }
 
+    /**
+     * @param variant the variant to set, e.g. {@code "001"}
+     * @return this instance for method chaining
+     */
     public MxId setVariant(final String variant) {
         this.variant = variant;
         return this;
     }
 
+    /**
+     * Gets the version.
+     *
+     * @return the version set, e.g. {@code "02"}
+     */
     public String getVersion() {
         return version;
     }
 
+    /**
+     * @param version the version to set, e.g. {@code "02"}
+     * @return this instance for method chaining
+     */
     public MxId setVersion(final String version) {
         this.version = version;
         return this;
     }
 
+    /**
+     * Returns this MX identification in CamelCase form, suitable for constructing class names.
+     * For example, pacs.008.001.02 becomes {@code "Pacs00800102"}.
+     *
+     * @return the camelized identifier string
+     */
     public String camelized() {
         final StringBuilder sb = new StringBuilder();
         if (businessProcess != null) {
@@ -150,14 +200,32 @@ public class MxId {
         return sb.toString();
     }
 
+    /**
+     * Returns the version as an integer.
+     *
+     * @return the version parsed as an integer
+     * @throws NumberFormatException if the version is not a valid integer
+     */
     public int getVersionInt() {
         return Integer.valueOf(this.version);
     }
 
+    /**
+     * Returns the variant as an integer.
+     *
+     * @return the variant parsed as an integer
+     * @throws NumberFormatException if the variant is not a valid integer
+     */
     public int getVariantInt() {
         return Integer.valueOf(this.variant);
     }
 
+    /**
+     * Returns the functionality (message type) as an integer.
+     *
+     * @return the functionality parsed as an integer
+     * @throws NumberFormatException if the functionality is not a valid integer
+     */
     public int getFunctionalityInt() {
         return Integer.valueOf(this.functionality);
     }
@@ -309,7 +377,7 @@ public class MxId {
      * is not set. This value must be set manually by the application when the MxId is extracted from a whole message
      * and the AppHdr is available. Alternatively, the application can set this value with any other context information
      *  and use it as a discriminator.
-     * @return the business service value or null if not set
+     * @return the business service value or empty if not set
      * @since 9.5.0
      */
     public Optional<String> getBusinessService() {
@@ -321,6 +389,7 @@ public class MxId {
      * type. This is mainly intended to contain the business services from the message AppHdr, but could potentially
      * be used to hold any other value that helps to differentiate messages within the same message type.
      * @param businessService a string value to set as discriminator, for example "swift.cbprplus.cov.02"
+     * @return this instance for method chaining
      * @since 9.5.0
      */
     public MxId setBusinessService(String businessService) {

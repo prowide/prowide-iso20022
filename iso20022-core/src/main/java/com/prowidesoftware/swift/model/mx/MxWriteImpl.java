@@ -39,8 +39,13 @@ public class MxWriteImpl {
     private static final Logger log = Logger.getLogger(MxWriteImpl.class.getName());
 
     /**
-     * Main implementation of model to XML serialization
+     * Main implementation of model to XML serialization.
      *
+     * @param namespace the target namespace for the Document element
+     * @param obj       the MX message object to serialize
+     * @param classes   the JAXB context classes for marshalling
+     * @param params    marshalling parameters
+     * @return the serialized XML string, or null if marshalling fails
      * @since 9.2.6
      */
     public static String write(String namespace, AbstractMX obj, Class[] classes, MxWriteParams params) {

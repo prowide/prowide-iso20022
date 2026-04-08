@@ -42,19 +42,19 @@ public class TypeAdaptersConfiguration {
 
     /**
      * Customized instances or subclasses of this adapter can be injected to change the default serialization of
-     * date time elements.
+     * date-only elements.
      */
     public IsoDateAdapter dateAdapter;
 
     /**
      * Customized instances or subclasses of this adapter can be injected to change the default serialization of
-     * date time elements.
+     * time-only elements.
      */
     public IsoTimeAdapter timeAdapter;
 
     /**
      * Customized instances or subclasses of this adapter can be injected to change the default serialization of
-     * date time elements.
+     * year-month elements.
      *
      * @since 10.0.0
      */
@@ -62,7 +62,7 @@ public class TypeAdaptersConfiguration {
 
     /**
      * Customized instances or subclasses of this adapter can be injected to change the default serialization of
-     * date time elements.
+     * year elements.
      *
      * @since 10.0.0
      */
@@ -70,7 +70,7 @@ public class TypeAdaptersConfiguration {
 
     /**
      * Customized instances or subclasses of this adapter can be injected to change the default serialization of
-     * date time elements.
+     * month elements.
      *
      * @since 10.0.0
      */
@@ -96,7 +96,10 @@ public class TypeAdaptersConfiguration {
     }
 
     /**
-     * @return this configuration non-null adapters into a list
+     * Returns all non-null adapters in this configuration as a list, preserving insertion order.
+     * Adapter fields that are {@code null} are excluded from the result.
+     *
+     * @return a list of the non-null configured adapters; never {@code null}
      */
     public List<XmlAdapter> asList() {
         List<XmlAdapter> all = new ArrayList<>();
