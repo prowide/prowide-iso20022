@@ -22,6 +22,7 @@ import jakarta.persistence.*;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Calendar;
 import java.util.Objects;
 import java.util.Optional;
 import org.apache.commons.lang3.StringUtils;
@@ -60,6 +61,10 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
     private static final long serialVersionUID = -4394356007627575831L;
     private static final transient java.util.logging.Logger log =
             java.util.logging.Logger.getLogger(MxSwiftMessage.class.getName());
+
+    private static final Gson FROMJSON_GSON = new GsonBuilder()
+            .registerTypeHierarchyAdapter(Calendar.class, CalendarTypeAdapter.INSTANCE)
+            .create();
 
     @Enumerated(EnumType.STRING)
     @Column(length = 4, name = "business_process")
@@ -221,6 +226,7 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
 
     /**
      * Deserializes the JSON data into an MxSwiftMessage object.
+     * Uses {@link CalendarTypeAdapter} for 1-based month deserialization, consistent with {@link #toJson()}.
      *
      * @param json the JSON representation of the message
      * @return deserialized message object
@@ -228,8 +234,7 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
      * @since 7.10.3
      */
     public static MxSwiftMessage fromJson(String json) {
-        final Gson gson = new GsonBuilder().create();
-        return gson.fromJson(json, MxSwiftMessage.class);
+        return FROMJSON_GSON.fromJson(json, MxSwiftMessage.class);
     }
 
     /**

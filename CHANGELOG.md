@@ -1,5 +1,8 @@
 # Prowide ISO 20022 - CHANGELOG
 
+### 10.3.6 - SNAPSHOT
+  * (PW-3185) Fix: Calendar fields in `MxSwiftMessage.fromJson()` now use 1-based months, consistent with the serialization fix in Prowide Core 10.3.13. **Note:** JSON data serialized with Prowide Core versions prior to 10.3.13 used 0-based months; such persisted JSON will need its `month` fields incremented by 1 before deserializing with this version.
+
 ### 10.3.5 - March 2026
   * (PW-3123) Feat: MX duplicate detection via `checksum()` and `checksumBody()` with XML canonicalization in `DefaultMxMetadataStrategy`
   * Feat: Added `MxNode.getLocalName()` getter for XML node name access
