@@ -93,7 +93,7 @@ public class MxSwiftMessageJsonTest {
                 + "  \"receiver\": \"DCBADEFFXXX\",\n"
                 + "  \"lastModified\": {\n"
                 + "    \"year\": 2018,\n"
-                + "    \"month\": 4,\n"
+                + "    \"month\": 5,\n"
                 + "    \"dayOfMonth\": 18,\n"
                 + "    \"hourOfDay\": 0,\n"
                 + "    \"minute\": 25,\n"
@@ -101,7 +101,7 @@ public class MxSwiftMessageJsonTest {
                 + "  },\n"
                 + "  \"creationDate\": {\n"
                 + "    \"year\": 2018,\n"
-                + "    \"month\": 4,\n"
+                + "    \"month\": 5,\n"
                 + "    \"dayOfMonth\": 18,\n"
                 + "    \"hourOfDay\": 0,\n"
                 + "    \"minute\": 25,\n"
@@ -123,9 +123,10 @@ public class MxSwiftMessageJsonTest {
         assertEquals("DCBADEFFXXX", mx.getReceiver());
         assertEquals("11308917", mx.getReference());
         assertEquals(2018, mx.getLastModified().get(Calendar.YEAR));
-        assertEquals(4, mx.getLastModified().get(Calendar.MONTH));
+        assertEquals(Calendar.MAY, mx.getLastModified().get(Calendar.MONTH));
         assertEquals(18, mx.getLastModified().get(Calendar.DAY_OF_MONTH));
         assertEquals(25, mx.getLastModified().get(Calendar.MINUTE));
         assertEquals(48, mx.getLastModified().get(Calendar.SECOND));
+        assertEquals(Calendar.MAY, mx.getCreationDate().get(Calendar.MONTH));
     }
 }
