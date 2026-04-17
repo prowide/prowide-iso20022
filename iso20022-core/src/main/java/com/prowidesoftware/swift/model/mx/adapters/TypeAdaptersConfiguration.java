@@ -96,6 +96,30 @@ public class TypeAdaptersConfiguration {
     }
 
     /**
+     * Shallow copy of another configuration. Adapter instances are shared by reference.
+     *
+     * @param other configuration to copy; if null a default configuration is created
+     * @since 10.3.6
+     */
+    public TypeAdaptersConfiguration(TypeAdaptersConfiguration other) {
+        if (other == null) {
+            this.dateTimeAdapter = new IsoDateTimeAdapter(new OffsetDateTimeAdapter());
+            this.dateAdapter = new IsoDateAdapter(new LocalDateAdapter());
+            this.timeAdapter = new IsoTimeAdapter(new OffsetTimeAdapter());
+            this.yearMonthAdapter = new IsoYearMonthAdapter(new YearMonthAdapter());
+            this.yearAdapter = new IsoYearAdapter(new YearAdapter());
+            this.monthAdapter = new IsoMonthAdapter(new MonthAdapter());
+        } else {
+            this.dateTimeAdapter = other.dateTimeAdapter;
+            this.dateAdapter = other.dateAdapter;
+            this.timeAdapter = other.timeAdapter;
+            this.yearMonthAdapter = other.yearMonthAdapter;
+            this.yearAdapter = other.yearAdapter;
+            this.monthAdapter = other.monthAdapter;
+        }
+    }
+
+    /**
      * Returns all non-null adapters in this configuration as a list, preserving insertion order.
      * Adapter fields that are {@code null} are excluded from the result.
      *
