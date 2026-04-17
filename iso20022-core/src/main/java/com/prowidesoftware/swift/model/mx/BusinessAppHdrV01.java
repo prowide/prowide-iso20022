@@ -16,8 +16,6 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.ProwideException;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import com.prowidesoftware.swift.model.mx.adapters.ZuluOffsetDateTimeAdapter;
 import com.prowidesoftware.swift.model.mx.dic.BusinessApplicationHeaderV01Impl;
 import com.prowidesoftware.swift.model.mx.dic.Party9Choice;
 import jakarta.xml.bind.JAXBContext;
@@ -55,9 +53,9 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
     private static final transient Logger log = Logger.getLogger(BusinessAppHdrV01.class.getName());
 
     /**
-     * When true, datetime fields will be serialized using Zulu timezone with "Z" indicator
+     * When true, the {@code CreDt} element is serialized using Zulu timezone with the "Z" indicator
      * instead of the default offset format.
-     * Defaults to true for BAH V01 as per ISONormalisedDateTime requirement.
+     * Defaults to true for BAH V01 as per the ISONormalisedDateTime requirement (PW-1875).
      *
      * @since 10.3.6
      */
@@ -195,7 +193,7 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
     }
 
     /**
-     * @return true if Zulu timezone formatting with "Z" indicator is enabled for datetime serialization
+     * @return true if the {@code CreDt} element is serialized with Zulu timezone "Z" indicator
      * @since 10.3.6
      */
     public boolean isUseZuluCreationDateTime() {
@@ -203,7 +201,7 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
     }
 
     /**
-     * @param useZuluCreationDateTime true to enable Zulu timezone formatting with "Z" indicator for datetime serialization
+     * @param useZuluCreationDateTime true to serialize the {@code CreDt} element with Zulu timezone "Z" indicator
      * @since 10.3.6
      */
     public void setUseZuluCreationDateTime(boolean useZuluCreationDateTime) {
@@ -212,39 +210,31 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
 
     @Override
     public String xml(MxWriteParams params) {
-        IsoDateTimeAdapter currentAdapter = null;
+        MxWriteParams effective = this.useZuluCreationDateTime ? MxWriteUtils.withZuluDateTimeAdapter(params) : params;
         try {
             JAXBContext context;
-            if (this.useZuluCreationDateTime) {
-                currentAdapter = params.adapters.dateTimeAdapter;
-                params.adapters.dateTimeAdapter = new IsoDateTimeAdapter(new ZuluOffsetDateTimeAdapter());
-            }
-            if (params.context != null) {
-                context = params.context;
+            if (effective.context != null) {
+                context = effective.context;
             } else {
                 context = JAXBContext.newInstance(BusinessApplicationHeaderV01Impl.class);
             }
-            final Marshaller marshaller = MxWriteUtils.createMarshaller(context, params);
+            final Marshaller marshaller = MxWriteUtils.createMarshaller(context, effective);
 
             final StringWriter sw = new StringWriter();
             JAXBElement<BusinessApplicationHeaderV01Impl> element = new JAXBElement(
                     new QName(NAMESPACE, AppHdr.HEADER_LOCALNAME), BusinessApplicationHeaderV01Impl.class, null, this);
             XmlEventWriter eventWriter = new XmlEventWriter(
                     sw,
-                    params.prefix,
-                    params.includeXMLDeclaration,
+                    effective.prefix,
+                    effective.includeXMLDeclaration,
                     AppHdr.HEADER_LOCALNAME,
-                    params.escapeHandler,
-                    params.indent);
+                    effective.escapeHandler,
+                    effective.indent);
             marshaller.marshal(element, eventWriter);
             return sw.getBuffer().toString();
 
         } catch (JAXBException e) {
             log.log(Level.SEVERE, "Error writing head.001.001.01 XML:" + e.getMessage());
-        } finally {
-            if (currentAdapter != null) {
-                params.adapters.dateTimeAdapter = currentAdapter;
-            }
         }
         return null;
     }
