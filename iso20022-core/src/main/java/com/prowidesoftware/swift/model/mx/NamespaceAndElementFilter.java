@@ -97,16 +97,21 @@ public class NamespaceAndElementFilter extends XMLFilterImpl {
             this.inElementToPropagate = true;
             this.mainNamespace = namespace;
 
-            // Propagate any prefix mappings that were declared before we entered the element to propagate
-            // This handles the case where AppHdr appears before Document in the XML
-            for (PrefixMapping pm : pendingPrefixMappings) {
-                try {
-                    super.startPrefixMapping(pm.prefix, pm.url);
-                } catch (Exception e) {
-                    log.warning("Error propagating pending prefix mapping " + pm.prefix + " [" + pm.url + "]: "
-                            + exceptionMessage(e));
-                    if (log.isLoggable(Level.FINEST)) {
-                        log.log(Level.FINEST, "Error propagating pending prefix mapping", e);
+            // Propagate any queued xsys prefix mappings (declared in an outer envelope before the
+            // element to propagate) only when the propagated element is itself an xsys Document,
+            // because only xsys Document bodies reference Sw/SwInt/SwGbl elements. Replaying them
+            // for regular ISO 20022 Documents would be unnecessary and can produce spurious warnings
+            // or namespace-stack errors in strict SAX-to-StAX bridges.
+            if (isXsysDocumentNamespace(this.mainNamespace)) {
+                for (PrefixMapping pm : pendingPrefixMappings) {
+                    try {
+                        super.startPrefixMapping(pm.prefix, pm.url);
+                    } catch (Exception e) {
+                        log.warning("Error propagating pending prefix mapping " + pm.prefix + " [" + pm.url + "]: "
+                                + exceptionMessage(e));
+                        if (log.isLoggable(Level.FINEST)) {
+                            log.log(Level.FINEST, "Error propagating pending prefix mapping", e);
+                        }
                     }
                 }
             }
@@ -155,12 +160,25 @@ public class NamespaceAndElementFilter extends XMLFilterImpl {
         }
     }
 
+    /**
+     * Checks whether the given namespace is one of the SNL reusable schema namespaces (Sw, SwInt,
+     * SwGbl, SwSec, Doc) that can appear inside an xsys Document body alongside the main namespace.
+     */
     private boolean isXsysNamespace(String namespace) {
         return "urn:swift:snl:ns.Doc".equals(namespace)
                 || "urn:swift:snl:ns.Sw".equals(namespace)
                 || "urn:swift:snl:ns.SwGbl".equals(namespace)
                 || "urn:swift:snl:ns.SwInt".equals(namespace)
                 || "urn:swift:snl:ns.SwSec".equals(namespace);
+    }
+
+    /**
+     * Checks whether the given namespace is the main namespace of an xsys Document (any namespace
+     * under {@code urn:swift:xsd:xsys.*} declared on the Document root element). Used to decide
+     * whether queued xsys prefix mappings must be replayed on the downstream handler.
+     */
+    private boolean isXsysDocumentNamespace(String namespace) {
+        return namespace != null && namespace.startsWith("urn:swift:xsd:xsys.");
     }
 
     @Override

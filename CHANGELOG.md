@@ -1,6 +1,7 @@
 # Prowide ISO 20022 - CHANGELOG
 
 ### 10.3.6 - SNAPSHOT
+  * (PW-3202) Fix: `NamespaceAndElementFilter` no longer replays queued xsys prefix mappings (`Sw`, `SwInt`, `SwGbl`) when the propagated element is a regular (non-xsys) ISO 20022 Document, removing spurious `Error propagating pending prefix mapping` warnings when such Documents are parsed from an SNL-like envelope.
   * (PW-3133) Feat: Added `useZuluCreationDateTime` flag on `BusinessAppHdrV01`..`V04` to marshal `CreDt` with "Z" timezone (default true on V01)
 
 ### 10.3.5 - March 2026
