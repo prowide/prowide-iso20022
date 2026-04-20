@@ -16,8 +16,6 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.ProwideException;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import com.prowidesoftware.swift.model.mx.adapters.ZuluOffsetDateTimeAdapter;
 import com.prowidesoftware.swift.model.mx.dic.BusinessApplicationHeaderV01Impl;
 import com.prowidesoftware.swift.model.mx.dic.Party9Choice;
 import jakarta.xml.bind.JAXBContext;
@@ -53,6 +51,15 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
     public static final String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:head.001.001.01";
     static final Class[] _classes;
     private static final transient Logger log = Logger.getLogger(BusinessAppHdrV01.class.getName());
+
+    /**
+     * When true, the {@code CreDt} element is serialized using Zulu timezone with the "Z" indicator
+     * instead of the default offset format.
+     * Defaults to true for BAH V01 as per the ISONormalisedDateTime requirement (PW-1875).
+     *
+     * @since 10.3.6
+     */
+    private transient boolean useZuluCreationDateTime = true;
 
     static {
         _classes = Arrays.copyOf(
@@ -185,31 +192,45 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
         }
     }
 
+    /**
+     * @return true if the {@code CreDt} element is serialized with Zulu timezone "Z" indicator
+     * @since 10.3.6
+     */
+    public boolean isUseZuluCreationDateTime() {
+        return useZuluCreationDateTime;
+    }
+
+    /**
+     * @param useZuluCreationDateTime true to serialize the {@code CreDt} element with Zulu timezone "Z" indicator
+     * @since 10.3.6
+     */
+    public void setUseZuluCreationDateTime(boolean useZuluCreationDateTime) {
+        this.useZuluCreationDateTime = useZuluCreationDateTime;
+    }
+
     @Override
     public String xml(MxWriteParams params) {
+        MxWriteParams effective = this.useZuluCreationDateTime ? MxWriteUtils.withZuluDateTimeAdapter(params) : params;
         try {
             JAXBContext context;
-            IsoDateTimeAdapter currentAdapter = params.adapters.dateTimeAdapter;
-            params.adapters.dateTimeAdapter = new IsoDateTimeAdapter(new ZuluOffsetDateTimeAdapter());
-            if (params.context != null) {
-                context = params.context;
+            if (effective.context != null) {
+                context = effective.context;
             } else {
                 context = JAXBContext.newInstance(BusinessApplicationHeaderV01Impl.class);
             }
-            final Marshaller marshaller = MxWriteUtils.createMarshaller(context, params);
+            final Marshaller marshaller = MxWriteUtils.createMarshaller(context, effective);
 
             final StringWriter sw = new StringWriter();
             JAXBElement<BusinessApplicationHeaderV01Impl> element = new JAXBElement(
                     new QName(NAMESPACE, AppHdr.HEADER_LOCALNAME), BusinessApplicationHeaderV01Impl.class, null, this);
             XmlEventWriter eventWriter = new XmlEventWriter(
                     sw,
-                    params.prefix,
-                    params.includeXMLDeclaration,
+                    effective.prefix,
+                    effective.includeXMLDeclaration,
                     AppHdr.HEADER_LOCALNAME,
-                    params.escapeHandler,
-                    params.indent);
+                    effective.escapeHandler,
+                    effective.indent);
             marshaller.marshal(element, eventWriter);
-            params.adapters.dateTimeAdapter = currentAdapter;
             return sw.getBuffer().toString();
 
         } catch (JAXBException e) {
