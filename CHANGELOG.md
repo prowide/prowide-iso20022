@@ -1,7 +1,7 @@
 # Prowide ISO 20022 - CHANGELOG
 
 ### 10.3.6 - SNAPSHOT
-  * (PW-3133) Feat: Added `useZuluCreationDateTime` flag to `BusinessAppHdrV01` through `BusinessAppHdrV04` to serialize the `CreDt` element with Zulu timezone "Z" indicator on marshalling. Defaults to true on V01 preserving prior behavior.
+  * (PW-3133) Feat: Added `useZuluCreationDateTime` flag on `BusinessAppHdrV01`..`V04` to marshal `CreDt` with "Z" timezone (default true on V01)
 
 ### 10.3.5 - March 2026
   * (PW-3123) Feat: MX duplicate detection via `checksum()` and `checksumBody()` with XML canonicalization in `DefaultMxMetadataStrategy`
