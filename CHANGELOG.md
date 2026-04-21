@@ -1,6 +1,6 @@
 # Prowide ISO 20022 - CHANGELOG
 
-### 10.3.6 - SNAPSHOT
+### 10.3.6 - April 2026
   * (PW-3133) Feat: Added `useZuluCreationDateTime` flag on `BusinessAppHdrV01`..`V04` to marshal `CreDt` with "Z" timezone (default true on V01)
 
 ### 10.3.5 - March 2026
