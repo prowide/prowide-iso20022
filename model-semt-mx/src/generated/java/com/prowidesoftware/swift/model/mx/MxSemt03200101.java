@@ -26,7 +26,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 @XmlType(name = "Document", propOrder = {
     "sctiesTxCxlReqQry"
 })
-@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:DRAFT3semt.032.001.01")
+@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:semt.032.001.01")
 public class MxSemt03200101
     extends com.prowidesoftware.swift.model.mx.AbstractMX
 {
@@ -38,8 +38,8 @@ public class MxSemt03200101
     public static final transient int VARIANT = 1;
     public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {CancellationProcessingStatus3Code1 .class, CancellationProcessingStatus9Choice1 .class, DateAndDateTimeSearch2Choice1 .class, DateSearchChoice1 .class, FinancialInstitutionIdentification121 .class, InstructionQueryType1Code.class, IntraPositionQueryCriteria51 .class, IntraPositionQueryDefinition51 .class, MovementResponseType1Code.class, MxSemt03200101 .class, PartyIdentification44Choice1 .class, PartyIdentification911 .class, SecuritiesAccount191 .class, SecuritiesTransactionCancellationRequestQueryV01 .class, SystemPartyIdentification61 .class };
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:DRAFT3semt.032.001.01";
+    public static final transient Class[] _classes = new Class[] {AddressType2Code.class, CancellationProcessingStatus3Code.class, CancellationProcessingStatus9Choice.class, DateAndDateTimeSearch5Choice.class, DatePeriod2 .class, DatePeriodSearch1Choice.class, DateTimePeriod1 .class, DateTimeSearch2Choice.class, GenericIdentification30 .class, GenericIdentification36 .class, InstructionQueryType1Code.class, MovementResponseType1Code.class, MxSemt03200101 .class, NameAndAddress5 .class, PartyIdentification120Choice.class, PartyIdentification136 .class, PostalAddress1 .class, SecuritiesAccount19 .class, SecuritiesCancellationQueryCriteria1 .class, SecuritiesCancellationQueryDefinition1 .class, SecuritiesTransactionCancellationRequestQueryV01 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, SystemPartyIdentification8 .class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:semt.032.001.01";
 
     public MxSemt03200101() {
         super();

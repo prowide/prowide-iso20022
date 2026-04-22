@@ -128,7 +128,7 @@ public class AbstractMXTest {
 
     @Test
     public void testUnrecognizedMessage() {
-        String xml = "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:DRAFT6camt.077.001.01\">\n" + "<BllgRpt>\n"
+        String xml = "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:DRAFT6camt.077.001.99\">\n" + "<BllgRpt>\n"
                 + "    <MsgHdr>\n"
                 + "        <MsgId>12345</MsgId>\n"
                 + "        <CreDtTm>2022-05-24T10:29:05+08:00</CreDtTm>\n"

@@ -1,6 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import java.util.ArrayList;
+import java.util.List;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
@@ -23,22 +25,25 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SecuritiesTransactionCancellationRequestQueryV01", propOrder = {
-    "qryDef"
+    "qryDef",
+    "splmtryData"
 })
 public class SecuritiesTransactionCancellationRequestQueryV01 {
 
     @XmlElement(name = "QryDef", required = true)
-    protected IntraPositionQueryDefinition51 qryDef;
+    protected SecuritiesCancellationQueryDefinition1 qryDef;
+    @XmlElement(name = "SplmtryData")
+    protected List<SupplementaryData1> splmtryData;
 
     /**
      * Gets the value of the qryDef property.
      * 
      * @return
      *     possible object is
-     *     {@link IntraPositionQueryDefinition51 }
+     *     {@link SecuritiesCancellationQueryDefinition1 }
      *     
      */
-    public IntraPositionQueryDefinition51 getQryDef() {
+    public SecuritiesCancellationQueryDefinition1 getQryDef() {
         return qryDef;
     }
 
@@ -47,12 +52,43 @@ public class SecuritiesTransactionCancellationRequestQueryV01 {
      * 
      * @param value
      *     allowed object is
-     *     {@link IntraPositionQueryDefinition51 }
+     *     {@link SecuritiesCancellationQueryDefinition1 }
      *     
      */
-    public SecuritiesTransactionCancellationRequestQueryV01 setQryDef(IntraPositionQueryDefinition51 value) {
+    public SecuritiesTransactionCancellationRequestQueryV01 setQryDef(SecuritiesCancellationQueryDefinition1 value) {
         this.qryDef = value;
         return this;
+    }
+
+    /**
+     * Gets the value of the splmtryData property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the splmtryData property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getSplmtryData().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link SupplementaryData1 }
+     * 
+     * 
+     * @return
+     *     The value of the splmtryData property.
+     */
+    public List<SupplementaryData1> getSplmtryData() {
+        if (splmtryData == null) {
+            splmtryData = new ArrayList<>();
+        }
+        return this.splmtryData;
     }
 
     @Override
@@ -68,6 +104,16 @@ public class SecuritiesTransactionCancellationRequestQueryV01 {
     @Override
     public int hashCode() {
         return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+    /**
+     * Adds a new item to the splmtryData list.
+     * @see #getSplmtryData()
+     * 
+     */
+    public SecuritiesTransactionCancellationRequestQueryV01 addSplmtryData(SupplementaryData1 splmtryData) {
+        getSplmtryData().add(splmtryData);
+        return this;
     }
 
 }

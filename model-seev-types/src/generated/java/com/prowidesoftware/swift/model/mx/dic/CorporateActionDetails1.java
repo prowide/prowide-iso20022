@@ -1,0 +1,97 @@
+
+package com.prowidesoftware.swift.model.mx.dic;
+
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+
+/**
+ * Key information about the related Corporate Action event.
+ * 
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "CorporateActionDetails1", propOrder = {
+    "corpActnGnlInf",
+    "corpActnOptn"
+})
+public class CorporateActionDetails1 {
+
+    @XmlElement(name = "CorpActnGnlInf", required = true)
+    protected CorporateActionGeneralInformation195 corpActnGnlInf;
+    @XmlElement(name = "CorpActnOptn", required = true)
+    protected CorporateActionOptionStatement1 corpActnOptn;
+
+    /**
+     * Gets the value of the corpActnGnlInf property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link CorporateActionGeneralInformation195 }
+     *     
+     */
+    public CorporateActionGeneralInformation195 getCorpActnGnlInf() {
+        return corpActnGnlInf;
+    }
+
+    /**
+     * Sets the value of the corpActnGnlInf property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link CorporateActionGeneralInformation195 }
+     *     
+     */
+    public CorporateActionDetails1 setCorpActnGnlInf(CorporateActionGeneralInformation195 value) {
+        this.corpActnGnlInf = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the corpActnOptn property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link CorporateActionOptionStatement1 }
+     *     
+     */
+    public CorporateActionOptionStatement1 getCorpActnOptn() {
+        return corpActnOptn;
+    }
+
+    /**
+     * Sets the value of the corpActnOptn property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link CorporateActionOptionStatement1 }
+     *     
+     */
+    public CorporateActionDetails1 setCorpActnOptn(CorporateActionOptionStatement1 value) {
+        this.corpActnOptn = value;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+}
