@@ -23,6 +23,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
  * Class for camt.090.001.01 ISO 20022 message.
+ * <p><strong>DRAFT</strong>: generated from an ISO 20022 draft schema (not yet officially registered).
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
