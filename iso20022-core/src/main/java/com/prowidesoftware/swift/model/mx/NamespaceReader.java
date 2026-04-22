@@ -117,9 +117,9 @@ public class NamespaceReader {
      * @deprecated use {@link MxParseUtils#elementExists(String, String)} instead
      */
     @Deprecated
-    @ProwideDeprecated(phase3 = TargetYear.SRU2026)
+    @ProwideDeprecated(phase4 = TargetYear.SRU2027)
     public static boolean elementExists(final String xml, final String localName) {
-        DeprecationUtils.phase2(
+        DeprecationUtils.phase3(
                 NamespaceReader.class, "elementExists", "Use MxParseUtils.elementExists(String, String) instead");
         return MxParseUtils.elementExists(xml, localName);
     }
