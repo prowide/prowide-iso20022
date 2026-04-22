@@ -1,0 +1,247 @@
+
+package com.prowidesoftware.swift.model.mx.dic;
+
+import java.util.ArrayList;
+import java.util.List;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+
+/**
+ * Scope
+ * The SubscriptionBulkOrder message is sent by an instructing party, for example, an investment manager or its authorised representative, to the executing party, for example, a transfer agent, to instruct a subscription to a financial instrument for two or more accounts.
+ * Usage
+ * The SubscriptionBulkOrder message is used to bulk several individual orders into one bulk order. The individual orders come from different instructing parties, that is, account owners, but are for the same financial instrument. This message will typically be used by a party collecting orders and bulking these individual orders into one bulk order before sending it to another party.
+ * For a single subscription order, the SubscriptionOrder message, not the SubscriptionBulkOrder message, must be used.
+ * 
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "SubscriptionBulkOrderV05", propOrder = {
+    "msgId",
+    "poolRef",
+    "prvsRef",
+    "blkOrdrDtls",
+    "cpyDtls",
+    "xtnsn"
+})
+public class SubscriptionBulkOrderV05 {
+
+    @XmlElement(name = "MsgId", required = true)
+    protected MessageIdentification1 msgId;
+    @XmlElement(name = "PoolRef")
+    protected AdditionalReference11 poolRef;
+    @XmlElement(name = "PrvsRef")
+    protected List<AdditionalReference10> prvsRef;
+    @XmlElement(name = "BlkOrdrDtls", required = true)
+    protected SubscriptionBulkOrder06 blkOrdrDtls;
+    @XmlElement(name = "CpyDtls")
+    protected CopyInformation5 cpyDtls;
+    @XmlElement(name = "Xtnsn")
+    protected List<Extension1> xtnsn;
+
+    /**
+     * Gets the value of the msgId property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link MessageIdentification1 }
+     *     
+     */
+    public MessageIdentification1 getMsgId() {
+        return msgId;
+    }
+
+    /**
+     * Sets the value of the msgId property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link MessageIdentification1 }
+     *     
+     */
+    public SubscriptionBulkOrderV05 setMsgId(MessageIdentification1 value) {
+        this.msgId = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the poolRef property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link AdditionalReference11 }
+     *     
+     */
+    public AdditionalReference11 getPoolRef() {
+        return poolRef;
+    }
+
+    /**
+     * Sets the value of the poolRef property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link AdditionalReference11 }
+     *     
+     */
+    public SubscriptionBulkOrderV05 setPoolRef(AdditionalReference11 value) {
+        this.poolRef = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the prvsRef property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the prvsRef property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getPrvsRef().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link AdditionalReference10 }
+     * 
+     * 
+     * @return
+     *     The value of the prvsRef property.
+     */
+    public List<AdditionalReference10> getPrvsRef() {
+        if (prvsRef == null) {
+            prvsRef = new ArrayList<>();
+        }
+        return this.prvsRef;
+    }
+
+    /**
+     * Gets the value of the blkOrdrDtls property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link SubscriptionBulkOrder06 }
+     *     
+     */
+    public SubscriptionBulkOrder06 getBlkOrdrDtls() {
+        return blkOrdrDtls;
+    }
+
+    /**
+     * Sets the value of the blkOrdrDtls property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link SubscriptionBulkOrder06 }
+     *     
+     */
+    public SubscriptionBulkOrderV05 setBlkOrdrDtls(SubscriptionBulkOrder06 value) {
+        this.blkOrdrDtls = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the cpyDtls property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link CopyInformation5 }
+     *     
+     */
+    public CopyInformation5 getCpyDtls() {
+        return cpyDtls;
+    }
+
+    /**
+     * Sets the value of the cpyDtls property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link CopyInformation5 }
+     *     
+     */
+    public SubscriptionBulkOrderV05 setCpyDtls(CopyInformation5 value) {
+        this.cpyDtls = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the xtnsn property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the xtnsn property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getXtnsn().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Extension1 }
+     * 
+     * 
+     * @return
+     *     The value of the xtnsn property.
+     */
+    public List<Extension1> getXtnsn() {
+        if (xtnsn == null) {
+            xtnsn = new ArrayList<>();
+        }
+        return this.xtnsn;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+    /**
+     * Adds a new item to the prvsRef list.
+     * @see #getPrvsRef()
+     * 
+     */
+    public SubscriptionBulkOrderV05 addPrvsRef(AdditionalReference10 prvsRef) {
+        getPrvsRef().add(prvsRef);
+        return this;
+    }
+
+    /**
+     * Adds a new item to the xtnsn list.
+     * @see #getXtnsn()
+     * 
+     */
+    public SubscriptionBulkOrderV05 addXtnsn(Extension1 xtnsn) {
+        getXtnsn().add(xtnsn);
+        return this;
+    }
+
+}

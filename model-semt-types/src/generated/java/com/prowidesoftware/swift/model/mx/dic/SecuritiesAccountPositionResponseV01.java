@@ -44,20 +44,26 @@ import org.apache.commons.lang3.builder.ToStringStyle;
     "rptGnlDtls",
     "acctOwnr",
     "acctSvcr",
-    "bals"
+    "intrmyInf",
+    "bals",
+    "ptyBaseCcyTtlAmts"
 })
 public class SecuritiesAccountPositionResponseV01 {
 
     @XmlElement(name = "Pgntn", required = true)
     protected Pagination pgntn;
     @XmlElement(name = "RptGnlDtls", required = true)
-    protected Statement581 rptGnlDtls;
+    protected Statement58 rptGnlDtls;
     @XmlElement(name = "AcctOwnr")
-    protected PartyIdentification1001 acctOwnr;
+    protected PartyIdentification100 acctOwnr;
     @XmlElement(name = "AcctSvcr")
-    protected PartyIdentification1001 acctSvcr;
+    protected PartyIdentification100 acctSvcr;
+    @XmlElement(name = "IntrmyInf")
+    protected List<Intermediary32> intrmyInf;
     @XmlElement(name = "Bals")
-    protected List<Balance141> bals;
+    protected List<Balance14> bals;
+    @XmlElement(name = "PtyBaseCcyTtlAmts")
+    protected TotalValueInPageAndStatement1 ptyBaseCcyTtlAmts;
 
     /**
      * Gets the value of the pgntn property.
@@ -89,10 +95,10 @@ public class SecuritiesAccountPositionResponseV01 {
      * 
      * @return
      *     possible object is
-     *     {@link Statement581 }
+     *     {@link Statement58 }
      *     
      */
-    public Statement581 getRptGnlDtls() {
+    public Statement58 getRptGnlDtls() {
         return rptGnlDtls;
     }
 
@@ -101,10 +107,10 @@ public class SecuritiesAccountPositionResponseV01 {
      * 
      * @param value
      *     allowed object is
-     *     {@link Statement581 }
+     *     {@link Statement58 }
      *     
      */
-    public SecuritiesAccountPositionResponseV01 setRptGnlDtls(Statement581 value) {
+    public SecuritiesAccountPositionResponseV01 setRptGnlDtls(Statement58 value) {
         this.rptGnlDtls = value;
         return this;
     }
@@ -114,10 +120,10 @@ public class SecuritiesAccountPositionResponseV01 {
      * 
      * @return
      *     possible object is
-     *     {@link PartyIdentification1001 }
+     *     {@link PartyIdentification100 }
      *     
      */
-    public PartyIdentification1001 getAcctOwnr() {
+    public PartyIdentification100 getAcctOwnr() {
         return acctOwnr;
     }
 
@@ -126,10 +132,10 @@ public class SecuritiesAccountPositionResponseV01 {
      * 
      * @param value
      *     allowed object is
-     *     {@link PartyIdentification1001 }
+     *     {@link PartyIdentification100 }
      *     
      */
-    public SecuritiesAccountPositionResponseV01 setAcctOwnr(PartyIdentification1001 value) {
+    public SecuritiesAccountPositionResponseV01 setAcctOwnr(PartyIdentification100 value) {
         this.acctOwnr = value;
         return this;
     }
@@ -139,10 +145,10 @@ public class SecuritiesAccountPositionResponseV01 {
      * 
      * @return
      *     possible object is
-     *     {@link PartyIdentification1001 }
+     *     {@link PartyIdentification100 }
      *     
      */
-    public PartyIdentification1001 getAcctSvcr() {
+    public PartyIdentification100 getAcctSvcr() {
         return acctSvcr;
     }
 
@@ -151,12 +157,43 @@ public class SecuritiesAccountPositionResponseV01 {
      * 
      * @param value
      *     allowed object is
-     *     {@link PartyIdentification1001 }
+     *     {@link PartyIdentification100 }
      *     
      */
-    public SecuritiesAccountPositionResponseV01 setAcctSvcr(PartyIdentification1001 value) {
+    public SecuritiesAccountPositionResponseV01 setAcctSvcr(PartyIdentification100 value) {
         this.acctSvcr = value;
         return this;
+    }
+
+    /**
+     * Gets the value of the intrmyInf property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the intrmyInf property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getIntrmyInf().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Intermediary32 }
+     * 
+     * 
+     * @return
+     *     The value of the intrmyInf property.
+     */
+    public List<Intermediary32> getIntrmyInf() {
+        if (intrmyInf == null) {
+            intrmyInf = new ArrayList<>();
+        }
+        return this.intrmyInf;
     }
 
     /**
@@ -177,17 +214,42 @@ public class SecuritiesAccountPositionResponseV01 {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Balance141 }
+     * {@link Balance14 }
      * 
      * 
      * @return
      *     The value of the bals property.
      */
-    public List<Balance141> getBals() {
+    public List<Balance14> getBals() {
         if (bals == null) {
             bals = new ArrayList<>();
         }
         return this.bals;
+    }
+
+    /**
+     * Gets the value of the ptyBaseCcyTtlAmts property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link TotalValueInPageAndStatement1 }
+     *     
+     */
+    public TotalValueInPageAndStatement1 getPtyBaseCcyTtlAmts() {
+        return ptyBaseCcyTtlAmts;
+    }
+
+    /**
+     * Sets the value of the ptyBaseCcyTtlAmts property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link TotalValueInPageAndStatement1 }
+     *     
+     */
+    public SecuritiesAccountPositionResponseV01 setPtyBaseCcyTtlAmts(TotalValueInPageAndStatement1 value) {
+        this.ptyBaseCcyTtlAmts = value;
+        return this;
     }
 
     @Override
@@ -206,11 +268,21 @@ public class SecuritiesAccountPositionResponseV01 {
     }
 
     /**
+     * Adds a new item to the intrmyInf list.
+     * @see #getIntrmyInf()
+     * 
+     */
+    public SecuritiesAccountPositionResponseV01 addIntrmyInf(Intermediary32 intrmyInf) {
+        getIntrmyInf().add(intrmyInf);
+        return this;
+    }
+
+    /**
      * Adds a new item to the bals list.
      * @see #getBals()
      * 
      */
-    public SecuritiesAccountPositionResponseV01 addBals(Balance141 bals) {
+    public SecuritiesAccountPositionResponseV01 addBals(Balance14 bals) {
         getBals().add(bals);
         return this;
     }

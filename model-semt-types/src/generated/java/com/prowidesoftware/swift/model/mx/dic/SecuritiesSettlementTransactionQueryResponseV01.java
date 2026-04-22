@@ -30,9 +30,9 @@ public class SecuritiesSettlementTransactionQueryResponseV01 {
     @XmlElement(name = "Pgntn", required = true)
     protected Pagination1 pgntn;
     @XmlElement(name = "RptGnlDtls", required = true)
-    protected SecuritiesReport21 rptGnlDtls;
+    protected SecuritiesReport2 rptGnlDtls;
     @XmlElement(name = "Txs")
-    protected List<SecuritiesSettlementTransactions41> txs;
+    protected List<SecuritiesSettlementTransactions4> txs;
 
     /**
      * Gets the value of the pgntn property.
@@ -64,10 +64,10 @@ public class SecuritiesSettlementTransactionQueryResponseV01 {
      * 
      * @return
      *     possible object is
-     *     {@link SecuritiesReport21 }
+     *     {@link SecuritiesReport2 }
      *     
      */
-    public SecuritiesReport21 getRptGnlDtls() {
+    public SecuritiesReport2 getRptGnlDtls() {
         return rptGnlDtls;
     }
 
@@ -76,10 +76,10 @@ public class SecuritiesSettlementTransactionQueryResponseV01 {
      * 
      * @param value
      *     allowed object is
-     *     {@link SecuritiesReport21 }
+     *     {@link SecuritiesReport2 }
      *     
      */
-    public SecuritiesSettlementTransactionQueryResponseV01 setRptGnlDtls(SecuritiesReport21 value) {
+    public SecuritiesSettlementTransactionQueryResponseV01 setRptGnlDtls(SecuritiesReport2 value) {
         this.rptGnlDtls = value;
         return this;
     }
@@ -102,13 +102,13 @@ public class SecuritiesSettlementTransactionQueryResponseV01 {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link SecuritiesSettlementTransactions41 }
+     * {@link SecuritiesSettlementTransactions4 }
      * 
      * 
      * @return
      *     The value of the txs property.
      */
-    public List<SecuritiesSettlementTransactions41> getTxs() {
+    public List<SecuritiesSettlementTransactions4> getTxs() {
         if (txs == null) {
             txs = new ArrayList<>();
         }
@@ -135,7 +135,7 @@ public class SecuritiesSettlementTransactionQueryResponseV01 {
      * @see #getTxs()
      * 
      */
-    public SecuritiesSettlementTransactionQueryResponseV01 addTxs(SecuritiesSettlementTransactions41 txs) {
+    public SecuritiesSettlementTransactionQueryResponseV01 addTxs(SecuritiesSettlementTransactions4 txs) {
         getTxs().add(txs);
         return this;
     }

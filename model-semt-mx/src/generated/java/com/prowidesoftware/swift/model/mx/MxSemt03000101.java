@@ -26,7 +26,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 @XmlType(name = "Document", propOrder = {
     "sctiesSttlmCondsModReqQry"
 })
-@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:DRAFT3semt.030.001.01")
+@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:semt.030.001.01")
 public class MxSemt03000101
     extends com.prowidesoftware.swift.model.mx.AbstractMX
 {
@@ -38,8 +38,8 @@ public class MxSemt03000101
     public static final transient int VARIANT = 1;
     public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {DateAndDateTimeSearch2Choice1 .class, DateSearchChoice1 .class, FinancialInstitutionIdentification121 .class, InstructionQueryType1Code.class, IntraPositionQueryCriteria41 .class, IntraPositionQueryDefinition41 .class, ModificationProcessingStatus1Code1 .class, ModificationProcessingStatus9Choice1 .class, MovementResponseType1Code.class, MxSemt03000101 .class, PartyIdentification44Choice1 .class, PartyIdentification911 .class, SecuritiesAccount191 .class, SecuritiesSettlementConditionsModificationRequestQueryV01 .class, SystemPartyIdentification61 .class };
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:DRAFT3semt.030.001.01";
+    public static final transient Class[] _classes = new Class[] {AddressType2Code.class, DateAndDateTimeSearch5Choice.class, DatePeriod2 .class, DatePeriodSearch1Choice.class, DateTimePeriod1 .class, DateTimeSearch2Choice.class, GenericIdentification30 .class, GenericIdentification36 .class, InstructionQueryType1Code.class, ModificationProcessingStatus1Code.class, ModificationProcessingStatus9Choice.class, MovementResponseType1Code.class, MxSemt03000101 .class, NameAndAddress5 .class, PartyIdentification120Choice.class, PartyIdentification136 .class, PostalAddress1 .class, SecuritiesAccount19 .class, SecuritiesModificationQueryCriteria1 .class, SecuritiesModificationQueryDefinition1 .class, SecuritiesSettlementConditionsModificationRequestQueryV01 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, SystemPartyIdentification8 .class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:semt.030.001.01";
 
     public MxSemt03000101() {
         super();

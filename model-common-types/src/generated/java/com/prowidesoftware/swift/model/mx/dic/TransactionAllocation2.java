@@ -1,0 +1,229 @@
+
+package com.prowidesoftware.swift.model.mx.dic;
+
+import java.util.ArrayList;
+import java.util.List;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+
+/**
+ * Set of elements used to identify each underlying allocation.
+ * 
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "TransactionAllocation2", propOrder = {
+    "amt",
+    "cdtDbtInd",
+    "acct",
+    "purp",
+    "ref",
+    "rltdRefs"
+})
+public class TransactionAllocation2 {
+
+    @XmlElement(name = "Amt", required = true)
+    protected ActiveOrHistoricCurrencyAndAmount amt;
+    @XmlElement(name = "CdtDbtInd", required = true)
+    @XmlSchemaType(name = "string")
+    protected CreditDebitCode cdtDbtInd;
+    @XmlElement(name = "Acct", required = true)
+    protected CashAccount40 acct;
+    @XmlElement(name = "Purp", required = true)
+    protected Purpose2Choice purp;
+    @XmlElement(name = "Ref", required = true)
+    protected String ref;
+    @XmlElement(name = "RltdRefs")
+    protected List<References80Choice> rltdRefs;
+
+    /**
+     * Gets the value of the amt property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link ActiveOrHistoricCurrencyAndAmount }
+     *     
+     */
+    public ActiveOrHistoricCurrencyAndAmount getAmt() {
+        return amt;
+    }
+
+    /**
+     * Sets the value of the amt property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ActiveOrHistoricCurrencyAndAmount }
+     *     
+     */
+    public TransactionAllocation2 setAmt(ActiveOrHistoricCurrencyAndAmount value) {
+        this.amt = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the cdtDbtInd property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link CreditDebitCode }
+     *     
+     */
+    public CreditDebitCode getCdtDbtInd() {
+        return cdtDbtInd;
+    }
+
+    /**
+     * Sets the value of the cdtDbtInd property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link CreditDebitCode }
+     *     
+     */
+    public TransactionAllocation2 setCdtDbtInd(CreditDebitCode value) {
+        this.cdtDbtInd = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the acct property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link CashAccount40 }
+     *     
+     */
+    public CashAccount40 getAcct() {
+        return acct;
+    }
+
+    /**
+     * Sets the value of the acct property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link CashAccount40 }
+     *     
+     */
+    public TransactionAllocation2 setAcct(CashAccount40 value) {
+        this.acct = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the purp property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Purpose2Choice }
+     *     
+     */
+    public Purpose2Choice getPurp() {
+        return purp;
+    }
+
+    /**
+     * Sets the value of the purp property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Purpose2Choice }
+     *     
+     */
+    public TransactionAllocation2 setPurp(Purpose2Choice value) {
+        this.purp = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the ref property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getRef() {
+        return ref;
+    }
+
+    /**
+     * Sets the value of the ref property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public TransactionAllocation2 setRef(String value) {
+        this.ref = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the rltdRefs property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rltdRefs property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getRltdRefs().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link References80Choice }
+     * 
+     * 
+     * @return
+     *     The value of the rltdRefs property.
+     */
+    public List<References80Choice> getRltdRefs() {
+        if (rltdRefs == null) {
+            rltdRefs = new ArrayList<>();
+        }
+        return this.rltdRefs;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+    /**
+     * Adds a new item to the rltdRefs list.
+     * @see #getRltdRefs()
+     * 
+     */
+    public TransactionAllocation2 addRltdRefs(References80Choice rltdRefs) {
+        getRltdRefs().add(rltdRefs);
+        return this;
+    }
+
+}

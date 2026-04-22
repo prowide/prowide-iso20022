@@ -38,7 +38,7 @@ public class MxSemt02500101
     public static final transient int VARIANT = 1;
     public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {DateAndDateTimeChoice1Draft.class, DateAndPeriod1Choice1 .class, GenericIdentification301Draft.class, MxSemt02500101 .class, PartyIdentification1001 .class, PartyIdentification71Choice1 .class, Period21 .class, Period2Choice1 .class, PositionSearchCriteria21 .class, SecuritiesAccount191 .class, SecuritiesAccount2Choice1 .class, SecuritiesAccountPositionQueryV01 .class, SecuritiesBalanceType13Code1 .class, SecuritiesBalanceType7Choice1 .class, SecurityIdentification191 .class, Statement571 .class };
+    public static final transient Class[] _classes = new Class[] {AddressType2Code.class, CopyDuplicate1Code.class, DateAndDateTimeChoice.class, DateAndPeriod1Choice.class, DateTimePeriodDetails.class, DocumentIdentification11 .class, GenericIdentification30 .class, GenericIdentification36 .class, IdentificationSource3Choice.class, MxSemt02500101 .class, NameAndAddress5 .class, OtherIdentification1 .class, PartyIdentification100 .class, PartyIdentification71Choice.class, Period2 .class, Period2Choice.class, PositionSearchCriteria2 .class, PostalAddress1 .class, SecuritiesAccount19 .class, SecuritiesAccount2Choice.class, SecuritiesAccountPositionQueryV01 .class, SecuritiesAccountRange2 .class, SecuritiesBalanceType13Code.class, SecuritiesBalanceType7Choice.class, SecurityIdentification19 .class, Statement57 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class };
     public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:DRAFT5semt.025.001.01";
 
     public MxSemt02500101() {

@@ -1,0 +1,362 @@
+
+package com.prowidesoftware.swift.model.mx.dic;
+
+import java.util.ArrayList;
+import java.util.List;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+
+/**
+ * Security that is a sub-set of an investment fund, and is governed by the same investment fund policy, eg, dividend option or valuation currency.
+ * 
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "FinancialInstrument106", propOrder = {
+    "id",
+    "nm",
+    "shrtNm",
+    "splmtryId",
+    "dnmtnCcy",
+    "clssTp",
+    "sctiesForm",
+    "dstrbtnPlcy",
+    "dualFndInd",
+    "pdctGrp",
+    "srsId"
+})
+public class FinancialInstrument106 {
+
+    @XmlElement(name = "Id", required = true)
+    protected List<SecurityIdentification46Choice> id;
+    @XmlElement(name = "Nm")
+    protected String nm;
+    @XmlElement(name = "ShrtNm")
+    protected String shrtNm;
+    @XmlElement(name = "SplmtryId")
+    protected String splmtryId;
+    @XmlElement(name = "DnmtnCcy")
+    protected String dnmtnCcy;
+    @XmlElement(name = "ClssTp")
+    protected String clssTp;
+    @XmlElement(name = "SctiesForm")
+    @XmlSchemaType(name = "string")
+    protected FormOfSecurity1Code sctiesForm;
+    @XmlElement(name = "DstrbtnPlcy")
+    @XmlSchemaType(name = "string")
+    protected DistributionPolicy1Code dstrbtnPlcy;
+    @XmlElement(name = "DualFndInd")
+    protected boolean dualFndInd;
+    @XmlElement(name = "PdctGrp")
+    protected String pdctGrp;
+    @XmlElement(name = "SrsId")
+    protected Series1 srsId;
+
+    /**
+     * Gets the value of the id property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the id property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getId().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link SecurityIdentification46Choice }
+     * 
+     * 
+     * @return
+     *     The value of the id property.
+     */
+    public List<SecurityIdentification46Choice> getId() {
+        if (id == null) {
+            id = new ArrayList<>();
+        }
+        return this.id;
+    }
+
+    /**
+     * Gets the value of the nm property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getNm() {
+        return nm;
+    }
+
+    /**
+     * Sets the value of the nm property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public FinancialInstrument106 setNm(String value) {
+        this.nm = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the shrtNm property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getShrtNm() {
+        return shrtNm;
+    }
+
+    /**
+     * Sets the value of the shrtNm property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public FinancialInstrument106 setShrtNm(String value) {
+        this.shrtNm = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the splmtryId property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getSplmtryId() {
+        return splmtryId;
+    }
+
+    /**
+     * Sets the value of the splmtryId property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public FinancialInstrument106 setSplmtryId(String value) {
+        this.splmtryId = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the dnmtnCcy property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getDnmtnCcy() {
+        return dnmtnCcy;
+    }
+
+    /**
+     * Sets the value of the dnmtnCcy property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public FinancialInstrument106 setDnmtnCcy(String value) {
+        this.dnmtnCcy = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the clssTp property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getClssTp() {
+        return clssTp;
+    }
+
+    /**
+     * Sets the value of the clssTp property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public FinancialInstrument106 setClssTp(String value) {
+        this.clssTp = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the sctiesForm property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link FormOfSecurity1Code }
+     *     
+     */
+    public FormOfSecurity1Code getSctiesForm() {
+        return sctiesForm;
+    }
+
+    /**
+     * Sets the value of the sctiesForm property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link FormOfSecurity1Code }
+     *     
+     */
+    public FinancialInstrument106 setSctiesForm(FormOfSecurity1Code value) {
+        this.sctiesForm = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the dstrbtnPlcy property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link DistributionPolicy1Code }
+     *     
+     */
+    public DistributionPolicy1Code getDstrbtnPlcy() {
+        return dstrbtnPlcy;
+    }
+
+    /**
+     * Sets the value of the dstrbtnPlcy property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link DistributionPolicy1Code }
+     *     
+     */
+    public FinancialInstrument106 setDstrbtnPlcy(DistributionPolicy1Code value) {
+        this.dstrbtnPlcy = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the dualFndInd property.
+     * 
+     */
+    public boolean isDualFndInd() {
+        return dualFndInd;
+    }
+
+    /**
+     * Sets the value of the dualFndInd property.
+     * 
+     */
+    public FinancialInstrument106 setDualFndInd(boolean value) {
+        this.dualFndInd = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the pdctGrp property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getPdctGrp() {
+        return pdctGrp;
+    }
+
+    /**
+     * Sets the value of the pdctGrp property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public FinancialInstrument106 setPdctGrp(String value) {
+        this.pdctGrp = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the srsId property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Series1 }
+     *     
+     */
+    public Series1 getSrsId() {
+        return srsId;
+    }
+
+    /**
+     * Sets the value of the srsId property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Series1 }
+     *     
+     */
+    public FinancialInstrument106 setSrsId(Series1 value) {
+        this.srsId = value;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+    /**
+     * Adds a new item to the id list.
+     * @see #getId()
+     * 
+     */
+    public FinancialInstrument106 addId(SecurityIdentification46Choice id) {
+        getId().add(id);
+        return this;
+    }
+
+}
