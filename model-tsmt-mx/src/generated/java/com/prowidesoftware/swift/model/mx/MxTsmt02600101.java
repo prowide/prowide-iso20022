@@ -5,8 +5,11 @@ import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
 import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import com.prowidesoftware.swift.model.mx.MxReadImpl;
+import com.prowidesoftware.swift.model.mx.MxReadParams;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
@@ -28,7 +31,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:swift:xsd:tsmt.026.001.01")
 public class MxTsmt02600101
-    extends com.prowidesoftware.swift.model.mx.AbstractMX
+    extends AbstractMX
 {
 
     @XmlElement(name = "tsmt.026.001.01", required = true)
@@ -113,7 +116,7 @@ public class MxTsmt02600101
      * 
      */
     public static MxTsmt02600101 parse(String xml) {
-        return ((MxTsmt02600101) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxTsmt02600101 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams()));
+        return ((MxTsmt02600101) MxReadImpl.parse(MxTsmt02600101 .class, xml, _classes, new MxReadParams()));
     }
 
     /**
@@ -122,7 +125,7 @@ public class MxTsmt02600101
      * 
      */
     public static MxTsmt02600101 parse(String xml, MxReadConfiguration conf) {
-        return ((MxTsmt02600101) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxTsmt02600101 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams(conf)));
+        return ((MxTsmt02600101) MxReadImpl.parse(MxTsmt02600101 .class, xml, _classes, new MxReadParams(conf)));
     }
 
     /**
@@ -159,7 +162,7 @@ public class MxTsmt02600101
      *     a new instance of MxTsmt02600101
      */
     public static final MxTsmt02600101 fromJson(String json) {
-        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxTsmt02600101 .class);
+        return AbstractMX.fromJson(json, MxTsmt02600101 .class);
     }
 
     @Override
