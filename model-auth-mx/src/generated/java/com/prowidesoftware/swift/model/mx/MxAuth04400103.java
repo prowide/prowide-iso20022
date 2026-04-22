@@ -5,8 +5,11 @@ import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
 import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import com.prowidesoftware.swift.model.mx.MxReadImpl;
+import com.prowidesoftware.swift.model.mx.MxReadParams;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
@@ -28,7 +31,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:auth.044.001.03")
 public class MxAuth04400103
-    extends com.prowidesoftware.swift.model.mx.AbstractMX
+    extends AbstractMX
 {
 
     @XmlElement(name = "FinInstrmRptgEqtyTradgActvtyRslt", required = true)
@@ -113,7 +116,7 @@ public class MxAuth04400103
      * 
      */
     public static MxAuth04400103 parse(String xml) {
-        return ((MxAuth04400103) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxAuth04400103 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams()));
+        return ((MxAuth04400103) MxReadImpl.parse(MxAuth04400103 .class, xml, _classes, new MxReadParams()));
     }
 
     /**
@@ -122,7 +125,7 @@ public class MxAuth04400103
      * 
      */
     public static MxAuth04400103 parse(String xml, MxReadConfiguration conf) {
-        return ((MxAuth04400103) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxAuth04400103 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams(conf)));
+        return ((MxAuth04400103) MxReadImpl.parse(MxAuth04400103 .class, xml, _classes, new MxReadParams(conf)));
     }
 
     /**
@@ -159,7 +162,7 @@ public class MxAuth04400103
      *     a new instance of MxAuth04400103
      */
     public static final MxAuth04400103 fromJson(String json) {
-        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxAuth04400103 .class);
+        return AbstractMX.fromJson(json, MxAuth04400103 .class);
     }
 
     @Override
