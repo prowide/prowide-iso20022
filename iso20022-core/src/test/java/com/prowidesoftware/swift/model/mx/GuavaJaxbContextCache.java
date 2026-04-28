@@ -17,7 +17,7 @@ package com.prowidesoftware.swift.model.mx;
 
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
-import jakarta.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBContext;
 import java.util.concurrent.ExecutionException;
 
 /**
