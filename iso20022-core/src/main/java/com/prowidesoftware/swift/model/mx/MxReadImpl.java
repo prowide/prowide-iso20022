@@ -55,10 +55,7 @@ public class MxReadImpl implements MxRead {
     /**
      * Static parse implementation of {@link MxRead#read(Class, String, Class[])}
      *
-     * @param targetClass the specific MX subclass to instantiate
-     * @param xml         the XML to parse, should contain the Document, and optional AppHdr and any type of wrapper elements
-     * @param classes     the JAXB context classes for the target message type
-     * @return parsed message or null if parsing fails
+     * @param xml the XML to parse, should contain the Document, and optional AppHdr and any type of wrapper elements
      * @since 8.0.4
      */
     public static AbstractMX parse(
@@ -67,13 +64,6 @@ public class MxReadImpl implements MxRead {
     }
 
     /**
-     * Static parse implementation with custom read parameters.
-     *
-     * @param targetClass the specific MX subclass to instantiate
-     * @param xml         the XML to parse, should contain the Document, and optional AppHdr and any type of wrapper elements
-     * @param classes     the JAXB context classes for the target message type
-     * @param params      unmarshalling parameters
-     * @return parsed message or null if parsing fails
      * @since 9.2.6
      */
     public static AbstractMX parse(
@@ -116,8 +106,6 @@ public class MxReadImpl implements MxRead {
     /**
      * Static parse implementation of {@link MxRead#read(String, MxId)}
      *
-     * @param xml the XML content to parse
-     * @param id  optional MX type identification; autodetected from namespace if null
      * @return parsed message or null if XML is malformed or unrecognized as MX message
      * @throws IllegalArgumentException if the XML parameter is blank
      * @throws NullPointerException     if the XML parameter is null
@@ -128,12 +116,6 @@ public class MxReadImpl implements MxRead {
     }
 
     /**
-     * Static parse with custom read parameters and optional MX type identification.
-     *
-     * @param xml    the XML content to parse
-     * @param id     optional MX type identification; autodetected from namespace if null
-     * @param params unmarshalling parameters
-     * @return parsed message or null if the message type cannot be determined or parsing fails
      * @since 9.2.6
      */
     public static AbstractMX parse(final String xml, final MxId id, final MxReadParams params) {

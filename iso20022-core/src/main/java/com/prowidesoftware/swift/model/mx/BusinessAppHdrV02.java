@@ -18,6 +18,11 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.ProwideException;
 import com.prowidesoftware.swift.model.mx.dic.BusinessApplicationHeaderV02Impl;
 import com.prowidesoftware.swift.model.mx.dic.Party44Choice;
+import java.io.StringWriter;
+import java.util.Arrays;
+import java.util.Objects;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
@@ -26,13 +31,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import java.io.StringWriter;
-import java.time.OffsetDateTime;
-import java.time.ZoneOffset;
-import java.util.Arrays;
-import java.util.Objects;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.namespace.QName;
 import javax.xml.transform.dom.DOMResult;
 import org.apache.commons.lang3.StringUtils;
@@ -48,17 +47,18 @@ import org.w3c.dom.Element;
 @XmlType(name = "AppHdr")
 @XmlRootElement(name = "AppHdr", namespace = "urn:iso:std:iso:20022:tech:xsd:head.001.001.02")
 public class BusinessAppHdrV02 extends BusinessApplicationHeaderV02Impl implements AppHdr {
-    public static final String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:head.001.001.02";
-    static final Class[] _classes;
-    private static final Logger log = Logger.getLogger(BusinessAppHdrV02.class.getName());
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:head.001.001.02";
 
     /**
      * When true, the {@code CreDt} element is serialized using Zulu timezone with the "Z" indicator
-     * instead of the default offset format. Typically enabled for T2/RTGS systems.
+     * instead of the default offset format.
      *
-     * @since 10.3.6
+     * @since 9.6.4
      */
     private transient boolean useZuluCreationDateTime = false;
+
+    static final transient Class[] _classes;
+    private static final transient Logger log = Logger.getLogger(BusinessAppHdrV02.class.getName());
 
     static {
         _classes = Arrays.copyOf(
@@ -193,7 +193,7 @@ public class BusinessAppHdrV02 extends BusinessApplicationHeaderV02Impl implemen
      * @see #getCreDt()
      */
     @Override
-    public OffsetDateTime creationDate() {
+    public XMLGregorianCalendar creationDate() {
         return this.getCreDt();
     }
 
@@ -201,18 +201,18 @@ public class BusinessAppHdrV02 extends BusinessApplicationHeaderV02Impl implemen
      * Sets the creation date.
      *
      * @param overwrite if true, the creation date will always be set overwriting any previous value;
-     * @see #setCreDt(OffsetDateTime)
+     * @see #setCreDt(XMLGregorianCalendar)
      */
     @Override
     public void setCreationDate(boolean overwrite) {
         if (this.getCreDt() == null || overwrite) {
-            this.setCreDt(OffsetDateTime.now(ZoneOffset.UTC));
+            this.setCreDt(XMLGregorianCalendarUtils.now());
         }
     }
 
     /**
      * @return true if the {@code CreDt} element is serialized with Zulu timezone "Z" indicator
-     * @since 10.3.6
+     * @since 9.6.4
      */
     public boolean isUseZuluCreationDateTime() {
         return useZuluCreationDateTime;
@@ -220,7 +220,7 @@ public class BusinessAppHdrV02 extends BusinessApplicationHeaderV02Impl implemen
 
     /**
      * @param useZuluCreationDateTime true to serialize the {@code CreDt} element with Zulu timezone "Z" indicator
-     * @since 10.3.6
+     * @since 9.6.4
      */
     public void setUseZuluCreationDateTime(boolean useZuluCreationDateTime) {
         this.useZuluCreationDateTime = useZuluCreationDateTime;
@@ -263,10 +263,6 @@ public class BusinessAppHdrV02 extends BusinessApplicationHeaderV02Impl implemen
     }
 
     /**
-     * Gets the header as a DOM Element, using the given JAXB context.
-     *
-     * @param inputContext optional JAXB context to use for marshalling, or null to create a default one
-     * @return DOM Element representing this header, or null if marshalling fails
      * @since 9.3.5
      */
     public Element element(JAXBContext inputContext) {

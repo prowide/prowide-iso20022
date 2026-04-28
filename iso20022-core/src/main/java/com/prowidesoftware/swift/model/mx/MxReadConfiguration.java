@@ -46,9 +46,7 @@ public class MxReadConfiguration {
     }
 
     /**
-     * Propagates the adapters from write to read configuration.
-     *
-     * @param writeConf the write configuration whose adapters and context will be propagated
+     * Propagates the adapters from write to read configuration
      */
     public MxReadConfiguration(MxWriteConfiguration writeConf) {
         this.adapters = writeConf.adapters;

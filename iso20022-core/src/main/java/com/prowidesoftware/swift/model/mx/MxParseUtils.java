@@ -25,8 +25,6 @@ import com.prowidesoftware.swift.model.SettlementInfo;
 import com.prowidesoftware.swift.model.SettlementMethod;
 import com.prowidesoftware.swift.model.mt.AbstractMT;
 import com.prowidesoftware.swift.utils.SafeXmlUtils;
-import javax.xml.bind.*;
-import javax.xml.bind.annotation.adapters.XmlAdapter;
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.*;
@@ -36,6 +34,8 @@ import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+import javax.xml.bind.*;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamException;
@@ -204,24 +204,24 @@ public class MxParseUtils {
      * <p><b>Important:</b> For JAXB classes that only have {@code @XmlType} annotation (not {@code @XmlRootElement}),
      * such as {@code SwIntWaitResponse}, you may need to create a wrapper class with {@code @XmlRootElement} annotation
      * in your project. Example:
-     * <pre>
-     * &#64;XmlRootElement(name = "WaitResponse", namespace = "urn:swift:snl:ns.SwInt")
-     * &#64;XmlAccessorType(XmlAccessType.FIELD)
+     * <pre>{@code
+     * @XmlRootElement(name = "WaitResponse", namespace = "urn:swift:snl:ns.SwInt")
+     * @XmlAccessorType(XmlAccessType.FIELD)
      * public class WaitResponseWrapper {
-     *     &#64;XmlElement(name = "SwiftRequestRef")
+     *     @XmlElement(name = "SwiftRequestRef")
      *     private String swiftRequestRef;
      *     // getters and setters, plus any other fields you need
      * }
      *
      * // Then use it:
-     * String xml = "&lt;Data&gt;&lt;WaitResponse xmlns=\"urn:swift:snl:ns.SwInt\"&gt;...&lt;/WaitResponse&gt;&lt;/Data&gt;";
+     * String xml = "<Data><WaitResponse xmlns=\"urn:swift:snl:ns.SwInt\">...</WaitResponse></Data>";
      * WaitResponseWrapper response = MxParseUtils.parseElement(
      *     WaitResponseWrapper.class,
      *     xml,
      *     "WaitResponse",
-     *     new Class&lt;?&gt;[] { WaitResponseWrapper.class }
+     *     new Class<?>[] { WaitResponseWrapper.class }
      * );
-     * </pre>
+     * }</pre>
      *
      * @param <T> the type of the element being parsed
      * @param targetClass the class to parse (must have {@code @XmlRootElement} or be wrapped in a class that does)
@@ -283,8 +283,7 @@ public class MxParseUtils {
      * <p>
      * The implementation is intended to be lightweight and efficient, based on {@link XMLStreamReader}
      *
-     * @param xml the XML content to identify
-     * @return id with the detected MX message type or empty if it cannot be determined
+     * @return id with the detected MX message type or empty if it cannot be determined.
      */
     public static Optional<MxId> identifyMessage(final String xml) {
         Optional<String> namespace = NamespaceReader.findDocumentNamespace(xml);
@@ -571,11 +570,8 @@ public class MxParseUtils {
     /**
      * This method is deprecated because it is not a good idea to return the reader, that we are opening inside the
      * method leaving the responsibility of closing it to the caller; where the caller probably just wants the value
-     * of the element.
+     * of the element
      *
-     * @param xml  the XML content to search
-     * @param tags ordered sequence of element local names to match hierarchically
-     * @return the positioned reader at the matching element, or empty if not found
      * @deprecated use {@link #findByTags(String, String...)} instead
      */
     @Deprecated
@@ -714,11 +710,7 @@ public class MxParseUtils {
     /**
      * This method is deprecated because it is not a good idea to return the reader, that we are opening inside the
      * method leaving the responsibility of closing it to the caller; where the caller probably just wants the value
-     * of the element.
-     *
-     * @param xml        the XML content to search
-     * @param targetPath absolute or relative path expression to find (e.g. "/Document/CstmrCdtTrfInitn")
-     * @return the positioned reader at the matching element, or empty if not found
+     * of the element
      * @deprecated use {@link #findByTags(String, String...)} instead
      */
     @Deprecated

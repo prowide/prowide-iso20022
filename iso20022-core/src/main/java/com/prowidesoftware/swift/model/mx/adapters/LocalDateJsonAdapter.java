@@ -20,8 +20,7 @@ import java.lang.reflect.Type;
 import java.time.LocalDate;
 
 /**
- * Gson {@link JsonSerializer} and {@link JsonDeserializer} for {@link LocalDate}, converting
- * to/from a JSON object with {@code year}, {@code month}, and {@code day} integer fields.
+ * This adapter enables accepting LocalDate time Json format.
  *
  * @since 10.1.0
  */
@@ -29,15 +28,6 @@ public class LocalDateJsonAdapter implements JsonSerializer<LocalDate>, JsonDese
 
     private final Gson gson = new Gson();
 
-    /**
-     * Serializes a {@link LocalDate} to a JSON object with {@code year}, {@code month}, and
-     * {@code day} integer fields.
-     *
-     * @param localDate the date to serialize
-     * @param typeOfSrc the type of the source object
-     * @param context   the serialization context
-     * @return a JSON object representing the date
-     */
     @Override
     public JsonElement serialize(LocalDate localDate, Type typeOfSrc, JsonSerializationContext context) {
         DateDTO date = new DateDTO();
@@ -47,16 +37,6 @@ public class LocalDateJsonAdapter implements JsonSerializer<LocalDate>, JsonDese
         return gson.toJsonTree(date, DateDTO.class);
     }
 
-    /**
-     * Deserializes a JSON object with {@code year}, {@code month}, and {@code day} integer fields
-     * into a {@link LocalDate}.
-     *
-     * @param jsonElement the JSON element to deserialize
-     * @param typeOfT     the type of the desired object
-     * @param context     the deserialization context
-     * @return the deserialized {@link LocalDate}
-     * @throws JsonParseException if the JSON is not in the expected format
-     */
     @Override
     public LocalDate deserialize(
             final JsonElement jsonElement, final Type typeOfT, final JsonDeserializationContext context)

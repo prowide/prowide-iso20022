@@ -1,72 +1,62 @@
 # Prowide ISO 20022 - CHANGELOG
 
-### 10.3.6 - April 2026
+### 9.6.4 - April 2026
   * (PW-3133) Feat: Added `useZuluCreationDateTime` flag on `BusinessAppHdrV01`..`V04` to marshal `CreDt` with "Z" timezone (default true on V01)
 
-### 10.3.5 - March 2026
+### 9.6.3 - April 2026
   * (PW-3123) Feat: MX duplicate detection via `checksum()` and `checksumBody()` with XML canonicalization in `DefaultMxMetadataStrategy`
+  * (PW-2371) Feat: `MxSwiftMessage` now automatically extracts and persists UETR from MX messages during parsing
   * Feat: Added `MxNode.getLocalName()` getter for XML node name access
   * Feat: Added 12 new semt message types; semt.025 through semt.034, semt.040, semt.044 (T2 drafts)
   * Feat: Added supl.021.001.01 message type
-  * Feat: Added 6 new message versions of xsys messages (few model dictionary classes renamed in consequence)
+  * Feat: Added six new message versions of xsys messages (few model dictionary classes renamed in consequence)
 
-### 10.3.4 - January 2026
-  * (PW-2371) Feat: `MxSwiftMessage` now automatically extracts and persists UETR from MX messages during parsing
-  * Update gson dependency from 2.13.1 to 2.13.2
-  * Update jaxb dependency from com.sun.xml.bind:jaxb-impl:4.0.5 to 4.0.6
-  * Update commons-lang3 dependency from 3.17.0 to 3.20.0
-
-### 10.3.3 - November 2025
+### 9.6.2 - November 2025
   * (PW-2895) Fix namespace prefix handling for custom envelope types in XML serialization
   * (PW-2731) Enhanced camt.057 amount extraction to fallback to Itm/Amt when TtlAmt is not present
   * (GH-174) Fix: MinimumEscapeHandler duplicating quote characters in non-attribute contexts
   * (GH-168) Fix: MX parsing error when AppHdr appears before Document element in xsys messages
   * (GH-165) Added MxParseUtils.parseElement to parse standalone JAXB elements like SwIntWaitResponse from non-standard wrapper structures
-
-### 10.3.2 - October 2025
   * (PW-2810) Fix: ISODateTime fractional seconds losing trailing zeros during XML serialization, milliseconds now padded to exactly 3 digits.
 
-### 10.3.1 - September 2025
+### 9.6.1 - October 2025
   * (PW-2637) Fix: do not consider copy duplicate flag (CpyDplct) in app header to mark the header a duplicate
   * Feat: Enhanced the `MxParseUtils` to be lenient when the XML declaration has empty or invalid version attribute
 
-#### 10.3.0 - May 2025
+#### 9.6.0 - June 2025
   * SWIFT Standard release update 2025 (live 22 November 2025)
   * Yearly revision of deprecation phase (see https://dev.prowidesoftware.com/SRU2024/getting-started/deprecation/)
-  * Dependency update: commons-lang3 -> 3.17.0
-  * Dependency update: gson -> 2.13.1
 
-#### 10.2.7 - April 2025
+#### 9.5.7 - April 2025
   * Enhanced the MX parser log verbosity when parsing malformed content
   * Added new logic to MxNode to removing all leaves with empty attributes and empty content
 
-#### 10.2.6 - January 2025
+#### 9.5.6 - January 2025
   * Changed the `MxParseUtils` findByTags and findByPath methods to return the element values instead of the XML stream object
 
-#### 10.2.5 - January 2025
+#### 9.5.5 - January 2025
   * (PW-2113) `MxParseUtils` added a method to extract the enclosed MT from a multi-format MX message
   * (PW-2113) `MxParseUtils` added methods to extract comments from XML string
   * Added new SettlementInfo class, and added MxParseUtils#getSettlementInfo to extract it from a raw MX message.
-  * Moved and enhanced the MxSwiftMessage#findElement to support multiple element's path
+  * Moved and enhanced the MxSwiftMessage#findElement to support multiple element's path 
   * Update apache-commons-lang3 from 3.14.0 to 3.17.0 fixing derived apache-text dependency vulnerabilities
   * Gradle wrapper update to 8.12
+ 
+#### 9.5.4 - August 2024
+  * (PW-1958) Fixed the `DefaultMxMetadataStrategy` NPE issue when the amount values are null
 
-#### 10.2.4 - November 2024
-  * (GH-118) Added `toJsonV9` and `fromJsonV9` in the `AbstractMX` to handle retro-compatibility with Java 8 DateTime elements in JSON serialization
-
-#### 10.2.3 - August 2024
-
-#### 10.2.2 - August 2024
+#### 9.5.3 - August 2024
   * (PW-1947) Updated MX model with latest SWIFT SRU2024 schema update, including new messages such as trck.001.001.03
-  * (PW-1933) Fix backward compatibility issue on DateTime fields when doing JSON to model conversion (thanks @elominp)
-  * (PW-1875) Fixed the `ZuluDateTimeAdapter` to convert the datetime to UTC offset if needed
   * Add support for Business Application Header version head.001.001.04
 
-#### 10.2.1 - June 2024
+#### 9.5.2 - June 2024
+  * (PW-1875) Fixed the `ZuluDateTimeAdapter` to convert the datetime to UTC offset if needed
+
+#### 9.5.1 - June 2024
   * Enhanced the AppHdrFactory to honor the business service set in the parameter MxId
   * Enhanced the MxParseUtils#identifyMessage to set the business service in the MxId when present
 
-#### 10.2.0 - May 2024
+#### 9.5.0 - May 2024
   * SWIFT Standard release update 2024 (live 16 November 2024)
   * Yearly revision of deprecation phase (see https://dev.prowidesoftware.com/SRU2024/getting-started/deprecation/)
   * Added message categories for File Management (cafm), Fraud Reporting and Disposition (cafm), Network Management (canm), and Settlement Reporting (casr)
@@ -76,36 +66,25 @@
   * Dependency update: commons-lang3 -> 3.14.0
   * Dependency update: gson -> 2.11.0
 
-#### 10.1.6 - May 2024
+#### 9.4.5 - May 2024
   * (PW-1875) Changed the BusinessApplicationHeaderV01 marshaller to always use Zulu timezone with "Z" indicator
-
-#### 10.1.5 - April 2024
-  * Update jaxb dependency from com.sun.xml.bind:jaxb-impl:4.0.2 to 4.0.5 containing several jaxb bugfixes
-
-#### 10.1.4 - January 2024
+ 
+#### 9.4.4 - January 2024
   * Enhanced the identifier extraction of the MxSwiftMessage to use the AppHdr when the Document namespace is missing
   * Enhanced the generic AbstractMX#parse to detect the message type from the AppHdr when the Document namespace is missing
   * Added default metadata extraction implementation for pacs and camt amounts and value dates
   * Added default methods for sender, receiver, and identifier extraction to the MxSwiftMessage.
   * Replaced the DistinguishedName parse logic with proprietary util class from the Prowide Core library
 
-#### 10.1.3 - August 2023
-  * (PW-1566) Fixed manipulation of nanoseconds in the OffsetTime and OffsetDateTime adapters
+#### 9.4.3 - August 2023
   * Enhanced metadata extraction for xsys messages getting sender/receiver BICs from the RequestHeader element
   * Make the message metadata extraction lenient, by fixing the XML instruction of the payload when it contains invalid case
 
-#### 10.1.2 - August 2023
+#### 9.4.2 - July 2023
   * Added new utility class SupplementaryDataUtils to facilitate "SplmtryData" extraction from MX messages
 
-#### 10.1.1 - July 2023
+#### 9.4.1 - June 2023
   * (PW-1392) Fixed the default escape handler when serializing model objects into XML, that was duplicated quote characters in the output
-
-#### 10.1.0 - June 2023
-  * Migration to Java 11
-  * Migration to Jakarta EE 10
-  * XmlGregorianCalendar was replaced model-wide by the new java.time classes
-  * Fixed AppHdrFactory creation to use UTC in the header default creation date time
-  * Fixed the business application header V01 serialization to use Zulu time indicator instead of +00:00 offset
 
 #### 9.4.0 - May 2023
   * SWIFT Standard release update 2023 (live 19 November 2023)

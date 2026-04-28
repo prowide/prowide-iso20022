@@ -15,9 +15,9 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
+import java.util.concurrent.ExecutionException;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
-import java.util.concurrent.ExecutionException;
 
 /**
  * Cache for {@link javax.xml.bind.JAXBContext} instances per message type.
@@ -38,7 +38,7 @@ public interface JaxbContextCache {
      *
      * <p>The classes parameter is used to avoid reflection and improve performance. Can be used when the set of
      * jaxb generated classes for a specific model is known. This is the case for MX messages, where the set of classes
-     * is available in the AbstractMX subclass. Thus, when the classes array is received, the context can be created
+     * is available in the AbstractMX subclass. Thus when the classes array is received, the context can be created
      * directly with: <code>JAXBContext.newInstance(classes)</code>. And the messageClass can be used as key.
      *
      * <p>When the classes parameter is not available, the context can be created with:
@@ -47,8 +47,8 @@ public interface JaxbContextCache {
      * @param messageClass class of the message to be read or written, cannot be null
      * @param classes      comprehensive list of classes for the context, null or empty to create a context with the messageClass
      * @return cached context for the message type
-     * @throws JAXBException      if JAXB context creation fails
-     * @throws ExecutionException if a cached computation fails
+     * @throws JAXBException
+     * @throws ExecutionException
      */
     JAXBContext get(final Class messageClass, final Class<?>[] classes) throws JAXBException, ExecutionException;
 }

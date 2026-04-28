@@ -111,9 +111,6 @@ public class NamespaceReader {
     }
 
     /**
-     * @param xml       the XML content to search
-     * @param localName the element local name to find
-     * @return true if the element exists in the XML
      * @deprecated use {@link MxParseUtils#elementExists(String, String)} instead
      */
     @Deprecated
