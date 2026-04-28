@@ -22,9 +22,9 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * - a custodian managing securities financing transactions on behalf of an investment management institution or a broker/dealer.
  * 
  * USAGE
- * The message may also be used to: 
- * - re-send a message previously sent (the sub-function of the message is Duplicate) 
- * - provide a third party with a copy of a message for information (the sub-function of the message is Copy) 
+ * The message may also be used to: 
+ * - re-send a message previously sent (the sub-function of the message is Duplicate) 
+ * - provide a third party with a copy of a message for information (the sub-function of the message is Copy) 
  * - re-send to a third party a copy of a message for information (the sub-function of the message is Copy Duplicate).
  * 
  * ISO 15022 - 20022 COEXISTENCE

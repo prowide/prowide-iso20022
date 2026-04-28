@@ -15,8 +15,8 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
  * The SecuritiesAccountCreationRequest message message is sent by an instructing party to the executing party to instruct the creation of a new securities account with the required account attributes details.
- * 
- * Usage:
+ * 
+ * Usage:
  * Processing and confirmation of the securities account creation request message are provided via a SecuritiesAccountStatusAdvice message.
  * 
  * 
