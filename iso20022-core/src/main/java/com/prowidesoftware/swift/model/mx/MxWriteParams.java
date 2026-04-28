@@ -16,7 +16,7 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.swift.model.mx.adapters.TypeAdaptersConfiguration;
-import javax.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBContext;
 
 /**
  * Simple DTO to encapsulate parameters in the different model-to-XML serialization implementation methods in the API
@@ -57,6 +57,7 @@ public class MxWriteParams {
      */
     public String indent = XmlEventWriter.DEFAULT_INDENT;
 
+    /** Creates params with default write configuration options. */
     public MxWriteParams() {
         this(new MxWriteConfiguration());
     }
@@ -70,5 +71,22 @@ public class MxWriteParams {
         this.adapters = notNullConf.adapters;
         this.context = notNullConf.context;
         this.indent = notNullConf.indent;
+    }
+
+    /**
+     * Shallow copy of another instance. The adapters configuration is shared by reference;
+     * assign a new {@link TypeAdaptersConfiguration} on the copy before mutating adapters
+     * to avoid altering the source.
+     *
+     * @param other instance to copy; must not be null
+     * @since 10.3.6
+     */
+    public MxWriteParams(MxWriteParams other) {
+        this.prefix = other.prefix;
+        this.includeXMLDeclaration = other.includeXMLDeclaration;
+        this.escapeHandler = other.escapeHandler;
+        this.context = other.context;
+        this.adapters = other.adapters;
+        this.indent = other.indent;
     }
 }

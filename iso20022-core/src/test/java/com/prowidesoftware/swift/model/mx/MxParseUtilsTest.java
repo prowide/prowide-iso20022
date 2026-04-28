@@ -1113,10 +1113,10 @@ public class MxParseUtilsTest {
      * Wrapper class with @XmlRootElement to wrap SwIntWaitResponse
      * This demonstrates a workaround for parsing elements without @XmlRootElement
      */
-    @javax.xml.bind.annotation.XmlRootElement(name = "WaitResponse", namespace = "urn:swift:snl:ns.SwInt")
-    @javax.xml.bind.annotation.XmlAccessorType(javax.xml.bind.annotation.XmlAccessType.FIELD)
+    @jakarta.xml.bind.annotation.XmlRootElement(name = "WaitResponse", namespace = "urn:swift:snl:ns.SwInt")
+    @jakarta.xml.bind.annotation.XmlAccessorType(jakarta.xml.bind.annotation.XmlAccessType.FIELD)
     public static class WaitResponseWrapper {
-        @javax.xml.bind.annotation.XmlElement(name = "SwiftRequestRef")
+        @jakarta.xml.bind.annotation.XmlElement(name = "SwiftRequestRef")
         private String swiftRequestRef;
 
         public String getSwiftRequestRef() {

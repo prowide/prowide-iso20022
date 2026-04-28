@@ -59,6 +59,8 @@ public class MxNode {
     /**
      * Parses the complete message content into an {@link MxNode} tree structure.
      *
+     * @param xml the XML content to parse
+     * @return the root node of the parsed tree, or null if parsing fails
      * @since 9.1.2
      */
     public static MxNode parse(final String xml) {
@@ -284,6 +286,7 @@ public class MxNode {
     }
 
     /**
+     * @return the attributes map or null if no attributes have been set
      * @since 7.8
      */
     public Map<String, String> getAttributes() {
@@ -291,6 +294,7 @@ public class MxNode {
     }
 
     /**
+     * @param attributes the attributes map to set
      * @since 7.8
      */
     public void setAttributes(Map<String, String> attributes) {
@@ -299,8 +303,10 @@ public class MxNode {
 
     /**
      * Adds the given attribute to the node.
-     * If an attribute already exist with the same local name, its value is updated.
+     * If an attribute already exists with the same local name, its value is updated.
      *
+     * @param name  the attribute local name
+     * @param value the attribute value
      * @since 7.8
      */
     public void addAttribute(final String name, final String value) {
@@ -312,6 +318,7 @@ public class MxNode {
     }
 
     /**
+     * @param name the attribute local name to look up
      * @return found attribute value or null if not found or node does not contain attributes
      * @since 7.8
      */

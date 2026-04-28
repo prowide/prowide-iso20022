@@ -16,7 +16,7 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.swift.model.mx.adapters.TypeAdaptersConfiguration;
-import javax.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBContext;
 
 /**
  * Options to customize the behaviour of the MX parser (XML into model) in the {@link AbstractMX} and its specific
@@ -46,7 +46,9 @@ public class MxReadConfiguration {
     }
 
     /**
-     * Propagates the adapters from write to read configuration
+     * Propagates the adapters from write to read configuration.
+     *
+     * @param writeConf the write configuration whose adapters and context will be propagated
      */
     public MxReadConfiguration(MxWriteConfiguration writeConf) {
         this.adapters = writeConf.adapters;

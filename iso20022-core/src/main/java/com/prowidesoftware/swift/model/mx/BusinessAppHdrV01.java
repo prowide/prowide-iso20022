@@ -16,24 +16,23 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.ProwideException;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import com.prowidesoftware.swift.model.mx.adapters.ZuluDateTimeAdapter;
 import com.prowidesoftware.swift.model.mx.dic.BusinessApplicationHeaderV01Impl;
 import com.prowidesoftware.swift.model.mx.dic.Party9Choice;
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBElement;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Marshaller;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlType;
 import java.io.StringWriter;
+import java.time.OffsetDateTime;
+import java.time.ZoneOffset;
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBElement;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.namespace.QName;
 import javax.xml.transform.dom.DOMResult;
 import org.apache.commons.lang3.StringUtils;
@@ -49,9 +48,18 @@ import org.w3c.dom.Element;
 @XmlType(name = "AppHdr")
 @XmlRootElement(name = "AppHdr", namespace = "urn:iso:std:iso:20022:tech:xsd:head.001.001.01")
 public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implements AppHdr {
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:head.001.001.01";
-    static final transient Class[] _classes;
+    public static final String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:head.001.001.01";
+    static final Class[] _classes;
     private static final transient Logger log = Logger.getLogger(BusinessAppHdrV01.class.getName());
+
+    /**
+     * When true, the {@code CreDt} element is serialized using Zulu timezone with the "Z" indicator
+     * instead of the default offset format.
+     * Defaults to true for BAH V01 as per the ISONormalisedDateTime requirement (PW-1875).
+     *
+     * @since 10.3.6
+     */
+    private transient boolean useZuluCreationDateTime = true;
 
     static {
         _classes = Arrays.copyOf(
@@ -167,7 +175,7 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
      * @see #getCreDt()
      */
     @Override
-    public XMLGregorianCalendar creationDate() {
+    public OffsetDateTime creationDate() {
         return this.getCreDt();
     }
 
@@ -175,40 +183,54 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
      * Sets the creation date.
      *
      * @param overwrite if true, the creation date will always be set overwriting any previous value;
-     * @see #setCreDt(XMLGregorianCalendar)
+     * @see #setCreDt(OffsetDateTime)
      */
     @Override
     public void setCreationDate(boolean overwrite) {
         if (this.getCreDt() == null || overwrite) {
-            this.setCreDt(XMLGregorianCalendarUtils.now());
+            this.setCreDt(OffsetDateTime.now(ZoneOffset.UTC));
         }
+    }
+
+    /**
+     * @return true if the {@code CreDt} element is serialized with Zulu timezone "Z" indicator
+     * @since 10.3.6
+     */
+    public boolean isUseZuluCreationDateTime() {
+        return useZuluCreationDateTime;
+    }
+
+    /**
+     * @param useZuluCreationDateTime true to serialize the {@code CreDt} element with Zulu timezone "Z" indicator
+     * @since 10.3.6
+     */
+    public void setUseZuluCreationDateTime(boolean useZuluCreationDateTime) {
+        this.useZuluCreationDateTime = useZuluCreationDateTime;
     }
 
     @Override
     public String xml(MxWriteParams params) {
+        MxWriteParams effective = this.useZuluCreationDateTime ? MxWriteUtils.withZuluDateTimeAdapter(params) : params;
         try {
             JAXBContext context;
-            IsoDateTimeAdapter currentAdapter = params.adapters.dateTimeAdapter;
-            params.adapters.dateTimeAdapter = new IsoDateTimeAdapter(new ZuluDateTimeAdapter());
-            if (params.context != null) {
-                context = params.context;
+            if (effective.context != null) {
+                context = effective.context;
             } else {
                 context = JAXBContext.newInstance(BusinessApplicationHeaderV01Impl.class);
             }
-            final Marshaller marshaller = MxWriteUtils.createMarshaller(context, params);
+            final Marshaller marshaller = MxWriteUtils.createMarshaller(context, effective);
 
             final StringWriter sw = new StringWriter();
             JAXBElement<BusinessApplicationHeaderV01Impl> element = new JAXBElement(
                     new QName(NAMESPACE, AppHdr.HEADER_LOCALNAME), BusinessApplicationHeaderV01Impl.class, null, this);
             XmlEventWriter eventWriter = new XmlEventWriter(
                     sw,
-                    params.prefix,
-                    params.includeXMLDeclaration,
+                    effective.prefix,
+                    effective.includeXMLDeclaration,
                     AppHdr.HEADER_LOCALNAME,
-                    params.escapeHandler,
-                    params.indent);
+                    effective.escapeHandler,
+                    effective.indent);
             marshaller.marshal(element, eventWriter);
-            params.adapters.dateTimeAdapter = currentAdapter;
             return sw.getBuffer().toString();
 
         } catch (JAXBException e) {
@@ -223,6 +245,10 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
     }
 
     /**
+     * Gets the header as a DOM Element, using the given JAXB context.
+     *
+     * @param inputContext optional JAXB context to use for marshalling, or null to create a default one
+     * @return DOM Element representing this header, or null if marshalling fails
      * @since 9.3.5
      */
     public Element element(JAXBContext inputContext) {

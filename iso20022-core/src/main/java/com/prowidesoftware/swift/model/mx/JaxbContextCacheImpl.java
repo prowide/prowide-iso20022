@@ -15,10 +15,10 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBException;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
 
 /**
  * Simple cache based on {@link ConcurrentHashMap} without eviction. This implementation is aimed to avoid additional
@@ -64,9 +64,10 @@ public class JaxbContextCacheImpl implements JaxbContextCache {
     }
 
     /**
-     * Drops the cached context for the specific MX implementation class
+     * Drops the cached context for the specific MX implementation class.
      *
-     * @return the remove context, if it was present, or null otherwise
+     * @param clazz the MX class whose cached context should be removed
+     * @return the removed context, if it was present, or null otherwise
      */
     public JAXBContext clear(Class clazz) {
         if (cachedMap != null) {

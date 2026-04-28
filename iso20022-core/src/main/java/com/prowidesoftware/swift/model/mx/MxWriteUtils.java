@@ -15,10 +15,13 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
-import javax.xml.bind.annotation.adapters.XmlAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.TypeAdaptersConfiguration;
+import com.prowidesoftware.swift.model.mx.adapters.ZuluOffsetDateTimeAdapter;
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Marshaller;
+import jakarta.xml.bind.annotation.adapters.XmlAdapter;
 
 /**
  * Reusable code for marshalling methods
@@ -37,5 +40,19 @@ class MxWriteUtils {
         }
 
         return marshaller;
+    }
+
+    /**
+     * Builds a copy of the given params with a Zulu datetime adapter swapped in, leaving
+     * the caller's {@link MxWriteParams} and its {@link TypeAdaptersConfiguration} untouched.
+     * This avoids mutating shared configuration state during marshalling.
+     *
+     * @since 10.3.6
+     */
+    static MxWriteParams withZuluDateTimeAdapter(final MxWriteParams params) {
+        MxWriteParams copy = new MxWriteParams(params);
+        copy.adapters = new TypeAdaptersConfiguration(params.adapters);
+        copy.adapters.dateTimeAdapter = new IsoDateTimeAdapter(new ZuluOffsetDateTimeAdapter());
+        return copy;
     }
 }
