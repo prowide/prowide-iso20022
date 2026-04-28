@@ -1,31 +1,32 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for DTCCPayoutType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="DTCCPayoutType1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="CASH"/>
- *     <enumeration value="DIVI"/>
- *     <enumeration value="ROCA"/>
- *     <enumeration value="STCG"/>
- *     <enumeration value="LTCG"/>
- *     <enumeration value="CAPG"/>
- *     <enumeration value="PREM"/>
- *     <enumeration value="PRPL"/>
- *     <enumeration value="INTR"/>
- *     <enumeration value="FLFR"/>
- *     <enumeration value="UNFR"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="DTCCPayoutType1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="CASH"/&gt;
+ *     &lt;enumeration value="DIVI"/&gt;
+ *     &lt;enumeration value="ROCA"/&gt;
+ *     &lt;enumeration value="STCG"/&gt;
+ *     &lt;enumeration value="LTCG"/&gt;
+ *     &lt;enumeration value="CAPG"/&gt;
+ *     &lt;enumeration value="PREM"/&gt;
+ *     &lt;enumeration value="PRPL"/&gt;
+ *     &lt;enumeration value="INTR"/&gt;
+ *     &lt;enumeration value="FLFR"/&gt;
+ *     &lt;enumeration value="UNFR"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "DTCCPayoutType1Code")

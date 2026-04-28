@@ -1,27 +1,28 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for AssetPriceType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="AssetPriceType1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="ARGM"/>
- *     <enumeration value="BLTC"/>
- *     <enumeration value="EXOF"/>
- *     <enumeration value="GBCL"/>
- *     <enumeration value="IHSM"/>
- *     <enumeration value="OTHR"/>
- *     <enumeration value="PLAT"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="AssetPriceType1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ARGM"/&gt;
+ *     &lt;enumeration value="BLTC"/&gt;
+ *     &lt;enumeration value="EXOF"/&gt;
+ *     &lt;enumeration value="GBCL"/&gt;
+ *     &lt;enumeration value="IHSM"/&gt;
+ *     &lt;enumeration value="OTHR"/&gt;
+ *     &lt;enumeration value="PLAT"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "AssetPriceType1Code")

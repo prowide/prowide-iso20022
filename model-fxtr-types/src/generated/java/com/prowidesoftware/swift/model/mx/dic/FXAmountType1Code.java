@@ -1,72 +1,73 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for FXAmountType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="FXAmountType1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="ZWIS"/>
- *     <enumeration value="WITH"/>
- *     <enumeration value="VATA"/>
- *     <enumeration value="TRAN"/>
- *     <enumeration value="TRAX"/>
- *     <enumeration value="STEX"/>
- *     <enumeration value="STAM"/>
- *     <enumeration value="OTHR"/>
- *     <enumeration value="COUN"/>
- *     <enumeration value="LOCL"/>
- *     <enumeration value="LOCO"/>
- *     <enumeration value="LYDT"/>
- *     <enumeration value="LOTE"/>
- *     <enumeration value="LIDT"/>
- *     <enumeration value="EXEC"/>
- *     <enumeration value="EUTR"/>
- *     <enumeration value="EQUL"/>
- *     <enumeration value="COAX"/>
- *     <enumeration value="AKTI"/>
- *     <enumeration value="ERFE"/>
- *     <enumeration value="ENTF"/>
- *     <enumeration value="MARG"/>
- *     <enumeration value="MACO"/>
- *     <enumeration value="ANTO"/>
- *     <enumeration value="CREB"/>
- *     <enumeration value="SPCN"/>
- *     <enumeration value="SUBS"/>
- *     <enumeration value="TOTL"/>
- *     <enumeration value="DEAL"/>
- *     <enumeration value="ACRU"/>
- *     <enumeration value="BAKL"/>
- *     <enumeration value="CHAR"/>
- *     <enumeration value="CBCH"/>
- *     <enumeration value="LADT"/>
- *     <enumeration value="DSCA"/>
- *     <enumeration value="HDGE"/>
- *     <enumeration value="ISDI"/>
- *     <enumeration value="LEVY"/>
- *     <enumeration value="OCMT"/>
- *     <enumeration value="PRMA"/>
- *     <enumeration value="OTMG"/>
- *     <enumeration value="REGF"/>
- *     <enumeration value="REMU"/>
- *     <enumeration value="RESU"/>
- *     <enumeration value="SAMG"/>
- *     <enumeration value="SETT"/>
- *     <enumeration value="SHIP"/>
- *     <enumeration value="ACCA"/>
- *     <enumeration value="PRDF"/>
- *     <enumeration value="REFD"/>
- *     <enumeration value="PRWI"/>
- *     <enumeration value="RSCH"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="FXAmountType1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ZWIS"/&gt;
+ *     &lt;enumeration value="WITH"/&gt;
+ *     &lt;enumeration value="VATA"/&gt;
+ *     &lt;enumeration value="TRAN"/&gt;
+ *     &lt;enumeration value="TRAX"/&gt;
+ *     &lt;enumeration value="STEX"/&gt;
+ *     &lt;enumeration value="STAM"/&gt;
+ *     &lt;enumeration value="OTHR"/&gt;
+ *     &lt;enumeration value="COUN"/&gt;
+ *     &lt;enumeration value="LOCL"/&gt;
+ *     &lt;enumeration value="LOCO"/&gt;
+ *     &lt;enumeration value="LYDT"/&gt;
+ *     &lt;enumeration value="LOTE"/&gt;
+ *     &lt;enumeration value="LIDT"/&gt;
+ *     &lt;enumeration value="EXEC"/&gt;
+ *     &lt;enumeration value="EUTR"/&gt;
+ *     &lt;enumeration value="EQUL"/&gt;
+ *     &lt;enumeration value="COAX"/&gt;
+ *     &lt;enumeration value="AKTI"/&gt;
+ *     &lt;enumeration value="ERFE"/&gt;
+ *     &lt;enumeration value="ENTF"/&gt;
+ *     &lt;enumeration value="MARG"/&gt;
+ *     &lt;enumeration value="MACO"/&gt;
+ *     &lt;enumeration value="ANTO"/&gt;
+ *     &lt;enumeration value="CREB"/&gt;
+ *     &lt;enumeration value="SPCN"/&gt;
+ *     &lt;enumeration value="SUBS"/&gt;
+ *     &lt;enumeration value="TOTL"/&gt;
+ *     &lt;enumeration value="DEAL"/&gt;
+ *     &lt;enumeration value="ACRU"/&gt;
+ *     &lt;enumeration value="BAKL"/&gt;
+ *     &lt;enumeration value="CHAR"/&gt;
+ *     &lt;enumeration value="CBCH"/&gt;
+ *     &lt;enumeration value="LADT"/&gt;
+ *     &lt;enumeration value="DSCA"/&gt;
+ *     &lt;enumeration value="HDGE"/&gt;
+ *     &lt;enumeration value="ISDI"/&gt;
+ *     &lt;enumeration value="LEVY"/&gt;
+ *     &lt;enumeration value="OCMT"/&gt;
+ *     &lt;enumeration value="PRMA"/&gt;
+ *     &lt;enumeration value="OTMG"/&gt;
+ *     &lt;enumeration value="REGF"/&gt;
+ *     &lt;enumeration value="REMU"/&gt;
+ *     &lt;enumeration value="RESU"/&gt;
+ *     &lt;enumeration value="SAMG"/&gt;
+ *     &lt;enumeration value="SETT"/&gt;
+ *     &lt;enumeration value="SHIP"/&gt;
+ *     &lt;enumeration value="ACCA"/&gt;
+ *     &lt;enumeration value="PRDF"/&gt;
+ *     &lt;enumeration value="REFD"/&gt;
+ *     &lt;enumeration value="PRWI"/&gt;
+ *     &lt;enumeration value="RSCH"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "FXAmountType1Code")

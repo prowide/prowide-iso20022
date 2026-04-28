@@ -1,27 +1,28 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for ATMOperation2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="ATMOperation2Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="ADJU"/>
- *     <enumeration value="INSR"/>
- *     <enumeration value="LOAD"/>
- *     <enumeration value="REMV"/>
- *     <enumeration value="UNLD"/>
- *     <enumeration value="RCUP"/>
- *     <enumeration value="SWAP"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="ATMOperation2Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ADJU"/&gt;
+ *     &lt;enumeration value="INSR"/&gt;
+ *     &lt;enumeration value="LOAD"/&gt;
+ *     &lt;enumeration value="REMV"/&gt;
+ *     &lt;enumeration value="UNLD"/&gt;
+ *     &lt;enumeration value="RCUP"/&gt;
+ *     &lt;enumeration value="SWAP"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "ATMOperation2Code")

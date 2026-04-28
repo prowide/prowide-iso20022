@@ -1,18 +1,17 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
-import java.time.OffsetTime;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -63,21 +62,21 @@ public class VehicleRentalAgreement3 {
     @XmlElement(name = "ChckOutDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate chckOutDt;
+    protected XMLGregorianCalendar chckOutDt;
     @XmlElement(name = "ChckOutTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected OffsetTime chckOutTm;
+    protected XMLGregorianCalendar chckOutTm;
     @XmlElement(name = "RtrLctn")
     protected Address2 rtrLctn;
     @XmlElement(name = "ChckInDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate chckInDt;
+    protected XMLGregorianCalendar chckInDt;
     @XmlElement(name = "ChckInTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected OffsetTime chckInTm;
+    protected XMLGregorianCalendar chckInTm;
     @XmlElement(name = "Drtn")
     protected String drtn;
     @XmlElement(name = "Clss")
@@ -186,8 +185,8 @@ public class VehicleRentalAgreement3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the pckpLctn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the pckpLctn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -201,12 +200,10 @@ public class VehicleRentalAgreement3 {
      * {@link Address2 }
      * 
      * 
-     * @return
-     *     The value of the pckpLctn property.
      */
     public List<Address2> getPckpLctn() {
         if (pckpLctn == null) {
-            pckpLctn = new ArrayList<>();
+            pckpLctn = new ArrayList<Address2>();
         }
         return this.pckpLctn;
     }
@@ -219,7 +216,7 @@ public class VehicleRentalAgreement3 {
      *     {@link String }
      *     
      */
-    public LocalDate getChckOutDt() {
+    public XMLGregorianCalendar getChckOutDt() {
         return chckOutDt;
     }
 
@@ -231,7 +228,7 @@ public class VehicleRentalAgreement3 {
      *     {@link String }
      *     
      */
-    public VehicleRentalAgreement3 setChckOutDt(LocalDate value) {
+    public VehicleRentalAgreement3 setChckOutDt(XMLGregorianCalendar value) {
         this.chckOutDt = value;
         return this;
     }
@@ -244,7 +241,7 @@ public class VehicleRentalAgreement3 {
      *     {@link String }
      *     
      */
-    public OffsetTime getChckOutTm() {
+    public XMLGregorianCalendar getChckOutTm() {
         return chckOutTm;
     }
 
@@ -256,7 +253,7 @@ public class VehicleRentalAgreement3 {
      *     {@link String }
      *     
      */
-    public VehicleRentalAgreement3 setChckOutTm(OffsetTime value) {
+    public VehicleRentalAgreement3 setChckOutTm(XMLGregorianCalendar value) {
         this.chckOutTm = value;
         return this;
     }
@@ -294,7 +291,7 @@ public class VehicleRentalAgreement3 {
      *     {@link String }
      *     
      */
-    public LocalDate getChckInDt() {
+    public XMLGregorianCalendar getChckInDt() {
         return chckInDt;
     }
 
@@ -306,7 +303,7 @@ public class VehicleRentalAgreement3 {
      *     {@link String }
      *     
      */
-    public VehicleRentalAgreement3 setChckInDt(LocalDate value) {
+    public VehicleRentalAgreement3 setChckInDt(XMLGregorianCalendar value) {
         this.chckInDt = value;
         return this;
     }
@@ -319,7 +316,7 @@ public class VehicleRentalAgreement3 {
      *     {@link String }
      *     
      */
-    public OffsetTime getChckInTm() {
+    public XMLGregorianCalendar getChckInTm() {
         return chckInTm;
     }
 
@@ -331,7 +328,7 @@ public class VehicleRentalAgreement3 {
      *     {@link String }
      *     
      */
-    public VehicleRentalAgreement3 setChckInTm(OffsetTime value) {
+    public VehicleRentalAgreement3 setChckInTm(XMLGregorianCalendar value) {
         this.chckInTm = value;
         return this;
     }
@@ -492,8 +489,8 @@ public class VehicleRentalAgreement3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the rntlRate property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the rntlRate property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -507,12 +504,10 @@ public class VehicleRentalAgreement3 {
      * {@link RentalRate2 }
      * 
      * 
-     * @return
-     *     The value of the rntlRate property.
      */
     public List<RentalRate2> getRntlRate() {
         if (rntlRate == null) {
-            rntlRate = new ArrayList<>();
+            rntlRate = new ArrayList<RentalRate2>();
         }
         return this.rntlRate;
     }
@@ -573,8 +568,8 @@ public class VehicleRentalAgreement3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the addtlAmt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the addtlAmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -588,12 +583,10 @@ public class VehicleRentalAgreement3 {
      * {@link Amount21 }
      * 
      * 
-     * @return
-     *     The value of the addtlAmt property.
      */
     public List<Amount21> getAddtlAmt() {
         if (addtlAmt == null) {
-            addtlAmt = new ArrayList<>();
+            addtlAmt = new ArrayList<Amount21>();
         }
         return this.addtlAmt;
     }
@@ -604,8 +597,8 @@ public class VehicleRentalAgreement3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the estmtdTax property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the estmtdTax property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -619,12 +612,10 @@ public class VehicleRentalAgreement3 {
      * {@link Tax41 }
      * 
      * 
-     * @return
-     *     The value of the estmtdTax property.
      */
     public List<Tax41> getEstmtdTax() {
         if (estmtdTax == null) {
-            estmtdTax = new ArrayList<>();
+            estmtdTax = new ArrayList<Tax41>();
         }
         return this.estmtdTax;
     }
@@ -635,8 +626,8 @@ public class VehicleRentalAgreement3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the dscntPrgrmm property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the dscntPrgrmm property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -650,12 +641,10 @@ public class VehicleRentalAgreement3 {
      * {@link Discount3 }
      * 
      * 
-     * @return
-     *     The value of the dscntPrgrmm property.
      */
     public List<Discount3> getDscntPrgrmm() {
         if (dscntPrgrmm == null) {
-            dscntPrgrmm = new ArrayList<>();
+            dscntPrgrmm = new ArrayList<Discount3>();
         }
         return this.dscntPrgrmm;
     }
@@ -666,8 +655,8 @@ public class VehicleRentalAgreement3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the lltyPrgrmm property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the lltyPrgrmm property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -681,12 +670,10 @@ public class VehicleRentalAgreement3 {
      * {@link LoyaltyProgramme5 }
      * 
      * 
-     * @return
-     *     The value of the lltyPrgrmm property.
      */
     public List<LoyaltyProgramme5> getLltyPrgrmm() {
         if (lltyPrgrmm == null) {
-            lltyPrgrmm = new ArrayList<>();
+            lltyPrgrmm = new ArrayList<LoyaltyProgramme5>();
         }
         return this.lltyPrgrmm;
     }

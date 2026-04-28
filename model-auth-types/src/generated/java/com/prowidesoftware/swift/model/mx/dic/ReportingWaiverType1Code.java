@@ -1,26 +1,27 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for ReportingWaiverType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="ReportingWaiverType1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="OILQ"/>
- *     <enumeration value="NLIQ"/>
- *     <enumeration value="PRIC"/>
- *     <enumeration value="ILQD"/>
- *     <enumeration value="RFPT"/>
- *     <enumeration value="SIZE"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="ReportingWaiverType1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="OILQ"/&gt;
+ *     &lt;enumeration value="NLIQ"/&gt;
+ *     &lt;enumeration value="PRIC"/&gt;
+ *     &lt;enumeration value="ILQD"/&gt;
+ *     &lt;enumeration value="RFPT"/&gt;
+ *     &lt;enumeration value="SIZE"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "ReportingWaiverType1Code")

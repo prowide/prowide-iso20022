@@ -26,11 +26,6 @@ public enum SettlementMethod {
         this.description = description;
     }
 
-    /**
-     * Returns the human-readable description of this settlement method.
-     *
-     * @return the description, e.g. {@code "Cover Method"} for {@link #COVE}
-     */
     public String description() {
         return description;
     }

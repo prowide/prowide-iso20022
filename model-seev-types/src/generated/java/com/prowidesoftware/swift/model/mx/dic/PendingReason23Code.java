@@ -1,37 +1,38 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for PendingReason23Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="PendingReason23Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="ADEA"/>
- *     <enumeration value="OTHR"/>
- *     <enumeration value="FULL"/>
- *     <enumeration value="MCER"/>
- *     <enumeration value="MONY"/>
- *     <enumeration value="LACK"/>
- *     <enumeration value="LATE"/>
- *     <enumeration value="DQUA"/>
- *     <enumeration value="PENR"/>
- *     <enumeration value="CERT"/>
- *     <enumeration value="DQCS"/>
- *     <enumeration value="ITAX"/>
- *     <enumeration value="NTAX"/>
- *     <enumeration value="MTAX"/>
- *     <enumeration value="SNAV"/>
- *     <enumeration value="BSTR"/>
- *     <enumeration value="IPAW"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="PendingReason23Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ADEA"/&gt;
+ *     &lt;enumeration value="OTHR"/&gt;
+ *     &lt;enumeration value="FULL"/&gt;
+ *     &lt;enumeration value="MCER"/&gt;
+ *     &lt;enumeration value="MONY"/&gt;
+ *     &lt;enumeration value="LACK"/&gt;
+ *     &lt;enumeration value="LATE"/&gt;
+ *     &lt;enumeration value="DQUA"/&gt;
+ *     &lt;enumeration value="PENR"/&gt;
+ *     &lt;enumeration value="CERT"/&gt;
+ *     &lt;enumeration value="DQCS"/&gt;
+ *     &lt;enumeration value="ITAX"/&gt;
+ *     &lt;enumeration value="NTAX"/&gt;
+ *     &lt;enumeration value="MTAX"/&gt;
+ *     &lt;enumeration value="SNAV"/&gt;
+ *     &lt;enumeration value="BSTR"/&gt;
+ *     &lt;enumeration value="IPAW"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "PendingReason23Code")

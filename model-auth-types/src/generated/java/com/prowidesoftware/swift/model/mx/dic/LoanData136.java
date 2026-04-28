@@ -1,16 +1,15 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
-import java.time.OffsetDateTime;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -45,11 +44,11 @@ public class LoanData136 {
     @XmlElement(name = "EvtDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate evtDt;
+    protected XMLGregorianCalendar evtDt;
     @XmlElement(name = "ExctnDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime exctnDtTm;
+    protected XMLGregorianCalendar exctnDtTm;
     @XmlElement(name = "ClrSts")
     protected Cleared16Choice clrSts;
     @XmlElement(name = "TradgVn")
@@ -59,11 +58,11 @@ public class LoanData136 {
     @XmlElement(name = "ValDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate valDt;
+    protected XMLGregorianCalendar valDt;
     @XmlElement(name = "MtrtyDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate mtrtyDt;
+    protected XMLGregorianCalendar mtrtyDt;
     @XmlElement(name = "GnlColl")
     @XmlSchemaType(name = "string")
     protected SpecialCollateral1Code gnlColl;
@@ -74,7 +73,7 @@ public class LoanData136 {
     @XmlElement(name = "TermntnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate termntnDt;
+    protected XMLGregorianCalendar termntnDt;
 
     /**
      * Gets the value of the unqTradIdr property.
@@ -109,7 +108,7 @@ public class LoanData136 {
      *     {@link String }
      *     
      */
-    public LocalDate getEvtDt() {
+    public XMLGregorianCalendar getEvtDt() {
         return evtDt;
     }
 
@@ -121,7 +120,7 @@ public class LoanData136 {
      *     {@link String }
      *     
      */
-    public LoanData136 setEvtDt(LocalDate value) {
+    public LoanData136 setEvtDt(XMLGregorianCalendar value) {
         this.evtDt = value;
         return this;
     }
@@ -134,7 +133,7 @@ public class LoanData136 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getExctnDtTm() {
+    public XMLGregorianCalendar getExctnDtTm() {
         return exctnDtTm;
     }
 
@@ -146,7 +145,7 @@ public class LoanData136 {
      *     {@link String }
      *     
      */
-    public LoanData136 setExctnDtTm(OffsetDateTime value) {
+    public LoanData136 setExctnDtTm(XMLGregorianCalendar value) {
         this.exctnDtTm = value;
         return this;
     }
@@ -234,7 +233,7 @@ public class LoanData136 {
      *     {@link String }
      *     
      */
-    public LocalDate getValDt() {
+    public XMLGregorianCalendar getValDt() {
         return valDt;
     }
 
@@ -246,7 +245,7 @@ public class LoanData136 {
      *     {@link String }
      *     
      */
-    public LoanData136 setValDt(LocalDate value) {
+    public LoanData136 setValDt(XMLGregorianCalendar value) {
         this.valDt = value;
         return this;
     }
@@ -259,7 +258,7 @@ public class LoanData136 {
      *     {@link String }
      *     
      */
-    public LocalDate getMtrtyDt() {
+    public XMLGregorianCalendar getMtrtyDt() {
         return mtrtyDt;
     }
 
@@ -271,7 +270,7 @@ public class LoanData136 {
      *     {@link String }
      *     
      */
-    public LoanData136 setMtrtyDt(LocalDate value) {
+    public LoanData136 setMtrtyDt(XMLGregorianCalendar value) {
         this.mtrtyDt = value;
         return this;
     }
@@ -359,7 +358,7 @@ public class LoanData136 {
      *     {@link String }
      *     
      */
-    public LocalDate getTermntnDt() {
+    public XMLGregorianCalendar getTermntnDt() {
         return termntnDt;
     }
 
@@ -371,7 +370,7 @@ public class LoanData136 {
      *     {@link String }
      *     
      */
-    public LoanData136 setTermntnDt(LocalDate value) {
+    public LoanData136 setTermntnDt(XMLGregorianCalendar value) {
         this.termntnDt = value;
         return this;
     }

@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -152,8 +152,8 @@ public class Collateral7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the sctiesColl property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the sctiesColl property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -167,12 +167,10 @@ public class Collateral7 {
      * {@link SecuritiesCollateral3 }
      * 
      * 
-     * @return
-     *     The value of the sctiesColl property.
      */
     public List<SecuritiesCollateral3> getSctiesColl() {
         if (sctiesColl == null) {
-            sctiesColl = new ArrayList<>();
+            sctiesColl = new ArrayList<SecuritiesCollateral3>();
         }
         return this.sctiesColl;
     }
@@ -183,8 +181,8 @@ public class Collateral7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the cshColl property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the cshColl property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -198,12 +196,10 @@ public class Collateral7 {
      * {@link CashCollateral2 }
      * 
      * 
-     * @return
-     *     The value of the cshColl property.
      */
     public List<CashCollateral2> getCshColl() {
         if (cshColl == null) {
-            cshColl = new ArrayList<>();
+            cshColl = new ArrayList<CashCollateral2>();
         }
         return this.cshColl;
     }
@@ -214,8 +210,8 @@ public class Collateral7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the othrColl property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the othrColl property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -229,12 +225,10 @@ public class Collateral7 {
      * {@link OtherCollateral2 }
      * 
      * 
-     * @return
-     *     The value of the othrColl property.
      */
     public List<OtherCollateral2> getOthrColl() {
         if (othrColl == null) {
-            othrColl = new ArrayList<>();
+            othrColl = new ArrayList<OtherCollateral2>();
         }
         return this.othrColl;
     }

@@ -1,28 +1,29 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for PaymentInstrumentType2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="PaymentInstrumentType2Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="CARD"/>
- *     <enumeration value="CASH"/>
- *     <enumeration value="CHCK"/>
- *     <enumeration value="LOYT"/>
- *     <enumeration value="SVAC"/>
- *     <enumeration value="DRDT"/>
- *     <enumeration value="CRTF"/>
- *     <enumeration value="VCHR"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="PaymentInstrumentType2Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="CARD"/&gt;
+ *     &lt;enumeration value="CASH"/&gt;
+ *     &lt;enumeration value="CHCK"/&gt;
+ *     &lt;enumeration value="LOYT"/&gt;
+ *     &lt;enumeration value="SVAC"/&gt;
+ *     &lt;enumeration value="DRDT"/&gt;
+ *     &lt;enumeration value="CRTF"/&gt;
+ *     &lt;enumeration value="VCHR"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "PaymentInstrumentType2Code")

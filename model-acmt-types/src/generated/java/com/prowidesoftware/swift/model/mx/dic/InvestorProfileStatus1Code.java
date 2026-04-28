@@ -1,30 +1,31 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for InvestorProfileStatus1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="InvestorProfileStatus1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="DISA"/>
- *     <enumeration value="DISG"/>
- *     <enumeration value="ENAB"/>
- *     <enumeration value="ENBG"/>
- *     <enumeration value="ADMI"/>
- *     <enumeration value="ANLY"/>
- *     <enumeration value="NAPP"/>
- *     <enumeration value="PSUS"/>
- *     <enumeration value="PEND"/>
- *     <enumeration value="SUPS"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="InvestorProfileStatus1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="DISA"/&gt;
+ *     &lt;enumeration value="DISG"/&gt;
+ *     &lt;enumeration value="ENAB"/&gt;
+ *     &lt;enumeration value="ENBG"/&gt;
+ *     &lt;enumeration value="ADMI"/&gt;
+ *     &lt;enumeration value="ANLY"/&gt;
+ *     &lt;enumeration value="NAPP"/&gt;
+ *     &lt;enumeration value="PSUS"/&gt;
+ *     &lt;enumeration value="PEND"/&gt;
+ *     &lt;enumeration value="SUPS"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "InvestorProfileStatus1Code")

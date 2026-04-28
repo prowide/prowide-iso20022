@@ -1,33 +1,34 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for EnergyQuantityUnit1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="EnergyQuantityUnit1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="THMD"/>
- *     <enumeration value="MWHH"/>
- *     <enumeration value="MWHD"/>
- *     <enumeration value="MWAT"/>
- *     <enumeration value="MTMD"/>
- *     <enumeration value="MCMD"/>
- *     <enumeration value="KWHH"/>
- *     <enumeration value="KWHD"/>
- *     <enumeration value="KWAT"/>
- *     <enumeration value="KTMD"/>
- *     <enumeration value="GWHH"/>
- *     <enumeration value="GWHD"/>
- *     <enumeration value="GWAT"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="EnergyQuantityUnit1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="THMD"/&gt;
+ *     &lt;enumeration value="MWHH"/&gt;
+ *     &lt;enumeration value="MWHD"/&gt;
+ *     &lt;enumeration value="MWAT"/&gt;
+ *     &lt;enumeration value="MTMD"/&gt;
+ *     &lt;enumeration value="MCMD"/&gt;
+ *     &lt;enumeration value="KWHH"/&gt;
+ *     &lt;enumeration value="KWHD"/&gt;
+ *     &lt;enumeration value="KWAT"/&gt;
+ *     &lt;enumeration value="KTMD"/&gt;
+ *     &lt;enumeration value="GWHH"/&gt;
+ *     &lt;enumeration value="GWHD"/&gt;
+ *     &lt;enumeration value="GWAT"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "EnergyQuantityUnit1Code")

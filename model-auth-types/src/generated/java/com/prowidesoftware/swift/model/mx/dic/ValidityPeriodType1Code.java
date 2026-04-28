@@ -1,30 +1,31 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for ValidityPeriodType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="ValidityPeriodType1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="FOKV"/>
- *     <enumeration value="GADV"/>
- *     <enumeration value="GASV"/>
- *     <enumeration value="GATV"/>
- *     <enumeration value="DAVY"/>
- *     <enumeration value="GTCV"/>
- *     <enumeration value="GTDV"/>
- *     <enumeration value="GTSV"/>
- *     <enumeration value="GTTV"/>
- *     <enumeration value="IOCV"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="ValidityPeriodType1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="FOKV"/&gt;
+ *     &lt;enumeration value="GADV"/&gt;
+ *     &lt;enumeration value="GASV"/&gt;
+ *     &lt;enumeration value="GATV"/&gt;
+ *     &lt;enumeration value="DAVY"/&gt;
+ *     &lt;enumeration value="GTCV"/&gt;
+ *     &lt;enumeration value="GTDV"/&gt;
+ *     &lt;enumeration value="GTSV"/&gt;
+ *     &lt;enumeration value="GTTV"/&gt;
+ *     &lt;enumeration value="IOCV"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "ValidityPeriodType1Code")

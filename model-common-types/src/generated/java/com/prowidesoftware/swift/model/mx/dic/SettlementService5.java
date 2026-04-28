@@ -1,20 +1,18 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
-import java.time.OffsetDateTime;
-import java.time.OffsetTime;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -56,23 +54,23 @@ public class SettlementService5 {
     @XmlElement(name = "ReqdDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate reqdDt;
+    protected XMLGregorianCalendar reqdDt;
     @XmlElement(name = "Dfrrd")
     protected Boolean dfrrd;
     @XmlElement(name = "Dt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate dt;
+    protected XMLGregorianCalendar dt;
     @XmlElement(name = "Tm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected OffsetTime tm;
+    protected XMLGregorianCalendar tm;
     @XmlElement(name = "Prd")
     protected String prd;
     @XmlElement(name = "CutOffTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime cutOffTm;
+    protected XMLGregorianCalendar cutOffTm;
     @XmlElement(name = "RptgNttyTp")
     protected String rptgNttyTp;
     @XmlElement(name = "RptgNttyId")
@@ -188,7 +186,7 @@ public class SettlementService5 {
      *     {@link String }
      *     
      */
-    public LocalDate getReqdDt() {
+    public XMLGregorianCalendar getReqdDt() {
         return reqdDt;
     }
 
@@ -200,7 +198,7 @@ public class SettlementService5 {
      *     {@link String }
      *     
      */
-    public SettlementService5 setReqdDt(LocalDate value) {
+    public SettlementService5 setReqdDt(XMLGregorianCalendar value) {
         this.reqdDt = value;
         return this;
     }
@@ -238,7 +236,7 @@ public class SettlementService5 {
      *     {@link String }
      *     
      */
-    public LocalDate getDt() {
+    public XMLGregorianCalendar getDt() {
         return dt;
     }
 
@@ -250,7 +248,7 @@ public class SettlementService5 {
      *     {@link String }
      *     
      */
-    public SettlementService5 setDt(LocalDate value) {
+    public SettlementService5 setDt(XMLGregorianCalendar value) {
         this.dt = value;
         return this;
     }
@@ -263,7 +261,7 @@ public class SettlementService5 {
      *     {@link String }
      *     
      */
-    public OffsetTime getTm() {
+    public XMLGregorianCalendar getTm() {
         return tm;
     }
 
@@ -275,7 +273,7 @@ public class SettlementService5 {
      *     {@link String }
      *     
      */
-    public SettlementService5 setTm(OffsetTime value) {
+    public SettlementService5 setTm(XMLGregorianCalendar value) {
         this.tm = value;
         return this;
     }
@@ -313,7 +311,7 @@ public class SettlementService5 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getCutOffTm() {
+    public XMLGregorianCalendar getCutOffTm() {
         return cutOffTm;
     }
 
@@ -325,7 +323,7 @@ public class SettlementService5 {
      *     {@link String }
      *     
      */
-    public SettlementService5 setCutOffTm(OffsetDateTime value) {
+    public SettlementService5 setCutOffTm(XMLGregorianCalendar value) {
         this.cutOffTm = value;
         return this;
     }
@@ -386,8 +384,8 @@ public class SettlementService5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the addtlInf property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the addtlInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -401,12 +399,10 @@ public class SettlementService5 {
      * {@link AdditionalData1 }
      * 
      * 
-     * @return
-     *     The value of the addtlInf property.
      */
     public List<AdditionalData1> getAddtlInf() {
         if (addtlInf == null) {
-            addtlInf = new ArrayList<>();
+            addtlInf = new ArrayList<AdditionalData1>();
         }
         return this.addtlInf;
     }

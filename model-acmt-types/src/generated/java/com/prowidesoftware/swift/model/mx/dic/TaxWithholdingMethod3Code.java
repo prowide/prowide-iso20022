@@ -1,29 +1,30 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for TaxWithholdingMethod3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="TaxWithholdingMethod3Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="MITX"/>
- *     <enumeration value="INVE"/>
- *     <enumeration value="ACCT"/>
- *     <enumeration value="EXMT"/>
- *     <enumeration value="REPT"/>
- *     <enumeration value="CRTF"/>
- *     <enumeration value="WHCO"/>
- *     <enumeration value="WTHD"/>
- *     <enumeration value="WTRE"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="TaxWithholdingMethod3Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="MITX"/&gt;
+ *     &lt;enumeration value="INVE"/&gt;
+ *     &lt;enumeration value="ACCT"/&gt;
+ *     &lt;enumeration value="EXMT"/&gt;
+ *     &lt;enumeration value="REPT"/&gt;
+ *     &lt;enumeration value="CRTF"/&gt;
+ *     &lt;enumeration value="WHCO"/&gt;
+ *     &lt;enumeration value="WTHD"/&gt;
+ *     &lt;enumeration value="WTRE"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "TaxWithholdingMethod3Code")

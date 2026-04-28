@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -74,8 +74,8 @@ public class MeetingInstructionDetailedStatus {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the prtcptnRegnConf property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the prtcptnRegnConf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -89,12 +89,10 @@ public class MeetingInstructionDetailedStatus {
      * {@link DetailedInstructionConfirmation }
      * 
      * 
-     * @return
-     *     The value of the prtcptnRegnConf property.
      */
     public List<DetailedInstructionConfirmation> getPrtcptnRegnConf() {
         if (prtcptnRegnConf == null) {
-            prtcptnRegnConf = new ArrayList<>();
+            prtcptnRegnConf = new ArrayList<DetailedInstructionConfirmation>();
         }
         return this.prtcptnRegnConf;
     }
@@ -105,8 +103,8 @@ public class MeetingInstructionDetailedStatus {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the vtngInstrConf property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the vtngInstrConf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -120,12 +118,10 @@ public class MeetingInstructionDetailedStatus {
      * {@link DetailedInstructionConfirmation }
      * 
      * 
-     * @return
-     *     The value of the vtngInstrConf property.
      */
     public List<DetailedInstructionConfirmation> getVtngInstrConf() {
         if (vtngInstrConf == null) {
-            vtngInstrConf = new ArrayList<>();
+            vtngInstrConf = new ArrayList<DetailedInstructionConfirmation>();
         }
         return this.vtngInstrConf;
     }
@@ -136,8 +132,8 @@ public class MeetingInstructionDetailedStatus {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the prxyAssgnmtConf property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the prxyAssgnmtConf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -151,12 +147,10 @@ public class MeetingInstructionDetailedStatus {
      * {@link DetailedInstructionConfirmation }
      * 
      * 
-     * @return
-     *     The value of the prxyAssgnmtConf property.
      */
     public List<DetailedInstructionConfirmation> getPrxyAssgnmtConf() {
         if (prxyAssgnmtConf == null) {
-            prxyAssgnmtConf = new ArrayList<>();
+            prxyAssgnmtConf = new ArrayList<DetailedInstructionConfirmation>();
         }
         return this.prxyAssgnmtConf;
     }
@@ -167,8 +161,8 @@ public class MeetingInstructionDetailedStatus {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the mtgAttndncConf property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the mtgAttndncConf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -182,12 +176,10 @@ public class MeetingInstructionDetailedStatus {
      * {@link DetailedInstructionConfirmation }
      * 
      * 
-     * @return
-     *     The value of the mtgAttndncConf property.
      */
     public List<DetailedInstructionConfirmation> getMtgAttndncConf() {
         if (mtgAttndncConf == null) {
-            mtgAttndncConf = new ArrayList<>();
+            mtgAttndncConf = new ArrayList<DetailedInstructionConfirmation>();
         }
         return this.mtgAttndncConf;
     }
@@ -198,8 +190,8 @@ public class MeetingInstructionDetailedStatus {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the sctiesRegnConf property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the sctiesRegnConf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -213,12 +205,10 @@ public class MeetingInstructionDetailedStatus {
      * {@link DetailedInstructionConfirmation }
      * 
      * 
-     * @return
-     *     The value of the sctiesRegnConf property.
      */
     public List<DetailedInstructionConfirmation> getSctiesRegnConf() {
         if (sctiesRegnConf == null) {
-            sctiesRegnConf = new ArrayList<>();
+            sctiesRegnConf = new ArrayList<DetailedInstructionConfirmation>();
         }
         return this.sctiesRegnConf;
     }

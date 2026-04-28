@@ -31,13 +31,6 @@ import org.xml.sax.InputSource;
  */
 public class SupplementaryDataUtils {
 
-    /**
-     * Extracts all {@code SplmtryData} elements from the given XML string and returns them as a
-     * list of serialized XML strings.
-     *
-     * @param sourceXml the XML source to extract supplementary data from
-     * @return a list of XML strings, one per found {@code SplmtryData} element; never {@code null}
-     */
     public static List<String> extract(final String sourceXml) {
         List<String> result = new ArrayList<>();
         try {

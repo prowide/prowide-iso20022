@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxCanm00200104
 
     @XmlElement(name = "NtwkMgmtRspn", required = true)
     protected NetworkManagementResponseV04 ntwkMgmtRspn;
-    public static final transient String BUSINESS_PROCESS = "canm";
-    public static final transient int FUNCTIONALITY = 2;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 4;
+    public final static transient String BUSINESS_PROCESS = "canm";
+    public final static transient int FUNCTIONALITY = 2;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 4;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {AdditionalData1 .class, AdditionalData2 .class, AdditionalFee3 .class, BatchManagementInformation1 .class, ContentInformationType41 .class, CreditDebit3Code.class, ErrorDetails3 .class, GenericIdentification183 .class, Header71 .class, Jurisdiction2 .class, MACData1 .class, MessageError1Code.class, MxCanm00200104 .class, NetworkManagementResponseV04 .class, NetworkManagementType1Code.class, PartyType17Code.class, PartyType18Code.class, PartyType26Code.class, PartyType32Code.class, PartyType9Code.class, ProcessingResult23 .class, ProgrammeMode5 .class, Reconciliation4 .class, SettlementService6 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, Traceability10 .class, TypeOfAmount21Code.class };
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:canm.002.001.04";
+    public final static transient Class[] _classes = new Class[] {AdditionalData1 .class, AdditionalData2 .class, AdditionalFee3 .class, BatchManagementInformation1 .class, ContentInformationType41 .class, CreditDebit3Code.class, ErrorDetails3 .class, GenericIdentification183 .class, Header71 .class, Jurisdiction2 .class, MACData1 .class, MessageError1Code.class, MxCanm00200104 .class, NetworkManagementResponseV04 .class, NetworkManagementType1Code.class, PartyType17Code.class, PartyType18Code.class, PartyType26Code.class, PartyType32Code.class, PartyType9Code.class, ProcessingResult23 .class, ProgrammeMode5 .class, Reconciliation4 .class, SettlementService6 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, Traceability10 .class, TypeOfAmount21Code.class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:canm.002.001.04";
 
     public MxCanm00200104() {
         super();
@@ -86,6 +86,21 @@ public class MxCanm00200104
     public MxCanm00200104 setNtwkMgmtRspn(NetworkManagementResponseV04 value) {
         this.ntwkMgmtRspn = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxCanm00200104
      * @return
      *     a new instance of MxCanm00200104
      */
-    public static final MxCanm00200104 fromJson(String json) {
+    public final static MxCanm00200104 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxCanm00200104 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

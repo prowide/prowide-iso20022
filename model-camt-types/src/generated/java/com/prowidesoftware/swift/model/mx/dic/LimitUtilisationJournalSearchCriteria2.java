@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -40,7 +40,7 @@ public class LimitUtilisationJournalSearchCriteria2 {
     @XmlElement(name = "JrnlActvtyDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate jrnlActvtyDt;
+    protected XMLGregorianCalendar jrnlActvtyDt;
     @XmlElement(name = "AcctId")
     protected AccountIdentification4Choice acctId;
     @XmlElement(name = "LmtCcy")
@@ -56,8 +56,8 @@ public class LimitUtilisationJournalSearchCriteria2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the lmtTp property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the lmtTp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -71,12 +71,10 @@ public class LimitUtilisationJournalSearchCriteria2 {
      * {@link LimitType4Code }
      * 
      * 
-     * @return
-     *     The value of the lmtTp property.
      */
     public List<LimitType4Code> getLmtTp() {
         if (lmtTp == null) {
-            lmtTp = new ArrayList<>();
+            lmtTp = new ArrayList<LimitType4Code>();
         }
         return this.lmtTp;
     }
@@ -89,7 +87,7 @@ public class LimitUtilisationJournalSearchCriteria2 {
      *     {@link String }
      *     
      */
-    public LocalDate getJrnlActvtyDt() {
+    public XMLGregorianCalendar getJrnlActvtyDt() {
         return jrnlActvtyDt;
     }
 
@@ -101,7 +99,7 @@ public class LimitUtilisationJournalSearchCriteria2 {
      *     {@link String }
      *     
      */
-    public LimitUtilisationJournalSearchCriteria2 setJrnlActvtyDt(LocalDate value) {
+    public LimitUtilisationJournalSearchCriteria2 setJrnlActvtyDt(XMLGregorianCalendar value) {
         this.jrnlActvtyDt = value;
         return this;
     }

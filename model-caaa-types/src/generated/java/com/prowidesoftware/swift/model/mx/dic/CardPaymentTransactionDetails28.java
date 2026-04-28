@@ -2,14 +2,14 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -45,7 +45,7 @@ public class CardPaymentTransactionDetails28 {
     @XmlElement(name = "VldtyDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate vldtyDt;
+    protected XMLGregorianCalendar vldtyDt;
     @XmlElement(name = "AcctTp")
     @XmlSchemaType(name = "string")
     protected CardAccountType3Code acctTp;
@@ -160,7 +160,7 @@ public class CardPaymentTransactionDetails28 {
      *     {@link String }
      *     
      */
-    public LocalDate getVldtyDt() {
+    public XMLGregorianCalendar getVldtyDt() {
         return vldtyDt;
     }
 
@@ -172,7 +172,7 @@ public class CardPaymentTransactionDetails28 {
      *     {@link String }
      *     
      */
-    public CardPaymentTransactionDetails28 setVldtyDt(LocalDate value) {
+    public CardPaymentTransactionDetails28 setVldtyDt(XMLGregorianCalendar value) {
         this.vldtyDt = value;
         return this;
     }

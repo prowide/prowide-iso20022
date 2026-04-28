@@ -2,14 +2,14 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -52,11 +52,11 @@ public class CorporateActionNotificationSD2 {
     @XmlElement(name = "DerivPblctnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate derivPblctnDt;
+    protected XMLGregorianCalendar derivPblctnDt;
     @XmlElement(name = "DerivAdjstmntDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate derivAdjstmntDt;
+    protected XMLGregorianCalendar derivAdjstmntDt;
     @XmlElement(name = "DerivClctnMtd")
     protected String derivClctnMtd;
     @XmlElement(name = "DerivFctr")
@@ -161,7 +161,7 @@ public class CorporateActionNotificationSD2 {
      *     {@link String }
      *     
      */
-    public LocalDate getDerivPblctnDt() {
+    public XMLGregorianCalendar getDerivPblctnDt() {
         return derivPblctnDt;
     }
 
@@ -173,7 +173,7 @@ public class CorporateActionNotificationSD2 {
      *     {@link String }
      *     
      */
-    public CorporateActionNotificationSD2 setDerivPblctnDt(LocalDate value) {
+    public CorporateActionNotificationSD2 setDerivPblctnDt(XMLGregorianCalendar value) {
         this.derivPblctnDt = value;
         return this;
     }
@@ -186,7 +186,7 @@ public class CorporateActionNotificationSD2 {
      *     {@link String }
      *     
      */
-    public LocalDate getDerivAdjstmntDt() {
+    public XMLGregorianCalendar getDerivAdjstmntDt() {
         return derivAdjstmntDt;
     }
 
@@ -198,7 +198,7 @@ public class CorporateActionNotificationSD2 {
      *     {@link String }
      *     
      */
-    public CorporateActionNotificationSD2 setDerivAdjstmntDt(LocalDate value) {
+    public CorporateActionNotificationSD2 setDerivAdjstmntDt(XMLGregorianCalendar value) {
         this.derivAdjstmntDt = value;
         return this;
     }

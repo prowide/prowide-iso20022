@@ -1,29 +1,30 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for CorporateActionReversalReason2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="CorporateActionReversalReason2Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="DCBD"/>
- *     <enumeration value="FNRC"/>
- *     <enumeration value="IRED"/>
- *     <enumeration value="IETR"/>
- *     <enumeration value="IPCU"/>
- *     <enumeration value="IPRI"/>
- *     <enumeration value="IVAD"/>
- *     <enumeration value="POCS"/>
- *     <enumeration value="UPAY"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="CorporateActionReversalReason2Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="DCBD"/&gt;
+ *     &lt;enumeration value="FNRC"/&gt;
+ *     &lt;enumeration value="IRED"/&gt;
+ *     &lt;enumeration value="IETR"/&gt;
+ *     &lt;enumeration value="IPCU"/&gt;
+ *     &lt;enumeration value="IPRI"/&gt;
+ *     &lt;enumeration value="IVAD"/&gt;
+ *     &lt;enumeration value="POCS"/&gt;
+ *     &lt;enumeration value="UPAY"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "CorporateActionReversalReason2Code")

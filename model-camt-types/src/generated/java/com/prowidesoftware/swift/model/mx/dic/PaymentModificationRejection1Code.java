@@ -1,42 +1,43 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlEnumValue;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlEnumValue;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for PaymentModificationRejection1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="PaymentModificationRejection1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="UM01"/>
- *     <enumeration value="UM02"/>
- *     <enumeration value="UM03"/>
- *     <enumeration value="UM04"/>
- *     <enumeration value="UM05"/>
- *     <enumeration value="UM06"/>
- *     <enumeration value="UM07"/>
- *     <enumeration value="UM08"/>
- *     <enumeration value="UM09"/>
- *     <enumeration value="UM10"/>
- *     <enumeration value="UM11"/>
- *     <enumeration value="UM12"/>
- *     <enumeration value="UM13"/>
- *     <enumeration value="UM14"/>
- *     <enumeration value="UM15"/>
- *     <enumeration value="UM16"/>
- *     <enumeration value="UM17"/>
- *     <enumeration value="UM18"/>
- *     <enumeration value="UM19"/>
- *     <enumeration value="UM20"/>
- *     <enumeration value="UM21"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="PaymentModificationRejection1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="UM01"/&gt;
+ *     &lt;enumeration value="UM02"/&gt;
+ *     &lt;enumeration value="UM03"/&gt;
+ *     &lt;enumeration value="UM04"/&gt;
+ *     &lt;enumeration value="UM05"/&gt;
+ *     &lt;enumeration value="UM06"/&gt;
+ *     &lt;enumeration value="UM07"/&gt;
+ *     &lt;enumeration value="UM08"/&gt;
+ *     &lt;enumeration value="UM09"/&gt;
+ *     &lt;enumeration value="UM10"/&gt;
+ *     &lt;enumeration value="UM11"/&gt;
+ *     &lt;enumeration value="UM12"/&gt;
+ *     &lt;enumeration value="UM13"/&gt;
+ *     &lt;enumeration value="UM14"/&gt;
+ *     &lt;enumeration value="UM15"/&gt;
+ *     &lt;enumeration value="UM16"/&gt;
+ *     &lt;enumeration value="UM17"/&gt;
+ *     &lt;enumeration value="UM18"/&gt;
+ *     &lt;enumeration value="UM19"/&gt;
+ *     &lt;enumeration value="UM20"/&gt;
+ *     &lt;enumeration value="UM21"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "PaymentModificationRejection1Code")

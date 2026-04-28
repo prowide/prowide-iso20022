@@ -3,11 +3,11 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -52,8 +52,8 @@ public class SecurityIdentificationQuery3Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the isin property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the isin property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -67,12 +67,10 @@ public class SecurityIdentificationQuery3Choice {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the isin property.
      */
     public List<String> getISIN() {
         if (isin == null) {
-            isin = new ArrayList<>();
+            isin = new ArrayList<String>();
         }
         return this.isin;
     }
@@ -83,8 +81,8 @@ public class SecurityIdentificationQuery3Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the altrntvInstrmId property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the altrntvInstrmId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -98,12 +96,10 @@ public class SecurityIdentificationQuery3Choice {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the altrntvInstrmId property.
      */
     public List<String> getAltrntvInstrmId() {
         if (altrntvInstrmId == null) {
-            altrntvInstrmId = new ArrayList<>();
+            altrntvInstrmId = new ArrayList<String>();
         }
         return this.altrntvInstrmId;
     }
@@ -139,8 +135,8 @@ public class SecurityIdentificationQuery3Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the unqPdctIdr property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the unqPdctIdr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -154,12 +150,10 @@ public class SecurityIdentificationQuery3Choice {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the unqPdctIdr property.
      */
     public List<String> getUnqPdctIdr() {
         if (unqPdctIdr == null) {
-            unqPdctIdr = new ArrayList<>();
+            unqPdctIdr = new ArrayList<String>();
         }
         return this.unqPdctIdr;
     }
@@ -170,8 +164,8 @@ public class SecurityIdentificationQuery3Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the indx property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the indx property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -185,12 +179,10 @@ public class SecurityIdentificationQuery3Choice {
      * {@link SecurityIdentification20Choice }
      * 
      * 
-     * @return
-     *     The value of the indx property.
      */
     public List<SecurityIdentification20Choice> getIndx() {
         if (indx == null) {
-            indx = new ArrayList<>();
+            indx = new ArrayList<SecurityIdentification20Choice>();
         }
         return this.indx;
     }

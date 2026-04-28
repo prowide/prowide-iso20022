@@ -18,7 +18,7 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.deprecation.ProwideDeprecated;
 import com.prowidesoftware.deprecation.TargetYear;
 import com.prowidesoftware.swift.model.mx.adapters.TypeAdaptersConfiguration;
-import jakarta.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBContext;
 
 /**
  * Options to customize the behaviour of the MX writer (model into XML serialization) in the {@link AbstractMX}
@@ -121,9 +121,7 @@ public class MxWriteConfiguration {
     }
 
     /**
-     * Creates a configuration with the default options and propagates the adapters from read to write configuration.
-     *
-     * @param readConf the read configuration whose adapters and context will be propagated
+     * Creates a configuration with the default options and propagates the adapters from read to write configuration
      * @since 9.2.6
      */
     public MxWriteConfiguration(MxReadConfiguration readConf) {

@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -93,8 +93,8 @@ public class StoredValueResponse8 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the rslt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the rslt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -108,12 +108,10 @@ public class StoredValueResponse8 {
      * {@link StoredValueData8 }
      * 
      * 
-     * @return
-     *     The value of the rslt property.
      */
     public List<StoredValueData8> getRslt() {
         if (rslt == null) {
-            rslt = new ArrayList<>();
+            rslt = new ArrayList<StoredValueData8>();
         }
         return this.rslt;
     }
@@ -124,8 +122,8 @@ public class StoredValueResponse8 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the rct property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the rct property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -139,12 +137,10 @@ public class StoredValueResponse8 {
      * {@link PaymentReceipt6 }
      * 
      * 
-     * @return
-     *     The value of the rct property.
      */
     public List<PaymentReceipt6> getRct() {
         if (rct == null) {
-            rct = new ArrayList<>();
+            rct = new ArrayList<PaymentReceipt6>();
         }
         return this.rct;
     }

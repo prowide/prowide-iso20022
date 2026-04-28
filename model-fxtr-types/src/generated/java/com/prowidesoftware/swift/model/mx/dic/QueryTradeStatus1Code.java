@@ -1,26 +1,27 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for QueryTradeStatus1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="QueryTradeStatus1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="QAST"/>
- *     <enumeration value="QCTR"/>
- *     <enumeration value="QCIR"/>
- *     <enumeration value="QETR"/>
- *     <enumeration value="QNTR"/>
- *     <enumeration value="QRTR"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="QueryTradeStatus1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="QAST"/&gt;
+ *     &lt;enumeration value="QCTR"/&gt;
+ *     &lt;enumeration value="QCIR"/&gt;
+ *     &lt;enumeration value="QETR"/&gt;
+ *     &lt;enumeration value="QNTR"/&gt;
+ *     &lt;enumeration value="QRTR"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "QueryTradeStatus1Code")

@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -51,11 +51,11 @@ public class SystemParty7 {
     @XmlElement(name = "OpngDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate opngDt;
+    protected XMLGregorianCalendar opngDt;
     @XmlElement(name = "ClsgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate clsgDt;
+    protected XMLGregorianCalendar clsgDt;
     @XmlElement(name = "Tp", required = true)
     protected SystemPartyType1Choice tp;
     @XmlElement(name = "TechAdr")
@@ -103,8 +103,8 @@ public class SystemParty7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the adr property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the adr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -118,12 +118,10 @@ public class SystemParty7 {
      * {@link PostalAddress28 }
      * 
      * 
-     * @return
-     *     The value of the adr property.
      */
     public List<PostalAddress28> getAdr() {
         if (adr == null) {
-            adr = new ArrayList<>();
+            adr = new ArrayList<PostalAddress28>();
         }
         return this.adr;
     }
@@ -134,8 +132,8 @@ public class SystemParty7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the ctctDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the ctctDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -149,12 +147,10 @@ public class SystemParty7 {
      * {@link Contact14 }
      * 
      * 
-     * @return
-     *     The value of the ctctDtls property.
      */
     public List<Contact14> getCtctDtls() {
         if (ctctDtls == null) {
-            ctctDtls = new ArrayList<>();
+            ctctDtls = new ArrayList<Contact14>();
         }
         return this.ctctDtls;
     }
@@ -167,7 +163,7 @@ public class SystemParty7 {
      *     {@link String }
      *     
      */
-    public LocalDate getOpngDt() {
+    public XMLGregorianCalendar getOpngDt() {
         return opngDt;
     }
 
@@ -179,7 +175,7 @@ public class SystemParty7 {
      *     {@link String }
      *     
      */
-    public SystemParty7 setOpngDt(LocalDate value) {
+    public SystemParty7 setOpngDt(XMLGregorianCalendar value) {
         this.opngDt = value;
         return this;
     }
@@ -192,7 +188,7 @@ public class SystemParty7 {
      *     {@link String }
      *     
      */
-    public LocalDate getClsgDt() {
+    public XMLGregorianCalendar getClsgDt() {
         return clsgDt;
     }
 
@@ -204,7 +200,7 @@ public class SystemParty7 {
      *     {@link String }
      *     
      */
-    public SystemParty7 setClsgDt(LocalDate value) {
+    public SystemParty7 setClsgDt(XMLGregorianCalendar value) {
         this.clsgDt = value;
         return this;
     }
@@ -240,8 +236,8 @@ public class SystemParty7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the techAdr property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the techAdr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -255,12 +251,10 @@ public class SystemParty7 {
      * {@link TechnicalIdentification2Choice }
      * 
      * 
-     * @return
-     *     The value of the techAdr property.
      */
     public List<TechnicalIdentification2Choice> getTechAdr() {
         if (techAdr == null) {
-            techAdr = new ArrayList<>();
+            techAdr = new ArrayList<TechnicalIdentification2Choice>();
         }
         return this.techAdr;
     }
@@ -271,8 +265,8 @@ public class SystemParty7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the mktSpcfcAttr property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the mktSpcfcAttr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -286,12 +280,10 @@ public class SystemParty7 {
      * {@link MarketSpecificAttribute1 }
      * 
      * 
-     * @return
-     *     The value of the mktSpcfcAttr property.
      */
     public List<MarketSpecificAttribute1> getMktSpcfcAttr() {
         if (mktSpcfcAttr == null) {
-            mktSpcfcAttr = new ArrayList<>();
+            mktSpcfcAttr = new ArrayList<MarketSpecificAttribute1>();
         }
         return this.mktSpcfcAttr;
     }
@@ -377,8 +369,8 @@ public class SystemParty7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the rstrctn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the rstrctn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -392,12 +384,10 @@ public class SystemParty7 {
      * {@link SystemRestriction1 }
      * 
      * 
-     * @return
-     *     The value of the rstrctn property.
      */
     public List<SystemRestriction1> getRstrctn() {
         if (rstrctn == null) {
-            rstrctn = new ArrayList<>();
+            rstrctn = new ArrayList<SystemRestriction1>();
         }
         return this.rstrctn;
     }

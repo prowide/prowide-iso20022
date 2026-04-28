@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -231,8 +231,8 @@ public class CorporateActionRate12 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the grssDvddRate property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the grssDvddRate property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -246,12 +246,10 @@ public class CorporateActionRate12 {
      * {@link GrossDividendRateFormat4Choice }
      * 
      * 
-     * @return
-     *     The value of the grssDvddRate property.
      */
     public List<GrossDividendRateFormat4Choice> getGrssDvddRate() {
         if (grssDvddRate == null) {
-            grssDvddRate = new ArrayList<>();
+            grssDvddRate = new ArrayList<GrossDividendRateFormat4Choice>();
         }
         return this.grssDvddRate;
     }
@@ -312,8 +310,8 @@ public class CorporateActionRate12 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the intrstRateUsdForPmt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the intrstRateUsdForPmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -327,12 +325,10 @@ public class CorporateActionRate12 {
      * {@link InterestRateUsedForPaymentFormat4Choice }
      * 
      * 
-     * @return
-     *     The value of the intrstRateUsdForPmt property.
      */
     public List<InterestRateUsedForPaymentFormat4Choice> getIntrstRateUsdForPmt() {
         if (intrstRateUsdForPmt == null) {
-            intrstRateUsdForPmt = new ArrayList<>();
+            intrstRateUsdForPmt = new ArrayList<InterestRateUsedForPaymentFormat4Choice>();
         }
         return this.intrstRateUsdForPmt;
     }
@@ -343,8 +339,8 @@ public class CorporateActionRate12 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the netDvddRate property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the netDvddRate property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -358,12 +354,10 @@ public class CorporateActionRate12 {
      * {@link NetDividendRateFormat4Choice }
      * 
      * 
-     * @return
-     *     The value of the netDvddRate property.
      */
     public List<NetDividendRateFormat4Choice> getNetDvddRate() {
         if (netDvddRate == null) {
-            netDvddRate = new ArrayList<>();
+            netDvddRate = new ArrayList<NetDividendRateFormat4Choice>();
         }
         return this.netDvddRate;
     }
@@ -449,8 +443,8 @@ public class CorporateActionRate12 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the taxCdtRate property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the taxCdtRate property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -464,12 +458,10 @@ public class CorporateActionRate12 {
      * {@link TaxCreditRateFormat4Choice }
      * 
      * 
-     * @return
-     *     The value of the taxCdtRate property.
      */
     public List<TaxCreditRateFormat4Choice> getTaxCdtRate() {
         if (taxCdtRate == null) {
-            taxCdtRate = new ArrayList<>();
+            taxCdtRate = new ArrayList<TaxCreditRateFormat4Choice>();
         }
         return this.taxCdtRate;
     }
@@ -705,8 +697,8 @@ public class CorporateActionRate12 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the taxRltdRate property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the taxRltdRate property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -720,12 +712,10 @@ public class CorporateActionRate12 {
      * {@link RateTypeAndAmountAndStatus10 }
      * 
      * 
-     * @return
-     *     The value of the taxRltdRate property.
      */
     public List<RateTypeAndAmountAndStatus10> getTaxRltdRate() {
         if (taxRltdRate == null) {
-            taxRltdRate = new ArrayList<>();
+            taxRltdRate = new ArrayList<RateTypeAndAmountAndStatus10>();
         }
         return this.taxRltdRate;
     }

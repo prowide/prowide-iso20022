@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxSeev01100103
 
     @XmlElement(name = "AgtCANtfctnStsAdvc", required = true)
     protected AgentCANotificationStatusAdviceV03 agtCANtfctnStsAdvc;
-    public static final transient String BUSINESS_PROCESS = "seev";
-    public static final transient int FUNCTIONALITY = 11;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 3;
+    public final static transient String BUSINESS_PROCESS = "seev";
+    public final static transient int FUNCTIONALITY = 11;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 3;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {AddressType2Code.class, AgentCANotificationStatusAdviceV03 .class, AgentDocumentIdentificationAndStatus1Choice.class, AgentNotificationCancellationIdentificationAndStatus1 .class, AgentNotificationIdentificationAndStatus1 .class, CorporateActionEventProcessingType2Code.class, CorporateActionEventProcessingType4Choice.class, CorporateActionEventType107Choice.class, CorporateActionEventType35Code.class, CorporateActionGeneralInformation175 .class, CorporateActionMandatoryVoluntary1Code.class, CorporateActionMandatoryVoluntary3Choice.class, FinancialInstrumentDescription5 .class, GenericIdentification30 .class, GenericIdentification36 .class, GenericIdentification78 .class, IdentificationSource3Choice.class, MarketIdentification3Choice.class, MxSeev01100103 .class, NameAndAddress5 .class, NotificationAdviceStatus2Choice.class, NotificationCancellationProcessingStatus2 .class, NotificationCancellationRejectionReason2 .class, NotificationCancellationRequestStatus2Choice.class, NotificationProcessingStatus2 .class, NotificationRejectionReason2 .class, OtherIdentification1 .class, PartyIdentification129Choice.class, PostalAddress1 .class, ProcessedStatus1Format1Choice.class, ProcessedStatus2Code.class, ProcessedStatus2Format1Choice.class, ProcessedStatus7Code.class, RejectionReason11Format1Choice.class, RejectionReason6Format1Choice.class, RejectionReason80Code.class, RejectionReason81Code.class, SafekeepingPlace1Code.class, SafekeepingPlace2Code.class, SafekeepingPlaceFormat42Choice.class, SafekeepingPlaceTypeAndIdentification1 .class, SafekeepingPlaceTypeAndText6 .class, SecurityIdentification19 .class };
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:seev.011.001.03";
+    public final static transient Class[] _classes = new Class[] {AddressType2Code.class, AgentCANotificationStatusAdviceV03 .class, AgentDocumentIdentificationAndStatus1Choice.class, AgentNotificationCancellationIdentificationAndStatus1 .class, AgentNotificationIdentificationAndStatus1 .class, CorporateActionEventProcessingType2Code.class, CorporateActionEventProcessingType4Choice.class, CorporateActionEventType107Choice.class, CorporateActionEventType35Code.class, CorporateActionGeneralInformation175 .class, CorporateActionMandatoryVoluntary1Code.class, CorporateActionMandatoryVoluntary3Choice.class, FinancialInstrumentDescription5 .class, GenericIdentification30 .class, GenericIdentification36 .class, GenericIdentification78 .class, IdentificationSource3Choice.class, MarketIdentification3Choice.class, MxSeev01100103 .class, NameAndAddress5 .class, NotificationAdviceStatus2Choice.class, NotificationCancellationProcessingStatus2 .class, NotificationCancellationRejectionReason2 .class, NotificationCancellationRequestStatus2Choice.class, NotificationProcessingStatus2 .class, NotificationRejectionReason2 .class, OtherIdentification1 .class, PartyIdentification129Choice.class, PostalAddress1 .class, ProcessedStatus1Format1Choice.class, ProcessedStatus2Code.class, ProcessedStatus2Format1Choice.class, ProcessedStatus7Code.class, RejectionReason11Format1Choice.class, RejectionReason6Format1Choice.class, RejectionReason80Code.class, RejectionReason81Code.class, SafekeepingPlace1Code.class, SafekeepingPlace2Code.class, SafekeepingPlaceFormat42Choice.class, SafekeepingPlaceTypeAndIdentification1 .class, SafekeepingPlaceTypeAndText6 .class, SecurityIdentification19 .class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:seev.011.001.03";
 
     public MxSeev01100103() {
         super();
@@ -86,6 +86,21 @@ public class MxSeev01100103
     public MxSeev01100103 setAgtCANtfctnStsAdvc(AgentCANotificationStatusAdviceV03 value) {
         this.agtCANtfctnStsAdvc = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxSeev01100103
      * @return
      *     a new instance of MxSeev01100103
      */
-    public static final MxSeev01100103 fromJson(String json) {
+    public final static MxSeev01100103 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSeev01100103 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

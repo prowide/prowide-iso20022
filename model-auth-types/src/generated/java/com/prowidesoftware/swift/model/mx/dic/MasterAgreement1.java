@@ -1,14 +1,12 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.Year;
-import com.prowidesoftware.swift.model.mx.adapters.IsoYearAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -31,10 +29,9 @@ public class MasterAgreement1 {
 
     @XmlElement(name = "Tp", required = true)
     protected AgreementType1Choice tp;
-    @XmlElement(name = "Vrsn", type = String.class)
-    @XmlJavaTypeAdapter(IsoYearAdapter.class)
+    @XmlElement(name = "Vrsn")
     @XmlSchemaType(name = "gYear")
-    protected Year vrsn;
+    protected XMLGregorianCalendar vrsn;
     @XmlElement(name = "OthrMstrAgrmtDtls")
     protected String othrMstrAgrmtDtls;
 
@@ -68,10 +65,10 @@ public class MasterAgreement1 {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public Year getVrsn() {
+    public XMLGregorianCalendar getVrsn() {
         return vrsn;
     }
 
@@ -80,10 +77,10 @@ public class MasterAgreement1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public MasterAgreement1 setVrsn(Year value) {
+    public MasterAgreement1 setVrsn(XMLGregorianCalendar value) {
         this.vrsn = value;
         return this;
     }

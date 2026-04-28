@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -70,7 +70,7 @@ public class KeyExchangeInitiationV04 {
     @XmlElement(name = "TrnsmssnDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime trnsmssnDtTm;
+    protected XMLGregorianCalendar trnsmssnDtTm;
     @XmlElement(name = "RtrvlRefNb")
     protected String rtrvlRefNb;
     @XmlElement(name = "LifeCyclId")
@@ -182,8 +182,8 @@ public class KeyExchangeInitiationV04 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the msgRsn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the msgRsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -197,12 +197,10 @@ public class KeyExchangeInitiationV04 {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the msgRsn property.
      */
     public List<String> getMsgRsn() {
         if (msgRsn == null) {
-            msgRsn = new ArrayList<>();
+            msgRsn = new ArrayList<String>();
         }
         return this.msgRsn;
     }
@@ -213,8 +211,8 @@ public class KeyExchangeInitiationV04 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the altrnMsgRsn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the altrnMsgRsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -228,12 +226,10 @@ public class KeyExchangeInitiationV04 {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the altrnMsgRsn property.
      */
     public List<String> getAltrnMsgRsn() {
         if (altrnMsgRsn == null) {
-            altrnMsgRsn = new ArrayList<>();
+            altrnMsgRsn = new ArrayList<String>();
         }
         return this.altrnMsgRsn;
     }
@@ -296,7 +292,7 @@ public class KeyExchangeInitiationV04 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getTrnsmssnDtTm() {
+    public XMLGregorianCalendar getTrnsmssnDtTm() {
         return trnsmssnDtTm;
     }
 
@@ -308,7 +304,7 @@ public class KeyExchangeInitiationV04 {
      *     {@link String }
      *     
      */
-    public KeyExchangeInitiationV04 setTrnsmssnDtTm(OffsetDateTime value) {
+    public KeyExchangeInitiationV04 setTrnsmssnDtTm(XMLGregorianCalendar value) {
         this.trnsmssnDtTm = value;
         return this;
     }
@@ -494,8 +490,8 @@ public class KeyExchangeInitiationV04 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the addtlFee property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the addtlFee property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -509,12 +505,10 @@ public class KeyExchangeInitiationV04 {
      * {@link AdditionalFee3 }
      * 
      * 
-     * @return
-     *     The value of the addtlFee property.
      */
     public List<AdditionalFee3> getAddtlFee() {
         if (addtlFee == null) {
-            addtlFee = new ArrayList<>();
+            addtlFee = new ArrayList<AdditionalFee3>();
         }
         return this.addtlFee;
     }
@@ -550,8 +544,8 @@ public class KeyExchangeInitiationV04 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the addtlData property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the addtlData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -565,12 +559,10 @@ public class KeyExchangeInitiationV04 {
      * {@link AdditionalData2 }
      * 
      * 
-     * @return
-     *     The value of the addtlData property.
      */
     public List<AdditionalData2> getAddtlData() {
         if (addtlData == null) {
-            addtlData = new ArrayList<>();
+            addtlData = new ArrayList<AdditionalData2>();
         }
         return this.addtlData;
     }
@@ -606,8 +598,8 @@ public class KeyExchangeInitiationV04 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the prtctdData property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the prtctdData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -621,12 +613,10 @@ public class KeyExchangeInitiationV04 {
      * {@link ProtectedData2 }
      * 
      * 
-     * @return
-     *     The value of the prtctdData property.
      */
     public List<ProtectedData2> getPrtctdData() {
         if (prtctdData == null) {
-            prtctdData = new ArrayList<>();
+            prtctdData = new ArrayList<ProtectedData2>();
         }
         return this.prtctdData;
     }
@@ -637,8 +627,8 @@ public class KeyExchangeInitiationV04 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the splmtryData property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -652,12 +642,10 @@ public class KeyExchangeInitiationV04 {
      * {@link SupplementaryData1 }
      * 
      * 
-     * @return
-     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<>();
+            splmtryData = new ArrayList<SupplementaryData1>();
         }
         return this.splmtryData;
     }

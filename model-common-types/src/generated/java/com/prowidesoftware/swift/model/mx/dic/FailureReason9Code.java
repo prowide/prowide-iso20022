@@ -1,51 +1,52 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for FailureReason9Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="FailureReason9Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="CDCP"/>
- *     <enumeration value="CDCL"/>
- *     <enumeration value="CDER"/>
- *     <enumeration value="CUCL"/>
- *     <enumeration value="CUDC"/>
- *     <enumeration value="CDFG"/>
- *     <enumeration value="FILL"/>
- *     <enumeration value="MALF"/>
- *     <enumeration value="NDCL"/>
- *     <enumeration value="SECU"/>
- *     <enumeration value="SFRD"/>
- *     <enumeration value="TIMO"/>
- *     <enumeration value="LATE"/>
- *     <enumeration value="UCPT"/>
- *     <enumeration value="UCMP"/>
- *     <enumeration value="USND"/>
- *     <enumeration value="CSRV"/>
- *     <enumeration value="CDRT"/>
- *     <enumeration value="CUTO"/>
- *     <enumeration value="RJCT"/>
- *     <enumeration value="FMTE"/>
- *     <enumeration value="VLTE"/>
- *     <enumeration value="CHFG"/>
- *     <enumeration value="DCFG"/>
- *     <enumeration value="CQFG"/>
- *     <enumeration value="DFGC"/>
- *     <enumeration value="CFGC"/>
- *     <enumeration value="QFGC"/>
- *     <enumeration value="CQRT"/>
- *     <enumeration value="DCRT"/>
- *     <enumeration value="RSTR"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="FailureReason9Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="CDCP"/&gt;
+ *     &lt;enumeration value="CDCL"/&gt;
+ *     &lt;enumeration value="CDER"/&gt;
+ *     &lt;enumeration value="CUCL"/&gt;
+ *     &lt;enumeration value="CUDC"/&gt;
+ *     &lt;enumeration value="CDFG"/&gt;
+ *     &lt;enumeration value="FILL"/&gt;
+ *     &lt;enumeration value="MALF"/&gt;
+ *     &lt;enumeration value="NDCL"/&gt;
+ *     &lt;enumeration value="SECU"/&gt;
+ *     &lt;enumeration value="SFRD"/&gt;
+ *     &lt;enumeration value="TIMO"/&gt;
+ *     &lt;enumeration value="LATE"/&gt;
+ *     &lt;enumeration value="UCPT"/&gt;
+ *     &lt;enumeration value="UCMP"/&gt;
+ *     &lt;enumeration value="USND"/&gt;
+ *     &lt;enumeration value="CSRV"/&gt;
+ *     &lt;enumeration value="CDRT"/&gt;
+ *     &lt;enumeration value="CUTO"/&gt;
+ *     &lt;enumeration value="RJCT"/&gt;
+ *     &lt;enumeration value="FMTE"/&gt;
+ *     &lt;enumeration value="VLTE"/&gt;
+ *     &lt;enumeration value="CHFG"/&gt;
+ *     &lt;enumeration value="DCFG"/&gt;
+ *     &lt;enumeration value="CQFG"/&gt;
+ *     &lt;enumeration value="DFGC"/&gt;
+ *     &lt;enumeration value="CFGC"/&gt;
+ *     &lt;enumeration value="QFGC"/&gt;
+ *     &lt;enumeration value="CQRT"/&gt;
+ *     &lt;enumeration value="DCRT"/&gt;
+ *     &lt;enumeration value="RSTR"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "FailureReason9Code")

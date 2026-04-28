@@ -24,5 +24,5 @@
 @XmlSchema(elementFormDefault = XmlNsForm.QUALIFIED)
 package com.prowidesoftware.swift.model.mx.sys.dic;
 
-import jakarta.xml.bind.annotation.XmlNsForm;
-import jakarta.xml.bind.annotation.XmlSchema;
+import javax.xml.bind.annotation.XmlNsForm;
+import javax.xml.bind.annotation.XmlSchema;

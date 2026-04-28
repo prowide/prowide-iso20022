@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.OffsetTime;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -38,7 +38,7 @@ public class ClockSynchronisation3 {
     @XmlElement(name = "Dely", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected OffsetTime dely;
+    protected XMLGregorianCalendar dely;
 
     /**
      * Gets the value of the poiTmZone property.
@@ -71,8 +71,8 @@ public class ClockSynchronisation3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the synctnSvr property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the synctnSvr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -86,12 +86,10 @@ public class ClockSynchronisation3 {
      * {@link NetworkParameters7 }
      * 
      * 
-     * @return
-     *     The value of the synctnSvr property.
      */
     public List<NetworkParameters7> getSynctnSvr() {
         if (synctnSvr == null) {
-            synctnSvr = new ArrayList<>();
+            synctnSvr = new ArrayList<NetworkParameters7>();
         }
         return this.synctnSvr;
     }
@@ -104,7 +102,7 @@ public class ClockSynchronisation3 {
      *     {@link String }
      *     
      */
-    public OffsetTime getDely() {
+    public XMLGregorianCalendar getDely() {
         return dely;
     }
 
@@ -116,7 +114,7 @@ public class ClockSynchronisation3 {
      *     {@link String }
      *     
      */
-    public ClockSynchronisation3 setDely(OffsetTime value) {
+    public ClockSynchronisation3 setDely(XMLGregorianCalendar value) {
         this.dely = value;
         return this;
     }

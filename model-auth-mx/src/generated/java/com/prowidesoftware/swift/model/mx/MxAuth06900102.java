@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxAuth06900102
 
     @XmlElement(name = "CCPClrdPdctRpt", required = true)
     protected CCPClearedProductReportV02 ccpClrdPdctRpt;
-    public static final transient String BUSINESS_PROCESS = "auth";
-    public static final transient int FUNCTIONALITY = 69;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 2;
+    public final static transient String BUSINESS_PROCESS = "auth";
+    public final static transient int FUNCTIONALITY = 69;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 2;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {ActiveCurrencyAnd24Amount.class, ActiveCurrencyAndAmount.class, CCPClearedProductReportV02 .class, ClearedProduct2 .class, ContractSize1 .class, DefinedAttributes1Choice.class, Derivative3 .class, DerivativeClassification1 .class, DerivativeUnderlyingLeg1 .class, ExoticOptionStyle1Code.class, FinancialInstrument59 .class, FinancialInstrumentAttributes88 .class, FinancialInstrumentAttributes89 .class, FinancialInstrumentAttributes90 .class, Frequency11Code.class, GeneralCollateral2 .class, GenericIdentification165 .class, GenericIdentification168 .class, GenericIdentification36 .class, InterestComputationMethod2Code.class, InterestRateContractTerm1 .class, MxAuth06900102 .class, OpenInterest1 .class, Option14 .class, OptionEvent2 .class, OptionEventType1Choice.class, OptionEventType1Code.class, OptionStyle5Code.class, OptionType1Code.class, PhysicalTransferType4Code.class, Product1Choice.class, ProductClassification1 .class, RateBasis1Code.class, RepurchaseAgreement3 .class, RepurchaseAgreementType1Choice.class, SchemeIdentificationType1Code.class, SpecificCollateral2 .class, Standardisation1Code.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, UnitOfMeasure5Choice.class, UnitOfMeasure8Code.class };
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:auth.069.001.02";
+    public final static transient Class[] _classes = new Class[] {ActiveCurrencyAnd24Amount.class, ActiveCurrencyAndAmount.class, CCPClearedProductReportV02 .class, ClearedProduct2 .class, ContractSize1 .class, DefinedAttributes1Choice.class, Derivative3 .class, DerivativeClassification1 .class, DerivativeUnderlyingLeg1 .class, ExoticOptionStyle1Code.class, FinancialInstrument59 .class, FinancialInstrumentAttributes88 .class, FinancialInstrumentAttributes89 .class, FinancialInstrumentAttributes90 .class, Frequency11Code.class, GeneralCollateral2 .class, GenericIdentification165 .class, GenericIdentification168 .class, GenericIdentification36 .class, InterestComputationMethod2Code.class, InterestRateContractTerm1 .class, MxAuth06900102 .class, OpenInterest1 .class, Option14 .class, OptionEvent2 .class, OptionEventType1Choice.class, OptionEventType1Code.class, OptionStyle5Code.class, OptionType1Code.class, PhysicalTransferType4Code.class, Product1Choice.class, ProductClassification1 .class, RateBasis1Code.class, RepurchaseAgreement3 .class, RepurchaseAgreementType1Choice.class, SchemeIdentificationType1Code.class, SpecificCollateral2 .class, Standardisation1Code.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, UnitOfMeasure5Choice.class, UnitOfMeasure8Code.class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:auth.069.001.02";
 
     public MxAuth06900102() {
         super();
@@ -86,6 +86,21 @@ public class MxAuth06900102
     public MxAuth06900102 setCCPClrdPdctRpt(CCPClearedProductReportV02 value) {
         this.ccpClrdPdctRpt = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxAuth06900102
      * @return
      *     a new instance of MxAuth06900102
      */
-    public static final MxAuth06900102 fromJson(String json) {
+    public final static MxAuth06900102 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxAuth06900102 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

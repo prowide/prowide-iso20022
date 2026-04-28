@@ -3,11 +3,11 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -101,8 +101,8 @@ public class AuthorisationResult20 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the rspnTrac property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the rspnTrac property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -116,12 +116,10 @@ public class AuthorisationResult20 {
      * {@link ResponseType8 }
      * 
      * 
-     * @return
-     *     The value of the rspnTrac property.
      */
     public List<ResponseType8> getRspnTrac() {
         if (rspnTrac == null) {
-            rspnTrac = new ArrayList<>();
+            rspnTrac = new ArrayList<ResponseType8>();
         }
         return this.rspnTrac;
     }
@@ -157,8 +155,8 @@ public class AuthorisationResult20 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the actn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the actn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -172,12 +170,10 @@ public class AuthorisationResult20 {
      * {@link Action7 }
      * 
      * 
-     * @return
-     *     The value of the actn property.
      */
     public List<Action7> getActn() {
         if (actn == null) {
-            actn = new ArrayList<>();
+            actn = new ArrayList<Action7>();
         }
         return this.actn;
     }
@@ -188,8 +184,8 @@ public class AuthorisationResult20 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the feeToAdd property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the feeToAdd property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -203,12 +199,10 @@ public class AuthorisationResult20 {
      * {@link ATMFeeComponent1 }
      * 
      * 
-     * @return
-     *     The value of the feeToAdd property.
      */
     public List<ATMFeeComponent1> getFeeToAdd() {
         if (feeToAdd == null) {
-            feeToAdd = new ArrayList<>();
+            feeToAdd = new ArrayList<ATMFeeComponent1>();
         }
         return this.feeToAdd;
     }

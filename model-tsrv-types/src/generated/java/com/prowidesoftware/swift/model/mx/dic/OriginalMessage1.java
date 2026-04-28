@@ -1,14 +1,12 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.OffsetDateTime;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -40,10 +38,9 @@ public class OriginalMessage1 {
     protected Party9Choice to;
     @XmlElement(name = "BizMsgIdr", required = true)
     protected String bizMsgIdr;
-    @XmlElement(name = "CreDt", required = true, type = String.class)
-    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
+    @XmlElement(name = "CreDt", required = true)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime creDt;
+    protected XMLGregorianCalendar creDt;
     @XmlElement(name = "CpyDplct")
     @XmlSchemaType(name = "string")
     protected CopyDuplicate1Code cpyDplct;
@@ -153,10 +150,10 @@ public class OriginalMessage1 {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public OffsetDateTime getCreDt() {
+    public XMLGregorianCalendar getCreDt() {
         return creDt;
     }
 
@@ -165,10 +162,10 @@ public class OriginalMessage1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public OriginalMessage1 setCreDt(OffsetDateTime value) {
+    public OriginalMessage1 setCreDt(XMLGregorianCalendar value) {
         this.creDt = value;
         return this;
     }

@@ -1,44 +1,45 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for POIComponentType6Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="POIComponentType6Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="AQPP"/>
- *     <enumeration value="APPR"/>
- *     <enumeration value="TLPR"/>
- *     <enumeration value="SCPR"/>
- *     <enumeration value="SERV"/>
- *     <enumeration value="TERM"/>
- *     <enumeration value="DVCE"/>
- *     <enumeration value="SECM"/>
- *     <enumeration value="APLI"/>
- *     <enumeration value="EMVK"/>
- *     <enumeration value="EMVO"/>
- *     <enumeration value="MDWR"/>
- *     <enumeration value="DRVR"/>
- *     <enumeration value="OPST"/>
- *     <enumeration value="MRPR"/>
- *     <enumeration value="CRTF"/>
- *     <enumeration value="TMSP"/>
- *     <enumeration value="SACP"/>
- *     <enumeration value="SAPR"/>
- *     <enumeration value="LOGF"/>
- *     <enumeration value="MDFL"/>
- *     <enumeration value="SOFT"/>
- *     <enumeration value="CONF"/>
- *     <enumeration value="RPFL"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="POIComponentType6Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="AQPP"/&gt;
+ *     &lt;enumeration value="APPR"/&gt;
+ *     &lt;enumeration value="TLPR"/&gt;
+ *     &lt;enumeration value="SCPR"/&gt;
+ *     &lt;enumeration value="SERV"/&gt;
+ *     &lt;enumeration value="TERM"/&gt;
+ *     &lt;enumeration value="DVCE"/&gt;
+ *     &lt;enumeration value="SECM"/&gt;
+ *     &lt;enumeration value="APLI"/&gt;
+ *     &lt;enumeration value="EMVK"/&gt;
+ *     &lt;enumeration value="EMVO"/&gt;
+ *     &lt;enumeration value="MDWR"/&gt;
+ *     &lt;enumeration value="DRVR"/&gt;
+ *     &lt;enumeration value="OPST"/&gt;
+ *     &lt;enumeration value="MRPR"/&gt;
+ *     &lt;enumeration value="CRTF"/&gt;
+ *     &lt;enumeration value="TMSP"/&gt;
+ *     &lt;enumeration value="SACP"/&gt;
+ *     &lt;enumeration value="SAPR"/&gt;
+ *     &lt;enumeration value="LOGF"/&gt;
+ *     &lt;enumeration value="MDFL"/&gt;
+ *     &lt;enumeration value="SOFT"/&gt;
+ *     &lt;enumeration value="CONF"/&gt;
+ *     &lt;enumeration value="RPFL"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "POIComponentType6Code")

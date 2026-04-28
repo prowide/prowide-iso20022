@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -38,7 +38,7 @@ public class Unit6 {
     @XmlElement(name = "AcqstnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate acqstnDt;
+    protected XMLGregorianCalendar acqstnDt;
     @XmlElement(name = "CertNb")
     protected List<String> certNb;
     @XmlElement(name = "Grp1Or2Units")
@@ -80,7 +80,7 @@ public class Unit6 {
      *     {@link String }
      *     
      */
-    public LocalDate getAcqstnDt() {
+    public XMLGregorianCalendar getAcqstnDt() {
         return acqstnDt;
     }
 
@@ -92,7 +92,7 @@ public class Unit6 {
      *     {@link String }
      *     
      */
-    public Unit6 setAcqstnDt(LocalDate value) {
+    public Unit6 setAcqstnDt(XMLGregorianCalendar value) {
         this.acqstnDt = value;
         return this;
     }
@@ -103,8 +103,8 @@ public class Unit6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the certNb property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the certNb property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -118,12 +118,10 @@ public class Unit6 {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the certNb property.
      */
     public List<String> getCertNb() {
         if (certNb == null) {
-            certNb = new ArrayList<>();
+            certNb = new ArrayList<String>();
         }
         return this.certNb;
     }

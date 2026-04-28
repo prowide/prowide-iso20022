@@ -2,18 +2,17 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -52,7 +51,7 @@ public class OrderIdentification2 {
     @XmlElement(name = "TmStmp", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime tmStmp;
+    protected XMLGregorianCalendar tmStmp;
     @XmlElement(name = "TradVn", required = true)
     protected String tradVn;
     @XmlElement(name = "FinInstrm", required = true)
@@ -62,7 +61,7 @@ public class OrderIdentification2 {
     @XmlElement(name = "DtOfRct", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate dtOfRct;
+    protected XMLGregorianCalendar dtOfRct;
     @XmlElement(name = "VldtyPrd")
     protected ValidityPeriod1Choice vldtyPrd;
     @XmlElement(name = "OrdrRstrctn")
@@ -70,7 +69,7 @@ public class OrderIdentification2 {
     @XmlElement(name = "VldtyDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime vldtyDtTm;
+    protected XMLGregorianCalendar vldtyDtTm;
     @XmlElement(name = "EvtTp")
     protected OrderEventType1Choice evtTp;
 
@@ -157,7 +156,7 @@ public class OrderIdentification2 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getTmStmp() {
+    public XMLGregorianCalendar getTmStmp() {
         return tmStmp;
     }
 
@@ -169,7 +168,7 @@ public class OrderIdentification2 {
      *     {@link String }
      *     
      */
-    public OrderIdentification2 setTmStmp(OffsetDateTime value) {
+    public OrderIdentification2 setTmStmp(XMLGregorianCalendar value) {
         this.tmStmp = value;
         return this;
     }
@@ -257,7 +256,7 @@ public class OrderIdentification2 {
      *     {@link String }
      *     
      */
-    public LocalDate getDtOfRct() {
+    public XMLGregorianCalendar getDtOfRct() {
         return dtOfRct;
     }
 
@@ -269,7 +268,7 @@ public class OrderIdentification2 {
      *     {@link String }
      *     
      */
-    public OrderIdentification2 setDtOfRct(LocalDate value) {
+    public OrderIdentification2 setDtOfRct(XMLGregorianCalendar value) {
         this.dtOfRct = value;
         return this;
     }
@@ -305,8 +304,8 @@ public class OrderIdentification2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the ordrRstrctn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the ordrRstrctn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -320,12 +319,10 @@ public class OrderIdentification2 {
      * {@link OrderRestriction1Choice }
      * 
      * 
-     * @return
-     *     The value of the ordrRstrctn property.
      */
     public List<OrderRestriction1Choice> getOrdrRstrctn() {
         if (ordrRstrctn == null) {
-            ordrRstrctn = new ArrayList<>();
+            ordrRstrctn = new ArrayList<OrderRestriction1Choice>();
         }
         return this.ordrRstrctn;
     }
@@ -338,7 +335,7 @@ public class OrderIdentification2 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getVldtyDtTm() {
+    public XMLGregorianCalendar getVldtyDtTm() {
         return vldtyDtTm;
     }
 
@@ -350,7 +347,7 @@ public class OrderIdentification2 {
      *     {@link String }
      *     
      */
-    public OrderIdentification2 setVldtyDtTm(OffsetDateTime value) {
+    public OrderIdentification2 setVldtyDtTm(XMLGregorianCalendar value) {
         this.vldtyDtTm = value;
         return this;
     }

@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxCafc00200101
 
     @XmlElement(name = "FeeColltnRspn", required = true)
     protected FeeCollectionResponseV01 feeColltnRspn;
-    public static final transient String BUSINESS_PROCESS = "cafc";
-    public static final transient int FUNCTIONALITY = 2;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 1;
+    public final static transient String BUSINESS_PROCESS = "cafc";
+    public final static transient int FUNCTIONALITY = 2;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {AdditionalAmounts1 .class, AdditionalData1 .class, AdditionalFee1 .class, AdditionalInformation22 .class, Address1 .class, Amount14 .class, Amount4 .class, Amount5 .class, BatchManagementInformation1 .class, CardData2 .class, CardProgrammeMode1 .class, ContentInformationType20 .class, Context9 .class, DetailAmount1Code.class, DetailedAmount19 .class, Environment5 .class, FeeAmount2 .class, FeeCollectionResponse1 .class, FeeCollectionResponseV01 .class, GenericIdentification172 .class, Header48 .class, LifeCycleSupport1Code.class, MACData1 .class, MessageClass1Code.class, MessageFunction29Code.class, MxCafc00200101 .class, OriginalDataElements1 .class, OriginalTransactionAmount1 .class, OutputFormat4Code.class, PartyIdentification197 .class, PartyIdentification203 .class, PartyType17Code.class, PartyType18Code.class, PartyType19Code.class, Priority3Code.class, ProcessingResult4 .class, Reconciliation3 .class, Response8Code.class, ResultData1 .class, ResultData5 .class, SettlementReportingEntity1 .class, SettlementService2 .class, SettlementServiceDate1 .class, SettlementServiceMode1 .class, SpecialProgrammeDetails1 .class, SpecialProgrammeQualification1 .class, SponsoredMerchant1 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, Token1 .class, Traceability7 .class, Transaction103 .class, TransactionAmount1 .class, TransactionAmounts1 .class, TransactionContext3 .class, TransactionIdentification13 .class, TransactionInitiator1Code.class, TransactionLifeCycleIdentification1 .class, TypeOfAmount10Code.class, TypeOfAmount11Code.class, TypeOfAmount12Code.class, UserInterface8Code.class };
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:cafc.002.001.01";
+    public final static transient Class[] _classes = new Class[] {AdditionalAmounts1 .class, AdditionalData1 .class, AdditionalFee1 .class, AdditionalInformation22 .class, Address1 .class, Amount14 .class, Amount4 .class, Amount5 .class, BatchManagementInformation1 .class, CardData2 .class, CardProgrammeMode1 .class, ContentInformationType20 .class, Context9 .class, DetailAmount1Code.class, DetailedAmount19 .class, Environment5 .class, FeeAmount2 .class, FeeCollectionResponse1 .class, FeeCollectionResponseV01 .class, GenericIdentification172 .class, Header48 .class, LifeCycleSupport1Code.class, MACData1 .class, MessageClass1Code.class, MessageFunction29Code.class, MxCafc00200101 .class, OriginalDataElements1 .class, OriginalTransactionAmount1 .class, OutputFormat4Code.class, PartyIdentification197 .class, PartyIdentification203 .class, PartyType17Code.class, PartyType18Code.class, PartyType19Code.class, Priority3Code.class, ProcessingResult4 .class, Reconciliation3 .class, Response8Code.class, ResultData1 .class, ResultData5 .class, SettlementReportingEntity1 .class, SettlementService2 .class, SettlementServiceDate1 .class, SettlementServiceMode1 .class, SpecialProgrammeDetails1 .class, SpecialProgrammeQualification1 .class, SponsoredMerchant1 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, Token1 .class, Traceability7 .class, Transaction103 .class, TransactionAmount1 .class, TransactionAmounts1 .class, TransactionContext3 .class, TransactionIdentification13 .class, TransactionInitiator1Code.class, TransactionLifeCycleIdentification1 .class, TypeOfAmount10Code.class, TypeOfAmount11Code.class, TypeOfAmount12Code.class, UserInterface8Code.class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:cafc.002.001.01";
 
     public MxCafc00200101() {
         super();
@@ -86,6 +86,21 @@ public class MxCafc00200101
     public MxCafc00200101 setFeeColltnRspn(FeeCollectionResponseV01 value) {
         this.feeColltnRspn = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxCafc00200101
      * @return
      *     a new instance of MxCafc00200101
      */
-    public static final MxCafc00200101 fromJson(String json) {
+    public final static MxCafc00200101 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxCafc00200101 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

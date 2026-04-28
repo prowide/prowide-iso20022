@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -60,13 +60,13 @@ public class LoanContract4 {
     @XmlElement(name = "MtrtyDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate mtrtyDt;
+    protected XMLGregorianCalendar mtrtyDt;
     @XmlElement(name = "PrlngtnFlg")
     protected Boolean prlngtnFlg;
     @XmlElement(name = "StartDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate startDt;
+    protected XMLGregorianCalendar startDt;
     @XmlElement(name = "SttlmCcy")
     protected String sttlmCcy;
     @XmlElement(name = "SpclConds")
@@ -146,8 +146,8 @@ public class LoanContract4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the buyr property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the buyr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -161,12 +161,10 @@ public class LoanContract4 {
      * {@link TradeParty6 }
      * 
      * 
-     * @return
-     *     The value of the buyr property.
      */
     public List<TradeParty6> getBuyr() {
         if (buyr == null) {
-            buyr = new ArrayList<>();
+            buyr = new ArrayList<TradeParty6>();
         }
         return this.buyr;
     }
@@ -177,8 +175,8 @@ public class LoanContract4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the sellr property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the sellr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -192,12 +190,10 @@ public class LoanContract4 {
      * {@link TradeParty6 }
      * 
      * 
-     * @return
-     *     The value of the sellr property.
      */
     public List<TradeParty6> getSellr() {
         if (sellr == null) {
-            sellr = new ArrayList<>();
+            sellr = new ArrayList<TradeParty6>();
         }
         return this.sellr;
     }
@@ -235,7 +231,7 @@ public class LoanContract4 {
      *     {@link String }
      *     
      */
-    public LocalDate getMtrtyDt() {
+    public XMLGregorianCalendar getMtrtyDt() {
         return mtrtyDt;
     }
 
@@ -247,7 +243,7 @@ public class LoanContract4 {
      *     {@link String }
      *     
      */
-    public LoanContract4 setMtrtyDt(LocalDate value) {
+    public LoanContract4 setMtrtyDt(XMLGregorianCalendar value) {
         this.mtrtyDt = value;
         return this;
     }
@@ -285,7 +281,7 @@ public class LoanContract4 {
      *     {@link String }
      *     
      */
-    public LocalDate getStartDt() {
+    public XMLGregorianCalendar getStartDt() {
         return startDt;
     }
 
@@ -297,7 +293,7 @@ public class LoanContract4 {
      *     {@link String }
      *     
      */
-    public LoanContract4 setStartDt(LocalDate value) {
+    public LoanContract4 setStartDt(XMLGregorianCalendar value) {
         this.startDt = value;
         return this;
     }
@@ -408,8 +404,8 @@ public class LoanContract4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the trch property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the trch property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -423,12 +419,10 @@ public class LoanContract4 {
      * {@link LoanContractTranche1 }
      * 
      * 
-     * @return
-     *     The value of the trch property.
      */
     public List<LoanContractTranche1> getTrch() {
         if (trch == null) {
-            trch = new ArrayList<>();
+            trch = new ArrayList<LoanContractTranche1>();
         }
         return this.trch;
     }
@@ -439,8 +433,8 @@ public class LoanContract4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the pmtSchdl property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the pmtSchdl property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -454,12 +448,10 @@ public class LoanContract4 {
      * {@link PaymentSchedule1 }
      * 
      * 
-     * @return
-     *     The value of the pmtSchdl property.
      */
     public List<PaymentSchedule1> getPmtSchdl() {
         if (pmtSchdl == null) {
-            pmtSchdl = new ArrayList<>();
+            pmtSchdl = new ArrayList<PaymentSchedule1>();
         }
         return this.pmtSchdl;
     }
@@ -470,8 +462,8 @@ public class LoanContract4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the intrstSchdl property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the intrstSchdl property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -485,12 +477,10 @@ public class LoanContract4 {
      * {@link InterestPaymentSchedule1 }
      * 
      * 
-     * @return
-     *     The value of the intrstSchdl property.
      */
     public List<InterestPaymentSchedule1> getIntrstSchdl() {
         if (intrstSchdl == null) {
-            intrstSchdl = new ArrayList<>();
+            intrstSchdl = new ArrayList<InterestPaymentSchedule1>();
         }
         return this.intrstSchdl;
     }
@@ -543,8 +533,8 @@ public class LoanContract4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the sndctdLn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the sndctdLn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -558,12 +548,10 @@ public class LoanContract4 {
      * {@link SyndicatedLoan3 }
      * 
      * 
-     * @return
-     *     The value of the sndctdLn property.
      */
     public List<SyndicatedLoan3> getSndctdLn() {
         if (sndctdLn == null) {
-            sndctdLn = new ArrayList<>();
+            sndctdLn = new ArrayList<SyndicatedLoan3>();
         }
         return this.sndctdLn;
     }
@@ -574,8 +562,8 @@ public class LoanContract4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the attchmnt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the attchmnt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -589,12 +577,10 @@ public class LoanContract4 {
      * {@link DocumentGeneralInformation5 }
      * 
      * 
-     * @return
-     *     The value of the attchmnt property.
      */
     public List<DocumentGeneralInformation5> getAttchmnt() {
         if (attchmnt == null) {
-            attchmnt = new ArrayList<>();
+            attchmnt = new ArrayList<DocumentGeneralInformation5>();
         }
         return this.attchmnt;
     }

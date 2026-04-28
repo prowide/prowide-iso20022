@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -130,8 +130,8 @@ public class SafekeepingAccount5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the bnfclOwnr property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the bnfclOwnr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -145,12 +145,10 @@ public class SafekeepingAccount5 {
      * {@link BeneficialOwner2 }
      * 
      * 
-     * @return
-     *     The value of the bnfclOwnr property.
      */
     public List<BeneficialOwner2> getBnfclOwnr() {
         if (bnfclOwnr == null) {
-            bnfclOwnr = new ArrayList<>();
+            bnfclOwnr = new ArrayList<BeneficialOwner2>();
         }
         return this.bnfclOwnr;
     }
@@ -161,8 +159,8 @@ public class SafekeepingAccount5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the balForAcct property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the balForAcct property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -176,12 +174,10 @@ public class SafekeepingAccount5 {
      * {@link AggregateHoldingBalance1 }
      * 
      * 
-     * @return
-     *     The value of the balForAcct property.
      */
     public List<AggregateHoldingBalance1> getBalForAcct() {
         if (balForAcct == null) {
-            balForAcct = new ArrayList<>();
+            balForAcct = new ArrayList<AggregateHoldingBalance1>();
         }
         return this.balForAcct;
     }
@@ -217,8 +213,8 @@ public class SafekeepingAccount5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the acctSubLvl1 property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the acctSubLvl1 property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -232,12 +228,10 @@ public class SafekeepingAccount5 {
      * {@link AccountSubLevel1 }
      * 
      * 
-     * @return
-     *     The value of the acctSubLvl1 property.
      */
     public List<AccountSubLevel1> getAcctSubLvl1() {
         if (acctSubLvl1 == null) {
-            acctSubLvl1 = new ArrayList<>();
+            acctSubLvl1 = new ArrayList<AccountSubLevel1>();
         }
         return this.acctSubLvl1;
     }
@@ -248,8 +242,8 @@ public class SafekeepingAccount5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the acctSubLvl1Diff property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the acctSubLvl1Diff property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -263,12 +257,10 @@ public class SafekeepingAccount5 {
      * {@link AggregateHoldingBalance2 }
      * 
      * 
-     * @return
-     *     The value of the acctSubLvl1Diff property.
      */
     public List<AggregateHoldingBalance2> getAcctSubLvl1Diff() {
         if (acctSubLvl1Diff == null) {
-            acctSubLvl1Diff = new ArrayList<>();
+            acctSubLvl1Diff = new ArrayList<AggregateHoldingBalance2>();
         }
         return this.acctSubLvl1Diff;
     }
