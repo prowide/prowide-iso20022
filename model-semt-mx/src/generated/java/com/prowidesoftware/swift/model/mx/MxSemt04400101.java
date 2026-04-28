@@ -26,20 +26,20 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 @XmlType(name = "Document", propOrder = {
     "sctiesTxPnltiesRpt"
 })
-@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:DRAFT4semt.044.001.01")
+@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:DRAFT5semt.044.001.01")
 public class MxSemt04400101
     extends com.prowidesoftware.swift.model.mx.AbstractMX
 {
 
     @XmlElement(name = "SctiesTxPnltiesRpt", required = true)
-    protected SecuritiesTransactionPenaltiesReportV01 sctiesTxPnltiesRpt;
+    protected SecuritiesTransactionPenaltiesReportV01Draft5 sctiesTxPnltiesRpt;
     public static final transient String BUSINESS_PROCESS = "semt";
     public static final transient int FUNCTIONALITY = 44;
     public static final transient int VARIANT = 1;
     public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {ActiveCurrencyAndAmount.class, AmountAndDirection51Draft.class, AmountAndDirection52Draft.class, AmountAndDirection53Draft.class, CashAccountIdentification5Choice1 .class, ClassificationType1Choice1 .class, CreditDebitCode.class, DateAndDateTime2Choice1Semt044Draft.class, DatePeriod1Choice.class, DeliveryReceiptType2Code.class, EventFrequency7Code1 .class, Exact4AlphaNumericTextFixed.class, Exact4AlphaNumericTextFixed1 .class, FailingReason2Code1 .class, FailingReason81 .class, FailingReason8Choice1 .class, FailingStatus10Choice1 .class, FinancialInstrumentQuantity1Choice1 .class, ForeignExchangeRate31 .class, Frequency22Choice1Semt044Draft.class, GenericIdentification11Draft.class, GenericIdentification12Draft.class, MarketIdentification1Choice1Draft.class, MxSemt04400101 .class, OrganisationIdentification291 .class, Pagination1 .class, Party38Choice1 .class, PartyIdentification120Choice1 .class, PartyIdentification127Choice1 .class, PartyIdentification1351 .class, PartyIdentification1361 .class, PartyIdentification1441 .class, Penalty21 .class, PenaltyAmountBreakdown11 .class, PenaltyAmountType1Code.class, PenaltyCalculationMethod1Code.class, PenaltyCalculationRecord11 .class, PenaltyFinancialInstrumentIdentification11 .class, PenaltyIdentification11 .class, PenaltyIdentification21 .class, PenaltyListType1Choice1 .class, PenaltyListType1Code1 .class, PenaltyPartyIdentification11 .class, PenaltyPartyType2Choice1 .class, PenaltyPartyTypeCodeT2S.class, PenaltyPerCounterparty21 .class, PenaltyRate11 .class, PenaltyRecord21 .class, PenaltyReport11 .class, PenaltyStatus11 .class, PenaltyStatus1Choice1 .class, PenaltyStatus1Code1 .class, PenaltyStatusReason11 .class, PenaltyStatusReason1Choice1 .class, PenaltyStatusReason1Code1 .class, PenaltyTransaction21 .class, PenaltyTransactionRecord11 .class, PenaltyType1Code.class, Period2 .class, PriceRateOrAmount4Choice1 .class, ReceiveDelivery1Code.class, RestrictedFINActiveCurrencyAndAmount.class, SecuritiesAccount191 .class, SecuritiesTransactionPenaltiesReportV01 .class, SecuritiesTransactionType26Code.class, SecuritiesTransactionType44Choice1 .class, SecurityIdentification191 .class, SettlementDate17Choice1Draft.class, SettlementOrCorporateActionEvent27Choice1 .class, SystemEvent31 .class, SystemEventType4Choice1 .class, TransactionIdentifications401 .class };
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:DRAFT4semt.044.001.01";
+    public static final transient Class[] _classes = new Class[] {AccountIdentification4Choice.class, AccountSchemeName1Choice.class, ActiveCurrencyAndAmount.class, AddressType2Code.class, AddressType3Choice.class, AggregatedPenaltyAmount1 .class, AggregatedPenaltyAmount2 .class, AmountAndDirection5 .class, CashAccountIdentification5Choice.class, ClassificationType1Choice.class, Contact4 .class, CorporateActionEventType28Code.class, CorporateActionEventType73Choice.class, CreditDebitCode.class, DateAndDateTime2Choice.class, DateAndPlaceOfBirth1 .class, DatePeriod1Choice.class, DeliveryReceiptType2Code.class, EventFrequency7Code.class, FailingReason2Code.class, FailingReason8 .class, FailingReason8Choice.class, FailingStatus10Choice.class, FinancialInstrumentQuantity1Choice.class, ForeignExchangeRate3 .class, Frequency22Choice.class, GenericAccountIdentification1 .class, GenericIdentification1 .class, GenericIdentification30 .class, GenericIdentification36 .class, GenericOrganisationIdentification1 .class, GenericPersonIdentification1 .class, IdentificationSource3Choice.class, MarketIdentification1Choice.class, MarketIdentification89 .class, MarketType15Choice.class, MarketType4Code.class, MxSemt04400101 .class, NameAndAddress5 .class, NamePrefix2Code.class, NoReasonCode.class, OrganisationIdentification29 .class, OrganisationIdentificationSchemeName1Choice.class, OtherContact1 .class, OtherIdentification1 .class, Pagination1 .class, Party38Choice.class, PartyIdentification120Choice.class, PartyIdentification127Choice.class, PartyIdentification135 .class, PartyIdentification136 .class, PartyIdentification144 .class, Penalty3 .class, PenaltyAmountBreakdown1 .class, PenaltyAmountType1Code.class, PenaltyCalculationMethod1Code.class, PenaltyCalculationRecord1 .class, PenaltyFinancialInstrumentIdentification1 .class, PenaltyIdentification1 .class, PenaltyIdentification2 .class, PenaltyListType1Choice.class, PenaltyListType1Code.class, PenaltyNetMovementRecord1 .class, PenaltyPartyIdentification1 .class, PenaltyPartyType2Choice.class, PenaltyPerCounterparty3 .class, PenaltyRate1 .class, PenaltyRecord3 .class, PenaltyReport1 .class, PenaltyStatus2 .class, PenaltyStatus2Choice.class, PenaltyStatus2Code.class, PenaltyStatusReason2 .class, PenaltyStatusReason2Choice.class, PenaltyStatusReason2Code.class, PenaltyTransaction2 .class, PenaltyTransactionRecord1 .class, PenaltyType1Code.class, Period2 .class, PersonIdentification13 .class, PersonIdentificationSchemeName1Choice.class, PostalAddress1 .class, PostalAddress24 .class, PreferredContactMethod1Code.class, PriceInformation25 .class, PriceRateOrAmount4Choice.class, ReceiveDelivery1Code.class, SecuritiesAccount19 .class, SecuritiesTransactionPenaltiesReportV01Draft5 .class, SecuritiesTransactionType26Code.class, SecuritiesTransactionType44Choice.class, SecurityIdentification19 .class, SettlementDate17Choice.class, SettlementDate4Code.class, SettlementDateCode7Choice.class, SettlementOrCorporateActionEvent27Choice.class, StatementUpdateType1Code.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, SystemEvent3 .class, SystemEventType4Choice.class, TradeTransactionCondition4Code.class, TradeTransactionCondition5Choice.class, TransactionIdentifications40 .class, UpdateType15Choice.class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:DRAFT5semt.044.001.01";
 
     public MxSemt04400101() {
         super();
@@ -68,10 +68,10 @@ public class MxSemt04400101
      * 
      * @return
      *     possible object is
-     *     {@link SecuritiesTransactionPenaltiesReportV01 }
+     *     {@link SecuritiesTransactionPenaltiesReportV01Draft5 }
      *     
      */
-    public SecuritiesTransactionPenaltiesReportV01 getSctiesTxPnltiesRpt() {
+    public SecuritiesTransactionPenaltiesReportV01Draft5 getSctiesTxPnltiesRpt() {
         return sctiesTxPnltiesRpt;
     }
 
@@ -80,10 +80,10 @@ public class MxSemt04400101
      * 
      * @param value
      *     allowed object is
-     *     {@link SecuritiesTransactionPenaltiesReportV01 }
+     *     {@link SecuritiesTransactionPenaltiesReportV01Draft5 }
      *     
      */
-    public MxSemt04400101 setSctiesTxPnltiesRpt(SecuritiesTransactionPenaltiesReportV01 value) {
+    public MxSemt04400101 setSctiesTxPnltiesRpt(SecuritiesTransactionPenaltiesReportV01Draft5 value) {
         this.sctiesTxPnltiesRpt = value;
         return this;
     }

@@ -1,5 +1,8 @@
 # Prowide ISO 20022 - CHANGELOG
 
+### 10.3.7 - April 2026
+  * (PW-3207) Fix: update semt.044.001.01 model from draft4 to draft5
+
 ### 10.3.6 - April 2026
   * (PW-3133) Feat: Added `useZuluCreationDateTime` flag on `BusinessAppHdrV01`..`V04` to marshal `CreDt` with "Z" timezone (default true on V01)
 
