@@ -15,13 +15,16 @@
  */
 package com.prowidesoftware.swift.model;
 
-import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.prowidesoftware.swift.model.mx.*;
 import jakarta.persistence.*;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Calendar;
 import java.util.Objects;
 import java.util.Optional;
 import org.apache.commons.lang3.StringUtils;
@@ -222,14 +225,43 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
     /**
      * Deserializes the JSON data into an MxSwiftMessage object.
      *
+     * <p>The deserializer is backward compatible with JSON produced by previous library versions:
+     * payloads without a top-level {@code schemaVersion} marker are interpreted as the legacy
+     * format (Java {@link Calendar} months stored 0-based, January=0). Payloads carrying
+     * {@code schemaVersion >= }{@value #ONE_BASED_MONTH_MIN_VERSION} are interpreted with the
+     * new 1-based month format produced by the current {@code toJson()}.
+     *
      * @param json the JSON representation of the message
      * @return deserialized message object
      * @see #toJson()
      * @since 7.10.3
      */
     public static MxSwiftMessage fromJson(String json) {
-        final Gson gson = new GsonBuilder().create();
-        return gson.fromJson(json, MxSwiftMessage.class);
+        JsonElement element = JsonParser.parseString(json);
+        GsonBuilder builder = new GsonBuilder();
+        if (element.isJsonObject() && hasNewCalendarFormat(element.getAsJsonObject())) {
+            builder.registerTypeHierarchyAdapter(Calendar.class, CalendarTypeAdapter.INSTANCE);
+        }
+        return builder.create().fromJson(element, MxSwiftMessage.class);
+    }
+
+    /**
+     * Minimum {@code schemaVersion} that indicates the 1-based month Calendar format introduced
+     * in 10.3.13. Kept as a literal (independent of {@link AbstractSwiftMessage#JSON_SCHEMA_VERSION})
+     * so that future schema bumps for unrelated reasons do not silently misclassify v4 payloads
+     * as legacy on read.
+     */
+    private static final int ONE_BASED_MONTH_MIN_VERSION = 4;
+
+    private static boolean hasNewCalendarFormat(JsonObject obj) {
+        JsonElement v = obj.get("schemaVersion");
+        if (v == null
+                || v.isJsonNull()
+                || !v.isJsonPrimitive()
+                || !v.getAsJsonPrimitive().isNumber()) {
+            return false;
+        }
+        return v.getAsInt() >= ONE_BASED_MONTH_MIN_VERSION;
     }
 
     /**

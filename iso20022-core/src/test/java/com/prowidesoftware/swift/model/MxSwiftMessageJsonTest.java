@@ -123,9 +123,10 @@ public class MxSwiftMessageJsonTest {
         assertEquals("DCBADEFFXXX", mx.getReceiver());
         assertEquals("11308917", mx.getReference());
         assertEquals(2018, mx.getLastModified().get(Calendar.YEAR));
-        assertEquals(4, mx.getLastModified().get(Calendar.MONTH));
+        assertEquals(Calendar.MAY, mx.getLastModified().get(Calendar.MONTH));
         assertEquals(18, mx.getLastModified().get(Calendar.DAY_OF_MONTH));
         assertEquals(25, mx.getLastModified().get(Calendar.MINUTE));
         assertEquals(48, mx.getLastModified().get(Calendar.SECOND));
+        assertEquals(Calendar.MAY, mx.getCreationDate().get(Calendar.MONTH));
     }
 }
