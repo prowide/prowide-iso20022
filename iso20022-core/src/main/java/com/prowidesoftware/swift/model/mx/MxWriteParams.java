@@ -72,4 +72,21 @@ public class MxWriteParams {
         this.context = notNullConf.context;
         this.indent = notNullConf.indent;
     }
+
+    /**
+     * Shallow copy of another instance. The adapters configuration is shared by reference;
+     * assign a new {@link TypeAdaptersConfiguration} on the copy before mutating adapters
+     * to avoid altering the source.
+     *
+     * @param other instance to copy; must not be null
+     * @since 10.3.6
+     */
+    public MxWriteParams(MxWriteParams other) {
+        this.prefix = other.prefix;
+        this.includeXMLDeclaration = other.includeXMLDeclaration;
+        this.escapeHandler = other.escapeHandler;
+        this.context = other.context;
+        this.adapters = other.adapters;
+        this.indent = other.indent;
+    }
 }

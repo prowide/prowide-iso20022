@@ -52,6 +52,14 @@ public class BusinessAppHdrV04 extends BusinessApplicationHeaderV04Impl implemen
     static final Class[] _classes;
     private static final Logger log = Logger.getLogger(BusinessAppHdrV04.class.getName());
 
+    /**
+     * When true, the {@code CreDt} element is serialized using Zulu timezone with the "Z" indicator
+     * instead of the default offset format. Typically enabled for T2/RTGS systems.
+     *
+     * @since 10.3.6
+     */
+    private transient boolean useZuluCreationDateTime = false;
+
     static {
         _classes = Arrays.copyOf(
                 BusinessApplicationHeaderV04Impl._classes, BusinessApplicationHeaderV04Impl._classes.length + 1);
@@ -201,27 +209,44 @@ public class BusinessAppHdrV04 extends BusinessApplicationHeaderV04Impl implemen
         }
     }
 
+    /**
+     * @return true if the {@code CreDt} element is serialized with Zulu timezone "Z" indicator
+     * @since 10.3.6
+     */
+    public boolean isUseZuluCreationDateTime() {
+        return useZuluCreationDateTime;
+    }
+
+    /**
+     * @param useZuluCreationDateTime true to serialize the {@code CreDt} element with Zulu timezone "Z" indicator
+     * @since 10.3.6
+     */
+    public void setUseZuluCreationDateTime(boolean useZuluCreationDateTime) {
+        this.useZuluCreationDateTime = useZuluCreationDateTime;
+    }
+
     @Override
     public String xml(MxWriteParams params) {
+        MxWriteParams effective = this.useZuluCreationDateTime ? MxWriteUtils.withZuluDateTimeAdapter(params) : params;
         try {
             JAXBContext context;
-            if (params.context != null) {
-                context = params.context;
+            if (effective.context != null) {
+                context = effective.context;
             } else {
                 context = JAXBContext.newInstance(BusinessApplicationHeaderV04Impl.class);
             }
-            final Marshaller marshaller = MxWriteUtils.createMarshaller(context, params);
+            final Marshaller marshaller = MxWriteUtils.createMarshaller(context, effective);
 
             final StringWriter sw = new StringWriter();
             JAXBElement<BusinessApplicationHeaderV04Impl> element = new JAXBElement(
                     new QName(NAMESPACE, AppHdr.HEADER_LOCALNAME), BusinessApplicationHeaderV04Impl.class, null, this);
             XmlEventWriter eventWriter = new XmlEventWriter(
                     sw,
-                    params.prefix,
-                    params.includeXMLDeclaration,
+                    effective.prefix,
+                    effective.includeXMLDeclaration,
                     AppHdr.HEADER_LOCALNAME,
-                    params.escapeHandler,
-                    params.indent);
+                    effective.escapeHandler,
+                    effective.indent);
             marshaller.marshal(element, eventWriter);
             return sw.getBuffer().toString();
 

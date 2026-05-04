@@ -19,6 +19,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import com.prowidesoftware.swift.model.MxId;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.sys.MxXsys00300101;
 import com.prowidesoftware.swift.model.mx.sys.MxXsys01200101;
 import com.prowidesoftware.swift.model.mx.sys.dic.DeliveryNotificationXsys01200101;
 import com.prowidesoftware.swift.model.mx.sys.dic.FailedDeliveryNotificationMessageXsys01200101;
@@ -367,5 +368,56 @@ public class MxXsysModelTest {
         AbstractMX mx3 = AbstractMX.parse(xmlDocumentOnly);
         assertNotNull(mx3, "Should parse when no AppHdr is present");
         assertNull(mx3.getAppHdr(), "AppHdr should be null");
+    }
+
+    /**
+     * End-to-end regression guard for PW-3202 and GH-168. The Sw/SwInt/SwGbl prefix mappings are
+     * declared on the outer Envelope (not on the Document), so the SAX parser emits
+     * {@code startPrefixMapping} for them before entering the Document element. This exercises the
+     * {@link NamespaceAndElementFilter} pending-queue replay path end-to-end through JAXB: the
+     * queued mappings must reach the downstream unmarshaller so that {@code Sw:SnFRef} and
+     * {@code SwInt:RequestHeader} in the body bind to the correct classes.
+     */
+    @Test
+    void testParseXsys003WithXsysPrefixesOnEnvelope() {
+        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+                + "<Envelope xmlns=\"urn:swift:xsd:envelope\""
+                + "          xmlns:Sw=\"urn:swift:snl:ns.Sw\""
+                + "          xmlns:SwInt=\"urn:swift:snl:ns.SwInt\""
+                + "          xmlns:SwGbl=\"urn:swift:snl:ns.SwGbl\">"
+                + "<Ah:AppHdr xmlns:Ah=\"urn:swift:xsd:$ahV10\">"
+                + "  <Ah:MsgRef>2010-05-04T15:33:12Z</Ah:MsgRef>"
+                + "  <Ah:CrDate>2010-05-04T15:33:12Z</Ah:CrDate>"
+                + "</Ah:AppHdr>"
+                + "<Doc:Document xmlns:Doc=\"urn:swift:xsd:xsys.003.001.01\">"
+                + "  <Doc:xsys.003.001.01>"
+                + "    <Doc:AuthstnRfslNtfctn>"
+                + "      <Sw:SnFRef>swi00001-2010-05-04T15:32:59.21582.11198379Z</Sw:SnFRef>"
+                + "      <SwInt:RequestHeader>"
+                + "        <SwInt:Requestor>cn=requestor,o=aaaabebb,o=swift</SwInt:Requestor>"
+                + "        <SwInt:Responder>cn=responder,o=bbbbus33,o=swift</SwInt:Responder>"
+                + "        <SwInt:Service>mnop.cop</SwInt:Service>"
+                + "        <SwInt:RequestType>pain.001.002.04</SwInt:RequestType>"
+                + "        <SwInt:Priority>Normal</SwInt:Priority>"
+                + "        <SwInt:RequestRef>Ref-12345</SwInt:RequestRef>"
+                + "      </SwInt:RequestHeader>"
+                + "    </Doc:AuthstnRfslNtfctn>"
+                + "  </Doc:xsys.003.001.01>"
+                + "</Doc:Document>"
+                + "</Envelope>";
+
+        AbstractMX mx = AbstractMX.parse(xml);
+
+        assertNotNull(mx, "Should parse when xsys prefixes are declared on the Envelope");
+        assertNotNull(mx.getAppHdr(), "AppHdr should be parsed");
+        MxXsys00300101 xsys = (MxXsys00300101) mx;
+        assertEquals(
+                "swi00001-2010-05-04T15:32:59.21582.11198379Z",
+                xsys.getXsys00300101().getAuthstnRfslNtfctn().getSnFRef(),
+                "Sw:SnFRef value must round-trip");
+        SwIntRequestHeader reqHdr =
+                xsys.getXsys00300101().getAuthstnRfslNtfctn().getRequestHeader();
+        assertNotNull(reqHdr, "SwInt:RequestHeader must bind");
+        assertEquals("Ref-12345", reqHdr.getRequestRef(), "SwInt:RequestRef value must round-trip");
     }
 }
