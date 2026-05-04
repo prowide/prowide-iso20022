@@ -1,5 +1,8 @@
 # Prowide ISO 20022 - CHANGELOG
 
+### 10.3.8 - SNAPSHOT
+  * (PW-3202) Fix: removed spurious `Error propagating pending prefix mapping` warnings when parsing regular ISO 20022 Documents wrapped in an SNL-like envelope
+
 ### 10.3.7 - April 2026
   * (PW-3207) Fix: update semt.044.001.01 model from draft4 to draft5
 
