@@ -15,7 +15,7 @@
  */
 package com.prowidesoftware.swift.model;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.*;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -24,9 +24,12 @@ import java.util.GregorianCalendar;
 import org.junit.jupiter.api.Test;
 
 /**
- * Tests that Calendar fields in MxSwiftMessage are serialized with 1-based months in JSON.
+ * Tests JSON serialization/deserialization for Calendar fields in MxSwiftMessage:
+ * the new 1-based-month format with {@code schemaVersion} marker (consistent with
+ * {@link AbstractSwiftMessage#JSON_SCHEMA_VERSION}) and the legacy 0-based format
+ * produced by previous library versions.
  */
-public class MxSwiftMessageCalendarJsonTest {
+class MxSwiftMessageCalendarJsonTest {
 
     private static final String MX_XML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
             + "<message>"
@@ -50,8 +53,14 @@ public class MxSwiftMessageCalendarJsonTest {
             + "</Document>"
             + "</message>";
 
+    private static final String MX_BODY = "<Document xmlns=\\\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.02\\\">"
+            + "<FIToFICstmrCdtTrf><GrpHdr><MsgId>MSGID-0001</MsgId>"
+            + "<CreDtTm>2001-12-17T09:30:47Z</CreDtTm><NbOfTxs>1</NbOfTxs>"
+            + "<SttlmInf><SttlmMtd>INDA</SttlmMtd></SttlmInf></GrpHdr>"
+            + "<CdtTrfTxInf></CdtTrfTxInf></FIToFICstmrCdtTrf></Document>";
+
     @Test
-    void mxToJson_serializesMonthAsOneBased() {
+    void toJson_serializesMonthAsOneBased() {
         MxSwiftMessage mx = new MxSwiftMessage(MX_XML);
         Calendar april = new GregorianCalendar(2026, Calendar.APRIL, 10, 6, 6, 7);
         mx.setCreationDate(april);
@@ -61,20 +70,16 @@ public class MxSwiftMessageCalendarJsonTest {
         JsonObject root = JsonParser.parseString(json).getAsJsonObject();
 
         JsonObject creationDate = root.getAsJsonObject("creationDate");
-        assertThat(creationDate.get("month").getAsInt())
-                .as("April should be month 4 (1-based)")
-                .isEqualTo(4);
-        assertThat(creationDate.get("year").getAsInt()).isEqualTo(2026);
-        assertThat(creationDate.get("dayOfMonth").getAsInt()).isEqualTo(10);
+        assertEquals(4, creationDate.get("month").getAsInt(), "April should be month 4 (1-based)");
+        assertEquals(2026, creationDate.get("year").getAsInt());
+        assertEquals(10, creationDate.get("dayOfMonth").getAsInt());
 
         JsonObject lastModified = root.getAsJsonObject("lastModified");
-        assertThat(lastModified.get("month").getAsInt())
-                .as("April should be month 4 (1-based)")
-                .isEqualTo(4);
+        assertEquals(4, lastModified.get("month").getAsInt(), "April should be month 4 (1-based)");
     }
 
     @Test
-    void mxToJson_january_serializesAsOne() {
+    void toJson_january_serializesAsOne() {
         MxSwiftMessage mx = new MxSwiftMessage(MX_XML);
         Calendar january = new GregorianCalendar(2026, Calendar.JANUARY, 5, 0, 0, 0);
         mx.setCreationDate(january);
@@ -82,13 +87,12 @@ public class MxSwiftMessageCalendarJsonTest {
         String json = mx.toJson();
         JsonObject root = JsonParser.parseString(json).getAsJsonObject();
 
-        assertThat(root.getAsJsonObject("creationDate").get("month").getAsInt())
-                .as("January should be month 1 (1-based)")
-                .isEqualTo(1);
+        assertEquals(
+                1, root.getAsJsonObject("creationDate").get("month").getAsInt(), "January should be month 1 (1-based)");
     }
 
     @Test
-    void mxToJson_december_serializesAsTwelve() {
+    void toJson_december_serializesAsTwelve() {
         MxSwiftMessage mx = new MxSwiftMessage(MX_XML);
         Calendar december = new GregorianCalendar(2026, Calendar.DECEMBER, 25, 0, 0, 0);
         mx.setCreationDate(december);
@@ -96,51 +100,149 @@ public class MxSwiftMessageCalendarJsonTest {
         String json = mx.toJson();
         JsonObject root = JsonParser.parseString(json).getAsJsonObject();
 
-        assertThat(root.getAsJsonObject("creationDate").get("month").getAsInt())
-                .as("December should be month 12 (1-based)")
-                .isEqualTo(12);
+        assertEquals(
+                12,
+                root.getAsJsonObject("creationDate").get("month").getAsInt(),
+                "December should be month 12 (1-based)");
     }
 
     @Test
-    void mxFromJson_deserializesOneBasedMonth() {
-        String json = "{"
-                + "  \"businessProcess\": \"pacs\","
-                + "  \"functionality\": \"008\","
-                + "  \"variant\": \"001\","
-                + "  \"version\": \"02\","
-                + "  \"message\": \"<Document xmlns=\\\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.02\\\"><FIToFICstmrCdtTrf><GrpHdr><MsgId>MSGID-0001</MsgId><CreDtTm>2001-12-17T09:30:47Z</CreDtTm><NbOfTxs>1</NbOfTxs><SttlmInf><SttlmMtd>INDA</SttlmMtd></SttlmInf></GrpHdr><CdtTrfTxInf></CdtTrfTxInf></FIToFICstmrCdtTrf></Document>\","
-                + "  \"identifier\": \"pacs.008.001.02\","
-                + "  \"creationDate\": {"
-                + "    \"year\": 2026,"
-                + "    \"month\": 4,"
-                + "    \"dayOfMonth\": 10,"
-                + "    \"hourOfDay\": 6,"
-                + "    \"minute\": 6,"
-                + "    \"second\": 7"
-                + "  },"
-                + "  \"lastModified\": {"
-                + "    \"year\": 2025,"
-                + "    \"month\": 11,"
-                + "    \"dayOfMonth\": 20,"
-                + "    \"hourOfDay\": 14,"
-                + "    \"minute\": 30,"
-                + "    \"second\": 0"
-                + "  }"
+    void toJson_includesSchemaVersionMarker() {
+        MxSwiftMessage mx = new MxSwiftMessage(MX_XML);
+
+        String json = mx.toJson();
+        JsonObject root = JsonParser.parseString(json).getAsJsonObject();
+
+        assertTrue(root.has("schemaVersion"), "toJson output must include the schemaVersion marker");
+        assertEquals(
+                AbstractSwiftMessage.JSON_SCHEMA_VERSION,
+                root.get("schemaVersion").getAsInt(),
+                "schemaVersion must match AbstractSwiftMessage.JSON_SCHEMA_VERSION");
+    }
+
+    @Test
+    void toJson_valueDateAndTradeDate_areOneBased() {
+        MxSwiftMessage mx = new MxSwiftMessage(MX_XML);
+        Calendar march = new GregorianCalendar(2026, Calendar.MARCH, 20, 9, 15, 0);
+        Calendar november = new GregorianCalendar(2026, Calendar.NOVEMBER, 5, 16, 45, 30);
+        mx.setValueDate(march);
+        mx.setTradeDate(november);
+
+        String json = mx.toJson();
+        JsonObject root = JsonParser.parseString(json).getAsJsonObject();
+
+        JsonObject valueDate = root.getAsJsonObject("valueDate");
+        assertEquals(3, valueDate.get("month").getAsInt(), "March should be month 3 (1-based)");
+        assertEquals(2026, valueDate.get("year").getAsInt());
+        assertEquals(20, valueDate.get("dayOfMonth").getAsInt());
+
+        JsonObject tradeDate = root.getAsJsonObject("tradeDate");
+        assertEquals(11, tradeDate.get("month").getAsInt(), "November should be month 11 (1-based)");
+        assertEquals(2026, tradeDate.get("year").getAsInt());
+        assertEquals(5, tradeDate.get("dayOfMonth").getAsInt());
+    }
+
+    @Test
+    void toJson_statusTrailMonth_isOneBased() {
+        MxSwiftMessage mx = new MxSwiftMessage(MX_XML);
+
+        Calendar september = new GregorianCalendar(2026, Calendar.SEPTEMBER, 15, 10, 30, 0);
+        SwiftMessageStatusInfo status = new SwiftMessageStatusInfo("comments", september, "user", "LOADED");
+        mx.addStatus(status);
+
+        String json = mx.toJson();
+        JsonObject root = JsonParser.parseString(json).getAsJsonObject();
+
+        JsonObject statusDate =
+                root.getAsJsonArray("statusTrail").get(0).getAsJsonObject().getAsJsonObject("creationDate");
+        assertEquals(9, statusDate.get("month").getAsInt(), "September should be month 9 (1-based)");
+    }
+
+    @Test
+    void fromJson_legacyPayloadWithoutMarker_deserializesZeroBasedMonth() {
+        // Legacy format: month is 0-based (January=0, December=11), no schemaVersion marker.
+        // Month 7 in legacy JSON corresponds to Calendar.AUGUST (which is also 7 in 0-based).
+        String json = "{\n"
+                + "  \"businessProcess\": \"pacs\",\n"
+                + "  \"functionality\": \"008\",\n"
+                + "  \"variant\": \"001\",\n"
+                + "  \"version\": \"02\",\n"
+                + "  \"message\": \"" + MX_BODY + "\",\n"
+                + "  \"identifier\": \"pacs.008.001.02\",\n"
+                + "  \"creationDate\": {\n"
+                + "    \"year\": 2025,\n"
+                + "    \"month\": 7,\n"
+                + "    \"dayOfMonth\": 15,\n"
+                + "    \"hourOfDay\": 14,\n"
+                + "    \"minute\": 30,\n"
+                + "    \"second\": 0\n"
+                + "  }\n"
                 + "}";
 
         MxSwiftMessage mx = MxSwiftMessage.fromJson(json);
 
-        assertThat(mx.getCreationDate().get(Calendar.MONTH)).isEqualTo(Calendar.APRIL);
-        assertThat(mx.getCreationDate().get(Calendar.YEAR)).isEqualTo(2026);
-        assertThat(mx.getCreationDate().get(Calendar.DAY_OF_MONTH)).isEqualTo(10);
-
-        assertThat(mx.getLastModified().get(Calendar.MONTH)).isEqualTo(Calendar.NOVEMBER);
-        assertThat(mx.getLastModified().get(Calendar.YEAR)).isEqualTo(2025);
-        assertThat(mx.getLastModified().get(Calendar.DAY_OF_MONTH)).isEqualTo(20);
+        assertEquals(2025, mx.getCreationDate().get(Calendar.YEAR));
+        assertEquals(Calendar.AUGUST, mx.getCreationDate().get(Calendar.MONTH));
+        assertEquals(15, mx.getCreationDate().get(Calendar.DAY_OF_MONTH));
     }
 
     @Test
-    void mxRoundtrip_preservesDate() {
+    void fromJson_payloadWithMarker_deserializesOneBasedMonth() {
+        // New format: month is 1-based (January=1, December=12), schemaVersion marker present.
+        // Month 8 in new JSON corresponds to Calendar.AUGUST (which is 7 in 0-based).
+        String json = "{\n"
+                + "  \"schemaVersion\": 4,\n"
+                + "  \"businessProcess\": \"pacs\",\n"
+                + "  \"functionality\": \"008\",\n"
+                + "  \"variant\": \"001\",\n"
+                + "  \"version\": \"02\",\n"
+                + "  \"message\": \"" + MX_BODY + "\",\n"
+                + "  \"identifier\": \"pacs.008.001.02\",\n"
+                + "  \"creationDate\": {\n"
+                + "    \"year\": 2025,\n"
+                + "    \"month\": 8,\n"
+                + "    \"dayOfMonth\": 15,\n"
+                + "    \"hourOfDay\": 14,\n"
+                + "    \"minute\": 30,\n"
+                + "    \"second\": 0\n"
+                + "  }\n"
+                + "}";
+
+        MxSwiftMessage mx = MxSwiftMessage.fromJson(json);
+
+        assertEquals(2025, mx.getCreationDate().get(Calendar.YEAR));
+        assertEquals(Calendar.AUGUST, mx.getCreationDate().get(Calendar.MONTH));
+        assertEquals(15, mx.getCreationDate().get(Calendar.DAY_OF_MONTH));
+    }
+
+    @Test
+    void fromJson_legacyPayloadWithJanuary_deserializesAsJanuary() {
+        // In legacy format, January is encoded as month 0 (Calendar.JANUARY).
+        // This is the most sensitive case: under the new adapter, month 0 would be lenient-rolled
+        // to December of the previous year. The marker-based discrimination must prevent that.
+        String json = "{\n"
+                + "  \"businessProcess\": \"pacs\",\n"
+                + "  \"functionality\": \"008\",\n"
+                + "  \"variant\": \"001\",\n"
+                + "  \"version\": \"02\",\n"
+                + "  \"message\": \"" + MX_BODY + "\",\n"
+                + "  \"identifier\": \"pacs.008.001.02\",\n"
+                + "  \"creationDate\": {\n"
+                + "    \"year\": 2024,\n"
+                + "    \"month\": 0,\n"
+                + "    \"dayOfMonth\": 20\n"
+                + "  }\n"
+                + "}";
+
+        MxSwiftMessage mx = MxSwiftMessage.fromJson(json);
+
+        assertEquals(2024, mx.getCreationDate().get(Calendar.YEAR));
+        assertEquals(Calendar.JANUARY, mx.getCreationDate().get(Calendar.MONTH));
+        assertEquals(20, mx.getCreationDate().get(Calendar.DAY_OF_MONTH));
+    }
+
+    @Test
+    void roundtrip_preservesDate() {
         MxSwiftMessage original = new MxSwiftMessage(MX_XML);
         Calendar august = new GregorianCalendar(2025, Calendar.AUGUST, 15, 14, 30, 45);
         Calendar march = new GregorianCalendar(2025, Calendar.MARCH, 1, 9, 0, 0);
@@ -150,34 +252,52 @@ public class MxSwiftMessageCalendarJsonTest {
         String json = original.toJson();
         MxSwiftMessage restored = MxSwiftMessage.fromJson(json);
 
-        assertThat(restored.getCreationDate().get(Calendar.YEAR)).isEqualTo(2025);
-        assertThat(restored.getCreationDate().get(Calendar.MONTH)).isEqualTo(Calendar.AUGUST);
-        assertThat(restored.getCreationDate().get(Calendar.DAY_OF_MONTH)).isEqualTo(15);
-        assertThat(restored.getCreationDate().get(Calendar.HOUR_OF_DAY)).isEqualTo(14);
-        assertThat(restored.getCreationDate().get(Calendar.MINUTE)).isEqualTo(30);
-        assertThat(restored.getCreationDate().get(Calendar.SECOND)).isEqualTo(45);
+        assertEquals(2025, restored.getCreationDate().get(Calendar.YEAR));
+        assertEquals(Calendar.AUGUST, restored.getCreationDate().get(Calendar.MONTH));
+        assertEquals(15, restored.getCreationDate().get(Calendar.DAY_OF_MONTH));
+        assertEquals(14, restored.getCreationDate().get(Calendar.HOUR_OF_DAY));
+        assertEquals(30, restored.getCreationDate().get(Calendar.MINUTE));
+        assertEquals(45, restored.getCreationDate().get(Calendar.SECOND));
 
-        assertThat(restored.getLastModified().get(Calendar.YEAR)).isEqualTo(2025);
-        assertThat(restored.getLastModified().get(Calendar.MONTH)).isEqualTo(Calendar.MARCH);
-        assertThat(restored.getLastModified().get(Calendar.DAY_OF_MONTH)).isEqualTo(1);
-        assertThat(restored.getLastModified().get(Calendar.HOUR_OF_DAY)).isEqualTo(9);
+        assertEquals(2025, restored.getLastModified().get(Calendar.YEAR));
+        assertEquals(Calendar.MARCH, restored.getLastModified().get(Calendar.MONTH));
+        assertEquals(1, restored.getLastModified().get(Calendar.DAY_OF_MONTH));
+        assertEquals(9, restored.getLastModified().get(Calendar.HOUR_OF_DAY));
     }
 
     @Test
-    void mxFromJson_missingCalendarFields_deserializesGracefully() {
-        String json = "{"
-                + "  \"businessProcess\": \"pacs\","
-                + "  \"functionality\": \"008\","
-                + "  \"variant\": \"001\","
-                + "  \"version\": \"02\","
-                + "  \"message\": \"<Document xmlns=\\\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.02\\\"><FIToFICstmrCdtTrf><GrpHdr><MsgId>MSGID-0001</MsgId><CreDtTm>2001-12-17T09:30:47Z</CreDtTm><NbOfTxs>1</NbOfTxs><SttlmInf><SttlmMtd>INDA</SttlmMtd></SttlmInf></GrpHdr><CdtTrfTxInf></CdtTrfTxInf></FIToFICstmrCdtTrf></Document>\","
-                + "  \"identifier\": \"pacs.008.001.02\""
+    void roundtrip_statusTrail_preservesNestedCalendar() {
+        MxSwiftMessage original = new MxSwiftMessage(MX_XML);
+        Calendar september = new GregorianCalendar(2026, Calendar.SEPTEMBER, 15, 10, 30, 0);
+        original.addStatus(new SwiftMessageStatusInfo("comments", september, "user", "LOADED"));
+
+        String json = original.toJson();
+        MxSwiftMessage restored = MxSwiftMessage.fromJson(json);
+
+        assertNotNull(restored.getStatusTrail());
+        assertEquals(1, restored.getStatusTrail().size());
+        Calendar restoredDate = restored.getStatusTrail().get(0).getCreationDate();
+        assertEquals(2026, restoredDate.get(Calendar.YEAR));
+        assertEquals(Calendar.SEPTEMBER, restoredDate.get(Calendar.MONTH));
+        assertEquals(15, restoredDate.get(Calendar.DAY_OF_MONTH));
+    }
+
+    @Test
+    void fromJson_missingCalendarFields_deserializesGracefully() {
+        String json = "{\n"
+                + "  \"schemaVersion\": 4,\n"
+                + "  \"businessProcess\": \"pacs\",\n"
+                + "  \"functionality\": \"008\",\n"
+                + "  \"variant\": \"001\",\n"
+                + "  \"version\": \"02\",\n"
+                + "  \"message\": \"" + MX_BODY + "\",\n"
+                + "  \"identifier\": \"pacs.008.001.02\"\n"
                 + "}";
 
         MxSwiftMessage mx = MxSwiftMessage.fromJson(json);
 
-        assertThat(mx).isNotNull();
-        assertThat(mx.getBusinessProcess()).isEqualTo(MxBusinessProcess.pacs);
-        assertThat(mx.getIdentifier()).isEqualTo("pacs.008.001.02");
+        assertNotNull(mx);
+        assertEquals(MxBusinessProcess.pacs, mx.getBusinessProcess());
+        assertEquals("pacs.008.001.02", mx.getIdentifier());
     }
 }

@@ -2,7 +2,7 @@
 
 ### 10.3.8 - SNAPSHOT
   * (PW-3202) Fix: removed spurious `Error propagating pending prefix mapping` warnings when parsing regular ISO 20022 Documents wrapped in an SNL-like envelope
-  * (PW-3185) Fix: Calendar fields in `MxSwiftMessage.fromJson()` now use 1-based months, consistent with the serialization fix in Prowide Core 10.3.13. **Note:** JSON data serialized with Prowide Core versions prior to 10.3.13 used 0-based months; such persisted JSON will need its `month` fields incremented by 1 before deserializing with this version.
+  * (PW-3185) `MxSwiftMessage.toJson()` now uses 1-based months (January=1) for Calendar fields and emits a `schemaVersion` marker. `fromJson()` reads both new and legacy (0-based) payloads transparently.
 
 ### 10.3.7 - April 2026
   * (PW-3207) Fix: update semt.044.001.01 model from draft4 to draft5
