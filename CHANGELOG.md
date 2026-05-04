@@ -3,6 +3,7 @@
 ### 10.4.0 - SNAPSHOT
   * SWIFT Standard release update 2026 (live 14 November 2026)
   * Yearly revision of deprecation phase (see https://dev.prowidesoftware.com/SRU2024/getting-started/deprecation/)
+  * (PW-3202) Fix: removed spurious `Error propagating pending prefix mapping` warnings when parsing regular ISO 20022 Documents wrapped in an SNL-like envelope
 
 ### 10.3.6 - April 2026
   * (PW-3133) Feat: Added `useZuluCreationDateTime` flag on `BusinessAppHdrV01`..`V04` to marshal `CreDt` with "Z" timezone (default true on V01)
