@@ -1,8 +1,9 @@
 # Prowide ISO 20022 - CHANGELOG
 
-### 10.3.8 - SNAPSHOT
+### 10.3.8 - May 2026
   * (PW-3202) Fix: removed spurious `Error propagating pending prefix mapping` warnings when parsing regular ISO 20022 Documents wrapped in an SNL-like envelope
   * (PW-3185) `MxSwiftMessage.toJson()` now uses 1-based months (January=1) for Calendar fields and emits a `schemaVersion` marker. `fromJson()` reads both new and legacy (0-based) payloads transparently.
+  * Updated gson from 2.13.2 to 2.14.0
 
 ### 10.3.7 - April 2026
   * (PW-3207) Fix: update semt.044.001.01 model from draft4 to draft5
