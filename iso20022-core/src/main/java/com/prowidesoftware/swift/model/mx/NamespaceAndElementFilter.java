@@ -162,7 +162,7 @@ public class NamespaceAndElementFilter extends XMLFilterImpl {
 
     /**
      * Checks whether the given namespace is one of the SNL reusable schema namespaces (Sw, SwInt,
-     * SwGbl, SwSec, Doc) that can appear inside an xsys Document body alongside the main namespace.
+     * SwGbl, SwSec, Doc) used by xsys messages.
      */
     private boolean isXsysNamespace(String namespace) {
         return "urn:swift:snl:ns.Doc".equals(namespace)
