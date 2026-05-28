@@ -22,7 +22,7 @@ group 'com.prowidesoftware'
 
 project.ext {
 	SRU = 'SRU2026'
-    prowideCoreVersion = 'SRU2026-10.4.0-SNAPSHOT'
+    prowideCoreVersion = 'SRU2026-10.4.0'
 	commonsLangVersion = '3.20.0'
 	gsonVersion = '2.14.0'
 	jaxbVersion = '4.0.6'
@@ -37,7 +37,7 @@ scmVersion {
 	}
 }
 //project.version = "${SRU}-${scmVersion.version}"
-project.version = "${SRU}-10.4.0-SNAPSHOT"
+project.version = "${SRU}-10.4.0"
 
 allprojects {
 
