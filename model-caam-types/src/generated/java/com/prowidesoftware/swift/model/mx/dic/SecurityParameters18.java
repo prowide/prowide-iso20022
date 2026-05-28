@@ -1,0 +1,196 @@
+
+package com.prowidesoftware.swift.model.mx.dic;
+
+import java.util.ArrayList;
+import java.util.List;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+
+/**
+ * Security parameters of the ATM for the initiated key download.
+ * 
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "SecurityParameters18", propOrder = {
+    "key",
+    "sgntrChc",
+    "cert",
+    "atmChllng",
+    "reqdKey"
+})
+public class SecurityParameters18 {
+
+    @XmlElement(name = "Key")
+    protected CryptographicKey21 key;
+    @XmlElement(name = "SgntrChc")
+    protected ATMSignature3Choice sgntrChc;
+    @XmlElement(name = "Cert")
+    protected List<byte[]> cert;
+    @XmlElement(name = "ATMChllng")
+    protected byte[] atmChllng;
+    @XmlElement(name = "ReqdKey")
+    protected String reqdKey;
+
+    /**
+     * Gets the value of the key property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link CryptographicKey21 }
+     *     
+     */
+    public CryptographicKey21 getKey() {
+        return key;
+    }
+
+    /**
+     * Sets the value of the key property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link CryptographicKey21 }
+     *     
+     */
+    public SecurityParameters18 setKey(CryptographicKey21 value) {
+        this.key = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the sgntrChc property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link ATMSignature3Choice }
+     *     
+     */
+    public ATMSignature3Choice getSgntrChc() {
+        return sgntrChc;
+    }
+
+    /**
+     * Sets the value of the sgntrChc property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ATMSignature3Choice }
+     *     
+     */
+    public SecurityParameters18 setSgntrChc(ATMSignature3Choice value) {
+        this.sgntrChc = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the cert property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cert property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getCert().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * byte[]
+     * 
+     * @return
+     *     The value of the cert property.
+     */
+    public List<byte[]> getCert() {
+        if (cert == null) {
+            cert = new ArrayList<>();
+        }
+        return this.cert;
+    }
+
+    /**
+     * Gets the value of the atmChllng property.
+     * 
+     * @return
+     *     possible object is
+     *     byte[]
+     */
+    public byte[] getATMChllng() {
+        return atmChllng;
+    }
+
+    /**
+     * Sets the value of the atmChllng property.
+     * 
+     * @param value
+     *     allowed object is
+     *     byte[]
+     */
+    public SecurityParameters18 setATMChllng(byte[] value) {
+        this.atmChllng = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the reqdKey property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getReqdKey() {
+        return reqdKey;
+    }
+
+    /**
+     * Sets the value of the reqdKey property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public SecurityParameters18 setReqdKey(String value) {
+        this.reqdKey = value;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+    /**
+     * Adds a new item to the cert list.
+     * @see #getCert()
+     * 
+     */
+    public SecurityParameters18 addCert(byte[] cert) {
+        getCert().add(cert);
+        return this;
+    }
+
+}

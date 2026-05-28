@@ -1,5 +1,9 @@
 # Prowide ISO 20022 - CHANGELOG
 
+### 10.4.0 - May 2026
+  * SWIFT Standard release update 2026 (live 14 November 2026)
+  * Yearly revision of deprecation phase (see https://dev.prowidesoftware.com/SRU2024/getting-started/deprecation/)
+
 ### 10.3.8 - May 2026
   * (PW-3202) Fix: removed spurious `Error propagating pending prefix mapping` warnings when parsing regular ISO 20022 Documents wrapped in an SNL-like envelope
   * (PW-3185) `MxSwiftMessage.toJson()` now uses 1-based months (January=1) for Calendar fields and emits a `schemaVersion` marker. `fromJson()` reads both new and legacy (0-based) payloads transparently.
