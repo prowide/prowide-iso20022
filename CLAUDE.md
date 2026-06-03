@@ -149,7 +149,6 @@ src/generated/java  → JAXB-generated code from XSD schemas (DO NOT MODIFY)
 - Uses **Axion Release Plugin** for Git-based versioning
 - Version format: `SRU{YEAR}-{semantic-version}` (e.g., `SRU2024-10.2.9`)
 - **SRU** (Standards Release Update) tracks SWIFT's annual schema releases
-- Always update `CHANGELOG.md` with functional, concise entries
 
 ### Build Performance
 - **Very large codebase** - full build can be slow
