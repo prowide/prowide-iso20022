@@ -96,6 +96,57 @@ class WildcardAnyParsingTest {
         assertThat(restored.message()).contains("InstrForCdtrAcct").contains("RsdntSts");
     }
 
+    /**
+     * PWUS-18 exact reproduction: a camt.056.001.08 whose root-level SplmtryData/Envlp carries a custom
+     * namespaced XML payload. Previously the JSON rendered {@code "envelope": {}}; now the content is
+     * captured on parse, emitted in JSON, and restored by fromJson.
+     */
+    @Test
+    void camt056SupplementaryDataEnvelopeRoundTrips() {
+        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+                + "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:camt.056.001.08\">"
+                + "  <FIToFIPmtCxlReq>"
+                + "    <Assgnmt>"
+                + "      <Id>ID-1</Id>"
+                + "      <Assgnr><Agt><FinInstnId><BICFI>AAAAUS00</BICFI></FinInstnId></Agt></Assgnr>"
+                + "      <Assgne><Agt><FinInstnId><BICFI>BBBBUS00</BICFI></FinInstnId></Agt></Assgne>"
+                + "      <CreDtTm>2024-01-01T10:00:00</CreDtTm>"
+                + "    </Assgnmt>"
+                + "    <SplmtryData>"
+                + "      <PlcAndNm>TxSupplementary</PlcAndNm>"
+                + "      <Envlp>"
+                + "        <TEST:TestData xmlns:TEST=\"foocorp:test:smm\">"
+                + "          <TEST:tag>Hello World!</TEST:tag>"
+                + "        </TEST:TestData>"
+                + "      </Envlp>"
+                + "    </SplmtryData>"
+                + "  </FIToFIPmtCxlReq>"
+                + "</Document>";
+
+        MxCamt05600108 mx = MxCamt05600108.parse(xml);
+        assertThat(mx).isNotNull();
+
+        SupplementaryDataEnvelope1 envlp =
+                mx.getFIToFIPmtCxlReq().getSplmtryData().get(0).getEnvlp();
+        Element any = (Element) envlp.getAny();
+        assertThat(any).isNotNull();
+        assertThat(any.getLocalName()).isEqualTo("TestData");
+        assertThat(any.getNamespaceURI()).isEqualTo("foocorp:test:smm");
+        assertThat(any.getTextContent().trim()).isEqualTo("Hello World!");
+
+        // JSON must contain the payload, not the empty "envelope": {} of the original bug
+        String json = mx.toJson();
+        assertThat(json).contains("TestData").contains("Hello World!");
+        assertThat(json).doesNotContain("\"envelope\": {}");
+
+        // and fromJson restores it back to a DOM Element
+        MxCamt05600108 restored = MxCamt05600108.fromJson(json);
+        Element restoredAny = (Element)
+                restored.getFIToFIPmtCxlReq().getSplmtryData().get(0).getEnvlp().getAny();
+        assertThat(restoredAny).isNotNull();
+        assertThat(restoredAny.getLocalName()).isEqualTo("TestData");
+    }
+
     private static SupplementaryDataEnvelope1 envelope(MxPacs00200108 mx) {
         return mx.getFIToFIPmtStsRpt()
                 .getTxInfAndSts()
