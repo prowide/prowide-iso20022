@@ -182,6 +182,53 @@ class WildcardAnyParsingTest {
         assertThat(any.getTextContent().trim()).isEqualTo("Hello World!");
     }
 
+    /**
+     * Different wildcard location: camt.998 proprietary message carries its payload in
+     * {@code CshMgmtPrtryMsg/PrtryData/Data} (a {@link SupplementaryDataEnvelope1}). Here the envelope wraps a
+     * nested foreign-namespace {@code Document}; it must be captured on parse and survive the JSON round-trip.
+     */
+    @Test
+    void camt998ProprietaryDataEnvelopeRoundTrips() {
+        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+                + "<Document xmlns=\"urn:swift:xsd:camt.998.001.03\">"
+                + "  <CshMgmtPrtryMsg>"
+                + "    <MsgHdr><MsgId>0987654321</MsgId></MsgHdr>"
+                + "    <PrtryData>"
+                + "      <Tp>cma.textMessage.001.01</Tp>"
+                + "      <Data>"
+                + "        <Document xmlns=\"urn:cma:xsd:cma.textMessage.001.01\">"
+                + "          <TxtMsg><Txt>Text message to Participant</Txt></TxtMsg>"
+                + "        </Document>"
+                + "      </Data>"
+                + "    </PrtryData>"
+                + "  </CshMgmtPrtryMsg>"
+                + "</Document>";
+
+        MxCamt99800103 mx = MxCamt99800103.parse(xml);
+        assertThat(mx).isNotNull();
+        assertThat(mx.getCshMgmtPrtryMsg().getMsgHdr().getMsgId()).isEqualTo("0987654321");
+
+        SupplementaryDataEnvelope1 envlp =
+                mx.getCshMgmtPrtryMsg().getPrtryData().getData();
+        Element any = (Element) envlp.getAny();
+        assertThat(any).isNotNull();
+        assertThat(any.getLocalName()).isEqualTo("Document");
+        assertThat(any.getNamespaceURI()).isEqualTo("urn:cma:xsd:cma.textMessage.001.01");
+        assertThat(any.getElementsByTagNameNS("urn:cma:xsd:cma.textMessage.001.01", "Txt")
+                        .getLength())
+                .isEqualTo(1);
+
+        String json = mx.toJson();
+        assertThat(json).contains("Text message to Participant");
+        assertThat(json).doesNotContain("\"data\": {}");
+
+        MxCamt99800103 restored = MxCamt99800103.fromJson(json);
+        Element restoredAny =
+                (Element) restored.getCshMgmtPrtryMsg().getPrtryData().getData().getAny();
+        assertThat(restoredAny).isNotNull();
+        assertThat(restoredAny.getLocalName()).isEqualTo("Document");
+    }
+
     private static SupplementaryDataEnvelope1 envelope(MxPacs00200108 mx) {
         return mx.getFIToFIPmtStsRpt()
                 .getTxInfAndSts()
