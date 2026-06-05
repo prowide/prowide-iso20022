@@ -147,6 +147,41 @@ class WildcardAnyParsingTest {
         assertThat(restoredAny.getLocalName()).isEqualTo("TestData");
     }
 
+    /**
+     * Edge case: a foreign prefix is declared on a main-namespace ancestor ({@code SplmtryData}) and consumed
+     * by a wildcard descendant ({@code TEST:TestData}) that does not redeclare it. The filter must keep the
+     * foreign declaration in scope downstream (it only drops the main namespace), so the descendant is captured.
+     */
+    @Test
+    void wildcardDescendantUsesForeignPrefixFromMainNamespaceAncestor() {
+        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+                + "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:camt.056.001.08\">"
+                + "  <FIToFIPmtCxlReq>"
+                + "    <Assgnmt>"
+                + "      <Id>ID-1</Id>"
+                + "      <CreDtTm>2024-01-01T10:00:00</CreDtTm>"
+                + "    </Assgnmt>"
+                + "    <SplmtryData xmlns:TEST=\"foocorp:test:smm\">"
+                + "      <PlcAndNm>TxSupplementary</PlcAndNm>"
+                + "      <Envlp>"
+                + "        <TEST:TestData><TEST:tag>Hello World!</TEST:tag></TEST:TestData>"
+                + "      </Envlp>"
+                + "    </SplmtryData>"
+                + "  </FIToFIPmtCxlReq>"
+                + "</Document>";
+
+        MxCamt05600108 mx = MxCamt05600108.parse(xml);
+        assertThat(mx).isNotNull();
+
+        SupplementaryDataEnvelope1 envlp =
+                mx.getFIToFIPmtCxlReq().getSplmtryData().get(0).getEnvlp();
+        Element any = (Element) envlp.getAny();
+        assertThat(any).isNotNull();
+        assertThat(any.getLocalName()).isEqualTo("TestData");
+        assertThat(any.getNamespaceURI()).isEqualTo("foocorp:test:smm");
+        assertThat(any.getTextContent().trim()).isEqualTo("Hello World!");
+    }
+
     private static SupplementaryDataEnvelope1 envelope(MxPacs00200108 mx) {
         return mx.getFIToFIPmtStsRpt()
                 .getTxInfAndSts()

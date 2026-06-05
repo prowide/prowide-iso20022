@@ -19,12 +19,15 @@ import com.prowidesoftware.swift.model.mx.adapters.ElementJsonAdapter;
 import jakarta.xml.bind.annotation.XmlAnyElement;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.w3c.dom.Element;
@@ -49,6 +52,10 @@ final class WildcardElementRepair {
     private static final Logger log = Logger.getLogger(WildcardElementRepair.class.getName());
     private static final String MODEL_PACKAGE = "com.prowidesoftware.swift.model.mx";
 
+    // Per-class cache of the instance fields to visit (flattened across the hierarchy, made accessible
+    // once). Avoids repeated getDeclaredFields()/setAccessible() reflection on every deserialization.
+    private static final Map<Class<?>, Field[]> FIELD_CACHE = new ConcurrentHashMap<>();
+
     private WildcardElementRepair() {}
 
     /**
@@ -67,22 +74,44 @@ final class WildcardElementRepair {
         if (obj == null || !visited.add(obj)) {
             return;
         }
-        for (Class<?> c = obj.getClass(); c != null && c != Object.class; c = c.getSuperclass()) {
-            for (Field field : c.getDeclaredFields()) {
-                if (Modifier.isStatic(field.getModifiers()) || field.isSynthetic()) {
-                    continue;
-                }
-                final Object value = readField(field, obj);
-                if (value == null) {
-                    continue;
-                }
-                if (field.isAnnotationPresent(XmlAnyElement.class)) {
-                    repairWildcard(field, obj, value);
-                } else {
-                    recurse(value, visited);
-                }
+        for (Field field : instanceFields(obj.getClass())) {
+            final Object value = readField(field, obj);
+            if (value == null) {
+                continue;
+            }
+            if (field.isAnnotationPresent(XmlAnyElement.class)) {
+                repairWildcard(field, obj, value);
+            } else {
+                recurse(value, visited);
             }
         }
+    }
+
+    /**
+     * Returns (and caches) the non-static instance fields of the given class flattened across its
+     * hierarchy, with {@link Field#setAccessible(boolean)} already applied.
+     */
+    private static Field[] instanceFields(final Class<?> type) {
+        return FIELD_CACHE.computeIfAbsent(type, t -> {
+            final List<Field> fields = new ArrayList<>();
+            for (Class<?> c = t; c != null && c != Object.class; c = c.getSuperclass()) {
+                for (Field field : c.getDeclaredFields()) {
+                    if (Modifier.isStatic(field.getModifiers()) || field.isSynthetic()) {
+                        continue;
+                    }
+                    try {
+                        field.setAccessible(true);
+                    } catch (Exception e) {
+                        if (log.isLoggable(Level.FINEST)) {
+                            log.log(Level.FINEST, "Cannot access field " + field.getName(), e);
+                        }
+                        continue;
+                    }
+                    fields.add(field);
+                }
+            }
+            return fields.toArray(new Field[0]);
+        });
     }
 
     private static void repairWildcard(final Field field, final Object owner, final Object value) {
@@ -127,7 +156,6 @@ final class WildcardElementRepair {
 
     private static Object readField(final Field field, final Object owner) {
         try {
-            field.setAccessible(true);
             return field.get(owner);
         } catch (Exception e) {
             if (log.isLoggable(Level.FINEST)) {
@@ -139,7 +167,6 @@ final class WildcardElementRepair {
 
     private static void writeField(final Field field, final Object owner, final Object value) {
         try {
-            field.setAccessible(true);
             field.set(owner, value);
         } catch (Exception e) {
             log.warning("Could not restore wildcard element on field " + field.getName() + ": " + e.getMessage());

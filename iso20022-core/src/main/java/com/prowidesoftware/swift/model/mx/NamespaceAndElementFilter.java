@@ -176,7 +176,11 @@ public class NamespaceAndElementFilter extends XMLFilterImpl {
             throws SAXException {
         List<String> forwarded = entryForwarded != null ? entryForwarded : new ArrayList<>();
         for (PrefixMapping pm : bufferedStartMappings) {
-            if (wildcard || isXsysNamespace(pm.url)) {
+            // Forward every mapping except the main namespace, which we unbind. This keeps xsys and
+            // foreign declarations in scope downstream so that a wildcard descendant can still resolve
+            // a foreign prefix declared on a (main-namespace) ancestor. In wildcard mode we forward
+            // everything verbatim, including a re-declared main namespace.
+            if (wildcard || !StringUtils.equals(pm.url, this.mainNamespace)) {
                 try {
                     super.startPrefixMapping(pm.prefix, pm.url);
                     forwarded.add(pm.prefix);
