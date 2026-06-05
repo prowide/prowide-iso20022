@@ -1,5 +1,9 @@
 # Prowide ISO 20022 - CHANGELOG
 
+### 10.3.9 - SNAPSHOT
+  * Feat: `xsd:any` wildcard content (e.g. `SplmtryData/Envlp`, signature envelopes) is no longer dropped on parse; it is captured as an `org.w3c.dom.Element` with namespaces preserved (GH-39, GH-43)
+  * Fix: `toJson()` now serializes `@XmlAnyElement` wildcard content as raw XML instead of an empty `{}`, and `fromJson()` restores it back to a DOM Element (round-trippable)
+
 ### 10.3.8 - May 2026
   * (PW-3202) Fix: removed spurious `Error propagating pending prefix mapping` warnings when parsing regular ISO 20022 Documents wrapped in an SNL-like envelope
   * (PW-3185) `MxSwiftMessage.toJson()` now uses 1-based months (January=1) for Calendar fields and emits a `schemaVersion` marker. `fromJson()` reads both new and legacy (0-based) payloads transparently.

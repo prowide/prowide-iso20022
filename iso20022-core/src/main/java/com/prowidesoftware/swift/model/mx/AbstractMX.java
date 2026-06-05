@@ -191,7 +191,9 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
      */
     protected static <T> T fromJson(String json, Class<T> classOfT) {
         final Gson gson = getGsonBuilderWithV10Adapters();
-        return gson.fromJson(json, classOfT);
+        T parsed = gson.fromJson(json, classOfT);
+        WildcardElementRepair.repair(parsed);
+        return parsed;
     }
 
     /**
@@ -203,7 +205,9 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
      */
     public static AbstractMX fromJson(String json) {
         final Gson gson = getGsonBuilderWithV10Adapters();
-        return gson.fromJson(json, AbstractMX.class);
+        AbstractMX mx = gson.fromJson(json, AbstractMX.class);
+        WildcardElementRepair.repair(mx);
+        return mx;
     }
 
     /**
@@ -221,7 +225,9 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
      */
     protected static <T> T fromJsonV9(String json, Class<T> classOfT) {
         final Gson gson = getGsonBuilderWithV9Adapters();
-        return gson.fromJson(json, classOfT);
+        T parsed = gson.fromJson(json, classOfT);
+        WildcardElementRepair.repair(parsed);
+        return parsed;
     }
 
     /**
@@ -237,7 +243,9 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
      */
     public static AbstractMX fromJsonV9(String json) {
         final Gson gson = getGsonBuilderWithV9Adapters();
-        return gson.fromJson(json, AbstractMX.class);
+        AbstractMX mx = gson.fromJson(json, AbstractMX.class);
+        WildcardElementRepair.repair(mx);
+        return mx;
     }
 
     /**
@@ -568,7 +576,11 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
                 .registerTypeAdapter(LocalDate.class, new LocalDateJsonAdapter())
                 .registerTypeAdapter(Year.class, new YearJsonAdapter())
                 .registerTypeAdapter(YearMonth.class, new YearMonthJsonAdapter())
-                .registerTypeAdapter(AppHdr.class, new AppHdrAdapter());
+                .registerTypeAdapter(AppHdr.class, new AppHdrAdapter())
+                // serialize xsd:any wildcard content (e.g. SupplementaryData/Envlp, signature
+                // envelopes) as raw XML instead of an empty object; hierarchy registration is
+                // required because the runtime value is a concrete DOM impl, not Element itself
+                .registerTypeHierarchyAdapter(Element.class, new ElementJsonAdapter());
     }
 
     private static Gson getGsonBuilderWithV9Adapters() {
