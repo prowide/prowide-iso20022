@@ -36,9 +36,10 @@ import org.xml.sax.helpers.XMLFilterImpl;
  * {@code SplmtryData/Envlp} payload or a signature envelope) and is forwarded verbatim, with its namespaces intact, so
  * that JAXB's {@code @XmlAnyElement} binding can materialize it as a {@link org.w3c.dom.Element}.
  *
- * <p>Known limitation: a wildcard child that happens to reuse the exact main message namespace is treated as model
- * content (unbound), not captured as wildcard, because the filter keys its decision purely on the namespace. This does
- * not affect the usual wildcard payloads, which use a foreign namespace or no namespace.
+ * <p>Known limitation: a wildcard child that reuses the exact main message namespace is still captured as an
+ * {@link org.w3c.dom.Element}, but with its namespace unbound, so its original namespace URI is not round-tripped.
+ * This happens because the filter keys its decision purely on the namespace. It does not affect the usual wildcard
+ * payloads, which use a foreign namespace or no namespace.
  *
  * <p>Regarding the namespace, two different behaviours are supported; bounded or unbounded.
  *
