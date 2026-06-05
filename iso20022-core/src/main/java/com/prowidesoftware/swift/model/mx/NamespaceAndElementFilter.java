@@ -15,7 +15,9 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -28,9 +30,16 @@ import org.xml.sax.helpers.XMLFilterImpl;
  * This filter enables extraction of a particular element from an XML.
  *
  * <p>The filter will bypass only the main element being parsed (such as the AppHdr or Document), ignoring any other
- * sibling or parent content such as a transmission envelope. Then within the main element being processed, only the
- * content with a recognized namespace is propagated, meaning for example any supplementary data with Any in the schema
- * will not be parsed.
+ * sibling or parent content such as a transmission envelope. Within the main element being processed, content in the
+ * main message namespace is unbound (the namespace is stripped) and content in the SWIFT xsys namespaces is kept as is.
+ * Any other content (foreign namespace or no namespace) is treated as {@code xsd:any} wildcard content (for example a
+ * {@code SplmtryData/Envlp} payload or a signature envelope) and is forwarded verbatim, with its namespaces intact, so
+ * that JAXB's {@code @XmlAnyElement} binding can materialize it as a {@link org.w3c.dom.Element}.
+ *
+ * <p>Known limitation: a wildcard child that reuses the exact main message namespace is still captured as an
+ * {@link org.w3c.dom.Element}, but with its namespace unbound, so its original namespace URI is not round-tripped.
+ * This happens because the filter keys its decision purely on the namespace. It does not affect the usual wildcard
+ * payloads, which use a foreign namespace or no namespace.
  *
  * <p>Regarding the namespace, two different behaviours are supported; bounded or unbounded.
  *
@@ -52,10 +61,18 @@ public class NamespaceAndElementFilter extends XMLFilterImpl {
     private String mainNamespace;
     private boolean inElementToPropagate = false;
     private final String localNameToPropagate;
-    private boolean inInnerElementToSkip = false;
-    private String localNameToSkip;
     private final boolean unbindNamespace;
     private final List<PrefixMapping> pendingPrefixMappings = new ArrayList<>();
+
+    // Element depth within the propagated element (incremented on every forwarded startElement).
+    private int depth = 0;
+    // Depth at which we entered an xsd:any wildcard subtree, or -1 when not inside one.
+    private int wildcardDepth = -1;
+    // Prefix mappings buffered until the upcoming startElement reveals whether to forward them.
+    private final List<PrefixMapping> bufferedStartMappings = new ArrayList<>();
+    // Per-forwarded-element list of prefixes actually forwarded, so the matching endPrefixMapping
+    // events can be synthesized in endElement (LIFO), keeping the downstream namespace stack balanced.
+    private final Deque<List<String>> forwardedPrefixStack = new ArrayDeque<>();
 
     private static class PrefixMapping {
         final String prefix;
@@ -89,11 +106,10 @@ public class NamespaceAndElementFilter extends XMLFilterImpl {
     public void startElement(String namespace, String localName, String prefix, Attributes attributes)
             throws SAXException {
 
-        if (inInnerElementToSkip) {
-            return;
-        }
+        // Prefixes forwarded as part of entering the propagated element (GH-168 xsys replay).
+        List<String> entryForwarded = null;
 
-        if (!this.inElementToPropagate && localName.equals(this.localNameToPropagate)) {
+        if (wildcardDepth < 0 && !this.inElementToPropagate && localName.equals(this.localNameToPropagate)) {
             this.inElementToPropagate = true;
             this.mainNamespace = namespace;
 
@@ -103,9 +119,11 @@ public class NamespaceAndElementFilter extends XMLFilterImpl {
             // for regular ISO 20022 Documents would be unnecessary and can produce spurious warnings
             // or namespace-stack errors in strict SAX-to-StAX bridges.
             if (isXsysDocumentNamespace(this.mainNamespace)) {
+                entryForwarded = new ArrayList<>();
                 for (PrefixMapping pm : pendingPrefixMappings) {
                     try {
                         super.startPrefixMapping(pm.prefix, pm.url);
+                        entryForwarded.add(pm.prefix);
                     } catch (Exception e) {
                         log.warning("Error propagating pending prefix mapping " + pm.prefix + " [" + pm.url + "]: "
                                 + exceptionMessage(e));
@@ -118,25 +136,88 @@ public class NamespaceAndElementFilter extends XMLFilterImpl {
             pendingPrefixMappings.clear();
         }
 
+        if (wildcardDepth >= 0) {
+            // Already inside an xsd:any wildcard subtree: forward the content verbatim with its
+            // original namespace so JAXB's @XmlAnyElement binding materializes it as a DOM Element.
+            forwardStart(namespace, localName, prefix, attributes, true, entryForwarded);
+            return;
+        }
+
         if (this.inElementToPropagate) {
             String namespaceToPropagate = resolveNamespaceToPropagate(namespace);
             if (namespaceToPropagate != null) {
-                try {
-                    super.startElement(namespaceToPropagate, localName, prefix, attributes);
-                } catch (Exception e) {
-                    log.warning("Error parsing " + localName + " [" + namespace + "] element: " + exceptionMessage(e));
-                    if (log.isLoggable(Level.FINEST)) {
-                        log.log(Level.FINEST, "Error parsing " + localName + " [" + namespace + "] element", e);
-                    }
-                }
+                // recognized content: main namespace (unbound to "") or xsys namespace (kept as is)
+                forwardStart(namespaceToPropagate, localName, prefix, attributes, false, entryForwarded);
             } else {
-                // we have found an element within the structure to propagate with a not recognized namespace
-                // so we skip this content because we don't have the model to unmarshall it properly;
-                // this is normally the case of an Any element in the schema
-                this.inInnerElementToSkip = true;
-                this.localNameToSkip = localName;
+                // foreign or no-namespace content within the structure to propagate: this is the
+                // xsd:any wildcard case. Enter wildcard mode and forward the subtree verbatim so
+                // JAXB captures it as an org.w3c.dom.Element instead of dropping it.
+                this.wildcardDepth = this.depth;
+                forwardStart(namespace, localName, prefix, attributes, true, entryForwarded);
             }
         }
+    }
+
+    /**
+     * Forwards a startElement downstream, first flushing the buffered prefix mappings that apply to
+     * it and recording the forwarded prefixes on {@link #forwardedPrefixStack} so the matching end
+     * mappings can be synthesized on the corresponding endElement.
+     *
+     * @param namespaceToPropagate the namespace to forward (already resolved/unbound for non-wildcard content)
+     * @param wildcard true to forward every buffered mapping verbatim (wildcard content); false to forward only xsys
+     * @param entryForwarded prefixes already forwarded while entering the propagated element (GH-168), or null
+     */
+    private void forwardStart(
+            String namespaceToPropagate,
+            String localName,
+            String prefix,
+            Attributes attributes,
+            boolean wildcard,
+            List<String> entryForwarded)
+            throws SAXException {
+        List<String> forwarded = entryForwarded != null ? entryForwarded : new ArrayList<>();
+        for (PrefixMapping pm : bufferedStartMappings) {
+            // Forward every mapping except the main namespace, which we unbind. This keeps xsys and
+            // foreign declarations in scope downstream so that a wildcard descendant can still resolve
+            // a foreign prefix declared on a (main-namespace) ancestor. In wildcard mode we forward
+            // everything verbatim, including a re-declared main namespace.
+            if (wildcard || !StringUtils.equals(pm.url, this.mainNamespace)) {
+                try {
+                    super.startPrefixMapping(pm.prefix, pm.url);
+                    forwarded.add(pm.prefix);
+                } catch (Exception e) {
+                    log.warning(
+                            "Error parsing " + pm.prefix + " [" + pm.url + "] prefix mapping: " + exceptionMessage(e));
+                    if (log.isLoggable(Level.FINEST)) {
+                        log.log(Level.FINEST, "Error parsing " + pm.prefix + " [" + pm.url + "] prefix mapping", e);
+                    }
+                }
+            }
+        }
+        bufferedStartMappings.clear();
+        forwardedPrefixStack.push(forwarded);
+        try {
+            super.startElement(
+                    namespaceToPropagate, localName, unboundQName(namespaceToPropagate, localName, prefix), attributes);
+        } catch (Exception e) {
+            log.warning(
+                    "Error parsing " + localName + " [" + namespaceToPropagate + "] element: " + exceptionMessage(e));
+            if (log.isLoggable(Level.FINEST)) {
+                log.log(Level.FINEST, "Error parsing " + localName + " [" + namespaceToPropagate + "] element", e);
+            }
+        }
+        depth++;
+    }
+
+    /**
+     * Returns the qualified name to forward downstream. When the element namespace has been unbound
+     * (resolved to an empty namespace) the original prefix must be dropped, because an element in no
+     * namespace cannot carry a prefix; keeping it would leave an undeclared prefix that breaks the
+     * DOM construction performed by JAXB for wildcard ({@code @XmlAnyElement}) content reusing the main
+     * namespace. For elements that keep their namespace (xsys or foreign wildcard) the qName is kept.
+     */
+    private static String unboundQName(String namespaceToPropagate, String localName, String qName) {
+        return (namespaceToPropagate == null || namespaceToPropagate.isEmpty()) ? localName : qName;
     }
 
     private String resolveNamespaceToPropagate(String namespace) {
@@ -184,54 +265,89 @@ public class NamespaceAndElementFilter extends XMLFilterImpl {
     @Override
     public void endElement(String namespace, String localName, String prefix) throws SAXException {
 
-        if (this.inInnerElementToSkip) {
-            if (localName.equals(this.localNameToSkip)) {
-                // stop skipping
-                this.inInnerElementToSkip = false;
-                this.localNameToSkip = null;
-                return;
+        if (wildcardDepth >= 0) {
+            // Inside a wildcard subtree: forward verbatim. Check before decrementing whether this
+            // closes the wildcard root element.
+            boolean closingWildcardRoot = (this.depth - 1 == this.wildcardDepth);
+            forwardEnd(namespace, localName, prefix);
+            if (closingWildcardRoot) {
+                this.wildcardDepth = -1;
             }
+            return;
         }
 
         if (this.inElementToPropagate) {
             String namespaceToPropagate = resolveNamespaceToPropagate(namespace);
             if (namespaceToPropagate != null) {
-                try {
-                    super.endElement(namespaceToPropagate, localName, prefix);
-                } catch (Exception e) {
-                    log.warning("Error parsing " + localName + " [" + namespace + "] element: " + exceptionMessage(e));
-                    if (log.isLoggable(Level.FINEST)) {
-                        log.log(Level.FINEST, "Error parsing " + localName + " [" + namespace + "] element", e);
-                    }
-                }
+                forwardEnd(namespaceToPropagate, localName, prefix);
             }
         }
 
         if (localName.equals(this.localNameToPropagate)) {
-            // we are done (we will skip the rest of the XML content
+            // we are done (we will skip the rest of the XML content); reset state defensively
             this.inElementToPropagate = false;
+            this.depth = 0;
+            this.wildcardDepth = -1;
+            this.forwardedPrefixStack.clear();
+            this.bufferedStartMappings.clear();
         }
+    }
+
+    /**
+     * Forwards an endElement downstream and then synthesizes the matching endPrefixMapping events
+     * (in reverse order) for the prefixes that were forwarded on the corresponding startElement,
+     * keeping the downstream namespace stack balanced.
+     */
+    private void forwardEnd(String namespaceToPropagate, String localName, String prefix) throws SAXException {
+        try {
+            super.endElement(namespaceToPropagate, localName, unboundQName(namespaceToPropagate, localName, prefix));
+        } catch (Exception e) {
+            log.warning(
+                    "Error parsing " + localName + " [" + namespaceToPropagate + "] element: " + exceptionMessage(e));
+            if (log.isLoggable(Level.FINEST)) {
+                log.log(Level.FINEST, "Error parsing " + localName + " [" + namespaceToPropagate + "] element", e);
+            }
+        }
+        if (!forwardedPrefixStack.isEmpty()) {
+            List<String> forwarded = forwardedPrefixStack.pop();
+            for (int i = forwarded.size() - 1; i >= 0; i--) {
+                try {
+                    super.endPrefixMapping(forwarded.get(i));
+                } catch (Exception e) {
+                    log.warning("Error ending prefix mapping " + forwarded.get(i) + ": " + exceptionMessage(e));
+                    if (log.isLoggable(Level.FINEST)) {
+                        log.log(Level.FINEST, "Error ending prefix mapping " + forwarded.get(i), e);
+                    }
+                }
+            }
+        }
+        depth--;
     }
 
     @Override
     public void startPrefixMapping(String prefix, String url) throws SAXException {
-        if (isXsysNamespace(url)) {
-            if (this.inElementToPropagate && this.mainNamespace != null) {
-                // we only propagate the xsys messages namespaces, for the main namespace we want it unbounded
-                try {
-                    super.startPrefixMapping(prefix, url);
-                } catch (Exception e) {
-                    log.warning("Error parsing " + prefix + " [" + url + "] prefix mapping: " + exceptionMessage(e));
-                    if (log.isLoggable(Level.FINEST)) {
-                        log.log(Level.FINEST, "Error parsing " + prefix + " [" + url + "] prefix mapping", e);
-                    }
-                }
-            } else {
-                // Store xsys namespace mappings that appear before the element to propagate
-                // This handles the case where AppHdr with xsys namespaces appears before Document
-                pendingPrefixMappings.add(new PrefixMapping(prefix, url));
-            }
+        if (this.inElementToPropagate) {
+            // Inside the propagated subtree the decision (unbind the main namespace, keep xsys, or
+            // capture wildcard content) depends on the upcoming element, which SAX delivers right
+            // after these mappings. Buffer them and let startElement decide which to forward, so
+            // start and end prefix mappings stay balanced downstream.
+            bufferedStartMappings.add(new PrefixMapping(prefix, url));
+        } else if (isXsysNamespace(url)) {
+            // Store xsys namespace mappings that appear before the element to propagate, to replay
+            // them if the propagated element turns out to be an xsys Document (GH-168 / PW-3202).
+            // This handles the case where AppHdr with xsys namespaces appears before Document.
+            pendingPrefixMappings.add(new PrefixMapping(prefix, url));
         }
+        // other mappings declared outside the propagated element are dropped
+    }
+
+    @Override
+    public void endPrefixMapping(String prefix) throws SAXException {
+        // Intentionally a no-op. The matching end prefix mapping events are synthesized in endElement
+        // from forwardedPrefixStack, so they balance exactly the start mappings we forwarded. Letting
+        // XMLFilterImpl forward every endPrefixMapping (including the unbound main namespace and the
+        // dropped outer-envelope mappings) is what underflows the downstream JAXB namespace stack,
+        // producing the negative-index ArrayIndexOutOfBoundsException.
     }
 
     private static String exceptionMessage(Exception e) {

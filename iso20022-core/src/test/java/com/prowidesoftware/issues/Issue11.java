@@ -19,10 +19,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import com.prowidesoftware.swift.model.mx.BusinessAppHdrV01;
 import com.prowidesoftware.swift.model.mx.MxPacs00200108;
+import com.prowidesoftware.swift.model.mx.dic.SupplementaryDataEnvelope1;
 import com.prowidesoftware.swift.utils.Lib;
 import java.io.IOException;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.w3c.dom.Element;
 
 /**
  * https://github.com/prowide/prowide-iso20022/issues/11
@@ -30,16 +31,27 @@ import org.junit.jupiter.api.Test;
 public class Issue11 {
 
     /*
-     * Supplementary data is not bounded to any namespace
-     * Signature element in header is missing namespace
+     * Supplementary data and signature reuse their parent (main) namespace. Previously this crashed the
+     * JAXB UnmarshallingContext (negative-index namespace error) and the message could not be parsed.
+     * The wildcard content is now forwarded with balanced prefix mappings, so the message parses and the
+     * SplmtryData/Envlp content is captured as a DOM Element instead of being dropped.
      */
-    @Disabled("Forcing namespace error prevents the UnmarshallingContext from getting the asserted state")
     @Test
     public void test() throws IOException {
         String xml = Lib.readResource("issues/11/samplemsg.002.001.08.txt");
         assertNotNull(xml);
         MxPacs00200108 mx = MxPacs00200108.parse(xml);
-        assertNull(mx);
+        assertMessage(mx);
+
+        SupplementaryDataEnvelope1 envlp = mx.getFIToFIPmtStsRpt()
+                .getTxInfAndSts()
+                .get(0)
+                .getSplmtryData()
+                .get(0)
+                .getEnvlp();
+        assertNotNull(envlp.getAny());
+        assertTrue(envlp.getAny() instanceof Element);
+        assertEquals("InstrForCdtrAcct", ((Element) envlp.getAny()).getLocalName());
     }
 
     private void assertMessage(MxPacs00200108 mx) {
