@@ -1164,4 +1164,60 @@ public class MxParseUtilsTest {
 
         assertNull(result);
     }
+
+    @Test
+    void testWrapIfAppHdrRoot_NullInput() {
+        assertNull(MxParseUtils.wrapIfAppHdrRoot(null));
+    }
+
+    @Test
+    void testWrapIfAppHdrRoot_DocumentRoot_NotWrapped() {
+        String xml =
+                "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08\"><FIToFICstmrCdtTrf/></Document>";
+        assertEquals(xml, MxParseUtils.wrapIfAppHdrRoot(xml));
+    }
+
+    @Test
+    void testWrapIfAppHdrRoot_AppHdrNoPrefix() {
+        String xml = "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\"><Fr/></AppHdr>";
+        String result = MxParseUtils.wrapIfAppHdrRoot(xml);
+        assertEquals("<RequestPayload>" + xml + "</RequestPayload>", result);
+    }
+
+    @Test
+    void testWrapIfAppHdrRoot_AppHdrWithNamespacePrefix() {
+        String xml = "<h:AppHdr xmlns:h=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\"><h:Fr/></h:AppHdr>";
+        String result = MxParseUtils.wrapIfAppHdrRoot(xml);
+        assertEquals("<RequestPayload>" + xml + "</RequestPayload>", result);
+    }
+
+    @Test
+    void testWrapIfAppHdrRoot_AppHdrWithXmlDeclarationAndPrefix() {
+        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+                + "<SwInt:AppHdr xmlns:SwInt=\"urn:swift:snl:ns.SwInt\"><SwInt:Fr/></SwInt:AppHdr>"
+                + "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08\"/>";
+        String result = MxParseUtils.wrapIfAppHdrRoot(xml);
+        assertEquals("<RequestPayload>" + xml + "</RequestPayload>", result);
+    }
+
+    @Test
+    void testWrapIfAppHdrRoot_AppHdrWithLeadingWhitespace() {
+        String xml = "  \n  <AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\"/>";
+        String result = MxParseUtils.wrapIfAppHdrRoot(xml);
+        assertEquals("<RequestPayload>" + xml + "</RequestPayload>", result);
+    }
+
+    @Test
+    void testWrapIfAppHdrRoot_AlreadyWrappedInRequestPayload_NotDoubleWrapped() {
+        String inner = "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\"/>";
+        String xml = "<RequestPayload>" + inner + "</RequestPayload>";
+        assertEquals(xml, MxParseUtils.wrapIfAppHdrRoot(xml));
+    }
+
+    @Test
+    void testWrapIfAppHdrRoot_AppHdrSuffix_NotWrapped() {
+        // AppHdrV02 should not match
+        String xml = "<AppHdrV02 xmlns=\"urn:example\"/>";
+        assertEquals(xml, MxParseUtils.wrapIfAppHdrRoot(xml));
+    }
 }

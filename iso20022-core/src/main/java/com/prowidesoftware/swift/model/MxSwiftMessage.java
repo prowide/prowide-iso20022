@@ -326,7 +326,7 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
     private void extractMetadata(MxId identifier, AppHdr headerModel, MessageMetadataStrategy metadataStrategy) {
         // when parsing the message just for the metadata extraction, we want to avoid underlying error logs
         // since this MxSwiftMessage is lenient on the constraints of the parsed XML payload
-        final String lenientXml = MxParseUtils.makeXmlLenient(this.message());
+        final String lenientXml = MxParseUtils.wrapIfAppHdrRoot(MxParseUtils.makeXmlLenient(this.message()));
         MxNode parsedMessage = MxNode.parse(lenientXml);
         if (headerModel == null || !extractMetadata(headerModel)) {
             extractMetadata(parsedMessage);
@@ -608,7 +608,7 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
         Objects.requireNonNull(strategy, "the strategy for metadata extraction cannot be null");
         // when parsing the message just for the metadata extraction, we want to avoid underlying error logs
         // since this MxSwiftMessage is lenient on the constraints of the parsed XML payload
-        final String lenientXml = MxParseUtils.makeXmlLenient(this.message());
+        final String lenientXml = MxParseUtils.wrapIfAppHdrRoot(MxParseUtils.makeXmlLenient(this.message()));
         MxNode parsedMessage = MxNode.parse(lenientXml);
         extractUetr(parsedMessage);
         applyStrategy(lenientXml, strategy);

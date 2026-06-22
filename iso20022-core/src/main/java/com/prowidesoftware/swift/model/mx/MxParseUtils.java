@@ -57,6 +57,12 @@ public class MxParseUtils {
     private static final Logger log = Logger.getLogger(MxParseUtils.class.getName());
     private static final String regex = "^(/|//)([a-zA-Z_][\\w\\-.]*)(/([a-zA-Z_][\\w\\-.]*))*$";
     private static final Pattern pattern = Pattern.compile(regex);
+    /**
+     * Matches XML whose first element (after optional XML declaration) is AppHdr with any namespace prefix.
+     * E.g. {@code <AppHdr>}, {@code <h:AppHdr>}, {@code <?xml ...?><SwInt:AppHdr>}
+     */
+    private static final Pattern APPHDR_ROOT_PATTERN =
+            Pattern.compile("(?s)^\\s*(?:<\\?xml.*?\\?>\\s*)?<(?:[a-zA-Z_][\\w.-]*:)?AppHdr[\\s>/]");
 
     /**
      * Creates a {@link SAXSource} for the given XML, filtering a specific element with the
@@ -314,6 +320,28 @@ public class MxParseUtils {
             mxId.setBusinessService(element.get());
         }
         return Optional.of(mxId);
+    }
+
+    /**
+     * Wraps the XML with a {@code <RequestPayload>} root element when the content starts with an
+     * {@code AppHdr} element (with or without a namespace prefix). This prevents
+     * "Illegal to have multiple roots" errors that occur when the XML contains both
+     * {@code AppHdr} and {@code Document} elements at the same level without a common root.
+     *
+     * <p>Matches {@code <AppHdr>}, {@code <prefix:AppHdr>}, and the same forms preceded by an
+     * optional XML declaration. Already-wrapped XML (e.g. rooted at {@code <RequestPayload>})
+     * is returned unchanged.
+     *
+     * @param xml original XML content
+     * @return XML wrapped in {@code <RequestPayload>...</RequestPayload>}, or the original if wrapping is not needed
+     * @since 10.3.10
+     */
+    public static String wrapIfAppHdrRoot(String xml) {
+        if (xml == null) return null;
+        if (APPHDR_ROOT_PATTERN.matcher(xml).find()) {
+            return "<RequestPayload>" + xml + "</RequestPayload>";
+        }
+        return xml;
     }
 
     /**
