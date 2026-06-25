@@ -163,7 +163,8 @@ public class MxReadImpl implements MxRead {
             fqn = "com.prowidesoftware.swift.model.mx" + subPackage + ".Mx" + resolvedId.camelized();
             Class<? extends AbstractMX> clazz = (Class<? extends AbstractMX>) Class.forName(fqn);
             java.lang.reflect.Field _classes = clazz.getDeclaredField("_classes");
-            mx = parse(clazz, xml, (Class[]) _classes.get(null), params);
+            String normalizedXml = MxParseUtils.wrapIfAppHdrRoot(MxParseUtils.stripUndeclaredDocumentPrefix(xml));
+            mx = parse(clazz, normalizedXml, (Class[]) _classes.get(null), params);
         } catch (ClassNotFoundException e) {
             if (params.verbose) {
                 log.log(Level.SEVERE, "Cannot find class " + fqn + " to parse the XML", e);

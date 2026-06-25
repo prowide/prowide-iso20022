@@ -345,6 +345,30 @@ public class MxParseUtils {
     }
 
     /**
+     * Strips an undeclared namespace prefix from element tags when the {@code Document} root element uses a prefix
+     * that is not declared with a corresponding {@code xmlns:prefix="..."} anywhere in the XML.
+     *
+     * <p>For example, {@code <ns2:Document>} where {@code ns2} has no declaration anywhere in the XML will have
+     * the prefix stripped from all start and end element tags, producing {@code <Document>}. This allows lenient
+     * SAX-based parsing of XML produced by systems that omit namespace declarations.
+     *
+     * <p>If the prefix is declared or no prefixed Document element is found, the XML is returned unchanged.
+     *
+     * @param xml original XML content
+     * @return XML with the undeclared document prefix stripped from element tags, or the original if not needed
+     * @since 10.3.10
+     */
+    public static String stripUndeclaredDocumentPrefix(String xml) {
+        if (xml == null) return null;
+        Matcher m = Pattern.compile("<([a-zA-Z_][\\w.-]*):Document[\\s>/]").matcher(xml);
+        if (!m.find()) return xml;
+        String prefix = m.group(1);
+        if (xml.contains("xmlns:" + prefix + "=")) return xml;
+        return xml.replaceAll("<" + Pattern.quote(prefix) + ":", "<")
+                .replaceAll("</" + Pattern.quote(prefix) + ":", "</");
+    }
+
+    /**
      * This method is intended to fix some malformed XML content that is not compliant with the XML specification
      * to enable the parsing and processing of the payload to be lenient.
      * For the moment, current implementation will just fix invalid case in the XML declaration, if present.

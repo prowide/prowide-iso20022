@@ -10,8 +10,9 @@ public class IssueJira2731Test {
     @Test
     public void camt057Amount() {
         String camt057_amount_from_xmlNode_TtlAmt_String =
-                "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\" ?>\n" + "<RequestPayload>\n"
-                        + "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\">\n"
+                //                "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\" ?>\n" +
+                // "<RequestPayload>\n"
+                "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\">\n"
                         + "      <Fr>\n"
                         + "        <FIId>\n"
                         + "          <FinInstnId>\n"
@@ -74,12 +75,12 @@ public class IssueJira2731Test {
                         + "          </Itm>\n"
                         + "        </Ntfctn>\n"
                         + "      </NtfctnToRcv>\n"
-                        + "    </Document>\n"
-                        + "    </RequestPayload>";
+                        + "    </Document>\n";
+        // + "    </RequestPayload>";
 
         String camt057_amount_from_xmlNode_Itm_Amt_String =
-                "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n" + "<RequestPayload>\n"
-                        + "<head:AppHdr xmlns:head=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\">\n"
+                //  "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n" + "<RequestPayload>\n"
+                "<head:AppHdr xmlns:head=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\">\n"
                         + "    <head:Fr>\n"
                         + "        <head:FIId>\n"
                         + "            <head:FinInstnId>\n"
@@ -151,8 +152,8 @@ public class IssueJira2731Test {
                         + "            </camt:Itm>\n"
                         + "        </camt:Ntfctn>\n"
                         + "    </camt:NtfctnToRcv>\n"
-                        + "</camt:Document>\n"
-                        + "</RequestPayload>";
+                        + "</camt:Document>\n";
+        // + "</RequestPayload>";
 
         // First Amount Node for camt057
         MxSwiftMessage camt057_amount_TtlAmt = MxSwiftMessage.parse(camt057_amount_from_xmlNode_TtlAmt_String);
