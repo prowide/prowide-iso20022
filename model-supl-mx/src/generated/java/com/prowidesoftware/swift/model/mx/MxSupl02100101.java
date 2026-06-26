@@ -5,8 +5,11 @@ import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
 import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import com.prowidesoftware.swift.model.mx.MxReadImpl;
+import com.prowidesoftware.swift.model.mx.MxReadParams;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
@@ -20,6 +23,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
  * Class for supl.021.001.01 ISO 20022 message.
+ * <p><strong>DRAFT</strong>: generated from an ISO 20022 draft schema (not yet officially registered).
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -28,7 +32,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:eurosystem:xsd:DRAFT2supl.021.001.01")
 public class MxSupl02100101
-    extends com.prowidesoftware.swift.model.mx.AbstractMX
+    extends AbstractMX
 {
 
     @XmlElement(name = "SctiesSttlmSD1", required = true)
@@ -113,7 +117,7 @@ public class MxSupl02100101
      * 
      */
     public static MxSupl02100101 parse(String xml) {
-        return ((MxSupl02100101) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxSupl02100101 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams()));
+        return ((MxSupl02100101) MxReadImpl.parse(MxSupl02100101 .class, xml, _classes, new MxReadParams()));
     }
 
     /**
@@ -122,7 +126,7 @@ public class MxSupl02100101
      * 
      */
     public static MxSupl02100101 parse(String xml, MxReadConfiguration conf) {
-        return ((MxSupl02100101) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxSupl02100101 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams(conf)));
+        return ((MxSupl02100101) MxReadImpl.parse(MxSupl02100101 .class, xml, _classes, new MxReadParams(conf)));
     }
 
     /**
@@ -159,7 +163,7 @@ public class MxSupl02100101
      *     a new instance of MxSupl02100101
      */
     public static final MxSupl02100101 fromJson(String json) {
-        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSupl02100101 .class);
+        return AbstractMX.fromJson(json, MxSupl02100101 .class);
     }
 
     @Override

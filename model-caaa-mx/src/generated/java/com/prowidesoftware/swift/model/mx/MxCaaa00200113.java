@@ -5,8 +5,11 @@ import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
 import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import com.prowidesoftware.swift.model.mx.MxReadImpl;
+import com.prowidesoftware.swift.model.mx.MxReadParams;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
@@ -28,7 +31,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:caaa.002.001.13")
 public class MxCaaa00200113
-    extends com.prowidesoftware.swift.model.mx.AbstractMX
+    extends AbstractMX
 {
 
     @XmlElement(name = "AccptrAuthstnRspn", required = true)
@@ -113,7 +116,7 @@ public class MxCaaa00200113
      * 
      */
     public static MxCaaa00200113 parse(String xml) {
-        return ((MxCaaa00200113) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxCaaa00200113 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams()));
+        return ((MxCaaa00200113) MxReadImpl.parse(MxCaaa00200113 .class, xml, _classes, new MxReadParams()));
     }
 
     /**
@@ -122,7 +125,7 @@ public class MxCaaa00200113
      * 
      */
     public static MxCaaa00200113 parse(String xml, MxReadConfiguration conf) {
-        return ((MxCaaa00200113) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxCaaa00200113 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams(conf)));
+        return ((MxCaaa00200113) MxReadImpl.parse(MxCaaa00200113 .class, xml, _classes, new MxReadParams(conf)));
     }
 
     /**
@@ -159,7 +162,7 @@ public class MxCaaa00200113
      *     a new instance of MxCaaa00200113
      */
     public static final MxCaaa00200113 fromJson(String json) {
-        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxCaaa00200113 .class);
+        return AbstractMX.fromJson(json, MxCaaa00200113 .class);
     }
 
     @Override

@@ -1,0 +1,938 @@
+
+package com.prowidesoftware.swift.model.mx.dic;
+
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
+import java.util.ArrayList;
+import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+
+/**
+ * Execution of a switch order.
+ * 
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "SwitchExecution8", propOrder = {
+    "amdmntInd",
+    "mstrRef",
+    "plcOfTrad",
+    "ordrDtTm",
+    "rcvdDtTm",
+    "dealRef",
+    "ordrRef",
+    "clntRef",
+    "nonceId",
+    "invstmtAcctDtls",
+    "rltdPtyDtls",
+    "cxlRght",
+    "reqdFutrTradDt",
+    "sttlmAmt",
+    "cshSttlmDt",
+    "sttlmMtd",
+    "addtlAmt",
+    "bestExctn",
+    "redLegDtls",
+    "sbcptLegDtls",
+    "cshSttlmDtls",
+    "fxDtls",
+    "finAdvc",
+    "ngtdTrad",
+    "lateRpt",
+    "cstmrCndctClssfctn",
+    "txChanlTp",
+    "sgntrTp",
+    "ordrWvrDtls"
+})
+public class SwitchExecution8 {
+
+    @XmlElement(name = "AmdmntInd")
+    protected Boolean amdmntInd;
+    @XmlElement(name = "MstrRef")
+    protected String mstrRef;
+    @XmlElement(name = "PlcOfTrad")
+    protected PlaceOfTradeIdentification4Choice plcOfTrad;
+    @XmlElement(name = "OrdrDtTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
+    @XmlSchemaType(name = "dateTime")
+    protected OffsetDateTime ordrDtTm;
+    @XmlElement(name = "RcvdDtTm", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
+    @XmlSchemaType(name = "dateTime")
+    protected OffsetDateTime rcvdDtTm;
+    @XmlElement(name = "DealRef", required = true)
+    protected String dealRef;
+    @XmlElement(name = "OrdrRef", required = true)
+    protected String ordrRef;
+    @XmlElement(name = "ClntRef")
+    protected String clntRef;
+    @XmlElement(name = "NonceId")
+    protected String nonceId;
+    @XmlElement(name = "InvstmtAcctDtls")
+    protected InvestmentAccount81 invstmtAcctDtls;
+    @XmlElement(name = "RltdPtyDtls")
+    protected List<Intermediary49> rltdPtyDtls;
+    @XmlElement(name = "CxlRght")
+    protected CancellationRight1Choice cxlRght;
+    @XmlElement(name = "ReqdFutrTradDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
+    @XmlSchemaType(name = "date")
+    protected LocalDate reqdFutrTradDt;
+    @XmlElement(name = "SttlmAmt")
+    protected ActiveCurrencyAndAmount sttlmAmt;
+    @XmlElement(name = "CshSttlmDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
+    @XmlSchemaType(name = "date")
+    protected LocalDate cshSttlmDt;
+    @XmlElement(name = "SttlmMtd")
+    @XmlSchemaType(name = "string")
+    protected DeliveryReceiptType2Code sttlmMtd;
+    @XmlElement(name = "AddtlAmt")
+    protected AdditionalAmount1Choice addtlAmt;
+    @XmlElement(name = "BestExctn")
+    @XmlSchemaType(name = "string")
+    protected BestExecution1Code bestExctn;
+    @XmlElement(name = "RedLegDtls", required = true)
+    protected List<SwitchRedemptionLegExecution5> redLegDtls;
+    @XmlElement(name = "SbcptLegDtls", required = true)
+    protected List<SwitchSubscriptionLegExecution5> sbcptLegDtls;
+    @XmlElement(name = "CshSttlmDtls")
+    protected PaymentTransaction181 cshSttlmDtls;
+    @XmlElement(name = "FXDtls")
+    protected List<ForeignExchangeTerms37> fxDtls;
+    @XmlElement(name = "FinAdvc")
+    @XmlSchemaType(name = "string")
+    protected FinancialAdvice1Code finAdvc;
+    @XmlElement(name = "NgtdTrad")
+    @XmlSchemaType(name = "string")
+    protected NegotiatedTrade1Code ngtdTrad;
+    @XmlElement(name = "LateRpt")
+    @XmlSchemaType(name = "string")
+    protected LateReport1Code lateRpt;
+    @XmlElement(name = "CstmrCndctClssfctn")
+    protected CustomerConductClassification1Choice cstmrCndctClssfctn;
+    @XmlElement(name = "TxChanlTp")
+    protected TransactionChannelType1Choice txChanlTp;
+    @XmlElement(name = "SgntrTp")
+    protected SignatureType1Choice sgntrTp;
+    @XmlElement(name = "OrdrWvrDtls")
+    protected OrderWaiver1 ordrWvrDtls;
+
+    /**
+     * Gets the value of the amdmntInd property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
+     */
+    public Boolean isAmdmntInd() {
+        return amdmntInd;
+    }
+
+    /**
+     * Sets the value of the amdmntInd property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
+     */
+    public SwitchExecution8 setAmdmntInd(Boolean value) {
+        this.amdmntInd = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the mstrRef property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getMstrRef() {
+        return mstrRef;
+    }
+
+    /**
+     * Sets the value of the mstrRef property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public SwitchExecution8 setMstrRef(String value) {
+        this.mstrRef = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the plcOfTrad property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link PlaceOfTradeIdentification4Choice }
+     *     
+     */
+    public PlaceOfTradeIdentification4Choice getPlcOfTrad() {
+        return plcOfTrad;
+    }
+
+    /**
+     * Sets the value of the plcOfTrad property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link PlaceOfTradeIdentification4Choice }
+     *     
+     */
+    public SwitchExecution8 setPlcOfTrad(PlaceOfTradeIdentification4Choice value) {
+        this.plcOfTrad = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the ordrDtTm property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public OffsetDateTime getOrdrDtTm() {
+        return ordrDtTm;
+    }
+
+    /**
+     * Sets the value of the ordrDtTm property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public SwitchExecution8 setOrdrDtTm(OffsetDateTime value) {
+        this.ordrDtTm = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the rcvdDtTm property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public OffsetDateTime getRcvdDtTm() {
+        return rcvdDtTm;
+    }
+
+    /**
+     * Sets the value of the rcvdDtTm property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public SwitchExecution8 setRcvdDtTm(OffsetDateTime value) {
+        this.rcvdDtTm = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the dealRef property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getDealRef() {
+        return dealRef;
+    }
+
+    /**
+     * Sets the value of the dealRef property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public SwitchExecution8 setDealRef(String value) {
+        this.dealRef = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the ordrRef property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getOrdrRef() {
+        return ordrRef;
+    }
+
+    /**
+     * Sets the value of the ordrRef property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public SwitchExecution8 setOrdrRef(String value) {
+        this.ordrRef = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the clntRef property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getClntRef() {
+        return clntRef;
+    }
+
+    /**
+     * Sets the value of the clntRef property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public SwitchExecution8 setClntRef(String value) {
+        this.clntRef = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the nonceId property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getNonceId() {
+        return nonceId;
+    }
+
+    /**
+     * Sets the value of the nonceId property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public SwitchExecution8 setNonceId(String value) {
+        this.nonceId = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the invstmtAcctDtls property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link InvestmentAccount81 }
+     *     
+     */
+    public InvestmentAccount81 getInvstmtAcctDtls() {
+        return invstmtAcctDtls;
+    }
+
+    /**
+     * Sets the value of the invstmtAcctDtls property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link InvestmentAccount81 }
+     *     
+     */
+    public SwitchExecution8 setInvstmtAcctDtls(InvestmentAccount81 value) {
+        this.invstmtAcctDtls = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the rltdPtyDtls property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rltdPtyDtls property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getRltdPtyDtls().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Intermediary49 }
+     * 
+     * 
+     * @return
+     *     The value of the rltdPtyDtls property.
+     */
+    public List<Intermediary49> getRltdPtyDtls() {
+        if (rltdPtyDtls == null) {
+            rltdPtyDtls = new ArrayList<>();
+        }
+        return this.rltdPtyDtls;
+    }
+
+    /**
+     * Gets the value of the cxlRght property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link CancellationRight1Choice }
+     *     
+     */
+    public CancellationRight1Choice getCxlRght() {
+        return cxlRght;
+    }
+
+    /**
+     * Sets the value of the cxlRght property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link CancellationRight1Choice }
+     *     
+     */
+    public SwitchExecution8 setCxlRght(CancellationRight1Choice value) {
+        this.cxlRght = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the reqdFutrTradDt property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public LocalDate getReqdFutrTradDt() {
+        return reqdFutrTradDt;
+    }
+
+    /**
+     * Sets the value of the reqdFutrTradDt property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public SwitchExecution8 setReqdFutrTradDt(LocalDate value) {
+        this.reqdFutrTradDt = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the sttlmAmt property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link ActiveCurrencyAndAmount }
+     *     
+     */
+    public ActiveCurrencyAndAmount getSttlmAmt() {
+        return sttlmAmt;
+    }
+
+    /**
+     * Sets the value of the sttlmAmt property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ActiveCurrencyAndAmount }
+     *     
+     */
+    public SwitchExecution8 setSttlmAmt(ActiveCurrencyAndAmount value) {
+        this.sttlmAmt = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the cshSttlmDt property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public LocalDate getCshSttlmDt() {
+        return cshSttlmDt;
+    }
+
+    /**
+     * Sets the value of the cshSttlmDt property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public SwitchExecution8 setCshSttlmDt(LocalDate value) {
+        this.cshSttlmDt = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the sttlmMtd property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link DeliveryReceiptType2Code }
+     *     
+     */
+    public DeliveryReceiptType2Code getSttlmMtd() {
+        return sttlmMtd;
+    }
+
+    /**
+     * Sets the value of the sttlmMtd property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link DeliveryReceiptType2Code }
+     *     
+     */
+    public SwitchExecution8 setSttlmMtd(DeliveryReceiptType2Code value) {
+        this.sttlmMtd = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the addtlAmt property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link AdditionalAmount1Choice }
+     *     
+     */
+    public AdditionalAmount1Choice getAddtlAmt() {
+        return addtlAmt;
+    }
+
+    /**
+     * Sets the value of the addtlAmt property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link AdditionalAmount1Choice }
+     *     
+     */
+    public SwitchExecution8 setAddtlAmt(AdditionalAmount1Choice value) {
+        this.addtlAmt = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the bestExctn property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BestExecution1Code }
+     *     
+     */
+    public BestExecution1Code getBestExctn() {
+        return bestExctn;
+    }
+
+    /**
+     * Sets the value of the bestExctn property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BestExecution1Code }
+     *     
+     */
+    public SwitchExecution8 setBestExctn(BestExecution1Code value) {
+        this.bestExctn = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the redLegDtls property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the redLegDtls property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getRedLegDtls().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link SwitchRedemptionLegExecution5 }
+     * 
+     * 
+     * @return
+     *     The value of the redLegDtls property.
+     */
+    public List<SwitchRedemptionLegExecution5> getRedLegDtls() {
+        if (redLegDtls == null) {
+            redLegDtls = new ArrayList<>();
+        }
+        return this.redLegDtls;
+    }
+
+    /**
+     * Gets the value of the sbcptLegDtls property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sbcptLegDtls property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getSbcptLegDtls().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link SwitchSubscriptionLegExecution5 }
+     * 
+     * 
+     * @return
+     *     The value of the sbcptLegDtls property.
+     */
+    public List<SwitchSubscriptionLegExecution5> getSbcptLegDtls() {
+        if (sbcptLegDtls == null) {
+            sbcptLegDtls = new ArrayList<>();
+        }
+        return this.sbcptLegDtls;
+    }
+
+    /**
+     * Gets the value of the cshSttlmDtls property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link PaymentTransaction181 }
+     *     
+     */
+    public PaymentTransaction181 getCshSttlmDtls() {
+        return cshSttlmDtls;
+    }
+
+    /**
+     * Sets the value of the cshSttlmDtls property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link PaymentTransaction181 }
+     *     
+     */
+    public SwitchExecution8 setCshSttlmDtls(PaymentTransaction181 value) {
+        this.cshSttlmDtls = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the fxDtls property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the fxDtls property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getFXDtls().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link ForeignExchangeTerms37 }
+     * 
+     * 
+     * @return
+     *     The value of the fxDtls property.
+     */
+    public List<ForeignExchangeTerms37> getFXDtls() {
+        if (fxDtls == null) {
+            fxDtls = new ArrayList<>();
+        }
+        return this.fxDtls;
+    }
+
+    /**
+     * Gets the value of the finAdvc property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link FinancialAdvice1Code }
+     *     
+     */
+    public FinancialAdvice1Code getFinAdvc() {
+        return finAdvc;
+    }
+
+    /**
+     * Sets the value of the finAdvc property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link FinancialAdvice1Code }
+     *     
+     */
+    public SwitchExecution8 setFinAdvc(FinancialAdvice1Code value) {
+        this.finAdvc = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the ngtdTrad property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link NegotiatedTrade1Code }
+     *     
+     */
+    public NegotiatedTrade1Code getNgtdTrad() {
+        return ngtdTrad;
+    }
+
+    /**
+     * Sets the value of the ngtdTrad property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link NegotiatedTrade1Code }
+     *     
+     */
+    public SwitchExecution8 setNgtdTrad(NegotiatedTrade1Code value) {
+        this.ngtdTrad = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the lateRpt property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link LateReport1Code }
+     *     
+     */
+    public LateReport1Code getLateRpt() {
+        return lateRpt;
+    }
+
+    /**
+     * Sets the value of the lateRpt property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link LateReport1Code }
+     *     
+     */
+    public SwitchExecution8 setLateRpt(LateReport1Code value) {
+        this.lateRpt = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the cstmrCndctClssfctn property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link CustomerConductClassification1Choice }
+     *     
+     */
+    public CustomerConductClassification1Choice getCstmrCndctClssfctn() {
+        return cstmrCndctClssfctn;
+    }
+
+    /**
+     * Sets the value of the cstmrCndctClssfctn property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link CustomerConductClassification1Choice }
+     *     
+     */
+    public SwitchExecution8 setCstmrCndctClssfctn(CustomerConductClassification1Choice value) {
+        this.cstmrCndctClssfctn = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the txChanlTp property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link TransactionChannelType1Choice }
+     *     
+     */
+    public TransactionChannelType1Choice getTxChanlTp() {
+        return txChanlTp;
+    }
+
+    /**
+     * Sets the value of the txChanlTp property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link TransactionChannelType1Choice }
+     *     
+     */
+    public SwitchExecution8 setTxChanlTp(TransactionChannelType1Choice value) {
+        this.txChanlTp = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the sgntrTp property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link SignatureType1Choice }
+     *     
+     */
+    public SignatureType1Choice getSgntrTp() {
+        return sgntrTp;
+    }
+
+    /**
+     * Sets the value of the sgntrTp property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link SignatureType1Choice }
+     *     
+     */
+    public SwitchExecution8 setSgntrTp(SignatureType1Choice value) {
+        this.sgntrTp = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the ordrWvrDtls property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link OrderWaiver1 }
+     *     
+     */
+    public OrderWaiver1 getOrdrWvrDtls() {
+        return ordrWvrDtls;
+    }
+
+    /**
+     * Sets the value of the ordrWvrDtls property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link OrderWaiver1 }
+     *     
+     */
+    public SwitchExecution8 setOrdrWvrDtls(OrderWaiver1 value) {
+        this.ordrWvrDtls = value;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+    /**
+     * Adds a new item to the rltdPtyDtls list.
+     * @see #getRltdPtyDtls()
+     * 
+     */
+    public SwitchExecution8 addRltdPtyDtls(Intermediary49 rltdPtyDtls) {
+        getRltdPtyDtls().add(rltdPtyDtls);
+        return this;
+    }
+
+    /**
+     * Adds a new item to the redLegDtls list.
+     * @see #getRedLegDtls()
+     * 
+     */
+    public SwitchExecution8 addRedLegDtls(SwitchRedemptionLegExecution5 redLegDtls) {
+        getRedLegDtls().add(redLegDtls);
+        return this;
+    }
+
+    /**
+     * Adds a new item to the sbcptLegDtls list.
+     * @see #getSbcptLegDtls()
+     * 
+     */
+    public SwitchExecution8 addSbcptLegDtls(SwitchSubscriptionLegExecution5 sbcptLegDtls) {
+        getSbcptLegDtls().add(sbcptLegDtls);
+        return this;
+    }
+
+    /**
+     * Adds a new item to the fXDtls list.
+     * @see #getFXDtls()
+     * 
+     */
+    public SwitchExecution8 addFXDtls(ForeignExchangeTerms37 fXDtls) {
+        getFXDtls().add(fXDtls);
+        return this;
+    }
+
+}

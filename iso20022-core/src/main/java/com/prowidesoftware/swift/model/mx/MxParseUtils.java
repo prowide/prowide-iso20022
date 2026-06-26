@@ -579,9 +579,9 @@ public class MxParseUtils {
      * @deprecated use {@link #findByTags(String, String...)} instead
      */
     @Deprecated
-    @ProwideDeprecated(phase3 = TargetYear.SRU2026)
+    @ProwideDeprecated(phase4 = TargetYear.SRU2027)
     public static Optional<XMLStreamReader> findElementByTags(final String xml, String... tags) {
-        DeprecationUtils.phase2(MxParseUtils.class, "findElementByTags", "Use findByTags instead");
+        DeprecationUtils.phase3(MxParseUtils.class, "findElementByTags", "Use findByTags instead");
 
         Objects.requireNonNull(xml, "XML to parse must not be null");
         Validate.notBlank(xml, "XML to parse must not be a blank string");
@@ -722,9 +722,9 @@ public class MxParseUtils {
      * @deprecated use {@link #findByTags(String, String...)} instead
      */
     @Deprecated
-    @ProwideDeprecated(phase3 = TargetYear.SRU2026)
+    @ProwideDeprecated(phase4 = TargetYear.SRU2027)
     public static Optional<XMLStreamReader> findElementByPath(String xml, String targetPath) {
-        DeprecationUtils.phase2(MxParseUtils.class, "findElementByPath", "Use findByPath instead");
+        DeprecationUtils.phase3(MxParseUtils.class, "findElementByPath", "Use findByPath instead");
 
         Objects.requireNonNull(xml, "XML to parse must not be null");
         Validate.notBlank(xml, "XML to parse must not be a blank string");

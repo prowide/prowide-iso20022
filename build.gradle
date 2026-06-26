@@ -21,8 +21,8 @@ archivesBaseName = 'pw-iso20022'
 group 'com.prowidesoftware'
 
 project.ext {
-	SRU = 'SRU2025'
-    prowideCoreVersion = 'SRU2025-10.3.14'
+	SRU = 'SRU2026'
+    prowideCoreVersion = 'SRU2026-10.4.0'
 	commonsLangVersion = '3.20.0'
 	gsonVersion = '2.14.0'
 	jaxbVersion = '4.0.6'
@@ -36,8 +36,8 @@ scmVersion {
 		versionSeparator = '-'
 	}
 }
-project.version = "${SRU}-${scmVersion.version}"
-//project.version = "SRU2025-10.3.0"
+//project.version = "${SRU}-${scmVersion.version}"
+project.version = "${SRU}-10.4.1"
 
 allprojects {
 
