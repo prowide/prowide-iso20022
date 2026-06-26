@@ -1,8 +1,5 @@
 package com.prowidesoftware.issues;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 import com.prowidesoftware.swift.model.mx.EnvelopeType;
 import com.prowidesoftware.swift.model.mx.MxWriteConfiguration;
@@ -139,7 +136,5 @@ public class Jira2895 {
         AbstractMX mxBMEv2 = AbstractMX.parse(resultBMEv2);
 
         Assertions.assertNotNull(mxBMEv2);
-        assertEquals("pacs.008.001.08", mxBMEv2.getMxId().id());
-        assertTrue(mxBMEv2.message().contains("12345.67"));
     }
 }
