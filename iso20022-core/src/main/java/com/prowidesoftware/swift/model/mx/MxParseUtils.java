@@ -363,7 +363,9 @@ public class MxParseUtils {
         Matcher m = Pattern.compile("<([a-zA-Z_][\\w.-]*):Document[\\s>/]").matcher(xml);
         if (!m.find()) return xml;
         String prefix = m.group(1);
-        if (xml.contains("xmlns:" + prefix + "=")) return xml;
+        if (Pattern.compile("xmlns:" + Pattern.quote(prefix) + "\\s*=")
+                .matcher(xml)
+                .find()) return xml;
         return xml.replaceAll("<" + Pattern.quote(prefix) + ":", "<")
                 .replaceAll("</" + Pattern.quote(prefix) + ":", "</");
     }

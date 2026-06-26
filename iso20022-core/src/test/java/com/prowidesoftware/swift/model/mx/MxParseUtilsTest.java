@@ -1220,4 +1220,46 @@ public class MxParseUtilsTest {
         String xml = "<AppHdrV02 xmlns=\"urn:example\"/>";
         assertEquals(xml, MxParseUtils.wrapIfAppHdrRoot(xml));
     }
+
+    @Test
+    void testStripUndeclaredDocumentPrefix_NullInput() {
+        assertNull(MxParseUtils.stripUndeclaredDocumentPrefix(null));
+    }
+
+    @Test
+    void testStripUndeclaredDocumentPrefix_NoPrefix_Unchanged() {
+        String xml =
+                "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08\"><FIToFICstmrCdtTrf/></Document>";
+        assertEquals(xml, MxParseUtils.stripUndeclaredDocumentPrefix(xml));
+    }
+
+    @Test
+    void testStripUndeclaredDocumentPrefix_DeclaredPrefix_Unchanged() {
+        String xml =
+                "<ns2:Document xmlns:ns2=\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08\"><ns2:FIToFICstmrCdtTrf/></ns2:Document>";
+        assertEquals(xml, MxParseUtils.stripUndeclaredDocumentPrefix(xml));
+    }
+
+    @Test
+    void testStripUndeclaredDocumentPrefix_DeclaredPrefixWithSpaces_Unchanged() {
+        String xml =
+                "<ns2:Document xmlns:ns2 = \"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08\"><ns2:FIToFICstmrCdtTrf/></ns2:Document>";
+        assertEquals(xml, MxParseUtils.stripUndeclaredDocumentPrefix(xml));
+    }
+
+    @Test
+    void testStripUndeclaredDocumentPrefix_UndeclaredPrefix_Stripped() {
+        String xml = "<ns2:Document><ns2:FIToFICstmrCdtTrf/></ns2:Document>";
+        String result = MxParseUtils.stripUndeclaredDocumentPrefix(xml);
+        assertEquals("<Document><FIToFICstmrCdtTrf/></Document>", result);
+    }
+
+    @Test
+    void testStripUndeclaredDocumentPrefix_UndeclaredPrefixInsideWrapper_Stripped() {
+        String xml =
+                "<RequestPayload xmlns=\"urn:example\"><ns2:Document><ns2:Elem>v</ns2:Elem></ns2:Document></RequestPayload>";
+        String result = MxParseUtils.stripUndeclaredDocumentPrefix(xml);
+        assertEquals(
+                "<RequestPayload xmlns=\"urn:example\"><Document><Elem>v</Elem></Document></RequestPayload>", result);
+    }
 }
