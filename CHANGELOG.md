@@ -1,18 +1,17 @@
 # Prowide ISO 20022 - CHANGELOG
 
-### 10.4.1 - SNAPSHOT
+### 10.4.1 - June 2026
   * Feat: `xsd:any` wildcard content (e.g. `SplmtryData/Envlp`, signature envelopes) is no longer dropped on parse; it is captured as an `org.w3c.dom.Element` with namespaces preserved (GH-39, GH-43)
   * Fix: `toJson()` now serializes `@XmlAnyElement` wildcard content as raw XML instead of an empty `{}`, and `fromJson()` restores it back to a DOM Element (round-trippable)
-  * Updated gson from 2.13.2 to 2.14.0
 
 ### 10.4.0 - May 2026
   * SWIFT Standard release update 2026 (live 14 November 2026)
   * Yearly revision of deprecation phase (see https://dev.prowidesoftware.com/SRU2024/getting-started/deprecation/)
-  * Updated gson from 2.13.2 to 2.14.0
 
 ### 10.3.8 - May 2026
   * (PW-3202) Fix: removed spurious `Error propagating pending prefix mapping` warnings when parsing regular ISO 20022 Documents wrapped in an SNL-like envelope
   * (PW-3185) `MxSwiftMessage.toJson()` now uses 1-based months (January=1) for Calendar fields and emits a `schemaVersion` marker. `fromJson()` reads both new and legacy (0-based) payloads transparently.
+  * Updated gson from 2.13.2 to 2.14.0
 
 ### 10.3.7 - April 2026
   * (PW-3207) Fix: update semt.044.001.01 model from draft4 to draft5
