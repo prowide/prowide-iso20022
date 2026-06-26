@@ -4,9 +4,9 @@ name: Java CI with Gradle
 
 on:
   push:
-    branches: [ "main", "SRU2024_v10" ]
+    branches: [ "main", "SRU2025-java8-maintenance", "SRU2026" ]
 #  pull_request:
-#    branches: [ "main", "SRU2024_v10" ]
+#    branches: [ "main" ]
 
 jobs:
 
@@ -19,17 +19,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Set the JDK 11 for the latest code branch (Prowide Core v10)
+      # Set up JDK 11 for current development branches (main, next SRU)
       - name: Set up JDK 11
-        if: github.ref == 'refs/heads/SRU2024_v10' || github.head_ref == 'SRU2024_v10'
+        if: github.ref != 'refs/heads/SRU2025-java8-maintenance' && github.head_ref != 'SRU2025-java8-maintenance'
         uses: actions/setup-java@v4
         with:
           java-version: '11'
           distribution: 'temurin'
 
-      # Set the JDK 8 for the legacy code branch
+      # Set up JDK 8 only for the legacy Java 8 maintenance branch
       - name: Set up JDK 8
-        if: github.ref != 'refs/heads/SRU2024_v10' && github.head_ref != 'SRU2024_v10'
+        if: github.ref == 'refs/heads/SRU2025-java8-maintenance' || github.head_ref == 'SRU2025-java8-maintenance'
         uses: actions/setup-java@v4
         with:
           java-version: '8'
@@ -47,9 +47,9 @@ jobs:
         run: ./gradlew test --info
 
   # This job generates and submits a dependency graph, enabling Dependabot Alerts for all project dependencies.
-  # We only do it for the SRU2024_v10 branch to avoid spamming the Dependabot alerts for the legacy Java 8 code.
+  # We only run it on the default branch (main) to avoid duplicate alerts from maintenance branches.
   dependency-submission:
-    if: github.ref == 'refs/heads/SRU2024_v10' || github.head_ref == 'SRU2024_v10'
+    if: github.ref == 'refs/heads/main' || github.head_ref == 'main'
     runs-on: ubuntu-latest
     permissions:
       contents: write

@@ -15,6 +15,7 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.prowidesoftware.swift.utils.SafeXmlUtils;
@@ -22,6 +23,7 @@ import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.Test;
+import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.DefaultHandler;
@@ -79,6 +81,39 @@ class NamespaceAndElementFilterTest {
                 "Expected SwGbl prefix mapping to be replayed for xsys Document, got: " + handler.prefixMappings);
     }
 
+    /**
+     * Foreign-namespace xsd:any wildcard content (e.g. SplmtryData/Envlp payloads) must be forwarded
+     * downstream with its namespace intact, and the start/end prefix mappings must be balanced. An
+     * imbalance is what underflowed the downstream JAXB namespace stack (negative-index error) and
+     * caused the wildcard content to be dropped before this fix.
+     */
+    @Test
+    void forwardsWildcardContentWithBalancedPrefixMappings() throws Exception {
+        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+                + "<Doc:Document xmlns:Doc=\"urn:iso:std:iso:20022:tech:xsd:pacs.002.001.08\">"
+                + "  <Doc:SplmtryData>"
+                + "    <Doc:Envlp>"
+                + "      <TEST:TestData xmlns:TEST=\"appian:test:smm\">"
+                + "        <TEST:tag>Hello World!</TEST:tag>"
+                + "      </TEST:TestData>"
+                + "    </Doc:Envlp>"
+                + "  </Doc:SplmtryData>"
+                + "</Doc:Document>";
+
+        RecordingHandler handler = runFilter(xml, "Document");
+
+        assertTrue(
+                handler.prefixMappings.contains("TEST=appian:test:smm"),
+                "wildcard prefix mapping should be forwarded, got: " + handler.prefixMappings);
+        assertTrue(
+                handler.elements.contains("appian:test:smm:TestData"),
+                "wildcard element should be forwarded with its namespace, got: " + handler.elements);
+        assertEquals(
+                handler.startMappingCount,
+                handler.endMappingCount,
+                "startPrefixMapping and endPrefixMapping must be balanced downstream");
+    }
+
     private static RecordingHandler runFilter(String xml, String elementToPropagate) throws Exception {
         RecordingHandler handler = new RecordingHandler();
         NamespaceAndElementFilter filter = new NamespaceAndElementFilter(elementToPropagate);
@@ -91,10 +126,24 @@ class NamespaceAndElementFilterTest {
 
     private static class RecordingHandler extends DefaultHandler {
         final List<String> prefixMappings = new ArrayList<>();
+        final List<String> elements = new ArrayList<>();
+        int startMappingCount = 0;
+        int endMappingCount = 0;
 
         @Override
         public void startPrefixMapping(String prefix, String uri) {
             prefixMappings.add(prefix + "=" + uri);
+            startMappingCount++;
+        }
+
+        @Override
+        public void endPrefixMapping(String prefix) {
+            endMappingCount++;
+        }
+
+        @Override
+        public void startElement(String uri, String localName, String qName, Attributes attributes) {
+            elements.add(uri + ":" + localName);
         }
     }
 }
