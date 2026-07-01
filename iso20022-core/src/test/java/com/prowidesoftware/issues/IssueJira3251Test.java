@@ -1,12 +1,81 @@
+/*
+ * Copyright 2006-2026 Prowide
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.prowidesoftware.issues;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
+import com.prowidesoftware.swift.model.mx.MxPacs00800108;
 import org.junit.jupiter.api.Test;
 
+/**
+ * File-format (FileAct) payloads may contain the AppHdr and Document as sibling root elements, without a wrapping
+ * envelope. These tests cover the lenient handling of such payloads in metadata extraction and parsing.
+ */
 public class IssueJira3251Test {
+
+    private static final String PACS_APPHDR =
+            "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\"><Fr><FIId><FinInstnId><BICFI>AAAAGB2LXXX</BICFI></FinInstnId></FIId></Fr><To><FIId><FinInstnId><BICFI>BBBBDEFFXXX</BICFI></FinInstnId></FIId></To><BizMsgIdr>MSGID0001</BizMsgIdr><MsgDefIdr>pacs.008.001.08</MsgDefIdr><CreDt>2026-01-01T00:00:00Z</CreDt></AppHdr>";
+    private static final String PACS_DOCUMENT =
+            "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08\"><FIToFICstmrCdtTrf><GrpHdr><MsgId>MSGID0001</MsgId><CreDtTm>2026-01-01T00:00:00</CreDtTm><NbOfTxs>1</NbOfTxs><SttlmInf><SttlmMtd>INDA</SttlmMtd></SttlmInf></GrpHdr></FIToFICstmrCdtTrf></Document>";
+
+    @Test
+    void testSiblingRootsWithXmlDeclaration() {
+        // the XML declaration must not break the lenient wrapping
+        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + PACS_APPHDR + PACS_DOCUMENT;
+        MxSwiftMessage msg = new MxSwiftMessage(xml);
+        assertEquals("pacs.008.001.08", msg.getIdentifier());
+        assertEquals("AAAAGB2LXXX", msg.getSender());
+        assertEquals("BBBBDEFFXXX", msg.getReceiver());
+        assertNotNull(msg.getAppHdr());
+    }
+
+    @Test
+    void testAppHdrOnlyWithXmlDeclaration() {
+        // regression guard: a valid single rooted AppHdr document with declaration must keep working
+        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + PACS_APPHDR;
+        MxSwiftMessage msg = new MxSwiftMessage(xml);
+        assertNotNull(msg.getAppHdr());
+        assertEquals("AAAAGB2LXXX", msg.getSender());
+    }
+
+    @Test
+    void testSiblingRootsTypedParse() {
+        // the generated typed parsers must handle the same payload as the generic entry points
+        String xml = PACS_APPHDR + PACS_DOCUMENT;
+        MxPacs00800108 typed = MxPacs00800108.parse(xml);
+        assertNotNull(typed);
+        assertNotNull(typed.getAppHdr());
+
+        AbstractMX generic = AbstractMX.parse(xml);
+        assertNotNull(generic);
+        assertNotNull(generic.getAppHdr());
+    }
+
+    @Test
+    void testSiblingRootsWithUndeclaredHeaderPrefix() {
+        // header prefix declared in a stripped envelope ancestor, so it is undeclared in the extracted payload
+        String header = PACS_APPHDR.replace("<AppHdr", "<SwInt:AppHdr").replace("</AppHdr>", "</SwInt:AppHdr>");
+        MxSwiftMessage msg = new MxSwiftMessage(header + PACS_DOCUMENT);
+        assertEquals("pacs.008.001.08", msg.getIdentifier());
+        assertEquals("AAAAGB2LXXX", msg.getSender());
+        assertEquals("BBBBDEFFXXX", msg.getReceiver());
+    }
 
     @Test
     void test() {

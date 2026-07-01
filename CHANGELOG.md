@@ -1,8 +1,7 @@
 # Prowide ISO 20022 - CHANGELOG
 
 ### 10.3.10 - SNAPSHOT
-  * (PW-3251) Fix: `MxSwiftMessage` metadata extraction and `MxParseUtils` now correctly handle MX messages whose XML root is `AppHdr` (with or without a namespace prefix) by wrapping the content in a `<RequestPayload>` element before parsing, preventing "Illegal to have multiple roots" errors in file-format messages
-  * (PW-3251) Fix: `AbstractMX.parse()` now strips undeclared namespace prefixes from `Document` element tags before SAX-based parsing, enabling round-trip through `BME_V2` envelope and other cases where the prefix is not declared in the XML
+  * (PW-3251) Fix: lenient parsing of file-format (FileAct) payloads with sibling `AppHdr` and `Document` root elements, or with undeclared namespace prefixes on those elements; applied consistently in `MxSwiftMessage`, `AbstractMX.parse()`, the generated `Mx*.parse()` and `AppHdrParser`
 
 ### 10.3.9 - June 2026
   * Feat: `xsd:any` wildcard content (e.g. `SplmtryData/Envlp`, signature envelopes) is no longer dropped on parse; it is captured as an `org.w3c.dom.Element` with namespaces preserved (GH-39, GH-43)

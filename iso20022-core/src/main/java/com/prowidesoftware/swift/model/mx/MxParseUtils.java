@@ -58,16 +58,15 @@ public class MxParseUtils {
     private static final String regex = "^(/|//)([a-zA-Z_][\\w\\-.]*)(/([a-zA-Z_][\\w\\-.]*))*$";
     private static final Pattern pattern = Pattern.compile(regex);
     /**
-     * Matches XML whose first element (after optional XML declaration) is AppHdr with any namespace prefix.
-     * E.g. {@code <AppHdr>}, {@code <h:AppHdr>}, {@code <?xml ...?><SwInt:AppHdr>}
+     * Matches XML whose first element is AppHdr with any namespace prefix, capturing in group 1 the prolog that must
+     * remain outside any wrapper element: optional BOM, XML declaration or other processing instructions, comments
+     * and whitespace. E.g. {@code <AppHdr>}, {@code <h:AppHdr>}, {@code <?xml ...?><SwInt:AppHdr>}.
+     * Used with {@link Matcher#lookingAt()} so non-matching content fails fast at the first tag.
      */
-    private static final Pattern APPHDR_ROOT_PATTERN =
-            Pattern.compile("(?s)^\\s*(?:<\\?xml.*?\\?>\\s*)?<(?:[a-zA-Z_][\\w.-]*:)?AppHdr[\\s>/]");
-    /**
-     * Matches a {@code Document} element carrying a namespace prefix, capturing the prefix in group 1.
-     * E.g. {@code <ns2:Document>}, {@code <Doc:Document/>}. Used by {@link #stripUndeclaredDocumentPrefix(String)}.
-     */
-    private static final Pattern DOCUMENT_PREFIX_PATTERN = Pattern.compile("<([a-zA-Z_][\\w.-]*):Document[\\s>/]");
+    private static final Pattern APPHDR_ROOT_PATTERN = Pattern.compile(
+            "^(\\uFEFF?\\s*(?:(?:<\\?.*?\\?>|<!--.*?-->)\\s*)*)<(?:[a-zA-Z_][\\w.-]*:)?" + AppHdr.HEADER_LOCALNAME
+                    + "[\\s>/]",
+            Pattern.DOTALL);
 
     /**
      * Creates a {@link SAXSource} for the given XML, filtering a specific element with the
@@ -343,21 +342,31 @@ public class MxParseUtils {
      */
     public static String wrapIfAppHdrRoot(String xml) {
         if (xml == null) return null;
-        if (APPHDR_ROOT_PATTERN.matcher(xml).find()) {
-            return "<RequestPayload>" + xml + "</RequestPayload>";
+        Matcher m = APPHDR_ROOT_PATTERN.matcher(xml);
+        if (m.lookingAt()) {
+            // the prolog (BOM, XML declaration, PIs, comments) must stay outside the wrapper element,
+            // otherwise the result is not well-formed (a PI target "xml" is illegal after document start)
+            int contentStart = m.end(1);
+            return xml.substring(0, contentStart) + "<RequestPayload>" + xml.substring(contentStart)
+                    + "</RequestPayload>";
         }
         return xml;
     }
 
     /**
-     * Strips an undeclared namespace prefix from element tags when the {@code Document} root element uses a prefix
+     * Strips an undeclared namespace prefix from element tags when the {@code Document} element uses a prefix
      * that is not declared with a corresponding {@code xmlns:prefix="..."} anywhere in the XML.
      *
      * <p>For example, {@code <ns2:Document>} where {@code ns2} has no declaration anywhere in the XML will have
      * the prefix stripped from all start and end element tags, producing {@code <Document>}. This allows lenient
-     * SAX-based parsing of XML produced by systems that omit namespace declarations.
+     * SAX-based parsing of XML produced by systems that omit namespace declarations (for example when a payload is
+     * extracted from an envelope where the prefix was declared in a stripped ancestor element).
      *
-     * <p>If the prefix is declared or no prefixed Document element is found, the XML is returned unchanged.
+     * <p>The implementation is structure-aware: only actual element tags are considered and rewritten, content
+     * inside CDATA sections, comments and processing instructions is never modified. The candidate prefix is taken
+     * from the first {@code Document} element found in the markup, so a {@code <prefix:Document} occurrence inside
+     * embedded text content does not trigger any rewrite. If the prefix is declared or no prefixed Document element
+     * is found, the XML is returned unchanged.
      *
      * <p><b>Limitation:</b> the "is it declared?" check is intentionally conservative — it searches the whole
      * XML for any {@code xmlns:prefix="..."} declaration rather than resolving the prefix against the
@@ -371,14 +380,192 @@ public class MxParseUtils {
      */
     public static String stripUndeclaredDocumentPrefix(String xml) {
         if (xml == null) return null;
-        Matcher m = DOCUMENT_PREFIX_PATTERN.matcher(xml);
-        if (!m.find()) return xml;
-        String prefix = m.group(1);
-        if (Pattern.compile("xmlns:" + Pattern.quote(prefix) + "\\s*=")
-                .matcher(xml)
-                .find()) return xml;
-        return xml.replaceAll("<" + Pattern.quote(prefix) + ":", "<")
-                .replaceAll("</" + Pattern.quote(prefix) + ":", "</");
+        return stripUndeclaredPrefixes(xml, AbstractMX.DOCUMENT_LOCALNAME);
+    }
+
+    /**
+     * Applies the lenient payload normalizations required to parse MX content that is not a well-formed standalone
+     * XML document: strips undeclared namespace prefixes from the {@code AppHdr} and {@code Document} elements
+     * (see {@link #stripUndeclaredDocumentPrefix(String)}) and wraps sibling {@code AppHdr} plus {@code Document}
+     * root elements in a synthetic {@code <RequestPayload>} envelope (see {@link #wrapIfAppHdrRoot(String)}).
+     *
+     * <p>Content that is already parseable is returned unchanged: both normalizations detect their trigger condition
+     * with an early-exit scan of the markup, so for a regular {@code Document}-rooted message the cost is limited to
+     * inspecting the first element tag, with no string copies.
+     *
+     * @param xml original XML content
+     * @return the normalized XML, or the original instance when no normalization is needed
+     * @since 10.3.10
+     */
+    public static String normalizeLenientPayload(String xml) {
+        if (xml == null) return null;
+        return wrapIfAppHdrRoot(stripUndeclaredPrefixes(xml, AbstractMX.DOCUMENT_LOCALNAME, AppHdr.HEADER_LOCALNAME));
+    }
+
+    /**
+     * Scans the markup for the first element tag matching each of the given local names, in order to detect
+     * namespace prefixes that are used but not declared anywhere in the XML, and strips those undeclared prefixes
+     * from all element tags. The scan and the rewrite skip CDATA sections, comments, processing instructions and
+     * DOCTYPE declarations, so text content is never modified. The scan stops at the Document element since in all
+     * supported layouts the AppHdr precedes the Document content.
+     */
+    private static String stripUndeclaredPrefixes(String xml, String... localNames) {
+        Set<String> pending = new HashSet<>(Arrays.asList(localNames));
+        Set<String> prefixes = new HashSet<>();
+
+        // find the candidate prefix for each local name, looking at actual element tags only
+        int i = 0;
+        final int n = xml.length();
+        while (i < n && !pending.isEmpty()) {
+            int lt = xml.indexOf('<', i);
+            if (lt < 0) {
+                break;
+            }
+            int skipped = skipNonElementMarkup(xml, lt);
+            if (skipped > lt) {
+                i = skipped;
+                continue;
+            }
+            int p = lt + 1;
+            if (p < n && xml.charAt(p) == '/') {
+                p++;
+            }
+            int nameStart = p;
+            while (p < n && isXmlNameChar(xml.charAt(p))) {
+                p++;
+            }
+            String name = xml.substring(nameStart, p);
+            int colon = name.indexOf(':');
+            String localName = colon >= 0 ? name.substring(colon + 1) : name;
+            if (pending.remove(localName) && colon > 0) {
+                prefixes.add(name.substring(0, colon));
+            }
+            if (AbstractMX.DOCUMENT_LOCALNAME.equals(localName)) {
+                // the Document element is the last relevant tag, no need to scan its content
+                break;
+            }
+            i = skipToTagEnd(xml, p);
+        }
+
+        // ignore prefixes that are actually declared somewhere in the XML (conservative check, see javadoc)
+        prefixes.removeIf(prefix -> isPrefixDeclared(xml, prefix));
+        if (prefixes.isEmpty()) {
+            return xml;
+        }
+
+        // single pass rebuild, stripping the prefixes from element tags only
+        StringBuilder sb = new StringBuilder(n);
+        i = 0;
+        while (i < n) {
+            int lt = xml.indexOf('<', i);
+            if (lt < 0) {
+                sb.append(xml, i, n);
+                break;
+            }
+            sb.append(xml, i, lt);
+            int skipped = skipNonElementMarkup(xml, lt);
+            if (skipped > lt) {
+                sb.append(xml, lt, skipped);
+                i = skipped;
+                continue;
+            }
+            int p = lt + 1;
+            boolean closing = p < n && xml.charAt(p) == '/';
+            if (closing) {
+                p++;
+            }
+            String matched = null;
+            for (String prefix : prefixes) {
+                if (xml.startsWith(prefix, p) && p + prefix.length() < n && xml.charAt(p + prefix.length()) == ':') {
+                    matched = prefix;
+                    break;
+                }
+            }
+            int tagEnd = skipToTagEnd(xml, p);
+            if (matched != null) {
+                sb.append(closing ? "</" : "<").append(xml, p + matched.length() + 1, tagEnd);
+            } else {
+                sb.append(xml, lt, tagEnd);
+            }
+            i = tagEnd;
+        }
+        return sb.toString();
+    }
+
+    /**
+     * If the markup at position {@code lt} (pointing to a {@code '<'}) is a CDATA section, comment, processing
+     * instruction or DOCTYPE declaration, returns the index right after it; otherwise returns {@code lt} meaning
+     * the position starts an element tag.
+     */
+    private static int skipNonElementMarkup(String xml, int lt) {
+        final int n = xml.length();
+        if (xml.startsWith("<![CDATA[", lt)) {
+            int end = xml.indexOf("]]>", lt + 9);
+            return end < 0 ? n : end + 3;
+        }
+        if (xml.startsWith("<!--", lt)) {
+            int end = xml.indexOf("-->", lt + 4);
+            return end < 0 ? n : end + 3;
+        }
+        if (xml.startsWith("<?", lt)) {
+            int end = xml.indexOf("?>", lt + 2);
+            return end < 0 ? n : end + 2;
+        }
+        if (xml.startsWith("<!", lt)) {
+            int end = xml.indexOf('>', lt + 2);
+            return end < 0 ? n : end + 1;
+        }
+        return lt;
+    }
+
+    /**
+     * Returns the index right after the {@code '>'} that closes the element tag whose content starts at {@code from},
+     * ignoring {@code '>'} characters inside quoted attribute values.
+     */
+    private static int skipToTagEnd(String xml, int from) {
+        final int n = xml.length();
+        char quote = 0;
+        for (int i = from; i < n; i++) {
+            char c = xml.charAt(i);
+            if (quote != 0) {
+                if (c == quote) {
+                    quote = 0;
+                }
+            } else if (c == '"' || c == '\'') {
+                quote = c;
+            } else if (c == '>') {
+                return i + 1;
+            }
+        }
+        return n;
+    }
+
+    /**
+     * Checks whether an {@code xmlns:prefix} declaration (followed by an equals sign) exists anywhere in the XML.
+     * Implemented with plain string search to avoid compiling a pattern per invocation.
+     */
+    private static boolean isPrefixDeclared(String xml, String prefix) {
+        final String declaration = "xmlns:" + prefix;
+        int from = 0;
+        int idx;
+        while ((idx = xml.indexOf(declaration, from)) >= 0) {
+            int p = idx + declaration.length();
+            // the prefix must not be a substring of a longer prefix (e.g. xmlns:ns2 when looking for ns)
+            if (p < xml.length() && !isXmlNameChar(xml.charAt(p))) {
+                while (p < xml.length() && Character.isWhitespace(xml.charAt(p))) {
+                    p++;
+                }
+                if (p < xml.length() && xml.charAt(p) == '=') {
+                    return true;
+                }
+            }
+            from = idx + 1;
+        }
+        return false;
+    }
+
+    private static boolean isXmlNameChar(char c) {
+        return Character.isLetterOrDigit(c) || c == ':' || c == '.' || c == '-' || c == '_';
     }
 
     /**

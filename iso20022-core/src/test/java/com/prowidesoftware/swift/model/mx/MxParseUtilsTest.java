@@ -1193,18 +1193,58 @@ public class MxParseUtilsTest {
 
     @Test
     void testWrapIfAppHdrRoot_AppHdrWithXmlDeclarationAndPrefix() {
+        String declaration = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
+        String content = "<SwInt:AppHdr xmlns:SwInt=\"urn:swift:snl:ns.SwInt\"><SwInt:Fr/></SwInt:AppHdr>"
+                + "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08\"/>";
+        String result = MxParseUtils.wrapIfAppHdrRoot(declaration + content);
+        // the declaration must remain outside the wrapper, otherwise the result is not well-formed
+        assertEquals(declaration + "<RequestPayload>" + content + "</RequestPayload>", result);
+    }
+
+    @Test
+    void testWrapIfAppHdrRoot_WrappedResultWithDeclarationIsWellFormed() throws Exception {
         String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
-                + "<SwInt:AppHdr xmlns:SwInt=\"urn:swift:snl:ns.SwInt\"><SwInt:Fr/></SwInt:AppHdr>"
+                + "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\"><Fr/></AppHdr>"
                 + "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08\"/>";
         String result = MxParseUtils.wrapIfAppHdrRoot(xml);
-        assertEquals("<RequestPayload>" + xml + "</RequestPayload>", result);
+        // must be parseable by a standard XML parser
+        javax.xml.stream.XMLStreamReader reader =
+                javax.xml.stream.XMLInputFactory.newInstance().createXMLStreamReader(new java.io.StringReader(result));
+        while (reader.hasNext()) {
+            reader.next();
+        }
+        reader.close();
     }
 
     @Test
     void testWrapIfAppHdrRoot_AppHdrWithLeadingWhitespace() {
-        String xml = "  \n  <AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\"/>";
-        String result = MxParseUtils.wrapIfAppHdrRoot(xml);
-        assertEquals("<RequestPayload>" + xml + "</RequestPayload>", result);
+        String content = "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\"/>";
+        String result = MxParseUtils.wrapIfAppHdrRoot("  \n  " + content);
+        assertEquals("  \n  " + "<RequestPayload>" + content + "</RequestPayload>", result);
+    }
+
+    @Test
+    void testWrapIfAppHdrRoot_AppHdrWithLeadingBom() {
+        String bom = "\uFEFF";
+        String content = "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\"/>";
+        String result = MxParseUtils.wrapIfAppHdrRoot(bom + content);
+        assertEquals(bom + "<RequestPayload>" + content + "</RequestPayload>", result);
+    }
+
+    @Test
+    void testWrapIfAppHdrRoot_AppHdrWithLeadingComment() {
+        String prolog = "<?xml version=\"1.0\"?><!-- exported by SAA -->";
+        String content = "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\"/>";
+        String result = MxParseUtils.wrapIfAppHdrRoot(prolog + content);
+        assertEquals(prolog + "<RequestPayload>" + content + "</RequestPayload>", result);
+    }
+
+    @Test
+    void testWrapIfAppHdrRoot_UppercaseXmlDeclaration() {
+        String prolog = "<?XML VERSION=\"1.0\"?>";
+        String content = "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\"/>";
+        String result = MxParseUtils.wrapIfAppHdrRoot(prolog + content);
+        assertEquals(prolog + "<RequestPayload>" + content + "</RequestPayload>", result);
     }
 
     @Test
@@ -1261,5 +1301,57 @@ public class MxParseUtilsTest {
         String result = MxParseUtils.stripUndeclaredDocumentPrefix(xml);
         assertEquals(
                 "<RequestPayload xmlns=\"urn:example\"><Document><Elem>v</Elem></Document></RequestPayload>", result);
+    }
+
+    @Test
+    void testStripUndeclaredDocumentPrefix_PrefixedDocumentInsideCdata_Unchanged() {
+        // a fully valid message whose CDATA content happens to contain a prefixed Document tag as text
+        // must not trigger any rewrite (the CDATA text is business data, not markup)
+        String xml = "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08\">"
+                + "<A><![CDATA[<zz:Document> raw <zz:x>]]></A></Document>";
+        assertEquals(xml, MxParseUtils.stripUndeclaredDocumentPrefix(xml));
+    }
+
+    @Test
+    void testStripUndeclaredDocumentPrefix_PrefixedDocumentInsideComment_Unchanged() {
+        String xml = "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08\">"
+                + "<!-- original was <zz:Document> --><A>v</A></Document>";
+        assertEquals(xml, MxParseUtils.stripUndeclaredDocumentPrefix(xml));
+    }
+
+    @Test
+    void testStripUndeclaredDocumentPrefix_CdataContentPreservedWhenStripping() {
+        // when the strip does apply, text inside CDATA must be preserved verbatim
+        String xml = "<ns2:Document><ns2:A><![CDATA[<ns2:keep> this]]></ns2:A></ns2:Document>";
+        String result = MxParseUtils.stripUndeclaredDocumentPrefix(xml);
+        assertEquals("<Document><A><![CDATA[<ns2:keep> this]]></A></Document>", result);
+    }
+
+    @Test
+    void testNormalizeLenientPayload_ValidDocumentRooted_Unchanged() {
+        String xml =
+                "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08\"><FIToFICstmrCdtTrf/></Document>";
+        assertSame(xml, MxParseUtils.normalizeLenientPayload(xml));
+    }
+
+    @Test
+    void testNormalizeLenientPayload_UndeclaredPrefixedAppHdrAndDocument() {
+        // undeclared prefixes on both header and document, plus sibling roots: strip both and wrap
+        String xml = "<SwInt:AppHdr><SwInt:Fr/></SwInt:AppHdr>"
+                + "<ns2:Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08\"><ns2:A/></ns2:Document>";
+        String result = MxParseUtils.normalizeLenientPayload(xml);
+        assertEquals(
+                "<RequestPayload><AppHdr><Fr/></AppHdr>"
+                        + "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08\"><A/></Document></RequestPayload>",
+                result);
+    }
+
+    @Test
+    void testNormalizeLenientPayload_SiblingRootsWithDeclaration() {
+        String declaration = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
+        String content = "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\"><Fr/></AppHdr>"
+                + "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08\"/>";
+        String result = MxParseUtils.normalizeLenientPayload(declaration + content);
+        assertEquals(declaration + "<RequestPayload>" + content + "</RequestPayload>", result);
     }
 }

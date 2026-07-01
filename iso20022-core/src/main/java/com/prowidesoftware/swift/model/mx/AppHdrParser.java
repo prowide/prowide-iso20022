@@ -55,13 +55,17 @@ public class AppHdrParser {
         Objects.requireNonNull(xml, "The xml to parse cannot be null");
         Objects.requireNonNull(params, "The unmarshalling params cannot be null");
         try {
+            // lenient support for payloads where the AppHdr is a root element with a Document sibling, or where
+            // the header prefix is not declared; well-formed single rooted content is not modified
+            final String normalizedXml = MxParseUtils.normalizeLenientPayload(xml);
 
-            Optional<String> namespace = NamespaceReader.findAppHdrNamespace(xml);
+            Optional<String> namespace = NamespaceReader.findAppHdrNamespace(normalizedXml);
 
-            boolean headerIsPresent = namespace.isPresent() || MxParseUtils.elementExists(xml, AppHdr.HEADER_LOCALNAME);
+            boolean headerIsPresent =
+                    namespace.isPresent() || MxParseUtils.elementExists(normalizedXml, AppHdr.HEADER_LOCALNAME);
 
             if (headerIsPresent) {
-                AppHdr parsedHeader = parseHeaderFromSAXSource(xml, namespace.orElse(null), params);
+                AppHdr parsedHeader = parseHeaderFromSAXSource(normalizedXml, namespace.orElse(null), params);
                 return Optional.ofNullable(parsedHeader);
             }
 
