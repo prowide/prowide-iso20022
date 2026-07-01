@@ -53,12 +53,19 @@ public class AppHdrParser {
      */
     public static Optional<AppHdr> parse(final String xml, MxReadParams params) {
         Objects.requireNonNull(xml, "The xml to parse cannot be null");
+        // lenient support for payloads where the AppHdr is a root element with a Document sibling, or where
+        // the header prefix is not declared; well-formed single rooted content is not modified
+        return parseNormalized(MxParseUtils.normalizeLenientPayload(xml), params);
+    }
+
+    /**
+     * Parse implementation for content already normalized with {@link MxParseUtils#normalizeLenientPayload(String)},
+     * so that outer entry points normalizing upfront do not pay for a redundant markup scan.
+     */
+    static Optional<AppHdr> parseNormalized(final String normalizedXml, MxReadParams params) {
+        Objects.requireNonNull(normalizedXml, "The xml to parse cannot be null");
         Objects.requireNonNull(params, "The unmarshalling params cannot be null");
         try {
-            // lenient support for payloads where the AppHdr is a root element with a Document sibling, or where
-            // the header prefix is not declared; well-formed single rooted content is not modified
-            final String normalizedXml = MxParseUtils.normalizeLenientPayload(xml);
-
             Optional<String> namespace = NamespaceReader.findAppHdrNamespace(normalizedXml);
 
             boolean headerIsPresent =

@@ -496,6 +496,10 @@ public class MxParseUtils {
      * If the markup at position {@code lt} (pointing to a {@code '<'}) is a CDATA section, comment, processing
      * instruction or DOCTYPE declaration, returns the index right after it; otherwise returns {@code lt} meaning
      * the position starts an element tag.
+     *
+     * <p>Known limitation: a DOCTYPE with an internal subset ({@code <!DOCTYPE root [ ... ]>}) is cut at the first
+     * {@code '>'} instead of the subset end. This is acceptable because DTDs are rejected downstream by the safe
+     * parser factories ({@code disallow-doctype-decl} in SafeXmlUtils), so such content never parses anyway.
      */
     private static int skipNonElementMarkup(String xml, int lt) {
         final int n = xml.length();

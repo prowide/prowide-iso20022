@@ -81,17 +81,29 @@ public class MxReadImpl implements MxRead {
             final String xml,
             final Class<?>[] classes,
             final MxReadParams params) {
-        Objects.requireNonNull(targetClass, "target class to parse must not be null");
         Objects.requireNonNull(xml, "XML to parse must not be null");
         Validate.notBlank(xml, "XML to parse must not be a blank string");
+
+        // normalized here so that all entry points funnelling into this method (generated Mx*.parse and the
+        // MxRead interface) get the same lenient payload support
+        return parseNormalized(targetClass, MxParseUtils.normalizeLenientPayload(xml), classes, params);
+    }
+
+    /**
+     * Parse implementation for content already normalized with {@link MxParseUtils#normalizeLenientPayload(String)},
+     * so that outer entry points normalizing upfront do not pay for a redundant markup scan.
+     */
+    static AbstractMX parseNormalized(
+            final Class<? extends AbstractMX> targetClass,
+            final String normalizedXml,
+            final Class<?>[] classes,
+            final MxReadParams params) {
+        Objects.requireNonNull(targetClass, "target class to parse must not be null");
+        Objects.requireNonNull(normalizedXml, "XML to parse must not be null");
         Objects.requireNonNull(classes, "object model classes array must not be null");
         Objects.requireNonNull(params, "The unmarshalling params cannot be null");
 
         try {
-            // normalized here so that all entry points funnelling into this method (generated Mx*.parse, the
-            // MxRead interface and the reflective parse below) get the same lenient payload support
-            final String normalizedXml = MxParseUtils.normalizeLenientPayload(xml);
-
             SAXSource documentSource =
                     MxParseUtils.createFilteredSAXSource(normalizedXml, AbstractMX.DOCUMENT_LOCALNAME);
             final AbstractMX parsedDocument =
@@ -99,7 +111,7 @@ public class MxReadImpl implements MxRead {
 
             Optional<AbstractMX> mx = Optional.ofNullable(parsedDocument);
 
-            Optional<AppHdr> appHdr = AppHdrParser.parse(normalizedXml, params);
+            Optional<AppHdr> appHdr = AppHdrParser.parseNormalized(normalizedXml, params);
 
             if (mx.isPresent() && appHdr.isPresent()) {
                 mx.get().setAppHdr(appHdr.get());
@@ -171,7 +183,7 @@ public class MxReadImpl implements MxRead {
             fqn = "com.prowidesoftware.swift.model.mx" + subPackage + ".Mx" + resolvedId.camelized();
             Class<? extends AbstractMX> clazz = (Class<? extends AbstractMX>) Class.forName(fqn);
             java.lang.reflect.Field _classes = clazz.getDeclaredField("_classes");
-            mx = parse(clazz, normalizedXml, (Class[]) _classes.get(null), params);
+            mx = parseNormalized(clazz, normalizedXml, (Class[]) _classes.get(null), params);
         } catch (ClassNotFoundException e) {
             if (params.verbose) {
                 log.log(Level.SEVERE, "Cannot find class " + fqn + " to parse the XML", e);
