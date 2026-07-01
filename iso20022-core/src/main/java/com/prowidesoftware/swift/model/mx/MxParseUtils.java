@@ -63,6 +63,11 @@ public class MxParseUtils {
      */
     private static final Pattern APPHDR_ROOT_PATTERN =
             Pattern.compile("(?s)^\\s*(?:<\\?xml.*?\\?>\\s*)?<(?:[a-zA-Z_][\\w.-]*:)?AppHdr[\\s>/]");
+    /**
+     * Matches a {@code Document} element carrying a namespace prefix, capturing the prefix in group 1.
+     * E.g. {@code <ns2:Document>}, {@code <Doc:Document/>}. Used by {@link #stripUndeclaredDocumentPrefix(String)}.
+     */
+    private static final Pattern DOCUMENT_PREFIX_PATTERN = Pattern.compile("<([a-zA-Z_][\\w.-]*):Document[\\s>/]");
 
     /**
      * Creates a {@link SAXSource} for the given XML, filtering a specific element with the
@@ -354,13 +359,19 @@ public class MxParseUtils {
      *
      * <p>If the prefix is declared or no prefixed Document element is found, the XML is returned unchanged.
      *
+     * <p><b>Limitation:</b> the "is it declared?" check is intentionally conservative — it searches the whole
+     * XML for any {@code xmlns:prefix="..."} declaration rather than resolving the prefix against the
+     * {@code Document} element's own namespace scope. This errs on the side of leaving the XML untouched: if the
+     * same prefix is declared anywhere (even in an unrelated subtree such as supplementary or signature data),
+     * stripping is skipped. The trade-off is a possible missed fix, never a regression on otherwise valid XML.
+     *
      * @param xml original XML content
      * @return XML with the undeclared document prefix stripped from element tags, or the original if not needed
      * @since 10.3.10
      */
     public static String stripUndeclaredDocumentPrefix(String xml) {
         if (xml == null) return null;
-        Matcher m = Pattern.compile("<([a-zA-Z_][\\w.-]*):Document[\\s>/]").matcher(xml);
+        Matcher m = DOCUMENT_PREFIX_PATTERN.matcher(xml);
         if (!m.find()) return xml;
         String prefix = m.group(1);
         if (Pattern.compile("xmlns:" + Pattern.quote(prefix) + "\\s*=")
