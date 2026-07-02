@@ -24,6 +24,7 @@ import com.prowidesoftware.swift.model.AbstractMessage;
 import com.prowidesoftware.swift.model.MessageStandardType;
 import com.prowidesoftware.swift.model.MxId;
 import com.prowidesoftware.swift.model.mt.AbstractMT;
+import com.prowidesoftware.swift.model.mx.adapters.ElementJsonAdapter;
 import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.List;
@@ -190,8 +191,11 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
                 .registerTypeAdapter(AbstractMX.class, new AbstractMXAdapter())
                 .registerTypeAdapter(XMLGregorianCalendar.class, new XMLGregorianCalendarAdapter())
                 .registerTypeAdapter(AppHdr.class, new AppHdrAdapter())
+                .registerTypeHierarchyAdapter(Element.class, new ElementJsonAdapter())
                 .create();
-        return gson.fromJson(json, classOfT);
+        T parsed = gson.fromJson(json, classOfT);
+        WildcardElementRepair.repair(parsed);
+        return parsed;
     }
 
     /**
@@ -206,8 +210,11 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
                 .registerTypeAdapter(AbstractMX.class, new AbstractMXAdapter())
                 .registerTypeAdapter(XMLGregorianCalendar.class, new XMLGregorianCalendarAdapter())
                 .registerTypeAdapter(AppHdr.class, new AppHdrAdapter())
+                .registerTypeHierarchyAdapter(Element.class, new ElementJsonAdapter())
                 .create();
-        return gson.fromJson(json, AbstractMX.class);
+        AbstractMX mx = gson.fromJson(json, AbstractMX.class);
+        WildcardElementRepair.repair(mx);
+        return mx;
     }
 
     /**
@@ -511,6 +518,10 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
                 .registerTypeAdapter(AbstractMX.class, new AbstractMXAdapter())
                 .registerTypeHierarchyAdapter(XMLGregorianCalendar.class, new XMLGregorianCalendarAdapter())
                 .registerTypeAdapter(AppHdr.class, new AppHdrAdapter())
+                // serialize xsd:any wildcard content (e.g. SupplementaryData/Envlp, signature
+                // envelopes) as raw XML instead of an empty object; hierarchy registration is
+                // required because the runtime value is a concrete DOM impl, not Element itself
+                .registerTypeHierarchyAdapter(Element.class, new ElementJsonAdapter())
                 .setPrettyPrinting()
                 .create();
         // we use AbstractMX and not this.getClass() in order to force usage of the adapter

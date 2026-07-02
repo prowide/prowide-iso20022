@@ -1,5 +1,14 @@
 # Prowide ISO 20022 - CHANGELOG
 
+### 9.6.5 - July 2026
+  * (PW-3251) Feat: lenient parsing of file-format (FileAct) payloads with sibling `AppHdr` and `Document` root elements or undeclared namespace prefixes, applied consistently across all parsing entry points without copying the payload
+  * (PW-3251) `MxParseUtils.identifyMessage` now returns an empty Optional on blank input instead of throwing an IllegalArgumentException
+  * Feat: `xsd:any` wildcard content (e.g. `SplmtryData/Envlp`, signature envelopes) is no longer dropped on parse; it is captured as an `org.w3c.dom.Element` with namespaces preserved (GH-39, GH-43)
+  * Fix: `toJson()` now serializes `@XmlAnyElement` wildcard content as raw XML instead of an empty `{}`, and `fromJson()` restores it back to a DOM Element (round-trippable)
+  * (PW-3202) Fix: removed spurious `Error propagating pending prefix mapping` warnings when parsing regular ISO 20022 Documents wrapped in an SNL-like envelope
+  * (PW-3185) Fix: `MxSwiftMessage.fromJson()` now reads Calendar fields in both the new 1-based month format (identified by a `schemaVersion` marker) and the legacy 0-based format transparently
+  * (PW-3207) Fix: update semt.044.001.01 model from draft4 to draft5
+
 ### 9.6.4 - April 2026
   * (PW-3133) Feat: Added `useZuluCreationDateTime` flag on `BusinessAppHdrV01`..`V04` to marshal `CreDt` with "Z" timezone (default true on V01)
 

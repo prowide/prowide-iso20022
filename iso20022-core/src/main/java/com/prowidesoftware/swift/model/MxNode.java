@@ -15,10 +15,10 @@
  */
 package com.prowidesoftware.swift.model;
 
+import com.prowidesoftware.swift.model.mx.MxParseUtils;
 import com.prowidesoftware.swift.utils.SafeXmlUtils;
 import java.io.IOException;
 import java.io.PrintStream;
-import java.io.StringReader;
 import java.util.*;
 import java.util.logging.Level;
 import org.apache.commons.lang3.StringUtils;
@@ -59,6 +59,13 @@ public class MxNode {
     /**
      * Parses the complete message content into an {@link MxNode} tree structure.
      *
+     * <p>Since 9.6.5 the content is read through the lenient view of
+     * {@link MxParseUtils#normalizedReader(String)}: file-format payloads with sibling AppHdr and Document root
+     * elements are parsed into a tree rooted at a synthetic RequestPayload node instead of failing, without
+     * copying the payload. Well-formed single rooted content is parsed as is.
+     *
+     * @param xml the XML content to parse
+     * @return the root node of the parsed tree, or null if parsing fails
      * @since 9.1.2
      */
     public static MxNode parse(final String xml) {
@@ -68,7 +75,7 @@ public class MxNode {
             XMLReader xmlReader = SafeXmlUtils.reader(true, null);
             final MxNodeContentHandler contentHandler = new MxNodeContentHandler();
             xmlReader.setContentHandler(contentHandler);
-            xmlReader.parse(new org.xml.sax.InputSource(new StringReader(xml)));
+            xmlReader.parse(new org.xml.sax.InputSource(MxParseUtils.normalizedReader(xml)));
             return contentHandler.getRootNode();
         } catch (final Exception e) {
             log.log(Level.SEVERE, "Error parsing XML", e);

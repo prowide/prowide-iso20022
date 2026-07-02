@@ -1,0 +1,36 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write|NotebookEdit",
+        "hooks": [
+          { "type": "command", "command": "sh $CLAUDE_PROJECT_DIR/.claude/hooks/block-generated.sh" },
+          { "type": "command", "command": "sh $CLAUDE_PROJECT_DIR/.claude/hooks/no-author-tag.sh" }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "Bash(./gradlew:*)",
+      "Bash(./gradlew clean:*)",
+      "Bash(./gradlew :iso20022-core:test:*)",
+      "Bash(./gradlew :iso20022-core:spotlessCheck:*)",
+      "Bash(find:*)",
+      "Bash(cat:*)",
+      "Bash(git fetch:*)",
+      "Bash(git branch:*)",
+      "Bash(git checkout:*)",
+      "Bash(git stash:*)",
+      "Bash(gh pr view:*)",
+      "Bash(gh pr diff:*)",
+      "Bash(gh pr list:*)",
+      "Bash(gh pr checkout:*)",
+      "Bash(gh api:*)",
+      "WebSearch",
+      "mcp__ide__getDiagnostics"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

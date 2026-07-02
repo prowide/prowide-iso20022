@@ -15,12 +15,15 @@
  */
 package com.prowidesoftware.swift.model;
 
-import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.prowidesoftware.swift.model.mx.*;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Calendar;
 import java.util.Objects;
 import java.util.Optional;
 import javax.persistence.*;
@@ -206,12 +209,45 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
     /**
      * This method deserializes the JSON data into an MX message object.
      *
+     * <p>The deserializer is backward compatible with JSON produced by previous library versions:
+     * payloads without a top-level {@code schemaVersion} marker are interpreted as the legacy
+     * format (Java {@link Calendar} months stored 0-based, January=0). Payloads carrying
+     * {@code schemaVersion >= }{@value #ONE_BASED_MONTH_MIN_VERSION} are interpreted with the
+     * new 1-based month format. Note: this branch's {@code toJson()} does not yet emit that marker
+     * or the 1-based format itself, since it relies on the base {@code AbstractSwiftMessage}
+     * serialization from pw-swift-core; this reader-side support is forward compatible with JSON
+     * produced by other Prowide components already on the newer format.
+     *
+     * @param json the JSON representation of the message
+     * @return deserialized message object
      * @see #toJson()
      * @since 7.10.3
      */
     public static MxSwiftMessage fromJson(String json) {
-        final Gson gson = new GsonBuilder().create();
-        return gson.fromJson(json, MxSwiftMessage.class);
+        JsonElement element = JsonParser.parseString(json);
+        GsonBuilder builder = new GsonBuilder();
+        if (element.isJsonObject() && hasNewCalendarFormat(element.getAsJsonObject())) {
+            builder.registerTypeHierarchyAdapter(Calendar.class, CalendarTypeAdapter.INSTANCE);
+        }
+        return builder.create().fromJson(element, MxSwiftMessage.class);
+    }
+
+    /**
+     * Minimum {@code schemaVersion} that indicates the 1-based month Calendar format. Kept as a
+     * literal so that future schema bumps for unrelated reasons do not silently misclassify v4
+     * payloads as legacy on read.
+     */
+    private static final int ONE_BASED_MONTH_MIN_VERSION = 4;
+
+    private static boolean hasNewCalendarFormat(JsonObject obj) {
+        JsonElement v = obj.get("schemaVersion");
+        if (v == null
+                || v.isJsonNull()
+                || !v.isJsonPrimitive()
+                || !v.getAsJsonPrimitive().isNumber()) {
+            return false;
+        }
+        return v.getAsInt() >= ONE_BASED_MONTH_MIN_VERSION;
     }
 
     /**
@@ -238,9 +274,11 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
 
     private void _updateFromMessage(final MxId id, final MessageMetadataStrategy metadataStrategy) {
         if (message() != null && !message().isEmpty()) {
-            MxId identifier = id != null
-                    ? id
-                    : MxParseUtils.identifyMessage(this.message()).orElse(null);
+            // single lenient copy of the message, reused for identification and metadata extraction
+            final String lenientXml = lenientMessage();
+
+            MxId identifier =
+                    id != null ? id : MxParseUtils.identifyMessage(lenientXml).orElse(null);
 
             // the identifyMessage above will also attempt the header but with a generic parsing, so we try again
             // with a specific header parsing if the identifier is still null
@@ -250,8 +288,20 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
                 identifier.setBusinessService(header.serviceName());
             }
 
-            extractMetadata(identifier, header, metadataStrategy);
+            extractMetadata(identifier, header, metadataStrategy, lenientXml);
         }
+    }
+
+    /**
+     * Returns the message content with the XML declaration fixed for lenient parsing: when parsing the message just
+     * for the metadata extraction, we want to avoid underlying error logs since this MxSwiftMessage is lenient on
+     * the constraints of the parsed XML payload. The structural normalizations (synthetic wrapper for sibling
+     * AppHdr and Document roots, undeclared prefix stripping) are applied internally by the parser boundaries
+     * ({@link MxParseUtils#identifyMessage(String)}, {@link MxNode#parse(String)}, MxReadImpl and AppHdrParser)
+     * without materializing a copy of the payload.
+     */
+    private String lenientMessage() {
+        return MxParseUtils.makeXmlLenient(this.message());
     }
 
     /**
@@ -274,9 +324,11 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
     }
 
     private void extractMetadata(MxId identifier, AppHdr headerModel, MessageMetadataStrategy metadataStrategy) {
-        // when parsing the message just for the metadata extraction, we want to avoid underlying error logs
-        // since this MxSwiftMessage is lenient on the constraints of the parsed XML payload
-        final String lenientXml = MxParseUtils.makeXmlLenient(this.message());
+        extractMetadata(identifier, headerModel, metadataStrategy, lenientMessage());
+    }
+
+    private void extractMetadata(
+            MxId identifier, AppHdr headerModel, MessageMetadataStrategy metadataStrategy, String lenientXml) {
         MxNode parsedMessage = MxNode.parse(lenientXml);
         if (headerModel == null || !extractMetadata(headerModel)) {
             extractMetadata(parsedMessage);
@@ -552,9 +604,7 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
      */
     public void updateMetadata(MessageMetadataStrategy strategy) {
         Objects.requireNonNull(strategy, "the strategy for metadata extraction cannot be null");
-        // when parsing the message just for the metadata extraction, we want to avoid underlying error logs
-        // since this MxSwiftMessage is lenient on the constraints of the parsed XML payload
-        final String lenientXml = MxParseUtils.makeXmlLenient(this.message());
+        final String lenientXml = lenientMessage();
         MxNode parsedMessage = MxNode.parse(lenientXml);
         extractUetr(parsedMessage);
         applyStrategy(lenientXml, strategy);
