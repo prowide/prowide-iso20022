@@ -55,24 +55,26 @@ public class AppHdrParser {
         Objects.requireNonNull(xml, "The xml to parse cannot be null");
         // lenient support for payloads where the AppHdr is a root element with a Document sibling, or where
         // the header prefix is not declared; well-formed single rooted content is not modified
-        return parseNormalized(MxParseUtils.normalizeLenientPayload(xml), params);
+        return parseNormalized(MxParseUtils.lenientPayload(xml), params);
     }
 
     /**
-     * Parse implementation for content already normalized with {@link MxParseUtils#normalizeLenientPayload(String)},
-     * so that outer entry points normalizing upfront do not pay for a redundant markup scan.
+     * Parse implementation over an already built lenient payload view, so that outer entry points normalizing
+     * upfront do not pay for a redundant markup scan. The header is parsed streaming the payload readers, so a
+     * synthetic wrapper for sibling AppHdr and Document roots is never materialized into a payload copy.
      */
-    static Optional<AppHdr> parseNormalized(final String normalizedXml, MxReadParams params) {
-        Objects.requireNonNull(normalizedXml, "The xml to parse cannot be null");
+    static Optional<AppHdr> parseNormalized(final LenientPayload payload, MxReadParams params) {
+        Objects.requireNonNull(payload, "The xml to parse cannot be null");
         Objects.requireNonNull(params, "The unmarshalling params cannot be null");
         try {
-            Optional<String> namespace = NamespaceReader.findAppHdrNamespace(normalizedXml);
+            Optional<String> namespace =
+                    NamespaceReader.findNamespaceForLocalName(payload.lenientReader(), AppHdr.HEADER_LOCALNAME);
 
             boolean headerIsPresent =
-                    namespace.isPresent() || MxParseUtils.elementExists(normalizedXml, AppHdr.HEADER_LOCALNAME);
+                    namespace.isPresent() || MxParseUtils.elementExists(payload.xml(), AppHdr.HEADER_LOCALNAME);
 
             if (headerIsPresent) {
-                AppHdr parsedHeader = parseHeaderFromSAXSource(normalizedXml, namespace.orElse(null), params);
+                AppHdr parsedHeader = parseHeaderFromSAXSource(payload, namespace.orElse(null), params);
                 return Optional.ofNullable(parsedHeader);
             }
 
@@ -84,9 +86,8 @@ public class AppHdrParser {
     }
 
     private static AppHdr parseHeaderFromSAXSource(
-            final String xml, final String namespace, final MxReadParams params) {
-        SAXSource source =
-                MxParseUtils.createFilteredSAXSource(MxParseUtils.makeXmlLenient(xml), AppHdr.HEADER_LOCALNAME);
+            final LenientPayload payload, final String namespace, final MxReadParams params) {
+        SAXSource source = MxParseUtils.createFilteredSAXSource(payload.lenientReader(), AppHdr.HEADER_LOCALNAME);
 
         if (StringUtils.equals(LegacyAppHdr.NAMESPACE, namespace)) {
             // parse legacy AH

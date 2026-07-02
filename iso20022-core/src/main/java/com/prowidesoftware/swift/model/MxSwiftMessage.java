@@ -307,12 +307,15 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
     }
 
     /**
-     * Returns the message content normalized for lenient parsing: when parsing the message just for the metadata
-     * extraction, we want to avoid underlying error logs since this MxSwiftMessage is lenient on the constraints
-     * of the parsed XML payload.
+     * Returns the message content with the XML declaration fixed for lenient parsing: when parsing the message just
+     * for the metadata extraction, we want to avoid underlying error logs since this MxSwiftMessage is lenient on
+     * the constraints of the parsed XML payload. The structural normalizations (synthetic wrapper for sibling
+     * AppHdr and Document roots, undeclared prefix stripping) are applied internally by the parser boundaries
+     * ({@link MxParseUtils#identifyMessage(String)}, {@link MxNode#parse(String)}, MxReadImpl and AppHdrParser)
+     * without materializing a copy of the payload.
      */
     private String lenientMessage() {
-        return MxParseUtils.normalizeLenientPayload(MxParseUtils.makeXmlLenient(this.message()));
+        return MxParseUtils.makeXmlLenient(this.message());
     }
 
     /**

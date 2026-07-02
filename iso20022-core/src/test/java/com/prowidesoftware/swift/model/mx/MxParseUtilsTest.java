@@ -1177,16 +1177,34 @@ public class MxParseUtilsTest {
         assertEquals(xml, MxParseUtils.wrapIfAppHdrRoot(xml));
     }
 
+    private static final String SIBLING_DOCUMENT =
+            "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08\"/>";
+
     @Test
     void testWrapIfAppHdrRoot_AppHdrNoPrefix() {
-        String xml = "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\"><Fr/></AppHdr>";
+        String xml =
+                "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\"><Fr/></AppHdr>" + SIBLING_DOCUMENT;
         String result = MxParseUtils.wrapIfAppHdrRoot(xml);
         assertEquals("<RequestPayload>" + xml + "</RequestPayload>", result);
     }
 
     @Test
+    void testWrapIfAppHdrRoot_AppHdrOnlySingleRoot_NotWrapped() {
+        // a standalone well-formed AppHdr document must not be wrapped: consumers such as MxNode path lookups
+        // rely on the AppHdr being the tree root
+        String xml = "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\"><Fr/></AppHdr>";
+        assertEquals(xml, MxParseUtils.wrapIfAppHdrRoot(xml));
+        // also with an XML declaration, a self closing root, and trailing comments
+        String declared = "<?xml version=\"1.0\"?><AppHdr xmlns=\"urn:example\"><Fr/></AppHdr><!-- trailing -->";
+        assertEquals(declared, MxParseUtils.wrapIfAppHdrRoot(declared));
+        String selfClosing = "<AppHdr xmlns=\"urn:example\"/>";
+        assertEquals(selfClosing, MxParseUtils.wrapIfAppHdrRoot(selfClosing));
+    }
+
+    @Test
     void testWrapIfAppHdrRoot_AppHdrWithNamespacePrefix() {
-        String xml = "<h:AppHdr xmlns:h=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\"><h:Fr/></h:AppHdr>";
+        String xml = "<h:AppHdr xmlns:h=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\"><h:Fr/></h:AppHdr>"
+                + SIBLING_DOCUMENT;
         String result = MxParseUtils.wrapIfAppHdrRoot(xml);
         assertEquals("<RequestPayload>" + xml + "</RequestPayload>", result);
     }
@@ -1218,7 +1236,7 @@ public class MxParseUtilsTest {
 
     @Test
     void testWrapIfAppHdrRoot_AppHdrWithLeadingWhitespace() {
-        String content = "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\"/>";
+        String content = "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\"/>" + SIBLING_DOCUMENT;
         String result = MxParseUtils.wrapIfAppHdrRoot("  \n  " + content);
         assertEquals("  \n  " + "<RequestPayload>" + content + "</RequestPayload>", result);
     }
@@ -1226,7 +1244,7 @@ public class MxParseUtilsTest {
     @Test
     void testWrapIfAppHdrRoot_AppHdrWithLeadingBom() {
         String bom = "\uFEFF";
-        String content = "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\"/>";
+        String content = "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\"/>" + SIBLING_DOCUMENT;
         String result = MxParseUtils.wrapIfAppHdrRoot(bom + content);
         assertEquals(bom + "<RequestPayload>" + content + "</RequestPayload>", result);
     }
@@ -1234,7 +1252,7 @@ public class MxParseUtilsTest {
     @Test
     void testWrapIfAppHdrRoot_AppHdrWithLeadingComment() {
         String prolog = "<?xml version=\"1.0\"?><!-- exported by SAA -->";
-        String content = "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\"/>";
+        String content = "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\"/>" + SIBLING_DOCUMENT;
         String result = MxParseUtils.wrapIfAppHdrRoot(prolog + content);
         assertEquals(prolog + "<RequestPayload>" + content + "</RequestPayload>", result);
     }
@@ -1242,7 +1260,7 @@ public class MxParseUtilsTest {
     @Test
     void testWrapIfAppHdrRoot_UppercaseXmlDeclaration() {
         String prolog = "<?XML VERSION=\"1.0\"?>";
-        String content = "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\"/>";
+        String content = "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\"/>" + SIBLING_DOCUMENT;
         String result = MxParseUtils.wrapIfAppHdrRoot(prolog + content);
         assertEquals(prolog + "<RequestPayload>" + content + "</RequestPayload>", result);
     }
@@ -1353,5 +1371,50 @@ public class MxParseUtilsTest {
                 + "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08\"/>";
         String result = MxParseUtils.normalizeLenientPayload(declaration + content);
         assertEquals(declaration + "<RequestPayload>" + content + "</RequestPayload>", result);
+    }
+
+    @Test
+    void testNormalizedReader_EquivalentToMaterializedString() throws Exception {
+        String xml = "<?xml version=\"1.0\"?>"
+                + "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\"><Fr/></AppHdr>"
+                + "<ns2:Document><ns2:A>v</ns2:A></ns2:Document>";
+        // the virtual reader must produce exactly the same characters as the materialized normalization
+        assertEquals(MxParseUtils.normalizeLenientPayload(xml), readFully(MxParseUtils.normalizedReader(xml), 8192));
+        // also with a tiny buffer forcing reads across all segment boundaries
+        assertEquals(MxParseUtils.normalizeLenientPayload(xml), readFully(MxParseUtils.normalizedReader(xml), 3));
+    }
+
+    @Test
+    void testNormalizedReader_NoWrapNeeded() throws Exception {
+        String xml = "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08\"/>";
+        assertEquals(xml, readFully(MxParseUtils.normalizedReader(xml), 7));
+    }
+
+    private static String readFully(java.io.Reader reader, int bufferSize) throws java.io.IOException {
+        StringBuilder sb = new StringBuilder();
+        char[] buffer = new char[bufferSize];
+        int read;
+        while ((read = reader.read(buffer, 0, buffer.length)) >= 0) {
+            sb.append(buffer, 0, read);
+        }
+        reader.close();
+        return sb.toString();
+    }
+
+    @Test
+    void testIdentifyMessage_SiblingRootsWithoutMsgDefIdr() {
+        // the header lacks MsgDefIdr, so the type can only come from the Document namespace, which sits in the
+        // second root element and is only reachable through the virtually wrapped view
+        String xml = "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\"><Fr/></AppHdr>"
+                + "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08\"><FIToFICstmrCdtTrf/></Document>";
+        Optional<MxId> id = MxParseUtils.identifyMessage(xml);
+        assertTrue(id.isPresent());
+        assertEquals("pacs.008.001.08", id.get().id());
+    }
+
+    @Test
+    void testMakeXmlLenient_ValidDeclaration_SameInstance() {
+        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Document xmlns=\"urn:example\"/>";
+        assertSame(xml, MxParseUtils.makeXmlLenient(xml));
     }
 }

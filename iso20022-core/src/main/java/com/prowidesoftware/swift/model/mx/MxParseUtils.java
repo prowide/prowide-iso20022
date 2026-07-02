@@ -78,12 +78,22 @@ public class MxParseUtils {
      * @since 9.2.1
      */
     static SAXSource createFilteredSAXSource(final String xml, final String localName) {
+        return createFilteredSAXSource(new StringReader(xml), localName);
+    }
+
+    /**
+     * Variant of {@link #createFilteredSAXSource(String, String)} reading from a character stream, so lenient
+     * payload views can be parsed without materializing a normalized copy of the XML.
+     *
+     * @since 10.3.10
+     */
+    static SAXSource createFilteredSAXSource(final java.io.Reader source, final String localName) {
         XMLReader documentReader = SafeXmlUtils.reader(true, null);
 
         NamespaceAndElementFilter documentFilter = new NamespaceAndElementFilter(localName);
         documentFilter.setParent(documentReader);
 
-        InputSource documentInputSource = new InputSource(new StringReader(xml));
+        InputSource documentInputSource = new InputSource(source);
 
         return new SAXSource(documentFilter, documentInputSource);
     }
@@ -297,29 +307,39 @@ public class MxParseUtils {
      * @return id with the detected MX message type or empty if it cannot be determined
      */
     public static Optional<MxId> identifyMessage(final String xml) {
-        Optional<String> namespace = NamespaceReader.findDocumentNamespace(xml);
+        return identifyMessage(lenientPayload(xml));
+    }
+
+    /**
+     * Implementation of {@link #identifyMessage(String)} over an already built lenient payload view; each scan
+     * streams a fresh reader so payloads with sibling AppHdr and Document roots can be identified from the Document
+     * namespace without materializing the wrapped content.
+     */
+    static Optional<MxId> identifyMessage(final LenientPayload payload) {
+        Optional<String> namespace =
+                NamespaceReader.findNamespaceForLocalName(payload.lenientReader(), AbstractMX.DOCUMENT_LOCALNAME);
         if (namespace.isPresent()) {
-            return enrichBusinessService(namespace.map(MxId::new).orElse(null), xml);
+            return enrichBusinessService(namespace.map(MxId::new).orElse(null), payload);
         }
 
         // if the Document does not have a namespace, try to identify the message from the header
-        Optional<String> element = findByTags(xml, "MsgDefIdr");
+        Optional<String> element = findByTags(payload.lenientReader(), "MsgDefIdr");
         if (!element.isPresent()) {
             // Legacy ahv10 header
-            element = findByTags(xml, "MsgName");
+            element = findByTags(payload.lenientReader(), "MsgName");
         }
         if (element.isPresent()) {
-            return enrichBusinessService(new MxId(element.get()), xml);
+            return enrichBusinessService(new MxId(element.get()), payload);
         }
 
         return Optional.empty();
     }
 
-    private static Optional<MxId> enrichBusinessService(MxId mxId, final String xml) {
+    private static Optional<MxId> enrichBusinessService(MxId mxId, final LenientPayload payload) {
         if (mxId == null) {
             return Optional.empty();
         }
-        Optional<String> element = findByTags(xml, "BizSvc");
+        Optional<String> element = findByTags(payload.lenientReader(), "BizSvc");
         if (element.isPresent()) {
             mxId.setBusinessService(element.get());
         }
@@ -328,13 +348,13 @@ public class MxParseUtils {
 
     /**
      * Wraps the XML with a {@code <RequestPayload>} root element when the content starts with an
-     * {@code AppHdr} element (with or without a namespace prefix). This prevents
+     * {@code AppHdr} element (with or without a namespace prefix) that has sibling content after it. This prevents
      * "Illegal to have multiple roots" errors that occur when the XML contains both
      * {@code AppHdr} and {@code Document} elements at the same level without a common root.
      *
      * <p>Matches {@code <AppHdr>}, {@code <prefix:AppHdr>}, and the same forms preceded by an
-     * optional XML declaration. Already-wrapped XML (e.g. rooted at {@code <RequestPayload>})
-     * is returned unchanged.
+     * optional XML declaration. Content that is already a well-formed single rooted document — including a
+     * standalone {@code AppHdr} document or content already wrapped in an envelope — is returned unchanged.
      *
      * @param xml original XML content
      * @return XML wrapped in {@code <RequestPayload>...</RequestPayload>}, or the original if wrapping is not needed
@@ -342,15 +362,82 @@ public class MxParseUtils {
      */
     public static String wrapIfAppHdrRoot(String xml) {
         if (xml == null) return null;
+        return new LenientPayload(xml, wrapPosition(xml)).materialize();
+    }
+
+    /**
+     * Returns the offset where a synthetic wrapper open tag must be inserted (right after the prolog: BOM, XML
+     * declaration, PIs, comments) when the first element is an AppHdr with sibling content after it, or -1 when no
+     * wrapping is needed. The prolog must stay outside the wrapper element, otherwise the result is not well-formed
+     * (a PI target "xml" is illegal after document start). A standalone single rooted AppHdr document is NOT
+     * wrapped: it is already parseable and consumers may rely on the AppHdr being the tree root.
+     */
+    private static int wrapPosition(String xml) {
         Matcher m = APPHDR_ROOT_PATTERN.matcher(xml);
-        if (m.lookingAt()) {
-            // the prolog (BOM, XML declaration, PIs, comments) must stay outside the wrapper element,
-            // otherwise the result is not well-formed (a PI target "xml" is illegal after document start)
-            int contentStart = m.end(1);
-            return xml.substring(0, contentStart) + "<RequestPayload>" + xml.substring(contentStart)
-                    + "</RequestPayload>";
+        if (!m.lookingAt()) {
+            return -1;
         }
-        return xml;
+        return hasElementAfterFirstRoot(xml, m.end(1)) ? m.end(1) : -1;
+    }
+
+    /**
+     * Checks whether another element tag follows the first root element, meaning the content has multiple roots
+     * and needs a synthetic wrapper. The scan is bounded to the first root subtree (the AppHdr, which is small)
+     * plus any trailing comments or processing instructions.
+     */
+    private static boolean hasElementAfterFirstRoot(String xml, int rootStart) {
+        final int n = xml.length();
+        int depth = 0;
+        int i = rootStart;
+        while (i < n) {
+            int lt = xml.indexOf('<', i);
+            if (lt < 0) {
+                return false;
+            }
+            int skipped = skipNonElementMarkup(xml, lt);
+            if (skipped > lt) {
+                i = skipped;
+                continue;
+            }
+            if (depth == 0 && lt > rootStart) {
+                // the first root is closed and another element starts: multiple roots
+                return true;
+            }
+            boolean closing = lt + 1 < n && xml.charAt(lt + 1) == '/';
+            int tagEnd = skipToTagEnd(xml, lt + 1);
+            boolean selfClosing = !closing && tagEnd - 2 > lt && xml.charAt(tagEnd - 2) == '/';
+            if (closing) {
+                depth--;
+            } else if (!selfClosing) {
+                depth++;
+            }
+            i = tagEnd;
+        }
+        return false;
+    }
+
+    /**
+     * Builds the lenient view of the payload: undeclared AppHdr/Document prefixes stripped, and the virtual
+     * wrapper position resolved. Package internals parse through the view's readers to avoid materializing a
+     * wrapped copy of the payload.
+     */
+    static LenientPayload lenientPayload(String xml) {
+        String stripped = stripUndeclaredPrefixes(xml, AbstractMX.DOCUMENT_LOCALNAME, AppHdr.HEADER_LOCALNAME);
+        return new LenientPayload(stripped, wrapPosition(stripped));
+    }
+
+    /**
+     * Returns a fresh {@link java.io.Reader} exposing the content through the same lenient normalizations of
+     * {@link #normalizeLenientPayload(String)} without materializing a normalized copy: when a synthetic
+     * {@code <RequestPayload>} wrapper is needed it is composed virtually around the original payload characters.
+     *
+     * @param xml original XML content
+     * @return a single-use reader over the normalized content
+     * @since 10.3.10
+     */
+    public static java.io.Reader normalizedReader(String xml) {
+        Objects.requireNonNull(xml, "XML must not be null");
+        return lenientPayload(xml).reader();
     }
 
     /**
@@ -399,7 +486,7 @@ public class MxParseUtils {
      */
     public static String normalizeLenientPayload(String xml) {
         if (xml == null) return null;
-        return wrapIfAppHdrRoot(stripUndeclaredPrefixes(xml, AbstractMX.DOCUMENT_LOCALNAME, AppHdr.HEADER_LOCALNAME));
+        return lenientPayload(xml).materialize();
     }
 
     /**
@@ -594,6 +681,10 @@ public class MxParseUtils {
                 attrs = " version=\"1.0\"" + attrs;
             }
             String fixed = "<?xml" + attrs + "?>";
+            if (fixed.equals(declMatcher.group())) {
+                // declaration is already fine: return the same instance to avoid a payload-sized copy
+                return xml;
+            }
             return declMatcher.replaceFirst(Matcher.quoteReplacement(fixed));
         }
         return xml;
@@ -779,13 +870,21 @@ public class MxParseUtils {
     public static Optional<String> findByTags(final String xml, String... tags) {
         Objects.requireNonNull(xml, "XML to parse must not be null");
         Validate.notBlank(xml, "XML to parse must not be a blank string");
+        return findByTags(new StringReader(MxParseUtils.makeXmlLenient(xml)), tags);
+    }
+
+    /**
+     * Implementation of {@link #findByTags(String, String...)} streaming from a reader, so lenient payload views
+     * can be scanned without materializing a normalized copy.
+     */
+    private static Optional<String> findByTags(final java.io.Reader source, String... tags) {
         Objects.requireNonNull(tags, "tags to find must not be null");
 
         final XMLInputFactory xif = SafeXmlUtils.inputFactory();
         int tagsIndex = 0;
         XMLStreamReader reader = null;
         try {
-            reader = xif.createXMLStreamReader(new StringReader(MxParseUtils.makeXmlLenient(xml)));
+            reader = xif.createXMLStreamReader(source);
             while (reader.hasNext()) {
                 int event = reader.next();
                 if (XMLStreamConstants.START_ELEMENT == event) {

@@ -84,34 +84,35 @@ public class MxReadImpl implements MxRead {
         Objects.requireNonNull(xml, "XML to parse must not be null");
         Validate.notBlank(xml, "XML to parse must not be a blank string");
 
-        // normalized here so that all entry points funnelling into this method (generated Mx*.parse and the
-        // MxRead interface) get the same lenient payload support
-        return parseNormalized(targetClass, MxParseUtils.normalizeLenientPayload(xml), classes, params);
+        // the lenient view is built here so that all entry points funnelling into this method (generated
+        // Mx*.parse and the MxRead interface) get the same lenient payload support
+        return parseNormalized(targetClass, MxParseUtils.lenientPayload(xml), classes, params);
     }
 
     /**
-     * Parse implementation for content already normalized with {@link MxParseUtils#normalizeLenientPayload(String)},
-     * so that outer entry points normalizing upfront do not pay for a redundant markup scan.
+     * Parse implementation over an already built lenient payload view, so that outer entry points normalizing
+     * upfront do not pay for a redundant markup scan. The parsers stream the payload readers, so a synthetic
+     * wrapper for sibling AppHdr and Document roots is never materialized into a payload copy.
      */
     static AbstractMX parseNormalized(
             final Class<? extends AbstractMX> targetClass,
-            final String normalizedXml,
+            final LenientPayload payload,
             final Class<?>[] classes,
             final MxReadParams params) {
         Objects.requireNonNull(targetClass, "target class to parse must not be null");
-        Objects.requireNonNull(normalizedXml, "XML to parse must not be null");
+        Objects.requireNonNull(payload, "XML to parse must not be null");
         Objects.requireNonNull(classes, "object model classes array must not be null");
         Objects.requireNonNull(params, "The unmarshalling params cannot be null");
 
         try {
             SAXSource documentSource =
-                    MxParseUtils.createFilteredSAXSource(normalizedXml, AbstractMX.DOCUMENT_LOCALNAME);
+                    MxParseUtils.createFilteredSAXSource(payload.reader(), AbstractMX.DOCUMENT_LOCALNAME);
             final AbstractMX parsedDocument =
                     (AbstractMX) MxParseUtils.parseSAXSource(documentSource, targetClass, classes, params);
 
             Optional<AbstractMX> mx = Optional.ofNullable(parsedDocument);
 
-            Optional<AppHdr> appHdr = AppHdrParser.parseNormalized(normalizedXml, params);
+            Optional<AppHdr> appHdr = AppHdrParser.parseNormalized(payload, params);
 
             if (mx.isPresent() && appHdr.isPresent()) {
                 mx.get().setAppHdr(appHdr.get());
@@ -157,14 +158,14 @@ public class MxReadImpl implements MxRead {
         Validate.notBlank(xml, "XML to parse must not be a blank string");
         Objects.requireNonNull(params, "unmarshalling params cannot be null");
 
-        // normalized before the type detection so that payloads with sibling AppHdr and Document roots, or with
-        // undeclared namespace prefixes, can be identified from the Document namespace
-        final String normalizedXml = MxParseUtils.normalizeLenientPayload(xml);
+        // the lenient view is built before the type detection so that payloads with sibling AppHdr and Document
+        // roots, or with undeclared namespace prefixes, can be identified from the Document namespace
+        final LenientPayload payload = MxParseUtils.lenientPayload(xml);
 
         MxId resolvedId = id;
 
         if (id == null) {
-            Optional<MxId> detectedIdentifier = MxParseUtils.identifyMessage(normalizedXml);
+            Optional<MxId> detectedIdentifier = MxParseUtils.identifyMessage(payload);
             if (detectedIdentifier.isPresent()) {
                 resolvedId = detectedIdentifier.get();
             } else {
@@ -183,7 +184,7 @@ public class MxReadImpl implements MxRead {
             fqn = "com.prowidesoftware.swift.model.mx" + subPackage + ".Mx" + resolvedId.camelized();
             Class<? extends AbstractMX> clazz = (Class<? extends AbstractMX>) Class.forName(fqn);
             java.lang.reflect.Field _classes = clazz.getDeclaredField("_classes");
-            mx = parseNormalized(clazz, normalizedXml, (Class[]) _classes.get(null), params);
+            mx = parseNormalized(clazz, payload, (Class[]) _classes.get(null), params);
         } catch (ClassNotFoundException e) {
             if (params.verbose) {
                 log.log(Level.SEVERE, "Cannot find class " + fqn + " to parse the XML", e);
