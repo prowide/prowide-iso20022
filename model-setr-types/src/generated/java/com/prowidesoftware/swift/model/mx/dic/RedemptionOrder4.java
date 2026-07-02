@@ -4,11 +4,11 @@ package com.prowidesoftware.swift.model.mx.dic;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -121,8 +121,8 @@ public class RedemptionOrder4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the ordrTp property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the ordrTp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -136,12 +136,10 @@ public class RedemptionOrder4 {
      * {@link FundOrderType1 }
      * 
      * 
-     * @return
-     *     The value of the ordrTp property.
      */
     public List<FundOrderType1> getOrdrTp() {
         if (ordrTp == null) {
-            ordrTp = new ArrayList<>();
+            ordrTp = new ArrayList<FundOrderType1>();
         }
         return this.ordrTp;
     }
@@ -377,8 +375,8 @@ public class RedemptionOrder4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the chrgDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the chrgDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -392,12 +390,10 @@ public class RedemptionOrder4 {
      * {@link Charge8 }
      * 
      * 
-     * @return
-     *     The value of the chrgDtls property.
      */
     public List<Charge8> getChrgDtls() {
         if (chrgDtls == null) {
-            chrgDtls = new ArrayList<>();
+            chrgDtls = new ArrayList<Charge8>();
         }
         return this.chrgDtls;
     }
@@ -408,8 +404,8 @@ public class RedemptionOrder4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the comssnDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the comssnDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -423,12 +419,10 @@ public class RedemptionOrder4 {
      * {@link Commission6 }
      * 
      * 
-     * @return
-     *     The value of the comssnDtls property.
      */
     public List<Commission6> getComssnDtls() {
         if (comssnDtls == null) {
-            comssnDtls = new ArrayList<>();
+            comssnDtls = new ArrayList<Commission6>();
         }
         return this.comssnDtls;
     }
@@ -439,8 +433,8 @@ public class RedemptionOrder4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the taxDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the taxDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -454,12 +448,10 @@ public class RedemptionOrder4 {
      * {@link Tax6 }
      * 
      * 
-     * @return
-     *     The value of the taxDtls property.
      */
     public List<Tax6> getTaxDtls() {
         if (taxDtls == null) {
-            taxDtls = new ArrayList<>();
+            taxDtls = new ArrayList<Tax6>();
         }
         return this.taxDtls;
     }

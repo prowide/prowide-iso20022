@@ -2,16 +2,16 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -56,7 +56,7 @@ public class RecurringTransaction2 {
     @XmlElement(name = "FrstPmtDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate frstPmtDt;
+    protected XMLGregorianCalendar frstPmtDt;
     @XmlElement(name = "TtlAmt")
     protected CurrencyAndAmount ttlAmt;
     @XmlElement(name = "FrstAmt")
@@ -70,8 +70,8 @@ public class RecurringTransaction2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the instlmtPlan property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the instlmtPlan property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -85,12 +85,10 @@ public class RecurringTransaction2 {
      * {@link InstalmentPlan1Code }
      * 
      * 
-     * @return
-     *     The value of the instlmtPlan property.
      */
     public List<InstalmentPlan1Code> getInstlmtPlan() {
         if (instlmtPlan == null) {
-            instlmtPlan = new ArrayList<>();
+            instlmtPlan = new ArrayList<InstalmentPlan1Code>();
         }
         return this.instlmtPlan;
     }
@@ -228,7 +226,7 @@ public class RecurringTransaction2 {
      *     {@link String }
      *     
      */
-    public LocalDate getFrstPmtDt() {
+    public XMLGregorianCalendar getFrstPmtDt() {
         return frstPmtDt;
     }
 
@@ -240,7 +238,7 @@ public class RecurringTransaction2 {
      *     {@link String }
      *     
      */
-    public RecurringTransaction2 setFrstPmtDt(LocalDate value) {
+    public RecurringTransaction2 setFrstPmtDt(XMLGregorianCalendar value) {
         this.frstPmtDt = value;
         return this;
     }

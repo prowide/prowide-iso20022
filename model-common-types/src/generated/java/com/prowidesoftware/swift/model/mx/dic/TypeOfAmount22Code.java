@@ -1,27 +1,28 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for TypeOfAmount22Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="TypeOfAmount22Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="ACTL"/>
- *     <enumeration value="DFLT"/>
- *     <enumeration value="DPST"/>
- *     <enumeration value="ESTM"/>
- *     <enumeration value="MAXI"/>
- *     <enumeration value="PRXY"/>
- *     <enumeration value="RESD"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="TypeOfAmount22Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ACTL"/&gt;
+ *     &lt;enumeration value="DFLT"/&gt;
+ *     &lt;enumeration value="DPST"/&gt;
+ *     &lt;enumeration value="ESTM"/&gt;
+ *     &lt;enumeration value="MAXI"/&gt;
+ *     &lt;enumeration value="PRXY"/&gt;
+ *     &lt;enumeration value="RESD"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "TypeOfAmount22Code")

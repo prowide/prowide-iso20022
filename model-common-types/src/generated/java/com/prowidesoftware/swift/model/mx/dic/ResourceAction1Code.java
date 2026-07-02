@@ -1,26 +1,27 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for ResourceAction1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="ResourceAction1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="PAUS"/>
- *     <enumeration value="STAS"/>
- *     <enumeration value="LOOP"/>
- *     <enumeration value="RESU"/>
- *     <enumeration value="DVOL"/>
- *     <enumeration value="STOS"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="ResourceAction1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="PAUS"/&gt;
+ *     &lt;enumeration value="STAS"/&gt;
+ *     &lt;enumeration value="LOOP"/&gt;
+ *     &lt;enumeration value="RESU"/&gt;
+ *     &lt;enumeration value="DVOL"/&gt;
+ *     &lt;enumeration value="STOS"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "ResourceAction1Code")

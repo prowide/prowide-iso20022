@@ -1,33 +1,34 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlEnumValue;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlEnumValue;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for Algorithm19Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="Algorithm19Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="ERS2"/>
- *     <enumeration value="ERS1"/>
- *     <enumeration value="RPSS"/>
- *     <enumeration value="ECC5"/>
- *     <enumeration value="ECC1"/>
- *     <enumeration value="ECC4"/>
- *     <enumeration value="ECC2"/>
- *     <enumeration value="ECC3"/>
- *     <enumeration value="ERS3"/>
- *     <enumeration value="ECP2"/>
- *     <enumeration value="ECP3"/>
- *     <enumeration value="ECP5"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="Algorithm19Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ERS2"/&gt;
+ *     &lt;enumeration value="ERS1"/&gt;
+ *     &lt;enumeration value="RPSS"/&gt;
+ *     &lt;enumeration value="ECC5"/&gt;
+ *     &lt;enumeration value="ECC1"/&gt;
+ *     &lt;enumeration value="ECC4"/&gt;
+ *     &lt;enumeration value="ECC2"/&gt;
+ *     &lt;enumeration value="ECC3"/&gt;
+ *     &lt;enumeration value="ERS3"/&gt;
+ *     &lt;enumeration value="ECP2"/&gt;
+ *     &lt;enumeration value="ECP3"/&gt;
+ *     &lt;enumeration value="ECP5"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "Algorithm19Code")

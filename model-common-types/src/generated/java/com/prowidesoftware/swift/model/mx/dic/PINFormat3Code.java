@@ -1,27 +1,28 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlEnumValue;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlEnumValue;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for PINFormat3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="PINFormat3Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="ISO0"/>
- *     <enumeration value="ISO1"/>
- *     <enumeration value="ISO2"/>
- *     <enumeration value="ISO3"/>
- *     <enumeration value="ISO4"/>
- *     <enumeration value="ISO5"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="PINFormat3Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ISO0"/&gt;
+ *     &lt;enumeration value="ISO1"/&gt;
+ *     &lt;enumeration value="ISO2"/&gt;
+ *     &lt;enumeration value="ISO3"/&gt;
+ *     &lt;enumeration value="ISO4"/&gt;
+ *     &lt;enumeration value="ISO5"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "PINFormat3Code")

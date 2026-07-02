@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -46,8 +46,8 @@ public class CCPMemberRequirementsReportV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the intraDayRqrmntAmt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the intraDayRqrmntAmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -61,12 +61,10 @@ public class CCPMemberRequirementsReportV01 {
      * {@link IntraDayRequirement1 }
      * 
      * 
-     * @return
-     *     The value of the intraDayRqrmntAmt property.
      */
     public List<IntraDayRequirement1> getIntraDayRqrmntAmt() {
         if (intraDayRqrmntAmt == null) {
-            intraDayRqrmntAmt = new ArrayList<>();
+            intraDayRqrmntAmt = new ArrayList<IntraDayRequirement1>();
         }
         return this.intraDayRqrmntAmt;
     }
@@ -77,8 +75,8 @@ public class CCPMemberRequirementsReportV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the intraDayMrgnCall property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the intraDayMrgnCall property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -92,12 +90,10 @@ public class CCPMemberRequirementsReportV01 {
      * {@link IntraDayMarginCall1 }
      * 
      * 
-     * @return
-     *     The value of the intraDayMrgnCall property.
      */
     public List<IntraDayMarginCall1> getIntraDayMrgnCall() {
         if (intraDayMrgnCall == null) {
-            intraDayMrgnCall = new ArrayList<>();
+            intraDayMrgnCall = new ArrayList<IntraDayMarginCall1>();
         }
         return this.intraDayMrgnCall;
     }
@@ -108,8 +104,8 @@ public class CCPMemberRequirementsReportV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the endOfDayRqrmnt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the endOfDayRqrmnt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -123,12 +119,10 @@ public class CCPMemberRequirementsReportV01 {
      * {@link EndOfDayRequirement2 }
      * 
      * 
-     * @return
-     *     The value of the endOfDayRqrmnt property.
      */
     public List<EndOfDayRequirement2> getEndOfDayRqrmnt() {
         if (endOfDayRqrmnt == null) {
-            endOfDayRqrmnt = new ArrayList<>();
+            endOfDayRqrmnt = new ArrayList<EndOfDayRequirement2>();
         }
         return this.endOfDayRqrmnt;
     }
@@ -139,8 +133,8 @@ public class CCPMemberRequirementsReportV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the dfltFndRqrmnt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the dfltFndRqrmnt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -154,12 +148,10 @@ public class CCPMemberRequirementsReportV01 {
      * {@link DefaultFundRequirement1 }
      * 
      * 
-     * @return
-     *     The value of the dfltFndRqrmnt property.
      */
     public List<DefaultFundRequirement1> getDfltFndRqrmnt() {
         if (dfltFndRqrmnt == null) {
-            dfltFndRqrmnt = new ArrayList<>();
+            dfltFndRqrmnt = new ArrayList<DefaultFundRequirement1>();
         }
         return this.dfltFndRqrmnt;
     }
@@ -170,8 +162,8 @@ public class CCPMemberRequirementsReportV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the splmtryData property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -185,12 +177,10 @@ public class CCPMemberRequirementsReportV01 {
      * {@link SupplementaryData1 }
      * 
      * 
-     * @return
-     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<>();
+            splmtryData = new ArrayList<SupplementaryData1>();
         }
         return this.splmtryData;
     }

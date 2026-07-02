@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxAuth01100101
 
     @XmlElement(name = "RgltryTxRptCxlStsV01", required = true)
     protected RegulatoryTransactionReportCancellationStatusV01 rgltryTxRptCxlStsV01;
-    public static final transient String BUSINESS_PROCESS = "auth";
-    public static final transient int FUNCTIONALITY = 11;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 1;
+    public final static transient String BUSINESS_PROCESS = "auth";
+    public final static transient int FUNCTIONALITY = 11;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {DocumentIdentification8 .class, GenericIdentification1 .class, MxAuth01100101 .class, PartyIdentification23Choice.class, RegulatoryTransactionReportCancellationStatusV01 .class, RejectedCancellationStatusReason1Choice.class, RejectedCancellationStatusReason1Code.class, ReportStatusAndReason2 .class, Status2Code.class, TradeTransactionStatusAndReason2 .class };
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:auth.011.001.01";
+    public final static transient Class[] _classes = new Class[] {DocumentIdentification8 .class, GenericIdentification1 .class, MxAuth01100101 .class, PartyIdentification23Choice.class, RegulatoryTransactionReportCancellationStatusV01 .class, RejectedCancellationStatusReason1Choice.class, RejectedCancellationStatusReason1Code.class, ReportStatusAndReason2 .class, Status2Code.class, TradeTransactionStatusAndReason2 .class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:auth.011.001.01";
 
     public MxAuth01100101() {
         super();
@@ -86,6 +86,21 @@ public class MxAuth01100101
     public MxAuth01100101 setRgltryTxRptCxlStsV01(RegulatoryTransactionReportCancellationStatusV01 value) {
         this.rgltryTxRptCxlStsV01 = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxAuth01100101
      * @return
      *     a new instance of MxAuth01100101
      */
-    public static final MxAuth01100101 fromJson(String json) {
+    public final static MxAuth01100101 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxAuth01100101 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

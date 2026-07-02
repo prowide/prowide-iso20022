@@ -1,32 +1,33 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for FailureReason3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="FailureReason3Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="CDCL"/>
- *     <enumeration value="CUCL"/>
- *     <enumeration value="MALF"/>
- *     <enumeration value="FDCL"/>
- *     <enumeration value="NDCL"/>
- *     <enumeration value="PART"/>
- *     <enumeration value="SFRD"/>
- *     <enumeration value="TIMO"/>
- *     <enumeration value="LATE"/>
- *     <enumeration value="UCMP"/>
- *     <enumeration value="USND"/>
- *     <enumeration value="SECU"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="FailureReason3Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="CDCL"/&gt;
+ *     &lt;enumeration value="CUCL"/&gt;
+ *     &lt;enumeration value="MALF"/&gt;
+ *     &lt;enumeration value="FDCL"/&gt;
+ *     &lt;enumeration value="NDCL"/&gt;
+ *     &lt;enumeration value="PART"/&gt;
+ *     &lt;enumeration value="SFRD"/&gt;
+ *     &lt;enumeration value="TIMO"/&gt;
+ *     &lt;enumeration value="LATE"/&gt;
+ *     &lt;enumeration value="UCMP"/&gt;
+ *     &lt;enumeration value="USND"/&gt;
+ *     &lt;enumeration value="SECU"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "FailureReason3Code")

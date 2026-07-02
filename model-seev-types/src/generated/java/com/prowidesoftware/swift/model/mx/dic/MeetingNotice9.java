@@ -4,11 +4,11 @@ package com.prowidesoftware.swift.model.mx.dic;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -253,8 +253,8 @@ public class MeetingNotice9 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the prtcptn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the prtcptn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -268,12 +268,10 @@ public class MeetingNotice9 {
      * {@link ParticipationMethod2 }
      * 
      * 
-     * @return
-     *     The value of the prtcptn property.
      */
     public List<ParticipationMethod2> getPrtcptn() {
         if (prtcptn == null) {
-            prtcptn = new ArrayList<>();
+            prtcptn = new ArrayList<ParticipationMethod2>();
         }
         return this.prtcptn;
     }
@@ -309,8 +307,8 @@ public class MeetingNotice9 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the addtlDcmnttnURLAdr property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the addtlDcmnttnURLAdr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -324,12 +322,10 @@ public class MeetingNotice9 {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the addtlDcmnttnURLAdr property.
      */
     public List<String> getAddtlDcmnttnURLAdr() {
         if (addtlDcmnttnURLAdr == null) {
-            addtlDcmnttnURLAdr = new ArrayList<>();
+            addtlDcmnttnURLAdr = new ArrayList<String>();
         }
         return this.addtlDcmnttnURLAdr;
     }
@@ -365,8 +361,8 @@ public class MeetingNotice9 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the addtlPrcdrDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the addtlPrcdrDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -380,12 +376,10 @@ public class MeetingNotice9 {
      * {@link AdditionalRights4 }
      * 
      * 
-     * @return
-     *     The value of the addtlPrcdrDtls property.
      */
     public List<AdditionalRights4> getAddtlPrcdrDtls() {
         if (addtlPrcdrDtls == null) {
-            addtlPrcdrDtls = new ArrayList<>();
+            addtlPrcdrDtls = new ArrayList<AdditionalRights4>();
         }
         return this.addtlPrcdrDtls;
     }
@@ -496,8 +490,8 @@ public class MeetingNotice9 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the ctctPrsnDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the ctctPrsnDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -511,12 +505,10 @@ public class MeetingNotice9 {
      * {@link MeetingContactPerson3 }
      * 
      * 
-     * @return
-     *     The value of the ctctPrsnDtls property.
      */
     public List<MeetingContactPerson3> getCtctPrsnDtls() {
         if (ctctPrsnDtls == null) {
-            ctctPrsnDtls = new ArrayList<>();
+            ctctPrsnDtls = new ArrayList<MeetingContactPerson3>();
         }
         return this.ctctPrsnDtls;
     }

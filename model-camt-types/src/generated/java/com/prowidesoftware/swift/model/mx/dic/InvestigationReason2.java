@@ -4,10 +4,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -178,8 +178,8 @@ public class InvestigationReason2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the nclsdFile property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the nclsdFile property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -193,12 +193,10 @@ public class InvestigationReason2 {
      * {@link Document12 }
      * 
      * 
-     * @return
-     *     The value of the nclsdFile property.
      */
     public List<Document12> getNclsdFile() {
         if (nclsdFile == null) {
-            nclsdFile = new ArrayList<>();
+            nclsdFile = new ArrayList<Document12>();
         }
         return this.nclsdFile;
     }
@@ -209,8 +207,8 @@ public class InvestigationReason2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the rltdFileData property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the rltdFileData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -224,12 +222,10 @@ public class InvestigationReason2 {
      * {@link FileData1 }
      * 
      * 
-     * @return
-     *     The value of the rltdFileData property.
      */
     public List<FileData1> getRltdFileData() {
         if (rltdFileData == null) {
-            rltdFileData = new ArrayList<>();
+            rltdFileData = new ArrayList<FileData1>();
         }
         return this.rltdFileData;
     }

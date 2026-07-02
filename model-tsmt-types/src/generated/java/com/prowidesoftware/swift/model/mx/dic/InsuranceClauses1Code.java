@@ -1,31 +1,32 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for InsuranceClauses1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="InsuranceClauses1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="ICCA"/>
- *     <enumeration value="ICCB"/>
- *     <enumeration value="ICCC"/>
- *     <enumeration value="ICAI"/>
- *     <enumeration value="IWCC"/>
- *     <enumeration value="ISCC"/>
- *     <enumeration value="IREC"/>
- *     <enumeration value="ICLC"/>
- *     <enumeration value="ISMC"/>
- *     <enumeration value="CMCC"/>
- *     <enumeration value="IRCE"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="InsuranceClauses1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ICCA"/&gt;
+ *     &lt;enumeration value="ICCB"/&gt;
+ *     &lt;enumeration value="ICCC"/&gt;
+ *     &lt;enumeration value="ICAI"/&gt;
+ *     &lt;enumeration value="IWCC"/&gt;
+ *     &lt;enumeration value="ISCC"/&gt;
+ *     &lt;enumeration value="IREC"/&gt;
+ *     &lt;enumeration value="ICLC"/&gt;
+ *     &lt;enumeration value="ISMC"/&gt;
+ *     &lt;enumeration value="CMCC"/&gt;
+ *     &lt;enumeration value="IRCE"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "InsuranceClauses1Code")

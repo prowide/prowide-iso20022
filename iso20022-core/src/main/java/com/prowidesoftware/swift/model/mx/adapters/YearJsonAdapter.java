@@ -20,22 +20,13 @@ import java.lang.reflect.Type;
 import java.time.Year;
 
 /**
- * Gson {@link JsonSerializer} and {@link JsonDeserializer} for {@link Year}, converting to/from
- * a JSON object with a single {@code year} integer field.
+ * This adapter enables accepting Year time Json format.
  *
  * @since 10.1.0
  */
 public class YearJsonAdapter implements JsonSerializer<Year>, JsonDeserializer<Year> {
     private final Gson gson = new Gson();
 
-    /**
-     * Serializes a {@link Year} to a JSON object with a single {@code year} integer field.
-     *
-     * @param year                     the year to serialize
-     * @param type                     the type of the source object
-     * @param jsonSerializationContext the serialization context
-     * @return a JSON object representing the year
-     */
     @Override
     public JsonElement serialize(Year year, Type type, JsonSerializationContext jsonSerializationContext) {
         YearJsonDTO yearJsonDTO = new YearJsonDTO();
@@ -43,14 +34,6 @@ public class YearJsonAdapter implements JsonSerializer<Year>, JsonDeserializer<Y
         return gson.toJsonTree(yearJsonDTO, YearJsonDTO.class);
     }
 
-    /**
-     * Deserializes a JSON object with a {@code year} integer field into a {@link Year}.
-     *
-     * @param jsonElement                the JSON element to deserialize
-     * @param type                       the type of the desired object
-     * @param jsonDeserializationContext the deserialization context
-     * @return the deserialized {@link Year}
-     */
     @Override
     public Year deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) {
         YearJsonDTO yearJsonDTO = gson.fromJson(jsonElement, YearJsonDTO.class);

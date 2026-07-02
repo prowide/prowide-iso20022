@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -41,11 +41,11 @@ public class MandateOccurrences5 {
     @XmlElement(name = "FrstColltnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate frstColltnDt;
+    protected XMLGregorianCalendar frstColltnDt;
     @XmlElement(name = "FnlColltnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate fnlColltnDt;
+    protected XMLGregorianCalendar fnlColltnDt;
 
     /**
      * Gets the value of the seqTp property.
@@ -130,7 +130,7 @@ public class MandateOccurrences5 {
      *     {@link String }
      *     
      */
-    public LocalDate getFrstColltnDt() {
+    public XMLGregorianCalendar getFrstColltnDt() {
         return frstColltnDt;
     }
 
@@ -142,7 +142,7 @@ public class MandateOccurrences5 {
      *     {@link String }
      *     
      */
-    public MandateOccurrences5 setFrstColltnDt(LocalDate value) {
+    public MandateOccurrences5 setFrstColltnDt(XMLGregorianCalendar value) {
         this.frstColltnDt = value;
         return this;
     }
@@ -155,7 +155,7 @@ public class MandateOccurrences5 {
      *     {@link String }
      *     
      */
-    public LocalDate getFnlColltnDt() {
+    public XMLGregorianCalendar getFnlColltnDt() {
         return fnlColltnDt;
     }
 
@@ -167,7 +167,7 @@ public class MandateOccurrences5 {
      *     {@link String }
      *     
      */
-    public MandateOccurrences5 setFnlColltnDt(LocalDate value) {
+    public MandateOccurrences5 setFnlColltnDt(XMLGregorianCalendar value) {
         this.fnlColltnDt = value;
         return this;
     }

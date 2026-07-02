@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -53,7 +53,7 @@ public class Organisation16 {
     @XmlElement(name = "RegnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate regnDt;
+    protected XMLGregorianCalendar regnDt;
     @XmlElement(name = "TaxId")
     protected List<TaxIdentification2> taxId;
     @XmlElement(name = "NtlRegnNb")
@@ -200,7 +200,7 @@ public class Organisation16 {
      *     {@link String }
      *     
      */
-    public LocalDate getRegnDt() {
+    public XMLGregorianCalendar getRegnDt() {
         return regnDt;
     }
 
@@ -212,7 +212,7 @@ public class Organisation16 {
      *     {@link String }
      *     
      */
-    public Organisation16 setRegnDt(LocalDate value) {
+    public Organisation16 setRegnDt(XMLGregorianCalendar value) {
         this.regnDt = value;
         return this;
     }
@@ -223,8 +223,8 @@ public class Organisation16 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the taxId property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the taxId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -238,12 +238,10 @@ public class Organisation16 {
      * {@link TaxIdentification2 }
      * 
      * 
-     * @return
-     *     The value of the taxId property.
      */
     public List<TaxIdentification2> getTaxId() {
         if (taxId == null) {
-            taxId = new ArrayList<>();
+            taxId = new ArrayList<TaxIdentification2>();
         }
         return this.taxId;
     }
@@ -279,8 +277,8 @@ public class Organisation16 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the pstlAdr property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the pstlAdr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -294,12 +292,10 @@ public class Organisation16 {
      * {@link PostalAddress3 }
      * 
      * 
-     * @return
-     *     The value of the pstlAdr property.
      */
     public List<PostalAddress3> getPstlAdr() {
         if (pstlAdr == null) {
-            pstlAdr = new ArrayList<>();
+            pstlAdr = new ArrayList<PostalAddress3>();
         }
         return this.pstlAdr;
     }

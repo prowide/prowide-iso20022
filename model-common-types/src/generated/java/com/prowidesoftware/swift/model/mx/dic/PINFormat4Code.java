@@ -1,38 +1,39 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlEnumValue;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlEnumValue;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for PINFormat4Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="PINFormat4Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="ANSI"/>
- *     <enumeration value="BNCM"/>
- *     <enumeration value="BKSY"/>
- *     <enumeration value="DBLD"/>
- *     <enumeration value="DBLC"/>
- *     <enumeration value="ECI2"/>
- *     <enumeration value="ECI3"/>
- *     <enumeration value="EMVS"/>
- *     <enumeration value="IBM3"/>
- *     <enumeration value="ISO0"/>
- *     <enumeration value="ISO1"/>
- *     <enumeration value="ISO2"/>
- *     <enumeration value="ISO3"/>
- *     <enumeration value="ISO4"/>
- *     <enumeration value="ISO5"/>
- *     <enumeration value="VIS2"/>
- *     <enumeration value="VIS3"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="PINFormat4Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ANSI"/&gt;
+ *     &lt;enumeration value="BNCM"/&gt;
+ *     &lt;enumeration value="BKSY"/&gt;
+ *     &lt;enumeration value="DBLD"/&gt;
+ *     &lt;enumeration value="DBLC"/&gt;
+ *     &lt;enumeration value="ECI2"/&gt;
+ *     &lt;enumeration value="ECI3"/&gt;
+ *     &lt;enumeration value="EMVS"/&gt;
+ *     &lt;enumeration value="IBM3"/&gt;
+ *     &lt;enumeration value="ISO0"/&gt;
+ *     &lt;enumeration value="ISO1"/&gt;
+ *     &lt;enumeration value="ISO2"/&gt;
+ *     &lt;enumeration value="ISO3"/&gt;
+ *     &lt;enumeration value="ISO4"/&gt;
+ *     &lt;enumeration value="ISO5"/&gt;
+ *     &lt;enumeration value="VIS2"/&gt;
+ *     &lt;enumeration value="VIS3"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "PINFormat4Code")

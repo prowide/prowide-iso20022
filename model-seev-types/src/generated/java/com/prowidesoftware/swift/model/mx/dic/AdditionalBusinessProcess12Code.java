@@ -1,32 +1,33 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for AdditionalBusinessProcess12Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="AdditionalBusinessProcess12Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="CLFT"/>
- *     <enumeration value="CLAI"/>
- *     <enumeration value="CLNT"/>
- *     <enumeration value="CLPT"/>
- *     <enumeration value="TAXR"/>
- *     <enumeration value="CONS"/>
- *     <enumeration value="FPRE"/>
- *     <enumeration value="INCP"/>
- *     <enumeration value="NPLE"/>
- *     <enumeration value="PPUT"/>
- *     <enumeration value="PPRE"/>
- *     <enumeration value="SCHM"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="AdditionalBusinessProcess12Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="CLFT"/&gt;
+ *     &lt;enumeration value="CLAI"/&gt;
+ *     &lt;enumeration value="CLNT"/&gt;
+ *     &lt;enumeration value="CLPT"/&gt;
+ *     &lt;enumeration value="TAXR"/&gt;
+ *     &lt;enumeration value="CONS"/&gt;
+ *     &lt;enumeration value="FPRE"/&gt;
+ *     &lt;enumeration value="INCP"/&gt;
+ *     &lt;enumeration value="NPLE"/&gt;
+ *     &lt;enumeration value="PPUT"/&gt;
+ *     &lt;enumeration value="PPRE"/&gt;
+ *     &lt;enumeration value="SCHM"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "AdditionalBusinessProcess12Code")

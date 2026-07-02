@@ -2,16 +2,15 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.OffsetDateTime;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -72,7 +71,7 @@ public class SecuritiesFinancing12 {
     @XmlElement(name = "RateChngDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime rateChngDt;
+    protected XMLGregorianCalendar rateChngDt;
     @XmlElement(name = "RateTp")
     protected RateType35Choice rateTp;
     @XmlElement(name = "Rvaltn")
@@ -147,7 +146,7 @@ public class SecuritiesFinancing12 {
     @XmlElement(name = "MinDtForCallBck", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate minDtForCallBck;
+    protected XMLGregorianCalendar minDtForCallBck;
     @XmlElement(name = "RollOver")
     protected Boolean rollOver;
     @XmlElement(name = "PrdcPmt")
@@ -163,7 +162,7 @@ public class SecuritiesFinancing12 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getRateChngDt() {
+    public XMLGregorianCalendar getRateChngDt() {
         return rateChngDt;
     }
 
@@ -175,7 +174,7 @@ public class SecuritiesFinancing12 {
      *     {@link String }
      *     
      */
-    public SecuritiesFinancing12 setRateChngDt(OffsetDateTime value) {
+    public SecuritiesFinancing12 setRateChngDt(XMLGregorianCalendar value) {
         this.rateChngDt = value;
         return this;
     }
@@ -1063,7 +1062,7 @@ public class SecuritiesFinancing12 {
      *     {@link String }
      *     
      */
-    public LocalDate getMinDtForCallBck() {
+    public XMLGregorianCalendar getMinDtForCallBck() {
         return minDtForCallBck;
     }
 
@@ -1075,7 +1074,7 @@ public class SecuritiesFinancing12 {
      *     {@link String }
      *     
      */
-    public SecuritiesFinancing12 setMinDtForCallBck(LocalDate value) {
+    public SecuritiesFinancing12 setMinDtForCallBck(XMLGregorianCalendar value) {
         this.minDtForCallBck = value;
         return this;
     }

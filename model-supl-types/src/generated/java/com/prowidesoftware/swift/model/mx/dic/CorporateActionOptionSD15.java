@@ -4,11 +4,11 @@ package com.prowidesoftware.swift.model.mx.dic;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -415,8 +415,8 @@ public class CorporateActionOptionSD15 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the taxCtgy property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the taxCtgy property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -430,12 +430,10 @@ public class CorporateActionOptionSD15 {
      * {@link TaxCategory1 }
      * 
      * 
-     * @return
-     *     The value of the taxCtgy property.
      */
     public List<TaxCategory1> getTaxCtgy() {
         if (taxCtgy == null) {
-            taxCtgy = new ArrayList<>();
+            taxCtgy = new ArrayList<TaxCategory1>();
         }
         return this.taxCtgy;
     }
@@ -496,8 +494,8 @@ public class CorporateActionOptionSD15 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the optnConds property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the optnConds property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -511,12 +509,10 @@ public class CorporateActionOptionSD15 {
      * {@link OptionConditions1 }
      * 
      * 
-     * @return
-     *     The value of the optnConds property.
      */
     public List<OptionConditions1> getOptnConds() {
         if (optnConds == null) {
-            optnConds = new ArrayList<>();
+            optnConds = new ArrayList<OptionConditions1>();
         }
         return this.optnConds;
     }

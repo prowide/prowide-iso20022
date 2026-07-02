@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -57,7 +57,7 @@ public class NotificationItem6 {
     @XmlElement(name = "XpctdValDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate xpctdValDt;
+    protected XMLGregorianCalendar xpctdValDt;
     @XmlElement(name = "Dbtr")
     protected Party12Choice dbtr;
     @XmlElement(name = "DbtrAgt")
@@ -254,7 +254,7 @@ public class NotificationItem6 {
      *     {@link String }
      *     
      */
-    public LocalDate getXpctdValDt() {
+    public XMLGregorianCalendar getXpctdValDt() {
         return xpctdValDt;
     }
 
@@ -266,7 +266,7 @@ public class NotificationItem6 {
      *     {@link String }
      *     
      */
-    public NotificationItem6 setXpctdValDt(LocalDate value) {
+    public NotificationItem6 setXpctdValDt(XMLGregorianCalendar value) {
         this.xpctdValDt = value;
         return this;
     }

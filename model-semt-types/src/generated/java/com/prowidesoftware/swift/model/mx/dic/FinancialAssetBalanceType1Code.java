@@ -1,80 +1,81 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for FinancialAssetBalanceType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="FinancialAssetBalanceType1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="ACRU"/>
- *     <enumeration value="OINT"/>
- *     <enumeration value="SCAS"/>
- *     <enumeration value="FXTR"/>
- *     <enumeration value="CASH"/>
- *     <enumeration value="TIPS"/>
- *     <enumeration value="EQUI"/>
- *     <enumeration value="CSTK"/>
- *     <enumeration value="PREF"/>
- *     <enumeration value="MFUN"/>
- *     <enumeration value="XFUN"/>
- *     <enumeration value="RGHT"/>
- *     <enumeration value="WARR"/>
- *     <enumeration value="BOND"/>
- *     <enumeration value="CONV"/>
- *     <enumeration value="CBND"/>
- *     <enumeration value="GBND"/>
- *     <enumeration value="OPTN"/>
- *     <enumeration value="FUTR"/>
- *     <enumeration value="SWAP"/>
- *     <enumeration value="CUEX"/>
- *     <enumeration value="FOIV"/>
- *     <enumeration value="GOLD"/>
- *     <enumeration value="PROP"/>
- *     <enumeration value="BAAP"/>
- *     <enumeration value="SYBL"/>
- *     <enumeration value="CBOO"/>
- *     <enumeration value="CEOD"/>
- *     <enumeration value="CDEO"/>
- *     <enumeration value="CLOB"/>
- *     <enumeration value="CMOO"/>
- *     <enumeration value="COPR"/>
- *     <enumeration value="CPPE"/>
- *     <enumeration value="DISC"/>
- *     <enumeration value="FEAD"/>
- *     <enumeration value="FEHA"/>
- *     <enumeration value="FEHL"/>
- *     <enumeration value="FNMA"/>
- *     <enumeration value="FLNO"/>
- *     <enumeration value="GNMA"/>
- *     <enumeration value="TAAB"/>
- *     <enumeration value="IETM"/>
- *     <enumeration value="MPRP"/>
- *     <enumeration value="MBON"/>
- *     <enumeration value="SLMA"/>
- *     <enumeration value="STIF"/>
- *     <enumeration value="TSTP"/>
- *     <enumeration value="TIDE"/>
- *     <enumeration value="UNBW"/>
- *     <enumeration value="UNBO"/>
- *     <enumeration value="VRDN"/>
- *     <enumeration value="ZOOO"/>
- *     <enumeration value="FWBO"/>
- *     <enumeration value="FRAG"/>
- *     <enumeration value="REPO"/>
- *     <enumeration value="XREP"/>
- *     <enumeration value="TREP"/>
- *     <enumeration value="RXRP"/>
- *     <enumeration value="FXFD"/>
- *     <enumeration value="FXSP"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="FinancialAssetBalanceType1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ACRU"/&gt;
+ *     &lt;enumeration value="OINT"/&gt;
+ *     &lt;enumeration value="SCAS"/&gt;
+ *     &lt;enumeration value="FXTR"/&gt;
+ *     &lt;enumeration value="CASH"/&gt;
+ *     &lt;enumeration value="TIPS"/&gt;
+ *     &lt;enumeration value="EQUI"/&gt;
+ *     &lt;enumeration value="CSTK"/&gt;
+ *     &lt;enumeration value="PREF"/&gt;
+ *     &lt;enumeration value="MFUN"/&gt;
+ *     &lt;enumeration value="XFUN"/&gt;
+ *     &lt;enumeration value="RGHT"/&gt;
+ *     &lt;enumeration value="WARR"/&gt;
+ *     &lt;enumeration value="BOND"/&gt;
+ *     &lt;enumeration value="CONV"/&gt;
+ *     &lt;enumeration value="CBND"/&gt;
+ *     &lt;enumeration value="GBND"/&gt;
+ *     &lt;enumeration value="OPTN"/&gt;
+ *     &lt;enumeration value="FUTR"/&gt;
+ *     &lt;enumeration value="SWAP"/&gt;
+ *     &lt;enumeration value="CUEX"/&gt;
+ *     &lt;enumeration value="FOIV"/&gt;
+ *     &lt;enumeration value="GOLD"/&gt;
+ *     &lt;enumeration value="PROP"/&gt;
+ *     &lt;enumeration value="BAAP"/&gt;
+ *     &lt;enumeration value="SYBL"/&gt;
+ *     &lt;enumeration value="CBOO"/&gt;
+ *     &lt;enumeration value="CEOD"/&gt;
+ *     &lt;enumeration value="CDEO"/&gt;
+ *     &lt;enumeration value="CLOB"/&gt;
+ *     &lt;enumeration value="CMOO"/&gt;
+ *     &lt;enumeration value="COPR"/&gt;
+ *     &lt;enumeration value="CPPE"/&gt;
+ *     &lt;enumeration value="DISC"/&gt;
+ *     &lt;enumeration value="FEAD"/&gt;
+ *     &lt;enumeration value="FEHA"/&gt;
+ *     &lt;enumeration value="FEHL"/&gt;
+ *     &lt;enumeration value="FNMA"/&gt;
+ *     &lt;enumeration value="FLNO"/&gt;
+ *     &lt;enumeration value="GNMA"/&gt;
+ *     &lt;enumeration value="TAAB"/&gt;
+ *     &lt;enumeration value="IETM"/&gt;
+ *     &lt;enumeration value="MPRP"/&gt;
+ *     &lt;enumeration value="MBON"/&gt;
+ *     &lt;enumeration value="SLMA"/&gt;
+ *     &lt;enumeration value="STIF"/&gt;
+ *     &lt;enumeration value="TSTP"/&gt;
+ *     &lt;enumeration value="TIDE"/&gt;
+ *     &lt;enumeration value="UNBW"/&gt;
+ *     &lt;enumeration value="UNBO"/&gt;
+ *     &lt;enumeration value="VRDN"/&gt;
+ *     &lt;enumeration value="ZOOO"/&gt;
+ *     &lt;enumeration value="FWBO"/&gt;
+ *     &lt;enumeration value="FRAG"/&gt;
+ *     &lt;enumeration value="REPO"/&gt;
+ *     &lt;enumeration value="XREP"/&gt;
+ *     &lt;enumeration value="TREP"/&gt;
+ *     &lt;enumeration value="RXRP"/&gt;
+ *     &lt;enumeration value="FXFD"/&gt;
+ *     &lt;enumeration value="FXSP"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "FinancialAssetBalanceType1Code")

@@ -4,11 +4,11 @@ package com.prowidesoftware.swift.model.mx.dic;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -57,8 +57,8 @@ public class PointOfInteractionCapabilities5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the cardRdData property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the cardRdData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -72,12 +72,10 @@ public class PointOfInteractionCapabilities5 {
      * {@link CardDataReading4Code }
      * 
      * 
-     * @return
-     *     The value of the cardRdData property.
      */
     public List<CardDataReading4Code> getCardRdData() {
         if (cardRdData == null) {
-            cardRdData = new ArrayList<>();
+            cardRdData = new ArrayList<CardDataReading4Code>();
         }
         return this.cardRdData;
     }
@@ -88,8 +86,8 @@ public class PointOfInteractionCapabilities5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the cardWrtData property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the cardWrtData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -103,12 +101,10 @@ public class PointOfInteractionCapabilities5 {
      * {@link CardDataReading4Code }
      * 
      * 
-     * @return
-     *     The value of the cardWrtData property.
      */
     public List<CardDataReading4Code> getCardWrtData() {
         if (cardWrtData == null) {
-            cardWrtData = new ArrayList<>();
+            cardWrtData = new ArrayList<CardDataReading4Code>();
         }
         return this.cardWrtData;
     }
@@ -119,8 +115,8 @@ public class PointOfInteractionCapabilities5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the authntcn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the authntcn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -134,12 +130,10 @@ public class PointOfInteractionCapabilities5 {
      * {@link CardholderVerificationCapability3Code }
      * 
      * 
-     * @return
-     *     The value of the authntcn property.
      */
     public List<CardholderVerificationCapability3Code> getAuthntcn() {
         if (authntcn == null) {
-            authntcn = new ArrayList<>();
+            authntcn = new ArrayList<CardholderVerificationCapability3Code>();
         }
         return this.authntcn;
     }

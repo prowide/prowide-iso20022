@@ -1,45 +1,46 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for AuthenticationMethod8Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="AuthenticationMethod8Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="TOKA"/>
- *     <enumeration value="ADDB"/>
- *     <enumeration value="BYPS"/>
- *     <enumeration value="BIOM"/>
- *     <enumeration value="CDHI"/>
- *     <enumeration value="CRYP"/>
- *     <enumeration value="CSCV"/>
- *     <enumeration value="MANU"/>
- *     <enumeration value="MERC"/>
- *     <enumeration value="MOBL"/>
- *     <enumeration value="FPIN"/>
- *     <enumeration value="NPIN"/>
- *     <enumeration value="OTHR"/>
- *     <enumeration value="PPSG"/>
- *     <enumeration value="PSVE"/>
- *     <enumeration value="PSWD"/>
- *     <enumeration value="TOKP"/>
- *     <enumeration value="SCRT"/>
- *     <enumeration value="SCNL"/>
- *     <enumeration value="CSEC"/>
- *     <enumeration value="SNCT"/>
- *     <enumeration value="ADDS"/>
- *     <enumeration value="CPSG"/>
- *     <enumeration value="TOKN"/>
- *     <enumeration value="UKNW"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="AuthenticationMethod8Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="TOKA"/&gt;
+ *     &lt;enumeration value="ADDB"/&gt;
+ *     &lt;enumeration value="BYPS"/&gt;
+ *     &lt;enumeration value="BIOM"/&gt;
+ *     &lt;enumeration value="CDHI"/&gt;
+ *     &lt;enumeration value="CRYP"/&gt;
+ *     &lt;enumeration value="CSCV"/&gt;
+ *     &lt;enumeration value="MANU"/&gt;
+ *     &lt;enumeration value="MERC"/&gt;
+ *     &lt;enumeration value="MOBL"/&gt;
+ *     &lt;enumeration value="FPIN"/&gt;
+ *     &lt;enumeration value="NPIN"/&gt;
+ *     &lt;enumeration value="OTHR"/&gt;
+ *     &lt;enumeration value="PPSG"/&gt;
+ *     &lt;enumeration value="PSVE"/&gt;
+ *     &lt;enumeration value="PSWD"/&gt;
+ *     &lt;enumeration value="TOKP"/&gt;
+ *     &lt;enumeration value="SCRT"/&gt;
+ *     &lt;enumeration value="SCNL"/&gt;
+ *     &lt;enumeration value="CSEC"/&gt;
+ *     &lt;enumeration value="SNCT"/&gt;
+ *     &lt;enumeration value="ADDS"/&gt;
+ *     &lt;enumeration value="CPSG"/&gt;
+ *     &lt;enumeration value="TOKN"/&gt;
+ *     &lt;enumeration value="UKNW"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "AuthenticationMethod8Code")

@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -36,7 +36,7 @@ public class GDPRData1 {
     @XmlElement(name = "CnsntDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate cnsntDt;
+    protected XMLGregorianCalendar cnsntDt;
 
     /**
      * Gets the value of the cnsntTp property.
@@ -88,7 +88,7 @@ public class GDPRData1 {
      *     {@link String }
      *     
      */
-    public LocalDate getCnsntDt() {
+    public XMLGregorianCalendar getCnsntDt() {
         return cnsntDt;
     }
 
@@ -100,7 +100,7 @@ public class GDPRData1 {
      *     {@link String }
      *     
      */
-    public GDPRData1 setCnsntDt(LocalDate value) {
+    public GDPRData1 setCnsntDt(XMLGregorianCalendar value) {
         this.cnsntDt = value;
         return this;
     }

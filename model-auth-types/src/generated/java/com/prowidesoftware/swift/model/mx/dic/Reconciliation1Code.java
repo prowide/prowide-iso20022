@@ -1,27 +1,28 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for Reconciliation1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="Reconciliation1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="DSMA"/>
- *     <enumeration value="DSNM"/>
- *     <enumeration value="NORE"/>
- *     <enumeration value="SSMA"/>
- *     <enumeration value="SSPA"/>
- *     <enumeration value="SSNE"/>
- *     <enumeration value="SSUN"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="Reconciliation1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="DSMA"/&gt;
+ *     &lt;enumeration value="DSNM"/&gt;
+ *     &lt;enumeration value="NORE"/&gt;
+ *     &lt;enumeration value="SSMA"/&gt;
+ *     &lt;enumeration value="SSPA"/&gt;
+ *     &lt;enumeration value="SSNE"/&gt;
+ *     &lt;enumeration value="SSUN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "Reconciliation1Code")

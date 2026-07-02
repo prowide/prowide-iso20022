@@ -3,11 +3,11 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -242,8 +242,8 @@ public class CardAccount18 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the bal property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the bal property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -257,12 +257,10 @@ public class CardAccount18 {
      * {@link AmountAndDirection111 }
      * 
      * 
-     * @return
-     *     The value of the bal property.
      */
     public List<AmountAndDirection111> getBal() {
         if (bal == null) {
-            bal = new ArrayList<>();
+            bal = new ArrayList<AmountAndDirection111>();
         }
         return this.bal;
     }
@@ -323,8 +321,8 @@ public class CardAccount18 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the allwdSvc property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the allwdSvc property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -338,12 +336,10 @@ public class CardAccount18 {
      * {@link ATMService29 }
      * 
      * 
-     * @return
-     *     The value of the allwdSvc property.
      */
     public List<ATMService29> getAllwdSvc() {
         if (allwdSvc == null) {
-            allwdSvc = new ArrayList<>();
+            allwdSvc = new ArrayList<ATMService29>();
         }
         return this.allwdSvc;
     }

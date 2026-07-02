@@ -2,16 +2,15 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.OffsetDateTime;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -45,7 +44,7 @@ public class GroupHeader96 {
     @XmlElement(name = "CreDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime creDtTm;
+    protected XMLGregorianCalendar creDtTm;
     @XmlElement(name = "BtchBookg")
     protected Boolean btchBookg;
     @XmlElement(name = "NbOfTxs", required = true)
@@ -57,7 +56,7 @@ public class GroupHeader96 {
     @XmlElement(name = "IntrBkSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate intrBkSttlmDt;
+    protected XMLGregorianCalendar intrBkSttlmDt;
     @XmlElement(name = "SttlmInf", required = true)
     protected SettlementInstruction11 sttlmInf;
     @XmlElement(name = "PmtTpInf")
@@ -100,7 +99,7 @@ public class GroupHeader96 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getCreDtTm() {
+    public XMLGregorianCalendar getCreDtTm() {
         return creDtTm;
     }
 
@@ -112,7 +111,7 @@ public class GroupHeader96 {
      *     {@link String }
      *     
      */
-    public GroupHeader96 setCreDtTm(OffsetDateTime value) {
+    public GroupHeader96 setCreDtTm(XMLGregorianCalendar value) {
         this.creDtTm = value;
         return this;
     }
@@ -225,7 +224,7 @@ public class GroupHeader96 {
      *     {@link String }
      *     
      */
-    public LocalDate getIntrBkSttlmDt() {
+    public XMLGregorianCalendar getIntrBkSttlmDt() {
         return intrBkSttlmDt;
     }
 
@@ -237,7 +236,7 @@ public class GroupHeader96 {
      *     {@link String }
      *     
      */
-    public GroupHeader96 setIntrBkSttlmDt(LocalDate value) {
+    public GroupHeader96 setIntrBkSttlmDt(XMLGregorianCalendar value) {
         this.intrBkSttlmDt = value;
         return this;
     }

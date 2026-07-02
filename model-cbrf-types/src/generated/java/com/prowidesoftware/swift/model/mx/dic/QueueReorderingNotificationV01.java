@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.OffsetTime;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -39,7 +39,7 @@ public class QueueReorderingNotificationV01 {
     @XmlElement(name = "OprTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected OffsetTime oprTm;
+    protected XMLGregorianCalendar oprTm;
     @XmlElement(name = "RordrdMsgId", required = true)
     protected String rordrdMsgId;
     @XmlElement(name = "RtrTxCpy", required = true)
@@ -80,7 +80,7 @@ public class QueueReorderingNotificationV01 {
      *     {@link String }
      *     
      */
-    public OffsetTime getOprTm() {
+    public XMLGregorianCalendar getOprTm() {
         return oprTm;
     }
 
@@ -92,7 +92,7 @@ public class QueueReorderingNotificationV01 {
      *     {@link String }
      *     
      */
-    public QueueReorderingNotificationV01 setOprTm(OffsetTime value) {
+    public QueueReorderingNotificationV01 setOprTm(XMLGregorianCalendar value) {
         this.oprTm = value;
         return this;
     }
@@ -128,8 +128,8 @@ public class QueueReorderingNotificationV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the rtrTxCpy property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the rtrTxCpy property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -143,12 +143,10 @@ public class QueueReorderingNotificationV01 {
      * {@link ReturnTransactionCopy1 }
      * 
      * 
-     * @return
-     *     The value of the rtrTxCpy property.
      */
     public List<ReturnTransactionCopy1> getRtrTxCpy() {
         if (rtrTxCpy == null) {
-            rtrTxCpy = new ArrayList<>();
+            rtrTxCpy = new ArrayList<ReturnTransactionCopy1>();
         }
         return this.rtrTxCpy;
     }
@@ -159,8 +157,8 @@ public class QueueReorderingNotificationV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the splmtryData property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -174,12 +172,10 @@ public class QueueReorderingNotificationV01 {
      * {@link SupplementaryData1 }
      * 
      * 
-     * @return
-     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<>();
+            splmtryData = new ArrayList<SupplementaryData1>();
         }
         return this.splmtryData;
     }

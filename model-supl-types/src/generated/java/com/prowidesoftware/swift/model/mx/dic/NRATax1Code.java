@@ -1,67 +1,68 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlEnumValue;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlEnumValue;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for NRATax1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="NRATax1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="T011"/>
- *     <enumeration value="T012"/>
- *     <enumeration value="T013"/>
- *     <enumeration value="T014"/>
- *     <enumeration value="T015"/>
- *     <enumeration value="T019"/>
- *     <enumeration value="T021"/>
- *     <enumeration value="T022"/>
- *     <enumeration value="T023"/>
- *     <enumeration value="T025"/>
- *     <enumeration value="T026"/>
- *     <enumeration value="T027"/>
- *     <enumeration value="T029"/>
- *     <enumeration value="T302"/>
- *     <enumeration value="T041"/>
- *     <enumeration value="T042"/>
- *     <enumeration value="T043"/>
- *     <enumeration value="T044"/>
- *     <enumeration value="T045"/>
- *     <enumeration value="T046"/>
- *     <enumeration value="T047"/>
- *     <enumeration value="T048"/>
- *     <enumeration value="T049"/>
- *     <enumeration value="T050"/>
- *     <enumeration value="T051"/>
- *     <enumeration value="T052"/>
- *     <enumeration value="T053"/>
- *     <enumeration value="T054"/>
- *     <enumeration value="T055"/>
- *     <enumeration value="T061"/>
- *     <enumeration value="T062"/>
- *     <enumeration value="T063"/>
- *     <enumeration value="T064"/>
- *     <enumeration value="T065"/>
- *     <enumeration value="T070"/>
- *     <enumeration value="T071"/>
- *     <enumeration value="T072"/>
- *     <enumeration value="T073"/>
- *     <enumeration value="T074"/>
- *     <enumeration value="T075"/>
- *     <enumeration value="T076"/>
- *     <enumeration value="T024"/>
- *     <enumeration value="T077"/>
- *     <enumeration value="T078"/>
- *     <enumeration value="T079"/>
- *     <enumeration value="T080"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="NRATax1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="T011"/&gt;
+ *     &lt;enumeration value="T012"/&gt;
+ *     &lt;enumeration value="T013"/&gt;
+ *     &lt;enumeration value="T014"/&gt;
+ *     &lt;enumeration value="T015"/&gt;
+ *     &lt;enumeration value="T019"/&gt;
+ *     &lt;enumeration value="T021"/&gt;
+ *     &lt;enumeration value="T022"/&gt;
+ *     &lt;enumeration value="T023"/&gt;
+ *     &lt;enumeration value="T025"/&gt;
+ *     &lt;enumeration value="T026"/&gt;
+ *     &lt;enumeration value="T027"/&gt;
+ *     &lt;enumeration value="T029"/&gt;
+ *     &lt;enumeration value="T302"/&gt;
+ *     &lt;enumeration value="T041"/&gt;
+ *     &lt;enumeration value="T042"/&gt;
+ *     &lt;enumeration value="T043"/&gt;
+ *     &lt;enumeration value="T044"/&gt;
+ *     &lt;enumeration value="T045"/&gt;
+ *     &lt;enumeration value="T046"/&gt;
+ *     &lt;enumeration value="T047"/&gt;
+ *     &lt;enumeration value="T048"/&gt;
+ *     &lt;enumeration value="T049"/&gt;
+ *     &lt;enumeration value="T050"/&gt;
+ *     &lt;enumeration value="T051"/&gt;
+ *     &lt;enumeration value="T052"/&gt;
+ *     &lt;enumeration value="T053"/&gt;
+ *     &lt;enumeration value="T054"/&gt;
+ *     &lt;enumeration value="T055"/&gt;
+ *     &lt;enumeration value="T061"/&gt;
+ *     &lt;enumeration value="T062"/&gt;
+ *     &lt;enumeration value="T063"/&gt;
+ *     &lt;enumeration value="T064"/&gt;
+ *     &lt;enumeration value="T065"/&gt;
+ *     &lt;enumeration value="T070"/&gt;
+ *     &lt;enumeration value="T071"/&gt;
+ *     &lt;enumeration value="T072"/&gt;
+ *     &lt;enumeration value="T073"/&gt;
+ *     &lt;enumeration value="T074"/&gt;
+ *     &lt;enumeration value="T075"/&gt;
+ *     &lt;enumeration value="T076"/&gt;
+ *     &lt;enumeration value="T024"/&gt;
+ *     &lt;enumeration value="T077"/&gt;
+ *     &lt;enumeration value="T078"/&gt;
+ *     &lt;enumeration value="T079"/&gt;
+ *     &lt;enumeration value="T080"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "NRATax1Code")

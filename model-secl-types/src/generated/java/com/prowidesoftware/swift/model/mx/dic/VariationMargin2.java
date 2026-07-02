@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -49,8 +49,8 @@ public class VariationMargin2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the ttlVartnMrgn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the ttlVartnMrgn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -64,12 +64,10 @@ public class VariationMargin2 {
      * {@link TotalVariationMargin1 }
      * 
      * 
-     * @return
-     *     The value of the ttlVartnMrgn property.
      */
     public List<TotalVariationMargin1> getTtlVartnMrgn() {
         if (ttlVartnMrgn == null) {
-            ttlVartnMrgn = new ArrayList<>();
+            ttlVartnMrgn = new ArrayList<TotalVariationMargin1>();
         }
         return this.ttlVartnMrgn;
     }
@@ -105,8 +103,8 @@ public class VariationMargin2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the mrkToMktNetd property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the mrkToMktNetd property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -120,12 +118,10 @@ public class VariationMargin2 {
      * {@link Amount2 }
      * 
      * 
-     * @return
-     *     The value of the mrkToMktNetd property.
      */
     public List<Amount2> getMrkToMktNetd() {
         if (mrkToMktNetd == null) {
-            mrkToMktNetd = new ArrayList<>();
+            mrkToMktNetd = new ArrayList<Amount2>();
         }
         return this.mrkToMktNetd;
     }
@@ -136,8 +132,8 @@ public class VariationMargin2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the mrkToMktGrss property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the mrkToMktGrss property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -151,12 +147,10 @@ public class VariationMargin2 {
      * {@link Amount2 }
      * 
      * 
-     * @return
-     *     The value of the mrkToMktGrss property.
      */
     public List<Amount2> getMrkToMktGrss() {
         if (mrkToMktGrss == null) {
-            mrkToMktGrss = new ArrayList<>();
+            mrkToMktGrss = new ArrayList<Amount2>();
         }
         return this.mrkToMktGrss;
     }
@@ -167,8 +161,8 @@ public class VariationMargin2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the mrkToMktFls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the mrkToMktFls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -182,12 +176,10 @@ public class VariationMargin2 {
      * {@link Amount2 }
      * 
      * 
-     * @return
-     *     The value of the mrkToMktFls property.
      */
     public List<Amount2> getMrkToMktFls() {
         if (mrkToMktFls == null) {
-            mrkToMktFls = new ArrayList<>();
+            mrkToMktFls = new ArrayList<Amount2>();
         }
         return this.mrkToMktFls;
     }

@@ -1,28 +1,29 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for Appearance1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="Appearance1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="DELI"/>
- *     <enumeration value="NDEL"/>
- *     <enumeration value="LIMI"/>
- *     <enumeration value="BENT"/>
- *     <enumeration value="DFBE"/>
- *     <enumeration value="DLBE"/>
- *     <enumeration value="TMPG"/>
- *     <enumeration value="GLOB"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="Appearance1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="DELI"/&gt;
+ *     &lt;enumeration value="NDEL"/&gt;
+ *     &lt;enumeration value="LIMI"/&gt;
+ *     &lt;enumeration value="BENT"/&gt;
+ *     &lt;enumeration value="DFBE"/&gt;
+ *     &lt;enumeration value="DLBE"/&gt;
+ *     &lt;enumeration value="TMPG"/&gt;
+ *     &lt;enumeration value="GLOB"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "Appearance1Code")

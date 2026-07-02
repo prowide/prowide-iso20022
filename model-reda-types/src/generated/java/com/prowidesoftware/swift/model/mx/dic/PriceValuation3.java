@@ -3,11 +3,11 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -207,8 +207,8 @@ public class PriceValuation3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the ttlNAV property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the ttlNAV property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -222,12 +222,10 @@ public class PriceValuation3 {
      * {@link ActiveOrHistoricCurrencyAndAmount }
      * 
      * 
-     * @return
-     *     The value of the ttlNAV property.
      */
     public List<ActiveOrHistoricCurrencyAndAmount> getTtlNAV() {
         if (ttlNAV == null) {
-            ttlNAV = new ArrayList<>();
+            ttlNAV = new ArrayList<ActiveOrHistoricCurrencyAndAmount>();
         }
         return this.ttlNAV;
     }
@@ -397,8 +395,8 @@ public class PriceValuation3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the pricDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the pricDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -412,12 +410,10 @@ public class PriceValuation3 {
      * {@link UnitPrice15 }
      * 
      * 
-     * @return
-     *     The value of the pricDtls property.
      */
     public List<UnitPrice15> getPricDtls() {
         if (pricDtls == null) {
-            pricDtls = new ArrayList<>();
+            pricDtls = new ArrayList<UnitPrice15>();
         }
         return this.pricDtls;
     }
@@ -428,8 +424,8 @@ public class PriceValuation3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the valtnSttstcs property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the valtnSttstcs property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -443,12 +439,10 @@ public class PriceValuation3 {
      * {@link ValuationStatistics3 }
      * 
      * 
-     * @return
-     *     The value of the valtnSttstcs property.
      */
     public List<ValuationStatistics3> getValtnSttstcs() {
         if (valtnSttstcs == null) {
-            valtnSttstcs = new ArrayList<>();
+            valtnSttstcs = new ArrayList<ValuationStatistics3>();
         }
         return this.valtnSttstcs;
     }

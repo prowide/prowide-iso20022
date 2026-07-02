@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -70,8 +70,8 @@ public class MultimodalTransport2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the dprtureAirprt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the dprtureAirprt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -85,12 +85,10 @@ public class MultimodalTransport2 {
      * {@link AirportName1Choice }
      * 
      * 
-     * @return
-     *     The value of the dprtureAirprt property.
      */
     public List<AirportName1Choice> getDprtureAirprt() {
         if (dprtureAirprt == null) {
-            dprtureAirprt = new ArrayList<>();
+            dprtureAirprt = new ArrayList<AirportName1Choice>();
         }
         return this.dprtureAirprt;
     }
@@ -101,8 +99,8 @@ public class MultimodalTransport2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the dstnAirprt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the dstnAirprt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -116,12 +114,10 @@ public class MultimodalTransport2 {
      * {@link AirportName1Choice }
      * 
      * 
-     * @return
-     *     The value of the dstnAirprt property.
      */
     public List<AirportName1Choice> getDstnAirprt() {
         if (dstnAirprt == null) {
-            dstnAirprt = new ArrayList<>();
+            dstnAirprt = new ArrayList<AirportName1Choice>();
         }
         return this.dstnAirprt;
     }
@@ -132,8 +128,8 @@ public class MultimodalTransport2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the airCrrierNm property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the airCrrierNm property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -147,12 +143,10 @@ public class MultimodalTransport2 {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the airCrrierNm property.
      */
     public List<String> getAirCrrierNm() {
         if (airCrrierNm == null) {
-            airCrrierNm = new ArrayList<>();
+            airCrrierNm = new ArrayList<String>();
         }
         return this.airCrrierNm;
     }
@@ -163,8 +157,8 @@ public class MultimodalTransport2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the portOfLoadng property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the portOfLoadng property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -178,12 +172,10 @@ public class MultimodalTransport2 {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the portOfLoadng property.
      */
     public List<String> getPortOfLoadng() {
         if (portOfLoadng == null) {
-            portOfLoadng = new ArrayList<>();
+            portOfLoadng = new ArrayList<String>();
         }
         return this.portOfLoadng;
     }
@@ -194,8 +186,8 @@ public class MultimodalTransport2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the portOfDschrge property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the portOfDschrge property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -209,12 +201,10 @@ public class MultimodalTransport2 {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the portOfDschrge property.
      */
     public List<String> getPortOfDschrge() {
         if (portOfDschrge == null) {
-            portOfDschrge = new ArrayList<>();
+            portOfDschrge = new ArrayList<String>();
         }
         return this.portOfDschrge;
     }
@@ -225,8 +215,8 @@ public class MultimodalTransport2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the vsslNm property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the vsslNm property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -240,12 +230,10 @@ public class MultimodalTransport2 {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the vsslNm property.
      */
     public List<String> getVsslNm() {
         if (vsslNm == null) {
-            vsslNm = new ArrayList<>();
+            vsslNm = new ArrayList<String>();
         }
         return this.vsslNm;
     }
@@ -256,8 +244,8 @@ public class MultimodalTransport2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the plcOfRct property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the plcOfRct property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -271,12 +259,10 @@ public class MultimodalTransport2 {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the plcOfRct property.
      */
     public List<String> getPlcOfRct() {
         if (plcOfRct == null) {
-            plcOfRct = new ArrayList<>();
+            plcOfRct = new ArrayList<String>();
         }
         return this.plcOfRct;
     }
@@ -287,8 +273,8 @@ public class MultimodalTransport2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the plcOfDlvry property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the plcOfDlvry property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -302,12 +288,10 @@ public class MultimodalTransport2 {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the plcOfDlvry property.
      */
     public List<String> getPlcOfDlvry() {
         if (plcOfDlvry == null) {
-            plcOfDlvry = new ArrayList<>();
+            plcOfDlvry = new ArrayList<String>();
         }
         return this.plcOfDlvry;
     }
@@ -318,8 +302,8 @@ public class MultimodalTransport2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the takngInChrg property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the takngInChrg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -333,12 +317,10 @@ public class MultimodalTransport2 {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the takngInChrg property.
      */
     public List<String> getTakngInChrg() {
         if (takngInChrg == null) {
-            takngInChrg = new ArrayList<>();
+            takngInChrg = new ArrayList<String>();
         }
         return this.takngInChrg;
     }
@@ -349,8 +331,8 @@ public class MultimodalTransport2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the plcOfFnlDstn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the plcOfFnlDstn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -364,12 +346,10 @@ public class MultimodalTransport2 {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the plcOfFnlDstn property.
      */
     public List<String> getPlcOfFnlDstn() {
         if (plcOfFnlDstn == null) {
-            plcOfFnlDstn = new ArrayList<>();
+            plcOfFnlDstn = new ArrayList<String>();
         }
         return this.plcOfFnlDstn;
     }
@@ -380,8 +360,8 @@ public class MultimodalTransport2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the trnstLctn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the trnstLctn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -395,12 +375,10 @@ public class MultimodalTransport2 {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the trnstLctn property.
      */
     public List<String> getTrnstLctn() {
         if (trnstLctn == null) {
-            trnstLctn = new ArrayList<>();
+            trnstLctn = new ArrayList<String>();
         }
         return this.trnstLctn;
     }
@@ -411,8 +389,8 @@ public class MultimodalTransport2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the roadCrrierNm property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the roadCrrierNm property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -426,12 +404,10 @@ public class MultimodalTransport2 {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the roadCrrierNm property.
      */
     public List<String> getRoadCrrierNm() {
         if (roadCrrierNm == null) {
-            roadCrrierNm = new ArrayList<>();
+            roadCrrierNm = new ArrayList<String>();
         }
         return this.roadCrrierNm;
     }
@@ -442,8 +418,8 @@ public class MultimodalTransport2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the railCrrierNm property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the railCrrierNm property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -457,12 +433,10 @@ public class MultimodalTransport2 {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the railCrrierNm property.
      */
     public List<String> getRailCrrierNm() {
         if (railCrrierNm == null) {
-            railCrrierNm = new ArrayList<>();
+            railCrrierNm = new ArrayList<String>();
         }
         return this.railCrrierNm;
     }

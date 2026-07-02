@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,7 +33,7 @@ public class CollaterisedData12 {
     @XmlElement(name = "CollValDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate collValDt;
+    protected XMLGregorianCalendar collValDt;
     @XmlElement(name = "AsstTp")
     protected CollateralType21 asstTp;
     @XmlElement(name = "NetXpsrCollstnInd")
@@ -49,7 +49,7 @@ public class CollaterisedData12 {
      *     {@link String }
      *     
      */
-    public LocalDate getCollValDt() {
+    public XMLGregorianCalendar getCollValDt() {
         return collValDt;
     }
 
@@ -61,7 +61,7 @@ public class CollaterisedData12 {
      *     {@link String }
      *     
      */
-    public CollaterisedData12 setCollValDt(LocalDate value) {
+    public CollaterisedData12 setCollValDt(XMLGregorianCalendar value) {
         this.collValDt = value;
         return this;
     }

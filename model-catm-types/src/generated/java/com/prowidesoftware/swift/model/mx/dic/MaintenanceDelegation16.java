@@ -3,11 +3,11 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -65,8 +65,8 @@ public class MaintenanceDelegation16 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the mntncSvc property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the mntncSvc property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -80,12 +80,10 @@ public class MaintenanceDelegation16 {
      * {@link DataSetCategory16Code }
      * 
      * 
-     * @return
-     *     The value of the mntncSvc property.
      */
     public List<DataSetCategory16Code> getMntncSvc() {
         if (mntncSvc == null) {
-            mntncSvc = new ArrayList<>();
+            mntncSvc = new ArrayList<DataSetCategory16Code>();
         }
         return this.mntncSvc;
     }
@@ -171,8 +169,8 @@ public class MaintenanceDelegation16 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the poiSubset property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the poiSubset property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -186,12 +184,10 @@ public class MaintenanceDelegation16 {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the poiSubset property.
      */
     public List<String> getPOISubset() {
         if (poiSubset == null) {
-            poiSubset = new ArrayList<>();
+            poiSubset = new ArrayList<String>();
         }
         return this.poiSubset;
     }
@@ -298,8 +294,8 @@ public class MaintenanceDelegation16 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the poiIdAssoctn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the poiIdAssoctn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -313,12 +309,10 @@ public class MaintenanceDelegation16 {
      * {@link MaintenanceIdentificationAssociation1 }
      * 
      * 
-     * @return
-     *     The value of the poiIdAssoctn property.
      */
     public List<MaintenanceIdentificationAssociation1> getPOIIdAssoctn() {
         if (poiIdAssoctn == null) {
-            poiIdAssoctn = new ArrayList<>();
+            poiIdAssoctn = new ArrayList<MaintenanceIdentificationAssociation1>();
         }
         return this.poiIdAssoctn;
     }

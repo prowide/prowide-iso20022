@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxCatm00700107
 
     @XmlElement(name = "CertMgmtReq", required = true)
     protected CertificateManagementRequestV07 certMgmtReq;
-    public static final transient String BUSINESS_PROCESS = "catm";
-    public static final transient int FUNCTIONALITY = 7;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 7;
+    public final static transient String BUSINESS_PROCESS = "catm";
+    public final static transient int FUNCTIONALITY = 7;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 7;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {Algorithm26Code.class, Algorithm27Code.class, Algorithm28Code.class, Algorithm29Code.class, Algorithm7Code.class, Algorithm8Code.class, AlgorithmIdentification31 .class, AlgorithmIdentification32 .class, AlgorithmIdentification33 .class, AlgorithmIdentification34 .class, AlgorithmIdentification35 .class, AlgorithmIdentification36 .class, AttributeType1Code.class, AttributeType2Code.class, AuthenticatedData10 .class, BytePadding1Code.class, CardPaymentServiceType10Code.class, CertificateIssuer1 .class, CertificateManagementRequest3 .class, CertificateManagementRequestV07 .class, CertificationRequest1 .class, CertificationRequest2 .class, ContentInformationType38 .class, ContentType2Code.class, EncapsulatedContent3 .class, EncryptionFormat2Code.class, GenericIdentification176 .class, GenericIdentification177 .class, GenericInformation1 .class, Geolocation1 .class, GeolocationGeographicCoordinates1 .class, GeolocationUTMCoordinates1 .class, IssuerAndSerialNumber2 .class, KEK9 .class, KEKIdentifier7 .class, KeyTransport10 .class, KeyUsage1Code.class, MxCatm00700107 .class, NetworkParameters7 .class, NetworkParameters9 .class, NetworkType1Code.class, Parameter12 .class, Parameter16 .class, Parameter17 .class, Parameter18 .class, Parameter7 .class, PartyType33Code.class, PointOfInteraction6 .class, PublicRSAKey1 .class, PublicRSAKey2 .class, Recipient13Choice.class, Recipient15Choice.class, RelativeDistinguishedName1 .class, RelativeDistinguishedName2 .class, SignedData9 .class, Signer8 .class, TMSHeader1 .class, Traceability8 .class };
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:catm.007.001.07";
+    public final static transient Class[] _classes = new Class[] {Algorithm26Code.class, Algorithm27Code.class, Algorithm28Code.class, Algorithm29Code.class, Algorithm7Code.class, Algorithm8Code.class, AlgorithmIdentification31 .class, AlgorithmIdentification32 .class, AlgorithmIdentification33 .class, AlgorithmIdentification34 .class, AlgorithmIdentification35 .class, AlgorithmIdentification36 .class, AttributeType1Code.class, AttributeType2Code.class, AuthenticatedData10 .class, BytePadding1Code.class, CardPaymentServiceType10Code.class, CertificateIssuer1 .class, CertificateManagementRequest3 .class, CertificateManagementRequestV07 .class, CertificationRequest1 .class, CertificationRequest2 .class, ContentInformationType38 .class, ContentType2Code.class, EncapsulatedContent3 .class, EncryptionFormat2Code.class, GenericIdentification176 .class, GenericIdentification177 .class, GenericInformation1 .class, Geolocation1 .class, GeolocationGeographicCoordinates1 .class, GeolocationUTMCoordinates1 .class, IssuerAndSerialNumber2 .class, KEK9 .class, KEKIdentifier7 .class, KeyTransport10 .class, KeyUsage1Code.class, MxCatm00700107 .class, NetworkParameters7 .class, NetworkParameters9 .class, NetworkType1Code.class, Parameter12 .class, Parameter16 .class, Parameter17 .class, Parameter18 .class, Parameter7 .class, PartyType33Code.class, PointOfInteraction6 .class, PublicRSAKey1 .class, PublicRSAKey2 .class, Recipient13Choice.class, Recipient15Choice.class, RelativeDistinguishedName1 .class, RelativeDistinguishedName2 .class, SignedData9 .class, Signer8 .class, TMSHeader1 .class, Traceability8 .class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:catm.007.001.07";
 
     public MxCatm00700107() {
         super();
@@ -86,6 +86,21 @@ public class MxCatm00700107
     public MxCatm00700107 setCertMgmtReq(CertificateManagementRequestV07 value) {
         this.certMgmtReq = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxCatm00700107
      * @return
      *     a new instance of MxCatm00700107
      */
-    public static final MxCatm00700107 fromJson(String json) {
+    public final static MxCatm00700107 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxCatm00700107 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

@@ -1,44 +1,45 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for PaymentType3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="PaymentType3Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="CBS"/>
- *     <enumeration value="BCK"/>
- *     <enumeration value="BAL"/>
- *     <enumeration value="CLS"/>
- *     <enumeration value="CTR"/>
- *     <enumeration value="CBH"/>
- *     <enumeration value="CBP"/>
- *     <enumeration value="DPG"/>
- *     <enumeration value="DPN"/>
- *     <enumeration value="EXP"/>
- *     <enumeration value="TCH"/>
- *     <enumeration value="LMT"/>
- *     <enumeration value="LIQ"/>
- *     <enumeration value="DPP"/>
- *     <enumeration value="DPH"/>
- *     <enumeration value="DPS"/>
- *     <enumeration value="STF"/>
- *     <enumeration value="TRP"/>
- *     <enumeration value="TCS"/>
- *     <enumeration value="LOA"/>
- *     <enumeration value="LOR"/>
- *     <enumeration value="TCP"/>
- *     <enumeration value="OND"/>
- *     <enumeration value="MGL"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="PaymentType3Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="CBS"/&gt;
+ *     &lt;enumeration value="BCK"/&gt;
+ *     &lt;enumeration value="BAL"/&gt;
+ *     &lt;enumeration value="CLS"/&gt;
+ *     &lt;enumeration value="CTR"/&gt;
+ *     &lt;enumeration value="CBH"/&gt;
+ *     &lt;enumeration value="CBP"/&gt;
+ *     &lt;enumeration value="DPG"/&gt;
+ *     &lt;enumeration value="DPN"/&gt;
+ *     &lt;enumeration value="EXP"/&gt;
+ *     &lt;enumeration value="TCH"/&gt;
+ *     &lt;enumeration value="LMT"/&gt;
+ *     &lt;enumeration value="LIQ"/&gt;
+ *     &lt;enumeration value="DPP"/&gt;
+ *     &lt;enumeration value="DPH"/&gt;
+ *     &lt;enumeration value="DPS"/&gt;
+ *     &lt;enumeration value="STF"/&gt;
+ *     &lt;enumeration value="TRP"/&gt;
+ *     &lt;enumeration value="TCS"/&gt;
+ *     &lt;enumeration value="LOA"/&gt;
+ *     &lt;enumeration value="LOR"/&gt;
+ *     &lt;enumeration value="TCP"/&gt;
+ *     &lt;enumeration value="OND"/&gt;
+ *     &lt;enumeration value="MGL"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "PaymentType3Code")

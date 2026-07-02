@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -44,7 +44,7 @@ public class TradeSettlement2 {
     @XmlElement(name = "DueDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate dueDt;
+    protected XMLGregorianCalendar dueDt;
     @XmlElement(name = "DuePyblAmt", required = true)
     protected CurrencyAndAmount duePyblAmt;
     @XmlElement(name = "InvcCcyXchg")
@@ -52,7 +52,7 @@ public class TradeSettlement2 {
     @XmlElement(name = "DlvryDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate dlvryDt;
+    protected XMLGregorianCalendar dlvryDt;
     @XmlElement(name = "BllgPrd")
     protected Period2 bllgPrd;
     @XmlElement(name = "TaxTtlAmt", required = true)
@@ -99,7 +99,7 @@ public class TradeSettlement2 {
      *     {@link String }
      *     
      */
-    public LocalDate getDueDt() {
+    public XMLGregorianCalendar getDueDt() {
         return dueDt;
     }
 
@@ -111,7 +111,7 @@ public class TradeSettlement2 {
      *     {@link String }
      *     
      */
-    public TradeSettlement2 setDueDt(LocalDate value) {
+    public TradeSettlement2 setDueDt(XMLGregorianCalendar value) {
         this.dueDt = value;
         return this;
     }
@@ -174,7 +174,7 @@ public class TradeSettlement2 {
      *     {@link String }
      *     
      */
-    public LocalDate getDlvryDt() {
+    public XMLGregorianCalendar getDlvryDt() {
         return dlvryDt;
     }
 
@@ -186,7 +186,7 @@ public class TradeSettlement2 {
      *     {@link String }
      *     
      */
-    public TradeSettlement2 setDlvryDt(LocalDate value) {
+    public TradeSettlement2 setDlvryDt(XMLGregorianCalendar value) {
         this.dlvryDt = value;
         return this;
     }
@@ -297,8 +297,8 @@ public class TradeSettlement2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the subTtlClctdTax property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the subTtlClctdTax property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -312,12 +312,10 @@ public class TradeSettlement2 {
      * {@link SettlementSubTotalCalculatedTax2 }
      * 
      * 
-     * @return
-     *     The value of the subTtlClctdTax property.
      */
     public List<SettlementSubTotalCalculatedTax2> getSubTtlClctdTax() {
         if (subTtlClctdTax == null) {
-            subTtlClctdTax = new ArrayList<>();
+            subTtlClctdTax = new ArrayList<SettlementSubTotalCalculatedTax2>();
         }
         return this.subTtlClctdTax;
     }
@@ -328,8 +326,8 @@ public class TradeSettlement2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the earlyPmts property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the earlyPmts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -343,12 +341,10 @@ public class TradeSettlement2 {
      * {@link EarlyPayment1 }
      * 
      * 
-     * @return
-     *     The value of the earlyPmts property.
      */
     public List<EarlyPayment1> getEarlyPmts() {
         if (earlyPmts == null) {
-            earlyPmts = new ArrayList<>();
+            earlyPmts = new ArrayList<EarlyPayment1>();
         }
         return this.earlyPmts;
     }

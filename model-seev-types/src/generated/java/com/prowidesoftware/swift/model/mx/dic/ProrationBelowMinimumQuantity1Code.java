@@ -1,25 +1,26 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for ProrationBelowMinimumQuantity1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="ProrationBelowMinimumQuantity1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="FULL"/>
- *     <enumeration value="MIEX"/>
- *     <enumeration value="MILT"/>
- *     <enumeration value="REJT"/>
- *     <enumeration value="UKWN"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="ProrationBelowMinimumQuantity1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="FULL"/&gt;
+ *     &lt;enumeration value="MIEX"/&gt;
+ *     &lt;enumeration value="MILT"/&gt;
+ *     &lt;enumeration value="REJT"/&gt;
+ *     &lt;enumeration value="UKWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "ProrationBelowMinimumQuantity1Code")

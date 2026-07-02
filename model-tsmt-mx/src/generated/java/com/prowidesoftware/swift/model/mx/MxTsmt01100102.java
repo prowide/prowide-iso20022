@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxTsmt01100102
 
     @XmlElement(name = "tsmt.011.001.02", required = true)
     protected Tsmt01100102 tsmt01100102;
-    public static final transient String BUSINESS_PROCESS = "tsmt";
-    public static final transient int FUNCTIONALITY = 11;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 2;
+    public final static transient String BUSINESS_PROCESS = "tsmt";
+    public final static transient int FUNCTIONALITY = 11;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 2;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {Action1Code.class, BICIdentification1 .class, BaselineStatus1Code.class, CurrencyAndAmount.class, DocumentIdentification5 .class, DocumentIdentification6 .class, GenericIdentification4 .class, LineItem6 .class, LineItemDetails5 .class, MessageIdentification1 .class, MxTsmt01100102 .class, PartyIdentification9 .class, PendingActivity1 .class, PercentageTolerance1 .class, PostalAddress2 .class, ProductCategory1 .class, ProductCategory1Choice.class, ProductCategory1Code.class, ProductCharacteristics1 .class, ProductCharacteristics1Choice.class, ProductCharacteristics1Code.class, ProductIdentifier2 .class, ProductIdentifier2Choice.class, ProductIdentifier2Code.class, Quantity2 .class, ReportType2 .class, ReportType2Code.class, SimpleIdentificationInformation.class, TransactionStatus1 .class, Tsmt01100102 .class };
-    public static final transient String NAMESPACE = "urn:swift:xsd:tsmt.011.001.02";
+    public final static transient Class[] _classes = new Class[] {Action1Code.class, BICIdentification1 .class, BaselineStatus1Code.class, CurrencyAndAmount.class, DocumentIdentification5 .class, DocumentIdentification6 .class, GenericIdentification4 .class, LineItem6 .class, LineItemDetails5 .class, MessageIdentification1 .class, MxTsmt01100102 .class, PartyIdentification9 .class, PendingActivity1 .class, PercentageTolerance1 .class, PostalAddress2 .class, ProductCategory1 .class, ProductCategory1Choice.class, ProductCategory1Code.class, ProductCharacteristics1 .class, ProductCharacteristics1Choice.class, ProductCharacteristics1Code.class, ProductIdentifier2 .class, ProductIdentifier2Choice.class, ProductIdentifier2Code.class, Quantity2 .class, ReportType2 .class, ReportType2Code.class, SimpleIdentificationInformation.class, TransactionStatus1 .class, Tsmt01100102 .class };
+    public final static transient String NAMESPACE = "urn:swift:xsd:tsmt.011.001.02";
 
     public MxTsmt01100102() {
         super();
@@ -86,6 +86,21 @@ public class MxTsmt01100102
     public MxTsmt01100102 setTsmt01100102(Tsmt01100102 value) {
         this.tsmt01100102 = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxTsmt01100102
      * @return
      *     a new instance of MxTsmt01100102
      */
-    public static final MxTsmt01100102 fromJson(String json) {
+    public final static MxTsmt01100102 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxTsmt01100102 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

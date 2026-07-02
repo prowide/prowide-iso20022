@@ -1,31 +1,32 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for MessageFunction3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="MessageFunction3Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="FAUQ"/>
- *     <enumeration value="CCAQ"/>
- *     <enumeration value="CMPV"/>
- *     <enumeration value="DGNP"/>
- *     <enumeration value="RCLQ"/>
- *     <enumeration value="CCAV"/>
- *     <enumeration value="BTCH"/>
- *     <enumeration value="FRVA"/>
- *     <enumeration value="AUTQ"/>
- *     <enumeration value="FCMV"/>
- *     <enumeration value="RVRA"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="MessageFunction3Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="FAUQ"/&gt;
+ *     &lt;enumeration value="CCAQ"/&gt;
+ *     &lt;enumeration value="CMPV"/&gt;
+ *     &lt;enumeration value="DGNP"/&gt;
+ *     &lt;enumeration value="RCLQ"/&gt;
+ *     &lt;enumeration value="CCAV"/&gt;
+ *     &lt;enumeration value="BTCH"/&gt;
+ *     &lt;enumeration value="FRVA"/&gt;
+ *     &lt;enumeration value="AUTQ"/&gt;
+ *     &lt;enumeration value="FCMV"/&gt;
+ *     &lt;enumeration value="RVRA"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "MessageFunction3Code")

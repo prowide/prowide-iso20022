@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxCamt04200102
 
     @XmlElement(name = "camt.042.001.02", required = true)
     protected Camt04200102 camt04200102;
-    public static final transient String BUSINESS_PROCESS = "camt";
-    public static final transient int FUNCTIONALITY = 42;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 2;
+    public final static transient String BUSINESS_PROCESS = "camt";
+    public final static transient int FUNCTIONALITY = 42;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 2;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {ActiveCurrencyAnd13DecimalAmount.class, ActiveOrHistoricCurrencyAndAmount.class, AdditionalReference3 .class, AddressType2Code.class, AlternateSecurityIdentification1 .class, Camt04200102 .class, CashInForecast1 .class, CashOutForecast1 .class, CashSortingCriterion1 .class, Commission4 .class, CommissionType1 .class, CommissionType5Code.class, DataFormat1Choice.class, DataFormat2Choice.class, DateAndDateTimeChoice.class, DistributionPolicy1Code.class, EstimatedFundCashForecast2 .class, Extension1 .class, FinancialInstrument5 .class, FinancialInstrumentQuantity1 .class, FlowDirectionType1Code.class, ForecastParameter1 .class, FormOfSecurity1Code.class, FundCashInBreakdown1 .class, FundCashOutBreakdown1 .class, GenericIdentification1 .class, GenericIdentification2 .class, InvestmentFundTransactionInType1 .class, InvestmentFundTransactionInType3Code.class, InvestmentFundTransactionOutType1 .class, InvestmentFundTransactionOutType4Code.class, MxCamt04200102 .class, NameAndAddress5 .class, NetCashForecast1 .class, OrderQuantityType1Code.class, OriginalOrderQuantityType1 .class, PartyIdentification2Choice.class, PostalAddress1 .class, ReportParameter2Choice.class, ReportSortedType1Code.class, SecurityIdentification1Choice.class, SortCriteria1Choice.class };
-    public static final transient String NAMESPACE = "urn:swift:xsd:camt.042.001.02";
+    public final static transient Class[] _classes = new Class[] {ActiveCurrencyAnd13DecimalAmount.class, ActiveOrHistoricCurrencyAndAmount.class, AdditionalReference3 .class, AddressType2Code.class, AlternateSecurityIdentification1 .class, Camt04200102 .class, CashInForecast1 .class, CashOutForecast1 .class, CashSortingCriterion1 .class, Commission4 .class, CommissionType1 .class, CommissionType5Code.class, DataFormat1Choice.class, DataFormat2Choice.class, DateAndDateTimeChoice.class, DistributionPolicy1Code.class, EstimatedFundCashForecast2 .class, Extension1 .class, FinancialInstrument5 .class, FinancialInstrumentQuantity1 .class, FlowDirectionType1Code.class, ForecastParameter1 .class, FormOfSecurity1Code.class, FundCashInBreakdown1 .class, FundCashOutBreakdown1 .class, GenericIdentification1 .class, GenericIdentification2 .class, InvestmentFundTransactionInType1 .class, InvestmentFundTransactionInType3Code.class, InvestmentFundTransactionOutType1 .class, InvestmentFundTransactionOutType4Code.class, MxCamt04200102 .class, NameAndAddress5 .class, NetCashForecast1 .class, OrderQuantityType1Code.class, OriginalOrderQuantityType1 .class, PartyIdentification2Choice.class, PostalAddress1 .class, ReportParameter2Choice.class, ReportSortedType1Code.class, SecurityIdentification1Choice.class, SortCriteria1Choice.class };
+    public final static transient String NAMESPACE = "urn:swift:xsd:camt.042.001.02";
 
     public MxCamt04200102() {
         super();
@@ -86,6 +86,21 @@ public class MxCamt04200102
     public MxCamt04200102 setCamt04200102(Camt04200102 value) {
         this.camt04200102 = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxCamt04200102
      * @return
      *     a new instance of MxCamt04200102
      */
-    public static final MxCamt04200102 fromJson(String json) {
+    public final static MxCamt04200102 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxCamt04200102 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

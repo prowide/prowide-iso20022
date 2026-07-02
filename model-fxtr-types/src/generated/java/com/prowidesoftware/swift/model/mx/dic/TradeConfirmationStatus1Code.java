@@ -1,29 +1,30 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for TradeConfirmationStatus1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="TradeConfirmationStatus1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="ALST"/>
- *     <enumeration value="CONF"/>
- *     <enumeration value="DISA"/>
- *     <enumeration value="EMCN"/>
- *     <enumeration value="MISM"/>
- *     <enumeration value="SCCN"/>
- *     <enumeration value="SNCC"/>
- *     <enumeration value="SNCN"/>
- *     <enumeration value="UNCN"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="TradeConfirmationStatus1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ALST"/&gt;
+ *     &lt;enumeration value="CONF"/&gt;
+ *     &lt;enumeration value="DISA"/&gt;
+ *     &lt;enumeration value="EMCN"/&gt;
+ *     &lt;enumeration value="MISM"/&gt;
+ *     &lt;enumeration value="SCCN"/&gt;
+ *     &lt;enumeration value="SNCC"/&gt;
+ *     &lt;enumeration value="SNCN"/&gt;
+ *     &lt;enumeration value="UNCN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "TradeConfirmationStatus1Code")

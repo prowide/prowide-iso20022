@@ -59,7 +59,7 @@ public class MxNode {
     /**
      * Parses the complete message content into an {@link MxNode} tree structure.
      *
-     * <p>Since 10.3.10 the content is read through the lenient view of
+     * <p>Since 9.6.5 the content is read through the lenient view of
      * {@link MxParseUtils#normalizedReader(String)}: file-format payloads with sibling AppHdr and Document root
      * elements are parsed into a tree rooted at a synthetic RequestPayload node instead of failing, without
      * copying the payload. Well-formed single rooted content is parsed as is.
@@ -291,7 +291,6 @@ public class MxNode {
     }
 
     /**
-     * @return the attributes map or null if no attributes have been set
      * @since 7.8
      */
     public Map<String, String> getAttributes() {
@@ -299,7 +298,6 @@ public class MxNode {
     }
 
     /**
-     * @param attributes the attributes map to set
      * @since 7.8
      */
     public void setAttributes(Map<String, String> attributes) {
@@ -308,10 +306,8 @@ public class MxNode {
 
     /**
      * Adds the given attribute to the node.
-     * If an attribute already exists with the same local name, its value is updated.
+     * If an attribute already exist with the same local name, its value is updated.
      *
-     * @param name  the attribute local name
-     * @param value the attribute value
      * @since 7.8
      */
     public void addAttribute(final String name, final String value) {
@@ -323,7 +319,6 @@ public class MxNode {
     }
 
     /**
-     * @param name the attribute local name to look up
      * @return found attribute value or null if not found or node does not contain attributes
      * @since 7.8
      */

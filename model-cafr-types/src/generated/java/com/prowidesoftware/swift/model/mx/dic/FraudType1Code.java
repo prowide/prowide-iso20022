@@ -1,34 +1,35 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for FraudType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="FraudType1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="ACTO"/>
- *     <enumeration value="CWUI"/>
- *     <enumeration value="CRNT"/>
- *     <enumeration value="FRAC"/>
- *     <enumeration value="FRAP"/>
- *     <enumeration value="CWKA"/>
- *     <enumeration value="CRDL"/>
- *     <enumeration value="MISC"/>
- *     <enumeration value="OTHN"/>
- *     <enumeration value="OTHP"/>
- *     <enumeration value="CRDS"/>
- *     <enumeration value="CNPA"/>
- *     <enumeration value="MUFD"/>
- *     <enumeration value="COSN"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="FraudType1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ACTO"/&gt;
+ *     &lt;enumeration value="CWUI"/&gt;
+ *     &lt;enumeration value="CRNT"/&gt;
+ *     &lt;enumeration value="FRAC"/&gt;
+ *     &lt;enumeration value="FRAP"/&gt;
+ *     &lt;enumeration value="CWKA"/&gt;
+ *     &lt;enumeration value="CRDL"/&gt;
+ *     &lt;enumeration value="MISC"/&gt;
+ *     &lt;enumeration value="OTHN"/&gt;
+ *     &lt;enumeration value="OTHP"/&gt;
+ *     &lt;enumeration value="CRDS"/&gt;
+ *     &lt;enumeration value="CNPA"/&gt;
+ *     &lt;enumeration value="MUFD"/&gt;
+ *     &lt;enumeration value="COSN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "FraudType1Code")

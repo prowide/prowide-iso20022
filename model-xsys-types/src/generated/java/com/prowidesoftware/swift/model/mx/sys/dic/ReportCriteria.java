@@ -1,10 +1,11 @@
 
 package com.prowidesoftware.swift.model.mx.sys.dic;
 
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -19,22 +20,55 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ReportCriteria", propOrder = {
-    "rptOptn"
+    "qNmPttrn",
+    "rptOptn",
+    "qFrst"
 })
 public class ReportCriteria {
 
-    @XmlElement(name = "RptOptn", required = true)
-    protected String rptOptn;
+    @XmlElement(name = "QNmPttrn")
+    protected String qNmPttrn;
+    @XmlElement(name = "RptOptn")
+    @XmlSchemaType(name = "string")
+    protected ReportOptionCode rptOptn;
+    @XmlElement(name = "QFrst")
+    @XmlSchemaType(name = "string")
+    protected SwBooleanIndicator qFrst;
 
     /**
-     * Gets the value of the rptOptn property.
+     * Gets the value of the qNmPttrn property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getRptOptn() {
+    public String getQNmPttrn() {
+        return qNmPttrn;
+    }
+
+    /**
+     * Sets the value of the qNmPttrn property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public ReportCriteria setQNmPttrn(String value) {
+        this.qNmPttrn = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the rptOptn property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link ReportOptionCode }
+     *     
+     */
+    public ReportOptionCode getRptOptn() {
         return rptOptn;
     }
 
@@ -43,11 +77,36 @@ public class ReportCriteria {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link ReportOptionCode }
      *     
      */
-    public ReportCriteria setRptOptn(String value) {
+    public ReportCriteria setRptOptn(ReportOptionCode value) {
         this.rptOptn = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the qFrst property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link SwBooleanIndicator }
+     *     
+     */
+    public SwBooleanIndicator getQFrst() {
+        return qFrst;
+    }
+
+    /**
+     * Sets the value of the qFrst property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link SwBooleanIndicator }
+     *     
+     */
+    public ReportCriteria setQFrst(SwBooleanIndicator value) {
+        this.qFrst = value;
         return this;
     }
 

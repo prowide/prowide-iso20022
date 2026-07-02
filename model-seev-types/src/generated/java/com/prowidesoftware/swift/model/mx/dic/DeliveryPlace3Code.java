@@ -1,25 +1,26 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for DeliveryPlace3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="DeliveryPlace3Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="EMAL"/>
- *     <enumeration value="EMPL"/>
- *     <enumeration value="INDI"/>
- *     <enumeration value="ENTR"/>
- *     <enumeration value="OADR"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="DeliveryPlace3Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="EMAL"/&gt;
+ *     &lt;enumeration value="EMPL"/&gt;
+ *     &lt;enumeration value="INDI"/&gt;
+ *     &lt;enumeration value="ENTR"/&gt;
+ *     &lt;enumeration value="OADR"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "DeliveryPlace3Code")

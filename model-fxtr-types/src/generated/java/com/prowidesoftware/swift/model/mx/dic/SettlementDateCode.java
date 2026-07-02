@@ -1,40 +1,41 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for SettlementDateCode.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="SettlementDateCode">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="REGU"/>
- *     <enumeration value="CASH"/>
- *     <enumeration value="NXTD"/>
- *     <enumeration value="TONE"/>
- *     <enumeration value="TTWO"/>
- *     <enumeration value="TTRE"/>
- *     <enumeration value="TFOR"/>
- *     <enumeration value="TFIV"/>
- *     <enumeration value="SELL"/>
- *     <enumeration value="FUTU"/>
- *     <enumeration value="ASAP"/>
- *     <enumeration value="ENDC"/>
- *     <enumeration value="WHIF"/>
- *     <enumeration value="WDIS"/>
- *     <enumeration value="WHID"/>
- *     <enumeration value="TBAT"/>
- *     <enumeration value="MONT"/>
- *     <enumeration value="CLEA"/>
- *     <enumeration value="SAVE"/>
- *     <enumeration value="WISS"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="SettlementDateCode"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="REGU"/&gt;
+ *     &lt;enumeration value="CASH"/&gt;
+ *     &lt;enumeration value="NXTD"/&gt;
+ *     &lt;enumeration value="TONE"/&gt;
+ *     &lt;enumeration value="TTWO"/&gt;
+ *     &lt;enumeration value="TTRE"/&gt;
+ *     &lt;enumeration value="TFOR"/&gt;
+ *     &lt;enumeration value="TFIV"/&gt;
+ *     &lt;enumeration value="SELL"/&gt;
+ *     &lt;enumeration value="FUTU"/&gt;
+ *     &lt;enumeration value="ASAP"/&gt;
+ *     &lt;enumeration value="ENDC"/&gt;
+ *     &lt;enumeration value="WHIF"/&gt;
+ *     &lt;enumeration value="WDIS"/&gt;
+ *     &lt;enumeration value="WHID"/&gt;
+ *     &lt;enumeration value="TBAT"/&gt;
+ *     &lt;enumeration value="MONT"/&gt;
+ *     &lt;enumeration value="CLEA"/&gt;
+ *     &lt;enumeration value="SAVE"/&gt;
+ *     &lt;enumeration value="WISS"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "SettlementDateCode")

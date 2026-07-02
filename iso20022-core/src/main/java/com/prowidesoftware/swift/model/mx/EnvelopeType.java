@@ -51,29 +51,14 @@ public enum EnvelopeType {
         this.prefix = prefix;
     }
 
-    /**
-     * Returns the local name of the root element for this envelope type.
-     *
-     * @return the root element local name, e.g. {@code "Envelope"} or {@code "BizMsgEnvlp"}
-     */
     public String rootElement() {
         return rootElement;
     }
 
-    /**
-     * Returns the namespace URI for this envelope type, or {@code null} for {@link #CUSTOM}.
-     *
-     * @return the namespace URI, or {@code null} if not applicable
-     */
     public String namespace() {
         return namespace;
     }
 
-    /**
-     * Returns the namespace prefix for this envelope type, or {@code null} if no prefix is used.
-     *
-     * @return the namespace prefix, or {@code null} if not applicable
-     */
     public String prefix() {
         return prefix;
     }

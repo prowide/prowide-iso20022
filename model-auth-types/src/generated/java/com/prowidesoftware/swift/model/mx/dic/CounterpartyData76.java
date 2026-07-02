@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -34,7 +34,7 @@ public class CounterpartyData76 {
     @XmlElement(name = "RptgDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime rptgDtTm;
+    protected XMLGregorianCalendar rptgDtTm;
     @XmlElement(name = "RptSubmitgNtty", required = true)
     protected OrganisationIdentification9Choice rptSubmitgNtty;
     @XmlElement(name = "CtrPtyData", required = true)
@@ -48,7 +48,7 @@ public class CounterpartyData76 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getRptgDtTm() {
+    public XMLGregorianCalendar getRptgDtTm() {
         return rptgDtTm;
     }
 
@@ -60,7 +60,7 @@ public class CounterpartyData76 {
      *     {@link String }
      *     
      */
-    public CounterpartyData76 setRptgDtTm(OffsetDateTime value) {
+    public CounterpartyData76 setRptgDtTm(XMLGregorianCalendar value) {
         this.rptgDtTm = value;
         return this;
     }
@@ -96,8 +96,8 @@ public class CounterpartyData76 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the ctrPtyData property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the ctrPtyData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -111,12 +111,10 @@ public class CounterpartyData76 {
      * {@link CounterpartyData77 }
      * 
      * 
-     * @return
-     *     The value of the ctrPtyData property.
      */
     public List<CounterpartyData77> getCtrPtyData() {
         if (ctrPtyData == null) {
-            ctrPtyData = new ArrayList<>();
+            ctrPtyData = new ArrayList<CounterpartyData77>();
         }
         return this.ctrPtyData;
     }

@@ -1,72 +1,73 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for RejectionReason80Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="RejectionReason80Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="PDAY"/>
- *     <enumeration value="FAIL"/>
- *     <enumeration value="GAMN"/>
- *     <enumeration value="MCER"/>
- *     <enumeration value="DFLT"/>
- *     <enumeration value="XRAT"/>
- *     <enumeration value="SECO"/>
- *     <enumeration value="ENDP"/>
- *     <enumeration value="STAR"/>
- *     <enumeration value="RESU"/>
- *     <enumeration value="NOAC"/>
- *     <enumeration value="NPAT"/>
- *     <enumeration value="ELIG"/>
- *     <enumeration value="BDAY"/>
- *     <enumeration value="AGID"/>
- *     <enumeration value="DISP"/>
- *     <enumeration value="PERI"/>
- *     <enumeration value="RDTE"/>
- *     <enumeration value="ACRU"/>
- *     <enumeration value="VALU"/>
- *     <enumeration value="SECT"/>
- *     <enumeration value="PROR"/>
- *     <enumeration value="BIDI"/>
- *     <enumeration value="MINP"/>
- *     <enumeration value="MAXP"/>
- *     <enumeration value="FIRS"/>
- *     <enumeration value="LAST"/>
- *     <enumeration value="OVPR"/>
- *     <enumeration value="OVCH"/>
- *     <enumeration value="OVFL"/>
- *     <enumeration value="RITR"/>
- *     <enumeration value="SFEE"/>
- *     <enumeration value="BACK"/>
- *     <enumeration value="COND"/>
- *     <enumeration value="MFCF"/>
- *     <enumeration value="ODLT"/>
- *     <enumeration value="MPRI"/>
- *     <enumeration value="PRCH"/>
- *     <enumeration value="SUPR"/>
- *     <enumeration value="SUCH"/>
- *     <enumeration value="UNSP"/>
- *     <enumeration value="CSRT"/>
- *     <enumeration value="SERT"/>
- *     <enumeration value="PTYP"/>
- *     <enumeration value="CINL"/>
- *     <enumeration value="MDIS"/>
- *     <enumeration value="IDIS"/>
- *     <enumeration value="FRAC"/>
- *     <enumeration value="PBAS"/>
- *     <enumeration value="ROUN"/>
- *     <enumeration value="ISSR"/>
- *     <enumeration value="ISSC"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="RejectionReason80Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="PDAY"/&gt;
+ *     &lt;enumeration value="FAIL"/&gt;
+ *     &lt;enumeration value="GAMN"/&gt;
+ *     &lt;enumeration value="MCER"/&gt;
+ *     &lt;enumeration value="DFLT"/&gt;
+ *     &lt;enumeration value="XRAT"/&gt;
+ *     &lt;enumeration value="SECO"/&gt;
+ *     &lt;enumeration value="ENDP"/&gt;
+ *     &lt;enumeration value="STAR"/&gt;
+ *     &lt;enumeration value="RESU"/&gt;
+ *     &lt;enumeration value="NOAC"/&gt;
+ *     &lt;enumeration value="NPAT"/&gt;
+ *     &lt;enumeration value="ELIG"/&gt;
+ *     &lt;enumeration value="BDAY"/&gt;
+ *     &lt;enumeration value="AGID"/&gt;
+ *     &lt;enumeration value="DISP"/&gt;
+ *     &lt;enumeration value="PERI"/&gt;
+ *     &lt;enumeration value="RDTE"/&gt;
+ *     &lt;enumeration value="ACRU"/&gt;
+ *     &lt;enumeration value="VALU"/&gt;
+ *     &lt;enumeration value="SECT"/&gt;
+ *     &lt;enumeration value="PROR"/&gt;
+ *     &lt;enumeration value="BIDI"/&gt;
+ *     &lt;enumeration value="MINP"/&gt;
+ *     &lt;enumeration value="MAXP"/&gt;
+ *     &lt;enumeration value="FIRS"/&gt;
+ *     &lt;enumeration value="LAST"/&gt;
+ *     &lt;enumeration value="OVPR"/&gt;
+ *     &lt;enumeration value="OVCH"/&gt;
+ *     &lt;enumeration value="OVFL"/&gt;
+ *     &lt;enumeration value="RITR"/&gt;
+ *     &lt;enumeration value="SFEE"/&gt;
+ *     &lt;enumeration value="BACK"/&gt;
+ *     &lt;enumeration value="COND"/&gt;
+ *     &lt;enumeration value="MFCF"/&gt;
+ *     &lt;enumeration value="ODLT"/&gt;
+ *     &lt;enumeration value="MPRI"/&gt;
+ *     &lt;enumeration value="PRCH"/&gt;
+ *     &lt;enumeration value="SUPR"/&gt;
+ *     &lt;enumeration value="SUCH"/&gt;
+ *     &lt;enumeration value="UNSP"/&gt;
+ *     &lt;enumeration value="CSRT"/&gt;
+ *     &lt;enumeration value="SERT"/&gt;
+ *     &lt;enumeration value="PTYP"/&gt;
+ *     &lt;enumeration value="CINL"/&gt;
+ *     &lt;enumeration value="MDIS"/&gt;
+ *     &lt;enumeration value="IDIS"/&gt;
+ *     &lt;enumeration value="FRAC"/&gt;
+ *     &lt;enumeration value="PBAS"/&gt;
+ *     &lt;enumeration value="ROUN"/&gt;
+ *     &lt;enumeration value="ISSR"/&gt;
+ *     &lt;enumeration value="ISSC"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "RejectionReason80Code")

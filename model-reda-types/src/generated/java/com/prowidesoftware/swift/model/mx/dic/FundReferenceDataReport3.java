@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -62,7 +62,7 @@ public class FundReferenceDataReport3 {
     @XmlElement(name = "GnlRefDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate gnlRefDt;
+    protected XMLGregorianCalendar gnlRefDt;
     @XmlElement(name = "TrgtMktInd")
     protected Boolean trgtMktInd;
     @XmlElement(name = "ExAnteInd")
@@ -189,7 +189,7 @@ public class FundReferenceDataReport3 {
      *     {@link String }
      *     
      */
-    public LocalDate getGnlRefDt() {
+    public XMLGregorianCalendar getGnlRefDt() {
         return gnlRefDt;
     }
 
@@ -201,7 +201,7 @@ public class FundReferenceDataReport3 {
      *     {@link String }
      *     
      */
-    public FundReferenceDataReport3 setGnlRefDt(LocalDate value) {
+    public FundReferenceDataReport3 setGnlRefDt(XMLGregorianCalendar value) {
         this.gnlRefDt = value;
         return this;
     }
@@ -537,8 +537,8 @@ public class FundReferenceDataReport3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the planChrtcs property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the planChrtcs property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -552,12 +552,10 @@ public class FundReferenceDataReport3 {
      * {@link InvestmentPlanCharacteristics1 }
      * 
      * 
-     * @return
-     *     The value of the planChrtcs property.
      */
     public List<InvestmentPlanCharacteristics1> getPlanChrtcs() {
         if (planChrtcs == null) {
-            planChrtcs = new ArrayList<>();
+            planChrtcs = new ArrayList<InvestmentPlanCharacteristics1>();
         }
         return this.planChrtcs;
     }
@@ -568,8 +566,8 @@ public class FundReferenceDataReport3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the pmtInstrm property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the pmtInstrm property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -583,12 +581,10 @@ public class FundReferenceDataReport3 {
      * {@link PaymentInstrument16 }
      * 
      * 
-     * @return
-     *     The value of the pmtInstrm property.
      */
     public List<PaymentInstrument16> getPmtInstrm() {
         if (pmtInstrm == null) {
-            pmtInstrm = new ArrayList<>();
+            pmtInstrm = new ArrayList<PaymentInstrument16>();
         }
         return this.pmtInstrm;
     }
@@ -599,8 +595,8 @@ public class FundReferenceDataReport3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the cshSttlmDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the cshSttlmDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -614,12 +610,10 @@ public class FundReferenceDataReport3 {
      * {@link CashAccount202 }
      * 
      * 
-     * @return
-     *     The value of the cshSttlmDtls property.
      */
     public List<CashAccount202> getCshSttlmDtls() {
         if (cshSttlmDtls == null) {
-            cshSttlmDtls = new ArrayList<>();
+            cshSttlmDtls = new ArrayList<CashAccount202>();
         }
         return this.cshSttlmDtls;
     }
@@ -630,8 +624,8 @@ public class FundReferenceDataReport3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the lclMktAnx property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the lclMktAnx property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -645,12 +639,10 @@ public class FundReferenceDataReport3 {
      * {@link LocalMarketAnnex4 }
      * 
      * 
-     * @return
-     *     The value of the lclMktAnx property.
      */
     public List<LocalMarketAnnex4> getLclMktAnx() {
         if (lclMktAnx == null) {
-            lclMktAnx = new ArrayList<>();
+            lclMktAnx = new ArrayList<LocalMarketAnnex4>();
         }
         return this.lclMktAnx;
     }
@@ -711,8 +703,8 @@ public class FundReferenceDataReport3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the costsAndChrgs property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the costsAndChrgs property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -726,12 +718,10 @@ public class FundReferenceDataReport3 {
      * {@link CostsAndCharges2 }
      * 
      * 
-     * @return
-     *     The value of the costsAndChrgs property.
      */
     public List<CostsAndCharges2> getCostsAndChrgs() {
         if (costsAndChrgs == null) {
-            costsAndChrgs = new ArrayList<>();
+            costsAndChrgs = new ArrayList<CostsAndCharges2>();
         }
         return this.costsAndChrgs;
     }
@@ -742,8 +732,8 @@ public class FundReferenceDataReport3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the xtnsn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the xtnsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -757,12 +747,10 @@ public class FundReferenceDataReport3 {
      * {@link Extension1 }
      * 
      * 
-     * @return
-     *     The value of the xtnsn property.
      */
     public List<Extension1> getXtnsn() {
         if (xtnsn == null) {
-            xtnsn = new ArrayList<>();
+            xtnsn = new ArrayList<Extension1>();
         }
         return this.xtnsn;
     }

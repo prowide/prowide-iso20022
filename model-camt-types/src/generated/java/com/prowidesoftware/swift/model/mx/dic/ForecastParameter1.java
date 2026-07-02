@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -68,8 +68,8 @@ public class ForecastParameter1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the estmtdCshInFcstDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the estmtdCshInFcstDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -83,12 +83,10 @@ public class ForecastParameter1 {
      * {@link CashInForecast1 }
      * 
      * 
-     * @return
-     *     The value of the estmtdCshInFcstDtls property.
      */
     public List<CashInForecast1> getEstmtdCshInFcstDtls() {
         if (estmtdCshInFcstDtls == null) {
-            estmtdCshInFcstDtls = new ArrayList<>();
+            estmtdCshInFcstDtls = new ArrayList<CashInForecast1>();
         }
         return this.estmtdCshInFcstDtls;
     }
@@ -99,8 +97,8 @@ public class ForecastParameter1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the estmtdCshOutFcstDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the estmtdCshOutFcstDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -114,12 +112,10 @@ public class ForecastParameter1 {
      * {@link CashOutForecast1 }
      * 
      * 
-     * @return
-     *     The value of the estmtdCshOutFcstDtls property.
      */
     public List<CashOutForecast1> getEstmtdCshOutFcstDtls() {
         if (estmtdCshOutFcstDtls == null) {
-            estmtdCshOutFcstDtls = new ArrayList<>();
+            estmtdCshOutFcstDtls = new ArrayList<CashOutForecast1>();
         }
         return this.estmtdCshOutFcstDtls;
     }
@@ -130,8 +126,8 @@ public class ForecastParameter1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the estmtdNetCshFcstDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the estmtdNetCshFcstDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -145,12 +141,10 @@ public class ForecastParameter1 {
      * {@link NetCashForecast1 }
      * 
      * 
-     * @return
-     *     The value of the estmtdNetCshFcstDtls property.
      */
     public List<NetCashForecast1> getEstmtdNetCshFcstDtls() {
         if (estmtdNetCshFcstDtls == null) {
-            estmtdNetCshFcstDtls = new ArrayList<>();
+            estmtdNetCshFcstDtls = new ArrayList<NetCashForecast1>();
         }
         return this.estmtdNetCshFcstDtls;
     }

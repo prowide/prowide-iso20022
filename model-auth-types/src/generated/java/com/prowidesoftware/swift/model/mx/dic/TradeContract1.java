@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -51,13 +51,13 @@ public class TradeContract1 {
     @XmlElement(name = "MtrtyDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate mtrtyDt;
+    protected XMLGregorianCalendar mtrtyDt;
     @XmlElement(name = "PrlngtnFlg")
     protected boolean prlngtnFlg;
     @XmlElement(name = "StartDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate startDt;
+    protected XMLGregorianCalendar startDt;
     @XmlElement(name = "SttlmCcy", required = true)
     protected String sttlmCcy;
     @XmlElement(name = "XchgRateInf")
@@ -125,8 +125,8 @@ public class TradeContract1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the buyr property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the buyr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -140,12 +140,10 @@ public class TradeContract1 {
      * {@link TradeParty2 }
      * 
      * 
-     * @return
-     *     The value of the buyr property.
      */
     public List<TradeParty2> getBuyr() {
         if (buyr == null) {
-            buyr = new ArrayList<>();
+            buyr = new ArrayList<TradeParty2>();
         }
         return this.buyr;
     }
@@ -156,8 +154,8 @@ public class TradeContract1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the sellr property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the sellr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -171,12 +169,10 @@ public class TradeContract1 {
      * {@link TradeParty2 }
      * 
      * 
-     * @return
-     *     The value of the sellr property.
      */
     public List<TradeParty2> getSellr() {
         if (sellr == null) {
-            sellr = new ArrayList<>();
+            sellr = new ArrayList<TradeParty2>();
         }
         return this.sellr;
     }
@@ -189,7 +185,7 @@ public class TradeContract1 {
      *     {@link String }
      *     
      */
-    public LocalDate getMtrtyDt() {
+    public XMLGregorianCalendar getMtrtyDt() {
         return mtrtyDt;
     }
 
@@ -201,7 +197,7 @@ public class TradeContract1 {
      *     {@link String }
      *     
      */
-    public TradeContract1 setMtrtyDt(LocalDate value) {
+    public TradeContract1 setMtrtyDt(XMLGregorianCalendar value) {
         this.mtrtyDt = value;
         return this;
     }
@@ -231,7 +227,7 @@ public class TradeContract1 {
      *     {@link String }
      *     
      */
-    public LocalDate getStartDt() {
+    public XMLGregorianCalendar getStartDt() {
         return startDt;
     }
 
@@ -243,7 +239,7 @@ public class TradeContract1 {
      *     {@link String }
      *     
      */
-    public TradeContract1 setStartDt(LocalDate value) {
+    public TradeContract1 setStartDt(XMLGregorianCalendar value) {
         this.startDt = value;
         return this;
     }
@@ -354,8 +350,8 @@ public class TradeContract1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the attchmnt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the attchmnt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -369,12 +365,10 @@ public class TradeContract1 {
      * {@link DocumentGeneralInformation3 }
      * 
      * 
-     * @return
-     *     The value of the attchmnt property.
      */
     public List<DocumentGeneralInformation3> getAttchmnt() {
         if (attchmnt == null) {
-            attchmnt = new ArrayList<>();
+            attchmnt = new ArrayList<DocumentGeneralInformation3>();
         }
         return this.attchmnt;
     }

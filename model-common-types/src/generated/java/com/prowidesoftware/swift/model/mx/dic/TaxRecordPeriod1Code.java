@@ -1,39 +1,40 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlEnumValue;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlEnumValue;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for TaxRecordPeriod1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="TaxRecordPeriod1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="MM01"/>
- *     <enumeration value="MM02"/>
- *     <enumeration value="MM03"/>
- *     <enumeration value="MM04"/>
- *     <enumeration value="MM05"/>
- *     <enumeration value="MM06"/>
- *     <enumeration value="MM07"/>
- *     <enumeration value="MM08"/>
- *     <enumeration value="MM09"/>
- *     <enumeration value="MM10"/>
- *     <enumeration value="MM11"/>
- *     <enumeration value="MM12"/>
- *     <enumeration value="QTR1"/>
- *     <enumeration value="QTR2"/>
- *     <enumeration value="QTR3"/>
- *     <enumeration value="QTR4"/>
- *     <enumeration value="HLF1"/>
- *     <enumeration value="HLF2"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="TaxRecordPeriod1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="MM01"/&gt;
+ *     &lt;enumeration value="MM02"/&gt;
+ *     &lt;enumeration value="MM03"/&gt;
+ *     &lt;enumeration value="MM04"/&gt;
+ *     &lt;enumeration value="MM05"/&gt;
+ *     &lt;enumeration value="MM06"/&gt;
+ *     &lt;enumeration value="MM07"/&gt;
+ *     &lt;enumeration value="MM08"/&gt;
+ *     &lt;enumeration value="MM09"/&gt;
+ *     &lt;enumeration value="MM10"/&gt;
+ *     &lt;enumeration value="MM11"/&gt;
+ *     &lt;enumeration value="MM12"/&gt;
+ *     &lt;enumeration value="QTR1"/&gt;
+ *     &lt;enumeration value="QTR2"/&gt;
+ *     &lt;enumeration value="QTR3"/&gt;
+ *     &lt;enumeration value="QTR4"/&gt;
+ *     &lt;enumeration value="HLF1"/&gt;
+ *     &lt;enumeration value="HLF2"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "TaxRecordPeriod1Code")

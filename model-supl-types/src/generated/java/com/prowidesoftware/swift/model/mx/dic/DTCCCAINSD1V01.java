@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -49,8 +49,8 @@ public class DTCCCAINSD1V01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the optnlDvdd property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the optnlDvdd property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -64,12 +64,10 @@ public class DTCCCAINSD1V01 {
      * {@link OptionalDividendAccountQuantitySD1 }
      * 
      * 
-     * @return
-     *     The value of the optnlDvdd property.
      */
     public List<OptionalDividendAccountQuantitySD1> getOptnlDvdd() {
         if (optnlDvdd == null) {
-            optnlDvdd = new ArrayList<>();
+            optnlDvdd = new ArrayList<OptionalDividendAccountQuantitySD1>();
         }
         return this.optnlDvdd;
     }
@@ -80,8 +78,8 @@ public class DTCCCAINSD1V01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the taxXmpt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the taxXmpt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -95,12 +93,10 @@ public class DTCCCAINSD1V01 {
      * {@link TaxExemptQuantitySD1 }
      * 
      * 
-     * @return
-     *     The value of the taxXmpt property.
      */
     public List<TaxExemptQuantitySD1> getTaxXmpt() {
         if (taxXmpt == null) {
-            taxXmpt = new ArrayList<>();
+            taxXmpt = new ArrayList<TaxExemptQuantitySD1>();
         }
         return this.taxXmpt;
     }
@@ -111,8 +107,8 @@ public class DTCCCAINSD1V01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the wireInstr property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the wireInstr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -126,12 +122,10 @@ public class DTCCCAINSD1V01 {
      * {@link WireInstructionSD1 }
      * 
      * 
-     * @return
-     *     The value of the wireInstr property.
      */
     public List<WireInstructionSD1> getWireInstr() {
         if (wireInstr == null) {
-            wireInstr = new ArrayList<>();
+            wireInstr = new ArrayList<WireInstructionSD1>();
         }
         return this.wireInstr;
     }
@@ -142,8 +136,8 @@ public class DTCCCAINSD1V01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the dtcTaxRlf property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the dtcTaxRlf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -157,12 +151,10 @@ public class DTCCCAINSD1V01 {
      * {@link DTCTaxReliefSD2 }
      * 
      * 
-     * @return
-     *     The value of the dtcTaxRlf property.
      */
     public List<DTCTaxReliefSD2> getDTCTaxRlf() {
         if (dtcTaxRlf == null) {
-            dtcTaxRlf = new ArrayList<>();
+            dtcTaxRlf = new ArrayList<DTCTaxReliefSD2>();
         }
         return this.dtcTaxRlf;
     }
@@ -173,8 +165,8 @@ public class DTCCCAINSD1V01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the usTaxWhldg property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the usTaxWhldg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -188,12 +180,10 @@ public class DTCCCAINSD1V01 {
      * {@link USTaxWithholdingSD1 }
      * 
      * 
-     * @return
-     *     The value of the usTaxWhldg property.
      */
     public List<USTaxWithholdingSD1> getUSTaxWhldg() {
         if (usTaxWhldg == null) {
-            usTaxWhldg = new ArrayList<>();
+            usTaxWhldg = new ArrayList<USTaxWithholdingSD1>();
         }
         return this.usTaxWhldg;
     }
@@ -204,8 +194,8 @@ public class DTCCCAINSD1V01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the cshInLieu property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the cshInLieu property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -219,12 +209,10 @@ public class DTCCCAINSD1V01 {
      * {@link CashInLieuSD1 }
      * 
      * 
-     * @return
-     *     The value of the cshInLieu property.
      */
     public List<CashInLieuSD1> getCshInLieu() {
         if (cshInLieu == null) {
-            cshInLieu = new ArrayList<>();
+            cshInLieu = new ArrayList<CashInLieuSD1>();
         }
         return this.cshInLieu;
     }

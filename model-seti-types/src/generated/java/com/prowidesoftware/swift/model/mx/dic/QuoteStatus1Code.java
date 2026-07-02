@@ -1,36 +1,37 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for QuoteStatus1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="QuoteStatus1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="ACPT"/>
- *     <enumeration value="SYMB"/>
- *     <enumeration value="SECU"/>
- *     <enumeration value="UNSY"/>
- *     <enumeration value="ALLE"/>
- *     <enumeration value="REJT"/>
- *     <enumeration value="REMO"/>
- *     <enumeration value="EXPI"/>
- *     <enumeration value="QUER"/>
- *     <enumeration value="NQUO"/>
- *     <enumeration value="PEND"/>
- *     <enumeration value="PASS"/>
- *     <enumeration value="LMWA"/>
- *     <enumeration value="CMWA"/>
- *     <enumeration value="CDLM"/>
- *     <enumeration value="CDCM"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="QuoteStatus1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ACPT"/&gt;
+ *     &lt;enumeration value="SYMB"/&gt;
+ *     &lt;enumeration value="SECU"/&gt;
+ *     &lt;enumeration value="UNSY"/&gt;
+ *     &lt;enumeration value="ALLE"/&gt;
+ *     &lt;enumeration value="REJT"/&gt;
+ *     &lt;enumeration value="REMO"/&gt;
+ *     &lt;enumeration value="EXPI"/&gt;
+ *     &lt;enumeration value="QUER"/&gt;
+ *     &lt;enumeration value="NQUO"/&gt;
+ *     &lt;enumeration value="PEND"/&gt;
+ *     &lt;enumeration value="PASS"/&gt;
+ *     &lt;enumeration value="LMWA"/&gt;
+ *     &lt;enumeration value="CMWA"/&gt;
+ *     &lt;enumeration value="CDLM"/&gt;
+ *     &lt;enumeration value="CDCM"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "QuoteStatus1Code")

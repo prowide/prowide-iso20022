@@ -1,27 +1,28 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for EnergyLoadType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="EnergyLoadType1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="BSLD"/>
- *     <enumeration value="GASD"/>
- *     <enumeration value="HABH"/>
- *     <enumeration value="OFFP"/>
- *     <enumeration value="OTHR"/>
- *     <enumeration value="PKLD"/>
- *     <enumeration value="SHPD"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="EnergyLoadType1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="BSLD"/&gt;
+ *     &lt;enumeration value="GASD"/&gt;
+ *     &lt;enumeration value="HABH"/&gt;
+ *     &lt;enumeration value="OFFP"/&gt;
+ *     &lt;enumeration value="OTHR"/&gt;
+ *     &lt;enumeration value="PKLD"/&gt;
+ *     &lt;enumeration value="SHPD"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "EnergyLoadType1Code")

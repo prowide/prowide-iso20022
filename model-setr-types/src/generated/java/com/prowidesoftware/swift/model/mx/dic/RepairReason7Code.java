@@ -1,61 +1,62 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for RepairReason7Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="RepairReason7Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="ADEA"/>
- *     <enumeration value="BATC"/>
- *     <enumeration value="BUSE"/>
- *     <enumeration value="CADE"/>
- *     <enumeration value="CASH"/>
- *     <enumeration value="CASY"/>
- *     <enumeration value="COMC"/>
- *     <enumeration value="DDAT"/>
- *     <enumeration value="DDEA"/>
- *     <enumeration value="DEPT"/>
- *     <enumeration value="DMON"/>
- *     <enumeration value="DQUA"/>
- *     <enumeration value="DSEC"/>
- *     <enumeration value="DTRD"/>
- *     <enumeration value="FEEE"/>
- *     <enumeration value="FORF"/>
- *     <enumeration value="ICAG"/>
- *     <enumeration value="ICUS"/>
- *     <enumeration value="IEXE"/>
- *     <enumeration value="IIND"/>
- *     <enumeration value="INNA"/>
- *     <enumeration value="LEOG"/>
- *     <enumeration value="NARR"/>
- *     <enumeration value="NCRR"/>
- *     <enumeration value="NRGM"/>
- *     <enumeration value="NRGN"/>
- *     <enumeration value="PHYS"/>
- *     <enumeration value="PLCE"/>
- *     <enumeration value="CTRA"/>
- *     <enumeration value="REPO"/>
- *     <enumeration value="REPP"/>
- *     <enumeration value="RERT"/>
- *     <enumeration value="RSPR"/>
- *     <enumeration value="RTGS"/>
- *     <enumeration value="SAFE"/>
- *     <enumeration value="SETR"/>
- *     <enumeration value="SETS"/>
- *     <enumeration value="TERM"/>
- *     <enumeration value="TXST"/>
- *     <enumeration value="ULNK"/>
- *     <enumeration value="VASU"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="RepairReason7Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ADEA"/&gt;
+ *     &lt;enumeration value="BATC"/&gt;
+ *     &lt;enumeration value="BUSE"/&gt;
+ *     &lt;enumeration value="CADE"/&gt;
+ *     &lt;enumeration value="CASH"/&gt;
+ *     &lt;enumeration value="CASY"/&gt;
+ *     &lt;enumeration value="COMC"/&gt;
+ *     &lt;enumeration value="DDAT"/&gt;
+ *     &lt;enumeration value="DDEA"/&gt;
+ *     &lt;enumeration value="DEPT"/&gt;
+ *     &lt;enumeration value="DMON"/&gt;
+ *     &lt;enumeration value="DQUA"/&gt;
+ *     &lt;enumeration value="DSEC"/&gt;
+ *     &lt;enumeration value="DTRD"/&gt;
+ *     &lt;enumeration value="FEEE"/&gt;
+ *     &lt;enumeration value="FORF"/&gt;
+ *     &lt;enumeration value="ICAG"/&gt;
+ *     &lt;enumeration value="ICUS"/&gt;
+ *     &lt;enumeration value="IEXE"/&gt;
+ *     &lt;enumeration value="IIND"/&gt;
+ *     &lt;enumeration value="INNA"/&gt;
+ *     &lt;enumeration value="LEOG"/&gt;
+ *     &lt;enumeration value="NARR"/&gt;
+ *     &lt;enumeration value="NCRR"/&gt;
+ *     &lt;enumeration value="NRGM"/&gt;
+ *     &lt;enumeration value="NRGN"/&gt;
+ *     &lt;enumeration value="PHYS"/&gt;
+ *     &lt;enumeration value="PLCE"/&gt;
+ *     &lt;enumeration value="CTRA"/&gt;
+ *     &lt;enumeration value="REPO"/&gt;
+ *     &lt;enumeration value="REPP"/&gt;
+ *     &lt;enumeration value="RERT"/&gt;
+ *     &lt;enumeration value="RSPR"/&gt;
+ *     &lt;enumeration value="RTGS"/&gt;
+ *     &lt;enumeration value="SAFE"/&gt;
+ *     &lt;enumeration value="SETR"/&gt;
+ *     &lt;enumeration value="SETS"/&gt;
+ *     &lt;enumeration value="TERM"/&gt;
+ *     &lt;enumeration value="TXST"/&gt;
+ *     &lt;enumeration value="ULNK"/&gt;
+ *     &lt;enumeration value="VASU"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "RepairReason7Code")

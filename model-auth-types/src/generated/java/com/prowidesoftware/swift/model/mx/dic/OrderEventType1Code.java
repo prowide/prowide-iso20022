@@ -1,35 +1,36 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for OrderEventType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="OrderEventType1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="CAME"/>
- *     <enumeration value="CAMO"/>
- *     <enumeration value="CHME"/>
- *     <enumeration value="CHMO"/>
- *     <enumeration value="EXPI"/>
- *     <enumeration value="FILL"/>
- *     <enumeration value="NEWO"/>
- *     <enumeration value="PARF"/>
- *     <enumeration value="REMA"/>
- *     <enumeration value="REMO"/>
- *     <enumeration value="REMH"/>
- *     <enumeration value="REME"/>
- *     <enumeration value="TRIG"/>
- *     <enumeration value="RFQS"/>
- *     <enumeration value="RFQR"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="OrderEventType1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="CAME"/&gt;
+ *     &lt;enumeration value="CAMO"/&gt;
+ *     &lt;enumeration value="CHME"/&gt;
+ *     &lt;enumeration value="CHMO"/&gt;
+ *     &lt;enumeration value="EXPI"/&gt;
+ *     &lt;enumeration value="FILL"/&gt;
+ *     &lt;enumeration value="NEWO"/&gt;
+ *     &lt;enumeration value="PARF"/&gt;
+ *     &lt;enumeration value="REMA"/&gt;
+ *     &lt;enumeration value="REMO"/&gt;
+ *     &lt;enumeration value="REMH"/&gt;
+ *     &lt;enumeration value="REME"/&gt;
+ *     &lt;enumeration value="TRIG"/&gt;
+ *     &lt;enumeration value="RFQS"/&gt;
+ *     &lt;enumeration value="RFQR"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "OrderEventType1Code")

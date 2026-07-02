@@ -1,30 +1,31 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for ATMCassetteStatus1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="ATMCassetteStatus1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="CUOK"/>
- *     <enumeration value="CUFL"/>
- *     <enumeration value="CUHG"/>
- *     <enumeration value="CULW"/>
- *     <enumeration value="CUMT"/>
- *     <enumeration value="CUNP"/>
- *     <enumeration value="CUMS"/>
- *     <enumeration value="CUNA"/>
- *     <enumeration value="CUNR"/>
- *     <enumeration value="CUMP"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="ATMCassetteStatus1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="CUOK"/&gt;
+ *     &lt;enumeration value="CUFL"/&gt;
+ *     &lt;enumeration value="CUHG"/&gt;
+ *     &lt;enumeration value="CULW"/&gt;
+ *     &lt;enumeration value="CUMT"/&gt;
+ *     &lt;enumeration value="CUNP"/&gt;
+ *     &lt;enumeration value="CUMS"/&gt;
+ *     &lt;enumeration value="CUNA"/&gt;
+ *     &lt;enumeration value="CUNR"/&gt;
+ *     &lt;enumeration value="CUMP"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "ATMCassetteStatus1Code")

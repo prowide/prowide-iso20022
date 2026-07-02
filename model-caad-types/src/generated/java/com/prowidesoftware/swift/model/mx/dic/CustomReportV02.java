@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -203,8 +203,8 @@ public class CustomReportV02 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the prgrmm property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the prgrmm property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -218,12 +218,10 @@ public class CustomReportV02 {
      * {@link ProgrammeMode5 }
      * 
      * 
-     * @return
-     *     The value of the prgrmm property.
      */
     public List<ProgrammeMode5> getPrgrmm() {
         if (prgrmm == null) {
-            prgrmm = new ArrayList<>();
+            prgrmm = new ArrayList<ProgrammeMode5>();
         }
         return this.prgrmm;
     }
@@ -359,8 +357,8 @@ public class CustomReportV02 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the rptCntt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the rptCntt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -374,12 +372,10 @@ public class CustomReportV02 {
      * {@link ReportContent2 }
      * 
      * 
-     * @return
-     *     The value of the rptCntt property.
      */
     public List<ReportContent2> getRptCntt() {
         if (rptCntt == null) {
-            rptCntt = new ArrayList<>();
+            rptCntt = new ArrayList<ReportContent2>();
         }
         return this.rptCntt;
     }
@@ -390,8 +386,8 @@ public class CustomReportV02 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the addtlData property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the addtlData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -405,12 +401,10 @@ public class CustomReportV02 {
      * {@link AdditionalData2 }
      * 
      * 
-     * @return
-     *     The value of the addtlData property.
      */
     public List<AdditionalData2> getAddtlData() {
         if (addtlData == null) {
-            addtlData = new ArrayList<>();
+            addtlData = new ArrayList<AdditionalData2>();
         }
         return this.addtlData;
     }
@@ -421,8 +415,8 @@ public class CustomReportV02 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the splmtryData property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -436,12 +430,10 @@ public class CustomReportV02 {
      * {@link SupplementaryData1 }
      * 
      * 
-     * @return
-     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<>();
+            splmtryData = new ArrayList<SupplementaryData1>();
         }
         return this.splmtryData;
     }

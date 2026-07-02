@@ -1,28 +1,29 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlEnumValue;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlEnumValue;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for TypeOfPrice3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="TypeOfPrice3Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="AVER"/>
- *     <enumeration value="AVOV"/>
- *     <enumeration value="GREX"/>
- *     <enumeration value="NET2"/>
- *     <enumeration value="NET1"/>
- *     <enumeration value="PARV"/>
- *     <enumeration value="RDAV"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="TypeOfPrice3Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="AVER"/&gt;
+ *     &lt;enumeration value="AVOV"/&gt;
+ *     &lt;enumeration value="GREX"/&gt;
+ *     &lt;enumeration value="NET2"/&gt;
+ *     &lt;enumeration value="NET1"/&gt;
+ *     &lt;enumeration value="PARV"/&gt;
+ *     &lt;enumeration value="RDAV"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "TypeOfPrice3Code")

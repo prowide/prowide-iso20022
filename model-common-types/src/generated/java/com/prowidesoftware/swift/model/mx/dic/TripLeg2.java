@@ -3,11 +3,11 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -149,8 +149,8 @@ public class TripLeg2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the doc property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the doc property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -164,12 +164,10 @@ public class TripLeg2 {
      * {@link DocumentReference1 }
      * 
      * 
-     * @return
-     *     The value of the doc property.
      */
     public List<DocumentReference1> getDoc() {
         if (doc == null) {
-            doc = new ArrayList<>();
+            doc = new ArrayList<DocumentReference1>();
         }
         return this.doc;
     }
@@ -530,8 +528,8 @@ public class TripLeg2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the tripLegAmt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the tripLegAmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -545,12 +543,10 @@ public class TripLeg2 {
      * {@link AmountDetails2 }
      * 
      * 
-     * @return
-     *     The value of the tripLegAmt property.
      */
     public List<AmountDetails2> getTripLegAmt() {
         if (tripLegAmt == null) {
-            tripLegAmt = new ArrayList<>();
+            tripLegAmt = new ArrayList<AmountDetails2>();
         }
         return this.tripLegAmt;
     }

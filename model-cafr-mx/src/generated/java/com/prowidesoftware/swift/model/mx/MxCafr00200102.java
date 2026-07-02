@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxCafr00200102
 
     @XmlElement(name = "FrdRptgRspn", required = true)
     protected FraudReportingResponseV02 frdRptgRspn;
-    public static final transient String BUSINESS_PROCESS = "cafr";
-    public static final transient int FUNCTIONALITY = 2;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 2;
+    public final static transient String BUSINESS_PROCESS = "cafr";
+    public final static transient int FUNCTIONALITY = 2;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 2;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {AdditionalData1 .class, AdditionalFee2 .class, AdditionalInformation30 .class, Address2 .class, Address3 .class, ApprovalEntity2 .class, Authority1 .class, BatchManagementInformation1 .class, CardData8 .class, CardProgrammeMode3 .class, Cardholder19 .class, CardholderName2 .class, CardholderName3 .class, Contact1 .class, ContentInformationType20 .class, Context17 .class, Credentials2 .class, CreditDebit3Code.class, Environment28 .class, ErrorDetails2 .class, FeeAmount3 .class, FraudReportingResponse2 .class, FraudReportingResponseV02 .class, GenericIdentification183 .class, Header66 .class, Identification3Code.class, Jurisdiction2 .class, LocalData1 .class, LocalData7 .class, MACData1 .class, MessageError1Code.class, MessageFunction29Code.class, MxCafr00200102 .class, OutputFormat4Code.class, PartyIdentification263 .class, PartyType17Code.class, PartyType18Code.class, PartyType19Code.class, PartyType26Code.class, PartyType9Code.class, Priority3Code.class, ProcessingResult19 .class, ProtectionMethod1Code.class, Reconciliation3 .class, Response8Code.class, ResultData10 .class, ResultData7 .class, SettlementReportingEntity1 .class, SettlementService4 .class, SettlementServiceDate2 .class, SettlementServiceMode1 .class, StorageLocation1Code.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, Token2 .class, Traceability9 .class, Transaction129 .class, TransactionContext10 .class, TypeOfAmount21Code.class, UserInterface8Code.class };
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:cafr.002.001.02";
+    public final static transient Class[] _classes = new Class[] {AdditionalData1 .class, AdditionalFee2 .class, AdditionalInformation30 .class, Address2 .class, Address3 .class, ApprovalEntity2 .class, Authority1 .class, BatchManagementInformation1 .class, CardData8 .class, CardProgrammeMode3 .class, Cardholder19 .class, CardholderName2 .class, CardholderName3 .class, Contact1 .class, ContentInformationType20 .class, Context17 .class, Credentials2 .class, CreditDebit3Code.class, Environment28 .class, ErrorDetails2 .class, FeeAmount3 .class, FraudReportingResponse2 .class, FraudReportingResponseV02 .class, GenericIdentification183 .class, Header66 .class, Identification3Code.class, Jurisdiction2 .class, LocalData1 .class, LocalData7 .class, MACData1 .class, MessageError1Code.class, MessageFunction29Code.class, MxCafr00200102 .class, OutputFormat4Code.class, PartyIdentification263 .class, PartyType17Code.class, PartyType18Code.class, PartyType19Code.class, PartyType26Code.class, PartyType9Code.class, Priority3Code.class, ProcessingResult19 .class, ProtectionMethod1Code.class, Reconciliation3 .class, Response8Code.class, ResultData10 .class, ResultData7 .class, SettlementReportingEntity1 .class, SettlementService4 .class, SettlementServiceDate2 .class, SettlementServiceMode1 .class, StorageLocation1Code.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, Token2 .class, Traceability9 .class, Transaction129 .class, TransactionContext10 .class, TypeOfAmount21Code.class, UserInterface8Code.class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:cafr.002.001.02";
 
     public MxCafr00200102() {
         super();
@@ -86,6 +86,21 @@ public class MxCafr00200102
     public MxCafr00200102 setFrdRptgRspn(FraudReportingResponseV02 value) {
         this.frdRptgRspn = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxCafr00200102
      * @return
      *     a new instance of MxCafr00200102
      */
-    public static final MxCafr00200102 fromJson(String json) {
+    public final static MxCafr00200102 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxCafr00200102 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

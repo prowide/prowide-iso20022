@@ -1,16 +1,15 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
-import java.time.OffsetDateTime;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -44,21 +43,21 @@ public class CreditTransferMandateData1 {
     @XmlElement(name = "DtOfSgntr", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate dtOfSgntr;
+    protected XMLGregorianCalendar dtOfSgntr;
     @XmlElement(name = "DtOfVrfctn", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime dtOfVrfctn;
+    protected XMLGregorianCalendar dtOfVrfctn;
     @XmlElement(name = "ElctrncSgntr")
     protected byte[] elctrncSgntr;
     @XmlElement(name = "FrstPmtDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate frstPmtDt;
+    protected XMLGregorianCalendar frstPmtDt;
     @XmlElement(name = "FnlPmtDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate fnlPmtDt;
+    protected XMLGregorianCalendar fnlPmtDt;
     @XmlElement(name = "Frqcy")
     protected Frequency36Choice frqcy;
     @XmlElement(name = "Rsn")
@@ -122,7 +121,7 @@ public class CreditTransferMandateData1 {
      *     {@link String }
      *     
      */
-    public LocalDate getDtOfSgntr() {
+    public XMLGregorianCalendar getDtOfSgntr() {
         return dtOfSgntr;
     }
 
@@ -134,7 +133,7 @@ public class CreditTransferMandateData1 {
      *     {@link String }
      *     
      */
-    public CreditTransferMandateData1 setDtOfSgntr(LocalDate value) {
+    public CreditTransferMandateData1 setDtOfSgntr(XMLGregorianCalendar value) {
         this.dtOfSgntr = value;
         return this;
     }
@@ -147,7 +146,7 @@ public class CreditTransferMandateData1 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getDtOfVrfctn() {
+    public XMLGregorianCalendar getDtOfVrfctn() {
         return dtOfVrfctn;
     }
 
@@ -159,7 +158,7 @@ public class CreditTransferMandateData1 {
      *     {@link String }
      *     
      */
-    public CreditTransferMandateData1 setDtOfVrfctn(OffsetDateTime value) {
+    public CreditTransferMandateData1 setDtOfVrfctn(XMLGregorianCalendar value) {
         this.dtOfVrfctn = value;
         return this;
     }
@@ -195,7 +194,7 @@ public class CreditTransferMandateData1 {
      *     {@link String }
      *     
      */
-    public LocalDate getFrstPmtDt() {
+    public XMLGregorianCalendar getFrstPmtDt() {
         return frstPmtDt;
     }
 
@@ -207,7 +206,7 @@ public class CreditTransferMandateData1 {
      *     {@link String }
      *     
      */
-    public CreditTransferMandateData1 setFrstPmtDt(LocalDate value) {
+    public CreditTransferMandateData1 setFrstPmtDt(XMLGregorianCalendar value) {
         this.frstPmtDt = value;
         return this;
     }
@@ -220,7 +219,7 @@ public class CreditTransferMandateData1 {
      *     {@link String }
      *     
      */
-    public LocalDate getFnlPmtDt() {
+    public XMLGregorianCalendar getFnlPmtDt() {
         return fnlPmtDt;
     }
 
@@ -232,7 +231,7 @@ public class CreditTransferMandateData1 {
      *     {@link String }
      *     
      */
-    public CreditTransferMandateData1 setFnlPmtDt(LocalDate value) {
+    public CreditTransferMandateData1 setFnlPmtDt(XMLGregorianCalendar value) {
         this.fnlPmtDt = value;
         return this;
     }

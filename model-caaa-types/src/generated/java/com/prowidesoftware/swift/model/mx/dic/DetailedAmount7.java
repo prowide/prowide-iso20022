@@ -4,10 +4,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -100,8 +100,8 @@ public class DetailedAmount7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the fees property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the fees property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -115,12 +115,10 @@ public class DetailedAmount7 {
      * {@link DetailedAmount4 }
      * 
      * 
-     * @return
-     *     The value of the fees property.
      */
     public List<DetailedAmount4> getFees() {
         if (fees == null) {
-            fees = new ArrayList<>();
+            fees = new ArrayList<DetailedAmount4>();
         }
         return this.fees;
     }
@@ -131,8 +129,8 @@ public class DetailedAmount7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the rbt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the rbt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -146,12 +144,10 @@ public class DetailedAmount7 {
      * {@link DetailedAmount4 }
      * 
      * 
-     * @return
-     *     The value of the rbt property.
      */
     public List<DetailedAmount4> getRbt() {
         if (rbt == null) {
-            rbt = new ArrayList<>();
+            rbt = new ArrayList<DetailedAmount4>();
         }
         return this.rbt;
     }
@@ -162,8 +158,8 @@ public class DetailedAmount7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the valAddedTax property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the valAddedTax property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -177,12 +173,10 @@ public class DetailedAmount7 {
      * {@link DetailedAmount4 }
      * 
      * 
-     * @return
-     *     The value of the valAddedTax property.
      */
     public List<DetailedAmount4> getValAddedTax() {
         if (valAddedTax == null) {
-            valAddedTax = new ArrayList<>();
+            valAddedTax = new ArrayList<DetailedAmount4>();
         }
         return this.valAddedTax;
     }
@@ -193,8 +187,8 @@ public class DetailedAmount7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the srchrg property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the srchrg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -208,12 +202,10 @@ public class DetailedAmount7 {
      * {@link DetailedAmount4 }
      * 
      * 
-     * @return
-     *     The value of the srchrg property.
      */
     public List<DetailedAmount4> getSrchrg() {
         if (srchrg == null) {
-            srchrg = new ArrayList<>();
+            srchrg = new ArrayList<DetailedAmount4>();
         }
         return this.srchrg;
     }

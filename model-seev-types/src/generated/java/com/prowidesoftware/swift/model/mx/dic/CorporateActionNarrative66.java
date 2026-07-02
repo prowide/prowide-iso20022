@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -52,8 +52,8 @@ public class CorporateActionNarrative66 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the addtlTxt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the addtlTxt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -67,12 +67,10 @@ public class CorporateActionNarrative66 {
      * {@link UpdatedAdditionalInformation19 }
      * 
      * 
-     * @return
-     *     The value of the addtlTxt property.
      */
     public List<UpdatedAdditionalInformation19> getAddtlTxt() {
         if (addtlTxt == null) {
-            addtlTxt = new ArrayList<>();
+            addtlTxt = new ArrayList<UpdatedAdditionalInformation19>();
         }
         return this.addtlTxt;
     }
@@ -83,8 +81,8 @@ public class CorporateActionNarrative66 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the nrrtvVrsn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the nrrtvVrsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -98,12 +96,10 @@ public class CorporateActionNarrative66 {
      * {@link UpdatedAdditionalInformation19 }
      * 
      * 
-     * @return
-     *     The value of the nrrtvVrsn property.
      */
     public List<UpdatedAdditionalInformation19> getNrrtvVrsn() {
         if (nrrtvVrsn == null) {
-            nrrtvVrsn = new ArrayList<>();
+            nrrtvVrsn = new ArrayList<UpdatedAdditionalInformation19>();
         }
         return this.nrrtvVrsn;
     }
@@ -114,8 +110,8 @@ public class CorporateActionNarrative66 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the infConds property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the infConds property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -129,12 +125,10 @@ public class CorporateActionNarrative66 {
      * {@link UpdatedAdditionalInformation21 }
      * 
      * 
-     * @return
-     *     The value of the infConds property.
      */
     public List<UpdatedAdditionalInformation21> getInfConds() {
         if (infConds == null) {
-            infConds = new ArrayList<>();
+            infConds = new ArrayList<UpdatedAdditionalInformation21>();
         }
         return this.infConds;
     }
@@ -145,8 +139,8 @@ public class CorporateActionNarrative66 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the infToCmplyWth property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the infToCmplyWth property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -160,12 +154,10 @@ public class CorporateActionNarrative66 {
      * {@link UpdatedAdditionalInformation21 }
      * 
      * 
-     * @return
-     *     The value of the infToCmplyWth property.
      */
     public List<UpdatedAdditionalInformation21> getInfToCmplyWth() {
         if (infToCmplyWth == null) {
-            infToCmplyWth = new ArrayList<>();
+            infToCmplyWth = new ArrayList<UpdatedAdditionalInformation21>();
         }
         return this.infToCmplyWth;
     }
@@ -176,8 +168,8 @@ public class CorporateActionNarrative66 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the sctyRstrctn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the sctyRstrctn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -191,12 +183,10 @@ public class CorporateActionNarrative66 {
      * {@link UpdatedAdditionalInformation21 }
      * 
      * 
-     * @return
-     *     The value of the sctyRstrctn property.
      */
     public List<UpdatedAdditionalInformation21> getSctyRstrctn() {
         if (sctyRstrctn == null) {
-            sctyRstrctn = new ArrayList<>();
+            sctyRstrctn = new ArrayList<UpdatedAdditionalInformation21>();
         }
         return this.sctyRstrctn;
     }
@@ -207,8 +197,8 @@ public class CorporateActionNarrative66 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the taxtnConds property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the taxtnConds property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -222,12 +212,10 @@ public class CorporateActionNarrative66 {
      * {@link UpdatedAdditionalInformation21 }
      * 
      * 
-     * @return
-     *     The value of the taxtnConds property.
      */
     public List<UpdatedAdditionalInformation21> getTaxtnConds() {
         if (taxtnConds == null) {
-            taxtnConds = new ArrayList<>();
+            taxtnConds = new ArrayList<UpdatedAdditionalInformation21>();
         }
         return this.taxtnConds;
     }
@@ -238,8 +226,8 @@ public class CorporateActionNarrative66 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the certfctnBrkdwn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the certfctnBrkdwn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -253,12 +241,10 @@ public class CorporateActionNarrative66 {
      * {@link UpdatedAdditionalInformation21 }
      * 
      * 
-     * @return
-     *     The value of the certfctnBrkdwn property.
      */
     public List<UpdatedAdditionalInformation21> getCertfctnBrkdwn() {
         if (certfctnBrkdwn == null) {
-            certfctnBrkdwn = new ArrayList<>();
+            certfctnBrkdwn = new ArrayList<UpdatedAdditionalInformation21>();
         }
         return this.certfctnBrkdwn;
     }

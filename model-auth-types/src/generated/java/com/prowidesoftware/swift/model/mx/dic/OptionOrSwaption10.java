@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -63,11 +63,11 @@ public class OptionOrSwaption10 {
     @XmlElement(name = "PrmPmtDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate prmPmtDt;
+    protected XMLGregorianCalendar prmPmtDt;
     @XmlElement(name = "MtrtyDtOfUndrlyg", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate mtrtyDtOfUndrlyg;
+    protected XMLGregorianCalendar mtrtyDtOfUndrlyg;
 
     /**
      * Gets the value of the tp property.
@@ -125,8 +125,8 @@ public class OptionOrSwaption10 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the exrcStyle property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the exrcStyle property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -140,12 +140,10 @@ public class OptionOrSwaption10 {
      * {@link OptionStyle6Code }
      * 
      * 
-     * @return
-     *     The value of the exrcStyle property.
      */
     public List<OptionStyle6Code> getExrcStyle() {
         if (exrcStyle == null) {
-            exrcStyle = new ArrayList<>();
+            exrcStyle = new ArrayList<OptionStyle6Code>();
         }
         return this.exrcStyle;
     }
@@ -206,8 +204,8 @@ public class OptionOrSwaption10 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the strkPricSchdl property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the strkPricSchdl property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -221,12 +219,10 @@ public class OptionOrSwaption10 {
      * {@link Schedule4 }
      * 
      * 
-     * @return
-     *     The value of the strkPricSchdl property.
      */
     public List<Schedule4> getStrkPricSchdl() {
         if (strkPricSchdl == null) {
-            strkPricSchdl = new ArrayList<>();
+            strkPricSchdl = new ArrayList<Schedule4>();
         }
         return this.strkPricSchdl;
     }
@@ -314,7 +310,7 @@ public class OptionOrSwaption10 {
      *     {@link String }
      *     
      */
-    public LocalDate getPrmPmtDt() {
+    public XMLGregorianCalendar getPrmPmtDt() {
         return prmPmtDt;
     }
 
@@ -326,7 +322,7 @@ public class OptionOrSwaption10 {
      *     {@link String }
      *     
      */
-    public OptionOrSwaption10 setPrmPmtDt(LocalDate value) {
+    public OptionOrSwaption10 setPrmPmtDt(XMLGregorianCalendar value) {
         this.prmPmtDt = value;
         return this;
     }
@@ -339,7 +335,7 @@ public class OptionOrSwaption10 {
      *     {@link String }
      *     
      */
-    public LocalDate getMtrtyDtOfUndrlyg() {
+    public XMLGregorianCalendar getMtrtyDtOfUndrlyg() {
         return mtrtyDtOfUndrlyg;
     }
 
@@ -351,7 +347,7 @@ public class OptionOrSwaption10 {
      *     {@link String }
      *     
      */
-    public OptionOrSwaption10 setMtrtyDtOfUndrlyg(LocalDate value) {
+    public OptionOrSwaption10 setMtrtyDtOfUndrlyg(XMLGregorianCalendar value) {
         this.mtrtyDtOfUndrlyg = value;
         return this;
     }

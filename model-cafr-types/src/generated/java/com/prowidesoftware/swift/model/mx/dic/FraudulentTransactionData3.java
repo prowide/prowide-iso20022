@@ -3,11 +3,11 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -185,8 +185,8 @@ public class FraudulentTransactionData3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the dsptRef property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the dsptRef property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -200,12 +200,10 @@ public class FraudulentTransactionData3 {
      * {@link DisputeReference1 }
      * 
      * 
-     * @return
-     *     The value of the dsptRef property.
      */
     public List<DisputeReference1> getDsptRef() {
         if (dsptRef == null) {
-            dsptRef = new ArrayList<>();
+            dsptRef = new ArrayList<DisputeReference1>();
         }
         return this.dsptRef;
     }
@@ -216,8 +214,8 @@ public class FraudulentTransactionData3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the msgRsn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the msgRsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -231,12 +229,10 @@ public class FraudulentTransactionData3 {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the msgRsn property.
      */
     public List<String> getMsgRsn() {
         if (msgRsn == null) {
-            msgRsn = new ArrayList<>();
+            msgRsn = new ArrayList<String>();
         }
         return this.msgRsn;
     }
@@ -247,8 +243,8 @@ public class FraudulentTransactionData3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the altrnMsgRsn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the altrnMsgRsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -262,12 +258,10 @@ public class FraudulentTransactionData3 {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the altrnMsgRsn property.
      */
     public List<String> getAltrnMsgRsn() {
         if (altrnMsgRsn == null) {
-            altrnMsgRsn = new ArrayList<>();
+            altrnMsgRsn = new ArrayList<String>();
         }
         return this.altrnMsgRsn;
     }

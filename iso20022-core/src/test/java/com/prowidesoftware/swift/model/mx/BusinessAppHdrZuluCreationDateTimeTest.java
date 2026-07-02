@@ -18,8 +18,9 @@ package com.prowidesoftware.swift.model.mx;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import java.time.OffsetDateTime;
-import java.time.ZoneOffset;
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -36,7 +37,15 @@ import org.junit.jupiter.api.Test;
  */
 public class BusinessAppHdrZuluCreationDateTimeTest {
 
-    private static final OffsetDateTime CRE_DT = OffsetDateTime.of(2024, 3, 27, 12, 0, 0, 0, ZoneOffset.ofHours(3));
+    private static final XMLGregorianCalendar CRE_DT = creDt();
+
+    private static XMLGregorianCalendar creDt() {
+        try {
+            return DatatypeFactory.newInstance().newXMLGregorianCalendar(2024, 3, 27, 12, 0, 0, 0, 180);
+        } catch (DatatypeConfigurationException e) {
+            throw new IllegalStateException(e);
+        }
+    }
 
     @Test
     public void v01_default_emitsZuluCreDt() {

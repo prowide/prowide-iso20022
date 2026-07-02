@@ -1,28 +1,29 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for RejectionReason67Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="RejectionReason67Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="ADEA"/>
- *     <enumeration value="INIR"/>
- *     <enumeration value="ULNK"/>
- *     <enumeration value="LATE"/>
- *     <enumeration value="OTHR"/>
- *     <enumeration value="DCAN"/>
- *     <enumeration value="DPRG"/>
- *     <enumeration value="REJA"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="RejectionReason67Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ADEA"/&gt;
+ *     &lt;enumeration value="INIR"/&gt;
+ *     &lt;enumeration value="ULNK"/&gt;
+ *     &lt;enumeration value="LATE"/&gt;
+ *     &lt;enumeration value="OTHR"/&gt;
+ *     &lt;enumeration value="DCAN"/&gt;
+ *     &lt;enumeration value="DPRG"/&gt;
+ *     &lt;enumeration value="REJA"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "RejectionReason67Code")

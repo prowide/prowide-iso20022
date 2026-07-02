@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -47,7 +47,7 @@ public class Trade9 {
     @XmlElement(name = "TradDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate tradDt;
+    protected XMLGregorianCalendar tradDt;
     @XmlElement(name = "FXTradPdct", required = true)
     @XmlSchemaType(name = "string")
     protected UnderlyingProductIdentifier1Code fxTradPdct;
@@ -110,7 +110,7 @@ public class Trade9 {
      *     {@link String }
      *     
      */
-    public LocalDate getTradDt() {
+    public XMLGregorianCalendar getTradDt() {
         return tradDt;
     }
 
@@ -122,7 +122,7 @@ public class Trade9 {
      *     {@link String }
      *     
      */
-    public Trade9 setTradDt(LocalDate value) {
+    public Trade9 setTradDt(XMLGregorianCalendar value) {
         this.tradDt = value;
         return this;
     }
@@ -358,8 +358,8 @@ public class Trade9 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the swpLeg property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the swpLeg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -373,12 +373,10 @@ public class Trade9 {
      * {@link InstrumentLeg7 }
      * 
      * 
-     * @return
-     *     The value of the swpLeg property.
      */
     public List<InstrumentLeg7> getSwpLeg() {
         if (swpLeg == null) {
-            swpLeg = new ArrayList<>();
+            swpLeg = new ArrayList<InstrumentLeg7>();
         }
         return this.swpLeg;
     }
@@ -414,8 +412,8 @@ public class Trade9 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the assoctdTradRef property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the assoctdTradRef property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -429,12 +427,10 @@ public class Trade9 {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the assoctdTradRef property.
      */
     public List<String> getAssoctdTradRef() {
         if (assoctdTradRef == null) {
-            assoctdTradRef = new ArrayList<>();
+            assoctdTradRef = new ArrayList<String>();
         }
         return this.assoctdTradRef;
     }

@@ -1,31 +1,32 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for CardDataReading9Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="CardDataReading9Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="UNKW"/>
- *     <enumeration value="OTHN"/>
- *     <enumeration value="OTHP"/>
- *     <enumeration value="CAMR"/>
- *     <enumeration value="KEEN"/>
- *     <enumeration value="ICPY"/>
- *     <enumeration value="OPTC"/>
- *     <enumeration value="CDFL"/>
- *     <enumeration value="MBNK"/>
- *     <enumeration value="TOKN"/>
- *     <enumeration value="ICCY"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="CardDataReading9Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="UNKW"/&gt;
+ *     &lt;enumeration value="OTHN"/&gt;
+ *     &lt;enumeration value="OTHP"/&gt;
+ *     &lt;enumeration value="CAMR"/&gt;
+ *     &lt;enumeration value="KEEN"/&gt;
+ *     &lt;enumeration value="ICPY"/&gt;
+ *     &lt;enumeration value="OPTC"/&gt;
+ *     &lt;enumeration value="CDFL"/&gt;
+ *     &lt;enumeration value="MBNK"/&gt;
+ *     &lt;enumeration value="TOKN"/&gt;
+ *     &lt;enumeration value="ICCY"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "CardDataReading9Code")

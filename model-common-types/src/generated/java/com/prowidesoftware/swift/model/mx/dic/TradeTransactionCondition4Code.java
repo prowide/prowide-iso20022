@@ -1,42 +1,43 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for TradeTransactionCondition4Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="TradeTransactionCondition4Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="CBNS"/>
- *     <enumeration value="XBNS"/>
- *     <enumeration value="CCPN"/>
- *     <enumeration value="XCPN"/>
- *     <enumeration value="CDIV"/>
- *     <enumeration value="XDIV"/>
- *     <enumeration value="CRTS"/>
- *     <enumeration value="XRTS"/>
- *     <enumeration value="CWAR"/>
- *     <enumeration value="XWAR"/>
- *     <enumeration value="SPCU"/>
- *     <enumeration value="SPEX"/>
- *     <enumeration value="GTDL"/>
- *     <enumeration value="BCRO"/>
- *     <enumeration value="BCRP"/>
- *     <enumeration value="BCFD"/>
- *     <enumeration value="BCBL"/>
- *     <enumeration value="BCBN"/>
- *     <enumeration value="MAPR"/>
- *     <enumeration value="NEGO"/>
- *     <enumeration value="NMPR"/>
- *     <enumeration value="BCPD"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="TradeTransactionCondition4Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="CBNS"/&gt;
+ *     &lt;enumeration value="XBNS"/&gt;
+ *     &lt;enumeration value="CCPN"/&gt;
+ *     &lt;enumeration value="XCPN"/&gt;
+ *     &lt;enumeration value="CDIV"/&gt;
+ *     &lt;enumeration value="XDIV"/&gt;
+ *     &lt;enumeration value="CRTS"/&gt;
+ *     &lt;enumeration value="XRTS"/&gt;
+ *     &lt;enumeration value="CWAR"/&gt;
+ *     &lt;enumeration value="XWAR"/&gt;
+ *     &lt;enumeration value="SPCU"/&gt;
+ *     &lt;enumeration value="SPEX"/&gt;
+ *     &lt;enumeration value="GTDL"/&gt;
+ *     &lt;enumeration value="BCRO"/&gt;
+ *     &lt;enumeration value="BCRP"/&gt;
+ *     &lt;enumeration value="BCFD"/&gt;
+ *     &lt;enumeration value="BCBL"/&gt;
+ *     &lt;enumeration value="BCBN"/&gt;
+ *     &lt;enumeration value="MAPR"/&gt;
+ *     &lt;enumeration value="NEGO"/&gt;
+ *     &lt;enumeration value="NMPR"/&gt;
+ *     &lt;enumeration value="BCPD"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "TradeTransactionCondition4Code")

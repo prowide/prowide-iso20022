@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -37,7 +37,7 @@ public class ProtectInstruction7 {
     @XmlElement(name = "PrtctDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate prtctDt;
+    protected XMLGregorianCalendar prtctDt;
 
     /**
      * Gets the value of the txTp property.
@@ -97,7 +97,7 @@ public class ProtectInstruction7 {
      *     {@link String }
      *     
      */
-    public LocalDate getPrtctDt() {
+    public XMLGregorianCalendar getPrtctDt() {
         return prtctDt;
     }
 
@@ -109,7 +109,7 @@ public class ProtectInstruction7 {
      *     {@link String }
      *     
      */
-    public ProtectInstruction7 setPrtctDt(LocalDate value) {
+    public ProtectInstruction7 setPrtctDt(XMLGregorianCalendar value) {
         this.prtctDt = value;
         return this;
     }

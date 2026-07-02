@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.OffsetTime;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -55,7 +55,7 @@ public class ProcessingCharacteristics2 {
     @XmlElement(name = "DealgCutOffTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected OffsetTime dealgCutOffTm;
+    protected XMLGregorianCalendar dealgCutOffTm;
     @XmlElement(name = "DealgCutOffTmFrame", required = true)
     protected TimeFrame3 dealgCutOffTmFrame;
     @XmlElement(name = "DealgFrqcy", required = true)
@@ -74,8 +74,8 @@ public class ProcessingCharacteristics2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the dealgCcyAccptd property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the dealgCcyAccptd property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -89,12 +89,10 @@ public class ProcessingCharacteristics2 {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the dealgCcyAccptd property.
      */
     public List<String> getDealgCcyAccptd() {
         if (dealgCcyAccptd == null) {
-            dealgCcyAccptd = new ArrayList<>();
+            dealgCcyAccptd = new ArrayList<String>();
         }
         return this.dealgCcyAccptd;
     }
@@ -216,7 +214,7 @@ public class ProcessingCharacteristics2 {
      *     {@link String }
      *     
      */
-    public OffsetTime getDealgCutOffTm() {
+    public XMLGregorianCalendar getDealgCutOffTm() {
         return dealgCutOffTm;
     }
 
@@ -228,7 +226,7 @@ public class ProcessingCharacteristics2 {
      *     {@link String }
      *     
      */
-    public ProcessingCharacteristics2 setDealgCutOffTm(OffsetTime value) {
+    public ProcessingCharacteristics2 setDealgCutOffTm(XMLGregorianCalendar value) {
         this.dealgCutOffTm = value;
         return this;
     }

@@ -2,16 +2,16 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -59,7 +59,7 @@ public class MeetingNotice4 {
     @XmlElement(name = "AnncmntDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate anncmntDt;
+    protected XMLGregorianCalendar anncmntDt;
     @XmlElement(name = "AttndncReqrd")
     protected Boolean attndncReqrd;
     @XmlElement(name = "AttndncConfInf")
@@ -195,7 +195,7 @@ public class MeetingNotice4 {
      *     {@link String }
      *     
      */
-    public LocalDate getAnncmntDt() {
+    public XMLGregorianCalendar getAnncmntDt() {
         return anncmntDt;
     }
 
@@ -207,7 +207,7 @@ public class MeetingNotice4 {
      *     {@link String }
      *     
      */
-    public MeetingNotice4 setAnncmntDt(LocalDate value) {
+    public MeetingNotice4 setAnncmntDt(XMLGregorianCalendar value) {
         this.anncmntDt = value;
         return this;
     }
@@ -368,8 +368,8 @@ public class MeetingNotice4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the addtlPrcdrDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the addtlPrcdrDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -383,12 +383,10 @@ public class MeetingNotice4 {
      * {@link AdditionalRights2 }
      * 
      * 
-     * @return
-     *     The value of the addtlPrcdrDtls property.
      */
     public List<AdditionalRights2> getAddtlPrcdrDtls() {
         if (addtlPrcdrDtls == null) {
-            addtlPrcdrDtls = new ArrayList<>();
+            addtlPrcdrDtls = new ArrayList<AdditionalRights2>();
         }
         return this.addtlPrcdrDtls;
     }
@@ -499,8 +497,8 @@ public class MeetingNotice4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the ctctPrsnDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the ctctPrsnDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -514,12 +512,10 @@ public class MeetingNotice4 {
      * {@link MeetingContactPerson2 }
      * 
      * 
-     * @return
-     *     The value of the ctctPrsnDtls property.
      */
     public List<MeetingContactPerson2> getCtctPrsnDtls() {
         if (ctctPrsnDtls == null) {
-            ctctPrsnDtls = new ArrayList<>();
+            ctctPrsnDtls = new ArrayList<MeetingContactPerson2>();
         }
         return this.ctctPrsnDtls;
     }

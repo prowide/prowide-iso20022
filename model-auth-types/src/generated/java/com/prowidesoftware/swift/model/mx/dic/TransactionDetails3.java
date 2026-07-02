@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -53,7 +53,7 @@ public class TransactionDetails3 {
     @XmlElement(name = "TradDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime tradDtTm;
+    protected XMLGregorianCalendar tradDtTm;
     @XmlElement(name = "FinInstrmDtls", required = true)
     protected FinancialInstrument15 finInstrmDtls;
     @XmlElement(name = "Sd", required = true)
@@ -77,7 +77,7 @@ public class TransactionDetails3 {
     @XmlElement(name = "SttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime sttlmDt;
+    protected XMLGregorianCalendar sttlmDt;
     @XmlElement(name = "PrxyHldr")
     protected PartyIdentification2Choice prxyHldr;
     @XmlElement(name = "AddtlInf")
@@ -114,8 +114,8 @@ public class TransactionDetails3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the assoctdTradRef property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the assoctdTradRef property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -129,12 +129,10 @@ public class TransactionDetails3 {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the assoctdTradRef property.
      */
     public List<String> getAssoctdTradRef() {
         if (assoctdTradRef == null) {
-            assoctdTradRef = new ArrayList<>();
+            assoctdTradRef = new ArrayList<String>();
         }
         return this.assoctdTradRef;
     }
@@ -172,7 +170,7 @@ public class TransactionDetails3 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getTradDtTm() {
+    public XMLGregorianCalendar getTradDtTm() {
         return tradDtTm;
     }
 
@@ -184,7 +182,7 @@ public class TransactionDetails3 {
      *     {@link String }
      *     
      */
-    public TransactionDetails3 setTradDtTm(OffsetDateTime value) {
+    public TransactionDetails3 setTradDtTm(XMLGregorianCalendar value) {
         this.tradDtTm = value;
         return this;
     }
@@ -245,8 +243,8 @@ public class TransactionDetails3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the txRptMrkr property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the txRptMrkr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -260,12 +258,10 @@ public class TransactionDetails3 {
      * {@link PartyIdentification24Choice }
      * 
      * 
-     * @return
-     *     The value of the txRptMrkr property.
      */
     public List<PartyIdentification24Choice> getTxRptMrkr() {
         if (txRptMrkr == null) {
-            txRptMrkr = new ArrayList<>();
+            txRptMrkr = new ArrayList<PartyIdentification24Choice>();
         }
         return this.txRptMrkr;
     }
@@ -428,7 +424,7 @@ public class TransactionDetails3 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getSttlmDt() {
+    public XMLGregorianCalendar getSttlmDt() {
         return sttlmDt;
     }
 
@@ -440,7 +436,7 @@ public class TransactionDetails3 {
      *     {@link String }
      *     
      */
-    public TransactionDetails3 setSttlmDt(OffsetDateTime value) {
+    public TransactionDetails3 setSttlmDt(XMLGregorianCalendar value) {
         this.sttlmDt = value;
         return this;
     }

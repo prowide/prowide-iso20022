@@ -1,32 +1,33 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for TerminalManagementAction5Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="TerminalManagementAction5Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="DCTV"/>
- *     <enumeration value="DELT"/>
- *     <enumeration value="DWNL"/>
- *     <enumeration value="INST"/>
- *     <enumeration value="RSTR"/>
- *     <enumeration value="UPLD"/>
- *     <enumeration value="UPDT"/>
- *     <enumeration value="BIND"/>
- *     <enumeration value="RBND"/>
- *     <enumeration value="UBND"/>
- *     <enumeration value="ACTV"/>
- *     <enumeration value="DEVR"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="TerminalManagementAction5Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="DCTV"/&gt;
+ *     &lt;enumeration value="DELT"/&gt;
+ *     &lt;enumeration value="DWNL"/&gt;
+ *     &lt;enumeration value="INST"/&gt;
+ *     &lt;enumeration value="RSTR"/&gt;
+ *     &lt;enumeration value="UPLD"/&gt;
+ *     &lt;enumeration value="UPDT"/&gt;
+ *     &lt;enumeration value="BIND"/&gt;
+ *     &lt;enumeration value="RBND"/&gt;
+ *     &lt;enumeration value="UBND"/&gt;
+ *     &lt;enumeration value="ACTV"/&gt;
+ *     &lt;enumeration value="DEVR"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "TerminalManagementAction5Code")
