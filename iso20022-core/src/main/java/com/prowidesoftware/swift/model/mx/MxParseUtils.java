@@ -58,17 +58,6 @@ public class MxParseUtils {
     private static final String regex = "^(/|//)([a-zA-Z_][\\w\\-.]*)(/([a-zA-Z_][\\w\\-.]*))*$";
     private static final Pattern pattern = Pattern.compile(regex);
     /**
-     * Matches XML whose first element is AppHdr with any namespace prefix, capturing in group 1 the prolog that must
-     * remain outside any wrapper element: optional BOM, XML declaration or other processing instructions, comments
-     * and whitespace. E.g. {@code <AppHdr>}, {@code <h:AppHdr>}, {@code <?xml ...?><SwInt:AppHdr>}.
-     * Used with {@link Matcher#lookingAt()} so non-matching content fails fast at the first tag.
-     */
-    private static final Pattern APPHDR_ROOT_PATTERN = Pattern.compile(
-            "^(\\uFEFF?\\s*(?:(?:<\\?.*?\\?>|<!--.*?-->)\\s*)*)<(?:[a-zA-Z_][\\w.-]*:)?" + AppHdr.HEADER_LOCALNAME
-                    + "[\\s>/]",
-            Pattern.DOTALL);
-
-    /**
      * Creates a {@link SAXSource} for the given XML, filtering a specific element with the
      * {@link NamespaceAndElementFilter}.
      *
@@ -373,11 +362,79 @@ public class MxParseUtils {
      * wrapped: it is already parseable and consumers may rely on the AppHdr being the tree root.
      */
     private static int wrapPosition(String xml) {
-        Matcher m = APPHDR_ROOT_PATTERN.matcher(xml);
-        if (!m.lookingAt()) {
+        int rootStart = prologEnd(xml);
+        if (rootStart < 0 || !isAppHdrTag(xml, rootStart)) {
             return -1;
         }
-        return hasElementAfterFirstRoot(xml, m.end(1)) ? m.end(1) : -1;
+        return hasElementAfterFirstRoot(xml, rootStart) ? rootStart : -1;
+    }
+
+    /**
+     * Returns the index of the first element tag, skipping the prolog: optional BOM, XML declaration and other
+     * processing instructions, comments and whitespace. Returns -1 when no element tag follows the prolog or the
+     * prolog is malformed (unclosed processing instruction or comment, text content before any element).
+     *
+     * <p>Implemented as an iterative scan on purpose: a regex over the prolog recurses per token (risking a stack
+     * overflow on many leading comments) and backtracks into the payload when the first tag does not match,
+     * degrading the non-matching case — a regular Document-rooted message — to a full payload scan.
+     */
+    private static int prologEnd(String xml) {
+        final int n = xml.length();
+        int i = 0;
+        if (i < n && xml.charAt(i) == '\uFEFF') {
+            i++;
+        }
+        while (i < n) {
+            char c = xml.charAt(i);
+            if (Character.isWhitespace(c)) {
+                i++;
+            } else if (xml.startsWith("<?", i)) {
+                int end = xml.indexOf("?>", i + 2);
+                if (end < 0) {
+                    return -1;
+                }
+                i = end + 2;
+            } else if (xml.startsWith("<!--", i)) {
+                int end = xml.indexOf("-->", i + 4);
+                if (end < 0) {
+                    return -1;
+                }
+                i = end + 3;
+            } else if (c == '<') {
+                return i;
+            } else {
+                return -1;
+            }
+        }
+        return -1;
+    }
+
+    /**
+     * Checks whether the tag starting at {@code lt} (pointing to a {@code '<'}) opens an AppHdr element, with an
+     * optional single namespace prefix: {@code <AppHdr}, {@code <prefix:AppHdr}, followed by whitespace, the tag
+     * close or a self-closing mark.
+     */
+    private static boolean isAppHdrTag(String xml, int lt) {
+        final int n = xml.length();
+        int p = lt + 1;
+        int start = p;
+        while (p < n && xml.charAt(p) != ':' && isXmlNameChar(xml.charAt(p))) {
+            p++;
+        }
+        if (p < n && xml.charAt(p) == ':') {
+            // prefixed name: the prefix must be a valid name, the local part follows the colon
+            if (p == start || !(Character.isLetter(xml.charAt(start)) || xml.charAt(start) == '_')) {
+                return false;
+            }
+            start = ++p;
+            while (p < n && xml.charAt(p) != ':' && isXmlNameChar(xml.charAt(p))) {
+                p++;
+            }
+        }
+        return p - start == AppHdr.HEADER_LOCALNAME.length()
+                && xml.startsWith(AppHdr.HEADER_LOCALNAME, start)
+                && p < n
+                && (Character.isWhitespace(xml.charAt(p)) || xml.charAt(p) == '>' || xml.charAt(p) == '/');
     }
 
     /**

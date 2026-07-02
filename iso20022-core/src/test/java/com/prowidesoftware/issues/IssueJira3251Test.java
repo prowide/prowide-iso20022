@@ -21,7 +21,14 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 import com.prowidesoftware.swift.model.mx.MxPacs00800108;
+import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.io.TempDir;
 
 /**
  * File-format (FileAct) payloads may contain the AppHdr and Document as sibling root elements, without a wrapping
@@ -75,6 +82,37 @@ public class IssueJira3251Test {
         assertEquals("pacs.008.001.08", msg.getIdentifier());
         assertEquals("AAAAGB2LXXX", msg.getSender());
         assertEquals("BBBBDEFFXXX", msg.getReceiver());
+    }
+
+    @Test
+    void testSiblingRootsInputStream() throws IOException {
+        // same file-format payload through the InputStream constructor
+        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + PACS_APPHDR + PACS_DOCUMENT;
+        MxSwiftMessage msg = new MxSwiftMessage(new ByteArrayInputStream(xml.getBytes(StandardCharsets.UTF_8)));
+        assertEquals("pacs.008.001.08", msg.getIdentifier());
+        assertEquals("AAAAGB2LXXX", msg.getSender());
+        assertEquals("BBBBDEFFXXX", msg.getReceiver());
+    }
+
+    @Test
+    void testSiblingRootsFile(@TempDir Path tempDir) throws IOException {
+        // same file-format payload through the File constructor
+        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + PACS_APPHDR + PACS_DOCUMENT;
+        File file = tempDir.resolve("fileact.xml").toFile();
+        Files.write(file.toPath(), xml.getBytes(StandardCharsets.UTF_8));
+        MxSwiftMessage msg = new MxSwiftMessage(file);
+        assertEquals("pacs.008.001.08", msg.getIdentifier());
+        assertEquals("AAAAGB2LXXX", msg.getSender());
+        assertEquals("BBBBDEFFXXX", msg.getReceiver());
+    }
+
+    @Test
+    void testSiblingRootsRawMessagePreserved() {
+        // the lenient normalization is a parsing view only: the stored raw message must keep the original content,
+        // without the synthetic RequestPayload wrapper
+        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + PACS_APPHDR + PACS_DOCUMENT;
+        MxSwiftMessage msg = new MxSwiftMessage(xml);
+        assertEquals(xml, msg.getMessage());
     }
 
     @Test

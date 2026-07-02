@@ -1417,4 +1417,47 @@ public class MxParseUtilsTest {
         String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Document xmlns=\"urn:example\"/>";
         assertSame(xml, MxParseUtils.makeXmlLenient(xml));
     }
+
+    @Test
+    void testNormalizeLenientPayload_DataPduEnvelope_Unchanged() {
+        // an enveloped message with declared prefixes must pass through every normalizer as the same instance
+        assertSame(xml, MxParseUtils.normalizeLenientPayload(xml));
+        assertSame(xml, MxParseUtils.wrapIfAppHdrRoot(xml));
+        assertSame(xml, MxParseUtils.stripUndeclaredDocumentPrefix(xml));
+    }
+
+    @Test
+    void testStripUndeclaredDocumentPrefix_PrefixSubstringCollision() {
+        // xmlns:ns2 is declared but the Document prefix is ns: the declaration lookup must not match the longer
+        // prefix, so ns is still detected as undeclared and stripped
+        String input = "<ns:Document xmlns:ns2=\"urn:example\"><ns:A/></ns:Document>";
+        assertEquals(
+                "<Document xmlns:ns2=\"urn:example\"><A/></Document>",
+                MxParseUtils.stripUndeclaredDocumentPrefix(input));
+    }
+
+    @Test
+    void testWrapIfAppHdrRoot_ManyPrologComments_DocumentRoot() {
+        // guards the iterative prolog scan: a regex-based scan recursed per comment (stack overflow) and
+        // backtracked into the payload when the first tag was not an AppHdr
+        StringBuilder sb = new StringBuilder("<?xml version=\"1.0\"?>");
+        for (int i = 0; i < 10000; i++) {
+            sb.append("<!-- c -->");
+        }
+        String xml = sb.append("<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08\"/>")
+                .toString();
+        assertSame(xml, MxParseUtils.wrapIfAppHdrRoot(xml));
+    }
+
+    @Test
+    void testWrapIfAppHdrRoot_ManyPrologComments_SiblingRoots() {
+        StringBuilder prolog = new StringBuilder("<?xml version=\"1.0\"?>");
+        for (int i = 0; i < 10000; i++) {
+            prolog.append("<!-- c -->");
+        }
+        String content = "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\"><Fr/></AppHdr>"
+                + "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08\"/>";
+        String result = MxParseUtils.wrapIfAppHdrRoot(prolog + content);
+        assertEquals(prolog + "<RequestPayload>" + content + "</RequestPayload>", result);
+    }
 }
