@@ -20,13 +20,13 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.prowidesoftware.swift.model.mx.*;
-import jakarta.persistence.*;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Calendar;
 import java.util.Objects;
 import java.util.Optional;
+import javax.persistence.*;
 import org.apache.commons.lang3.StringUtils;
 
 /**

@@ -23,10 +23,10 @@ import com.prowidesoftware.swift.model.mx.dic.CreditTransferTransactionInformati
 import com.prowidesoftware.swift.model.mx.dic.FIToFICustomerCreditTransferV02;
 import com.prowidesoftware.swift.model.mx.dic.GroupHeader33;
 import com.prowidesoftware.swift.model.mx.dic.SettlementTimeRequest2;
-import jakarta.xml.bind.annotation.adapters.XmlAdapter;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoField;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
 import org.junit.jupiter.api.Test;
 
 public class MxWriteAdaptersTest {

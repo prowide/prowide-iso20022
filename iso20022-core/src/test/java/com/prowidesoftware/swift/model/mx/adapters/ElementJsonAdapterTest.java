@@ -22,6 +22,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonNull;
 import com.google.gson.JsonPrimitive;
 import com.google.gson.reflect.TypeToken;
+import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.w3c.dom.Element;
@@ -70,7 +71,7 @@ class ElementJsonAdapterTest {
         Gson gson = new GsonBuilder()
                 .registerTypeHierarchyAdapter(Element.class, adapter)
                 .create();
-        List<Element> list = List.of(
+        List<Element> list = Arrays.asList(
                 ElementJsonAdapter.toElement("<a:One xmlns:a=\"urn:x\"/>"),
                 ElementJsonAdapter.toElement("<a:Two xmlns:a=\"urn:x\"/>"));
 

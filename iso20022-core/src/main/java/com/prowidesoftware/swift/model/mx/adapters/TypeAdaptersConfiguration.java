@@ -15,9 +15,9 @@
  */
 package com.prowidesoftware.swift.model.mx.adapters;
 
-import jakarta.xml.bind.annotation.adapters.XmlAdapter;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
 
 /**
  * DTO to encapsulate type adapters parameters for the marshalling and unmarshalling API.

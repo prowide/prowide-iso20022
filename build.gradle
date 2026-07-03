@@ -4,9 +4,9 @@ buildscript {
 		gradlePluginPortal()
 	}
 	dependencies {
-		classpath 'ru.vyarus:gradle-quality-plugin:6.1.0'
-		classpath 'pl.allegro.tech.build:axion-release-plugin:1.18.18'
-		classpath 'com.diffplug.spotless:spotless-plugin-gradle:7.0.3'
+		classpath 'ru.vyarus:gradle-quality-plugin:5.0.0'
+		classpath 'pl.allegro.tech.build:axion-release-plugin:1.13.6'
+		classpath 'com.diffplug.spotless:spotless-plugin-gradle:6.13.0' // above this version requires Java 11
 	}
 }
 apply plugin: 'pl.allegro.tech.build.axion-release'
@@ -22,22 +22,21 @@ group 'com.prowidesoftware'
 
 project.ext {
 	SRU = 'SRU2026'
-    prowideCoreVersion = 'SRU2026-10.4.1'
+    prowideCoreVersion = 'SRU2026-9.7.0'
 	commonsLangVersion = '3.20.0'
 	gsonVersion = '2.14.0'
-	jaxbVersion = '4.0.6'
-	jakartaPersistenceVersion = '3.1.0' // jakarta 3.1 is Jakarta EE 10, jakarta 3.2 would imply migration to Jakarta EE 11
+	// Java 8 backport: javax JAXB ships with the JDK (it was removed only in Java 11+), so no explicit
+	// JAXB compile dependency is required. The JAXB implementation is pinned for tests only (see iso20022-core).
 }
 
 scmVersion {
-	versionCreator('simple')
 	tag {
 		prefix = "${SRU}"
 		versionSeparator = '-'
 	}
 }
 //project.version = "${SRU}-${scmVersion.version}"
-project.version = "${SRU}-10.4.1"
+project.version = "${SRU}-9.7.0"
 
 allprojects {
 
@@ -45,7 +44,7 @@ allprojects {
 		options.encoding = 'UTF-8'
 		java {
 			toolchain {
-				languageVersion.set(JavaLanguageVersion.of(11))
+				languageVersion.set(JavaLanguageVersion.of(8))
 			}
 		}
 		doLast {
@@ -91,8 +90,8 @@ allprojects {
 			'Implementation-Version': project.version,
 			'Implementation-Vendor': 'www.prowidesoftware.com',
 			'Built-OS': System.getProperty('os.name'),
-			'Source-Compatibility': JavaVersion.VERSION_11,
-			'Target-Compatibility': JavaVersion.VERSION_11,
+			'Source-Compatibility': JavaVersion.VERSION_1_8,
+			'Target-Compatibility': JavaVersion.VERSION_1_8,
 			'Built-Date': new Date().format("yyyy-MM-dd"),
 			'Automatic-Module-Name': 'com.prowidesoftware.iso20022'
 		)
@@ -107,9 +106,7 @@ subprojects {
 	dependencies {
 		implementation "org.apache.commons:commons-lang3:${commonsLangVersion}"
 		implementation "com.google.code.gson:gson:${gsonVersion}"
-		implementation "com.sun.xml.bind:jaxb-impl:${jaxbVersion}"
-		// bind-api is included transitively by jaxb-impl
-		// implementation 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.2'
+		// Java 8 backport: javax JAXB is provided by the JDK, no explicit JAXB dependency needed
 	}
 
 	tasks.withType(Jar) {
@@ -134,11 +131,9 @@ configure(subprojects.findAll {it.name.endsWith('-mx')}) {
 		implementation "org.apache.commons:commons-lang3:${commonsLangVersion}"
 		implementation "com.google.code.gson:gson:${gsonVersion}"
 
-		implementation "com.sun.xml.bind:jaxb-impl:${jaxbVersion}"
-		// bind-api is included transitively by jaxb-impl
-		// implementation 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.2'
+		// Java 8 backport: javax JAXB is provided by the JDK, no explicit JAXB dependency needed
 
-		compileOnly "jakarta.persistence:jakarta.persistence-api:${jakartaPersistenceVersion}"
+		compileOnly 'javax.persistence:javax.persistence-api:2.2'
 	}
 }
 
@@ -157,10 +152,17 @@ project(':iso20022-core') {
 		implementation "org.apache.commons:commons-lang3:${commonsLangVersion}"
 		implementation "com.google.code.gson:gson:${gsonVersion}"
 
-		compileOnly "jakarta.persistence:jakarta.persistence-api:${jakartaPersistenceVersion}"
-		compileOnly 'jakarta.validation:jakarta.validation-api:3.1.1'
+		compileOnly 'javax.persistence:javax.persistence-api:2.2'
+		compileOnly 'javax.validation:validation-api:2.0.1.Final'
 
-		testImplementation "jakarta.persistence:jakarta.persistence-api:${jakartaPersistenceVersion}"
+		// javax JAXB is bundled in JDK 8, but the implementation is pinned here to avoid potential
+		// differences in JAXB implementations when testing in different environments
+		testImplementation 'javax.xml.bind:jaxb-api:2.3.1'
+		testImplementation 'com.sun.xml.bind:jaxb-impl:2.3.3'
+		testImplementation 'com.sun.xml.bind:jaxb-core:2.3.0.1'
+		testImplementation 'javax.activation:activation:1.1.1'
+
+		testImplementation 'javax.persistence:javax.persistence-api:2.2'
 		testImplementation 'org.junit.jupiter:junit-jupiter:5.11.4'
 		testImplementation 'com.google.guava:guava:33.6.0-jre'
 		testImplementation 'org.assertj:assertj-core:3.27.7'
@@ -339,9 +341,9 @@ dependencies {
 	// included build (keep in sync with the latest Prowide Core version)
     api "com.prowidesoftware:pw-swift-core:${prowideCoreVersion}"
 
-	// jaxb is required because it is no longer included in the JDK
-	// bind-api is included transitively by jaxb-impl
-	implementation 'com.sun.xml.bind:jaxb-impl:4.0.6'
+	// Java 8 backport: javax JAXB is provided by the JDK, no explicit JAXB dependency needed in the published pom
+	implementation "org.apache.commons:commons-lang3:${commonsLangVersion}"
+	implementation "com.google.code.gson:gson:${gsonVersion}"
 }
 
 // repo for publishing
@@ -533,6 +535,12 @@ tasks.register('bundle', Zip) {
 tasks.withType(Test) {
 	doFirst {
 		println 'Running test on ' + getJavaLauncher().get().getMetadata().getInstallationPath()
+	}
+}
+
+task('testOn11', type: Test) {
+	javaLauncher = javaToolchains.launcherFor {
+		languageVersion = JavaLanguageVersion.of(11)
 	}
 }
 
