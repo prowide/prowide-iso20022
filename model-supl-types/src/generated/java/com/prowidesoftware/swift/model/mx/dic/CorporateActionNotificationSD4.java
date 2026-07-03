@@ -1,16 +1,15 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
-import java.time.OffsetDateTime;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -43,15 +42,15 @@ public class CorporateActionNotificationSD4 {
     @XmlElement(name = "ApprvdDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate apprvdDt;
+    protected XMLGregorianCalendar apprvdDt;
     @XmlElement(name = "MtchDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate mtchDt;
+    protected XMLGregorianCalendar mtchDt;
     @XmlElement(name = "ActvUntilDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime actvUntilDt;
+    protected XMLGregorianCalendar actvUntilDt;
     @XmlElement(name = "SvcLvlAgrmtPrd")
     protected Period3 svcLvlAgrmtPrd;
     @XmlElement(name = "VldtnNotSpprtdRsn")
@@ -115,7 +114,7 @@ public class CorporateActionNotificationSD4 {
      *     {@link String }
      *     
      */
-    public LocalDate getApprvdDt() {
+    public XMLGregorianCalendar getApprvdDt() {
         return apprvdDt;
     }
 
@@ -127,7 +126,7 @@ public class CorporateActionNotificationSD4 {
      *     {@link String }
      *     
      */
-    public CorporateActionNotificationSD4 setApprvdDt(LocalDate value) {
+    public CorporateActionNotificationSD4 setApprvdDt(XMLGregorianCalendar value) {
         this.apprvdDt = value;
         return this;
     }
@@ -140,7 +139,7 @@ public class CorporateActionNotificationSD4 {
      *     {@link String }
      *     
      */
-    public LocalDate getMtchDt() {
+    public XMLGregorianCalendar getMtchDt() {
         return mtchDt;
     }
 
@@ -152,7 +151,7 @@ public class CorporateActionNotificationSD4 {
      *     {@link String }
      *     
      */
-    public CorporateActionNotificationSD4 setMtchDt(LocalDate value) {
+    public CorporateActionNotificationSD4 setMtchDt(XMLGregorianCalendar value) {
         this.mtchDt = value;
         return this;
     }
@@ -165,7 +164,7 @@ public class CorporateActionNotificationSD4 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getActvUntilDt() {
+    public XMLGregorianCalendar getActvUntilDt() {
         return actvUntilDt;
     }
 
@@ -177,7 +176,7 @@ public class CorporateActionNotificationSD4 {
      *     {@link String }
      *     
      */
-    public CorporateActionNotificationSD4 setActvUntilDt(OffsetDateTime value) {
+    public CorporateActionNotificationSD4 setActvUntilDt(XMLGregorianCalendar value) {
         this.actvUntilDt = value;
         return this;
     }

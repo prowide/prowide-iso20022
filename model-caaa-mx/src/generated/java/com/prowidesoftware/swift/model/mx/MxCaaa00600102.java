@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxCaaa00600102
 
     @XmlElement(name = "AccptrCxlRspn", required = true)
     protected AcceptorCancellationResponseV02 accptrCxlRspn;
-    public static final transient String BUSINESS_PROCESS = "caaa";
-    public static final transient int FUNCTIONALITY = 6;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 2;
+    public final static transient String BUSINESS_PROCESS = "caaa";
+    public final static transient int FUNCTIONALITY = 6;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 2;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {AcceptorCancellationResponse2 .class, AcceptorCancellationResponseV02 .class, Action1 .class, ActionMessage1 .class, ActionType1Code.class, Algorithm2Code.class, Algorithm3Code.class, Algorithm5Code.class, Algorithm6Code.class, Algorithm7Code.class, Algorithm8Code.class, AlgorithmIdentification2 .class, AlgorithmIdentification3 .class, AlgorithmIdentification6 .class, AlgorithmIdentification7 .class, AlgorithmIdentification8 .class, AttributeType1Code.class, AuthenticatedData2 .class, AuthorisationResult1 .class, CardPaymentEnvironment11 .class, CardPaymentTransaction10 .class, CardPaymentTransaction6 .class, CardPaymentTransactionDetails6 .class, CertificateIdentifier1 .class, CertificateIssuer1 .class, ContentInformationType5 .class, ContentInformationType6 .class, ContentType1Code.class, EncapsulatedContent1 .class, EncryptedContent2 .class, EnvelopedData2 .class, GenericIdentification31 .class, GenericIdentification32 .class, GenericIdentification33 .class, Header1 .class, IssuerAndSerialNumber1 .class, KEK2 .class, KEKIdentifier1 .class, KeyTransport2 .class, MessageFunction1Code.class, MxCaaa00600102 .class, Parameter1 .class, Parameter2 .class, Parameter3 .class, PartyType3Code.class, PartyType4Code.class, PlainCardData3 .class, Recipient2Choice.class, RelativeDistinguishedName1 .class, Response1Code.class, ResponseType1 .class, TMSContactLevel1Code.class, TMSTrigger1 .class, Traceability1 .class, TransactionIdentifier1 .class, UserInterface1Code.class };
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:caaa.006.001.02";
+    public final static transient Class[] _classes = new Class[] {AcceptorCancellationResponse2 .class, AcceptorCancellationResponseV02 .class, Action1 .class, ActionMessage1 .class, ActionType1Code.class, Algorithm2Code.class, Algorithm3Code.class, Algorithm5Code.class, Algorithm6Code.class, Algorithm7Code.class, Algorithm8Code.class, AlgorithmIdentification2 .class, AlgorithmIdentification3 .class, AlgorithmIdentification6 .class, AlgorithmIdentification7 .class, AlgorithmIdentification8 .class, AttributeType1Code.class, AuthenticatedData2 .class, AuthorisationResult1 .class, CardPaymentEnvironment11 .class, CardPaymentTransaction10 .class, CardPaymentTransaction6 .class, CardPaymentTransactionDetails6 .class, CertificateIdentifier1 .class, CertificateIssuer1 .class, ContentInformationType5 .class, ContentInformationType6 .class, ContentType1Code.class, EncapsulatedContent1 .class, EncryptedContent2 .class, EnvelopedData2 .class, GenericIdentification31 .class, GenericIdentification32 .class, GenericIdentification33 .class, Header1 .class, IssuerAndSerialNumber1 .class, KEK2 .class, KEKIdentifier1 .class, KeyTransport2 .class, MessageFunction1Code.class, MxCaaa00600102 .class, Parameter1 .class, Parameter2 .class, Parameter3 .class, PartyType3Code.class, PartyType4Code.class, PlainCardData3 .class, Recipient2Choice.class, RelativeDistinguishedName1 .class, Response1Code.class, ResponseType1 .class, TMSContactLevel1Code.class, TMSTrigger1 .class, Traceability1 .class, TransactionIdentifier1 .class, UserInterface1Code.class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:caaa.006.001.02";
 
     public MxCaaa00600102() {
         super();
@@ -86,6 +86,21 @@ public class MxCaaa00600102
     public MxCaaa00600102 setAccptrCxlRspn(AcceptorCancellationResponseV02 value) {
         this.accptrCxlRspn = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxCaaa00600102
      * @return
      *     a new instance of MxCaaa00600102
      */
-    public static final MxCaaa00600102 fromJson(String json) {
+    public final static MxCaaa00600102 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxCaaa00600102 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

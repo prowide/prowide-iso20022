@@ -3,11 +3,11 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -77,8 +77,8 @@ public class TradeSecurityIdentificationQueryCriteria3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the id property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the id property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -92,12 +92,10 @@ public class TradeSecurityIdentificationQueryCriteria3 {
      * {@link SecurityIdentificationQueryCriteria1 }
      * 
      * 
-     * @return
-     *     The value of the id property.
      */
     public List<SecurityIdentificationQueryCriteria1> getId() {
         if (id == null) {
-            id = new ArrayList<>();
+            id = new ArrayList<SecurityIdentificationQueryCriteria1>();
         }
         return this.id;
     }
@@ -108,8 +106,8 @@ public class TradeSecurityIdentificationQueryCriteria3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the ctrctTp property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the ctrctTp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -123,12 +121,10 @@ public class TradeSecurityIdentificationQueryCriteria3 {
      * {@link FinancialInstrumentContractType2Code }
      * 
      * 
-     * @return
-     *     The value of the ctrctTp property.
      */
     public List<FinancialInstrumentContractType2Code> getCtrctTp() {
         if (ctrctTp == null) {
-            ctrctTp = new ArrayList<>();
+            ctrctTp = new ArrayList<FinancialInstrumentContractType2Code>();
         }
         return this.ctrctTp;
     }
@@ -139,8 +135,8 @@ public class TradeSecurityIdentificationQueryCriteria3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the isin property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the isin property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -154,12 +150,10 @@ public class TradeSecurityIdentificationQueryCriteria3 {
      * {@link ISINQueryCriteria1 }
      * 
      * 
-     * @return
-     *     The value of the isin property.
      */
     public List<ISINQueryCriteria1> getISIN() {
         if (isin == null) {
-            isin = new ArrayList<>();
+            isin = new ArrayList<ISINQueryCriteria1>();
         }
         return this.isin;
     }
@@ -170,8 +164,8 @@ public class TradeSecurityIdentificationQueryCriteria3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the unqPdctIdr property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the unqPdctIdr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -185,12 +179,10 @@ public class TradeSecurityIdentificationQueryCriteria3 {
      * {@link UPIQueryCriteria1 }
      * 
      * 
-     * @return
-     *     The value of the unqPdctIdr property.
      */
     public List<UPIQueryCriteria1> getUnqPdctIdr() {
         if (unqPdctIdr == null) {
-            unqPdctIdr = new ArrayList<>();
+            unqPdctIdr = new ArrayList<UPIQueryCriteria1>();
         }
         return this.unqPdctIdr;
     }
@@ -201,8 +193,8 @@ public class TradeSecurityIdentificationQueryCriteria3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the undrlygInstrmId property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the undrlygInstrmId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -216,12 +208,10 @@ public class TradeSecurityIdentificationQueryCriteria3 {
      * {@link SecurityIdentificationQuery4Choice }
      * 
      * 
-     * @return
-     *     The value of the undrlygInstrmId property.
      */
     public List<SecurityIdentificationQuery4Choice> getUndrlygInstrmId() {
         if (undrlygInstrmId == null) {
-            undrlygInstrmId = new ArrayList<>();
+            undrlygInstrmId = new ArrayList<SecurityIdentificationQuery4Choice>();
         }
         return this.undrlygInstrmId;
     }

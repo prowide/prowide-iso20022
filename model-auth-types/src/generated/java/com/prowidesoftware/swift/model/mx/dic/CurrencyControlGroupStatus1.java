@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -51,7 +51,7 @@ public class CurrencyControlGroupStatus1 {
     @XmlElement(name = "StsDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime stsDtTm;
+    protected XMLGregorianCalendar stsDtTm;
 
     /**
      * Gets the value of the orgnlRefs property.
@@ -184,8 +184,8 @@ public class CurrencyControlGroupStatus1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the stsRsn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the stsRsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -199,12 +199,10 @@ public class CurrencyControlGroupStatus1 {
      * {@link ValidationStatusReason1 }
      * 
      * 
-     * @return
-     *     The value of the stsRsn property.
      */
     public List<ValidationStatusReason1> getStsRsn() {
         if (stsRsn == null) {
-            stsRsn = new ArrayList<>();
+            stsRsn = new ArrayList<ValidationStatusReason1>();
         }
         return this.stsRsn;
     }
@@ -217,7 +215,7 @@ public class CurrencyControlGroupStatus1 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getStsDtTm() {
+    public XMLGregorianCalendar getStsDtTm() {
         return stsDtTm;
     }
 
@@ -229,7 +227,7 @@ public class CurrencyControlGroupStatus1 {
      *     {@link String }
      *     
      */
-    public CurrencyControlGroupStatus1 setStsDtTm(OffsetDateTime value) {
+    public CurrencyControlGroupStatus1 setStsDtTm(XMLGregorianCalendar value) {
         this.stsDtTm = value;
         return this;
     }

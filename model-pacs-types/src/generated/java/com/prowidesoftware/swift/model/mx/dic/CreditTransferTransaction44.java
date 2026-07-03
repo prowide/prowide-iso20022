@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -74,7 +74,7 @@ public class CreditTransferTransaction44 {
     @XmlElement(name = "IntrBkSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate intrBkSttlmDt;
+    protected XMLGregorianCalendar intrBkSttlmDt;
     @XmlElement(name = "SttlmPrty")
     @XmlSchemaType(name = "string")
     protected Priority3Code sttlmPrty;
@@ -226,7 +226,7 @@ public class CreditTransferTransaction44 {
      *     {@link String }
      *     
      */
-    public LocalDate getIntrBkSttlmDt() {
+    public XMLGregorianCalendar getIntrBkSttlmDt() {
         return intrBkSttlmDt;
     }
 
@@ -238,7 +238,7 @@ public class CreditTransferTransaction44 {
      *     {@link String }
      *     
      */
-    public CreditTransferTransaction44 setIntrBkSttlmDt(LocalDate value) {
+    public CreditTransferTransaction44 setIntrBkSttlmDt(XMLGregorianCalendar value) {
         this.intrBkSttlmDt = value;
         return this;
     }
@@ -924,8 +924,8 @@ public class CreditTransferTransaction44 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the instrForCdtrAgt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the instrForCdtrAgt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -939,12 +939,10 @@ public class CreditTransferTransaction44 {
      * {@link InstructionForCreditorAgent3 }
      * 
      * 
-     * @return
-     *     The value of the instrForCdtrAgt property.
      */
     public List<InstructionForCreditorAgent3> getInstrForCdtrAgt() {
         if (instrForCdtrAgt == null) {
-            instrForCdtrAgt = new ArrayList<>();
+            instrForCdtrAgt = new ArrayList<InstructionForCreditorAgent3>();
         }
         return this.instrForCdtrAgt;
     }
@@ -955,8 +953,8 @@ public class CreditTransferTransaction44 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the instrForNxtAgt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the instrForNxtAgt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -970,12 +968,10 @@ public class CreditTransferTransaction44 {
      * {@link InstructionForNextAgent1 }
      * 
      * 
-     * @return
-     *     The value of the instrForNxtAgt property.
      */
     public List<InstructionForNextAgent1> getInstrForNxtAgt() {
         if (instrForNxtAgt == null) {
-            instrForNxtAgt = new ArrayList<>();
+            instrForNxtAgt = new ArrayList<InstructionForNextAgent1>();
         }
         return this.instrForNxtAgt;
     }
@@ -1061,8 +1057,8 @@ public class CreditTransferTransaction44 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the splmtryData property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -1076,12 +1072,10 @@ public class CreditTransferTransaction44 {
      * {@link SupplementaryData1 }
      * 
      * 
-     * @return
-     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<>();
+            splmtryData = new ArrayList<SupplementaryData1>();
         }
         return this.splmtryData;
     }

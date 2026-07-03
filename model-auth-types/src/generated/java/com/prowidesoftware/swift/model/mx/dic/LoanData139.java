@@ -2,18 +2,17 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -52,11 +51,11 @@ public class LoanData139 {
     @XmlElement(name = "EvtDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate evtDt;
+    protected XMLGregorianCalendar evtDt;
     @XmlElement(name = "ExctnDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime exctnDtTm;
+    protected XMLGregorianCalendar exctnDtTm;
     @XmlElement(name = "ClrSts")
     protected Cleared16Choice clrSts;
     @XmlElement(name = "TradgVn")
@@ -66,13 +65,13 @@ public class LoanData139 {
     @XmlElement(name = "ValDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate valDt;
+    protected XMLGregorianCalendar valDt;
     @XmlElement(name = "MinNtcePrd")
     protected BigDecimal minNtcePrd;
     @XmlElement(name = "EarlstCallBckDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate earlstCallBckDt;
+    protected XMLGregorianCalendar earlstCallBckDt;
     @XmlElement(name = "GnlColl")
     @XmlSchemaType(name = "string")
     protected SpecialCollateral1Code gnlColl;
@@ -90,7 +89,7 @@ public class LoanData139 {
     @XmlElement(name = "TermntnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate termntnDt;
+    protected XMLGregorianCalendar termntnDt;
 
     /**
      * Gets the value of the unqTradIdr property.
@@ -125,7 +124,7 @@ public class LoanData139 {
      *     {@link String }
      *     
      */
-    public LocalDate getEvtDt() {
+    public XMLGregorianCalendar getEvtDt() {
         return evtDt;
     }
 
@@ -137,7 +136,7 @@ public class LoanData139 {
      *     {@link String }
      *     
      */
-    public LoanData139 setEvtDt(LocalDate value) {
+    public LoanData139 setEvtDt(XMLGregorianCalendar value) {
         this.evtDt = value;
         return this;
     }
@@ -150,7 +149,7 @@ public class LoanData139 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getExctnDtTm() {
+    public XMLGregorianCalendar getExctnDtTm() {
         return exctnDtTm;
     }
 
@@ -162,7 +161,7 @@ public class LoanData139 {
      *     {@link String }
      *     
      */
-    public LoanData139 setExctnDtTm(OffsetDateTime value) {
+    public LoanData139 setExctnDtTm(XMLGregorianCalendar value) {
         this.exctnDtTm = value;
         return this;
     }
@@ -250,7 +249,7 @@ public class LoanData139 {
      *     {@link String }
      *     
      */
-    public LocalDate getValDt() {
+    public XMLGregorianCalendar getValDt() {
         return valDt;
     }
 
@@ -262,7 +261,7 @@ public class LoanData139 {
      *     {@link String }
      *     
      */
-    public LoanData139 setValDt(LocalDate value) {
+    public LoanData139 setValDt(XMLGregorianCalendar value) {
         this.valDt = value;
         return this;
     }
@@ -300,7 +299,7 @@ public class LoanData139 {
      *     {@link String }
      *     
      */
-    public LocalDate getEarlstCallBckDt() {
+    public XMLGregorianCalendar getEarlstCallBckDt() {
         return earlstCallBckDt;
     }
 
@@ -312,7 +311,7 @@ public class LoanData139 {
      *     {@link String }
      *     
      */
-    public LoanData139 setEarlstCallBckDt(LocalDate value) {
+    public LoanData139 setEarlstCallBckDt(XMLGregorianCalendar value) {
         this.earlstCallBckDt = value;
         return this;
     }
@@ -398,8 +397,8 @@ public class LoanData139 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the term property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the term property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -413,12 +412,10 @@ public class LoanData139 {
      * {@link ContractTerm7Choice }
      * 
      * 
-     * @return
-     *     The value of the term property.
      */
     public List<ContractTerm7Choice> getTerm() {
         if (term == null) {
-            term = new ArrayList<>();
+            term = new ArrayList<ContractTerm7Choice>();
         }
         return this.term;
     }
@@ -481,7 +478,7 @@ public class LoanData139 {
      *     {@link String }
      *     
      */
-    public LocalDate getTermntnDt() {
+    public XMLGregorianCalendar getTermntnDt() {
         return termntnDt;
     }
 
@@ -493,7 +490,7 @@ public class LoanData139 {
      *     {@link String }
      *     
      */
-    public LoanData139 setTermntnDt(LocalDate value) {
+    public LoanData139 setTermntnDt(XMLGregorianCalendar value) {
         this.termntnDt = value;
         return this;
     }

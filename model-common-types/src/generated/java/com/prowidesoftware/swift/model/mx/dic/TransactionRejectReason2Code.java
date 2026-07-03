@@ -1,56 +1,57 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlEnumValue;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlEnumValue;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for TransactionRejectReason2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="TransactionRejectReason2Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="AC01"/>
- *     <enumeration value="AC04"/>
- *     <enumeration value="AC06"/>
- *     <enumeration value="AM01"/>
- *     <enumeration value="AM02"/>
- *     <enumeration value="AM03"/>
- *     <enumeration value="AM04"/>
- *     <enumeration value="AM05"/>
- *     <enumeration value="AM06"/>
- *     <enumeration value="AM07"/>
- *     <enumeration value="BE01"/>
- *     <enumeration value="BE04"/>
- *     <enumeration value="BE05"/>
- *     <enumeration value="AG01"/>
- *     <enumeration value="AG02"/>
- *     <enumeration value="DT01"/>
- *     <enumeration value="RF01"/>
- *     <enumeration value="RC01"/>
- *     <enumeration value="TM01"/>
- *     <enumeration value="ED01"/>
- *     <enumeration value="ED03"/>
- *     <enumeration value="MS03"/>
- *     <enumeration value="MS02"/>
- *     <enumeration value="BE06"/>
- *     <enumeration value="BE07"/>
- *     <enumeration value="AM09"/>
- *     <enumeration value="AM10"/>
- *     <enumeration value="MD01"/>
- *     <enumeration value="MD02"/>
- *     <enumeration value="MD03"/>
- *     <enumeration value="MD04"/>
- *     <enumeration value="MD06"/>
- *     <enumeration value="MD07"/>
- *     <enumeration value="ED05"/>
- *     <enumeration value="NARR"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="TransactionRejectReason2Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="AC01"/&gt;
+ *     &lt;enumeration value="AC04"/&gt;
+ *     &lt;enumeration value="AC06"/&gt;
+ *     &lt;enumeration value="AM01"/&gt;
+ *     &lt;enumeration value="AM02"/&gt;
+ *     &lt;enumeration value="AM03"/&gt;
+ *     &lt;enumeration value="AM04"/&gt;
+ *     &lt;enumeration value="AM05"/&gt;
+ *     &lt;enumeration value="AM06"/&gt;
+ *     &lt;enumeration value="AM07"/&gt;
+ *     &lt;enumeration value="BE01"/&gt;
+ *     &lt;enumeration value="BE04"/&gt;
+ *     &lt;enumeration value="BE05"/&gt;
+ *     &lt;enumeration value="AG01"/&gt;
+ *     &lt;enumeration value="AG02"/&gt;
+ *     &lt;enumeration value="DT01"/&gt;
+ *     &lt;enumeration value="RF01"/&gt;
+ *     &lt;enumeration value="RC01"/&gt;
+ *     &lt;enumeration value="TM01"/&gt;
+ *     &lt;enumeration value="ED01"/&gt;
+ *     &lt;enumeration value="ED03"/&gt;
+ *     &lt;enumeration value="MS03"/&gt;
+ *     &lt;enumeration value="MS02"/&gt;
+ *     &lt;enumeration value="BE06"/&gt;
+ *     &lt;enumeration value="BE07"/&gt;
+ *     &lt;enumeration value="AM09"/&gt;
+ *     &lt;enumeration value="AM10"/&gt;
+ *     &lt;enumeration value="MD01"/&gt;
+ *     &lt;enumeration value="MD02"/&gt;
+ *     &lt;enumeration value="MD03"/&gt;
+ *     &lt;enumeration value="MD04"/&gt;
+ *     &lt;enumeration value="MD06"/&gt;
+ *     &lt;enumeration value="MD07"/&gt;
+ *     &lt;enumeration value="ED05"/&gt;
+ *     &lt;enumeration value="NARR"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "TransactionRejectReason2Code")

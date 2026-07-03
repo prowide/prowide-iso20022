@@ -1,32 +1,33 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for AuthenticationMethod2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="AuthenticationMethod2Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="BYPS"/>
- *     <enumeration value="MANU"/>
- *     <enumeration value="MERC"/>
- *     <enumeration value="FPIN"/>
- *     <enumeration value="NPIN"/>
- *     <enumeration value="PPSG"/>
- *     <enumeration value="PSWD"/>
- *     <enumeration value="SCRT"/>
- *     <enumeration value="SCNL"/>
- *     <enumeration value="SNCT"/>
- *     <enumeration value="CPSG"/>
- *     <enumeration value="UKNW"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="AuthenticationMethod2Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="BYPS"/&gt;
+ *     &lt;enumeration value="MANU"/&gt;
+ *     &lt;enumeration value="MERC"/&gt;
+ *     &lt;enumeration value="FPIN"/&gt;
+ *     &lt;enumeration value="NPIN"/&gt;
+ *     &lt;enumeration value="PPSG"/&gt;
+ *     &lt;enumeration value="PSWD"/&gt;
+ *     &lt;enumeration value="SCRT"/&gt;
+ *     &lt;enumeration value="SCNL"/&gt;
+ *     &lt;enumeration value="SNCT"/&gt;
+ *     &lt;enumeration value="CPSG"/&gt;
+ *     &lt;enumeration value="UKNW"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "AuthenticationMethod2Code")

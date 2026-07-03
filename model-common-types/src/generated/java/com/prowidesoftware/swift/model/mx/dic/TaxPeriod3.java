@@ -1,14 +1,12 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.Year;
-import com.prowidesoftware.swift.model.mx.adapters.IsoYearAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -29,10 +27,9 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 public class TaxPeriod3 {
 
-    @XmlElement(name = "Yr", type = String.class)
-    @XmlJavaTypeAdapter(IsoYearAdapter.class)
+    @XmlElement(name = "Yr")
     @XmlSchemaType(name = "gYear")
-    protected Year yr;
+    protected XMLGregorianCalendar yr;
     @XmlElement(name = "Tp")
     @XmlSchemaType(name = "string")
     protected TaxRecordPeriod1Code tp;
@@ -44,10 +41,10 @@ public class TaxPeriod3 {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public Year getYr() {
+    public XMLGregorianCalendar getYr() {
         return yr;
     }
 
@@ -56,10 +53,10 @@ public class TaxPeriod3 {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public TaxPeriod3 setYr(Year value) {
+    public TaxPeriod3 setYr(XMLGregorianCalendar value) {
         this.yr = value;
         return this;
     }

@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -57,8 +57,8 @@ public class SwitchOrderConfirmation1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the swtchExctnDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the swtchExctnDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -72,12 +72,10 @@ public class SwitchOrderConfirmation1 {
      * {@link SwitchExecution4 }
      * 
      * 
-     * @return
-     *     The value of the swtchExctnDtls property.
      */
     public List<SwitchExecution4> getSwtchExctnDtls() {
         if (swtchExctnDtls == null) {
-            swtchExctnDtls = new ArrayList<>();
+            swtchExctnDtls = new ArrayList<SwitchExecution4>();
         }
         return this.swtchExctnDtls;
     }
@@ -88,8 +86,8 @@ public class SwitchOrderConfirmation1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the xtnsn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the xtnsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -103,12 +101,10 @@ public class SwitchOrderConfirmation1 {
      * {@link Extension1 }
      * 
      * 
-     * @return
-     *     The value of the xtnsn property.
      */
     public List<Extension1> getXtnsn() {
         if (xtnsn == null) {
-            xtnsn = new ArrayList<>();
+            xtnsn = new ArrayList<Extension1>();
         }
         return this.xtnsn;
     }

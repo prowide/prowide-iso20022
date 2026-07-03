@@ -1,28 +1,29 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for RejectReason2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="RejectReason2Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="UNPR"/>
- *     <enumeration value="IMSG"/>
- *     <enumeration value="PARS"/>
- *     <enumeration value="SECU"/>
- *     <enumeration value="INTP"/>
- *     <enumeration value="RCPP"/>
- *     <enumeration value="VERS"/>
- *     <enumeration value="MSGT"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="RejectReason2Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="UNPR"/&gt;
+ *     &lt;enumeration value="IMSG"/&gt;
+ *     &lt;enumeration value="PARS"/&gt;
+ *     &lt;enumeration value="SECU"/&gt;
+ *     &lt;enumeration value="INTP"/&gt;
+ *     &lt;enumeration value="RCPP"/&gt;
+ *     &lt;enumeration value="VERS"/&gt;
+ *     &lt;enumeration value="MSGT"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "RejectReason2Code")

@@ -1,31 +1,32 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for ProductType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="ProductType1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="AGEN"/>
- *     <enumeration value="COMM"/>
- *     <enumeration value="CORP"/>
- *     <enumeration value="CURR"/>
- *     <enumeration value="EQUI"/>
- *     <enumeration value="GOVE"/>
- *     <enumeration value="LOAN"/>
- *     <enumeration value="MOMA"/>
- *     <enumeration value="MORT"/>
- *     <enumeration value="MUNI"/>
- *     <enumeration value="FINA"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="ProductType1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="AGEN"/&gt;
+ *     &lt;enumeration value="COMM"/&gt;
+ *     &lt;enumeration value="CORP"/&gt;
+ *     &lt;enumeration value="CURR"/&gt;
+ *     &lt;enumeration value="EQUI"/&gt;
+ *     &lt;enumeration value="GOVE"/&gt;
+ *     &lt;enumeration value="LOAN"/&gt;
+ *     &lt;enumeration value="MOMA"/&gt;
+ *     &lt;enumeration value="MORT"/&gt;
+ *     &lt;enumeration value="MUNI"/&gt;
+ *     &lt;enumeration value="FINA"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "ProductType1Code")

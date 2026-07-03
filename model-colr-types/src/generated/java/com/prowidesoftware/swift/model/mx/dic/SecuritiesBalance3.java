@@ -3,11 +3,11 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -298,8 +298,8 @@ public class SecuritiesBalance3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the ratgDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the ratgDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -313,12 +313,10 @@ public class SecuritiesBalance3 {
      * {@link Rating2 }
      * 
      * 
-     * @return
-     *     The value of the ratgDtls property.
      */
     public List<Rating2> getRatgDtls() {
         if (ratgDtls == null) {
-            ratgDtls = new ArrayList<>();
+            ratgDtls = new ArrayList<Rating2>();
         }
         return this.ratgDtls;
     }
@@ -379,8 +377,8 @@ public class SecuritiesBalance3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the txLotNb property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the txLotNb property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -394,12 +392,10 @@ public class SecuritiesBalance3 {
      * {@link GenericIdentification178 }
      * 
      * 
-     * @return
-     *     The value of the txLotNb property.
      */
     public List<GenericIdentification178> getTxLotNb() {
         if (txLotNb == null) {
-            txLotNb = new ArrayList<>();
+            txLotNb = new ArrayList<GenericIdentification178>();
         }
         return this.txLotNb;
     }

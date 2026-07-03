@@ -1,36 +1,37 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlEnumValue;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlEnumValue;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for InterestComputationMethod2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="InterestComputationMethod2Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="A001"/>
- *     <enumeration value="A002"/>
- *     <enumeration value="A003"/>
- *     <enumeration value="A004"/>
- *     <enumeration value="A005"/>
- *     <enumeration value="A006"/>
- *     <enumeration value="A007"/>
- *     <enumeration value="A008"/>
- *     <enumeration value="A009"/>
- *     <enumeration value="A010"/>
- *     <enumeration value="A011"/>
- *     <enumeration value="A012"/>
- *     <enumeration value="A013"/>
- *     <enumeration value="A014"/>
- *     <enumeration value="NARR"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="InterestComputationMethod2Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="A001"/&gt;
+ *     &lt;enumeration value="A002"/&gt;
+ *     &lt;enumeration value="A003"/&gt;
+ *     &lt;enumeration value="A004"/&gt;
+ *     &lt;enumeration value="A005"/&gt;
+ *     &lt;enumeration value="A006"/&gt;
+ *     &lt;enumeration value="A007"/&gt;
+ *     &lt;enumeration value="A008"/&gt;
+ *     &lt;enumeration value="A009"/&gt;
+ *     &lt;enumeration value="A010"/&gt;
+ *     &lt;enumeration value="A011"/&gt;
+ *     &lt;enumeration value="A012"/&gt;
+ *     &lt;enumeration value="A013"/&gt;
+ *     &lt;enumeration value="A014"/&gt;
+ *     &lt;enumeration value="NARR"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "InterestComputationMethod2Code")

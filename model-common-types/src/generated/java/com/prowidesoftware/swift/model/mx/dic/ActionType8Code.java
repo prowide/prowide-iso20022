@@ -1,30 +1,31 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for ActionType8Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="ActionType8Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="APPV"/>
- *     <enumeration value="BLCK"/>
- *     <enumeration value="CPTR"/>
- *     <enumeration value="DCLN"/>
- *     <enumeration value="RQID"/>
- *     <enumeration value="NDCL"/>
- *     <enumeration value="RFRL"/>
- *     <enumeration value="OTHN"/>
- *     <enumeration value="OTHP"/>
- *     <enumeration value="STUA"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="ActionType8Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="APPV"/&gt;
+ *     &lt;enumeration value="BLCK"/&gt;
+ *     &lt;enumeration value="CPTR"/&gt;
+ *     &lt;enumeration value="DCLN"/&gt;
+ *     &lt;enumeration value="RQID"/&gt;
+ *     &lt;enumeration value="NDCL"/&gt;
+ *     &lt;enumeration value="RFRL"/&gt;
+ *     &lt;enumeration value="OTHN"/&gt;
+ *     &lt;enumeration value="OTHP"/&gt;
+ *     &lt;enumeration value="STUA"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "ActionType8Code")

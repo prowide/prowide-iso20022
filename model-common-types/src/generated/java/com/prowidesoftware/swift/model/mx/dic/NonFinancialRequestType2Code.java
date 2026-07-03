@@ -1,26 +1,27 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for NonFinancialRequestType2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="NonFinancialRequestType2Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="ACQR"/>
- *     <enumeration value="PARQ"/>
- *     <enumeration value="RISK"/>
- *     <enumeration value="TOKN"/>
- *     <enumeration value="ADDR"/>
- *     <enumeration value="INSM"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="NonFinancialRequestType2Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ACQR"/&gt;
+ *     &lt;enumeration value="PARQ"/&gt;
+ *     &lt;enumeration value="RISK"/&gt;
+ *     &lt;enumeration value="TOKN"/&gt;
+ *     &lt;enumeration value="ADDR"/&gt;
+ *     &lt;enumeration value="INSM"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "NonFinancialRequestType2Code")

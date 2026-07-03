@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxSese00200108
 
     @XmlElement(name = "TrfOutCxlReq", required = true)
     protected TransferOutCancellationRequestV08 trfOutCxlReq;
-    public static final transient String BUSINESS_PROCESS = "sese";
-    public static final transient int FUNCTIONALITY = 2;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 8;
+    public final static transient String BUSINESS_PROCESS = "sese";
+    public final static transient int FUNCTIONALITY = 2;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 8;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {AdditionalReference8 .class, AdditionalReference9 .class, AddressType2Code.class, CopyInformation4 .class, GenericIdentification1 .class, MarketPracticeVersion1 .class, MessageIdentification1 .class, MxSese00200108 .class, NameAndAddress5 .class, PartyIdentification113 .class, PartyIdentification90Choice.class, PostalAddress1 .class, TransferOutCancellationRequestV08 .class, TransferReference11 .class };
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:sese.002.001.08";
+    public final static transient Class[] _classes = new Class[] {AdditionalReference8 .class, AdditionalReference9 .class, AddressType2Code.class, CopyInformation4 .class, GenericIdentification1 .class, MarketPracticeVersion1 .class, MessageIdentification1 .class, MxSese00200108 .class, NameAndAddress5 .class, PartyIdentification113 .class, PartyIdentification90Choice.class, PostalAddress1 .class, TransferOutCancellationRequestV08 .class, TransferReference11 .class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:sese.002.001.08";
 
     public MxSese00200108() {
         super();
@@ -86,6 +86,21 @@ public class MxSese00200108
     public MxSese00200108 setTrfOutCxlReq(TransferOutCancellationRequestV08 value) {
         this.trfOutCxlReq = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxSese00200108
      * @return
      *     a new instance of MxSese00200108
      */
-    public static final MxSese00200108 fromJson(String json) {
+    public final static MxSese00200108 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSese00200108 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

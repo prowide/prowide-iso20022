@@ -1,30 +1,31 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for InvestigationExecutionConfirmation2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="InvestigationExecutionConfirmation2Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="CNCL"/>
- *     <enumeration value="MODI"/>
- *     <enumeration value="IPAY"/>
- *     <enumeration value="ICOV"/>
- *     <enumeration value="MCOV"/>
- *     <enumeration value="INFO"/>
- *     <enumeration value="CONF"/>
- *     <enumeration value="CWFW"/>
- *     <enumeration value="MWFW"/>
- *     <enumeration value="UWFW"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="InvestigationExecutionConfirmation2Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="CNCL"/&gt;
+ *     &lt;enumeration value="MODI"/&gt;
+ *     &lt;enumeration value="IPAY"/&gt;
+ *     &lt;enumeration value="ICOV"/&gt;
+ *     &lt;enumeration value="MCOV"/&gt;
+ *     &lt;enumeration value="INFO"/&gt;
+ *     &lt;enumeration value="CONF"/&gt;
+ *     &lt;enumeration value="CWFW"/&gt;
+ *     &lt;enumeration value="MWFW"/&gt;
+ *     &lt;enumeration value="UWFW"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "InvestigationExecutionConfirmation2Code")

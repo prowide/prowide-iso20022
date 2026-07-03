@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxReda04500101
 
     @XmlElement(name = "SctyCSDLkCreReq", required = true)
     protected SecurityCSDLinkCreationRequestV01 sctyCSDLkCreReq;
-    public static final transient String BUSINESS_PROCESS = "reda";
-    public static final transient int FUNCTIONALITY = 45;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 1;
+    public final static transient String BUSINESS_PROCESS = "reda";
+    public final static transient int FUNCTIONALITY = 45;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {AddressType2Code.class, BlockChainAddressWallet3 .class, DateAndDateTime2Choice.class, GenericIdentification30 .class, GenericIdentification36 .class, IdentificationSource3Choice.class, IssuanceAccount3 .class, IssuerOrInvestor2Choice.class, MessageHeader1 .class, MxReda04500101 .class, NameAndAddress5 .class, OtherIdentification1 .class, PartyIdentification120Choice.class, PartyIdentification136 .class, PostalAddress1 .class, SecuritiesAccount19 .class, SecurityCSDLink12 .class, SecurityCSDLinkCreationRequestV01 .class, SecurityIdentification19 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, SystemPartyIdentification2Choice.class, SystemPartyIdentification8 .class };
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:reda.045.001.01";
+    public final static transient Class[] _classes = new Class[] {AddressType2Code.class, BlockChainAddressWallet3 .class, DateAndDateTime2Choice.class, GenericIdentification30 .class, GenericIdentification36 .class, IdentificationSource3Choice.class, IssuanceAccount3 .class, IssuerOrInvestor2Choice.class, MessageHeader1 .class, MxReda04500101 .class, NameAndAddress5 .class, OtherIdentification1 .class, PartyIdentification120Choice.class, PartyIdentification136 .class, PostalAddress1 .class, SecuritiesAccount19 .class, SecurityCSDLink12 .class, SecurityCSDLinkCreationRequestV01 .class, SecurityIdentification19 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, SystemPartyIdentification2Choice.class, SystemPartyIdentification8 .class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:reda.045.001.01";
 
     public MxReda04500101() {
         super();
@@ -86,6 +86,21 @@ public class MxReda04500101
     public MxReda04500101 setSctyCSDLkCreReq(SecurityCSDLinkCreationRequestV01 value) {
         this.sctyCSDLkCreReq = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxReda04500101
      * @return
      *     a new instance of MxReda04500101
      */
-    public static final MxReda04500101 fromJson(String json) {
+    public final static MxReda04500101 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxReda04500101 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

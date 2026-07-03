@@ -1,30 +1,31 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for Verification3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="Verification3Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="FAIL"/>
- *     <enumeration value="FUTA"/>
- *     <enumeration value="MISS"/>
- *     <enumeration value="NOSP"/>
- *     <enumeration value="NOVF"/>
- *     <enumeration value="OTHN"/>
- *     <enumeration value="OTHP"/>
- *     <enumeration value="PART"/>
- *     <enumeration value="SUCC"/>
- *     <enumeration value="ERRR"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="Verification3Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="FAIL"/&gt;
+ *     &lt;enumeration value="FUTA"/&gt;
+ *     &lt;enumeration value="MISS"/&gt;
+ *     &lt;enumeration value="NOSP"/&gt;
+ *     &lt;enumeration value="NOVF"/&gt;
+ *     &lt;enumeration value="OTHN"/&gt;
+ *     &lt;enumeration value="OTHP"/&gt;
+ *     &lt;enumeration value="PART"/&gt;
+ *     &lt;enumeration value="SUCC"/&gt;
+ *     &lt;enumeration value="ERRR"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "Verification3Code")

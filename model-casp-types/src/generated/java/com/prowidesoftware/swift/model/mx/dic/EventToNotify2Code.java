@@ -1,40 +1,41 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for EventToNotify2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="EventToNotify2Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="ABRT"/>
- *     <enumeration value="MAIB"/>
- *     <enumeration value="CRDI"/>
- *     <enumeration value="COMP"/>
- *     <enumeration value="CRDR"/>
- *     <enumeration value="CUSL"/>
- *     <enumeration value="MAIE"/>
- *     <enumeration value="INIT"/>
- *     <enumeration value="KEYP"/>
- *     <enumeration value="MAIR"/>
- *     <enumeration value="OODR"/>
- *     <enumeration value="SADM"/>
- *     <enumeration value="SWUP"/>
- *     <enumeration value="SECA"/>
- *     <enumeration value="SHUT"/>
- *     <enumeration value="SASS"/>
- *     <enumeration value="DISC"/>
- *     <enumeration value="CNTN"/>
- *     <enumeration value="TNOK"/>
- *     <enumeration value="TNKO"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="EventToNotify2Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ABRT"/&gt;
+ *     &lt;enumeration value="MAIB"/&gt;
+ *     &lt;enumeration value="CRDI"/&gt;
+ *     &lt;enumeration value="COMP"/&gt;
+ *     &lt;enumeration value="CRDR"/&gt;
+ *     &lt;enumeration value="CUSL"/&gt;
+ *     &lt;enumeration value="MAIE"/&gt;
+ *     &lt;enumeration value="INIT"/&gt;
+ *     &lt;enumeration value="KEYP"/&gt;
+ *     &lt;enumeration value="MAIR"/&gt;
+ *     &lt;enumeration value="OODR"/&gt;
+ *     &lt;enumeration value="SADM"/&gt;
+ *     &lt;enumeration value="SWUP"/&gt;
+ *     &lt;enumeration value="SECA"/&gt;
+ *     &lt;enumeration value="SHUT"/&gt;
+ *     &lt;enumeration value="SASS"/&gt;
+ *     &lt;enumeration value="DISC"/&gt;
+ *     &lt;enumeration value="CNTN"/&gt;
+ *     &lt;enumeration value="TNOK"/&gt;
+ *     &lt;enumeration value="TNKO"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "EventToNotify2Code")

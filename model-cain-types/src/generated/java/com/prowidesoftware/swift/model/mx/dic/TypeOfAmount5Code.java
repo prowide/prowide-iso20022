@@ -1,29 +1,30 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for TypeOfAmount5Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="TypeOfAmount5Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="CSHB"/>
- *     <enumeration value="DCNT"/>
- *     <enumeration value="FEES"/>
- *     <enumeration value="GRTY"/>
- *     <enumeration value="SRCH"/>
- *     <enumeration value="VATX"/>
- *     <enumeration value="COMM"/>
- *     <enumeration value="DONN"/>
- *     <enumeration value="TAXT"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="TypeOfAmount5Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="CSHB"/&gt;
+ *     &lt;enumeration value="DCNT"/&gt;
+ *     &lt;enumeration value="FEES"/&gt;
+ *     &lt;enumeration value="GRTY"/&gt;
+ *     &lt;enumeration value="SRCH"/&gt;
+ *     &lt;enumeration value="VATX"/&gt;
+ *     &lt;enumeration value="COMM"/&gt;
+ *     &lt;enumeration value="DONN"/&gt;
+ *     &lt;enumeration value="TAXT"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "TypeOfAmount5Code")

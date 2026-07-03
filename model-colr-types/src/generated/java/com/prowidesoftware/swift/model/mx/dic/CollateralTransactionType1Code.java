@@ -1,30 +1,31 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for CollateralTransactionType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="CollateralTransactionType1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="AADJ"/>
- *     <enumeration value="CDTA"/>
- *     <enumeration value="CADJ"/>
- *     <enumeration value="DADJ"/>
- *     <enumeration value="DBVT"/>
- *     <enumeration value="INIT"/>
- *     <enumeration value="MADJ"/>
- *     <enumeration value="PADJ"/>
- *     <enumeration value="RATA"/>
- *     <enumeration value="TERM"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="CollateralTransactionType1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="AADJ"/&gt;
+ *     &lt;enumeration value="CDTA"/&gt;
+ *     &lt;enumeration value="CADJ"/&gt;
+ *     &lt;enumeration value="DADJ"/&gt;
+ *     &lt;enumeration value="DBVT"/&gt;
+ *     &lt;enumeration value="INIT"/&gt;
+ *     &lt;enumeration value="MADJ"/&gt;
+ *     &lt;enumeration value="PADJ"/&gt;
+ *     &lt;enumeration value="RATA"/&gt;
+ *     &lt;enumeration value="TERM"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "CollateralTransactionType1Code")

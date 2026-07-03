@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxAcmt00600107
 
     @XmlElement(name = "AcctMgmtStsRpt", required = true)
     protected AccountManagementStatusReportV07 acctMgmtStsRpt;
-    public static final transient String BUSINESS_PROCESS = "acmt";
-    public static final transient int FUNCTIONALITY = 6;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 7;
+    public final static transient String BUSINESS_PROCESS = "acmt";
+    public final static transient int FUNCTIONALITY = 6;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 7;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {AcceptedStatusReason1Choice.class, AcceptedStatusReason1Code.class, Account23 .class, AccountManagementStatus1Code.class, AccountManagementStatusAndReason5 .class, AccountManagementStatusReportV07 .class, AccountStatus2 .class, AdditionalReference13 .class, AddressType2Code.class, BlockedReason2Choice.class, BlockedReason2Code.class, BlockedStatusReason2 .class, BlockedStatusReason2Choice.class, ClosedStatusReason1 .class, ClosedStatusReason1Choice.class, ClosedStatusReason1Code.class, ClosedStatusReason2Choice.class, ClosurePendingStatusReason1 .class, ClosurePendingStatusReason1Choice.class, ClosurePendingStatusReason1Code.class, ClosurePendingStatusReason2Choice.class, DisabledReason2Code.class, DisabledStatusReason1 .class, DisabledStatusReason1Choice.class, DisabledStatusReason2Choice.class, EnabledStatusReason1 .class, EnabledStatusReason1Choice.class, EnabledStatusReason1Code.class, EnabledStatusReason2Choice.class, Extension1 .class, GenericIdentification1 .class, GenericIdentification36 .class, GenericIdentification47 .class, InvestmentFundTransactionType1Code.class, MarketPracticeVersion1 .class, MessageIdentification1 .class, MxAcmt00600107 .class, NameAndAddress5 .class, NoReasonCode.class, OtherAccountStatus1 .class, PartyIdentification125Choice.class, PendingOpeningStatusReason1 .class, PendingOpeningStatusReason1Choice.class, PendingOpeningStatusReason1Code.class, PendingOpeningStatusReason2Choice.class, PendingStatusReason14 .class, PendingStatusReason1Choice.class, PendingStatusReason1Code.class, PendingStatusReason2Choice.class, PostalAddress1 .class, ProformaStatusReason1 .class, ProformaStatusReason1Choice.class, ProformaStatusReason1Code.class, ProformaStatusReason2Choice.class, RejectedReason16Choice.class, RejectedStatusReason6Code.class, RejectionReason31 .class, Status25Choice.class, TransactionType5Choice.class };
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:acmt.006.001.07";
+    public final static transient Class[] _classes = new Class[] {AcceptedStatusReason1Choice.class, AcceptedStatusReason1Code.class, Account23 .class, AccountManagementStatus1Code.class, AccountManagementStatusAndReason5 .class, AccountManagementStatusReportV07 .class, AccountStatus2 .class, AdditionalReference13 .class, AddressType2Code.class, BlockedReason2Choice.class, BlockedReason2Code.class, BlockedStatusReason2 .class, BlockedStatusReason2Choice.class, ClosedStatusReason1 .class, ClosedStatusReason1Choice.class, ClosedStatusReason1Code.class, ClosedStatusReason2Choice.class, ClosurePendingStatusReason1 .class, ClosurePendingStatusReason1Choice.class, ClosurePendingStatusReason1Code.class, ClosurePendingStatusReason2Choice.class, DisabledReason2Code.class, DisabledStatusReason1 .class, DisabledStatusReason1Choice.class, DisabledStatusReason2Choice.class, EnabledStatusReason1 .class, EnabledStatusReason1Choice.class, EnabledStatusReason1Code.class, EnabledStatusReason2Choice.class, Extension1 .class, GenericIdentification1 .class, GenericIdentification36 .class, GenericIdentification47 .class, InvestmentFundTransactionType1Code.class, MarketPracticeVersion1 .class, MessageIdentification1 .class, MxAcmt00600107 .class, NameAndAddress5 .class, NoReasonCode.class, OtherAccountStatus1 .class, PartyIdentification125Choice.class, PendingOpeningStatusReason1 .class, PendingOpeningStatusReason1Choice.class, PendingOpeningStatusReason1Code.class, PendingOpeningStatusReason2Choice.class, PendingStatusReason14 .class, PendingStatusReason1Choice.class, PendingStatusReason1Code.class, PendingStatusReason2Choice.class, PostalAddress1 .class, ProformaStatusReason1 .class, ProformaStatusReason1Choice.class, ProformaStatusReason1Code.class, ProformaStatusReason2Choice.class, RejectedReason16Choice.class, RejectedStatusReason6Code.class, RejectionReason31 .class, Status25Choice.class, TransactionType5Choice.class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:acmt.006.001.07";
 
     public MxAcmt00600107() {
         super();
@@ -86,6 +86,21 @@ public class MxAcmt00600107
     public MxAcmt00600107 setAcctMgmtStsRpt(AccountManagementStatusReportV07 value) {
         this.acctMgmtStsRpt = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxAcmt00600107
      * @return
      *     a new instance of MxAcmt00600107
      */
-    public static final MxAcmt00600107 fromJson(String json) {
+    public final static MxAcmt00600107 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxAcmt00600107 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

@@ -1,27 +1,28 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for TransferStatus4Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="TransferStatus4Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="PACK"/>
- *     <enumeration value="COSE"/>
- *     <enumeration value="MACH"/>
- *     <enumeration value="RECE"/>
- *     <enumeration value="STNP"/>
- *     <enumeration value="SETT"/>
- *     <enumeration value="COMP"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="TransferStatus4Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="PACK"/&gt;
+ *     &lt;enumeration value="COSE"/&gt;
+ *     &lt;enumeration value="MACH"/&gt;
+ *     &lt;enumeration value="RECE"/&gt;
+ *     &lt;enumeration value="STNP"/&gt;
+ *     &lt;enumeration value="SETT"/&gt;
+ *     &lt;enumeration value="COMP"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "TransferStatus4Code")

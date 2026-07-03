@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxCatm00100109
 
     @XmlElement(name = "StsRpt", required = true)
     protected StatusReportV09 stsRpt;
-    public static final transient String BUSINESS_PROCESS = "catm";
-    public static final transient int FUNCTIONALITY = 1;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 9;
+    public final static transient String BUSINESS_PROCESS = "catm";
+    public final static transient int FUNCTIONALITY = 1;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 9;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {Algorithm11Code.class, Algorithm16Code.class, Algorithm17Code.class, Algorithm19Code.class, Algorithm24Code.class, Algorithm7Code.class, Algorithm8Code.class, AlgorithmIdentification12 .class, AlgorithmIdentification18 .class, AlgorithmIdentification19 .class, AlgorithmIdentification20 .class, AlgorithmIdentification21 .class, AlgorithmIdentification22 .class, AlgorithmIdentification29 .class, AttendanceContext1Code.class, AttributeType1Code.class, AuthenticatedData6 .class, BytePadding1Code.class, CardDataReading8Code.class, CardholderVerificationCapability4Code.class, CertificateIssuer1 .class, CommunicationCharacteristics5 .class, ContentInformationType21 .class, ContentInformationType23 .class, ContentType2Code.class, CryptographicKey14 .class, CryptographicKeyType3Code.class, DataSetCategory14Code.class, DataSetIdentification8 .class, DataSetRequest1 .class, DigestedData5 .class, DisplayCapabilities4 .class, EncapsulatedContent3 .class, EncryptedContent6 .class, EncryptionFormat2Code.class, EnvelopedData7 .class, ExchangePolicy2Code.class, ExternallyDefinedData1 .class, GenericIdentification176 .class, GenericIdentification177 .class, GenericIdentification48 .class, GenericInformation1 .class, Geolocation1 .class, GeolocationGeographicCoordinates1 .class, GeolocationUTMCoordinates1 .class, IssuerAndSerialNumber1 .class, KEK7 .class, KEKIdentifier2 .class, KeyTransport5 .class, KeyUsage1Code.class, MemoryCharacteristics1 .class, MemoryUnit1Code.class, MxCatm00100109 .class, NetworkParameters7 .class, NetworkParameters9 .class, NetworkType1Code.class, OnLineCapability1Code.class, OriginatorInformation1 .class, OutputFormat1Code.class, POICommunicationType2Code.class, POIComponentAssessment1Code.class, POIComponentStatus1Code.class, POIComponentType6Code.class, PackageType1 .class, Parameter10 .class, Parameter11 .class, Parameter12 .class, Parameter5 .class, Parameter7 .class, Parameter9 .class, PartyType33Code.class, PartyType5Code.class, PartyType7Code.class, PhysicalInterfaceParameter1 .class, PointOfInteractionCapabilities9 .class, PointOfInteractionComponent10 .class, PointOfInteractionComponentAssessment1 .class, PointOfInteractionComponentCharacteristics6 .class, PointOfInteractionComponentIdentification1 .class, PointOfInteractionComponentStatus3 .class, Recipient5Choice.class, Recipient8Choice.class, RelativeDistinguishedName1 .class, SignedData5 .class, Signer4 .class, StatusReport9 .class, StatusReportContent9 .class, StatusReportDataSetRequest1 .class, StatusReportV09 .class, TMSActionIdentification6 .class, TMSEvent7 .class, TMSHeader1 .class, TerminalManagementAction4Code.class, TerminalManagementActionResult4Code.class, Traceability8 .class, TriggerInformation2 .class, UserInterface4Code.class };
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:catm.001.001.09";
+    public final static transient Class[] _classes = new Class[] {Algorithm11Code.class, Algorithm16Code.class, Algorithm17Code.class, Algorithm19Code.class, Algorithm24Code.class, Algorithm7Code.class, Algorithm8Code.class, AlgorithmIdentification12 .class, AlgorithmIdentification18 .class, AlgorithmIdentification19 .class, AlgorithmIdentification20 .class, AlgorithmIdentification21 .class, AlgorithmIdentification22 .class, AlgorithmIdentification29 .class, AttendanceContext1Code.class, AttributeType1Code.class, AuthenticatedData6 .class, BytePadding1Code.class, CardDataReading8Code.class, CardholderVerificationCapability4Code.class, CertificateIssuer1 .class, CommunicationCharacteristics5 .class, ContentInformationType21 .class, ContentInformationType23 .class, ContentType2Code.class, CryptographicKey14 .class, CryptographicKeyType3Code.class, DataSetCategory14Code.class, DataSetIdentification8 .class, DataSetRequest1 .class, DigestedData5 .class, DisplayCapabilities4 .class, EncapsulatedContent3 .class, EncryptedContent6 .class, EncryptionFormat2Code.class, EnvelopedData7 .class, ExchangePolicy2Code.class, ExternallyDefinedData1 .class, GenericIdentification176 .class, GenericIdentification177 .class, GenericIdentification48 .class, GenericInformation1 .class, Geolocation1 .class, GeolocationGeographicCoordinates1 .class, GeolocationUTMCoordinates1 .class, IssuerAndSerialNumber1 .class, KEK7 .class, KEKIdentifier2 .class, KeyTransport5 .class, KeyUsage1Code.class, MemoryCharacteristics1 .class, MemoryUnit1Code.class, MxCatm00100109 .class, NetworkParameters7 .class, NetworkParameters9 .class, NetworkType1Code.class, OnLineCapability1Code.class, OriginatorInformation1 .class, OutputFormat1Code.class, POICommunicationType2Code.class, POIComponentAssessment1Code.class, POIComponentStatus1Code.class, POIComponentType6Code.class, PackageType1 .class, Parameter10 .class, Parameter11 .class, Parameter12 .class, Parameter5 .class, Parameter7 .class, Parameter9 .class, PartyType33Code.class, PartyType5Code.class, PartyType7Code.class, PhysicalInterfaceParameter1 .class, PointOfInteractionCapabilities9 .class, PointOfInteractionComponent10 .class, PointOfInteractionComponentAssessment1 .class, PointOfInteractionComponentCharacteristics6 .class, PointOfInteractionComponentIdentification1 .class, PointOfInteractionComponentStatus3 .class, Recipient5Choice.class, Recipient8Choice.class, RelativeDistinguishedName1 .class, SignedData5 .class, Signer4 .class, StatusReport9 .class, StatusReportContent9 .class, StatusReportDataSetRequest1 .class, StatusReportV09 .class, TMSActionIdentification6 .class, TMSEvent7 .class, TMSHeader1 .class, TerminalManagementAction4Code.class, TerminalManagementActionResult4Code.class, Traceability8 .class, TriggerInformation2 .class, UserInterface4Code.class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:catm.001.001.09";
 
     public MxCatm00100109() {
         super();
@@ -86,6 +86,21 @@ public class MxCatm00100109
     public MxCatm00100109 setStsRpt(StatusReportV09 value) {
         this.stsRpt = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxCatm00100109
      * @return
      *     a new instance of MxCatm00100109
      */
-    public static final MxCatm00100109 fromJson(String json) {
+    public final static MxCatm00100109 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxCatm00100109 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

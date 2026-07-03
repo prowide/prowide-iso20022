@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxFxtr00800107
 
     @XmlElement(name = "FXTradStsNtfctn", required = true)
     protected ForeignExchangeTradeStatusNotificationV07 fxTradStsNtfctn;
-    public static final transient String BUSINESS_PROCESS = "fxtr";
-    public static final transient int FUNCTIONALITY = 8;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 7;
+    public final static transient String BUSINESS_PROCESS = "fxtr";
+    public final static transient int FUNCTIONALITY = 8;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 7;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {ActiveCurrencyAndAmount.class, AddressType2Code.class, AllocationIndicator1Code.class, AmountOrRate4Choice.class, ClearingBrokerIdentification1 .class, ClearingSystemIdentification2Choice.class, CollateralisationIndicator1Code.class, CorporateSectorIdentifier1Code.class, CounterpartySideTransactionReporting2 .class, DateAndDateTime2Choice.class, FXAmountType1Choice.class, FXAmountType1Code.class, FXCommissionOrFee1 .class, ForeignExchangeTradeStatusNotificationV07 .class, IdentificationSource3Choice.class, MxFxtr00800107 .class, NameAndAddress8 .class, OtherIdentification1 .class, PartyIdentification242Choice.class, PartyIdentification265 .class, PartyIdentification266 .class, PostalAddress1 .class, RegulatoryReporting7 .class, SecurityIdentification19 .class, SideIndicator1Code.class, Status27Choice.class, Status28Choice.class, StatusAndSubStatus2 .class, StatusSubType2Code.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TradeData15 .class, TradeStatus6Code.class, TradeStatus7Code.class, TradingSideTransactionReporting2 .class, UnderlyingProductIdentifier1Code.class, UniqueTransactionIdentifier2 .class };
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:fxtr.008.001.07";
+    public final static transient Class[] _classes = new Class[] {ActiveCurrencyAndAmount.class, AddressType2Code.class, AllocationIndicator1Code.class, AmountOrRate4Choice.class, ClearingBrokerIdentification1 .class, ClearingSystemIdentification2Choice.class, CollateralisationIndicator1Code.class, CorporateSectorIdentifier1Code.class, CounterpartySideTransactionReporting2 .class, DateAndDateTime2Choice.class, FXAmountType1Choice.class, FXAmountType1Code.class, FXCommissionOrFee1 .class, ForeignExchangeTradeStatusNotificationV07 .class, IdentificationSource3Choice.class, MxFxtr00800107 .class, NameAndAddress8 .class, OtherIdentification1 .class, PartyIdentification242Choice.class, PartyIdentification265 .class, PartyIdentification266 .class, PostalAddress1 .class, RegulatoryReporting7 .class, SecurityIdentification19 .class, SideIndicator1Code.class, Status27Choice.class, Status28Choice.class, StatusAndSubStatus2 .class, StatusSubType2Code.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TradeData15 .class, TradeStatus6Code.class, TradeStatus7Code.class, TradingSideTransactionReporting2 .class, UnderlyingProductIdentifier1Code.class, UniqueTransactionIdentifier2 .class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:fxtr.008.001.07";
 
     public MxFxtr00800107() {
         super();
@@ -86,6 +86,21 @@ public class MxFxtr00800107
     public MxFxtr00800107 setFXTradStsNtfctn(ForeignExchangeTradeStatusNotificationV07 value) {
         this.fxTradStsNtfctn = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxFxtr00800107
      * @return
      *     a new instance of MxFxtr00800107
      */
-    public static final MxFxtr00800107 fromJson(String json) {
+    public final static MxFxtr00800107 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxFxtr00800107 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

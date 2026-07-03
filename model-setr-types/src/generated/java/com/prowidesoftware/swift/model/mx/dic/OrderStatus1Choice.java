@@ -3,11 +3,11 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -101,8 +101,8 @@ public class OrderStatus1Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the condlyAccptd property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the condlyAccptd property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -116,12 +116,10 @@ public class OrderStatus1Choice {
      * {@link ConditionallyAcceptedStatusReason1Choice }
      * 
      * 
-     * @return
-     *     The value of the condlyAccptd property.
      */
     public List<ConditionallyAcceptedStatusReason1Choice> getCondlyAccptd() {
         if (condlyAccptd == null) {
-            condlyAccptd = new ArrayList<>();
+            condlyAccptd = new ArrayList<ConditionallyAcceptedStatusReason1Choice>();
         }
         return this.condlyAccptd;
     }
@@ -132,8 +130,8 @@ public class OrderStatus1Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the rjctd property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the rjctd property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -147,12 +145,10 @@ public class OrderStatus1Choice {
      * {@link RejectedStatusReason1Choice }
      * 
      * 
-     * @return
-     *     The value of the rjctd property.
      */
     public List<RejectedStatusReason1Choice> getRjctd() {
         if (rjctd == null) {
-            rjctd = new ArrayList<>();
+            rjctd = new ArrayList<RejectedStatusReason1Choice>();
         }
         return this.rjctd;
     }

@@ -1,18 +1,17 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -43,11 +42,11 @@ public class CollateralMarginMarginUpdate5 {
     @XmlElement(name = "RptgDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime rptgDtTm;
+    protected XMLGregorianCalendar rptgDtTm;
     @XmlElement(name = "EvtDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate evtDt;
+    protected XMLGregorianCalendar evtDt;
     @XmlElement(name = "CtrPty")
     protected Counterparty39 ctrPty;
     @XmlElement(name = "CollPrtflId", required = true)
@@ -92,7 +91,7 @@ public class CollateralMarginMarginUpdate5 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getRptgDtTm() {
+    public XMLGregorianCalendar getRptgDtTm() {
         return rptgDtTm;
     }
 
@@ -104,7 +103,7 @@ public class CollateralMarginMarginUpdate5 {
      *     {@link String }
      *     
      */
-    public CollateralMarginMarginUpdate5 setRptgDtTm(OffsetDateTime value) {
+    public CollateralMarginMarginUpdate5 setRptgDtTm(XMLGregorianCalendar value) {
         this.rptgDtTm = value;
         return this;
     }
@@ -117,7 +116,7 @@ public class CollateralMarginMarginUpdate5 {
      *     {@link String }
      *     
      */
-    public LocalDate getEvtDt() {
+    public XMLGregorianCalendar getEvtDt() {
         return evtDt;
     }
 
@@ -129,7 +128,7 @@ public class CollateralMarginMarginUpdate5 {
      *     {@link String }
      *     
      */
-    public CollateralMarginMarginUpdate5 setEvtDt(LocalDate value) {
+    public CollateralMarginMarginUpdate5 setEvtDt(XMLGregorianCalendar value) {
         this.evtDt = value;
         return this;
     }
@@ -240,8 +239,8 @@ public class CollateralMarginMarginUpdate5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the splmtryData property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -255,12 +254,10 @@ public class CollateralMarginMarginUpdate5 {
      * {@link SupplementaryData1 }
      * 
      * 
-     * @return
-     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<>();
+            splmtryData = new ArrayList<SupplementaryData1>();
         }
         return this.splmtryData;
     }

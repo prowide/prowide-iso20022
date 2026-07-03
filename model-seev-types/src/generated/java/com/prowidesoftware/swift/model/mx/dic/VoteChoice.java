@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -37,8 +37,8 @@ public class VoteChoice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the voteInstr property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the voteInstr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -52,12 +52,10 @@ public class VoteChoice {
      * {@link Vote1 }
      * 
      * 
-     * @return
-     *     The value of the voteInstr property.
      */
     public List<Vote1> getVoteInstr() {
         if (voteInstr == null) {
-            voteInstr = new ArrayList<>();
+            voteInstr = new ArrayList<Vote1>();
         }
         return this.voteInstr;
     }
@@ -68,8 +66,8 @@ public class VoteChoice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the gblVoteInstr property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the gblVoteInstr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -83,12 +81,10 @@ public class VoteChoice {
      * {@link Vote3 }
      * 
      * 
-     * @return
-     *     The value of the gblVoteInstr property.
      */
     public List<Vote3> getGblVoteInstr() {
         if (gblVoteInstr == null) {
-            gblVoteInstr = new ArrayList<>();
+            gblVoteInstr = new ArrayList<Vote3>();
         }
         return this.gblVoteInstr;
     }

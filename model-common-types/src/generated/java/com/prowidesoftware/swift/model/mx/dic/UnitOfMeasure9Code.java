@@ -1,70 +1,71 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for UnitOfMeasure9Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="UnitOfMeasure9Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="BAGG"/>
- *     <enumeration value="BALE"/>
- *     <enumeration value="BOTL"/>
- *     <enumeration value="BOXX"/>
- *     <enumeration value="CRTN"/>
- *     <enumeration value="CELI"/>
- *     <enumeration value="CMET"/>
- *     <enumeration value="CNTR"/>
- *     <enumeration value="CRAT"/>
- *     <enumeration value="CBIN"/>
- *     <enumeration value="CBME"/>
- *     <enumeration value="CBML"/>
- *     <enumeration value="PIEC"/>
- *     <enumeration value="FOOT"/>
- *     <enumeration value="GBFO"/>
- *     <enumeration value="GBGA"/>
- *     <enumeration value="GBPI"/>
- *     <enumeration value="GBQA"/>
- *     <enumeration value="GBTN"/>
- *     <enumeration value="GRAM"/>
- *     <enumeration value="INCH"/>
- *     <enumeration value="KILO"/>
- *     <enumeration value="KMET"/>
- *     <enumeration value="LITR"/>
- *     <enumeration value="METR"/>
- *     <enumeration value="TONE"/>
- *     <enumeration value="MILE"/>
- *     <enumeration value="MMET"/>
- *     <enumeration value="MILI"/>
- *     <enumeration value="PUND"/>
- *     <enumeration value="USOU"/>
- *     <enumeration value="SCMT"/>
- *     <enumeration value="SQFO"/>
- *     <enumeration value="SQIN"/>
- *     <enumeration value="SQKI"/>
- *     <enumeration value="SMET"/>
- *     <enumeration value="SQMI"/>
- *     <enumeration value="SMIL"/>
- *     <enumeration value="SQYA"/>
- *     <enumeration value="USBA"/>
- *     <enumeration value="USFO"/>
- *     <enumeration value="USGA"/>
- *     <enumeration value="USPI"/>
- *     <enumeration value="USQA"/>
- *     <enumeration value="USTN"/>
- *     <enumeration value="YARD"/>
- *     <enumeration value="GBOU"/>
- *     <enumeration value="ACRE"/>
- *     <enumeration value="ARES"/>
- *     <enumeration value="HECT"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="UnitOfMeasure9Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="BAGG"/&gt;
+ *     &lt;enumeration value="BALE"/&gt;
+ *     &lt;enumeration value="BOTL"/&gt;
+ *     &lt;enumeration value="BOXX"/&gt;
+ *     &lt;enumeration value="CRTN"/&gt;
+ *     &lt;enumeration value="CELI"/&gt;
+ *     &lt;enumeration value="CMET"/&gt;
+ *     &lt;enumeration value="CNTR"/&gt;
+ *     &lt;enumeration value="CRAT"/&gt;
+ *     &lt;enumeration value="CBIN"/&gt;
+ *     &lt;enumeration value="CBME"/&gt;
+ *     &lt;enumeration value="CBML"/&gt;
+ *     &lt;enumeration value="PIEC"/&gt;
+ *     &lt;enumeration value="FOOT"/&gt;
+ *     &lt;enumeration value="GBFO"/&gt;
+ *     &lt;enumeration value="GBGA"/&gt;
+ *     &lt;enumeration value="GBPI"/&gt;
+ *     &lt;enumeration value="GBQA"/&gt;
+ *     &lt;enumeration value="GBTN"/&gt;
+ *     &lt;enumeration value="GRAM"/&gt;
+ *     &lt;enumeration value="INCH"/&gt;
+ *     &lt;enumeration value="KILO"/&gt;
+ *     &lt;enumeration value="KMET"/&gt;
+ *     &lt;enumeration value="LITR"/&gt;
+ *     &lt;enumeration value="METR"/&gt;
+ *     &lt;enumeration value="TONE"/&gt;
+ *     &lt;enumeration value="MILE"/&gt;
+ *     &lt;enumeration value="MMET"/&gt;
+ *     &lt;enumeration value="MILI"/&gt;
+ *     &lt;enumeration value="PUND"/&gt;
+ *     &lt;enumeration value="USOU"/&gt;
+ *     &lt;enumeration value="SCMT"/&gt;
+ *     &lt;enumeration value="SQFO"/&gt;
+ *     &lt;enumeration value="SQIN"/&gt;
+ *     &lt;enumeration value="SQKI"/&gt;
+ *     &lt;enumeration value="SMET"/&gt;
+ *     &lt;enumeration value="SQMI"/&gt;
+ *     &lt;enumeration value="SMIL"/&gt;
+ *     &lt;enumeration value="SQYA"/&gt;
+ *     &lt;enumeration value="USBA"/&gt;
+ *     &lt;enumeration value="USFO"/&gt;
+ *     &lt;enumeration value="USGA"/&gt;
+ *     &lt;enumeration value="USPI"/&gt;
+ *     &lt;enumeration value="USQA"/&gt;
+ *     &lt;enumeration value="USTN"/&gt;
+ *     &lt;enumeration value="YARD"/&gt;
+ *     &lt;enumeration value="GBOU"/&gt;
+ *     &lt;enumeration value="ACRE"/&gt;
+ *     &lt;enumeration value="ARES"/&gt;
+ *     &lt;enumeration value="HECT"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "UnitOfMeasure9Code")

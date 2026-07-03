@@ -1,18 +1,17 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -94,23 +93,23 @@ public class TradeTransaction49 {
     @XmlElement(name = "ExctnTmStmp", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime exctnTmStmp;
+    protected XMLGregorianCalendar exctnTmStmp;
     @XmlElement(name = "FctvDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate fctvDt;
+    protected XMLGregorianCalendar fctvDt;
     @XmlElement(name = "XprtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate xprtnDt;
+    protected XMLGregorianCalendar xprtnDt;
     @XmlElement(name = "EarlyTermntnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate earlyTermntnDt;
+    protected XMLGregorianCalendar earlyTermntnDt;
     @XmlElement(name = "SttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected List<LocalDate> sttlmDt;
+    protected List<XMLGregorianCalendar> sttlmDt;
     @XmlElement(name = "MstrAgrmt")
     protected MasterAgreement8 mstrAgrmt;
     @XmlElement(name = "Cmprssn")
@@ -459,7 +458,7 @@ public class TradeTransaction49 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getExctnTmStmp() {
+    public XMLGregorianCalendar getExctnTmStmp() {
         return exctnTmStmp;
     }
 
@@ -471,7 +470,7 @@ public class TradeTransaction49 {
      *     {@link String }
      *     
      */
-    public TradeTransaction49 setExctnTmStmp(OffsetDateTime value) {
+    public TradeTransaction49 setExctnTmStmp(XMLGregorianCalendar value) {
         this.exctnTmStmp = value;
         return this;
     }
@@ -484,7 +483,7 @@ public class TradeTransaction49 {
      *     {@link String }
      *     
      */
-    public LocalDate getFctvDt() {
+    public XMLGregorianCalendar getFctvDt() {
         return fctvDt;
     }
 
@@ -496,7 +495,7 @@ public class TradeTransaction49 {
      *     {@link String }
      *     
      */
-    public TradeTransaction49 setFctvDt(LocalDate value) {
+    public TradeTransaction49 setFctvDt(XMLGregorianCalendar value) {
         this.fctvDt = value;
         return this;
     }
@@ -509,7 +508,7 @@ public class TradeTransaction49 {
      *     {@link String }
      *     
      */
-    public LocalDate getXprtnDt() {
+    public XMLGregorianCalendar getXprtnDt() {
         return xprtnDt;
     }
 
@@ -521,7 +520,7 @@ public class TradeTransaction49 {
      *     {@link String }
      *     
      */
-    public TradeTransaction49 setXprtnDt(LocalDate value) {
+    public TradeTransaction49 setXprtnDt(XMLGregorianCalendar value) {
         this.xprtnDt = value;
         return this;
     }
@@ -534,7 +533,7 @@ public class TradeTransaction49 {
      *     {@link String }
      *     
      */
-    public LocalDate getEarlyTermntnDt() {
+    public XMLGregorianCalendar getEarlyTermntnDt() {
         return earlyTermntnDt;
     }
 
@@ -546,7 +545,7 @@ public class TradeTransaction49 {
      *     {@link String }
      *     
      */
-    public TradeTransaction49 setEarlyTermntnDt(LocalDate value) {
+    public TradeTransaction49 setEarlyTermntnDt(XMLGregorianCalendar value) {
         this.earlyTermntnDt = value;
         return this;
     }
@@ -557,8 +556,8 @@ public class TradeTransaction49 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the sttlmDt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the sttlmDt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -572,12 +571,10 @@ public class TradeTransaction49 {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the sttlmDt property.
      */
-    public List<LocalDate> getSttlmDt() {
+    public List<XMLGregorianCalendar> getSttlmDt() {
         if (sttlmDt == null) {
-            sttlmDt = new ArrayList<>();
+            sttlmDt = new ArrayList<XMLGregorianCalendar>();
         }
         return this.sttlmDt;
     }
@@ -988,8 +985,8 @@ public class TradeTransaction49 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the othrPmt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the othrPmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -1003,12 +1000,10 @@ public class TradeTransaction49 {
      * {@link OtherPayment5 }
      * 
      * 
-     * @return
-     *     The value of the othrPmt property.
      */
     public List<OtherPayment5> getOthrPmt() {
         if (othrPmt == null) {
-            othrPmt = new ArrayList<>();
+            othrPmt = new ArrayList<OtherPayment5>();
         }
         return this.othrPmt;
     }
@@ -1083,7 +1078,7 @@ public class TradeTransaction49 {
      * @see #getSttlmDt()
      * 
      */
-    public TradeTransaction49 addSttlmDt(LocalDate sttlmDt) {
+    public TradeTransaction49 addSttlmDt(XMLGregorianCalendar sttlmDt) {
         getSttlmDt().add(sttlmDt);
         return this;
     }

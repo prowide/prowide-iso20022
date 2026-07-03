@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -37,8 +37,8 @@ public class RiskContext2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the rskInptData property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the rskInptData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -52,12 +52,10 @@ public class RiskContext2 {
      * {@link RiskInputData1 }
      * 
      * 
-     * @return
-     *     The value of the rskInptData property.
      */
     public List<RiskInputData1> getRskInptData() {
         if (rskInptData == null) {
-            rskInptData = new ArrayList<>();
+            rskInptData = new ArrayList<RiskInputData1>();
         }
         return this.rskInptData;
     }
@@ -68,8 +66,8 @@ public class RiskContext2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the rskAssmnt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the rskAssmnt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -83,12 +81,10 @@ public class RiskContext2 {
      * {@link RiskAssessment2 }
      * 
      * 
-     * @return
-     *     The value of the rskAssmnt property.
      */
     public List<RiskAssessment2> getRskAssmnt() {
         if (rskAssmnt == null) {
-            rskAssmnt = new ArrayList<>();
+            rskAssmnt = new ArrayList<RiskAssessment2>();
         }
         return this.rskAssmnt;
     }

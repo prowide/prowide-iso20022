@@ -2,16 +2,14 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.time.OffsetDateTime;
-import java.time.YearMonth;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import com.prowidesoftware.swift.model.mx.adapters.IsoYearMonthAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -99,14 +97,12 @@ public class FinancialInstrumentStipulations2 {
     protected Boolean insrdInd;
     @XmlElement(name = "LookBck")
     protected BigDecimal lookBck;
-    @XmlElement(name = "MtrtyDt", type = String.class)
-    @XmlJavaTypeAdapter(IsoYearMonthAdapter.class)
+    @XmlElement(name = "MtrtyDt")
     @XmlSchemaType(name = "gYearMonth")
-    protected YearMonth mtrtyDt;
-    @XmlElement(name = "IsseDt", type = String.class)
-    @XmlJavaTypeAdapter(IsoYearMonthAdapter.class)
+    protected XMLGregorianCalendar mtrtyDt;
+    @XmlElement(name = "IsseDt")
     @XmlSchemaType(name = "gYearMonth")
-    protected YearMonth isseDt;
+    protected XMLGregorianCalendar isseDt;
     @XmlElement(name = "IssrId")
     protected String issrId;
     @XmlElement(name = "IsseSz")
@@ -143,7 +139,7 @@ public class FinancialInstrumentStipulations2 {
     @XmlElement(name = "XprtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime xprtnDt;
+    protected XMLGregorianCalendar xprtnDt;
     @XmlElement(name = "OverAlltmtAmt")
     protected ActiveCurrencyAndAmount overAlltmtAmt;
     @XmlElement(name = "OverAlltmtRate")
@@ -518,10 +514,10 @@ public class FinancialInstrumentStipulations2 {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public YearMonth getMtrtyDt() {
+    public XMLGregorianCalendar getMtrtyDt() {
         return mtrtyDt;
     }
 
@@ -530,10 +526,10 @@ public class FinancialInstrumentStipulations2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public FinancialInstrumentStipulations2 setMtrtyDt(YearMonth value) {
+    public FinancialInstrumentStipulations2 setMtrtyDt(XMLGregorianCalendar value) {
         this.mtrtyDt = value;
         return this;
     }
@@ -543,10 +539,10 @@ public class FinancialInstrumentStipulations2 {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public YearMonth getIsseDt() {
+    public XMLGregorianCalendar getIsseDt() {
         return isseDt;
     }
 
@@ -555,10 +551,10 @@ public class FinancialInstrumentStipulations2 {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public FinancialInstrumentStipulations2 setIsseDt(YearMonth value) {
+    public FinancialInstrumentStipulations2 setIsseDt(XMLGregorianCalendar value) {
         this.isseDt = value;
         return this;
     }
@@ -946,7 +942,7 @@ public class FinancialInstrumentStipulations2 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getXprtnDt() {
+    public XMLGregorianCalendar getXprtnDt() {
         return xprtnDt;
     }
 
@@ -958,7 +954,7 @@ public class FinancialInstrumentStipulations2 {
      *     {@link String }
      *     
      */
-    public FinancialInstrumentStipulations2 setXprtnDt(OffsetDateTime value) {
+    public FinancialInstrumentStipulations2 setXprtnDt(XMLGregorianCalendar value) {
         this.xprtnDt = value;
         return this;
     }

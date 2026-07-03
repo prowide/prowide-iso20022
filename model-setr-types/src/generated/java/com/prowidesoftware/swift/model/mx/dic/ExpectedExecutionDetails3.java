@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -40,7 +40,7 @@ public class ExpectedExecutionDetails3 {
     @XmlElement(name = "XpctdCshSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate xpctdCshSttlmDt;
+    protected XMLGregorianCalendar xpctdCshSttlmDt;
     @XmlElement(name = "XpctdExctdAmt", required = true)
     protected ActiveCurrencyAndAmount xpctdExctdAmt;
     @XmlElement(name = "PmtInInd")
@@ -50,7 +50,7 @@ public class ExpectedExecutionDetails3 {
     @XmlElement(name = "PrepmtDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate prepmtDt;
+    protected XMLGregorianCalendar prepmtDt;
     @XmlElement(name = "TopUpAmt")
     protected ActiveCurrencyAndAmount topUpAmt;
     @XmlElement(name = "HldBckDtls")
@@ -91,7 +91,7 @@ public class ExpectedExecutionDetails3 {
      *     {@link String }
      *     
      */
-    public LocalDate getXpctdCshSttlmDt() {
+    public XMLGregorianCalendar getXpctdCshSttlmDt() {
         return xpctdCshSttlmDt;
     }
 
@@ -103,7 +103,7 @@ public class ExpectedExecutionDetails3 {
      *     {@link String }
      *     
      */
-    public ExpectedExecutionDetails3 setXpctdCshSttlmDt(LocalDate value) {
+    public ExpectedExecutionDetails3 setXpctdCshSttlmDt(XMLGregorianCalendar value) {
         this.xpctdCshSttlmDt = value;
         return this;
     }
@@ -191,7 +191,7 @@ public class ExpectedExecutionDetails3 {
      *     {@link String }
      *     
      */
-    public LocalDate getPrepmtDt() {
+    public XMLGregorianCalendar getPrepmtDt() {
         return prepmtDt;
     }
 
@@ -203,7 +203,7 @@ public class ExpectedExecutionDetails3 {
      *     {@link String }
      *     
      */
-    public ExpectedExecutionDetails3 setPrepmtDt(LocalDate value) {
+    public ExpectedExecutionDetails3 setPrepmtDt(XMLGregorianCalendar value) {
         this.prepmtDt = value;
         return this;
     }

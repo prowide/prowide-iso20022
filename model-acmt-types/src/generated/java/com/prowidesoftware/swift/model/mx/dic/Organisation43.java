@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -56,7 +56,7 @@ public class Organisation43 {
     @XmlElement(name = "EstblishdDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate estblishdDt;
+    protected XMLGregorianCalendar estblishdDt;
     @XmlElement(name = "RegnNb")
     protected String regnNb;
     @XmlElement(name = "RegnCtry")
@@ -64,7 +64,7 @@ public class Organisation43 {
     @XmlElement(name = "RegnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate regnDt;
+    protected XMLGregorianCalendar regnDt;
     @XmlElement(name = "TaxtnIdNb")
     protected String taxtnIdNb;
     @XmlElement(name = "TaxtnCtry")
@@ -171,7 +171,7 @@ public class Organisation43 {
      *     {@link String }
      *     
      */
-    public LocalDate getEstblishdDt() {
+    public XMLGregorianCalendar getEstblishdDt() {
         return estblishdDt;
     }
 
@@ -183,7 +183,7 @@ public class Organisation43 {
      *     {@link String }
      *     
      */
-    public Organisation43 setEstblishdDt(LocalDate value) {
+    public Organisation43 setEstblishdDt(XMLGregorianCalendar value) {
         this.estblishdDt = value;
         return this;
     }
@@ -246,7 +246,7 @@ public class Organisation43 {
      *     {@link String }
      *     
      */
-    public LocalDate getRegnDt() {
+    public XMLGregorianCalendar getRegnDt() {
         return regnDt;
     }
 
@@ -258,7 +258,7 @@ public class Organisation43 {
      *     {@link String }
      *     
      */
-    public Organisation43 setRegnDt(LocalDate value) {
+    public Organisation43 setRegnDt(XMLGregorianCalendar value) {
         this.regnDt = value;
         return this;
     }
@@ -444,8 +444,8 @@ public class Organisation43 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the rprtvOffcr property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the rprtvOffcr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -459,12 +459,10 @@ public class Organisation43 {
      * {@link PartyIdentification272 }
      * 
      * 
-     * @return
-     *     The value of the rprtvOffcr property.
      */
     public List<PartyIdentification272> getRprtvOffcr() {
         if (rprtvOffcr == null) {
-            rprtvOffcr = new ArrayList<>();
+            rprtvOffcr = new ArrayList<PartyIdentification272>();
         }
         return this.rprtvOffcr;
     }
@@ -500,8 +498,8 @@ public class Organisation43 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the mainMndtHldr property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the mainMndtHldr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -515,12 +513,10 @@ public class Organisation43 {
      * {@link PartyIdentification272 }
      * 
      * 
-     * @return
-     *     The value of the mainMndtHldr property.
      */
     public List<PartyIdentification272> getMainMndtHldr() {
         if (mainMndtHldr == null) {
-            mainMndtHldr = new ArrayList<>();
+            mainMndtHldr = new ArrayList<PartyIdentification272>();
         }
         return this.mainMndtHldr;
     }
@@ -531,8 +527,8 @@ public class Organisation43 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the sndr property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the sndr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -546,12 +542,10 @@ public class Organisation43 {
      * {@link PartyIdentification272 }
      * 
      * 
-     * @return
-     *     The value of the sndr property.
      */
     public List<PartyIdentification272> getSndr() {
         if (sndr == null) {
-            sndr = new ArrayList<>();
+            sndr = new ArrayList<PartyIdentification272>();
         }
         return this.sndr;
     }

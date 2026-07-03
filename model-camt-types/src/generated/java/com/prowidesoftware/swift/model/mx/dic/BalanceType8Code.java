@@ -1,53 +1,54 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for BalanceType8Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="BalanceType8Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="OPBD"/>
- *     <enumeration value="ITBD"/>
- *     <enumeration value="CLBD"/>
- *     <enumeration value="XPCD"/>
- *     <enumeration value="OPAV"/>
- *     <enumeration value="ITAV"/>
- *     <enumeration value="CLAV"/>
- *     <enumeration value="FWAV"/>
- *     <enumeration value="PRCD"/>
- *     <enumeration value="IOPA"/>
- *     <enumeration value="IITA"/>
- *     <enumeration value="ICLA"/>
- *     <enumeration value="IFWA"/>
- *     <enumeration value="ICLB"/>
- *     <enumeration value="IITB"/>
- *     <enumeration value="IOPB"/>
- *     <enumeration value="IXPC"/>
- *     <enumeration value="DOPA"/>
- *     <enumeration value="DITA"/>
- *     <enumeration value="DCLA"/>
- *     <enumeration value="DFWA"/>
- *     <enumeration value="DCLB"/>
- *     <enumeration value="DITB"/>
- *     <enumeration value="DOPB"/>
- *     <enumeration value="DXPC"/>
- *     <enumeration value="COPA"/>
- *     <enumeration value="CITA"/>
- *     <enumeration value="CCLA"/>
- *     <enumeration value="CFWA"/>
- *     <enumeration value="CCLB"/>
- *     <enumeration value="CITB"/>
- *     <enumeration value="COPB"/>
- *     <enumeration value="CXPC"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="BalanceType8Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="OPBD"/&gt;
+ *     &lt;enumeration value="ITBD"/&gt;
+ *     &lt;enumeration value="CLBD"/&gt;
+ *     &lt;enumeration value="XPCD"/&gt;
+ *     &lt;enumeration value="OPAV"/&gt;
+ *     &lt;enumeration value="ITAV"/&gt;
+ *     &lt;enumeration value="CLAV"/&gt;
+ *     &lt;enumeration value="FWAV"/&gt;
+ *     &lt;enumeration value="PRCD"/&gt;
+ *     &lt;enumeration value="IOPA"/&gt;
+ *     &lt;enumeration value="IITA"/&gt;
+ *     &lt;enumeration value="ICLA"/&gt;
+ *     &lt;enumeration value="IFWA"/&gt;
+ *     &lt;enumeration value="ICLB"/&gt;
+ *     &lt;enumeration value="IITB"/&gt;
+ *     &lt;enumeration value="IOPB"/&gt;
+ *     &lt;enumeration value="IXPC"/&gt;
+ *     &lt;enumeration value="DOPA"/&gt;
+ *     &lt;enumeration value="DITA"/&gt;
+ *     &lt;enumeration value="DCLA"/&gt;
+ *     &lt;enumeration value="DFWA"/&gt;
+ *     &lt;enumeration value="DCLB"/&gt;
+ *     &lt;enumeration value="DITB"/&gt;
+ *     &lt;enumeration value="DOPB"/&gt;
+ *     &lt;enumeration value="DXPC"/&gt;
+ *     &lt;enumeration value="COPA"/&gt;
+ *     &lt;enumeration value="CITA"/&gt;
+ *     &lt;enumeration value="CCLA"/&gt;
+ *     &lt;enumeration value="CFWA"/&gt;
+ *     &lt;enumeration value="CCLB"/&gt;
+ *     &lt;enumeration value="CITB"/&gt;
+ *     &lt;enumeration value="COPB"/&gt;
+ *     &lt;enumeration value="CXPC"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "BalanceType8Code")

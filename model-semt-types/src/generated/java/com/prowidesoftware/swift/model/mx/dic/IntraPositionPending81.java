@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.OffsetDateTime;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -71,11 +71,11 @@ public class IntraPositionPending81 {
     @XmlElement(name = "StsDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime stsDt;
+    protected XMLGregorianCalendar stsDt;
     @XmlElement(name = "AckdStsTmStmp", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime ackdStsTmStmp;
+    protected XMLGregorianCalendar ackdStsTmStmp;
     @XmlElement(name = "Lnkgs")
     protected List<Linkages571Draft> lnkgs;
     @XmlElement(name = "SctiesSubBalId")
@@ -87,7 +87,7 @@ public class IntraPositionPending81 {
     @XmlElement(name = "CreDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime creDtTm;
+    protected XMLGregorianCalendar creDtTm;
 
     /**
      * Gets the value of the stsAndRsn property.
@@ -372,7 +372,7 @@ public class IntraPositionPending81 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getStsDt() {
+    public XMLGregorianCalendar getStsDt() {
         return stsDt;
     }
 
@@ -384,7 +384,7 @@ public class IntraPositionPending81 {
      *     {@link String }
      *     
      */
-    public IntraPositionPending81 setStsDt(OffsetDateTime value) {
+    public IntraPositionPending81 setStsDt(XMLGregorianCalendar value) {
         this.stsDt = value;
         return this;
     }
@@ -397,7 +397,7 @@ public class IntraPositionPending81 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getAckdStsTmStmp() {
+    public XMLGregorianCalendar getAckdStsTmStmp() {
         return ackdStsTmStmp;
     }
 
@@ -409,7 +409,7 @@ public class IntraPositionPending81 {
      *     {@link String }
      *     
      */
-    public IntraPositionPending81 setAckdStsTmStmp(OffsetDateTime value) {
+    public IntraPositionPending81 setAckdStsTmStmp(XMLGregorianCalendar value) {
         this.ackdStsTmStmp = value;
         return this;
     }
@@ -528,7 +528,7 @@ public class IntraPositionPending81 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getCreDtTm() {
+    public XMLGregorianCalendar getCreDtTm() {
         return creDtTm;
     }
 
@@ -540,7 +540,7 @@ public class IntraPositionPending81 {
      *     {@link String }
      *     
      */
-    public IntraPositionPending81 setCreDtTm(OffsetDateTime value) {
+    public IntraPositionPending81 setCreDtTm(XMLGregorianCalendar value) {
         this.creDtTm = value;
         return this;
     }

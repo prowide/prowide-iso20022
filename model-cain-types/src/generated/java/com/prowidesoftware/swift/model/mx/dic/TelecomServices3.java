@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -46,11 +46,11 @@ public class TelecomServices3 {
     @XmlElement(name = "BllgStart", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate bllgStart;
+    protected XMLGregorianCalendar bllgStart;
     @XmlElement(name = "BllgEnd", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate bllgEnd;
+    protected XMLGregorianCalendar bllgEnd;
     @XmlElement(name = "BllgEvt")
     protected List<Amount22> bllgEvt;
     @XmlElement(name = "TtlTax")
@@ -143,7 +143,7 @@ public class TelecomServices3 {
      *     {@link String }
      *     
      */
-    public LocalDate getBllgStart() {
+    public XMLGregorianCalendar getBllgStart() {
         return bllgStart;
     }
 
@@ -155,7 +155,7 @@ public class TelecomServices3 {
      *     {@link String }
      *     
      */
-    public TelecomServices3 setBllgStart(LocalDate value) {
+    public TelecomServices3 setBllgStart(XMLGregorianCalendar value) {
         this.bllgStart = value;
         return this;
     }
@@ -168,7 +168,7 @@ public class TelecomServices3 {
      *     {@link String }
      *     
      */
-    public LocalDate getBllgEnd() {
+    public XMLGregorianCalendar getBllgEnd() {
         return bllgEnd;
     }
 
@@ -180,7 +180,7 @@ public class TelecomServices3 {
      *     {@link String }
      *     
      */
-    public TelecomServices3 setBllgEnd(LocalDate value) {
+    public TelecomServices3 setBllgEnd(XMLGregorianCalendar value) {
         this.bllgEnd = value;
         return this;
     }
@@ -191,8 +191,8 @@ public class TelecomServices3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the bllgEvt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the bllgEvt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -206,12 +206,10 @@ public class TelecomServices3 {
      * {@link Amount22 }
      * 
      * 
-     * @return
-     *     The value of the bllgEvt property.
      */
     public List<Amount22> getBllgEvt() {
         if (bllgEvt == null) {
-            bllgEvt = new ArrayList<>();
+            bllgEvt = new ArrayList<Amount22>();
         }
         return this.bllgEvt;
     }
@@ -222,8 +220,8 @@ public class TelecomServices3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the ttlTax property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the ttlTax property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -237,12 +235,10 @@ public class TelecomServices3 {
      * {@link Tax41 }
      * 
      * 
-     * @return
-     *     The value of the ttlTax property.
      */
     public List<Tax41> getTtlTax() {
         if (ttlTax == null) {
-            ttlTax = new ArrayList<>();
+            ttlTax = new ArrayList<Tax41>();
         }
         return this.ttlTax;
     }
@@ -253,8 +249,8 @@ public class TelecomServices3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the lineItm property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the lineItm property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -268,12 +264,10 @@ public class TelecomServices3 {
      * {@link TelecomServicesLineItem3 }
      * 
      * 
-     * @return
-     *     The value of the lineItm property.
      */
     public List<TelecomServicesLineItem3> getLineItm() {
         if (lineItm == null) {
-            lineItm = new ArrayList<>();
+            lineItm = new ArrayList<TelecomServicesLineItem3>();
         }
         return this.lineItm;
     }
@@ -284,8 +278,8 @@ public class TelecomServices3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the addtlData property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the addtlData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -299,12 +293,10 @@ public class TelecomServices3 {
      * {@link AdditionalData1 }
      * 
      * 
-     * @return
-     *     The value of the addtlData property.
      */
     public List<AdditionalData1> getAddtlData() {
         if (addtlData == null) {
-            addtlData = new ArrayList<>();
+            addtlData = new ArrayList<AdditionalData1>();
         }
         return this.addtlData;
     }

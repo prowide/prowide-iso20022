@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxCamt01000106
 
     @XmlElement(name = "RtrLmt", required = true)
     protected ReturnLimitV06 rtrLmt;
-    public static final transient String BUSINESS_PROCESS = "camt";
-    public static final transient int FUNCTIONALITY = 10;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 6;
+    public final static transient String BUSINESS_PROCESS = "camt";
+    public final static transient int FUNCTIONALITY = 10;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 6;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {AccountIdentification4Choice.class, AccountSchemeName1Choice.class, ActiveCurrencyAndAmount.class, AddressType2Code.class, Amount2Choice.class, BranchAndFinancialInstitutionIdentification5 .class, BranchData2 .class, ClearingSystemIdentification2Choice.class, ClearingSystemMemberIdentification2 .class, CreditDebitCode.class, DateAndDateTimeChoice.class, ErrorHandling1Code.class, ErrorHandling2Choice.class, ErrorHandling4 .class, FinancialIdentificationSchemeName1Choice.class, FinancialInstitutionIdentification8 .class, GenericAccountIdentification1 .class, GenericFinancialIdentification1 .class, GenericIdentification1 .class, Limit4 .class, LimitIdentification1 .class, LimitOrError2Choice.class, LimitReport5 .class, LimitReportOrError2Choice.class, LimitStatus1Code.class, LimitType1Choice.class, LimitType3Code.class, Limits5 .class, MarketInfrastructureIdentification1Choice.class, MessageHeader3 .class, MxCamt01000106 .class, OriginalBusinessQuery1 .class, PostalAddress6 .class, RequestType1Code.class, RequestType2Choice.class, RequestType2Code.class, ReturnLimitV06 .class, SystemIdentification2Choice.class };
-    public static final transient String NAMESPACE = "urn:swift:xsd:camt.010.001.06";
+    public final static transient Class[] _classes = new Class[] {AccountIdentification4Choice.class, AccountSchemeName1Choice.class, ActiveCurrencyAndAmount.class, AddressType2Code.class, Amount2Choice.class, BranchAndFinancialInstitutionIdentification5 .class, BranchData2 .class, ClearingSystemIdentification2Choice.class, ClearingSystemMemberIdentification2 .class, CreditDebitCode.class, DateAndDateTimeChoice.class, ErrorHandling1Code.class, ErrorHandling2Choice.class, ErrorHandling4 .class, FinancialIdentificationSchemeName1Choice.class, FinancialInstitutionIdentification8 .class, GenericAccountIdentification1 .class, GenericFinancialIdentification1 .class, GenericIdentification1 .class, Limit4 .class, LimitIdentification1 .class, LimitOrError2Choice.class, LimitReport5 .class, LimitReportOrError2Choice.class, LimitStatus1Code.class, LimitType1Choice.class, LimitType3Code.class, Limits5 .class, MarketInfrastructureIdentification1Choice.class, MessageHeader3 .class, MxCamt01000106 .class, OriginalBusinessQuery1 .class, PostalAddress6 .class, RequestType1Code.class, RequestType2Choice.class, RequestType2Code.class, ReturnLimitV06 .class, SystemIdentification2Choice.class };
+    public final static transient String NAMESPACE = "urn:swift:xsd:camt.010.001.06";
 
     public MxCamt01000106() {
         super();
@@ -86,6 +86,21 @@ public class MxCamt01000106
     public MxCamt01000106 setRtrLmt(ReturnLimitV06 value) {
         this.rtrLmt = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxCamt01000106
      * @return
      *     a new instance of MxCamt01000106
      */
-    public static final MxCamt01000106 fromJson(String json) {
+    public final static MxCamt01000106 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxCamt01000106 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

@@ -1,49 +1,50 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for RejectionReason5Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="RejectionReason5Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="EXCL"/>
- *     <enumeration value="UKWN"/>
- *     <enumeration value="EXLI"/>
- *     <enumeration value="TOLA"/>
- *     <enumeration value="INPR"/>
- *     <enumeration value="DQUA"/>
- *     <enumeration value="ASTM"/>
- *     <enumeration value="CADE"/>
- *     <enumeration value="CASH"/>
- *     <enumeration value="DDEA"/>
- *     <enumeration value="FORF"/>
- *     <enumeration value="DCUS"/>
- *     <enumeration value="RCUS"/>
- *     <enumeration value="NRGN"/>
- *     <enumeration value="QUNP"/>
- *     <enumeration value="REPA"/>
- *     <enumeration value="REPO"/>
- *     <enumeration value="REPP"/>
- *     <enumeration value="RERT"/>
- *     <enumeration value="RSPR"/>
- *     <enumeration value="DTRD"/>
- *     <enumeration value="IVAG"/>
- *     <enumeration value="INTE"/>
- *     <enumeration value="ICAG"/>
- *     <enumeration value="PLCE"/>
- *     <enumeration value="INUK"/>
- *     <enumeration value="DCAN"/>
- *     <enumeration value="DPRG"/>
- *     <enumeration value="ULNK"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="RejectionReason5Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="EXCL"/&gt;
+ *     &lt;enumeration value="UKWN"/&gt;
+ *     &lt;enumeration value="EXLI"/&gt;
+ *     &lt;enumeration value="TOLA"/&gt;
+ *     &lt;enumeration value="INPR"/&gt;
+ *     &lt;enumeration value="DQUA"/&gt;
+ *     &lt;enumeration value="ASTM"/&gt;
+ *     &lt;enumeration value="CADE"/&gt;
+ *     &lt;enumeration value="CASH"/&gt;
+ *     &lt;enumeration value="DDEA"/&gt;
+ *     &lt;enumeration value="FORF"/&gt;
+ *     &lt;enumeration value="DCUS"/&gt;
+ *     &lt;enumeration value="RCUS"/&gt;
+ *     &lt;enumeration value="NRGN"/&gt;
+ *     &lt;enumeration value="QUNP"/&gt;
+ *     &lt;enumeration value="REPA"/&gt;
+ *     &lt;enumeration value="REPO"/&gt;
+ *     &lt;enumeration value="REPP"/&gt;
+ *     &lt;enumeration value="RERT"/&gt;
+ *     &lt;enumeration value="RSPR"/&gt;
+ *     &lt;enumeration value="DTRD"/&gt;
+ *     &lt;enumeration value="IVAG"/&gt;
+ *     &lt;enumeration value="INTE"/&gt;
+ *     &lt;enumeration value="ICAG"/&gt;
+ *     &lt;enumeration value="PLCE"/&gt;
+ *     &lt;enumeration value="INUK"/&gt;
+ *     &lt;enumeration value="DCAN"/&gt;
+ *     &lt;enumeration value="DPRG"/&gt;
+ *     &lt;enumeration value="ULNK"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "RejectionReason5Code")

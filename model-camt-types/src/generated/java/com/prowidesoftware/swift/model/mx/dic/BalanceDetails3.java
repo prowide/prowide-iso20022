@@ -3,11 +3,11 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -46,8 +46,8 @@ public class BalanceDetails3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the balTp property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the balTp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -61,12 +61,10 @@ public class BalanceDetails3 {
      * {@link BalanceType6Code }
      * 
      * 
-     * @return
-     *     The value of the balTp property.
      */
     public List<BalanceType6Code> getBalTp() {
         if (balTp == null) {
-            balTp = new ArrayList<>();
+            balTp = new ArrayList<BalanceType6Code>();
         }
         return this.balTp;
     }
@@ -102,8 +100,8 @@ public class BalanceDetails3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the ctrPtyId property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the ctrPtyId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -117,12 +115,10 @@ public class BalanceDetails3 {
      * {@link MemberIdentificationChoice }
      * 
      * 
-     * @return
-     *     The value of the ctrPtyId property.
      */
     public List<MemberIdentificationChoice> getCtrPtyId() {
         if (ctrPtyId == null) {
-            ctrPtyId = new ArrayList<>();
+            ctrPtyId = new ArrayList<MemberIdentificationChoice>();
         }
         return this.ctrPtyId;
     }
@@ -133,8 +129,8 @@ public class BalanceDetails3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the balValDt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the balValDt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -148,12 +144,10 @@ public class BalanceDetails3 {
      * {@link DateAndDateTimeSearchChoice }
      * 
      * 
-     * @return
-     *     The value of the balValDt property.
      */
     public List<DateAndDateTimeSearchChoice> getBalValDt() {
         if (balValDt == null) {
-            balValDt = new ArrayList<>();
+            balValDt = new ArrayList<DateAndDateTimeSearchChoice>();
         }
         return this.balValDt;
     }

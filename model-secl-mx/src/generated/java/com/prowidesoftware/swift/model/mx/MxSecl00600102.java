@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxSecl00600102
 
     @XmlElement(name = "DfltFndCntrbtnRpt", required = true)
     protected DefaultFundContributionReportV02 dfltFndCntrbtnRpt;
-    public static final transient String BUSINESS_PROCESS = "secl";
-    public static final transient int FUNCTIONALITY = 6;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 2;
+    public final static transient String BUSINESS_PROCESS = "secl";
+    public final static transient int FUNCTIONALITY = 6;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 2;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {AccountIdentification4Choice.class, AccountSchemeName1Choice.class, ActiveCurrencyAndAmount.class, ActiveOrHistoricCurrencyAndAmount.class, AlternatePartyIdentification4 .class, AmountAndDirection21 .class, ClearingAccountType1Code.class, Collateral3 .class, CollateralType2Code.class, Contribution1 .class, CreditDebitCode.class, DateAndDateTimeChoice.class, DefaultFund1 .class, DefaultFundContributionReportV02 .class, DefaultFundReport1 .class, EventFrequency6Code.class, GenericAccountIdentification1 .class, GenericIdentification29 .class, GenericIdentification30 .class, IdentificationType6Choice.class, MxSecl00600102 .class, NameAndAddress6 .class, PartyIdentification33Choice.class, PartyIdentification35Choice.class, PartyIdentificationAndAccount31 .class, PartyTextInformation1 .class, PostalAddress2 .class, ReportParameters2 .class, SecuritiesAccount18 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TypeOfIdentification1Code.class };
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:secl.006.001.02";
+    public final static transient Class[] _classes = new Class[] {AccountIdentification4Choice.class, AccountSchemeName1Choice.class, ActiveCurrencyAndAmount.class, ActiveOrHistoricCurrencyAndAmount.class, AlternatePartyIdentification4 .class, AmountAndDirection21 .class, ClearingAccountType1Code.class, Collateral3 .class, CollateralType2Code.class, Contribution1 .class, CreditDebitCode.class, DateAndDateTimeChoice.class, DefaultFund1 .class, DefaultFundContributionReportV02 .class, DefaultFundReport1 .class, EventFrequency6Code.class, GenericAccountIdentification1 .class, GenericIdentification29 .class, GenericIdentification30 .class, IdentificationType6Choice.class, MxSecl00600102 .class, NameAndAddress6 .class, PartyIdentification33Choice.class, PartyIdentification35Choice.class, PartyIdentificationAndAccount31 .class, PartyTextInformation1 .class, PostalAddress2 .class, ReportParameters2 .class, SecuritiesAccount18 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TypeOfIdentification1Code.class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:secl.006.001.02";
 
     public MxSecl00600102() {
         super();
@@ -86,6 +86,21 @@ public class MxSecl00600102
     public MxSecl00600102 setDfltFndCntrbtnRpt(DefaultFundContributionReportV02 value) {
         this.dfltFndCntrbtnRpt = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxSecl00600102
      * @return
      *     a new instance of MxSecl00600102
      */
-    public static final MxSecl00600102 fromJson(String json) {
+    public final static MxSecl00600102 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSecl00600102 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

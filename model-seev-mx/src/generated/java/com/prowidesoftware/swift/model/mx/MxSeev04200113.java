@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxSeev04200113
 
     @XmlElement(name = "CorpActnInstrStmtRpt", required = true)
     protected CorporateActionInstructionStatementReportV13 corpActnInstrStmtRpt;
-    public static final transient String BUSINESS_PROCESS = "seev";
-    public static final transient int FUNCTIONALITY = 42;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 13;
+    public final static transient String BUSINESS_PROCESS = "seev";
+    public final static transient int FUNCTIONALITY = 42;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 13;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {AccountIdentification68 .class, ActiveCurrencyAnd13DecimalAmount.class, AmountPrice3 .class, AmountPriceType1Code.class, BalanceFormat11Choice.class, CancelledReason8Choice.class, CancelledStatus12Choice.class, CancelledStatusReason11 .class, CancelledStatusReason6Code.class, CorporateActionBalance50 .class, CorporateActionEventAndBalance26 .class, CorporateActionEventDeadlines3 .class, CorporateActionEventType112Choice.class, CorporateActionEventType40Code.class, CorporateActionInstructionStatementReportV13 .class, CorporateActionMandatoryVoluntary1Code.class, CorporateActionMandatoryVoluntary3Choice.class, CorporateActionOption11Code.class, CorporateActionOption30Choice.class, CorporateActionStatementReportingType1Code.class, CorporateActionStatementType2Code.class, DateAndDateTime2Choice.class, DateCode19Choice.class, DateCode21Choice.class, DateCodeAndTimeFormat3 .class, DateFormat43Choice.class, DateFormat44Choice.class, DateOrDateTimePeriod1Choice.class, DatePeriod2 .class, DateTimePeriod1 .class, DateType7Code.class, DateType8Code.class, DefaultProcessingOrStandingInstruction2Choice.class, DeliveryReceiptType2Code.class, EventFrequency4Code.class, EventInformation17 .class, FinancialInstrumentQuantity33Choice.class, Frequency25Choice.class, GenericIdentification30 .class, GenericIdentification36 .class, GenericIdentification78 .class, IdentificationSource3Choice.class, InstructedBalance20 .class, InstructedCorporateActionOption21 .class, InstructionProcessingStatus56Choice.class, MxSeev04200113 .class, NoReasonCode.class, NoSpecifiedReason1 .class, NotificationIdentification5 .class, OptionInstructionDetails11 .class, OriginalAndCurrentQuantities6 .class, OtherIdentification1 .class, Pagination1 .class, PartyIdentification127Choice.class, PendingBalance7 .class, PendingCancellationReason5Choice.class, PendingCancellationReason5Code.class, PendingCancellationStatus13Choice.class, PendingCancellationStatusReason7 .class, PendingReason27Code.class, PendingReason66Choice.class, PendingStatus71Choice.class, PendingStatusReason27 .class, PercentagePrice2 .class, PriceFormat74Choice.class, PriceRateType3Code.class, PriceValueType10Code.class, ProprietaryQuantity7 .class, ProprietaryQuantity8 .class, ProtectTransactionType2Code.class, Quantity48Choice.class, Quantity49Choice.class, Quantity50Choice.class, RejectedReason58Choice.class, RejectedStatus58Choice.class, RejectedStatusReason57 .class, RejectionReason86Code.class, ReturnedReason2Choice.class, ReturnedStatus1Code.class, ReturnedStatus2Choice.class, ReturnedStatusReason2 .class, SafekeepingPlace1Code.class, SafekeepingPlace2Code.class, SafekeepingPlaceFormat42Choice.class, SafekeepingPlaceTypeAndIdentification1 .class, SafekeepingPlaceTypeAndText6 .class, SecurityIdentification19 .class, SettlementTypeAndIdentification25 .class, ShortLong1Code.class, SignedQuantityFormat10 .class, SignedQuantityFormat11 .class, Statement72 .class, StatementUpdateType1Code.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, UpdateType15Choice.class };
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:seev.042.001.13";
+    public final static transient Class[] _classes = new Class[] {AccountIdentification68 .class, ActiveCurrencyAnd13DecimalAmount.class, AmountPrice3 .class, AmountPriceType1Code.class, BalanceFormat11Choice.class, CancelledReason8Choice.class, CancelledStatus12Choice.class, CancelledStatusReason11 .class, CancelledStatusReason6Code.class, CorporateActionBalance50 .class, CorporateActionEventAndBalance26 .class, CorporateActionEventDeadlines3 .class, CorporateActionEventType112Choice.class, CorporateActionEventType40Code.class, CorporateActionInstructionStatementReportV13 .class, CorporateActionMandatoryVoluntary1Code.class, CorporateActionMandatoryVoluntary3Choice.class, CorporateActionOption11Code.class, CorporateActionOption30Choice.class, CorporateActionStatementReportingType1Code.class, CorporateActionStatementType2Code.class, DateAndDateTime2Choice.class, DateCode19Choice.class, DateCode21Choice.class, DateCodeAndTimeFormat3 .class, DateFormat43Choice.class, DateFormat44Choice.class, DateOrDateTimePeriod1Choice.class, DatePeriod2 .class, DateTimePeriod1 .class, DateType7Code.class, DateType8Code.class, DefaultProcessingOrStandingInstruction2Choice.class, DeliveryReceiptType2Code.class, EventFrequency4Code.class, EventInformation17 .class, FinancialInstrumentQuantity33Choice.class, Frequency25Choice.class, GenericIdentification30 .class, GenericIdentification36 .class, GenericIdentification78 .class, IdentificationSource3Choice.class, InstructedBalance20 .class, InstructedCorporateActionOption21 .class, InstructionProcessingStatus56Choice.class, MxSeev04200113 .class, NoReasonCode.class, NoSpecifiedReason1 .class, NotificationIdentification5 .class, OptionInstructionDetails11 .class, OriginalAndCurrentQuantities6 .class, OtherIdentification1 .class, Pagination1 .class, PartyIdentification127Choice.class, PendingBalance7 .class, PendingCancellationReason5Choice.class, PendingCancellationReason5Code.class, PendingCancellationStatus13Choice.class, PendingCancellationStatusReason7 .class, PendingReason27Code.class, PendingReason66Choice.class, PendingStatus71Choice.class, PendingStatusReason27 .class, PercentagePrice2 .class, PriceFormat74Choice.class, PriceRateType3Code.class, PriceValueType10Code.class, ProprietaryQuantity7 .class, ProprietaryQuantity8 .class, ProtectTransactionType2Code.class, Quantity48Choice.class, Quantity49Choice.class, Quantity50Choice.class, RejectedReason58Choice.class, RejectedStatus58Choice.class, RejectedStatusReason57 .class, RejectionReason86Code.class, ReturnedReason2Choice.class, ReturnedStatus1Code.class, ReturnedStatus2Choice.class, ReturnedStatusReason2 .class, SafekeepingPlace1Code.class, SafekeepingPlace2Code.class, SafekeepingPlaceFormat42Choice.class, SafekeepingPlaceTypeAndIdentification1 .class, SafekeepingPlaceTypeAndText6 .class, SecurityIdentification19 .class, SettlementTypeAndIdentification25 .class, ShortLong1Code.class, SignedQuantityFormat10 .class, SignedQuantityFormat11 .class, Statement72 .class, StatementUpdateType1Code.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, UpdateType15Choice.class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:seev.042.001.13";
 
     public MxSeev04200113() {
         super();
@@ -86,6 +86,21 @@ public class MxSeev04200113
     public MxSeev04200113 setCorpActnInstrStmtRpt(CorporateActionInstructionStatementReportV13 value) {
         this.corpActnInstrStmtRpt = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxSeev04200113
      * @return
      *     a new instance of MxSeev04200113
      */
-    public static final MxSeev04200113 fromJson(String json) {
+    public final static MxSeev04200113 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSeev04200113 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

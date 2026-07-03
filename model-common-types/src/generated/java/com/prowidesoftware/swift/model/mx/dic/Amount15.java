@@ -2,16 +2,15 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.OffsetTime;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -43,11 +42,11 @@ public class Amount15 {
     @XmlElement(name = "ConvsDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate convsDt;
+    protected XMLGregorianCalendar convsDt;
     @XmlElement(name = "ConvsTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected OffsetTime convsTm;
+    protected XMLGregorianCalendar convsTm;
 
     /**
      * Gets the value of the amt property.
@@ -132,7 +131,7 @@ public class Amount15 {
      *     {@link String }
      *     
      */
-    public LocalDate getConvsDt() {
+    public XMLGregorianCalendar getConvsDt() {
         return convsDt;
     }
 
@@ -144,7 +143,7 @@ public class Amount15 {
      *     {@link String }
      *     
      */
-    public Amount15 setConvsDt(LocalDate value) {
+    public Amount15 setConvsDt(XMLGregorianCalendar value) {
         this.convsDt = value;
         return this;
     }
@@ -157,7 +156,7 @@ public class Amount15 {
      *     {@link String }
      *     
      */
-    public OffsetTime getConvsTm() {
+    public XMLGregorianCalendar getConvsTm() {
         return convsTm;
     }
 
@@ -169,7 +168,7 @@ public class Amount15 {
      *     {@link String }
      *     
      */
-    public Amount15 setConvsTm(OffsetTime value) {
+    public Amount15 setConvsTm(XMLGregorianCalendar value) {
         this.convsTm = value;
         return this;
     }

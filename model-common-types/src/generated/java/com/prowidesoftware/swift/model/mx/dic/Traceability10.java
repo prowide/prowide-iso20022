@@ -1,14 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.OffsetDateTime;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -51,11 +51,11 @@ public class Traceability10 {
     @XmlElement(name = "DtTmIn", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime dtTmIn;
+    protected XMLGregorianCalendar dtTmIn;
     @XmlElement(name = "DtTmOut", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime dtTmOut;
+    protected XMLGregorianCalendar dtTmOut;
 
     /**
      * Gets the value of the id property.
@@ -215,7 +215,7 @@ public class Traceability10 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getDtTmIn() {
+    public XMLGregorianCalendar getDtTmIn() {
         return dtTmIn;
     }
 
@@ -227,7 +227,7 @@ public class Traceability10 {
      *     {@link String }
      *     
      */
-    public Traceability10 setDtTmIn(OffsetDateTime value) {
+    public Traceability10 setDtTmIn(XMLGregorianCalendar value) {
         this.dtTmIn = value;
         return this;
     }
@@ -240,7 +240,7 @@ public class Traceability10 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getDtTmOut() {
+    public XMLGregorianCalendar getDtTmOut() {
         return dtTmOut;
     }
 
@@ -252,7 +252,7 @@ public class Traceability10 {
      *     {@link String }
      *     
      */
-    public Traceability10 setDtTmOut(OffsetDateTime value) {
+    public Traceability10 setDtTmOut(XMLGregorianCalendar value) {
         this.dtTmOut = value;
         return this;
     }

@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxColr01600102
 
     @XmlElement(name = "CollAndXpsrRpt", required = true)
     protected CollateralAndExposureReportV02 collAndXpsrRpt;
-    public static final transient String BUSINESS_PROCESS = "colr";
-    public static final transient int FUNCTIONALITY = 16;
-    public static final transient int VARIANT = 1;
-    public static final transient int VERSION = 2;
+    public final static transient String BUSINESS_PROCESS = "colr";
+    public final static transient int FUNCTIONALITY = 16;
+    public final static transient int VARIANT = 1;
+    public final static transient int VERSION = 2;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {ActiveCurrencyAndAmount.class, ActiveOrHistoricCurrencyAnd13DecimalAmount.class, Agreement2 .class, AgreementFramework1Choice.class, AgreementFramework1Code.class, CashCollateral4 .class, Collateral9 .class, CollateralAccount1 .class, CollateralAccountIdentificationType1Choice.class, CollateralAccountType1Code.class, CollateralAmount1 .class, CollateralAndExposureReportV02 .class, CollateralOwnership1 .class, CollateralType1Code.class, CollateralValuation2 .class, DateAndDateTimeChoice.class, DateCode9Choice.class, DateFormat14Choice.class, DateType2Code.class, DepositType1Code.class, EventFrequency6Code.class, ExposureType1Code.class, ExposureType5Code.class, FinancialInstrumentQuantity1Choice.class, GenericIdentification29 .class, GenericIdentification30 .class, GenericIdentification40 .class, GenericIdentification58 .class, IdentificationSource3Choice.class, InterestComputationMethod2Code.class, MxColr01600102 .class, NameAndAddress6 .class, Obligation3 .class, OtherCollateral3 .class, OtherIdentification1 .class, OtherTypeOfCollateral2 .class, Pagination.class, PartyIdentification33Choice.class, PostalAddress2 .class, Price2 .class, PriceRateOrAmountChoice.class, PriceValueType1Code.class, ReportParameters2 .class, SafekeepingPlace1Code.class, SafekeepingPlace3Code.class, SafekeepingPlaceFormat7Choice.class, SafekeepingPlaceTypeAndAnyBICIdentifier1 .class, SafekeepingPlaceTypeAndText1 .class, SecuritiesAccount19 .class, SecuritiesCollateral2 .class, SecurityIdentification14 .class, SettlementStatus2Code.class, ShortLong1Code.class, Summary1 .class, SummaryAmounts1 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, ThresholdType1Code.class, YieldedOrValueType1Choice.class };
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:colr.016.001.02";
+    public final static transient Class[] _classes = new Class[] {ActiveCurrencyAndAmount.class, ActiveOrHistoricCurrencyAnd13DecimalAmount.class, Agreement2 .class, AgreementFramework1Choice.class, AgreementFramework1Code.class, CashCollateral4 .class, Collateral9 .class, CollateralAccount1 .class, CollateralAccountIdentificationType1Choice.class, CollateralAccountType1Code.class, CollateralAmount1 .class, CollateralAndExposureReportV02 .class, CollateralOwnership1 .class, CollateralType1Code.class, CollateralValuation2 .class, DateAndDateTimeChoice.class, DateCode9Choice.class, DateFormat14Choice.class, DateType2Code.class, DepositType1Code.class, EventFrequency6Code.class, ExposureType1Code.class, ExposureType5Code.class, FinancialInstrumentQuantity1Choice.class, GenericIdentification29 .class, GenericIdentification30 .class, GenericIdentification40 .class, GenericIdentification58 .class, IdentificationSource3Choice.class, InterestComputationMethod2Code.class, MxColr01600102 .class, NameAndAddress6 .class, Obligation3 .class, OtherCollateral3 .class, OtherIdentification1 .class, OtherTypeOfCollateral2 .class, Pagination.class, PartyIdentification33Choice.class, PostalAddress2 .class, Price2 .class, PriceRateOrAmountChoice.class, PriceValueType1Code.class, ReportParameters2 .class, SafekeepingPlace1Code.class, SafekeepingPlace3Code.class, SafekeepingPlaceFormat7Choice.class, SafekeepingPlaceTypeAndAnyBICIdentifier1 .class, SafekeepingPlaceTypeAndText1 .class, SecuritiesAccount19 .class, SecuritiesCollateral2 .class, SecurityIdentification14 .class, SettlementStatus2Code.class, ShortLong1Code.class, Summary1 .class, SummaryAmounts1 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, ThresholdType1Code.class, YieldedOrValueType1Choice.class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:colr.016.001.02";
 
     public MxColr01600102() {
         super();
@@ -86,6 +86,21 @@ public class MxColr01600102
     public MxColr01600102 setCollAndXpsrRpt(CollateralAndExposureReportV02 value) {
         this.collAndXpsrRpt = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxColr01600102
      * @return
      *     a new instance of MxColr01600102
      */
-    public static final MxColr01600102 fromJson(String json) {
+    public final static MxColr01600102 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxColr01600102 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -43,8 +43,8 @@ public class SingleTransport1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the trnsprtByAir property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the trnsprtByAir property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -58,12 +58,10 @@ public class SingleTransport1 {
      * {@link TransportByAir1 }
      * 
      * 
-     * @return
-     *     The value of the trnsprtByAir property.
      */
     public List<TransportByAir1> getTrnsprtByAir() {
         if (trnsprtByAir == null) {
-            trnsprtByAir = new ArrayList<>();
+            trnsprtByAir = new ArrayList<TransportByAir1>();
         }
         return this.trnsprtByAir;
     }
@@ -74,8 +72,8 @@ public class SingleTransport1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the trnsprtBySea property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the trnsprtBySea property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -89,12 +87,10 @@ public class SingleTransport1 {
      * {@link TransportBySea1 }
      * 
      * 
-     * @return
-     *     The value of the trnsprtBySea property.
      */
     public List<TransportBySea1> getTrnsprtBySea() {
         if (trnsprtBySea == null) {
-            trnsprtBySea = new ArrayList<>();
+            trnsprtBySea = new ArrayList<TransportBySea1>();
         }
         return this.trnsprtBySea;
     }
@@ -105,8 +101,8 @@ public class SingleTransport1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the trnsprtByRoad property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the trnsprtByRoad property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -120,12 +116,10 @@ public class SingleTransport1 {
      * {@link TransportByRoad1 }
      * 
      * 
-     * @return
-     *     The value of the trnsprtByRoad property.
      */
     public List<TransportByRoad1> getTrnsprtByRoad() {
         if (trnsprtByRoad == null) {
-            trnsprtByRoad = new ArrayList<>();
+            trnsprtByRoad = new ArrayList<TransportByRoad1>();
         }
         return this.trnsprtByRoad;
     }
@@ -136,8 +130,8 @@ public class SingleTransport1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the trnsprtByRail property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the trnsprtByRail property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -151,12 +145,10 @@ public class SingleTransport1 {
      * {@link TransportByRail1 }
      * 
      * 
-     * @return
-     *     The value of the trnsprtByRail property.
      */
     public List<TransportByRail1> getTrnsprtByRail() {
         if (trnsprtByRail == null) {
-            trnsprtByRail = new ArrayList<>();
+            trnsprtByRail = new ArrayList<TransportByRail1>();
         }
         return this.trnsprtByRail;
     }

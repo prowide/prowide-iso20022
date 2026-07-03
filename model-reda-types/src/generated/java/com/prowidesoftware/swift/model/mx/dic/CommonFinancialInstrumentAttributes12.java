@@ -2,18 +2,17 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -115,15 +114,15 @@ public class CommonFinancialInstrumentAttributes12 {
     @XmlElement(name = "ListgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate listgDt;
+    protected XMLGregorianCalendar listgDt;
     @XmlElement(name = "RcrdDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime rcrdDt;
+    protected XMLGregorianCalendar rcrdDt;
     @XmlElement(name = "XpryDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate xpryDt;
+    protected XMLGregorianCalendar xpryDt;
     @XmlElement(name = "Purp")
     protected String purp;
     @XmlElement(name = "ClssfctnTp")
@@ -555,7 +554,7 @@ public class CommonFinancialInstrumentAttributes12 {
      *     {@link String }
      *     
      */
-    public LocalDate getListgDt() {
+    public XMLGregorianCalendar getListgDt() {
         return listgDt;
     }
 
@@ -567,7 +566,7 @@ public class CommonFinancialInstrumentAttributes12 {
      *     {@link String }
      *     
      */
-    public CommonFinancialInstrumentAttributes12 setListgDt(LocalDate value) {
+    public CommonFinancialInstrumentAttributes12 setListgDt(XMLGregorianCalendar value) {
         this.listgDt = value;
         return this;
     }
@@ -580,7 +579,7 @@ public class CommonFinancialInstrumentAttributes12 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getRcrdDt() {
+    public XMLGregorianCalendar getRcrdDt() {
         return rcrdDt;
     }
 
@@ -592,7 +591,7 @@ public class CommonFinancialInstrumentAttributes12 {
      *     {@link String }
      *     
      */
-    public CommonFinancialInstrumentAttributes12 setRcrdDt(OffsetDateTime value) {
+    public CommonFinancialInstrumentAttributes12 setRcrdDt(XMLGregorianCalendar value) {
         this.rcrdDt = value;
         return this;
     }
@@ -605,7 +604,7 @@ public class CommonFinancialInstrumentAttributes12 {
      *     {@link String }
      *     
      */
-    public LocalDate getXpryDt() {
+    public XMLGregorianCalendar getXpryDt() {
         return xpryDt;
     }
 
@@ -617,7 +616,7 @@ public class CommonFinancialInstrumentAttributes12 {
      *     {@link String }
      *     
      */
-    public CommonFinancialInstrumentAttributes12 setXpryDt(LocalDate value) {
+    public CommonFinancialInstrumentAttributes12 setXpryDt(XMLGregorianCalendar value) {
         this.xpryDt = value;
         return this;
     }
@@ -703,8 +702,8 @@ public class CommonFinancialInstrumentAttributes12 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the tradgMkt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the tradgMkt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -718,12 +717,10 @@ public class CommonFinancialInstrumentAttributes12 {
      * {@link TradingParameters2 }
      * 
      * 
-     * @return
-     *     The value of the tradgMkt property.
      */
     public List<TradingParameters2> getTradgMkt() {
         if (tradgMkt == null) {
-            tradgMkt = new ArrayList<>();
+            tradgMkt = new ArrayList<TradingParameters2>();
         }
         return this.tradgMkt;
     }
@@ -734,8 +731,8 @@ public class CommonFinancialInstrumentAttributes12 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the sprdAndBchmkCrv property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the sprdAndBchmkCrv property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -749,12 +746,10 @@ public class CommonFinancialInstrumentAttributes12 {
      * {@link BenchmarkCurve6 }
      * 
      * 
-     * @return
-     *     The value of the sprdAndBchmkCrv property.
      */
     public List<BenchmarkCurve6> getSprdAndBchmkCrv() {
         if (sprdAndBchmkCrv == null) {
-            sprdAndBchmkCrv = new ArrayList<>();
+            sprdAndBchmkCrv = new ArrayList<BenchmarkCurve6>();
         }
         return this.sprdAndBchmkCrv;
     }
@@ -1115,8 +1110,8 @@ public class CommonFinancialInstrumentAttributes12 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the whldgTaxRgm property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the whldgTaxRgm property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -1130,12 +1125,10 @@ public class CommonFinancialInstrumentAttributes12 {
      * {@link SecurityWithHoldingTax1 }
      * 
      * 
-     * @return
-     *     The value of the whldgTaxRgm property.
      */
     public List<SecurityWithHoldingTax1> getWhldgTaxRgm() {
         if (whldgTaxRgm == null) {
-            whldgTaxRgm = new ArrayList<>();
+            whldgTaxRgm = new ArrayList<SecurityWithHoldingTax1>();
         }
         return this.whldgTaxRgm;
     }
@@ -1296,8 +1289,8 @@ public class CommonFinancialInstrumentAttributes12 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the rstrctn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the rstrctn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -1311,12 +1304,10 @@ public class CommonFinancialInstrumentAttributes12 {
      * {@link SecurityRestriction3 }
      * 
      * 
-     * @return
-     *     The value of the rstrctn property.
      */
     public List<SecurityRestriction3> getRstrctn() {
         if (rstrctn == null) {
-            rstrctn = new ArrayList<>();
+            rstrctn = new ArrayList<SecurityRestriction3>();
         }
         return this.rstrctn;
     }
@@ -1352,8 +1343,8 @@ public class CommonFinancialInstrumentAttributes12 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the sttlmInf property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the sttlmInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -1367,12 +1358,10 @@ public class CommonFinancialInstrumentAttributes12 {
      * {@link SettlementInformation17 }
      * 
      * 
-     * @return
-     *     The value of the sttlmInf property.
      */
     public List<SettlementInformation17> getSttlmInf() {
         if (sttlmInf == null) {
-            sttlmInf = new ArrayList<>();
+            sttlmInf = new ArrayList<SettlementInformation17>();
         }
         return this.sttlmInf;
     }

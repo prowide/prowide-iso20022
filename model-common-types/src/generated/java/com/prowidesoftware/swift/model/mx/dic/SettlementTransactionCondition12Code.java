@@ -1,46 +1,47 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for SettlementTransactionCondition12Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="SettlementTransactionCondition12Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="ADEA"/>
- *     <enumeration value="ASGN"/>
- *     <enumeration value="BUTC"/>
- *     <enumeration value="CLEN"/>
- *     <enumeration value="DLWM"/>
- *     <enumeration value="DIRT"/>
- *     <enumeration value="DRAW"/>
- *     <enumeration value="EXER"/>
- *     <enumeration value="EXPI"/>
- *     <enumeration value="FRCL"/>
- *     <enumeration value="KNOC"/>
- *     <enumeration value="NOMC"/>
- *     <enumeration value="NACT"/>
- *     <enumeration value="PENS"/>
- *     <enumeration value="PHYS"/>
- *     <enumeration value="RHYP"/>
- *     <enumeration value="RPTO"/>
- *     <enumeration value="RESI"/>
- *     <enumeration value="SHOR"/>
- *     <enumeration value="SPDL"/>
- *     <enumeration value="SPST"/>
- *     <enumeration value="TRAN"/>
- *     <enumeration value="TRIP"/>
- *     <enumeration value="UNEX"/>
- *     <enumeration value="INTS"/>
- *     <enumeration value="BPSS"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="SettlementTransactionCondition12Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ADEA"/&gt;
+ *     &lt;enumeration value="ASGN"/&gt;
+ *     &lt;enumeration value="BUTC"/&gt;
+ *     &lt;enumeration value="CLEN"/&gt;
+ *     &lt;enumeration value="DLWM"/&gt;
+ *     &lt;enumeration value="DIRT"/&gt;
+ *     &lt;enumeration value="DRAW"/&gt;
+ *     &lt;enumeration value="EXER"/&gt;
+ *     &lt;enumeration value="EXPI"/&gt;
+ *     &lt;enumeration value="FRCL"/&gt;
+ *     &lt;enumeration value="KNOC"/&gt;
+ *     &lt;enumeration value="NOMC"/&gt;
+ *     &lt;enumeration value="NACT"/&gt;
+ *     &lt;enumeration value="PENS"/&gt;
+ *     &lt;enumeration value="PHYS"/&gt;
+ *     &lt;enumeration value="RHYP"/&gt;
+ *     &lt;enumeration value="RPTO"/&gt;
+ *     &lt;enumeration value="RESI"/&gt;
+ *     &lt;enumeration value="SHOR"/&gt;
+ *     &lt;enumeration value="SPDL"/&gt;
+ *     &lt;enumeration value="SPST"/&gt;
+ *     &lt;enumeration value="TRAN"/&gt;
+ *     &lt;enumeration value="TRIP"/&gt;
+ *     &lt;enumeration value="UNEX"/&gt;
+ *     &lt;enumeration value="INTS"/&gt;
+ *     &lt;enumeration value="BPSS"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "SettlementTransactionCondition12Code")

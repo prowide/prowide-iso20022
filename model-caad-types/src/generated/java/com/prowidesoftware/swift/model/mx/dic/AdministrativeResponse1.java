@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -136,8 +136,8 @@ public class AdministrativeResponse1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the orgnlTx property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the orgnlTx property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -151,12 +151,10 @@ public class AdministrativeResponse1 {
      * {@link OriginalTransaction2 }
      * 
      * 
-     * @return
-     *     The value of the orgnlTx property.
      */
     public List<OriginalTransaction2> getOrgnlTx() {
         if (orgnlTx == null) {
-            orgnlTx = new ArrayList<>();
+            orgnlTx = new ArrayList<OriginalTransaction2>();
         }
         return this.orgnlTx;
     }
@@ -192,8 +190,8 @@ public class AdministrativeResponse1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the addtlData property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the addtlData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -207,12 +205,10 @@ public class AdministrativeResponse1 {
      * {@link AdditionalData2 }
      * 
      * 
-     * @return
-     *     The value of the addtlData property.
      */
     public List<AdditionalData2> getAddtlData() {
         if (addtlData == null) {
-            addtlData = new ArrayList<>();
+            addtlData = new ArrayList<AdditionalData2>();
         }
         return this.addtlData;
     }
@@ -273,8 +269,8 @@ public class AdministrativeResponse1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the prtctdData property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the prtctdData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -288,12 +284,10 @@ public class AdministrativeResponse1 {
      * {@link ProtectedData1 }
      * 
      * 
-     * @return
-     *     The value of the prtctdData property.
      */
     public List<ProtectedData1> getPrtctdData() {
         if (prtctdData == null) {
-            prtctdData = new ArrayList<>();
+            prtctdData = new ArrayList<ProtectedData1>();
         }
         return this.prtctdData;
     }
@@ -304,8 +298,8 @@ public class AdministrativeResponse1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the splmtryData property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -319,12 +313,10 @@ public class AdministrativeResponse1 {
      * {@link SupplementaryData1 }
      * 
      * 
-     * @return
-     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<>();
+            splmtryData = new ArrayList<SupplementaryData1>();
         }
         return this.splmtryData;
     }

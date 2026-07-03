@@ -3,11 +3,11 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -136,8 +136,8 @@ public class ReorganisationInstructionSD15 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the txSeq property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the txSeq property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -151,12 +151,10 @@ public class ReorganisationInstructionSD15 {
      * {@link InstructionsTransactionsSequence2 }
      * 
      * 
-     * @return
-     *     The value of the txSeq property.
      */
     public List<InstructionsTransactionsSequence2> getTxSeq() {
         if (txSeq == null) {
-            txSeq = new ArrayList<>();
+            txSeq = new ArrayList<InstructionsTransactionsSequence2>();
         }
         return this.txSeq;
     }
@@ -217,8 +215,8 @@ public class ReorganisationInstructionSD15 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the rsn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the rsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -232,12 +230,10 @@ public class ReorganisationInstructionSD15 {
      * {@link InstructionReason4Code }
      * 
      * 
-     * @return
-     *     The value of the rsn property.
      */
     public List<InstructionReason4Code> getRsn() {
         if (rsn == null) {
-            rsn = new ArrayList<>();
+            rsn = new ArrayList<InstructionReason4Code>();
         }
         return this.rsn;
     }

@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -65,7 +65,7 @@ public class TaxEfficientProduct5 {
     @XmlElement(name = "DtOfFrstSbcpt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate dtOfFrstSbcpt;
+    protected XMLGregorianCalendar dtOfFrstSbcpt;
     @XmlElement(name = "CurYrSbcptDtls")
     protected SubscriptionInformation2 curYrSbcptDtls;
     @XmlElement(name = "BnsOrWdrwl")
@@ -79,7 +79,7 @@ public class TaxEfficientProduct5 {
     @XmlElement(name = "DtFrstQlfygAddtn", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate dtFrstQlfygAddtn;
+    protected XMLGregorianCalendar dtFrstQlfygAddtn;
     @XmlElement(name = "InvstrTaxRef")
     protected TaxReference2 invstrTaxRef;
     @XmlElement(name = "InvstmtsToFllwVal")
@@ -257,7 +257,7 @@ public class TaxEfficientProduct5 {
      *     {@link String }
      *     
      */
-    public LocalDate getDtOfFrstSbcpt() {
+    public XMLGregorianCalendar getDtOfFrstSbcpt() {
         return dtOfFrstSbcpt;
     }
 
@@ -269,7 +269,7 @@ public class TaxEfficientProduct5 {
      *     {@link String }
      *     
      */
-    public TaxEfficientProduct5 setDtOfFrstSbcpt(LocalDate value) {
+    public TaxEfficientProduct5 setDtOfFrstSbcpt(XMLGregorianCalendar value) {
         this.dtOfFrstSbcpt = value;
         return this;
     }
@@ -305,8 +305,8 @@ public class TaxEfficientProduct5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the bnsOrWdrwl property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the bnsOrWdrwl property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -320,12 +320,10 @@ public class TaxEfficientProduct5 {
      * {@link BonusWithdrawal2 }
      * 
      * 
-     * @return
-     *     The value of the bnsOrWdrwl property.
      */
     public List<BonusWithdrawal2> getBnsOrWdrwl() {
         if (bnsOrWdrwl == null) {
-            bnsOrWdrwl = new ArrayList<>();
+            bnsOrWdrwl = new ArrayList<BonusWithdrawal2>();
         }
         return this.bnsOrWdrwl;
     }
@@ -386,8 +384,8 @@ public class TaxEfficientProduct5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the othrAmt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the othrAmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -401,12 +399,10 @@ public class TaxEfficientProduct5 {
      * {@link OtherAmount3 }
      * 
      * 
-     * @return
-     *     The value of the othrAmt property.
      */
     public List<OtherAmount3> getOthrAmt() {
         if (othrAmt == null) {
-            othrAmt = new ArrayList<>();
+            othrAmt = new ArrayList<OtherAmount3>();
         }
         return this.othrAmt;
     }
@@ -419,7 +415,7 @@ public class TaxEfficientProduct5 {
      *     {@link String }
      *     
      */
-    public LocalDate getDtFrstQlfygAddtn() {
+    public XMLGregorianCalendar getDtFrstQlfygAddtn() {
         return dtFrstQlfygAddtn;
     }
 
@@ -431,7 +427,7 @@ public class TaxEfficientProduct5 {
      *     {@link String }
      *     
      */
-    public TaxEfficientProduct5 setDtFrstQlfygAddtn(LocalDate value) {
+    public TaxEfficientProduct5 setDtFrstQlfygAddtn(XMLGregorianCalendar value) {
         this.dtFrstQlfygAddtn = value;
         return this;
     }
@@ -467,8 +463,8 @@ public class TaxEfficientProduct5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the invstmtsToFllwVal property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the invstmtsToFllwVal property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -482,12 +478,10 @@ public class TaxEfficientProduct5 {
      * {@link DateAndAmount2 }
      * 
      * 
-     * @return
-     *     The value of the invstmtsToFllwVal property.
      */
     public List<DateAndAmount2> getInvstmtsToFllwVal() {
         if (invstmtsToFllwVal == null) {
-            invstmtsToFllwVal = new ArrayList<>();
+            invstmtsToFllwVal = new ArrayList<DateAndAmount2>();
         }
         return this.invstmtsToFllwVal;
     }
@@ -498,8 +492,8 @@ public class TaxEfficientProduct5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the innvtvFinc property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the innvtvFinc property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -513,12 +507,10 @@ public class TaxEfficientProduct5 {
      * {@link InnovativeFinance1 }
      * 
      * 
-     * @return
-     *     The value of the innvtvFinc property.
      */
     public List<InnovativeFinance1> getInnvtvFinc() {
         if (innvtvFinc == null) {
-            innvtvFinc = new ArrayList<>();
+            innvtvFinc = new ArrayList<InnovativeFinance1>();
         }
         return this.innvtvFinc;
     }
@@ -654,8 +646,8 @@ public class TaxEfficientProduct5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the addtlInf property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the addtlInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -669,12 +661,10 @@ public class TaxEfficientProduct5 {
      * {@link AdditionalInformation15 }
      * 
      * 
-     * @return
-     *     The value of the addtlInf property.
      */
     public List<AdditionalInformation15> getAddtlInf() {
         if (addtlInf == null) {
-            addtlInf = new ArrayList<>();
+            addtlInf = new ArrayList<AdditionalInformation15>();
         }
         return this.addtlInf;
     }

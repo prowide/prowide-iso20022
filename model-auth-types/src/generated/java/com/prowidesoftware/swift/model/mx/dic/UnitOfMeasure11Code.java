@@ -1,91 +1,92 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for UnitOfMeasure11Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="UnitOfMeasure11Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="ALOW"/>
- *     <enumeration value="ACCY"/>
- *     <enumeration value="BARL"/>
- *     <enumeration value="BCUF"/>
- *     <enumeration value="BDFT"/>
- *     <enumeration value="BUSL"/>
- *     <enumeration value="CEER"/>
- *     <enumeration value="CLRT"/>
- *     <enumeration value="KILO"/>
- *     <enumeration value="PIEC"/>
- *     <enumeration value="TONS"/>
- *     <enumeration value="METR"/>
- *     <enumeration value="INCH"/>
- *     <enumeration value="YARD"/>
- *     <enumeration value="GBGA"/>
- *     <enumeration value="GRAM"/>
- *     <enumeration value="CMET"/>
- *     <enumeration value="SMET"/>
- *     <enumeration value="FOOT"/>
- *     <enumeration value="MILE"/>
- *     <enumeration value="SQIN"/>
- *     <enumeration value="SQFO"/>
- *     <enumeration value="SQMI"/>
- *     <enumeration value="GBOU"/>
- *     <enumeration value="USOU"/>
- *     <enumeration value="GBPI"/>
- *     <enumeration value="USPI"/>
- *     <enumeration value="GBQA"/>
- *     <enumeration value="USGA"/>
- *     <enumeration value="MMET"/>
- *     <enumeration value="KMET"/>
- *     <enumeration value="SQYA"/>
- *     <enumeration value="ACRE"/>
- *     <enumeration value="ARES"/>
- *     <enumeration value="SMIL"/>
- *     <enumeration value="SCMT"/>
- *     <enumeration value="HECT"/>
- *     <enumeration value="SQKI"/>
- *     <enumeration value="MILI"/>
- *     <enumeration value="CELI"/>
- *     <enumeration value="LITR"/>
- *     <enumeration value="PUND"/>
- *     <enumeration value="CBME"/>
- *     <enumeration value="DAYS"/>
- *     <enumeration value="DMET"/>
- *     <enumeration value="ENVC"/>
- *     <enumeration value="ENVO"/>
- *     <enumeration value="HUWG"/>
- *     <enumeration value="KWDC"/>
- *     <enumeration value="KWHO"/>
- *     <enumeration value="KWHC"/>
- *     <enumeration value="KMOC"/>
- *     <enumeration value="KWMC"/>
- *     <enumeration value="KWYC"/>
- *     <enumeration value="MWDC"/>
- *     <enumeration value="MWHO"/>
- *     <enumeration value="MWHC"/>
- *     <enumeration value="MWMC"/>
- *     <enumeration value="MMOC"/>
- *     <enumeration value="MWYC"/>
- *     <enumeration value="TONE"/>
- *     <enumeration value="MIBA"/>
- *     <enumeration value="MBTU"/>
- *     <enumeration value="OZTR"/>
- *     <enumeration value="UCWT"/>
- *     <enumeration value="IPNT"/>
- *     <enumeration value="PWRD"/>
- *     <enumeration value="DGEU"/>
- *     <enumeration value="TOCD"/>
- *     <enumeration value="GGEU"/>
- *     <enumeration value="USQA"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="UnitOfMeasure11Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ALOW"/&gt;
+ *     &lt;enumeration value="ACCY"/&gt;
+ *     &lt;enumeration value="BARL"/&gt;
+ *     &lt;enumeration value="BCUF"/&gt;
+ *     &lt;enumeration value="BDFT"/&gt;
+ *     &lt;enumeration value="BUSL"/&gt;
+ *     &lt;enumeration value="CEER"/&gt;
+ *     &lt;enumeration value="CLRT"/&gt;
+ *     &lt;enumeration value="KILO"/&gt;
+ *     &lt;enumeration value="PIEC"/&gt;
+ *     &lt;enumeration value="TONS"/&gt;
+ *     &lt;enumeration value="METR"/&gt;
+ *     &lt;enumeration value="INCH"/&gt;
+ *     &lt;enumeration value="YARD"/&gt;
+ *     &lt;enumeration value="GBGA"/&gt;
+ *     &lt;enumeration value="GRAM"/&gt;
+ *     &lt;enumeration value="CMET"/&gt;
+ *     &lt;enumeration value="SMET"/&gt;
+ *     &lt;enumeration value="FOOT"/&gt;
+ *     &lt;enumeration value="MILE"/&gt;
+ *     &lt;enumeration value="SQIN"/&gt;
+ *     &lt;enumeration value="SQFO"/&gt;
+ *     &lt;enumeration value="SQMI"/&gt;
+ *     &lt;enumeration value="GBOU"/&gt;
+ *     &lt;enumeration value="USOU"/&gt;
+ *     &lt;enumeration value="GBPI"/&gt;
+ *     &lt;enumeration value="USPI"/&gt;
+ *     &lt;enumeration value="GBQA"/&gt;
+ *     &lt;enumeration value="USGA"/&gt;
+ *     &lt;enumeration value="MMET"/&gt;
+ *     &lt;enumeration value="KMET"/&gt;
+ *     &lt;enumeration value="SQYA"/&gt;
+ *     &lt;enumeration value="ACRE"/&gt;
+ *     &lt;enumeration value="ARES"/&gt;
+ *     &lt;enumeration value="SMIL"/&gt;
+ *     &lt;enumeration value="SCMT"/&gt;
+ *     &lt;enumeration value="HECT"/&gt;
+ *     &lt;enumeration value="SQKI"/&gt;
+ *     &lt;enumeration value="MILI"/&gt;
+ *     &lt;enumeration value="CELI"/&gt;
+ *     &lt;enumeration value="LITR"/&gt;
+ *     &lt;enumeration value="PUND"/&gt;
+ *     &lt;enumeration value="CBME"/&gt;
+ *     &lt;enumeration value="DAYS"/&gt;
+ *     &lt;enumeration value="DMET"/&gt;
+ *     &lt;enumeration value="ENVC"/&gt;
+ *     &lt;enumeration value="ENVO"/&gt;
+ *     &lt;enumeration value="HUWG"/&gt;
+ *     &lt;enumeration value="KWDC"/&gt;
+ *     &lt;enumeration value="KWHO"/&gt;
+ *     &lt;enumeration value="KWHC"/&gt;
+ *     &lt;enumeration value="KMOC"/&gt;
+ *     &lt;enumeration value="KWMC"/&gt;
+ *     &lt;enumeration value="KWYC"/&gt;
+ *     &lt;enumeration value="MWDC"/&gt;
+ *     &lt;enumeration value="MWHO"/&gt;
+ *     &lt;enumeration value="MWHC"/&gt;
+ *     &lt;enumeration value="MWMC"/&gt;
+ *     &lt;enumeration value="MMOC"/&gt;
+ *     &lt;enumeration value="MWYC"/&gt;
+ *     &lt;enumeration value="TONE"/&gt;
+ *     &lt;enumeration value="MIBA"/&gt;
+ *     &lt;enumeration value="MBTU"/&gt;
+ *     &lt;enumeration value="OZTR"/&gt;
+ *     &lt;enumeration value="UCWT"/&gt;
+ *     &lt;enumeration value="IPNT"/&gt;
+ *     &lt;enumeration value="PWRD"/&gt;
+ *     &lt;enumeration value="DGEU"/&gt;
+ *     &lt;enumeration value="TOCD"/&gt;
+ *     &lt;enumeration value="GGEU"/&gt;
+ *     &lt;enumeration value="USQA"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "UnitOfMeasure11Code")

@@ -1,10 +1,12 @@
 
 package com.prowidesoftware.swift.model.mx.sys.dic;
 
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import java.util.ArrayList;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -24,31 +26,35 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 public class SwGblStatus {
 
     @XmlElement(name = "StatusAttributes", required = true)
-    protected SwGblStatusAttributes statusAttributes;
+    protected List<SwGblStatusAttributes> statusAttributes;
 
     /**
      * Gets the value of the statusAttributes property.
      * 
-     * @return
-     *     possible object is
-     *     {@link SwGblStatusAttributes }
-     *     
-     */
-    public SwGblStatusAttributes getStatusAttributes() {
-        return statusAttributes;
-    }
-
-    /**
-     * Sets the value of the statusAttributes property.
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the statusAttributes property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link SwGblStatusAttributes }
-     *     
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getStatusAttributes().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link SwGblStatusAttributes }
+     * 
+     * 
      */
-    public SwGblStatus setStatusAttributes(SwGblStatusAttributes value) {
-        this.statusAttributes = value;
-        return this;
+    public List<SwGblStatusAttributes> getStatusAttributes() {
+        if (statusAttributes == null) {
+            statusAttributes = new ArrayList<SwGblStatusAttributes>();
+        }
+        return this.statusAttributes;
     }
 
     @Override
@@ -64,6 +70,16 @@ public class SwGblStatus {
     @Override
     public int hashCode() {
         return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+    /**
+     * Adds a new item to the statusAttributes list.
+     * @see #getStatusAttributes()
+     * 
+     */
+    public SwGblStatus addStatusAttributes(SwGblStatusAttributes statusAttributes) {
+        getStatusAttributes().add(statusAttributes);
+        return this;
     }
 
 }

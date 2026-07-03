@@ -18,11 +18,6 @@ package com.prowidesoftware.swift.model.mx;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * Enumeration of the supported Business Application Header (AppHdr) implementations.
- *
- * <p>Each constant maps a specific header namespace to its corresponding implementation class,
- * covering the legacy head.001.001.01 format and the four ISO 20022 BAH versions.
- *
  * @since 9.1.2
  */
 public enum AppHdrType {
@@ -56,11 +51,6 @@ public enum AppHdrType {
         return null;
     }
 
-    /**
-     * Returns the namespace URI associated with this header type.
-     *
-     * @return the namespace URI
-     */
     public String getNamespace() {
         return this.namespace;
     }

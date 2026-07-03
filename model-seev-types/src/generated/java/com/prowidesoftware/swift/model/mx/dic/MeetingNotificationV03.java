@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -175,8 +175,8 @@ public class MeetingNotificationV03 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the mtgDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the mtgDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -190,12 +190,10 @@ public class MeetingNotificationV03 {
      * {@link Meeting3 }
      * 
      * 
-     * @return
-     *     The value of the mtgDtls property.
      */
     public List<Meeting3> getMtgDtls() {
         if (mtgDtls == null) {
-            mtgDtls = new ArrayList<>();
+            mtgDtls = new ArrayList<Meeting3>();
         }
         return this.mtgDtls;
     }
@@ -256,8 +254,8 @@ public class MeetingNotificationV03 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the issrAgt property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the issrAgt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -271,12 +269,10 @@ public class MeetingNotificationV03 {
      * {@link IssuerAgent1 }
      * 
      * 
-     * @return
-     *     The value of the issrAgt property.
      */
     public List<IssuerAgent1> getIssrAgt() {
         if (issrAgt == null) {
-            issrAgt = new ArrayList<>();
+            issrAgt = new ArrayList<IssuerAgent1>();
         }
         return this.issrAgt;
     }
@@ -287,8 +283,8 @@ public class MeetingNotificationV03 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the scty property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the scty property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -302,12 +298,10 @@ public class MeetingNotificationV03 {
      * {@link SecurityPosition6 }
      * 
      * 
-     * @return
-     *     The value of the scty property.
      */
     public List<SecurityPosition6> getScty() {
         if (scty == null) {
-            scty = new ArrayList<>();
+            scty = new ArrayList<SecurityPosition6>();
         }
         return this.scty;
     }
@@ -318,8 +312,8 @@ public class MeetingNotificationV03 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the rsltn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the rsltn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -333,12 +327,10 @@ public class MeetingNotificationV03 {
      * {@link Resolution2 }
      * 
      * 
-     * @return
-     *     The value of the rsltn property.
      */
     public List<Resolution2> getRsltn() {
         if (rsltn == null) {
-            rsltn = new ArrayList<>();
+            rsltn = new ArrayList<Resolution2>();
         }
         return this.rsltn;
     }

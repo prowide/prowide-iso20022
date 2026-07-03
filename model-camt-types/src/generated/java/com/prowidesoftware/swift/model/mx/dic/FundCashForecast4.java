@@ -4,10 +4,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -305,8 +305,8 @@ public class FundCashForecast4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the invstmtCcy property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the invstmtCcy property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -320,12 +320,10 @@ public class FundCashForecast4 {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the invstmtCcy property.
      */
     public List<String> getInvstmtCcy() {
         if (invstmtCcy == null) {
-            invstmtCcy = new ArrayList<>();
+            invstmtCcy = new ArrayList<String>();
         }
         return this.invstmtCcy;
     }
@@ -336,8 +334,8 @@ public class FundCashForecast4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the netCshFcstDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the netCshFcstDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -351,12 +349,10 @@ public class FundCashForecast4 {
      * {@link NetCashForecast2 }
      * 
      * 
-     * @return
-     *     The value of the netCshFcstDtls property.
      */
     public List<NetCashForecast2> getNetCshFcstDtls() {
         if (netCshFcstDtls == null) {
-            netCshFcstDtls = new ArrayList<>();
+            netCshFcstDtls = new ArrayList<NetCashForecast2>();
         }
         return this.netCshFcstDtls;
     }
@@ -384,8 +380,8 @@ public class FundCashForecast4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the brkdwnByCtry property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the brkdwnByCtry property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -399,12 +395,10 @@ public class FundCashForecast4 {
      * {@link BreakdownByCountry1 }
      * 
      * 
-     * @return
-     *     The value of the brkdwnByCtry property.
      */
     public List<BreakdownByCountry1> getBrkdwnByCtry() {
         if (brkdwnByCtry == null) {
-            brkdwnByCtry = new ArrayList<>();
+            brkdwnByCtry = new ArrayList<BreakdownByCountry1>();
         }
         return this.brkdwnByCtry;
     }
@@ -415,8 +409,8 @@ public class FundCashForecast4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the brkdwnByCcy property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the brkdwnByCcy property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -430,12 +424,10 @@ public class FundCashForecast4 {
      * {@link BreakdownByCurrency1 }
      * 
      * 
-     * @return
-     *     The value of the brkdwnByCcy property.
      */
     public List<BreakdownByCurrency1> getBrkdwnByCcy() {
         if (brkdwnByCcy == null) {
-            brkdwnByCcy = new ArrayList<>();
+            brkdwnByCcy = new ArrayList<BreakdownByCurrency1>();
         }
         return this.brkdwnByCcy;
     }
@@ -446,8 +438,8 @@ public class FundCashForecast4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the brkdwnByPty property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the brkdwnByPty property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -461,12 +453,10 @@ public class FundCashForecast4 {
      * {@link BreakdownByParty1 }
      * 
      * 
-     * @return
-     *     The value of the brkdwnByPty property.
      */
     public List<BreakdownByParty1> getBrkdwnByPty() {
         if (brkdwnByPty == null) {
-            brkdwnByPty = new ArrayList<>();
+            brkdwnByPty = new ArrayList<BreakdownByParty1>();
         }
         return this.brkdwnByPty;
     }
@@ -477,8 +467,8 @@ public class FundCashForecast4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the brkdwnByUsrDfndParam property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the brkdwnByUsrDfndParam property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -492,12 +482,10 @@ public class FundCashForecast4 {
      * {@link BreakdownByUserDefinedParameter1 }
      * 
      * 
-     * @return
-     *     The value of the brkdwnByUsrDfndParam property.
      */
     public List<BreakdownByUserDefinedParameter1> getBrkdwnByUsrDfndParam() {
         if (brkdwnByUsrDfndParam == null) {
-            brkdwnByUsrDfndParam = new ArrayList<>();
+            brkdwnByUsrDfndParam = new ArrayList<BreakdownByUserDefinedParameter1>();
         }
         return this.brkdwnByUsrDfndParam;
     }

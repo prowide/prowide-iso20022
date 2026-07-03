@@ -1,14 +1,17 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.OffsetDateTime;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
+
+import javax.xml.datatype.XMLGregorianCalendar;
+
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -56,10 +59,10 @@ public class BusinessApplicationHeaderV01Impl {
     protected String msgDefIdr;
     @XmlElement(name = "BizSvc")
     protected String bizSvc;
-    @XmlElement(name = "CreDt", required = true, type = String.class)
-    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
+    @XmlElement(name = "CreDt", required = true)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime creDt;
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
+    protected XMLGregorianCalendar creDt;
     @XmlElement(name = "CpyDplct")
     @XmlSchemaType(name = "string")
     protected CopyDuplicate1Code cpyDplct;
@@ -71,7 +74,7 @@ public class BusinessApplicationHeaderV01Impl {
     protected SignatureEnvelope sgntr;
     @XmlElement(name = "Rltd")
     protected BusinessApplicationHeader1 rltd;
-    public static final transient Class[] _classes = new Class[] {AddressType2Code.class, BranchAndFinancialInstitutionIdentification5 .class, BranchData2 .class, BusinessApplicationHeader1 .class, BusinessApplicationHeaderV01Impl.class, ClearingSystemIdentification2Choice.class, ClearingSystemMemberIdentification2 .class, ContactDetails2 .class, CopyDuplicate1Code.class, DateAndPlaceOfBirth.class, FinancialIdentificationSchemeName1Choice.class, FinancialInstitutionIdentification8 .class, GenericFinancialIdentification1 .class, GenericOrganisationIdentification1 .class, GenericPersonIdentification1 .class, NamePrefix1Code.class, OrganisationIdentification7 .class, OrganisationIdentificationSchemeName1Choice.class, Party10Choice.class, Party9Choice.class, PartyIdentification42 .class, PersonIdentification5 .class, PersonIdentificationSchemeName1Choice.class, PostalAddress6 .class, SignatureEnvelope.class };
+    public final static transient Class[] _classes = new Class[] {AddressType2Code.class, BranchAndFinancialInstitutionIdentification5 .class, BranchData2 .class, BusinessApplicationHeader1 .class, BusinessApplicationHeaderV01Impl.class, ClearingSystemIdentification2Choice.class, ClearingSystemMemberIdentification2 .class, ContactDetails2 .class, CopyDuplicate1Code.class, DateAndPlaceOfBirth.class, FinancialIdentificationSchemeName1Choice.class, FinancialInstitutionIdentification8 .class, GenericFinancialIdentification1 .class, GenericOrganisationIdentification1 .class, GenericPersonIdentification1 .class, NamePrefix1Code.class, OrganisationIdentification7 .class, OrganisationIdentificationSchemeName1Choice.class, Party10Choice.class, Party9Choice.class, PartyIdentification42 .class, PersonIdentification5 .class, PersonIdentificationSchemeName1Choice.class, PostalAddress6 .class, SignatureEnvelope.class };
 
     /**
      * Gets the value of the charSet property.
@@ -228,10 +231,10 @@ public class BusinessApplicationHeaderV01Impl {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public OffsetDateTime getCreDt() {
+    public XMLGregorianCalendar getCreDt() {
         return creDt;
     }
 
@@ -240,10 +243,10 @@ public class BusinessApplicationHeaderV01Impl {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public BusinessApplicationHeaderV01Impl setCreDt(OffsetDateTime value) {
+    public BusinessApplicationHeaderV01Impl setCreDt(XMLGregorianCalendar value) {
         this.creDt = value;
         return this;
     }

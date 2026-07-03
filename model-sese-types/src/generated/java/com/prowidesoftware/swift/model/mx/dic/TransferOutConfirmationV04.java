@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -191,8 +191,8 @@ public class TransferOutConfirmationV04 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the trfDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the trfDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -206,12 +206,10 @@ public class TransferOutConfirmationV04 {
      * {@link Transfer23 }
      * 
      * 
-     * @return
-     *     The value of the trfDtls property.
      */
     public List<Transfer23> getTrfDtls() {
         if (trfDtls == null) {
-            trfDtls = new ArrayList<>();
+            trfDtls = new ArrayList<Transfer23>();
         }
         return this.trfDtls;
     }
@@ -297,8 +295,8 @@ public class TransferOutConfirmationV04 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the xtnsn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the xtnsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -312,12 +310,10 @@ public class TransferOutConfirmationV04 {
      * {@link Extension1 }
      * 
      * 
-     * @return
-     *     The value of the xtnsn property.
      */
     public List<Extension1> getXtnsn() {
         if (xtnsn == null) {
-            xtnsn = new ArrayList<>();
+            xtnsn = new ArrayList<Extension1>();
         }
         return this.xtnsn;
     }

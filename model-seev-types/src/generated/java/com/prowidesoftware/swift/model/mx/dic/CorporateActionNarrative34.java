@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -40,8 +40,8 @@ public class CorporateActionNarrative34 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the regnDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the regnDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -55,12 +55,10 @@ public class CorporateActionNarrative34 {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the regnDtls property.
      */
     public List<String> getRegnDtls() {
         if (regnDtls == null) {
-            regnDtls = new ArrayList<>();
+            regnDtls = new ArrayList<String>();
         }
         return this.regnDtls;
     }
@@ -71,8 +69,8 @@ public class CorporateActionNarrative34 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the ptyCtctNrrtv property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the ptyCtctNrrtv property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -86,12 +84,10 @@ public class CorporateActionNarrative34 {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the ptyCtctNrrtv property.
      */
     public List<String> getPtyCtctNrrtv() {
         if (ptyCtctNrrtv == null) {
-            ptyCtctNrrtv = new ArrayList<>();
+            ptyCtctNrrtv = new ArrayList<String>();
         }
         return this.ptyCtctNrrtv;
     }
@@ -102,8 +98,8 @@ public class CorporateActionNarrative34 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the certfctnBrkdwn property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the certfctnBrkdwn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -117,12 +113,10 @@ public class CorporateActionNarrative34 {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the certfctnBrkdwn property.
      */
     public List<String> getCertfctnBrkdwn() {
         if (certfctnBrkdwn == null) {
-            certfctnBrkdwn = new ArrayList<>();
+            certfctnBrkdwn = new ArrayList<String>();
         }
         return this.certfctnBrkdwn;
     }

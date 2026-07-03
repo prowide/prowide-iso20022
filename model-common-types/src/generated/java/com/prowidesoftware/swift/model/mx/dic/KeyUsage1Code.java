@@ -1,37 +1,38 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for KeyUsage1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="KeyUsage1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="ENCR"/>
- *     <enumeration value="DCPT"/>
- *     <enumeration value="DENC"/>
- *     <enumeration value="DDEC"/>
- *     <enumeration value="TRNI"/>
- *     <enumeration value="TRNX"/>
- *     <enumeration value="MACG"/>
- *     <enumeration value="MACV"/>
- *     <enumeration value="SIGG"/>
- *     <enumeration value="SUGV"/>
- *     <enumeration value="PINE"/>
- *     <enumeration value="PIND"/>
- *     <enumeration value="PINV"/>
- *     <enumeration value="KEYG"/>
- *     <enumeration value="KEYI"/>
- *     <enumeration value="KEYX"/>
- *     <enumeration value="KEYD"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="KeyUsage1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ENCR"/&gt;
+ *     &lt;enumeration value="DCPT"/&gt;
+ *     &lt;enumeration value="DENC"/&gt;
+ *     &lt;enumeration value="DDEC"/&gt;
+ *     &lt;enumeration value="TRNI"/&gt;
+ *     &lt;enumeration value="TRNX"/&gt;
+ *     &lt;enumeration value="MACG"/&gt;
+ *     &lt;enumeration value="MACV"/&gt;
+ *     &lt;enumeration value="SIGG"/&gt;
+ *     &lt;enumeration value="SUGV"/&gt;
+ *     &lt;enumeration value="PINE"/&gt;
+ *     &lt;enumeration value="PIND"/&gt;
+ *     &lt;enumeration value="PINV"/&gt;
+ *     &lt;enumeration value="KEYG"/&gt;
+ *     &lt;enumeration value="KEYI"/&gt;
+ *     &lt;enumeration value="KEYX"/&gt;
+ *     &lt;enumeration value="KEYD"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "KeyUsage1Code")

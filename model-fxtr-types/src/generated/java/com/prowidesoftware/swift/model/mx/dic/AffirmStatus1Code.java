@@ -1,30 +1,31 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for AffirmStatus1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="AffirmStatus1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="ATCN"/>
- *     <enumeration value="ATSC"/>
- *     <enumeration value="COMP"/>
- *     <enumeration value="MISM"/>
- *     <enumeration value="MISE"/>
- *     <enumeration value="NOTP"/>
- *     <enumeration value="OUOR"/>
- *     <enumeration value="OUOS"/>
- *     <enumeration value="RECE"/>
- *     <enumeration value="UNRE"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="AffirmStatus1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ATCN"/&gt;
+ *     &lt;enumeration value="ATSC"/&gt;
+ *     &lt;enumeration value="COMP"/&gt;
+ *     &lt;enumeration value="MISM"/&gt;
+ *     &lt;enumeration value="MISE"/&gt;
+ *     &lt;enumeration value="NOTP"/&gt;
+ *     &lt;enumeration value="OUOR"/&gt;
+ *     &lt;enumeration value="OUOS"/&gt;
+ *     &lt;enumeration value="RECE"/&gt;
+ *     &lt;enumeration value="UNRE"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "AffirmStatus1Code")

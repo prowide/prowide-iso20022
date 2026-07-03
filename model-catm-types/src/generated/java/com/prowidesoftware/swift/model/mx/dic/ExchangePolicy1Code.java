@@ -1,28 +1,29 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for ExchangePolicy1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="ExchangePolicy1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="ONDM"/>
- *     <enumeration value="IMMD"/>
- *     <enumeration value="ASAP"/>
- *     <enumeration value="AGRP"/>
- *     <enumeration value="NBLT"/>
- *     <enumeration value="TTLT"/>
- *     <enumeration value="CYCL"/>
- *     <enumeration value="NONE"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="ExchangePolicy1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ONDM"/&gt;
+ *     &lt;enumeration value="IMMD"/&gt;
+ *     &lt;enumeration value="ASAP"/&gt;
+ *     &lt;enumeration value="AGRP"/&gt;
+ *     &lt;enumeration value="NBLT"/&gt;
+ *     &lt;enumeration value="TTLT"/&gt;
+ *     &lt;enumeration value="CYCL"/&gt;
+ *     &lt;enumeration value="NONE"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "ExchangePolicy1Code")

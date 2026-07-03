@@ -3,10 +3,10 @@ package com.prowidesoftware.swift.model.mx.dic;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -43,8 +43,8 @@ public class CorporateActionNarrative33 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the infToCmplyWth property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the infToCmplyWth property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -58,12 +58,10 @@ public class CorporateActionNarrative33 {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the infToCmplyWth property.
      */
     public List<String> getInfToCmplyWth() {
         if (infToCmplyWth == null) {
-            infToCmplyWth = new ArrayList<>();
+            infToCmplyWth = new ArrayList<String>();
         }
         return this.infToCmplyWth;
     }
@@ -74,8 +72,8 @@ public class CorporateActionNarrative33 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the dlvryDtls property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the dlvryDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -89,12 +87,10 @@ public class CorporateActionNarrative33 {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the dlvryDtls property.
      */
     public List<String> getDlvryDtls() {
         if (dlvryDtls == null) {
-            dlvryDtls = new ArrayList<>();
+            dlvryDtls = new ArrayList<String>();
         }
         return this.dlvryDtls;
     }
@@ -105,8 +101,8 @@ public class CorporateActionNarrative33 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the fxInstrsAddtlInf property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the fxInstrsAddtlInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -120,12 +116,10 @@ public class CorporateActionNarrative33 {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the fxInstrsAddtlInf property.
      */
     public List<String> getFXInstrsAddtlInf() {
         if (fxInstrsAddtlInf == null) {
-            fxInstrsAddtlInf = new ArrayList<>();
+            fxInstrsAddtlInf = new ArrayList<String>();
         }
         return this.fxInstrsAddtlInf;
     }
@@ -136,8 +130,8 @@ public class CorporateActionNarrative33 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a {@code set} method for the instrAddtlInf property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the instrAddtlInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -151,12 +145,10 @@ public class CorporateActionNarrative33 {
      * {@link String }
      * 
      * 
-     * @return
-     *     The value of the instrAddtlInf property.
      */
     public List<String> getInstrAddtlInf() {
         if (instrAddtlInf == null) {
-            instrAddtlInf = new ArrayList<>();
+            instrAddtlInf = new ArrayList<String>();
         }
         return this.instrAddtlInf;
     }

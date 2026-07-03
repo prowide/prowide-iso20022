@@ -1,33 +1,34 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for PaymentTime3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="PaymentTime3Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="EMTD"/>
- *     <enumeration value="EMTR"/>
- *     <enumeration value="EPBE"/>
- *     <enumeration value="EPRD"/>
- *     <enumeration value="PRMD"/>
- *     <enumeration value="PRMR"/>
- *     <enumeration value="EPIN"/>
- *     <enumeration value="EPAM"/>
- *     <enumeration value="EPPO"/>
- *     <enumeration value="EPRR"/>
- *     <enumeration value="EPSD"/>
- *     <enumeration value="CASH"/>
- *     <enumeration value="IREC"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="PaymentTime3Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="EMTD"/&gt;
+ *     &lt;enumeration value="EMTR"/&gt;
+ *     &lt;enumeration value="EPBE"/&gt;
+ *     &lt;enumeration value="EPRD"/&gt;
+ *     &lt;enumeration value="PRMD"/&gt;
+ *     &lt;enumeration value="PRMR"/&gt;
+ *     &lt;enumeration value="EPIN"/&gt;
+ *     &lt;enumeration value="EPAM"/&gt;
+ *     &lt;enumeration value="EPPO"/&gt;
+ *     &lt;enumeration value="EPRR"/&gt;
+ *     &lt;enumeration value="EPSD"/&gt;
+ *     &lt;enumeration value="CASH"/&gt;
+ *     &lt;enumeration value="IREC"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "PaymentTime3Code")

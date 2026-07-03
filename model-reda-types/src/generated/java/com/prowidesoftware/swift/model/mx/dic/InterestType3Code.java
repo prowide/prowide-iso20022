@@ -1,26 +1,27 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for InterestType3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="InterestType3Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="ZCPN"/>
- *     <enumeration value="FIXD"/>
- *     <enumeration value="FLRN"/>
- *     <enumeration value="DUAL"/>
- *     <enumeration value="INDE"/>
- *     <enumeration value="DSCO"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="InterestType3Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ZCPN"/&gt;
+ *     &lt;enumeration value="FIXD"/&gt;
+ *     &lt;enumeration value="FLRN"/&gt;
+ *     &lt;enumeration value="DUAL"/&gt;
+ *     &lt;enumeration value="INDE"/&gt;
+ *     &lt;enumeration value="DSCO"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "InterestType3Code")

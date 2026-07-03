@@ -1,31 +1,32 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlEnumValue;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlEnumValue;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for CollateralisationType3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="CollateralisationType3Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="FLCL"/>
- *     <enumeration value="OWCL"/>
- *     <enumeration value="OWC1"/>
- *     <enumeration value="OWC2"/>
- *     <enumeration value="OWP1"/>
- *     <enumeration value="OWP2"/>
- *     <enumeration value="PRCL"/>
- *     <enumeration value="PRC1"/>
- *     <enumeration value="PRC2"/>
- *     <enumeration value="UNCL"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="CollateralisationType3Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="FLCL"/&gt;
+ *     &lt;enumeration value="OWCL"/&gt;
+ *     &lt;enumeration value="OWC1"/&gt;
+ *     &lt;enumeration value="OWC2"/&gt;
+ *     &lt;enumeration value="OWP1"/&gt;
+ *     &lt;enumeration value="OWP2"/&gt;
+ *     &lt;enumeration value="PRCL"/&gt;
+ *     &lt;enumeration value="PRC1"/&gt;
+ *     &lt;enumeration value="PRC2"/&gt;
+ *     &lt;enumeration value="UNCL"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "CollateralisationType3Code")

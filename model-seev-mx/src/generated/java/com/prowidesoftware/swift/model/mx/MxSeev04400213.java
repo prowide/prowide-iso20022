@@ -4,14 +4,14 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import com.prowidesoftware.swift.model.MxSwiftMessage;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,13 +33,13 @@ public class MxSeev04400213
 
     @XmlElement(name = "CorpActnMvmntPrlimryAdvcCxlAdvc", required = true)
     protected CorporateActionMovementPreliminaryAdviceCancellationAdvice002V13 corpActnMvmntPrlimryAdvcCxlAdvc;
-    public static final transient String BUSINESS_PROCESS = "seev";
-    public static final transient int FUNCTIONALITY = 44;
-    public static final transient int VARIANT = 2;
-    public static final transient int VERSION = 13;
+    public final static transient String BUSINESS_PROCESS = "seev";
+    public final static transient int FUNCTIONALITY = 44;
+    public final static transient int VARIANT = 2;
+    public final static transient int VERSION = 13;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {AccountIdentification10 .class, AccountIdentification75 .class, AccountIdentification75Choice.class, CorporateAction76 .class, CorporateActionDate89 .class, CorporateActionEventStage4Code.class, CorporateActionEventStageFormat15Choice.class, CorporateActionEventType121Choice.class, CorporateActionEventType36Code.class, CorporateActionGeneralInformation191 .class, CorporateActionMandatoryVoluntary1Code.class, CorporateActionMandatoryVoluntary4Choice.class, CorporateActionMovementPreliminaryAdviceCancellationAdvice002V13 .class, DateCode22Choice.class, DateFormat41Choice.class, DateType8Code.class, DocumentIdentification37 .class, GenericIdentification47 .class, GenericIdentification84 .class, GenericIdentification85 .class, IdentificationSource4Choice.class, LotteryType1Code.class, LotteryTypeFormat5Choice.class, MxSeev04400213 .class, NameAndAddress12 .class, OtherIdentification2 .class, PartyIdentification136Choice.class, PartyIdentification137Choice.class, ProcessingPosition10Choice.class, ProcessingPosition3Code.class, SafekeepingAccountIdentification1Code.class, SafekeepingPlace1Code.class, SafekeepingPlace2Code.class, SafekeepingPlaceFormat51Choice.class, SafekeepingPlaceTypeAndIdentification1 .class, SafekeepingPlaceTypeAndText9 .class, SecurityIdentification20 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class };
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:seev.044.002.13";
+    public final static transient Class[] _classes = new Class[] {AccountIdentification10 .class, AccountIdentification75 .class, AccountIdentification75Choice.class, CorporateAction76 .class, CorporateActionDate89 .class, CorporateActionEventStage4Code.class, CorporateActionEventStageFormat15Choice.class, CorporateActionEventType121Choice.class, CorporateActionEventType36Code.class, CorporateActionGeneralInformation191 .class, CorporateActionMandatoryVoluntary1Code.class, CorporateActionMandatoryVoluntary4Choice.class, CorporateActionMovementPreliminaryAdviceCancellationAdvice002V13 .class, DateCode22Choice.class, DateFormat41Choice.class, DateType8Code.class, DocumentIdentification37 .class, GenericIdentification47 .class, GenericIdentification84 .class, GenericIdentification85 .class, IdentificationSource4Choice.class, LotteryType1Code.class, LotteryTypeFormat5Choice.class, MxSeev04400213 .class, NameAndAddress12 .class, OtherIdentification2 .class, PartyIdentification136Choice.class, PartyIdentification137Choice.class, ProcessingPosition10Choice.class, ProcessingPosition3Code.class, SafekeepingAccountIdentification1Code.class, SafekeepingPlace1Code.class, SafekeepingPlace2Code.class, SafekeepingPlaceFormat51Choice.class, SafekeepingPlaceTypeAndIdentification1 .class, SafekeepingPlaceTypeAndText9 .class, SecurityIdentification20 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class };
+    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:seev.044.002.13";
 
     public MxSeev04400213() {
         super();
@@ -86,6 +86,21 @@ public class MxSeev04400213
     public MxSeev04400213 setCorpActnMvmntPrlimryAdvcCxlAdvc(CorporateActionMovementPreliminaryAdviceCancellationAdvice002V13 value) {
         this.corpActnMvmntPrlimryAdvcCxlAdvc = value;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override
@@ -158,23 +173,8 @@ public class MxSeev04400213
      * @return
      *     a new instance of MxSeev04400213
      */
-    public static final MxSeev04400213 fromJson(String json) {
+    public final static MxSeev04400213 fromJson(String json) {
         return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSeev04400213 .class);
-    }
-
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

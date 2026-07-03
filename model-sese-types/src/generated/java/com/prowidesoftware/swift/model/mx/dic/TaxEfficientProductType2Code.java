@@ -1,33 +1,34 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for TaxEfficientProductType2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="TaxEfficientProductType2Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="CASH"/>
- *     <enumeration value="CLIS"/>
- *     <enumeration value="FISA"/>
- *     <enumeration value="GISK"/>
- *     <enumeration value="GASK"/>
- *     <enumeration value="HISA"/>
- *     <enumeration value="INNF"/>
- *     <enumeration value="JCSH"/>
- *     <enumeration value="JISA"/>
- *     <enumeration value="LISA"/>
- *     <enumeration value="CCTF"/>
- *     <enumeration value="SCTF"/>
- *     <enumeration value="EQUI"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="TaxEfficientProductType2Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="CASH"/&gt;
+ *     &lt;enumeration value="CLIS"/&gt;
+ *     &lt;enumeration value="FISA"/&gt;
+ *     &lt;enumeration value="GISK"/&gt;
+ *     &lt;enumeration value="GASK"/&gt;
+ *     &lt;enumeration value="HISA"/&gt;
+ *     &lt;enumeration value="INNF"/&gt;
+ *     &lt;enumeration value="JCSH"/&gt;
+ *     &lt;enumeration value="JISA"/&gt;
+ *     &lt;enumeration value="LISA"/&gt;
+ *     &lt;enumeration value="CCTF"/&gt;
+ *     &lt;enumeration value="SCTF"/&gt;
+ *     &lt;enumeration value="EQUI"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "TaxEfficientProductType2Code")

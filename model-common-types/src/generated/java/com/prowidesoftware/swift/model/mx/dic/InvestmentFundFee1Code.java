@@ -1,38 +1,39 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import jakarta.xml.bind.annotation.XmlEnum;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for InvestmentFundFee1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>{@code
- * <simpleType name="InvestmentFundFee1Code">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="BEND"/>
- *     <enumeration value="BRKF"/>
- *     <enumeration value="COMM"/>
- *     <enumeration value="CDPL"/>
- *     <enumeration value="CDSC"/>
- *     <enumeration value="CBCH"/>
- *     <enumeration value="DLEV"/>
- *     <enumeration value="FEND"/>
- *     <enumeration value="INIT"/>
- *     <enumeration value="ADDF"/>
- *     <enumeration value="POST"/>
- *     <enumeration value="PREM"/>
- *     <enumeration value="CHAR"/>
- *     <enumeration value="SHIP"/>
- *     <enumeration value="SWIT"/>
- *     <enumeration value="UCIC"/>
- *     <enumeration value="REGF"/>
- *     <enumeration value="PENA"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>
+ * <pre>
+ * &lt;simpleType name="InvestmentFundFee1Code"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="BEND"/&gt;
+ *     &lt;enumeration value="BRKF"/&gt;
+ *     &lt;enumeration value="COMM"/&gt;
+ *     &lt;enumeration value="CDPL"/&gt;
+ *     &lt;enumeration value="CDSC"/&gt;
+ *     &lt;enumeration value="CBCH"/&gt;
+ *     &lt;enumeration value="DLEV"/&gt;
+ *     &lt;enumeration value="FEND"/&gt;
+ *     &lt;enumeration value="INIT"/&gt;
+ *     &lt;enumeration value="ADDF"/&gt;
+ *     &lt;enumeration value="POST"/&gt;
+ *     &lt;enumeration value="PREM"/&gt;
+ *     &lt;enumeration value="CHAR"/&gt;
+ *     &lt;enumeration value="SHIP"/&gt;
+ *     &lt;enumeration value="SWIT"/&gt;
+ *     &lt;enumeration value="UCIC"/&gt;
+ *     &lt;enumeration value="REGF"/&gt;
+ *     &lt;enumeration value="PENA"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "InvestmentFundFee1Code")
