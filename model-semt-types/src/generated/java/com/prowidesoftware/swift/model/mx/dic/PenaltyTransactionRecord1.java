@@ -1,7 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.OffsetDateTime;
+import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -68,11 +68,11 @@ public class PenaltyTransactionRecord1 {
     @XmlElement(name = "AckdStsTmStmp", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime ackdStsTmStmp;
+    protected XMLGregorianCalendar ackdStsTmStmp;
     @XmlElement(name = "MtchdStsTmStmp", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime mtchdStsTmStmp;
+    protected XMLGregorianCalendar mtchdStsTmStmp;
     @XmlElement(name = "SttlmStsFlng")
     protected FailingStatus10Choice sttlmStsFlng;
     @XmlElement(name = "BizDayEvt")
@@ -361,7 +361,7 @@ public class PenaltyTransactionRecord1 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getAckdStsTmStmp() {
+    public XMLGregorianCalendar getAckdStsTmStmp() {
         return ackdStsTmStmp;
     }
 
@@ -373,7 +373,7 @@ public class PenaltyTransactionRecord1 {
      *     {@link String }
      *     
      */
-    public PenaltyTransactionRecord1 setAckdStsTmStmp(OffsetDateTime value) {
+    public PenaltyTransactionRecord1 setAckdStsTmStmp(XMLGregorianCalendar value) {
         this.ackdStsTmStmp = value;
         return this;
     }
@@ -386,7 +386,7 @@ public class PenaltyTransactionRecord1 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getMtchdStsTmStmp() {
+    public XMLGregorianCalendar getMtchdStsTmStmp() {
         return mtchdStsTmStmp;
     }
 
@@ -398,7 +398,7 @@ public class PenaltyTransactionRecord1 {
      *     {@link String }
      *     
      */
-    public PenaltyTransactionRecord1 setMtchdStsTmStmp(OffsetDateTime value) {
+    public PenaltyTransactionRecord1 setMtchdStsTmStmp(XMLGregorianCalendar value) {
         this.mtchdStsTmStmp = value;
         return this;
     }

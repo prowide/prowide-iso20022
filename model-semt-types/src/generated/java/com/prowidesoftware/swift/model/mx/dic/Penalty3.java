@@ -2,7 +2,7 @@
 package com.prowidesoftware.swift.model.mx.dic;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
@@ -58,7 +58,7 @@ public class Penalty3 {
     @XmlElement(name = "CshSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate cshSttlmDt;
+    protected XMLGregorianCalendar cshSttlmDt;
     @XmlElement(name = "CshPnltyId")
     protected String cshPnltyId;
     @XmlElement(name = "NbOfCtrPties")
@@ -249,7 +249,7 @@ public class Penalty3 {
      *     {@link String }
      *     
      */
-    public LocalDate getCshSttlmDt() {
+    public XMLGregorianCalendar getCshSttlmDt() {
         return cshSttlmDt;
     }
 
@@ -261,7 +261,7 @@ public class Penalty3 {
      *     {@link String }
      *     
      */
-    public Penalty3 setCshSttlmDt(LocalDate value) {
+    public Penalty3 setCshSttlmDt(XMLGregorianCalendar value) {
         this.cshSttlmDt = value;
         return this;
     }

@@ -1,5 +1,8 @@
 # Prowide ISO 20022 - CHANGELOG
 
+### 9.6.6 - July 2026
+  * Additional Java8 backport fixes in semt model classes still using java.time
+
 ### 9.6.5 - July 2026
   * (PW-3251) Feat: lenient parsing of file-format (FileAct) payloads with sibling `AppHdr` and `Document` root elements or undeclared namespace prefixes, applied consistently across all parsing entry points without copying the payload
   * (PW-3251) `MxParseUtils.identifyMessage` now returns an empty Optional on blank input instead of throwing an IllegalArgumentException
