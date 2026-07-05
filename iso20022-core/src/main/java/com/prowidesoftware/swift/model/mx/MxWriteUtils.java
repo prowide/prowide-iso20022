@@ -18,10 +18,10 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.TypeAdaptersConfiguration;
 import com.prowidesoftware.swift.model.mx.adapters.ZuluOffsetDateTimeAdapter;
-import jakarta.xml.bind.JAXBContext;
-import jakarta.xml.bind.JAXBException;
-import jakarta.xml.bind.Marshaller;
-import jakarta.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
 
 /**
  * Reusable code for marshalling methods
