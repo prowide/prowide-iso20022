@@ -547,6 +547,24 @@ public class MxParseUtils {
     }
 
     /**
+     * Checks whether {@link #normalizeLenientPayload(String)} would return content different from the input,
+     * without materializing the normalized String: undeclared namespace prefixes and the AppHdr/Document wrap
+     * position are resolved the same way, but the wrapped copy is never built.
+     *
+     * <p>Useful when only the boolean outcome is needed, e.g. to decide a file format without paying for the
+     * normalized payload.
+     *
+     * @param xml original XML content
+     * @return true if the payload needs undeclared-prefix stripping and/or AppHdr/Document sibling-root wrapping
+     * @since 10.3.10
+     */
+    public static boolean needsNormalization(String xml) {
+        Objects.requireNonNull(xml, "XML must not be null");
+        LenientPayload payload = lenientPayload(xml);
+        return payload.needsWrap() || payload.xml() != xml;
+    }
+
+    /**
      * Scans the markup for the first element tag matching each of the given local names, in order to detect
      * namespace prefixes that are used but not declared anywhere in the XML, and strips those undeclared prefixes
      * from all element tags. The scan and the rewrite skip CDATA sections, comments, processing instructions and
