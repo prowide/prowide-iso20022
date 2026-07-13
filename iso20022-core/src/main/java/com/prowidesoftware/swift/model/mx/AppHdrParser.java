@@ -53,15 +53,28 @@ public class AppHdrParser {
      */
     public static Optional<AppHdr> parse(final String xml, MxReadParams params) {
         Objects.requireNonNull(xml, "The xml to parse cannot be null");
+        // lenient support for payloads where the AppHdr is a root element with a Document sibling, or where
+        // the header prefix is not declared; well-formed single rooted content is not modified
+        return parseNormalized(MxParseUtils.lenientPayload(xml), params);
+    }
+
+    /**
+     * Parse implementation over an already built lenient payload view, so that outer entry points normalizing
+     * upfront do not pay for a redundant markup scan. The header is parsed streaming the payload readers, so a
+     * synthetic wrapper for sibling AppHdr and Document roots is never materialized into a payload copy.
+     */
+    static Optional<AppHdr> parseNormalized(final LenientPayload payload, MxReadParams params) {
+        Objects.requireNonNull(payload, "The xml to parse cannot be null");
         Objects.requireNonNull(params, "The unmarshalling params cannot be null");
         try {
+            Optional<String> namespace =
+                    NamespaceReader.findNamespaceForLocalName(payload.lenientReader(), AppHdr.HEADER_LOCALNAME);
 
-            Optional<String> namespace = NamespaceReader.findAppHdrNamespace(xml);
-
-            boolean headerIsPresent = namespace.isPresent() || MxParseUtils.elementExists(xml, AppHdr.HEADER_LOCALNAME);
+            boolean headerIsPresent =
+                    namespace.isPresent() || MxParseUtils.elementExists(payload.xml(), AppHdr.HEADER_LOCALNAME);
 
             if (headerIsPresent) {
-                AppHdr parsedHeader = parseHeaderFromSAXSource(xml, namespace.orElse(null), params);
+                AppHdr parsedHeader = parseHeaderFromSAXSource(payload, namespace.orElse(null), params);
                 return Optional.ofNullable(parsedHeader);
             }
 
@@ -73,9 +86,8 @@ public class AppHdrParser {
     }
 
     private static AppHdr parseHeaderFromSAXSource(
-            final String xml, final String namespace, final MxReadParams params) {
-        SAXSource source =
-                MxParseUtils.createFilteredSAXSource(MxParseUtils.makeXmlLenient(xml), AppHdr.HEADER_LOCALNAME);
+            final LenientPayload payload, final String namespace, final MxReadParams params) {
+        SAXSource source = MxParseUtils.createFilteredSAXSource(payload.lenientReader(), AppHdr.HEADER_LOCALNAME);
 
         if (StringUtils.equals(LegacyAppHdr.NAMESPACE, namespace)) {
             // parse legacy AH
