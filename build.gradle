@@ -22,7 +22,7 @@ group 'com.prowidesoftware'
 
 project.ext {
 	SRU = 'SRU2026'
-    prowideCoreVersion = 'SRU2026-10.4.1'
+    prowideCoreVersion = 'SRU2026-10.4.3'
 	commonsLangVersion = '3.20.0'
 	gsonVersion = '2.14.0'
 	jaxbVersion = '4.0.6'

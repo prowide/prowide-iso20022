@@ -1,6 +1,6 @@
 # Prowide ISO 20022 - CHANGELOG
 
-### 10.4.2 - SNAPSHOT
+### 10.4.2 - July 2026
   * (PW-3251) Feat: lenient parsing of file-format (FileAct) payloads with sibling `AppHdr` and `Document` root elements or undeclared namespace prefixes, applied consistently across all parsing entry points without copying the payload
   * (PW-3251) `MxParseUtils.identifyMessage` now returns an empty Optional on blank input instead of throwing an IllegalArgumentException
   * (PW-3251) Added `MxParseUtils.needsNormalization` to check whether a payload needs lenient normalization without materializing the normalized content, for callers that only need the boolean outcome (e.g. file format detection)
