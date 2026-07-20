@@ -5,8 +5,11 @@ import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
 import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import com.prowidesoftware.swift.model.mx.MxReadImpl;
+import com.prowidesoftware.swift.model.mx.MxReadParams;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
@@ -28,7 +31,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:swift:xsd:supl.007.001.02")
 public class MxSupl00700102
-    extends com.prowidesoftware.swift.model.mx.AbstractMX
+    extends AbstractMX
 {
 
     @XmlElement(name = "DTCCCANOElgblBalSD1", required = true)
@@ -113,7 +116,7 @@ public class MxSupl00700102
      * 
      */
     public static MxSupl00700102 parse(String xml) {
-        return ((MxSupl00700102) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxSupl00700102 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams()));
+        return ((MxSupl00700102) MxReadImpl.parse(MxSupl00700102 .class, xml, _classes, new MxReadParams()));
     }
 
     /**
@@ -122,7 +125,7 @@ public class MxSupl00700102
      * 
      */
     public static MxSupl00700102 parse(String xml, MxReadConfiguration conf) {
-        return ((MxSupl00700102) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxSupl00700102 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams(conf)));
+        return ((MxSupl00700102) MxReadImpl.parse(MxSupl00700102 .class, xml, _classes, new MxReadParams(conf)));
     }
 
     /**
@@ -159,7 +162,7 @@ public class MxSupl00700102
      *     a new instance of MxSupl00700102
      */
     public static final MxSupl00700102 fromJson(String json) {
-        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSupl00700102 .class);
+        return AbstractMX.fromJson(json, MxSupl00700102 .class);
     }
 
     @Override

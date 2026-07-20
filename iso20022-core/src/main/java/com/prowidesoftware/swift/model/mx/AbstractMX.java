@@ -70,7 +70,7 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
      * @deprecated the default root element for the custom envelope is now defined in {@link EnvelopeType#CUSTOM}
      */
     @Deprecated
-    @ProwideDeprecated(phase3 = TargetYear.SRU2026)
+    @ProwideDeprecated(phase4 = TargetYear.SRU2027)
     public static String DEFAULT_ROOT_ELEMENT = "RequestPayload";
 
     /**

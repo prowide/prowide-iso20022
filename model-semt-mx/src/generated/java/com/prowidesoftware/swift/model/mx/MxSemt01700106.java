@@ -5,8 +5,11 @@ import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
 import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import com.prowidesoftware.swift.model.mx.MxReadImpl;
+import com.prowidesoftware.swift.model.mx.MxReadParams;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
@@ -28,7 +31,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:semt.017.001.06")
 public class MxSemt01700106
-    extends com.prowidesoftware.swift.model.mx.AbstractMX
+    extends AbstractMX
 {
 
     @XmlElement(name = "SctiesTxPstngRpt", required = true)
@@ -113,7 +116,7 @@ public class MxSemt01700106
      * 
      */
     public static MxSemt01700106 parse(String xml) {
-        return ((MxSemt01700106) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxSemt01700106 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams()));
+        return ((MxSemt01700106) MxReadImpl.parse(MxSemt01700106 .class, xml, _classes, new MxReadParams()));
     }
 
     /**
@@ -122,7 +125,7 @@ public class MxSemt01700106
      * 
      */
     public static MxSemt01700106 parse(String xml, MxReadConfiguration conf) {
-        return ((MxSemt01700106) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxSemt01700106 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams(conf)));
+        return ((MxSemt01700106) MxReadImpl.parse(MxSemt01700106 .class, xml, _classes, new MxReadParams(conf)));
     }
 
     /**
@@ -159,7 +162,7 @@ public class MxSemt01700106
      *     a new instance of MxSemt01700106
      */
     public static final MxSemt01700106 fromJson(String json) {
-        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSemt01700106 .class);
+        return AbstractMX.fromJson(json, MxSemt01700106 .class);
     }
 
     @Override
