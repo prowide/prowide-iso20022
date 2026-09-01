@@ -24,6 +24,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
 import java.time.format.DateTimeParseException;
 import java.time.temporal.ChronoField;
+import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
@@ -38,6 +39,9 @@ import java.util.regex.Pattern;
  * <p>
  * Notice the configured adapter in the model is the {@link IsoDateTimeAdapter} wrapper class, but you can pass this
  * default implementation or your own in the constructor.
+ * <p>
+ * Date time values without offset in the XML are resolved in a fallback zone, by default the JVM default time zone.
+ * Use {@link #ZuluOffsetDateTimeAdapter(ZoneId)} to set a specific zone.
  *
  * @see TypeAdaptersConfiguration
  * @since 9.4.5
@@ -48,11 +52,28 @@ public class ZuluOffsetDateTimeAdapter extends XmlAdapter<String, OffsetDateTime
     private static final Pattern FRACTIONAL_SECONDS_PATTERN = Pattern.compile(FRACTIONAL_SECONDS_REGEX);
 
     private final DateTimeFormatter marshalFormat;
+    private final ZoneId fallbackZone;
 
     /**
-     * Creates a date time adapter with the default format.
+     * Creates a date time adapter with the default format, resolving values without offset in the JVM default zone
+     *
+     * @see #ZuluOffsetDateTimeAdapter(ZoneId)
      */
     public ZuluOffsetDateTimeAdapter() {
+        this(ZoneId.systemDefault());
+    }
+
+    /**
+     * Creates a date time adapter with the default format and a specific fallback zone for values without offset.
+     * <p>
+     * A date time without offset in the XML is a valid xs:dateTime lexical form meaning local time with indeterminate
+     * zone. The fallback zone is used to resolve the offset of these values when unmarshalling, applying the zone
+     * rules in effect at the parsed date time. Values with an explicit offset in the XML are not affected.
+     *
+     * @param fallbackZone zone used to resolve date time values without offset, for example {@link ZoneOffset#UTC}
+     * @since 10.3.11
+     */
+    public ZuluOffsetDateTimeAdapter(ZoneId fallbackZone) {
         this.marshalFormat = new DateTimeFormatterBuilder()
                 .appendPattern("yyyy-MM-dd'T'HH:mm:ss")
                 .optionalStart()
@@ -61,6 +82,7 @@ public class ZuluOffsetDateTimeAdapter extends XmlAdapter<String, OffsetDateTime
                 .appendPattern("'Z'")
                 .toFormatter()
                 .withZone(ZoneOffset.UTC);
+        this.fallbackZone = Objects.requireNonNull(fallbackZone, "fallback zone must not be null");
     }
 
     /**
@@ -71,7 +93,7 @@ public class ZuluOffsetDateTimeAdapter extends XmlAdapter<String, OffsetDateTime
      */
     @Override
     public OffsetDateTime unmarshal(String value) {
-        return parseOffsetDateTime(value);
+        return parseOffsetDateTime(value, this.fallbackZone);
     }
 
     /**
@@ -96,7 +118,7 @@ public class ZuluOffsetDateTimeAdapter extends XmlAdapter<String, OffsetDateTime
         return formatted;
     }
 
-    private static OffsetDateTime parseOffsetDateTime(String value) {
+    private static OffsetDateTime parseOffsetDateTime(String value, ZoneId fallbackZone) {
         if (value == null) {
             return null;
         }
@@ -105,9 +127,9 @@ public class ZuluOffsetDateTimeAdapter extends XmlAdapter<String, OffsetDateTime
         } catch (DateTimeParseException e) {
             log.log(Level.FINEST, "Error parsing OffsetDateTime: " + e.getMessage());
             try {
-                // Attempt to parse as LocalDateTime and assume system default time zone
+                // Attempt to parse as LocalDateTime without offset, resolved in the fallback zone
                 LocalDateTime localDateTime = LocalDateTime.parse(value);
-                return localDateTime.atZone(ZoneId.systemDefault()).toOffsetDateTime();
+                return localDateTime.atZone(fallbackZone).toOffsetDateTime();
             } catch (DateTimeParseException e2) {
                 log.log(Level.FINEST, "Error parsing LocalDateTime: " + e2.getMessage());
                 return null;

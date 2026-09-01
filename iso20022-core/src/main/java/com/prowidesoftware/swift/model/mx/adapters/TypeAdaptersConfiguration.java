@@ -16,6 +16,7 @@
 package com.prowidesoftware.swift.model.mx.adapters;
 
 import jakarta.xml.bind.annotation.adapters.XmlAdapter;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -117,6 +118,26 @@ public class TypeAdaptersConfiguration {
             this.yearAdapter = other.yearAdapter;
             this.monthAdapter = other.monthAdapter;
         }
+    }
+
+    /**
+     * Creates a configuration with the default adapters, where date time and time values without offset in the XML
+     * are resolved in the given zone instead of the JVM default time zone.
+     * <p>
+     * Use this to make the parsing of offset-less (local) values independent of the server configuration, for
+     * example with {@link java.time.ZoneOffset#UTC}. Values with an explicit offset in the XML are not affected.
+     *
+     * @param fallbackZone zone used to resolve date time and time values without offset
+     * @return a new configuration with the default adapters using the given fallback zone
+     * @see OffsetDateTimeAdapter#OffsetDateTimeAdapter(ZoneId)
+     * @see OffsetTimeAdapter#OffsetTimeAdapter(ZoneId)
+     * @since 10.3.11
+     */
+    public static TypeAdaptersConfiguration withFallbackZone(ZoneId fallbackZone) {
+        TypeAdaptersConfiguration conf = new TypeAdaptersConfiguration();
+        conf.dateTimeAdapter = new IsoDateTimeAdapter(new OffsetDateTimeAdapter(fallbackZone));
+        conf.timeAdapter = new IsoTimeAdapter(new OffsetTimeAdapter(fallbackZone));
+        return conf;
     }
 
     /**
