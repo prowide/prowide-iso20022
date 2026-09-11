@@ -1,6 +1,6 @@
 # Prowide ISO 20022 - CHANGELOG
 
-### 10.3.11 - SNAPSHOT
+### 10.3.11 - September 2026
   * (PW-3405) Feat: Configurable fallback zone for date time and time elements without offset (new adapter constructors and TypeAdaptersConfiguration.withFallbackZone); time elements now resolve the daylight-saving aware offset
 
 ### 10.3.10 - July 2026
