@@ -16,6 +16,7 @@
 package com.prowidesoftware.swift.model.mx.adapters;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
@@ -47,7 +48,7 @@ public class OffsetTimeAdapterTest {
     @Test
     public void testUnmarshallNoOffset() throws Exception {
         OffsetTime systemDateTime = OffsetTime.parse(
-                "12:50:08" + ZoneOffset.systemDefault().getRules().getStandardOffset(Instant.now()));
+                "12:50:08" + ZoneOffset.systemDefault().getRules().getOffset(Instant.now()));
         OffsetTime offsetTime = adapter.unmarshal("12:50:08");
         assertEquals(12, offsetTime.getHour());
         assertEquals(50, offsetTime.getMinute());
@@ -147,11 +148,54 @@ public class OffsetTimeAdapterTest {
     }
 
     private static String systemOffset() {
-        ZoneOffset zoneOffset = ZoneId.systemDefault().getRules().getStandardOffset(Instant.now());
+        ZoneOffset zoneOffset = ZoneId.systemDefault().getRules().getOffset(Instant.now());
         String offset = zoneOffset.toString();
         if (offset.equals("Z")) {
             offset = "+00:00";
         }
         return offset;
+    }
+
+    @Test
+    public void testFallbackZoneAppliedToValuesWithoutOffset() throws Exception {
+        // fixed offset zone
+        OffsetTimeAdapter utc = new OffsetTimeAdapter(ZoneOffset.UTC);
+        assertEquals(OffsetTime.parse("12:50:08Z"), utc.unmarshal("12:50:08"));
+        assertEquals("12:50:08+00:00", utc.marshal(utc.unmarshal("12:50:08")));
+
+        // region zone without daylight saving
+        OffsetTimeAdapter kolkata = new OffsetTimeAdapter(ZoneId.of("Asia/Kolkata"));
+        assertEquals(
+                ZoneOffset.ofHoursMinutes(5, 30), kolkata.unmarshal("12:50:08").getOffset());
+        assertEquals(LocalTime.parse("12:50:08"), kolkata.unmarshal("12:50:08").toLocalTime());
+
+        // region zone with daylight saving: a time has no date, the offset in effect now is applied (not the standard
+        // offset, that would be one hour off during summer time)
+        ZoneId berlin = ZoneId.of("Europe/Berlin");
+        assertEquals(
+                berlin.getRules().getOffset(Instant.now()),
+                new OffsetTimeAdapter(berlin).unmarshal("12:50:08").getOffset());
+    }
+
+    @Test
+    public void testFallbackZoneIgnoredForValuesWithOffset() throws Exception {
+        OffsetTimeAdapter utc = new OffsetTimeAdapter(ZoneOffset.UTC);
+        assertEquals(
+                ZoneOffset.of("-03:00"), utc.unmarshal("12:50:08.123-03:00").getOffset());
+        assertEquals(ZoneOffset.of("+08:30"), utc.unmarshal("12:50:08+08:30").getOffset());
+    }
+
+    @Test
+    public void testFallbackZoneWithCustomFormat() throws Exception {
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("HH:mm:ss[XXX]");
+        OffsetTimeAdapter adapter = new OffsetTimeAdapter(format, ZoneOffset.ofHours(-3));
+        assertEquals(ZoneOffset.ofHours(-3), adapter.unmarshal("12:50:08").getOffset());
+        assertEquals(ZoneOffset.ofHours(1), adapter.unmarshal("12:50:08+01:00").getOffset());
+    }
+
+    @Test
+    public void testNullFallbackZoneRejected() {
+        assertThrows(NullPointerException.class, () -> new OffsetTimeAdapter((ZoneId) null));
+        assertThrows(NullPointerException.class, () -> new OffsetTimeAdapter(DateTimeFormatter.ISO_TIME, null));
     }
 }

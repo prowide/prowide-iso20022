@@ -20,10 +20,10 @@ import jakarta.xml.bind.annotation.adapters.XmlAdapter;
 import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.time.ZoneId;
-import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.time.temporal.ChronoField;
+import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.time.format.DateTimeFormatterBuilder;
@@ -33,6 +33,9 @@ import java.util.regex.Pattern;
 /**
  * Default generic adapter to use when non is provided via the configuration API.
  * Used as default implementation for the {@link IsoDateTimeAdapter}.
+ * <p>
+ * Date time values without offset in the XML are resolved in a fallback zone, by default the JVM default time zone.
+ * Use {@link #OffsetDateTimeAdapter(ZoneId)} to set a specific zone.
  *
  * @since 10.0.0
  */
@@ -41,6 +44,7 @@ public class OffsetDateTimeAdapter extends XmlAdapter<String, OffsetDateTime> {
     private final DateTimeFormatter marshalFormat;
     private final DateTimeFormatter unmarshalFormat;
     private final XmlAdapter<String, OffsetDateTime> customAdapterImpl;
+    private final ZoneId fallbackZone;
     //private final String regex = "\\\\.0{1,}[Z+-]";
     // Regex to capture three digits after a dot, representing milliseconds
     // The (?:\\d{3}) part makes the group non-capturing, but the \\d{3} matches the digits.
@@ -52,9 +56,27 @@ public class OffsetDateTimeAdapter extends XmlAdapter<String, OffsetDateTime> {
     int maxPrecision = 9;
 
     /**
-     * Creates a date time adapter with the default format
+     * Creates a date time adapter with the default format, resolving values without offset in the JVM default zone
+     *
+     * @see #OffsetDateTimeAdapter(ZoneId)
      */
     public OffsetDateTimeAdapter() {
+        this(ZoneId.systemDefault());
+    }
+
+    /**
+     * Creates a date time adapter with the default format and a specific fallback zone for values without offset.
+     * <p>
+     * A date time without offset in the XML is a valid xs:dateTime lexical form meaning local time with indeterminate
+     * zone, and it cannot be represented as such by an {@link OffsetDateTime}. The fallback zone is used to resolve
+     * the offset of these values when unmarshalling, applying the zone rules in effect at the parsed date time.
+     * Values with an explicit offset in the XML are not affected.
+     *
+     * @param fallbackZone zone used to resolve date time values without offset, for example
+     *                     {@link java.time.ZoneOffset#UTC} to make the result independent of the JVM configuration
+     * @since 10.3.11
+     */
+    public OffsetDateTimeAdapter(ZoneId fallbackZone) {
         this.marshalFormat = new DateTimeFormatterBuilder()
                 .appendPattern("yyyy-MM-dd'T'HH:mm:ss")
                 .optionalStart()
@@ -66,15 +88,33 @@ public class OffsetDateTimeAdapter extends XmlAdapter<String, OffsetDateTime> {
                 .toFormatter();
         this.unmarshalFormat = this.marshalFormat;
         this.customAdapterImpl = null;
+        this.fallbackZone = Objects.requireNonNull(fallbackZone, "fallback zone must not be null");
     }
 
     /**
-     * Creates a time adapter with a specific given format that will be used for both the marshalling and unmarshalling
+     * Creates a time adapter with a specific given format that will be used for both the marshalling and unmarshalling,
+     * resolving values without offset in the JVM default zone
+     *
+     * @see #OffsetDateTimeAdapter(DateTimeFormatter, ZoneId)
      */
     public OffsetDateTimeAdapter(DateTimeFormatter dateFormat) {
+        this(dateFormat, ZoneId.systemDefault());
+    }
+
+    /**
+     * Creates a time adapter with a specific given format that will be used for both the marshalling and unmarshalling,
+     * and a specific fallback zone for values without offset
+     *
+     * @param dateFormat format for both the marshalling and unmarshalling
+     * @param fallbackZone zone used to resolve date time values without offset
+     * @see #OffsetDateTimeAdapter(ZoneId)
+     * @since 10.3.11
+     */
+    public OffsetDateTimeAdapter(DateTimeFormatter dateFormat, ZoneId fallbackZone) {
         this.marshalFormat = dateFormat;
         this.unmarshalFormat = dateFormat;
         this.customAdapterImpl = null;
+        this.fallbackZone = Objects.requireNonNull(fallbackZone, "fallback zone must not be null");
     }
 
     /**
@@ -84,6 +124,8 @@ public class OffsetDateTimeAdapter extends XmlAdapter<String, OffsetDateTime> {
         this.marshalFormat = null;
         this.unmarshalFormat = null;
         this.customAdapterImpl = customAdapterImpl;
+        // not used, the custom implementation decides how to handle values without offset
+        this.fallbackZone = null;
     }
 
     /**
@@ -97,7 +139,7 @@ public class OffsetDateTimeAdapter extends XmlAdapter<String, OffsetDateTime> {
         if (this.customAdapterImpl != null) {
             return this.customAdapterImpl.unmarshal(value);
         } else {
-            return parseZonedDateTime(this.unmarshalFormat, value);
+            return parseZonedDateTime(this.unmarshalFormat, value, this.fallbackZone);
         }
     }
 
@@ -132,7 +174,7 @@ public class OffsetDateTimeAdapter extends XmlAdapter<String, OffsetDateTime> {
     }
 
 
-    static OffsetDateTime parseZonedDateTime(DateTimeFormatter dateTimeFormatter, String value) {
+    static OffsetDateTime parseZonedDateTime(DateTimeFormatter dateTimeFormatter, String value, ZoneId fallbackZone) {
         if (value == null) {
             return null;
         }
@@ -143,11 +185,11 @@ public class OffsetDateTimeAdapter extends XmlAdapter<String, OffsetDateTime> {
             if (log.isLoggable(Level.FINEST)) {
                 log.finest("Error parsing to OffsetDateTime: " + e.getMessage());
             }
-            ZoneId zoneId = ZoneOffset.systemDefault();
-            OffsetDateTime dateTime = LocalDateTime.parse(value, dateTimeFormatter)
-                    .atZone(zoneId)
+            // no offset in the source: resolve the local date time in the fallback zone, applying the zone rules
+            // in effect at that date time (daylight saving aware)
+            return LocalDateTime.parse(value, dateTimeFormatter)
+                    .atZone(fallbackZone)
                     .toOffsetDateTime();
-            return dateTime;
         }
     }
 
