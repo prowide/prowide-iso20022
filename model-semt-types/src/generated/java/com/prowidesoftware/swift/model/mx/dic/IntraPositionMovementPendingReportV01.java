@@ -37,13 +37,13 @@ public class IntraPositionMovementPendingReportV01 {
     @XmlElement(name = "Pgntn", required = true)
     protected Pagination1 pgntn;
     @XmlElement(name = "RptGnlDtls", required = true)
-    protected IntraPositionReport71 rptGnlDtls;
+    protected IntraPositionReport7 rptGnlDtls;
     @XmlElement(name = "AcctOwnr")
-    protected SystemPartyIdentification81 acctOwnr;
+    protected SystemPartyIdentification8 acctOwnr;
     @XmlElement(name = "SfkpgAcct", required = true)
-    protected SecuritiesAccount191 sfkpgAcct;
+    protected SecuritiesAccount19 sfkpgAcct;
     @XmlElement(name = "Mvmnts")
-    protected List<IntraPositionPending71> mvmnts;
+    protected List<IntraPositionPending11> mvmnts;
 
     /**
      * Gets the value of the pgntn property.
@@ -75,10 +75,10 @@ public class IntraPositionMovementPendingReportV01 {
      * 
      * @return
      *     possible object is
-     *     {@link IntraPositionReport71 }
+     *     {@link IntraPositionReport7 }
      *     
      */
-    public IntraPositionReport71 getRptGnlDtls() {
+    public IntraPositionReport7 getRptGnlDtls() {
         return rptGnlDtls;
     }
 
@@ -87,10 +87,10 @@ public class IntraPositionMovementPendingReportV01 {
      * 
      * @param value
      *     allowed object is
-     *     {@link IntraPositionReport71 }
+     *     {@link IntraPositionReport7 }
      *     
      */
-    public IntraPositionMovementPendingReportV01 setRptGnlDtls(IntraPositionReport71 value) {
+    public IntraPositionMovementPendingReportV01 setRptGnlDtls(IntraPositionReport7 value) {
         this.rptGnlDtls = value;
         return this;
     }
@@ -100,10 +100,10 @@ public class IntraPositionMovementPendingReportV01 {
      * 
      * @return
      *     possible object is
-     *     {@link SystemPartyIdentification81 }
+     *     {@link SystemPartyIdentification8 }
      *     
      */
-    public SystemPartyIdentification81 getAcctOwnr() {
+    public SystemPartyIdentification8 getAcctOwnr() {
         return acctOwnr;
     }
 
@@ -112,10 +112,10 @@ public class IntraPositionMovementPendingReportV01 {
      * 
      * @param value
      *     allowed object is
-     *     {@link SystemPartyIdentification81 }
+     *     {@link SystemPartyIdentification8 }
      *     
      */
-    public IntraPositionMovementPendingReportV01 setAcctOwnr(SystemPartyIdentification81 value) {
+    public IntraPositionMovementPendingReportV01 setAcctOwnr(SystemPartyIdentification8 value) {
         this.acctOwnr = value;
         return this;
     }
@@ -125,10 +125,10 @@ public class IntraPositionMovementPendingReportV01 {
      * 
      * @return
      *     possible object is
-     *     {@link SecuritiesAccount191 }
+     *     {@link SecuritiesAccount19 }
      *     
      */
-    public SecuritiesAccount191 getSfkpgAcct() {
+    public SecuritiesAccount19 getSfkpgAcct() {
         return sfkpgAcct;
     }
 
@@ -137,10 +137,10 @@ public class IntraPositionMovementPendingReportV01 {
      * 
      * @param value
      *     allowed object is
-     *     {@link SecuritiesAccount191 }
+     *     {@link SecuritiesAccount19 }
      *     
      */
-    public IntraPositionMovementPendingReportV01 setSfkpgAcct(SecuritiesAccount191 value) {
+    public IntraPositionMovementPendingReportV01 setSfkpgAcct(SecuritiesAccount19 value) {
         this.sfkpgAcct = value;
         return this;
     }
@@ -163,13 +163,13 @@ public class IntraPositionMovementPendingReportV01 {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link IntraPositionPending71 }
+     * {@link IntraPositionPending11 }
      * 
      * 
      * @return
      *     The value of the mvmnts property.
      */
-    public List<IntraPositionPending71> getMvmnts() {
+    public List<IntraPositionPending11> getMvmnts() {
         if (mvmnts == null) {
             mvmnts = new ArrayList<>();
         }
@@ -196,7 +196,7 @@ public class IntraPositionMovementPendingReportV01 {
      * @see #getMvmnts()
      * 
      */
-    public IntraPositionMovementPendingReportV01 addMvmnts(IntraPositionPending71 mvmnts) {
+    public IntraPositionMovementPendingReportV01 addMvmnts(IntraPositionPending11 mvmnts) {
         getMvmnts().add(mvmnts);
         return this;
     }

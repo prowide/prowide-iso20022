@@ -28,16 +28,19 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 @XmlType(name = "SecuritiesSettlementConditionsModificationRequestReportV01", propOrder = {
     "pgntn",
     "rptGnlDtls",
-    "mods"
+    "mods",
+    "splmtryData"
 })
 public class SecuritiesSettlementConditionsModificationRequestReportV01 {
 
     @XmlElement(name = "Pgntn", required = true)
     protected Pagination1 pgntn;
     @XmlElement(name = "RptGnlDtls", required = true)
-    protected SecuritiesTransactionReport51 rptGnlDtls;
+    protected SecuritiesTransactionReport5 rptGnlDtls;
     @XmlElement(name = "Mods")
-    protected List<SecuritiesModification11> mods;
+    protected List<SecuritiesModification2> mods;
+    @XmlElement(name = "SplmtryData")
+    protected List<SupplementaryData1> splmtryData;
 
     /**
      * Gets the value of the pgntn property.
@@ -69,10 +72,10 @@ public class SecuritiesSettlementConditionsModificationRequestReportV01 {
      * 
      * @return
      *     possible object is
-     *     {@link SecuritiesTransactionReport51 }
+     *     {@link SecuritiesTransactionReport5 }
      *     
      */
-    public SecuritiesTransactionReport51 getRptGnlDtls() {
+    public SecuritiesTransactionReport5 getRptGnlDtls() {
         return rptGnlDtls;
     }
 
@@ -81,10 +84,10 @@ public class SecuritiesSettlementConditionsModificationRequestReportV01 {
      * 
      * @param value
      *     allowed object is
-     *     {@link SecuritiesTransactionReport51 }
+     *     {@link SecuritiesTransactionReport5 }
      *     
      */
-    public SecuritiesSettlementConditionsModificationRequestReportV01 setRptGnlDtls(SecuritiesTransactionReport51 value) {
+    public SecuritiesSettlementConditionsModificationRequestReportV01 setRptGnlDtls(SecuritiesTransactionReport5 value) {
         this.rptGnlDtls = value;
         return this;
     }
@@ -107,17 +110,48 @@ public class SecuritiesSettlementConditionsModificationRequestReportV01 {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link SecuritiesModification11 }
+     * {@link SecuritiesModification2 }
      * 
      * 
      * @return
      *     The value of the mods property.
      */
-    public List<SecuritiesModification11> getMods() {
+    public List<SecuritiesModification2> getMods() {
         if (mods == null) {
             mods = new ArrayList<>();
         }
         return this.mods;
+    }
+
+    /**
+     * Gets the value of the splmtryData property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the splmtryData property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getSplmtryData().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link SupplementaryData1 }
+     * 
+     * 
+     * @return
+     *     The value of the splmtryData property.
+     */
+    public List<SupplementaryData1> getSplmtryData() {
+        if (splmtryData == null) {
+            splmtryData = new ArrayList<>();
+        }
+        return this.splmtryData;
     }
 
     @Override
@@ -140,8 +174,18 @@ public class SecuritiesSettlementConditionsModificationRequestReportV01 {
      * @see #getMods()
      * 
      */
-    public SecuritiesSettlementConditionsModificationRequestReportV01 addMods(SecuritiesModification11 mods) {
+    public SecuritiesSettlementConditionsModificationRequestReportV01 addMods(SecuritiesModification2 mods) {
         getMods().add(mods);
+        return this;
+    }
+
+    /**
+     * Adds a new item to the splmtryData list.
+     * @see #getSplmtryData()
+     * 
+     */
+    public SecuritiesSettlementConditionsModificationRequestReportV01 addSplmtryData(SupplementaryData1 splmtryData) {
+        getSplmtryData().add(splmtryData);
         return this;
     }
 

@@ -1,0 +1,73 @@
+
+package com.prowidesoftware.swift.model.mx.dic;
+
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlAnyElement;
+import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+import org.w3c.dom.Element;
+
+
+/**
+ * Specifies a data structure that allows to include any valid XML Structure (tha is through an XML Schema). The property namespace is set to 'any'.
+ * The processContents value is 'lax' which means that if the item has a uniquely determined declaration available, it must be ·valid· with respect to that definition, that is, ·validate· if you can, don't worry if you can't, that is it MAY be validated or not.
+ * 
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "ATICALaxProcessing", propOrder = {
+    "any"
+})
+public class ATICALaxProcessing {
+
+    @XmlAnyElement(lax = true)
+    protected Object any;
+
+    /**
+     * Gets the value of the any property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Object }
+     *     {@link Element }
+     *     
+     */
+    public Object getAny() {
+        return any;
+    }
+
+    /**
+     * Sets the value of the any property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Object }
+     *     {@link Element }
+     *     
+     */
+    public ATICALaxProcessing setAny(Object value) {
+        this.any = value;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+}

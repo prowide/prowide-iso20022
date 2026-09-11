@@ -5,8 +5,11 @@ import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
 import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import com.prowidesoftware.swift.model.mx.MxReadImpl;
+import com.prowidesoftware.swift.model.mx.MxReadParams;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
@@ -28,7 +31,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:swift:xsd:camt.021.001.03")
 public class MxCamt02100103
-    extends com.prowidesoftware.swift.model.mx.AbstractMX
+    extends AbstractMX
 {
 
     @XmlElement(name = "RtrGnlBizInf", required = true)
@@ -113,7 +116,7 @@ public class MxCamt02100103
      * 
      */
     public static MxCamt02100103 parse(String xml) {
-        return ((MxCamt02100103) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxCamt02100103 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams()));
+        return ((MxCamt02100103) MxReadImpl.parse(MxCamt02100103 .class, xml, _classes, new MxReadParams()));
     }
 
     /**
@@ -122,7 +125,7 @@ public class MxCamt02100103
      * 
      */
     public static MxCamt02100103 parse(String xml, MxReadConfiguration conf) {
-        return ((MxCamt02100103) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxCamt02100103 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams(conf)));
+        return ((MxCamt02100103) MxReadImpl.parse(MxCamt02100103 .class, xml, _classes, new MxReadParams(conf)));
     }
 
     /**
@@ -159,7 +162,7 @@ public class MxCamt02100103
      *     a new instance of MxCamt02100103
      */
     public static final MxCamt02100103 fromJson(String json) {
-        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxCamt02100103 .class);
+        return AbstractMX.fromJson(json, MxCamt02100103 .class);
     }
 
     @Override

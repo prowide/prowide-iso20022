@@ -5,8 +5,11 @@ import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
 import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import com.prowidesoftware.swift.model.mx.MxReadImpl;
+import com.prowidesoftware.swift.model.mx.MxReadParams;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
@@ -26,9 +29,9 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 @XmlType(name = "Document", propOrder = {
     "sctiesTxCxlReqQry"
 })
-@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:DRAFT3semt.032.001.01")
+@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:semt.032.001.01")
 public class MxSemt03200101
-    extends com.prowidesoftware.swift.model.mx.AbstractMX
+    extends AbstractMX
 {
 
     @XmlElement(name = "SctiesTxCxlReqQry", required = true)
@@ -38,8 +41,8 @@ public class MxSemt03200101
     public static final transient int VARIANT = 1;
     public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {CancellationProcessingStatus3Code1 .class, CancellationProcessingStatus9Choice1 .class, DateAndDateTimeSearch2Choice1 .class, DateSearchChoice1 .class, FinancialInstitutionIdentification121 .class, InstructionQueryType1Code.class, IntraPositionQueryCriteria51 .class, IntraPositionQueryDefinition51 .class, MovementResponseType1Code.class, MxSemt03200101 .class, PartyIdentification44Choice1 .class, PartyIdentification911 .class, SecuritiesAccount191 .class, SecuritiesTransactionCancellationRequestQueryV01 .class, SystemPartyIdentification61 .class };
-    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:DRAFT3semt.032.001.01";
+    public static final transient Class[] _classes = new Class[] {AddressType2Code.class, CancellationProcessingStatus3Code.class, CancellationProcessingStatus9Choice.class, DateAndDateTimeSearch5Choice.class, DatePeriod2 .class, DatePeriodSearch1Choice.class, DateTimePeriod1 .class, DateTimeSearch2Choice.class, GenericIdentification30 .class, GenericIdentification36 .class, InstructionQueryType1Code.class, MovementResponseType1Code.class, MxSemt03200101 .class, NameAndAddress5 .class, PartyIdentification120Choice.class, PartyIdentification136 .class, PostalAddress1 .class, SecuritiesAccount19 .class, SecuritiesCancellationQueryCriteria1 .class, SecuritiesCancellationQueryDefinition1 .class, SecuritiesTransactionCancellationRequestQueryV01 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, SystemPartyIdentification8 .class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:semt.032.001.01";
 
     public MxSemt03200101() {
         super();
@@ -113,7 +116,7 @@ public class MxSemt03200101
      * 
      */
     public static MxSemt03200101 parse(String xml) {
-        return ((MxSemt03200101) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxSemt03200101 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams()));
+        return ((MxSemt03200101) MxReadImpl.parse(MxSemt03200101 .class, xml, _classes, new MxReadParams()));
     }
 
     /**
@@ -122,7 +125,7 @@ public class MxSemt03200101
      * 
      */
     public static MxSemt03200101 parse(String xml, MxReadConfiguration conf) {
-        return ((MxSemt03200101) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxSemt03200101 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams(conf)));
+        return ((MxSemt03200101) MxReadImpl.parse(MxSemt03200101 .class, xml, _classes, new MxReadParams(conf)));
     }
 
     /**
@@ -159,7 +162,7 @@ public class MxSemt03200101
      *     a new instance of MxSemt03200101
      */
     public static final MxSemt03200101 fromJson(String json) {
-        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSemt03200101 .class);
+        return AbstractMX.fromJson(json, MxSemt03200101 .class);
     }
 
     @Override

@@ -5,8 +5,11 @@ import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
 import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import com.prowidesoftware.swift.model.mx.MxReadImpl;
+import com.prowidesoftware.swift.model.mx.MxReadParams;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
@@ -28,7 +31,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:swift:xsd:camt.008.001.04")
 public class MxCamt00800104
-    extends com.prowidesoftware.swift.model.mx.AbstractMX
+    extends AbstractMX
 {
 
     @XmlElement(name = "CclTx", required = true)
@@ -113,7 +116,7 @@ public class MxCamt00800104
      * 
      */
     public static MxCamt00800104 parse(String xml) {
-        return ((MxCamt00800104) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxCamt00800104 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams()));
+        return ((MxCamt00800104) MxReadImpl.parse(MxCamt00800104 .class, xml, _classes, new MxReadParams()));
     }
 
     /**
@@ -122,7 +125,7 @@ public class MxCamt00800104
      * 
      */
     public static MxCamt00800104 parse(String xml, MxReadConfiguration conf) {
-        return ((MxCamt00800104) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxCamt00800104 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams(conf)));
+        return ((MxCamt00800104) MxReadImpl.parse(MxCamt00800104 .class, xml, _classes, new MxReadParams(conf)));
     }
 
     /**
@@ -159,7 +162,7 @@ public class MxCamt00800104
      *     a new instance of MxCamt00800104
      */
     public static final MxCamt00800104 fromJson(String json) {
-        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxCamt00800104 .class);
+        return AbstractMX.fromJson(json, MxCamt00800104 .class);
     }
 
     @Override

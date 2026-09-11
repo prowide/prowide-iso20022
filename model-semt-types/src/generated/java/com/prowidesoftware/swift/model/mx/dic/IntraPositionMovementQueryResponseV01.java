@@ -35,9 +35,9 @@ public class IntraPositionMovementQueryResponseV01 {
     @XmlElement(name = "Pgntn", required = true)
     protected Pagination1 pgntn;
     @XmlElement(name = "RptGnlDtls", required = true)
-    protected IntraPositionReport41 rptGnlDtls;
+    protected IntraPositionReport4 rptGnlDtls;
     @XmlElement(name = "Mvmnts")
-    protected List<IntraPositionMovements41> mvmnts;
+    protected List<IntraPositionMovements6> mvmnts;
 
     /**
      * Gets the value of the pgntn property.
@@ -69,10 +69,10 @@ public class IntraPositionMovementQueryResponseV01 {
      * 
      * @return
      *     possible object is
-     *     {@link IntraPositionReport41 }
+     *     {@link IntraPositionReport4 }
      *     
      */
-    public IntraPositionReport41 getRptGnlDtls() {
+    public IntraPositionReport4 getRptGnlDtls() {
         return rptGnlDtls;
     }
 
@@ -81,10 +81,10 @@ public class IntraPositionMovementQueryResponseV01 {
      * 
      * @param value
      *     allowed object is
-     *     {@link IntraPositionReport41 }
+     *     {@link IntraPositionReport4 }
      *     
      */
-    public IntraPositionMovementQueryResponseV01 setRptGnlDtls(IntraPositionReport41 value) {
+    public IntraPositionMovementQueryResponseV01 setRptGnlDtls(IntraPositionReport4 value) {
         this.rptGnlDtls = value;
         return this;
     }
@@ -107,13 +107,13 @@ public class IntraPositionMovementQueryResponseV01 {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link IntraPositionMovements41 }
+     * {@link IntraPositionMovements6 }
      * 
      * 
      * @return
      *     The value of the mvmnts property.
      */
-    public List<IntraPositionMovements41> getMvmnts() {
+    public List<IntraPositionMovements6> getMvmnts() {
         if (mvmnts == null) {
             mvmnts = new ArrayList<>();
         }
@@ -140,7 +140,7 @@ public class IntraPositionMovementQueryResponseV01 {
      * @see #getMvmnts()
      * 
      */
-    public IntraPositionMovementQueryResponseV01 addMvmnts(IntraPositionMovements41 mvmnts) {
+    public IntraPositionMovementQueryResponseV01 addMvmnts(IntraPositionMovements6 mvmnts) {
         getMvmnts().add(mvmnts);
         return this;
     }

@@ -1,0 +1,247 @@
+
+package com.prowidesoftware.swift.model.mx.dic;
+
+import java.time.LocalDate;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+
+/**
+ * Details of travel document used for identification and/or authentication of the customer.
+ * 
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "TravelDocument3", propOrder = {
+    "tp",
+    "form",
+    "id",
+    "assgnr",
+    "issncDt",
+    "xprtnDt",
+    "ctry"
+})
+public class TravelDocument3 {
+
+    @XmlElement(name = "Tp", required = true)
+    @XmlSchemaType(name = "string")
+    protected OfficialDocumentType2Code tp;
+    @XmlElement(name = "Form")
+    @XmlSchemaType(name = "string")
+    protected PresentationMedium2Code form;
+    @XmlElement(name = "Id", required = true)
+    protected String id;
+    @XmlElement(name = "Assgnr")
+    protected String assgnr;
+    @XmlElement(name = "IssncDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
+    @XmlSchemaType(name = "date")
+    protected LocalDate issncDt;
+    @XmlElement(name = "XprtnDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
+    @XmlSchemaType(name = "date")
+    protected LocalDate xprtnDt;
+    @XmlElement(name = "Ctry")
+    protected String ctry;
+
+    /**
+     * Gets the value of the tp property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link OfficialDocumentType2Code }
+     *     
+     */
+    public OfficialDocumentType2Code getTp() {
+        return tp;
+    }
+
+    /**
+     * Sets the value of the tp property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link OfficialDocumentType2Code }
+     *     
+     */
+    public TravelDocument3 setTp(OfficialDocumentType2Code value) {
+        this.tp = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the form property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link PresentationMedium2Code }
+     *     
+     */
+    public PresentationMedium2Code getForm() {
+        return form;
+    }
+
+    /**
+     * Sets the value of the form property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link PresentationMedium2Code }
+     *     
+     */
+    public TravelDocument3 setForm(PresentationMedium2Code value) {
+        this.form = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the id property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getId() {
+        return id;
+    }
+
+    /**
+     * Sets the value of the id property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public TravelDocument3 setId(String value) {
+        this.id = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the assgnr property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getAssgnr() {
+        return assgnr;
+    }
+
+    /**
+     * Sets the value of the assgnr property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public TravelDocument3 setAssgnr(String value) {
+        this.assgnr = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the issncDt property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public LocalDate getIssncDt() {
+        return issncDt;
+    }
+
+    /**
+     * Sets the value of the issncDt property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public TravelDocument3 setIssncDt(LocalDate value) {
+        this.issncDt = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the xprtnDt property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public LocalDate getXprtnDt() {
+        return xprtnDt;
+    }
+
+    /**
+     * Sets the value of the xprtnDt property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public TravelDocument3 setXprtnDt(LocalDate value) {
+        this.xprtnDt = value;
+        return this;
+    }
+
+    /**
+     * Gets the value of the ctry property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getCtry() {
+        return ctry;
+    }
+
+    /**
+     * Sets the value of the ctry property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public TravelDocument3 setCtry(String value) {
+        this.ctry = value;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+}

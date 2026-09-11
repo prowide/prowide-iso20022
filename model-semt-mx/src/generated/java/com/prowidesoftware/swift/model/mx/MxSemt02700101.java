@@ -5,8 +5,11 @@ import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
 import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
 import com.prowidesoftware.swift.model.mx.MxRead;
 import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import com.prowidesoftware.swift.model.mx.MxReadImpl;
+import com.prowidesoftware.swift.model.mx.MxReadParams;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
@@ -20,6 +23,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
  * Class for semt.027.001.01 ISO 20022 message.
+ * <p><strong>DRAFT</strong>: generated from an ISO 20022 draft schema (not yet officially registered).
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -28,7 +32,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:DRAFT9semt.027.001.01")
 public class MxSemt02700101
-    extends com.prowidesoftware.swift.model.mx.AbstractMX
+    extends AbstractMX
 {
 
     @XmlElement(name = "SctiesSttlmTxQryRspn", required = true)
@@ -38,7 +42,7 @@ public class MxSemt02700101
     public static final transient int VARIANT = 1;
     public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public static final transient Class[] _classes = new Class[] {AcknowledgedAcceptedStatus21Choice1 .class, AmountAndDirection201 .class, BeneficialOwnership4Choice1 .class, CancellationReason221 .class, CancellationReason36Choice1 .class, CancellationStatus24Choice1 .class, CancelledStatusReason16Code.class, CreditDebitCode.class, DateAndDateTime2Choice1Draft.class, DeliveryReceiptType2Code.class, DocumentNumber5Choice1 .class, FailingReason2Code1 .class, FailingReason81 .class, FailingReason8Choice1 .class, FailingStatus10Choice1Draft.class, FinancialInstrumentQuantity1Choice1 .class, GenericIdentification301Draft.class, GenericIdentification361 .class, HoldIndicator61 .class, InstructionProcessingStatus37Choice1 .class, Linkages571 .class, MarketIdentification1Choice1 .class, MarketIdentification841 .class, MarketType2Code.class, MarketType8Choice1 .class, MatchingStatus24Choice1 .class, MxSemt02700101 .class, NameAndAddress51 .class, NoReasonCode.class, Pagination1 .class, PartyIdentification120Choice1 .class, PartyIdentification120Choice2 .class, PartyIdentification120Choice3 .class, PartyIdentification122Choice1 .class, PartyIdentification127Choice1 .class, PartyIdentification1361 .class, PartyIdentification1362 .class, PartyIdentification1481 .class, PartyIdentificationAndAccount1701Draft.class, PartyIdentificationAndAccount1702Semt027Draft.class, PendingReason151 .class, PendingReason161 .class, PendingReason27Choice1 .class, PendingReason28Choice1 .class, PendingReason2Code1 .class, PendingReason6Code1 .class, PendingStatus37Choice1 .class, PendingStatus38Choice1 .class, PlaceOfClearingIdentification21 .class, PlaceOfTradeIdentification11 .class, PriorityNumeric4Choice1 .class, ProcessingPosition3Code.class, ProcessingPosition7Choice1 .class, ProprietaryReason41 .class, ReceiveDelivery1Code.class, References34Choice1 .class, Registration10Choice1 .class, Registration2Code.class, RegistrationReason51 .class, RestrictedFINActiveOrHistoricCurrencyAndAmount.class, SecuritiesAccount191 .class, SecuritiesReport21 .class, SecuritiesSettlementTransactionQueryResponseV01 .class, SecuritiesSettlementTransactions41 .class, SecuritiesTransactionType27Code1 .class, SecuritiesTransactionType48Choice1 .class, SecurityIdentification191 .class, SettlementDate19Choice1 .class, SettlementDetails1821 .class, SettlementOrCorporateActionEvent26Choice1 .class, SettlementParties781 .class, SettlementQueryType1Code.class, SettlementStatus17Choice1 .class, SettlementTransactionCondition10Code.class, SettlementTransactionCondition16Choice1Draft.class, SettlementTransactionCondition5Code.class, StatusAndReason381 .class, SystemPartyIdentification81 .class, TradeDate8Choice1Draft.class, Transaction731 .class, TransactionActivity1CodeFixed.class, TransactionActivity3Choice1 .class, TransactionDetails1251 .class, UnmatchedStatus16Choice1 .class };
+    public static final transient Class[] _classes = new Class[] {AcknowledgedAcceptedStatus21Choice.class, AcknowledgementReason12Choice.class, AcknowledgementReason5Code.class, AcknowledgementReason9 .class, ActiveOrHistoricCurrencyAndAmount.class, AddressType2Code.class, AmountAndDirection20 .class, AutoBorrowing1Code.class, AutomaticBorrowing6Choice.class, BeneficialOwnership4Choice.class, BlockTrade1Code.class, BlockTrade4Choice.class, CancellationReason22 .class, CancellationReason36Choice.class, CancellationStatus24Choice.class, CancelledStatusReason16Code.class, CashSettlementSystem2Code.class, CashSettlementSystem4Choice.class, CentralCounterPartyEligibility4Choice.class, CorporateActionEventType28Code.class, CorporateActionEventType73Choice.class, CreditDebitCode.class, DateAndDateTime2Choice.class, DateType3Code.class, DateType4Code.class, DeliveryReceiptType2Code.class, DeliveryReturn1Code.class, DeliveryReturn3Choice.class, DocumentNumber5Choice.class, ExposureType16Choice.class, ExposureType4Code.class, FXStandingInstruction4Choice.class, FailingReason2Code.class, FailingReason8 .class, FailingReason8Choice.class, FailingStatus10Choice.class, FinancialInstrumentQuantity1Choice.class, GeneratedReason3Code.class, GeneratedReason5 .class, GeneratedReasons5Choice.class, GeneratedStatus7Choice.class, GenericIdentification30 .class, GenericIdentification36 .class, GenericIdentification78 .class, HoldIndicator6 .class, IdentificationSource3Choice.class, InstructionProcessingStatus37Choice.class, LetterOfGuarantee4Choice.class, Linkages57 .class, MarketClientSide1Code.class, MarketClientSide6Choice.class, MarketIdentification1Choice.class, MarketIdentification84 .class, MarketType2Code.class, MarketType8Choice.class, MatchingStatus24Choice.class, ModificationCancellationAllowed4Choice.class, MxSemt02700101 .class, NameAndAddress5 .class, NettingEligibility4Choice.class, NoReasonCode.class, OtherIdentification1 .class, OwnershipLegalRestrictions1Code.class, Pagination1 .class, PartyIdentification120Choice.class, PartyIdentification122Choice.class, PartyIdentification127Choice.class, PartyIdentification136 .class, PartyIdentification148 .class, PartyIdentificationAndAccount170 .class, PendingProcessingReason10Choice.class, PendingProcessingReason2Code.class, PendingProcessingReason8 .class, PendingProcessingStatus11Choice.class, PendingReason15 .class, PendingReason16 .class, PendingReason27Choice.class, PendingReason28Choice.class, PendingReason2Code.class, PendingReason6Code.class, PendingStatus37Choice.class, PendingStatus38Choice.class, PlaceOfClearingIdentification2 .class, PlaceOfTradeIdentification1 .class, PostalAddress1 .class, PriorityNumeric4Choice.class, ProcessingPosition3Code.class, ProcessingPosition7Choice.class, ProprietaryReason4 .class, ProprietaryStatusAndReason6 .class, ReceiveDelivery1Code.class, References34Choice.class, Registration10Choice.class, Registration1Code.class, Registration2Code.class, Registration9Choice.class, RegistrationReason5 .class, RepairReason10Choice.class, RepairReason4Code.class, RepairReason8 .class, RepairStatus12Choice.class, RepurchaseType10Code.class, RepurchaseType23Choice.class, Restriction5Choice.class, SafeKeepingPlace3 .class, SafekeepingPlace1Code.class, SafekeepingPlace3Code.class, SafekeepingPlaceFormat29Choice.class, SafekeepingPlaceTypeAndIdentification1 .class, SafekeepingPlaceTypeAndText8 .class, SecuritiesAccount19 .class, SecuritiesRTGS4Choice.class, SecuritiesReport2 .class, SecuritiesSettlementTransactionQueryResponseV01 .class, SecuritiesSettlementTransactions4 .class, SecuritiesTransactionType27Code.class, SecuritiesTransactionType48Choice.class, SecurityIdentification19 .class, SettlementDate19Choice.class, SettlementDateCode8Choice.class, SettlementDetails182 .class, SettlementOrCorporateActionEvent26Choice.class, SettlementParties78 .class, SettlementQueryType1Code.class, SettlementStatus17Choice.class, SettlementSystemMethod1Code.class, SettlementSystemMethod4Choice.class, SettlementTransactionCondition10Code.class, SettlementTransactionCondition16Choice.class, SettlementTransactionCondition5Code.class, SettlingCapacity2Code.class, SettlingCapacity7Choice.class, StatusAndReason38 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, SystemPartyIdentification8 .class, TaxCapacityParty4Choice.class, TaxLiability1Code.class, Tracking4Choice.class, TradeDate8Choice.class, TradeDateCode3Choice.class, Transaction73 .class, TransactionActivity1Code.class, TransactionActivity3Choice.class, TransactionDetails125 .class, UnmatchedReason11Code.class, UnmatchedReason15 .class, UnmatchedReason21Choice.class, UnmatchedStatus16Choice.class };
     public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:DRAFT9semt.027.001.01";
 
     public MxSemt02700101() {
@@ -113,7 +117,7 @@ public class MxSemt02700101
      * 
      */
     public static MxSemt02700101 parse(String xml) {
-        return ((MxSemt02700101) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxSemt02700101 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams()));
+        return ((MxSemt02700101) MxReadImpl.parse(MxSemt02700101 .class, xml, _classes, new MxReadParams()));
     }
 
     /**
@@ -122,7 +126,7 @@ public class MxSemt02700101
      * 
      */
     public static MxSemt02700101 parse(String xml, MxReadConfiguration conf) {
-        return ((MxSemt02700101) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxSemt02700101 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams(conf)));
+        return ((MxSemt02700101) MxReadImpl.parse(MxSemt02700101 .class, xml, _classes, new MxReadParams(conf)));
     }
 
     /**
@@ -159,7 +163,7 @@ public class MxSemt02700101
      *     a new instance of MxSemt02700101
      */
     public static final MxSemt02700101 fromJson(String json) {
-        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSemt02700101 .class);
+        return AbstractMX.fromJson(json, MxSemt02700101 .class);
     }
 
     @Override

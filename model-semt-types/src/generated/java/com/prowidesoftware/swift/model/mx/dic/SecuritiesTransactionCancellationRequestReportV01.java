@@ -28,26 +28,29 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 @XmlType(name = "SecuritiesTransactionCancellationRequestReportV01", propOrder = {
     "pgntn",
     "rptGnlDtls",
-    "cxls"
+    "cxls",
+    "splmtryData"
 })
 public class SecuritiesTransactionCancellationRequestReportV01 {
 
     @XmlElement(name = "Pgntn", required = true)
-    protected Pagination pgntn;
+    protected Pagination1 pgntn;
     @XmlElement(name = "RptGnlDtls", required = true)
-    protected IntraPositionReport61 rptGnlDtls;
+    protected SecuritiesTransactionReport5 rptGnlDtls;
     @XmlElement(name = "Cxls")
-    protected List<IntraPositionCancellation31> cxls;
+    protected List<SecuritiesCancellation2> cxls;
+    @XmlElement(name = "SplmtryData")
+    protected List<SupplementaryData1> splmtryData;
 
     /**
      * Gets the value of the pgntn property.
      * 
      * @return
      *     possible object is
-     *     {@link Pagination }
+     *     {@link Pagination1 }
      *     
      */
-    public Pagination getPgntn() {
+    public Pagination1 getPgntn() {
         return pgntn;
     }
 
@@ -56,10 +59,10 @@ public class SecuritiesTransactionCancellationRequestReportV01 {
      * 
      * @param value
      *     allowed object is
-     *     {@link Pagination }
+     *     {@link Pagination1 }
      *     
      */
-    public SecuritiesTransactionCancellationRequestReportV01 setPgntn(Pagination value) {
+    public SecuritiesTransactionCancellationRequestReportV01 setPgntn(Pagination1 value) {
         this.pgntn = value;
         return this;
     }
@@ -69,10 +72,10 @@ public class SecuritiesTransactionCancellationRequestReportV01 {
      * 
      * @return
      *     possible object is
-     *     {@link IntraPositionReport61 }
+     *     {@link SecuritiesTransactionReport5 }
      *     
      */
-    public IntraPositionReport61 getRptGnlDtls() {
+    public SecuritiesTransactionReport5 getRptGnlDtls() {
         return rptGnlDtls;
     }
 
@@ -81,10 +84,10 @@ public class SecuritiesTransactionCancellationRequestReportV01 {
      * 
      * @param value
      *     allowed object is
-     *     {@link IntraPositionReport61 }
+     *     {@link SecuritiesTransactionReport5 }
      *     
      */
-    public SecuritiesTransactionCancellationRequestReportV01 setRptGnlDtls(IntraPositionReport61 value) {
+    public SecuritiesTransactionCancellationRequestReportV01 setRptGnlDtls(SecuritiesTransactionReport5 value) {
         this.rptGnlDtls = value;
         return this;
     }
@@ -107,17 +110,48 @@ public class SecuritiesTransactionCancellationRequestReportV01 {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link IntraPositionCancellation31 }
+     * {@link SecuritiesCancellation2 }
      * 
      * 
      * @return
      *     The value of the cxls property.
      */
-    public List<IntraPositionCancellation31> getCxls() {
+    public List<SecuritiesCancellation2> getCxls() {
         if (cxls == null) {
             cxls = new ArrayList<>();
         }
         return this.cxls;
+    }
+
+    /**
+     * Gets the value of the splmtryData property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the splmtryData property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getSplmtryData().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link SupplementaryData1 }
+     * 
+     * 
+     * @return
+     *     The value of the splmtryData property.
+     */
+    public List<SupplementaryData1> getSplmtryData() {
+        if (splmtryData == null) {
+            splmtryData = new ArrayList<>();
+        }
+        return this.splmtryData;
     }
 
     @Override
@@ -140,8 +174,18 @@ public class SecuritiesTransactionCancellationRequestReportV01 {
      * @see #getCxls()
      * 
      */
-    public SecuritiesTransactionCancellationRequestReportV01 addCxls(IntraPositionCancellation31 cxls) {
+    public SecuritiesTransactionCancellationRequestReportV01 addCxls(SecuritiesCancellation2 cxls) {
         getCxls().add(cxls);
+        return this;
+    }
+
+    /**
+     * Adds a new item to the splmtryData list.
+     * @see #getSplmtryData()
+     * 
+     */
+    public SecuritiesTransactionCancellationRequestReportV01 addSplmtryData(SupplementaryData1 splmtryData) {
+        getSplmtryData().add(splmtryData);
         return this;
     }
 
