@@ -1,5 +1,12 @@
 # Prowide ISO 20022 - CHANGELOG
 
+### 10.4.0 - SNAPSHOT
+  * SWIFT Standards release 2026 model, for market infrastructures and clearings that adopt it with the November 2026 update, such as Target2; as the SWIFT network go-live was postponed, this remains an SRU2025 release
+
+Upgrade note: the Prowide Core dependency and the deprecation schedule remain those of SRU2025. Some model dictionary classes were renamed or removed, so code referencing them must be adapted and recompiled.
+The message versions introduced by SWIFT Standards release 2026 are valid on SWIFT only for the market infrastructures adopting them in November 2026, such as Target2. All other SWIFT traffic must keep using 
+SRU2025 message versions until SRU2026 goes live on 12 June 2027.
+
 ### 10.3.11 - September 2026
   * (PW-3405) Feat: Configurable fallback zone for date time and time elements without offset (new adapter constructors and TypeAdaptersConfiguration.withFallbackZone); time elements now resolve the daylight-saving aware offset
 
