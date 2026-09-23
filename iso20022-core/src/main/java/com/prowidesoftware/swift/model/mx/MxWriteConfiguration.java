@@ -87,7 +87,7 @@ public class MxWriteConfiguration {
      * @deprecated use {@link #envelopeType} instead
      */
     @Deprecated
-    @ProwideDeprecated(phase4 = TargetYear.SRU2027)
+    @ProwideDeprecated(phase3 = TargetYear.SRU2026)
     public EnvelopeType envelopeTyoe = EnvelopeType.CUSTOM;
 
     /**
