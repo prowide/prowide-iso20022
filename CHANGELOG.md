@@ -1,23 +1,25 @@
 # Prowide ISO 20022 - CHANGELOG
 
-### 10.4.0 - September 2026
-  * SWIFT Standards release 2026 model, for market infrastructures and clearings that adopt it with the November 2026 update, such as Target2; as the SWIFT network go-live was postponed, this remains an SRU2025 release
+### 10.4.4 - SNAPSHOT
+  * Fix: `MaxPrcgDt` (SRU2026 `JulianDate` type) in `Context26` and `Context27` is now mapped to `java.time.LocalDate` instead of `XMLGregorianCalendar`, consistent with the rest of the model; code using `getMaxPrcgDt()`/`setMaxPrcgDt()` must be adapted
 
-  Upgrade note: the Prowide Core dependency and the deprecation schedule remain those of SRU2025. Some model dictionary classes were renamed or removed, so code referencing them must be adapted and recompiled.
-  The message versions introduced by SWIFT Standards release 2026 are valid on SWIFT only for the market infrastructures adopting them in November 2026, such as Target2. All other SWIFT traffic must keep using 
-  SRU2025 message versions until SRU2026 goes live on 12 June 2027.
-
-### 10.3.11 - September 2026
+### 10.4.3 - September 2026
   * (PW-3405) Feat: Configurable fallback zone for date time and time elements without offset (new adapter constructors and TypeAdaptersConfiguration.withFallbackZone); time elements now resolve the daylight-saving aware offset
 
-### 10.3.10 - July 2026
+### 10.4.2 - July 2026
   * (PW-3251) Feat: lenient parsing of file-format (FileAct) payloads with sibling `AppHdr` and `Document` root elements or undeclared namespace prefixes, applied consistently across all parsing entry points without copying the payload
   * (PW-3251) `MxParseUtils.identifyMessage` now returns an empty Optional on blank input instead of throwing an IllegalArgumentException
   * (PW-3251) Added `MxParseUtils.needsNormalization` to check whether a payload needs lenient normalization without materializing the normalized content, for callers that only need the boolean outcome (e.g. file format detection)
-
-### 10.3.9 - June 2026
   * Feat: `xsd:any` wildcard content (e.g. `SplmtryData/Envlp`, signature envelopes) is no longer dropped on parse; it is captured as an `org.w3c.dom.Element` with namespaces preserved (GH-39, GH-43)
   * Fix: `toJson()` now serializes `@XmlAnyElement` wildcard content as raw XML instead of an empty `{}`, and `fromJson()` restores it back to a DOM Element (round-trippable)
+
+### 10.4.1 - June 2026
+  * Feat: `xsd:any` wildcard content (e.g. `SplmtryData/Envlp`, signature envelopes) is no longer dropped on parse; it is captured as an `org.w3c.dom.Element` with namespaces preserved (GH-39, GH-43)
+  * Fix: `toJson()` now serializes `@XmlAnyElement` wildcard content as raw XML instead of an empty `{}`, and `fromJson()` restores it back to a DOM Element (round-trippable)
+
+### 10.4.0 - May 2026
+  * SWIFT Standard release update 2026 (live 12 June 2027, original November 2026 release postponed) 
+  * Yearly revision of deprecation phase (see https://dev.prowidesoftware.com/SRU2024/getting-started/deprecation/)
 
 ### 10.3.8 - May 2026
   * (PW-3202) Fix: removed spurious `Error propagating pending prefix mapping` warnings when parsing regular ISO 20022 Documents wrapped in an SNL-like envelope
