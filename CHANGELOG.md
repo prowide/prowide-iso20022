@@ -1,5 +1,8 @@
 # Prowide ISO 20022 - CHANGELOG
 
+### 10.4.4 - SNAPSHOT
+  * Fix: `MaxPrcgDt` (SRU2026 `JulianDate` type) in `Context26` and `Context27` is now mapped to `java.time.LocalDate` instead of `XMLGregorianCalendar`, consistent with the rest of the model; code using `getMaxPrcgDt()`/`setMaxPrcgDt()` must be adapted
+
 ### 10.4.3 - September 2026
   * (PW-3405) Feat: Configurable fallback zone for date time and time elements without offset (new adapter constructors and TypeAdaptersConfiguration.withFallbackZone); time elements now resolve the daylight-saving aware offset
 
