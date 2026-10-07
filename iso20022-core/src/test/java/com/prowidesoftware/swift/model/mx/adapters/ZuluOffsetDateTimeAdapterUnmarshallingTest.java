@@ -19,6 +19,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.time.Month;
 import java.time.OffsetDateTime;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
 import org.junit.jupiter.api.Test;
 
 public class ZuluOffsetDateTimeAdapterUnmarshallingTest {
@@ -87,5 +89,33 @@ public class ZuluOffsetDateTimeAdapterUnmarshallingTest {
         assertEquals(50, datetime.getMinute());
         assertEquals(8, datetime.getSecond());
         assertEquals(0, datetime.getNano());
+    }
+
+    @Test
+    public void testUnmarshallNoOffsetWithFallbackZone() {
+        String value = "2022-03-04T12:50:08";
+        assertEquals(
+                0,
+                new ZuluOffsetDateTimeAdapter(ZoneOffset.UTC)
+                        .unmarshal(value)
+                        .getOffset()
+                        .getTotalSeconds());
+        assertEquals(
+                19800,
+                new ZuluOffsetDateTimeAdapter(ZoneId.of("Asia/Kolkata"))
+                        .unmarshal(value)
+                        .getOffset()
+                        .getTotalSeconds());
+
+        // zone with daylight saving: the offset in effect at the parsed date time is applied
+        ZuluOffsetDateTimeAdapter berlin = new ZuluOffsetDateTimeAdapter(ZoneId.of("Europe/Berlin"));
+        assertEquals(3600, berlin.unmarshal("2022-03-04T12:50:08").getOffset().getTotalSeconds());
+        assertEquals(7200, berlin.unmarshal("2022-07-04T12:50:08").getOffset().getTotalSeconds());
+        assertEquals(12, berlin.unmarshal("2022-07-04T12:50:08").getHour());
+
+        // values with offset are not affected
+        assertEquals(
+                -10800,
+                berlin.unmarshal("2022-07-04T12:50:08-03:00").getOffset().getTotalSeconds());
     }
 }

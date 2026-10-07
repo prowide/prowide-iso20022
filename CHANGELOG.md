@@ -1,7 +1,15 @@
 # Prowide ISO 20022 - CHANGELOG
 
+### 9.7.1 - October 2026
+  * (PW-3405) Feat: Configurable fallback zone for date time and time elements without offset (new adapter constructors and TypeAdaptersConfiguration.withFallbackZone); time elements now resolve the daylight-saving aware offset
+  * (PW-3251) Feat: lenient parsing of file-format (FileAct) payloads with sibling `AppHdr` and `Document` root elements or undeclared namespace prefixes, applied consistently across all parsing entry points without copying the payload (missing in 9.7.0)
+  * (PW-3251) `MxParseUtils.identifyMessage` now returns an empty Optional on blank input instead of throwing an IllegalArgumentException (missing in 9.7.0)
+  * (PW-3251) Added `MxParseUtils.needsNormalization` to check whether a payload needs lenient normalization without materializing the normalized content, for callers that only need the boolean outcome (e.g. file format detection)
+  * Fix: `MaxPrcgDt` (SRU2026 `JulianDate` type) in `Context26` and `Context27` is now mapped to `java.time.LocalDate` instead of `XMLGregorianCalendar`, consistent with the rest of the model; code using `getMaxPrcgDt()`/`setMaxPrcgDt()` must be adapted
+  * Updated Prowide Core dependency to SRU2026-9.7.1
+
 ### 9.7.0 - July 2026
-  * SWIFT Standard release update 2026 (live 14 November 2026)
+  * SWIFT Standard release update 2026 (live 12 June 2027, original November 2026 release postponed)
   * Yearly revision of deprecation phase (see https://dev.prowidesoftware.com/SRU2024/getting-started/deprecation/)
   * Migrated the model date/time types from `XMLGregorianCalendar` to `java.time`, for compatibility with the Prowide Integrator 10 series
   * Updated gson from 2.13.2 to 2.14.0

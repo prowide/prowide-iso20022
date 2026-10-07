@@ -65,10 +65,18 @@ public class NamespaceReader {
      * @return found namespace or empty if the element is not found or does not contain a namespace
      */
     public static Optional<String> findNamespaceForLocalName(final String xml, final String localName) {
+        return findNamespaceForLocalName(new StringReader(MxParseUtils.makeXmlLenient(xml)), localName);
+    }
+
+    /**
+     * Implementation of {@link #findNamespaceForLocalName(String, String)} streaming from a reader, so lenient
+     * payload views can be scanned without materializing a normalized copy of the XML.
+     */
+    static Optional<String> findNamespaceForLocalName(final java.io.Reader source, final String localName) {
         final XMLInputFactory xif = SafeXmlUtils.inputFactory();
         XMLStreamReader reader = null;
         try {
-            reader = xif.createXMLStreamReader(new StringReader(MxParseUtils.makeXmlLenient(xml)));
+            reader = xif.createXMLStreamReader(source);
             while (reader.hasNext()) {
                 int event = reader.next();
                 if (XMLStreamConstants.START_ELEMENT == event) {

@@ -22,7 +22,7 @@ group 'com.prowidesoftware'
 
 project.ext {
 	SRU = 'SRU2026'
-    prowideCoreVersion = 'SRU2026-9.7.0'
+    prowideCoreVersion = 'SRU2026-9.7.1'
 	commonsLangVersion = '3.20.0'
 	gsonVersion = '2.14.0'
 	// Java 8 backport: javax JAXB ships with the JDK (it was removed only in Java 11+), so no explicit
@@ -35,8 +35,8 @@ scmVersion {
 		versionSeparator = '-'
 	}
 }
-//project.version = "${SRU}-${scmVersion.version}"
-project.version = "${SRU}-9.7.0"
+project.version = "${SRU}-${scmVersion.version}"
+//project.version = "${SRU}-9.7.1"
 
 allprojects {
 
@@ -164,11 +164,11 @@ project(':iso20022-core') {
 
 		testImplementation 'javax.persistence:javax.persistence-api:2.2'
 		testImplementation 'org.junit.jupiter:junit-jupiter:5.11.4'
-		testImplementation 'com.google.guava:guava:33.6.0-jre'
+		testImplementation 'com.google.guava:guava:33.7.1-jre'
 		testImplementation 'org.assertj:assertj-core:3.27.7'
-		testImplementation 'org.xmlunit:xmlunit-core:2.12.0'
-		testImplementation 'org.xmlunit:xmlunit-matchers:2.12.0'
-		testImplementation 'org.xmlunit:xmlunit-assertj:2.12.0'
+		testImplementation 'org.xmlunit:xmlunit-core:2.13.0'
+		testImplementation 'org.xmlunit:xmlunit-matchers:2.13.0'
+		testImplementation 'org.xmlunit:xmlunit-assertj:2.13.0'
 		testImplementation project(':model-acmt-mx')
 		testImplementation project(':model-acmt-types')
 		testImplementation project(':model-admi-mx')
@@ -197,6 +197,26 @@ project(':iso20022-core') {
 
 	test {
 		useJUnitPlatform()
+	}
+
+	// Runs the tests on a Java 25 toolchain to verify the Java 8 artifacts execute correctly on Java 25
+	// (e.g. the JDK 24 JAXP entity size limit change). JDK 25 must be available to the Gradle toolchain
+	// (CI passes -Porg.gradle.java.installations.paths=/pw/dev/jdk25).
+	tasks.register('testOn25', Test) {
+		description = 'Runs tests using a Java 25 toolchain to verify compatibility'
+		group = 'verification'
+		useJUnitPlatform()
+		javaLauncher = javaToolchains.launcherFor {
+			languageVersion = JavaLanguageVersion.of(25)
+		}
+		testClassesDirs = sourceSets.test.output.classesDirs
+		classpath = sourceSets.test.runtimeClasspath
+		reports {
+			html.required = true
+			html.outputLocation = layout.buildDirectory.dir("reports/tests/testOn25")
+		}
+		binaryResultsDirectory = layout.buildDirectory.dir("test-results/testOn25")
+		dependsOn testClasses
 	}
 
 	apply plugin: 'com.diffplug.spotless'
