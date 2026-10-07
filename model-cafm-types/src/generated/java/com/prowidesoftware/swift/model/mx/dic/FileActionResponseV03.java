@@ -1,18 +1,17 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
-import java.time.OffsetDateTime;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -90,7 +89,7 @@ public class FileActionResponseV03 {
     @XmlElement(name = "TrnsmssnDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime trnsmssnDtTm;
+    protected XMLGregorianCalendar trnsmssnDtTm;
     @XmlElement(name = "RtrvlRefNb")
     protected String rtrvlRefNb;
     @XmlElement(name = "LifeCyclId")
@@ -105,7 +104,7 @@ public class FileActionResponseV03 {
     @XmlElement(name = "ActnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate actnDt;
+    protected XMLGregorianCalendar actnDt;
     @XmlElement(name = "FileSctyCd")
     protected String fileSctyCd;
     @XmlElement(name = "Crrctn")
@@ -405,7 +404,7 @@ public class FileActionResponseV03 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getTrnsmssnDtTm() {
+    public XMLGregorianCalendar getTrnsmssnDtTm() {
         return trnsmssnDtTm;
     }
 
@@ -417,7 +416,7 @@ public class FileActionResponseV03 {
      *     {@link String }
      *     
      */
-    public FileActionResponseV03 setTrnsmssnDtTm(OffsetDateTime value) {
+    public FileActionResponseV03 setTrnsmssnDtTm(XMLGregorianCalendar value) {
         this.trnsmssnDtTm = value;
         return this;
     }
@@ -555,7 +554,7 @@ public class FileActionResponseV03 {
      *     {@link String }
      *     
      */
-    public LocalDate getActnDt() {
+    public XMLGregorianCalendar getActnDt() {
         return actnDt;
     }
 
@@ -567,7 +566,7 @@ public class FileActionResponseV03 {
      *     {@link String }
      *     
      */
-    public FileActionResponseV03 setActnDt(LocalDate value) {
+    public FileActionResponseV03 setActnDt(XMLGregorianCalendar value) {
         this.actnDt = value;
         return this;
     }

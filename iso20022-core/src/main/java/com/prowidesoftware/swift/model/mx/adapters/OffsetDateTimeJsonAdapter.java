@@ -26,12 +26,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Gson {@link JsonSerializer} and {@link JsonDeserializer} for {@link OffsetDateTime}.
- *
- * <p>Supports two JSON DTO formats: the current {@code OffsetDateTime}-based format and the
- * legacy format derived from {@code XMLGregorianCalendar} (used in library versions prior to
- * the Java 11 migration). During deserialization the current format is attempted first; if it
- * fails the legacy format is tried as a fallback.
+ * This adapter enables accepting OffsetDateTime time Json format.
+ * <p> The adapter supports two DTO formats: the current one and the
+ * legacy one based on XMLGregorianCalendar model with Java 1.8.
+ * </p>
  *
  * @since 10.0.1
  */
@@ -40,15 +38,6 @@ public class OffsetDateTimeJsonAdapter implements JsonSerializer<OffsetDateTime>
 
     private final Gson gson = new Gson();
 
-    /**
-     * Serializes an {@link OffsetDateTime} into a JSON object containing nested date, time, and
-     * offset fields.
-     *
-     * @param offsetDateTime           the date-time to serialize
-     * @param type                     the type of the source object
-     * @param jsonSerializationContext the serialization context
-     * @return a JSON object representing the date-time
-     */
     @Override
     public JsonElement serialize(
             OffsetDateTime offsetDateTime, Type type, JsonSerializationContext jsonSerializationContext) {
@@ -69,16 +58,6 @@ public class OffsetDateTimeJsonAdapter implements JsonSerializer<OffsetDateTime>
         return gson.toJsonTree(dateTimeOffsetDTO, DateTimeOffsetDTO.class);
     }
 
-    /**
-     * Deserializes a JSON element into an {@link OffsetDateTime}. Attempts the current DTO format
-     * first and falls back to the legacy {@code XMLGregorianCalendar} DTO format if the first
-     * attempt fails.
-     *
-     * @param jsonElement                the JSON element to deserialize
-     * @param type                       the type of the desired object
-     * @param jsonDeserializationContext the deserialization context
-     * @return the deserialized {@link OffsetDateTime}, or {@code null} if parsing fails
-     */
     @Override
     public OffsetDateTime deserialize(
             JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) {

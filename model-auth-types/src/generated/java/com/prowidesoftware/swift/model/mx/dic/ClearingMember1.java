@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -48,11 +48,11 @@ public class ClearingMember1 {
     @XmlElement(name = "MmbshVldFr", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate mmbshVldFr;
+    protected XMLGregorianCalendar mmbshVldFr;
     @XmlElement(name = "MmbshVldTo", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate mmbshVldTo;
+    protected XMLGregorianCalendar mmbshVldTo;
     @XmlElement(name = "SpnsrgClrMmbId")
     protected PartyIdentification118Choice spnsrgClrMmbId;
     @XmlElement(name = "ClrAcctOwnr", required = true)
@@ -158,7 +158,7 @@ public class ClearingMember1 {
      *     {@link String }
      *     
      */
-    public LocalDate getMmbshVldFr() {
+    public XMLGregorianCalendar getMmbshVldFr() {
         return mmbshVldFr;
     }
 
@@ -170,7 +170,7 @@ public class ClearingMember1 {
      *     {@link String }
      *     
      */
-    public ClearingMember1 setMmbshVldFr(LocalDate value) {
+    public ClearingMember1 setMmbshVldFr(XMLGregorianCalendar value) {
         this.mmbshVldFr = value;
         return this;
     }
@@ -183,7 +183,7 @@ public class ClearingMember1 {
      *     {@link String }
      *     
      */
-    public LocalDate getMmbshVldTo() {
+    public XMLGregorianCalendar getMmbshVldTo() {
         return mmbshVldTo;
     }
 
@@ -195,7 +195,7 @@ public class ClearingMember1 {
      *     {@link String }
      *     
      */
-    public ClearingMember1 setMmbshVldTo(LocalDate value) {
+    public ClearingMember1 setMmbshVldTo(XMLGregorianCalendar value) {
         this.mmbshVldTo = value;
         return this;
     }

@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -53,7 +53,7 @@ public class DriverInParty3 {
     @XmlElement(name = "DtOfBirth", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate dtOfBirth;
+    protected XMLGregorianCalendar dtOfBirth;
     @XmlElement(name = "Age")
     protected String age;
     @XmlElement(name = "DrvrCrdntl")
@@ -71,11 +71,11 @@ public class DriverInParty3 {
     @XmlElement(name = "LicIssncDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate licIssncDt;
+    protected XMLGregorianCalendar licIssncDt;
     @XmlElement(name = "LicXprtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate licXprtnDt;
+    protected XMLGregorianCalendar licXprtnDt;
     @XmlElement(name = "LicCtry")
     protected String licCtry;
     @XmlElement(name = "LicCtrySubDvsnMjr")
@@ -168,7 +168,7 @@ public class DriverInParty3 {
      *     {@link String }
      *     
      */
-    public LocalDate getDtOfBirth() {
+    public XMLGregorianCalendar getDtOfBirth() {
         return dtOfBirth;
     }
 
@@ -180,7 +180,7 @@ public class DriverInParty3 {
      *     {@link String }
      *     
      */
-    public DriverInParty3 setDtOfBirth(LocalDate value) {
+    public DriverInParty3 setDtOfBirth(XMLGregorianCalendar value) {
         this.dtOfBirth = value;
         return this;
     }
@@ -349,7 +349,7 @@ public class DriverInParty3 {
      *     {@link String }
      *     
      */
-    public LocalDate getLicIssncDt() {
+    public XMLGregorianCalendar getLicIssncDt() {
         return licIssncDt;
     }
 
@@ -361,7 +361,7 @@ public class DriverInParty3 {
      *     {@link String }
      *     
      */
-    public DriverInParty3 setLicIssncDt(LocalDate value) {
+    public DriverInParty3 setLicIssncDt(XMLGregorianCalendar value) {
         this.licIssncDt = value;
         return this;
     }
@@ -374,7 +374,7 @@ public class DriverInParty3 {
      *     {@link String }
      *     
      */
-    public LocalDate getLicXprtnDt() {
+    public XMLGregorianCalendar getLicXprtnDt() {
         return licXprtnDt;
     }
 
@@ -386,7 +386,7 @@ public class DriverInParty3 {
      *     {@link String }
      *     
      */
-    public DriverInParty3 setLicXprtnDt(LocalDate value) {
+    public DriverInParty3 setLicXprtnDt(XMLGregorianCalendar value) {
         this.licXprtnDt = value;
         return this;
     }

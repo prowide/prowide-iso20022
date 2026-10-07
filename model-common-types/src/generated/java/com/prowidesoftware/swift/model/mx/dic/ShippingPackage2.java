@@ -1,19 +1,18 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.OffsetTime;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -47,11 +46,11 @@ public class ShippingPackage2 {
     @XmlElement(name = "PckpDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate pckpDt;
+    protected XMLGregorianCalendar pckpDt;
     @XmlElement(name = "PckpTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected OffsetTime pckpTm;
+    protected XMLGregorianCalendar pckpTm;
     @XmlElement(name = "Dlvry")
     protected DeliveryInformation4 dlvry;
     @XmlElement(name = "Wght")
@@ -121,7 +120,7 @@ public class ShippingPackage2 {
      *     {@link String }
      *     
      */
-    public LocalDate getPckpDt() {
+    public XMLGregorianCalendar getPckpDt() {
         return pckpDt;
     }
 
@@ -133,7 +132,7 @@ public class ShippingPackage2 {
      *     {@link String }
      *     
      */
-    public ShippingPackage2 setPckpDt(LocalDate value) {
+    public ShippingPackage2 setPckpDt(XMLGregorianCalendar value) {
         this.pckpDt = value;
         return this;
     }
@@ -146,7 +145,7 @@ public class ShippingPackage2 {
      *     {@link String }
      *     
      */
-    public OffsetTime getPckpTm() {
+    public XMLGregorianCalendar getPckpTm() {
         return pckpTm;
     }
 
@@ -158,7 +157,7 @@ public class ShippingPackage2 {
      *     {@link String }
      *     
      */
-    public ShippingPackage2 setPckpTm(OffsetTime value) {
+    public ShippingPackage2 setPckpTm(XMLGregorianCalendar value) {
         this.pckpTm = value;
         return this;
     }

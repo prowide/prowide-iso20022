@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.OffsetDateTime;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -60,7 +60,7 @@ public class PaymentTransactionInformation1 {
     @XmlElement(name = "AccptncDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime accptncDtTm;
+    protected XMLGregorianCalendar accptncDtTm;
     @XmlElement(name = "InstgAgt")
     protected BranchAndFinancialInstitutionIdentification3 instgAgt;
     @XmlElement(name = "InstdAgt")
@@ -288,7 +288,7 @@ public class PaymentTransactionInformation1 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getAccptncDtTm() {
+    public XMLGregorianCalendar getAccptncDtTm() {
         return accptncDtTm;
     }
 
@@ -300,7 +300,7 @@ public class PaymentTransactionInformation1 {
      *     {@link String }
      *     
      */
-    public PaymentTransactionInformation1 setAccptncDtTm(OffsetDateTime value) {
+    public PaymentTransactionInformation1 setAccptncDtTm(XMLGregorianCalendar value) {
         this.accptncDtTm = value;
         return this;
     }

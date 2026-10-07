@@ -1,14 +1,13 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.Year;
-import com.prowidesoftware.swift.model.mx.adapters.IsoYearAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -42,10 +41,9 @@ public class PartyIdentification275 {
     protected PartyIdentification198Choice id;
     @XmlElement(name = "CtryOfIncorprtn")
     protected String ctryOfIncorprtn;
-    @XmlElement(name = "YrOfIncorprtn", type = String.class)
-    @XmlJavaTypeAdapter(IsoYearAdapter.class)
+    @XmlElement(name = "YrOfIncorprtn")
     @XmlSchemaType(name = "gYear")
-    protected Year yrOfIncorprtn;
+    protected XMLGregorianCalendar yrOfIncorprtn;
     @XmlElement(name = "ActvtyInd")
     protected ActivityIndicator1Choice actvtyInd;
     @XmlElement(name = "InvstrTp")
@@ -161,7 +159,7 @@ public class PartyIdentification275 {
      *     {@link String }
      *     
      */
-    public Year getYrOfIncorprtn() {
+    public XMLGregorianCalendar getYrOfIncorprtn() {
         return yrOfIncorprtn;
     }
 
@@ -173,7 +171,7 @@ public class PartyIdentification275 {
      *     {@link String }
      *     
      */
-    public PartyIdentification275 setYrOfIncorprtn(Year value) {
+    public PartyIdentification275 setYrOfIncorprtn(XMLGregorianCalendar value) {
         this.yrOfIncorprtn = value;
         return this;
     }

@@ -1,17 +1,17 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -68,7 +68,7 @@ public class PaymentTransaction50 {
     @XmlElement(name = "IntrBkSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate intrBkSttlmDt;
+    protected XMLGregorianCalendar intrBkSttlmDt;
     @XmlElement(name = "SttlmPrty")
     @XmlSchemaType(name = "string")
     protected Priority3Code sttlmPrty;
@@ -302,7 +302,7 @@ public class PaymentTransaction50 {
      *     {@link String }
      *     
      */
-    public LocalDate getIntrBkSttlmDt() {
+    public XMLGregorianCalendar getIntrBkSttlmDt() {
         return intrBkSttlmDt;
     }
 
@@ -314,7 +314,7 @@ public class PaymentTransaction50 {
      *     {@link String }
      *     
      */
-    public PaymentTransaction50 setIntrBkSttlmDt(LocalDate value) {
+    public PaymentTransaction50 setIntrBkSttlmDt(XMLGregorianCalendar value) {
         this.intrBkSttlmDt = value;
         return this;
     }

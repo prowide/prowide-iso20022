@@ -1,17 +1,17 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigDecimal;
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -109,11 +109,11 @@ public class LineItem10 {
     @XmlElement(name = "MeasrDtTmStart", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime measrDtTmStart;
+    protected XMLGregorianCalendar measrDtTmStart;
     @XmlElement(name = "MeasrDtTmEnd", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime measrDtTmEnd;
+    protected XMLGregorianCalendar measrDtTmEnd;
     @XmlElement(name = "ShipTo")
     protected TradeParty1 shipTo;
     @XmlElement(name = "Incotrms")
@@ -121,7 +121,7 @@ public class LineItem10 {
     @XmlElement(name = "DlvryDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime dlvryDtTm;
+    protected XMLGregorianCalendar dlvryDtTm;
     @XmlElement(name = "DlvryNoteId")
     protected DocumentIdentification22 dlvryNoteId;
     @XmlElement(name = "MntrySummtn")
@@ -766,7 +766,7 @@ public class LineItem10 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getMeasrDtTmStart() {
+    public XMLGregorianCalendar getMeasrDtTmStart() {
         return measrDtTmStart;
     }
 
@@ -778,7 +778,7 @@ public class LineItem10 {
      *     {@link String }
      *     
      */
-    public LineItem10 setMeasrDtTmStart(OffsetDateTime value) {
+    public LineItem10 setMeasrDtTmStart(XMLGregorianCalendar value) {
         this.measrDtTmStart = value;
         return this;
     }
@@ -791,7 +791,7 @@ public class LineItem10 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getMeasrDtTmEnd() {
+    public XMLGregorianCalendar getMeasrDtTmEnd() {
         return measrDtTmEnd;
     }
 
@@ -803,7 +803,7 @@ public class LineItem10 {
      *     {@link String }
      *     
      */
-    public LineItem10 setMeasrDtTmEnd(OffsetDateTime value) {
+    public LineItem10 setMeasrDtTmEnd(XMLGregorianCalendar value) {
         this.measrDtTmEnd = value;
         return this;
     }
@@ -866,7 +866,7 @@ public class LineItem10 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getDlvryDtTm() {
+    public XMLGregorianCalendar getDlvryDtTm() {
         return dlvryDtTm;
     }
 
@@ -878,7 +878,7 @@ public class LineItem10 {
      *     {@link String }
      *     
      */
-    public LineItem10 setDlvryDtTm(OffsetDateTime value) {
+    public LineItem10 setDlvryDtTm(XMLGregorianCalendar value) {
         this.dlvryDtTm = value;
         return this;
     }

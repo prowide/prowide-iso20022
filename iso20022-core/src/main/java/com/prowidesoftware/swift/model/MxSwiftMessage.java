@@ -20,13 +20,13 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.prowidesoftware.swift.model.mx.*;
-import jakarta.persistence.*;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Calendar;
 import java.util.Objects;
 import java.util.Optional;
+import javax.persistence.*;
 import org.apache.commons.lang3.StringUtils;
 
 /**
@@ -83,8 +83,6 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
 
     /**
      * Calls {@link #MxSwiftMessage(String, MessageMetadataStrategy)} with the {@link DefaultMxMetadataStrategy}
-     *
-     * @param xml the plain ISO 20022 XML content
      */
     public MxSwiftMessage(final String xml) {
         this(xml, new DefaultMxMetadataStrategy());
@@ -109,8 +107,6 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
     /**
      * Calls {@link #MxSwiftMessage(InputStream, MessageMetadataStrategy)} with the {@link DefaultMxMetadataStrategy}
      *
-     * @param stream a stream containing the XML message
-     * @throws IOException if an error occurs reading the stream
      * @since 7.7
      */
     public MxSwiftMessage(final InputStream stream) throws IOException {
@@ -122,7 +118,6 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
      *
      * @param stream           a stream containing the XML message
      * @param metadataStrategy a strategy for metadata extraction
-     * @throws IOException if an error occurs reading the stream
      * @since 9.1.6
      */
     public MxSwiftMessage(final InputStream stream, final MessageMetadataStrategy metadataStrategy) throws IOException {
@@ -132,8 +127,6 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
     /**
      * Calls {@link #MxSwiftMessage(File, MessageMetadataStrategy)} with the {@link DefaultMxMetadataStrategy}
      *
-     * @param file an existing file containing the XML
-     * @throws IOException if an error occurs reading the file
      * @since 7.7
      */
     public MxSwiftMessage(final File file) throws IOException {
@@ -145,7 +138,6 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
      *
      * @param file             an existing file containing the XML
      * @param metadataStrategy a strategy for metadata extraction
-     * @throws IOException if an error occurs reading the file
      * @since 9.1.6
      */
     public MxSwiftMessage(final File file, final MessageMetadataStrategy metadataStrategy) throws IOException {
@@ -185,11 +177,9 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
     }
 
     /**
-     * Creates a new message reading the content from a string.
+     * Creates a new message reading the message the content from a string.
      * This is a static version of the constructor {@link #MxSwiftMessage(String)}
      *
-     * @param xml the plain ISO 20022 XML content
-     * @return new instance populated from the XML
      * @since 7.7
      */
     public static MxSwiftMessage parse(final String xml) {
@@ -197,12 +187,9 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
     }
 
     /**
-     * Creates a new message reading the content from an input stream.
+     * Creates a new message reading the message the content from an input stream.
      * This is a static version of the constructor {@link #MxSwiftMessage(InputStream)}
      *
-     * @param stream a stream containing the XML message
-     * @return new instance populated from the stream content
-     * @throws IOException if an error occurs reading the stream
      * @since 7.7
      */
     public static MxSwiftMessage parse(final InputStream stream) throws IOException {
@@ -210,12 +197,9 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
     }
 
     /**
-     * Creates a new message reading the content from a file.
+     * Creates a new message reading the message the content from a file.
      * This is a static version of the constructor {@link #MxSwiftMessage(File)}
      *
-     * @param file an existing file containing the XML
-     * @return new instance populated from the file content
-     * @throws IOException if an error occurs reading the file
      * @since 7.7
      */
     public static MxSwiftMessage parse(final File file) throws IOException {
@@ -223,13 +207,16 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
     }
 
     /**
-     * Deserializes the JSON data into an MxSwiftMessage object.
+     * This method deserializes the JSON data into an MX message object.
      *
      * <p>The deserializer is backward compatible with JSON produced by previous library versions:
      * payloads without a top-level {@code schemaVersion} marker are interpreted as the legacy
      * format (Java {@link Calendar} months stored 0-based, January=0). Payloads carrying
      * {@code schemaVersion >= }{@value #ONE_BASED_MONTH_MIN_VERSION} are interpreted with the
-     * new 1-based month format produced by the current {@code toJson()}.
+     * new 1-based month format. Note: this branch's {@code toJson()} does not yet emit that marker
+     * or the 1-based format itself, since it relies on the base {@code AbstractSwiftMessage}
+     * serialization from pw-swift-core; this reader-side support is forward compatible with JSON
+     * produced by other Prowide components already on the newer format.
      *
      * @param json the JSON representation of the message
      * @return deserialized message object
@@ -246,10 +233,9 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
     }
 
     /**
-     * Minimum {@code schemaVersion} that indicates the 1-based month Calendar format introduced
-     * in 10.3.13. Kept as a literal (independent of {@link AbstractSwiftMessage#JSON_SCHEMA_VERSION})
-     * so that future schema bumps for unrelated reasons do not silently misclassify v4 payloads
-     * as legacy on read.
+     * Minimum {@code schemaVersion} that indicates the 1-based month Calendar format. Kept as a
+     * literal so that future schema bumps for unrelated reasons do not silently misclassify v4
+     * payloads as legacy on read.
      */
     private static final int ONE_BASED_MONTH_MIN_VERSION = 4;
 
@@ -356,8 +342,8 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
             this.version = identifier.getVersion();
         }
 
-        applyStrategy(lenientXml, metadataStrategy);
         extractUetr(parsedMessage);
+        applyStrategy(lenientXml, metadataStrategy);
     }
 
     /**
@@ -453,7 +439,6 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
     /**
      * Calls {@link #updateFromXML(String, MxId, MessageMetadataStrategy)} with {@link DefaultMxMetadataStrategy}
      *
-     * @param xml the XML content of an MX message
      * @since 7.8.4
      */
     public void updateFromXML(final String xml) {
@@ -463,8 +448,6 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
     /**
      * Calls {@link #updateFromXML(String, MxId, MessageMetadataStrategy)} with {@link DefaultMxMetadataStrategy}
      *
-     * @param xml the XML content of an MX message
-     * @param id  the specific MX type identification or null if unknown
      * @since 7.8.4
      */
     public void updateFromXML(final String xml, final MxId id) {
@@ -617,7 +600,6 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
      * Enables injecting your own implementation for the entity metadata extraction, to set the generic properties
      * shared by all message types: main reference, main amount and currency, value date, trade date.
      *
-     * @param strategy the strategy implementation to use for metadata extraction
      * @since 9.1.6
      */
     public void updateMetadata(MessageMetadataStrategy strategy) {

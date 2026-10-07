@@ -19,7 +19,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import com.prowidesoftware.swift.utils.Lib;
 import java.io.IOException;
-import java.time.temporal.ChronoField;
 import java.util.Optional;
 import org.junit.jupiter.api.Test;
 
@@ -79,8 +78,8 @@ public class AppHdrParserTest {
 
         assertEquals("SCRRQ01", h.getMsgRef());
         assertNotNull(h.getCrDate());
-        assertEquals(2006, h.getCrDate().get(ChronoField.YEAR));
-        assertEquals(9, h.getCrDate().get(ChronoField.MONTH_OF_YEAR));
+        assertEquals(2006, h.getCrDate().getYear());
+        assertEquals(9, h.getCrDate().getMonth());
     }
 
     @Test
@@ -185,8 +184,8 @@ public class AppHdrParserTest {
         assertEquals("seev.031.002.03", bah.getMsgDefIdr());
         assertEquals("CSD", bah.getBizSvc());
         assertNotNull(bah.getCreDt());
-        assertEquals(2015, bah.getCreDt().get(ChronoField.YEAR));
-        assertEquals(8, bah.getCreDt().get(ChronoField.MONTH_OF_YEAR));
+        assertEquals(2015, bah.getCreDt().getYear());
+        assertEquals(8, bah.getCreDt().getMonth());
     }
 
     @Test

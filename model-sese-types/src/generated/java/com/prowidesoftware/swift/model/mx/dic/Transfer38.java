@@ -1,17 +1,17 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -69,7 +69,7 @@ public class Transfer38 {
     @XmlElement(name = "ReqdSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate reqdSttlmDt;
+    protected XMLGregorianCalendar reqdSttlmDt;
     @XmlElement(name = "FctvTrfDt", required = true)
     protected DateAndDateTime2Choice fctvTrfDt;
     @XmlElement(name = "FctvSttlmDt")
@@ -79,7 +79,7 @@ public class Transfer38 {
     @XmlElement(name = "TrfOrdrDtForm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate trfOrdrDtForm;
+    protected XMLGregorianCalendar trfOrdrDtForm;
     @XmlElement(name = "TrfRsn")
     protected TransferReason1Choice trfRsn;
     @XmlElement(name = "HldgsPlanTp")
@@ -105,11 +105,11 @@ public class Transfer38 {
     @XmlElement(name = "AvrgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate avrgDt;
+    protected XMLGregorianCalendar avrgDt;
     @XmlElement(name = "NewAvrgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate newAvrgDt;
+    protected XMLGregorianCalendar newAvrgDt;
     @XmlElement(name = "TrfCcy")
     protected String trfCcy;
     @XmlElement(name = "OwnAcctTrfInd")
@@ -252,7 +252,7 @@ public class Transfer38 {
      *     {@link String }
      *     
      */
-    public LocalDate getReqdSttlmDt() {
+    public XMLGregorianCalendar getReqdSttlmDt() {
         return reqdSttlmDt;
     }
 
@@ -264,7 +264,7 @@ public class Transfer38 {
      *     {@link String }
      *     
      */
-    public Transfer38 setReqdSttlmDt(LocalDate value) {
+    public Transfer38 setReqdSttlmDt(XMLGregorianCalendar value) {
         this.reqdSttlmDt = value;
         return this;
     }
@@ -352,7 +352,7 @@ public class Transfer38 {
      *     {@link String }
      *     
      */
-    public LocalDate getTrfOrdrDtForm() {
+    public XMLGregorianCalendar getTrfOrdrDtForm() {
         return trfOrdrDtForm;
     }
 
@@ -364,7 +364,7 @@ public class Transfer38 {
      *     {@link String }
      *     
      */
-    public Transfer38 setTrfOrdrDtForm(LocalDate value) {
+    public Transfer38 setTrfOrdrDtForm(XMLGregorianCalendar value) {
         this.trfOrdrDtForm = value;
         return this;
     }
@@ -639,7 +639,7 @@ public class Transfer38 {
      *     {@link String }
      *     
      */
-    public LocalDate getAvrgDt() {
+    public XMLGregorianCalendar getAvrgDt() {
         return avrgDt;
     }
 
@@ -651,7 +651,7 @@ public class Transfer38 {
      *     {@link String }
      *     
      */
-    public Transfer38 setAvrgDt(LocalDate value) {
+    public Transfer38 setAvrgDt(XMLGregorianCalendar value) {
         this.avrgDt = value;
         return this;
     }
@@ -664,7 +664,7 @@ public class Transfer38 {
      *     {@link String }
      *     
      */
-    public LocalDate getNewAvrgDt() {
+    public XMLGregorianCalendar getNewAvrgDt() {
         return newAvrgDt;
     }
 
@@ -676,7 +676,7 @@ public class Transfer38 {
      *     {@link String }
      *     
      */
-    public Transfer38 setNewAvrgDt(LocalDate value) {
+    public Transfer38 setNewAvrgDt(XMLGregorianCalendar value) {
         this.newAvrgDt = value;
         return this;
     }

@@ -1,19 +1,18 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.OffsetTime;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -46,11 +45,11 @@ public class LodgingLineItem4 {
     @XmlElement(name = "Dt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate dt;
+    protected XMLGregorianCalendar dt;
     @XmlElement(name = "Tm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected OffsetTime tm;
+    protected XMLGregorianCalendar tm;
     @XmlElement(name = "Tp")
     @XmlSchemaType(name = "string")
     protected LodgingService1Code tp;
@@ -82,7 +81,7 @@ public class LodgingLineItem4 {
      *     {@link String }
      *     
      */
-    public LocalDate getDt() {
+    public XMLGregorianCalendar getDt() {
         return dt;
     }
 
@@ -94,7 +93,7 @@ public class LodgingLineItem4 {
      *     {@link String }
      *     
      */
-    public LodgingLineItem4 setDt(LocalDate value) {
+    public LodgingLineItem4 setDt(XMLGregorianCalendar value) {
         this.dt = value;
         return this;
     }
@@ -107,7 +106,7 @@ public class LodgingLineItem4 {
      *     {@link String }
      *     
      */
-    public OffsetTime getTm() {
+    public XMLGregorianCalendar getTm() {
         return tm;
     }
 
@@ -119,7 +118,7 @@ public class LodgingLineItem4 {
      *     {@link String }
      *     
      */
-    public LodgingLineItem4 setTm(OffsetTime value) {
+    public LodgingLineItem4 setTm(XMLGregorianCalendar value) {
         this.tm = value;
         return this;
     }

@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -45,7 +45,7 @@ public class SupportingDocumentRequestOrLetter1 {
     @XmlElement(name = "Dt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate dt;
+    protected XMLGregorianCalendar dt;
     @XmlElement(name = "Sndr")
     protected Party28Choice sndr;
     @XmlElement(name = "Rcvr")
@@ -64,7 +64,7 @@ public class SupportingDocumentRequestOrLetter1 {
     @XmlElement(name = "DueDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate dueDt;
+    protected XMLGregorianCalendar dueDt;
     @XmlElement(name = "Attchmnt")
     protected List<DocumentGeneralInformation3> attchmnt;
     @XmlElement(name = "SplmtryData")
@@ -103,7 +103,7 @@ public class SupportingDocumentRequestOrLetter1 {
      *     {@link String }
      *     
      */
-    public LocalDate getDt() {
+    public XMLGregorianCalendar getDt() {
         return dt;
     }
 
@@ -115,7 +115,7 @@ public class SupportingDocumentRequestOrLetter1 {
      *     {@link String }
      *     
      */
-    public SupportingDocumentRequestOrLetter1 setDt(LocalDate value) {
+    public SupportingDocumentRequestOrLetter1 setDt(XMLGregorianCalendar value) {
         this.dt = value;
         return this;
     }
@@ -301,7 +301,7 @@ public class SupportingDocumentRequestOrLetter1 {
      *     {@link String }
      *     
      */
-    public LocalDate getDueDt() {
+    public XMLGregorianCalendar getDueDt() {
         return dueDt;
     }
 
@@ -313,7 +313,7 @@ public class SupportingDocumentRequestOrLetter1 {
      *     {@link String }
      *     
      */
-    public SupportingDocumentRequestOrLetter1 setDueDt(LocalDate value) {
+    public SupportingDocumentRequestOrLetter1 setDueDt(XMLGregorianCalendar value) {
         this.dueDt = value;
         return this;
     }

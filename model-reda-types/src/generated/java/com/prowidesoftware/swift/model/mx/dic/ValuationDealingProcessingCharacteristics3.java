@@ -1,17 +1,17 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigDecimal;
-import java.time.OffsetTime;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -46,7 +46,7 @@ public class ValuationDealingProcessingCharacteristics3 {
     @XmlElement(name = "ValtnTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected OffsetTime valtnTm;
+    protected XMLGregorianCalendar valtnTm;
     @XmlElement(name = "DcmlstnUnits")
     protected BigDecimal dcmlstnUnits;
     @XmlElement(name = "DcmlstnPric")
@@ -119,7 +119,7 @@ public class ValuationDealingProcessingCharacteristics3 {
      *     {@link String }
      *     
      */
-    public OffsetTime getValtnTm() {
+    public XMLGregorianCalendar getValtnTm() {
         return valtnTm;
     }
 
@@ -131,7 +131,7 @@ public class ValuationDealingProcessingCharacteristics3 {
      *     {@link String }
      *     
      */
-    public ValuationDealingProcessingCharacteristics3 setValtnTm(OffsetTime value) {
+    public ValuationDealingProcessingCharacteristics3 setValtnTm(XMLGregorianCalendar value) {
         this.valtnTm = value;
         return this;
     }

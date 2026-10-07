@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.OffsetDateTime;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -42,7 +42,7 @@ public class LoginRequest1 {
     @XmlElement(name = "LgnDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime lgnDtTm;
+    protected XMLGregorianCalendar lgnDtTm;
     @XmlElement(name = "SaleSftwr", required = true)
     protected List<PointOfInteractionComponent9> saleSftwr;
     @XmlElement(name = "SaleTermnlData")
@@ -74,7 +74,7 @@ public class LoginRequest1 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getLgnDtTm() {
+    public XMLGregorianCalendar getLgnDtTm() {
         return lgnDtTm;
     }
 
@@ -86,7 +86,7 @@ public class LoginRequest1 {
      *     {@link String }
      *     
      */
-    public LoginRequest1 setLgnDtTm(OffsetDateTime value) {
+    public LoginRequest1 setLgnDtTm(XMLGregorianCalendar value) {
         this.lgnDtTm = value;
         return this;
     }

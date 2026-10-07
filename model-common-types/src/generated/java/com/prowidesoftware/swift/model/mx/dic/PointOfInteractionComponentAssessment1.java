@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.OffsetDateTime;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -41,11 +41,11 @@ public class PointOfInteractionComponentAssessment1 {
     @XmlElement(name = "DlvryDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime dlvryDt;
+    protected XMLGregorianCalendar dlvryDt;
     @XmlElement(name = "XprtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime xprtnDt;
+    protected XMLGregorianCalendar xprtnDt;
     @XmlElement(name = "Nb", required = true)
     protected String nb;
 
@@ -113,7 +113,7 @@ public class PointOfInteractionComponentAssessment1 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getDlvryDt() {
+    public XMLGregorianCalendar getDlvryDt() {
         return dlvryDt;
     }
 
@@ -125,7 +125,7 @@ public class PointOfInteractionComponentAssessment1 {
      *     {@link String }
      *     
      */
-    public PointOfInteractionComponentAssessment1 setDlvryDt(OffsetDateTime value) {
+    public PointOfInteractionComponentAssessment1 setDlvryDt(XMLGregorianCalendar value) {
         this.dlvryDt = value;
         return this;
     }
@@ -138,7 +138,7 @@ public class PointOfInteractionComponentAssessment1 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getXprtnDt() {
+    public XMLGregorianCalendar getXprtnDt() {
         return xprtnDt;
     }
 
@@ -150,7 +150,7 @@ public class PointOfInteractionComponentAssessment1 {
      *     {@link String }
      *     
      */
-    public PointOfInteractionComponentAssessment1 setXprtnDt(OffsetDateTime value) {
+    public PointOfInteractionComponentAssessment1 setXprtnDt(XMLGregorianCalendar value) {
         this.xprtnDt = value;
         return this;
     }

@@ -1,17 +1,17 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigDecimal;
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -42,7 +42,7 @@ public class RentalDetails1 {
     @XmlElement(name = "RntlDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime rntlDtTm;
+    protected XMLGregorianCalendar rntlDtTm;
     @XmlElement(name = "RntlStart")
     protected ServiceStartEnd1 rntlStart;
     @XmlElement(name = "RntlRtr")
@@ -90,7 +90,7 @@ public class RentalDetails1 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getRntlDtTm() {
+    public XMLGregorianCalendar getRntlDtTm() {
         return rntlDtTm;
     }
 
@@ -102,7 +102,7 @@ public class RentalDetails1 {
      *     {@link String }
      *     
      */
-    public RentalDetails1 setRntlDtTm(OffsetDateTime value) {
+    public RentalDetails1 setRntlDtTm(XMLGregorianCalendar value) {
         this.rntlDtTm = value;
         return this;
     }

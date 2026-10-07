@@ -16,7 +16,6 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.swift.model.mx.adapters.ElementJsonAdapter;
-import jakarta.xml.bind.annotation.XmlAnyElement;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
@@ -30,6 +29,7 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.xml.bind.annotation.XmlAnyElement;
 import org.w3c.dom.Element;
 
 /**

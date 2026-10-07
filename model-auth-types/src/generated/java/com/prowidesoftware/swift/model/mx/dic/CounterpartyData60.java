@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.OffsetDateTime;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -34,7 +34,7 @@ public class CounterpartyData60 {
     @XmlElement(name = "RptgDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime rptgDtTm;
+    protected XMLGregorianCalendar rptgDtTm;
     @XmlElement(name = "RptSubmitgNtty", required = true)
     protected OrganisationIdentification9Choice rptSubmitgNtty;
     @XmlElement(name = "CtrPtyData", required = true)
@@ -48,7 +48,7 @@ public class CounterpartyData60 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getRptgDtTm() {
+    public XMLGregorianCalendar getRptgDtTm() {
         return rptgDtTm;
     }
 
@@ -60,7 +60,7 @@ public class CounterpartyData60 {
      *     {@link String }
      *     
      */
-    public CounterpartyData60 setRptgDtTm(OffsetDateTime value) {
+    public CounterpartyData60 setRptgDtTm(XMLGregorianCalendar value) {
         this.rptgDtTm = value;
         return this;
     }

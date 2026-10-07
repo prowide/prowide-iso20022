@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -66,7 +66,7 @@ public class TaxEfficientProduct7 {
     @XmlElement(name = "DtOfFrstSbcpt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate dtOfFrstSbcpt;
+    protected XMLGregorianCalendar dtOfFrstSbcpt;
     @XmlElement(name = "CurYrSbcptDtls")
     protected SubscriptionInformation2 curYrSbcptDtls;
     @XmlElement(name = "BnsOrWdrwl")
@@ -82,7 +82,7 @@ public class TaxEfficientProduct7 {
     @XmlElement(name = "DtFrstQlfygAddtn", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate dtFrstQlfygAddtn;
+    protected XMLGregorianCalendar dtFrstQlfygAddtn;
     @XmlElement(name = "InvstrTaxRef")
     protected TaxReference2 invstrTaxRef;
     @XmlElement(name = "InvstmtsToFllwVal")
@@ -260,7 +260,7 @@ public class TaxEfficientProduct7 {
      *     {@link String }
      *     
      */
-    public LocalDate getDtOfFrstSbcpt() {
+    public XMLGregorianCalendar getDtOfFrstSbcpt() {
         return dtOfFrstSbcpt;
     }
 
@@ -272,7 +272,7 @@ public class TaxEfficientProduct7 {
      *     {@link String }
      *     
      */
-    public TaxEfficientProduct7 setDtOfFrstSbcpt(LocalDate value) {
+    public TaxEfficientProduct7 setDtOfFrstSbcpt(XMLGregorianCalendar value) {
         this.dtOfFrstSbcpt = value;
         return this;
     }
@@ -447,7 +447,7 @@ public class TaxEfficientProduct7 {
      *     {@link String }
      *     
      */
-    public LocalDate getDtFrstQlfygAddtn() {
+    public XMLGregorianCalendar getDtFrstQlfygAddtn() {
         return dtFrstQlfygAddtn;
     }
 
@@ -459,7 +459,7 @@ public class TaxEfficientProduct7 {
      *     {@link String }
      *     
      */
-    public TaxEfficientProduct7 setDtFrstQlfygAddtn(LocalDate value) {
+    public TaxEfficientProduct7 setDtFrstQlfygAddtn(XMLGregorianCalendar value) {
         this.dtFrstQlfygAddtn = value;
         return this;
     }

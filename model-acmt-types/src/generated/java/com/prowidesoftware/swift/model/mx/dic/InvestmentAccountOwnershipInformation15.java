@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -85,7 +85,7 @@ public class InvestmentAccountOwnershipInformation15 {
     @XmlElement(name = "FATCARptgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate fatcaRptgDt;
+    protected XMLGregorianCalendar fatcaRptgDt;
     @XmlElement(name = "CRSFormTp")
     protected List<CRSForm1Choice> crsFormTp;
     @XmlElement(name = "CRSSts")
@@ -93,7 +93,7 @@ public class InvestmentAccountOwnershipInformation15 {
     @XmlElement(name = "CRSRptgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate crsRptgDt;
+    protected XMLGregorianCalendar crsRptgDt;
     @XmlElement(name = "OthrId")
     protected List<GenericIdentification82> othrId;
     @XmlElement(name = "TaxXmptn")
@@ -436,7 +436,7 @@ public class InvestmentAccountOwnershipInformation15 {
      *     {@link String }
      *     
      */
-    public LocalDate getFATCARptgDt() {
+    public XMLGregorianCalendar getFATCARptgDt() {
         return fatcaRptgDt;
     }
 
@@ -448,7 +448,7 @@ public class InvestmentAccountOwnershipInformation15 {
      *     {@link String }
      *     
      */
-    public InvestmentAccountOwnershipInformation15 setFATCARptgDt(LocalDate value) {
+    public InvestmentAccountOwnershipInformation15 setFATCARptgDt(XMLGregorianCalendar value) {
         this.fatcaRptgDt = value;
         return this;
     }
@@ -523,7 +523,7 @@ public class InvestmentAccountOwnershipInformation15 {
      *     {@link String }
      *     
      */
-    public LocalDate getCRSRptgDt() {
+    public XMLGregorianCalendar getCRSRptgDt() {
         return crsRptgDt;
     }
 
@@ -535,7 +535,7 @@ public class InvestmentAccountOwnershipInformation15 {
      *     {@link String }
      *     
      */
-    public InvestmentAccountOwnershipInformation15 setCRSRptgDt(LocalDate value) {
+    public InvestmentAccountOwnershipInformation15 setCRSRptgDt(XMLGregorianCalendar value) {
         this.crsRptgDt = value;
         return this;
     }

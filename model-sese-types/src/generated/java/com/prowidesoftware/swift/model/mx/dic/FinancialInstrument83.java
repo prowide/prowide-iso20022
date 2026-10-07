@@ -1,17 +1,17 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -105,11 +105,11 @@ public class FinancialInstrument83 {
     @XmlElement(name = "ReqdTradDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate reqdTradDt;
+    protected XMLGregorianCalendar reqdTradDt;
     @XmlElement(name = "ReqdSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate reqdSttlmDt;
+    protected XMLGregorianCalendar reqdSttlmDt;
     @XmlElement(name = "FctvTrfDt")
     protected DateAndDateTime2Choice fctvTrfDt;
     @XmlElement(name = "FctvSttlmDt")
@@ -670,7 +670,7 @@ public class FinancialInstrument83 {
      *     {@link String }
      *     
      */
-    public LocalDate getReqdTradDt() {
+    public XMLGregorianCalendar getReqdTradDt() {
         return reqdTradDt;
     }
 
@@ -682,7 +682,7 @@ public class FinancialInstrument83 {
      *     {@link String }
      *     
      */
-    public FinancialInstrument83 setReqdTradDt(LocalDate value) {
+    public FinancialInstrument83 setReqdTradDt(XMLGregorianCalendar value) {
         this.reqdTradDt = value;
         return this;
     }
@@ -695,7 +695,7 @@ public class FinancialInstrument83 {
      *     {@link String }
      *     
      */
-    public LocalDate getReqdSttlmDt() {
+    public XMLGregorianCalendar getReqdSttlmDt() {
         return reqdSttlmDt;
     }
 
@@ -707,7 +707,7 @@ public class FinancialInstrument83 {
      *     {@link String }
      *     
      */
-    public FinancialInstrument83 setReqdSttlmDt(LocalDate value) {
+    public FinancialInstrument83 setReqdSttlmDt(XMLGregorianCalendar value) {
         this.reqdSttlmDt = value;
         return this;
     }

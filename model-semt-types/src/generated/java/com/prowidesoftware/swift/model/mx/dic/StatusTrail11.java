@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.OffsetDateTime;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -42,7 +42,7 @@ public class StatusTrail11 {
     @XmlElement(name = "StsDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime stsDt;
+    protected XMLGregorianCalendar stsDt;
     @XmlElement(name = "SndgOrgId")
     protected OrganisationIdentification32 sndgOrgId;
     @XmlElement(name = "UsrId")
@@ -72,7 +72,7 @@ public class StatusTrail11 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getStsDt() {
+    public XMLGregorianCalendar getStsDt() {
         return stsDt;
     }
 
@@ -84,7 +84,7 @@ public class StatusTrail11 {
      *     {@link String }
      *     
      */
-    public StatusTrail11 setStsDt(OffsetDateTime value) {
+    public StatusTrail11 setStsDt(XMLGregorianCalendar value) {
         this.stsDt = value;
         return this;
     }

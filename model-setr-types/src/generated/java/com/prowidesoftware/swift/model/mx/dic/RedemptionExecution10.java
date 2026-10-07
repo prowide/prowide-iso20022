@@ -1,17 +1,17 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -72,7 +72,7 @@ public class RedemptionExecution10 {
     @XmlElement(name = "ReqdTradDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate reqdTradDt;
+    protected XMLGregorianCalendar reqdTradDt;
     @XmlElement(name = "HdgFndOrdrTp")
     @XmlSchemaType(name = "string")
     protected List<HedgeFundOrderType2Code> hdgFndOrdrTp;
@@ -103,11 +103,11 @@ public class RedemptionExecution10 {
     @XmlElement(name = "NAVDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate navDt;
+    protected XMLGregorianCalendar navDt;
     @XmlElement(name = "CshSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate cshSttlmDt;
+    protected XMLGregorianCalendar cshSttlmDt;
     @XmlElement(name = "ReqdSttlmCcy")
     protected String reqdSttlmCcy;
     @XmlElement(name = "PmtRef")
@@ -241,7 +241,7 @@ public class RedemptionExecution10 {
      *     {@link String }
      *     
      */
-    public LocalDate getReqdTradDt() {
+    public XMLGregorianCalendar getReqdTradDt() {
         return reqdTradDt;
     }
 
@@ -253,7 +253,7 @@ public class RedemptionExecution10 {
      *     {@link String }
      *     
      */
-    public RedemptionExecution10 setReqdTradDt(LocalDate value) {
+    public RedemptionExecution10 setReqdTradDt(XMLGregorianCalendar value) {
         this.reqdTradDt = value;
         return this;
     }
@@ -609,7 +609,7 @@ public class RedemptionExecution10 {
      *     {@link String }
      *     
      */
-    public LocalDate getNAVDt() {
+    public XMLGregorianCalendar getNAVDt() {
         return navDt;
     }
 
@@ -621,7 +621,7 @@ public class RedemptionExecution10 {
      *     {@link String }
      *     
      */
-    public RedemptionExecution10 setNAVDt(LocalDate value) {
+    public RedemptionExecution10 setNAVDt(XMLGregorianCalendar value) {
         this.navDt = value;
         return this;
     }
@@ -634,7 +634,7 @@ public class RedemptionExecution10 {
      *     {@link String }
      *     
      */
-    public LocalDate getCshSttlmDt() {
+    public XMLGregorianCalendar getCshSttlmDt() {
         return cshSttlmDt;
     }
 
@@ -646,7 +646,7 @@ public class RedemptionExecution10 {
      *     {@link String }
      *     
      */
-    public RedemptionExecution10 setCshSttlmDt(LocalDate value) {
+    public RedemptionExecution10 setCshSttlmDt(XMLGregorianCalendar value) {
         this.cshSttlmDt = value;
         return this;
     }

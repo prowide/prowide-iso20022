@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -58,7 +58,7 @@ public class PortfolioTransfer2 {
     @XmlElement(name = "TaxDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate taxDt;
+    protected XMLGregorianCalendar taxDt;
     @XmlElement(name = "FinInstrmAsstForTrf")
     protected List<FinancialInstrument68> finInstrmAsstForTrf;
     @XmlElement(name = "AddtlInf")
@@ -247,7 +247,7 @@ public class PortfolioTransfer2 {
      *     {@link String }
      *     
      */
-    public LocalDate getTaxDt() {
+    public XMLGregorianCalendar getTaxDt() {
         return taxDt;
     }
 
@@ -259,7 +259,7 @@ public class PortfolioTransfer2 {
      *     {@link String }
      *     
      */
-    public PortfolioTransfer2 setTaxDt(LocalDate value) {
+    public PortfolioTransfer2 setTaxDt(XMLGregorianCalendar value) {
         this.taxDt = value;
         return this;
     }

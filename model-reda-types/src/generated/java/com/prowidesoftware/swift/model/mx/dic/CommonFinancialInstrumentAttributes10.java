@@ -1,19 +1,18 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -114,15 +113,15 @@ public class CommonFinancialInstrumentAttributes10 {
     @XmlElement(name = "ListgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate listgDt;
+    protected XMLGregorianCalendar listgDt;
     @XmlElement(name = "RcrdDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime rcrdDt;
+    protected XMLGregorianCalendar rcrdDt;
     @XmlElement(name = "XpryDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate xpryDt;
+    protected XMLGregorianCalendar xpryDt;
     @XmlElement(name = "Purp")
     protected String purp;
     @XmlElement(name = "ClssfctnTp")
@@ -552,7 +551,7 @@ public class CommonFinancialInstrumentAttributes10 {
      *     {@link String }
      *     
      */
-    public LocalDate getListgDt() {
+    public XMLGregorianCalendar getListgDt() {
         return listgDt;
     }
 
@@ -564,7 +563,7 @@ public class CommonFinancialInstrumentAttributes10 {
      *     {@link String }
      *     
      */
-    public CommonFinancialInstrumentAttributes10 setListgDt(LocalDate value) {
+    public CommonFinancialInstrumentAttributes10 setListgDt(XMLGregorianCalendar value) {
         this.listgDt = value;
         return this;
     }
@@ -577,7 +576,7 @@ public class CommonFinancialInstrumentAttributes10 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getRcrdDt() {
+    public XMLGregorianCalendar getRcrdDt() {
         return rcrdDt;
     }
 
@@ -589,7 +588,7 @@ public class CommonFinancialInstrumentAttributes10 {
      *     {@link String }
      *     
      */
-    public CommonFinancialInstrumentAttributes10 setRcrdDt(OffsetDateTime value) {
+    public CommonFinancialInstrumentAttributes10 setRcrdDt(XMLGregorianCalendar value) {
         this.rcrdDt = value;
         return this;
     }
@@ -602,7 +601,7 @@ public class CommonFinancialInstrumentAttributes10 {
      *     {@link String }
      *     
      */
-    public LocalDate getXpryDt() {
+    public XMLGregorianCalendar getXpryDt() {
         return xpryDt;
     }
 
@@ -614,7 +613,7 @@ public class CommonFinancialInstrumentAttributes10 {
      *     {@link String }
      *     
      */
-    public CommonFinancialInstrumentAttributes10 setXpryDt(LocalDate value) {
+    public CommonFinancialInstrumentAttributes10 setXpryDt(XMLGregorianCalendar value) {
         this.xpryDt = value;
         return this;
     }

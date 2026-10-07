@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -34,15 +34,15 @@ public class FinancingDateDetails1 {
     @XmlElement(name = "BookDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected List<LocalDate> bookDt;
+    protected List<XMLGregorianCalendar> bookDt;
     @XmlElement(name = "CdtDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate cdtDt;
+    protected XMLGregorianCalendar cdtDt;
     @XmlElement(name = "DbtDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate dbtDt;
+    protected XMLGregorianCalendar dbtDt;
 
     /**
      * Gets the value of the bookDt property.
@@ -68,7 +68,7 @@ public class FinancingDateDetails1 {
      * @return
      *     The value of the bookDt property.
      */
-    public List<LocalDate> getBookDt() {
+    public List<XMLGregorianCalendar> getBookDt() {
         if (bookDt == null) {
             bookDt = new ArrayList<>();
         }
@@ -83,7 +83,7 @@ public class FinancingDateDetails1 {
      *     {@link String }
      *     
      */
-    public LocalDate getCdtDt() {
+    public XMLGregorianCalendar getCdtDt() {
         return cdtDt;
     }
 
@@ -95,7 +95,7 @@ public class FinancingDateDetails1 {
      *     {@link String }
      *     
      */
-    public FinancingDateDetails1 setCdtDt(LocalDate value) {
+    public FinancingDateDetails1 setCdtDt(XMLGregorianCalendar value) {
         this.cdtDt = value;
         return this;
     }
@@ -108,7 +108,7 @@ public class FinancingDateDetails1 {
      *     {@link String }
      *     
      */
-    public LocalDate getDbtDt() {
+    public XMLGregorianCalendar getDbtDt() {
         return dbtDt;
     }
 
@@ -120,7 +120,7 @@ public class FinancingDateDetails1 {
      *     {@link String }
      *     
      */
-    public FinancingDateDetails1 setDbtDt(LocalDate value) {
+    public FinancingDateDetails1 setDbtDt(XMLGregorianCalendar value) {
         this.dbtDt = value;
         return this;
     }
@@ -145,7 +145,7 @@ public class FinancingDateDetails1 {
      * @see #getBookDt()
      * 
      */
-    public FinancingDateDetails1 addBookDt(LocalDate bookDt) {
+    public FinancingDateDetails1 addBookDt(XMLGregorianCalendar bookDt) {
         getBookDt().add(bookDt);
         return this;
     }

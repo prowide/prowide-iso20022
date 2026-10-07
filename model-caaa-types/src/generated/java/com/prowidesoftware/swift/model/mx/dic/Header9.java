@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.OffsetDateTime;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -45,7 +45,7 @@ public class Header9 {
     @XmlElement(name = "CreDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime creDtTm;
+    protected XMLGregorianCalendar creDtTm;
     @XmlElement(name = "InitgPty")
     protected GenericIdentification32 initgPty;
     @XmlElement(name = "RcptPty")
@@ -136,7 +136,7 @@ public class Header9 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getCreDtTm() {
+    public XMLGregorianCalendar getCreDtTm() {
         return creDtTm;
     }
 
@@ -148,7 +148,7 @@ public class Header9 {
      *     {@link String }
      *     
      */
-    public Header9 setCreDtTm(OffsetDateTime value) {
+    public Header9 setCreDtTm(XMLGregorianCalendar value) {
         this.creDtTm = value;
         return this;
     }

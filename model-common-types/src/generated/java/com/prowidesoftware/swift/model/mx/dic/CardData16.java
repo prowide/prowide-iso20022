@@ -1,16 +1,15 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.YearMonth;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
-import com.prowidesoftware.swift.model.mx.adapters.IsoYearMonthAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -56,14 +55,12 @@ public class CardData16 {
     protected Boolean prtctdPAN;
     @XmlElement(name = "CardSeqNb")
     protected String cardSeqNb;
-    @XmlElement(name = "FctvDt", type = String.class)
-    @XmlJavaTypeAdapter(IsoYearMonthAdapter.class)
+    @XmlElement(name = "FctvDt")
     @XmlSchemaType(name = "gYearMonth")
-    protected YearMonth fctvDt;
-    @XmlElement(name = "XpryDt", type = String.class)
-    @XmlJavaTypeAdapter(IsoYearMonthAdapter.class)
+    protected XMLGregorianCalendar fctvDt;
+    @XmlElement(name = "XpryDt")
     @XmlSchemaType(name = "gYearMonth")
-    protected YearMonth xpryDt;
+    protected XMLGregorianCalendar xpryDt;
     @XmlElement(name = "SvcCd")
     protected String svcCd;
     @XmlElement(name = "Trck1")
@@ -92,10 +89,9 @@ public class CardData16 {
     protected String sgmt;
     @XmlElement(name = "Schme")
     protected String schme;
-    @XmlElement(name = "IsseDt", type = String.class)
-    @XmlJavaTypeAdapter(IsoYearMonthAdapter.class)
+    @XmlElement(name = "IsseDt")
     @XmlSchemaType(name = "gYearMonth")
-    protected YearMonth isseDt;
+    protected XMLGregorianCalendar isseDt;
     @XmlElement(name = "PrvtData")
     protected List<ATICALaxProcessing> prvtData;
     @XmlElement(name = "NtlData")
@@ -184,7 +180,7 @@ public class CardData16 {
      *     {@link String }
      *     
      */
-    public YearMonth getFctvDt() {
+    public XMLGregorianCalendar getFctvDt() {
         return fctvDt;
     }
 
@@ -196,7 +192,7 @@ public class CardData16 {
      *     {@link String }
      *     
      */
-    public CardData16 setFctvDt(YearMonth value) {
+    public CardData16 setFctvDt(XMLGregorianCalendar value) {
         this.fctvDt = value;
         return this;
     }
@@ -209,7 +205,7 @@ public class CardData16 {
      *     {@link String }
      *     
      */
-    public YearMonth getXpryDt() {
+    public XMLGregorianCalendar getXpryDt() {
         return xpryDt;
     }
 
@@ -221,7 +217,7 @@ public class CardData16 {
      *     {@link String }
      *     
      */
-    public CardData16 setXpryDt(YearMonth value) {
+    public CardData16 setXpryDt(XMLGregorianCalendar value) {
         this.xpryDt = value;
         return this;
     }
@@ -584,7 +580,7 @@ public class CardData16 {
      *     {@link String }
      *     
      */
-    public YearMonth getIsseDt() {
+    public XMLGregorianCalendar getIsseDt() {
         return isseDt;
     }
 
@@ -596,7 +592,7 @@ public class CardData16 {
      *     {@link String }
      *     
      */
-    public CardData16 setIsseDt(YearMonth value) {
+    public CardData16 setIsseDt(XMLGregorianCalendar value) {
         this.isseDt = value;
         return this;
     }

@@ -1,17 +1,17 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -49,11 +49,11 @@ public class TelecomServices4 {
     @XmlElement(name = "BllgStart", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate bllgStart;
+    protected XMLGregorianCalendar bllgStart;
     @XmlElement(name = "BllgEnd", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate bllgEnd;
+    protected XMLGregorianCalendar bllgEnd;
     @XmlElement(name = "BllgEvt")
     protected List<TelecomBillingEventAmount1> bllgEvt;
     @XmlElement(name = "TtlTax")
@@ -150,7 +150,7 @@ public class TelecomServices4 {
      *     {@link String }
      *     
      */
-    public LocalDate getBllgStart() {
+    public XMLGregorianCalendar getBllgStart() {
         return bllgStart;
     }
 
@@ -162,7 +162,7 @@ public class TelecomServices4 {
      *     {@link String }
      *     
      */
-    public TelecomServices4 setBllgStart(LocalDate value) {
+    public TelecomServices4 setBllgStart(XMLGregorianCalendar value) {
         this.bllgStart = value;
         return this;
     }
@@ -175,7 +175,7 @@ public class TelecomServices4 {
      *     {@link String }
      *     
      */
-    public LocalDate getBllgEnd() {
+    public XMLGregorianCalendar getBllgEnd() {
         return bllgEnd;
     }
 
@@ -187,7 +187,7 @@ public class TelecomServices4 {
      *     {@link String }
      *     
      */
-    public TelecomServices4 setBllgEnd(LocalDate value) {
+    public TelecomServices4 setBllgEnd(XMLGregorianCalendar value) {
         this.bllgEnd = value;
         return this;
     }

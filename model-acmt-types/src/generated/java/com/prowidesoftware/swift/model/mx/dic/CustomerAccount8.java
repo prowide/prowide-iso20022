@@ -1,17 +1,17 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -78,13 +78,13 @@ public class CustomerAccount8 {
     @XmlElement(name = "ClsgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate clsgDt;
+    protected XMLGregorianCalendar clsgDt;
     @XmlElement(name = "Rstrctn")
     protected List<Restriction1> rstrctn;
     @XmlElement(name = "OpngDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate opngDt;
+    protected XMLGregorianCalendar opngDt;
 
     /**
      * Gets the value of the id property.
@@ -450,7 +450,7 @@ public class CustomerAccount8 {
      *     {@link String }
      *     
      */
-    public LocalDate getClsgDt() {
+    public XMLGregorianCalendar getClsgDt() {
         return clsgDt;
     }
 
@@ -462,7 +462,7 @@ public class CustomerAccount8 {
      *     {@link String }
      *     
      */
-    public CustomerAccount8 setClsgDt(LocalDate value) {
+    public CustomerAccount8 setClsgDt(XMLGregorianCalendar value) {
         this.clsgDt = value;
         return this;
     }
@@ -506,7 +506,7 @@ public class CustomerAccount8 {
      *     {@link String }
      *     
      */
-    public LocalDate getOpngDt() {
+    public XMLGregorianCalendar getOpngDt() {
         return opngDt;
     }
 
@@ -518,7 +518,7 @@ public class CustomerAccount8 {
      *     {@link String }
      *     
      */
-    public CustomerAccount8 setOpngDt(LocalDate value) {
+    public CustomerAccount8 setOpngDt(XMLGregorianCalendar value) {
         this.opngDt = value;
         return this;
     }

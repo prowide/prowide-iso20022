@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.OffsetDateTime;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -48,7 +48,7 @@ public class Quote3 {
     @XmlElement(name = "VldUntilDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime vldUntilDtTm;
+    protected XMLGregorianCalendar vldUntilDtTm;
     @XmlElement(name = "PrvsClsgPric")
     protected Price1 prvsClsgPric;
     @XmlElement(name = "PricTp")
@@ -133,7 +133,7 @@ public class Quote3 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getVldUntilDtTm() {
+    public XMLGregorianCalendar getVldUntilDtTm() {
         return vldUntilDtTm;
     }
 
@@ -145,7 +145,7 @@ public class Quote3 {
      *     {@link String }
      *     
      */
-    public Quote3 setVldUntilDtTm(OffsetDateTime value) {
+    public Quote3 setVldUntilDtTm(XMLGregorianCalendar value) {
         this.vldUntilDtTm = value;
         return this;
     }

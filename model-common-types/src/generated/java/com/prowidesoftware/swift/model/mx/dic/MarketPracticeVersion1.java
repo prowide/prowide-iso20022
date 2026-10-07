@@ -1,14 +1,13 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.YearMonth;
-import com.prowidesoftware.swift.model.mx.adapters.IsoYearMonthAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -31,10 +30,9 @@ public class MarketPracticeVersion1 {
 
     @XmlElement(name = "Nm", required = true)
     protected String nm;
-    @XmlElement(name = "Dt", type = String.class)
-    @XmlJavaTypeAdapter(IsoYearMonthAdapter.class)
+    @XmlElement(name = "Dt")
     @XmlSchemaType(name = "gYearMonth")
-    protected YearMonth dt;
+    protected XMLGregorianCalendar dt;
     @XmlElement(name = "Nb")
     protected String nb;
 
@@ -71,7 +69,7 @@ public class MarketPracticeVersion1 {
      *     {@link String }
      *     
      */
-    public YearMonth getDt() {
+    public XMLGregorianCalendar getDt() {
         return dt;
     }
 
@@ -83,7 +81,7 @@ public class MarketPracticeVersion1 {
      *     {@link String }
      *     
      */
-    public MarketPracticeVersion1 setDt(YearMonth value) {
+    public MarketPracticeVersion1 setDt(XMLGregorianCalendar value) {
         this.dt = value;
         return this;
     }

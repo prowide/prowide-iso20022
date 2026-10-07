@@ -1,19 +1,18 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -84,23 +83,23 @@ public class TradeTransaction37 {
     @XmlElement(name = "ExctnTmStmp", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime exctnTmStmp;
+    protected XMLGregorianCalendar exctnTmStmp;
     @XmlElement(name = "FctvDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate fctvDt;
+    protected XMLGregorianCalendar fctvDt;
     @XmlElement(name = "XprtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate xprtnDt;
+    protected XMLGregorianCalendar xprtnDt;
     @XmlElement(name = "EarlyTermntnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate earlyTermntnDt;
+    protected XMLGregorianCalendar earlyTermntnDt;
     @XmlElement(name = "SttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected List<LocalDate> sttlmDt;
+    protected List<XMLGregorianCalendar> sttlmDt;
     @XmlElement(name = "MstrAgrmt")
     protected MasterAgreement7 mstrAgrmt;
     @XmlElement(name = "TradConf")
@@ -419,7 +418,7 @@ public class TradeTransaction37 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getExctnTmStmp() {
+    public XMLGregorianCalendar getExctnTmStmp() {
         return exctnTmStmp;
     }
 
@@ -431,7 +430,7 @@ public class TradeTransaction37 {
      *     {@link String }
      *     
      */
-    public TradeTransaction37 setExctnTmStmp(OffsetDateTime value) {
+    public TradeTransaction37 setExctnTmStmp(XMLGregorianCalendar value) {
         this.exctnTmStmp = value;
         return this;
     }
@@ -444,7 +443,7 @@ public class TradeTransaction37 {
      *     {@link String }
      *     
      */
-    public LocalDate getFctvDt() {
+    public XMLGregorianCalendar getFctvDt() {
         return fctvDt;
     }
 
@@ -456,7 +455,7 @@ public class TradeTransaction37 {
      *     {@link String }
      *     
      */
-    public TradeTransaction37 setFctvDt(LocalDate value) {
+    public TradeTransaction37 setFctvDt(XMLGregorianCalendar value) {
         this.fctvDt = value;
         return this;
     }
@@ -469,7 +468,7 @@ public class TradeTransaction37 {
      *     {@link String }
      *     
      */
-    public LocalDate getXprtnDt() {
+    public XMLGregorianCalendar getXprtnDt() {
         return xprtnDt;
     }
 
@@ -481,7 +480,7 @@ public class TradeTransaction37 {
      *     {@link String }
      *     
      */
-    public TradeTransaction37 setXprtnDt(LocalDate value) {
+    public TradeTransaction37 setXprtnDt(XMLGregorianCalendar value) {
         this.xprtnDt = value;
         return this;
     }
@@ -494,7 +493,7 @@ public class TradeTransaction37 {
      *     {@link String }
      *     
      */
-    public LocalDate getEarlyTermntnDt() {
+    public XMLGregorianCalendar getEarlyTermntnDt() {
         return earlyTermntnDt;
     }
 
@@ -506,7 +505,7 @@ public class TradeTransaction37 {
      *     {@link String }
      *     
      */
-    public TradeTransaction37 setEarlyTermntnDt(LocalDate value) {
+    public TradeTransaction37 setEarlyTermntnDt(XMLGregorianCalendar value) {
         this.earlyTermntnDt = value;
         return this;
     }
@@ -535,7 +534,7 @@ public class TradeTransaction37 {
      * @return
      *     The value of the sttlmDt property.
      */
-    public List<LocalDate> getSttlmDt() {
+    public List<XMLGregorianCalendar> getSttlmDt() {
         if (sttlmDt == null) {
             sttlmDt = new ArrayList<>();
         }
@@ -863,7 +862,7 @@ public class TradeTransaction37 {
      * @see #getSttlmDt()
      * 
      */
-    public TradeTransaction37 addSttlmDt(LocalDate sttlmDt) {
+    public TradeTransaction37 addSttlmDt(XMLGregorianCalendar sttlmDt) {
         getSttlmDt().add(sttlmDt);
         return this;
     }

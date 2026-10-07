@@ -1,17 +1,17 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigDecimal;
-import java.time.OffsetTime;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -62,7 +62,7 @@ public class List1 {
     @XmlElement(name = "PrgrsPrdIntrvl", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected OffsetTime prgrsPrdIntrvl;
+    protected XMLGregorianCalendar prgrsPrdIntrvl;
     @XmlElement(name = "RealTmExctnRptInd")
     protected Boolean realTmExctnRptInd;
     @XmlElement(name = "BidTp")
@@ -236,7 +236,7 @@ public class List1 {
      *     {@link String }
      *     
      */
-    public OffsetTime getPrgrsPrdIntrvl() {
+    public XMLGregorianCalendar getPrgrsPrdIntrvl() {
         return prgrsPrdIntrvl;
     }
 
@@ -248,7 +248,7 @@ public class List1 {
      *     {@link String }
      *     
      */
-    public List1 setPrgrsPrdIntrvl(OffsetTime value) {
+    public List1 setPrgrsPrdIntrvl(XMLGregorianCalendar value) {
         this.prgrsPrdIntrvl = value;
         return this;
     }

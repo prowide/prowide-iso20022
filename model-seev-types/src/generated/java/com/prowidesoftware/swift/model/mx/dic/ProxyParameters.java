@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.OffsetDateTime;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -40,15 +40,15 @@ public class ProxyParameters {
     @XmlElement(name = "PrxyAppntmntDdln", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime prxyAppntmntDdln;
+    protected XMLGregorianCalendar prxyAppntmntDdln;
     @XmlElement(name = "PrxyAppntmntElctrncDdln", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime prxyAppntmntElctrncDdln;
+    protected XMLGregorianCalendar prxyAppntmntElctrncDdln;
     @XmlElement(name = "PrxyAppntmntMktDdln", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime prxyAppntmntMktDdln;
+    protected XMLGregorianCalendar prxyAppntmntMktDdln;
 
     /**
      * Gets the value of the authrsdPrxy property.
@@ -114,7 +114,7 @@ public class ProxyParameters {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getPrxyAppntmntDdln() {
+    public XMLGregorianCalendar getPrxyAppntmntDdln() {
         return prxyAppntmntDdln;
     }
 
@@ -126,7 +126,7 @@ public class ProxyParameters {
      *     {@link String }
      *     
      */
-    public ProxyParameters setPrxyAppntmntDdln(OffsetDateTime value) {
+    public ProxyParameters setPrxyAppntmntDdln(XMLGregorianCalendar value) {
         this.prxyAppntmntDdln = value;
         return this;
     }
@@ -139,7 +139,7 @@ public class ProxyParameters {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getPrxyAppntmntElctrncDdln() {
+    public XMLGregorianCalendar getPrxyAppntmntElctrncDdln() {
         return prxyAppntmntElctrncDdln;
     }
 
@@ -151,7 +151,7 @@ public class ProxyParameters {
      *     {@link String }
      *     
      */
-    public ProxyParameters setPrxyAppntmntElctrncDdln(OffsetDateTime value) {
+    public ProxyParameters setPrxyAppntmntElctrncDdln(XMLGregorianCalendar value) {
         this.prxyAppntmntElctrncDdln = value;
         return this;
     }
@@ -164,7 +164,7 @@ public class ProxyParameters {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getPrxyAppntmntMktDdln() {
+    public XMLGregorianCalendar getPrxyAppntmntMktDdln() {
         return prxyAppntmntMktDdln;
     }
 
@@ -176,7 +176,7 @@ public class ProxyParameters {
      *     {@link String }
      *     
      */
-    public ProxyParameters setPrxyAppntmntMktDdln(OffsetDateTime value) {
+    public ProxyParameters setPrxyAppntmntMktDdln(XMLGregorianCalendar value) {
         this.prxyAppntmntMktDdln = value;
         return this;
     }

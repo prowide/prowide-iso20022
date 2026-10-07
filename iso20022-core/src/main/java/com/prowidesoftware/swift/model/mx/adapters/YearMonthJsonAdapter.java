@@ -20,23 +20,13 @@ import java.lang.reflect.Type;
 import java.time.YearMonth;
 
 /**
- * Gson {@link JsonSerializer} and {@link JsonDeserializer} for {@link YearMonth}, converting
- * to/from a JSON object with {@code year} and {@code month} integer fields.
+ * This adapter enables accepting YearMonth time Json format.
  *
  * @since 10.1.0
  */
 public class YearMonthJsonAdapter implements JsonSerializer<YearMonth>, JsonDeserializer<YearMonth> {
     private final Gson gson = new Gson();
 
-    /**
-     * Serializes a {@link YearMonth} to a JSON object with {@code year} and {@code month}
-     * integer fields.
-     *
-     * @param yearMonth                the year-month to serialize
-     * @param type                     the type of the source object
-     * @param jsonSerializationContext the serialization context
-     * @return a JSON object representing the year-month
-     */
     @Override
     public JsonElement serialize(YearMonth yearMonth, Type type, JsonSerializationContext jsonSerializationContext) {
         YearMonthJsonDTO yearJsonDTO = new YearMonthJsonDTO();
@@ -45,15 +35,6 @@ public class YearMonthJsonAdapter implements JsonSerializer<YearMonth>, JsonDese
         return gson.toJsonTree(yearJsonDTO, YearMonthJsonDTO.class);
     }
 
-    /**
-     * Deserializes a JSON object with {@code year} and {@code month} integer fields into a
-     * {@link YearMonth}.
-     *
-     * @param jsonElement                the JSON element to deserialize
-     * @param type                       the type of the desired object
-     * @param jsonDeserializationContext the deserialization context
-     * @return the deserialized {@link YearMonth}
-     */
     @Override
     public YearMonth deserialize(
             JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) {

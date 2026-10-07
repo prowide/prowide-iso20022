@@ -15,9 +15,9 @@
  */
 package com.prowidesoftware.swift.model.mx;
 
-import jakarta.xml.bind.JAXBContext;
-import jakarta.xml.bind.JAXBException;
 import java.util.concurrent.ExecutionException;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
 
 /**
  * Singleton to parameterize the {@link JaxbContextCache} used when marshalling or unmarshalling MX messages.
@@ -48,8 +48,6 @@ public enum JaxbContextLoader {
      *
      * @param mx an MX message instance
      * @return the cached or created context for the specific message type
-     * @throws JAXBException      if JAXB context creation fails
-     * @throws ExecutionException if a cached computation fails
      */
     public JAXBContext get(AbstractMX mx) throws JAXBException, ExecutionException {
         return get(mx.getClass(), mx.getClasses());
@@ -62,8 +60,6 @@ public enum JaxbContextLoader {
      * @param messageClass class of the message to be read or written
      * @param classes      comprehensive list of classes for the context, null or empty to create a context with the messageClass
      * @return the cached or created context for the specific message type
-     * @throws JAXBException      if JAXB context creation fails
-     * @throws ExecutionException if a cached computation fails
      */
     public JAXBContext get(final Class messageClass, final Class<?>[] classes)
             throws JAXBException, ExecutionException {

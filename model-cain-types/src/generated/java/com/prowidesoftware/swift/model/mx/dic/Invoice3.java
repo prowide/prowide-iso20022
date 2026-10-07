@@ -1,19 +1,18 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -57,11 +56,11 @@ public class Invoice3 {
     @XmlElement(name = "Dt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate dt;
+    protected XMLGregorianCalendar dt;
     @XmlElement(name = "CreDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime creDtTm;
+    protected XMLGregorianCalendar creDtTm;
     @XmlElement(name = "SummryCmmdtyId")
     protected String summryCmmdtyId;
     @XmlElement(name = "SellrNm")
@@ -133,7 +132,7 @@ public class Invoice3 {
      *     {@link String }
      *     
      */
-    public LocalDate getDt() {
+    public XMLGregorianCalendar getDt() {
         return dt;
     }
 
@@ -145,7 +144,7 @@ public class Invoice3 {
      *     {@link String }
      *     
      */
-    public Invoice3 setDt(LocalDate value) {
+    public Invoice3 setDt(XMLGregorianCalendar value) {
         this.dt = value;
         return this;
     }
@@ -158,7 +157,7 @@ public class Invoice3 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getCreDtTm() {
+    public XMLGregorianCalendar getCreDtTm() {
         return creDtTm;
     }
 
@@ -170,7 +169,7 @@ public class Invoice3 {
      *     {@link String }
      *     
      */
-    public Invoice3 setCreDtTm(OffsetDateTime value) {
+    public Invoice3 setCreDtTm(XMLGregorianCalendar value) {
         this.creDtTm = value;
         return this;
     }

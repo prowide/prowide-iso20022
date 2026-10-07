@@ -1,14 +1,13 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.YearMonth;
-import com.prowidesoftware.swift.model.mx.adapters.IsoYearMonthAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -42,14 +41,12 @@ public class PaymentCard25 {
     protected String nb;
     @XmlElement(name = "HldrNm", required = true)
     protected String hldrNm;
-    @XmlElement(name = "StartDt", type = String.class)
-    @XmlJavaTypeAdapter(IsoYearMonthAdapter.class)
+    @XmlElement(name = "StartDt")
     @XmlSchemaType(name = "gYearMonth")
-    protected YearMonth startDt;
-    @XmlElement(name = "XpryDt", required = true, type = String.class)
-    @XmlJavaTypeAdapter(IsoYearMonthAdapter.class)
+    protected XMLGregorianCalendar startDt;
+    @XmlElement(name = "XpryDt", required = true)
     @XmlSchemaType(name = "gYearMonth")
-    protected YearMonth xpryDt;
+    protected XMLGregorianCalendar xpryDt;
     @XmlElement(name = "CardIssrNm")
     protected String cardIssrNm;
     @XmlElement(name = "CardIssrId")
@@ -142,7 +139,7 @@ public class PaymentCard25 {
      *     {@link String }
      *     
      */
-    public YearMonth getStartDt() {
+    public XMLGregorianCalendar getStartDt() {
         return startDt;
     }
 
@@ -154,7 +151,7 @@ public class PaymentCard25 {
      *     {@link String }
      *     
      */
-    public PaymentCard25 setStartDt(YearMonth value) {
+    public PaymentCard25 setStartDt(XMLGregorianCalendar value) {
         this.startDt = value;
         return this;
     }
@@ -167,7 +164,7 @@ public class PaymentCard25 {
      *     {@link String }
      *     
      */
-    public YearMonth getXpryDt() {
+    public XMLGregorianCalendar getXpryDt() {
         return xpryDt;
     }
 
@@ -179,7 +176,7 @@ public class PaymentCard25 {
      *     {@link String }
      *     
      */
-    public PaymentCard25 setXpryDt(YearMonth value) {
+    public PaymentCard25 setXpryDt(XMLGregorianCalendar value) {
         this.xpryDt = value;
         return this;
     }

@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -42,7 +42,7 @@ public class ExtendOrPayQuery1 {
     @XmlElement(name = "ReqdXpryDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate reqdXpryDt;
+    protected XMLGregorianCalendar reqdXpryDt;
     @XmlElement(name = "BkInstrs")
     protected BankInstructions1 bkInstrs;
     @XmlElement(name = "BkCtct")
@@ -110,7 +110,7 @@ public class ExtendOrPayQuery1 {
      *     {@link String }
      *     
      */
-    public LocalDate getReqdXpryDt() {
+    public XMLGregorianCalendar getReqdXpryDt() {
         return reqdXpryDt;
     }
 
@@ -122,7 +122,7 @@ public class ExtendOrPayQuery1 {
      *     {@link String }
      *     
      */
-    public ExtendOrPayQuery1 setReqdXpryDt(LocalDate value) {
+    public ExtendOrPayQuery1 setReqdXpryDt(XMLGregorianCalendar value) {
         this.reqdXpryDt = value;
         return this;
     }

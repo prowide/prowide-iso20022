@@ -1,19 +1,18 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -82,7 +81,7 @@ public class CreditTransferTransaction25 {
     @XmlElement(name = "IntrBkSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate intrBkSttlmDt;
+    protected XMLGregorianCalendar intrBkSttlmDt;
     @XmlElement(name = "SttlmPrty")
     @XmlSchemaType(name = "string")
     protected Priority3Code sttlmPrty;
@@ -93,11 +92,11 @@ public class CreditTransferTransaction25 {
     @XmlElement(name = "AccptncDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime accptncDtTm;
+    protected XMLGregorianCalendar accptncDtTm;
     @XmlElement(name = "PoolgAdjstmntDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate poolgAdjstmntDt;
+    protected XMLGregorianCalendar poolgAdjstmntDt;
     @XmlElement(name = "InstdAmt")
     protected ActiveOrHistoricCurrencyAndAmount instdAmt;
     @XmlElement(name = "XchgRate")
@@ -249,7 +248,7 @@ public class CreditTransferTransaction25 {
      *     {@link String }
      *     
      */
-    public LocalDate getIntrBkSttlmDt() {
+    public XMLGregorianCalendar getIntrBkSttlmDt() {
         return intrBkSttlmDt;
     }
 
@@ -261,7 +260,7 @@ public class CreditTransferTransaction25 {
      *     {@link String }
      *     
      */
-    public CreditTransferTransaction25 setIntrBkSttlmDt(LocalDate value) {
+    public CreditTransferTransaction25 setIntrBkSttlmDt(XMLGregorianCalendar value) {
         this.intrBkSttlmDt = value;
         return this;
     }
@@ -349,7 +348,7 @@ public class CreditTransferTransaction25 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getAccptncDtTm() {
+    public XMLGregorianCalendar getAccptncDtTm() {
         return accptncDtTm;
     }
 
@@ -361,7 +360,7 @@ public class CreditTransferTransaction25 {
      *     {@link String }
      *     
      */
-    public CreditTransferTransaction25 setAccptncDtTm(OffsetDateTime value) {
+    public CreditTransferTransaction25 setAccptncDtTm(XMLGregorianCalendar value) {
         this.accptncDtTm = value;
         return this;
     }
@@ -374,7 +373,7 @@ public class CreditTransferTransaction25 {
      *     {@link String }
      *     
      */
-    public LocalDate getPoolgAdjstmntDt() {
+    public XMLGregorianCalendar getPoolgAdjstmntDt() {
         return poolgAdjstmntDt;
     }
 
@@ -386,7 +385,7 @@ public class CreditTransferTransaction25 {
      *     {@link String }
      *     
      */
-    public CreditTransferTransaction25 setPoolgAdjstmntDt(LocalDate value) {
+    public CreditTransferTransaction25 setPoolgAdjstmntDt(XMLGregorianCalendar value) {
         this.poolgAdjstmntDt = value;
         return this;
     }

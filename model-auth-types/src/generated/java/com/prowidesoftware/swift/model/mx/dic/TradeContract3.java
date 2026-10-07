@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -54,13 +54,13 @@ public class TradeContract3 {
     @XmlElement(name = "MtrtyDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate mtrtyDt;
+    protected XMLGregorianCalendar mtrtyDt;
     @XmlElement(name = "PrlngtnFlg")
     protected Boolean prlngtnFlg;
     @XmlElement(name = "StartDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate startDt;
+    protected XMLGregorianCalendar startDt;
     @XmlElement(name = "SttlmCcy")
     protected String sttlmCcy;
     @XmlElement(name = "XchgRateInf")
@@ -217,7 +217,7 @@ public class TradeContract3 {
      *     {@link String }
      *     
      */
-    public LocalDate getMtrtyDt() {
+    public XMLGregorianCalendar getMtrtyDt() {
         return mtrtyDt;
     }
 
@@ -229,7 +229,7 @@ public class TradeContract3 {
      *     {@link String }
      *     
      */
-    public TradeContract3 setMtrtyDt(LocalDate value) {
+    public TradeContract3 setMtrtyDt(XMLGregorianCalendar value) {
         this.mtrtyDt = value;
         return this;
     }
@@ -267,7 +267,7 @@ public class TradeContract3 {
      *     {@link String }
      *     
      */
-    public LocalDate getStartDt() {
+    public XMLGregorianCalendar getStartDt() {
         return startDt;
     }
 
@@ -279,7 +279,7 @@ public class TradeContract3 {
      *     {@link String }
      *     
      */
-    public TradeContract3 setStartDt(LocalDate value) {
+    public TradeContract3 setStartDt(XMLGregorianCalendar value) {
         this.startDt = value;
         return this;
     }

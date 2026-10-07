@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.OffsetDateTime;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -41,7 +41,7 @@ public class Event1 {
     @XmlElement(name = "EvtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime evtTm;
+    protected XMLGregorianCalendar evtTm;
 
     /**
      * Gets the value of the evtCd property.
@@ -132,7 +132,7 @@ public class Event1 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getEvtTm() {
+    public XMLGregorianCalendar getEvtTm() {
         return evtTm;
     }
 
@@ -144,7 +144,7 @@ public class Event1 {
      *     {@link String }
      *     
      */
-    public Event1 setEvtTm(OffsetDateTime value) {
+    public Event1 setEvtTm(XMLGregorianCalendar value) {
         this.evtTm = value;
         return this;
     }

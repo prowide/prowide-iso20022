@@ -1,18 +1,17 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
-import java.time.OffsetDateTime;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -58,7 +57,7 @@ public class SwitchOrder4 {
     @XmlElement(name = "OrdrDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime ordrDtTm;
+    protected XMLGregorianCalendar ordrDtTm;
     @XmlElement(name = "OrdrRef", required = true)
     protected String ordrRef;
     @XmlElement(name = "ClntRef")
@@ -72,13 +71,13 @@ public class SwitchOrder4 {
     @XmlElement(name = "ReqdFutrTradDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate reqdFutrTradDt;
+    protected XMLGregorianCalendar reqdFutrTradDt;
     @XmlElement(name = "SttlmAmt")
     protected ActiveCurrencyAndAmount sttlmAmt;
     @XmlElement(name = "CshSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate cshSttlmDt;
+    protected XMLGregorianCalendar cshSttlmDt;
     @XmlElement(name = "SttlmMtd")
     @XmlSchemaType(name = "string")
     protected DeliveryReceiptType2Code sttlmMtd;
@@ -143,7 +142,7 @@ public class SwitchOrder4 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getOrdrDtTm() {
+    public XMLGregorianCalendar getOrdrDtTm() {
         return ordrDtTm;
     }
 
@@ -155,7 +154,7 @@ public class SwitchOrder4 {
      *     {@link String }
      *     
      */
-    public SwitchOrder4 setOrdrDtTm(OffsetDateTime value) {
+    public SwitchOrder4 setOrdrDtTm(XMLGregorianCalendar value) {
         this.ordrDtTm = value;
         return this;
     }
@@ -293,7 +292,7 @@ public class SwitchOrder4 {
      *     {@link String }
      *     
      */
-    public LocalDate getReqdFutrTradDt() {
+    public XMLGregorianCalendar getReqdFutrTradDt() {
         return reqdFutrTradDt;
     }
 
@@ -305,7 +304,7 @@ public class SwitchOrder4 {
      *     {@link String }
      *     
      */
-    public SwitchOrder4 setReqdFutrTradDt(LocalDate value) {
+    public SwitchOrder4 setReqdFutrTradDt(XMLGregorianCalendar value) {
         this.reqdFutrTradDt = value;
         return this;
     }
@@ -343,7 +342,7 @@ public class SwitchOrder4 {
      *     {@link String }
      *     
      */
-    public LocalDate getCshSttlmDt() {
+    public XMLGregorianCalendar getCshSttlmDt() {
         return cshSttlmDt;
     }
 
@@ -355,7 +354,7 @@ public class SwitchOrder4 {
      *     {@link String }
      *     
      */
-    public SwitchOrder4 setCshSttlmDt(LocalDate value) {
+    public SwitchOrder4 setCshSttlmDt(XMLGregorianCalendar value) {
         this.cshSttlmDt = value;
         return this;
     }

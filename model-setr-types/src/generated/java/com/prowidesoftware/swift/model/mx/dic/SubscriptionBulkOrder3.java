@@ -1,18 +1,17 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
-import java.time.OffsetDateTime;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -51,13 +50,13 @@ public class SubscriptionBulkOrder3 {
     @XmlElement(name = "OrdrDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime ordrDtTm;
+    protected XMLGregorianCalendar ordrDtTm;
     @XmlElement(name = "XpryDtTm")
     protected DateAndDateTimeChoice xpryDtTm;
     @XmlElement(name = "ReqdFutrTradDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate reqdFutrTradDt;
+    protected XMLGregorianCalendar reqdFutrTradDt;
     @XmlElement(name = "CxlRght")
     @XmlSchemaType(name = "string")
     protected CancellationRight1Code cxlRght;
@@ -76,7 +75,7 @@ public class SubscriptionBulkOrder3 {
     @XmlElement(name = "CshSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate cshSttlmDt;
+    protected XMLGregorianCalendar cshSttlmDt;
     @XmlElement(name = "BlkCshSttlmDtls")
     protected PaymentTransaction23 blkCshSttlmDtls;
 
@@ -138,7 +137,7 @@ public class SubscriptionBulkOrder3 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getOrdrDtTm() {
+    public XMLGregorianCalendar getOrdrDtTm() {
         return ordrDtTm;
     }
 
@@ -150,7 +149,7 @@ public class SubscriptionBulkOrder3 {
      *     {@link String }
      *     
      */
-    public SubscriptionBulkOrder3 setOrdrDtTm(OffsetDateTime value) {
+    public SubscriptionBulkOrder3 setOrdrDtTm(XMLGregorianCalendar value) {
         this.ordrDtTm = value;
         return this;
     }
@@ -188,7 +187,7 @@ public class SubscriptionBulkOrder3 {
      *     {@link String }
      *     
      */
-    public LocalDate getReqdFutrTradDt() {
+    public XMLGregorianCalendar getReqdFutrTradDt() {
         return reqdFutrTradDt;
     }
 
@@ -200,7 +199,7 @@ public class SubscriptionBulkOrder3 {
      *     {@link String }
      *     
      */
-    public SubscriptionBulkOrder3 setReqdFutrTradDt(LocalDate value) {
+    public SubscriptionBulkOrder3 setReqdFutrTradDt(XMLGregorianCalendar value) {
         this.reqdFutrTradDt = value;
         return this;
     }
@@ -394,7 +393,7 @@ public class SubscriptionBulkOrder3 {
      *     {@link String }
      *     
      */
-    public LocalDate getCshSttlmDt() {
+    public XMLGregorianCalendar getCshSttlmDt() {
         return cshSttlmDt;
     }
 
@@ -406,7 +405,7 @@ public class SubscriptionBulkOrder3 {
      *     {@link String }
      *     
      */
-    public SubscriptionBulkOrder3 setCshSttlmDt(LocalDate value) {
+    public SubscriptionBulkOrder3 setCshSttlmDt(XMLGregorianCalendar value) {
         this.cshSttlmDt = value;
         return this;
     }

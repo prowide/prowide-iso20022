@@ -1,15 +1,15 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigDecimal;
-import java.time.OffsetDateTime;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -89,11 +89,11 @@ public class TransactionDetails186 {
     @XmlElement(name = "AckdStsTmStmp", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime ackdStsTmStmp;
+    protected XMLGregorianCalendar ackdStsTmStmp;
     @XmlElement(name = "MtchdStsTmStmp", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime mtchdStsTmStmp;
+    protected XMLGregorianCalendar mtchdStsTmStmp;
     @XmlElement(name = "DlvrgSttlmPties")
     protected SettlementParties125 dlvrgSttlmPties;
     @XmlElement(name = "RcvgSttlmPties")
@@ -536,7 +536,7 @@ public class TransactionDetails186 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getAckdStsTmStmp() {
+    public XMLGregorianCalendar getAckdStsTmStmp() {
         return ackdStsTmStmp;
     }
 
@@ -548,7 +548,7 @@ public class TransactionDetails186 {
      *     {@link String }
      *     
      */
-    public TransactionDetails186 setAckdStsTmStmp(OffsetDateTime value) {
+    public TransactionDetails186 setAckdStsTmStmp(XMLGregorianCalendar value) {
         this.ackdStsTmStmp = value;
         return this;
     }
@@ -561,7 +561,7 @@ public class TransactionDetails186 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getMtchdStsTmStmp() {
+    public XMLGregorianCalendar getMtchdStsTmStmp() {
         return mtchdStsTmStmp;
     }
 
@@ -573,7 +573,7 @@ public class TransactionDetails186 {
      *     {@link String }
      *     
      */
-    public TransactionDetails186 setMtchdStsTmStmp(OffsetDateTime value) {
+    public TransactionDetails186 setMtchdStsTmStmp(XMLGregorianCalendar value) {
         this.mtchdStsTmStmp = value;
         return this;
     }

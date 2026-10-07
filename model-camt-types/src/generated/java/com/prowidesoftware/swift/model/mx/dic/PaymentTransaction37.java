@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -50,11 +50,11 @@ public class PaymentTransaction37 {
     @XmlElement(name = "OrgnlReqdExctnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate orgnlReqdExctnDt;
+    protected XMLGregorianCalendar orgnlReqdExctnDt;
     @XmlElement(name = "OrgnlReqdColltnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate orgnlReqdColltnDt;
+    protected XMLGregorianCalendar orgnlReqdColltnDt;
     @XmlElement(name = "CxlRsnInf")
     protected List<PaymentCancellationReason2> cxlRsnInf;
     @XmlElement(name = "OrgnlTxRef")
@@ -193,7 +193,7 @@ public class PaymentTransaction37 {
      *     {@link String }
      *     
      */
-    public LocalDate getOrgnlReqdExctnDt() {
+    public XMLGregorianCalendar getOrgnlReqdExctnDt() {
         return orgnlReqdExctnDt;
     }
 
@@ -205,7 +205,7 @@ public class PaymentTransaction37 {
      *     {@link String }
      *     
      */
-    public PaymentTransaction37 setOrgnlReqdExctnDt(LocalDate value) {
+    public PaymentTransaction37 setOrgnlReqdExctnDt(XMLGregorianCalendar value) {
         this.orgnlReqdExctnDt = value;
         return this;
     }
@@ -218,7 +218,7 @@ public class PaymentTransaction37 {
      *     {@link String }
      *     
      */
-    public LocalDate getOrgnlReqdColltnDt() {
+    public XMLGregorianCalendar getOrgnlReqdColltnDt() {
         return orgnlReqdColltnDt;
     }
 
@@ -230,7 +230,7 @@ public class PaymentTransaction37 {
      *     {@link String }
      *     
      */
-    public PaymentTransaction37 setOrgnlReqdColltnDt(LocalDate value) {
+    public PaymentTransaction37 setOrgnlReqdColltnDt(XMLGregorianCalendar value) {
         this.orgnlReqdColltnDt = value;
         return this;
     }

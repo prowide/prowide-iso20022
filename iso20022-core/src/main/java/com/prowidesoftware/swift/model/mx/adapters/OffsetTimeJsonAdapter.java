@@ -25,9 +25,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Gson {@link JsonSerializer} and {@link JsonDeserializer} for {@link OffsetTime}, converting
- * to/from a JSON object with {@code time} (hour, minute, second, nano) and {@code offset}
- * (totalSeconds) fields.
+ * This adapter enables accepting OffsetTime time Json format.
  *
  * @since 10.1.0
  */
@@ -36,15 +34,6 @@ public class OffsetTimeJsonAdapter implements JsonSerializer<OffsetTime>, JsonDe
 
     private final Gson gson = new Gson();
 
-    /**
-     * Serializes an {@link OffsetTime} to a JSON object with nested {@code time} and
-     * {@code offset} fields.
-     *
-     * @param offsetTime               the time to serialize
-     * @param type                     the type of the source object
-     * @param jsonSerializationContext the serialization context
-     * @return a JSON object representing the time
-     */
     @Override
     public JsonElement serialize(OffsetTime offsetTime, Type type, JsonSerializationContext jsonSerializationContext) {
         TimeOffsetDTO timeOffsetDTO = new TimeOffsetDTO();
@@ -59,15 +48,6 @@ public class OffsetTimeJsonAdapter implements JsonSerializer<OffsetTime>, JsonDe
         return gson.toJsonTree(timeOffsetDTO, TimeOffsetDTO.class);
     }
 
-    /**
-     * Deserializes a JSON element into an {@link OffsetTime}. If no offset is present in the JSON,
-     * the system default time zone's standard offset is used.
-     *
-     * @param jsonElement                the JSON element to deserialize
-     * @param type                       the type of the desired object
-     * @param jsonDeserializationContext the deserialization context
-     * @return the deserialized {@link OffsetTime}, or {@code null} if parsing fails
-     */
     @Override
     public OffsetTime deserialize(
             JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) {

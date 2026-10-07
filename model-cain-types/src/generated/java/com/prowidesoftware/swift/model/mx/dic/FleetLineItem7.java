@@ -1,17 +1,17 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigDecimal;
-import java.time.OffsetTime;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -94,19 +94,19 @@ public class FleetLineItem7 {
     @XmlElement(name = "TtlTmPlugdIn", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected OffsetTime ttlTmPlugdIn;
+    protected XMLGregorianCalendar ttlTmPlugdIn;
     @XmlElement(name = "TtlTmChrgg", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected OffsetTime ttlTmChrgg;
+    protected XMLGregorianCalendar ttlTmChrgg;
     @XmlElement(name = "ChrggStartTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected OffsetTime chrggStartTm;
+    protected XMLGregorianCalendar chrggStartTm;
     @XmlElement(name = "ChrggCmpltnTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected OffsetTime chrggCmpltnTm;
+    protected XMLGregorianCalendar chrggCmpltnTm;
     @XmlElement(name = "PdctQty")
     protected BigDecimal pdctQty;
     @XmlElement(name = "DscntAmt")
@@ -522,7 +522,7 @@ public class FleetLineItem7 {
      *     {@link String }
      *     
      */
-    public OffsetTime getTtlTmPlugdIn() {
+    public XMLGregorianCalendar getTtlTmPlugdIn() {
         return ttlTmPlugdIn;
     }
 
@@ -534,7 +534,7 @@ public class FleetLineItem7 {
      *     {@link String }
      *     
      */
-    public FleetLineItem7 setTtlTmPlugdIn(OffsetTime value) {
+    public FleetLineItem7 setTtlTmPlugdIn(XMLGregorianCalendar value) {
         this.ttlTmPlugdIn = value;
         return this;
     }
@@ -547,7 +547,7 @@ public class FleetLineItem7 {
      *     {@link String }
      *     
      */
-    public OffsetTime getTtlTmChrgg() {
+    public XMLGregorianCalendar getTtlTmChrgg() {
         return ttlTmChrgg;
     }
 
@@ -559,7 +559,7 @@ public class FleetLineItem7 {
      *     {@link String }
      *     
      */
-    public FleetLineItem7 setTtlTmChrgg(OffsetTime value) {
+    public FleetLineItem7 setTtlTmChrgg(XMLGregorianCalendar value) {
         this.ttlTmChrgg = value;
         return this;
     }
@@ -572,7 +572,7 @@ public class FleetLineItem7 {
      *     {@link String }
      *     
      */
-    public OffsetTime getChrggStartTm() {
+    public XMLGregorianCalendar getChrggStartTm() {
         return chrggStartTm;
     }
 
@@ -584,7 +584,7 @@ public class FleetLineItem7 {
      *     {@link String }
      *     
      */
-    public FleetLineItem7 setChrggStartTm(OffsetTime value) {
+    public FleetLineItem7 setChrggStartTm(XMLGregorianCalendar value) {
         this.chrggStartTm = value;
         return this;
     }
@@ -597,7 +597,7 @@ public class FleetLineItem7 {
      *     {@link String }
      *     
      */
-    public OffsetTime getChrggCmpltnTm() {
+    public XMLGregorianCalendar getChrggCmpltnTm() {
         return chrggCmpltnTm;
     }
 
@@ -609,7 +609,7 @@ public class FleetLineItem7 {
      *     {@link String }
      *     
      */
-    public FleetLineItem7 setChrggCmpltnTm(OffsetTime value) {
+    public FleetLineItem7 setChrggCmpltnTm(XMLGregorianCalendar value) {
         this.chrggCmpltnTm = value;
         return this;
     }

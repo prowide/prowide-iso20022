@@ -1,18 +1,17 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
-import java.time.OffsetDateTime;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -45,11 +44,11 @@ public class AccountSwitchDetails1 {
     @XmlElement(name = "SwtchRcvdDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime swtchRcvdDtTm;
+    protected XMLGregorianCalendar swtchRcvdDtTm;
     @XmlElement(name = "SwtchDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate swtchDt;
+    protected XMLGregorianCalendar swtchDt;
     @XmlElement(name = "SwtchTp", required = true)
     @XmlSchemaType(name = "string")
     protected SwitchType1Code swtchTp;
@@ -120,7 +119,7 @@ public class AccountSwitchDetails1 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getSwtchRcvdDtTm() {
+    public XMLGregorianCalendar getSwtchRcvdDtTm() {
         return swtchRcvdDtTm;
     }
 
@@ -132,7 +131,7 @@ public class AccountSwitchDetails1 {
      *     {@link String }
      *     
      */
-    public AccountSwitchDetails1 setSwtchRcvdDtTm(OffsetDateTime value) {
+    public AccountSwitchDetails1 setSwtchRcvdDtTm(XMLGregorianCalendar value) {
         this.swtchRcvdDtTm = value;
         return this;
     }
@@ -145,7 +144,7 @@ public class AccountSwitchDetails1 {
      *     {@link String }
      *     
      */
-    public LocalDate getSwtchDt() {
+    public XMLGregorianCalendar getSwtchDt() {
         return swtchDt;
     }
 
@@ -157,7 +156,7 @@ public class AccountSwitchDetails1 {
      *     {@link String }
      *     
      */
-    public AccountSwitchDetails1 setSwtchDt(LocalDate value) {
+    public AccountSwitchDetails1 setSwtchDt(XMLGregorianCalendar value) {
         this.swtchDt = value;
         return this;
     }

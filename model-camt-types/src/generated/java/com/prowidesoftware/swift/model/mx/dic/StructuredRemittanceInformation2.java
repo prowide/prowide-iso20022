@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -41,7 +41,7 @@ public class StructuredRemittanceInformation2 {
     @XmlElement(name = "RfrdDocRltdDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate rfrdDocRltdDt;
+    protected XMLGregorianCalendar rfrdDocRltdDt;
     @XmlElement(name = "RfrdDocAmt")
     protected List<ReferredDocumentAmount1Choice> rfrdDocAmt;
     @XmlElement(name = "DocRefNb")
@@ -86,7 +86,7 @@ public class StructuredRemittanceInformation2 {
      *     {@link String }
      *     
      */
-    public LocalDate getRfrdDocRltdDt() {
+    public XMLGregorianCalendar getRfrdDocRltdDt() {
         return rfrdDocRltdDt;
     }
 
@@ -98,7 +98,7 @@ public class StructuredRemittanceInformation2 {
      *     {@link String }
      *     
      */
-    public StructuredRemittanceInformation2 setRfrdDocRltdDt(LocalDate value) {
+    public StructuredRemittanceInformation2 setRfrdDocRltdDt(XMLGregorianCalendar value) {
         this.rfrdDocRltdDt = value;
         return this;
     }

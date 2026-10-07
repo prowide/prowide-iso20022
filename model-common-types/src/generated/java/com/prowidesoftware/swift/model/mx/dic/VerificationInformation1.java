@@ -1,20 +1,18 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
-import java.time.OffsetDateTime;
-import java.time.OffsetTime;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -47,15 +45,15 @@ public class VerificationInformation1 {
     @XmlElement(name = "DtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime dtTm;
+    protected XMLGregorianCalendar dtTm;
     @XmlElement(name = "VldtyEndDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate vldtyEndDt;
+    protected XMLGregorianCalendar vldtyEndDt;
     @XmlElement(name = "VldtyEndTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected OffsetTime vldtyEndTm;
+    protected XMLGregorianCalendar vldtyEndTm;
 
     /**
      * Gets the value of the tp property.
@@ -146,7 +144,7 @@ public class VerificationInformation1 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getDtTm() {
+    public XMLGregorianCalendar getDtTm() {
         return dtTm;
     }
 
@@ -158,7 +156,7 @@ public class VerificationInformation1 {
      *     {@link String }
      *     
      */
-    public VerificationInformation1 setDtTm(OffsetDateTime value) {
+    public VerificationInformation1 setDtTm(XMLGregorianCalendar value) {
         this.dtTm = value;
         return this;
     }
@@ -171,7 +169,7 @@ public class VerificationInformation1 {
      *     {@link String }
      *     
      */
-    public LocalDate getVldtyEndDt() {
+    public XMLGregorianCalendar getVldtyEndDt() {
         return vldtyEndDt;
     }
 
@@ -183,7 +181,7 @@ public class VerificationInformation1 {
      *     {@link String }
      *     
      */
-    public VerificationInformation1 setVldtyEndDt(LocalDate value) {
+    public VerificationInformation1 setVldtyEndDt(XMLGregorianCalendar value) {
         this.vldtyEndDt = value;
         return this;
     }
@@ -196,7 +194,7 @@ public class VerificationInformation1 {
      *     {@link String }
      *     
      */
-    public OffsetTime getVldtyEndTm() {
+    public XMLGregorianCalendar getVldtyEndTm() {
         return vldtyEndTm;
     }
 
@@ -208,7 +206,7 @@ public class VerificationInformation1 {
      *     {@link String }
      *     
      */
-    public VerificationInformation1 setVldtyEndTm(OffsetTime value) {
+    public VerificationInformation1 setVldtyEndTm(XMLGregorianCalendar value) {
         this.vldtyEndTm = value;
         return this;
     }

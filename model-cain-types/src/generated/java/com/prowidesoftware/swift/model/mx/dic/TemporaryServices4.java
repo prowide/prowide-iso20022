@@ -1,17 +1,17 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -89,13 +89,13 @@ public class TemporaryServices4 {
     @XmlElement(name = "JobStartDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate jobStartDt;
+    protected XMLGregorianCalendar jobStartDt;
     @XmlElement(name = "JobDrtn")
     protected String jobDrtn;
     @XmlElement(name = "JobEndDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate jobEndDt;
+    protected XMLGregorianCalendar jobEndDt;
     @XmlElement(name = "FlatRateInd")
     protected Boolean flatRateInd;
     @XmlElement(name = "DscntAmt")
@@ -107,7 +107,7 @@ public class TemporaryServices4 {
     @XmlElement(name = "WkEndg", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate wkEndg;
+    protected XMLGregorianCalendar wkEndg;
     @XmlElement(name = "ChrgRate")
     protected List<TemporaryServiceChargeRate1> chrgRate;
     @XmlElement(name = "MiscExpnss")
@@ -487,7 +487,7 @@ public class TemporaryServices4 {
      *     {@link String }
      *     
      */
-    public LocalDate getJobStartDt() {
+    public XMLGregorianCalendar getJobStartDt() {
         return jobStartDt;
     }
 
@@ -499,7 +499,7 @@ public class TemporaryServices4 {
      *     {@link String }
      *     
      */
-    public TemporaryServices4 setJobStartDt(LocalDate value) {
+    public TemporaryServices4 setJobStartDt(XMLGregorianCalendar value) {
         this.jobStartDt = value;
         return this;
     }
@@ -537,7 +537,7 @@ public class TemporaryServices4 {
      *     {@link String }
      *     
      */
-    public LocalDate getJobEndDt() {
+    public XMLGregorianCalendar getJobEndDt() {
         return jobEndDt;
     }
 
@@ -549,7 +549,7 @@ public class TemporaryServices4 {
      *     {@link String }
      *     
      */
-    public TemporaryServices4 setJobEndDt(LocalDate value) {
+    public TemporaryServices4 setJobEndDt(XMLGregorianCalendar value) {
         this.jobEndDt = value;
         return this;
     }
@@ -662,7 +662,7 @@ public class TemporaryServices4 {
      *     {@link String }
      *     
      */
-    public LocalDate getWkEndg() {
+    public XMLGregorianCalendar getWkEndg() {
         return wkEndg;
     }
 
@@ -674,7 +674,7 @@ public class TemporaryServices4 {
      *     {@link String }
      *     
      */
-    public TemporaryServices4 setWkEndg(LocalDate value) {
+    public TemporaryServices4 setWkEndg(XMLGregorianCalendar value) {
         this.wkEndg = value;
         return this;
     }

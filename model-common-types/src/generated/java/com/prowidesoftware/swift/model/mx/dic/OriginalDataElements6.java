@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -68,7 +68,7 @@ public class OriginalDataElements6 {
     @XmlElement(name = "DfrrdSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate dfrrdSttlmDt;
+    protected XMLGregorianCalendar dfrrdSttlmDt;
 
     /**
      * Gets the value of the msgClss property.
@@ -359,7 +359,7 @@ public class OriginalDataElements6 {
      *     {@link String }
      *     
      */
-    public LocalDate getDfrrdSttlmDt() {
+    public XMLGregorianCalendar getDfrrdSttlmDt() {
         return dfrrdSttlmDt;
     }
 
@@ -371,7 +371,7 @@ public class OriginalDataElements6 {
      *     {@link String }
      *     
      */
-    public OriginalDataElements6 setDfrrdSttlmDt(LocalDate value) {
+    public OriginalDataElements6 setDfrrdSttlmDt(XMLGregorianCalendar value) {
         this.dfrrdSttlmDt = value;
         return this;
     }

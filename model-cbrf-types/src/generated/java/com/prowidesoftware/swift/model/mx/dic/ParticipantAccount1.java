@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.OffsetDateTime;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -47,15 +47,15 @@ public class ParticipantAccount1 {
     @XmlElement(name = "OpngDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime opngDt;
+    protected XMLGregorianCalendar opngDt;
     @XmlElement(name = "ClsgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime clsgDt;
+    protected XMLGregorianCalendar clsgDt;
     @XmlElement(name = "DeltnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime deltnDt;
+    protected XMLGregorianCalendar deltnDt;
     @XmlElement(name = "LicWdrwlDoc")
     protected DocumentIdentification11 licWdrwlDoc;
     @XmlElement(name = "AcctRstrctns")
@@ -129,7 +129,7 @@ public class ParticipantAccount1 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getOpngDt() {
+    public XMLGregorianCalendar getOpngDt() {
         return opngDt;
     }
 
@@ -141,7 +141,7 @@ public class ParticipantAccount1 {
      *     {@link String }
      *     
      */
-    public ParticipantAccount1 setOpngDt(OffsetDateTime value) {
+    public ParticipantAccount1 setOpngDt(XMLGregorianCalendar value) {
         this.opngDt = value;
         return this;
     }
@@ -154,7 +154,7 @@ public class ParticipantAccount1 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getClsgDt() {
+    public XMLGregorianCalendar getClsgDt() {
         return clsgDt;
     }
 
@@ -166,7 +166,7 @@ public class ParticipantAccount1 {
      *     {@link String }
      *     
      */
-    public ParticipantAccount1 setClsgDt(OffsetDateTime value) {
+    public ParticipantAccount1 setClsgDt(XMLGregorianCalendar value) {
         this.clsgDt = value;
         return this;
     }
@@ -179,7 +179,7 @@ public class ParticipantAccount1 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getDeltnDt() {
+    public XMLGregorianCalendar getDeltnDt() {
         return deltnDt;
     }
 
@@ -191,7 +191,7 @@ public class ParticipantAccount1 {
      *     {@link String }
      *     
      */
-    public ParticipantAccount1 setDeltnDt(OffsetDateTime value) {
+    public ParticipantAccount1 setDeltnDt(XMLGregorianCalendar value) {
         this.deltnDt = value;
         return this;
     }

@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.OffsetDateTime;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -48,7 +48,7 @@ public class CardPaymentTransactionDetails8 {
     @XmlElement(name = "TxDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime txDtTm;
+    protected XMLGregorianCalendar txDtTm;
     @XmlElement(name = "SaleRefNb")
     protected String saleRefNb;
     @XmlElement(name = "RePresntmntRsn")
@@ -173,7 +173,7 @@ public class CardPaymentTransactionDetails8 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getTxDtTm() {
+    public XMLGregorianCalendar getTxDtTm() {
         return txDtTm;
     }
 
@@ -185,7 +185,7 @@ public class CardPaymentTransactionDetails8 {
      *     {@link String }
      *     
      */
-    public CardPaymentTransactionDetails8 setTxDtTm(OffsetDateTime value) {
+    public CardPaymentTransactionDetails8 setTxDtTm(XMLGregorianCalendar value) {
         this.txDtTm = value;
         return this;
     }

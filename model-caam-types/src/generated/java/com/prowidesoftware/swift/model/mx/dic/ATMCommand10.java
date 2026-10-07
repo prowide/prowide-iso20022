@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.OffsetDateTime;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -45,7 +45,7 @@ public class ATMCommand10 {
     @XmlElement(name = "DtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime dtTm;
+    protected XMLGregorianCalendar dtTm;
     @XmlElement(name = "CmdId")
     protected ATMCommandIdentification1 cmdId;
     @XmlElement(name = "Rsn")
@@ -117,7 +117,7 @@ public class ATMCommand10 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getDtTm() {
+    public XMLGregorianCalendar getDtTm() {
         return dtTm;
     }
 
@@ -129,7 +129,7 @@ public class ATMCommand10 {
      *     {@link String }
      *     
      */
-    public ATMCommand10 setDtTm(OffsetDateTime value) {
+    public ATMCommand10 setDtTm(XMLGregorianCalendar value) {
         this.dtTm = value;
         return this;
     }

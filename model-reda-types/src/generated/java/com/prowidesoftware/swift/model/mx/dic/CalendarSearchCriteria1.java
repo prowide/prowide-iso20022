@@ -1,16 +1,13 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.Month;
-import java.time.Year;
-import com.prowidesoftware.swift.model.mx.adapters.IsoMonthAdapter;
-import com.prowidesoftware.swift.model.mx.adapters.IsoYearAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -31,14 +28,12 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 public class CalendarSearchCriteria1 {
 
-    @XmlElement(name = "Yr", type = String.class)
-    @XmlJavaTypeAdapter(IsoYearAdapter.class)
+    @XmlElement(name = "Yr")
     @XmlSchemaType(name = "gYear")
-    protected Year yr;
-    @XmlElement(name = "Mnth", type = String.class)
-    @XmlJavaTypeAdapter(IsoMonthAdapter.class)
+    protected XMLGregorianCalendar yr;
+    @XmlElement(name = "Mnth")
     @XmlSchemaType(name = "gMonth")
-    protected Month mnth;
+    protected XMLGregorianCalendar mnth;
     @XmlElement(name = "Svc")
     protected SystemAndCurrency1 svc;
 
@@ -50,7 +45,7 @@ public class CalendarSearchCriteria1 {
      *     {@link String }
      *     
      */
-    public Year getYr() {
+    public XMLGregorianCalendar getYr() {
         return yr;
     }
 
@@ -62,7 +57,7 @@ public class CalendarSearchCriteria1 {
      *     {@link String }
      *     
      */
-    public CalendarSearchCriteria1 setYr(Year value) {
+    public CalendarSearchCriteria1 setYr(XMLGregorianCalendar value) {
         this.yr = value;
         return this;
     }
@@ -75,7 +70,7 @@ public class CalendarSearchCriteria1 {
      *     {@link String }
      *     
      */
-    public Month getMnth() {
+    public XMLGregorianCalendar getMnth() {
         return mnth;
     }
 
@@ -87,7 +82,7 @@ public class CalendarSearchCriteria1 {
      *     {@link String }
      *     
      */
-    public CalendarSearchCriteria1 setMnth(Month value) {
+    public CalendarSearchCriteria1 setMnth(XMLGregorianCalendar value) {
         this.mnth = value;
         return this;
     }

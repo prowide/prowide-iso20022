@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.OffsetDateTime;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -35,7 +35,7 @@ public class CollateralValuePosition3 {
     @XmlElement(name = "DataAccsTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime dataAccsTm;
+    protected XMLGregorianCalendar dataAccsTm;
     @XmlElement(name = "TtlCollValtn")
     protected ActiveCurrencyAndAmount ttlCollValtn;
     @XmlElement(name = "SctiesAcct")
@@ -51,7 +51,7 @@ public class CollateralValuePosition3 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getDataAccsTm() {
+    public XMLGregorianCalendar getDataAccsTm() {
         return dataAccsTm;
     }
 
@@ -63,7 +63,7 @@ public class CollateralValuePosition3 {
      *     {@link String }
      *     
      */
-    public CollateralValuePosition3 setDataAccsTm(OffsetDateTime value) {
+    public CollateralValuePosition3 setDataAccsTm(XMLGregorianCalendar value) {
         this.dataAccsTm = value;
         return this;
     }

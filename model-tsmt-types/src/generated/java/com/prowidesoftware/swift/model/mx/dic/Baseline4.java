@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -87,7 +87,7 @@ public class Baseline4 {
     @XmlElement(name = "LatstMtchDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate latstMtchDt;
+    protected XMLGregorianCalendar latstMtchDt;
     @XmlElement(name = "ComrclDataSetReqrd", required = true)
     protected RequiredSubmission2 comrclDataSetReqrd;
     @XmlElement(name = "TrnsprtDataSetReqrd")
@@ -533,7 +533,7 @@ public class Baseline4 {
      *     {@link String }
      *     
      */
-    public LocalDate getLatstMtchDt() {
+    public XMLGregorianCalendar getLatstMtchDt() {
         return latstMtchDt;
     }
 
@@ -545,7 +545,7 @@ public class Baseline4 {
      *     {@link String }
      *     
      */
-    public Baseline4 setLatstMtchDt(LocalDate value) {
+    public Baseline4 setLatstMtchDt(XMLGregorianCalendar value) {
         this.latstMtchDt = value;
         return this;
     }

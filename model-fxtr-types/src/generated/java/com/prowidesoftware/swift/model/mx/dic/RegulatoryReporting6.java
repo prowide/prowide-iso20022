@@ -1,18 +1,17 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.OffsetDateTime;
-import java.time.OffsetTime;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -112,11 +111,11 @@ public class RegulatoryReporting6 {
     @XmlElement(name = "ConfDtAndTmstmp", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime confDtAndTmstmp;
+    protected XMLGregorianCalendar confDtAndTmstmp;
     @XmlElement(name = "ClrTmstmp", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected OffsetTime clrTmstmp;
+    protected XMLGregorianCalendar clrTmstmp;
     @XmlElement(name = "AddtlRptgInf")
     protected String addtlRptgInf;
 
@@ -740,7 +739,7 @@ public class RegulatoryReporting6 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getConfDtAndTmstmp() {
+    public XMLGregorianCalendar getConfDtAndTmstmp() {
         return confDtAndTmstmp;
     }
 
@@ -752,7 +751,7 @@ public class RegulatoryReporting6 {
      *     {@link String }
      *     
      */
-    public RegulatoryReporting6 setConfDtAndTmstmp(OffsetDateTime value) {
+    public RegulatoryReporting6 setConfDtAndTmstmp(XMLGregorianCalendar value) {
         this.confDtAndTmstmp = value;
         return this;
     }
@@ -765,7 +764,7 @@ public class RegulatoryReporting6 {
      *     {@link String }
      *     
      */
-    public OffsetTime getClrTmstmp() {
+    public XMLGregorianCalendar getClrTmstmp() {
         return clrTmstmp;
     }
 
@@ -777,7 +776,7 @@ public class RegulatoryReporting6 {
      *     {@link String }
      *     
      */
-    public RegulatoryReporting6 setClrTmstmp(OffsetTime value) {
+    public RegulatoryReporting6 setClrTmstmp(XMLGregorianCalendar value) {
         this.clrTmstmp = value;
         return this;
     }

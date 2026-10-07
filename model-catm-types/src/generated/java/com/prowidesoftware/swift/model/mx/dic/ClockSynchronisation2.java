@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.OffsetTime;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -38,7 +38,7 @@ public class ClockSynchronisation2 {
     @XmlElement(name = "Dely", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected OffsetTime dely;
+    protected XMLGregorianCalendar dely;
 
     /**
      * Gets the value of the poiTmZone property.
@@ -104,7 +104,7 @@ public class ClockSynchronisation2 {
      *     {@link String }
      *     
      */
-    public OffsetTime getDely() {
+    public XMLGregorianCalendar getDely() {
         return dely;
     }
 
@@ -116,7 +116,7 @@ public class ClockSynchronisation2 {
      *     {@link String }
      *     
      */
-    public ClockSynchronisation2 setDely(OffsetTime value) {
+    public ClockSynchronisation2 setDely(XMLGregorianCalendar value) {
         this.dely = value;
         return this;
     }

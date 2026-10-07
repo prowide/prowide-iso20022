@@ -1,19 +1,18 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.OffsetTime;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -125,21 +124,21 @@ public class VehicleRentalService4 {
     @XmlElement(name = "ChckOutDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate chckOutDt;
+    protected XMLGregorianCalendar chckOutDt;
     @XmlElement(name = "ChckOutTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected OffsetTime chckOutTm;
+    protected XMLGregorianCalendar chckOutTm;
     @XmlElement(name = "RtrLctn")
     protected Address4 rtrLctn;
     @XmlElement(name = "ChckInDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate chckInDt;
+    protected XMLGregorianCalendar chckInDt;
     @XmlElement(name = "ChckInTm", type = String.class)
     @XmlJavaTypeAdapter(IsoTimeAdapter.class)
     @XmlSchemaType(name = "time")
-    protected OffsetTime chckInTm;
+    protected XMLGregorianCalendar chckInTm;
     @XmlElement(name = "Drtn")
     protected String drtn;
     @XmlElement(name = "ClssInvcd")
@@ -741,7 +740,7 @@ public class VehicleRentalService4 {
      *     {@link String }
      *     
      */
-    public LocalDate getChckOutDt() {
+    public XMLGregorianCalendar getChckOutDt() {
         return chckOutDt;
     }
 
@@ -753,7 +752,7 @@ public class VehicleRentalService4 {
      *     {@link String }
      *     
      */
-    public VehicleRentalService4 setChckOutDt(LocalDate value) {
+    public VehicleRentalService4 setChckOutDt(XMLGregorianCalendar value) {
         this.chckOutDt = value;
         return this;
     }
@@ -766,7 +765,7 @@ public class VehicleRentalService4 {
      *     {@link String }
      *     
      */
-    public OffsetTime getChckOutTm() {
+    public XMLGregorianCalendar getChckOutTm() {
         return chckOutTm;
     }
 
@@ -778,7 +777,7 @@ public class VehicleRentalService4 {
      *     {@link String }
      *     
      */
-    public VehicleRentalService4 setChckOutTm(OffsetTime value) {
+    public VehicleRentalService4 setChckOutTm(XMLGregorianCalendar value) {
         this.chckOutTm = value;
         return this;
     }
@@ -816,7 +815,7 @@ public class VehicleRentalService4 {
      *     {@link String }
      *     
      */
-    public LocalDate getChckInDt() {
+    public XMLGregorianCalendar getChckInDt() {
         return chckInDt;
     }
 
@@ -828,7 +827,7 @@ public class VehicleRentalService4 {
      *     {@link String }
      *     
      */
-    public VehicleRentalService4 setChckInDt(LocalDate value) {
+    public VehicleRentalService4 setChckInDt(XMLGregorianCalendar value) {
         this.chckInDt = value;
         return this;
     }
@@ -841,7 +840,7 @@ public class VehicleRentalService4 {
      *     {@link String }
      *     
      */
-    public OffsetTime getChckInTm() {
+    public XMLGregorianCalendar getChckInTm() {
         return chckInTm;
     }
 
@@ -853,7 +852,7 @@ public class VehicleRentalService4 {
      *     {@link String }
      *     
      */
-    public VehicleRentalService4 setChckInTm(OffsetTime value) {
+    public VehicleRentalService4 setChckInTm(XMLGregorianCalendar value) {
         this.chckInTm = value;
         return this;
     }

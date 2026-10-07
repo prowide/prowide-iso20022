@@ -1,17 +1,17 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigDecimal;
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -73,11 +73,11 @@ public class CurrencyConversion1 {
     @XmlElement(name = "QtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime qtnDt;
+    protected XMLGregorianCalendar qtnDt;
     @XmlElement(name = "VldUntil", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime vldUntil;
+    protected XMLGregorianCalendar vldUntil;
     @XmlElement(name = "SrcCcy", required = true)
     protected String srcCcy;
     @XmlElement(name = "SrcCcyNmrc")
@@ -353,7 +353,7 @@ public class CurrencyConversion1 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getQtnDt() {
+    public XMLGregorianCalendar getQtnDt() {
         return qtnDt;
     }
 
@@ -365,7 +365,7 @@ public class CurrencyConversion1 {
      *     {@link String }
      *     
      */
-    public CurrencyConversion1 setQtnDt(OffsetDateTime value) {
+    public CurrencyConversion1 setQtnDt(XMLGregorianCalendar value) {
         this.qtnDt = value;
         return this;
     }
@@ -378,7 +378,7 @@ public class CurrencyConversion1 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getVldUntil() {
+    public XMLGregorianCalendar getVldUntil() {
         return vldUntil;
     }
 
@@ -390,7 +390,7 @@ public class CurrencyConversion1 {
      *     {@link String }
      *     
      */
-    public CurrencyConversion1 setVldUntil(OffsetDateTime value) {
+    public CurrencyConversion1 setVldUntil(XMLGregorianCalendar value) {
         this.vldUntil = value;
         return this;
     }

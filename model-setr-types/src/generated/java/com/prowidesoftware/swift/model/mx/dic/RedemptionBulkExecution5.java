@@ -1,18 +1,17 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
-import java.time.OffsetDateTime;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -52,15 +51,15 @@ public class RedemptionBulkExecution5 {
     @XmlElement(name = "OrdrDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime ordrDtTm;
+    protected XMLGregorianCalendar ordrDtTm;
     @XmlElement(name = "RcvdDtTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime rcvdDtTm;
+    protected XMLGregorianCalendar rcvdDtTm;
     @XmlElement(name = "ReqdFutrTradDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate reqdFutrTradDt;
+    protected XMLGregorianCalendar reqdFutrTradDt;
     @XmlElement(name = "CxlRght")
     protected CancellationRight1Choice cxlRght;
     @XmlElement(name = "FinInstrmDtls", required = true)
@@ -159,7 +158,7 @@ public class RedemptionBulkExecution5 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getOrdrDtTm() {
+    public XMLGregorianCalendar getOrdrDtTm() {
         return ordrDtTm;
     }
 
@@ -171,7 +170,7 @@ public class RedemptionBulkExecution5 {
      *     {@link String }
      *     
      */
-    public RedemptionBulkExecution5 setOrdrDtTm(OffsetDateTime value) {
+    public RedemptionBulkExecution5 setOrdrDtTm(XMLGregorianCalendar value) {
         this.ordrDtTm = value;
         return this;
     }
@@ -184,7 +183,7 @@ public class RedemptionBulkExecution5 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getRcvdDtTm() {
+    public XMLGregorianCalendar getRcvdDtTm() {
         return rcvdDtTm;
     }
 
@@ -196,7 +195,7 @@ public class RedemptionBulkExecution5 {
      *     {@link String }
      *     
      */
-    public RedemptionBulkExecution5 setRcvdDtTm(OffsetDateTime value) {
+    public RedemptionBulkExecution5 setRcvdDtTm(XMLGregorianCalendar value) {
         this.rcvdDtTm = value;
         return this;
     }
@@ -209,7 +208,7 @@ public class RedemptionBulkExecution5 {
      *     {@link String }
      *     
      */
-    public LocalDate getReqdFutrTradDt() {
+    public XMLGregorianCalendar getReqdFutrTradDt() {
         return reqdFutrTradDt;
     }
 
@@ -221,7 +220,7 @@ public class RedemptionBulkExecution5 {
      *     {@link String }
      *     
      */
-    public RedemptionBulkExecution5 setReqdFutrTradDt(LocalDate value) {
+    public RedemptionBulkExecution5 setReqdFutrTradDt(XMLGregorianCalendar value) {
         this.reqdFutrTradDt = value;
         return this;
     }

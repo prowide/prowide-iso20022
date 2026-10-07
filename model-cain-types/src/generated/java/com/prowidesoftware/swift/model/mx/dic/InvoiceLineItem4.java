@@ -1,17 +1,17 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -59,17 +59,17 @@ public class InvoiceLineItem4 {
     @XmlElement(name = "Dt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate dt;
+    protected XMLGregorianCalendar dt;
     @XmlElement(name = "OrdrDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate ordrDt;
+    protected XMLGregorianCalendar ordrDt;
     @XmlElement(name = "CtrctNb")
     protected String ctrctNb;
     @XmlElement(name = "ShppgDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate shppgDt;
+    protected XMLGregorianCalendar shppgDt;
     @XmlElement(name = "Rbllg")
     protected Boolean rbllg;
     @XmlElement(name = "MdclSvcs")
@@ -128,7 +128,7 @@ public class InvoiceLineItem4 {
      *     {@link String }
      *     
      */
-    public LocalDate getDt() {
+    public XMLGregorianCalendar getDt() {
         return dt;
     }
 
@@ -140,7 +140,7 @@ public class InvoiceLineItem4 {
      *     {@link String }
      *     
      */
-    public InvoiceLineItem4 setDt(LocalDate value) {
+    public InvoiceLineItem4 setDt(XMLGregorianCalendar value) {
         this.dt = value;
         return this;
     }
@@ -153,7 +153,7 @@ public class InvoiceLineItem4 {
      *     {@link String }
      *     
      */
-    public LocalDate getOrdrDt() {
+    public XMLGregorianCalendar getOrdrDt() {
         return ordrDt;
     }
 
@@ -165,7 +165,7 @@ public class InvoiceLineItem4 {
      *     {@link String }
      *     
      */
-    public InvoiceLineItem4 setOrdrDt(LocalDate value) {
+    public InvoiceLineItem4 setOrdrDt(XMLGregorianCalendar value) {
         this.ordrDt = value;
         return this;
     }
@@ -203,7 +203,7 @@ public class InvoiceLineItem4 {
      *     {@link String }
      *     
      */
-    public LocalDate getShppgDt() {
+    public XMLGregorianCalendar getShppgDt() {
         return shppgDt;
     }
 
@@ -215,7 +215,7 @@ public class InvoiceLineItem4 {
      *     {@link String }
      *     
      */
-    public InvoiceLineItem4 setShppgDt(LocalDate value) {
+    public InvoiceLineItem4 setShppgDt(XMLGregorianCalendar value) {
         this.shppgDt = value;
         return this;
     }

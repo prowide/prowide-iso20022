@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -38,7 +38,7 @@ public class CardNotReceivedDetails1 {
     @XmlElement(name = "DtOfCardMld", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate dtOfCardMld;
+    protected XMLGregorianCalendar dtOfCardMld;
     @XmlElement(name = "MlngAdr")
     protected Address1 mlngAdr;
     @XmlElement(name = "MlngAdrUstrd")
@@ -48,7 +48,7 @@ public class CardNotReceivedDetails1 {
     @XmlElement(name = "VldFr", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate vldFr;
+    protected XMLGregorianCalendar vldFr;
     @XmlElement(name = "CardSctyCdInd")
     protected Boolean cardSctyCdInd;
     @XmlElement(name = "CardSctyCpblty")
@@ -62,7 +62,7 @@ public class CardNotReceivedDetails1 {
      *     {@link String }
      *     
      */
-    public LocalDate getDtOfCardMld() {
+    public XMLGregorianCalendar getDtOfCardMld() {
         return dtOfCardMld;
     }
 
@@ -74,7 +74,7 @@ public class CardNotReceivedDetails1 {
      *     {@link String }
      *     
      */
-    public CardNotReceivedDetails1 setDtOfCardMld(LocalDate value) {
+    public CardNotReceivedDetails1 setDtOfCardMld(XMLGregorianCalendar value) {
         this.dtOfCardMld = value;
         return this;
     }
@@ -162,7 +162,7 @@ public class CardNotReceivedDetails1 {
      *     {@link String }
      *     
      */
-    public LocalDate getVldFr() {
+    public XMLGregorianCalendar getVldFr() {
         return vldFr;
     }
 
@@ -174,7 +174,7 @@ public class CardNotReceivedDetails1 {
      *     {@link String }
      *     
      */
-    public CardNotReceivedDetails1 setVldFr(LocalDate value) {
+    public CardNotReceivedDetails1 setVldFr(XMLGregorianCalendar value) {
         this.vldFr = value;
         return this;
     }

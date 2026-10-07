@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.OffsetDateTime;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -48,7 +48,7 @@ public class StatusReportContent10 {
     @XmlElement(name = "POIDtTm", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime poiDtTm;
+    protected XMLGregorianCalendar poiDtTm;
     @XmlElement(name = "DataSetReqrd")
     protected List<DataSetRequest2> dataSetReqrd;
     @XmlElement(name = "Evt")
@@ -176,7 +176,7 @@ public class StatusReportContent10 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getPOIDtTm() {
+    public XMLGregorianCalendar getPOIDtTm() {
         return poiDtTm;
     }
 
@@ -188,7 +188,7 @@ public class StatusReportContent10 {
      *     {@link String }
      *     
      */
-    public StatusReportContent10 setPOIDtTm(OffsetDateTime value) {
+    public StatusReportContent10 setPOIDtTm(XMLGregorianCalendar value) {
         this.poiDtTm = value;
         return this;
     }

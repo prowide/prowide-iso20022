@@ -1,18 +1,17 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
-import java.time.LocalDate;
-import java.time.OffsetDateTime;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -52,11 +51,11 @@ public class TradeData17 {
     @XmlElement(name = "TradDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate tradDt;
+    protected XMLGregorianCalendar tradDt;
     @XmlElement(name = "TradExctnTm", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime tradExctnTm;
+    protected XMLGregorianCalendar tradExctnTm;
     @XmlElement(name = "SttlmDt")
     protected DateAndDateTime2Choice sttlmDt;
     @XmlElement(name = "FinInstrmId")
@@ -77,7 +76,7 @@ public class TradeData17 {
     @XmlElement(name = "TradTxDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate tradTxDt;
+    protected XMLGregorianCalendar tradTxDt;
     @XmlElement(name = "SctiesTxTp")
     protected SecuritiesTransactionType47Choice sctiesTxTp;
     @XmlElement(name = "TradTxCond")
@@ -104,7 +103,7 @@ public class TradeData17 {
      *     {@link String }
      *     
      */
-    public LocalDate getTradDt() {
+    public XMLGregorianCalendar getTradDt() {
         return tradDt;
     }
 
@@ -116,7 +115,7 @@ public class TradeData17 {
      *     {@link String }
      *     
      */
-    public TradeData17 setTradDt(LocalDate value) {
+    public TradeData17 setTradDt(XMLGregorianCalendar value) {
         this.tradDt = value;
         return this;
     }
@@ -129,7 +128,7 @@ public class TradeData17 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getTradExctnTm() {
+    public XMLGregorianCalendar getTradExctnTm() {
         return tradExctnTm;
     }
 
@@ -141,7 +140,7 @@ public class TradeData17 {
      *     {@link String }
      *     
      */
-    public TradeData17 setTradExctnTm(OffsetDateTime value) {
+    public TradeData17 setTradExctnTm(XMLGregorianCalendar value) {
         this.tradExctnTm = value;
         return this;
     }
@@ -354,7 +353,7 @@ public class TradeData17 {
      *     {@link String }
      *     
      */
-    public LocalDate getTradTxDt() {
+    public XMLGregorianCalendar getTradTxDt() {
         return tradTxDt;
     }
 
@@ -366,7 +365,7 @@ public class TradeData17 {
      *     {@link String }
      *     
      */
-    public TradeData17 setTradTxDt(LocalDate value) {
+    public TradeData17 setTradTxDt(XMLGregorianCalendar value) {
         this.tradTxDt = value;
         return this;
     }

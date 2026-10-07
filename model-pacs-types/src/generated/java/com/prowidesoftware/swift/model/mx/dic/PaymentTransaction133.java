@@ -1,17 +1,17 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -75,7 +75,7 @@ public class PaymentTransaction133 {
     @XmlElement(name = "OrgnlIntrBkSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate orgnlIntrBkSttlmDt;
+    protected XMLGregorianCalendar orgnlIntrBkSttlmDt;
     @XmlElement(name = "PmtTpInf")
     protected PaymentTypeInformation28 pmtTpInf;
     @XmlElement(name = "RtrdIntrBkSttlmAmt", required = true)
@@ -83,7 +83,7 @@ public class PaymentTransaction133 {
     @XmlElement(name = "IntrBkSttlmDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected LocalDate intrBkSttlmDt;
+    protected XMLGregorianCalendar intrBkSttlmDt;
     @XmlElement(name = "SttlmPrty")
     @XmlSchemaType(name = "string")
     protected Priority3Code sttlmPrty;
@@ -325,7 +325,7 @@ public class PaymentTransaction133 {
      *     {@link String }
      *     
      */
-    public LocalDate getOrgnlIntrBkSttlmDt() {
+    public XMLGregorianCalendar getOrgnlIntrBkSttlmDt() {
         return orgnlIntrBkSttlmDt;
     }
 
@@ -337,7 +337,7 @@ public class PaymentTransaction133 {
      *     {@link String }
      *     
      */
-    public PaymentTransaction133 setOrgnlIntrBkSttlmDt(LocalDate value) {
+    public PaymentTransaction133 setOrgnlIntrBkSttlmDt(XMLGregorianCalendar value) {
         this.orgnlIntrBkSttlmDt = value;
         return this;
     }
@@ -400,7 +400,7 @@ public class PaymentTransaction133 {
      *     {@link String }
      *     
      */
-    public LocalDate getIntrBkSttlmDt() {
+    public XMLGregorianCalendar getIntrBkSttlmDt() {
         return intrBkSttlmDt;
     }
 
@@ -412,7 +412,7 @@ public class PaymentTransaction133 {
      *     {@link String }
      *     
      */
-    public PaymentTransaction133 setIntrBkSttlmDt(LocalDate value) {
+    public PaymentTransaction133 setIntrBkSttlmDt(XMLGregorianCalendar value) {
         this.intrBkSttlmDt = value;
         return this;
     }

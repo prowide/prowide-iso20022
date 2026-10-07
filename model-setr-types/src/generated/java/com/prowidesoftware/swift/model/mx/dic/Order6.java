@@ -1,17 +1,17 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigDecimal;
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -91,7 +91,7 @@ public class Order6 {
     @XmlElement(name = "TradDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime tradDt;
+    protected XMLGregorianCalendar tradDt;
     @XmlElement(name = "Sd", required = true)
     @XmlSchemaType(name = "string")
     protected Side1Code sd;
@@ -122,7 +122,7 @@ public class Order6 {
     @XmlElement(name = "TradOrgtnDt", type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
-    protected OffsetDateTime tradOrgtnDt;
+    protected XMLGregorianCalendar tradOrgtnDt;
     @XmlElement(name = "SttlmCcy")
     protected String sttlmCcy;
     @XmlElement(name = "ClrFeeTp")
@@ -314,7 +314,7 @@ public class Order6 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getTradDt() {
+    public XMLGregorianCalendar getTradDt() {
         return tradDt;
     }
 
@@ -326,7 +326,7 @@ public class Order6 {
      *     {@link String }
      *     
      */
-    public Order6 setTradDt(OffsetDateTime value) {
+    public Order6 setTradDt(XMLGregorianCalendar value) {
         this.tradDt = value;
         return this;
     }
@@ -606,7 +606,7 @@ public class Order6 {
      *     {@link String }
      *     
      */
-    public OffsetDateTime getTradOrgtnDt() {
+    public XMLGregorianCalendar getTradOrgtnDt() {
         return tradOrgtnDt;
     }
 
@@ -618,7 +618,7 @@ public class Order6 {
      *     {@link String }
      *     
      */
-    public Order6 setTradOrgtnDt(OffsetDateTime value) {
+    public Order6 setTradOrgtnDt(XMLGregorianCalendar value) {
         this.tradOrgtnDt = value;
         return this;
     }
