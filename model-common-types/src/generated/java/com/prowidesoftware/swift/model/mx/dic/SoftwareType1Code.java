@@ -9,18 +9,17 @@ import javax.xml.bind.annotation.XmlType;
  * <p>Java class for SoftwareType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="SoftwareType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="MFFW"/&gt;
- *     &lt;enumeration value="MFSW"/&gt;
- *     &lt;enumeration value="APSW"/&gt;
- *     &lt;enumeration value="OTHP"/&gt;
- *     &lt;enumeration value="OTHN"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="SoftwareType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="MFFW"/>
+ *     <enumeration value="MFSW"/>
+ *     <enumeration value="APSW"/>
+ *     <enumeration value="OTHP"/>
+ *     <enumeration value="OTHN"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "SoftwareType1Code")

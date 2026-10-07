@@ -4,14 +4,17 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import com.prowidesoftware.swift.model.mx.MxReadImpl;
+import com.prowidesoftware.swift.model.mx.MxReadParams;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
-import com.prowidesoftware.swift.model.mx.MxRead;
-import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -28,18 +31,18 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:seev.006.001.11")
 public class MxSeev00600111
-    extends com.prowidesoftware.swift.model.mx.AbstractMX
+    extends AbstractMX
 {
 
     @XmlElement(name = "MtgInstrSts", required = true)
     protected MeetingInstructionStatusV11 mtgInstrSts;
-    public final static transient String BUSINESS_PROCESS = "seev";
-    public final static transient int FUNCTIONALITY = 6;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 11;
+    public static final transient String BUSINESS_PROCESS = "seev";
+    public static final transient int FUNCTIONALITY = 6;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 11;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {AddressType2Code.class, CancellationProcessingStatus2 .class, CancellationStatus31Choice.class, CancellationStatus32Choice.class, CancellationStatus6Code.class, DateAndPlaceOfBirth2 .class, DetailedInstructionCancellationStatus15 .class, DetailedInstructionStatus21 .class, EligiblePosition17 .class, FinancialInstrumentQuantity45Choice.class, GenericIdentification13 .class, GenericIdentification30 .class, GenericIdentification36 .class, HoldingBalance13 .class, IdentificationSource3Choice.class, IdentificationType45Choice.class, InstructionProcessingStatus6 .class, InstructionStatus13Choice.class, InstructionType2Choice.class, InstructionTypeStatus7Choice.class, MeetingInstructionStatusV11 .class, MeetingReference10 .class, MeetingType4Code.class, MeetingTypeClassification2Choice.class, MeetingTypeClassification2Code.class, MxSeev00600111 .class, NameAndAddress5 .class, NamePrefix2Code.class, NaturalPersonIdentification1 .class, NoReasonCode.class, OtherIdentification1 .class, PartyIdentification129Choice.class, PartyIdentification198Choice.class, PartyIdentification221 .class, PartyIdentification222 .class, PartyIdentification224 .class, PartyIdentification226Choice.class, PartyIdentification231Choice.class, PartyIdentification238 .class, PartyIdentification246Choice.class, PartyIdentification250 .class, PartyIdentification269 .class, PendingCancellationReason6Code.class, PendingCancellationReason7Choice.class, PendingCancellationStatus12Choice.class, PendingCancellationStatusReason10 .class, PendingReason25Code.class, PendingReason67Choice.class, PendingStatus70Choice.class, PendingStatusReason26 .class, PersonName1 .class, PersonName2 .class, PersonName3 .class, PostalAddress1 .class, PostalAddress26 .class, RejectedReason29Choice.class, RejectedReason57Choice.class, RejectedStatus31Choice.class, RejectedStatus55Choice.class, RejectedStatusReason28 .class, RejectedStatusReason54 .class, RejectionReason51Code.class, RejectionReason82Code.class, SecuritiesEntryType3Code.class, SecurityIdentification19 .class, ShortLong1Code.class, SignedQuantityFormat14 .class, Status11Code.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TypeOfIdentification4Code.class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:seev.006.001.11";
+    public static final transient Class[] _classes = new Class[] {AddressType2Code.class, CancellationProcessingStatus2 .class, CancellationStatus31Choice.class, CancellationStatus32Choice.class, CancellationStatus6Code.class, DateAndPlaceOfBirth2 .class, DetailedInstructionCancellationStatus15 .class, DetailedInstructionStatus21 .class, EligiblePosition17 .class, FinancialInstrumentQuantity45Choice.class, GenericIdentification13 .class, GenericIdentification30 .class, GenericIdentification36 .class, HoldingBalance13 .class, IdentificationSource3Choice.class, IdentificationType45Choice.class, InstructionProcessingStatus6 .class, InstructionStatus13Choice.class, InstructionType2Choice.class, InstructionTypeStatus7Choice.class, MeetingInstructionStatusV11 .class, MeetingReference10 .class, MeetingType4Code.class, MeetingTypeClassification2Choice.class, MeetingTypeClassification2Code.class, MxSeev00600111 .class, NameAndAddress5 .class, NamePrefix2Code.class, NaturalPersonIdentification1 .class, NoReasonCode.class, OtherIdentification1 .class, PartyIdentification129Choice.class, PartyIdentification198Choice.class, PartyIdentification221 .class, PartyIdentification222 .class, PartyIdentification224 .class, PartyIdentification226Choice.class, PartyIdentification231Choice.class, PartyIdentification238 .class, PartyIdentification246Choice.class, PartyIdentification250 .class, PartyIdentification269 .class, PendingCancellationReason6Code.class, PendingCancellationReason7Choice.class, PendingCancellationStatus12Choice.class, PendingCancellationStatusReason10 .class, PendingReason25Code.class, PendingReason67Choice.class, PendingStatus70Choice.class, PendingStatusReason26 .class, PersonName1 .class, PersonName2 .class, PersonName3 .class, PostalAddress1 .class, PostalAddress26 .class, RejectedReason29Choice.class, RejectedReason57Choice.class, RejectedStatus31Choice.class, RejectedStatus55Choice.class, RejectedStatusReason28 .class, RejectedStatusReason54 .class, RejectionReason51Code.class, RejectionReason82Code.class, SecuritiesEntryType3Code.class, SecurityIdentification19 .class, ShortLong1Code.class, SignedQuantityFormat14 .class, Status11Code.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TypeOfIdentification4Code.class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:seev.006.001.11";
 
     public MxSeev00600111() {
         super();
@@ -89,21 +92,6 @@ public class MxSeev00600111
     }
 
     @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
-    }
-
-    @Override
     public String getBusinessProcess() {
         return BUSINESS_PROCESS;
     }
@@ -128,7 +116,7 @@ public class MxSeev00600111
      * 
      */
     public static MxSeev00600111 parse(String xml) {
-        return ((MxSeev00600111) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxSeev00600111 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams()));
+        return ((MxSeev00600111) MxReadImpl.parse(MxSeev00600111 .class, xml, _classes, new MxReadParams()));
     }
 
     /**
@@ -137,7 +125,7 @@ public class MxSeev00600111
      * 
      */
     public static MxSeev00600111 parse(String xml, MxReadConfiguration conf) {
-        return ((MxSeev00600111) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxSeev00600111 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams(conf)));
+        return ((MxSeev00600111) MxReadImpl.parse(MxSeev00600111 .class, xml, _classes, new MxReadParams(conf)));
     }
 
     /**
@@ -173,8 +161,23 @@ public class MxSeev00600111
      * @return
      *     a new instance of MxSeev00600111
      */
-    public final static MxSeev00600111 fromJson(String json) {
-        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSeev00600111 .class);
+    public static final MxSeev00600111 fromJson(String json) {
+        return AbstractMX.fromJson(json, MxSeev00600111 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

@@ -93,8 +93,8 @@ public class DisclosedBidRequest {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dscldBidDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the dscldBidDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -108,10 +108,12 @@ public class DisclosedBidRequest {
      * {@link DisclosedBid1 }
      * 
      * 
+     * @return
+     *     The value of the dscldBidDtls property.
      */
     public List<DisclosedBid1> getDscldBidDtls() {
         if (dscldBidDtls == null) {
-            dscldBidDtls = new ArrayList<DisclosedBid1>();
+            dscldBidDtls = new ArrayList<>();
         }
         return this.dscldBidDtls;
     }

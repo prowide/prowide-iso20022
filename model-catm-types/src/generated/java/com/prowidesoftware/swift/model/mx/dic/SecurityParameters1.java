@@ -86,8 +86,8 @@ public class SecurityParameters1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the smmtrcKey property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the smmtrcKey property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -101,10 +101,12 @@ public class SecurityParameters1 {
      * {@link CryptographicKey2 }
      * 
      * 
+     * @return
+     *     The value of the smmtrcKey property.
      */
     public List<CryptographicKey2> getSmmtrcKey() {
         if (smmtrcKey == null) {
-            smmtrcKey = new ArrayList<CryptographicKey2>();
+            smmtrcKey = new ArrayList<>();
         }
         return this.smmtrcKey;
     }

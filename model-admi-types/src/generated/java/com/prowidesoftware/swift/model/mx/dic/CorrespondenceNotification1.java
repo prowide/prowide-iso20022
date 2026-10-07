@@ -124,8 +124,8 @@ public class CorrespondenceNotification1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ntfctnNrrtv property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ntfctnNrrtv property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -139,10 +139,12 @@ public class CorrespondenceNotification1 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the ntfctnNrrtv property.
      */
     public List<String> getNtfctnNrrtv() {
         if (ntfctnNrrtv == null) {
-            ntfctnNrrtv = new ArrayList<String>();
+            ntfctnNrrtv = new ArrayList<>();
         }
         return this.ntfctnNrrtv;
     }
@@ -153,8 +155,8 @@ public class CorrespondenceNotification1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the nclsdFile property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the nclsdFile property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -168,10 +170,12 @@ public class CorrespondenceNotification1 {
      * {@link Document15 }
      * 
      * 
+     * @return
+     *     The value of the nclsdFile property.
      */
     public List<Document15> getNclsdFile() {
         if (nclsdFile == null) {
-            nclsdFile = new ArrayList<Document15>();
+            nclsdFile = new ArrayList<>();
         }
         return this.nclsdFile;
     }
@@ -182,8 +186,8 @@ public class CorrespondenceNotification1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rltdNtfctnData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rltdNtfctnData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -197,10 +201,12 @@ public class CorrespondenceNotification1 {
      * {@link RelatedNotificationData1 }
      * 
      * 
+     * @return
+     *     The value of the rltdNtfctnData property.
      */
     public List<RelatedNotificationData1> getRltdNtfctnData() {
         if (rltdNtfctnData == null) {
-            rltdNtfctnData = new ArrayList<RelatedNotificationData1>();
+            rltdNtfctnData = new ArrayList<>();
         }
         return this.rltdNtfctnData;
     }

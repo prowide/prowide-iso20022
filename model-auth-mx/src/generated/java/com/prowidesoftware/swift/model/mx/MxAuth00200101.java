@@ -4,14 +4,17 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import com.prowidesoftware.swift.model.mx.MxReadImpl;
+import com.prowidesoftware.swift.model.mx.MxReadParams;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
-import com.prowidesoftware.swift.model.mx.MxRead;
-import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -28,18 +31,18 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:auth.002.001.01")
 public class MxAuth00200101
-    extends com.prowidesoftware.swift.model.mx.AbstractMX
+    extends AbstractMX
 {
 
     @XmlElement(name = "InfReqRspn", required = true)
     protected InformationRequestResponseV01 infReqRspn;
-    public final static transient String BUSINESS_PROCESS = "auth";
-    public final static transient int FUNCTIONALITY = 2;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 1;
+    public static final transient String BUSINESS_PROCESS = "auth";
+    public static final transient int FUNCTIONALITY = 2;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {AccountAndParties1 .class, AccountIdentification4Choice.class, AccountSchemeName1Choice.class, AddressType2Code.class, AuthorityInvestigation2 .class, AuthorityRequestType1 .class, BranchAndFinancialInstitutionIdentification5 .class, BranchData2 .class, CashAccount25 .class, CashAccountType2Choice.class, ClearingSystemIdentification2Choice.class, ClearingSystemMemberIdentification2 .class, ContactDetails2 .class, CustomerIdentification1 .class, DateAndPlaceOfBirth.class, DateOrDateTimePeriodChoice.class, DatePeriodDetails.class, DateTimePeriodDetails.class, FinancialIdentificationSchemeName1Choice.class, FinancialInstitutionIdentification8 .class, GenericAccountIdentification1 .class, GenericFinancialIdentification1 .class, GenericOrganisationIdentification1 .class, GenericPersonIdentification1 .class, InformationRequestResponseV01 .class, InvestigatedParties1Choice.class, InvestigatedParties1Code.class, InvestigationResult1Choice.class, InvestigationStatus1Code.class, MxAuth00200101 .class, NamePrefix1Code.class, OrganisationIdentification8 .class, OrganisationIdentificationSchemeName1Choice.class, Party11Choice.class, PartyIdentification43 .class, PaymentInstrumentType1 .class, PersonIdentification5 .class, PersonIdentificationSchemeName1Choice.class, PostalAddress6 .class, RequestType1 .class, ReturnIndicator1 .class, SearchCriteria1Choice.class, StatusResponse1Code.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TransactionRequestType1Code.class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:auth.002.001.01";
+    public static final transient Class[] _classes = new Class[] {AccountAndParties1 .class, AccountIdentification4Choice.class, AccountSchemeName1Choice.class, AddressType2Code.class, AuthorityInvestigation2 .class, AuthorityRequestType1 .class, BranchAndFinancialInstitutionIdentification5 .class, BranchData2 .class, CashAccount25 .class, CashAccountType2Choice.class, ClearingSystemIdentification2Choice.class, ClearingSystemMemberIdentification2 .class, ContactDetails2 .class, CustomerIdentification1 .class, DateAndPlaceOfBirth.class, DateOrDateTimePeriodChoice.class, DatePeriodDetails.class, DateTimePeriodDetails.class, FinancialIdentificationSchemeName1Choice.class, FinancialInstitutionIdentification8 .class, GenericAccountIdentification1 .class, GenericFinancialIdentification1 .class, GenericOrganisationIdentification1 .class, GenericPersonIdentification1 .class, InformationRequestResponseV01 .class, InvestigatedParties1Choice.class, InvestigatedParties1Code.class, InvestigationResult1Choice.class, InvestigationStatus1Code.class, MxAuth00200101 .class, NamePrefix1Code.class, OrganisationIdentification8 .class, OrganisationIdentificationSchemeName1Choice.class, Party11Choice.class, PartyIdentification43 .class, PaymentInstrumentType1 .class, PersonIdentification5 .class, PersonIdentificationSchemeName1Choice.class, PostalAddress6 .class, RequestType1 .class, ReturnIndicator1 .class, SearchCriteria1Choice.class, StatusResponse1Code.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TransactionRequestType1Code.class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:auth.002.001.01";
 
     public MxAuth00200101() {
         super();
@@ -89,21 +92,6 @@ public class MxAuth00200101
     }
 
     @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
-    }
-
-    @Override
     public String getBusinessProcess() {
         return BUSINESS_PROCESS;
     }
@@ -128,7 +116,7 @@ public class MxAuth00200101
      * 
      */
     public static MxAuth00200101 parse(String xml) {
-        return ((MxAuth00200101) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxAuth00200101 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams()));
+        return ((MxAuth00200101) MxReadImpl.parse(MxAuth00200101 .class, xml, _classes, new MxReadParams()));
     }
 
     /**
@@ -137,7 +125,7 @@ public class MxAuth00200101
      * 
      */
     public static MxAuth00200101 parse(String xml, MxReadConfiguration conf) {
-        return ((MxAuth00200101) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxAuth00200101 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams(conf)));
+        return ((MxAuth00200101) MxReadImpl.parse(MxAuth00200101 .class, xml, _classes, new MxReadParams(conf)));
     }
 
     /**
@@ -173,8 +161,23 @@ public class MxAuth00200101
      * @return
      *     a new instance of MxAuth00200101
      */
-    public final static MxAuth00200101 fromJson(String json) {
-        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxAuth00200101 .class);
+    public static final MxAuth00200101 fromJson(String json) {
+        return AbstractMX.fromJson(json, MxAuth00200101 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

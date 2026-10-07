@@ -65,8 +65,8 @@ public class SingleQualifiedPartyIdentification1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rltvIdr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rltvIdr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -80,10 +80,12 @@ public class SingleQualifiedPartyIdentification1 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the rltvIdr property.
      */
     public List<String> getRltvIdr() {
         if (rltvIdr == null) {
-            rltvIdr = new ArrayList<String>();
+            rltvIdr = new ArrayList<>();
         }
         return this.rltvIdr;
     }

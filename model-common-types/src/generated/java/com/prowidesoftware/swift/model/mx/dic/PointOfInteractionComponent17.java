@@ -160,8 +160,8 @@ public class PointOfInteractionComponent17 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the stdCmplc property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the stdCmplc property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -175,10 +175,12 @@ public class PointOfInteractionComponent17 {
      * {@link GenericIdentification48 }
      * 
      * 
+     * @return
+     *     The value of the stdCmplc property.
      */
     public List<GenericIdentification48> getStdCmplc() {
         if (stdCmplc == null) {
-            stdCmplc = new ArrayList<GenericIdentification48>();
+            stdCmplc = new ArrayList<>();
         }
         return this.stdCmplc;
     }
@@ -214,8 +216,8 @@ public class PointOfInteractionComponent17 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the assmnt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the assmnt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -229,10 +231,12 @@ public class PointOfInteractionComponent17 {
      * {@link PointOfInteractionComponentAssessment1 }
      * 
      * 
+     * @return
+     *     The value of the assmnt property.
      */
     public List<PointOfInteractionComponentAssessment1> getAssmnt() {
         if (assmnt == null) {
-            assmnt = new ArrayList<PointOfInteractionComponentAssessment1>();
+            assmnt = new ArrayList<>();
         }
         return this.assmnt;
     }
@@ -243,8 +247,8 @@ public class PointOfInteractionComponent17 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the packg property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the packg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -258,10 +262,12 @@ public class PointOfInteractionComponent17 {
      * {@link PackageType5 }
      * 
      * 
+     * @return
+     *     The value of the packg property.
      */
     public List<PackageType5> getPackg() {
         if (packg == null) {
-            packg = new ArrayList<PackageType5>();
+            packg = new ArrayList<>();
         }
         return this.packg;
     }

@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -227,8 +227,8 @@ public class ParticipantAccount1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the acctRstrctns property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the acctRstrctns property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -242,10 +242,12 @@ public class ParticipantAccount1 {
      * {@link AccountRestrictions1 }
      * 
      * 
+     * @return
+     *     The value of the acctRstrctns property.
      */
     public List<AccountRestrictions1> getAcctRstrctns() {
         if (acctRstrctns == null) {
-            acctRstrctns = new ArrayList<AccountRestrictions1>();
+            acctRstrctns = new ArrayList<>();
         }
         return this.acctRstrctns;
     }
@@ -306,8 +308,8 @@ public class ParticipantAccount1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the lmts property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the lmts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -321,10 +323,12 @@ public class ParticipantAccount1 {
      * {@link AccountLimits1 }
      * 
      * 
+     * @return
+     *     The value of the lmts property.
      */
     public List<AccountLimits1> getLmts() {
         if (lmts == null) {
-            lmts = new ArrayList<AccountLimits1>();
+            lmts = new ArrayList<>();
         }
         return this.lmts;
     }
@@ -335,8 +339,8 @@ public class ParticipantAccount1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the arrsts property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the arrsts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -350,10 +354,12 @@ public class ParticipantAccount1 {
      * {@link ArrestedFunds1 }
      * 
      * 
+     * @return
+     *     The value of the arrsts property.
      */
     public List<ArrestedFunds1> getArrsts() {
         if (arrsts == null) {
-            arrsts = new ArrayList<ArrestedFunds1>();
+            arrsts = new ArrayList<>();
         }
         return this.arrsts;
     }

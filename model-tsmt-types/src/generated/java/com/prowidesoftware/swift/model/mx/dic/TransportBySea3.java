@@ -40,8 +40,8 @@ public class TransportBySea3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the portOfLoadng property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the portOfLoadng property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -55,10 +55,12 @@ public class TransportBySea3 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the portOfLoadng property.
      */
     public List<String> getPortOfLoadng() {
         if (portOfLoadng == null) {
-            portOfLoadng = new ArrayList<String>();
+            portOfLoadng = new ArrayList<>();
         }
         return this.portOfLoadng;
     }
@@ -69,8 +71,8 @@ public class TransportBySea3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the portOfDschrge property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the portOfDschrge property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -84,10 +86,12 @@ public class TransportBySea3 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the portOfDschrge property.
      */
     public List<String> getPortOfDschrge() {
         if (portOfDschrge == null) {
-            portOfDschrge = new ArrayList<String>();
+            portOfDschrge = new ArrayList<>();
         }
         return this.portOfDschrge;
     }

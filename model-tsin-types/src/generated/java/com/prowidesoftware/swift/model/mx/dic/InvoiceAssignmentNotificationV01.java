@@ -80,8 +80,8 @@ public class InvoiceAssignmentNotificationV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ntfctnList property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ntfctnList property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -95,10 +95,12 @@ public class InvoiceAssignmentNotificationV01 {
      * {@link FinancingItemList1Tsin00800101 }
      * 
      * 
+     * @return
+     *     The value of the ntfctnList property.
      */
     public List<FinancingItemList1Tsin00800101> getNtfctnList() {
         if (ntfctnList == null) {
-            ntfctnList = new ArrayList<FinancingItemList1Tsin00800101>();
+            ntfctnList = new ArrayList<>();
         }
         return this.ntfctnList;
     }
@@ -184,8 +186,8 @@ public class InvoiceAssignmentNotificationV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the attchdMsg property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the attchdMsg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -199,10 +201,12 @@ public class InvoiceAssignmentNotificationV01 {
      * {@link EncapsulatedBusinessMessage1 }
      * 
      * 
+     * @return
+     *     The value of the attchdMsg property.
      */
     public List<EncapsulatedBusinessMessage1> getAttchdMsg() {
         if (attchdMsg == null) {
-            attchdMsg = new ArrayList<EncapsulatedBusinessMessage1>();
+            attchdMsg = new ArrayList<>();
         }
         return this.attchdMsg;
     }

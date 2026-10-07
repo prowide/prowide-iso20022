@@ -158,8 +158,8 @@ public class TransferStatus1Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rjctd property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rjctd property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -173,10 +173,12 @@ public class TransferStatus1Choice {
      * {@link RejectedStatus8Choice }
      * 
      * 
+     * @return
+     *     The value of the rjctd property.
      */
     public List<RejectedStatus8Choice> getRjctd() {
         if (rjctd == null) {
-            rjctd = new ArrayList<RejectedStatus8Choice>();
+            rjctd = new ArrayList<>();
         }
         return this.rjctd;
     }

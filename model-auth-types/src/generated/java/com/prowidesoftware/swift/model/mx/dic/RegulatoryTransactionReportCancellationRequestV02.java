@@ -127,8 +127,8 @@ public class RegulatoryTransactionReportCancellationRequestV02 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cxlByTxDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cxlByTxDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -142,10 +142,12 @@ public class RegulatoryTransactionReportCancellationRequestV02 {
      * {@link TransactionDetails3 }
      * 
      * 
+     * @return
+     *     The value of the cxlByTxDtls property.
      */
     public List<TransactionDetails3> getCxlByTxDtls() {
         if (cxlByTxDtls == null) {
-            cxlByTxDtls = new ArrayList<TransactionDetails3>();
+            cxlByTxDtls = new ArrayList<>();
         }
         return this.cxlByTxDtls;
     }
@@ -181,8 +183,8 @@ public class RegulatoryTransactionReportCancellationRequestV02 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cxlByTradRef property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cxlByTradRef property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -196,10 +198,12 @@ public class RegulatoryTransactionReportCancellationRequestV02 {
      * {@link TransactionDetails2 }
      * 
      * 
+     * @return
+     *     The value of the cxlByTradRef property.
      */
     public List<TransactionDetails2> getCxlByTradRef() {
         if (cxlByTradRef == null) {
-            cxlByTradRef = new ArrayList<TransactionDetails2>();
+            cxlByTradRef = new ArrayList<>();
         }
         return this.cxlByTradRef;
     }

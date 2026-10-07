@@ -94,8 +94,8 @@ public class AccountLiquidityReport1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the lmtInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the lmtInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -109,10 +109,12 @@ public class AccountLiquidityReport1 {
      * {@link AccountLimits1 }
      * 
      * 
+     * @return
+     *     The value of the lmtInf property.
      */
     public List<AccountLimits1> getLmtInf() {
         if (lmtInf == null) {
-            lmtInf = new ArrayList<AccountLimits1>();
+            lmtInf = new ArrayList<>();
         }
         return this.lmtInf;
     }
@@ -173,8 +175,8 @@ public class AccountLiquidityReport1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dbtQdTxs property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the dbtQdTxs property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -188,10 +190,12 @@ public class AccountLiquidityReport1 {
      * {@link QueuedTransactionsReport1 }
      * 
      * 
+     * @return
+     *     The value of the dbtQdTxs property.
      */
     public List<QueuedTransactionsReport1> getDbtQdTxs() {
         if (dbtQdTxs == null) {
-            dbtQdTxs = new ArrayList<QueuedTransactionsReport1>();
+            dbtQdTxs = new ArrayList<>();
         }
         return this.dbtQdTxs;
     }
@@ -202,8 +206,8 @@ public class AccountLiquidityReport1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cdtQdTxs property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cdtQdTxs property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -217,10 +221,12 @@ public class AccountLiquidityReport1 {
      * {@link QueuedTransactionsReport1 }
      * 
      * 
+     * @return
+     *     The value of the cdtQdTxs property.
      */
     public List<QueuedTransactionsReport1> getCdtQdTxs() {
         if (cdtQdTxs == null) {
-            cdtQdTxs = new ArrayList<QueuedTransactionsReport1>();
+            cdtQdTxs = new ArrayList<>();
         }
         return this.cdtQdTxs;
     }

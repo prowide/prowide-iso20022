@@ -74,8 +74,8 @@ public class ModifyLimitV05 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the lmtDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the lmtDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -89,10 +89,12 @@ public class ModifyLimitV05 {
      * {@link LimitStructure1 }
      * 
      * 
+     * @return
+     *     The value of the lmtDtls property.
      */
     public List<LimitStructure1> getLmtDtls() {
         if (lmtDtls == null) {
-            lmtDtls = new ArrayList<LimitStructure1>();
+            lmtDtls = new ArrayList<>();
         }
         return this.lmtDtls;
     }

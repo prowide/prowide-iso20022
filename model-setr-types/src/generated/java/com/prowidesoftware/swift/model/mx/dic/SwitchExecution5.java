@@ -65,8 +65,8 @@ public class SwitchExecution5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the redLeg property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the redLeg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -80,10 +80,12 @@ public class SwitchExecution5 {
      * {@link SwitchExecutionRedemptionLeg4 }
      * 
      * 
+     * @return
+     *     The value of the redLeg property.
      */
     public List<SwitchExecutionRedemptionLeg4> getRedLeg() {
         if (redLeg == null) {
-            redLeg = new ArrayList<SwitchExecutionRedemptionLeg4>();
+            redLeg = new ArrayList<>();
         }
         return this.redLeg;
     }
@@ -94,8 +96,8 @@ public class SwitchExecution5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sbcptLeg property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sbcptLeg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -109,10 +111,12 @@ public class SwitchExecution5 {
      * {@link SwitchExecutionSubscriptionLeg4 }
      * 
      * 
+     * @return
+     *     The value of the sbcptLeg property.
      */
     public List<SwitchExecutionSubscriptionLeg4> getSbcptLeg() {
         if (sbcptLeg == null) {
-            sbcptLeg = new ArrayList<SwitchExecutionSubscriptionLeg4>();
+            sbcptLeg = new ArrayList<>();
         }
         return this.sbcptLeg;
     }

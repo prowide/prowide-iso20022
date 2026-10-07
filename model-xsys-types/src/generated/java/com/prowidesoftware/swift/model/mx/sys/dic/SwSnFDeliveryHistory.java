@@ -34,8 +34,8 @@ public class SwSnFDeliveryHistory {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the snFDeliveryInfo property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the snFDeliveryInfo property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -49,10 +49,12 @@ public class SwSnFDeliveryHistory {
      * {@link SwSnFDeliveryInfo }
      * 
      * 
+     * @return
+     *     The value of the snFDeliveryInfo property.
      */
     public List<SwSnFDeliveryInfo> getSnFDeliveryInfo() {
         if (snFDeliveryInfo == null) {
-            snFDeliveryInfo = new ArrayList<SwSnFDeliveryInfo>();
+            snFDeliveryInfo = new ArrayList<>();
         }
         return this.snFDeliveryInfo;
     }

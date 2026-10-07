@@ -37,8 +37,8 @@ public class LimitDetailsStructure3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the curLmtId property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the curLmtId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -52,10 +52,12 @@ public class LimitDetailsStructure3 {
      * {@link LimitIdentificationDetails2 }
      * 
      * 
+     * @return
+     *     The value of the curLmtId property.
      */
     public List<LimitIdentificationDetails2> getCurLmtId() {
         if (curLmtId == null) {
-            curLmtId = new ArrayList<LimitIdentificationDetails2>();
+            curLmtId = new ArrayList<>();
         }
         return this.curLmtId;
     }
@@ -66,8 +68,8 @@ public class LimitDetailsStructure3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the allCurLmts property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the allCurLmts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -81,10 +83,12 @@ public class LimitDetailsStructure3 {
      * {@link LimitIdentificationDetails3 }
      * 
      * 
+     * @return
+     *     The value of the allCurLmts property.
      */
     public List<LimitIdentificationDetails3> getAllCurLmts() {
         if (allCurLmts == null) {
-            allCurLmts = new ArrayList<LimitIdentificationDetails3>();
+            allCurLmts = new ArrayList<>();
         }
         return this.allCurLmts;
     }

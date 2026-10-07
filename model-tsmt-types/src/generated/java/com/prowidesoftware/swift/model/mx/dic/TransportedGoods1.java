@@ -93,8 +93,8 @@ public class TransportedGoods1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the buyrDfndInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the buyrDfndInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -108,10 +108,12 @@ public class TransportedGoods1 {
      * {@link UserDefinedInformation1 }
      * 
      * 
+     * @return
+     *     The value of the buyrDfndInf property.
      */
     public List<UserDefinedInformation1> getBuyrDfndInf() {
         if (buyrDfndInf == null) {
-            buyrDfndInf = new ArrayList<UserDefinedInformation1>();
+            buyrDfndInf = new ArrayList<>();
         }
         return this.buyrDfndInf;
     }
@@ -122,8 +124,8 @@ public class TransportedGoods1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sellrDfndInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sellrDfndInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -137,10 +139,12 @@ public class TransportedGoods1 {
      * {@link UserDefinedInformation1 }
      * 
      * 
+     * @return
+     *     The value of the sellrDfndInf property.
      */
     public List<UserDefinedInformation1> getSellrDfndInf() {
         if (sellrDfndInf == null) {
-            sellrDfndInf = new ArrayList<UserDefinedInformation1>();
+            sellrDfndInf = new ArrayList<>();
         }
         return this.sellrDfndInf;
     }

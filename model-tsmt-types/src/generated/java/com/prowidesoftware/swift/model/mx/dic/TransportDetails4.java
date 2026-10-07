@@ -52,8 +52,8 @@ public class TransportDetails4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the trnsprtDocRef property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the trnsprtDocRef property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -67,10 +67,12 @@ public class TransportDetails4 {
      * {@link DocumentIdentification7 }
      * 
      * 
+     * @return
+     *     The value of the trnsprtDocRef property.
      */
     public List<DocumentIdentification7> getTrnsprtDocRef() {
         if (trnsprtDocRef == null) {
-            trnsprtDocRef = new ArrayList<DocumentIdentification7>();
+            trnsprtDocRef = new ArrayList<>();
         }
         return this.trnsprtDocRef;
     }
@@ -81,8 +83,8 @@ public class TransportDetails4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the trnsprtdGoods property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the trnsprtdGoods property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -96,10 +98,12 @@ public class TransportDetails4 {
      * {@link TransportedGoods1 }
      * 
      * 
+     * @return
+     *     The value of the trnsprtdGoods property.
      */
     public List<TransportedGoods1> getTrnsprtdGoods() {
         if (trnsprtdGoods == null) {
-            trnsprtdGoods = new ArrayList<TransportedGoods1>();
+            trnsprtdGoods = new ArrayList<>();
         }
         return this.trnsprtdGoods;
     }

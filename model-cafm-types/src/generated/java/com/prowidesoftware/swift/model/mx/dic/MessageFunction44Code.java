@@ -9,17 +9,16 @@ import javax.xml.bind.annotation.XmlType;
  * <p>Java class for MessageFunction44Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="MessageFunction44Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ADVC"/&gt;
- *     &lt;enumeration value="NOTI"/&gt;
- *     &lt;enumeration value="INST"/&gt;
- *     &lt;enumeration value="REQU"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="MessageFunction44Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ADVC"/>
+ *     <enumeration value="NOTI"/>
+ *     <enumeration value="INST"/>
+ *     <enumeration value="REQU"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "MessageFunction44Code")

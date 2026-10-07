@@ -43,8 +43,8 @@ public class SettlementStatus27Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the prtlSttlm property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the prtlSttlm property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -58,10 +58,12 @@ public class SettlementStatus27Choice {
      * {@link ProprietaryReason4 }
      * 
      * 
+     * @return
+     *     The value of the prtlSttlm property.
      */
     public List<ProprietaryReason4> getPrtlSttlm() {
         if (prtlSttlm == null) {
-            prtlSttlm = new ArrayList<ProprietaryReason4>();
+            prtlSttlm = new ArrayList<>();
         }
         return this.prtlSttlm;
     }
@@ -72,8 +74,8 @@ public class SettlementStatus27Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sttld property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sttld property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -87,10 +89,12 @@ public class SettlementStatus27Choice {
      * {@link ProprietaryReason4 }
      * 
      * 
+     * @return
+     *     The value of the sttld property.
      */
     public List<ProprietaryReason4> getSttld() {
         if (sttld == null) {
-            sttld = new ArrayList<ProprietaryReason4>();
+            sttld = new ArrayList<>();
         }
         return this.sttld;
     }
@@ -101,8 +105,8 @@ public class SettlementStatus27Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the usttld property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the usttld property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -116,10 +120,12 @@ public class SettlementStatus27Choice {
      * {@link ProprietaryReason4 }
      * 
      * 
+     * @return
+     *     The value of the usttld property.
      */
     public List<ProprietaryReason4> getUsttld() {
         if (usttld == null) {
-            usttld = new ArrayList<ProprietaryReason4>();
+            usttld = new ArrayList<>();
         }
         return this.usttld;
     }

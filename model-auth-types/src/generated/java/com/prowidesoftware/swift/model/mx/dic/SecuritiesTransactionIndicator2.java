@@ -50,8 +50,8 @@ public class SecuritiesTransactionIndicator2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the wvrInd property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the wvrInd property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -65,10 +65,12 @@ public class SecuritiesTransactionIndicator2 {
      * {@link ReportingWaiverType1Code }
      * 
      * 
+     * @return
+     *     The value of the wvrInd property.
      */
     public List<ReportingWaiverType1Code> getWvrInd() {
         if (wvrInd == null) {
-            wvrInd = new ArrayList<ReportingWaiverType1Code>();
+            wvrInd = new ArrayList<>();
         }
         return this.wvrInd;
     }
@@ -104,8 +106,8 @@ public class SecuritiesTransactionIndicator2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the otcPstTradInd property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the otcPstTradInd property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -119,10 +121,12 @@ public class SecuritiesTransactionIndicator2 {
      * {@link ReportingWaiverType3Code }
      * 
      * 
+     * @return
+     *     The value of the otcPstTradInd property.
      */
     public List<ReportingWaiverType3Code> getOTCPstTradInd() {
         if (otcPstTradInd == null) {
-            otcPstTradInd = new ArrayList<ReportingWaiverType3Code>();
+            otcPstTradInd = new ArrayList<>();
         }
         return this.otcPstTradInd;
     }

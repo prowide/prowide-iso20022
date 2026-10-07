@@ -314,8 +314,8 @@ public class InstructedCorporateActionOption10 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the optnInstrDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the optnInstrDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -329,10 +329,12 @@ public class InstructedCorporateActionOption10 {
      * {@link OptionInstructionDetails1 }
      * 
      * 
+     * @return
+     *     The value of the optnInstrDtls property.
      */
     public List<OptionInstructionDetails1> getOptnInstrDtls() {
         if (optnInstrDtls == null) {
-            optnInstrDtls = new ArrayList<OptionInstructionDetails1>();
+            optnInstrDtls = new ArrayList<>();
         }
         return this.optnInstrDtls;
     }

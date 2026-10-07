@@ -1,12 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -40,7 +42,8 @@ public class BusinessApplicationHeader3 {
     protected String msgDefIdr;
     @XmlElement(name = "BizSvc")
     protected String bizSvc;
-    @XmlElement(name = "CreDt", required = true)
+    @XmlElement(name = "CreDt", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar creDt;
 
@@ -174,7 +177,7 @@ public class BusinessApplicationHeader3 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getCreDt() {
@@ -186,7 +189,7 @@ public class BusinessApplicationHeader3 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public BusinessApplicationHeader3 setCreDt(XMLGregorianCalendar value) {

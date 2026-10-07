@@ -49,8 +49,8 @@ public class OtherParties12 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the invstr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the invstr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -64,10 +64,12 @@ public class OtherParties12 {
      * {@link PartyIdentificationAndAccount46 }
      * 
      * 
+     * @return
+     *     The value of the invstr property.
      */
     public List<PartyIdentificationAndAccount46> getInvstr() {
         if (invstr == null) {
-            invstr = new ArrayList<PartyIdentificationAndAccount46>();
+            invstr = new ArrayList<>();
         }
         return this.invstr;
     }

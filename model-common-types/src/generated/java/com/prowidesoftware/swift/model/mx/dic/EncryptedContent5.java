@@ -92,8 +92,8 @@ public class EncryptedContent5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ncrptdDataElmt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ncrptdDataElmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -107,10 +107,12 @@ public class EncryptedContent5 {
      * {@link EncryptedDataElement1 }
      * 
      * 
+     * @return
+     *     The value of the ncrptdDataElmt property.
      */
     public List<EncryptedDataElement1> getNcrptdDataElmt() {
         if (ncrptdDataElmt == null) {
-            ncrptdDataElmt = new ArrayList<EncryptedDataElement1>();
+            ncrptdDataElmt = new ArrayList<>();
         }
         return this.ncrptdDataElmt;
     }

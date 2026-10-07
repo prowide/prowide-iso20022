@@ -242,8 +242,8 @@ public class SecuritiesTransactionCancellationRequestStatusAdviceV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the xtnsn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the xtnsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -257,10 +257,12 @@ public class SecuritiesTransactionCancellationRequestStatusAdviceV01 {
      * {@link Extension2 }
      * 
      * 
+     * @return
+     *     The value of the xtnsn property.
      */
     public List<Extension2> getXtnsn() {
         if (xtnsn == null) {
-            xtnsn = new ArrayList<Extension2>();
+            xtnsn = new ArrayList<>();
         }
         return this.xtnsn;
     }

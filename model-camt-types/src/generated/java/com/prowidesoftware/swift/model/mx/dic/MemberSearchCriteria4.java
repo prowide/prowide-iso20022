@@ -40,8 +40,8 @@ public class MemberSearchCriteria4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the id property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the id property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -55,10 +55,12 @@ public class MemberSearchCriteria4 {
      * {@link MemberIdentification3Choice }
      * 
      * 
+     * @return
+     *     The value of the id property.
      */
     public List<MemberIdentification3Choice> getId() {
         if (id == null) {
-            id = new ArrayList<MemberIdentification3Choice>();
+            id = new ArrayList<>();
         }
         return this.id;
     }
@@ -69,8 +71,8 @@ public class MemberSearchCriteria4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the tp property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the tp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -84,10 +86,12 @@ public class MemberSearchCriteria4 {
      * {@link SystemMemberType1Choice }
      * 
      * 
+     * @return
+     *     The value of the tp property.
      */
     public List<SystemMemberType1Choice> getTp() {
         if (tp == null) {
-            tp = new ArrayList<SystemMemberType1Choice>();
+            tp = new ArrayList<>();
         }
         return this.tp;
     }
@@ -98,8 +102,8 @@ public class MemberSearchCriteria4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sts property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -113,10 +117,12 @@ public class MemberSearchCriteria4 {
      * {@link SystemMemberStatus1Choice }
      * 
      * 
+     * @return
+     *     The value of the sts property.
      */
     public List<SystemMemberStatus1Choice> getSts() {
         if (sts == null) {
-            sts = new ArrayList<SystemMemberStatus1Choice>();
+            sts = new ArrayList<>();
         }
         return this.sts;
     }

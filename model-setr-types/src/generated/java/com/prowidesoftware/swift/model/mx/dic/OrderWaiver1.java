@@ -37,8 +37,8 @@ public class OrderWaiver1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ordrWvrRsn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ordrWvrRsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -52,10 +52,12 @@ public class OrderWaiver1 {
      * {@link OrderWaiverReason3Choice }
      * 
      * 
+     * @return
+     *     The value of the ordrWvrRsn property.
      */
     public List<OrderWaiverReason3Choice> getOrdrWvrRsn() {
         if (ordrWvrRsn == null) {
-            ordrWvrRsn = new ArrayList<OrderWaiverReason3Choice>();
+            ordrWvrRsn = new ArrayList<>();
         }
         return this.ordrWvrRsn;
     }

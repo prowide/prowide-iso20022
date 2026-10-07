@@ -233,8 +233,8 @@ public class CorporateActionGeneralInformation172 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the undrlygScty property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the undrlygScty property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -248,10 +248,12 @@ public class CorporateActionGeneralInformation172 {
      * {@link FinancialInstrumentAttributes126 }
      * 
      * 
+     * @return
+     *     The value of the undrlygScty property.
      */
     public List<FinancialInstrumentAttributes126> getUndrlygScty() {
         if (undrlygScty == null) {
-            undrlygScty = new ArrayList<FinancialInstrumentAttributes126>();
+            undrlygScty = new ArrayList<>();
         }
         return this.undrlygScty;
     }

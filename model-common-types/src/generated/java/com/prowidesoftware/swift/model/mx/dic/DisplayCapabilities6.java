@@ -75,8 +75,8 @@ public class DisplayCapabilities6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the avlblFrmt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the avlblFrmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -90,10 +90,12 @@ public class DisplayCapabilities6 {
      * {@link OutputFormat1Code }
      * 
      * 
+     * @return
+     *     The value of the avlblFrmt property.
      */
     public List<OutputFormat1Code> getAvlblFrmt() {
         if (avlblFrmt == null) {
-            avlblFrmt = new ArrayList<OutputFormat1Code>();
+            avlblFrmt = new ArrayList<>();
         }
         return this.avlblFrmt;
     }
@@ -154,8 +156,8 @@ public class DisplayCapabilities6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the avlblLang property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the avlblLang property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -169,10 +171,12 @@ public class DisplayCapabilities6 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the avlblLang property.
      */
     public List<String> getAvlblLang() {
         if (avlblLang == null) {
-            avlblLang = new ArrayList<String>();
+            avlblLang = new ArrayList<>();
         }
         return this.avlblLang;
     }

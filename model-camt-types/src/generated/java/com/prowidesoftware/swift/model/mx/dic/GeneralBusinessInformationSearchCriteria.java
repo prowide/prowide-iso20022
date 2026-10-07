@@ -40,8 +40,8 @@ public class GeneralBusinessInformationSearchCriteria {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ref property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ref property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -55,10 +55,12 @@ public class GeneralBusinessInformationSearchCriteria {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the ref property.
      */
     public List<String> getRef() {
         if (ref == null) {
-            ref = new ArrayList<String>();
+            ref = new ArrayList<>();
         }
         return this.ref;
     }
@@ -69,8 +71,8 @@ public class GeneralBusinessInformationSearchCriteria {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sbjt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sbjt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -84,10 +86,12 @@ public class GeneralBusinessInformationSearchCriteria {
      * {@link CharacterSearchChoice }
      * 
      * 
+     * @return
+     *     The value of the sbjt property.
      */
     public List<CharacterSearchChoice> getSbjt() {
         if (sbjt == null) {
-            sbjt = new ArrayList<CharacterSearchChoice>();
+            sbjt = new ArrayList<>();
         }
         return this.sbjt;
     }
@@ -98,8 +102,8 @@ public class GeneralBusinessInformationSearchCriteria {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the qlfr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the qlfr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -113,10 +117,12 @@ public class GeneralBusinessInformationSearchCriteria {
      * {@link InformationQualifierType }
      * 
      * 
+     * @return
+     *     The value of the qlfr property.
      */
     public List<InformationQualifierType> getQlfr() {
         if (qlfr == null) {
-            qlfr = new ArrayList<InformationQualifierType>();
+            qlfr = new ArrayList<>();
         }
         return this.qlfr;
     }

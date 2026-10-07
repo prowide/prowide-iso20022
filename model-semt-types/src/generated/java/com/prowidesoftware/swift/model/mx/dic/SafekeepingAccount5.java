@@ -130,8 +130,8 @@ public class SafekeepingAccount5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the bnfclOwnr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the bnfclOwnr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -145,10 +145,12 @@ public class SafekeepingAccount5 {
      * {@link BeneficialOwner2 }
      * 
      * 
+     * @return
+     *     The value of the bnfclOwnr property.
      */
     public List<BeneficialOwner2> getBnfclOwnr() {
         if (bnfclOwnr == null) {
-            bnfclOwnr = new ArrayList<BeneficialOwner2>();
+            bnfclOwnr = new ArrayList<>();
         }
         return this.bnfclOwnr;
     }
@@ -159,8 +161,8 @@ public class SafekeepingAccount5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the balForAcct property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the balForAcct property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -174,10 +176,12 @@ public class SafekeepingAccount5 {
      * {@link AggregateHoldingBalance1 }
      * 
      * 
+     * @return
+     *     The value of the balForAcct property.
      */
     public List<AggregateHoldingBalance1> getBalForAcct() {
         if (balForAcct == null) {
-            balForAcct = new ArrayList<AggregateHoldingBalance1>();
+            balForAcct = new ArrayList<>();
         }
         return this.balForAcct;
     }
@@ -213,8 +217,8 @@ public class SafekeepingAccount5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the acctSubLvl1 property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the acctSubLvl1 property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -228,10 +232,12 @@ public class SafekeepingAccount5 {
      * {@link AccountSubLevel1 }
      * 
      * 
+     * @return
+     *     The value of the acctSubLvl1 property.
      */
     public List<AccountSubLevel1> getAcctSubLvl1() {
         if (acctSubLvl1 == null) {
-            acctSubLvl1 = new ArrayList<AccountSubLevel1>();
+            acctSubLvl1 = new ArrayList<>();
         }
         return this.acctSubLvl1;
     }
@@ -242,8 +248,8 @@ public class SafekeepingAccount5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the acctSubLvl1Diff property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the acctSubLvl1Diff property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -257,10 +263,12 @@ public class SafekeepingAccount5 {
      * {@link AggregateHoldingBalance2 }
      * 
      * 
+     * @return
+     *     The value of the acctSubLvl1Diff property.
      */
     public List<AggregateHoldingBalance2> getAcctSubLvl1Diff() {
         if (acctSubLvl1Diff == null) {
-            acctSubLvl1Diff = new ArrayList<AggregateHoldingBalance2>();
+            acctSubLvl1Diff = new ArrayList<>();
         }
         return this.acctSubLvl1Diff;
     }

@@ -119,8 +119,8 @@ public class ValidationResult4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the misMtchdElmt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the misMtchdElmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -134,10 +134,12 @@ public class ValidationResult4 {
      * {@link ElementIdentification1 }
      * 
      * 
+     * @return
+     *     The value of the misMtchdElmt property.
      */
     public List<ElementIdentification1> getMisMtchdElmt() {
         if (misMtchdElmt == null) {
-            misMtchdElmt = new ArrayList<ElementIdentification1>();
+            misMtchdElmt = new ArrayList<>();
         }
         return this.misMtchdElmt;
     }

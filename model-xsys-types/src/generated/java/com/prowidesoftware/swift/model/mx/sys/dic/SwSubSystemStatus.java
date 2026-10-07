@@ -93,8 +93,8 @@ public class SwSubSystemStatus {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the processStatus property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the processStatus property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -108,10 +108,12 @@ public class SwSubSystemStatus {
      * {@link SwProcessStatus }
      * 
      * 
+     * @return
+     *     The value of the processStatus property.
      */
     public List<SwProcessStatus> getProcessStatus() {
         if (processStatus == null) {
-            processStatus = new ArrayList<SwProcessStatus>();
+            processStatus = new ArrayList<>();
         }
         return this.processStatus;
     }
@@ -122,8 +124,8 @@ public class SwSubSystemStatus {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the executableStatus property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the executableStatus property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -137,10 +139,12 @@ public class SwSubSystemStatus {
      * {@link SwExecutableStatus }
      * 
      * 
+     * @return
+     *     The value of the executableStatus property.
      */
     public List<SwExecutableStatus> getExecutableStatus() {
         if (executableStatus == null) {
-            executableStatus = new ArrayList<SwExecutableStatus>();
+            executableStatus = new ArrayList<>();
         }
         return this.executableStatus;
     }

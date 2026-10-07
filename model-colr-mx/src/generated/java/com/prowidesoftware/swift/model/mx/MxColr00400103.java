@@ -4,14 +4,17 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import com.prowidesoftware.swift.model.mx.MxReadImpl;
+import com.prowidesoftware.swift.model.mx.MxReadParams;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
-import com.prowidesoftware.swift.model.mx.MxRead;
-import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -28,18 +31,18 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:colr.004.001.03")
 public class MxColr00400103
-    extends com.prowidesoftware.swift.model.mx.AbstractMX
+    extends AbstractMX
 {
 
     @XmlElement(name = "MrgnCallRspn", required = true)
     protected MarginCallResponseV03 mrgnCallRspn;
-    public final static transient String BUSINESS_PROCESS = "colr";
-    public final static transient int FUNCTIONALITY = 4;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 3;
+    public static final transient String BUSINESS_PROCESS = "colr";
+    public static final transient int FUNCTIONALITY = 4;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 3;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {ActiveCurrencyAndAmount.class, AggregatedIndependentAmount1 .class, AgreedAmount1 .class, AgreedAmount1Choice.class, Agreement2 .class, AgreementFramework1Choice.class, AgreementFramework1Code.class, Amount1 .class, Collateral1 .class, CollateralAccount1 .class, CollateralAccountIdentificationType1Choice.class, CollateralAccountType1Code.class, CollateralBalance1Choice.class, DateAndDateTimeChoice.class, ExposureConventionType1Code.class, ExposureType5Code.class, GenericIdentification29 .class, GenericIdentification30 .class, IndependentAmount1 .class, IndependentAmount2 .class, IndependentAmountConventionType1Code.class, Margin1 .class, MarginCall1 .class, MarginCallResponse1Code.class, MarginCallResponseV03 .class, MarginCollateral1 .class, MarginTerms1Choice.class, MxColr00400103 .class, NameAndAddress6 .class, Obligation3 .class, PartyIdentification33Choice.class, PostalAddress2 .class, Response1 .class, ResponseType1Choice.class, RoundingMethod1Code.class, SegregatedIndependentAmountMargin1 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, ThresholdType1Code.class, VariationMargin1 .class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:colr.004.001.03";
+    public static final transient Class[] _classes = new Class[] {ActiveCurrencyAndAmount.class, AggregatedIndependentAmount1 .class, AgreedAmount1 .class, AgreedAmount1Choice.class, Agreement2 .class, AgreementFramework1Choice.class, AgreementFramework1Code.class, Amount1 .class, Collateral1 .class, CollateralAccount1 .class, CollateralAccountIdentificationType1Choice.class, CollateralAccountType1Code.class, CollateralBalance1Choice.class, DateAndDateTimeChoice.class, ExposureConventionType1Code.class, ExposureType5Code.class, GenericIdentification29 .class, GenericIdentification30 .class, IndependentAmount1 .class, IndependentAmount2 .class, IndependentAmountConventionType1Code.class, Margin1 .class, MarginCall1 .class, MarginCallResponse1Code.class, MarginCallResponseV03 .class, MarginCollateral1 .class, MarginTerms1Choice.class, MxColr00400103 .class, NameAndAddress6 .class, Obligation3 .class, PartyIdentification33Choice.class, PostalAddress2 .class, Response1 .class, ResponseType1Choice.class, RoundingMethod1Code.class, SegregatedIndependentAmountMargin1 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, ThresholdType1Code.class, VariationMargin1 .class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:colr.004.001.03";
 
     public MxColr00400103() {
         super();
@@ -89,21 +92,6 @@ public class MxColr00400103
     }
 
     @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
-    }
-
-    @Override
     public String getBusinessProcess() {
         return BUSINESS_PROCESS;
     }
@@ -128,7 +116,7 @@ public class MxColr00400103
      * 
      */
     public static MxColr00400103 parse(String xml) {
-        return ((MxColr00400103) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxColr00400103 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams()));
+        return ((MxColr00400103) MxReadImpl.parse(MxColr00400103 .class, xml, _classes, new MxReadParams()));
     }
 
     /**
@@ -137,7 +125,7 @@ public class MxColr00400103
      * 
      */
     public static MxColr00400103 parse(String xml, MxReadConfiguration conf) {
-        return ((MxColr00400103) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxColr00400103 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams(conf)));
+        return ((MxColr00400103) MxReadImpl.parse(MxColr00400103 .class, xml, _classes, new MxReadParams(conf)));
     }
 
     /**
@@ -173,8 +161,23 @@ public class MxColr00400103
      * @return
      *     a new instance of MxColr00400103
      */
-    public final static MxColr00400103 fromJson(String json) {
-        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxColr00400103 .class);
+    public static final MxColr00400103 fromJson(String json) {
+        return AbstractMX.fromJson(json, MxColr00400103 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

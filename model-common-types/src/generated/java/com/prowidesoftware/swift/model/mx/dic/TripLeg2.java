@@ -149,8 +149,8 @@ public class TripLeg2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the doc property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the doc property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -164,10 +164,12 @@ public class TripLeg2 {
      * {@link DocumentReference1 }
      * 
      * 
+     * @return
+     *     The value of the doc property.
      */
     public List<DocumentReference1> getDoc() {
         if (doc == null) {
-            doc = new ArrayList<DocumentReference1>();
+            doc = new ArrayList<>();
         }
         return this.doc;
     }
@@ -528,8 +530,8 @@ public class TripLeg2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the tripLegAmt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the tripLegAmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -543,10 +545,12 @@ public class TripLeg2 {
      * {@link AmountDetails2 }
      * 
      * 
+     * @return
+     *     The value of the tripLegAmt property.
      */
     public List<AmountDetails2> getTripLegAmt() {
         if (tripLegAmt == null) {
-            tripLegAmt = new ArrayList<AmountDetails2>();
+            tripLegAmt = new ArrayList<>();
         }
         return this.tripLegAmt;
     }

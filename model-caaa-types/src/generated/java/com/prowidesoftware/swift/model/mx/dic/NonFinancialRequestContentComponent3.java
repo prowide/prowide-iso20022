@@ -42,8 +42,8 @@ public class NonFinancialRequestContentComponent3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the nonFinReqTp property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the nonFinReqTp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -57,10 +57,12 @@ public class NonFinancialRequestContentComponent3 {
      * {@link NonFinancialRequestType2Code }
      * 
      * 
+     * @return
+     *     The value of the nonFinReqTp property.
      */
     public List<NonFinancialRequestType2Code> getNonFinReqTp() {
         if (nonFinReqTp == null) {
-            nonFinReqTp = new ArrayList<NonFinancialRequestType2Code>();
+            nonFinReqTp = new ArrayList<>();
         }
         return this.nonFinReqTp;
     }
@@ -96,8 +98,8 @@ public class NonFinancialRequestContentComponent3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlReq property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlReq property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -111,10 +113,12 @@ public class NonFinancialRequestContentComponent3 {
      * {@link ExternallyDefinedData4 }
      * 
      * 
+     * @return
+     *     The value of the addtlReq property.
      */
     public List<ExternallyDefinedData4> getAddtlReq() {
         if (addtlReq == null) {
-            addtlReq = new ArrayList<ExternallyDefinedData4>();
+            addtlReq = new ArrayList<>();
         }
         return this.addtlReq;
     }

@@ -146,8 +146,8 @@ public class EntitlementAdvice1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the acctAndDstrbtnDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the acctAndDstrbtnDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -161,10 +161,12 @@ public class EntitlementAdvice1 {
      * {@link Entitlement1 }
      * 
      * 
+     * @return
+     *     The value of the acctAndDstrbtnDtls property.
      */
     public List<Entitlement1> getAcctAndDstrbtnDtls() {
         if (acctAndDstrbtnDtls == null) {
-            acctAndDstrbtnDtls = new ArrayList<Entitlement1>();
+            acctAndDstrbtnDtls = new ArrayList<>();
         }
         return this.acctAndDstrbtnDtls;
     }

@@ -37,8 +37,8 @@ public class MailAddress1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the crspdc property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the crspdc property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -52,10 +52,12 @@ public class MailAddress1 {
      * {@link PostalAddress1 }
      * 
      * 
+     * @return
+     *     The value of the crspdc property.
      */
     public List<PostalAddress1> getCrspdc() {
         if (crspdc == null) {
-            crspdc = new ArrayList<PostalAddress1>();
+            crspdc = new ArrayList<>();
         }
         return this.crspdc;
     }
@@ -66,8 +68,8 @@ public class MailAddress1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the emailAdr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the emailAdr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -81,10 +83,12 @@ public class MailAddress1 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the emailAdr property.
      */
     public List<String> getEmailAdr() {
         if (emailAdr == null) {
-            emailAdr = new ArrayList<String>();
+            emailAdr = new ArrayList<>();
         }
         return this.emailAdr;
     }

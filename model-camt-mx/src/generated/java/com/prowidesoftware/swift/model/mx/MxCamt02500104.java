@@ -4,14 +4,17 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import com.prowidesoftware.swift.model.mx.MxReadImpl;
+import com.prowidesoftware.swift.model.mx.MxReadParams;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
-import com.prowidesoftware.swift.model.mx.MxRead;
-import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -28,18 +31,18 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:swift:xsd:camt.025.001.04")
 public class MxCamt02500104
-    extends com.prowidesoftware.swift.model.mx.AbstractMX
+    extends AbstractMX
 {
 
     @XmlElement(name = "Rct", required = true)
     protected ReceiptV04 rct;
-    public final static transient String BUSINESS_PROCESS = "camt";
-    public final static transient int FUNCTIONALITY = 25;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 4;
+    public static final transient String BUSINESS_PROCESS = "camt";
+    public static final transient int FUNCTIONALITY = 25;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 4;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {AddressType2Code.class, BranchAndFinancialInstitutionIdentification5 .class, BranchData2 .class, ClearingSystemIdentification2Choice.class, ClearingSystemMemberIdentification2 .class, FinancialIdentificationSchemeName1Choice.class, FinancialInstitutionIdentification8 .class, GenericFinancialIdentification1 .class, GenericIdentification1 .class, LongPaymentIdentification1 .class, MessageHeader9 .class, MxCamt02500104 .class, OriginalMessageAndIssuer1 .class, PaymentIdentification5Choice.class, PaymentInstrument1Code.class, PaymentOrigin1Choice.class, PostalAddress6 .class, QueueTransactionIdentification1 .class, Receipt2 .class, ReceiptV04 .class, RequestHandling1 .class, RequestType4Choice.class, ShortPaymentIdentification1 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class };
-    public final static transient String NAMESPACE = "urn:swift:xsd:camt.025.001.04";
+    public static final transient Class[] _classes = new Class[] {AddressType2Code.class, BranchAndFinancialInstitutionIdentification5 .class, BranchData2 .class, ClearingSystemIdentification2Choice.class, ClearingSystemMemberIdentification2 .class, FinancialIdentificationSchemeName1Choice.class, FinancialInstitutionIdentification8 .class, GenericFinancialIdentification1 .class, GenericIdentification1 .class, LongPaymentIdentification1 .class, MessageHeader9 .class, MxCamt02500104 .class, OriginalMessageAndIssuer1 .class, PaymentIdentification5Choice.class, PaymentInstrument1Code.class, PaymentOrigin1Choice.class, PostalAddress6 .class, QueueTransactionIdentification1 .class, Receipt2 .class, ReceiptV04 .class, RequestHandling1 .class, RequestType4Choice.class, ShortPaymentIdentification1 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class };
+    public static final transient String NAMESPACE = "urn:swift:xsd:camt.025.001.04";
 
     public MxCamt02500104() {
         super();
@@ -89,21 +92,6 @@ public class MxCamt02500104
     }
 
     @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
-    }
-
-    @Override
     public String getBusinessProcess() {
         return BUSINESS_PROCESS;
     }
@@ -128,7 +116,7 @@ public class MxCamt02500104
      * 
      */
     public static MxCamt02500104 parse(String xml) {
-        return ((MxCamt02500104) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxCamt02500104 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams()));
+        return ((MxCamt02500104) MxReadImpl.parse(MxCamt02500104 .class, xml, _classes, new MxReadParams()));
     }
 
     /**
@@ -137,7 +125,7 @@ public class MxCamt02500104
      * 
      */
     public static MxCamt02500104 parse(String xml, MxReadConfiguration conf) {
-        return ((MxCamt02500104) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxCamt02500104 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams(conf)));
+        return ((MxCamt02500104) MxReadImpl.parse(MxCamt02500104 .class, xml, _classes, new MxReadParams(conf)));
     }
 
     /**
@@ -173,8 +161,23 @@ public class MxCamt02500104
      * @return
      *     a new instance of MxCamt02500104
      */
-    public final static MxCamt02500104 fromJson(String json) {
-        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxCamt02500104 .class);
+    public static final MxCamt02500104 fromJson(String json) {
+        return AbstractMX.fromJson(json, MxCamt02500104 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

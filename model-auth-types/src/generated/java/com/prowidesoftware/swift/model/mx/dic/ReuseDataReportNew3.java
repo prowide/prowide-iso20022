@@ -1,17 +1,17 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -136,8 +136,8 @@ public class ReuseDataReportNew3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the collCmpnt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the collCmpnt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -151,10 +151,12 @@ public class ReuseDataReportNew3 {
      * {@link CollateralType12 }
      * 
      * 
+     * @return
+     *     The value of the collCmpnt property.
      */
     public List<CollateralType12> getCollCmpnt() {
         if (collCmpnt == null) {
-            collCmpnt = new ArrayList<CollateralType12>();
+            collCmpnt = new ArrayList<>();
         }
         return this.collCmpnt;
     }
@@ -190,8 +192,8 @@ public class ReuseDataReportNew3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the fndgSrc property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the fndgSrc property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -205,10 +207,12 @@ public class ReuseDataReportNew3 {
      * {@link FundingSource1 }
      * 
      * 
+     * @return
+     *     The value of the fndgSrc property.
      */
     public List<FundingSource1> getFndgSrc() {
         if (fndgSrc == null) {
-            fndgSrc = new ArrayList<FundingSource1>();
+            fndgSrc = new ArrayList<>();
         }
         return this.fndgSrc;
     }
@@ -219,8 +223,8 @@ public class ReuseDataReportNew3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -234,10 +238,12 @@ public class ReuseDataReportNew3 {
      * {@link SupplementaryData1 }
      * 
      * 
+     * @return
+     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<SupplementaryData1>();
+            splmtryData = new ArrayList<>();
         }
         return this.splmtryData;
     }

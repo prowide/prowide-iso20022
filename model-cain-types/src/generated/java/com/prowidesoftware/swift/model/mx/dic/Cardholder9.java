@@ -180,8 +180,8 @@ public class Cardholder9 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the authntcn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the authntcn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -195,10 +195,12 @@ public class Cardholder9 {
      * {@link CardholderAuthentication7 }
      * 
      * 
+     * @return
+     *     The value of the authntcn property.
      */
     public List<CardholderAuthentication7> getAuthntcn() {
         if (authntcn == null) {
-            authntcn = new ArrayList<CardholderAuthentication7>();
+            authntcn = new ArrayList<>();
         }
         return this.authntcn;
     }
@@ -209,8 +211,8 @@ public class Cardholder9 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the txVrfctnRslt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the txVrfctnRslt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -224,10 +226,12 @@ public class Cardholder9 {
      * {@link TransactionVerificationResult4 }
      * 
      * 
+     * @return
+     *     The value of the txVrfctnRslt property.
      */
     public List<TransactionVerificationResult4> getTxVrfctnRslt() {
         if (txVrfctnRslt == null) {
-            txVrfctnRslt = new ArrayList<TransactionVerificationResult4>();
+            txVrfctnRslt = new ArrayList<>();
         }
         return this.txVrfctnRslt;
     }

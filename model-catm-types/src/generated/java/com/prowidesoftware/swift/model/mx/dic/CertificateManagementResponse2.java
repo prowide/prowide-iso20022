@@ -205,8 +205,8 @@ public class CertificateManagementResponse2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the clntCertPth property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the clntCertPth property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -219,10 +219,12 @@ public class CertificateManagementResponse2 {
      * Objects of the following type(s) are allowed in the list
      * byte[]
      * 
+     * @return
+     *     The value of the clntCertPth property.
      */
     public List<byte[]> getClntCertPth() {
         if (clntCertPth == null) {
-            clntCertPth = new ArrayList<byte[]>();
+            clntCertPth = new ArrayList<>();
         }
         return this.clntCertPth;
     }
@@ -233,8 +235,8 @@ public class CertificateManagementResponse2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the svrCertPth property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the svrCertPth property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -247,10 +249,12 @@ public class CertificateManagementResponse2 {
      * Objects of the following type(s) are allowed in the list
      * byte[]
      * 
+     * @return
+     *     The value of the svrCertPth property.
      */
     public List<byte[]> getSvrCertPth() {
         if (svrCertPth == null) {
-            svrCertPth = new ArrayList<byte[]>();
+            svrCertPth = new ArrayList<>();
         }
         return this.svrCertPth;
     }

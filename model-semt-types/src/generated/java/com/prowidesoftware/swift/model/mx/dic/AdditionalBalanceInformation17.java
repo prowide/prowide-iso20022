@@ -118,8 +118,8 @@ public class AdditionalBalanceInformation17 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the qtyBrkdwn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the qtyBrkdwn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -133,10 +133,12 @@ public class AdditionalBalanceInformation17 {
      * {@link QuantityBreakdown40 }
      * 
      * 
+     * @return
+     *     The value of the qtyBrkdwn property.
      */
     public List<QuantityBreakdown40> getQtyBrkdwn() {
         if (qtyBrkdwn == null) {
-            qtyBrkdwn = new ArrayList<QuantityBreakdown40>();
+            qtyBrkdwn = new ArrayList<>();
         }
         return this.qtyBrkdwn;
     }

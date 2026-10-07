@@ -90,8 +90,8 @@ public class ATMConfigurationReportComponent1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the nonActvVrsn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the nonActvVrsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -105,10 +105,12 @@ public class ATMConfigurationReportComponent1 {
      * {@link ATMVersionReport1 }
      * 
      * 
+     * @return
+     *     The value of the nonActvVrsn property.
      */
     public List<ATMVersionReport1> getNonActvVrsn() {
         if (nonActvVrsn == null) {
-            nonActvVrsn = new ArrayList<ATMVersionReport1>();
+            nonActvVrsn = new ArrayList<>();
         }
         return this.nonActvVrsn;
     }

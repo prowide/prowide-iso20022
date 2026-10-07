@@ -198,8 +198,8 @@ public class DebtorActivation3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cstmrId property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cstmrId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -213,10 +213,12 @@ public class DebtorActivation3 {
      * {@link Party49Choice }
      * 
      * 
+     * @return
+     *     The value of the cstmrId property.
      */
     public List<Party49Choice> getCstmrId() {
         if (cstmrId == null) {
-            cstmrId = new ArrayList<Party49Choice>();
+            cstmrId = new ArrayList<>();
         }
         return this.cstmrId;
     }
@@ -227,8 +229,8 @@ public class DebtorActivation3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ctrctFrmtTp property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ctrctFrmtTp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -242,10 +244,12 @@ public class DebtorActivation3 {
      * {@link DocumentFormat2Choice }
      * 
      * 
+     * @return
+     *     The value of the ctrctFrmtTp property.
      */
     public List<DocumentFormat2Choice> getCtrctFrmtTp() {
         if (ctrctFrmtTp == null) {
-            ctrctFrmtTp = new ArrayList<DocumentFormat2Choice>();
+            ctrctFrmtTp = new ArrayList<>();
         }
         return this.ctrctFrmtTp;
     }
@@ -256,8 +260,8 @@ public class DebtorActivation3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ctrctRef property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ctrctRef property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -271,10 +275,12 @@ public class DebtorActivation3 {
      * {@link ContractReference1 }
      * 
      * 
+     * @return
+     *     The value of the ctrctRef property.
      */
     public List<ContractReference1> getCtrctRef() {
         if (ctrctRef == null) {
-            ctrctRef = new ArrayList<ContractReference1>();
+            ctrctRef = new ArrayList<>();
         }
         return this.ctrctRef;
     }

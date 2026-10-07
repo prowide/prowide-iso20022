@@ -90,8 +90,8 @@ public class UndertakingWording1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the udrtkgTermsAndConds property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the udrtkgTermsAndConds property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -105,10 +105,12 @@ public class UndertakingWording1 {
      * {@link Narrative1 }
      * 
      * 
+     * @return
+     *     The value of the udrtkgTermsAndConds property.
      */
     public List<Narrative1> getUdrtkgTermsAndConds() {
         if (udrtkgTermsAndConds == null) {
-            udrtkgTermsAndConds = new ArrayList<Narrative1>();
+            udrtkgTermsAndConds = new ArrayList<>();
         }
         return this.udrtkgTermsAndConds;
     }

@@ -1,17 +1,17 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -462,8 +462,8 @@ public class BatchManagementResponseV03 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the colltnIdList property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the colltnIdList property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -477,10 +477,12 @@ public class BatchManagementResponseV03 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the colltnIdList property.
      */
     public List<String> getColltnIdList() {
         if (colltnIdList == null) {
-            colltnIdList = new ArrayList<String>();
+            colltnIdList = new ArrayList<>();
         }
         return this.colltnIdList;
     }
@@ -491,8 +493,8 @@ public class BatchManagementResponseV03 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the btchIdList property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the btchIdList property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -506,10 +508,12 @@ public class BatchManagementResponseV03 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the btchIdList property.
      */
     public List<String> getBtchIdList() {
         if (btchIdList == null) {
-            btchIdList = new ArrayList<String>();
+            btchIdList = new ArrayList<>();
         }
         return this.btchIdList;
     }
@@ -791,8 +795,8 @@ public class BatchManagementResponseV03 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the prgrmm property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the prgrmm property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -806,10 +810,12 @@ public class BatchManagementResponseV03 {
      * {@link ProgrammeMode5 }
      * 
      * 
+     * @return
+     *     The value of the prgrmm property.
      */
     public List<ProgrammeMode5> getPrgrmm() {
         if (prgrmm == null) {
-            prgrmm = new ArrayList<ProgrammeMode5>();
+            prgrmm = new ArrayList<>();
         }
         return this.prgrmm;
     }
@@ -995,8 +1001,8 @@ public class BatchManagementResponseV03 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlFee property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlFee property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -1010,10 +1016,12 @@ public class BatchManagementResponseV03 {
      * {@link AdditionalFee3 }
      * 
      * 
+     * @return
+     *     The value of the addtlFee property.
      */
     public List<AdditionalFee3> getAddtlFee() {
         if (addtlFee == null) {
-            addtlFee = new ArrayList<AdditionalFee3>();
+            addtlFee = new ArrayList<>();
         }
         return this.addtlFee;
     }
@@ -1099,8 +1107,8 @@ public class BatchManagementResponseV03 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -1114,10 +1122,12 @@ public class BatchManagementResponseV03 {
      * {@link AdditionalData2 }
      * 
      * 
+     * @return
+     *     The value of the addtlData property.
      */
     public List<AdditionalData2> getAddtlData() {
         if (addtlData == null) {
-            addtlData = new ArrayList<AdditionalData2>();
+            addtlData = new ArrayList<>();
         }
         return this.addtlData;
     }
@@ -1128,8 +1138,8 @@ public class BatchManagementResponseV03 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the prtctdData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the prtctdData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -1143,10 +1153,12 @@ public class BatchManagementResponseV03 {
      * {@link ProtectedData2 }
      * 
      * 
+     * @return
+     *     The value of the prtctdData property.
      */
     public List<ProtectedData2> getPrtctdData() {
         if (prtctdData == null) {
-            prtctdData = new ArrayList<ProtectedData2>();
+            prtctdData = new ArrayList<>();
         }
         return this.prtctdData;
     }
@@ -1157,8 +1169,8 @@ public class BatchManagementResponseV03 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -1172,10 +1184,12 @@ public class BatchManagementResponseV03 {
      * {@link SupplementaryData1 }
      * 
      * 
+     * @return
+     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<SupplementaryData1>();
+            splmtryData = new ArrayList<>();
         }
         return this.splmtryData;
     }

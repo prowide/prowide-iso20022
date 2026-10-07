@@ -202,8 +202,8 @@ public class SecurityCSDLink7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the issncAcct property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the issncAcct property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -217,10 +217,12 @@ public class SecurityCSDLink7 {
      * {@link IssuanceAccount2 }
      * 
      * 
+     * @return
+     *     The value of the issncAcct property.
      */
     public List<IssuanceAccount2> getIssncAcct() {
         if (issncAcct == null) {
-            issncAcct = new ArrayList<IssuanceAccount2>();
+            issncAcct = new ArrayList<>();
         }
         return this.issncAcct;
     }

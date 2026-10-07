@@ -9,15 +9,14 @@ import javax.xml.bind.annotation.XmlType;
  * <p>Java class for ReturnedStatus1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ReturnedStatus1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="NARR"/&gt;
- *     &lt;enumeration value="PROR"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ReturnedStatus1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="NARR"/>
+ *     <enumeration value="PROR"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ReturnedStatus1Code")

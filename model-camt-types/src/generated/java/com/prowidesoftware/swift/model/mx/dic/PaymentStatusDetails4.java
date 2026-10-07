@@ -90,8 +90,8 @@ public class PaymentStatusDetails4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the pmtInstrStsRsn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the pmtInstrStsRsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -105,10 +105,12 @@ public class PaymentStatusDetails4 {
      * {@link PaymentStatusReasonCode4Choice }
      * 
      * 
+     * @return
+     *     The value of the pmtInstrStsRsn property.
      */
     public List<PaymentStatusReasonCode4Choice> getPmtInstrStsRsn() {
         if (pmtInstrStsRsn == null) {
-            pmtInstrStsRsn = new ArrayList<PaymentStatusReasonCode4Choice>();
+            pmtInstrStsRsn = new ArrayList<>();
         }
         return this.pmtInstrStsRsn;
     }

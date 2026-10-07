@@ -67,8 +67,8 @@ public class MultilateralSettlementRequestV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sttlmReq property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sttlmReq property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -82,10 +82,12 @@ public class MultilateralSettlementRequestV01 {
      * {@link MultilateralSettlementRequest2 }
      * 
      * 
+     * @return
+     *     The value of the sttlmReq property.
      */
     public List<MultilateralSettlementRequest2> getSttlmReq() {
         if (sttlmReq == null) {
-            sttlmReq = new ArrayList<MultilateralSettlementRequest2>();
+            sttlmReq = new ArrayList<>();
         }
         return this.sttlmReq;
     }

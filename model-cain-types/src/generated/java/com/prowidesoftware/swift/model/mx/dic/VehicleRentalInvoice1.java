@@ -1,17 +1,17 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -367,8 +367,8 @@ public class VehicleRentalInvoice1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rntlChrg property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rntlChrg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -382,10 +382,12 @@ public class VehicleRentalInvoice1 {
      * {@link RentalRate1 }
      * 
      * 
+     * @return
+     *     The value of the rntlChrg property.
      */
     public List<RentalRate1> getRntlChrg() {
         if (rntlChrg == null) {
-            rntlChrg = new ArrayList<RentalRate1>();
+            rntlChrg = new ArrayList<>();
         }
         return this.rntlChrg;
     }
@@ -446,8 +448,8 @@ public class VehicleRentalInvoice1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlAmt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlAmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -461,10 +463,12 @@ public class VehicleRentalInvoice1 {
      * {@link Amount9 }
      * 
      * 
+     * @return
+     *     The value of the addtlAmt property.
      */
     public List<Amount9> getAddtlAmt() {
         if (addtlAmt == null) {
-            addtlAmt = new ArrayList<Amount9>();
+            addtlAmt = new ArrayList<>();
         }
         return this.addtlAmt;
     }
@@ -475,8 +479,8 @@ public class VehicleRentalInvoice1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the tax property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the tax property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -490,10 +494,12 @@ public class VehicleRentalInvoice1 {
      * {@link Tax33 }
      * 
      * 
+     * @return
+     *     The value of the tax property.
      */
     public List<Tax33> getTax() {
         if (tax == null) {
-            tax = new ArrayList<Tax33>();
+            tax = new ArrayList<>();
         }
         return this.tax;
     }

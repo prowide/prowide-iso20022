@@ -90,8 +90,8 @@ public class EnglishNameLocalNameAndAddress1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the lngAdrLine property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the lngAdrLine property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -105,10 +105,12 @@ public class EnglishNameLocalNameAndAddress1 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the lngAdrLine property.
      */
     public List<String> getLngAdrLine() {
         if (lngAdrLine == null) {
-            lngAdrLine = new ArrayList<String>();
+            lngAdrLine = new ArrayList<>();
         }
         return this.lngAdrLine;
     }

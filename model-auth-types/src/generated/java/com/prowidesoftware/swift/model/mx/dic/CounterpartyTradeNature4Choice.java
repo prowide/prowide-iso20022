@@ -47,8 +47,8 @@ public class CounterpartyTradeNature4Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the fi property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the fi property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -62,10 +62,12 @@ public class CounterpartyTradeNature4Choice {
      * {@link FinancialPartySectorType1Code }
      * 
      * 
+     * @return
+     *     The value of the fi property.
      */
     public List<FinancialPartySectorType1Code> getFI() {
         if (fi == null) {
-            fi = new ArrayList<FinancialPartySectorType1Code>();
+            fi = new ArrayList<>();
         }
         return this.fi;
     }

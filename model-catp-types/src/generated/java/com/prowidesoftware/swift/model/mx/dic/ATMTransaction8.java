@@ -175,8 +175,8 @@ public class ATMTransaction8 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the mix property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the mix property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -190,10 +190,12 @@ public class ATMTransaction8 {
      * {@link ATMMediaMix2 }
      * 
      * 
+     * @return
+     *     The value of the mix property.
      */
     public List<ATMMediaMix2> getMix() {
         if (mix == null) {
-            mix = new ArrayList<ATMMediaMix2>();
+            mix = new ArrayList<>();
         }
         return this.mix;
     }

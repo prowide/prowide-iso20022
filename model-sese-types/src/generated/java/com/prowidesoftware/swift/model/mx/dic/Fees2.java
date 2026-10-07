@@ -62,8 +62,8 @@ public class Fees2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the indvFee property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the indvFee property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -77,10 +77,12 @@ public class Fees2 {
      * {@link Fee7 }
      * 
      * 
+     * @return
+     *     The value of the indvFee property.
      */
     public List<Fee7> getIndvFee() {
         if (indvFee == null) {
-            indvFee = new ArrayList<Fee7>();
+            indvFee = new ArrayList<>();
         }
         return this.indvFee;
     }

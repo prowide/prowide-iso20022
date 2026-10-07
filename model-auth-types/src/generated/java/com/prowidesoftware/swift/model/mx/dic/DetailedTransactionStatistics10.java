@@ -118,8 +118,8 @@ public class DetailedTransactionStatistics10 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the nbOfTxsRjctd property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the nbOfTxsRjctd property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -133,10 +133,12 @@ public class DetailedTransactionStatistics10 {
      * {@link RejectionReason47 }
      * 
      * 
+     * @return
+     *     The value of the nbOfTxsRjctd property.
      */
     public List<RejectionReason47> getNbOfTxsRjctd() {
         if (nbOfTxsRjctd == null) {
-            nbOfTxsRjctd = new ArrayList<RejectionReason47>();
+            nbOfTxsRjctd = new ArrayList<>();
         }
         return this.nbOfTxsRjctd;
     }

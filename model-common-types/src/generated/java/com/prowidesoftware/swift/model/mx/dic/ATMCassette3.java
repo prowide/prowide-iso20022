@@ -160,8 +160,8 @@ public class ATMCassette3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the subTp property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the subTp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -175,10 +175,12 @@ public class ATMCassette3 {
      * {@link ATMNoteType1Code }
      * 
      * 
+     * @return
+     *     The value of the subTp property.
      */
     public List<ATMNoteType1Code> getSubTp() {
         if (subTp == null) {
-            subTp = new ArrayList<ATMNoteType1Code>();
+            subTp = new ArrayList<>();
         }
         return this.subTp;
     }
@@ -214,8 +216,8 @@ public class ATMCassette3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the mdiaCntrs property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the mdiaCntrs property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -229,10 +231,12 @@ public class ATMCassette3 {
      * {@link ATMCassetteCounters6 }
      * 
      * 
+     * @return
+     *     The value of the mdiaCntrs property.
      */
     public List<ATMCassetteCounters6> getMdiaCntrs() {
         if (mdiaCntrs == null) {
-            mdiaCntrs = new ArrayList<ATMCassetteCounters6>();
+            mdiaCntrs = new ArrayList<>();
         }
         return this.mdiaCntrs;
     }

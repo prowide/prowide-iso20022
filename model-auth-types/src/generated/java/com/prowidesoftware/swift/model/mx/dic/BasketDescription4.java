@@ -37,8 +37,8 @@ public class BasketDescription4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the isin property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the isin property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -52,10 +52,12 @@ public class BasketDescription4 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the isin property.
      */
     public List<String> getISIN() {
         if (isin == null) {
-            isin = new ArrayList<String>();
+            isin = new ArrayList<>();
         }
         return this.isin;
     }
@@ -66,8 +68,8 @@ public class BasketDescription4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the indx property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the indx property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -81,10 +83,12 @@ public class BasketDescription4 {
      * {@link FinancialInstrument98 }
      * 
      * 
+     * @return
+     *     The value of the indx property.
      */
     public List<FinancialInstrument98> getIndx() {
         if (indx == null) {
-            indx = new ArrayList<FinancialInstrument98>();
+            indx = new ArrayList<>();
         }
         return this.indx;
     }

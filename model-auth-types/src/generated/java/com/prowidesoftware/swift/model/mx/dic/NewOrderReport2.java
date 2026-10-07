@@ -62,8 +62,8 @@ public class NewOrderReport2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ordr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ordr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -77,10 +77,12 @@ public class NewOrderReport2 {
      * {@link OrderData3 }
      * 
      * 
+     * @return
+     *     The value of the ordr property.
      */
     public List<OrderData3> getOrdr() {
         if (ordr == null) {
-            ordr = new ArrayList<OrderData3>();
+            ordr = new ArrayList<>();
         }
         return this.ordr;
     }

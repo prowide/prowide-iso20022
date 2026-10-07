@@ -292,8 +292,8 @@ public class FundProcessingPassport1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sttlmDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sttlmDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -307,10 +307,12 @@ public class FundProcessingPassport1 {
      * {@link CashAccount22 }
      * 
      * 
+     * @return
+     *     The value of the sttlmDtls property.
      */
     public List<CashAccount22> getSttlmDtls() {
         if (sttlmDtls == null) {
-            sttlmDtls = new ArrayList<CashAccount22>();
+            sttlmDtls = new ArrayList<>();
         }
         return this.sttlmDtls;
     }
@@ -321,8 +323,8 @@ public class FundProcessingPassport1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the lclMktAnx property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the lclMktAnx property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -336,10 +338,12 @@ public class FundProcessingPassport1 {
      * {@link LocalMarketAnnex2 }
      * 
      * 
+     * @return
+     *     The value of the lclMktAnx property.
      */
     public List<LocalMarketAnnex2> getLclMktAnx() {
         if (lclMktAnx == null) {
-            lclMktAnx = new ArrayList<LocalMarketAnnex2>();
+            lclMktAnx = new ArrayList<>();
         }
         return this.lclMktAnx;
     }
@@ -350,8 +354,8 @@ public class FundProcessingPassport1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the xtnsn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the xtnsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -365,10 +369,12 @@ public class FundProcessingPassport1 {
      * {@link Extension1 }
      * 
      * 
+     * @return
+     *     The value of the xtnsn property.
      */
     public List<Extension1> getXtnsn() {
         if (xtnsn == null) {
-            xtnsn = new ArrayList<Extension1>();
+            xtnsn = new ArrayList<>();
         }
         return this.xtnsn;
     }

@@ -65,8 +65,8 @@ public class AcceptorConfiguration11 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the poiGrpId property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the poiGrpId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -80,10 +80,12 @@ public class AcceptorConfiguration11 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the poiGrpId property.
      */
     public List<String> getPOIGrpId() {
         if (poiGrpId == null) {
-            poiGrpId = new ArrayList<String>();
+            poiGrpId = new ArrayList<>();
         }
         return this.poiGrpId;
     }
@@ -94,8 +96,8 @@ public class AcceptorConfiguration11 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dataSet property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the dataSet property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -109,10 +111,12 @@ public class AcceptorConfiguration11 {
      * {@link AcceptorConfigurationDataSet3 }
      * 
      * 
+     * @return
+     *     The value of the dataSet property.
      */
     public List<AcceptorConfigurationDataSet3> getDataSet() {
         if (dataSet == null) {
-            dataSet = new ArrayList<AcceptorConfigurationDataSet3>();
+            dataSet = new ArrayList<>();
         }
         return this.dataSet;
     }

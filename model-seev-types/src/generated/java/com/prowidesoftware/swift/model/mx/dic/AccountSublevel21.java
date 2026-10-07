@@ -90,8 +90,8 @@ public class AccountSublevel21 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dsclsr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the dsclsr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -105,10 +105,12 @@ public class AccountSublevel21 {
      * {@link AccountSubLevel20 }
      * 
      * 
+     * @return
+     *     The value of the dsclsr property.
      */
     public List<AccountSubLevel20> getDsclsr() {
         if (dsclsr == null) {
-            dsclsr = new ArrayList<AccountSubLevel20>();
+            dsclsr = new ArrayList<>();
         }
         return this.dsclsr;
     }

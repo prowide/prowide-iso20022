@@ -4,14 +4,17 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import com.prowidesoftware.swift.model.mx.MxReadImpl;
+import com.prowidesoftware.swift.model.mx.MxReadParams;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
-import com.prowidesoftware.swift.model.mx.MxRead;
-import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -28,18 +31,18 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:colr.016.001.05")
 public class MxColr01600105
-    extends com.prowidesoftware.swift.model.mx.AbstractMX
+    extends AbstractMX
 {
 
     @XmlElement(name = "CollAndXpsrRpt", required = true)
     protected CollateralAndExposureReportV05 collAndXpsrRpt;
-    public final static transient String BUSINESS_PROCESS = "colr";
-    public final static transient int FUNCTIONALITY = 16;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 5;
+    public static final transient String BUSINESS_PROCESS = "colr";
+    public static final transient int FUNCTIONALITY = 16;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 5;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {ActiveCurrencyAndAmount.class, ActiveOrHistoricCurrencyAnd13DecimalAmount.class, Agreement4 .class, AgreementFramework1Choice.class, AgreementFramework1Code.class, BlockChainAddressWallet3 .class, BlockChainAddressWallet5 .class, CCPMemberType1Code.class, CashCollateral4 .class, Collateral53 .class, CollateralAccount3 .class, CollateralAccountIdentificationType3Choice.class, CollateralAccountType1Code.class, CollateralAmount1 .class, CollateralAndExposureReportV05 .class, CollateralAppliedExcess1Code.class, CollateralDirection1Code.class, CollateralOwnership3 .class, CollateralType8Code.class, CollateralValuation13 .class, DateAndDateTime2Choice.class, DateCode9Choice.class, DateFormat14Choice.class, DateType2Code.class, DepositType1Code.class, EventFrequency6Code.class, ExposureType11Code.class, ExposureType13Code.class, FinancialInstrumentQuantity33Choice.class, GenericIdentification30 .class, GenericIdentification36 .class, GenericIdentification78 .class, IdentificationSource3Choice.class, InterestComputationMethod2Code.class, MxColr01600105 .class, NameAndAddress6 .class, Obligation11 .class, OtherCollateral10 .class, OtherIdentification1 .class, OtherTypeOfCollateral3 .class, Pagination1 .class, PartyIdentification178Choice.class, PartyIdentification242 .class, PostalAddress2 .class, Price7 .class, PriceRateOrAmount3Choice.class, PriceValueType1Code.class, ReportParameters6 .class, ReturnExcessCash1 .class, ReturnExcessCash1Choice.class, ReturnExcessCash1Code.class, SafekeepingPlace1Code.class, SafekeepingPlace3Code.class, SafekeepingPlaceFormat29Choice.class, SafekeepingPlaceTypeAndIdentification1 .class, SafekeepingPlaceTypeAndText8 .class, SecuritiesAccount19 .class, SecuritiesCollateral13 .class, SecurityIdentification19 .class, SettlementStatus3Code.class, ShortLong1Code.class, Summary3 .class, SummaryAmounts2 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, ThresholdType1Code.class, YieldedOrValueType1Choice.class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:colr.016.001.05";
+    public static final transient Class[] _classes = new Class[] {ActiveCurrencyAndAmount.class, ActiveOrHistoricCurrencyAnd13DecimalAmount.class, Agreement4 .class, AgreementFramework1Choice.class, AgreementFramework1Code.class, BlockChainAddressWallet3 .class, BlockChainAddressWallet5 .class, CCPMemberType1Code.class, CashCollateral4 .class, Collateral53 .class, CollateralAccount3 .class, CollateralAccountIdentificationType3Choice.class, CollateralAccountType1Code.class, CollateralAmount1 .class, CollateralAndExposureReportV05 .class, CollateralAppliedExcess1Code.class, CollateralDirection1Code.class, CollateralOwnership3 .class, CollateralType8Code.class, CollateralValuation13 .class, DateAndDateTime2Choice.class, DateCode9Choice.class, DateFormat14Choice.class, DateType2Code.class, DepositType1Code.class, EventFrequency6Code.class, ExposureType11Code.class, ExposureType13Code.class, FinancialInstrumentQuantity33Choice.class, GenericIdentification30 .class, GenericIdentification36 .class, GenericIdentification78 .class, IdentificationSource3Choice.class, InterestComputationMethod2Code.class, MxColr01600105 .class, NameAndAddress6 .class, Obligation11 .class, OtherCollateral10 .class, OtherIdentification1 .class, OtherTypeOfCollateral3 .class, Pagination1 .class, PartyIdentification178Choice.class, PartyIdentification242 .class, PostalAddress2 .class, Price7 .class, PriceRateOrAmount3Choice.class, PriceValueType1Code.class, ReportParameters6 .class, ReturnExcessCash1 .class, ReturnExcessCash1Choice.class, ReturnExcessCash1Code.class, SafekeepingPlace1Code.class, SafekeepingPlace3Code.class, SafekeepingPlaceFormat29Choice.class, SafekeepingPlaceTypeAndIdentification1 .class, SafekeepingPlaceTypeAndText8 .class, SecuritiesAccount19 .class, SecuritiesCollateral13 .class, SecurityIdentification19 .class, SettlementStatus3Code.class, ShortLong1Code.class, Summary3 .class, SummaryAmounts2 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, ThresholdType1Code.class, YieldedOrValueType1Choice.class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:colr.016.001.05";
 
     public MxColr01600105() {
         super();
@@ -89,21 +92,6 @@ public class MxColr01600105
     }
 
     @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
-    }
-
-    @Override
     public String getBusinessProcess() {
         return BUSINESS_PROCESS;
     }
@@ -128,7 +116,7 @@ public class MxColr01600105
      * 
      */
     public static MxColr01600105 parse(String xml) {
-        return ((MxColr01600105) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxColr01600105 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams()));
+        return ((MxColr01600105) MxReadImpl.parse(MxColr01600105 .class, xml, _classes, new MxReadParams()));
     }
 
     /**
@@ -137,7 +125,7 @@ public class MxColr01600105
      * 
      */
     public static MxColr01600105 parse(String xml, MxReadConfiguration conf) {
-        return ((MxColr01600105) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxColr01600105 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams(conf)));
+        return ((MxColr01600105) MxReadImpl.parse(MxColr01600105 .class, xml, _classes, new MxReadParams(conf)));
     }
 
     /**
@@ -173,8 +161,23 @@ public class MxColr01600105
      * @return
      *     a new instance of MxColr01600105
      */
-    public final static MxColr01600105 fromJson(String json) {
-        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxColr01600105 .class);
+    public static final MxColr01600105 fromJson(String json) {
+        return AbstractMX.fromJson(json, MxColr01600105 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

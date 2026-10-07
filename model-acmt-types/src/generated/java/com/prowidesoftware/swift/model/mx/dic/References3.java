@@ -121,8 +121,8 @@ public class References3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the reqRsn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the reqRsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -136,10 +136,12 @@ public class References3 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the reqRsn property.
      */
     public List<String> getReqRsn() {
         if (reqRsn == null) {
-            reqRsn = new ArrayList<String>();
+            reqRsn = new ArrayList<>();
         }
         return this.reqRsn;
     }
@@ -150,8 +152,8 @@ public class References3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the attchdDocNm property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the attchdDocNm property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -165,10 +167,12 @@ public class References3 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the attchdDocNm property.
      */
     public List<String> getAttchdDocNm() {
         if (attchdDocNm == null) {
-            attchdDocNm = new ArrayList<String>();
+            attchdDocNm = new ArrayList<>();
         }
         return this.attchdDocNm;
     }

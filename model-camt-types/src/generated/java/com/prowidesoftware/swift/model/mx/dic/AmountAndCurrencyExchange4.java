@@ -146,8 +146,8 @@ public class AmountAndCurrencyExchange4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the prtryAmt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the prtryAmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -161,10 +161,12 @@ public class AmountAndCurrencyExchange4 {
      * {@link AmountAndCurrencyExchangeDetails6 }
      * 
      * 
+     * @return
+     *     The value of the prtryAmt property.
      */
     public List<AmountAndCurrencyExchangeDetails6> getPrtryAmt() {
         if (prtryAmt == null) {
-            prtryAmt = new ArrayList<AmountAndCurrencyExchangeDetails6>();
+            prtryAmt = new ArrayList<>();
         }
         return this.prtryAmt;
     }

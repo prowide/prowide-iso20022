@@ -37,8 +37,8 @@ public class CCPClearingMemberReportV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the clrMmb property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the clrMmb property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -52,10 +52,12 @@ public class CCPClearingMemberReportV01 {
      * {@link ClearingMember1 }
      * 
      * 
+     * @return
+     *     The value of the clrMmb property.
      */
     public List<ClearingMember1> getClrMmb() {
         if (clrMmb == null) {
-            clrMmb = new ArrayList<ClearingMember1>();
+            clrMmb = new ArrayList<>();
         }
         return this.clrMmb;
     }
@@ -66,8 +68,8 @@ public class CCPClearingMemberReportV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -81,10 +83,12 @@ public class CCPClearingMemberReportV01 {
      * {@link SupplementaryData1 }
      * 
      * 
+     * @return
+     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<SupplementaryData1>();
+            splmtryData = new ArrayList<>();
         }
         return this.splmtryData;
     }

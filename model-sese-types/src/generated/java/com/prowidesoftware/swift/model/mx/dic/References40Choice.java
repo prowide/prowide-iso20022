@@ -37,8 +37,8 @@ public class References40Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rltdRef property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rltdRef property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -52,10 +52,12 @@ public class References40Choice {
      * {@link AdditionalReference3 }
      * 
      * 
+     * @return
+     *     The value of the rltdRef property.
      */
     public List<AdditionalReference3> getRltdRef() {
         if (rltdRef == null) {
-            rltdRef = new ArrayList<AdditionalReference3>();
+            rltdRef = new ArrayList<>();
         }
         return this.rltdRef;
     }
@@ -66,8 +68,8 @@ public class References40Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the othrRef property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the othrRef property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -81,10 +83,12 @@ public class References40Choice {
      * {@link AdditionalReference3 }
      * 
      * 
+     * @return
+     *     The value of the othrRef property.
      */
     public List<AdditionalReference3> getOthrRef() {
         if (othrRef == null) {
-            othrRef = new ArrayList<AdditionalReference3>();
+            othrRef = new ArrayList<>();
         }
         return this.othrRef;
     }

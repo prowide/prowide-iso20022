@@ -9,17 +9,16 @@ import javax.xml.bind.annotation.XmlType;
  * <p>Java class for OrderStatus11Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="OrderStatus11Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="FIRM"/&gt;
- *     &lt;enumeration value="IMPL"/&gt;
- *     &lt;enumeration value="INDI"/&gt;
- *     &lt;enumeration value="ROUT"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="OrderStatus11Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="FIRM"/>
+ *     <enumeration value="IMPL"/>
+ *     <enumeration value="INDI"/>
+ *     <enumeration value="ROUT"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "OrderStatus11Code")

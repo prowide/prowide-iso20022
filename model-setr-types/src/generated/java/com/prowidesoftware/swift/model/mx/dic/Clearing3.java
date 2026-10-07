@@ -37,8 +37,8 @@ public class Clearing3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the clrMmb property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the clrMmb property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -52,10 +52,12 @@ public class Clearing3 {
      * {@link PartyIdentificationAndAccount78 }
      * 
      * 
+     * @return
+     *     The value of the clrMmb property.
      */
     public List<PartyIdentificationAndAccount78> getClrMmb() {
         if (clrMmb == null) {
-            clrMmb = new ArrayList<PartyIdentificationAndAccount78>();
+            clrMmb = new ArrayList<>();
         }
         return this.clrMmb;
     }

@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -151,8 +151,8 @@ public class ReceiveInformation21 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the intrmyInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the intrmyInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -166,10 +166,12 @@ public class ReceiveInformation21 {
      * {@link Intermediary43 }
      * 
      * 
+     * @return
+     *     The value of the intrmyInf property.
      */
     public List<Intermediary43> getIntrmyInf() {
         if (intrmyInf == null) {
-            intrmyInf = new ArrayList<Intermediary43>();
+            intrmyInf = new ArrayList<>();
         }
         return this.intrmyInf;
     }
@@ -405,8 +407,8 @@ public class ReceiveInformation21 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the fees property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the fees property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -420,10 +422,12 @@ public class ReceiveInformation21 {
      * {@link Fees2 }
      * 
      * 
+     * @return
+     *     The value of the fees property.
      */
     public List<Fees2> getFees() {
         if (fees == null) {
-            fees = new ArrayList<Fees2>();
+            fees = new ArrayList<>();
         }
         return this.fees;
     }
@@ -434,8 +438,8 @@ public class ReceiveInformation21 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the indvTax property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the indvTax property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -449,10 +453,12 @@ public class ReceiveInformation21 {
      * {@link Tax38 }
      * 
      * 
+     * @return
+     *     The value of the indvTax property.
      */
     public List<Tax38> getIndvTax() {
         if (indvTax == null) {
-            indvTax = new ArrayList<Tax38>();
+            indvTax = new ArrayList<>();
         }
         return this.indvTax;
     }
@@ -463,8 +469,8 @@ public class ReceiveInformation21 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the fxDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the fxDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -478,10 +484,12 @@ public class ReceiveInformation21 {
      * {@link ForeignExchangeTerms37 }
      * 
      * 
+     * @return
+     *     The value of the fxDtls property.
      */
     public List<ForeignExchangeTerms37> getFXDtls() {
         if (fxDtls == null) {
-            fxDtls = new ArrayList<ForeignExchangeTerms37>();
+            fxDtls = new ArrayList<>();
         }
         return this.fxDtls;
     }

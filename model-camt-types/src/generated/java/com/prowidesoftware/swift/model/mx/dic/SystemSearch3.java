@@ -43,8 +43,8 @@ public class SystemSearch3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sysId property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sysId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -58,10 +58,12 @@ public class SystemSearch3 {
      * {@link ClearingSystemIdentification3Choice }
      * 
      * 
+     * @return
+     *     The value of the sysId property.
      */
     public List<ClearingSystemIdentification3Choice> getSysId() {
         if (sysId == null) {
-            sysId = new ArrayList<ClearingSystemIdentification3Choice>();
+            sysId = new ArrayList<>();
         }
         return this.sysId;
     }
@@ -72,8 +74,8 @@ public class SystemSearch3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the mmbId property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the mmbId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -87,10 +89,12 @@ public class SystemSearch3 {
      * {@link BranchAndFinancialInstitutionIdentification5 }
      * 
      * 
+     * @return
+     *     The value of the mmbId property.
      */
     public List<BranchAndFinancialInstitutionIdentification5> getMmbId() {
         if (mmbId == null) {
-            mmbId = new ArrayList<BranchAndFinancialInstitutionIdentification5>();
+            mmbId = new ArrayList<>();
         }
         return this.mmbId;
     }

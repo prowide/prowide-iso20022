@@ -4,14 +4,17 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import com.prowidesoftware.swift.model.mx.MxReadImpl;
+import com.prowidesoftware.swift.model.mx.MxReadParams;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
-import com.prowidesoftware.swift.model.mx.MxRead;
-import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -28,18 +31,18 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:supl.031.001.02")
 public class MxSupl03100102
-    extends com.prowidesoftware.swift.model.mx.AbstractMX
+    extends AbstractMX
 {
 
     @XmlElement(name = "DTCCCASTSD1", required = true)
     protected DTCCCASTSD1V02 dtcccastsd1;
-    public final static transient String BUSINESS_PROCESS = "supl";
-    public final static transient int FUNCTIONALITY = 31;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 2;
+    public static final transient String BUSINESS_PROCESS = "supl";
+    public static final transient int FUNCTIONALITY = 31;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 2;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {AmountPrice5 .class, AmountPriceType1Code.class, CorporateActionBalanceSD5 .class, CorporateActionInstructedBalanceOptionBalanceDetailsSD2 .class, CorporateActionInstructedBalanceOptionInstructionDetailsSD2 .class, CorporateActionInstructedBalanceOptionProtectInstructionDetailsSD2 .class, DTCCCASTSD1V02 .class, DTCInstructionStatus2Code.class, DTCProtectInstructionStatus1Code.class, FinancialInstrumentQuantity15Choice.class, IdentificationSource4Choice.class, MxSupl03100102 .class, OptionNumber1Choice.class, OptionNumber1Code.class, OtherIdentification2 .class, PercentagePrice1 .class, PriceFormat57Choice.class, PriceRateType3Code.class, PriceValueType10Code.class, RestrictedFINActiveCurrencyAnd13DecimalAmount.class, ShortLong1Code.class, SignedQuantityFormat9 .class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:supl.031.001.02";
+    public static final transient Class[] _classes = new Class[] {AmountPrice5 .class, AmountPriceType1Code.class, CorporateActionBalanceSD5 .class, CorporateActionInstructedBalanceOptionBalanceDetailsSD2 .class, CorporateActionInstructedBalanceOptionInstructionDetailsSD2 .class, CorporateActionInstructedBalanceOptionProtectInstructionDetailsSD2 .class, DTCCCASTSD1V02 .class, DTCInstructionStatus2Code.class, DTCProtectInstructionStatus1Code.class, FinancialInstrumentQuantity15Choice.class, IdentificationSource4Choice.class, MxSupl03100102 .class, OptionNumber1Choice.class, OptionNumber1Code.class, OtherIdentification2 .class, PercentagePrice1 .class, PriceFormat57Choice.class, PriceRateType3Code.class, PriceValueType10Code.class, RestrictedFINActiveCurrencyAnd13DecimalAmount.class, ShortLong1Code.class, SignedQuantityFormat9 .class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:supl.031.001.02";
 
     public MxSupl03100102() {
         super();
@@ -89,21 +92,6 @@ public class MxSupl03100102
     }
 
     @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
-    }
-
-    @Override
     public String getBusinessProcess() {
         return BUSINESS_PROCESS;
     }
@@ -128,7 +116,7 @@ public class MxSupl03100102
      * 
      */
     public static MxSupl03100102 parse(String xml) {
-        return ((MxSupl03100102) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxSupl03100102 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams()));
+        return ((MxSupl03100102) MxReadImpl.parse(MxSupl03100102 .class, xml, _classes, new MxReadParams()));
     }
 
     /**
@@ -137,7 +125,7 @@ public class MxSupl03100102
      * 
      */
     public static MxSupl03100102 parse(String xml, MxReadConfiguration conf) {
-        return ((MxSupl03100102) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxSupl03100102 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams(conf)));
+        return ((MxSupl03100102) MxReadImpl.parse(MxSupl03100102 .class, xml, _classes, new MxReadParams(conf)));
     }
 
     /**
@@ -173,8 +161,23 @@ public class MxSupl03100102
      * @return
      *     a new instance of MxSupl03100102
      */
-    public final static MxSupl03100102 fromJson(String json) {
-        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSupl03100102 .class);
+    public static final MxSupl03100102 fromJson(String json) {
+        return AbstractMX.fromJson(json, MxSupl03100102 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

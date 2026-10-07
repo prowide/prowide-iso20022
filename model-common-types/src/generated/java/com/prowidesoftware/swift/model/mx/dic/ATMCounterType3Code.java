@@ -9,20 +9,19 @@ import javax.xml.bind.annotation.XmlType;
  * <p>Java class for ATMCounterType3Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ATMCounterType3Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="INQU"/&gt;
- *     &lt;enumeration value="CTXN"/&gt;
- *     &lt;enumeration value="CTOF"/&gt;
- *     &lt;enumeration value="BDAY"/&gt;
- *     &lt;enumeration value="PRTN"/&gt;
- *     &lt;enumeration value="OPER"/&gt;
- *     &lt;enumeration value="SLRP"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ATMCounterType3Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="INQU"/>
+ *     <enumeration value="CTXN"/>
+ *     <enumeration value="CTOF"/>
+ *     <enumeration value="BDAY"/>
+ *     <enumeration value="PRTN"/>
+ *     <enumeration value="OPER"/>
+ *     <enumeration value="SLRP"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ATMCounterType3Code")

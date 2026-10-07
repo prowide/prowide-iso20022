@@ -62,8 +62,8 @@ public class Lodging3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the lineItm property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the lineItm property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -77,10 +77,12 @@ public class Lodging3 {
      * {@link LodgingLineItem2 }
      * 
      * 
+     * @return
+     *     The value of the lineItm property.
      */
     public List<LodgingLineItem2> getLineItm() {
         if (lineItm == null) {
-            lineItm = new ArrayList<LodgingLineItem2>();
+            lineItm = new ArrayList<>();
         }
         return this.lineItm;
     }

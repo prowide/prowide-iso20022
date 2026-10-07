@@ -208,8 +208,8 @@ public class IntraBalanceMovementPostingReportV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the subBal property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the subBal property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -223,10 +223,12 @@ public class IntraBalanceMovementPostingReportV01 {
      * {@link IntraBalancePosting5 }
      * 
      * 
+     * @return
+     *     The value of the subBal property.
      */
     public List<IntraBalancePosting5> getSubBal() {
         if (subBal == null) {
-            subBal = new ArrayList<IntraBalancePosting5>();
+            subBal = new ArrayList<>();
         }
         return this.subBal;
     }

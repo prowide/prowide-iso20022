@@ -99,8 +99,8 @@ public class Context18 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the vrfctn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the vrfctn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -114,10 +114,12 @@ public class Context18 {
      * {@link Verification5 }
      * 
      * 
+     * @return
+     *     The value of the vrfctn property.
      */
     public List<Verification5> getVrfctn() {
         if (vrfctn == null) {
-            vrfctn = new ArrayList<Verification5>();
+            vrfctn = new ArrayList<>();
         }
         return this.vrfctn;
     }
@@ -128,8 +130,8 @@ public class Context18 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rskCntxt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rskCntxt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -143,10 +145,12 @@ public class Context18 {
      * {@link RiskContext2 }
      * 
      * 
+     * @return
+     *     The value of the rskCntxt property.
      */
     public List<RiskContext2> getRskCntxt() {
         if (rskCntxt == null) {
-            rskCntxt = new ArrayList<RiskContext2>();
+            rskCntxt = new ArrayList<>();
         }
         return this.rskCntxt;
     }
@@ -182,8 +186,8 @@ public class Context18 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -197,10 +201,12 @@ public class Context18 {
      * {@link AdditionalData2 }
      * 
      * 
+     * @return
+     *     The value of the addtlData property.
      */
     public List<AdditionalData2> getAddtlData() {
         if (addtlData == null) {
-            addtlData = new ArrayList<AdditionalData2>();
+            addtlData = new ArrayList<>();
         }
         return this.addtlData;
     }

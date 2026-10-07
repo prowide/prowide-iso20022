@@ -118,8 +118,8 @@ public class SettlementService4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlSttlmInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlSttlmInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -133,10 +133,12 @@ public class SettlementService4 {
      * {@link AdditionalData1 }
      * 
      * 
+     * @return
+     *     The value of the addtlSttlmInf property.
      */
     public List<AdditionalData1> getAddtlSttlmInf() {
         if (addtlSttlmInf == null) {
-            addtlSttlmInf = new ArrayList<AdditionalData1>();
+            addtlSttlmInf = new ArrayList<>();
         }
         return this.addtlSttlmInf;
     }

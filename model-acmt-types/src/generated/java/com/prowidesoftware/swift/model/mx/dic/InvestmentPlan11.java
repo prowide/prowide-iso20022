@@ -1,17 +1,17 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -321,8 +321,8 @@ public class InvestmentPlan11 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sctyDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sctyDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -336,10 +336,12 @@ public class InvestmentPlan11 {
      * {@link Repartition3 }
      * 
      * 
+     * @return
+     *     The value of the sctyDtls property.
      */
     public List<Repartition3> getSctyDtls() {
         if (sctyDtls == null) {
-            sctyDtls = new ArrayList<Repartition3>();
+            sctyDtls = new ArrayList<>();
         }
         return this.sctyDtls;
     }
@@ -350,8 +352,8 @@ public class InvestmentPlan11 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the modfdCshSttlm property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the modfdCshSttlm property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -365,10 +367,12 @@ public class InvestmentPlan11 {
      * {@link InvestmentFundCashSettlementInformation8 }
      * 
      * 
+     * @return
+     *     The value of the modfdCshSttlm property.
      */
     public List<InvestmentFundCashSettlementInformation8> getModfdCshSttlm() {
         if (modfdCshSttlm == null) {
-            modfdCshSttlm = new ArrayList<InvestmentFundCashSettlementInformation8>();
+            modfdCshSttlm = new ArrayList<>();
         }
         return this.modfdCshSttlm;
     }

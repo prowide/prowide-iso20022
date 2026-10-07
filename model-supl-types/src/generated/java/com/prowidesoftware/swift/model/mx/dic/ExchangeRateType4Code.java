@@ -9,16 +9,15 @@ import javax.xml.bind.annotation.XmlType;
  * <p>Java class for ExchangeRateType4Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="ExchangeRateType4Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="AGRD"/&gt;
- *     &lt;enumeration value="SALE"/&gt;
- *     &lt;enumeration value="SPOT"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="ExchangeRateType4Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="AGRD"/>
+ *     <enumeration value="SALE"/>
+ *     <enumeration value="SPOT"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "ExchangeRateType4Code")

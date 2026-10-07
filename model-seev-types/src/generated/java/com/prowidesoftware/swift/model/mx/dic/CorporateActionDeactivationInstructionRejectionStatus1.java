@@ -37,8 +37,8 @@ public class CorporateActionDeactivationInstructionRejectionStatus1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rsn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -52,10 +52,12 @@ public class CorporateActionDeactivationInstructionRejectionStatus1 {
      * {@link RejectionReason12FormatChoice }
      * 
      * 
+     * @return
+     *     The value of the rsn property.
      */
     public List<RejectionReason12FormatChoice> getRsn() {
         if (rsn == null) {
-            rsn = new ArrayList<RejectionReason12FormatChoice>();
+            rsn = new ArrayList<>();
         }
         return this.rsn;
     }

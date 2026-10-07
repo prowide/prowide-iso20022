@@ -242,8 +242,8 @@ public class CardAccount18 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the bal property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the bal property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -257,10 +257,12 @@ public class CardAccount18 {
      * {@link AmountAndDirection111 }
      * 
      * 
+     * @return
+     *     The value of the bal property.
      */
     public List<AmountAndDirection111> getBal() {
         if (bal == null) {
-            bal = new ArrayList<AmountAndDirection111>();
+            bal = new ArrayList<>();
         }
         return this.bal;
     }
@@ -321,8 +323,8 @@ public class CardAccount18 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the allwdSvc property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the allwdSvc property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -336,10 +338,12 @@ public class CardAccount18 {
      * {@link ATMService29 }
      * 
      * 
+     * @return
+     *     The value of the allwdSvc property.
      */
     public List<ATMService29> getAllwdSvc() {
         if (allwdSvc == null) {
-            allwdSvc = new ArrayList<ATMService29>();
+            allwdSvc = new ArrayList<>();
         }
         return this.allwdSvc;
     }

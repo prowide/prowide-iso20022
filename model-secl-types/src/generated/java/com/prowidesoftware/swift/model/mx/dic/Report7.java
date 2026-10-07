@@ -37,8 +37,8 @@ public class Report7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the nonClrMmb property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the nonClrMmb property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -52,10 +52,12 @@ public class Report7 {
      * {@link PartyIdentificationAndAccount227 }
      * 
      * 
+     * @return
+     *     The value of the nonClrMmb property.
      */
     public List<PartyIdentificationAndAccount227> getNonClrMmb() {
         if (nonClrMmb == null) {
-            nonClrMmb = new ArrayList<PartyIdentificationAndAccount227>();
+            nonClrMmb = new ArrayList<>();
         }
         return this.nonClrMmb;
     }
@@ -66,8 +68,8 @@ public class Report7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sttlmOblgtnDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sttlmOblgtnDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -81,10 +83,12 @@ public class Report7 {
      * {@link SettlementObligation9 }
      * 
      * 
+     * @return
+     *     The value of the sttlmOblgtnDtls property.
      */
     public List<SettlementObligation9> getSttlmOblgtnDtls() {
         if (sttlmOblgtnDtls == null) {
-            sttlmOblgtnDtls = new ArrayList<SettlementObligation9>();
+            sttlmOblgtnDtls = new ArrayList<>();
         }
         return this.sttlmOblgtnDtls;
     }

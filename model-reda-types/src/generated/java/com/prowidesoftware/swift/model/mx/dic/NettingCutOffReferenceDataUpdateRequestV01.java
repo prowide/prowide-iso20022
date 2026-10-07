@@ -65,8 +65,8 @@ public class NettingCutOffReferenceDataUpdateRequestV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the netgCutOffReq property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the netgCutOffReq property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -80,10 +80,12 @@ public class NettingCutOffReferenceDataUpdateRequestV01 {
      * {@link NettingCutOff1 }
      * 
      * 
+     * @return
+     *     The value of the netgCutOffReq property.
      */
     public List<NettingCutOff1> getNetgCutOffReq() {
         if (netgCutOffReq == null) {
-            netgCutOffReq = new ArrayList<NettingCutOff1>();
+            netgCutOffReq = new ArrayList<>();
         }
         return this.netgCutOffReq;
     }
@@ -94,8 +96,8 @@ public class NettingCutOffReferenceDataUpdateRequestV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -109,10 +111,12 @@ public class NettingCutOffReferenceDataUpdateRequestV01 {
      * {@link SupplementaryData1 }
      * 
      * 
+     * @return
+     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<SupplementaryData1>();
+            splmtryData = new ArrayList<>();
         }
         return this.splmtryData;
     }

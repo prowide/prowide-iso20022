@@ -43,8 +43,8 @@ public class CorporateActionNarrative54 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the offerr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the offerr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -58,10 +58,12 @@ public class CorporateActionNarrative54 {
      * {@link UpdatedAdditionalInformation6 }
      * 
      * 
+     * @return
+     *     The value of the offerr property.
      */
     public List<UpdatedAdditionalInformation6> getOfferr() {
         if (offerr == null) {
-            offerr = new ArrayList<UpdatedAdditionalInformation6>();
+            offerr = new ArrayList<>();
         }
         return this.offerr;
     }
@@ -97,8 +99,8 @@ public class CorporateActionNarrative54 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the urlAdr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the urlAdr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -112,10 +114,12 @@ public class CorporateActionNarrative54 {
      * {@link UpdatedURLlnformation5 }
      * 
      * 
+     * @return
+     *     The value of the urlAdr property.
      */
     public List<UpdatedURLlnformation5> getURLAdr() {
         if (urlAdr == null) {
-            urlAdr = new ArrayList<UpdatedURLlnformation5>();
+            urlAdr = new ArrayList<>();
         }
         return this.urlAdr;
     }

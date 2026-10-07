@@ -253,8 +253,8 @@ public class MeetingNotice9 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the prtcptn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the prtcptn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -268,10 +268,12 @@ public class MeetingNotice9 {
      * {@link ParticipationMethod2 }
      * 
      * 
+     * @return
+     *     The value of the prtcptn property.
      */
     public List<ParticipationMethod2> getPrtcptn() {
         if (prtcptn == null) {
-            prtcptn = new ArrayList<ParticipationMethod2>();
+            prtcptn = new ArrayList<>();
         }
         return this.prtcptn;
     }
@@ -307,8 +309,8 @@ public class MeetingNotice9 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlDcmnttnURLAdr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlDcmnttnURLAdr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -322,10 +324,12 @@ public class MeetingNotice9 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the addtlDcmnttnURLAdr property.
      */
     public List<String> getAddtlDcmnttnURLAdr() {
         if (addtlDcmnttnURLAdr == null) {
-            addtlDcmnttnURLAdr = new ArrayList<String>();
+            addtlDcmnttnURLAdr = new ArrayList<>();
         }
         return this.addtlDcmnttnURLAdr;
     }
@@ -361,8 +365,8 @@ public class MeetingNotice9 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlPrcdrDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlPrcdrDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -376,10 +380,12 @@ public class MeetingNotice9 {
      * {@link AdditionalRights4 }
      * 
      * 
+     * @return
+     *     The value of the addtlPrcdrDtls property.
      */
     public List<AdditionalRights4> getAddtlPrcdrDtls() {
         if (addtlPrcdrDtls == null) {
-            addtlPrcdrDtls = new ArrayList<AdditionalRights4>();
+            addtlPrcdrDtls = new ArrayList<>();
         }
         return this.addtlPrcdrDtls;
     }
@@ -490,8 +496,8 @@ public class MeetingNotice9 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ctctPrsnDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ctctPrsnDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -505,10 +511,12 @@ public class MeetingNotice9 {
      * {@link MeetingContactPerson3 }
      * 
      * 
+     * @return
+     *     The value of the ctctPrsnDtls property.
      */
     public List<MeetingContactPerson3> getCtctPrsnDtls() {
         if (ctctPrsnDtls == null) {
-            ctctPrsnDtls = new ArrayList<MeetingContactPerson3>();
+            ctctPrsnDtls = new ArrayList<>();
         }
         return this.ctctPrsnDtls;
     }

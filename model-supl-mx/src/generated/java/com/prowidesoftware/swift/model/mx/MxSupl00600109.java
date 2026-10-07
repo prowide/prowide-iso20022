@@ -4,14 +4,17 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import com.prowidesoftware.swift.model.mx.MxReadImpl;
+import com.prowidesoftware.swift.model.mx.MxReadParams;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
-import com.prowidesoftware.swift.model.mx.MxRead;
-import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -28,18 +31,18 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:supl.006.001.09")
 public class MxSupl00600109
-    extends com.prowidesoftware.swift.model.mx.AbstractMX
+    extends AbstractMX
 {
 
     @XmlElement(name = "DTCCCACNSD1", required = true)
     protected DTCCCACNSD1V09 dtcccacnsd1;
-    public final static transient String BUSINESS_PROCESS = "supl";
-    public final static transient int FUNCTIONALITY = 6;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 9;
+    public static final transient String BUSINESS_PROCESS = "supl";
+    public static final transient int FUNCTIONALITY = 6;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 9;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {CorporateActionCancellationSD3 .class, CorporateActionCancellationSD4 .class, CorporateActionGeneralInformationSD40 .class, CorporateActionNotificationSD10 .class, DTCCCACNSD1V09 .class, DTCCLinkType1Code.class, DTCCSubEventType8Code.class, EventGroup4Code.class, ExtendedEventType6Code.class, IdentificationSource4Choice.class, MxSupl00600109 .class, OtherIdentification2 .class, Pagination1 .class, SecurityIdentification20 .class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:supl.006.001.09";
+    public static final transient Class[] _classes = new Class[] {CorporateActionCancellationSD3 .class, CorporateActionCancellationSD4 .class, CorporateActionGeneralInformationSD40 .class, CorporateActionNotificationSD10 .class, DTCCCACNSD1V09 .class, DTCCLinkType1Code.class, DTCCSubEventType8Code.class, EventGroup4Code.class, ExtendedEventType6Code.class, IdentificationSource4Choice.class, MxSupl00600109 .class, OtherIdentification2 .class, Pagination1 .class, SecurityIdentification20 .class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:supl.006.001.09";
 
     public MxSupl00600109() {
         super();
@@ -89,21 +92,6 @@ public class MxSupl00600109
     }
 
     @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
-    }
-
-    @Override
     public String getBusinessProcess() {
         return BUSINESS_PROCESS;
     }
@@ -128,7 +116,7 @@ public class MxSupl00600109
      * 
      */
     public static MxSupl00600109 parse(String xml) {
-        return ((MxSupl00600109) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxSupl00600109 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams()));
+        return ((MxSupl00600109) MxReadImpl.parse(MxSupl00600109 .class, xml, _classes, new MxReadParams()));
     }
 
     /**
@@ -137,7 +125,7 @@ public class MxSupl00600109
      * 
      */
     public static MxSupl00600109 parse(String xml, MxReadConfiguration conf) {
-        return ((MxSupl00600109) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxSupl00600109 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams(conf)));
+        return ((MxSupl00600109) MxReadImpl.parse(MxSupl00600109 .class, xml, _classes, new MxReadParams(conf)));
     }
 
     /**
@@ -173,8 +161,23 @@ public class MxSupl00600109
      * @return
      *     a new instance of MxSupl00600109
      */
-    public final static MxSupl00600109 fromJson(String json) {
-        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSupl00600109 .class);
+    public static final MxSupl00600109 fromJson(String json) {
+        return AbstractMX.fromJson(json, MxSupl00600109 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

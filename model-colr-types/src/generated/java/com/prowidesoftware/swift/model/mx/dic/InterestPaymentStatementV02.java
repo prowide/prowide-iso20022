@@ -290,8 +290,8 @@ public class InterestPaymentStatementV02 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the splmtryData1 property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the splmtryData1 property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -305,10 +305,12 @@ public class InterestPaymentStatementV02 {
      * {@link SupplementaryData1 }
      * 
      * 
+     * @return
+     *     The value of the splmtryData1 property.
      */
     public List<SupplementaryData1> getSplmtryData1() {
         if (splmtryData1 == null) {
-            splmtryData1 = new ArrayList<SupplementaryData1>();
+            splmtryData1 = new ArrayList<>();
         }
         return this.splmtryData1;
     }

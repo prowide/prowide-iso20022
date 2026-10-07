@@ -65,8 +65,8 @@ public class SecurityAttributes10 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the finInstrmTp property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the finInstrmTp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -80,10 +80,12 @@ public class SecurityAttributes10 {
      * {@link FinancialInstrument97 }
      * 
      * 
+     * @return
+     *     The value of the finInstrmTp property.
      */
     public List<FinancialInstrument97> getFinInstrmTp() {
         if (finInstrmTp == null) {
-            finInstrmTp = new ArrayList<FinancialInstrument97>();
+            finInstrmTp = new ArrayList<>();
         }
         return this.finInstrmTp;
     }
@@ -94,8 +96,8 @@ public class SecurityAttributes10 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the finInstrmAttrbts property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the finInstrmAttrbts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -109,10 +111,12 @@ public class SecurityAttributes10 {
      * {@link CommonFinancialInstrumentAttributes10 }
      * 
      * 
+     * @return
+     *     The value of the finInstrmAttrbts property.
      */
     public List<CommonFinancialInstrumentAttributes10> getFinInstrmAttrbts() {
         if (finInstrmAttrbts == null) {
-            finInstrmAttrbts = new ArrayList<CommonFinancialInstrumentAttributes10>();
+            finInstrmAttrbts = new ArrayList<>();
         }
         return this.finInstrmAttrbts;
     }

@@ -40,8 +40,8 @@ public class ATMSecurityConfiguration5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the pinFrmt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the pinFrmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -55,10 +55,12 @@ public class ATMSecurityConfiguration5 {
      * {@link PINFormat4Code }
      * 
      * 
+     * @return
+     *     The value of the pinFrmt property.
      */
     public List<PINFormat4Code> getPINFrmt() {
         if (pinFrmt == null) {
-            pinFrmt = new ArrayList<PINFormat4Code>();
+            pinFrmt = new ArrayList<>();
         }
         return this.pinFrmt;
     }

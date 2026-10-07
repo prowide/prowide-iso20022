@@ -578,8 +578,8 @@ public class CreditTransferTransaction24 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the instrForCdtrAgt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the instrForCdtrAgt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -593,10 +593,12 @@ public class CreditTransferTransaction24 {
      * {@link InstructionForCreditorAgent1 }
      * 
      * 
+     * @return
+     *     The value of the instrForCdtrAgt property.
      */
     public List<InstructionForCreditorAgent1> getInstrForCdtrAgt() {
         if (instrForCdtrAgt == null) {
-            instrForCdtrAgt = new ArrayList<InstructionForCreditorAgent1>();
+            instrForCdtrAgt = new ArrayList<>();
         }
         return this.instrForCdtrAgt;
     }
@@ -607,8 +609,8 @@ public class CreditTransferTransaction24 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the instrForNxtAgt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the instrForNxtAgt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -622,10 +624,12 @@ public class CreditTransferTransaction24 {
      * {@link InstructionForNextAgent1 }
      * 
      * 
+     * @return
+     *     The value of the instrForNxtAgt property.
      */
     public List<InstructionForNextAgent1> getInstrForNxtAgt() {
         if (instrForNxtAgt == null) {
-            instrForNxtAgt = new ArrayList<InstructionForNextAgent1>();
+            instrForNxtAgt = new ArrayList<>();
         }
         return this.instrForNxtAgt;
     }

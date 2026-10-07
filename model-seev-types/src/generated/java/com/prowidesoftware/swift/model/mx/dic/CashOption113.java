@@ -204,8 +204,8 @@ public class CashOption113 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the othrIncmTp property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the othrIncmTp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -219,10 +219,12 @@ public class CashOption113 {
      * {@link GenericIdentification47 }
      * 
      * 
+     * @return
+     *     The value of the othrIncmTp property.
      */
     public List<GenericIdentification47> getOthrIncmTp() {
         if (othrIncmTp == null) {
-            othrIncmTp = new ArrayList<GenericIdentification47>();
+            othrIncmTp = new ArrayList<>();
         }
         return this.othrIncmTp;
     }
@@ -233,8 +235,8 @@ public class CashOption113 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the xmptnTp property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the xmptnTp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -248,10 +250,12 @@ public class CashOption113 {
      * {@link GenericIdentification47 }
      * 
      * 
+     * @return
+     *     The value of the xmptnTp property.
      */
     public List<GenericIdentification47> getXmptnTp() {
         if (xmptnTp == null) {
-            xmptnTp = new ArrayList<GenericIdentification47>();
+            xmptnTp = new ArrayList<>();
         }
         return this.xmptnTp;
     }

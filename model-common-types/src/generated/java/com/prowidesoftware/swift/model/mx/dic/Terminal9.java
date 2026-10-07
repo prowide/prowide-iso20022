@@ -134,8 +134,8 @@ public class Terminal9 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlId property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -149,10 +149,12 @@ public class Terminal9 {
      * {@link AdditionalData1 }
      * 
      * 
+     * @return
+     *     The value of the addtlId property.
      */
     public List<AdditionalData1> getAddtlId() {
         if (addtlId == null) {
-            addtlId = new ArrayList<AdditionalData1>();
+            addtlId = new ArrayList<>();
         }
         return this.addtlId;
     }
@@ -213,8 +215,8 @@ public class Terminal9 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rdngCpblty property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rdngCpblty property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -228,10 +230,12 @@ public class Terminal9 {
      * {@link CardReadingCapabilities1 }
      * 
      * 
+     * @return
+     *     The value of the rdngCpblty property.
      */
     public List<CardReadingCapabilities1> getRdngCpblty() {
         if (rdngCpblty == null) {
-            rdngCpblty = new ArrayList<CardReadingCapabilities1>();
+            rdngCpblty = new ArrayList<>();
         }
         return this.rdngCpblty;
     }
@@ -242,8 +246,8 @@ public class Terminal9 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the wrtgCpblty property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the wrtgCpblty property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -257,10 +261,12 @@ public class Terminal9 {
      * {@link CardWritingCapabilities1 }
      * 
      * 
+     * @return
+     *     The value of the wrtgCpblty property.
      */
     public List<CardWritingCapabilities1> getWrtgCpblty() {
         if (wrtgCpblty == null) {
-            wrtgCpblty = new ArrayList<CardWritingCapabilities1>();
+            wrtgCpblty = new ArrayList<>();
         }
         return this.wrtgCpblty;
     }
@@ -446,8 +452,8 @@ public class Terminal9 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the msgCpblty property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the msgCpblty property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -461,10 +467,12 @@ public class Terminal9 {
      * {@link DisplayCapabilities6 }
      * 
      * 
+     * @return
+     *     The value of the msgCpblty property.
      */
     public List<DisplayCapabilities6> getMsgCpblty() {
         if (msgCpblty == null) {
-            msgCpblty = new ArrayList<DisplayCapabilities6>();
+            msgCpblty = new ArrayList<>();
         }
         return this.msgCpblty;
     }
@@ -475,8 +483,8 @@ public class Terminal9 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the crdhldrVrfctnCpblty property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the crdhldrVrfctnCpblty property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -490,10 +498,12 @@ public class Terminal9 {
      * {@link CardholderVerificationCapabilities1 }
      * 
      * 
+     * @return
+     *     The value of the crdhldrVrfctnCpblty property.
      */
     public List<CardholderVerificationCapabilities1> getCrdhldrVrfctnCpblty() {
         if (crdhldrVrfctnCpblty == null) {
-            crdhldrVrfctnCpblty = new ArrayList<CardholderVerificationCapabilities1>();
+            crdhldrVrfctnCpblty = new ArrayList<>();
         }
         return this.crdhldrVrfctnCpblty;
     }
@@ -679,8 +689,8 @@ public class Terminal9 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sftwr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sftwr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -694,10 +704,12 @@ public class Terminal9 {
      * {@link Software1 }
      * 
      * 
+     * @return
+     *     The value of the sftwr property.
      */
     public List<Software1> getSftwr() {
         if (sftwr == null) {
-            sftwr = new ArrayList<Software1>();
+            sftwr = new ArrayList<>();
         }
         return this.sftwr;
     }

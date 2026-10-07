@@ -68,8 +68,8 @@ public class AcquirerToAcceptorBatchFileExchangeV02 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the bodyElmt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the bodyElmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -83,10 +83,12 @@ public class AcquirerToAcceptorBatchFileExchangeV02 {
      * {@link AcquirerToAcceptorFileBody2 }
      * 
      * 
+     * @return
+     *     The value of the bodyElmt property.
      */
     public List<AcquirerToAcceptorFileBody2> getBodyElmt() {
         if (bodyElmt == null) {
-            bodyElmt = new ArrayList<AcquirerToAcceptorFileBody2>();
+            bodyElmt = new ArrayList<>();
         }
         return this.bodyElmt;
     }

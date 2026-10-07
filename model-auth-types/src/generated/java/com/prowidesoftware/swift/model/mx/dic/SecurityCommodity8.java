@@ -37,8 +37,8 @@ public class SecurityCommodity8 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the scty property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the scty property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -52,10 +52,12 @@ public class SecurityCommodity8 {
      * {@link Security15 }
      * 
      * 
+     * @return
+     *     The value of the scty property.
      */
     public List<Security15> getScty() {
         if (scty == null) {
-            scty = new ArrayList<Security15>();
+            scty = new ArrayList<>();
         }
         return this.scty;
     }
@@ -66,8 +68,8 @@ public class SecurityCommodity8 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cmmdty property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cmmdty property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -81,10 +83,12 @@ public class SecurityCommodity8 {
      * {@link Commodity20 }
      * 
      * 
+     * @return
+     *     The value of the cmmdty property.
      */
     public List<Commodity20> getCmmdty() {
         if (cmmdty == null) {
-            cmmdty = new ArrayList<Commodity20>();
+            cmmdty = new ArrayList<>();
         }
         return this.cmmdty;
     }

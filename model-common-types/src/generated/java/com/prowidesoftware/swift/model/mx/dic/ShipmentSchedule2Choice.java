@@ -62,8 +62,8 @@ public class ShipmentSchedule2Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the shipmntSubSchdl property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the shipmntSubSchdl property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -77,10 +77,12 @@ public class ShipmentSchedule2Choice {
      * {@link ShipmentDateRange2 }
      * 
      * 
+     * @return
+     *     The value of the shipmntSubSchdl property.
      */
     public List<ShipmentDateRange2> getShipmntSubSchdl() {
         if (shipmntSubSchdl == null) {
-            shipmntSubSchdl = new ArrayList<ShipmentDateRange2>();
+            shipmntSubSchdl = new ArrayList<>();
         }
         return this.shipmntSubSchdl;
     }

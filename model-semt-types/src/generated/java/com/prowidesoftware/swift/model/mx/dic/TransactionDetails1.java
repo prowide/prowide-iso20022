@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -114,8 +114,8 @@ public class TransactionDetails1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the assoctdTradRef property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the assoctdTradRef property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -129,10 +129,12 @@ public class TransactionDetails1 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the assoctdTradRef property.
      */
     public List<String> getAssoctdTradRef() {
         if (assoctdTradRef == null) {
-            assoctdTradRef = new ArrayList<String>();
+            assoctdTradRef = new ArrayList<>();
         }
         return this.assoctdTradRef;
     }
@@ -243,8 +245,8 @@ public class TransactionDetails1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the txRptMrkr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the txRptMrkr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -258,10 +260,12 @@ public class TransactionDetails1 {
      * {@link PartyIdentification24Choice }
      * 
      * 
+     * @return
+     *     The value of the txRptMrkr property.
      */
     public List<PartyIdentification24Choice> getTxRptMrkr() {
         if (txRptMrkr == null) {
-            txRptMrkr = new ArrayList<PartyIdentification24Choice>();
+            txRptMrkr = new ArrayList<>();
         }
         return this.txRptMrkr;
     }

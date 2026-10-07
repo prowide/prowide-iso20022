@@ -4,14 +4,17 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import com.prowidesoftware.swift.model.mx.MxReadImpl;
+import com.prowidesoftware.swift.model.mx.MxReadParams;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
-import com.prowidesoftware.swift.model.mx.MxRead;
-import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -28,18 +31,18 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:auth.113.001.01")
 public class MxAuth11300101
-    extends com.prowidesoftware.swift.model.mx.AbstractMX
+    extends AbstractMX
 {
 
     @XmlElement(name = "OrdrBookRpt", required = true)
     protected OrderBookReportV01 ordrBookRpt;
-    public final static transient String BUSINESS_PROCESS = "auth";
-    public final static transient int FUNCTIONALITY = 113;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 1;
+    public static final transient String BUSINESS_PROCESS = "auth";
+    public static final transient int FUNCTIONALITY = 113;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {ActiveCurrencyAnd13DecimalAmount.class, ActiveOrHistoricCurrencyAndAmount.class, AmountAndDirection53 .class, AmountAndDirection61 .class, AuctionData2 .class, CancelOrderReport1 .class, DateTimePeriod1 .class, ExecutingParty2Choice.class, FinancialInstrument99Choice.class, FinancialInstrumentQuantity25Choice.class, GenericIdentification30 .class, GenericPersonIdentification1 .class, MinimumExecutable1 .class, MxAuth11300101 .class, NewOrderReport2 .class, NoReasonCode.class, OrderBookReportV01 .class, OrderClassification2 .class, OrderData3 .class, OrderData4 .class, OrderEventType1Choice.class, OrderEventType1Code.class, OrderIdentification2 .class, OrderInstructionData2 .class, OrderPriceData2 .class, OrderPriority1 .class, OrderReport2Choice.class, OrderRestriction1Choice.class, OrderRestrictionType1Code.class, OrderStatus10Code.class, OrderStatus11Code.class, OrderType3Code.class, Pagination1 .class, PartyExceptionType1Code.class, PassiveOrAgressiveType1Code.class, Period11Choice.class, Period2 .class, PersonIdentificationSchemeName1Choice.class, PersonOrOrganisation4Choice.class, PriceStatus1Code.class, RegulatoryTradingCapacity1Code.class, SecuritiesMarketReportHeader3 .class, SecuritiesTransactionPrice1 .class, SecuritiesTransactionPrice21Choice.class, SecuritiesTransactionPrice2Choice.class, SecuritiesTransactionPrice4Choice.class, Side6Code.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TradingVenue2Code.class, TradingVenueIdentification1Choice.class, TradingVenueIdentification2 .class, TransactionData3 .class, ValidityPeriod1Choice.class, ValidityPeriodType1Code.class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:auth.113.001.01";
+    public static final transient Class[] _classes = new Class[] {ActiveCurrencyAnd13DecimalAmount.class, ActiveOrHistoricCurrencyAndAmount.class, AmountAndDirection53 .class, AmountAndDirection61 .class, AuctionData2 .class, CancelOrderReport1 .class, DateTimePeriod1 .class, ExecutingParty2Choice.class, FinancialInstrument99Choice.class, FinancialInstrumentQuantity25Choice.class, GenericIdentification30 .class, GenericPersonIdentification1 .class, MinimumExecutable1 .class, MxAuth11300101 .class, NewOrderReport2 .class, NoReasonCode.class, OrderBookReportV01 .class, OrderClassification2 .class, OrderData3 .class, OrderData4 .class, OrderEventType1Choice.class, OrderEventType1Code.class, OrderIdentification2 .class, OrderInstructionData2 .class, OrderPriceData2 .class, OrderPriority1 .class, OrderReport2Choice.class, OrderRestriction1Choice.class, OrderRestrictionType1Code.class, OrderStatus10Code.class, OrderStatus11Code.class, OrderType3Code.class, Pagination1 .class, PartyExceptionType1Code.class, PassiveOrAgressiveType1Code.class, Period11Choice.class, Period2 .class, PersonIdentificationSchemeName1Choice.class, PersonOrOrganisation4Choice.class, PriceStatus1Code.class, RegulatoryTradingCapacity1Code.class, SecuritiesMarketReportHeader3 .class, SecuritiesTransactionPrice1 .class, SecuritiesTransactionPrice21Choice.class, SecuritiesTransactionPrice2Choice.class, SecuritiesTransactionPrice4Choice.class, Side6Code.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TradingVenue2Code.class, TradingVenueIdentification1Choice.class, TradingVenueIdentification2 .class, TransactionData3 .class, ValidityPeriod1Choice.class, ValidityPeriodType1Code.class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:auth.113.001.01";
 
     public MxAuth11300101() {
         super();
@@ -89,21 +92,6 @@ public class MxAuth11300101
     }
 
     @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
-    }
-
-    @Override
     public String getBusinessProcess() {
         return BUSINESS_PROCESS;
     }
@@ -128,7 +116,7 @@ public class MxAuth11300101
      * 
      */
     public static MxAuth11300101 parse(String xml) {
-        return ((MxAuth11300101) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxAuth11300101 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams()));
+        return ((MxAuth11300101) MxReadImpl.parse(MxAuth11300101 .class, xml, _classes, new MxReadParams()));
     }
 
     /**
@@ -137,7 +125,7 @@ public class MxAuth11300101
      * 
      */
     public static MxAuth11300101 parse(String xml, MxReadConfiguration conf) {
-        return ((MxAuth11300101) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxAuth11300101 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams(conf)));
+        return ((MxAuth11300101) MxReadImpl.parse(MxAuth11300101 .class, xml, _classes, new MxReadParams(conf)));
     }
 
     /**
@@ -173,8 +161,23 @@ public class MxAuth11300101
      * @return
      *     a new instance of MxAuth11300101
      */
-    public final static MxAuth11300101 fromJson(String json) {
-        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxAuth11300101 .class);
+    public static final MxAuth11300101 fromJson(String json) {
+        return AbstractMX.fromJson(json, MxAuth11300101 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

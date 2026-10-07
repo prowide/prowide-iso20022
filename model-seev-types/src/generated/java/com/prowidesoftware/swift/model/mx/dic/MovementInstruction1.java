@@ -68,8 +68,8 @@ public class MovementInstruction1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the undrlygSctiesMvmntDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the undrlygSctiesMvmntDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -83,10 +83,12 @@ public class MovementInstruction1 {
      * {@link UnderlyingSecurityMovement1 }
      * 
      * 
+     * @return
+     *     The value of the undrlygSctiesMvmntDtls property.
      */
     public List<UnderlyingSecurityMovement1> getUndrlygSctiesMvmntDtls() {
         if (undrlygSctiesMvmntDtls == null) {
-            undrlygSctiesMvmntDtls = new ArrayList<UnderlyingSecurityMovement1>();
+            undrlygSctiesMvmntDtls = new ArrayList<>();
         }
         return this.undrlygSctiesMvmntDtls;
     }
@@ -97,8 +99,8 @@ public class MovementInstruction1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the undrlygCshMvmntDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the undrlygCshMvmntDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -112,10 +114,12 @@ public class MovementInstruction1 {
      * {@link CashMovement2 }
      * 
      * 
+     * @return
+     *     The value of the undrlygCshMvmntDtls property.
      */
     public List<CashMovement2> getUndrlygCshMvmntDtls() {
         if (undrlygCshMvmntDtls == null) {
-            undrlygCshMvmntDtls = new ArrayList<CashMovement2>();
+            undrlygCshMvmntDtls = new ArrayList<>();
         }
         return this.undrlygCshMvmntDtls;
     }
@@ -126,8 +130,8 @@ public class MovementInstruction1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the prcdsMvmntDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the prcdsMvmntDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -141,10 +145,12 @@ public class MovementInstruction1 {
      * {@link ProceedsMovement1 }
      * 
      * 
+     * @return
+     *     The value of the prcdsMvmntDtls property.
      */
     public List<ProceedsMovement1> getPrcdsMvmntDtls() {
         if (prcdsMvmntDtls == null) {
-            prcdsMvmntDtls = new ArrayList<ProceedsMovement1>();
+            prcdsMvmntDtls = new ArrayList<>();
         }
         return this.prcdsMvmntDtls;
     }

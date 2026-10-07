@@ -93,8 +93,8 @@ public class NonDisclosedBidRequest {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the nonDscldBidDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the nonDscldBidDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -108,10 +108,12 @@ public class NonDisclosedBidRequest {
      * {@link NonDisclosedBid1 }
      * 
      * 
+     * @return
+     *     The value of the nonDscldBidDtls property.
      */
     public List<NonDisclosedBid1> getNonDscldBidDtls() {
         if (nonDscldBidDtls == null) {
-            nonDscldBidDtls = new ArrayList<NonDisclosedBid1>();
+            nonDscldBidDtls = new ArrayList<>();
         }
         return this.nonDscldBidDtls;
     }

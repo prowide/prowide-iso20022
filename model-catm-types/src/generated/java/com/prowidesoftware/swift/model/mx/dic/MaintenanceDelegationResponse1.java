@@ -90,8 +90,8 @@ public class MaintenanceDelegationResponse1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dlgtnRspn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the dlgtnRspn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -105,10 +105,12 @@ public class MaintenanceDelegationResponse1 {
      * {@link MaintenanceDelegation2 }
      * 
      * 
+     * @return
+     *     The value of the dlgtnRspn property.
      */
     public List<MaintenanceDelegation2> getDlgtnRspn() {
         if (dlgtnRspn == null) {
-            dlgtnRspn = new ArrayList<MaintenanceDelegation2>();
+            dlgtnRspn = new ArrayList<>();
         }
         return this.dlgtnRspn;
     }

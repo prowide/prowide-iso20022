@@ -46,8 +46,8 @@ public class NetworkParameters3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the adr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the adr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -61,10 +61,12 @@ public class NetworkParameters3 {
      * {@link NetworkParameters4 }
      * 
      * 
+     * @return
+     *     The value of the adr property.
      */
     public List<NetworkParameters4> getAdr() {
         if (adr == null) {
-            adr = new ArrayList<NetworkParameters4>();
+            adr = new ArrayList<>();
         }
         return this.adr;
     }
@@ -123,8 +125,8 @@ public class NetworkParameters3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the svrCert property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the svrCert property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -137,10 +139,12 @@ public class NetworkParameters3 {
      * Objects of the following type(s) are allowed in the list
      * byte[]
      * 
+     * @return
+     *     The value of the svrCert property.
      */
     public List<byte[]> getSvrCert() {
         if (svrCert == null) {
-            svrCert = new ArrayList<byte[]>();
+            svrCert = new ArrayList<>();
         }
         return this.svrCert;
     }
@@ -151,8 +155,8 @@ public class NetworkParameters3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the svrCertIdr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the svrCertIdr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -165,10 +169,12 @@ public class NetworkParameters3 {
      * Objects of the following type(s) are allowed in the list
      * byte[]
      * 
+     * @return
+     *     The value of the svrCertIdr property.
      */
     public List<byte[]> getSvrCertIdr() {
         if (svrCertIdr == null) {
-            svrCertIdr = new ArrayList<byte[]>();
+            svrCertIdr = new ArrayList<>();
         }
         return this.svrCertIdr;
     }

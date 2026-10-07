@@ -373,8 +373,8 @@ public class PaymentInstruction41 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cdtTrfTx property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cdtTrfTx property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -388,10 +388,12 @@ public class PaymentInstruction41 {
      * {@link CreditTransferTransaction55 }
      * 
      * 
+     * @return
+     *     The value of the cdtTrfTx property.
      */
     public List<CreditTransferTransaction55> getCdtTrfTx() {
         if (cdtTrfTx == null) {
-            cdtTrfTx = new ArrayList<CreditTransferTransaction55>();
+            cdtTrfTx = new ArrayList<>();
         }
         return this.cdtTrfTx;
     }

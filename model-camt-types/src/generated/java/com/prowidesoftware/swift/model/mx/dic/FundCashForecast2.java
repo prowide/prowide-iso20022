@@ -268,8 +268,8 @@ public class FundCashForecast2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the invstmtCcy property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the invstmtCcy property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -283,10 +283,12 @@ public class FundCashForecast2 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the invstmtCcy property.
      */
     public List<String> getInvstmtCcy() {
         if (invstmtCcy == null) {
-            invstmtCcy = new ArrayList<String>();
+            invstmtCcy = new ArrayList<>();
         }
         return this.invstmtCcy;
     }
@@ -314,8 +316,8 @@ public class FundCashForecast2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the srtgCritDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the srtgCritDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -329,10 +331,12 @@ public class FundCashForecast2 {
      * {@link CashSortingCriterion2 }
      * 
      * 
+     * @return
+     *     The value of the srtgCritDtls property.
      */
     public List<CashSortingCriterion2> getSrtgCritDtls() {
         if (srtgCritDtls == null) {
-            srtgCritDtls = new ArrayList<CashSortingCriterion2>();
+            srtgCritDtls = new ArrayList<>();
         }
         return this.srtgCritDtls;
     }
@@ -343,8 +347,8 @@ public class FundCashForecast2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the netCshFcstDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the netCshFcstDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -358,10 +362,12 @@ public class FundCashForecast2 {
      * {@link NetCashForecast1 }
      * 
      * 
+     * @return
+     *     The value of the netCshFcstDtls property.
      */
     public List<NetCashForecast1> getNetCshFcstDtls() {
         if (netCshFcstDtls == null) {
-            netCshFcstDtls = new ArrayList<NetCashForecast1>();
+            netCshFcstDtls = new ArrayList<>();
         }
         return this.netCshFcstDtls;
     }

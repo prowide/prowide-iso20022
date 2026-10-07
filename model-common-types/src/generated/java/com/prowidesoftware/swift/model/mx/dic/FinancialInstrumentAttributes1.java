@@ -1,17 +1,17 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -726,7 +726,7 @@ public class FinancialInstrumentAttributes1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getCtrctSttlmMnth() {
@@ -738,7 +738,7 @@ public class FinancialInstrumentAttributes1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public FinancialInstrumentAttributes1 setCtrctSttlmMnth(XMLGregorianCalendar value) {
@@ -852,8 +852,8 @@ public class FinancialInstrumentAttributes1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the scndryPlcOfListg property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the scndryPlcOfListg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -867,10 +867,12 @@ public class FinancialInstrumentAttributes1 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the scndryPlcOfListg property.
      */
     public List<String> getScndryPlcOfListg() {
         if (scndryPlcOfListg == null) {
-            scndryPlcOfListg = new ArrayList<String>();
+            scndryPlcOfListg = new ArrayList<>();
         }
         return this.scndryPlcOfListg;
     }
@@ -981,8 +983,8 @@ public class FinancialInstrumentAttributes1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the evtGrpDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the evtGrpDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -996,10 +998,12 @@ public class FinancialInstrumentAttributes1 {
      * {@link EventGroup1 }
      * 
      * 
+     * @return
+     *     The value of the evtGrpDtls property.
      */
     public List<EventGroup1> getEvtGrpDtls() {
         if (evtGrpDtls == null) {
-            evtGrpDtls = new ArrayList<EventGroup1>();
+            evtGrpDtls = new ArrayList<>();
         }
         return this.evtGrpDtls;
     }

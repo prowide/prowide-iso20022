@@ -16,13 +16,16 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 /**
  * Scope
  * An account servicer sends a SecuritiesSettlementConditionsModificationStatusAdvice to an account owner to advise the status of a modification request previously instructed by the account owner.
- * The account servicer/owner relationship may be:
+ * 
+The account servicer/owner relationship may be:
  * - a central securities depository or another settlement market infrastructure acting on behalf of their participants
  * - an agent (sub-custodian) acting on behalf of their global custodian customer, or 
  * - a custodian acting on behalf of an investment management institution or a broker/dealer.
- * Usage
+ * 
+Usage
  * A SecuritiesSettlementConditionsModificatioRequest may contain requests on multiple transactions. However, one SecuritiesSettlementConditionsModificationStatusAdvice must be sent per transaction modified unless the SecuritiesSettlementConditionsModificationRequest is rejected as a whole.			
- * The message may also be used to: 
+ * 
+The message may also be used to: 
  * - re-send a message previously sent (the sub-function of the message is Duplicate) 
  * - provide a third party with a copy of a message for information (the sub-function of the message is Copy) 
  * - re-send to a third party a copy of a message for information (the sub-function of the message is Copy Duplicate).
@@ -272,8 +275,8 @@ public class SecuritiesSettlementConditionModificationStatusAdviceV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the xtnsn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the xtnsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -287,10 +290,12 @@ public class SecuritiesSettlementConditionModificationStatusAdviceV01 {
      * {@link Extension2 }
      * 
      * 
+     * @return
+     *     The value of the xtnsn property.
      */
     public List<Extension2> getXtnsn() {
         if (xtnsn == null) {
-            xtnsn = new ArrayList<Extension2>();
+            xtnsn = new ArrayList<>();
         }
         return this.xtnsn;
     }

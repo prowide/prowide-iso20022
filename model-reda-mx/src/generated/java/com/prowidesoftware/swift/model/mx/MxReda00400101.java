@@ -4,14 +4,17 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import com.prowidesoftware.swift.model.mx.MxReadImpl;
+import com.prowidesoftware.swift.model.mx.MxReadParams;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
-import com.prowidesoftware.swift.model.mx.MxRead;
-import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -28,18 +31,18 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:reda.004.001.01")
 public class MxReda00400101
-    extends com.prowidesoftware.swift.model.mx.AbstractMX
+    extends AbstractMX
 {
 
     @XmlElement(name = "FndPrcgPsptRpt", required = true)
     protected FundProcessingPassportReportV01 fndPrcgPsptRpt;
-    public final static transient String BUSINESS_PROCESS = "reda";
-    public final static transient int FUNCTIONALITY = 4;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 1;
+    public static final transient String BUSINESS_PROCESS = "reda";
+    public static final transient int FUNCTIONALITY = 4;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {AccountIdentification1Choice.class, ActiveCurrencyAndAmount.class, AddressType2Code.class, AlternateSecurityIdentification3 .class, CashAccount14 .class, CashAccount15 .class, ContactDetails1 .class, DistributionPolicy1Code.class, DividendPolicy1Code.class, EUSavingsDirective1Code.class, EventFrequency2Code.class, Extension1 .class, FinancialInstrument16 .class, FormOfSecurity1Code.class, Forms.class, FundProcessingPassportReportV01 .class, InvestmentRestrictions.class, LocalMarketAnnex.class, MessageIdentification1 .class, MxReda00400101 .class, OrderDeskContactDetails.class, PostalAddress1 .class, PriceMethod1Code.class, ProcessingCharacteristics1 .class, SecurityIdentification7 .class, SignatureType1Code.class, SimpleIdentificationInformation.class, TimeFrame3Choice.class, Timeframe2Choice.class, UpdatedDate.class, ValuationDealingProcessingCharacteristics.class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:reda.004.001.01";
+    public static final transient Class[] _classes = new Class[] {AccountIdentification1Choice.class, ActiveCurrencyAndAmount.class, AddressType2Code.class, AlternateSecurityIdentification3 .class, CashAccount14 .class, CashAccount15 .class, ContactDetails1 .class, DistributionPolicy1Code.class, DividendPolicy1Code.class, EUSavingsDirective1Code.class, EventFrequency2Code.class, Extension1 .class, FinancialInstrument16 .class, FormOfSecurity1Code.class, Forms.class, FundProcessingPassportReportV01 .class, InvestmentRestrictions.class, LocalMarketAnnex.class, MessageIdentification1 .class, MxReda00400101 .class, OrderDeskContactDetails.class, PostalAddress1 .class, PriceMethod1Code.class, ProcessingCharacteristics1 .class, SecurityIdentification7 .class, SignatureType1Code.class, SimpleIdentificationInformation.class, TimeFrame3Choice.class, Timeframe2Choice.class, UpdatedDate.class, ValuationDealingProcessingCharacteristics.class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:reda.004.001.01";
 
     public MxReda00400101() {
         super();
@@ -89,21 +92,6 @@ public class MxReda00400101
     }
 
     @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
-    }
-
-    @Override
     public String getBusinessProcess() {
         return BUSINESS_PROCESS;
     }
@@ -128,7 +116,7 @@ public class MxReda00400101
      * 
      */
     public static MxReda00400101 parse(String xml) {
-        return ((MxReda00400101) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxReda00400101 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams()));
+        return ((MxReda00400101) MxReadImpl.parse(MxReda00400101 .class, xml, _classes, new MxReadParams()));
     }
 
     /**
@@ -137,7 +125,7 @@ public class MxReda00400101
      * 
      */
     public static MxReda00400101 parse(String xml, MxReadConfiguration conf) {
-        return ((MxReda00400101) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxReda00400101 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams(conf)));
+        return ((MxReda00400101) MxReadImpl.parse(MxReda00400101 .class, xml, _classes, new MxReadParams(conf)));
     }
 
     /**
@@ -173,8 +161,23 @@ public class MxReda00400101
      * @return
      *     a new instance of MxReda00400101
      */
-    public final static MxReda00400101 fromJson(String json) {
-        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxReda00400101 .class);
+    public static final MxReda00400101 fromJson(String json) {
+        return AbstractMX.fromJson(json, MxReda00400101 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

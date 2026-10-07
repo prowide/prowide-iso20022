@@ -1,12 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -41,12 +43,13 @@ public class ApplicationHeaderImpl {
     protected String msgName;
     @XmlElement(name = "MsgRef", required = true)
     protected String msgRef;
-    @XmlElement(name = "CrDate", required = true)
+    @XmlElement(name = "CrDate", required = true, type = String.class)
+    @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar crDate;
     @XmlElement(name = "Dup")
     protected DuplicateIndication dup;
-    public final static transient Class[] _classes = new Class[] {ApplicationHeaderImpl.class, DuplicateIndication.class, EntityIdentification.class };
+    public static final transient Class[] _classes = new Class[] {ApplicationHeaderImpl.class, DuplicateIndication.class, EntityIdentification.class };
 
     /**
      * Gets the value of the from property.
@@ -178,7 +181,7 @@ public class ApplicationHeaderImpl {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getCrDate() {
@@ -190,7 +193,7 @@ public class ApplicationHeaderImpl {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public ApplicationHeaderImpl setCrDate(XMLGregorianCalendar value) {

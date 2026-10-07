@@ -403,8 +403,8 @@ public class InvestmentAccount73 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rinvstmtDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rinvstmtDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -418,10 +418,12 @@ public class InvestmentAccount73 {
      * {@link Reinvestment4 }
      * 
      * 
+     * @return
+     *     The value of the rinvstmtDtls property.
      */
     public List<Reinvestment4> getRinvstmtDtls() {
         if (rinvstmtDtls == null) {
-            rinvstmtDtls = new ArrayList<Reinvestment4>();
+            rinvstmtDtls = new ArrayList<>();
         }
         return this.rinvstmtDtls;
     }
@@ -457,8 +459,8 @@ public class InvestmentAccount73 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the taxRptg property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the taxRptg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -472,10 +474,12 @@ public class InvestmentAccount73 {
      * {@link TaxReporting3 }
      * 
      * 
+     * @return
+     *     The value of the taxRptg property.
      */
     public List<TaxReporting3> getTaxRptg() {
         if (taxRptg == null) {
-            taxRptg = new ArrayList<TaxReporting3>();
+            taxRptg = new ArrayList<>();
         }
         return this.taxRptg;
     }
@@ -586,8 +590,8 @@ public class InvestmentAccount73 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the finInstrmDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the finInstrmDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -601,10 +605,12 @@ public class InvestmentAccount73 {
      * {@link FinancialInstrument87 }
      * 
      * 
+     * @return
+     *     The value of the finInstrmDtls property.
      */
     public List<FinancialInstrument87> getFinInstrmDtls() {
         if (finInstrmDtls == null) {
-            finInstrmDtls = new ArrayList<FinancialInstrument87>();
+            finInstrmDtls = new ArrayList<>();
         }
         return this.finInstrmDtls;
     }
@@ -1065,8 +1071,8 @@ public class InvestmentAccount73 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the invstrPrfl property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the invstrPrfl property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -1080,10 +1086,12 @@ public class InvestmentAccount73 {
      * {@link InvestorProfile2 }
      * 
      * 
+     * @return
+     *     The value of the invstrPrfl property.
      */
     public List<InvestorProfile2> getInvstrPrfl() {
         if (invstrPrfl == null) {
-            invstrPrfl = new ArrayList<InvestorProfile2>();
+            invstrPrfl = new ArrayList<>();
         }
         return this.invstrPrfl;
     }

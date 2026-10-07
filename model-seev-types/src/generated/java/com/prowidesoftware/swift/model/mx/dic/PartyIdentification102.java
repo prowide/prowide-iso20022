@@ -90,8 +90,8 @@ public class PartyIdentification102 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the altrnId property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the altrnId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -105,10 +105,12 @@ public class PartyIdentification102 {
      * {@link AlternatePartyIdentification9 }
      * 
      * 
+     * @return
+     *     The value of the altrnId property.
      */
     public List<AlternatePartyIdentification9> getAltrnId() {
         if (altrnId == null) {
-            altrnId = new ArrayList<AlternatePartyIdentification9>();
+            altrnId = new ArrayList<>();
         }
         return this.altrnId;
     }

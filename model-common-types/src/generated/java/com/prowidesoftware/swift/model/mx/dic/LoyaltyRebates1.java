@@ -91,8 +91,8 @@ public class LoyaltyRebates1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the saleItmRbt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the saleItmRbt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -106,10 +106,12 @@ public class LoyaltyRebates1 {
      * {@link SaleItemRebate1 }
      * 
      * 
+     * @return
+     *     The value of the saleItmRbt property.
      */
     public List<SaleItemRebate1> getSaleItmRbt() {
         if (saleItmRbt == null) {
-            saleItmRbt = new ArrayList<SaleItemRebate1>();
+            saleItmRbt = new ArrayList<>();
         }
         return this.saleItmRbt;
     }

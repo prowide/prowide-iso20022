@@ -1,17 +1,17 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -405,7 +405,7 @@ public class FutureOrOptionDetails3 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getCtrctSttlmMnth() {
@@ -417,7 +417,7 @@ public class FutureOrOptionDetails3 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public FutureOrOptionDetails3 setCtrctSttlmMnth(XMLGregorianCalendar value) {
@@ -456,8 +456,8 @@ public class FutureOrOptionDetails3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ratio property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ratio property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -471,10 +471,12 @@ public class FutureOrOptionDetails3 {
      * {@link UnderlyingRatio2 }
      * 
      * 
+     * @return
+     *     The value of the ratio property.
      */
     public List<UnderlyingRatio2> getRatio() {
         if (ratio == null) {
-            ratio = new ArrayList<UnderlyingRatio2>();
+            ratio = new ArrayList<>();
         }
         return this.ratio;
     }
@@ -485,8 +487,8 @@ public class FutureOrOptionDetails3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ratg property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ratg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -500,10 +502,12 @@ public class FutureOrOptionDetails3 {
      * {@link Rating1 }
      * 
      * 
+     * @return
+     *     The value of the ratg property.
      */
     public List<Rating1> getRatg() {
         if (ratg == null) {
-            ratg = new ArrayList<Rating1>();
+            ratg = new ArrayList<>();
         }
         return this.ratg;
     }

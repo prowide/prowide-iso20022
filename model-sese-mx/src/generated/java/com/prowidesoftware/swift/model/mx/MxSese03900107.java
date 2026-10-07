@@ -4,14 +4,17 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import com.prowidesoftware.swift.model.mx.MxReadImpl;
+import com.prowidesoftware.swift.model.mx.MxReadParams;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
-import com.prowidesoftware.swift.model.mx.MxRead;
-import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -28,18 +31,18 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:sese.039.001.07")
 public class MxSese03900107
-    extends com.prowidesoftware.swift.model.mx.AbstractMX
+    extends AbstractMX
 {
 
     @XmlElement(name = "SctiesSttlmTxModReqStsAdvc", required = true)
     protected SecuritiesSettlementTransactionModificationRequestStatusAdviceV07 sctiesSttlmTxModReqStsAdvc;
-    public final static transient String BUSINESS_PROCESS = "sese";
-    public final static transient int FUNCTIONALITY = 39;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 7;
+    public static final transient String BUSINESS_PROCESS = "sese";
+    public static final transient int FUNCTIONALITY = 39;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 7;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {AcknowledgedAcceptedStatus23Choice.class, AcknowledgementReason11 .class, AcknowledgementReason14Choice.class, AcknowledgementReason6Code.class, ActiveCurrencyAndAmount.class, ActiveOrHistoricCurrencyAndAmount.class, AddressType2Code.class, AmountAndDirection51 .class, BlockChainAddressWallet3 .class, CreditDebitCode.class, DateAndDateTime2Choice.class, DateType3Code.class, DateType4Code.class, DeliveryReceiptType2Code.class, DeniedReason10 .class, DeniedReason15Choice.class, DeniedReason6Code.class, DeniedStatus15Choice.class, FinancialInstrumentQuantity33Choice.class, GenericIdentification30 .class, GenericIdentification36 .class, IdentificationSource3Choice.class, ModificationProcessingStatus10Choice.class, ModificationReason4 .class, ModificationReason4Choice.class, ModificationStatus4Choice.class, ModifiedStatusReason1Code.class, MxSese03900107 .class, NameAndAddress5 .class, NoReasonCode.class, OriginalAndCurrentQuantities1 .class, OtherIdentification1 .class, PartyIdentification120Choice.class, PartyIdentification127Choice.class, PartyIdentification134Choice.class, PartyIdentification144 .class, PartyIdentification149 .class, PartyIdentification257Choice.class, PartyIdentification314 .class, PartyIdentificationAndAccount195 .class, PendingProcessingReason10 .class, PendingProcessingReason12Choice.class, PendingProcessingReason3Code.class, PendingProcessingStatus13Choice.class, PostalAddress1 .class, ProprietaryReason4 .class, ProprietaryStatusAndReason6 .class, Quantity51Choice.class, ReceiveDelivery1Code.class, RejectionReason42Choice.class, RejectionReason57 .class, RejectionReason72Code.class, RejectionStatus37Choice.class, RepairReason10Choice.class, RepairReason4Code.class, RepairReason9 .class, RepairStatus13Choice.class, SecuritiesAccount19 .class, SecuritiesSettlementTransactionModificationRequestStatusAdviceV07 .class, SecurityIdentification19 .class, SettlementDate19Choice.class, SettlementDateCode8Choice.class, SettlementParties125 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TradeDate8Choice.class, TradeDateCode3Choice.class, TransactionDetails171 .class, TransactionIdentifications33 .class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:sese.039.001.07";
+    public static final transient Class[] _classes = new Class[] {AcknowledgedAcceptedStatus23Choice.class, AcknowledgementReason11 .class, AcknowledgementReason14Choice.class, AcknowledgementReason6Code.class, ActiveCurrencyAndAmount.class, ActiveOrHistoricCurrencyAndAmount.class, AddressType2Code.class, AmountAndDirection51 .class, BlockChainAddressWallet3 .class, CreditDebitCode.class, DateAndDateTime2Choice.class, DateType3Code.class, DateType4Code.class, DeliveryReceiptType2Code.class, DeniedReason10 .class, DeniedReason15Choice.class, DeniedReason6Code.class, DeniedStatus15Choice.class, FinancialInstrumentQuantity33Choice.class, GenericIdentification30 .class, GenericIdentification36 .class, IdentificationSource3Choice.class, ModificationProcessingStatus10Choice.class, ModificationReason4 .class, ModificationReason4Choice.class, ModificationStatus4Choice.class, ModifiedStatusReason1Code.class, MxSese03900107 .class, NameAndAddress5 .class, NoReasonCode.class, OriginalAndCurrentQuantities1 .class, OtherIdentification1 .class, PartyIdentification120Choice.class, PartyIdentification127Choice.class, PartyIdentification134Choice.class, PartyIdentification144 .class, PartyIdentification149 .class, PartyIdentification257Choice.class, PartyIdentification314 .class, PartyIdentificationAndAccount195 .class, PendingProcessingReason10 .class, PendingProcessingReason12Choice.class, PendingProcessingReason3Code.class, PendingProcessingStatus13Choice.class, PostalAddress1 .class, ProprietaryReason4 .class, ProprietaryStatusAndReason6 .class, Quantity51Choice.class, ReceiveDelivery1Code.class, RejectionReason42Choice.class, RejectionReason57 .class, RejectionReason72Code.class, RejectionStatus37Choice.class, RepairReason10Choice.class, RepairReason4Code.class, RepairReason9 .class, RepairStatus13Choice.class, SecuritiesAccount19 .class, SecuritiesSettlementTransactionModificationRequestStatusAdviceV07 .class, SecurityIdentification19 .class, SettlementDate19Choice.class, SettlementDateCode8Choice.class, SettlementParties125 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TradeDate8Choice.class, TradeDateCode3Choice.class, TransactionDetails171 .class, TransactionIdentifications33 .class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:sese.039.001.07";
 
     public MxSese03900107() {
         super();
@@ -89,21 +92,6 @@ public class MxSese03900107
     }
 
     @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
-    }
-
-    @Override
     public String getBusinessProcess() {
         return BUSINESS_PROCESS;
     }
@@ -128,7 +116,7 @@ public class MxSese03900107
      * 
      */
     public static MxSese03900107 parse(String xml) {
-        return ((MxSese03900107) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxSese03900107 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams()));
+        return ((MxSese03900107) MxReadImpl.parse(MxSese03900107 .class, xml, _classes, new MxReadParams()));
     }
 
     /**
@@ -137,7 +125,7 @@ public class MxSese03900107
      * 
      */
     public static MxSese03900107 parse(String xml, MxReadConfiguration conf) {
-        return ((MxSese03900107) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxSese03900107 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams(conf)));
+        return ((MxSese03900107) MxReadImpl.parse(MxSese03900107 .class, xml, _classes, new MxReadParams(conf)));
     }
 
     /**
@@ -173,8 +161,23 @@ public class MxSese03900107
      * @return
      *     a new instance of MxSese03900107
      */
-    public final static MxSese03900107 fromJson(String json) {
-        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSese03900107 .class);
+    public static final MxSese03900107 fromJson(String json) {
+        return AbstractMX.fromJson(json, MxSese03900107 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

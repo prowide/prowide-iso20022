@@ -4,14 +4,17 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import com.prowidesoftware.swift.model.mx.MxReadImpl;
+import com.prowidesoftware.swift.model.mx.MxReadParams;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
-import com.prowidesoftware.swift.model.mx.MxRead;
-import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -28,18 +31,18 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:auth.030.001.02")
 public class MxAuth03000102
-    extends com.prowidesoftware.swift.model.mx.AbstractMX
+    extends AbstractMX
 {
 
     @XmlElement(name = "DerivsTradRpt", required = true)
     protected DerivativesTradeReportV02 derivsTradRpt;
-    public final static transient String BUSINESS_PROCESS = "auth";
-    public final static transient int FUNCTIONALITY = 30;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 2;
+    public static final transient String BUSINESS_PROCESS = "auth";
+    public static final transient int FUNCTIONALITY = 30;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 2;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {ActiveOrHistoricCurrencyAnd19DecimalAmount.class, AgreementType2Choice.class, AmountAndDirection106 .class, AssetClassCommodity2Choice.class, AssetClassSubProductAgriculturalType1Code.class, AssetClassSubProductEnergyType1Code.class, AssetClassSubProductEnvironmentalType1Code.class, AssetClassSubProductFreight1Code.class, AssetClassSubProductMetal1Code.class, BasketConstituents1 .class, BenchmarkCurveName5Code.class, Cleared12Choice.class, ClearingObligationType1Code.class, ClearingPartyAndTime10 .class, CollateralisationType2Code.class, CommonTradeDataReport49 .class, CommonTradeDataReport50 .class, ContractModification4 .class, ContractType10 .class, ContractValuationData6 .class, Counterparty31 .class, Counterparty34 .class, CounterpartySpecificData29 .class, CounterpartyTradeNature9Choice.class, CreditDerivative4 .class, CurrencyExchange17 .class, CustomBasket1 .class, DateTimePeriod1 .class, DebtInstrumentSeniorityType2Code.class, DeliveryInterconnectionPoint1Choice.class, DerivativePartyIdentification1Choice.class, DerivativesTradeReportV02 .class, Direction2Choice.class, DurationType1Code.class, EnergyDeliveryAttribute5 .class, EnergyLoadType1Code.class, EnergyQuantityUnit2Choice.class, EnergyQuantityUnit2Code.class, EnergySpecificAttribute6 .class, ExchangeRateBasis1 .class, ExchangeRateBasis1Choice.class, ExerciseDate1Choice.class, FinancialInstrumentContractType2Code.class, FinancialInstrumentQuantity32Choice.class, FinancialPartySectorType1Code.class, FixedRate10 .class, FloatingRate7 .class, FloatingRateIdentification4Choice.class, Frequency13Code.class, GenericIdentification174 .class, GenericIdentification175 .class, GenericIdentification179 .class, InstrumentIdentification1Choice.class, InterestComputationMethod4Code.class, InterestComputationMethodFormat7 .class, InterestRate23Choice.class, InterestRateContractTerm4 .class, InterestRateFrequency3Choice.class, InterestRateLegs9 .class, LegCurrency2 .class, MasterAgreement7 .class, ModificationLevel1Code.class, MxAuth03000102 .class, NaturalPersonIdentification2 .class, NoReasonCode.class, NonFinancialInstitutionSector2 .class, NonFinancialInstitutionSector4 .class, NotApplicable1Code.class, NotionalAmount1 .class, NotionalQuantity1 .class, OptionOrSwaption7 .class, OptionParty1Code.class, OptionParty3Code.class, OptionStyle6Code.class, OptionType2Code.class, OrganisationIdentification10Choice.class, OrganisationIdentification36 .class, OtherPayment3 .class, Package1 .class, Pagination1 .class, PartyIdentification235Choice.class, PaymentType4Code.class, PaymentType5Choice.class, PhysicalTransferType4Code.class, PortfolioCode1Choice.class, PrePostHaircut1 .class, PriceData1 .class, PriceStatus1Code.class, PriceStatus2Code.class, ProductType4Code.class, Quantity47Choice.class, Reconciliation2Code.class, ReportPeriodActivity1Code.class, Schedule1 .class, Schedule2 .class, Schedule3 .class, Schedule4 .class, SecuritiesTransactionPrice13Choice.class, SecuritiesTransactionPrice14Choice.class, SecuritiesTransactionPrice17Choice.class, SecuritiesTransactionPrice5 .class, SecurityIdentification22 .class, SecurityIdentification36Choice.class, SecurityIdentification37Choice.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TechnicalAttributes4 .class, TimePeriodDetails1 .class, TradeClearing5 .class, TradeCollateralReport5 .class, TradeConfirmation1Choice.class, TradeConfirmation2 .class, TradeConfirmationType1Code.class, TradeConfirmationType2Code.class, TradeCounterpartyReport14 .class, TradeData19Choice.class, TradeData23 .class, TradeNonConfirmation1 .class, TradeQueryHeader4 .class, TradeReport15Choice.class, TradeStateReport12 .class, TradeTransaction37 .class, TradingCapacity7Code.class, Tranche3 .class, TrancheIndicator3Choice.class, TransactionOperationType7Code.class, UnderlyingIdentification1Code.class, UniqueTransactionIdentifier1Choice.class, UnitOfMeasure12Code.class, ValuationType1Code.class, WeekDay3Code.class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:auth.030.001.02";
+    public static final transient Class[] _classes = new Class[] {ActiveOrHistoricCurrencyAnd19DecimalAmount.class, AgreementType2Choice.class, AmountAndDirection106 .class, AssetClassCommodity2Choice.class, AssetClassSubProductAgriculturalType1Code.class, AssetClassSubProductEnergyType1Code.class, AssetClassSubProductEnvironmentalType1Code.class, AssetClassSubProductFreight1Code.class, AssetClassSubProductMetal1Code.class, BasketConstituents1 .class, BenchmarkCurveName5Code.class, Cleared12Choice.class, ClearingObligationType1Code.class, ClearingPartyAndTime10 .class, CollateralisationType2Code.class, CommonTradeDataReport49 .class, CommonTradeDataReport50 .class, ContractModification4 .class, ContractType10 .class, ContractValuationData6 .class, Counterparty31 .class, Counterparty34 .class, CounterpartySpecificData29 .class, CounterpartyTradeNature9Choice.class, CreditDerivative4 .class, CurrencyExchange17 .class, CustomBasket1 .class, DateTimePeriod1 .class, DebtInstrumentSeniorityType2Code.class, DeliveryInterconnectionPoint1Choice.class, DerivativePartyIdentification1Choice.class, DerivativesTradeReportV02 .class, Direction2Choice.class, DurationType1Code.class, EnergyDeliveryAttribute5 .class, EnergyLoadType1Code.class, EnergyQuantityUnit2Choice.class, EnergyQuantityUnit2Code.class, EnergySpecificAttribute6 .class, ExchangeRateBasis1 .class, ExchangeRateBasis1Choice.class, ExerciseDate1Choice.class, FinancialInstrumentContractType2Code.class, FinancialInstrumentQuantity32Choice.class, FinancialPartySectorType1Code.class, FixedRate10 .class, FloatingRate7 .class, FloatingRateIdentification4Choice.class, Frequency13Code.class, GenericIdentification174 .class, GenericIdentification175 .class, GenericIdentification179 .class, InstrumentIdentification1Choice.class, InterestComputationMethod4Code.class, InterestComputationMethodFormat7 .class, InterestRate23Choice.class, InterestRateContractTerm4 .class, InterestRateFrequency3Choice.class, InterestRateLegs9 .class, LegCurrency2 .class, MasterAgreement7 .class, ModificationLevel1Code.class, MxAuth03000102 .class, NaturalPersonIdentification2 .class, NoReasonCode.class, NonFinancialInstitutionSector2 .class, NonFinancialInstitutionSector4 .class, NotApplicable1Code.class, NotionalAmount1 .class, NotionalQuantity1 .class, OptionOrSwaption7 .class, OptionParty1Code.class, OptionParty3Code.class, OptionStyle6Code.class, OptionType2Code.class, OrganisationIdentification10Choice.class, OrganisationIdentification36 .class, OtherPayment3 .class, Package1 .class, Pagination1 .class, PartyIdentification235Choice.class, PaymentType4Code.class, PaymentType5Choice.class, PhysicalTransferType4Code.class, PortfolioCode1Choice.class, PrePostHaircut1 .class, PriceData1 .class, PriceStatus1Code.class, PriceStatus2Code.class, ProductType4Code.class, Quantity47Choice.class, Reconciliation2Code.class, ReportPeriodActivity1Code.class, Schedule1 .class, Schedule2 .class, Schedule3 .class, Schedule4 .class, SecuritiesTransactionPrice13Choice.class, SecuritiesTransactionPrice14Choice.class, SecuritiesTransactionPrice17Choice.class, SecuritiesTransactionPrice5 .class, SecurityIdentification22 .class, SecurityIdentification36Choice.class, SecurityIdentification37Choice.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TechnicalAttributes4 .class, TimePeriodDetails1 .class, TradeClearing5 .class, TradeCollateralReport5 .class, TradeConfirmation1Choice.class, TradeConfirmation2 .class, TradeConfirmationType1Code.class, TradeConfirmationType2Code.class, TradeCounterpartyReport14 .class, TradeData19Choice.class, TradeData23 .class, TradeNonConfirmation1 .class, TradeQueryHeader4 .class, TradeReport15Choice.class, TradeStateReport12 .class, TradeTransaction37 .class, TradingCapacity7Code.class, Tranche3 .class, TrancheIndicator3Choice.class, TransactionOperationType7Code.class, UnderlyingIdentification1Code.class, UniqueTransactionIdentifier1Choice.class, UnitOfMeasure12Code.class, ValuationType1Code.class, WeekDay3Code.class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:auth.030.001.02";
 
     public MxAuth03000102() {
         super();
@@ -89,21 +92,6 @@ public class MxAuth03000102
     }
 
     @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
-    }
-
-    @Override
     public String getBusinessProcess() {
         return BUSINESS_PROCESS;
     }
@@ -128,7 +116,7 @@ public class MxAuth03000102
      * 
      */
     public static MxAuth03000102 parse(String xml) {
-        return ((MxAuth03000102) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxAuth03000102 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams()));
+        return ((MxAuth03000102) MxReadImpl.parse(MxAuth03000102 .class, xml, _classes, new MxReadParams()));
     }
 
     /**
@@ -137,7 +125,7 @@ public class MxAuth03000102
      * 
      */
     public static MxAuth03000102 parse(String xml, MxReadConfiguration conf) {
-        return ((MxAuth03000102) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxAuth03000102 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams(conf)));
+        return ((MxAuth03000102) MxReadImpl.parse(MxAuth03000102 .class, xml, _classes, new MxReadParams(conf)));
     }
 
     /**
@@ -173,8 +161,23 @@ public class MxAuth03000102
      * @return
      *     a new instance of MxAuth03000102
      */
-    public final static MxAuth03000102 fromJson(String json) {
-        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxAuth03000102 .class);
+    public static final MxAuth03000102 fromJson(String json) {
+        return AbstractMX.fromJson(json, MxAuth03000102 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

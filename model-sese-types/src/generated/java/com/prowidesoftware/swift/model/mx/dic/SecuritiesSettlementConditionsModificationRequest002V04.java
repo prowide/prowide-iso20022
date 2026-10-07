@@ -120,8 +120,8 @@ public class SecuritiesSettlementConditionsModificationRequest002V04 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the reqDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the reqDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -135,10 +135,12 @@ public class SecuritiesSettlementConditionsModificationRequest002V04 {
      * {@link RequestDetails12 }
      * 
      * 
+     * @return
+     *     The value of the reqDtls property.
      */
     public List<RequestDetails12> getReqDtls() {
         if (reqDtls == null) {
-            reqDtls = new ArrayList<RequestDetails12>();
+            reqDtls = new ArrayList<>();
         }
         return this.reqDtls;
     }
@@ -149,8 +151,8 @@ public class SecuritiesSettlementConditionsModificationRequest002V04 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -164,10 +166,12 @@ public class SecuritiesSettlementConditionsModificationRequest002V04 {
      * {@link AdditionalInformation8 }
      * 
      * 
+     * @return
+     *     The value of the addtlInf property.
      */
     public List<AdditionalInformation8> getAddtlInf() {
         if (addtlInf == null) {
-            addtlInf = new ArrayList<AdditionalInformation8>();
+            addtlInf = new ArrayList<>();
         }
         return this.addtlInf;
     }
@@ -178,8 +182,8 @@ public class SecuritiesSettlementConditionsModificationRequest002V04 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -193,10 +197,12 @@ public class SecuritiesSettlementConditionsModificationRequest002V04 {
      * {@link SupplementaryData1 }
      * 
      * 
+     * @return
+     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<SupplementaryData1>();
+            splmtryData = new ArrayList<>();
         }
         return this.splmtryData;
     }

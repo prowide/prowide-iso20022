@@ -121,8 +121,8 @@ public class BatchManagementInitiation1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the prtctdData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the prtctdData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -136,10 +136,12 @@ public class BatchManagementInitiation1 {
      * {@link ProtectedData1 }
      * 
      * 
+     * @return
+     *     The value of the prtctdData property.
      */
     public List<ProtectedData1> getPrtctdData() {
         if (prtctdData == null) {
-            prtctdData = new ArrayList<ProtectedData1>();
+            prtctdData = new ArrayList<>();
         }
         return this.prtctdData;
     }
@@ -150,8 +152,8 @@ public class BatchManagementInitiation1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -165,10 +167,12 @@ public class BatchManagementInitiation1 {
      * {@link SupplementaryData1 }
      * 
      * 
+     * @return
+     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<SupplementaryData1>();
+            splmtryData = new ArrayList<>();
         }
         return this.splmtryData;
     }

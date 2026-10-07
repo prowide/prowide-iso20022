@@ -187,8 +187,8 @@ public class AccountOpeningRequestV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the org property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the org property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -202,10 +202,12 @@ public class AccountOpeningRequestV01 {
      * {@link Organisation7 }
      * 
      * 
+     * @return
+     *     The value of the org property.
      */
     public List<Organisation7> getOrg() {
         if (org == null) {
-            org = new ArrayList<Organisation7>();
+            org = new ArrayList<>();
         }
         return this.org;
     }
@@ -216,8 +218,8 @@ public class AccountOpeningRequestV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the mndt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the mndt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -231,10 +233,12 @@ public class AccountOpeningRequestV01 {
      * {@link OperationMandate1 }
      * 
      * 
+     * @return
+     *     The value of the mndt property.
      */
     public List<OperationMandate1> getMndt() {
         if (mndt == null) {
-            mndt = new ArrayList<OperationMandate1>();
+            mndt = new ArrayList<>();
         }
         return this.mndt;
     }
@@ -270,8 +274,8 @@ public class AccountOpeningRequestV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dgtlSgntr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the dgtlSgntr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -285,10 +289,12 @@ public class AccountOpeningRequestV01 {
      * {@link PartyAndSignature1 }
      * 
      * 
+     * @return
+     *     The value of the dgtlSgntr property.
      */
     public List<PartyAndSignature1> getDgtlSgntr() {
         if (dgtlSgntr == null) {
-            dgtlSgntr = new ArrayList<PartyAndSignature1>();
+            dgtlSgntr = new ArrayList<>();
         }
         return this.dgtlSgntr;
     }

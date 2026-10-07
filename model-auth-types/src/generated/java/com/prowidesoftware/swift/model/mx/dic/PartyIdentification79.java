@@ -37,8 +37,8 @@ public class PartyIdentification79 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the acctOwnr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the acctOwnr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -52,10 +52,12 @@ public class PartyIdentification79 {
      * {@link PartyIdentification76 }
      * 
      * 
+     * @return
+     *     The value of the acctOwnr property.
      */
     public List<PartyIdentification76> getAcctOwnr() {
         if (acctOwnr == null) {
-            acctOwnr = new ArrayList<PartyIdentification76>();
+            acctOwnr = new ArrayList<>();
         }
         return this.acctOwnr;
     }
@@ -66,8 +68,8 @@ public class PartyIdentification79 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dcsnMakr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the dcsnMakr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -81,10 +83,12 @@ public class PartyIdentification79 {
      * {@link PersonOrOrganisation2Choice }
      * 
      * 
+     * @return
+     *     The value of the dcsnMakr property.
      */
     public List<PersonOrOrganisation2Choice> getDcsnMakr() {
         if (dcsnMakr == null) {
-            dcsnMakr = new ArrayList<PersonOrOrganisation2Choice>();
+            dcsnMakr = new ArrayList<>();
         }
         return this.dcsnMakr;
     }

@@ -76,8 +76,8 @@ public class FIToFIPaymentStatusRequestV02 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the orgnlGrpInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the orgnlGrpInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -91,10 +91,12 @@ public class FIToFIPaymentStatusRequestV02 {
      * {@link OriginalGroupInformation27 }
      * 
      * 
+     * @return
+     *     The value of the orgnlGrpInf property.
      */
     public List<OriginalGroupInformation27> getOrgnlGrpInf() {
         if (orgnlGrpInf == null) {
-            orgnlGrpInf = new ArrayList<OriginalGroupInformation27>();
+            orgnlGrpInf = new ArrayList<>();
         }
         return this.orgnlGrpInf;
     }
@@ -105,8 +107,8 @@ public class FIToFIPaymentStatusRequestV02 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the txInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the txInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -120,10 +122,12 @@ public class FIToFIPaymentStatusRequestV02 {
      * {@link PaymentTransaction94 }
      * 
      * 
+     * @return
+     *     The value of the txInf property.
      */
     public List<PaymentTransaction94> getTxInf() {
         if (txInf == null) {
-            txInf = new ArrayList<PaymentTransaction94>();
+            txInf = new ArrayList<>();
         }
         return this.txInf;
     }
@@ -134,8 +138,8 @@ public class FIToFIPaymentStatusRequestV02 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -149,10 +153,12 @@ public class FIToFIPaymentStatusRequestV02 {
      * {@link SupplementaryData1 }
      * 
      * 
+     * @return
+     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<SupplementaryData1>();
+            splmtryData = new ArrayList<>();
         }
         return this.splmtryData;
     }

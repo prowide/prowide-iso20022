@@ -53,8 +53,8 @@ public class TradeAdditionalQueryCriteria3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the actnTp property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the actnTp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -68,10 +68,12 @@ public class TradeAdditionalQueryCriteria3 {
      * {@link TransactionOperationType3Code }
      * 
      * 
+     * @return
+     *     The value of the actnTp property.
      */
     public List<TransactionOperationType3Code> getActnTp() {
         if (actnTp == null) {
-            actnTp = new ArrayList<TransactionOperationType3Code>();
+            actnTp = new ArrayList<>();
         }
         return this.actnTp;
     }
@@ -157,8 +159,8 @@ public class TradeAdditionalQueryCriteria3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the asstClss property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the asstClss property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -172,10 +174,12 @@ public class TradeAdditionalQueryCriteria3 {
      * {@link ProductType4Code }
      * 
      * 
+     * @return
+     *     The value of the asstClss property.
      */
     public List<ProductType4Code> getAsstClss() {
         if (asstClss == null) {
-            asstClss = new ArrayList<ProductType4Code>();
+            asstClss = new ArrayList<>();
         }
         return this.asstClss;
     }

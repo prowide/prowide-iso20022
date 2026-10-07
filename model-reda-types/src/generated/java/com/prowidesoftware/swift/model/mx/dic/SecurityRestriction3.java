@@ -121,8 +121,8 @@ public class SecurityRestriction3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the invstrRstrctnTp property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the invstrRstrctnTp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -136,10 +136,12 @@ public class SecurityRestriction3 {
      * {@link InvestorRestrictionType3Choice }
      * 
      * 
+     * @return
+     *     The value of the invstrRstrctnTp property.
      */
     public List<InvestorRestrictionType3Choice> getInvstrRstrctnTp() {
         if (invstrRstrctnTp == null) {
-            invstrRstrctnTp = new ArrayList<InvestorRestrictionType3Choice>();
+            invstrRstrctnTp = new ArrayList<>();
         }
         return this.invstrRstrctnTp;
     }
@@ -150,8 +152,8 @@ public class SecurityRestriction3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the invstrTp property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the invstrTp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -165,10 +167,12 @@ public class SecurityRestriction3 {
      * {@link InvestorType3Choice }
      * 
      * 
+     * @return
+     *     The value of the invstrTp property.
      */
     public List<InvestorType3Choice> getInvstrTp() {
         if (invstrTp == null) {
-            invstrTp = new ArrayList<InvestorType3Choice>();
+            invstrTp = new ArrayList<>();
         }
         return this.invstrTp;
     }

@@ -4,14 +4,17 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import com.prowidesoftware.swift.model.mx.MxReadImpl;
+import com.prowidesoftware.swift.model.mx.MxReadParams;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
-import com.prowidesoftware.swift.model.mx.MxRead;
-import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -28,18 +31,18 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:seev.032.002.06")
 public class MxSeev03200206
-    extends com.prowidesoftware.swift.model.mx.AbstractMX
+    extends AbstractMX
 {
 
     @XmlElement(name = "CorpActnEvtPrcgStsAdvc", required = true)
     protected CorporateActionEventProcessingStatusAdvice002V06 corpActnEvtPrcgStsAdvc;
-    public final static transient String BUSINESS_PROCESS = "seev";
-    public final static transient int FUNCTIONALITY = 32;
-    public final static transient int VARIANT = 2;
-    public final static transient int VERSION = 6;
+    public static final transient String BUSINESS_PROCESS = "seev";
+    public static final transient int FUNCTIONALITY = 32;
+    public static final transient int VARIANT = 2;
+    public static final transient int VERSION = 6;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {CorporateActionEventProcessingStatusAdvice002V06 .class, CorporateActionEventType20Code.class, CorporateActionEventType58Choice.class, CorporateActionGeneralInformation114 .class, CorporateActionNarrative19 .class, DocumentIdentification17 .class, DocumentIdentification34 .class, DocumentIdentification4Choice.class, DocumentNumber6Choice.class, EventProcessingStatus4Choice.class, GenericIdentification47 .class, GenericIdentification86 .class, MxSeev03200206 .class, NoReasonCode.class, NoSpecifiedReason1 .class, PendingReason34Choice.class, PendingReason4Code.class, PendingStatus43Choice.class, PendingStatusReason11 .class, ProprietaryReason5 .class, ProprietaryStatusAndReason7 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:seev.032.002.06";
+    public static final transient Class[] _classes = new Class[] {CorporateActionEventProcessingStatusAdvice002V06 .class, CorporateActionEventType20Code.class, CorporateActionEventType58Choice.class, CorporateActionGeneralInformation114 .class, CorporateActionNarrative19 .class, DocumentIdentification17 .class, DocumentIdentification34 .class, DocumentIdentification4Choice.class, DocumentNumber6Choice.class, EventProcessingStatus4Choice.class, GenericIdentification47 .class, GenericIdentification86 .class, MxSeev03200206 .class, NoReasonCode.class, NoSpecifiedReason1 .class, PendingReason34Choice.class, PendingReason4Code.class, PendingStatus43Choice.class, PendingStatusReason11 .class, ProprietaryReason5 .class, ProprietaryStatusAndReason7 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:seev.032.002.06";
 
     public MxSeev03200206() {
         super();
@@ -89,21 +92,6 @@ public class MxSeev03200206
     }
 
     @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
-    }
-
-    @Override
     public String getBusinessProcess() {
         return BUSINESS_PROCESS;
     }
@@ -128,7 +116,7 @@ public class MxSeev03200206
      * 
      */
     public static MxSeev03200206 parse(String xml) {
-        return ((MxSeev03200206) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxSeev03200206 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams()));
+        return ((MxSeev03200206) MxReadImpl.parse(MxSeev03200206 .class, xml, _classes, new MxReadParams()));
     }
 
     /**
@@ -137,7 +125,7 @@ public class MxSeev03200206
      * 
      */
     public static MxSeev03200206 parse(String xml, MxReadConfiguration conf) {
-        return ((MxSeev03200206) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxSeev03200206 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams(conf)));
+        return ((MxSeev03200206) MxReadImpl.parse(MxSeev03200206 .class, xml, _classes, new MxReadParams(conf)));
     }
 
     /**
@@ -173,8 +161,23 @@ public class MxSeev03200206
      * @return
      *     a new instance of MxSeev03200206
      */
-    public final static MxSeev03200206 fromJson(String json) {
-        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSeev03200206 .class);
+    public static final MxSeev03200206 fromJson(String json) {
+        return AbstractMX.fromJson(json, MxSeev03200206 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

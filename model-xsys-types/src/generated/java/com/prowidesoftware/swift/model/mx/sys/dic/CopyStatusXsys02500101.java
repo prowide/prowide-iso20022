@@ -1,8 +1,8 @@
 
 package com.prowidesoftware.swift.model.mx.sys.dic;
 
-import java.math.BigDecimal;
 import javax.xml.datatype.XMLGregorianCalendar;
+import java.math.BigDecimal;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

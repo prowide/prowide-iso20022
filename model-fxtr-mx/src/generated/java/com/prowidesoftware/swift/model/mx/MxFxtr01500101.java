@@ -4,14 +4,17 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import com.prowidesoftware.swift.model.mx.MxReadImpl;
+import com.prowidesoftware.swift.model.mx.MxReadParams;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
-import com.prowidesoftware.swift.model.mx.MxRead;
-import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -28,18 +31,18 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:swift:xsd:fxtr.015.001.01")
 public class MxFxtr01500101
-    extends com.prowidesoftware.swift.model.mx.AbstractMX
+    extends AbstractMX
 {
 
     @XmlElement(name = "FXTradInstrAmdmnt", required = true)
     protected ForeignExchangeTradeInstructionAmendmentV01 fxTradInstrAmdmnt;
-    public final static transient String BUSINESS_PROCESS = "fxtr";
-    public final static transient int FUNCTIONALITY = 15;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 1;
+    public static final transient String BUSINESS_PROCESS = "fxtr";
+    public static final transient int FUNCTIONALITY = 15;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {ActiveCurrencyAndAmount.class, ActiveOrHistoricCurrencyAndAmount.class, AddressType2Code.class, AgreedRate1 .class, AmountsAndValueDate1 .class, ContactInformation1 .class, ForeignExchangeTradeInstructionAmendmentV01 .class, FundIdentification2 .class, GeneralInformation1 .class, MxFxtr01500101 .class, NameAndAddress8 .class, PartyIdentification22 .class, PartyIdentification8Choice.class, PostalAddress1 .class, SettlementParties1 .class, TradeAgreement4 .class, TradePartyIdentification3 .class, Trading1MethodCode.class };
-    public final static transient String NAMESPACE = "urn:swift:xsd:fxtr.015.001.01";
+    public static final transient Class[] _classes = new Class[] {ActiveCurrencyAndAmount.class, ActiveOrHistoricCurrencyAndAmount.class, AddressType2Code.class, AgreedRate1 .class, AmountsAndValueDate1 .class, ContactInformation1 .class, ForeignExchangeTradeInstructionAmendmentV01 .class, FundIdentification2 .class, GeneralInformation1 .class, MxFxtr01500101 .class, NameAndAddress8 .class, PartyIdentification22 .class, PartyIdentification8Choice.class, PostalAddress1 .class, SettlementParties1 .class, TradeAgreement4 .class, TradePartyIdentification3 .class, Trading1MethodCode.class };
+    public static final transient String NAMESPACE = "urn:swift:xsd:fxtr.015.001.01";
 
     public MxFxtr01500101() {
         super();
@@ -89,21 +92,6 @@ public class MxFxtr01500101
     }
 
     @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
-    }
-
-    @Override
     public String getBusinessProcess() {
         return BUSINESS_PROCESS;
     }
@@ -128,7 +116,7 @@ public class MxFxtr01500101
      * 
      */
     public static MxFxtr01500101 parse(String xml) {
-        return ((MxFxtr01500101) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxFxtr01500101 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams()));
+        return ((MxFxtr01500101) MxReadImpl.parse(MxFxtr01500101 .class, xml, _classes, new MxReadParams()));
     }
 
     /**
@@ -137,7 +125,7 @@ public class MxFxtr01500101
      * 
      */
     public static MxFxtr01500101 parse(String xml, MxReadConfiguration conf) {
-        return ((MxFxtr01500101) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxFxtr01500101 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams(conf)));
+        return ((MxFxtr01500101) MxReadImpl.parse(MxFxtr01500101 .class, xml, _classes, new MxReadParams(conf)));
     }
 
     /**
@@ -173,8 +161,23 @@ public class MxFxtr01500101
      * @return
      *     a new instance of MxFxtr01500101
      */
-    public final static MxFxtr01500101 fromJson(String json) {
-        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxFxtr01500101 .class);
+    public static final MxFxtr01500101 fromJson(String json) {
+        return AbstractMX.fromJson(json, MxFxtr01500101 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

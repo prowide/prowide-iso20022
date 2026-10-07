@@ -201,8 +201,8 @@ public class SummaryAmounts2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rtrXcssCshAndCollCcy property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rtrXcssCshAndCollCcy property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -216,10 +216,12 @@ public class SummaryAmounts2 {
      * {@link ReturnExcessCash1 }
      * 
      * 
+     * @return
+     *     The value of the rtrXcssCshAndCollCcy property.
      */
     public List<ReturnExcessCash1> getRtrXcssCshAndCollCcy() {
         if (rtrXcssCshAndCollCcy == null) {
-            rtrXcssCshAndCollCcy = new ArrayList<ReturnExcessCash1>();
+            rtrXcssCshAndCollCcy = new ArrayList<>();
         }
         return this.rtrXcssCshAndCollCcy;
     }

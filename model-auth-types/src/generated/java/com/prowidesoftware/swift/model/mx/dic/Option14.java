@@ -50,8 +50,8 @@ public class Option14 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the xprtnStyle property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the xprtnStyle property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -65,10 +65,12 @@ public class Option14 {
      * {@link OptionStyle5Code }
      * 
      * 
+     * @return
+     *     The value of the xprtnStyle property.
      */
     public List<OptionStyle5Code> getXprtnStyle() {
         if (xprtnStyle == null) {
-            xprtnStyle = new ArrayList<OptionStyle5Code>();
+            xprtnStyle = new ArrayList<>();
         }
         return this.xprtnStyle;
     }

@@ -92,8 +92,8 @@ public class SecuritiesTransactionPrice6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dgtlTkn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the dgtlTkn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -107,10 +107,12 @@ public class SecuritiesTransactionPrice6 {
      * {@link DigitalTokenAmount2 }
      * 
      * 
+     * @return
+     *     The value of the dgtlTkn property.
      */
     public List<DigitalTokenAmount2> getDgtlTkn() {
         if (dgtlTkn == null) {
-            dgtlTkn = new ArrayList<DigitalTokenAmount2>();
+            dgtlTkn = new ArrayList<>();
         }
         return this.dgtlTkn;
     }

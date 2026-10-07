@@ -223,8 +223,8 @@ public class CorporateActionBalanceDetails15 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the pdgDlvryBal property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the pdgDlvryBal property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -238,10 +238,12 @@ public class CorporateActionBalanceDetails15 {
      * {@link BalanceFormat2Choice }
      * 
      * 
+     * @return
+     *     The value of the pdgDlvryBal property.
      */
     public List<BalanceFormat2Choice> getPdgDlvryBal() {
         if (pdgDlvryBal == null) {
-            pdgDlvryBal = new ArrayList<BalanceFormat2Choice>();
+            pdgDlvryBal = new ArrayList<>();
         }
         return this.pdgDlvryBal;
     }
@@ -252,8 +254,8 @@ public class CorporateActionBalanceDetails15 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the pdgRctBal property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the pdgRctBal property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -267,10 +269,12 @@ public class CorporateActionBalanceDetails15 {
      * {@link BalanceFormat2Choice }
      * 
      * 
+     * @return
+     *     The value of the pdgRctBal property.
      */
     public List<BalanceFormat2Choice> getPdgRctBal() {
         if (pdgRctBal == null) {
-            pdgRctBal = new ArrayList<BalanceFormat2Choice>();
+            pdgRctBal = new ArrayList<>();
         }
         return this.pdgRctBal;
     }

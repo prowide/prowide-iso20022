@@ -55,8 +55,8 @@ public class SecuritiesEndOfProcessReportV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the pgntn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the pgntn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -70,10 +70,12 @@ public class SecuritiesEndOfProcessReportV01 {
      * {@link Pagination }
      * 
      * 
+     * @return
+     *     The value of the pgntn property.
      */
     public List<Pagination> getPgntn() {
         if (pgntn == null) {
-            pgntn = new ArrayList<Pagination>();
+            pgntn = new ArrayList<>();
         }
         return this.pgntn;
     }
@@ -109,8 +111,8 @@ public class SecuritiesEndOfProcessReportV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the confPties property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the confPties property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -124,10 +126,12 @@ public class SecuritiesEndOfProcessReportV01 {
      * {@link ConfirmationParties2 }
      * 
      * 
+     * @return
+     *     The value of the confPties property.
      */
     public List<ConfirmationParties2> getConfPties() {
         if (confPties == null) {
-            confPties = new ArrayList<ConfirmationParties2>();
+            confPties = new ArrayList<>();
         }
         return this.confPties;
     }
@@ -138,8 +142,8 @@ public class SecuritiesEndOfProcessReportV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the invstr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the invstr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -153,10 +157,12 @@ public class SecuritiesEndOfProcessReportV01 {
      * {@link PartyIdentificationAndAccount79 }
      * 
      * 
+     * @return
+     *     The value of the invstr property.
      */
     public List<PartyIdentificationAndAccount79> getInvstr() {
         if (invstr == null) {
-            invstr = new ArrayList<PartyIdentificationAndAccount79>();
+            invstr = new ArrayList<>();
         }
         return this.invstr;
     }
@@ -167,8 +173,8 @@ public class SecuritiesEndOfProcessReportV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -182,10 +188,12 @@ public class SecuritiesEndOfProcessReportV01 {
      * {@link SupplementaryData1 }
      * 
      * 
+     * @return
+     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<SupplementaryData1>();
+            splmtryData = new ArrayList<>();
         }
         return this.splmtryData;
     }

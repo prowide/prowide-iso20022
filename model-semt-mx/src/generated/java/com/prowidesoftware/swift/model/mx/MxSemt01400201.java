@@ -4,14 +4,17 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import com.prowidesoftware.swift.model.mx.MxReadImpl;
+import com.prowidesoftware.swift.model.mx.MxReadParams;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
-import com.prowidesoftware.swift.model.mx.MxRead;
-import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -28,18 +31,18 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:swift:xsd:semt.014.002.01")
 public class MxSemt01400201
-    extends com.prowidesoftware.swift.model.mx.AbstractMX
+    extends AbstractMX
 {
 
     @XmlElement(name = "IntraPosMvmntStsAdvc", required = true)
     protected IntraPositionMovementStatusAdvice002V01 intraPosMvmntStsAdvc;
-    public final static transient String BUSINESS_PROCESS = "semt";
-    public final static transient int FUNCTIONALITY = 14;
-    public final static transient int VARIANT = 2;
-    public final static transient int VERSION = 1;
+    public static final transient String BUSINESS_PROCESS = "semt";
+    public static final transient int FUNCTIONALITY = 14;
+    public static final transient int VARIANT = 2;
+    public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {AcknowledgedAcceptedStatus6Choice.class, AcknowledgementReason5Code.class, AcknowledgementReason6 .class, AcknowledgementReason8Choice.class, AlternateIdentification2 .class, CancellationReason4 .class, CancellationReason8Choice.class, CancellationStatus6Choice.class, CancelledStatusReason9Code.class, CopyDuplicate1Code.class, DateAndDateTimeChoice.class, DocumentIdentification16 .class, Extension2 .class, ExtensionEnvelope1 .class, FailingReason1Code.class, FailingReason2 .class, FailingReason2Choice.class, FailingStatus2Choice.class, FinancialInstrumentQuantity15Choice.class, GenericIdentification24 .class, GenericIdentification25 .class, IdentificationSource2Choice.class, IntraPositionDetails5 .class, IntraPositionMovementStatusAdvice002V01 .class, IntraPositionProcessingStatus2Choice.class, MxSemt01400201 .class, NameAndAddress12 .class, NoReasonCode.class, PartyIdentification16Choice.class, PartyIdentification18Choice.class, PendingReason10Choice.class, PendingReason1Code.class, PendingReason4 .class, PendingStatus8Choice.class, ProprietaryReason2 .class, ProprietaryStatusAndReason2 .class, RejectionAndRepairReason8Choice.class, RejectionOrRepairReason8 .class, RejectionOrRepairStatus3Choice.class, RejectionReason22Code.class, SecuritiesAccount17 .class, SecuritiesBalanceType13Code.class, SecuritiesBalanceType4Choice.class, SecurityIdentification12 .class, SecurityIdentification12Choice.class, SettlementStatus4Choice.class, TransactionIdentifications5 .class };
-    public final static transient String NAMESPACE = "urn:swift:xsd:semt.014.002.01";
+    public static final transient Class[] _classes = new Class[] {AcknowledgedAcceptedStatus6Choice.class, AcknowledgementReason5Code.class, AcknowledgementReason6 .class, AcknowledgementReason8Choice.class, AlternateIdentification2 .class, CancellationReason4 .class, CancellationReason8Choice.class, CancellationStatus6Choice.class, CancelledStatusReason9Code.class, CopyDuplicate1Code.class, DateAndDateTimeChoice.class, DocumentIdentification16 .class, Extension2 .class, ExtensionEnvelope1 .class, FailingReason1Code.class, FailingReason2 .class, FailingReason2Choice.class, FailingStatus2Choice.class, FinancialInstrumentQuantity15Choice.class, GenericIdentification24 .class, GenericIdentification25 .class, IdentificationSource2Choice.class, IntraPositionDetails5 .class, IntraPositionMovementStatusAdvice002V01 .class, IntraPositionProcessingStatus2Choice.class, MxSemt01400201 .class, NameAndAddress12 .class, NoReasonCode.class, PartyIdentification16Choice.class, PartyIdentification18Choice.class, PendingReason10Choice.class, PendingReason1Code.class, PendingReason4 .class, PendingStatus8Choice.class, ProprietaryReason2 .class, ProprietaryStatusAndReason2 .class, RejectionAndRepairReason8Choice.class, RejectionOrRepairReason8 .class, RejectionOrRepairStatus3Choice.class, RejectionReason22Code.class, SecuritiesAccount17 .class, SecuritiesBalanceType13Code.class, SecuritiesBalanceType4Choice.class, SecurityIdentification12 .class, SecurityIdentification12Choice.class, SettlementStatus4Choice.class, TransactionIdentifications5 .class };
+    public static final transient String NAMESPACE = "urn:swift:xsd:semt.014.002.01";
 
     public MxSemt01400201() {
         super();
@@ -89,21 +92,6 @@ public class MxSemt01400201
     }
 
     @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
-    }
-
-    @Override
     public String getBusinessProcess() {
         return BUSINESS_PROCESS;
     }
@@ -128,7 +116,7 @@ public class MxSemt01400201
      * 
      */
     public static MxSemt01400201 parse(String xml) {
-        return ((MxSemt01400201) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxSemt01400201 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams()));
+        return ((MxSemt01400201) MxReadImpl.parse(MxSemt01400201 .class, xml, _classes, new MxReadParams()));
     }
 
     /**
@@ -137,7 +125,7 @@ public class MxSemt01400201
      * 
      */
     public static MxSemt01400201 parse(String xml, MxReadConfiguration conf) {
-        return ((MxSemt01400201) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxSemt01400201 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams(conf)));
+        return ((MxSemt01400201) MxReadImpl.parse(MxSemt01400201 .class, xml, _classes, new MxReadParams(conf)));
     }
 
     /**
@@ -173,8 +161,23 @@ public class MxSemt01400201
      * @return
      *     a new instance of MxSemt01400201
      */
-    public final static MxSemt01400201 fromJson(String json) {
-        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSemt01400201 .class);
+    public static final MxSemt01400201 fromJson(String json) {
+        return AbstractMX.fromJson(json, MxSemt01400201 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

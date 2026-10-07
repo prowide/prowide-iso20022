@@ -1,6 +1,7 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -8,7 +9,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -105,7 +106,7 @@ public class PlainCardData1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getFctvDt() {
@@ -117,7 +118,7 @@ public class PlainCardData1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public PlainCardData1 setFctvDt(XMLGregorianCalendar value) {
@@ -130,7 +131,7 @@ public class PlainCardData1 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getXpryDt() {
@@ -142,7 +143,7 @@ public class PlainCardData1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public PlainCardData1 setXpryDt(XMLGregorianCalendar value) {
@@ -181,8 +182,8 @@ public class PlainCardData1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the trckData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the trckData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -196,10 +197,12 @@ public class PlainCardData1 {
      * {@link TrackData1 }
      * 
      * 
+     * @return
+     *     The value of the trckData property.
      */
     public List<TrackData1> getTrckData() {
         if (trckData == null) {
-            trckData = new ArrayList<TrackData1>();
+            trckData = new ArrayList<>();
         }
         return this.trckData;
     }

@@ -62,8 +62,8 @@ public class SwRMAFile {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rmaRecrd property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rmaRecrd property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -77,10 +77,12 @@ public class SwRMAFile {
      * {@link SwRMARecrd }
      * 
      * 
+     * @return
+     *     The value of the rmaRecrd property.
      */
     public List<SwRMARecrd> getRMARecrd() {
         if (rmaRecrd == null) {
-            rmaRecrd = new ArrayList<SwRMARecrd>();
+            rmaRecrd = new ArrayList<>();
         }
         return this.rmaRecrd;
     }

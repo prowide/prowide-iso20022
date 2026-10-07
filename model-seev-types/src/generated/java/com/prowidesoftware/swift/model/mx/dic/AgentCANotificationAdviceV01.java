@@ -189,8 +189,8 @@ public class AgentCANotificationAdviceV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the corpActnOptnDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the corpActnOptnDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -204,10 +204,12 @@ public class AgentCANotificationAdviceV01 {
      * {@link CorporateActionOption1 }
      * 
      * 
+     * @return
+     *     The value of the corpActnOptnDtls property.
      */
     public List<CorporateActionOption1> getCorpActnOptnDtls() {
         if (corpActnOptnDtls == null) {
-            corpActnOptnDtls = new ArrayList<CorporateActionOption1>();
+            corpActnOptnDtls = new ArrayList<>();
         }
         return this.corpActnOptnDtls;
     }
@@ -218,8 +220,8 @@ public class AgentCANotificationAdviceV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ctctDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ctctDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -233,10 +235,12 @@ public class AgentCANotificationAdviceV01 {
      * {@link ContactPerson1 }
      * 
      * 
+     * @return
+     *     The value of the ctctDtls property.
      */
     public List<ContactPerson1> getCtctDtls() {
         if (ctctDtls == null) {
-            ctctDtls = new ArrayList<ContactPerson1>();
+            ctctDtls = new ArrayList<>();
         }
         return this.ctctDtls;
     }

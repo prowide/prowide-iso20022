@@ -214,8 +214,8 @@ public class CardPaymentTransaction7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the failrRsn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the failrRsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -229,10 +229,12 @@ public class CardPaymentTransaction7 {
      * {@link FailureReason1Code }
      * 
      * 
+     * @return
+     *     The value of the failrRsn property.
      */
     public List<FailureReason1Code> getFailrRsn() {
         if (failrRsn == null) {
-            failrRsn = new ArrayList<FailureReason1Code>();
+            failrRsn = new ArrayList<>();
         }
         return this.failrRsn;
     }

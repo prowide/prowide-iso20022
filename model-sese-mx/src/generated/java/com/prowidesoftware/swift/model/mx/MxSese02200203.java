@@ -4,14 +4,17 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import com.prowidesoftware.swift.model.mx.MxReadImpl;
+import com.prowidesoftware.swift.model.mx.MxReadParams;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
-import com.prowidesoftware.swift.model.mx.MxRead;
-import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -28,18 +31,18 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:swift:xsd:sese.022.002.03")
 public class MxSese02200203
-    extends com.prowidesoftware.swift.model.mx.AbstractMX
+    extends AbstractMX
 {
 
     @XmlElement(name = "SctiesStsOrStmtQryStsAdvc", required = true)
     protected SecuritiesStatusOrStatementQueryStatusAdvice002V03 sctiesStsOrStmtQryStsAdvc;
-    public final static transient String BUSINESS_PROCESS = "sese";
-    public final static transient int FUNCTIONALITY = 22;
-    public final static transient int VARIANT = 2;
-    public final static transient int VERSION = 3;
+    public static final transient String BUSINESS_PROCESS = "sese";
+    public static final transient int FUNCTIONALITY = 22;
+    public static final transient int VARIANT = 2;
+    public static final transient int VERSION = 3;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {AcknowledgedAcceptedStatus18Choice.class, AcknowledgementReason3Code.class, AcknowledgementReason4 .class, AcknowledgementReason6Choice.class, DocumentIdentification26 .class, DocumentNumber11 .class, DocumentNumber2Choice.class, DocumentNumber3 .class, GenericIdentification23 .class, GenericIdentification24 .class, GenericIdentification25 .class, Identification13 .class, Identification4 .class, MxSese02200203 .class, NoReasonCode.class, PartyIdentification51Choice.class, ProcessingStatus28Choice.class, ProprietaryReason2 .class, ProprietaryStatusAndReason2 .class, RejectionAndRepairReason5Choice.class, RejectionOrRepairReason5 .class, RejectionOrRepairStatus23Choice.class, RejectionReason24Code.class, SecuritiesAccount17 .class, SecuritiesStatusOrStatementQueryStatusAdvice002V03 .class, StatusOrStatement6Choice.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class };
-    public final static transient String NAMESPACE = "urn:swift:xsd:sese.022.002.03";
+    public static final transient Class[] _classes = new Class[] {AcknowledgedAcceptedStatus18Choice.class, AcknowledgementReason3Code.class, AcknowledgementReason4 .class, AcknowledgementReason6Choice.class, DocumentIdentification26 .class, DocumentNumber11 .class, DocumentNumber2Choice.class, DocumentNumber3 .class, GenericIdentification23 .class, GenericIdentification24 .class, GenericIdentification25 .class, Identification13 .class, Identification4 .class, MxSese02200203 .class, NoReasonCode.class, PartyIdentification51Choice.class, ProcessingStatus28Choice.class, ProprietaryReason2 .class, ProprietaryStatusAndReason2 .class, RejectionAndRepairReason5Choice.class, RejectionOrRepairReason5 .class, RejectionOrRepairStatus23Choice.class, RejectionReason24Code.class, SecuritiesAccount17 .class, SecuritiesStatusOrStatementQueryStatusAdvice002V03 .class, StatusOrStatement6Choice.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class };
+    public static final transient String NAMESPACE = "urn:swift:xsd:sese.022.002.03";
 
     public MxSese02200203() {
         super();
@@ -89,21 +92,6 @@ public class MxSese02200203
     }
 
     @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
-    }
-
-    @Override
     public String getBusinessProcess() {
         return BUSINESS_PROCESS;
     }
@@ -128,7 +116,7 @@ public class MxSese02200203
      * 
      */
     public static MxSese02200203 parse(String xml) {
-        return ((MxSese02200203) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxSese02200203 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams()));
+        return ((MxSese02200203) MxReadImpl.parse(MxSese02200203 .class, xml, _classes, new MxReadParams()));
     }
 
     /**
@@ -137,7 +125,7 @@ public class MxSese02200203
      * 
      */
     public static MxSese02200203 parse(String xml, MxReadConfiguration conf) {
-        return ((MxSese02200203) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxSese02200203 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams(conf)));
+        return ((MxSese02200203) MxReadImpl.parse(MxSese02200203 .class, xml, _classes, new MxReadParams(conf)));
     }
 
     /**
@@ -173,8 +161,23 @@ public class MxSese02200203
      * @return
      *     a new instance of MxSese02200203
      */
-    public final static MxSese02200203 fromJson(String json) {
-        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSese02200203 .class);
+    public static final MxSese02200203 fromJson(String json) {
+        return AbstractMX.fromJson(json, MxSese02200203 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

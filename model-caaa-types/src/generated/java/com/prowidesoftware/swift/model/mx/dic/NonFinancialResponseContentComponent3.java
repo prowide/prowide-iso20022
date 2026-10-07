@@ -130,8 +130,8 @@ public class NonFinancialResponseContentComponent3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the instlmt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the instlmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -145,10 +145,12 @@ public class NonFinancialResponseContentComponent3 {
      * {@link RecurringTransaction5 }
      * 
      * 
+     * @return
+     *     The value of the instlmt property.
      */
     public List<RecurringTransaction5> getInstlmt() {
         if (instlmt == null) {
-            instlmt = new ArrayList<RecurringTransaction5>();
+            instlmt = new ArrayList<>();
         }
         return this.instlmt;
     }
@@ -159,8 +161,8 @@ public class NonFinancialResponseContentComponent3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlRspn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlRspn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -174,10 +176,12 @@ public class NonFinancialResponseContentComponent3 {
      * {@link ExternallyDefinedData4 }
      * 
      * 
+     * @return
+     *     The value of the addtlRspn property.
      */
     public List<ExternallyDefinedData4> getAddtlRspn() {
         if (addtlRspn == null) {
-            addtlRspn = new ArrayList<ExternallyDefinedData4>();
+            addtlRspn = new ArrayList<>();
         }
         return this.addtlRspn;
     }
@@ -188,8 +192,8 @@ public class NonFinancialResponseContentComponent3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the actn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the actn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -203,10 +207,12 @@ public class NonFinancialResponseContentComponent3 {
      * {@link Action14 }
      * 
      * 
+     * @return
+     *     The value of the actn property.
      */
     public List<Action14> getActn() {
         if (actn == null) {
-            actn = new ArrayList<Action14>();
+            actn = new ArrayList<>();
         }
         return this.actn;
     }

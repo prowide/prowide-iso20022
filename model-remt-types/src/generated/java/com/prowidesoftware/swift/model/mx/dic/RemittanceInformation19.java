@@ -68,8 +68,8 @@ public class RemittanceInformation19 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ustrd property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ustrd property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -83,10 +83,12 @@ public class RemittanceInformation19 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the ustrd property.
      */
     public List<String> getUstrd() {
         if (ustrd == null) {
-            ustrd = new ArrayList<String>();
+            ustrd = new ArrayList<>();
         }
         return this.ustrd;
     }
@@ -97,8 +99,8 @@ public class RemittanceInformation19 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the strd property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the strd property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -112,10 +114,12 @@ public class RemittanceInformation19 {
      * {@link StructuredRemittanceInformation16 }
      * 
      * 
+     * @return
+     *     The value of the strd property.
      */
     public List<StructuredRemittanceInformation16> getStrd() {
         if (strd == null) {
-            strd = new ArrayList<StructuredRemittanceInformation16>();
+            strd = new ArrayList<>();
         }
         return this.strd;
     }

@@ -9,17 +9,16 @@ import javax.xml.bind.annotation.XmlType;
  * <p>Java class for PendingReason29Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="PendingReason29Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="NPAY"/&gt;
- *     &lt;enumeration value="NSEC"/&gt;
- *     &lt;enumeration value="OTHR"/&gt;
- *     &lt;enumeration value="AUTH"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="PendingReason29Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="NPAY"/>
+ *     <enumeration value="NSEC"/>
+ *     <enumeration value="OTHR"/>
+ *     <enumeration value="AUTH"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "PendingReason29Code")

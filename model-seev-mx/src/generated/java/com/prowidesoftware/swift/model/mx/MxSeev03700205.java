@@ -4,14 +4,17 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import com.prowidesoftware.swift.model.mx.MxReadImpl;
+import com.prowidesoftware.swift.model.mx.MxReadParams;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
-import com.prowidesoftware.swift.model.mx.MxRead;
-import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -28,18 +31,18 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:swift:xsd:seev.037.002.05")
 public class MxSeev03700205
-    extends com.prowidesoftware.swift.model.mx.AbstractMX
+    extends AbstractMX
 {
 
     @XmlElement(name = "CorpActnMvmntRvslAdvc", required = true)
     protected CorporateActionMovementReversalAdvice002V05 corpActnMvmntRvslAdvc;
-    public final static transient String BUSINESS_PROCESS = "seev";
-    public final static transient int FUNCTIONALITY = 37;
-    public final static transient int VARIANT = 2;
-    public final static transient int VERSION = 5;
+    public static final transient String BUSINESS_PROCESS = "seev";
+    public static final transient int FUNCTIONALITY = 37;
+    public static final transient int VARIANT = 2;
+    public static final transient int VERSION = 5;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {Account9Choice.class, AccountAndBalance8 .class, AdditionalBusinessProcess4Code.class, AdditionalBusinessProcessFormat8Choice.class, BalanceFormat2Choice.class, CashAccountIdentification6Choice.class, CashOption23 .class, CorporateAction20 .class, CorporateActionDate34 .class, CorporateActionEventReference2 .class, CorporateActionEventReference2Choice.class, CorporateActionEventType11Code.class, CorporateActionEventType27Choice.class, CorporateActionGeneralInformation62 .class, CorporateActionMovementReversalAdvice002V05 .class, CorporateActionNarrative14 .class, CorporateActionOption14Choice.class, CorporateActionOption48 .class, CorporateActionOption8Code.class, CorporateActionReversalReason1Code.class, CorporateActionReversalReason2 .class, CorporateActionReversalReason2Choice.class, CreditDebitCode.class, DateAndDateTimeChoice.class, DateCode14Choice.class, DateFormat24Choice.class, DateType8Code.class, DocumentIdentification19 .class, DocumentIdentification20 .class, DocumentIdentification2Choice.class, DocumentNumber2Choice.class, FinancialInstrumentQuantity15Choice.class, GenericIdentification23 .class, GenericIdentification24 .class, GenericIdentification25 .class, GenericIdentification51 .class, IdentificationSource4Choice.class, IntermediateSecuritiesDistributionTypeFormat7Choice.class, IntermediateSecurityDistributionType4Code.class, LotteryType1Code.class, LotteryTypeFormat3Choice.class, MxSeev03700205 .class, NameAndAddress12 .class, OptionNumber1Choice.class, OptionNumber1Code.class, OriginalAndCurrentQuantities4 .class, OtherIdentification2 .class, PartyIdentification56Choice.class, ProcessingPosition3Choice.class, ProcessingPosition3Code.class, ProprietaryQuantity4 .class, Quantity10Choice.class, Quantity7Choice.class, RestrictedFINActiveCurrencyAndAmount.class, SecuritiesOption32 .class, SecurityIdentification15 .class, ShortLong1Code.class, SignedQuantityFormat3 .class, SignedQuantityFormat4 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class };
-    public final static transient String NAMESPACE = "urn:swift:xsd:seev.037.002.05";
+    public static final transient Class[] _classes = new Class[] {Account9Choice.class, AccountAndBalance8 .class, AdditionalBusinessProcess4Code.class, AdditionalBusinessProcessFormat8Choice.class, BalanceFormat2Choice.class, CashAccountIdentification6Choice.class, CashOption23 .class, CorporateAction20 .class, CorporateActionDate34 .class, CorporateActionEventReference2 .class, CorporateActionEventReference2Choice.class, CorporateActionEventType11Code.class, CorporateActionEventType27Choice.class, CorporateActionGeneralInformation62 .class, CorporateActionMovementReversalAdvice002V05 .class, CorporateActionNarrative14 .class, CorporateActionOption14Choice.class, CorporateActionOption48 .class, CorporateActionOption8Code.class, CorporateActionReversalReason1Code.class, CorporateActionReversalReason2 .class, CorporateActionReversalReason2Choice.class, CreditDebitCode.class, DateAndDateTimeChoice.class, DateCode14Choice.class, DateFormat24Choice.class, DateType8Code.class, DocumentIdentification19 .class, DocumentIdentification20 .class, DocumentIdentification2Choice.class, DocumentNumber2Choice.class, FinancialInstrumentQuantity15Choice.class, GenericIdentification23 .class, GenericIdentification24 .class, GenericIdentification25 .class, GenericIdentification51 .class, IdentificationSource4Choice.class, IntermediateSecuritiesDistributionTypeFormat7Choice.class, IntermediateSecurityDistributionType4Code.class, LotteryType1Code.class, LotteryTypeFormat3Choice.class, MxSeev03700205 .class, NameAndAddress12 .class, OptionNumber1Choice.class, OptionNumber1Code.class, OriginalAndCurrentQuantities4 .class, OtherIdentification2 .class, PartyIdentification56Choice.class, ProcessingPosition3Choice.class, ProcessingPosition3Code.class, ProprietaryQuantity4 .class, Quantity10Choice.class, Quantity7Choice.class, RestrictedFINActiveCurrencyAndAmount.class, SecuritiesOption32 .class, SecurityIdentification15 .class, ShortLong1Code.class, SignedQuantityFormat3 .class, SignedQuantityFormat4 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class };
+    public static final transient String NAMESPACE = "urn:swift:xsd:seev.037.002.05";
 
     public MxSeev03700205() {
         super();
@@ -89,21 +92,6 @@ public class MxSeev03700205
     }
 
     @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
-    }
-
-    @Override
     public String getBusinessProcess() {
         return BUSINESS_PROCESS;
     }
@@ -128,7 +116,7 @@ public class MxSeev03700205
      * 
      */
     public static MxSeev03700205 parse(String xml) {
-        return ((MxSeev03700205) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxSeev03700205 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams()));
+        return ((MxSeev03700205) MxReadImpl.parse(MxSeev03700205 .class, xml, _classes, new MxReadParams()));
     }
 
     /**
@@ -137,7 +125,7 @@ public class MxSeev03700205
      * 
      */
     public static MxSeev03700205 parse(String xml, MxReadConfiguration conf) {
-        return ((MxSeev03700205) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxSeev03700205 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams(conf)));
+        return ((MxSeev03700205) MxReadImpl.parse(MxSeev03700205 .class, xml, _classes, new MxReadParams(conf)));
     }
 
     /**
@@ -173,8 +161,23 @@ public class MxSeev03700205
      * @return
      *     a new instance of MxSeev03700205
      */
-    public final static MxSeev03700205 fromJson(String json) {
-        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSeev03700205 .class);
+    public static final MxSeev03700205 fromJson(String json) {
+        return AbstractMX.fromJson(json, MxSeev03700205 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

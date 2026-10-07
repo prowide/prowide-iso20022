@@ -124,8 +124,8 @@ public class ProcessingResult13 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the errDtl property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the errDtl property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -139,10 +139,12 @@ public class ProcessingResult13 {
      * {@link ErrorDetails2 }
      * 
      * 
+     * @return
+     *     The value of the errDtl property.
      */
     public List<ErrorDetails2> getErrDtl() {
         if (errDtl == null) {
-            errDtl = new ArrayList<ErrorDetails2>();
+            errDtl = new ArrayList<>();
         }
         return this.errDtl;
     }
@@ -178,8 +180,8 @@ public class ProcessingResult13 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -193,10 +195,12 @@ public class ProcessingResult13 {
      * {@link AdditionalInformation29 }
      * 
      * 
+     * @return
+     *     The value of the addtlInf property.
      */
     public List<AdditionalInformation29> getAddtlInf() {
         if (addtlInf == null) {
-            addtlInf = new ArrayList<AdditionalInformation29>();
+            addtlInf = new ArrayList<>();
         }
         return this.addtlInf;
     }

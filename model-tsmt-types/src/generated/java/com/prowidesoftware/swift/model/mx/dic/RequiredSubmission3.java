@@ -55,8 +55,8 @@ public class RequiredSubmission3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the submitr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the submitr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -70,10 +70,12 @@ public class RequiredSubmission3 {
      * {@link BICIdentification1 }
      * 
      * 
+     * @return
+     *     The value of the submitr property.
      */
     public List<BICIdentification1> getSubmitr() {
         if (submitr == null) {
-            submitr = new ArrayList<BICIdentification1>();
+            submitr = new ArrayList<>();
         }
         return this.submitr;
     }
@@ -160,8 +162,8 @@ public class RequiredSubmission3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the clausesReqrd property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the clausesReqrd property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -175,10 +177,12 @@ public class RequiredSubmission3 {
      * {@link InsuranceClauses1Code }
      * 
      * 
+     * @return
+     *     The value of the clausesReqrd property.
      */
     public List<InsuranceClauses1Code> getClausesReqrd() {
         if (clausesReqrd == null) {
-            clausesReqrd = new ArrayList<InsuranceClauses1Code>();
+            clausesReqrd = new ArrayList<>();
         }
         return this.clausesReqrd;
     }

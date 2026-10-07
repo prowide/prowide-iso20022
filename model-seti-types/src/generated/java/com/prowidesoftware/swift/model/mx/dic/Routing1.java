@@ -42,8 +42,8 @@ public class Routing1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the list property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the list property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -57,10 +57,12 @@ public class Routing1 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the list property.
      */
     public List<String> getList() {
         if (list == null) {
-            list = new ArrayList<String>();
+            list = new ArrayList<>();
         }
         return this.list;
     }
@@ -71,8 +73,8 @@ public class Routing1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the firm property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the firm property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -86,10 +88,12 @@ public class Routing1 {
      * {@link PartyIdentification23 }
      * 
      * 
+     * @return
+     *     The value of the firm property.
      */
     public List<PartyIdentification23> getFirm() {
         if (firm == null) {
-            firm = new ArrayList<PartyIdentification23>();
+            firm = new ArrayList<>();
         }
         return this.firm;
     }

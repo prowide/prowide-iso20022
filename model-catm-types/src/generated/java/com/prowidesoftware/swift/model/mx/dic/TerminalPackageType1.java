@@ -37,8 +37,8 @@ public class TerminalPackageType1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the poiCmpntId property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the poiCmpntId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -52,10 +52,12 @@ public class TerminalPackageType1 {
      * {@link PointOfInteractionComponentIdentification1 }
      * 
      * 
+     * @return
+     *     The value of the poiCmpntId property.
      */
     public List<PointOfInteractionComponentIdentification1> getPOICmpntId() {
         if (poiCmpntId == null) {
-            poiCmpntId = new ArrayList<PointOfInteractionComponentIdentification1>();
+            poiCmpntId = new ArrayList<>();
         }
         return this.poiCmpntId;
     }
@@ -66,8 +68,8 @@ public class TerminalPackageType1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the packg property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the packg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -81,10 +83,12 @@ public class TerminalPackageType1 {
      * {@link PackageType1 }
      * 
      * 
+     * @return
+     *     The value of the packg property.
      */
     public List<PackageType1> getPackg() {
         if (packg == null) {
-            packg = new ArrayList<PackageType1>();
+            packg = new ArrayList<>();
         }
         return this.packg;
     }

@@ -1,8 +1,10 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -12,8 +14,6 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -253,8 +253,8 @@ public class QualifiedDocumentInformation1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dgst property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the dgst property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -268,10 +268,12 @@ public class QualifiedDocumentInformation1 {
      * {@link AlgorithmAndDigest1 }
      * 
      * 
+     * @return
+     *     The value of the dgst property.
      */
     public List<AlgorithmAndDigest1> getDgst() {
         if (dgst == null) {
-            dgst = new ArrayList<AlgorithmAndDigest1>();
+            dgst = new ArrayList<>();
         }
         return this.dgst;
     }
@@ -332,8 +334,8 @@ public class QualifiedDocumentInformation1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the attchdFile property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the attchdFile property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -347,10 +349,12 @@ public class QualifiedDocumentInformation1 {
      * {@link BinaryFile1 }
      * 
      * 
+     * @return
+     *     The value of the attchdFile property.
      */
     public List<BinaryFile1> getAttchdFile() {
         if (attchdFile == null) {
-            attchdFile = new ArrayList<BinaryFile1>();
+            attchdFile = new ArrayList<>();
         }
         return this.attchdFile;
     }

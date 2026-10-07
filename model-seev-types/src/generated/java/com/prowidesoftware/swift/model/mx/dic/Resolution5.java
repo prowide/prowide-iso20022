@@ -107,8 +107,8 @@ public class Resolution5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the desc property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the desc property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -122,10 +122,12 @@ public class Resolution5 {
      * {@link ItemDescription1 }
      * 
      * 
+     * @return
+     *     The value of the desc property.
      */
     public List<ItemDescription1> getDesc() {
         if (desc == null) {
-            desc = new ArrayList<ItemDescription1>();
+            desc = new ArrayList<>();
         }
         return this.desc;
     }
@@ -303,8 +305,8 @@ public class Resolution5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the voteInstrTp property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the voteInstrTp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -318,10 +320,12 @@ public class Resolution5 {
      * {@link VoteInstructionType1 }
      * 
      * 
+     * @return
+     *     The value of the voteInstrTp property.
      */
     public List<VoteInstructionType1> getVoteInstrTp() {
         if (voteInstrTp == null) {
-            voteInstrTp = new ArrayList<VoteInstructionType1>();
+            voteInstrTp = new ArrayList<>();
         }
         return this.voteInstrTp;
     }

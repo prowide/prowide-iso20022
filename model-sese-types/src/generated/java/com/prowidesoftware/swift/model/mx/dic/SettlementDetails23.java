@@ -121,8 +121,8 @@ public class SettlementDetails23 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sttlmTxCond property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sttlmTxCond property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -136,10 +136,12 @@ public class SettlementDetails23 {
      * {@link SettlementTransactionCondition6Choice }
      * 
      * 
+     * @return
+     *     The value of the sttlmTxCond property.
      */
     public List<SettlementTransactionCondition6Choice> getSttlmTxCond() {
         if (sttlmTxCond == null) {
-            sttlmTxCond = new ArrayList<SettlementTransactionCondition6Choice>();
+            sttlmTxCond = new ArrayList<>();
         }
         return this.sttlmTxCond;
     }

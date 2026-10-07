@@ -34,8 +34,8 @@ public class DTCCCANOEligibleBalanceSD1V02 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the acctBal property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the acctBal property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -49,10 +49,12 @@ public class DTCCCANOEligibleBalanceSD1V02 {
      * {@link AccountBalanceExtensionSD2 }
      * 
      * 
+     * @return
+     *     The value of the acctBal property.
      */
     public List<AccountBalanceExtensionSD2> getAcctBal() {
         if (acctBal == null) {
-            acctBal = new ArrayList<AccountBalanceExtensionSD2>();
+            acctBal = new ArrayList<>();
         }
         return this.acctBal;
     }

@@ -4,14 +4,17 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import com.prowidesoftware.swift.model.mx.MxReadImpl;
+import com.prowidesoftware.swift.model.mx.MxReadParams;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
-import com.prowidesoftware.swift.model.mx.MxRead;
-import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -28,18 +31,18 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:auth.016.001.03")
 public class MxAuth01600103
-    extends com.prowidesoftware.swift.model.mx.AbstractMX
+    extends AbstractMX
 {
 
     @XmlElement(name = "FinInstrmRptgTxRpt", required = true)
     protected FinancialInstrumentReportingTransactionReportV03 finInstrmRptgTxRpt;
-    public final static transient String BUSINESS_PROCESS = "auth";
-    public final static transient int FUNCTIONALITY = 16;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 3;
+    public static final transient String BUSINESS_PROCESS = "auth";
+    public static final transient int FUNCTIONALITY = 16;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 3;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {ActiveCurrencyAnd13DecimalAmount.class, ActiveOrHistoricCurrencyAndAmount.class, AmountAndDirection53 .class, AmountAndDirection61 .class, AssetClassAttributes1 .class, AssetClassAttributes1Choice.class, BasketDescription3 .class, BenchmarkCurveName2Code.class, BenchmarkCurveName5Choice.class, CancelledStatusReason15Code.class, DebtInstrument4 .class, DerivativeForeignExchange2 .class, DerivativeInstrument6 .class, DerivativeInterest2 .class, DigitalTokenAmount2 .class, ExecutingParty1Choice.class, FinancialInstrument58 .class, FinancialInstrumentAttributes5Choice.class, FinancialInstrumentIdentification6Choice.class, FinancialInstrumentIdentification7Choice.class, FinancialInstrumentQuantity25Choice.class, FinancialInstrumentReportingTransactionReportV03 .class, FloatingInterestRate8 .class, GenericPersonIdentification1 .class, IdentificationSource3Choice.class, InterestRateContractTerm2 .class, InternalPartyRole1Code.class, InvestmentParty1Choice.class, MxAuth01600103 .class, NoReasonCode.class, OptionStyle7Code.class, OptionType2Code.class, OtherIdentification1 .class, PartyIdentification76 .class, PartyIdentification79 .class, PersonIdentification10 .class, PersonIdentification12 .class, PersonIdentificationSchemeName1Choice.class, PersonOrOrganisation1Choice.class, PersonOrOrganisation2Choice.class, PhysicalTransferType4Code.class, PriceStatus1Code.class, RateBasis1Code.class, RecordTechnicalData2 .class, RecordTechnicalData5 .class, RegulatoryTradingCapacity1Code.class, ReportingTransactionType3Choice.class, ReportingWaiverType1Code.class, ReportingWaiverType3Code.class, SecuritiesTransaction3 .class, SecuritiesTransactionIndicator2 .class, SecuritiesTransactionPrice1 .class, SecuritiesTransactionPrice22Choice.class, SecuritiesTransactionPrice2Choice.class, SecuritiesTransactionPrice4Choice.class, SecuritiesTransactionPrice6 .class, SecuritiesTransactionPrice7 .class, SecuritiesTransactionReport2 .class, SecuritiesTransactionReport7 .class, SecuritiesTransactionTransmission2 .class, SecurityIdentification19 .class, SecurityInstrumentDescription22 .class, SecurityInstrumentDescription23 .class, Side5Code.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, SwapLegIdentification2 .class, UnderlyingIdentification2Choice.class, VariationType1Code.class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:auth.016.001.03";
+    public static final transient Class[] _classes = new Class[] {ActiveCurrencyAnd13DecimalAmount.class, ActiveOrHistoricCurrencyAndAmount.class, AmountAndDirection53 .class, AmountAndDirection61 .class, AssetClassAttributes1 .class, AssetClassAttributes1Choice.class, BasketDescription3 .class, BenchmarkCurveName2Code.class, BenchmarkCurveName5Choice.class, CancelledStatusReason15Code.class, DebtInstrument4 .class, DerivativeForeignExchange2 .class, DerivativeInstrument6 .class, DerivativeInterest2 .class, DigitalTokenAmount2 .class, ExecutingParty1Choice.class, FinancialInstrument58 .class, FinancialInstrumentAttributes5Choice.class, FinancialInstrumentIdentification6Choice.class, FinancialInstrumentIdentification7Choice.class, FinancialInstrumentQuantity25Choice.class, FinancialInstrumentReportingTransactionReportV03 .class, FloatingInterestRate8 .class, GenericPersonIdentification1 .class, IdentificationSource3Choice.class, InterestRateContractTerm2 .class, InternalPartyRole1Code.class, InvestmentParty1Choice.class, MxAuth01600103 .class, NoReasonCode.class, OptionStyle7Code.class, OptionType2Code.class, OtherIdentification1 .class, PartyIdentification76 .class, PartyIdentification79 .class, PersonIdentification10 .class, PersonIdentification12 .class, PersonIdentificationSchemeName1Choice.class, PersonOrOrganisation1Choice.class, PersonOrOrganisation2Choice.class, PhysicalTransferType4Code.class, PriceStatus1Code.class, RateBasis1Code.class, RecordTechnicalData2 .class, RecordTechnicalData5 .class, RegulatoryTradingCapacity1Code.class, ReportingTransactionType3Choice.class, ReportingWaiverType1Code.class, ReportingWaiverType3Code.class, SecuritiesTransaction3 .class, SecuritiesTransactionIndicator2 .class, SecuritiesTransactionPrice1 .class, SecuritiesTransactionPrice22Choice.class, SecuritiesTransactionPrice2Choice.class, SecuritiesTransactionPrice4Choice.class, SecuritiesTransactionPrice6 .class, SecuritiesTransactionPrice7 .class, SecuritiesTransactionReport2 .class, SecuritiesTransactionReport7 .class, SecuritiesTransactionTransmission2 .class, SecurityIdentification19 .class, SecurityInstrumentDescription22 .class, SecurityInstrumentDescription23 .class, Side5Code.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, SwapLegIdentification2 .class, UnderlyingIdentification2Choice.class, VariationType1Code.class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:auth.016.001.03";
 
     public MxAuth01600103() {
         super();
@@ -89,21 +92,6 @@ public class MxAuth01600103
     }
 
     @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
-    }
-
-    @Override
     public String getBusinessProcess() {
         return BUSINESS_PROCESS;
     }
@@ -128,7 +116,7 @@ public class MxAuth01600103
      * 
      */
     public static MxAuth01600103 parse(String xml) {
-        return ((MxAuth01600103) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxAuth01600103 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams()));
+        return ((MxAuth01600103) MxReadImpl.parse(MxAuth01600103 .class, xml, _classes, new MxReadParams()));
     }
 
     /**
@@ -137,7 +125,7 @@ public class MxAuth01600103
      * 
      */
     public static MxAuth01600103 parse(String xml, MxReadConfiguration conf) {
-        return ((MxAuth01600103) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxAuth01600103 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams(conf)));
+        return ((MxAuth01600103) MxReadImpl.parse(MxAuth01600103 .class, xml, _classes, new MxReadParams(conf)));
     }
 
     /**
@@ -173,8 +161,23 @@ public class MxAuth01600103
      * @return
      *     a new instance of MxAuth01600103
      */
-    public final static MxAuth01600103 fromJson(String json) {
-        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxAuth01600103 .class);
+    public static final MxAuth01600103 fromJson(String json) {
+        return AbstractMX.fromJson(json, MxAuth01600103 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

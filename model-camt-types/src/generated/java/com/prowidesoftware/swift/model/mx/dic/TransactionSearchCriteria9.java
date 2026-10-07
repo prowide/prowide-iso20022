@@ -43,8 +43,8 @@ public class TransactionSearchCriteria9 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the pmtTo property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the pmtTo property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -58,10 +58,12 @@ public class TransactionSearchCriteria9 {
      * {@link SystemSearch4 }
      * 
      * 
+     * @return
+     *     The value of the pmtTo property.
      */
     public List<SystemSearch4> getPmtTo() {
         if (pmtTo == null) {
-            pmtTo = new ArrayList<SystemSearch4>();
+            pmtTo = new ArrayList<>();
         }
         return this.pmtTo;
     }
@@ -72,8 +74,8 @@ public class TransactionSearchCriteria9 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the pmtFr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the pmtFr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -87,10 +89,12 @@ public class TransactionSearchCriteria9 {
      * {@link SystemSearch4 }
      * 
      * 
+     * @return
+     *     The value of the pmtFr property.
      */
     public List<SystemSearch4> getPmtFr() {
         if (pmtFr == null) {
-            pmtFr = new ArrayList<SystemSearch4>();
+            pmtFr = new ArrayList<>();
         }
         return this.pmtFr;
     }

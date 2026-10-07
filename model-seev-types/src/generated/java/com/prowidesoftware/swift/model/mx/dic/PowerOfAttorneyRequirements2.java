@@ -39,8 +39,8 @@ public class PowerOfAttorneyRequirements2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the lglRqrmnt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the lglRqrmnt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -54,10 +54,12 @@ public class PowerOfAttorneyRequirements2 {
      * {@link PowerOfAttorneyLegalisation1Code }
      * 
      * 
+     * @return
+     *     The value of the lglRqrmnt property.
      */
     public List<PowerOfAttorneyLegalisation1Code> getLglRqrmnt() {
         if (lglRqrmnt == null) {
-            lglRqrmnt = new ArrayList<PowerOfAttorneyLegalisation1Code>();
+            lglRqrmnt = new ArrayList<>();
         }
         return this.lglRqrmnt;
     }

@@ -9,20 +9,19 @@ import javax.xml.bind.annotation.XmlType;
  * <p>Java class for PartyType34Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="PartyType34Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ACCP"/&gt;
- *     &lt;enumeration value="ACQR"/&gt;
- *     &lt;enumeration value="CRDH"/&gt;
- *     &lt;enumeration value="CISS"/&gt;
- *     &lt;enumeration value="AGNT"/&gt;
- *     &lt;enumeration value="OTHN"/&gt;
- *     &lt;enumeration value="OTHP"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="PartyType34Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ACCP"/>
+ *     <enumeration value="ACQR"/>
+ *     <enumeration value="CRDH"/>
+ *     <enumeration value="CISS"/>
+ *     <enumeration value="AGNT"/>
+ *     <enumeration value="OTHN"/>
+ *     <enumeration value="OTHP"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "PartyType34Code")

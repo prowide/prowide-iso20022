@@ -4,14 +4,17 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import com.prowidesoftware.swift.model.mx.MxReadImpl;
+import com.prowidesoftware.swift.model.mx.MxReadParams;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
-import com.prowidesoftware.swift.model.mx.MxRead;
-import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -28,18 +31,18 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:auth.091.001.01")
 public class MxAuth09100101
-    extends com.prowidesoftware.swift.model.mx.AbstractMX
+    extends AbstractMX
 {
 
     @XmlElement(name = "DerivsTradRcncltnSttstclRpt", required = true)
     protected DerivativesTradeReconciliationStatisticalReportV01 derivsTradRcncltnSttstclRpt;
-    public final static transient String BUSINESS_PROCESS = "auth";
-    public final static transient int FUNCTIONALITY = 91;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 1;
+    public static final transient String BUSINESS_PROCESS = "auth";
+    public static final transient int FUNCTIONALITY = 91;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {CompetentAuthority1 .class, Counterparty26 .class, Counterparty29 .class, CounterpartyTradeNature5Choice.class, DerivativesTradeReconciliationStatisticalReportV01 .class, DetailedReconciliationStatistics2 .class, DetailedStatisticsPerCounterparty5 .class, FinancialPartySectorType1Code.class, MxAuth09100101 .class, NoReasonCode.class, NonFinancialInstitutionSector2 .class, OptionParty1Code.class, OrganisationIdentification30 .class, OrganisationIdentification7Choice.class, OrganisationIdentification8Choice.class, OrganisationIdentification9Choice.class, ReconciliationStatisticsPerDerivativeContractGroup3 .class, ReconciliationStatisticsPerDerivativeType3 .class, ReportPeriodActivity1Code.class, StatisticsPerCounterparty1Choice.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TradeCounterpartyReport9 .class, TradingCapacity7Code.class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:auth.091.001.01";
+    public static final transient Class[] _classes = new Class[] {CompetentAuthority1 .class, Counterparty26 .class, Counterparty29 .class, CounterpartyTradeNature5Choice.class, DerivativesTradeReconciliationStatisticalReportV01 .class, DetailedReconciliationStatistics2 .class, DetailedStatisticsPerCounterparty5 .class, FinancialPartySectorType1Code.class, MxAuth09100101 .class, NoReasonCode.class, NonFinancialInstitutionSector2 .class, OptionParty1Code.class, OrganisationIdentification30 .class, OrganisationIdentification7Choice.class, OrganisationIdentification8Choice.class, OrganisationIdentification9Choice.class, ReconciliationStatisticsPerDerivativeContractGroup3 .class, ReconciliationStatisticsPerDerivativeType3 .class, ReportPeriodActivity1Code.class, StatisticsPerCounterparty1Choice.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TradeCounterpartyReport9 .class, TradingCapacity7Code.class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:auth.091.001.01";
 
     public MxAuth09100101() {
         super();
@@ -89,21 +92,6 @@ public class MxAuth09100101
     }
 
     @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
-    }
-
-    @Override
     public String getBusinessProcess() {
         return BUSINESS_PROCESS;
     }
@@ -128,7 +116,7 @@ public class MxAuth09100101
      * 
      */
     public static MxAuth09100101 parse(String xml) {
-        return ((MxAuth09100101) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxAuth09100101 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams()));
+        return ((MxAuth09100101) MxReadImpl.parse(MxAuth09100101 .class, xml, _classes, new MxReadParams()));
     }
 
     /**
@@ -137,7 +125,7 @@ public class MxAuth09100101
      * 
      */
     public static MxAuth09100101 parse(String xml, MxReadConfiguration conf) {
-        return ((MxAuth09100101) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxAuth09100101 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams(conf)));
+        return ((MxAuth09100101) MxReadImpl.parse(MxAuth09100101 .class, xml, _classes, new MxReadParams(conf)));
     }
 
     /**
@@ -173,8 +161,23 @@ public class MxAuth09100101
      * @return
      *     a new instance of MxAuth09100101
      */
-    public final static MxAuth09100101 fromJson(String json) {
-        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxAuth09100101 .class);
+    public static final MxAuth09100101 fromJson(String json) {
+        return AbstractMX.fromJson(json, MxAuth09100101 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

@@ -4,14 +4,17 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import com.prowidesoftware.swift.model.mx.MxReadImpl;
+import com.prowidesoftware.swift.model.mx.MxReadParams;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
-import com.prowidesoftware.swift.model.mx.MxRead;
-import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -28,18 +31,18 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:reda.041.001.02")
 public class MxReda04100102
-    extends com.prowidesoftware.swift.model.mx.AbstractMX
+    extends AbstractMX
 {
 
     @XmlElement(name = "PtyActvtyAdvc", required = true)
     protected PartyActivityAdviceV02 ptyActvtyAdvc;
-    public final static transient String BUSINESS_PROCESS = "reda";
-    public final static transient int FUNCTIONALITY = 41;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 2;
+    public static final transient String BUSINESS_PROCESS = "reda";
+    public static final transient int FUNCTIONALITY = 41;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 2;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {AddressType2Code.class, AddressType3Choice.class, CodeOrProprietary1Choice.class, Contact14 .class, GenericIdentification13 .class, GenericIdentification30 .class, GenericIdentification36 .class, LockStatus1Code.class, MarketSpecificAttribute1 .class, MessageHeader1 .class, MxReda04100102 .class, NameAndAddress5 .class, NamePrefix2Code.class, OtherContact1 .class, PartyActivityAdviceV02 .class, PartyIdentification120Choice.class, PartyIdentification136 .class, PartyLockStatus1 .class, PartyName4 .class, PartyReferenceDataChange3 .class, PartyStatement3 .class, PostalAddress1 .class, PostalAddress28 .class, PreferredContactMethod2Code.class, ResidenceType1Code.class, Restriction1 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, SystemPartyIdentification8 .class, SystemPartyType1Choice.class, TechnicalIdentification2Choice.class, UpdateLogAddress2 .class, UpdateLogContact2 .class, UpdateLogDate1 .class, UpdateLogMarketSpecificAttribute1 .class, UpdateLogPartyLockStatus1 .class, UpdateLogPartyName1 .class, UpdateLogPartyRecord2Choice.class, UpdateLogProprietary1 .class, UpdateLogResidenceType1 .class, UpdateLogRestriction1 .class, UpdateLogSystemPartyType1 .class, UpdateLogTechnicalAddress1 .class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:reda.041.001.02";
+    public static final transient Class[] _classes = new Class[] {AddressType2Code.class, AddressType3Choice.class, CodeOrProprietary1Choice.class, Contact14 .class, GenericIdentification13 .class, GenericIdentification30 .class, GenericIdentification36 .class, LockStatus1Code.class, MarketSpecificAttribute1 .class, MessageHeader1 .class, MxReda04100102 .class, NameAndAddress5 .class, NamePrefix2Code.class, OtherContact1 .class, PartyActivityAdviceV02 .class, PartyIdentification120Choice.class, PartyIdentification136 .class, PartyLockStatus1 .class, PartyName4 .class, PartyReferenceDataChange3 .class, PartyStatement3 .class, PostalAddress1 .class, PostalAddress28 .class, PreferredContactMethod2Code.class, ResidenceType1Code.class, Restriction1 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, SystemPartyIdentification8 .class, SystemPartyType1Choice.class, TechnicalIdentification2Choice.class, UpdateLogAddress2 .class, UpdateLogContact2 .class, UpdateLogDate1 .class, UpdateLogMarketSpecificAttribute1 .class, UpdateLogPartyLockStatus1 .class, UpdateLogPartyName1 .class, UpdateLogPartyRecord2Choice.class, UpdateLogProprietary1 .class, UpdateLogResidenceType1 .class, UpdateLogRestriction1 .class, UpdateLogSystemPartyType1 .class, UpdateLogTechnicalAddress1 .class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:reda.041.001.02";
 
     public MxReda04100102() {
         super();
@@ -89,21 +92,6 @@ public class MxReda04100102
     }
 
     @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
-    }
-
-    @Override
     public String getBusinessProcess() {
         return BUSINESS_PROCESS;
     }
@@ -128,7 +116,7 @@ public class MxReda04100102
      * 
      */
     public static MxReda04100102 parse(String xml) {
-        return ((MxReda04100102) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxReda04100102 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams()));
+        return ((MxReda04100102) MxReadImpl.parse(MxReda04100102 .class, xml, _classes, new MxReadParams()));
     }
 
     /**
@@ -137,7 +125,7 @@ public class MxReda04100102
      * 
      */
     public static MxReda04100102 parse(String xml, MxReadConfiguration conf) {
-        return ((MxReda04100102) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxReda04100102 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams(conf)));
+        return ((MxReda04100102) MxReadImpl.parse(MxReda04100102 .class, xml, _classes, new MxReadParams(conf)));
     }
 
     /**
@@ -173,8 +161,23 @@ public class MxReda04100102
      * @return
      *     a new instance of MxReda04100102
      */
-    public final static MxReda04100102 fromJson(String json) {
-        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxReda04100102 .class);
+    public static final MxReda04100102 fromJson(String json) {
+        return AbstractMX.fromJson(json, MxReda04100102 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

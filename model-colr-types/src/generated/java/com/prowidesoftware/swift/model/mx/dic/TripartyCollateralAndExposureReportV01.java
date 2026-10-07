@@ -164,8 +164,8 @@ public class TripartyCollateralAndExposureReportV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the xpsrTpAggtn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the xpsrTpAggtn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -179,10 +179,12 @@ public class TripartyCollateralAndExposureReportV01 {
      * {@link ExposureTypeAggregation3 }
      * 
      * 
+     * @return
+     *     The value of the xpsrTpAggtn property.
      */
     public List<ExposureTypeAggregation3> getXpsrTpAggtn() {
         if (xpsrTpAggtn == null) {
-            xpsrTpAggtn = new ArrayList<ExposureTypeAggregation3>();
+            xpsrTpAggtn = new ArrayList<>();
         }
         return this.xpsrTpAggtn;
     }
@@ -193,8 +195,8 @@ public class TripartyCollateralAndExposureReportV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ctrPtyAggtn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ctrPtyAggtn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -208,10 +210,12 @@ public class TripartyCollateralAndExposureReportV01 {
      * {@link CounterpartyAggregation3 }
      * 
      * 
+     * @return
+     *     The value of the ctrPtyAggtn property.
      */
     public List<CounterpartyAggregation3> getCtrPtyAggtn() {
         if (ctrPtyAggtn == null) {
-            ctrPtyAggtn = new ArrayList<CounterpartyAggregation3>();
+            ctrPtyAggtn = new ArrayList<>();
         }
         return this.ctrPtyAggtn;
     }
@@ -222,8 +226,8 @@ public class TripartyCollateralAndExposureReportV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the txs property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the txs property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -237,10 +241,12 @@ public class TripartyCollateralAndExposureReportV01 {
      * {@link Transaction124 }
      * 
      * 
+     * @return
+     *     The value of the txs property.
      */
     public List<Transaction124> getTxs() {
         if (txs == null) {
-            txs = new ArrayList<Transaction124>();
+            txs = new ArrayList<>();
         }
         return this.txs;
     }
@@ -276,8 +282,8 @@ public class TripartyCollateralAndExposureReportV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -291,10 +297,12 @@ public class TripartyCollateralAndExposureReportV01 {
      * {@link SupplementaryData1 }
      * 
      * 
+     * @return
+     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<SupplementaryData1>();
+            splmtryData = new ArrayList<>();
         }
         return this.splmtryData;
     }

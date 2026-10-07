@@ -34,8 +34,8 @@ public class SearchOr1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the schAnd property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the schAnd property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -49,10 +49,12 @@ public class SearchOr1 {
      * {@link SearchAnd1 }
      * 
      * 
+     * @return
+     *     The value of the schAnd property.
      */
     public List<SearchAnd1> getSchAnd() {
         if (schAnd == null) {
-            schAnd = new ArrayList<SearchAnd1>();
+            schAnd = new ArrayList<>();
         }
         return this.schAnd;
     }

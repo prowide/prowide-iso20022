@@ -74,8 +74,8 @@ public class QuoteSide1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the mktPric property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the mktPric property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -89,10 +89,12 @@ public class QuoteSide1 {
      * {@link Price1 }
      * 
      * 
+     * @return
+     *     The value of the mktPric property.
      */
     public List<Price1> getMktPric() {
         if (mktPric == null) {
-            mktPric = new ArrayList<Price1>();
+            mktPric = new ArrayList<>();
         }
         return this.mktPric;
     }
@@ -103,8 +105,8 @@ public class QuoteSide1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the minQty property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the minQty property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -118,10 +120,12 @@ public class QuoteSide1 {
      * {@link FinancialInstrumentQuantityChoice }
      * 
      * 
+     * @return
+     *     The value of the minQty property.
      */
     public List<FinancialInstrumentQuantityChoice> getMinQty() {
         if (minQty == null) {
-            minQty = new ArrayList<FinancialInstrumentQuantityChoice>();
+            minQty = new ArrayList<>();
         }
         return this.minQty;
     }

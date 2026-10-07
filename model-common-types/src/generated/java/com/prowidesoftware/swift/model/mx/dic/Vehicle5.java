@@ -401,8 +401,8 @@ public class Vehicle5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlVhclData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlVhclData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -416,10 +416,12 @@ public class Vehicle5 {
      * {@link Vehicle2 }
      * 
      * 
+     * @return
+     *     The value of the addtlVhclData property.
      */
     public List<Vehicle2> getAddtlVhclData() {
         if (addtlVhclData == null) {
-            addtlVhclData = new ArrayList<Vehicle2>();
+            addtlVhclData = new ArrayList<>();
         }
         return this.addtlVhclData;
     }

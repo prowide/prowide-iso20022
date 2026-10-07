@@ -34,8 +34,8 @@ public class OutputChannelSessionList {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the outptChnlSsnDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the outptChnlSsnDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -49,10 +49,12 @@ public class OutputChannelSessionList {
      * {@link OutputChannelSessionDetails }
      * 
      * 
+     * @return
+     *     The value of the outptChnlSsnDtls property.
      */
     public List<OutputChannelSessionDetails> getOutptChnlSsnDtls() {
         if (outptChnlSsnDtls == null) {
-            outptChnlSsnDtls = new ArrayList<OutputChannelSessionDetails>();
+            outptChnlSsnDtls = new ArrayList<>();
         }
         return this.outptChnlSsnDtls;
     }

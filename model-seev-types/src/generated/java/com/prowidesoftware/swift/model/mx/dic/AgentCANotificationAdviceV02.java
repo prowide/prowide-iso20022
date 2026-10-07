@@ -139,8 +139,8 @@ public class AgentCANotificationAdviceV02 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the agtInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the agtInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -154,10 +154,12 @@ public class AgentCANotificationAdviceV02 {
      * {@link CorporateActionAgent2 }
      * 
      * 
+     * @return
+     *     The value of the agtInf property.
      */
     public List<CorporateActionAgent2> getAgtInf() {
         if (agtInf == null) {
-            agtInf = new ArrayList<CorporateActionAgent2>();
+            agtInf = new ArrayList<>();
         }
         return this.agtInf;
     }
@@ -218,8 +220,8 @@ public class AgentCANotificationAdviceV02 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the corpActnOptnDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the corpActnOptnDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -233,10 +235,12 @@ public class AgentCANotificationAdviceV02 {
      * {@link CorporateActionOption235 }
      * 
      * 
+     * @return
+     *     The value of the corpActnOptnDtls property.
      */
     public List<CorporateActionOption235> getCorpActnOptnDtls() {
         if (corpActnOptnDtls == null) {
-            corpActnOptnDtls = new ArrayList<CorporateActionOption235>();
+            corpActnOptnDtls = new ArrayList<>();
         }
         return this.corpActnOptnDtls;
     }

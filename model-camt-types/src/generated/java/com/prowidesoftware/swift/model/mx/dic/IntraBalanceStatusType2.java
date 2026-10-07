@@ -40,8 +40,8 @@ public class IntraBalanceStatusType2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the prcgSts property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the prcgSts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -55,10 +55,12 @@ public class IntraBalanceStatusType2 {
      * {@link ProcessingStatus68Choice }
      * 
      * 
+     * @return
+     *     The value of the prcgSts property.
      */
     public List<ProcessingStatus68Choice> getPrcgSts() {
         if (prcgSts == null) {
-            prcgSts = new ArrayList<ProcessingStatus68Choice>();
+            prcgSts = new ArrayList<>();
         }
         return this.prcgSts;
     }
@@ -69,8 +71,8 @@ public class IntraBalanceStatusType2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sttlmSts property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sttlmSts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -84,10 +86,12 @@ public class IntraBalanceStatusType2 {
      * {@link SettlementStatus26Choice }
      * 
      * 
+     * @return
+     *     The value of the sttlmSts property.
      */
     public List<SettlementStatus26Choice> getSttlmSts() {
         if (sttlmSts == null) {
-            sttlmSts = new ArrayList<SettlementStatus26Choice>();
+            sttlmSts = new ArrayList<>();
         }
         return this.sttlmSts;
     }

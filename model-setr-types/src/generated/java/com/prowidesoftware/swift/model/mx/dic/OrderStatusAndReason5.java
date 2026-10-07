@@ -163,8 +163,8 @@ public class OrderStatusAndReason5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the undrlygFinInstrm property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the undrlygFinInstrm property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -178,10 +178,12 @@ public class OrderStatusAndReason5 {
      * {@link SecurityIdentification7 }
      * 
      * 
+     * @return
+     *     The value of the undrlygFinInstrm property.
      */
     public List<SecurityIdentification7> getUndrlygFinInstrm() {
         if (undrlygFinInstrm == null) {
-            undrlygFinInstrm = new ArrayList<SecurityIdentification7>();
+            undrlygFinInstrm = new ArrayList<>();
         }
         return this.undrlygFinInstrm;
     }

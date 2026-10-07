@@ -558,8 +558,8 @@ public class Context20 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the eComrcData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the eComrcData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -573,10 +573,12 @@ public class Context20 {
      * {@link ECommerceData1 }
      * 
      * 
+     * @return
+     *     The value of the eComrcData property.
      */
     public List<ECommerceData1> getEComrcData() {
         if (eComrcData == null) {
-            eComrcData = new ArrayList<ECommerceData1>();
+            eComrcData = new ArrayList<>();
         }
         return this.eComrcData;
     }
@@ -812,8 +814,8 @@ public class Context20 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sctyChrtcs property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sctyChrtcs property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -827,10 +829,12 @@ public class Context20 {
      * {@link SecurityCharacteristics1Code }
      * 
      * 
+     * @return
+     *     The value of the sctyChrtcs property.
      */
     public List<SecurityCharacteristics1Code> getSctyChrtcs() {
         if (sctyChrtcs == null) {
-            sctyChrtcs = new ArrayList<SecurityCharacteristics1Code>();
+            sctyChrtcs = new ArrayList<>();
         }
         return this.sctyChrtcs;
     }

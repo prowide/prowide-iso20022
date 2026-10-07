@@ -62,8 +62,8 @@ public class PendingBalance2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the pdgTxs property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the pdgTxs property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -77,10 +77,12 @@ public class PendingBalance2 {
      * {@link SettlementTypeAndIdentification5 }
      * 
      * 
+     * @return
+     *     The value of the pdgTxs property.
      */
     public List<SettlementTypeAndIdentification5> getPdgTxs() {
         if (pdgTxs == null) {
-            pdgTxs = new ArrayList<SettlementTypeAndIdentification5>();
+            pdgTxs = new ArrayList<>();
         }
         return this.pdgTxs;
     }

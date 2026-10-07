@@ -4,14 +4,17 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import com.prowidesoftware.swift.model.mx.MxReadImpl;
+import com.prowidesoftware.swift.model.mx.MxReadParams;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
-import com.prowidesoftware.swift.model.mx.MxRead;
-import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -28,18 +31,18 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:swift:xsd:camt.046.001.04")
 public class MxCamt04600104
-    extends com.prowidesoftware.swift.model.mx.AbstractMX
+    extends AbstractMX
 {
 
     @XmlElement(name = "GetRsvatn", required = true)
     protected GetReservationV04 getRsvatn;
-    public final static transient String BUSINESS_PROCESS = "camt";
-    public final static transient int FUNCTIONALITY = 46;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 4;
+    public static final transient String BUSINESS_PROCESS = "camt";
+    public static final transient int FUNCTIONALITY = 46;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 4;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {AccountIdentification4Choice.class, AccountSchemeName1Choice.class, AddressType2Code.class, BranchAndFinancialInstitutionIdentification5 .class, BranchData2 .class, ClearingSystemIdentification2Choice.class, ClearingSystemMemberIdentification2 .class, FinancialIdentificationSchemeName1Choice.class, FinancialInstitutionIdentification8 .class, GenericAccountIdentification1 .class, GenericFinancialIdentification1 .class, GenericIdentification1 .class, GetReservationV04 .class, MarketInfrastructureIdentification1Choice.class, MessageHeader9 .class, MxCamt04600104 .class, PostalAddress6 .class, QueryType2Code.class, RequestType4Choice.class, ReservationCriteria2Choice.class, ReservationCriteria3 .class, ReservationQuery2 .class, ReservationReturnCriteria1 .class, ReservationSearchCriteria2 .class, ReservationType1Code.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, SystemIdentification2Choice.class };
-    public final static transient String NAMESPACE = "urn:swift:xsd:camt.046.001.04";
+    public static final transient Class[] _classes = new Class[] {AccountIdentification4Choice.class, AccountSchemeName1Choice.class, AddressType2Code.class, BranchAndFinancialInstitutionIdentification5 .class, BranchData2 .class, ClearingSystemIdentification2Choice.class, ClearingSystemMemberIdentification2 .class, FinancialIdentificationSchemeName1Choice.class, FinancialInstitutionIdentification8 .class, GenericAccountIdentification1 .class, GenericFinancialIdentification1 .class, GenericIdentification1 .class, GetReservationV04 .class, MarketInfrastructureIdentification1Choice.class, MessageHeader9 .class, MxCamt04600104 .class, PostalAddress6 .class, QueryType2Code.class, RequestType4Choice.class, ReservationCriteria2Choice.class, ReservationCriteria3 .class, ReservationQuery2 .class, ReservationReturnCriteria1 .class, ReservationSearchCriteria2 .class, ReservationType1Code.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, SystemIdentification2Choice.class };
+    public static final transient String NAMESPACE = "urn:swift:xsd:camt.046.001.04";
 
     public MxCamt04600104() {
         super();
@@ -89,21 +92,6 @@ public class MxCamt04600104
     }
 
     @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
-    }
-
-    @Override
     public String getBusinessProcess() {
         return BUSINESS_PROCESS;
     }
@@ -128,7 +116,7 @@ public class MxCamt04600104
      * 
      */
     public static MxCamt04600104 parse(String xml) {
-        return ((MxCamt04600104) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxCamt04600104 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams()));
+        return ((MxCamt04600104) MxReadImpl.parse(MxCamt04600104 .class, xml, _classes, new MxReadParams()));
     }
 
     /**
@@ -137,7 +125,7 @@ public class MxCamt04600104
      * 
      */
     public static MxCamt04600104 parse(String xml, MxReadConfiguration conf) {
-        return ((MxCamt04600104) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxCamt04600104 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams(conf)));
+        return ((MxCamt04600104) MxReadImpl.parse(MxCamt04600104 .class, xml, _classes, new MxReadParams(conf)));
     }
 
     /**
@@ -173,8 +161,23 @@ public class MxCamt04600104
      * @return
      *     a new instance of MxCamt04600104
      */
-    public final static MxCamt04600104 fromJson(String json) {
-        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxCamt04600104 .class);
+    public static final MxCamt04600104 fromJson(String json) {
+        return AbstractMX.fromJson(json, MxCamt04600104 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

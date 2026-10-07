@@ -34,8 +34,8 @@ public class MultipleDebitAccountsSD1V01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the fxSplmtryData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the fxSplmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -49,10 +49,12 @@ public class MultipleDebitAccountsSD1V01 {
      * {@link FXSupplementaryData2 }
      * 
      * 
+     * @return
+     *     The value of the fxSplmtryData property.
      */
     public List<FXSupplementaryData2> getFXSplmtryData() {
         if (fxSplmtryData == null) {
-            fxSplmtryData = new ArrayList<FXSupplementaryData2>();
+            fxSplmtryData = new ArrayList<>();
         }
         return this.fxSplmtryData;
     }

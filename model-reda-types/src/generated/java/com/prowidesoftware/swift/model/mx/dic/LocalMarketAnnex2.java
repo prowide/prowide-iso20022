@@ -46,8 +46,8 @@ public class LocalMarketAnnex2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ctry property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ctry property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -61,10 +61,12 @@ public class LocalMarketAnnex2 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the ctry property.
      */
     public List<String> getCtry() {
         if (ctry == null) {
-            ctry = new ArrayList<String>();
+            ctry = new ArrayList<>();
         }
         return this.ctry;
     }
@@ -150,8 +152,8 @@ public class LocalMarketAnnex2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sttlmDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sttlmDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -165,10 +167,12 @@ public class LocalMarketAnnex2 {
      * {@link CashAccount22 }
      * 
      * 
+     * @return
+     *     The value of the sttlmDtls property.
      */
     public List<CashAccount22> getSttlmDtls() {
         if (sttlmDtls == null) {
-            sttlmDtls = new ArrayList<CashAccount22>();
+            sttlmDtls = new ArrayList<>();
         }
         return this.sttlmDtls;
     }

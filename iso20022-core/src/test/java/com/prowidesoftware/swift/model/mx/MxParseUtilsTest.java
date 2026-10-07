@@ -1374,6 +1374,41 @@ public class MxParseUtilsTest {
     }
 
     @Test
+    void testNeedsNormalization_ValidDocumentRooted_False() {
+        String xml =
+                "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08\"><FIToFICstmrCdtTrf/></Document>";
+        assertFalse(MxParseUtils.needsNormalization(xml));
+    }
+
+    @Test
+    void testNeedsNormalization_SiblingAppHdrAndDocument_True() {
+        String xml = "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\"><Fr/></AppHdr>"
+                + "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08\"/>";
+        assertTrue(MxParseUtils.needsNormalization(xml));
+    }
+
+    @Test
+    void testNeedsNormalization_UndeclaredPrefixNoWrap_True() {
+        // no sibling roots, but an undeclared prefix on Document still requires stripping
+        String xml = "<ns2:Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08\"><ns2:A/></ns2:Document>";
+        assertTrue(MxParseUtils.needsNormalization(xml));
+    }
+
+    @Test
+    void testNeedsNormalization_MatchesNormalizeLenientPayloadOutcome() {
+        String unchanged =
+                "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08\"><FIToFICstmrCdtTrf/></Document>";
+        assertEquals(
+                MxParseUtils.normalizeLenientPayload(unchanged) != unchanged,
+                MxParseUtils.needsNormalization(unchanged));
+
+        String changed = "<SwInt:AppHdr><SwInt:Fr/></SwInt:AppHdr>"
+                + "<ns2:Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08\"><ns2:A/></ns2:Document>";
+        assertEquals(
+                MxParseUtils.normalizeLenientPayload(changed) != changed, MxParseUtils.needsNormalization(changed));
+    }
+
+    @Test
     void testNormalizedReader_EquivalentToMaterializedString() throws Exception {
         String xml = "<?xml version=\"1.0\"?>"
                 + "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\"><Fr/></AppHdr>"

@@ -34,8 +34,8 @@ public class SwHSMClusterList {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the hsmCluster property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the hsmCluster property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -49,10 +49,12 @@ public class SwHSMClusterList {
      * {@link SwHSMCluster }
      * 
      * 
+     * @return
+     *     The value of the hsmCluster property.
      */
     public List<SwHSMCluster> getHSMCluster() {
         if (hsmCluster == null) {
-            hsmCluster = new ArrayList<SwHSMCluster>();
+            hsmCluster = new ArrayList<>();
         }
         return this.hsmCluster;
     }

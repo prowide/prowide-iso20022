@@ -107,8 +107,8 @@ public class Customer4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the taxRegnId property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the taxRegnId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -122,10 +122,12 @@ public class Customer4 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the taxRegnId property.
      */
     public List<String> getTaxRegnId() {
         if (taxRegnId == null) {
-            taxRegnId = new ArrayList<String>();
+            taxRegnId = new ArrayList<>();
         }
         return this.taxRegnId;
     }

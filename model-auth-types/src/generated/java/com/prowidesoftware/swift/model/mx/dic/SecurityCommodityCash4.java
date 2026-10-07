@@ -40,8 +40,8 @@ public class SecurityCommodityCash4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the scty property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the scty property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -55,10 +55,12 @@ public class SecurityCommodityCash4 {
      * {@link Security48 }
      * 
      * 
+     * @return
+     *     The value of the scty property.
      */
     public List<Security48> getScty() {
         if (scty == null) {
-            scty = new ArrayList<Security48>();
+            scty = new ArrayList<>();
         }
         return this.scty;
     }
@@ -69,8 +71,8 @@ public class SecurityCommodityCash4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cmmdty property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cmmdty property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -84,10 +86,12 @@ public class SecurityCommodityCash4 {
      * {@link Commodity42 }
      * 
      * 
+     * @return
+     *     The value of the cmmdty property.
      */
     public List<Commodity42> getCmmdty() {
         if (cmmdty == null) {
-            cmmdty = new ArrayList<Commodity42>();
+            cmmdty = new ArrayList<>();
         }
         return this.cmmdty;
     }
@@ -98,8 +102,8 @@ public class SecurityCommodityCash4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the csh property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the csh property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -113,10 +117,12 @@ public class SecurityCommodityCash4 {
      * {@link CashCompare3 }
      * 
      * 
+     * @return
+     *     The value of the csh property.
      */
     public List<CashCompare3> getCsh() {
         if (csh == null) {
-            csh = new ArrayList<CashCompare3>();
+            csh = new ArrayList<>();
         }
         return this.csh;
     }

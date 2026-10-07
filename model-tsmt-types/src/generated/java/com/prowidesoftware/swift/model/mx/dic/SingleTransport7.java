@@ -43,8 +43,8 @@ public class SingleTransport7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the trnsprtByAir property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the trnsprtByAir property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -58,10 +58,12 @@ public class SingleTransport7 {
      * {@link TransportByAir5 }
      * 
      * 
+     * @return
+     *     The value of the trnsprtByAir property.
      */
     public List<TransportByAir5> getTrnsprtByAir() {
         if (trnsprtByAir == null) {
-            trnsprtByAir = new ArrayList<TransportByAir5>();
+            trnsprtByAir = new ArrayList<>();
         }
         return this.trnsprtByAir;
     }
@@ -72,8 +74,8 @@ public class SingleTransport7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the trnsprtBySea property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the trnsprtBySea property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -87,10 +89,12 @@ public class SingleTransport7 {
      * {@link TransportBySea6 }
      * 
      * 
+     * @return
+     *     The value of the trnsprtBySea property.
      */
     public List<TransportBySea6> getTrnsprtBySea() {
         if (trnsprtBySea == null) {
-            trnsprtBySea = new ArrayList<TransportBySea6>();
+            trnsprtBySea = new ArrayList<>();
         }
         return this.trnsprtBySea;
     }
@@ -101,8 +105,8 @@ public class SingleTransport7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the trnsprtByRoad property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the trnsprtByRoad property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -116,10 +120,12 @@ public class SingleTransport7 {
      * {@link TransportByRoad5 }
      * 
      * 
+     * @return
+     *     The value of the trnsprtByRoad property.
      */
     public List<TransportByRoad5> getTrnsprtByRoad() {
         if (trnsprtByRoad == null) {
-            trnsprtByRoad = new ArrayList<TransportByRoad5>();
+            trnsprtByRoad = new ArrayList<>();
         }
         return this.trnsprtByRoad;
     }
@@ -130,8 +136,8 @@ public class SingleTransport7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the trnsprtByRail property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the trnsprtByRail property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -145,10 +151,12 @@ public class SingleTransport7 {
      * {@link TransportByRail5 }
      * 
      * 
+     * @return
+     *     The value of the trnsprtByRail property.
      */
     public List<TransportByRail5> getTrnsprtByRail() {
         if (trnsprtByRail == null) {
-            trnsprtByRail = new ArrayList<TransportByRail5>();
+            trnsprtByRail = new ArrayList<>();
         }
         return this.trnsprtByRail;
     }

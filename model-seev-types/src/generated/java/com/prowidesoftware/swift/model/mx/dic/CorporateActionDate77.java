@@ -289,8 +289,8 @@ public class CorporateActionDate77 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the brrwrStockLndgDdln property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the brrwrStockLndgDdln property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -304,10 +304,12 @@ public class CorporateActionDate77 {
      * {@link BorrowerLendingDeadline5 }
      * 
      * 
+     * @return
+     *     The value of the brrwrStockLndgDdln property.
      */
     public List<BorrowerLendingDeadline5> getBrrwrStockLndgDdln() {
         if (brrwrStockLndgDdln == null) {
-            brrwrStockLndgDdln = new ArrayList<BorrowerLendingDeadline5>();
+            brrwrStockLndgDdln = new ArrayList<>();
         }
         return this.brrwrStockLndgDdln;
     }

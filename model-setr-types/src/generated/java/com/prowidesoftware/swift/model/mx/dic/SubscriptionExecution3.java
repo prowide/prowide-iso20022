@@ -165,8 +165,8 @@ public class SubscriptionExecution3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ordrTp property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ordrTp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -180,10 +180,12 @@ public class SubscriptionExecution3 {
      * {@link FundOrderType1 }
      * 
      * 
+     * @return
+     *     The value of the ordrTp property.
      */
     public List<FundOrderType1> getOrdrTp() {
         if (ordrTp == null) {
-            ordrTp = new ArrayList<FundOrderType1>();
+            ordrTp = new ArrayList<>();
         }
         return this.ordrTp;
     }
@@ -453,8 +455,8 @@ public class SubscriptionExecution3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the fxDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the fxDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -468,10 +470,12 @@ public class SubscriptionExecution3 {
      * {@link ForeignExchangeTerms4 }
      * 
      * 
+     * @return
+     *     The value of the fxDtls property.
      */
     public List<ForeignExchangeTerms4> getFXDtls() {
         if (fxDtls == null) {
-            fxDtls = new ArrayList<ForeignExchangeTerms4>();
+            fxDtls = new ArrayList<>();
         }
         return this.fxDtls;
     }

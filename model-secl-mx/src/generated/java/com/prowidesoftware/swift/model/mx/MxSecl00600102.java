@@ -4,14 +4,17 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import com.prowidesoftware.swift.model.mx.MxReadImpl;
+import com.prowidesoftware.swift.model.mx.MxReadParams;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
-import com.prowidesoftware.swift.model.mx.MxRead;
-import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -28,18 +31,18 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:secl.006.001.02")
 public class MxSecl00600102
-    extends com.prowidesoftware.swift.model.mx.AbstractMX
+    extends AbstractMX
 {
 
     @XmlElement(name = "DfltFndCntrbtnRpt", required = true)
     protected DefaultFundContributionReportV02 dfltFndCntrbtnRpt;
-    public final static transient String BUSINESS_PROCESS = "secl";
-    public final static transient int FUNCTIONALITY = 6;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 2;
+    public static final transient String BUSINESS_PROCESS = "secl";
+    public static final transient int FUNCTIONALITY = 6;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 2;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {AccountIdentification4Choice.class, AccountSchemeName1Choice.class, ActiveCurrencyAndAmount.class, ActiveOrHistoricCurrencyAndAmount.class, AlternatePartyIdentification4 .class, AmountAndDirection21 .class, ClearingAccountType1Code.class, Collateral3 .class, CollateralType2Code.class, Contribution1 .class, CreditDebitCode.class, DateAndDateTimeChoice.class, DefaultFund1 .class, DefaultFundContributionReportV02 .class, DefaultFundReport1 .class, EventFrequency6Code.class, GenericAccountIdentification1 .class, GenericIdentification29 .class, GenericIdentification30 .class, IdentificationType6Choice.class, MxSecl00600102 .class, NameAndAddress6 .class, PartyIdentification33Choice.class, PartyIdentification35Choice.class, PartyIdentificationAndAccount31 .class, PartyTextInformation1 .class, PostalAddress2 .class, ReportParameters2 .class, SecuritiesAccount18 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TypeOfIdentification1Code.class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:secl.006.001.02";
+    public static final transient Class[] _classes = new Class[] {AccountIdentification4Choice.class, AccountSchemeName1Choice.class, ActiveCurrencyAndAmount.class, ActiveOrHistoricCurrencyAndAmount.class, AlternatePartyIdentification4 .class, AmountAndDirection21 .class, ClearingAccountType1Code.class, Collateral3 .class, CollateralType2Code.class, Contribution1 .class, CreditDebitCode.class, DateAndDateTimeChoice.class, DefaultFund1 .class, DefaultFundContributionReportV02 .class, DefaultFundReport1 .class, EventFrequency6Code.class, GenericAccountIdentification1 .class, GenericIdentification29 .class, GenericIdentification30 .class, IdentificationType6Choice.class, MxSecl00600102 .class, NameAndAddress6 .class, PartyIdentification33Choice.class, PartyIdentification35Choice.class, PartyIdentificationAndAccount31 .class, PartyTextInformation1 .class, PostalAddress2 .class, ReportParameters2 .class, SecuritiesAccount18 .class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TypeOfIdentification1Code.class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:secl.006.001.02";
 
     public MxSecl00600102() {
         super();
@@ -89,21 +92,6 @@ public class MxSecl00600102
     }
 
     @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
-    }
-
-    @Override
     public String getBusinessProcess() {
         return BUSINESS_PROCESS;
     }
@@ -128,7 +116,7 @@ public class MxSecl00600102
      * 
      */
     public static MxSecl00600102 parse(String xml) {
-        return ((MxSecl00600102) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxSecl00600102 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams()));
+        return ((MxSecl00600102) MxReadImpl.parse(MxSecl00600102 .class, xml, _classes, new MxReadParams()));
     }
 
     /**
@@ -137,7 +125,7 @@ public class MxSecl00600102
      * 
      */
     public static MxSecl00600102 parse(String xml, MxReadConfiguration conf) {
-        return ((MxSecl00600102) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxSecl00600102 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams(conf)));
+        return ((MxSecl00600102) MxReadImpl.parse(MxSecl00600102 .class, xml, _classes, new MxReadParams(conf)));
     }
 
     /**
@@ -173,8 +161,23 @@ public class MxSecl00600102
      * @return
      *     a new instance of MxSecl00600102
      */
-    public final static MxSecl00600102 fromJson(String json) {
-        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSecl00600102 .class);
+    public static final MxSecl00600102 fromJson(String json) {
+        return AbstractMX.fromJson(json, MxSecl00600102 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

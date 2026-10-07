@@ -39,8 +39,8 @@ public class SecuritiesTradeVenueCriteria1Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the mic property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the mic property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -54,10 +54,12 @@ public class SecuritiesTradeVenueCriteria1Choice {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the mic property.
      */
     public List<String> getMIC() {
         if (mic == null) {
-            mic = new ArrayList<String>();
+            mic = new ArrayList<>();
         }
         return this.mic;
     }

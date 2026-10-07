@@ -34,8 +34,8 @@ public class PriceReport3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the pricValtnDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the pricValtnDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -49,10 +49,12 @@ public class PriceReport3 {
      * {@link PriceValuation4 }
      * 
      * 
+     * @return
+     *     The value of the pricValtnDtls property.
      */
     public List<PriceValuation4> getPricValtnDtls() {
         if (pricValtnDtls == null) {
-            pricValtnDtls = new ArrayList<PriceValuation4>();
+            pricValtnDtls = new ArrayList<>();
         }
         return this.pricValtnDtls;
     }

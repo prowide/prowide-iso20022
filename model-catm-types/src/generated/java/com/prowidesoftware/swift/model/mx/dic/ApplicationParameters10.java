@@ -236,8 +236,8 @@ public class ApplicationParameters10 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the params property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the params property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -250,10 +250,12 @@ public class ApplicationParameters10 {
      * Objects of the following type(s) are allowed in the list
      * byte[]
      * 
+     * @return
+     *     The value of the params property.
      */
     public List<byte[]> getParams() {
         if (params == null) {
-            params = new ArrayList<byte[]>();
+            params = new ArrayList<>();
         }
         return this.params;
     }

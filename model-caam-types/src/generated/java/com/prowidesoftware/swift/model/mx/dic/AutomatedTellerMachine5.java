@@ -237,8 +237,8 @@ public class AutomatedTellerMachine5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the outOfSvcDvc property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the outOfSvcDvc property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -252,10 +252,12 @@ public class AutomatedTellerMachine5 {
      * {@link ATMDevice2Code }
      * 
      * 
+     * @return
+     *     The value of the outOfSvcDvc property.
      */
     public List<ATMDevice2Code> getOutOfSvcDvc() {
         if (outOfSvcDvc == null) {
-            outOfSvcDvc = new ArrayList<ATMDevice2Code>();
+            outOfSvcDvc = new ArrayList<>();
         }
         return this.outOfSvcDvc;
     }

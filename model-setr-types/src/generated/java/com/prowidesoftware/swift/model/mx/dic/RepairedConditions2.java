@@ -37,8 +37,8 @@ public class RepairedConditions2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rprdChrg property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rprdChrg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -52,10 +52,12 @@ public class RepairedConditions2 {
      * {@link Charge11 }
      * 
      * 
+     * @return
+     *     The value of the rprdChrg property.
      */
     public List<Charge11> getRprdChrg() {
         if (rprdChrg == null) {
-            rprdChrg = new ArrayList<Charge11>();
+            rprdChrg = new ArrayList<>();
         }
         return this.rprdChrg;
     }
@@ -66,8 +68,8 @@ public class RepairedConditions2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rprdComssn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rprdComssn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -81,10 +83,12 @@ public class RepairedConditions2 {
      * {@link Commission7 }
      * 
      * 
+     * @return
+     *     The value of the rprdComssn property.
      */
     public List<Commission7> getRprdComssn() {
         if (rprdComssn == null) {
-            rprdComssn = new ArrayList<Commission7>();
+            rprdComssn = new ArrayList<>();
         }
         return this.rprdComssn;
     }

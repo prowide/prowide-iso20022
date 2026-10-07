@@ -122,8 +122,8 @@ public class AcquirerProtocolParameters12 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the acqrrId property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the acqrrId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -137,10 +137,12 @@ public class AcquirerProtocolParameters12 {
      * {@link GenericIdentification53 }
      * 
      * 
+     * @return
+     *     The value of the acqrrId property.
      */
     public List<GenericIdentification53> getAcqrrId() {
         if (acqrrId == null) {
-            acqrrId = new ArrayList<GenericIdentification53>();
+            acqrrId = new ArrayList<>();
         }
         return this.acqrrId;
     }
@@ -176,8 +178,8 @@ public class AcquirerProtocolParameters12 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the applId property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the applId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -191,10 +193,12 @@ public class AcquirerProtocolParameters12 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the applId property.
      */
     public List<String> getApplId() {
         if (applId == null) {
-            applId = new ArrayList<String>();
+            applId = new ArrayList<>();
         }
         return this.applId;
     }
@@ -205,8 +209,8 @@ public class AcquirerProtocolParameters12 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the hst property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the hst property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -220,10 +224,12 @@ public class AcquirerProtocolParameters12 {
      * {@link AcquirerHostConfiguration6 }
      * 
      * 
+     * @return
+     *     The value of the hst property.
      */
     public List<AcquirerHostConfiguration6> getHst() {
         if (hst == null) {
-            hst = new ArrayList<AcquirerHostConfiguration6>();
+            hst = new ArrayList<>();
         }
         return this.hst;
     }
@@ -459,8 +465,8 @@ public class AcquirerProtocolParameters12 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the btchTrfCntt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the btchTrfCntt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -474,10 +480,12 @@ public class AcquirerProtocolParameters12 {
      * {@link BatchTransactionType1Code }
      * 
      * 
+     * @return
+     *     The value of the btchTrfCntt property.
      */
     public List<BatchTransactionType1Code> getBtchTrfCntt() {
         if (btchTrfCntt == null) {
-            btchTrfCntt = new ArrayList<BatchTransactionType1Code>();
+            btchTrfCntt = new ArrayList<>();
         }
         return this.btchTrfCntt;
     }
@@ -538,8 +546,8 @@ public class AcquirerProtocolParameters12 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the msgItm property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the msgItm property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -553,10 +561,12 @@ public class AcquirerProtocolParameters12 {
      * {@link MessageItemCondition1 }
      * 
      * 
+     * @return
+     *     The value of the msgItm property.
      */
     public List<MessageItemCondition1> getMsgItm() {
         if (msgItm == null) {
-            msgItm = new ArrayList<MessageItemCondition1>();
+            msgItm = new ArrayList<>();
         }
         return this.msgItm;
     }

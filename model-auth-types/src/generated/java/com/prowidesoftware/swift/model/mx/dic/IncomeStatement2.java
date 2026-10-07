@@ -58,8 +58,8 @@ public class IncomeStatement2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the clrMmbFee property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the clrMmbFee property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -73,10 +73,12 @@ public class IncomeStatement2 {
      * {@link ClearingMemberFee1 }
      * 
      * 
+     * @return
+     *     The value of the clrMmbFee property.
      */
     public List<ClearingMemberFee1> getClrMmbFee() {
         if (clrMmbFee == null) {
-            clrMmbFee = new ArrayList<ClearingMemberFee1>();
+            clrMmbFee = new ArrayList<>();
         }
         return this.clrMmbFee;
     }

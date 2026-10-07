@@ -267,8 +267,8 @@ public class MessageAndBusinessReference13 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the intrmyInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the intrmyInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -282,10 +282,12 @@ public class MessageAndBusinessReference13 {
      * {@link Intermediary48 }
      * 
      * 
+     * @return
+     *     The value of the intrmyInf property.
      */
     public List<Intermediary48> getIntrmyInf() {
         if (intrmyInf == null) {
-            intrmyInf = new ArrayList<Intermediary48>();
+            intrmyInf = new ArrayList<>();
         }
         return this.intrmyInf;
     }
@@ -296,8 +298,8 @@ public class MessageAndBusinessReference13 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the qryInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the qryInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -311,10 +313,12 @@ public class MessageAndBusinessReference13 {
      * {@link AdditionalInformation25 }
      * 
      * 
+     * @return
+     *     The value of the qryInf property.
      */
     public List<AdditionalInformation25> getQryInf() {
         if (qryInf == null) {
-            qryInf = new ArrayList<AdditionalInformation25>();
+            qryInf = new ArrayList<>();
         }
         return this.qryInf;
     }

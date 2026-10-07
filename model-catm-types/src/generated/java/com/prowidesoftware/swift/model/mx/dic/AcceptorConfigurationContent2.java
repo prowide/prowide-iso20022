@@ -49,8 +49,8 @@ public class AcceptorConfigurationContent2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the acqrrPrtcolParams property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the acqrrPrtcolParams property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -64,10 +64,12 @@ public class AcceptorConfigurationContent2 {
      * {@link AcquirerProtocolParameters3 }
      * 
      * 
+     * @return
+     *     The value of the acqrrPrtcolParams property.
      */
     public List<AcquirerProtocolParameters3> getAcqrrPrtcolParams() {
         if (acqrrPrtcolParams == null) {
-            acqrrPrtcolParams = new ArrayList<AcquirerProtocolParameters3>();
+            acqrrPrtcolParams = new ArrayList<>();
         }
         return this.acqrrPrtcolParams;
     }
@@ -78,8 +80,8 @@ public class AcceptorConfigurationContent2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the mrchntParams property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the mrchntParams property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -92,10 +94,12 @@ public class AcceptorConfigurationContent2 {
      * Objects of the following type(s) are allowed in the list
      * byte[]
      * 
+     * @return
+     *     The value of the mrchntParams property.
      */
     public List<byte[]> getMrchntParams() {
         if (mrchntParams == null) {
-            mrchntParams = new ArrayList<byte[]>();
+            mrchntParams = new ArrayList<>();
         }
         return this.mrchntParams;
     }
@@ -106,8 +110,8 @@ public class AcceptorConfigurationContent2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the termnlParams property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the termnlParams property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -120,10 +124,12 @@ public class AcceptorConfigurationContent2 {
      * Objects of the following type(s) are allowed in the list
      * byte[]
      * 
+     * @return
+     *     The value of the termnlParams property.
      */
     public List<byte[]> getTermnlParams() {
         if (termnlParams == null) {
-            termnlParams = new ArrayList<byte[]>();
+            termnlParams = new ArrayList<>();
         }
         return this.termnlParams;
     }
@@ -134,8 +140,8 @@ public class AcceptorConfigurationContent2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the applParams property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the applParams property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -149,10 +155,12 @@ public class AcceptorConfigurationContent2 {
      * {@link ApplicationParameters2 }
      * 
      * 
+     * @return
+     *     The value of the applParams property.
      */
     public List<ApplicationParameters2> getApplParams() {
         if (applParams == null) {
-            applParams = new ArrayList<ApplicationParameters2>();
+            applParams = new ArrayList<>();
         }
         return this.applParams;
     }
@@ -163,8 +171,8 @@ public class AcceptorConfigurationContent2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the hstComParams property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the hstComParams property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -178,10 +186,12 @@ public class AcceptorConfigurationContent2 {
      * {@link HostCommunicationParameter2 }
      * 
      * 
+     * @return
+     *     The value of the hstComParams property.
      */
     public List<HostCommunicationParameter2> getHstComParams() {
         if (hstComParams == null) {
-            hstComParams = new ArrayList<HostCommunicationParameter2>();
+            hstComParams = new ArrayList<>();
         }
         return this.hstComParams;
     }
@@ -192,8 +202,8 @@ public class AcceptorConfigurationContent2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sctyParams property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sctyParams property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -207,10 +217,12 @@ public class AcceptorConfigurationContent2 {
      * {@link SecurityParameters1 }
      * 
      * 
+     * @return
+     *     The value of the sctyParams property.
      */
     public List<SecurityParameters1> getSctyParams() {
         if (sctyParams == null) {
-            sctyParams = new ArrayList<SecurityParameters1>();
+            sctyParams = new ArrayList<>();
         }
         return this.sctyParams;
     }

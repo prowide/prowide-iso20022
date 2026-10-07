@@ -137,8 +137,8 @@ public class TravelAgencyPackage1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cstmrRef property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cstmrRef property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -152,10 +152,12 @@ public class TravelAgencyPackage1 {
      * {@link CustomerReference1 }
      * 
      * 
+     * @return
+     *     The value of the cstmrRef property.
      */
     public List<CustomerReference1> getCstmrRef() {
         if (cstmrRef == null) {
-            cstmrRef = new ArrayList<CustomerReference1>();
+            cstmrRef = new ArrayList<>();
         }
         return this.cstmrRef;
     }

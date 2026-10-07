@@ -370,8 +370,8 @@ public class PaymentComplementaryInformation {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sndrToRcvrInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sndrToRcvrInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -385,10 +385,12 @@ public class PaymentComplementaryInformation {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the sndrToRcvrInf property.
      */
     public List<String> getSndrToRcvrInf() {
         if (sndrToRcvrInf == null) {
-            sndrToRcvrInf = new ArrayList<String>();
+            sndrToRcvrInf = new ArrayList<>();
         }
         return this.sndrToRcvrInf;
     }

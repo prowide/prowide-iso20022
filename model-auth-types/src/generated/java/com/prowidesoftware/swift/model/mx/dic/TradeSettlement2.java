@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -297,8 +297,8 @@ public class TradeSettlement2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the subTtlClctdTax property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the subTtlClctdTax property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -312,10 +312,12 @@ public class TradeSettlement2 {
      * {@link SettlementSubTotalCalculatedTax2 }
      * 
      * 
+     * @return
+     *     The value of the subTtlClctdTax property.
      */
     public List<SettlementSubTotalCalculatedTax2> getSubTtlClctdTax() {
         if (subTtlClctdTax == null) {
-            subTtlClctdTax = new ArrayList<SettlementSubTotalCalculatedTax2>();
+            subTtlClctdTax = new ArrayList<>();
         }
         return this.subTtlClctdTax;
     }
@@ -326,8 +328,8 @@ public class TradeSettlement2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the earlyPmts property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the earlyPmts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -341,10 +343,12 @@ public class TradeSettlement2 {
      * {@link EarlyPayment1 }
      * 
      * 
+     * @return
+     *     The value of the earlyPmts property.
      */
     public List<EarlyPayment1> getEarlyPmts() {
         if (earlyPmts == null) {
-            earlyPmts = new ArrayList<EarlyPayment1>();
+            earlyPmts = new ArrayList<>();
         }
         return this.earlyPmts;
     }

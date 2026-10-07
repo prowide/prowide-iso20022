@@ -4,14 +4,17 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import com.prowidesoftware.swift.model.mx.MxReadImpl;
+import com.prowidesoftware.swift.model.mx.MxReadParams;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
-import com.prowidesoftware.swift.model.mx.MxRead;
-import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -28,18 +31,18 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:auth.090.001.01")
 public class MxAuth09000101
-    extends com.prowidesoftware.swift.model.mx.AbstractMX
+    extends AbstractMX
 {
 
     @XmlElement(name = "DerivsTradPosSetRpt", required = true)
     protected DerivativesTradePositionSetReportV01 derivsTradPosSetRpt;
-    public final static transient String BUSINESS_PROCESS = "auth";
-    public final static transient int FUNCTIONALITY = 90;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 1;
+    public static final transient String BUSINESS_PROCESS = "auth";
+    public static final transient int FUNCTIONALITY = 90;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {ActiveOrHistoricCurrencyAnd20Amount.class, BenchmarkCurveName3Code.class, CollateralisationType1Code.class, Counterparty26 .class, Counterparty29 .class, CounterpartyTradeNature5Choice.class, DebtInstrumentSeniorityType2Code.class, DerivativesTradePositionSetReportV01 .class, ExchangeRateBasis1 .class, ExchangeRateBasis1Choice.class, FinancialInstrumentContractType2Code.class, FinancialPartySectorType1Code.class, MasterAgreement2 .class, MaturityTerm2 .class, MxAuth09000101 .class, NoReasonCode.class, NonFinancialInstitutionSector2 .class, OptionParty1Code.class, OptionType2Code.class, OrganisationIdentification30 .class, OrganisationIdentification7Choice.class, OrganisationIdentification8Choice.class, OrganisationIdentification9Choice.class, PositionSet4 .class, PositionSet5 .class, PositionSetAggregated1Choice.class, PositionSetAggregated3 .class, PositionSetBuyerAndSeller1 .class, PositionSetCollateralDimensions2 .class, PositionSetCollateralMetrics1 .class, PositionSetCollateralTotal1 .class, PositionSetDimensions3 .class, PositionSetMetrics1 .class, PositionSetPostedAndReceived1 .class, PositionSetTotal1 .class, PositionSetValueAndNotional1 .class, ProductType4Code.class, RateBasis1Code.class, ReportPeriodActivity1Code.class, SecurityIdentification18Choice.class, SecurityIdentification34Choice.class, SecurityIdentification35Choice.class, SpecialPurpose2Code.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TimeToMaturity1Choice.class, TimeToMaturityPeriod1 .class, TradeCounterpartyReport9 .class, TradingCapacity7Code.class, UnderlyingIdentification1Code.class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:auth.090.001.01";
+    public static final transient Class[] _classes = new Class[] {ActiveOrHistoricCurrencyAnd20Amount.class, BenchmarkCurveName3Code.class, CollateralisationType1Code.class, Counterparty26 .class, Counterparty29 .class, CounterpartyTradeNature5Choice.class, DebtInstrumentSeniorityType2Code.class, DerivativesTradePositionSetReportV01 .class, ExchangeRateBasis1 .class, ExchangeRateBasis1Choice.class, FinancialInstrumentContractType2Code.class, FinancialPartySectorType1Code.class, MasterAgreement2 .class, MaturityTerm2 .class, MxAuth09000101 .class, NoReasonCode.class, NonFinancialInstitutionSector2 .class, OptionParty1Code.class, OptionType2Code.class, OrganisationIdentification30 .class, OrganisationIdentification7Choice.class, OrganisationIdentification8Choice.class, OrganisationIdentification9Choice.class, PositionSet4 .class, PositionSet5 .class, PositionSetAggregated1Choice.class, PositionSetAggregated3 .class, PositionSetBuyerAndSeller1 .class, PositionSetCollateralDimensions2 .class, PositionSetCollateralMetrics1 .class, PositionSetCollateralTotal1 .class, PositionSetDimensions3 .class, PositionSetMetrics1 .class, PositionSetPostedAndReceived1 .class, PositionSetTotal1 .class, PositionSetValueAndNotional1 .class, ProductType4Code.class, RateBasis1Code.class, ReportPeriodActivity1Code.class, SecurityIdentification18Choice.class, SecurityIdentification34Choice.class, SecurityIdentification35Choice.class, SpecialPurpose2Code.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TimeToMaturity1Choice.class, TimeToMaturityPeriod1 .class, TradeCounterpartyReport9 .class, TradingCapacity7Code.class, UnderlyingIdentification1Code.class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:auth.090.001.01";
 
     public MxAuth09000101() {
         super();
@@ -89,21 +92,6 @@ public class MxAuth09000101
     }
 
     @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
-    }
-
-    @Override
     public String getBusinessProcess() {
         return BUSINESS_PROCESS;
     }
@@ -128,7 +116,7 @@ public class MxAuth09000101
      * 
      */
     public static MxAuth09000101 parse(String xml) {
-        return ((MxAuth09000101) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxAuth09000101 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams()));
+        return ((MxAuth09000101) MxReadImpl.parse(MxAuth09000101 .class, xml, _classes, new MxReadParams()));
     }
 
     /**
@@ -137,7 +125,7 @@ public class MxAuth09000101
      * 
      */
     public static MxAuth09000101 parse(String xml, MxReadConfiguration conf) {
-        return ((MxAuth09000101) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxAuth09000101 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams(conf)));
+        return ((MxAuth09000101) MxReadImpl.parse(MxAuth09000101 .class, xml, _classes, new MxReadParams(conf)));
     }
 
     /**
@@ -173,8 +161,23 @@ public class MxAuth09000101
      * @return
      *     a new instance of MxAuth09000101
      */
-    public final static MxAuth09000101 fromJson(String json) {
-        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxAuth09000101 .class);
+    public static final MxAuth09000101 fromJson(String json) {
+        return AbstractMX.fromJson(json, MxAuth09000101 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

@@ -63,8 +63,8 @@ public class MisMatchReport2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the misMtchInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the misMtchInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -78,10 +78,12 @@ public class MisMatchReport2 {
      * {@link ValidationResult4 }
      * 
      * 
+     * @return
+     *     The value of the misMtchInf property.
      */
     public List<ValidationResult4> getMisMtchInf() {
         if (misMtchInf == null) {
-            misMtchInf = new ArrayList<ValidationResult4>();
+            misMtchInf = new ArrayList<>();
         }
         return this.misMtchInf;
     }

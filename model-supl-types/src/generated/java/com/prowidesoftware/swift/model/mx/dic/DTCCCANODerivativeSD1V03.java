@@ -34,8 +34,8 @@ public class DTCCCANODerivativeSD1V03 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the corpActnNtfctn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the corpActnNtfctn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -49,10 +49,12 @@ public class DTCCCANODerivativeSD1V03 {
      * {@link CorporateActionNotificationSD2 }
      * 
      * 
+     * @return
+     *     The value of the corpActnNtfctn property.
      */
     public List<CorporateActionNotificationSD2> getCorpActnNtfctn() {
         if (corpActnNtfctn == null) {
-            corpActnNtfctn = new ArrayList<CorporateActionNotificationSD2>();
+            corpActnNtfctn = new ArrayList<>();
         }
         return this.corpActnNtfctn;
     }

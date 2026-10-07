@@ -169,8 +169,8 @@ public class SecuritiesTransactionPostingReport002V05 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the finInstrmDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the finInstrmDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -184,10 +184,12 @@ public class SecuritiesTransactionPostingReport002V05 {
      * {@link FinancialInstrumentDetails18 }
      * 
      * 
+     * @return
+     *     The value of the finInstrmDtls property.
      */
     public List<FinancialInstrumentDetails18> getFinInstrmDtls() {
         if (finInstrmDtls == null) {
-            finInstrmDtls = new ArrayList<FinancialInstrumentDetails18>();
+            finInstrmDtls = new ArrayList<>();
         }
         return this.finInstrmDtls;
     }
@@ -198,8 +200,8 @@ public class SecuritiesTransactionPostingReport002V05 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the subAcctDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the subAcctDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -213,10 +215,12 @@ public class SecuritiesTransactionPostingReport002V05 {
      * {@link SubAccountIdentification35 }
      * 
      * 
+     * @return
+     *     The value of the subAcctDtls property.
      */
     public List<SubAccountIdentification35> getSubAcctDtls() {
         if (subAcctDtls == null) {
-            subAcctDtls = new ArrayList<SubAccountIdentification35>();
+            subAcctDtls = new ArrayList<>();
         }
         return this.subAcctDtls;
     }

@@ -129,8 +129,8 @@ public class InvestmentAccount21 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ownrId property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ownrId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -144,10 +144,12 @@ public class InvestmentAccount21 {
      * {@link PartyIdentification2Choice }
      * 
      * 
+     * @return
+     *     The value of the ownrId property.
      */
     public List<PartyIdentification2Choice> getOwnrId() {
         if (ownrId == null) {
-            ownrId = new ArrayList<PartyIdentification2Choice>();
+            ownrId = new ArrayList<>();
         }
         return this.ownrId;
     }

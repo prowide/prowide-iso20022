@@ -1,17 +1,17 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -267,8 +267,8 @@ public class SwitchOrder7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rltdPtyDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rltdPtyDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -282,10 +282,12 @@ public class SwitchOrder7 {
      * {@link Intermediary40 }
      * 
      * 
+     * @return
+     *     The value of the rltdPtyDtls property.
      */
     public List<Intermediary40> getRltdPtyDtls() {
         if (rltdPtyDtls == null) {
-            rltdPtyDtls = new ArrayList<Intermediary40>();
+            rltdPtyDtls = new ArrayList<>();
         }
         return this.rltdPtyDtls;
     }
@@ -471,8 +473,8 @@ public class SwitchOrder7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the redLegDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the redLegDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -486,10 +488,12 @@ public class SwitchOrder7 {
      * {@link SwitchRedemptionLegOrder6 }
      * 
      * 
+     * @return
+     *     The value of the redLegDtls property.
      */
     public List<SwitchRedemptionLegOrder6> getRedLegDtls() {
         if (redLegDtls == null) {
-            redLegDtls = new ArrayList<SwitchRedemptionLegOrder6>();
+            redLegDtls = new ArrayList<>();
         }
         return this.redLegDtls;
     }
@@ -500,8 +504,8 @@ public class SwitchOrder7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sbcptLegDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sbcptLegDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -515,10 +519,12 @@ public class SwitchOrder7 {
      * {@link SwitchSubscriptionLegOrder6 }
      * 
      * 
+     * @return
+     *     The value of the sbcptLegDtls property.
      */
     public List<SwitchSubscriptionLegOrder6> getSbcptLegDtls() {
         if (sbcptLegDtls == null) {
-            sbcptLegDtls = new ArrayList<SwitchSubscriptionLegOrder6>();
+            sbcptLegDtls = new ArrayList<>();
         }
         return this.sbcptLegDtls;
     }

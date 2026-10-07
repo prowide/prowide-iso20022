@@ -62,8 +62,8 @@ public class NettingCutOff1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the newCutOff property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the newCutOff property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -77,10 +77,12 @@ public class NettingCutOff1 {
      * {@link CutOff1 }
      * 
      * 
+     * @return
+     *     The value of the newCutOff property.
      */
     public List<CutOff1> getNewCutOff() {
         if (newCutOff == null) {
-            newCutOff = new ArrayList<CutOff1>();
+            newCutOff = new ArrayList<>();
         }
         return this.newCutOff;
     }

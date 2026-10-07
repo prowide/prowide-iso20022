@@ -234,8 +234,8 @@ public class AccountOpeningInstructionV06 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the intrmies property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the intrmies property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -249,10 +249,12 @@ public class AccountOpeningInstructionV06 {
      * {@link Intermediary36 }
      * 
      * 
+     * @return
+     *     The value of the intrmies property.
      */
     public List<Intermediary36> getIntrmies() {
         if (intrmies == null) {
-            intrmies = new ArrayList<Intermediary36>();
+            intrmies = new ArrayList<>();
         }
         return this.intrmies;
     }
@@ -313,8 +315,8 @@ public class AccountOpeningInstructionV06 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the svgsInvstmtPlan property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the svgsInvstmtPlan property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -328,10 +330,12 @@ public class AccountOpeningInstructionV06 {
      * {@link InvestmentPlan12 }
      * 
      * 
+     * @return
+     *     The value of the svgsInvstmtPlan property.
      */
     public List<InvestmentPlan12> getSvgsInvstmtPlan() {
         if (svgsInvstmtPlan == null) {
-            svgsInvstmtPlan = new ArrayList<InvestmentPlan12>();
+            svgsInvstmtPlan = new ArrayList<>();
         }
         return this.svgsInvstmtPlan;
     }
@@ -342,8 +346,8 @@ public class AccountOpeningInstructionV06 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the wdrwlInvstmtPlan property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the wdrwlInvstmtPlan property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -357,10 +361,12 @@ public class AccountOpeningInstructionV06 {
      * {@link InvestmentPlan12 }
      * 
      * 
+     * @return
+     *     The value of the wdrwlInvstmtPlan property.
      */
     public List<InvestmentPlan12> getWdrwlInvstmtPlan() {
         if (wdrwlInvstmtPlan == null) {
-            wdrwlInvstmtPlan = new ArrayList<InvestmentPlan12>();
+            wdrwlInvstmtPlan = new ArrayList<>();
         }
         return this.wdrwlInvstmtPlan;
     }
@@ -371,8 +377,8 @@ public class AccountOpeningInstructionV06 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cshSttlm property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cshSttlm property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -386,10 +392,12 @@ public class AccountOpeningInstructionV06 {
      * {@link CashSettlement1 }
      * 
      * 
+     * @return
+     *     The value of the cshSttlm property.
      */
     public List<CashSettlement1> getCshSttlm() {
         if (cshSttlm == null) {
-            cshSttlm = new ArrayList<CashSettlement1>();
+            cshSttlm = new ArrayList<>();
         }
         return this.cshSttlm;
     }
@@ -400,8 +408,8 @@ public class AccountOpeningInstructionV06 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the svcLvlAgrmt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the svcLvlAgrmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -415,10 +423,12 @@ public class AccountOpeningInstructionV06 {
      * {@link DocumentToSend3 }
      * 
      * 
+     * @return
+     *     The value of the svcLvlAgrmt property.
      */
     public List<DocumentToSend3> getSvcLvlAgrmt() {
         if (svcLvlAgrmt == null) {
-            svcLvlAgrmt = new ArrayList<DocumentToSend3>();
+            svcLvlAgrmt = new ArrayList<>();
         }
         return this.svcLvlAgrmt;
     }
@@ -429,8 +439,8 @@ public class AccountOpeningInstructionV06 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -444,10 +454,12 @@ public class AccountOpeningInstructionV06 {
      * {@link AccountRestrictions1 }
      * 
      * 
+     * @return
+     *     The value of the addtlInf property.
      */
     public List<AccountRestrictions1> getAddtlInf() {
         if (addtlInf == null) {
-            addtlInf = new ArrayList<AccountRestrictions1>();
+            addtlInf = new ArrayList<>();
         }
         return this.addtlInf;
     }
@@ -483,8 +495,8 @@ public class AccountOpeningInstructionV06 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the xtnsn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the xtnsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -498,10 +510,12 @@ public class AccountOpeningInstructionV06 {
      * {@link Extension1 }
      * 
      * 
+     * @return
+     *     The value of the xtnsn property.
      */
     public List<Extension1> getXtnsn() {
         if (xtnsn == null) {
-            xtnsn = new ArrayList<Extension1>();
+            xtnsn = new ArrayList<>();
         }
         return this.xtnsn;
     }

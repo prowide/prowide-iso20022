@@ -34,8 +34,8 @@ public class MessageList {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the msg property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the msg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -49,10 +49,12 @@ public class MessageList {
      * {@link Message }
      * 
      * 
+     * @return
+     *     The value of the msg property.
      */
     public List<Message> getMsg() {
         if (msg == null) {
-            msg = new ArrayList<Message>();
+            msg = new ArrayList<>();
         }
         return this.msg;
     }

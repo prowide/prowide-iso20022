@@ -91,8 +91,8 @@ public class ReconciliationCounterpartyPairStatistics7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rcncltnRpt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rcncltnRpt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -106,10 +106,12 @@ public class ReconciliationCounterpartyPairStatistics7 {
      * {@link ReconciliationReport15 }
      * 
      * 
+     * @return
+     *     The value of the rcncltnRpt property.
      */
     public List<ReconciliationReport15> getRcncltnRpt() {
         if (rcncltnRpt == null) {
-            rcncltnRpt = new ArrayList<ReconciliationReport15>();
+            rcncltnRpt = new ArrayList<>();
         }
         return this.rcncltnRpt;
     }

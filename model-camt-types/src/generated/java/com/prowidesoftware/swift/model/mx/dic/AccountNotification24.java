@@ -1,17 +1,17 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -359,8 +359,8 @@ public class AccountNotification24 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the intrst property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the intrst property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -374,10 +374,12 @@ public class AccountNotification24 {
      * {@link AccountInterest4 }
      * 
      * 
+     * @return
+     *     The value of the intrst property.
      */
     public List<AccountInterest4> getIntrst() {
         if (intrst == null) {
-            intrst = new ArrayList<AccountInterest4>();
+            intrst = new ArrayList<>();
         }
         return this.intrst;
     }
@@ -413,8 +415,8 @@ public class AccountNotification24 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ntry property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ntry property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -428,10 +430,12 @@ public class AccountNotification24 {
      * {@link ReportEntry15 }
      * 
      * 
+     * @return
+     *     The value of the ntry property.
      */
     public List<ReportEntry15> getNtry() {
         if (ntry == null) {
-            ntry = new ArrayList<ReportEntry15>();
+            ntry = new ArrayList<>();
         }
         return this.ntry;
     }

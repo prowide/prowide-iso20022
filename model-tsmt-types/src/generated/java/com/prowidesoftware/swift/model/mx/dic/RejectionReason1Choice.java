@@ -62,8 +62,8 @@ public class RejectionReason1Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rjctdElmt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rjctdElmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -77,10 +77,12 @@ public class RejectionReason1Choice {
      * {@link RejectedElement1 }
      * 
      * 
+     * @return
+     *     The value of the rjctdElmt property.
      */
     public List<RejectedElement1> getRjctdElmt() {
         if (rjctdElmt == null) {
-            rjctdElmt = new ArrayList<RejectedElement1>();
+            rjctdElmt = new ArrayList<>();
         }
         return this.rjctdElmt;
     }

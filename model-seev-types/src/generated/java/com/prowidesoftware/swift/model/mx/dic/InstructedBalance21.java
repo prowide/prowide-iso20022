@@ -202,8 +202,8 @@ public class InstructedBalance21 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the optnDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the optnDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -217,10 +217,12 @@ public class InstructedBalance21 {
      * {@link InstructedCorporateActionOption22 }
      * 
      * 
+     * @return
+     *     The value of the optnDtls property.
      */
     public List<InstructedCorporateActionOption22> getOptnDtls() {
         if (optnDtls == null) {
-            optnDtls = new ArrayList<InstructedCorporateActionOption22>();
+            optnDtls = new ArrayList<>();
         }
         return this.optnDtls;
     }

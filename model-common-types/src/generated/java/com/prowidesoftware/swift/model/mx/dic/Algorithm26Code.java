@@ -10,24 +10,23 @@ import javax.xml.bind.annotation.XmlType;
  * <p>Java class for Algorithm26Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="Algorithm26Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="HS25"/&gt;
- *     &lt;enumeration value="HS38"/&gt;
- *     &lt;enumeration value="HS51"/&gt;
- *     &lt;enumeration value="HS01"/&gt;
- *     &lt;enumeration value="SH31"/&gt;
- *     &lt;enumeration value="SH32"/&gt;
- *     &lt;enumeration value="SH33"/&gt;
- *     &lt;enumeration value="SH35"/&gt;
- *     &lt;enumeration value="SHK1"/&gt;
- *     &lt;enumeration value="SHK2"/&gt;
- *     &lt;enumeration value="SMS3"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="Algorithm26Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="HS25"/>
+ *     <enumeration value="HS38"/>
+ *     <enumeration value="HS51"/>
+ *     <enumeration value="HS01"/>
+ *     <enumeration value="SH31"/>
+ *     <enumeration value="SH32"/>
+ *     <enumeration value="SH33"/>
+ *     <enumeration value="SH35"/>
+ *     <enumeration value="SHK1"/>
+ *     <enumeration value="SHK2"/>
+ *     <enumeration value="SMS3"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "Algorithm26Code")

@@ -119,8 +119,8 @@ public class QueuedTransactionsReport1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the brkdwnByCtrPty property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the brkdwnByCtrPty property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -134,10 +134,12 @@ public class QueuedTransactionsReport1 {
      * {@link QueueTransaction1 }
      * 
      * 
+     * @return
+     *     The value of the brkdwnByCtrPty property.
      */
     public List<QueueTransaction1> getBrkdwnByCtrPty() {
         if (brkdwnByCtrPty == null) {
-            brkdwnByCtrPty = new ArrayList<QueueTransaction1>();
+            brkdwnByCtrPty = new ArrayList<>();
         }
         return this.brkdwnByCtrPty;
     }

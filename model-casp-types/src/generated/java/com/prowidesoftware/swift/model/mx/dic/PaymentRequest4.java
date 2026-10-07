@@ -62,8 +62,8 @@ public class PaymentRequest4 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the lltyData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the lltyData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -77,10 +77,12 @@ public class PaymentRequest4 {
      * {@link LoyaltyRequestData3 }
      * 
      * 
+     * @return
+     *     The value of the lltyData property.
      */
     public List<LoyaltyRequestData3> getLltyData() {
         if (lltyData == null) {
-            lltyData = new ArrayList<LoyaltyRequestData3>();
+            lltyData = new ArrayList<>();
         }
         return this.lltyData;
     }

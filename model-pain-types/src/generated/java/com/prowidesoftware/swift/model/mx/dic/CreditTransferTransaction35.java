@@ -449,8 +449,8 @@ public class CreditTransferTransaction35 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the instrForCdtrAgt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the instrForCdtrAgt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -464,10 +464,12 @@ public class CreditTransferTransaction35 {
      * {@link InstructionForCreditorAgent1 }
      * 
      * 
+     * @return
+     *     The value of the instrForCdtrAgt property.
      */
     public List<InstructionForCreditorAgent1> getInstrForCdtrAgt() {
         if (instrForCdtrAgt == null) {
-            instrForCdtrAgt = new ArrayList<InstructionForCreditorAgent1>();
+            instrForCdtrAgt = new ArrayList<>();
         }
         return this.instrForCdtrAgt;
     }
@@ -503,8 +505,8 @@ public class CreditTransferTransaction35 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rgltryRptg property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rgltryRptg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -518,10 +520,12 @@ public class CreditTransferTransaction35 {
      * {@link RegulatoryReporting3 }
      * 
      * 
+     * @return
+     *     The value of the rgltryRptg property.
      */
     public List<RegulatoryReporting3> getRgltryRptg() {
         if (rgltryRptg == null) {
-            rgltryRptg = new ArrayList<RegulatoryReporting3>();
+            rgltryRptg = new ArrayList<>();
         }
         return this.rgltryRptg;
     }
@@ -557,8 +561,8 @@ public class CreditTransferTransaction35 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rltdRmtInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rltdRmtInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -572,10 +576,12 @@ public class CreditTransferTransaction35 {
      * {@link RemittanceLocation7 }
      * 
      * 
+     * @return
+     *     The value of the rltdRmtInf property.
      */
     public List<RemittanceLocation7> getRltdRmtInf() {
         if (rltdRmtInf == null) {
-            rltdRmtInf = new ArrayList<RemittanceLocation7>();
+            rltdRmtInf = new ArrayList<>();
         }
         return this.rltdRmtInf;
     }
@@ -611,8 +617,8 @@ public class CreditTransferTransaction35 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the nclsdFile property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the nclsdFile property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -626,10 +632,12 @@ public class CreditTransferTransaction35 {
      * {@link Document12 }
      * 
      * 
+     * @return
+     *     The value of the nclsdFile property.
      */
     public List<Document12> getNclsdFile() {
         if (nclsdFile == null) {
-            nclsdFile = new ArrayList<Document12>();
+            nclsdFile = new ArrayList<>();
         }
         return this.nclsdFile;
     }
@@ -640,8 +648,8 @@ public class CreditTransferTransaction35 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -655,10 +663,12 @@ public class CreditTransferTransaction35 {
      * {@link SupplementaryData1 }
      * 
      * 
+     * @return
+     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<SupplementaryData1>();
+            splmtryData = new ArrayList<>();
         }
         return this.splmtryData;
     }

@@ -138,8 +138,8 @@ public class AccountMandateMaintenanceRequestV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the acctId property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the acctId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -153,10 +153,12 @@ public class AccountMandateMaintenanceRequestV01 {
      * {@link AccountForAction1 }
      * 
      * 
+     * @return
+     *     The value of the acctId property.
      */
     public List<AccountForAction1> getAcctId() {
         if (acctId == null) {
-            acctId = new ArrayList<AccountForAction1>();
+            acctId = new ArrayList<>();
         }
         return this.acctId;
     }
@@ -192,8 +194,8 @@ public class AccountMandateMaintenanceRequestV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the orgId property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the orgId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -207,10 +209,12 @@ public class AccountMandateMaintenanceRequestV01 {
      * {@link OrganisationIdentification6 }
      * 
      * 
+     * @return
+     *     The value of the orgId property.
      */
     public List<OrganisationIdentification6> getOrgId() {
         if (orgId == null) {
-            orgId = new ArrayList<OrganisationIdentification6>();
+            orgId = new ArrayList<>();
         }
         return this.orgId;
     }
@@ -221,8 +225,8 @@ public class AccountMandateMaintenanceRequestV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the mndt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the mndt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -236,10 +240,12 @@ public class AccountMandateMaintenanceRequestV01 {
      * {@link OperationMandate1 }
      * 
      * 
+     * @return
+     *     The value of the mndt property.
      */
     public List<OperationMandate1> getMndt() {
         if (mndt == null) {
-            mndt = new ArrayList<OperationMandate1>();
+            mndt = new ArrayList<>();
         }
         return this.mndt;
     }
@@ -275,8 +281,8 @@ public class AccountMandateMaintenanceRequestV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dgtlSgntr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the dgtlSgntr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -290,10 +296,12 @@ public class AccountMandateMaintenanceRequestV01 {
      * {@link PartyAndSignature1 }
      * 
      * 
+     * @return
+     *     The value of the dgtlSgntr property.
      */
     public List<PartyAndSignature1> getDgtlSgntr() {
         if (dgtlSgntr == null) {
-            dgtlSgntr = new ArrayList<PartyAndSignature1>();
+            dgtlSgntr = new ArrayList<>();
         }
         return this.dgtlSgntr;
     }

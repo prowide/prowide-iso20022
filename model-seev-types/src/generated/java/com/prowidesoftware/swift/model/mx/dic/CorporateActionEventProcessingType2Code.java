@@ -9,17 +9,16 @@ import javax.xml.bind.annotation.XmlType;
  * <p>Java class for CorporateActionEventProcessingType2Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="CorporateActionEventProcessingType2Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="DISN"/&gt;
- *     &lt;enumeration value="GENL"/&gt;
- *     &lt;enumeration value="REDM"/&gt;
- *     &lt;enumeration value="REOR"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="CorporateActionEventProcessingType2Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="DISN"/>
+ *     <enumeration value="GENL"/>
+ *     <enumeration value="REDM"/>
+ *     <enumeration value="REOR"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "CorporateActionEventProcessingType2Code")

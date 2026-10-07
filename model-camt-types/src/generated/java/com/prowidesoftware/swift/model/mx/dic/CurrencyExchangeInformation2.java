@@ -34,8 +34,8 @@ public class CurrencyExchangeInformation2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ccyXchgRpt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ccyXchgRpt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -49,10 +49,12 @@ public class CurrencyExchangeInformation2 {
      * {@link CurrencyExchangeReport2 }
      * 
      * 
+     * @return
+     *     The value of the ccyXchgRpt property.
      */
     public List<CurrencyExchangeReport2> getCcyXchgRpt() {
         if (ccyXchgRpt == null) {
-            ccyXchgRpt = new ArrayList<CurrencyExchangeReport2>();
+            ccyXchgRpt = new ArrayList<>();
         }
         return this.ccyXchgRpt;
     }

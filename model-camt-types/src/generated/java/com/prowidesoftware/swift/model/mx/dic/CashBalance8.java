@@ -76,8 +76,8 @@ public class CashBalance8 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cdtLine property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cdtLine property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -91,10 +91,12 @@ public class CashBalance8 {
      * {@link CreditLine3 }
      * 
      * 
+     * @return
+     *     The value of the cdtLine property.
      */
     public List<CreditLine3> getCdtLine() {
         if (cdtLine == null) {
-            cdtLine = new ArrayList<CreditLine3>();
+            cdtLine = new ArrayList<>();
         }
         return this.cdtLine;
     }
@@ -180,8 +182,8 @@ public class CashBalance8 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the avlbty property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the avlbty property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -195,10 +197,12 @@ public class CashBalance8 {
      * {@link CashAvailability1 }
      * 
      * 
+     * @return
+     *     The value of the avlbty property.
      */
     public List<CashAvailability1> getAvlbty() {
         if (avlbty == null) {
-            avlbty = new ArrayList<CashAvailability1>();
+            avlbty = new ArrayList<>();
         }
         return this.avlbty;
     }

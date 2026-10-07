@@ -40,8 +40,8 @@ public class ProceedsMovement1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cshPrcdsMvmntDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cshPrcdsMvmntDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -55,10 +55,12 @@ public class ProceedsMovement1 {
      * {@link CashProceeds1 }
      * 
      * 
+     * @return
+     *     The value of the cshPrcdsMvmntDtls property.
      */
     public List<CashProceeds1> getCshPrcdsMvmntDtls() {
         if (cshPrcdsMvmntDtls == null) {
-            cshPrcdsMvmntDtls = new ArrayList<CashProceeds1>();
+            cshPrcdsMvmntDtls = new ArrayList<>();
         }
         return this.cshPrcdsMvmntDtls;
     }
@@ -69,8 +71,8 @@ public class ProceedsMovement1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sctiesPrcdsMvmntDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sctiesPrcdsMvmntDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -84,10 +86,12 @@ public class ProceedsMovement1 {
      * {@link SecuritiesProceeds1 }
      * 
      * 
+     * @return
+     *     The value of the sctiesPrcdsMvmntDtls property.
      */
     public List<SecuritiesProceeds1> getSctiesPrcdsMvmntDtls() {
         if (sctiesPrcdsMvmntDtls == null) {
-            sctiesPrcdsMvmntDtls = new ArrayList<SecuritiesProceeds1>();
+            sctiesPrcdsMvmntDtls = new ArrayList<>();
         }
         return this.sctiesPrcdsMvmntDtls;
     }

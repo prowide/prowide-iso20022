@@ -4,14 +4,17 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import com.prowidesoftware.swift.model.mx.MxReadImpl;
+import com.prowidesoftware.swift.model.mx.MxReadParams;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
-import com.prowidesoftware.swift.model.mx.MxRead;
-import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -28,18 +31,18 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:seev.020.001.01")
 public class MxSeev02000101
-    extends com.prowidesoftware.swift.model.mx.AbstractMX
+    extends AbstractMX
 {
 
     @XmlElement(name = "AgtCAMvmntCxlReq", required = true)
     protected AgentCAMovementCancellationRequestV01 agtCAMvmntCxlReq;
-    public final static transient String BUSINESS_PROCESS = "seev";
-    public final static transient int FUNCTIONALITY = 20;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 1;
+    public static final transient String BUSINESS_PROCESS = "seev";
+    public static final transient int FUNCTIONALITY = 20;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 1;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {AccountIdentification2Choice.class, ActiveCurrencyAnd13DecimalAmount.class, ActiveCurrencyAndAmount.class, AddressType2Code.class, AgentCAMovementCancellationRequestV01 .class, AlternateSecurityIdentification3 .class, CashAccount19 .class, CashMovement2 .class, CashProceeds1 .class, CorporateActionEventProcessingType1Code.class, CorporateActionEventProcessingType1FormatChoice.class, CorporateActionEventType2Code.class, CorporateActionEventType2FormatChoice.class, CorporateActionInformation1 .class, CorporateActionMandatoryVoluntary1Code.class, CorporateActionMandatoryVoluntary1FormatChoice.class, CorporateActionMovement1 .class, CorporateActionOption1FormatChoice.class, CorporateActionOptionType1Code.class, CreditDebitCode.class, DistributionInstructionType1Code.class, DocumentIdentification8 .class, FinancialInstrumentDescription3 .class, ForeignExchangeTerms9 .class, FormOfSecurity1Code.class, GenericIdentification1 .class, GenericIdentification13 .class, MovementInstruction1 .class, MxSeev02000101 .class, NameAndAddress5 .class, PartyIdentification2Choice.class, PostalAddress1 .class, PriceValue1 .class, ProceedsMovement1 .class, SecuritiesAccount10 .class, SecuritiesAccount8 .class, SecuritiesBalanceType10Code.class, SecuritiesBalanceType10FormatChoice.class, SecuritiesBalanceType9Code.class, SecuritiesBalanceType9FormatChoice.class, SecuritiesProceeds1 .class, SecurityIdentification7 .class, StampDutyType1Code.class, StampDutyType1FormatChoice.class, TaxVoucher1 .class, UnderlyingSecurityMovement1 .class, UnitOrFaceAmount1Choice.class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:seev.020.001.01";
+    public static final transient Class[] _classes = new Class[] {AccountIdentification2Choice.class, ActiveCurrencyAnd13DecimalAmount.class, ActiveCurrencyAndAmount.class, AddressType2Code.class, AgentCAMovementCancellationRequestV01 .class, AlternateSecurityIdentification3 .class, CashAccount19 .class, CashMovement2 .class, CashProceeds1 .class, CorporateActionEventProcessingType1Code.class, CorporateActionEventProcessingType1FormatChoice.class, CorporateActionEventType2Code.class, CorporateActionEventType2FormatChoice.class, CorporateActionInformation1 .class, CorporateActionMandatoryVoluntary1Code.class, CorporateActionMandatoryVoluntary1FormatChoice.class, CorporateActionMovement1 .class, CorporateActionOption1FormatChoice.class, CorporateActionOptionType1Code.class, CreditDebitCode.class, DistributionInstructionType1Code.class, DocumentIdentification8 .class, FinancialInstrumentDescription3 .class, ForeignExchangeTerms9 .class, FormOfSecurity1Code.class, GenericIdentification1 .class, GenericIdentification13 .class, MovementInstruction1 .class, MxSeev02000101 .class, NameAndAddress5 .class, PartyIdentification2Choice.class, PostalAddress1 .class, PriceValue1 .class, ProceedsMovement1 .class, SecuritiesAccount10 .class, SecuritiesAccount8 .class, SecuritiesBalanceType10Code.class, SecuritiesBalanceType10FormatChoice.class, SecuritiesBalanceType9Code.class, SecuritiesBalanceType9FormatChoice.class, SecuritiesProceeds1 .class, SecurityIdentification7 .class, StampDutyType1Code.class, StampDutyType1FormatChoice.class, TaxVoucher1 .class, UnderlyingSecurityMovement1 .class, UnitOrFaceAmount1Choice.class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:seev.020.001.01";
 
     public MxSeev02000101() {
         super();
@@ -89,21 +92,6 @@ public class MxSeev02000101
     }
 
     @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
-    }
-
-    @Override
     public String getBusinessProcess() {
         return BUSINESS_PROCESS;
     }
@@ -128,7 +116,7 @@ public class MxSeev02000101
      * 
      */
     public static MxSeev02000101 parse(String xml) {
-        return ((MxSeev02000101) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxSeev02000101 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams()));
+        return ((MxSeev02000101) MxReadImpl.parse(MxSeev02000101 .class, xml, _classes, new MxReadParams()));
     }
 
     /**
@@ -137,7 +125,7 @@ public class MxSeev02000101
      * 
      */
     public static MxSeev02000101 parse(String xml, MxReadConfiguration conf) {
-        return ((MxSeev02000101) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxSeev02000101 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams(conf)));
+        return ((MxSeev02000101) MxReadImpl.parse(MxSeev02000101 .class, xml, _classes, new MxReadParams(conf)));
     }
 
     /**
@@ -173,8 +161,23 @@ public class MxSeev02000101
      * @return
      *     a new instance of MxSeev02000101
      */
-    public final static MxSeev02000101 fromJson(String json) {
-        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxSeev02000101 .class);
+    public static final MxSeev02000101 fromJson(String json) {
+        return AbstractMX.fromJson(json, MxSeev02000101 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

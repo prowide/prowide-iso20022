@@ -119,8 +119,8 @@ public class ValidationResult3 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the elmt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the elmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -134,10 +134,12 @@ public class ValidationResult3 {
      * {@link ElementIdentification3 }
      * 
      * 
+     * @return
+     *     The value of the elmt property.
      */
     public List<ElementIdentification3> getElmt() {
         if (elmt == null) {
-            elmt = new ArrayList<ElementIdentification3>();
+            elmt = new ArrayList<>();
         }
         return this.elmt;
     }

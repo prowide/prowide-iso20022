@@ -10,15 +10,14 @@ import javax.xml.bind.annotation.XmlType;
  * <p>Java class for OutcomeOfCOLLAssessmentOfValueUKType1Code.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="OutcomeOfCOLLAssessmentOfValueUKType1Code"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="COL1"/&gt;
- *     &lt;enumeration value="COL2"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <pre>{@code
+ * <simpleType name="OutcomeOfCOLLAssessmentOfValueUKType1Code">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="COL1"/>
+ *     <enumeration value="COL2"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "OutcomeOfCOLLAssessmentOfValueUKType1Code")

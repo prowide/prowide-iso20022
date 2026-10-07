@@ -73,8 +73,8 @@ public class MandateCancellationRequestV03 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the undrlygCxlDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the undrlygCxlDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -88,10 +88,12 @@ public class MandateCancellationRequestV03 {
      * {@link MandateCancellation3 }
      * 
      * 
+     * @return
+     *     The value of the undrlygCxlDtls property.
      */
     public List<MandateCancellation3> getUndrlygCxlDtls() {
         if (undrlygCxlDtls == null) {
-            undrlygCxlDtls = new ArrayList<MandateCancellation3>();
+            undrlygCxlDtls = new ArrayList<>();
         }
         return this.undrlygCxlDtls;
     }
@@ -102,8 +104,8 @@ public class MandateCancellationRequestV03 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -117,10 +119,12 @@ public class MandateCancellationRequestV03 {
      * {@link SupplementaryData1 }
      * 
      * 
+     * @return
+     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<SupplementaryData1>();
+            splmtryData = new ArrayList<>();
         }
         return this.splmtryData;
     }

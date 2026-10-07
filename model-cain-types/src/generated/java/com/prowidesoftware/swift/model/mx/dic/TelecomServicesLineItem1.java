@@ -1,18 +1,18 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
+import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
-import com.prowidesoftware.swift.model.mx.adapters.IsoTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -198,8 +198,8 @@ public class TelecomServicesLineItem1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the chrg property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the chrg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -213,10 +213,12 @@ public class TelecomServicesLineItem1 {
      * {@link Amount11 }
      * 
      * 
+     * @return
+     *     The value of the chrg property.
      */
     public List<Amount11> getChrg() {
         if (chrg == null) {
-            chrg = new ArrayList<Amount11>();
+            chrg = new ArrayList<>();
         }
         return this.chrg;
     }
@@ -227,8 +229,8 @@ public class TelecomServicesLineItem1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ttlTax property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ttlTax property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -242,10 +244,12 @@ public class TelecomServicesLineItem1 {
      * {@link Tax33 }
      * 
      * 
+     * @return
+     *     The value of the ttlTax property.
      */
     public List<Tax33> getTtlTax() {
         if (ttlTax == null) {
-            ttlTax = new ArrayList<Tax33>();
+            ttlTax = new ArrayList<>();
         }
         return this.ttlTax;
     }

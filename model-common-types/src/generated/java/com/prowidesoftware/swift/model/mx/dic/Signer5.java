@@ -125,8 +125,8 @@ public class Signer5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sgndAttrbts property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sgndAttrbts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -140,10 +140,12 @@ public class Signer5 {
      * {@link GenericInformation1 }
      * 
      * 
+     * @return
+     *     The value of the sgndAttrbts property.
      */
     public List<GenericInformation1> getSgndAttrbts() {
         if (sgndAttrbts == null) {
-            sgndAttrbts = new ArrayList<GenericInformation1>();
+            sgndAttrbts = new ArrayList<>();
         }
         return this.sgndAttrbts;
     }

@@ -205,8 +205,8 @@ public class FleetTransactionDetail1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the taxTtl property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the taxTtl property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -220,10 +220,12 @@ public class FleetTransactionDetail1 {
      * {@link Tax41 }
      * 
      * 
+     * @return
+     *     The value of the taxTtl property.
      */
     public List<Tax41> getTaxTtl() {
         if (taxTtl == null) {
-            taxTtl = new ArrayList<Tax41>();
+            taxTtl = new ArrayList<>();
         }
         return this.taxTtl;
     }

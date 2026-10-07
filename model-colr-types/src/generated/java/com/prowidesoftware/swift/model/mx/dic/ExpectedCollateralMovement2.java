@@ -37,8 +37,8 @@ public class ExpectedCollateralMovement2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dlvry property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the dlvry property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -52,10 +52,12 @@ public class ExpectedCollateralMovement2 {
      * {@link CollateralMovement9 }
      * 
      * 
+     * @return
+     *     The value of the dlvry property.
      */
     public List<CollateralMovement9> getDlvry() {
         if (dlvry == null) {
-            dlvry = new ArrayList<CollateralMovement9>();
+            dlvry = new ArrayList<>();
         }
         return this.dlvry;
     }
@@ -66,8 +68,8 @@ public class ExpectedCollateralMovement2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rtr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rtr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -81,10 +83,12 @@ public class ExpectedCollateralMovement2 {
      * {@link CollateralMovement9 }
      * 
      * 
+     * @return
+     *     The value of the rtr property.
      */
     public List<CollateralMovement9> getRtr() {
         if (rtr == null) {
-            rtr = new ArrayList<CollateralMovement9>();
+            rtr = new ArrayList<>();
         }
         return this.rtr;
     }

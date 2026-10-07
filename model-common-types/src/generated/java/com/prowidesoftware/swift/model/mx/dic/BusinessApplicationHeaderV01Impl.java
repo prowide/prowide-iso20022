@@ -1,17 +1,14 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-
-import javax.xml.datatype.XMLGregorianCalendar;
-
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -59,9 +56,9 @@ public class BusinessApplicationHeaderV01Impl {
     protected String msgDefIdr;
     @XmlElement(name = "BizSvc")
     protected String bizSvc;
-    @XmlElement(name = "CreDt", required = true)
-    @XmlSchemaType(name = "dateTime")
+    @XmlElement(name = "CreDt", required = true, type = String.class)
     @XmlJavaTypeAdapter(IsoDateTimeAdapter.class)
+    @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar creDt;
     @XmlElement(name = "CpyDplct")
     @XmlSchemaType(name = "string")
@@ -74,7 +71,7 @@ public class BusinessApplicationHeaderV01Impl {
     protected SignatureEnvelope sgntr;
     @XmlElement(name = "Rltd")
     protected BusinessApplicationHeader1 rltd;
-    public final static transient Class[] _classes = new Class[] {AddressType2Code.class, BranchAndFinancialInstitutionIdentification5 .class, BranchData2 .class, BusinessApplicationHeader1 .class, BusinessApplicationHeaderV01Impl.class, ClearingSystemIdentification2Choice.class, ClearingSystemMemberIdentification2 .class, ContactDetails2 .class, CopyDuplicate1Code.class, DateAndPlaceOfBirth.class, FinancialIdentificationSchemeName1Choice.class, FinancialInstitutionIdentification8 .class, GenericFinancialIdentification1 .class, GenericOrganisationIdentification1 .class, GenericPersonIdentification1 .class, NamePrefix1Code.class, OrganisationIdentification7 .class, OrganisationIdentificationSchemeName1Choice.class, Party10Choice.class, Party9Choice.class, PartyIdentification42 .class, PersonIdentification5 .class, PersonIdentificationSchemeName1Choice.class, PostalAddress6 .class, SignatureEnvelope.class };
+    public static final transient Class[] _classes = new Class[] {AddressType2Code.class, BranchAndFinancialInstitutionIdentification5 .class, BranchData2 .class, BusinessApplicationHeader1 .class, BusinessApplicationHeaderV01Impl.class, ClearingSystemIdentification2Choice.class, ClearingSystemMemberIdentification2 .class, ContactDetails2 .class, CopyDuplicate1Code.class, DateAndPlaceOfBirth.class, FinancialIdentificationSchemeName1Choice.class, FinancialInstitutionIdentification8 .class, GenericFinancialIdentification1 .class, GenericOrganisationIdentification1 .class, GenericPersonIdentification1 .class, NamePrefix1Code.class, OrganisationIdentification7 .class, OrganisationIdentificationSchemeName1Choice.class, Party10Choice.class, Party9Choice.class, PartyIdentification42 .class, PersonIdentification5 .class, PersonIdentificationSchemeName1Choice.class, PostalAddress6 .class, SignatureEnvelope.class };
 
     /**
      * Gets the value of the charSet property.
@@ -231,7 +228,7 @@ public class BusinessApplicationHeaderV01Impl {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public XMLGregorianCalendar getCreDt() {
@@ -243,7 +240,7 @@ public class BusinessApplicationHeaderV01Impl {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
     public BusinessApplicationHeaderV01Impl setCreDt(XMLGregorianCalendar value) {

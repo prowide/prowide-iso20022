@@ -4,14 +4,17 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import com.prowidesoftware.swift.model.mx.MxReadImpl;
+import com.prowidesoftware.swift.model.mx.MxReadParams;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
-import com.prowidesoftware.swift.model.mx.MxRead;
-import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -28,18 +31,18 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:tsmt.005.001.02")
 public class MxTsmt00500102
-    extends com.prowidesoftware.swift.model.mx.AbstractMX
+    extends AbstractMX
 {
 
     @XmlElement(name = "AmdmntAccptnc", required = true)
     protected AmendmentAcceptanceV02 amdmntAccptnc;
-    public final static transient String BUSINESS_PROCESS = "tsmt";
-    public final static transient int FUNCTIONALITY = 5;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 2;
+    public static final transient String BUSINESS_PROCESS = "tsmt";
+    public static final transient int FUNCTIONALITY = 5;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 2;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {AmendmentAcceptanceV02 .class, Count1 .class, MessageIdentification1 .class, MxTsmt00500102 .class, SimpleIdentificationInformation.class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:tsmt.005.001.02";
+    public static final transient Class[] _classes = new Class[] {AmendmentAcceptanceV02 .class, Count1 .class, MessageIdentification1 .class, MxTsmt00500102 .class, SimpleIdentificationInformation.class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:tsmt.005.001.02";
 
     public MxTsmt00500102() {
         super();
@@ -89,21 +92,6 @@ public class MxTsmt00500102
     }
 
     @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
-    }
-
-    @Override
     public String getBusinessProcess() {
         return BUSINESS_PROCESS;
     }
@@ -128,7 +116,7 @@ public class MxTsmt00500102
      * 
      */
     public static MxTsmt00500102 parse(String xml) {
-        return ((MxTsmt00500102) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxTsmt00500102 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams()));
+        return ((MxTsmt00500102) MxReadImpl.parse(MxTsmt00500102 .class, xml, _classes, new MxReadParams()));
     }
 
     /**
@@ -137,7 +125,7 @@ public class MxTsmt00500102
      * 
      */
     public static MxTsmt00500102 parse(String xml, MxReadConfiguration conf) {
-        return ((MxTsmt00500102) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxTsmt00500102 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams(conf)));
+        return ((MxTsmt00500102) MxReadImpl.parse(MxTsmt00500102 .class, xml, _classes, new MxReadParams(conf)));
     }
 
     /**
@@ -173,8 +161,23 @@ public class MxTsmt00500102
      * @return
      *     a new instance of MxTsmt00500102
      */
-    public final static MxTsmt00500102 fromJson(String json) {
-        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxTsmt00500102 .class);
+    public static final MxTsmt00500102 fromJson(String json) {
+        return AbstractMX.fromJson(json, MxTsmt00500102 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

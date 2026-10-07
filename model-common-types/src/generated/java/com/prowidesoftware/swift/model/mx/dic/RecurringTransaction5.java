@@ -1,17 +1,17 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -92,8 +92,8 @@ public class RecurringTransaction5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the instlmtPlan property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the instlmtPlan property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -107,10 +107,12 @@ public class RecurringTransaction5 {
      * {@link InstalmentPlan1Code }
      * 
      * 
+     * @return
+     *     The value of the instlmtPlan property.
      */
     public List<InstalmentPlan1Code> getInstlmtPlan() {
         if (instlmtPlan == null) {
-            instlmtPlan = new ArrayList<InstalmentPlan1Code>();
+            instlmtPlan = new ArrayList<>();
         }
         return this.instlmtPlan;
     }
@@ -421,8 +423,8 @@ public class RecurringTransaction5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dtldChrgs property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the dtldChrgs property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -436,10 +438,12 @@ public class RecurringTransaction5 {
      * {@link InstalmentAmountDetails1 }
      * 
      * 
+     * @return
+     *     The value of the dtldChrgs property.
      */
     public List<InstalmentAmountDetails1> getDtldChrgs() {
         if (dtldChrgs == null) {
-            dtldChrgs = new ArrayList<InstalmentAmountDetails1>();
+            dtldChrgs = new ArrayList<>();
         }
         return this.dtldChrgs;
     }
@@ -450,8 +454,8 @@ public class RecurringTransaction5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the intrstRate property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the intrstRate property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -465,10 +469,12 @@ public class RecurringTransaction5 {
      * {@link InterestRateDetails1 }
      * 
      * 
+     * @return
+     *     The value of the intrstRate property.
      */
     public List<InterestRateDetails1> getIntrstRate() {
         if (intrstRate == null) {
-            intrstRate = new ArrayList<InterestRateDetails1>();
+            intrstRate = new ArrayList<>();
         }
         return this.intrstRate;
     }
@@ -479,8 +485,8 @@ public class RecurringTransaction5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the gracePrd property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the gracePrd property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -494,10 +500,12 @@ public class RecurringTransaction5 {
      * {@link GracePeriod1 }
      * 
      * 
+     * @return
+     *     The value of the gracePrd property.
      */
     public List<GracePeriod1> getGracePrd() {
         if (gracePrd == null) {
-            gracePrd = new ArrayList<GracePeriod1>();
+            gracePrd = new ArrayList<>();
         }
         return this.gracePrd;
     }
@@ -508,8 +516,8 @@ public class RecurringTransaction5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the planNtce property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the planNtce property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -523,10 +531,12 @@ public class RecurringTransaction5 {
      * {@link ActionMessage10 }
      * 
      * 
+     * @return
+     *     The value of the planNtce property.
      */
     public List<ActionMessage10> getPlanNtce() {
         if (planNtce == null) {
-            planNtce = new ArrayList<ActionMessage10>();
+            planNtce = new ArrayList<>();
         }
         return this.planNtce;
     }

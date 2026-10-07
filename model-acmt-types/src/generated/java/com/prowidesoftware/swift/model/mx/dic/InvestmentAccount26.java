@@ -579,8 +579,8 @@ public class InvestmentAccount26 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the fndDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the fndDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -594,10 +594,12 @@ public class InvestmentAccount26 {
      * {@link FinancialInstrument10 }
      * 
      * 
+     * @return
+     *     The value of the fndDtls property.
      */
     public List<FinancialInstrument10> getFndDtls() {
         if (fndDtls == null) {
-            fndDtls = new ArrayList<FinancialInstrument10>();
+            fndDtls = new ArrayList<>();
         }
         return this.fndDtls;
     }

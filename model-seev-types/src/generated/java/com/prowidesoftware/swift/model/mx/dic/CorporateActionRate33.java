@@ -231,8 +231,8 @@ public class CorporateActionRate33 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the taxCdtRate property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the taxCdtRate property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -246,10 +246,12 @@ public class CorporateActionRate33 {
      * {@link TaxCreditRateFormat6Choice }
      * 
      * 
+     * @return
+     *     The value of the taxCdtRate property.
      */
     public List<TaxCreditRateFormat6Choice> getTaxCdtRate() {
         if (taxCdtRate == null) {
-            taxCdtRate = new ArrayList<TaxCreditRateFormat6Choice>();
+            taxCdtRate = new ArrayList<>();
         }
         return this.taxCdtRate;
     }

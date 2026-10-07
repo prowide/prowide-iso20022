@@ -37,8 +37,8 @@ public class TransportByRoad1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the plcOfRct property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the plcOfRct property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -52,10 +52,12 @@ public class TransportByRoad1 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the plcOfRct property.
      */
     public List<String> getPlcOfRct() {
         if (plcOfRct == null) {
-            plcOfRct = new ArrayList<String>();
+            plcOfRct = new ArrayList<>();
         }
         return this.plcOfRct;
     }
@@ -66,8 +68,8 @@ public class TransportByRoad1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the plcOfDlvry property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the plcOfDlvry property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -81,10 +83,12 @@ public class TransportByRoad1 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the plcOfDlvry property.
      */
     public List<String> getPlcOfDlvry() {
         if (plcOfDlvry == null) {
-            plcOfDlvry = new ArrayList<String>();
+            plcOfDlvry = new ArrayList<>();
         }
         return this.plcOfDlvry;
     }

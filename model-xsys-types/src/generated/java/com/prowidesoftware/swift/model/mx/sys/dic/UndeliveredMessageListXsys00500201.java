@@ -34,8 +34,8 @@ public class UndeliveredMessageListXsys00500201 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the udlvrdMsg property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the udlvrdMsg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -49,10 +49,12 @@ public class UndeliveredMessageListXsys00500201 {
      * {@link UndeliveredMessageXsys00500201 }
      * 
      * 
+     * @return
+     *     The value of the udlvrdMsg property.
      */
     public List<UndeliveredMessageXsys00500201> getUdlvrdMsg() {
         if (udlvrdMsg == null) {
-            udlvrdMsg = new ArrayList<UndeliveredMessageXsys00500201>();
+            udlvrdMsg = new ArrayList<>();
         }
         return this.udlvrdMsg;
     }

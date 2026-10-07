@@ -4,14 +4,17 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import com.prowidesoftware.swift.model.mx.MxReadImpl;
+import com.prowidesoftware.swift.model.mx.MxReadParams;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
-import com.prowidesoftware.swift.model.mx.MxRead;
-import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -28,18 +31,18 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:catm.003.001.03")
 public class MxCatm00300103
-    extends com.prowidesoftware.swift.model.mx.AbstractMX
+    extends AbstractMX
 {
 
     @XmlElement(name = "AccptrCfgtnUpd", required = true)
     protected AcceptorConfigurationUpdateV03 accptrCfgtnUpd;
-    public final static transient String BUSINESS_PROCESS = "catm";
-    public final static transient int FUNCTIONALITY = 3;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 3;
+    public static final transient String BUSINESS_PROCESS = "catm";
+    public static final transient int FUNCTIONALITY = 3;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 3;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {AcceptorConfiguration3 .class, AcceptorConfigurationContent3 .class, AcceptorConfigurationUpdateV03 .class, AcquirerHostConfiguration2 .class, AcquirerProtocolParameters5 .class, AcquirerProtocolParameters6 .class, Algorithm10Code.class, Algorithm4Code.class, Algorithm5Code.class, Algorithm6Code.class, Algorithm7Code.class, Algorithm8Code.class, Algorithm9Code.class, AlgorithmIdentification10 .class, AlgorithmIdentification4 .class, AlgorithmIdentification5 .class, AlgorithmIdentification6 .class, AlgorithmIdentification7 .class, AlgorithmIdentification8 .class, AlgorithmIdentification9 .class, ApplicationParameters3 .class, AttributeType1Code.class, AuthenticatedData3 .class, BatchTransactionType1Code.class, CancellationProcess1Code.class, CertificateIdentifier1 .class, CertificateIssuer1 .class, ClockSynchronisation1 .class, ContentInformationType7 .class, ContentInformationType9 .class, ContentType1Code.class, CryptographicKey3 .class, CryptographicKey4 .class, CryptographicKeyType2Code.class, DataSetCategory3Code.class, DataSetIdentification3 .class, DigestedData3 .class, EncapsulatedContent2 .class, EncryptedContent2 .class, EnvelopedData3 .class, ExchangeConfiguration4 .class, ExchangeConfiguration5 .class, ExchangePolicy1Code.class, FinancialCapture1Code.class, GenericIdentification32 .class, GenericIdentification35 .class, Header4 .class, HostCommunicationParameter2 .class, IssuerAndSerialNumber1 .class, KEK3 .class, KEKIdentifier1 .class, KeyTransport3 .class, KeyUsage1Code.class, MessageFunction3Code.class, MessageItemCondition1 .class, MessageItemCondition1Code.class, MxCatm00300103 .class, NetworkParameters1 .class, NetworkParameters2 .class, Parameter1 .class, Parameter2 .class, Parameter3 .class, PartyType3Code.class, PartyType4Code.class, PartyType5Code.class, PartyType6Code.class, PaymentTerminalParameters1 .class, ProcessRetry2 .class, ProcessTiming3 .class, Recipient3Choice.class, RelativeDistinguishedName1 .class, SecurityParameters2 .class, SignedData3 .class, Signer2 .class, TerminalManagementDataSet11 .class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:catm.003.001.03";
+    public static final transient Class[] _classes = new Class[] {AcceptorConfiguration3 .class, AcceptorConfigurationContent3 .class, AcceptorConfigurationUpdateV03 .class, AcquirerHostConfiguration2 .class, AcquirerProtocolParameters5 .class, AcquirerProtocolParameters6 .class, Algorithm10Code.class, Algorithm4Code.class, Algorithm5Code.class, Algorithm6Code.class, Algorithm7Code.class, Algorithm8Code.class, Algorithm9Code.class, AlgorithmIdentification10 .class, AlgorithmIdentification4 .class, AlgorithmIdentification5 .class, AlgorithmIdentification6 .class, AlgorithmIdentification7 .class, AlgorithmIdentification8 .class, AlgorithmIdentification9 .class, ApplicationParameters3 .class, AttributeType1Code.class, AuthenticatedData3 .class, BatchTransactionType1Code.class, CancellationProcess1Code.class, CertificateIdentifier1 .class, CertificateIssuer1 .class, ClockSynchronisation1 .class, ContentInformationType7 .class, ContentInformationType9 .class, ContentType1Code.class, CryptographicKey3 .class, CryptographicKey4 .class, CryptographicKeyType2Code.class, DataSetCategory3Code.class, DataSetIdentification3 .class, DigestedData3 .class, EncapsulatedContent2 .class, EncryptedContent2 .class, EnvelopedData3 .class, ExchangeConfiguration4 .class, ExchangeConfiguration5 .class, ExchangePolicy1Code.class, FinancialCapture1Code.class, GenericIdentification32 .class, GenericIdentification35 .class, Header4 .class, HostCommunicationParameter2 .class, IssuerAndSerialNumber1 .class, KEK3 .class, KEKIdentifier1 .class, KeyTransport3 .class, KeyUsage1Code.class, MessageFunction3Code.class, MessageItemCondition1 .class, MessageItemCondition1Code.class, MxCatm00300103 .class, NetworkParameters1 .class, NetworkParameters2 .class, Parameter1 .class, Parameter2 .class, Parameter3 .class, PartyType3Code.class, PartyType4Code.class, PartyType5Code.class, PartyType6Code.class, PaymentTerminalParameters1 .class, ProcessRetry2 .class, ProcessTiming3 .class, Recipient3Choice.class, RelativeDistinguishedName1 .class, SecurityParameters2 .class, SignedData3 .class, Signer2 .class, TerminalManagementDataSet11 .class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:catm.003.001.03";
 
     public MxCatm00300103() {
         super();
@@ -89,21 +92,6 @@ public class MxCatm00300103
     }
 
     @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
-    }
-
-    @Override
     public String getBusinessProcess() {
         return BUSINESS_PROCESS;
     }
@@ -128,7 +116,7 @@ public class MxCatm00300103
      * 
      */
     public static MxCatm00300103 parse(String xml) {
-        return ((MxCatm00300103) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxCatm00300103 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams()));
+        return ((MxCatm00300103) MxReadImpl.parse(MxCatm00300103 .class, xml, _classes, new MxReadParams()));
     }
 
     /**
@@ -137,7 +125,7 @@ public class MxCatm00300103
      * 
      */
     public static MxCatm00300103 parse(String xml, MxReadConfiguration conf) {
-        return ((MxCatm00300103) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxCatm00300103 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams(conf)));
+        return ((MxCatm00300103) MxReadImpl.parse(MxCatm00300103 .class, xml, _classes, new MxReadParams(conf)));
     }
 
     /**
@@ -173,8 +161,23 @@ public class MxCatm00300103
      * @return
      *     a new instance of MxCatm00300103
      */
-    public final static MxCatm00300103 fromJson(String json) {
-        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxCatm00300103 .class);
+    public static final MxCatm00300103 fromJson(String json) {
+        return AbstractMX.fromJson(json, MxCatm00300103 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

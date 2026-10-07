@@ -320,8 +320,8 @@ public class ProcessingResult27 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the actn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the actn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -335,10 +335,12 @@ public class ProcessingResult27 {
      * {@link Action16 }
      * 
      * 
+     * @return
+     *     The value of the actn property.
      */
     public List<Action16> getActn() {
         if (actn == null) {
-            actn = new ArrayList<Action16>();
+            actn = new ArrayList<>();
         }
         return this.actn;
     }
@@ -349,8 +351,8 @@ public class ProcessingResult27 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the addtlInf property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the addtlInf property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -364,10 +366,12 @@ public class ProcessingResult27 {
      * {@link AdditionalData1 }
      * 
      * 
+     * @return
+     *     The value of the addtlInf property.
      */
     public List<AdditionalData1> getAddtlInf() {
         if (addtlInf == null) {
-            addtlInf = new ArrayList<AdditionalData1>();
+            addtlInf = new ArrayList<>();
         }
         return this.addtlInf;
     }

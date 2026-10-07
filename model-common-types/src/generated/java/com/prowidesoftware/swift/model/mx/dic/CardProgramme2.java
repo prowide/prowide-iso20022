@@ -37,8 +37,8 @@ public class CardProgramme2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cardPrgrmmPropsd property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cardPrgrmmPropsd property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -52,10 +52,12 @@ public class CardProgramme2 {
      * {@link CardProgrammeMode2 }
      * 
      * 
+     * @return
+     *     The value of the cardPrgrmmPropsd property.
      */
     public List<CardProgrammeMode2> getCardPrgrmmPropsd() {
         if (cardPrgrmmPropsd == null) {
-            cardPrgrmmPropsd = new ArrayList<CardProgrammeMode2>();
+            cardPrgrmmPropsd = new ArrayList<>();
         }
         return this.cardPrgrmmPropsd;
     }

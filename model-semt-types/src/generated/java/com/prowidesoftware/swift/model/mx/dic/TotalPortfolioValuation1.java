@@ -398,8 +398,8 @@ public class TotalPortfolioValuation1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the invstmtFndDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the invstmtFndDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -413,10 +413,12 @@ public class TotalPortfolioValuation1 {
      * {@link InvestmentFund1 }
      * 
      * 
+     * @return
+     *     The value of the invstmtFndDtls property.
      */
     public List<InvestmentFund1> getInvstmtFndDtls() {
         if (invstmtFndDtls == null) {
-            invstmtFndDtls = new ArrayList<InvestmentFund1>();
+            invstmtFndDtls = new ArrayList<>();
         }
         return this.invstmtFndDtls;
     }

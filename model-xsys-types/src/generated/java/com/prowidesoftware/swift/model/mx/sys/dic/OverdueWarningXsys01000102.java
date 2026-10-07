@@ -1,12 +1,12 @@
 
 package com.prowidesoftware.swift.model.mx.sys.dic;
 
+import com.prowidesoftware.swift.model.mx.sys.dic.SwFileRequestHeader;
+import com.prowidesoftware.swift.model.mx.sys.dic.SwIntRequestHeader;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.mx.sys.dic.SwFileRequestHeader;
-import com.prowidesoftware.swift.model.mx.sys.dic.SwIntRequestHeader;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;

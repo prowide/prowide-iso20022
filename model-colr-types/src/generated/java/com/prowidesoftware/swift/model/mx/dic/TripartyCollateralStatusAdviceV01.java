@@ -298,8 +298,8 @@ public class TripartyCollateralStatusAdviceV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sctiesMvmnt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the sctiesMvmnt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -313,10 +313,12 @@ public class TripartyCollateralStatusAdviceV01 {
      * {@link SecuritiesMovement8 }
      * 
      * 
+     * @return
+     *     The value of the sctiesMvmnt property.
      */
     public List<SecuritiesMovement8> getSctiesMvmnt() {
         if (sctiesMvmnt == null) {
-            sctiesMvmnt = new ArrayList<SecuritiesMovement8>();
+            sctiesMvmnt = new ArrayList<>();
         }
         return this.sctiesMvmnt;
     }
@@ -327,8 +329,8 @@ public class TripartyCollateralStatusAdviceV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cshMvmnt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cshMvmnt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -342,10 +344,12 @@ public class TripartyCollateralStatusAdviceV01 {
      * {@link CashMovement7 }
      * 
      * 
+     * @return
+     *     The value of the cshMvmnt property.
      */
     public List<CashMovement7> getCshMvmnt() {
         if (cshMvmnt == null) {
-            cshMvmnt = new ArrayList<CashMovement7>();
+            cshMvmnt = new ArrayList<>();
         }
         return this.cshMvmnt;
     }
@@ -356,8 +360,8 @@ public class TripartyCollateralStatusAdviceV01 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the splmtryData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the splmtryData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -371,10 +375,12 @@ public class TripartyCollateralStatusAdviceV01 {
      * {@link SupplementaryData1 }
      * 
      * 
+     * @return
+     *     The value of the splmtryData property.
      */
     public List<SupplementaryData1> getSplmtryData() {
         if (splmtryData == null) {
-            splmtryData = new ArrayList<SupplementaryData1>();
+            splmtryData = new ArrayList<>();
         }
         return this.splmtryData;
     }

@@ -83,8 +83,8 @@ public class CorporateActionRate18 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the grssDvddRate property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the grssDvddRate property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -98,10 +98,12 @@ public class CorporateActionRate18 {
      * {@link GrossDividendRateFormat6Choice }
      * 
      * 
+     * @return
+     *     The value of the grssDvddRate property.
      */
     public List<GrossDividendRateFormat6Choice> getGrssDvddRate() {
         if (grssDvddRate == null) {
-            grssDvddRate = new ArrayList<GrossDividendRateFormat6Choice>();
+            grssDvddRate = new ArrayList<>();
         }
         return this.grssDvddRate;
     }
@@ -137,8 +139,8 @@ public class CorporateActionRate18 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the intrstRateUsdForPmt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the intrstRateUsdForPmt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -152,10 +154,12 @@ public class CorporateActionRate18 {
      * {@link InterestRateUsedForPaymentFormat6Choice }
      * 
      * 
+     * @return
+     *     The value of the intrstRateUsdForPmt property.
      */
     public List<InterestRateUsedForPaymentFormat6Choice> getIntrstRateUsdForPmt() {
         if (intrstRateUsdForPmt == null) {
-            intrstRateUsdForPmt = new ArrayList<InterestRateUsedForPaymentFormat6Choice>();
+            intrstRateUsdForPmt = new ArrayList<>();
         }
         return this.intrstRateUsdForPmt;
     }
@@ -241,8 +245,8 @@ public class CorporateActionRate18 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the taxRltdRate property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the taxRltdRate property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -256,10 +260,12 @@ public class CorporateActionRate18 {
      * {@link RateTypeAndAmountAndStatus10 }
      * 
      * 
+     * @return
+     *     The value of the taxRltdRate property.
      */
     public List<RateTypeAndAmountAndStatus10> getTaxRltdRate() {
         if (taxRltdRate == null) {
-            taxRltdRate = new ArrayList<RateTypeAndAmountAndStatus10>();
+            taxRltdRate = new ArrayList<>();
         }
         return this.taxRltdRate;
     }
@@ -270,8 +276,8 @@ public class CorporateActionRate18 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the taxblIncmPerDvddShr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the taxblIncmPerDvddShr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -285,10 +291,12 @@ public class CorporateActionRate18 {
      * {@link RateTypeAndAmountAndStatus12 }
      * 
      * 
+     * @return
+     *     The value of the taxblIncmPerDvddShr property.
      */
     public List<RateTypeAndAmountAndStatus12> getTaxblIncmPerDvddShr() {
         if (taxblIncmPerDvddShr == null) {
-            taxblIncmPerDvddShr = new ArrayList<RateTypeAndAmountAndStatus12>();
+            taxblIncmPerDvddShr = new ArrayList<>();
         }
         return this.taxblIncmPerDvddShr;
     }

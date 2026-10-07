@@ -34,8 +34,8 @@ public class BusinessInformation2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the gnlBizRpt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the gnlBizRpt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -49,10 +49,12 @@ public class BusinessInformation2 {
      * {@link GeneralBusinessReport2 }
      * 
      * 
+     * @return
+     *     The value of the gnlBizRpt property.
      */
     public List<GeneralBusinessReport2> getGnlBizRpt() {
         if (gnlBizRpt == null) {
-            gnlBizRpt = new ArrayList<GeneralBusinessReport2>();
+            gnlBizRpt = new ArrayList<>();
         }
         return this.gnlBizRpt;
     }

@@ -64,8 +64,8 @@ public class AmountOrPercentageRange {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the term property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the term property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -79,10 +79,12 @@ public class AmountOrPercentageRange {
      * {@link Term1 }
      * 
      * 
+     * @return
+     *     The value of the term property.
      */
     public List<Term1> getTerm() {
         if (term == null) {
-            term = new ArrayList<Term1>();
+            term = new ArrayList<>();
         }
         return this.term;
     }

@@ -64,8 +64,8 @@ public class TradeData40Choice {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rpt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rpt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -79,10 +79,12 @@ public class TradeData40Choice {
      * {@link TradeReport22Choice }
      * 
      * 
+     * @return
+     *     The value of the rpt property.
      */
     public List<TradeReport22Choice> getRpt() {
         if (rpt == null) {
-            rpt = new ArrayList<TradeReport22Choice>();
+            rpt = new ArrayList<>();
         }
         return this.rpt;
     }

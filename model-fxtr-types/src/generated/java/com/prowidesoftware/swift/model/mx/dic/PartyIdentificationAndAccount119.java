@@ -37,8 +37,8 @@ public class PartyIdentificationAndAccount119 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ptyId property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ptyId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -52,10 +52,12 @@ public class PartyIdentificationAndAccount119 {
      * {@link PartyIdentification90 }
      * 
      * 
+     * @return
+     *     The value of the ptyId property.
      */
     public List<PartyIdentification90> getPtyId() {
         if (ptyId == null) {
-            ptyId = new ArrayList<PartyIdentification90>();
+            ptyId = new ArrayList<>();
         }
         return this.ptyId;
     }
@@ -66,8 +68,8 @@ public class PartyIdentificationAndAccount119 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the acctId property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the acctId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -81,10 +83,12 @@ public class PartyIdentificationAndAccount119 {
      * {@link AccountIdentification30 }
      * 
      * 
+     * @return
+     *     The value of the acctId property.
      */
     public List<AccountIdentification30> getAcctId() {
         if (acctId == null) {
-            acctId = new ArrayList<AccountIdentification30>();
+            acctId = new ArrayList<>();
         }
         return this.acctId;
     }

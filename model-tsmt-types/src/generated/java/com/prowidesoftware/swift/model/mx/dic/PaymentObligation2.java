@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -142,8 +142,8 @@ public class PaymentObligation2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the chrgs property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the chrgs property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -157,10 +157,12 @@ public class PaymentObligation2 {
      * {@link Charges5 }
      * 
      * 
+     * @return
+     *     The value of the chrgs property.
      */
     public List<Charges5> getChrgs() {
         if (chrgs == null) {
-            chrgs = new ArrayList<Charges5>();
+            chrgs = new ArrayList<>();
         }
         return this.chrgs;
     }
@@ -271,8 +273,8 @@ public class PaymentObligation2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the pmtTerms property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the pmtTerms property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -286,10 +288,12 @@ public class PaymentObligation2 {
      * {@link PaymentTerms4 }
      * 
      * 
+     * @return
+     *     The value of the pmtTerms property.
      */
     public List<PaymentTerms4> getPmtTerms() {
         if (pmtTerms == null) {
-            pmtTerms = new ArrayList<PaymentTerms4>();
+            pmtTerms = new ArrayList<>();
         }
         return this.pmtTerms;
     }

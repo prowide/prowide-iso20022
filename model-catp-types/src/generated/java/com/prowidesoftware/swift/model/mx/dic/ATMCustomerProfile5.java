@@ -118,8 +118,8 @@ public class ATMCustomerProfile5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the allwdSvcs property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the allwdSvcs property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -133,10 +133,12 @@ public class ATMCustomerProfile5 {
      * {@link ATMService17 }
      * 
      * 
+     * @return
+     *     The value of the allwdSvcs property.
      */
     public List<ATMService17> getAllwdSvcs() {
         if (allwdSvcs == null) {
-            allwdSvcs = new ArrayList<ATMService17>();
+            allwdSvcs = new ArrayList<>();
         }
         return this.allwdSvcs;
     }

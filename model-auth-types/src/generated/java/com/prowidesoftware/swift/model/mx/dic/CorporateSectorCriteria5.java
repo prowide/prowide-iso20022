@@ -43,8 +43,8 @@ public class CorporateSectorCriteria5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the fiSctr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the fiSctr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -58,10 +58,12 @@ public class CorporateSectorCriteria5 {
      * {@link FinancialPartySectorType2Code }
      * 
      * 
+     * @return
+     *     The value of the fiSctr property.
      */
     public List<FinancialPartySectorType2Code> getFISctr() {
         if (fiSctr == null) {
-            fiSctr = new ArrayList<FinancialPartySectorType2Code>();
+            fiSctr = new ArrayList<>();
         }
         return this.fiSctr;
     }
@@ -72,8 +74,8 @@ public class CorporateSectorCriteria5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the nfiSctr property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the nfiSctr property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -87,10 +89,12 @@ public class CorporateSectorCriteria5 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the nfiSctr property.
      */
     public List<String> getNFISctr() {
         if (nfiSctr == null) {
-            nfiSctr = new ArrayList<String>();
+            nfiSctr = new ArrayList<>();
         }
         return this.nfiSctr;
     }

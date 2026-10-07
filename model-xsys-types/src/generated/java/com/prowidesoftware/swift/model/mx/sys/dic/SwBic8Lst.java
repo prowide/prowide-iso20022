@@ -34,8 +34,8 @@ public class SwBic8Lst {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the bic8 property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the bic8 property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -49,10 +49,12 @@ public class SwBic8Lst {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the bic8 property.
      */
     public List<String> getBic8() {
         if (bic8 == null) {
-            bic8 = new ArrayList<String>();
+            bic8 = new ArrayList<>();
         }
         return this.bic8;
     }

@@ -97,8 +97,8 @@ public class RequestDetails27 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rstrctnRef property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rstrctnRef property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -112,10 +112,12 @@ public class RequestDetails27 {
      * {@link RestrictionIdentification1 }
      * 
      * 
+     * @return
+     *     The value of the rstrctnRef property.
      */
     public List<RestrictionIdentification1> getRstrctnRef() {
         if (rstrctnRef == null) {
-            rstrctnRef = new ArrayList<RestrictionIdentification1>();
+            rstrctnRef = new ArrayList<>();
         }
         return this.rstrctnRef;
     }
@@ -226,8 +228,8 @@ public class RequestDetails27 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the othrPrcg property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the othrPrcg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -241,10 +243,12 @@ public class RequestDetails27 {
      * {@link GenericIdentification30 }
      * 
      * 
+     * @return
+     *     The value of the othrPrcg property.
      */
     public List<GenericIdentification30> getOthrPrcg() {
         if (othrPrcg == null) {
-            othrPrcg = new ArrayList<GenericIdentification30>();
+            othrPrcg = new ArrayList<>();
         }
         return this.othrPrcg;
     }
@@ -380,8 +384,8 @@ public class RequestDetails27 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the lnkgs property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the lnkgs property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -395,10 +399,12 @@ public class RequestDetails27 {
      * {@link Linkages62 }
      * 
      * 
+     * @return
+     *     The value of the lnkgs property.
      */
     public List<Linkages62> getLnkgs() {
         if (lnkgs == null) {
-            lnkgs = new ArrayList<Linkages62>();
+            lnkgs = new ArrayList<>();
         }
         return this.lnkgs;
     }

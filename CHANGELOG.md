@@ -1,5 +1,15 @@
 # Prowide ISO 20022 - CHANGELOG
 
+### 9.7.0 - October 2026
+  * SWIFT Standards release 2026 model, for market infrastructures and clearings that adopt it with the November 2026 update, such as Target2; as the SWIFT network go-live was postponed, this remains an SRU2025 release
+  * (PW-3251) Added `MxParseUtils.needsNormalization` to check whether a payload needs lenient normalization without materializing the normalized content, for callers that only need the boolean outcome (e.g. file format detection)
+  * (PW-3185) `MxSwiftMessage.toJson()` now uses 1-based months (January=1) for Calendar fields and emits a `schemaVersion` marker, through the Prowide Core update
+  * Updated Prowide Core dependency to SRU2025-9.6.9
+
+  Upgrade note: the Prowide Core dependency and the deprecation schedule remain those of SRU2025. Some model dictionary classes were renamed or removed, so code referencing them must be adapted and recompiled.
+  The message versions introduced by SWIFT Standards release 2026 are valid on SWIFT only for the market infrastructures adopting them in November 2026, such as Target2. All other SWIFT traffic must keep using 
+  SRU2025 message versions until SRU2026 goes live on 12 June 2027.
+
 ### 9.6.6 - July 2026
   * Additional Java8 backport fixes in semt model classes still using java.time
 

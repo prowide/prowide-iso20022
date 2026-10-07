@@ -186,8 +186,8 @@ public class FundCashForecast7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ttlNAV property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the ttlNAV property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -201,10 +201,12 @@ public class FundCashForecast7 {
      * {@link ActiveOrHistoricCurrencyAndAmount }
      * 
      * 
+     * @return
+     *     The value of the ttlNAV property.
      */
     public List<ActiveOrHistoricCurrencyAndAmount> getTtlNAV() {
         if (ttlNAV == null) {
-            ttlNAV = new ArrayList<ActiveOrHistoricCurrencyAndAmount>();
+            ttlNAV = new ArrayList<>();
         }
         return this.ttlNAV;
     }
@@ -215,8 +217,8 @@ public class FundCashForecast7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the prvsTtlNAV property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the prvsTtlNAV property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -230,10 +232,12 @@ public class FundCashForecast7 {
      * {@link ActiveOrHistoricCurrencyAndAmount }
      * 
      * 
+     * @return
+     *     The value of the prvsTtlNAV property.
      */
     public List<ActiveOrHistoricCurrencyAndAmount> getPrvsTtlNAV() {
         if (prvsTtlNAV == null) {
-            prvsTtlNAV = new ArrayList<ActiveOrHistoricCurrencyAndAmount>();
+            prvsTtlNAV = new ArrayList<>();
         }
         return this.prvsTtlNAV;
     }
@@ -319,8 +323,8 @@ public class FundCashForecast7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the invstmtCcy property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the invstmtCcy property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -334,10 +338,12 @@ public class FundCashForecast7 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the invstmtCcy property.
      */
     public List<String> getInvstmtCcy() {
         if (invstmtCcy == null) {
-            invstmtCcy = new ArrayList<String>();
+            invstmtCcy = new ArrayList<>();
         }
         return this.invstmtCcy;
     }
@@ -465,8 +471,8 @@ public class FundCashForecast7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cshInFcstDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cshInFcstDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -480,10 +486,12 @@ public class FundCashForecast7 {
      * {@link CashInForecast6 }
      * 
      * 
+     * @return
+     *     The value of the cshInFcstDtls property.
      */
     public List<CashInForecast6> getCshInFcstDtls() {
         if (cshInFcstDtls == null) {
-            cshInFcstDtls = new ArrayList<CashInForecast6>();
+            cshInFcstDtls = new ArrayList<>();
         }
         return this.cshInFcstDtls;
     }
@@ -494,8 +502,8 @@ public class FundCashForecast7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cshOutFcstDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the cshOutFcstDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -509,10 +517,12 @@ public class FundCashForecast7 {
      * {@link CashOutForecast6 }
      * 
      * 
+     * @return
+     *     The value of the cshOutFcstDtls property.
      */
     public List<CashOutForecast6> getCshOutFcstDtls() {
         if (cshOutFcstDtls == null) {
-            cshOutFcstDtls = new ArrayList<CashOutForecast6>();
+            cshOutFcstDtls = new ArrayList<>();
         }
         return this.cshOutFcstDtls;
     }
@@ -523,8 +533,8 @@ public class FundCashForecast7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the netCshFcstDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the netCshFcstDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -538,10 +548,12 @@ public class FundCashForecast7 {
      * {@link NetCashForecast4 }
      * 
      * 
+     * @return
+     *     The value of the netCshFcstDtls property.
      */
     public List<NetCashForecast4> getNetCshFcstDtls() {
         if (netCshFcstDtls == null) {
-            netCshFcstDtls = new ArrayList<NetCashForecast4>();
+            netCshFcstDtls = new ArrayList<>();
         }
         return this.netCshFcstDtls;
     }

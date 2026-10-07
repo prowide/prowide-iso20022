@@ -62,8 +62,8 @@ public class NotionalAmount1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the schdl property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the schdl property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -77,10 +77,12 @@ public class NotionalAmount1 {
      * {@link Schedule3 }
      * 
      * 
+     * @return
+     *     The value of the schdl property.
      */
     public List<Schedule3> getSchdl() {
         if (schdl == null) {
-            schdl = new ArrayList<Schedule3>();
+            schdl = new ArrayList<>();
         }
         return this.schdl;
     }

@@ -80,8 +80,8 @@ public class CommercialDataSet2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the comrclDocRef property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the comrclDocRef property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -95,10 +95,12 @@ public class CommercialDataSet2 {
      * {@link DocumentIdentification7 }
      * 
      * 
+     * @return
+     *     The value of the comrclDocRef property.
      */
     public List<DocumentIdentification7> getComrclDocRef() {
         if (comrclDocRef == null) {
-            comrclDocRef = new ArrayList<DocumentIdentification7>();
+            comrclDocRef = new ArrayList<>();
         }
         return this.comrclDocRef;
     }
@@ -184,8 +186,8 @@ public class CommercialDataSet2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the goods property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the goods property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -199,10 +201,12 @@ public class CommercialDataSet2 {
      * {@link LineItem4 }
      * 
      * 
+     * @return
+     *     The value of the goods property.
      */
     public List<LineItem4> getGoods() {
         if (goods == null) {
-            goods = new ArrayList<LineItem4>();
+            goods = new ArrayList<>();
         }
         return this.goods;
     }
@@ -213,8 +217,8 @@ public class CommercialDataSet2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the pmtTerms property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the pmtTerms property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -228,10 +232,12 @@ public class CommercialDataSet2 {
      * {@link PaymentTerms1 }
      * 
      * 
+     * @return
+     *     The value of the pmtTerms property.
      */
     public List<PaymentTerms1> getPmtTerms() {
         if (pmtTerms == null) {
-            pmtTerms = new ArrayList<PaymentTerms1>();
+            pmtTerms = new ArrayList<>();
         }
         return this.pmtTerms;
     }

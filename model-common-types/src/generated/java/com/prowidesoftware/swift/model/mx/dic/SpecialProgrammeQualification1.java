@@ -62,8 +62,8 @@ public class SpecialProgrammeQualification1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dtl property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the dtl property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -77,10 +77,12 @@ public class SpecialProgrammeQualification1 {
      * {@link SpecialProgrammeDetails1 }
      * 
      * 
+     * @return
+     *     The value of the dtl property.
      */
     public List<SpecialProgrammeDetails1> getDtl() {
         if (dtl == null) {
-            dtl = new ArrayList<SpecialProgrammeDetails1>();
+            dtl = new ArrayList<>();
         }
         return this.dtl;
     }

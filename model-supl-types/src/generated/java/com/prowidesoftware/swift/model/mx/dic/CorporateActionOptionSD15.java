@@ -415,8 +415,8 @@ public class CorporateActionOptionSD15 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the taxCtgy property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the taxCtgy property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -430,10 +430,12 @@ public class CorporateActionOptionSD15 {
      * {@link TaxCategory1 }
      * 
      * 
+     * @return
+     *     The value of the taxCtgy property.
      */
     public List<TaxCategory1> getTaxCtgy() {
         if (taxCtgy == null) {
-            taxCtgy = new ArrayList<TaxCategory1>();
+            taxCtgy = new ArrayList<>();
         }
         return this.taxCtgy;
     }
@@ -494,8 +496,8 @@ public class CorporateActionOptionSD15 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the optnConds property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the optnConds property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -509,10 +511,12 @@ public class CorporateActionOptionSD15 {
      * {@link OptionConditions1 }
      * 
      * 
+     * @return
+     *     The value of the optnConds property.
      */
     public List<OptionConditions1> getOptnConds() {
         if (optnConds == null) {
-            optnConds = new ArrayList<OptionConditions1>();
+            optnConds = new ArrayList<>();
         }
         return this.optnConds;
     }

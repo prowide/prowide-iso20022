@@ -4,14 +4,17 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import com.prowidesoftware.swift.model.mx.MxReadImpl;
+import com.prowidesoftware.swift.model.mx.MxReadParams;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
-import com.prowidesoftware.swift.model.mx.MxRead;
-import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -28,18 +31,18 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:caam.009.001.03")
 public class MxCaam00900103
-    extends com.prowidesoftware.swift.model.mx.AbstractMX
+    extends AbstractMX
 {
 
     @XmlElement(name = "ATMRcncltnAdvc", required = true)
     protected ATMReconciliationAdviceV03 atmRcncltnAdvc;
-    public final static transient String BUSINESS_PROCESS = "caam";
-    public final static transient int FUNCTIONALITY = 9;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 3;
+    public static final transient String BUSINESS_PROCESS = "caam";
+    public static final transient int FUNCTIONALITY = 9;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 3;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {ATMCassette3 .class, ATMCassetteCounters5 .class, ATMCassetteCounters6 .class, ATMCassetteStatus1Code.class, ATMCassetteType1Code.class, ATMCommand5Code.class, ATMCommand8 .class, ATMCommand9 .class, ATMCommandIdentification1 .class, ATMConfigurationParameter1 .class, ATMCounterType2Code.class, ATMCounterType3Code.class, ATMEnvironment22 .class, ATMEquipment1 .class, ATMMediaType3Code.class, ATMMediaType4Code.class, ATMMessageFunction2 .class, ATMNoteType1Code.class, ATMOperation2Code.class, ATMReconciliationAdvice3 .class, ATMReconciliationAdviceV03 .class, ATMReconciliationOperation1 .class, ATMTotals3 .class, ATMTotals4 .class, ATMTransaction36 .class, Acquirer7 .class, Algorithm11Code.class, Algorithm12Code.class, Algorithm13Code.class, Algorithm15Code.class, Algorithm7Code.class, Algorithm8Code.class, AlgorithmIdentification11 .class, AlgorithmIdentification12 .class, AlgorithmIdentification13 .class, AlgorithmIdentification14 .class, AlgorithmIdentification15 .class, AttributeType1Code.class, AuthenticatedData4 .class, AutomatedTellerMachine8 .class, BytePadding1Code.class, CardDataReading1Code.class, CertificateIssuer1 .class, ContentInformationType10 .class, ContentInformationType15 .class, ContentType2Code.class, CurrencyAndAmount.class, DataSetCategory7Code.class, EncapsulatedContent3 .class, EncryptedContent3 .class, EncryptionFormat1Code.class, EnvelopedData4 .class, FailureReason9Code.class, GenericIdentification77 .class, GeographicCoordinates1 .class, GeographicLocation1Choice.class, Header32 .class, IssuerAndSerialNumber1 .class, KEK4 .class, KEKIdentifier2 .class, KeyTransport4 .class, MessageFunction11Code.class, MxCaam00900103 .class, Parameter4 .class, Parameter5 .class, Parameter6 .class, Parameter7 .class, PartyType12Code.class, PaymentCard37 .class, PlainCardData24 .class, PostalAddress17 .class, Recipient4Choice.class, Recipient5Choice.class, RelativeDistinguishedName1 .class, TerminalHosting1 .class, TerminalManagementActionResult2Code.class, Traceability4 .class, TransactionEnvironment2Code.class, TransactionEnvironment3Code.class, TransactionIdentifier3 .class, UTMCoordinates1 .class };
-    public final static transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:caam.009.001.03";
+    public static final transient Class[] _classes = new Class[] {ATMCassette3 .class, ATMCassetteCounters5 .class, ATMCassetteCounters6 .class, ATMCassetteStatus1Code.class, ATMCassetteType1Code.class, ATMCommand5Code.class, ATMCommand8 .class, ATMCommand9 .class, ATMCommandIdentification1 .class, ATMConfigurationParameter1 .class, ATMCounterType2Code.class, ATMCounterType3Code.class, ATMEnvironment22 .class, ATMEquipment1 .class, ATMMediaType3Code.class, ATMMediaType4Code.class, ATMMessageFunction2 .class, ATMNoteType1Code.class, ATMOperation2Code.class, ATMReconciliationAdvice3 .class, ATMReconciliationAdviceV03 .class, ATMReconciliationOperation1 .class, ATMTotals3 .class, ATMTotals4 .class, ATMTransaction36 .class, Acquirer7 .class, Algorithm11Code.class, Algorithm12Code.class, Algorithm13Code.class, Algorithm15Code.class, Algorithm7Code.class, Algorithm8Code.class, AlgorithmIdentification11 .class, AlgorithmIdentification12 .class, AlgorithmIdentification13 .class, AlgorithmIdentification14 .class, AlgorithmIdentification15 .class, AttributeType1Code.class, AuthenticatedData4 .class, AutomatedTellerMachine8 .class, BytePadding1Code.class, CardDataReading1Code.class, CertificateIssuer1 .class, ContentInformationType10 .class, ContentInformationType15 .class, ContentType2Code.class, CurrencyAndAmount.class, DataSetCategory7Code.class, EncapsulatedContent3 .class, EncryptedContent3 .class, EncryptionFormat1Code.class, EnvelopedData4 .class, FailureReason9Code.class, GenericIdentification77 .class, GeographicCoordinates1 .class, GeographicLocation1Choice.class, Header32 .class, IssuerAndSerialNumber1 .class, KEK4 .class, KEKIdentifier2 .class, KeyTransport4 .class, MessageFunction11Code.class, MxCaam00900103 .class, Parameter4 .class, Parameter5 .class, Parameter6 .class, Parameter7 .class, PartyType12Code.class, PaymentCard37 .class, PlainCardData24 .class, PostalAddress17 .class, Recipient4Choice.class, Recipient5Choice.class, RelativeDistinguishedName1 .class, TerminalHosting1 .class, TerminalManagementActionResult2Code.class, Traceability4 .class, TransactionEnvironment2Code.class, TransactionEnvironment3Code.class, TransactionIdentifier3 .class, UTMCoordinates1 .class };
+    public static final transient String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:caam.009.001.03";
 
     public MxCaam00900103() {
         super();
@@ -89,21 +92,6 @@ public class MxCaam00900103
     }
 
     @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
-    }
-
-    @Override
     public String getBusinessProcess() {
         return BUSINESS_PROCESS;
     }
@@ -128,7 +116,7 @@ public class MxCaam00900103
      * 
      */
     public static MxCaam00900103 parse(String xml) {
-        return ((MxCaam00900103) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxCaam00900103 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams()));
+        return ((MxCaam00900103) MxReadImpl.parse(MxCaam00900103 .class, xml, _classes, new MxReadParams()));
     }
 
     /**
@@ -137,7 +125,7 @@ public class MxCaam00900103
      * 
      */
     public static MxCaam00900103 parse(String xml, MxReadConfiguration conf) {
-        return ((MxCaam00900103) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxCaam00900103 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams(conf)));
+        return ((MxCaam00900103) MxReadImpl.parse(MxCaam00900103 .class, xml, _classes, new MxReadParams(conf)));
     }
 
     /**
@@ -173,8 +161,23 @@ public class MxCaam00900103
      * @return
      *     a new instance of MxCaam00900103
      */
-    public final static MxCaam00900103 fromJson(String json) {
-        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxCaam00900103 .class);
+    public static final MxCaam00900103 fromJson(String json) {
+        return AbstractMX.fromJson(json, MxCaam00900103 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

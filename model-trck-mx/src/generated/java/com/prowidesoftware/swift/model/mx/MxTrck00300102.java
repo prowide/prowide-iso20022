@@ -4,14 +4,17 @@ package com.prowidesoftware.swift.model.mx;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.model.mx.AbstractMX;
 
+import com.prowidesoftware.swift.model.MxSwiftMessage;
+import com.prowidesoftware.swift.model.mx.AbstractMX;
+import com.prowidesoftware.swift.model.mx.MxRead;
+import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
+import com.prowidesoftware.swift.model.mx.MxReadImpl;
+import com.prowidesoftware.swift.model.mx.MxReadParams;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.prowidesoftware.swift.model.MxSwiftMessage;
-import com.prowidesoftware.swift.model.mx.MxRead;
-import com.prowidesoftware.swift.model.mx.MxReadConfiguration;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -28,18 +31,18 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 })
 @XmlRootElement(name = "Document", namespace = "urn:swift:xsd:trck.003.001.02")
 public class MxTrck00300102
-    extends com.prowidesoftware.swift.model.mx.AbstractMX
+    extends AbstractMX
 {
 
     @XmlElement(name = "TrckrAlrtNtfctn", required = true)
     protected TrackerAlertNotificationV02 trckrAlrtNtfctn;
-    public final static transient String BUSINESS_PROCESS = "trck";
-    public final static transient int FUNCTIONALITY = 3;
-    public final static transient int VARIANT = 1;
-    public final static transient int VERSION = 2;
+    public static final transient String BUSINESS_PROCESS = "trck";
+    public static final transient int FUNCTIONALITY = 3;
+    public static final transient int VARIANT = 1;
+    public static final transient int VERSION = 2;
     @SuppressWarnings("rawtypes")
-    public final static transient Class[] _classes = new Class[] {AddressType2Code.class, AddressType3Choice.class, ClearingSystemIdentification2Choice.class, ClearingSystemMemberIdentification2 .class, DateAndDateTime2Choice.class, DateAndPlaceOfBirth1 .class, FinancialIdentificationSchemeName1Choice.class, FinancialInstitutionIdentification21 .class, GenericFinancialIdentification1 .class, GenericIdentification30 .class, GenericOrganisationIdentification1 .class, GenericPersonIdentification1 .class, MxTrck00300102 .class, OrganisationIdentification29 .class, OrganisationIdentificationSchemeName1Choice.class, OriginalBusinessInstruction1 .class, OriginalBusinessInstruction4 .class, PaymentIdentification10 .class, PersonIdentification13 .class, PersonIdentificationSchemeName1Choice.class, PostalAddress24 .class, ServiceLevel8Choice.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TrackerAlertNotificationStatus1 .class, TrackerAlertNotificationV02 .class, TrackerAlertStatus1Choice.class, TrackerAlertStatusReason1Choice.class, TrackerHeader5 .class, TrackerParty2Choice.class, TrackerPartyIdentification2 .class, TrackerPaymentTransaction7 .class, TrackerStatus2 .class, TrackerStatusAndTransaction7 .class };
-    public final static transient String NAMESPACE = "urn:swift:xsd:trck.003.001.02";
+    public static final transient Class[] _classes = new Class[] {AddressType2Code.class, AddressType3Choice.class, ClearingSystemIdentification2Choice.class, ClearingSystemMemberIdentification2 .class, DateAndDateTime2Choice.class, DateAndPlaceOfBirth1 .class, FinancialIdentificationSchemeName1Choice.class, FinancialInstitutionIdentification21 .class, GenericFinancialIdentification1 .class, GenericIdentification30 .class, GenericOrganisationIdentification1 .class, GenericPersonIdentification1 .class, MxTrck00300102 .class, OrganisationIdentification29 .class, OrganisationIdentificationSchemeName1Choice.class, OriginalBusinessInstruction1 .class, OriginalBusinessInstruction4 .class, PaymentIdentification10 .class, PersonIdentification13 .class, PersonIdentificationSchemeName1Choice.class, PostalAddress24 .class, ServiceLevel8Choice.class, SupplementaryData1 .class, SupplementaryDataEnvelope1 .class, TrackerAlertNotificationStatus1 .class, TrackerAlertNotificationV02 .class, TrackerAlertStatus1Choice.class, TrackerAlertStatusReason1Choice.class, TrackerHeader5 .class, TrackerParty2Choice.class, TrackerPartyIdentification2 .class, TrackerPaymentTransaction7 .class, TrackerStatus2 .class, TrackerStatusAndTransaction7 .class };
+    public static final transient String NAMESPACE = "urn:swift:xsd:trck.003.001.02";
 
     public MxTrck00300102() {
         super();
@@ -89,21 +92,6 @@ public class MxTrck00300102
     }
 
     @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        return EqualsBuilder.reflectionEquals(this, that);
-    }
-
-    @Override
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
-    }
-
-    @Override
     public String getBusinessProcess() {
         return BUSINESS_PROCESS;
     }
@@ -128,7 +116,7 @@ public class MxTrck00300102
      * 
      */
     public static MxTrck00300102 parse(String xml) {
-        return ((MxTrck00300102) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxTrck00300102 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams()));
+        return ((MxTrck00300102) MxReadImpl.parse(MxTrck00300102 .class, xml, _classes, new MxReadParams()));
     }
 
     /**
@@ -137,7 +125,7 @@ public class MxTrck00300102
      * 
      */
     public static MxTrck00300102 parse(String xml, MxReadConfiguration conf) {
-        return ((MxTrck00300102) com.prowidesoftware.swift.model.mx.MxReadImpl.parse(MxTrck00300102 .class, xml, _classes, new com.prowidesoftware.swift.model.mx.MxReadParams(conf)));
+        return ((MxTrck00300102) MxReadImpl.parse(MxTrck00300102 .class, xml, _classes, new MxReadParams(conf)));
     }
 
     /**
@@ -173,8 +161,23 @@ public class MxTrck00300102
      * @return
      *     a new instance of MxTrck00300102
      */
-    public final static MxTrck00300102 fromJson(String json) {
-        return com.prowidesoftware.swift.model.mx.AbstractMX.fromJson(json, MxTrck00300102 .class);
+    public static final MxTrck00300102 fromJson(String json) {
+        return AbstractMX.fromJson(json, MxTrck00300102 .class);
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return EqualsBuilder.reflectionEquals(this, that);
+    }
+
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

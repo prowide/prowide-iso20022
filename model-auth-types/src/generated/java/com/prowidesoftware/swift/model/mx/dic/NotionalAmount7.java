@@ -66,8 +66,8 @@ public class NotionalAmount7 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the amtInFct property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the amtInFct property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -81,10 +81,12 @@ public class NotionalAmount7 {
      * {@link ActiveOrHistoricCurrencyAnd19DecimalAmount }
      * 
      * 
+     * @return
+     *     The value of the amtInFct property.
      */
     public List<ActiveOrHistoricCurrencyAnd19DecimalAmount> getAmtInFct() {
         if (amtInFct == null) {
-            amtInFct = new ArrayList<ActiveOrHistoricCurrencyAnd19DecimalAmount>();
+            amtInFct = new ArrayList<>();
         }
         return this.amtInFct;
     }

@@ -153,8 +153,8 @@ public class Transfer1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the unitsDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the unitsDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -168,10 +168,12 @@ public class Transfer1 {
      * {@link Unit1 }
      * 
      * 
+     * @return
+     *     The value of the unitsDtls property.
      */
     public List<Unit1> getUnitsDtls() {
         if (unitsDtls == null) {
-            unitsDtls = new ArrayList<Unit1>();
+            unitsDtls = new ArrayList<>();
         }
         return this.unitsDtls;
     }

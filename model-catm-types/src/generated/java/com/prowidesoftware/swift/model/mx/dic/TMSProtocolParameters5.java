@@ -145,8 +145,8 @@ public class TMSProtocolParameters5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the mntncSvc property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the mntncSvc property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -160,10 +160,12 @@ public class TMSProtocolParameters5 {
      * {@link DataSetCategory10Code }
      * 
      * 
+     * @return
+     *     The value of the mntncSvc property.
      */
     public List<DataSetCategory10Code> getMntncSvc() {
         if (mntncSvc == null) {
-            mntncSvc = new ArrayList<DataSetCategory10Code>();
+            mntncSvc = new ArrayList<>();
         }
         return this.mntncSvc;
     }
@@ -199,8 +201,8 @@ public class TMSProtocolParameters5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the applId property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the applId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -214,10 +216,12 @@ public class TMSProtocolParameters5 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the applId property.
      */
     public List<String> getApplId() {
         if (applId == null) {
-            applId = new ArrayList<String>();
+            applId = new ArrayList<>();
         }
         return this.applId;
     }
@@ -353,8 +357,8 @@ public class TMSProtocolParameters5 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the msgItm property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the msgItm property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -368,10 +372,12 @@ public class TMSProtocolParameters5 {
      * {@link MessageItemCondition1 }
      * 
      * 
+     * @return
+     *     The value of the msgItm property.
      */
     public List<MessageItemCondition1> getMsgItm() {
         if (msgItm == null) {
-            msgItm = new ArrayList<MessageItemCondition1>();
+            msgItm = new ArrayList<>();
         }
         return this.msgItm;
     }

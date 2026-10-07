@@ -77,8 +77,8 @@ public class PartyIdentification51 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the altrnId property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the altrnId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -92,10 +92,12 @@ public class PartyIdentification51 {
      * {@link AlternatePartyIdentification3 }
      * 
      * 
+     * @return
+     *     The value of the altrnId property.
      */
     public List<AlternatePartyIdentification3> getAltrnId() {
         if (altrnId == null) {
-            altrnId = new ArrayList<AlternatePartyIdentification3>();
+            altrnId = new ArrayList<>();
         }
         return this.altrnId;
     }
@@ -131,8 +133,8 @@ public class PartyIdentification51 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the nonDmclCtry property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the nonDmclCtry property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -146,10 +148,12 @@ public class PartyIdentification51 {
      * {@link String }
      * 
      * 
+     * @return
+     *     The value of the nonDmclCtry property.
      */
     public List<String> getNonDmclCtry() {
         if (nonDmclCtry == null) {
-            nonDmclCtry = new ArrayList<String>();
+            nonDmclCtry = new ArrayList<>();
         }
         return this.nonDmclCtry;
     }
@@ -185,8 +189,8 @@ public class PartyIdentification51 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the certfctnTp property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the certfctnTp property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -200,10 +204,12 @@ public class PartyIdentification51 {
      * {@link BeneficiaryCertificationType4Choice }
      * 
      * 
+     * @return
+     *     The value of the certfctnTp property.
      */
     public List<BeneficiaryCertificationType4Choice> getCertfctnTp() {
         if (certfctnTp == null) {
-            certfctnTp = new ArrayList<BeneficiaryCertificationType4Choice>();
+            certfctnTp = new ArrayList<>();
         }
         return this.certfctnTp;
     }

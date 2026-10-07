@@ -90,8 +90,8 @@ public class TemporaryServicesLabor1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the chrg property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the chrg property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -105,10 +105,12 @@ public class TemporaryServicesLabor1 {
      * {@link Amount12 }
      * 
      * 
+     * @return
+     *     The value of the chrg property.
      */
     public List<Amount12> getChrg() {
         if (chrg == null) {
-            chrg = new ArrayList<Amount12>();
+            chrg = new ArrayList<>();
         }
         return this.chrg;
     }

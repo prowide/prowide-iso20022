@@ -96,8 +96,8 @@ public class QuoteStatus2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the qtSetDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the qtSetDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -111,10 +111,12 @@ public class QuoteStatus2 {
      * {@link QuoteSet2 }
      * 
      * 
+     * @return
+     *     The value of the qtSetDtls property.
      */
     public List<QuoteSet2> getQtSetDtls() {
         if (qtSetDtls == null) {
-            qtSetDtls = new ArrayList<QuoteSet2>();
+            qtSetDtls = new ArrayList<>();
         }
         return this.qtSetDtls;
     }
@@ -125,8 +127,8 @@ public class QuoteStatus2 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rltdPties property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rltdPties property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -140,10 +142,12 @@ public class QuoteStatus2 {
      * {@link Intermediary14 }
      * 
      * 
+     * @return
+     *     The value of the rltdPties property.
      */
     public List<Intermediary14> getRltdPties() {
         if (rltdPties == null) {
-            rltdPties = new ArrayList<Intermediary14>();
+            rltdPties = new ArrayList<>();
         }
         return this.rltdPties;
     }

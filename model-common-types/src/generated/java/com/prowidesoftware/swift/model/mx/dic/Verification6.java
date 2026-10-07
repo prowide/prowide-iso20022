@@ -139,8 +139,8 @@ public class Verification6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the data property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the data property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -154,10 +154,12 @@ public class Verification6 {
      * {@link VerificationValue1 }
      * 
      * 
+     * @return
+     *     The value of the data property.
      */
     public List<VerificationValue1> getData() {
         if (data == null) {
-            data = new ArrayList<VerificationValue1>();
+            data = new ArrayList<>();
         }
         return this.data;
     }
@@ -293,8 +295,8 @@ public class Verification6 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rsltDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the rsltDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -308,10 +310,12 @@ public class Verification6 {
      * {@link AdditionalData1 }
      * 
      * 
+     * @return
+     *     The value of the rsltDtls property.
      */
     public List<AdditionalData1> getRsltDtls() {
         if (rsltDtls == null) {
-            rsltDtls = new ArrayList<AdditionalData1>();
+            rsltDtls = new ArrayList<>();
         }
         return this.rsltDtls;
     }

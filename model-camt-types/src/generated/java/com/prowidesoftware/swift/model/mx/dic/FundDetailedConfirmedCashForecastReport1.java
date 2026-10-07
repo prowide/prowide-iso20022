@@ -37,8 +37,8 @@ public class FundDetailedConfirmedCashForecastReport1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the fndCshFcstDtls property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the fndCshFcstDtls property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -52,10 +52,12 @@ public class FundDetailedConfirmedCashForecastReport1 {
      * {@link FundCashForecast2 }
      * 
      * 
+     * @return
+     *     The value of the fndCshFcstDtls property.
      */
     public List<FundCashForecast2> getFndCshFcstDtls() {
         if (fndCshFcstDtls == null) {
-            fndCshFcstDtls = new ArrayList<FundCashForecast2>();
+            fndCshFcstDtls = new ArrayList<>();
         }
         return this.fndCshFcstDtls;
     }
@@ -66,8 +68,8 @@ public class FundDetailedConfirmedCashForecastReport1 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the xtnsn property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the xtnsn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -81,10 +83,12 @@ public class FundDetailedConfirmedCashForecastReport1 {
      * {@link Extension1 }
      * 
      * 
+     * @return
+     *     The value of the xtnsn property.
      */
     public List<Extension1> getXtnsn() {
         if (xtnsn == null) {
-            xtnsn = new ArrayList<Extension1>();
+            xtnsn = new ArrayList<>();
         }
         return this.xtnsn;
     }

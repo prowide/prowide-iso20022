@@ -1,16 +1,16 @@
 
 package com.prowidesoftware.swift.model.mx.dic;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;
+import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
-import com.prowidesoftware.swift.model.mx.adapters.IsoDateTimeAdapter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -269,8 +269,8 @@ public class Header68 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the tracData property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the tracData property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -284,10 +284,12 @@ public class Header68 {
      * {@link AdditionalData1 }
      * 
      * 
+     * @return
+     *     The value of the tracData property.
      */
     public List<AdditionalData1> getTracData() {
         if (tracData == null) {
-            tracData = new ArrayList<AdditionalData1>();
+            tracData = new ArrayList<>();
         }
         return this.tracData;
     }
@@ -298,8 +300,8 @@ public class Header68 {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the tracblt property.
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a {@code set} method for the tracblt property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
@@ -313,10 +315,12 @@ public class Header68 {
      * {@link Traceability9 }
      * 
      * 
+     * @return
+     *     The value of the tracblt property.
      */
     public List<Traceability9> getTracblt() {
         if (tracblt == null) {
-            tracblt = new ArrayList<Traceability9>();
+            tracblt = new ArrayList<>();
         }
         return this.tracblt;
     }
