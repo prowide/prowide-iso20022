@@ -15,7 +15,7 @@
  */
 package com.prowidesoftware.swift.model.mx.adapters;
 
-import jakarta.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
 
 import javax.xml.datatype.DatatypeConfigurationException;
 import java.time.OffsetDateTime;

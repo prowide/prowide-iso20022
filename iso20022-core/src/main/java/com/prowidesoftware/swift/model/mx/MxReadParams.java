@@ -16,7 +16,7 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.swift.model.mx.adapters.TypeAdaptersConfiguration;
-import jakarta.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBContext;
 
 /**
  * Simple DTO to encapsulate parameters in the different XML-to-model parser implementation methods in the API
