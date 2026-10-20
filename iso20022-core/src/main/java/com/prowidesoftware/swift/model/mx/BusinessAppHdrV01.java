@@ -31,6 +31,7 @@ import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 import java.util.Arrays;
 import java.util.Objects;
+import java.util.concurrent.ExecutionException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.xml.namespace.QName;
@@ -216,7 +217,7 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
             if (effective.context != null) {
                 context = effective.context;
             } else {
-                context = JAXBContext.newInstance(BusinessApplicationHeaderV01Impl.class);
+                context = JaxbContextLoader.INSTANCE.get(BusinessApplicationHeaderV01Impl.class, null);
             }
             final Marshaller marshaller = MxWriteUtils.createMarshaller(context, effective);
 
@@ -233,7 +234,7 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
             marshaller.marshal(element, eventWriter);
             return sw.getBuffer().toString();
 
-        } catch (JAXBException e) {
+        } catch (JAXBException | ExecutionException e) {
             log.log(Level.SEVERE, "Error writing head.001.001.01 XML:" + e.getMessage());
         }
         return null;
@@ -247,7 +248,7 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
     /**
      * Gets the header as a DOM Element, using the given JAXB context.
      *
-     * @param inputContext optional JAXB context to use for marshalling, or null to create a default one
+     * @param inputContext optional JAXB context to use for marshalling, or null to get one from the {@link JaxbContextLoader}
      * @return DOM Element representing this header, or null if marshalling fails
      * @since 9.3.5
      */
@@ -257,7 +258,7 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
             if (inputContext != null) {
                 context = inputContext;
             } else {
-                context = JAXBContext.newInstance(BusinessApplicationHeaderV01Impl.class);
+                context = JaxbContextLoader.INSTANCE.get(BusinessApplicationHeaderV01Impl.class, null);
             }
             final Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
@@ -269,7 +270,7 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
             Document doc = (Document) res.getNode();
             return (Element) doc.getFirstChild();
 
-        } catch (JAXBException e) {
+        } catch (JAXBException | ExecutionException e) {
             log.log(Level.SEVERE, "Error writing head.001.001.01 XML:" + e.getMessage());
         }
         return null;

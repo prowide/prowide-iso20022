@@ -1,5 +1,8 @@
 # Prowide ISO 20022 - CHANGELOG
 
+### 10.4.1 - SNAPSHOT
+  * Fix: the AppHdr `xml()` and `element()` serialization of every header version takes its JAXB context from the `JaxbContextLoader`, so a configured context cache is reused instead of creating a new context on every call
+
 ### 10.4.0 - September 2026
   * SWIFT Standards release 2026 model, for market infrastructures and clearings that adopt it with the November 2026 update, such as Target2; as the SWIFT network go-live was postponed, this remains an SRU2025 release
 
