@@ -17,7 +17,9 @@ package com.prowidesoftware.swift.model;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import com.prowidesoftware.swift.model.mx.AbstractMX;
 import com.prowidesoftware.swift.model.mx.DefaultMxMetadataStrategy;
+import com.prowidesoftware.swift.model.mx.MxWriteConfiguration;
 import com.prowidesoftware.swift.utils.Lib;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -854,5 +856,113 @@ public class MxSwiftMessageTest {
         // Both checksums must differ since Document changed
         assertNotEquals(original.getChecksum(), changed.getChecksum());
         assertNotEquals(original.getChecksumBody(), changed.getChecksumBody());
+    }
+
+    /**
+     * PW-3591: supplementary data holding a supl Document that declares its own namespaces (supl and xsi) used to
+     * serialize as malformed XML, so the checksum canonicalization failed and the parse ended with an NPE
+     */
+    @Test
+    void testChecksumWithNestedXsiDocument() {
+        String xml = "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:camt.056.001.08\">"
+                + "<FIToFIPmtCxlReq><Assgnmt><Id>ID-1</Id><CreDtTm>2024-01-01T10:00:00</CreDtTm></Assgnmt>"
+                + "<SplmtryData><Envlp>"
+                + "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:supl.011.001.11\""
+                + " xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><Ext><Txt>foo</Txt></Ext></Document>"
+                + "</Envlp></SplmtryData></FIToFIPmtCxlReq></Document>";
+        MxSwiftMessage mx = MxSwiftMessage.parse(xml);
+        assertEquals("camt.056.001.08", mx.getIdentifier());
+        assertNotNull(mx.getChecksum());
+        assertNotNull(mx.getChecksumBody());
+        // the serialized message must be well-formed again
+        AbstractMX model = AbstractMX.parse(xml);
+        assertNotNull(model);
+        assertNotNull(MxNode.parse(model.message()));
+    }
+
+    @Test
+    void testChecksumNotComputableReturnsNull() throws IOException {
+        String xml = Lib.readResource("pacs.008.001.07.xml");
+        DefaultMxMetadataStrategy strategy = new DefaultMxMetadataStrategy() {
+            @Override
+            protected String canonicalizeXml(String xml) {
+                return null;
+            }
+        };
+        AbstractMX mx = AbstractMX.parse(xml);
+        assertNotNull(mx);
+        assertNull(strategy.checksum(mx));
+        assertNull(strategy.checksumBody(mx));
+    }
+
+    @Test
+    void testChecksumFailureDoesNotFailParse() throws IOException {
+        String xml = Lib.readResource("pacs.008.001.07.xml");
+        DefaultMxMetadataStrategy strategy = new DefaultMxMetadataStrategy() {
+            @Override
+            public String checksum(AbstractMessage message) {
+                throw new IllegalStateException("test");
+            }
+
+            @Override
+            public String checksumBody(AbstractMessage message) {
+                throw new IllegalStateException("test");
+            }
+        };
+        MxSwiftMessage mx = new MxSwiftMessage(xml, strategy);
+        assertEquals("pacs.008.001.07", mx.getIdentifier());
+        assertNotNull(mx.getReference());
+        assertNull(mx.getChecksum());
+        assertNull(mx.getChecksumBody());
+    }
+
+    @Test
+    void testChecksumFailureDoesNotSkipBodyChecksum() throws IOException {
+        String xml = Lib.readResource("pacs.008.001.07.xml");
+        DefaultMxMetadataStrategy strategy = new DefaultMxMetadataStrategy() {
+            @Override
+            public String checksum(AbstractMessage message) {
+                throw new IllegalStateException("test");
+            }
+        };
+        MxSwiftMessage mx = new MxSwiftMessage(xml, strategy);
+        assertNull(mx.getChecksum());
+        assertNotNull(mx.getChecksumBody());
+    }
+
+    /** PW-3591: the canonical form includes attributes, so messages differing only in a currency are not duplicates */
+    @Test
+    void testChecksumDiffersWhenOnlyAnAttributeDiffers() throws IOException {
+        String xml = Lib.readResource("pacs.008.001.07.xml");
+        java.util.regex.Matcher ccy =
+                java.util.regex.Pattern.compile("Ccy=['\"]([A-Z]{3})['\"]").matcher(xml);
+        assertTrue(ccy.find());
+        String otherCcy = "XXX".equals(ccy.group(1)) ? "YYY" : "XXX";
+        MxSwiftMessage original = MxSwiftMessage.parse(xml);
+        MxSwiftMessage changed = MxSwiftMessage.parse(xml.replace(ccy.group(), "Ccy='" + otherCcy + "'"));
+        assertNotNull(original.getChecksum());
+        assertNotEquals(original.getChecksum(), changed.getChecksum());
+        assertNotEquals(original.getChecksumBody(), changed.getChecksumBody());
+    }
+
+    @Test
+    void testChecksumSameForFormattingAndPrefixVariants() throws IOException {
+        String xml = Lib.readResource("pacs.008.001.07.xml");
+        AbstractMX model = AbstractMX.parse(xml);
+        assertNotNull(model);
+        MxWriteConfiguration noPrefix = new MxWriteConfiguration();
+        noPrefix.documentPrefix = null;
+        noPrefix.indent = "";
+        MxWriteConfiguration otherPrefix = new MxWriteConfiguration();
+        otherPrefix.documentPrefix = "x";
+
+        MxSwiftMessage original = MxSwiftMessage.parse(xml);
+        MxSwiftMessage compact = MxSwiftMessage.parse(model.message(noPrefix));
+        MxSwiftMessage prefixed = MxSwiftMessage.parse(model.message(otherPrefix));
+        assertNotNull(original.getChecksum());
+        assertEquals(original.getChecksum(), compact.getChecksum());
+        assertEquals(original.getChecksum(), prefixed.getChecksum());
+        assertEquals(original.getChecksumBody(), compact.getChecksumBody());
+        assertEquals(original.getChecksumBody(), prefixed.getChecksumBody());
     }
 }

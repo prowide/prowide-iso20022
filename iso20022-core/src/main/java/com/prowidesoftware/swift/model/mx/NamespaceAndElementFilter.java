@@ -34,7 +34,9 @@ import org.xml.sax.helpers.XMLFilterImpl;
  * main message namespace is unbound (the namespace is stripped) and content in the SWIFT xsys namespaces is kept as is.
  * Any other content (foreign namespace or no namespace) is treated as {@code xsd:any} wildcard content (for example a
  * {@code SplmtryData/Envlp} payload or a signature envelope) and is forwarded verbatim, with its namespaces intact, so
- * that JAXB's {@code @XmlAnyElement} binding can materialize it as a {@link org.w3c.dom.Element}.
+ * that JAXB's {@code @XmlAnyElement} binding can materialize it as a {@link org.w3c.dom.Element}. The
+ * {@link XmlEventWriter} applies the same boundary rule when the message is written back, so the wildcard content
+ * is also serialized verbatim.
  *
  * <p>Known limitation: a wildcard child that reuses the exact main message namespace is still captured as an
  * {@link org.w3c.dom.Element}, but with its namespace unbound, so its original namespace URI is not round-tripped.
@@ -243,14 +245,12 @@ public class NamespaceAndElementFilter extends XMLFilterImpl {
 
     /**
      * Checks whether the given namespace is one of the SNL reusable schema namespaces (Sw, SwInt,
-     * SwGbl, SwSec, Doc) used by xsys messages.
+     * SwGbl, SwSec, Doc) used by xsys messages. The check is shared with {@link XmlEventWriter}, so both sides
+     * use the same boundary for wildcard content: the first element whose namespace is neither the main
+     * namespace nor an xsys namespace.
      */
     private boolean isXsysNamespace(String namespace) {
-        return "urn:swift:snl:ns.Doc".equals(namespace)
-                || "urn:swift:snl:ns.Sw".equals(namespace)
-                || "urn:swift:snl:ns.SwGbl".equals(namespace)
-                || "urn:swift:snl:ns.SwInt".equals(namespace)
-                || "urn:swift:snl:ns.SwSec".equals(namespace);
+        return XsysNamespaces.isXsysNamespace(namespace);
     }
 
     /**

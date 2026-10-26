@@ -17,11 +17,21 @@ package com.prowidesoftware.swift.model.mx;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import com.prowidesoftware.swift.model.MxNode;
 import com.prowidesoftware.swift.model.mx.dic.SupplementaryDataEnvelope1;
 import com.prowidesoftware.swift.utils.Lib;
 import java.io.IOException;
+import java.io.StringReader;
+import java.util.function.Consumer;
+import javax.xml.parsers.DocumentBuilderFactory;
 import org.junit.jupiter.api.Test;
+import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.xml.sax.InputSource;
+import org.xmlunit.builder.DiffBuilder;
+import org.xmlunit.builder.Input;
+import org.xmlunit.diff.Diff;
 
 /**
  * Regression coverage for the AnyTagParsing issues (#39, #41, #43, PWUS-18): xsd:any wildcard content
@@ -227,6 +237,203 @@ class WildcardAnyParsingTest {
                 (Element) restored.getCshMgmtPrtryMsg().getPrtryData().getData().getAny();
         assertThat(restoredAny).isNotNull();
         assertThat(restoredAny.getLocalName()).isEqualTo("Document");
+    }
+
+    /*
+     * PW-3591 round-trip matrix: wildcard (foreign) content must be serialized as valid XML with the same meaning
+     * under every document prefix configuration. The written XML is compared with a plain namespace-aware DOM
+     * parse, because the Prowide parser removes the main namespace and would hide an element written in the
+     * wrong namespace.
+     */
+
+    private static final String SUPL = "urn:iso:std:iso:20022:tech:xsd:supl.011.001.11";
+    private static final String XSI = "http://www.w3.org/2001/XMLSchema-instance";
+    private static final String CAMT056 = "urn:iso:std:iso:20022:tech:xsd:camt.056.001.08";
+
+    /** The customer's shape: a supl Document declaring its own default namespace plus xsi */
+    @Test
+    void foreignDefaultNamespaceWithExtraDeclaration() {
+        assertEnvelopeRoundTrips("<Document xmlns=\"" + SUPL + "\" xmlns:xsi=\"" + XSI + "\">"
+                + "<Ext><PlcAndNm>/Document/FIToFIPmtCxlReq</PlcAndNm><Txt>foo</Txt></Ext></Document>");
+    }
+
+    @Test
+    void foreignPrefixedNamespace() {
+        assertEnvelopeRoundTrips("<s:Document xmlns:s=\"" + SUPL + "\"><s:Ext><s:Txt>foo</s:Txt></s:Ext></s:Document>");
+    }
+
+    @Test
+    void foreignContentRebindingTheDocumentPrefix() {
+        assertEnvelopeRoundTrips("<doc:Foo xmlns:doc=\"urn:foo\"><doc:Bar>x</doc:Bar></doc:Foo>");
+        assertEnvelopeRoundTrips("<camt:Foo xmlns:camt=\"urn:foo\"><camt:Bar>x</camt:Bar></camt:Foo>");
+    }
+
+    @Test
+    void foreignContentUndeclaringTheDefaultNamespace() {
+        assertEnvelopeRoundTrips("<Foo xmlns=\"urn:foo\"><Bar xmlns=\"\">x</Bar></Foo>");
+    }
+
+    @Test
+    void foreignContentWithNamespacedAttributes() {
+        assertEnvelopeRoundTrips("<Document xmlns=\"" + SUPL + "\" xmlns:xsi=\"" + XSI + "\" xmlns:t=\"urn:T\""
+                + " xsi:schemaLocation=\"" + SUPL + " supl.xsd\">"
+                + "<Ext xsi:type=\"t:Custom\"><Txt>foo</Txt></Ext></Document>");
+    }
+
+    @Test
+    void foreignContentWithAttributeUsingTheDocumentPrefix() {
+        assertEnvelopeRoundTrips(
+                "<Document xmlns=\"" + SUPL + "\" xmlns:camt=\"foocorp:test:smm\""
+                        + " xmlns:doc=\"foocorp:test:other\"><Ext camt:a=\"1\" doc:b=\"2\" c=\"3\"><Txt>foo</Txt></Ext></Document>");
+    }
+
+    @Test
+    void foreignContentWithXmlLang() {
+        assertEnvelopeRoundTrips(
+                "<Document xmlns=\"" + SUPL + "\"><Ext><Txt xml:lang=\"en\">foo</Txt></Ext></Document>");
+    }
+
+    /** A main-namespace element nested in foreign content keeps the main namespace */
+    @Test
+    void mainNamespaceElementInsideForeignContent() {
+        assertEnvelopeRoundTrips("<Foo xmlns=\"urn:foo\"><Bar xmlns=\"" + CAMT056 + "\">x</Bar></Foo>");
+        assertEnvelopeRoundTrips("<f:Foo xmlns:f=\"urn:foo\"><c:Bar xmlns:c=\"" + CAMT056 + "\">x</c:Bar></f:Foo>");
+    }
+
+    @Test
+    void noNamespaceElementInsideForeignContent() {
+        // the input document is prefixed so that the unprefixed Bar is really in no namespace; when the message is
+        // written without document prefix the main namespace is the default one and Bar needs xmlns=""
+        assertPrefixedEnvelopeRoundTrips("<f:Foo xmlns:f=\"urn:foo\"><Bar>x</Bar></f:Foo>");
+        assertPrefixedEnvelopeRoundTrips("<f:Foo xmlns:f=\"urn:foo\"><Bar><f:Baz>x</f:Baz><Q>y</Q></Bar></f:Foo>");
+    }
+
+    @Test
+    void nestedForeignContent() {
+        assertEnvelopeRoundTrips("<Foo xmlns=\"urn:foo\"><Bar xmlns=\"\"><Baz xmlns=\"urn:baz\"><Q/></Baz><R/></Bar>"
+                + "<q:A xmlns:q=\"urn:q\"><B xmlns=\"urn:b\"><q:C/></B></q:A></Foo>");
+    }
+
+    @Test
+    void appHdrSignatureRoundTripsInEveryHeaderVersion() {
+        for (String version : new String[] {"01", "02", "03", "04"}) {
+            String header = "urn:iso:std:iso:20022:tech:xsd:head.001.001." + version;
+            String signature = "<ds:Signature xmlns:ds=\"http://www.w3.org/2000/09/xmldsig#\""
+                    + " xmlns:xsi=\"" + XSI + "\" xsi:schemaLocation=\"urn:x x.xsd\">"
+                    + "<ds:KeyInfo xmlns:head=\"foocorp:test:smm\"><head:Ref>1</head:Ref><ds:KeyName>k</ds:KeyName>"
+                    + "</ds:KeyInfo><Obj xmlns=\"urn:obj\"><Txt xml:lang=\"en\">o</Txt></Obj></ds:Signature>";
+            String xml = "<RequestPayload>"
+                    + "<AppHdr xmlns=\"" + header + "\">"
+                    + "<Fr><FIId><FinInstnId><BICFI>AAAAUS33</BICFI></FinInstnId></FIId></Fr>"
+                    + "<To><FIId><FinInstnId><BICFI>BBBBUS33</BICFI></FinInstnId></FIId></To>"
+                    + "<BizMsgIdr>REF-1</BizMsgIdr><MsgDefIdr>camt.056.001.08</MsgDefIdr>"
+                    + "<CreDt>2024-01-01T10:00:00Z</CreDt>"
+                    + "<Sgntr>" + signature + "</Sgntr>"
+                    + "</AppHdr>"
+                    + "<Document xmlns=\"" + CAMT056 + "\">"
+                    + "<FIToFIPmtCxlReq><Assgnmt><Id>ID-1</Id><CreDtTm>2024-01-01T10:00:00</CreDtTm></Assgnmt>"
+                    + "</FIToFIPmtCxlReq></Document>"
+                    + "</RequestPayload>";
+            Element expected = firstChildElement(elementNS(parseDom(xml), header, "Sgntr"));
+            forEachPrefixConfiguration(conf -> {
+                MxCamt05600108 mx = MxCamt05600108.parse(xml);
+                assertThat(mx).as("head.001.001." + version).isNotNull();
+                assertThat(mx.getAppHdr()).as("head.001.001." + version).isNotNull();
+                String written = mx.message(conf);
+                assertThat(MxNode.parse(written)).as(written).isNotNull();
+                Element actual = firstChildElement(elementNS(parseDom(written), header, "Sgntr"));
+                assertSimilar(expected, actual, written);
+            });
+        }
+    }
+
+    /**
+     * Serializes a camt.056 carrying the envelope content under the three prefix configurations and checks that the
+     * written envelope content is the same XML as the input, ignoring prefixes and whitespace
+     */
+    private static void assertEnvelopeRoundTrips(String envelopeContent) {
+        assertEnvelopeRoundTripsForDocument("<Document xmlns=\"" + CAMT056 + "\">"
+                + "<FIToFIPmtCxlReq><Assgnmt><Id>ID-1</Id><CreDtTm>2024-01-01T10:00:00</CreDtTm></Assgnmt>"
+                + "<SplmtryData><Envlp>" + envelopeContent + "</Envlp></SplmtryData></FIToFIPmtCxlReq></Document>");
+    }
+
+    /**
+     * Same as {@link #assertEnvelopeRoundTrips(String)} but the input document is prefixed, so unprefixed elements in
+     * the envelope content are in no namespace instead of the main one
+     */
+    private static void assertPrefixedEnvelopeRoundTrips(String envelopeContent) {
+        assertEnvelopeRoundTripsForDocument("<c:Document xmlns:c=\"" + CAMT056 + "\">"
+                + "<c:FIToFIPmtCxlReq><c:Assgnmt><c:Id>ID-1</c:Id><c:CreDtTm>2024-01-01T10:00:00</c:CreDtTm></c:Assgnmt>"
+                + "<c:SplmtryData><c:Envlp>" + envelopeContent + "</c:Envlp></c:SplmtryData></c:FIToFIPmtCxlReq>"
+                + "</c:Document>");
+    }
+
+    private static void assertEnvelopeRoundTripsForDocument(String xml) {
+        Element expected = firstChildElement(elementNS(parseDom(xml), CAMT056, "Envlp"));
+        forEachPrefixConfiguration(conf -> {
+            MxCamt05600108 mx = MxCamt05600108.parse(xml);
+            assertThat(mx).isNotNull();
+            String written = mx.message(conf);
+            assertThat(MxNode.parse(written)).as(written).isNotNull();
+            Element actual = firstChildElement(elementNS(parseDom(written), CAMT056, "Envlp"));
+            assertSimilar(expected, actual, written);
+            // and the written message is still parseable by the model with the wildcard content in place
+            MxCamt05600108 reparsed = MxCamt05600108.parse(written);
+            assertThat(reparsed).as(written).isNotNull();
+            assertThat(reparsed.getFIToFIPmtCxlReq()
+                            .getSplmtryData()
+                            .get(0)
+                            .getEnvlp()
+                            .getAny())
+                    .as(written)
+                    .isNotNull();
+        });
+    }
+
+    private static void forEachPrefixConfiguration(Consumer<MxWriteConfiguration> test) {
+        MxWriteConfiguration doc = new MxWriteConfiguration();
+        MxWriteConfiguration category = new MxWriteConfiguration();
+        category.useCategoryAsDocumentPrefix = true;
+        MxWriteConfiguration none = new MxWriteConfiguration();
+        none.documentPrefix = null;
+        none.headerPrefix = null;
+        for (MxWriteConfiguration conf : new MxWriteConfiguration[] {doc, category, none}) {
+            test.accept(conf);
+        }
+    }
+
+    private static void assertSimilar(Element expected, Element actual, String written) {
+        Diff diff = DiffBuilder.compare(Input.fromNode(expected))
+                .withTest(Input.fromNode(actual))
+                .ignoreWhitespace()
+                .checkForSimilar()
+                .build();
+        assertThat(diff.hasDifferences()).as(diff.toString() + "\n" + written).isFalse();
+    }
+
+    private static Document parseDom(String xml) {
+        try {
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            factory.setNamespaceAware(true);
+            return factory.newDocumentBuilder().parse(new InputSource(new StringReader(xml)));
+        } catch (Exception e) {
+            throw new AssertionError("not well-formed: " + xml, e);
+        }
+    }
+
+    private static Element elementNS(Document doc, String namespace, String localName) {
+        Element e = (Element) doc.getElementsByTagNameNS(namespace, localName).item(0);
+        assertThat(e).as(localName).isNotNull();
+        return e;
+    }
+
+    private static Element firstChildElement(Element parent) {
+        for (Node n = parent.getFirstChild(); n != null; n = n.getNextSibling()) {
+            if (n instanceof Element) {
+                return (Element) n;
+            }
+        }
+        throw new AssertionError("no child element in " + parent.getLocalName());
     }
 
     private static SupplementaryDataEnvelope1 envelope(MxPacs00200108 mx) {

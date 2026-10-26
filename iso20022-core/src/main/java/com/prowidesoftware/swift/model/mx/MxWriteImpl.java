@@ -78,6 +78,7 @@ public class MxWriteImpl {
                 preferredPrefixes.put(xsys.namespaceURI(), xsys.prefix());
             }
             writer.setPreferredPrefixes(preferredPrefixes);
+            writer.setMainNamespace(namespace);
 
             marshaller.marshal(element, writer);
 
