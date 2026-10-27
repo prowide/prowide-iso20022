@@ -37,6 +37,26 @@ import org.apache.commons.lang3.StringUtils;
 public class DefaultMxMetadataStrategy implements MessageMetadataStrategy {
     private static final transient Logger log = Logger.getLogger(DefaultMxMetadataStrategy.class.getName());
 
+    /**
+     * Whether a (sub)class keeps the default canonical form, i.e. does not override {@link #canonicalizeXml(String)}.
+     * Computed once per class; a subclass customizing the canonical form keeps the serialized XML path so its
+     * customization still drives the checksums.
+     */
+    private static final ClassValue<Boolean> DEFAULT_CANONICALIZATION = new ClassValue<Boolean>() {
+        @Override
+        protected Boolean computeValue(Class<?> type) {
+            for (Class<?> c = type; c != null && c != DefaultMxMetadataStrategy.class; c = c.getSuperclass()) {
+                try {
+                    c.getDeclaredMethod("canonicalizeXml", String.class);
+                    return false;
+                } catch (NoSuchMethodException ignored) {
+                    // not overridden at this level
+                }
+            }
+            return true;
+        }
+    };
+
     @Override
     public Optional<String> reference(AbstractMessage message) {
         if (message.isMX()) {
@@ -47,8 +67,8 @@ public class DefaultMxMetadataStrategy implements MessageMetadataStrategy {
                     return Optional.of(reference);
                 }
             }
-            // we use plain XML parsing to extract the reference from the group header, that is available in many MX
-            MxNode document = MxNode.parse(mx.document());
+            // we use the generic node tree to extract the reference from the group header, available in many MX
+            MxNode document = documentNode(mx);
             final MxNode groupHeader = document != null ? document.findFirstByName("GrpHdr") : null;
             if (groupHeader != null) {
                 MxNode reference = groupHeader.findFirst("./MsgId");
@@ -65,7 +85,7 @@ public class DefaultMxMetadataStrategy implements MessageMetadataStrategy {
         Money money = null;
         if (message.isMX()) {
             AbstractMX mx = (AbstractMX) message;
-            MxNode document = MxNode.parse(mx.document());
+            MxNode document = documentNode(mx);
             if (isPacs004(mx)) {
                 money = getPacs004Amount(document);
             } else if (isPacs(mx)) {
@@ -212,7 +232,7 @@ public class DefaultMxMetadataStrategy implements MessageMetadataStrategy {
         Calendar valueDate = null;
         if (message.isMX()) {
             AbstractMX mx = (AbstractMX) message;
-            MxNode document = MxNode.parse(mx.document());
+            MxNode document = documentNode(mx);
             if (document != null) {
                 if (isPacs(mx)) {
                     // catch-all attempt for other pacs messages
@@ -336,7 +356,11 @@ public class DefaultMxMetadataStrategy implements MessageMetadataStrategy {
 
     /**
      * Computes an MD5 checksum of the full MX message XML content after canonicalization.
-     * Canonicalization normalizes whitespace and line endings to ensure consistent checksums
+     *
+     * <p>Since 10.4.1 the canonical form is built straight from the message model, without serializing and parsing
+     * the XML again, unless {@link #canonicalizeXml(String)} is overridden. The result is the same.
+     *
+     * <p>Canonicalization normalizes whitespace and line endings to ensure consistent checksums
      * for logically equivalent XML regardless of formatting differences.
      *
      * @param message the MX message to compute the checksum for
@@ -349,6 +373,13 @@ public class DefaultMxMetadataStrategy implements MessageMetadataStrategy {
             return null;
         }
         AbstractMX mx = (AbstractMX) message;
+        if (DEFAULT_CANONICALIZATION.get(getClass())) {
+            String canonical = MxNodeBuilder.messageCanonicalString(mx);
+            if (canonical != null) {
+                return SwiftMessageUtils.md5(canonical);
+            }
+        }
+        // customized canonical form, or the model could not be marshalled: go through the serialized XML
         String xml = mx.message();
         if (StringUtils.isBlank(xml)) {
             return null;
@@ -359,7 +390,11 @@ public class DefaultMxMetadataStrategy implements MessageMetadataStrategy {
 
     /**
      * Computes an MD5 checksum of the MX Document element only (excluding AppHdr) after canonicalization.
-     * Canonicalization normalizes whitespace and line endings to ensure consistent checksums
+     *
+     * <p>Since 10.4.1 the canonical form is built straight from the message model, without serializing and parsing
+     * the XML again, unless {@link #canonicalizeXml(String)} is overridden. The result is the same.
+     *
+     * <p>Canonicalization normalizes whitespace and line endings to ensure consistent checksums
      * for logically equivalent XML regardless of formatting differences.
      *
      * @param message the MX message to compute the checksum for
@@ -372,6 +407,13 @@ public class DefaultMxMetadataStrategy implements MessageMetadataStrategy {
             return null;
         }
         AbstractMX mx = (AbstractMX) message;
+        if (DEFAULT_CANONICALIZATION.get(getClass())) {
+            MxNode root = MxNodeBuilder.documentNode(mx);
+            if (root != null) {
+                return SwiftMessageUtils.md5(root.toCanonicalString());
+            }
+        }
+        // customized canonical form, or the model could not be marshalled: go through the serialized XML
         String document = mx.document();
         if (StringUtils.isBlank(document)) {
             return null;
@@ -381,12 +423,24 @@ public class DefaultMxMetadataStrategy implements MessageMetadataStrategy {
     }
 
     /**
+     * Generic node tree of the message Document, built straight from the model and reused within an open
+     * {@link MxMetadataScope}; falls back to parsing the serialized Document when the model cannot be marshalled.
+     */
+    private static MxNode documentNode(AbstractMX mx) {
+        MxNode document = MxNodeBuilder.documentNode(mx);
+        return document != null ? document : MxNode.parse(mx.document());
+    }
+
+    /**
      * Builds a canonical string representation of the XML by parsing it into an {@link MxNode} tree
      * and serializing element local names, attributes sorted by name and text values without whitespace,
      * namespace prefixes or namespace declarations. This produces a consistent checksum for semantically
      * equivalent XML documents regardless of formatting, namespace prefix choices, or attribute ordering.
      *
      * <p>This is not full W3C C14N canonicalization, but sufficient for duplicate detection purposes.
+     *
+     * <p>Since 10.4.1 the default checksums do not go through this method: the same canonical form is produced from
+     * the model directly. A subclass overriding this method keeps the serialized XML path, so the override applies.
      *
      * @param xml the XML string to canonicalize
      * @return the canonical string representation, or null if the XML cannot be parsed
