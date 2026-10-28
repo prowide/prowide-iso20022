@@ -354,7 +354,7 @@ public class DefaultMxMetadataStrategy implements MessageMetadataStrategy {
             return null;
         }
         String canonicalized = canonicalizeXml(xml);
-        return SwiftMessageUtils.md5(canonicalized);
+        return canonicalized != null ? SwiftMessageUtils.md5(canonicalized) : null;
     }
 
     /**
@@ -377,19 +377,20 @@ public class DefaultMxMetadataStrategy implements MessageMetadataStrategy {
             return null;
         }
         String canonicalized = canonicalizeXml(document);
-        return SwiftMessageUtils.md5(canonicalized);
+        return canonicalized != null ? SwiftMessageUtils.md5(canonicalized) : null;
     }
 
     /**
      * Builds a canonical string representation of the XML by parsing it into an {@link MxNode} tree
-     * and serializing element local names and text values without whitespace, namespace prefixes,
-     * or attributes. This produces a consistent checksum for semantically equivalent XML documents
-     * regardless of formatting, namespace prefix choices, or attribute ordering.
+     * and serializing element local names, attributes sorted by name and text values without whitespace,
+     * namespace prefixes or namespace declarations. This produces a consistent checksum for semantically
+     * equivalent XML documents regardless of formatting, namespace prefix choices, or attribute ordering.
      *
      * <p>This is not full W3C C14N canonicalization, but sufficient for duplicate detection purposes.
      *
      * @param xml the XML string to canonicalize
      * @return the canonical string representation, or null if the XML cannot be parsed
+     * @see MxNode#toCanonicalString()
      */
     protected String canonicalizeXml(String xml) {
         if (xml == null) {

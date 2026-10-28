@@ -27,6 +27,7 @@ import java.io.InputStream;
 import java.util.Calendar;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.logging.Level;
 import org.apache.commons.lang3.StringUtils;
 
 /**
@@ -661,14 +662,29 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
         strategy.receiver(mx).ifPresent(this::setReceiver);
         strategy.identifier(mx).ifPresent(this::setIdentifier);
 
-        // Compute checksums for duplicate detection
-        String checksum = strategy.checksum(mx);
-        if (StringUtils.isNotBlank(checksum)) {
-            setChecksum(checksum);
+        // Compute checksums for duplicate detection, optional metadata that must not fail the message processing
+        try {
+            String checksum = strategy.checksum(mx);
+            if (StringUtils.isNotBlank(checksum)) {
+                setChecksum(checksum);
+            }
+        } catch (RuntimeException e) {
+            logChecksumError("checksum", e);
         }
-        String checksumBody = strategy.checksumBody(mx);
-        if (StringUtils.isNotBlank(checksumBody)) {
-            setChecksumBody(checksumBody);
+        try {
+            String checksumBody = strategy.checksumBody(mx);
+            if (StringUtils.isNotBlank(checksumBody)) {
+                setChecksumBody(checksumBody);
+            }
+        } catch (RuntimeException e) {
+            logChecksumError("body checksum", e);
         }
+    }
+
+    private static void logChecksumError(final String checksum, final RuntimeException e) {
+        log.warning("Could not compute the message " + checksum
+                + ", duplicate detection is not available for this message: "
+                + e.getClass().getName());
+        log.log(Level.FINE, "Error computing the message " + checksum, e);
     }
 }
