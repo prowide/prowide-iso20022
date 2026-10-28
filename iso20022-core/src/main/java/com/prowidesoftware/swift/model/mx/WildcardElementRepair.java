@@ -16,6 +16,7 @@
 package com.prowidesoftware.swift.model.mx;
 
 import com.prowidesoftware.swift.model.mx.adapters.ElementJsonAdapter;
+import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.annotation.XmlAnyElement;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
@@ -38,9 +39,14 @@ import org.w3c.dom.Element;
  * <p>Wildcard fields declared as {@code Object} (for example {@code SupplementaryDataEnvelope1.any}) are
  * deserialized by Gson's built-in object adapter as the raw XML {@link String} produced by
  * {@link ElementJsonAdapter}, because the declared field type gives Gson no reason to route them to the
- * {@code Element} adapter. A {@code String} left in such a field would be marshalled by JAXB as escaped
- * text instead of a child element, breaking the XML round-trip. This utility walks the deserialized object
- * graph and converts those encoded strings back into {@link org.w3c.dom.Element} instances.
+ * {@code Element} adapter. JAXB cannot marshal a {@code String} left in such a field, so the whole message
+ * would fail to serialize. This utility walks the deserialized object graph and converts those encoded
+ * strings back into {@link org.w3c.dom.Element} instances.
+ *
+ * <p>The same strings reach a message built from Prowide JSON by any reader other than
+ * {@code AbstractMX.fromJson}, for example an application JSON mapper or a deep copy. The serialization
+ * entry points therefore repair the message and retry once when marshalling fails, see
+ * {@link #retryRepaired(Object, Marshalling)}.
  *
  * <p>Fields typed as {@code List<Element>} (for example {@code SwAny.any}) are deserialized correctly by
  * Gson on their own; this utility still repairs any string items defensively.
@@ -62,29 +68,76 @@ final class WildcardElementRepair {
      * Walks the given object graph restoring {@code @XmlAnyElement} string values into DOM elements.
      *
      * @param root the deserialized message (or any model object); null is ignored
+     * @return true if at least one wildcard value was restored
      */
-    static void repair(final Object root) {
+    static boolean repair(final Object root) {
         if (root == null) {
-            return;
+            return false;
         }
-        walk(root, Collections.newSetFromMap(new IdentityHashMap<>()));
+        return walk(root, Collections.newSetFromMap(new IdentityHashMap<>()));
     }
 
-    private static void walk(final Object obj, final Set<Object> visited) {
-        if (obj == null || !visited.add(obj)) {
-            return;
+    /**
+     * Runs a marshalling and, if it fails, repairs the wildcard content of the given root and runs it once more.
+     *
+     * <p>The repair only runs on the failure path, so a message whose wildcard content is already a DOM element
+     * pays no extra cost. When nothing is repaired, or the repair itself fails (for example a wildcard holding a
+     * String that is not XML), the original exception is thrown with the repair failure attached as suppressed. The
+     * root is modified in place, as {@code AbstractMX.fromJson} would have left it.
+     *
+     * @param root        the object being marshalled, a message or a header
+     * @param marshalling the marshalling to run, it must start from a fresh output on each call
+     * @param <T>         marshalling result type
+     * @return the marshalling result
+     * @throws JAXBException if the marshalling fails and nothing could be repaired, or if the retry fails
+     */
+    static <T> T retryRepaired(final Object root, final Marshalling<T> marshalling) throws JAXBException {
+        try {
+            return marshalling.marshal();
+        } catch (JAXBException e) {
+            final boolean repaired;
+            try {
+                repaired = repair(root);
+            } catch (RuntimeException repairFailure) {
+                e.addSuppressed(repairFailure);
+                throw e;
+            }
+            if (!repaired) {
+                throw e;
+            }
+            log.fine("Wildcard content given as String was restored to DOM elements, retrying marshalling of "
+                    + root.getClass().getName());
+            return marshalling.marshal();
         }
+    }
+
+    /**
+     * A marshalling that can be run again from scratch.
+     *
+     * @param <T> marshalling result type
+     */
+    @FunctionalInterface
+    interface Marshalling<T> {
+        T marshal() throws JAXBException;
+    }
+
+    private static boolean walk(final Object obj, final Set<Object> visited) {
+        if (obj == null || !visited.add(obj)) {
+            return false;
+        }
+        boolean repaired = false;
         for (Field field : instanceFields(obj.getClass())) {
             final Object value = readField(field, obj);
             if (value == null) {
                 continue;
             }
             if (field.isAnnotationPresent(XmlAnyElement.class)) {
-                repairWildcard(field, obj, value);
+                repaired |= repairWildcard(field, obj, value);
             } else {
-                recurse(value, visited);
+                repaired |= recurse(value, visited);
             }
         }
+        return repaired;
     }
 
     /**
@@ -114,11 +167,12 @@ final class WildcardElementRepair {
         });
     }
 
-    private static void repairWildcard(final Field field, final Object owner, final Object value) {
+    private static boolean repairWildcard(final Field field, final Object owner, final Object value) {
+        boolean repaired = false;
         if (value instanceof String) {
             final Element element = ElementJsonAdapter.toElement((String) value);
             if (element != null) {
-                writeField(field, owner, element);
+                repaired = writeField(field, owner, element);
             }
         } else if (value instanceof List) {
             @SuppressWarnings("unchecked")
@@ -129,20 +183,24 @@ final class WildcardElementRepair {
                     final Element element = ElementJsonAdapter.toElement((String) item);
                     if (element != null) {
                         it.set(element);
+                        repaired = true;
                     }
                 }
             }
         }
+        return repaired;
     }
 
-    private static void recurse(final Object value, final Set<Object> visited) {
+    private static boolean recurse(final Object value, final Set<Object> visited) {
+        boolean repaired = false;
         if (value instanceof Collection) {
             for (Object item : (Collection<?>) value) {
-                recurse(item, visited);
+                repaired |= recurse(item, visited);
             }
         } else if (isModelObject(value)) {
-            walk(value, visited);
+            repaired = walk(value, visited);
         }
+        return repaired;
     }
 
     private static boolean isModelObject(final Object value) {
@@ -165,11 +223,13 @@ final class WildcardElementRepair {
         }
     }
 
-    private static void writeField(final Field field, final Object owner, final Object value) {
+    private static boolean writeField(final Field field, final Object owner, final Object value) {
         try {
             field.set(owner, value);
+            return true;
         } catch (Exception e) {
             log.warning("Could not restore wildcard element on field " + field.getName() + ": " + e.getMessage());
+            return false;
         }
     }
 }

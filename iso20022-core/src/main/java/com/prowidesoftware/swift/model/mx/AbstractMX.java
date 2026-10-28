@@ -532,11 +532,13 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
                 context = JaxbContextLoader.INSTANCE.get(this.getClass(), getClasses());
             }
 
-            DOMResult res = new DOMResult();
-            context.createMarshaller().marshal(this, res);
-            Document doc = (Document) res.getNode();
-
-            return (Element) doc.getFirstChild();
+            final JAXBContext ctx = context;
+            return WildcardElementRepair.retryRepaired(this, () -> {
+                DOMResult res = new DOMResult();
+                ctx.createMarshaller().marshal(this, res);
+                Document doc = (Document) res.getNode();
+                return (Element) doc.getFirstChild();
+            });
         } catch (Exception e) {
             log.log(Level.WARNING, "Error creating XML Document for MX", e);
             return null;

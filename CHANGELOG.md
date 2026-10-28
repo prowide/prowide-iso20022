@@ -1,6 +1,7 @@
 # Prowide ISO 20022 - CHANGELOG
 
 ### 10.4.1 - SNAPSHOT
+  * (PW-3610) Feat: XML serialization now accepts `xsd:any` content (e.g. `SplmtryData/Envlp`, AppHdr `Sgntr`) given as the raw XML string of `toJson()`, as left when the JSON is read without `fromJson()`
   * (PW-3591) Fix: supplementary data and signatures (xs:any content) declaring their own namespaces or namespaced attributes now serialize to valid XML, and a checksum that cannot be computed no longer fails the MxSwiftMessage parsing
   * (PW-3591) Fix: the message checksums used for duplicate detection now include element attributes such as Ccy, so messages differing only in an attribute are no longer duplicates; checksums computed by earlier versions do not match
 
