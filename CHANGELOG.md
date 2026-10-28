@@ -7,6 +7,7 @@
   * Fix: a JAXB context set in the read or write configuration applies to the Document only, the AppHdr is parsed and written with its own context instead of being silently left out
   * Fix: the default `JaxbContextCacheImpl` builds each context once when several threads request the same message class at the same time, instead of once per thread
   * Fix: the AppHdr `xml()` and `element()` serialization of every header version takes its JAXB context from the `JaxbContextLoader`, so a configured context cache is reused instead of creating a new context on every call
+  * Perf: MX checksums and metadata are computed from the message model without re-serializing and re-parsing the XML; multi-line text values that a parsing defect left out of the checksums now count, so those checksums change
 
 ### 10.4.0 - September 2026
   * SWIFT Standards release 2026 model, for market infrastructures and clearings that adopt it with the November 2026 update, such as Target2; as the SWIFT network go-live was postponed, this remains an SRU2025 release

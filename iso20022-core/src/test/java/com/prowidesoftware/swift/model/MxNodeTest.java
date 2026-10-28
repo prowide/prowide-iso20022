@@ -518,6 +518,27 @@ public class MxNodeTest {
     }
 
     @Test
+    public void testParseKeepsTextSplitByEntityReference() {
+        MxNode node = MxNode.parse("<Document><Nm>foo &amp; bar</Nm></Document>");
+        assertNotNull(node);
+        assertEquals("foo & bar", node.findFirstByName("Nm").getValue());
+    }
+
+    @Test
+    public void testParseKeepsTextSplitByCdataSection() {
+        MxNode node = MxNode.parse("<Document><Nm>foo <![CDATA[&]]> bar</Nm></Document>");
+        assertNotNull(node);
+        assertEquals("foo & bar", node.findFirstByName("Nm").getValue());
+    }
+
+    @Test
+    public void testParseIgnoresWhitespaceAroundChildren() {
+        MxNode node = MxNode.parse("<Document>\n  <Nm>foo</Nm>\n  <Id>1</Id>\n</Document>");
+        assertNotNull(node);
+        assertEquals("<Document><Nm>foo</Nm><Id>1</Id></Document>", node.toCanonicalString());
+    }
+
+    @Test
     public void testToCanonicalStringTrimsWhitespace() {
         String xml = "<Root>\n  <Name>  John  </Name>\n  <Age>30</Age>\n</Root>";
         MxNode node = MxNode.parse(xml);

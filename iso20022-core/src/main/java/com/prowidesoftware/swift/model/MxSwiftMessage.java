@@ -645,39 +645,42 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
             return;
         }
 
-        String reference = strategy.reference(mx).orElse(null);
-        if (StringUtils.isNotBlank(reference)) {
-            setReference(reference);
-        }
-
-        Optional<Money> money = strategy.amount(mx);
-        if (money.isPresent()) {
-            setCurrency(money.get().getCurrency());
-            setAmount(money.get().getAmount());
-        }
-
-        strategy.valueDate(mx).ifPresent(this::setValueDate);
-        strategy.tradeDate(mx).ifPresent(this::setTradeDate);
-        strategy.sender(mx).ifPresent(this::setSender);
-        strategy.receiver(mx).ifPresent(this::setReceiver);
-        strategy.identifier(mx).ifPresent(this::setIdentifier);
-
-        // Compute checksums for duplicate detection, optional metadata that must not fail the message processing
-        try {
-            String checksum = strategy.checksum(mx);
-            if (StringUtils.isNotBlank(checksum)) {
-                setChecksum(checksum);
+        // the default strategy builds the node tree of the message once for every metadata extracted below
+        try (MxMetadataScope scope = MxMetadataScope.open()) {
+            String reference = strategy.reference(mx).orElse(null);
+            if (StringUtils.isNotBlank(reference)) {
+                setReference(reference);
             }
-        } catch (RuntimeException e) {
-            logChecksumError("checksum", e);
-        }
-        try {
-            String checksumBody = strategy.checksumBody(mx);
-            if (StringUtils.isNotBlank(checksumBody)) {
-                setChecksumBody(checksumBody);
+
+            Optional<Money> money = strategy.amount(mx);
+            if (money.isPresent()) {
+                setCurrency(money.get().getCurrency());
+                setAmount(money.get().getAmount());
             }
-        } catch (RuntimeException e) {
-            logChecksumError("body checksum", e);
+
+            strategy.valueDate(mx).ifPresent(this::setValueDate);
+            strategy.tradeDate(mx).ifPresent(this::setTradeDate);
+            strategy.sender(mx).ifPresent(this::setSender);
+            strategy.receiver(mx).ifPresent(this::setReceiver);
+            strategy.identifier(mx).ifPresent(this::setIdentifier);
+
+            // Compute checksums for duplicate detection, optional metadata that must not fail the message processing
+            try {
+                String checksum = strategy.checksum(mx);
+                if (StringUtils.isNotBlank(checksum)) {
+                    setChecksum(checksum);
+                }
+            } catch (RuntimeException e) {
+                logChecksumError("checksum", e);
+            }
+            try {
+                String checksumBody = strategy.checksumBody(mx);
+                if (StringUtils.isNotBlank(checksumBody)) {
+                    setChecksumBody(checksumBody);
+                }
+            } catch (RuntimeException e) {
+                logChecksumError("body checksum", e);
+            }
         }
     }
 
