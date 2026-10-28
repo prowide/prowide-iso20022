@@ -74,6 +74,10 @@ class AppHdrJaxbContextCacheTest {
         assertEquals(uncached, second);
         assertEquals(List.of(jaxbClass, jaxbClass), cache.requested);
         assertEquals(1, cache.delegate.size(), "the context must be created once and reused");
+        // the context classes are the implementation class alone: the cache contract never receives null, and the
+        // header subclass stays unknown to the context so no xsi:type is written
+        cache.requestedClasses.forEach(classes -> assertArrayEquals(new Class[] {jaxbClass}, classes));
+        assertFalse(first.contains("xsi:type"), first);
     }
 
     @ParameterizedTest
@@ -86,16 +90,19 @@ class AppHdrJaxbContextCacheTest {
 
         assertEquals(List.of(jaxbClass, jaxbClass), cache.requested);
         assertEquals(1, cache.delegate.size(), "the context must be created once and reused");
+        cache.requestedClasses.forEach(classes -> assertArrayEquals(new Class[] {jaxbClass}, classes));
     }
 
-    /** Records the requested message classes and delegates to the default cache implementation. */
+    /** Records the requested message classes and context classes, delegating to the default cache implementation. */
     private static final class RecordingCache implements JaxbContextCache {
         final JaxbContextCacheImpl delegate = new JaxbContextCacheImpl();
         final List<Class<?>> requested = new ArrayList<>();
+        final List<Class<?>[]> requestedClasses = new ArrayList<>();
 
         @Override
         public JAXBContext get(Class messageClass, Class<?>[] classes) throws JAXBException {
             requested.add(messageClass);
+            requestedClasses.add(classes);
             return delegate.get(messageClass, classes);
         }
     }

@@ -278,7 +278,7 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
         }
 
         params.prefix = usableConf.headerPrefix;
-        final String header = header(params);
+        final String header = header(headerParams(params));
         if (header != null) {
             // open envelope element
             xml.append("<");
@@ -339,6 +339,19 @@ public abstract class AbstractMX extends AbstractMessage implements JsonSerializ
             xml.append(envelopeElement).append(">");
         }
         return xml.toString();
+    }
+
+    /**
+     * Parameters for the header: a configured context is a Document context, which does not know the header classes,
+     * so the header obtains its own context from the {@link JaxbContextLoader}.
+     */
+    private static MxWriteParams headerParams(final MxWriteParams params) {
+        if (params.context == null) {
+            return params;
+        }
+        final MxWriteParams headerParams = new MxWriteParams(params);
+        headerParams.context = null;
+        return headerParams;
     }
 
     /**

@@ -112,7 +112,7 @@ public class MxReadImpl implements MxRead {
 
             Optional<AbstractMX> mx = Optional.ofNullable(parsedDocument);
 
-            Optional<AppHdr> appHdr = AppHdrParser.parseNormalized(payload, params);
+            Optional<AppHdr> appHdr = AppHdrParser.parseNormalized(payload, headerParams(params));
 
             if (mx.isPresent() && appHdr.isPresent()) {
                 mx.get().setAppHdr(appHdr.get());
@@ -128,6 +128,20 @@ public class MxReadImpl implements MxRead {
             MxParseUtils.handleParseException(e);
             return null;
         }
+    }
+
+    /**
+     * Parameters for the header: a configured context is a Document context, which does not know the header classes,
+     * so the header obtains its own context from the {@link JaxbContextLoader}.
+     */
+    private static MxReadParams headerParams(final MxReadParams params) {
+        if (params.context == null) {
+            return params;
+        }
+        final MxReadParams headerParams = new MxReadParams();
+        headerParams.adapters = params.adapters;
+        headerParams.verbose = params.verbose;
+        return headerParams;
     }
 
     /**
