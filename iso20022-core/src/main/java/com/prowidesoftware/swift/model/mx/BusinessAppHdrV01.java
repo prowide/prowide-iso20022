@@ -51,6 +51,13 @@ import org.w3c.dom.Element;
 public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implements AppHdr {
     public static final String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:head.001.001.01";
     static final Class[] _classes;
+
+    /**
+     * Classes of the serialization context: the implementation class only, not the parse classes. A context that
+     * also knew this subclass would write the header, created as this subclass, with an xsi:type attribute.
+     */
+    private static final Class[] WRITE_CONTEXT_CLASSES = {BusinessApplicationHeaderV01Impl.class};
+
     private static final transient Logger log = Logger.getLogger(BusinessAppHdrV01.class.getName());
 
     /**
@@ -217,7 +224,7 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
             if (effective.context != null) {
                 context = effective.context;
             } else {
-                context = JaxbContextLoader.INSTANCE.get(BusinessApplicationHeaderV01Impl.class, null);
+                context = JaxbContextLoader.INSTANCE.get(BusinessApplicationHeaderV01Impl.class, WRITE_CONTEXT_CLASSES);
             }
             final JAXBContext ctx = context;
             return WildcardElementRepair.retryRepaired(this, () -> {
@@ -241,7 +248,7 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
             });
 
         } catch (JAXBException | ExecutionException e) {
-            log.log(Level.SEVERE, "Error writing head.001.001.01 XML:" + e.getMessage());
+            log.log(Level.SEVERE, "Error writing head.001.001.01 XML:" + e.getMessage(), e);
         }
         return null;
     }
@@ -264,7 +271,7 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
             if (inputContext != null) {
                 context = inputContext;
             } else {
-                context = JaxbContextLoader.INSTANCE.get(BusinessApplicationHeaderV01Impl.class, null);
+                context = JaxbContextLoader.INSTANCE.get(BusinessApplicationHeaderV01Impl.class, WRITE_CONTEXT_CLASSES);
             }
             final JAXBContext ctx = context;
             return WildcardElementRepair.retryRepaired(this, () -> {
@@ -283,7 +290,7 @@ public class BusinessAppHdrV01 extends BusinessApplicationHeaderV01Impl implemen
             });
 
         } catch (JAXBException | ExecutionException e) {
-            log.log(Level.SEVERE, "Error writing head.001.001.01 XML:" + e.getMessage());
+            log.log(Level.SEVERE, "Error writing head.001.001.01 XML:" + e.getMessage(), e);
         }
         return null;
     }
