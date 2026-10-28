@@ -31,6 +31,7 @@ import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 import java.util.Arrays;
 import java.util.Objects;
+import java.util.concurrent.ExecutionException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.xml.namespace.QName;
@@ -234,7 +235,7 @@ public class BusinessAppHdrV02 extends BusinessApplicationHeaderV02Impl implemen
             if (effective.context != null) {
                 context = effective.context;
             } else {
-                context = JAXBContext.newInstance(BusinessApplicationHeaderV02Impl.class);
+                context = JaxbContextLoader.INSTANCE.get(BusinessApplicationHeaderV02Impl.class, null);
             }
             final JAXBContext ctx = context;
             return WildcardElementRepair.retryRepaired(this, () -> {
@@ -257,7 +258,7 @@ public class BusinessAppHdrV02 extends BusinessApplicationHeaderV02Impl implemen
                 return sw.getBuffer().toString();
             });
 
-        } catch (JAXBException e) {
+        } catch (JAXBException | ExecutionException e) {
             log.log(Level.SEVERE, "Error writing head.001.001.02 XML:" + e.getMessage());
         }
         return null;
@@ -271,7 +272,7 @@ public class BusinessAppHdrV02 extends BusinessApplicationHeaderV02Impl implemen
     /**
      * Gets the header as a DOM Element, using the given JAXB context.
      *
-     * @param inputContext optional JAXB context to use for marshalling, or null to create a default one
+     * @param inputContext optional JAXB context to use for marshalling, or null to get one from the {@link JaxbContextLoader}
      * @return DOM Element representing this header, or null if marshalling fails
      * @since 9.3.5
      */
@@ -281,7 +282,7 @@ public class BusinessAppHdrV02 extends BusinessApplicationHeaderV02Impl implemen
             if (inputContext != null) {
                 context = inputContext;
             } else {
-                context = JAXBContext.newInstance(BusinessApplicationHeaderV02Impl.class);
+                context = JaxbContextLoader.INSTANCE.get(BusinessApplicationHeaderV02Impl.class, null);
             }
             final JAXBContext ctx = context;
             return WildcardElementRepair.retryRepaired(this, () -> {
@@ -299,7 +300,7 @@ public class BusinessAppHdrV02 extends BusinessApplicationHeaderV02Impl implemen
                 return (Element) doc.getFirstChild();
             });
 
-        } catch (JAXBException e) {
+        } catch (JAXBException | ExecutionException e) {
             log.log(Level.SEVERE, "Error writing head.001.001.02 XML:" + e.getMessage());
         }
         return null;
