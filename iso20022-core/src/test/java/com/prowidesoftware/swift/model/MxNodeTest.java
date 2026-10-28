@@ -499,11 +499,22 @@ public class MxNodeTest {
     }
 
     @Test
-    public void testToCanonicalStringIgnoresAttributes() {
-        String xml = "<Root attr=\"value\"><Amount Ccy=\"USD\">1000</Amount></Root>";
+    public void testToCanonicalStringIncludesAttributesSortedByName() {
+        String xml = "<Root z=\"last\" attr=\"value\"><Amount Ccy=\"USD\">1000</Amount></Root>";
         MxNode node = MxNode.parse(xml);
         assertNotNull(node);
-        assertEquals("<Root><Amount>1000</Amount></Root>", node.toCanonicalString());
+        assertEquals(
+                "<Root attr=\"value\" z=\"last\"><Amount Ccy=\"USD\">1000</Amount></Root>", node.toCanonicalString());
+    }
+
+    @Test
+    public void testToCanonicalStringExcludesNamespaceDeclarations() {
+        String prefixed = "<ns:Root xmlns:ns=\"urn:test\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">"
+                + "<ns:Amount Ccy=\"USD\">1000</ns:Amount></ns:Root>";
+        String defaultNs = "<Root xmlns=\"urn:test\"><Amount Ccy=\"USD\">1000</Amount></Root>";
+        String expected = "<Root><Amount Ccy=\"USD\">1000</Amount></Root>";
+        assertEquals(expected, MxNode.parse(prefixed).toCanonicalString());
+        assertEquals(expected, MxNode.parse(defaultNs).toCanonicalString());
     }
 
     @Test
@@ -547,7 +558,7 @@ public class MxNodeTest {
         assertEquals(
                 "<Document><FIToFICstmrCdtTrf>"
                         + "<GrpHdr><MsgId>MSG001</MsgId><NbOfTxs>1</NbOfTxs></GrpHdr>"
-                        + "<CdtTrfTxInf><IntrBkSttlmAmt>5000</IntrBkSttlmAmt></CdtTrfTxInf>"
+                        + "<CdtTrfTxInf><IntrBkSttlmAmt Ccy=\"EUR\">5000</IntrBkSttlmAmt></CdtTrfTxInf>"
                         + "</FIToFICstmrCdtTrf></Document>",
                 node.toCanonicalString());
     }
