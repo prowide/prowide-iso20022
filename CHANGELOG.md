@@ -1,5 +1,8 @@
 # Prowide ISO 20022 - CHANGELOG
 
+### 10.4.1 - SNAPSHOT
+  * (PW-3610) Feat: XML serialization now accepts `xsd:any` content (e.g. `SplmtryData/Envlp`, AppHdr `Sgntr`) given as the raw XML string of `toJson()`, as left when the JSON is read without `fromJson()`
+
 ### 10.4.0 - September 2026
   * SWIFT Standards release 2026 model, for market infrastructures and clearings that adopt it with the November 2026 update, such as Target2; as the SWIFT network go-live was postponed, this remains an SRU2025 release
 

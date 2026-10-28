@@ -236,20 +236,26 @@ public class BusinessAppHdrV02 extends BusinessApplicationHeaderV02Impl implemen
             } else {
                 context = JAXBContext.newInstance(BusinessApplicationHeaderV02Impl.class);
             }
-            final Marshaller marshaller = MxWriteUtils.createMarshaller(context, effective);
+            final JAXBContext ctx = context;
+            return WildcardElementRepair.retryRepaired(this, () -> {
+                final Marshaller marshaller = MxWriteUtils.createMarshaller(ctx, effective);
 
-            final StringWriter sw = new StringWriter();
-            JAXBElement<BusinessApplicationHeaderV02Impl> element = new JAXBElement(
-                    new QName(NAMESPACE, AppHdr.HEADER_LOCALNAME), BusinessApplicationHeaderV02Impl.class, null, this);
-            XmlEventWriter eventWriter = new XmlEventWriter(
-                    sw,
-                    effective.prefix,
-                    effective.includeXMLDeclaration,
-                    AppHdr.HEADER_LOCALNAME,
-                    effective.escapeHandler,
-                    effective.indent);
-            marshaller.marshal(element, eventWriter);
-            return sw.getBuffer().toString();
+                final StringWriter sw = new StringWriter();
+                JAXBElement<BusinessApplicationHeaderV02Impl> element = new JAXBElement(
+                        new QName(NAMESPACE, AppHdr.HEADER_LOCALNAME),
+                        BusinessApplicationHeaderV02Impl.class,
+                        null,
+                        this);
+                XmlEventWriter eventWriter = new XmlEventWriter(
+                        sw,
+                        effective.prefix,
+                        effective.includeXMLDeclaration,
+                        AppHdr.HEADER_LOCALNAME,
+                        effective.escapeHandler,
+                        effective.indent);
+                marshaller.marshal(element, eventWriter);
+                return sw.getBuffer().toString();
+            });
 
         } catch (JAXBException e) {
             log.log(Level.SEVERE, "Error writing head.001.001.02 XML:" + e.getMessage());
@@ -277,15 +283,21 @@ public class BusinessAppHdrV02 extends BusinessApplicationHeaderV02Impl implemen
             } else {
                 context = JAXBContext.newInstance(BusinessApplicationHeaderV02Impl.class);
             }
-            final Marshaller marshaller = context.createMarshaller();
-            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+            final JAXBContext ctx = context;
+            return WildcardElementRepair.retryRepaired(this, () -> {
+                final Marshaller marshaller = ctx.createMarshaller();
+                marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 
-            DOMResult res = new DOMResult();
-            JAXBElement<BusinessApplicationHeaderV02Impl> element = new JAXBElement(
-                    new QName(NAMESPACE, AppHdr.HEADER_LOCALNAME), BusinessApplicationHeaderV02Impl.class, null, this);
-            marshaller.marshal(element, res);
-            Document doc = (Document) res.getNode();
-            return (Element) doc.getFirstChild();
+                DOMResult res = new DOMResult();
+                JAXBElement<BusinessApplicationHeaderV02Impl> element = new JAXBElement(
+                        new QName(NAMESPACE, AppHdr.HEADER_LOCALNAME),
+                        BusinessApplicationHeaderV02Impl.class,
+                        null,
+                        this);
+                marshaller.marshal(element, res);
+                Document doc = (Document) res.getNode();
+                return (Element) doc.getFirstChild();
+            });
 
         } catch (JAXBException e) {
             log.log(Level.SEVERE, "Error writing head.001.001.02 XML:" + e.getMessage());
