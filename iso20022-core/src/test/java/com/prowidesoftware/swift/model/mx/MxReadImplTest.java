@@ -991,4 +991,38 @@ public class MxReadImplTest {
         MxCatm00400102 mx = (MxCatm00400102) new MxReadImpl().read(MxCatm00400102.class, xml, MxCatm00400102._classes);
         assertNull(mx);
     }
+
+    /**
+     * The Document-only parse returns the model without reading the header, for callers that already parsed the
+     * header and set it on the model themselves instead of parsing it a second time.
+     */
+    @Test
+    public void testParseDocumentLeavesTheHeaderOut() {
+        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+                + "<RequestPayload>"
+                + "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\">"
+                + "<Fr><FIId><FinInstnId><BICFI>AAAAUSXXXXX</BICFI></FinInstnId></FIId></Fr>"
+                + "<To><FIId><FinInstnId><BICFI>BBBBUSXXXXX</BICFI></FinInstnId></FIId></To>"
+                + "<BizMsgIdr>B1</BizMsgIdr><MsgDefIdr>pacs.008.001.08</MsgDefIdr><CreDt>2024-01-01T10:00:00Z</CreDt>"
+                + "</AppHdr>"
+                + "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08\"><FIToFICstmrCdtTrf>"
+                + "<GrpHdr><MsgId>M1</MsgId><CreDtTm>2024-01-01T10:00:00</CreDtTm><NbOfTxs>1</NbOfTxs></GrpHdr>"
+                + "</FIToFICstmrCdtTrf></Document>"
+                + "</RequestPayload>";
+        AbstractMX full = MxReadImpl.parse(xml, null);
+        assertNotNull(full);
+        assertNotNull(full.getAppHdr(), "the regular parse reads the header");
+
+        AbstractMX documentOnly = MxReadImpl.parseDocument(xml, null, new MxReadParams());
+        assertNotNull(documentOnly);
+        assertNull(documentOnly.getAppHdr(), "the Document-only parse leaves the header out");
+        assertEquals(full.document(), documentOnly.document());
+        assertEquals(full.getMxId(), documentOnly.getMxId());
+
+        // the type given by the caller is honoured as in the regular parse
+        AbstractMX typed = MxReadImpl.parseDocument(xml, new MxId("pacs.008.001.08"), new MxReadParams());
+        assertNotNull(typed);
+        assertNull(typed.getAppHdr());
+        assertEquals(full.document(), typed.document());
+    }
 }
