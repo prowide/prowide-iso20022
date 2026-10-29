@@ -178,11 +178,10 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
      */
     public MxSwiftMessage(final AbstractMX mx, final MessageMetadataStrategy metadataStrategy) {
         // instead of reusing the constructor from XML with mx.message() as parameter
-        // we set the message and run the update directly to avoid an unnecessary message type detection
+        // we update from the model directly to avoid parsing back what we already have
         Objects.requireNonNull(mx, "the message model cannot be null");
         Objects.requireNonNull(metadataStrategy, "the strategy for metadata extraction cannot be null");
-        setMessage(mx.message());
-        _updateFromMessage(mx.getMxId(), metadataStrategy);
+        updateFromModel(mx, metadataStrategy);
     }
 
     /**
@@ -330,21 +329,38 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
         updateFromModel(mx, new DefaultMxMetadataStrategy());
     }
 
+    /**
+     * Updates the attributes with the raw message and its metadata from the given message model. The model itself
+     * is handed to the strategy, it is not parsed back from its serialized XML.
+     *
+     * @param mx               the new message content
+     * @param metadataStrategy the strategy implementation to use for metadata extraction
+     * @since 9.1.6
+     */
     public void updateFromModel(final AbstractMX mx, final MessageMetadataStrategy metadataStrategy) {
         Objects.requireNonNull(mx, "the mx parameter cannot be null");
         Objects.requireNonNull(metadataStrategy, "the strategy for metadata extraction cannot be null");
         setMessage(mx.message());
         setFileFormat(FileFormat.MX);
-        extractMetadata(mx.getMxId(), mx.getAppHdr(), metadataStrategy);
-    }
-
-    private void extractMetadata(MxId identifier, AppHdr headerModel, MessageMetadataStrategy metadataStrategy) {
-        extractMetadata(identifier, headerModel, metadataStrategy, lenientMessage());
+        MxNode parsedMessage = MxNode.parse(lenientMessage());
+        extractMetadata(mx.getMxId(), mx.getAppHdr(), parsedMessage);
+        applyStrategy(mx, metadataStrategy);
+        extractUetr(parsedMessage);
     }
 
     private void extractMetadata(
             MxId identifier, AppHdr headerModel, MessageMetadataStrategy metadataStrategy, String lenientXml) {
         MxNode parsedMessage = MxNode.parse(lenientXml);
+        extractMetadata(identifier, headerModel, parsedMessage);
+        applyStrategy(lenientXml, headerModel, metadataStrategy);
+        extractUetr(parsedMessage);
+    }
+
+    /**
+     * Updates sender and receiver from the header, or from the parsed message when the header is absent or does
+     * not have them, and the identification attributes from the identifier.
+     */
+    private void extractMetadata(MxId identifier, AppHdr headerModel, MxNode parsedMessage) {
         if (headerModel == null || !extractMetadata(headerModel)) {
             extractMetadata(parsedMessage);
         }
@@ -356,9 +372,6 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
             this.variant = identifier.getVariant();
             this.version = identifier.getVersion();
         }
-
-        applyStrategy(lenientXml, metadataStrategy);
-        extractUetr(parsedMessage);
     }
 
     /**
@@ -626,25 +639,41 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
         final String lenientXml = lenientMessage();
         MxNode parsedMessage = MxNode.parse(lenientXml);
         extractUetr(parsedMessage);
-        applyStrategy(lenientXml, strategy);
+        applyStrategy(lenientXml, getAppHdr(), strategy);
     }
 
-    private void applyStrategy(String lenientXml, MessageMetadataStrategy strategy) {
+    /**
+     * Parses the Document into the message model, with the header already parsed by the caller, and applies the
+     * strategy to the model.
+     *
+     * @param header the header of the message, already parsed, or null if the message has none
+     */
+    private void applyStrategy(String lenientXml, AppHdr header, MessageMetadataStrategy strategy) {
         boolean isKnownType = this.businessProcess != null
                 && this.functionality != null
                 && this.variant != null
                 && this.version != null;
-        MxId mxId = isKnownType ? getMxId() : null;
+        MxId mxId = null;
+        if (isKnownType) {
+            mxId = new MxId(this.businessProcess, this.functionality, this.variant, this.version);
+            if (header != null) {
+                mxId.setBusinessService(header.serviceName());
+            }
+        }
 
         MxReadParams params = new MxReadParams();
         params.verbose = false;
-        AbstractMX mx = MxReadImpl.parse(lenientXml, mxId, params);
+        AbstractMX mx = MxReadImpl.parseDocument(lenientXml, mxId, params);
 
         if (mx == null) {
             // could not parse the XML into a message model
             return;
         }
+        mx.setAppHdr(header);
+        applyStrategy(mx, strategy);
+    }
 
+    private void applyStrategy(AbstractMX mx, MessageMetadataStrategy strategy) {
         // the default strategy builds the node tree of the message once for every metadata extracted below
         try (MxMetadataScope scope = MxMetadataScope.open()) {
             String reference = strategy.reference(mx).orElse(null);

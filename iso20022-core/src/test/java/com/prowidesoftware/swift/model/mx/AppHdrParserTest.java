@@ -396,4 +396,27 @@ public class AppHdrParserTest {
         BusinessAppHdrV02 bah = (BusinessAppHdrV02) appHdr.get();
         assertEquals("0001645041", bah.getBizMsgIdr());
     }
+
+    @Test
+    public void parsesHeaderWithoutNamespaceWhenTheXmlDeclarationIsInvalid() {
+        final String xml = "<?xml version=\"\"?>"
+                + "<RequestPayload>"
+                + "<AppHdr>"
+                + "<Fr><FIId><FinInstnId><BICFI>AAAAUSXXXXX</BICFI></FinInstnId></FIId></Fr>"
+                + "<To><FIId><FinInstnId><BICFI>BBBBUSXXXXX</BICFI></FinInstnId></FIId></To>"
+                + "<BizMsgIdr>B1</BizMsgIdr><MsgDefIdr>pacs.008.001.08</MsgDefIdr>"
+                + "<CreDt>2024-01-01T10:00:00Z</CreDt>"
+                + "</AppHdr>"
+                + "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08\"><FIToFICstmrCdtTrf>"
+                + "<GrpHdr><MsgId>M1</MsgId></GrpHdr>"
+                + "</FIToFICstmrCdtTrf></Document>"
+                + "</RequestPayload>";
+
+        Optional<AppHdr> appHdr = AppHdrParser.parse(xml);
+
+        assertTrue(
+                appHdr.isPresent(), "an AppHdr without namespace is still found when the declaration is lenient-fixed");
+        assertEquals("B1", appHdr.get().reference());
+        assertEquals("AAAAUSXXXXX", appHdr.get().from());
+    }
 }
