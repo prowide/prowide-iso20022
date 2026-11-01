@@ -3,6 +3,7 @@ package com.prowidesoftware.swift.model.mx;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.prowidesoftware.swift.model.AbstractMessage;
@@ -96,6 +97,31 @@ class DefaultMxMetadataStrategyTest {
         assertTrue(seen[0], "reference not called inside a metadata scope");
         assertTrue(seen[1], "checksumBody not called inside a metadata scope");
         assertEquals(null, MxMetadataScope.current(), "scope not closed after the extraction");
+    }
+
+    /**
+     * A message built from a model hands that same model to the strategy, instead of serializing it and parsing it
+     * back only to extract the metadata.
+     */
+    @Test
+    void mxSwiftMessageFromModelHandsTheModelToTheStrategy() {
+        AbstractMX[] seen = new AbstractMX[1];
+        DefaultMxMetadataStrategy strategy = new DefaultMxMetadataStrategy() {
+            @Override
+            public Optional<String> reference(AbstractMessage message) {
+                seen[0] = (AbstractMX) message;
+                return super.reference(message);
+            }
+        };
+        AbstractMX mx = AbstractMX.parse(PACS008);
+        MxSwiftMessage msg = new MxSwiftMessage(mx, strategy);
+        assertSame(mx, seen[0], "the strategy should receive the model the message was built from");
+        assertEquals("M1", msg.getReference());
+
+        AbstractMX other = AbstractMX.parse(PACS008.replace("M1", "M2"));
+        msg.updateFromModel(other, strategy);
+        assertSame(other, seen[0], "the strategy should receive the model the message was updated from");
+        assertEquals("M2", msg.getReference());
     }
 
     @Test

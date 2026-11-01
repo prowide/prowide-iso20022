@@ -18,14 +18,20 @@ package com.prowidesoftware.swift.model;
 import static org.junit.jupiter.api.Assertions.*;
 
 import com.prowidesoftware.swift.model.mx.AbstractMX;
+import com.prowidesoftware.swift.model.mx.BusinessAppHdrV02;
 import com.prowidesoftware.swift.model.mx.DefaultMxMetadataStrategy;
+import com.prowidesoftware.swift.model.mx.JaxbContextCache;
+import com.prowidesoftware.swift.model.mx.JaxbContextLoader;
 import com.prowidesoftware.swift.model.mx.MxWriteConfiguration;
 import com.prowidesoftware.swift.utils.Lib;
+import jakarta.xml.bind.JAXBContext;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
+import java.util.Map;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -34,6 +40,76 @@ import org.junit.jupiter.api.Test;
  *
  */
 public class MxSwiftMessageTest {
+
+    /**
+     * Building a message from XML parses the header once, for the sender, receiver and identification, and hands it
+     * to the model given to the metadata strategy; it is not parsed again for the type identification nor when the
+     * Document is parsed. Observed through the JAXB context requests of the header class.
+     */
+    @Test
+    void headerIsParsedOncePerMessage() {
+        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+                + "<RequestPayload>"
+                + "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\">"
+                + "<Fr><FIId><FinInstnId><BICFI>AAAAUSXXXXX</BICFI></FinInstnId></FIId></Fr>"
+                + "<To><FIId><FinInstnId><BICFI>BBBBUSXXXXX</BICFI></FinInstnId></FIId></To>"
+                + "<BizMsgIdr>B1</BizMsgIdr><MsgDefIdr>pacs.008.001.08</MsgDefIdr><BizSvc>swift.cbprplus.02</BizSvc>"
+                + "<CreDt>2024-01-01T10:00:00Z</CreDt>"
+                + "</AppHdr>"
+                + "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08\"><FIToFICstmrCdtTrf>"
+                + "<GrpHdr><MsgId>M1</MsgId><CreDtTm>2024-01-01T10:00:00</CreDtTm><NbOfTxs>1</NbOfTxs></GrpHdr>"
+                + "<CdtTrfTxInf><IntrBkSttlmAmt Ccy=\"USD\">1000.50</IntrBkSttlmAmt></CdtTrfTxInf>"
+                + "</FIToFICstmrCdtTrf></Document>"
+                + "</RequestPayload>";
+        Map<Class<?>, Integer> contextRequests = new HashMap<>();
+        JaxbContextCache counting = (messageClass, classes) -> {
+            contextRequests.merge(messageClass, 1, Integer::sum);
+            return JAXBContext.newInstance(classes);
+        };
+
+        // the counting cache replaces the process-wide JAXB context cache, so this test relies on the sequential
+        // test execution of this module: a parallel parse on another thread would be counted here too
+        JaxbContextCache previous = JaxbContextLoader.INSTANCE.getCacheImpl();
+        JaxbContextLoader.INSTANCE.setCacheImpl(counting);
+        MxSwiftMessage msg;
+        try {
+            msg = new MxSwiftMessage(xml);
+        } finally {
+            JaxbContextLoader.INSTANCE.setCacheImpl(previous);
+        }
+
+        assertEquals("AAAAUSXXXXX", msg.getSender());
+        assertEquals("BBBBUSXXXXX", msg.getReceiver());
+        assertEquals("B1", msg.getReference());
+        assertEquals("swift.cbprplus.02", msg.getMxId().getBusinessService().orElse(null));
+        assertEquals(new BigDecimal("1000.50"), msg.getAmount());
+        assertNotNull(msg.getChecksum());
+        assertEquals(1, contextRequests.get(BusinessAppHdrV02.class), "header parses: " + contextRequests);
+    }
+
+    @Test
+    void headerWithoutNamespaceAndInvalidXmlDeclarationStillDrivesTheMetadata() {
+        String xml = "<?xml version=\"\"?>"
+                + "<RequestPayload>"
+                + "<AppHdr>"
+                + "<Fr><FIId><FinInstnId><BICFI>AAAAUSXXXXX</BICFI></FinInstnId></FIId></Fr>"
+                + "<To><FIId><FinInstnId><BICFI>BBBBUSXXXXX</BICFI></FinInstnId></FIId></To>"
+                + "<BizMsgIdr>B1</BizMsgIdr><MsgDefIdr>pacs.008.001.08</MsgDefIdr>"
+                + "<CreDt>2024-01-01T10:00:00Z</CreDt>"
+                + "</AppHdr>"
+                + "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08\"><FIToFICstmrCdtTrf>"
+                + "<GrpHdr><MsgId>M1</MsgId><CreDtTm>2024-01-01T10:00:00</CreDtTm><NbOfTxs>1</NbOfTxs></GrpHdr>"
+                + "<CdtTrfTxInf><IntrBkSttlmAmt Ccy=\"USD\">1000.50</IntrBkSttlmAmt></CdtTrfTxInf>"
+                + "</FIToFICstmrCdtTrf></Document>"
+                + "</RequestPayload>";
+
+        MxSwiftMessage msg = new MxSwiftMessage(xml);
+
+        assertEquals("B1", msg.getReference(), "reference comes from the header, not from the GrpHdr");
+        assertEquals("AAAAUSXXXXX", msg.getSender());
+        assertEquals("BBBBUSXXXXX", msg.getReceiver());
+        assertNotEquals(msg.getChecksumBody(), msg.getChecksum(), "checksum covers the header too");
+    }
 
     @Test
     public void testRead() throws IOException {

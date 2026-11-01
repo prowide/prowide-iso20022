@@ -342,6 +342,23 @@ public class NamespaceAndElementFilter extends XMLFilterImpl {
     }
 
     @Override
+    public void characters(char[] ch, int start, int length) throws SAXException {
+        // Text outside the propagated element (an envelope, or the sibling AppHdr or Document) is dropped like
+        // its elements, so the downstream handler only receives the propagated element, instead of also the
+        // text of the rest of the payload before and after it.
+        if (this.inElementToPropagate) {
+            super.characters(ch, start, length);
+        }
+    }
+
+    @Override
+    public void ignorableWhitespace(char[] ch, int start, int length) throws SAXException {
+        if (this.inElementToPropagate) {
+            super.ignorableWhitespace(ch, start, length);
+        }
+    }
+
+    @Override
     public void endPrefixMapping(String prefix) throws SAXException {
         // Intentionally a no-op. The matching end prefix mapping events are synthesized in endElement
         // from forwardedPrefixStack, so they balance exactly the start mappings we forwarded. Letting

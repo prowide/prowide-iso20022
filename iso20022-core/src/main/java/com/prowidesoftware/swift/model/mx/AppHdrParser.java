@@ -70,8 +70,10 @@ public class AppHdrParser {
             Optional<String> namespace =
                     NamespaceReader.findNamespaceForLocalName(payload.lenientReader(), AppHdr.HEADER_LOCALNAME);
 
-            boolean headerIsPresent =
-                    namespace.isPresent() || MxParseUtils.elementExists(payload.xml(), AppHdr.HEADER_LOCALNAME);
+            // the fallback scan for a header without namespace must read the same lenient-fixed content as the
+            // namespace scan above, otherwise an invalid XML declaration hides the header from this path only
+            boolean headerIsPresent = namespace.isPresent()
+                    || MxParseUtils.elementExists(MxParseUtils.makeXmlLenient(payload.xml()), AppHdr.HEADER_LOCALNAME);
 
             if (headerIsPresent) {
                 AppHdr parsedHeader = parseHeaderFromSAXSource(payload, namespace.orElse(null), params);

@@ -99,6 +99,18 @@ public class MxReadImpl implements MxRead {
             final LenientPayload payload,
             final Class<?>[] classes,
             final MxReadParams params) {
+        return parseNormalized(targetClass, payload, classes, params, true);
+    }
+
+    /**
+     * @param withHeader whether to parse the AppHdr into the model, or to leave the header out
+     */
+    private static AbstractMX parseNormalized(
+            final Class<? extends AbstractMX> targetClass,
+            final LenientPayload payload,
+            final Class<?>[] classes,
+            final MxReadParams params,
+            final boolean withHeader) {
         Objects.requireNonNull(targetClass, "target class to parse must not be null");
         Objects.requireNonNull(payload, "XML to parse must not be null");
         Objects.requireNonNull(classes, "object model classes array must not be null");
@@ -112,10 +124,12 @@ public class MxReadImpl implements MxRead {
 
             Optional<AbstractMX> mx = Optional.ofNullable(parsedDocument);
 
-            Optional<AppHdr> appHdr = AppHdrParser.parseNormalized(payload, headerParams(params));
+            if (withHeader) {
+                Optional<AppHdr> appHdr = AppHdrParser.parseNormalized(payload, headerParams(params));
 
-            if (mx.isPresent() && appHdr.isPresent()) {
-                mx.get().setAppHdr(appHdr.get());
+                if (mx.isPresent() && appHdr.isPresent()) {
+                    mx.get().setAppHdr(appHdr.get());
+                }
             }
 
             return mx.orElse(null);
@@ -168,6 +182,26 @@ public class MxReadImpl implements MxRead {
      * @since 9.2.6
      */
     public static AbstractMX parse(final String xml, final MxId id, final MxReadParams params) {
+        return parse(xml, id, params, true);
+    }
+
+    /**
+     * Parses the Document only, leaving the header out of the returned model, for callers that already parsed the
+     * header and set it on the model themselves instead of parsing it a second time. Apart from the header, the
+     * behaviour is that of {@link #parse(String, MxId, MxReadParams)}.
+     *
+     * @param xml    the XML content to parse, with or without an AppHdr, which is not read
+     * @param id     optional MX type identification; autodetected from the Document namespace if null
+     * @param params unmarshalling parameters
+     * @return parsed message without header, or null if the message type cannot be determined or parsing fails
+     * @since 10.4.2
+     */
+    public static AbstractMX parseDocument(final String xml, final MxId id, final MxReadParams params) {
+        return parse(xml, id, params, false);
+    }
+
+    private static AbstractMX parse(
+            final String xml, final MxId id, final MxReadParams params, final boolean withHeader) {
         Objects.requireNonNull(xml, "XML to parse must not be null");
         Validate.notBlank(xml, "XML to parse must not be a blank string");
         Objects.requireNonNull(params, "unmarshalling params cannot be null");
@@ -198,7 +232,7 @@ public class MxReadImpl implements MxRead {
             fqn = "com.prowidesoftware.swift.model.mx" + subPackage + ".Mx" + resolvedId.camelized();
             Class<? extends AbstractMX> clazz = (Class<? extends AbstractMX>) Class.forName(fqn);
             java.lang.reflect.Field _classes = clazz.getDeclaredField("_classes");
-            mx = parseNormalized(clazz, payload, (Class[]) _classes.get(null), params);
+            mx = parseNormalized(clazz, payload, (Class[]) _classes.get(null), params, withHeader);
         } catch (ClassNotFoundException e) {
             if (params.verbose) {
                 log.log(Level.SEVERE, "Cannot find class " + fqn + " to parse the XML", e);
