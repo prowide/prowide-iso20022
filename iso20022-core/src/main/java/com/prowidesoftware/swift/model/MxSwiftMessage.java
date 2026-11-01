@@ -172,6 +172,9 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
      * <br>If the header is not present, sender and receiver will be left null and the raw internal XML will include
      * just the 'Document' element.
      *
+     * <p>The given model itself is handed to the metadata strategy, it is not parsed back from its serialized XML;
+     * the strategy must not modify it, since the caller still holds it.
+     *
      * @param mx               a message object
      * @param metadataStrategy a strategy for metadata extraction
      * @since 9.1.6
@@ -181,7 +184,7 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
         // we update from the model directly to avoid parsing back what we already have
         Objects.requireNonNull(mx, "the message model cannot be null");
         Objects.requireNonNull(metadataStrategy, "the strategy for metadata extraction cannot be null");
-        updateFromModel(mx, metadataStrategy);
+        _updateFromModel(mx, metadataStrategy);
     }
 
     /**
@@ -331,7 +334,8 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
 
     /**
      * Updates the attributes with the raw message and its metadata from the given message model. The model itself
-     * is handed to the strategy, it is not parsed back from its serialized XML.
+     * is handed to the strategy, it is not parsed back from its serialized XML; the strategy must not modify it, since
+     * the caller still holds it.
      *
      * @param mx               the new message content
      * @param metadataStrategy the strategy implementation to use for metadata extraction
@@ -340,6 +344,14 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
     public void updateFromModel(final AbstractMX mx, final MessageMetadataStrategy metadataStrategy) {
         Objects.requireNonNull(mx, "the mx parameter cannot be null");
         Objects.requireNonNull(metadataStrategy, "the strategy for metadata extraction cannot be null");
+        _updateFromModel(mx, metadataStrategy);
+    }
+
+    /**
+     * Shared by the model constructor and {@link #updateFromModel(AbstractMX, MessageMetadataStrategy)}, private so
+     * the constructor does not call an overridable method.
+     */
+    private void _updateFromModel(final AbstractMX mx, final MessageMetadataStrategy metadataStrategy) {
         setMessage(mx.message());
         setFileFormat(FileFormat.MX);
         MxNode parsedMessage = MxNode.parse(lenientMessage());
