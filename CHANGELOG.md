@@ -1,14 +1,14 @@
 # Prowide ISO 20022 - CHANGELOG
 
-### 10.4.4 - SNAPSHOT
-  * Fix: `MaxPrcgDt` (SRU2026 `JulianDate` type) in `Context26` and `Context27` is now mapped to `java.time.LocalDate` instead of `XMLGregorianCalendar`, consistent with the rest of the model; code using `getMaxPrcgDt()`/`setMaxPrcgDt()` must be adapted
-  * Perf: MxSwiftMessage parses the AppHdr once per message instead of three times and hands a model-built message to the metadata strategy without re-serializing it; an AppHdr without namespace is now found when the XML declaration is invalid
+### 10.4.4 - November 2026
   * (PW-3610) Feat: XML serialization now accepts `xsd:any` content (e.g. `SplmtryData/Envlp`, AppHdr `Sgntr`) given as the raw XML string of `toJson()`, as left when the JSON is read without `fromJson()`
   * (PW-3591) Fix: supplementary data and signatures (xs:any content) declaring their own namespaces or namespaced attributes now serialize to valid XML, and a checksum that cannot be computed no longer fails the MxSwiftMessage parsing
   * (PW-3591) Fix: the message checksums used for duplicate detection now include element attributes such as Ccy, so messages differing only in an attribute are no longer duplicates; checksums computed by earlier versions do not match
+  * Fix: `MaxPrcgDt` (SRU2026 `JulianDate` type) in `Context26` and `Context27` is now mapped to `java.time.LocalDate` instead of `XMLGregorianCalendar`, consistent with the rest of the model; code using `getMaxPrcgDt()`/`setMaxPrcgDt()` must be adapted
   * Fix: a JAXB context set in the read or write configuration applies to the Document only, the AppHdr is parsed and written with its own context instead of being silently left out
   * Fix: the default `JaxbContextCacheImpl` builds each context once when several threads request the same message class at the same time, instead of once per thread
   * Fix: the AppHdr `xml()` and `element()` serialization of every header version takes its JAXB context from the `JaxbContextLoader`, so a configured context cache is reused instead of creating a new context on every call
+  * Perf: MxSwiftMessage parses the AppHdr once per message instead of three times and hands a model-built message to the metadata strategy without re-serializing it; an AppHdr without namespace is now found when the XML declaration is invalid
   * Perf: MX checksums and metadata are computed from the message model without re-serializing and re-parsing the XML; multi-line text values that a parsing defect left out of the checksums now count, so those checksums change
   * Updated commons-lang3 from 3.20.0 to 3.21.0 and gson from 2.14.0 to 2.15.0
 
