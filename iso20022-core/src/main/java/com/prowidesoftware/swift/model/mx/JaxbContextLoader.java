@@ -23,7 +23,7 @@ import java.util.concurrent.ExecutionException;
  * Singleton to parameterize the {@link JaxbContextCache} used when marshalling or unmarshalling MX messages.
  *
  * <p>This class is just a holder for the currently set cache. It is invoked in the static parse and write calls
- * of the MX message model classes.
+ * of the MX message model classes, and by the {@link AppHdr} implementations to parse and serialize the header.
  *
  * <p>By default the loader will use no cache at all, creating new contexts for each parse or write call. Jaxb
  * marshalling and unmarshalling is known to be a resource intensive task, so if you need to parse large burst

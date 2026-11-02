@@ -27,6 +27,7 @@ import java.io.InputStream;
 import java.util.Calendar;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.logging.Level;
 import org.apache.commons.lang3.StringUtils;
 
 /**
@@ -171,17 +172,19 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
      * <br>If the header is not present, sender and receiver will be left null and the raw internal XML will include
      * just the 'Document' element.
      *
+     * <p>The given model itself is handed to the metadata strategy, it is not parsed back from its serialized XML;
+     * the strategy must not modify it, since the caller still holds it.
+     *
      * @param mx               a message object
      * @param metadataStrategy a strategy for metadata extraction
      * @since 9.1.6
      */
     public MxSwiftMessage(final AbstractMX mx, final MessageMetadataStrategy metadataStrategy) {
         // instead of reusing the constructor from XML with mx.message() as parameter
-        // we set the message and run the update directly to avoid an unnecessary message type detection
+        // we update from the model directly to avoid parsing back what we already have
         Objects.requireNonNull(mx, "the message model cannot be null");
         Objects.requireNonNull(metadataStrategy, "the strategy for metadata extraction cannot be null");
-        setMessage(mx.message());
-        _updateFromMessage(mx.getMxId(), metadataStrategy);
+        _updateFromModel(mx, metadataStrategy);
     }
 
     /**
@@ -329,21 +332,47 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
         updateFromModel(mx, new DefaultMxMetadataStrategy());
     }
 
+    /**
+     * Updates the attributes with the raw message and its metadata from the given message model. The model itself
+     * is handed to the strategy, it is not parsed back from its serialized XML; the strategy must not modify it, since
+     * the caller still holds it.
+     *
+     * @param mx               the new message content
+     * @param metadataStrategy the strategy implementation to use for metadata extraction
+     * @since 9.1.6
+     */
     public void updateFromModel(final AbstractMX mx, final MessageMetadataStrategy metadataStrategy) {
         Objects.requireNonNull(mx, "the mx parameter cannot be null");
         Objects.requireNonNull(metadataStrategy, "the strategy for metadata extraction cannot be null");
-        setMessage(mx.message());
-        setFileFormat(FileFormat.MX);
-        extractMetadata(mx.getMxId(), mx.getAppHdr(), metadataStrategy);
+        _updateFromModel(mx, metadataStrategy);
     }
 
-    private void extractMetadata(MxId identifier, AppHdr headerModel, MessageMetadataStrategy metadataStrategy) {
-        extractMetadata(identifier, headerModel, metadataStrategy, lenientMessage());
+    /**
+     * Shared by the model constructor and {@link #updateFromModel(AbstractMX, MessageMetadataStrategy)}, private so
+     * the constructor does not call an overridable method.
+     */
+    private void _updateFromModel(final AbstractMX mx, final MessageMetadataStrategy metadataStrategy) {
+        setMessage(mx.message());
+        setFileFormat(FileFormat.MX);
+        MxNode parsedMessage = MxNode.parse(lenientMessage());
+        extractMetadata(mx.getMxId(), mx.getAppHdr(), parsedMessage);
+        applyStrategy(mx, metadataStrategy);
+        extractUetr(parsedMessage);
     }
 
     private void extractMetadata(
             MxId identifier, AppHdr headerModel, MessageMetadataStrategy metadataStrategy, String lenientXml) {
         MxNode parsedMessage = MxNode.parse(lenientXml);
+        extractMetadata(identifier, headerModel, parsedMessage);
+        applyStrategy(lenientXml, headerModel, metadataStrategy);
+        extractUetr(parsedMessage);
+    }
+
+    /**
+     * Updates sender and receiver from the header, or from the parsed message when the header is absent or does
+     * not have them, and the identification attributes from the identifier.
+     */
+    private void extractMetadata(MxId identifier, AppHdr headerModel, MxNode parsedMessage) {
         if (headerModel == null || !extractMetadata(headerModel)) {
             extractMetadata(parsedMessage);
         }
@@ -355,9 +384,6 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
             this.variant = identifier.getVariant();
             this.version = identifier.getVersion();
         }
-
-        applyStrategy(lenientXml, metadataStrategy);
-        extractUetr(parsedMessage);
     }
 
     /**
@@ -625,50 +651,84 @@ public class MxSwiftMessage extends AbstractSwiftMessage {
         final String lenientXml = lenientMessage();
         MxNode parsedMessage = MxNode.parse(lenientXml);
         extractUetr(parsedMessage);
-        applyStrategy(lenientXml, strategy);
+        applyStrategy(lenientXml, getAppHdr(), strategy);
     }
 
-    private void applyStrategy(String lenientXml, MessageMetadataStrategy strategy) {
+    /**
+     * Parses the Document into the message model, with the header already parsed by the caller, and applies the
+     * strategy to the model.
+     *
+     * @param header the header of the message, already parsed, or null if the message has none
+     */
+    private void applyStrategy(String lenientXml, AppHdr header, MessageMetadataStrategy strategy) {
         boolean isKnownType = this.businessProcess != null
                 && this.functionality != null
                 && this.variant != null
                 && this.version != null;
-        MxId mxId = isKnownType ? getMxId() : null;
+        MxId mxId = null;
+        if (isKnownType) {
+            mxId = new MxId(this.businessProcess, this.functionality, this.variant, this.version);
+            if (header != null) {
+                mxId.setBusinessService(header.serviceName());
+            }
+        }
 
         MxReadParams params = new MxReadParams();
         params.verbose = false;
-        AbstractMX mx = MxReadImpl.parse(lenientXml, mxId, params);
+        AbstractMX mx = MxReadImpl.parseDocument(lenientXml, mxId, params);
 
         if (mx == null) {
             // could not parse the XML into a message model
             return;
         }
+        mx.setAppHdr(header);
+        applyStrategy(mx, strategy);
+    }
 
-        String reference = strategy.reference(mx).orElse(null);
-        if (StringUtils.isNotBlank(reference)) {
-            setReference(reference);
-        }
+    private void applyStrategy(AbstractMX mx, MessageMetadataStrategy strategy) {
+        // the default strategy builds the node tree of the message once for every metadata extracted below
+        try (MxMetadataScope scope = MxMetadataScope.open()) {
+            String reference = strategy.reference(mx).orElse(null);
+            if (StringUtils.isNotBlank(reference)) {
+                setReference(reference);
+            }
 
-        Optional<Money> money = strategy.amount(mx);
-        if (money.isPresent()) {
-            setCurrency(money.get().getCurrency());
-            setAmount(money.get().getAmount());
-        }
+            Optional<Money> money = strategy.amount(mx);
+            if (money.isPresent()) {
+                setCurrency(money.get().getCurrency());
+                setAmount(money.get().getAmount());
+            }
 
-        strategy.valueDate(mx).ifPresent(this::setValueDate);
-        strategy.tradeDate(mx).ifPresent(this::setTradeDate);
-        strategy.sender(mx).ifPresent(this::setSender);
-        strategy.receiver(mx).ifPresent(this::setReceiver);
-        strategy.identifier(mx).ifPresent(this::setIdentifier);
+            strategy.valueDate(mx).ifPresent(this::setValueDate);
+            strategy.tradeDate(mx).ifPresent(this::setTradeDate);
+            strategy.sender(mx).ifPresent(this::setSender);
+            strategy.receiver(mx).ifPresent(this::setReceiver);
+            strategy.identifier(mx).ifPresent(this::setIdentifier);
 
-        // Compute checksums for duplicate detection
-        String checksum = strategy.checksum(mx);
-        if (StringUtils.isNotBlank(checksum)) {
-            setChecksum(checksum);
+            // Compute checksums for duplicate detection, optional metadata that must not fail the message processing
+            try {
+                String checksum = strategy.checksum(mx);
+                if (StringUtils.isNotBlank(checksum)) {
+                    setChecksum(checksum);
+                }
+            } catch (RuntimeException e) {
+                logChecksumError("checksum", e);
+            }
+            try {
+                String checksumBody = strategy.checksumBody(mx);
+                if (StringUtils.isNotBlank(checksumBody)) {
+                    setChecksumBody(checksumBody);
+                }
+            } catch (RuntimeException e) {
+                logChecksumError("body checksum", e);
+            }
         }
-        String checksumBody = strategy.checksumBody(mx);
-        if (StringUtils.isNotBlank(checksumBody)) {
-            setChecksumBody(checksumBody);
-        }
+    }
+
+    private static void logChecksumError(final String checksum, final RuntimeException e) {
+        log.warning("Could not compute the message " + checksum
+                + ", duplicate detection is not available for this message: "
+                + e.getClass().getName());
+        log.log(Level.FINE, "Error computing the message " + checksum, e);
     }
 }

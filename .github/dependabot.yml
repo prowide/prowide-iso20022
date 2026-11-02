@@ -22,3 +22,8 @@ updates:
         update-types: ["version-update:semver-major"]
       - dependency-name: "gradle-wrapper"
         update-types: ["version-update:semver-major"]
+    # One PR per xmlunit release instead of one per artifact (core, matchers, assertj share a version)
+    groups:
+      xmlunit:
+        patterns:
+          - "org.xmlunit:*"

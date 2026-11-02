@@ -17,7 +17,6 @@ package com.prowidesoftware.swift.model.mx;
 
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
-import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -25,14 +24,17 @@ import java.util.concurrent.ConcurrentHashMap;
  * third party dependencies. For a more robust solution You can easily implement your own cache with Guava, Ecache,
  * Caffeine or any other cache library. See some code references in the {@link JaxbContextCache} interface.
  *
+ * <p>The cache is per instance. Concurrent lookups of the same class create the context once, and a {@link #clear()}
+ * concurrent with a lookup is safe.
+ *
  * @since 9.0
  */
 public class JaxbContextCacheImpl implements JaxbContextCache {
 
-    private Map<Class, JAXBContext> cachedMap;
+    private final ConcurrentHashMap<Class, JAXBContext> cachedMap = new ConcurrentHashMap<>();
 
     /**
-     * Gets a context from the static cache. If the context for the specific message type is not present,
+     * Gets a context from the cache. If the context for the specific message type is not present,
      * a new context is initialized with the given classes or messageClass and stored in the cache.
      *
      * @param messageClass class of the message to be read or written
@@ -40,27 +42,37 @@ public class JaxbContextCacheImpl implements JaxbContextCache {
      * @return the cached or created context for the specific message type
      */
     public JAXBContext get(final Class messageClass, final Class<?>[] classes) throws JAXBException {
-        if (cachedMap == null) {
-            cachedMap = new ConcurrentHashMap<>();
+        try {
+            // atomic per key: concurrent misses wait for the single creation instead of each building a context
+            return cachedMap.computeIfAbsent(messageClass, key -> {
+                try {
+                    return classes != null && classes.length != 0
+                            ? JAXBContext.newInstance(classes)
+                            : JAXBContext.newInstance(messageClass);
+                } catch (JAXBException e) {
+                    throw new ContextCreationException(e);
+                }
+            });
+        } catch (ContextCreationException e) {
+            throw e.cause;
         }
+    }
 
-        JAXBContext context = cachedMap.get(messageClass);
-        if (context == null) {
-            if (classes != null && classes.length != 0) {
-                context = JAXBContext.newInstance(classes);
-            } else {
-                context = JAXBContext.newInstance(messageClass);
-            }
-            cachedMap.put(messageClass, context);
+    /** Tunnels the checked {@link JAXBException} out of the map computation */
+    private static final class ContextCreationException extends RuntimeException {
+        private final JAXBException cause;
+
+        private ContextCreationException(JAXBException cause) {
+            super(cause);
+            this.cause = cause;
         }
-        return context;
     }
 
     /**
      * Drops all cached contexts
      */
     public void clear() {
-        cachedMap = null;
+        cachedMap.clear();
     }
 
     /**
@@ -70,19 +82,13 @@ public class JaxbContextCacheImpl implements JaxbContextCache {
      * @return the removed context, if it was present, or null otherwise
      */
     public JAXBContext clear(Class clazz) {
-        if (cachedMap != null) {
-            return cachedMap.remove(clazz);
-        }
-        return null;
+        return cachedMap.remove(clazz);
     }
 
     /**
      * @return the number of cached contexts
      */
     public int size() {
-        if (cachedMap != null) {
-            return cachedMap.size();
-        }
-        return 0;
+        return cachedMap.size();
     }
 }

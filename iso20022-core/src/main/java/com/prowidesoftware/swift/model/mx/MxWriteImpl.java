@@ -67,27 +67,36 @@ public class MxWriteImpl {
             final JAXBElement<? extends MxSwiftMessage> element =
                     new JAXBElement(new QName("Document"), obj.getClass(), null, obj);
 
-            final Marshaller marshaller = MxWriteUtils.createMarshaller(context, params);
+            final JAXBContext ctx = context;
+            return WildcardElementRepair.retryRepaired(obj, () -> {
+                final Marshaller marshaller = MxWriteUtils.createMarshaller(ctx, params);
 
-            final StringWriter sw = new StringWriter();
-            XmlEventWriter writer = new XmlEventWriter(
-                    sw, params.prefix, params.includeXMLDeclaration, "Document", params.escapeHandler, params.indent);
+                final StringWriter sw = new StringWriter();
+                XmlEventWriter writer = new XmlEventWriter(
+                        sw,
+                        params.prefix,
+                        params.includeXMLDeclaration,
+                        "Document",
+                        params.escapeHandler,
+                        params.indent);
 
-            Map<String, String> preferredPrefixes = new HashMap<>();
-            for (XsysNamespaces xsys : XsysNamespaces.values()) {
-                preferredPrefixes.put(xsys.namespaceURI(), xsys.prefix());
-            }
-            writer.setPreferredPrefixes(preferredPrefixes);
+                Map<String, String> preferredPrefixes = new HashMap<>();
+                for (XsysNamespaces xsys : XsysNamespaces.values()) {
+                    preferredPrefixes.put(xsys.namespaceURI(), xsys.prefix());
+                }
+                writer.setPreferredPrefixes(preferredPrefixes);
+                writer.setMainNamespace(namespace);
 
-            marshaller.marshal(element, writer);
+                marshaller.marshal(element, writer);
 
-            if (log.isLoggable(Level.FINER)) {
-                log.finer("XML: \n" + sw.getBuffer().toString());
-            }
-            return sw.getBuffer().toString();
+                if (log.isLoggable(Level.FINER)) {
+                    log.finer("XML: \n" + sw.getBuffer().toString());
+                }
+                return sw.getBuffer().toString();
+            });
 
         } catch (JAXBException | ExecutionException e) {
-            log.log(Level.SEVERE, "Error writing XML:" + e + "\n for message: " + obj);
+            log.log(Level.SEVERE, "Error writing XML:" + e + "\n for message: " + obj, e);
         }
         return null;
     }

@@ -30,6 +30,7 @@ import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 import java.util.Arrays;
 import java.util.Objects;
+import java.util.concurrent.ExecutionException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.xml.namespace.QName;
@@ -49,6 +50,13 @@ import org.w3c.dom.Element;
 public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
     public static final String NAMESPACE = "urn:swift:xsd:$ahV10";
     static final Class[] _classes;
+
+    /**
+     * Classes of the serialization context: the implementation class only, not the parse classes. A context that
+     * also knew this subclass would write the header, created as this subclass, with an xsi:type attribute.
+     */
+    private static final Class[] WRITE_CONTEXT_CLASSES = {ApplicationHeaderImpl.class};
+
     private static final Logger log = Logger.getLogger(LegacyAppHdr.class.getName());
 
     static {
@@ -200,7 +208,7 @@ public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
             if (params.context != null) {
                 context = params.context;
             } else {
-                context = JAXBContext.newInstance(ApplicationHeaderImpl.class);
+                context = JaxbContextLoader.INSTANCE.get(ApplicationHeaderImpl.class, WRITE_CONTEXT_CLASSES);
             }
             final Marshaller marshaller = MxWriteUtils.createMarshaller(context, params);
 
@@ -217,8 +225,8 @@ public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
             marshaller.marshal(element, eventWriter);
             return sw.getBuffer().toString();
 
-        } catch (JAXBException e) {
-            log.log(Level.SEVERE, "Error writing $ahV10 XML:" + e.getMessage());
+        } catch (JAXBException | ExecutionException e) {
+            log.log(Level.SEVERE, "Error writing $ahV10 XML:" + e.getMessage(), e);
         }
         return null;
     }
@@ -231,7 +239,7 @@ public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
     /**
      * Gets the header as a DOM Element, using the given JAXB context.
      *
-     * @param inputContext optional JAXB context to use for marshalling, or null to create a default one
+     * @param inputContext optional JAXB context to use for marshalling, or null to get one from the {@link JaxbContextLoader}
      * @return DOM Element representing this header, or null if marshalling fails
      * @since 9.3.5
      */
@@ -241,7 +249,7 @@ public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
             if (inputContext != null) {
                 context = inputContext;
             } else {
-                context = JAXBContext.newInstance(ApplicationHeaderImpl.class);
+                context = JaxbContextLoader.INSTANCE.get(ApplicationHeaderImpl.class, WRITE_CONTEXT_CLASSES);
             }
             final Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
@@ -253,8 +261,8 @@ public class LegacyAppHdr extends ApplicationHeaderImpl implements AppHdr {
             Document doc = (Document) res.getNode();
             return (Element) doc.getFirstChild();
 
-        } catch (JAXBException e) {
-            log.log(Level.SEVERE, "Error writing $ahV10 XML:" + e.getMessage());
+        } catch (JAXBException | ExecutionException e) {
+            log.log(Level.SEVERE, "Error writing $ahV10 XML:" + e.getMessage(), e);
         }
         return null;
     }

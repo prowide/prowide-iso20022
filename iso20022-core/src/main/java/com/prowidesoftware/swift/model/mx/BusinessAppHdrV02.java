@@ -31,6 +31,7 @@ import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 import java.util.Arrays;
 import java.util.Objects;
+import java.util.concurrent.ExecutionException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.xml.namespace.QName;
@@ -50,6 +51,13 @@ import org.w3c.dom.Element;
 public class BusinessAppHdrV02 extends BusinessApplicationHeaderV02Impl implements AppHdr {
     public static final String NAMESPACE = "urn:iso:std:iso:20022:tech:xsd:head.001.001.02";
     static final Class[] _classes;
+
+    /**
+     * Classes of the serialization context: the implementation class only, not the parse classes. A context that
+     * also knew this subclass would write the header, created as this subclass, with an xsi:type attribute.
+     */
+    private static final Class[] WRITE_CONTEXT_CLASSES = {BusinessApplicationHeaderV02Impl.class};
+
     private static final Logger log = Logger.getLogger(BusinessAppHdrV02.class.getName());
 
     /**
@@ -234,25 +242,31 @@ public class BusinessAppHdrV02 extends BusinessApplicationHeaderV02Impl implemen
             if (effective.context != null) {
                 context = effective.context;
             } else {
-                context = JAXBContext.newInstance(BusinessApplicationHeaderV02Impl.class);
+                context = JaxbContextLoader.INSTANCE.get(BusinessApplicationHeaderV02Impl.class, WRITE_CONTEXT_CLASSES);
             }
-            final Marshaller marshaller = MxWriteUtils.createMarshaller(context, effective);
+            final JAXBContext ctx = context;
+            return WildcardElementRepair.retryRepaired(this, () -> {
+                final Marshaller marshaller = MxWriteUtils.createMarshaller(ctx, effective);
 
-            final StringWriter sw = new StringWriter();
-            JAXBElement<BusinessApplicationHeaderV02Impl> element = new JAXBElement(
-                    new QName(NAMESPACE, AppHdr.HEADER_LOCALNAME), BusinessApplicationHeaderV02Impl.class, null, this);
-            XmlEventWriter eventWriter = new XmlEventWriter(
-                    sw,
-                    effective.prefix,
-                    effective.includeXMLDeclaration,
-                    AppHdr.HEADER_LOCALNAME,
-                    effective.escapeHandler,
-                    effective.indent);
-            marshaller.marshal(element, eventWriter);
-            return sw.getBuffer().toString();
+                final StringWriter sw = new StringWriter();
+                JAXBElement<BusinessApplicationHeaderV02Impl> element = new JAXBElement(
+                        new QName(NAMESPACE, AppHdr.HEADER_LOCALNAME),
+                        BusinessApplicationHeaderV02Impl.class,
+                        null,
+                        this);
+                XmlEventWriter eventWriter = new XmlEventWriter(
+                        sw,
+                        effective.prefix,
+                        effective.includeXMLDeclaration,
+                        AppHdr.HEADER_LOCALNAME,
+                        effective.escapeHandler,
+                        effective.indent);
+                marshaller.marshal(element, eventWriter);
+                return sw.getBuffer().toString();
+            });
 
-        } catch (JAXBException e) {
-            log.log(Level.SEVERE, "Error writing head.001.001.02 XML:" + e.getMessage());
+        } catch (JAXBException | ExecutionException e) {
+            log.log(Level.SEVERE, "Error writing head.001.001.02 XML:" + e.getMessage(), e);
         }
         return null;
     }
@@ -265,7 +279,7 @@ public class BusinessAppHdrV02 extends BusinessApplicationHeaderV02Impl implemen
     /**
      * Gets the header as a DOM Element, using the given JAXB context.
      *
-     * @param inputContext optional JAXB context to use for marshalling, or null to create a default one
+     * @param inputContext optional JAXB context to use for marshalling, or null to get one from the {@link JaxbContextLoader}
      * @return DOM Element representing this header, or null if marshalling fails
      * @since 9.3.5
      */
@@ -275,20 +289,26 @@ public class BusinessAppHdrV02 extends BusinessApplicationHeaderV02Impl implemen
             if (inputContext != null) {
                 context = inputContext;
             } else {
-                context = JAXBContext.newInstance(BusinessApplicationHeaderV02Impl.class);
+                context = JaxbContextLoader.INSTANCE.get(BusinessApplicationHeaderV02Impl.class, WRITE_CONTEXT_CLASSES);
             }
-            final Marshaller marshaller = context.createMarshaller();
-            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+            final JAXBContext ctx = context;
+            return WildcardElementRepair.retryRepaired(this, () -> {
+                final Marshaller marshaller = ctx.createMarshaller();
+                marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 
-            DOMResult res = new DOMResult();
-            JAXBElement<BusinessApplicationHeaderV02Impl> element = new JAXBElement(
-                    new QName(NAMESPACE, AppHdr.HEADER_LOCALNAME), BusinessApplicationHeaderV02Impl.class, null, this);
-            marshaller.marshal(element, res);
-            Document doc = (Document) res.getNode();
-            return (Element) doc.getFirstChild();
+                DOMResult res = new DOMResult();
+                JAXBElement<BusinessApplicationHeaderV02Impl> element = new JAXBElement(
+                        new QName(NAMESPACE, AppHdr.HEADER_LOCALNAME),
+                        BusinessApplicationHeaderV02Impl.class,
+                        null,
+                        this);
+                marshaller.marshal(element, res);
+                Document doc = (Document) res.getNode();
+                return (Element) doc.getFirstChild();
+            });
 
-        } catch (JAXBException e) {
-            log.log(Level.SEVERE, "Error writing head.001.001.02 XML:" + e.getMessage());
+        } catch (JAXBException | ExecutionException e) {
+            log.log(Level.SEVERE, "Error writing head.001.001.02 XML:" + e.getMessage(), e);
         }
         return null;
     }

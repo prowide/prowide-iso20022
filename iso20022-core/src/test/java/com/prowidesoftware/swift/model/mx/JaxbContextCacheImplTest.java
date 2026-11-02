@@ -19,6 +19,16 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.IdentityHashMap;
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -47,5 +57,32 @@ public class JaxbContextCacheImplTest {
 
         cache.clear();
         assertEquals(0, cache.size());
+    }
+
+    /** Concurrent misses for the same class must create the context once, not once per thread */
+    @Test
+    public void testConcurrentLookupsOfTheSameClassShareOneContext() throws Exception {
+        JaxbContextCacheImpl cache = new JaxbContextCacheImpl();
+        int threads = 8;
+        ExecutorService pool = Executors.newFixedThreadPool(threads);
+        try {
+            CountDownLatch start = new CountDownLatch(1);
+            List<Future<JAXBContext>> results = new ArrayList<>();
+            for (int i = 0; i < threads; i++) {
+                results.add(pool.submit(() -> {
+                    start.await();
+                    return cache.get(MxPacs00800107.class, MxPacs00800107._classes);
+                }));
+            }
+            start.countDown();
+            Set<JAXBContext> distinct = Collections.newSetFromMap(new IdentityHashMap<>());
+            for (Future<JAXBContext> result : results) {
+                distinct.add(result.get(60, TimeUnit.SECONDS));
+            }
+            assertEquals(1, distinct.size(), "every thread must get the same context");
+            assertEquals(1, cache.size());
+        } finally {
+            pool.shutdownNow();
+        }
     }
 }

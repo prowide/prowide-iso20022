@@ -23,8 +23,8 @@ group 'com.prowidesoftware'
 project.ext {
 	SRU = 'SRU2026'
     prowideCoreVersion = 'SRU2026-10.4.3'
-	commonsLangVersion = '3.20.0'
-	gsonVersion = '2.14.0'
+	commonsLangVersion = '3.21.0'
+	gsonVersion = '2.15.0'
 	jaxbVersion = '4.0.6'
 	jakartaPersistenceVersion = '3.1.0' // jakarta 3.1 is Jakarta EE 10, jakarta 3.2 would imply migration to Jakarta EE 11
 }
@@ -162,11 +162,11 @@ project(':iso20022-core') {
 
 		testImplementation "jakarta.persistence:jakarta.persistence-api:${jakartaPersistenceVersion}"
 		testImplementation 'org.junit.jupiter:junit-jupiter:5.11.4'
-		testImplementation 'com.google.guava:guava:33.7.1-jre'
+		testImplementation 'com.google.guava:guava:33.7.2-jre'
 		testImplementation 'org.assertj:assertj-core:3.27.7'
-		testImplementation 'org.xmlunit:xmlunit-core:2.13.0'
-		testImplementation 'org.xmlunit:xmlunit-matchers:2.13.0'
-		testImplementation 'org.xmlunit:xmlunit-assertj:2.13.0'
+		testImplementation 'org.xmlunit:xmlunit-core:2.14.0'
+		testImplementation 'org.xmlunit:xmlunit-matchers:2.14.0'
+		testImplementation 'org.xmlunit:xmlunit-assertj:2.14.0'
 		testImplementation project(':model-acmt-mx')
 		testImplementation project(':model-acmt-types')
 		testImplementation project(':model-admi-mx')

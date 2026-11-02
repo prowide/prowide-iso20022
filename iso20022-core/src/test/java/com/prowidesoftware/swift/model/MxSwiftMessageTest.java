@@ -17,13 +17,21 @@ package com.prowidesoftware.swift.model;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import com.prowidesoftware.swift.model.mx.AbstractMX;
+import com.prowidesoftware.swift.model.mx.BusinessAppHdrV02;
 import com.prowidesoftware.swift.model.mx.DefaultMxMetadataStrategy;
+import com.prowidesoftware.swift.model.mx.JaxbContextCache;
+import com.prowidesoftware.swift.model.mx.JaxbContextLoader;
+import com.prowidesoftware.swift.model.mx.MxWriteConfiguration;
 import com.prowidesoftware.swift.utils.Lib;
+import jakarta.xml.bind.JAXBContext;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
+import java.util.Map;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -32,6 +40,76 @@ import org.junit.jupiter.api.Test;
  *
  */
 public class MxSwiftMessageTest {
+
+    /**
+     * Building a message from XML parses the header once, for the sender, receiver and identification, and hands it
+     * to the model given to the metadata strategy; it is not parsed again for the type identification nor when the
+     * Document is parsed. Observed through the JAXB context requests of the header class.
+     */
+    @Test
+    void headerIsParsedOncePerMessage() {
+        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+                + "<RequestPayload>"
+                + "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\">"
+                + "<Fr><FIId><FinInstnId><BICFI>AAAAUSXXXXX</BICFI></FinInstnId></FIId></Fr>"
+                + "<To><FIId><FinInstnId><BICFI>BBBBUSXXXXX</BICFI></FinInstnId></FIId></To>"
+                + "<BizMsgIdr>B1</BizMsgIdr><MsgDefIdr>pacs.008.001.08</MsgDefIdr><BizSvc>swift.cbprplus.02</BizSvc>"
+                + "<CreDt>2024-01-01T10:00:00Z</CreDt>"
+                + "</AppHdr>"
+                + "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08\"><FIToFICstmrCdtTrf>"
+                + "<GrpHdr><MsgId>M1</MsgId><CreDtTm>2024-01-01T10:00:00</CreDtTm><NbOfTxs>1</NbOfTxs></GrpHdr>"
+                + "<CdtTrfTxInf><IntrBkSttlmAmt Ccy=\"USD\">1000.50</IntrBkSttlmAmt></CdtTrfTxInf>"
+                + "</FIToFICstmrCdtTrf></Document>"
+                + "</RequestPayload>";
+        Map<Class<?>, Integer> contextRequests = new HashMap<>();
+        JaxbContextCache counting = (messageClass, classes) -> {
+            contextRequests.merge(messageClass, 1, Integer::sum);
+            return JAXBContext.newInstance(classes);
+        };
+
+        // the counting cache replaces the process-wide JAXB context cache, so this test relies on the sequential
+        // test execution of this module: a parallel parse on another thread would be counted here too
+        JaxbContextCache previous = JaxbContextLoader.INSTANCE.getCacheImpl();
+        JaxbContextLoader.INSTANCE.setCacheImpl(counting);
+        MxSwiftMessage msg;
+        try {
+            msg = new MxSwiftMessage(xml);
+        } finally {
+            JaxbContextLoader.INSTANCE.setCacheImpl(previous);
+        }
+
+        assertEquals("AAAAUSXXXXX", msg.getSender());
+        assertEquals("BBBBUSXXXXX", msg.getReceiver());
+        assertEquals("B1", msg.getReference());
+        assertEquals("swift.cbprplus.02", msg.getMxId().getBusinessService().orElse(null));
+        assertEquals(new BigDecimal("1000.50"), msg.getAmount());
+        assertNotNull(msg.getChecksum());
+        assertEquals(1, contextRequests.get(BusinessAppHdrV02.class), "header parses: " + contextRequests);
+    }
+
+    @Test
+    void headerWithoutNamespaceAndInvalidXmlDeclarationStillDrivesTheMetadata() {
+        String xml = "<?xml version=\"\"?>"
+                + "<RequestPayload>"
+                + "<AppHdr>"
+                + "<Fr><FIId><FinInstnId><BICFI>AAAAUSXXXXX</BICFI></FinInstnId></FIId></Fr>"
+                + "<To><FIId><FinInstnId><BICFI>BBBBUSXXXXX</BICFI></FinInstnId></FIId></To>"
+                + "<BizMsgIdr>B1</BizMsgIdr><MsgDefIdr>pacs.008.001.08</MsgDefIdr>"
+                + "<CreDt>2024-01-01T10:00:00Z</CreDt>"
+                + "</AppHdr>"
+                + "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08\"><FIToFICstmrCdtTrf>"
+                + "<GrpHdr><MsgId>M1</MsgId><CreDtTm>2024-01-01T10:00:00</CreDtTm><NbOfTxs>1</NbOfTxs></GrpHdr>"
+                + "<CdtTrfTxInf><IntrBkSttlmAmt Ccy=\"USD\">1000.50</IntrBkSttlmAmt></CdtTrfTxInf>"
+                + "</FIToFICstmrCdtTrf></Document>"
+                + "</RequestPayload>";
+
+        MxSwiftMessage msg = new MxSwiftMessage(xml);
+
+        assertEquals("B1", msg.getReference(), "reference comes from the header, not from the GrpHdr");
+        assertEquals("AAAAUSXXXXX", msg.getSender());
+        assertEquals("BBBBUSXXXXX", msg.getReceiver());
+        assertNotEquals(msg.getChecksumBody(), msg.getChecksum(), "checksum covers the header too");
+    }
 
     @Test
     public void testRead() throws IOException {
@@ -854,5 +932,113 @@ public class MxSwiftMessageTest {
         // Both checksums must differ since Document changed
         assertNotEquals(original.getChecksum(), changed.getChecksum());
         assertNotEquals(original.getChecksumBody(), changed.getChecksumBody());
+    }
+
+    /**
+     * PW-3591: supplementary data holding a supl Document that declares its own namespaces (supl and xsi) used to
+     * serialize as malformed XML, so the checksum canonicalization failed and the parse ended with an NPE
+     */
+    @Test
+    void testChecksumWithNestedXsiDocument() {
+        String xml = "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:camt.056.001.08\">"
+                + "<FIToFIPmtCxlReq><Assgnmt><Id>ID-1</Id><CreDtTm>2024-01-01T10:00:00</CreDtTm></Assgnmt>"
+                + "<SplmtryData><Envlp>"
+                + "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:supl.011.001.11\""
+                + " xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><Ext><Txt>foo</Txt></Ext></Document>"
+                + "</Envlp></SplmtryData></FIToFIPmtCxlReq></Document>";
+        MxSwiftMessage mx = MxSwiftMessage.parse(xml);
+        assertEquals("camt.056.001.08", mx.getIdentifier());
+        assertNotNull(mx.getChecksum());
+        assertNotNull(mx.getChecksumBody());
+        // the serialized message must be well-formed again
+        AbstractMX model = AbstractMX.parse(xml);
+        assertNotNull(model);
+        assertNotNull(MxNode.parse(model.message()));
+    }
+
+    @Test
+    void testChecksumNotComputableReturnsNull() throws IOException {
+        String xml = Lib.readResource("pacs.008.001.07.xml");
+        DefaultMxMetadataStrategy strategy = new DefaultMxMetadataStrategy() {
+            @Override
+            protected String canonicalizeXml(String xml) {
+                return null;
+            }
+        };
+        AbstractMX mx = AbstractMX.parse(xml);
+        assertNotNull(mx);
+        assertNull(strategy.checksum(mx));
+        assertNull(strategy.checksumBody(mx));
+    }
+
+    @Test
+    void testChecksumFailureDoesNotFailParse() throws IOException {
+        String xml = Lib.readResource("pacs.008.001.07.xml");
+        DefaultMxMetadataStrategy strategy = new DefaultMxMetadataStrategy() {
+            @Override
+            public String checksum(AbstractMessage message) {
+                throw new IllegalStateException("test");
+            }
+
+            @Override
+            public String checksumBody(AbstractMessage message) {
+                throw new IllegalStateException("test");
+            }
+        };
+        MxSwiftMessage mx = new MxSwiftMessage(xml, strategy);
+        assertEquals("pacs.008.001.07", mx.getIdentifier());
+        assertNotNull(mx.getReference());
+        assertNull(mx.getChecksum());
+        assertNull(mx.getChecksumBody());
+    }
+
+    @Test
+    void testChecksumFailureDoesNotSkipBodyChecksum() throws IOException {
+        String xml = Lib.readResource("pacs.008.001.07.xml");
+        DefaultMxMetadataStrategy strategy = new DefaultMxMetadataStrategy() {
+            @Override
+            public String checksum(AbstractMessage message) {
+                throw new IllegalStateException("test");
+            }
+        };
+        MxSwiftMessage mx = new MxSwiftMessage(xml, strategy);
+        assertNull(mx.getChecksum());
+        assertNotNull(mx.getChecksumBody());
+    }
+
+    /** PW-3591: the canonical form includes attributes, so messages differing only in a currency are not duplicates */
+    @Test
+    void testChecksumDiffersWhenOnlyAnAttributeDiffers() throws IOException {
+        String xml = Lib.readResource("pacs.008.001.07.xml");
+        java.util.regex.Matcher ccy =
+                java.util.regex.Pattern.compile("Ccy=['\"]([A-Z]{3})['\"]").matcher(xml);
+        assertTrue(ccy.find());
+        String otherCcy = "XXX".equals(ccy.group(1)) ? "YYY" : "XXX";
+        MxSwiftMessage original = MxSwiftMessage.parse(xml);
+        MxSwiftMessage changed = MxSwiftMessage.parse(xml.replace(ccy.group(), "Ccy='" + otherCcy + "'"));
+        assertNotNull(original.getChecksum());
+        assertNotEquals(original.getChecksum(), changed.getChecksum());
+        assertNotEquals(original.getChecksumBody(), changed.getChecksumBody());
+    }
+
+    @Test
+    void testChecksumSameForFormattingAndPrefixVariants() throws IOException {
+        String xml = Lib.readResource("pacs.008.001.07.xml");
+        AbstractMX model = AbstractMX.parse(xml);
+        assertNotNull(model);
+        MxWriteConfiguration noPrefix = new MxWriteConfiguration();
+        noPrefix.documentPrefix = null;
+        noPrefix.indent = "";
+        MxWriteConfiguration otherPrefix = new MxWriteConfiguration();
+        otherPrefix.documentPrefix = "x";
+
+        MxSwiftMessage original = MxSwiftMessage.parse(xml);
+        MxSwiftMessage compact = MxSwiftMessage.parse(model.message(noPrefix));
+        MxSwiftMessage prefixed = MxSwiftMessage.parse(model.message(otherPrefix));
+        assertNotNull(original.getChecksum());
+        assertEquals(original.getChecksum(), compact.getChecksum());
+        assertEquals(original.getChecksum(), prefixed.getChecksum());
+        assertEquals(original.getChecksumBody(), compact.getChecksumBody());
+        assertEquals(original.getChecksumBody(), prefixed.getChecksumBody());
     }
 }
