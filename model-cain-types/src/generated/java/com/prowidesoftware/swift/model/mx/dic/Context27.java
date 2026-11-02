@@ -4,7 +4,6 @@ package com.prowidesoftware.swift.model.mx.dic;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.datatype.XMLGregorianCalendar;
 import com.prowidesoftware.swift.model.mx.adapters.IsoDateAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -129,9 +128,10 @@ public class Context27 {
     @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
     protected LocalDate dtAntcptd;
-    @XmlElement(name = "MaxPrcgDt")
+    @XmlElement(name = "MaxPrcgDt", type = String.class)
+    @XmlJavaTypeAdapter(IsoDateAdapter.class)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar maxPrcgDt;
+    protected LocalDate maxPrcgDt;
     @XmlElement(name = "SctyChrtcs")
     @XmlSchemaType(name = "string")
     protected List<SecurityCharacteristics2Code> sctyChrtcs;
@@ -876,10 +876,10 @@ public class Context27 {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getMaxPrcgDt() {
+    public LocalDate getMaxPrcgDt() {
         return maxPrcgDt;
     }
 
@@ -888,10 +888,10 @@ public class Context27 {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public Context27 setMaxPrcgDt(XMLGregorianCalendar value) {
+    public Context27 setMaxPrcgDt(LocalDate value) {
         this.maxPrcgDt = value;
         return this;
     }

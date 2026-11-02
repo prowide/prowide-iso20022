@@ -1,40 +1,38 @@
 # Prowide ISO 20022 - CHANGELOG
 
-### 10.4.2 - SNAPSHOT
-  * Perf: MxSwiftMessage parses the AppHdr once per message instead of three times and hands a model-built message to the metadata strategy without re-serializing it; an AppHdr without namespace is now found when the XML declaration is invalid
-
-### 10.4.1 - October 2026
+### 10.4.4 - November 2026
   * (PW-3610) Feat: XML serialization now accepts `xsd:any` content (e.g. `SplmtryData/Envlp`, AppHdr `Sgntr`) given as the raw XML string of `toJson()`, as left when the JSON is read without `fromJson()`
   * (PW-3591) Fix: supplementary data and signatures (xs:any content) declaring their own namespaces or namespaced attributes now serialize to valid XML, and a checksum that cannot be computed no longer fails the MxSwiftMessage parsing
   * (PW-3591) Fix: the message checksums used for duplicate detection now include element attributes such as Ccy, so messages differing only in an attribute are no longer duplicates; checksums computed by earlier versions do not match
+  * Fix: `MaxPrcgDt` (SRU2026 `JulianDate` type) in `Context26` and `Context27` is now mapped to `java.time.LocalDate` instead of `XMLGregorianCalendar`, consistent with the rest of the model; code using `getMaxPrcgDt()`/`setMaxPrcgDt()` must be adapted
   * Fix: a JAXB context set in the read or write configuration applies to the Document only, the AppHdr is parsed and written with its own context instead of being silently left out
   * Fix: the default `JaxbContextCacheImpl` builds each context once when several threads request the same message class at the same time, instead of once per thread
   * Fix: the AppHdr `xml()` and `element()` serialization of every header version takes its JAXB context from the `JaxbContextLoader`, so a configured context cache is reused instead of creating a new context on every call
+  * Perf: MxSwiftMessage parses the AppHdr once per message instead of three times and hands a model-built message to the metadata strategy without re-serializing it; an AppHdr without namespace is now found when the XML declaration is invalid
   * Perf: MX checksums and metadata are computed from the message model without re-serializing and re-parsing the XML; multi-line text values that a parsing defect left out of the checksums now count, so those checksums change
-  * Updated pw-swift-core dependency from SRU2025-10.3.19 to SRU2025-10.3.20, commons-lang3 from 3.20.0 to 3.21.0 and gson from 2.14.0 to 2.15.0
+  * Updated commons-lang3 from 3.20.0 to 3.21.0 and gson from 2.14.0 to 2.15.0
 
   Upgrade note: the MX checksums used for duplicate detection now include element attributes and multi-line text, so the values this version computes differ from those stored by earlier versions for most messages.
   A message stored before the upgrade and received again after it is not detected as a duplicate; detection among messages processed by this version is not affected.
   A subclass of the default metadata strategy overriding `canonicalizeXml` keeps its own canonical form and is not affected.
 
-### 10.4.0 - September 2026
-  * SWIFT Standards release 2026 model, for market infrastructures and clearings that adopt it with the November 2026 update, such as Target2; as the SWIFT network go-live was postponed, this remains an SRU2025 release
-
-  Upgrade note: the Prowide Core dependency and the deprecation schedule remain those of SRU2025. Some model dictionary classes were renamed or removed, so code referencing them must be adapted and recompiled.
-  The message versions introduced by SWIFT Standards release 2026 are valid on SWIFT only for the market infrastructures adopting them in November 2026, such as Target2. All other SWIFT traffic must keep using 
-  SRU2025 message versions until SRU2026 goes live on 12 June 2027.
-
-### 10.3.11 - September 2026
+### 10.4.3 - September 2026
   * (PW-3405) Feat: Configurable fallback zone for date time and time elements without offset (new adapter constructors and TypeAdaptersConfiguration.withFallbackZone); time elements now resolve the daylight-saving aware offset
 
-### 10.3.10 - July 2026
+### 10.4.2 - July 2026
   * (PW-3251) Feat: lenient parsing of file-format (FileAct) payloads with sibling `AppHdr` and `Document` root elements or undeclared namespace prefixes, applied consistently across all parsing entry points without copying the payload
   * (PW-3251) `MxParseUtils.identifyMessage` now returns an empty Optional on blank input instead of throwing an IllegalArgumentException
   * (PW-3251) Added `MxParseUtils.needsNormalization` to check whether a payload needs lenient normalization without materializing the normalized content, for callers that only need the boolean outcome (e.g. file format detection)
-
-### 10.3.9 - June 2026
   * Feat: `xsd:any` wildcard content (e.g. `SplmtryData/Envlp`, signature envelopes) is no longer dropped on parse; it is captured as an `org.w3c.dom.Element` with namespaces preserved (GH-39, GH-43)
   * Fix: `toJson()` now serializes `@XmlAnyElement` wildcard content as raw XML instead of an empty `{}`, and `fromJson()` restores it back to a DOM Element (round-trippable)
+
+### 10.4.1 - June 2026
+  * Feat: `xsd:any` wildcard content (e.g. `SplmtryData/Envlp`, signature envelopes) is no longer dropped on parse; it is captured as an `org.w3c.dom.Element` with namespaces preserved (GH-39, GH-43)
+  * Fix: `toJson()` now serializes `@XmlAnyElement` wildcard content as raw XML instead of an empty `{}`, and `fromJson()` restores it back to a DOM Element (round-trippable)
+
+### 10.4.0 - May 2026
+  * SWIFT Standard release update 2026 (live 12 June 2027, original November 2026 release postponed) 
+  * Yearly revision of deprecation phase (see https://dev.prowidesoftware.com/SRU2024/getting-started/deprecation/)
 
 ### 10.3.8 - May 2026
   * (PW-3202) Fix: removed spurious `Error propagating pending prefix mapping` warnings when parsing regular ISO 20022 Documents wrapped in an SNL-like envelope
