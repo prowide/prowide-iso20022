@@ -1,5 +1,20 @@
 # Prowide ISO 20022 - CHANGELOG
 
+### 9.7.2 - November 2026
+  * (PW-3610) Feat: XML serialization now accepts `xsd:any` content (e.g. `SplmtryData/Envlp`, AppHdr `Sgntr`) given as the raw XML string of `toJson()`, as left when the JSON is read without `fromJson()`
+  * (PW-3591) Fix: supplementary data and signatures (xs:any content) declaring their own namespaces or namespaced attributes now serialize to valid XML, and a checksum that cannot be computed no longer fails the MxSwiftMessage parsing
+  * (PW-3591) Fix: the message checksums used for duplicate detection now include element attributes such as Ccy, so messages differing only in an attribute are no longer duplicates; checksums computed by earlier versions do not match
+  * Fix: a JAXB context set in the read or write configuration applies to the Document only, the AppHdr is parsed and written with its own context instead of being silently left out
+  * Fix: the default `JaxbContextCacheImpl` builds each context once when several threads request the same message class at the same time, instead of once per thread
+  * Fix: the AppHdr `xml()` and `element()` serialization of every header version takes its JAXB context from the `JaxbContextLoader`, so a configured context cache is reused instead of creating a new context on every call
+  * Perf: MxSwiftMessage parses the AppHdr once per message instead of three times and hands a model-built message to the metadata strategy without re-serializing it; an AppHdr without namespace is now found when the XML declaration is invalid
+  * Perf: MX checksums and metadata are computed from the message model without re-serializing and re-parsing the XML; multi-line text values that a parsing defect left out of the checksums now count, so those checksums change
+  * Updated commons-lang3 from 3.20.0 to 3.21.0 and gson from 2.14.0 to 2.15.0
+
+  Upgrade note: the MX checksums used for duplicate detection now include element attributes and multi-line text, so the values this version computes differ from those stored by earlier versions for most messages.
+  A message stored before the upgrade and received again after it is not detected as a duplicate; detection among messages processed by this version is not affected.
+  A subclass of the default metadata strategy overriding `canonicalizeXml` keeps its own canonical form and is not affected.
+
 ### 9.7.1 - October 2026
   * (PW-3405) Feat: Configurable fallback zone for date time and time elements without offset (new adapter constructors and TypeAdaptersConfiguration.withFallbackZone); time elements now resolve the daylight-saving aware offset
   * (PW-3251) Feat: lenient parsing of file-format (FileAct) payloads with sibling `AppHdr` and `Document` root elements or undeclared namespace prefixes, applied consistently across all parsing entry points without copying the payload (missing in 9.7.0)

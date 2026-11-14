@@ -114,6 +114,24 @@ class NamespaceAndElementFilterTest {
                 "startPrefixMapping and endPrefixMapping must be balanced downstream");
     }
 
+    /**
+     * Text outside the propagated element (the Document body when the AppHdr is parsed, the AppHdr when the
+     * Document is parsed, or an envelope) must not reach the downstream handler. Otherwise the unmarshaller
+     * receives and buffers the text of the whole payload, which on a large message costs more than parsing the
+     * element itself.
+     */
+    @Test
+    void forwardsTextOnlyInsideThePropagatedElement() throws Exception {
+        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+                + "<Envelope>ENVELOPE"
+                + "<AppHdr xmlns=\"urn:iso:std:iso:20022:tech:xsd:head.001.001.02\"><Fr>HEADER</Fr></AppHdr>"
+                + "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08\"><Body>BODY</Body></Document>"
+                + "</Envelope>";
+
+        assertEquals("HEADER", runFilter(xml, "AppHdr").text.toString());
+        assertEquals("BODY", runFilter(xml, "Document").text.toString());
+    }
+
     private static RecordingHandler runFilter(String xml, String elementToPropagate) throws Exception {
         RecordingHandler handler = new RecordingHandler();
         NamespaceAndElementFilter filter = new NamespaceAndElementFilter(elementToPropagate);
@@ -129,6 +147,7 @@ class NamespaceAndElementFilterTest {
         final List<String> elements = new ArrayList<>();
         int startMappingCount = 0;
         int endMappingCount = 0;
+        final StringBuilder text = new StringBuilder();
 
         @Override
         public void startPrefixMapping(String prefix, String uri) {
@@ -144,6 +163,11 @@ class NamespaceAndElementFilterTest {
         @Override
         public void startElement(String uri, String localName, String qName, Attributes attributes) {
             elements.add(uri + ":" + localName);
+        }
+
+        @Override
+        public void characters(char[] ch, int start, int length) {
+            text.append(ch, start, length);
         }
     }
 }

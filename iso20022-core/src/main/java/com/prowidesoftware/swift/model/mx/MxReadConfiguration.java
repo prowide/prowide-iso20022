@@ -33,7 +33,8 @@ public class MxReadConfiguration {
     public TypeAdaptersConfiguration adapters;
 
     /**
-     * Optional instance to pass to the read method, if null, a new instance will be created when needed
+     * Optional context for the Document, if null, one is obtained from the {@link JaxbContextLoader} when needed.
+     * The AppHdr classes are not part of a Document context, so the header is always read with its own context.
      * @since 9.3.5
      */
     public JAXBContext context;

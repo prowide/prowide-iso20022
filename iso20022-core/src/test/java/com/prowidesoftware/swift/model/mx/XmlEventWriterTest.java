@@ -20,12 +20,17 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.xmlunit.matchers.HasXPathMatcher.hasXPath;
 
+import com.prowidesoftware.swift.model.MxNode;
 import com.prowidesoftware.swift.model.mx.dic.*;
 import com.prowidesoftware.swift.utils.Lib;
 import java.io.IOException;
+import java.io.StringWriter;
 import java.math.BigDecimal;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
+import javax.xml.stream.XMLEventFactory;
+import javax.xml.stream.XMLStreamException;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Test;
 import org.xmlunit.builder.Input;
@@ -220,6 +225,190 @@ public class XmlEventWriterTest {
 
         // System.out.println(mx.message());
         Arrays.stream(mx.message().split("\\r?\\n")).forEach(line -> assertTrue(StringUtils.isNotBlank(line)));
+    }
+
+    /*
+     * PW-3591: event level tests of the foreign content mode. The events mimic what JAXB sends: model elements
+     * without namespace, and DOM (xs:any) content with its own prefixes and declarations.
+     */
+
+    private static final XMLEventFactory EVENTS = XMLEventFactory.newInstance();
+    private static final String XSI = "http://www.w3.org/2001/XMLSchema-instance";
+
+    @Test
+    public void test_foreignContentIsWrittenAsReceived() throws XMLStreamException {
+        StringWriter sw = new StringWriter();
+        XmlEventWriter writer = new XmlEventWriter(sw, "p", false, "Document", null, "");
+        writer.add(EVENTS.createStartElement("", "", "Document"));
+        writer.add(EVENTS.createNamespace("ns2", "urn:a"));
+        writer.add(EVENTS.createStartElement("", "", "Envlp"));
+        // foreign content: default namespace plus two declarations, one reusing the document prefix
+        writer.add(EVENTS.createStartElement("", "urn:b", "X"));
+        writer.add(EVENTS.createNamespace("xsi", XSI));
+        writer.add(EVENTS.createNamespace("p", "urn:c"));
+        writer.add(EVENTS.createNamespace("urn:b"));
+        writer.add(EVENTS.createAttribute("xsi", XSI, "type", "p:T"));
+        writer.add(EVENTS.createStartElement("p", "urn:c", "Y"));
+        writer.add(EVENTS.createCharacters("foo"));
+        writer.add(EVENTS.createEndElement("p", "urn:c", "Y"));
+        writer.add(EVENTS.createStartElement("", "", "Z"));
+        writer.add(EVENTS.createNamespace(""));
+        writer.add(EVENTS.createEndElement("", "", "Z"));
+        writer.add(EVENTS.createEndElement("", "urn:b", "X"));
+        writer.add(EVENTS.createEndElement("", "", "Envlp"));
+        writer.add(EVENTS.createEndElement("", "", "Document"));
+
+        String xml = sw.toString();
+        assertTrue(xml.startsWith("<p:Document xmlns:p=\"urn:a\">"), xml);
+        assertTrue(xml.contains("<p:Envlp>"), xml);
+        assertTrue(
+                xml.contains("<X xmlns:xsi=\"" + XSI + "\" xmlns:p=\"urn:c\" xmlns=\"urn:b\" xsi:type=\"p:T\">"), xml);
+        assertTrue(xml.contains("<p:Y>foo</p:Y>"), xml);
+        assertTrue(xml.contains("<Z xmlns=\"\"></Z>"), xml);
+        assertTrue(xml.contains("</X>"), xml);
+        assertTrue(xml.endsWith("</p:Envlp>" + LINE_SEPARATOR + "</p:Document>"), xml);
+        assertNotNull(MxNode.parse(xml));
+    }
+
+    @Test
+    public void test_mainNamespaceElementInsideForeignContentIsDeclaredLocally() throws XMLStreamException {
+        for (String prefix : new String[] {"p", null}) {
+            StringWriter sw = new StringWriter();
+            XmlEventWriter writer = new XmlEventWriter(sw, prefix, false, "Document", null, "");
+            writer.add(EVENTS.createStartElement("", "", "Document"));
+            writer.add(EVENTS.createNamespace("ns2", "urn:a"));
+            writer.add(EVENTS.createStartElement("", "urn:b", "X"));
+            writer.add(EVENTS.createNamespace("urn:b"));
+            // JAXB bound the main namespace at the root, so it sends the element without a declaration
+            writer.add(EVENTS.createStartElement("ns2", "urn:a", "Y"));
+            writer.add(EVENTS.createStartElement("ns2", "urn:a", "W"));
+            writer.add(EVENTS.createEndElement("ns2", "urn:a", "W"));
+            writer.add(EVENTS.createEndElement("ns2", "urn:a", "Y"));
+            writer.add(EVENTS.createEndElement("", "urn:b", "X"));
+            writer.add(EVENTS.createEndElement("", "", "Document"));
+
+            String xml = sw.toString();
+            assertTrue(xml.contains("<ns2:Y xmlns:ns2=\"urn:a\">"), xml);
+            assertTrue(xml.contains("<ns2:W></ns2:W>"), xml);
+            assertTrue(xml.contains("</ns2:Y>"), xml);
+            assertNotNull(MxNode.parse(xml));
+        }
+    }
+
+    @Test
+    public void test_noNamespaceElementInsideForeignContentUndeclaresTheMainDefaultNamespace()
+            throws XMLStreamException {
+        // JAXB never binds the default namespace, so it sends a no-namespace element without xmlns="": the writer
+        // must add it when the main namespace is written as the default namespace (no document prefix)
+        for (String prefix : new String[] {"p", null}) {
+            StringWriter sw = new StringWriter();
+            XmlEventWriter writer = new XmlEventWriter(sw, prefix, false, "Document", null, "");
+            writer.add(EVENTS.createStartElement("", "", "Document"));
+            writer.add(EVENTS.createNamespace("ns2", "urn:a"));
+            writer.add(EVENTS.createStartElement("f", "urn:b", "X"));
+            writer.add(EVENTS.createNamespace("f", "urn:b"));
+            writer.add(EVENTS.createStartElement("", "", "Y"));
+            writer.add(EVENTS.createStartElement("", "", "W"));
+            writer.add(EVENTS.createEndElement("", "", "W"));
+            writer.add(EVENTS.createEndElement("", "", "Y"));
+            writer.add(EVENTS.createEndElement("f", "urn:b", "X"));
+            writer.add(EVENTS.createEndElement("", "", "Document"));
+
+            String xml = sw.toString();
+            if (prefix == null) {
+                assertTrue(xml.contains("<Document xmlns=\"urn:a\">"), xml);
+                assertTrue(xml.contains("<Y xmlns=\"\">"), xml);
+            } else {
+                assertTrue(xml.contains("<p:Document xmlns:p=\"urn:a\">"), xml);
+                assertTrue(xml.contains("<Y>"), xml);
+            }
+            // the child inherits the undeclaration, nothing to repeat
+            assertTrue(xml.contains("<W></W>"), xml);
+            assertNotNull(MxNode.parse(xml));
+        }
+    }
+
+    @Test
+    public void test_namespacedAttributeInsideForeignContentIsDeclaredLocally() throws XMLStreamException {
+        StringWriter sw = new StringWriter();
+        XmlEventWriter writer = new XmlEventWriter(sw, "p", false, "Document", null, "");
+        writer.add(EVENTS.createStartElement("", "", "Document"));
+        writer.add(EVENTS.createNamespace("ns2", "urn:a"));
+        writer.add(EVENTS.createStartElement("f", "urn:f", "X"));
+        writer.add(EVENTS.createNamespace("f", "urn:f"));
+        writer.add(EVENTS.createAttribute("ns2", "urn:a", "ref", "1"));
+        writer.add(EVENTS.createAttribute("xml", "http://www.w3.org/XML/1998/namespace", "lang", "en"));
+        writer.add(EVENTS.createEndElement("f", "urn:f", "X"));
+        writer.add(EVENTS.createEndElement("", "", "Document"));
+
+        String xml = sw.toString();
+        assertTrue(xml.contains("<f:X xmlns:f=\"urn:f\" ns2:ref=\"1\" xml:lang=\"en\" xmlns:ns2=\"urn:a\">"), xml);
+        assertNotNull(MxNode.parse(xml));
+    }
+
+    @Test
+    public void test_xsysNamespacesAreNotForeignContent() throws XMLStreamException {
+        StringWriter sw = new StringWriter();
+        XmlEventWriter writer = new XmlEventWriter(sw, "p", false, "Document", null, "");
+        writer.setPreferredPrefixes(Collections.singletonMap("urn:swift:snl:ns.Sw", "Sw"));
+        writer.add(EVENTS.createStartElement("", "", "Document"));
+        writer.add(EVENTS.createNamespace("ns2", "urn:a"));
+        writer.add(EVENTS.createNamespace("ns3", "urn:swift:snl:ns.Sw"));
+        writer.add(EVENTS.createStartElement("ns3", "urn:swift:snl:ns.Sw", "X"));
+        // a model element without namespace nested in an xsys element keeps the document prefix
+        writer.add(EVENTS.createStartElement("", "", "Y"));
+        writer.add(EVENTS.createEndElement("", "", "Y"));
+        writer.add(EVENTS.createEndElement("ns3", "urn:swift:snl:ns.Sw", "X"));
+        writer.add(EVENTS.createEndElement("", "", "Document"));
+
+        assertEquals(
+                "<p:Document xmlns:p=\"urn:a\" xmlns:Sw=\"urn:swift:snl:ns.Sw\">" + LINE_SEPARATOR + "<Sw:X>"
+                        + LINE_SEPARATOR + "<p:Y></p:Y>" + LINE_SEPARATOR + "</Sw:X>" + LINE_SEPARATOR
+                        + "</p:Document>",
+                sw.toString());
+    }
+
+    @Test
+    public void test_namespacedAttributeOutsideForeignContent() throws XMLStreamException {
+        StringWriter sw = new StringWriter();
+        XmlEventWriter writer = new XmlEventWriter(sw, "p", false, "Document", null, "");
+        writer.add(EVENTS.createStartElement("", "", "Document"));
+        writer.add(EVENTS.createNamespace("ns2", "urn:a"));
+        writer.add(EVENTS.createStartElement("", "", "X"));
+        writer.add(EVENTS.createAttribute("xsi", XSI, "type", "T"));
+        writer.add(EVENTS.createAttribute("", "", "Ccy", "USD"));
+        writer.add(EVENTS.createEndElement("", "", "X"));
+        writer.add(EVENTS.createEndElement("", "", "Document"));
+
+        String xml = sw.toString();
+        assertTrue(xml.contains("<p:X xsi:type=\"T\" Ccy=\"USD\">"), xml);
+        assertFalse(xml.contains("{" + XSI + "}"), xml);
+    }
+
+    @Test
+    public void test_rootNamespaceFromItsQName() throws XMLStreamException {
+        StringWriter sw = new StringWriter();
+        XmlEventWriter writer = new XmlEventWriter(sw, "p", false, "AppHdr", null, "");
+        // the AppHdr classes marshal the root with its namespace in the QName
+        writer.add(EVENTS.createStartElement("", "urn:a", "AppHdr"));
+        writer.add(EVENTS.createNamespace("ns2", "urn:a"));
+        writer.add(EVENTS.createStartElement("", "", "Fr"));
+        writer.add(EVENTS.createEndElement("", "", "Fr"));
+        // urn:x is foreign, urn:a inside it is still the main namespace
+        writer.add(EVENTS.createStartElement("x", "urn:x", "Sgntr"));
+        writer.add(EVENTS.createNamespace("x", "urn:x"));
+        writer.add(EVENTS.createStartElement("ns2", "urn:a", "Y"));
+        writer.add(EVENTS.createEndElement("ns2", "urn:a", "Y"));
+        writer.add(EVENTS.createEndElement("x", "urn:x", "Sgntr"));
+        writer.add(EVENTS.createEndElement("", "urn:a", "AppHdr"));
+
+        String xml = sw.toString();
+        assertTrue(xml.startsWith("<p:AppHdr xmlns:p=\"urn:a\">"), xml);
+        assertTrue(xml.contains("<p:Fr></p:Fr>"), xml);
+        assertTrue(xml.contains("<x:Sgntr xmlns:x=\"urn:x\">"), xml);
+        assertTrue(xml.contains("<ns2:Y xmlns:ns2=\"urn:a\"></ns2:Y>"), xml);
+        assertTrue(xml.contains("</x:Sgntr>"), xml);
+        assertNotNull(MxNode.parse(xml));
     }
 
     private void testXpath(String xml, String nameSpace, String path, String expected) {
