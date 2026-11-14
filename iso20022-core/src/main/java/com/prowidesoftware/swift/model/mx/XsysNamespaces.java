@@ -48,7 +48,16 @@ enum XsysNamespaces {
     }
 
     /**
-     * @return specific mapped prefix for the namespace or null if none matched
+     * Checks whether the namespace is one of the SNL reusable schema namespaces (Doc, Sw, SwGbl, SwInt, SwSec)
+     * used by xsys messages; the parser filter and the XML writer share this check to tell model content from
+     * wildcard (xs:any) content
+     */
+    static boolean isXsysNamespace(final String namespaceURI) {
+        return prefix(namespaceURI) != null;
+    }
+
+    /**
+     * @return specific mapped namespace for the prefix or null if none matched
      */
     static String namespaceURI(final String prefix) {
         for (XsysNamespaces n : XsysNamespaces.values()) {

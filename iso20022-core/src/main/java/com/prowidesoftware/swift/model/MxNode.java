@@ -264,11 +264,14 @@ public class MxNode {
 
     /**
      * Returns a canonical string representation of this node and its subtree.
-     * The output contains only element local names and trimmed text values, without namespace prefixes,
-     * attributes, or formatting whitespace. Useful for producing consistent checksums of semantically
-     * equivalent XML regardless of formatting or namespace prefix differences.
+     * The output contains only element local names, attributes sorted by name and trimmed text values, without
+     * namespace prefixes, namespace declarations or formatting whitespace. Useful for producing consistent
+     * checksums of semantically equivalent XML regardless of formatting or namespace prefix differences.
      *
      * <p>This is not full W3C C14N canonicalization, but sufficient for several purposes.
+     *
+     * <p>Since 10.4.1 the attributes are part of the result, so for example {@code <Amt Ccy="USD">10</Amt>} and
+     * {@code <Amt Ccy="EUR">10</Amt>} are no longer equivalent.
      *
      * @return canonical string representation of this node tree
      * @since 10.3.5
@@ -276,7 +279,21 @@ public class MxNode {
     public String toCanonicalString() {
         StringBuilder sb = new StringBuilder();
         if (this.localName != null) {
-            sb.append('<').append(this.localName).append('>');
+            sb.append('<').append(this.localName);
+            if (this.attributes != null) {
+                // sorted by name; the xmlns pseudo-attribute added by the content handler is a namespace
+                // declaration, not content, and is left out so the result does not depend on namespaces
+                for (String name : new TreeSet<>(this.attributes.keySet())) {
+                    if (!"xmlns".equals(name)) {
+                        sb.append(' ')
+                                .append(name)
+                                .append("=\"")
+                                .append(this.attributes.get(name))
+                                .append('"');
+                    }
+                }
+            }
+            sb.append('>');
         }
         if (this.value != null) {
             sb.append(this.value.trim());

@@ -17,8 +17,13 @@ package com.prowidesoftware.swift.model.mx;
 
 import java.io.IOException;
 import java.io.Writer;
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.logging.Level;
+import javax.xml.XMLConstants;
 import javax.xml.namespace.NamespaceContext;
 import javax.xml.namespace.QName;
 import javax.xml.stream.XMLEventReader;
@@ -30,6 +35,20 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 
 /**
  * XMl writer for MX model classes.
+ *
+ * <p>The model elements are marshalled without namespace and are written with the configured default prefix, bound
+ * to the main namespace of the message. Wildcard (xs:any) content, such as supplementary data envelopes and
+ * signatures, is written exactly as JAXB sends it: from the first element whose namespace is neither empty, the
+ * main namespace nor an xsys namespace (the same boundary rule applied by {@link NamespaceAndElementFilter} on
+ * parse) up to its matching end tag, element prefixes, namespace declarations and attribute prefixes are kept as
+ * received, and only a namespace bound outside the wildcard content (such as the main namespace) is declared
+ * again locally, or undeclared with {@code xmlns=""} for an element without namespace when the main namespace is
+ * the default one.
+ *
+ * <p>Known limitations: wildcard content whose root element has no namespace cannot be told apart from model
+ * elements and is written in the main namespace; whitespace inside wildcard content is not preserved; and with
+ * no default prefix an unprefixed QName value (such as {@code xsi:type="T"}) that refers to no namespace resolves
+ * to the main namespace in the output.
  *
  * @since 7.8
  */
@@ -52,6 +71,15 @@ public final class XmlEventWriter implements XMLEventWriter {
     private int previousNestedStartLevel;
     private XMLEvent previousEvent;
     private EscapeHandler escapeHandler;
+    private String mainNamespace;
+    // namespace declared as default (without prefix) by the model content, if any
+    private String modelDefaultNamespace;
+    // depth inside wildcard (foreign) content, zero while writing model content
+    private int foreignDepth = 0;
+    // namespace bindings declared inside the foreign content, one map per open foreign element
+    private final Deque<Map<String, String>> foreignScopes = new ArrayDeque<>();
+    // prefixes used by the open foreign start tag that must be bound when the tag is closed
+    private final Map<String, String> pendingBindings = new LinkedHashMap<>();
 
     /**
      * @param baos                  output buffer to write
@@ -103,17 +131,26 @@ public final class XmlEventWriter implements XMLEventWriter {
                         this.startElementCount++;
                         closeStartTagIfNeeded();
                         final StartElement se = event.asStartElement();
-                        final String localPart = se.getName().getLocalPart();
+                        final QName name = se.getName();
+                        final String localPart = name.getLocalPart();
                         /*
                          * the startElementyCount below fixes the bug related to not opening nested Document inside xs:any
                          */
                         if (StringUtils.equals(localPart, this.rootElement) && this.startElementCount == 1) {
                             delayedStart = se;
+                            if (this.mainNamespace == null && StringUtils.isNotEmpty(name.getNamespaceURI())) {
+                                // the AppHdr root is marshalled with its namespace in the QName
+                                this.mainNamespace = name.getNamespaceURI();
+                            }
                             log.finest("local part is Document, initializing delayed start, startElementCount="
                                     + this.startElementCount);
                         } else {
                             writeIndentIfNeeded(out, nestedLevel);
-                            out.write("<" + prefixString(se.getName()) + localPart);
+                            if (this.foreignDepth > 0 || isForeign(name.getNamespaceURI())) {
+                                startForeignElement(name);
+                            } else {
+                                out.write("<" + prefixString(name) + localPart);
+                            }
                             /*
                              * to support attributes instead of closing here we set a flag and close this later
                              */
@@ -134,8 +171,13 @@ public final class XmlEventWriter implements XMLEventWriter {
                             sb.append("<" + prefixString(ne.getName()) + localPart);
                             this.delayedStart = null;
                             this.currentElement = localPart;
+                            if (this.mainNamespace == null) {
+                                // the Document root is marshalled without namespace (see MxWriteImpl), when the
+                                // main namespace was not set its namespace is the first one declared
+                                this.mainNamespace = ne.getValue();
+                            }
                         }
-                        sb.append(namespace(ne));
+                        sb.append(this.foreignDepth > 0 ? foreignNamespace(ne) : namespace(ne));
                         out.write(sb.toString());
                         startTagIncomplete = true;
                         this.previousEvent = event;
@@ -183,7 +225,13 @@ public final class XmlEventWriter implements XMLEventWriter {
                             }
                         }
 
-                        out.write("</" + prefixString(ee.getName()) + localPart + ">");
+                        if (this.foreignDepth > 0) {
+                            out.write("</" + prefixString(ee.getName().getPrefix()) + localPart + ">");
+                            this.foreignScopes.pop();
+                            this.foreignDepth--;
+                        } else {
+                            out.write("</" + prefixString(ee.getName()) + localPart + ">");
+                        }
 
                         // Records previous level
                         previousNestedStartLevel = nestedLevel;
@@ -205,7 +253,7 @@ public final class XmlEventWriter implements XMLEventWriter {
                         String escapedString = a.getValue() != null
                                 ? this.escapeHandler.escape(a.getValue().toCharArray(), true)
                                 : "";
-                        out.write(" " + a.getName() + "=\"" + escapedString + "\"");
+                        out.write(" " + attributeName(a.getName()) + "=\"" + escapedString + "\"");
                         this.previousEvent = event;
                         break;
                     }
@@ -242,20 +290,103 @@ public final class XmlEventWriter implements XMLEventWriter {
     private String namespace(final Namespace namespace) {
         StringBuilder sb = new StringBuilder(" xmlns");
         String prefix = resolvePrefix(namespace);
-        if (prefix != null) {
+        if (StringUtils.isNotEmpty(prefix)) {
             sb.append(":").append(prefix);
+        } else {
+            this.modelDefaultNamespace = namespace.getValue();
         }
         sb.append("=\"").append(namespace.getValue()).append("\"");
         return sb.toString();
     }
 
     private String prefixString(final QName qname) {
-        String prefix = resolvePrefix(qname);
-        if (prefix != null) {
-            return prefix + ":";
-        } else {
-            return "";
+        return prefixString(resolvePrefix(qname));
+    }
+
+    private static String prefixString(final String prefix) {
+        return StringUtils.isNotEmpty(prefix) ? prefix + ":" : "";
+    }
+
+    /**
+     * Returns the qualified attribute name: the local name for attributes without namespace, otherwise the prefix
+     * JAXB bound to the attribute namespace followed by the local name
+     */
+    private String attributeName(final QName name) {
+        if (StringUtils.isEmpty(name.getNamespaceURI())) {
+            return name.getLocalPart();
         }
+        if (StringUtils.isEmpty(name.getPrefix())) {
+            // not expected from JAXB, which always binds a prefix for a namespaced attribute
+            log.warning("PW namespaced attribute without prefix, written without namespace: " + name);
+            return name.getLocalPart();
+        }
+        if (this.foreignDepth > 0 && !XMLConstants.XML_NS_PREFIX.equals(name.getPrefix())) {
+            this.pendingBindings.put(name.getPrefix(), name.getNamespaceURI());
+        }
+        return name.getPrefix() + ":" + name.getLocalPart();
+    }
+
+    /*
+     * Wildcard (foreign) content: the boundary is the same as in NamespaceAndElementFilter, model content is
+     * either without namespace, in the main namespace or in an xsys namespace; anything else is written as
+     * received from JAXB.
+     */
+
+    private boolean isForeign(final String namespaceURI) {
+        return StringUtils.isNotEmpty(namespaceURI)
+                && this.mainNamespace != null
+                && !namespaceURI.equals(this.mainNamespace)
+                && !XsysNamespaces.isXsysNamespace(namespaceURI);
+    }
+
+    private void startForeignElement(final QName name) throws IOException {
+        this.foreignDepth++;
+        this.foreignScopes.push(new HashMap<>());
+        out.write("<" + prefixString(name.getPrefix()) + name.getLocalPart());
+        // an element without namespace is pending the undeclaration xmlns="" (JAXB does not send it because it
+        // never binds the default namespace, but this writer does when there is no document prefix)
+        this.pendingBindings.put(
+                StringUtils.defaultString(name.getPrefix()), StringUtils.defaultString(name.getNamespaceURI()));
+    }
+
+    /**
+     * A namespace declaration inside foreign content is written as received, including a default namespace
+     * declaration and the undeclaration xmlns=""
+     */
+    private String foreignNamespace(final Namespace namespace) {
+        final String prefix = StringUtils.defaultString(namespace.getPrefix());
+        this.foreignScopes.peek().put(prefix, namespace.getValue());
+        this.pendingBindings.remove(prefix);
+        return " xmlns" + (prefix.isEmpty() ? "" : ":" + prefix) + "=\"" + namespace.getValue() + "\"";
+    }
+
+    /**
+     * Declares in the open foreign start tag the prefixes it uses that are not bound inside the foreign content:
+     * JAXB binds the main namespace (and other namespaces known to the context) on the root element and does not
+     * declare them again, but the root declarations are written with the configured prefixes instead
+     */
+    private void writePendingBindings() throws IOException {
+        for (Map.Entry<String, String> binding : this.pendingBindings.entrySet()) {
+            final String prefix = binding.getKey();
+            if (!binding.getValue().equals(boundForeignNamespace(prefix))) {
+                out.write(" xmlns" + (prefix.isEmpty() ? "" : ":" + prefix) + "=\"" + binding.getValue() + "\"");
+                this.foreignScopes.peek().put(prefix, binding.getValue());
+            }
+        }
+        this.pendingBindings.clear();
+    }
+
+    /**
+     * Returns the namespace bound to the prefix at the current position of the foreign content: the innermost foreign
+     * declaration, or for the default namespace (empty prefix) the one declared by the model content, if any
+     */
+    private String boundForeignNamespace(final String prefix) {
+        for (Map<String, String> scope : this.foreignScopes) {
+            if (scope.containsKey(prefix)) {
+                return scope.get(prefix);
+            }
+        }
+        return prefix.isEmpty() ? StringUtils.defaultString(this.modelDefaultNamespace) : null;
     }
 
     /**
@@ -292,6 +423,9 @@ public final class XmlEventWriter implements XMLEventWriter {
 
     private void closeStartTagIfNeeded() throws IOException {
         if (this.startTagIncomplete) {
+            if (this.foreignDepth > 0 && !this.pendingBindings.isEmpty()) {
+                writePendingBindings();
+            }
             out.write('>');
             this.startTagIncomplete = false;
         }
@@ -388,6 +522,17 @@ public final class XmlEventWriter implements XMLEventWriter {
      */
     public void setRootElement(String rootElement) {
         this.rootElement = rootElement;
+    }
+
+    /**
+     * Main namespace of the message, used to tell model content from wildcard (xs:any) content. The Document root
+     * is marshalled with a QName without namespace (see {@link MxWriteImpl}), so when this is not set the first
+     * namespace declared on the root element is used.
+     *
+     * @param mainNamespace the namespace of the message
+     */
+    void setMainNamespace(String mainNamespace) {
+        this.mainNamespace = mainNamespace;
     }
 
     /**
