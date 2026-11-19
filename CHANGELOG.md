@@ -10,11 +10,15 @@
   * Fix: the AppHdr `xml()` and `element()` serialization of every header version takes its JAXB context from the `JaxbContextLoader`, so a configured context cache is reused instead of creating a new context on every call
   * Perf: MxSwiftMessage parses the AppHdr once per message instead of three times and hands a model-built message to the metadata strategy without re-serializing it; an AppHdr without namespace is now found when the XML declaration is invalid
   * Perf: MX checksums and metadata are computed from the message model without re-serializing and re-parsing the XML; multi-line text values that a parsing defect left out of the checksums now count, so those checksums change
-  * Updated commons-lang3 from 3.20.0 to 3.21.0 and gson from 2.14.0 to 2.15.0
+  * Updated pw-swift-core dependency from SRU2026-10.4.0 to SRU2026-10.4.5, commons-lang3 from 3.20.0 to 3.21.0 and gson from 2.14.0 to 2.15.0
 
   Upgrade note: the MX checksums used for duplicate detection now include element attributes and multi-line text, so the values this version computes differ from those stored by earlier versions for most messages.
   A message stored before the upgrade and received again after it is not detected as a duplicate; detection among messages processed by this version is not affected.
   A subclass of the default metadata strategy overriding `canonicalizeXml` keeps its own canonical form and is not affected.
+
+  SRU2026 note: the SRU2026 model was released ahead of this line as SRU2025-10.4.0, for the market infrastructures and clearings that adopt the SWIFT Standards release 2026 in November 2026, such as Target2. That line keeps the SRU2025 Prowide Core dependency and deprecation schedule, and remains the version to use in production until 12 June 2027.
+  This SRU2026 line is the distribution for the general SWIFT go-live on 12 June 2027, with the SRU2026 Prowide Core dependency and deprecation schedule. This version carries the same functional changes as SRU2025-10.4.1 and SRU2025-10.4.2.
+  The message versions introduced by the SWIFT Standards release 2026 are valid on SWIFT only for the market infrastructures adopting them in November 2026; all other SWIFT traffic must keep using SRU2025 message versions until 12 June 2027.
 
 ### 10.4.3 - September 2026
   * (PW-3405) Feat: Configurable fallback zone for date time and time elements without offset (new adapter constructors and TypeAdaptersConfiguration.withFallbackZone); time elements now resolve the daylight-saving aware offset
@@ -31,7 +35,7 @@
   * Fix: `toJson()` now serializes `@XmlAnyElement` wildcard content as raw XML instead of an empty `{}`, and `fromJson()` restores it back to a DOM Element (round-trippable)
 
 ### 10.4.0 - May 2026
-  * SWIFT Standard release update 2026 (live 12 June 2027, original November 2026 release postponed) 
+  * SWIFT Standard release update 2026 (planned for 14 November 2026, postponed by Swift and revised in 10.4.4)
   * Yearly revision of deprecation phase (see https://dev.prowidesoftware.com/SRU2024/getting-started/deprecation/)
 
 ### 10.3.8 - May 2026
